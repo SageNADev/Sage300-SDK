@@ -1,0 +1,911 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDB16FD3-C8B1-4520-A9F3-0AD2B6328B0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.CA.SBS.ERP.Sage300.AP.Resources</RootNamespace>
+    <AssemblyName>Sage.CA.SBS.ERP.Sage300.AP.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APCommonResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APCommonResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerationsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerationsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\1099CPRSCodesResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>1099CPRSCodesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\1099CPRSInquiryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>1099CPRSInquiryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AccountSetsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountSetsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdjustmentBatchListResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdjustmentBatchListResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdjustmentEntryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdjustmentEntryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ControlPaymentResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ControlPaymentResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreatePaymentBatchResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreatePaymentBatchResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DistributionCodesResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DistributionCodesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DistributionSetsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DistributionSetsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DocumentResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DocumentSchedPaymentResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentSchedPaymentResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmailMessageResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailMessageResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IntegrityCheckerResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IntegrityCheckerResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GLIntegrationResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GLIntegrationResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InvoiceBatchListResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceBatchListResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InvoiceEntryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceEntryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionalFieldsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OptionalFieldsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OptionsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaymentBatchListResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentBatchListResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaymentCodesResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentCodesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaymentEntryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentEntryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaymentInquiryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentInquiryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaymentSelectionCodesResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentSelectionCodesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PostBatchesResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostBatchesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PostingJournalReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostingJournalReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RecurringPayableResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecurringPayableResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RemitToLocationsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemitToLocationsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TermCodeResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TermCodeResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VendorActivityResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorActivityResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VendorGroupResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorGroupResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VendorResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Process\ClearHistoryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClearHistoryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Process\ClearStatisticResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClearStatisticResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Process\CreateGLBatchResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateGLBatchResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Process\CreateRecurringPayableBatchResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateRecurringPayableBatchResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Process\CreateRetainageBatchResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateRetainageBatchResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Process\DeleteInactiveRecordsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteInactiveRecordsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BatchStatusReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BatchStatusReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PostingJournalResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostingJournalResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Process\ProcessYearEndResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcessYearEndResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Process\T5018CPRSElectronicFilingResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T5018CPRSElectronicFilingResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\AgedCashRequirementReportsResx.Designer.cs">
+      <DependentUpon>AgedCashRequirementReportsResx.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\AgedPayableReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgedPayableReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AgeRetainageResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgeRetainageResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\APCommonReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APCommonReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BatchListingResx.Designer.cs">
+      <DependentUpon>BatchListingResx.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\ElectronicFilingResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElectronicFilingResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\LetterAndLabelResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LetterAndLabelResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Print10991096FormsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Print10991096FormsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PrintT5018CPRSFormsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintT5018CPRSFormsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RecurringPayableReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecurringPayableReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RemitToLocationReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemitToLocationReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CheckRegisterResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckRegisterResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GLTransactionsReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GLTransactionsReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PostingErrorsReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostingErrorsReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\VendorTransactionsReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorTransactionsReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\VendorGroupReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorGroupReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\VendorReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorReportResx.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="APCommonResx.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>APCommonResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APCommonResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APCommonResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APCommonResx.th.resx" />
+    <EmbeddedResource Include="APCommonResx.zh-Hans.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APCommonResx.zh-Hant.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnumerationsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EnumerationsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnumerationsResx.es.resx" />
+    <EmbeddedResource Include="EnumerationsResx.fr.resx" />
+    <EmbeddedResource Include="EnumerationsResx.th.resx" />
+    <EmbeddedResource Include="EnumerationsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="EnumerationsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\1099CPRSCodesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>1099CPRSCodesResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\1099CPRSCodesResx.es.resx" />
+    <EmbeddedResource Include="Forms\1099CPRSCodesResx.fr.resx" />
+    <EmbeddedResource Include="Forms\1099CPRSCodesResx.th.resx" />
+    <EmbeddedResource Include="Forms\1099CPRSCodesResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\1099CPRSCodesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\1099CPRSInquiryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>1099CPRSInquiryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\1099CPRSInquiryResx.es.resx" />
+    <EmbeddedResource Include="Forms\1099CPRSInquiryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\1099CPRSInquiryResx.th.resx" />
+    <EmbeddedResource Include="Forms\1099CPRSInquiryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\1099CPRSInquiryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\AccountSetsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountSetsResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AccountSetsResx.es.resx" />
+    <EmbeddedResource Include="Forms\AccountSetsResx.fr.resx" />
+    <EmbeddedResource Include="Forms\AccountSetsResx.th.resx" />
+    <EmbeddedResource Include="Forms\AccountSetsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\AccountSetsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\AdjustmentBatchListResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdjustmentBatchListResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdjustmentBatchListResx.es.resx" />
+    <EmbeddedResource Include="Forms\AdjustmentBatchListResx.fr.resx" />
+    <EmbeddedResource Include="Forms\AdjustmentBatchListResx.th.resx" />
+    <EmbeddedResource Include="Forms\AdjustmentBatchListResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\AdjustmentBatchListResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\AdjustmentEntryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdjustmentEntryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdjustmentEntryResx.es.resx" />
+    <EmbeddedResource Include="Forms\AdjustmentEntryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\AdjustmentEntryResx.th.resx" />
+    <EmbeddedResource Include="Forms\AdjustmentEntryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\AdjustmentEntryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\ControlPaymentResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ControlPaymentResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ControlPaymentResx.fr.resx" />
+    <EmbeddedResource Include="Forms\ControlPaymentResx.es.resx" />
+    <EmbeddedResource Include="Forms\ControlPaymentResx.th.resx" />
+    <EmbeddedResource Include="Forms\ControlPaymentResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\ControlPaymentResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\CreatePaymentBatchResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreatePaymentBatchResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreatePaymentBatchResx.es.resx" />
+    <EmbeddedResource Include="Forms\CreatePaymentBatchResx.fr.resx" />
+    <EmbeddedResource Include="Forms\CreatePaymentBatchResx.th.resx" />
+    <EmbeddedResource Include="Forms\CreatePaymentBatchResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\CreatePaymentBatchResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\DistributionCodesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DistributionCodesResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DistributionCodesResx.es.resx" />
+    <EmbeddedResource Include="Forms\DistributionCodesResx.fr.resx" />
+    <EmbeddedResource Include="Forms\DistributionCodesResx.th.resx" />
+    <EmbeddedResource Include="Forms\DistributionCodesResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\DistributionCodesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\DistributionSetsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DistributionSetsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DistributionSetsResx.es.resx" />
+    <EmbeddedResource Include="Forms\DistributionSetsResx.fr.resx" />
+    <EmbeddedResource Include="Forms\DistributionSetsResx.th.resx" />
+    <EmbeddedResource Include="Forms\DistributionSetsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\DistributionSetsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\DocumentResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DocumentResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DocumentResx.es.resx" />
+    <EmbeddedResource Include="Forms\DocumentResx.fr.resx" />
+    <EmbeddedResource Include="Forms\DocumentResx.th.resx" />
+    <EmbeddedResource Include="Forms\DocumentResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\DocumentResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\DocumentSchedPaymentResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DocumentSchedPaymentResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DocumentSchedPaymentResx.es.resx" />
+    <EmbeddedResource Include="Forms\DocumentSchedPaymentResx.fr.resx" />
+    <EmbeddedResource Include="Forms\DocumentSchedPaymentResx.th.resx" />
+    <EmbeddedResource Include="Forms\DocumentSchedPaymentResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\DocumentSchedPaymentResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\EmailMessageResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmailMessageResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmailMessageResx.es.resx" />
+    <EmbeddedResource Include="Forms\EmailMessageResx.fr.resx" />
+    <EmbeddedResource Include="Forms\EmailMessageResx.th.resx" />
+    <EmbeddedResource Include="Forms\EmailMessageResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\EmailMessageResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\GLIntegrationResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GLIntegrationResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GLIntegrationResx.es.resx" />
+    <EmbeddedResource Include="Forms\GLIntegrationResx.fr.resx" />
+    <EmbeddedResource Include="Forms\GLIntegrationResx.th.resx" />
+    <EmbeddedResource Include="Forms\GLIntegrationResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\GLIntegrationResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\IntegrityCheckerResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>IntegrityCheckerResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IntegrityCheckerResx.es.resx" />
+    <EmbeddedResource Include="Forms\IntegrityCheckerResx.fr.resx" />
+    <EmbeddedResource Include="Forms\IntegrityCheckerResx.th.resx" />
+    <EmbeddedResource Include="Forms\IntegrityCheckerResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\IntegrityCheckerResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\InvoiceBatchListResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InvoiceBatchListResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InvoiceBatchListResx.es.resx" />
+    <EmbeddedResource Include="Forms\InvoiceBatchListResx.fr.resx" />
+    <EmbeddedResource Include="Forms\InvoiceBatchListResx.th.resx" />
+    <EmbeddedResource Include="Forms\InvoiceBatchListResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\InvoiceBatchListResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InvoiceEntryResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.es.resx" />
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.th.resx" />
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\OptionalFieldsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OptionalFieldsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionalFieldsResx.es.resx" />
+    <EmbeddedResource Include="Forms\OptionalFieldsResx.fr.resx" />
+    <EmbeddedResource Include="Forms\OptionalFieldsResx.th.resx" />
+    <EmbeddedResource Include="Forms\OptionalFieldsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\OptionalFieldsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\OptionsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OptionsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionsResx.fr.resx" />
+    <EmbeddedResource Include="Forms\OptionsResx.es.resx" />
+    <EmbeddedResource Include="Forms\OptionsResx.th.resx" />
+    <EmbeddedResource Include="Forms\OptionsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\OptionsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PaymentBatchListResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PaymentBatchListResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentBatchListResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PaymentBatchListResx.es.resx" />
+    <EmbeddedResource Include="Forms\PaymentBatchListResx.th.resx" />
+    <EmbeddedResource Include="Forms\PaymentBatchListResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\PaymentBatchListResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PaymentCodesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PaymentCodesResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentCodesResx.es.resx" />
+    <EmbeddedResource Include="Forms\PaymentCodesResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PaymentCodesResx.th.resx" />
+    <EmbeddedResource Include="Forms\PaymentCodesResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\PaymentCodesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PaymentEntryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PaymentEntryResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentEntryResx.es.resx" />
+    <EmbeddedResource Include="Forms\PaymentEntryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PaymentEntryResx.th.resx" />
+    <EmbeddedResource Include="Forms\PaymentEntryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\PaymentEntryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PaymentInquiryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PaymentInquiryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentInquiryResx.es.resx" />
+    <EmbeddedResource Include="Forms\PaymentInquiryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PaymentInquiryResx.th.resx" />
+    <EmbeddedResource Include="Forms\PaymentInquiryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\PaymentInquiryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PaymentSelectionCodesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PaymentSelectionCodesResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentSelectionCodesResx.es.resx" />
+    <EmbeddedResource Include="Forms\PaymentSelectionCodesResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PaymentSelectionCodesResx.th.resx" />
+    <EmbeddedResource Include="Forms\PaymentSelectionCodesResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\PaymentSelectionCodesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PostBatchesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PostBatchesResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PostBatchesResx.es.resx" />
+    <EmbeddedResource Include="Forms\PostBatchesResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PostBatchesResx.th.resx" />
+    <EmbeddedResource Include="Forms\PostBatchesResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\PostBatchesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PostingJournalReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PostingJournalReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PostingJournalReportResx.es.resx" />
+    <EmbeddedResource Include="Forms\PostingJournalReportResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PostingJournalReportResx.th.resx" />
+    <EmbeddedResource Include="Forms\PostingJournalReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\PostingJournalReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\RecurringPayableResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecurringPayableResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RecurringPayableResx.es.resx" />
+    <EmbeddedResource Include="Forms\RecurringPayableResx.fr.resx" />
+    <EmbeddedResource Include="Forms\RecurringPayableResx.th.resx" />
+    <EmbeddedResource Include="Forms\RecurringPayableResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\RecurringPayableResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\RemitToLocationsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RemitToLocationsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RemitToLocationsResx.es.resx" />
+    <EmbeddedResource Include="Forms\RemitToLocationsResx.fr.resx" />
+    <EmbeddedResource Include="Forms\RemitToLocationsResx.th.resx" />
+    <EmbeddedResource Include="Forms\RemitToLocationsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\RemitToLocationsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\TermCodeResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TermCodeResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TermCodeResx.es.resx" />
+    <EmbeddedResource Include="Forms\TermCodeResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TermCodeResx.th.resx" />
+    <EmbeddedResource Include="Forms\TermCodeResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\TermCodeResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\VendorActivityResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VendorActivityResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VendorActivityResx.es.resx" />
+    <EmbeddedResource Include="Forms\VendorActivityResx.fr.resx" />
+    <EmbeddedResource Include="Forms\VendorActivityResx.th.resx" />
+    <EmbeddedResource Include="Forms\VendorActivityResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\VendorActivityResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\VendorGroupResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VendorGroupResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VendorGroupResx.es.resx" />
+    <EmbeddedResource Include="Forms\VendorGroupResx.fr.resx" />
+    <EmbeddedResource Include="Forms\VendorGroupResx.th.resx" />
+    <EmbeddedResource Include="Forms\VendorGroupResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\VendorGroupResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\VendorResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VendorResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VendorResx.es.resx" />
+    <EmbeddedResource Include="Forms\VendorResx.fr.resx" />
+    <EmbeddedResource Include="Forms\VendorResx.th.resx" />
+    <EmbeddedResource Include="Forms\VendorResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\VendorResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\ClearHistoryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClearHistoryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\ClearHistoryResx.es.resx" />
+    <EmbeddedResource Include="Process\ClearHistoryResx.fr.resx" />
+    <EmbeddedResource Include="Process\ClearHistoryResx.th.resx" />
+    <EmbeddedResource Include="Process\ClearHistoryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\ClearHistoryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\ClearStatisticResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClearStatisticResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\ClearStatisticResx.es.resx" />
+    <EmbeddedResource Include="Process\ClearStatisticResx.fr.resx" />
+    <EmbeddedResource Include="Process\ClearStatisticResx.th.resx" />
+    <EmbeddedResource Include="Process\ClearStatisticResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\ClearStatisticResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\CreateGLBatchResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreateGLBatchResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\CreateGLBatchResx.es.resx" />
+    <EmbeddedResource Include="Process\CreateGLBatchResx.fr.resx" />
+    <EmbeddedResource Include="Process\CreateGLBatchResx.th.resx" />
+    <EmbeddedResource Include="Process\CreateGLBatchResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\CreateGLBatchResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\CreateRecurringPayableBatchResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreateRecurringPayableBatchResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\CreateRecurringPayableBatchResx.es.resx" />
+    <EmbeddedResource Include="Process\CreateRecurringPayableBatchResx.fr.resx" />
+    <EmbeddedResource Include="Process\CreateRecurringPayableBatchResx.th.resx" />
+    <EmbeddedResource Include="Process\CreateRecurringPayableBatchResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\CreateRecurringPayableBatchResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\CreateRetainageBatchResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreateRetainageBatchResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\CreateRetainageBatchResx.es.resx" />
+    <EmbeddedResource Include="Process\CreateRetainageBatchResx.fr.resx" />
+    <EmbeddedResource Include="Process\CreateRetainageBatchResx.th.resx" />
+    <EmbeddedResource Include="Process\CreateRetainageBatchResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\CreateRetainageBatchResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\DeleteInactiveRecordsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DeleteInactiveRecordsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\DeleteInactiveRecordsResx.es.resx" />
+    <EmbeddedResource Include="Process\DeleteInactiveRecordsResx.fr.resx" />
+    <EmbeddedResource Include="Process\DeleteInactiveRecordsResx.th.resx" />
+    <EmbeddedResource Include="Process\DeleteInactiveRecordsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\DeleteInactiveRecordsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\ProcessYearEndResx.th.resx" />
+    <EmbeddedResource Include="Process\T5018CPRSElectronicFilingResx.th.resx" />
+    <EmbeddedResource Include="Reports\AgedCashRequirementReportsResx.th.resx" />
+    <EmbeddedResource Include="Reports\AgedPayableReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\AgeRetainageResx.th.resx" />
+    <EmbeddedResource Include="Reports\APCommonReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\BatchListingResx.th.resx" />
+    <EmbeddedResource Include="Reports\BatchStatusReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BatchStatusReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BatchStatusReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\BatchStatusReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\BatchStatusReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\BatchStatusReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\BatchStatusReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\CheckRegisterResx.th.resx" />
+    <EmbeddedResource Include="Reports\ElectronicFilingResx.th.resx" />
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\LetterAndLabelResx.th.resx" />
+    <EmbeddedResource Include="Reports\PostingErrorsReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\PostingJournalResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PostingJournalResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PostingJournalResx.es.resx" />
+    <EmbeddedResource Include="Reports\PostingJournalResx.fr.resx" />
+    <EmbeddedResource Include="Reports\PostingJournalResx.th.resx" />
+    <EmbeddedResource Include="Reports\PostingJournalResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\PostingJournalResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\ProcessYearEndResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProcessYearEndResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\ProcessYearEndResx.es.resx" />
+    <EmbeddedResource Include="Process\ProcessYearEndResx.fr.resx" />
+    <EmbeddedResource Include="Process\ProcessYearEndResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\ProcessYearEndResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\T5018CPRSElectronicFilingResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>T5018CPRSElectronicFilingResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\T5018CPRSElectronicFilingResx.es.resx" />
+    <EmbeddedResource Include="Process\T5018CPRSElectronicFilingResx.fr.resx" />
+    <EmbeddedResource Include="Process\T5018CPRSElectronicFilingResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\T5018CPRSElectronicFilingResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\BatchListingResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BatchListingResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BatchListingResx.es.resx" />
+    <EmbeddedResource Include="Reports\BatchListingResx.fr.resx" />
+    <EmbeddedResource Include="Reports\BatchListingResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\BatchListingResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\ElectronicFilingResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ElectronicFilingResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ElectronicFilingResx.es.resx" />
+    <EmbeddedResource Include="Reports\ElectronicFilingResx.fr.resx" />
+    <EmbeddedResource Include="Reports\ElectronicFilingResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\ElectronicFilingResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\AgedCashRequirementReportsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AgedCashRequirementReportsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AgedCashRequirementReportsResx.es.resx" />
+    <EmbeddedResource Include="Reports\AgedCashRequirementReportsResx.fr.resx" />
+    <EmbeddedResource Include="Reports\AgedCashRequirementReportsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\AgedCashRequirementReportsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\AgedPayableReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AgedPayableReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AgedPayableReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\AgedPayableReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\AgedPayableReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\AgedPayableReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\AgeRetainageResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AgeRetainageResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AgeRetainageResx.es.resx" />
+    <EmbeddedResource Include="Reports\AgeRetainageResx.fr.resx" />
+    <EmbeddedResource Include="Reports\AgeRetainageResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\AgeRetainageResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\APCommonReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>APCommonReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\APCommonReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\APCommonReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\APCommonReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\APCommonReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\LetterAndLabelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LetterAndLabelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LetterAndLabelResx.es.resx" />
+    <EmbeddedResource Include="Reports\LetterAndLabelResx.fr.resx" />
+    <EmbeddedResource Include="Reports\LetterAndLabelResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\LetterAndLabelResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\Print10991096FormsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Print10991096FormsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Print10991096FormsResx.es.resx" />
+    <EmbeddedResource Include="Reports\Print10991096FormsResx.fr.resx" />
+    <EmbeddedResource Include="Reports\Print10991096FormsResx.th.resx" />
+    <EmbeddedResource Include="Reports\Print10991096FormsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\Print10991096FormsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\PrintT5018CPRSFormsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintT5018CPRSFormsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PrintT5018CPRSFormsResx.es.resx" />
+    <EmbeddedResource Include="Reports\PrintT5018CPRSFormsResx.fr.resx" />
+    <EmbeddedResource Include="Reports\PrintT5018CPRSFormsResx.th.resx" />
+    <EmbeddedResource Include="Reports\PrintT5018CPRSFormsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\PrintT5018CPRSFormsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\RecurringPayableReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecurringPayableReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RecurringPayableReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\RecurringPayableReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\RecurringPayableReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\RecurringPayableReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\RecurringPayableReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\RemitToLocationReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RemitToLocationReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RemitToLocationReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\RemitToLocationReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\RemitToLocationReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\RemitToLocationReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\RemitToLocationReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\CheckRegisterResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CheckRegisterResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CheckRegisterResx.es.resx" />
+    <EmbeddedResource Include="Reports\CheckRegisterResx.fr.resx" />
+    <EmbeddedResource Include="Reports\CheckRegisterResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\CheckRegisterResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GLTransactionsReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\PostingErrorsReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PostingErrorsReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PostingErrorsReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\PostingErrorsReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\PostingErrorsReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\PostingErrorsReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\VendorGroupReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\VendorReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\VendorTransactionsReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VendorTransactionsReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VendorTransactionsReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\VendorTransactionsReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\VendorTransactionsReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\VendorTransactionsReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\VendorTransactionsReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\VendorGroupReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VendorGroupReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VendorGroupReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\VendorGroupReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\VendorGroupReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\VendorGroupReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\VendorReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VendorReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VendorReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\VendorReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\VendorReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\VendorReportResx.zh-Hant.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

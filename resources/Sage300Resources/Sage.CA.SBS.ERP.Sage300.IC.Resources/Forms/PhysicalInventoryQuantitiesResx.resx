@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjUnitCost" xml:space="preserve">
+    <value>Adjustment Unit Cost</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="AdjustmentUnitCost" xml:space="preserve">
+    <value>Adjustment Unit Cost Per Costing Unit</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="CloseLt" xml:space="preserve">
+    <value>Close Lot</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="CloseSn" xml:space="preserve">
+    <value>Close Serial Number</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="DateCreated" xml:space="preserve">
+    <value>Date Created</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>I/C Physical Inventory Quantities</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="EstimatedUnitCost" xml:space="preserve">
+    <value>Estimated Unit Cost Per Costing Unit</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="EstUnitCost" xml:space="preserve">
+    <value>Estimated Unit Cost</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ForcePopupLt" xml:space="preserve">
+    <value>Force Pop-up Lot</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ForcePopupSn" xml:space="preserve">
+    <value>Force Pop-up Serial Number</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="FromAccountSetCode" xml:space="preserve">
+    <value>From Account Set Code</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="FromCode" xml:space="preserve">
+    <value>From Code</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="IC0770" xml:space="preserve">
+    <value>Inventory Worksheet</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="IC0775" xml:space="preserve">
+    <value>Worksheet Optional Fields</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="IC0780" xml:space="preserve">
+    <value>Inventory Worksheet Details</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="IC0790" xml:space="preserve">
+    <value>Inventory Worksheet Headers</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="IC0795" xml:space="preserve">
+    <value>Worksheet Detail Optional Fields</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="InsufficientQuantity" xml:space="preserve">
+    <value>Insufficient Quantity</value>
+    <comment>Used in grid for Status column</comment>
+  </data>
+  <data name="InterprocessCommID" xml:space="preserve">
+    <value>Inter-process Command ID</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="InventoryQtyDtlOptFlds" xml:space="preserve">
+    <value>I/C Inventory Quantity Detail Optional Fields</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="InventoryQtyHdrOptFlds" xml:space="preserve">
+    <value>I/C Inventory Quantity Header Optional Fields</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="ItemDoesNotExist" xml:space="preserve">
+    <value>Item Does Not Exist</value>
+    <comment>Used in grid for Status column</comment>
+  </data>
+  <data name="ItemNotActive" xml:space="preserve">
+    <value>Item Not Active</value>
+    <comment>Used in grid for Status column</comment>
+  </data>
+  <data name="ItemNotAllowedAtLocation" xml:space="preserve">
+    <value>Item Not Allowed at Location</value>
+    <comment>Used in grid for Status column</comment>
+  </data>
+  <data name="LotsCost" xml:space="preserve">
+    <value>Lots' Cost</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="LtSetID" xml:space="preserve">
+    <value>Lot Set ID</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="NonStockItem" xml:space="preserve">
+    <value>Non-stock Item</value>
+    <comment>Used in grid for Status column</comment>
+  </data>
+  <data name="NumberofSerials" xml:space="preserve">
+    <value>Number of Serials</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>On Hold</value>
+    <comment>Used in Status dropdown</comment>
+  </data>
+  <data name="PhysicalInventoryQuantity" xml:space="preserve">
+    <value>Physical Inventory Quantity</value>
+  </data>
+  <data name="PopupLt" xml:space="preserve">
+    <value>Pop-up Lot</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="PopupSn" xml:space="preserve">
+    <value>Pop-up Serial Number</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ProcessAction" xml:space="preserve">
+    <value>Process Action</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="QuantityOnHand" xml:space="preserve">
+    <value>Quantity On Hand</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="RemoveSL" xml:space="preserve">
+    <value>All the generated/allocated serials/lots will be removed. Do you want to continue?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SegmentDescription" xml:space="preserve">
+    <value>Segment Description</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="SerialsCost" xml:space="preserve">
+    <value>Serials' Cost</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="SortCode" xml:space="preserve">
+    <value>Sort Code</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="SortOrder" xml:space="preserve">
+    <value>Sort Order</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="SortOrderDescription" xml:space="preserve">
+    <value>Sort Order Description</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ToAccountSetCode" xml:space="preserve">
+    <value>To Account Set Code</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="ToCode" xml:space="preserve">
+    <value>To Code</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="WarningExport" xml:space="preserve">
+    <value>Two steps are required to export the data. After exporting the first set of data, the export window will be displayed a second time for exporting the second set of data. Please use separate export files for the two sets of data. Do you want to continue? </value>
+    <comment>Message</comment>
+  </data>
+  <data name="WarningImport" xml:space="preserve">
+    <value>Two steps are required to import the data. After importing the first set of data, the import window will be displayed a second time for importing the second set of data. There should be two separate import files. Please select the appropriate import file for each of the data sets. Do you want to continue? </value>
+    <comment>Message</comment>
+  </data>
+  <data name="WarningSLCOSTNOTMATCH" xml:space="preserve">
+    <value>Serial/Lot cost does not match with the cost variance.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="WarningSLQTYNOTMATCH" xml:space="preserve">
+    <value>Serial/Lot quantity does not match with the variance quantity.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="WorksheetComment" xml:space="preserve">
+    <value>Worksheet Comment</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+  <data name="WorksheetStatus" xml:space="preserve">
+    <value>Worksheet Status</value>
+    <comment>Used in Export/Import</comment>
+  </data>
+</root>

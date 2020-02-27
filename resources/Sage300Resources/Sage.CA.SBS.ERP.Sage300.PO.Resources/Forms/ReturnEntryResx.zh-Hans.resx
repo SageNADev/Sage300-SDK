@@ -1,0 +1,1728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CreateNew" xml:space="preserve">
+    <value>新建</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CurrencyDesc" xml:space="preserve">
+    <value>币种描述</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="DiscountedReceiptCost" xml:space="preserve">
+    <value>收款折扣</value>
+    <comment>Return - Table Column</comment>
+  </data>
+  <data name="DiscountedReturnCost" xml:space="preserve">
+    <value>已折扣退货成本</value>
+    <comment>Return - Table Column</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>采购订单退货分录</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="FiscalYearPeriod1" xml:space="preserve">
+    <value>财务年度/期间</value>
+    <comment>Return - Field</comment>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>历史…</value>
+    <comment>Button</comment>
+  </data>
+  <data name="LessReturnDiscount" xml:space="preserve">
+    <value>减退货折扣</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="OptionalFieldDesc" xml:space="preserve">
+    <value>可选字段描述</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="PostedDoPrint" xml:space="preserve">
+    <value>过帐已完成。退货编号{0}是否打印该退货？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostedNoPrint" xml:space="preserve">
+    <value>过帐已完成。退货：{0}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostReturn" xml:space="preserve">
+    <value>是否过帐这一退货？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="QtyRetGTRecv" xml:space="preserve">
+    <value>退货数量大于进货数量。系列化存货窗口将不会开启。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>汇率类型描述</value>
+    <comment>Rates - Field</comment>
+  </data>
+  <data name="ReceivedToDate" xml:space="preserve">
+    <value>累计进货</value>
+    <comment>Receipt - Table Column</comment>
+  </data>
+  <data name="ReplaceRetInfo" xml:space="preserve">
+    <value>是否用进货{0}中的信息代替输入的退货信息？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ReturnAll" xml:space="preserve">
+    <value>退回全部</value>
+    <comment>Button</comment>
+  </data>
+  <data name="ReturnComplete" xml:space="preserve">
+    <value>这一退货已完成。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReturnCost" xml:space="preserve">
+    <value>退回成本</value>
+    <comment>Return - Table Column</comment>
+  </data>
+  <data name="ReturnSubTotal" xml:space="preserve">
+    <value>退货小计</value>
+    <comment>Return - Field</comment>
+  </data>
+  <data name="ReturnTotal" xml:space="preserve">
+    <value>退货合计</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="ShipviaName" xml:space="preserve">
+    <value>发货经由名称</value>
+    <comment>Return - Field</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>值</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueDesc" xml:space="preserve">
+    <value>值描述</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>值已设</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="VendorAcctSetDesc" xml:space="preserve">
+    <value>供应商科目集合描述</value>
+    <comment>Return - Field</comment>
+  </data>
+  <data name="Autotaxcalculationonsave" xml:space="preserve">
+    <value>保存时自动进行税务计算</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToAddress1" xml:space="preserve">
+    <value>帐单至1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToAddress2" xml:space="preserve">
+    <value>帐单至2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToAddress3" xml:space="preserve">
+    <value>帐单至3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToAddress4" xml:space="preserve">
+    <value>帐单至4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToCity" xml:space="preserve">
+    <value>帐单至城市</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToContact" xml:space="preserve">
+    <value>帐单至联系人</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToContactEmail" xml:space="preserve">
+    <value>帐单至联系人电邮</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToContactFax" xml:space="preserve">
+    <value>汇款至联系人传真</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToContactPhone" xml:space="preserve">
+    <value>汇款至联系人电话</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToCountry" xml:space="preserve">
+    <value>帐单至国家</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToEmail" xml:space="preserve">
+    <value>帐单至电邮</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToFaxNumber" xml:space="preserve">
+    <value>帐单至传真</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToLocationDescription" xml:space="preserve">
+    <value>帐单至地点描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToPhoneNumber" xml:space="preserve">
+    <value>帐单至电话</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToStateProvince" xml:space="preserve">
+    <value>帐单至省/市/区</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="BillToZipPostalCode" xml:space="preserve">
+    <value>帐单至邮政编码</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="Command" xml:space="preserve">
+    <value>指令</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ConversionFunctionalAmount" xml:space="preserve">
+    <value>转换功能币种金额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ConversionSourceAmount" xml:space="preserve">
+    <value>转换来源币种金额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="DateCompleted" xml:space="preserve">
+    <value>完成日期</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="DayEndNumber" xml:space="preserve">
+    <value>日终处理编号</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="DerivedTaxReportingExchRate" xml:space="preserve">
+    <value>得出的税务报告汇率</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="DiscountAmountSum" xml:space="preserve">
+    <value>折扣金额总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="DiscountPercentage" xml:space="preserve">
+    <value>折扣百分比</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="DocumentLocked" xml:space="preserve">
+    <value>凭证已锁定</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ExchangeRateExists" xml:space="preserve">
+    <value>汇率存在</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ExcludedTaxAmount1" xml:space="preserve">
+    <value>未含税金额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ExcludedTaxAmount2" xml:space="preserve">
+    <value>未含税金额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ExcludedTaxAmount3" xml:space="preserve">
+    <value>未含税金额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ExcludedTaxAmount4" xml:space="preserve">
+    <value>未含税金额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ExcludedTaxAmount5" xml:space="preserve">
+    <value>未含税金额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ExtraneousLineCount" xml:space="preserve">
+    <value>额外行计数</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="HasDetails" xml:space="preserve">
+    <value>有明细</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="HasRetainage" xml:space="preserve">
+    <value>有保留款</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="IncludedTaxAmount1" xml:space="preserve">
+    <value>已含税金额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="IncludedTaxAmount2" xml:space="preserve">
+    <value>已含税金额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="IncludedTaxAmount3" xml:space="preserve">
+    <value>已含税金额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="IncludedTaxAmount4" xml:space="preserve">
+    <value>已含税金额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="IncludedTaxAmount5" xml:space="preserve">
+    <value>已含税金额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="IsCredited" xml:space="preserve">
+    <value>已贷计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="IsDocumentDeletable" xml:space="preserve">
+    <value>凭证是否可删除</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>作业相关</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="JobRelatedLines" xml:space="preserve">
+    <value>作业相关行</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="LabelsPrinted" xml:space="preserve">
+    <value>标签已打印</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="LastPostingDate" xml:space="preserve">
+    <value>上一过帐日期</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="Lines" xml:space="preserve">
+    <value>行</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="LinesComplete" xml:space="preserve">
+    <value>行完成</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="LinesTaxCalculationSees" xml:space="preserve">
+    <value>计算税费时见到的行</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="NetOfTaxSum" xml:space="preserve">
+    <value>税后净额总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="NetReturnCost" xml:space="preserve">
+    <value>净退货成本</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="NextDetailNumber" xml:space="preserve">
+    <value>下一明细编号</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="NextLineSequence" xml:space="preserve">
+    <value>下一行序列</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredecessorsExchangeRate" xml:space="preserve">
+    <value>前者兑换汇率</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredecessorsRateDate" xml:space="preserve">
+    <value>前者汇率日期</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredecessorsRateOperation" xml:space="preserve">
+    <value>前者汇率运算</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredecessorsRateOverridden" xml:space="preserve">
+    <value>前者汇率撤换</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredecessorsRateType" xml:space="preserve">
+    <value>前者汇率类型</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredecessorsRateTypeDesc" xml:space="preserve">
+    <value>前者汇率类型描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredTaxReportingExchRate" xml:space="preserve">
+    <value>前者税务报告汇率</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredTaxReportingRateDate" xml:space="preserve">
+    <value>前者税务报告汇率日期</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredTaxReportingRateOper" xml:space="preserve">
+    <value>前者税务报告汇率运算</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredTaxReportingRateOverrd" xml:space="preserve">
+    <value>前者税务报告汇率撤换</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredTaxReportingRateType" xml:space="preserve">
+    <value>前者税务报告汇率类型</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PredTaxRepRateTypeDesc" xml:space="preserve">
+    <value>前者税务报告汇率类型描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ProrationVersion" xml:space="preserve">
+    <value>分摊版本</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PurchaseOrderDate" xml:space="preserve">
+    <value>订购单日期</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PurchaseOrderSequenceKey" xml:space="preserve">
+    <value>采购订单序列键码</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RateMatchType" xml:space="preserve">
+    <value>汇率匹配类型</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RateOperation" xml:space="preserve">
+    <value>汇率运算</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RateOverridden" xml:space="preserve">
+    <value>汇率替换</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RateSpread" xml:space="preserve">
+    <value>汇率差额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ReceiptSequenceKey" xml:space="preserve">
+    <value>进货序列键码</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ReportRetainageTax" xml:space="preserve">
+    <value>报告保留款税金</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageBase" xml:space="preserve">
+    <value>保留款基数</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageExchangeRate" xml:space="preserve">
+    <value>保留款汇率</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAllocatedAmount1" xml:space="preserve">
+    <value>保留款已分配税额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAllocatedAmount2" xml:space="preserve">
+    <value>保留款已分配税额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAllocatedAmount3" xml:space="preserve">
+    <value>保留款已分配税额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAllocatedAmount4" xml:space="preserve">
+    <value>保留款已分配税额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAllocatedAmount5" xml:space="preserve">
+    <value>保留款已分配税额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAmount1" xml:space="preserve">
+    <value>保留款税务金额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAmount1Sum" xml:space="preserve">
+    <value>保留款税额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAmount2" xml:space="preserve">
+    <value>保留款税务金额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAmount2Sum" xml:space="preserve">
+    <value>保留款税额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAmount3" xml:space="preserve">
+    <value>保留款税务金额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAmount3Sum" xml:space="preserve">
+    <value>保留款税额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAmount4" xml:space="preserve">
+    <value>保留款税务金额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAmount4Sum" xml:space="preserve">
+    <value>保留款税额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAmount5" xml:space="preserve">
+    <value>保留款税务金额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxAmount5Sum" xml:space="preserve">
+    <value>保留款税额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxBase1" xml:space="preserve">
+    <value>保留款税基1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxBase1Sum" xml:space="preserve">
+    <value>保留款税基1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxBase2" xml:space="preserve">
+    <value>保留款税基2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxBase2Sum" xml:space="preserve">
+    <value>保留款税基2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxBase3" xml:space="preserve">
+    <value>保留款税基3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxBase3Sum" xml:space="preserve">
+    <value>保留款税基3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxBase4" xml:space="preserve">
+    <value>保留款税基4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxBase4Sum" xml:space="preserve">
+    <value>保留款税基4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxBase5" xml:space="preserve">
+    <value>保留款税基5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxBase5Sum" xml:space="preserve">
+    <value>保留款税基5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxExpenseAmount1" xml:space="preserve">
+    <value>保留款已计费税额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxExpenseAmount2" xml:space="preserve">
+    <value>保留款已计费税额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxExpenseAmount3" xml:space="preserve">
+    <value>保留款已计费税额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxExpenseAmount4" xml:space="preserve">
+    <value>保留款已计费税额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxExpenseAmount5" xml:space="preserve">
+    <value>保留款已计费税额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxRecoverableAmt1" xml:space="preserve">
+    <value>保留款可退回税额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxRecoverableAmt2" xml:space="preserve">
+    <value>保留款可退回税额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxRecoverableAmt3" xml:space="preserve">
+    <value>保留款可退回税额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxRecoverableAmt4" xml:space="preserve">
+    <value>保留款可退回税额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxRecoverableAmt5" xml:space="preserve">
+    <value>保留款可退回税额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RetainageTaxTotalAmount" xml:space="preserve">
+    <value>保留款税务合计金额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ReturnSequenceKey" xml:space="preserve">
+    <value>退货序列键码</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxAllocatedAmount1Sum" xml:space="preserve">
+    <value>保留款已分配税额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxAllocatedAmount2Sum" xml:space="preserve">
+    <value>保留款已分配税额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxAllocatedAmount3Sum" xml:space="preserve">
+    <value>保留款已分配税额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxAllocatedAmount4Sum" xml:space="preserve">
+    <value>保留款已分配税额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxAllocatedAmount5Sum" xml:space="preserve">
+    <value>保留款已分配税额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxExpenseAmount1Sum" xml:space="preserve">
+    <value>保留款已计费税额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxExpenseAmount2Sum" xml:space="preserve">
+    <value>保留款已计费税额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxExpenseAmount3Sum" xml:space="preserve">
+    <value>保留款已计费税额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxExpenseAmount4Sum" xml:space="preserve">
+    <value>保留款已计费税额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxExpenseAmount5Sum" xml:space="preserve">
+    <value>保留款已计费税额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxRecoverableAmt1Sum" xml:space="preserve">
+    <value>保留款可退回税额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxRecoverableAmt2Sum" xml:space="preserve">
+    <value>保留款可退回税额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxRecoverableAmt3Sum" xml:space="preserve">
+    <value>保留款可退回税额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxRecoverableAmt4Sum" xml:space="preserve">
+    <value>保留款可退回税额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="RtgTaxRecoverableAmt5Sum" xml:space="preserve">
+    <value>保留款可退回税额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToAddress1" xml:space="preserve">
+    <value>发货至地址1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToAddress2" xml:space="preserve">
+    <value>发货至地址2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToAddress3" xml:space="preserve">
+    <value>发货至地址3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToAddress4" xml:space="preserve">
+    <value>发货至地址4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToCity" xml:space="preserve">
+    <value>发运至城市</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToContact" xml:space="preserve">
+    <value>发运至联系人</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToContactEmail" xml:space="preserve">
+    <value>发运至联系人电邮</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToContactFax" xml:space="preserve">
+    <value>发运至联系人传真</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToContactPhone" xml:space="preserve">
+    <value>发运至联系人电话</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToCountry" xml:space="preserve">
+    <value>发运至国家</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToEmail" xml:space="preserve">
+    <value>发运至电邮</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToFaxNumber" xml:space="preserve">
+    <value>发运至传真</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToLocationDescription" xml:space="preserve">
+    <value>发运至地点描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToPhoneNumber" xml:space="preserve">
+    <value>发运至电话</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToStateProvince" xml:space="preserve">
+    <value>发运至省/市/区</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="ShipToZipPostalCode" xml:space="preserve">
+    <value>发运至邮政编码</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAllocatedAmount1" xml:space="preserve">
+    <value>已分配税金额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAllocatedAmount1Sum" xml:space="preserve">
+    <value>已分配税额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAllocatedAmount2" xml:space="preserve">
+    <value>已分配税金额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAllocatedAmount2Sum" xml:space="preserve">
+    <value>已分配税额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAllocatedAmount3" xml:space="preserve">
+    <value>已分配税金额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAllocatedAmount3Sum" xml:space="preserve">
+    <value>已分配税额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAllocatedAmount4" xml:space="preserve">
+    <value>已分配税金额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAllocatedAmount4Sum" xml:space="preserve">
+    <value>已分配税额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAllocatedAmount5" xml:space="preserve">
+    <value>已分配税金额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAllocatedAmount5Sum" xml:space="preserve">
+    <value>已分配税额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>税额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmount1Sum" xml:space="preserve">
+    <value>税额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>税额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmount2Sum" xml:space="preserve">
+    <value>税额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>税额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmount3Sum" xml:space="preserve">
+    <value>税额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>税额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmount4Sum" xml:space="preserve">
+    <value>税额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>税额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmount5Sum" xml:space="preserve">
+    <value>税额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmountPlusRtgTaxAmt1" xml:space="preserve">
+    <value>税务金额加保留款税额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmountPlusRtgTaxAmt2" xml:space="preserve">
+    <value>税务金额加保留款税额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmountPlusRtgTaxAmt3" xml:space="preserve">
+    <value>税务金额加保留款税额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmountPlusRtgTaxAmt4" xml:space="preserve">
+    <value>税务金额加保留款税额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAmountPlusRtgTaxAmt5" xml:space="preserve">
+    <value>税务金额加保留款税额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>税务机构1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAuthority1Description" xml:space="preserve">
+    <value>税务机构1描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>税务机构2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAuthority2Description" xml:space="preserve">
+    <value>税务机构2描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>税务机构3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAuthority3Description" xml:space="preserve">
+    <value>税务机构3描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>税务机构4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAuthority4Description" xml:space="preserve">
+    <value>税务机构4描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>税务机构5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxAuthority5Description" xml:space="preserve">
+    <value>税务机构5描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxBase1" xml:space="preserve">
+    <value>税基1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxBase1Sum" xml:space="preserve">
+    <value>税基1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxBase2" xml:space="preserve">
+    <value>税基2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxBase2Sum" xml:space="preserve">
+    <value>税基2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxBase3" xml:space="preserve">
+    <value>税基3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxBase3Sum" xml:space="preserve">
+    <value>税基3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxBase4" xml:space="preserve">
+    <value>税基4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxBase4Sum" xml:space="preserve">
+    <value>税基4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxBase5" xml:space="preserve">
+    <value>税基5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxBase5Sum" xml:space="preserve">
+    <value>税基5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxcalculationIspending" xml:space="preserve">
+    <value>税务计算待处理</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>税级1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxClass1Description" xml:space="preserve">
+    <value>税级1描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>税级2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxClass2Description" xml:space="preserve">
+    <value>税级2描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>税级3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxClass3Description" xml:space="preserve">
+    <value>税级3描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>税级4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxClass4Description" xml:space="preserve">
+    <value>税级4描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>税级5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxClass5Description" xml:space="preserve">
+    <value>税级5描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExcluded1Sum" xml:space="preserve">
+    <value>未含税1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExcluded2Sum" xml:space="preserve">
+    <value>未含税2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExcluded3Sum" xml:space="preserve">
+    <value>未含税3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExcluded4Sum" xml:space="preserve">
+    <value>未含税4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExcluded5Sum" xml:space="preserve">
+    <value>未含税5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExpenseAmount1" xml:space="preserve">
+    <value>税务计费金额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExpenseAmount1Sum" xml:space="preserve">
+    <value>已计费税额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExpenseAmount2" xml:space="preserve">
+    <value>税务计费金额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExpenseAmount2Sum" xml:space="preserve">
+    <value>已计费税额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExpenseAmount3" xml:space="preserve">
+    <value>税务计费金额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExpenseAmount3Sum" xml:space="preserve">
+    <value>已计费税额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExpenseAmount4" xml:space="preserve">
+    <value>税务计费金额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExpenseAmount4Sum" xml:space="preserve">
+    <value>已计费税额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExpenseAmount5" xml:space="preserve">
+    <value>税务计费金额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxExpenseAmount5Sum" xml:space="preserve">
+    <value>已计费税额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>税组描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxIncluded1Sum" xml:space="preserve">
+    <value>已含税1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxIncluded2Sum" xml:space="preserve">
+    <value>已含税2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxIncluded3Sum" xml:space="preserve">
+    <value>已含税3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxIncluded4Sum" xml:space="preserve">
+    <value>已含税4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxIncluded5Sum" xml:space="preserve">
+    <value>已含税5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRecoverableAmount1" xml:space="preserve">
+    <value>可退回税额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRecoverableAmount1Sum" xml:space="preserve">
+    <value>可退回税额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRecoverableAmount2" xml:space="preserve">
+    <value>可退回税额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRecoverableAmount2Sum" xml:space="preserve">
+    <value>可退回税额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRecoverableAmount3" xml:space="preserve">
+    <value>可退回税额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRecoverableAmount3Sum" xml:space="preserve">
+    <value>可退回税额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRecoverableAmount4" xml:space="preserve">
+    <value>可退回税额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRecoverableAmount4Sum" xml:space="preserve">
+    <value>可退回税额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRecoverableAmount5" xml:space="preserve">
+    <value>可退回税额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRecoverableAmount5Sum" xml:space="preserve">
+    <value>可退回税额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepAllocatedAmount1Sum" xml:space="preserve">
+    <value>税务报告已分配金额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepAllocatedAmount2Sum" xml:space="preserve">
+    <value>税务报告已分配金额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepAllocatedAmount3Sum" xml:space="preserve">
+    <value>税务报告已分配金额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepAllocatedAmount4Sum" xml:space="preserve">
+    <value>税务报告已分配金额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepAllocatedAmount5Sum" xml:space="preserve">
+    <value>税务报告已分配金额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepExpenseAmount1Sum" xml:space="preserve">
+    <value>税务报告费用金额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepExpenseAmount2Sum" xml:space="preserve">
+    <value>税务报告费用金额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepExpenseAmount3Sum" xml:space="preserve">
+    <value>税务报告费用金额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepExpenseAmount4Sum" xml:space="preserve">
+    <value>税务报告费用金额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepExpenseAmount5Sum" xml:space="preserve">
+    <value>税务报告费用金额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAllocatedAmount" xml:space="preserve">
+    <value>税务报告已分配金额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAllocatedAmount1" xml:space="preserve">
+    <value>税务报告已分配金额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAllocatedAmount2" xml:space="preserve">
+    <value>税务报告已分配金额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAllocatedAmount3" xml:space="preserve">
+    <value>税务报告已分配金额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAllocatedAmount4" xml:space="preserve">
+    <value>税务报告已分配金额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAllocatedAmount5" xml:space="preserve">
+    <value>税务报告已分配金额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAmount1" xml:space="preserve">
+    <value>税务报告金额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAmount1Sum" xml:space="preserve">
+    <value>税务报告金额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAmount2" xml:space="preserve">
+    <value>税务报告金额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAmount2Sum" xml:space="preserve">
+    <value>税务报告金额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAmount3" xml:space="preserve">
+    <value>税务报告金额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAmount3Sum" xml:space="preserve">
+    <value>税务报告金额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAmount4" xml:space="preserve">
+    <value>税务报告金额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAmount4Sum" xml:space="preserve">
+    <value>税务报告金额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAmount5" xml:space="preserve">
+    <value>税务报告金额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingAmount5Sum" xml:space="preserve">
+    <value>税务报告金额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingCurrencyDesc" xml:space="preserve">
+    <value>税务报告币种描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingDecimalPlaces" xml:space="preserve">
+    <value>税务报告小数位数</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExchangeRate" xml:space="preserve">
+    <value>税务报告汇率</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExchRateExists" xml:space="preserve">
+    <value>税务报告汇率存在</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExcluded1Sum" xml:space="preserve">
+    <value>税务报告未含税1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExcluded2Sum" xml:space="preserve">
+    <value>税务报告未含税2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExcluded3Sum" xml:space="preserve">
+    <value>税务报告未含税3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExcluded4Sum" xml:space="preserve">
+    <value>税务报告未含税4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExcluded5Sum" xml:space="preserve">
+    <value>税务报告未含税5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExcludedAmount" xml:space="preserve">
+    <value>税务报告未含税金额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExcludedAmount1" xml:space="preserve">
+    <value>税务报告未含税金额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExcludedAmount2" xml:space="preserve">
+    <value>税务报告未含税金额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExcludedAmount3" xml:space="preserve">
+    <value>税务报告未含税金额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExcludedAmount4" xml:space="preserve">
+    <value>税务报告未含税金额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExcludedAmount5" xml:space="preserve">
+    <value>税务报告未含税金额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExpenseAmount1" xml:space="preserve">
+    <value>税务报告计费金额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExpenseAmount2" xml:space="preserve">
+    <value>税务报告计费金额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExpenseAmount3" xml:space="preserve">
+    <value>税务报告计费金额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExpenseAmount4" xml:space="preserve">
+    <value>税务报告计费金额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExpenseAmount5" xml:space="preserve">
+    <value>税务报告计费金额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingExpensedAmount" xml:space="preserve">
+    <value>税务报告已计费金额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingIncluded1Sum" xml:space="preserve">
+    <value>税务报告已含税1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingIncluded2Sum" xml:space="preserve">
+    <value>税务报告已含税2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingIncluded3Sum" xml:space="preserve">
+    <value>税务报告已含税3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingIncluded4Sum" xml:space="preserve">
+    <value>税务报告已含税4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingIncluded5Sum" xml:space="preserve">
+    <value>税务报告已含税5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingIncludedAmount" xml:space="preserve">
+    <value>税务报告已含税金额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingIncludedAmount1" xml:space="preserve">
+    <value>税务报告已含税金额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingIncludedAmount2" xml:space="preserve">
+    <value>税务报告已含税金额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingIncludedAmount3" xml:space="preserve">
+    <value>税务报告已含税金额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingIncludedAmount4" xml:space="preserve">
+    <value>税务报告已含税金额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingIncludedAmount5" xml:space="preserve">
+    <value>税务报告已含税金额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRateDate" xml:space="preserve">
+    <value>税务报告汇率日期</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRateMatchType" xml:space="preserve">
+    <value>税务报告汇率匹配类型</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRateOperation" xml:space="preserve">
+    <value>税务报告汇率运算</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRateOverridden" xml:space="preserve">
+    <value>税务报告汇率撤换</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRateSpread" xml:space="preserve">
+    <value>税务报告汇率误差</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRateType" xml:space="preserve">
+    <value>税务报告汇率类型</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRateTypeDesc" xml:space="preserve">
+    <value>税务报告汇率类型描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRecoverableAmount" xml:space="preserve">
+    <value>税务报告可退回金额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRecoverableAmt1" xml:space="preserve">
+    <value>税务报告可退金额1</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRecoverableAmt2" xml:space="preserve">
+    <value>税务报告可退金额2</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRecoverableAmt3" xml:space="preserve">
+    <value>税务报告可退金额3</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRecoverableAmt4" xml:space="preserve">
+    <value>税务报告可退金额4</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingRecoverableAmt5" xml:space="preserve">
+    <value>税务报告可退金额5</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxReportingTotalAmount" xml:space="preserve">
+    <value>税务报告合计金额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepRecoverableAmt1Sum" xml:space="preserve">
+    <value>税务报告可退回金额1总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepRecoverableAmt2Sum" xml:space="preserve">
+    <value>税务报告可退回金额2总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepRecoverableAmt3Sum" xml:space="preserve">
+    <value>税务报告可退回金额3总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepRecoverableAmt4Sum" xml:space="preserve">
+    <value>税务报告可退回金额4总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TaxRepRecoverableAmt5Sum" xml:space="preserve">
+    <value>税务报告可退回金额5总计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TotalTaxAllocatedAmount" xml:space="preserve">
+    <value>合计已分配税额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TotalTaxExpensed" xml:space="preserve">
+    <value>合计已计费税金</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TotalTaxRecoverable" xml:space="preserve">
+    <value>合计可退税</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TotalUnbalancedAllocatedTax" xml:space="preserve">
+    <value>合计不平衡已分配税</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="TotalUnbalancedTax" xml:space="preserve">
+    <value>合计平衡税</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="UnbalancedManualProrationAmou" xml:space="preserve">
+    <value>不平衡的手动摊配金额</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="UnretainedTotal" xml:space="preserve">
+    <value>未保留合计</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="VendorExists" xml:space="preserve">
+    <value>供应商存在</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="WarnOnRetainageTaxShift" xml:space="preserve">
+    <value>保留款税务转换时警告</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="PO0729" xml:space="preserve">
+    <value>退货备注</value>
+    <comment>Export Header</comment>
+  </data>
+  <data name="PO0731" xml:space="preserve">
+    <value>退货</value>
+    <comment>Export Header</comment>
+  </data>
+  <data name="PO0735" xml:space="preserve">
+    <value>退货行</value>
+    <comment>Export Header</comment>
+  </data>
+  <data name="PO0738" xml:space="preserve">
+    <value>退货可选字段</value>
+    <comment>Export Header</comment>
+  </data>
+  <data name="PO0739" xml:space="preserve">
+    <value>退货明细可选字段</value>
+    <comment>Export Header</comment>
+  </data>
+  <data name="AsPerTaxAuthority" xml:space="preserve">
+    <value>依照税务机构</value>
+    <comment>Report Retainage Tax dropdown</comment>
+  </data>
+  <data name="AtTimeOfOriginalDocument" xml:space="preserve">
+    <value>于原始凭证时</value>
+    <comment>Report Retainage Tax dropdown</comment>
+  </data>
+  <data name="Num1" xml:space="preserve">
+    <value>1</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="Num10" xml:space="preserve">
+    <value>10</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="Num11" xml:space="preserve">
+    <value>11</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="Num12" xml:space="preserve">
+    <value>12</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="Num2" xml:space="preserve">
+    <value>2</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="Num3" xml:space="preserve">
+    <value>3</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="Num30A" xml:space="preserve">
+    <value>3.0A</value>
+    <comment>Proration Version dropdown</comment>
+  </data>
+  <data name="Num4" xml:space="preserve">
+    <value>4</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="Num5" xml:space="preserve">
+    <value>5</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="Num53B" xml:space="preserve">
+    <value>5.3B</value>
+    <comment>Proration Version dropdown</comment>
+  </data>
+  <data name="Num6" xml:space="preserve">
+    <value>6</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="Num7" xml:space="preserve">
+    <value>7</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="Num8" xml:space="preserve">
+    <value>8</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="Num9" xml:space="preserve">
+    <value>9</value>
+    <comment>Fiscal Period num value</comment>
+  </data>
+  <data name="TotalAfterTaxes" xml:space="preserve">
+    <value>税后合计</value>
+    <comment>Retainage Base dropdown</comment>
+  </data>
+  <data name="TotalBeforeTaxes" xml:space="preserve">
+    <value>税前合计</value>
+    <comment>Retainage Base dropdown</comment>
+  </data>
+  <data name="UseCurrentExchangeRate" xml:space="preserve">
+    <value>使用当前汇率</value>
+    <comment>Retainage Exchange Rate dropdown</comment>
+  </data>
+  <data name="UseOriginalDocumentExchangeRate" xml:space="preserve">
+    <value>使用原始凭证汇率</value>
+    <comment>Retainage Exchange Rate dropdown</comment>
+  </data>
+  <data name="ReturnDescription" xml:space="preserve">
+    <value>退回描述</value>
+    <comment>Returns Finder Column</comment>
+  </data>
+  <data name="AllocateFromLot" xml:space="preserve">
+    <value>分配从批别</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="AllocateFromSerial" xml:space="preserve">
+    <value>分配从系列</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="BillingRateConversionFactor" xml:space="preserve">
+    <value>帐单汇率转换系数</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="CommentIdentifier" xml:space="preserve">
+    <value>备注标识符</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="DefaultExtendedWeight" xml:space="preserve">
+    <value>默认总重量</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="DefaultUnitWeight" xml:space="preserve">
+    <value>默认单位重量</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="DetailNumber" xml:space="preserve">
+    <value>明细编号</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="ItemSerializedLotted" xml:space="preserve">
+    <value>货品系列化/批别化？</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="LineType" xml:space="preserve">
+    <value>行类型</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="LotQuantity" xml:space="preserve">
+    <value>批别数量</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="NumberOfLotsToGenerate" xml:space="preserve">
+    <value>要生成的批别数目</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="QuantityperLot" xml:space="preserve">
+    <value>数量每批别</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="ReturnCommentSequence" xml:space="preserve">
+    <value>退货备注序列</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="ReturnLineSequence" xml:space="preserve">
+    <value>退货行序列</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="SerialLotQuantityToProcess" xml:space="preserve">
+    <value>要处理的系列/批别数量</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="SerialLotWindowHandle" xml:space="preserve">
+    <value>系列/批别窗口句柄</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="SerialQuantity" xml:space="preserve">
+    <value>系列数量</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="TaxIncludable1" xml:space="preserve">
+    <value>可含税1</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="TaxIncludable2" xml:space="preserve">
+    <value>可含税2</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="TaxIncludable3" xml:space="preserve">
+    <value>可含税3</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="TaxIncludable4" xml:space="preserve">
+    <value>可含税4</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="TaxIncludable5" xml:space="preserve">
+    <value>可含税5</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="TaxRate1" xml:space="preserve">
+    <value>税率1</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="TaxRate2" xml:space="preserve">
+    <value>税率2</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="TaxRate3" xml:space="preserve">
+    <value>税率3</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="TaxRate4" xml:space="preserve">
+    <value>税率4</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="TaxRate5" xml:space="preserve">
+    <value>税率5</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>键入的值字段索引</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="UnitBillingAmount" xml:space="preserve">
+    <value>单位计费金额</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="UnitCostIsManual" xml:space="preserve">
+    <value>单位成本为手工</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="WeightConversion" xml:space="preserve">
+    <value>重量转换</value>
+    <comment>Return Entry Export Property Label</comment>
+  </data>
+  <data name="NonStkClrAcct" xml:space="preserve">
+    <value>非库存清算科目</value>
+    <comment>Return Line  Finder Header</comment>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>货品</value>
+    <comment>Warning message</comment>
+  </data>
+</root>

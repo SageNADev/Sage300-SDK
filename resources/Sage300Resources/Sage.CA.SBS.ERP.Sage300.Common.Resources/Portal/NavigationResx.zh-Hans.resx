@@ -1,0 +1,1602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdministrativeServices" xml:space="preserve">
+    <value>行政管理服务</value>
+  </data>
+  <data name="AP_Common_RecurringPayables" xml:space="preserve">
+    <value>经常性应付</value>
+  </data>
+  <data name="AP_PeriodicProcessing" xml:space="preserve">
+    <value>应付帐款定期处理</value>
+  </data>
+  <data name="AP_PeriodicProcessing_T5028CPRSElectronicFiling" xml:space="preserve">
+    <value>T5018 (CPRS)电子申报</value>
+  </data>
+  <data name="AP_Processing_CreateRecPayableBatch" xml:space="preserve">
+    <value>创建经常性应付批次</value>
+  </data>
+  <data name="AP_Setup" xml:space="preserve">
+    <value>应付帐款设置</value>
+  </data>
+  <data name="AP_Setup_1099CPRSCodes" xml:space="preserve">
+    <value>1099/CPRS代码</value>
+  </data>
+  <data name="AP_Setup_DistributionSets" xml:space="preserve">
+    <value>分布集合</value>
+  </data>
+  <data name="AP_Setup_PaymentSelectionCodes" xml:space="preserve">
+    <value>付款选择代码</value>
+  </data>
+  <data name="AP_TransactionReports" xml:space="preserve">
+    <value>应付帐款交易报表</value>
+  </data>
+  <data name="AP_TransactionReports_VendorTransactions" xml:space="preserve">
+    <value>供应商交易</value>
+  </data>
+  <data name="AP_Transactions" xml:space="preserve">
+    <value>应付帐款交易</value>
+  </data>
+  <data name="AP_Transactions_ControlPayments" xml:space="preserve">
+    <value>控制付款</value>
+  </data>
+  <data name="AP_Transactions_CreatePaymentBatch" xml:space="preserve">
+    <value>创建付款批次</value>
+  </data>
+  <data name="AP_Transactions_PaymentBatchList" xml:space="preserve">
+    <value>付款批次清单</value>
+  </data>
+  <data name="AP_Transactions_PaymentEntry" xml:space="preserve">
+    <value>付款分录</value>
+  </data>
+  <data name="AP_Transactions_PaymentInquiry" xml:space="preserve">
+    <value>付款查询</value>
+  </data>
+  <data name="AP_Transactions_PrintCheques" xml:space="preserve">
+    <value>打印支票</value>
+  </data>
+  <data name="AP_TransReports_AgedCashRequirements" xml:space="preserve">
+    <value>已帐析现金需求</value>
+  </data>
+  <data name="AP_TransReports_AgedPayables" xml:space="preserve">
+    <value>已帐析应付款</value>
+  </data>
+  <data name="AP_TransReports_CheckRegister" xml:space="preserve">
+    <value>支票登记簿</value>
+  </data>
+  <data name="AP_VendorGroups" xml:space="preserve">
+    <value>供应商群组</value>
+  </data>
+  <data name="AP_VendorReports" xml:space="preserve">
+    <value>应付帐款供应商报表</value>
+  </data>
+  <data name="AP_VendorReports_LettersLabels" xml:space="preserve">
+    <value>信函/标签</value>
+  </data>
+  <data name="AP_VendorReports_Print10991096Form" xml:space="preserve">
+    <value>打印1099/1096表格</value>
+  </data>
+  <data name="AP_VendorReports_PrintT5018CPRSForm" xml:space="preserve">
+    <value>打印T5018 (CPRS)表格</value>
+  </data>
+  <data name="AP_Vendors" xml:space="preserve">
+    <value>应付帐款供应商</value>
+  </data>
+  <data name="AP_Vendors_1099CPRSInquiry" xml:space="preserve">
+    <value>1099/CPRS查询</value>
+  </data>
+  <data name="AP_Vendors_1099ElectronicFiling" xml:space="preserve">
+    <value>1099电子申报</value>
+  </data>
+  <data name="AP_Vendors_VendorActivity" xml:space="preserve">
+    <value>供应商活动</value>
+  </data>
+  <data name="AP_Vendors_Vendors" xml:space="preserve">
+    <value>供应商</value>
+  </data>
+  <data name="AR_CustomerReports" xml:space="preserve">
+    <value>应收帐款客户报表</value>
+  </data>
+  <data name="AR_Customers" xml:space="preserve">
+    <value>应收帐款客户</value>
+  </data>
+  <data name="AR_CustomersReports_Labels" xml:space="preserve">
+    <value>标签</value>
+  </data>
+  <data name="AR_CustomersReports_RecurringCharges" xml:space="preserve">
+    <value>经常性收费</value>
+  </data>
+  <data name="AR_CustomersReports_ShipToLocations" xml:space="preserve">
+    <value>发运至地点</value>
+  </data>
+  <data name="AR_CustomersReports_StatementsLettersLabels" xml:space="preserve">
+    <value>对帐单/信函/标签</value>
+  </data>
+  <data name="AR_Customers_CustomerGroups" xml:space="preserve">
+    <value>客户群组</value>
+  </data>
+  <data name="AR_Customers_Customers" xml:space="preserve">
+    <value>客户</value>
+  </data>
+  <data name="AR_NationalAccounts" xml:space="preserve">
+    <value>统一帐户</value>
+  </data>
+  <data name="AR_PeriodicProcessing" xml:space="preserve">
+    <value>应收帐款定期处理</value>
+  </data>
+  <data name="AR_Processing_CreateInterestBatch" xml:space="preserve">
+    <value>创建利息批次</value>
+  </data>
+  <data name="AR_Setup" xml:space="preserve">
+    <value>应收帐款设置</value>
+  </data>
+  <data name="AR_Setup_BillingCycles" xml:space="preserve">
+    <value>帐单周期</value>
+  </data>
+  <data name="AR_Setup_CommentTypes" xml:space="preserve">
+    <value>备注类型</value>
+  </data>
+  <data name="AR_Setup_DunningMessages" xml:space="preserve">
+    <value>催款讯息</value>
+  </data>
+  <data name="AR_Setup_InterestProfiles" xml:space="preserve">
+    <value>利息概览</value>
+  </data>
+  <data name="AR_Setup_Salespersons" xml:space="preserve">
+    <value>业务员</value>
+  </data>
+  <data name="AR_TransactionReports" xml:space="preserve">
+    <value>应收帐款交易报表</value>
+  </data>
+  <data name="AR_TransactionReports_ItemSalesHistory" xml:space="preserve">
+    <value>货品销售历史</value>
+  </data>
+  <data name="AR_Transactions" xml:space="preserve">
+    <value>应收帐款交易</value>
+  </data>
+  <data name="AR_Transactions_ReceiptBatchList" xml:space="preserve">
+    <value>收款批次清单</value>
+  </data>
+  <data name="AR_TransReports_AgedRetainage" xml:space="preserve">
+    <value>已帐析保留款</value>
+  </data>
+  <data name="AR_TransReports_AgedTrialBalance" xml:space="preserve">
+    <value>已帐析试算表</value>
+  </data>
+  <data name="AR_TransReports_CustomerTransactions" xml:space="preserve">
+    <value>客户交易</value>
+  </data>
+  <data name="AS_DataIntegrity" xml:space="preserve">
+    <value>数据一致性</value>
+  </data>
+  <data name="AS_RestartMaintenance" xml:space="preserve">
+    <value>重启维护</value>
+  </data>
+  <data name="AS_SecurityGroups" xml:space="preserve">
+    <value>安全群组</value>
+  </data>
+  <data name="AS_UserAuthorizations" xml:space="preserve">
+    <value>用户权限</value>
+  </data>
+  <data name="Bank_PeriodicProcessing" xml:space="preserve">
+    <value>银行定期处理</value>
+  </data>
+  <data name="Bank_PeriodicProcessing_ClearHistory" xml:space="preserve">
+    <value>清除历史</value>
+  </data>
+  <data name="Bank_Setup" xml:space="preserve">
+    <value>银行设置</value>
+  </data>
+  <data name="Bank_Transactions" xml:space="preserve">
+    <value>银行交易</value>
+  </data>
+  <data name="Bank_TransReports" xml:space="preserve">
+    <value>银行交易报表</value>
+  </data>
+  <data name="Bank_TransReports_BankEntriesPostingJournal" xml:space="preserve">
+    <value>银行分录过帐日志</value>
+  </data>
+  <data name="Bank_TransReports_BankReconciliation" xml:space="preserve">
+    <value>银行调节</value>
+  </data>
+  <data name="Bank_TransReports_DepositRegister" xml:space="preserve">
+    <value>存款登记簿</value>
+  </data>
+  <data name="Bank_TransReports_DepositStatus" xml:space="preserve">
+    <value>存款状态</value>
+  </data>
+  <data name="Bank_TransReports_PaymentRegister" xml:space="preserve">
+    <value>支票/付款登记簿</value>
+  </data>
+  <data name="Bank_TransReports_ReconciliationPostingJournal" xml:space="preserve">
+    <value>调节过帐日志</value>
+  </data>
+  <data name="Bank_TransReports_ReconciliationStatus" xml:space="preserve">
+    <value>调节状态</value>
+  </data>
+  <data name="Bank_TransReports_TransferPostingJournal" xml:space="preserve">
+    <value>转帐过帐日志</value>
+  </data>
+  <data name="Bank_TransReports_WithdrawStatus" xml:space="preserve">
+    <value>提款状态</value>
+  </data>
+  <data name="Bank_Trans_BankEntry" xml:space="preserve">
+    <value>银行分录</value>
+  </data>
+  <data name="Bank_Trans_ImportOFXStatements" xml:space="preserve">
+    <value>导入OFX对帐单</value>
+  </data>
+  <data name="Bank_Trans_PostEntries" xml:space="preserve">
+    <value>过帐分录</value>
+  </data>
+  <data name="Bank_Trans_PostReconciliation" xml:space="preserve">
+    <value>过帐调节</value>
+  </data>
+  <data name="Bank_Trans_ReconcileOFXStatement" xml:space="preserve">
+    <value>调节OFX对帐单</value>
+  </data>
+  <data name="Bank_Trans_ReconcileStatements" xml:space="preserve">
+    <value>调节对帐单</value>
+  </data>
+  <data name="Bank_Trans_ReverseTrans" xml:space="preserve">
+    <value>回转交易</value>
+  </data>
+  <data name="Bank_Trans_Transfer" xml:space="preserve">
+    <value>银行转帐</value>
+  </data>
+  <data name="Bank_Trans_TransHistoryInquiry" xml:space="preserve">
+    <value>交易历史查询</value>
+  </data>
+  <data name="CommonServices" xml:space="preserve">
+    <value>公共服务</value>
+  </data>
+  <data name="Common_BatchListing" xml:space="preserve">
+    <value>批次列表</value>
+  </data>
+  <data name="Common_CreateGLBatch" xml:space="preserve">
+    <value>创建总帐批次</value>
+  </data>
+  <data name="Common_Inquiry" xml:space="preserve">
+    <value>查询</value>
+  </data>
+  <data name="Common_Invoices" xml:space="preserve">
+    <value>发票</value>
+  </data>
+  <data name="Common_OptionalFields" xml:space="preserve">
+    <value>可选字段</value>
+  </data>
+  <data name="Common_Receipts" xml:space="preserve">
+    <value>收款</value>
+  </data>
+  <data name="Common_Report_TransactionListing" xml:space="preserve">
+    <value>交易列表</value>
+  </data>
+  <data name="Common_Setup_AccountSets" xml:space="preserve">
+    <value>科目集合</value>
+  </data>
+  <data name="Common_Setup_DistributionCodes" xml:space="preserve">
+    <value>分布代码</value>
+  </data>
+  <data name="Common_Setup_EmailMessages" xml:space="preserve">
+    <value>电邮讯息</value>
+  </data>
+  <data name="Common_Setup_GLIntegration" xml:space="preserve">
+    <value>总帐整合</value>
+  </data>
+  <data name="Common_Setup_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="Common_Setup_PaymentCodes" xml:space="preserve">
+    <value>付款代码</value>
+  </data>
+  <data name="Common_Setup_SegmentCodes" xml:space="preserve">
+    <value>节段代码</value>
+  </data>
+  <data name="Common_Setup_Terms" xml:space="preserve">
+    <value>条款</value>
+  </data>
+  <data name="Common_TransactionReports_PostingErrors" xml:space="preserve">
+    <value>过帐错误</value>
+  </data>
+  <data name="Common_Transactions_InvoiceBatchList" xml:space="preserve">
+    <value>发票批次清单</value>
+  </data>
+  <data name="Common_Transactions_InvoiceEntry" xml:space="preserve">
+    <value>发票分录</value>
+  </data>
+  <data name="Common_Transactions_PostBatches" xml:space="preserve">
+    <value>过帐批次</value>
+  </data>
+  <data name="Common_Transactions_ReceiptEntry" xml:space="preserve">
+    <value>收款分录</value>
+  </data>
+  <data name="Common_YearEnd" xml:space="preserve">
+    <value>年末</value>
+  </data>
+  <data name="CS_CompanyProfile" xml:space="preserve">
+    <value>公司概览</value>
+  </data>
+  <data name="CS_FiscalCalendar" xml:space="preserve">
+    <value>财务日历</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>币种</value>
+  </data>
+  <data name="CurrencyCodes" xml:space="preserve">
+    <value>币种代码</value>
+  </data>
+  <data name="Currency_Rates" xml:space="preserve">
+    <value>币种汇率</value>
+  </data>
+  <data name="Currency_RateTypes" xml:space="preserve">
+    <value>币种汇率类型</value>
+  </data>
+  <data name="GL_Accounts" xml:space="preserve">
+    <value>总帐科目</value>
+  </data>
+  <data name="GL_Accounts_Accounts" xml:space="preserve">
+    <value>科目</value>
+  </data>
+  <data name="GL_Accounts_ChartOfAccounts" xml:space="preserve">
+    <value>科目表</value>
+  </data>
+  <data name="GL_Common_RecurringEntries" xml:space="preserve">
+    <value>经常性分录</value>
+  </data>
+  <data name="GL_Common_SourceCodes" xml:space="preserve">
+    <value>来源代码</value>
+  </data>
+  <data name="GL_PeriodicProcessing" xml:space="preserve">
+    <value>总帐定期处理</value>
+  </data>
+  <data name="GL_PeriodicProcessing_PeriodEndMaintenance" xml:space="preserve">
+    <value>期末维护</value>
+  </data>
+  <data name="GL_Processing_CreateNewYear" xml:space="preserve">
+    <value>创建新年度</value>
+  </data>
+  <data name="GL_Processing_CreateRecEntBatch" xml:space="preserve">
+    <value>创建经常性分录批次</value>
+  </data>
+  <data name="GL_Reports" xml:space="preserve">
+    <value>总帐报表</value>
+  </data>
+  <data name="GL_Reports_TransactionalDetailsOptionalFields" xml:space="preserve">
+    <value>交易明细可选字段</value>
+  </data>
+  <data name="GL_Reports_TrialBalance" xml:space="preserve">
+    <value>试算表</value>
+  </data>
+  <data name="GL_Setup" xml:space="preserve">
+    <value>总帐设置</value>
+  </data>
+  <data name="GL_Setup_AccountGroups" xml:space="preserve">
+    <value>科目群组</value>
+  </data>
+  <data name="GL_Setup_AccountStructures" xml:space="preserve">
+    <value>科目结构</value>
+  </data>
+  <data name="GL_Transactions" xml:space="preserve">
+    <value> 总帐交易 </value>
+  </data>
+  <data name="GL_Transactions_BatchList" xml:space="preserve">
+    <value>批次清单</value>
+  </data>
+  <data name="GL_Transactions_JournalEntry" xml:space="preserve">
+    <value>日志分录</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>主页</value>
+  </data>
+  <data name="Module_AccountsPayable" xml:space="preserve">
+    <value>应付帐款</value>
+  </data>
+  <data name="Module_AccountsReceivable" xml:space="preserve">
+    <value>应收帐款</value>
+  </data>
+  <data name="Module_GeneralLedger" xml:space="preserve">
+    <value>总帐</value>
+  </data>
+  <data name="Module_More" xml:space="preserve">
+    <value>更多</value>
+  </data>
+  <data name="CNAPortalHelpArticles" xml:space="preserve">
+    <value>文章</value>
+  </data>
+  <data name="CNAPortalHelpCenter" xml:space="preserve">
+    <value>帮助中心</value>
+  </data>
+  <data name="CNAPortalHelpContactSupport" xml:space="preserve">
+    <value>联系技术支持</value>
+  </data>
+  <data name="CNAPortalHelpExploreSage" xml:space="preserve">
+    <value>特性之旅</value>
+  </data>
+  <data name="CNAPortalHelpGettingStart" xml:space="preserve">
+    <value>入门</value>
+  </data>
+  <data name="CNAPortalHelpPrintReports" xml:space="preserve">
+    <value>打印报表</value>
+  </data>
+  <data name="CNAPortalHelpResources" xml:space="preserve">
+    <value>资源</value>
+  </data>
+  <data name="CNAPortalHelpSageCity" xml:space="preserve">
+    <value>Sage City</value>
+  </data>
+  <data name="CNAPortalHelpSageUniversity" xml:space="preserve">
+    <value>Sage大学</value>
+  </data>
+  <data name="CNAPortalHelpSettingHomePageWidgets" xml:space="preserve">
+    <value>设置主页挂件</value>
+  </data>
+  <data name="CNAPortalHelpShareIdeas" xml:space="preserve">
+    <value>分享您的想法</value>
+  </data>
+  <data name="CNAPortalHelpWhatNewHere" xml:space="preserve">
+    <value>有何新内容</value>
+  </data>
+  <data name="Demonstration_ReportDesigner" xml:space="preserve">
+    <value>演示报表设计器</value>
+  </data>
+  <data name="Financial_BalanceSheet" xml:space="preserve">
+    <value>财务资产负债表</value>
+  </data>
+  <data name="Financial_CashFlowSummaryCategory" xml:space="preserve">
+    <value>财务现金流汇总按类别</value>
+  </data>
+  <data name="Financial_Forecasting" xml:space="preserve">
+    <value>财务预测</value>
+  </data>
+  <data name="Financial_ForecastingGreen" xml:space="preserve">
+    <value>财务预测（绿）</value>
+  </data>
+  <data name="Financial_IncomeStatement" xml:space="preserve">
+    <value>财务损益表</value>
+  </data>
+  <data name="Financial_Ratio" xml:space="preserve">
+    <value>财务比率</value>
+  </data>
+  <data name="ExcelFile_DemonstrationReportDesigner" xml:space="preserve">
+    <value>Report Designer S300.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialBalanceSheet" xml:space="preserve">
+    <value>Financial Balance Sheet S300.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialCashFlowSummaryCategory" xml:space="preserve">
+    <value>Financial Cash Flow Summary by Category S300.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialForecasting" xml:space="preserve">
+    <value>Financial Forecasting S300.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialForecastingGreen" xml:space="preserve">
+    <value>Financial Forecasting S300 green.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialIncomeStatement" xml:space="preserve">
+    <value>Financial Income Statement S300.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialRatio" xml:space="preserve">
+    <value>Financial Ratio S300.xlsx</value>
+  </data>
+  <data name="AS_Users" xml:space="preserve">
+    <value>用户</value>
+  </data>
+  <data name="Bank_Banks" xml:space="preserve">
+    <value>银行</value>
+  </data>
+  <data name="GL_Reports_PostingJournals" xml:space="preserve">
+    <value>过帐日志</value>
+  </data>
+  <data name="Create_GL_Batch" xml:space="preserve">
+    <value>创建总帐批次</value>
+  </data>
+  <data name="IC_Day_End_Processing" xml:space="preserve">
+    <value>日终处理</value>
+  </data>
+  <data name="Module_InventoryControl" xml:space="preserve">
+    <value>存货控制</value>
+  </data>
+  <data name="IC_PriceSalesAnalysisReports" xml:space="preserve">
+    <value>存货控制价格/销售分析报表</value>
+  </data>
+  <data name="IC_PeriodicProcessing" xml:space="preserve">
+    <value>存货控制定期处理</value>
+  </data>
+  <data name="IC_Contract_Pricing" xml:space="preserve">
+    <value>合约定价</value>
+  </data>
+  <data name="IC_Setup" xml:space="preserve">
+    <value>存货控制设置</value>
+  </data>
+  <data name="Module_OrderEntry" xml:space="preserve">
+    <value>销售订单</value>
+  </data>
+  <data name="Module_PurchaseOrders" xml:space="preserve">
+    <value>采购订单</value>
+  </data>
+  <data name="OE_InvoiceAction" xml:space="preserve">
+    <value>发票操作</value>
+  </data>
+  <data name="OE_Reports" xml:space="preserve">
+    <value>销售订单报表</value>
+  </data>
+  <data name="OE_SalesStatistics" xml:space="preserve">
+    <value>销售统计</value>
+  </data>
+  <data name="Common_CreateOEBatch" xml:space="preserve">
+    <value>创建批次</value>
+  </data>
+  <data name="Common_CreatePOBatch" xml:space="preserve">
+    <value>创建批次</value>
+  </data>
+  <data name="OE_PeriodicProcessing" xml:space="preserve">
+    <value>销售订单定期处理</value>
+  </data>
+  <data name="PO_PeriodicProcessing" xml:space="preserve">
+    <value>采购订单定期处理</value>
+  </data>
+  <data name="IC_Selling_Price_Margin_Analysis" xml:space="preserve">
+    <value>售价/毛利分析</value>
+  </data>
+  <data name="OE_AgedOrders" xml:space="preserve">
+    <value>已帐析订购单</value>
+  </data>
+  <data name="OE_TransactionList" xml:space="preserve">
+    <value>交易清单</value>
+  </data>
+  <data name="IC_Items_Price_Lists" xml:space="preserve">
+    <value>存货控制货品和价目表</value>
+  </data>
+  <data name="IC_Manufacturers_Item" xml:space="preserve">
+    <value>制造商货品</value>
+  </data>
+  <data name="IC_Segment_Code" xml:space="preserve">
+    <value>节段代码</value>
+  </data>
+  <data name="IC_Account_Sets" xml:space="preserve">
+    <value>科目集合</value>
+  </data>
+  <data name="IC_Item_Structures" xml:space="preserve">
+    <value>货品结构</value>
+  </data>
+  <data name="IC_Optional_Fields" xml:space="preserve">
+    <value>可选字段</value>
+  </data>
+  <data name="IC_Statistics_Inquiries" xml:space="preserve">
+    <value>存货控制统计和查询</value>
+  </data>
+  <data name="IC_Transaction_Statistics" xml:space="preserve">
+    <value>交易统计</value>
+  </data>
+  <data name="IC_Weight_Units_of_Measure" xml:space="preserve">
+    <value>重量计量单位</value>
+  </data>
+  <data name="IC_Item" xml:space="preserve">
+    <value>货品</value>
+  </data>
+  <data name="IC_Units_of_Measure" xml:space="preserve">
+    <value>计量单位</value>
+  </data>
+  <data name="IC_Categories" xml:space="preserve">
+    <value>类别</value>
+  </data>
+  <data name="IC_Locations" xml:space="preserve">
+    <value>地点</value>
+  </data>
+  <data name="IC_Price_List_Codes" xml:space="preserve">
+    <value>价目表代码</value>
+  </data>
+  <data name="IC_Vendor_Details" xml:space="preserve">
+    <value>供应商明细</value>
+  </data>
+  <data name="OE_Setup" xml:space="preserve">
+    <value>销售订单设置</value>
+  </data>
+  <data name="IC_Customer_Details" xml:space="preserve">
+    <value>客户明细</value>
+  </data>
+  <data name="IC_Inventory_Counts" xml:space="preserve">
+    <value>存货计数</value>
+  </data>
+  <data name="IC_Physical_Inventory" xml:space="preserve">
+    <value>存货控制实物盘存</value>
+  </data>
+  <data name="IC_Receipt" xml:space="preserve">
+    <value>进货</value>
+  </data>
+  <data name="IC_Shipments" xml:space="preserve">
+    <value>发货</value>
+  </data>
+  <data name="IC_Transactions" xml:space="preserve">
+    <value>存货控制交易</value>
+  </data>
+  <data name="OE_Optional_Fields" xml:space="preserve">
+    <value>可选字段</value>
+  </data>
+  <data name="PO_Analytical_Reports" xml:space="preserve">
+    <value>采购订单分析报表</value>
+  </data>
+  <data name="PO_Clear_History" xml:space="preserve">
+    <value>清除历史</value>
+  </data>
+  <data name="IC_Alternate_Items" xml:space="preserve">
+    <value>替代货品</value>
+  </data>
+  <data name="IC_Setup_Reports" xml:space="preserve">
+    <value>存货控制设置报表</value>
+  </data>
+  <data name="IC_Reorder" xml:space="preserve">
+    <value> 再订购</value>
+  </data>
+  <data name="IC_Stock_Control_Reports" xml:space="preserve">
+    <value>库存控制库存控制报表</value>
+  </data>
+  <data name="PO_Payables_Clearing_Audit_List_Report" xml:space="preserve">
+    <value>应付款清算审计清单</value>
+  </data>
+  <data name="IC_Price_Lists" xml:space="preserve">
+    <value>价目表</value>
+  </data>
+  <data name="OE_Salesperson_Commissions" xml:space="preserve">
+    <value>业务员佣金</value>
+  </data>
+  <data name="IC_Aged_Inventory" xml:space="preserve">
+    <value>已帐析存货</value>
+  </data>
+  <data name="IC_Inventory_Movement" xml:space="preserve">
+    <value>存货移动</value>
+  </data>
+  <data name="IC_Inventory_Worksheet" xml:space="preserve">
+    <value>盘存工作表</value>
+  </data>
+  <data name="IC_Posting_Journals" xml:space="preserve">
+    <value>过帐日志</value>
+  </data>
+  <data name="OE_Posting_Journals" xml:space="preserve">
+    <value>过帐日志</value>
+  </data>
+  <data name="OE_Sales_History" xml:space="preserve">
+    <value>销售历史</value>
+  </data>
+  <data name="OE_Statistics_and_Inquiries" xml:space="preserve">
+    <value>销售订单统计和查询</value>
+  </data>
+  <data name="PO_Optional_Fields" xml:space="preserve">
+    <value>可选字段</value>
+  </data>
+  <data name="PO_Posting_Journals" xml:space="preserve">
+    <value>过帐日志</value>
+  </data>
+  <data name="OE_Templates" xml:space="preserve">
+    <value>模板</value>
+  </data>
+  <data name="OE_Order_Entry" xml:space="preserve">
+    <value>销售订单</value>
+  </data>
+  <data name="OE_Transactions" xml:space="preserve">
+    <value>销售订单交易</value>
+  </data>
+  <data name="IC_Markup_Analysis" xml:space="preserve">
+    <value>加成分析</value>
+  </data>
+  <data name="IC_Sales_Statistics" xml:space="preserve">
+    <value>销售统计</value>
+  </data>
+  <data name="OE_Forms" xml:space="preserve">
+    <value>销售订单表格</value>
+  </data>
+  <data name="OE_Order_Confirmations" xml:space="preserve">
+    <value>销货确认单</value>
+  </data>
+  <data name="OE_Quotes" xml:space="preserve">
+    <value>报价</value>
+  </data>
+  <data name="PO_Create_POs_from_IC" xml:space="preserve">
+    <value>从存货控制创建订购单</value>
+  </data>
+  <data name="PO_Create_Purchase_Orders" xml:space="preserve">
+    <value>采购订单创建订购单</value>
+  </data>
+  <data name="OE_Clear_History" xml:space="preserve">
+    <value>清除历史</value>
+  </data>
+  <data name="PO_Forms" xml:space="preserve">
+    <value>采购订单表格</value>
+  </data>
+  <data name="PO_Purchase_Orders" xml:space="preserve">
+    <value>采购订单</value>
+  </data>
+  <data name="PO_Aged_Purchase_Orders_Report" xml:space="preserve">
+    <value>已帐析订购单 </value>
+  </data>
+  <data name="PO_Purchase_Statistics" xml:space="preserve">
+    <value>采购统计</value>
+  </data>
+  <data name="IC_Transaction_History_Inquiry" xml:space="preserve">
+    <value>交易历史查询</value>
+  </data>
+  <data name="OE_Miscellaneous_Charges" xml:space="preserve">
+    <value>杂项收费</value>
+  </data>
+  <data name="OE_Order_Action" xml:space="preserve">
+    <value>销货单操作</value>
+  </data>
+  <data name="OE_Ship_Via_Codes" xml:space="preserve">
+    <value>发运经由代码</value>
+  </data>
+  <data name="PO_Email_Messages" xml:space="preserve">
+    <value>电邮讯息</value>
+  </data>
+  <data name="PO_Purchase_History" xml:space="preserve">
+    <value>采购历史</value>
+  </data>
+  <data name="PO_Purchase_Order_Action" xml:space="preserve">
+    <value>订购单操作</value>
+  </data>
+  <data name="IC_Kitting_Items" xml:space="preserve">
+    <value>配套货品</value>
+  </data>
+  <data name="IC_LIFO_FIFO_Inquiry" xml:space="preserve">
+    <value>后进先出/先进先出查询</value>
+  </data>
+  <data name="PO_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="OE_Credit_Debit_Note_Entry" xml:space="preserve">
+    <value>贷项/借项通知单分录</value>
+  </data>
+  <data name="OE_Email_Messages" xml:space="preserve">
+    <value>电邮讯息</value>
+  </data>
+  <data name="PO_Create_POs_from_OE" xml:space="preserve">
+    <value>从销售订单创建订购单</value>
+  </data>
+  <data name="GL_Transaction" xml:space="preserve">
+    <value>总帐交易</value>
+  </data>
+  <data name="IC_ItemValuation" xml:space="preserve">
+    <value>货品估价</value>
+  </data>
+  <data name="IC_SlowMovingItems" xml:space="preserve">
+    <value>滞销货品</value>
+  </data>
+  <data name="PO_Create_POs_from_Requisitions" xml:space="preserve">
+    <value>从申购单创建采购订单</value>
+  </data>
+  <data name="IC_StockTransactionsInquiry" xml:space="preserve">
+    <value>库存交易查询</value>
+  </data>
+  <data name="IC_TransactionHistory" xml:space="preserve">
+    <value>交易历史</value>
+  </data>
+  <data name="PO_PurchaseStatistics" xml:space="preserve">
+    <value>采购统计</value>
+  </data>
+  <data name="PO_AdditionalCosts" xml:space="preserve">
+    <value>附加成本</value>
+  </data>
+  <data name="IC_Item_Pricing" xml:space="preserve">
+    <value>货品定价 </value>
+  </data>
+  <data name="OE_Invoice" xml:space="preserve">
+    <value>发票</value>
+  </data>
+  <data name="OE_Sales_Statistics" xml:space="preserve">
+    <value>销售统计</value>
+  </data>
+  <data name="OE_ShippingLabels" xml:space="preserve">
+    <value>发货标签</value>
+  </data>
+  <data name="PO_Copy_Purchase_Order" xml:space="preserve">
+    <value>复制订购单</value>
+  </data>
+  <data name="PO_Credit_Debit_Note_Entry" xml:space="preserve">
+    <value>贷项/借项通知单分录</value>
+  </data>
+  <data name="IC_PostTransactions" xml:space="preserve">
+    <value>交易过帐</value>
+  </data>
+  <data name="IC_Transaction_Listing" xml:space="preserve">
+    <value>交易列表</value>
+  </data>
+  <data name="OE_Salesperson_Inquiry" xml:space="preserve">
+    <value>业务员查询</value>
+  </data>
+  <data name="IC_Post_Transactions" xml:space="preserve">
+    <value>交易过帐</value>
+  </data>
+  <data name="IC_Item_Loc_Detail_Qty_Inquiry" xml:space="preserve">
+    <value>货品地点明细数量查询</value>
+  </data>
+  <data name="IC_Generate_Inventory_Worksheet" xml:space="preserve">
+    <value>生成盘存工作表</value>
+  </data>
+  <data name="PO_Purchase_Order_Entry" xml:space="preserve">
+    <value>订购单分录</value>
+  </data>
+  <data name="IC_Bin_Shelf_Labels" xml:space="preserve">
+    <value>货柜/货架标签</value>
+  </data>
+  <data name="IC_Inventory_Reconciliation" xml:space="preserve">
+    <value>存货调节</value>
+  </data>
+  <data name="IC_Stock_Transactions" xml:space="preserve">
+    <value>库存交易</value>
+  </data>
+  <data name="PO_Invoice_Entry" xml:space="preserve">
+    <value>发票分录</value>
+  </data>
+  <data name="PO_Receipt_Entry" xml:space="preserve">
+    <value>进货分录</value>
+  </data>
+  <data name="IC_Adjustments" xml:space="preserve">
+    <value>调整</value>
+  </data>
+  <data name="IC_Overstocked_Items" xml:space="preserve">
+    <value>超储货品</value>
+  </data>
+  <data name="OE_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="AP_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>应付帐款交易</value>
+  </data>
+  <data name="AP_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>应付帐款交易</value>
+  </data>
+  <data name="AR_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>应收帐款交易</value>
+  </data>
+  <data name="AR_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>应收帐款交易</value>
+  </data>
+  <data name="BK_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>银行调节</value>
+  </data>
+  <data name="BK_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>银行调节</value>
+  </data>
+  <data name="GL_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>总帐交易</value>
+  </data>
+  <data name="GL_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>总帐交易</value>
+  </data>
+  <data name="IC_3rd_Level_Maintain_Template" xml:space="preserve">
+    <value>存货控制维护货品</value>
+  </data>
+  <data name="IC_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>存货控制交易</value>
+  </data>
+  <data name="IC_4th_Level_Maintain_Template" xml:space="preserve">
+    <value>存货控制维护货品</value>
+  </data>
+  <data name="IC_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>存货控制交易</value>
+  </data>
+  <data name="OE_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>销售订单交易</value>
+  </data>
+  <data name="OE_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>销售订单交易模版</value>
+  </data>
+  <data name="PO_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>采购订单交易</value>
+  </data>
+  <data name="PO_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>采购订单交易</value>
+  </data>
+  <data name="PO_Receiving_Slips" xml:space="preserve">
+    <value>进货单</value>
+  </data>
+  <data name="PO_RequisitionEntry" xml:space="preserve">
+    <value>申购单分录</value>
+  </data>
+  <data name="PO_Returns" xml:space="preserve">
+    <value>退货</value>
+  </data>
+  <data name="PO_Return_Entry" xml:space="preserve">
+    <value>退货分录</value>
+  </data>
+  <data name="PO_Setup" xml:space="preserve">
+    <value>采购订单设置</value>
+  </data>
+  <data name="PO_Shippable_Backorders" xml:space="preserve">
+    <value>可发运延期交货</value>
+  </data>
+  <data name="PO_Ship_Via_Codes" xml:space="preserve">
+    <value>发运经由代码</value>
+  </data>
+  <data name="PO_Statistics_Inquiries" xml:space="preserve">
+    <value>采购订单统计和查询</value>
+  </data>
+  <data name="PO_Templates" xml:space="preserve">
+    <value>模板</value>
+  </data>
+  <data name="PO_TransactionList" xml:space="preserve">
+    <value>交易清单</value>
+  </data>
+  <data name="PO_Transactions" xml:space="preserve">
+    <value>采购订单交易</value>
+  </data>
+  <data name="PO_Vendor_Contract_Costs" xml:space="preserve">
+    <value>供应商合约成本</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>项目</value>
+  </data>
+  <data name="Sage_Intelligence_Go" xml:space="preserve">
+    <value>Sage Intelligence Go!</value>
+  </data>
+  <data name="Task" xml:space="preserve">
+    <value>任务</value>
+  </data>
+  <data name="Tax_Reports" xml:space="preserve">
+    <value>税务报表</value>
+  </data>
+  <data name="Tax_Services" xml:space="preserve">
+    <value>税务服务</value>
+  </data>
+  <data name="Tax_TaxAuthorities" xml:space="preserve">
+    <value>税务机构</value>
+  </data>
+  <data name="Tax_TaxClasses" xml:space="preserve">
+    <value>税级</value>
+  </data>
+  <data name="Tax_TaxGroups" xml:space="preserve">
+    <value>税组</value>
+  </data>
+  <data name="Tax_TaxRates" xml:space="preserve">
+    <value>税率</value>
+  </data>
+  <data name="Tax_PeriodicProcessing" xml:space="preserve">
+    <value>税务定期处理</value>
+  </data>
+  <data name="Tax_TaxTracking" xml:space="preserve">
+    <value>税务追踪</value>
+  </data>
+  <data name="Tax_ClearHistory" xml:space="preserve">
+    <value>清除历史</value>
+  </data>
+  <data name="Templates" xml:space="preserve">
+    <value>模板</value>
+  </data>
+  <data name="Visual_Process_Flow_Top" xml:space="preserve">
+    <value>VPF</value>
+  </data>
+  <data name="YP_Setup_Options" xml:space="preserve">
+    <value>付款处理选项</value>
+  </data>
+  <data name="YP_Setup_ProcessingCodes" xml:space="preserve">
+    <value>付款处理代码</value>
+  </data>
+  <data name="IC_Item_Status" xml:space="preserve">
+    <value>货品状态</value>
+  </data>
+  <data name="IC_Physical_Inventory_Quantities" xml:space="preserve">
+    <value>实物盘存数量</value>
+  </data>
+  <data name="IC_Reorder_Quantities" xml:space="preserve">
+    <value>再订购数量</value>
+  </data>
+  <data name="IC_Update_Item_Pricing" xml:space="preserve">
+    <value>更新货品定价</value>
+  </data>
+  <data name="IC_Item_Labels" xml:space="preserve">
+    <value>货品标签</value>
+  </data>
+  <data name="OE_Picking_Slips" xml:space="preserve">
+    <value>取货单</value>
+  </data>
+  <data name="PO_Pending_Receipts_Inquiry" xml:space="preserve">
+    <value>待处理进货查询</value>
+  </data>
+  <data name="IC_Post_Inventory_Reconciliation" xml:space="preserve">
+    <value>存货调节过帐</value>
+  </data>
+  <data name="PO_Requisitions" xml:space="preserve">
+    <value>申购单</value>
+  </data>
+  <data name="OE_CreditDebit_Notes" xml:space="preserve">
+    <value>贷项/借项通知单</value>
+  </data>
+  <data name="IC_Transfer_Slips" xml:space="preserve">
+    <value>转移单</value>
+  </data>
+  <data name="IC_Transfers" xml:space="preserve">
+    <value>转移</value>
+  </data>
+  <data name="PO_Mailing_Labels" xml:space="preserve">
+    <value>邮寄标签</value>
+  </data>
+  <data name="OE_Pending_Shipments_Inquiry" xml:space="preserve">
+    <value>待处理发货查询</value>
+  </data>
+  <data name="IC_Location_Details" xml:space="preserve">
+    <value>地点明细</value>
+  </data>
+  <data name="IC_Process_Adjustments" xml:space="preserve">
+    <value>处理调整</value>
+  </data>
+  <data name="OE_Copy_Orders" xml:space="preserve">
+    <value>复制销货单</value>
+  </data>
+  <data name="OE_Current_Orders_Inquiry" xml:space="preserve">
+    <value>当前销货单查询</value>
+  </data>
+  <data name="AP_PeriodicProcessing_Revaluation" xml:space="preserve">
+    <value>重估</value>
+  </data>
+  <data name="AR_PeriodicProcessing_Revaluation" xml:space="preserve">
+    <value>重估</value>
+  </data>
+  <data name="IC_Internal_Usage" xml:space="preserve">
+    <value>内部使用</value>
+  </data>
+  <data name="GL_Clear_History" xml:space="preserve">
+    <value>清除历史</value>
+  </data>
+  <data name="AR_Processing_CreateRecurringChargeBatch" xml:space="preserve">
+    <value>创建经常性收费批次</value>
+  </data>
+  <data name="PO_Setup_Reports" xml:space="preserve">
+    <value>采购订单设置报表</value>
+  </data>
+  <data name="AP_Recurring_Payables" xml:space="preserve">
+    <value>经常性应付</value>
+  </data>
+  <data name="AR_Deposit_Slips" xml:space="preserve">
+    <value>存款单</value>
+  </data>
+  <data name="IC_Warranty_Contract_List" xml:space="preserve">
+    <value>保修/合约清单</value>
+  </data>
+  <data name="IC_Current_Transactions_Inquiry" xml:space="preserve">
+    <value>当前交易查询</value>
+  </data>
+  <data name="AP_Posting_Journals" xml:space="preserve">
+    <value>过帐日志</value>
+  </data>
+  <data name="IC_Quarantine_Report" xml:space="preserve">
+    <value>隔离</value>
+  </data>
+  <data name="GL_Source_Journal_Profiles" xml:space="preserve">
+    <value>来源日志概览</value>
+  </data>
+  <data name="PO_ReceivingSlips_Article1" xml:space="preserve">
+    <value>关于采购订单表格</value>
+  </data>
+  <data name="PO_ReceivingSlips_Article2" xml:space="preserve">
+    <value>打印进货单</value>
+  </data>
+  <data name="PO_ReceivingSlips_Screen" xml:space="preserve">
+    <value>采购订单进货单屏幕</value>
+  </data>
+  <data name="AP_Batch_Status_Report" xml:space="preserve">
+    <value>批次状态</value>
+  </data>
+  <data name="AP_Vendor_Groups" xml:space="preserve">
+    <value>供应商群组</value>
+  </data>
+  <data name="IC_Serial_Lot_Transactions_Report" xml:space="preserve">
+    <value>系列/批别交易</value>
+  </data>
+  <data name="IC_Serial_Number_Inquiry" xml:space="preserve">
+    <value>系列编号查询</value>
+  </data>
+  <data name="AP_Delete_Inactive_Records" xml:space="preserve">
+    <value>删除闲置记录</value>
+  </data>
+  <data name="IC_Recall_Report" xml:space="preserve">
+    <value>召回</value>
+  </data>
+  <data name="GL_Create_Allocation_Batch" xml:space="preserve">
+    <value>创建分配批次</value>
+  </data>
+  <data name="AP_Remit_To_Locations" xml:space="preserve">
+    <value>汇款至地点</value>
+  </data>
+  <data name="AR_Batch_Status" xml:space="preserve">
+    <value>批次状态</value>
+  </data>
+  <data name="IC_Lot_Recalls_Releases" xml:space="preserve">
+    <value>批别召回/放行</value>
+  </data>
+  <data name="CS_Scheduling" xml:space="preserve">
+    <value>排程</value>
+  </data>
+  <data name="AR_Posting_Journals" xml:space="preserve">
+    <value>过帐日志</value>
+  </data>
+  <data name="AR_Refund_Batch_List" xml:space="preserve">
+    <value>退款批次清单</value>
+  </data>
+  <data name="CS_Schedules" xml:space="preserve">
+    <value>排程</value>
+  </data>
+  <data name="GL_Source_Codes" xml:space="preserve">
+    <value>来源代码</value>
+  </data>
+  <data name="IC_Clear_History" xml:space="preserve">
+    <value>清除历史</value>
+  </data>
+  <data name="IC_Copy_Bills_of_Material" xml:space="preserve">
+    <value>复制用料单</value>
+  </data>
+  <data name="IC_Items_Wizard" xml:space="preserve">
+    <value>货品向导</value>
+  </data>
+  <data name="ProjectJobCosting" xml:space="preserve">
+    <value>项目成本管理</value>
+  </data>
+  <data name="GL_Revaluation_Codes" xml:space="preserve">
+    <value>重估代码</value>
+  </data>
+  <data name="IC_Delete_Inactive_Records" xml:space="preserve">
+    <value>删除闲置记录</value>
+  </data>
+  <data name="IC_Serial_Lot_Number_List_Report" xml:space="preserve">
+    <value>系列/批别编号清单</value>
+  </data>
+  <data name="IC_Serial_Lot_Number_Qty_On_Hand_Report" xml:space="preserve">
+    <value>系列/批别编号在手数量</value>
+  </data>
+  <data name="AR_Customer_Groups" xml:space="preserve">
+    <value>客户群组</value>
+  </data>
+  <data name="AR_Customer_Inquiry" xml:space="preserve">
+    <value>客户查询</value>
+  </data>
+  <data name="IC_Lot_Numbers" xml:space="preserve">
+    <value>批别编号</value>
+  </data>
+  <data name="OE_Invoice_Entry" xml:space="preserve">
+    <value>发票分录</value>
+  </data>
+  <data name="AR_Receipt_Inquiry" xml:space="preserve">
+    <value>收款查询</value>
+  </data>
+  <data name="AR_Refund_Inquiry" xml:space="preserve">
+    <value>退款查询</value>
+  </data>
+  <data name="GL_Batch_Status" xml:space="preserve">
+    <value>批次状态</value>
+  </data>
+  <data name="GL_Fiscal_Set_Comparison" xml:space="preserve">
+    <value>财务数据集比较</value>
+  </data>
+  <data name="IC_Bills_of_Material" xml:space="preserve">
+    <value>用料单</value>
+  </data>
+  <data name="IC_Copy_Item_Pricing" xml:space="preserve">
+    <value>复制货品定价</value>
+  </data>
+  <data name="AP_Create_Retainage_Batch" xml:space="preserve">
+    <value>创建保留款批次</value>
+  </data>
+  <data name="AR_Create_Retainage_Batch" xml:space="preserve">
+    <value>创建保留款批次</value>
+  </data>
+  <data name="AR_Document_Inquiry" xml:space="preserve">
+    <value>凭证查询</value>
+  </data>
+  <data name="AR_Recurring_Charges" xml:space="preserve">
+    <value>经常性收费</value>
+  </data>
+  <data name="AP_Adjustment_Batch_List" xml:space="preserve">
+    <value>调整批次清单</value>
+  </data>
+  <data name="AR_Clear_History" xml:space="preserve">
+    <value>清除历史</value>
+  </data>
+  <data name="AR_Clear_Statistics" xml:space="preserve">
+    <value>清除统计</value>
+  </data>
+  <data name="AR_Quick_Receipt_Entry" xml:space="preserve">
+    <value>快速收款分录</value>
+  </data>
+  <data name="IC_Contract_Codes" xml:space="preserve">
+    <value>合约代码</value>
+  </data>
+  <data name="AP_Clear_History" xml:space="preserve">
+    <value>清除历史</value>
+  </data>
+  <data name="AR_Delete_Inactive_Records" xml:space="preserve">
+    <value>删除闲置记录</value>
+  </data>
+  <data name="AR_Adjustment_Batch_List" xml:space="preserve">
+    <value>调整批次清单</value>
+  </data>
+  <data name="AR_Adjustment_Entry" xml:space="preserve">
+    <value>调整分录</value>
+  </data>
+  <data name="AR_National_Accounts" xml:space="preserve">
+    <value>统一帐户</value>
+  </data>
+  <data name="AR_Refund_Entry" xml:space="preserve">
+    <value>退款分录</value>
+  </data>
+  <data name="GL_Recurring_Entries" xml:space="preserve">
+    <value>经常性分录</value>
+  </data>
+  <data name="GL_Source_Journals" xml:space="preserve">
+    <value>来源日志</value>
+  </data>
+  <data name="IC_Update_Bills_of_Material" xml:space="preserve">
+    <value>更新用料单</value>
+  </data>
+  <data name="OE_Shipment_Entry" xml:space="preserve">
+    <value>发货分录</value>
+  </data>
+  <data name="AR_Items" xml:space="preserve">
+    <value>货品</value>
+  </data>
+  <data name="AR_Create_Write_Off_Batch" xml:space="preserve">
+    <value>创建冲销批次</value>
+  </data>
+  <data name="IC_Serial_Registration" xml:space="preserve">
+    <value>系列注册</value>
+  </data>
+  <data name="IC_Warranty_Codes" xml:space="preserve">
+    <value>保修代码</value>
+  </data>
+  <data name="AR_Ship_To_Locations" xml:space="preserve">
+    <value>发运至地点</value>
+  </data>
+  <data name="AP_Adjustment_Entry" xml:space="preserve">
+    <value>调整分录</value>
+  </data>
+  <data name="CS_Reminder_List" xml:space="preserve">
+    <value>提示清单</value>
+  </data>
+  <data name="AP_Clear_Statistics" xml:space="preserve">
+    <value>清除统计</value>
+  </data>
+  <data name="GL_Consolidate_Posted_Transactions" xml:space="preserve">
+    <value>合并已过帐交易</value>
+  </data>
+  <data name="GL_Create_Accounts" xml:space="preserve">
+    <value>创建科目</value>
+  </data>
+  <data name="Banking_Services" xml:space="preserve">
+    <value>银行服务</value>
+  </data>
+  <data name="AS_MenuCustomization" xml:space="preserve">
+    <value>自定义导航菜单</value>
+  </data>
+  <data name="AS_MenuCustomization_Instructions" xml:space="preserve">
+    <value>通过隐藏或显示网页屏幕和类别来自定义导航菜单。如果您隐藏一个模块的所有屏幕，该模块不会出现在导航菜单中。</value>
+  </data>
+  <data name="CompanySetup" xml:space="preserve">
+    <value>公司设置</value>
+  </data>
+  <data name="DataAndMaintenance" xml:space="preserve">
+    <value>数据和维护</value>
+  </data>
+  <data name="PaymentProcessing" xml:space="preserve">
+    <value>付款处理</value>
+  </data>
+  <data name="Tax_Setup" xml:space="preserve">
+    <value>税务设置</value>
+  </data>
+  <data name="Customization" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="AR_UpdateRecurringCharges" xml:space="preserve">
+    <value>更新经常性收费</value>
+  </data>
+  <data name="AS_UserSecurity" xml:space="preserve">
+    <value>用户和安全性</value>
+  </data>
+  <data name="Bank_CreditCardTypes" xml:space="preserve">
+    <value>信用卡类型</value>
+  </data>
+  <data name="GL_Transaction_History" xml:space="preserve">
+    <value>交易历史</value>
+  </data>
+  <data name="AR_Process_Credit_Card_Payments" xml:space="preserve">
+    <value>处理信用卡付款</value>
+  </data>
+  <data name="GL_Account_Permissions" xml:space="preserve">
+    <value>科目权限</value>
+  </data>
+  <data name="GL_Create_Revaluation_Batch" xml:space="preserve">
+    <value>创建重估批次</value>
+  </data>
+  <data name="AS_WorkProfile" xml:space="preserve">
+    <value>用户界面概览</value>
+  </data>
+  <data name="SIR_Msg1" xml:space="preserve">
+    <value>Sage Intelligence Reporting Cloud</value>
+  </data>
+  <data name="SIR_Msg2" xml:space="preserve">
+    <value>通过您可以导出并在Microsoft Excel®或Excel在线中自定义的动态财务报表帮助您更清楚地了解您的业务。</value>
+  </data>
+  <data name="SIR_Report1" xml:space="preserve">
+    <value>实际年度至今</value>
+  </data>
+  <data name="SIR_Report2" xml:space="preserve">
+    <value>实际对之前</value>
+  </data>
+  <data name="SIR_Report3" xml:space="preserve">
+    <value>实际对预算</value>
+  </data>
+  <data name="SIR_Report4" xml:space="preserve">
+    <value>逐月</value>
+  </data>
+  <data name="SIR_Title" xml:space="preserve">
+    <value>智能</value>
+  </data>
+  <data name="SIR_Btn" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>帮助</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="PinMenu" xml:space="preserve">
+    <value>锁定导航菜单</value>
+    <comment>Settings Menu</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>设置</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="UnpinMenu" xml:space="preserve">
+    <value>解锁导航菜单</value>
+    <comment>Settings Menu</comment>
+  </data>
+  <data name="OE_CapturePaymentsWithInvoices" xml:space="preserve">
+    <value>捕获有发票的付款</value>
+  </data>
+  <data name="Saved_Queries" xml:space="preserve">
+    <value>保存的查询 </value>
+  </data>
+  <data name="Inquiry_ToolTip" xml:space="preserve">
+    <value>此查询以多个交互式表的特殊格式显示结果。您不能将其用作自定义保存的查询的基础。</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>工具</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="CollapseMenu" xml:space="preserve">
+    <value>折叠菜单</value>
+    <comment>Collapse Menu</comment>
+  </data>
+  <data name="ExpandMenu" xml:space="preserve">
+    <value>展开菜单</value>
+    <comment>Expand Menu</comment>
+  </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>查找有关设置和使用Sage 300c的帮助</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="ToolsTitle" xml:space="preserve">
+    <value>显示或隐藏网页工具栏</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜索</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="SearchTitle" xml:space="preserve">
+    <value>按关键字搜索对象</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="GlobalSearch" xml:space="preserve">
+    <value>全局搜索</value>
+  </data>
+  <data name="GlobalSearchFailed" xml:space="preserve">
+    <value>发生一个问题，无法实施搜索。联络您的系统管理员获取帮助。</value>
+  </data>
+  <data name="CustomizedQueries" xml:space="preserve">
+    <value>自定义的查询</value>
+    <comment>Inqiury Tab</comment>
+  </data>
+  <data name="SingaporeGST" xml:space="preserve">
+    <value>新加坡税务报表</value>
+  </data>
+  <data name="TS_ImportTaxCodes" xml:space="preserve">
+    <value>T/S导入税务代码</value>
+  </data>
+  <data name="TS_GSTF5" xml:space="preserve">
+    <value>T/S GST F5</value>
+  </data>
+  <data name="TS_GSTIAF" xml:space="preserve">
+    <value>T/S GST IAF生成器</value>
+  </data>
+  <data name="TS_TaxCodeMapping" xml:space="preserve">
+    <value>T/S税务代码映射</value>
+  </data>
+  <data name="Tax_ReverseCharge" xml:space="preserve">
+    <value>回转收费</value>
+  </data>
+  <data name="AustraliaGST" xml:space="preserve">
+    <value>澳大利亚税务报表</value>
+  </data>
+  <data name="TW_BusinessActivityStatement" xml:space="preserve">
+    <value>T/W商业活动报告</value>
+  </data>
+  <data name="TW_Configurations" xml:space="preserve">
+    <value>T/W配置</value>
+  </data>
+  <data name="Tax_WithholdingTaxRates" xml:space="preserve">
+    <value>预扣税率</value>
+  </data>
+  <data name="MalaysiaGST" xml:space="preserve">
+    <value>马来西亚税务报表</value>
+  </data>
+  <data name="TM_GST03" xml:space="preserve">
+    <value>GST 03</value>
+  </data>
+  <data name="TM_GSTGAF" xml:space="preserve">
+    <value>GST GAF生成器</value>
+  </data>
+  <data name="TM_ImportTaxCodes" xml:space="preserve">
+    <value>导入税务代码</value>
+  </data>
+  <data name="TM_TaxCodeMapping" xml:space="preserve">
+    <value>税务代码映射</value>
+  </data>
+  <data name="TM_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="BusinessActivityStatement" xml:space="preserve">
+    <value>商业活动报告</value>
+  </data>
+  <data name="Configurations" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="GSTF5" xml:space="preserve">
+    <value>GST F5</value>
+  </data>
+  <data name="GSTIAF" xml:space="preserve">
+    <value>GST IAF生成器</value>
+  </data>
+  <data name="ImportTaxCodes" xml:space="preserve">
+    <value>导入税务代码</value>
+  </data>
+  <data name="TaxCodeMapping" xml:space="preserve">
+    <value>税务代码映射</value>
+  </data>
+  <data name="PR_EmployeeTimeCard" xml:space="preserve">
+    <value>薪资雇员工时卡</value>
+  </data>
+  <data name="PR_EmployeeTimeCard_CA" xml:space="preserve">
+    <value>加拿大薪资雇员工时卡</value>
+  </data>
+  <data name="PR_EmployeeTimeCard_US" xml:space="preserve">
+    <value>美国薪资雇员工时卡</value>
+  </data>
+  <data name="MT_Contacts" xml:space="preserve">
+    <value>M/T联系人</value>
+  </data>
+  <data name="MT_Setup" xml:space="preserve">
+    <value>M/T设置</value>
+  </data>
+  <data name="MT_OptionalFields" xml:space="preserve">
+    <value>可选字段</value>
+  </data>
+  <data name="MultipleContacts" xml:space="preserve">
+    <value>多个联系人</value>
+  </data>
+  <data name="MT_Contacts_Contacts" xml:space="preserve">
+    <value>联系人 </value>
+  </data>
+</root>

@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Approval" xml:space="preserve">
+    <value>État approbation</value>
+    <comment>Requisition - Field</comment>
+  </data>
+  <data name="ApproverName" xml:space="preserve">
+    <value>Approbateur</value>
+    <comment>Requisition - Field</comment>
+  </data>
+  <data name="CopyCostToPO" xml:space="preserve">
+    <value>Copier coût à BC</value>
+    <comment>Requisition - Table Column</comment>
+  </data>
+  <data name="CopyCostToPurchaseOrder" xml:space="preserve">
+    <value>Copier coût à bon de commande</value>
+    <comment>Detail - Check Box</comment>
+  </data>
+  <data name="DateRequired" xml:space="preserve">
+    <value>Date requise</value>
+    <comment>Requisition - Field</comment>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Détails</value>
+    <comment>Button</comment>
+  </data>
+  <data name="DetailItems" xml:space="preserve">
+    <value>Détails des articles</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Saisie des demandes d'achat de CmF</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Date expiration</value>
+    <comment>Requisition - Field</comment>
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>Tâche connexe</value>
+    <comment>Requisition - Check Box</comment>
+  </data>
+  <data name="LocationDescription" xml:space="preserve">
+    <value>Description emplacement</value>
+    <comment>Requisition - Field</comment>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>En suspens</value>
+    <comment>Requisition - Check Box</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Description champ optionnel</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="PostedDoPrint" xml:space="preserve">
+    <value>Report terminé. Numéro demande d'achat: {0} Voulez-vous imprimer la demande d'achat?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostedNoPrint" xml:space="preserve">
+    <value>Report terminé. Numéro demande d'achat: {0}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostRQN" xml:space="preserve">
+    <value>Voulez-vous reporter cette demande d'achat?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="RecordNoDeleteMessage" xml:space="preserve">
+    <value>La demande d'achat ne peut être supprimée car elle n'a pas encore été reportée.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="RequestedBy" xml:space="preserve">
+    <value>Demandé par</value>
+    <comment>Requisition - Field</comment>
+  </data>
+  <data name="RequisitionTotal" xml:space="preserve">
+    <value>Total demande d'achat</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="RqnApprovalPendingMessage" xml:space="preserve">
+    <value>Cette demande d'achat a une approbation en suspens.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="RqnApprovedMessage" xml:space="preserve">
+    <value>Cette demande d'achat a été approuvée.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="RqnCompleteMessage" xml:space="preserve">
+    <value>Cette demande d'achat est conclue.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="RqnDate" xml:space="preserve">
+    <value>Date demande d'achat</value>
+    <comment>Requisition - Field</comment>
+  </data>
+  <data name="RqnModifiedMessage" xml:space="preserve">
+    <value>Cette demande d'achat a été modifiée et doit être reportée avant de changer les approbations.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="RqnNotEditableMessage" xml:space="preserve">
+    <value>Cette demande d'achat n'est pas modifiable.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UpdateTaxCurrency" xml:space="preserve">
+    <value>Voulez-vous mettre à jour ces informations?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UseUP" xml:space="preserve">
+    <value>Voulez-vous consulter la liste d'employés de Paie É.U.?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valeur</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Description valeur</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valeur définie</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="VendorOnHold" xml:space="preserve">
+    <value>Le fournisseur est en attente.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ApprovalStatus" xml:space="preserve">
+    <value>État approbation</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ApproverID" xml:space="preserve">
+    <value>Code approbateur</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Command" xml:space="preserve">
+    <value>Commande</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Remarque</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DateCompleted" xml:space="preserve">
+    <value>Date réalisation</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DocumentLocked" xml:space="preserve">
+    <value>Document verrouillé</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DocumentSource" xml:space="preserve">
+    <value>Source du document</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FuncExtendedAmount" xml:space="preserve">
+    <value>Montant total devise fonctionnelle</value>
+    <comment>Field</comment>
+  </data>
+  <data name="HasDetails" xml:space="preserve">
+    <value>A des détails</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IsCanadianPayrollActive" xml:space="preserve">
+    <value>Paie est activé?</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IsDocumentDeletable" xml:space="preserve">
+    <value>Document peut être supprimé?</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IsRecordActive" xml:space="preserve">
+    <value>Enregistrement actif?</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IsUSPayrollActive" xml:space="preserve">
+    <value>Paie É.U. est activé?</value>
+    <comment>Field</comment>
+  </data>
+  <data name="JobRelatedLines" xml:space="preserve">
+    <value>Lignes tâche connexe</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LastPostingDate" xml:space="preserve">
+    <value>Date dernier report</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NextDetailNumber" xml:space="preserve">
+    <value>Numéro détail suivant</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderDate" xml:space="preserve">
+    <value>Date commande</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuantityOrdered" xml:space="preserve">
+    <value>Quantité commandée</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Référence</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequisitionHasExpired" xml:space="preserve">
+    <value>Demande d'achat a expiré</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VendorExists" xml:space="preserve">
+    <value>Fournisseur existe</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Lines" xml:space="preserve">
+    <value>Lignes</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LinesComplete" xml:space="preserve">
+    <value>Lignes conclues</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LinesOrdered" xml:space="preserve">
+    <value>Lignes commandées</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NextLineSequence" xml:space="preserve">
+    <value>Prochaine séquence de ligne</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequisitionSequenceKey" xml:space="preserve">
+    <value>Clé séquence demande d'achat</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PO0750" xml:space="preserve">
+    <value>Commentaires demandes d'achat</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PO0760" xml:space="preserve">
+    <value>Demandes d'achat</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PO0763" xml:space="preserve">
+    <value>Champs opt. en-têtes demandes d'achat</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PO0770" xml:space="preserve">
+    <value>Lignes demandes d'achat</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PO0773" xml:space="preserve">
+    <value>Champs opt. détails demandes d'achat</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="PO0777" xml:space="preserve">
+    <value>Fournisseurs demandes d'achat</value>
+    <comment>Import/Export</comment>
+  </data>
+  <data name="CommentIdentifier" xml:space="preserve">
+    <value>Identifiant commentaire</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Autoriser les blancs</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Valeur montant</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerShipToAddress" xml:space="preserve">
+    <value>Adresse expédition du client</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Valeur date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DefaultExtendedWeight" xml:space="preserve">
+    <value>Poids total par défaut</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DefaultUnitWeight" xml:space="preserve">
+    <value>Poids unitaire par défaut</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DefaultValueDescription" xml:space="preserve">
+    <value>Description valeur par défaut</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DetailNumber" xml:space="preserve">
+    <value>Numéro détail</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DiscountPercentage" xml:space="preserve">
+    <value>Pourcentage remise</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipAddress1" xml:space="preserve">
+    <value>Adresse expédition directe 1</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipAddress2" xml:space="preserve">
+    <value>Adresse expédition directe 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipAddress3" xml:space="preserve">
+    <value>Adresse expédition directe 3</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipAddress4" xml:space="preserve">
+    <value>Adresse expédition directe 4</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipCity" xml:space="preserve">
+    <value>Ville (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipContact" xml:space="preserve">
+    <value>Contact (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipContactEmail" xml:space="preserve">
+    <value>Courriel contact (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipContactFax" xml:space="preserve">
+    <value>Fax contact (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipContactPhone" xml:space="preserve">
+    <value>Téléphone contact (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipCountry" xml:space="preserve">
+    <value>Pays (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipCustomer" xml:space="preserve">
+    <value>Client (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipDescription" xml:space="preserve">
+    <value>Description expédition directe</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipEmail" xml:space="preserve">
+    <value>Courriel (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipFaxNumber" xml:space="preserve">
+    <value>Numéro fax (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipLocation" xml:space="preserve">
+    <value>Emplacement (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipPhoneNumber" xml:space="preserve">
+    <value>Numéro téléphone (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipStateProvince" xml:space="preserve">
+    <value>Province/État (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipType" xml:space="preserve">
+    <value>Type d'expédition directe</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DropShipZipPostalCode" xml:space="preserve">
+    <value>Code postal (expédition directe)</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Valeur nombre entier</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LineType" xml:space="preserve">
+    <value>Type de ligne</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NetExtendedCost" xml:space="preserve">
+    <value>Coût total net</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Valeur nombre</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RateMatchType" xml:space="preserve">
+    <value>Type correspondance de taux</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RateOperation" xml:space="preserve">
+    <value>Calcul du taux</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RateSpread" xml:space="preserve">
+    <value>Écart taux</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequisitionCommentSequence" xml:space="preserve">
+    <value>Séquence commentaires demande d'achat</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequisitionLineSequence" xml:space="preserve">
+    <value>Séquence ligne demande d'achat</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Valeur texte</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value> Valeur heure</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Index champ valeur saisie</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UnitCostIsManual" xml:space="preserve">
+    <value>Coût unitaire est manuel</value>
+    <comment>Field</comment>
+  </data>
+  <data name="WeightConversion" xml:space="preserve">
+    <value>Conversion du poids</value>
+    <comment>Field</comment>
+  </data>
+  <data name="YesNoValue" xml:space="preserve">
+    <value>Valeur Oui/Non</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Requisition" xml:space="preserve">
+    <value>Demande d'achat</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VendorOnHoldLabel" xml:space="preserve">
+    <value>Fournisseur en attente</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Décimales</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Longueur</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Projet</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Valider</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequisitionDescription" xml:space="preserve">
+    <value>Description demande d'achat</value>
+    <comment>Field</comment>
+  </data>
+</root>

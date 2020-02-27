@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BatchReadyToPost" xml:space="preserve">
+    <value>L&apos;état du lot est Prêt à reporter. Vous pouvez consulter le contenu du lot, mais vous ne pouvez pas modifier les écritures de journal.</value>
+  </data>
+  <data name="CreateNewEntry" xml:space="preserve">
+    <value>Créer nouvelle écriture</value>
+  </data>
+  <data name="CreditsC" xml:space="preserve">
+    <value>Crédits</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DebitsC" xml:space="preserve">
+    <value>Débits</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Écriture de journal de GL</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntriesC" xml:space="preserve">
+    <value>Saisies</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntryMode" xml:space="preserve">
+    <value>Mode de saisie</value>
+  </data>
+  <data name="EntryModeNormal" xml:space="preserve">
+    <value>Mode saisie normal</value>
+  </data>
+  <data name="EntryModeQuick" xml:space="preserve">
+    <value>Mode saisie rapide</value>
+  </data>
+  <data name="JournalDetail" xml:space="preserve">
+    <value>Détail du journal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="JournalDetailClearConfirmation" xml:space="preserve">
+    <value>Effacer les détails de cette écriture?</value>
+  </data>
+  <data name="JournalEntry" xml:space="preserve">
+    <value>Écriture de journal</value>
+  </data>
+  <data name="QuantityC" xml:space="preserve">
+    <value>Quantité</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReverseBatch" xml:space="preserve">
+    <value>Extourner le lot?</value>
+  </data>
+  <data name="SourceCodeDescription" xml:space="preserve">
+    <value>Description code source</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Description valeur</value>
+  </data>
+  <data name="SourceCodeErrorMessage" xml:space="preserve">
+    <value>Le code source &quot;{0}-{1}&quot; est introuvable.</value>
+  </data>
+  <data name="JournalBatch" xml:space="preserve">
+    <value>Lot du journal</value>
+  </data>
+  <data name="JournalHeader" xml:space="preserve">
+    <value>En-tête de journal</value>
+  </data>
+  <data name="CreateNewBatch" xml:space="preserve">
+    <value>Créer nouveau lot</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>Numéro de lot</value>
+  </data>
+  <data name="NoOfErrors" xml:space="preserve">
+    <value>Nombre d'erreurs</value>
+  </data>
+  <data name="QuantityTotal" xml:space="preserve">
+    <value>Quantité totale</value>
+  </data>
+  <data name="SourceLedger" xml:space="preserve">
+    <value>Livre auxiliaire source</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="AutoReverse" xml:space="preserve">
+    <value>À extourner</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Commentaire</value>
+  </data>
+  <data name="Batch" xml:space="preserve">
+    <value>Lot</value>
+  </data>
+  <data name="EntryDate" xml:space="preserve">
+    <value>Date de report</value>
+  </data>
+  <data name="EntryNumber" xml:space="preserve">
+    <value>Numéro de saisie</value>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="OriginalWithPrefix" xml:space="preserve">
+    <value>Original avec préfixe</value>
+  </data>
+  <data name="Originator" xml:space="preserve">
+    <value>Origine</value>
+  </data>
+  <data name="SourceCode" xml:space="preserve">
+    <value>Code source</value>
+  </data>
+  <data name="Destination" xml:space="preserve">
+    <value>Destination</value>
+  </data>
+  <data name="OutofBalanceBy" xml:space="preserve">
+    <value>Écart de</value>
+  </data>
+  <data name="EntryDescription" xml:space="preserve">
+    <value>Description saisie</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Numéro ligne</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Séquence de report</value>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Date taux</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>Numéro route</value>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>Exercice/Période</value>
+  </data>
+  <data name="AccountDescription" xml:space="preserve">
+    <value>Description compte</value>
+  </data>
+  <data name="BatchDescription" xml:space="preserve">
+    <value>Description lot</value>
+  </data>
+  <data name="CreateReverseBatch" xml:space="preserve">
+    <value>Créer lot d&apos;extourne</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Crédit</value>
+  </data>
+  <data name="AcctFormatted" xml:space="preserve">
+    <value>Compte formaté</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="AcctUnitofMeasure" xml:space="preserve">
+    <value>Unité de mesure du compte</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="CreatedReverseEntryNo" xml:space="preserve">
+    <value>Numéro écriture d&apos;extourne créé</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="CurrencyRateDateMatching" xml:space="preserve">
+    <value>Correspondance date taux de devise</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="CurrencyRateOperator" xml:space="preserve">
+    <value>Calcul taux change</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="CurrencyRateTable" xml:space="preserve">
+    <value>Type taux</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="EntryPeriod" xml:space="preserve">
+    <value>Période écriture</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="EntryYear" xml:space="preserve">
+    <value>Exercice écriture</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="HomeCurrency" xml:space="preserve">
+    <value>Devise fonctionnelle</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="NewDescription" xml:space="preserve">
+    <value>Description nouvelle</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="RouteDescription" xml:space="preserve">
+    <value>Description route</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="SourceCurrencyDecimals" xml:space="preserve">
+    <value>Décimales devise transaction</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="SpecificReversalPeriod" xml:space="preserve">
+    <value>Période extourne spécifique</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="SpecificReversalYear" xml:space="preserve">
+    <value>Exercice extourne spécifique</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Description champ optionnel</value>
+    <comment>Added this for display in JournalDetailOptionalField model</comment>
+  </data>
+  <data name="OrigDescription" xml:space="preserve">
+    <value>Description originale</value>
+    <comment>Added this for display in JournalEntry model</comment>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Valeur texte</value>
+    <comment>Added this for display in JournalDetailOptionalField model</comment>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>Numéro transaction</value>
+    <comment>Added this for display in JournalDetailOptionalField model</comment>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>Débit</value>
+  </data>
+  <data name="FunctionalCredit" xml:space="preserve">
+    <value>Crédit devise fonctionnelle</value>
+  </data>
+  <data name="FunctionalDebit" xml:space="preserve">
+    <value>Débit devise fonctionnelle</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Référence</value>
+  </data>
+  <data name="SourceCredit" xml:space="preserve">
+    <value>Crédit devise transaction</value>
+  </data>
+  <data name="SourceCurrency" xml:space="preserve">
+    <value>Devise de transaction</value>
+  </data>
+  <data name="SourceDebit" xml:space="preserve">
+    <value>Débit devise transaction</value>
+  </data>
+  <data name="SourceType" xml:space="preserve">
+    <value>Type source</value>
+  </data>
+  <data name="GL0006" xml:space="preserve">
+    <value>En-têtes de journaux</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="GL0010" xml:space="preserve">
+    <value>Écritures de journal</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="DeletedBatch" xml:space="preserve">
+    <value>Le lot a été supprimé et ne peut pas être modifié.</value>
+  </data>
+  <data name="CurrencySpreadRange" xml:space="preserve">
+    <value>Le taux de change saisi est hors de la plage spécifiée dans les tables de devises.</value>
+  </data>
+  <data name="BatchSummary" xml:space="preserve">
+    <value>Sommaire du lot</value>
+  </data>
+  <data name="GL0402" xml:space="preserve">
+    <value>Champs optionnels détails de journaux</value>
+    <comment>Used In Export Import</comment>
+  </data>
+  <data name="ActiveSwitch" xml:space="preserve">
+    <value>Option Actif</value>
+  </data>
+  <data name="DateLastEdited" xml:space="preserve">
+    <value>Date dernière modification</value>
+  </data>
+  <data name="DeleteSwitch" xml:space="preserve">
+    <value>Admissible pour option Supprimer</value>
+  </data>
+  <data name="EditSwitch" xml:space="preserve">
+    <value>Admissible pour option Modifier</value>
+  </data>
+  <data name="ICTRelated" xml:space="preserve">
+    <value>Apparenté ICT</value>
+  </data>
+  <data name="NextEntryNumber" xml:space="preserve">
+    <value>Numéro saisie suivant</value>
+  </data>
+  <data name="OriginalStatus" xml:space="preserve">
+    <value>État initial</value>
+  </data>
+  <data name="PostingSwitch" xml:space="preserve">
+    <value>Admissible pour option Reporter</value>
+  </data>
+  <data name="PrintingSwitch" xml:space="preserve">
+    <value>Admissible pour option Imprimer</value>
+  </data>
+  <data name="RevaluationRecognizedBatch" xml:space="preserve">
+    <value>Lot de réévaluation (constaté)</value>
+  </data>
+  <data name="NumberOfDecimalsForQty" xml:space="preserve">
+    <value>Nombre de décimales dans quantité</value>
+  </data>
+  <data name="NumberOfEntries" xml:space="preserve">
+    <value>Nombre de saisies</value>
+  </data>
+  <data name="ProvisionalPostSwitch" xml:space="preserve">
+    <value>Admissible pour option Report provisoire</value>
+  </data>
+  <data name="AcctControlSwitch" xml:space="preserve">
+    <value>Option Contrôle compte</value>
+  </data>
+  <data name="AcctExists" xml:space="preserve">
+    <value>Compte existe</value>
+  </data>
+  <data name="AcctMulticurrencySwitch" xml:space="preserve">
+    <value>Option multidevise compte</value>
+  </data>
+  <data name="AcctOptionalFlds" xml:space="preserve">
+    <value>Champs optionnels compte</value>
+  </data>
+  <data name="AcctQtySwitch" xml:space="preserve">
+    <value>Option Quantité compte</value>
+  </data>
+  <data name="AcctSpecificCurrenciesSwitch" xml:space="preserve">
+    <value>Option Devises spécifiques compte</value>
+  </data>
+  <data name="AcctStatus" xml:space="preserve">
+    <value>État du compte</value>
+  </data>
+  <data name="AcctTransactionOptionalFlds" xml:space="preserve">
+    <value>Champs optionnels de transaction compte</value>
+  </data>
+  <data name="CompanyId" xml:space="preserve">
+    <value>Code entreprise</value>
+  </data>
+  <data name="CurrencyRateSpread" xml:space="preserve">
+    <value>Écart taux devise</value>
+  </data>
+  <data name="DestExists" xml:space="preserve">
+    <value>Destination existe</value>
+  </data>
+  <data name="DestHomeCurrencyDecimals" xml:space="preserve">
+    <value>Décimales devise fonctionnelle destination</value>
+  </data>
+  <data name="DestMulticurrencySwitch" xml:space="preserve">
+    <value>Option Multidevise destination</value>
+  </data>
+  <data name="DestOptionalFlds" xml:space="preserve">
+    <value>Champs optionnels destination</value>
+  </data>
+  <data name="DestQtyDecimals" xml:space="preserve">
+    <value>Décimales quantité destination</value>
+  </data>
+  <data name="DestQtySwitch" xml:space="preserve">
+    <value>Option Quantité destination</value>
+  </data>
+  <data name="DestStatus" xml:space="preserve">
+    <value>État de destination</value>
+  </data>
+  <data name="DrillDownApplicationSource" xml:space="preserve">
+    <value>Source application zoom avant</value>
+  </data>
+  <data name="DrillDownLinkNumber" xml:space="preserve">
+    <value>Numéro lien zoom avant</value>
+  </data>
+  <data name="DrillDownNumber" xml:space="preserve">
+    <value>Numéro zoom avant</value>
+  </data>
+  <data name="DrillDownType" xml:space="preserve">
+    <value>Type zoom avant</value>
+  </data>
+  <data name="ErrorBatch" xml:space="preserve">
+    <value>Lot d&apos;erreurs</value>
+  </data>
+  <data name="ErrorEntry" xml:space="preserve">
+    <value>Saisie d&apos;erreur</value>
+  </data>
+  <data name="NumberofDetails" xml:space="preserve">
+    <value>Nombre de détails</value>
+  </data>
+  <data name="OrigExists" xml:space="preserve">
+    <value>Origine existe</value>
+  </data>
+  <data name="OrigHomeCurrencyDecimals" xml:space="preserve">
+    <value>Décimales devise fonctionnelle origine</value>
+  </data>
+  <data name="OrigMulticurrencySwitch" xml:space="preserve">
+    <value>Option Multidevise origine</value>
+  </data>
+  <data name="OrigQtyDecimals" xml:space="preserve">
+    <value>Décimales quantité origine</value>
+  </data>
+  <data name="OrigQtySwitch" xml:space="preserve">
+    <value>Option Quantité origine</value>
+  </data>
+  <data name="OrigStatus" xml:space="preserve">
+    <value>État d&apos;origine</value>
+  </data>
+  <data name="Processswitches" xml:space="preserve">
+    <value>Options de traitement</value>
+  </data>
+  <data name="RouteExists" xml:space="preserve">
+    <value>Route existe</value>
+  </data>
+  <data name="RouteStatus" xml:space="preserve">
+    <value>État de route</value>
+  </data>
+  <data name="SourceCodeExists" xml:space="preserve">
+    <value>Code source existe</value>
+  </data>
+  <data name="SourceCodeExists1" xml:space="preserve">
+    <value>Code source existe</value>
+  </data>
+  <data name="SourceCurrencyAmount" xml:space="preserve">
+    <value>Montant devise transaction</value>
+  </data>
+  <data name="SpecificReversalPeriod1" xml:space="preserve">
+    <value>Période extourne spécifique</value>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valeur définie</value>
+  </data>
+  <data name="DrillDown" xml:space="preserve">
+    <value>Zoom avant vers transaction source</value>
+    <comment>Drill Down button tooltip</comment>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Date du document</value>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>Saisi par</value>
+  </data>
+</root>

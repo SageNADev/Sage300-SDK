@@ -1,0 +1,1460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account_Balances" xml:space="preserve">
+    <value>科目余额</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="AddWidgets" xml:space="preserve">
+    <value>添加挂件</value>
+    <comment>Button</comment>
+  </data>
+  <data name="AddWidgetWarning" xml:space="preserve">
+    <value>您已经打开了最大数目的挂件(6)。您必须关闭一个或更多挂件才可以打开另一个。</value>
+    <comment>Add Widget Warning</comment>
+  </data>
+  <data name="AntiForgeryTokenMissing" xml:space="preserve">
+    <value>未找到防伪标记cookie。</value>
+  </data>
+  <data name="CashAccounts" xml:space="preserve">
+    <value>现金帐户</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="CashPosition" xml:space="preserve">
+    <value>现金头寸</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="CNAPortalHelpArticles" xml:space="preserve">
+    <value>文章</value>
+  </data>
+  <data name="CNAPortalHelpCenter" xml:space="preserve">
+    <value>帮助中心</value>
+  </data>
+  <data name="CNAPortalHelpContactSupport" xml:space="preserve">
+    <value>联系技术支持</value>
+  </data>
+  <data name="CNAPortalHelpExploreSage" xml:space="preserve">
+    <value>特性之旅</value>
+  </data>
+  <data name="CNAPortalHelpGettingStart" xml:space="preserve">
+    <value>入门</value>
+  </data>
+  <data name="CNAPortalHelpPrintReports" xml:space="preserve">
+    <value>打印报表</value>
+  </data>
+  <data name="CNAPortalHelpResource" xml:space="preserve">
+    <value>资源</value>
+  </data>
+  <data name="CNAPortalHelpSageCity" xml:space="preserve">
+    <value>Sage City</value>
+  </data>
+  <data name="CNAPortalHelpSageUniversity" xml:space="preserve">
+    <value>Sage大学</value>
+  </data>
+  <data name="CNAPortalHelpSettingHomePageWidgets" xml:space="preserve">
+    <value>设置主页挂件</value>
+  </data>
+  <data name="CNAPortalHelpShareIdeas" xml:space="preserve">
+    <value>分享您的想法</value>
+  </data>
+  <data name="CNAPortalHelpWhatNewHere" xml:space="preserve">
+    <value>有何新内容</value>
+  </data>
+  <data name="CNAPortal_Home" xml:space="preserve">
+    <value>主页</value>
+  </data>
+  <data name="CNAPortal_Projects" xml:space="preserve">
+    <value>项目</value>
+  </data>
+  <data name="CNAPortal_Task" xml:space="preserve">
+    <value>期初</value>
+  </data>
+  <data name="CNA_Home_Acc" xml:space="preserve">
+    <value>应付帐款</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP" xml:space="preserve">
+    <value>应付帐款定期处理</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_APPP" xml:space="preserve">
+    <value>应付帐款定期处理</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_CRPB" xml:space="preserve">
+    <value>创建经常性应付批次</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_EF1099" xml:space="preserve">
+    <value>1099电子申报</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_EFT5018" xml:space="preserve">
+    <value>T5018 (CPRS)电子申报</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_GLBatch" xml:space="preserve">
+    <value>创建总帐批次</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_YearEnd" xml:space="preserve">
+    <value>年末</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Setup" xml:space="preserve">
+    <value>应付帐款设置</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_AccSets" xml:space="preserve">
+    <value>科目集合</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_APSetup" xml:space="preserve">
+    <value>应付帐款设置</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_CRPS1099" xml:space="preserve">
+    <value>1099/CPRS代码</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_DistCodes" xml:space="preserve">
+    <value>分布代码</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_DistSets" xml:space="preserve">
+    <value>分布集合</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_EmailMsg" xml:space="preserve">
+    <value>电邮讯息</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_GLIntr" xml:space="preserve">
+    <value>总帐整合</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_OptFields" xml:space="preserve">
+    <value>可选字段</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_PSC" xml:space="preserve">
+    <value>付款选择代码</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_Terms" xml:space="preserve">
+    <value>条款</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans" xml:space="preserve">
+    <value>应付帐款交易</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_TransRep" xml:space="preserve">
+    <value>应付帐款交易报表</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_APTrans" xml:space="preserve">
+    <value>应付帐款交易</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_CtrlPmt" xml:space="preserve">
+    <value>控制付款</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_CtrlPmtBtch" xml:space="preserve">
+    <value>创建付款批次</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_IBL" xml:space="preserve">
+    <value>发票批次清单</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Inq" xml:space="preserve">
+    <value>查询</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Inq_CPI" xml:space="preserve">
+    <value>付款查询</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_InvEntry" xml:space="preserve">
+    <value>发票分录</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_PB" xml:space="preserve">
+    <value>过帐批次</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_PBL" xml:space="preserve">
+    <value>付款批次清单</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_PmtEntry" xml:space="preserve">
+    <value>付款分录</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Print_Chk" xml:space="preserve">
+    <value>打印支票</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt" xml:space="preserve">
+    <value>应付帐款交易报表</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_ACR" xml:space="preserve">
+    <value>已帐析现金需求</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_APay" xml:space="preserve">
+    <value>已帐析应付款</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_AR" xml:space="preserve">
+    <value>已帐析保留款</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_BL" xml:space="preserve">
+    <value>批次列表</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_CR" xml:space="preserve">
+    <value>支票登记簿</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_GLT" xml:space="preserve">
+    <value>总帐交易</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_PE" xml:space="preserve">
+    <value>过帐错误</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_VT" xml:space="preserve">
+    <value>供应商交易</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend" xml:space="preserve">
+    <value>应付帐款供应商</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_VendRep" xml:space="preserve">
+    <value>应付帐款供应商报表</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVend" xml:space="preserve">
+    <value>应付帐款供应商</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVend_RP" xml:space="preserve">
+    <value>经常性应付</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVend_VA" xml:space="preserve">
+    <value>供应商活动</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVend_Vend" xml:space="preserve">
+    <value>供应商</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVend_VG" xml:space="preserve">
+    <value>供应商群组</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVR" xml:space="preserve">
+    <value>应付帐款供应商报表</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVR_CPRST5018" xml:space="preserve">
+    <value>打印T5018 (CPRS)表格</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVR_LL" xml:space="preserve">
+    <value>信函/标签</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVR_Print1099" xml:space="preserve">
+    <value>打印1099/1096表格</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVR_Vend" xml:space="preserve">
+    <value>供应商</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_Inq" xml:space="preserve">
+    <value>查询</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_Inq_CPRS1099" xml:space="preserve">
+    <value>1099/CPRS查询</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust" xml:space="preserve">
+    <value>应收帐款客户</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_CustRep" xml:space="preserve">
+    <value>应收帐款客户报表</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARC" xml:space="preserve">
+    <value>应收帐款客户</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARCustRpt" xml:space="preserve">
+    <value>应收帐款客户报表</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARCustRpt_Cust" xml:space="preserve">
+    <value>客户</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARCustRpt_Lbl" xml:space="preserve">
+    <value>标签</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARCustRpt_RC" xml:space="preserve">
+    <value>经常性收费</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARCustRpt_SLL" xml:space="preserve">
+    <value>对帐单/信函/标签</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARC_CG" xml:space="preserve">
+    <value>客户群组</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARC_Cust" xml:space="preserve">
+    <value>客户</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARC_NA" xml:space="preserve">
+    <value>统一帐户</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARC_STL" xml:space="preserve">
+    <value>发运至地点</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_PP" xml:space="preserve">
+    <value>应收帐款定期处理</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_PP_ARPP" xml:space="preserve">
+    <value>应收帐款定期处理</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_PP_ARPP_CGLB" xml:space="preserve">
+    <value>创建总帐批次</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_PP_ARPP_CIB" xml:space="preserve">
+    <value>创建利息批次</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_PP_ARPP_YearEnd" xml:space="preserve">
+    <value>年末</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup" xml:space="preserve">
+    <value>应收帐款设置</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_APSetup_Payment_Code" xml:space="preserve">
+    <value>付款代码</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup" xml:space="preserve">
+    <value>应收帐款设置</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_AccSet" xml:space="preserve">
+    <value>科目集合</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Billing_Cycle" xml:space="preserve">
+    <value>帐单周期</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Comment_Types" xml:space="preserve">
+    <value>备注类型</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_DC" xml:space="preserve">
+    <value>分布代码</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Dunning" xml:space="preserve">
+    <value>催款讯息</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_EMsg" xml:space="preserve">
+    <value>电邮讯息</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_GLI" xml:space="preserve">
+    <value>总帐整合</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Interest" xml:space="preserve">
+    <value>利息概览</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_OF" xml:space="preserve">
+    <value>可选字段</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Opt" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Payment_Code" xml:space="preserve">
+    <value>付款代码</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_SalesPer" xml:space="preserve">
+    <value>业务员</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Terms" xml:space="preserve">
+    <value>条款</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans" xml:space="preserve">
+    <value>应收帐款交易</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_TransRep" xml:space="preserve">
+    <value>应收帐款交易报表</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART" xml:space="preserve">
+    <value>应收帐款交易</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR" xml:space="preserve">
+    <value>应收帐款交易报表</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_AgdR" xml:space="preserve">
+    <value>已帐析保留款</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_ATB" xml:space="preserve">
+    <value>已帐析试算表</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_BL" xml:space="preserve">
+    <value>批次列表</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_CT" xml:space="preserve">
+    <value>客户交易</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_GLT" xml:space="preserve">
+    <value>总帐交易</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_Inv" xml:space="preserve">
+    <value>发票</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_ISH" xml:space="preserve">
+    <value>货品销售历史</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_PErr" xml:space="preserve">
+    <value>过帐错误</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_Rec" xml:space="preserve">
+    <value>收款</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART_IBL" xml:space="preserve">
+    <value>发票批次清单</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART_IE" xml:space="preserve">
+    <value>发票分录</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART_PB" xml:space="preserve">
+    <value>过帐批次</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART_RBL" xml:space="preserve">
+    <value>收款批次清单</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART_RE" xml:space="preserve">
+    <value>收款分录</value>
+  </data>
+  <data name="CNA_Home_GL" xml:space="preserve">
+    <value>总帐</value>
+  </data>
+  <data name="CNA_Home_GL_Acc" xml:space="preserve">
+    <value>总帐科目</value>
+  </data>
+  <data name="CNA_Home_GL_Acc_GL" xml:space="preserve">
+    <value>总帐科目</value>
+  </data>
+  <data name="CNA_Home_GL_Acc_GL_Acc" xml:space="preserve">
+    <value>科目</value>
+  </data>
+  <data name="CNA_Home_GL_PP" xml:space="preserve">
+    <value>总帐定期处理</value>
+  </data>
+  <data name="CNA_Home_GL_PP_GLPP" xml:space="preserve">
+    <value>总帐定期处理</value>
+  </data>
+  <data name="CNA_Home_GL_PP_GLPP_CNY" xml:space="preserve">
+    <value>创建新年度</value>
+  </data>
+  <data name="CNA_Home_GL_PP_GLPP_CREB" xml:space="preserve">
+    <value>创建经常性分录批次</value>
+  </data>
+  <data name="CNA_Home_GL_PP_PEM" xml:space="preserve">
+    <value>期末维护</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt" xml:space="preserve">
+    <value>总帐报表</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt" xml:space="preserve">
+    <value>总帐报表</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt_BL" xml:space="preserve">
+    <value>批次列表</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt_COA" xml:space="preserve">
+    <value>科目表</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt_TB" xml:space="preserve">
+    <value>试算表</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt_TDOF" xml:space="preserve">
+    <value>交易明细可选字段</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt_TL" xml:space="preserve">
+    <value>交易列表</value>
+  </data>
+  <data name="CNA_Home_GL_Setup" xml:space="preserve">
+    <value>总帐设置</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup" xml:space="preserve">
+    <value>总帐设置</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_AG" xml:space="preserve">
+    <value>科目群组</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_AS" xml:space="preserve">
+    <value>科目结构</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_OF" xml:space="preserve">
+    <value>可选字段</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_Opt" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_RE" xml:space="preserve">
+    <value>经常性分录</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_SegCod" xml:space="preserve">
+    <value>节段代码</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_SrcCod" xml:space="preserve">
+    <value>来源代码</value>
+  </data>
+  <data name="CNA_Home_GL_Trans" xml:space="preserve">
+    <value>总帐交易</value>
+  </data>
+  <data name="CNA_Home_GL_Trans_GLTrans" xml:space="preserve">
+    <value>总帐交易</value>
+  </data>
+  <data name="CNA_Home_GL_Trans_GLTrans_BL" xml:space="preserve">
+    <value>批次清单</value>
+  </data>
+  <data name="CNA_Home_GL_Trans_GLTrans_JE" xml:space="preserve">
+    <value>日志分录</value>
+  </data>
+  <data name="CNA_Home_GL_Trans_GLTrans_PB" xml:space="preserve">
+    <value>过帐批次</value>
+  </data>
+  <data name="CNA_Home_Mor" xml:space="preserve">
+    <value>更多</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin" xml:space="preserve">
+    <value>行政管理服务</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin_Ser_Data_Integ" xml:space="preserve">
+    <value>数据一致性</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin_Ser_Header" xml:space="preserve">
+    <value>行政管理服务</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin_Ser_Restart" xml:space="preserve">
+    <value>重启维护</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin_Ser_Sec_Grp" xml:space="preserve">
+    <value>安全群组</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin_Ser_User_Auth" xml:space="preserve">
+    <value>用户权限</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Periodic_Pro" xml:space="preserve">
+    <value>银行定期处理</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Per_Pro_Clear_History" xml:space="preserve">
+    <value>清除历史</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Per_Pro_GL_Batch" xml:space="preserve">
+    <value>创建总帐批次</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Per_Pro_Header" xml:space="preserve">
+    <value>银行定期处理</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup" xml:space="preserve">
+    <value>银行设置</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup_Dist_Code" xml:space="preserve">
+    <value>分布代码</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup_Dist_Sets" xml:space="preserve">
+    <value>分布集合</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup_GL_Int" xml:space="preserve">
+    <value>总帐整合</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup_Header" xml:space="preserve">
+    <value>银行设置</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans" xml:space="preserve">
+    <value>银行交易</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Bnk_Entry" xml:space="preserve">
+    <value>银行分录</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Bnk_Trans" xml:space="preserve">
+    <value>银行转帐</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Header" xml:space="preserve">
+    <value>银行交易</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Import_OFX" xml:space="preserve">
+    <value>导入OFX对帐单</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Post_Entry" xml:space="preserve">
+    <value>过帐分录</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Post_Recon" xml:space="preserve">
+    <value>过帐调节</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Reconcile" xml:space="preserve">
+    <value>调节对帐单</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Reconcile_Trans" xml:space="preserve">
+    <value>回转交易</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Recon_OFX" xml:space="preserve">
+    <value>调节OFX对帐单</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep" xml:space="preserve">
+    <value>银行交易报表</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Bank_Ent" xml:space="preserve">
+    <value>银行分录过帐日志</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Bnk_Recon" xml:space="preserve">
+    <value>银行调节</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Chk_Paym_Reg" xml:space="preserve">
+    <value>支票/付款登记簿</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_CommonSer_Comp_Prof" xml:space="preserve">
+    <value>公司概览</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_CommonSer_Fisal_Cal" xml:space="preserve">
+    <value>财务日历</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_CommonSer_Header" xml:space="preserve">
+    <value>公共服务</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_CommonSer_Optional_Fields" xml:space="preserve">
+    <value>可选字段</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Deposit" xml:space="preserve">
+    <value>存款状态</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Deposit_Reg" xml:space="preserve">
+    <value>存款登记簿</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_GL_Trans" xml:space="preserve">
+    <value>总帐交易</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Header" xml:space="preserve">
+    <value>银行交易报表</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Recon_Post_Journal" xml:space="preserve">
+    <value>调节过帐日志</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Recon_Status" xml:space="preserve">
+    <value>调节状态</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Trans_List" xml:space="preserve">
+    <value>交易列表</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Trans_Post_Journal" xml:space="preserve">
+    <value>转帐过帐日志</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Withdraw" xml:space="preserve">
+    <value>提款状态</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Trans_Hist" xml:space="preserve">
+    <value>交易历史查询</value>
+  </data>
+  <data name="CNA_Home_Mor_CommonSer" xml:space="preserve">
+    <value>公共服务</value>
+  </data>
+  <data name="CNA_Home_Mor_Curr" xml:space="preserve">
+    <value>币种</value>
+  </data>
+  <data name="CNA_Home_Mor_CurrCur_Rate_Type" xml:space="preserve">
+    <value>币种汇率类型</value>
+  </data>
+  <data name="CNA_Home_Mor_Curr_Cur_Codes" xml:space="preserve">
+    <value>币种代码</value>
+  </data>
+  <data name="CNA_Home_Mor_Curr_Cur_Rates" xml:space="preserve">
+    <value>币种汇率</value>
+  </data>
+  <data name="CNA_Home_Mor_Curr_Header" xml:space="preserve">
+    <value>币种</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Authori" xml:space="preserve">
+    <value>税务机构</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Classes" xml:space="preserve">
+    <value>税级</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Groups" xml:space="preserve">
+    <value>税组</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Rates" xml:space="preserve">
+    <value>税率</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Reports" xml:space="preserve">
+    <value>税务报表</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Reports_Header" xml:space="preserve">
+    <value>税务报表</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Reports_Tax_Trk" xml:space="preserve">
+    <value>税务追踪</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Ser" xml:space="preserve">
+    <value>税务服务</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Ser_Header" xml:space="preserve">
+    <value>税务服务</value>
+  </data>
+  <data name="CNA_Home_Ser" xml:space="preserve">
+    <value>应收帐款</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>公司</value>
+  </data>
+  <data name="Contact_Us" xml:space="preserve">
+    <value>联系我们</value>
+    <comment>Help url</comment>
+  </data>
+  <data name="Copyright_message" xml:space="preserve">
+    <value>The Sage Group plc或其授权者。保留所有权利。</value>
+  </data>
+  <data name="Copyright_Trademarks" xml:space="preserve">
+    <value>版权/商标</value>
+    <comment>Help url</comment>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="EntityError_Priority_Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="EntityError_Priority_Message" xml:space="preserve">
+    <value>讯息</value>
+  </data>
+  <data name="EntityError_Priority_Security" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="EntityError_Priority_SevereError" xml:space="preserve">
+    <value>EntityError_Priority_SevereError</value>
+  </data>
+  <data name="EntityError_Priority_Warning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>发生一个问题，无法处理您的请求。稍后再试或向您的管理员求助。</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>未预期的错误</value>
+  </data>
+  <data name="ExpiringVendorDiscounts" xml:space="preserve">
+    <value>即将失效的供应商折扣</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="FeatureTourSlideDashboard" xml:space="preserve">
+    <value>您的数据一览： </value>
+  </data>
+  <data name="FeatureTourSlideDashboard1" xml:space="preserve">
+    <value>挂件</value>
+  </data>
+  <data name="FeatureTourSlideDashboard2" xml:space="preserve">
+    <value>添加和自定义仪表板上的挂件</value>
+  </data>
+  <data name="FeatureTourSlideDashboard3" xml:space="preserve">
+    <value>来查看您需要一目了然的信息。</value>
+  </data>
+  <data name="FeatureTourSlideDashboard4" xml:space="preserve">
+    <value>下一步 &amp;raquo;</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter1" xml:space="preserve">
+    <value>点击可获帮助信息：</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter10" xml:space="preserve">
+    <value>探索帮助和资源</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter11" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter12" xml:space="preserve">
+    <value>完毕</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter13" xml:space="preserve">
+    <value>重新开始</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter2" xml:space="preserve">
+    <value>帮助中心</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter3" xml:space="preserve">
+    <value>在帮助菜单上，您会发现这一特性之旅，帮助中心，和其它资源的链接，以帮助您最大限度地获得有关Sage 300的信息。</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter4" xml:space="preserve">
+    <value>了解有关搜索的更多详情</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter5" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter6" xml:space="preserve">
+    <value>了解有关窗口管理器的更多详情</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter7" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter8" xml:space="preserve">
+    <value>了解有关挂件的更多详情</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter9" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="FeatureTourSlideSearch" xml:space="preserve">
+    <value>一次搜索所有： </value>
+  </data>
+  <data name="FeatureTourSlideSearch1" xml:space="preserve">
+    <value>全局搜索</value>
+  </data>
+  <data name="FeatureTourSlideSearch2" xml:space="preserve">
+    <value>搜索：</value>
+  </data>
+  <data name="FeatureTourSlideSearch3" xml:space="preserve">
+    <value>应用程序屏幕</value>
+  </data>
+  <data name="FeatureTourSlideSearch4" xml:space="preserve">
+    <value>科目</value>
+  </data>
+  <data name="FeatureTourSlideSearch5" xml:space="preserve">
+    <value>交易</value>
+  </data>
+  <data name="FeatureTourSlideSearch6" xml:space="preserve">
+    <value>人们</value>
+  </data>
+  <data name="FeatureTourSlideSearch7" xml:space="preserve">
+    <value>以及更多。</value>
+  </data>
+  <data name="FeatureTourSlideSearch8" xml:space="preserve">
+    <value>下一步 &amp;raquo;</value>
+  </data>
+  <data name="FeatureTourSlideWelcome" xml:space="preserve">
+    <value>欢迎来到 </value>
+  </data>
+  <data name="FeatureTourSlideWelcome1" xml:space="preserve">
+    <value>Sage 300!</value>
+  </data>
+  <data name="FeatureTourSlideWelcome2" xml:space="preserve">
+    <value>准备好了花一分钟来了解</value>
+  </data>
+  <data name="FeatureTourSlideWelcome3" xml:space="preserve">
+    <value>您的新软件的关键特性吗？</value>
+  </data>
+  <data name="FeatureTourSlideWelcome4" xml:space="preserve">
+    <value>如果您愿意稍后再巡游，您可以随时点击帮助 &amp;rsaquo; 特性之旅。</value>
+  </data>
+  <data name="FeatureTourSlideWelcome5" xml:space="preserve">
+    <value>巡游 &amp;raquo;</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager" xml:space="preserve">
+    <value>多任务处理变得简单：</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager1" xml:space="preserve">
+    <value>窗口管理器</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager2" xml:space="preserve">
+    <value>在您工作时打开多达十个窗口。</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager3" xml:space="preserve">
+    <value>使用窗口管理器轻松地在打开的窗口之间巡航，</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager4" xml:space="preserve">
+    <value>以及在您完成之后关闭他们。</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager5" xml:space="preserve">
+    <value>下一步 &amp;raquo;</value>
+  </data>
+  <data name="NewTenant_Content_CurrencySection_Description" xml:space="preserve">
+    <value>如果交易可以用其它币种进行，指定您公司的功能币种并选择多币种选项。</value>
+  </data>
+  <data name="NewTenant_Content_CurrencySection_Title" xml:space="preserve">
+    <value>币种</value>
+  </data>
+  <data name="NewTenant_Content_FiscalYearSection_Description" xml:space="preserve">
+    <value>输入公司当前财务年度的起始日期，以及您要为其添加历史的最早财务年度。选择公司财务年度中的期间数。</value>
+  </data>
+  <data name="NewTenant_Content_FiscalYearSection_Title" xml:space="preserve">
+    <value>财务年度</value>
+  </data>
+  <data name="NewTenant_Content_InfoText1" xml:space="preserve">
+    <value>如果公司使用13期间分类帐，选择包含四个财务期间的季度。</value>
+  </data>
+  <data name="NewTenant_Content_InfoText2" xml:space="preserve">
+    <value>您可以随时打开多币种选项，但在您选择它之后便不可以关闭。</value>
+  </data>
+  <data name="NewTenant_CurrentFiscalYear" xml:space="preserve">
+    <value>当前财务年度</value>
+  </data>
+  <data name="NewTenant_FiscalYearStartingDate" xml:space="preserve">
+    <value>财务年度起始日期</value>
+  </data>
+  <data name="NewTenant_Header" xml:space="preserve">
+    <value>欢迎来到</value>
+  </data>
+  <data name="NewTenant_Header2" xml:space="preserve">
+    <value>要开始使用，输入有关您财务日历和币种设置的信息。</value>
+  </data>
+  <data name="NewTenant_NoOfFiscalPeriods" xml:space="preserve">
+    <value>财务期间数</value>
+  </data>
+  <data name="NewTenant_OldestFiscalYear" xml:space="preserve">
+    <value>最早财务年度</value>
+  </data>
+  <data name="FirstTimeUserMessage" xml:space="preserve">
+    <value>要开始使用，输入有关您财务日历和币种设置的信息。</value>
+  </data>
+  <data name="FirstTimeUserMessage_Widgets1" xml:space="preserve">
+    <value>添加和自定义挂件以便</value>
+  </data>
+  <data name="FirstTimeUserMessage_Widgets2" xml:space="preserve">
+    <value>在您的仪表板上看到关键的商业数据。</value>
+  </data>
+  <data name="Hide" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>主页</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="IncomeAndExpenses" xml:space="preserve">
+    <value>收入与费用</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="IncomeFromOperations" xml:space="preserve">
+    <value>营运收入</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="LoggingConstants" xml:space="preserve">
+    <value>[Sage Portal Cloud] [{0}] [TenantId: {1}] [ModuleName: {2}] [UserId; {3}] - {4}</value>
+  </data>
+  <data name="MaxWindowExceeded" xml:space="preserve">
+    <value>您已经打开了最大数目的窗口（10）。您必须关闭一个或更多挂件才可以打开另一个。</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="OpenWindows" xml:space="preserve">
+    <value>打开的窗口</value>
+  </data>
+  <data name="CreateNote" xml:space="preserve">
+    <value>添加备忘录</value>
+  </data>
+  <data name="ViewNotes" xml:space="preserve">
+    <value>备忘录</value>
+  </data>
+  <data name="PayablesAging" xml:space="preserve">
+    <value>应付款帐析</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Payable_Aging" xml:space="preserve">
+    <value>应付款帐析</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Portal_Title" xml:space="preserve">
+    <value>Sage 300</value>
+  </data>
+  <data name="Portal_Welcome_Msg" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PreviousYearExpenseComparison" xml:space="preserve">
+    <value>先前年度费用比较</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="PreviousYearIncomeComparison" xml:space="preserve">
+    <value>先前年度收入比较</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Private_Policy" xml:space="preserve">
+    <value>隐私权政策</value>
+    <comment>Help url</comment>
+  </data>
+  <data name="ReceivablesAging" xml:space="preserve">
+    <value>应收款帐析</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>编辑标题</value>
+  </data>
+  <data name="Sage_Online" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="See_Data" xml:space="preserve">
+    <value>进一步查看您的数据</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="Select_Tenant" xml:space="preserve">
+    <value>-- 选择公司 --</value>
+  </data>
+  <data name="SessionError" xml:space="preserve">
+    <value>会话日期格式无效。</value>
+  </data>
+  <data name="SessionSuccess" xml:space="preserve">
+    <value>会话日期已保存。</value>
+  </data>
+  <data name="Session_Date" xml:space="preserve">
+    <value>会话日期</value>
+  </data>
+  <data name="TaskAdded" xml:space="preserve">
+    <value>窗口...</value>
+  </data>
+  <data name="TopCustomersByBilling" xml:space="preserve">
+    <value>按帐单排列的最前客户</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="TopNav_Admin_Services" xml:space="preserve">
+    <value>行政管理服务</value>
+  </data>
+  <data name="TopNav_CRM" xml:space="preserve">
+    <value>CRM</value>
+  </data>
+  <data name="TopNav_Cust_Mgmt" xml:space="preserve">
+    <value>客户管理</value>
+  </data>
+  <data name="TopNav_Fixed_Assets_Online" xml:space="preserve">
+    <value>Sage Fixed Assets Online</value>
+  </data>
+  <data name="TopNav_Manage_Liscenses" xml:space="preserve">
+    <value>管理许可证</value>
+  </data>
+  <data name="TopNav_Manage_Subscription" xml:space="preserve">
+    <value>管理订用</value>
+  </data>
+  <data name="TopNav_Manage_Users" xml:space="preserve">
+    <value>管理用户</value>
+  </data>
+  <data name="TopNav_Mobile_Web_Solutions" xml:space="preserve">
+    <value>移动和网页解决方案</value>
+  </data>
+  <data name="TopNav_More" xml:space="preserve">
+    <value>更多</value>
+  </data>
+  <data name="TopNav_My_Profile" xml:space="preserve">
+    <value>我的概览</value>
+  </data>
+  <data name="TopNav_Preferences" xml:space="preserve">
+    <value>首选</value>
+  </data>
+  <data name="TopNav_Products_Services" xml:space="preserve">
+    <value>产品和服务</value>
+  </data>
+  <data name="TopNav_Sage" xml:space="preserve">
+    <value>Sage</value>
+  </data>
+  <data name="TopNav_SageId" xml:space="preserve">
+    <value>Sage标识</value>
+  </data>
+  <data name="TopNav_Sign_out" xml:space="preserve">
+    <value>登出</value>
+  </data>
+  <data name="TopNav_Solutions" xml:space="preserve">
+    <value>解决方案</value>
+  </data>
+  <data name="TopNav_User_Mgmt" xml:space="preserve">
+    <value>用户管理</value>
+  </data>
+  <data name="TopVendors" xml:space="preserve">
+    <value>最前供应商</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="TopCustomersByCurrentAmountDue" xml:space="preserve">
+    <value>按当前到期金额排列的最前客户</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="UnsupportedBrowserErrorMessage" xml:space="preserve">
+    <value>为确保您的数据的安全性并能够最快，最可靠地使用Sage服务的所有特性，请立即升级您的网页浏览器。</value>
+    <comment>Unsupported browser</comment>
+  </data>
+  <data name="UnsupportedBrowserErrorPageTitle" xml:space="preserve">
+    <value>升级您的网页浏览器</value>
+    <comment>Unsupported browser</comment>
+  </data>
+  <data name="UnsupportedBrowserErrorTitle" xml:space="preserve">
+    <value>升级您的网页浏览器以便获得更好的体验</value>
+    <comment>Unsupported browser</comment>
+  </data>
+  <data name="Widgets" xml:space="preserve">
+    <value>挂件</value>
+    <comment>List</comment>
+  </data>
+  <data name="WindowDrag" xml:space="preserve">
+    <value>拖动</value>
+  </data>
+  <data name="Windows" xml:space="preserve">
+    <value>窗口</value>
+  </data>
+  <data name="NewTenant_ConfirmationPopupText1" xml:space="preserve">
+    <value>是否确要取消设置？</value>
+  </data>
+  <data name="NewTenant_ConfirmationPopupText2" xml:space="preserve">
+    <value>要开始使用，输入有关您财务日历和币种设置的信息。</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>报表</value>
+    <comment>Label to be shown in Task Dock</comment>
+  </data>
+  <data name="Select_Tenant_Title" xml:space="preserve">
+    <value>选择公司</value>
+  </data>
+  <data name="BrowserChrome" xml:space="preserve">
+    <value>Chrome</value>
+  </data>
+  <data name="BrowserFirefox" xml:space="preserve">
+    <value>Firefox</value>
+  </data>
+  <data name="BrowserIE" xml:space="preserve">
+    <value>Internet Explorer</value>
+  </data>
+  <data name="BrowserSafari" xml:space="preserve">
+    <value>Safari （Mac操作系统）</value>
+  </data>
+  <data name="Tenant" xml:space="preserve">
+    <value>租客</value>
+  </data>
+  <data name="PageRefreshError" xml:space="preserve">
+    <value>如果继续，对打开的窗口和报表的任何未保存的更改将会丢失。</value>
+  </data>
+  <data name="AP" xml:space="preserve">
+    <value>应付帐款</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>应收帐款</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="AS" xml:space="preserve">
+    <value>行政管理服务</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="CS" xml:space="preserve">
+    <value>公共服务</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="GL" xml:space="preserve">
+    <value>总帐</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="GLAccount" xml:space="preserve">
+    <value>总帐科目</value>
+    <comment>Label For Finder</comment>
+  </data>
+  <data name="IC" xml:space="preserve">
+    <value>存货控制</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="OE" xml:space="preserve">
+    <value>销售订单</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="CustomizeWidgetMessage1" xml:space="preserve">
+    <value>添加和自定义挂件以便</value>
+  </data>
+  <data name="CustomizeWidgetMessage2" xml:space="preserve">
+    <value>在您的仪表板上看到关键的商业数据。</value>
+  </data>
+  <data name="SeeIntoYourData" xml:space="preserve">
+    <value>进一步查看您的数据</value>
+  </data>
+  <data name="Printed" xml:space="preserve">
+    <value>已打印</value>
+    <comment>Label For Task Doc</comment>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>银行</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="PO" xml:space="preserve">
+    <value>订购单</value>
+  </data>
+  <data name="ActivityTrend" xml:space="preserve">
+    <value>活动趋势</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="InventoryItemPerformance" xml:space="preserve">
+    <value>存货货品表现</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="SalesPerSalesperson" xml:space="preserve">
+    <value>顶级业务员</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Wizard_Currency_DefaultRateType" xml:space="preserve">
+    <value>默认汇率类型</value>
+  </data>
+  <data name="Wizard_Currency_Header1" xml:space="preserve">
+    <value>币种</value>
+  </data>
+  <data name="Wizard_Currency_Header2" xml:space="preserve">
+    <value>选择公司的功能币种。如果您的公司以多币种处理交易，选择多币种并指定默认汇率类型。</value>
+  </data>
+  <data name="Wizard_Currency_Header3" xml:space="preserve">
+    <value>您可以随时选择多币种选项，但在您选择它之后该设置便成为永久性的而且不能清除。</value>
+  </data>
+  <data name="Wizard_Currency_Header3_Important" xml:space="preserve">
+    <value>重要！</value>
+  </data>
+  <data name="Wizard_Fiscal_CurrentYear" xml:space="preserve">
+    <value>当前财务年度</value>
+  </data>
+  <data name="Wizard_Fiscal_Header2" xml:space="preserve">
+    <value>指定公司当前财务年度的起始日期，您要为其添加历史的最早财务年度，和公司财务年度中的期间数。</value>
+  </data>
+  <data name="Wizard_Fiscal_OldestYear" xml:space="preserve">
+    <value>最早财务年度</value>
+  </data>
+  <data name="Wizard_Fiscal_Periods" xml:space="preserve">
+    <value>期间</value>
+  </data>
+  <data name="Wizard_Fiscal_StartingDate" xml:space="preserve">
+    <value>起始日期</value>
+  </data>
+  <data name="Wizard_Initial_Header1" xml:space="preserve">
+    <value>让我们开始吧！</value>
+  </data>
+  <data name="Wizard_Initial_Header2" xml:space="preserve">
+    <value>要开始设置您的公司，我们会问一些有关您财务日历和您要以其处理交易的币种的细节。</value>
+  </data>
+  <data name="Wizard_Initial_LastStep" xml:space="preserve">
+    <value>快速设置</value>
+  </data>
+  <data name="Wizard_Btn_Done" xml:space="preserve">
+    <value>完毕</value>
+  </data>
+  <data name="Wizard_Btn_Next" xml:space="preserve">
+    <value>下一步</value>
+  </data>
+  <data name="Wizard_Setup_Header1" xml:space="preserve">
+    <value>快速设置</value>
+  </data>
+  <data name="Wizard_Setup_Header2" xml:space="preserve">
+    <value>为了帮助您快速上手，我们可以用默认设置来设置您的公司，包括以下标准科目表。</value>
+  </data>
+  <data name="Wizard_Setup_Header3" xml:space="preserve">
+    <value>您可以编辑在这里列出的标准科目和描述。在初始设置之后，您可以复查并按需要修改设置和科目。</value>
+  </data>
+  <data name="Wizard_Setup_QuickSetup" xml:space="preserve">
+    <value>快速设置</value>
+  </data>
+  <data name="Wizard_Setup_QuickSetupDdescription" xml:space="preserve">
+    <value>- 帮助我用默认设置和标准科目表快速开始。</value>
+  </data>
+  <data name="Wizard_Setup_Skip" xml:space="preserve">
+    <value>跳过</value>
+  </data>
+  <data name="Wizard_Setup_SkipDescription" xml:space="preserve">
+    <value>- 用空白设置和空白科目表开始。我将导入或设置自己的记录。</value>
+  </data>
+  <data name="Wizard_Done_Header1" xml:space="preserve">
+    <value>全部完成！</value>
+  </data>
+  <data name="Wizard_Done_Header2" xml:space="preserve">
+    <value>您已准备好开始使用Sage 300 Online了。</value>
+  </data>
+  <data name="Wizard_Setup_Account" xml:space="preserve">
+    <value>科目</value>
+  </data>
+  <data name="Wizard_Setup_Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Wizard_CurrencyCodeInvalid" xml:space="preserve">
+    <value>未定义币种代码"{0}"。输入或选择一个有效的币种代码。</value>
+  </data>
+  <data name="SessionDateDisabledInfo" xml:space="preserve">
+    <value>您唯有在没有任何窗口打开时才可以更改会话日期。</value>
+  </data>
+  <data name="QuickMenu_AddNote" xml:space="preserve">
+    <value>添加备忘录</value>
+  </data>
+  <data name="QuickMenu_Notes" xml:space="preserve">
+    <value>备忘录</value>
+  </data>
+  <data name="QuickMenu_CloseAll" xml:space="preserve">
+    <value>关闭全部</value>
+  </data>
+  <data name="QuickMenu_WindowManager" xml:space="preserve">
+    <value>窗口管理器</value>
+  </data>
+  <data name="QuickMenu_CustomerReport" xml:space="preserve">
+    <value>报表</value>
+  </data>
+  <data name="TX" xml:space="preserve">
+    <value>税务</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="FeatureTourSlideNotes" xml:space="preserve">
+    <value>添加和管理备忘录：</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideNotes1" xml:space="preserve">
+    <value>备忘录面板</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideNotes2" xml:space="preserve">
+    <value>使用备忘录面板添加备忘录到客户，供应商，和存货货品，并审查和管理备忘录。</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideReports" xml:space="preserve">
+    <value>集中于一地的报表：</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideReports1" xml:space="preserve">
+    <value>报表清单</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideReports2" xml:space="preserve">
+    <value>使用这一可自定义的快捷键清单快速找到和打印您最常使用的报表。</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideHelpCenter14" xml:space="preserve">
+    <value>了解更多有关报表的详情</value>
+    <comment>CSH ID 677007001</comment>
+  </data>
+  <data name="QuickMenu_ARTemplate" xml:space="preserve">
+    <value>应收帐款{0}</value>
+  </data>
+  <data name="QuickMenu_CustomerDocuments" xml:space="preserve">
+    <value>客户凭证</value>
+  </data>
+  <data name="QuickMenu_Dismiss" xml:space="preserve">
+    <value>弃置</value>
+  </data>
+  <data name="QuickMenu_Inquiries" xml:space="preserve">
+    <value>查询</value>
+  </data>
+  <data name="FeatureTourSlideInquiries" xml:space="preserve">
+    <value>查找明细信息</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideInquiries1" xml:space="preserve">
+    <value>查询</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideInquiries2" xml:space="preserve">
+    <value>使用查询工具查找信息并下钻到记录和交易。</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideHelpCenter15" xml:space="preserve">
+    <value>了解更多有关查询的详情</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="QuickMenu_RecentWindows" xml:space="preserve">
+    <value>最近使用过的窗口</value>
+  </data>
+  <data name="FeatureTourSlideRecentWindows" xml:space="preserve">
+    <value>回到您上次离开的地方：</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideRecentWindows1" xml:space="preserve">
+    <value>最近使用过的窗口</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideRecentWindows2" xml:space="preserve">
+    <value>使用这一您最近打开窗口的列表快速找到并再次打开这些窗口。</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="QuickMenu_AdhocInquiries" xml:space="preserve">
+    <value>即席查询</value>
+  </data>
+  <data name="FeatureTourSlideGlobalSearch" xml:space="preserve">
+    <value>快速找到它：</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideGlobalSearch1" xml:space="preserve">
+    <value>搜索</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideGlobalSearch2" xml:space="preserve">
+    <value>使用搜索快速搜索整个数据库以查找记录和交易。</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="TW" xml:space="preserve">
+    <value>T/W</value>
+  </data>
+  <data name="TS" xml:space="preserve">
+    <value>T/S</value>
+  </data>
+  <data name="ViewWidgets" xml:space="preserve">
+    <value>查看挂件</value>
+  </data>
+</root>

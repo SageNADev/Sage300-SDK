@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD24650E-DDF3-460F-BFC3-D20023D12822}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sage.CA.SBS.ERP.Sage300.PO.Resources</RootNamespace>
+    <AssemblyName>Sage.CA.SBS.ERP.Sage300.PO.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)..\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AdditionalCostsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdditionalCostsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreditDebitNoteEntryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreditDebitNoteEntryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmailMessagesResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailMessagesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InvoiceEntryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceEntryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionalFieldResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OptionalFieldResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PendingReceiptsInquiryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PendingReceiptsInquiryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PurchaseHistoryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseHistoryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="POCommonResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POCommonResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PurchaseOrderEntryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrderEntryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReceiptEntryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceiptEntryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RequisitionEntryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequisitionEntryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReturnEntryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReturnEntryResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Process\CreatePOsFromOEResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreatePOsFromOEResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Process\CreatePOsFromRequisitionsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreatePOsFromRequisitionsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PurchaseStatisticsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseStatisticsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShipViaCodesResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipViaCodesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TemplatesResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TemplatesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VendorContractCostsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorContractCostsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Process\ClearHistoryResx.Designer.cs">
+      <DependentUpon>ClearHistoryResx.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Process\CreateBatchResx.Designer.cs">
+      <DependentUpon>CreateBatchResx.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Process\CreatePOsFromICResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreatePOsFromICResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AgedPurchaseOrdersReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgedPurchaseOrdersReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EmailMessagesReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailMessagesReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MailingLabelsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailingLabelsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PayableClrAuditListResx.Designer.cs">
+      <DependentUpon>PayableClrAuditListResx.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\GLIntegrationResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GLIntegrationResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OptionsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\GLTransactionsReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GLTransactionsReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PurchaseHistoryReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseHistoryReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PurchaseOrdersResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrdersResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReceivingSlipsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceivingSlipsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RequisitionsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequisitionsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReturnsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReturnsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PurchaseOrderActionReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrderActionReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ShippableBackordersReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShippableBackordersReportResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PostingJournalResx.Designer.cs">
+      <DependentUpon>PostingJournalResx.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\TransactionListResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionListResx.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\Transaction\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\AdditionalCostsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdditionalCostsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdditionalCostsResx.es.resx" />
+    <EmbeddedResource Include="Forms\AdditionalCostsResx.fr.resx" />
+    <EmbeddedResource Include="Forms\AdditionalCostsResx.th.resx" />
+    <EmbeddedResource Include="Forms\AdditionalCostsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\AdditionalCostsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\CreditDebitNoteEntryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreditDebitNoteEntryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreditDebitNoteEntryResx.es.resx" />
+    <EmbeddedResource Include="Forms\CreditDebitNoteEntryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\CreditDebitNoteEntryResx.th.resx" />
+    <EmbeddedResource Include="Forms\CreditDebitNoteEntryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\CreditDebitNoteEntryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\EmailMessagesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmailMessagesResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmailMessagesResx.es.resx" />
+    <EmbeddedResource Include="Forms\EmailMessagesResx.fr.resx" />
+    <EmbeddedResource Include="Forms\EmailMessagesResx.th.resx" />
+    <EmbeddedResource Include="Forms\EmailMessagesResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\EmailMessagesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\GLIntegrationResx.th.resx" />
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InvoiceEntryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.es.resx" />
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.th.resx" />
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\InvoiceEntryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\OptionalFieldResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OptionalFieldResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionalFieldResx.es.resx" />
+    <EmbeddedResource Include="Forms\OptionalFieldResx.fr.resx" />
+    <EmbeddedResource Include="Forms\OptionalFieldResx.th.resx" />
+    <EmbeddedResource Include="Forms\OptionalFieldResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\OptionalFieldResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\OptionsResx.th.resx" />
+    <EmbeddedResource Include="Forms\PendingReceiptsInquiryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PendingReceiptsInquiryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PendingReceiptsInquiryResx.es.resx" />
+    <EmbeddedResource Include="Forms\PendingReceiptsInquiryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PendingReceiptsInquiryResx.th.resx" />
+    <EmbeddedResource Include="Forms\PendingReceiptsInquiryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\PendingReceiptsInquiryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PurchaseHistoryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PurchaseHistoryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PurchaseHistoryResx.es.resx" />
+    <EmbeddedResource Include="Forms\PurchaseHistoryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PurchaseHistoryResx.th.resx" />
+    <EmbeddedResource Include="Forms\PurchaseHistoryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\PurchaseHistoryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PurchaseOrderEntryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PurchaseOrderEntryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PurchaseOrderEntryResx.es.resx" />
+    <EmbeddedResource Include="Forms\PurchaseOrderEntryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PurchaseOrderEntryResx.th.resx" />
+    <EmbeddedResource Include="Forms\PurchaseOrderEntryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\PurchaseOrderEntryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PurchaseStatisticsResx.th.resx" />
+    <EmbeddedResource Include="Forms\ReceiptEntryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReceiptEntryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReceiptEntryResx.es.resx" />
+    <EmbeddedResource Include="Forms\ReceiptEntryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\ReceiptEntryResx.th.resx" />
+    <EmbeddedResource Include="Forms\ReceiptEntryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\ReceiptEntryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\RequisitionEntryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RequisitionEntryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RequisitionEntryResx.es.resx" />
+    <EmbeddedResource Include="Forms\RequisitionEntryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\RequisitionEntryResx.th.resx" />
+    <EmbeddedResource Include="Forms\RequisitionEntryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\RequisitionEntryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\ReturnEntryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReturnEntryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReturnEntryResx.es.resx" />
+    <EmbeddedResource Include="Forms\ReturnEntryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\ReturnEntryResx.th.resx" />
+    <EmbeddedResource Include="Forms\ReturnEntryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\ReturnEntryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\ReturnsResx.th.resx" />
+    <EmbeddedResource Include="Forms\ShipViaCodesResx.th.resx" />
+    <EmbeddedResource Include="Forms\TemplatesResx.th.resx" />
+    <EmbeddedResource Include="Forms\VendorContractCostsResx.th.resx" />
+    <EmbeddedResource Include="POCommonResx.th.resx" />
+    <EmbeddedResource Include="Process\ClearHistoryResx.th.resx" />
+    <EmbeddedResource Include="Process\CreateBatchResx.th.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromICResx.th.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromOEResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreatePOsFromOEResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\CreatePOsFromOEResx.es.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromOEResx.fr.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromOEResx.th.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromOEResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromOEResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromRequisitionsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreatePOsFromRequisitionsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\CreatePOsFromRequisitionsResx.es.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromRequisitionsResx.fr.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromRequisitionsResx.th.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromRequisitionsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromRequisitionsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PurchaseStatisticsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PurchaseStatisticsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PurchaseStatisticsResx.es.resx" />
+    <EmbeddedResource Include="Forms\PurchaseStatisticsResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PurchaseStatisticsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\PurchaseStatisticsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\ShipViaCodesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ShipViaCodesResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShipViaCodesResx.es.resx" />
+    <EmbeddedResource Include="Forms\ShipViaCodesResx.fr.resx" />
+    <EmbeddedResource Include="Forms\ShipViaCodesResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\ShipViaCodesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\TemplatesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TemplatesResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TemplatesResx.es.resx" />
+    <EmbeddedResource Include="Forms\TemplatesResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TemplatesResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\TemplatesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\VendorContractCostsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VendorContractCostsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VendorContractCostsResx.es.resx" />
+    <EmbeddedResource Include="Forms\VendorContractCostsResx.fr.resx" />
+    <EmbeddedResource Include="Forms\VendorContractCostsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\VendorContractCostsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\ClearHistoryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClearHistoryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\ClearHistoryResx.es.resx" />
+    <EmbeddedResource Include="Process\ClearHistoryResx.fr.resx" />
+    <EmbeddedResource Include="Process\ClearHistoryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\ClearHistoryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\CreateBatchResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreateBatchResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\CreateBatchResx.es.resx" />
+    <EmbeddedResource Include="Process\CreateBatchResx.fr.resx" />
+    <EmbeddedResource Include="Process\CreateBatchResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\CreateBatchResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromICResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreatePOsFromICResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\CreatePOsFromICResx.es.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromICResx.fr.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromICResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\CreatePOsFromICResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\AgedPurchaseOrdersReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AgedPurchaseOrdersReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AgedPurchaseOrdersReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\AgedPurchaseOrdersReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\AgedPurchaseOrdersReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\AgedPurchaseOrdersReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\AgedPurchaseOrdersReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\EmailMessagesReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmailMessagesReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EmailMessagesReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\EmailMessagesReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\EmailMessagesReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\EmailMessagesReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\EmailMessagesReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\MailingLabelsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MailingLabelsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MailingLabelsResx.es.resx" />
+    <EmbeddedResource Include="Reports\MailingLabelsResx.fr.resx" />
+    <EmbeddedResource Include="Reports\MailingLabelsResx.th.resx" />
+    <EmbeddedResource Include="Reports\MailingLabelsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\MailingLabelsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\PayableClrAuditListResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PayableClrAuditListResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PayableClrAuditListResx.es.resx" />
+    <EmbeddedResource Include="Reports\PayableClrAuditListResx.fr.resx" />
+    <EmbeddedResource Include="Reports\PayableClrAuditListResx.th.resx" />
+    <EmbeddedResource Include="Reports\PayableClrAuditListResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\PayableClrAuditListResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\GLIntegrationResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GLIntegrationResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GLIntegrationResx.es.resx" />
+    <EmbeddedResource Include="Forms\GLIntegrationResx.fr.resx" />
+    <EmbeddedResource Include="Forms\GLIntegrationResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\GLIntegrationResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\OptionsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OptionsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionsResx.es.resx" />
+    <EmbeddedResource Include="Forms\OptionsResx.fr.resx" />
+    <EmbeddedResource Include="Forms\OptionsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\OptionsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="POCommonResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>POCommonResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POCommonResx.es.resx" />
+    <EmbeddedResource Include="POCommonResx.fr.resx" />
+    <EmbeddedResource Include="POCommonResx.zh-Hans.resx" />
+    <EmbeddedResource Include="POCommonResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GLTransactionsReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\GLTransactionsReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\PostingJournalResx.th.resx" />
+    <EmbeddedResource Include="Reports\PurchaseHistoryReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PurchaseHistoryReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PurchaseHistoryReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\PurchaseHistoryReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\PurchaseHistoryReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\PurchaseHistoryReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\PurchaseHistoryReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\PurchaseOrderActionReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\PurchaseOrdersResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PurchaseOrdersResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PurchaseOrdersResx.es.resx" />
+    <EmbeddedResource Include="Reports\PurchaseOrdersResx.fr.resx" />
+    <EmbeddedResource Include="Reports\PurchaseOrdersResx.th.resx" />
+    <EmbeddedResource Include="Reports\PurchaseOrdersResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\PurchaseOrdersResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\ReceivingSlipsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReceivingSlipsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReceivingSlipsResx.es.resx" />
+    <EmbeddedResource Include="Reports\ReceivingSlipsResx.fr.resx" />
+    <EmbeddedResource Include="Reports\ReceivingSlipsResx.th.resx" />
+    <EmbeddedResource Include="Reports\ReceivingSlipsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\ReceivingSlipsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\RequisitionsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RequisitionsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RequisitionsResx.es.resx" />
+    <EmbeddedResource Include="Reports\RequisitionsResx.fr.resx" />
+    <EmbeddedResource Include="Reports\RequisitionsResx.th.resx" />
+    <EmbeddedResource Include="Reports\RequisitionsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\RequisitionsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\ReturnsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReturnsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReturnsResx.es.resx" />
+    <EmbeddedResource Include="Reports\ReturnsResx.fr.resx" />
+    <EmbeddedResource Include="Reports\ReturnsResx.th.resx" />
+    <EmbeddedResource Include="Reports\ReturnsResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\ReturnsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\ShippableBackordersReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ShippableBackordersReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ShippableBackordersReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\ShippableBackordersReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\ShippableBackordersReportResx.th.resx" />
+    <EmbeddedResource Include="Reports\ShippableBackordersReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\ShippableBackordersReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\PurchaseOrderActionReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PurchaseOrderActionReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PurchaseOrderActionReportResx.es.resx" />
+    <EmbeddedResource Include="Reports\PurchaseOrderActionReportResx.fr.resx" />
+    <EmbeddedResource Include="Reports\PurchaseOrderActionReportResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\PurchaseOrderActionReportResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\PostingJournalResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PostingJournalResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PostingJournalResx.es.resx" />
+    <EmbeddedResource Include="Reports\PostingJournalResx.fr.resx" />
+    <EmbeddedResource Include="Reports\PostingJournalResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\PostingJournalResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\TransactionListResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TransactionListResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionListResx.es.resx" />
+    <EmbeddedResource Include="Reports\TransactionListResx.fr.resx" />
+    <EmbeddedResource Include="Reports\TransactionListResx.th.resx" />
+    <EmbeddedResource Include="Reports\TransactionListResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Reports\TransactionListResx.zh-Hant.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

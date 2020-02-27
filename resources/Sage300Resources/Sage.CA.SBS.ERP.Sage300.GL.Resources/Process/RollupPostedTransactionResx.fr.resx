@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>Numéro de compte</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>Exercice</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>Période</value>
+  </data>
+  <data name="SRCECURN" xml:space="preserve">
+    <value>Code de devise de transaction</value>
+  </data>
+  <data name="SourceLedgerCode" xml:space="preserve">
+    <value>Code livre auxiliaire source</value>
+  </data>
+  <data name="SourceTypeCode" xml:space="preserve">
+    <value>Code de type source</value>
+  </data>
+  <data name="PostingSequenceNumber" xml:space="preserve">
+    <value>Numéro séquence de report</value>
+  </data>
+  <data name="DetailCount" xml:space="preserve">
+    <value>Nombre de détails</value>
+  </data>
+  <data name="JournalDate" xml:space="preserve">
+    <value>Date du journal</value>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>Numéro de lot</value>
+  </data>
+  <data name="JournalEntryNumber" xml:space="preserve">
+    <value>Numéro écriture de journal</value>
+  </data>
+  <data name="JournalTransactionNumber" xml:space="preserve">
+    <value>Numéro transaction du journal</value>
+  </data>
+  <data name="ConsolidationOccurredonPost" xml:space="preserve">
+    <value>Consolidation survenue dans le report</value>
+  </data>
+  <data name="CompanyID" xml:space="preserve">
+    <value>Code entreprise</value>
+  </data>
+  <data name="JournalDetailDescription" xml:space="preserve">
+    <value>Description écriture du journal</value>
+  </data>
+  <data name="JournalDetailReference" xml:space="preserve">
+    <value>Référence écriture du journal</value>
+  </data>
+  <data name="JournalTransactionAmount" xml:space="preserve">
+    <value>Montant transaction du journal</value>
+  </data>
+  <data name="JournalTransactionQuantity" xml:space="preserve">
+    <value>Quantité transaction du journal</value>
+  </data>
+  <data name="NbrOfSourceCurrencyDecimals" xml:space="preserve">
+    <value>Nb décimales devise de transaction</value>
+  </data>
+  <data name="SourceCurrencyAmount" xml:space="preserve">
+    <value>Montant devise de transaction</value>
+  </data>
+  <data name="HomeCurrencyCode" xml:space="preserve">
+    <value>Code devise fonctionnelle</value>
+  </data>
+  <data name="CurrencyRateTableType" xml:space="preserve">
+    <value>Type table taux de change</value>
+  </data>
+  <data name="SCURNCODE" xml:space="preserve">
+    <value>Code devise de transaction</value>
+  </data>
+  <data name="DateOfCurrencyRateSelected" xml:space="preserve">
+    <value>Date taux de change sélectionné</value>
+  </data>
+  <data name="CurrencyRateForConversion" xml:space="preserve">
+    <value>Taux change pour conversion</value>
+  </data>
+  <data name="CurrencyRateSpreadAllowed" xml:space="preserve">
+    <value>Écart taux change autorisé</value>
+  </data>
+  <data name="CodeForRateDateMatching" xml:space="preserve">
+    <value>Code pour date taux correspondante</value>
+  </data>
+  <data name="CurrencyRateOperator" xml:space="preserve">
+    <value>Calcul taux change</value>
+  </data>
+  <data name="DrillDownType" xml:space="preserve">
+    <value>Type zoom avant</value>
+  </data>
+  <data name="DrillDownLinkNumber" xml:space="preserve">
+    <value>Numéro lien zoom avant</value>
+  </data>
+  <data name="DrillDownApplicationSource" xml:space="preserve">
+    <value>Source application zoom avant</value>
+  </data>
+  <data name="ReportCurrencyAmount" xml:space="preserve">
+    <value>Déclarer montant exprimé en devise</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="FormattedAccountNumber" xml:space="preserve">
+    <value>Numéro compte formaté</value>
+  </data>
+  <data name="TransAccountNumber" xml:space="preserve">
+    <value>Numéro compte de trans.</value>
+  </data>
+  <data name="TransFormattedAccountNumber" xml:space="preserve">
+    <value>Numéro compte formaté de trans.</value>
+  </data>
+</root>

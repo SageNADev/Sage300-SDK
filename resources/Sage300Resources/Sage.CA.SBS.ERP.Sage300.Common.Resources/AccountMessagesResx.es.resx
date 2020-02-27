@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountSetupMessage1" xml:space="preserve">
+    <value>Espere unos minutos y pulse el botón Iniciar Sesión para intentar de nuevo. Cuando su cuenta esté lista, usted podrá abrir una sesión y empezar a utilizar Sage 300.</value>
+  </data>
+  <data name="AccountSetupMessage2" xml:space="preserve">
+    <value>Mientras configuramos su cuenta, usted puede visitar el centro de ayuda y revisar información sobre cómo empezar a utilizar Sage 300.</value>
+  </data>
+  <data name="AccountSetupTitle" xml:space="preserve">
+    <value>Espere un momento mientras configuramos su cuenta</value>
+  </data>
+  <data name="ContactSupportLink" xml:space="preserve">
+    <value>Comuníquese con el servicio de asistencia al cliente</value>
+  </data>
+  <data name="NeedAssistance" xml:space="preserve">
+    <value>¿Necesita ayuda?</value>
+  </data>
+  <data name="SessionDateinInactiveYear" xml:space="preserve">
+    <value>Su fecha de sesión está dentro del rango de un año fiscal inactivo en el calendario fiscal que definió.  Es posible que deba seleccionar otra fecha de sesión para evitar errores al procesar transacciones.</value>
+  </data>
+  <data name="SessionDateinInactiveYear_Title" xml:space="preserve">
+    <value>Fecha de sesión en año fiscal inactivo</value>
+  </data>
+  <data name="SessionDateinLockedPeriod" xml:space="preserve">
+    <value>Su fecha de sesión está dentro del rango de un período fiscal bloqueado en el calendario fiscal que definió.  Es posible que deba seleccionar otra fecha de sesión para evitar errores al procesar transacciones.</value>
+  </data>
+  <data name="SessionDateinLockedPeriod_Title" xml:space="preserve">
+    <value>Fecha de sesión en período fiscal bloqueado</value>
+  </data>
+  <data name="SessionDateLocked" xml:space="preserve">
+    <value>Período de sesión está bloqueado</value>
+  </data>
+  <data name="SessionDateNotActive" xml:space="preserve">
+    <value>Año fiscal no está activo</value>
+  </data>
+  <data name="SessionDateNotInCalendar" xml:space="preserve">
+    <value>Su fecha de sesión está fuera del rango del calendario fiscal definido para la empresa. Es posible que deba seleccionar otra fecha de sesión para evitar errores al procesar transacciones.</value>
+  </data>
+  <data name="SessionDateNotInCalendar_Title" xml:space="preserve">
+    <value>Fecha de sesión no está en el calendario fiscal</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="TenantNotAvailableMessage" xml:space="preserve">
+    <value>La cuenta a la que intenta acceder no está disponible. Es posible que esté inactiva, suspendida o experimentando problemas temporales.</value>
+  </data>
+  <data name="TenantNotAvailableTitle" xml:space="preserve">
+    <value>La cuenta no está disponible</value>
+  </data>
+  <data name="VisitHelpCenter" xml:space="preserve">
+    <value>Visite el Centro de Ayuda</value>
+  </data>
+  <data name="MissingModules_Description" xml:space="preserve">
+    <value>Las pantallas web de Sage 300 requieren Libro Mayor, pero no ha sido activado para esta empresa. Para continuar, realice uno de los siguientes pasos:</value>
+  </data>
+  <data name="MissingModules_Header" xml:space="preserve">
+    <value>Libro Mayor Requerido</value>
+  </data>
+  <data name="MissingModules_SignIn" xml:space="preserve">
+    <value>Inicie una nueva sesión</value>
+    <comment>Button</comment>
+  </data>
+  <data name="MissingModules_Step1" xml:space="preserve">
+    <value>Utilice las pantallas del escritorio para administrar la información y las transacciones de esta empresa</value>
+  </data>
+  <data name="MissingModules_Step2" xml:space="preserve">
+    <value>Inicie una sesión con otra empresa por la cual Libro Mayor ha sido activado</value>
+  </data>
+  <data name="MissingModules_Step3" xml:space="preserve">
+    <value>Pida a su administrador que active Libro Mayor para esta empresa</value>
+  </data>
+  <data name="ICTNotAvailable_Description" xml:space="preserve">
+    <value>Las pantallas web de Sage 300 no son disponibles para las empresas de Transacciones Inter-empresa (ICT).  Inicie una sesión con una empresa no ICT para utilizar las pantallas web.</value>
+  </data>
+  <data name="ICTNotAvailable_Header" xml:space="preserve">
+    <value>Empresa de Transacciones Inter-empresa No Disponible</value>
+  </data>
+  <data name="IncorrectAcctOrPwd" xml:space="preserve">
+    <value>El ID de Usuario o la Contraseña son incorrectos. Intenta nuevamente.</value>
+  </data>
+  <data name="NoAuthorizedCompany" xml:space="preserve">
+    <value>No está autorizado para abrir ninguna empresa. Comuníquese con su administrador del sistema para obtener ayuda.</value>
+  </data>
+</root>

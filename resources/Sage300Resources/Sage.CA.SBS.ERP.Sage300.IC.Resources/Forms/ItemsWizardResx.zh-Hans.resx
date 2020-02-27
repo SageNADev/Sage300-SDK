@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACCTSETCHANGED" xml:space="preserve">
+    <value>科目集合已被更改。这将影响与这一货品相关的所有未来过帐。是否确要更改这一科目集合？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Additemcompleted1" xml:space="preserve">
+    <value>您已经在存货控制系统中成功添加或修改了货品{0}。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Additemcompleted2" xml:space="preserve">
+    <value>是否添加或修改另一个存货货品？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AddItemListInfo" xml:space="preserve">
+    <value>货品向导将在您的存货控制系统中添加或修改下列信息：</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AdditemlistinfoNoChanges" xml:space="preserve">
+    <value>对货品&quot;{0}&quot;及其相关信息未作任何更改。</value>
+    <comment>Text</comment>
+  </data>
+  <data name="Allowed" xml:space="preserve">
+    <value>允许</value>
+    <comment>Location - List</comment>
+  </data>
+  <data name="AltItemDescription" xml:space="preserve">
+    <value>替代货品描述</value>
+    <comment>Items - Field</comment>
+  </data>
+  <data name="ALTITEMNO" xml:space="preserve">
+    <value>替代货品编号</value>
+    <comment>Items - Field</comment>
+  </data>
+  <data name="AUTOINCLUDEALLLOCATIONS" xml:space="preserve">
+    <value>自动包括所有地点</value>
+    <comment>Location - Check Box</comment>
+  </data>
+  <data name="AUTOINCLUDEALLPRICELISTCODES" xml:space="preserve">
+    <value>自动包括所有价目表代码</value>
+    <comment>Pricing - Check Box</comment>
+  </data>
+  <data name="AUTOINSERTTAXAUTHORITIES" xml:space="preserve">
+    <value>自动插入所有税务机构</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="BillsofmaterialcomponentTitle" xml:space="preserve">
+    <value>为货品和用料单编号添加部件货品。如果该货品使用一个用户指定的成本计算方法，指定要使用的成本。</value>
+    <comment>BOM - Text</comment>
+  </data>
+  <data name="BillsofmaterialTitle" xml:space="preserve">
+    <value>添加所有您定义部件货品所需的用料单和组装您正在添加货品的特定数目的单位（建造数量）所需的所有固定或变动成本。</value>
+    <comment>BOM - Text</comment>
+  </data>
+  <data name="BOMDescription" xml:space="preserve">
+    <value>用料单描述</value>
+    <comment>BOM - Table Column</comment>
+  </data>
+  <data name="CalculatedUnitPrice" xml:space="preserve">
+    <value>计算的单价</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="CALCULATESALEPRICEUSING" xml:space="preserve">
+    <value>计算售价使用</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>类别描述</value>
+    <comment>Items -  Field</comment>
+  </data>
+  <data name="COMMODIM" xml:space="preserve">
+    <value>商品编号</value>
+    <comment>Items -  Field</comment>
+  </data>
+  <data name="COMPONENTS" xml:space="preserve">
+    <value>部件</value>
+    <comment>BOM - Table Column</comment>
+  </data>
+  <data name="Constructitem1Title" xml:space="preserve">
+    <value>选择一个结构代码并输入货品节段信息以便建造一个新的货品编号。</value>
+    <comment>Text</comment>
+  </data>
+  <data name="Constructitem2Title" xml:space="preserve">
+    <value>指定一个结构代码并输入货品节段信息。</value>
+    <comment>Text</comment>
+  </data>
+  <data name="ConstructItemNumber" xml:space="preserve">
+    <value>建构货品编号</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="CONTRACTPRICETYPE" xml:space="preserve">
+    <value>合约价格类型</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="Contractpricing" xml:space="preserve">
+    <value>合约定价</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ContractpricingTitle" xml:space="preserve">
+    <value>如果您为您的客户使用指定的定价，输入您要添加的货品的合约价格信息。</value>
+    <comment>Contract - Text</comment>
+  </data>
+  <data name="COPYFROMPREVIOUSLINE" xml:space="preserve">
+    <value>从前一行复制</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="CostUnit" xml:space="preserve">
+    <value>成本单位</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="CostUnitOfMeasure" xml:space="preserve">
+    <value>成本计量单位</value>
+    <comment>Location - Table Column</comment>
+  </data>
+  <data name="CUSTOMERDETAILS" xml:space="preserve">
+    <value>客户明细</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="CustomeritemTitle" xml:space="preserve">
+    <value>请添加您的客户用来关联货品的货品编号。</value>
+    <comment>Customer - Text</comment>
+  </data>
+  <data name="CustomersItemDescription" xml:space="preserve">
+    <value>客户的货品描述</value>
+    <comment>Customer - Table Column</comment>
+  </data>
+  <data name="CustomersItemNumber" xml:space="preserve">
+    <value>客户的货品编号</value>
+    <comment>Customer - Table Column</comment>
+  </data>
+  <data name="CustomerType" xml:space="preserve">
+    <value>客户类型</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="CustomerTypes" xml:space="preserve">
+    <value>客户类型</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="CustTaxClassDescription" xml:space="preserve">
+    <value>客户税级描述</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="DEFAULTBASEPRICEUSING" xml:space="preserve">
+    <value>默认基价使用</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="DEFAULTSALEPRICEUSING" xml:space="preserve">
+    <value>默认售价使用</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="DeleteICPRIC" xml:space="preserve">
+    <value>是否确要删除货品价格{0}, {1}, {2}？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>完毕</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>存货控制货品向导</value>
+    <comment>Screen Title - Main</comment>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>失效日期</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="FixedAmount" xml:space="preserve">
+    <value>固定金额</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="FixedCost" xml:space="preserve">
+    <value>固定成本</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="FixedPrice" xml:space="preserve">
+    <value>固定价格</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>帮助</value>
+    <comment>Button</comment>
+  </data>
+  <data name="INCLUDEALLTAXAUTHALLOWTAXINPRICE" xml:space="preserve">
+    <value>包括所有允许价格含税的税务机构</value>
+    <comment>Pricing - Check Box</comment>
+  </data>
+  <data name="IncludedtaxesTitle" xml:space="preserve">
+    <value>如果您在价格中包括税金，请指定税务机构和税级。</value>
+    <comment>Text</comment>
+  </data>
+  <data name="Instructions" xml:space="preserve">
+    <value>指示</value>
+    <comment>Customer - Table Column</comment>
+  </data>
+  <data name="InventoryMinimumSIA" xml:space="preserve">
+    <value>存货最小数量（SIA）</value>
+    <comment>Location - Table Column</comment>
+  </data>
+  <data name="INWEBSTORE" xml:space="preserve">
+    <value>允许网路商店货品</value>
+    <comment>Items - Check Box</comment>
+  </data>
+  <data name="ItembasicTitle" xml:space="preserve">
+    <value>输入一个新的货品编号或选择一个现有货品编号进行修改。要帮助设置您的存货货品编号，点击建造货品编号。</value>
+    <comment>Items - Text</comment>
+  </data>
+  <data name="Itemlocation1Title" xml:space="preserve">
+    <value>为各个您允许库存货品的地点输入货品的成本计算信息。如果您想自动在所有地点库存货品，选择自动包括所有地点选项。</value>
+    <comment>Locations - Text</comment>
+  </data>
+  <data name="Itemlocation2Title" xml:space="preserve">
+    <value> 如果您希望将所有包括的地点的成本设置为特定金额，请在&lt;设置成本&gt;字段中指定成本金额。</value>
+    <comment>Item Location - Text</comment>
+  </data>
+  <data name="ItemPricing" xml:space="preserve">
+    <value>货品定价</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Itempricing1Title" xml:space="preserve">
+    <value>为您的货品设置价目表，指定基价，折扣，和含税信息。如果您要包括所有价目表代码，选择“自动包括所有价目表代码”选项。如果您公司是多币种，指定用于各个价目表币种。</value>
+    <comment>Pricing - Text</comment>
+  </data>
+  <data name="Itemtaxes1Title" xml:space="preserve">
+    <value>输入对您的公司例外的税务机构。税级在销售订单和采购订单中默认设置为1。</value>
+    <comment>Items - Text</comment>
+  </data>
+  <data name="Itemtaxes2Title" xml:space="preserve">
+    <value>如果您某个税务机构的税级通常不是1，指定要用于该货品的税务机构，税级，和可选字段。</value>
+    <comment>Items - Text</comment>
+  </data>
+  <data name="ITEMTAXESINFORMATION" xml:space="preserve">
+    <value>货品税务信息</value>
+    <comment>Items - Header</comment>
+  </data>
+  <data name="ItemunitsTitle" xml:space="preserve">
+    <value>输入货品的重量和重量计量单位。输入您按其采购或销售货品的计量单位，并指明库存计量单位。</value>
+    <comment>Items - Text</comment>
+  </data>
+  <data name="ItemvendorTitle" xml:space="preserve">
+    <value>输入向您提供货品的供应商。您可以添加最多九个供应商并向各个供应商分派一个优先级（类型）。</value>
+    <comment>Vendor - Text</comment>
+  </data>
+  <data name="KITTING" xml:space="preserve">
+    <value>配套货品</value>
+    <comment>Items - Check Box</comment>
+  </data>
+  <data name="KittingcomponentTitle" xml:space="preserve">
+    <value>为货品和配套编号添加部件货品。如果该货品使用一个用户指定的成本计算方法，指定要使用的成本。</value>
+    <comment>BOM - Text</comment>
+  </data>
+  <data name="KittingTitle" xml:space="preserve">
+    <value>请定义您配套货品所需的部件货品和数量。</value>
+    <comment>BOM - Text</comment>
+  </data>
+  <data name="Landed" xml:space="preserve">
+    <value>抵岸</value>
+    <comment>Location - Field</comment>
+  </data>
+  <data name="LASTUNITCOST" xml:space="preserve">
+    <value>上一单位成本</value>
+    <comment>Location - Field</comment>
+  </data>
+  <data name="LDIFQTYCHANGED" xml:space="preserve">
+    <value>&quot;{0}&quot;将要更改。如果批别编号存在或已被创建，您将不能关闭该选项。您也将无法选择一个使用批别成本计算方法的科目集合。是否确要开启这一选项？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="LeadTimeSIA" xml:space="preserve">
+    <value>交货时间（SIA）</value>
+    <comment>Location - Table Column</comment>
+  </data>
+  <data name="LocationDetails" xml:space="preserve">
+    <value>地点明细</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="LotNumberMaskDescription" xml:space="preserve">
+    <value>批别编号掩码描述</value>
+    <comment>Lot - Field</comment>
+  </data>
+  <data name="LotnumberoptionsTitle" xml:space="preserve">
+    <value>为新货品输入批别编号选项。</value>
+    <comment>Lot - Text</comment>
+  </data>
+  <data name="LotOnContractWhenRECVD" xml:space="preserve">
+    <value>进货时将该批别自动放入合约</value>
+    <comment>Lot - Check Box</comment>
+  </data>
+  <data name="LotOnWarrantyWhenSOLD" xml:space="preserve">
+    <value>售出时将该批别自动放入保修</value>
+    <comment>Lot - Check Box</comment>
+  </data>
+  <data name="MANITEMNUMBER" xml:space="preserve">
+    <value>制造商货品编号</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ManufactureritemTitle" xml:space="preserve">
+    <value>请添加制造商用来关联货品的货品编号。</value>
+    <comment>Manufacturer - Text</comment>
+  </data>
+  <data name="ManufacturersItemDescription" xml:space="preserve">
+    <value>制造商货品描述</value>
+    <comment>Manufacturer - Table Column</comment>
+  </data>
+  <data name="ManufacturersItemNumber" xml:space="preserve">
+    <value>制造商货品编号</value>
+    <comment>Manufacturer - Table Column</comment>
+  </data>
+  <data name="MARKUPPERCENTAGE" xml:space="preserve">
+    <value>加成百分比</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="MASTERITEM" xml:space="preserve">
+    <value>主件</value>
+    <comment>Items - Check Box</comment>
+  </data>
+  <data name="MAXIMUMQUANTITY" xml:space="preserve">
+    <value>最大数量</value>
+    <comment>Reorder - Table Column</comment>
+  </data>
+  <data name="MINIMUMQUANTITY" xml:space="preserve">
+    <value>最小数量</value>
+    <comment>Reorder - Table Column</comment>
+  </data>
+  <data name="NextLOTNO" xml:space="preserve">
+    <value>下一批别编号</value>
+    <comment>Lot - Field</comment>
+  </data>
+  <data name="OrderMinimumSIA" xml:space="preserve">
+    <value>订单最小数量（SIA）</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="PERIODSTART" xml:space="preserve">
+    <value>期间起始</value>
+    <comment>Reorder - Table Column</comment>
+  </data>
+  <data name="PICKINGSEQ" xml:space="preserve">
+    <value>默认取货序列</value>
+    <comment>Items - Field</comment>
+  </data>
+  <data name="PlusAmount" xml:space="preserve">
+    <value>加金额</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="PlusPercentage" xml:space="preserve">
+    <value>加百分比</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="PreferredVendorSIA" xml:space="preserve">
+    <value>首选供应商（SIA）</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="PriceListCodes" xml:space="preserve">
+    <value>价目表代码</value>
+    <comment>Button</comment>
+  </data>
+  <data name="PRICELISTDESCRIPTION" xml:space="preserve">
+    <value>价目表描述</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="ProjectedSalesQuantity" xml:space="preserve">
+    <value>计划销售量</value>
+    <comment>Reorder - Table Column</comment>
+  </data>
+  <data name="PurchaseTaxClassDescription" xml:space="preserve">
+    <value>采购税级描述</value>
+    <comment>Items - Table Column</comment>
+  </data>
+  <data name="REORDERFOR" xml:space="preserve">
+    <value>再订购地点</value>
+    <comment>Reorder - List</comment>
+  </data>
+  <data name="REORDERQUANTITIES" xml:space="preserve">
+    <value>再订购数量</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ReorderquantitiesTitle" xml:space="preserve">
+    <value>设置货品的再订购信息，包括以货品库存计量单位表示的最大、最小、再订购和预计销售数量。</value>
+    <comment>Reorder - Text</comment>
+  </data>
+  <data name="REORDERQUANTITY" xml:space="preserve">
+    <value>再订购数量</value>
+    <comment>Reorder - Table Column</comment>
+  </data>
+  <data name="RESTART" xml:space="preserve">
+    <value>是否用上次保存的信息继续使用货品向导？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SalesTaxClassDescription" xml:space="preserve">
+    <value>销售税级描述</value>
+    <comment>Items - Table Column</comment>
+  </data>
+  <data name="SDIFQTYCHANGED" xml:space="preserve">
+    <value>&quot;{0}&quot;将要更改。如果系列编号存在或已被创建，您将不能关闭该选项。您也将无法选择一个使用系列成本计算方法的科目集合。是否确要开启这一选项？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SERIALMASKNOTENTERED" xml:space="preserve">
+    <value>需要系列编号掩码。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SerialnumberoptionsTitle" xml:space="preserve">
+    <value>为新货品输入系列编号选项。</value>
+    <comment>Text</comment>
+  </data>
+  <data name="SETTHECOSTSTO" xml:space="preserve">
+    <value>设置成本：</value>
+    <comment>Location - Text</comment>
+  </data>
+  <data name="STOCKITEM" xml:space="preserve">
+    <value>库存货品</value>
+    <comment>Items - Check Box</comment>
+  </data>
+  <data name="StructureCodeDescription" xml:space="preserve">
+    <value>结构代码描述</value>
+    <comment>Items - Field</comment>
+  </data>
+  <data name="UNITSOFMEASURE" xml:space="preserve">
+    <value>计量单位</value>
+    <comment>Items - Table</comment>
+  </data>
+  <data name="UseLowestPrice" xml:space="preserve">
+    <value>使用最低价格</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>用户标识</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>值</value>
+    <comment>Items - Table Column</comment>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>值描述</value>
+    <comment>Items - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>值已设</value>
+    <comment>Items - Table Column</comment>
+  </data>
+  <data name="VariableCost" xml:space="preserve">
+    <value>变动成本</value>
+    <comment>BOM - Table Column</comment>
+  </data>
+  <data name="VendorContact" xml:space="preserve">
+    <value>供应商联系人</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="VendorCost" xml:space="preserve">
+    <value>供应商币种成本</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="VendorCurrency" xml:space="preserve">
+    <value>供应商币种</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="VENDORDETAILS" xml:space="preserve">
+    <value>供应商明细</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="VendorItemNumber" xml:space="preserve">
+    <value>供应商货品编号</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="VendorType" xml:space="preserve">
+    <value>供应商类型</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="WarrantyCode" xml:space="preserve">
+    <value>保修代码</value>
+    <comment>Items - Field</comment>
+  </data>
+  <data name="Welcomemessage1" xml:space="preserve">
+    <value>欢迎使用货品向导</value>
+    <comment>Welcome Text</comment>
+  </data>
+  <data name="Welcomemessage2" xml:space="preserve">
+    <value>使用这一向导添加新货品纪录。</value>
+    <comment>Welcome Text</comment>
+  </data>
+  <data name="Welcomemessage3" xml:space="preserve">
+    <value>您可以指定货品地点和成本、向供应商分派货品、设置货品定价、添加客户和制造商的货品编号、并设置再订购信息。</value>
+    <comment>Welcome Text</comment>
+  </data>
+  <data name="Welcomemessage4" xml:space="preserve">
+    <value>如果您在完成添加一个新货品之前退出向导，您可以保存您的工作并在以后继续。</value>
+    <comment>Welcome Text</comment>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+    <comment>Welcome Text</comment>
+  </data>
+  <data name="CustomerItemHeaderTitle" xml:space="preserve">
+    <value>存货控制货品向导 - 客户明细</value>
+  </data>
+  <data name="ManufacturingItemHeaderTitle" xml:space="preserve">
+    <value>存货控制货品向导 - 制造商货品</value>
+  </data>
+  <data name="VendorItemHeaderTitle" xml:space="preserve">
+    <value>存货控制货品向导 - 供应商明细</value>
+  </data>
+  <data name="VendorItemTitle" xml:space="preserve">
+    <value>输入向您提供货品的供应商。您可以添加最多九个供应商并向各个供应商分派一个优先级（类型）。</value>
+  </data>
+  <data name="ItemBasicHeaderTitle" xml:space="preserve">
+    <value>存货控制货品向导 - 货品</value>
+  </data>
+  <data name="AutoInsertAllLocation" xml:space="preserve">
+    <value>自动包括所有地点</value>
+    <comment>Check Box Label</comment>
+  </data>
+  <data name="LocationDetailCostsHeader" xml:space="preserve">
+    <value>设置成本：</value>
+    <comment>Location Detail Costs Header Text</comment>
+  </data>
+</root>

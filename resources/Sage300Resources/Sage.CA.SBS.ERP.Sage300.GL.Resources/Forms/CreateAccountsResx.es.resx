@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CntDefaultOptions" xml:space="preserve">
+    <value>Opciones Predeterminadas Desde</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="CreateAccountsAccessDeniedMessage" xml:space="preserve">
+    <value>Otro proceso ha bloqueado la pantalla LM - Crear Cuentas. Espere que el proceso finalice y vuelva a intentar.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="CreateAccountsCompleted" xml:space="preserve">
+    <value>Cuentas creadas.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CreateAccountsInProgress" xml:space="preserve">
+    <value>Creando cuentas...</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CreateTempCompleted" xml:space="preserve">
+    <value>Datos de trabajo creados.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CreateTempInProgress" xml:space="preserve">
+    <value>Generando datos de trabajo...</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CrStructure" xml:space="preserve">
+    <value>Crear Cuentas con Código de Estructura</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DefaultCurrency" xml:space="preserve">
+    <value>Detalles de Moneda Predeterminada</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DefaultSubledger" xml:space="preserve">
+    <value>Detalles del LM Auxiliar Predeterminado</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DelTablesAfterFullyProcessed" xml:space="preserve">
+    <value>Los registros de vista preliminar generados han sido procesados. ¿Quiere borrarlos ahora?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="DelTablesFullyProcessed" xml:space="preserve">
+    <value>Los registros de vista preliminar generados han sido procesados. ¿Está seguro de que desea borrarlos?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="DelTablesPartiallyProcessed" xml:space="preserve">
+    <value>Los registros de vista preliminar generados han sido procesados sólo en parte. ¿Está seguro de que desea borrarlos?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="DelTempRecordsFullyCreated" xml:space="preserve">
+    <value>¿Seguro que desea borrar los datos de vista preliminar generados?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="DelTempRecordsPartiallyCreated" xml:space="preserve">
+    <value>Los registros de vista preliminar generados han sido creados sólo en parte. ¿Está seguro de que desea borrarlos?</value>
+    <comment>Confirmation</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>LM - Crear Cuentas</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="FrStructure" xml:space="preserve">
+    <value>Desde Cuentas con Código de Estructura</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InclExistAccount" xml:space="preserve">
+    <value>Incluir Cuentas Existentes</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="SegmentName" xml:space="preserve">
+    <value>Nombre del Segmento</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="SegNotInCreateStructureMessage" xml:space="preserve">
+    <value>El Segmento {0} no está incluido en la Estructura de Cuenta {1}.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="SelectAccountRange" xml:space="preserve">
+    <value>Seleccionar Rango Contable</value>
+    <comment>Header</comment>
+  </data>
+  <data name="SelectAccountStruct" xml:space="preserve">
+    <value>Seleccionar Estructuras de Cuentas</value>
+    <comment>Header</comment>
+  </data>
+  <data name="SelectCreateSegment" xml:space="preserve">
+    <value>Especificar Segmentos a Crear</value>
+    <comment>Header</comment>
+  </data>
+  <data name="StructureCodeDescription" xml:space="preserve">
+    <value>Descripción Código de Estructura</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SubsetAccountStructuresMessage" xml:space="preserve">
+    <value>La Estructura de Cuenta {0} debe contener todos los segmentos usados en la Estructura de Cuenta {1}.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="FromAccountGroup" xml:space="preserve">
+    <value>Desde Grupo de Cuentas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromAccountNumber" xml:space="preserve">
+    <value>Desde Número de Cuenta</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromSortCode" xml:space="preserve">
+    <value>Desde Código de Clasificación</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToAccountGroup" xml:space="preserve">
+    <value>Hasta Grupo de Cuentas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToAccountNumber" xml:space="preserve">
+    <value>Hasta Número de Cuenta</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToSortCode" xml:space="preserve">
+    <value>Hasta Código de Clasificación</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StructureCode" xml:space="preserve">
+    <value>Código de Estructura</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Accounts" xml:space="preserve">
+    <value>Cuentas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CreateAccounts" xml:space="preserve">
+    <value>Crear Cuentas con Código de Estructura.</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvalidStructureCode" xml:space="preserve">
+    <value>El código de estructura de cuenta “{0}” no está definido en Estructuras de Cuentas.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="BlankAccountStructures" xml:space="preserve">
+    <value>Debe especificar códigos de estructuras en los campos “Desde Cuentas con Código de Estructura” y “Crear Cuentas con Código de Estructura”.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="CreateStructureCodeErrorMessage" xml:space="preserve">
+    <value>Debe especificar una estructura que contenga por lo menos dos segmentos en el campo “Crear Cuentas con Código de Estructura”.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="IdenticalStructureErrorMessage" xml:space="preserve">
+    <value>Las estructuras de cuentas en los campos “Desde Cuentas con Código de Estructura” y “Crear Cuentas con Código de Estructura” son idénticas. Debe fijar la opción Crear Nuevo en Sí al menos para un segmento.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="AccountGroupSortCode" xml:space="preserve">
+    <value>Código de Clasificación de Grupo de Cuentas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ClearedSuccessfully" xml:space="preserve">
+    <value>Datos de vista preliminar borrados.</value>
+    <comment>Message</comment>
+  </data>
+</root>

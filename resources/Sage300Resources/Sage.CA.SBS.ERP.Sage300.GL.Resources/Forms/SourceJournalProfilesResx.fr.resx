@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Entity" xml:space="preserve">
+    <value>Profils des journaux sources de GL</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="GL0019" xml:space="preserve">
+    <value>Profils des journaux sources</value>
+  </data>
+  <data name="Limit50" xml:space="preserve">
+    <value>Vous ne pouvez pas ajouter plus de codes sources à ce profile parce que le maximum de 50 codes sources sont déjà ajoutés.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="RecordExists" xml:space="preserve">
+    <value>Le code source {0} "{1}" est déjà spécifié dans ce profil de journal source.</value>
+  </data>
+  <data name="SourceCodeID01" xml:space="preserve">
+    <value>ID code source 01</value>
+  </data>
+  <data name="SourceCodeID02" xml:space="preserve">
+    <value>ID code source 02</value>
+  </data>
+  <data name="SourceCodeID03" xml:space="preserve">
+    <value>ID code source 03</value>
+  </data>
+  <data name="SourceCodeID04" xml:space="preserve">
+    <value>ID code source 04</value>
+  </data>
+  <data name="SourceCodeID05" xml:space="preserve">
+    <value>ID code source 05</value>
+  </data>
+  <data name="SourceCodeID06" xml:space="preserve">
+    <value>ID code source 06</value>
+  </data>
+  <data name="SourceCodeID07" xml:space="preserve">
+    <value>ID code source 07</value>
+  </data>
+  <data name="SourceCodeID08" xml:space="preserve">
+    <value>ID code source 08</value>
+  </data>
+  <data name="SourceCodeID09" xml:space="preserve">
+    <value>ID code source 09</value>
+  </data>
+  <data name="SourceCodeID10" xml:space="preserve">
+    <value>ID code source 10</value>
+  </data>
+  <data name="SourceCodeID11" xml:space="preserve">
+    <value>ID code source 11</value>
+  </data>
+  <data name="SourceCodeID12" xml:space="preserve">
+    <value>ID code source 12</value>
+  </data>
+  <data name="SourceCodeID13" xml:space="preserve">
+    <value>ID code source ID 13</value>
+  </data>
+  <data name="SourceCodeID14" xml:space="preserve">
+    <value>ID code source ID 14</value>
+  </data>
+  <data name="SourceCodeID15" xml:space="preserve">
+    <value>ID code source 15</value>
+  </data>
+  <data name="SourceCodeID16" xml:space="preserve">
+    <value>ID code source 16</value>
+  </data>
+  <data name="SourceCodeID17" xml:space="preserve">
+    <value>ID code source 17</value>
+  </data>
+  <data name="SourceCodeID18" xml:space="preserve">
+    <value>ID code source 18</value>
+  </data>
+  <data name="SourceCodeID19" xml:space="preserve">
+    <value>ID code source 19</value>
+  </data>
+  <data name="SourceCodeID20" xml:space="preserve">
+    <value>ID code source 20</value>
+  </data>
+  <data name="SourceCodeID21" xml:space="preserve">
+    <value>ID code source 21</value>
+  </data>
+  <data name="SourceCodeID22" xml:space="preserve">
+    <value>ID code source 22</value>
+  </data>
+  <data name="SourceCodeID23" xml:space="preserve">
+    <value>ID code source 23</value>
+  </data>
+  <data name="SourceCodeID24" xml:space="preserve">
+    <value>ID code source 24</value>
+  </data>
+  <data name="SourceCodeID25" xml:space="preserve">
+    <value>ID code source 25</value>
+  </data>
+  <data name="SourceCodeID26" xml:space="preserve">
+    <value>ID code source 26</value>
+  </data>
+  <data name="SourceCodeID27" xml:space="preserve">
+    <value>ID code source 27</value>
+  </data>
+  <data name="SourceCodeID28" xml:space="preserve">
+    <value>ID code source 28</value>
+  </data>
+  <data name="SourceCodeID29" xml:space="preserve">
+    <value>ID code source 29</value>
+  </data>
+  <data name="SourceCodeID30" xml:space="preserve">
+    <value>ID code source 30</value>
+  </data>
+  <data name="SourceCodeID31" xml:space="preserve">
+    <value>ID code source 31</value>
+  </data>
+  <data name="SourceCodeID32" xml:space="preserve">
+    <value>ID code source 32</value>
+  </data>
+  <data name="SourceCodeID33" xml:space="preserve">
+    <value>ID code source 33</value>
+  </data>
+  <data name="SourceCodeID34" xml:space="preserve">
+    <value>ID code source 34</value>
+  </data>
+  <data name="SourceCodeID35" xml:space="preserve">
+    <value>ID code source 35</value>
+  </data>
+  <data name="SourceCodeID36" xml:space="preserve">
+    <value>ID code source 36</value>
+  </data>
+  <data name="SourceCodeID37" xml:space="preserve">
+    <value>ID code source 37</value>
+  </data>
+  <data name="SourceCodeID38" xml:space="preserve">
+    <value>ID code source 38</value>
+  </data>
+  <data name="SourceCodeID39" xml:space="preserve">
+    <value>ID code source 39</value>
+  </data>
+  <data name="SourceCodeID40" xml:space="preserve">
+    <value>ID code source 40</value>
+  </data>
+  <data name="SourceCodeID41" xml:space="preserve">
+    <value>ID code source 41</value>
+  </data>
+  <data name="SourceCodeID42" xml:space="preserve">
+    <value>ID code source 42</value>
+  </data>
+  <data name="SourceCodeID43" xml:space="preserve">
+    <value>ID code source 43</value>
+  </data>
+  <data name="SourceCodeID44" xml:space="preserve">
+    <value>ID code source 44</value>
+  </data>
+  <data name="SourceCodeID45" xml:space="preserve">
+    <value>ID code source 45</value>
+  </data>
+  <data name="SourceCodeID46" xml:space="preserve">
+    <value>ID code source 46</value>
+  </data>
+  <data name="SourceCodeID47" xml:space="preserve">
+    <value>ID code source 47</value>
+  </data>
+  <data name="SourceCodeID48" xml:space="preserve">
+    <value>ID code source 48</value>
+  </data>
+  <data name="SourceCodeID49" xml:space="preserve">
+    <value>ID code source 49</value>
+  </data>
+  <data name="SourceCodeID50" xml:space="preserve">
+    <value>ID code source 50</value>
+  </data>
+  <data name="SourceJournalName" xml:space="preserve">
+    <value>Profil</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SourceJournalProfile" xml:space="preserve">
+    <value>Profil de journal source</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SourceType01" xml:space="preserve">
+    <value>Type source 01</value>
+  </data>
+  <data name="SourceType02" xml:space="preserve">
+    <value>Type source 02</value>
+  </data>
+  <data name="SourceType03" xml:space="preserve">
+    <value>Type source 03</value>
+  </data>
+  <data name="SourceType04" xml:space="preserve">
+    <value>Type source 04</value>
+  </data>
+  <data name="SourceType05" xml:space="preserve">
+    <value>Type source 05</value>
+  </data>
+  <data name="SourceType06" xml:space="preserve">
+    <value>Type source 06</value>
+  </data>
+  <data name="SourceType07" xml:space="preserve">
+    <value>Type source 07</value>
+  </data>
+  <data name="SourceType08" xml:space="preserve">
+    <value>Type source 08</value>
+  </data>
+  <data name="SourceType09" xml:space="preserve">
+    <value>Type source 09</value>
+  </data>
+  <data name="SourceType10" xml:space="preserve">
+    <value>Type source 10</value>
+  </data>
+  <data name="SourceType11" xml:space="preserve">
+    <value>Type source 11</value>
+  </data>
+  <data name="SourceType12" xml:space="preserve">
+    <value>Type source 12</value>
+  </data>
+  <data name="SourceType13" xml:space="preserve">
+    <value>Type source 13</value>
+  </data>
+  <data name="SourceType14" xml:space="preserve">
+    <value>Type source 14</value>
+  </data>
+  <data name="SourceType15" xml:space="preserve">
+    <value>Type source 15</value>
+  </data>
+  <data name="SourceType16" xml:space="preserve">
+    <value>Type source 16</value>
+  </data>
+  <data name="SourceType17" xml:space="preserve">
+    <value>Type source 17</value>
+  </data>
+  <data name="SourceType18" xml:space="preserve">
+    <value>Type source 18</value>
+  </data>
+  <data name="SourceType19" xml:space="preserve">
+    <value>Type source 19</value>
+  </data>
+  <data name="SourceType20" xml:space="preserve">
+    <value>Type source 20</value>
+  </data>
+  <data name="SourceType21" xml:space="preserve">
+    <value>Type source 21</value>
+  </data>
+  <data name="SourceType22" xml:space="preserve">
+    <value>Type source 22</value>
+  </data>
+  <data name="SourceType23" xml:space="preserve">
+    <value>Type source 23</value>
+  </data>
+  <data name="SourceType24" xml:space="preserve">
+    <value>Type source 24</value>
+  </data>
+  <data name="SourceType25" xml:space="preserve">
+    <value>Type source 25</value>
+  </data>
+  <data name="SourceType26" xml:space="preserve">
+    <value>Type source 26</value>
+  </data>
+  <data name="SourceType27" xml:space="preserve">
+    <value>Type source 27</value>
+  </data>
+  <data name="SourceType28" xml:space="preserve">
+    <value>Type source 28</value>
+  </data>
+  <data name="SourceType29" xml:space="preserve">
+    <value>Type source 29</value>
+  </data>
+  <data name="SourceType30" xml:space="preserve">
+    <value>Type source 30</value>
+  </data>
+  <data name="SourceType31" xml:space="preserve">
+    <value>Type source 31</value>
+  </data>
+  <data name="SourceType32" xml:space="preserve">
+    <value>Type source 32</value>
+  </data>
+  <data name="SourceType33" xml:space="preserve">
+    <value>Type source 33</value>
+  </data>
+  <data name="SourceType34" xml:space="preserve">
+    <value>Type source 34</value>
+  </data>
+  <data name="SourceType35" xml:space="preserve">
+    <value>Type source 35</value>
+  </data>
+  <data name="SourceType36" xml:space="preserve">
+    <value>Type source 36</value>
+  </data>
+  <data name="SourceType37" xml:space="preserve">
+    <value>Type source 37</value>
+  </data>
+  <data name="SourceType38" xml:space="preserve">
+    <value>Type source 38</value>
+  </data>
+  <data name="SourceType39" xml:space="preserve">
+    <value>Type source 39</value>
+  </data>
+  <data name="SourceType40" xml:space="preserve">
+    <value>Type source 40</value>
+  </data>
+  <data name="SourceType41" xml:space="preserve">
+    <value>Type source 41</value>
+  </data>
+  <data name="SourceType42" xml:space="preserve">
+    <value>Type source 42</value>
+  </data>
+  <data name="SourceType43" xml:space="preserve">
+    <value>Type source 43</value>
+  </data>
+  <data name="SourceType44" xml:space="preserve">
+    <value>Type source 44</value>
+  </data>
+  <data name="SourceType45" xml:space="preserve">
+    <value>Type source 45</value>
+  </data>
+  <data name="SourceType46" xml:space="preserve">
+    <value>Type source 46</value>
+  </data>
+  <data name="SourceType47" xml:space="preserve">
+    <value>Type source 47</value>
+  </data>
+  <data name="SourceType48" xml:space="preserve">
+    <value>Type source 48</value>
+  </data>
+  <data name="SourceType49" xml:space="preserve">
+    <value>Type source 49</value>
+  </data>
+  <data name="SourceType50" xml:space="preserve">
+    <value>Type source 50</value>
+  </data>
+</root>

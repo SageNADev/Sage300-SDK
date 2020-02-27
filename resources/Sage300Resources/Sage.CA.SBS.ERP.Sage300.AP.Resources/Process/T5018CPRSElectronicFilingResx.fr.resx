@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Adresse ligne 1</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Adresse ligne 2</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="CounterOverflow" xml:space="preserve">
+    <value>Le fichier de résultats ne peut contenir plus de 99 999 999 enregistrements.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="CountryCode" xml:space="preserve">
+    <value>Code du pays</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="EmptyField" xml:space="preserve">
+    <value>{0} ne peut pas être en blanc et est requis par l&apos;IRS.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Transmission électronique des déclarations de T5018 (SDPC) de CF</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="FedTaxWithHd" xml:space="preserve">
+    <value>La retenue d&apos;impôt fédéral semble excessive comparée au montant de revenu.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="FileFalse" xml:space="preserve">
+    <value>0</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FileTrue" xml:space="preserve">
+    <value>1</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ForeignAddrSize" xml:space="preserve">
+    <value>La longueur totale de l&apos;adresse dépassera l&apos;espace disponible dans le fichier.  Ressaisissez la ville, l&apos;état, le code postal et/ou le pays.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="FrameXmitInfo" xml:space="preserve">
+    <value>Coordonnées du transmetteur</value>
+    <comment>Group</comment>
+  </data>
+  <data name="FromCPRSCode" xml:space="preserve">
+    <value>De code SDPC</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvState" xml:space="preserve">
+    <value>Saisissez un code d&apos;état valide, tel que défini par les services postaux américains.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="InvTaxIDno" xml:space="preserve">
+    <value>Le numéro d&apos;entreprise doit comporter 9 chiffres et peut seulement contenir des chiffres, des tirets et des espaces.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="InvTaxYear" xml:space="preserve">
+    <value>L&apos;année d&apos;imposition doit être antérieure à l&apos;exercice courant.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="InvTaxYrTest" xml:space="preserve">
+    <value>L&apos;année d&apos;imposition spécifiée peut seulement être utilisée pour les fichiers test.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="InvTCC" xml:space="preserve">
+    <value>Le code de contrôle du transmetteur (TCC) doit être le code de cinq caractères alphanumériques assigné par l&apos;IRS/MCC.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="InvZIPcode" xml:space="preserve">
+    <value>Le code postal doit seulement contenir des chiffres ou un tiret après cinq chiffres.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Langue</value>
+    <comment>TransmitterInfo - List</comment>
+  </data>
+  <data name="Name1" xml:space="preserve">
+    <value>Nom ligne 1</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="Name2" xml:space="preserve">
+    <value>Nom ligne 2</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>Aucun enregistrement ne correspond à vos critères. Aucun fichier ne sera généré.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="OutFilePath" xml:space="preserve">
+    <value>Le fichier ou le dossier {0} est introuvable. Veuillez réessayer.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="OutputDest" xml:space="preserve">
+    <value>Fichier de résultats</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProcessDone" xml:space="preserve">
+    <value>Traitement terminé.  Le fichier {0} a été correctement généré et est prêt à être téléchargé.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SubmissionReferenceID" xml:space="preserve">
+    <value>Code référence de transmission</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="SuffixVend" xml:space="preserve">
+    <value>Utilisez la fenêtre Fournisseurs pour effectuer tout changement.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="TaxYear" xml:space="preserve">
+    <value>Année d&apos;imposition</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TmpFilePath" xml:space="preserve">
+    <value>Un problème est survenu et le fichier temporaire n&apos;a pas été créé.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="ToCPRSCode" xml:space="preserve">
+    <value>À code SDPC</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TooManyErrors" xml:space="preserve">
+    <value>{0} erreurs sont survenues dans Fournisseurs, dont {1} sont répertoriées ici.  Vérifiez si d&apos;autres enregistrements Fournisseur comportent des erreurs.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="TransmitterNumber" xml:space="preserve">
+    <value>Numéro transmetteur</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="VendCodeOverflow" xml:space="preserve">
+    <value>Le montant total payé pour cette année d&apos;imposition au fournisseur {0} pour le code 1099 {1} est trop gros pour être stocké dans le fichier.  Impossible de spécifier plus de 9,999,999,999.99 $ pour le code et le fournisseur.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="XferAgent" xml:space="preserve">
+    <value>Si un agent de transfert agit pour le compte du payeur, le nom de l&apos;agent doit être affiché dans le champ Agent.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="Amended" xml:space="preserve">
+    <value>Modifié</value>
+    <comment>Enum Value</comment>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Annulé</value>
+    <comment>Enum Value</comment>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>Original</value>
+    <comment>Enum Value</comment>
+  </data>
+  <data name="ZipOrPostalCode" xml:space="preserve">
+    <value>Code postal</value>
+    <comment>Transmitter/Payer Zip Code</comment>
+  </data>
+  <data name="ErrorMsgFileName" xml:space="preserve">
+    <value>Le nom du fichier ne peut pas être en blanc.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="AllowCPRSReporting" xml:space="preserve">
+    <value>L&apos;option permettant la déclaration SDPC n&apos;est pas sélectionnée dans Options de CC.</value>
+    <comment>Error message</comment>
+  </data>
+  <data name="PaymentYearError" xml:space="preserve">
+    <value>L&apos;année d&apos;imposition ne peut pas être en blanc.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="CanadaCode" xml:space="preserve">
+    <value>CAN</value>
+    <comment>Country Code</comment>
+  </data>
+</root>
