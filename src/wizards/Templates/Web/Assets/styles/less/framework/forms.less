@@ -1103,6 +1103,7 @@ input.numeric {
 input,
 textarea,
 .datepicker-group .k-datepicker,
+.timepicker-group .k-timepicker,
 .numeric-group .k-numerictextbox,
 .numeric-search-group .k-numerictextbox,
 .input-group .k-numerictextbox,
@@ -1570,6 +1571,7 @@ textarea {
 
 .k-numeric-wrap .k-select:hover,
 .k-datepicker .k-select:hover,
+.k-timepicker .k-select:hover,
 .k-dropdown .k-select:hover {
   background-color: darken(@btn-default-bg, 5%);
   background-image: none;
@@ -1772,6 +1774,14 @@ td.k-state-focused.k-state-selected {
       width: 120px;
     }
   }
+}
+
+/* timepicker related */
+.k-timepicker .k-icon.k-i-clock {
+  background-image: none;
+  font-size: 1.4em;
+  top: -1px;
+  left: -1px;
 }
 
 /* label menu (hamburger icon) related */
@@ -2243,7 +2253,7 @@ div.k-treeview {
 } 
 
 .k-treeview {
-    border: 1px solid #9a9b9c !important;
+    border: 1px solid #9a9b9c;
 }
 .k-treeview .k-state-selected {
     background-color: transparent;
@@ -2286,6 +2296,97 @@ div.k-treeview {
   }
 }
 
+// To support Kendo Native Tree view
+
+#treeview .k-sprite,
+.kendo-tree-view .k-sprite {
+  background-image: url('@{image-path}/ui/treeview-sprite.png');
+  width: 16px;
+  height: 16px;
+  top: 6px;
+  position: relative;
+}
+
+.rootfolder { 
+  background-position: 0 0; 
+}
+.folder { 
+  background-position: 0 -16px; 
+}
+.pdf { 
+  background-position: 0 -32px; 
+}
+.html { 
+  background-position: 0 -48px; 
+}
+.image { 
+  background-position: 0 -64px; 
+}
+
+.kendo-tree-view {
+
+  &.form-group {
+    margin: unset;
+    margin-bottom: 20px;
+  }
+
+  .k-treeview {
+    height: auto;
+    padding: 10px 0;
+    border-width: 1px;
+
+    .k-item {
+      padding: 0 0 0 20px;
+
+      .k-icon {
+        top: 4px;
+
+        &.k-i-expand {
+          top: 0;
+        }
+      }
+
+      .k-in {
+        border-radius: 0;
+        margin: 0;
+        padding: 0 4px;
+
+        &.k-state-hover, .k-treeview .k-in:hover {
+          background-color: @sage-light-gray;
+        }
+
+        &.k-state-selected {
+          color: @white;
+          background-color: @brand-primary;
+          background-image: none;
+        }
+
+        &.k-state-focused {
+          border: 1px solid @input-border-focus;
+        }
+
+        &.k-state-selected.k-state-focused {
+          box-shadow: none;
+        }
+      }
+
+      .k-top,
+      .k-mid, 
+      .k-bot {
+
+        .k-in {
+          padding-left: 24px;
+        }
+
+        .k-i-collapse + .k-in,
+        .k-i-expand + .k-in {
+          padding-left: 4px;
+        }
+      }
+    }
+  }
+}
+
 // Inline validation messages 
 
 .field-validation-error{
@@ -2320,6 +2421,7 @@ div.k-treeview {
 
     &:after {
       border-color:rgba(194, 225, 245, 0);
+      
       border-bottom-color: @sage-dark-gray;
       border-width: 7px;
       margin-left: -10px;
@@ -2506,7 +2608,8 @@ div.k-treeview {
       opacity: 0;
       cursor: pointer;
       top: -10px;
-      left: 0px;
+      left: 0;
+      z-index: 1;
     }
 
     label{

@@ -3,8 +3,8 @@ REM
 REM Copy Web Screen core files to Web SDK Sample projects
 REM 
 
-set SourceWebRoot=C:\Projects\SageAzureDev\Columbus-Web\Sage.CA.SBS.ERP.Sage300.Web
-set DestinationSamplesRoot=C:\Projects\Sage300-SDK\Develop\Samples
+set SourceWebRoot=C:\Projects\WebScreen\Columbus-Web\Sage.CA.SBS.ERP.Sage300.Web
+set DestinationSamplesRoot=C:\Projects\WebScreen\Sage300-SDK\samples
 
 REM
 REM List of Samples to update
