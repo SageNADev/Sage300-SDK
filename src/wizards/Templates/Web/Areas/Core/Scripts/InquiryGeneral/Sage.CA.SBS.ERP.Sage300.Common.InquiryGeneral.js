@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 /* global kendo */
 /* exported InquiryGeneralUI */
@@ -553,7 +553,7 @@ var InquiryGeneralUI = function () {
         }
 
         if (item.IsDrilldown) {
-            template = kendo.format("<a href=''>#:{0}#</a>", item.FieldAlias || item.Field);
+            template = kendo.format("<a href=''>#={0}#</a>", item.FieldAlias || item.Field);
         }
 
         if (type === "datetime") {
@@ -1071,7 +1071,7 @@ var InquiryGeneralUI = function () {
                     for (var i = 1; i < length; i++) {
                         values += rowData[params[i].Field] + ",";
                     }
-                    paramsStr += "&id=" + encodeURIComponent(values.slice(0, -1));
+                    paramsStr += "&id=" + values.slice(0, -1);
                 }
             } else {
                 var paramValues = InquiryGeneralViewModel.Ids;
@@ -1084,7 +1084,7 @@ var InquiryGeneralUI = function () {
                     } else {
                         paramValue = rowData[fieldName] || fieldName; 
                     }
-                    paramsStr += kendo.format("{0}{1}={2}", (i == 0) ? "?" : "&", params[i].Name, encodeURIComponent(paramValue));
+                    paramsStr += kendo.format("{0}{1}={2}", (i == 0) ? "?" : "&", params[i].Name, paramValue);
                 }
             }
             url = sg.utls.url.buildUrl(controller.Area, controller.Controller, controller.Action) +"/" + paramsStr;

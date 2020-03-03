@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 // @ts-check
 
@@ -55,15 +55,6 @@ sg.utls.EntityErrorPriority = {
     Warning: 2,
     Error: 3,
     Security: 4
-};
-
-/**
- * Sage 300 license status
- */
-sg.utls.LicenseStatus = {
-    Expired: -2,
-    NotFound: -1,
-    OK: 0
 };
 
 var fnTimeout = 0;
@@ -584,7 +575,7 @@ $.extend(sg.utls, {
         sg.utls.logMessage("Calling sg.utls.logOut() for context session id = '" + sessionId + "'");
 
         var currentCompany = sg.utls.getCurrentCompanyName();
-        var message = isAdminLogout ? globalRes.AdminSignOutConfirmation : sg.utls.formatString(globalRes.MultiSessionSignOutConfirmationTemplate, kendo.htmlEncode(currentCompany));
+        var message = isAdminLogout ? globalRes.AdminSignOutConfirmation : sg.utls.formatString(globalRes.MultiSessionSignOutConfirmationTemplate, currentCompany);
         var title = globalRes.SignOutConfirmation;
         var btnYes = globalRes.SignOut;
         var btnNo = globalRes.Cancel;

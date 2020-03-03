@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
@@ -176,7 +176,7 @@ var saleSplitGridUI = {
 
                 // ko.mapping.fromJS(list, {}, saleSplitGridUI.items.SalesSplitDetail.Items);
                 if (grid.dataSource.total() === 0) {
-                    $("#" + chkAllId).attr("checked", false);
+                    $("#" + chkAllId).attr("checked", false).parent().attr("class", "icon checkBox");
                     sg.controls.disable("#" + chkAllId);
                     $('#message').empty();
                 } else {
@@ -334,7 +334,7 @@ var saleSplitGridUI = {
         sg.controls.disable('#' + saleSplitGridUI.btnAddLineId);
         sg.controls.disable('#' + saleSplitGridUI.btnDeleteLineId);
         sg.controls.disable("#" + saleSplitGridUI.selectAllChkId);
-        $("#" + saleSplitGridUI.selectAllChkId).attr("checked", false);
+        $("#" + saleSplitGridUI.selectAllChkId).attr("checked", false).parent().attr("class", "icon checkBox");
         grid.tbody.find("." + saleSplitGridUI.selectChkId).each(function () {
             $(this).attr("disabled", true);
         });
@@ -428,7 +428,7 @@ var saleSplitGridUI = {
                         sg.controls.disable("#" + saleSplitGridUI.selectAllChkId);
                     }
                 }
-                $("#" + saleSplitGridUI.selectAllChkId).attr("checked", false);
+                $("#" + saleSplitGridUI.selectAllChkId).attr("checked", false).parent().attr("class", "icon checkBox");
                 if (grid.dataSource.data().length == 5) {
                     sg.controls.disable("#" + saleSplitGridUI.btnAddLineId);
                 } else {

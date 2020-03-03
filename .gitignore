@@ -1,8 +1,4 @@
 **/obj/
 **/bin/
-**/.vs/
-**/packages/
-**/Logs/
 /src/wizards/Sage300UIWizardPackage/ProjectTemplates/*.zip
 /src/wizards/Sage300SolutionWizard/Resources/AccpacDotNetVersion.props
-*.user

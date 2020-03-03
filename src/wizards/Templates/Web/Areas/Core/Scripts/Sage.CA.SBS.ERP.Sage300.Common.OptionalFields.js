@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 var optionalFieldEnum = optionalFieldEnum || {};
@@ -1148,7 +1148,7 @@ var optionalFieldUIGrid =
             grid.dataSource.page(retrievePage + 1);
         }
 
-        $("#" + chkAllId).attr("checked", false);
+        $("#" + chkAllId).attr("checked", false).parent().attr("class", "icon checkBox");
         sg.controls.disable("#" + btnDeleteId);
         sg.controls.enable("#" + optionalFieldUIGrid.btnAddLineId);
     },
@@ -1316,7 +1316,7 @@ var optionalFieldUIGrid =
         sg.controls.disable('#' + optionalFieldUIGrid.btnAddLineId);
         sg.controls.disable('#' + optionalFieldUIGrid.btnDeleteLineId);
         sg.controls.disable("#" + optionalFieldUIGrid.selectAllCheckId);
-        $("#" + optionalFieldUIGrid.selectAllCheckId).attr("checked", false);
+        $("#" + optionalFieldUIGrid.selectAllCheckId).attr("checked", false).parent().attr("class", "icon checkBox");
         grid.tbody.find("." + optionalFieldUIGrid.selectCheckId).each(function () {
             $(this).attr("disabled", true);
         });
@@ -1709,7 +1709,7 @@ var optionalFieldUIGrid =
                     //
                 }
 
-                $("#" + optionalFieldUIGrid.selectAllCheckId).attr("checked", false);
+                $("#" + optionalFieldUIGrid.selectAllCheckId).attr("checked", false).parent().attr("class", "icon checkBox");
                 sg.controls.enable("#" + optionalFieldUIGrid.btnAddLineId);
 
                 if (optionalFieldUIGrid.isReadOnly || optionalFieldUIGrid.disableButtons) {

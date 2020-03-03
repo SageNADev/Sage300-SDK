@@ -387,14 +387,11 @@ sg.optionalFieldControl = function () {
         finder.viewID = "CS0012";
         finder.viewOrder = 0;
         finder.filter = "OPTFIELD=" + model.OPTFIELD;
-        var value = swset === 0 && [6, 8, 100].indexOf(model.TYPE) > -1 ? 0 : model.VALUE;
         switch (model.TYPE) {
             case ValueTypeEnum.Date:
                 finder.displayFieldNames = ["VALIFDATE", "VDESC"];
                 //convert the value to specified format for finder query
-                if (model.VALUE) {
-                    value = kendo.toString(model.VALUE, 'yyyyMMdd');
-                }
+                model.VALUE = kendo.toString(model.VALUE, 'yyyyMMdd');
                 break;
             case ValueTypeEnum.Integer:
                 finder.displayFieldNames = ["VALIFLONG", "VDESC"];
@@ -412,6 +409,7 @@ sg.optionalFieldControl = function () {
                 finder.displayFieldNames = ["VALUE", "VDESC", "TYPE"];
         }
         finder.returnFieldNames = ["VALUE", "VDESC"];
+        var value = swset === 0 && [6, 8, 100].indexOf(model.TYPE) > -1 ? 0 : model.VALUE;
         finder.initKeyValues = [model.OPTFIELD, value];
 
         /**

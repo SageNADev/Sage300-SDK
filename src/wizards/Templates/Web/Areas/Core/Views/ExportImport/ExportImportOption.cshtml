@@ -27,7 +27,7 @@
         <div class="dropdown-group">
              @Html.KoSageDropDownList("exportImportOption", new { @options = "Options", @value = "SelectedOption", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "exportImportOption", @class = "medium" })
         </div>
-        <div id="buttons" class="button-group">
+        <div id="buttons" >
                 @Html.KoSageButton("Select", null, new { @class = "btn btn-primary", @value = @buttonCaption, @id = frmSubmitButtonId })
         </div>
     </div>  
