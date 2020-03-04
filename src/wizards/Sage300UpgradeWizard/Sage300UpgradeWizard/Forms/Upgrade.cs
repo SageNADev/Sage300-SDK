@@ -205,6 +205,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     Resources.ReleaseSpecificDescUpdateCheckboxes,
                     Resources.ReleaseSpecificUpdateCheckboxes);
 
+            AddStep(Resources.ReleaseSpecificTitleUpdateNewtonSoftPackage,
+                    Resources.ReleaseSpecificDescUpdateNewtonSoftPackage,
+                    Resources.ReleaseSpecificUpdateNewtonSoftPackage);
+
             #endregion
 
             #region Common for all upgrades - content specific to release
@@ -252,6 +256,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateThemeColor}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateCheckboxes}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateNewtonSoftPackage}");
 
             // End - Specific to release
 

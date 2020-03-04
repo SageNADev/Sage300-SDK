@@ -130,6 +130,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         UpdateCheckboxes(title);
                         break;
 
+                    case 5:
+                        LogSpacerLine('-');
+                        UpdateNewtonSoftPackage(title);
+                        break;
                         #endregion
                 }
             }
@@ -356,7 +360,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             }
         }
 
-
         /// <summary>
         /// Theme color changes
         /// Update kendo window open behavior
@@ -384,6 +387,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             // Nothing to do. This is a manual partner step :)
             var msg = Resources.UpdatesToSupportCheckboxesAreAManualStep;
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Update NewtonSoft.Json package
+        /// </summary>
+        /// <param name="title"></param>
+        private void UpdateNewtonSoftPackage(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.UpdatesToSupportNewtonSoftUpdateAreAManualStep;
 
             // Log end of step
             LogEventEnd(title);

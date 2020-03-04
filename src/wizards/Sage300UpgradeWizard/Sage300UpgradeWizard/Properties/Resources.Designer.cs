@@ -549,6 +549,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         /// <summary>
         ///   Looks up a localized string similar to This step will need to be done manually..
         /// </summary>
+        internal static string ReleaseSpecificDescUpdateNewtonSoftPackage {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateNewtonSoftPackage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will need to be done manually..
+        /// </summary>
         internal static string ReleaseSpecificDescUpdateThemeColor {
             get {
                 return ResourceManager.GetString("ReleaseSpecificDescUpdateThemeColor", resourceCulture);
@@ -583,6 +592,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Update version of NewtonSoft.Json.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUpdateNewtonSoftPackage {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateNewtonSoftPackage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update targeted version of .NET Framework.
         /// </summary>
         internal static string ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion {
@@ -601,16 +619,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to In additional, as part of the framework changes in Sage 300c 2020.2, checkboxes
+        ///   Looks up a localized string similar to In addition, as part of the framework changes in Sage 300c 2020.2, checkboxes
         ///and radio buttons also had a visual upgrade.
         ///
-        ///The updated elements will display correctly if they are created using the Sage
-        ///300 HtmlHelperExtension. For customized elements that are not using the
-        ///HtmlHelperExtension, please make use of the utility so that the elements will
-        ///have the same visual style.
+        ///The updated elements will inherit the new visual upgrade correctly if they are
+        ///created using the Sage 300 HtmlHelperExtension. For customized elements that 
+        ///are not using the HtmlHelperExtension, you may make use of the utility so that
+        ///the elements will have the same visual style and benefit from the visual
+        ///upgrade.
         ///
-        ///Please refer to the &apos;Checkboxes and Radio Buttons changes&apos; subsection in the
-        ///Sage 300 Upgrade Guide for 2020.1 to 2020. [rest of string was truncated]&quot;;.
+        ///Please refer to the &apos;Checkboxes and Radio Buttons changes&apos; s [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReleaseSpecificUpdateCheckboxes {
             get {
@@ -630,6 +648,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificUpdateConsolidateEnumerations {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateConsolidateEnumerations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As part of the framework changes in Sage 300c 2020.2, the Newtonsoft.Json
+        ///package need to be updated from 6.0.8 version to 9.0.1 version or above. If
+        ///your project is using a newer version than 9.0.1, you can ignore this step and
+        ///continue.
+        ///
+        ///The upgrade wizard is unable to automatically perform this modification and
+        ///therefore this step will require manual modifications.
+        ///
+        ///Please refer to the &apos;Upgrade NewtonSoft.Json Package&apos; subsection in the Sage
+        ///300 Upgrade Guide for 2020.1 to 2020.2 in the docs fol [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificUpdateNewtonSoftPackage {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUpdateNewtonSoftPackage", resourceCulture);
             }
         }
         
@@ -822,6 +858,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string UpdatesToSupportMultipleSessionsAreAManualStep {
             get {
                 return ResourceManager.GetString("UpdatesToSupportMultipleSessionsAreAManualStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The updates to NewtonSoft.Json package must be made manually..
+        /// </summary>
+        internal static string UpdatesToSupportNewtonSoftUpdateAreAManualStep {
+            get {
+                return ResourceManager.GetString("UpdatesToSupportNewtonSoftUpdateAreAManualStep", resourceCulture);
             }
         }
         
