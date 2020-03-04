@@ -368,7 +368,7 @@ table {
       position: absolute;
       width: 22px;
       height: 22px;
-      right: 7px;
+      right: 6px;
       bottom: 2px;
     }
   }
@@ -422,7 +422,7 @@ table {
     }
 
     .rightbox {
-      width: 160px;
+      width: 163px;
     }
 
     .btn-fiscal-picker {
@@ -430,10 +430,11 @@ table {
       height: 24px;
       width: 30px;
       border-left: 0;
-      border-top: 1px solid #9a9b9c;
-      border-right: 1px solid #9a9b9c;
-      border-bottom: 1px solid #9a9b9c;
-      background-color: #fff;
+      right: -1px;
+      border-top: 1px solid @btn-default-border;
+      border-right: 1px solid @btn-default-border;
+      border-bottom: 1px solid @btn-default-border;
+      background-color: @white;
     }
 
     .rightbox:disabled + .btn-fiscal-picker {
@@ -613,7 +614,7 @@ table {
 
       .checkbox-container {
         padding-left: 0;
-        top: -3px;
+        top: -1px;
 
         input[type=checkbox] {
           width: 16px;
@@ -1174,6 +1175,19 @@ table {
 
   .k-grid-content .k-checkbox-label:before {
     top: 7px;
+  }
+
+  /* timepicker related */
+  .k-widget.k-timepicker .k-picker-wrap {
+    height: 28px;
+
+    input {
+        height: 26px;
+    }
+
+    .k-select .k-icon.k-i-clock {
+        top: 0px;
+    }
   }
 }
 
