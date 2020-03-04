@@ -549,9 +549,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         /// <summary>
         ///   Looks up a localized string similar to This step will need to be done manually..
         /// </summary>
-        internal static string ReleaseSpecificDescUpdateNewtonSoftPackage {
+        internal static string ReleaseSpecificDescUpdateNewtonsoftPackage {
             get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateNewtonSoftPackage", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificDescUpdateNewtonsoftPackage", resourceCulture);
             }
         }
         
@@ -592,11 +592,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update version of NewtonSoft.Json.
+        ///   Looks up a localized string similar to Update version of Newtonsoft.Json.
         /// </summary>
-        internal static string ReleaseSpecificTitleUpdateNewtonSoftPackage {
+        internal static string ReleaseSpecificTitleUpdateNewtonsoftPackage {
             get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateNewtonSoftPackage", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificTitleUpdateNewtonsoftPackage", resourceCulture);
             }
         }
         
@@ -660,12 +660,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         ///The upgrade wizard is unable to automatically perform this modification and
         ///therefore this step will require manual modifications.
         ///
-        ///Please refer to the &apos;Upgrade NewtonSoft.Json Package&apos; subsection in the Sage
+        ///Please refer to the &apos;Upgrade Newtonsoft.Json Package&apos; subsection in the Sage
         ///300 Upgrade Guide for 2020.1 to 2020.2 in the docs fol [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string ReleaseSpecificUpdateNewtonSoftPackage {
+        internal static string ReleaseSpecificUpdateNewtonsoftPackage {
             get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateNewtonSoftPackage", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificUpdateNewtonsoftPackage", resourceCulture);
             }
         }
         
@@ -862,11 +862,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The updates to NewtonSoft.Json package must be made manually..
+        ///   Looks up a localized string similar to The updates to Newtonsoft.Json package must be made manually..
         /// </summary>
-        internal static string UpdatesToSupportNewtonSoftUpdateAreAManualStep {
+        internal static string UpdatesToSupportNewtonsoftUpdateAreAManualStep {
             get {
-                return ResourceManager.GetString("UpdatesToSupportNewtonSoftUpdateAreAManualStep", resourceCulture);
+                return ResourceManager.GetString("UpdatesToSupportNewtonsoftUpdateAreAManualStep", resourceCulture);
             }
         }
         

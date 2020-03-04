@@ -362,16 +362,16 @@
   <data name="UpdatesToSupportCheckboxesAreAManualStep" xml:space="preserve">
     <value>The updates to support checkboxes and radio buttons must be made manually.</value>
   </data>
-  <data name="ReleaseSpecificTitleUpdateNewtonSoftPackage" xml:space="preserve">
-    <value>Update version of NewtonSoft.Json</value>
+  <data name="ReleaseSpecificTitleUpdateNewtonsoftPackage" xml:space="preserve">
+    <value>Update version of Newtonsoft.Json</value>
   </data>
-  <data name="ReleaseSpecificUpdateNewtonSoftPackage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateNewtonSoftPackage.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="ReleaseSpecificUpdateNewtonsoftPackage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUpdateNewtonsoftPackage.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="ReleaseSpecificDescUpdateNewtonSoftPackage" xml:space="preserve">
+  <data name="ReleaseSpecificDescUpdateNewtonsoftPackage" xml:space="preserve">
     <value>This step will need to be done manually.</value>
   </data>
-  <data name="UpdatesToSupportNewtonSoftUpdateAreAManualStep" xml:space="preserve">
-    <value>The updates to NewtonSoft.Json package must be made manually.</value>
+  <data name="UpdatesToSupportNewtonsoftUpdateAreAManualStep" xml:space="preserve">
+    <value>The updates to Newtonsoft.Json package must be made manually.</value>
   </data>
 </root>

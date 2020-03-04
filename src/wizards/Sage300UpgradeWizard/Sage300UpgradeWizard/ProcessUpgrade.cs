@@ -132,7 +132,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
                     case 5:
                         LogSpacerLine('-');
-                        UpdateNewtonSoftPackage(title);
+                        UpdateNewtonsoftPackage(title);
                         break;
                         #endregion
                 }
@@ -394,15 +394,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
-        /// Update NewtonSoft.Json package
+        /// Update Newtonsoft.Json package
         /// </summary>
         /// <param name="title"></param>
-        private void UpdateNewtonSoftPackage(string title)
+        private void UpdateNewtonsoftPackage(string title)
         {
             LogEventStart(title);
 
             // Nothing to do. This is a manual partner step :)
-            var msg = Resources.UpdatesToSupportNewtonSoftUpdateAreAManualStep;
+            var msg = Resources.UpdatesToSupportNewtonsoftUpdateAreAManualStep;
 
             // Log end of step
             LogEventEnd(title);
