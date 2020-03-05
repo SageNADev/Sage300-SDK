@@ -1,5 +1,5 @@
 As part of the framework changes in Sage 300c 2020.2, the Newtonsoft.Json
-package need to be updated from 6.0.8 version to 9.0.1 version or above. If
+package needs to be updated from 6.0.8 version to 9.0.1 version or above. If
 your project is using a newer version than 9.0.1, you can ignore this step and
 continue.
 
