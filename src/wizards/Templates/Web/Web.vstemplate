@@ -713,6 +713,7 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_msg.png">sprite_msg.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons.png">toolBar_icons.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons_disabled.png">toolBar_icons_disabled.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="treeview-sprite.png">treeview-sprite.png</ProjectItem>
           </Folder>
         </Folder>
         <Folder Name="js" TargetFolderName="js">

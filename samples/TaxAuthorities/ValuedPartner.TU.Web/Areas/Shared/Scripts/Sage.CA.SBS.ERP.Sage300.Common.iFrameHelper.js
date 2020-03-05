@@ -151,20 +151,16 @@ $.extend(sg.utls.iFrameHelper = {
         }
 
         // set default height and width, if parameter is null
-        if (height == null || height > sg.utls.iFrameHelper.DefaultHeight) {
+        if (height == null) {
             height = sg.utls.iFrameHelper.DefaultHeight;
-        };
-        if (width == null || width > sg.utls.iFrameHelper.DefaultWidth) {
+        }
+        if (width == null) {
             width = sg.utls.iFrameHelper.DefaultWidth;
 
-            if (source == null) {
-                if (width > $(contentFrame.document).width()) {
-                    width = $(contentFrame.document).width() - 20;
-                }
-            } else {
-                if (width > $(source.closest('html')).width()) {
-                    width = $(source.closest('html')).width() - 20;
-                }
+            var element = source == null ? $(contentFrame.document) : $(source.closest('html'));
+            
+            if (width > element.width()) {
+                width = element.width() - 20;
             }
         };
 
@@ -302,9 +298,9 @@ $.extend(sg.utls.iFrameHelper = {
                 
                 var sameOrigin = sg.utls.isSameOrigin();
                 if (sameOrigin) {
-                    var leftPos = ($(window.top).innerWidth() - this.wrapper.width()) / 2;
+                    var leftPos = ($(window.top).innerWidth() - this.wrapper.width() - 100) / 2;
                     if (leftPos < 0) {
-                        leftPos = 25;
+                        leftPos = 44;
                     }
                     var scrollPos = $(window.top).scrollTop();
                     if (scrollPos > 150) {
@@ -312,7 +308,7 @@ $.extend(sg.utls.iFrameHelper = {
                     }
                 } else {
                     scrollPos = 50;
-                    leftPos = 25;
+                    leftPos = 44;
                 }
                 
                 this.wrapper.css({

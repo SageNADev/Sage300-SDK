@@ -1,10 +1,11 @@
-﻿@* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
 @using Sage.CA.SBS.ERP.Sage300.Web.Models
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal
+@using System.Collections;
 
 @model List<NavigableMenuViewModel<NavigableMenu>>
 
@@ -38,6 +39,7 @@
     var level6Items = Model.Where(m => m.Data.MenuItemLevel == 6).ToList();
 
     var itemIndex = 0;
+    var firstItem = true;
 }
 
 @*Rendering Menu*@
@@ -83,33 +85,27 @@
     else
     {
         itemIndex++;
-        var firstItem = true;
         @*2nd Level Menu: Start*@
-        var level2ItemId = level2Item.Data.MenuId;
-        var iconName = level2Item.Data.IconName;
-        var bgImageName = level2Item.Data.MenuBackGoundImage;
-        var iconPath = Path.Combine("../../External/Content/Images/nav/", iconName);
-        var bgImagePath = Path.Combine("../../External/Content/Images/nav/", bgImageName);
-        var physicalIconPath = Server.MapPath(iconPath);
-        var physicalBgImagePath = Server.MapPath(bgImagePath);
-        if (!File.Exists(physicalIconPath))
+        var relativePath = "../../../External/Content/Images/nav/";
+        var level2Data = level2Item.Data;
+        var iconPath = Path.Combine(relativePath, level2Data.IconName);
+        if (!File.Exists(Server.MapPath(iconPath)))
         {
-            iconPath = "../../External/Content/Images/nav/default_icon.svg";
+            iconPath = Path.Combine(relativePath, "default_icon.svg");
         }
-        if (!File.Exists(physicalBgImagePath))
-        {
-            bgImagePath = "../../External/Content/Images/nav/default_bg_image.jpg";
-        }
-        <li class="menu-item top-tier menu-sdk" title="@level2Item.Data.MenuName">
+        var level2ItemId = level2Data.MenuId;
+        var level2ItemName = level2Data.MenuName;
+        firstItem = true;
+        <li class="menu-item top-tier menu-sdk" title="@level2ItemName">
             <div class="nav-icon">
                 <img src=@iconPath width="20" height="20">
             </div>
-            <a>@level2Item.Data.MenuName</a>
+            <a>@level2ItemName</a>
             <ul class="std-menu">
-                <li class="sub-heading">@level2Item.Data.MenuName</li>
+                <li class="sub-heading">@level2ItemName</li>
                 @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
                 {
-                    Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack = new Stack<List<NavigableMenuViewModel<NavigableMenu>>>();
+                    Stack menuStack = new Stack();
                     menuStack.Push(level6Items);
                     menuStack.Push(level5Items);
                     menuStack.Push(level4Items);
@@ -120,7 +116,6 @@
             </ul>
         </li>
         @*2nd Level Menu: End*@
-
     }
 }
 
@@ -134,13 +129,13 @@
         string.Format(content, label, string.Join(string.Empty, urlSegments, 0, 4) + screenUrl + parameter, iconPath)));
 }
 
-@helper CreateMenuGroup(NavigableMenuViewModel<NavigableMenu> parentItem, Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack, string notAvailable, string domainUrl, bool firstItem)
+@helper CreateMenuGroup(NavigableMenuViewModel<NavigableMenu> parentItem, Stack menuStack, string notAvailable, string domainUrl, bool firstItem)
 {
     var parentItemId = parentItem.Data.MenuId;
     var parentItemClass = parentItem.Data.IsGroupEnd == true ? "menu-group" : "";
     var hasSubGroup = parentItem.Data.HasSubGroup.HasValue && parentItem.Data.HasSubGroup.Value;
     var nodeClass = firstItem ? "active" : (hasSubGroup ? "with-menu" : "");
-    var childItems = menuStack.Count > 0 ? menuStack.Pop() : null;
+    var childItems = (List<NavigableMenuViewModel<NavigableMenu>>) (menuStack.Count > 0 ? menuStack.Peek() : null);
 
     if (childItems == null)
     {
@@ -188,11 +183,13 @@
     </li>
 }
 
-@helper CreateMenuItem(NavigableMenuViewModel<NavigableMenu> menuItem, Stack<List<NavigableMenuViewModel<NavigableMenu>>> menuStack, string notAvailable, string domainUrl)
+@helper CreateMenuItem(NavigableMenuViewModel<NavigableMenu> menuItem, Stack menuStack, string notAvailable, string domainUrl)
 {
     if (menuItem.Data.HasSubGroup.HasValue && menuItem.Data.HasSubGroup.Value)
     {
-        @CreateMenuGroup(menuItem, menuStack, notAvailable, domainUrl, false);
+        var subMenuStack = (Stack) menuStack.Clone();
+        subMenuStack.Pop();
+        @CreateMenuGroup(menuItem, subMenuStack, notAvailable, domainUrl, false);
     }
     else
     {
