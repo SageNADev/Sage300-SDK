@@ -271,7 +271,8 @@ var InquiryGeneralUI = function () {
           if (jsonResult.Errors) {
              sg.utls.showMessage(jsonResult);
           } else {
-             window.location = sg.utls.url.buildUrl("Core", "InquiryGeneral", "DownloadExport") + '?fileId=' + jsonResult.FileId + '&filename=' + InquiryGeneralViewModel.Title;
+             var filename = InquiryGeneralViewModel.Title.replace(/[/\\?%*:|"<>]/g, ''); //Strip illegal file/path name characters
+             window.location = sg.utls.url.buildUrl("Core", "InquiryGeneral", "DownloadExport") + '?fileId=' + jsonResult.FileId + '&filename=' + filename;
           }
        }
     }
@@ -553,7 +554,7 @@ var InquiryGeneralUI = function () {
         }
 
         if (item.IsDrilldown) {
-            template = kendo.format("<a href=''>#:{0}#</a>", item.FieldAlias || item.Field);
+            template = kendo.format("<a href=''>#: {0} #</a>", item.FieldAlias || item.Field);
         }
 
         if (type === "datetime") {
@@ -608,7 +609,6 @@ var InquiryGeneralUI = function () {
                         if (list.length > 0) {
                             value = list[0].Text;
                         }
-
                     }
                     r[field] = value;
                 }
@@ -853,7 +853,7 @@ var InquiryGeneralUI = function () {
                                     var row = e.sender.tbody.find("[data-uid='" + items[j].uid + "']");
                                     var cell = row.find("td:eq(" + i + ")");
                                     if (cell) {
-                                        cell[0].innerHTML = cell[0].innerText;
+                                        cell[0].innerHTML = kendo.htmlEncode(cell[0].innerText);
                                     }
                                 }
                             }

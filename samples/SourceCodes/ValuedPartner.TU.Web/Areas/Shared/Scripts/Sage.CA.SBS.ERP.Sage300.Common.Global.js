@@ -102,6 +102,7 @@ $.extend(sg.utls.url, {
     destroyPoolUrl: function () { return sg.utls.url.buildUrl("Core", "Session", "DestroyPool"); },
     destroySessionUrl: function () { return sg.utls.url.buildUrl("Core", "Session", "Destroy"); },
     getApplicationConfigUrl: function () { return sg.utls.url.buildUrl("CS", "CompanyProfile", "GetApplicationConfig"); },
+    getCompanyColorUrl: function () { return sg.utls.url.buildUrl("Core", "Common", "GetCompanyColorCode"); },
 
     baseUrl: function () {
         return $("#hdnUrl").val();
@@ -499,12 +500,12 @@ $.extend(sg.utls, {
     releaseSession: function () {
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length === 0 || sessionPerPage.val() === "False") {
-            sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "ReleaseSession"), {}, function () { });
+            sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "ReleaseSession"), {}, function () { });
         }
     },
 
     destroySessions: function () {
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "DestroyPool"), {}, function () { });
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "DestroyPool"), {}, function () { });
         sage.cache.session.clearAll();
         sg.utls.destroyPoolForReport(false);
     },
@@ -514,7 +515,7 @@ $.extend(sg.utls, {
         var sessionId = sage.cache.session.get("session");
         sage.cache.session.clearAll();
         sage.cache.session.set("session", sessionId);
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "Destroy"), {}, function () { });
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "Destroy"), {}, function () { });
     },
 
     /**
@@ -797,6 +798,10 @@ $.extend(sg.utls, {
 
     loadHomeCurrency: function () {
         sg.utls.ajaxCache(sg.utls.url.buildUrl("CS", "CompanyProfile", "GetApplicationConfig"), {}, ajaxSuccess.getCurrency, "HomeCurrency");
+    },
+
+    loadCompanyColor: function () {
+        sg.utls.ajaxCache(sg.utls.url.getCompanyColorUrl(), {}, $.noop, "CompanyColor");
     },
 
     openDialog: function (ajaxUrl, title) {
@@ -3220,6 +3225,11 @@ $.extend(sg.utls, {
      * @returns {boolean} true - Allow page unload event | false - Disallow page unload event
      */
     isPageUnloadEventEnabled: function (isDirty) {
+        //For CRM Sage 300 pages, always return false 
+        var url = window.location.href;
+        if (sessionStorage["productId"] || url.indexOf("productId") > 0) {
+            return false;
+        }
         var pageUnloadEventFlag = sg.utls.getPortalWindow().pageUnloadEventManager.isEnabled();
         return pageUnloadEventFlag && isDirty;
     },
@@ -3253,9 +3263,9 @@ $.extend(sg.utls, {
      */
     setBackgroundColor: function (element) {
         if (element && $.isFunction(element.css) && element.css("background-color")) {
-            sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "GetCompanyColorCode"), {}, function (result) {
+            sg.utls.ajaxCache(sg.utls.url.getCompanyColorUrl(), {}, function (result) {
                 sg.utls.setBackgroundColorHex(element, result);
-            });
+            }, "CompanyColor");
         }
     },
     /**

@@ -16,7 +16,7 @@ var importResultRowNumber = 0;
             columns: [
                 { title: globalResource.Index, template: "#= ++importResultRowNumber   #", width: 30 },
                 { field: "PriorityString", title: globalResource.Priority },
-                { field: "Message", title: globalResource.Description, width: 600, template: "#= sg.utls.formatMessageText(Message) #" }
+                { field: "Message", title: globalResource.Description, width: 600, template: "#: sg.utls.formatMessageText(Message) #" }
             ],
             dataBinding: function () {
                 importResultRowNumber = 0;
