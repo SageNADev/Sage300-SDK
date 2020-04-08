@@ -169,6 +169,33 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Allocated.
+        /// </summary>
+        public static string Allocated {
+            get {
+                return ResourceManager.GetString("Allocated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto Reversal.
+        /// </summary>
+        public static string AutoReversal {
+            get {
+                return ResourceManager.GetString("AutoReversal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto Reversal Off.
+        /// </summary>
+        public static string AutoReversalOff {
+            get {
+                return ResourceManager.GetString("AutoReversalOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto Reverse.
         /// </summary>
         public static string AutoReverse {
@@ -201,6 +228,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string BatchNumber {
             get {
                 return ResourceManager.GetString("BatchNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Batch Number.
+        /// </summary>
+        public static string BatchNumber1 {
+            get {
+                return ResourceManager.GetString("BatchNumber1", resourceCulture);
             }
         }
         
@@ -277,6 +313,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create Tax Details.
+        /// </summary>
+        public static string CreateTaxDetail {
+            get {
+                return ResourceManager.GetString("CreateTaxDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Credit.
         /// </summary>
         public static string Credit {
@@ -286,11 +331,38 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Credit Note.
+        /// </summary>
+        public static string CreditNote {
+            get {
+                return ResourceManager.GetString("CreditNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credits.
+        /// </summary>
+        public static string Credits {
+            get {
+                return ResourceManager.GetString("Credits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Credits.
         /// </summary>
         public static string CreditsC {
             get {
                 return ResourceManager.GetString("CreditsC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Currency Code Description.
+        /// </summary>
+        public static string CurrencyCodeDescription {
+            get {
+                return ResourceManager.GetString("CurrencyCodeDescription", resourceCulture);
             }
         }
         
@@ -340,6 +412,42 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer Name.
+        /// </summary>
+        public static string CustomerName {
+            get {
+                return ResourceManager.GetString("CustomerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Number.
+        /// </summary>
+        public static string CustomerNumber {
+            get {
+                return ResourceManager.GetString("CustomerNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Tax Class.
+        /// </summary>
+        public static string CustomerTaxClass {
+            get {
+                return ResourceManager.GetString("CustomerTaxClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer/Vendor Number.
+        /// </summary>
+        public static string CustomerVendorNumber {
+            get {
+                return ResourceManager.GetString("CustomerVendorNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string Date {
@@ -363,6 +471,24 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string Debit {
             get {
                 return ResourceManager.GetString("Debit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debit Note.
+        /// </summary>
+        public static string DebitNote {
+            get {
+                return ResourceManager.GetString("DebitNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debits.
+        /// </summary>
+        public static string Debits {
+            get {
+                return ResourceManager.GetString("Debits", resourceCulture);
             }
         }
         
@@ -399,6 +525,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description1 {
+            get {
+                return ResourceManager.GetString("Description1", resourceCulture);
             }
         }
         
@@ -475,11 +610,56 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Divide.
+        /// </summary>
+        public static string Divide {
+            get {
+                return ResourceManager.GetString("Divide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Document Date.
         /// </summary>
         public static string DocumentDate {
             get {
                 return ResourceManager.GetString("DocumentDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Document Date.
+        /// </summary>
+        public static string DocumentDate1 {
+            get {
+                return ResourceManager.GetString("DocumentDate1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reference Document.
+        /// </summary>
+        public static string DocumentNumber {
+            get {
+                return ResourceManager.GetString("DocumentNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Document Total.
+        /// </summary>
+        public static string DocumentTotal {
+            get {
+                return ResourceManager.GetString("DocumentTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Document Type.
+        /// </summary>
+        public static string DocumentType {
+            get {
+                return ResourceManager.GetString("DocumentType", resourceCulture);
             }
         }
         
@@ -502,11 +682,29 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drill Down Application Source.
+        /// </summary>
+        public static string DrillDownApplicationSource1 {
+            get {
+                return ResourceManager.GetString("DrillDownApplicationSource1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drill Down Link Number.
         /// </summary>
         public static string DrillDownLinkNumber {
             get {
                 return ResourceManager.GetString("DrillDownLinkNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drill Down Link Number.
+        /// </summary>
+        public static string DrillDownLinkNumber1 {
+            get {
+                return ResourceManager.GetString("DrillDownLinkNumber1", resourceCulture);
             }
         }
         
@@ -520,11 +718,29 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to G/L Tax Details.
+        /// </summary>
+        public static string DrillDownTaxDetail {
+            get {
+                return ResourceManager.GetString("DrillDownTaxDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drill Down Type.
         /// </summary>
         public static string DrillDownType {
             get {
                 return ResourceManager.GetString("DrillDownType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drill Down Type.
+        /// </summary>
+        public static string DrillDownType1 {
+            get {
+                return ResourceManager.GetString("DrillDownType1", resourceCulture);
             }
         }
         
@@ -547,11 +763,29 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Entered By.
+        /// </summary>
+        public static string EnteredBy1 {
+            get {
+                return ResourceManager.GetString("EnteredBy1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to G/L Journal Entry.
         /// </summary>
         public static string Entity {
             get {
                 return ResourceManager.GetString("Entity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GL JournalHeader.
+        /// </summary>
+        public static string Entity1 {
+            get {
+                return ResourceManager.GetString("Entity1", resourceCulture);
             }
         }
         
@@ -619,11 +853,29 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Entry Number.
+        /// </summary>
+        public static string EntryNumber1 {
+            get {
+                return ResourceManager.GetString("EntryNumber1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Entry Period.
         /// </summary>
         public static string EntryPeriod {
             get {
                 return ResourceManager.GetString("EntryPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entry Type.
+        /// </summary>
+        public static string EntryType {
+            get {
+                return ResourceManager.GetString("EntryType", resourceCulture);
             }
         }
         
@@ -646,11 +898,101 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error Batch.
+        /// </summary>
+        public static string ErrorBatch1 {
+            get {
+                return ResourceManager.GetString("ErrorBatch1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error Entry.
         /// </summary>
         public static string ErrorEntry {
             get {
                 return ResourceManager.GetString("ErrorEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error Entry.
+        /// </summary>
+        public static string ErrorEntry1 {
+            get {
+                return ResourceManager.GetString("ErrorEntry1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expense.
+        /// </summary>
+        public static string Expense {
+            get {
+                return ResourceManager.GetString("Expense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fiscal Period.
+        /// </summary>
+        public static string FiscalPeriod {
+            get {
+                return ResourceManager.GetString("FiscalPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fiscal Year.
+        /// </summary>
+        public static string FiscalYear {
+            get {
+                return ResourceManager.GetString("FiscalYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Allocated Amount 1.
+        /// </summary>
+        public static string FunctionalAllocatedAmount1 {
+            get {
+                return ResourceManager.GetString("FunctionalAllocatedAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Allocated Amount 2.
+        /// </summary>
+        public static string FunctionalAllocatedAmount2 {
+            get {
+                return ResourceManager.GetString("FunctionalAllocatedAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Allocated Amount 3.
+        /// </summary>
+        public static string FunctionalAllocatedAmount3 {
+            get {
+                return ResourceManager.GetString("FunctionalAllocatedAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Allocated Amount 4.
+        /// </summary>
+        public static string FunctionalAllocatedAmount4 {
+            get {
+                return ResourceManager.GetString("FunctionalAllocatedAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Allocated Amount 5.
+        /// </summary>
+        public static string FunctionalAllocatedAmount5 {
+            get {
+                return ResourceManager.GetString("FunctionalAllocatedAmount5", resourceCulture);
             }
         }
         
@@ -669,6 +1011,186 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string FunctionalDebit {
             get {
                 return ResourceManager.GetString("FunctionalDebit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Expensed Amount 1.
+        /// </summary>
+        public static string FunctionalExpensedAmount1 {
+            get {
+                return ResourceManager.GetString("FunctionalExpensedAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Expensed Amount 2.
+        /// </summary>
+        public static string FunctionalExpensedAmount2 {
+            get {
+                return ResourceManager.GetString("FunctionalExpensedAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Expensed Amount 3.
+        /// </summary>
+        public static string FunctionalExpensedAmount3 {
+            get {
+                return ResourceManager.GetString("FunctionalExpensedAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Expensed Amount 4.
+        /// </summary>
+        public static string FunctionalExpensedAmount4 {
+            get {
+                return ResourceManager.GetString("FunctionalExpensedAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Expensed Amount 5.
+        /// </summary>
+        public static string FunctionalExpensedAmount5 {
+            get {
+                return ResourceManager.GetString("FunctionalExpensedAmount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Recoverable Amount 1.
+        /// </summary>
+        public static string FunctionalRecoverableAmount1 {
+            get {
+                return ResourceManager.GetString("FunctionalRecoverableAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Recoverable Amount 2.
+        /// </summary>
+        public static string FunctionalRecoverableAmount2 {
+            get {
+                return ResourceManager.GetString("FunctionalRecoverableAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Recoverable Amount 3.
+        /// </summary>
+        public static string FunctionalRecoverableAmount3 {
+            get {
+                return ResourceManager.GetString("FunctionalRecoverableAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Recoverable Amount 4.
+        /// </summary>
+        public static string FunctionalRecoverableAmount4 {
+            get {
+                return ResourceManager.GetString("FunctionalRecoverableAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Recoverable Amount 5.
+        /// </summary>
+        public static string FunctionalRecoverableAmount5 {
+            get {
+                return ResourceManager.GetString("FunctionalRecoverableAmount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Tax Amount 1.
+        /// </summary>
+        public static string FunctionalTaxAmount1 {
+            get {
+                return ResourceManager.GetString("FunctionalTaxAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Tax Amount 2.
+        /// </summary>
+        public static string FunctionalTaxAmount2 {
+            get {
+                return ResourceManager.GetString("FunctionalTaxAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Tax Amount 3.
+        /// </summary>
+        public static string FunctionalTaxAmount3 {
+            get {
+                return ResourceManager.GetString("FunctionalTaxAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Tax Amount 4.
+        /// </summary>
+        public static string FunctionalTaxAmount4 {
+            get {
+                return ResourceManager.GetString("FunctionalTaxAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Tax Amount 5.
+        /// </summary>
+        public static string FunctionalTaxAmount5 {
+            get {
+                return ResourceManager.GetString("FunctionalTaxAmount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Tax Base Amount 1.
+        /// </summary>
+        public static string FunctionalTaxBaseAmount1 {
+            get {
+                return ResourceManager.GetString("FunctionalTaxBaseAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Tax Base Amount 2.
+        /// </summary>
+        public static string FunctionalTaxBaseAmount2 {
+            get {
+                return ResourceManager.GetString("FunctionalTaxBaseAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Tax Base Amount 3.
+        /// </summary>
+        public static string FunctionalTaxBaseAmount3 {
+            get {
+                return ResourceManager.GetString("FunctionalTaxBaseAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Tax Base Amount 4.
+        /// </summary>
+        public static string FunctionalTaxBaseAmount4 {
+            get {
+                return ResourceManager.GetString("FunctionalTaxBaseAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Tax Base Amount 5.
+        /// </summary>
+        public static string FunctionalTaxBaseAmount5 {
+            get {
+                return ResourceManager.GetString("FunctionalTaxBaseAmount5", resourceCulture);
             }
         }
         
@@ -700,6 +1222,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Summary of Tax Details.
+        /// </summary>
+        public static string GLTaxDetails {
+            get {
+                return ResourceManager.GetString("GLTaxDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home Currency.
         /// </summary>
         public static string HomeCurrency {
@@ -714,6 +1245,33 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string ICTRelated {
             get {
                 return ResourceManager.GetString("ICTRelated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interest.
+        /// </summary>
+        public static string Interest {
+            get {
+                return ResourceManager.GetString("Interest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invoice.
+        /// </summary>
+        public static string Invoice {
+            get {
+                return ResourceManager.GetString("Invoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item Tax Class.
+        /// </summary>
+        public static string ItemTaxClass {
+            get {
+                return ResourceManager.GetString("ItemTaxClass", resourceCulture);
             }
         }
         
@@ -763,11 +1321,29 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Liability.
+        /// </summary>
+        public static string Liability {
+            get {
+                return ResourceManager.GetString("Liability", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Line Number.
         /// </summary>
         public static string LineNumber {
             get {
                 return ResourceManager.GetString("LineNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiply.
+        /// </summary>
+        public static string Multiply {
+            get {
+                return ResourceManager.GetString("Multiply", resourceCulture);
             }
         }
         
@@ -786,6 +1362,24 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string NextEntryNumber {
             get {
                 return ResourceManager.GetString("NextEntryNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next Period.
+        /// </summary>
+        public static string NextPeriod {
+            get {
+                return ResourceManager.GetString("NextPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string None {
+            get {
+                return ResourceManager.GetString("None", resourceCulture);
             }
         }
         
@@ -817,6 +1411,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number of Details.
+        /// </summary>
+        public static string NumberOfDetails1 {
+            get {
+                return ResourceManager.GetString("NumberOfDetails1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of Entries.
         /// </summary>
         public static string NumberOfEntries {
@@ -844,6 +1447,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Orig Description.
+        /// </summary>
+        public static string OrigDescription1 {
+            get {
+                return ResourceManager.GetString("OrigDescription1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Original Exists.
         /// </summary>
         public static string OrigExists {
@@ -853,11 +1465,38 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Orig Exists.
+        /// </summary>
+        public static string OrigExists1 {
+            get {
+                return ResourceManager.GetString("OrigExists1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orig Home Currency.
+        /// </summary>
+        public static string OrigHomeCurrency {
+            get {
+                return ResourceManager.GetString("OrigHomeCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Original Home Currency Decimals.
         /// </summary>
         public static string OrigHomeCurrencyDecimals {
             get {
                 return ResourceManager.GetString("OrigHomeCurrencyDecimals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orig Home Currency Decimals.
+        /// </summary>
+        public static string OrigHomeCurrencyDecimals1 {
+            get {
+                return ResourceManager.GetString("OrigHomeCurrencyDecimals1", resourceCulture);
             }
         }
         
@@ -898,11 +1537,29 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Originator.
+        /// </summary>
+        public static string Originator1 {
+            get {
+                return ResourceManager.GetString("Originator1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Original Multicurrency Switch.
         /// </summary>
         public static string OrigMulticurrencySwitch {
             get {
                 return ResourceManager.GetString("OrigMulticurrencySwitch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orig Multicurrency Switch.
+        /// </summary>
+        public static string OrigMulticurrencySwitch1 {
+            get {
+                return ResourceManager.GetString("OrigMulticurrencySwitch1", resourceCulture);
             }
         }
         
@@ -916,11 +1573,29 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Orig Qty Decimals.
+        /// </summary>
+        public static string OrigQtyDecimals1 {
+            get {
+                return ResourceManager.GetString("OrigQtyDecimals1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Original Quantity Switch.
         /// </summary>
         public static string OrigQtySwitch {
             get {
                 return ResourceManager.GetString("OrigQtySwitch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orig Qty Switch.
+        /// </summary>
+        public static string OrigQtySwitch1 {
+            get {
+                return ResourceManager.GetString("OrigQtySwitch1", resourceCulture);
             }
         }
         
@@ -934,11 +1609,38 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Orig Status.
+        /// </summary>
+        public static string OrigStatus1 {
+            get {
+                return ResourceManager.GetString("OrigStatus1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Out of Balance By.
         /// </summary>
         public static string OutofBalanceBy {
             get {
                 return ResourceManager.GetString("OutofBalanceBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Out of Balance By.
+        /// </summary>
+        public static string OutOfBalanceBy1 {
+            get {
+                return ResourceManager.GetString("OutOfBalanceBy1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posting Date.
+        /// </summary>
+        public static string PostingDate {
+            get {
+                return ResourceManager.GetString("PostingDate", resourceCulture);
             }
         }
         
@@ -961,6 +1663,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prepayment.
+        /// </summary>
+        public static string Prepayment {
+            get {
+                return ResourceManager.GetString("Prepayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Eligible for Printing Switch.
         /// </summary>
         public static string PrintingSwitch {
@@ -979,11 +1690,47 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Process switches.
+        /// </summary>
+        public static string ProcessSwitches1 {
+            get {
+                return ResourceManager.GetString("ProcessSwitches1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Eligible for Provisional Post Switch.
         /// </summary>
         public static string ProvisionalPostSwitch {
             get {
                 return ResourceManager.GetString("ProvisionalPostSwitch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchases.
+        /// </summary>
+        public static string Purchases {
+            get {
+                return ResourceManager.GetString("Purchases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchases Tax.
+        /// </summary>
+        public static string PurchasesTax {
+            get {
+                return ResourceManager.GetString("PurchasesTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string Quantity {
+            get {
+                return ResourceManager.GetString("Quantity", resourceCulture);
             }
         }
         
@@ -1015,11 +1762,74 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rate Type Description.
+        /// </summary>
+        public static string RateTypeDescription {
+            get {
+                return ResourceManager.GetString("RateTypeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Receipt.
+        /// </summary>
+        public static string Receipt {
+            get {
+                return ResourceManager.GetString("Receipt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recoverable.
+        /// </summary>
+        public static string Recoverable {
+            get {
+                return ResourceManager.GetString("Recoverable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reference.
         /// </summary>
         public static string Reference {
             get {
                 return ResourceManager.GetString("Reference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh Source Ledger Field.
+        /// </summary>
+        public static string RefreshSourceLedgerField {
+            get {
+                return ResourceManager.GetString("RefreshSourceLedgerField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refund.
+        /// </summary>
+        public static string Refund {
+            get {
+                return ResourceManager.GetString("Refund", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Regular.
+        /// </summary>
+        public static string Regular {
+            get {
+                return ResourceManager.GetString("Regular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RESERVED Journal Edit.
+        /// </summary>
+        public static string RESERVEDJournalEdit {
+            get {
+                return ResourceManager.GetString("RESERVEDJournalEdit", resourceCulture);
             }
         }
         
@@ -1078,6 +1888,24 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sales.
+        /// </summary>
+        public static string Sales {
+            get {
+                return ResourceManager.GetString("Sales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales Tax.
+        /// </summary>
+        public static string SalesTax {
+            get {
+                return ResourceManager.GetString("SalesTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Source Code.
         /// </summary>
         public static string SourceCode {
@@ -1092,6 +1920,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string SourceCodeDescription {
             get {
                 return ResourceManager.GetString("SourceCodeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source Code Description.
+        /// </summary>
+        public static string SourceCodeDescription1 {
+            get {
+                return ResourceManager.GetString("SourceCodeDescription1", resourceCulture);
             }
         }
         
@@ -1119,6 +1956,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string SourceCodeExists1 {
             get {
                 return ResourceManager.GetString("SourceCodeExists1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source Code Exists.
+        /// </summary>
+        public static string SourceCodeExists2 {
+            get {
+                return ResourceManager.GetString("SourceCodeExists2", resourceCulture);
             }
         }
         
@@ -1177,11 +2023,38 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Source Ledger.
+        /// </summary>
+        public static string SourceLedger1 {
+            get {
+                return ResourceManager.GetString("SourceLedger1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Source Type.
         /// </summary>
         public static string SourceType {
             get {
                 return ResourceManager.GetString("SourceType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source Type.
+        /// </summary>
+        public static string SourceType1 {
+            get {
+                return ResourceManager.GetString("SourceType1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specific Period.
+        /// </summary>
+        public static string SpecificPeriod {
+            get {
+                return ResourceManager.GetString("SpecificPeriod", resourceCulture);
             }
         }
         
@@ -1204,6 +2077,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specific Reversal Period.
+        /// </summary>
+        public static string SpecificReversalPeriod2 {
+            get {
+                return ResourceManager.GetString("SpecificReversalPeriod2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Specific Reversal Year.
         /// </summary>
         public static string SpecificReversalYear {
@@ -1213,11 +2095,839 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specific Reversal Year.
+        /// </summary>
+        public static string SpecificReversalYear1 {
+            get {
+                return ResourceManager.GetString("SpecificReversalYear1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Standard.
+        /// </summary>
+        public static string Standard {
+            get {
+                return ResourceManager.GetString("Standard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string Status {
             get {
                 return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Account Type.
+        /// </summary>
+        public static string TaxAccountType {
+            get {
+                return ResourceManager.GetString("TaxAccountType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allocated Amount.
+        /// </summary>
+        public static string TaxAllocated {
+            get {
+                return ResourceManager.GetString("TaxAllocated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Allocated Amount 1.
+        /// </summary>
+        public static string TaxAllocatedAmount1 {
+            get {
+                return ResourceManager.GetString("TaxAllocatedAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Allocated Amount 2.
+        /// </summary>
+        public static string TaxAllocatedAmount2 {
+            get {
+                return ResourceManager.GetString("TaxAllocatedAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Allocated Amount 3.
+        /// </summary>
+        public static string TaxAllocatedAmount3 {
+            get {
+                return ResourceManager.GetString("TaxAllocatedAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Allocated Amount 4.
+        /// </summary>
+        public static string TaxAllocatedAmount4 {
+            get {
+                return ResourceManager.GetString("TaxAllocatedAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Allocated Amount 5.
+        /// </summary>
+        public static string TaxAllocatedAmount5 {
+            get {
+                return ResourceManager.GetString("TaxAllocatedAmount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Amount 1.
+        /// </summary>
+        public static string TaxAmount1 {
+            get {
+                return ResourceManager.GetString("TaxAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Amount 2.
+        /// </summary>
+        public static string TaxAmount2 {
+            get {
+                return ResourceManager.GetString("TaxAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Amount 3.
+        /// </summary>
+        public static string TaxAmount3 {
+            get {
+                return ResourceManager.GetString("TaxAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Amount 4.
+        /// </summary>
+        public static string TaxAmount4 {
+            get {
+                return ResourceManager.GetString("TaxAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Amount 5.
+        /// </summary>
+        public static string TaxAmount5 {
+            get {
+                return ResourceManager.GetString("TaxAmount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority.
+        /// </summary>
+        public static string TaxAuthority {
+            get {
+                return ResourceManager.GetString("TaxAuthority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority 1.
+        /// </summary>
+        public static string TaxAuthority1 {
+            get {
+                return ResourceManager.GetString("TaxAuthority1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority 2.
+        /// </summary>
+        public static string TaxAuthority2 {
+            get {
+                return ResourceManager.GetString("TaxAuthority2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority 3.
+        /// </summary>
+        public static string TaxAuthority3 {
+            get {
+                return ResourceManager.GetString("TaxAuthority3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority 4.
+        /// </summary>
+        public static string TaxAuthority4 {
+            get {
+                return ResourceManager.GetString("TaxAuthority4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority 5.
+        /// </summary>
+        public static string TaxAuthority5 {
+            get {
+                return ResourceManager.GetString("TaxAuthority5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string TaxAuthorityDesc {
+            get {
+                return ResourceManager.GetString("TaxAuthorityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority Description 1.
+        /// </summary>
+        public static string TaxAuthorityDescription1 {
+            get {
+                return ResourceManager.GetString("TaxAuthorityDescription1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority Description 2.
+        /// </summary>
+        public static string TaxAuthorityDescription2 {
+            get {
+                return ResourceManager.GetString("TaxAuthorityDescription2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority Description 3.
+        /// </summary>
+        public static string TaxAuthorityDescription3 {
+            get {
+                return ResourceManager.GetString("TaxAuthorityDescription3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority Description 4.
+        /// </summary>
+        public static string TaxAuthorityDescription4 {
+            get {
+                return ResourceManager.GetString("TaxAuthorityDescription4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority Description 5.
+        /// </summary>
+        public static string TaxAuthorityDescription5 {
+            get {
+                return ResourceManager.GetString("TaxAuthorityDescription5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Base Amount 1.
+        /// </summary>
+        public static string TaxBaseAmount1 {
+            get {
+                return ResourceManager.GetString("TaxBaseAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Base Amount 2.
+        /// </summary>
+        public static string TaxBaseAmount2 {
+            get {
+                return ResourceManager.GetString("TaxBaseAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Base Amount 3.
+        /// </summary>
+        public static string TaxBaseAmount3 {
+            get {
+                return ResourceManager.GetString("TaxBaseAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Base Amount 4.
+        /// </summary>
+        public static string TaxBaseAmount4 {
+            get {
+                return ResourceManager.GetString("TaxBaseAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Base Amount 5.
+        /// </summary>
+        public static string TaxBaseAmount5 {
+            get {
+                return ResourceManager.GetString("TaxBaseAmount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expense Amount.
+        /// </summary>
+        public static string TaxExpense {
+            get {
+                return ResourceManager.GetString("TaxExpense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Expense Account 1.
+        /// </summary>
+        public static string TaxExpenseAccount1 {
+            get {
+                return ResourceManager.GetString("TaxExpenseAccount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Expense Account 2.
+        /// </summary>
+        public static string TaxExpenseAccount2 {
+            get {
+                return ResourceManager.GetString("TaxExpenseAccount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Expense Account 3.
+        /// </summary>
+        public static string TaxExpenseAccount3 {
+            get {
+                return ResourceManager.GetString("TaxExpenseAccount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Expense Account 4.
+        /// </summary>
+        public static string TaxExpenseAccount4 {
+            get {
+                return ResourceManager.GetString("TaxExpenseAccount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Expense Account 5.
+        /// </summary>
+        public static string TaxExpenseAccount5 {
+            get {
+                return ResourceManager.GetString("TaxExpenseAccount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Expense Amount 1.
+        /// </summary>
+        public static string TaxExpenseAmount1 {
+            get {
+                return ResourceManager.GetString("TaxExpenseAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Expense Amount 2.
+        /// </summary>
+        public static string TaxExpenseAmount2 {
+            get {
+                return ResourceManager.GetString("TaxExpenseAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Expense Amount 3.
+        /// </summary>
+        public static string TaxExpenseAmount3 {
+            get {
+                return ResourceManager.GetString("TaxExpenseAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Expense Amount 4.
+        /// </summary>
+        public static string TaxExpenseAmount4 {
+            get {
+                return ResourceManager.GetString("TaxExpenseAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Expense Amount 5.
+        /// </summary>
+        public static string TaxExpenseAmount5 {
+            get {
+                return ResourceManager.GetString("TaxExpenseAmount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Group.
+        /// </summary>
+        public static string TaxGroup {
+            get {
+                return ResourceManager.GetString("TaxGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Group Description.
+        /// </summary>
+        public static string TaxGroupDescription {
+            get {
+                return ResourceManager.GetString("TaxGroupDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Item Class 1.
+        /// </summary>
+        public static string TaxItemClass1 {
+            get {
+                return ResourceManager.GetString("TaxItemClass1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Item Class 2.
+        /// </summary>
+        public static string TaxItemClass2 {
+            get {
+                return ResourceManager.GetString("TaxItemClass2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Item Class 3.
+        /// </summary>
+        public static string TaxItemClass3 {
+            get {
+                return ResourceManager.GetString("TaxItemClass3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Item Class 4.
+        /// </summary>
+        public static string TaxItemClass4 {
+            get {
+                return ResourceManager.GetString("TaxItemClass4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Item Class 5.
+        /// </summary>
+        public static string TaxItemClass5 {
+            get {
+                return ResourceManager.GetString("TaxItemClass5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Rate 1.
+        /// </summary>
+        public static string TaxRate1 {
+            get {
+                return ResourceManager.GetString("TaxRate1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Rate 2.
+        /// </summary>
+        public static string TaxRate2 {
+            get {
+                return ResourceManager.GetString("TaxRate2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Rate 3.
+        /// </summary>
+        public static string TaxRate3 {
+            get {
+                return ResourceManager.GetString("TaxRate3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Rate 4.
+        /// </summary>
+        public static string TaxRate4 {
+            get {
+                return ResourceManager.GetString("TaxRate4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Rate 5.
+        /// </summary>
+        public static string TaxRate5 {
+            get {
+                return ResourceManager.GetString("TaxRate5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recoverable Amount.
+        /// </summary>
+        public static string TaxRecoverable {
+            get {
+                return ResourceManager.GetString("TaxRecoverable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Recoverable Account 1.
+        /// </summary>
+        public static string TaxRecoverableAccount1 {
+            get {
+                return ResourceManager.GetString("TaxRecoverableAccount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Recoverable Account 2.
+        /// </summary>
+        public static string TaxRecoverableAccount2 {
+            get {
+                return ResourceManager.GetString("TaxRecoverableAccount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Recoverable Account 3.
+        /// </summary>
+        public static string TaxRecoverableAccount3 {
+            get {
+                return ResourceManager.GetString("TaxRecoverableAccount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Recoverable Account 4.
+        /// </summary>
+        public static string TaxRecoverableAccount4 {
+            get {
+                return ResourceManager.GetString("TaxRecoverableAccount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Recoverable Account 5.
+        /// </summary>
+        public static string TaxRecoverableAccount5 {
+            get {
+                return ResourceManager.GetString("TaxRecoverableAccount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Recoverable Amount 1.
+        /// </summary>
+        public static string TaxRecoverableAmount1 {
+            get {
+                return ResourceManager.GetString("TaxRecoverableAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Recoverable Amount 2.
+        /// </summary>
+        public static string TaxRecoverableAmount2 {
+            get {
+                return ResourceManager.GetString("TaxRecoverableAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Recoverable Amount 3.
+        /// </summary>
+        public static string TaxRecoverableAmount3 {
+            get {
+                return ResourceManager.GetString("TaxRecoverableAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Recoverable Amount 4.
+        /// </summary>
+        public static string TaxRecoverableAmount4 {
+            get {
+                return ResourceManager.GetString("TaxRecoverableAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Recoverable Amount 5.
+        /// </summary>
+        public static string TaxRecoverableAmount5 {
+            get {
+                return ResourceManager.GetString("TaxRecoverableAmount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Currency Rate.
+        /// </summary>
+        public static string TaxReportCaption {
+            get {
+                return ResourceManager.GetString("TaxReportCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Allocated Amount 1.
+        /// </summary>
+        public static string TaxReportingAllocatedAmount1 {
+            get {
+                return ResourceManager.GetString("TaxReportingAllocatedAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Allocated Amount 2.
+        /// </summary>
+        public static string TaxReportingAllocatedAmount2 {
+            get {
+                return ResourceManager.GetString("TaxReportingAllocatedAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Allocated Amount 3.
+        /// </summary>
+        public static string TaxReportingAllocatedAmount3 {
+            get {
+                return ResourceManager.GetString("TaxReportingAllocatedAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Allocated Amount 4.
+        /// </summary>
+        public static string TaxReportingAllocatedAmount4 {
+            get {
+                return ResourceManager.GetString("TaxReportingAllocatedAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Allocated Amount 5.
+        /// </summary>
+        public static string TaxReportingAllocatedAmount5 {
+            get {
+                return ResourceManager.GetString("TaxReportingAllocatedAmount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Amount 1.
+        /// </summary>
+        public static string TaxReportingAmount1 {
+            get {
+                return ResourceManager.GetString("TaxReportingAmount1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Amount 2.
+        /// </summary>
+        public static string TaxReportingAmount2 {
+            get {
+                return ResourceManager.GetString("TaxReportingAmount2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Amount 3.
+        /// </summary>
+        public static string TaxReportingAmount3 {
+            get {
+                return ResourceManager.GetString("TaxReportingAmount3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Amount 4.
+        /// </summary>
+        public static string TaxReportingAmount4 {
+            get {
+                return ResourceManager.GetString("TaxReportingAmount4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Amount 5.
+        /// </summary>
+        public static string TaxReportingAmount5 {
+            get {
+                return ResourceManager.GetString("TaxReportingAmount5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Currency Code.
+        /// </summary>
+        public static string TaxReportingCurrencyCode {
+            get {
+                return ResourceManager.GetString("TaxReportingCurrencyCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Expensed 1.
+        /// </summary>
+        public static string TaxReportingExpensed1 {
+            get {
+                return ResourceManager.GetString("TaxReportingExpensed1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Expensed 2.
+        /// </summary>
+        public static string TaxReportingExpensed2 {
+            get {
+                return ResourceManager.GetString("TaxReportingExpensed2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Expensed 3.
+        /// </summary>
+        public static string TaxReportingExpensed3 {
+            get {
+                return ResourceManager.GetString("TaxReportingExpensed3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Expensed 4.
+        /// </summary>
+        public static string TaxReportingExpensed4 {
+            get {
+                return ResourceManager.GetString("TaxReportingExpensed4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Expensed 5.
+        /// </summary>
+        public static string TaxReportingExpensed5 {
+            get {
+                return ResourceManager.GetString("TaxReportingExpensed5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exchange Rate.
+        /// </summary>
+        public static string TaxReportingRate {
+            get {
+                return ResourceManager.GetString("TaxReportingRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rate Date.
+        /// </summary>
+        public static string TaxReportingRateDate {
+            get {
+                return ResourceManager.GetString("TaxReportingRateDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Rate Operation.
+        /// </summary>
+        public static string TaxReportingRateOperation {
+            get {
+                return ResourceManager.GetString("TaxReportingRateOperation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rate Type.
+        /// </summary>
+        public static string TaxReportingRateType {
+            get {
+                return ResourceManager.GetString("TaxReportingRateType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Transaction Type.
+        /// </summary>
+        public static string TaxTransactionType {
+            get {
+                return ResourceManager.GetString("TaxTransactionType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Vendor Class 1.
+        /// </summary>
+        public static string TaxVendorClass1 {
+            get {
+                return ResourceManager.GetString("TaxVendorClass1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Vendor Class 2.
+        /// </summary>
+        public static string TaxVendorClass2 {
+            get {
+                return ResourceManager.GetString("TaxVendorClass2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Vendor Class 3.
+        /// </summary>
+        public static string TaxVendorClass3 {
+            get {
+                return ResourceManager.GetString("TaxVendorClass3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Vendor Class 4.
+        /// </summary>
+        public static string TaxVendorClass4 {
+            get {
+                return ResourceManager.GetString("TaxVendorClass4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Vendor Class 5.
+        /// </summary>
+        public static string TaxVendorClass5 {
+            get {
+                return ResourceManager.GetString("TaxVendorClass5", resourceCulture);
             }
         }
         
@@ -1240,11 +2950,65 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Recoverable Amount.
+        /// </summary>
+        public static string TXRECVB1RC {
+            get {
+                return ResourceManager.GetString("TXRECVB1RC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Recoverable Amount.
+        /// </summary>
+        public static string TXRECVB2RC {
+            get {
+                return ResourceManager.GetString("TXRECVB2RC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Recoverable Amount.
+        /// </summary>
+        public static string TXRECVB3RC {
+            get {
+                return ResourceManager.GetString("TXRECVB3RC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Recoverable Amount.
+        /// </summary>
+        public static string TXRECVB4RC {
+            get {
+                return ResourceManager.GetString("TXRECVB4RC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Reporting Recoverable Amount.
+        /// </summary>
+        public static string TXRECVB5RC {
+            get {
+                return ResourceManager.GetString("TXRECVB5RC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type.
         /// </summary>
         public static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unapplied Cash.
+        /// </summary>
+        public static string UnappliedCash {
+            get {
+                return ResourceManager.GetString("UnappliedCash", resourceCulture);
             }
         }
         
@@ -1272,6 +3036,33 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string ValueSet {
             get {
                 return ResourceManager.GetString("ValueSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vendor Name.
+        /// </summary>
+        public static string VendorName {
+            get {
+                return ResourceManager.GetString("VendorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vendor Number.
+        /// </summary>
+        public static string VendorNumber {
+            get {
+                return ResourceManager.GetString("VendorNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vendor Tax Class.
+        /// </summary>
+        public static string VendorTaxClass {
+            get {
+                return ResourceManager.GetString("VendorTaxClass", resourceCulture);
             }
         }
         

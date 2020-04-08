@@ -1105,7 +1105,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reconcile OFX Statements.
+        ///   Looks up a localized string similar to Reconcile E-Statements.
         /// </summary>
         public static string Bank_Trans_ReconcileOFXStatement {
             get {

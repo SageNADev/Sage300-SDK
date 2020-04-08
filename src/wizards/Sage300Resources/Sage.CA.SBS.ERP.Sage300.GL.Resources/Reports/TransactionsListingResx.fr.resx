@@ -160,4 +160,7 @@
     <value>Liste des transactions de GL</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="TaxInformation" xml:space="preserve">
+    <value>[TODO]Tax Information</value>
+  </data>
 </root>

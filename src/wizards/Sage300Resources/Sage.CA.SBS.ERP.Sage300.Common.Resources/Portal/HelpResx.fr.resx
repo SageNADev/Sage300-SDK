@@ -1027,10 +1027,10 @@
     <value>Rapport Transactions de GL de banque</value>
   </data>
   <data name="BK_BankImportOFXStatements_Article1" xml:space="preserve">
-    <value>À propos des relevés OFX</value>
+    <value>À propos des relevés</value>
   </data>
   <data name="BK_BankImportOFXStatements_Article2" xml:space="preserve">
-    <value>Écran Rapprocher les relevés OFX</value>
+    <value>Écran Rapprocher les relevés</value>
   </data>
   <data name="BK_BankImportOFXStatements_Screen" xml:space="preserve">
     <value>Importer des relevés OFX</value>
@@ -1063,13 +1063,13 @@
     <value>Écran Reporter le rapprochement bancaire</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Article1" xml:space="preserve">
-    <value>Rapprocher des relevés OFX</value>
+    <value>Rapprocher des relevés</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Article2" xml:space="preserve">
-    <value>À propos des relevés OFX</value>
+    <value>À propos des relevés</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Screen" xml:space="preserve">
-    <value>Écran Rapprocher les relevés OFX</value>
+    <value>Écran Rapprocher les relevés</value>
   </data>
   <data name="BK_BankReconcileStatements_Article1" xml:space="preserve">
     <value>Rapprocher un compte bancaire</value>

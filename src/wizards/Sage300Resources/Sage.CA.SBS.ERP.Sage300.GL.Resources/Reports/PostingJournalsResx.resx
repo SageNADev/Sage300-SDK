@@ -193,4 +193,13 @@
     <value>Document Date</value>
     <comment>Field</comment>
   </data>
+  <data name="TaxInformation" xml:space="preserve">
+    <value>Tax Information</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="UnitHeading" xml:space="preserve">
+    <value>UOM</value>
+  </data>
 </root>

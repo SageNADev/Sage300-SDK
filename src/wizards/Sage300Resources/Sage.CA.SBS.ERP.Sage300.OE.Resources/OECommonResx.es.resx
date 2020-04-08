@@ -796,10 +796,6 @@
     <value>Monto Aprobado</value>
     <comment>Auto-Generated</comment>
   </data>
-  <data name="EmailNotSpecified" xml:space="preserve">
-    <value>No se especificó la dirección {1} del cliente {2}.</value>
-    <comment>Auto-Generated</comment>
-  </data>
   <data name="Entered" xml:space="preserve">
     <value>Ingresado</value>
     <comment>Auto-Generated</comment>
