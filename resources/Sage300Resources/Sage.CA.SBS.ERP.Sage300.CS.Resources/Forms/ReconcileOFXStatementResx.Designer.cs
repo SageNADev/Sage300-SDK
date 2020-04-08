@@ -115,6 +115,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bank Feeds.
+        /// </summary>
+        public static string BankFeeds {
+            get {
+                return ResourceManager.GetString("BankFeeds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transaction cleared..
         /// </summary>
         public static string ClrComplete {
@@ -142,7 +151,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The OFX statement amount is different than the Bank Services amount. Are you sure you want to clear this transaction?.
+        ///   Looks up a localized string similar to The statement amount is different than the Bank Services amount. Are you sure you want to clear this transaction?.
         /// </summary>
         public static string ConfirmClrRateDiff {
             get {
@@ -151,7 +160,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The OFX statement amount is different than the Bank Services amount. Are you sure you want to clear this transaction?.
+        ///   Looks up a localized string similar to The statement amount is different than the Bank Services amount. Are you sure you want to clear this transaction?.
         /// </summary>
         public static string ConfirmClrWriteOff {
             get {
@@ -169,7 +178,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have made changes that have not been processed. Do you want to process the OFX reconciliation for {0}?.
+        ///   Looks up a localized string similar to You have made changes that have not been processed. Do you want to process the reconciliation for {0}?.
         /// </summary>
         public static string ConfirmProcess {
             get {
@@ -196,7 +205,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Match OFX Transaction to Bank.
+        ///   Looks up a localized string similar to Match Transaction to Bank.
         /// </summary>
         public static string Detail {
             get {
@@ -205,7 +214,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There are no OFX transactions in the list..
+        ///   Looks up a localized string similar to There are no transactions in the list..
         /// </summary>
         public static string EMPTYLIST {
             get {
@@ -214,7 +223,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reconcile OFX Statements.
+        ///   Looks up a localized string similar to Reconcile E-Statements.
         /// </summary>
         public static string Entity {
             get {
@@ -237,6 +246,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string ExchangeRate {
             get {
                 return ResourceManager.GetString("ExchangeRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get Transactions.
+        /// </summary>
+        public static string GetTransactions {
+            get {
+                return ResourceManager.GetString("GetTransactions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} transactions have been downloaded. The latest transaction date is {1}..
+        /// </summary>
+        public static string GetTransactionsSuccess {
+            get {
+                return ResourceManager.GetString("GetTransactionsSuccess", resourceCulture);
             }
         }
         
@@ -295,7 +322,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OFX transaction added to Bank Entry and posted..
+        ///   Looks up a localized string similar to The transaction has been successfully added to Bank Entry and posted..
         /// </summary>
         public static string MiscellaneousCreated {
             get {
@@ -313,7 +340,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You must enter the Reconciliation date before reconciling OFX transactions.
+        ///   Looks up a localized string similar to You must enter the Reconciliation date before reconciling the transactions.
         /// </summary>
         public static string NoOFXRecDate {
             get {
@@ -349,7 +376,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The bank entry could not be created because the OFX transaction date is not in the Fiscal Calendar..
+        ///   Looks up a localized string similar to Cannot create bank entry because the transaction date is not in Common Services&apos; Fiscal Calendar..
         /// </summary>
         public static string OfxdateInvalid {
             get {
@@ -367,7 +394,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The bank entry could not be created because the OFX transaction date is not in the fiscal calendar..
+        ///   Looks up a localized string similar to Cannot create bank entry because the transaction date is not in Common Services&apos; Fiscal Calendar..
         /// </summary>
         public static string OFXInvalidDate {
             get {
@@ -376,7 +403,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OFX transaction has been successfully added to Bank Entry and posted..
+        ///   Looks up a localized string similar to Transaction has been successfully added to Bank Entry and posted..
         /// </summary>
         public static string OFXPosting {
             get {
@@ -385,7 +412,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to reconcile the OFX statements?.
+        ///   Looks up a localized string similar to Do you want to reconcile the statements?.
         /// </summary>
         public static string ProcessCofirm {
             get {

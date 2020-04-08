@@ -122,11 +122,11 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrRateDiff" xml:space="preserve">
-    <value>El monto del estado de Cuenta OFX es distinto del monto de Servicios Bancarios. ¿Seguro que quiere compensar esta transacción?</value>
+    <value>El monto de la transacción es distinto del monto de Servicios Bancarios. ¿Seguro que quiere compensar esta transacción?</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrWriteOff" xml:space="preserve">
-    <value>El monto del estado de Cuenta OFX es distinto del monto de Servicios Bancarios. ¿Seguro que quiere compensar esta transacción?</value>
+    <value>El monto dde la transacción es distinto del monto de Servicios Bancarios. ¿Seguro que quiere compensar esta transacción?</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmExitAddTrx" xml:space="preserve">
@@ -134,7 +134,7 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmProcess" xml:space="preserve">
-    <value>Ha realizado cambios que no se procesaron. ¿Desea procesar la conciliación OFX para {0}?</value>
+    <value>¿Está seguro que desea agregar esta transacción a Asientos Bancarios para banco {0}?</value>
     <comment>Message</comment>
   </data>
   <data name="CutOffDate" xml:space="preserve">
@@ -146,15 +146,15 @@
     <comment>Option toggle</comment>
   </data>
   <data name="Detail" xml:space="preserve">
-    <value>Hacer Coincidir Transacción OFX con Banco</value>
+    <value>Hacer Coincidir Transacción con Banco</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="EMPTYLIST" xml:space="preserve">
-    <value>No existen transacciones OFX en la lista.</value>
+    <value>No existen transacciones en la lista.</value>
     <comment>Message</comment>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>Conciliar Estados de Cuentas OFX</value>
+    <value>Conciliar Estados-E</value>
     <comment>Screen Title</comment>
   </data>
   <data name="EntryDate" xml:space="preserve">
@@ -170,7 +170,7 @@
     <comment>Message</comment>
   </data>
   <data name="MiscellaneousCreated" xml:space="preserve">
-    <value>Transacción OFX agregada en Asiento Bancario y asentada.</value>
+    <value>Transacción se agregó al Asiento Bancario y se asentó correctamente.</value>
     <comment>Message</comment>
   </data>
   <data name="NORECORD" xml:space="preserve">
@@ -186,7 +186,7 @@
     <comment>Message</comment>
   </data>
   <data name="OfxdateInvalid" xml:space="preserve">
-    <value>No se pudo crear el asiento bancario porque la fecha de la transacción OFX no está en el Calendario Fiscal.</value>
+    <value>No se puede crear el asiento bancario. La fecha de la transacción no se encuentra en el Calendario Fiscal de Servicios Comunes.</value>
     <comment>Message</comment>
   </data>
   <data name="OFXEXIST" xml:space="preserve">
@@ -257,7 +257,7 @@
     <value>Comentario 1</value>
   </data>
   <data name="NoOFXRecDate" xml:space="preserve">
-    <value>Debe ingresar la fecha de conciliación antes de conciliar transacciones OFX.</value>
+    <value>Debe ingresar la fecha de conciliación antes de conciliar transacciones.</value>
   </data>
   <data name="NoBankCode" xml:space="preserve">
     <value>No se encuentra la cuenta bancaria {0}.</value>
@@ -275,7 +275,7 @@
     <value>Moneda de Transacción</value>
   </data>
   <data name="OFXInvalidDate" xml:space="preserve">
-    <value>No se pudo crear el asiento bancario porque la fecha de la transacción OFX no está en el calendario fiscal.</value>
+    <value>No se puede crear el asiento bancario. La fecha de la transacción no se encuentra en el Calendario Fiscal de Servicios Comunes.</value>
   </data>
   <data name="RecDateEmpty" xml:space="preserve">
     <value>La fecha de conciliación no puede estar en blanco.</value>
@@ -287,7 +287,7 @@
     <value>No puede ingresar una fecha de conciliación anterior a la fecha de conciliación previa.</value>
   </data>
   <data name="ProcessCofirm" xml:space="preserve">
-    <value>¿Desea conciliar los estados de cuenta OFX?</value>
+    <value>¿Desea conciliar los estados de cuenta?</value>
   </data>
   <data name="TransactionClr" xml:space="preserve">
     <value>Se compensó la transacción.</value>
@@ -302,9 +302,20 @@
     <value>Retiro</value>
   </data>
   <data name="OFXPosting" xml:space="preserve">
-    <value>Transacción OFX fue correctamente agregada a Asiento Bancario y asentada.</value>
+    <value>Transacción fue correctamente agregada a Asiento Bancario y asentada.</value>
   </data>
   <data name="Memo" xml:space="preserve">
     <value>Comentario 2</value>
+  </data>
+  <data name="BankFeeds" xml:space="preserve">
+    <value>Importaciones Bancarias</value>
+  </data>
+  <data name="GetTransactionsSuccess" xml:space="preserve">
+    <value>Se han descargado {0} transacciones. La fecha de transacción más reciente es el {1}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="GetTransactions" xml:space="preserve">
+    <value>Recuperar Transacciones</value>
+    <comment>Button</comment>
   </data>
 </root>
