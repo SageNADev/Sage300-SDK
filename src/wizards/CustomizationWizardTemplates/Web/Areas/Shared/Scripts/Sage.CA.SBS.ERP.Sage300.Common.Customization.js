@@ -164,9 +164,9 @@ Customization = {
         var checked = data? "checked" : "";
         var val = $('#commonCustomizationID').val();
         if (!val)
-            return '<span class="icon checkBox ' + selected + '"><input class="Show" disabled="disabled"  name="Show" type="checkbox"' + checked + ' /> </span>';
+            return '<label class="checkbox-container"><span class="' + selected + '"><input class="Show" disabled="disabled"  name="Show" type="checkbox"' + checked + ' /><span class="checkmark"></span></span></label>';
         else
-            return '<span class="icon checkBox ' + selected + '"><input class="Show" name="Show" type="checkbox"' + checked + ' /> </span>';
+            return '<label class="checkbox-container"><span class="' + selected + '"><input class="Show" name="Show" type="checkbox"' + checked + ' /><span class="checkmark"></span></span><label>';
     },
 
     configGrid: function (gridData) {
@@ -374,6 +374,8 @@ Customization = {
             open: function (e) {
                 Customization.isModelDirty = false;
                 this.wrapper.css({ top: 100 });
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
             },
 
             close: function (e) {

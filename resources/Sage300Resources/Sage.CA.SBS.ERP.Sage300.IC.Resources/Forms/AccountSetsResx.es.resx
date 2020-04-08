@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountDescription" xml:space="preserve">
+    <value>Descripción Cuenta</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="AccountSetCode" xml:space="preserve">
+    <value>Código Grupo de Cuentas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AccountSetDescription" xml:space="preserve">
+    <value>Descripción Grupo de Cuentas</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AdjustmentWriteOff" xml:space="preserve">
+    <value>Ajuste por Cancelación</value>
+    <comment>Account</comment>
+  </data>
+  <data name="AssemblyCostCredit" xml:space="preserve">
+    <value>Crédito de Costo de Ensamble</value>
+    <comment>Account</comment>
+  </data>
+  <data name="CostingMethod" xml:space="preserve">
+    <value>Método de Cálculo de Costos</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CostItemDuring" xml:space="preserve">
+    <value>Calcular Costos de Artículos Durante</value>
+    <comment>Label to Cost Item during Dropdown</comment>
+  </data>
+  <data name="Costmethd" xml:space="preserve">
+    <value>Los cambios en el método de cálculo de costos afectarán los cálculos de costos de todos los artículos que usan este grupo de cuentas. ¿Desea continuar?</value>
+    <comment>Confirmation Message</comment>
+  </data>
+  <data name="CreditDebitClearing" xml:space="preserve">
+    <value>Nota Crédito/Débito a Compensar</value>
+    <comment>Account</comment>
+  </data>
+  <data name="CreditDebitNoteClr" xml:space="preserve">
+    <value>Nota Crédito/Débito a Compensar</value>
+    <comment>Display the value into the grid</comment>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Código de Moneda</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descripción</value>
+    <comment>Display the grid header title</comment>
+  </data>
+  <data name="DisassemblyExpense" xml:space="preserve">
+    <value>Gasto de Desensamble</value>
+    <comment>Account</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>CI – Grupos de Cuentas</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="GLAccount" xml:space="preserve">
+    <value>Cuenta del LM</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ICAccount" xml:space="preserve">
+    <value>Cuenta de CI</value>
+    <comment>Display the value into the grid</comment>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactivo</value>
+    <comment>Label to Inactive Checkbox field</comment>
+  </data>
+  <data name="InventoryControl" xml:space="preserve">
+    <value>Control de Inventario</value>
+    <comment>Account</comment>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Último Mantenimiento</value>
+    <comment>Account</comment>
+  </data>
+  <data name="NonStockClearing" xml:space="preserve">
+    <value>No Almacenables a Compensar</value>
+    <comment>Account</comment>
+  </data>
+  <data name="PayablesClearing" xml:space="preserve">
+    <value>C/P a Compensar</value>
+    <comment>Account</comment>
+  </data>
+  <data name="PhysInvAdjustment" xml:space="preserve">
+    <value>Ajuste de Inventario Físico</value>
+    <comment>Account</comment>
+  </data>
+  <data name="ShipmentClearing" xml:space="preserve">
+    <value>Envío a Compensar</value>
+    <comment>Account</comment>
+  </data>
+  <data name="TransferClearing" xml:space="preserve">
+    <value>Transferencia a Compensar</value>
+    <comment>Account</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
+    <comment>Account Set Status</comment>
+  </data>
+  <data name="DateInactive" xml:space="preserve">
+    <value>Fecha de Inactividad</value>
+    <comment>DateInactive</comment>
+  </data>
+  <data name="DateLastMaintained" xml:space="preserve">
+    <value>Fecha Último Mantenimiento</value>
+    <comment>DateLastMaintained</comment>
+  </data>
+  <data name="AccountNumberBlankValidation" xml:space="preserve">
+    <value>{0} no puede estar en blanco.</value>
+    <comment>{0}=Field title</comment>
+  </data>
+  <data name="AccountNumberValidation" xml:space="preserve">
+    <value>No se encuentra la cuenta {0} {1}.</value>
+    <comment>{0}=Account Title,{1}=Account Number</comment>
+  </data>
+  <data name="Status_Active" xml:space="preserve">
+    <value>Activo</value>
+  </data>
+  <data name="Status_Inactive" xml:space="preserve">
+    <value>Inactivo</value>
+  </data>
+  <data name="AccountNumberInactiveValidation" xml:space="preserve">
+    <value>La cuenta {0} no está activa.</value>
+    <comment>{0}=Account Number Title</comment>
+  </data>
+  <data name="IC0100" xml:space="preserve">
+    <value>Grupo de Cuentas</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="AccountSetCodeBlankValidation" xml:space="preserve">
+    <value>{0} no puede estar en blanco.</value>
+    <comment>{0}=Field title</comment>
+  </data>
+  <data name="AdjustmentOrWriteOffAccount" xml:space="preserve">
+    <value>Cuenta de Ajuste/Cancelación</value>
+    <comment>Display Account Name in Import/Export</comment>
+  </data>
+  <data name="AssemblyCostCreditAccount" xml:space="preserve">
+    <value>Cuenta de Crédito de Costo de Ensamble</value>
+    <comment>Display Account Name in Import/Export</comment>
+  </data>
+  <data name="CreditOrDebitNoteClearingAcct" xml:space="preserve">
+    <value>Cuenta de Nota Crédito/Débito a Compensar</value>
+    <comment>Display Account Name in Import/Export</comment>
+  </data>
+  <data name="DisassemblyExpenseAccount" xml:space="preserve">
+    <value>Cuenta de Gastos de Desensamble</value>
+    <comment>Display Account Name in Import/Export</comment>
+  </data>
+  <data name="InventoryControlAccount" xml:space="preserve">
+    <value>Cuenta de Control de Inventario</value>
+    <comment>Display Account Name in Import/Export </comment>
+  </data>
+  <data name="NonstockClearingAccount" xml:space="preserve">
+    <value>Cuenta No Almacenables a Compensar</value>
+    <comment>Display Account Name in Import/Export</comment>
+  </data>
+  <data name="PayablesClearingAccount" xml:space="preserve">
+    <value>Cuenta de C/P a Compensar</value>
+    <comment>Display Account Name in Import/Export</comment>
+  </data>
+  <data name="PhysicalInventoryAdjAcct" xml:space="preserve">
+    <value>Cuenta de Ajuste de Inventario Físico</value>
+    <comment>Display Account Name in Import/Export</comment>
+  </data>
+  <data name="ShipmentClearingAccount" xml:space="preserve">
+    <value>Cuenta de Envío a Compensar</value>
+    <comment>Display Account Name in Import/Export</comment>
+  </data>
+  <data name="TransferClearingAccount" xml:space="preserve">
+    <value>Cuenta de Transferencias a Compensar</value>
+    <comment>Display Account Name in Import/Export</comment>
+  </data>
+</root>

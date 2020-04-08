@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="All" xml:space="preserve">
+    <value>Todos</value>
+    <comment>Modal - Button</comment>
+  </data>
+  <data name="Browse1" xml:space="preserve">
+    <value>Explorar...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CancelDescription" xml:space="preserve">
+    <value>Si algunos estados de cuenta no se imprimen correctamente, quítelos de la lista de los estados de cuenta impresos correctamente seleccionando el número de cliente y pulsando Incluir para cancelar el estado de cuenta. No se actualizarán los registros de los estados de cuenta cancelados, de tal manera que usted pueda volver a ejecutar los estados de cuenta más tarde para esos clientes o cuentas nacionales.</value>
+    <comment>Modal - Dialogue</comment>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>¿Está seguro de que desea cancelar los estados de cuentas de los clientes o cuentas nacionales seleccionados?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ConfirmDeleteNone" xml:space="preserve">
+    <value>No ha seleccionado ningún estado de cuenta de cliente o cuenta nacional para cancelar. ¿Desea continuar?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="EmailMsgID" xml:space="preserve">
+    <value>Mensaje de Correo-E</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>C/C - Estados de Cuenta/Cartas/Etiquetas</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Excluir</value>
+    <comment>Modal - Button</comment>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Incluir</value>
+    <comment>Modal - Button</comment>
+  </data>
+  <data name="IncludeAppliedDetails" xml:space="preserve">
+    <value>Incluir Detalles Aplicados para Cuentas de Artículos Abiertos</value>
+    <comment>Criteria - Check Box</comment>
+  </data>
+  <data name="IncludePaidTransactions" xml:space="preserve">
+    <value>Incluir Transacciones Pagadas para Cuentas de Artículos Abiertos</value>
+    <comment>Criteria - Check Box</comment>
+  </data>
+  <data name="IncludeSBP" xml:space="preserve">
+    <value>Incluir Clientes de Sage Billing and Payment</value>
+    <comment>Select - Check Box</comment>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>Etiqueta</value>
+    <comment>Radio</comment>
+  </data>
+  <data name="Label1" xml:space="preserve">
+    <value>ARLABELAVERY5162.RPT</value>
+    <comment>Label</comment>
+  </data>
+  <data name="LabelPre51" xml:space="preserve">
+    <value>ARLBL01.RPT</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Letter" xml:space="preserve">
+    <value>Carta</value>
+    <comment>Radio</comment>
+  </data>
+  <data name="Letter1" xml:space="preserve">
+    <value>ARLETT10.RPT</value>
+    <comment>Label</comment>
+  </data>
+  <data name="LetterNoAge" xml:space="preserve">
+    <value>ARLETT20.RPT</value>
+    <comment>Label</comment>
+  </data>
+  <data name="LetterPre51" xml:space="preserve">
+    <value>ARLETT01.RPT</value>
+    <comment>Label</comment>
+  </data>
+  <data name="LetterPre51NoAge" xml:space="preserve">
+    <value>ARLETT02.RPT</value>
+    <comment>Label</comment>
+  </data>
+  <data name="MissingBalanceType" xml:space="preserve">
+    <value>Debe seleccionar al menos un Tipo de Saldo.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="NationalAccountStatements" xml:space="preserve">
+    <value>Estados de Cuenta de Cuentas Nacionales</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="NoIncompleteStmt" xml:space="preserve">
+    <value>No hay estados de cuenta incompletos en el rango especificado.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Ninguno</value>
+    <comment>Modal - Button</comment>
+  </data>
+  <data name="NoStmt" xml:space="preserve">
+    <value>No hay estados de cuenta para reimprimir en el rango especificado.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="Num1" xml:space="preserve">
+    <value>1er</value>
+    <comment>Criteria - Field</comment>
+  </data>
+  <data name="Num2" xml:space="preserve">
+    <value>2do</value>
+    <comment>Criteria - Field</comment>
+  </data>
+  <data name="Num3" xml:space="preserve">
+    <value>3er</value>
+    <comment>Criteria - Field</comment>
+  </data>
+  <data name="OverduedaysPart1" xml:space="preserve">
+    <value>Seleccionar Clientes Con Saldos por</value>
+    <comment>Criteria - Check Box</comment>
+  </data>
+  <data name="OverduedaysPart2" xml:space="preserve">
+    <value>Días y Más</value>
+    <comment>Criteria - Field</comment>
+  </data>
+  <data name="Pre51AStatement" xml:space="preserve">
+    <value>Usar Formato de la Versión 5.0</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PrintFinishRun" xml:space="preserve">
+    <value>Ejecución Incompleta de Estado de Cuenta</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Reprint" xml:space="preserve">
+    <value>Reimprimir</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Reprint2" xml:space="preserve">
+    <value>Tiene uno o más estados de cuenta sin terminar. ¿Desea terminarlos ahora?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SelectCustomerBalanceType" xml:space="preserve">
+    <value>Seleccionar Clientes en Base al Tipo de Saldo</value>
+    <comment>Criteria - Check Box</comment>
+  </data>
+  <data name="SortDocumentsBy" xml:space="preserve">
+    <value>Clasificar Documentos por</value>
+    <comment>Criteria - List</comment>
+  </data>
+  <data name="Statement" xml:space="preserve">
+    <value>Estado de Cuenta</value>
+    <comment>Radio</comment>
+  </data>
+  <data name="Statement1" xml:space="preserve">
+    <value>ARSTMT11.RPT</value>
+    <comment>Label</comment>
+  </data>
+  <data name="StatementDate" xml:space="preserve">
+    <value>Fecha de Estado de Cuenta</value>
+    <comment>Reprint - Field</comment>
+  </data>
+  <data name="StatementPre51" xml:space="preserve">
+    <value>ARSTMT01.RPT</value>
+    <comment>Label</comment>
+  </data>
+  <data name="StatementPrinted" xml:space="preserve">
+    <value>Estados de Cuentas Impresos Correctamente</value>
+    <comment>Modal - Header</comment>
+  </data>
+  <data name="StatementSkipped" xml:space="preserve">
+    <value>Estados de Cuentas a Cancelar</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="StatementsPrintedOk" xml:space="preserve">
+    <value>¿Se imprimieron con éxito los estados de cuenta?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="StatementType" xml:space="preserve">
+    <value>Tipo de Estado de Cuenta de Artículo Abierto</value>
+    <comment>Criteria - List</comment>
+  </data>
+  <data name="Tab2" xml:space="preserve">
+    <value>Criterios</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="UseAging" xml:space="preserve">
+    <value>Usar Vencimiento</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="UseLetter" xml:space="preserve">
+    <value>Usar Carta</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UseStatement" xml:space="preserve">
+    <value>Usar Estado de Cuenta</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Zero" xml:space="preserve">
+    <value>Cero</value>
+    <comment>Criteria - Check Box</comment>
+  </data>
+  <data name="Criteria" xml:space="preserve">
+    <value>Criterios</value>
+    <comment>Criteria Tab</comment>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Seleccionar</value>
+    <comment>Select Tab</comment>
+  </data>
+  <data name="OpenStatementType" xml:space="preserve">
+    <value>Tipo de Estado de Cuenta de Artículo Abierto</value>
+    <comment>Label Text</comment>
+  </data>
+  <data name="ReprintStatement" xml:space="preserve">
+    <value>Reimprimir Estado de Cuenta</value>
+    <comment>Reprint Pop Up Title</comment>
+  </data>
+  <data name="SelectCustomerWithBalance" xml:space="preserve">
+    <value>Seleccionar Clientes Con Saldos por</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="AdditionalCopy" xml:space="preserve">
+    <value>Copia Adicional</value>
+  </data>
+  <data name="MessageId" xml:space="preserve">
+    <value>No se encuentra el ID de Mensaje {0}.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="CancelHeader" xml:space="preserve">
+    <value>Seleccionar Estados de Cuentas a Cancelar</value>
+    <comment> Header Text</comment>
+  </data>
+  <data name="PrintNext" xml:space="preserve">
+    <value>¿Imprimir el próximo reporte?</value>
+    <comment>Print confirm dialog box</comment>
+  </data>
+  <data name="IncludeCreditBalances" xml:space="preserve">
+    <value>Incluir Saldos Acreedores</value>
+    <comment>Reprint Stratement Header Finder Column Title</comment>
+  </data>
+  <data name="IncludeDebitBalances" xml:space="preserve">
+    <value>Incluir Saldos Deudores</value>
+    <comment>Reprint Stratement Header Finder Column Title</comment>
+  </data>
+  <data name="IncludeFullyPaidTransactions" xml:space="preserve">
+    <value>Incluye Transacciones Totalmente Pagadas</value>
+    <comment>Reprint Stratement Header Finder Column Title</comment>
+  </data>
+  <data name="IncludeZeroBalances" xml:space="preserve">
+    <value>Incluir Saldos Cero</value>
+    <comment>Reprint Stratement Header Finder Column Title</comment>
+  </data>
+  <data name="RunType" xml:space="preserve">
+    <value>Tipo de Ejecución</value>
+    <comment>Reprint Stratement Header Finder Column Title</comment>
+  </data>
+  <data name="StatementRunCompletedFlag" xml:space="preserve">
+    <value>Indicador de Ejecución de Estados de Cuenta Concluido</value>
+    <comment>Reprint Stratement Header Finder Column Title</comment>
+  </data>
+  <data name="StatementRunDate" xml:space="preserve">
+    <value>Fecha de Ejecución de Estado de Cuenta</value>
+    <comment>Reprint Stratement Header Finder Column Title</comment>
+  </data>
+  <data name="ReprintStatementTitle" xml:space="preserve">
+    <value>Reimprimir Cabecera de Estado de Cuenta</value>
+    <comment>Reprint Statement Finder Title</comment>
+  </data>
+  <data name="ReprintStatementCustTitle" xml:space="preserve">
+    <value>Reimprimir Estado de Cuenta Clientes</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="ReprintStatementNatTitle" xml:space="preserve">
+    <value>Reimprimir Estado de Cuenta Clientes CN</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="DetailSort" xml:space="preserve">
+    <value>Clasificación de Detalle</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="DueDateInvoicedate" xml:space="preserve">
+    <value>Plazo / Fecha Factura</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="IncludeDetails" xml:space="preserve">
+    <value>Incluir Detalles</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="NATStatementSwitch" xml:space="preserve">
+    <value>Cambio de Estado de Cuenta CN</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="OpenItemStatementType" xml:space="preserve">
+    <value>Tipo de Estado de Cuenta de Artículo Abierto</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Range1From" xml:space="preserve">
+    <value>Rango 1 - Desde</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Range1To" xml:space="preserve">
+    <value>Rango 1 - Hasta</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Range1Type" xml:space="preserve">
+    <value>Tipo de Rango 1</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Range2From" xml:space="preserve">
+    <value>Rango 2 - Desde</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Range2To" xml:space="preserve">
+    <value>Rango 2 - Hasta</value>
+    <comment>Finder Title </comment>
+  </data>
+  <data name="Range2Type" xml:space="preserve">
+    <value>Tipo de Rango 2</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Range3From" xml:space="preserve">
+    <value>Rango 3 - Desde</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Range3To" xml:space="preserve">
+    <value>Rango 3 - Hasta</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Range3Type" xml:space="preserve">
+    <value>Tipo de Rango 3</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Range4From" xml:space="preserve">
+    <value>Rango 4 - Desde</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Range4To" xml:space="preserve">
+    <value>Rango 4 - Hasta</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Range4Type" xml:space="preserve">
+    <value>Tipo de Rango 4</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="ReportName" xml:space="preserve">
+    <value>Nombre del Reporte</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Sortfield1" xml:space="preserve">
+    <value>Campo de Clasificación 1</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Sortfield2" xml:space="preserve">
+    <value>Campo de Clasificación 2</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Sortfield3" xml:space="preserve">
+    <value>Campo de Clasificación 3</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Sortfield4" xml:space="preserve">
+    <value>Campo de Clasificación 4</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="StatementRunNumber" xml:space="preserve">
+    <value>Número de Ejecución de Estado de Cuenta</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="NATAmountBeginningBalanceFor" xml:space="preserve">
+    <value>Monto de Inicio de Traspaso de Saldo CN</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="NATAmountDue1stPeriod" xml:space="preserve">
+    <value>Monto a Pagar 1er Período CN</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="NATAmountDue2ndPeriod" xml:space="preserve">
+    <value>Monto a Pagar 2do Período CN</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="NATAmountDue3rdPeriod" xml:space="preserve">
+    <value>Monto a Pagar 3er Período CN</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="NATAmountDue4thPeriod" xml:space="preserve">
+    <value>Monto a Pagar 4to Período CN</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="NATAmountDueCurrentPeriod" xml:space="preserve">
+    <value>Monto a Pagar Período Actual CN</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="NATAmountDueForwardBalance" xml:space="preserve">
+    <value>Monto a Pagar Traspaso de Saldo CN</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="NATAmountEndingBalanceForwar" xml:space="preserve">
+    <value>Monto de Fin de Traspaso de Saldo CN</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="NationalAccountssWebSite" xml:space="preserve">
+    <value>Sitio Web de Cuenta Nacional</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Reserved" xml:space="preserve">
+    <value>Reservado</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="FirstPeriod" xml:space="preserve">
+    <value>Primer Período</value>
+    <comment>Reprint Stratement Header Finder Column Title</comment>
+  </data>
+  <data name="NATAddressLine1" xml:space="preserve">
+    <value>Línea de Dirección CN 1</value>
+    <comment>Reprint Stratement National Customer Finder Column Title</comment>
+  </data>
+  <data name="NATAddressLine2" xml:space="preserve">
+    <value>Línea de Dirección CN 2</value>
+    <comment>Reprint Stratement National Customer Finder Column Title</comment>
+  </data>
+  <data name="NATAddressLine3" xml:space="preserve">
+    <value>Línea de Dirección CN 3</value>
+    <comment>Reprint Stratement National Customer Finder Column Title</comment>
+  </data>
+  <data name="NATAddressLine4" xml:space="preserve">
+    <value>Línea de Dirección CN 4</value>
+    <comment>Reprint Stratement National Customer Finder Column Title</comment>
+  </data>
+  <data name="NATCity" xml:space="preserve">
+    <value>Ciudad CN</value>
+    <comment>Reprint Stratement National Customer Finder Column Title</comment>
+  </data>
+  <data name="NATContactName" xml:space="preserve">
+    <value>Nombre de Contacto CN</value>
+    <comment>Reprint Stratement National Customer Finder Column Title</comment>
+  </data>
+  <data name="NATCountry" xml:space="preserve">
+    <value>País CN</value>
+    <comment>Reprint Stratement National Customer Finder Column Title</comment>
+  </data>
+  <data name="NATDunningMessage" xml:space="preserve">
+    <value>Mensaje de Cobranza CN</value>
+    <comment>Reprint Stratement National Customer Finder Column Title</comment>
+  </data>
+  <data name="NATFaxNumber" xml:space="preserve">
+    <value>Número de Fax CN</value>
+    <comment>Reprint Stratement National Customer Finder Column Title</comment>
+  </data>
+  <data name="NATPhoneNumber" xml:space="preserve">
+    <value>Número de Teléfono CN</value>
+    <comment>Reprint Stratement National Customer Finder Column Title</comment>
+  </data>
+  <data name="NATStateOrProv" xml:space="preserve">
+    <value>Estado/Prov CN</value>
+    <comment>Reprint Stratement National Customer Finder Column Title</comment>
+  </data>
+  <data name="SecondPeriod" xml:space="preserve">
+    <value>Segundo Período</value>
+    <comment>Reprint Stratement Header Finder Column Title</comment>
+  </data>
+  <data name="StatementPrintedFlag" xml:space="preserve">
+    <value>Indicador de Estado de Cuenta Impreso</value>
+    <comment>Reprint Stratement Header Finder Column Title</comment>
+  </data>
+  <data name="ThirdPeriod" xml:space="preserve">
+    <value>Tercer Período</value>
+    <comment>Reprint Stratement Header Finder Column Title</comment>
+  </data>
+  <data name="CustomerStatements" xml:space="preserve">
+    <value>Estados de Cuenta de Clientes</value>
+    <comment>NATStatementSwitch Enum Value</comment>
+  </data>
+  <data name="LettersorLabels" xml:space="preserve">
+    <value>Cartas o Etiquetas</value>
+    <comment>NATStatementSwitch Enum Value</comment>
+  </data>
+  <data name="NationalAcctStatements" xml:space="preserve">
+    <value>Estados de Cuenta de Cuentas Nacionales</value>
+    <comment>NATStatementSwitch Enum Value</comment>
+  </data>
+  <data name="DocDate" xml:space="preserve">
+    <value>Fecha del Documento</value>
+    <comment>Detail Sort Enum Value</comment>
+  </data>
+  <data name="DocNo" xml:space="preserve">
+    <value>Número de Documento</value>
+    <comment>Detail Sort Enum Value</comment>
+  </data>
+</root>

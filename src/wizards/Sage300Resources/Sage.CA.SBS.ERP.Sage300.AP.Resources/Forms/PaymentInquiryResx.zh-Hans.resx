@@ -1,0 +1,550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="All" xml:space="preserve">
+    <value>所有</value>
+    <comment>List Option</comment>
+  </data>
+  <data name="AmountAdjusted" xml:space="preserve">
+    <value>调整金额</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="AmountofRoundingError" xml:space="preserve">
+    <value>舍入错误金额</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="BankExchangeRate" xml:space="preserve">
+    <value>银行汇率</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="BankRateOverridden" xml:space="preserve">
+    <value>银行汇率已撤换</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="CalculateTaxAmountControl" xml:space="preserve">
+    <value>计算税费金额控制</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="CalculateTaxBaseControl" xml:space="preserve">
+    <value>计算税基控制</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>现金</value>
+    <comment>List Option</comment>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>支票</value>
+    <comment>List Option</comment>
+  </data>
+  <data name="CheckAmountFunctionalCurrency" xml:space="preserve">
+    <value>支票金额功能币种</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="CheckCleared" xml:space="preserve">
+    <value>已清算支票</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="CheckSerialNumber" xml:space="preserve">
+    <value>支票系列编号</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="Cleared" xml:space="preserve">
+    <value>已清算</value>
+    <comment>List Option</comment>
+  </data>
+  <data name="ClientUniqueID" xml:space="preserve">
+    <value>客户唯一标识</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="DateCleared" xml:space="preserve">
+    <value>清除日期</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="DateReversed" xml:space="preserve">
+    <value>回转日期</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="DistAmountNetofTaxes" xml:space="preserve">
+    <value>分布税后净额</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="DiscountPosted" xml:space="preserve">
+    <value>折扣 - 已过帐</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="DrillDownApplicationSource" xml:space="preserve">
+    <value>下钻应用程序来源</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="DrillDownLinkNumber" xml:space="preserve">
+    <value>下钻链接编号</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="DrillDownType" xml:space="preserve">
+    <value>下钻类型</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>应付帐款付款查询</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="EntryNumber" xml:space="preserve">
+    <value>分录编号</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ExchangeGainOrLoss" xml:space="preserve">
+    <value>汇兑收益/损失</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="ExchangeGainOrLossPosted" xml:space="preserve">
+    <value>汇兑收益/损失 - 已过帐</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="FiscalYearPeriod" xml:space="preserve">
+    <value>财务年度/期间</value>
+    <comment>FormValue</comment>
+  </data>
+  <data name="FuncDistAmountNetofTaxes" xml:space="preserve">
+    <value>功能币种分布税后净额</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxAllocatedTotal" xml:space="preserve">
+    <value>功能币种已计费税合计</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxAmount1" xml:space="preserve">
+    <value>功能币种税额1</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxAmount2" xml:space="preserve">
+    <value>功能币种税额2</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxAmount3" xml:space="preserve">
+    <value>功能币种税额3</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxAmount4" xml:space="preserve">
+    <value>功能币种税额4</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxAmount5" xml:space="preserve">
+    <value>功能币种税额5</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxBase1" xml:space="preserve">
+    <value>功能币种税基1</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxBase2" xml:space="preserve">
+    <value>功能币种税基2</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxBase3" xml:space="preserve">
+    <value>功能币种税基3</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxBase4" xml:space="preserve">
+    <value>功能币种税基4</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxBase5" xml:space="preserve">
+    <value>功能币种税基5</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxExpensedTotal" xml:space="preserve">
+    <value>功能币种已计费税合计</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxRecoverableTotal" xml:space="preserve">
+    <value>功能币种可退税合计</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncTaxTotal" xml:space="preserve">
+    <value>功能币种税费合计</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="FuncToatalAdvancecreditClaim" xml:space="preserve">
+    <value>功能币种合计预支信贷索求</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>作业相关</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="MiscPaymentFlag" xml:space="preserve">
+    <value>杂项付款旗标</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="NumberofAdvanceCreditClaims" xml:space="preserve">
+    <value>预支信贷索求数目</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>其它</value>
+    <comment>List Option</comment>
+  </data>
+  <data name="Outstanding" xml:space="preserve">
+    <value>未结清</value>
+    <comment>List Option</comment>
+  </data>
+  <data name="PaymentCurrency" xml:space="preserve">
+    <value>付款币种</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="PaymentPosted" xml:space="preserve">
+    <value>付款 - 已过帐</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="PrepaymentApplied" xml:space="preserve">
+    <value>预付款 - 已核销</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="RateOperator" xml:space="preserve">
+    <value>汇率运算符</value>
+    <comment>Finder Column</comment>
+  </data>
+  <data name="ReasonForReversal" xml:space="preserve">
+    <value>回转原因</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="Reversed" xml:space="preserve">
+    <value>已回转</value>
+    <comment>List Option</comment>
+  </data>
+  <data name="TaxAllocatedTotal" xml:space="preserve">
+    <value>已分配税合计</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>税务机构1</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>税务机构2</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>税务机构3</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>税务机构4</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>税务机构5</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxExpensedTotal" xml:space="preserve">
+    <value>已计费税合计</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxRecoverableTotal" xml:space="preserve">
+    <value>可抵扣税合计</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingAllocatedTotal" xml:space="preserve">
+    <value>税务报告已分配合计</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingAmount1" xml:space="preserve">
+    <value>税务报告金额1</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingAmount2" xml:space="preserve">
+    <value>税务报告金额2</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingAmount3" xml:space="preserve">
+    <value>税务报告金额3</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingAmount4" xml:space="preserve">
+    <value>税务报告金额4</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingAmount5" xml:space="preserve">
+    <value>税务报告金额5</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingExpensedTotal" xml:space="preserve">
+    <value>税务报告已计费合计</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingRecoverableTotal" xml:space="preserve">
+    <value>税务报告已抵扣合计</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxTotal" xml:space="preserve">
+    <value>税务合计</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TotalAdvanceCreditClaim" xml:space="preserve">
+    <value> 合计预支信贷索求</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>税额1</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>税额2</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>税额3</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>税额4</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>税额5</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxBase1" xml:space="preserve">
+    <value>税基1</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxBase2" xml:space="preserve">
+    <value>税基2</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxBase3" xml:space="preserve">
+    <value>税基3</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxBase4" xml:space="preserve">
+    <value>税基4</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxBase5" xml:space="preserve">
+    <value>税基5</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>税级1</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>税级2</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>税级3</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>税级4</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>税级5</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingCalculateMethod" xml:space="preserve">
+    <value>税务报告计算方法</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingCalculateMethodName" xml:space="preserve">
+    <value>税务报告计算方法名称</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingCurrencyCode" xml:space="preserve">
+    <value>税务报告币种代码</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingExchangeRate" xml:space="preserve">
+    <value>税务报告汇率</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingRateDate" xml:space="preserve">
+    <value>税务报告汇率日期</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingRateOperator" xml:space="preserve">
+    <value>税务报告汇率运算符</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="TaxReportingRateType" xml:space="preserve">
+    <value>税务报告汇率类型</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="NoSelectionOfPayment" xml:space="preserve">
+    <value>选择一个付款。</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="PaymentAssignedToVendorMessage" xml:space="preserve">
+    <value>请选择一个已被分派给某个供应商的付款。</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="AdjustmentPosted" xml:space="preserve">
+    <value>调整 - 已过帐</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="AdjustmentReversed" xml:space="preserve">
+    <value>调整 - 已回转</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="DiscountReversed" xml:space="preserve">
+    <value>折扣 - 已回转</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="ExchangeGainOrLossReversed" xml:space="preserve">
+    <value>汇兑收益/损失 - 已回转</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="PaymentInvoiceReversed" xml:space="preserve">
+    <value>付款发票 - 已回转</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="RetainageAdjusted" xml:space="preserve">
+    <value>保留款 - 已调整</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="RoundingPosted" xml:space="preserve">
+    <value>舍入 - 已过帐</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="RoundingReversed" xml:space="preserve">
+    <value>舍入 - 已回转</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="PaymentReversed" xml:space="preserve">
+    <value>付款 - 已回转</value>
+    <comment>For Payment Information</comment>
+  </data>
+  <data name="CheckAmountVendorCurrency" xml:space="preserve">
+    <value>支票金额供应商币种</value>
+    <comment>For Posted Payment</comment>
+  </data>
+  <data name="PostedPayment" xml:space="preserve">
+    <value>已过帐付款</value>
+    <comment>For Posted Payment Finder</comment>
+  </data>
+  <data name="TaxWithheldPosted" xml:space="preserve">
+    <value>预扣税 - 已过帐</value>
+  </data>
+  <data name="TaxWithheldReversed" xml:space="preserve">
+    <value>预扣税 - 已回转</value>
+  </data>
+</root>

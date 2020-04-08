@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ComponentNumber" xml:space="preserve">
+    <value>Numéro composant</value>
+  </data>
+  <data name="CURRENTQTY" xml:space="preserve">
+    <value>Quantité actuelle</value>
+    <comment>Lot - Field</comment>
+  </data>
+  <data name="CUSTOMER" xml:space="preserve">
+    <value>Numéro/Nom du client</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="CustomerVendorNumber" xml:space="preserve">
+    <value>Numéro client/fournisseur</value>
+  </data>
+  <data name="DateRecalled" xml:space="preserve">
+    <value>Date de rappel</value>
+  </data>
+  <data name="DAYS1" xml:space="preserve">
+    <value>Date échéance garantie 1</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="DAYS2" xml:space="preserve">
+    <value>Date échéance garantie 2</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="DAYS3" xml:space="preserve">
+    <value>Date échéance garantie 3</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="DAYS4" xml:space="preserve">
+    <value>Date échéance garantie 4</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="DAYS5" xml:space="preserve">
+    <value>Date échéance garantie 5</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="DetailNumber" xml:space="preserve">
+    <value>Numéro détail</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Détails…</value>
+    <comment>Modal - Button</comment>
+  </data>
+  <data name="DrillDownLinkNumber" xml:space="preserve">
+    <value>Numéro lien zoom avant</value>
+  </data>
+  <data name="DrillDownType" xml:space="preserve">
+    <value>Type zoom avant</value>
+  </data>
+  <data name="EffectDAYS1" xml:space="preserve">
+    <value>Date entrée en vigueur garantie 1</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="EffectDAYS2" xml:space="preserve">
+    <value>Date entrée en vigueur garantie 2</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="EffectDAYS3" xml:space="preserve">
+    <value>Date entrée en vigueur garantie 3</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="EffectDAYS4" xml:space="preserve">
+    <value>Date entrée en vigueur garantie 4</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="EffectDAYS5" xml:space="preserve">
+    <value>Date entrée en vigueur garantie 5</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Numéros de lot de GS</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Articles…</value>
+    <comment>Button</comment>
+  </data>
+  <data name="LIFEWARR1" xml:space="preserve">
+    <value>Garantie à vie 1</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="LIFEWARR2" xml:space="preserve">
+    <value>Garantie à vie 2</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="LIFEWARR3" xml:space="preserve">
+    <value>Garantie à vie 3</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="LIFEWARR4" xml:space="preserve">
+    <value>Garantie à vie 4</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="LIFEWARR5" xml:space="preserve">
+    <value>Garantie à vie 5</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="LocationDescription" xml:space="preserve">
+    <value>Description emplacement</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NOLOTNUMBER1" xml:space="preserve">
+    <value>Le numéro de lot {0} n'existe pas pour le numéro de l'article {1} et l'emplacement {2}.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="OEInvoiceNumber" xml:space="preserve">
+    <value>Numéro facture de CmC</value>
+  </data>
+  <data name="ONRECALL" xml:space="preserve">
+    <value>En rappel</value>
+    <comment>Lot - Check Box</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Description champ optionnel</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="POCreditNoteNumber" xml:space="preserve">
+    <value>Numéro note de crédit de CmF</value>
+  </data>
+  <data name="POInvoiceNumber" xml:space="preserve">
+    <value>Numéro facture de CmF</value>
+  </data>
+  <data name="QTYORDED" xml:space="preserve">
+    <value>Quantité réservée pour commande</value>
+    <comment>Lot - Field</comment>
+  </data>
+  <data name="QUARANTINEDON" xml:space="preserve">
+    <value>Mis en quarantaine le</value>
+    <comment>Lot - Check Box</comment>
+  </data>
+  <data name="RECALLDATE" xml:space="preserve">
+    <value>Date rappel</value>
+    <comment>Lot - Field</comment>
+  </data>
+  <data name="Recalled" xml:space="preserve">
+    <value>Rappelé</value>
+  </data>
+  <data name="SourceApplication" xml:space="preserve">
+    <value>Application source</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="StockQuantity" xml:space="preserve">
+    <value>Quantité des stocks</value>
+  </data>
+  <data name="TitleTRANSACTIONINQUIRY" xml:space="preserve">
+    <value>Consultation transaction numéro de lot</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="TransactionconversionFactor" xml:space="preserve">
+    <value>Facteur conversion de transaction</value>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>Transactions...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="TransactionSequence" xml:space="preserve">
+    <value>Séquence de transaction</value>
+  </data>
+  <data name="TransactionUnitOfMeasure" xml:space="preserve">
+    <value>Unité de mesure de transaction</value>
+  </data>
+  <data name="UnformattedLotNumber" xml:space="preserve">
+    <value>Numéro lot non formaté</value>
+  </data>
+  <data name="UNTIL" xml:space="preserve">
+    <value>Jusqu'à</value>
+    <comment>Lot - Field</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valeur</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Description valeur</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valeur définie</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="VENDOR" xml:space="preserve">
+    <value>Numéro/Nom du fournisseur</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="WARRANTYCODE" xml:space="preserve">
+    <value>Code garantie</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="WARRANTYDESC" xml:space="preserve">
+    <value>Description garantie</value>
+    <comment>Modal - Table Column</comment>
+  </data>
+  <data name="WarrantyPeriod1Description" xml:space="preserve">
+    <value>Description délai de garantie 1</value>
+  </data>
+  <data name="WarrantyPeriod1IsInUse" xml:space="preserve">
+    <value>Délai de garantie en utilisation 1</value>
+  </data>
+  <data name="WarrantyPeriod2Description" xml:space="preserve">
+    <value>Description délai de garantie 2</value>
+  </data>
+  <data name="WarrantyPeriod2IsInUse" xml:space="preserve">
+    <value>Délai de garantie en utilisation 2</value>
+  </data>
+  <data name="WarrantyPeriod3Description" xml:space="preserve">
+    <value>Description délai de garantie 3</value>
+  </data>
+  <data name="WarrantyPeriod3IsInUse" xml:space="preserve">
+    <value>Délai de garantie en utilisation 3</value>
+  </data>
+  <data name="WarrantyPeriod4Description" xml:space="preserve">
+    <value>Description délai de garantie 4</value>
+  </data>
+  <data name="WarrantyPeriod4IsInUse" xml:space="preserve">
+    <value>Délai de garantie en utilisation 4</value>
+  </data>
+  <data name="WarrantyPeriod5Description" xml:space="preserve">
+    <value>Description délai de garantie 5</value>
+  </data>
+  <data name="WarrantyPeriod5IsInUse" xml:space="preserve">
+    <value>Délai de garantie en utilisation 5</value>
+  </data>
+  <data name="LotCombine" xml:space="preserve">
+    <value>Combiner lot</value>
+  </data>
+  <data name="LotOEInvoice" xml:space="preserve">
+    <value>Lot facture de CmC</value>
+  </data>
+  <data name="LotPOInvoice" xml:space="preserve">
+    <value>Lot facture de CmF</value>
+  </data>
+  <data name="LotRecall" xml:space="preserve">
+    <value>Rappel de lot</value>
+  </data>
+  <data name="LotRecallRelease" xml:space="preserve">
+    <value>Levée de rappel du lot</value>
+  </data>
+  <data name="LotReceipt" xml:space="preserve">
+    <value>Réception lot</value>
+  </data>
+  <data name="LotShipment" xml:space="preserve">
+    <value>Expédition lot</value>
+  </data>
+  <data name="LotSplit" xml:space="preserve">
+    <value>Diviser lot</value>
+  </data>
+  <data name="UOM" xml:space="preserve">
+    <value>UdeM</value>
+  </data>
+  <data name="IC0810" xml:space="preserve">
+    <value>Numéros de lot</value>
+    <comment>Used for Export</comment>
+  </data>
+  <data name="IC0812" xml:space="preserve">
+    <value>Champs optionnels lot</value>
+    <comment>Used for Export</comment>
+  </data>
+  <data name="InvalidQuarantineReleaseDate" xml:space="preserve">
+    <value>La date de levée de quarantaine ne peut pas être antérieure à la date des stocks.</value>
+    <comment>Validations</comment>
+  </data>
+  <data name="SaveConfirm" xml:space="preserve">
+    <value>Il y a des modifications non sauvegardées dans {0} "{1}", {2} "{3}" et {4} "{5}". Voulez-vous continuer?</value>
+    <comment>Validations</comment>
+  </data>
+</root>

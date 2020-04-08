@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CdlgFilter" xml:space="preserve">
+    <value>Relevés OFX (*.aso;*.ofx;*.dbo;*.afx;*.qfx)|*.aso;*.ofx|Fichiers texte (*.txt)|*.txt|Tous les fichiers (*.*)|*.*</value>
+    <comment>Message</comment>
+  </data>
+  <data name="EmptyFiscCal" xml:space="preserve">
+    <value>Le calendrier fiscal est en blanc.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Importer les relevés OFX</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ErrintBKStmt" xml:space="preserve">
+    <value>Un problème est survenu et au moins un {0} du relevé en devise pour le compte {1} (ayant le numéro de succursale {2}) le {3} n&apos;a pu être rapproché pour la banque {4}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ErrintCCStmt" xml:space="preserve">
+    <value>Un problème est survenu et au moins un {0} du relevé en devise pour le compte {1} le {2} n&apos;a pu être rapproché pour la banque {3}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="FromBankCode" xml:space="preserve">
+    <value>De code banque</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ImportedTrx" xml:space="preserve">
+    <value>{0} relevé(s) et {1} nouvelle(s) transaction(s) importée(s), sauvegardée(s) et prête(s) à être appariée(s).</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InvRecYP" xml:space="preserve">
+    <value>Les rapprochements de comptes pour la banque {0} ont été omis. Pour rapprocher ce compte bancaire, vous devez préciser un exercice/période de rapprochement qui est {1}-{2} ou ultérieur(e).</value>
+    <comment>Message</comment>
+  </data>
+  <data name="MatchBKCurrMatchingStmtInfo" xml:space="preserve">
+    <value>Le ou les relevés en devise {0} pour le compte {1} (numéro de succursale {2}) le {3} ont été correctement importés pour la banque {4}.</value>
+  </data>
+  <data name="MatchBKCurrNotMatchingStmtInfo" xml:space="preserve">
+    <value>Avertissement: Le ou les relevés en devise {0} pour le compte {1} (numéro de succursale {2}) le {3} ont été importés mais ne sont pas dans la plage de devises de la banque {4}. Consultez et vérifiez les transactions importées.</value>
+  </data>
+  <data name="MatchBKStmtInfo" xml:space="preserve">
+    <value>Le {0} des relevés en devise pour le compte {1} (ayant le numéro de succursale {2}) le {3} correspond à la banque {4}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="MatchCCCurrMatchingStmtInfo" xml:space="preserve">
+    <value>Le ou les relevés en devise {0} pour le compte {1} le {2} ont été correctement importés pour la banque {3}.</value>
+  </data>
+  <data name="MatchCCCurrNotMatchingStmtInfo" xml:space="preserve">
+    <value>Avertissement: Le ou les relevés en devise {0} pour le compte {1} le {2} ont été importés mais ne sont pas dans la plage de devises de la banque {3}. Consultez et vérifiez les transactions importées.</value>
+  </data>
+  <data name="MatchCCStmtInfo" xml:space="preserve">
+    <value>Le {0} des relevés en devise pour le compte {1} le {2} correspond à la banque {3}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="MatchTrxAmt" xml:space="preserve">
+    <value>{0}  transaction(s) appariée(s) basée(s) seulement sur le montant. Veuillez vérifier le rapprochement.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NoActUnlckYP" xml:space="preserve">
+    <value>Un problème est survenu lors de la tentative d&apos;identification de la première période comptable active et déverrouillée pour l&apos;entreprise.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="OFXFile" xml:space="preserve">
+    <value>Fichier de relevé bancaire téléchargé</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OFXNoRateComment" xml:space="preserve">
+    <value>Aucun taux {0} de {1} à {2} le {3}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PContents" xml:space="preserve">
+    <value>Sélectionnez un fichier OFX valide.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PVersion" xml:space="preserve">
+    <value>Le fichier sélectionné a été créé à partir d&apos;une version qui ne prend pas en charge OFX.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="StmtCurrency" xml:space="preserve">
+    <value>La devise des relevés {0} n&apos;est pas dans la plage des devises de la banque {1}. Continuer l&apos;importation quand même?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="StmtProcessInfo" xml:space="preserve">
+    <value>{0} relevé(s) traité(s), {1} rapproché(s).</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ToBankCode" xml:space="preserve">
+    <value>À code banque</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TrxProcessInfo" xml:space="preserve">
+    <value>{0} transactions traitées dans relevés rapprochés, {1} compensée(s). (Les transactions traitées qui n&apos;ont pas été compensées sont ajoutées comme opérations la première fois qu&apos;elles sont traitées.)</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UnmatchBKStmtInfo" xml:space="preserve">
+    <value>Le {0} des relevés en devise pour le compte {1} (ayant le numéro de succursale {2}) le {3} ne correspond à aucun enregistrement bancaire dans la plage spécifiée.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UnmatchCCStmtInfo" xml:space="preserve">
+    <value>Le {0} des relevés en devise pour le compte {1} le {2} ne correspond à aucun enregistrement bancaire dans la plage spécifiée.</value>
+    <comment>Message</comment>
+  </data>
+</root>

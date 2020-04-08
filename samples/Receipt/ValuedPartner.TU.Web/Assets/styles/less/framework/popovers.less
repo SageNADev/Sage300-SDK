@@ -157,6 +157,7 @@
 .k-window {
   padding-top: 0px !important;
   background-color: #fff;
+  margin-top: 20px;
   padding-bottom: 20px;
 }
 
@@ -164,13 +165,9 @@
 // popup - adaptable
 // --------------------------------------------------
 
-.k-widget.k-window {
-  left: 50% !important;
-  transform: translate(-50%) !important;
-}
-
 .k-widget.k-window.k-window-maximized {
   margin-top: 0;
+  max-height: unset !important;
 }
 
 .k-mobile .k-widget.k-window#popupMobile {
@@ -182,9 +179,14 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px) {  
   .k-widget.k-window {
     max-width: 1020px;
+    left: unset !important;
 
     .k-window-titlebar .k-window-actions {
         right: 30px;
+
+        .k-window-action {
+          width: 40px;
+        }
     }
   }
 }
@@ -203,7 +205,7 @@ and (max-device-width : 1024px) {
     border-radius:0px;
 }
 .k-window-titlebar{
-    padding: 16px 20px 12px;
+    padding: 6px 20px 0;
     background: @gray-lighter;
     top: 0;
     margin-top: 0 !important;
@@ -211,7 +213,7 @@ and (max-device-width : 1024px) {
     .box-sizing(border-box);
 }
 .k-window-titlebar .k-window-title{
-    line-height: 24px;
+    line-height: 16px;
     position: static;
     font-weight: bold;
     display: inline-block;
@@ -219,7 +221,7 @@ and (max-device-width : 1024px) {
 }
 .k-window-titlebar .k-window-actions{
     opacity: 1;
-    top: 10px;
+    top: 5px;
     right: 10px;
 }
 
@@ -227,7 +229,6 @@ and (max-device-width : 1024px) {
   padding: 0;
   width: 30px;
   height: 30px;
-  top: 10px;
   position: relative;
   margin-left: 6px;
 }
@@ -376,6 +377,11 @@ and (max-device-width : 1024px) {
     &:before {
       content: none;
     }
+  }
+
+  .k-icon.k-i-window-minimize {
+    background-image: none;
+    color: @sage-mid-gray;
   }
 
   &.k-state-hover .k-i-maximize:hover,
@@ -622,18 +628,17 @@ and (max-device-width : 1024px) {
 .k-window-titlebar {
 
   .k-window-title {
-    line-height: 24px;
+    line-height: 16px;
     position: static;
-    paddingft: 8px 2px;
     display: inline-block;
-    font-size: 20px;
+    font-size: 16px;
   }   
 
   .script-btn-group {
     display: inline-block;
     margin-left: 40px;
     position: absolute;
-    top: 28px;
+    top: 12px;
 
     .btn-script {
       font-size: 12px;
@@ -809,6 +814,7 @@ and (max-device-width : 1024px) {
   .footer-group-1 {
     border-top: none;
     padding-top: 0;
+    margin-bottom: 50px;
 
     input[class*=btn-] {
       margin: 0 0 0 6px;
@@ -1044,3 +1050,56 @@ and (max-device-width : 1024px)  {
       }
 }
 
+/* Popup header / Company Theme Color */
+/* ----------------------------------------------------------------------------------- */
+
+.k-window-titlebar.dark-bg {
+  
+  .k-window-title,
+  .k-window-actions .k-i-close{
+    color: @white;
+    font-weight: normal;
+  }
+
+  .k-window-actions .k-i-window-maximize{
+    background-position: -849px -32px;
+  }
+
+  .k-window-actions .k-i-window-restore{
+    background-position: -875px -32px;
+  }
+
+  .k-window-actions .k-i-window-minimize {
+    background-image: none;
+    color: @white;
+  }
+
+  .btn {
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+    }
+  }
+}
+
+.k-window-titlebar.light-bg {
+  
+  .k-window-title,
+  .k-window-actions .k-i-close{
+    color: #003348;
+    font-weight: normal;
+  }
+
+  .btn {
+    color: #003348;
+
+    &:hover {
+      color: #003348;
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+    }
+  }
+}

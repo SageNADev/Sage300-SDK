@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>科目</value>
+  </data>
+  <data name="AccountGroupCategoryString" xml:space="preserve">
+    <value>群組類別</value>
+  </data>
+  <data name="AccountGroupCode" xml:space="preserve">
+    <value>科目群組代碼</value>
+  </data>
+  <data name="AccountType" xml:space="preserve">
+    <value>科目類型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllocateBy" xml:space="preserve">
+    <value>分配按</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Allocation" xml:space="preserve">
+    <value>分配</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AutoAllocation" xml:space="preserve">
+    <value>自動分配</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CloseTo" xml:space="preserve">
+    <value>結轉到</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>複製</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultAccount" xml:space="preserve">
+    <value>科目</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>科目描述</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>明細</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>總帳科目</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GLAccountSelector" xml:space="preserve">
+    <value>總帳科目選擇器</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GLAccountSelectorPreview" xml:space="preserve">
+    <value>總帳科目選擇器預覽</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NormalBalanceDrorCr" xml:space="preserve">
+    <value>正常餘額</value>
+  </data>
+  <data name="PostToAccount" xml:space="preserve">
+    <value>過帳到科目</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuantityAllowed" xml:space="preserve">
+    <value>維護數量</value>
+  </data>
+  <data name="ReplaceOptFields" xml:space="preserve">
+    <value>替換自選欄位</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Rollup" xml:space="preserve">
+    <value>上捲</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectChildAccountsforParent" xml:space="preserve">
+    <value>為上捲科目選擇成員科目</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpecifiedCurrency" xml:space="preserve">
+    <value>特定幣別</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="StructureCode" xml:space="preserve">
+    <value>結構代碼</value>
+  </data>
+  <data name="Subledger" xml:space="preserve">
+    <value>輔助分類帳</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalPercent" xml:space="preserve">
+    <value>合計百分比</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransOptionalFields" xml:space="preserve">
+    <value>交易自選欄位</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>科目類型</value>
+  </data>
+  <data name="UnitofMeasure" xml:space="preserve">
+    <value>計量單位</value>
+  </data>
+  <data name="DefaultCurrency" xml:space="preserve">
+    <value>預設幣別</value>
+  </data>
+  <data name="PostIn" xml:space="preserve">
+    <value>過帳方式</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="AllCurrencies" xml:space="preserve">
+    <value>所有幣別</value>
+  </data>
+  <data name="StatusActive" xml:space="preserve">
+    <value>活動</value>
+  </data>
+  <data name="StatusInActive" xml:space="preserve">
+    <value>閒置</value>
+  </data>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>科目編號</value>
+  </data>
+  <data name="AllocationsAllowed" xml:space="preserve">
+    <value>允許分配</value>
+  </data>
+  <data name="ControlAccount" xml:space="preserve">
+    <value>控制科目</value>
+  </data>
+  <data name="Multicurrency" xml:space="preserve">
+    <value>多幣別</value>
+  </data>
+  <data name="QuantitiesAllowed" xml:space="preserve">
+    <value>允許的數量</value>
+  </data>
+  <data name="SpecificCurrency" xml:space="preserve">
+    <value>特定幣別</value>
+  </data>
+  <data name="Type1" xml:space="preserve">
+    <value>類型</value>
+  </data>
+  <data name="AccountTypes" xml:space="preserve">
+    <value>科目類型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MaintainQuantityWarning" xml:space="preserve">
+    <value>在明細索引標籤上，維護數量核取方塊已被清除，所以在分配索引標籤上，&lt;分配按&gt;已變更為&lt;來自科目數量的科目餘額&gt;。</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>必需</value>
+  </data>
+  <data name="PeriodEnding" xml:space="preserve">
+    <value>期間截止於</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>代碼</value>
+  </data>
+  <data name="EntryNumber" xml:space="preserve">
+    <value>分錄編號</value>
+  </data>
+  <data name="EquivBalance" xml:space="preserve">
+    <value>等值餘額</value>
+  </data>
+  <data name="FunctionalAmount" xml:space="preserve">
+    <value>功能幣別金額</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>期間</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>過帳序列</value>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>匯率</value>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>匯率日期</value>
+  </data>
+  <data name="RollUpQuantity" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <data name="SourceAmount" xml:space="preserve">
+    <value>來源幣別金額</value>
+  </data>
+  <data name="SourceBalance" xml:space="preserve">
+    <value>來源幣別餘額</value>
+  </data>
+  <data name="SourceCode" xml:space="preserve">
+    <value>來源代碼</value>
+  </data>
+  <data name="RollUpSegmentName" xml:space="preserve">
+    <value>節段名稱</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>幣別</value>
+  </data>
+  <data name="RollupPopPupSetMessage" xml:space="preserve">
+    <value>上捲科目{1}的成員科目{0}已被設為一個上捲科目。</value>
+  </data>
+  <data name="RollupCopyMessage" xml:space="preserve">
+    <value>處理完畢。{0}個上捲成員已建立。</value>
+  </data>
+  <data name="RollupPreviewMessage" xml:space="preserve">
+    <value>{0}個預覽成員上捲科目已建立。要複製列在此一螢幕上的科目，點擊複製。</value>
+  </data>
+  <data name="BalanceSheet" xml:space="preserve">
+    <value>資產負債表</value>
+  </data>
+  <data name="IncomeStatement" xml:space="preserve">
+    <value>損益表</value>
+  </data>
+  <data name="RetainedEarnings" xml:space="preserve">
+    <value>留存收益</value>
+  </data>
+  <data name="AccountGroupDescription" xml:space="preserve">
+    <value>科目群組描述</value>
+  </data>
+  <data name="AutoAllocationDescription" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>參考</value>
+  </data>
+  <data name="StructureCodeDescription" xml:space="preserve">
+    <value>結構描述</value>
+  </data>
+  <data name="AccountSegmentCode1" xml:space="preserve">
+    <value>科目節段代碼1</value>
+  </data>
+  <data name="AllocationAccountPercent" xml:space="preserve">
+    <value>比例</value>
+  </data>
+  <data name="CloseToSegment" xml:space="preserve">
+    <value>節段</value>
+  </data>
+  <data name="SortCode" xml:space="preserve">
+    <value>排序代碼</value>
+  </data>
+  <data name="SourceType" xml:space="preserve">
+    <value>來源類型</value>
+  </data>
+  <data name="RevaluationCode" xml:space="preserve">
+    <value>重評價代碼</value>
+  </data>
+  <data name="RevaluationSwitch" xml:space="preserve">
+    <value>重評價</value>
+  </data>
+  <data name="Accounts" xml:space="preserve">
+    <value>科目</value>
+  </data>
+  <data name="Acctgrpcpy" xml:space="preserve">
+    <value>科目群組複製</value>
+    <comment>Added for Display in Account model</comment>
+  </data>
+  <data name="Cuom" xml:space="preserve">
+    <value>Cuom</value>
+    <comment>Added for Display in Account model</comment>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>日期值</value>
+    <comment>Added for use in Display in AccountOptionalField model</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>自選欄位描述</value>
+    <comment>Added for use in Display in AccountTransOptionalField model</comment>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>文字值</value>
+    <comment>Added for use in Display in AccountTransOptionalField model</comment>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>值描述</value>
+    <comment>Added for use in Display in AccountTransOptionalField model</comment>
+  </data>
+  <data name="CurrencyDescription" xml:space="preserve">
+    <value>幣別描述</value>
+  </data>
+  <data name="ViewAccount" xml:space="preserve">
+    <value>檢視科目</value>
+  </data>
+  <data name="AddChildAccounts" xml:space="preserve">
+    <value>增加子科目</value>
+  </data>
+  <data name="RemoveChildAccounts" xml:space="preserve">
+    <value>移除子科目</value>
+  </data>
+  <data name="SourceCurrency" xml:space="preserve">
+    <value>來源幣別</value>
+  </data>
+  <data name="GL0001" xml:space="preserve">
+    <value>科目</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="GL0004" xml:space="preserve">
+    <value>科目分配描述</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="GL0012" xml:space="preserve">
+    <value>科目有效幣別</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="GL0057" xml:space="preserve">
+    <value>上捲群組</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="GL0107" xml:space="preserve">
+    <value>控制科目輔助分類帳</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="GL0400" xml:space="preserve">
+    <value>科目自選欄位</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="GL0401" xml:space="preserve">
+    <value>科目交易自選欄位</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="AccountSegmentCode10" xml:space="preserve">
+    <value>科目節段代碼10</value>
+  </data>
+  <data name="AccountSegmentCode2" xml:space="preserve">
+    <value>科目節段代碼2</value>
+  </data>
+  <data name="AccountSegmentCode3" xml:space="preserve">
+    <value>科目節段代碼3</value>
+  </data>
+  <data name="AccountSegmentCode4" xml:space="preserve">
+    <value>科目節段代碼4</value>
+  </data>
+  <data name="AccountSegmentCode5" xml:space="preserve">
+    <value>科目節段代碼5</value>
+  </data>
+  <data name="AccountSegmentCode6" xml:space="preserve">
+    <value>科目節段代碼6</value>
+  </data>
+  <data name="AccountSegmentCode7" xml:space="preserve">
+    <value>科目節段代碼7</value>
+  </data>
+  <data name="AccountSegmentCode8" xml:space="preserve">
+    <value>科目節段代碼8</value>
+  </data>
+  <data name="AccountSegmentCode9" xml:space="preserve">
+    <value>科目節段代碼9</value>
+  </data>
+  <data name="AllocationPercent" xml:space="preserve">
+    <value>分配百分比</value>
+  </data>
+  <data name="AllocOffsetAccount" xml:space="preserve">
+    <value>分配抵銷科目</value>
+  </data>
+  <data name="DateCreated" xml:space="preserve">
+    <value>建立日期</value>
+  </data>
+  <data name="FormattedRollupAccount" xml:space="preserve">
+    <value>格式化上捲科目</value>
+  </data>
+  <data name="JournalReference" xml:space="preserve">
+    <value>日誌參考</value>
+  </data>
+  <data name="MemberAccountRollupSwitch" xml:space="preserve">
+    <value>成員科目上捲開關</value>
+  </data>
+  <data name="MemberAccountType" xml:space="preserve">
+    <value>成員科目類型</value>
+  </data>
+  <data name="MemberMulticurrency" xml:space="preserve">
+    <value>成員多幣別</value>
+  </data>
+  <data name="MemberNormalBalanceDrorCr" xml:space="preserve">
+    <value>成員正常餘額借項/貸項</value>
+  </data>
+  <data name="MemberPosttoAccount" xml:space="preserve">
+    <value>成員過帳到科目</value>
+  </data>
+  <data name="MemberStatus" xml:space="preserve">
+    <value>成員狀態</value>
+  </data>
+  <data name="Reserved" xml:space="preserve">
+    <value>保留</value>
+  </data>
+  <data name="RollupAccount" xml:space="preserve">
+    <value>上捲科目</value>
+  </data>
+  <data name="RollupSwitch" xml:space="preserve">
+    <value>上捲開關</value>
+  </data>
+  <data name="UnformattedAccount" xml:space="preserve">
+    <value>非格式化科目</value>
+  </data>
+  <data name="YearLastClosed" xml:space="preserve">
+    <value>上一結轉年度</value>
+  </data>
+  <data name="FormattedMemberAccount" xml:space="preserve">
+    <value>格式化成員科目</value>
+  </data>
+  <data name="MemberAccount" xml:space="preserve">
+    <value>成員科目</value>
+  </data>
+  <data name="AccountGroupSortCode" xml:space="preserve">
+    <value>科目群組排序代碼</value>
+  </data>
+  <data name="AllocationPercentTotal" xml:space="preserve">
+    <value>分配百分比合計</value>
+  </data>
+  <data name="AllocSourceType" xml:space="preserve">
+    <value>分攤來源類型</value>
+  </data>
+  <data name="DefaultCurrencyCode" xml:space="preserve">
+    <value>預設幣別代碼</value>
+  </data>
+  <data name="NormalBalanceDRCR" xml:space="preserve">
+    <value>正常餘額借項/貸項</value>
+  </data>
+  <data name="PosttoSegmentID" xml:space="preserve">
+    <value>過帳到節段代號</value>
+  </data>
+  <data name="DistributionAccount" xml:space="preserve">
+    <value>分佈科目</value>
+  </data>
+  <data name="RevaluationSwitch1" xml:space="preserve">
+    <value>重評價開關</value>
+  </data>
+  <data name="NotAllowRetrieve" xml:space="preserve">
+    <value>您不被允許擷取科目{0}。</value>
+  </data>
+</root>

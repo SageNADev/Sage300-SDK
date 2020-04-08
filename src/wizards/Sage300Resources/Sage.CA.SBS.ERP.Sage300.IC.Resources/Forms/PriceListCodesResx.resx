@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Approval" xml:space="preserve">
+    <value>Approval</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="CostPlusFixedAmount" xml:space="preserve">
+    <value>Cost Plus a Fixed Amount</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="CostPlusPercentage" xml:space="preserve">
+    <value>Cost Plus a Percentage</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="CustomerType" xml:space="preserve">
+    <value>Customer Type</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="DiscountPercent" xml:space="preserve">
+    <value>Discount Percent</value>
+    <comment>Discounts - Column</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>I/C Price List Codes</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="FixedAmount" xml:space="preserve">
+    <value>Fixed Amount</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="Landed" xml:space="preserve">
+    <value>Landed</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="LastCost" xml:space="preserve">
+    <value>Last Cost</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="MarkupOnAverageCost" xml:space="preserve">
+    <value>Markup on Average Cost</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupOnLanded" xml:space="preserve">
+    <value>Markup on Landed</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupOnLastCost" xml:space="preserve">
+    <value>Markup on Last Cost</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupOnMarkupCost" xml:space="preserve">
+    <value>Markup on Markup Cost</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupOnMostRecentCost" xml:space="preserve">
+    <value>Markup on Most Recent Cost</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupOnStandardCost" xml:space="preserve">
+    <value>Markup on Standard Cost</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="MarkupPercent" xml:space="preserve">
+    <value>Markup Percent</value>
+    <comment>Discounts - Column</comment>
+  </data>
+  <data name="NoRounding" xml:space="preserve">
+    <value>No Rounding</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="RoundDown" xml:space="preserve">
+    <value>Round Down</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="RoundUp" xml:space="preserve">
+    <value>Round Up</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="SalesMargin" xml:space="preserve">
+    <value>Sales Margin</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="UnitPrice" xml:space="preserve">
+    <value>Unit Price</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="VolumeDiscounts" xml:space="preserve">
+    <value>Volume Discounts</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="UserNotExist" xml:space="preserve">
+    <value>Cannot find the specified user.</value>
+    <comment>Error message for Invalid User</comment>
+  </data>
+  <data name="PriceCheck" xml:space="preserve">
+    <value>Price Check</value>
+    <comment>Column Header</comment>
+  </data>
+  <data name="PriceListCodes" xml:space="preserve">
+    <value>Price List Codes</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="IC0390" xml:space="preserve">
+    <value>Price List Codes</value>
+    <comment>Used in Import/Export</comment>
+  </data>
+  <data name="IC0392" xml:space="preserve">
+    <value>Price List Codes Checks</value>
+    <comment>Used in Import/Export</comment>
+  </data>
+  <data name="IC0395" xml:space="preserve">
+    <value>Price List Code Tax Authorities</value>
+    <comment>Used in Import/Export</comment>
+  </data>
+  <data name="PriceListDescription" xml:space="preserve">
+    <value>Price List Description</value>
+    <comment>Used in Discounts tab</comment>
+  </data>
+  <data name="CostOrMarginBase" xml:space="preserve">
+    <value>Cost/Margin Base</value>
+    <comment>Price Check - List Option</comment>
+  </data>
+  <data name="DecimalsInPrice" xml:space="preserve">
+    <value>Decimals in Price</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="DiscountOrMarkupAmount1" xml:space="preserve">
+    <value>Discount/Markup Amount 1</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="DiscountOrMarkupAmount2" xml:space="preserve">
+    <value>Discount/Markup Amount 2</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="DiscountOrMarkupAmount3" xml:space="preserve">
+    <value>Discount/Markup Amount 3</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="DiscountOrMarkupAmount4" xml:space="preserve">
+    <value>Discount/Markup Amount 4</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="DiscountOrMarkupAmount5" xml:space="preserve">
+    <value>Discount/Markup Amount 5</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="DiscountOrMarkuponPriceby" xml:space="preserve">
+    <value>Discount/Markup on Price by</value>
+    <comment>Discounts - List Option</comment>
+  </data>
+  <data name="DiscountOrMarkupPercentage1" xml:space="preserve">
+    <value>Discount/Markup Percentage 1</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="DiscountOrMarkupPercentage2" xml:space="preserve">
+    <value>Discount/Markup Percentage 2</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="DiscountOrMarkupPercentage3" xml:space="preserve">
+    <value>Discount/Markup Percentage 3</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="DiscountOrMarkupPercentage4" xml:space="preserve">
+    <value>Discount/Markup Percentage 4</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="DiscountOrMarkupPercentage5" xml:space="preserve">
+    <value>Discount/Markup Percentage 5</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="QuantityLevel1" xml:space="preserve">
+    <value>Quantity Level 1</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="QuantityLevel2" xml:space="preserve">
+    <value>Quantity Level 2</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="QuantityLevel3" xml:space="preserve">
+    <value>Quantity Level 3</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="QuantityLevel4" xml:space="preserve">
+    <value>Quantity Level 4</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="QuantityLevel5" xml:space="preserve">
+    <value>Quantity Level 5</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="WeightLevel1" xml:space="preserve">
+    <value>Weight Level 1</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="WeightLevel2" xml:space="preserve">
+    <value>Weight Level 2</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="WeightLevel3" xml:space="preserve">
+    <value>Weight Level 3</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="WeightLevel4" xml:space="preserve">
+    <value>Weight Level 4</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="WeightLevel5" xml:space="preserve">
+    <value>Weight Level 5</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="TaxIncludedinPrice" xml:space="preserve">
+    <value>Tax Included in Price</value>
+    <comment>Finder column header</comment>
+  </data>
+  <data name="ClassNumber" xml:space="preserve">
+    <value>Class Number</value>
+    <comment>Used in validation</comment>
+  </data>
+  <data name="CheckDefaultWUOM" xml:space="preserve">
+    <value>Check (in Default Weight Unit of Measure)</value>
+    <comment>List Label</comment>
+  </data>
+  <data name="CheckItemStockingUOM" xml:space="preserve">
+    <value>Check (in Item's Stocking Unit of Measure)</value>
+    <comment>List Label</comment>
+  </data>
+</root>

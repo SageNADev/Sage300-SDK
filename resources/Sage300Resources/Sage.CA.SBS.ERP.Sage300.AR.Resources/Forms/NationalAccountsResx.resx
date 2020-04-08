@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountSet" xml:space="preserve">
+    <value>Account Set</value>
+    <comment>Processing - Row</comment>
+  </data>
+  <data name="Add1" xml:space="preserve">
+    <value>Address Line 1</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Add2" xml:space="preserve">
+    <value>Address Line 2</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Add3" xml:space="preserve">
+    <value>Address Line 3</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Add4" xml:space="preserve">
+    <value>Address Line 4</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Allow Blank</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="AmountRetainedCustCurr" xml:space="preserve">
+    <value>Amount Retained - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="AmountRetainedFuncCurr" xml:space="preserve">
+    <value>Amount Retained - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Amount Value</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="AutocashProfile" xml:space="preserve">
+    <value>Autocash Profile</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="AverageDaystoPay" xml:space="preserve">
+    <value>Average Days to Pay</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="BalanceDueinCustCurr" xml:space="preserve">
+    <value>Balance Due in Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="BalanceDueinFuncCurr" xml:space="preserve">
+    <value>Balance Due in Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="BalanceForwardCustCurr" xml:space="preserve">
+    <value>Balance Forward Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="BalanceForwardFuncCurr" xml:space="preserve">
+    <value>Balance Forward Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="CheckCreditLimit" xml:space="preserve">
+    <value>Check Credit Limit</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="CheckOverdueAmounts" xml:space="preserve">
+    <value>Check Overdue Amounts</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+    <comment>Processing - Column</comment>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Create New</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CurrencyDesc" xml:space="preserve">
+    <value>Currency Description</value>
+    <comment>Processing - Field</comment>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>Currency Type</value>
+    <comment>Statistics - Field</comment>
+  </data>
+  <data name="DateBalanceForwardBegins" xml:space="preserve">
+    <value>Date Balance Forward Begins</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateLastMaintained" xml:space="preserve">
+    <value>Date Last Maintained</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofHighestBalance" xml:space="preserve">
+    <value>Date of Highest Balance</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofHighestBalLastYr" xml:space="preserve">
+    <value>Date of Highest Balance Last Year</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLargestInvoice" xml:space="preserve">
+    <value>Date of Largest Invoice</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLargestInvoiceLastYr" xml:space="preserve">
+    <value>Date of Largest Invoice Last Year</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastActivity" xml:space="preserve">
+    <value>Date of Last Activity</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastAdjustment" xml:space="preserve">
+    <value>Date of Last Adjustment</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastCreditNote" xml:space="preserve">
+    <value>Date of Last Credit Note</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastDebitNote" xml:space="preserve">
+    <value>Date of Last Debit Note</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastDiscount" xml:space="preserve">
+    <value>Date of Last Discount</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastInterestCharge" xml:space="preserve">
+    <value>Date of Last Interest Charge</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastInvoice" xml:space="preserve">
+    <value>Date of Last Invoice</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastReceipt" xml:space="preserve">
+    <value>Date of Last Receipt</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastRefund" xml:space="preserve">
+    <value>Date of Last Refund</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastRefund1" xml:space="preserve">
+    <value>Date of Last Refund</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastReturnedCheck" xml:space="preserve">
+    <value>Date of Last Returned Check</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastStatement" xml:space="preserve">
+    <value>Date of Last Statement</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastStatement1" xml:space="preserve">
+    <value>Date of Last Statement</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateofLastWriteOff" xml:space="preserve">
+    <value>Date of Last Write-Off</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Date Value</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="DaysUntilARTransAreOverdue" xml:space="preserve">
+    <value>Transactions Overdue by (Days)</value>
+    <comment>Processing - Group Check Box</comment>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimals</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="EnableYTDCalculations" xml:space="preserve">
+    <value>Enable YTD Calculations</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>A/R National Accounts</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="GroupCodeDesc" xml:space="preserve">
+    <value>Group Code Description</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="HighBalLastYrCustCurr" xml:space="preserve">
+    <value>Highest Balance Last Year - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="HighBalLastYrFuncCurr" xml:space="preserve">
+    <value>Highest Balance Last Year - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="HighestBalanceCustCurr" xml:space="preserve">
+    <value>Highest Balance - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="HighestBalanceFuncCurr" xml:space="preserve">
+    <value>Highest Balance - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Integer Value</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="LargestInvoiceCustCurr" xml:space="preserve">
+    <value>Largest Invoice - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LargestInvoiceFuncCurr" xml:space="preserve">
+    <value>Largest Invoice - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LargestInvoiceNumber" xml:space="preserve">
+    <value>Largest Invoice Number</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LargestInvoiceNumberLastYr" xml:space="preserve">
+    <value>Largest Invoice Number Last Year</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastAdjAmtCustCurr" xml:space="preserve">
+    <value>Last Adjustment Amount - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastAdjAmtFuncCurr" xml:space="preserve">
+    <value>Last Adjustment Amount - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastCrNoteAmtCustCurr" xml:space="preserve">
+    <value>Last Credit Note Amount - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastCrNoteAmtFuncCurr" xml:space="preserve">
+    <value>Last Credit Note Amount - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastDiscountAmtCustCurr" xml:space="preserve">
+    <value>Last Discount Amount - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastDiscountAmtFuncCurr" xml:space="preserve">
+    <value>Last Discount Amount - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastDrNoteAmtCustCurr" xml:space="preserve">
+    <value>Last Debit Note Amount - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastDrNoteAmtFuncCurr" xml:space="preserve">
+    <value>Last Debit Note Amount - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastIntChargeCustCurr" xml:space="preserve">
+    <value>Last Interest Charge - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastIntChargeFuncCurr" xml:space="preserve">
+    <value>Last Interest Charge - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastInvoiceAmtCustCurr" xml:space="preserve">
+    <value>Last Invoice Amount - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastInvoiceAmtFuncCurr" xml:space="preserve">
+    <value>Last Invoice Amount - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastReceiptCustCurr" xml:space="preserve">
+    <value>Last Receipt - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastReceiptFuncCurr" xml:space="preserve">
+    <value>Last Receipt - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRefundAmtCustCurr" xml:space="preserve">
+    <value>Last Refund Amount - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRefundAmtCustCurr1" xml:space="preserve">
+    <value>Last Refund Amount - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRefundAmtFuncCurr" xml:space="preserve">
+    <value>Last Refund Amount - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRefundAmtFuncCurr1" xml:space="preserve">
+    <value>Last Refund Amount - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRetdChkAmtCustCurr" xml:space="preserve">
+    <value>Last Returned Check Amount - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastRetdChkAmtFuncCurr" xml:space="preserve">
+    <value>Last Returned Check Amount - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastStatementTotalCustCurr" xml:space="preserve">
+    <value>Last Statement Total - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastStatementTotalFuncCurr" xml:space="preserve">
+    <value>Last Statement Total - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastWriteOffAmtCustCurr" xml:space="preserve">
+    <value>Last Write-Off Amount - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LastWriteOffAmtFuncCurr" xml:space="preserve">
+    <value>Last Write-Off Amount - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LgstInvLastYrCustCurr" xml:space="preserve">
+    <value>Largest Invoice Last Year - Customer Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="LgstInvLastYrFuncCurr" xml:space="preserve">
+    <value>Largest Invoice Last Year - Functional Currency</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="NationalAccountName" xml:space="preserve">
+    <value>National Account Name</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NationalAccountNo1" xml:space="preserve">
+    <value>National Account Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NationalAccountStatus" xml:space="preserve">
+    <value>National Account Status</value>
+    <comment>Activity - Group</comment>
+  </data>
+  <data name="NumberofAdjustments" xml:space="preserve">
+    <value>Number of Adjustments</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofCreditNotes" xml:space="preserve">
+    <value>Number of Credit Notes</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofDaystoPay" xml:space="preserve">
+    <value>Number of Days to Pay</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="NumberofDebitNotes" xml:space="preserve">
+    <value>Number of Debit Notes</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofDiscounts" xml:space="preserve">
+    <value>Number of Discounts</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofInterestCharges" xml:space="preserve">
+    <value>Number of Interest Charges</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofInvoices" xml:space="preserve">
+    <value>Number of Invoices</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofInvoicesPaid" xml:space="preserve">
+    <value>Number of Invoices Paid</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofOpenDocuments" xml:space="preserve">
+    <value>Number of Open Documents</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="NumberofPaidInvoices" xml:space="preserve">
+    <value>Number of Paid Invoices</value>
+    <comment>National_Accounts</comment>
+  </data>
+  <data name="NumberofReceipts" xml:space="preserve">
+    <value>Number of Receipts</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofRefunds" xml:space="preserve">
+    <value>Number of Refunds</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofReturnedChecks" xml:space="preserve">
+    <value>Number of Returned Checks</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberofWriteOffs" xml:space="preserve">
+    <value>Number of Write-Offs</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Number Value</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="OpenInvoiceCount" xml:space="preserve">
+    <value>Open Invoice Count</value>
+    <comment>Activity - Group Field</comment>
+  </data>
+  <data name="OptionalFieldDesc" xml:space="preserve">
+    <value>Optional Field Description</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="OverdueLimitOverdueDays" xml:space="preserve">
+    <value>Have Total Amount Exceeding</value>
+    <comment>Processing - Group Field</comment>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>Period</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>Rate Type Description</value>
+    <comment>Processing - Field</comment>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Text Value</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>Time Value</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="TotalAdjustmentsinCustCurr" xml:space="preserve">
+    <value>Total Adjustments in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalAdjustmentsinFuncCurr" xml:space="preserve">
+    <value>Total Adjustments in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalCreditsinCustCurr" xml:space="preserve">
+    <value>Total Credits in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalCreditsinFuncCurr" xml:space="preserve">
+    <value>Total Credits in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalDebitsinCustCurr" xml:space="preserve">
+    <value>Total Debits in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalDebitsinFuncCurr" xml:space="preserve">
+    <value>Total Debits in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalDiscountsinCustCurr" xml:space="preserve">
+    <value>Total Discounts in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalDiscountsinFuncCurr" xml:space="preserve">
+    <value>Total Discounts in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInterestinCustCurr" xml:space="preserve">
+    <value>Total Interest in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInterestinFuncCurr" xml:space="preserve">
+    <value>Total Interest in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInvoicesinCustCurr" xml:space="preserve">
+    <value>Total Invoices in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInvoicesinFuncCurr" xml:space="preserve">
+    <value>Total Invoices in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInvoicesPaidCustCurr" xml:space="preserve">
+    <value>Total Invoices Paid in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalInvoicesPaidFuncCurr" xml:space="preserve">
+    <value>Total Invoices Paid in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalReceiptsinCustCurr" xml:space="preserve">
+    <value>Total Receipts in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalReceiptsinFuncCurr" xml:space="preserve">
+    <value>Total Receipts in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalRefundsinCustCurr" xml:space="preserve">
+    <value>Total Refunds in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalRefundsinFuncCurr" xml:space="preserve">
+    <value>Total Refunds in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalRetdChecksCustCurr" xml:space="preserve">
+    <value>Total Returned Checks in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalRetdChecksFuncCurr" xml:space="preserve">
+    <value>Total Returned Checks in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalWriteOffsinCustCurr" xml:space="preserve">
+    <value>Total Write-Offs in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TotalWriteOffsinFuncCurr" xml:space="preserve">
+    <value>Total Write-Offs in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Typed Value Field Index</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validate</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueDesc" xml:space="preserve">
+    <value>Value Description</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Value Set</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Year</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YesOrNoValue" xml:space="preserve">
+    <value>Yes/No Value</value>
+    <comment>National_Account_Optional_Field</comment>
+  </data>
+  <data name="YTDAdjustmentsinCustCurr" xml:space="preserve">
+    <value>YTD Adjustments in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDAdjustmentsinFuncCurr" xml:space="preserve">
+    <value>YTD Adjustments in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDAverageDaystoPay" xml:space="preserve">
+    <value>YTD Average Days to Pay</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDCreditsinCustCurr" xml:space="preserve">
+    <value>YTD Credits in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDCreditsinFuncCurr" xml:space="preserve">
+    <value>YTD Credits in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDDebitsinCustCurr" xml:space="preserve">
+    <value>YTD Debits in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDDebitsinFuncCurr" xml:space="preserve">
+    <value>YTD Debits in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDDIscountsinCustCurr" xml:space="preserve">
+    <value>YTD DIscounts in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDDiscountsinFuncCurr" xml:space="preserve">
+    <value>YTD Discounts in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInterestinCustCurr" xml:space="preserve">
+    <value>YTD Interest in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInterestinFuncCurr" xml:space="preserve">
+    <value>YTD Interest in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInvoicesinCustCurr" xml:space="preserve">
+    <value>YTD Invoices in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInvoicesinFuncCurr" xml:space="preserve">
+    <value>YTD Invoices in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInvoicesPdinCustCurr" xml:space="preserve">
+    <value>YTD Invoices Paid in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDInvoicesPdinFuncCurr" xml:space="preserve">
+    <value>YTD Invoices Paid in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofAdjustments" xml:space="preserve">
+    <value>YTD Number of Adjustments</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofCredits" xml:space="preserve">
+    <value>YTD Number of Credits</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofDaystoPay" xml:space="preserve">
+    <value>YTD Number of Days to Pay</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofDebits" xml:space="preserve">
+    <value>YTD Number of Debits</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofDiscounts" xml:space="preserve">
+    <value>YTD Number of Discounts</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofInterestChanges" xml:space="preserve">
+    <value>YTD Number of Interest Charges</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofInvoices" xml:space="preserve">
+    <value>YTD Number of Invoices</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofInvoicesPaid" xml:space="preserve">
+    <value>YTD Number of Invoices Paid</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofReceipts" xml:space="preserve">
+    <value>YTD Number of Receipts</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofRefunds" xml:space="preserve">
+    <value>YTD Number of Refunds</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofReturnedChecks" xml:space="preserve">
+    <value>YTD Number of Returned Checks</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDNumberofWriteOffs" xml:space="preserve">
+    <value>YTD Number of Write-Offs</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDReceiptsinCustCurr" xml:space="preserve">
+    <value>YTD Receipts in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDReceiptsinFuncCurr" xml:space="preserve">
+    <value>YTD Receipts in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDRefundsinCustCurr" xml:space="preserve">
+    <value>YTD Refunds in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDRefundsinFuncCurr" xml:space="preserve">
+    <value>YTD Refunds in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDRetdChecksinCustCurr" xml:space="preserve">
+    <value>YTD Returned Checks in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDRetdChecksinFuncCurr" xml:space="preserve">
+    <value>YTD Returned Checks in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDWriteOffsinCustCurr" xml:space="preserve">
+    <value>YTD Write-Offs in Customer Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="YTDWriteOffsinFuncCurr" xml:space="preserve">
+    <value>YTD Write-Offs in Functional Currency</value>
+    <comment>National_Account_Statistics</comment>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Contact Name</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="ContactsEmail" xml:space="preserve">
+    <value>Contact's Email</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="ContactsFax" xml:space="preserve">
+    <value>Contact's Fax</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="ContactsPhone" xml:space="preserve">
+    <value>Contact's Phone</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="CreditBureauDate" xml:space="preserve">
+    <value>Credit Bureau Date</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="CreditBureauNumber" xml:space="preserve">
+    <value>Credit Bureau Number</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value>Fax Number</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone Number</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>Process Command Code</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="WebSite" xml:space="preserve">
+    <value>Web Site</value>
+    <comment>National Account Finder - Column Header</comment>
+  </data>
+  <data name="InvalidPeriod" xml:space="preserve">
+    <value>Cannot find Period {0}.</value>
+    <comment>Validation message</comment>
+  </data>
+  <data name="AR0028" xml:space="preserve">
+    <value>National Accounts</value>
+  </data>
+  <data name="AR0029" xml:space="preserve">
+    <value>National Account Statistics</value>
+  </data>
+  <data name="AR0411" xml:space="preserve">
+    <value>National Account Optional Field</value>
+  </data>
+</root>

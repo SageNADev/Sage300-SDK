@@ -1,0 +1,4388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AP_1099CPRSCodes_Article1" xml:space="preserve">
+    <value>Ajouter des codes 1099/SDPC</value>
+  </data>
+  <data name="AP_1099CPRSCodes_Article2" xml:space="preserve">
+    <value>À propos des codes 1099/SDPC</value>
+  </data>
+  <data name="AP_1099CPRSCodes_Screen" xml:space="preserve">
+    <value>Écran Codes 1099/SDPC de CF</value>
+  </data>
+  <data name="AP_1099CPRSInquiry_Article1" xml:space="preserve">
+    <value>Ajouter, modifier ou supprimer le montant 1099 ou SDPC d’un fournisseur</value>
+  </data>
+  <data name="AP_1099CPRSInquiry_Article2" xml:space="preserve">
+    <value>Consulter les montants 1099 ou SDPC d’un fournisseur</value>
+  </data>
+  <data name="AP_1099CPRSInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation de 1099/SDPC de CF</value>
+  </data>
+  <data name="AP_1099ElectronicFiling_Article1" xml:space="preserve">
+    <value>Transmission électronique des déclarations 1099</value>
+  </data>
+  <data name="AP_1099ElectronicFiling_Article2" xml:space="preserve">
+    <value>Écran Imprimer formules 1099/1096 de CF</value>
+  </data>
+  <data name="AP_1099ElectronicFiling_Screen" xml:space="preserve">
+    <value>Écran Transmission électronique des déclarations 1099 de CF</value>
+  </data>
+  <data name="AP_AccountSets_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier un groupe de comptes</value>
+  </data>
+  <data name="AP_AccountSets_Article2" xml:space="preserve">
+    <value>À propos des groupes de comptes</value>
+  </data>
+  <data name="AP_AccountSets_Screen" xml:space="preserve">
+    <value>Écran Groupes de comptes de CF</value>
+  </data>
+  <data name="AP_AgedCashRequirements_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Besoins de financement âgés</value>
+  </data>
+  <data name="AP_AgedCashRequirements_Report_Article2" xml:space="preserve">
+    <value>Modèles personnalisables pour les formulaires imprimés de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_AgedCashRequirements_Report_Screen" xml:space="preserve">
+    <value>Rapport Besoins de financement âgés de CF</value>
+  </data>
+  <data name="AP_AgedPayables_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Comptes fournisseurs âgés</value>
+  </data>
+  <data name="AP_AgedPayables_Report_Article2" xml:space="preserve">
+    <value>Modèles personnalisables pour les formulaires imprimés de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_AgedPayables_Report_Screen" xml:space="preserve">
+    <value>Rapport Comptes fournisseurs âgés de CF</value>
+  </data>
+  <data name="AP_AgedRetainage_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Retenue de garantie âgée</value>
+  </data>
+  <data name="AP_AgedRetainage_Report_Article2" xml:space="preserve">
+    <value>Modèles personnalisables pour les formulaires imprimés de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_AgedRetainage_Report_Screen" xml:space="preserve">
+    <value>Rapport Retenue de garantie âgée de CF</value>
+  </data>
+  <data name="AP_BatchListing_Report_Article1" xml:space="preserve">
+    <value>Imprimer des listes de lots</value>
+  </data>
+  <data name="AP_BatchListing_Report_Article2" xml:space="preserve">
+    <value>Modèles personnalisables pour les formulaires imprimés de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_BatchListing_Report_Screen" xml:space="preserve">
+    <value>Rapport Liste des lots de CF</value>
+  </data>
+  <data name="AP_CheckRegister_Report_Article1" xml:space="preserve">
+    <value>Imprimer un registre de chèques</value>
+  </data>
+  <data name="AP_CheckRegister_Report_Article2" xml:space="preserve">
+    <value>Modèles personnalisables pour les formulaires imprimés de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_CheckRegister_Report_Screen" xml:space="preserve">
+    <value>Rapport Registre des chèques de CF</value>
+  </data>
+  <data name="AP_ControlPayments_Article1" xml:space="preserve">
+    <value>Imputer des contrôles de paiements</value>
+  </data>
+  <data name="AP_ControlPayments_Article2" xml:space="preserve">
+    <value>À propos du contrôle des paiements</value>
+  </data>
+  <data name="AP_ControlPayments_Screen" xml:space="preserve">
+    <value>Écran Contrôle des paiements de CF</value>
+  </data>
+  <data name="AP_CreateGLBatch_Article1" xml:space="preserve">
+    <value>À propos de la création de transactions de Grand livre</value>
+  </data>
+  <data name="AP_CreateGLBatch_Article2" xml:space="preserve">
+    <value>Créer des lots de transactions pour Grand livre</value>
+  </data>
+  <data name="AP_CreateGLBatch_Screen" xml:space="preserve">
+    <value>Écran Créer lot du GL de CF</value>
+  </data>
+  <data name="AP_CreatePaymentBatch_Article1" xml:space="preserve">
+    <value>Créer automatiquement un lot de paiements</value>
+  </data>
+  <data name="AP_CreatePaymentBatch_Article2" xml:space="preserve">
+    <value>Travailler avec des lots de paiements</value>
+  </data>
+  <data name="AP_CreatePaymentBatch_Screen" xml:space="preserve">
+    <value>Écran Créer lot de paiements de CF</value>
+  </data>
+  <data name="AP_CreateRecurringPayablesBatch_Article1" xml:space="preserve">
+    <value>À propos du traitement de factures récurrentes</value>
+  </data>
+  <data name="AP_CreateRecurringPayablesBatch_Article2" xml:space="preserve">
+    <value>Traiter des factures récurrentes</value>
+  </data>
+  <data name="AP_CreateRecurringPayablesBatch_Screen" xml:space="preserve">
+    <value>Écran Créer lot de factures récurrentes de CF</value>
+  </data>
+  <data name="AP_DistributionCodes_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier un code de ventilation</value>
+  </data>
+  <data name="AP_DistributionCodes_Article2" xml:space="preserve">
+    <value>À propos des codes de ventilation</value>
+  </data>
+  <data name="AP_DistributionCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de ventilations de CF</value>
+  </data>
+  <data name="AP_DistributionSets_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier des séries de ventilation</value>
+  </data>
+  <data name="AP_DistributionSets_Article2" xml:space="preserve">
+    <value>À propos des séries de ventilation</value>
+  </data>
+  <data name="AP_DistributionSets_Screen" xml:space="preserve">
+    <value>Écran Séries de ventilation de CF</value>
+  </data>
+  <data name="AP_EmailMessages_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier des courriels</value>
+  </data>
+  <data name="AP_EmailMessages_Article2" xml:space="preserve">
+    <value>À propos des messages électroniques</value>
+  </data>
+  <data name="AP_EmailMessages_Screen" xml:space="preserve">
+    <value>Écran Courriels de CF</value>
+  </data>
+  <data name="AP_GL_Integration_Article1" xml:space="preserve">
+    <value>Sélectionner des options d’intégration du Grand livre pour Comptes fournisseurs</value>
+  </data>
+  <data name="AP_GL_Integration_Article2" xml:space="preserve">
+    <value>À propos de l'utilisation de Comptes fournisseurs avec Grand livre</value>
+  </data>
+  <data name="AP_GL_Integration_Screen" xml:space="preserve">
+    <value>Écran Intégration du GL de CF</value>
+  </data>
+  <data name="AP_GL_Transactions_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Transactions du GL</value>
+  </data>
+  <data name="AP_GL_Transactions_Report_Article2" xml:space="preserve">
+    <value>Modèles personnalisables pour les formulaires imprimés de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_GL_Transactions_Report_Screen" xml:space="preserve">
+    <value>Rapport Transactions du GL de CF</value>
+  </data>
+  <data name="AP_InvoiceBatchList_Article1" xml:space="preserve">
+    <value>Créer un nouveau lot de factures</value>
+  </data>
+  <data name="AP_InvoiceBatchList_Article2" xml:space="preserve">
+    <value>À propos du traitement de lots dans Comptes fournisseurs</value>
+  </data>
+  <data name="AP_InvoiceBatchList_Screen" xml:space="preserve">
+    <value>Écran Liste des lots de factures de CF</value>
+  </data>
+  <data name="AP_InvoiceEntry_Article1" xml:space="preserve">
+    <value>Saisir une facture</value>
+  </data>
+  <data name="AP_InvoiceEntry_Article2" xml:space="preserve">
+    <value>À propos du traitement des factures, des notes de crédit, des notes de débit et des intérêts</value>
+  </data>
+  <data name="AP_InvoiceEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des factures de CF</value>
+  </data>
+  <data name="AP_LettersAndLabels_Report_Article1" xml:space="preserve">
+    <value>Imprimer des lettres et des étiquettes</value>
+  </data>
+  <data name="AP_LettersAndLabels_Report_Article2" xml:space="preserve">
+    <value>Modèles personnalisables pour les formulaires imprimés de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_LettersAndLabels_Report_Screen" xml:space="preserve">
+    <value>Rapport Lettres et étiquettes de CF</value>
+  </data>
+  <data name="AP_Module" xml:space="preserve">
+    <value>Parcourir les articles de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_OptionalFields_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier un champ optionnel</value>
+  </data>
+  <data name="AP_OptionalFields_Article2" xml:space="preserve">
+    <value>À propos des champs optionnels de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_OptionalFields_Screen" xml:space="preserve">
+    <value>Écran Champs optionnels de CF</value>
+  </data>
+  <data name="AP_Options_Article1" xml:space="preserve">
+    <value>Sélectionner des options pour Comptes fournisseurs</value>
+  </data>
+  <data name="AP_Options_Article2" xml:space="preserve">
+    <value>À propos de la sélection d'options pour Comptes fournisseurs</value>
+  </data>
+  <data name="AP_Options_Screen" xml:space="preserve">
+    <value>Écran Options de CF</value>
+  </data>
+  <data name="AP_PaymentBatchList_Article1" xml:space="preserve">
+    <value>Liste des lots de paiements</value>
+  </data>
+  <data name="AP_PaymentBatchList_Article2" xml:space="preserve">
+    <value>À propos du traitement de lots dans Comptes fournisseurs</value>
+  </data>
+  <data name="AP_PaymentBatchList_Screen" xml:space="preserve">
+    <value>Écran Liste des lots de paiements de CF</value>
+  </data>
+  <data name="AP_PaymentCodes_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier un code de paiement</value>
+  </data>
+  <data name="AP_PaymentCodes_Article2" xml:space="preserve">
+    <value>À propos des codes de sélection de paiement</value>
+  </data>
+  <data name="AP_PaymentCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de paiement de CF</value>
+  </data>
+  <data name="AP_PaymentEntry_Article1" xml:space="preserve">
+    <value>Saisir et imputer un paiement</value>
+  </data>
+  <data name="AP_PaymentEntry_Article2" xml:space="preserve">
+    <value>À propos de la saisie de paiements</value>
+  </data>
+  <data name="AP_PaymentEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des paiements de CF</value>
+  </data>
+  <data name="AP_PaymentInquiry_Article1" xml:space="preserve">
+    <value>Consulter les informations de paiement d'un fournisseur</value>
+  </data>
+  <data name="AP_PaymentInquiry_Article2" xml:space="preserve">
+    <value>Écran Données de paiement de CF</value>
+  </data>
+  <data name="AP_PaymentInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation de paiement de CF</value>
+  </data>
+  <data name="AP_PaymentSelectionCodes_Article1" xml:space="preserve">
+    <value>Ajouter des codes de sélection de paiement</value>
+  </data>
+  <data name="AP_PaymentSelectionCodes_Article2" xml:space="preserve">
+    <value>À propos des codes de sélection de paiement</value>
+  </data>
+  <data name="AP_PaymentSelectionCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de sélection de paiement de CF</value>
+  </data>
+  <data name="AP_PostBatches_Article1" xml:space="preserve">
+    <value>Reporter une plage de lots</value>
+  </data>
+  <data name="AP_PostBatches_Article2" xml:space="preserve">
+    <value>À propos du traitement de lots dans Comptes fournisseurs</value>
+  </data>
+  <data name="AP_PostBatches_Screen" xml:space="preserve">
+    <value>Écran Report des lots de CF</value>
+  </data>
+  <data name="AP_PostingErrors_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Erreurs de report</value>
+  </data>
+  <data name="AP_PostingErrors_Report_Article2" xml:space="preserve">
+    <value>Modèles personnalisables pour les formulaires imprimés de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_PostingErrors_Report_Screen" xml:space="preserve">
+    <value>Rapport Erreurs de report de CF</value>
+  </data>
+  <data name="AP_Print10991096Forms_Article1" xml:space="preserve">
+    <value>Impression des formulaires 1099/1096</value>
+  </data>
+  <data name="AP_Print10991096Forms_Article2" xml:space="preserve">
+    <value>Écran Transmission électronique des déclarations 1099 de CF</value>
+  </data>
+  <data name="AP_Print10991096Forms_Screen" xml:space="preserve">
+    <value>Écran Imprimer formules 1099/1096 de CF</value>
+  </data>
+  <data name="AP_PrintChecks_PopUp_Article1" xml:space="preserve">
+    <value>À propos de l'impression de chèques</value>
+  </data>
+  <data name="AP_PrintChecks_PopUp_Article2" xml:space="preserve">
+    <value>Imprimer des chèques pour un lot de paiements</value>
+  </data>
+  <data name="AP_PrintChecks_PopUp_Screen" xml:space="preserve">
+    <value>Écran Impression des chèques de CF</value>
+  </data>
+  <data name="AP_PrintT5018CPRSForms_Article1" xml:space="preserve">
+    <value>Impression des formules T5018 (SDPC)</value>
+  </data>
+  <data name="AP_PrintT5018CPRSForms_Article2" xml:space="preserve">
+    <value>Écran Transmission électronique des déclarations T5018 de CF</value>
+  </data>
+  <data name="AP_PrintT5018CPRSForms_Screen" xml:space="preserve">
+    <value>Écran Imprimer formules T5018 (SDPC) de CF</value>
+  </data>
+  <data name="AP_RecurringPayables_Article1" xml:space="preserve">
+    <value>Traiter des factures récurrentes</value>
+  </data>
+  <data name="AP_RecurringPayables_Article2" xml:space="preserve">
+    <value>À propos des factures récurrentes</value>
+  </data>
+  <data name="AP_RecurringPayables_Screen" xml:space="preserve">
+    <value>Écran Factures récurrentes de CF</value>
+  </data>
+  <data name="AP_Setup_EmailMessages_LearnMore" xml:space="preserve">
+    <value>En savoir plus</value>
+  </data>
+  <data name="AP_Setup_Terms_LearnMore" xml:space="preserve">
+    <value>En savoir plus</value>
+  </data>
+  <data name="AP_Setup_Terms_LearnMore2" xml:space="preserve">
+    <value>En savoir plus</value>
+  </data>
+  <data name="AP_Setup_Terms_LearnMore3" xml:space="preserve">
+    <value>En savoir plus</value>
+  </data>
+  <data name="AP_Setup_Terms_LearnMore4" xml:space="preserve">
+    <value>En savoir plus</value>
+  </data>
+  <data name="AP_T5018CPRSElectronicFiling_Article1" xml:space="preserve">
+    <value>Transmission électronique des déclarations T5018 (SDPC)</value>
+  </data>
+  <data name="AP_T5018CPRSElectronicFiling_Article2" xml:space="preserve">
+    <value>Écran Imprimer formules T5018 (SDPC) de CF</value>
+  </data>
+  <data name="AP_T5018CPRSElectronicFiling_Screen" xml:space="preserve">
+    <value>Écran Transmission électronique des déclarations T5018 (SDPC) de CF</value>
+  </data>
+  <data name="AP_Terms_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier un code de modalités</value>
+  </data>
+  <data name="AP_Terms_Article2" xml:space="preserve">
+    <value>À propos des codes de modalités</value>
+  </data>
+  <data name="AP_Terms_Screen" xml:space="preserve">
+    <value>Écran Modalités de CF</value>
+  </data>
+  <data name="AP_VendorActivity_Article1" xml:space="preserve">
+    <value>Consulter l'activité des fournisseurs</value>
+  </data>
+  <data name="AP_VendorActivity_Article2" xml:space="preserve">
+    <value>Écran Fournisseurs de CF</value>
+  </data>
+  <data name="AP_VendorActivity_Screen" xml:space="preserve">
+    <value>Écran Activité du fournisseur de CF</value>
+  </data>
+  <data name="AP_VendorGroups_Article1" xml:space="preserve">
+    <value>Ajouter, modifier ou supprimer un groupe de fournisseurs</value>
+  </data>
+  <data name="AP_VendorGroups_Article2" xml:space="preserve">
+    <value>À propos des groupes de fournisseurs</value>
+  </data>
+  <data name="AP_VendorGroups_Screen" xml:space="preserve">
+    <value>Écran Groupes de fournisseurs de CF</value>
+  </data>
+  <data name="AP_VendorsReport_Article1" xml:space="preserve">
+    <value>À propos de la configuration des enregistrements de fournisseurs</value>
+  </data>
+  <data name="AP_VendorsReport_Article2" xml:space="preserve">
+    <value>Imprimer des rapports de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_VendorsReport_Screen" xml:space="preserve">
+    <value>Rapport Fournisseurs de CF</value>
+  </data>
+  <data name="AP_Vendors_Article1" xml:space="preserve">
+    <value>Ajouter, modifier ou supprimer un fournisseur</value>
+  </data>
+  <data name="AP_Vendors_Article2" xml:space="preserve">
+    <value>À propos de la configuration des enregistrements de fournisseurs</value>
+  </data>
+  <data name="AP_Vendors_Screen" xml:space="preserve">
+    <value>Écran Fournisseurs de CF</value>
+  </data>
+  <data name="AP_VendorTransactions_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Transactions des fournisseurs</value>
+  </data>
+  <data name="AP_VendorTransactions_Report_Article2" xml:space="preserve">
+    <value>Modèles personnalisables pour les formulaires imprimés de Comptes fournisseurs</value>
+  </data>
+  <data name="AP_VendorTransactions_Report_Screen" xml:space="preserve">
+    <value>Rapport Transactions des fournisseurs de CF</value>
+  </data>
+  <data name="AP_YearEnd_Article1" xml:space="preserve">
+    <value>À propos du traitement de fin d'exercice dans Comptes fournisseurs</value>
+  </data>
+  <data name="AP_YearEnd_Article2" xml:space="preserve">
+    <value>Débuter un nouvel exercice</value>
+  </data>
+  <data name="AP_YearEnd_Screen" xml:space="preserve">
+    <value>Écran Fin de l’exercice de CF</value>
+  </data>
+  <data name="AR_AccountSets_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier des groupes de comptes</value>
+  </data>
+  <data name="AR_AccountSets_Article2" xml:space="preserve">
+    <value>À propos des groupes de comptes</value>
+  </data>
+  <data name="AR_AccountSets_Screen" xml:space="preserve">
+    <value>Écran Groupes de comptes de CC</value>
+  </data>
+  <data name="AR_AgedRetainage_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Âge - Retenue de garantie de CC</value>
+  </data>
+  <data name="AR_AgedRetainage_Report_Article2" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+  </data>
+  <data name="AR_AgedRetainage_Report_Screen" xml:space="preserve">
+    <value>Rapport Retenue de garantie âgée de CC</value>
+  </data>
+  <data name="AR_AgedTrialBalance_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Balance âgée de CC</value>
+  </data>
+  <data name="AR_AgedTrialBalance_Report_Article2" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+  </data>
+  <data name="AR_AgedTrialBalance_Report_Screen" xml:space="preserve">
+    <value>Rapport Balance âgée de CC</value>
+  </data>
+  <data name="AR_BatchListing_Report_Article1" xml:space="preserve">
+    <value>Imprimer des listes de lots</value>
+  </data>
+  <data name="AR_BatchListing_Report_Article2" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+  </data>
+  <data name="AR_BatchListing_Report_Screen" xml:space="preserve">
+    <value>Rapport Liste des lots de CC</value>
+  </data>
+  <data name="AR_BillingCycles_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier des cycles de facturation</value>
+  </data>
+  <data name="AR_BillingCycles_Article2" xml:space="preserve">
+    <value>À propos des cycles de facturation</value>
+  </data>
+  <data name="AR_BillingCycles_Screen" xml:space="preserve">
+    <value>Écran Cycles de facturation de CC</value>
+  </data>
+  <data name="AR_CommentTypes_Article1" xml:space="preserve">
+    <value>À propos des commentaires relatifs aux clients</value>
+  </data>
+  <data name="AR_CommentTypes_Article2" xml:space="preserve">
+    <value>Configuration de Comptes clients</value>
+  </data>
+  <data name="AR_CommentTypes_Screen" xml:space="preserve">
+    <value>Écran Types de commentaires de CC</value>
+  </data>
+  <data name="AR_CreateInterestBatch_Article1" xml:space="preserve">
+    <value>Créer des lots d'intérêts automatiquement</value>
+  </data>
+  <data name="AR_CreateInterestBatch_Article2" xml:space="preserve">
+    <value>À propos des champs optionnels dans les lots d'intérêts</value>
+  </data>
+  <data name="AR_CreateInterestBatch_Screen" xml:space="preserve">
+    <value>Écran Créer lot d'intérêts de CC</value>
+  </data>
+  <data name="AR_Create_GL_Batch_Article1" xml:space="preserve">
+    <value>Créer des lots de transactions de Grand livre dans Comptes clients</value>
+  </data>
+  <data name="AR_Create_GL_Batch_Article2" xml:space="preserve">
+    <value>Écran Créer lot d'intérêts de CC</value>
+  </data>
+  <data name="AR_Create_GL_Batch_Screen" xml:space="preserve">
+    <value>Écran Créer lot du GL de CC</value>
+  </data>
+  <data name="AR_CustomerGroups_Article1" xml:space="preserve">
+    <value>Ajouter, modifier et supprimer des groupes de clients</value>
+  </data>
+  <data name="AR_CustomerGroups_Article2" xml:space="preserve">
+    <value>À propos des groupes de clients</value>
+  </data>
+  <data name="AR_CustomerGroups_Screen" xml:space="preserve">
+    <value>Écran Groupes de clients de CC</value>
+  </data>
+  <data name="AR_Customers_Article1" xml:space="preserve">
+    <value>Ajouter et modifier des enregistrements de clients</value>
+  </data>
+  <data name="AR_Customers_Article2" xml:space="preserve">
+    <value>À propos des clients de Comptes clients</value>
+  </data>
+  <data name="AR_Customers_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Clients de CC</value>
+  </data>
+  <data name="AR_Customers_Report_Article2" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+  </data>
+  <data name="AR_Customers_Report_Screen" xml:space="preserve">
+    <value>Rapport Clients de CC</value>
+  </data>
+  <data name="AR_Customers_Screen" xml:space="preserve">
+    <value>Écran Clients de CC</value>
+  </data>
+  <data name="AR_CustomerTransactions_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Transactions des clients de CC</value>
+  </data>
+  <data name="AR_CustomerTransactions_Report_Article2" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+  </data>
+  <data name="AR_CustomerTransactions_Report_Screen" xml:space="preserve">
+    <value>Rapport Transactions des clients de CC</value>
+  </data>
+  <data name="AR_DistributionCodes_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier des codes de ventilation</value>
+  </data>
+  <data name="AR_DistributionCodes_Article2" xml:space="preserve">
+    <value>À propos des codes de ventilation</value>
+  </data>
+  <data name="AR_DistributionCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de ventilation de CC</value>
+  </data>
+  <data name="AR_DunningMessages_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier des messages de rappel</value>
+  </data>
+  <data name="AR_DunningMessages_Article2" xml:space="preserve">
+    <value>Configuration de Comptes clients</value>
+  </data>
+  <data name="AR_DunningMessages_Screen" xml:space="preserve">
+    <value>Écran Messages de rappel de CC</value>
+  </data>
+  <data name="AR_EmailMessages_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier un courriel</value>
+  </data>
+  <data name="AR_EmailMessages_Article2" xml:space="preserve">
+    <value>Variables des messages électroniques</value>
+  </data>
+  <data name="AR_EmailMessages_Screen" xml:space="preserve">
+    <value>Écran Courriels de CC</value>
+  </data>
+  <data name="AR_GL_Integration_Article1" xml:space="preserve">
+    <value>Sélectionner des options d'intégration du Grand livre pour Comptes clients</value>
+  </data>
+  <data name="AR_GL_Integration_Article2" xml:space="preserve">
+    <value>À propos de l'utilisation de Comptes clients avec Grand livre</value>
+  </data>
+  <data name="AR_GL_Integration_Screen" xml:space="preserve">
+    <value>Écran Intégration GL de CC</value>
+  </data>
+  <data name="AR_GL_Transactions_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Transactions du GL de CC</value>
+  </data>
+  <data name="AR_GL_Transactions_Report_Article2" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+  </data>
+  <data name="AR_GL_Transactions_Report_Screen" xml:space="preserve">
+    <value>Rapport Transactions du GL de CC</value>
+  </data>
+  <data name="AR_InterestProfiles_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier des profils d'intérêt</value>
+  </data>
+  <data name="AR_InterestProfiles_Article2" xml:space="preserve">
+    <value>À propos des profils d'intérêt</value>
+  </data>
+  <data name="AR_InterestProfiles_Screen" xml:space="preserve">
+    <value>Écran Profils d'intérêt de CC</value>
+  </data>
+  <data name="AR_InvoiceBatchList_Article1" xml:space="preserve">
+    <value>Reporter un lot de factures</value>
+  </data>
+  <data name="AR_InvoiceBatchList_Article2" xml:space="preserve">
+    <value>À propos des factures, notes de crédit et notes de débit</value>
+  </data>
+  <data name="AR_InvoiceBatchList_Screen" xml:space="preserve">
+    <value>Écran Liste des lots de factures de CC</value>
+  </data>
+  <data name="AR_InvoiceEntry_Article1" xml:space="preserve">
+    <value>Facturer un client</value>
+  </data>
+  <data name="AR_InvoiceEntry_Article2" xml:space="preserve">
+    <value>À propos de la saisie de données sur les factures</value>
+  </data>
+  <data name="AR_InvoiceEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des factures de CC</value>
+  </data>
+  <data name="AR_Invoices_Article1" xml:space="preserve">
+    <value>Imprimer des factures de Comptes clients</value>
+  </data>
+  <data name="AR_Invoices_Article2" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+  </data>
+  <data name="AR_Invoices_Screen" xml:space="preserve">
+    <value>Écran Factures de CC</value>
+  </data>
+  <data name="AR_ItemSalesHistory_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Historique des ventes d'articles de CC</value>
+  </data>
+  <data name="AR_ItemSalesHistory_Report_Article2" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+  </data>
+  <data name="AR_ItemSalesHistory_Report_Screen" xml:space="preserve">
+    <value>Rapport Historique de ventes d'articles de CC</value>
+  </data>
+  <data name="AR_Labels_Report_Article1" xml:space="preserve">
+    <value>Imprimer des étiquettes de Comptes clients</value>
+  </data>
+  <data name="AR_Labels_Report_Article2" xml:space="preserve">
+    <value>Modèles personnalisables pour les formulaires imprimés de Comptes clients</value>
+  </data>
+  <data name="AR_Labels_Report_Screen" xml:space="preserve">
+    <value>Rapport Étiquettes de CC</value>
+  </data>
+  <data name="AR_Module" xml:space="preserve">
+    <value>Parcourir les articles de Comptes clients</value>
+  </data>
+  <data name="AR_NationalAccounts_Article1" xml:space="preserve">
+    <value>Ajouter, modifier et supprimer des comptes nationaux</value>
+  </data>
+  <data name="AR_NationalAccounts_Article2" xml:space="preserve">
+    <value>À propos des comptes nationaux</value>
+  </data>
+  <data name="AR_NationalAccounts_Screen" xml:space="preserve">
+    <value>Écran Comptes nationaux de CC</value>
+  </data>
+  <data name="AR_OptionalFields_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier des champs optionnels</value>
+  </data>
+  <data name="AR_OptionalFields_Article2" xml:space="preserve">
+    <value>À propos des champs optionnels dans Comptes clients</value>
+  </data>
+  <data name="AR_OptionalFields_Screen" xml:space="preserve">
+    <value>Écran Champs optionnels de CC</value>
+  </data>
+  <data name="AR_Options_Article1" xml:space="preserve">
+    <value>Sélectionner des options de traitement de Comptes clients</value>
+  </data>
+  <data name="AR_Options_Article2" xml:space="preserve">
+    <value>Configuration de Comptes clients</value>
+  </data>
+  <data name="AR_Options_Screen" xml:space="preserve">
+    <value>Écran Options de CC</value>
+  </data>
+  <data name="AR_PaymentCodes_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier des codes de paiement</value>
+  </data>
+  <data name="AR_PaymentCodes_Article2" xml:space="preserve">
+    <value>À propos des modèles de codes de Comptes clients</value>
+  </data>
+  <data name="AR_PaymentCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de paiement de CC</value>
+  </data>
+  <data name="AR_PostBatches_Article1" xml:space="preserve">
+    <value>Reporter une plage de lots</value>
+  </data>
+  <data name="AR_PostBatches_Article2" xml:space="preserve">
+    <value>À propos du report de lots</value>
+  </data>
+  <data name="AR_PostBatches_Screen" xml:space="preserve">
+    <value>Écran Report des lots de CC</value>
+  </data>
+  <data name="AR_PostingErrors_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Erreurs de report de CC</value>
+  </data>
+  <data name="AR_PostingErrors_Report_Article2" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+  </data>
+  <data name="AR_PostingErrors_Report_Screen" xml:space="preserve">
+    <value>Rapport Erreurs de report de CC</value>
+  </data>
+  <data name="AR_Processing_YearEnd_LearnMore" xml:space="preserve">
+    <value>En savoir plus</value>
+  </data>
+  <data name="AR_ReceiptBatchList_Article1" xml:space="preserve">
+    <value>Ajouter, modifier ou supprimer un lot d’encaissements</value>
+  </data>
+  <data name="AR_ReceiptBatchList_Article2" xml:space="preserve">
+    <value>À propos du traitement des encaissements</value>
+  </data>
+  <data name="AR_ReceiptBatchList_Screen" xml:space="preserve">
+    <value>Écran Liste des lots d'encaissements de CC</value>
+  </data>
+  <data name="AR_ReceiptEntry_Article1" xml:space="preserve">
+    <value>Reporter un lot d’encaissements</value>
+  </data>
+  <data name="AR_ReceiptEntry_Article2" xml:space="preserve">
+    <value>Traiter une vente au comptant ou un encaissement divers</value>
+  </data>
+  <data name="AR_ReceiptEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des encaissements de CC</value>
+  </data>
+  <data name="AR_Receipts_Article1" xml:space="preserve">
+    <value>Imprimer des encaissements</value>
+  </data>
+  <data name="AR_Receipts_Article2" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+  </data>
+  <data name="AR_Receipts_Screen" xml:space="preserve">
+    <value>Écran Encaissements de CC</value>
+  </data>
+  <data name="AR_RecurringCharges_Report_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Frais périodiques de CC</value>
+  </data>
+  <data name="AR_RecurringCharges_Report_Article2" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+  </data>
+  <data name="AR_RecurringCharges_Report_Screen" xml:space="preserve">
+    <value>Rapport Frais périodiques de CC</value>
+  </data>
+  <data name="AR_Salespersons_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier des enregistrements de vendeurs</value>
+  </data>
+  <data name="AR_Salespersons_Article2" xml:space="preserve">
+    <value>À propos des taux de commission des vendeurs</value>
+  </data>
+  <data name="AR_Salespersons_Screen" xml:space="preserve">
+    <value>Écran Vendeurs de CC</value>
+  </data>
+  <data name="AR_Setup_EmailMessages_LearnMore" xml:space="preserve">
+    <value>En savoir plus</value>
+  </data>
+  <data name="AR_ShipToLocations_Article1" xml:space="preserve">
+    <value>Consulter les adresses d'expédition d'un client</value>
+  </data>
+  <data name="AR_ShipToLocations_Article2" xml:space="preserve">
+    <value>À propos des adresses d'expédition</value>
+  </data>
+  <data name="AR_ShipToLocations_Screen" xml:space="preserve">
+    <value>Écran Adresse d'expédition de CC</value>
+  </data>
+  <data name="AR_StatementsLettersLabels_Report_Article1" xml:space="preserve">
+    <value>Imprimer des relevés de clients</value>
+  </data>
+  <data name="AR_StatementsLettersLabels_Report_Article2" xml:space="preserve">
+    <value>Imprimer des lettres et des étiquettes</value>
+  </data>
+  <data name="AR_StatementsLettersLabels_Report_Screen" xml:space="preserve">
+    <value>Rapport Relevés/Lettres/Étiquettes de CC</value>
+  </data>
+  <data name="AR_Terms_Article1" xml:space="preserve">
+    <value>Ajouter ou modifier des codes de modalités</value>
+  </data>
+  <data name="AR_Terms_Article2" xml:space="preserve">
+    <value>À propos des modèles de codes de Comptes clients</value>
+  </data>
+  <data name="AR_Terms_Screen" xml:space="preserve">
+    <value>Écran Modalités de CC</value>
+  </data>
+  <data name="AR_YearEnd_Article1" xml:space="preserve">
+    <value>Débuter un nouvel exercice</value>
+  </data>
+  <data name="AR_YearEnd_Article2" xml:space="preserve">
+    <value>À propos du traitement de fin d'exercice</value>
+  </data>
+  <data name="AR_YearEnd_Screen" xml:space="preserve">
+    <value>Écran Fin de l'exercice de CC</value>
+  </data>
+  <data name="AS_DataIntegrity_Article1" xml:space="preserve">
+    <value>Vérifier l'intégrité des données</value>
+  </data>
+  <data name="AS_DataIntegrity_Article2" xml:space="preserve">
+    <value>A propos des groupes de sécurité</value>
+  </data>
+  <data name="AS_DataIntegrity_Screen" xml:space="preserve">
+    <value>Écran Intégrité des données</value>
+  </data>
+  <data name="AS_Module" xml:space="preserve">
+    <value>Parcourir les articles d'administration</value>
+  </data>
+  <data name="AS_RestartMaintenance_Article1" xml:space="preserve">
+    <value>Autorisations de sécurité de Services administratifs</value>
+  </data>
+  <data name="AS_RestartMaintenance_Article2" xml:space="preserve">
+    <value>A propos des groupes de sécurité</value>
+  </data>
+  <data name="AS_RestartMaintenance_Screen" xml:space="preserve">
+    <value>Écran Maintenance de la reprise</value>
+  </data>
+  <data name="AS_SecurityGroups_Article1" xml:space="preserve">
+    <value>Ajouter, modifier ou supprimer des groupes de sécurité</value>
+  </data>
+  <data name="AS_SecurityGroups_Article2" xml:space="preserve">
+    <value>A propos des groupes de sécurité</value>
+  </data>
+  <data name="AS_SecurityGroups_Screen" xml:space="preserve">
+    <value>Écran Groupes de sécurité</value>
+  </data>
+  <data name="AS_UserAuthorizations_Article1" xml:space="preserve">
+    <value>Assigner des utilisateurs aux groupes de sécurité</value>
+  </data>
+  <data name="AS_UserAuthorizations_Article2" xml:space="preserve">
+    <value>Autorisations de sécurité de Services administratifs</value>
+  </data>
+  <data name="AS_UserAuthorizations_Screen" xml:space="preserve">
+    <value>Écran Autorisations des utilisateurs</value>
+  </data>
+  <data name="AS_Users_Article1" xml:space="preserve">
+    <value>Ajouter et gérer les utilisateurs</value>
+    <comment>CSH ID 19005002</comment>
+  </data>
+  <data name="AS_Users_Article2" xml:space="preserve">
+    <value>Assigner des utilisateurs aux groupes de sécurité</value>
+    <comment>CSH ID 19005003</comment>
+  </data>
+  <data name="AS_Users_Screen" xml:space="preserve">
+    <value>Écran Utilisateurs</value>
+    <comment>CSH ID 19005001</comment>
+  </data>
+  <data name="Bank_Banks_Article1" xml:space="preserve">
+    <value>Ajouter des banques</value>
+    <comment>CSH ID 37034002</comment>
+  </data>
+  <data name="Bank_Banks_Article2" xml:space="preserve">
+    <value>Configuration de Services bancaires</value>
+    <comment>CSH ID 37034003</comment>
+  </data>
+  <data name="Bank_Banks_Screen" xml:space="preserve">
+    <value>Écran Banques</value>
+    <comment>CSH ID 37034001</comment>
+  </data>
+  <data name="BK_BankCheckPaymentRegister_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Registre des paiements/chèques</value>
+  </data>
+  <data name="BK_BankCheckPaymentRegister_Article2" xml:space="preserve">
+    <value>À propos des rapports de Services bancaires</value>
+  </data>
+  <data name="BK_BankCheckPaymentRegister_Screen" xml:space="preserve">
+    <value>Rapport Registre des paiements/chèques</value>
+  </data>
+  <data name="BK_BankClearHistory_Article1" xml:space="preserve">
+    <value>Effacer un historique bancaire</value>
+  </data>
+  <data name="BK_BankClearHistory_Article2" xml:space="preserve">
+    <value>Compenser une transaction</value>
+  </data>
+  <data name="BK_BankClearHistory_Screen" xml:space="preserve">
+    <value>Écran Effacer historique de banque</value>
+  </data>
+  <data name="BK_BankCreate_GL_Batch_Article1" xml:space="preserve">
+    <value>Créer des lots de GL dans Services bancaires</value>
+  </data>
+  <data name="BK_BankCreate_GL_Batch_Article2" xml:space="preserve">
+    <value>Spécifier quand et comment créer des lots pour Grand livre</value>
+  </data>
+  <data name="BK_BankCreate_GL_Batch_Screen" xml:space="preserve">
+    <value>Écran Créer lot du GL de banque</value>
+  </data>
+  <data name="BK_BankDepositRegisterReport_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Registre des dépôts</value>
+  </data>
+  <data name="BK_BankDepositRegisterReport_Article2" xml:space="preserve">
+    <value>À propos des rapports de Services bancaires</value>
+  </data>
+  <data name="BK_BankDepositRegisterReport_Screen" xml:space="preserve">
+    <value>Rapport Registre des dépôts bancaires</value>
+  </data>
+  <data name="BK_BankDepositsStatusReport_Article1" xml:space="preserve">
+    <value>Imprimer le rapport États des dépôts bancaires</value>
+  </data>
+  <data name="BK_BankDepositsStatusReport_Article2" xml:space="preserve">
+    <value>États de rapprochement des dépôts</value>
+  </data>
+  <data name="BK_BankDepositsStatusReport_Screen" xml:space="preserve">
+    <value>Rapport État des dépôts bancaires</value>
+  </data>
+  <data name="BK_BankDistributionCodes_Article1" xml:space="preserve">
+    <value>Ajouter et modifier des codes de ventilation</value>
+  </data>
+  <data name="BK_BankDistributionCodes_Article2" xml:space="preserve">
+    <value>Écran Séries de ventilation</value>
+  </data>
+  <data name="BK_BankDistributionCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de ventilation</value>
+  </data>
+  <data name="BK_BankDistributionSets_Article1" xml:space="preserve">
+    <value>Ajouter et modifier des séries de ventilation</value>
+  </data>
+  <data name="BK_BankDistributionSets_Article2" xml:space="preserve">
+    <value>Écran Codes de ventilation</value>
+  </data>
+  <data name="BK_BankDistributionSets_Screen" xml:space="preserve">
+    <value>Écran Séries de ventilation</value>
+  </data>
+  <data name="BK_BankEntriesPostingJournal_Article1" xml:space="preserve">
+    <value>Imprimer le journal de report des opérations bancaires</value>
+  </data>
+  <data name="BK_BankEntriesPostingJournal_Article2" xml:space="preserve">
+    <value>Écran Reporter les opérations bancaires</value>
+  </data>
+  <data name="BK_BankEntriesPostingJournal_Screen" xml:space="preserve">
+    <value>Rapport Journal de report des opérations bancaires</value>
+  </data>
+  <data name="BK_BankEntry_Article1" xml:space="preserve">
+    <value>Ajouter des opérations bancaires</value>
+  </data>
+  <data name="BK_BankEntry_Article2" xml:space="preserve">
+    <value>Corriger une erreur de saisie de données</value>
+  </data>
+  <data name="BK_BankEntry_Screen" xml:space="preserve">
+    <value>Écran Opération bancaire</value>
+  </data>
+  <data name="BK_BankGL_Integration_Article1" xml:space="preserve">
+    <value>Assigner des données aux transactions de GL</value>
+  </data>
+  <data name="BK_BankGL_Integration_Article2" xml:space="preserve">
+    <value>À propos de l'intégration de Services bancaires avec Grand livre</value>
+  </data>
+  <data name="BK_BankGL_Integration_Screen" xml:space="preserve">
+    <value>Écran Intégration GL de banque</value>
+  </data>
+  <data name="BK_BankGL_Transactions_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Transactions du GL</value>
+  </data>
+  <data name="BK_BankGL_Transactions_Article2" xml:space="preserve">
+    <value>À propos des rapports de Services bancaires</value>
+  </data>
+  <data name="BK_BankGL_Transactions_Screen" xml:space="preserve">
+    <value>Rapport Transactions de GL de banque</value>
+  </data>
+  <data name="BK_BankImportOFXStatements_Article1" xml:space="preserve">
+    <value>À propos des relevés</value>
+  </data>
+  <data name="BK_BankImportOFXStatements_Article2" xml:space="preserve">
+    <value>Écran Rapprocher les relevés</value>
+  </data>
+  <data name="BK_BankImportOFXStatements_Screen" xml:space="preserve">
+    <value>Importer des relevés OFX</value>
+  </data>
+  <data name="BK_BankOptions_Article1" xml:space="preserve">
+    <value>Configuration de Services bancaires</value>
+  </data>
+  <data name="BK_BankOptions_Article2" xml:space="preserve">
+    <value>À propos de l'activation de Services bancaires</value>
+  </data>
+  <data name="BK_BankOptions_Screen" xml:space="preserve">
+    <value>Écran Options de banque</value>
+  </data>
+  <data name="BK_BankPostEntries_Article1" xml:space="preserve">
+    <value>Ajouter des opérations bancaires</value>
+  </data>
+  <data name="BK_BankPostEntries_Article2" xml:space="preserve">
+    <value>Écran Opération bancaire</value>
+  </data>
+  <data name="BK_BankPostEntries_Screen" xml:space="preserve">
+    <value>Écran Reporter les opérations bancaires</value>
+  </data>
+  <data name="BK_BankPostReconciliation_Article1" xml:space="preserve">
+    <value>Reporter des rapprochements bancaires</value>
+  </data>
+  <data name="BK_BankPostReconciliation_Article2" xml:space="preserve">
+    <value>À propos du report des rapprochements</value>
+  </data>
+  <data name="BK_BankPostReconciliation_Screen" xml:space="preserve">
+    <value>Écran Reporter le rapprochement bancaire</value>
+  </data>
+  <data name="BK_BankReconcileOFXStatements_Article1" xml:space="preserve">
+    <value>Rapprocher des relevés</value>
+  </data>
+  <data name="BK_BankReconcileOFXStatements_Article2" xml:space="preserve">
+    <value>À propos des relevés</value>
+  </data>
+  <data name="BK_BankReconcileOFXStatements_Screen" xml:space="preserve">
+    <value>Écran Rapprocher les relevés</value>
+  </data>
+  <data name="BK_BankReconcileStatements_Article1" xml:space="preserve">
+    <value>Rapprocher un compte bancaire</value>
+  </data>
+  <data name="BK_BankReconcileStatements_Article2" xml:space="preserve">
+    <value>À propos de l'établissement de soldes bancaires</value>
+  </data>
+  <data name="BK_BankReconcileStatements_Screen" xml:space="preserve">
+    <value>Écran Rapprocher les relevés bancaires</value>
+  </data>
+  <data name="BK_BankReconciliationPostingJournal_Article1" xml:space="preserve">
+    <value>Imprimer le journal de report du rapprochement bancaire</value>
+  </data>
+  <data name="BK_BankReconciliationPostingJournal_Article2" xml:space="preserve">
+    <value>À propos des rapports de Services bancaires</value>
+  </data>
+  <data name="BK_BankReconciliationPostingJournal_Screen" xml:space="preserve">
+    <value>Rapport Journal de report de rapprochement bancaire</value>
+  </data>
+  <data name="BK_BankReconciliationReport_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Rapprochement bancaire</value>
+  </data>
+  <data name="BK_BankReconciliationReport_Article2" xml:space="preserve">
+    <value>Rapprocher un compte bancaire</value>
+  </data>
+  <data name="BK_BankReconciliationReport_Screen" xml:space="preserve">
+    <value>Rapport Rapprochement bancaire</value>
+  </data>
+  <data name="BK_BankReconciliationStatusReport_Article1" xml:space="preserve">
+    <value>Imprimer le rapport État du rapprochement bancaire</value>
+  </data>
+  <data name="BK_BankReconciliationStatusReport_Article2" xml:space="preserve">
+    <value>Rapprocher un compte bancaire</value>
+  </data>
+  <data name="BK_BankReconciliationStatusReport_Screen" xml:space="preserve">
+    <value>Rapport État du rapprochement bancaire</value>
+  </data>
+  <data name="BK_BankReverseTransactions_Article1" xml:space="preserve">
+    <value>Extourner une transaction</value>
+  </data>
+  <data name="BK_BankReverseTransactions_Article2" xml:space="preserve">
+    <value>À propos des écrans du dossier Opérations bancaires</value>
+  </data>
+  <data name="BK_BankReverseTransactions_Screen" xml:space="preserve">
+    <value>Écran Extourner les transactions bancaires</value>
+  </data>
+  <data name="BK_BankTransactionHistoryInquiry_Article1" xml:space="preserve">
+    <value>Consulter les transactions d'un compte bancaire</value>
+  </data>
+  <data name="BK_BankTransactionHistoryInquiry_Article2" xml:space="preserve">
+    <value>À propos des écrans du dossier Opérations bancaires</value>
+  </data>
+  <data name="BK_BankTransactionHistoryInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation de l'historique de transaction bancaire</value>
+  </data>
+  <data name="BK_BankTransactionListingReport_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Liste des transactions bancaires</value>
+  </data>
+  <data name="BK_BankTransactionListingReport_Article2" xml:space="preserve">
+    <value>Écran Consultation de l'historique de transaction bancaire</value>
+  </data>
+  <data name="BK_BankTransactionListingReport_Screen" xml:space="preserve">
+    <value>Rapport Liste des transactions</value>
+  </data>
+  <data name="BK_BankTransferPostingJournal_Article1" xml:space="preserve">
+    <value>Écran Virements bancaires</value>
+  </data>
+  <data name="BK_BankTransferPostingJournal_Article2" xml:space="preserve">
+    <value>Imprimer le journal de report des virements bancaires</value>
+  </data>
+  <data name="BK_BankTransferPostingJournal_Screen" xml:space="preserve">
+    <value>Rapport Journal de report des virements bancaires</value>
+  </data>
+  <data name="BK_BankTransfers_Article1" xml:space="preserve">
+    <value>Virer des fonds</value>
+  </data>
+  <data name="BK_BankTransfers_Article2" xml:space="preserve">
+    <value>Saisir des informations relatives aux taxes pour des détails de transaction</value>
+  </data>
+  <data name="BK_BankTransfers_Screen" xml:space="preserve">
+    <value>Écran Virements bancaires</value>
+  </data>
+  <data name="BK_BankWithdrawalsStatusReport_Article1" xml:space="preserve">
+    <value>Imprimer le rapport État des retraits bancaires</value>
+  </data>
+  <data name="BK_BankWithdrawalsStatusReport_Article2" xml:space="preserve">
+    <value>États de rapprochement des retraits</value>
+  </data>
+  <data name="BK_BankWithdrawalsStatusReport_Screen" xml:space="preserve">
+    <value>Rapport État des retraits bancaires</value>
+  </data>
+  <data name="BK_Module" xml:space="preserve">
+    <value>Parcourir les articles de Services bancaires</value>
+  </data>
+  <data name="CNA_Screen_Help" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="CS_CompanyProfile_Article1" xml:space="preserve">
+    <value>Créer le profil de votre entreprise</value>
+  </data>
+  <data name="CS_CompanyProfile_Article2" xml:space="preserve">
+    <value>À propos de la comptabilité pour les gains et pertes de change</value>
+  </data>
+  <data name="CS_CompanyProfile_Screen" xml:space="preserve">
+    <value>Écran Profil de l'entreprise</value>
+  </data>
+  <data name="CS_CurrencyCodes_Article1" xml:space="preserve">
+    <value>Ajouter, modifier ou supprimer des codes de devise</value>
+  </data>
+  <data name="CS_CurrencyCodes_Article2" xml:space="preserve">
+    <value>Configurer une entreprise multidevise</value>
+  </data>
+  <data name="CS_CurrencyCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de devise</value>
+  </data>
+  <data name="CS_CurrencyRates_Article1" xml:space="preserve">
+    <value>Ajouter, modifier ou supprimer des tables de devises et des taux de change</value>
+  </data>
+  <data name="CS_CurrencyRates_Article2" xml:space="preserve">
+    <value>Propager des taux de change</value>
+  </data>
+  <data name="CS_CurrencyRates_Screen" xml:space="preserve">
+    <value>Écran Taux de change</value>
+  </data>
+  <data name="CS_CurrencyRateTypes_Article1" xml:space="preserve">
+    <value>Ajouter des types de taux de change</value>
+  </data>
+  <data name="CS_CurrencyRateTypes_Article2" xml:space="preserve">
+    <value>Supprimer des types de taux de change</value>
+  </data>
+  <data name="CS_CurrencyRateTypes_Screen" xml:space="preserve">
+    <value>Écran Types de taux de change</value>
+  </data>
+  <data name="CS_FiscalCalendar_Article1" xml:space="preserve">
+    <value>Gérer le calendrier fiscal</value>
+  </data>
+  <data name="CS_FiscalCalendar_Article2" xml:space="preserve">
+    <value>Ajouter un nouvel exercice</value>
+  </data>
+  <data name="CS_FiscalCalendar_Screen" xml:space="preserve">
+    <value>Écran Calendrier fiscal</value>
+  </data>
+  <data name="CS_Module" xml:space="preserve">
+    <value>Parcourir les articles d'administration</value>
+    <comment>CSH ID 71000001</comment>
+  </data>
+  <data name="CS_OptionalFields_Article1" xml:space="preserve">
+    <value>Créer des champs optionnels</value>
+  </data>
+  <data name="CS_OptionalFields_Article2" xml:space="preserve">
+    <value>A propos de Services communs</value>
+  </data>
+  <data name="CS_OptionalFields_Screen" xml:space="preserve">
+    <value>Écran Champs optionnels</value>
+  </data>
+  <data name="GL_Accounts_Accounts_Article1" xml:space="preserve">
+    <value>Conception de votre grand livre</value>
+  </data>
+  <data name="GL_Accounts_Accounts_Article2" xml:space="preserve">
+    <value>Ajouter et gérer des comptes</value>
+  </data>
+  <data name="GL_Accounts_Accounts_Screen" xml:space="preserve">
+    <value>Écran Comptes du GL</value>
+  </data>
+  <data name="GL_Module" xml:space="preserve">
+    <value>Parcourir les articles de Grand livre</value>
+  </data>
+  <data name="GL_PostingJournals_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Journaux de report de GL</value>
+    <comment>CSH ID 168021002</comment>
+  </data>
+  <data name="GL_PostingJournals_Article2" xml:space="preserve">
+    <value>À propos des rapports de Grand livre</value>
+    <comment>CSH ID 168021003</comment>
+  </data>
+  <data name="GL_PostingJournals_Screen" xml:space="preserve">
+    <value>Écran Journaux de report de GL</value>
+    <comment>CSH ID 168021001</comment>
+  </data>
+  <data name="GL_Processing_CreateNewYear_Article1" xml:space="preserve">
+    <value>Exécuter le traitement de fin d'exercice</value>
+  </data>
+  <data name="GL_Processing_CreateNewYear_Article2" xml:space="preserve">
+    <value>Créer un nouvel exercice</value>
+  </data>
+  <data name="GL_Processing_CreateNewYear_Screen" xml:space="preserve">
+    <value>Écran Créer un nouvel exercice de GL</value>
+  </data>
+  <data name="GL_Processing_CreateRecurringEntries_Article1" xml:space="preserve">
+    <value>À propos des écritures récurrentes</value>
+  </data>
+  <data name="GL_Processing_CreateRecurringEntries_Article2" xml:space="preserve">
+    <value>Configurer des écritures récurrentes</value>
+  </data>
+  <data name="GL_Processing_CreateRecurringEntries_Screen" xml:space="preserve">
+    <value>Écran Créer lot d'écritures récurrentes de GL</value>
+  </data>
+  <data name="GL_Processing_PeriodEndMaintenance_Article1" xml:space="preserve">
+    <value>Exécuter le traitement de fin d'exercice</value>
+  </data>
+  <data name="GL_Processing_PeriodEndMaintenance_Article2" xml:space="preserve">
+    <value>Traitement de la maintenance de fin de période</value>
+  </data>
+  <data name="GL_Processing_PeriodEndMaintenance_Screen" xml:space="preserve">
+    <value>Écran Maintenance de fin de période de GL</value>
+  </data>
+  <data name="GL_Reports_BatchListing_Article1" xml:space="preserve">
+    <value>Écran Liste des lots de GL</value>
+  </data>
+  <data name="GL_Reports_BatchListing_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Liste des lots de GL</value>
+  </data>
+  <data name="GL_Reports_BatchListing_Screen" xml:space="preserve">
+    <value>Rapport Liste des lots de GL</value>
+  </data>
+  <data name="GL_Reports_ChartOfAccounts_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Plan comptable de GL</value>
+  </data>
+  <data name="GL_Reports_ChartOfAccounts_Article2" xml:space="preserve">
+    <value>Informations stockées dans Comptes de GL</value>
+  </data>
+  <data name="GL_Reports_ChartOfAccounts_Screen" xml:space="preserve">
+    <value>Écran Plan comptable de GL</value>
+  </data>
+  <data name="GL_Reports_PostingJournals_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Journaux de report de GL</value>
+    <comment>CSH ID 168021002</comment>
+  </data>
+  <data name="GL_Reports_PostingJournals_Article2" xml:space="preserve">
+    <value>À propos des rapports de Grand livre</value>
+    <comment>CSH ID 168021003</comment>
+  </data>
+  <data name="GL_Reports_PostingJournals_Screen" xml:space="preserve">
+    <value>Rapport Journaux de report de GL</value>
+    <comment>CSH ID 168021001</comment>
+  </data>
+  <data name="GL_Reports_TransactionsListing_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Liste des transactions de GL</value>
+  </data>
+  <data name="GL_Reports_TransactionsListing_Article2" xml:space="preserve">
+    <value>À propos du traitement des transactions dans Grand livre</value>
+  </data>
+  <data name="GL_Reports_TransactionsListing_Screen" xml:space="preserve">
+    <value>Écran Liste des transactions de GL</value>
+  </data>
+  <data name="GL_Reports_TransDetailsOptFields_Article1" xml:space="preserve">
+    <value>À propos des champs optionnels dans Grand livre</value>
+  </data>
+  <data name="GL_Reports_TransDetailsOptFields_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Champs optionnels de détails de transactions du GL</value>
+  </data>
+  <data name="GL_Reports_TransDetailsOptFields_Screen" xml:space="preserve">
+    <value>Écran Champs optionnels de détails de transactions du GL</value>
+  </data>
+  <data name="GL_Reports_TrialBalanceReport_Article1" xml:space="preserve">
+    <value>À propos du report provisoire</value>
+  </data>
+  <data name="GL_Reports_TrialBalanceReport_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Balance de GL</value>
+  </data>
+  <data name="GL_Reports_TrialBalanceReport_Screen" xml:space="preserve">
+    <value>Rapport Balance de GL</value>
+  </data>
+  <data name="GL_Setup_AccountGroups_Article1" xml:space="preserve">
+    <value>À propos des groupes de comptes</value>
+  </data>
+  <data name="GL_Setup_AccountGroups_Article2" xml:space="preserve">
+    <value>Configurer Grand livre pour utiliser des groupes de comptes</value>
+  </data>
+  <data name="GL_Setup_AccountGroups_Screen" xml:space="preserve">
+    <value>Écran Groupes de comptes de GL</value>
+  </data>
+  <data name="GL_Setup_AccountStructures_Article1" xml:space="preserve">
+    <value>À propos des structures de compte</value>
+  </data>
+  <data name="GL_Setup_AccountStructures_Article2" xml:space="preserve">
+    <value>Ajouter des codes de structure</value>
+  </data>
+  <data name="GL_Setup_AccountStructures_Screen" xml:space="preserve">
+    <value>Écran Structures de comptes de GL</value>
+  </data>
+  <data name="GL_Setup_OptionalFields_Article1" xml:space="preserve">
+    <value>À propos des champs optionnels dans Grand livre</value>
+  </data>
+  <data name="GL_Setup_OptionalFields_Article2" xml:space="preserve">
+    <value>Assigner des champs optionnels à un compte</value>
+  </data>
+  <data name="GL_Setup_OptionalFields_Screen" xml:space="preserve">
+    <value>Écran Champs optionnels de GL</value>
+  </data>
+  <data name="GL_Setup_Options_Article1" xml:space="preserve">
+    <value>Configurer les options de Grand livre</value>
+  </data>
+  <data name="GL_Setup_Options_Article2" xml:space="preserve">
+    <value>À propos de la configuration de Grand livre</value>
+  </data>
+  <data name="GL_Setup_Options_Screen" xml:space="preserve">
+    <value>Écran Options de GL</value>
+  </data>
+  <data name="GL_Setup_RecurringEntries_Article1" xml:space="preserve">
+    <value>Configurer des écritures récurrentes</value>
+  </data>
+  <data name="GL_Setup_RecurringEntries_Article2" xml:space="preserve">
+    <value>À propos des écritures récurrentes</value>
+  </data>
+  <data name="GL_Setup_RecurringEntries_Screen" xml:space="preserve">
+    <value>Écran Écritures récurrentes de GL</value>
+  </data>
+  <data name="GL_Setup_SegmentCodes_Article1" xml:space="preserve">
+    <value>À propos des codes de segment</value>
+  </data>
+  <data name="GL_Setup_SegmentCodes_Article2" xml:space="preserve">
+    <value>Ajouter des codes de segment</value>
+  </data>
+  <data name="GL_Setup_SegmentCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de segment de GL</value>
+  </data>
+  <data name="GL_Setup_SourceCodes_Article1" xml:space="preserve">
+    <value>À propos des codes sources</value>
+  </data>
+  <data name="GL_Setup_SourceCodes_Article2" xml:space="preserve">
+    <value>Ajouter des codes sources</value>
+  </data>
+  <data name="GL_Setup_SourceCodes_Screen" xml:space="preserve">
+    <value>Écran Codes sources de GL</value>
+  </data>
+  <data name="GL_Transactions_BatchList_Article1" xml:space="preserve">
+    <value>À propos de la consultation des informations relatives aux lots</value>
+  </data>
+  <data name="GL_Transactions_BatchList_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Liste des lots de GL</value>
+  </data>
+  <data name="GL_Transactions_BatchList_Screen" xml:space="preserve">
+    <value>Écran Liste des lots de GL</value>
+  </data>
+  <data name="GL_Transactions_JournalEntry_Article1" xml:space="preserve">
+    <value>À propos du traitement des transactions dans Grand livre</value>
+  </data>
+  <data name="GL_Transactions_JournalEntry_Article2" xml:space="preserve">
+    <value>Ajouter une écriture de journal</value>
+  </data>
+  <data name="GL_Transactions_JournalEntry_Screen" xml:space="preserve">
+    <value>Écran Écriture de journal de GL</value>
+  </data>
+  <data name="GL_Transactions_PostBatches_Article1" xml:space="preserve">
+    <value>Reporter des lots de transactions</value>
+  </data>
+  <data name="GL_Transactions_PostBatches_Article2" xml:space="preserve">
+    <value>À propos de la consultation des informations relatives aux lots</value>
+  </data>
+  <data name="GL_Transactions_PostBatches_Screen" xml:space="preserve">
+    <value>Écran Reporter les lots de GL</value>
+  </data>
+  <data name="IC_AccountSets_Article1" xml:space="preserve">
+    <value>À propos des groupes de comptes</value>
+    <comment>CSH ID 211004002</comment>
+  </data>
+  <data name="IC_AccountSets_Article2" xml:space="preserve">
+    <value>Ajouter des groupes de comptes</value>
+    <comment>CSH ID 211004003</comment>
+  </data>
+  <data name="IC_AccountSets_Screen" xml:space="preserve">
+    <value>Écran Groupes de comptes de GS</value>
+    <comment>CSH ID 211004001</comment>
+  </data>
+  <data name="IC_ContractPricing_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211046002</comment>
+  </data>
+  <data name="IC_ContractPricing_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Prix forfaitaire</value>
+    <comment>CSH ID 211046003</comment>
+  </data>
+  <data name="IC_ContractPricing_Report_Screen" xml:space="preserve">
+    <value>Rapport Prix forfaitaires de GS</value>
+    <comment>CSH ID 211046001</comment>
+  </data>
+  <data name="IC_Create_GL_Batch_Article1" xml:space="preserve">
+    <value>À propos du traitement périodique</value>
+    <comment>CSH ID 211002002</comment>
+  </data>
+  <data name="IC_Create_GL_Batch_Article2" xml:space="preserve">
+    <value>Créer un lot de transactions de Grand livre</value>
+    <comment>CSH ID 211002003</comment>
+  </data>
+  <data name="IC_Create_GL_Batch_Screen" xml:space="preserve">
+    <value>Écran Créer lot du GL de GS</value>
+    <comment>CSH ID 211002001</comment>
+  </data>
+  <data name="IC_DayEndProcessing_Article1" xml:space="preserve">
+    <value>À propos du traitement de clôture journalière</value>
+    <comment>CSH ID 211038002</comment>
+  </data>
+  <data name="IC_DayEndProcessing_Article2" xml:space="preserve">
+    <value>Exécuter le traitement de clôture journalière</value>
+    <comment>CSH ID 211038003</comment>
+  </data>
+  <data name="IC_DayEndProcessing_Screen" xml:space="preserve">
+    <value>Écran Clôture journalière de GS</value>
+    <comment>CSH ID 211038001</comment>
+  </data>
+  <data name="IC_GL_Integration_Artcicle1" xml:space="preserve">
+    <value>À propos de l'utilisation de Gestion des stocks avec Grand livre</value>
+    <comment>CSH ID 211016002</comment>
+  </data>
+  <data name="IC_GL_Integration_Artcicle2" xml:space="preserve">
+    <value>Changer les options d'intégration de Grand livre de GS</value>
+    <comment>CSH ID 211016003</comment>
+  </data>
+  <data name="IC_GL_Integration_Screen" xml:space="preserve">
+    <value>Écran Intégration GL de GS</value>
+    <comment>CSH ID 211016001</comment>
+  </data>
+  <data name="IC_GL_Transactions_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211010002</comment>
+  </data>
+  <data name="IC_GL_Transactions_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Transactions du GL</value>
+    <comment>CSH ID 211010003</comment>
+  </data>
+  <data name="IC_GL_Transactions_Report_Screen" xml:space="preserve">
+    <value>Rapport Transactions du GL de GS</value>
+    <comment>CSH ID 211010001</comment>
+  </data>
+  <data name="IC_ItemStructures_Article1" xml:space="preserve">
+    <value>Ajouter des formats de numéros d'article</value>
+    <comment>CSH ID 211014002</comment>
+  </data>
+  <data name="IC_ItemStructures_Article2" xml:space="preserve">
+    <value>Ajouter des structures d'article</value>
+    <comment>CSH ID 211014003</comment>
+  </data>
+  <data name="IC_ItemStructures_Screen" xml:space="preserve">
+    <value>Écran Structures des articles de GS</value>
+    <comment>CSH ID 211014001</comment>
+  </data>
+  <data name="IC_Items_Article1" xml:space="preserve">
+    <value>À propos de la configuration des articles de stock</value>
+    <comment>CSH ID 211022002</comment>
+  </data>
+  <data name="IC_Items_Article2" xml:space="preserve">
+    <value>Ajouter des enregistrements d'article</value>
+    <comment>CSH ID 211022003</comment>
+  </data>
+  <data name="IC_Items_Screen" xml:space="preserve">
+    <value>Écran Articles de GS</value>
+    <comment>CSH ID 211022001</comment>
+  </data>
+  <data name="IC_ManufacturersItems_Article1" xml:space="preserve">
+    <value>Écran Articles de GS</value>
+    <comment>CSH ID 211035002</comment>
+  </data>
+  <data name="IC_ManufacturersItems_Article2" xml:space="preserve">
+    <value>Ajouter des codes barres ou numéros des fabricants aux articles</value>
+    <comment>CSH ID 211035003</comment>
+  </data>
+  <data name="IC_ManufacturersItems_Screen" xml:space="preserve">
+    <value>Écran Articles du fabricant de GS</value>
+    <comment>CSH ID 211035001</comment>
+  </data>
+  <data name="IC_OptionalFields_Article1" xml:space="preserve">
+    <value>À propos de l'utilisation de champs optionnels dans les transactions</value>
+    <comment>CSH ID 211005002</comment>
+  </data>
+  <data name="IC_OptionalFields_Article2" xml:space="preserve">
+    <value>Configurer des champs optionnels pour les enregistrements et les transactions de Gestion des stocks</value>
+    <comment>CSH ID 211005003</comment>
+  </data>
+  <data name="IC_OptionalFields_Screen" xml:space="preserve">
+    <value>Écran Champs optionnels de GS</value>
+    <comment>CSH ID 211005001</comment>
+  </data>
+  <data name="IC_Options_Article1" xml:space="preserve">
+    <value>À propos des options de traitement de Gestion des stocks</value>
+    <comment>CSH ID 211001002</comment>
+  </data>
+  <data name="IC_Options_Article2" xml:space="preserve">
+    <value>Modifier les options de traitement de Gestion des stocks</value>
+    <comment>CSH ID 211001003</comment>
+  </data>
+  <data name="IC_Options_Screen" xml:space="preserve">
+    <value>Écran Options de GS</value>
+    <comment>CSH ID 211001001</comment>
+  </data>
+  <data name="IC_SegmentCodes_Article1" xml:space="preserve">
+    <value>À propos des codes de segment</value>
+    <comment>CSH ID 211003002</comment>
+  </data>
+  <data name="IC_SegmentCodes_Article2" xml:space="preserve">
+    <value>À propos de la substitution des segments de compte de Grand livre pour les emplacements</value>
+    <comment>CSH ID 211003003</comment>
+  </data>
+  <data name="IC_SegmentCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de segments de GS</value>
+    <comment>CSH ID 211003001</comment>
+  </data>
+  <data name="IC_SellingPriceMarginAnalysis_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211047002</comment>
+  </data>
+  <data name="IC_SellingPriceMarginAnalysis_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Analyse du prix de vente/marge</value>
+    <comment>CSH ID 211047003</comment>
+  </data>
+  <data name="IC_SellingPriceMarginAnalysis_Report_Screen" xml:space="preserve">
+    <value>Rapport Analyse du prix de vente/marge de GS</value>
+    <comment>CSH ID 211047001</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Article1" xml:space="preserve">
+    <value>À propos des options de traitement de Gestion des stocks</value>
+    <comment>CSH ID 211006002</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Article2" xml:space="preserve">
+    <value>Ajouter ou modifier des statistiques de transactions</value>
+    <comment>CSH ID 211006003</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Screen" xml:space="preserve">
+    <value>Écran Statistiques des transactions de GS</value>
+    <comment>CSH ID 211006001</comment>
+  </data>
+  <data name="IC_UnitsOfMeasure_Article1" xml:space="preserve">
+    <value>À propos des unités de mesure</value>
+    <comment>CSH ID 211009002</comment>
+  </data>
+  <data name="IC_UnitsOfMeasure_Article2" xml:space="preserve">
+    <value>Assigner des unités de mesure aux articles</value>
+    <comment>CSH ID 211009003</comment>
+  </data>
+  <data name="IC_UnitsOfMeasure_Screen" xml:space="preserve">
+    <value>Écran Unités de mesure de GS</value>
+    <comment>CSH ID 211009001</comment>
+  </data>
+  <data name="IC_VendorDetails_Article1" xml:space="preserve">
+    <value>À propos des détails de fournisseurs</value>
+  </data>
+  <data name="IC_VendorDetails_Article2" xml:space="preserve">
+    <value>Ajouter des informations relatives aux fournisseurs dans les enregistrements d'article</value>
+  </data>
+  <data name="IC_VendorDetails_Screen" xml:space="preserve">
+    <value>Écran Détails des fournisseurs de GS</value>
+    <comment>CSH ID 211031001</comment>
+  </data>
+  <data name="IC_WeightUnitsOfMeasure_Article1" xml:space="preserve">
+    <value>À propos des unités de mesure</value>
+    <comment>CSH ID 211012002</comment>
+  </data>
+  <data name="IC_WeightUnitsOfMeasure_Article2" xml:space="preserve">
+    <value>Assigner des unités de mesure de poids aux articles</value>
+    <comment>CSH ID 211012003</comment>
+  </data>
+  <data name="IC_WeightUnitsOfMeasure_Screen" xml:space="preserve">
+    <value>Écran Unités de mesure du poids de GS</value>
+    <comment>CSH ID 211012001</comment>
+  </data>
+  <data name="OE_AgedOrders_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes clients</value>
+    <comment>CSH ID 369026002</comment>
+  </data>
+  <data name="OE_AgedOrders_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes clients</value>
+    <comment>CSH ID 369026003</comment>
+  </data>
+  <data name="OE_AgedOrders_Report_Screen" xml:space="preserve">
+    <value>Rapport Commandes âgées de CmC</value>
+    <comment>CSH ID 369026001</comment>
+  </data>
+  <data name="OE_CreateBatch_Article1" xml:space="preserve">
+    <value>À propos du traitement périodique</value>
+    <comment>CSH ID 369012002</comment>
+  </data>
+  <data name="OE_CreateBatch_Article2" xml:space="preserve">
+    <value>Créer un lot de transactions de Grand livre dans Commandes clients</value>
+    <comment>CSH ID 369012003</comment>
+  </data>
+  <data name="OE_CreateBatch_Screen" xml:space="preserve">
+    <value>Écran Créer un lot de CmC</value>
+    <comment>CSH ID 369012001</comment>
+  </data>
+  <data name="OE_InvoiceAction_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes clients</value>
+    <comment>CSH ID 369028002</comment>
+  </data>
+  <data name="OE_InvoiceAction_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes clients</value>
+    <comment>CSH ID 369028003</comment>
+  </data>
+  <data name="OE_InvoiceAction_Report_Screen" xml:space="preserve">
+    <value>Rapport État de facture de CmC</value>
+    <comment>CSH ID 369028001</comment>
+  </data>
+  <data name="OE_SalesHistory_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes clients</value>
+    <comment>CSH ID 369029002</comment>
+  </data>
+  <data name="OE_SalesHistory_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes clients</value>
+    <comment>CSH ID 369029003</comment>
+  </data>
+  <data name="OE_SalesHistory_Report_Screen" xml:space="preserve">
+    <value>Rapport Historique des ventes de CmC</value>
+    <comment>CSH ID 369029001</comment>
+  </data>
+  <data name="OE_TransactionList_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes clients</value>
+    <comment>CSH ID 369025002</comment>
+  </data>
+  <data name="OE_TransactionList_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes clients</value>
+    <comment>CSH ID 369025003</comment>
+  </data>
+  <data name="OE_TransactionList_Report_Screen" xml:space="preserve">
+    <value>Rapport Liste des transactions de CmC</value>
+    <comment>CSH ID 369025001</comment>
+  </data>
+  <data name="Portal_Article1" xml:space="preserve">
+    <value>Mise en route</value>
+  </data>
+  <data name="Portal_Article2" xml:space="preserve">
+    <value>Comment trouver les diverses fonctions et en apprendre plus à leur sujet</value>
+  </data>
+  <data name="Portal_Article3" xml:space="preserve">
+    <value>Configurer les composants graphiques de la page d'accueil</value>
+  </data>
+  <data name="Portal_Article4" xml:space="preserve">
+    <value>Imprimer des rapports</value>
+  </data>
+  <data name="Portal_Articles" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="Portal_Reports" xml:space="preserve">
+    <value>Impression de rapports</value>
+    <comment>CSH ID 377002001</comment>
+  </data>
+  <data name="Portal_Reports_Article1" xml:space="preserve">
+    <value>Rapports de Sage 300</value>
+    <comment>CSH ID 377002002</comment>
+  </data>
+  <data name="Portal_Reports_Article2" xml:space="preserve">
+    <value>À propos des modèles secondaires pour les rapports</value>
+    <comment>CSH ID 377002003</comment>
+  </data>
+  <data name="Portal_Reports_Article3" xml:space="preserve">
+    <value>Parcourez les articles d'impression des rapports</value>
+    <comment>CSH ID 377002004</comment>
+  </data>
+  <data name="PO_CreateBatch_Article1" xml:space="preserve">
+    <value>À propos du traitement périodique dans Commandes fournisseurs</value>
+    <comment>CSH ID 405017002</comment>
+  </data>
+  <data name="PO_CreateBatch_Article2" xml:space="preserve">
+    <value>Créer un lot de transactions de Grand livre dans Commandes fournisseurs</value>
+    <comment>CSH ID 405017003</comment>
+  </data>
+  <data name="PO_CreateBatch_Screen" xml:space="preserve">
+    <value>Écran Créer un lot de CmF</value>
+    <comment>CSH ID 405017001</comment>
+  </data>
+  <data name="PO_GL_Integration_Article1" xml:space="preserve">
+    <value>À propos des Options d'intégration du GL</value>
+    <comment>CSH ID 405008002</comment>
+  </data>
+  <data name="PO_GL_Integration_Article2" xml:space="preserve">
+    <value>Changer les options d'intégration du Grand livre</value>
+    <comment>CSH ID 405008003</comment>
+  </data>
+  <data name="PO_GL_Integration_Screen" xml:space="preserve">
+    <value>Écran Intégration GL de CmF</value>
+    <comment>CSH ID 405008001</comment>
+  </data>
+  <data name="Resources" xml:space="preserve">
+    <value>Ressources</value>
+  </data>
+  <data name="Resources_ContactSupport" xml:space="preserve">
+    <value>Contacter le soutien technique</value>
+  </data>
+  <data name="Resources_FeatureTour" xml:space="preserve">
+    <value>Présentation des fonctions</value>
+  </data>
+  <data name="Resources_HelpCenter" xml:space="preserve">
+    <value>Centre d'aide</value>
+  </data>
+  <data name="Resources_SageCity" xml:space="preserve">
+    <value>Sage City</value>
+  </data>
+  <data name="Resources_SageUniversity" xml:space="preserve">
+    <value>Sage University</value>
+  </data>
+  <data name="Resources_ShareIdeas" xml:space="preserve">
+    <value>Partagez vos idées</value>
+  </data>
+  <data name="Search_Help" xml:space="preserve">
+    <value>Chercher l'aide</value>
+  </data>
+  <data name="TX_Module" xml:space="preserve">
+    <value>Parcourir les articles de Services de taxes</value>
+  </data>
+  <data name="TX_TaxAuthorities_Article1" xml:space="preserve">
+    <value>Ajouter des autorités fiscales</value>
+  </data>
+  <data name="TX_TaxAuthorities_Article2" xml:space="preserve">
+    <value>Supprimer des autorités fiscales</value>
+  </data>
+  <data name="TX_TaxAuthorities_Screen" xml:space="preserve">
+    <value>Écran Autorités fiscales</value>
+  </data>
+  <data name="TX_TaxClasses_Article1" xml:space="preserve">
+    <value>Ajouter des classes de taxes</value>
+  </data>
+  <data name="TX_TaxClasses_Article2" xml:space="preserve">
+    <value>Supprimer des classes de taxes</value>
+  </data>
+  <data name="TX_TaxClasses_Screen" xml:space="preserve">
+    <value>Écran Classes de taxes</value>
+  </data>
+  <data name="TX_TaxGroups_Article1" xml:space="preserve">
+    <value>Ajouter des groupes de taxes</value>
+  </data>
+  <data name="TX_TaxGroups_Article2" xml:space="preserve">
+    <value>À propos de l'ordre des autorités fiscales dans un groupe</value>
+  </data>
+  <data name="TX_TaxGroups_Screen" xml:space="preserve">
+    <value>Écran Groupes de taxes</value>
+  </data>
+  <data name="TX_TaxRates_Article1" xml:space="preserve">
+    <value>Saisir des taux de taxation</value>
+  </data>
+  <data name="TX_TaxRates_Article2" xml:space="preserve">
+    <value>Ajouter des autorités fiscales</value>
+  </data>
+  <data name="TX_TaxRates_Screen" xml:space="preserve">
+    <value>Écran Taux de taxation</value>
+  </data>
+  <data name="TX_TaxTrackingReport_Article1" xml:space="preserve">
+    <value>Imprimer le rapport Suivi des taxes</value>
+  </data>
+  <data name="TX_TaxTrackingReport_Article2" xml:space="preserve">
+    <value>Options d'impression des rapports</value>
+  </data>
+  <data name="TX_TaxTrackingReport_Screen" xml:space="preserve">
+    <value>Rapport Suivi des taxes</value>
+  </data>
+  <data name="YP_Module" xml:space="preserve">
+    <value>Parcourir les articles de Traitement de paiements</value>
+    <comment>CSH ID 640000001</comment>
+  </data>
+  <data name="YP_Options_Article1" xml:space="preserve">
+    <value>Configuration de Traitement de paiements</value>
+    <comment>CSH ID 640001002</comment>
+  </data>
+  <data name="YP_Options_Article2" xml:space="preserve">
+    <value>Ajouter et gérer des codes de traitement</value>
+    <comment>CSH ID 640001003</comment>
+  </data>
+  <data name="YP_Options_Screen" xml:space="preserve">
+    <value>Écran Options de Traitement de paiements</value>
+    <comment>CSH ID 640001001</comment>
+  </data>
+  <data name="YP_ProcessingCodes_Article1" xml:space="preserve">
+    <value>À propos des codes de traitement</value>
+    <comment>CSH ID 640002002</comment>
+  </data>
+  <data name="YP_ProcessingCodes_Article2" xml:space="preserve">
+    <value>Ajouter et gérer des codes de traitement</value>
+    <comment>CSH ID 640002003</comment>
+  </data>
+  <data name="YP_ProcessingCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de Traitement de paiements</value>
+    <comment>CSH ID 640002001</comment>
+  </data>
+  <data name="IC_Categories_Article1" xml:space="preserve">
+    <value>À propos des catégories</value>
+    <comment>CSH ID 211008002</comment>
+  </data>
+  <data name="IC_Categories_Article2" xml:space="preserve">
+    <value>Configurer des catégories</value>
+    <comment>CSH ID 211008003</comment>
+  </data>
+  <data name="IC_Categories_Screen" xml:space="preserve">
+    <value>Écran Catégories de GS</value>
+    <comment>CSH ID 211008001</comment>
+  </data>
+  <data name="IC_Locations_Article1" xml:space="preserve">
+    <value>À propos de la configuration des emplacements</value>
+    <comment>CSH ID 211007002</comment>
+  </data>
+  <data name="IC_Locations_Article2" xml:space="preserve">
+    <value>À propos de la suppression d'emplacements</value>
+    <comment>CSH ID 211007003</comment>
+  </data>
+  <data name="IC_Locations_Screen" xml:space="preserve">
+    <value>Écran Emplacements de GS</value>
+    <comment>CSH ID 211007001</comment>
+  </data>
+  <data name="IC_PriceListCodes_Article1" xml:space="preserve">
+    <value>À propos des listes de prix</value>
+    <comment>CSH ID 211011002</comment>
+  </data>
+  <data name="IC_PriceListCodes_Article2" xml:space="preserve">
+    <value>Ajouter des codes de listes de prix</value>
+    <comment>CSH ID 211011003</comment>
+  </data>
+  <data name="IC_PriceListCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de liste de prix de GS</value>
+    <comment>CSH ID 211011001</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211019002</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Statistiques des transactions</value>
+    <comment>CSH ID 211019003</comment>
+  </data>
+  <data name="IC_TransactionStatistics_Report_Screen" xml:space="preserve">
+    <value>Rapport Statistiques des transactions de GS</value>
+    <comment>CSH ID 211019001</comment>
+  </data>
+  <data name="OE_GL_Integration_Article1" xml:space="preserve">
+    <value>Comptes de Grand livre utilisés par Commandes clients</value>
+    <comment>CSH ID 369007002</comment>
+  </data>
+  <data name="OE_GL_Integration_Article2" xml:space="preserve">
+    <value>Options d'intégration de Grand livre</value>
+    <comment>CSH ID 369007003</comment>
+  </data>
+  <data name="OE_GL_Integration_Screen" xml:space="preserve">
+    <value>Écran Intégration GL de CmC</value>
+    <comment>CSH ID 369007001</comment>
+  </data>
+  <data name="PO_ShipViaCodes_Article1" xml:space="preserve">
+    <value>À propos de la configuration des codes d'expédition</value>
+    <comment>CSH ID 405002001</comment>
+  </data>
+  <data name="PO_ShipViaCodes_Article2" xml:space="preserve">
+    <value>Ajouter des enregistrements de modes d'expédition</value>
+    <comment>CSH ID 405002001</comment>
+  </data>
+  <data name="PO_ShipViaCodes_Screen" xml:space="preserve">
+    <value>Écran Codes d'expédition de CmF</value>
+    <comment>CSH ID 405002001</comment>
+  </data>
+  <data name="IC_Module" xml:space="preserve">
+    <value>Parcourir les articles de Gestion des stocks</value>
+    <comment>CSH ID 211000001</comment>
+  </data>
+  <data name="OE_Module" xml:space="preserve">
+    <value>Parcourir les articles de Commandes clients</value>
+    <comment>CSH ID 369000001</comment>
+  </data>
+  <data name="PO_Module" xml:space="preserve">
+    <value>Parcourir les artciles de Commandes fournisseurs</value>
+    <comment>CSH ID 405000001</comment>
+  </data>
+  <data name="IC_CustomerDetails_Article1" xml:space="preserve">
+    <value>Ajouter des numéros d'articles des clients</value>
+    <comment>CSH ID 211032002</comment>
+  </data>
+  <data name="IC_CustomerDetails_Article2" xml:space="preserve">
+    <value>Écran Détails des fournisseurs de GS</value>
+    <comment>CSH ID 211032003</comment>
+  </data>
+  <data name="IC_CustomerDetails_Screen" xml:space="preserve">
+    <value>Écran Détails des clients de GS</value>
+    <comment>CSH ID 211032001</comment>
+  </data>
+  <data name="IC_InventoryCounts_Article1" xml:space="preserve">
+    <value>Saisir des quantités de l'inventaire physique</value>
+    <comment>CSH ID 211044002</comment>
+  </data>
+  <data name="IC_InventoryCounts_Article2" xml:space="preserve">
+    <value>Créer des feuilles de calcul de l'inventaire pour le dénombrement des stocks</value>
+    <comment>CSH ID 211044003</comment>
+  </data>
+  <data name="IC_InventoryCounts_Screen" xml:space="preserve">
+    <value>Écran Inventaire des stocks de GS</value>
+    <comment>CSH ID 211044001</comment>
+  </data>
+  <data name="IC_Receipts_Article1" xml:space="preserve">
+    <value>À propos des réceptions</value>
+    <comment>CSH ID 211017002</comment>
+  </data>
+  <data name="IC_Receipts_Article2" xml:space="preserve">
+    <value>Saisir des ajustements à des réceptions existantes</value>
+    <comment>CSH ID 211017003</comment>
+  </data>
+  <data name="IC_Receipts_Screen" xml:space="preserve">
+    <value>Écran Réceptions de GS</value>
+    <comment>CSH ID 211017001</comment>
+  </data>
+  <data name="IC_Shipments_Article1" xml:space="preserve">
+    <value>À propos des expéditions</value>
+    <comment>CSH ID 211018002</comment>
+  </data>
+  <data name="IC_Shipments_Article2" xml:space="preserve">
+    <value>Expédier des marchandises aux clients</value>
+    <comment>CSH ID 211018003</comment>
+  </data>
+  <data name="IC_Shipments_Screen" xml:space="preserve">
+    <value>Écran Expéditions de GS</value>
+    <comment>CSH ID 211018001</comment>
+  </data>
+  <data name="PO_ShippableBackorders_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes fournisseurs</value>
+    <comment>CSH ID 405025002</comment>
+  </data>
+  <data name="PO_ShippableBackorders_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes fournisseurs</value>
+    <comment>CSH ID 405025003</comment>
+  </data>
+  <data name="PO_ShippableBackorders_Report_Screen" xml:space="preserve">
+    <value>Rapport Commandes en attente livrables de CmF</value>
+    <comment>CSH ID 405025001</comment>
+  </data>
+  <data name="PO_ClearHistory_Article1" xml:space="preserve">
+    <value>À propos du traitement périodique dans Commandes fournisseurs</value>
+    <comment>CSH ID 405018002</comment>
+  </data>
+  <data name="PO_ClearHistory_Article2" xml:space="preserve">
+    <value>Effacer des données historiques de Commandes fournisseurs</value>
+    <comment>CSH ID 405018003</comment>
+  </data>
+  <data name="PO_ClearHistory_Screen" xml:space="preserve">
+    <value>Écran Effacer l'historique de CmF</value>
+    <comment>CSH ID 405018001</comment>
+  </data>
+  <data name="IC_AlternateItems_Report_Article1" xml:space="preserve">
+    <value>À propos des articles de remplacement</value>
+    <comment>CSH ID 211052002</comment>
+  </data>
+  <data name="IC_AlternateItems_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Articles de remplacement</value>
+    <comment>CSH ID 211052003</comment>
+  </data>
+  <data name="IC_AlternateItems_Report_Screen" xml:space="preserve">
+    <value>Rapport Articles de remplacement de GS</value>
+    <comment>CSH ID 211052001</comment>
+  </data>
+  <data name="IC_Reorder_Report_Article1" xml:space="preserve">
+    <value>Rapports de gestion des stocks</value>
+    <comment>CSH ID 211056002</comment>
+  </data>
+  <data name="IC_Reorder_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Réapprovisionnement</value>
+    <comment>CSH ID 211056003</comment>
+  </data>
+  <data name="IC_Reorder_Report_Screen" xml:space="preserve">
+    <value>Rapport Réapprovisionnement de GS</value>
+    <comment>CSH ID 211056001</comment>
+  </data>
+  <data name="OE_GL_Transactions_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes clients</value>
+    <comment>CSH ID 369031002</comment>
+  </data>
+  <data name="OE_GL_Transactions_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes clients</value>
+    <comment>CSH ID 369031003</comment>
+  </data>
+  <data name="OE_GL_Transactions_Report_Screen" xml:space="preserve">
+    <value>Rapport Transactions du GL de CmC</value>
+    <comment>CSH ID 369031001</comment>
+  </data>
+  <data name="PO_GL_Transactions_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes fournisseurs</value>
+    <comment>CSH ID 405035002</comment>
+  </data>
+  <data name="PO_GL_Transactions_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes fournisseurs</value>
+    <comment>CSH ID 405035003</comment>
+  </data>
+  <data name="PO_GL_Transactions_Report_Screen" xml:space="preserve">
+    <value>Rapport Transactions du GL de CmF</value>
+    <comment>CSH ID 405035001</comment>
+  </data>
+  <data name="PO_PayablesClearingAuditList_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes fournisseurs</value>
+    <comment>CSH ID 405036002</comment>
+  </data>
+  <data name="PO_PayablesClearingAuditList_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes fournisseurs</value>
+    <comment>CSH ID 405036003</comment>
+  </data>
+  <data name="PO_PayablesClearingAuditList_Report_Screen" xml:space="preserve">
+    <value>Rapport Liste d'audit des réceptions non facturées de CmF</value>
+    <comment>CSH ID 405036001</comment>
+  </data>
+  <data name="IC_PriceLists_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211045002</comment>
+  </data>
+  <data name="IC_PriceLists_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Liste de prix</value>
+    <comment>CSH ID 211045003</comment>
+  </data>
+  <data name="IC_PriceLists_Report_Screen" xml:space="preserve">
+    <value>Rapport Listes de prix de GS</value>
+    <comment>CSH ID 211045001</comment>
+  </data>
+  <data name="OE_SalespersonCommissions_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes clients</value>
+    <comment>CSH ID 369032002</comment>
+  </data>
+  <data name="OE_SalespersonCommissions_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes clients</value>
+    <comment>CSH ID 369032003</comment>
+  </data>
+  <data name="OE_SalespersonCommissions_Report_Screen" xml:space="preserve">
+    <value>Rapport Commissions des vendeurs de CmC</value>
+    <comment>CSH ID 369032001</comment>
+  </data>
+  <data name="OE_SalesStatistics_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes clients</value>
+    <comment>CSH ID 369030002</comment>
+  </data>
+  <data name="OE_SalesStatistics_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes clients</value>
+    <comment>CSH ID 369030003</comment>
+  </data>
+  <data name="OE_SalesStatistics_Report_Screen" xml:space="preserve">
+    <value>Rapport Statistiques des ventes de CmC</value>
+    <comment>CSH ID 369030001</comment>
+  </data>
+  <data name="IC_SalesStatistics_Article1" xml:space="preserve">
+    <value>Consulter des statistiques de ventes</value>
+    <comment>CSH ID 211015002</comment>
+  </data>
+  <data name="IC_SalesStatistics_Article2" xml:space="preserve">
+    <value>Ajouter des statistiques courantes sur les ventes et les retours</value>
+    <comment>CSH ID 211015003</comment>
+  </data>
+  <data name="IC_SalesStatistics_Screen" xml:space="preserve">
+    <value>Écran Statistiques des ventes de GS</value>
+    <comment>CSH ID 211015001</comment>
+  </data>
+  <data name="OE_OrderConfirmations_Article1" xml:space="preserve">
+    <value>À propos des formulaires clients de Commandes clients</value>
+    <comment>CSH ID 369018002</comment>
+  </data>
+  <data name="OE_OrderConfirmations_Article2" xml:space="preserve">
+    <value>Saisir une commande</value>
+    <comment>CSH ID 369018003</comment>
+  </data>
+  <data name="OE_OrderConfirmations_Screen" xml:space="preserve">
+    <value>Écran Confirmations de commandes de CmC</value>
+    <comment>CSH ID 369018001</comment>
+  </data>
+  <data name="OE_Quotes_Article1" xml:space="preserve">
+    <value>Saisir un devis</value>
+    <comment>CSH ID 369019002</comment>
+  </data>
+  <data name="OE_Quotes_Article2" xml:space="preserve">
+    <value>À propos des formulaires clients de Commandes clients</value>
+    <comment>CSH ID 369019003</comment>
+  </data>
+  <data name="OE_Quotes_Screen" xml:space="preserve">
+    <value>Écran Devis de CmC</value>
+    <comment>CSH ID 369019001</comment>
+  </data>
+  <data name="OE_Templates_Article1" xml:space="preserve">
+    <value>À propos des modèles</value>
+    <comment>CSH ID 369002002</comment>
+  </data>
+  <data name="OE_Templates_Article2" xml:space="preserve">
+    <value>Créer des modèles</value>
+    <comment>CSH ID 369002002</comment>
+  </data>
+  <data name="OE_Templates_Screen" xml:space="preserve">
+    <value>Écran Modèles de CmC</value>
+    <comment>CSH ID 369002001</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_IC_Article1" xml:space="preserve">
+    <value>À propos de la création automatique de bons de commande</value>
+    <comment>CSH ID 405015002</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_IC_Article2" xml:space="preserve">
+    <value>Créer des bons de commande à partir de Réapprovisionnement des quantités dans Gestion des stocks</value>
+    <comment>CSH ID 405015003</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_IC_Screen" xml:space="preserve">
+    <value>Écran Créer BC à partir de GS de CmF</value>
+    <comment>CSH ID 405015001</comment>
+  </data>
+  <data name="IC_AgedInventory_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211061002</comment>
+  </data>
+  <data name="IC_AgedInventory_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Âge des stocks</value>
+    <comment>CSH ID 211061003</comment>
+  </data>
+  <data name="IC_AgedInventory_Report_Screen" xml:space="preserve">
+    <value>Rapport Âge des stocks de GS</value>
+    <comment>CSH ID 211061001</comment>
+  </data>
+  <data name="IC_InventoryMovement_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211060002</comment>
+  </data>
+  <data name="IC_InventoryMovement_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Mouvement des stocks</value>
+    <comment>CSH ID 211060003</comment>
+  </data>
+  <data name="IC_InventoryMovement_Report_Screen" xml:space="preserve">
+    <value>Rapport Mouvement des stocks de GS</value>
+    <comment>CSH ID 211060001</comment>
+  </data>
+  <data name="IC_InventoryWorksheet_Report_Article1" xml:space="preserve">
+    <value>Créer des feuilles de calcul de l'inventaire pour le dénombrement des stocks</value>
+    <comment>CSH ID 211040002</comment>
+  </data>
+  <data name="IC_InventoryWorksheet_Report_Article2" xml:space="preserve">
+    <value>Imprimer la feuille de calcul d'inventaire</value>
+    <comment>CSH ID 211040003</comment>
+  </data>
+  <data name="IC_InventoryWorksheet_Report_Screen" xml:space="preserve">
+    <value>Rapport Feuille de calcul de l'inventaire de GS</value>
+    <comment>CSH ID 211040001</comment>
+  </data>
+  <data name="IC_PostingJournals_Article1" xml:space="preserve">
+    <value>À propos des journaux de report</value>
+    <comment>CSH ID 211051002</comment>
+  </data>
+  <data name="IC_PostingJournals_Article2" xml:space="preserve">
+    <value>Reporter des transactions de stock</value>
+    <comment>CSH ID 211051003</comment>
+  </data>
+  <data name="IC_PostingJournals_Screen" xml:space="preserve">
+    <value>Écran Journaux de report de GS</value>
+    <comment>CSH ID 211051001</comment>
+  </data>
+  <data name="OE_ClearHistory_Article1" xml:space="preserve">
+    <value>À propos du traitement périodique</value>
+    <comment>CSH ID 369011002</comment>
+  </data>
+  <data name="OE_ClearHistory_Article2" xml:space="preserve">
+    <value>Traitement de clôture journalière</value>
+    <comment>CSH ID 369011003</comment>
+  </data>
+  <data name="OE_ClearHistory_Screen" xml:space="preserve">
+    <value>Écran Effacer l'historique de CmC</value>
+    <comment>CSH ID 369011001</comment>
+  </data>
+  <data name="OE_OrderEntry_Article1" xml:space="preserve">
+    <value>À propos du cycle d'une commande</value>
+    <comment>CSH ID 369008002</comment>
+  </data>
+  <data name="OE_OrderEntry_Article2" xml:space="preserve">
+    <value>Saisir une commande</value>
+    <comment>CSH ID 369008003</comment>
+  </data>
+  <data name="OE_OrderEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des commandes de CmC</value>
+    <comment>CSH ID 369008001</comment>
+  </data>
+  <data name="OE_PostingJournals_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes clients</value>
+    <comment>CSH ID 369027002</comment>
+  </data>
+  <data name="OE_PostingJournals_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes clients</value>
+    <comment>CSH ID 369027002</comment>
+  </data>
+  <data name="OE_PostingJournals_Report_Screen" xml:space="preserve">
+    <value>Rapport Journaux de report de CmC</value>
+    <comment>CSH ID 369027001</comment>
+  </data>
+  <data name="PO_OptionalFields_Article1" xml:space="preserve">
+    <value>À propos des champs optionnels</value>
+    <comment>CSH ID 405007002</comment>
+  </data>
+  <data name="PO_OptionalFields_Article2" xml:space="preserve">
+    <value>Configurer des champs optionnels</value>
+    <comment>CSH ID 405007003</comment>
+  </data>
+  <data name="PO_OptionalFields_Screen" xml:space="preserve">
+    <value>Écran Champs optionnels de CmF</value>
+    <comment>CSH ID 405007001</comment>
+  </data>
+  <data name="IC_TransactionHistoryInquiry_Article1" xml:space="preserve">
+    <value>À propos du traitement des transactions de Gestion des stocks</value>
+    <comment>CSH ID 211025002</comment>
+  </data>
+  <data name="IC_TransactionHistoryInquiry_Article2" xml:space="preserve">
+    <value>Consulter l'historique des transactions</value>
+    <comment>CSH ID 211025003</comment>
+  </data>
+  <data name="IC_TransactionHistoryInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation de l'historique de transaction de GS</value>
+    <comment>CSH ID 211025001</comment>
+  </data>
+  <data name="PO_PurchaseOrders_Article1" xml:space="preserve">
+    <value>À propos des formulaires de Commandes fournisseurs</value>
+    <comment>CSH ID 405027002</comment>
+  </data>
+  <data name="PO_PurchaseOrders_Article2" xml:space="preserve">
+    <value>Imprimer des bons de commande</value>
+    <comment>CSH ID 405027002</comment>
+  </data>
+  <data name="PO_PurchaseOrders_Screen" xml:space="preserve">
+    <value>Écran Bons de commande de CmF</value>
+    <comment>CSH ID 405027001</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Article1" xml:space="preserve">
+    <value>À propos de l'ajout de statistiques de ventes</value>
+    <comment>CSH ID 405022002</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Article2" xml:space="preserve">
+    <value>Ajouter et gérer des statistiques</value>
+    <comment>CSH ID 405022003</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Screen" xml:space="preserve">
+    <value>Écran Statistiques des achats de CmF</value>
+    <comment>CSH ID 405022001</comment>
+  </data>
+  <data name="PO_Templates_Article1" xml:space="preserve">
+    <value>À propos des modèles</value>
+    <comment>CSH ID 405004001</comment>
+  </data>
+  <data name="PO_Templates_Article2" xml:space="preserve">
+    <value>Ajouter des modèles</value>
+    <comment>CSH ID 405004001</comment>
+  </data>
+  <data name="PO_Templates_Screen" xml:space="preserve">
+    <value>Écran Modèles de CmF</value>
+    <comment>CSH ID 405004001</comment>
+  </data>
+  <data name="OE_MiscellaneousCharges_Article1" xml:space="preserve">
+    <value>À propos des frais divers</value>
+    <comment>CSH ID 369003002</comment>
+  </data>
+  <data name="OE_MiscellaneousCharges_Article2" xml:space="preserve">
+    <value>Créer des frais divers</value>
+    <comment>CSH ID 369003003</comment>
+  </data>
+  <data name="OE_MiscellaneousCharges_Screen" xml:space="preserve">
+    <value>Écran Frais divers de CmC</value>
+    <comment>CSH ID 369003001</comment>
+  </data>
+  <data name="OE_OrderAction_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes clients</value>
+    <comment>CSH ID 369023002</comment>
+  </data>
+  <data name="OE_OrderAction_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes clients</value>
+    <comment>CSH ID 369023003</comment>
+  </data>
+  <data name="OE_OrderAction_Report_Screen" xml:space="preserve">
+    <value>Rapport État de la commande de CmC</value>
+    <comment>CSH ID 369023001</comment>
+  </data>
+  <data name="OE_ShipViaCodes_Article1" xml:space="preserve">
+    <value>Gérer les codes d'expédition</value>
+    <comment>CSH ID 369004002</comment>
+  </data>
+  <data name="OE_ShipViaCodes_Article2" xml:space="preserve">
+    <value>Créer des codes d'expédition</value>
+    <comment>CSH ID 369004003</comment>
+  </data>
+  <data name="OE_ShipViaCodes_Screen" xml:space="preserve">
+    <value>Écran Codes d'expédition de CmC</value>
+    <comment>CSH ID 369004001</comment>
+  </data>
+  <data name="PO_EmailMessages_Article1" xml:space="preserve">
+    <value>Créer des messages électroniques</value>
+    <comment>CSH ID 405006002</comment>
+  </data>
+  <data name="PO_EmailMessages_Article2" xml:space="preserve">
+    <value>Variables pour les messages électroniques</value>
+    <comment>CSH ID 405006003</comment>
+  </data>
+  <data name="PO_EmailMessages_Screen" xml:space="preserve">
+    <value>Écran Courriels de CmF</value>
+    <comment>CSH ID 405006001</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes fournisseurs</value>
+    <comment>CSH ID 405031002</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes fournisseurs</value>
+    <comment>CSH ID 405031003</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Report_Screen" xml:space="preserve">
+    <value>Rapport Historique des achats de CmF</value>
+    <comment>CSH ID 405031001</comment>
+  </data>
+  <data name="PO_PurchaseOrderAction_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes fournisseurs</value>
+    <comment>CSH ID 405030002</comment>
+  </data>
+  <data name="PO_PurchaseOrderAction_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration de Commandes fournisseurs</value>
+    <comment>CSH ID 405030003</comment>
+  </data>
+  <data name="PO_PurchaseOrderAction_Report_Screen" xml:space="preserve">
+    <value>Rapport État des bons de commande de CmF</value>
+    <comment>CSH ID 405030001</comment>
+  </data>
+  <data name="IC_KittingItems_Article1" xml:space="preserve">
+    <value>À propos des trousses d'articles</value>
+    <comment>CSH ID  211037002</comment>
+  </data>
+  <data name="IC_KittingItems_Article2" xml:space="preserve">
+    <value>Ajouter des trousses d'articles</value>
+    <comment>CSH ID  211037003</comment>
+  </data>
+  <data name="IC_KittingItems_Screen" xml:space="preserve">
+    <value>Écran Trousses d'articles de GS</value>
+    <comment>CSH ID  211037001</comment>
+  </data>
+  <data name="IC_LIFOFIFOInquiry_Article1" xml:space="preserve">
+    <value>À propos des méthodes d'évaluation FIFO et LIFO</value>
+    <comment>CSH ID  211026002</comment>
+  </data>
+  <data name="IC_LIFOFIFOInquiry_Article2" xml:space="preserve">
+    <value>Consulter les coûts d'articles LIFO et FIFO</value>
+    <comment>CSH ID  211026003</comment>
+  </data>
+  <data name="IC_LIFOFIFOInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation de LIFO/FIFO de GS</value>
+    <comment>CSH ID  211026001</comment>
+  </data>
+  <data name="OE_CreditDebitNoteEntry_Article1" xml:space="preserve">
+    <value>À propos des notes de crédit et de débit</value>
+    <comment>CSH ID  369009002</comment>
+  </data>
+  <data name="OE_CreditDebitNoteEntry_Article2" xml:space="preserve">
+    <value>Créditer une facture</value>
+    <comment>CSH ID  369009003</comment>
+  </data>
+  <data name="OE_CreditDebitNoteEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des notes crédit/débit de CmC</value>
+    <comment>CSH ID  369009001</comment>
+  </data>
+  <data name="PO_Options_Article1" xml:space="preserve">
+    <value>À propos de la modification des options de Commandes fournisseurs</value>
+    <comment>CSH ID 405001002</comment>
+  </data>
+  <data name="PO_Options_Article2" xml:space="preserve">
+    <value>Configurer Commandes fournisseurs</value>
+    <comment>CSH ID 405001002</comment>
+  </data>
+  <data name="PO_Options_Screen" xml:space="preserve">
+    <value>Écran Options de CmF</value>
+    <comment>CSH ID 405001001</comment>
+  </data>
+  <data name="OE_EmailMessages_Article1" xml:space="preserve">
+    <value>Variables des messages électroniques</value>
+    <comment>CSH ID 369005002</comment>
+  </data>
+  <data name="OE_EmailMessages_Article2" xml:space="preserve">
+    <value>Créer des messages électroniques</value>
+    <comment>CSH ID 369005002</comment>
+  </data>
+  <data name="OE_EmailMessages_Screen" xml:space="preserve">
+    <value>Écran Courriels de CmC</value>
+    <comment>CSH ID 369005001</comment>
+  </data>
+  <data name="PO_AgedPurchaseOrders_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes fournisseurs</value>
+    <comment>CSH ID 405032002</comment>
+  </data>
+  <data name="PO_AgedPurchaseOrders_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration</value>
+    <comment>CSH ID 405032003</comment>
+  </data>
+  <data name="PO_AgedPurchaseOrders_Report_Screen" xml:space="preserve">
+    <value>Bons de commande âgés de CmF</value>
+    <comment>CSH ID 405032001</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_OE_Article1" xml:space="preserve">
+    <value>À propos de la création automatique des bons de commande</value>
+    <comment>CSH ID 405016002</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_OE_Article2" xml:space="preserve">
+    <value>Créer des bons de commande à partir des commandes de Commandes clients</value>
+    <comment>CSH ID 405016003</comment>
+  </data>
+  <data name="PO_CreatePOsFrom_OE_Screen" xml:space="preserve">
+    <value>Écran Créer BC à partir de Commandes clients de CmF</value>
+    <comment>CSH ID 405016001</comment>
+  </data>
+  <data name="IC_ItemValuation_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211054002</comment>
+  </data>
+  <data name="IC_ItemValuation_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Évaluation des articles</value>
+    <comment>CSH ID 211054003</comment>
+  </data>
+  <data name="IC_ItemValuation_Report_Screen" xml:space="preserve">
+    <value>Rapport Évaluation des articles de GS</value>
+    <comment>CSH ID 211054001</comment>
+  </data>
+  <data name="PO_RequisitionEntry_Article1" xml:space="preserve">
+    <value>À propos du traitement des demandes d'achat</value>
+    <comment>CSH ID 405010002</comment>
+  </data>
+  <data name="PO_RequisitionEntry_Article2" xml:space="preserve">
+    <value>Créer une nouvelle demande d'achat</value>
+    <comment>CSH ID 405010003</comment>
+  </data>
+  <data name="PO_RequisitionEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des demandes d'achat de CmF</value>
+    <comment>CSH ID 405010001</comment>
+  </data>
+  <data name="OE_OptionalFields_Article1" xml:space="preserve">
+    <value>À propos des champs optionnels</value>
+    <comment>CSH ID 369006002</comment>
+  </data>
+  <data name="OE_OptionalFields_Article2" xml:space="preserve">
+    <value>Ajouter des champs optionnels aux écrans de saisie de transactions</value>
+    <comment>CSH ID 369006003</comment>
+  </data>
+  <data name="OE_OptionalFields_Screen" xml:space="preserve">
+    <value>Écran Champs optionnels de CmC</value>
+    <comment>CSH ID 369006001</comment>
+  </data>
+  <data name="IC_SlowMovingItems_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211057002</comment>
+  </data>
+  <data name="IC_SlowMovingItems_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Articles à rotation lente</value>
+    <comment>CSH ID 211057003</comment>
+  </data>
+  <data name="IC_SlowMovingItems_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Articles à rotation lente de GS</value>
+    <comment>CSH ID 211057001</comment>
+  </data>
+  <data name="PO_CreatePOsFromRequisitions_Article1" xml:space="preserve">
+    <value>À propos de la création automatique des bons de commande</value>
+    <comment>CSH ID 405014002</comment>
+  </data>
+  <data name="PO_CreatePOsFromRequisitions_Article2" xml:space="preserve">
+    <value>Créer des bons de commande à partir de demandes d'achat</value>
+    <comment>CSH ID 405014003</comment>
+  </data>
+  <data name="PO_CreatePOsFromRequisitions_Screen" xml:space="preserve">
+    <value>Écran Créer bon de commande à partir de demande achat de CmF</value>
+    <comment>CSH ID 405014001</comment>
+  </data>
+  <data name="PO_VendorContractCosts_Article1" xml:space="preserve">
+    <value>Gérer les contrats d'achat auprès des fournisseurs</value>
+    <comment>CSH ID 405003002</comment>
+  </data>
+  <data name="PO_VendorContractCosts_Article2" xml:space="preserve">
+    <value>Définir des contrats d'achat auprès des fournisseurs</value>
+    <comment>CSH ID 405003003</comment>
+  </data>
+  <data name="PO_VendorContractCosts_Screen" xml:space="preserve">
+    <value>Écran Contrat d'achat avec fournisseur de CmF</value>
+    <comment>CSH ID 405003001</comment>
+  </data>
+  <data name="IC_TransactionHistory_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211050002</comment>
+  </data>
+  <data name="IC_TransactionHistory_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Historique de transaction</value>
+    <comment>CSH ID 211050003</comment>
+  </data>
+  <data name="IC_TransactionHistory_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Historique des transactions de GS</value>
+    <comment>CSH ID 211050001</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes fournisseurs</value>
+    <comment>CSH ID 405033002</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration</value>
+    <comment>CSH ID 405033003</comment>
+  </data>
+  <data name="PO_PurchaseStatistics_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Statistiques des achats de CmF</value>
+    <comment>CSH ID 405033001</comment>
+  </data>
+  <data name="PO_TransactionList_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes fournisseurs</value>
+    <comment>CSH ID 405024002</comment>
+  </data>
+  <data name="PO_TransactionList_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration</value>
+    <comment>CSH ID 405024003</comment>
+  </data>
+  <data name="PO_TransactionList_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Liste des transactions de CmF</value>
+    <comment>CSH ID 405024001</comment>
+  </data>
+  <data name="IC_ItemPricing_Article1" xml:space="preserve">
+    <value>À propos des listes de prix</value>
+    <comment>CSH ID 211023002</comment>
+  </data>
+  <data name="IC_ItemPricing_Article2" xml:space="preserve">
+    <value>Ajouter des articles à des listes de prix</value>
+    <comment>CSH ID 211023003</comment>
+  </data>
+  <data name="IC_ItemPricing_Screen" xml:space="preserve">
+    <value>Écran Prix de l'article de GS</value>
+    <comment>CSH ID 211023001</comment>
+  </data>
+  <data name="IC_StockTransactionsInquiry_Article1" xml:space="preserve">
+    <value>À propos du traitement des transactions dans Gestion des stocks</value>
+    <comment>CSH ID 211028002</comment>
+  </data>
+  <data name="IC_StockTransactionsInquiry_Article2" xml:space="preserve">
+    <value>Consulter l'historique des transactions</value>
+    <comment>CSH ID 211028003</comment>
+  </data>
+  <data name="IC_StockTransactionsInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation des transactions de stock de GS</value>
+    <comment>CSH ID 211028001</comment>
+  </data>
+  <data name="PO_AdditionalCosts_Article1" xml:space="preserve">
+    <value>À propos des codes de coûts additionnels</value>
+    <comment>CSH ID 405005002</comment>
+  </data>
+  <data name="PO_AdditionalCosts_Article2" xml:space="preserve">
+    <value>Ajouter des enregistrements de coûts additionnels</value>
+    <comment>CSH ID 405005003</comment>
+  </data>
+  <data name="PO_AdditionalCosts_Screen" xml:space="preserve">
+    <value>Écran Coûts additionnels de CmF</value>
+    <comment>CSH ID 405005001</comment>
+  </data>
+  <data name="OE_Invoices_Article1" xml:space="preserve">
+    <value>Imprimer une plage de factures</value>
+    <comment>CSH ID 369022002</comment>
+  </data>
+  <data name="OE_Invoices_Article2" xml:space="preserve">
+    <value>À propos des formulaires clients de Commandes clients</value>
+    <comment>CSH ID 369022003</comment>
+  </data>
+  <data name="OE_Invoices_Screen" xml:space="preserve">
+    <value>Écran Factures de CmC</value>
+    <comment>CSH ID 369022001</comment>
+  </data>
+  <data name="OE_ShippingLabels_Article1" xml:space="preserve">
+    <value>À propos des formulaires clients de Commandes clients</value>
+    <comment>CSH ID 369021002</comment>
+  </data>
+  <data name="OE_ShippingLabels_Article2" xml:space="preserve">
+    <value>Imprimer des étiquettes d'expédition</value>
+    <comment>CSH ID 369021003</comment>
+  </data>
+  <data name="OE_ShippingLabels_Screen" xml:space="preserve">
+    <value>Écran Étiquettes d'expédition de CmC</value>
+    <comment>CSH ID 369021001</comment>
+  </data>
+  <data name="PO_CopyPurchaseOrders_Article1" xml:space="preserve">
+    <value>À propos de l'ajout de détails de bons de commande</value>
+    <comment>CSH ID 405021002</comment>
+  </data>
+  <data name="PO_CopyPurchaseOrders_Screen" xml:space="preserve">
+    <value>Écran Copier des bons de commande de CmF</value>
+    <comment>CSH ID 405021001</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Article2" xml:space="preserve">
+    <value>Consulter l'historique des transactions dans Gestion des stocks</value>
+    <comment>CSH ID 405021003</comment>
+  </data>
+  <data name="PO_Returns_Article1" xml:space="preserve">
+    <value>À propos des formulaires de Commandes fournisseurs</value>
+    <comment>CSH ID 405028002</comment>
+  </data>
+  <data name="PO_Returns_Article2" xml:space="preserve">
+    <value>Imprimer des retours</value>
+    <comment>CSH ID 405028003</comment>
+  </data>
+  <data name="PO_Returns_Screen" xml:space="preserve">
+    <value>Écran Retours de CmF</value>
+    <comment>CSH ID 405028001</comment>
+  </data>
+  <data name="OE_SalesStatistics_Article1" xml:space="preserve">
+    <value>À propos des statistiques de ventes</value>
+    <comment>CSHID 369016002</comment>
+  </data>
+  <data name="OE_SalesStatistics_Article2" xml:space="preserve">
+    <value>Consulter des statistiques de ventes</value>
+    <comment>CSHID 369016003</comment>
+  </data>
+  <data name="OE_SalesStatistics_Screen" xml:space="preserve">
+    <value>Écran Statistiques de ventes de CmC</value>
+    <comment>CSHID 369016001</comment>
+  </data>
+  <data name="PO_CreditDebitNoteEntry_Article1" xml:space="preserve">
+    <value>À propos du traitement des notes de crédit et des notes de débit</value>
+    <comment>CSH ID 405019002</comment>
+  </data>
+  <data name="PO_CreditDebitNoteEntry_Article2" xml:space="preserve">
+    <value>Saisir une note de crédit ou débit pour un retour ou une facture</value>
+    <comment>CSH ID 405019003</comment>
+  </data>
+  <data name="PO_CreditDebitNoteEntry_Screen" xml:space="preserve">
+    <value>Saisie des notes de crédit/débit de CmF</value>
+    <comment>CSH ID 405019001</comment>
+  </data>
+  <data name="IC_MarkupAnalysis_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211048002</comment>
+  </data>
+  <data name="IC_MarkupAnalysis_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Analyse de la majoration</value>
+    <comment>CSH ID 211048003</comment>
+  </data>
+  <data name="IC_MarkupAnalysis_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Analyse de majoration de GS</value>
+    <comment>CSH ID 211048001</comment>
+  </data>
+  <data name="IC_TransactionListing_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211030002</comment>
+  </data>
+  <data name="IC_TransactionListing_Report_Article2" xml:space="preserve">
+    <value>Imprimer des listes de transactions</value>
+    <comment>CSH ID 211030003</comment>
+  </data>
+  <data name="IC_TransactionListing_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Liste des transactions de GS</value>
+    <comment>CSH ID 211030001</comment>
+  </data>
+  <data name="OE_SalespersonInquiry_Article1" xml:space="preserve">
+    <value>À propos de l'historique des ventes</value>
+    <comment>CSH ID 369017002</comment>
+  </data>
+  <data name="OE_SalespersonInquiry_Article2" xml:space="preserve">
+    <value>Consulter l'historique des ventes pour des articles ou des clients</value>
+    <comment>CSH ID 369017003</comment>
+  </data>
+  <data name="OE_SalespersonInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation du vendeur de CmC</value>
+    <comment>CSH ID 369017001</comment>
+  </data>
+  <data name="IC_PostTransactions_Article1" xml:space="preserve">
+    <value>À propos du traitement des transactions dans Gestion des stocks</value>
+    <comment>CSH ID 211013002</comment>
+  </data>
+  <data name="IC_PostTransactions_Article2" xml:space="preserve">
+    <value>Reporter des transactions de stock</value>
+    <comment>CSH ID 211013003</comment>
+  </data>
+  <data name="IC_PostTransactions_Screen" xml:space="preserve">
+    <value>Écran Report des transactions de GS</value>
+    <comment>CSH ID 211013001</comment>
+  </data>
+  <data name="IC_ItemsLocationDetailsQuantityInquiry_Article1" xml:space="preserve">
+    <value>À propos de l'inventaire physique</value>
+    <comment>CSH ID 211027002</comment>
+  </data>
+  <data name="IC_ItemsLocationDetailsQuantityInquiry_Article2" xml:space="preserve">
+    <value>Consulter l'historique des transactions</value>
+    <comment>CSH ID 211027003</comment>
+  </data>
+  <data name="IC_ItemsLocationDetailsQuantityInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation détails des quantités d'articles par emplacement de GS</value>
+    <comment>CSH ID 211027001</comment>
+  </data>
+  <data name="PO_Posting_Journals_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes fournisseurs</value>
+    <comment>CSH ID 405034002</comment>
+  </data>
+  <data name="PO_Posting_Journals_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration</value>
+    <comment>CSH ID 405034003</comment>
+  </data>
+  <data name="PO_Posting_Journals_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Journaux de report de CmF</value>
+    <comment>CSH ID 405034001</comment>
+  </data>
+  <data name="IC_GenerateInventoryWorksheet_Article1" xml:space="preserve">
+    <value>Créer des feuilles de calcul de l'inventaire pour le dénombrement des stocks</value>
+    <comment>CSH ID 211039002</comment>
+  </data>
+  <data name="IC_GenerateInventoryWorksheet_Article2" xml:space="preserve">
+    <value>Imprimer la feuille de calcul d'inventaire</value>
+    <comment>CSH ID 211039003</comment>
+  </data>
+  <data name="IC_GenerateInventoryWorksheet_Screen" xml:space="preserve">
+    <value>Écran Création feuille de calcul d'inventaire de GS</value>
+    <comment>CSH ID 211039001</comment>
+  </data>
+  <data name="PO_PurchaseOrderEntry_Article1" xml:space="preserve">
+    <value>À propos de la création de bons de commande à partir de demandes d'achat</value>
+    <comment>CSH ID 405011002</comment>
+  </data>
+  <data name="PO_PurchaseOrderEntry_Article2" xml:space="preserve">
+    <value>Saisir un bon de commande</value>
+    <comment>CSH ID 405011003</comment>
+  </data>
+  <data name="PO_PurchaseOrderEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des bons de commande de CmF</value>
+    <comment>CSH ID 405011001</comment>
+  </data>
+  <data name="IC_BinShelfLabels_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211058002</comment>
+  </data>
+  <data name="IC_BinShelfLabels_Report_Article2" xml:space="preserve">
+    <value>Imprimer des étiquettes de casier/rayon</value>
+    <comment>CSH ID 211058003</comment>
+  </data>
+  <data name="IC_BinShelfLabels_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Étiquettes de casier/rayon de GS</value>
+    <comment>CSH ID 211058001</comment>
+  </data>
+  <data name="IC_InventoryReconciliation_Report_Article1" xml:space="preserve">
+    <value>Compter et rapprocher des quantités de stocks</value>
+    <comment>CSH ID 211042002</comment>
+  </data>
+  <data name="IC_InventoryReconciliation_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Rapprochement de l'inventaire</value>
+    <comment>CSH ID 211042003</comment>
+  </data>
+  <data name="IC_InventoryReconciliation_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Rapprochement de l'inventaire de GS</value>
+    <comment>CSH ID 211042001</comment>
+  </data>
+  <data name="IC_StockTransactions_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211062002</comment>
+  </data>
+  <data name="IC_StockTransactions_Report_Article2" xml:space="preserve">
+    <value>Consulter les transactions de stock</value>
+    <comment>CSH ID 211062003</comment>
+  </data>
+  <data name="IC_StockTransactions_Report_Screen" xml:space="preserve">
+    <value>Imprimer le rapport Transactions des stocks</value>
+    <comment>CSH ID 211062001</comment>
+  </data>
+  <data name="PO_InvoiceEntry_Article1" xml:space="preserve">
+    <value>À propos du traitement des factures</value>
+    <comment>CSH ID 405009002</comment>
+  </data>
+  <data name="PO_InvoiceEntry_Article2" xml:space="preserve">
+    <value>Saisir des coûts additionnels sur les factures</value>
+    <comment>CSH ID 405009003</comment>
+  </data>
+  <data name="PO_InvoiceEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des factures de CmF</value>
+    <comment>CSH ID 405009001</comment>
+  </data>
+  <data name="PO_ReceiptEntry_Article1" xml:space="preserve">
+    <value>À propos de la saisie des réceptions</value>
+    <comment>CSH ID 405012002</comment>
+  </data>
+  <data name="PO_ReceiptEntry_Article2" xml:space="preserve">
+    <value>Saisir des réceptions</value>
+    <comment>CSH ID 405012003</comment>
+  </data>
+  <data name="PO_ReceiptEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des réceptions de CmF</value>
+    <comment>CSH ID 405012001</comment>
+  </data>
+  <data name="PO_ReturnEntry_Article1" xml:space="preserve">
+    <value>À propos du traitement des retours</value>
+    <comment>CSH ID 405013002</comment>
+  </data>
+  <data name="PO_ReturnEntry_Article2" xml:space="preserve">
+    <value>Saisir des retours</value>
+    <comment>CSH ID 405013003</comment>
+  </data>
+  <data name="PO_ReturnEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des retours de CmF</value>
+    <comment>CSH ID 405013001</comment>
+  </data>
+  <data name="IC_Adjustments_Article1" xml:space="preserve">
+    <value>À propos des détails d'ajustement</value>
+    <comment>CSH ID 211021002</comment>
+  </data>
+  <data name="IC_Adjustments_Article2" xml:space="preserve">
+    <value>Ajuster les quantités et les coûts des articles</value>
+    <comment>CSH ID 211021003</comment>
+  </data>
+  <data name="IC_Adjustments_Screen" xml:space="preserve">
+    <value>Écran Ajustements de GS</value>
+    <comment>CSH ID 211021001</comment>
+  </data>
+  <data name="IC_OverstockedItems_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211055002</comment>
+  </data>
+  <data name="IC_OverstockedItems_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Articles surstockés</value>
+    <comment>CSH ID 211055003</comment>
+  </data>
+  <data name="IC_OverstockedItems_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Articles surstockés de GS</value>
+    <comment>CSH ID 211055001</comment>
+  </data>
+  <data name="OE_Options_Article1" xml:space="preserve">
+    <value>Configurer Commandes clients</value>
+    <comment>CSH ID 369001002</comment>
+  </data>
+  <data name="OE_Options_Article2" xml:space="preserve">
+    <value>Écran Champs optionnels de CmC</value>
+    <comment>CSH ID 369001003</comment>
+  </data>
+  <data name="OE_Options_Screen" xml:space="preserve">
+    <value>Écran Options de CmC</value>
+    <comment>CSH ID 369001001</comment>
+  </data>
+  <data name="IC_ItemStatus_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211053002</comment>
+  </data>
+  <data name="IC_ItemStatus_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport État des articles</value>
+    <comment>CSH ID 211053003</comment>
+  </data>
+  <data name="IC_ItemStatus_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport État des articles de GS</value>
+    <comment>CSH ID 211053001</comment>
+  </data>
+  <data name="IC_PhysicalInventoryQuantities_Article1" xml:space="preserve">
+    <value>Imprimer la feuille de calcul d'inventaire</value>
+    <comment>CSH ID 211041002</comment>
+  </data>
+  <data name="IC_PhysicalInventoryQuantities_Article2" xml:space="preserve">
+    <value>Saisir des quantités d'inventaire physique</value>
+    <comment>CSH ID 211041003</comment>
+  </data>
+  <data name="IC_PhysicalInventoryQuantities_Screen" xml:space="preserve">
+    <value>Écran Quantités de l'inventaire physique de GS</value>
+    <comment>CSH ID 211041001</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Article1" xml:space="preserve">
+    <value>À propos des critères de réapprovisionnement</value>
+    <comment>CSH ID 211036002</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Article2" xml:space="preserve">
+    <value>Ajouter des quantités de réapprovisionnement pour les articles</value>
+    <comment>CSH ID 211036003</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Screen" xml:space="preserve">
+    <value>Écran Réapprovisionnement des quantités de GS</value>
+    <comment>CSH ID 211036001</comment>
+  </data>
+  <data name="IC_UpdateItemsPricing_Article1" xml:space="preserve">
+    <value>À propos des listes de prix</value>
+    <comment>CSH ID 211033002</comment>
+  </data>
+  <data name="IC_UpdateItemsPricing_Article2" xml:space="preserve">
+    <value>Mettre à jour les renseignements concernant les prix pour des groupes d'articles</value>
+    <comment>CSH ID 211033003</comment>
+  </data>
+  <data name="IC_UpdateItemsPricing_Screen" xml:space="preserve">
+    <value>Écran Mettre à jour le prix des articles de GS</value>
+    <comment>CSH ID 211033001</comment>
+  </data>
+  <data name="IC_ItemLabels_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211059002</comment>
+  </data>
+  <data name="IC_ItemLabels_Report_Article2" xml:space="preserve">
+    <value>Imprimer des étiquettes d'articles</value>
+    <comment>CSH ID 211059003</comment>
+  </data>
+  <data name="IC_ItemLabels_Report_Screen" xml:space="preserve">
+    <value>Écran Étiquettes d'articles de GS</value>
+    <comment>CSH ID 211059001</comment>
+  </data>
+  <data name="OE_PickingSlips_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes clients</value>
+    <comment>CSH ID 369020002</comment>
+  </data>
+  <data name="OE_PickingSlips_Article2" xml:space="preserve">
+    <value>Imprimer des bons de collecte</value>
+    <comment>CSH ID 369020003</comment>
+  </data>
+  <data name="OE_PickingSlips_Screen" xml:space="preserve">
+    <value>Écran Bons de collecte de CmC</value>
+    <comment>CSH ID 369020001</comment>
+  </data>
+  <data name="PO_PendingReceiptsInquiry_Article1" xml:space="preserve">
+    <value>Consulter des réceptions en suspens</value>
+    <comment>CSH ID 405023002</comment>
+  </data>
+  <data name="PO_PendingReceiptsInquiry_Article2" xml:space="preserve">
+    <value>Consulter l'historique des transactions dans Gestion des stocks</value>
+    <comment>CSH ID 405023003</comment>
+  </data>
+  <data name="PO_PendingReceiptsInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation réceptions en suspens CmF</value>
+    <comment>CSH ID 405023001</comment>
+  </data>
+  <data name="IC_PostInventoryReconciliation_Article1" xml:space="preserve">
+    <value>Reporter un rapprochement de l'inventaire</value>
+    <comment>CSH ID 211043002</comment>
+  </data>
+  <data name="IC_PostInventoryReconciliation_Article2" xml:space="preserve">
+    <value>Créer des feuilles de calcul de l'inventaire pour le dénombrement des stocks</value>
+    <comment>CSH ID 211043003</comment>
+  </data>
+  <data name="IC_PostInventoryReconciliation_Screen" xml:space="preserve">
+    <value>Écran Report du rapprochement de l'inventaire de GS</value>
+    <comment>CSH ID 211043001</comment>
+  </data>
+  <data name="IC_SalesStatistics_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211049002</comment>
+  </data>
+  <data name="IC_SalesStatistics_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Statistiques des ventes</value>
+    <comment>CSH ID 211049003</comment>
+  </data>
+  <data name="IC_SalesStatistics_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Statistiques des ventes de GS</value>
+    <comment>CSH ID 211049001</comment>
+  </data>
+  <data name="IC_TransferSlips_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211063002</comment>
+  </data>
+  <data name="IC_TransferSlips_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Bordereaux de transfert</value>
+    <comment>CSH ID 211063003</comment>
+  </data>
+  <data name="IC_TransferSlips_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Bordereaux de transfert de GS</value>
+    <comment>CSH ID 211063001</comment>
+  </data>
+  <data name="PO_Requisitions_Article1" xml:space="preserve">
+    <value>À propos des formulaires de Commandes fournisseurs</value>
+    <comment>CSH ID 405026002</comment>
+  </data>
+  <data name="PO_Requisitions_Article2" xml:space="preserve">
+    <value>Imprimer des demandes d'achat</value>
+    <comment>CSH ID 405026003</comment>
+  </data>
+  <data name="PO_Requisitions_Screen" xml:space="preserve">
+    <value>Écran Demandes d'achat de CmF</value>
+    <comment>CSH ID 405026001</comment>
+  </data>
+  <data name="OE_CreditDebitNotes_Article1" xml:space="preserve">
+    <value>À propos des formulaires clients de Commandes clients</value>
+    <comment>CSH ID 369024002</comment>
+  </data>
+  <data name="OE_CreditDebitNotes_Article2" xml:space="preserve">
+    <value>À propos des notes de crédit et débit</value>
+    <comment>CSH ID 369024003</comment>
+  </data>
+  <data name="OE_CreditDebitNotes_Screen" xml:space="preserve">
+    <value>Écran Notes de crédit/débit de CmC</value>
+    <comment>CSH ID 369024001</comment>
+  </data>
+  <data name="IC_Transfers_Article1" xml:space="preserve">
+    <value>À propos des transferts</value>
+    <comment>CSH ID 211029002</comment>
+  </data>
+  <data name="IC_Transfers_Article2" xml:space="preserve">
+    <value>Transférer des marchandises entre deux emplacements de stocks</value>
+    <comment>CSH ID 211029003</comment>
+  </data>
+  <data name="IC_Transfers_Screen" xml:space="preserve">
+    <value>Écran Transferts de GS</value>
+    <comment>CSH ID 211029001</comment>
+  </data>
+  <data name="PO_MailingLabels_Article1" xml:space="preserve">
+    <value>À propos des formulaires de Commandes fournisseurs</value>
+    <comment>CSH ID 405029002</comment>
+  </data>
+  <data name="PO_MailingLabels_Article2" xml:space="preserve">
+    <value>Imprimer des étiquettes d'adresse</value>
+    <comment>CSH ID 405029003</comment>
+  </data>
+  <data name="PO_MailingLabels_Screen" xml:space="preserve">
+    <value>Écran Étiquettes d'adresse de CmF</value>
+    <comment>CSH ID 405029001</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Article1" xml:space="preserve">
+    <value>Consulter l'historique des achats</value>
+    <comment>CSH ID 405021002</comment>
+  </data>
+  <data name="PO_PurchaseHistory_Screen" xml:space="preserve">
+    <value>Écran Historique des achats de CmF</value>
+    <comment>CSH ID 405021001</comment>
+  </data>
+  <data name="OE_SalesHistory_Article1" xml:space="preserve">
+    <value>À propos de l'historique des ventes</value>
+    <comment>CSH ID 369015002</comment>
+  </data>
+  <data name="OE_SalesHistory_Article2" xml:space="preserve">
+    <value>Consulter l'historique des ventes pour des articles ou des clients</value>
+    <comment>CSH ID 369015003</comment>
+  </data>
+  <data name="OE_SalesHistory_Screen" xml:space="preserve">
+    <value>Écran Historique des ventes de CmC</value>
+    <comment>CSH ID 369015001</comment>
+  </data>
+  <data name="OE_PendingShipmentsInquiry_Article1" xml:space="preserve">
+    <value>À propos des commandes, expéditions et factures</value>
+    <comment>CSH ID 369014002</comment>
+  </data>
+  <data name="OE_PendingShipmentsInquiry_Article2" xml:space="preserve">
+    <value>Expéditions de commandes et d'articles</value>
+    <comment>CSH ID 369014003</comment>
+  </data>
+  <data name="OE_PendingShipmentsInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation des expéditions en suspens de CmC</value>
+    <comment>CSH ID 369014001</comment>
+  </data>
+  <data name="IC_LocationDetails_Article1" xml:space="preserve">
+    <value>À propos de la modification des emplacements d'articles</value>
+    <comment>CSH ID 211034002</comment>
+  </data>
+  <data name="IC_LocationDetails_Article2" xml:space="preserve">
+    <value>Assigner des articles aux emplacements</value>
+    <comment>CSH ID 211034003</comment>
+  </data>
+  <data name="IC_LocationDetails_Screen" xml:space="preserve">
+    <value>Écran Emplacements des articles de GS</value>
+    <comment>CSH ID 211034001</comment>
+  </data>
+  <data name="IC_InternalUsage_Article1" xml:space="preserve">
+    <value>À propos du traitement des transactions dans Gestion des stocks</value>
+    <comment>CSH ID 211020002</comment>
+  </data>
+  <data name="IC_InternalUsage_Article2" xml:space="preserve">
+    <value>Utiliser des marchandises à l'interne</value>
+    <comment>CSH ID 211020003</comment>
+  </data>
+  <data name="IC_InternalUsage_Screen" xml:space="preserve">
+    <value>Écran Usage interne de GS</value>
+    <comment>CSH ID 211020001</comment>
+  </data>
+  <data name="GL_ClearHistory_Article1" xml:space="preserve">
+    <value>Procédures de fin de période</value>
+    <comment>CSH ID 168030002</comment>
+  </data>
+  <data name="GL_ClearHistory_Article2" xml:space="preserve">
+    <value>Effacer l'historique de Grand livre</value>
+    <comment>CSH ID 168030003</comment>
+  </data>
+  <data name="GL_ClearHistory_Screen" xml:space="preserve">
+    <value>Écran Effacer l'historique de GL</value>
+    <comment>CSH ID 168030001</comment>
+  </data>
+  <data name="OE_EmailMessages_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes clients</value>
+    <comment>CSH ID 369036002</comment>
+  </data>
+  <data name="OE_EmailMessages_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports de Commandes clients</value>
+    <comment>CSH ID 369036003</comment>
+  </data>
+  <data name="OE_EmailMessages_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Courriels de CmC</value>
+    <comment>CSH ID 369036001</comment>
+  </data>
+  <data name="PO_EmailMessages_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Commandes fournisseurs</value>
+    <comment>CSH ID 405038002</comment>
+  </data>
+  <data name="PO_EmailMessages_Report_Article2" xml:space="preserve">
+    <value>Imprimer des rapports analytiques et de configuration</value>
+    <comment>CSH ID 405038003</comment>
+  </data>
+  <data name="PO_EmailMessages_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Courriels de CmF</value>
+    <comment>CSH ID 405038001</comment>
+  </data>
+  <data name="AP_Revaluation_Article1" xml:space="preserve">
+    <value>À propos de la réévaluation de transactions multidevises</value>
+    <comment>CSH ID 16043002</comment>
+  </data>
+  <data name="AP_Revaluation_Article2" xml:space="preserve">
+    <value>Réévaluer des transactions en devises étrangères</value>
+    <comment>CSH ID 16043003</comment>
+  </data>
+  <data name="AP_Revaluation_Screen" xml:space="preserve">
+    <value>Écran Réévaluation de CF</value>
+    <comment>CSH ID 16043001</comment>
+  </data>
+  <data name="AR_Revaluation_Article1" xml:space="preserve">
+    <value>À propos de la réévaluation de transactions multidevises</value>
+    <comment>CSH ID 18042002</comment>
+  </data>
+  <data name="AR_Revaluation_Article2" xml:space="preserve">
+    <value>Réévaluer des transactions en devises étrangères</value>
+    <comment>CSH ID 18042003</comment>
+  </data>
+  <data name="AR_Revaluation_Screen" xml:space="preserve">
+    <value>Écran Réévaluation de CC</value>
+    <comment>CSH ID 18042001</comment>
+  </data>
+  <data name="OE_CurrentOrdersInquiry_Article1" xml:space="preserve">
+    <value>Consulter des documents reportés</value>
+    <comment>CSH ID 369013002</comment>
+  </data>
+  <data name="OE_CurrentOrdersInquiry_Article2" xml:space="preserve">
+    <value>Types de commandes</value>
+    <comment>CSH ID 369013003</comment>
+  </data>
+  <data name="OE_CurrentOrdersInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation commandes courantes de CmC</value>
+    <comment>CSH ID 369013001</comment>
+  </data>
+  <data name="AP_RecurringPayables_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Comptes fournisseurs</value>
+    <comment>CSH ID 16052002</comment>
+  </data>
+  <data name="AP_RecurringPayables_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Factures récurrentes</value>
+    <comment>CSH ID 16052003</comment>
+  </data>
+  <data name="AP_RecurringPayables_Report_Screen" xml:space="preserve">
+    <value>Écran de rapport Factures récurrentes de CF</value>
+    <comment>CSH ID 16052001</comment>
+  </data>
+  <data name="AR_DepositSlips_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+    <comment>CSH ID 18056002</comment>
+  </data>
+  <data name="AR_DepositSlips_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Bordereaux de dépôt de CC</value>
+    <comment>CSH ID 18056003</comment>
+  </data>
+  <data name="AR_DepositSlips_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Bordereaux de dépôt de CC</value>
+    <comment>CSH ID 18056001</comment>
+  </data>
+  <data name="OE_CopyOrders_Article1" xml:space="preserve">
+    <value>À propos des commandes, des expéditions et des factures</value>
+    <comment>CSH ID 369010002</comment>
+  </data>
+  <data name="OE_CopyOrders_Article2" xml:space="preserve">
+    <value>Copier des commandes</value>
+    <comment>CSH ID 369010003</comment>
+  </data>
+  <data name="OE_CopyOrders_Screen" xml:space="preserve">
+    <value>Écran Copier les commandes de CmC</value>
+    <comment>CSH ID 369010001</comment>
+  </data>
+  <data name="IC_WarrantyContractList_Report_Article1" xml:space="preserve">
+    <value>Ajouter des codes de garantie</value>
+    <comment>CSH ID 211105002</comment>
+  </data>
+  <data name="IC_WarrantyContractList_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Liste de garanties/contrats</value>
+    <comment>CSH ID 211105003</comment>
+  </data>
+  <data name="IC_WarrantyContractList_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Liste de garanties/contrats de GS</value>
+    <comment>CSH ID 211105001</comment>
+  </data>
+  <data name="IC_CurrentTransactionsInquiry_Article1" xml:space="preserve">
+    <value>À propos du traitement des transactions dans Gestion des stocks</value>
+    <comment>CSH ID 211024002</comment>
+  </data>
+  <data name="IC_CurrentTransactionsInquiry_Article2" xml:space="preserve">
+    <value>Consulter des statistiques de transactions</value>
+    <comment>CSH ID 211024003</comment>
+  </data>
+  <data name="IC_CurrentTransactionsInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation des transactions courantes de GS</value>
+    <comment>CSH ID 211024001</comment>
+  </data>
+  <data name="PO_CopyPurchaseOrders_Article2" xml:space="preserve">
+    <value>Copier des bons de commande</value>
+    <comment>CSH ID 405020003</comment>
+  </data>
+  <data name="AP_PostingJournals_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Comptes fournisseurs</value>
+    <comment>CSH ID 16049002</comment>
+  </data>
+  <data name="AP_PostingJournals_Report_Article2" xml:space="preserve">
+    <value>Imprimer des journaux de report</value>
+    <comment>CSH ID 16049003</comment>
+  </data>
+  <data name="AP_PostingJournals_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Journaux de report de CF</value>
+    <comment>CSH ID 16049001</comment>
+  </data>
+  <data name="IC_Quarantine_Report_Article1" xml:space="preserve">
+    <value>À propos de Stocks en série et Suivi des lots</value>
+    <comment>CSH ID 211099002</comment>
+  </data>
+  <data name="IC_Quarantine_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Quarantaine</value>
+    <comment>CSH ID 211099003</comment>
+  </data>
+  <data name="IC_Quarantine_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Quarantaine de GS</value>
+    <comment>CSH ID 211099001</comment>
+  </data>
+  <data name="GL_SourceJournalProfiles_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Grand livre</value>
+    <comment>CSH ID 168039002</comment>
+  </data>
+  <data name="GL_SourceJournalProfiles_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Profils des journaux sources de GL</value>
+    <comment>CSH ID 168039003</comment>
+  </data>
+  <data name="GL_SourceJournalProfiles_Report_Screen" xml:space="preserve">
+    <value>Rapport Profils des journaux sources de GL</value>
+    <comment>CSH ID 168039001</comment>
+  </data>
+  <data name="PO_ReceivingSlips_Article1" xml:space="preserve">
+    <value>À propos des formulaires de Commandes fournisseurs</value>
+    <comment>CSH ID 405037002</comment>
+  </data>
+  <data name="PO_ReceivingSlips_Article2" xml:space="preserve">
+    <value>Imprimer des bons de réception</value>
+    <comment>CSH ID 405037003</comment>
+  </data>
+  <data name="PO_ReceivingSlips_Screen" xml:space="preserve">
+    <value>Écran Bons de réception de CmF</value>
+    <comment>CSH ID 405037001</comment>
+  </data>
+  <data name="AP_BatchStatus_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Comptes fournisseurs</value>
+    <comment>CSH ID 16048002</comment>
+  </data>
+  <data name="AP_BatchStatus_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport État du lot</value>
+    <comment>CSH ID 16048003</comment>
+  </data>
+  <data name="AP_BatchStatus_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport État du lot de CF</value>
+    <comment>CSH ID 16048001</comment>
+  </data>
+  <data name="AP_VendorGroups_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Comptes fournisseurs</value>
+    <comment>CSH ID 16054002</comment>
+  </data>
+  <data name="AP_VendorGroups_Report_Article2" xml:space="preserve">
+    <value>Imprimer la liste des groupes de fournisseurs</value>
+    <comment>CSH ID 16054003</comment>
+  </data>
+  <data name="AP_VendorGroups_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Groupes de fournisseurs de CF</value>
+    <comment>CSH ID 16054001</comment>
+  </data>
+  <data name="IC_SerialLotTransactions_Report_Article1" xml:space="preserve">
+    <value>À propos de Stocks en série et Suivi des lots</value>
+    <comment>CSH ID 211104002</comment>
+  </data>
+  <data name="IC_SerialLotTransactions_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Transactions de numéros de série/lot</value>
+    <comment>CSH ID 211104003</comment>
+  </data>
+  <data name="IC_SerialLotTransactions_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Transactions de numéros de série/lot de GS</value>
+    <comment>CSH ID 211104001</comment>
+  </data>
+  <data name="IC_SerialNumberInquiry_Article1" xml:space="preserve">
+    <value>À propos de Stocks en série et Suivi des lots</value>
+    <comment>CSH ID 211098002</comment>
+  </data>
+  <data name="IC_SerialNumberInquiry_Article2" xml:space="preserve">
+    <value>Consulter des informations sur les numéros de série</value>
+    <comment>CSH ID 211098003</comment>
+  </data>
+  <data name="IC_SerialNumberInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation de numéro de série de GS</value>
+    <comment>CSH ID 211098001</comment>
+  </data>
+  <data name="AP_DeleteInactiveRecords_Article1" xml:space="preserve">
+    <value>À propos de la suppression des enregistrements inactifs</value>
+    <comment>CSH ID 16047002</comment>
+  </data>
+  <data name="AP_DeleteInactiveRecords_Article2" xml:space="preserve">
+    <value>Supprimer les enregistrements inactifs de Comptes fournisseurs</value>
+    <comment>CSH ID 16047003</comment>
+  </data>
+  <data name="AP_DeleteInactiveRecords_Screen" xml:space="preserve">
+    <value>Écran Supprimer les enregistrements inactifs de CF</value>
+    <comment>CSH ID 16047001</comment>
+  </data>
+  <data name="IC_Recall_Report_Article1" xml:space="preserve">
+    <value>À propos de Stocks en série et Suivi des lots</value>
+    <comment>CSH ID 211100002</comment>
+  </data>
+  <data name="IC_Recall_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Rappel</value>
+    <comment>CSH ID 211100003</comment>
+  </data>
+  <data name="IC_Recall_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Rappel de GS</value>
+    <comment>CSH ID 211100001</comment>
+  </data>
+  <data name="GL_CreateAllocationBatch_Article1" xml:space="preserve">
+    <value>Procédures de fin de période</value>
+    <comment>CSH ID 168032002</comment>
+  </data>
+  <data name="GL_CreateAllocationBatch_Article2" xml:space="preserve">
+    <value>Créer un lot de ventilation</value>
+    <comment>CSH ID 168032003</comment>
+  </data>
+  <data name="GL_CreateAllocationBatch_Screen" xml:space="preserve">
+    <value>Écran Créer lot de ventilation de GL</value>
+    <comment>CSH ID 168032001</comment>
+  </data>
+  <data name="IC_CustomerDetails_Report_Article1" xml:space="preserve">
+    <value>Rapports de Gestion des stocks</value>
+    <comment>CSH ID 211087002</comment>
+  </data>
+  <data name="IC_CustomerDetails_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Détails des clients</value>
+    <comment>CSH ID 211087003</comment>
+  </data>
+  <data name="IC_CustomerDetails_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Détails des clients de GS</value>
+    <comment>CSH ID 211087001</comment>
+  </data>
+  <data name="IC_AccountsSets_Report_Article1" xml:space="preserve">
+    <value>À propos des groupes de comptes</value>
+    <comment>CSH ID 211084002</comment>
+  </data>
+  <data name="IC_AccountsSets_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Groupes de comptes</value>
+    <comment>CSH ID 211084003</comment>
+  </data>
+  <data name="IC_AccountsSets_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Groupes de comptes de GS</value>
+    <comment>CSH ID 211084001</comment>
+  </data>
+  <data name="IC_Categories_Report_Article1" xml:space="preserve">
+    <value>À propos des catégories</value>
+    <comment>CSH ID 211086002</comment>
+  </data>
+  <data name="IC_Categories_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Catégories</value>
+    <comment>CSH ID 211086003</comment>
+  </data>
+  <data name="IC_Categories_Report_Screen" xml:space="preserve">
+    <value>Rapport Catégories de GS</value>
+    <comment>CSH ID 211086001</comment>
+  </data>
+  <data name="IC_KittingItems_Report_Article1" xml:space="preserve">
+    <value>À propos des trousses d'articles</value>
+    <comment>CSH ID 211088002</comment>
+  </data>
+  <data name="IC_KittingItems_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Trousses d'articles</value>
+    <comment>CSH ID 211088003</comment>
+  </data>
+  <data name="IC_KittingItems_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Trousses d'articles de GS</value>
+    <comment>CSH ID 211088001</comment>
+  </data>
+  <data name="IC_Locations_Report_Article1" xml:space="preserve">
+    <value>À propos de la configuration des emplacements</value>
+    <comment>CSH ID 211090002</comment>
+  </data>
+  <data name="IC_Locations_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Emplacements</value>
+    <comment>CSH ID 211090003</comment>
+  </data>
+  <data name="IC_Locations_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Emplacements de GS</value>
+    <comment>CSH ID 211090001</comment>
+  </data>
+  <data name="IC_PriceListCodes_Report_Article1" xml:space="preserve">
+    <value>À propos des listes de prix</value>
+    <comment>CSH ID 211092002</comment>
+  </data>
+  <data name="IC_PriceListCodes_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Codes des listes de prix</value>
+    <comment>CSH ID 211092003</comment>
+  </data>
+  <data name="IC_PriceListCodes_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Codes de liste de prix de GS</value>
+    <comment>CSH ID 211092001</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Report_Article1" xml:space="preserve">
+    <value>À propos des critères de réapprovisionnement</value>
+    <comment>CSH ID 211093002</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Réapprovisionnement des quantités</value>
+    <comment>CSH ID 211093003</comment>
+  </data>
+  <data name="IC_ReorderQuantities_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Réapprovisionnement des quantités de GS</value>
+    <comment>CSH ID 211093001</comment>
+  </data>
+  <data name="AP_RemitToLocations_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Comptes fournisseurs</value>
+    <comment>CSH ID 16053002</comment>
+  </data>
+  <data name="AP_RemitToLocations_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Adresses de paiement</value>
+    <comment>CSH ID 16053003</comment>
+  </data>
+  <data name="AP_RemitToLocations_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Adresses de paiement de CF</value>
+    <comment>CSH ID 16053001</comment>
+  </data>
+  <data name="AR_BatchStatus_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+    <comment>CSH ID 18055002</comment>
+  </data>
+  <data name="AR_BatchStatus_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport État du lot de CC</value>
+    <comment>CSH ID 18055003</comment>
+  </data>
+  <data name="AR_BatchStatus_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport État du lot de CC</value>
+    <comment>CSH ID 18055001</comment>
+  </data>
+  <data name="IC_ProcessAdjustments_Article1" xml:space="preserve">
+    <value>À propos du traitement des ajustements</value>
+    <comment>CSH ID 211076002</comment>
+  </data>
+  <data name="IC_ProcessAdjustments_Article2" xml:space="preserve">
+    <value>Traiter automatiquement des ajustements</value>
+    <comment>CSH ID 211076003</comment>
+  </data>
+  <data name="IC_ProcessAdjustments_Screen" xml:space="preserve">
+    <value>Écran Traiter les ajustements de GS</value>
+    <comment>CSH ID 211076001</comment>
+  </data>
+  <data name="AR_CreateRecurringChargesBatch_Article1" xml:space="preserve">
+    <value>À propos des lots de frais périodiques</value>
+    <comment>CSH ID 18040002</comment>
+  </data>
+  <data name="AR_CreateRecurringChargesBatch_Article2" xml:space="preserve">
+    <value>Facturer manuellement des frais périodiques</value>
+    <comment>CSH ID 18040003</comment>
+  </data>
+  <data name="AR_CreateRecurringChargesBatch_Screen" xml:space="preserve">
+    <value>Écran Créer lot de frais périodiques de CC</value>
+    <comment>CSH ID 18040001</comment>
+  </data>
+  <data name="IC_LotRecallsReleases_Article1" xml:space="preserve">
+    <value>À propos du traitement périodique</value>
+    <comment>CSH ID 211074002</comment>
+  </data>
+  <data name="IC_LotRecallsReleases_Article2" xml:space="preserve">
+    <value>Écran Consultation des transactions de numéros de lot de GS</value>
+    <comment>CSH ID 211074003</comment>
+  </data>
+  <data name="IC_LotRecallsReleases_Screen" xml:space="preserve">
+    <value>Écran Rappels/Levées des rappels de lots de GS</value>
+    <comment>CSH ID 211074001</comment>
+  </data>
+  <data name="AR_RefundBatchList_Article1" xml:space="preserve">
+    <value>À propos du traitement des remboursements</value>
+    <comment>CSH ID 18063002</comment>
+  </data>
+  <data name="AR_RefundBatchList_Article2" xml:space="preserve">
+    <value>Ajouter, modifier ou supprimer un lot de remboursements</value>
+    <comment>CSH ID 18063003</comment>
+  </data>
+  <data name="AR_RefundBatchList_Screen" xml:space="preserve">
+    <value>Écran Liste des lots de remboursements de CC</value>
+    <comment>CSH ID 18063001</comment>
+  </data>
+  <data name="CS_Schedules_Article1" xml:space="preserve">
+    <value>Créer des journaux de planification pour des transactions récurrentes</value>
+    <comment>CSH ID 71036002</comment>
+  </data>
+  <data name="CS_Schedules_Article2" xml:space="preserve">
+    <value>Écran d'Administration</value>
+    <comment>CSH ID 71036003</comment>
+  </data>
+  <data name="CS_Schedules_Screen" xml:space="preserve">
+    <value>Écran Journal de planification</value>
+    <comment>CSH ID 71036001</comment>
+  </data>
+  <data name="GL_PostingJournals_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Grand livre</value>
+    <comment>CSH ID 168035002</comment>
+  </data>
+  <data name="GL_PostingJournals_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Journaux de report de GL</value>
+    <comment>CSH ID 168035003</comment>
+  </data>
+  <data name="GL_PostingJournals_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Journaux de report de GL</value>
+    <comment>CSH ID 168035001</comment>
+  </data>
+  <data name="GL_SourceCodes_Report_Article1" xml:space="preserve">
+    <value>À propos des codes sources</value>
+    <comment>CSH ID 168037002</comment>
+  </data>
+  <data name="GL_SourceCodes_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Codes sources de GL</value>
+    <comment>CSH ID 168037003</comment>
+  </data>
+  <data name="GL_SourceCodes_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Codes sources de GL</value>
+    <comment>CSH ID 168037001</comment>
+  </data>
+  <data name="IC_ClearHistory_Article1" xml:space="preserve">
+    <value>À propos du traitement périodique</value>
+    <comment>CSH ID 211072002</comment>
+  </data>
+  <data name="IC_ClearHistory_Article2" xml:space="preserve">
+    <value>Effacer l'historique</value>
+    <comment>CSH ID 211072003</comment>
+  </data>
+  <data name="IC_ClearHistory_Screen" xml:space="preserve">
+    <value>Effacer l'historique de GS</value>
+    <comment>CSH ID 211072001</comment>
+  </data>
+  <data name="IC_ContractPricing_Article1" xml:space="preserve">
+    <value>Prix forfaitaire</value>
+    <comment>CSH ID 211065002</comment>
+  </data>
+  <data name="IC_ContractPricing_Article2" xml:space="preserve">
+    <value>Ajouter des prix forfaitaires offerts aux clients</value>
+    <comment>CSH ID 211065003</comment>
+  </data>
+  <data name="IC_ContractPricing_Screen" xml:space="preserve">
+    <value>Écran Prix forfaitaire de GS</value>
+    <comment>CSH ID 211065001</comment>
+  </data>
+  <data name="IC_CopyBillOfMaterials_Article1" xml:space="preserve">
+    <value>À propos des nomenclatures</value>
+    <comment>CSH ID 211066002</comment>
+  </data>
+  <data name="IC_CopyBillOfMaterials_Article2" xml:space="preserve">
+    <value>Copier des nomenclatures</value>
+    <comment>CSH ID 211066003</comment>
+  </data>
+  <data name="IC_CopyBillOfMaterials_Screen" xml:space="preserve">
+    <value>Écran Copier les nomenclatures de GS</value>
+    <comment>CSH ID 211066001</comment>
+  </data>
+  <data name="IC_ItemsWizard_Article1" xml:space="preserve">
+    <value>Ajouter des articles de stock dans l'assistant Articles</value>
+    <comment>CSH ID 211068002</comment>
+  </data>
+  <data name="IC_ItemsWizard_Article2" xml:space="preserve">
+    <value>Modifier les descriptions des articles de stock à l'aide de l'assistant Articles</value>
+    <comment>CSH ID 211068003</comment>
+  </data>
+  <data name="IC_ItemsWizard_Screen" xml:space="preserve">
+    <value>Écran de l'assistant Articles de GS</value>
+    <comment>CSH ID 211068001</comment>
+  </data>
+  <data name="IC_VendorDetails_Report_Article1" xml:space="preserve">
+    <value>À propos des détails de fournisseurs</value>
+    <comment>CSH ID 211094002</comment>
+  </data>
+  <data name="IC_VendorDetails_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Détails des fournisseurs</value>
+    <comment>CSH ID 211094003</comment>
+  </data>
+  <data name="IC_VendorDetails_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Détails des fournisseurs de GS</value>
+    <comment>CSH ID 211094001</comment>
+  </data>
+  <data name="GL_RevaluationCodes_Article1" xml:space="preserve">
+    <value>À propos de la réévaluation</value>
+    <comment>CSH ID 168040002</comment>
+  </data>
+  <data name="GL_RevaluationCodes_Article2" xml:space="preserve">
+    <value>Ajouter des codes de réévaluation</value>
+    <comment>CSH ID 168040003</comment>
+  </data>
+  <data name="GL_RevaluationCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de réévaluation de GL</value>
+    <comment>CSH ID 168040001</comment>
+  </data>
+  <data name="GL_SourceJournalProfile_Article1" xml:space="preserve">
+    <value>À propos des journaux sources</value>
+    <comment>CSH ID 168041002</comment>
+  </data>
+  <data name="GL_SourceJournalProfile_Article2" xml:space="preserve">
+    <value>Ajouter des profils de journaux sources</value>
+    <comment>CSH ID 168041003</comment>
+  </data>
+  <data name="GL_SourceJournalProfile_Screen" xml:space="preserve">
+    <value>Écran Profils des journaux sources de GL</value>
+    <comment>CSH ID 168041001</comment>
+  </data>
+  <data name="IC_DeleteInactiveRecords_Article1" xml:space="preserve">
+    <value>À propos du traitement périodique</value>
+    <comment>CSH ID 211073002</comment>
+  </data>
+  <data name="IC_DeleteInactiveRecords_Article2" xml:space="preserve">
+    <value>Supprimer les enregistrements inactifs</value>
+    <comment>CSH ID 211073003</comment>
+  </data>
+  <data name="IC_DeleteInactiveRecords_Screen" xml:space="preserve">
+    <value>Écran Supprimer enregistrements inactifs de GS</value>
+    <comment>CSH ID 211073001</comment>
+  </data>
+  <data name="IC_SerialLotNumberList_Report_Article1" xml:space="preserve">
+    <value>À propos de Stocks en série et Suivi des lots</value>
+    <comment>CSH ID 211101002</comment>
+  </data>
+  <data name="IC_SerialLotNumberList_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Liste des numéros de série/lot</value>
+    <comment>CSH ID 211101003</comment>
+  </data>
+  <data name="IC_SerialLotNumberList_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Liste des numéros de série/lot de GS</value>
+    <comment>CSH ID 211101001</comment>
+  </data>
+  <data name="IC_SerialLotNumberQuantityOnHand_Report_Article1" xml:space="preserve">
+    <value>À propos de Stocks en série et Suivi des lots</value>
+    <comment>CSH ID 211102002</comment>
+  </data>
+  <data name="IC_SerialLotNumberQuantityOnHand_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Quantité de numéros de série/lot en magasin</value>
+    <comment>CSH ID 211102003</comment>
+  </data>
+  <data name="IC_SerialLotNumberQuantityOnHand_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Quantité de numéros de série/lot en magasin de GS</value>
+    <comment>CSH ID 211102001</comment>
+  </data>
+  <data name="AR_CustomerGroups_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+    <comment>CSH ID 18045002</comment>
+  </data>
+  <data name="AR_CustomerGroups_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Liste du groupe de clients de CC</value>
+    <comment>CSH ID 18045003</comment>
+  </data>
+  <data name="AR_CustomerGroups_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Groupes de clients de CC</value>
+    <comment>CSH ID 18045001</comment>
+  </data>
+  <data name="AR_CustomerInquiry_Article1" xml:space="preserve">
+    <value>À propos de la consultation des clients</value>
+    <comment>CSH ID 18044002</comment>
+  </data>
+  <data name="AR_CustomerInquiry_Article2" xml:space="preserve">
+    <value>Vérifier l’état du crédit d’un client</value>
+    <comment>CSH ID 18044003</comment>
+  </data>
+  <data name="AR_CustomerInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation de client de CC</value>
+    <comment>CSH ID 18044001</comment>
+  </data>
+  <data name="AR_PostingJournals_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+    <comment>CSH ID 18057002</comment>
+  </data>
+  <data name="AR_PostingJournals_Report_Article2" xml:space="preserve">
+    <value>Imprimer les journaux de report de Comptes clients</value>
+    <comment>CSH ID 18057003</comment>
+  </data>
+  <data name="AR_PostingJournals_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Journaux de report de CC</value>
+    <comment>CSH ID 18057001</comment>
+  </data>
+  <data name="IC_LotNumbers_Article1" xml:space="preserve">
+    <value>À propos de Stocks en série et Suivi des lots</value>
+    <comment>CSH ID 211069002</comment>
+  </data>
+  <data name="IC_LotNumbers_Article2" xml:space="preserve">
+    <value>Consulter ou modifier les détails d'un numéro de lot</value>
+    <comment>CSH ID 211069003</comment>
+  </data>
+  <data name="IC_LotNumbers_Screen" xml:space="preserve">
+    <value>Écran Numéros de lot de GS</value>
+    <comment>CSH ID 211069001</comment>
+  </data>
+  <data name="OE_InvoiceEntry_Article1" xml:space="preserve">
+    <value>À propos des commandes, des expéditions et des factures</value>
+    <comment>CSH ID 369034002</comment>
+  </data>
+  <data name="OE_InvoiceEntry_Article2" xml:space="preserve">
+    <value>Facturation des expéditions</value>
+    <comment>CSH ID 369034003</comment>
+  </data>
+  <data name="OE_InvoiceEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des factures de CmC</value>
+    <comment>CSH ID 369034001</comment>
+  </data>
+  <data name="AR_ReceiptInquiry_Article1" xml:space="preserve">
+    <value>À propos de la consultation de clients et de documents à partir des écrans de transactions</value>
+    <comment>CSH ID 18062002</comment>
+  </data>
+  <data name="AR_ReceiptInquiry_Article2" xml:space="preserve">
+    <value>Rechercher des encaissements</value>
+    <comment>CSH ID 18062003</comment>
+  </data>
+  <data name="AR_ReceiptInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation d'encaissement de CC</value>
+    <comment>CSH ID 18062001</comment>
+  </data>
+  <data name="AR_RefundInquiry_Article1" xml:space="preserve">
+    <value>À propos du traitement des remboursements</value>
+    <comment>CSH ID 18065002</comment>
+  </data>
+  <data name="AR_RefundInquiry_Article2" xml:space="preserve">
+    <value>Rechercher des remboursements</value>
+    <comment>CSH ID 18065003</comment>
+  </data>
+  <data name="AR_RefundInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation de remboursement de CC</value>
+    <comment>CSH ID 18065001</comment>
+  </data>
+  <data name="GL_BatchStatus_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Grand livre</value>
+    <comment>CSH ID 168034002</comment>
+  </data>
+  <data name="GL_BatchStatus_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport État du lot de GL</value>
+    <comment>CSH ID 168034003</comment>
+  </data>
+  <data name="GL_BatchStatus_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport État du lot de GL</value>
+    <comment>CSH ID 168034001</comment>
+  </data>
+  <data name="GL_FiscalSetComparison_Article1" xml:space="preserve">
+    <value>À propos des séries financières</value>
+    <comment>CSH ID 168029002</comment>
+  </data>
+  <data name="GL_FiscalSetComparison_Article2" xml:space="preserve">
+    <value>Comparer deux séries financières</value>
+    <comment>CSH ID 168029003</comment>
+  </data>
+  <data name="GL_FiscalSetComparison_Screen" xml:space="preserve">
+    <value>Comparaison des séries financières de GL</value>
+    <comment>CSH ID 168029001</comment>
+  </data>
+  <data name="IC_BillsOfMaterial_Article1" xml:space="preserve">
+    <value>À propos des nomenclatures</value>
+    <comment>CSH ID 211064002</comment>
+  </data>
+  <data name="IC_BillsOfMaterial_Article2" xml:space="preserve">
+    <value>Ajouter des nomenclatures</value>
+    <comment>CSH ID 211064003</comment>
+  </data>
+  <data name="IC_BillsOfMaterial_Screen" xml:space="preserve">
+    <value>Écran Nomenclatures de GS</value>
+    <comment>CSH ID 211064001</comment>
+  </data>
+  <data name="IC_CopyItemPricing_Article1" xml:space="preserve">
+    <value>À propos des listes de prix</value>
+    <comment>CSH ID 211067002</comment>
+  </data>
+  <data name="IC_CopyItemPricing_Article2" xml:space="preserve">
+    <value>Copier des données relatives aux prix dans d'autres listes de prix ou devises</value>
+    <comment>CSH ID 211067003</comment>
+  </data>
+  <data name="IC_CopyItemPricing_Screen" xml:space="preserve">
+    <value>Écran Copier le prix des articles de GS</value>
+    <comment>CSH ID 211067001</comment>
+  </data>
+  <data name="AP_CreateRetainageBatch_Article1" xml:space="preserve">
+    <value>À propos du traitement des retenues de garantie dans Comptes fournisseurs</value>
+    <comment>CSH ID 16046002</comment>
+  </data>
+  <data name="AP_CreateRetainageBatch_Article2" xml:space="preserve">
+    <value>Traitement de retenues impayées</value>
+    <comment>CSH ID 16046003</comment>
+  </data>
+  <data name="AP_CreateRetainageBatch_Screen" xml:space="preserve">
+    <value>Écran Créer lot de retenues de garantie de CF</value>
+    <comment>CSH ID 16046001</comment>
+  </data>
+  <data name="AR_CreateRetainageBatch_Article1" xml:space="preserve">
+    <value>À propos du traitement des retenues de garantie</value>
+    <comment>CSH ID 18051002</comment>
+  </data>
+  <data name="AR_CreateRetainageBatch_Article2" xml:space="preserve">
+    <value>Procédures de traitement périodique</value>
+    <comment>CSH ID 18051003</comment>
+  </data>
+  <data name="AR_CreateRetainageBatch_Screen" xml:space="preserve">
+    <value>Écran Créer lot de retenues de CC</value>
+    <comment>CSH ID 18051001</comment>
+  </data>
+  <data name="AR_DocumentInquiry_Article1" xml:space="preserve">
+    <value>À propos de la consultation de clients et de documents à partir des écrans de transactions</value>
+    <comment>CSH ID 18060002</comment>
+  </data>
+  <data name="AR_DocumentInquiry_Article2" xml:space="preserve">
+    <value>Filtrer les résultats de consultation de document pour le client courant</value>
+    <comment>CSH ID 18060003</comment>
+  </data>
+  <data name="AR_DocumentInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation de document de CC</value>
+    <comment>CSH ID 18060001</comment>
+  </data>
+  <data name="IC_BillsOfMaterials_Report_Article1" xml:space="preserve">
+    <value>À propos des nomenclatures</value>
+    <comment>CSH ID 211085002</comment>
+  </data>
+  <data name="IC_BillsOfMaterials_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Nomenclatures</value>
+    <comment>CSH ID 211085003</comment>
+  </data>
+  <data name="IC_BillsOfMaterials_Report_Screen" xml:space="preserve">
+    <value>Écran Nomenclatures de GS</value>
+    <comment>CSH ID 211085001</comment>
+  </data>
+  <data name="AP_AdjustmentBatchList_Article1" xml:space="preserve">
+    <value>À propos du traitement des ajustements</value>
+    <comment>CSH ID 16050002</comment>
+  </data>
+  <data name="AP_AdjustmentBatchList_Article2" xml:space="preserve">
+    <value>Créer ou modifier un lot d’ajustements</value>
+    <comment>CSH ID 16050003</comment>
+  </data>
+  <data name="AP_AdjustmentBatchList_Screen" xml:space="preserve">
+    <value>Écran Liste des lots d’ajustements de CF</value>
+    <comment>CSH ID 16050001</comment>
+  </data>
+  <data name="AP_RemitToLocations_Article1" xml:space="preserve">
+    <value>À propos des adresses de paiement</value>
+    <comment>CSH ID 16055002</comment>
+  </data>
+  <data name="AP_RemitToLocations_Article2" xml:space="preserve">
+    <value>Ajouter, modifier ou supprimer l'adresse de paiement d'un fournisseur</value>
+    <comment>CSH ID 16055003</comment>
+  </data>
+  <data name="AP_RemitToLocations_Screen" xml:space="preserve">
+    <value>Écran Adresses de paiement de CF</value>
+    <comment>CSH ID 16055001</comment>
+  </data>
+  <data name="AR_ClearHistory_Article1" xml:space="preserve">
+    <value>Procédures de traitement périodique</value>
+    <comment>CSH ID 18049002</comment>
+  </data>
+  <data name="AR_ClearHistory_Article2" xml:space="preserve">
+    <value>Effacer l’historique de Comptes clients</value>
+    <comment>CSH ID 18049003</comment>
+  </data>
+  <data name="AR_ClearHistory_Screen" xml:space="preserve">
+    <value>Écran Effacer l'historique de CC</value>
+    <comment>CSH ID 18049001</comment>
+  </data>
+  <data name="AR_ClearStatistics_Article1" xml:space="preserve">
+    <value>Procédures de traitement périodique</value>
+    <comment>CSH ID 18050002</comment>
+  </data>
+  <data name="AR_ClearStatistics_Article2" xml:space="preserve">
+    <value>Effacer les statistiques</value>
+    <comment>CSH ID 18050003</comment>
+  </data>
+  <data name="AR_ClearStatistics_Screen" xml:space="preserve">
+    <value>Écran Effacer les statistiques de CC</value>
+    <comment>CSH ID 18050001</comment>
+  </data>
+  <data name="AR_QuickReceiptEntry_Article1" xml:space="preserve">
+    <value>À propos du traitement des encaissements</value>
+    <comment>CSH ID 18061002</comment>
+  </data>
+  <data name="AR_QuickReceiptEntry_Article2" xml:space="preserve">
+    <value>Ajouter un encaissement à un bordereau de dépôt pour un dépôt rapide</value>
+    <comment>CSH ID 18061003</comment>
+  </data>
+  <data name="AR_QuickReceiptEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie d'encaissement rapide de CC</value>
+    <comment>CSH ID 18061001</comment>
+  </data>
+  <data name="IC_ContractCodes_Article1" xml:space="preserve">
+    <value>Codes de contrat</value>
+    <comment>CSH ID 211081002</comment>
+  </data>
+  <data name="IC_ContractCodes_Article2" xml:space="preserve">
+    <value>Ajouter des codes de contrat</value>
+    <comment>CSH ID 211081003</comment>
+  </data>
+  <data name="IC_ContractCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de contrat de GS</value>
+    <comment>CSH ID 211081001</comment>
+  </data>
+  <data name="AP_ClearHistory_Article1" xml:space="preserve">
+    <value>Effacer des données obsolètes de Comptes fournisseurs</value>
+    <comment>CSH ID 16044002</comment>
+  </data>
+  <data name="AP_ClearHistory_Article2" xml:space="preserve">
+    <value>Procédures de traitement périodique</value>
+    <comment>CSH ID 16044003</comment>
+  </data>
+  <data name="AP_ClearHistory_Screen" xml:space="preserve">
+    <value>Écran Effacer l’historique de CF</value>
+    <comment>CSH ID 16044001</comment>
+  </data>
+  <data name="AR_DeleteInactiveRecords_Article1" xml:space="preserve">
+    <value>Procédures de traitement périodique</value>
+    <comment>CSH ID 18053002</comment>
+  </data>
+  <data name="AR_DeleteInactiveRecords_Article2" xml:space="preserve">
+    <value>Supprimer des enregistrements inactifs de Comptes clients</value>
+    <comment>CSH ID 18053003</comment>
+  </data>
+  <data name="AR_DeleteInactiveRecords_Screen" xml:space="preserve">
+    <value>Écran Supprimer enregistrements inactifs de CC</value>
+    <comment>CSH ID 18053001</comment>
+  </data>
+  <data name="AR_AdjustmentBatchList_Article1" xml:space="preserve">
+    <value>À propos du traitement des lots</value>
+    <comment>CSH ID 18058002</comment>
+  </data>
+  <data name="AR_AdjustmentBatchList_Article2" xml:space="preserve">
+    <value>Reporter un lot d’ajustements</value>
+    <comment>CSH ID 18058003</comment>
+  </data>
+  <data name="AR_AdjustmentBatchList_Screen" xml:space="preserve">
+    <value>Écran Liste des lots d'ajustements de CC</value>
+    <comment>CSH ID 18058001</comment>
+  </data>
+  <data name="AR_AdjustmentEntry_Article1" xml:space="preserve">
+    <value>À propos de la saisie des ajustements</value>
+    <comment>CSH ID 18059002</comment>
+  </data>
+  <data name="AR_AdjustmentEntry_Article2" xml:space="preserve">
+    <value>Ajuster une transaction reportée</value>
+    <comment>CSH ID 18059003</comment>
+  </data>
+  <data name="AR_AdjustmentEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des ajustements de CC</value>
+    <comment>CSH ID 18059001</comment>
+  </data>
+  <data name="AR_NationalAccounts_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+    <comment>CSH ID 18046002</comment>
+  </data>
+  <data name="AR_NationalAccounts_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Comptes nationaux de CC</value>
+    <comment>CSH ID 18046003</comment>
+  </data>
+  <data name="AR_NationalAccounts_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Comptes nationaux de CC</value>
+    <comment>CSH ID 18046001</comment>
+  </data>
+  <data name="AR_RefundEntry_Article1" xml:space="preserve">
+    <value>À propos du traitement des remboursements</value>
+    <comment>CSH ID 18064002</comment>
+  </data>
+  <data name="AR_RefundEntry_Article2" xml:space="preserve">
+    <value>Rembourser un client</value>
+    <comment>CSH ID 18064003</comment>
+  </data>
+  <data name="AR_RefundEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des remboursements de CC</value>
+    <comment>CSH ID 18064001</comment>
+  </data>
+  <data name="CS_ReminderList_Article1" xml:space="preserve">
+    <value>Créer des journaux de planification pour des transactions récurrentes</value>
+    <comment>CSH ID 71035002</comment>
+  </data>
+  <data name="CS_ReminderList_Article2" xml:space="preserve">
+    <value>Écran Journal de planification</value>
+    <comment>CSH ID 71035003</comment>
+  </data>
+  <data name="CS_ReminderList_Screen" xml:space="preserve">
+    <value>Écran Liste des rappels</value>
+    <comment>CSH ID 71035001</comment>
+  </data>
+  <data name="GL_RecurringEntries_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Grand livre</value>
+    <comment>CSH ID 168036002</comment>
+  </data>
+  <data name="GL_RecurringEntries_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Écritures récurrentes de GL</value>
+    <comment>CSH ID 168036003</comment>
+  </data>
+  <data name="GL_RecurringEntries_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Écritures récurrentes de GL</value>
+    <comment>CSH ID 168036001</comment>
+  </data>
+  <data name="GL_SourceJournal_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Grand livre</value>
+    <comment>CSH ID 168038002</comment>
+  </data>
+  <data name="GL_SourceJournal_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Journaux sources de GL</value>
+    <comment>CSH ID 168038003</comment>
+  </data>
+  <data name="GL_SourceJournal_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Journaux sources de GL</value>
+    <comment>CSH ID 168038001</comment>
+  </data>
+  <data name="IC_UpdateBillsOfMaterials_Article1" xml:space="preserve">
+    <value>À propos des nomenclatures</value>
+    <comment>CSH ID 211071002</comment>
+  </data>
+  <data name="IC_UpdateBillsOfMaterials_Article2" xml:space="preserve">
+    <value>Mettre à jour des nomenclatures</value>
+    <comment>CSH ID 211071003</comment>
+  </data>
+  <data name="IC_UpdateBillsOfMaterials_Screen" xml:space="preserve">
+    <value>Écran Mise à jour des nomenclatures de GS</value>
+    <comment>CSH ID 211071001</comment>
+  </data>
+  <data name="OE_ShipmentEntry_Article1" xml:space="preserve">
+    <value>À propos des commandes, des expéditions et des factures</value>
+    <comment>CSH ID 369035002</comment>
+  </data>
+  <data name="OE_ShipmentEntry_Article2" xml:space="preserve">
+    <value>Facturation des expéditions</value>
+    <comment>CSH ID 369035003</comment>
+  </data>
+  <data name="OE_ShipmentEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des expéditions de CmC</value>
+    <comment>CSH ID 369035001</comment>
+  </data>
+  <data name="AR_Items_Article1" xml:space="preserve">
+    <value>À propos des articles de Comptes clients</value>
+    <comment>CSH ID 18054002</comment>
+  </data>
+  <data name="AR_Items_Article2" xml:space="preserve">
+    <value>Ajouter ou modifier un article</value>
+    <comment>CSH ID 18054003</comment>
+  </data>
+  <data name="AR_Items_Screen" xml:space="preserve">
+    <value>Écran Articles de CC</value>
+    <comment>CSH ID 18054001</comment>
+  </data>
+  <data name="AR_CreateWriteoffBatch_Article1" xml:space="preserve">
+    <value>À propos des champs optionnels pour les ajustements d'annulation</value>
+  </data>
+  <data name="AR_CreateWriteoffBatch_Article2" xml:space="preserve">
+    <value>Radier des transactions</value>
+  </data>
+  <data name="AR_CreateWriteoffBatch_Screen" xml:space="preserve">
+    <value>Écran Créer lot d'annulations de CC</value>
+    <comment>CSH ID 18052001</comment>
+  </data>
+  <data name="IC_SerialRegistration_Article1" xml:space="preserve">
+    <value>À propos du traitement périodique</value>
+    <comment>CSH ID 211079002</comment>
+  </data>
+  <data name="IC_SerialRegistration_Article2" xml:space="preserve">
+    <value>Enregistrer des numéros de série pour la garantie du client</value>
+    <comment>CSH ID 211079003</comment>
+  </data>
+  <data name="IC_SerialRegistration_Screen" xml:space="preserve">
+    <value>Écran Enregistrement de numéro de série de GS</value>
+    <comment>CSH ID 211079001</comment>
+  </data>
+  <data name="IC_WarrantyCodes_Article1" xml:space="preserve">
+    <value>Codes de garantie</value>
+    <comment>CSH ID 211083002</comment>
+  </data>
+  <data name="IC_WarrantyCodes_Article2" xml:space="preserve">
+    <value>Ajouter des codes de garantie</value>
+    <comment>CSH ID 211083003</comment>
+  </data>
+  <data name="IC_WarrantyCodes_Screen" xml:space="preserve">
+    <value>Écran Codes de garantie de GS</value>
+    <comment>CSH ID 211083001</comment>
+  </data>
+  <data name="AR_ShipToLocations_Report_Article1" xml:space="preserve">
+    <value>À propos des rapports de Comptes clients</value>
+    <comment>CSH ID 18048002</comment>
+  </data>
+  <data name="AR_ShipToLocations_Report_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Adresses d'expédition de CC</value>
+    <comment>CSH ID 18048003</comment>
+  </data>
+  <data name="AR_ShipToLocations_Report_Screen" xml:space="preserve">
+    <value>Écran du rapport Adresse d'expédition de CC</value>
+    <comment>CSH ID 18048001</comment>
+  </data>
+  <data name="AP_AdjustmentEntry_Article1" xml:space="preserve">
+    <value>À propos du traitement des ajustements</value>
+    <comment>CSH ID 16051002</comment>
+  </data>
+  <data name="AP_AdjustmentEntry_Article2" xml:space="preserve">
+    <value>Supprimer des ajustements</value>
+    <comment>CSH ID 16051003</comment>
+  </data>
+  <data name="AP_AdjustmentEntry_Screen" xml:space="preserve">
+    <value>Écran Saisie des ajustements de CF</value>
+    <comment>CSH ID 16051001</comment>
+  </data>
+  <data name="AP_ClearStatistics_Article1" xml:space="preserve">
+    <value>Effacer les statistiques</value>
+    <comment>CSH ID 16045002</comment>
+  </data>
+  <data name="AP_ClearStatistics_Article2" xml:space="preserve">
+    <value>Procédures de traitement périodique</value>
+    <comment>CSH ID 16045003</comment>
+  </data>
+  <data name="AP_ClearStatistics_Screen" xml:space="preserve">
+    <value>Écran Effacer les statistiques de CF</value>
+    <comment>CSH ID 16045001</comment>
+  </data>
+  <data name="GL_ConsolidatedPostedTransaction_Article1" xml:space="preserve">
+    <value>À propos de la consolidation des transactions</value>
+    <comment>CSH ID 168031002</comment>
+  </data>
+  <data name="GL_ConsolidatedPostedTransaction_Article2" xml:space="preserve">
+    <value>Consolider des transactions</value>
+    <comment>CSH ID 168031003</comment>
+  </data>
+  <data name="GL_ConsolidatedPostedTransaction_Screen" xml:space="preserve">
+    <value>Écran Consolider les transactions reportées de GL</value>
+    <comment>CSH ID 168031001</comment>
+  </data>
+  <data name="GL_CreateAccounts_Article1" xml:space="preserve">
+    <value>Ajouter un nouveau compte</value>
+    <comment>CSH ID 168028002</comment>
+  </data>
+  <data name="GL_CreateAccounts_Article2" xml:space="preserve">
+    <value>Écran Aperçu de Création des comptes de GL</value>
+    <comment>CSH ID 168028003</comment>
+  </data>
+  <data name="GL_CreateAccounts_Screen" xml:space="preserve">
+    <value>Écran Création des comptes de GL</value>
+    <comment>CSH ID 168028001</comment>
+  </data>
+  <data name="AS_NavigationMenu_Article1" xml:space="preserve">
+    <value>Personnaliser le menu de navigation</value>
+    <comment>19007002</comment>
+  </data>
+  <data name="AS_NavigationMenu_Article2" xml:space="preserve">
+    <value>Autorisations de sécurité de Services administratifs</value>
+    <comment>19007003</comment>
+  </data>
+  <data name="AS_NavigationMenu_Screen" xml:space="preserve">
+    <value>Écran Personnaliser le menu de navigation</value>
+    <comment>19007001</comment>
+  </data>
+  <data name="AR_RecurringCharges_Article1" xml:space="preserve">
+    <value>À propos des frais périodiques</value>
+    <comment>CSH ID 18039002</comment>
+  </data>
+  <data name="AR_RecurringCharges_Article2" xml:space="preserve">
+    <value>Créer des frais périodiques pour un client</value>
+    <comment>CSH ID 18039003</comment>
+  </data>
+  <data name="AR_RecurringCharges_Screen" xml:space="preserve">
+    <value>Écran Frais périodiques de CC</value>
+    <comment>CSH ID 18039001</comment>
+  </data>
+  <data name="AR_UpdateRecurringCharges_Article1" xml:space="preserve">
+    <value>À propos des frais périodiques</value>
+    <comment>CSH ID 18041002</comment>
+  </data>
+  <data name="AR_UpdateRecurringCharges_Article2" xml:space="preserve">
+    <value>Mettre automatiquement à jour des frais périodiques</value>
+    <comment>CSH ID 18041003</comment>
+  </data>
+  <data name="AR_UpdateRecurringCharges_Screen" xml:space="preserve">
+    <value>Mettre à jour les frais périodiques de CC</value>
+    <comment>CSH ID 18041001</comment>
+  </data>
+  <data name="BK_BankCreditCardTypes_Article1" xml:space="preserve">
+    <value>Ajouter des types de carte de crédit</value>
+    <comment>37035002</comment>
+  </data>
+  <data name="BK_BankCreditCardTypes_Article2" xml:space="preserve">
+    <value>Configuration de Services bancaires</value>
+    <comment>37035003</comment>
+  </data>
+  <data name="BK_BankCreditCardTypes_Screen" xml:space="preserve">
+    <value>Écran Types de cartes de crédit</value>
+    <comment>37035001</comment>
+  </data>
+  <data name="GL_TransactionHistory_Article1" xml:space="preserve">
+    <value>À propos du traitement des transactions dans Grand livre</value>
+  </data>
+  <data name="GL_TransactionHistory_Article2" xml:space="preserve">
+    <value>Consulter les transactions reportées dans les comptes de Grand livre</value>
+  </data>
+  <data name="GL_TransactionHistory_Screen" xml:space="preserve">
+    <value>Écran Historique de transaction de GL</value>
+  </data>
+  <data name="TX_TaxClearHistory_Article1" xml:space="preserve">
+    <value>Effacer l’historique des taxes</value>
+    <comment>CSH ID 497006002</comment>
+  </data>
+  <data name="TX_TaxClearHistory_Article2" xml:space="preserve">
+    <value>Imprimer le rapport Suivi des taxes</value>
+    <comment>CSH ID 497006003 </comment>
+  </data>
+  <data name="TX_TaxClearHistory_Screen" xml:space="preserve">
+    <value>Écran Effacer historique des taxes</value>
+    <comment>CSH ID 497006001</comment>
+  </data>
+  <data name="AR_ProcessCCPayments_Article1" xml:space="preserve">
+    <value>Traiter des paiements par carte de crédit multiples</value>
+    <comment>CSH ID 18066002</comment>
+  </data>
+  <data name="AR_ProcessCCPayments_Article2" xml:space="preserve">
+    <value>À propos du traitement des réceptions</value>
+    <comment>CSH ID 18066003</comment>
+  </data>
+  <data name="AR_ProcessCCPayments_Screen" xml:space="preserve">
+    <value>Écran Traitement paiements par carte crédit de CC</value>
+    <comment>CSH ID 18066001</comment>
+  </data>
+  <data name="GL_CreateRevaluationBatch_Article1" xml:space="preserve">
+    <value>À propos de la réévaluation</value>
+    <comment>CSH ID 168033002</comment>
+  </data>
+  <data name="GL_CreateRevaluationBatch_Article2" xml:space="preserve">
+    <value>Créer un lot de réévaluation</value>
+    <comment>CSH ID 168033003</comment>
+  </data>
+  <data name="GL_CreateRevaluationBatch_Screen" xml:space="preserve">
+    <value>Écran Créer lot de réévaluation de GL</value>
+    <comment>CSH ID 168033001</comment>
+  </data>
+  <data name="AS_WorkProfile_Article1" xml:space="preserve">
+    <value>Ajouter et gérer des raccourcis vers les rapports</value>
+    <comment>19008002</comment>
+  </data>
+  <data name="AS_WorkProfile_Article2" xml:space="preserve">
+    <value>Personnaliser des champs et des contrôles sur les écrans web</value>
+    <comment>19008003</comment>
+  </data>
+  <data name="AS_WorkProfile_Screen" xml:space="preserve">
+    <value>Ajouter et gérer les profils IU</value>
+    <comment>19008001</comment>
+  </data>
+  <data name="GL_AccountPermissions_Article1" xml:space="preserve">
+    <value>À propos de Sécurité de Grand livre</value>
+    <comment>CSH ID 168027002</comment>
+  </data>
+  <data name="GL_AccountPermissions_Article2" xml:space="preserve">
+    <value>Configurer les droits d'accès aux comptes</value>
+    <comment>CSH ID 168027003</comment>
+  </data>
+  <data name="GL_AccountPermissions_Screen" xml:space="preserve">
+    <value>Écran Accès aux comptes de GL</value>
+    <comment>CSH ID 168027001</comment>
+  </data>
+  <data name="Portal_Inquiry_Article1" xml:space="preserve">
+    <value>Rechercher des informations à l'aide de l'outil Consultation</value>
+    <comment>CSH ID 677005002</comment>
+  </data>
+  <data name="Portal_Inquiry_Article2" xml:space="preserve">
+    <value>Créer une consultation personnalisée</value>
+    <comment>CSH ID 677005003</comment>
+  </data>
+  <data name="Portal_Inquiry_Screen" xml:space="preserve">
+    <value>À propos de l'outil Consultation</value>
+    <comment>CSH ID 677005001</comment>
+  </data>
+  <data name="Portal_Help" xml:space="preserve">
+    <value>Aide et documentation</value>
+  </data>
+  <data name="Portal_ProductDocuments" xml:space="preserve">
+    <value>Documents relatifs aux produits</value>
+  </data>
+  <data name="Portal_WhatsNew" xml:space="preserve">
+    <value>Quoi de neuf</value>
+  </data>
+  <data name="Resources_OnlineCommunity" xml:space="preserve">
+    <value>Communauté en ligne</value>
+  </data>
+  <data name="Resources_OrderChecksForms" xml:space="preserve">
+    <value>Commande de chèques et formulaires</value>
+  </data>
+  <data name="Resources_Sage300Home" xml:space="preserve">
+    <value>Accueil de Sage 300</value>
+  </data>
+  <data name="Resources_SubmitIdea" xml:space="preserve">
+    <value>Soumettre des demandes d'amélioration</value>
+  </data>
+  <data name="SageSupport" xml:space="preserve">
+    <value>Soutien de Sage</value>
+  </data>
+  <data name="SageSupport_Knowledgebase" xml:space="preserve">
+    <value>Base de connaissances</value>
+  </data>
+  <data name="SageSupport_LiveChat" xml:space="preserve">
+    <value>Clavarder en direct</value>
+  </data>
+  <data name="SageSupport_Remote" xml:space="preserve">
+    <value>Session d'assistance à distance</value>
+  </data>
+  <data name="OE_CapturePaymentsWithInvoices_Article1" xml:space="preserve">
+    <value>Préautoriser, capturer et forcer des paiements par carte de crédit</value>
+    <comment>CSH ID 369033002</comment>
+  </data>
+  <data name="OE_CapturePaymentsWithInvoices_Article2" xml:space="preserve">
+    <value>Capturer et facturer des paiements par carte de crédit préautorisés</value>
+    <comment>CSH ID 369033003</comment>
+  </data>
+  <data name="OE_CapturePaymentsWithInvoices_Screen" xml:space="preserve">
+    <value>Écran Capture de paiements avec factures de CmC</value>
+    <comment>CSH ID 369033001</comment>
+  </data>
+  <data name="Portal_GlobalSearch_Article1" xml:space="preserve">
+    <value>Recherche d'informations à l'aide de la recherche globale</value>
+  </data>
+  <data name="Portal_GlobalSearch_Screen" xml:space="preserve">
+    <value>À propos de la recherche globale</value>
+  </data>
+  <data name="Portal_GlobalSearch_Article2" xml:space="preserve">
+    <value>Foire aux questions</value>
+  </data>
+  <data name="PR_About_Employee_Timecards" xml:space="preserve">
+    <value>À propos des feuilles de temps des employés</value>
+    <comment>CSH ID 536001003</comment>
+  </data>
+  <data name="PR_Employee_Timecards_Screen" xml:space="preserve">
+    <value>Écran Feuille de temps de l'employé</value>
+    <comment>CSH ID 536001001</comment>
+  </data>
+  <data name="PR_Entering_Employee_Timecards" xml:space="preserve">
+    <value>Remplir des feuilles de temps</value>
+    <comment>CSH ID 536001002</comment>
+  </data>
+  <data name="MT_About_Contacts" xml:space="preserve">
+    <value>À propos des contacts</value>
+    <comment>CSH ID 332001003</comment>
+  </data>
+  <data name="MT_Adding_Optional_Fields_To_Contacts" xml:space="preserve">
+    <value>Ajouter des champs optionnels aux contacts</value>
+    <comment>CSH ID 332002002</comment>
+  </data>
+  <data name="MT_Browse_Administration_Articles" xml:space="preserve">
+    <value>Parcourir les articles d’administration</value>
+    <comment>CSH ID 332000001</comment>
+  </data>
+  <data name="MT_Contacts_Screen" xml:space="preserve">
+    <value>Écran Contacts</value>
+    <comment>CSH ID 332001001</comment>
+  </data>
+  <data name="MT_Creating_Contacts" xml:space="preserve">
+    <value>Créer des contacts</value>
+    <comment>CSH ID 332001002</comment>
+  </data>
+  <data name="MT_Optional_Fields_Screen" xml:space="preserve">
+    <value>Écran Champs optionnels de M/T</value>
+    <comment>CSH ID 332002001</comment>
+  </data>
+</root>

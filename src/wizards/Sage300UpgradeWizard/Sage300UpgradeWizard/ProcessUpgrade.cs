@@ -119,7 +119,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         ConsolidateEnumerations(title);
                         break;
 #endif
-                    #endregion
+
+                    case 3:
+                        LogSpacerLine('-');
+                        UpdateThemeColor(title);
+                        break;
+
+                    case 4:
+                        LogSpacerLine('-');
+                        UpdateCheckboxes(title);
+                        break;
+
+                    case 5:
+                        LogSpacerLine('-');
+                        UpdateNewtonsoftPackage(title);
+                        break;
+                        #endregion
                 }
             }
 
@@ -343,6 +358,55 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             {
                 Log($"{Resources.File} '{filePath}' {Resources.DoesNotExist}.");
             }
+        }
+
+        /// <summary>
+        /// Theme color changes
+        /// Update kendo window open behavior
+        /// </summary>
+        /// <param name="title"></param>
+        private void UpdateThemeColor(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.UpdatesToSupportThemeColorAreAManualStep;
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Checkboxes visual update
+        /// </summary>
+        /// <param name="title"></param>
+        private void UpdateCheckboxes(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.UpdatesToSupportCheckboxesAreAManualStep;
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Update Newtonsoft.Json package
+        /// </summary>
+        /// <param name="title"></param>
+        private void UpdateNewtonsoftPackage(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.UpdatesToSupportNewtonsoftUpdateAreAManualStep;
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
         }
 
 #if ENABLE_TK_244885

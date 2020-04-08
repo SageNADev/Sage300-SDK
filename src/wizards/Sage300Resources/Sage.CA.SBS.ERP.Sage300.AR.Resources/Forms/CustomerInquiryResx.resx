@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountDescription" xml:space="preserve">
+    <value>Account Description</value>
+    <comment>Documents - Table Column</comment>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>Account Name</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="AccountSet" xml:space="preserve">
+    <value>Account Set</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="ActivityStats" xml:space="preserve">
+    <value>Activity/Stats</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>Address 1</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>Address 2</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Address3" xml:space="preserve">
+    <value>Address 3</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Address4" xml:space="preserve">
+    <value>Address 4</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="AdvancePrepayAmount" xml:space="preserve">
+    <value>Advance/Prepay Amount</value>
+    <comment>Pending - Table Column</comment>
+  </data>
+  <data name="AgingRangeMessage" xml:space="preserve">
+    <value>Aging periods must be in ascending order.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AllowBackorderQuantities" xml:space="preserve">
+    <value>Allow Backorder Quantities</value>
+    <comment>Profile - Check Box</comment>
+  </data>
+  <data name="AllowPartialShipments" xml:space="preserve">
+    <value>Allow Partial Shipments</value>
+    <comment>Profile - Check Box</comment>
+  </data>
+  <data name="AllowWebStoreShopping" xml:space="preserve">
+    <value>Allow Web Store Shopping</value>
+    <comment>Profile - Check Box</comment>
+  </data>
+  <data name="BillingCycleDescription" xml:space="preserve">
+    <value>Billing Cycle Description</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="CheckForDuplicatePOs" xml:space="preserve">
+    <value>Check for Duplicate POs</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="CommentType" xml:space="preserve">
+    <value>Comment Type</value>
+    <comment>Comments - Table Column</comment>
+  </data>
+  <data name="CostingMethod" xml:space="preserve">
+    <value>Costing Method</value>
+    <comment>IC - Table Column</comment>
+  </data>
+  <data name="CostOfSales" xml:space="preserve">
+    <value>Cost of Sales</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="DayEndNumber" xml:space="preserve">
+    <value>Day End Number</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="DNCNDate" xml:space="preserve">
+    <value>DN/CN Date</value>
+    <comment>OE Invoices - Table Column</comment>
+  </data>
+  <data name="DNCNNumber" xml:space="preserve">
+    <value>DN/CN Number</value>
+    <comment>OE Invoices - Table Column</comment>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>Documents</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>A/R Customer Inquiry</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ICContractPricing" xml:space="preserve">
+    <value>I/C Contract Pricing</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="IncludeFullyPaid" xml:space="preserve">
+    <value>Include Fully Paid</value>
+    <comment>Documents - Check Box</comment>
+  </data>
+  <data name="IncludePendingAmounts" xml:space="preserve">
+    <value>Include Pending Amounts</value>
+    <comment>Documents - Check Box</comment>
+  </data>
+  <data name="InterestProfileDescription" xml:space="preserve">
+    <value>Interest Profile Description</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>Invoice Date</value>
+    <comment>OE Invoices - Table Column</comment>
+  </data>
+  <data name="InvoiceDescription" xml:space="preserve">
+    <value>Invoice Description</value>
+    <comment>OE Invoices - Table Column</comment>
+  </data>
+  <data name="NationalAccountDescription" xml:space="preserve">
+    <value>National Account Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OEOrders" xml:space="preserve">
+    <value>O/E Orders</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="OESales" xml:space="preserve">
+    <value>O/E Sales</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Optional Field Description</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="OrderDate" xml:space="preserve">
+    <value>Order Date</value>
+    <comment>OE Orders - Table Column</comment>
+  </data>
+  <data name="Payee" xml:space="preserve">
+    <value>Payee</value>
+    <comment>Refunds - Table Column</comment>
+  </data>
+  <data name="PayerPayee" xml:space="preserve">
+    <value>Payer/Payee</value>
+    <comment>Pending - Table Column</comment>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="PriceBy" xml:space="preserve">
+    <value>Price By</value>
+    <comment>IC - Table Column</comment>
+  </data>
+  <data name="PriceType" xml:space="preserve">
+    <value>Price Type</value>
+    <comment>IC - Table Column</comment>
+  </data>
+  <data name="PriceTypeValue" xml:space="preserve">
+    <value>Price Type Value</value>
+    <comment>IC - Table Column</comment>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+    <comment>Pending - Table Column</comment>
+  </data>
+  <data name="QuantitySold" xml:space="preserve">
+    <value>Quantity Sold</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="RetainageTermsDescription" xml:space="preserve">
+    <value>Retainage Terms Description</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="ReturnAmount" xml:space="preserve">
+    <value>Return Amount</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="ReturnsCount" xml:space="preserve">
+    <value>Returns Count</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="SalesAmount" xml:space="preserve">
+    <value>Sales Amount</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="SalesCount" xml:space="preserve">
+    <value>Sales Count</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="ShipmentDate" xml:space="preserve">
+    <value>Shipment Date</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="ShipTo" xml:space="preserve">
+    <value>Ship-To</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="ShowDayEndProcessedTransactions" xml:space="preserve">
+    <value>Show Day End-Processed Transactions</value>
+    <comment>OE Invoices - Check Box</comment>
+  </data>
+  <data name="ShowOnHoldOrders" xml:space="preserve">
+    <value>Show On-Hold Orders</value>
+    <comment>OE Orders - Check Box</comment>
+  </data>
+  <data name="ShowOnlyCommentType" xml:space="preserve">
+    <value>Show Only Comment Type</value>
+    <comment>Comments - Check Box</comment>
+  </data>
+  <data name="ShowOnlyUserID" xml:space="preserve">
+    <value>Show Only User ID</value>
+    <comment>Comments - Check Box</comment>
+  </data>
+  <data name="StartingValue" xml:space="preserve">
+    <value>Starting Value</value>
+    <comment>Documents - Field</comment>
+  </data>
+  <data name="TaxAuthorityDescription" xml:space="preserve">
+    <value>Tax Authority Description</value>
+    <comment>Tax - Table Column</comment>
+  </data>
+  <data name="TaxClassDescription" xml:space="preserve">
+    <value>Tax Class Description</value>
+    <comment>Tax - Table Column</comment>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>Tax Group Description</value>
+    <comment>Tax - Field</comment>
+  </data>
+  <data name="TaxSalesCard" xml:space="preserve">
+    <value>Tax/Sales</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="TermsCodeDescription" xml:space="preserve">
+    <value>Terms Code Description</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="UseLowestPrice" xml:space="preserve">
+    <value>Use Lowest Price</value>
+    <comment>IC - Table Column</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Value Description</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Value Set</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ViaDescription" xml:space="preserve">
+    <value>Via Description</value>
+    <comment>ShipTo - Table Column</comment>
+  </data>
+  <data name="WebSite" xml:space="preserve">
+    <value>Web Site</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+    <comment>Drill down Label for Customer</comment>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>Customers</value>
+    <comment>Customer Finder Title</comment>
+  </data>
+  <data name="AccountSetDescription" xml:space="preserve">
+    <value>Account Set Description</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Adjustments" xml:space="preserve">
+    <value>Adjustments</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="CreditStatus" xml:space="preserve">
+    <value>Credit Status</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="GroupCodeDescription" xml:space="preserve">
+    <value>Group Code Description</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="InventoryLocationDescription" xml:space="preserve">
+    <value>Inventory Location Description</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Last Maintained</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="OEInvoices" xml:space="preserve">
+    <value>O/E Invoices</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="PaymentCodeDescription" xml:space="preserve">
+    <value>Payment Code Description</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Receipts" xml:space="preserve">
+    <value>Receipts</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="RecurringCharges" xml:space="preserve">
+    <value>Recurring Charges</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Refunds" xml:space="preserve">
+    <value>Refunds</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="RetentionPeriod" xml:space="preserve">
+    <value>Retention Period</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="SelectOption" xml:space="preserve">
+    <value>Select Option</value>
+    <comment>To select the Tab</comment>
+  </data>
+  <data name="ShipViaDescription" xml:space="preserve">
+    <value>Ship Via Description</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Address Line 1</value>
+    <comment>Address Tab Field Label</comment>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Address Line 2</value>
+    <comment>Address Tab Field Label</comment>
+  </data>
+  <data name="AddressLine3" xml:space="preserve">
+    <value>Address Line 3</value>
+    <comment>Address Tab Field Label</comment>
+  </data>
+  <data name="AddressLine4" xml:space="preserve">
+    <value>Address Line 4</value>
+    <comment>Address Tab Field Label</comment>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email Address</value>
+    <comment>Address Tab Field Label</comment>
+  </data>
+  <data name="ShowingTitle" xml:space="preserve">
+    <value>Showing:</value>
+    <comment>Customer Inquiry Selected Option Title</comment>
+  </data>
+  <data name="InvalidPeriod" xml:space="preserve">
+    <value>Cannot find Period {0}.</value>
+    <comment>Validation Message</comment>
+  </data>
+  <data name="DocumentNo" xml:space="preserve">
+    <value>Document Number</value>
+    <comment>Used for Grid Column</comment>
+  </data>
+  <data name="BankCheckNumber" xml:space="preserve">
+    <value>Bank/Check Number</value>
+    <comment>Used as DropDown Option</comment>
+  </data>
+  <data name="StartingCheckNo" xml:space="preserve">
+    <value>Starting Check Number</value>
+    <comment>Used as DropDown Option</comment>
+  </data>
+  <data name="CheckSerialNumber" xml:space="preserve">
+    <value>Check Serial Number</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="ClientUniqueID" xml:space="preserve">
+    <value>Client Unique ID</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="CreditCardTransactionNumber" xml:space="preserve">
+    <value>Credit Card Transaction Number</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="GLAccountTobeCredited" xml:space="preserve">
+    <value>GL Account to be Credited</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="NameonCheck" xml:space="preserve">
+    <value>Name on Check</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="PaymentStatus" xml:space="preserve">
+    <value>Payment Status</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="RateOperator" xml:space="preserve">
+    <value>Rate Operator</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="RateOverrideFlag" xml:space="preserve">
+    <value>Rate Override Flag</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="PrimaryShipToDescription" xml:space="preserve">
+    <value>Primary Ship-To Description</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ShowInvoicedShipments" xml:space="preserve">
+    <value>Show Invoiced Shipments</value>
+    <comment>Option</comment>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>(None)</value>
+    <comment>Age By options in Credit Status</comment>
+  </data>
+  <data name="CustomerNotExist" xml:space="preserve">
+    <value>Cannot find customer "{0}".</value>
+    <comment>Error</comment>
+  </data>
+  <data name="SelectReceiptStatusMessage" xml:space="preserve">
+    <value>You must select at least one Receipt Status.</value>
+    <comment>Receipts - Validation Error Message</comment>
+  </data>
+  <data name="GroupByCustomer" xml:space="preserve">
+    <value>Group By Customer</value>
+    <comment>Label</comment>
+  </data>
+  <data name="IncludeNatAcctMembers" xml:space="preserve">
+    <value>Include National Account Members</value>
+    <comment>Option</comment>
+  </data>
+</root>

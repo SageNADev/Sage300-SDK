@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SPS000000" xml:space="preserve">
+    <value>服务器错误</value>
+  </data>
+  <data name="SPS900000" xml:space="preserve">
+    <value>销货单编号值格式无效</value>
+  </data>
+  <data name="SPS900001" xml:space="preserve">
+    <value>名称值无效或空置</value>
+  </data>
+  <data name="SPS900002" xml:space="preserve">
+    <value>地址值无效或空置</value>
+  </data>
+  <data name="SPS900003" xml:space="preserve">
+    <value>城市值无效或空置</value>
+  </data>
+  <data name="SPS900004" xml:space="preserve">
+    <value>州值无效或空置</value>
+  </data>
+  <data name="SPS900005" xml:space="preserve">
+    <value>邮政编码值格式无效或空置</value>
+  </data>
+  <data name="SPS900006" xml:space="preserve">
+    <value>国家值无效或空置</value>
+  </data>
+  <data name="SPS900007" xml:space="preserve">
+    <value>电话值无效或空置</value>
+  </data>
+  <data name="SPS900008" xml:space="preserve">
+    <value>传真值无效或空置</value>
+  </data>
+  <data name="SPS900009" xml:space="preserve">
+    <value>传真值无效或空置</value>
+  </data>
+  <data name="SPS900010" xml:space="preserve">
+    <value>发货地址名称值格式无效</value>
+  </data>
+  <data name="SPS900011" xml:space="preserve">
+    <value>发货地址值格式无效</value>
+  </data>
+  <data name="SPS900012" xml:space="preserve">
+    <value>发货城市值格式无效</value>
+  </data>
+  <data name="SPS900013" xml:space="preserve">
+    <value>发货州值格式无效</value>
+  </data>
+  <data name="SPS900014" xml:space="preserve">
+    <value>发货邮编值格式无效</value>
+  </data>
+  <data name="SPS900015" xml:space="preserve">
+    <value>发货国家值格式无效</value>
+  </data>
+  <data name="SPS900016" xml:space="preserve">
+    <value>信用卡号码值格式无效</value>
+  </data>
+  <data name="SPS900017" xml:space="preserve">
+    <value>失效日期值格式无效</value>
+  </data>
+  <data name="SPS900018" xml:space="preserve">
+    <value>CVV（卡验证值）格式无效或空置（如果设为必需）</value>
+  </data>
+  <data name="SPS900019" xml:space="preserve">
+    <value>总计必须等于 &gt; $0.00。请检查小计，运费和税值。</value>
+  </data>
+  <data name="SPS900020" xml:space="preserve">
+    <value>交易代码值格式无效或空置</value>
+  </data>
+  <data name="SPS900021" xml:space="preserve">
+    <value>预授权代码格式无效或空置（强制交易所需）</value>
+  </data>
+  <data name="SPS900022" xml:space="preserve">
+    <value>参考值格式无效或空置（按参考强制或作废所需）</value>
+  </data>
+  <data name="SPS900023" xml:space="preserve">
+    <value>跟踪数据值格式无效或空置（贷项和零售交易所需）</value>
+  </data>
+  <data name="SPS900024" xml:space="preserve">
+    <value>跟踪编号值格式无效</value>
+  </data>
+  <data name="SPS900025" xml:space="preserve">
+    <value>客户编号值格式无效（仅用于PCLIII交易）</value>
+  </data>
+  <data name="SPS900026" xml:space="preserve">
+    <value>发货公司值格式无效</value>
+  </data>
+  <data name="SPS900027" xml:space="preserve">
+    <value>经常性值格式无效（必须 = 0 或 1）</value>
+  </data>
+  <data name="SPS900028" xml:space="preserve">
+    <value>经常性值格式无效</value>
+  </data>
+  <data name="SPS900029" xml:space="preserve">
+    <value>经常性间隔值格式无效（必须是数字）</value>
+  </data>
+  <data name="SPS900030" xml:space="preserve">
+    <value>经常性永久值格式无效或空置</value>
+  </data>
+  <data name="SPS900031" xml:space="preserve">
+    <value>经常性处理次数值格式无效（必须是数字）</value>
+  </data>
+  <data name="SPS900032" xml:space="preserve">
+    <value>经常性非营业日值格式无效</value>
+  </data>
+  <data name="SPS900033" xml:space="preserve">
+    <value>经常性群组空置或找不到群组</value>
+  </data>
+  <data name="SPS900034" xml:space="preserve">
+    <value>经常性起始日期值格式无效或空置</value>
+  </data>
+  <data name="SPS900035" xml:space="preserve">
+    <value>输入的PIN号码不正确（PIN借记交易所需）</value>
+  </data>
+  <data name="SPS901000" xml:space="preserve">
+    <value>通用数据验证错误，该讯息将包含额外的信息</value>
+  </data>
+  <data name="SPS910000" xml:space="preserve">
+    <value>您试图提交的交易不被允许。</value>
+  </data>
+  <data name="SPS910001" xml:space="preserve">
+    <value>Visa卡类型交易不被允许。</value>
+  </data>
+  <data name="SPS910002" xml:space="preserve">
+    <value>MasterCard卡类型交易不被允许。</value>
+  </data>
+  <data name="SPS910003" xml:space="preserve">
+    <value>American Express卡类型交易不被允许。</value>
+  </data>
+  <data name="SPS910004" xml:space="preserve">
+    <value>Discover卡类型交易不被允许。</value>
+  </data>
+  <data name="SPS910005" xml:space="preserve">
+    <value>卡类型交易不被允许。</value>
+  </data>
+  <data name="SPS911911" xml:space="preserve">
+    <value>M_id或M_key不正确</value>
+  </data>
+  <data name="SPS920000" xml:space="preserve">
+    <value>无法找到货品</value>
+  </data>
+  <data name="SPS920001" xml:space="preserve">
+    <value>未发现过去6个月内的相应销售，不能签发信贷。</value>
+  </data>
+  <data name="SPS920002" xml:space="preserve">
+    <value>地址验证服务失败。</value>
+  </data>
+  <data name="SPS920050" xml:space="preserve">
+    <value>无法作废借项交易。</value>
+  </data>
+</root>

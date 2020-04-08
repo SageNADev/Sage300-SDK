@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjustmentDate" xml:space="preserve">
+    <value>Fecha de Ajuste</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>Ingresado por</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>CI - Ajustes</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="FromPhysicalInventory" xml:space="preserve">
+    <value>Desde Inventario Físico</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ICUniqueDocumentNumber" xml:space="preserve">
+    <value>Número Documento Único CI</value>
+    <comment>Field</comment>
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>Trabajo</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NextDetailLineNumber" xml:space="preserve">
+    <value>Número de Línea de Detalle Siguiente</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PMAdjustmentNumber" xml:space="preserve">
+    <value>Número de Ajuste PM</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>Fecha de Asentamiento</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostSequenceNumber" xml:space="preserve">
+    <value>Número de Secuencia de Asiento</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>Comando Procesar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProcessCommandLocation" xml:space="preserve">
+    <value>Ubicación de Comando Procesar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RecordDeleted" xml:space="preserve">
+    <value>Registro Eliminado</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RecordPrinted" xml:space="preserve">
+    <value>Registro Impreso</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RecordStatus" xml:space="preserve">
+    <value>Estado de Registro</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>Número de Transacción</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BothDecrease" xml:space="preserve">
+    <value>Ambos Disminuyen</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BothIncrease" xml:space="preserve">
+    <value>Ambos Aumentan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CostDecrease" xml:space="preserve">
+    <value>Reducción del Costo</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CostIncrease" xml:space="preserve">
+    <value>Aumento del Costo</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OffsetBucket" xml:space="preserve">
+    <value>Lote de Demora</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Prorate" xml:space="preserve">
+    <value>Prorratear</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuantityDecrease" xml:space="preserve">
+    <value>Reducción de Cantidad</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuantityIncrease" xml:space="preserve">
+    <value>Aumento de Cantidad</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SpecificBucket" xml:space="preserve">
+    <value>Lote Específico</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IC0110" xml:space="preserve">
+    <value>Detalles de Ajustes</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IC0120" xml:space="preserve">
+    <value>Ajuste</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IC0113" xml:space="preserve">
+    <value>Números de Serie de Detalle de Ajuste</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IC0115" xml:space="preserve">
+    <value>Campos Opc. de Detalle de Ajustes</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IC0117" xml:space="preserve">
+    <value>Números de Lote de Detalle de Ajuste</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IC0125" xml:space="preserve">
+    <value>Campos Opc. de Cabecera de Ajustes</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AccountDescription" xml:space="preserve">
+    <value>Descripción de Cuenta</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AdjustmentAcct" xml:space="preserve">
+    <value>Cuenta de Ajuste</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BucketType" xml:space="preserve">
+    <value>Tipo de Lote</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CostAdjustment" xml:space="preserve">
+    <value>Ajuste de Costo</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CostDate" xml:space="preserve">
+    <value>Fecha de Costos</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CostUOM" xml:space="preserve">
+    <value>UM de Costos</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AdjustmentWriteOffAccount" xml:space="preserve">
+    <value>Cuenta de Ajuste/Cancelación</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CloseLT" xml:space="preserve">
+    <value>Cerrar LT</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CloseSN" xml:space="preserve">
+    <value>Cerrar SN</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CostingSequenceNumber" xml:space="preserve">
+    <value>N° Secuencia de Cálculo de Costos</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ForcePopupLT" xml:space="preserve">
+    <value>Forzar Formulario Emergente LT</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ForcePopupSN" xml:space="preserve">
+    <value>Forzar Formulario Emergente SN</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InterprocessCommID" xml:space="preserve">
+    <value>ID Comando Inter-proceso</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LotCost" xml:space="preserve">
+    <value>Costo de Número de Lote</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LotsCost" xml:space="preserve">
+    <value>Costo de Números de Lote</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LTSetID" xml:space="preserve">
+    <value>ID de Grupo LT</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NumberOfSerials" xml:space="preserve">
+    <value>Cantidad de N° Serie</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OriginalWriteOffAccount" xml:space="preserve">
+    <value>Cuenta Original de Cancelaciones en Libro</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PopupLT" xml:space="preserve">
+    <value>Formulario Emergente LT</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PopupSN" xml:space="preserve">
+    <value>Formulario Emergente SN</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProcessCommandItemNumber" xml:space="preserve">
+    <value>Número de Artículo de Comando Procesar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProcessCommandSortCode" xml:space="preserve">
+    <value>Código de Clasificación de Comando Procesar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SerialsCost" xml:space="preserve">
+    <value>Costo de Números de Serie</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiptCost" xml:space="preserve">
+    <value>Costo de Recibo</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AdjustmentDescription" xml:space="preserve">
+    <value>Descripción del Ajuste</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AdjustmentReference" xml:space="preserve">
+    <value>Referencia del Ajuste</value>
+    <comment>Field</comment>
+  </data>
+</root>

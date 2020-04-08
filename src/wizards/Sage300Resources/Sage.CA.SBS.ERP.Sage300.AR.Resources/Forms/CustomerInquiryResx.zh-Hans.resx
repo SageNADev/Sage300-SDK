@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountDescription" xml:space="preserve">
+    <value>科目描述</value>
+    <comment>Documents - Table Column</comment>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>科目名称</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="AccountSet" xml:space="preserve">
+    <value>科目集合</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="ActivityStats" xml:space="preserve">
+    <value>活动/统计</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>地址1</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>地址2</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Address3" xml:space="preserve">
+    <value>地址3</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Address4" xml:space="preserve">
+    <value>地址4</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="AdvancePrepayAmount" xml:space="preserve">
+    <value>预支/预付金额</value>
+    <comment>Pending - Table Column</comment>
+  </data>
+  <data name="AgingRangeMessage" xml:space="preserve">
+    <value>帐析期间必须是升序。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AllowBackorderQuantities" xml:space="preserve">
+    <value>允许延期交货数量</value>
+    <comment>Profile - Check Box</comment>
+  </data>
+  <data name="AllowPartialShipments" xml:space="preserve">
+    <value>运行部分发货</value>
+    <comment>Profile - Check Box</comment>
+  </data>
+  <data name="AllowWebStoreShopping" xml:space="preserve">
+    <value>允许网路商店购物</value>
+    <comment>Profile - Check Box</comment>
+  </data>
+  <data name="BillingCycleDescription" xml:space="preserve">
+    <value>帐单周期描述</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="CheckForDuplicatePOs" xml:space="preserve">
+    <value>检查重复的订购单</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="CommentType" xml:space="preserve">
+    <value>备注类型</value>
+    <comment>Comments - Table Column</comment>
+  </data>
+  <data name="CostingMethod" xml:space="preserve">
+    <value>成本计算方法</value>
+    <comment>IC - Table Column</comment>
+  </data>
+  <data name="CostOfSales" xml:space="preserve">
+    <value>销售成本</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="DayEndNumber" xml:space="preserve">
+    <value>日终处理编号</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="DNCNDate" xml:space="preserve">
+    <value>借项/贷项日期</value>
+    <comment>OE Invoices - Table Column</comment>
+  </data>
+  <data name="DNCNNumber" xml:space="preserve">
+    <value>借项/贷项编号</value>
+    <comment>OE Invoices - Table Column</comment>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>凭证</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>应收帐款客户查询</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ICContractPricing" xml:space="preserve">
+    <value>存货控制合约定价报表</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="IncludeFullyPaid" xml:space="preserve">
+    <value>包括完全付清</value>
+    <comment>Documents - Check Box</comment>
+  </data>
+  <data name="IncludePendingAmounts" xml:space="preserve">
+    <value>包括待处理金额</value>
+    <comment>Documents - Check Box</comment>
+  </data>
+  <data name="InterestProfileDescription" xml:space="preserve">
+    <value>利息概览描述</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>发票日期</value>
+    <comment>OE Invoices - Table Column</comment>
+  </data>
+  <data name="InvoiceDescription" xml:space="preserve">
+    <value>发票描述</value>
+    <comment>OE Invoices - Table Column</comment>
+  </data>
+  <data name="NationalAccountDescription" xml:space="preserve">
+    <value>统一帐户描述</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OEOrders" xml:space="preserve">
+    <value>销售订单销货单</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="OESales" xml:space="preserve">
+    <value>销售订单销售</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>可选字段描述</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="OrderDate" xml:space="preserve">
+    <value>销货单日期</value>
+    <comment>OE Orders - Table Column</comment>
+  </data>
+  <data name="Payee" xml:space="preserve">
+    <value>收款者</value>
+    <comment>Refunds - Table Column</comment>
+  </data>
+  <data name="PayerPayee" xml:space="preserve">
+    <value>付款者/收款者</value>
+    <comment>Pending - Table Column</comment>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>待处理</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="PriceBy" xml:space="preserve">
+    <value>价格按</value>
+    <comment>IC - Table Column</comment>
+  </data>
+  <data name="PriceType" xml:space="preserve">
+    <value>价格类型</value>
+    <comment>IC - Table Column</comment>
+  </data>
+  <data name="PriceTypeValue" xml:space="preserve">
+    <value>价格类型值</value>
+    <comment>IC - Table Column</comment>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>项目</value>
+    <comment>Pending - Table Column</comment>
+  </data>
+  <data name="QuantitySold" xml:space="preserve">
+    <value>销售量</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="RetainageTermsDescription" xml:space="preserve">
+    <value>保留款条款描述</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="ReturnAmount" xml:space="preserve">
+    <value>退货金额</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="ReturnsCount" xml:space="preserve">
+    <value>退货计数</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="SalesAmount" xml:space="preserve">
+    <value>销售金额</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="SalesCount" xml:space="preserve">
+    <value>销售计数</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="ShipmentDate" xml:space="preserve">
+    <value>发货日期</value>
+    <comment>OE Sales - Table Column</comment>
+  </data>
+  <data name="ShipTo" xml:space="preserve">
+    <value>发货至</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="ShowDayEndProcessedTransactions" xml:space="preserve">
+    <value>显示日终处理过的交易</value>
+    <comment>OE Invoices - Check Box</comment>
+  </data>
+  <data name="ShowOnHoldOrders" xml:space="preserve">
+    <value>显示在手订单</value>
+    <comment>OE Orders - Check Box</comment>
+  </data>
+  <data name="ShowOnlyCommentType" xml:space="preserve">
+    <value>仅显示备注类型</value>
+    <comment>Comments - Check Box</comment>
+  </data>
+  <data name="ShowOnlyUserID" xml:space="preserve">
+    <value>仅显示用户标识</value>
+    <comment>Comments - Check Box</comment>
+  </data>
+  <data name="StartingValue" xml:space="preserve">
+    <value>起始值</value>
+    <comment>Documents - Field</comment>
+  </data>
+  <data name="TaxAuthorityDescription" xml:space="preserve">
+    <value>税务机构描述</value>
+    <comment>Tax - Table Column</comment>
+  </data>
+  <data name="TaxClassDescription" xml:space="preserve">
+    <value>税级描述</value>
+    <comment>Tax - Table Column</comment>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>税组描述</value>
+    <comment>Tax - Field</comment>
+  </data>
+  <data name="TaxSalesCard" xml:space="preserve">
+    <value>税务/销售</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="TermsCodeDescription" xml:space="preserve">
+    <value>条款代码描述</value>
+    <comment>Profile - Field</comment>
+  </data>
+  <data name="UseLowestPrice" xml:space="preserve">
+    <value>使用最低价格</value>
+    <comment>IC - Table Column</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>值</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>值描述</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>值已设</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ViaDescription" xml:space="preserve">
+    <value>经由描述</value>
+    <comment>ShipTo - Table Column</comment>
+  </data>
+  <data name="WebSite" xml:space="preserve">
+    <value>网址</value>
+    <comment>Address - Field</comment>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>明细</value>
+    <comment>Drill down Label for Customer</comment>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>客户</value>
+    <comment>Customer Finder Title</comment>
+  </data>
+  <data name="AccountSetDescription" xml:space="preserve">
+    <value>科目集合描述</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>地址</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Adjustments" xml:space="preserve">
+    <value>调整</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>备注</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="CreditStatus" xml:space="preserve">
+    <value>信用状态</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="GroupCodeDescription" xml:space="preserve">
+    <value>群组代码描述</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="InventoryLocationDescription" xml:space="preserve">
+    <value>存货地点描述</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>上一维护日期</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="OEInvoices" xml:space="preserve">
+    <value>销售订单发票</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>可选字段</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="PaymentCodeDescription" xml:space="preserve">
+    <value>付款代码描述</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>概览</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Receipts" xml:space="preserve">
+    <value>收款</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="RecurringCharges" xml:space="preserve">
+    <value>经常性收费</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Refunds" xml:space="preserve">
+    <value>退款</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="RetentionPeriod" xml:space="preserve">
+    <value>留存期间</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="SelectOption" xml:space="preserve">
+    <value>选择选项</value>
+    <comment>To select the Tab</comment>
+  </data>
+  <data name="ShipViaDescription" xml:space="preserve">
+    <value>发运经由描述</value>
+    <comment>Profile Tab Field Label</comment>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>地址行1</value>
+    <comment>Address Tab Field Label</comment>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>地址行2</value>
+    <comment>Address Tab Field Label</comment>
+  </data>
+  <data name="AddressLine3" xml:space="preserve">
+    <value>地址行3</value>
+    <comment>Address Tab Field Label</comment>
+  </data>
+  <data name="AddressLine4" xml:space="preserve">
+    <value>地址行4</value>
+    <comment>Address Tab Field Label</comment>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>电邮地址</value>
+    <comment>Address Tab Field Label</comment>
+  </data>
+  <data name="ShowingTitle" xml:space="preserve">
+    <value>显示：</value>
+    <comment>Customer Inquiry Selected Option Title</comment>
+  </data>
+  <data name="InvalidPeriod" xml:space="preserve">
+    <value>无法找到期间{0}。</value>
+    <comment>Validation Message</comment>
+  </data>
+  <data name="DocumentNo" xml:space="preserve">
+    <value>凭证编号</value>
+    <comment>Used for Grid Column</comment>
+  </data>
+  <data name="BankCheckNumber" xml:space="preserve">
+    <value>银行/支票编号</value>
+    <comment>Used as DropDown Option</comment>
+  </data>
+  <data name="StartingCheckNo" xml:space="preserve">
+    <value>起始支票编号</value>
+    <comment>Used as DropDown Option</comment>
+  </data>
+  <data name="CheckSerialNumber" xml:space="preserve">
+    <value>支票系列编号</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="ClientUniqueID" xml:space="preserve">
+    <value>客户唯一标识</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="CreditCardTransactionNumber" xml:space="preserve">
+    <value>信用卡交易编号</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="GLAccountTobeCredited" xml:space="preserve">
+    <value>要贷记的总帐科目</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="NameonCheck" xml:space="preserve">
+    <value>支票上的名称</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="PaymentStatus" xml:space="preserve">
+    <value>付款状态</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="RateOperator" xml:space="preserve">
+    <value>汇率运算符</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="RateOverrideFlag" xml:space="preserve">
+    <value>汇率撤换旗标</value>
+    <comment>Used in Finder Title</comment>
+  </data>
+  <data name="PrimaryShipToDescription" xml:space="preserve">
+    <value>主发运至描述</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ShowInvoicedShipments" xml:space="preserve">
+    <value>显示已开发票发货</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>（无）</value>
+    <comment>Age By options in Credit Status</comment>
+  </data>
+  <data name="CustomerNotExist" xml:space="preserve">
+    <value>客户&quot;{0}&quot;不存在。</value>
+  </data>
+  <data name="SelectReceiptStatusMessage" xml:space="preserve">
+    <value>您必须选择至少一个收款状态。</value>
+    <comment>Receipts - Validation Error Message</comment>
+  </data>
+  <data name="GroupByCustomer" xml:space="preserve">
+    <value>编组按客户</value>
+  </data>
+  <data name="IncludeNatAcctMembers" xml:space="preserve">
+    <value>包括统一帐户成员</value>
+  </data>
+</root>

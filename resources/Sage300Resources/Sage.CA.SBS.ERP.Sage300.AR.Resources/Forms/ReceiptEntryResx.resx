@@ -1,0 +1,1205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountDesc" xml:space="preserve">
+    <value>Account Description</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>Account Number</value>
+  </data>
+  <data name="AccountSet" xml:space="preserve">
+    <value>Account Set</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="AccountTax" xml:space="preserve">
+    <value>Detail Tax…</value>
+    <comment>Button</comment>
+  </data>
+  <data name="AddEdit" xml:space="preserve">
+    <value>Add/Edit</value>
+    <comment>Link</comment>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>Address Line 1</value>
+    <comment>Credit - Group Field</comment>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>Address Line 2</value>
+    <comment>Credit - Group Field</comment>
+  </data>
+  <data name="Adjust" xml:space="preserve">
+    <value>Adjust</value>
+    <comment>Button</comment>
+  </data>
+  <data name="AdjustmentEntry" xml:space="preserve">
+    <value>Adjustment Entry</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="AlternateTaxBaseAmount" xml:space="preserve">
+    <value>Alternate Tax Base Amount</value>
+  </data>
+  <data name="ARVersionCreatedIn" xml:space="preserve">
+    <value>A/R Version Created In</value>
+  </data>
+  <data name="AuthorizationCode" xml:space="preserve">
+    <value>Authorization Code</value>
+    <comment>Credit - Group Field</comment>
+  </data>
+  <data name="AutoApply" xml:space="preserve">
+    <value>Auto Apply</value>
+    <comment>Group - Check Box</comment>
+  </data>
+  <data name="BankDesc" xml:space="preserve">
+    <value>Bank Description</value>
+    <comment>Batch - Field</comment>
+  </data>
+  <data name="BillingDetails" xml:space="preserve">
+    <value>Billing Details</value>
+    <comment>Credit - Group</comment>
+  </data>
+  <data name="CCDesc" xml:space="preserve">
+    <value>Card Description</value>
+    <comment>Credit - Field</comment>
+  </data>
+  <data name="CCDetails" xml:space="preserve">
+    <value>Credit Card Details</value>
+    <comment>Credit - Group</comment>
+  </data>
+  <data name="CCStatus" xml:space="preserve">
+    <value>Credit Card Status</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="CCType" xml:space="preserve">
+    <value>Card Type</value>
+    <comment>Credit - Group Field</comment>
+  </data>
+  <data name="CheckReceiptNo1" xml:space="preserve">
+    <value>Check/Receipt Number</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="CreateNewBatch" xml:space="preserve">
+    <value>Create New Batch</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CreateNewEntry" xml:space="preserve">
+    <value>Create New Entry</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CurrencyDesc" xml:space="preserve">
+    <value>Currency Description</value>
+    <comment>Batch - Field</comment>
+  </data>
+  <data name="CurrentCCProcessStatus" xml:space="preserve">
+    <value>Current Credit Card Process Status</value>
+  </data>
+  <data name="CurrentCCTransactionNumber" xml:space="preserve">
+    <value>Current Credit Card Transaction Number</value>
+  </data>
+  <data name="CustAdjustmentTotal" xml:space="preserve">
+    <value>Customer Adjustment Total</value>
+  </data>
+  <data name="CustCurrency" xml:space="preserve">
+    <value>Customer Currency</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="CustCurrencyAmountDue" xml:space="preserve">
+    <value>Customer Currency Amount Due</value>
+  </data>
+  <data name="CustomerAndAccount" xml:space="preserve">
+    <value>Customer and Account</value>
+    <comment>Group</comment>
+  </data>
+  <data name="CustomerDesc" xml:space="preserve">
+    <value>Customer Description</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="CustomerRateOperator" xml:space="preserve">
+    <value>Customer Rate Operator</value>
+  </data>
+  <data name="CustomerUnapplied" xml:space="preserve">
+    <value>Customer Unapplied</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="CustomerUndistributed" xml:space="preserve">
+    <value>Customer Undistributed</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimals</value>
+  </data>
+  <data name="DepositDesc" xml:space="preserve">
+    <value>Deposit Description</value>
+    <comment>Batch - Field</comment>
+  </data>
+  <data name="DiscountTaken" xml:space="preserve">
+    <value>Discount Taken</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="DistAmount" xml:space="preserve">
+    <value>Distribution Amount</value>
+  </data>
+  <data name="DistAmountNetofTaxes" xml:space="preserve">
+    <value>Distribution Amount Net of Taxes</value>
+  </data>
+  <data name="DistributionAmount" xml:space="preserve">
+    <value>Distribution Amount</value>
+  </data>
+  <data name="DistributionCode1" xml:space="preserve">
+    <value>Distribution Code</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="DistributionGLAccount" xml:space="preserve">
+    <value>Distribution G/L Account</value>
+  </data>
+  <data name="Documents1" xml:space="preserve">
+    <value>Documents</value>
+    <comment>Group</comment>
+  </data>
+  <data name="DocumentTaxes1" xml:space="preserve">
+    <value>Document Taxes</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="DocumentVersionCreatedIn" xml:space="preserve">
+    <value>Document Version Created In</value>
+  </data>
+  <data name="DrillDownApplicationSource" xml:space="preserve">
+    <value>Drill Down Application Source</value>
+  </data>
+  <data name="DrillDownLinkNumber" xml:space="preserve">
+    <value>Drill Down Link Number</value>
+  </data>
+  <data name="DrillDownType" xml:space="preserve">
+    <value>Drill Down Type</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+    <comment>Link</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>A/R Receipt Entry</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ErrorBatch" xml:space="preserve">
+    <value>Error Batch</value>
+  </data>
+  <data name="ErrorEntry" xml:space="preserve">
+    <value>Error Entry</value>
+  </data>
+  <data name="FilterDocuments" xml:space="preserve">
+    <value>Filter Documents</value>
+    <comment>Group - Check Box</comment>
+  </data>
+  <data name="FuncClaimAmount" xml:space="preserve">
+    <value>Functional Claim Amount</value>
+  </data>
+  <data name="FuncCustUnappliedAmount" xml:space="preserve">
+    <value>Functional Customer Unapplied Amount</value>
+  </data>
+  <data name="FuncDiscountAmount" xml:space="preserve">
+    <value>Functional Discount Amount</value>
+  </data>
+  <data name="FuncDistAmount" xml:space="preserve">
+    <value>Functional Distribution Amount</value>
+  </data>
+  <data name="FuncDistAmountNetofTaxes" xml:space="preserve">
+    <value>Functional Distribution Amount Net of Taxes</value>
+  </data>
+  <data name="FuncReceiptAmount" xml:space="preserve">
+    <value>Functional Receipt Amount</value>
+  </data>
+  <data name="FuncRetainageAmount" xml:space="preserve">
+    <value>Functional Retainage Amount</value>
+  </data>
+  <data name="FuncTaxAmount1" xml:space="preserve">
+    <value>Functional Tax Amount 1</value>
+  </data>
+  <data name="FuncTaxAmount2" xml:space="preserve">
+    <value>Functional Tax Amount 2</value>
+  </data>
+  <data name="FuncTaxAmount3" xml:space="preserve">
+    <value>Functional Tax Amount 3</value>
+  </data>
+  <data name="FuncTaxAmount4" xml:space="preserve">
+    <value>Functional Tax Amount 4</value>
+  </data>
+  <data name="FuncTaxAmount5" xml:space="preserve">
+    <value>Functional Tax Amount 5</value>
+  </data>
+  <data name="FuncTaxBase1" xml:space="preserve">
+    <value>Functional Tax Base 1</value>
+  </data>
+  <data name="FuncTaxBase2" xml:space="preserve">
+    <value>Functional Tax Base 2</value>
+  </data>
+  <data name="FuncTaxBase3" xml:space="preserve">
+    <value>Functional Tax Base 3</value>
+  </data>
+  <data name="FuncTaxBase4" xml:space="preserve">
+    <value>Functional Tax Base 4</value>
+  </data>
+  <data name="FuncTaxBase5" xml:space="preserve">
+    <value>Functional Tax Base 5</value>
+  </data>
+  <data name="FuncTaxTotal" xml:space="preserve">
+    <value>Functional Tax Total</value>
+  </data>
+  <data name="FuncTotalAdjustmentAmount" xml:space="preserve">
+    <value>Functional Total Adjustment Amount</value>
+  </data>
+  <data name="FuncTotalAdvanceCreditClaim" xml:space="preserve">
+    <value>Functional Total Advance Credit Claim</value>
+  </data>
+  <data name="FuncTotalCustAmountApplied" xml:space="preserve">
+    <value>Functional Total Customer Amount Applied</value>
+  </data>
+  <data name="GeneratedPPUCNo" xml:space="preserve">
+    <value>Generated PP/UC Number</value>
+  </data>
+  <data name="GLDescription" xml:space="preserve">
+    <value>G/L Description</value>
+  </data>
+  <data name="GLReference" xml:space="preserve">
+    <value>G/L Reference</value>
+  </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>Invoice Date</value>
+  </data>
+  <data name="ItemTaxClass" xml:space="preserve">
+    <value>Item Tax Class</value>
+    <comment>DocumentTax - Column</comment>
+  </data>
+  <data name="JobApplyMethod" xml:space="preserve">
+    <value>Apply Method</value>
+  </data>
+  <data name="JobTotalDiscountAmount" xml:space="preserve">
+    <value>Job Total Discount Amount</value>
+  </data>
+  <data name="JobTotalPaymentAmount" xml:space="preserve">
+    <value>Job Total Payment Amount</value>
+  </data>
+  <data name="MatchingDocumentNumber" xml:space="preserve">
+    <value>Matching Document Number</value>
+  </data>
+  <data name="NextAdjSeqNo" xml:space="preserve">
+    <value>Next Adjustment Sequence Number</value>
+  </data>
+  <data name="NumberofDocumentsAppliedto" xml:space="preserve">
+    <value>Number of Documents Applied To</value>
+  </data>
+  <data name="NumOfEntries1" xml:space="preserve">
+    <value>Number of Entries</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OptionalFieldDesc" xml:space="preserve">
+    <value>Optional Field Description</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="PaymentAmounts" xml:space="preserve">
+    <value>Payment Amounts</value>
+    <comment>Group</comment>
+  </data>
+  <data name="PaymentResolution" xml:space="preserve">
+    <value>Payment Resolution</value>
+  </data>
+  <data name="PendAdjTotal1" xml:space="preserve">
+    <value>Pending Adjustment Total</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="PendDiscTotal1" xml:space="preserve">
+    <value>Pending Discount Total</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="PendPaymentTotal1" xml:space="preserve">
+    <value>Pending Payment Total</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="PPMatchingDocNo" xml:space="preserve">
+    <value>PP Matching Document Number</value>
+  </data>
+  <data name="PPMatchingDocType" xml:space="preserve">
+    <value>PP Matching Document Type</value>
+  </data>
+  <data name="PreviousCCProcessStatus" xml:space="preserve">
+    <value>Previous Credit Card Process Status</value>
+  </data>
+  <data name="PreviousCCTransactionNumber" xml:space="preserve">
+    <value>Previous Credit Card Transaction Number</value>
+  </data>
+  <data name="ProcessCreditCard" xml:space="preserve">
+    <value>Process Credit Card</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ProcessPayment1" xml:space="preserve">
+    <value>Process Payment…</value>
+    <comment>Credit - Button</comment>
+  </data>
+  <data name="ProjectCode" xml:space="preserve">
+    <value>Project Code</value>
+  </data>
+  <data name="ProjectCategoryResource" xml:space="preserve">
+    <value>Project/Category Resource</value>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>Rate Type Description</value>
+    <comment>Batch - Field</comment>
+  </data>
+  <data name="ReceiptOverapplied" xml:space="preserve">
+    <value>Check/Receipt Number {0} is overapplied.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="ReceiptPrinted" xml:space="preserve">
+    <value>Receipt Printed</value>
+  </data>
+  <data name="ReceiptUnapplied" xml:space="preserve">
+    <value>Receipt Unapplied</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="ReceiptUndistributed" xml:space="preserve">
+    <value>Receipt Undistributed</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="RtgCreditAmtCustCurr" xml:space="preserve">
+    <value>Retainage Credit Amount - Customer Currency</value>
+  </data>
+  <data name="RtgDebitAmtCustCurr" xml:space="preserve">
+    <value>Retainage Debit Amount - Customer Currency</value>
+  </data>
+  <data name="SameAsCustomerAddress" xml:space="preserve">
+    <value>Same as Customer Address</value>
+    <comment>Credit - Group Check Box</comment>
+  </data>
+  <data name="StartingCurrBal" xml:space="preserve">
+    <value>Starting Balance</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StartingDocDate" xml:space="preserve">
+    <value>Starting Document Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StartingDocNo" xml:space="preserve">
+    <value>Starting Document Number</value>
+    <comment>Group - Field</comment>
+  </data>
+  <data name="StartingDueDate" xml:space="preserve">
+    <value>Starting Due Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StartingOrderNo" xml:space="preserve">
+    <value>Starting Order Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StartingOrigDocNo" xml:space="preserve">
+    <value>Starting Original Document Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StartingPONo" xml:space="preserve">
+    <value>Starting PO Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StartingShipmentNo" xml:space="preserve">
+    <value>Starting Shipment Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Subtotal" xml:space="preserve">
+    <value>Subtotal</value>
+    <comment>Credit - Group Field</comment>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>Tax Amount 1</value>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>Tax Amount 2</value>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>Tax Amount 3</value>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>Tax Amount 4</value>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>Tax Amount 5</value>
+  </data>
+  <data name="TaxAuthorities" xml:space="preserve">
+    <value>Tax Authorities</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>Tax Authority 1</value>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>Tax Authority 2</value>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>Tax Authority 3</value>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>Tax Authority 4</value>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>Tax Authority 5</value>
+  </data>
+  <data name="TaxAuthorityDesc" xml:space="preserve">
+    <value>Tax Authority Description</value>
+    <comment>DocumentTax - Column</comment>
+  </data>
+  <data name="TaxBase1" xml:space="preserve">
+    <value>Tax Base 1</value>
+  </data>
+  <data name="TaxBase2" xml:space="preserve">
+    <value>Tax Base 2</value>
+  </data>
+  <data name="TaxBase3" xml:space="preserve">
+    <value>Tax Base 3</value>
+  </data>
+  <data name="TaxBase4" xml:space="preserve">
+    <value>Tax Base 4</value>
+  </data>
+  <data name="TaxBase5" xml:space="preserve">
+    <value>Tax Base 5</value>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>Tax Class 1</value>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>Tax Class 2</value>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>Tax Class 3</value>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>Tax Class 4</value>
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>Tax Class 5</value>
+  </data>
+  <data name="TaxClassDesc" xml:space="preserve">
+    <value>Tax Class Description</value>
+    <comment>TaxAuth - Column</comment>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Taxes…</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Taxes1" xml:space="preserve">
+    <value>Taxes</value>
+    <comment>Credit - Group Field</comment>
+  </data>
+  <data name="TaxGroupDesc" xml:space="preserve">
+    <value>Tax Group Description</value>
+    <comment>Document - Field</comment>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>Tax Included 1</value>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>Tax Included 2</value>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>Tax Included 3</value>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>Tax Included 4</value>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>Tax Included 5</value>
+  </data>
+  <data name="TaxRate1" xml:space="preserve">
+    <value>Tax Rate 1</value>
+  </data>
+  <data name="TaxRate2" xml:space="preserve">
+    <value>Tax Rate 2</value>
+  </data>
+  <data name="TaxRate3" xml:space="preserve">
+    <value>Tax Rate 3</value>
+  </data>
+  <data name="TaxRate4" xml:space="preserve">
+    <value>Tax Rate 4</value>
+  </data>
+  <data name="TaxRate5" xml:space="preserve">
+    <value>Tax Rate 5</value>
+  </data>
+  <data name="TaxReportingAmount1" xml:space="preserve">
+    <value>Tax Reporting Amount 1</value>
+  </data>
+  <data name="TaxReportingAmount2" xml:space="preserve">
+    <value>Tax Reporting Amount 2</value>
+  </data>
+  <data name="TaxReportingAmount3" xml:space="preserve">
+    <value>Tax Reporting Amount 3</value>
+  </data>
+  <data name="TaxReportingAmount4" xml:space="preserve">
+    <value>Tax Reporting Amount 4</value>
+  </data>
+  <data name="TaxReportingAmount5" xml:space="preserve">
+    <value>Tax Reporting Amount 5</value>
+  </data>
+  <data name="TaxReportingRateDate" xml:space="preserve">
+    <value>Tax Reporting Rate Date</value>
+  </data>
+  <data name="TaxReportingRateOperator" xml:space="preserve">
+    <value>Tax Reporting Rate Operator</value>
+  </data>
+  <data name="TaxReportingRateOverride" xml:space="preserve">
+    <value>Tax Reporting Rate Override</value>
+  </data>
+  <data name="TaxReportingRateType" xml:space="preserve">
+    <value>Tax Reporting Rate Type</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time</value>
+    <comment>Credit - Group Field</comment>
+  </data>
+  <data name="TotalAdvanceCreditClaim" xml:space="preserve">
+    <value>Total Advance Credit Claim</value>
+  </data>
+  <data name="TotalCustAmountApplied" xml:space="preserve">
+    <value>Total Customer Amount Applied</value>
+  </data>
+  <data name="TotalCustCreditAmount" xml:space="preserve">
+    <value>Total Customer Credit Amount</value>
+  </data>
+  <data name="TotalCustDebitAmount" xml:space="preserve">
+    <value>Total Customer Debit Amount</value>
+  </data>
+  <data name="TotalCustDiscountAmount" xml:space="preserve">
+    <value>Total Customer Discount Amount</value>
+  </data>
+  <data name="TotalFuncCreditAmount" xml:space="preserve">
+    <value>Total Functional Credit Amount</value>
+  </data>
+  <data name="TotalFuncDebitAmount" xml:space="preserve">
+    <value>Total Functional Debit Amount</value>
+  </data>
+  <data name="TotalFuncDiscountAmount" xml:space="preserve">
+    <value>Total Functional Discount Amount</value>
+  </data>
+  <data name="TransactionDetails" xml:space="preserve">
+    <value>Transaction Details</value>
+    <comment>Credit - Group</comment>
+  </data>
+  <data name="TransactionInfo" xml:space="preserve">
+    <value>Apply-To Details</value>
+    <comment>Group - Previously "Transaction Information"</comment>
+  </data>
+  <data name="TransactionStatus" xml:space="preserve">
+    <value>Transaction Status</value>
+    <comment>Credit - Group Field</comment>
+  </data>
+  <data name="TransactionTypeID" xml:space="preserve">
+    <value>Transaction Type ID</value>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Typed Value Field Index</value>
+  </data>
+  <data name="UnappliedJobDiscountAmount" xml:space="preserve">
+    <value>Unapplied Discount Amount</value>
+  </data>
+  <data name="UnappliedJobPaymentAmount" xml:space="preserve">
+    <value>Unapplied Amount</value>
+  </data>
+  <data name="UnitofMeasure" xml:space="preserve">
+    <value>Unit of Measure</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueDesc" xml:space="preserve">
+    <value>Value Description</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Value Set</value>
+    <comment>Options - Table Column</comment>
+  </data>
+  <data name="VendorTaxClass" xml:space="preserve">
+    <value>Vendor Tax Class</value>
+    <comment>DocumentTax - Column</comment>
+  </data>
+  <data name="VendorTaxClassDesc" xml:space="preserve">
+    <value>Vendor Tax Class Description</value>
+    <comment>DocumentTax - Column</comment>
+  </data>
+  <data name="ReceiptAdjustmentDate" xml:space="preserve">
+    <value>Receipt Date/Adjustment Date</value>
+    <comment>Used in finder</comment>
+  </data>
+  <data name="CustReceiptAmount" xml:space="preserve">
+    <value>Customer Receipt Amount</value>
+  </data>
+  <data name="EntryReference" xml:space="preserve">
+    <value>Entry Reference</value>
+  </data>
+  <data name="BankCurrencyCode" xml:space="preserve">
+    <value>Bank Currency Code</value>
+  </data>
+  <data name="BankUnappliedAmount" xml:space="preserve">
+    <value>Bank Unapplied Amount</value>
+  </data>
+  <data name="CustAdjustmentAmount" xml:space="preserve">
+    <value>Customer Adjustment Amount</value>
+  </data>
+  <data name="CustomerCurrencyCode" xml:space="preserve">
+    <value>Customer Currency Code</value>
+  </data>
+  <data name="CustRateDate" xml:space="preserve">
+    <value>Customer Rate Date</value>
+  </data>
+  <data name="CustRateType" xml:space="preserve">
+    <value>Customer Rate Type</value>
+  </data>
+  <data name="CustUnappliedAmount" xml:space="preserve">
+    <value>Customer Unapplied Amount</value>
+  </data>
+  <data name="LastLineNumber" xml:space="preserve">
+    <value>Last Line Number</value>
+  </data>
+  <data name="NumberofAdvanceCreditClaims" xml:space="preserve">
+    <value>Number of Advance Credit Claims</value>
+  </data>
+  <data name="ReceiptTransType" xml:space="preserve">
+    <value>Receipt Transaction Type</value>
+  </data>
+  <data name="TaxReportingCurrencyCode" xml:space="preserve">
+    <value>Tax Reporting Currency Code</value>
+  </data>
+  <data name="TaxStateVersion" xml:space="preserve">
+    <value>Tax State Version</value>
+  </data>
+  <data name="TaxTotal" xml:space="preserve">
+    <value>Tax Total</value>
+  </data>
+  <data name="DiscountExceedMsg" xml:space="preserve">
+    <value>The discount taken exceeds the discount remaining for this invoice.</value>
+  </data>
+  <data name="AllowEditAfterDepositSlipPrinted" xml:space="preserve">
+    <value>Allow Edit After Deposit Slip Printed</value>
+  </data>
+  <data name="AllowEditAfterReceiptPrinted" xml:space="preserve">
+    <value>Allow Edit After Receipt Printed</value>
+  </data>
+  <data name="DepositSlip" xml:space="preserve">
+    <value>Deposit Slip</value>
+  </data>
+  <data name="DistributedAmountNotEqualMessage" xml:space="preserve">
+    <value>The distributed amount does not equal the document total amount.</value>
+  </data>
+  <data name="StartingCustNo" xml:space="preserve">
+    <value>Starting Customer Number</value>
+  </data>
+  <data name="CustomerCurrencyInvoiceAmount" xml:space="preserve">
+    <value>Customer Currency Invoice Amount</value>
+  </data>
+  <data name="CustomerCurrencyOrigRtngAmt" xml:space="preserve">
+    <value>Customer Currency Original Retainage Amount</value>
+  </data>
+  <data name="CustomerCurrencyRetainageAmount" xml:space="preserve">
+    <value>Customer Currency Retainage Amount</value>
+  </data>
+  <data name="CustomerRetainageTaxAmount1" xml:space="preserve">
+    <value>Customer Retainage Tax Amount 1</value>
+  </data>
+  <data name="CustomerRetainageTaxAmount2" xml:space="preserve">
+    <value>Customer Retainage Tax Amount 2</value>
+  </data>
+  <data name="CustomerRetainageTaxAmount3" xml:space="preserve">
+    <value>Customer Retainage Tax Amount 3</value>
+  </data>
+  <data name="CustomerRetainageTaxAmount4" xml:space="preserve">
+    <value>Customer Retainage Tax Amount 4</value>
+  </data>
+  <data name="CustomerRetainageTaxAmount5" xml:space="preserve">
+    <value>Customer Retainage Tax Amount 5</value>
+  </data>
+  <data name="CustomerRetainageTaxBase1" xml:space="preserve">
+    <value>Customer Retainage Tax Base 1</value>
+  </data>
+  <data name="CustomerRetainageTaxBase2" xml:space="preserve">
+    <value>Customer Retainage Tax Base 2</value>
+  </data>
+  <data name="CustomerRetainageTaxBase3" xml:space="preserve">
+    <value>Customer Retainage Tax Base 3</value>
+  </data>
+  <data name="CustomerRetainageTaxBase4" xml:space="preserve">
+    <value>Customer Retainage Tax Base 4</value>
+  </data>
+  <data name="CustomerRetainageTaxBase5" xml:space="preserve">
+    <value>Customer Retainage Tax Base 5</value>
+  </data>
+  <data name="DateRetainageDue" xml:space="preserve">
+    <value>Date Retainage Due</value>
+  </data>
+  <data name="FunctionalCurrencyAmountDue" xml:space="preserve">
+    <value>Functional Currency Amount Due</value>
+  </data>
+  <data name="FunctionalCurrencyInvoiceAmount" xml:space="preserve">
+    <value>Functional Currency Invoice Amount</value>
+  </data>
+  <data name="FunctionalCurrencyOrigRtngAmt" xml:space="preserve">
+    <value>Functional Currency Original Retainage Amount</value>
+  </data>
+  <data name="FunctionalCurrencyRetainageAmount" xml:space="preserve">
+    <value>Functional Currency Retainage Amount</value>
+  </data>
+  <data name="FunctionalRetainageTaxAmount1" xml:space="preserve">
+    <value>Functional Retainage Tax Amount 1 </value>
+  </data>
+  <data name="FunctionalRetainageTaxAmount2" xml:space="preserve">
+    <value>Functional Retainage Tax Amount 2</value>
+  </data>
+  <data name="FunctionalRetainageTaxAmount3" xml:space="preserve">
+    <value>Functional Retainage Tax Amount 3</value>
+  </data>
+  <data name="FunctionalRetainageTaxAmount4" xml:space="preserve">
+    <value>Functional Retainage Tax Amount 4</value>
+  </data>
+  <data name="FunctionalRetainageTaxAmount5" xml:space="preserve">
+    <value>Functional Retainage Tax Amount 5</value>
+  </data>
+  <data name="LastAppliedPaymentSeqNo" xml:space="preserve">
+    <value>Last Applied Payment Sequence Number</value>
+  </data>
+  <data name="ProjectOrCategoryResource" xml:space="preserve">
+    <value>Project or Category Resource</value>
+  </data>
+  <data name="RetainageAlternateBaseAmount" xml:space="preserve">
+    <value>Retainage Alternate Base Amount</value>
+  </data>
+  <data name="RetainageCOGSAmount" xml:space="preserve">
+    <value>Retainage COGS Amount</value>
+  </data>
+  <data name="RetainageDistributionAmount" xml:space="preserve">
+    <value>Retainage Distribution Amount</value>
+  </data>
+  <data name="AdvanceCreditZeroNegative" xml:space="preserve">
+    <value>Advance credit claim amount cannot be zero or negative</value>
+  </data>
+  <data name="DeriveTaxReportingExchangeRate" xml:space="preserve">
+    <value>Derive Tax Reporting Exchange Rate</value>
+  </data>
+  <data name="InsertOptionalFields" xml:space="preserve">
+    <value>Insert Optional Fields</value>
+  </data>
+  <data name="RateDescription" xml:space="preserve">
+    <value>Rate Description</value>
+  </data>
+  <data name="DetailAccountTax" xml:space="preserve">
+    <value>Detail Account/Taxes</value>
+  </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>Credit Card</value>
+  </data>
+  <data name="InvalidXmlResponse" xml:space="preserve">
+    <value>Sage Payment Solutions returned an invalid XML response. Contact Sage Payment Solutions for assistance.</value>
+  </data>
+  <data name="PreviousTransactionError" xml:space="preserve">
+    <value>Cannot Locate Previous Transaction</value>
+  </data>
+  <data name="SPSUnknownIndicator" xml:space="preserve">
+    <value>Sage Payment Solutions returned an unknown response indicator. Contact Sage Payment Solutions for assistance. Error: {0}</value>
+  </data>
+  <data name="AR0042" xml:space="preserve">
+    <value>Receipts Adjustments</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="AR0043" xml:space="preserve">
+    <value>Miscellaneous Receipts</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="AR0044" xml:space="preserve">
+    <value>Applied Receipts Adjustments</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="AR0045" xml:space="preserve">
+    <value>Adjustment GL Distributions</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="AR0170" xml:space="preserve">
+    <value>Advance Credits</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="AR0406" xml:space="preserve">
+    <value>Receipt Adj. Optional Fields</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="BatchFiscalYearLocked" xml:space="preserve">
+    <value>Batch Date {0} corresponds to period {1} in fiscal year {2}, which is locked for Accounts Receivable in Common Services’ Fiscal Calendar. You cannot make changes to the entries until you change the batch date or the Company Profile settings.</value>
+  </data>
+  <data name="RecEnCannotModifyMessage4" xml:space="preserve">
+    <value>Batch {0} is currently locked by another user. You may view its contents but you will not be able to modify it.</value>
+  </data>
+  <data name="RecEnCannotModifyMessage3" xml:space="preserve">
+    <value>Batch {0} is an external batch and the option to {1} is not selected in A/R Options. You may view but cannot modify its contents.</value>
+  </data>
+  <data name="RecEnCannotModifyMessage2" xml:space="preserve">
+    <value>Batch {0} is an imported batch and the option to {1} is not selected in A/R Options. You may view but cannot modify its contents.</value>
+  </data>
+  <data name="RecEnCannotModifyMessage1" xml:space="preserve">
+    <value>Batch {0} is set to Ready To Post. You may view but cannot modify its contents.</value>
+  </data>
+  <data name="RecEnVerifyTaxMessage" xml:space="preserve">
+    <value>You have changed the tax group for this document. Please verify the tax information.</value>
+  </data>
+  <data name="AllowEditOfExternalBatchesMessage" xml:space="preserve">
+    <value>Allow Edit of External Batches</value>
+  </data>
+  <data name="AlowEditOfImportedBatchesMessage" xml:space="preserve">
+    <value>Allow Edit of Imported Batches</value>
+  </data>
+  <data name="AdjustLineNumber" xml:space="preserve">
+    <value>Adjust Line Number</value>
+  </data>
+  <data name="CurrencyRate" xml:space="preserve">
+    <value>Curreny Rate</value>
+  </data>
+  <data name="MiscellaneousAdjustmentEntry" xml:space="preserve">
+    <value>Miscellaneous Adjustment Entry</value>
+  </data>
+  <data name="OpenDocumentDetail" xml:space="preserve">
+    <value>Open Document Detail</value>
+  </data>
+  <data name="TransactionInformation" xml:space="preserve">
+    <value>Transaction Information</value>
+  </data>
+  <data name="ProcessPayment" xml:space="preserve">
+    <value>Process Payment</value>
+  </data>
+  <data name="SPSErrorCode_0" xml:space="preserve">
+    <value>A server error occurred while connecting to Sage Payment Solutions. Contact Sage Payment Solutions for assistance.</value>
+  </data>
+  <data name="SPSErrorCode_900000" xml:space="preserve">
+    <value>Order Number is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900001" xml:space="preserve">
+    <value>Name is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900002" xml:space="preserve">
+    <value>Address is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900003" xml:space="preserve">
+    <value>City is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900004" xml:space="preserve">
+    <value>State/Province is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900005" xml:space="preserve">
+    <value>ZIP/Postal Code is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900006" xml:space="preserve">
+    <value>Country is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900007" xml:space="preserve">
+    <value>Telephone Number is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900008" xml:space="preserve">
+    <value>Fax Number is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900009" xml:space="preserve">
+    <value>Email Address is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900010" xml:space="preserve">
+    <value>Shipping Address Name value is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900011" xml:space="preserve">
+    <value>Shipping Address is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900012" xml:space="preserve">
+    <value>Shipping City is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900013" xml:space="preserve">
+    <value>Shipping State/Province is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900014" xml:space="preserve">
+    <value>Shipping ZIP/Postal Code is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900015" xml:space="preserve">
+    <value>Shipping Country is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900016" xml:space="preserve">
+    <value>Credit Card Number is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900017" xml:space="preserve">
+    <value>Expiration Date is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900018" xml:space="preserve">
+    <value>CVV (Card Verification Value) is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900019" xml:space="preserve">
+    <value>Grand Total cannot be zero. Please check amounts for subtotal, shipping, and tax.</value>
+  </data>
+  <data name="SPSErrorCode_900020" xml:space="preserve">
+    <value>Transaction Code is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900021" xml:space="preserve">
+    <value>Authorization Code is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900022" xml:space="preserve">
+    <value>Reference is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900023" xml:space="preserve">
+    <value>Track Data is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900024" xml:space="preserve">
+    <value>Tracking Number is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900025" xml:space="preserve">
+    <value>Customer Number is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900026" xml:space="preserve">
+    <value>Shipping Company is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900027" xml:space="preserve">
+    <value>Recurring value must be 0 or 1.</value>
+  </data>
+  <data name="SPSErrorCode_900028" xml:space="preserve">
+    <value>Recurring value is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900029" xml:space="preserve">
+    <value>Recurring Interval value must be numeric.</value>
+  </data>
+  <data name="SPSErrorCode_900030" xml:space="preserve">
+    <value>Recurring Indefinite value is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900031" xml:space="preserve">
+    <value>Recurring Times to Process value must be numeric.</value>
+  </data>
+  <data name="SPSErrorCode_900032" xml:space="preserve">
+    <value>Recurring Non-business Days value is in an invalid format.</value>
+  </data>
+  <data name="SPSErrorCode_900033" xml:space="preserve">
+    <value>Recurring Group was left blank or the group not found.</value>
+  </data>
+  <data name="SPSErrorCode_900034" xml:space="preserve">
+    <value>Recurring Start Date value is in an invalid format or was left blank.</value>
+  </data>
+  <data name="SPSErrorCode_900035" xml:space="preserve">
+    <value>The PIN you entered is incorrect.</value>
+  </data>
+  <data name="SPSErrorCode_900100" xml:space="preserve">
+    <value>Unknown data validation error. Contact Sage Payment Solutions for assistance.</value>
+  </data>
+  <data name="SPSErrorCode_910000" xml:space="preserve">
+    <value>The transaction you are trying to submit is not allowed.</value>
+  </data>
+  <data name="SPSErrorCode_910001" xml:space="preserve">
+    <value>Visa card type transactions are not allowed.</value>
+  </data>
+  <data name="SPSErrorCode_910002" xml:space="preserve">
+    <value>MasterCard card type transactions are not allowed.</value>
+  </data>
+  <data name="SPSErrorCode_910003" xml:space="preserve">
+    <value>American Express card type transactions are not allowed.</value>
+  </data>
+  <data name="SPSErrorCode_910004" xml:space="preserve">
+    <value>Discover card type transactions are not allowed.</value>
+  </data>
+  <data name="SPSErrorCode_910005" xml:space="preserve">
+    <value>Card type transactions are not allowed.</value>
+  </data>
+  <data name="SPSErrorCode_911911" xml:space="preserve">
+    <value>Incorrect Merchant ID or Merchant Key.</value>
+  </data>
+  <data name="SPSErrorCode_920000" xml:space="preserve">
+    <value>Cannot find the requested record. Contact Sage Payment Solutions for assistance.</value>
+  </data>
+  <data name="SPSErrorCode_920001" xml:space="preserve">
+    <value>Credit could not be issued because Sage Payment Solutions could not find a corresponding sale within the past 6 months. Contact Sage Payment Solutions for assistance.</value>
+  </data>
+  <data name="SPSErrorCode_920002" xml:space="preserve">
+    <value>Address Verification Service failed to verify the address.</value>
+  </data>
+  <data name="SPSErrorCode_920050" xml:space="preserve">
+    <value>You cannot void a debit transaction.</value>
+  </data>
+  <data name="SPSErrorCode_Default" xml:space="preserve">
+    <value>A Visanet error occurred.</value>
+  </data>
+  <data name="BillingDate" xml:space="preserve">
+    <value>Billing Date</value>
+  </data>
+  <data name="InvalidCreditCardStatus" xml:space="preserve">
+    <value>Credit card status is invalid.</value>
+  </data>
+  <data name="SageExchangeSale" xml:space="preserve">
+    <value>Sage Exchange - Sale</value>
+  </data>
+  <data name="CardBlankMessage" xml:space="preserve">
+    <value>Card ID cannot be blank.</value>
+  </data>
+  <data name="CardDiffProcessingCodeError" xml:space="preserve">
+    <value>Card ID {0} uses a different processing code. If you want to use this card, you must update its processing code.</value>
+  </data>
+  <data name="RecEnTaxClassChange" xml:space="preserve">
+    <value>You have changed a tax class for this document. Please verify the tax classes on each detail line and make any necessary changes.</value>
+  </data>
+  <data name="CreditCardCharged" xml:space="preserve">
+    <value>Credit Card Charged</value>
+  </data>
+  <data name="SaleVoided" xml:space="preserve">
+    <value>Sale Voided</value>
+  </data>
+  <data name="TaxExceedMessage" xml:space="preserve">
+    <value>Taxes amount cannot be greater than the total amount</value>
+  </data>
+  <data name="PostReceiptEntry" xml:space="preserve">
+    <value>A/R Post Receipt Entry</value>
+  </data>
+  <data name="btnQuickCharge" xml:space="preserve">
+    <value>Quick Charge</value>
+    <comment>Quick Charge Button in AR-ReceiptEntry</comment>
+  </data>
+  <data name="QuickChargeSuccessMessage" xml:space="preserve">
+    <value>Successfull transaction!</value>
+    <comment>QuickChargeSuccessMessage</comment>
+  </data>
+  <data name="QuickCharge" xml:space="preserve">
+    <value>QuickCharge</value>
+  </data>
+  <data name="QuickChargePart2" xml:space="preserve">
+    <value>QuickChargePart2</value>
+  </data>
+  <data name="QuickhCargePart1" xml:space="preserve">
+    <value>QuickhCargePart1</value>
+  </data>
+  <data name="chargePending" xml:space="preserve">
+    <value>Charge Pending</value>
+  </data>
+  <data name="notStarted" xml:space="preserve">
+    <value>Not Charged</value>
+  </data>
+  <data name="voidComplete" xml:space="preserve">
+    <value>Voided</value>
+  </data>
+  <data name="voidPending" xml:space="preserve">
+    <value>Void Pending</value>
+  </data>
+  <data name="SPSCardWasCharged" xml:space="preserve">
+    <value>Credit card charged</value>
+  </data>
+  <data name="creaditCardCharged" xml:space="preserve">
+    <value>Credit card charged</value>
+  </data>
+  <data name="PJCApplyDetailsTitle" xml:space="preserve">
+    <value>Project and Job Costing Apply Details</value>
+  </data>
+</root>

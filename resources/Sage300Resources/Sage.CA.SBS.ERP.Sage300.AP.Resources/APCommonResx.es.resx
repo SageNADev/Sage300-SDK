@@ -1,0 +1,2831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_1" xml:space="preserve">
+    <value>1</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="_1099" xml:space="preserve">
+    <value>1099</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="_10991" xml:space="preserve">
+    <value>La opción para usar reporte 1099/CPRS debe ser seleccionada en C/P - Opciones para usar esta función.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="_1099Amount" xml:space="preserve">
+    <value>Monto 1099</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="_1099Code" xml:space="preserve">
+    <value>Código 1099</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="_1099CPRSAmount" xml:space="preserve">
+    <value>Monto 1099/CPRS</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="_1099CPRSCode" xml:space="preserve">
+    <value>Código 1099/CPRS</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="_1st" xml:space="preserve">
+    <value>1er</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="_2nd" xml:space="preserve">
+    <value>2°</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="_3rd" xml:space="preserve">
+    <value>3er</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AccountDescription" xml:space="preserve">
+    <value>Descripción Cuenta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AccountSet" xml:space="preserve">
+    <value>Grupo de Cuentas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AccountTax" xml:space="preserve">
+    <value>Impuesto Detalle</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ActivationDate" xml:space="preserve">
+    <value>Fecha de Activación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Activity" xml:space="preserve">
+    <value>Actividad</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AddDetail" xml:space="preserve">
+    <value>¿Desea agregar este detalle?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AddEntry" xml:space="preserve">
+    <value>¿Desea agregar este asiento?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Dirección</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Ajuste</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdjustmentBatches" xml:space="preserve">
+    <value>Lotes de Ajustes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdjustmentDate" xml:space="preserve">
+    <value>Fecha de Ajuste</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdjustmentNo" xml:space="preserve">
+    <value>Número de Ajuste</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdjustmentNumber" xml:space="preserve">
+    <value>Número de Ajuste</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdjustmentPostingSequence" xml:space="preserve">
+    <value>Secuencia de Asentamiento de Ajustes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Adjustments" xml:space="preserve">
+    <value>Ajustes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdvanceCredit" xml:space="preserve">
+    <value>Crédito Anticipado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AgeAsOf" xml:space="preserve">
+    <value>Antigüedad al</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AgeBy" xml:space="preserve">
+    <value>Antigüedad por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AgedRetainage" xml:space="preserve">
+    <value>Antigüedad de Retenciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AgingPeriods" xml:space="preserve">
+    <value>Los períodos de vencimiento desde el período actual deben ubicarse en orden ascendente.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>Vista Previa</value>
+    <comment>Label changed from previous "Align"</comment>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Todos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllBatches" xml:space="preserve">
+    <value>Todos los Lotes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllSelectedDocuments" xml:space="preserve">
+    <value>Todos los Documentos Seleccionados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Monto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AmountDue" xml:space="preserve">
+    <value>Monto a Pagar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AppliedAmount" xml:space="preserve">
+    <value>Monto Aplicado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AppliedDetails" xml:space="preserve">
+    <value>Detalles Aplicados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ApplyBy" xml:space="preserve">
+    <value>Aplicar Por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ApplyMethod" xml:space="preserve">
+    <value>Método a Aplicar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ApplyTo" xml:space="preserve">
+    <value>Aplicar a</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ApplyToDocument" xml:space="preserve">
+    <value>Documento a Aplicar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ARItemNumber" xml:space="preserve">
+    <value>Número de Artículo de C/C</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AsOfDate" xml:space="preserve">
+    <value>A la Fecha</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AutoClear" xml:space="preserve">
+    <value>Borrar Automáticamente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AverageDaystoPay" xml:space="preserve">
+    <value>Promedio de Días para Pagar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>Saldo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Banco</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>Código de Banco</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BankCurrency" xml:space="preserve">
+    <value>Moneda de Banco</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BankRate" xml:space="preserve">
+    <value>Tasa Bancaria</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BatchDate" xml:space="preserve">
+    <value>Fecha de Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BatchDescription" xml:space="preserve">
+    <value>Descripción de Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BatchHasBeenCleared" xml:space="preserve">
+    <value>Se borró el lote que contiene este documento.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BatchInformation" xml:space="preserve">
+    <value>Información de Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BatchLTone" xml:space="preserve">
+    <value>El número de lote no puede ser cero ni negativo.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BatchPrinted" xml:space="preserve">
+    <value>Lote Impreso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BatchStatus" xml:space="preserve">
+    <value>Estado de Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BatchType" xml:space="preserve">
+    <value>Tipo de Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BillingCurrency" xml:space="preserve">
+    <value>Moneda de Facturación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BillingDate" xml:space="preserve">
+    <value>Fecha</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BillingRate" xml:space="preserve">
+    <value>Tasa de Facturación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BillingType" xml:space="preserve">
+    <value>Tipo de Facturación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BrktNoneBrkt" xml:space="preserve">
+    <value>(Ninguno)</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Explorar...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CalculateTaxes" xml:space="preserve">
+    <value>Calcular Impuestos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CannotLockBatchDelete" xml:space="preserve">
+    <value>No se puede borrar lote {0} porque otro usuario lo está bloqueando.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CannotLockBatchEdit" xml:space="preserve">
+    <value>No se puede editar lote {0} porque otro usuario lo está bloqueando.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CannotLockBatchImport" xml:space="preserve">
+    <value>No puede importar en lote {0} porque otro usuario lo está bloqueando.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CannotLockBatchPrintCheck" xml:space="preserve">
+    <value>No puede imprimir todos los cheques para lote {0} porque otro usuario lo está bloqueando.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CannotLockBatchReadyToPost" xml:space="preserve">
+    <value>No se puede fijar lote {0} en Listo para Asentar porque otro usuario lo está bloqueando.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CashAccount" xml:space="preserve">
+    <value>Cuenta de Caja</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckAmount" xml:space="preserve">
+    <value>Monto de Cheque</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckCreationInProgress" xml:space="preserve">
+    <value>Creación de Cheque en Progreso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckCurrency" xml:space="preserve">
+    <value>El pago al proveedor {0} se hará en moneda {1} la cual es diferente de la moneda del proveedor {2}. ¿Desea continuar?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckDate" xml:space="preserve">
+    <value>Fecha de Cheque</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckForDuplicateChecks" xml:space="preserve">
+    <value>Buscar Cheques Duplicados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckLanguage" xml:space="preserve">
+    <value>Idioma del Cheque</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckNumber" xml:space="preserve">
+    <value>Número de Cheque</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckStatus" xml:space="preserve">
+    <value>Estado de Cheque</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Ciudad</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ClaimAmount" xml:space="preserve">
+    <value>Monto de Petición</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ClearSettings" xml:space="preserve">
+    <value>Borrar las Especificaciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Código</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comentario</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentarios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ConcurrentEntry" xml:space="preserve">
+    <value>Otro usuario agregó número de asiento {0}. Se le asignó {2} a este número de asiento.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ConsolidateGLBatches" xml:space="preserve">
+    <value>Consolidado para LM</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contacto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContactPhoneCredit" xml:space="preserve">
+    <value>Contacto/Teléfono/Límite de Crédito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContactsEmail" xml:space="preserve">
+    <value>Correo-E de Contacto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CostClass" xml:space="preserve">
+    <value>Clase de Costo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Conteo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CPRS" xml:space="preserve">
+    <value>CPRS</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CPRSAmount" xml:space="preserve">
+    <value>Monto CPRS</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CPRSCode" xml:space="preserve">
+    <value>Código CPRS</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CR" xml:space="preserve">
+    <value>CR</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreateGLTransactions" xml:space="preserve">
+    <value>Crear Transacciones del LM</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreateGLTransactionsBy" xml:space="preserve">
+    <value>Crear Transacciones del LM</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Crédito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>Tarjeta de Crédito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreditCardType" xml:space="preserve">
+    <value>Tipo de Tarjeta de Crédito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreditLimit" xml:space="preserve">
+    <value>Límite de Crédito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>Nota de Crédito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreditNotes" xml:space="preserve">
+    <value>Notas de Crédito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Credits" xml:space="preserve">
+    <value>Créditos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Criteria" xml:space="preserve">
+    <value>Criterios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Moneda</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Código de Moneda</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CurrencyInformation" xml:space="preserve">
+    <value>Información de Moneda</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Actual</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CurrentBalance" xml:space="preserve">
+    <value>Saldo Actual</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CurrentRetainageAmount" xml:space="preserve">
+    <value>Monto de Retención Actual</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CurrentVendorBalance" xml:space="preserve">
+    <value>Saldo del Proveedor Actual</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CurrentVendorEquivBal" xml:space="preserve">
+    <value>Saldo Equivalente del Proveedor Actual</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CutoffBy" xml:space="preserve">
+    <value>Cortar Por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CutoffDate" xml:space="preserve">
+    <value>Fecha de Corte</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Días</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DaysInAdvance" xml:space="preserve">
+    <value>Número de Días Antes para Crear Documentos de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DB" xml:space="preserve">
+    <value>DB</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>Débito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>Nota de Débito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DebitNotes" xml:space="preserve">
+    <value>Notas de Débito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Debits" xml:space="preserve">
+    <value>Débitos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeleteBatchVoids" xml:space="preserve">
+    <value>El lote {0} tiene uno o más cheques impresos. Todos los cheques impresos se marcarán como nulos en Servicios Bancarios.  ¿Seguro que quiere eliminar este lote?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Eliminado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeleteEntryVoids" xml:space="preserve">
+    <value>El asiento {0} tiene uno o más cheques impresos. Todos los cheques impresos se marcarán como nulos en Servicios Bancarios.  ¿Seguro que quiere eliminar este asiento?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeliveryMethod" xml:space="preserve">
+    <value>Método de Entrega</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeliveryMethod_ContactsEmail" xml:space="preserve">
+    <value>Correo-E (contacto)</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeliveryMethod_ContactList" xml:space="preserve">
+    <value>Correo-E (múltiples contactos)</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeliveryMethod_Email" xml:space="preserve">
+    <value>Correo-E (proveedor)</value>
+    <comment>Auto-Generated</comment>
+   </data>
+   <data name="DeriveRate" xml:space="preserve">
+    <value>Derivar Tasa</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DesComp" xml:space="preserve">
+    <value>Destino</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DestinationAndRoute" xml:space="preserve">
+    <value>Destino y Ruta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detalle</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DetailAccountsTaxes" xml:space="preserve">
+    <value>Impuestos Detalle</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DetailByDocumentDate" xml:space="preserve">
+    <value>Detalle por Fecha de Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DetailByDocumentNumber" xml:space="preserve">
+    <value>Detalle por N° de Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Details1" xml:space="preserve">
+    <value>Detalles</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DetailTaxClass" xml:space="preserve">
+    <value>Clase Fiscal de Detalle</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DiscAmount" xml:space="preserve">
+    <value>Monto de Descuento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DiscBase" xml:space="preserve">
+    <value>Base de Descuento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Discountable" xml:space="preserve">
+    <value>Descontable</value>
+  </data>
+  <data name="DiscountAvailable" xml:space="preserve">
+    <value>Descuento Disponible</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DiscountDate" xml:space="preserve">
+    <value>Fecha de Descuento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DiscountsLost" xml:space="preserve">
+    <value>Descuentos Perdidos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DiscountsTaken" xml:space="preserve">
+    <value>Descuentos Aceptados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DiscPercent" xml:space="preserve">
+    <value>% Descuento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DistAmount" xml:space="preserve">
+    <value>Monto Distribuido</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DistCode" xml:space="preserve">
+    <value>Código de Distribución</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DistributeBy" xml:space="preserve">
+    <value>Distribuir por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DistributeTaxes" xml:space="preserve">
+    <value>Distribuir Impuestos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DistributionAmount" xml:space="preserve">
+    <value>Monto de Distribución</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>Código de Distribución</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DistributionSet" xml:space="preserve">
+    <value>Grupo de Distribución</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Documentos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Document1" xml:space="preserve">
+    <value>Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocumentCleared" xml:space="preserve">
+    <value>Se borró este documento.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Fecha del Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocumentDetails" xml:space="preserve">
+    <value>Detalles a Aplicar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Número de Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocumentsTotal" xml:space="preserve">
+    <value>Total de los Documentos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocumentTotal" xml:space="preserve">
+    <value>Total del Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Tipo de Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DrillDownNotAvail" xml:space="preserve">
+    <value>La información no está disponible para el registro que seleccionó.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>Plazo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DueDateActivationDate" xml:space="preserve">
+    <value>Plazo/Fecha de Activación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DuplicateInvoiceChecking" xml:space="preserve">
+    <value>Verificación de Factura Duplicada</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>Ingresado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>Ingresado por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Cuentas por Pagar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntriesC" xml:space="preserve">
+    <value>Asientos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntryDescription" xml:space="preserve">
+    <value>Descripción Asiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntryFields" xml:space="preserve">
+    <value>Campos de Asiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntryLTone" xml:space="preserve">
+    <value>El número de asiento no puede ser cero ni negativo.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntryNumber" xml:space="preserve">
+    <value>Número de Asiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrNoTransTypeSelected" xml:space="preserve">
+    <value>Debe seleccionar al menos un tipo de transacción.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrReportExt" xml:space="preserve">
+    <value>Seleccione un archivo .RPT.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrRequireBatchStatus" xml:space="preserve">
+    <value>Debe seleccionar al menos un estado de lote.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrRequireBatchType" xml:space="preserve">
+    <value>Debe seleccionar al menos un tipo de lote.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExchangeGain" xml:space="preserve">
+    <value>Ganancia Cambiaria</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExchangeLoss" xml:space="preserve">
+    <value>Pérdida Cambiaria</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExchangeRateFields" xml:space="preserve">
+    <value>Campos Tipo de Cambio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExcludedTaxes" xml:space="preserve">
+    <value>Impuestos Excluidos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Exclusion" xml:space="preserve">
+    <value>Exclusión</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="External" xml:space="preserve">
+    <value>Externo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExternalBatch" xml:space="preserve">
+    <value>El lote {0} es un lote externo y la opción de Admitir Edición de Lotes Externos no está seleccionada en C/P – Opciones. Podría ver su contenido pero no modificarlo.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FASAllocateAssetTo" xml:space="preserve">
+    <value>Asignar Activo a</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FASCompanyOrg" xml:space="preserve">
+    <value>Empresa/Organización</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FASDatabase" xml:space="preserve">
+    <value>Base de Datos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FASFixedAssets" xml:space="preserve">
+    <value>Activos Fijos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FASQuantity" xml:space="preserve">
+    <value>Cantidad de Activos Fijos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FASSeparateAssets" xml:space="preserve">
+    <value>Activos Separados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FASTemplate" xml:space="preserve">
+    <value>Plantilla</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FASUOM" xml:space="preserve">
+    <value>UM de Activos Fijos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FASValue" xml:space="preserve">
+    <value>Valor de Activos Fijos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FileImportExportSelection" xml:space="preserve">
+    <value>Selección de Importación/Exportación de Archivos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FiscalYearAndPeriod" xml:space="preserve">
+    <value>Año y Período Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FollowUpDate" xml:space="preserve">
+    <value>Fecha de Seguimiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Form" xml:space="preserve">
+    <value>Formulario</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromAccountSet" xml:space="preserve">
+    <value>Desde Grupo de Cuentas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>Desde Fecha</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromDocumentDate" xml:space="preserve">
+    <value>Desde Fecha de Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromPaymentDate" xml:space="preserve">
+    <value>Desde Fecha de Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromPostingSequence" xml:space="preserve">
+    <value>Desde Secuencia de Asentamiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromVendor" xml:space="preserve">
+    <value>Desde Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromVendorNumber" xml:space="preserve">
+    <value>Desde N° de Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromYearPeriod" xml:space="preserve">
+    <value>Desde Año/Período</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FullyPaidTransaction" xml:space="preserve">
+    <value>Transacciones Completamente Pagadas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Functional" xml:space="preserve">
+    <value>Funcional</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FunctionalAmount" xml:space="preserve">
+    <value>Monto Funcional</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>Moneda Funcional</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Generar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>Generado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GeneratedBatch" xml:space="preserve">
+    <value>El lote {0} es un lote generado y la opción de Admitir Edición de Lotes Generados por el Sistema en C/P - Opciones. Podría ver su contenido pero no modificarlo.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GenerateSeparatePayments" xml:space="preserve">
+    <value>Generar Pagos Separados para Cada Factura</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GLAccount" xml:space="preserve">
+    <value>Cuenta del LM</value>
+  </data>
+  <data name="GLTransactionsGeneratedThrough" xml:space="preserve">
+    <value>Transacciones del LM Generadas Mediante</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GroupCode" xml:space="preserve">
+    <value>Código de Grupo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>Historial</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Imported" xml:space="preserve">
+    <value>Importado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ImportedBatch" xml:space="preserve">
+    <value>El lote {0} es un lote importado y la opción de Admitir Edición de Lotes Importados no está seleccionada en C/P – Opciones. Podría ver su contenido pero no modificarlo.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IN" xml:space="preserve">
+    <value>IN</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactivo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Incluir</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IncludeAppliedDetails" xml:space="preserve">
+    <value>Incluir Detalles Aplicados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IncludedTaxes" xml:space="preserve">
+    <value>Impuestos Incluidos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IncludeExtraInformation" xml:space="preserve">
+    <value>Incluir Mayor Información</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IncludePrepayments" xml:space="preserve">
+    <value>Incluir Anticipos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IncludeVendorTransOnHold" xml:space="preserve">
+    <value>Incluir Proveedores/Transacciones Retenidas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InsertVoidCheck" xml:space="preserve">
+    <value>No se registró un asiento para cheque {0} de banco {1} en Servicios Bancarios. ¿Desea crear un asiento para este cheque en Servicios Bancarios y marcarlo como anulado?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>Integración</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Intercompany" xml:space="preserve">
+    <value>Inter-empresa</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>Interés</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvalidReportName" xml:space="preserve">
+    <value>Ingrese el nombre de un archivo Crystal Reports válido o busque y seleccione el archivo a utilizar.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Factura...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Invoice1" xml:space="preserve">
+    <value>Factura</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoiceNumber" xml:space="preserve">
+    <value>Número de Factura</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoicePostingSequence" xml:space="preserve">
+    <value>Secuencia de Asentamiento de Facturas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Invoices" xml:space="preserve">
+    <value>Facturas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Invoicing" xml:space="preserve">
+    <value>Facturación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IT" xml:space="preserve">
+    <value>IT</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LastEdited" xml:space="preserve">
+    <value>Última Edición</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LastInvoiced" xml:space="preserve">
+    <value>Última Facturación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LastInvoicePosted" xml:space="preserve">
+    <value>Última Factura Asentada</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LastPaymentDate" xml:space="preserve">
+    <value>Fecha de Último Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Legal" xml:space="preserve">
+    <value>Oficio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LegalName" xml:space="preserve">
+    <value>Nombre Legal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Longitud</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LetterA4" xml:space="preserve">
+    <value>Carta/A4</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Line" xml:space="preserve">
+    <value>Línea</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LineFields" xml:space="preserve">
+    <value>Campos de Línea</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Número de Línea</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MessageID" xml:space="preserve">
+    <value>ID del Mensaje</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MiscPayment" xml:space="preserve">
+    <value>Pagos Varios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Mes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Months" xml:space="preserve">
+    <value>Meses</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="New1" xml:space="preserve">
+    <value>Nuevo...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoDetails" xml:space="preserve">
+    <value>La información ya no está disponible para el detalle seleccionado.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoHistory" xml:space="preserve">
+    <value>No hay datos disponibles para este lote.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoICTApp" xml:space="preserve">
+    <value>No está disponible información inter-empresa.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoPostSeqNo" xml:space="preserve">
+    <value>No puede imprimir el reporte del Libro Diario de Asentamientos para este lote porque el lote no ha sido asentado.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoPrepayExternalBatch" xml:space="preserve">
+    <value>No se puede agregar un anticipo al lote {0} porque éste es un lote externo y la opción para Admitir Edición de Lotes Externos no está seleccionada en C/P - Opciones.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoPrepayGeneratedBatch" xml:space="preserve">
+    <value>No se puede agregar un anticipo al lote {0} porque éste es un lote generado por el sistema y la opción para Admitir Edición de Lotes Generados por el Sistema no está seleccionada en C/P - Opciones.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoPrepayImportedBatch" xml:space="preserve">
+    <value>No se puede agregar un anticipo al lote {0} porque éste es un lote importado y la opción para Admitir Edición de Lotes Importados no está seleccionada en C/P - Opciones.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoPrepayLockedBatch" xml:space="preserve">
+    <value>No se puede agregar un anticipo al lote {0} porque otro usuario lo está bloqueando.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoPrepayNotOpenBatch" xml:space="preserve">
+    <value>No se puede agregar un anticipo al lote {0} porque éste no un lote abierto.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NoProcOptionsSelected" xml:space="preserve">
+    <value>No se han seleccionado opciones de procesamiento.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NumberofPayments" xml:space="preserve">
+    <value>Cantidad de Pagos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NumOfChecksPrinted" xml:space="preserve">
+    <value>Cantidad de Cheques Impresos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NumOfEntries" xml:space="preserve">
+    <value>Número de Asientos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NumOfErrors" xml:space="preserve">
+    <value>Número de Errores</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>Retenido</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OnlyForcedDocuments" xml:space="preserve">
+    <value>Sólo Documentos Forzados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Abrir...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OpenInvoiceCount" xml:space="preserve">
+    <value>Conteo Facturas Abiertas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OpenLink" xml:space="preserve">
+    <value>No puede abrir vínculo para la empresa {0}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OpenReportFile" xml:space="preserve">
+    <value>Abrir Archivo de Reporte</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OptionalFieldsFor" xml:space="preserve">
+    <value>Campos Opcionales para</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OrderBy" xml:space="preserve">
+    <value>Ordenar por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Número de la Orden</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OrigComp" xml:space="preserve">
+    <value>Originador</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OriginalAmount" xml:space="preserve">
+    <value>Monto Original</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OriginalDocument" xml:space="preserve">
+    <value>Documento Original</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OriginalExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio Original</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OriginalLineNumber" xml:space="preserve">
+    <value>N° de Línea Original</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OriginalRetainageAmount" xml:space="preserve">
+    <value>Monto de Retención Original</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OtherAccount" xml:space="preserve">
+    <value>Otra Cuenta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OutstandingBalance" xml:space="preserve">
+    <value>Saldo Vigente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OutstandingRetainage" xml:space="preserve">
+    <value>Retención Vigente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Over" xml:space="preserve">
+    <value>Más de</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaperSize" xml:space="preserve">
+    <value>Tamaño de Papel</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Pay" xml:space="preserve">
+    <value>Pagar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PayablesAdjustmentTotal" xml:space="preserve">
+    <value>Total de Ajustes de Efectos a Pagar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PayablesControl" xml:space="preserve">
+    <value>Control de Efectos a Pagar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PayerInformation" xml:space="preserve">
+    <value>Información del Pagador</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PayfromBank" xml:space="preserve">
+    <value>Pagar del Banco</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentAmount" xml:space="preserve">
+    <value>Monto de Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentBatches" xml:space="preserve">
+    <value>Lotes de Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentCode" xml:space="preserve">
+    <value>Código de Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentDate" xml:space="preserve">
+    <value>Fecha de pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentInformation" xml:space="preserve">
+    <value>Información de Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentLimit" xml:space="preserve">
+    <value>Límite de Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentNumber" xml:space="preserve">
+    <value>Número de Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentPostingSequence" xml:space="preserve">
+    <value>Secuencia de Asentamiento de Pagos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Payments" xml:space="preserve">
+    <value>Pagos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentStatus" xml:space="preserve">
+    <value>Estado de Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>Tipo de Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PendAdjTotal" xml:space="preserve">
+    <value>Total de Ajustes Pendientes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PendDiscTotal" xml:space="preserve">
+    <value>Descuento Pendiente Total</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PendingBalance" xml:space="preserve">
+    <value>Saldo Pendiente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PendPaymentTotal" xml:space="preserve">
+    <value>Pago Pendiente Total</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>Período</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PI" xml:space="preserve">
+    <value>PI</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PONumber" xml:space="preserve">
+    <value>Número de OC</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Código Postal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>Asentado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>Fecha de Asentamiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Secuencia de Asentamiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostingSequenceNo" xml:space="preserve">
+    <value>N° de Secuencia de Asentamiento</value>
+    <comment>GLIntegration - Posting Sequence Grid Column Title</comment>
+  </data>
+  <data name="PostInProgress" xml:space="preserve">
+    <value>Asentamiento en Progreso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PosttheFollowingBatches" xml:space="preserve">
+    <value>Asentar los Siguientes Lotes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>Anticipo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrepaymentAdjustmentTotal" xml:space="preserve">
+    <value>Total de Ajustes de Anticipos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrepaymentAmount" xml:space="preserve">
+    <value>Monto de Anticipo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrepaymentCount" xml:space="preserve">
+    <value>Conteo de Anticipos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrepaymentDocNo" xml:space="preserve">
+    <value>Número de Documento de Anticipo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Prepayments" xml:space="preserve">
+    <value>Anticipos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrimaryRemitTo" xml:space="preserve">
+    <value>Indicador de Dirección de Envío Principal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Imprimir...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintAmountsIn" xml:space="preserve">
+    <value>Imprimir Montos en</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintBatchListing" xml:space="preserve">
+    <value>Imprimir Reporte de Listado de Lotes...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintBatchStatus" xml:space="preserve">
+    <value>Imprimir Reporte de Estado de Lotes...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintCheck" xml:space="preserve">
+    <value>Impr. Cheque...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintCheck1" xml:space="preserve">
+    <value>Imprimir Cheque</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Printed" xml:space="preserve">
+    <value>Impreso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintPost" xml:space="preserve">
+    <value>Imprimir/Asentar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintPostingJournal" xml:space="preserve">
+    <value>Impr. LD de Asentam...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintTransactionsIn" xml:space="preserve">
+    <value>Imprimir Transacciones en</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintVendorsZeroBalance" xml:space="preserve">
+    <value>Imprimir Proveedores con Saldo Cero</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Proceed" xml:space="preserve">
+    <value>Proceder</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Perfil</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ProvisionalRevaluation" xml:space="preserve">
+    <value>Revaluación Provisional</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PurchaseDiscounts" xml:space="preserve">
+    <value>Descuentos de Compras</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Cantidad</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuickMode" xml:space="preserve">
+    <value>Modo Rápido...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuickMode1" xml:space="preserve">
+    <value>Modo Rápido</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuickModeForEntries" xml:space="preserve">
+    <value>Modo Rápido para Asientos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuickModeForLines" xml:space="preserve">
+    <value>Modo Rápido para Líneas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Range" xml:space="preserve">
+    <value>Rango</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Fecha de Tasa</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RateOutOfRange" xml:space="preserve">
+    <value>La tasa de moneda ingresada se encuentra fuera del margen especificado en las tablas de monedas. ¿Desea continuar?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RateOverride" xml:space="preserve">
+    <value>Sustitución de Tasa</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Rates" xml:space="preserve">
+    <value>Tasas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Rates1" xml:space="preserve">
+    <value>Tasas...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>Tipo de Tasa</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReadyToPost" xml:space="preserve">
+    <value>Listo para Asentar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReadyToPostBatch" xml:space="preserve">
+    <value>El lote {0} no se fijó en Listo para Asentar.  Podría ver su contenido pero no modificarlo.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Recurring" xml:space="preserve">
+    <value>Recurrente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecurringPayableCode" xml:space="preserve">
+    <value>Código de Efecto a Pagar Recurrente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RefDocumentNumber" xml:space="preserve">
+    <value>Número de Documento de Referencia</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Referencia</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Actualizar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RemitTo" xml:space="preserve">
+    <value>Remitir a</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RemitToLocation" xml:space="preserve">
+    <value>Ubicación de Dirección de Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RemitToLocInformation" xml:space="preserve">
+    <value>Información de Dirección de Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RemovesHistory" xml:space="preserve">
+    <value>Esta opción quita todo el historial de transacciones de los lotes que selecciona. No podrá abrir estos lotes en el Libro Mayor o consultarlos desde las ventanas Lista de Lotes.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReportFormat" xml:space="preserve">
+    <value>Formato del Reporte</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReportingDeriveRate" xml:space="preserve">
+    <value>El impuesto total y/o el total en moneda de reporte fiscal han cambiado. Asegúrese de que el tipo de cambio de la moneda de reporte fiscal sea correcto. Puede pulsar el botón Derivar Tasa para derivar automáticamente el tipo de cambio de los dos totales.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReportType" xml:space="preserve">
+    <value>Tipo de Reporte</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>Obligatorio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>Recurso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RestartRecordForBatch" xml:space="preserve">
+    <value>Existe un registro de reinicio en el archivo para este lote Este registro se debe procesar primero. ¿Desea continuar?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RestartRecordForEntry" xml:space="preserve">
+    <value>Hay un registro de reinicio en archivo para el asiento {0} de este lote. Este registro se debe procesar primero. ¿Desea continuar?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RestoreDefaults" xml:space="preserve">
+    <value>Borrar Especificaciones Guardadas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Retainage" xml:space="preserve">
+    <value>Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageAdjustmentTotal" xml:space="preserve">
+    <value>Total de Ajustes de Retenciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageAmount" xml:space="preserve">
+    <value>Monto de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageBalance" xml:space="preserve">
+    <value>Saldo de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageCredit" xml:space="preserve">
+    <value>Crédito de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageCreditNote" xml:space="preserve">
+    <value>Nota de Crédito de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageDebit" xml:space="preserve">
+    <value>Débito de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageDebitNote" xml:space="preserve">
+    <value>Nota de Débito de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageDueDate" xml:space="preserve">
+    <value>Plazo de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageExchangeRate" xml:space="preserve">
+    <value>Tipo Cambio de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageFields" xml:space="preserve">
+    <value>Campos Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageInvoice" xml:space="preserve">
+    <value>Factura de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainagePercent" xml:space="preserve">
+    <value>% Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageTaxAmount" xml:space="preserve">
+    <value>Monto de Impuestos de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageTaxBase" xml:space="preserve">
+    <value>Base de Impuestos de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetainageTerms" xml:space="preserve">
+    <value>Condiciones de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetentionPeriod" xml:space="preserve">
+    <value>Período de Retención</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Revaluation" xml:space="preserve">
+    <value>Revaluación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RevaluationHistory" xml:space="preserve">
+    <value>Historial de Revaluación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RevaluationPostingSequence" xml:space="preserve">
+    <value>Secuencia de Asentamiento de Revaluaciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Rounding" xml:space="preserve">
+    <value>Redondeo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RouteNo" xml:space="preserve">
+    <value>Número Ruta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RunDate" xml:space="preserve">
+    <value>Fecha de Ejecución</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaveAsDefaults" xml:space="preserve">
+    <value>Guardar Especificaciones como Predeterminadas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaveSettings" xml:space="preserve">
+    <value>Guardar Especificaciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>Programa</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ScheduleCode" xml:space="preserve">
+    <value>Código de Programa</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectDocumentsBy" xml:space="preserve">
+    <value>Seleccionar Documentos por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectionCode" xml:space="preserve">
+    <value>Código de Selección</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectMode" xml:space="preserve">
+    <value>Modo de Selección</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectTransactionType" xml:space="preserve">
+    <value>Seleccionar Tipos de Transacción</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectTypeOfImportExport" xml:space="preserve">
+    <value>Seleccionar Tipo de Importación/Exportación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectVendorsBy" xml:space="preserve">
+    <value>Seleccionar Proveedores Por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectVendorsThisBankCode" xml:space="preserve">
+    <value>Seleccionar Proveedores con Sólo este Código de Banco</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Especificaciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShortName" xml:space="preserve">
+    <value>Nombre Abreviado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShowAccountSets" xml:space="preserve">
+    <value>Mostrar Grupos de Cuentas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShowGroupTotal" xml:space="preserve">
+    <value>Mostrar Subtotal de Grupo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShowPostedDeletedBatches" xml:space="preserve">
+    <value>Mostrar Lotes Asentados y Eliminados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShowSchedules" xml:space="preserve">
+    <value>Mostrar Programas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SortTransByType" xml:space="preserve">
+    <value>Clasif. Transacciones por Tipo de Trans.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SortVendorsBy" xml:space="preserve">
+    <value>Clasificar Proveedores por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SourceApplication" xml:space="preserve">
+    <value>Aplicación de Origen</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SourceApplicationC" xml:space="preserve">
+    <value>Aplicación de Origen</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SourceCurrency" xml:space="preserve">
+    <value>Moneda de Origen</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpaceForComments" xml:space="preserve">
+    <value>Espacio para Comentarios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Fecha Inicio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StateProv" xml:space="preserve">
+    <value>Estado/Provincia</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Estadísticas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StatusC" xml:space="preserve">
+    <value>Estado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Resumen</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>Sistema</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxAmount" xml:space="preserve">
+    <value>Monto de Impuesto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>Autoridad Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxBase" xml:space="preserve">
+    <value>Base de Impuesto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxClass" xml:space="preserve">
+    <value>Clase Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxClassChanged" xml:space="preserve">
+    <value>Usted ha cambiado una clase fiscal para este documento. Verifique las clases fiscales en cada línea de detalle y haga los cambios necesarios.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Impuestos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxFields" xml:space="preserve">
+    <value>Campos de Impuestos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>Grupo Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxGroupChanged" xml:space="preserve">
+    <value>Usted ha cambiado el grupo fiscal para este documento. Antes de continuar, verifique la información fiscal.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxIncluded" xml:space="preserve">
+    <value>Impuesto Incluido</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxNumber" xml:space="preserve">
+    <value>Número de Impuesto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxReporting" xml:space="preserve">
+    <value>Moneda de Reporte Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxReporting1099CPRS" xml:space="preserve">
+    <value>Moneda de Reporte Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxReportingAmount" xml:space="preserve">
+    <value>Monto en Moneda de Reporte Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxReportingCurrencyRate" xml:space="preserve">
+    <value>Tasa de Moneda de Reporte Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxReportingTotal" xml:space="preserve">
+    <value>Total en Moneda de Reporte Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Terms" xml:space="preserve">
+    <value>Condiciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TermsCode" xml:space="preserve">
+    <value>Código de Condiciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TermsFields" xml:space="preserve">
+    <value>Campos Condiciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ThenBy" xml:space="preserve">
+    <value>Luego por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Through" xml:space="preserve">
+    <value>Hasta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Título</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToAccountSet" xml:space="preserve">
+    <value>Hasta Grupo de Cuentas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToDocumentDate" xml:space="preserve">
+    <value>Hasta Fecha de Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToPaymentDate" xml:space="preserve">
+    <value>Hasta Fecha de Pago</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToPostingSequence" xml:space="preserve">
+    <value>Hasta Secuencia de Asentamiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Monto Total</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalC" xml:space="preserve">
+    <value>Total</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalCredits" xml:space="preserve">
+    <value>Créditos Totales</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalDaystoPay" xml:space="preserve">
+    <value>Total de Días para Pagar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalDebits" xml:space="preserve">
+    <value>Débitos Totales</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalInvoicesPaid" xml:space="preserve">
+    <value>Total de Facturas Pagadas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>Totales</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalTax" xml:space="preserve">
+    <value>Impuesto Total</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalTaxes" xml:space="preserve">
+    <value>Impuestos Totales</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToVendor" xml:space="preserve">
+    <value>Hasta Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToVendorNumber" xml:space="preserve">
+    <value>Hasta N° Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToYearPeriod" xml:space="preserve">
+    <value>Hasta Año/Período</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Fecha de Transacción</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransactionDescription" xml:space="preserve">
+    <value>Descripción de Transacción</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>Transacciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Tipo de Transacción</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UndistributedAmount" xml:space="preserve">
+    <value>Monto sin Distribuir</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UnitCost" xml:space="preserve">
+    <value>Costo Unitario</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>UM</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UseAgingPeriods" xml:space="preserve">
+    <value>Usar Períodos de Vencimiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorAmount" xml:space="preserve">
+    <value>Monto del Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorAmounts" xml:space="preserve">
+    <value>Montos del Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorAndAmount" xml:space="preserve">
+    <value>Proveedor y Monto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorAndDate" xml:space="preserve">
+    <value>Proveedor y Fecha</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorCurrency" xml:space="preserve">
+    <value>Moneda del Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorExclusionList" xml:space="preserve">
+    <value>Lista de Exclusión de Proveedores</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorGroup" xml:space="preserve">
+    <value>Grupo de Proveedores</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorGroupStatistics" xml:space="preserve">
+    <value>Estadísticas del Grupo de Proveedores</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorInformation" xml:space="preserve">
+    <value>Información del Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>Nombre del Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorNo" xml:space="preserve">
+    <value>Número de Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>Número de Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorOptionalFields" xml:space="preserve">
+    <value>Campos Opcionales del Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorRate" xml:space="preserve">
+    <value>Tasa del Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorSelectionRange" xml:space="preserve">
+    <value>Rango de Selección de Proveedores</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorsZeroBalance" xml:space="preserve">
+    <value>Proveedores con Saldo Cero</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorTaxClass" xml:space="preserve">
+    <value>Clase Fiscal del Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorTransOnHold" xml:space="preserve">
+    <value>Proveedores/Transacciones Retenidas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VoidCheck" xml:space="preserve">
+    <value>Anular Cheque</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VoidCheck1" xml:space="preserve">
+    <value>¿Seguro que desea anular cheque {0} de banco {1}?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="WarnBatchNotReadyPost" xml:space="preserve">
+    <value>El lote {0} no se fijó en Listo Para Asentar. ¿Desea asentar este lote?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="WrongBatchStatus" xml:space="preserve">
+    <value>No puede abrir lotes con estado de Asentamiento en Progreso o Eliminado.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>Año/Período</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Years" xml:space="preserve">
+    <value>Años</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="YTDAmount" xml:space="preserve">
+    <value>Monto YTD</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="YTDAverageDaysToPay" xml:space="preserve">
+    <value>Promedio de Días para Pagar YTD</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="YTDCount" xml:space="preserve">
+    <value>Conteo YTD</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="YTDTotalDaysToPay" xml:space="preserve">
+    <value>Total Días para Pagar YTD</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ZeroAmtChecking" xml:space="preserve">
+    <value>Verificación de Monto Cero</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ZipPostalCode" xml:space="preserve">
+    <value>Código Postal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Batch" xml:space="preserve">
+    <value>Lote</value>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>Fecha Inactividad</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvoiceBatches" xml:space="preserve">
+    <value>Lote de Facturas</value>
+  </data>
+  <data name="EntityAP" xml:space="preserve">
+    <value>C/P - Opciones</value>
+    <comment>AP-Option-IsDirty</comment>
+  </data>
+  <data name="FinderCommonWarningMsg" xml:space="preserve">
+    <value>Finder implementation in progress</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="WarningBackup" xml:space="preserve">
+    <value>Antes de continuar, asegúrese de entender los efectos y las consecuencias del procesamiento.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BatchNumberValue" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PaymentAndAdjustmentTitle" xml:space="preserve">
+    <value>Lote de Pago y Ajuste</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="FromCutoffDateMessage" xml:space="preserve">
+    <value>Desde Mensaje de Fecha de Corte</value>
+  </data>
+  <data name="CurrentRetainageOutst" xml:space="preserve">
+    <value>Retención Actual Pendiente</value>
+  </data>
+  <data name="CurrencyDescription" xml:space="preserve">
+    <value>Descripción Moneda</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>Tipo de Moneda</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>Año - Período Fiscal</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>Año Fiscal</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="_1099CPRSCodeDescription" xml:space="preserve">
+    <value>Descripción Código de 1099/CPRS</value>
+  </data>
+  <data name="UsePaymentSchedule" xml:space="preserve">
+    <value>Usar Programa de Pagos</value>
+  </data>
+  <data name="IncludeVendorsWithZeroBalance" xml:space="preserve">
+    <value>Incluir Proveedores con Saldo Cero</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Campo Opcional</value>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Descripción Campo Opcional</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Descripción de Valor</value>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valor Fijado</value>
+  </data>
+  <data name="BankRateType" xml:space="preserve">
+    <value>Tipo Tasa Bancaria</value>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>Número de Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="WebSite" xml:space="preserve">
+    <value>Sitio Web</value>
+  </data>
+  <data name="InvoiceType" xml:space="preserve">
+    <value>Tipo de Factura</value>
+  </data>
+  <data name="BusinessNumber" xml:space="preserve">
+    <value>Número Comercial</value>
+  </data>
+  <data name="EmployerIDNumber" xml:space="preserve">
+    <value>Número de ID del Empleador</value>
+  </data>
+  <data name="GSTRegistrationNumber" xml:space="preserve">
+    <value>Número de Registro de GST</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="Num1099" xml:space="preserve">
+    <value>1099</value>
+  </data>
+  <data name="SocialInsuranceNumber" xml:space="preserve">
+    <value>Número de Seguro Social</value>
+  </data>
+  <data name="SocialSecurityNumber" xml:space="preserve">
+    <value>Número de Seguridad Social</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Desconocido</value>
+  </data>
+  <data name="BankRateDate" xml:space="preserve">
+    <value>Fecha Tasa Bancaria</value>
+  </data>
+  <data name="DuplicateAmountCode" xml:space="preserve">
+    <value>Código de Monto Duplicado</value>
+  </data>
+  <data name="DuplicateDateCode" xml:space="preserve">
+    <value>Código de Fecha Duplicado</value>
+  </data>
+  <data name="TaxReportingType" xml:space="preserve">
+    <value>Tipo de Reporte Fiscal</value>
+  </data>
+  <data name="TaxType" xml:space="preserve">
+    <value>Tipo Fiscal</value>
+  </data>
+  <data name="DateEntered" xml:space="preserve">
+    <value>Fecha de Ingreso</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Fecha de Caducidad</value>
+  </data>
+  <data name="AP" xml:space="preserve">
+    <value>CP</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="BankDescription" xml:space="preserve">
+    <value>Descripción de Banco</value>
+  </data>
+  <data name="ApplyDocument" xml:space="preserve">
+    <value>Aplicar Documento</value>
+  </data>
+  <data name="DistribitionCodeDescription" xml:space="preserve">
+    <value>Descripción Código de Distribución</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Descuento</value>
+  </data>
+  <data name="FullyPaid" xml:space="preserve">
+    <value>Totalmente Pagado</value>
+    <comment>Document &amp; Document Sched. Payment Finders - Column header</comment>
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>Trabajo</value>
+    <comment>Document &amp; Document Sched. Payment Finders - Column header</comment>
+  </data>
+  <data name="OriginalDocNo" xml:space="preserve">
+    <value>Número de Documento Original</value>
+    <comment>Document &amp; Document Sched. Payment Finders - Column header</comment>
+  </data>
+  <data name="PrepayInvoiceNumber" xml:space="preserve">
+    <value>Número de Factura Prepagada</value>
+    <comment>Document &amp; Document Sched. Payment Finders - Column header</comment>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="MonthEndDay" xml:space="preserve">
+    <value>31</value>
+    <comment>Validate month end day</comment>
+  </data>
+  <data name="_1099CPRSTaxNumber" xml:space="preserve">
+    <value>Número de Impuesto de 1099/CPRS</value>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Admitir en Blanco</value>
+  </data>
+  <data name="AutoInsert" xml:space="preserve">
+    <value>Autoinsertar</value>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimales</value>
+  </data>
+  <data name="DefaultAmountValue" xml:space="preserve">
+    <value>Valor de Monto Predeterminado</value>
+  </data>
+  <data name="DefaultDateValue" xml:space="preserve">
+    <value>Valor de Fecha Predeterminada</value>
+  </data>
+  <data name="DefaultIntegerValue" xml:space="preserve">
+    <value>Valor Entero Predeterminado</value>
+  </data>
+  <data name="DefaultNumberValue" xml:space="preserve">
+    <value>Valor de Número Predeterminado</value>
+  </data>
+  <data name="DefaultTextValue" xml:space="preserve">
+    <value>Valor de Texto Predeterminado</value>
+  </data>
+  <data name="DefaultTimeValue" xml:space="preserve">
+    <value>Valor de Hora Predeterminada</value>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>Valor Predeterminado</value>
+  </data>
+  <data name="DefaultValueDescription" xml:space="preserve">
+    <value>Descripción de Valor Predeterminado</value>
+  </data>
+  <data name="DefaultYesOrNoValue" xml:space="preserve">
+    <value>Valor Sí/No Predeterminado</value>
+  </data>
+  <data name="Distribution" xml:space="preserve">
+    <value>Distribución</value>
+  </data>
+  <data name="Labor" xml:space="preserve">
+    <value>Mano de Obra</value>
+  </data>
+  <data name="Overhead" xml:space="preserve">
+    <value>Gastos Generales</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Obligatorio</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validar</value>
+  </data>
+  <data name="InvalidInput" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BatchTotal" xml:space="preserve">
+    <value>Total del Lote</value>
+  </data>
+  <data name="Edited" xml:space="preserve">
+    <value>Edición</value>
+  </data>
+  <data name="PrintT5018CPRSOptionNotOn" xml:space="preserve">
+    <value>La opción para utilizar el reporte 1099/CPRS no está seleccionada en C/P - Opciones.</value>
+  </data>
+  <data name="LastEntryNumber" xml:space="preserve">
+    <value>Último N° de Asiento</value>
+  </data>
+  <data name="RecoverableTax" xml:space="preserve">
+    <value>Impuesto Recuperable</value>
+  </data>
+  <data name="ExpenseTax" xml:space="preserve">
+    <value>Impuesto sobre los Gastos</value>
+  </data>
+  <data name="PurchaseDiscount" xml:space="preserve">
+    <value>Descuento de Compras</value>
+  </data>
+  <data name="MiscellaneousPayment" xml:space="preserve">
+    <value>Pagos Varios</value>
+  </data>
+  <data name="ExternalCostTransactions" xml:space="preserve">
+    <value>Transacciones de Costo Externo</value>
+  </data>
+  <data name="ProjectAndJobCosting" xml:space="preserve">
+    <value>Cálculo de Costos de Proyecto y Trabajo</value>
+  </data>
+  <data name="UnrealizedExchangeGain" xml:space="preserve">
+    <value>Ganancia Cambiaria No Realizada</value>
+  </data>
+  <data name="UnrealizedExchangeLoss" xml:space="preserve">
+    <value>Pérdida Cambiaria No Realizada</value>
+  </data>
+  <data name="Go" xml:space="preserve">
+    <value>Ir</value>
+  </data>
+  <data name="Zero" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>Número de Cuenta</value>
+  </data>
+  <data name="FileGenerated" xml:space="preserve">
+    <value>Su archivo se generó correctamente y está listo para descargar.</value>
+    <comment>Success message for file genration</comment>
+  </data>
+  <data name="MessageIdDoesNotExist" xml:space="preserve">
+    <value>No se puede encontrar el ID de Mensaje {0}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MessageIDInactive" xml:space="preserve">
+    <value>El ID de Mensaje {0} está inactivo.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintDestination" xml:space="preserve">
+    <value>Destino de Impresión</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InvalidAccountSet" xml:space="preserve">
+    <value>No se puede encontrar el Grupo de Cuentas "{0}".</value>
+  </data>
+  <data name="InvalidBankCode" xml:space="preserve">
+    <value>No se puede encontrar el Código de Banco "{0}".</value>
+  </data>
+  <data name="InvalidCprsCode" xml:space="preserve">
+    <value>No se puede encontrar el Código de 1099/CPRS "{0}".</value>
+  </data>
+  <data name="InvalidDistributionCode" xml:space="preserve">
+    <value>No se puede encontrar el Código de Distribución "{0}".</value>
+  </data>
+  <data name="InvalidDistributionSet" xml:space="preserve">
+    <value>No se puede encontrar el Grupo de Distribución "{0}".</value>
+  </data>
+  <data name="InvalidGlAccount" xml:space="preserve">
+    <value>No se puede encontrar la Cuenta LM "{0}".</value>
+  </data>
+  <data name="InvalidPaymentCode" xml:space="preserve">
+    <value>No se puede encontrar el Código de Pago "{0}".</value>
+  </data>
+  <data name="InvalidRateType" xml:space="preserve">
+    <value>No se puede encontrar el Tipo de Tasa "{0}".</value>
+  </data>
+  <data name="InvalidTaxClass" xml:space="preserve">
+    <value>No se puede encontrar la Clase Fiscal "{0}" para Autoridad Fiscal "{1}".</value>
+  </data>
+  <data name="InvalidTaxGroup" xml:space="preserve">
+    <value>No se puede encontrar el Grupo Fiscal "{0}".</value>
+  </data>
+  <data name="InvalidTerms" xml:space="preserve">
+    <value>No se puede encontrar el Código de Condiciones "{0}".</value>
+  </data>
+  <data name="InvalidVendorGroup" xml:space="preserve">
+    <value>No se puede encontrar  el Grupo de Proveedores "{0}".</value>
+  </data>
+  <data name="UnappliedCash" xml:space="preserve">
+    <value>Efectivo No Aplicado</value>
+  </data>
+  <data name="EnableYTDCalculations" xml:space="preserve">
+    <value>Habilitar Cálculos YTD</value>
+  </data>
+  <data name="NumberofAdjustments" xml:space="preserve">
+    <value>Cantidad de Ajustes</value>
+  </data>
+  <data name="NumberofCreditNotes" xml:space="preserve">
+    <value>Cantidad de Notas de Crédito</value>
+  </data>
+  <data name="NumberofDaystoPay" xml:space="preserve">
+    <value>Cantidad de Días para Pagar</value>
+  </data>
+  <data name="NumberofDebitNotes" xml:space="preserve">
+    <value>Cantidad de Notas de Débito</value>
+  </data>
+  <data name="NumberofDiscounts" xml:space="preserve">
+    <value>Cantidad de Descuentos</value>
+  </data>
+  <data name="NumberofDiscountsLost" xml:space="preserve">
+    <value>Cantidad de Descuentos Perdidos</value>
+  </data>
+  <data name="NumberofInvoices" xml:space="preserve">
+    <value>Cantidad de Facturas</value>
+  </data>
+  <data name="NumberofPaidInvoices" xml:space="preserve">
+    <value>Cantidad de Facturas Pagadas</value>
+  </data>
+  <data name="TotalAdjustmentAmount" xml:space="preserve">
+    <value>Monto Total de Ajustes</value>
+  </data>
+  <data name="TotalAmountofPaidInvoices" xml:space="preserve">
+    <value>Monto Total de Facturas Pagadas</value>
+  </data>
+  <data name="TotalCreditNoteAmount" xml:space="preserve">
+    <value>Monto Total de Notas de Crédito</value>
+  </data>
+  <data name="TotalDebitNoteAmount" xml:space="preserve">
+    <value>Monto Total de Notas de Débito</value>
+  </data>
+  <data name="TotalDiscountAmount" xml:space="preserve">
+    <value>Monto Total de Descuentos</value>
+  </data>
+  <data name="TotalDiscountAmountLost" xml:space="preserve">
+    <value>Monto Total de Descuentos Perdidos</value>
+  </data>
+  <data name="TotalInvoicesAmount" xml:space="preserve">
+    <value>Monto Total de Facturas</value>
+  </data>
+  <data name="TotalPaymentAmount" xml:space="preserve">
+    <value>Monto Total de Pagos</value>
+  </data>
+  <data name="YTDAdjustmentsinFuncCurr" xml:space="preserve">
+    <value>Ajustes en Moneda Funcional YTD</value>
+  </data>
+  <data name="YTDCreditsinFuncCurr" xml:space="preserve">
+    <value>Créditos en Moneda Funcional YTD</value>
+  </data>
+  <data name="YTDDebitsinFuncCurr" xml:space="preserve">
+    <value>Débitos en Moneda Funcional YTD</value>
+  </data>
+  <data name="YTDDiscountsinFuncCurr" xml:space="preserve">
+    <value>Descuentos en Moneda Funcional YTD</value>
+  </data>
+  <data name="YTDDiscountsLostFuncCurr" xml:space="preserve">
+    <value>Descuentos Perdidos en Moneda Funcional YTD</value>
+  </data>
+  <data name="YTDInvoicesinFuncCurr" xml:space="preserve">
+    <value>Facturas en Moneda Funcional YTD</value>
+  </data>
+  <data name="YTDInvoicesPdinFuncCurr" xml:space="preserve">
+    <value>Facturas Pagadas en Moneda Funcional YTD</value>
+  </data>
+  <data name="YTDNumberofAdjustments" xml:space="preserve">
+    <value>N° de Ajustes YTD</value>
+  </data>
+  <data name="YTDNumberofCreditNotes" xml:space="preserve">
+    <value>N° de Notas de Crédito YTD</value>
+  </data>
+  <data name="YTDNumberofDaystoPay" xml:space="preserve">
+    <value>N° de Días para Pagar YTD</value>
+  </data>
+  <data name="YTDNumberofDebitNotes" xml:space="preserve">
+    <value>N° de Notas de Débito YTD</value>
+  </data>
+  <data name="YTDNumberofDiscounts" xml:space="preserve">
+    <value>N° de Descuentos YTD</value>
+  </data>
+  <data name="YTDNumberofDiscountsLost" xml:space="preserve">
+    <value>Cantidad de Descuentos Perdidos YTD</value>
+  </data>
+  <data name="YTDNumberofInvoices" xml:space="preserve">
+    <value>Cantidad de Facturas YTD</value>
+  </data>
+  <data name="YTDNumberofPaidInvoices" xml:space="preserve">
+    <value>Cantidad de Facturas Pagadas YTD</value>
+  </data>
+  <data name="YTDNumberofPayments" xml:space="preserve">
+    <value>Número de Pagos YTD</value>
+  </data>
+  <data name="YTDPaymentsinFuncCurr" xml:space="preserve">
+    <value>Pagos en Moneda Funcional YTD</value>
+  </data>
+  <data name="PY" xml:space="preserve">
+    <value>PY</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DownloadFile" xml:space="preserve">
+    <value>Archivo de descarga</value>
+  </data>
+  <data name="ContactsFax" xml:space="preserve">
+    <value>Fax de Contacto</value>
+  </data>
+  <data name="ContactsPhone" xml:space="preserve">
+    <value>Teléfono de Contacto</value>
+  </data>
+  <data name="RevaluationBalinVendCurr" xml:space="preserve">
+    <value>Saldo de Revaluación en Moneda del Proveedor</value>
+  </data>
+  <data name="TotalAdjustmentsinFuncCurr" xml:space="preserve">
+    <value>Total de Ajustes en Moneda Funcional</value>
+  </data>
+  <data name="TotalAdjustmentsinVendCurr" xml:space="preserve">
+    <value>Total de Ajustes en Moneda del Proveedor</value>
+  </data>
+  <data name="TotalCreditsinFuncCurrency" xml:space="preserve">
+    <value>Total de Créditos en Moneda Funcional</value>
+  </data>
+  <data name="TotalCreditsinVendCurr" xml:space="preserve">
+    <value>Total de Créditos en Moneda del Proveedor</value>
+  </data>
+  <data name="TotalDebitsinFuncCurrency" xml:space="preserve">
+    <value>Total de Débitos en Moneda Funcional</value>
+  </data>
+  <data name="TotalDebitsinVendCurr" xml:space="preserve">
+    <value>Total de Débitos en Moneda del Proveedor</value>
+  </data>
+  <data name="TotalDiscountsinFuncCurr" xml:space="preserve">
+    <value>Total de Descuentos en Moneda Funcional</value>
+  </data>
+  <data name="TotalDiscountsinVendCurr" xml:space="preserve">
+    <value>Total de Descuentos en Moneda del Proveedor</value>
+  </data>
+  <data name="TotalDiscountsLostFuncCur" xml:space="preserve">
+    <value>Total de Descuentos Perdidos en Moneda Funcional</value>
+  </data>
+  <data name="TotalDiscountsLostinVendCu" xml:space="preserve">
+    <value>Total de Descuentos Perdidos en Moneda del Proveedor</value>
+  </data>
+  <data name="TotalInvoicesinFuncCurrency" xml:space="preserve">
+    <value>Total de Facturas en Moneda Funcional</value>
+  </data>
+  <data name="TotalInvoicesinVendCurr" xml:space="preserve">
+    <value>Total de Facturas en Moneda del Proveedor</value>
+  </data>
+  <data name="TotalInvoicesPdinFuncCurr" xml:space="preserve">
+    <value>Total de Facturas Pagadas en Moneda Funcional</value>
+  </data>
+  <data name="TotalInvoicesPdinVendCurr" xml:space="preserve">
+    <value>Total de Facturas Pagadas en Moneda del Proveedor</value>
+  </data>
+  <data name="TotalPaymentsinFuncCurrency" xml:space="preserve">
+    <value>Total de Pagos en Moneda Funcional</value>
+  </data>
+  <data name="TotalPaymentsinVendCurr" xml:space="preserve">
+    <value>Total de Pagos en Moneda del Proveedor</value>
+  </data>
+  <data name="YTDAdjustmentsinVendCurr" xml:space="preserve">
+    <value>Ajustes YTD en Moneda del Proveedor</value>
+  </data>
+  <data name="YTDCreditsinVendCurr" xml:space="preserve">
+    <value>Créditos YTD en Moneda del Proveedor</value>
+  </data>
+  <data name="YTDDebitsinVendCurr" xml:space="preserve">
+    <value>Débitos YTD en Moneda del Proveedor</value>
+  </data>
+  <data name="YTDDiscountsinVendCurr" xml:space="preserve">
+    <value>Descuentos YTD en Moneda del Proveedor</value>
+  </data>
+  <data name="YTDDiscountsLostinVendCurr" xml:space="preserve">
+    <value>Descuentos Perdidos YTD en Moneda del Proveedor</value>
+  </data>
+  <data name="YTDInvoicesinVendCurr" xml:space="preserve">
+    <value>Facturas YTD en Moneda del Proveedor</value>
+  </data>
+  <data name="YTDInvoicesPdinVendCurr" xml:space="preserve">
+    <value>Facturas Pagadas YTD en Moneda del Proveedor</value>
+  </data>
+  <data name="YTDPaymentsinVendCurr" xml:space="preserve">
+    <value>Pagos YTD en Moneda del Proveedor</value>
+  </data>
+  <data name="PrintReport" xml:space="preserve">
+    <value>Imprimir Reporte</value>
+  </data>
+  <data name="NumOfPayments" xml:space="preserve">
+    <value>Cantidad de Pagos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectChecksReprint" xml:space="preserve">
+    <value>Seleccione los cheques a reimprimir</value>
+  </data>
+  <data name="DefineAccountSetInAPMessage" xml:space="preserve">
+    <value>El grupo de cuentas {0} no está definido en C/P — Grupos de Cuentas.</value>
+  </data>
+  <data name="DefineBankCodeInBSMessage" xml:space="preserve">
+    <value>El código de banco {0} no está definido en Servicios Bancarios.</value>
+  </data>
+  <data name="DefineCPRSCodeInAP" xml:space="preserve">
+    <value>El código de 1099/CPRS {0} no está definido en C/P - Códigos de 1099/CPRS.</value>
+  </data>
+  <data name="DefineDistributionCodeInAP" xml:space="preserve">
+    <value>El código de distribución {0} no está definido en C/P - Códigos de Distribución.</value>
+  </data>
+  <data name="DefineDistributionSetInAPMessage" xml:space="preserve">
+    <value>El grupo de distribución {0} no está definido en C/P.</value>
+  </data>
+  <data name="DefineGLAccountInGLMessage" xml:space="preserve">
+    <value>La cuenta del LM {0} no está definida en el Libro Mayor.</value>
+  </data>
+  <data name="DefinePaymentCodeInAPMessage" xml:space="preserve">
+    <value>El código de pago {0} no está definido en C/P - Códigos de Pagos.</value>
+  </data>
+  <data name="DefineRateTypeSDinCSMessage" xml:space="preserve">
+    <value>El tipo de tasa {0} no está definido en Servicios Comunes.</value>
+  </data>
+  <data name="DefineTaxClassInCSMessage" xml:space="preserve">
+    <value>La clase fiscal {0} de la autoridad fiscal {1} no ha sido definida en Servicios Comunes.</value>
+  </data>
+  <data name="DefineTaxGroupInTSMessage" xml:space="preserve">
+    <value>El grupo fiscal {0} no está definido en Servicios Fiscales.</value>
+  </data>
+  <data name="DefineTermsCodeInAPMessage" xml:space="preserve">
+    <value>El código de condiciones {0} no está definido en C/P - Condiciones.</value>
+  </data>
+  <data name="VendorGroupNotExistMessage" xml:space="preserve">
+    <value>El Grupo de proveedores {0} no existe.</value>
+  </data>
+  <data name="AorPVersion" xml:space="preserve">
+    <value>Versión de C/P</value>
+  </data>
+  <data name="Database" xml:space="preserve">
+    <value>Base de Datos</value>
+  </data>
+  <data name="DateofLastActivity" xml:space="preserve">
+    <value>Fecha de Última Actividad</value>
+  </data>
+  <data name="Mode" xml:space="preserve">
+    <value>Modo</value>
+  </data>
+  <data name="SuppressIntegration" xml:space="preserve">
+    <value>Suprimir Integración</value>
+  </data>
+  <data name="DateReceived" xml:space="preserve">
+    <value>Fecha de Recepción</value>
+  </data>
+  <data name="DiscountLevel" xml:space="preserve">
+    <value>Nivel de Descuento</value>
+  </data>
+  <data name="BatchPrintedFlag" xml:space="preserve">
+    <value>Indicador de Lote Impreso</value>
+  </data>
+  <data name="DateLastMaintained" xml:space="preserve">
+    <value>Fecha Último Mantenimiento</value>
+  </data>
+  <data name="ErrNoDocumentSelected" xml:space="preserve">
+    <value>Debe seleccionar al menos un tipo de documento.</value>
+  </data>
+  <data name="TaxReportCurrencyMismatch" xml:space="preserve">
+    <value>La moneda {0} del documento difiere de la moneda de reporte fiscal {1} para el grupo fiscal {2}</value>
+  </data>
+  <data name="SpecifyValidDate" xml:space="preserve">
+    <value>Debe especificar una fecha válida</value>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>Descripción Tipo de Tasa</value>
+  </data>
+  <data name="DrillDown" xml:space="preserve">
+    <value>Realizar Búsqueda Detallada en Transacción de Origen</value>
+    <comment>Drill Down button tooltip</comment>
+  </data>
+  <data name="NoDrillDownInfo" xml:space="preserve">
+    <value>No se pudo encontrar información de búsqueda detallada para este registro.</value>
+  </data>
+  <data name="PostingErrorMessage" xml:space="preserve">
+    <value>No hay errores de asentamiento para este lote.</value>
+    <comment>Prompt Posting Error message when batch is posted</comment>
+  </data>
+  <data name="PostingErrorMsg" xml:space="preserve">
+    <value>No puede imprimir el Reporte del Libro Diario de Asentamientos para este lote porque no ha sido asentado.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="PostingReportError" xml:space="preserve">
+    <value>No puede imprimir el Reporte de Errores de Asentamiento para este lote porque no ha sido asentado.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="NoParentDrilDown" xml:space="preserve">
+    <value>No se puede cerrar la ventana de nivel superior antes de presentar la consulta. Se ignora la búsqueda detallada del tipo.</value>
+  </data>
+  <data name="NotallowedTodrilldown" xml:space="preserve">
+    <value>No está autorizado para hacer una búsqueda detallada en</value>
+  </data>
+  <data name="ReverseChargeBase" xml:space="preserve">
+    <value>Base de Inversión del Sujeto Pasivo</value>
+  </data>
+  <data name="ReverseCharges" xml:space="preserve">
+    <value>Importe de Inversión del Sujeto Pasivo</value>
+  </data>
+  <data name="EstimatedTaxWithheld" xml:space="preserve">
+    <value>Impuesto Retenido Estimado</value>
+  </data>
+  <data name="_1099CPRSCodeInactive" xml:space="preserve">
+    <value>El código 1099/CPRS {0} está inactivo.</value>
+  </data>
+  <data name="TotalReverseCharges" xml:space="preserve">
+    <value>Total Inversión del Sujeto Pasivo</value>
+  </data>
+  <data name="TotalTaxWithhelding" xml:space="preserve">
+    <value>Impuesto Retenido Estimado Total</value>
+  </data>
+  <data name="ReverseCharge" xml:space="preserve">
+    <value>Importe de Inversión del Sujeto Pasivo</value>
+  </data>
+  <data name="ReverseChargesBase" xml:space="preserve">
+    <value>Base de Inversión del Sujeto Pasivo</value>
+  </data>
+  <data name="FailedMTEmail" xml:space="preserve">
+    <value>No se pudieron enviar los documentos por correo electrónico a los contactos del proveedor {0}. Verifique que los contactos de este proveedor estén bien configurados.</value>
+  </data>
+</root>

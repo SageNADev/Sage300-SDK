@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 // @ts-check
 
@@ -8,7 +8,7 @@
  * Functionality for formatting, enabling, disabling and selecting controls.
  */
 (function (sg, $) {
-    $(this).parent().addClass("cBox-disabled");
+    //$(this).parent().addClass("cBox-disabled");
 
     sg.controls = {
         /**
@@ -17,7 +17,7 @@
          * @param {string} checkboxHtml The HTML of the element to span.
          */
         ApplyCheckboxStyle: function (checkboxHtml) {
-            return "<span class='icon checkBox'>" + checkboxHtml + "</span>";
+            return "<label class='checkbox-container'><span>" + checkboxHtml + "<span class='checkmark'></span></span></label>";
         },
 
         /**
@@ -26,7 +26,7 @@
          * @param {string} radioboxHtml The HTML of the element to span.
          */
         ApplyRadioboxStyle: function (radioboxHtml) {
-            return "<span class='icon radioBox'>" + radioboxHtml + "</span>";
+            return "<label class='radio-container'><span>" + radioboxHtml + "<span class='checkmark'></span></span></label>";
         },
 
         /**
@@ -45,22 +45,6 @@
          */
         ApplyCheckBoxRadioButtonDisable: function (element) {
             sg.controls.RemoveCheckBoxRadioButtonStyle(element);
-            if (element.disabled) {
-                if (element.checked) {
-                    $(element).parent().addClass("checked-disabled");
-                } else {
-                    if (element.type === "checkbox") {
-                        $(element).parent().addClass("cBox-disabled");
-                    }
-                    else if (element.type === "radio") {
-                        $(element).parent().addClass("rBox-disabled");
-                    }
-                }
-            } else {
-                if (element.checked) {
-                    $(element).parent().addClass("selected");
-                }
-            }
         },
 
         /**
@@ -69,12 +53,6 @@
          * @param {object} element The HTML element from which to remove the styles. 
          */
         RemoveCheckBoxRadioButtonStyle: function (element) {
-            if (element.type === "checkbox") {
-                $(element).parent().removeClass("cBox-disabled selected checked-disabled");
-            }
-            else if (element.type === "radio") {
-                $(element).parent().removeClass("rBox-disabled selected checked-disabled");
-            }
         },
 
         /**
@@ -86,12 +64,12 @@
         SelectRadioButton: function (currentButtonId, radioIdList) {
             $.each(radioIdList, function(key, val) {
                 if (val !== currentButtonId) {
-                    $('#' + val).parent().removeClass('focus selected');
+                    $('#' + val).parent().parent().removeClass('focus');
                     $('#' + val).prop('checked', false);
                 }
             });
             $('#' + currentButtonId).prop('checked', true);
-            $('#' + currentButtonId).parent().addClass('focus selected');
+            $('#' + currentButtonId).parent().parent().addClass('focus');
         },
 
         /**
@@ -239,11 +217,6 @@
                         dropDown.enable(currentModelValue);
                     }
                     break;
-
-                case "radio":
-                case "checkbox":
-                    sg.controls.ApplyCheckBoxRadioButtonDisable(element);
-                    break;
                      
                 case "text":
                     if (className.indexOf("datepicker") > -1) {
@@ -297,9 +270,9 @@ $(function () {
         applyCheckboxStyle: function () {
             return this.each(function () {
                 if ($(this).is(':checked')) {
-                    $(this).parent().addClass("selected");
+                    $(this).prop('checked', true);
                 } else {
-                    $(this).parent().removeClass("selected");
+                    $(this).prop('checked', false);
                 }
             });
         }
@@ -309,24 +282,8 @@ $(function () {
         sg.controls.ApplyCheckboxRadioButtonStyle(this);
     });
 
-    $(document).on('mouseenter', 'input[type="checkbox"]', function () {
-        $(this).parent().addClass("cBox-hover");
-    });
-
-    $(document).on('mouseleave', 'input[type="checkbox"]', function () {
-        $(this).parent().removeClass("cBox-hover");
-    });
-
     $(document).on('change', 'input[type="radio"]', function () {
         sg.controls.ApplyCheckboxRadioButtonStyle(this);
-    });
-
-    $(document).on('mouseenter', 'input[type="radio"]', function () {
-        $(this).parent().addClass("radioBox-hover");
-    });
-
-    $(document).on('mouseleave', 'input[type="radio"]', function () {
-        $(this).parent().removeClass("radioBox-hover");
     });
 
     $(document).on('focus', 'input', function () {
@@ -342,11 +299,11 @@ $(function () {
     });
 
     $(document).on("focus", 'input[type="checkbox"], input[type="radio"]', function () {
-        $(this).parent().addClass("focus");
+        $(this).parent().parent().addClass("focus");
     });
 
     $(document).on("blur", 'input[type="checkbox"], input[type="radio"]', function () {
-        $(this).parent().removeClass("focus");
+        $(this).parent().parent().removeClass("focus");
     });
 });
 

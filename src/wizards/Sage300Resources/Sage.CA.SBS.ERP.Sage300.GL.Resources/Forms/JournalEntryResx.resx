@@ -1,0 +1,1153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BatchReadyToPost" xml:space="preserve">
+    <value>The batch is set to Ready To Post. You can view the contents of the batch, but you cannot edit journal entries.</value>
+  </data>
+  <data name="CreateNewEntry" xml:space="preserve">
+    <value>Create New Entry</value>
+  </data>
+  <data name="CreditsC" xml:space="preserve">
+    <value>Credits</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DebitsC" xml:space="preserve">
+    <value>Debits</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>G/L Journal Entry</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntriesC" xml:space="preserve">
+    <value>Entries</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EntryMode" xml:space="preserve">
+    <value>Entry Mode</value>
+  </data>
+  <data name="EntryModeNormal" xml:space="preserve">
+    <value>Normal Entry Mode</value>
+  </data>
+  <data name="EntryModeQuick" xml:space="preserve">
+    <value>Quick Entry Mode</value>
+  </data>
+  <data name="JournalDetail" xml:space="preserve">
+    <value>Journal Detail</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="JournalDetailClearConfirmation" xml:space="preserve">
+    <value>Clear the details for this entry?</value>
+  </data>
+  <data name="JournalEntry" xml:space="preserve">
+    <value>Journal Entry</value>
+  </data>
+  <data name="QuantityC" xml:space="preserve">
+    <value>Quantity</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReverseBatch" xml:space="preserve">
+    <value>Reverse the Batch?</value>
+  </data>
+  <data name="SourceCodeDescription" xml:space="preserve">
+    <value>Source Code Description</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Value Description</value>
+  </data>
+  <data name="SourceCodeErrorMessage" xml:space="preserve">
+    <value>Cannot find Source Code "{0}-{1}".</value>
+  </data>
+  <data name="JournalBatch" xml:space="preserve">
+    <value>Journal Batch</value>
+  </data>
+  <data name="JournalHeader" xml:space="preserve">
+    <value>Journal Header</value>
+  </data>
+  <data name="CreateNewBatch" xml:space="preserve">
+    <value>Create New Batch</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>Batch Number</value>
+  </data>
+  <data name="NoOfErrors" xml:space="preserve">
+    <value>Number of Errors</value>
+  </data>
+  <data name="QuantityTotal" xml:space="preserve">
+    <value>Quantity Total</value>
+  </data>
+  <data name="SourceLedger" xml:space="preserve">
+    <value>Source Ledger</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="AutoReverse" xml:space="preserve">
+    <value>Auto Reverse</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="Batch" xml:space="preserve">
+    <value>Batch</value>
+  </data>
+  <data name="EntryDate" xml:space="preserve">
+    <value>Posting Date</value>
+  </data>
+  <data name="EntryNumber" xml:space="preserve">
+    <value>Entry Number</value>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="OriginalWithPrefix" xml:space="preserve">
+    <value>Original with Prefix</value>
+  </data>
+  <data name="Originator" xml:space="preserve">
+    <value>Originator</value>
+  </data>
+  <data name="SourceCode" xml:space="preserve">
+    <value>Source Code</value>
+  </data>
+  <data name="Destination" xml:space="preserve">
+    <value>Destination</value>
+  </data>
+  <data name="OutofBalanceBy" xml:space="preserve">
+    <value>Out of Balance By</value>
+  </data>
+  <data name="EntryDescription" xml:space="preserve">
+    <value>Entry Description</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Line Number</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Posting Sequence</value>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Rate Date</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>Route Number</value>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>Year/Period</value>
+  </data>
+  <data name="AccountDescription" xml:space="preserve">
+    <value>Account Description</value>
+  </data>
+  <data name="BatchDescription" xml:space="preserve">
+    <value>Batch Description</value>
+  </data>
+  <data name="CreateReverseBatch" xml:space="preserve">
+    <value>Create Reverse Batch</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Credit</value>
+  </data>
+  <data name="AcctFormatted" xml:space="preserve">
+    <value>Account Formatted</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="AcctUnitofMeasure" xml:space="preserve">
+    <value>Account Unit of Measure</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="CreatedReverseEntryNo" xml:space="preserve">
+    <value>Created Reverse Entry Number</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="CurrencyRateDateMatching" xml:space="preserve">
+    <value>Currency Rate Date Matching</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="CurrencyRateOperator" xml:space="preserve">
+    <value>Currency Rate Operator</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="CurrencyRateTable" xml:space="preserve">
+    <value>Rate Type</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="EntryPeriod" xml:space="preserve">
+    <value>Entry Period</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="EntryYear" xml:space="preserve">
+    <value>Entry Year</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="HomeCurrency" xml:space="preserve">
+    <value>Home Currency</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="NewDescription" xml:space="preserve">
+    <value>New Description</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="RouteDescription" xml:space="preserve">
+    <value>Route Description</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="SourceCurrencyDecimals" xml:space="preserve">
+    <value>Source Currency Decimals</value>
+    <comment>Added this for display in JournalDetail model</comment>
+  </data>
+  <data name="SpecificReversalPeriod" xml:space="preserve">
+    <value>Specific Reversal Period</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="SpecificReversalYear" xml:space="preserve">
+    <value>Specific Reversal Year</value>
+    <comment>Added this for display in CreateReverseEntry model</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Optional Field Description</value>
+    <comment>Added this for display in JournalDetailOptionalField model</comment>
+  </data>
+  <data name="OrigDescription" xml:space="preserve">
+    <value>Original Description</value>
+    <comment>Added this for display in JournalEntry model</comment>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Text Value</value>
+    <comment>Added this for display in JournalDetailOptionalField model</comment>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>Transaction Number</value>
+    <comment>Added this for display in JournalDetailOptionalField model</comment>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>Debit</value>
+  </data>
+  <data name="FunctionalCredit" xml:space="preserve">
+    <value>Functional Credit</value>
+  </data>
+  <data name="FunctionalDebit" xml:space="preserve">
+    <value>Functional Debit</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="SourceCredit" xml:space="preserve">
+    <value>Source Credit</value>
+  </data>
+  <data name="SourceCurrency" xml:space="preserve">
+    <value>Source Currency</value>
+  </data>
+  <data name="SourceDebit" xml:space="preserve">
+    <value>Source Debit</value>
+  </data>
+  <data name="SourceType" xml:space="preserve">
+    <value>Source Type</value>
+  </data>
+  <data name="GL0006" xml:space="preserve">
+    <value>Journal Headers</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="GL0010" xml:space="preserve">
+    <value>Journal Details</value>
+    <comment>Used in Export Import</comment>
+  </data>
+  <data name="DeletedBatch" xml:space="preserve">
+    <value>The batch has been deleted and cannot be edited.</value>
+  </data>
+  <data name="CurrencySpreadRange" xml:space="preserve">
+    <value>The currency rate entered lies outside the spread specified in the currency tables.</value>
+  </data>
+  <data name="BatchSummary" xml:space="preserve">
+    <value>Batch Summary</value>
+  </data>
+  <data name="GL0402" xml:space="preserve">
+    <value>Journal Detail Optional Fields</value>
+    <comment>Used In Export Import</comment>
+  </data>
+  <data name="ActiveSwitch" xml:space="preserve">
+    <value>Active Switch</value>
+  </data>
+  <data name="DateLastEdited" xml:space="preserve">
+    <value>Date Last Edited</value>
+  </data>
+  <data name="DeleteSwitch" xml:space="preserve">
+    <value>Eligible for Delete Switch</value>
+  </data>
+  <data name="EditSwitch" xml:space="preserve">
+    <value>Eligible for Edit Switch</value>
+  </data>
+  <data name="ICTRelated" xml:space="preserve">
+    <value>ICT Related</value>
+  </data>
+  <data name="NextEntryNumber" xml:space="preserve">
+    <value>Next Entry Number</value>
+  </data>
+  <data name="OriginalStatus" xml:space="preserve">
+    <value>Original Status</value>
+  </data>
+  <data name="PostingSwitch" xml:space="preserve">
+    <value>Eligible for Posting Switch</value>
+  </data>
+  <data name="PrintingSwitch" xml:space="preserve">
+    <value>Eligible for Printing Switch</value>
+  </data>
+  <data name="RevaluationRecognizedBatch" xml:space="preserve">
+    <value>Revaluation (Recognized) Batch</value>
+  </data>
+  <data name="NumberOfDecimalsForQty" xml:space="preserve">
+    <value>Number Of Decimals For Quantity</value>
+  </data>
+  <data name="NumberOfEntries" xml:space="preserve">
+    <value>Number of Entries</value>
+  </data>
+  <data name="ProvisionalPostSwitch" xml:space="preserve">
+    <value>Eligible for Provisional Post Switch</value>
+  </data>
+  <data name="AcctControlSwitch" xml:space="preserve">
+    <value>Account Control Switch</value>
+  </data>
+  <data name="AcctExists" xml:space="preserve">
+    <value>Account Exists</value>
+  </data>
+  <data name="AcctMulticurrencySwitch" xml:space="preserve">
+    <value>Account Multicurrency Switch</value>
+  </data>
+  <data name="AcctOptionalFlds" xml:space="preserve">
+    <value>Account Optional Fields</value>
+  </data>
+  <data name="AcctQtySwitch" xml:space="preserve">
+    <value>Account Quantity Switch</value>
+  </data>
+  <data name="AcctSpecificCurrenciesSwitch" xml:space="preserve">
+    <value>Account Specific Currencies Switch</value>
+  </data>
+  <data name="AcctStatus" xml:space="preserve">
+    <value>Account Status</value>
+  </data>
+  <data name="AcctTransactionOptionalFlds" xml:space="preserve">
+    <value>Account Transaction Optional Fields</value>
+  </data>
+  <data name="CompanyId" xml:space="preserve">
+    <value>Company ID</value>
+  </data>
+  <data name="CurrencyRateSpread" xml:space="preserve">
+    <value>Currency Rate Spread</value>
+  </data>
+  <data name="DestExists" xml:space="preserve">
+    <value>Destination Exists</value>
+  </data>
+  <data name="DestHomeCurrencyDecimals" xml:space="preserve">
+    <value>Destination Home Currency Decimals</value>
+  </data>
+  <data name="DestMulticurrencySwitch" xml:space="preserve">
+    <value>Destination Multicurrency Switch</value>
+  </data>
+  <data name="DestOptionalFlds" xml:space="preserve">
+    <value>Destination Optional Fields</value>
+  </data>
+  <data name="DestQtyDecimals" xml:space="preserve">
+    <value>Destination Quantity Decimals</value>
+  </data>
+  <data name="DestQtySwitch" xml:space="preserve">
+    <value>Destination Quantity Switch</value>
+  </data>
+  <data name="DestStatus" xml:space="preserve">
+    <value>Destination Status</value>
+  </data>
+  <data name="DrillDownApplicationSource" xml:space="preserve">
+    <value>Drill Down Application Source</value>
+  </data>
+  <data name="DrillDownLinkNumber" xml:space="preserve">
+    <value>Drill Down Link Number</value>
+  </data>
+  <data name="DrillDownNumber" xml:space="preserve">
+    <value>Drill Down Number</value>
+  </data>
+  <data name="DrillDownType" xml:space="preserve">
+    <value>Drill Down Type</value>
+  </data>
+  <data name="ErrorBatch" xml:space="preserve">
+    <value>Error Batch</value>
+  </data>
+  <data name="ErrorEntry" xml:space="preserve">
+    <value>Error Entry</value>
+  </data>
+  <data name="NumberofDetails" xml:space="preserve">
+    <value>Number of Details</value>
+  </data>
+  <data name="OrigExists" xml:space="preserve">
+    <value>Original Exists</value>
+  </data>
+  <data name="OrigHomeCurrencyDecimals" xml:space="preserve">
+    <value>Original Home Currency Decimals</value>
+  </data>
+  <data name="OrigMulticurrencySwitch" xml:space="preserve">
+    <value>Original Multicurrency Switch</value>
+  </data>
+  <data name="OrigQtyDecimals" xml:space="preserve">
+    <value>Original Quantity Decimals</value>
+  </data>
+  <data name="OrigQtySwitch" xml:space="preserve">
+    <value>Original Quantity Switch</value>
+  </data>
+  <data name="OrigStatus" xml:space="preserve">
+    <value>Original Status</value>
+  </data>
+  <data name="Processswitches" xml:space="preserve">
+    <value>Process Switches</value>
+  </data>
+  <data name="RouteExists" xml:space="preserve">
+    <value>Route Exists</value>
+  </data>
+  <data name="RouteStatus" xml:space="preserve">
+    <value>Route Status</value>
+  </data>
+  <data name="SourceCodeExists" xml:space="preserve">
+    <value>Source Code Exists</value>
+  </data>
+  <data name="SourceCodeExists1" xml:space="preserve">
+    <value>Source Code Exists</value>
+  </data>
+  <data name="SourceCurrencyAmount" xml:space="preserve">
+    <value>Source Currency Amount</value>
+  </data>
+  <data name="SpecificReversalPeriod1" xml:space="preserve">
+    <value>Specific Reversal Period</value>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Value Set</value>
+  </data>
+  <data name="DrillDown" xml:space="preserve">
+    <value>Drill Down to Source Transaction</value>
+    <comment>Drill Down button tooltip</comment>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Document Date</value>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>Entered By</value>
+  </data>
+  <data name="Allocated" xml:space="preserve">
+    <value>Allocated</value>
+  </data>
+  <data name="AutoReversal" xml:space="preserve">
+    <value>Auto Reversal</value>
+  </data>
+  <data name="AutoReversalOff" xml:space="preserve">
+    <value>Auto Reversal Off</value>
+  </data>
+  <data name="BatchNumber1" xml:space="preserve">
+    <value>Batch Number</value>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>Credit Note</value>
+  </data>
+  <data name="Credits" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="CustomerVendorNumber" xml:space="preserve">
+    <value>Customer/Vendor Number</value>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>Debit Note</value>
+  </data>
+  <data name="Debits" xml:space="preserve">
+    <value>Debits</value>
+  </data>
+  <data name="Description1" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>Divide</value>
+  </data>
+  <data name="DocumentDate1" xml:space="preserve">
+    <value>Document Date</value>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Reference Document</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Document Type</value>
+  </data>
+  <data name="DrillDownApplicationSource1" xml:space="preserve">
+    <value>Drill Down Application Source</value>
+  </data>
+  <data name="DrillDownLinkNumber1" xml:space="preserve">
+    <value>Drill Down Link Number</value>
+  </data>
+  <data name="DrillDownType1" xml:space="preserve">
+    <value>Drill Down Type</value>
+  </data>
+  <data name="EnteredBy1" xml:space="preserve">
+    <value>Entered By</value>
+  </data>
+  <data name="Entity1" xml:space="preserve">
+    <value>GL JournalHeader</value>
+  </data>
+  <data name="EntryNumber1" xml:space="preserve">
+    <value>Entry Number</value>
+  </data>
+  <data name="ErrorBatch1" xml:space="preserve">
+    <value>Error Batch</value>
+  </data>
+  <data name="ErrorEntry1" xml:space="preserve">
+    <value>Error Entry</value>
+  </data>
+  <data name="Expense" xml:space="preserve">
+    <value>Expense</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>Fiscal Period</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>Fiscal Year</value>
+  </data>
+  <data name="FunctionalAllocatedAmount1" xml:space="preserve">
+    <value>Functional Allocated Amount 1</value>
+  </data>
+  <data name="FunctionalAllocatedAmount2" xml:space="preserve">
+    <value>Functional Allocated Amount 2</value>
+  </data>
+  <data name="FunctionalAllocatedAmount3" xml:space="preserve">
+    <value>Functional Allocated Amount 3</value>
+  </data>
+  <data name="FunctionalAllocatedAmount4" xml:space="preserve">
+    <value>Functional Allocated Amount 4</value>
+  </data>
+  <data name="FunctionalAllocatedAmount5" xml:space="preserve">
+    <value>Functional Allocated Amount 5</value>
+  </data>
+  <data name="FunctionalExpensedAmount1" xml:space="preserve">
+    <value>Functional Expensed Amount 1</value>
+  </data>
+  <data name="FunctionalExpensedAmount2" xml:space="preserve">
+    <value>Functional Expensed Amount 2</value>
+  </data>
+  <data name="FunctionalExpensedAmount3" xml:space="preserve">
+    <value>Functional Expensed Amount 3</value>
+  </data>
+  <data name="FunctionalExpensedAmount4" xml:space="preserve">
+    <value>Functional Expensed Amount 4</value>
+  </data>
+  <data name="FunctionalExpensedAmount5" xml:space="preserve">
+    <value>Functional Expensed Amount 5</value>
+  </data>
+  <data name="FunctionalRecoverableAmount1" xml:space="preserve">
+    <value>Functional Recoverable Amount 1</value>
+  </data>
+  <data name="FunctionalRecoverableAmount2" xml:space="preserve">
+    <value>Functional Recoverable Amount 2</value>
+  </data>
+  <data name="FunctionalRecoverableAmount3" xml:space="preserve">
+    <value>Functional Recoverable Amount 3</value>
+  </data>
+  <data name="FunctionalRecoverableAmount4" xml:space="preserve">
+    <value>Functional Recoverable Amount 4</value>
+  </data>
+  <data name="FunctionalRecoverableAmount5" xml:space="preserve">
+    <value>Functional Recoverable Amount 5</value>
+  </data>
+  <data name="FunctionalTaxAmount1" xml:space="preserve">
+    <value>Functional Tax Amount 1</value>
+  </data>
+  <data name="FunctionalTaxAmount2" xml:space="preserve">
+    <value>Functional Tax Amount 2</value>
+  </data>
+  <data name="FunctionalTaxAmount3" xml:space="preserve">
+    <value>Functional Tax Amount 3</value>
+  </data>
+  <data name="FunctionalTaxAmount4" xml:space="preserve">
+    <value>Functional Tax Amount 4</value>
+  </data>
+  <data name="FunctionalTaxAmount5" xml:space="preserve">
+    <value>Functional Tax Amount 5</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount1" xml:space="preserve">
+    <value>Functional Tax Base Amount 1</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount2" xml:space="preserve">
+    <value>Functional Tax Base Amount 2</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount3" xml:space="preserve">
+    <value>Functional Tax Base Amount 3</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount4" xml:space="preserve">
+    <value>Functional Tax Base Amount 4</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount5" xml:space="preserve">
+    <value>Functional Tax Base Amount 5</value>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>Interest</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="Liability" xml:space="preserve">
+    <value>Liability</value>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>Multiply</value>
+  </data>
+  <data name="NextPeriod" xml:space="preserve">
+    <value>Next Period</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="NumberOfDetails1" xml:space="preserve">
+    <value>Number of Details</value>
+  </data>
+  <data name="OrigDescription1" xml:space="preserve">
+    <value>Orig Description</value>
+  </data>
+  <data name="OrigExists1" xml:space="preserve">
+    <value>Orig Exists</value>
+  </data>
+  <data name="OrigHomeCurrency" xml:space="preserve">
+    <value>Orig Home Currency</value>
+  </data>
+  <data name="OrigHomeCurrencyDecimals1" xml:space="preserve">
+    <value>Orig Home Currency Decimals</value>
+  </data>
+  <data name="Originator1" xml:space="preserve">
+    <value>Originator</value>
+  </data>
+  <data name="OrigMulticurrencySwitch1" xml:space="preserve">
+    <value>Orig Multicurrency Switch</value>
+  </data>
+  <data name="OrigQtyDecimals1" xml:space="preserve">
+    <value>Orig Qty Decimals</value>
+  </data>
+  <data name="OrigQtySwitch1" xml:space="preserve">
+    <value>Orig Qty Switch</value>
+  </data>
+  <data name="OrigStatus1" xml:space="preserve">
+    <value>Orig Status</value>
+  </data>
+  <data name="OutOfBalanceBy1" xml:space="preserve">
+    <value>Out of Balance By</value>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>Posting Date</value>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>Prepayment</value>
+  </data>
+  <data name="ProcessSwitches1" xml:space="preserve">
+    <value>Process switches</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>Receipt</value>
+  </data>
+  <data name="Recoverable" xml:space="preserve">
+    <value>Recoverable</value>
+  </data>
+  <data name="RefreshSourceLedgerField" xml:space="preserve">
+    <value>Refresh Source Ledger Field</value>
+  </data>
+  <data name="Refund" xml:space="preserve">
+    <value>Refund</value>
+  </data>
+  <data name="RESERVEDJournalEdit" xml:space="preserve">
+    <value>RESERVED Journal Edit</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="SourceCodeDescription1" xml:space="preserve">
+    <value>Source Code Description</value>
+  </data>
+  <data name="SourceCodeExists2" xml:space="preserve">
+    <value>Source Code Exists</value>
+  </data>
+  <data name="SourceLedger1" xml:space="preserve">
+    <value>Source Ledger</value>
+  </data>
+  <data name="SourceType1" xml:space="preserve">
+    <value>Source Type</value>
+  </data>
+  <data name="SpecificPeriod" xml:space="preserve">
+    <value>Specific Period</value>
+  </data>
+  <data name="SpecificReversalPeriod2" xml:space="preserve">
+    <value>Specific Reversal Period</value>
+  </data>
+  <data name="SpecificReversalYear1" xml:space="preserve">
+    <value>Specific Reversal Year</value>
+  </data>
+  <data name="TaxAccountType" xml:space="preserve">
+    <value>Tax Account Type</value>
+  </data>
+  <data name="TaxAllocatedAmount1" xml:space="preserve">
+    <value>Tax Allocated Amount 1</value>
+  </data>
+  <data name="TaxAllocatedAmount2" xml:space="preserve">
+    <value>Tax Allocated Amount 2</value>
+  </data>
+  <data name="TaxAllocatedAmount3" xml:space="preserve">
+    <value>Tax Allocated Amount 3</value>
+  </data>
+  <data name="TaxAllocatedAmount4" xml:space="preserve">
+    <value>Tax Allocated Amount 4</value>
+  </data>
+  <data name="TaxAllocatedAmount5" xml:space="preserve">
+    <value>Tax Allocated Amount 5</value>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>Tax Amount 1</value>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>Tax Amount 2</value>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>Tax Amount 3</value>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>Tax Amount 4</value>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>Tax Amount 5</value>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>Tax Authority</value>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>Tax Authority 1</value>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>Tax Authority 2</value>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>Tax Authority 3</value>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>Tax Authority 4</value>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>Tax Authority 5</value>
+  </data>
+  <data name="TaxBaseAmount1" xml:space="preserve">
+    <value>Tax Base Amount 1</value>
+  </data>
+  <data name="TaxBaseAmount2" xml:space="preserve">
+    <value>Tax Base Amount 2</value>
+  </data>
+  <data name="TaxBaseAmount3" xml:space="preserve">
+    <value>Tax Base Amount 3</value>
+  </data>
+  <data name="TaxBaseAmount4" xml:space="preserve">
+    <value>Tax Base Amount 4</value>
+  </data>
+  <data name="TaxBaseAmount5" xml:space="preserve">
+    <value>Tax Base Amount 5</value>
+  </data>
+  <data name="TaxExpenseAccount1" xml:space="preserve">
+    <value>Tax Expense Account 1</value>
+  </data>
+  <data name="TaxExpenseAccount2" xml:space="preserve">
+    <value>Tax Expense Account 2</value>
+  </data>
+  <data name="TaxExpenseAccount3" xml:space="preserve">
+    <value>Tax Expense Account 3</value>
+  </data>
+  <data name="TaxExpenseAccount4" xml:space="preserve">
+    <value>Tax Expense Account 4</value>
+  </data>
+  <data name="TaxExpenseAccount5" xml:space="preserve">
+    <value>Tax Expense Account 5</value>
+  </data>
+  <data name="TaxExpenseAmount1" xml:space="preserve">
+    <value>Tax Expense Amount 1</value>
+  </data>
+  <data name="TaxExpenseAmount2" xml:space="preserve">
+    <value>Tax Expense Amount 2</value>
+  </data>
+  <data name="TaxExpenseAmount3" xml:space="preserve">
+    <value>Tax Expense Amount 3</value>
+  </data>
+  <data name="TaxExpenseAmount4" xml:space="preserve">
+    <value>Tax Expense Amount 4</value>
+  </data>
+  <data name="TaxExpenseAmount5" xml:space="preserve">
+    <value>Tax Expense Amount 5</value>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>Tax Group</value>
+  </data>
+  <data name="TaxItemClass1" xml:space="preserve">
+    <value>Tax Item Class 1</value>
+  </data>
+  <data name="TaxItemClass2" xml:space="preserve">
+    <value>Tax Item Class 2</value>
+  </data>
+  <data name="TaxItemClass3" xml:space="preserve">
+    <value>Tax Item Class 3</value>
+  </data>
+  <data name="TaxItemClass4" xml:space="preserve">
+    <value>Tax Item Class 4</value>
+  </data>
+  <data name="TaxItemClass5" xml:space="preserve">
+    <value>Tax Item Class 5</value>
+  </data>
+  <data name="TaxRate1" xml:space="preserve">
+    <value>Tax Rate 1</value>
+  </data>
+  <data name="TaxRate2" xml:space="preserve">
+    <value>Tax Rate 2</value>
+  </data>
+  <data name="TaxRate3" xml:space="preserve">
+    <value>Tax Rate 3</value>
+  </data>
+  <data name="TaxRate4" xml:space="preserve">
+    <value>Tax Rate 4</value>
+  </data>
+  <data name="TaxRate5" xml:space="preserve">
+    <value>Tax Rate 5</value>
+  </data>
+  <data name="TaxRecoverableAccount1" xml:space="preserve">
+    <value>Tax Recoverable Account 1</value>
+  </data>
+  <data name="TaxRecoverableAccount2" xml:space="preserve">
+    <value>Tax Recoverable Account 2</value>
+  </data>
+  <data name="TaxRecoverableAccount3" xml:space="preserve">
+    <value>Tax Recoverable Account 3</value>
+  </data>
+  <data name="TaxRecoverableAccount4" xml:space="preserve">
+    <value>Tax Recoverable Account 4</value>
+  </data>
+  <data name="TaxRecoverableAccount5" xml:space="preserve">
+    <value>Tax Recoverable Account 5</value>
+  </data>
+  <data name="TaxRecoverableAmount1" xml:space="preserve">
+    <value>Tax Recoverable Amount 1</value>
+  </data>
+  <data name="TaxRecoverableAmount2" xml:space="preserve">
+    <value>Tax Recoverable Amount 2</value>
+  </data>
+  <data name="TaxRecoverableAmount3" xml:space="preserve">
+    <value>Tax Recoverable Amount 3</value>
+  </data>
+  <data name="TaxRecoverableAmount4" xml:space="preserve">
+    <value>Tax Recoverable Amount 4</value>
+  </data>
+  <data name="TaxRecoverableAmount5" xml:space="preserve">
+    <value>Tax Recoverable Amount 5</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount1" xml:space="preserve">
+    <value>Tax Reporting Allocated Amount 1</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount2" xml:space="preserve">
+    <value>Tax Reporting Allocated Amount 2</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount3" xml:space="preserve">
+    <value>Tax Reporting Allocated Amount 3</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount4" xml:space="preserve">
+    <value>Tax Reporting Allocated Amount 4</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount5" xml:space="preserve">
+    <value>Tax Reporting Allocated Amount 5</value>
+  </data>
+  <data name="TaxReportingAmount1" xml:space="preserve">
+    <value>Tax Reporting Amount 1</value>
+  </data>
+  <data name="TaxReportingAmount2" xml:space="preserve">
+    <value>Tax Reporting Amount 2</value>
+  </data>
+  <data name="TaxReportingAmount3" xml:space="preserve">
+    <value>Tax Reporting Amount 3</value>
+  </data>
+  <data name="TaxReportingAmount4" xml:space="preserve">
+    <value>Tax Reporting Amount 4</value>
+  </data>
+  <data name="TaxReportingAmount5" xml:space="preserve">
+    <value>Tax Reporting Amount 5</value>
+  </data>
+  <data name="TaxReportingCurrencyCode" xml:space="preserve">
+    <value>Currency Code</value>
+  </data>
+  <data name="TaxReportingExpensed1" xml:space="preserve">
+    <value>Tax Reporting Expensed 1</value>
+  </data>
+  <data name="TaxReportingExpensed2" xml:space="preserve">
+    <value>Tax Reporting Expensed 2</value>
+  </data>
+  <data name="TaxReportingExpensed3" xml:space="preserve">
+    <value>Tax Reporting Expensed 3</value>
+  </data>
+  <data name="TaxReportingExpensed4" xml:space="preserve">
+    <value>Tax Reporting Expensed 4</value>
+  </data>
+  <data name="TaxReportingExpensed5" xml:space="preserve">
+    <value>Tax Reporting Expensed 5</value>
+  </data>
+  <data name="TaxReportingRate" xml:space="preserve">
+    <value>Exchange Rate</value>
+  </data>
+  <data name="TaxReportingRateDate" xml:space="preserve">
+    <value>Rate Date</value>
+  </data>
+  <data name="TaxReportingRateOperation" xml:space="preserve">
+    <value>Tax Reporting Rate Operation</value>
+  </data>
+  <data name="TaxReportingRateType" xml:space="preserve">
+    <value>Rate Type</value>
+  </data>
+  <data name="TaxTransactionType" xml:space="preserve">
+    <value>Tax Transaction Type</value>
+  </data>
+  <data name="TaxVendorClass1" xml:space="preserve">
+    <value>Tax Vendor Class 1</value>
+  </data>
+  <data name="TaxVendorClass2" xml:space="preserve">
+    <value>Tax Vendor Class 2</value>
+  </data>
+  <data name="TaxVendorClass3" xml:space="preserve">
+    <value>Tax Vendor Class 3</value>
+  </data>
+  <data name="TaxVendorClass4" xml:space="preserve">
+    <value>Tax Vendor Class 4</value>
+  </data>
+  <data name="TaxVendorClass5" xml:space="preserve">
+    <value>Tax Vendor Class 5</value>
+  </data>
+  <data name="TXRECVB1RC" xml:space="preserve">
+    <value>Tax Reporting Recoverable Amount</value>
+  </data>
+  <data name="TXRECVB2RC" xml:space="preserve">
+    <value>Tax Reporting Recoverable Amount</value>
+  </data>
+  <data name="TXRECVB3RC" xml:space="preserve">
+    <value>Tax Reporting Recoverable Amount</value>
+  </data>
+  <data name="TXRECVB4RC" xml:space="preserve">
+    <value>Tax Reporting Recoverable Amount</value>
+  </data>
+  <data name="TXRECVB5RC" xml:space="preserve">
+    <value>Tax Reporting Recoverable Amount</value>
+  </data>
+  <data name="UnappliedCash" xml:space="preserve">
+    <value>Unapplied Cash</value>
+  </data>
+  <data name="DrillDownTaxDetail" xml:space="preserve">
+    <value>G/L Tax Details</value>
+  </data>
+  <data name="TaxAllocated" xml:space="preserve">
+    <value>Allocated Amount</value>
+  </data>
+  <data name="TaxExpense" xml:space="preserve">
+    <value>Expense Amount</value>
+  </data>
+  <data name="TaxRecoverable" xml:space="preserve">
+    <value>Recoverable Amount</value>
+  </data>
+  <data name="ItemTaxClass" xml:space="preserve">
+    <value>Item Tax Class</value>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>Tax Group Description</value>
+  </data>
+  <data name="TaxAuthorityDesc" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="TaxAuthorityDescription1" xml:space="preserve">
+    <value>Tax Authority Description 1</value>
+  </data>
+  <data name="TaxAuthorityDescription2" xml:space="preserve">
+    <value>Tax Authority Description 2</value>
+  </data>
+  <data name="TaxAuthorityDescription3" xml:space="preserve">
+    <value>Tax Authority Description 3</value>
+  </data>
+  <data name="TaxAuthorityDescription4" xml:space="preserve">
+    <value>Tax Authority Description 4</value>
+  </data>
+  <data name="TaxAuthorityDescription5" xml:space="preserve">
+    <value>Tax Authority Description 5</value>
+  </data>
+  <data name="CreateTaxDetail" xml:space="preserve">
+    <value>Create Tax Details</value>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>Customer Number</value>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>Vendor Number</value>
+  </data>
+  <data name="CustomerTaxClass" xml:space="preserve">
+    <value>Customer Tax Class</value>
+  </data>
+  <data name="GLTaxDetails" xml:space="preserve">
+    <value>Summary of Tax Details</value>
+  </data>
+  <data name="VendorTaxClass" xml:space="preserve">
+    <value>Vendor Tax Class</value>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>Vendor Name</value>
+  </data>
+  <data name="CurrencyCodeDescription" xml:space="preserve">
+    <value>Currency Code Description</value>
+  </data>
+  <data name="RateTypeDescription" xml:space="preserve">
+    <value>Rate Type Description</value>
+  </data>
+  <data name="TaxReportCaption" xml:space="preserve">
+    <value>Currency Rate</value>
+  </data>
+  <data name="PurchasesTax" xml:space="preserve">
+    <value>Purchases Tax</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>Regular</value>
+  </data>
+  <data name="SalesTax" xml:space="preserve">
+    <value>Sales Tax</value>
+  </data>
+  <data name="EntryType" xml:space="preserve">
+    <value>Entry Type</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="DocumentTotal" xml:space="preserve">
+    <value>Document Total</value>
+  </data>
+</root>

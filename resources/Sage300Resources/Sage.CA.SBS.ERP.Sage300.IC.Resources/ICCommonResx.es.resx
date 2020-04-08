@@ -1,0 +1,2790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A" xml:space="preserve">
+    <value>A</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Acerca de...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AccountSet" xml:space="preserve">
+    <value>Grupo de Cuentas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AccountSetCode" xml:space="preserve">
+    <value>Código Grupo de Cuentas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Acct" xml:space="preserve">
+    <value>Cuenta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ActualCost" xml:space="preserve">
+    <value>Costo Real</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdditionalCost" xml:space="preserve">
+    <value>Costo Adicional</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdditionalItemInformation" xml:space="preserve">
+    <value>Información Adicional del Artículo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Dirección</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdjSerialNos" xml:space="preserve">
+    <value>Números de Serie Ajustados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Adjusted" xml:space="preserve">
+    <value>Ajustado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Ajuste</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdjustmentLower" xml:space="preserve">
+    <value>ajuste</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdjustmentNumber" xml:space="preserve">
+    <value>Número de Ajuste</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Adjustments" xml:space="preserve">
+    <value>Ajustes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AdjustSerialNos" xml:space="preserve">
+    <value>Ajustando Números de Serie de {0} en {1}</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>Alinear</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllLocations" xml:space="preserve">
+    <value>Todas las Ubicaciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Allocated" xml:space="preserve">
+    <value>Asignado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllocatedSerialNo" xml:space="preserve">
+    <value>Números de Serie Asignados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllocateSerialNos" xml:space="preserve">
+    <value>Asignando Números de Serie de {0} en {1}</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowLotQtyDif" xml:space="preserve">
+    <value>Admitir que Cantidad de N° Lote sea Diferente de Cantidad en Asientos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AllowSerQtyDif" xml:space="preserve">
+    <value>Admitir que Cantidad de N° Serie sea Diferente de Cantidad en Asientos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Monto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AsatYear" xml:space="preserve">
+    <value>Al Año</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AsAtYearPeriod" xml:space="preserve">
+    <value>Al Año/Período</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Assemblies" xml:space="preserve">
+    <value>Ensambles</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Assembly" xml:space="preserve">
+    <value>Ensamble</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AssemblyLower" xml:space="preserve">
+    <value>ensamble</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AssemblyNumber" xml:space="preserve">
+    <value>Número de Ensamble</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Authority" xml:space="preserve">
+    <value>Autoridad Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AutoAlloc" xml:space="preserve">
+    <value>Autoasignar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AutoClear" xml:space="preserve">
+    <value>Borrado Automático</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AutoGenerate" xml:space="preserve">
+    <value>Autogenerar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AutoGenfrom" xml:space="preserve">
+    <value>Autogenerar desde</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>Disponible</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AvailSerialNo" xml:space="preserve">
+    <value>Número de Serie Disponible</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AverageCost" xml:space="preserve">
+    <value>Costo Promedio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="B" xml:space="preserve">
+    <value>B</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BasePrice" xml:space="preserve">
+    <value>Precio Base</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BasePriceType" xml:space="preserve">
+    <value>Tipo de Precio Base</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BaseWeightUnit" xml:space="preserve">
+    <value>Unidad de Peso Base</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Batch" xml:space="preserve">
+    <value>Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BOM" xml:space="preserve">
+    <value>L.MAT</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BOMNumber" xml:space="preserve">
+    <value>Número de L.MAT</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Both" xml:space="preserve">
+    <value>Ambos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Explorar...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BuildQuantity" xml:space="preserve">
+    <value>Cantidad Completa</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="C" xml:space="preserve">
+    <value>C</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Categoría</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CategoryCode" xml:space="preserve">
+    <value>Código de Categoría</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Verificar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CheckBase" xml:space="preserve">
+    <value>Base de Verificación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Ciudad</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ClearSerials" xml:space="preserve">
+    <value>¿Seguro que desea borrar los números de serie?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Código</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CombineNumber" xml:space="preserve">
+    <value>Número de Combinación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comentario</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentarios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ComponentItemNumber" xml:space="preserve">
+    <value>Número de Artículo Componente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ConsumableExpense" xml:space="preserve">
+    <value>Uso Interno</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contacto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Contenido</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContinuePost" xml:space="preserve">
+    <value>¿Desea continuar el asentamiento?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Contrato</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContractCode" xml:space="preserve">
+    <value>Código de Contrato</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContractPrice" xml:space="preserve">
+    <value>Precio de Contrato</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Convert" xml:space="preserve">
+    <value>Convertir</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Costo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CostBase" xml:space="preserve">
+    <value>Costo Base</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CostingError" xml:space="preserve">
+    <value>Ha ocurrido un problema y no se pudo concluir el cálculo de costos.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CostingMeterCaption" xml:space="preserve">
+    <value>Cálculo de Costos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CostingMethod" xml:space="preserve">
+    <value>Método de Cálculo de Costos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CostVariance" xml:space="preserve">
+    <value>Desviación de Costos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Conteo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Criteria" xml:space="preserve">
+    <value>Fijar Criterios...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Moneda</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Código de Moneda</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Nombre del Cliente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>Número de Cliente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustTaxClass" xml:space="preserve">
+    <value>Clase Fiscal del Cliente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CustVendNumber" xml:space="preserve">
+    <value>Número de Cliente/Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="D" xml:space="preserve">
+    <value>D</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DamageAcc" xml:space="preserve">
+    <value>Bienes Dañados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Días</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DaysonQuarantine" xml:space="preserve">
+    <value>Días en Cuarentena</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DaystoExpiry" xml:space="preserve">
+    <value>Días para Caducar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Predeterminado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultPriceList" xml:space="preserve">
+    <value>Lista de Precios Predeterminada</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DefaultWeightUOM" xml:space="preserve">
+    <value>UM de Peso Predeterminado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeletePostedSerial" xml:space="preserve">
+    <value>¿Eliminar el número de serie asentado {0} de {1}?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeletePriceCheck" xml:space="preserve">
+    <value>¿Eliminar la verificación de precio para {0}?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeletePriceCheckDef" xml:space="preserve">
+    <value>¿Eliminar la verificación de precio para el usuario predeterminado?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DeleteWorksheet" xml:space="preserve">
+    <value>¿Eliminar la hoja de trabajo de inventario para la ubicación {0}?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detalle...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Detail1" xml:space="preserve">
+    <value>Detalle</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Details1" xml:space="preserve">
+    <value>Detalles</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Disassembled" xml:space="preserve">
+    <value>Desensamblado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Disassembly" xml:space="preserve">
+    <value>Desensamble</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DisassemblyLower" xml:space="preserve">
+    <value>desensamble</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DiscountonPriceby" xml:space="preserve">
+    <value>Descuento de Precio en</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DiscountPercentage" xml:space="preserve">
+    <value>Porcentaje de Descuento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Discounts" xml:space="preserve">
+    <value>Descuentos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Número de Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Tipo de Documento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="E" xml:space="preserve">
+    <value>E</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Correo Electrónico</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Fecha de Fin</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Ends" xml:space="preserve">
+    <value>Final</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>Ingresado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EnterNewSerialNo" xml:space="preserve">
+    <value>Ingrese un Número de Serie Nuevo para {0}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Control de Inventario</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Entry" xml:space="preserve">
+    <value>Asiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorAdjPluralNotMultipleOf" xml:space="preserve">
+    <value>Los números de serie ajustados deben ser múltiplos de {0}. Ha ajustado {1} números de serie. {2} no es un múltiplo de {3}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorAdjSingleNotMultipleOf" xml:space="preserve">
+    <value>Los números de serie ajustados deben ser múltiplos de {0}. Ha ajustado 1 número de serie. 1 no es un múltiplo de {1}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorAlcPluralNotMultipleOf" xml:space="preserve">
+    <value>La cantidad de números de serie asignados debe ser un múltiplo de {0}. Ha asignado {1} números de serie. {2} no es un múltiplo de {3}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorAlcSingleNotMultipleOf" xml:space="preserve">
+    <value>La cantidad de números de serie asignados debe ser un múltiplo de {0}. Ha asignado 1 número de serie. 1 no es un múltiplo de {1}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorConvOverflow" xml:space="preserve">
+    <value>Ha ocurrido un problema y no se pudieron generar los números de serie.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorConvZeroNoSave" xml:space="preserve">
+    <value>Se intentan guardar números de serie para cantidades fraccionarias cuando el factor de conversión es cero.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorExchangeRateZero" xml:space="preserve">
+    <value>El tipo de cambio debe ser mayor que cero.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorFdNotActiveFld" xml:space="preserve">
+    <value>El buscador no está activo para este campo.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorFiscalPeriodRange" xml:space="preserve">
+    <value>El período fiscal está fuera del rango válido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorGenPluralNotMultipleOf" xml:space="preserve">
+    <value>Los números de serie generados deben ser múltiplos de {0}. Ha generado {1} números de serie. {2} no es un múltiplo de {3}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorGenSingleNotMultipleOf" xml:space="preserve">
+    <value>Los números de serie generados deben ser múltiplos de {0}. Ha generado 1 número de serie. 1 no es un múltiplo de {1}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorNoClearHistory" xml:space="preserve">
+    <value>Antes de poder borrar el historial, todos los otros usuarios se deben desconectar.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorNoDeleteInactive" xml:space="preserve">
+    <value>Antes de poder borrar los registros inactivos, todos los otros usuarios se deben desconectar.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorNoOEPO" xml:space="preserve">
+    <value>Esta función no puede usarse porque tanto Ingreso de Órdenes como Órdenes de Compra están inactivas.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorNoWorksheetGenerated" xml:space="preserve">
+    <value>No existe ninguna hoja de trabajo de inventario generada para esta ubicación.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorPriceListNotExist" xml:space="preserve">
+    <value>El código de lista de precios no existe.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorReportExt" xml:space="preserve">
+    <value>Seleccione un archivo .RPT.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorRetPluralNotMultipleOf" xml:space="preserve">
+    <value>Los números de serie devueltos deben ser múltiplos de {0}. Ha devuelto {1} números de serie. {2} no es un múltiplo de {3}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorRetSingleNotMultipleOf" xml:space="preserve">
+    <value>Los números de serie devueltos deben ser múltiplos de {0}. Ha devuelto 1 número de serie. 1 no es un múltiplo de {1}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorSelectOneCostingMethod" xml:space="preserve">
+    <value>Debe seleccionar al menos un método de cálculo de costos.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorSerialDoesExist" xml:space="preserve">
+    <value>El nuevo número de serie ya está en uso.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorShpPluralNotMultipleOf" xml:space="preserve">
+    <value>Los números de serie enviados deben ser múltiplos de {0}. Ha enviado {1} números de serie. {2} no es un múltiplo de {3}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorShpSingleNotMultipleOf" xml:space="preserve">
+    <value>Los números de serie enviados deben ser múltiplos de {0}. Ha enviado 1 número de serie. 1 no es un múltiplo de {1}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorXfrPluralNotMultipleOf" xml:space="preserve">
+    <value>Los números de serie transferidos deben ser múltiplos de {0}. Ha transferido {1} números de serie. {2} no es un múltiplo de {3}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ErrorXfrSingleNotMultipleOf" xml:space="preserve">
+    <value>Los números de serie transferidos deben ser múltiplos de {0}. Ha transferido 1 número de serie. 1 no es un múltiplo de {1}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExistingSerialNo" xml:space="preserve">
+    <value>Número de Serie Existente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExpectedArrivalDate" xml:space="preserve">
+    <value>Fecha Prevista de Arribo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExpectedShipDate" xml:space="preserve">
+    <value>Fecha Prevista de Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Fecha de Vencimiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Exportar...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExtendedCost" xml:space="preserve">
+    <value>Costo Total</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>Archivo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Buscar...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>Primero</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ForEachPeriodSelected" xml:space="preserve">
+    <value>para Cada Período Seleccionado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromAccountSet" xml:space="preserve">
+    <value>Desde Grupo de Cuentas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>Desde Número de Artículo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromLocation" xml:space="preserve">
+    <value>Desde Ubicación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromPriceList" xml:space="preserve">
+    <value>Desde Lista de Precios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromPriceListCode" xml:space="preserve">
+    <value>Desde Código de Lista de Precios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromReceiptNo" xml:space="preserve">
+    <value>Desde Número de Recibo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromReceiptNumber" xml:space="preserve">
+    <value>Desde Número de Recibo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromYear" xml:space="preserve">
+    <value>Desde Año</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>Moneda Funcional</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GendSerialNos" xml:space="preserve">
+    <value>Números de Serie Generados</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GeneralLedgerAccounts" xml:space="preserve">
+    <value>Cuentas del Libro Mayor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Generar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>Generado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GenNext" xml:space="preserve">
+    <value>Generar Siguiente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GenSerialNos" xml:space="preserve">
+    <value>Generando Números de Serie de {0} en {1}</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GLAccounts" xml:space="preserve">
+    <value>Cuentas del LM</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GreaterthanFixedAmount" xml:space="preserve">
+    <value>Mayor que Monto Fijo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GreaterthanPercentage" xml:space="preserve">
+    <value>Mayor que Porcentaje</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IcSystemErrorNoDrilldownAVAIL" xml:space="preserve">
+    <value>La información de búsqueda detallada no está disponible para este registro.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importar...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactivo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InactiveItems" xml:space="preserve">
+    <value>Artículos Inactivos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IncludeComponentBOMs" xml:space="preserve">
+    <value>Incluir L.MAT de Componente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IncludeCostsForEachItem" xml:space="preserve">
+    <value>Incluir Costos para Cada Artículo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IncludeOptionalFields" xml:space="preserve">
+    <value>Incluir Campos Opcionales</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="IncludeSerialLotNumbers" xml:space="preserve">
+    <value>Incluir Números de Serie/Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>Integración</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InternalConsumptionNumber" xml:space="preserve">
+    <value>Número de Uso Interno</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InternalUsage" xml:space="preserve">
+    <value>Uso Interno</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InternalUsageLower" xml:space="preserve">
+    <value>uso interno</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InUnitSpecified" xml:space="preserve">
+    <value>en Unidad: {0}</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InUnitStock" xml:space="preserve">
+    <value>en Unidad de Medida de Almacenamiento del Artículo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InWeightUnitDefault" xml:space="preserve">
+    <value>en Unidad de Medida de Peso Predeterminada</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Artículo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ItemDescription" xml:space="preserve">
+    <value>Descripción de Artículo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>Número de Artículo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Artículos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Items1" xml:space="preserve">
+    <value>Artículos...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ItemSegment" xml:space="preserve">
+    <value>Segmento de Artículo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ItemStructure" xml:space="preserve">
+    <value>Estructura de Artículo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Labels" xml:space="preserve">
+    <value>Etiquetas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Último</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LeavePage" xml:space="preserve">
+    <value>Dejar Página</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Longitud</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LessthanFixedAmount" xml:space="preserve">
+    <value>Menor que Monto Fijo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LessthanPercentage" xml:space="preserve">
+    <value>Menor que Porcentaje</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LifeTime" xml:space="preserve">
+    <value>De Por Vida</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Número de Línea</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Ubicación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>Número de Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LotNumberMask" xml:space="preserve">
+    <value>Máscara de N° Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LotNumbers" xml:space="preserve">
+    <value>Números de Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Lots" xml:space="preserve">
+    <value>Lotes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LotTracking" xml:space="preserve">
+    <value>Seguimiento de Lote</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MainForm" xml:space="preserve">
+    <value>Formulario Principal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ManItemNumber" xml:space="preserve">
+    <value>Número de Artículo del Fabricante</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ManufItemNo" xml:space="preserve">
+    <value>N° Artículo de Fabric.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MappingItemNotSelected" xml:space="preserve">
+    <value>El artículo {0} existe en inventario como {1}, pero también es un número de artículo del fabricante para {2}. Si usted ingresa {0}, {2} no se seleccionará automáticamente.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MarginBase" xml:space="preserve">
+    <value>Margen Base</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MarkupAmount" xml:space="preserve">
+    <value>Monto de Recargo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MarkupCost" xml:space="preserve">
+    <value>Costo de Recargo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MarkupFactor" xml:space="preserve">
+    <value>Factor de Recargo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MarkupOnCostBy" xml:space="preserve">
+    <value>Recargo de Costo en</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MarkupUnit" xml:space="preserve">
+    <value>Unidad de Recargo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MarkupWeightUnit" xml:space="preserve">
+    <value>Unidad de Peso de Recargo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MaskOptionalFieldFromTable" xml:space="preserve">
+    <value>%-{0}N</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MaskOptionalFieldNoTable" xml:space="preserve">
+    <value>%-{0}c</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MaskSegment" xml:space="preserve">
+    <value>%-{0}N</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MneuAdjustment" xml:space="preserve">
+    <value>Ajuste</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MneuStructure" xml:space="preserve">
+    <value>Estructura</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MostRecentCost" xml:space="preserve">
+    <value>Costo Más Reciente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MultiplybyExchangeRate" xml:space="preserve">
+    <value>Multiplicar por Tipo de Cambio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="New1" xml:space="preserve">
+    <value>Nuevo...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NewSerialNo" xml:space="preserve">
+    <value>Número de Serie Nuevo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Siguiente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NextSN" xml:space="preserve">
+    <value>Ya existe el nuevo número de serie. ¿Desea crear el siguiente número de serie disponible?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Ninguno</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NotAutoGenerate" xml:space="preserve">
+    <value>No se pudo concluir la autogeneración de números de serie. Debe ingresar un número de serie nuevo.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>No Disponible</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NotDeletePostedSerial" xml:space="preserve">
+    <value>No se puede eliminar el número de serie asentado {0} de {1}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NotGenerate" xml:space="preserve">
+    <value>No se pudo generar el número de serie siguiente. Debe ingresar un número de serie nuevo.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NotGenerateSingle" xml:space="preserve">
+    <value>No se pudo generar el número de serie siguiente.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NullDate" xml:space="preserve">
+    <value>00/00/0000</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Abrir...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OpenReportDlgTitle" xml:space="preserve">
+    <value>Abrir Archivo de Reporte</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OpenScreen" xml:space="preserve">
+    <value>Abrir Pantalla</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OptionalFieldsFor" xml:space="preserve">
+    <value>Campos Opcionales de</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Número de Orden</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OrOE" xml:space="preserve">
+    <value>/IO</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OrPO" xml:space="preserve">
+    <value>/OC</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Percent" xml:space="preserve">
+    <value>Por Ciento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Percentag" xml:space="preserve">
+    <value>Porcentaje</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>Período</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PickingSequence" xml:space="preserve">
+    <value>Secuencia de Selección</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PMDetail" xml:space="preserve">
+    <value>P/M - Detalle</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PMOHacct" xml:space="preserve">
+    <value>Cuenta de Gastos Generales</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PMOHacctDesc" xml:space="preserve">
+    <value>Descripción de Cuenta de Gastos Generales</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PMOHAmt" xml:space="preserve">
+    <value>Monto de Gastos Generales</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PMWipacct" xml:space="preserve">
+    <value>Cuenta WIP</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PMWipacctDesc" xml:space="preserve">
+    <value>Descripción de Cuenta WIP</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PONumber" xml:space="preserve">
+    <value>Número de OC</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>Asentar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>Asentado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostEntry" xml:space="preserve">
+    <value>¿Desea asentar esto/a {0}?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostingCompleted" xml:space="preserve">
+    <value>Asentamiento concluido.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PostingFailed" xml:space="preserve">
+    <value>No se pudo asentar/guardar.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Prefix" xml:space="preserve">
+    <value>Prefijo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Anterior</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PriceBy" xml:space="preserve">
+    <value>Precio Según</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PriceCheck" xml:space="preserve">
+    <value>Verificación de Precio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PriceCheckType" xml:space="preserve">
+    <value>Tipo de Verificación de Precios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PriceDecimals" xml:space="preserve">
+    <value>Decimales en Precio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PriceDeterminedBy" xml:space="preserve">
+    <value>Precio Determinado Por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PriceList" xml:space="preserve">
+    <value>Lista de Precios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PriceListCode" xml:space="preserve">
+    <value>Código de Lista de Precios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PriceListEnds" xml:space="preserve">
+    <value>Fin Lista de Precios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PriceListStarts" xml:space="preserve">
+    <value>Inicio Lista de Precios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PricingDeterminedby" xml:space="preserve">
+    <value>Cálculo de Precios Determinado Por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PricingUnit" xml:space="preserve">
+    <value>Unidad de Cálculo de Precios</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Print1" xml:space="preserve">
+    <value>Imprimir...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintSetup" xml:space="preserve">
+    <value>Configuración de Impresora...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PrintTransList" xml:space="preserve">
+    <value>Imprimir Listado de Transacciones...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Process" xml:space="preserve">
+    <value>Procesar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Proyecto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PromptDelete" xml:space="preserve">
+    <value>¿Desea eliminar este {0} después del asentamiento? Si usted elige Sí, no podrá consultar los detalles de {1} más tarde o hacer búsquedas detalladas en los detalles del Libro Mayor. Si usted elige No, puede eliminar el {2} en Borrar Historial.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PurchaseTaxClass" xml:space="preserve">
+    <value>Clase de Impuesto a las Compras</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QtyNotMatching" xml:space="preserve">
+    <value>El número de series no coincide con la cantidad subyacente. Los ajustes de costos deben tener sólo una serie.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QtyNotMatchingAdjust" xml:space="preserve">
+    <value>El número de series no coincide con la cantidad subyacente. Si continúa, se ajustará la cantidad. ¿Desea continuar?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QtyNotMatchingExit" xml:space="preserve">
+    <value>El número de series no coincide con la cantidad subyacente. ¿Está seguro de que desea salir?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QtyNotMatchingPost" xml:space="preserve">
+    <value>El número de series no coincide con la cantidad subyacente. ¿Desea continuar el asentamiento?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QtyReceived" xml:space="preserve">
+    <value>Cant. Recibida</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Quantities" xml:space="preserve">
+    <value>Cantidades</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Cantidad</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuantityAvailable" xml:space="preserve">
+    <value>Cantidad Disponible</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuantityCounted" xml:space="preserve">
+    <value>Cantidad Contada</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuantityPurchased" xml:space="preserve">
+    <value>Cantidad Comprada</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuantityReceived" xml:space="preserve">
+    <value>Cantidad Recibida</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuantityShippable" xml:space="preserve">
+    <value>Cantidad Enviable</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuantityShipped" xml:space="preserve">
+    <value>Cantidad Enviada</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuantityVariance" xml:space="preserve">
+    <value>Desviación de Cantidad</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Fecha de Tasa</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RateOutOfRange" xml:space="preserve">
+    <value>La tasa de moneda ingresada se encuentra fuera del margen especificado en las tablas de monedas.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RateSelection" xml:space="preserve">
+    <value>Selección de Tasa</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>Tipo de Tasa de Cambio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecallNumber" xml:space="preserve">
+    <value>Número de Retiro</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>Recibo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReceiptLower" xml:space="preserve">
+    <value>recibo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReceiptNumber" xml:space="preserve">
+    <value>Número de Recibo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Receipts" xml:space="preserve">
+    <value>Recibos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Receipts1" xml:space="preserve">
+    <value>Recibo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReconciliationNumber" xml:space="preserve">
+    <value>Número de Conciliación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Referencia</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RegisteredDate" xml:space="preserve">
+    <value>Fecha de Registro</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReleaseNumber" xml:space="preserve">
+    <value>Número de Emisión</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>Remanente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Renumber" xml:space="preserve">
+    <value>Renumerar...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RenumberSerialNo" xml:space="preserve">
+    <value>Renumerar Número de Serie</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReportType" xml:space="preserve">
+    <value>Tipo de Reporte</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RequiredSerialNos" xml:space="preserve">
+    <value>Números de Serie Requeridos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReservedDate" xml:space="preserve">
+    <value>Fecha de Reservación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RestoreDefaults" xml:space="preserve">
+    <value>Borrar Especificaciones Guardadas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RetdSerialNos" xml:space="preserve">
+    <value>Números de Serie Devueltos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Devolución</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Returned" xml:space="preserve">
+    <value>Devuelto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ReturnLower" xml:space="preserve">
+    <value>devolución</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>Devoluciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RoundingMethod" xml:space="preserve">
+    <value>Método de Redondeo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RoundtoaMultipleof" xml:space="preserve">
+    <value>Redondear a un Múltiplo de</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaleEnds" xml:space="preserve">
+    <value>Final de Oferta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SalePrice" xml:space="preserve">
+    <value>Precio de Venta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SalePriceType" xml:space="preserve">
+    <value>Tipo Precio de Venta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>Ventas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaleStarts" xml:space="preserve">
+    <value>Inicio de Oferta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SalesTaxClass" xml:space="preserve">
+    <value>Clase de Impuesto a las Ventas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaleUnit" xml:space="preserve">
+    <value>Unidad de Venta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaleWeightUnit" xml:space="preserve">
+    <value>Unidad de Peso de Venta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaveAsDefaults" xml:space="preserve">
+    <value>Guardar Especificaciones como Predeterminadas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>¿Desea guardar los cambios realizados al artículo {0}?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaveDetail" xml:space="preserve">
+    <value>¿Desea guardar esta línea de detalle de {0}?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaveEntry" xml:space="preserve">
+    <value>¿Desea guardar este {0}?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SaveSerials" xml:space="preserve">
+    <value>¿Desea guardar los cambios de los números de serie?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Segment" xml:space="preserve">
+    <value>Segmento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SegmentName" xml:space="preserve">
+    <value>Nombre del Segmento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SegmentNo" xml:space="preserve">
+    <value>Número de Segmento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Selectby" xml:space="preserve">
+    <value>Seleccionar Por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectNearestMatchingSN" xml:space="preserve">
+    <value>El número de serie {0} no existe. ¿Desea seleccionar el número de serie próximo más cercano {1}?</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectProcess" xml:space="preserve">
+    <value>Seleccionar Proceso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SelectSNLT" xml:space="preserve">
+    <value>Tanto Inventario Serializado como Seguimiento de Lote están disponibles. Por favor, seleccione el proceso a ejecutar.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Sellable" xml:space="preserve">
+    <value>Vendible</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SellingPriceBasedon" xml:space="preserve">
+    <value>Precio de Venta en Base a</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SerializedInventory" xml:space="preserve">
+    <value>Inventario Serializado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Número de Serie</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SerialNumberExpired" xml:space="preserve">
+    <value>{0} ha caducado y no se puede vender.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SerialNumberMask" xml:space="preserve">
+    <value>Máscara de N° Serie</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SerialNumbers" xml:space="preserve">
+    <value>Números de Serie</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Serials" xml:space="preserve">
+    <value>Números de Serie</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Especificaciones</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Shipment" xml:space="preserve">
+    <value>Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShipmentLower" xml:space="preserve">
+    <value>envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShipmentNumber" xml:space="preserve">
+    <value>Número de Envío</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ShipmentReturns" xml:space="preserve">
+    <value>Envío/Devoluciones de Envíos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Shipments" xml:space="preserve">
+    <value>Envíos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Shipped" xml:space="preserve">
+    <value>Enviado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SnResetQtyHasFraction" xml:space="preserve">
+    <value>La cantidad subyacente no puede ser restablecida a un número fraccionario.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SoldDate" xml:space="preserve">
+    <value>Fecha de Venta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Sortby" xml:space="preserve">
+    <value>Clasificar por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SourceApp" xml:space="preserve">
+    <value>Aplic. de Origen</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpecificAndAllLocations" xml:space="preserve">
+    <value>Ubicaciones Específicas y Todas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SpecificLocation" xml:space="preserve">
+    <value>Ubicación Específica</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SplitNumber" xml:space="preserve">
+    <value>Número de Reparto</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StandardCost" xml:space="preserve">
+    <value>Costo Estándar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Fecha de Inicio</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StartingItemNumber" xml:space="preserve">
+    <value>Número de Artículo Inicial</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StartSerialNo" xml:space="preserve">
+    <value>Iniciar Número de Serie</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>Estado/Provincia</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>Fecha de Inventario</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StockingUnitOfMeasure" xml:space="preserve">
+    <value>Unidad de Medida de Almacenamiento</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="StructureCode" xml:space="preserve">
+    <value>Código de Estructura</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Resumen</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxAuthorityDescription" xml:space="preserve">
+    <value>Descripción Autoridad Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Impuestos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Teléfono</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ThroughDayEndNumber" xml:space="preserve">
+    <value>Hasta Número de Final de Día</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Hasta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToAccountSet" xml:space="preserve">
+    <value>Hasta Grupo de Cuentas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>Hasta Número de Artículo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToLocation" xml:space="preserve">
+    <value>Hasta Ubicación</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TotalCost" xml:space="preserve">
+    <value>Costo Total</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToYear" xml:space="preserve">
+    <value>Hasta Año</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransactionCost" xml:space="preserve">
+    <value>Costo de Transacción</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Fecha de Transacción</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>Transacciones...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Tipo de Transacción</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>Transferencia</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransferLower" xml:space="preserve">
+    <value>transferencia</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransferNumber" xml:space="preserve">
+    <value>Número de Transferencia</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Transferred" xml:space="preserve">
+    <value>Transferido</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransferredSerialNos" xml:space="preserve">
+    <value>Números de Serie Transferidos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Transfers" xml:space="preserve">
+    <value>Transferencias</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TransProcMeter" xml:space="preserve">
+    <value>Procesando Transacciones...</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UnitCost" xml:space="preserve">
+    <value>Costo Unitario</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UnitCostZero" xml:space="preserve">
+    <value>El costo unitario es cero.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>Unidad de Medida</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UnitWeight" xml:space="preserve">
+    <value>Peso Unitario</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Actualizar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>Usar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UseAsDefault" xml:space="preserve">
+    <value>Usar Como Predeterminado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UseLabel" xml:space="preserve">
+    <value>Usar Etiqueta</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Usuario</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UUnitU" xml:space="preserve">
+    <value>(Unidad: {0})</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>Nombre del Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>Número de Proveedor</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Vendors" xml:space="preserve">
+    <value>Proveedores</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Warranty" xml:space="preserve">
+    <value>Garantía</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>Peso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="WeightConv" xml:space="preserve">
+    <value>Conversión de Peso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="WeightConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión de Peso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="WeightUnitofMeasure" xml:space="preserve">
+    <value>Unidad de Medida de Peso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="WeightUOM" xml:space="preserve">
+    <value>UM de Peso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="WeightUOMDescription" xml:space="preserve">
+    <value>Descripción de UM de Peso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Año</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>Año/Período</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ZoomInOut" xml:space="preserve">
+    <value>Acercar/Alejar</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>Documentos</value>
+    <comment>Added</comment>
+  </data>
+  <data name="DeleteLineMessage" xml:space="preserve">
+    <value>¿Eliminar la o las líneas seleccionadas?</value>
+  </data>
+  <data name="DeleteFailedMessage" xml:space="preserve">
+    <value>{0} {1} y ninguno de los registros subsiguientes se eliminaron porque {0} {1} se usa en un registro de artículo.</value>
+    <comment>Validation Error. {0} is field name and {1} filed value name.</comment>
+  </data>
+  <data name="InvalidLength" xml:space="preserve">
+    <value>{0} debe tener una longitud de {1} caracteres</value>
+    <comment>Validation Error. {0} is field name and {1} is length.</comment>
+  </data>
+  <data name="Annually" xml:space="preserve">
+    <value>Anual</value>
+  </data>
+  <data name="AscendingPeriodsMessage" xml:space="preserve">
+    <value>Los períodos de vencimiento deben estar en orden ascendente.</value>
+  </data>
+  <data name="Bimonthly" xml:space="preserve">
+    <value>Bimestral</value>
+  </data>
+  <data name="Biweekly" xml:space="preserve">
+    <value>Quincenal</value>
+  </data>
+  <data name="CalendarYear" xml:space="preserve">
+    <value>Año Calendario</value>
+  </data>
+  <data name="ChangeAtYearEndMessage" xml:space="preserve">
+    <value>Debe cambiar esta opción sólo al final del año. Si la cambia parcialmente durante el año, edite las estadísticas para corregir los totales para cada período.</value>
+  </data>
+  <data name="DisassemblyNumber" xml:space="preserve">
+    <value>Número de Desensamble</value>
+  </data>
+  <data name="DocnumberTransitReceipt" xml:space="preserve">
+    <value>Número de Recibo de Transferencia</value>
+  </data>
+  <data name="DocumentAdjustmentNumber" xml:space="preserve">
+    <value>Número de Ajuste</value>
+  </data>
+  <data name="DocumentCombineNumber" xml:space="preserve">
+    <value>Número de Combinación</value>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Fecha del Documento</value>
+  </data>
+  <data name="FourWeeks" xml:space="preserve">
+    <value>Cuatro Semanas</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Leave" xml:space="preserve">
+    <value>Dejar</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Mensual</value>
+  </data>
+  <data name="Prorate" xml:space="preserve">
+    <value>Prorratear</value>
+  </data>
+  <data name="Quarterly" xml:space="preserve">
+    <value>Trimestral</value>
+  </data>
+  <data name="Semiannually" xml:space="preserve">
+    <value>Semestral</value>
+  </data>
+  <data name="SevenDays" xml:space="preserve">
+    <value>Siete Días</value>
+  </data>
+  <data name="ShipReturnNo" xml:space="preserve">
+    <value>Número de Devolución de Envío</value>
+  </data>
+  <data name="StructureCodeDescription" xml:space="preserve">
+    <value>Descripción Código de Estructura</value>
+  </data>
+  <data name="TransferReceiptNo" xml:space="preserve">
+    <value>Número de Recibo de Transferencia</value>
+  </data>
+  <data name="WarningSeparatorOnOff" xml:space="preserve">
+    <value>Después de fijar un Separador de Artículo en No (no se usa), usted no lo puede fijar nuevamente en Sí (Usar como Separador de Artículo). ¿Desea continuar?</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>Semanal</value>
+  </data>
+  <data name="ItemSeparatorAsterisk" xml:space="preserve">
+    <value>* Asterisco</value>
+    <comment>Added to display Asterisk in Item Separator grid</comment>
+  </data>
+  <data name="ItemSeparatorBackSlash" xml:space="preserve">
+    <value>\ Barra Oblicua Inversa</value>
+    <comment>Added to display Back Slash in Item Separator grid</comment>
+  </data>
+  <data name="ItemSeparatorForwardSlash" xml:space="preserve">
+    <value>/ Barra Oblicua</value>
+    <comment>Added to display Forward Slash in Item Separator grid</comment>
+  </data>
+  <data name="ItemSeparatorHeader" xml:space="preserve">
+    <value>Separador</value>
+    <comment>Added to display Separator in Item Separator grid Header</comment>
+  </data>
+  <data name="ItemSeparatorHyphen" xml:space="preserve">
+    <value>- Guión</value>
+    <comment>Added to display Hyphen in Item Separator grid</comment>
+  </data>
+  <data name="ItemSeparatorLeftParenthesis" xml:space="preserve">
+    <value>( Paréntesis Izquierdo</value>
+    <comment>Added to display Left Parenthesis in Item Separator grid </comment>
+  </data>
+  <data name="ItemSeparatorNumberSign" xml:space="preserve">
+    <value># Signo Numeral</value>
+    <comment>Added to display Number Sign in Item Separator grid</comment>
+  </data>
+  <data name="ItemSeparatorPeriod" xml:space="preserve">
+    <value>. Punto</value>
+    <comment>Added to display Period in Item Separator grid</comment>
+  </data>
+  <data name="ItemSeparatorRightParenthesis" xml:space="preserve">
+    <value>) Paréntesis Derecho</value>
+    <comment>Added to display Right Parenthesis in Item Separator grid</comment>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>No puede eliminar el o la {0} predeterminado/a. </value>
+  </data>
+  <data name="AdjustmentWriteOffs" xml:space="preserve">
+    <value>Ajuste por Cancelación</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="AssemblyCostCredit" xml:space="preserve">
+    <value>Crédito de Costo de Ensamble</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="CostofGoodsSold" xml:space="preserve">
+    <value>Costo de Bienes Vendidos</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="DisassemblyExpense" xml:space="preserve">
+    <value>Gasto de Desensamble</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="InventoryControl" xml:space="preserve">
+    <value>Control de Inventario</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="InventoryControlComponent" xml:space="preserve">
+    <value>Control de Inventario (Componente)</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="InventoryControlFromLocation" xml:space="preserve">
+    <value>Control de Inventario (Desde Ubicación)</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="InventoryControlGitLocation" xml:space="preserve">
+    <value>Control de Inventario (Ubicación GIT)</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="InventoryControlMasterItem" xml:space="preserve">
+    <value>Control de Inventario (Artículo Maestro)</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="InventoryControlToLocation" xml:space="preserve">
+    <value>Control de Inventario (Hasta Ubicación)</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="NonStockClearing" xml:space="preserve">
+    <value>No Almacenables a Compensar</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="PayablesClearing" xml:space="preserve">
+    <value>C/P a Compensar</value>
+    <comment>GL -Account </comment>
+  </data>
+  <data name="TransferClearing" xml:space="preserve">
+    <value>Transferencia a Compensar</value>
+    <comment>GL -Account</comment>
+  </data>
+  <data name="InvalidSegment" xml:space="preserve">
+    <value>El código de segmento no está definido en el Libro Mayor.</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Línea de Dirección 1</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Línea de Dirección 2</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AddressLine3" xml:space="preserve">
+    <value>Línea de Dirección 3</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AddressLine4" xml:space="preserve">
+    <value>Línea de Dirección 4</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Approval" xml:space="preserve">
+    <value>Aprobación</value>
+  </data>
+  <data name="CostPlusaFixedAmount" xml:space="preserve">
+    <value>Costo Más un Monto Fijo</value>
+  </data>
+  <data name="CostPlusaPercentage" xml:space="preserve">
+    <value>Costo Más un Porcentaje</value>
+  </data>
+  <data name="CustomerType" xml:space="preserve">
+    <value>Tipo de Cliente</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Descuento</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="FixedAmount" xml:space="preserve">
+    <value>Monto Fijo</value>
+  </data>
+  <data name="Landed" xml:space="preserve">
+    <value>Terreno</value>
+  </data>
+  <data name="LastCost" xml:space="preserve">
+    <value>Último Costo</value>
+  </data>
+  <data name="MarkuponAverageCost" xml:space="preserve">
+    <value>Recargo en Costo Promedio</value>
+  </data>
+  <data name="MarkuponLanded" xml:space="preserve">
+    <value>Recargo en Costo Descargado</value>
+  </data>
+  <data name="MarkuponLastCost" xml:space="preserve">
+    <value>Recargo en Último Costo</value>
+  </data>
+  <data name="MarkuponMarkupCost" xml:space="preserve">
+    <value>Recargo en Costo de Recargo</value>
+  </data>
+  <data name="MarkuponMostRecentCost" xml:space="preserve">
+    <value>Recargo en Costo Más Reciente</value>
+  </data>
+  <data name="MarkuponStandardCost" xml:space="preserve">
+    <value>Recargo en Costo Estándar</value>
+  </data>
+  <data name="NoRounding" xml:space="preserve">
+    <value>Sin Redondeo</value>
+  </data>
+  <data name="RoundDown" xml:space="preserve">
+    <value>Redondeo por Defecto</value>
+  </data>
+  <data name="RoundUp" xml:space="preserve">
+    <value>Redondeo por Exceso</value>
+  </data>
+  <data name="SalesMargin" xml:space="preserve">
+    <value>Margen de Ventas</value>
+  </data>
+  <data name="UnitPrice" xml:space="preserve">
+    <value>Precio Unitario</value>
+  </data>
+  <data name="VolumeDiscounts" xml:space="preserve">
+    <value>Descuentos por Volumen</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="TaxAuthNotExist" xml:space="preserve">
+    <value>No existe la autoridad fiscal.</value>
+  </data>
+  <data name="SalesTaxClassNotExist" xml:space="preserve">
+    <value>No se encuentra la Clase de Impuesto a las Ventas especificada.</value>
+  </data>
+  <data name="PurchaseTaxClassNotExist" xml:space="preserve">
+    <value>No se encuentra la Clase de Impuesto a las Compras especificada.</value>
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value>Número de Fax</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Número de Teléfono</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="CostVarianceAccount" xml:space="preserve">
+    <value>Cuenta de Desviación de Costos</value>
+  </data>
+  <data name="DamagedGoodsAccount" xml:space="preserve">
+    <value>Cuenta de Bienes Dañados</value>
+  </data>
+  <data name="DefaultPriceListCode" xml:space="preserve">
+    <value>Código de Lista de Precios Predeterminado</value>
+  </data>
+  <data name="InternalUsageAccount" xml:space="preserve">
+    <value>Cuenta de Uso Interno</value>
+  </data>
+  <data name="ReturnsAccount" xml:space="preserve">
+    <value>Cuenta de Devoluciones</value>
+  </data>
+  <data name="SalesAccount" xml:space="preserve">
+    <value>Cuenta de Ventas</value>
+  </data>
+  <data name="HasToBeGreaterThan" xml:space="preserve">
+    <value>&apos;{0}&apos; tiene que ser mayor que &apos;{1}&apos;.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="NotInRange" xml:space="preserve">
+    <value>{0} no está en un rango: {1} - {2}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MustBeBetween" xml:space="preserve">
+    <value>{0} debe estar entre {1} y {2}.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descripción</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="MustBeAscendingOrder" xml:space="preserve">
+    <value>{0} debe o deben estar en orden ascendente.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="QuantityPurchasedAmounts" xml:space="preserve">
+    <value>Montos de Cantidad Comprada</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="RecordExists" xml:space="preserve">
+    <value>Registro Existente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="WeightAmounts" xml:space="preserve">
+    <value>Montos de Peso</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="FromCustomerNumber" xml:space="preserve">
+    <value>Desde Número de Cliente</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ToCustomerNumber" xml:space="preserve">
+    <value>Hasta Número de Cliente</value>
+  </data>
+  <data name="UnitsOfMeasure" xml:space="preserve">
+    <value>Unidades de Medida</value>
+    <comment>Added for finder</comment>
+  </data>
+  <data name="ItemSummary" xml:space="preserve">
+    <value>Resumen de Número de Artículo</value>
+  </data>
+  <data name="PriceSummary" xml:space="preserve">
+    <value>Resumen de Lista de Precios</value>
+  </data>
+  <data name="RecordDoesNotExist" xml:space="preserve">
+    <value>{0}  y  &quot;{1}&quot; no existen.</value>
+  </data>
+  <data name="StartEndValueMessage" xml:space="preserve">
+    <value>El valor inicial es mayor que el valor final.</value>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>Descripción de Categoría</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Descripción de Artículo</value>
+  </data>
+  <data name="CalculatedPriceDecimals" xml:space="preserve">
+    <value>Decimales del Precio Calculado</value>
+  </data>
+  <data name="CalculatedUnitPrice" xml:space="preserve">
+    <value>Precio Unitario Calculado</value>
+  </data>
+  <data name="CheckItemExistence" xml:space="preserve">
+    <value>Verificar Existencia de Artículo</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Fecha de Caducidad</value>
+  </data>
+  <data name="FixedPrice" xml:space="preserve">
+    <value>Precio Fijo</value>
+  </data>
+  <data name="FormattedItemNumber" xml:space="preserve">
+    <value>Número de Artículo Formateado</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PlusAmount" xml:space="preserve">
+    <value>Más Monto</value>
+  </data>
+  <data name="PlusPercentage" xml:space="preserve">
+    <value>Más Porcentaje</value>
+  </data>
+  <data name="PriceListDescription" xml:space="preserve">
+    <value>Descripción de Lista de Precios</value>
+  </data>
+  <data name="PriceType" xml:space="preserve">
+    <value>Tipo de Precio</value>
+  </data>
+  <data name="PriceUnitDescription" xml:space="preserve">
+    <value>Descripción de Unidad de Precio</value>
+  </data>
+  <data name="PricingPriceBy" xml:space="preserve">
+    <value>Calcular Precio Por</value>
+  </data>
+  <data name="UseLowestPrice" xml:space="preserve">
+    <value>Usar el Precio Más Bajo</value>
+  </data>
+  <data name="CostPlusFixedAmount" xml:space="preserve">
+    <value>Costo más Monto Fijo</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>Base</value>
+  </data>
+  <data name="CalculatedUnitPriceIsValid" xml:space="preserve">
+    <value>El Precio Unitario Calculado Es Válido</value>
+  </data>
+  <data name="LastUnitCost" xml:space="preserve">
+    <value>Último Costo Unitario</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="SegmentCode" xml:space="preserve">
+    <value>Código de Segmento</value>
+    <comment>Segment Code finder title</comment>
+  </data>
+  <data name="CurrencyRate" xml:space="preserve">
+    <value>Tasa de Moneda</value>
+  </data>
+  <data name="AdjustmentType" xml:space="preserve">
+    <value>Tipo de Ajuste</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Nombre de Contacto</value>
+  </data>
+  <data name="DayEndNumber" xml:space="preserve">
+    <value>Número Final de Día</value>
+  </data>
+  <data name="DetailDescription" xml:space="preserve">
+    <value>Descripción de Detalle</value>
+  </data>
+  <data name="EntryNumber" xml:space="preserve">
+    <value>Número de Asiento</value>
+  </data>
+  <data name="EntryType" xml:space="preserve">
+    <value>Tipo de Asiento</value>
+  </data>
+  <data name="FromLocationName" xml:space="preserve">
+    <value>Desde Nombre de Ubicación</value>
+  </data>
+  <data name="GITLocation" xml:space="preserve">
+    <value>Ubicación GIT</value>
+  </data>
+  <data name="GITLocationName" xml:space="preserve">
+    <value>Nombre de Ubicación GIT</value>
+  </data>
+  <data name="LocationName" xml:space="preserve">
+    <value>Nombre de Ubicación</value>
+  </data>
+  <data name="PurchaseOrderNumber" xml:space="preserve">
+    <value>Número de Orden de Compra</value>
+  </data>
+  <data name="SourceCode" xml:space="preserve">
+    <value>Código de Origen</value>
+  </data>
+  <data name="ToLocationName" xml:space="preserve">
+    <value>Hasta Nombre de Ubicación</value>
+  </data>
+  <data name="UnformattedItemNumber" xml:space="preserve">
+    <value>N° Artículo Sin Formato</value>
+  </data>
+  <data name="Costed" xml:space="preserve">
+    <value>Costo Fijado</value>
+    <comment>Used in shipment screen</comment>
+  </data>
+  <data name="DayEndCompleted" xml:space="preserve">
+    <value>Final de Día Concluido</value>
+    <comment>Used in shipment screen</comment>
+  </data>
+  <data name="Seg1" xml:space="preserve">
+    <value>Segmento 1</value>
+  </data>
+  <data name="Seg10" xml:space="preserve">
+    <value>Segmento 10</value>
+  </data>
+  <data name="Seg2" xml:space="preserve">
+    <value>Segmento 2</value>
+  </data>
+  <data name="Seg3" xml:space="preserve">
+    <value>Segmento 3</value>
+  </data>
+  <data name="Seg4" xml:space="preserve">
+    <value>Segmento 4</value>
+  </data>
+  <data name="Seg5" xml:space="preserve">
+    <value>Segmento 5</value>
+  </data>
+  <data name="Seg6" xml:space="preserve">
+    <value>Segmento 6</value>
+  </data>
+  <data name="Seg7" xml:space="preserve">
+    <value>Segmento 7</value>
+  </data>
+  <data name="Seg8" xml:space="preserve">
+    <value>Segmento 8</value>
+  </data>
+  <data name="Seg9" xml:space="preserve">
+    <value>Segmento 9</value>
+  </data>
+  <data name="AccountSetDesc" xml:space="preserve">
+    <value>Descripción Grupo de Cuentas</value>
+  </data>
+  <data name="CurrencyCodes" xml:space="preserve">
+    <value>Códigos de Moneda</value>
+  </data>
+  <data name="Integer" xml:space="preserve">
+    <value>Entero</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Número</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Hora</value>
+  </data>
+  <data name="YesOrNo" xml:space="preserve">
+    <value>Sí/No</value>
+  </data>
+  <data name="StockTransfer" xml:space="preserve">
+    <value>Transferencia de Existencias</value>
+  </data>
+  <data name="InsertItemLotOptionalFields" xml:space="preserve">
+    <value>Insertar Campos Opcionales de N° Lote de Artículo</value>
+  </data>
+  <data name="InsertItemSerialOptionalFields" xml:space="preserve">
+    <value>Insertar Campos Opcionales de N° Serie de Artículo</value>
+  </data>
+  <data name="InsertOptionalFields" xml:space="preserve">
+    <value>Insertar Campos Opcionales</value>
+  </data>
+  <data name="NothingToProcess" xml:space="preserve">
+    <value>Nada para Procesar</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>Clientes</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DateInactive" xml:space="preserve">
+    <value>Fecha Inactiva</value>
+  </data>
+  <data name="DateLastMaintained" xml:space="preserve">
+    <value>Fecha Último Mantenimiento</value>
+  </data>
+  <data name="SaleStatictics" xml:space="preserve">
+    <value>Estadísticas de Venta</value>
+  </data>
+  <data name="OptionalFieldDesc" xml:space="preserve">
+    <value>Descripción Campo Opcional</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="ValueDesc" xml:space="preserve">
+    <value>Descripción de Valor</value>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valor Fijado</value>
+  </data>
+  <data name="CustomerTaxClassDescription" xml:space="preserve">
+    <value>Descripción de Clase Fiscal del Cliente</value>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>Autoridad Fiscal</value>
+    <comment>Used for finder</comment>
+  </data>
+  <data name="TaxClass" xml:space="preserve">
+    <value>Clase Fiscal</value>
+    <comment>Used for finder</comment>
+  </data>
+  <data name="GreaterthanAmount" xml:space="preserve">
+    <value>Mayor que Monto</value>
+  </data>
+  <data name="LessthanAmount" xml:space="preserve">
+    <value>Menor que Monto</value>
+  </data>
+  <data name="RateOperation" xml:space="preserve">
+    <value>Tasa de Operación</value>
+  </data>
+  <data name="RateOverride" xml:space="preserve">
+    <value>Sustitución de Tasa</value>
+  </data>
+  <data name="ReceiptType" xml:space="preserve">
+    <value>Tipo de Recibo</value>
+  </data>
+  <data name="SequenceNumber" xml:space="preserve">
+    <value>Número de Secuencia</value>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Correo-E de Contacto</value>
+  </data>
+  <data name="ContactFax" xml:space="preserve">
+    <value>Fax de Contacto</value>
+  </data>
+  <data name="ContactPhone" xml:space="preserve">
+    <value>Teléfono de Contacto</value>
+  </data>
+  <data name="LocationEmail" xml:space="preserve">
+    <value>Correo-E de Ubicación</value>
+  </data>
+  <data name="AllocateFromLot" xml:space="preserve">
+    <value>Asignar desde N° Lote</value>
+  </data>
+  <data name="AllocateFromSerial" xml:space="preserve">
+    <value>Asignar desde N° Serie</value>
+  </data>
+  <data name="CheckBelowZero" xml:space="preserve">
+    <value>Verificar por Debajo de Cero</value>
+  </data>
+  <data name="DetailLineNumber" xml:space="preserve">
+    <value>Número de Línea de Detalle</value>
+  </data>
+  <data name="ExtendedCostFunctional" xml:space="preserve">
+    <value>Costo Total - Funcional</value>
+  </data>
+  <data name="LotQuantity" xml:space="preserve">
+    <value>Cantidad N° Lote</value>
+  </data>
+  <data name="LotQuantityReturned" xml:space="preserve">
+    <value>Cantidad de N° Lote Devuelta</value>
+  </data>
+  <data name="ManufacturersItemNumber" xml:space="preserve">
+    <value>Número de Artículo del Fabricante</value>
+  </data>
+  <data name="NumberOfLotsToGenerate" xml:space="preserve">
+    <value>Cantidad de N° Lote a Generar</value>
+  </data>
+  <data name="OriginalExtendedCost" xml:space="preserve">
+    <value>Costo Total Original</value>
+  </data>
+  <data name="OriginalExtendedCostFunc" xml:space="preserve">
+    <value>Costo Total Original - Func</value>
+  </data>
+  <data name="OriginalReceiptQty" xml:space="preserve">
+    <value>Cant. de Recibo Original</value>
+  </data>
+  <data name="OriginalUnitCost" xml:space="preserve">
+    <value>Costo Unitario Original</value>
+  </data>
+  <data name="QuantityperLot" xml:space="preserve">
+    <value>Cantidad por Lote</value>
+  </data>
+  <data name="QuantityReturned" xml:space="preserve">
+    <value>Cantidad Devuelta</value>
+  </data>
+  <data name="SerialLotQuantityToProcess" xml:space="preserve">
+    <value>Cantidad de N° Lote/Serie a Procesar</value>
+  </data>
+  <data name="SerialLotWindowHandle" xml:space="preserve">
+    <value>Identificador de Ventana – N° Serie/Lote</value>
+  </data>
+  <data name="SerialQuantity" xml:space="preserve">
+    <value>Cantidad de N° Serie</value>
+  </data>
+  <data name="SerialQuantityReturned" xml:space="preserve">
+    <value>Cantidad de N° Serie Devuelta</value>
+  </data>
+  <data name="StockItem" xml:space="preserve">
+    <value>Artículo en Almacén</value>
+  </data>
+  <data name="VendorItemNumber" xml:space="preserve">
+    <value>Número Artículo del Proveedor</value>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>Fecha de Asentamiento</value>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Admitir en Blanco</value>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Valor Monto</value>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Valor Fecha</value>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimales</value>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Valor Entero</value>
+  </data>
+  <data name="LotQtyReturnedInStockingUOM" xml:space="preserve">
+    <value>Cant. N° Lote Devuelta en UM de Almacenam.</value>
+  </data>
+  <data name="LotQuantityInStockingUOM" xml:space="preserve">
+    <value>Cantidad de N° Lote en UM de Almacenamiento</value>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Valor Número</value>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Campo Opcional</value>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Descripción Campo Opcional</value>
+  </data>
+  <data name="SerialReturned" xml:space="preserve">
+    <value>N° Serie Devuelto</value>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Valor Texto</value>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>Valor Hora</value>
+  </data>
+  <data name="TransactionQuantity" xml:space="preserve">
+    <value>Cantidad de Transacción</value>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Índice de Campo de Valor Escrito</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validar</value>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Descripción de Valor</value>
+  </data>
+  <data name="YesNoValue" xml:space="preserve">
+    <value>Valor Sí/No</value>
+  </data>
+  <data name="Function" xml:space="preserve">
+    <value>Función</value>
+  </data>
+  <data name="PMCategory" xml:space="preserve">
+    <value>P/M - Categoría</value>
+  </data>
+  <data name="PMContract" xml:space="preserve">
+    <value>P/M - Contrato</value>
+    <comment>Used in Import/Export</comment>
+  </data>
+  <data name="PMProject" xml:space="preserve">
+    <value>P/M - Proyecto</value>
+    <comment>Used in Import/Export</comment>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>Comando Procesar</value>
+    <comment>Used in Import/Export</comment>
+  </data>
+  <data name="RevisionListLineNumber" xml:space="preserve">
+    <value>Número de Línea de Lista de Revisión</value>
+  </data>
+  <data name="Markupon" xml:space="preserve">
+    <value>Recargo en</value>
+  </data>
+  <data name="PostSuccess" xml:space="preserve">
+    <value>Asentamiento concluido. {0}: {1}.</value>
+    <comment>Used in post success</comment>
+  </data>
+  <data name="PostWarning1" xml:space="preserve">
+    <value>¿Desea eliminar este {0} después del asentamiento?</value>
+    <comment>Used for post warning</comment>
+  </data>
+  <data name="PostWarning2" xml:space="preserve">
+    <value>Si usted elige Sí, no podrá consultar los detalles de {0} más tarde o hacer búsquedas detalladas en los detalles del Libro Mayor.</value>
+    <comment>Used for post warning</comment>
+  </data>
+  <data name="PostWarning3" xml:space="preserve">
+    <value>Si usted elige No, puede eliminar el {0} en la pantalla Borrar Historial de CI.</value>
+    <comment>Used for post warning</comment>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="LocationDesc" xml:space="preserve">
+    <value>Descripción de Ubicación</value>
+  </data>
+  <data name="WeightUnitsOfMeasure" xml:space="preserve">
+    <value>Unidades de Medida de Peso</value>
+  </data>
+  <data name="IsInvalid" xml:space="preserve">
+    <value>no es Válido</value>
+  </data>
+  <data name="DateOutOfRange" xml:space="preserve">
+    <value>La fecha ingresada no está comprendida por el rango especificado en el perfil de la empresa. ¿Aceptar esta fecha?</value>
+    <comment>Date Range validation</comment>
+  </data>
+  <data name="DeletedRecord" xml:space="preserve">
+    <value>Se eliminó el o la {0}.</value>
+    <comment>Deleted the record</comment>
+  </data>
+  <data name="AverageDaysToShip" xml:space="preserve">
+    <value>Promedio de Días para Enviar</value>
+  </data>
+  <data name="AverageUnitsShipped" xml:space="preserve">
+    <value>Unidades Promedio Enviadas</value>
+  </data>
+  <data name="CostNotInCostFile" xml:space="preserve">
+    <value>Costo Fuera del Archivo de Costos</value>
+  </data>
+  <data name="CostUnitConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión de Unidad de Costo</value>
+  </data>
+  <data name="CostUnitOfMeasure" xml:space="preserve">
+    <value>Unidad de Medida de Costo</value>
+  </data>
+  <data name="InventoryMinimumSIA" xml:space="preserve">
+    <value>Existencias Mínimas (SIA)</value>
+  </data>
+  <data name="LastAllocatedLot" xml:space="preserve">
+    <value>Últ. Lote Asignado</value>
+  </data>
+  <data name="LastAllocatedSerial" xml:space="preserve">
+    <value>Últ. Serie Asignada</value>
+  </data>
+  <data name="LastReceiptDate" xml:space="preserve">
+    <value>Fecha de Último Recibo</value>
+  </data>
+  <data name="LastShipmentDate" xml:space="preserve">
+    <value>Fecha del Último Envío</value>
+  </data>
+  <data name="LastStandardCost" xml:space="preserve">
+    <value>Último Costo Estándar</value>
+  </data>
+  <data name="LastStandardCostDate" xml:space="preserve">
+    <value>Fecha del Último Costo Estándar</value>
+  </data>
+  <data name="LeadTimeSIA" xml:space="preserve">
+    <value>Plazo de Aprovisionamiento (SIA)</value>
+  </data>
+  <data name="NumberOfUncostedTransactions" xml:space="preserve">
+    <value>Número de Transacciones Sin Costos</value>
+  </data>
+  <data name="QuantityAdjustedNotCosted" xml:space="preserve">
+    <value>Cantidad Ajustada Sin Costos</value>
+  </data>
+  <data name="QuantityAvailableToShip" xml:space="preserve">
+    <value>Cantidad Disponible para Enviar</value>
+  </data>
+  <data name="QuantityCommitted" xml:space="preserve">
+    <value>Cantidad Comprometida</value>
+  </data>
+  <data name="QuantityNotInCostFile" xml:space="preserve">
+    <value>Cantidad Fuera del Archivo de Costos</value>
+  </data>
+  <data name="QuantityonHand" xml:space="preserve">
+    <value>Cantidad en Existencia</value>
+  </data>
+  <data name="QuantityonPO" xml:space="preserve">
+    <value>Cantidad en OC</value>
+  </data>
+  <data name="QuantityonSO" xml:space="preserve">
+    <value>Cantidad en OV</value>
+  </data>
+  <data name="QuantityReceivedNotCosted" xml:space="preserve">
+    <value>Cantidad Recibida Sin Costos</value>
+  </data>
+  <data name="QuantityShippedNotCosted" xml:space="preserve">
+    <value>Cantidad Enviada Sin Costos</value>
+  </data>
+  <data name="ShipmentsUsedInCalculation" xml:space="preserve">
+    <value>Envíos Usados en Cálculos</value>
+  </data>
+  <data name="UserDefinedCost1" xml:space="preserve">
+    <value>Costo Definido por el Usuario 1</value>
+  </data>
+  <data name="UserDefinedCost2" xml:space="preserve">
+    <value>Costo Definido por el Usuario 2</value>
+  </data>
+  <data name="Detail2" xml:space="preserve">
+    <value>Detalle...</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CurrencyRates" xml:space="preserve">
+    <value>Tasas de Moneda</value>
+    <comment>Finder Title CurrencyRates</comment>
+  </data>
+  <data name="RateTypes" xml:space="preserve">
+    <value>Tipos de Tasa</value>
+    <comment>Finder title</comment>
+  </data>
+  <data name="Decrease" xml:space="preserve">
+    <value>Reducción</value>
+    <comment>Used in Enum</comment>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Aumento</value>
+    <comment>Used in Enum</comment>
+  </data>
+  <data name="Margin" xml:space="preserve">
+    <value>Margen</value>
+    <comment>Used in Enum</comment>
+  </data>
+  <data name="Markup" xml:space="preserve">
+    <value>Recargo</value>
+    <comment>Used in Enum</comment>
+  </data>
+  <data name="WarningBackup" xml:space="preserve">
+    <value>Antes de continuar, asegúrese de entender los efectos y las consecuencias del procesamiento.</value>
+    <comment>Used in process screen</comment>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>Ingresado por</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="AvailableCost" xml:space="preserve">
+    <value>Costo Disponible</value>
+  </data>
+  <data name="OriginalCost" xml:space="preserve">
+    <value>Costo Original</value>
+  </data>
+  <data name="OriginalQuantity" xml:space="preserve">
+    <value>Cantidad Original</value>
+  </data>
+  <data name="ShippedCost" xml:space="preserve">
+    <value>Costo Enviado</value>
+  </data>
+  <data name="LocationQuantities" xml:space="preserve">
+    <value>Cantidades de Ubicaciones</value>
+    <comment>used in finders</comment>
+  </data>
+  <data name="ToReceiptNo" xml:space="preserve">
+    <value>Hasta Número de Recibo</value>
+    <comment>label</comment>
+  </data>
+  <data name="AdjustmentDate" xml:space="preserve">
+    <value>Fecha de Ajuste</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InventoryManufacturedItemMessage" xml:space="preserve">
+    <value>El artículo {0} existe en inventario como {1}, pero también es un número de artículo del fabricante para {2}. No seleccionará automáticamente {2} si ingresa {0}.</value>
+  </data>
+  <data name="NoDrillDownInfo" xml:space="preserve">
+    <value>No se pudo encontrar información de búsqueda detallada para este registro.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>*** NUEVO ***</value>
+  </data>
+  <data name="NotallowedTodrilldown" xml:space="preserve">
+    <value>No está autorizado para hacer una búsqueda detallada en</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="NoParentDrilDown" xml:space="preserve">
+    <value>No se puede cerrar la ventana de nivel superior antes de presentar la consulta. Se ignora la búsqueda detallada del tipo.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="CurrencyRateSpreadError" xml:space="preserve">
+    <value>La tasa de moneda ingresada se encuentra fuera del margen especificado en las tablas de monedas. ¿Desea continuar?</value>
+  </data>
+  <data name="NumberOfLabels" xml:space="preserve">
+    <value>Cantidad de Etiquetas</value>
+  </data>
+  <data name="PrintedString" xml:space="preserve">
+    <value>Cadena Impresa</value>
+  </data>
+  <data name="ICAssembliesDisassemblies" xml:space="preserve">
+    <value>Ensambles/Desensambles de CI</value>
+    <comment>Screen Name -Temporary Uses</comment>
+  </data>
+  <data name="OEInvoiceEntry" xml:space="preserve">
+    <value>IO - Ingreso de Facturas</value>
+    <comment>Screen Name -Temporary Uses</comment>
+  </data>
+  <data name="OEShipmentEntry" xml:space="preserve">
+    <value>IO - Ingreso de Envíos</value>
+    <comment>Screen Name -Temporary Uses</comment>
+  </data>
+  <data name="ICCompanyLockMessage" xml:space="preserve">
+    <value>No puede {0} hasta que todos los otros usuarios hayan salido de Control de Inventario y todas las otras pantallas de Control de Inventario estén cerradas para esta empresa.</value>
+  </data>
+  <data name="Invoices" xml:space="preserve">
+    <value>Facturas</value>
+  </data>
+  <data name="PhysicalInvQuantity" xml:space="preserve">
+    <value>Hoja de Trabajo de Inventario</value>
+  </data>
+  <data name="PhysicalInvQuantityHeader" xml:space="preserve">
+    <value>Cabecera de Hojas de Trabajo de Inventario</value>
+  </data>
+  <data name="LastProcessedDate" xml:space="preserve">
+    <value>Fecha del Último Procesamiento</value>
+  </data>
+  <data name="LastProcessedTime" xml:space="preserve">
+    <value>Hora del Último Procesamiento</value>
+  </data>
+</root>

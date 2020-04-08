@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Entity" xml:space="preserve">
+    <value>行政管理服務</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BlankUser" xml:space="preserve">
+    <value>用戶代號不能空置。</value>
+    <comment>REMOVE - Use CannotBeBlankMessage from CommonResx</comment>
+  </data>
+  <data name="InvalidUser" xml:space="preserve">
+    <value>用戶代號無效。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="UserRecordType" xml:space="preserve">
+    <value>用戶</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CompanyId" xml:space="preserve">
+    <value>公司代號</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>變更密碼</value>
+    <comment>Login Screen</comment>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>公司</value>
+    <comment>Login Screen</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>登入</value>
+    <comment>Login Screen</comment>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>密碼</value>
+    <comment>Login Screen</comment>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>用戶代號</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>確認新密碼</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>新密碼</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>舊密碼</value>
+  </data>
+  <data name="ErrorPasswordMessage" xml:space="preserve">
+    <value>{0}或{1}不正確。再試一次。</value>
+  </data>
+  <data name="MinLengthPasswordMessage" xml:space="preserve">
+    <value>{0}短於要求的最小密碼長度。</value>
+  </data>
+  <data name="MismatchPasswordMessage" xml:space="preserve">
+    <value>{0}與{1}不匹配。</value>
+  </data>
+  <data name="SamePasswordMessage" xml:space="preserve">
+    <value>新密碼不能是以前使用過的。</value>
+  </data>
+  <data name="UserDisabledMessage" xml:space="preserve">
+    <value>您的帳戶已被禁用。洽詢您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="PasswordChangeMessage" xml:space="preserve">
+    <value>要求變更密碼。</value>
+  </data>
+  <data name="UserRestrictedMessage" xml:space="preserve">
+    <value>您未獲授權於此時登入。洽詢您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="CannotChangePasswordMessage" xml:space="preserve">
+    <value>您沒有變更密碼的授權。洽詢您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="UserLockedMessage" xml:space="preserve">
+    <value>您的帳戶已被鎖定。洽詢您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="ComplexPasswordMessage" xml:space="preserve">
+    <value>密碼必須同時包含字母和數位。</value>
+  </data>
+  <data name="InvalidPasswordMessage" xml:space="preserve">
+    <value>密碼不正確。如果您忘記了密碼，洽詢您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="PasswordExpiresSoonMessage" xml:space="preserve">
+    <value>您的密碼即將到期。是否現在變更？</value>
+  </data>
+  <data name="PasswordExpiresTodayMessage" xml:space="preserve">
+    <value>您的密碼即將失效。是否立即變更？</value>
+  </data>
+  <data name="NoLicenseMessage" xml:space="preserve">
+    <value>您沒有使用此一產品的使用權。洽詢您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="PortalLoginMessage" xml:space="preserve">
+    <value>入口網資料庫的憑據無效。洽詢您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="NoAdminServicesMessage" xml:space="preserve">
+    <value>管理服務未對此一系統資料庫啟用。洽詢您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="NoDatabaseMessage" xml:space="preserve">
+    <value>在使用{0}之前必須設定一個Microsoft SQL Server資料庫。洽詢您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="NoPortalCredentialsMessage" xml:space="preserve">
+    <value>在使用此一產品之前必須設定一個入口網資料庫的憑據。洽詢您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="ProfileID" xml:space="preserve">
+    <value>概況代號</value>
+  </data>
+  <data name="ReportFilename" xml:space="preserve">
+    <value>報表檔案名稱</value>
+  </data>
+  <data name="ReportGUID" xml:space="preserve">
+    <value>報表全域唯一識別碼</value>
+  </data>
+  <data name="ReportName" xml:space="preserve">
+    <value>報表名稱</value>
+  </data>
+  <data name="SignInSage300" xml:space="preserve">
+    <value>登入到Sage 300</value>
+    <comment>Login Screen</comment>
+  </data>
+  <data name="SignInSage300Admin" xml:space="preserve">
+    <value>（管理員配置）</value>
+    <comment>Admin Login</comment>
+  </data>
+  <data name="NoAdminAccessRight" xml:space="preserve">
+    <value>您沒有存取此一頁面的授權。</value>
+    <comment>login screen</comment>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>幫助</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>登出</value>
+  </data>
+  <data name="DatabaseUpgradeErrorMessage" xml:space="preserve">
+    <value>登入網頁螢幕時發生一個問題。嘗試登入Sage 300桌面並啟用使用相同系統資料庫的所有公司資料庫的資料，然後再登入網頁螢幕。</value>
+  </data>
+  <data name="NoLocaleMessage" xml:space="preserve">
+    <value>未为Sage 300c网页屏幕设置所分派的语言。您必须为该语言定义区域设置。聯絡您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="LanPakMaxUserReached" xml:space="preserve">
+    <value>目前登入的用戶數是您的LanPak使用權的最大數量。在其他用戶退出之前您無法登入。</value>
+  </data>
+</root>

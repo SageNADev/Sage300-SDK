@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AP" xml:space="preserve">
+    <value>應付帳款</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>應收帳款</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="BanksandTransactions" xml:space="preserve">
+    <value>銀行和交易</value>
+  </data>
+  <data name="BtnAllCap" xml:space="preserve">
+    <value>包括所有</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BtnAppOptionsCap" xml:space="preserve">
+    <value>應用程式選項</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BtnCheckCap" xml:space="preserve">
+    <value>檢查資料完整性</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BtnExcludeAll" xml:space="preserve">
+    <value>排除所有</value>
+  </data>
+  <data name="BtnExcludeCap" xml:space="preserve">
+    <value>排除</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BtnIncludeCap" xml:space="preserve">
+    <value>包括</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>支票</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="CS" xml:space="preserve">
+    <value>資料 </value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="CustomerDocuments" xml:space="preserve">
+    <value>客戶憑證</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>資料完整性</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Fix" xml:space="preserve">
+    <value>修復</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="FromBankCode" xml:space="preserve">
+    <value>從銀行代碼</value>
+  </data>
+  <data name="FromCustomer" xml:space="preserve">
+    <value>從客戶</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="IntegrityChecker" xml:space="preserve">
+    <value>{0}完整性檢查程式</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="IntroText" xml:space="preserve">
+    <value>檢查應用程式資料中的錯誤並修復輕微錯誤。</value>
+    <comment>Intro Text</comment>
+  </data>
+  <data name="LblAvailAppsCap" xml:space="preserve">
+    <value>現有應用程式</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblCheckAppsCap" xml:space="preserve">
+    <value>檢查下列應用程式</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LblFix" xml:space="preserve">
+    <value>修復</value>
+    <comment>Column Header</comment>
+  </data>
+  <data name="LblFixMinorErrors" xml:space="preserve">
+    <value>修復輕微錯誤</value>
+  </data>
+  <data name="NoAppSelected" xml:space="preserve">
+    <value>您必須選擇一個或更多應用程式。</value>
+  </data>
+  <data name="OpenandReadytoPostBatches" xml:space="preserve">
+    <value>開放和待過帳批次</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="OrphanRecords" xml:space="preserve">
+    <value>孤項記錄</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="PostingJournalControl" xml:space="preserve">
+    <value>過帳日誌控制</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="PostingJournals" xml:space="preserve">
+    <value>過帳日誌</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="RestartRecovery" xml:space="preserve">
+    <value>重啟恢復</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="SetupTables" xml:space="preserve">
+    <value>設定表</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="ToBankCode" xml:space="preserve">
+    <value>到銀行代碼</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="ToCustomer" xml:space="preserve">
+    <value>到客戶</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="VendorDocuments" xml:space="preserve">
+    <value>供應商憑證</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="CheckforOrphanRecords" xml:space="preserve">
+    <value>檢查孤項資料</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="DeleteOrphanRecords" xml:space="preserve">
+    <value>刪除孤項記錄</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+</root>

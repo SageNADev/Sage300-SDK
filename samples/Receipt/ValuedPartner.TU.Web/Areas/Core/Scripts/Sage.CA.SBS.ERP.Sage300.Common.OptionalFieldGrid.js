@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2019 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 2019-2020 Sage Software, Inc.  All rights reserved.
 
 "use strict";
 var sg = sg || {};
@@ -387,9 +387,14 @@ sg.optionalFieldControl = function () {
         finder.viewID = "CS0012";
         finder.viewOrder = 0;
         finder.filter = "OPTFIELD=" + model.OPTFIELD;
+        var value = swset === 0 && [6, 8, 100].indexOf(model.TYPE) > -1 ? 0 : model.VALUE;
         switch (model.TYPE) {
             case ValueTypeEnum.Date:
                 finder.displayFieldNames = ["VALIFDATE", "VDESC"];
+                //convert the value to specified format for finder query
+                if (model.VALUE) {
+                    value = kendo.toString(model.VALUE, 'yyyyMMdd');
+                }
                 break;
             case ValueTypeEnum.Integer:
                 finder.displayFieldNames = ["VALIFLONG", "VDESC"];
@@ -407,7 +412,6 @@ sg.optionalFieldControl = function () {
                 finder.displayFieldNames = ["VALUE", "VDESC", "TYPE"];
         }
         finder.returnFieldNames = ["VALUE", "VDESC"];
-        var value = swset === 0 && [6, 8, 100].indexOf(model.TYPE) > -1 ? 0 : model.VALUE;
         finder.initKeyValues = [model.OPTFIELD, value];
 
         /**
@@ -1237,7 +1241,7 @@ sg.optionalFieldControl = function () {
         } else if (type === ValueTypeEnum.Integer || type === ValueTypeEnum.Amount || type === ValueTypeEnum.Number) {
             return '<span style="float:right">' + sg.utls.kndoUI.getFormattedDecimalNumber(value || 0, decimals) + '</span>';
         } else {
-            return value;
+            return sg.utls.htmlEncode(value);
         }
     }
 

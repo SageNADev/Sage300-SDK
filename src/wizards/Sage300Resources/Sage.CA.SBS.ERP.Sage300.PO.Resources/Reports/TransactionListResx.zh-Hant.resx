@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Addresses" xml:space="preserve">
+    <value>地址</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Blanket" xml:space="preserve">
+    <value>總括</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="CreditNoteDetails" xml:space="preserve">
+    <value>貸項通知單明細</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="CreditNoteInfo" xml:space="preserve">
+    <value>貸項通知單資訊</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="CreditNotes" xml:space="preserve">
+    <value>貸項通知單</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CreditNotesNumber" xml:space="preserve">
+    <value>貸項通知單編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>幣別</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DebitNoteDetails" xml:space="preserve">
+    <value>借項通知單明細</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DebitNoteInfo" xml:space="preserve">
+    <value>借項通知單資訊</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DebitNotes" xml:space="preserve">
+    <value>借項通知單</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DebitNotesNumber" xml:space="preserve">
+    <value>借項通知單編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DocumentDetails" xml:space="preserve">
+    <value>憑證明細</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DocumentInformation" xml:space="preserve">
+    <value>憑證資訊</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DocumentNever" xml:space="preserve">
+    <value>從未建立</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DocumentPartially" xml:space="preserve">
+    <value>已部分建立</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="DocumentPrinted" xml:space="preserve">
+    <value>已列印憑證</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>採購訂單交易清單</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Entity1" xml:space="preserve">
+    <value>採購訂單交易清單</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Future" xml:space="preserve">
+    <value>未來</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Internet" xml:space="preserve">
+    <value>網際網路</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="InvoiceDetails" xml:space="preserve">
+    <value>發票明細</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="InvoiceInfo" xml:space="preserve">
+    <value>商業發票資訊</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="InvoicesNumber" xml:space="preserve">
+    <value>發票編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="JobDetails" xml:space="preserve">
+    <value>作業明細</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>自選欄位</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="OrderType" xml:space="preserve">
+    <value>銷貨單類型</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PurchaseOrderDetails" xml:space="preserve">
+    <value>明細</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="PurchaseOrderInfo" xml:space="preserve">
+    <value>訂購單資訊</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="PurchaseOrderNever" xml:space="preserve">
+    <value>從未進貨</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="PurchaseOrderPartially" xml:space="preserve">
+    <value>已部分進貨</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="PurchaseOrderPrinted" xml:space="preserve">
+    <value>訂購單已列印</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="PurchaseOrders" xml:space="preserve">
+    <value>採購訂單</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PurchaseOrdersNumber" xml:space="preserve">
+    <value>訂購單編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiptDetails" xml:space="preserve">
+    <value>進貨明細</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="ReceiptInfo" xml:space="preserve">
+    <value>收款資訊</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="ReceiptsNumber" xml:space="preserve">
+    <value>收款編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequisitionDetails" xml:space="preserve">
+    <value>請購單明細</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="RequisitionInfo" xml:space="preserve">
+    <value>請購單資訊</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="RequisitionNever" xml:space="preserve">
+    <value>訂購單從未建立</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="RequisitionNumber" xml:space="preserve">
+    <value>請購單編號</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="RequisitionPartially" xml:space="preserve">
+    <value>訂購單已部分建立</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="RequisitionPrinted" xml:space="preserve">
+    <value>請購單已列印</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Requisitions" xml:space="preserve">
+    <value>請購單</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequisitionsNumber" xml:space="preserve">
+    <value>請購單編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReturnDetails" xml:space="preserve">
+    <value>退貨明細</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="ReturnInfo" xml:space="preserve">
+    <value>退貨資訊</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>退貨</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReturnsNumber" xml:space="preserve">
+    <value>退貨編號</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SerialLotNumbers" xml:space="preserve">
+    <value>系列/批別編號</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="SortDebitNote" xml:space="preserve">
+    <value>借項通知單編號</value>
+    <comment>List Option</comment>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>來源</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Standing" xml:space="preserve">
+    <value>長期</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>狀態</value>
+    <comment>Fieldset</comment>
+  </data>
+  <data name="TaxReportingInformation" xml:space="preserve">
+    <value>稅務報告資訊</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>供應商編號</value>
+    <comment>Finder</comment>
+  </data>
+</root>

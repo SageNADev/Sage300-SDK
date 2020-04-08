@@ -1,0 +1,957 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountAllocationAllowed_AllocatedbyAccountBalance" xml:space="preserve">
+    <value>科目餘額</value>
+  </data>
+  <data name="AccountAllocationAllowed_AllocatedbyAccountQuantity" xml:space="preserve">
+    <value>科目數量</value>
+  </data>
+  <data name="AccountAllocationAllowed_NoAllocation" xml:space="preserve">
+    <value>不分配</value>
+  </data>
+  <data name="AccountAllowBlank_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="AccountAllowBlank_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="AccountGroupSwitch_AccountGroupsAllowed" xml:space="preserve">
+    <value>允許科目群組</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountGroupSwitch_DoNotAllowAccountGroups" xml:space="preserve">
+    <value>不允許科目群組</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountNormalBalanceDrorCr_Credit" xml:space="preserve">
+    <value>貸項</value>
+  </data>
+  <data name="AccountNormalBalanceDrorCr_Debit" xml:space="preserve">
+    <value>借項</value>
+  </data>
+  <data name="AccountPosttoAccount_Consolidated" xml:space="preserve">
+    <value>合併</value>
+  </data>
+  <data name="AccountPosttoAccount_Detail" xml:space="preserve">
+    <value>明細</value>
+  </data>
+  <data name="AccountPosttoAccount_Prohibited" xml:space="preserve">
+    <value>禁止</value>
+  </data>
+  <data name="AccountProcessSwitch_CheckOverlappedRollupRelationship" xml:space="preserve">
+    <value>檢查重疊的上捲關係</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountProcessSwitch_CheckvalidaccountunderGs" xml:space="preserve">
+    <value>檢查總帳安全下的有效科目</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountProcessSwitch_CopyAcctsfromPreview" xml:space="preserve">
+    <value>從預覽中複製科目</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountProcessSwitch_CreatePreviewAccts" xml:space="preserve">
+    <value>建立預覽科目</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountProcessSwitch_InsertOptionalFields" xml:space="preserve">
+    <value>插入自選欄位</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountProcessSwitch_ReplaceOptionalFields" xml:space="preserve">
+    <value>替換自選欄位</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountProcessSwitch_UnlockAccountSelectorPreview" xml:space="preserve">
+    <value>解鎖科目選擇器預覽</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountProcessSwitch_UpdateUnitofMeasurement" xml:space="preserve">
+    <value>更新計量單位</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountRollupOrMemberOrNonRollup_AccountNotinRollupGroup" xml:space="preserve">
+    <value>科目不在上捲群組中</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountRollupOrMemberOrNonRollup_MemberAccountinRollupGroup" xml:space="preserve">
+    <value>上捲群組中的成員科目</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountRollupOrMemberOrNonRollup_RollupAccountinRollupGroup" xml:space="preserve">
+    <value>上捲群組中的上捲科目</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountsPayable" xml:space="preserve">
+    <value>應付帳款</value>
+  </data>
+  <data name="AccountSpecificCurrency_AllCurrencies" xml:space="preserve">
+    <value>所有幣別</value>
+  </data>
+  <data name="AccountSpecificCurrency_SpecificCurrencies" xml:space="preserve">
+    <value>特定幣別</value>
+  </data>
+  <data name="AccountsReceivable" xml:space="preserve">
+    <value>應收帳款</value>
+  </data>
+  <data name="AccountType_Amount" xml:space="preserve">
+    <value>金額</value>
+  </data>
+  <data name="AccountType_BalanceSheet" xml:space="preserve">
+    <value>資產負債表</value>
+  </data>
+  <data name="AccountType_Date" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="AccountType_IncomeStatement" xml:space="preserve">
+    <value>損益表</value>
+  </data>
+  <data name="AccountType_Integer" xml:space="preserve">
+    <value>整數</value>
+  </data>
+  <data name="AccountType_Number" xml:space="preserve">
+    <value>編號</value>
+  </data>
+  <data name="AccountType_RetainedEarnings" xml:space="preserve">
+    <value>留存收益</value>
+  </data>
+  <data name="AccountType_Text" xml:space="preserve">
+    <value>文本</value>
+  </data>
+  <data name="AccountType_Time" xml:space="preserve">
+    <value>時間</value>
+  </data>
+  <data name="AccountType_YesOrNo" xml:space="preserve">
+    <value>是/否</value>
+  </data>
+  <data name="AccountValueSet_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="AccountValueSet_NotApplicable" xml:space="preserve">
+    <value>不適用</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountValueSet_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="AccumulatedDepreciation" xml:space="preserve">
+    <value>累計折舊</value>
+  </data>
+  <data name="AllowPreviousYearPosting_DoNotAllowPreviousYrPosting" xml:space="preserve">
+    <value>不允許過帳到先前年度</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AllowPreviousYearPosting_PreviousYrPostingAllowed" xml:space="preserve">
+    <value>允許過帳到先前年度</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="BatchEditAllowed_AllFields" xml:space="preserve">
+    <value>所有欄位</value>
+  </data>
+  <data name="BatchEditAllowed_FiscalPeriodYearTransDate" xml:space="preserve">
+    <value>會計期間，年度，交易日期</value>
+  </data>
+  <data name="BatchEditAllowed_NoEdit" xml:space="preserve">
+    <value>不能編輯</value>
+  </data>
+  <data name="BudgetLock_Locked" xml:space="preserve">
+    <value>已鎖定</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="BudgetLock_Unlocked" xml:space="preserve">
+    <value>未鎖定</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="CashandCashEquivalents" xml:space="preserve">
+    <value>現金及約當現金</value>
+  </data>
+  <data name="CostofSales" xml:space="preserve">
+    <value>銷售成本</value>
+  </data>
+  <data name="DefaultAccess_AllAccounts" xml:space="preserve">
+    <value>所有科目</value>
+  </data>
+  <data name="DefaultAccess_NoAccounts" xml:space="preserve">
+    <value>無一科目</value>
+  </data>
+  <data name="DepreciationExpense" xml:space="preserve">
+    <value>折舊費用</value>
+  </data>
+  <data name="FixedAssets" xml:space="preserve">
+    <value>固定資產</value>
+  </data>
+  <data name="GainsOrLosses" xml:space="preserve">
+    <value>收益或損失</value>
+  </data>
+  <data name="GsAccountAccessSwitch_AllAccountAccessRight" xml:space="preserve">
+    <value>所有科目存取許可權</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="GsAccountAccessSwitch_NoAccountAccessRight" xml:space="preserve">
+    <value>沒有科目存取許可權</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="GsAccountAccessSwitch_OnlyAccountsUnderGS" xml:space="preserve">
+    <value>僅限總帳安全之下的科目</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="IncomeTaxes" xml:space="preserve">
+    <value>所得稅</value>
+  </data>
+  <data name="InterestExpense" xml:space="preserve">
+    <value>利息費用</value>
+  </data>
+  <data name="Inventory" xml:space="preserve">
+    <value>存貨</value>
+  </data>
+  <data name="LockedFiscalPeriodsAllowed_Error" xml:space="preserve">
+    <value>錯誤</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="LockedFiscalPeriodsAllowed_Okay" xml:space="preserve">
+    <value>確定</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="LockedFiscalPeriodsAllowed_Warning" xml:space="preserve">
+    <value>警告</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="LongTermLiabilities" xml:space="preserve">
+    <value>長期負債</value>
+  </data>
+  <data name="MaximumAccountStructures_2Structures" xml:space="preserve">
+    <value>2結構</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="MaximumAccountStructures_3Structures" xml:space="preserve">
+    <value>3結構</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="MaximumAccountStructures_UnlimitedStructures" xml:space="preserve">
+    <value>無限制結構</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="MaximumSegmentsPerAcct_10Segments" xml:space="preserve">
+    <value>10節段</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="MaximumSegmentsPerAcct_2Segments" xml:space="preserve">
+    <value>2節段</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="MaximumSegmentsPerAcct_3Segments" xml:space="preserve">
+    <value>3節段</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="MulticurrencyActivatedSwitch_Active" xml:space="preserve">
+    <value>活動</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="MulticurrencyActivatedSwitch_Inactive" xml:space="preserve">
+    <value>閒置</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="OptionalFieldLocation_Accounts" xml:space="preserve">
+    <value>科目</value>
+  </data>
+  <data name="OptionalFieldLocation_TransactionDetails" xml:space="preserve">
+    <value>交易明細</value>
+  </data>
+  <data name="OptionalFieldType_Amount" xml:space="preserve">
+    <value>金額</value>
+  </data>
+  <data name="OptionalFieldType_Date" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="OptionalFieldType_Integer" xml:space="preserve">
+    <value>整數</value>
+  </data>
+  <data name="OptionalFieldType_Number" xml:space="preserve">
+    <value>編號</value>
+  </data>
+  <data name="OptionalFieldType_Text" xml:space="preserve">
+    <value>文本</value>
+  </data>
+  <data name="OptionalFieldType_Time" xml:space="preserve">
+    <value>時間</value>
+  </data>
+  <data name="OptionalFieldType_YesNo" xml:space="preserve">
+    <value>是/否</value>
+  </data>
+  <data name="OtherAssets" xml:space="preserve">
+    <value>其它資產</value>
+  </data>
+  <data name="OtherCurrentAssets" xml:space="preserve">
+    <value>其它流動資產</value>
+  </data>
+  <data name="OtherCurrentLiabilities" xml:space="preserve">
+    <value>其它流動負債</value>
+  </data>
+  <data name="OtherExpenses" xml:space="preserve">
+    <value>其它費用</value>
+  </data>
+  <data name="OtherLiabilities" xml:space="preserve">
+    <value>其它負債</value>
+  </data>
+  <data name="OtherRevenue" xml:space="preserve">
+    <value>其它營收</value>
+  </data>
+  <data name="PrintBatchesPriorToPost_PrintingNotRequired" xml:space="preserve">
+    <value>不要求列印</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="PrintBatchesPriorToPost_PrintingRequired" xml:space="preserve">
+    <value>要求列印</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ProvisionalPostingAllowed_ProvisionalPostingAllowed" xml:space="preserve">
+    <value>允許暫過帳</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ProvisionalPostingAllowed_ProvisionalPostingNotAllowed" xml:space="preserve">
+    <value>不允許暫過帳</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="QuantityHistoryAllowed_DoNotAllowQuantities" xml:space="preserve">
+    <value>不允許維護數量</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="QuantityHistoryAllowed_QuantitiesAllowed" xml:space="preserve">
+    <value>允許維護數量</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="RevaluationMethod_None" xml:space="preserve">
+    <value>無</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="RevaluationMethod_RecognizedGainAndLoss" xml:space="preserve">
+    <value>已確認收益和損失</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="RevaluationMethod_UnrealizedGainAndLoss" xml:space="preserve">
+    <value>未實現收益和損失</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>營收</value>
+  </data>
+  <data name="SegmentStatus_Active" xml:space="preserve">
+    <value>活動</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="SegmentStatus_Inactive" xml:space="preserve">
+    <value>閒置</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="SegmentType_AccountNumber" xml:space="preserve">
+    <value>科目編號</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="SegmentType_Entity" xml:space="preserve">
+    <value>實體</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ShareCapital" xml:space="preserve">
+    <value>股份資產</value>
+  </data>
+  <data name="ShareholdersEquity" xml:space="preserve">
+    <value>股東權益</value>
+  </data>
+  <data name="Status_Active" xml:space="preserve">
+    <value>活動</value>
+  </data>
+  <data name="Status_Inactive" xml:space="preserve">
+    <value>閒置</value>
+  </data>
+  <data name="StructureCodeDelimiter_Asterisk" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="StructureCodeDelimiter_Backslash" xml:space="preserve">
+    <value>\</value>
+  </data>
+  <data name="StructureCodeDelimiter_Hyphen" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="StructureCodeDelimiter_Period" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="StructureCodeDelimiter_Slash" xml:space="preserve">
+    <value>/</value>
+  </data>
+  <data name="TransitionCompanyStage_BlockCurrencyCompany" xml:space="preserve">
+    <value>固定匯率幣別公司</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="TransitionCompanyStage_NotABlockCurrencyCompany" xml:space="preserve">
+    <value>不是一個固定匯率幣別公司</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="TransitionCompanyStage_TransitionBlockCurrencyCompany" xml:space="preserve">
+    <value>轉換固定匯率幣別公司</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="UseGlSecurity_No" xml:space="preserve">
+    <value>否</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="UseGlSecurity_Yes" xml:space="preserve">
+    <value>是</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountGroupOrder" xml:space="preserve">
+    <value>科目群組順序</value>
+  </data>
+  <data name="NewSortCode" xml:space="preserve">
+    <value>新增排序代碼 - 科目群組順序</value>
+  </data>
+  <data name="UseInClosing_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="UseInClosing_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="ExchangeRateSwitch_CurrentRate" xml:space="preserve">
+    <value>使用目前匯率</value>
+  </data>
+  <data name="ExchangeRateSwitch_RecurringEntryRate" xml:space="preserve">
+    <value>使用週期性分錄匯率</value>
+  </data>
+  <data name="ExpirationType_NoExpiration" xml:space="preserve">
+    <value>無失效日期</value>
+  </data>
+  <data name="ExpirationType_SpecificDate" xml:space="preserve">
+    <value>特定日期</value>
+  </data>
+  <data name="Segment_Account" xml:space="preserve">
+    <value>科目</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="Segment_Division" xml:space="preserve">
+    <value>分部</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="Segment_Region" xml:space="preserve">
+    <value>地區</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ReportFormatForAccount_Allocation" xml:space="preserve">
+    <value>分配</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ReportFormatForAccount_ControlAccountSubledgers" xml:space="preserve">
+    <value>控制科目輔助分類帳</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ReportFormatForAccount_Detail_LongForm" xml:space="preserve">
+    <value>明細－長表</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ReportFormatForAccount_Detail_ShortForm" xml:space="preserve">
+    <value>明細－短表</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ReportFormatForAccount_FiscalSetComparison" xml:space="preserve">
+    <value>財務資料集比較</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ReportFormatForAccount_RollupAccounts" xml:space="preserve">
+    <value>上捲科目</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="JournalBatchType_Entered" xml:space="preserve">
+    <value>輸入</value>
+  </data>
+  <data name="JournalBatchType_Generated" xml:space="preserve">
+    <value>產生</value>
+  </data>
+  <data name="JournalBatchType_Imported" xml:space="preserve">
+    <value>匯入</value>
+  </data>
+  <data name="JournalBatchType_Recurring" xml:space="preserve">
+    <value>週期性</value>
+  </data>
+  <data name="JournalBatchType_Subledger" xml:space="preserve">
+    <value>輔助分類帳</value>
+  </data>
+  <data name="JournalBatchStatus_Deleted" xml:space="preserve">
+    <value>已刪除</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="JournalBatchStatus_Open" xml:space="preserve">
+    <value>開放</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="JournalBatchStatus_Posted" xml:space="preserve">
+    <value>已過帳</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="JournalBatchStatus_PostInProgress" xml:space="preserve">
+    <value>正在過帳</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="JournalBatchStatus_ProvPosted" xml:space="preserve">
+    <value>已暫過帳</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="JournalBatchStatus_ProvPostInProgress" xml:space="preserve">
+    <value>暫過帳進行中</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="JournalBatchStatus_ReadyToPost" xml:space="preserve">
+    <value>待過帳</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="CurrencyType_Functional" xml:space="preserve">
+    <value>功能幣別</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="CurrencyType_SourceAndFunctional" xml:space="preserve">
+    <value>來源幣別和功能幣別</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="PaperSize_LetterOrA4" xml:space="preserve">
+    <value>Letter或A4</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="PaperSize_Legal" xml:space="preserve">
+    <value>紙張大小Legal</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="SelectJournal_PostingJournal" xml:space="preserve">
+    <value>過帳日誌</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="SelectJournal_PostingJournalErrors" xml:space="preserve">
+    <value>過帳日誌錯誤</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="SelectJournal_ProvisionalPostingJournal" xml:space="preserve">
+    <value>暫過帳日誌</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="SelectJournal_ProvisionalPostingJournalErrors" xml:space="preserve">
+    <value>暫過帳日誌錯誤</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="SortBy_AccountNumber" xml:space="preserve">
+    <value>科目編號</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="SortBy_PostingSequence" xml:space="preserve">
+    <value>過帳序列</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="PostingJournalSortBy_AccountNumber" xml:space="preserve">
+    <value>科目編號</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="PostingJournalSortBy_PostingSequence" xml:space="preserve">
+    <value>過帳序列</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="AccountSegmentS500_Eight" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="AccountSegmentS500_Five" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="AccountSegmentS500_Four" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="AccountSegmentS500_Nine" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="AccountSegmentS500_One" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="AccountSegmentS500_Seven" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="AccountSegmentS500_Six" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="AccountSegmentS500_Ten" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="AccountSegmentS500_Three" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="AccountSegmentS500_Two" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="NextPeriod" xml:space="preserve">
+    <value>下一期間</value>
+  </data>
+  <data name="SpecificPeriod" xml:space="preserve">
+    <value>特定期間</value>
+  </data>
+  <data name="AutoReversalOff" xml:space="preserve">
+    <value>自動迴轉關閉</value>
+  </data>
+  <data name="RevaluationSwitch_Donotrevalue" xml:space="preserve">
+    <value>否</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="RevaluationSwitch_Revalue" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="SortBy_AccountGroup" xml:space="preserve">
+    <value>科目群組</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="SortBy_Segment" xml:space="preserve">
+    <value>節段</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ClearPJ_MarkJournals" xml:space="preserve">
+    <value>清除過帳日誌標記日誌</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ClearPJ_PrintedJournals" xml:space="preserve">
+    <value>清除過帳日誌已列印的日誌</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="Printed_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Printed_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="BatchCreationType_AddtoanExistingBatch" xml:space="preserve">
+    <value>增加到一個現有批次</value>
+  </data>
+  <data name="BatchCreationType_CreateaNewBatch" xml:space="preserve">
+    <value>建立一個新批次</value>
+  </data>
+  <data name="BatchCreationType_Default" xml:space="preserve">
+    <value>預設</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="Actuals" xml:space="preserve">
+    <value>實際</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="AllCurrencies" xml:space="preserve">
+    <value>所有幣別</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="BalanceForwardActive" xml:space="preserve">
+    <value>活動餘額承前</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="Balances" xml:space="preserve">
+    <value>餘額</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="BalanceSheet" xml:space="preserve">
+    <value>資產負債表</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="Budget1" xml:space="preserve">
+    <value>預算1</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Budget2" xml:space="preserve">
+    <value>預算2</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Budget3" xml:space="preserve">
+    <value>預算3</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Budget4" xml:space="preserve">
+    <value>預算4</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Budget5" xml:space="preserve">
+    <value>預算5</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Equivalent" xml:space="preserve">
+    <value>折算幣別</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Functional" xml:space="preserve">
+    <value>功能幣別</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="IncomeStatement" xml:space="preserve">
+    <value>損益表</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="NetChanges" xml:space="preserve">
+    <value>淨變動</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="PeriodsActive" xml:space="preserve">
+    <value>活動期間</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ProvisionalActuals" xml:space="preserve">
+    <value>預實際</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="ProvisionalQuantity" xml:space="preserve">
+    <value>預過帳數量</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="ProvisionalReporting" xml:space="preserve">
+    <value>預報告</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>數量</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="Reporting" xml:space="preserve">
+    <value>報告</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="RollupinFRmode" xml:space="preserve">
+    <value>以FR模式上捲</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>來源</value>
+    <comment>Fiscal Sets</comment>
+  </data>
+  <data name="SpecificCurrencies" xml:space="preserve">
+    <value>特定幣別</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="ValidCurrencies" xml:space="preserve">
+    <value>有效幣別</value>
+    <comment>G/L Chart of Accounts Report</comment>
+  </data>
+  <data name="CapMembers" xml:space="preserve">
+    <value>成員</value>
+    <comment>G/L Chart of Accounts Report</comment>
+  </data>
+  <data name="CapRollupAccounts" xml:space="preserve">
+    <value>上捲科目</value>
+    <comment>G/L Chart of Accounts Report</comment>
+  </data>
+  <data name="ControlAccountSubledgers" xml:space="preserve">
+    <value>控制科目輔助分類帳</value>
+    <comment>G/L Chart of Accounts Report</comment>
+  </data>
+  <data name="RptAllocation" xml:space="preserve">
+    <value>分配</value>
+    <comment>G/L Chart of Accounts Report</comment>
+  </data>
+  <data name="RptFiscalSet" xml:space="preserve">
+    <value>財務資料集比較</value>
+    <comment>G/L Chart of Accounts Report</comment>
+  </data>
+  <data name="RptLongForm" xml:space="preserve">
+    <value>明細－長表</value>
+    <comment>G/L Chart of Accounts Report</comment>
+  </data>
+  <data name="RptRollupAccounts" xml:space="preserve">
+    <value>上捲科目</value>
+    <comment>G/L Chart of Accounts Report</comment>
+  </data>
+  <data name="RptShortForm" xml:space="preserve">
+    <value>明細－短表</value>
+    <comment>G/L Chart of Accounts Report</comment>
+  </data>
+  <data name="CapBalanceAsOfYearPeriod" xml:space="preserve">
+    <value>餘額至年度/期間</value>
+  </data>
+  <data name="CapNetChangesForThePeriod" xml:space="preserve">
+    <value>淨變動於期間</value>
+  </data>
+  <data name="RptProvIncl" xml:space="preserve">
+    <value>包括暫過帳</value>
+  </data>
+  <data name="RptProvQty" xml:space="preserve">
+    <value>預過帳數量</value>
+  </data>
+  <data name="RptProvSep" xml:space="preserve">
+    <value>分列暫過帳</value>
+  </data>
+  <data name="RptProvWS" xml:space="preserve">
+    <value>暫過帳工作表</value>
+  </data>
+  <data name="RptQty" xml:space="preserve">
+    <value>數量報表</value>
+  </data>
+  <data name="RptReport" xml:space="preserve">
+    <value>報表</value>
+  </data>
+  <data name="RptWorkSheet" xml:space="preserve">
+    <value>工作表</value>
+  </data>
+  <data name="AllSegments" xml:space="preserve">
+    <value>所有節段</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="SpecificSegments" xml:space="preserve">
+    <value>特定節段</value>
+    <comment>DELETE - Not used</comment>
+  </data>
+  <data name="Allocation_Instruction" xml:space="preserve">
+    <value>分配指示</value>
+    <comment>Used In Account Export Import</comment>
+  </data>
+  <data name="Basic_Account_Profile" xml:space="preserve">
+    <value>基本科目概況</value>
+    <comment>Used In Account Export Import</comment>
+  </data>
+  <data name="Control_Account_Subledger" xml:space="preserve">
+    <value>控制科目輔助分類帳</value>
+    <comment>Used In Account Export Import</comment>
+  </data>
+  <data name="Optional_Fields" xml:space="preserve">
+    <value>自選欄位</value>
+    <comment>Used In Account Export Import</comment>
+  </data>
+  <data name="Rollup" xml:space="preserve">
+    <value>上捲</value>
+    <comment>Used In Account Export Import</comment>
+  </data>
+  <data name="Valid_Currency_Codes" xml:space="preserve">
+    <value>有效幣別代碼</value>
+    <comment>Used In Account Export Import</comment>
+  </data>
+  <data name="DefaultCategory" xml:space="preserve">
+    <value>預設類別</value>
+  </data>
+  <data name="AutoReversalOn" xml:space="preserve">
+    <value>自動迴轉開啟</value>
+  </data>
+  <data name="RevaluationSwitch_Donotrevalue1" xml:space="preserve">
+    <value>不重評價</value>
+  </data>
+  <data name="RevaluationSwitch_Revalue1" xml:space="preserve">
+    <value>重評價</value>
+  </data>
+  <data name="RevalueBy_Balances" xml:space="preserve">
+    <value>餘額</value>
+  </data>
+  <data name="RevalueBy_NetChanges" xml:space="preserve">
+    <value>淨變動</value>
+  </data>
+</root>

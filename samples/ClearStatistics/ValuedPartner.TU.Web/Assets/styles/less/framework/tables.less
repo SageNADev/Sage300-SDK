@@ -342,6 +342,21 @@ table {
     }
   }
 
+  .btn-finder,
+  .btn-fiscal-picker,
+  .btn-go, 
+  .btn-more, 
+  .btn-numeric, 
+  .btn-plus, 
+  .btn-search {
+
+    &:focus { 
+      outline: none;  
+      border: none;
+      .box-shadow(none);
+    }
+  }
+
   .k-state-default .k-select {
     border: none;
     width: 26px;
@@ -353,7 +368,7 @@ table {
       position: absolute;
       width: 22px;
       height: 22px;
-      right: 7px;
+      right: 6px;
       bottom: 2px;
     }
   }
@@ -407,7 +422,7 @@ table {
     }
 
     .rightbox {
-      width: 160px;
+      width: 163px;
     }
 
     .btn-fiscal-picker {
@@ -415,10 +430,11 @@ table {
       height: 24px;
       width: 30px;
       border-left: 0;
-      border-top: 1px solid #9a9b9c;
-      border-right: 1px solid #9a9b9c;
-      border-bottom: 1px solid #9a9b9c;
-      background-color: #fff;
+      right: -1px;
+      border-top: 1px solid @btn-default-border;
+      border-right: 1px solid @btn-default-border;
+      border-bottom: 1px solid @btn-default-border;
+      background-color: @white;
     }
 
     .rightbox:disabled + .btn-fiscal-picker {
@@ -534,7 +550,7 @@ table {
 
     .k-header {
       line-height: 2;
-      padding: 6px 10px;
+      padding: 3px 10px;
       color: @white;
       font-weight: 700;
       border-color: @sage-mid-gray;
@@ -552,7 +568,7 @@ table {
       >.k-link {
         color: @white;
         padding: 0;
-        line-height: 2;
+        line-height: 2.8;
 
         .k-icon {
           background-image: none;
@@ -593,19 +609,16 @@ table {
           .checkBox {
             top: 2px;
             height: 20px;
-
-          input[type=checkbox] {
-            margin-bottom: -6px;
-          }
         }
       }
 
-      &.k-header span.checkBox {
-        top: 2px;
-        height: 20px;
+      .checkbox-container {
+        padding-left: 0;
+        top: -1px;
 
         input[type=checkbox] {
-          margin-bottom: -6px;
+          width: 16px;
+          height: 16px;
         }
       }
     }
@@ -638,15 +651,30 @@ table {
         max-width: 55px;
         min-width: 20px;
         text-overflow: clip;
-      }
+     }
 
       input {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        padding-left: 10px; 
 
         &.icon:disabled {
           border: 1px solid transparent;
+        }
+      }
+
+      .checkbox-container {
+        padding-left: 0;
+        display: inline-block;
+
+        input[type=checkbox] {
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          z-index: 2;
+          cursor: pointer;
+
+          ~ .checkmark {
+            z-index: 1;
+            top: 3px;
+          }
         }
       }     
     }
@@ -871,7 +899,7 @@ table {
     .pencil-wrapper {
       position: relative;
       height: 28px;
-      background-color: inherit;
+      background: none;
 
       .pencil-txt {
         display: inline-block;
@@ -1115,7 +1143,7 @@ table {
       }
 
       &.dp-and-finder {
-        width: 95%;
+        width: 94%;
 
         & + .icon.btn-search {
           right: 0;
@@ -1147,6 +1175,19 @@ table {
 
   .k-grid-content .k-checkbox-label:before {
     top: 7px;
+  }
+
+  /* timepicker related */
+  .k-widget.k-timepicker .k-picker-wrap {
+    height: 28px;
+
+    input {
+        height: 26px;
+    }
+
+    .k-select .k-icon.k-i-clock {
+        top: 0px;
+    }
   }
 }
 
@@ -1187,6 +1228,21 @@ table {
       padding: 10px 0;
       text-align: center;
     }
+
+    .btn-finder,
+    .btn-fiscal-picker,
+    .btn-go, 
+    .btn-more, 
+    .btn-numeric, 
+    .btn-plus, 
+    .btn-search {
+
+      &:focus { 
+        outline: none;  
+        border: none;
+        .box-shadow(none);
+      }
+    }
   }
 
   .table-scroll { 
@@ -1218,6 +1274,18 @@ table {
       display: inline-block;
       font-size: 12px;
       width: 170px;
+
+      &.checkbox-container {
+        width: auto;
+        padding: 0;
+        margin: 0 4px 0 0;
+        top: 5px;
+
+        input[type=checkbox], 
+        input[type=radio] {
+          margin: 0;
+        }
+      }
     }
 
     .ctrl-group > div {
@@ -1790,8 +1858,9 @@ div.spreadsheet {
   .lockedtext {
     position: relative;
     display: inline-block;
-    top: -3px;
+    top: 3px;
     white-space: nowrap;
+    padding-left: 24px;
   }
 }
 

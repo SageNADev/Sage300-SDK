@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACCTSETCHANGED" xml:space="preserve">
+    <value>El grupo de cuentas ha sido cambiado. Esto afectará todos los asentamientos futuros relacionados con este artículo. ¿Seguro que quiere cambiar este grupo de cuentas?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Additemcompleted1" xml:space="preserve">
+    <value>Ha agregado o modificado correctamente el artículo {0} en su sistema de Control de Inventario.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Additemcompleted2" xml:space="preserve">
+    <value>¿Desea agregar o modificar otro artículo de inventario?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AddItemListInfo" xml:space="preserve">
+    <value>El Asistente de Artículos agregará o modificará ahora la siguiente información en su sistema de Control de Inventario:</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AdditemlistinfoNoChanges" xml:space="preserve">
+    <value>No se realizó ningún cambio en el artículo "{0}" ni en la información relacionada con él.</value>
+    <comment>Text</comment>
+  </data>
+  <data name="Allowed" xml:space="preserve">
+    <value>Admitido</value>
+    <comment>Location - List</comment>
+  </data>
+  <data name="AltItemDescription" xml:space="preserve">
+    <value>Descripción de Artículo Alternativo</value>
+    <comment>Items - Field</comment>
+  </data>
+  <data name="ALTITEMNO" xml:space="preserve">
+    <value>Número de Artículo Alternativo</value>
+    <comment>Items - Field</comment>
+  </data>
+  <data name="AUTOINCLUDEALLLOCATIONS" xml:space="preserve">
+    <value>Incluir Automáticamente Todas las Ubicaciones</value>
+    <comment>Location - Check Box</comment>
+  </data>
+  <data name="AUTOINCLUDEALLPRICELISTCODES" xml:space="preserve">
+    <value>Incluir Automáticamente Todos los Códigos de Listas de Precios</value>
+    <comment>Pricing - Check Box</comment>
+  </data>
+  <data name="AUTOINSERTTAXAUTHORITIES" xml:space="preserve">
+    <value>Insertar Automáticamente Todas las Autoridades Fiscales</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="BillsofmaterialcomponentTitle" xml:space="preserve">
+    <value>Agregue los artículos componentes para el número de artículo y de BOM. Si el artículo usa un método de cálculo de costos Especificado por el Usuario, especifique el costo a utilizar.</value>
+    <comment>BOM - Text</comment>
+  </data>
+  <data name="BillsofmaterialTitle" xml:space="preserve">
+    <value>Agregue cualquier lista de materiales necesaria para definir los artículos componentes y las cantidades y cualquier costo fijo o variable requerido para ensamblar un número específico de unidades (cantidad completa) del artículo que está agregando.</value>
+    <comment>BOM - Text</comment>
+  </data>
+  <data name="BOMDescription" xml:space="preserve">
+    <value>Descripción L.MAT</value>
+    <comment>BOM - Table Column</comment>
+  </data>
+  <data name="CalculatedUnitPrice" xml:space="preserve">
+    <value>Precio Unitario Calculado</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="CALCULATESALEPRICEUSING" xml:space="preserve">
+    <value>Calcular Precio de Venta Usando</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>Descripción de Categoría</value>
+    <comment>Items -  Field</comment>
+  </data>
+  <data name="COMMODIM" xml:space="preserve">
+    <value>Número de Producto</value>
+    <comment>Items -  Field</comment>
+  </data>
+  <data name="COMPONENTS" xml:space="preserve">
+    <value>Componentes</value>
+    <comment>BOM - Table Column</comment>
+  </data>
+  <data name="Constructitem1Title" xml:space="preserve">
+    <value>Seleccione un código de estructura e ingrese la información de segmento del artículo para construir un nuevo número de artículo.</value>
+    <comment>Text</comment>
+  </data>
+  <data name="Constructitem2Title" xml:space="preserve">
+    <value>Especifique un código de estructura e ingrese la información de segmento del artículo.</value>
+    <comment>Text</comment>
+  </data>
+  <data name="ConstructItemNumber" xml:space="preserve">
+    <value>Construir Número de Artículo</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="CONTRACTPRICETYPE" xml:space="preserve">
+    <value>Tipo Precio de Contrato</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="Contractpricing" xml:space="preserve">
+    <value>Cálculo de Precios de Contrato</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ContractpricingTitle" xml:space="preserve">
+    <value>Si utiliza un cálculo de precios específico para sus clientes, ingrese la información para el cálculo de precio de contrato del artículo que está agregando.</value>
+    <comment>Contract - Text</comment>
+  </data>
+  <data name="COPYFROMPREVIOUSLINE" xml:space="preserve">
+    <value>Copiar desde Línea Anterior</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="CostUnit" xml:space="preserve">
+    <value>Unidad de Costo</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="CostUnitOfMeasure" xml:space="preserve">
+    <value>Unidad de Medida de Costo</value>
+    <comment>Location - Table Column</comment>
+  </data>
+  <data name="CUSTOMERDETAILS" xml:space="preserve">
+    <value>Detalles de Clientes</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="CustomeritemTitle" xml:space="preserve">
+    <value>Agregue el número de artículo con el que el cliente asocia el artículo.</value>
+    <comment>Customer - Text</comment>
+  </data>
+  <data name="CustomersItemDescription" xml:space="preserve">
+    <value>Descripción de Artículo de Cliente</value>
+    <comment>Customer - Table Column</comment>
+  </data>
+  <data name="CustomersItemNumber" xml:space="preserve">
+    <value>Número de Artículo del Cliente</value>
+    <comment>Customer - Table Column</comment>
+  </data>
+  <data name="CustomerType" xml:space="preserve">
+    <value>Tipo de Cliente</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="CustomerTypes" xml:space="preserve">
+    <value>Tipos de Clientes</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="CustTaxClassDescription" xml:space="preserve">
+    <value>Descripción de Clase Fiscal del Cliente</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="DEFAULTBASEPRICEUSING" xml:space="preserve">
+    <value>Precio Base Predeterminado Usando</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="DEFAULTSALEPRICEUSING" xml:space="preserve">
+    <value>Precio de Venta Predeterminado Usando</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="DeleteICPRIC" xml:space="preserve">
+    <value>¿Está seguro de que desea eliminar el precio del artículo {0}, {1}, {2}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Concluido</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>CI – Asistente de Artículos</value>
+    <comment>Screen Title - Main</comment>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Fecha de Caducidad</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="FixedAmount" xml:space="preserve">
+    <value>Monto Fijo</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="FixedCost" xml:space="preserve">
+    <value>Costo Fijo</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="FixedPrice" xml:space="preserve">
+    <value>Precio Fijo</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Ayuda</value>
+    <comment>Button</comment>
+  </data>
+  <data name="INCLUDEALLTAXAUTHALLOWTAXINPRICE" xml:space="preserve">
+    <value>Incluir Todas las Autoridades Fiscales Admitiendo Impuesto en Precio</value>
+    <comment>Pricing - Check Box</comment>
+  </data>
+  <data name="IncludedtaxesTitle" xml:space="preserve">
+    <value>Si incluye impuestos en los precios, especifique las autoridades y las clases fiscales.</value>
+    <comment>Text</comment>
+  </data>
+  <data name="Instructions" xml:space="preserve">
+    <value>Instrucciones</value>
+    <comment>Customer - Table Column</comment>
+  </data>
+  <data name="InventoryMinimumSIA" xml:space="preserve">
+    <value>Existencias Mínimas (SIA)</value>
+    <comment>Location - Table Column</comment>
+  </data>
+  <data name="INWEBSTORE" xml:space="preserve">
+    <value>Admitir Artículo en Tienda Web</value>
+    <comment>Items - Check Box</comment>
+  </data>
+  <data name="ItembasicTitle" xml:space="preserve">
+    <value>Ingrese un nuevo número de artículo o seleccione un número de artículo existente a modificar. Para obtener ayuda de como configurar sus números de artículo de inventario, pulse Construir Número de Artículo.</value>
+    <comment>Items - Text</comment>
+  </data>
+  <data name="Itemlocation1Title" xml:space="preserve">
+    <value>Ingrese la información de cálculo de costos del artículo en cada ubicación donde permita que se almacene el artículo. Si desea almacenar el artículo automáticamente en todas las ubicaciones, seleccione la opción Incluir Automáticamente en Todas las Ubicaciones.</value>
+    <comment>Locations - Text</comment>
+  </data>
+  <data name="Itemlocation2Title" xml:space="preserve">
+    <value> Si desea fijar el costo en montos específicos para todas las ubicaciones que usted incluya, especifique el monto del costo en el campo Fijar Costos En.</value>
+    <comment>Item Location - Text</comment>
+  </data>
+  <data name="ItemPricing" xml:space="preserve">
+    <value>Cálculo Precios de Artículos</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Itempricing1Title" xml:space="preserve">
+    <value>Configure listas de precios para su artículo, especificando el precio base, descuento e información de impuesto incluido. Si desea incluir todos los códigos de listas de precios, seleccione la opción "Incluir Automáticamente Todos los Códigos de Listas de Precios". Si su empresa es de moneda múltiple, especifique las monedas usadas con cada lista de precios.</value>
+    <comment>Pricing - Text</comment>
+  </data>
+  <data name="Itemtaxes1Title" xml:space="preserve">
+    <value>Ingrese las autoridades fiscales que son excepciones para su empresa. En forma predeterminada, la clase fiscal está fijada en 1 en Ingreso de Órdenes y Órdenes de Compra.</value>
+    <comment>Items - Text</comment>
+  </data>
+  <data name="Itemtaxes2Title" xml:space="preserve">
+    <value>Si la clase fiscal para una autoridad fiscal es normalmente diferente a 1, especifique la autoridad fiscal, la clase fiscal y los campos opcionales a usar para el artículo.</value>
+    <comment>Items - Text</comment>
+  </data>
+  <data name="ITEMTAXESINFORMATION" xml:space="preserve">
+    <value>Información de Impuestos del Artículo</value>
+    <comment>Items - Header</comment>
+  </data>
+  <data name="ItemunitsTitle" xml:space="preserve">
+    <value>Ingrese el peso del artículo y la unidad de medida de peso. Ingrese las unidades de medida mediante las cuales compra o vende el artículo e identifique la unidad de medida de almacenamiento.</value>
+    <comment>Items - Text</comment>
+  </data>
+  <data name="ItemvendorTitle" xml:space="preserve">
+    <value>Ingrese los proveedores que suministran el artículo. Puede agregar hasta nueve proveedores y asignar una prioridad (tipo) a cada proveedor.</value>
+    <comment>Vendor - Text</comment>
+  </data>
+  <data name="KITTING" xml:space="preserve">
+    <value>Artículo Compuesto</value>
+    <comment>Items - Check Box</comment>
+  </data>
+  <data name="KittingcomponentTitle" xml:space="preserve">
+    <value>Agregue los artículos componentes para el número de artículo y de juego. Si el artículo usa un método de cálculo de costos Especificado por el Usuario, especifique el costo a utilizar.</value>
+    <comment>BOM - Text</comment>
+  </data>
+  <data name="KittingTitle" xml:space="preserve">
+    <value>Defina los artículos componentes y las cantidades requeridas para sus juegos.</value>
+    <comment>BOM - Text</comment>
+  </data>
+  <data name="Landed" xml:space="preserve">
+    <value>Costo Descargado</value>
+    <comment>Location - Field</comment>
+  </data>
+  <data name="LASTUNITCOST" xml:space="preserve">
+    <value>Último Costo Unitario</value>
+    <comment>Location - Field</comment>
+  </data>
+  <data name="LDIFQTYCHANGED" xml:space="preserve">
+    <value>"{0}" está a punto de cambiar. Si existen o si se crean números de lote, no podrá desactivar la opción. Tampoco podrá seleccionar un grupo de cuentas que use un método de cálculo de costo de número de lote. ¿Realmente desea activar esta opción?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="LeadTimeSIA" xml:space="preserve">
+    <value>Plazo de Aprovisionamiento (SIA)</value>
+    <comment>Location - Table Column</comment>
+  </data>
+  <data name="LocationDetails" xml:space="preserve">
+    <value>Detalles de Ubicación</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="LotNumberMaskDescription" xml:space="preserve">
+    <value>Descripción Máscara de Número de Lote</value>
+    <comment>Lot - Field</comment>
+  </data>
+  <data name="LotnumberoptionsTitle" xml:space="preserve">
+    <value>Ingresa las opciones de número de lote para el nuevo artículo.</value>
+    <comment>Lot - Text</comment>
+  </data>
+  <data name="LotOnContractWhenRECVD" xml:space="preserve">
+    <value>Poner N° Lote Automáticamente en Contrato cuando se Recibe</value>
+    <comment>Lot - Check Box</comment>
+  </data>
+  <data name="LotOnWarrantyWhenSOLD" xml:space="preserve">
+    <value>Poner N° Lote Automáticamente en Garantía cuando se Vende</value>
+    <comment>Lot - Check Box</comment>
+  </data>
+  <data name="MANITEMNUMBER" xml:space="preserve">
+    <value>Números de Artículo de los Fabricantes</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ManufactureritemTitle" xml:space="preserve">
+    <value>Agregue los números de artículo con los que los fabricantes asocian el artículo.</value>
+    <comment>Manufacturer - Text</comment>
+  </data>
+  <data name="ManufacturersItemDescription" xml:space="preserve">
+    <value>Descripción Artículo de los Fabricantes</value>
+    <comment>Manufacturer - Table Column</comment>
+  </data>
+  <data name="ManufacturersItemNumber" xml:space="preserve">
+    <value>Número de Artículo de los Fabricantes</value>
+    <comment>Manufacturer - Table Column</comment>
+  </data>
+  <data name="MARKUPPERCENTAGE" xml:space="preserve">
+    <value>Porcentaje de Recargo</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="MASTERITEM" xml:space="preserve">
+    <value>Artículo Maestro</value>
+    <comment>Items - Check Box</comment>
+  </data>
+  <data name="MAXIMUMQUANTITY" xml:space="preserve">
+    <value>Cantidad Máxima</value>
+    <comment>Reorder - Table Column</comment>
+  </data>
+  <data name="MINIMUMQUANTITY" xml:space="preserve">
+    <value>Cantidad Mínima</value>
+    <comment>Reorder - Table Column</comment>
+  </data>
+  <data name="NextLOTNO" xml:space="preserve">
+    <value>Número de Lote Siguiente</value>
+    <comment>Lot - Field</comment>
+  </data>
+  <data name="OrderMinimumSIA" xml:space="preserve">
+    <value>Orden Mínima (SIA)</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="PERIODSTART" xml:space="preserve">
+    <value>Inicio de Período</value>
+    <comment>Reorder - Table Column</comment>
+  </data>
+  <data name="PICKINGSEQ" xml:space="preserve">
+    <value>Secuencia de Selección Predeterminada</value>
+    <comment>Items - Field</comment>
+  </data>
+  <data name="PlusAmount" xml:space="preserve">
+    <value>Más Monto</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="PlusPercentage" xml:space="preserve">
+    <value>Más Porcentaje</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="PreferredVendorSIA" xml:space="preserve">
+    <value>Proveedor Preferente (SIA)</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="PriceListCodes" xml:space="preserve">
+    <value>Códigos Listas de Precios...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="PRICELISTDESCRIPTION" xml:space="preserve">
+    <value>Descripción Lista de Precios</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="ProjectedSalesQuantity" xml:space="preserve">
+    <value>Cantidad de Ventas Proyectadas</value>
+    <comment>Reorder - Table Column</comment>
+  </data>
+  <data name="PurchaseTaxClassDescription" xml:space="preserve">
+    <value>Descripción Clase de Impuesto a las Compras</value>
+    <comment>Items - Table Column</comment>
+  </data>
+  <data name="REORDERFOR" xml:space="preserve">
+    <value>Reposición para</value>
+    <comment>Reorder - List</comment>
+  </data>
+  <data name="REORDERQUANTITIES" xml:space="preserve">
+    <value>Cantidades de Reposición</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ReorderquantitiesTitle" xml:space="preserve">
+    <value>Configure la información de reposición del artículo incluyendo las cantidades máximas, mínimas, de reposición y de ventas proyectadas en la unidad de medida de almacenamiento del artículo.</value>
+    <comment>Reorder - Text</comment>
+  </data>
+  <data name="REORDERQUANTITY" xml:space="preserve">
+    <value>Cantidad de Reposición</value>
+    <comment>Reorder - Table Column</comment>
+  </data>
+  <data name="RESTART" xml:space="preserve">
+    <value>¿Le gustaría continuar utilizando el \nAsistente de Artículos con la información guardada las \nvez anterior?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SalesTaxClassDescription" xml:space="preserve">
+    <value>Descripción Clase de Impuesto a las Ventas</value>
+    <comment>Items - Table Column</comment>
+  </data>
+  <data name="SDIFQTYCHANGED" xml:space="preserve">
+    <value>"{0}" está a punto de cambiar. Si existen o si se crean números de serie, no podrá desactivar la opción. Tampoco podrá seleccionar un grupo de cuentas que use un método de cálculo de costo de número de serie. ¿Realmente desea activar esta opción?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SERIALMASKNOTENTERED" xml:space="preserve">
+    <value>Se requiere la Máscara de N° Serie.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SerialnumberoptionsTitle" xml:space="preserve">
+    <value>Ingresa las opciones de número de serie para el nuevo artículo.</value>
+    <comment>Text</comment>
+  </data>
+  <data name="SETTHECOSTSTO" xml:space="preserve">
+    <value>Fijar los Costos en:</value>
+    <comment>Location - Text</comment>
+  </data>
+  <data name="STOCKITEM" xml:space="preserve">
+    <value>Artículo en Almacén</value>
+    <comment>Items - Check Box</comment>
+  </data>
+  <data name="StructureCodeDescription" xml:space="preserve">
+    <value>Descripción Código de Estructura</value>
+    <comment>Items - Field</comment>
+  </data>
+  <data name="UNITSOFMEASURE" xml:space="preserve">
+    <value>Unidades de Medida</value>
+    <comment>Items - Table</comment>
+  </data>
+  <data name="UseLowestPrice" xml:space="preserve">
+    <value>Usar el Precio Más Bajo</value>
+    <comment>Contract - Table Column</comment>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>ID Usuario</value>
+    <comment>Pricing - Table Column</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
+    <comment>Items - Table Column</comment>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Descripción de Valor</value>
+    <comment>Items - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valor Fijado</value>
+    <comment>Items - Table Column</comment>
+  </data>
+  <data name="VariableCost" xml:space="preserve">
+    <value>Costo Variable</value>
+    <comment>BOM - Table Column</comment>
+  </data>
+  <data name="VendorContact" xml:space="preserve">
+    <value>Contacto del Proveedor</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="VendorCost" xml:space="preserve">
+    <value>Costo del Proveedor</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="VendorCurrency" xml:space="preserve">
+    <value>Moneda del Proveedor</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="VENDORDETAILS" xml:space="preserve">
+    <value>Detalles de Proveedores</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="VendorItemNumber" xml:space="preserve">
+    <value>Número Artículo del Proveedor</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="VendorType" xml:space="preserve">
+    <value>Tipo de Proveedor</value>
+    <comment>Vendor - Table Column</comment>
+  </data>
+  <data name="WarrantyCode" xml:space="preserve">
+    <value>Código de Garantía</value>
+    <comment>Items - Field</comment>
+  </data>
+  <data name="Welcomemessage1" xml:space="preserve">
+    <value>Bienvenido al Asistente de Artículos</value>
+    <comment>Welcome Text</comment>
+  </data>
+  <data name="Welcomemessage2" xml:space="preserve">
+    <value>Utilice este asistente para agregar un nuevo registro de artículo.</value>
+    <comment>Welcome Text</comment>
+  </data>
+  <data name="Welcomemessage3" xml:space="preserve">
+    <value>Puede especificar la ubicación y el costo de los artículos, asignar artículos a proveedores, configurar el cálculo de precios del artículo, agregar número de artículo de cliente y fabricante y configurar la información de reposición.</value>
+    <comment>Welcome Text</comment>
+  </data>
+  <data name="Welcomemessage4" xml:space="preserve">
+    <value>Si usted sale del asistente antes de terminar de agregar un artículo nuevo, puede guardar su trabajo y continuar posteriormente.</value>
+    <comment>Welcome Text</comment>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sí</value>
+    <comment>Welcome Text</comment>
+  </data>
+  <data name="CustomerItemHeaderTitle" xml:space="preserve">
+    <value>CI – Asistente de Artículos - Detalles del Cliente</value>
+  </data>
+  <data name="ManufacturingItemHeaderTitle" xml:space="preserve">
+    <value>CI – Asistente de Artículos - Artículo del Fabricante</value>
+  </data>
+  <data name="VendorItemHeaderTitle" xml:space="preserve">
+    <value>CI – Asistente de Artículos - Detalles del Proveedor</value>
+  </data>
+  <data name="VendorItemTitle" xml:space="preserve">
+    <value>Ingrese el proveedor que suministra el artículo. Puede agregar hasta nueve proveedores y asignar una prioridad (tipo) a cada proveedor.</value>
+  </data>
+  <data name="ItemBasicHeaderTitle" xml:space="preserve">
+    <value>CI – Asistente de Artículos - Artículos</value>
+  </data>
+  <data name="AutoInsertAllLocation" xml:space="preserve">
+    <value>Incluir Automáticamente Todas las Ubicaciones</value>
+    <comment>Check Box Label</comment>
+  </data>
+  <data name="LocationDetailCostsHeader" xml:space="preserve">
+    <value>Fijar los Costos en:</value>
+    <comment>Location Detail Costs Header Text</comment>
+  </data>
+</root>

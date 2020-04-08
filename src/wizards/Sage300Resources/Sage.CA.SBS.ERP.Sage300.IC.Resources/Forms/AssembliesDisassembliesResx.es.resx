@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AllocateFromSerial" xml:space="preserve">
+    <value>Asignar Desde Número de Serie</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="AllocateFromLot" xml:space="preserve">
+    <value>Asignar Desde Número de Lote</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="AssemblyDetails" xml:space="preserve">
+    <value>CI - Detalles de Ensambles</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="AssemblyOptFields" xml:space="preserve">
+    <value>CI - Campos Opcionales de Ensambles</value>
+    <comment>Modal Title</comment>
+  </data>
+  <data name="AssemblyQuantityRemaining" xml:space="preserve">
+    <value>Cantidad Remanente de Ensamble</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="AssignMaster" xml:space="preserve">
+    <value>Se sustituirán los números de serie maestros actualmente asignados para los números de serie de este componente.  ¿Desea continuar?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="BtnSerialsLots" xml:space="preserve">
+    <value>Números de Serie/Lote...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="BtnVerifyQuantities" xml:space="preserve">
+    <value>Verificar Cantidades</value>
+    <comment>Button</comment>
+  </data>
+  <data name="CancelAssembly" xml:space="preserve">
+    <value>¿Está seguro de que desea cancelar la copia de seguridad/asentamiento de {0}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ChangeDeletesSerialsLots" xml:space="preserve">
+    <value>Continuar esta acción borrará los números de serie y lote ingresados para el artículo maestro y/o componentes. ¿Desea continuar esta acción?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CloseLT" xml:space="preserve">
+    <value>Cerrar LT</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CloseSN" xml:space="preserve">
+    <value>Cerrar SN</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CompAssemblyNumber" xml:space="preserve">
+    <value>Número Ensamble de Componente</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CompIDCurrentlyProcessed" xml:space="preserve">
+    <value>ID Comp Actualmente Procesado</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CompItemNumber" xml:space="preserve">
+    <value>Número Artículo de Componente</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="CompMasterItemNumber" xml:space="preserve">
+    <value>Número Artículo Maestro de Componente</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ComponentAssMethod" xml:space="preserve">
+    <value>Método Ensamble de Componentes</value>
+    <comment>List</comment>
+  </data>
+  <data name="ComponentDasMethod" xml:space="preserve">
+    <value>Método Desensamble de Componentes</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ComponentofItemAndBomNo" xml:space="preserve">
+    <value>{0} de {1}, {2}</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ComponentsMasterItemNo" xml:space="preserve">
+    <value>N° Artículo Maestro de Componente</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DateBus" xml:space="preserve">
+    <value>Fecha de Asentamiento</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DeleteMasterSerial" xml:space="preserve">
+    <value>Si elimina un número de serie para un artículo maestro, se eliminarán también todos los números de serie para los componentes que pertenecen al número de serie maestro.  ¿Está seguro de que desea eliminar el (los) número(s) de serie?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="DisallowSavePost" xml:space="preserve">
+    <value>Guardar/Asentar No Admitido</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DisassembledQuantity" xml:space="preserve">
+    <value>Cantidad Desensamblada</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="DisassemblyCost" xml:space="preserve">
+    <value>Costo de Desensamble</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>Ingresado por</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="EnterXForMaster" xml:space="preserve">
+    <value>Ingrese los números de serie y/o lote para el artículo maestro antes de pasar a los componentes.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>CI – Ensambles/Desensambles</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ErrorWarning" xml:space="preserve">
+    <value>Error/Advertencia</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="EstimatedCost" xml:space="preserve">
+    <value>Costo Estimado</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ForcePopUpLT" xml:space="preserve">
+    <value>Forzar Formulario Emergente LT</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ForcePopUpSN" xml:space="preserve">
+    <value>Forzar Formulario Emergente SN</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="FormattedCompMasterItemNo" xml:space="preserve">
+    <value>N° Artículo Maestro de Componente Formateado</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="FormattedItemNumber" xml:space="preserve">
+    <value>N° Artículo Formateado</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="FromAssembly" xml:space="preserve">
+    <value>Desde Número de Ensamble</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromAssemblySeq" xml:space="preserve">
+    <value>Desde Secuencia de Ensamble</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="GL_BatchID" xml:space="preserve">
+    <value>ID de Lote del LM</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="IC_UniqueDocumentNumber" xml:space="preserve">
+    <value>CI - Número Documento Único</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="Insufficientitems" xml:space="preserve">
+    <value>Artículos componentes con cantidades insuficientes para ensamblar:</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InsufficientMaster" xml:space="preserve">
+    <value>No hay suficientes cantidades disponibles para el artículo maestro {0}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InterProcessCommID" xml:space="preserve">
+    <value>ID Comando Inter-Proceso</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ItemxofX" xml:space="preserve">
+    <value>Artículo {0} de {1}</value>
+    <comment>Message</comment>
+  </data>
+  <data name="LocationDescription" xml:space="preserve">
+    <value>Descripción de Ubicación</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LotItems" xml:space="preserve">
+    <value>Artículos Designados</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="LotItemsInAssembly" xml:space="preserve">
+    <value>Artículos de N° Lote en Ensamble</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="LotQuantity" xml:space="preserve">
+    <value>Cantidad N° Lote</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="LotQuantityRequired" xml:space="preserve">
+    <value>Cantidad de N° Lote Requerida</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="LTSetID" xml:space="preserve">
+    <value>ID de Grupo LT</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MasterAssNumber" xml:space="preserve">
+    <value>Número Ensamble Maestro</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MasterDasNumber" xml:space="preserve">
+    <value>Número Desensamble Maestro</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MasterItemNumber" xml:space="preserve">
+    <value>Número Artículo Maestro</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MasterItemNumberDesc" xml:space="preserve">
+    <value>Descripción Número de Artículo Maestro</value>
+    <comment>Field</comment>
+  </data>
+  <data name="MasterSerialNumber" xml:space="preserve">
+    <value>Número de Serie Maestro</value>
+    <comment>FInder</comment>
+  </data>
+  <data name="MasterSerialProcessAction" xml:space="preserve">
+    <value>Acción Procesar - N° Serie Maestro</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MultilevelLevel" xml:space="preserve">
+    <value>Nivel – Multi-Nivel</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MultilevelParentAssemblyNo" xml:space="preserve">
+    <value>N° Ensamble Nivel Superior - Multi-Nivel</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MultilevelParentSeqNo" xml:space="preserve">
+    <value>N° Secuencia Nivel Superior - Multi-Nivel</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="MultilevelSeqNo" xml:space="preserve">
+    <value>N° de Secuencia Multi-Nivel</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="NoBillsDefinedMessage" xml:space="preserve">
+    <value>No existen listas de materiales definidas para este número de artículo.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NoGenerateMasterSerialPost" xml:space="preserve">
+    <value>No ha generado un número de serie maestro. ¿Desea continuar el asentamiento?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ParentSerialLotComponent" xml:space="preserve">
+    <value>Componente de N° Lote/Serie de Nivel Superior</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="PopUpLT" xml:space="preserve">
+    <value>Formulario Emergente LT</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="PopUpSN" xml:space="preserve">
+    <value>Formulario Emergente SN</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="PostSequenceNumber" xml:space="preserve">
+    <value>Número Secuencia de Asiento</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>Comando Procesar</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="QtyNeededStockingUOM" xml:space="preserve">
+    <value>Cantidad Necesaria (UM de Almacenamiento)</value>
+  </data>
+  <data name="QuantityDescription" xml:space="preserve">
+    <value>Descripción de Cantidad</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QuantityPerLot" xml:space="preserve">
+    <value>Cantidad por Lote</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="QuantityUsed" xml:space="preserve">
+    <value>Cantidad Usada</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="RecordDeleted" xml:space="preserve">
+    <value>Registro Eliminado</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="RecordPrinted" xml:space="preserve">
+    <value>Registro Impreso</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="RecordStatus" xml:space="preserve">
+    <value>Estado de Registro</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SequenceNumber" xml:space="preserve">
+    <value>Número de Secuencia</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialItems" xml:space="preserve">
+    <value>Artículos Serializados</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="SerialItemsInAssembly" xml:space="preserve">
+    <value>Artículos de N° Serie en Ensamble</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialLotBOMNumber" xml:space="preserve">
+    <value>N° L.MAT de Lote/Serie</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialLotItem" xml:space="preserve">
+    <value>Artículo de N° Lote/Serie</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialLotItemUOM" xml:space="preserve">
+    <value>UM Artículo de N° Lote/Serie</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialLotQuantityToProcess" xml:space="preserve">
+    <value>Cantidad N° Lote/Serie a Procesar</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialLotWindowHandle" xml:space="preserve">
+    <value>Identificador de Ventana – N° Serie/Lote</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialMasterItem" xml:space="preserve">
+    <value>Artículo Maestro de Número Serie</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialQuantity" xml:space="preserve">
+    <value>Cantidad de Número Serie</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialQuantityRequired" xml:space="preserve">
+    <value>Cantidad de Número Serie Requerida</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="SerialsLotsNotProcessed" xml:space="preserve">
+    <value>Artículos con Número Serie y Lote no Procesados</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>Número de Transacción</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="UsedQuantity" xml:space="preserve">
+    <value>Cantidad Usada</value>
+    <comment>Finder</comment>
+  </data>
+  <data name="VerifyQTYOK" xml:space="preserve">
+    <value>Cantidades suficientes disponibles para {0}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ComponentID" xml:space="preserve">
+    <value>ID de Componente</value>
+  </data>
+  <data name="FromAssemblyQuantity" xml:space="preserve">
+    <value>Desde Cantidad de Ensamble</value>
+  </data>
+  <data name="MasterItemLotNumber" xml:space="preserve">
+    <value>Número Lote de Artículo Maestro</value>
+  </data>
+  <data name="MasterItemSerialNumber" xml:space="preserve">
+    <value>Número Serie de Artículo Maestro</value>
+  </data>
+  <data name="ParentComponentID" xml:space="preserve">
+    <value>ID de Componente de Nivel Superior</value>
+  </data>
+  <data name="ParentSerialLotComponentID" xml:space="preserve">
+    <value>ID Componente de N° Lote/Serie de Nivel Superior</value>
+  </data>
+  <data name="AllComponentMasterItems" xml:space="preserve">
+    <value>Todos los Artículos Maestros Componentes</value>
+    <comment>Enum</comment>
+  </data>
+  <data name="ComponentMasterItemswithInsufficientQuantity" xml:space="preserve">
+    <value>Artículos Maestros Componentes con Cantidades Insuficientes</value>
+    <comment>Enum</comment>
+  </data>
+  <data name="BillsOfMaterial" xml:space="preserve">
+    <value>Listas de Materiales</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="AssemblyQuantity" xml:space="preserve">
+    <value>Cantidad de Ensamble</value>
+  </data>
+</root>

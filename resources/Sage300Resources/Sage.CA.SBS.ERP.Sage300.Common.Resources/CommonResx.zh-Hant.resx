@@ -1,0 +1,1555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessDeniedMessage" xml:space="preserve">
+    <value>另一個任務已經鎖定{0}頁。等待該任務完成，然後再試。</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>增加</value>
+  </data>
+  <data name="AddFailedMaximumMessage" xml:space="preserve">
+    <value>無法增加{0}，因為已經到達最大數{1}。</value>
+  </data>
+  <data name="AddFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法增加{0}。請重試。</value>
+  </data>
+  <data name="AddLineFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法增加新行。請重試。</value>
+  </data>
+  <data name="AddSuccessMessage" xml:space="preserve">
+    <value>增加了新的{0} "{1}"。</value>
+  </data>
+  <data name="AntiForgeryTokenMissing" xml:space="preserve">
+    <value>未發現防偽標記cookie。</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>後退</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="CannotBeBlankMessage" xml:space="preserve">
+    <value>{0}不能空置。</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="ClearDetailsConfirmMessage" xml:space="preserve">
+    <value>清除此一{0}的明細？</value>
+  </data>
+  <data name="ClearDetailsFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法清除{0}的明細。請重試。</value>
+  </data>
+  <data name="ClearSuccessMessage" xml:space="preserve">
+    <value>{0} "{1}"已清除。</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="CopyFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法複製{0}。請重試。</value>
+  </data>
+  <data name="DecimalPlaces" xml:space="preserve">
+    <value>小數位數</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="DeleteConfirmMessage" xml:space="preserve">
+    <value>刪除此一{0}？</value>
+  </data>
+  <data name="DeleteFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法刪除{0}。</value>
+  </data>
+  <data name="DeleteLine" xml:space="preserve">
+    <value>刪除行</value>
+  </data>
+  <data name="DeleteLineMessage" xml:space="preserve">
+    <value>刪除這一行？</value>
+  </data>
+  <data name="DeleteSuccessMessage" xml:space="preserve">
+    <value>{0} "{1}"已刪除。</value>
+  </data>
+  <data name="ProcessingDescription" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="DuplicateMessage" xml:space="preserve">
+    <value>{0} "{1}"已經存在。</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>從</value>
+  </data>
+  <data name="FromToValueMessage" xml:space="preserve">
+    <value>{0}從值不能大於到值。</value>
+  </data>
+  <data name="GetFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法撷取{0}。請重試。</value>
+  </data>
+  <data name="ImportResponse" xml:space="preserve">
+    <value>{0}：{1}已更新，{2}已插入，{3}已處理。</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>索引</value>
+  </data>
+  <data name="InvalidDate" xml:space="preserve">
+    <value>輸入一個有效日期。</value>
+  </data>
+  <data name="LoggingConstants" xml:space="preserve">
+    <value>[Sage Cloud] [{0}] [TenantId: {1}] [ModuleName: {2}]  [UserId; {3}] - {4}</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="NoRecordsFound" xml:space="preserve">
+    <value>沒有可顯示的條目</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="OpenCompany" xml:space="preserve">
+    <value>開啟公司</value>
+  </data>
+  <data name="Optional" xml:space="preserve">
+    <value>可選</value>
+    <comment>This is to display fields that are optional on the screen</comment>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>自選欄位</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>自選欄位</value>
+  </data>
+  <data name="OptionalFieldValue" xml:space="preserve">
+    <value>自選欄位值</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>過帳</value>
+  </data>
+  <data name="PostAll" xml:space="preserve">
+    <value>過帳所有</value>
+  </data>
+  <data name="PostingFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法過帳{0}。請重試。</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>列印</value>
+  </data>
+  <data name="Printed" xml:space="preserve">
+    <value>已列印</value>
+  </data>
+  <data name="Priority" xml:space="preserve">
+    <value>優先</value>
+  </data>
+  <data name="Proceed" xml:space="preserve">
+    <value>往下</value>
+  </data>
+  <data name="Process" xml:space="preserve">
+    <value>處理</value>
+  </data>
+  <data name="ProcessFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法儲存您的變更。請重試。</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>正在處理...</value>
+  </data>
+  <data name="RecordNotFoundMessage" xml:space="preserve">
+    <value>無法找到{0} "{1}"。</value>
+  </data>
+  <data name="RefreshDetailsFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法重新整理{0}的明細。請重試。</value>
+  </data>
+  <data name="RemoveColumn" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="ReportGenFailedMessage" xml:space="preserve">
+    <value>產生報表時發生一個問題。請重試。</value>
+  </data>
+  <data name="ReportGetFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法檢視報表。請重試。如果問題仍然存在，聯絡客戶支援。</value>
+  </data>
+  <data name="Sage300Application" xml:space="preserve">
+    <value>Sage 300</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>儲存</value>
+    <comment>Save button</comment>
+  </data>
+  <data name="SaveConfirmMessage" xml:space="preserve">
+    <value>儲存對{0} "{1}"的變更？</value>
+  </data>
+  <data name="SaveFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法儲存您的變更。請重試。</value>
+  </data>
+  <data name="SaveFailedMessage2" xml:space="preserve">
+    <value>發生一個問題，無法儲存您對{0}的變更。請重試。</value>
+  </data>
+  <data name="SaveSuccessMessage" xml:space="preserve">
+    <value>已儲存變更。</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>選擇{0}</value>
+  </data>
+  <data name="Select1" xml:space="preserve">
+    <value>選擇</value>
+  </data>
+  <data name="SetCriteria" xml:space="preserve">
+    <value>設定條件</value>
+  </data>
+  <data name="SetCriteriaLabel" xml:space="preserve">
+    <value>設定{0}的篩檢程式</value>
+  </data>
+  <data name="SetFilter" xml:space="preserve">
+    <value>設定篩檢程式</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>顯示</value>
+  </data>
+  <data name="ShowAllRecords" xml:space="preserve">
+    <value>顯示所有記錄</value>
+  </data>
+  <data name="ShowMessageBoxTitle" xml:space="preserve">
+    <value>請更正以下問題：</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Sage 300</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>到</value>
+  </data>
+  <data name="UpdateFailedMessage" xml:space="preserve">
+    <value>無法儲存您的變更，因為另一用戶已經刪除了此一{0}。</value>
+  </data>
+  <data name="NotAuthorizedMesage" xml:space="preserve">
+    <value>您無權完成此一任務。聯絡您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>功能幣別</value>
+  </data>
+  <data name="GetKeysFailedMessage" xml:space="preserve">
+    <value>該商業實體有多個關鍵字段，無法使用鍵碼"{0}"存取。</value>
+  </data>
+  <data name="UnsavedChangesMessage" xml:space="preserve">
+    <value>{0} "{1}"中有未儲存的變更。是否繼續？</value>
+    <comment>Used when the model is dirty.</comment>
+  </data>
+  <data name="HeaderEntity" xml:space="preserve">
+    <value>標頭實體</value>
+  </data>
+  <data name="InactiveAsOfDate" xml:space="preserve">
+    <value>閒置（至日期）</value>
+    <comment>Label for Date field when record is inactive</comment>
+  </data>
+  <data name="Legal" xml:space="preserve">
+    <value>Legal</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>從日期</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>到日期</value>
+  </data>
+  <data name="UnsavedChangesMessage2" xml:space="preserve">
+    <value>{0}中有未儲存的變更。是否繼續？</value>
+    <comment>Used when user navigated to another page by clicking on browser buttons</comment>
+  </data>
+  <data name="AddLine" xml:space="preserve">
+    <value>增加行</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>預覽</value>
+  </data>
+  <data name="SelectBy" xml:space="preserve">
+    <value>選擇按</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>開放</value>
+  </data>
+  <data name="PaperSize" xml:space="preserve">
+    <value>紙張大小</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>排序按</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>活動</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>版權所有 (c) 1994-2015 Sage Software, Inc.  保留所有權利。</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>已刪除</value>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>輸入</value>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>產生</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>匯入</value>
+  </data>
+  <data name="Imported" xml:space="preserve">
+    <value>匯入</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>包括</value>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>已過帳</value>
+  </data>
+  <data name="Posting" xml:space="preserve">
+    <value>過帳</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <data name="ReadyToPost" xml:space="preserve">
+    <value>待過帳</value>
+  </data>
+  <data name="Reverse" xml:space="preserve">
+    <value>迴轉</value>
+  </data>
+  <data name="FilterBy" xml:space="preserve">
+    <value>篩檢按</value>
+    <comment>Used In Finder</comment>
+  </data>
+  <data name="FindBy" xml:space="preserve">
+    <value>查找按</value>
+    <comment>Used In Finder</comment>
+  </data>
+  <data name="SearchBy" xml:space="preserve">
+    <value>搜尋按</value>
+    <comment>Used In Finder</comment>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>匯出</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>會計期間</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>會計年度</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>版本2014</value>
+  </data>
+  <data name="Entry" xml:space="preserve">
+    <value>分錄</value>
+  </data>
+  <data name="DateRangeMessage" xml:space="preserve">
+    <value>輸入的日期位於在公司概況中指定的範圍之外。是否接受此日期？</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>下載</value>
+  </data>
+  <data name="ExportResult" xml:space="preserve">
+    <value>{0}：{1}個記錄已匯出。</value>
+  </data>
+  <data name="Uploading" xml:space="preserve">
+    <value>正在上載...</value>
+  </data>
+  <data name="LoadScript" xml:space="preserve">
+    <value>載入腳本</value>
+    <comment>Used in Export Screen</comment>
+  </data>
+  <data name="SaveScript" xml:space="preserve">
+    <value>儲存腳本</value>
+    <comment>Used in Export Screen</comment>
+  </data>
+  <data name="FileLocation" xml:space="preserve">
+    <value>檔案地點</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="FileProperties" xml:space="preserve">
+    <value>檔案屬性</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="FileSize" xml:space="preserve">
+    <value>檔案大小</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="FileType" xml:space="preserve">
+    <value>檔案類型</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="ImportType" xml:space="preserve">
+    <value>匯入類型</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名稱</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>選項</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>進度</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="TitleRecord" xml:space="preserve">
+    <value>標題記錄</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="ClearSavedSettings" xml:space="preserve">
+    <value>清除儲存的設定</value>
+  </data>
+  <data name="SaveSettings" xml:space="preserve">
+    <value>儲存設定作為預設</value>
+  </data>
+  <data name="ClearPreferenceFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法清除您的喜好。請重試。</value>
+  </data>
+  <data name="ClearPreferenceSaveMessage" xml:space="preserve">
+    <value>喜好已清除</value>
+  </data>
+  <data name="SavePreferenceFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法儲存您的喜好。請重試。</value>
+  </data>
+  <data name="SavePreferenceMessage" xml:space="preserve">
+    <value>喜好已儲存</value>
+  </data>
+  <data name="DeleteFailedNoRecordMessage" xml:space="preserve">
+    <value>無法刪除記錄。另一用戶可能已將其刪除。</value>
+  </data>
+  <data name="UpdateFailedNoRecordMessage" xml:space="preserve">
+    <value>無法更新記錄。另一用戶可能已將其刪除。</value>
+  </data>
+  <data name="DeleteLinesMessage" xml:space="preserve">
+    <value>刪除所選行？</value>
+    <comment>used when multiple lines are selected</comment>
+  </data>
+  <data name="UnsavedChangesMessage3" xml:space="preserve">
+    <value>是否確要離開此一頁面？如果繼續，您的變更將不會被儲存。</value>
+    <comment>Used when a record cannot be specified</comment>
+  </data>
+  <data name="FileSelectError" xml:space="preserve">
+    <value>選擇一個要匯入的檔案。</value>
+    <comment>Used in Import, in case user clicks on Import button without selecting a file</comment>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>瀏覽</value>
+    <comment>Used in Export/Import, for Browse label</comment>
+  </data>
+  <data name="FileTypeSelectError" xml:space="preserve">
+    <value>選擇一個XLSX檔案（Microsoft Office Excel Open XML格式試算表檔案）匯入。</value>
+    <comment>Used in Import, in case user clicks on Import button and select a file, which is not supported</comment>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>瞭解更多</value>
+  </data>
+  <data name="RequiredLegend" xml:space="preserve">
+    <value>必需</value>
+    <comment>Used with asterisk image as legend for indicating required fields</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>資訊</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>金額</value>
+  </data>
+  <data name="AccountEmptyMessage" xml:space="preserve">
+    <value>無法找到科目表。</value>
+  </data>
+  <data name="FromToYearValueMessage" xml:space="preserve">
+    <value>{0}的《從》值必須匹配其《到》值。</value>
+  </data>
+  <data name="OptinalFieldDefaultValue" xml:space="preserve">
+    <value>預設值"{0}"對自選欄位{1}不存在。</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>閒置</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>上一維護日期</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>連絡人</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>電郵</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>傳真</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>電話</value>
+  </data>
+  <data name="AutoInsertOptionalFieldsMessage" xml:space="preserve">
+    <value>《自動插入》對必需的自選欄位必須設為《是》。</value>
+  </data>
+  <data name="FiscalYearPeriod" xml:space="preserve">
+    <value>會計年度 - 期間</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>期間</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>年度</value>
+  </data>
+  <data name="EntryModeNormal" xml:space="preserve">
+    <value>正常分錄模式</value>
+  </data>
+  <data name="EntryModeQuick" xml:space="preserve">
+    <value>快速分錄模式</value>
+  </data>
+  <data name="ClearMessage" xml:space="preserve">
+    <value>{0}已清除。</value>
+  </data>
+  <data name="ValidateFailedMessage" xml:space="preserve">
+    <value>驗證{0}時發生一個問題。請重試。</value>
+  </data>
+  <data name="InactiveRecordMessage" xml:space="preserve">
+    <value>{0} "{1}"為閒置。</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="DocLengthMessage" xml:space="preserve">
+    <value>{0}長度必須介於1和22個字元之間。</value>
+  </data>
+  <data name="DocLengthValMessage" xml:space="preserve">
+    <value>附加到下一{1}編號的{0}首碼超過了{2}個字元的指定長度。</value>
+  </data>
+  <data name="SessionDate" xml:space="preserve">
+    <value>工作階段日期</value>
+  </data>
+  <data name="SymbolAsterisk" xml:space="preserve">
+    <value>* 星號</value>
+  </data>
+  <data name="SymbolBackslash" xml:space="preserve">
+    <value>\ 反斜線</value>
+  </data>
+  <data name="SymbolForwardSlash" xml:space="preserve">
+    <value>/ 斜線</value>
+  </data>
+  <data name="SymbolHyphen" xml:space="preserve">
+    <value>- 連字號</value>
+  </data>
+  <data name="SymbolLeftParenthesis" xml:space="preserve">
+    <value>( 左括弧</value>
+  </data>
+  <data name="SymbolNumberSign" xml:space="preserve">
+    <value># 井字號</value>
+  </data>
+  <data name="SymbolPeriod" xml:space="preserve">
+    <value>.小數點</value>
+  </data>
+  <data name="SymbolRightParenthesis" xml:space="preserve">
+    <value>) 右括弧</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>重新整理</value>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>閒置日期</value>
+  </data>
+  <data name="InactiveErrorMessage" xml:space="preserve">
+    <value>{0} "{1}"為閒置。</value>
+  </data>
+  <data name="Multicurrency" xml:space="preserve">
+    <value>多幣別</value>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>省/市/區</value>
+  </data>
+  <data name="ZIPPostal" xml:space="preserve">
+    <value>郵遞區號</value>
+  </data>
+  <data name="RecordNotFoundWarning" xml:space="preserve">
+    <value>{0} "{1}"不存在，但可以使用。</value>
+  </data>
+  <data name="UnsavedChangesMessage4" xml:space="preserve">
+    <value>{0} "{1}", {2} "{3}"中有未儲存的變更。是否繼續？</value>
+  </data>
+  <data name="InactiveWarningMessage" xml:space="preserve">
+    <value>{0} "{1}"為閒置，但可以使用。</value>
+    <comment>REMOVE - Add new string to CommonResx (ID "InactiveWarningMessage" and value "{0} "{1}" is inactive, but can be used.")</comment>
+  </data>
+  <data name="GLAccountNotExistsWarning" xml:space="preserve">
+    <value>{0} "{1}"不存在，但可以使用。</value>
+    <comment>REMOVE - Use RecordNotFoundMessage from CommonResx</comment>
+  </data>
+  <data name="NotFoundMessage" xml:space="preserve">
+    <value>無法找到{0}。</value>
+  </data>
+  <data name="FileProcessingFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法處理該檔案。請重試。</value>
+  </data>
+  <data name="ImportFailedMessage" xml:space="preserve">
+    <value>從該檔案匯入資料時發生一個問題。請重試。</value>
+  </data>
+  <data name="ProcessCancelErrorMessage" xml:space="preserve">
+    <value>取消該進程時發生一個問題。</value>
+  </data>
+  <data name="ProcessErrorMessage" xml:space="preserve">
+    <value>發生一個問題，無法處理該請求。</value>
+  </data>
+  <data name="UnhandledExceptionMessage" xml:space="preserve">
+    <value>發生一個非預期問題。再次嘗試或連絡您的管理員。</value>
+  </data>
+  <data name="DetailsAlreadyExists" xml:space="preserve">
+    <value>明細已經對{0} "{1}"存在。</value>
+  </data>
+  <data name="TaxClassInvalid" xml:space="preserve">
+    <value>{0} "{1}"和{2} "{3}"不存在。</value>
+  </data>
+  <data name="TaxIncludedNotAllowed" xml:space="preserve">
+    <value>{0} "{1}"不允許《已含稅》。</value>
+  </data>
+  <data name="UpdateFailedRecordModifiedMessage" xml:space="preserve">
+    <value>無法更新記錄，因為另一用戶已經將其修改。</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="DeleteConfirmMessage1" xml:space="preserve">
+    <value>刪除此一{0} {1}？</value>
+  </data>
+  <data name="CostofGoodsSold" xml:space="preserve">
+    <value>銷貨成本</value>
+  </data>
+  <data name="AccountFinderTitle" xml:space="preserve">
+    <value>科目</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>所有</value>
+    <comment>Used in header checkbox in finder grid user preferences</comment>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>套用</value>
+    <comment>Used in the button in finder grid user preferences</comment>
+  </data>
+  <data name="EditColumns" xml:space="preserve">
+    <value>編輯列</value>
+    <comment>Used in the button and label in finder grid user preferences</comment>
+  </data>
+  <data name="RestoreTableDefaults" xml:space="preserve">
+    <value>恢復表預設值</value>
+    <comment>Used in the link button in finder user preferences</comment>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜尋</value>
+    <comment>Used in the button in finder</comment>
+  </data>
+  <data name="AccountStatus" xml:space="preserve">
+    <value>科目狀態</value>
+  </data>
+  <data name="AccountType" xml:space="preserve">
+    <value>科目類型</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>語言</value>
+  </data>
+  <data name="ExportImportNoColumnSelected" xml:space="preserve">
+    <value>選擇至少一個列匯出。</value>
+  </data>
+  <data name="RecordsNotFoundMessage" xml:space="preserve">
+    <value>無法找到{0} "{1}"和{2} "{3}"。</value>
+  </data>
+  <data name="BlankIPError" xml:space="preserve">
+    <value>幣別代碼不能空置。</value>
+    <comment>Error message</comment>
+  </data>
+  <data name="CurrencyCodeInvalid" xml:space="preserve">
+    <value>未在公共服務中定義幣別代碼"{0}"。</value>
+    <comment>Error message</comment>
+  </data>
+  <data name="InvalidAccountError" xml:space="preserve">
+    <value>未在總帳科目中定義{0} "{1}"。</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvalidAccountWarning" xml:space="preserve">
+    <value>未在總帳科目中定義{0} "{1}"。</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ImportFileContentNotValid" xml:space="preserve">
+    <value>發生一個問題，無法匯入資料。無法正確格式化資料，或者檔案已損毀。</value>
+    <comment>Used in import scenario, when the uploaded file content is not correct.</comment>
+  </data>
+  <data name="CountyTax" xml:space="preserve">
+    <value>縣稅</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="FederalTax" xml:space="preserve">
+    <value>聯邦稅</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="GST" xml:space="preserve">
+    <value>GST</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="HST" xml:space="preserve">
+    <value>HST</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>其它</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="PST" xml:space="preserve">
+    <value>PST</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="StateTax" xml:space="preserve">
+    <value>州稅</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="VAT" xml:space="preserve">
+    <value>增值稅</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="CityTax" xml:space="preserve">
+    <value>市稅</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="InvalidScriptFile" xml:space="preserve">
+    <value>發生一個問題，無法載入腳本。選擇一個有效的XML檔案再試。</value>
+  </data>
+  <data name="DiscountDayofMonthErrorMessage" xml:space="preserve">
+    <value>折扣的月中某日</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DiscountEndingDayErrorMessage" xml:space="preserve">
+    <value>折扣日期表的截止日</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DiscountStartingDayErrorMessage" xml:space="preserve">
+    <value>折扣日期表的起始日</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DueDayofMonthErrorMessage" xml:space="preserve">
+    <value>到期日期的月中某日</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DueEndingDayErrorMessage" xml:space="preserve">
+    <value>到期日期表的截止日</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DueStartingDayErrorMessage" xml:space="preserve">
+    <value>到期日期表的起始日</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DeleteSuccessMessage2" xml:space="preserve">
+    <value>{0}已刪除。</value>
+  </data>
+  <data name="ImportRequiredFieldMissing" xml:space="preserve">
+    <value>檔案中缺少部分必需的欄位。</value>
+    <comment>Used In Import, when the uploaded excel sheet has missing some column, which is a required field.</comment>
+  </data>
+  <data name="MaxSize" xml:space="preserve">
+    <value>{0}不能大於{1}。</value>
+    <comment>{0} Display Name, {1} Maximum Value</comment>
+  </data>
+  <data name="MaxValue" xml:space="preserve">
+    <value>100</value>
+    <comment>Validation maximum value</comment>
+  </data>
+  <data name="NoOptionSelectedMessage" xml:space="preserve">
+    <value>您必須選擇至少一個{0}。</value>
+  </data>
+  <data name="VendorType" xml:space="preserve">
+    <value>供應商類型</value>
+  </data>
+  <data name="InsertFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法增加記錄。</value>
+  </data>
+  <data name="ProcessingStopped" xml:space="preserve">
+    <value>於{1}中的記錄{0}處停止處理。</value>
+  </data>
+  <data name="UpdateRecordFailedMessage" xml:space="preserve">
+    <value>發生一個問題，無法更新記錄。</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>截止</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>起始</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="CheckStatus" xml:space="preserve">
+    <value>支票狀態</value>
+  </data>
+  <data name="InvalidFiscalPeriod" xml:space="preserve">
+    <value>未在公共服務會計年曆中定義會計年度{1}的會計期間{0}。</value>
+  </data>
+  <data name="InvalidFiscalYear" xml:space="preserve">
+    <value>未在公共服務會計年曆中定義會計年度{0}。</value>
+  </data>
+  <data name="Contains" xml:space="preserve">
+    <value>含有</value>
+  </data>
+  <data name="Like" xml:space="preserve">
+    <value>LIKE</value>
+  </data>
+  <data name="StartsWith" xml:space="preserve">
+    <value>以此開頭</value>
+  </data>
+  <data name="UnexpectedError" xml:space="preserve">
+    <value>未預期的錯誤</value>
+    <comment>To display title for error message in the Unexpected error page.</comment>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>今日</value>
+  </data>
+  <data name="ServerDownDataRefreshMessage" xml:space="preserve">
+    <value>由於伺服器出現問題，您已被切換到一個備用伺服器。請重新整理瀏覽器，然後重新輸入資料。</value>
+  </data>
+  <data name="CurrencySpreadRange" xml:space="preserve">
+    <value>輸入的匯率超出匯率表指定的差額範圍。是否繼續？</value>
+  </data>
+  <data name="PageNotFoundError" xml:space="preserve">
+    <value>無法找到您請求的頁面。它可能已被刪除或重命名，或者可能暫時不可用。</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>首個</value>
+    <comment>Hint text for From field with default value like AAAAAAAA</comment>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>末個</value>
+    <comment>Hint text for To field with default value like ZZZZZZZZ</comment>
+  </data>
+  <data name="NormalMode" xml:space="preserve">
+    <value>正常模式</value>
+  </data>
+  <data name="UnconditionalInsertsOrUpdates" xml:space="preserve">
+    <value>無條件插入/更新</value>
+  </data>
+  <data name="CannotDeleteMessage" xml:space="preserve">
+    <value>無法刪除{0} "{1}"</value>
+  </data>
+  <data name="NoProcessingOptionSelectedMessage" xml:space="preserve">
+    <value>選擇至少一個處理選項。</value>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>批次編號</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Invalid" xml:space="preserve">
+    <value>無效</value>
+  </data>
+  <data name="SymbolSpace" xml:space="preserve">
+    <value>  空格</value>
+    <comment>GLIntegration-Segment Seperator List Options</comment>
+  </data>
+  <data name="UnsavedChangesMessage5" xml:space="preserve">
+    <value>{0}中有未儲存的變更。是否繼續？</value>
+    <comment>Used when model is dirty on popup window</comment>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>不適用</value>
+  </data>
+  <data name="ProcessingCompletedNoRecordsFoundMessage" xml:space="preserve">
+    <value>處理完成。沒有記錄符合您指定的標準。</value>
+  </data>
+  <data name="Foreign" xml:space="preserve">
+    <value>外國</value>
+  </data>
+  <data name="Multiple" xml:space="preserve">
+    <value>多</value>
+  </data>
+  <data name="Single" xml:space="preserve">
+    <value>單</value>
+  </data>
+  <data name="DisplayDateFormat" xml:space="preserve">
+    <value>MMMM d, yyyy</value>
+    <comment>DatePicker Placeholder</comment>
+  </data>
+  <data name="SymbolLeftBracket" xml:space="preserve">
+    <value>( 左括弧</value>
+  </data>
+  <data name="SymbolRightBracket" xml:space="preserve">
+    <value>) 右括弧</value>
+  </data>
+  <data name="SelectForm" xml:space="preserve">
+    <value>選擇表格</value>
+  </data>
+  <data name="InvalidFiscalDateMessage" xml:space="preserve">
+    <value>日期{0}不存在於公共服務的會計年曆。</value>
+  </data>
+  <data name="ReportCurrency" xml:space="preserve">
+    <value>報表幣別</value>
+  </data>
+  <data name="ReportFormat" xml:space="preserve">
+    <value>報表格式</value>
+  </data>
+  <data name="ThroughPostingSequence" xml:space="preserve">
+    <value>到過帳序列編號</value>
+  </data>
+  <data name="BankCurrencyCodeError" xml:space="preserve">
+    <value>銀行{0}未設定為使用幣別{1}。</value>
+  </data>
+  <data name="NotApplicable" xml:space="preserve">
+    <value>不適用</value>
+  </data>
+  <data name="Delete1" xml:space="preserve">
+    <value>刪除{0} "{1}"？</value>
+  </data>
+  <data name="AccessDeniedPrintChecks" xml:space="preserve">
+    <value>另一用戶正在列印支票。是否再試？</value>
+    <comment>Used in Print checks screen when another user has opened Print Checks for same Module, Database &amp; Batch</comment>
+  </data>
+  <data name="RecordDoesNotExist" xml:space="preserve">
+    <value>{0} "{1}"不存在。</value>
+  </data>
+  <data name="PageNotFound" xml:space="preserve">
+    <value>未找到頁面</value>
+  </data>
+  <data name="AddEditLink" xml:space="preserve">
+    <value>增加/編輯</value>
+    <comment>Link Button Field</comment>
+  </data>
+  <data name="NotDefinedInCommonService" xml:space="preserve">
+    <value>未在公共服務中定義{0} "{1}"。</value>
+  </data>
+  <data name="NotDefinedInBankService" xml:space="preserve">
+    <value>未在銀行服務中定義{0} "{1}"。</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="Inquiry" xml:space="preserve">
+    <value>查詢</value>
+    <comment>Added for Information Link</comment>
+  </data>
+  <data name="DynamicQuery" xml:space="preserve">
+    <value>動態問詢</value>
+  </data>
+  <data name="SqlInjectionMessage" xml:space="preserve">
+    <value>不允許請求的查詢，因為它可能會危及您的資料的安全性。</value>
+  </data>
+  <data name="AddConfirmMessage" xml:space="preserve">
+    <value>增加{0} "{1}"？</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>憑證...</value>
+  </data>
+  <data name="PostInProgressDeletedBatchMessage" xml:space="preserve">
+    <value>不能開啟正在過帳或已刪除的批次。</value>
+  </data>
+  <data name="PostInProgressMessage" xml:space="preserve">
+    <value>所選批次正在過帳，無法編輯。</value>
+  </data>
+  <data name="DayEndNumber" xml:space="preserve">
+    <value>日終處理編號</value>
+  </data>
+  <data name="FromDayEndNumber" xml:space="preserve">
+    <value>從日終處理編號</value>
+  </data>
+  <data name="IncludeOptionalFields" xml:space="preserve">
+    <value>包括自選欄位</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LetterA4" xml:space="preserve">
+    <value>Letter/A4</value>
+  </data>
+  <data name="Reprint" xml:space="preserve">
+    <value>重新列印已列印的日誌</value>
+  </data>
+  <data name="ToDayEndNumber" xml:space="preserve">
+    <value>到日終處理編號</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>交易日期</value>
+  </data>
+  <data name="Zero" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="StartEndValueMessage" xml:space="preserve">
+    <value>起始值大於截止值。</value>
+  </data>
+  <data name="SortedBy" xml:space="preserve">
+    <value>排序按</value>
+  </data>
+  <data name="SessionExpired" xml:space="preserve">
+    <value>您的工作階段已過期。重新登入以便繼續。</value>
+  </data>
+  <data name="IncludeJob" xml:space="preserve">
+    <value>包括專案明細</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>明細</value>
+  </data>
+  <data name="ReportType" xml:space="preserve">
+    <value>報表類型</value>
+  </data>
+  <data name="ThenBy" xml:space="preserve">
+    <value>然後按</value>
+  </data>
+  <data name="FiscalCalendars" xml:space="preserve">
+    <value>會計年曆</value>
+  </data>
+  <data name="NoPrepayNotOpenBatch" xml:space="preserve">
+    <value>批次{0}不是一個開放批次，因此您無法增加一個預付。</value>
+  </data>
+  <data name="MessageIDInactive" xml:space="preserve">
+    <value>訊息代號{0}為閒置。</value>
+    <comment>Messege</comment>
+  </data>
+  <data name="InvalidPeriod" xml:space="preserve">
+    <value>期間{0}無效。</value>
+  </data>
+  <data name="AccountDescription" xml:space="preserve">
+    <value>科目描述</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="SessionExipred_SignInButton" xml:space="preserve">
+    <value>登入</value>
+  </data>
+  <data name="SessionExpiredDialogHeader" xml:space="preserve">
+    <value>保持已登入狀態？</value>
+  </data>
+  <data name="SessionExpiredDialogMsg1" xml:space="preserve">
+    <value>您即將因閒置而被登出。要保持已登入狀態，點擊確定。</value>
+  </data>
+  <data name="SessionExpiredDialogMsg2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SessionExpired_Header" xml:space="preserve">
+    <value>工作階段超時</value>
+  </data>
+  <data name="SessionExpired_Msg1" xml:space="preserve">
+    <value>為了您的安全，您已在閒置一段時間後被登出。</value>
+  </data>
+  <data name="SessionExpired_Msg2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FileFormatError" xml:space="preserve">
+    <value>選擇一個有效的報表模版檔案（.rpt）。</value>
+    <comment>For select report</comment>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>繼續</value>
+  </data>
+  <data name="FeatureNotAvailableWeb_Message" xml:space="preserve">
+    <value>無法完成您的請求，因為{0}在網頁螢幕中不可用。您或許能夠使用桌面螢幕。</value>
+    <comment>Used in AP-AR Payment Intery for Job related items</comment>
+  </data>
+  <data name="CreditCardType" xml:space="preserve">
+    <value>信用卡類型</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>失效日期</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>時間</value>
+  </data>
+  <data name="AddressEntered" xml:space="preserve">
+    <value>已輸入地址</value>
+    <comment>Drop-Shipment dropdownlist item</comment>
+  </data>
+  <data name="CustomerAddress" xml:space="preserve">
+    <value>客戶地址</value>
+    <comment>Drop-Shipment dropdownlist item</comment>
+  </data>
+  <data name="CustomerShipToAddress" xml:space="preserve">
+    <value>客戶發貨至地址</value>
+    <comment>Drop-Shipment dropdownlist item</comment>
+  </data>
+  <data name="InventoryLocationAddress" xml:space="preserve">
+    <value>存貨地點地址</value>
+    <comment>Drop-Shipment dropdownlist item</comment>
+  </data>
+  <data name="DoesNotExist" xml:space="preserve">
+    <value>無法找到{0}。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UnsavedChangesPostMessage" xml:space="preserve">
+    <value>{0} "{1}"尚未過帳。如果繼續，您所做的任何變更將被刪去。是否繼續？</value>
+  </data>
+  <data name="ValueBetweenRangeError" xml:space="preserve">
+    <value>{0}必須{1}和{2}之間。</value>
+  </data>
+  <data name="Is" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="Finder" xml:space="preserve">
+    <value>查找器</value>
+  </data>
+  <data name="UnsavedChangesMessage6" xml:space="preserve">
+    <value>{0} "{1}", "{2}"中有未儲存的變更。是否繼續？</value>
+    <comment>Used when the model is dirty.</comment>
+  </data>
+  <data name="InvalidValueSetMessage" xml:space="preserve">
+    <value>尚未設定自選欄位{0}的值。</value>
+  </data>
+  <data name="TaxAmountErrorMsg" xml:space="preserve">
+    <value>稅金不能為負數或大於合計金額。</value>
+  </data>
+  <data name="ScreenNotAvailableMessage" xml:space="preserve">
+    <value>{0}螢幕不可用。</value>
+    <comment>Temporary Key. Should be removed once all screens are available</comment>
+  </data>
+  <data name="MaximumAmount" xml:space="preserve">
+    <value>最大金額</value>
+  </data>
+  <data name="NoExpiration" xml:space="preserve">
+    <value>不失效</value>
+  </data>
+  <data name="NumberofInvoices" xml:space="preserve">
+    <value>發票數目</value>
+  </data>
+  <data name="SpecificDate" xml:space="preserve">
+    <value>特定日期</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>是否確要刪除{0} {1}？</value>
+  </data>
+  <data name="DuplicateMessage2" xml:space="preserve">
+    <value>{0}已經存在。</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>設備</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>材料</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>雜項</value>
+  </data>
+  <data name="Subcontractor" xml:space="preserve">
+    <value>分包商</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>預設</value>
+    <comment>Moving this Resource key from module specific to common</comment>
+  </data>
+  <data name="ICAssembly" xml:space="preserve">
+    <value>存貨控制組裝</value>
+  </data>
+  <data name="NoScreenAvailable" xml:space="preserve">
+    <value>無法完成您的請求，因為{0}在網頁螢幕中不可用。您或許能夠使用桌面螢幕。</value>
+  </data>
+  <data name="OEInvoice" xml:space="preserve">
+    <value>銷售訂單發票分錄</value>
+  </data>
+  <data name="OEShipment" xml:space="preserve">
+    <value>銷售訂單發貨分錄</value>
+  </data>
+  <data name="ARAdjustment" xml:space="preserve">
+    <value>應收帳款調整</value>
+  </data>
+  <data name="ARRefund" xml:space="preserve">
+    <value>應收帳款退款</value>
+  </data>
+  <data name="GenericViewError" xml:space="preserve">
+    <value>登入網頁螢幕時發生一個問題。嘗試登入到Sage 300桌面，或聯絡您的管理員尋求協助。</value>
+  </data>
+  <data name="APAdjustment" xml:space="preserve">
+    <value>應付帳款調整</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>自訂</value>
+    <comment>Used show Customize menu</comment>
+  </data>
+  <data name="Expanded" xml:space="preserve">
+    <value>展開所有部分</value>
+    <comment>Expanded View for Collapsible Entry Screen</comment>
+  </data>
+  <data name="Simple" xml:space="preserve">
+    <value>摺疊所有部分</value>
+    <comment>Simple view for Collapsible Entry Screen</comment>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>檢視</value>
+    <comment>View options for Collapsible Entry Screen </comment>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>更新</value>
+    <comment>Button to refresh the UI screen</comment>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>恢復</value>
+  </data>
+  <data name="RestoreMessage" xml:space="preserve">
+    <value>是否確定要恢復預設螢幕設定？</value>
+  </data>
+  <data name="RestoreTitle" xml:space="preserve">
+    <value>恢復預設設定</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>文字</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>類型</value>
+  </data>
+  <data name="CheckPostedError" xml:space="preserve">
+    <value>支票編號{0}已經過帳。</value>
+  </data>
+  <data name="DismissSuccessMessage" xml:space="preserve">
+    <value>{0} "{1}"已棄置。</value>
+  </data>
+  <data name="GlobalCopyright" xml:space="preserve">
+    <value>© {0} The Sage Group plc或其授權者。保留所有權利。</value>
+  </data>
+  <data name="NoResultsFound" xml:space="preserve">
+    <value>未找到結果</value>
+  </data>
+  <data name="CustomizationDescription" xml:space="preserve">
+    <value>自訂描述</value>
+    <comment>Customization popup: label for Customization Description field</comment>
+  </data>
+  <data name="CustomizationID" xml:space="preserve">
+    <value>自訂代號</value>
+    <comment>Customization popup: label for Customization ID field</comment>
+  </data>
+  <data name="UIProfiles" xml:space="preserve">
+    <value>用戶介面概況</value>
+    <comment>Customization popup: label for UI Profiles multi-select field</comment>
+  </data>
+  <data name="Customization" xml:space="preserve">
+    <value>自訂</value>
+  </data>
+  <data name="Customization2" xml:space="preserve">
+    <value>自訂</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>重置</value>
+    <comment>Button to reset settings.</comment>
+  </data>
+  <data name="Between" xml:space="preserve">
+    <value>介於</value>
+  </data>
+  <data name="Equal" xml:space="preserve">
+    <value>等於</value>
+  </data>
+  <data name="GreaterThan" xml:space="preserve">
+    <value>大於</value>
+  </data>
+  <data name="LessThan" xml:space="preserve">
+    <value>少於</value>
+  </data>
+  <data name="NotEqual" xml:space="preserve">
+    <value>不是</value>
+  </data>
+  <data name="Error_NotAuthorizedToDrillDown" xml:space="preserve">
+    <value>您沒有在這一記錄上下鑽的授權。有關安全授權的幫助，請與您的系統管理員連絡。</value>
+  </data>
+  <data name="ModuleInactivatedError" xml:space="preserve">
+    <value>此外，啟用下列Sage 300程式：{0}。</value>
+  </data>
+  <data name="SetExportCriteria" xml:space="preserve">
+    <value>設定條件...</value>
+  </data>
+  <data name="SetCriteriaString" xml:space="preserve">
+    <value>匯出條件字串</value>
+  </data>
+  <data name="ShowCriteria" xml:space="preserve">
+    <value>顯示條件</value>
+  </data>
+  <data name="HideCriteria" xml:space="preserve">
+    <value>隱藏條件</value>
+  </data>
+  <data name="EndsWith" xml:space="preserve">
+    <value>結束以</value>
+  </data>
+  <data name="ClickAddFilter" xml:space="preserve">
+    <value>點擊增加篩檢程式</value>
+  </data>
+  <data name="AddCriteria" xml:space="preserve">
+    <value>增加條件</value>
+  </data>
+  <data name="CreateFilterPopUpTitle" xml:space="preserve">
+    <value>為{0}欄位建立篩檢程式</value>
+  </data>
+  <data name="SetValueAsFieldName" xml:space="preserve">
+    <value>設定作為欄位名稱的值</value>
+  </data>
+  <data name="Config" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="Column" xml:space="preserve">
+    <value>欄</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>篩檢程式</value>
+  </data>
+  <data name="ResultsPreview" xml:space="preserve">
+    <value>結果預覽</value>
+  </data>
+  <data name="ShowFilter" xml:space="preserve">
+    <value>顯示篩檢程式</value>
+  </data>
+  <data name="ReportName" xml:space="preserve">
+    <value>報表名稱</value>
+  </data>
+  <data name="SelectReport" xml:space="preserve">
+    <value>選擇報表</value>
+  </data>
+  <data name="NoLicenseMessage" xml:space="preserve">
+    <value>您沒有使用此一產品的使用權。洽詢您的系統管理員獲取幫助。</value>
+  </data>
+  <data name="ClearFilters" xml:space="preserve">
+    <value>清除所有篩檢程式</value>
+  </data>
+  <data name="PerPage" xml:space="preserve">
+    <value>每頁：</value>
+  </data>
+  <data name="NoDrillDownInfo" xml:space="preserve">
+    <value>無法找到此一記錄的下鑽資訊。如果您正在使用網頁螢幕，請注意，您必須使用桌面螢幕方可以下鑽到薪資管理或專案成本管理交易。</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>篩檢程式：</value>
+    <comment>For general inquiry</comment>
+  </data>
+  <data name="NoFilter" xml:space="preserve">
+    <value>無篩檢程式</value>
+    <comment>For general inquiry</comment>
+  </data>
+  <data name="Template" xml:space="preserve">
+    <value>範本</value>
+    <comment>For general inquiry</comment>
+  </data>
+  <data name="InvalidTaxCode" xml:space="preserve">
+    <value>稅務代碼不存在。</value>
+  </data>
+  <data name="TaxWithheld" xml:space="preserve">
+    <value>預扣稅</value>
+  </data>
+  <data name="DetailTaxWithheld" xml:space="preserve">
+    <value>明細預扣稅</value>
+  </data>
+  <data name="PendingTaxWithheld" xml:space="preserve">
+    <value>待處理預扣稅</value>
+  </data>
+  <data name="EmptyString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>作業相關</value>
+  </data>
+  <data name="PJCDetails" xml:space="preserve">
+    <value>專案成本核算明細</value>
+  </data>
+  <data name="ProjectAndJobCostingApplyDetails" xml:space="preserve">
+    <value>專案成本核算核銷明細</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>資源</value>
+  </data>
+  <data name="DeleteAll" xml:space="preserve">
+    <value>刪除全部</value>
+  </data>
+  <data name="Jobs" xml:space="preserve">
+    <value>作業</value>
+  </data>
+  <data name="DefaultFromInvoice" xml:space="preserve">
+    <value>來自發票的預設值</value>
+  </data>
+  <data name="GridCannotFindDataEntity" xml:space="preserve">
+    <value>內部錯誤。Cannot locate ACCPAC business entity associated with a grid.</value>
+  </data>
+  <data name="GridCreateNewRecordFailed" xml:space="preserve">
+    <value>內部錯誤。Cannot create a new record from ACCPAC business entity associated with a grid.</value>
+  </data>
+  <data name="GridInsertNewRecordFailed" xml:space="preserve">
+    <value>內部錯誤。Cannot insert a new record into ACCPAC business entity associated with a grid.</value>
+  </data>
+  <data name="GridMoveToRecordFailed" xml:space="preserve">
+    <value>內部錯誤。Failed to set the cursor position in ACCPAC business entity associated with a grid.</value>
+  </data>
+  <data name="GridReadFailed" xml:space="preserve">
+    <value>內部錯誤。Failed to read from ACCPAC business entity associated with a grid during update.</value>
+  </data>
+  <data name="GridRefreshCurrentRecordFailed" xml:space="preserve">
+    <value>內部錯誤。Failed to put changed value into ACCPACbusiness entity associated with a grid.</value>
+  </data>
+  <data name="UnsupportedDataType" xml:space="preserve">
+    <value>對欄位{0}的不支援的資料類型。</value>
+  </data>
+  <data name="GridReadEntityFailed" xml:space="preserve">
+    <value>內部錯誤。Failed to read from ACCPAC business entity associated with a grid.</value>
+  </data>
+  <data name="GridDeleteFailed" xml:space="preserve">
+    <value>內部錯誤。Failed to delete a record in ACCPAC business entity associated with a grid.</value>
+  </data>
+  <data name="GridUpdateFailed" xml:space="preserve">
+    <value>內部錯誤。Failed to update ACCPAC business entity associated with a grid.</value>
+  </data>
+  <data name="BlankOptionalField" xml:space="preserve">
+    <value>自選欄位不能空置</value>
+  </data>
+  <data name="DuplicateOptionalField" xml:space="preserve">
+    <value>重複的自選欄位{0}</value>
+  </data>
+  <data name="InvalidTime" xml:space="preserve">
+    <value>無效的時間值</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>登出</value>
+  </data>
+  <data name="MultiSessionSignOutConfirmationTemplate" xml:space="preserve">
+    <value>您即將在所有索引標籤中登出'{0}'。\n如果繼續，您將丟失其他索引標籤中未儲存的任何變更。</value>
+  </data>
+  <data name="SignOutConfirmation" xml:space="preserve">
+    <value>登出確認</value>
+  </data>
+  <data name="AdminPageSignOut" xml:space="preserve">
+    <value>您即將登出連接到此系統資料庫的所有索引標籤。如果繼續，您將丟失其他索引標籤中未儲存的任何變更。</value>
+  </data>
+  <data name="NotActivatedMessage" xml:space="preserve">
+    <value>要執行此操作，必須在Sage 300中啟用{0}。</value>
+  </data>
+  <data name="EvictionHeaderMessage" xml:space="preserve">
+    <value>工作階段結束</value>
+  </data>
+  <data name="EvictionConfirmationMsg" xml:space="preserve">
+    <value>您的系統管理員已將您從Sage 300中登出。重新登入之前，連絡您的系統管理員。</value>
+  </data>
+  <data name="RequestTimeout" xml:space="preserve">
+    <value>您的請求無法在限定時間內完成。有關增加時間限制的幫助，聯絡您的系統管理員以便變更網頁請求超時設定。</value>
+  </data>
+  <data name="RequireValidEmail" xml:space="preserve">
+    <value>您必須輸入此連絡人的一個電郵地址後方可以指定要發送給此連絡人{0}的文檔。</value>
+  </data>
+  <data name="ContactExist" xml:space="preserve">
+    <value>該連絡人代碼已經存在。</value>
+  </data>
+  <data name="ContactInactive" xml:space="preserve">
+    <value>您無法使用連絡人{0}，因為此連絡人已被閒置。</value>
+  </data>
+  <data name="ContactNotExist" xml:space="preserve">
+    <value>連絡人{0}不存在。</value>
+  </data>
+</root>

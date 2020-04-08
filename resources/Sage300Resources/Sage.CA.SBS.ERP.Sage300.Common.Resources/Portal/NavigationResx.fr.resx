@@ -1,0 +1,1610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdministrativeServices" xml:space="preserve">
+    <value>Services administratifs</value>
+  </data>
+  <data name="AP_Common_RecurringPayables" xml:space="preserve">
+    <value>Factures récurrentes</value>
+  </data>
+  <data name="AP_PeriodicProcessing" xml:space="preserve">
+    <value>Traitement périodique de CF</value>
+  </data>
+  <data name="AP_PeriodicProcessing_T5028CPRSElectronicFiling" xml:space="preserve">
+    <value>Transmission électronique des déclarations de T5018(SDPC)</value>
+  </data>
+  <data name="AP_Processing_CreateRecPayableBatch" xml:space="preserve">
+    <value>Créer lot de factures récurrentes</value>
+  </data>
+  <data name="AP_Setup" xml:space="preserve">
+    <value>Configuration de CF</value>
+  </data>
+  <data name="AP_Setup_1099CPRSCodes" xml:space="preserve">
+    <value>Codes 1099/SDPC</value>
+  </data>
+  <data name="AP_Setup_DistributionSets" xml:space="preserve">
+    <value>Séries de ventilation</value>
+  </data>
+  <data name="AP_Setup_PaymentSelectionCodes" xml:space="preserve">
+    <value>Codes de sélection de paiement</value>
+  </data>
+  <data name="AP_TransactionReports" xml:space="preserve">
+    <value>Rapports des transactions de CF</value>
+  </data>
+  <data name="AP_TransactionReports_VendorTransactions" xml:space="preserve">
+    <value>Transactions des fournisseurs</value>
+  </data>
+  <data name="AP_Transactions" xml:space="preserve">
+    <value>Transactions de CF</value>
+  </data>
+  <data name="AP_Transactions_ControlPayments" xml:space="preserve">
+    <value>Contrôle des paiements</value>
+  </data>
+  <data name="AP_Transactions_CreatePaymentBatch" xml:space="preserve">
+    <value>Créer lot de paiements</value>
+  </data>
+  <data name="AP_Transactions_PaymentBatchList" xml:space="preserve">
+    <value>Liste des lots de paiements</value>
+  </data>
+  <data name="AP_Transactions_PaymentEntry" xml:space="preserve">
+    <value>Saisie des paiements</value>
+  </data>
+  <data name="AP_Transactions_PaymentInquiry" xml:space="preserve">
+    <value>Consultation de paiement</value>
+  </data>
+  <data name="AP_Transactions_PrintCheques" xml:space="preserve">
+    <value>Impression des chèques</value>
+  </data>
+  <data name="AP_TransReports_AgedCashRequirements" xml:space="preserve">
+    <value>Besoins de financement âgés</value>
+  </data>
+  <data name="AP_TransReports_AgedPayables" xml:space="preserve">
+    <value>Comptes fournisseurs âgés</value>
+  </data>
+  <data name="AP_TransReports_CheckRegister" xml:space="preserve">
+    <value>Registre des chèques</value>
+  </data>
+  <data name="AP_VendorGroups" xml:space="preserve">
+    <value>Groupes de fournisseurs</value>
+  </data>
+  <data name="AP_VendorReports" xml:space="preserve">
+    <value>Rapports des fournisseurs de CF</value>
+  </data>
+  <data name="AP_VendorReports_LettersLabels" xml:space="preserve">
+    <value>Lettres/Étiquettes</value>
+  </data>
+  <data name="AP_VendorReports_Print10991096Form" xml:space="preserve">
+    <value>Imprimer formules 1099/1096</value>
+  </data>
+  <data name="AP_VendorReports_PrintT5018CPRSForm" xml:space="preserve">
+    <value>Imprimer formules T5018 (SDPC)</value>
+  </data>
+  <data name="AP_Vendors" xml:space="preserve">
+    <value>Fournisseurs de CF</value>
+  </data>
+  <data name="AP_Vendors_1099CPRSInquiry" xml:space="preserve">
+    <value>Consultation 1099/SDPC</value>
+  </data>
+  <data name="AP_Vendors_1099ElectronicFiling" xml:space="preserve">
+    <value>Transmission électronique de déclaration 1099</value>
+  </data>
+  <data name="AP_Vendors_VendorActivity" xml:space="preserve">
+    <value>Activité du fournisseur</value>
+  </data>
+  <data name="AP_Vendors_Vendors" xml:space="preserve">
+    <value>Fournisseurs</value>
+  </data>
+  <data name="AR_CustomerReports" xml:space="preserve">
+    <value>Rapports des clients de CC</value>
+  </data>
+  <data name="AR_Customers" xml:space="preserve">
+    <value>Clients de CC</value>
+  </data>
+  <data name="AR_CustomersReports_Labels" xml:space="preserve">
+    <value>Étiquettes</value>
+  </data>
+  <data name="AR_CustomersReports_RecurringCharges" xml:space="preserve">
+    <value>Frais périodiques</value>
+  </data>
+  <data name="AR_CustomersReports_ShipToLocations" xml:space="preserve">
+    <value>Adresses d’expédition</value>
+  </data>
+  <data name="AR_CustomersReports_StatementsLettersLabels" xml:space="preserve">
+    <value>Relevés/Lettres/Étiquettes</value>
+  </data>
+  <data name="AR_Customers_CustomerGroups" xml:space="preserve">
+    <value>Groupes de clients</value>
+  </data>
+  <data name="AR_Customers_Customers" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="AR_NationalAccounts" xml:space="preserve">
+    <value>Comptes nationaux</value>
+  </data>
+  <data name="AR_PeriodicProcessing" xml:space="preserve">
+    <value>Traitement périodique de CC</value>
+  </data>
+  <data name="AR_Processing_CreateInterestBatch" xml:space="preserve">
+    <value>Créer lot d’intérêts</value>
+  </data>
+  <data name="AR_Setup" xml:space="preserve">
+    <value>Configuration de CC</value>
+  </data>
+  <data name="AR_Setup_BillingCycles" xml:space="preserve">
+    <value>Cycles de facturation</value>
+  </data>
+  <data name="AR_Setup_CommentTypes" xml:space="preserve">
+    <value>Types de commentaires</value>
+  </data>
+  <data name="AR_Setup_DunningMessages" xml:space="preserve">
+    <value>Messages de rappel</value>
+  </data>
+  <data name="AR_Setup_InterestProfiles" xml:space="preserve">
+    <value>Profils d’intérêt</value>
+  </data>
+  <data name="AR_Setup_Salespersons" xml:space="preserve">
+    <value>Vendeurs</value>
+  </data>
+  <data name="AR_TransactionReports" xml:space="preserve">
+    <value>Rapports des transactions de CC</value>
+  </data>
+  <data name="AR_TransactionReports_ItemSalesHistory" xml:space="preserve">
+    <value>Historique de ventes d'articles</value>
+  </data>
+  <data name="AR_Transactions" xml:space="preserve">
+    <value>Transactions de CC</value>
+  </data>
+  <data name="AR_Transactions_ReceiptBatchList" xml:space="preserve">
+    <value>Liste des lots d'encaissements</value>
+  </data>
+  <data name="AR_TransReports_AgedRetainage" xml:space="preserve">
+    <value>Retenue de garantie âgée</value>
+  </data>
+  <data name="AR_TransReports_AgedTrialBalance" xml:space="preserve">
+    <value>Balance âgée</value>
+  </data>
+  <data name="AR_TransReports_CustomerTransactions" xml:space="preserve">
+    <value>Transactions des clients</value>
+  </data>
+  <data name="AS_DataIntegrity" xml:space="preserve">
+    <value>Intégrité des données</value>
+  </data>
+  <data name="AS_RestartMaintenance" xml:space="preserve">
+    <value>Maintenance de la reprise</value>
+  </data>
+  <data name="AS_SecurityGroups" xml:space="preserve">
+    <value>Groupes de sécurité</value>
+  </data>
+  <data name="AS_UserAuthorizations" xml:space="preserve">
+    <value>Autorisations de l'utilisateur</value>
+  </data>
+  <data name="Bank_PeriodicProcessing" xml:space="preserve">
+    <value>Traitement périodique de Banque</value>
+  </data>
+  <data name="Bank_PeriodicProcessing_ClearHistory" xml:space="preserve">
+    <value>Effacer l'historique</value>
+  </data>
+  <data name="Bank_Setup" xml:space="preserve">
+    <value>Configuration de banque</value>
+  </data>
+  <data name="Bank_Transactions" xml:space="preserve">
+    <value>Opérations bancaires</value>
+  </data>
+  <data name="Bank_TransReports" xml:space="preserve">
+    <value>Rapports d'opérations bancaires</value>
+  </data>
+  <data name="Bank_TransReports_BankEntriesPostingJournal" xml:space="preserve">
+    <value>Journal de report d'opérations bancaires</value>
+  </data>
+  <data name="Bank_TransReports_BankReconciliation" xml:space="preserve">
+    <value>Rapprochement bancaire</value>
+  </data>
+  <data name="Bank_TransReports_DepositRegister" xml:space="preserve">
+    <value>Registre des dépôts</value>
+  </data>
+  <data name="Bank_TransReports_DepositStatus" xml:space="preserve">
+    <value>État des dépôts</value>
+  </data>
+  <data name="Bank_TransReports_PaymentRegister" xml:space="preserve">
+    <value>Registre des paiements/chèques</value>
+  </data>
+  <data name="Bank_TransReports_ReconciliationPostingJournal" xml:space="preserve">
+    <value>Journal de report des rapprochements</value>
+  </data>
+  <data name="Bank_TransReports_ReconciliationStatus" xml:space="preserve">
+    <value>État des rapprochements</value>
+  </data>
+  <data name="Bank_TransReports_TransferPostingJournal" xml:space="preserve">
+    <value>Journal de report des virements</value>
+  </data>
+  <data name="Bank_TransReports_WithdrawStatus" xml:space="preserve">
+    <value>État des retraits</value>
+  </data>
+  <data name="Bank_Trans_BankEntry" xml:space="preserve">
+    <value>Opération bancaire</value>
+  </data>
+  <data name="Bank_Trans_ImportOFXStatements" xml:space="preserve">
+    <value>Importer les relevés OFX</value>
+  </data>
+  <data name="Bank_Trans_PostEntries" xml:space="preserve">
+    <value>Reporter les opérations bancaires</value>
+  </data>
+  <data name="Bank_Trans_PostReconciliation" xml:space="preserve">
+    <value>Reporter le rapprochement</value>
+  </data>
+  <data name="Bank_Trans_ReconcileOFXStatement" xml:space="preserve">
+    <value>Rapprocher les relevés</value>
+  </data>
+  <data name="Bank_Trans_ReconcileStatements" xml:space="preserve">
+    <value>Rapprocher les relevés</value>
+  </data>
+  <data name="Bank_Trans_ReverseTrans" xml:space="preserve">
+    <value>Extourner les transactions</value>
+  </data>
+  <data name="Bank_Trans_Transfer" xml:space="preserve">
+    <value>Virements bancaires</value>
+  </data>
+  <data name="Bank_Trans_TransHistoryInquiry" xml:space="preserve">
+    <value>Consultation historique de transaction</value>
+  </data>
+  <data name="CommonServices" xml:space="preserve">
+    <value>Services communs</value>
+  </data>
+  <data name="Common_BatchListing" xml:space="preserve">
+    <value>Liste des lots</value>
+  </data>
+  <data name="Common_CreateGLBatch" xml:space="preserve">
+    <value>Créer lot du GL</value>
+  </data>
+  <data name="Common_Inquiry" xml:space="preserve">
+    <value>Consultation</value>
+  </data>
+  <data name="Common_Invoices" xml:space="preserve">
+    <value>Factures</value>
+  </data>
+  <data name="Common_OptionalFields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="Common_Receipts" xml:space="preserve">
+    <value>Encaissements</value>
+  </data>
+  <data name="Common_Report_TransactionListing" xml:space="preserve">
+    <value>Liste des transactions</value>
+  </data>
+  <data name="Common_Setup_AccountSets" xml:space="preserve">
+    <value>Groupes de comptes</value>
+  </data>
+  <data name="Common_Setup_DistributionCodes" xml:space="preserve">
+    <value>Codes de ventilation</value>
+  </data>
+  <data name="Common_Setup_EmailMessages" xml:space="preserve">
+    <value>Courriels</value>
+  </data>
+  <data name="Common_Setup_GLIntegration" xml:space="preserve">
+    <value>Intégration de GL</value>
+  </data>
+  <data name="Common_Setup_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="Common_Setup_PaymentCodes" xml:space="preserve">
+    <value>Codes de paiement</value>
+  </data>
+  <data name="Common_Setup_SegmentCodes" xml:space="preserve">
+    <value>Codes de segments</value>
+  </data>
+  <data name="Common_Setup_Terms" xml:space="preserve">
+    <value>Modalités</value>
+  </data>
+  <data name="Common_TransactionReports_PostingErrors" xml:space="preserve">
+    <value>Erreurs de report</value>
+  </data>
+  <data name="Common_Transactions_InvoiceBatchList" xml:space="preserve">
+    <value>Liste des lots de factures</value>
+  </data>
+  <data name="Common_Transactions_InvoiceEntry" xml:space="preserve">
+    <value>Saisie des factures</value>
+  </data>
+  <data name="Common_Transactions_PostBatches" xml:space="preserve">
+    <value>Report des lots</value>
+  </data>
+  <data name="Common_Transactions_ReceiptEntry" xml:space="preserve">
+    <value>Saisie des encaissements</value>
+  </data>
+  <data name="Common_YearEnd" xml:space="preserve">
+    <value>Fin de l’exercice</value>
+  </data>
+  <data name="CS_CompanyProfile" xml:space="preserve">
+    <value>Profil de l'entreprise</value>
+  </data>
+  <data name="CS_FiscalCalendar" xml:space="preserve">
+    <value>Calendrier fiscal</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Devise</value>
+  </data>
+  <data name="CurrencyCodes" xml:space="preserve">
+    <value>Codes de devises</value>
+  </data>
+  <data name="Currency_Rates" xml:space="preserve">
+    <value>Taux de change</value>
+  </data>
+  <data name="Currency_RateTypes" xml:space="preserve">
+    <value>Types de taux de change</value>
+  </data>
+  <data name="GL_Accounts" xml:space="preserve">
+    <value>Comptes de GL</value>
+  </data>
+  <data name="GL_Accounts_Accounts" xml:space="preserve">
+    <value>Comptes</value>
+  </data>
+  <data name="GL_Accounts_ChartOfAccounts" xml:space="preserve">
+    <value>Plan comptable</value>
+  </data>
+  <data name="GL_Common_RecurringEntries" xml:space="preserve">
+    <value>Écritures récurrentes</value>
+  </data>
+  <data name="GL_Common_SourceCodes" xml:space="preserve">
+    <value>Codes sources</value>
+  </data>
+  <data name="GL_PeriodicProcessing" xml:space="preserve">
+    <value>Traitement périodique de GL</value>
+  </data>
+  <data name="GL_PeriodicProcessing_PeriodEndMaintenance" xml:space="preserve">
+    <value>Maintenance de fin de période</value>
+  </data>
+  <data name="GL_Processing_CreateNewYear" xml:space="preserve">
+    <value>Créer un nouvel exercice</value>
+  </data>
+  <data name="GL_Processing_CreateRecEntBatch" xml:space="preserve">
+    <value>Créer lot d'écritures récurrentes</value>
+  </data>
+  <data name="GL_Reports" xml:space="preserve">
+    <value>Rapports de GL</value>
+  </data>
+  <data name="GL_Reports_TransactionalDetailsOptionalFields" xml:space="preserve">
+    <value>Champs optionnels des détails de transactions</value>
+  </data>
+  <data name="GL_Reports_TrialBalance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="GL_Setup" xml:space="preserve">
+    <value>Configuration de GL</value>
+  </data>
+  <data name="GL_Setup_AccountGroups" xml:space="preserve">
+    <value>Groupes de comptes</value>
+  </data>
+  <data name="GL_Setup_AccountStructures" xml:space="preserve">
+    <value>Structures de comptes</value>
+  </data>
+  <data name="GL_Transactions" xml:space="preserve">
+    <value> Transactions de GL </value>
+  </data>
+  <data name="GL_Transactions_BatchList" xml:space="preserve">
+    <value>Liste des lots</value>
+  </data>
+  <data name="GL_Transactions_JournalEntry" xml:space="preserve">
+    <value>Écriture de journal</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
+  <data name="Module_AccountsPayable" xml:space="preserve">
+    <value>Comptes fournisseurs</value>
+  </data>
+  <data name="Module_AccountsReceivable" xml:space="preserve">
+    <value>Comptes clients</value>
+  </data>
+  <data name="Module_GeneralLedger" xml:space="preserve">
+    <value>Grand livre</value>
+  </data>
+  <data name="Module_More" xml:space="preserve">
+    <value>Plus</value>
+  </data>
+  <data name="CNAPortalHelpArticles" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="CNAPortalHelpCenter" xml:space="preserve">
+    <value>Centre d'aide</value>
+  </data>
+  <data name="CNAPortalHelpContactSupport" xml:space="preserve">
+    <value>Contacter le soutien technique</value>
+  </data>
+  <data name="CNAPortalHelpExploreSage" xml:space="preserve">
+    <value>Présentation des fonctions</value>
+  </data>
+  <data name="CNAPortalHelpGettingStart" xml:space="preserve">
+    <value>Mise en route</value>
+  </data>
+  <data name="CNAPortalHelpPrintReports" xml:space="preserve">
+    <value>Impression de rapports</value>
+  </data>
+  <data name="CNAPortalHelpResources" xml:space="preserve">
+    <value>Ressources</value>
+  </data>
+  <data name="CNAPortalHelpSageCity" xml:space="preserve">
+    <value>Sage City</value>
+  </data>
+  <data name="CNAPortalHelpSageUniversity" xml:space="preserve">
+    <value>Sage University</value>
+  </data>
+  <data name="CNAPortalHelpSettingHomePageWidgets" xml:space="preserve">
+    <value>Configurer les composants graphiques de la page d'accueil</value>
+  </data>
+  <data name="CNAPortalHelpShareIdeas" xml:space="preserve">
+    <value>Partagez vos idées</value>
+  </data>
+  <data name="CNAPortalHelpWhatNewHere" xml:space="preserve">
+    <value>Quoi de neuf</value>
+  </data>
+  <data name="Demonstration_ReportDesigner" xml:space="preserve">
+    <value>Concepteur d'états de démonstration</value>
+  </data>
+  <data name="Financial_BalanceSheet" xml:space="preserve">
+    <value>Bilan financier</value>
+  </data>
+  <data name="Financial_CashFlowSummaryCategory" xml:space="preserve">
+    <value>Sommaire du flux de trésorerie par catégorie</value>
+  </data>
+  <data name="Financial_Forecasting" xml:space="preserve">
+    <value>Prévisions financières</value>
+  </data>
+  <data name="Financial_ForecastingGreen" xml:space="preserve">
+    <value>Prévisions financières (vert)</value>
+  </data>
+  <data name="Financial_IncomeStatement" xml:space="preserve">
+    <value>État des résultats financiers</value>
+  </data>
+  <data name="Financial_Ratio" xml:space="preserve">
+    <value>Ratio financier</value>
+  </data>
+  <data name="ExcelFile_DemonstrationReportDesigner" xml:space="preserve">
+    <value>Report Designer S300.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialBalanceSheet" xml:space="preserve">
+    <value>Financial Balance Sheet S300.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialCashFlowSummaryCategory" xml:space="preserve">
+    <value>Financial Cash Flow Summary by Category S300.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialForecasting" xml:space="preserve">
+    <value>Financial Forecasting S300.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialForecastingGreen" xml:space="preserve">
+    <value>Financial Forecasting S300 green.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialIncomeStatement" xml:space="preserve">
+    <value>Financial Income Statement S300.xlsx</value>
+  </data>
+  <data name="ExcelFile_FinancialRatio" xml:space="preserve">
+    <value>Financial Ratio S300.xlsx</value>
+  </data>
+  <data name="AS_Users" xml:space="preserve">
+    <value>Utilisateurs</value>
+  </data>
+  <data name="Bank_Banks" xml:space="preserve">
+    <value>Banques</value>
+  </data>
+  <data name="GL_Reports_PostingJournals" xml:space="preserve">
+    <value>Journaux de report</value>
+  </data>
+  <data name="Create_GL_Batch" xml:space="preserve">
+    <value>Créer lot du GL</value>
+  </data>
+  <data name="IC_Day_End_Processing" xml:space="preserve">
+    <value>Clôture journalière</value>
+  </data>
+  <data name="Module_InventoryControl" xml:space="preserve">
+    <value>Gestion des stocks</value>
+  </data>
+  <data name="IC_PriceSalesAnalysisReports" xml:space="preserve">
+    <value>Rapports analyse prix/ventes de GS</value>
+  </data>
+  <data name="IC_PeriodicProcessing" xml:space="preserve">
+    <value>Traitement périodique de GS</value>
+  </data>
+  <data name="IC_Contract_Pricing" xml:space="preserve">
+    <value>Prix forfaitaire</value>
+  </data>
+  <data name="IC_Setup" xml:space="preserve">
+    <value>Configuration de GS</value>
+  </data>
+  <data name="Module_OrderEntry" xml:space="preserve">
+    <value>Commandes clients</value>
+  </data>
+  <data name="Module_PurchaseOrders" xml:space="preserve">
+    <value>Commandes fournisseurs</value>
+  </data>
+  <data name="OE_InvoiceAction" xml:space="preserve">
+    <value>État de facture</value>
+  </data>
+  <data name="OE_Reports" xml:space="preserve">
+    <value>Rapports de CmC</value>
+  </data>
+  <data name="OE_SalesStatistics" xml:space="preserve">
+    <value>Statistiques de ventes</value>
+  </data>
+  <data name="Common_CreateOEBatch" xml:space="preserve">
+    <value>Créer lot</value>
+  </data>
+  <data name="Common_CreatePOBatch" xml:space="preserve">
+    <value>Créer lot</value>
+  </data>
+  <data name="OE_PeriodicProcessing" xml:space="preserve">
+    <value>Traitement périodique de CmC</value>
+  </data>
+  <data name="PO_PeriodicProcessing" xml:space="preserve">
+    <value>Traitement périodique de CmF</value>
+  </data>
+  <data name="IC_Selling_Price_Margin_Analysis" xml:space="preserve">
+    <value>Analyse du prix de vente/marge</value>
+  </data>
+  <data name="OE_AgedOrders" xml:space="preserve">
+    <value>Commandes âgées</value>
+  </data>
+  <data name="OE_TransactionList" xml:space="preserve">
+    <value>Liste des transactions</value>
+  </data>
+  <data name="IC_Items_Price_Lists" xml:space="preserve">
+    <value>Articles et listes de prix de GS</value>
+  </data>
+  <data name="IC_Manufacturers_Item" xml:space="preserve">
+    <value>Articles du fabricant</value>
+  </data>
+  <data name="IC_Segment_Code" xml:space="preserve">
+    <value>Codes de segment</value>
+  </data>
+  <data name="IC_Account_Sets" xml:space="preserve">
+    <value>Groupes de comptes</value>
+  </data>
+  <data name="IC_Item_Structures" xml:space="preserve">
+    <value>Structures des articles</value>
+  </data>
+  <data name="IC_Optional_Fields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="IC_Statistics_Inquiries" xml:space="preserve">
+    <value>Statistiques et consultations de GS</value>
+  </data>
+  <data name="IC_Transaction_Statistics" xml:space="preserve">
+    <value>Statistiques des transactions</value>
+  </data>
+  <data name="IC_Weight_Units_of_Measure" xml:space="preserve">
+    <value>Unités de mesure du poids</value>
+  </data>
+  <data name="IC_Item" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="IC_Units_of_Measure" xml:space="preserve">
+    <value>Unités de mesure</value>
+  </data>
+  <data name="IC_Categories" xml:space="preserve">
+    <value>Catégories</value>
+  </data>
+  <data name="IC_Locations" xml:space="preserve">
+    <value>Emplacements</value>
+  </data>
+  <data name="IC_Price_List_Codes" xml:space="preserve">
+    <value>Codes de liste de prix</value>
+  </data>
+  <data name="IC_Vendor_Details" xml:space="preserve">
+    <value>Détails des fournisseurs</value>
+  </data>
+  <data name="OE_Setup" xml:space="preserve">
+    <value>Configuration de CmC</value>
+  </data>
+  <data name="IC_Customer_Details" xml:space="preserve">
+    <value>Détails des clients</value>
+  </data>
+  <data name="IC_Inventory_Counts" xml:space="preserve">
+    <value>Inventaire des stocks</value>
+  </data>
+  <data name="IC_Physical_Inventory" xml:space="preserve">
+    <value>Inventaire physique de GS</value>
+  </data>
+  <data name="IC_Receipt" xml:space="preserve">
+    <value>Réceptions</value>
+  </data>
+  <data name="IC_Shipments" xml:space="preserve">
+    <value>Expéditions</value>
+  </data>
+  <data name="IC_Transactions" xml:space="preserve">
+    <value>Transactions de GS</value>
+  </data>
+  <data name="OE_Optional_Fields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="PO_Analytical_Reports" xml:space="preserve">
+    <value>Rapports analytiques de CmF</value>
+  </data>
+  <data name="PO_Clear_History" xml:space="preserve">
+    <value>Effacer l'historique</value>
+  </data>
+  <data name="IC_Alternate_Items" xml:space="preserve">
+    <value>Articles de remplacement</value>
+  </data>
+  <data name="IC_Setup_Reports" xml:space="preserve">
+    <value>Rapports de configuration de GS</value>
+  </data>
+  <data name="IC_Reorder" xml:space="preserve">
+    <value>Réapprovisionnement</value>
+  </data>
+  <data name="IC_Stock_Control_Reports" xml:space="preserve">
+    <value>Rapports de gestion des stocks de GS</value>
+  </data>
+  <data name="PO_Payables_Clearing_Audit_List_Report" xml:space="preserve">
+    <value>Liste d'audit des réceptions non facturées</value>
+  </data>
+  <data name="IC_Price_Lists" xml:space="preserve">
+    <value>Listes de prix</value>
+  </data>
+  <data name="OE_Salesperson_Commissions" xml:space="preserve">
+    <value>Commissions des vendeurs</value>
+  </data>
+  <data name="IC_Aged_Inventory" xml:space="preserve">
+    <value>Stocks âgés</value>
+  </data>
+  <data name="IC_Inventory_Movement" xml:space="preserve">
+    <value>Mouvement des stocks</value>
+  </data>
+  <data name="IC_Inventory_Worksheet" xml:space="preserve">
+    <value>Feuille de calcul de l'inventaire</value>
+  </data>
+  <data name="IC_Posting_Journals" xml:space="preserve">
+    <value>Journaux de report</value>
+  </data>
+  <data name="OE_Posting_Journals" xml:space="preserve">
+    <value>Journaux de report</value>
+  </data>
+  <data name="OE_Sales_History" xml:space="preserve">
+    <value>Historique des ventes</value>
+  </data>
+  <data name="OE_Statistics_and_Inquiries" xml:space="preserve">
+    <value>Statistiques et consultations de CmC</value>
+  </data>
+  <data name="PO_Optional_Fields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="PO_Posting_Journals" xml:space="preserve">
+    <value>Journaux de report</value>
+  </data>
+  <data name="OE_Templates" xml:space="preserve">
+    <value>Modèles</value>
+  </data>
+  <data name="OE_Order_Entry" xml:space="preserve">
+    <value>Saisie des commandes</value>
+  </data>
+  <data name="OE_Transactions" xml:space="preserve">
+    <value>Transactions de CmC</value>
+  </data>
+  <data name="IC_Markup_Analysis" xml:space="preserve">
+    <value>Analyse de la majoration</value>
+  </data>
+  <data name="IC_Sales_Statistics" xml:space="preserve">
+    <value>Statistiques des ventes</value>
+  </data>
+  <data name="OE_Forms" xml:space="preserve">
+    <value>Formulaires de CmC</value>
+  </data>
+  <data name="OE_Order_Confirmations" xml:space="preserve">
+    <value>Confirmations de commandes</value>
+  </data>
+  <data name="OE_Quotes" xml:space="preserve">
+    <value>Devis</value>
+  </data>
+  <data name="PO_Create_POs_from_IC" xml:space="preserve">
+    <value>Créer BC à partir de GS</value>
+  </data>
+  <data name="PO_Create_Purchase_Orders" xml:space="preserve">
+    <value>Créer bons de commande de CmF</value>
+  </data>
+  <data name="OE_Clear_History" xml:space="preserve">
+    <value>Effacer l'historique</value>
+  </data>
+  <data name="PO_Forms" xml:space="preserve">
+    <value>Formulaires de CmF</value>
+  </data>
+  <data name="PO_Purchase_Orders" xml:space="preserve">
+    <value>Bons de commande</value>
+  </data>
+  <data name="PO_Aged_Purchase_Orders_Report" xml:space="preserve">
+    <value>Bons de commande âgés </value>
+  </data>
+  <data name="PO_Purchase_Statistics" xml:space="preserve">
+    <value>Statistiques des achats</value>
+  </data>
+  <data name="IC_Transaction_History_Inquiry" xml:space="preserve">
+    <value>Consultation de l'historique des transactions</value>
+  </data>
+  <data name="OE_Miscellaneous_Charges" xml:space="preserve">
+    <value>Frais divers</value>
+  </data>
+  <data name="OE_Order_Action" xml:space="preserve">
+    <value>État de la commande</value>
+  </data>
+  <data name="OE_Ship_Via_Codes" xml:space="preserve">
+    <value>Codes d'expédition</value>
+  </data>
+  <data name="PO_Email_Messages" xml:space="preserve">
+    <value>Courriels</value>
+  </data>
+  <data name="PO_Purchase_History" xml:space="preserve">
+    <value>Historique des achats</value>
+  </data>
+  <data name="PO_Purchase_Order_Action" xml:space="preserve">
+    <value>État des bons de commande</value>
+  </data>
+  <data name="IC_Kitting_Items" xml:space="preserve">
+    <value>Trousses d'articles</value>
+  </data>
+  <data name="IC_LIFO_FIFO_Inquiry" xml:space="preserve">
+    <value>Consultation de LIFO/FIFO</value>
+  </data>
+  <data name="PO_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="OE_Credit_Debit_Note_Entry" xml:space="preserve">
+    <value>Saisie des notes de crédit/débit</value>
+  </data>
+  <data name="OE_Email_Messages" xml:space="preserve">
+    <value>Courriels</value>
+  </data>
+  <data name="PO_Create_POs_from_OE" xml:space="preserve">
+    <value>Créer bons de commande à partir de CmC</value>
+  </data>
+  <data name="GL_Transaction" xml:space="preserve">
+    <value>Transactions du GL</value>
+  </data>
+  <data name="IC_ItemValuation" xml:space="preserve">
+    <value>Évaluation des articles</value>
+  </data>
+  <data name="IC_SlowMovingItems" xml:space="preserve">
+    <value>Articles à rotation lente</value>
+  </data>
+  <data name="PO_Create_POs_from_Requisitions" xml:space="preserve">
+    <value>Créer BC à partir de demandes d'achat</value>
+  </data>
+  <data name="IC_StockTransactionsInquiry" xml:space="preserve">
+    <value>Consultation des transactions de stock</value>
+  </data>
+  <data name="IC_TransactionHistory" xml:space="preserve">
+    <value>Historique des transactions</value>
+  </data>
+  <data name="PO_PurchaseStatistics" xml:space="preserve">
+    <value>Statistiques des achats</value>
+  </data>
+  <data name="PO_AdditionalCosts" xml:space="preserve">
+    <value>Coûts additionnels</value>
+  </data>
+  <data name="IC_Item_Pricing" xml:space="preserve">
+    <value>Prix de l'article </value>
+  </data>
+  <data name="OE_Invoice" xml:space="preserve">
+    <value>Factures</value>
+  </data>
+  <data name="OE_Sales_Statistics" xml:space="preserve">
+    <value>Statistiques des ventes</value>
+  </data>
+  <data name="OE_ShippingLabels" xml:space="preserve">
+    <value>Étiquettes d'expédition</value>
+  </data>
+  <data name="PO_Copy_Purchase_Order" xml:space="preserve">
+    <value>Copier des bons de commande</value>
+  </data>
+  <data name="PO_Credit_Debit_Note_Entry" xml:space="preserve">
+    <value>Saisie de note de crédit/débit</value>
+  </data>
+  <data name="IC_PostTransactions" xml:space="preserve">
+    <value>Report des transactions</value>
+  </data>
+  <data name="IC_Transaction_Listing" xml:space="preserve">
+    <value>Liste des transactions</value>
+  </data>
+  <data name="OE_Salesperson_Inquiry" xml:space="preserve">
+    <value>Consultation du vendeur</value>
+  </data>
+  <data name="IC_Post_Transactions" xml:space="preserve">
+    <value>Report des transactions</value>
+  </data>
+  <data name="IC_Item_Loc_Detail_Qty_Inquiry" xml:space="preserve">
+    <value>Consultation détails des quantités d'articles par emplacement</value>
+  </data>
+  <data name="IC_Generate_Inventory_Worksheet" xml:space="preserve">
+    <value>Création feuille de calcul d'inventaire</value>
+  </data>
+  <data name="PO_Purchase_Order_Entry" xml:space="preserve">
+    <value>Saisie des bons de commande</value>
+  </data>
+  <data name="IC_Bin_Shelf_Labels" xml:space="preserve">
+    <value>Étiquettes de casier/rayon</value>
+  </data>
+  <data name="IC_Inventory_Reconciliation" xml:space="preserve">
+    <value>Rapprochement de l'inventaire</value>
+  </data>
+  <data name="IC_Stock_Transactions" xml:space="preserve">
+    <value>Transactions de stock</value>
+  </data>
+  <data name="PO_Invoice_Entry" xml:space="preserve">
+    <value>Saisie des factures</value>
+  </data>
+  <data name="PO_Receipt_Entry" xml:space="preserve">
+    <value>Saisie des réceptions</value>
+  </data>
+  <data name="IC_Adjustments" xml:space="preserve">
+    <value>Ajustements</value>
+  </data>
+  <data name="IC_Overstocked_Items" xml:space="preserve">
+    <value>Articles surstockés</value>
+  </data>
+  <data name="OE_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="AP_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>Transactions de CF</value>
+  </data>
+  <data name="AP_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>Transactions de CF</value>
+  </data>
+  <data name="AR_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>Transactions de CC</value>
+  </data>
+  <data name="AR_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>Transactions de CC</value>
+  </data>
+  <data name="BK_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>Rapprochement bancaire</value>
+  </data>
+  <data name="BK_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>Rapprochement bancaire</value>
+  </data>
+  <data name="GL_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>Transactions de GL</value>
+  </data>
+  <data name="GL_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>Transactions de GL</value>
+  </data>
+  <data name="IC_3rd_Level_Maintain_Template" xml:space="preserve">
+    <value>Gestion des articles de GS</value>
+  </data>
+  <data name="IC_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>Transactions de GS</value>
+  </data>
+  <data name="IC_4th_Level_Maintain_Template" xml:space="preserve">
+    <value>Gestion des articles de GS</value>
+  </data>
+  <data name="IC_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>Transactions de GS</value>
+  </data>
+  <data name="OE_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>Transactions de CmC</value>
+  </data>
+  <data name="OE_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>Modèle de transaction de CmC</value>
+  </data>
+  <data name="PO_3rd_Level_Transaction_Template" xml:space="preserve">
+    <value>Transactions de CmF</value>
+  </data>
+  <data name="PO_4th_Level_Transaction_Template" xml:space="preserve">
+    <value>Transactions de CmF</value>
+  </data>
+  <data name="PO_Receiving_Slips" xml:space="preserve">
+    <value>Bons de réception</value>
+  </data>
+  <data name="PO_RequisitionEntry" xml:space="preserve">
+    <value>Saisie des demandes d'achat</value>
+  </data>
+  <data name="PO_Returns" xml:space="preserve">
+    <value>Retours</value>
+  </data>
+  <data name="PO_Return_Entry" xml:space="preserve">
+    <value>Saisie des retours</value>
+  </data>
+  <data name="PO_Setup" xml:space="preserve">
+    <value>Configuration de CmF</value>
+  </data>
+  <data name="PO_Shippable_Backorders" xml:space="preserve">
+    <value>Commandes en attente livrables</value>
+  </data>
+  <data name="PO_Ship_Via_Codes" xml:space="preserve">
+    <value>Codes d'expédition</value>
+  </data>
+  <data name="PO_Statistics_Inquiries" xml:space="preserve">
+    <value>Statistiques et consultations de CmF</value>
+  </data>
+  <data name="PO_Templates" xml:space="preserve">
+    <value>Modèles</value>
+  </data>
+  <data name="PO_TransactionList" xml:space="preserve">
+    <value>Liste de transactions</value>
+  </data>
+  <data name="PO_Transactions" xml:space="preserve">
+    <value>Transactions de CmF</value>
+  </data>
+  <data name="PO_Vendor_Contract_Costs" xml:space="preserve">
+    <value>Contrats d'achat avec fournisseur</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>Projets</value>
+  </data>
+  <data name="Sage_Intelligence_Go" xml:space="preserve">
+    <value>Sage Intelligence Go!</value>
+  </data>
+  <data name="Task" xml:space="preserve">
+    <value>Tâches</value>
+  </data>
+  <data name="Tax_Reports" xml:space="preserve">
+    <value>Rapports de taxe</value>
+  </data>
+  <data name="Tax_Services" xml:space="preserve">
+    <value>Services de taxes</value>
+  </data>
+  <data name="Tax_TaxAuthorities" xml:space="preserve">
+    <value>Autorités fiscales</value>
+  </data>
+  <data name="Tax_TaxClasses" xml:space="preserve">
+    <value>Classes de taxe</value>
+  </data>
+  <data name="Tax_TaxGroups" xml:space="preserve">
+    <value>Groupes de taxes</value>
+  </data>
+  <data name="Tax_TaxRates" xml:space="preserve">
+    <value>Taux de taxation</value>
+  </data>
+  <data name="Tax_PeriodicProcessing" xml:space="preserve">
+    <value>Traitement périodique de Services de taxes</value>
+  </data>
+  <data name="Tax_TaxTracking" xml:space="preserve">
+    <value>Suivi des taxes</value>
+  </data>
+  <data name="Tax_ClearHistory" xml:space="preserve">
+    <value>Effacer l'historique</value>
+  </data>
+  <data name="Templates" xml:space="preserve">
+    <value>Modèles</value>
+  </data>
+  <data name="Visual_Process_Flow_Top" xml:space="preserve">
+    <value>VPF</value>
+  </data>
+  <data name="YP_Setup_Options" xml:space="preserve">
+    <value>Options de traitement de paiement</value>
+  </data>
+  <data name="YP_Setup_ProcessingCodes" xml:space="preserve">
+    <value>Codes de traitement de paiement</value>
+  </data>
+  <data name="IC_Item_Status" xml:space="preserve">
+    <value>État des articles</value>
+  </data>
+  <data name="IC_Physical_Inventory_Quantities" xml:space="preserve">
+    <value>Quantités de l'inventaire physique</value>
+  </data>
+  <data name="IC_Reorder_Quantities" xml:space="preserve">
+    <value>Réapprovisionnement des quantités</value>
+  </data>
+  <data name="IC_Update_Item_Pricing" xml:space="preserve">
+    <value>Mise à jour du prix de l'article</value>
+  </data>
+  <data name="IC_Item_Labels" xml:space="preserve">
+    <value>Étiquettes d'articles</value>
+  </data>
+  <data name="OE_Picking_Slips" xml:space="preserve">
+    <value>Bons de collecte</value>
+  </data>
+  <data name="PO_Pending_Receipts_Inquiry" xml:space="preserve">
+    <value>Consultation réceptions en suspens</value>
+  </data>
+  <data name="IC_Post_Inventory_Reconciliation" xml:space="preserve">
+    <value>Report rapprochement d'inventaire</value>
+  </data>
+  <data name="PO_Requisitions" xml:space="preserve">
+    <value>Demandes d'achat</value>
+  </data>
+  <data name="OE_CreditDebit_Notes" xml:space="preserve">
+    <value>Notes de crédit/débit</value>
+  </data>
+  <data name="IC_Transfer_Slips" xml:space="preserve">
+    <value>Bordereaux de transferts</value>
+  </data>
+  <data name="IC_Transfers" xml:space="preserve">
+    <value>Transferts</value>
+  </data>
+  <data name="PO_Mailing_Labels" xml:space="preserve">
+    <value>Étiquettes d'adresse</value>
+  </data>
+  <data name="OE_Pending_Shipments_Inquiry" xml:space="preserve">
+    <value>Consultation des expéditions en suspens</value>
+  </data>
+  <data name="IC_Location_Details" xml:space="preserve">
+    <value>Emplacements des articles</value>
+  </data>
+  <data name="IC_Process_Adjustments" xml:space="preserve">
+    <value>Traiter les ajustements</value>
+  </data>
+  <data name="OE_Copy_Orders" xml:space="preserve">
+    <value>Copier les commandes</value>
+  </data>
+  <data name="OE_Current_Orders_Inquiry" xml:space="preserve">
+    <value>Consultation commandes courantes</value>
+  </data>
+  <data name="AP_PeriodicProcessing_Revaluation" xml:space="preserve">
+    <value>Réévaluation</value>
+  </data>
+  <data name="AR_PeriodicProcessing_Revaluation" xml:space="preserve">
+    <value>Réévaluation</value>
+  </data>
+  <data name="IC_Internal_Usage" xml:space="preserve">
+    <value>Usage interne</value>
+  </data>
+  <data name="GL_Clear_History" xml:space="preserve">
+    <value>Effacer l'historique</value>
+  </data>
+  <data name="AR_Processing_CreateRecurringChargeBatch" xml:space="preserve">
+    <value>Créer lot de frais périodiques de CC</value>
+  </data>
+  <data name="PO_Setup_Reports" xml:space="preserve">
+    <value>Rapports de configuration de CmF</value>
+  </data>
+  <data name="AP_Recurring_Payables" xml:space="preserve">
+    <value>Factures récurrentes</value>
+  </data>
+  <data name="AR_Deposit_Slips" xml:space="preserve">
+    <value>Bordereaux de dépôt</value>
+  </data>
+  <data name="IC_Warranty_Contract_List" xml:space="preserve">
+    <value>Liste de garanties/contrats</value>
+  </data>
+  <data name="IC_Current_Transactions_Inquiry" xml:space="preserve">
+    <value>Consultation des transactions courantes</value>
+  </data>
+  <data name="AP_Posting_Journals" xml:space="preserve">
+    <value>Journaux de report</value>
+  </data>
+  <data name="IC_Quarantine_Report" xml:space="preserve">
+    <value>Quarantaine</value>
+  </data>
+  <data name="GL_Source_Journal_Profiles" xml:space="preserve">
+    <value>Profils de journaux sources</value>
+  </data>
+  <data name="PO_ReceivingSlips_Article1" xml:space="preserve">
+    <value>À propos des formulaires de Commandes fournisseurs</value>
+  </data>
+  <data name="PO_ReceivingSlips_Article2" xml:space="preserve">
+    <value>Imprimer des bordereaux de transfert</value>
+  </data>
+  <data name="PO_ReceivingSlips_Screen" xml:space="preserve">
+    <value>Bons de réception de CmF</value>
+  </data>
+  <data name="AP_Batch_Status_Report" xml:space="preserve">
+    <value>État du lot</value>
+  </data>
+  <data name="AP_Vendor_Groups" xml:space="preserve">
+    <value>Groupes de fournisseurs</value>
+  </data>
+  <data name="IC_Serial_Lot_Transactions_Report" xml:space="preserve">
+    <value>Transactions de numéros de série/lot</value>
+  </data>
+  <data name="IC_Serial_Number_Inquiry" xml:space="preserve">
+    <value>Consultation de numéro de série</value>
+  </data>
+  <data name="AP_Delete_Inactive_Records" xml:space="preserve">
+    <value>Supprimer enregistrements inactifs</value>
+  </data>
+  <data name="IC_Recall_Report" xml:space="preserve">
+    <value>Rappel</value>
+  </data>
+  <data name="GL_Create_Allocation_Batch" xml:space="preserve">
+    <value>Créer lot de ventilation</value>
+  </data>
+  <data name="AP_Remit_To_Locations" xml:space="preserve">
+    <value>Adresses de paiement</value>
+  </data>
+  <data name="AR_Batch_Status" xml:space="preserve">
+    <value>État du lot</value>
+  </data>
+  <data name="IC_Lot_Recalls_Releases" xml:space="preserve">
+    <value>Rappels/Levées des lots</value>
+  </data>
+  <data name="CS_Scheduling" xml:space="preserve">
+    <value>Planification</value>
+  </data>
+  <data name="AR_Posting_Journals" xml:space="preserve">
+    <value>Journaux de report</value>
+  </data>
+  <data name="AR_Refund_Batch_List" xml:space="preserve">
+    <value>Liste des lots de remboursements</value>
+  </data>
+  <data name="CS_Schedules" xml:space="preserve">
+    <value>Journal de planification</value>
+  </data>
+  <data name="GL_Source_Codes" xml:space="preserve">
+    <value>Codes sources</value>
+  </data>
+  <data name="IC_Clear_History" xml:space="preserve">
+    <value>Effacer l'historique</value>
+  </data>
+  <data name="IC_Copy_Bills_of_Material" xml:space="preserve">
+    <value>Copier les nomenclatures</value>
+  </data>
+  <data name="IC_Items_Wizard" xml:space="preserve">
+    <value>Assistant Articles</value>
+  </data>
+  <data name="ProjectJobCosting" xml:space="preserve">
+    <value>Gestion de projet</value>
+  </data>
+  <data name="GL_Revaluation_Codes" xml:space="preserve">
+    <value>Codes de réévaluation</value>
+  </data>
+  <data name="IC_Delete_Inactive_Records" xml:space="preserve">
+    <value>Supprimer les enregistrements inactifs</value>
+  </data>
+  <data name="IC_Serial_Lot_Number_List_Report" xml:space="preserve">
+    <value>Liste de numéros de série/lot</value>
+  </data>
+  <data name="IC_Serial_Lot_Number_Qty_On_Hand_Report" xml:space="preserve">
+    <value>Quantité numéro lot/série en magasin</value>
+  </data>
+  <data name="AR_Customer_Groups" xml:space="preserve">
+    <value>Groupes de clients</value>
+  </data>
+  <data name="AR_Customer_Inquiry" xml:space="preserve">
+    <value>Consultation de client</value>
+  </data>
+  <data name="IC_Lot_Numbers" xml:space="preserve">
+    <value>Numéros de lot</value>
+  </data>
+  <data name="OE_Invoice_Entry" xml:space="preserve">
+    <value>Saisie des factures</value>
+  </data>
+  <data name="AR_Receipt_Inquiry" xml:space="preserve">
+    <value>Consultation d’encaissement</value>
+  </data>
+  <data name="AR_Refund_Inquiry" xml:space="preserve">
+    <value>Consultation de remboursement</value>
+  </data>
+  <data name="GL_Batch_Status" xml:space="preserve">
+    <value>État du lot</value>
+  </data>
+  <data name="GL_Fiscal_Set_Comparison" xml:space="preserve">
+    <value>Comparaison des séries financières</value>
+  </data>
+  <data name="IC_Bills_of_Material" xml:space="preserve">
+    <value>Nomenclatures</value>
+  </data>
+  <data name="IC_Copy_Item_Pricing" xml:space="preserve">
+    <value>Copier le prix des articles</value>
+  </data>
+  <data name="AP_Create_Retainage_Batch" xml:space="preserve">
+    <value>Créer lot de retenues de garantie</value>
+  </data>
+  <data name="AR_Create_Retainage_Batch" xml:space="preserve">
+    <value>Créer lot de retenues de garantie</value>
+  </data>
+  <data name="AR_Document_Inquiry" xml:space="preserve">
+    <value>Consultation de document</value>
+  </data>
+  <data name="AR_Recurring_Charges" xml:space="preserve">
+    <value>Frais périodiques</value>
+  </data>
+  <data name="AP_Adjustment_Batch_List" xml:space="preserve">
+    <value>Liste des lots d'ajustements</value>
+  </data>
+  <data name="AR_Clear_History" xml:space="preserve">
+    <value>Effacer l'historique</value>
+  </data>
+  <data name="AR_Clear_Statistics" xml:space="preserve">
+    <value>Effacer les statistiques</value>
+  </data>
+  <data name="AR_Quick_Receipt_Entry" xml:space="preserve">
+    <value>Saisie d'encaissement rapide</value>
+  </data>
+  <data name="IC_Contract_Codes" xml:space="preserve">
+    <value>Codes de contrat</value>
+  </data>
+  <data name="AP_Clear_History" xml:space="preserve">
+    <value>Effacer l'historique</value>
+  </data>
+  <data name="AR_Delete_Inactive_Records" xml:space="preserve">
+    <value>Effacer les enregistrements inactifs</value>
+  </data>
+  <data name="AR_Adjustment_Batch_List" xml:space="preserve">
+    <value>Liste des lots d'ajustements</value>
+  </data>
+  <data name="AR_Adjustment_Entry" xml:space="preserve">
+    <value>Saisie des ajustements</value>
+  </data>
+  <data name="AR_National_Accounts" xml:space="preserve">
+    <value>Comptes nationaux</value>
+  </data>
+  <data name="AR_Refund_Entry" xml:space="preserve">
+    <value>Saisie des remboursements</value>
+  </data>
+  <data name="GL_Recurring_Entries" xml:space="preserve">
+    <value>Écritures récurrentes</value>
+  </data>
+  <data name="GL_Source_Journals" xml:space="preserve">
+    <value>Journaux sources</value>
+  </data>
+  <data name="IC_Update_Bills_of_Material" xml:space="preserve">
+    <value>Mise à jour des nomenclatures</value>
+  </data>
+  <data name="OE_Shipment_Entry" xml:space="preserve">
+    <value>Saisie des expéditions</value>
+  </data>
+  <data name="AR_Items" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="AR_Create_Write_Off_Batch" xml:space="preserve">
+    <value>Créer lot d'annulations</value>
+  </data>
+  <data name="IC_Serial_Registration" xml:space="preserve">
+    <value>Enregistrement de numéro de série</value>
+  </data>
+  <data name="IC_Warranty_Codes" xml:space="preserve">
+    <value>Codes de garantie</value>
+  </data>
+  <data name="AR_Ship_To_Locations" xml:space="preserve">
+    <value>Adresses d'expédition</value>
+  </data>
+  <data name="AP_Adjustment_Entry" xml:space="preserve">
+    <value>Saisie des ajustements</value>
+  </data>
+  <data name="CS_Reminder_List" xml:space="preserve">
+    <value>Liste des rappels</value>
+  </data>
+  <data name="AP_Clear_Statistics" xml:space="preserve">
+    <value>Effacer les statistiques</value>
+  </data>
+  <data name="GL_Consolidate_Posted_Transactions" xml:space="preserve">
+    <value>Consolider les transactions reportées</value>
+  </data>
+  <data name="GL_Create_Accounts" xml:space="preserve">
+    <value>Création des comptes</value>
+  </data>
+  <data name="Banking_Services" xml:space="preserve">
+    <value>Services bancaires</value>
+  </data>
+  <data name="AS_MenuCustomization" xml:space="preserve">
+    <value>Personnaliser le menu de navigation</value>
+  </data>
+  <data name="AS_MenuCustomization_Instructions" xml:space="preserve">
+    <value>Personnalisez le menu de navigation en masquant ou affichant des écrans web et des catégories. Si vous masquez tous les écrans d'un module, le module n'apparaît pas dans le menu de navigation.</value>
+  </data>
+  <data name="CompanySetup" xml:space="preserve">
+    <value>Configuration de l'entreprise</value>
+  </data>
+  <data name="DataAndMaintenance" xml:space="preserve">
+    <value>Données et maintenance</value>
+  </data>
+  <data name="PaymentProcessing" xml:space="preserve">
+    <value>Traitement des paiements</value>
+  </data>
+  <data name="Tax_Setup" xml:space="preserve">
+    <value>Configuration des taxes</value>
+  </data>
+  <data name="Customization" xml:space="preserve">
+    <value>Personnalisation</value>
+  </data>
+  <data name="AR_UpdateRecurringCharges" xml:space="preserve">
+    <value>Mettre à jour les frais périodiques</value>
+  </data>
+  <data name="AS_UserSecurity" xml:space="preserve">
+    <value>Utilisateurs et sécurité</value>
+  </data>
+  <data name="Bank_CreditCardTypes" xml:space="preserve">
+    <value>Types carte de crédit</value>
+  </data>
+  <data name="GL_Transaction_History" xml:space="preserve">
+    <value>Historique des transactions</value>
+  </data>
+  <data name="AR_Process_Credit_Card_Payments" xml:space="preserve">
+    <value>Traitement paiements par carte de crédit</value>
+  </data>
+  <data name="GL_Account_Permissions" xml:space="preserve">
+    <value>Accès aux comptes</value>
+  </data>
+  <data name="GL_Create_Revaluation_Batch" xml:space="preserve">
+    <value>Créer lot de réévaluation</value>
+  </data>
+  <data name="AS_WorkProfile" xml:space="preserve">
+    <value>Profils IU</value>
+  </data>
+  <data name="SIR_Msg1" xml:space="preserve">
+    <value>Sage Intelligence Reporting Cloud</value>
+  </data>
+  <data name="SIR_Msg2" xml:space="preserve">
+    <value>Dressez un tableau plus précis de votre entreprise grâce à des états financiers dynamiques que vous pouvez exporter et personnaliser dans Microsoft Excel® ou Excel Online.</value>
+  </data>
+  <data name="SIR_Report1" xml:space="preserve">
+    <value>Réel à date</value>
+  </data>
+  <data name="SIR_Report2" xml:space="preserve">
+    <value>Réel vs antérieur</value>
+  </data>
+  <data name="SIR_Report3" xml:space="preserve">
+    <value>Réel vs budget</value>
+  </data>
+  <data name="SIR_Report4" xml:space="preserve">
+    <value>Mois par mois</value>
+  </data>
+  <data name="SIR_Title" xml:space="preserve">
+    <value>Intelligence</value>
+  </data>
+  <data name="SIR_Btn" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Aide</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="PinMenu" xml:space="preserve">
+    <value>Épingler le menu de navigation</value>
+    <comment>Settings Menu</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Paramètres</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="UnpinMenu" xml:space="preserve">
+    <value>Désépingler le menu de navigation</value>
+    <comment>Settings Menu</comment>
+  </data>
+  <data name="OE_CapturePaymentsWithInvoices" xml:space="preserve">
+    <value>Capturer des paiements avec factures</value>
+  </data>
+  <data name="Saved_Queries" xml:space="preserve">
+    <value>Requêtes enregistrées </value>
+  </data>
+  <data name="Inquiry_ToolTip" xml:space="preserve">
+    <value>Cette requête présente les résultats dans un format particulier comportant plusieurs tables interactives. Vous ne pouvez pas l'utiliser comme base pour les requêtes personnalisées enregistrées.</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Outils</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="CollapseMenu" xml:space="preserve">
+    <value>Réduire le menu</value>
+    <comment>Collapse Menu</comment>
+  </data>
+  <data name="ExpandMenu" xml:space="preserve">
+    <value>Développer le menu</value>
+    <comment>Expand Menu</comment>
+  </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>Trouver de l'aide sur la configuration et l'utilisation de Sage 300c</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="ToolsTitle" xml:space="preserve">
+    <value>Afficher ou masquer la barre d'outils web</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Recherche</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="SearchTitle" xml:space="preserve">
+    <value>Rechercher des objets par mot clé</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="GlobalSearch" xml:space="preserve">
+    <value>Recherche globale</value>
+  </data>
+  <data name="GlobalSearchFailed" xml:space="preserve">
+    <value>Un problème est survenu et la recherche n'a pas abouti. Contactez l'administrateur de votre système pour obtenir de l'aide.</value>
+  </data>
+  <data name="CustomizedQueries" xml:space="preserve">
+    <value>Requêtes personnalisées</value>
+    <comment>Inqiury Tab</comment>
+  </data>
+  <data name="SingaporeGST" xml:space="preserve">
+    <value>Rapport de taxe de Singapour</value>
+  </data>
+  <data name="TS_ImportTaxCodes" xml:space="preserve">
+    <value>Importation de codes de taxe</value>
+  </data>
+  <data name="TS_GSTF5" xml:space="preserve">
+    <value>GST F5</value>
+  </data>
+  <data name="TS_GSTIAF" xml:space="preserve">
+    <value>GST IAF Generator</value>
+  </data>
+  <data name="TS_TaxCodeMapping" xml:space="preserve">
+    <value>Mappage des codes de taxe</value>
+  </data>
+  <data name="Tax_ReverseCharge" xml:space="preserve">
+    <value>Autoliquidation</value>
+  </data>
+  <data name="AustraliaGST" xml:space="preserve">
+    <value>Rapports de taxe - Australie</value>
+  </data>
+  <data name="TW_BusinessActivityStatement" xml:space="preserve">
+    <value>Relevé d'activités commerciales</value>
+  </data>
+  <data name="TW_Configurations" xml:space="preserve">
+    <value>Paramétrages</value>
+  </data>
+  <data name="Tax_WithholdingTaxRates" xml:space="preserve">
+    <value>Taux de retenue d'impôt</value>
+  </data>
+  <data name="MalaysiaGST" xml:space="preserve">
+    <value>Rapports de taxe - Malaisie</value>
+  </data>
+  <data name="TM_GST03" xml:space="preserve">
+    <value>GST 03</value>
+  </data>
+  <data name="TM_GSTGAF" xml:space="preserve">
+    <value>Générateur GST GAF</value>
+  </data>
+  <data name="TM_ImportTaxCodes" xml:space="preserve">
+    <value>Importation de codes de taxe</value>
+  </data>
+  <data name="TM_TaxCodeMapping" xml:space="preserve">
+    <value>Mappage des codes de taxe</value>
+  </data>
+  <data name="TM_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="BusinessActivityStatement" xml:space="preserve">
+    <value>Relevé d'activités commerciales</value>
+  </data>
+  <data name="Configurations" xml:space="preserve">
+    <value>Paramétrages</value>
+  </data>
+  <data name="GSTF5" xml:space="preserve">
+    <value>GST F5</value>
+  </data>
+  <data name="GSTIAF" xml:space="preserve">
+    <value>Générateur GST IAF</value>
+  </data>
+  <data name="ImportTaxCodes" xml:space="preserve">
+    <value>Importation de codes de taxe</value>
+  </data>
+  <data name="TaxCodeMapping" xml:space="preserve">
+    <value>Mappage des codes de taxe</value>
+  </data>
+  <data name="PR_EmployeeTimeCard" xml:space="preserve">
+    <value>Feuilles de temps des employés</value>
+  </data>
+  <data name="PR_EmployeeTimeCard_CA" xml:space="preserve">
+    <value>Feuilles de temps des employés pour Paie Canada</value>
+  </data>
+  <data name="PR_EmployeeTimeCard_US" xml:space="preserve">
+    <value>Feuilles de temps des employés pour Paie É.&amp;#8209;U.</value>
+  </data>
+  <data name="MT_Contacts" xml:space="preserve">
+    <value>Contacts de M/T</value>
+  </data>
+  <data name="MT_Setup" xml:space="preserve">
+    <value>Configuration de M/T</value>
+  </data>
+  <data name="MT_OptionalFields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="MultipleContacts" xml:space="preserve">
+    <value>Contacts multiples</value>
+  </data>
+  <data name="MT_Contacts_Contacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="SetCompanyColor" xml:space="preserve">
+    <value>Personnaliser la couleur de thème</value>
+    <comment>Settings Menu</comment>
+  </data>
+  <data name="SetCompanyColorDB" xml:space="preserve">
+    <value>Établir la couleur de thème en fonction de base de donnée</value>
+    <comment>Settings Menu</comment>
+  </data>
+</root>

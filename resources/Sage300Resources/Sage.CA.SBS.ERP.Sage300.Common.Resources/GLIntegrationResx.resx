@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddingToExistingBatch" xml:space="preserve">
+    <value>Adding to an Existing Batch</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Adjustment</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="ChooseSegmentsFromList" xml:space="preserve">
+    <value>Choose Segments From List</value>
+    <comment>Detail Screen - Label</comment>
+  </data>
+  <data name="ConsolidateByPostAccFisc" xml:space="preserve">
+    <value>Consolidate by Posting Sequence, Account and Fiscal Period</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="ConsolidateByPostAccFiscSource" xml:space="preserve">
+    <value>Consolidate by Posting Sequence, Account, Fiscal Period and Source</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="Consolidation" xml:space="preserve">
+    <value>Consolidation</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="CreatingandPostingNewBatch" xml:space="preserve">
+    <value>Creating and Posting a New Batch</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="CreatingNewBatch" xml:space="preserve">
+    <value>Creating a New Batch</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>Credit Note</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>Debit Note</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Discount</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="DoNotConsolidate" xml:space="preserve">
+    <value>Do Not Consolidate</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="DuringPosting" xml:space="preserve">
+    <value>During Posting</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="Example" xml:space="preserve">
+    <value>Example</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="GLDetailComment" xml:space="preserve">
+    <value>G/L Detail Comment</value>
+    <comment>Transactions - Table Column</comment>
+  </data>
+  <data name="GLDetailDescription" xml:space="preserve">
+    <value>G/L Detail Description</value>
+    <comment>Transactions - Table Column</comment>
+  </data>
+  <data name="GLDetailReference" xml:space="preserve">
+    <value>G/L Detail Reference</value>
+    <comment>Transactions - Table Column</comment>
+  </data>
+  <data name="GLEntryDescription" xml:space="preserve">
+    <value>G/L Entry Description</value>
+    <comment>Transactions - Table Column</comment>
+  </data>
+  <data name="GLIntegrationDetail" xml:space="preserve">
+    <value>G/L Integration Detail</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="GLSourceCodes" xml:space="preserve">
+    <value>G/L Source Codes</value>
+    <comment>Integration - Table Header</comment>
+  </data>
+  <data name="GLTransactionField" xml:space="preserve">
+    <value>G/L Transaction Field</value>
+    <comment>ReferenceIntegration - Field</comment>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>Interest</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Invoice</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="OnRequestGLBatch" xml:space="preserve">
+    <value>On Request Using Create G/L Batch Screen</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Payment</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="PaymentReversal" xml:space="preserve">
+    <value>Payment Reversal</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>Prepayment</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="Revaluation" xml:space="preserve">
+    <value>Revaluation</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="Rounding" xml:space="preserve">
+    <value>Rounding</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="SegmentCurrentlyUsed" xml:space="preserve">
+    <value>Segments Currently Used</value>
+    <comment>Detail Screen - Label</comment>
+  </data>
+  <data name="SegmentSeparator" xml:space="preserve">
+    <value>Segment Separator</value>
+    <comment>ReferenceIntegration - Field</comment>
+  </data>
+  <data name="SourceLedger" xml:space="preserve">
+    <value>Source Ledger</value>
+    <comment>Integration - Table Column Title</comment>
+  </data>
+  <data name="SourceType" xml:space="preserve">
+    <value>Source Type</value>
+    <comment>Integration - Table Column Title</comment>
+  </data>
+  <data name="WarningApglrefInvalid" xml:space="preserve">
+    <value>Transaction type "{0}" and G/L transaction field "{1}" cannot be combined.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="AdjustmentPostingSequence" xml:space="preserve">
+    <value>Adjustment Posting Sequence</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="ConsolidateGLBatches" xml:space="preserve">
+    <value>Consolidate G/L Batches</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="CreateGLTransactions" xml:space="preserve">
+    <value>Create G/L Transactions</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="CreateGLTransactionsBy" xml:space="preserve">
+    <value>Create G/L Transactions By</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="InvoicePostingSequence" xml:space="preserve">
+    <value>Invoice Posting Sequence</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="OnRequestUsingCreateGOrLBatchIcon" xml:space="preserve">
+    <value>On Request Using Create G/L Batch Screen</value>
+    <comment>Integration - List Option</comment>
+  </data>
+  <data name="RevaluationPostingSequence" xml:space="preserve">
+    <value>Revaluation Posting Sequence</value>
+    <comment>Option - Field</comment>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Posting Sequence</value>
+    <comment>GLIntegration - Posting Sequence Grid Column Title</comment>
+  </data>
+  <data name="PostingSequenceNo" xml:space="preserve">
+    <value>Posting Sequence Number</value>
+    <comment>GLIntegration - Posting Sequence Grid Column Title</comment>
+  </data>
+  <data name="SerialNo" xml:space="preserve">
+    <value>Serial Number</value>
+    <comment>GLIntegration - Posting Sequence Grid Column Title</comment>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Transaction Type</value>
+    <comment>Integration - Table Column Title</comment>
+  </data>
+  <data name="BtnExclude" xml:space="preserve">
+    <value>Exclude</value>
+    <comment>GLIntegration-Detail Button Text</comment>
+  </data>
+  <data name="BtnInclude" xml:space="preserve">
+    <value>Include</value>
+    <comment>GLIntegration-Detail Button Text</comment>
+  </data>
+  <data name="TransactionGeneratedThrough" xml:space="preserve">
+    <value>G/L Transactions Generated Through</value>
+    <comment>Integration - Table Header Label</comment>
+  </data>
+  <data name="SourceTypeEmptyWarning" xml:space="preserve">
+    <value>G/L Source Type</value>
+    <comment>Source Type Empty Warining</comment>
+  </data>
+</root>

@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Entity" xml:space="preserve">
+    <value>C/P – Campos Opcionales</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Especificaciones</value>
+    <comment>Settings screen name</comment>
+  </data>
+  <data name="GLAccounts" xml:space="preserve">
+    <value>Cuentas del LM</value>
+    <comment>Settings screen group</comment>
+  </data>
+  <data name="SettingsInstructions" xml:space="preserve">
+    <value>Especificar si este campo opcional se incluye con las transacciones del Libro Mayor y con las transacciones enviadas a otros libros mayores auxiliares.</value>
+    <comment>Settings screen instructions</comment>
+  </data>
+  <data name="AutoInsert" xml:space="preserve">
+    <value>Autoinsertar</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>Valor Predeterminado</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Campo Opcional</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="OptionalFieldDesc" xml:space="preserve">
+    <value>Descripción Campo Opcional</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="OptionalFieldsFor" xml:space="preserve">
+    <value>Campos Opcionales para</value>
+    <comment>List</comment>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Obligatorio</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valor Fijado</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="Adjustments" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="InvoiceDetails" xml:space="preserve">
+    <value>Detalles de Factura</value>
+  </data>
+  <data name="Invoices" xml:space="preserve">
+    <value>Facturas</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="NumberofValues" xml:space="preserve">
+    <value>Número de Valores</value>
+  </data>
+  <data name="Payments" xml:space="preserve">
+    <value>Pagos</value>
+  </data>
+  <data name="RemitToLocations" xml:space="preserve">
+    <value>Direcciones de Pago</value>
+  </data>
+  <data name="Revaluation" xml:space="preserve">
+    <value>Revaluación</value>
+  </data>
+  <data name="VendorsandVendorGroups" xml:space="preserve">
+    <value>Proveedores y Grupos de Proveedores</value>
+  </data>
+  <data name="Distribution" xml:space="preserve">
+    <value>Distribución</value>
+  </data>
+  <data name="ExpenseTax" xml:space="preserve">
+    <value>Impuesto sobre los Gastos</value>
+  </data>
+  <data name="PayablesControl" xml:space="preserve">
+    <value>Control de Efectos a Pagar</value>
+  </data>
+  <data name="RecoverableTax" xml:space="preserve">
+    <value>Impuesto Recuperable</value>
+  </data>
+  <data name="UnrealizedExchangeGain" xml:space="preserve">
+    <value>Ganancia Cambiaria No Realizada</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="UnrealizedExchangeLoss" xml:space="preserve">
+    <value>Pérdida Cambiaria No Realizada</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Monto</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="Integer" xml:space="preserve">
+    <value>Entero</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Hora</value>
+  </data>
+  <data name="YesOrNo" xml:space="preserve">
+    <value>Sí o No</value>
+  </data>
+  <data name="OptionalFieldValue" xml:space="preserve">
+    <value>Valor de Campo Opcional</value>
+  </data>
+  <data name="DefaultValueMessage" xml:space="preserve">
+    <value>Valor Predeterminado de Campo Opcional {0}</value>
+    <comment>Added</comment>
+  </data>
+  <data name="OptionalFieldValues" xml:space="preserve">
+    <value>Valores de Campos Opcionales</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ValueDefault" xml:space="preserve">
+    <value>Valor Predeterminado</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="ValueDesc" xml:space="preserve">
+    <value>Descripción de Valor</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="SettingsDescription" xml:space="preserve">
+    <value>Estas especificaciones determinan si este campo opcional se incluye con las transacciones del Libro Mayor y con las transacciones enviadas a otros libros mayores auxiliares.</value>
+    <comment>Settings Description</comment>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Admitir en Blanco</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="AP0500" xml:space="preserve">
+    <value>Campos Opcionales</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="AP0501" xml:space="preserve">
+    <value>Ubicaciones de Campos Opcionales</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimales</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="Labor" xml:space="preserve">
+    <value>Mano de Obra</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="Overhead" xml:space="preserve">
+    <value>Gastos Generales</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="PurchaseDiscount" xml:space="preserve">
+    <value>Descuento de Compras</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validar</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="DefaultAmountValue" xml:space="preserve">
+    <value>Valor de Monto Predeterminado</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="DefaultDateValue" xml:space="preserve">
+    <value>Valor de Fecha Predeterminada</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="DefaultIntegerValue" xml:space="preserve">
+    <value>Valor Entero Predeterminado</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="DefaultNumberValue" xml:space="preserve">
+    <value>Valor de Número Predeterminado</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="DefaultTextValue" xml:space="preserve">
+    <value>Valor de Texto Predeterminado</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="DefaultTimeValue" xml:space="preserve">
+    <value>Valor de Hora Predeterminada</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="DefaultValueDescription" xml:space="preserve">
+    <value>Descripción de Valor Predeterminado</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="DefaultYesOrNoValue" xml:space="preserve">
+    <value>Valor Sí o No Predeterminado</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="ExternalCostTransactions" xml:space="preserve">
+    <value>Transacciones de Costo Externo</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Descripción Campo Opcional</value>
+    <comment>Export/Import</comment>
+  </data>
+  <data name="TypedDefaultValueFieldIndex" xml:space="preserve">
+    <value>Índice de Campo de Valor Escrito Predeterminado</value>
+    <comment>Export/Import</comment>
+  </data>
+</root>

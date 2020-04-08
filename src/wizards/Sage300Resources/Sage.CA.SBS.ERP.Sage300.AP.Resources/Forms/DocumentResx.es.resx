@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="APVersionCreatedIn" xml:space="preserve">
+    <value>Creada en Versión de C/P</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="CheckSerialNumber" xml:space="preserve">
+    <value>Número Serie de Cheque</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="DatePaid" xml:space="preserve">
+    <value>Fecha de Pago</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="DatePaymentStatusChanged" xml:space="preserve">
+    <value>Fecha en la que Cambió el Estado de Pago</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="DateRetainageDue" xml:space="preserve">
+    <value>Plazo de Retención</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="DocumentDescription1" xml:space="preserve">
+    <value>Descripción Documento</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="EarliestBackdatedActivityDate" xml:space="preserve">
+    <value>Fecha de Actividad Antedatada Más Antigua</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="HasRetainage" xml:space="preserve">
+    <value>Tiene Retención</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="InvoiceasofDate" xml:space="preserve">
+    <value>Pago Al</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="LastActivityDate" xml:space="preserve">
+    <value>Last Activity Date</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="LastActivityYearOrPeriod" xml:space="preserve">
+    <value>Last Activity Year/Period</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="LastRevaluationDate" xml:space="preserve">
+    <value>Last Revaluation Date</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="LastStatementDate" xml:space="preserve">
+    <value>Fecha Último Estado de Cuenta</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="NumberofOBLJDetails" xml:space="preserve">
+    <value>Cantidad de Detalles OBLJ</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="NumberofScheduledPayments" xml:space="preserve">
+    <value>Cantidad de Pagos Programados</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="OriginalDocumentNumber" xml:space="preserve">
+    <value>Número Documento Original</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="PaymentNumberonLastStatement" xml:space="preserve">
+    <value>Número de Pago en Último Estado de Cuenta</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="RateOperator" xml:space="preserve">
+    <value>Operador de Tasa</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="RateOverridden" xml:space="preserve">
+    <value>Tasa Sustituida</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="ReportRetainageTax" xml:space="preserve">
+    <value>Reportar Impuestos de Retención</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="RetainageOutstanding" xml:space="preserve">
+    <value>Retención Pendiente</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="RetainageTermsCode" xml:space="preserve">
+    <value>Código Condiciones de Retención</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>Monto de Impuesto 1</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>Monto de Impuesto 2</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>Monto de Impuesto 3</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>Monto de Impuesto 4</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>Monto de Impuesto 5</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxAmountControl" xml:space="preserve">
+    <value>Control de Monto de Impuesto</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxBase1" xml:space="preserve">
+    <value>Base de Impuesto 1</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxBase2" xml:space="preserve">
+    <value>Base de Impuesto 2</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxBase3" xml:space="preserve">
+    <value>Base de Impuesto 3</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxBase4" xml:space="preserve">
+    <value>Base de Impuesto 4</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxBase5" xml:space="preserve">
+    <value>Base de Impuesto 5</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxBaseCalculateMethod" xml:space="preserve">
+    <value>Método Calculo de Base Impuesto</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>Clase Fiscal 1</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>Clase Fiscal 2</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>Clase Fiscal 3</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>Clase Fiscal 4</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>Clase Fiscal 5</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>Impuesto Incluido 1</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>Impuesto Incluido 2</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>Impuesto Incluido 3</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>Impuesto Incluido 4</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>Impuesto Incluido 5</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxReportingCalculateMethod" xml:space="preserve">
+    <value>Método Cálculo Moneda de Reporte Fiscal</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxReportingCurrencyCode" xml:space="preserve">
+    <value>Código Moneda de Reporte Fiscal</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxReportingExchangeRate" xml:space="preserve">
+    <value>Tipo Cambio Moneda de Reporte Fiscal</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxReportingRateDate" xml:space="preserve">
+    <value>Fecha Tasa Moneda de Reporte Fiscal</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxReportingRateOperator" xml:space="preserve">
+    <value>Operador Tasa Moneda de Reporte Fiscal</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxReportingRateOverride" xml:space="preserve">
+    <value>Sustitución Tasa Moneda de Reporte Fiscal</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxReportingRateType" xml:space="preserve">
+    <value>Tipo Tasa Moneda de Reporte Fiscal</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxStateVersion" xml:space="preserve">
+    <value>Versión Estado Fiscal</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="_1099OrCPRSOriginalAmount" xml:space="preserve">
+    <value>Monto Original de 1099/CPRS</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="_1099OrCPRSRemainingAmount" xml:space="preserve">
+    <value>Monto Restante de 1099/CPRS</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalBaseAmount1" xml:space="preserve">
+    <value>Monto Base Funcional 1</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalBaseAmount2" xml:space="preserve">
+    <value>Monto Base Funcional 2</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalBaseAmount3" xml:space="preserve">
+    <value>Monto Base Funcional 3</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalBaseAmount4" xml:space="preserve">
+    <value>Monto Base Funcional 4</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalBaseAmount5" xml:space="preserve">
+    <value>Monto Base Funcional 5</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalCurrencyAmountDue" xml:space="preserve">
+    <value>Monto a Pagar Moneda Funcional</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalCurrencyDiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento Moneda Funcional</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalCurrencyInvoiceAmount" xml:space="preserve">
+    <value>Monto de Factura Moneda Funcional</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalCurrencyNonTaxableAmount" xml:space="preserve">
+    <value>Monto No Gravable Moneda Funcional</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalCurrencyOriginalRetainageAmount" xml:space="preserve">
+    <value>Monto de Retención Original Moneda Funcional</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalCurrencyRetainageAmount" xml:space="preserve">
+    <value>Monto de Retención Moneda Funcional</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalCurrencyTaxableAmount" xml:space="preserve">
+    <value>Monto Gravable Moneda Funcional</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalCurrencyTaxAmount" xml:space="preserve">
+    <value>Monto de Impuesto Moneda Funcional</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalTaxAmount1" xml:space="preserve">
+    <value>Monto de Impuesto Funcional 1</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalTaxAmount2" xml:space="preserve">
+    <value>Monto de Impuesto Funcional 2</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalTaxAmount3" xml:space="preserve">
+    <value>Monto de Impuesto Funcional 3</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalTaxAmount4" xml:space="preserve">
+    <value>Monto de Impuesto Funcional 4</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="FunctionalTaxAmount5" xml:space="preserve">
+    <value>Monto de Impuesto Funcional 5</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="LastAppliedPaymentSequenceNumber" xml:space="preserve">
+    <value>Número Secuencia de Último Pago Aplicado</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="MiscellaneousPaymentFlag" xml:space="preserve">
+    <value>Indicador de Pagos Varios</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="OriginalExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio Original</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="OriginalRateDate" xml:space="preserve">
+    <value>Fecha de Tasa Original</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="OriginalRateOperator" xml:space="preserve">
+    <value>Operador de Tasa Original</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="OriginalRateOverrideFlag" xml:space="preserve">
+    <value>Indicador Sustitución de Tasa Original</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="OriginalRateType" xml:space="preserve">
+    <value>Tipo de Tasa Original</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="PostingSequenceNumber" xml:space="preserve">
+    <value>Número Secuencia de Asentamiento</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>Autoridad Fiscal 1</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>Autoridad Fiscal 2</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>Autoridad Fiscal 3</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>Autoridad Fiscal 4</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>Autoridad Fiscal 5</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorBaseAmount1" xml:space="preserve">
+    <value>Monto Base Moneda del Proveedor 1</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorBaseAmount2" xml:space="preserve">
+    <value>Monto Base Moneda del Proveedor 2</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorBaseAmount3" xml:space="preserve">
+    <value>Monto Base Moneda del Proveedor 3</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorBaseAmount4" xml:space="preserve">
+    <value>Monto Base Moneda del Proveedor 4</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorBaseAmount5" xml:space="preserve">
+    <value>Monto Base Moneda del Proveedor 5</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorCurrencyAmountDue" xml:space="preserve">
+    <value>Monto a Pagar Moneda del Proveedor</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorCurrencyDiscountAmount" xml:space="preserve">
+    <value>Monto de Descuento Moneda del Proveedor</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorCurrencyInvoiceAmount" xml:space="preserve">
+    <value>Monto de Factura Moneda del Proveedor</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorCurrencyNonTaxableAmount" xml:space="preserve">
+    <value>Monto No Gravable Moneda del Proveedor</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorCurrencyOriginalRetainageAmount" xml:space="preserve">
+    <value>Monto de Retención Original Moneda del Proveedor</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorCurrencyRetainageAmount" xml:space="preserve">
+    <value>Monto de Retención Moneda del Proveedor</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorCurrencyTaxableAmount" xml:space="preserve">
+    <value>Monto Gravable Moneda del Proveedor</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorCurrencyTaxAmount" xml:space="preserve">
+    <value>Monto de Impuesto Moneda del Proveedor</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorTaxAmount1" xml:space="preserve">
+    <value>Monto de Impuesto Moneda del Proveedor 1</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorTaxAmount2" xml:space="preserve">
+    <value>Monto de Impuesto Moneda del Proveedor 2</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorTaxAmount3" xml:space="preserve">
+    <value>Monto de Impuesto Moneda del Proveedor 3</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorTaxAmount4" xml:space="preserve">
+    <value>Monto de Impuesto Moneda del Proveedor 4</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+  <data name="VendorTaxAmount5" xml:space="preserve">
+    <value>Monto de Impuesto Moneda del Proveedor 5</value>
+    <comment>Document Finder - Column header</comment>
+  </data>
+</root>

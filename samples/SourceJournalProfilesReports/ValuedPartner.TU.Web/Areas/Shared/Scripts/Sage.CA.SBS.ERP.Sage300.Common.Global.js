@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 // @ts-check
 
@@ -57,6 +57,15 @@ sg.utls.EntityErrorPriority = {
     Security: 4
 };
 
+/**
+ * Sage 300 license status
+ */
+sg.utls.LicenseStatus = {
+    Expired: -2,
+    NotFound: -1,
+    OK: 0
+};
+
 var fnTimeout = 0;
 
 $.extend(sg.utls.regExp, {
@@ -93,6 +102,7 @@ $.extend(sg.utls.url, {
     destroyPoolUrl: function () { return sg.utls.url.buildUrl("Core", "Session", "DestroyPool"); },
     destroySessionUrl: function () { return sg.utls.url.buildUrl("Core", "Session", "Destroy"); },
     getApplicationConfigUrl: function () { return sg.utls.url.buildUrl("CS", "CompanyProfile", "GetApplicationConfig"); },
+    getCompanyColorUrl: function () { return sg.utls.url.buildUrl("Core", "Common", "GetCompanyColorCode"); },
 
     baseUrl: function () {
         return $("#hdnUrl").val();
@@ -490,12 +500,12 @@ $.extend(sg.utls, {
     releaseSession: function () {
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length === 0 || sessionPerPage.val() === "False") {
-            sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "ReleaseSession"), {}, function () { });
+            sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "ReleaseSession"), {}, function () { });
         }
     },
 
     destroySessions: function () {
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "DestroyPool"), {}, function () { });
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "DestroyPool"), {}, function () { });
         sage.cache.session.clearAll();
         sg.utls.destroyPoolForReport(false);
     },
@@ -505,7 +515,7 @@ $.extend(sg.utls, {
         var sessionId = sage.cache.session.get("session");
         sage.cache.session.clearAll();
         sage.cache.session.set("session", sessionId);
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "Destroy"), {}, function () { });
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "Destroy"), {}, function () { });
     },
 
     /**
@@ -575,7 +585,7 @@ $.extend(sg.utls, {
         sg.utls.logMessage("Calling sg.utls.logOut() for context session id = '" + sessionId + "'");
 
         var currentCompany = sg.utls.getCurrentCompanyName();
-        var message = isAdminLogout ? globalRes.AdminSignOutConfirmation : sg.utls.formatString(globalRes.MultiSessionSignOutConfirmationTemplate, currentCompany);
+        var message = isAdminLogout ? globalRes.AdminSignOutConfirmation : sg.utls.formatString(globalRes.MultiSessionSignOutConfirmationTemplate, kendo.htmlEncode(currentCompany));
         var title = globalRes.SignOutConfirmation;
         var btnYes = globalRes.SignOut;
         var btnNo = globalRes.Cancel;
@@ -788,6 +798,10 @@ $.extend(sg.utls, {
 
     loadHomeCurrency: function () {
         sg.utls.ajaxCache(sg.utls.url.buildUrl("CS", "CompanyProfile", "GetApplicationConfig"), {}, ajaxSuccess.getCurrency, "HomeCurrency");
+    },
+
+    loadCompanyColor: function () {
+        sg.utls.ajaxCache(sg.utls.url.getCompanyColorUrl(), {}, $.noop, "CompanyColor");
     },
 
     openDialog: function (ajaxUrl, title) {
@@ -1372,6 +1386,10 @@ $.extend(sg.utls, {
             modal: true,
             minWidth: 500,
             maxWidth: 760,
+            open: function () {
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
+            },
             // Custom function to support focus within kendo window
             activate: sg.utls.kndoUI.onActivate
         });
@@ -1454,8 +1472,12 @@ $.extend(sg.utls, {
             modal: true,
             minWidth: 500,
             maxWidth: 760,
+            open: function () {
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
+            },
             //custom function to suppot focus within kendo window
-            activate: sg.utls.kndoUI.onActivate
+            activate: sg.utls.kndoUI.onActivate,
         });
 
         kendoWindow.data("kendoWindow").content($(dialogId).html()).center().open();
@@ -1529,7 +1551,10 @@ $.extend(sg.utls, {
             modal: true,
             minWidth: 600,
             maxWidth: 960,
-
+            open: function () {
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
+            },
             // custom function to support focus within kendo window
             activate: sg.utls.kndoUI.onActivate
         });
@@ -1765,6 +1790,7 @@ $.extend(sg.utls, {
             open: function () {
                 sg.utls.setKendoWindowPosition(this);
                 sg.utls.mobileKendoAdjustment(this.element, ".k-window-content", "popupMobile");
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
             },
         }).data("kendoWindow");
         if (maxConfig && maxConfig.height) {
@@ -3199,6 +3225,11 @@ $.extend(sg.utls, {
      * @returns {boolean} true - Allow page unload event | false - Disallow page unload event
      */
     isPageUnloadEventEnabled: function (isDirty) {
+        //For CRM Sage 300 pages, always return false 
+        var url = window.location.href;
+        if (sessionStorage["productId"] || url.indexOf("productId") > 0) {
+            return false;
+        }
         var pageUnloadEventFlag = sg.utls.getPortalWindow().pageUnloadEventManager.isEnabled();
         return pageUnloadEventFlag && isDirty;
     },
@@ -3224,6 +3255,65 @@ $.extend(sg.utls, {
     buildMessageText: function (text) {
         return $('<div />').html(text).text();
     },
+    /**
+     * @name setBackgroundColor
+     * @description Set the background color from user preference for the header section,
+     *   also change the font color depending on the brightness
+     * @param {object} element - The html object to be set color with
+     */
+    setBackgroundColor: function (element) {
+        if (element && $.isFunction(element.css) && element.css("background-color")) {
+            sg.utls.ajaxCache(sg.utls.url.getCompanyColorUrl(), {}, function (result) {
+                sg.utls.setBackgroundColorHex(element, result);
+            }, "CompanyColor");
+        }
+    },
+    /**
+     * @name setBackgroundColorHex
+     * @description Set the background color from user preference for the header section,
+     *   also change the font color depending on the brightness
+     * @param {object} element - The html object to be set color with
+     * @param {string} color - A Hex color code
+     */
+    setBackgroundColorHex: function (element, color) {
+        if (element && color) {
+            element.css("background-color", color);
+            var hexcolor = color.replace("#", "");
+            var r = parseInt(hexcolor.substr(0, 2), 16);
+            var g = parseInt(hexcolor.substr(2, 2), 16);
+            var b = parseInt(hexcolor.substr(4, 2), 16);
+
+            // https://www.w3.org/TR/AERT/#color-contrast
+            var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+
+            if (yiq > 125) {
+                // set font to black
+                element.removeClass("dark-bg");
+                element.addClass("light-bg");
+            } else {
+                //set font to white
+                element.removeClass("light-bg");
+                element.addClass("dark-bg");
+            }
+        }
+    },
+    /**
+     * @name getMenuLabelFromMenuItemId
+     * @description Get the current menu item text based on it's menu item id
+     * @param {string} menuItemId - The menuItemId
+     * @returns {string} The menu item label text
+     */
+    getMenuLabelFromMenuItemId: function (menuItemId) {
+
+        var menuItemText = '';
+        try {
+            var menuItem = $('li').find('[data-menuid="' + menuItemId + '"]');
+            menuItemText = portalBehaviourResources.PagetitleInManager.format(menuItem.attr("data-modulename"), menuItem[0].text.trim());
+        } catch (e) {
+            menuItemText = '';
+        }
+        return menuItemText;
+    }
 
     //initBackgroundImageCycling: function () {
     //    var TIMEOUT_MS = 2000;

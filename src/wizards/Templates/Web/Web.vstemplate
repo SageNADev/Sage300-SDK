@@ -656,9 +656,13 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="bar_middle.png">bar_middle.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="bar_right.png">bar_right.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="close.png">close.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="color_picker_bg.png">color_picker_bg.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="editor.png">editor.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="portalSprite.png">portalSprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="quick-menu-icon_rev.png">quick-menu-icon_rev.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.png">sage_300_logo.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_black.png">sage_300_logo_black.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_white.png">sage_300_logo_white.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="startup-sprite.png">startup-sprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="tour_icon_sprite.png">tour_icon_sprite.png</ProjectItem>
           </Folder>
@@ -709,6 +713,7 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_msg.png">sprite_msg.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons.png">toolBar_icons.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons_disabled.png">toolBar_icons_disabled.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="treeview-sprite.png">treeview-sprite.png</ProjectItem>
           </Folder>
         </Folder>
         <Folder Name="js" TargetFolderName="js">

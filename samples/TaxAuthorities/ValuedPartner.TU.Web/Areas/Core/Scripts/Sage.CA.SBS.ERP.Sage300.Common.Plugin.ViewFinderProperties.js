@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2019-2020 Sage Software, Inc.  All rights reserved. */
 // @ts-check
 "use strict";
 
@@ -182,6 +182,16 @@
                 parentValAsInitKey: true, //$("#txtReceiptNumber").val() === "*** NEW ***" ? false : true,
                 filter: "DELETED = 0",
                 //viewFinder.optionalFieldBindings = "IC0595, IC0377[2]";  // comment out for now as CSFND doesn't support filterCount yet
+            },
+
+            BOMNumber: {
+                viewID: "IC0200",
+                viewOrder: 0,
+                //parentValAsInitKey: false,
+                returnFieldNames: ["BOMNO"],
+                displayFieldNames: ["FMTITEMNO", "BOMNO", "ITEMDESC", "DESC", "REMARK", "FIXEDCOST", "BUILDQTY", "UNIT",
+                    "VARBLCOST", "STARTDATE", "ENDDATE", "INACTIVE"],
+                filterTemplate: "FMTITEMNO = \"{0}\" ",
             }
         },
 

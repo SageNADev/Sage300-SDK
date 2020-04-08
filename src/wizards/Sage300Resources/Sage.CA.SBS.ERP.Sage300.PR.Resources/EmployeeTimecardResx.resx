@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Approved" xml:space="preserve">
+    <value>Approved</value>
+    <comment>Status</comment>
+  </data>
+  <data name="Billing" xml:space="preserve">
+    <value>Billing</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CAPayrollEmployeeTimecards" xml:space="preserve">
+    <value>Canadian Payroll Employee Timecards</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="DayOfWeek" xml:space="preserve">
+    <value>Day of Week</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="DefaultShiftNumber" xml:space="preserve">
+    <value>Default Shift Number</value>
+  </data>
+  <data name="DefaultShiftSchedule" xml:space="preserve">
+    <value>Default Shift Schedule</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EarningExpenseAccrual" xml:space="preserve">
+    <value>Earning/Expense/Accrual</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="EarningsExpenses" xml:space="preserve">
+    <value>Earnings/Expenses</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Employee Name</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Employee Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EmployeeTimecard" xml:space="preserve">
+    <value>Employee Timecard</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EmployeeTimecardDescription" xml:space="preserve">
+    <value>Employee Timecard Description</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EmploymentStatus" xml:space="preserve">
+    <value>Employment Status</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Expenses" xml:space="preserve">
+    <value>Expenses</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FindTimecard" xml:space="preserve">
+    <value>Find a Timecard</value>
+    <comment>Finder Button in Header</comment>
+  </data>
+  <data name="FromEmployeeNumber" xml:space="preserve">
+    <value>From Employee Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromEndDate" xml:space="preserve">
+    <value>From End Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="GLAccountDescription" xml:space="preserve">
+    <value>G/L Account Description</value>
+    <comment>Checkbox</comment>
+  </data>
+  <data name="HireDate" xml:space="preserve">
+    <value>Hire Date</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>Hours</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>Inactive Date</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Include</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InsertDefaultDetails" xml:space="preserve">
+    <value>Insert Default Details</value>
+  </data>
+  <data name="InsertOptionalFields" xml:space="preserve">
+    <value>Insert Optional Fields</value>
+  </data>
+  <data name="JobDetails" xml:space="preserve">
+    <value>Job Details</value>
+    <comment>Field</comment>
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>Job Related</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="Jobs" xml:space="preserve">
+    <value>Jobs</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+    <comment>Status</comment>
+  </data>
+  <data name="NoAction" xml:space="preserve">
+    <value>No Action</value>
+  </data>
+  <data name="NumberOfOptionalFields" xml:space="preserve">
+    <value>Number of Optional Fields</value>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Optional Field</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Optional Field Description</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="PartTime" xml:space="preserve">
+    <value>Part-Time</value>
+  </data>
+  <data name="PayrollEmployeeTimecards" xml:space="preserve">
+    <value>Payroll Employee Timecards</value>
+    <comment>Title</comment>
+  </data>
+  <data name="PayrollEmployeeTimecardsReport" xml:space="preserve">
+    <value>Payroll Employee Timecards Report</value>
+    <comment>Print Popup Title</comment>
+  </data>
+  <data name="Pieces" xml:space="preserve">
+    <value>Pieces</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PooledTips" xml:space="preserve">
+    <value>Pooled Tips</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="ProcessControlCode" xml:space="preserve">
+    <value>Process Control Code</value>
+  </data>
+  <data name="ReadyForApproval" xml:space="preserve">
+    <value>Ready for Approval</value>
+    <comment>Status</comment>
+  </data>
+  <data name="Reviewed" xml:space="preserve">
+    <value>Reviewed</value>
+    <comment>Status</comment>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>Sales</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SelectionList" xml:space="preserve">
+    <value>Selection List</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShiftNumber" xml:space="preserve">
+    <value>Shift Number</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="ShiftSchedule" xml:space="preserve">
+    <value>Shift Schedule</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="Sick" xml:space="preserve">
+    <value>Sick</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Start Time</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StopTime" xml:space="preserve">
+    <value>Stop Time</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="TerminationDate" xml:space="preserve">
+    <value>Termination Date</value>
+  </data>
+  <data name="Tips" xml:space="preserve">
+    <value>Tips</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TipsBasedOn" xml:space="preserve">
+    <value>Tips Based On</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="TipsExpensesPiecesSales" xml:space="preserve">
+    <value>Tips/Expenses/Pieces/Sales</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="ToEmployeeNumber" xml:space="preserve">
+    <value>To Employee Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToEndDate" xml:space="preserve">
+    <value>To End Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalExpenses" xml:space="preserve">
+    <value>Total Expenses</value>
+  </data>
+  <data name="TotalHours" xml:space="preserve">
+    <value>Total Hours</value>
+  </data>
+  <data name="TotalJobs" xml:space="preserve">
+    <value>Total Jobs</value>
+  </data>
+  <data name="TotalPieces" xml:space="preserve">
+    <value>Total Pieces</value>
+  </data>
+  <data name="TotalSales" xml:space="preserve">
+    <value>Total Sales</value>
+  </data>
+  <data name="TotalSickPayments" xml:space="preserve">
+    <value>Total Sick Payments</value>
+  </data>
+  <data name="TotalTips" xml:space="preserve">
+    <value>Total Tips</value>
+  </data>
+  <data name="TotalVacationPayments" xml:space="preserve">
+    <value>Total Vacation Payments</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>Transfer</value>
+    <comment>Button</comment>
+  </data>
+  <data name="UniqueKeyField" xml:space="preserve">
+    <value>Unique Key Field</value>
+  </data>
+  <data name="UseOptionalFields" xml:space="preserve">
+    <value>Use Optional Fields</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="UserSec" xml:space="preserve">
+    <value>User Security Field</value>
+  </data>
+  <data name="USPayrollEmployeeTimecards" xml:space="preserve">
+    <value>US Payroll Employee Timecards</value>
+  </data>
+  <data name="Vacation" xml:space="preserve">
+    <value>Vacation</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Value Description</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Value Set</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="WorkClassification" xml:space="preserve">
+    <value>Work Classification</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="JobBaseColumn" xml:space="preserve">
+    <value>Total Job Pieces/Sales/Amt</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="PooledTipsColumn" xml:space="preserve">
+    <value>Pooled Tips</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="ShiftNumColumn" xml:space="preserve">
+    <value>Shift Number</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="TipsBaseColumn" xml:space="preserve">
+    <value>Tips Based On</value>
+    <comment>Grid</comment>
+  </data>
+  <data name="ShiftNumberFour" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ShiftNumberOne" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ShiftNumberThree" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ShiftNumberTwo" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AddSuccessMessage" xml:space="preserve">
+    <value>Added new employee timecard for employee “{0}” with end date “{1}”.</value>
+  </data>
+  <data name="UnsavedChangesMessage" xml:space="preserve">
+    <value>There are unsaved changes in employee timecard dated "{0}" for employee number "{1}". Do you want to continue?</value>
+  </data>
+  <data name="DeleteConfirmMessage" xml:space="preserve">
+    <value>Are you sure you want to delete Employee Timecard dated "{0}" for employee "{1}" ?</value>
+  </data>
+</root>

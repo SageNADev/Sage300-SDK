@@ -19,6 +19,7 @@ using Sage.CA.SBS.ERP.Sage300.Core.Logging;
 using Sage.CA.SBS.ERP.Sage300.Core.Logging.Watcher;
 using Sage.CA.SBS.ERP.Sage300.CS.Interfaces.Services;
 using Sage.CA.SBS.ERP.Sage300.CS.Models;
+using System.Threading;
 
 namespace $companynamespace$.$applicationid$.Web.WebForms
 {
@@ -27,6 +28,11 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
     /// </summary>
     public partial class ReportViewer : BaseWebPage
     {
+        /// <summary>
+        /// Create a lock object
+        /// </summary>
+        private static object Lock = new object();
+
         /// <summary>
         /// Execute the report
         /// </summary>
@@ -84,7 +90,11 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
 
                         try
                         {
-                            reportDocument = new SageWebReportDocument(accpacReport.GetReportDocument());
+                            //Use lock to fix CRM multiple users concurrency printing issues. 
+                            lock (Lock)
+                            {
+                                reportDocument = new SageWebReportDocument(accpacReport.GetReportDocument());
+                            }
                         }
                         finally
                         {

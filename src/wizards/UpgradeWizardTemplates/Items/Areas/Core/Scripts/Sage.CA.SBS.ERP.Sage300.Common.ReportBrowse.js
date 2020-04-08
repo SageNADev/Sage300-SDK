@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 /* global kendo */
 /* global globalResource */
@@ -55,6 +55,8 @@ var reportBrowseUI = function () {
 
             open: function () {
                 this.wrapper.css({ top: 100 });
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
             }
         }).data("kendoWindow");
     }
@@ -95,7 +97,7 @@ var reportBrowseUI = function () {
                     title: globalResource.ReportName,
                     field: "reportName",
                     width: 300,
-                    template: kendo.template("<span class='report-list'>#= reportName #</span>")
+                    template: kendo.template("<span class='report-list'>#: reportName #</span>")
                 }
             ]
         }).data("kendoGrid");

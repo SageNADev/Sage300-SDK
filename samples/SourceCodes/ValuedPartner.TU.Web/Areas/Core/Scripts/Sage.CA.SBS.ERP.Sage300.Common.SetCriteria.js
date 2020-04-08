@@ -606,10 +606,9 @@ setCriteriaUI = {
             height: h,
             minHeight: 100,
             maxHeight: 800,
+            //Open Kendo Window in center of the Viewport. Also set title bar color
+            open: sg.utls.kndoUI.onOpen,
             activate: sg.utls.kndoUI.onActivate,
-            open: function () {
-                sg.utls.setKendoWindowPosition(this);
-            },
         }).data("kendoWindow") ;
         popupDialog.title(title);
         popupDialog.open();

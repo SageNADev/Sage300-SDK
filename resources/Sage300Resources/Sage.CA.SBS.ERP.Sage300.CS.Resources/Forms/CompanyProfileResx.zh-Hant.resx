@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>地址行1</value>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>地址行2</value>
+  </data>
+  <data name="Address3" xml:space="preserve">
+    <value>地址行3</value>
+  </data>
+  <data name="Address4" xml:space="preserve">
+    <value>地址行4</value>
+  </data>
+  <data name="CS0001" xml:space="preserve">
+    <value>公司概況</value>
+    <comment>For Export</comment>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>分部</value>
+  </data>
+  <data name="BusinessAsLABEL" xml:space="preserve">
+    <value>商業名號</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BusinessRegistrationNumber" xml:space="preserve">
+    <value>商業註冊編號</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>市/縣</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>連絡人</value>
+    <comment>For Export</comment>
+  </data>
+  <data name="ContactFax" xml:space="preserve">
+    <value>傳真 </value>
+  </data>
+  <data name="ContactFRAME" xml:space="preserve">
+    <value>連絡人資訊</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContactNAME" xml:space="preserve">
+    <value>連絡人</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ContactPhone" xml:space="preserve">
+    <value>電話</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>國家</value>
+  </data>
+  <data name="CountryCode" xml:space="preserve">
+    <value>國家代碼</value>
+  </data>
+  <data name="CurrencyDesc" xml:space="preserve">
+    <value>幣別描述</value>
+  </data>
+  <data name="DatabaseID" xml:space="preserve">
+    <value>資料庫代號</value>
+  </data>
+  <data name="DefaultRateType" xml:space="preserve">
+    <value>預設匯率類型</value>
+  </data>
+  <data name="DoingBussinessAs" xml:space="preserve">
+    <value>商業名號</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>公司概況</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Euro" xml:space="preserve">
+    <value>歐元</value>
+    <comment>For Export</comment>
+  </data>
+  <data name="FormatPhone" xml:space="preserve">
+    <value>格式化電話和傳真號碼</value>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>功能幣別</value>
+  </data>
+  <data name="GainLossAcctMethod" xml:space="preserve">
+    <value>收益/損失核算方法</value>
+  </data>
+  <data name="GnLssMthdOneWayChg" xml:space="preserve">
+    <value>變更收益/損失核算方法為“已確認收益/損失”是永久性的。在您儲存了公司概況之後，您將不能夠切換回“已實現和未實現收益/損失”。</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="InactiveAccount" xml:space="preserve">
+    <value>閒置的總帳科目</value>
+  </data>
+  <data name="InvalidDefaultRateType" xml:space="preserve">
+    <value>無法找到匯率類型{0}。</value>
+  </data>
+  <data name="LegalName" xml:space="preserve">
+    <value>法定名稱</value>
+  </data>
+  <data name="LocationCode" xml:space="preserve">
+    <value>地點代碼</value>
+  </data>
+  <data name="LocationType" xml:space="preserve">
+    <value>地點類型</value>
+  </data>
+  <data name="LockedFiscalPeriod" xml:space="preserve">
+    <value>鎖定的會計期間</value>
+  </data>
+  <data name="Multicurrency" xml:space="preserve">
+    <value>多幣別</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名稱</value>
+    <comment>For Export </comment>
+  </data>
+  <data name="NoExistAccount" xml:space="preserve">
+    <value>不存在的總帳科目</value>
+  </data>
+  <data name="NumFiscalPeriods" xml:space="preserve">
+    <value>會計期間數</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>選項</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>電話</value>
+  </data>
+  <data name="Qtr4Periods" xml:space="preserve">
+    <value>有4個期間的季度</value>
+  </data>
+  <data name="RateTypeDesc" xml:space="preserve">
+    <value>匯率類型描述</value>
+  </data>
+  <data name="ReportingCurrency" xml:space="preserve">
+    <value>報告幣別</value>
+    <comment>For Export</comment>
+  </data>
+  <data name="StateProv" xml:space="preserve">
+    <value>省/市/區</value>
+  </data>
+  <data name="TabAddress" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="TabOptions" xml:space="preserve">
+    <value>選項</value>
+  </data>
+  <data name="TaxNumber" xml:space="preserve">
+    <value>稅務編號</value>
+  </data>
+  <data name="WarningDateRange" xml:space="preserve">
+    <value>警告日期範圍：</value>
+  </data>
+  <data name="ZpPostal" xml:space="preserve">
+    <value>郵遞區號</value>
+  </data>
+  <data name="CompanyLogo" xml:space="preserve">
+    <value>公司徽標</value>
+  </data>
+  <data name="SelectLogo" xml:space="preserve">
+    <value>選擇公司徽標</value>
+  </data>
+  <data name="UpLoad" xml:space="preserve">
+    <value>上載</value>
+  </data>
+  <data name="FileFormatError" xml:space="preserve">
+    <value>選擇一個支持的圖像類型（JPEG或PNG）。</value>
+  </data>
+  <data name="UpLoadMessage" xml:space="preserve">
+    <value>公司徽標上載成功。</value>
+  </data>
+  <data name="DeleteLogoMessage" xml:space="preserve">
+    <value>公司徽標刪除成功。</value>
+  </data>
+  <data name="FileSizeError" xml:space="preserve">
+    <value>最大圖像尺寸為100 KB。請選擇一個更小的圖像。</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>電郵</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>密碼</value>
+  </data>
+  <data name="SendTestEmail" xml:space="preserve">
+    <value>發送測試電郵</value>
+  </data>
+  <data name="SendTo" xml:space="preserve">
+    <value>到</value>
+  </data>
+  <data name="ServerName" xml:space="preserve">
+    <value>伺服器名稱</value>
+  </data>
+  <data name="ServerPort" xml:space="preserve">
+    <value>伺服器埠</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>用戶名</value>
+  </data>
+  <data name="UseSSL" xml:space="preserve">
+    <value>使用SSL</value>
+  </data>
+  <data name="EmailBody" xml:space="preserve">
+    <value>這是一封發自Sage 300的測試電郵。</value>
+  </data>
+  <data name="EmailSendMessage" xml:space="preserve">
+    <value>電郵已成功發送。</value>
+  </data>
+  <data name="EmailSubject" xml:space="preserve">
+    <value>來自Sage 300的測試電郵</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>自電郵地址</value>
+  </data>
+  <data name="EmailAuthenticatedFailed" xml:space="preserve">
+    <value>SMTP伺服器需要一個安全連接或者用戶端未經認證。</value>
+  </data>
+  <data name="EmailBoxBusy" xml:space="preserve">
+    <value>郵箱正忙，請稍後再試。</value>
+  </data>
+  <data name="EmailDeliveryFailed" xml:space="preserve">
+    <value>電郵設定不完整或不正確。複查公司概況螢幕電郵索引標籤上的設定。</value>
+  </data>
+  <data name="EmailInfoMessage" xml:space="preserve">
+    <value>如果要使用電郵作為客戶和供應商的交付方式，您必須完成電郵索引標籤上的欄位。</value>
+  </data>
+  <data name="EmailQueuedMessage" xml:space="preserve">
+    <value>已成功建立電郵訊息並將其增加到列印佇列等待送交。</value>
+  </data>
+  <data name="InvalidEmailAddress" xml:space="preserve">
+    <value>電郵地址無效。</value>
+  </data>
+  <data name="SendCopyTo" xml:space="preserve">
+    <value>發送副本到</value>
+  </data>
+  <data name="BccEmailAddress" xml:space="preserve">
+    <value>密送電郵地址</value>
+  </data>
+  <data name="BccEmailMessageHelp" xml:space="preserve">
+    <value>如果您輸入多個電郵地址，使用分號（;）分隔它們。</value>
+  </data>
+</root>

@@ -1,0 +1,2029 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_1099CPRSAmount" xml:space="preserve">
+    <value>1099/CPRS金額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="_1099CPRSCode" xml:space="preserve">
+    <value>1099/CPRS代碼</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AccountSetCode" xml:space="preserve">
+    <value>科目集合代碼</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AddAdditionalCost" xml:space="preserve">
+    <value>是否儲存該附加成本？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AddCostVendorNotExist" xml:space="preserve">
+    <value>無法找到供應商{0}。您必須先指定一個稅組之後方可以輸入附加成本明細。您為稅組指定的幣別在您增加供應商記錄到應付帳款時也將是該憑證，該稅務報告幣別，和該供應商的幣別。如果您要稅組的幣別不同於稅務報告幣別或憑證幣別，您必須先在應付帳款中增加供應商記錄。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AddCostZoomForm" xml:space="preserve">
+    <value>明細成本/稅務</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AddDetailCost" xml:space="preserve">
+    <value>是否增加此一附加成本明細行？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AddDetailLine" xml:space="preserve">
+    <value>是否增加此一明細行？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AdditionalCost" xml:space="preserve">
+    <value>附加成本</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AdditionalCosts" xml:space="preserve">
+    <value>附加成本</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AdditionalItemInformation" xml:space="preserve">
+    <value>附加產品資訊</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>地址</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>地址1</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>地址2</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Address3" xml:space="preserve">
+    <value>地址3</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Address4" xml:space="preserve">
+    <value>地址4</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AlcPluralNotMultipleOf" xml:space="preserve">
+    <value>已退回系列編號必須是{0}的整倍數。您已經退回了{1}個系列編號；{2}不是一個{3}的整倍數。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="AlcSingleNotMultipleOf" xml:space="preserve">
+    <value>已退回系列編號必須是{0}的整倍數。您已經退回了1個系列編號；1不是一個{1}的整倍數。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>校準</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AllItems" xml:space="preserve">
+    <value>所有產品</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AllocateCost" xml:space="preserve">
+    <value>分佈成本...</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AllocatedTax" xml:space="preserve">
+    <value>已分配稅</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AllocateSerialNos" xml:space="preserve">
+    <value>正在為{0}於{1}分配系列編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>金額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AmountRemaining" xml:space="preserve">
+    <value>剩餘金額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ARItemNo" xml:space="preserve">
+    <value>應收帳款產品編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ARItemUOM" xml:space="preserve">
+    <value>應收帳款產品計量單位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ArrivalDate" xml:space="preserve">
+    <value>到貨日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AutoAlloc" xml:space="preserve">
+    <value>自動分配</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AutoClear" xml:space="preserve">
+    <value>自動清除</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AutoGenerate" xml:space="preserve">
+    <value>自動產生</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AutoGenfrom" xml:space="preserve">
+    <value>自動產生從</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AvailSerialNo" xml:space="preserve">
+    <value>可用的系列編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="BillingCurrency" xml:space="preserve">
+    <value>帳單幣別</value>
+    <comment>Label</comment>
+  </data>
+  <data name="BillingRate" xml:space="preserve">
+    <value>帳單費率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="BillingRateDistSum" xml:space="preserve">
+    <value>帳單匯率分佈總計</value>
+    <comment>Label</comment>
+  </data>
+  <data name="BillingType" xml:space="preserve">
+    <value>帳單類型</value>
+    <comment>Label</comment>
+  </data>
+  <data name="BillToLocation" xml:space="preserve">
+    <value>帳單至地點</value>
+    <comment>Label</comment>
+  </data>
+  <data name="BillToLocInfo" xml:space="preserve">
+    <value>帳單至地點資訊</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Both" xml:space="preserve">
+    <value>兩者</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CalculateLabor" xml:space="preserve">
+    <value>計算勞務</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CalculateOverhead" xml:space="preserve">
+    <value>計算管理費用</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CalculateTax" xml:space="preserve">
+    <value>計算稅費</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>類別</value>
+    <comment>Label</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>市/縣</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ClearSerials" xml:space="preserve">
+    <value>是否確要清除該系列編號？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>備註</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>備註</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CommentsInstructions" xml:space="preserve">
+    <value>備註/指示</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>公司名稱</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>已完成</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CONFIRMATION" xml:space="preserve">
+    <value>確認</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ConsolidateItems" xml:space="preserve">
+    <value>合併產品</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>連絡人</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>連絡人電郵</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ContactFax" xml:space="preserve">
+    <value>連絡人傳真</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>連絡人</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ContactPhone" xml:space="preserve">
+    <value>連絡人電話</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>合約</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ConvOverflow" xml:space="preserve">
+    <value>無法計算必需的系列編號。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ConvZeroNoSave" xml:space="preserve">
+    <value>當轉換係數為零時您不能為非整數數量儲存系列編號。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CostAllocation" xml:space="preserve">
+    <value>成本分配</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CostClass" xml:space="preserve">
+    <value>成本等級</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CostingError" xml:space="preserve">
+    <value>計算成本因出錯未完成。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="CostingMeterCaption" xml:space="preserve">
+    <value>計算成本</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CostingMethod" xml:space="preserve">
+    <value>成本計算方法</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CostTax" xml:space="preserve">
+    <value>成本/稅務</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>國家</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CreditDebit" xml:space="preserve">
+    <value>貸項/借項</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CreditNoteExchangeRate" xml:space="preserve">
+    <value>貸項通知單匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CreditNoteNumber" xml:space="preserve">
+    <value>貸項通知單編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CreditNotes" xml:space="preserve">
+    <value>貸項通知單</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CrystalReports" xml:space="preserve">
+    <value>Crystal 報表 (*.RPT)|*.RPT|所有檔案 (*.*)|*.*</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>幣別</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>目前</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>客戶編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DateOutOfRange" xml:space="preserve">
+    <value>輸入的日期位於在公司概況中指定的範圍之外。是否接受此日期？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>天數</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DebitNoteExchangeRate" xml:space="preserve">
+    <value>借項通知單匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DebitNotes" xml:space="preserve">
+    <value>借項通知單</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DefaultTemplateCode" xml:space="preserve">
+    <value>預設範本代碼</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DefaultWeightUOM" xml:space="preserve">
+    <value>預設重量計量單位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DeleteDetailCost" xml:space="preserve">
+    <value>是否確要刪除此一附加成本明細行？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DeletePostedSerial" xml:space="preserve">
+    <value>是否確要從{1}中刪除已過帳系列編號{0}？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DeliveryMethod" xml:space="preserve">
+    <value>送交方法</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DelMethodNotSpecified" xml:space="preserve">
+    <value>{0}：為不存在的供應商{1}指定一個送交方法。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DeriveRate" xml:space="preserve">
+    <value>得出匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>明細</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DetailComments" xml:space="preserve">
+    <value>明細備註</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DetailCommInstr" xml:space="preserve">
+    <value>明細備註/指示</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DetailEntryZoom" xml:space="preserve">
+    <value>明細稅務</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DetailOptionalFields" xml:space="preserve">
+    <value>明細自選欄位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DetailTaxClass" xml:space="preserve">
+    <value>明細稅級</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Discountable" xml:space="preserve">
+    <value>可折扣</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DiscountAmount" xml:space="preserve">
+    <value>折扣金額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DiscountDate" xml:space="preserve">
+    <value>折扣日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DiscountedExtendedCost" xml:space="preserve">
+    <value>折扣的總成本</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DiscountPercentSymbol" xml:space="preserve">
+    <value>折扣%</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DistributeProration" xml:space="preserve">
+    <value>分佈攤配</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DistributeRetainage" xml:space="preserve">
+    <value>分佈保留款</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DistributeRetainageProration" xml:space="preserve">
+    <value>分佈保留款/攤配</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DocumentAndTaxReportingCurrenciesDiffer" xml:space="preserve">
+    <value>稅組{2}的憑證幣別{0}不同於稅務報告幣別{1}。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>憑證日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>憑證編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>憑證類型</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>移下</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DropShip" xml:space="preserve">
+    <value>卸貨到</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DropShipAddress" xml:space="preserve">
+    <value>卸貨地址</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>到期日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="EmailLower" xml:space="preserve">
+    <value>電郵</value>
+    <comment>Label</comment>
+  </data>
+  <data name="EmailNotSpecified" xml:space="preserve">
+    <value>{0}：為供應商{2}指定{1}地址。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>輸入者</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>採購訂單</value>
+    <comment>Module Name</comment>
+  </data>
+  <data name="EstimatedExtendedBilling" xml:space="preserve">
+    <value>預估總帳單</value>
+    <comment>Label</comment>
+  </data>
+  <data name="EstimatedRetainageTax" xml:space="preserve">
+    <value>預估保留款稅金</value>
+    <comment>Label</comment>
+  </data>
+  <data name="EstimatedretainagetaxFormat" xml:space="preserve">
+    <value>（預估稅金{0}）</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ExcludedTax" xml:space="preserve">
+    <value>未含稅</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ExistingSerialNo" xml:space="preserve">
+    <value>現有系列編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ExpectedArrivalDate" xml:space="preserve">
+    <value>預期到貨日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ExpenseAccount" xml:space="preserve">
+    <value>費用科目</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ExpensedTax" xml:space="preserve">
+    <value>可計費稅</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>失效日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ExtendedCost" xml:space="preserve">
+    <value>總成本</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ExtendedWeight" xml:space="preserve">
+    <value>總重量</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FiscalPeriodNotExist" xml:space="preserve">
+    <value>無法找到會計期間{0}。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="FOBPoint" xml:space="preserve">
+    <value>離岸價格點</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FormsPrintedSuccessfully" xml:space="preserve">
+    <value>表格是否列印成功？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="FromAccountSet" xml:space="preserve">
+    <value>從科目集合</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromCurrency" xml:space="preserve">
+    <value>從幣別</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromDocument" xml:space="preserve">
+    <value>從憑證編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromDocumentDate" xml:space="preserve">
+    <value>從憑證日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>從產品編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>從批別編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromOrderNumber" xml:space="preserve">
+    <value>從銷貨單編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromRequisitionNumber" xml:space="preserve">
+    <value>從請購單編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromSerialNumber" xml:space="preserve">
+    <value>從系列編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromVendorNumber" xml:space="preserve">
+    <value>從供應商編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromYear" xml:space="preserve">
+    <value>從年度</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromYearPeriod" xml:space="preserve">
+    <value>會計年度 - 期間</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FullyInvoiced" xml:space="preserve">
+    <value>已完全開發票</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>功能幣別</value>
+    <comment>Label</comment>
+  </data>
+  <data name="GendSerialNos" xml:space="preserve">
+    <value>已產生系列編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>產生</value>
+    <comment>Label</comment>
+  </data>
+  <data name="GenNext" xml:space="preserve">
+    <value>產生下一個</value>
+    <comment>Label</comment>
+  </data>
+  <data name="GenPluralNotMultipleOf" xml:space="preserve">
+    <value>已產生系列編號應該是{0}的整倍數。您已經產生了{1}個系列編號。{2}不是{3}的一個整倍數。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="GenSerialNos" xml:space="preserve">
+    <value>正在為{0}於{1}產生系列編號</value>
+    <comment>Message</comment>
+  </data>
+  <data name="GenSingleNotMultipleOf" xml:space="preserve">
+    <value>已產生系列編號應該是{0}的整倍數。您已經產生了1個系列編號。1不是{1}的一個整倍數。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>歷史</value>
+    <comment>Label</comment>
+  </data>
+  <data name="InactiveItems" xml:space="preserve">
+    <value>閒置產品</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>包括</value>
+    <comment>Label</comment>
+  </data>
+  <data name="IncludedTax" xml:space="preserve">
+    <value>已含稅</value>
+    <comment>Label</comment>
+  </data>
+  <data name="IncludeJobDetails" xml:space="preserve">
+    <value>包括專案明細</value>
+    <comment>Label</comment>
+  </data>
+  <data name="IncludeOptionalFields" xml:space="preserve">
+    <value>包括自選欄位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="IncludeSerialLotNumbers" xml:space="preserve">
+    <value>包括系列/批別編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Instruction" xml:space="preserve">
+    <value>指示</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Internet" xml:space="preserve">
+    <value>網際網路</value>
+    <comment>Label</comment>
+  </data>
+  <data name="InvalidDerivedRate" xml:space="preserve">
+    <value>無法得出稅率，因為使用目前稅務合計和稅務報告合計導致一個無效稅率。手動輸入稅率。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InvalidRange" xml:space="preserve">
+    <value>起始值大於截止值。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="InventoryExpense" xml:space="preserve">
+    <value>存貨/費用</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>發票</value>
+    <comment>Label</comment>
+  </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>發票日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="InvoiceExchangeRate" xml:space="preserve">
+    <value>發票匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="InvoiceNumber" xml:space="preserve">
+    <value>發票編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="InvoiceRateDate" xml:space="preserve">
+    <value>發票匯率日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="InvoiceRateType" xml:space="preserve">
+    <value>發票匯率類型</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Invoices" xml:space="preserve">
+    <value>發票</value>
+    <comment>Label</comment>
+  </data>
+  <data name="InvoiceSubtotal" xml:space="preserve">
+    <value>發票小計</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ItemDescription" xml:space="preserve">
+    <value>產品描述</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>產品編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ItemTax" xml:space="preserve">
+    <value>產品/稅務...</value>
+    <comment>Label</comment>
+  </data>
+  <data name="LastReceiptNumber" xml:space="preserve">
+    <value>上一進貨編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="LessRetainage" xml:space="preserve">
+    <value>減保留款</value>
+    <comment>Label</comment>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>行號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>地點</value>
+    <comment>Label</comment>
+  </data>
+  <data name="LotTracking" xml:space="preserve">
+    <value>批別追蹤</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ManuallyProratedAmount" xml:space="preserve">
+    <value>手動攤配金額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ManuallyProrBillingRate" xml:space="preserve">
+    <value>手動攤配帳單匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ManufacturersItemNumber" xml:space="preserve">
+    <value>製造商產品編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="MappingItemNotSelected" xml:space="preserve">
+    <value>產品{0}作為{1}存在於存貨中，但也是{2}的一個製造商產品編號。如果您輸入{0}，{2}將不會被自動選擇。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="MessageID" xml:space="preserve">
+    <value>訊息代號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="MsgIDDefault" xml:space="preserve">
+    <value>DEFAULT</value>
+    <comment>Label</comment>
+  </data>
+  <data name="MSSansSerif" xml:space="preserve">
+    <value>MS Sans Serif</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名稱</value>
+    <comment>Label</comment>
+  </data>
+  <data name="NetAmount" xml:space="preserve">
+    <value>淨額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="NetofTax" xml:space="preserve">
+    <value>稅後淨額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="NewSerialNo" xml:space="preserve">
+    <value>新增系列編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="NextSN" xml:space="preserve">
+    <value>該新增系列編號已經存在。是否建立下一個可用的系列編號？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NoDocumentsSentPrinted" xml:space="preserve">
+    <value>沒有發送或列印任何憑證。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NonItemFinderInactive" xml:space="preserve">
+    <value>您不能選擇一個不存在的產品。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NonMaterialFinderInactive" xml:space="preserve">
+    <value>您不能選擇一個非物料成本等級。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NonStockClearing" xml:space="preserve">
+    <value>非庫存清算科目</value>
+    <comment>Label</comment>
+  </data>
+  <data name="NonStockFinderInactive" xml:space="preserve">
+    <value>您不能選擇一個非庫存產品。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NoRetainageTerms" xml:space="preserve">
+    <value>為供應商指定一個保留款條款代碼。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NotAutoGenerate" xml:space="preserve">
+    <value>無法完成系列編號自動產生。您必須輸入一個新的系列編號。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NoTaxGroup" xml:space="preserve">
+    <value>尚未為供應商指定一個稅組。是否要使用一個範本來指定稅組？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NoTaxGroupSpecified" xml:space="preserve">
+    <value>為該供應商指定一個稅組。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NotDeletePostedSerial" xml:space="preserve">
+    <value>無法從{1}中刪除已過帳系列編號{0}。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NoTermsCodeSpecified" xml:space="preserve">
+    <value>為該供應商指定一個條款代碼。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NotGenerate" xml:space="preserve">
+    <value>無法產生下一系列編號。您必須輸入一個新的系列編號。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NotGenerateSingle" xml:space="preserve">
+    <value>無法產生下一系列編號。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NoVDAcctSetSpecified" xml:space="preserve">
+    <value>為該供應商指定一個供應商科目集合。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="NumberofCosts" xml:space="preserve">
+    <value>成本數</value>
+    <comment>Label</comment>
+  </data>
+  <data name="NumberofLabels" xml:space="preserve">
+    <value>標籤數目</value>
+    <comment>Label</comment>
+  </data>
+  <data name="NumberofLines" xml:space="preserve">
+    <value>行數</value>
+    <comment>Label</comment>
+  </data>
+  <data name="NumberOfReceipts" xml:space="preserve">
+    <value>收款數</value>
+    <comment>Label</comment>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>擱置</value>
+    <comment>Label</comment>
+  </data>
+  <data name="OpenReportFile" xml:space="preserve">
+    <value>開啟報表檔案</value>
+    <comment>Label</comment>
+  </data>
+  <data name="OptCode" xml:space="preserve">
+    <value>自選代碼</value>
+    <comment>Label</comment>
+  </data>
+  <data name="OptField" xml:space="preserve">
+    <value>自選欄位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="OptFields" xml:space="preserve">
+    <value>自選欄位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="OptionalDescription" xml:space="preserve">
+    <value>自選描述</value>
+    <comment>Label</comment>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>自選欄位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>選項</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>銷貨單</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Ordered" xml:space="preserve">
+    <value>已訂貨</value>
+    <comment>Label</comment>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>銷貨單編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Over" xml:space="preserve">
+    <value>天數</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PercentSymbol" xml:space="preserve">
+    <value>%</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>期間</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PlusAdditionalCosts" xml:space="preserve">
+    <value>加附加成本</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PlusExcludedTax" xml:space="preserve">
+    <value>加未含稅</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PONumber" xml:space="preserve">
+    <value>訂購單編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="POPurchaseHistory" xml:space="preserve">
+    <value>採購訂單採購歷史</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>已過帳</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>過帳日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PostingDateOverride" xml:space="preserve">
+    <value>過帳日期撤換</value>
+    <comment>Label</comment>
+  </data>
+  <data name="POType" xml:space="preserve">
+    <value>訂購單類型</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PrintAmountsin" xml:space="preserve">
+    <value>列印金額以</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PrintDestination" xml:space="preserve">
+    <value>列印目的地</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PrintSerialLotNumbers" xml:space="preserve">
+    <value>列印系列/批別編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PrintTransList" xml:space="preserve">
+    <value>列印交易列表...</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Process" xml:space="preserve">
+    <value>處理</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Proration" xml:space="preserve">
+    <value>攤配</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ProrationMethod" xml:space="preserve">
+    <value>攤配方法</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PurchaseOrderExchangeRate" xml:space="preserve">
+    <value>訂購單匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PurchaseOrderNumber" xml:space="preserve">
+    <value>訂購單編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PurchaseOrders" xml:space="preserve">
+    <value>採購訂單</value>
+    <comment>Label</comment>
+  </data>
+  <data name="PurchaseStatistics" xml:space="preserve">
+    <value>採購統計</value>
+    <comment>Label</comment>
+  </data>
+  <data name="QtyNotMatchingAdjust" xml:space="preserve">
+    <value>系列數目與其下的數量不符。如果您繼續，數量將被調整。是否繼續？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="QtyNotMatchingExit" xml:space="preserve">
+    <value>系列數目與其下的數量不符。是否確要退出？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>數量</value>
+    <comment>Label</comment>
+  </data>
+  <data name="QuantityInvoiced" xml:space="preserve">
+    <value>已開發票數量</value>
+    <comment>Label</comment>
+  </data>
+  <data name="QuantityOrdered" xml:space="preserve">
+    <value>已訂購數量</value>
+    <comment>Label</comment>
+  </data>
+  <data name="QuantityOutstanding" xml:space="preserve">
+    <value>未結清數量</value>
+    <comment>Label</comment>
+  </data>
+  <data name="QuantityReceived" xml:space="preserve">
+    <value>已進貨數量</value>
+    <comment>Label</comment>
+  </data>
+  <data name="QuantityReturned" xml:space="preserve">
+    <value>退回數量</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>匯率日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RateNotExist" xml:space="preserve">
+    <value>使用匯率類型{2}和匯率日期{3}轉換{0}到{1}的匯率資訊不存在。檢查您是否指定了正確的幣別資訊，或在幣別視窗中增加您需要的匯率資訊。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="RateOutOfRange" xml:space="preserve">
+    <value>輸入的匯率超出匯率表指定的差額範圍。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Rates" xml:space="preserve">
+    <value>匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>匯率類型</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Reallocate" xml:space="preserve">
+    <value>重新分佈</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReceiptDate" xml:space="preserve">
+    <value>收款日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReceiptExchangeRate" xml:space="preserve">
+    <value>進貨匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReceiptLower" xml:space="preserve">
+    <value>進貨</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReceiptNumber" xml:space="preserve">
+    <value>進貨編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReceiptRateDate" xml:space="preserve">
+    <value>進貨匯率日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReceiptRateType" xml:space="preserve">
+    <value>進貨匯率類型</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Receipts" xml:space="preserve">
+    <value>收款</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Receive" xml:space="preserve">
+    <value>進貨天數</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RecoverableTax" xml:space="preserve">
+    <value>可退稅</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>參考</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>剩餘</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RemitToLocation" xml:space="preserve">
+    <value>匯款至地點</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RemitToLocationInformation" xml:space="preserve">
+    <value>匯款至地點資訊</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Reorder" xml:space="preserve">
+    <value>再訂購</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReportExt" xml:space="preserve">
+    <value>選擇一個有.RPT尾碼的檔案。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ReportingDeriveRate" xml:space="preserve">
+    <value>稅務合計和/或稅務報告合計已經變更，所以您應該核實稅務報告幣別匯率是否正確。您可以點擊是過帳，或者點擊否停止過帳，然後點擊得出匯率按鈕自動獲得來自兩個合計的匯率。是否過帳？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ReportType" xml:space="preserve">
+    <value>報表類型</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReprorationMethod" xml:space="preserve">
+    <value>再攤配方法</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RequiredSerialNos" xml:space="preserve">
+    <value>要求的系列編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Requisition" xml:space="preserve">
+    <value>請購單</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RequisitionNumber" xml:space="preserve">
+    <value>請購單編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Requisitions" xml:space="preserve">
+    <value>請購單</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>資源</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ResourceDesc" xml:space="preserve">
+    <value>資源描述</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RestoreDefaults" xml:space="preserve">
+    <value>清除儲存的設定</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Retainage" xml:space="preserve">
+    <value>保留款</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RetainageAmount" xml:space="preserve">
+    <value>保留款金額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RetainageDateDue" xml:space="preserve">
+    <value>保留款到期日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RetainagePct" xml:space="preserve">
+    <value>保留款％</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RetainagePercentage" xml:space="preserve">
+    <value>保留款百分比</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RetainageRate" xml:space="preserve">
+    <value>保留款匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RetainageTaxAmount" xml:space="preserve">
+    <value>保留款稅額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RetainageTaxBase" xml:space="preserve">
+    <value>保留款稅基</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RetainageTerms" xml:space="preserve">
+    <value>保留款條款</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RetdSerialNos" xml:space="preserve">
+    <value>已退回系列編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RetentionPeriod" xml:space="preserve">
+    <value>留存期間</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RetRate" xml:space="preserve">
+    <value>退貨匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>退貨</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Return1" xml:space="preserve">
+    <value>退貨</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReturnAccount" xml:space="preserve">
+    <value>退貨科目</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReturnDate" xml:space="preserve">
+    <value>退回日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Returned" xml:space="preserve">
+    <value>已退回</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReturnExchangeRate" xml:space="preserve">
+    <value>退貨匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReturnExpenseAccount" xml:space="preserve">
+    <value>退貨費用科目</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReturnLower" xml:space="preserve">
+    <value>退貨</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReturnNumber" xml:space="preserve">
+    <value>退貨編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReturnProration" xml:space="preserve">
+    <value>退貨分攤</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReturnRateDate" xml:space="preserve">
+    <value>退貨匯率日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ReturnRateType" xml:space="preserve">
+    <value>退貨匯率類型</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>退貨</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RtgAmt" xml:space="preserve">
+    <value>保留款金額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="RtgDateDue" xml:space="preserve">
+    <value>保留款到期日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SaveDetailCost" xml:space="preserve">
+    <value>是否儲存此一附加成本明細行？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SaveDetailLine" xml:space="preserve">
+    <value>是否儲存此一明細行？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SaveSerials" xml:space="preserve">
+    <value>儲存對系列編號的變更？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SelectBy" xml:space="preserve">
+    <value>選擇按</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SelectProcess" xml:space="preserve">
+    <value>選擇處理</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SelectSNLT" xml:space="preserve">
+    <value>系列化存貨和批別追蹤可用。請選擇要使用的特性。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SerializedInventory" xml:space="preserve">
+    <value>系列化存貨</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SerialLotNumbers" xml:space="preserve">
+    <value>系列/批別編號...</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SerialNotBlank" xml:space="preserve">
+    <value>新增系列編號不能空置。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SetDropShipmentAddressto" xml:space="preserve">
+    <value>將卸貨單位地址設為</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ShipToCode" xml:space="preserve">
+    <value>發貨至代碼</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ShipToLocation" xml:space="preserve">
+    <value>發運至地點</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ShipToLocInfo" xml:space="preserve">
+    <value>發貨至地點資訊</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Shipvia" xml:space="preserve">
+    <value>發運經由</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SnResetQtyHasFraction" xml:space="preserve">
+    <value>其下的數量不能重設為一個非整數。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>排序按</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>來源</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SourceCurrency" xml:space="preserve">
+    <value>來源幣別</value>
+    <comment>Label</comment>
+  </data>
+  <data name="StartSerialNo" xml:space="preserve">
+    <value>起始系列編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>省/市/區</value>
+    <comment>Label</comment>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>庫存日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="StockingUnitOfMeasure" xml:space="preserve">
+    <value>庫存計量單位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Subtotal" xml:space="preserve">
+    <value>小計</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>彙總</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxAmount" xml:space="preserve">
+    <value>稅額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>稅務機構</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxBase" xml:space="preserve">
+    <value>稅基</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxClass" xml:space="preserve">
+    <value>稅級</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxClassDesc" xml:space="preserve">
+    <value>稅級描述</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxDescription" xml:space="preserve">
+    <value>稅務描述</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>稅務</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxExcluded" xml:space="preserve">
+    <value>未含稅</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>稅組</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxIncluded" xml:space="preserve">
+    <value>已含稅</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxOverridden" xml:space="preserve">
+    <value>您已經撤換了稅額。是否確要重新計算稅務？</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TaxReportingAmount" xml:space="preserve">
+    <value>稅務報告金額</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxReportingCurrency" xml:space="preserve">
+    <value>稅務報告幣別</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxReportingCurrencyCreditNoteExchangeRate" xml:space="preserve">
+    <value>稅務報告幣別貸項通知單匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxReportingCurrencyDebitNoteExchangeRate" xml:space="preserve">
+    <value>稅務報告幣別借項通知單匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxReportingCurrencyExchangeRate" xml:space="preserve">
+    <value>稅務報告幣別匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxReportingCurrencyInvoiceExchangeRate" xml:space="preserve">
+    <value>稅務報告幣別發票匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxReportingCurrencyPurchaseOrderExchangeRate" xml:space="preserve">
+    <value>稅務報告幣別訂購單匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxReportingCurrencyReceiptExchangeRate" xml:space="preserve">
+    <value>稅務報告幣別進貨匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxReportingCurrencyReturnExchangeRate" xml:space="preserve">
+    <value>稅務報告幣別退貨匯率</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TaxReportingCurrencyTotals" xml:space="preserve">
+    <value>稅務報告幣別合計</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Template" xml:space="preserve">
+    <value>範本</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TemplateCode" xml:space="preserve">
+    <value>範本代碼</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Terms" xml:space="preserve">
+    <value>條款</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TermsCode" xml:space="preserve">
+    <value>條款代碼</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ThenBy" xml:space="preserve">
+    <value>然後按</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ThroughDayEndNumber" xml:space="preserve">
+    <value>至日終編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ToAccountSet" xml:space="preserve">
+    <value>到科目集合</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>到產品編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ToOrderNumber" xml:space="preserve">
+    <value>到銷貨單編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ToRequisitionNumber" xml:space="preserve">
+    <value>到請購單編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>合計</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TotalRetainageTax" xml:space="preserve">
+    <value>合計保留款稅金</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>合計</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TotalTax" xml:space="preserve">
+    <value>合計稅費</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TotalTaxAllocated" xml:space="preserve">
+    <value>合計已分配稅</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TotalTaxAmount" xml:space="preserve">
+    <value>稅額合計</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TotalWeight" xml:space="preserve">
+    <value>重量合計</value>
+    <comment>Label</comment>
+  </data>
+  <data name="agedPOResx" xml:space="preserve">
+    <value>到供應商編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ToYear" xml:space="preserve">
+    <value>到年度</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>交易日期</value>
+    <comment>Label</comment>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>交易編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>類型</value>
+    <comment>Label</comment>
+  </data>
+  <data name="UnableToFlagRequisitions" xml:space="preserve">
+    <value>您不能旗標已列印的請購單。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UnitCost" xml:space="preserve">
+    <value>單位成本</value>
+    <comment>Label</comment>
+  </data>
+  <data name="UnitCostZero" xml:space="preserve">
+    <value>單價為零。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UnitofMeasure" xml:space="preserve">
+    <value>計量單位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="UnitWeight" xml:space="preserve">
+    <value>單位重量</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>移上</value>
+    <comment>Label</comment>
+  </data>
+  <data name="UseCustomForm" xml:space="preserve">
+    <value>使用自訂表格</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>供應商</value>
+    <comment>Label</comment>
+  </data>
+  <data name="VendorAcctSet" xml:space="preserve">
+    <value>供應商科目集合</value>
+    <comment>Label</comment>
+  </data>
+  <data name="VendorCurrency" xml:space="preserve">
+    <value>供應商幣別</value>
+    <comment>Label</comment>
+  </data>
+  <data name="VendorInformation" xml:space="preserve">
+    <value>供應商資訊</value>
+    <comment>Label</comment>
+  </data>
+  <data name="VendorItemNo" xml:space="preserve">
+    <value>供應商產品編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="VendorItemNumber" xml:space="preserve">
+    <value>供應商產品編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>供應商名稱</value>
+    <comment>Label</comment>
+  </data>
+  <data name="VendorNotExist" xml:space="preserve">
+    <value>供應商{0}不存在。您必須為此一憑證在稅務索引標籤上指定一個稅組後方可以輸入產品明細。您為稅組指定的幣別在您增加供應商記錄到應付帳款時也將是該憑證，該稅務報告幣別，和該供應商的幣別。如果您要稅組的幣別不同於稅務報告幣別或憑證幣別，您必須先在應付帳款中增加供應商記錄。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="VendorNotExistSC" xml:space="preserve">
+    <value>無法找到供應商{0}。您必須在輸入明細之前指定一個稅組。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>供應商編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="VendorTaxClass" xml:space="preserve">
+    <value>供應商稅級</value>
+    <comment>Label</comment>
+  </data>
+  <data name="WeightConversionFactor" xml:space="preserve">
+    <value>重量轉換係數</value>
+    <comment>Label</comment>
+  </data>
+  <data name="WeightUnitofMeasure" xml:space="preserve">
+    <value>重量計量單位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="WeightUOM" xml:space="preserve">
+    <value>重量計量單位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>年度</value>
+    <comment>Label</comment>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>年度/期間</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ZipPostalCode" xml:space="preserve">
+    <value>郵遞區號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>輸入</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>成本</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>核準</value>
+  </data>
+  <data name="InsertItemLotOptionalFields" xml:space="preserve">
+    <value>插入產品批別自選欄位</value>
+  </data>
+  <data name="InsertItemSerialOptionalFields" xml:space="preserve">
+    <value>插入產品系列自選欄位</value>
+  </data>
+  <data name="InsertOptionalFields" xml:space="preserve">
+    <value>插入自選欄位</value>
+  </data>
+  <data name="NothingToProcess" xml:space="preserve">
+    <value>沒有可處理的記錄</value>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>貸項通知單</value>
+    <comment>Label</comment>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>借項通知單</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ToCurrency" xml:space="preserve">
+    <value>到幣別</value>
+  </data>
+  <data name="DateLastMaintained" xml:space="preserve">
+    <value>上一維護日期</value>
+  </data>
+  <data name="DEFAULT" xml:space="preserve">
+    <value>DEFAULT</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PurchaseOrderTemplates" xml:space="preserve">
+    <value>採購訂單範本</value>
+    <comment>Title</comment>
+  </data>
+  <data name="Locations" xml:space="preserve">
+    <value>地點</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>除</value>
+    <comment>enum</comment>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>乘</value>
+    <comment>enum</comment>
+  </data>
+  <data name="AccountSet" xml:space="preserve">
+    <value>科目集合</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AccountSets" xml:space="preserve">
+    <value>科目集合</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="ShipViaAddresses" xml:space="preserve">
+    <value>發貨經由地址</value>
+    <comment>Finder Title</comment>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="Integer" xml:space="preserve">
+    <value>整數</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>編號</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>時間</value>
+  </data>
+  <data name="YesNo" xml:space="preserve">
+    <value>是/否</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>文字</value>
+  </data>
+  <data name="VendorOnHold" xml:space="preserve">
+    <value>供應商已擱置</value>
+  </data>
+  <data name="ShipViaName" xml:space="preserve">
+    <value>發貨經由名稱</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Costs" xml:space="preserve">
+    <value>成本</value>
+    <comment>Label</comment>
+  </data>
+  <data name="UOM" xml:space="preserve">
+    <value>計量單位</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Vendors" xml:space="preserve">
+    <value>供應商</value>
+    <comment>Label</comment>
+  </data>
+  <data name="AgingPeriods" xml:space="preserve">
+    <value>來自目前期間的帳析期間必須以升序排列。</value>
+    <comment>Message
+</comment>
+  </data>
+  <data name="VendorAccountSetDescription" xml:space="preserve">
+    <value>供應商科目集合描述</value>
+  </data>
+  <data name="ARItemNumber" xml:space="preserve">
+    <value>應收帳款產品編號</value>
+    <comment>Export Property Label</comment>
+  </data>
+  <data name="ARUnitOfMeasure" xml:space="preserve">
+    <value>應收帳款計量單位</value>
+    <comment>Export Property Label</comment>
+  </data>
+  <data name="CostCategory" xml:space="preserve">
+    <value>（成本）類別</value>
+    <comment>Export Property Label</comment>
+  </data>
+  <data name="QuantityPreviouslyReturned" xml:space="preserve">
+    <value>先前退回的數量</value>
+    <comment>Export Property Label</comment>
+  </data>
+  <data name="StockingQuantityReturned" xml:space="preserve">
+    <value>退回的庫存數量</value>
+    <comment>Export Property Label</comment>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>文字值</value>
+    <comment>Export Property Label</comment>
+  </data>
+  <data name="DropShipLocationInvalidInput" xml:space="preserve">
+    <value>地點代碼{0}指向一個邏輯地點，不能在此指定。邏輯地點僅可以用於存貨控制轉移。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>進貨</value>
+    <comment>Label</comment>
+  </data>
+  <data name="CopyPOs" xml:space="preserve">
+    <value>複製訂購單</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromPONumber" xml:space="preserve">
+    <value>從訂購單編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ToPONumber" xml:space="preserve">
+    <value>到訂購單編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ToVendorNumber" xml:space="preserve">
+    <value>到供應商編號</value>
+    <comment>Label</comment>
+  </data>
+  <data name="UsePOCost" xml:space="preserve">
+    <value>使用採購訂單成本</value>
+    <comment>Label</comment>
+  </data>
+  <data name="VendorDescription" xml:space="preserve">
+    <value>供應商描述</value>
+    <comment>Label</comment>
+  </data>
+  <data name="InactiveInput" xml:space="preserve">
+    <value>{0}為閒置。</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="Physical" xml:space="preserve">
+    <value>物理</value>
+    <comment>Property Value</comment>
+  </data>
+  <data name="UOMFinderInactive" xml:space="preserve">
+    <value>查找器對一個不存在的產品呈閒置狀態。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="FromVendorDescription" xml:space="preserve">
+    <value>從供應商描述</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ToVendorDescription" xml:space="preserve">
+    <value>到供應商描述</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>產品</value>
+    <comment>Finder title</comment>
+  </data>
+  <data name="LocationQuantityFinderTitle" xml:space="preserve">
+    <value>地點數量</value>
+    <comment>Finder title</comment>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>建立</value>
+    <comment>Label</comment>
+  </data>
+  <data name="FromVendorName" xml:space="preserve">
+    <value>從供應商名稱</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ToVendorName" xml:space="preserve">
+    <value>到供應商名稱</value>
+    <comment>Label</comment>
+  </data>
+  <data name="ContractDate" xml:space="preserve">
+    <value>合約日期</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="CostingUnitOfMeasure" xml:space="preserve">
+    <value>計算成本計量單位</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="CostTaxClass1" xml:space="preserve">
+    <value>成本稅級1</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="CostTaxClass2" xml:space="preserve">
+    <value>成本稅級2</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="CostTaxClass3" xml:space="preserve">
+    <value>成本稅級3</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="CostTaxClass4" xml:space="preserve">
+    <value>成本稅級4</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="CostTaxClass5" xml:space="preserve">
+    <value>成本稅級5</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="CostType" xml:space="preserve">
+    <value>成本類型</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="QuantityFrom" xml:space="preserve">
+    <value>數量從</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="QuantityTo" xml:space="preserve">
+    <value>數量到</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="Sequence" xml:space="preserve">
+    <value>序列編號</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="VendorTaxClass1" xml:space="preserve">
+    <value>供應商稅級1</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="VendorTaxClass2" xml:space="preserve">
+    <value>供應商稅級2</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="VendorTaxClass3" xml:space="preserve">
+    <value>供應商稅級3</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="VendorTaxClass4" xml:space="preserve">
+    <value>供應商稅級4</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="VendorTaxClass5" xml:space="preserve">
+    <value>供應商稅級5</value>
+    <comment>Unit Cost Finder</comment>
+  </data>
+  <data name="DayEndNumber" xml:space="preserve">
+    <value>日終處理編號</value>
+  </data>
+  <data name="OnHoldVendor" xml:space="preserve">
+    <value>僅有將該供應商從應收帳款中解除擱置後才能將此一憑證解除擱置。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="FiscalPeriodWarning" xml:space="preserve">
+    <value>會計年度{1}會計期間{0}在公共服務會計年曆中對採購訂單鎖定。</value>
+    <comment>Warning message</comment>
+  </data>
+  <data name="Redistribute" xml:space="preserve">
+    <value>重新分佈</value>
+  </data>
+  <data name="CustomerShipToAddress" xml:space="preserve">
+    <value>客戶發貨至地址</value>
+  </data>
+  <data name="TaxGroupVendorNotFound" xml:space="preserve">
+    <value>稅組不能空置。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="DetailTaxes" xml:space="preserve">
+    <value>明細稅務</value>
+  </data>
+  <data name="ReverseChargeBase" xml:space="preserve">
+    <value>迴轉收費基礎</value>
+  </data>
+  <data name="ReverseCharges" xml:space="preserve">
+    <value>迴轉收費</value>
+  </data>
+  <data name="CustomerTaxAmount" xml:space="preserve">
+    <value>合計迴轉收費</value>
+  </data>
+  <data name="ReverseChargesAmount" xml:space="preserve">
+    <value>迴轉收費金額</value>
+  </data>
+  <data name="ReverseChargeable" xml:space="preserve">
+    <value>可迴轉收費</value>
+  </data>
+  <data name="ExcludedTaxLessReverseCharge" xml:space="preserve">
+    <value>未含稅減迴轉收費</value>
+  </data>
+  <data name="FailedMTEmail" xml:space="preserve">
+    <value>無法將憑證通過電郵發送給供應商{0}的連絡人。檢查是否正確設定了此供應商的連絡人。</value>
+  </data>
+</root>

@@ -1,0 +1,1460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account_Balances" xml:space="preserve">
+    <value>Soldes des comptes</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="AddWidgets" xml:space="preserve">
+    <value>Ajouter des composants graphiques</value>
+    <comment>Button</comment>
+  </data>
+  <data name="AddWidgetWarning" xml:space="preserve">
+    <value>Vous avez ouvert le nombre maximum de composants graphiques (6). Vous devez fermer un ou plusieurs composants graphiques avant d'en ouvrir un autre.</value>
+    <comment>Add Widget Warning</comment>
+  </data>
+  <data name="AntiForgeryTokenMissing" xml:space="preserve">
+    <value>Témoin de jeton anti contrefaçon introuvable</value>
+  </data>
+  <data name="CashAccounts" xml:space="preserve">
+    <value>Compte de caisse</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="CashPosition" xml:space="preserve">
+    <value>Position de trésorerie</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="CNAPortalHelpArticles" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="CNAPortalHelpCenter" xml:space="preserve">
+    <value>Centre d'aide</value>
+  </data>
+  <data name="CNAPortalHelpContactSupport" xml:space="preserve">
+    <value>Contacter le soutien technique</value>
+  </data>
+  <data name="CNAPortalHelpExploreSage" xml:space="preserve">
+    <value>Présentation des fonctions</value>
+  </data>
+  <data name="CNAPortalHelpGettingStart" xml:space="preserve">
+    <value>Mise en route</value>
+  </data>
+  <data name="CNAPortalHelpPrintReports" xml:space="preserve">
+    <value>Impression de rapports</value>
+  </data>
+  <data name="CNAPortalHelpResource" xml:space="preserve">
+    <value>Ressources</value>
+  </data>
+  <data name="CNAPortalHelpSageCity" xml:space="preserve">
+    <value>Sage City</value>
+  </data>
+  <data name="CNAPortalHelpSageUniversity" xml:space="preserve">
+    <value>Sage University</value>
+  </data>
+  <data name="CNAPortalHelpSettingHomePageWidgets" xml:space="preserve">
+    <value>Configurer les composants graphiques de la page d'accueil</value>
+  </data>
+  <data name="CNAPortalHelpShareIdeas" xml:space="preserve">
+    <value>Partagez vos idées</value>
+  </data>
+  <data name="CNAPortalHelpWhatNewHere" xml:space="preserve">
+    <value>Quoi de neuf</value>
+  </data>
+  <data name="CNAPortal_Home" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
+  <data name="CNAPortal_Projects" xml:space="preserve">
+    <value>Projets</value>
+  </data>
+  <data name="CNAPortal_Task" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="CNA_Home_Acc" xml:space="preserve">
+    <value>Comptes fournisseurs</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP" xml:space="preserve">
+    <value>Traitement périodique de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_APPP" xml:space="preserve">
+    <value>Traitement périodique de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_CRPB" xml:space="preserve">
+    <value>Créer lot de factures récurrentes</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_EF1099" xml:space="preserve">
+    <value>Transmission électronique de déclaration 1099</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_EFT5018" xml:space="preserve">
+    <value>Transmission électronique des déclarations de T5018 (SDPC)</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_GLBatch" xml:space="preserve">
+    <value>Créer lot du GL</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_PP_YearEnd" xml:space="preserve">
+    <value>Fin de l’exercice</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Setup" xml:space="preserve">
+    <value>Configuration de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_AccSets" xml:space="preserve">
+    <value>Groupes de comptes</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_APSetup" xml:space="preserve">
+    <value>Configuration de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_CRPS1099" xml:space="preserve">
+    <value>Codes 1099/SDPC</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_DistCodes" xml:space="preserve">
+    <value>Codes de ventilation</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_DistSets" xml:space="preserve">
+    <value>Séries de ventilation</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_EmailMsg" xml:space="preserve">
+    <value>Courriels</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_GLIntr" xml:space="preserve">
+    <value>Intégration de GL</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_OptFields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_PSC" xml:space="preserve">
+    <value>Codes de sélection de paiement</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_setup_Terms" xml:space="preserve">
+    <value>Modalités</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans" xml:space="preserve">
+    <value>Transactions de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_TransRep" xml:space="preserve">
+    <value>Rapports des transactions de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_APTrans" xml:space="preserve">
+    <value>Transactions de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_CtrlPmt" xml:space="preserve">
+    <value>Contrôle des paiements</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_CtrlPmtBtch" xml:space="preserve">
+    <value>Créer lot de paiements</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_IBL" xml:space="preserve">
+    <value>Liste des lots de factures</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Inq" xml:space="preserve">
+    <value>Consultation</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Inq_CPI" xml:space="preserve">
+    <value>Consultation de paiement</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_InvEntry" xml:space="preserve">
+    <value>Saisie des factures</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_PB" xml:space="preserve">
+    <value>Report des lots</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_PBL" xml:space="preserve">
+    <value>Liste des lots de paiements</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_PmtEntry" xml:space="preserve">
+    <value>Saisie des paiements</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Print_Chk" xml:space="preserve">
+    <value>Impression de chèques</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt" xml:space="preserve">
+    <value>Rapports des transactions de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_ACR" xml:space="preserve">
+    <value>Besoins de financement âgés</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_APay" xml:space="preserve">
+    <value>Comptes fournisseurs âgés</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_AR" xml:space="preserve">
+    <value>Retenue de garantie âgée</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_BL" xml:space="preserve">
+    <value>Liste des lots</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_CR" xml:space="preserve">
+    <value>Registre des chèques</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_GLT" xml:space="preserve">
+    <value>Transactions de GL</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_PE" xml:space="preserve">
+    <value>Erreurs de report</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Trans_Rpt_VT" xml:space="preserve">
+    <value>Transactions des fournisseurs</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend" xml:space="preserve">
+    <value>Fournisseurs de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_VendRep" xml:space="preserve">
+    <value>Rapports des fournisseurs de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVend" xml:space="preserve">
+    <value>Fournisseurs de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVend_RP" xml:space="preserve">
+    <value>Factures récurrentes</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVend_VA" xml:space="preserve">
+    <value>Activité du fournisseur</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVend_Vend" xml:space="preserve">
+    <value>Fournisseurs</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVend_VG" xml:space="preserve">
+    <value>Groupes de fournisseurs</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVR" xml:space="preserve">
+    <value>Rapport des fournisseurs de CF</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVR_CPRST5018" xml:space="preserve">
+    <value>Imprimer formules T5018 (SDPC)</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVR_LL" xml:space="preserve">
+    <value>Lettres/Étiquettes</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVR_Print1099" xml:space="preserve">
+    <value>Imprimer formules 1099/1096</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_APVR_Vend" xml:space="preserve">
+    <value>Fournisseurs</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_Inq" xml:space="preserve">
+    <value>Consultation</value>
+  </data>
+  <data name="CNA_Home_Acc_AP_Vend_Inq_CPRS1099" xml:space="preserve">
+    <value>Consultation 1099/SDPC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust" xml:space="preserve">
+    <value>Clients de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_CustRep" xml:space="preserve">
+    <value>Rapports des clients de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARC" xml:space="preserve">
+    <value>Clients de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARCustRpt" xml:space="preserve">
+    <value>Rapports des clients de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARCustRpt_Cust" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARCustRpt_Lbl" xml:space="preserve">
+    <value>Étiquettes</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARCustRpt_RC" xml:space="preserve">
+    <value>Frais périodiques</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARCustRpt_SLL" xml:space="preserve">
+    <value>Relevés/Lettres/Étiquettes</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARC_CG" xml:space="preserve">
+    <value>Groupes de clients</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARC_Cust" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARC_NA" xml:space="preserve">
+    <value>Comptes nationaux</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Cust_ARC_STL" xml:space="preserve">
+    <value>Adresses d’expédition</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_PP" xml:space="preserve">
+    <value>Traitement périodique de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_PP_ARPP" xml:space="preserve">
+    <value>Traitement périodique de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_PP_ARPP_CGLB" xml:space="preserve">
+    <value>Créer lot du GL</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_PP_ARPP_CIB" xml:space="preserve">
+    <value>Créer lot d’intérêts</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_PP_ARPP_YearEnd" xml:space="preserve">
+    <value>Fin de l’exercice</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup" xml:space="preserve">
+    <value>Configuration de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_APSetup_Payment_Code" xml:space="preserve">
+    <value>Codes de paiement</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup" xml:space="preserve">
+    <value>Configuration de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_AccSet" xml:space="preserve">
+    <value>Groupes de comptes</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Billing_Cycle" xml:space="preserve">
+    <value>Cycles de facturation</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Comment_Types" xml:space="preserve">
+    <value>Types de commentaires</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_DC" xml:space="preserve">
+    <value>Codes de ventilation</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Dunning" xml:space="preserve">
+    <value>Messages de rappel</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_EMsg" xml:space="preserve">
+    <value>Courriels</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_GLI" xml:space="preserve">
+    <value>Intégration de GL</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Interest" xml:space="preserve">
+    <value>Profils d’intérêt</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_OF" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Opt" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Payment_Code" xml:space="preserve">
+    <value>Codes de paiement</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_SalesPer" xml:space="preserve">
+    <value>Vendeurs</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Setup_ARSetup_Terms" xml:space="preserve">
+    <value>Modalités</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans" xml:space="preserve">
+    <value>Transactions de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_TransRep" xml:space="preserve">
+    <value>Rapports des transactions de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART" xml:space="preserve">
+    <value>Transactions de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR" xml:space="preserve">
+    <value>Rapports des transactions de CC</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_AgdR" xml:space="preserve">
+    <value>Retenue de garantie âgée</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_ATB" xml:space="preserve">
+    <value>Balance âgée</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_BL" xml:space="preserve">
+    <value>Liste des lots</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_CT" xml:space="preserve">
+    <value>Transactions des clients</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_GLT" xml:space="preserve">
+    <value>Transactions de GL</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_Inv" xml:space="preserve">
+    <value>Factures</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_ISH" xml:space="preserve">
+    <value>Historique de ventes d'articles</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_PErr" xml:space="preserve">
+    <value>Erreurs de report</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ARTR_Rec" xml:space="preserve">
+    <value>Encaissements</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART_IBL" xml:space="preserve">
+    <value>Liste des lots de factures</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART_IE" xml:space="preserve">
+    <value>Saisie des factures</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART_PB" xml:space="preserve">
+    <value>Report des lots</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART_RBL" xml:space="preserve">
+    <value>Liste des lots d'encaissements</value>
+  </data>
+  <data name="CNA_Home_Acc_AR_Trans_ART_RE" xml:space="preserve">
+    <value>Saisie des encaissements</value>
+  </data>
+  <data name="CNA_Home_GL" xml:space="preserve">
+    <value>Grand livre</value>
+  </data>
+  <data name="CNA_Home_GL_Acc" xml:space="preserve">
+    <value>Comptes du GL</value>
+  </data>
+  <data name="CNA_Home_GL_Acc_GL" xml:space="preserve">
+    <value>Comptes du GL</value>
+  </data>
+  <data name="CNA_Home_GL_Acc_GL_Acc" xml:space="preserve">
+    <value>Comptes</value>
+  </data>
+  <data name="CNA_Home_GL_PP" xml:space="preserve">
+    <value>Traitement périodique de GL</value>
+  </data>
+  <data name="CNA_Home_GL_PP_GLPP" xml:space="preserve">
+    <value>Traitement périodique de GL</value>
+  </data>
+  <data name="CNA_Home_GL_PP_GLPP_CNY" xml:space="preserve">
+    <value>Créer nouvel exercice</value>
+  </data>
+  <data name="CNA_Home_GL_PP_GLPP_CREB" xml:space="preserve">
+    <value>Créer lot d'écritures récurrentes</value>
+  </data>
+  <data name="CNA_Home_GL_PP_PEM" xml:space="preserve">
+    <value>Maintenance de fin de période</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt" xml:space="preserve">
+    <value>Rapports de GL</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt" xml:space="preserve">
+    <value>Rapports de GL</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt_BL" xml:space="preserve">
+    <value>Liste des lots</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt_COA" xml:space="preserve">
+    <value>Plan comptable</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt_TB" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt_TDOF" xml:space="preserve">
+    <value>Champs optionnels des détails de transaction</value>
+  </data>
+  <data name="CNA_Home_GL_Rpt_GLRpt_TL" xml:space="preserve">
+    <value>Liste des transactions</value>
+  </data>
+  <data name="CNA_Home_GL_Setup" xml:space="preserve">
+    <value>Configuration de GL</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup" xml:space="preserve">
+    <value>Configuration de GL</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_AG" xml:space="preserve">
+    <value>Groupes de comptes</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_AS" xml:space="preserve">
+    <value>Structures de comptes</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_OF" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_Opt" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_RE" xml:space="preserve">
+    <value>Écritures récurrentes</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_SegCod" xml:space="preserve">
+    <value>Codes de segments</value>
+  </data>
+  <data name="CNA_Home_GL_Setup_GLSetup_SrcCod" xml:space="preserve">
+    <value>Codes sources</value>
+  </data>
+  <data name="CNA_Home_GL_Trans" xml:space="preserve">
+    <value>Transactions de GL</value>
+  </data>
+  <data name="CNA_Home_GL_Trans_GLTrans" xml:space="preserve">
+    <value>Transactions de GL</value>
+  </data>
+  <data name="CNA_Home_GL_Trans_GLTrans_BL" xml:space="preserve">
+    <value>Liste des lots</value>
+  </data>
+  <data name="CNA_Home_GL_Trans_GLTrans_JE" xml:space="preserve">
+    <value>Écriture de journal</value>
+  </data>
+  <data name="CNA_Home_GL_Trans_GLTrans_PB" xml:space="preserve">
+    <value>Report des lots</value>
+  </data>
+  <data name="CNA_Home_Mor" xml:space="preserve">
+    <value>Plus</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin" xml:space="preserve">
+    <value>Services administratifs</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin_Ser_Data_Integ" xml:space="preserve">
+    <value>Intégrité des données</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin_Ser_Header" xml:space="preserve">
+    <value>Services administratifs</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin_Ser_Restart" xml:space="preserve">
+    <value>Maintenance de la reprise</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin_Ser_Sec_Grp" xml:space="preserve">
+    <value>Groupes de sécurité</value>
+  </data>
+  <data name="CNA_Home_Mor_Admin_Ser_User_Auth" xml:space="preserve">
+    <value>Autorisations de l'utilisateur</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Periodic_Pro" xml:space="preserve">
+    <value>Traitement périodique de Banque</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Per_Pro_Clear_History" xml:space="preserve">
+    <value>Effacer l'historique</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Per_Pro_GL_Batch" xml:space="preserve">
+    <value>Créer lot du GL</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Per_Pro_Header" xml:space="preserve">
+    <value>Traitement périodique de Banque</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup" xml:space="preserve">
+    <value>Configuration de Banque</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup_Dist_Code" xml:space="preserve">
+    <value>Codes de ventilation</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup_Dist_Sets" xml:space="preserve">
+    <value>Séries de ventilation</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup_GL_Int" xml:space="preserve">
+    <value>Intégration de GL</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup_Header" xml:space="preserve">
+    <value>Configuration de Banque</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Setup_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans" xml:space="preserve">
+    <value>Transactions bancaires</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Bnk_Entry" xml:space="preserve">
+    <value>Opération bancaire</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Bnk_Trans" xml:space="preserve">
+    <value>Virements bancaires</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Header" xml:space="preserve">
+    <value>Transactions bancaires</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Import_OFX" xml:space="preserve">
+    <value>Importer les relevés OFX</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Post_Entry" xml:space="preserve">
+    <value>Reporter les opérations bancaires</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Post_Recon" xml:space="preserve">
+    <value>Reporter le rapprochement</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Reconcile" xml:space="preserve">
+    <value>Rapprocher les relevés</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Reconcile_Trans" xml:space="preserve">
+    <value>Extourner les transactions</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Recon_OFX" xml:space="preserve">
+    <value>Rapprocher les relevés OFX</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep" xml:space="preserve">
+    <value>Rapports d'opérations bancaires</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Bank_Ent" xml:space="preserve">
+    <value>Journal de report d'opérations bancaires</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Bnk_Recon" xml:space="preserve">
+    <value>Rapprochement bancaire</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Chk_Paym_Reg" xml:space="preserve">
+    <value>Registre des paiements/chèques</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_CommonSer_Comp_Prof" xml:space="preserve">
+    <value>Profil de l'entreprise</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_CommonSer_Fisal_Cal" xml:space="preserve">
+    <value>Calendrier fiscal</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_CommonSer_Header" xml:space="preserve">
+    <value>Services communs</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_CommonSer_Optional_Fields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Deposit" xml:space="preserve">
+    <value>État des dépôts</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Deposit_Reg" xml:space="preserve">
+    <value>Registre des dépôts</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_GL_Trans" xml:space="preserve">
+    <value>Transactions de GL</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Header" xml:space="preserve">
+    <value>Rapports d'opérations bancaires</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Recon_Post_Journal" xml:space="preserve">
+    <value>Journal de report des rapprochements</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Recon_Status" xml:space="preserve">
+    <value>État des rapprochements</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Trans_List" xml:space="preserve">
+    <value>Liste des transactions</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Trans_Post_Journal" xml:space="preserve">
+    <value>Journal de report des virements</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Rep_Withdraw" xml:space="preserve">
+    <value>État des retraits</value>
+  </data>
+  <data name="CNA_Home_Mor_Bnk_Trans_Trans_Hist" xml:space="preserve">
+    <value>Consultation historique de transaction</value>
+  </data>
+  <data name="CNA_Home_Mor_CommonSer" xml:space="preserve">
+    <value>Services communs</value>
+  </data>
+  <data name="CNA_Home_Mor_Curr" xml:space="preserve">
+    <value>Devise</value>
+  </data>
+  <data name="CNA_Home_Mor_CurrCur_Rate_Type" xml:space="preserve">
+    <value>Types de taux de change</value>
+  </data>
+  <data name="CNA_Home_Mor_Curr_Cur_Codes" xml:space="preserve">
+    <value>Codes de devises</value>
+  </data>
+  <data name="CNA_Home_Mor_Curr_Cur_Rates" xml:space="preserve">
+    <value>Taux de change</value>
+  </data>
+  <data name="CNA_Home_Mor_Curr_Header" xml:space="preserve">
+    <value>Devise</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Authori" xml:space="preserve">
+    <value>Autorités fiscales</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Classes" xml:space="preserve">
+    <value>Classes de taxe</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Groups" xml:space="preserve">
+    <value>Groupes de taxes</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Rates" xml:space="preserve">
+    <value>Taux de taxation</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Reports" xml:space="preserve">
+    <value>Rapports de taxe</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Reports_Header" xml:space="preserve">
+    <value>Rapports de taxe</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Reports_Tax_Trk" xml:space="preserve">
+    <value>Suivi des taxes</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Ser" xml:space="preserve">
+    <value>Services de taxes</value>
+  </data>
+  <data name="CNA_Home_Mor_Tax_Ser_Header" xml:space="preserve">
+    <value>Services de taxes</value>
+  </data>
+  <data name="CNA_Home_Ser" xml:space="preserve">
+    <value>Comptes clients</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Entreprise</value>
+  </data>
+  <data name="Contact_Us" xml:space="preserve">
+    <value>Contactez-nous</value>
+    <comment>Help url</comment>
+  </data>
+  <data name="Copyright_message" xml:space="preserve">
+    <value>The Sage Group plc ou ses partenaires. Tous droits réservés.</value>
+  </data>
+  <data name="Copyright_Trademarks" xml:space="preserve">
+    <value>Copyright/Marques commerciales</value>
+    <comment>Help url</comment>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="EntityError_Priority_Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="EntityError_Priority_Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="EntityError_Priority_Security" xml:space="preserve">
+    <value>Sécurité</value>
+  </data>
+  <data name="EntityError_Priority_SevereError" xml:space="preserve">
+    <value>EntityError_Priority_SevereError</value>
+  </data>
+  <data name="EntityError_Priority_Warning" xml:space="preserve">
+    <value>Avertissement</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>Une erreur s'est produite et votre demande n'a pas pu être traitée. Veuillez réessayer plus tard ou contactez votre administrateur pour obtenir de l'aide.</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Erreur imprévue</value>
+  </data>
+  <data name="ExpiringVendorDiscounts" xml:space="preserve">
+    <value>Remises fournisseurs à échéance</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="FeatureTourSlideDashboard" xml:space="preserve">
+    <value>Vue d'ensemble de vos données : </value>
+  </data>
+  <data name="FeatureTourSlideDashboard1" xml:space="preserve">
+    <value>Composants graphiques</value>
+  </data>
+  <data name="FeatureTourSlideDashboard2" xml:space="preserve">
+    <value>Ajoutez et personnalisez des composants graphiques sur le tableau de bord</value>
+  </data>
+  <data name="FeatureTourSlideDashboard3" xml:space="preserve">
+    <value>pour avoir un aperçu des informations dont vous avez besoin.</value>
+  </data>
+  <data name="FeatureTourSlideDashboard4" xml:space="preserve">
+    <value>Suivant &amp;raquo;</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter1" xml:space="preserve">
+    <value>L'aide est à portée de main :</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter10" xml:space="preserve">
+    <value>Explorez l'aide et les ressources</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter11" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter12" xml:space="preserve">
+    <value>Terminé</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter13" xml:space="preserve">
+    <value>Recommencer</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter2" xml:space="preserve">
+    <value>Centre d'aide</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter3" xml:space="preserve">
+    <value>Sur le menu Aide, vous trouverez des liens vers cette visite guidée des fonctions, le centre d'aide et d'autres ressources qui vous aideront à tirer le meilleur profit de Sage 300.</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter4" xml:space="preserve">
+    <value>En savoir plus sur la recherche</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter5" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter6" xml:space="preserve">
+    <value>En savoir plus sur la gestion des fenêtres</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter7" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter8" xml:space="preserve">
+    <value>En savoir plus sur les composants graphiques</value>
+  </data>
+  <data name="FeatureTourSlideHelpCenter9" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="FeatureTourSlideSearch" xml:space="preserve">
+    <value>Une recherche globale : </value>
+  </data>
+  <data name="FeatureTourSlideSearch1" xml:space="preserve">
+    <value>Recherche globale</value>
+  </data>
+  <data name="FeatureTourSlideSearch2" xml:space="preserve">
+    <value>Chercher :</value>
+  </data>
+  <data name="FeatureTourSlideSearch3" xml:space="preserve">
+    <value>Écrans d'application</value>
+  </data>
+  <data name="FeatureTourSlideSearch4" xml:space="preserve">
+    <value>Comptes</value>
+  </data>
+  <data name="FeatureTourSlideSearch5" xml:space="preserve">
+    <value>Transactions</value>
+  </data>
+  <data name="FeatureTourSlideSearch6" xml:space="preserve">
+    <value>Personnes</value>
+  </data>
+  <data name="FeatureTourSlideSearch7" xml:space="preserve">
+    <value>et plus.</value>
+  </data>
+  <data name="FeatureTourSlideSearch8" xml:space="preserve">
+    <value>Suivant &amp;raquo;</value>
+  </data>
+  <data name="FeatureTourSlideWelcome" xml:space="preserve">
+    <value>Bienvenue dans </value>
+  </data>
+  <data name="FeatureTourSlideWelcome1" xml:space="preserve">
+    <value>Sage 300!</value>
+  </data>
+  <data name="FeatureTourSlideWelcome2" xml:space="preserve">
+    <value>Prêt à consacrer une minute à la découverte</value>
+  </data>
+  <data name="FeatureTourSlideWelcome3" xml:space="preserve">
+    <value>des principales fonctions de votre nouveau logiciel?</value>
+  </data>
+  <data name="FeatureTourSlideWelcome4" xml:space="preserve">
+    <value>Si vous préférez suivre la visite guidée plus tard, vous pouvez cliquer sur Aide &amp;rsaquo; Présentation des fonctions à tout moment.</value>
+  </data>
+  <data name="FeatureTourSlideWelcome5" xml:space="preserve">
+    <value>Suivre une visite guidée &amp;raquo;</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager" xml:space="preserve">
+    <value>Gestion simplifiée des multitâches :</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager1" xml:space="preserve">
+    <value>Gestionnaire des fenêtres</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager2" xml:space="preserve">
+    <value>Ouvrez jusqu'à dix fenêtres tout en travaillant.</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager3" xml:space="preserve">
+    <value>Utilisez le gestionnaire de fenêtres pour passer facilement d'une fenêtre à une autre</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager4" xml:space="preserve">
+    <value>et pour les fermer lorsque vous avez terminé.</value>
+  </data>
+  <data name="FeatureTourSlideWindowManager5" xml:space="preserve">
+    <value>Suivant &amp;raquo;</value>
+  </data>
+  <data name="NewTenant_Content_CurrencySection_Description" xml:space="preserve">
+    <value>Spécifiez la devise fonctionnelle de votre entreprise et sélectionnez l'option Multidevise s'il vous arrive de traiter des transactions dans d'autres devises.</value>
+  </data>
+  <data name="NewTenant_Content_CurrencySection_Title" xml:space="preserve">
+    <value>Devise</value>
+  </data>
+  <data name="NewTenant_Content_FiscalYearSection_Description" xml:space="preserve">
+    <value>Saisissez la date de début de l'exercice courant de l'entreprise et l'exercice le plus ancien pour lequel vous souhaitez ajouter l'historique. Choisissez le nombre de périodes dans l'exercice de l'entreprise.</value>
+  </data>
+  <data name="NewTenant_Content_FiscalYearSection_Title" xml:space="preserve">
+    <value>Exercice</value>
+  </data>
+  <data name="NewTenant_Content_InfoText1" xml:space="preserve">
+    <value>Si l'entreprise utilise un livre de 13 périodes, sélectionnez le trimestre qui comporte quatre périodes fiscales.</value>
+  </data>
+  <data name="NewTenant_Content_InfoText2" xml:space="preserve">
+    <value>L'option multidevise peut être activée à tout moment, mais elle ne peut pas être désactivée une fois sélectionnée.</value>
+  </data>
+  <data name="NewTenant_CurrentFiscalYear" xml:space="preserve">
+    <value>Exercice courant</value>
+  </data>
+  <data name="NewTenant_FiscalYearStartingDate" xml:space="preserve">
+    <value>Date de début de l'exercice</value>
+  </data>
+  <data name="NewTenant_Header" xml:space="preserve">
+    <value>Bienvenue dans</value>
+  </data>
+  <data name="NewTenant_Header2" xml:space="preserve">
+    <value>Pour commencer, saisissez des informations concernant votre calendrier fiscal et vos paramètres de devises.</value>
+  </data>
+  <data name="NewTenant_NoOfFiscalPeriods" xml:space="preserve">
+    <value>Nombre de périodes comptables</value>
+  </data>
+  <data name="NewTenant_OldestFiscalYear" xml:space="preserve">
+    <value>Exercice le plus ancien</value>
+  </data>
+  <data name="FirstTimeUserMessage" xml:space="preserve">
+    <value>Pour commencer, saisissez les informations concernant vos paramètres de calendrier fiscal et de devise.</value>
+  </data>
+  <data name="FirstTimeUserMessage_Widgets1" xml:space="preserve">
+    <value>Ajoutez et personnalisez des composants graphiques pour afficher</value>
+  </data>
+  <data name="FirstTimeUserMessage_Widgets2" xml:space="preserve">
+    <value>les données financières clés sur votre tableau de bord.</value>
+  </data>
+  <data name="Hide" xml:space="preserve">
+    <value>Masquer</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Accueil</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="IncomeAndExpenses" xml:space="preserve">
+    <value>Produits et charges</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="IncomeFromOperations" xml:space="preserve">
+    <value>Bénéfice d'exploitation</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Informations</value>
+  </data>
+  <data name="LoggingConstants" xml:space="preserve">
+    <value>[Sage Portal Cloud] [{0}] [TenantId: {1}] [ModuleName: {2}] [UserId; {3}] - {4}</value>
+  </data>
+  <data name="MaxWindowExceeded" xml:space="preserve">
+    <value>Vous avez ouvert le nombre maximum de fenêtres (10). Vous devez fermer une ou plusieurs fenêtres avant d'en ouvrir une autre.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OpenWindows" xml:space="preserve">
+    <value>Fenêtres ouvertes</value>
+  </data>
+  <data name="CreateNote" xml:space="preserve">
+    <value>Ajouter une note</value>
+  </data>
+  <data name="ViewNotes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="PayablesAging" xml:space="preserve">
+    <value>Sommes à payer âgées</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Payable_Aging" xml:space="preserve">
+    <value>Sommes à payer âgées</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Portal_Title" xml:space="preserve">
+    <value>Sage 300</value>
+  </data>
+  <data name="Portal_Welcome_Msg" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PreviousYearExpenseComparison" xml:space="preserve">
+    <value>Comparaison des charges de l'exercice précédent</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="PreviousYearIncomeComparison" xml:space="preserve">
+    <value>Comparaison des produits de l'exercice précédent</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Private_Policy" xml:space="preserve">
+    <value>Politique de confidentialité</value>
+    <comment>Help url</comment>
+  </data>
+  <data name="ReceivablesAging" xml:space="preserve">
+    <value>Sommes à recevoir âgées</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Modifier le titre</value>
+  </data>
+  <data name="Sage_Online" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="See_Data" xml:space="preserve">
+    <value>Examinez vos données</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="Select_Tenant" xml:space="preserve">
+    <value>-- Sélectionner entreprise --</value>
+  </data>
+  <data name="SessionError" xml:space="preserve">
+    <value>Le format de la date de session n'est pas valide.</value>
+  </data>
+  <data name="SessionSuccess" xml:space="preserve">
+    <value>Date de session enregistrée.</value>
+  </data>
+  <data name="Session_Date" xml:space="preserve">
+    <value>Date de session</value>
+  </data>
+  <data name="TaskAdded" xml:space="preserve">
+    <value>Fenêtre...</value>
+  </data>
+  <data name="TopCustomersByBilling" xml:space="preserve">
+    <value>Principaux clients par Facturation</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="TopNav_Admin_Services" xml:space="preserve">
+    <value>Services administratifs</value>
+  </data>
+  <data name="TopNav_CRM" xml:space="preserve">
+    <value>CRM</value>
+  </data>
+  <data name="TopNav_Cust_Mgmt" xml:space="preserve">
+    <value>Gestion des clients</value>
+  </data>
+  <data name="TopNav_Fixed_Assets_Online" xml:space="preserve">
+    <value>Sage Fixed Assets Online</value>
+  </data>
+  <data name="TopNav_Manage_Liscenses" xml:space="preserve">
+    <value>Gestion des licences</value>
+  </data>
+  <data name="TopNav_Manage_Subscription" xml:space="preserve">
+    <value>Gestion des abonnements</value>
+  </data>
+  <data name="TopNav_Manage_Users" xml:space="preserve">
+    <value>Gestion des utilisateurs</value>
+  </data>
+  <data name="TopNav_Mobile_Web_Solutions" xml:space="preserve">
+    <value>Solutions mobiles et Web</value>
+  </data>
+  <data name="TopNav_More" xml:space="preserve">
+    <value>Plus</value>
+  </data>
+  <data name="TopNav_My_Profile" xml:space="preserve">
+    <value>Mon profil</value>
+  </data>
+  <data name="TopNav_Preferences" xml:space="preserve">
+    <value>Préférences</value>
+  </data>
+  <data name="TopNav_Products_Services" xml:space="preserve">
+    <value>Produits et services</value>
+  </data>
+  <data name="TopNav_Sage" xml:space="preserve">
+    <value>Sage</value>
+  </data>
+  <data name="TopNav_SageId" xml:space="preserve">
+    <value>Sage ID</value>
+  </data>
+  <data name="TopNav_Sign_out" xml:space="preserve">
+    <value>Déconnexion</value>
+  </data>
+  <data name="TopNav_Solutions" xml:space="preserve">
+    <value>Solutions</value>
+  </data>
+  <data name="TopNav_User_Mgmt" xml:space="preserve">
+    <value>Gestion des utilisateurs</value>
+  </data>
+  <data name="TopVendors" xml:space="preserve">
+    <value>Principaux fournisseurs</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="TopCustomersByCurrentAmountDue" xml:space="preserve">
+    <value>Principaux clients par Montant actuel à payer</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="UnsupportedBrowserErrorMessage" xml:space="preserve">
+    <value>Pour garantir la sécurité de vos données et bénéficier d'un accès plus rapide et plus fiable à toutes les fonctions de vos services Sage, veuillez effectuer une mise à niveau de votre navigateur Web maintenant.</value>
+    <comment>Unsupported browser</comment>
+  </data>
+  <data name="UnsupportedBrowserErrorPageTitle" xml:space="preserve">
+    <value>Mettez à niveau votre navigateur Web</value>
+    <comment>Unsupported browser</comment>
+  </data>
+  <data name="UnsupportedBrowserErrorTitle" xml:space="preserve">
+    <value>Pour une meilleure expérience, mettez votre navigateur Web à niveau</value>
+    <comment>Unsupported browser</comment>
+  </data>
+  <data name="Widgets" xml:space="preserve">
+    <value>Composants graphiques</value>
+    <comment>List</comment>
+  </data>
+  <data name="WindowDrag" xml:space="preserve">
+    <value>Faire glisser</value>
+  </data>
+  <data name="Windows" xml:space="preserve">
+    <value>Fenêtres</value>
+  </data>
+  <data name="NewTenant_ConfirmationPopupText1" xml:space="preserve">
+    <value>Voulez-vous vraiment annuler la configuration?</value>
+  </data>
+  <data name="NewTenant_ConfirmationPopupText2" xml:space="preserve">
+    <value>Pour commencer, saisissez les informations concernant vos paramètres de calendrier fiscal et de devise.</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Rapport</value>
+    <comment>Label to be shown in Task Dock</comment>
+  </data>
+  <data name="Select_Tenant_Title" xml:space="preserve">
+    <value>Sélectionner une entreprise</value>
+  </data>
+  <data name="BrowserChrome" xml:space="preserve">
+    <value>Chrome</value>
+  </data>
+  <data name="BrowserFirefox" xml:space="preserve">
+    <value>Firefox</value>
+  </data>
+  <data name="BrowserIE" xml:space="preserve">
+    <value>Internet Explorer</value>
+  </data>
+  <data name="BrowserSafari" xml:space="preserve">
+    <value>Safari (pour système d'exploitation Mac)</value>
+  </data>
+  <data name="Tenant" xml:space="preserve">
+    <value>Locataire</value>
+  </data>
+  <data name="PageRefreshError" xml:space="preserve">
+    <value>Toutes modifications non enregistrées dans les fenêtres et rapports ouverts seront perdues si vous continuez.</value>
+  </data>
+  <data name="AP" xml:space="preserve">
+    <value>CF</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>CC</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="AS" xml:space="preserve">
+    <value>SA</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="CS" xml:space="preserve">
+    <value>SC</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="GL" xml:space="preserve">
+    <value>GL</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="GLAccount" xml:space="preserve">
+    <value>Compte du GL</value>
+    <comment>Label For Finder</comment>
+  </data>
+  <data name="IC" xml:space="preserve">
+    <value>GS</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="OE" xml:space="preserve">
+    <value>CmC</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="CustomizeWidgetMessage1" xml:space="preserve">
+    <value>Ajoutez et personnalisez des composants graphiques pour afficher</value>
+  </data>
+  <data name="CustomizeWidgetMessage2" xml:space="preserve">
+    <value>les données financières clés sur votre tableau de bord.</value>
+  </data>
+  <data name="SeeIntoYourData" xml:space="preserve">
+    <value>Examinez vos données</value>
+  </data>
+  <data name="Printed" xml:space="preserve">
+    <value>Imprimé</value>
+    <comment>Label For Task Doc</comment>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Banque</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="PO" xml:space="preserve">
+    <value>CmF</value>
+  </data>
+  <data name="ActivityTrend" xml:space="preserve">
+    <value>Tendance des activités</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="InventoryItemPerformance" xml:space="preserve">
+    <value>Performance articles en stock</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="SalesPerSalesperson" xml:space="preserve">
+    <value>Principaux vendeurs</value>
+    <comment>Widget Name</comment>
+  </data>
+  <data name="Wizard_Currency_DefaultRateType" xml:space="preserve">
+    <value>Type de taux par défaut</value>
+  </data>
+  <data name="Wizard_Currency_Header1" xml:space="preserve">
+    <value>Devise</value>
+  </data>
+  <data name="Wizard_Currency_Header2" xml:space="preserve">
+    <value>Sélectionnez la devise fonctionnelle de l'entreprise. Si votre entreprise traite des transactions dans plusieurs devises, sélectionnez Multidevise et spécifiez le type de taux par défaut.</value>
+  </data>
+  <data name="Wizard_Currency_Header3" xml:space="preserve">
+    <value>Vous pouvez sélectionner l'option Multidevise à tout moment. Cependant, ce paramètre est permanent et une fois sélectionné, il ne peut pas être décoché.</value>
+  </data>
+  <data name="Wizard_Currency_Header3_Important" xml:space="preserve">
+    <value>Important!</value>
+  </data>
+  <data name="Wizard_Fiscal_CurrentYear" xml:space="preserve">
+    <value>Exercice courant</value>
+  </data>
+  <data name="Wizard_Fiscal_Header2" xml:space="preserve">
+    <value>Spécifiez la date de début de l'exercice courant de l'entreprise et l'exercice le plus ancien pour lequel vous souhaitez ajouter l'historique, ainsi que le nombre de périodes dans l'exercice de l'entreprise.</value>
+  </data>
+  <data name="Wizard_Fiscal_OldestYear" xml:space="preserve">
+    <value>Exercice le plus ancien</value>
+  </data>
+  <data name="Wizard_Fiscal_Periods" xml:space="preserve">
+    <value>Périodes</value>
+  </data>
+  <data name="Wizard_Fiscal_StartingDate" xml:space="preserve">
+    <value>Date de début</value>
+  </data>
+  <data name="Wizard_Initial_Header1" xml:space="preserve">
+    <value>Commençons sans plus tarder!</value>
+  </data>
+  <data name="Wizard_Initial_Header2" xml:space="preserve">
+    <value>Pour commencer la configuration de votre entreprise, nous allons vous demander quelques renseignements concernant votre calendrier fiscal et les devises dans lesquelles vous traitez des transactions.</value>
+  </data>
+  <data name="Wizard_Initial_LastStep" xml:space="preserve">
+    <value>Configuration rapide</value>
+  </data>
+  <data name="Wizard_Btn_Done" xml:space="preserve">
+    <value>Terminé</value>
+  </data>
+  <data name="Wizard_Btn_Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Wizard_Setup_Header1" xml:space="preserve">
+    <value>Configuration rapide</value>
+  </data>
+  <data name="Wizard_Setup_Header2" xml:space="preserve">
+    <value>Pour vous mettre en route rapidement, nous pouvons configurer votre entreprise à l'aide de paramètres par défaut, tels que le plan comptable standard ci-dessous.</value>
+  </data>
+  <data name="Wizard_Setup_Header3" xml:space="preserve">
+    <value>Vous pouvez modifier les comptes standards et les descriptions répertoriés ici. Après la configuration initiale, vous pourrez consulter et modifier les paramètres et les comptes si besoin est.</value>
+  </data>
+  <data name="Wizard_Setup_QuickSetup" xml:space="preserve">
+    <value>Configuration rapide</value>
+  </data>
+  <data name="Wizard_Setup_QuickSetupDdescription" xml:space="preserve">
+    <value>#NAME?</value>
+  </data>
+  <data name="Wizard_Setup_Skip" xml:space="preserve">
+    <value>Ignorer</value>
+  </data>
+  <data name="Wizard_Setup_SkipDescription" xml:space="preserve">
+    <value>- Commencez la configuration avec des paramètres et un plan comptable vierges. J'importerai ou configurerai mes propres enregistrements.</value>
+  </data>
+  <data name="Wizard_Done_Header1" xml:space="preserve">
+    <value>Terminé!</value>
+  </data>
+  <data name="Wizard_Done_Header2" xml:space="preserve">
+    <value>Vous pouvez commencer à travailler dans Sage 300 Online.</value>
+  </data>
+  <data name="Wizard_Setup_Account" xml:space="preserve">
+    <value>Compte</value>
+  </data>
+  <data name="Wizard_Setup_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Wizard_CurrencyCodeInvalid" xml:space="preserve">
+    <value>Le code de devise "{0}" n’est pas défini. Entrez ou sélectionnez un code de devise valide.</value>
+  </data>
+  <data name="SessionDateDisabledInfo" xml:space="preserve">
+    <value>Vous pouvez changer la date de la session seulement si aucune fenêtre n'est ouverte.</value>
+  </data>
+  <data name="QuickMenu_AddNote" xml:space="preserve">
+    <value>Ajouter note</value>
+  </data>
+  <data name="QuickMenu_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="QuickMenu_CloseAll" xml:space="preserve">
+    <value>Fermer tout</value>
+  </data>
+  <data name="QuickMenu_WindowManager" xml:space="preserve">
+    <value>Gestionnaire de fenêtres</value>
+  </data>
+  <data name="QuickMenu_CustomerReport" xml:space="preserve">
+    <value>Rapports</value>
+  </data>
+  <data name="TX" xml:space="preserve">
+    <value>Taxe</value>
+    <comment>ModuleName</comment>
+  </data>
+  <data name="FeatureTourSlideNotes" xml:space="preserve">
+    <value>Ajouter et gérer des notes :</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideNotes1" xml:space="preserve">
+    <value>Volet Notes</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideNotes2" xml:space="preserve">
+    <value>Utilisez le volet Notes pour ajouter des notes aux clients, fournisseurs et articles de stock, ainsi que pour vérifier et gérer les notes.</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideReports" xml:space="preserve">
+    <value>Vos rapports à un seul et même endroit :</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideReports1" xml:space="preserve">
+    <value>Liste de rapports</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideReports2" xml:space="preserve">
+    <value>Utilisez cette liste personnalisable de raccourcis pour trouver et imprimer rapidement les rapports que vous utilisez le plus souvent.</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideHelpCenter14" xml:space="preserve">
+    <value>En savoir plus sur les rapports</value>
+    <comment>CSH ID 677007001</comment>
+  </data>
+  <data name="QuickMenu_ARTemplate" xml:space="preserve">
+    <value>{0} de CC</value>
+  </data>
+  <data name="QuickMenu_CustomerDocuments" xml:space="preserve">
+    <value>Documents clients</value>
+  </data>
+  <data name="QuickMenu_Dismiss" xml:space="preserve">
+    <value>Masquer</value>
+  </data>
+  <data name="QuickMenu_Inquiries" xml:space="preserve">
+    <value>Consultations</value>
+  </data>
+  <data name="FeatureTourSlideInquiries" xml:space="preserve">
+    <value>Trouver des informations détaillées :</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideInquiries1" xml:space="preserve">
+    <value>Consultations</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideInquiries2" xml:space="preserve">
+    <value>Utilisez l'outil Consultation pour chercher des informations et pour effectuer des zooms avant vers des enregistrements et des transactions.</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideHelpCenter15" xml:space="preserve">
+    <value>En savoir plus sur les consultations</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="QuickMenu_RecentWindows" xml:space="preserve">
+    <value>Fenêtres récemment utilisées</value>
+  </data>
+  <data name="FeatureTourSlideRecentWindows" xml:space="preserve">
+    <value>Reprenez votre travail où vous l'aviez laissé :</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideRecentWindows1" xml:space="preserve">
+    <value>Fenêtres récemment utilisées</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideRecentWindows2" xml:space="preserve">
+    <value>Utilisez cette liste des fenêtres récemment ouvertes pour rapidement trouver et ouvrir les fenêtres de nouveau.</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="QuickMenu_AdhocInquiries" xml:space="preserve">
+    <value>Consultation ad hoc</value>
+  </data>
+  <data name="FeatureTourSlideGlobalSearch" xml:space="preserve">
+    <value>Recherche rapide :</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideGlobalSearch1" xml:space="preserve">
+    <value>Recherche</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="FeatureTourSlideGlobalSearch2" xml:space="preserve">
+    <value>Utilisez l’option Recherche pour chercher rapidement des enregistrements et des transactions dans toute votre base de données.</value>
+    <comment>Feature Tour</comment>
+  </data>
+  <data name="TW" xml:space="preserve">
+    <value>T/W</value>
+  </data>
+  <data name="TS" xml:space="preserve">
+    <value>T/S</value>
+  </data>
+  <data name="ViewWidgets" xml:space="preserve">
+    <value>Afficher les composants graphiques</value>
+  </data>
+</root>

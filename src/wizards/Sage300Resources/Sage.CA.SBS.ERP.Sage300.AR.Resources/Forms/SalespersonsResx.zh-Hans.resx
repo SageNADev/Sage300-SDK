@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Amount" xml:space="preserve">
+    <value>金额</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="AnnualSalesTarget" xml:space="preserve">
+    <value>年销售目标</value>
+    <comment>Field</comment>
+  </data>
+  <data name="COMMBASE" xml:space="preserve">
+    <value>各个佣金率的佣金金额必须大于前一佣金率的佣金金额。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="Commission" xml:space="preserve">
+    <value>佣金</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>计数</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>如果您有一个长的客户清单，删除一个业务员可能要花费几分钟。是否确要删除这一业务员？</value>
+    <comment>Warning</comment>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>雇员编号</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>应收帐款业务员</value>
+    <comment>Screen Name</comment>
+  </data>
+  <data name="Value5" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Value4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="NumberofCommissionRates" xml:space="preserve">
+    <value>佣金率级数</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Value1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="OnSalesof" xml:space="preserve">
+    <value>于销售</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="PaidCommissions" xml:space="preserve">
+    <value>已付佣金</value>
+    <comment>Check Box</comment>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>费率%</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="SalespersonCode" xml:space="preserve">
+    <value>业务员代码</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>统计</value>
+    <comment>Tab</comment>
+  </data>
+  <data name="Value3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>到</value>
+    <comment>Table Value</comment>
+  </data>
+  <data name="TransactionTypes" xml:space="preserve">
+    <value>交易类型</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="Value2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="YTDAmount" xml:space="preserve">
+    <value>年度至今金额</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="YTDCount" xml:space="preserve">
+    <value>年度至今计数</value>
+    <comment>Table Column</comment>
+  </data>
+  <data name="CommissionableSales" xml:space="preserve">
+    <value>有佣金的销售</value>
+  </data>
+  <data name="CommissionRate1" xml:space="preserve">
+    <value>佣金率1</value>
+  </data>
+  <data name="CommissionRate2" xml:space="preserve">
+    <value>佣金率2</value>
+  </data>
+  <data name="CommissionRate3" xml:space="preserve">
+    <value>佣金率3</value>
+  </data>
+  <data name="CommissionRate4" xml:space="preserve">
+    <value>佣金率4</value>
+  </data>
+  <data name="CommissionRate5" xml:space="preserve">
+    <value>佣金率5</value>
+  </data>
+  <data name="CommissionsPaid" xml:space="preserve">
+    <value>已付佣金</value>
+  </data>
+  <data name="CostofCommissionableSales" xml:space="preserve">
+    <value>有佣金销售的成本</value>
+  </data>
+  <data name="DateLastCleared" xml:space="preserve">
+    <value>上一清除日期</value>
+  </data>
+  <data name="MaximumSalesforRate1" xml:space="preserve">
+    <value>佣金率1的最大销售额</value>
+  </data>
+  <data name="MaximumSalesforRate2" xml:space="preserve">
+    <value>佣金率2的最大销售额</value>
+  </data>
+  <data name="MaximumSalesforRate3" xml:space="preserve">
+    <value>佣金率3的最大销售额</value>
+  </data>
+  <data name="MaximumSalesforRate4" xml:space="preserve">
+    <value>佣金率4的最大销售额</value>
+  </data>
+  <data name="CannotExceedCommissionRateMessage" xml:space="preserve">
+    <value>佣金率不能超过100%。</value>
+  </data>
+  <data name="AR0018" xml:space="preserve">
+    <value>业务员</value>
+  </data>
+  <data name="AR0030" xml:space="preserve">
+    <value>业务员统计</value>
+  </data>
+  <data name="EnableYtdCalculations" xml:space="preserve">
+    <value>启动年度至今计算</value>
+  </data>
+  <data name="NumberofCreditNotes" xml:space="preserve">
+    <value>贷项通知单数</value>
+  </data>
+  <data name="NumberofDebitNotes" xml:space="preserve">
+    <value>借项通知单数</value>
+  </data>
+  <data name="NumberofDiscounts" xml:space="preserve">
+    <value>折扣数</value>
+  </data>
+  <data name="NumberofInvoices" xml:space="preserve">
+    <value>发票数</value>
+  </data>
+  <data name="NumberofReceipts" xml:space="preserve">
+    <value>收款数</value>
+  </data>
+  <data name="NumberofWriteOffs" xml:space="preserve">
+    <value>冲销数</value>
+  </data>
+  <data name="TotalCreditNoteAmount" xml:space="preserve">
+    <value>贷项通知单金额合计</value>
+  </data>
+  <data name="TotalDebitNoteAmount" xml:space="preserve">
+    <value>借项通知单金额合计</value>
+  </data>
+  <data name="TotalDiscountAmount" xml:space="preserve">
+    <value>折扣金额合计</value>
+  </data>
+  <data name="TotalInvoiceAmount" xml:space="preserve">
+    <value>发票金额合计</value>
+  </data>
+  <data name="TotalReceiptAmount" xml:space="preserve">
+    <value>收款金额合计</value>
+  </data>
+  <data name="TotalWriteOffAmount" xml:space="preserve">
+    <value>合计冲销金额</value>
+  </data>
+  <data name="YtdNumberofCreditNotes" xml:space="preserve">
+    <value>年度至今贷项通知单数</value>
+  </data>
+  <data name="YtdNumberofDiscounts" xml:space="preserve">
+    <value>年度至今折扣数</value>
+  </data>
+  <data name="YtdNumberofInvoices" xml:space="preserve">
+    <value>年度至今发票数</value>
+  </data>
+  <data name="YtdNumberofReceipts" xml:space="preserve">
+    <value>年度至今收款数</value>
+  </data>
+  <data name="YtdNumberofWriteOffs" xml:space="preserve">
+    <value>年度至今冲销数</value>
+  </data>
+  <data name="YtdTotalCreditNoteAmount" xml:space="preserve">
+    <value>年度至今贷项通知单金额合计</value>
+  </data>
+  <data name="YtdTotalDebitNoteAmount" xml:space="preserve">
+    <value>年度至今借项通知单金额合计</value>
+  </data>
+  <data name="YtdTotalDiscountAmount" xml:space="preserve">
+    <value>年度至今折扣金额合计</value>
+  </data>
+  <data name="YtdTotalInvoiceAmount" xml:space="preserve">
+    <value>年度至今合计发票金额</value>
+  </data>
+  <data name="YtdTotalReceiptAmount" xml:space="preserve">
+    <value>年度至今收款金额合计</value>
+  </data>
+  <data name="YtdTotalWriteOffAmount" xml:space="preserve">
+    <value>年度至今合计冲销金额</value>
+  </data>
+  <data name="YtdNumberofDebitNotes" xml:space="preserve">
+    <value>年度至今借项通知单数</value>
+  </data>
+  <data name="InvalidPeriod" xml:space="preserve">
+    <value>期间{0}无效。</value>
+  </data>
+</root>

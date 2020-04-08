@@ -93,8 +93,26 @@ var RecentWindowsMenu = function () {
      */
     function loadRecentWindowsListFromStorage() {
         var key = getRecentWindowKey();
-        var markup = sage.cache.local.get(key);
-        $(constants.DV_RECENTWINDOWS_SELECTOR).html(markup);
+        var cachedMarkup = sage.cache.local.get(key);
+
+        //
+        // Now, we need to ensure that the labels used in the menu are in the correct language
+        //
+        $(cachedMarkup).find('span').each(function (index, value) {
+            // From the cachedMarkup, get each menuId
+            var item = $(this);
+            var menuItemId = item[0].attributes['data-menuid'].value;
+            var menuTextToBeConverted = item[0].innerHTML;
+
+            // Now that we have a menuId, we need to find the matching menu item from the main menu.
+            var menuItemText = sg.utls.getMenuLabelFromMenuItemId(menuItemId);
+            if (menuItemText) {
+                cachedMarkup = cachedMarkup.replace(menuTextToBeConverted, menuItemText);
+            }
+        });
+
+
+        $(constants.DV_RECENTWINDOWS_SELECTOR).html(cachedMarkup);
     }
 
     /**
@@ -348,18 +366,12 @@ var RecentWindowsMenu = function () {
                 // from Open Window
 
                 // Remove everything but Area and controller
-                var targetUrlSimplified = simplifyTargetUrl(targetUrl);
+                var targetUrlSimplified = kendo.htmlEncode(simplifyTargetUrl(targetUrl));
 
                 var iframeId = $iframe.attr('id');
                 var id = 'dvRW' + iframeId;
-                var t = '<div id="' + id + '" class="rcbox">\
-                                        <span data-menuid="' + menuid + '"\
-                                              data-parentid="' + parentid + '"\
-                                              data-url="' + targetUrlSimplified + '"\
-                                              frameId="' + iframeId + '"\
-                                              command="Add" rank="1">' + windowText + '\
-                                        </span>\
-                                     </div>';
+                var t = '<div id="' + id + '" class="rcbox"><span data-menuid="' + menuid + '"data-parentid="' + parentid +
+                    '"data-url="' + targetUrlSimplified + '"frameId="' + iframeId + '"command="Add" rank="1">' + windowText + '</span></div>';
                 var $menuItem = $(t);
 
                 removeRecentWindowsDuplicatedOrAboveLimit(menuid);

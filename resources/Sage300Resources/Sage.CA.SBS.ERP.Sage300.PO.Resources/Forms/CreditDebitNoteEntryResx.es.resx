@@ -1,0 +1,1788 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ARItemNumber" xml:space="preserve">
+    <value>Número de Artículo de C/C</value>
+    <comment>Credit - Table Column</comment>
+  </data>
+  <data name="AutoTaxCalculationOnSave" xml:space="preserve">
+    <value>Cálculo Automático de Impuestos al Guardar</value>
+  </data>
+  <data name="CalculateTax1" xml:space="preserve">
+    <value>Calcular Impuestos</value>
+    <comment>Credit - Button</comment>
+  </data>
+  <data name="CostAmountNotMatchMessage" xml:space="preserve">
+    <value>El monto de costo de {0} no coincide con el total del recibo asignado de {1}.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Costs" xml:space="preserve">
+    <value>Costos</value>
+  </data>
+  <data name="CostsComplete" xml:space="preserve">
+    <value>Costos Completos</value>
+  </data>
+  <data name="CrDate" xml:space="preserve">
+    <value>Fecha de Nota de Crédito</value>
+    <comment>Credit - Field</comment>
+  </data>
+  <data name="CrDbComplete" xml:space="preserve">
+    <value>Esta {0} está completa.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="CreditDebitNoteDate" xml:space="preserve">
+    <value>Fecha de Nota de Crédito/Débito</value>
+  </data>
+  <data name="CreditDebitNoteNumber" xml:space="preserve">
+    <value>Número de Nota de Crédito/Débito</value>
+  </data>
+  <data name="CreditDebitNoteSequenceKey" xml:space="preserve">
+    <value>Clave de Secuencia de Nota de Crédito/Débito</value>
+  </data>
+  <data name="CrSubtotal" xml:space="preserve">
+    <value>Subtotal de Nota de Crédito</value>
+    <comment>Credit - Field</comment>
+  </data>
+  <data name="CrTotal" xml:space="preserve">
+    <value>Total de Nota de Crédito</value>
+    <comment>Credit - Field</comment>
+  </data>
+  <data name="DateCompleted" xml:space="preserve">
+    <value>Fecha Concluida</value>
+  </data>
+  <data name="DbDate" xml:space="preserve">
+    <value>Fecha de Nota de Débito</value>
+    <comment>Credit - Field</comment>
+  </data>
+  <data name="DbDetSubtotal" xml:space="preserve">
+    <value>Subtotal de Detalle de Nota de Débito</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="DbNetTotal" xml:space="preserve">
+    <value>Total Neto de Nota de Débito</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="DbTotal" xml:space="preserve">
+    <value>Total de Nota de Débito</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="DebitRateDate" xml:space="preserve">
+    <value>Fecha de Tasa de Nota de Débito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DebitRateType" xml:space="preserve">
+    <value>Tipo de Tasa de Nota de Débito</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DocumentNumberDesc" xml:space="preserve">
+    <value>Descripción Número de Documento</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>OC - Ingreso de Nota de Débito/Crédito</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="ExtraneousLineCount" xml:space="preserve">
+    <value>Conteo de Línea Extraño</value>
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="History1" xml:space="preserve">
+    <value>Historial...</value>
+    <comment>Button</comment>
+  </data>
+  <data name="InvoiceSequenceKey" xml:space="preserve">
+    <value>Clave de Secuencia de Factura</value>
+  </data>
+  <data name="ItemTax1" xml:space="preserve">
+    <value>Artículo/Impuesto...</value>
+    <comment>Credit - Button</comment>
+  </data>
+  <data name="LastPostingDate" xml:space="preserve">
+    <value>Fecha de Último Asentamiento</value>
+  </data>
+  <data name="LessDebitNoteDiscount" xml:space="preserve">
+    <value>Menos Descuento de Nota de Débito</value>
+    <comment>Totals - Field</comment>
+  </data>
+  <data name="Lines" xml:space="preserve">
+    <value>Líneas</value>
+  </data>
+  <data name="LinesComplete" xml:space="preserve">
+    <value>Líneas Completas</value>
+  </data>
+  <data name="LinesTaxCalculationSees" xml:space="preserve">
+    <value>Líneas Que Ve el Cálculo de Impuestos</value>
+  </data>
+  <data name="NextLineSequence" xml:space="preserve">
+    <value>Secuencia de Línea Siguiente</value>
+  </data>
+  <data name="NoPOCRNSFound" xml:space="preserve">
+    <value>No se realizaron asignaciones. Pulse Asignar Costo para asignar el monto a los recibos.</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="OptionalFieldDesc" xml:space="preserve">
+    <value>Descripción Campo Opcional</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="PostCrDb" xml:space="preserve">
+    <value>¿Desea asentar esta nota {0}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PostedNoPrint" xml:space="preserve">
+    <value>Asentamiento concluido. Número de Nota {0}: {1}</value>
+    <comment>Message</comment>
+  </data>
+  <data name="PurchaseOrderSequenceKey" xml:space="preserve">
+    <value>Clave de Secuencia de Orden de Compra</value>
+  </data>
+  <data name="RateMatchType" xml:space="preserve">
+    <value>Tipo de Conciliación de Tasa</value>
+  </data>
+  <data name="RateOperation" xml:space="preserve">
+    <value>Tasa de Operación</value>
+  </data>
+  <data name="RateOverridden" xml:space="preserve">
+    <value>Tasa Sustituida</value>
+  </data>
+  <data name="RateSpread" xml:space="preserve">
+    <value>Margen de Tasa</value>
+  </data>
+  <data name="ReceiptNotAllocated" xml:space="preserve">
+    <value>Se asignó monto cero al recibo {0} por tener base de asignación cero o negativa.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="ReceiptSequenceKey" xml:space="preserve">
+    <value>Clave de Secuencia de Recibo</value>
+  </data>
+  <data name="ReplaceCrDbInfo" xml:space="preserve">
+    <value>¿Desea reemplazar la información de nota de {0} que ingresó por la información de {1} número {2}?</value>
+    <comment>Message</comment>
+  </data>
+  <data name="RetainagePercentage" xml:space="preserve">
+    <value>Porcentaje de Retención</value>
+    <comment>Credit - Table Column</comment>
+  </data>
+  <data name="ReturnSequenceKey" xml:space="preserve">
+    <value>Clave de Secuencia de Devolución</value>
+  </data>
+  <data name="SelectCNDN" xml:space="preserve">
+    <value>Seleccionar el reporte de listado de transacciones para imprimir.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="TaxAllocatedAmount1" xml:space="preserve">
+    <value>Monto Impuesto Asignado 1</value>
+  </data>
+  <data name="TaxAllocatedAmount1Sum" xml:space="preserve">
+    <value>Suma de Monto de Impuesto Asignado 1</value>
+  </data>
+  <data name="TaxAllocatedAmount2" xml:space="preserve">
+    <value>Monto Impuesto Asignado 2</value>
+  </data>
+  <data name="TaxAllocatedAmount2Sum" xml:space="preserve">
+    <value>Suma de Monto de Impuesto Asignado 2</value>
+  </data>
+  <data name="TaxAllocatedAmount3" xml:space="preserve">
+    <value>Monto Impuesto Asignado 3</value>
+  </data>
+  <data name="TaxAllocatedAmount3Sum" xml:space="preserve">
+    <value>Suma de Monto de Impuesto Asignado 3</value>
+  </data>
+  <data name="TaxAllocatedAmount4" xml:space="preserve">
+    <value>Monto Impuesto Asignado 4</value>
+  </data>
+  <data name="TaxAllocatedAmount4Sum" xml:space="preserve">
+    <value>Suma de Monto de Impuesto Asignado 4</value>
+  </data>
+  <data name="TaxAllocatedAmount5" xml:space="preserve">
+    <value>Monto Impuesto Asignado 5</value>
+  </data>
+  <data name="TaxAllocatedAmount5Sum" xml:space="preserve">
+    <value>Suma de Monto de Impuesto Asignado 5</value>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>Monto Impuesto 1</value>
+  </data>
+  <data name="TaxAmount1Sum" xml:space="preserve">
+    <value>Suma de Monto Impuesto 1</value>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>Monto Impuesto 2</value>
+  </data>
+  <data name="TaxAmount2Sum" xml:space="preserve">
+    <value>Suma de Monto Impuesto 2</value>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>Monto Impuesto 3</value>
+  </data>
+  <data name="TaxAmount3Sum" xml:space="preserve">
+    <value>Suma de Monto Impuesto 3</value>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>Monto Impuesto 4</value>
+  </data>
+  <data name="TaxAmount4Sum" xml:space="preserve">
+    <value>Suma de Monto Impuesto 4</value>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>Monto Impuesto 5</value>
+  </data>
+  <data name="TaxAmount5Sum" xml:space="preserve">
+    <value>Suma de Monto Impuesto 5</value>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>Autoridad Fiscal 1</value>
+  </data>
+  <data name="TaxAuthority1Description" xml:space="preserve">
+    <value>Descripción de Autoridad Fiscal 1</value>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>Autoridad Fiscal 2</value>
+  </data>
+  <data name="TaxAuthority2Description" xml:space="preserve">
+    <value>Descripción de Autoridad Fiscal 2</value>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>Autoridad Fiscal 3</value>
+  </data>
+  <data name="TaxAuthority3Description" xml:space="preserve">
+    <value>Descripción de Autoridad Fiscal 3</value>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>Autoridad Fiscal 4</value>
+  </data>
+  <data name="TaxAuthority4Description" xml:space="preserve">
+    <value>Descripción de Autoridad Fiscal 4</value>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>Autoridad Fiscal 5</value>
+  </data>
+  <data name="TaxAuthority5Description" xml:space="preserve">
+    <value>Descripción de Autoridad Fiscal 5</value>
+  </data>
+  <data name="TaxBase1" xml:space="preserve">
+    <value>Base Fiscal 1</value>
+  </data>
+  <data name="TaxBase1Sum" xml:space="preserve">
+    <value>Suma Base de Impuesto 1</value>
+  </data>
+  <data name="TaxBase2" xml:space="preserve">
+    <value>Base Fiscal 2</value>
+  </data>
+  <data name="TaxBase2Sum" xml:space="preserve">
+    <value>Suma Base de Impuesto 2</value>
+  </data>
+  <data name="TaxBase3" xml:space="preserve">
+    <value>Base Fiscal 3</value>
+  </data>
+  <data name="TaxBase3Sum" xml:space="preserve">
+    <value>Suma Base de Impuesto 3</value>
+  </data>
+  <data name="TaxBase4" xml:space="preserve">
+    <value>Base Fiscal 4</value>
+  </data>
+  <data name="TaxBase4Sum" xml:space="preserve">
+    <value>Suma Base de Impuesto 4</value>
+  </data>
+  <data name="TaxBase5" xml:space="preserve">
+    <value>Base Fiscal 5</value>
+  </data>
+  <data name="TaxBase5Sum" xml:space="preserve">
+    <value>Suma Base de Impuesto 5</value>
+  </data>
+  <data name="TaxCExcluded" xml:space="preserve">
+    <value>Clase Fiscal Excluida</value>
+  </data>
+  <data name="TaxCIncluded" xml:space="preserve">
+    <value>Clase Fiscal Incluida</value>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>Clase Fiscal 1</value>
+  </data>
+  <data name="TaxClass1Description" xml:space="preserve">
+    <value>Descripción de Clase Fiscal 1</value>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>Clase Fiscal 2</value>
+  </data>
+  <data name="TaxClass2Description" xml:space="preserve">
+    <value>Descripción de Clase Fiscal 2</value>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>Clase Fiscal 3</value>
+  </data>
+  <data name="TaxClass3Description" xml:space="preserve">
+    <value>Descripción de Clase Fiscal 3</value>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>Clase Fiscal 4</value>
+  </data>
+  <data name="TaxClass4Description" xml:space="preserve">
+    <value>Descripción de Clase Fiscal 4</value>
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>Clase Fiscal 5</value>
+  </data>
+  <data name="TaxClass5Description" xml:space="preserve">
+    <value>Descripción de Clase Fiscal 5</value>
+  </data>
+  <data name="TaxExcluded1Sum" xml:space="preserve">
+    <value>Suma de Impuesto Excluido 1</value>
+  </data>
+  <data name="TaxExcluded2Sum" xml:space="preserve">
+    <value>Suma de Impuesto Excluido 2</value>
+  </data>
+  <data name="TaxExcluded3Sum" xml:space="preserve">
+    <value>Suma de Impuesto Excluido 3</value>
+  </data>
+  <data name="TaxExcluded4Sum" xml:space="preserve">
+    <value>Suma de Impuesto Excluido 4</value>
+  </data>
+  <data name="TaxExcluded5Sum" xml:space="preserve">
+    <value>Suma de Impuesto Excluido 5</value>
+  </data>
+  <data name="TaxExpenseAmount1" xml:space="preserve">
+    <value>Monto de Impuesto No Recuperable 1</value>
+  </data>
+  <data name="TaxExpenseAmount1Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto No Recuperable 1</value>
+  </data>
+  <data name="TaxExpenseAmount2" xml:space="preserve">
+    <value>Monto de Impuesto No Recuperable 2</value>
+  </data>
+  <data name="TaxExpenseAmount2Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto No Recuperable 2</value>
+  </data>
+  <data name="TaxExpenseAmount3" xml:space="preserve">
+    <value>Monto de Impuesto No Recuperable 3</value>
+  </data>
+  <data name="TaxExpenseAmount3Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto No Recuperable 3</value>
+  </data>
+  <data name="TaxExpenseAmount4" xml:space="preserve">
+    <value>Monto de Impuesto No Recuperable 4</value>
+  </data>
+  <data name="TaxExpenseAmount4Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto No Recuperable 4</value>
+  </data>
+  <data name="TaxExpenseAmount5" xml:space="preserve">
+    <value>Monto de Impuesto No Recuperable 5</value>
+  </data>
+  <data name="TaxExpenseAmount5Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto No Recuperable 5</value>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>Descripción Grupo Fiscal</value>
+  </data>
+  <data name="TaxIncluded1Sum" xml:space="preserve">
+    <value>Suma de Impuesto Incluido 1</value>
+  </data>
+  <data name="TaxIncluded2Sum" xml:space="preserve">
+    <value>Suma de Impuesto Incluido 2</value>
+  </data>
+  <data name="TaxIncluded3Sum" xml:space="preserve">
+    <value>Suma de Impuesto Incluido 3</value>
+  </data>
+  <data name="TaxIncluded4Sum" xml:space="preserve">
+    <value>Suma de Impuesto Incluido 4</value>
+  </data>
+  <data name="TaxIncluded5Sum" xml:space="preserve">
+    <value>Suma de Impuesto Incluido 5</value>
+  </data>
+  <data name="TaxRecoverableAmount1" xml:space="preserve">
+    <value>Monto de Impuesto Recuperable 1</value>
+  </data>
+  <data name="TaxRecoverableAmount1Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto Recuperable 1</value>
+  </data>
+  <data name="TaxRecoverableAmount2" xml:space="preserve">
+    <value>Monto de Impuesto Recuperable 2</value>
+  </data>
+  <data name="TaxRecoverableAmount2Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto Recuperable 2</value>
+  </data>
+  <data name="TaxRecoverableAmount3" xml:space="preserve">
+    <value>Monto de Impuesto Recuperable 3</value>
+  </data>
+  <data name="TaxRecoverableAmount3Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto Recuperable 3</value>
+  </data>
+  <data name="TaxRecoverableAmount4" xml:space="preserve">
+    <value>Monto de Impuesto Recuperable 4</value>
+  </data>
+  <data name="TaxRecoverableAmount4Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto Recuperable 4</value>
+  </data>
+  <data name="TaxRecoverableAmount5" xml:space="preserve">
+    <value>Monto de Impuesto Recuperable 5</value>
+  </data>
+  <data name="TaxRecoverableAmount5Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto Recuperable 5</value>
+  </data>
+  <data name="TaxRepAllocatedAmount1Sum" xml:space="preserve">
+    <value>Suma Monto Asignado Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxRepAllocatedAmount2Sum" xml:space="preserve">
+    <value>Suma Monto Asignado Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxRepAllocatedAmount3Sum" xml:space="preserve">
+    <value>Suma Monto Asignado Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxRepAllocatedAmount4Sum" xml:space="preserve">
+    <value>Suma Monto Asignado Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxRepAllocatedAmount5Sum" xml:space="preserve">
+    <value>Suma Monto Asignado Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxRepExpenseAmount1Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto No Recuperable Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxRepExpenseAmount2Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto No Recuperable Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxRepExpenseAmount3Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto No Recuperable Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxRepExpenseAmount4Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto No Recuperable Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxRepExpenseAmount5Sum" xml:space="preserve">
+    <value>Suma Monto de Impuesto No Recuperable Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount" xml:space="preserve">
+    <value>Monto Asignado Moneda Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount1" xml:space="preserve">
+    <value>Monto Asignado Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount2" xml:space="preserve">
+    <value>Monto Asignado Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount3" xml:space="preserve">
+    <value>Monto Asignado Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount4" xml:space="preserve">
+    <value>Monto Asignado Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount5" xml:space="preserve">
+    <value>Monto Asignado Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxReportingAmount1" xml:space="preserve">
+    <value>Monto Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxReportingAmount1Sum" xml:space="preserve">
+    <value>Suma de Monto Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxReportingAmount2" xml:space="preserve">
+    <value>Monto Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxReportingAmount2Sum" xml:space="preserve">
+    <value>Suma de Monto Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxReportingAmount3" xml:space="preserve">
+    <value>Monto Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxReportingAmount3Sum" xml:space="preserve">
+    <value>Suma de Monto Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxReportingAmount4" xml:space="preserve">
+    <value>Monto Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxReportingAmount4Sum" xml:space="preserve">
+    <value>Suma de Monto Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxReportingAmount5" xml:space="preserve">
+    <value>Monto Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxReportingAmount5Sum" xml:space="preserve">
+    <value>Suma de Monto Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxReportingCurrency" xml:space="preserve">
+    <value>Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingCurrencyDesc" xml:space="preserve">
+    <value>Descripción de Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingDecimalPlaces" xml:space="preserve">
+    <value>Lugares Decimales Moneda Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingExchangeRate" xml:space="preserve">
+    <value>Tipo Cambio Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingExchRateExists" xml:space="preserve">
+    <value>Existe Tipo Cambio Moneda Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingExcluded1Sum" xml:space="preserve">
+    <value>Suma Impuesto Excluido Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxReportingExcluded2Sum" xml:space="preserve">
+    <value>Suma Impuesto Excluido Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxReportingExcluded3Sum" xml:space="preserve">
+    <value>Suma Impuesto Excluido Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxReportingExcluded4Sum" xml:space="preserve">
+    <value>Suma Impuesto Excluido Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxReportingExcluded5Sum" xml:space="preserve">
+    <value>Suma Impuesto Excluido Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxReportingExcludedAmount" xml:space="preserve">
+    <value>Monto Impuesto Excluido Moneda Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingExcludedAmount1" xml:space="preserve">
+    <value>Monto Impuesto Excluido Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxReportingExcludedAmount2" xml:space="preserve">
+    <value>Monto Impuesto Excluido Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxReportingExcludedAmount3" xml:space="preserve">
+    <value>Monto Impuesto Excluido Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxReportingExcludedAmount4" xml:space="preserve">
+    <value>Monto Impuesto Excluido Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxReportingExcludedAmount5" xml:space="preserve">
+    <value>Monto Impuesto Excluido Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxReportingExpenseAmount1" xml:space="preserve">
+    <value>Monto No Recuperable Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxReportingExpenseAmount2" xml:space="preserve">
+    <value>Monto No Recuperable Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxReportingExpenseAmount3" xml:space="preserve">
+    <value>Monto No Recuperable Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxReportingExpenseAmount4" xml:space="preserve">
+    <value>Monto No Recuperable Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxReportingExpenseAmount5" xml:space="preserve">
+    <value>Monto No Recuperable Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxReportingExpensedAmount" xml:space="preserve">
+    <value>Monto No Recuperable Moneda Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingIncluded1Sum" xml:space="preserve">
+    <value>Suma Impuesto Incluido Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxReportingIncluded2Sum" xml:space="preserve">
+    <value>Suma Impuesto Incluido Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxReportingIncluded3Sum" xml:space="preserve">
+    <value>Suma Impuesto Incluido Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxReportingIncluded4Sum" xml:space="preserve">
+    <value>Suma Impuesto Incluido Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxReportingIncluded5Sum" xml:space="preserve">
+    <value>Suma Impuesto Incluido Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxReportingIncludedAmount" xml:space="preserve">
+    <value>Monto Impuesto Incluido Moneda Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingIncludedAmount1" xml:space="preserve">
+    <value>Monto Impuesto Incluido Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxReportingIncludedAmount2" xml:space="preserve">
+    <value>Monto Impuesto Incluido Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxReportingIncludedAmount3" xml:space="preserve">
+    <value>Monto Impuesto Incluido Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxReportingIncludedAmount4" xml:space="preserve">
+    <value>Monto Impuesto Incluido Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxReportingIncludedAmount5" xml:space="preserve">
+    <value>Monto Impuesto Incluido Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxReportingRateDate" xml:space="preserve">
+    <value>Fecha Tasa Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingRateMatchType" xml:space="preserve">
+    <value>Tipo Conciliación de Tasa Moneda Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingRateOperation" xml:space="preserve">
+    <value>Operación Tasa Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingRateOverridden" xml:space="preserve">
+    <value>Tasa Sustituida Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingRateSpread" xml:space="preserve">
+    <value>Margen Tasa Moneda Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingRateType" xml:space="preserve">
+    <value>Tipo Tasa Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingRateTypeDesc" xml:space="preserve">
+    <value>Descr. Tasa Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingRecoverableAmount" xml:space="preserve">
+    <value>Monto Impuesto Recuperable Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxReportingRecoverableAmt1" xml:space="preserve">
+    <value>Monto Recuperable Moneda Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxReportingRecoverableAmt2" xml:space="preserve">
+    <value>Monto Recuperable Moneda Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxReportingRecoverableAmt3" xml:space="preserve">
+    <value>Monto Recuperable Moneda Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxReportingRecoverableAmt4" xml:space="preserve">
+    <value>Monto Recuperable Moneda Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxReportingRecoverableAmt5" xml:space="preserve">
+    <value>Monto Recuperable Moneda Reporte Fiscal 5</value>
+  </data>
+  <data name="TaxReportingTotalAmount" xml:space="preserve">
+    <value>Monto Total Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="TaxRepRecoverableAmt1Sum" xml:space="preserve">
+    <value>Suma Monto Recuperable Moneda de Reporte Fiscal 1</value>
+  </data>
+  <data name="TaxRepRecoverableAmt2Sum" xml:space="preserve">
+    <value>Suma Monto Recuperable Moneda de Reporte Fiscal 2</value>
+  </data>
+  <data name="TaxRepRecoverableAmt3Sum" xml:space="preserve">
+    <value>Suma Monto Recuperable Moneda de Reporte Fiscal 3</value>
+  </data>
+  <data name="TaxRepRecoverableAmt4Sum" xml:space="preserve">
+    <value>Suma Monto Recuperable Moneda de Reporte Fiscal 4</value>
+  </data>
+  <data name="TaxRepRecoverableAmt5Sum" xml:space="preserve">
+    <value>Suma Monto Recuperable Moneda de Reporte Fiscal 5</value>
+  </data>
+  <data name="TermsCodeDescription" xml:space="preserve">
+    <value>Descripción Código de Condiciones</value>
+    <comment>Order - Field</comment>
+  </data>
+  <data name="TotalCTaxAllocated" xml:space="preserve">
+    <value>Impuesto Clase Total Asignado</value>
+  </data>
+  <data name="TotalTaxExpensed" xml:space="preserve">
+    <value>Impuesto Total No Recuperable</value>
+  </data>
+  <data name="TotalTaxRecoverable" xml:space="preserve">
+    <value>Impuesto Total Recuperable</value>
+  </data>
+  <data name="TotalUnbalancedAllocatedTax" xml:space="preserve">
+    <value>Impuesto Asignado Desequilibrado Total</value>
+  </data>
+  <data name="TotalUnbalancedTax" xml:space="preserve">
+    <value>Impuesto Desequilibrado Total</value>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Tipo de Transacción</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="ValueDesc" xml:space="preserve">
+    <value>Descripción de Valor</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valor Fijado</value>
+    <comment>Optional - Table Column</comment>
+  </data>
+  <data name="VendorAccountDesc" xml:space="preserve">
+    <value>Descripción de Cuenta Proveedor</value>
+    <comment>Credit - Field</comment>
+  </data>
+  <data name="VendorDesc" xml:space="preserve">
+    <value>Descripción Proveedor</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VendorExists" xml:space="preserve">
+    <value>Proveedor Existente</value>
+  </data>
+  <data name="ZeroAllocationBase" xml:space="preserve">
+    <value>No hubo asignación porque la base de asignación total es cero o negativa. Debe asignar el costo manualmente.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="BillToAddress1" xml:space="preserve">
+    <value>Dirección a Facturar 1</value>
+  </data>
+  <data name="BillToAddress2" xml:space="preserve">
+    <value>Dirección a Facturar 2</value>
+  </data>
+  <data name="BillToAddress3" xml:space="preserve">
+    <value>Dirección a Facturar 3</value>
+  </data>
+  <data name="BillToAddress4" xml:space="preserve">
+    <value>Dirección a Facturar 4</value>
+  </data>
+  <data name="BillToCity" xml:space="preserve">
+    <value>Ciudad (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToContact" xml:space="preserve">
+    <value>Contacto (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToContactEmail" xml:space="preserve">
+    <value>Correo-E del Contacto (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToContactFax" xml:space="preserve">
+    <value>Fax del Contacto (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToContactPhone" xml:space="preserve">
+    <value>Teléfono del Contacto (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToCountry" xml:space="preserve">
+    <value>País (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToEmail" xml:space="preserve">
+    <value>Correo-E del Contacto (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToFaxNumber" xml:space="preserve">
+    <value>Fax (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToLocationDescription" xml:space="preserve">
+    <value>Descripción Dirección de Facturación</value>
+  </data>
+  <data name="BillToPhoneNumber" xml:space="preserve">
+    <value>Teléfono (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToStateProvince" xml:space="preserve">
+    <value>Estado/Provincia (Dirección de Facturación)</value>
+  </data>
+  <data name="BillToZipPostalCode" xml:space="preserve">
+    <value>Código Postal (Dirección de Facturación)</value>
+  </data>
+  <data name="ConversionFunctionalAmount" xml:space="preserve">
+    <value>Monto Funcional de Conversión</value>
+  </data>
+  <data name="ConversionSourceAmount" xml:space="preserve">
+    <value>Monto de Origen de Conversión</value>
+  </data>
+  <data name="ExchangeRateExists" xml:space="preserve">
+    <value>Existe Tipo Cambio</value>
+  </data>
+  <data name="ExcludedTaxAmount1" xml:space="preserve">
+    <value>Monto de Impuesto Excluido 1</value>
+  </data>
+  <data name="ExcludedTaxAmount2" xml:space="preserve">
+    <value>Monto de Impuesto Excluido 2</value>
+  </data>
+  <data name="ExcludedTaxAmount3" xml:space="preserve">
+    <value>Monto de Impuesto Excluido 3</value>
+  </data>
+  <data name="ExcludedTaxAmount4" xml:space="preserve">
+    <value>Monto de Impuesto Excluido 4</value>
+  </data>
+  <data name="ExcludedTaxAmount5" xml:space="preserve">
+    <value>Monto de Impuesto Excluido 5</value>
+  </data>
+  <data name="HasDetails" xml:space="preserve">
+    <value>Tiene Detalles</value>
+  </data>
+  <data name="IncludedTaxAmount1" xml:space="preserve">
+    <value>Monto de Impuesto Incluido 1</value>
+  </data>
+  <data name="IncludedTaxAmount2" xml:space="preserve">
+    <value>Monto de Impuesto Incluido 2</value>
+  </data>
+  <data name="IncludedTaxAmount3" xml:space="preserve">
+    <value>Monto de Impuesto Incluido 3</value>
+  </data>
+  <data name="IncludedTaxAmount4" xml:space="preserve">
+    <value>Monto de Impuesto Incluido 4</value>
+  </data>
+  <data name="IncludedTaxAmount5" xml:space="preserve">
+    <value>Monto de Impuesto Incluido 5</value>
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>Relacionado con el Trabajo</value>
+  </data>
+  <data name="JobRelatedLines" xml:space="preserve">
+    <value>Líneas Relacionadas con el Trabajo</value>
+  </data>
+  <data name="ManualProrationTotal" xml:space="preserve">
+    <value>Total de Prorrateo Manual</value>
+  </data>
+  <data name="ManualToProrate" xml:space="preserve">
+    <value>Prorrateo Manual A</value>
+  </data>
+  <data name="NetExtendedCost" xml:space="preserve">
+    <value>Costo Global Neto</value>
+  </data>
+  <data name="NetOfTaxSum" xml:space="preserve">
+    <value>Suma Neto de Impuestos</value>
+  </data>
+  <data name="NextDetailNumber" xml:space="preserve">
+    <value>Número de Detalle Siguiente</value>
+  </data>
+  <data name="NextLineSequence1" xml:space="preserve">
+    <value>Secuencia de Línea Siguiente</value>
+  </data>
+  <data name="Num1099CPRSClass" xml:space="preserve">
+    <value>Clase 1099/CPRS</value>
+  </data>
+  <data name="RemitToAddress1" xml:space="preserve">
+    <value>Dirección de Pago 1</value>
+  </data>
+  <data name="RemitToAddress2" xml:space="preserve">
+    <value>Dirección de Pago 2</value>
+  </data>
+  <data name="RemitToAddress3" xml:space="preserve">
+    <value>Dirección de Pago 3</value>
+  </data>
+  <data name="RemitToAddress4" xml:space="preserve">
+    <value>Dirección de Pago 4</value>
+  </data>
+  <data name="RemitToLocationDescription" xml:space="preserve">
+    <value>Descripción Dirección de Pago</value>
+  </data>
+  <data name="RemoveOptionalFields" xml:space="preserve">
+    <value>Quitar Campos Opcionales</value>
+  </data>
+  <data name="RequisitionsCompleted" xml:space="preserve">
+    <value>Solicitudes Completas</value>
+  </data>
+  <data name="RequisitionSequenceKey" xml:space="preserve">
+    <value>Clave de Secuencia de Solicitud</value>
+  </data>
+  <data name="RetainageAmount" xml:space="preserve">
+    <value>Monto de Retención</value>
+  </data>
+  <data name="RetainageBase" xml:space="preserve">
+    <value>Base de Retención</value>
+  </data>
+  <data name="RetainageExchangeRate" xml:space="preserve">
+    <value>Tipo Cambio de Retención</value>
+  </data>
+  <data name="RetainagePercentage1" xml:space="preserve">
+    <value>Porcentaje de Retención</value>
+  </data>
+  <data name="RetainagePeriod" xml:space="preserve">
+    <value>Período de Retención</value>
+    <comment>Additional - Table Column</comment>
+  </data>
+  <data name="RetainageTaxAllocatedAmount1" xml:space="preserve">
+    <value>Monto Impuesto de Retención Asignado 1</value>
+  </data>
+  <data name="RetainageTaxAllocatedAmount2" xml:space="preserve">
+    <value>Monto Impuesto de Retención Asignado 2</value>
+  </data>
+  <data name="RetainageTaxAllocatedAmount3" xml:space="preserve">
+    <value>Monto Impuesto de Retención Asignado 3</value>
+  </data>
+  <data name="RetainageTaxAllocatedAmount4" xml:space="preserve">
+    <value>Monto Impuesto de Retención Asignado 4</value>
+  </data>
+  <data name="RetainageTaxAllocatedAmount5" xml:space="preserve">
+    <value>Monto Impuesto de Retención Asignado 5</value>
+  </data>
+  <data name="RetainageTaxAmount1" xml:space="preserve">
+    <value>Monto Impuesto de Retención 1</value>
+  </data>
+  <data name="RetainageTaxAmount1Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención 1</value>
+  </data>
+  <data name="RetainageTaxAmount2" xml:space="preserve">
+    <value>Monto Impuesto de Retención 2</value>
+  </data>
+  <data name="RetainageTaxAmount2Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención 2</value>
+  </data>
+  <data name="RetainageTaxAmount3" xml:space="preserve">
+    <value>Monto Impuesto de Retención 3</value>
+  </data>
+  <data name="RetainageTaxAmount3Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención 3</value>
+  </data>
+  <data name="RetainageTaxAmount4" xml:space="preserve">
+    <value>Monto Impuesto de Retención 4</value>
+  </data>
+  <data name="RetainageTaxAmount4Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención 4</value>
+  </data>
+  <data name="RetainageTaxAmount5" xml:space="preserve">
+    <value>Monto Impuesto de Retención 5</value>
+  </data>
+  <data name="RetainageTaxAmount5Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención 5</value>
+  </data>
+  <data name="RetainageTaxBase1" xml:space="preserve">
+    <value>Base Impuesto de Retención 1</value>
+  </data>
+  <data name="RetainageTaxBase1Sum" xml:space="preserve">
+    <value>Suma Base Impuesto de Retención 1</value>
+  </data>
+  <data name="RetainageTaxBase2" xml:space="preserve">
+    <value>Base Impuesto de Retención 2</value>
+  </data>
+  <data name="RetainageTaxBase2Sum" xml:space="preserve">
+    <value>Suma Base Impuesto de Retención 2</value>
+  </data>
+  <data name="RetainageTaxBase3" xml:space="preserve">
+    <value>Base Impuesto de Retención 3</value>
+  </data>
+  <data name="RetainageTaxBase3Sum" xml:space="preserve">
+    <value>Suma Base Impuesto de Retención 3</value>
+  </data>
+  <data name="RetainageTaxBase4" xml:space="preserve">
+    <value>Base Impuesto de Retención 4</value>
+  </data>
+  <data name="RetainageTaxBase4Sum" xml:space="preserve">
+    <value>Suma Base Impuesto de Retención 4</value>
+  </data>
+  <data name="RetainageTaxBase5" xml:space="preserve">
+    <value>Base Impuesto de Retención 5</value>
+  </data>
+  <data name="RetainageTaxBase5Sum" xml:space="preserve">
+    <value>Suma Base Impuesto de Retención 5</value>
+  </data>
+  <data name="RetainageTaxExpenseAmount1" xml:space="preserve">
+    <value>Monto Impuesto de Retención No Recuperable 1</value>
+  </data>
+  <data name="RetainageTaxExpenseAmount2" xml:space="preserve">
+    <value>Monto Impuesto de Retención No Recuperable 2</value>
+  </data>
+  <data name="RetainageTaxExpenseAmount3" xml:space="preserve">
+    <value>Monto Impuesto de Retención No Recuperable 3</value>
+  </data>
+  <data name="RetainageTaxExpenseAmount4" xml:space="preserve">
+    <value>Monto Impuesto de Retención No Recuperable 4</value>
+  </data>
+  <data name="RetainageTaxExpenseAmount5" xml:space="preserve">
+    <value>Monto Impuesto de Retención No Recuperable 5</value>
+  </data>
+  <data name="RetainageTaxRecoverableAmt1" xml:space="preserve">
+    <value>Monto Impuesto de Retención Recuperable 1</value>
+  </data>
+  <data name="RetainageTaxRecoverableAmt2" xml:space="preserve">
+    <value>Monto Impuesto de Retención Recuperable 2</value>
+  </data>
+  <data name="RetainageTaxRecoverableAmt3" xml:space="preserve">
+    <value>Monto Impuesto de Retención Recuperable 3</value>
+  </data>
+  <data name="RetainageTaxRecoverableAmt4" xml:space="preserve">
+    <value>Monto Impuesto de Retención Recuperable 4</value>
+  </data>
+  <data name="RetainageTaxRecoverableAmt5" xml:space="preserve">
+    <value>Monto Impuesto de Retención Recuperable 5</value>
+  </data>
+  <data name="RetainageTaxTotalAmount" xml:space="preserve">
+    <value>Monto Impuesto de Retención Total</value>
+  </data>
+  <data name="RetainageTermsCode" xml:space="preserve">
+    <value>Código Condiciones de Retención</value>
+  </data>
+  <data name="RetainageTermsCodeDescription" xml:space="preserve">
+    <value>Descripción Código de Condiciones de Retención</value>
+  </data>
+  <data name="ReturnAccount" xml:space="preserve">
+    <value>Cuenta de Devolución</value>
+  </data>
+  <data name="RtgTaxAllocatedAmount1Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención Asignado 1</value>
+  </data>
+  <data name="RtgTaxAllocatedAmount2Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención Asignado 2</value>
+  </data>
+  <data name="RtgTaxAllocatedAmount3Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención Asignado 3</value>
+  </data>
+  <data name="RtgTaxAllocatedAmount4Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención Asignado 4</value>
+  </data>
+  <data name="RtgTaxAllocatedAmount5Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención Asignado 5</value>
+  </data>
+  <data name="RtgTaxExpenseAmount1Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención No Recuperable 1</value>
+  </data>
+  <data name="RtgTaxExpenseAmount2Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención No Recuperable 2</value>
+  </data>
+  <data name="RtgTaxExpenseAmount3Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención No Recuperable 3</value>
+  </data>
+  <data name="RtgTaxExpenseAmount4Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención No Recuperable 4</value>
+  </data>
+  <data name="RtgTaxExpenseAmount5Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención No Recuperable 5</value>
+  </data>
+  <data name="RtgTaxRecoverableAmt1Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención Recuperable 1</value>
+  </data>
+  <data name="RtgTaxRecoverableAmt2Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención Recuperable 2</value>
+  </data>
+  <data name="RtgTaxRecoverableAmt3Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención Recuperable 3</value>
+  </data>
+  <data name="RtgTaxRecoverableAmt4Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención Recuperable 4</value>
+  </data>
+  <data name="RtgTaxRecoverableAmt5Sum" xml:space="preserve">
+    <value>Suma Monto Impuesto de Retención Recuperable 5</value>
+  </data>
+  <data name="SerialCount" xml:space="preserve">
+    <value>Conteo de Números de Serie</value>
+  </data>
+  <data name="SerialLotQuantityToProcess" xml:space="preserve">
+    <value>Cantidad de N° Lote/Serie a Procesar</value>
+  </data>
+  <data name="SerialLotWindowHandle" xml:space="preserve">
+    <value>Identificador de Ventana – N° Serie/Lote</value>
+  </data>
+  <data name="SerialQuantity" xml:space="preserve">
+    <value>Cantidad de N° Serie</value>
+  </data>
+  <data name="ShipToAddress1" xml:space="preserve">
+    <value>Dirección de Envío 1</value>
+  </data>
+  <data name="ShipToAddress11" xml:space="preserve">
+    <value>Dirección 1</value>
+  </data>
+  <data name="ShipToAddress2" xml:space="preserve">
+    <value>Dirección de Envío 2</value>
+  </data>
+  <data name="ShipToAddress21" xml:space="preserve">
+    <value>Dirección 2</value>
+  </data>
+  <data name="ShipToAddress3" xml:space="preserve">
+    <value>Dirección de Envío 3</value>
+  </data>
+  <data name="ShipToAddress31" xml:space="preserve">
+    <value>Dirección 3</value>
+  </data>
+  <data name="ShipToAddress4" xml:space="preserve">
+    <value>Dirección de Envío 4</value>
+  </data>
+  <data name="ShipToAddress41" xml:space="preserve">
+    <value>Dirección 4</value>
+  </data>
+  <data name="ShipToCity" xml:space="preserve">
+    <value>Ciudad (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToCity1" xml:space="preserve">
+    <value>Ciudad</value>
+  </data>
+  <data name="ShipToContact" xml:space="preserve">
+    <value>Contacto (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToContact1" xml:space="preserve">
+    <value>Contacto</value>
+  </data>
+  <data name="ShipToContactEmail" xml:space="preserve">
+    <value>Correo-E de Contacto (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToContactEmail1" xml:space="preserve">
+    <value>Correo-E de Contacto</value>
+  </data>
+  <data name="ShipToContactFax" xml:space="preserve">
+    <value>Fax de Contacto (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToContactFax1" xml:space="preserve">
+    <value>Fax de Contacto</value>
+  </data>
+  <data name="ShipToContactPhone" xml:space="preserve">
+    <value>Teléfono de Contacto (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToContactPhone1" xml:space="preserve">
+    <value>Teléfono de Contacto</value>
+  </data>
+  <data name="ShipToCountry" xml:space="preserve">
+    <value>País (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToCountry1" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="ShipToDescription" xml:space="preserve">
+    <value>Descripción de Envío</value>
+    <comment>Order - Field</comment>
+  </data>
+  <data name="ShipToEmail" xml:space="preserve">
+    <value>Correo-E (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToEmail1" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="ShipToFaxNumber" xml:space="preserve">
+    <value>Fax (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToFaxNumber1" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="ShipToLocation" xml:space="preserve">
+    <value>Dirección de Envío</value>
+  </data>
+  <data name="ShipToLocationDescription" xml:space="preserve">
+    <value>Descripción Dirección de Envío</value>
+  </data>
+  <data name="ShipToLocationDescription1" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="ShipToPhoneNumber" xml:space="preserve">
+    <value>Teléfono (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToPhoneNumber1" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="ShipToStateProvince" xml:space="preserve">
+    <value>Estado/Provincia (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToStateProvince1" xml:space="preserve">
+    <value>Estado/Provincia</value>
+  </data>
+  <data name="ShipToZipPostalCode" xml:space="preserve">
+    <value>Código Postal (Dirección de Envío)</value>
+  </data>
+  <data name="ShipToZipPostalCode1" xml:space="preserve">
+    <value>Código Postal</value>
+  </data>
+  <data name="ShipViaDesc" xml:space="preserve">
+    <value>Descripción de Vía de Envío</value>
+    <comment>Receipt - Field</comment>
+  </data>
+  <data name="ShipViaName" xml:space="preserve">
+    <value>Nombre de Vía de Envío</value>
+  </data>
+  <data name="The1099CPRSAmount" xml:space="preserve">
+    <value>Monto 1099/CPRS</value>
+  </data>
+  <data name="Command" xml:space="preserve">
+    <value>Comando</value>
+  </data>
+  <data name="CreditDebitNoteTotal" xml:space="preserve">
+    <value>Total de Nota de Crédito/Débito</value>
+  </data>
+  <data name="CurrencyDescription" xml:space="preserve">
+    <value>Descripción Moneda</value>
+  </data>
+  <data name="DerivedTaxReportingExchRate" xml:space="preserve">
+    <value>Derivar Tipo de Cambio de Moneda de Reporte Fiscal</value>
+  </data>
+  <data name="DiscountAmountSum" xml:space="preserve">
+    <value>Suma de Montos de Descuento</value>
+  </data>
+  <data name="DiscountPercentage" xml:space="preserve">
+    <value>Porcentaje de Descuento</value>
+  </data>
+  <data name="DocumentLocked" xml:space="preserve">
+    <value>Documento Bloqueado</value>
+  </data>
+  <data name="HasRetainage" xml:space="preserve">
+    <value>Tiene Retención</value>
+  </data>
+  <data name="IsDocumentDeletable" xml:space="preserve">
+    <value>¿Se puede eliminar el documento?</value>
+  </data>
+  <data name="JobRelatedCosts" xml:space="preserve">
+    <value>Costos Relacionados con el Trabajo</value>
+  </data>
+  <data name="NetOfTax" xml:space="preserve">
+    <value>Neto de Impuestos</value>
+  </data>
+  <data name="NumberOfCostGroups" xml:space="preserve">
+    <value>Número de Grupos de Costo</value>
+  </data>
+  <data name="PredecessorsExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio del Antecesor</value>
+  </data>
+  <data name="PredecessorsRateDate" xml:space="preserve">
+    <value>Fecha de Tasa del Antecesor</value>
+  </data>
+  <data name="PredecessorsRateOperation" xml:space="preserve">
+    <value>Tasa de Operación del Antecesor</value>
+  </data>
+  <data name="PredecessorsRateOverridden" xml:space="preserve">
+    <value>Tasa del Antecesor Sustituida</value>
+  </data>
+  <data name="PredecessorsRateType" xml:space="preserve">
+    <value>Tipo de Tasa del Antecesor</value>
+  </data>
+  <data name="PredecessorsRateTypeDescript" xml:space="preserve">
+    <value>Descripción del Tipo de Tasa del Antecesor</value>
+  </data>
+  <data name="PredTaxReportingExchRate" xml:space="preserve">
+    <value>Tipo Cambio del Antecesor Moneda Reporte Fiscal</value>
+  </data>
+  <data name="PredTaxReportingRateDate" xml:space="preserve">
+    <value>Fecha Tasa del Antecesor Moneda Reporte Fiscal</value>
+  </data>
+  <data name="PredTaxReportingRateOper" xml:space="preserve">
+    <value>Tasa Operación del Antecesor Moneda Reporte Fiscal</value>
+  </data>
+  <data name="PredTaxReportingRateOverrd" xml:space="preserve">
+    <value>Tasa del Antecesor Sustituida Moneda Reporte Fiscal</value>
+  </data>
+  <data name="PredTaxReportingRateType" xml:space="preserve">
+    <value>Tipo de Tasa del Antecesor Moneda Reporte Fiscal</value>
+  </data>
+  <data name="PredTaxRepRateTypeDesc" xml:space="preserve">
+    <value>Descripción Tipo de Tasa del Antecesor Moneda Reporte Fiscal</value>
+  </data>
+  <data name="ProrationVersion" xml:space="preserve">
+    <value>Versión de Prorrateo</value>
+  </data>
+  <data name="RateTypeDescription" xml:space="preserve">
+    <value>Descripción Tipo de Tasa</value>
+  </data>
+  <data name="RemitToCity" xml:space="preserve">
+    <value>Ciudad (Dirección de Pago)</value>
+  </data>
+  <data name="RemitToContact" xml:space="preserve">
+    <value>Contacto (Dirección de Pago)</value>
+  </data>
+  <data name="RemitToContactEmail" xml:space="preserve">
+    <value>Correo-E del Contacto (Dirección de Pago)</value>
+  </data>
+  <data name="RemitToContactFax" xml:space="preserve">
+    <value>Fax del Contacto (Dirección de Pago)</value>
+  </data>
+  <data name="RemitToContactPhone" xml:space="preserve">
+    <value>Teléfono del Contacto (Dirección de Pago)</value>
+  </data>
+  <data name="RemitToCountry" xml:space="preserve">
+    <value>País (Dirección de Pago)</value>
+  </data>
+  <data name="RemitToEmail" xml:space="preserve">
+    <value>Correo-E (Dirección de Pago)</value>
+  </data>
+  <data name="RemitToFaxNumber" xml:space="preserve">
+    <value>Fax (Dirección de Pago)</value>
+  </data>
+  <data name="RemitToPhoneNumber" xml:space="preserve">
+    <value>Teléfono (Dirección de Pago)</value>
+  </data>
+  <data name="RemitToStateProvince" xml:space="preserve">
+    <value>Estado/Provincia (Dirección de Pago)</value>
+  </data>
+  <data name="RemitToZipPostalCode" xml:space="preserve">
+    <value>Código Postal (Dirección de Pago)</value>
+  </data>
+  <data name="ReportRetainageTax" xml:space="preserve">
+    <value>Reportar Impuestos de Retención</value>
+  </data>
+  <data name="SubjectTo1099CPRSReporting" xml:space="preserve">
+    <value>Sujeto a Reporte 1099/CPRS</value>
+  </data>
+  <data name="TaxAmountPlusRtgTaxAmt1" xml:space="preserve">
+    <value>Monto Impuesto Más Monto Impuestos de Retención 1</value>
+  </data>
+  <data name="TaxAmountPlusRtgTaxAmt2" xml:space="preserve">
+    <value>Monto Impuesto Más Monto Impuestos de Retención 2</value>
+  </data>
+  <data name="TaxAmountPlusRtgTaxAmt3" xml:space="preserve">
+    <value>Monto Impuesto Más Monto Impuestos de Retención 3</value>
+  </data>
+  <data name="TaxAmountPlusRtgTaxAmt4" xml:space="preserve">
+    <value>Monto Impuesto Más Monto Impuestos de Retención 4</value>
+  </data>
+  <data name="TaxAmountPlusRtgTaxAmt5" xml:space="preserve">
+    <value>Monto Impuesto Más Monto Impuestos de Retención 5</value>
+  </data>
+  <data name="TaxcalculationIspending" xml:space="preserve">
+    <value>El cálculo de impuestos está pendiente.</value>
+  </data>
+  <data name="TaxcalculationIspending1" xml:space="preserve">
+    <value>El cálculo de impuestos está pendiente.</value>
+  </data>
+  <data name="TaxStateVersion" xml:space="preserve">
+    <value>Versión Estado Fiscal</value>
+  </data>
+  <data name="UnbalancedManualProrationAmou" xml:space="preserve">
+    <value>Monto de Prorrateo Manual Desequilibrado</value>
+  </data>
+  <data name="UnretainedTotal" xml:space="preserve">
+    <value>Total No Retenido</value>
+  </data>
+  <data name="WarnOnRetainageTaxShift" xml:space="preserve">
+    <value>Advertir Cambio de Impuesto de Retención</value>
+  </data>
+  <data name="CreditDebitNotes" xml:space="preserve">
+    <value>Nota de Crédito/Débito</value>
+  </data>
+  <data name="CrDetSubTotal" xml:space="preserve">
+    <value>Subtotal de Detalle de Nota de Crédito</value>
+  </data>
+  <data name="DbSubTotal" xml:space="preserve">
+    <value>Subtotal de Nota de Débito</value>
+  </data>
+  <data name="LessCreditNoteDiscount" xml:space="preserve">
+    <value>Menos Descuento de Nota de Crédito</value>
+  </data>
+  <data name="CreditPostCompleted" xml:space="preserve">
+    <value>Asentamiento concluido.  Número Nota de Crédito &quot;{0}&quot;</value>
+  </data>
+  <data name="DebitPostCompleted" xml:space="preserve">
+    <value>Asentamiento concluido.  Número Nota de Débito &quot;{0}&quot;</value>
+    <comment>Message</comment>
+  </data>
+  <data name="Function" xml:space="preserve">
+    <value>Función</value>
+  </data>
+  <data name="NumberOfDuplicates" xml:space="preserve">
+    <value>Cantidad de Duplicaciones</value>
+  </data>
+  <data name="RequireNewEntry" xml:space="preserve">
+    <value>Solicitar Asiento Nuevo</value>
+  </data>
+  <data name="CreditDebitNote" xml:space="preserve">
+    <value>Nota de Crédito/Débito</value>
+  </data>
+  <data name="PO0309" xml:space="preserve">
+    <value>Comentarios de Nota de Débito/Crédito</value>
+  </data>
+  <data name="PO0311" xml:space="preserve">
+    <value>Notas de Débito/Crédito</value>
+  </data>
+  <data name="PO0314" xml:space="preserve">
+    <value>Campos Opc. de NC/ND</value>
+  </data>
+  <data name="PO0315" xml:space="preserve">
+    <value>Líneas de Nota de Crédito Débito</value>
+  </data>
+  <data name="PO0318" xml:space="preserve">
+    <value>Campos Opc. de Línea de NC/ND</value>
+  </data>
+  <data name="PO0320" xml:space="preserve">
+    <value>Costos Adicionales de NC/ND</value>
+  </data>
+  <data name="PO0323" xml:space="preserve">
+    <value>Campos Opc. de Ctos. Adic. de NC/ND</value>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Admitir en Blanco</value>
+  </data>
+  <data name="AmountDistributionSum" xml:space="preserve">
+    <value>Suma de Distribución de Monto</value>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Valor Monto</value>
+  </data>
+  <data name="ApplyToReceiptNumber" xml:space="preserve">
+    <value>Aplicar a Número de Recibo</value>
+  </data>
+  <data name="ApplyToReceiptSequenceKey" xml:space="preserve">
+    <value>Aplicar a Clave de Secuencia de Recibo</value>
+  </data>
+  <data name="BillingRateConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión de Tasa de Facturación</value>
+  </data>
+  <data name="BillingRateDistributionSum" xml:space="preserve">
+    <value>Suma de Distribución de Tasa de Facturación</value>
+  </data>
+  <data name="CommentIdentifier" xml:space="preserve">
+    <value>Identificador de Comentarios</value>
+  </data>
+  <data name="CompletionStatus" xml:space="preserve">
+    <value>Estado de Culminación</value>
+  </data>
+  <data name="CostDistribution" xml:space="preserve">
+    <value>Distribución de Costo</value>
+  </data>
+  <data name="CostDistributions" xml:space="preserve">
+    <value>Distribuciones de Costo</value>
+  </data>
+  <data name="CrdrNoteAddCostOptFields" xml:space="preserve">
+    <value>Campos Opcionales de Costo Adicional de Nota de NC/ND</value>
+  </data>
+  <data name="CrdrNoteCommentSequence" xml:space="preserve">
+    <value>Sec. de Comentario de Nota CR/DR</value>
+  </data>
+  <data name="CrdrNoteLineOptionalFields" xml:space="preserve">
+    <value>Campos Opcionales de Línea de NC/ND</value>
+  </data>
+  <data name="CreditDebitNoteComments" xml:space="preserve">
+    <value>Comentarios de Nota de Débito/Crédito</value>
+  </data>
+  <data name="CreditDebitNoteCostSequence" xml:space="preserve">
+    <value>Secuencia de Costo de Nota de Débito/Crédito</value>
+  </data>
+  <data name="CreditDebitNoteLineSequence" xml:space="preserve">
+    <value>Secuencia de Línea de Nota de Débito/Crédito</value>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Valor Fecha</value>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimales</value>
+  </data>
+  <data name="DefaultExtendedWeight" xml:space="preserve">
+    <value>Peso Total Predeterminado</value>
+  </data>
+  <data name="DefaultUnitWeight" xml:space="preserve">
+    <value>Peso Unitario Predeterminado</value>
+  </data>
+  <data name="DefaultValueDescription" xml:space="preserve">
+    <value>Descripción de Valor Predeterminado</value>
+  </data>
+  <data name="DetailNumber" xml:space="preserve">
+    <value>Número de Detalle</value>
+  </data>
+  <data name="DistributeProrationString" xml:space="preserve">
+    <value>Distribuir Prorrateo</value>
+  </data>
+  <data name="ExpenseAccountDescription" xml:space="preserve">
+    <value>Descripción de Cuenta de Gastos</value>
+  </data>
+  <data name="ExtendedBillingAmount" xml:space="preserve">
+    <value>Monto de Facturación Total</value>
+  </data>
+  <data name="ExtendedCost1InSrcCurr" xml:space="preserve">
+    <value>Costo Total 1 en Moneda Original</value>
+  </data>
+  <data name="ExtendedCost2InSrcCurr" xml:space="preserve">
+    <value>Costo Total 2 en Moneda Original</value>
+  </data>
+  <data name="ExtendedMrCostInSrcCurr" xml:space="preserve">
+    <value>Costo MR Ampliado en Moneda Original</value>
+  </data>
+  <data name="ExtendedStdCostInSrcCurr" xml:space="preserve">
+    <value>Costo Est. Ampliado en Moneda Original</value>
+  </data>
+  <data name="ExtraneousCostDistribution" xml:space="preserve">
+    <value>Distribución de Costo Extraña</value>
+  </data>
+  <data name="ExtraneousCostDistributions" xml:space="preserve">
+    <value>Distribuciones de Costo Extrañas</value>
+  </data>
+  <data name="FuncDiscountAmount" xml:space="preserve">
+    <value>Mto de Descuento</value>
+  </data>
+  <data name="FuncExtendedAmount" xml:space="preserve">
+    <value>Monto Total</value>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Valor Entero</value>
+  </data>
+  <data name="InvoiceCostGroupSequence" xml:space="preserve">
+    <value>Sec. de Grupo Costo de Factura</value>
+  </data>
+  <data name="InvoiceCostSequence" xml:space="preserve">
+    <value>Secuencia de Costo de Factura</value>
+  </data>
+  <data name="InvoiceLineSequence" xml:space="preserve">
+    <value>Secuencia de Línea de Factura</value>
+  </data>
+  <data name="ItemExists" xml:space="preserve">
+    <value>Artículo Existente</value>
+  </data>
+  <data name="ItemSerializedLotted" xml:space="preserve">
+    <value>¿Artículo Serializado/Designado?</value>
+  </data>
+  <data name="JobRelatedCost" xml:space="preserve">
+    <value>Costo Relacionado con el Trabajo</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Longitud</value>
+  </data>
+  <data name="Line" xml:space="preserve">
+    <value>Línea</value>
+  </data>
+  <data name="LineSequence" xml:space="preserve">
+    <value>Secuencia de Línea</value>
+  </data>
+  <data name="LineType" xml:space="preserve">
+    <value>Tipo de Línea</value>
+  </data>
+  <data name="LotQuantity" xml:space="preserve">
+    <value>Cantidad N° Lote</value>
+  </data>
+  <data name="ManualCostDistribution" xml:space="preserve">
+    <value>Distribución de Costo Manual</value>
+  </data>
+  <data name="ManualCostDistributions" xml:space="preserve">
+    <value>Distribuciones de Costo Manual</value>
+  </data>
+  <data name="ManualProration" xml:space="preserve">
+    <value>Prorrateo Manual</value>
+  </data>
+  <data name="NonStockClearingAccountDesc" xml:space="preserve">
+    <value>Cuenta No Almacenables a Compensar</value>
+  </data>
+  <data name="NumberOfLotsToGenerate" xml:space="preserve">
+    <value>Cantidad de N° de Lote a Generar</value>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Valor Número</value>
+  </data>
+  <data name="OptionalFieldString" xml:space="preserve">
+    <value>Campo Opcional</value>
+  </data>
+  <data name="PredecessorTimestamp" xml:space="preserve">
+    <value>Sello de Tiempo del Antecesor</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Proyecto</value>
+  </data>
+  <data name="ProjectStyle" xml:space="preserve">
+    <value>Estilo de Proyecto</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>Tipo de Proyecto</value>
+  </data>
+  <data name="ProrationMethodList" xml:space="preserve">
+    <value>Lista de Método de Prorrateo</value>
+  </data>
+  <data name="PurchaseOrderLineSequence" xml:space="preserve">
+    <value>Secuencia de Línea de Orden de Compra</value>
+  </data>
+  <data name="QuantityperLot" xml:space="preserve">
+    <value>Cantidad por Lote</value>
+  </data>
+  <data name="ReceiptCostSequence" xml:space="preserve">
+    <value>Secuencia de Costo de Recibo</value>
+  </data>
+  <data name="ReceiptLineSequence" xml:space="preserve">
+    <value>Secuencia de Línea de Recibo</value>
+  </data>
+  <data name="RetainageAmountOverridden" xml:space="preserve">
+    <value>Monto de Retención Sustituido</value>
+  </data>
+  <data name="RetainageDueDateOverridden" xml:space="preserve">
+    <value>Plazo de Retención Sustituido</value>
+  </data>
+  <data name="ReturnExpenseAccountDesc" xml:space="preserve">
+    <value>Descripción de Cuenta de Gasto de Devolución</value>
+  </data>
+  <data name="ReturningConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión de Devolución</value>
+  </data>
+  <data name="ReturningUnitDecimals" xml:space="preserve">
+    <value>Decimales de la Unidad de Devolución</value>
+  </data>
+  <data name="ReturnLineSequence" xml:space="preserve">
+    <value>Secuencia de Línea de Devolución</value>
+  </data>
+  <data name="SequenceToRetrieve" xml:space="preserve">
+    <value>Secuencia a Recuperar</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Número de Serie</value>
+  </data>
+  <data name="StockItem" xml:space="preserve">
+    <value>Artículo en Almacén</value>
+  </data>
+  <data name="StockUnitDecimals" xml:space="preserve">
+    <value>Decimales de la Unidad de Inventario</value>
+  </data>
+  <data name="StoredInDatabaseTable" xml:space="preserve">
+    <value>Guardado en Tabla de Base de Datos</value>
+  </data>
+  <data name="TaxIncludable1" xml:space="preserve">
+    <value>Impuesto Incluible 1</value>
+  </data>
+  <data name="TaxIncludable2" xml:space="preserve">
+    <value>Impuesto Incluible 2</value>
+  </data>
+  <data name="TaxIncludable3" xml:space="preserve">
+    <value>Impuesto Incluible 3</value>
+  </data>
+  <data name="TaxIncludable4" xml:space="preserve">
+    <value>Impuesto Incluible 4</value>
+  </data>
+  <data name="TaxIncludable5" xml:space="preserve">
+    <value>Impuesto Incluible 5</value>
+  </data>
+  <data name="TaxRate1" xml:space="preserve">
+    <value>Tasa Fiscal 1</value>
+  </data>
+  <data name="TaxRate2" xml:space="preserve">
+    <value>Tasa Fiscal 2</value>
+  </data>
+  <data name="TaxRate3" xml:space="preserve">
+    <value>Tasa Fiscal 3</value>
+  </data>
+  <data name="TaxRate4" xml:space="preserve">
+    <value>Tasa Fiscal 4</value>
+  </data>
+  <data name="TaxRate5" xml:space="preserve">
+    <value>Tasa Fiscal 5</value>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>Valor Hora</value>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Índice de Campo de Valor Escrito</value>
+  </data>
+  <data name="UnformattedContractCode" xml:space="preserve">
+    <value>Código de Contrato Sin Formato</value>
+  </data>
+  <data name="UnitBillingAmount" xml:space="preserve">
+    <value>Monto de Facturación de Unidad</value>
+  </data>
+  <data name="UnitCostIsManual" xml:space="preserve">
+    <value>Costo Unitario es Manual</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validar</value>
+  </data>
+  <data name="WeightConversion" xml:space="preserve">
+    <value>Conversión de Peso</value>
+  </data>
+  <data name="YesNoValue" xml:space="preserve">
+    <value>Valor Sí/No</value>
+  </data>
+  <data name="AccountingMethod" xml:space="preserve">
+    <value>Método Contable</value>
+  </data>
+  <data name="AllocateFromLot" xml:space="preserve">
+    <value>Asignar desde N° Lote</value>
+  </data>
+  <data name="AllocateFromSerial" xml:space="preserve">
+    <value>Asignar desde N° Serie</value>
+  </data>
+  <data name="WeightUnitofMeasure" xml:space="preserve">
+    <value>Unidad de Medida de Peso</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="InvoiceDoesNotExists" xml:space="preserve">
+    <value>{0} no existe.</value>
+  </data>
+  <data name="DuplicateCreditDebitNote" xml:space="preserve">
+    <value>Nota de Débito/Crédito Duplicada</value>
+    <comment>Finder Label</comment>
+  </data>
+  <data name="CurrencyRate" xml:space="preserve">
+    <value>Tasa de Moneda</value>
+  </data>
+  <data name="DuplicateInvoice" xml:space="preserve">
+    <value>Factura Duplicada</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="Accounts" xml:space="preserve">
+    <value>Cuentas</value>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Correo-E de Contacto</value>
+  </data>
+  <data name="RateOutOfRange" xml:space="preserve">
+    <value>La tasa de moneda ingresada se encuentra fuera del margen especificado en las tablas de monedas. ¿Desea continuar?</value>
+  </data>
+  <data name="DistributeCost" xml:space="preserve">
+    <value>Distribuir Costo</value>
+  </data>
+  <data name="EntryDoesNotExists" xml:space="preserve">
+    <value>La nota de crédito/débito no existe.</value>
+  </data>
+</root>

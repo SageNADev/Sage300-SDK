@@ -1,0 +1,1555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessDeniedMessage" xml:space="preserve">
+    <value>La page {0} a été verrouillée par une autre tâche. Attendez que la tâche se termine, puis essayez de nouveau.</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="AddFailedMaximumMessage" xml:space="preserve">
+    <value>Impossible d’ajouter {0} car le nombre maximum de {1} a été atteint.</value>
+  </data>
+  <data name="AddFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu. Impossible d&apos;ajouter {0}. Veuillez réessayer.</value>
+  </data>
+  <data name="AddLineFailedMessage" xml:space="preserve">
+    <value>Suite à un problème, la nouvelle ligne n&apos;a pas pu être ajoutée. Veuillez réessayer.</value>
+  </data>
+  <data name="AddSuccessMessage" xml:space="preserve">
+    <value>Ajout nouveau {0} &quot;{1}&quot;.</value>
+  </data>
+  <data name="AntiForgeryTokenMissing" xml:space="preserve">
+    <value>Témoin de jeton anticontrefaçon introuvable.</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Retour</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="CannotBeBlankMessage" xml:space="preserve">
+    <value>{0} ne peut pas être en blanc.</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="ClearDetailsConfirmMessage" xml:space="preserve">
+    <value>Effacer les détails de {0}?</value>
+  </data>
+  <data name="ClearDetailsFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu. Impossible d&apos;effacer les détails de {0}. Veuillez réessayer.</value>
+  </data>
+  <data name="ClearSuccessMessage" xml:space="preserve">
+    <value>Suppression de {0} &quot;{1}&quot;.</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="CopyFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu. Impossible de copier {0}. Veuillez réessayer.</value>
+  </data>
+  <data name="DecimalPlaces" xml:space="preserve">
+    <value>Décimales</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="DeleteConfirmMessage" xml:space="preserve">
+    <value>Supprimer {0}?</value>
+  </data>
+  <data name="DeleteFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu. Impossible de supprimer {0}.</value>
+  </data>
+  <data name="DeleteLine" xml:space="preserve">
+    <value>Supprimer ligne</value>
+  </data>
+  <data name="DeleteLineMessage" xml:space="preserve">
+    <value>Supprimer cette ligne?</value>
+  </data>
+  <data name="DeleteSuccessMessage" xml:space="preserve">
+    <value>Suppression de {0} &quot;{1}&quot;.</value>
+  </data>
+  <data name="ProcessingDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DuplicateMessage" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; existe déjà.</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromToValueMessage" xml:space="preserve">
+    <value>La valeur du champ De ({0}) ne peut pas être supérieure à celle du champ À.</value>
+  </data>
+  <data name="GetFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu. Impossible de récupérer {0}. Veuillez réessayer.</value>
+  </data>
+  <data name="ImportResponse" xml:space="preserve">
+    <value>{0}: {1} mis(es) à jour, {2} inséré(es), {3} traité(es).</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="InvalidDate" xml:space="preserve">
+    <value>Saisissez une date valide.</value>
+  </data>
+  <data name="LoggingConstants" xml:space="preserve">
+    <value>[Sage Cloud] [{0}] [TenantId: {1}] [ModuleName: {2}]  [UserId; {3}] - {4}</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Nouveau</value>
+  </data>
+  <data name="NoRecordsFound" xml:space="preserve">
+    <value>Aucun élément à afficher</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OpenCompany" xml:space="preserve">
+    <value>Ouvrir entreprise</value>
+  </data>
+  <data name="Optional" xml:space="preserve">
+    <value>Optionnel</value>
+    <comment>This is to display fields that are optional on the screen</comment>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Champ optionnel</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="OptionalFieldValue" xml:space="preserve">
+    <value>Valeur du champ optionnel</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>Reporter</value>
+  </data>
+  <data name="PostAll" xml:space="preserve">
+    <value>Reporter tout</value>
+  </data>
+  <data name="PostingFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu. Impossible de reporter {0}. Veuillez réessayer.</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Imprimer</value>
+  </data>
+  <data name="Printed" xml:space="preserve">
+    <value>Imprimé</value>
+  </data>
+  <data name="Priority" xml:space="preserve">
+    <value>Priorité</value>
+  </data>
+  <data name="Proceed" xml:space="preserve">
+    <value>Poursuivre</value>
+  </data>
+  <data name="Process" xml:space="preserve">
+    <value>Traiter</value>
+  </data>
+  <data name="ProcessFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu et vos modifications n&apos;ont pas pu être enregistrées. Veuillez réessayer.</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Traitement...</value>
+  </data>
+  <data name="RecordNotFoundMessage" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; introuvable.</value>
+  </data>
+  <data name="RefreshDetailsFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu. Impossible d&apos;actualiser les détails de {0}. Veuillez réessayer.</value>
+  </data>
+  <data name="RemoveColumn" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="ReportGenFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu pendant la création du rapport. Veuillez réessayer.</value>
+  </data>
+  <data name="ReportGetFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu et le rapport ne peut pas être affiché. Veuillez réessayer. Si le problème persiste, contactez le Soutien technique.</value>
+  </data>
+  <data name="Sage300Application" xml:space="preserve">
+    <value>Sage 300</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Enregistrer</value>
+    <comment>Save button</comment>
+  </data>
+  <data name="SaveConfirmMessage" xml:space="preserve">
+    <value>Enregistrer les modifications apportées à {0} &quot;{1}&quot;?</value>
+  </data>
+  <data name="SaveFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu et vos modifications n&apos;ont pas pu être enregistrées. Veuillez réessayer.</value>
+  </data>
+  <data name="SaveFailedMessage2" xml:space="preserve">
+    <value>Un problème est survenu et les modifications que vous avez apportées à {0} n&apos;ont pas pu être enregistrées. Veuillez réessayer.</value>
+  </data>
+  <data name="SaveSuccessMessage" xml:space="preserve">
+    <value>Modifications enregistrées.</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Sélectionner {0}</value>
+  </data>
+  <data name="Select1" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="SetCriteria" xml:space="preserve">
+    <value>Définir les critères</value>
+  </data>
+  <data name="SetCriteriaLabel" xml:space="preserve">
+    <value>Définir un filtre pour {0}</value>
+  </data>
+  <data name="SetFilter" xml:space="preserve">
+    <value>Définir un filtre</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Afficher</value>
+  </data>
+  <data name="ShowAllRecords" xml:space="preserve">
+    <value>Afficher tous les enregistrements</value>
+  </data>
+  <data name="ShowMessageBoxTitle" xml:space="preserve">
+    <value>Veuillez corriger le ou les problèmes suivants :</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Sage 300</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="UpdateFailedMessage" xml:space="preserve">
+    <value>Impossible d&apos;enregistrer vos modifications car un autre utilisateur a supprimé cet {0}.</value>
+  </data>
+  <data name="NotAuthorizedMesage" xml:space="preserve">
+    <value>Vous n&apos;êtes pas autorisé à réaliser cette tâche. Contactez l&apos;administrateur de votre système pour obtenir de l&apos;aide.</value>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>Devise fonctionnelle</value>
+  </data>
+  <data name="GetKeysFailedMessage" xml:space="preserve">
+    <value>L&apos;entité commerciale dispose de plusieurs champs clés et est inaccessible avec la clé &quot;{0}&quot;.</value>
+  </data>
+  <data name="UnsavedChangesMessage" xml:space="preserve">
+    <value>Il y a des modifications non sauvegardées dans {0} &quot;{1}&quot;. Poursuivre?</value>
+    <comment>Used when the model is dirty.</comment>
+  </data>
+  <data name="HeaderEntity" xml:space="preserve">
+    <value>Entité en-tête</value>
+  </data>
+  <data name="InactiveAsOfDate" xml:space="preserve">
+    <value>Inactif (au)</value>
+    <comment>Label for Date field when record is inactive</comment>
+  </data>
+  <data name="Legal" xml:space="preserve">
+    <value>Ministre</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>De date</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>À date</value>
+  </data>
+  <data name="UnsavedChangesMessage2" xml:space="preserve">
+    <value>Il y a des modifications non sauvegardées dans {0}. Voulez-vous continuer?</value>
+    <comment>Used when user navigated to another page by clicking on browser buttons</comment>
+  </data>
+  <data name="AddLine" xml:space="preserve">
+    <value>Ajouter ligne</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Aperçu</value>
+  </data>
+  <data name="SelectBy" xml:space="preserve">
+    <value>Sélectionner par</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="PaperSize" xml:space="preserve">
+    <value>Format du papier</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Trier par</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Actif</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Copyright (c) 1994-2015 Sage Software, Inc.  Tous droits réservés.</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Supprimé</value>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>Saisi</value>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>Créé</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importer</value>
+  </data>
+  <data name="Imported" xml:space="preserve">
+    <value>Importé</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Inclure</value>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>Reporté</value>
+  </data>
+  <data name="Posting" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantité</value>
+  </data>
+  <data name="ReadyToPost" xml:space="preserve">
+    <value>Prêt à reporter</value>
+  </data>
+  <data name="Reverse" xml:space="preserve">
+    <value>Extourner</value>
+  </data>
+  <data name="FilterBy" xml:space="preserve">
+    <value>Filtrer par</value>
+    <comment>Used In Finder</comment>
+  </data>
+  <data name="FindBy" xml:space="preserve">
+    <value>Trouver par</value>
+    <comment>Used In Finder</comment>
+  </data>
+  <data name="SearchBy" xml:space="preserve">
+    <value>Chercher par</value>
+    <comment>Used In Finder</comment>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Exporter</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>Période</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>Exercice</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version 2014</value>
+  </data>
+  <data name="Entry" xml:space="preserve">
+    <value>Saisie</value>
+  </data>
+  <data name="DateRangeMessage" xml:space="preserve">
+    <value>La date saisie est hors de la plage spécifiée dans le profil de l&apos;entreprise. Accepter cette date?</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
+  <data name="ExportResult" xml:space="preserve">
+    <value>{0}: {1} enregistrement(s) exporté(s)</value>
+  </data>
+  <data name="Uploading" xml:space="preserve">
+    <value>Téléversement...</value>
+  </data>
+  <data name="LoadScript" xml:space="preserve">
+    <value>Charger script</value>
+    <comment>Used in Export Screen</comment>
+  </data>
+  <data name="SaveScript" xml:space="preserve">
+    <value>Sauvegarder script</value>
+    <comment>Used in Export Screen</comment>
+  </data>
+  <data name="FileLocation" xml:space="preserve">
+    <value>Emplacement fichier</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="FileProperties" xml:space="preserve">
+    <value>Propriétés du fichier</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="FileSize" xml:space="preserve">
+    <value>Taille du fichier</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="FileType" xml:space="preserve">
+    <value>Type de fichier</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="ImportType" xml:space="preserve">
+    <value>Type d&apos;importation</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nom</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>État d&apos;avancement</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="TitleRecord" xml:space="preserve">
+    <value>Enregistrement titre</value>
+    <comment>Used In Export/Import</comment>
+  </data>
+  <data name="ClearSavedSettings" xml:space="preserve">
+    <value>Effacer paramètres enregistrés</value>
+  </data>
+  <data name="SaveSettings" xml:space="preserve">
+    <value>Enregistrer les paramètres comme implicites</value>
+  </data>
+  <data name="ClearPreferenceFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu et vos préférences n&apos;ont pas pu être effacées. Veuillez réessayer.</value>
+  </data>
+  <data name="ClearPreferenceSaveMessage" xml:space="preserve">
+    <value>Préférences effacées</value>
+  </data>
+  <data name="SavePreferenceFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu et vos préférences n&apos;ont pas pu être enregistrées. Veuillez réessayer.</value>
+  </data>
+  <data name="SavePreferenceMessage" xml:space="preserve">
+    <value>Préférences enregistrées</value>
+  </data>
+  <data name="DeleteFailedNoRecordMessage" xml:space="preserve">
+    <value>L&apos;enregistrement n&apos;a pas pu être supprimé. Un autre utilisateur l&apos;a peut-être supprimé.</value>
+  </data>
+  <data name="UpdateFailedNoRecordMessage" xml:space="preserve">
+    <value>L&apos;enregistrement n&apos;a pas pu être mis à jour. Un autre utilisateur l&apos;a peut-être supprimé.</value>
+  </data>
+  <data name="DeleteLinesMessage" xml:space="preserve">
+    <value>Supprimer les lignes sélectionnées?</value>
+    <comment>used when multiple lines are selected</comment>
+  </data>
+  <data name="UnsavedChangesMessage3" xml:space="preserve">
+    <value>Voulez-vous vraiment quitter cette page? Si vous poursuivez, vos changements ne seront pas sauvegardés.</value>
+    <comment>Used when a record cannot be specified</comment>
+  </data>
+  <data name="FileSelectError" xml:space="preserve">
+    <value>Sélectionnez un fichier à importer.</value>
+    <comment>Used in Import, in case user clicks on Import button without selecting a file</comment>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Parcourir</value>
+    <comment>Used in Export/Import, for Browse label</comment>
+  </data>
+  <data name="FileTypeSelectError" xml:space="preserve">
+    <value>Sélectionnez un fichier XLSX (un tableur Microsoft Office Excel Open au format XML) à importer.</value>
+    <comment>Used in Import, in case user clicks on Import button and select a file, which is not supported</comment>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>En savoir plus</value>
+  </data>
+  <data name="RequiredLegend" xml:space="preserve">
+    <value>Obligatoire</value>
+    <comment>Used with asterisk image as legend for indicating required fields</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Avertissement</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Montant</value>
+  </data>
+  <data name="AccountEmptyMessage" xml:space="preserve">
+    <value>Plan comptable introuvable.</value>
+  </data>
+  <data name="FromToYearValueMessage" xml:space="preserve">
+    <value>La valeur du champ De {0} doit correspondre à celle du champ À.</value>
+  </data>
+  <data name="OptinalFieldDefaultValue" xml:space="preserve">
+    <value>La valeur implicite &quot;{0}&quot; n&apos;existe pas pour le champ optionnel {1}.</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactif</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Dernière modification</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Nom du contact</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="AutoInsertOptionalFieldsMessage" xml:space="preserve">
+    <value>Insertion automatique doit être configurée à Oui pour les champs optionnels requis.</value>
+  </data>
+  <data name="FiscalYearPeriod" xml:space="preserve">
+    <value>Exercice - Période</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>Période</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Exercice</value>
+  </data>
+  <data name="EntryModeNormal" xml:space="preserve">
+    <value>Mode saisie normal</value>
+  </data>
+  <data name="EntryModeQuick" xml:space="preserve">
+    <value>Mode saisie rapide</value>
+  </data>
+  <data name="ClearMessage" xml:space="preserve">
+    <value>Suppression de {0}.</value>
+  </data>
+  <data name="ValidateFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu pendant la validation de {0}. Veuillez réessayer.</value>
+  </data>
+  <data name="InactiveRecordMessage" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; est inactif(ve).</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Nil</value>
+  </data>
+  <data name="DocLengthMessage" xml:space="preserve">
+    <value>La longueur de {0} doit être comprise entre 1 et 22 caractères.</value>
+  </data>
+  <data name="DocLengthValMessage" xml:space="preserve">
+    <value>Le préfixe de {0} annexé au prochain numéro de {1} dépasse la longueur spécifiée de {2} caractères.</value>
+  </data>
+  <data name="SessionDate" xml:space="preserve">
+    <value>Date de session</value>
+  </data>
+  <data name="SymbolAsterisk" xml:space="preserve">
+    <value>* Astérisque</value>
+  </data>
+  <data name="SymbolBackslash" xml:space="preserve">
+    <value>\ Barre oblique inverse</value>
+  </data>
+  <data name="SymbolForwardSlash" xml:space="preserve">
+    <value>/ Barre oblique</value>
+  </data>
+  <data name="SymbolHyphen" xml:space="preserve">
+    <value>- Trait d&apos;union</value>
+  </data>
+  <data name="SymbolLeftParenthesis" xml:space="preserve">
+    <value>( Parenthèse ouvrante</value>
+  </data>
+  <data name="SymbolNumberSign" xml:space="preserve">
+    <value># Carré</value>
+  </data>
+  <data name="SymbolPeriod" xml:space="preserve">
+    <value>. Point</value>
+  </data>
+  <data name="SymbolRightParenthesis" xml:space="preserve">
+    <value>) Parenthèse fermante</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Actualiser</value>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>Inactif le</value>
+  </data>
+  <data name="InactiveErrorMessage" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; est inactif.</value>
+  </data>
+  <data name="Multicurrency" xml:space="preserve">
+    <value>Multidevise</value>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>État/Province</value>
+  </data>
+  <data name="ZIPPostal" xml:space="preserve">
+    <value>Code postal</value>
+  </data>
+  <data name="RecordNotFoundWarning" xml:space="preserve">
+    <value>{0}  &quot;{1}&quot; n&apos;existe pas, mais peut être utilisé(e).</value>
+  </data>
+  <data name="UnsavedChangesMessage4" xml:space="preserve">
+    <value>Modifications non sauvegardées dans {0} &quot;{1}&quot;,{2} &quot;{3}&quot;. Voulez-vous poursuivre?</value>
+  </data>
+  <data name="InactiveWarningMessage" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; est inactif(ve), mais peut être utilisé(e).</value>
+    <comment>REMOVE - Add new string to CommonResx (ID &quot;InactiveWarningMessage&quot; and value &quot;{0} &quot;{1}&quot; is inactive, but can be used.&quot;)</comment>
+  </data>
+  <data name="GLAccountNotExistsWarning" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; n&apos;existe pas, mais peut être utilisé(e).</value>
+    <comment>REMOVE - Use RecordNotFoundMessage from CommonResx</comment>
+  </data>
+  <data name="NotFoundMessage" xml:space="preserve">
+    <value>{0} est introuvable.</value>
+  </data>
+  <data name="FileProcessingFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu. Impossible de traiter le fichier. Veuillez réessayer.</value>
+  </data>
+  <data name="ImportFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu pendant l&apos;importation de données à partir du fichier. Veuillez réessayer.</value>
+  </data>
+  <data name="ProcessCancelErrorMessage" xml:space="preserve">
+    <value>Un problème est survenu pendant l&apos;annulation du processus.</value>
+  </data>
+  <data name="ProcessErrorMessage" xml:space="preserve">
+    <value>Un problème est survenu et la requête n&apos;a pas pu être traitée.</value>
+  </data>
+  <data name="UnhandledExceptionMessage" xml:space="preserve">
+    <value>Un problème imprévu s&apos;est produit. Veuillez réessayer ou demander de l&apos;aide à votre administrateur.</value>
+  </data>
+  <data name="DetailsAlreadyExists" xml:space="preserve">
+    <value>Des détails existent déjà pour {0} &quot;{1}&quot;.</value>
+  </data>
+  <data name="TaxClassInvalid" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; et {2} &quot;{3}&quot; n&apos;existent pas.</value>
+  </data>
+  <data name="TaxIncludedNotAllowed" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; ne permet pas les taxes comprises.</value>
+  </data>
+  <data name="UpdateFailedRecordModifiedMessage" xml:space="preserve">
+    <value>L&apos;enregistrement n&apos;a pas pu être mis à jour car un autre utilisateur l&apos;a modifié.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="DeleteConfirmMessage1" xml:space="preserve">
+    <value>Supprimer {0} {1}?</value>
+  </data>
+  <data name="CostofGoodsSold" xml:space="preserve">
+    <value>Coût des marchandises vendues</value>
+  </data>
+  <data name="AccountFinderTitle" xml:space="preserve">
+    <value>Compte</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Tout</value>
+    <comment>Used in header checkbox in finder grid user preferences</comment>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Appliquer</value>
+    <comment>Used in the button in finder grid user preferences</comment>
+  </data>
+  <data name="EditColumns" xml:space="preserve">
+    <value>Modifier colonnes</value>
+    <comment>Used in the button and label in finder grid user preferences</comment>
+  </data>
+  <data name="RestoreTableDefaults" xml:space="preserve">
+    <value>Restaurer paramètres de table par défaut</value>
+    <comment>Used in the link button in finder user preferences</comment>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Chercher</value>
+    <comment>Used in the button in finder</comment>
+  </data>
+  <data name="AccountStatus" xml:space="preserve">
+    <value>État compte</value>
+  </data>
+  <data name="AccountType" xml:space="preserve">
+    <value>Type compte</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="ExportImportNoColumnSelected" xml:space="preserve">
+    <value>Sélectionnez au moins une colonne à exporter.</value>
+  </data>
+  <data name="RecordsNotFoundMessage" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; et {2} &quot;{3}&quot; sont introuvables.</value>
+  </data>
+  <data name="BlankIPError" xml:space="preserve">
+    <value>Le code de devise ne peut pas être en blanc.</value>
+    <comment>Error message</comment>
+  </data>
+  <data name="CurrencyCodeInvalid" xml:space="preserve">
+    <value>Le code de devise &quot;{0}&quot; n&apos;est pas défini dans Services Communs.</value>
+    <comment>Error message</comment>
+  </data>
+  <data name="InvalidAccountError" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; n&apos;est pas défini dans Grand livre.</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvalidAccountWarning" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; n&apos;est pas défini dans Grand livre.</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ImportFileContentNotValid" xml:space="preserve">
+    <value>Le contenu du fichier est erroné. Aucun élément à importer.</value>
+    <comment>Used in import scenario, when the uploaded file content is not correct.</comment>
+  </data>
+  <data name="CountyTax" xml:space="preserve">
+    <value>Taxe de comté</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="FederalTax" xml:space="preserve">
+    <value>Taxe fédérale</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="GST" xml:space="preserve">
+    <value>TPS</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="HST" xml:space="preserve">
+    <value>TVH</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Autre</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="PST" xml:space="preserve">
+    <value>TVP</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="StateTax" xml:space="preserve">
+    <value>Taxe d&apos;état</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="VAT" xml:space="preserve">
+    <value>TVA</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="CityTax" xml:space="preserve">
+    <value>Taxe municipale</value>
+    <comment>TaxType - Field</comment>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Créer nouveau</value>
+  </data>
+  <data name="InvalidScriptFile" xml:space="preserve">
+    <value>Un problème est survenu et le script n&apos;a pas pu être chargé. Sélectionnez un fichier XML et réessayez.</value>
+  </data>
+  <data name="DiscountDayofMonthErrorMessage" xml:space="preserve">
+    <value>Jour du mois pour remise</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DiscountEndingDayErrorMessage" xml:space="preserve">
+    <value>Jour de fin pour table de date de remise</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DiscountStartingDayErrorMessage" xml:space="preserve">
+    <value>Jour de début pour table de date de remise</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DueDayofMonthErrorMessage" xml:space="preserve">
+    <value>Jour du mois pour date d&apos;échéance</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DueEndingDayErrorMessage" xml:space="preserve">
+    <value>Jour de fin pour table de date d&apos;échéance</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DueStartingDayErrorMessage" xml:space="preserve">
+    <value>Jour de début pour table de date d&apos;échéance</value>
+    <comment>AR/AP Terms grid validations</comment>
+  </data>
+  <data name="DeleteSuccessMessage2" xml:space="preserve">
+    <value>{0} supprimé(es).</value>
+  </data>
+  <data name="ImportRequiredFieldMissing" xml:space="preserve">
+    <value>Certains champs obligatoires sont absents du fichier.</value>
+    <comment>Used In Import, when the uploaded excel sheet has missing some column, which is a required field.</comment>
+  </data>
+  <data name="MaxSize" xml:space="preserve">
+    <value>{0} ne peut pas être supérieur à {1}</value>
+    <comment>{0} Display Name, {1} Maximum Value</comment>
+  </data>
+  <data name="MaxValue" xml:space="preserve">
+    <value>100</value>
+    <comment>Validation maximum value</comment>
+  </data>
+  <data name="NoOptionSelectedMessage" xml:space="preserve">
+    <value>Vous devez sélectionner au moins un(e) {0}.</value>
+  </data>
+  <data name="VendorType" xml:space="preserve">
+    <value>Type de fournisseur</value>
+  </data>
+  <data name="InsertFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu. L&apos;enregistrement n&apos;a pas pu être ajouté.</value>
+  </data>
+  <data name="ProcessingStopped" xml:space="preserve">
+    <value>Interruption du traitement à enregistrement {0} dans {1}.</value>
+  </data>
+  <data name="UpdateRecordFailedMessage" xml:space="preserve">
+    <value>Un problème est survenu. L&apos;enregistrement n&apos;a pas pu être mis à jour.</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Début</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="CheckStatus" xml:space="preserve">
+    <value>État du chèque</value>
+  </data>
+  <data name="InvalidFiscalPeriod" xml:space="preserve">
+    <value>La période {0} de l&apos;exercice {1} n&apos;est pas définie dans le calendrier fiscal de Services communs.</value>
+  </data>
+  <data name="InvalidFiscalYear" xml:space="preserve">
+    <value>L&apos;exercice {0} n&apos;est pas défini dans le calendrier fiscal de Services communs.</value>
+  </data>
+  <data name="Contains" xml:space="preserve">
+    <value>Contient</value>
+  </data>
+  <data name="Like" xml:space="preserve">
+    <value>Comme</value>
+  </data>
+  <data name="StartsWith" xml:space="preserve">
+    <value>Débute avec</value>
+  </data>
+  <data name="UnexpectedError" xml:space="preserve">
+    <value>Erreur inattendue</value>
+    <comment>To display title for error message in the Unexpected error page.</comment>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Aujourd&apos;hui</value>
+  </data>
+  <data name="ServerDownDataRefreshMessage" xml:space="preserve">
+    <value>Suite à des problèmes de serveur, vous avez été transféré à un autre serveur. Veuillez actualiser votre navigateur et ressaisir vos données.</value>
+  </data>
+  <data name="CurrencySpreadRange" xml:space="preserve">
+    <value>Le taux de change saisi est hors de la plage spécifiée dans les tables de devises. Voulez-vous continuer?</value>
+  </data>
+  <data name="PageNotFoundError" xml:space="preserve">
+    <value>La page demandée est introuvable. Elle pourrait avoir été supprimée ou renommée, ou bien être momentanément indisponible.</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>Premier</value>
+    <comment>Hint text for From field with default value like AAAAAAAA</comment>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Dernier</value>
+    <comment>Hint text for To field with default value like ZZZZZZZZ</comment>
+  </data>
+  <data name="NormalMode" xml:space="preserve">
+    <value>Mode normal</value>
+  </data>
+  <data name="UnconditionalInsertsOrUpdates" xml:space="preserve">
+    <value>Insertions/mises à jour inconditionnelles</value>
+  </data>
+  <data name="CannotDeleteMessage" xml:space="preserve">
+    <value>Impossible de supprimer {0} &quot;{1}&quot;</value>
+  </data>
+  <data name="NoProcessingOptionSelectedMessage" xml:space="preserve">
+    <value>Sélectionnez au moins une option de traitement.</value>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>Numéro de lot</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Invalid" xml:space="preserve">
+    <value>Non valide</value>
+  </data>
+  <data name="SymbolSpace" xml:space="preserve">
+    <value>  Espace</value>
+    <comment>GLIntegration-Segment Seperator List Options</comment>
+  </data>
+  <data name="UnsavedChangesMessage5" xml:space="preserve">
+    <value>Il y a des modifications non enregistrées dans {0}. Voulez-vous continuer?</value>
+    <comment>Used when model is dirty on popup window</comment>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>S/O</value>
+  </data>
+  <data name="ProcessingCompletedNoRecordsFoundMessage" xml:space="preserve">
+    <value>Traitement terminé. Aucun enregistrement ne correspond aux critères spécifiés.</value>
+  </data>
+  <data name="Foreign" xml:space="preserve">
+    <value>Étrangère</value>
+  </data>
+  <data name="Multiple" xml:space="preserve">
+    <value>Multiple</value>
+  </data>
+  <data name="Single" xml:space="preserve">
+    <value>Unique</value>
+  </data>
+  <data name="DisplayDateFormat" xml:space="preserve">
+    <value>aaaa-MM-jj</value>
+    <comment>DatePicker Placeholder</comment>
+  </data>
+  <data name="SymbolLeftBracket" xml:space="preserve">
+    <value>{ Parenthèse ouvrante</value>
+  </data>
+  <data name="SymbolRightBracket" xml:space="preserve">
+    <value>} Parenthèse fermante</value>
+  </data>
+  <data name="SelectForm" xml:space="preserve">
+    <value>Sélectionner formulaire</value>
+  </data>
+  <data name="InvalidFiscalDateMessage" xml:space="preserve">
+    <value>La date {0} n&apos;existe pas dans Calendrier fiscal de Services communs.</value>
+  </data>
+  <data name="ReportCurrency" xml:space="preserve">
+    <value>Devise du rapport</value>
+  </data>
+  <data name="ReportFormat" xml:space="preserve">
+    <value>Format du rapport</value>
+  </data>
+  <data name="ThroughPostingSequence" xml:space="preserve">
+    <value>Jusqu&apos;à séquence de report</value>
+  </data>
+  <data name="BankCurrencyCodeError" xml:space="preserve">
+    <value>La banque {0} n&apos;est pas configurée pour utiliser la devise {1}.</value>
+  </data>
+  <data name="NotApplicable" xml:space="preserve">
+    <value>Sans objet</value>
+  </data>
+  <data name="Delete1" xml:space="preserve">
+    <value>Supprimer {0} &quot;{1}&quot;?</value>
+  </data>
+  <data name="AccessDeniedPrintChecks" xml:space="preserve">
+    <value>Un autre utilisateur imprime des chèques. Voulez-vous réessayer?</value>
+    <comment>Used in Print checks screen when another user has opened Print Checks for same Module, Database &amp; Batch</comment>
+  </data>
+  <data name="RecordDoesNotExist" xml:space="preserve">
+    <value>{0}  &quot;{1}&quot; n&apos;existe pas.</value>
+  </data>
+  <data name="PageNotFound" xml:space="preserve">
+    <value>Page introuvable</value>
+  </data>
+  <data name="AddEditLink" xml:space="preserve">
+    <value>Ajouter/Modifier</value>
+    <comment>Link Button Field</comment>
+  </data>
+  <data name="NotDefinedInCommonService" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; n&apos;est pas défini(e) dans Services communs.</value>
+  </data>
+  <data name="NotDefinedInBankService" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; n&apos;est pas défini(e) dans Services bancaires.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="Inquiry" xml:space="preserve">
+    <value>Consultation</value>
+    <comment>Added for Information Link</comment>
+  </data>
+  <data name="DynamicQuery" xml:space="preserve">
+    <value>Requête dynamique</value>
+  </data>
+  <data name="SqlInjectionMessage" xml:space="preserve">
+    <value>La demande de consultation n&apos;a pas été autorisée car elle pourrait compromettre la sécurité de vos données.</value>
+  </data>
+  <data name="AddConfirmMessage" xml:space="preserve">
+    <value>Ajouter {0} &quot;{1}&quot;?</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Document...</value>
+  </data>
+  <data name="PostInProgressDeletedBatchMessage" xml:space="preserve">
+    <value>Vous ne pouvez pas ouvrir des lots ayant pour état Report en cours ou Supprimé.</value>
+  </data>
+  <data name="PostInProgressMessage" xml:space="preserve">
+    <value>Le lot sélectionné est en cours de report et ne peut pas être supprimé.</value>
+  </data>
+  <data name="DayEndNumber" xml:space="preserve">
+    <value>Numéro clôture journalière</value>
+  </data>
+  <data name="FromDayEndNumber" xml:space="preserve">
+    <value>De numéro de clôture journalière</value>
+  </data>
+  <data name="IncludeOptionalFields" xml:space="preserve">
+    <value>Inclure champs optionnels</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="LetterA4" xml:space="preserve">
+    <value>Lettre/A4</value>
+  </data>
+  <data name="Reprint" xml:space="preserve">
+    <value>Réimprimer les journaux déjà imprimés</value>
+  </data>
+  <data name="ToDayEndNumber" xml:space="preserve">
+    <value>À numéro de clôture journalière</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Date transaction</value>
+  </data>
+  <data name="Zero" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="StartEndValueMessage" xml:space="preserve">
+    <value>La valeur de début est supérieure à la valeur de fin.</value>
+  </data>
+  <data name="SortedBy" xml:space="preserve">
+    <value>Trié par</value>
+  </data>
+  <data name="SessionExpired" xml:space="preserve">
+    <value>Votre session a expiré. Reconnectez-vous pour continuer.</value>
+  </data>
+  <data name="IncludeJob" xml:space="preserve">
+    <value>Inclure détails de tâche</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Détail</value>
+  </data>
+  <data name="ReportType" xml:space="preserve">
+    <value>Type rapport</value>
+  </data>
+  <data name="ThenBy" xml:space="preserve">
+    <value>Puis par</value>
+  </data>
+  <data name="FiscalCalendars" xml:space="preserve">
+    <value>Calendriers fiscaux</value>
+  </data>
+  <data name="NoPrepayNotOpenBatch" xml:space="preserve">
+    <value>Le lot {0} n&apos;est pas un lot ouvert. Vous ne pouvez donc pas ajouter un paiement anticipé.</value>
+  </data>
+  <data name="MessageIDInactive" xml:space="preserve">
+    <value>Le code de message {0} est inactif.</value>
+    <comment>Messege</comment>
+  </data>
+  <data name="InvalidPeriod" xml:space="preserve">
+    <value>La période {0} n&apos;est pas valide.</value>
+  </data>
+  <data name="AccountDescription" xml:space="preserve">
+    <value>Description compte</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>Conclu</value>
+  </data>
+  <data name="SessionExipred_SignInButton" xml:space="preserve">
+    <value>Connexion</value>
+  </data>
+  <data name="SessionExpiredDialogHeader" xml:space="preserve">
+    <value>Rester connecté?</value>
+  </data>
+  <data name="SessionExpiredDialogMsg1" xml:space="preserve">
+    <value>Vous êtes sur le point d&apos;être déconnecté pour cause d&apos;inactivité. Pour rester connecté, cliquez sur OK.</value>
+  </data>
+  <data name="SessionExpiredDialogMsg2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SessionExpired_Header" xml:space="preserve">
+    <value>La session a expiré</value>
+  </data>
+  <data name="SessionExpired_Msg1" xml:space="preserve">
+    <value>Pour votre sécurité, vous avez été déconnecté après une certaine période d&apos;inactivité.</value>
+  </data>
+  <data name="SessionExpired_Msg2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FileFormatError" xml:space="preserve">
+    <value>Sélectionnez un fichier de modèle de rapport valide (.rpt).</value>
+    <comment>For select report</comment>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continuer</value>
+  </data>
+  <data name="FeatureNotAvailableWeb_Message" xml:space="preserve">
+    <value>Votre demande n&apos;a pas pu être terminée car {0} n&apos;est pas disponible dans les écrans web. Vous pouvez éventuellement utiliser l&apos;écran du bureau.</value>
+    <comment>Used in AP-AR Payment Intery for Job related items</comment>
+  </data>
+  <data name="CreditCardType" xml:space="preserve">
+    <value>Type carte de crédit</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Date d&apos;expiration</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Heure</value>
+  </data>
+  <data name="AddressEntered" xml:space="preserve">
+    <value>Adresse saisie</value>
+    <comment>Drop-Shipment dropdownlist item</comment>
+  </data>
+  <data name="CustomerAddress" xml:space="preserve">
+    <value>Adresse du client</value>
+    <comment>Drop-Shipment dropdownlist item</comment>
+  </data>
+  <data name="CustomerShipToAddress" xml:space="preserve">
+    <value>Adresse d&apos;expédition du client</value>
+    <comment>Drop-Shipment dropdownlist item</comment>
+  </data>
+  <data name="InventoryLocationAddress" xml:space="preserve">
+    <value>Adresse emplacement des stocks</value>
+    <comment>Drop-Shipment dropdownlist item</comment>
+  </data>
+  <data name="DoesNotExist" xml:space="preserve">
+    <value>{0} est introuvable.</value>
+    <comment>Message</comment>
+  </data>
+  <data name="UnsavedChangesPostMessage" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; n&apos;a pas été reporté. Si vous continuez, toute modification apportée sera supprimée. Voulez-vous continuer?</value>
+  </data>
+  <data name="ValueBetweenRangeError" xml:space="preserve">
+    <value>{0} doit être entre {1} et {2}.</value>
+  </data>
+  <data name="Is" xml:space="preserve">
+    <value>est</value>
+  </data>
+  <data name="Finder" xml:space="preserve">
+    <value>Dépisteur</value>
+  </data>
+  <data name="UnsavedChangesMessage6" xml:space="preserve">
+    <value>Des modifications dans {0} &quot;{1}&quot;, &quot;{2}&quot; n&apos;ont pas été enregistrées. Voulez-vous continuer?</value>
+    <comment>Used when the model is dirty.</comment>
+  </data>
+  <data name="InvalidValueSetMessage" xml:space="preserve">
+    <value>La valeur du champ optionnel {0} n&apos;a pas été définie.</value>
+  </data>
+  <data name="TaxAmountErrorMsg" xml:space="preserve">
+    <value>Le montant de taxes ne peut être ni négatif ni supérieur au montant total.</value>
+  </data>
+  <data name="ScreenNotAvailableMessage" xml:space="preserve">
+    <value>L&apos;écran {0} n&apos;est pas disponible.</value>
+    <comment>Temporary Key. Should be removed once all screens are available</comment>
+  </data>
+  <data name="MaximumAmount" xml:space="preserve">
+    <value>Montant maximum</value>
+  </data>
+  <data name="NoExpiration" xml:space="preserve">
+    <value>Aucune expiration</value>
+  </data>
+  <data name="NumberofInvoices" xml:space="preserve">
+    <value>Nombre de factures</value>
+  </data>
+  <data name="SpecificDate" xml:space="preserve">
+    <value>Date spécifique</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Voulez-vous vraiment supprimer {0} {1}?</value>
+  </data>
+  <data name="DuplicateMessage2" xml:space="preserve">
+    <value>L&apos;enregistrement {0} existe déjà.</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>Équipement</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Matériel</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Divers</value>
+  </data>
+  <data name="Subcontractor" xml:space="preserve">
+    <value>Sous-traitant</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Par défaut</value>
+    <comment>Moving this Resource key from module specific to common</comment>
+  </data>
+  <data name="ICAssembly" xml:space="preserve">
+    <value>Assemblage de GS</value>
+  </data>
+  <data name="NoScreenAvailable" xml:space="preserve">
+    <value>Votre demande n&apos;a pas pu être terminée car {0} n&apos;est pas disponible dans les écrans web. Vous pouvez éventuellement utiliser l&apos;écran du bureau.</value>
+  </data>
+  <data name="OEInvoice" xml:space="preserve">
+    <value>Saisie des factures de CmC</value>
+  </data>
+  <data name="OEShipment" xml:space="preserve">
+    <value>Saisie des expéditions de CmC</value>
+  </data>
+  <data name="ARAdjustment" xml:space="preserve">
+    <value>Ajustement de CC</value>
+  </data>
+  <data name="ARRefund" xml:space="preserve">
+    <value>Remboursement de CC</value>
+  </data>
+  <data name="GenericViewError" xml:space="preserve">
+    <value>Un problème s’est produit lors de la connexion aux écrans web. Essayez de vous connecter au bureau de Sage 300 ou demandez de l’aide à votre administrateur.</value>
+  </data>
+  <data name="APAdjustment" xml:space="preserve">
+    <value>Ajustement de CF</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Personnaliser</value>
+    <comment>Used show Customize menu</comment>
+  </data>
+  <data name="Expanded" xml:space="preserve">
+    <value>Développer toutes les sections</value>
+    <comment>Expanded View for Collapsible Entry Screen</comment>
+  </data>
+  <data name="Simple" xml:space="preserve">
+    <value>Réduire toutes les sections</value>
+    <comment>Simple view for Collapsible Entry Screen</comment>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Affichage</value>
+    <comment>View options for Collapsible Entry Screen </comment>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Actualiser</value>
+    <comment>Button to refresh the UI screen</comment>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Restaurer</value>
+  </data>
+  <data name="RestoreMessage" xml:space="preserve">
+    <value>Voulez-vous vraiment restaurer les paramètres par défaut de l&apos;écran?</value>
+  </data>
+  <data name="RestoreTitle" xml:space="preserve">
+    <value>Restaurer paramètres par défaut</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Texte</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="CheckPostedError" xml:space="preserve">
+    <value>Le chèque numéro {0} a déjà été reporté.</value>
+  </data>
+  <data name="DismissSuccessMessage" xml:space="preserve">
+    <value>{0} &quot;{1}&quot; masqué(es).</value>
+  </data>
+  <data name="GlobalCopyright" xml:space="preserve">
+    <value>© {0} The Sage Group plc ou ses partenaires. Tous droits réservés.</value>
+  </data>
+  <data name="NoResultsFound" xml:space="preserve">
+    <value>Aucun résultat</value>
+  </data>
+  <data name="CustomizationDescription" xml:space="preserve">
+    <value>Description de personnalisation</value>
+    <comment>Customization popup: label for Customization Description field</comment>
+  </data>
+  <data name="CustomizationID" xml:space="preserve">
+    <value>Code de personnalisation</value>
+    <comment>Customization popup: label for Customization ID field</comment>
+  </data>
+  <data name="UIProfiles" xml:space="preserve">
+    <value>Profils IU</value>
+    <comment>Customization popup: label for UI Profiles multi-select field</comment>
+  </data>
+  <data name="Customization" xml:space="preserve">
+    <value>Personnalisation</value>
+  </data>
+  <data name="Customization2" xml:space="preserve">
+    <value>personnalisation</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Réinitialiser</value>
+    <comment>Button to reset settings.</comment>
+  </data>
+  <data name="Between" xml:space="preserve">
+    <value>Entre</value>
+  </data>
+  <data name="Equal" xml:space="preserve">
+    <value>Est égal à</value>
+  </data>
+  <data name="GreaterThan" xml:space="preserve">
+    <value>Supérieur à</value>
+  </data>
+  <data name="LessThan" xml:space="preserve">
+    <value>Inférieur à</value>
+  </data>
+  <data name="NotEqual" xml:space="preserve">
+    <value>N&apos;est pas</value>
+  </data>
+  <data name="Error_NotAuthorizedToDrillDown" xml:space="preserve">
+    <value>Vous n&apos;êtes pas autorisé à faire un zoom avant pour cet enregistrement. Pour obtenir de l&apos;aide concernant les autorisations de sécurité, contactez votre administrateur système.</value>
+  </data>
+  <data name="ModuleInactivatedError" xml:space="preserve">
+    <value>Activez aussi les programmes Sage 300 suivants :{0}.</value>
+  </data>
+  <data name="SetExportCriteria" xml:space="preserve">
+    <value>Établir critères...</value>
+  </data>
+  <data name="SetCriteriaString" xml:space="preserve">
+    <value>Chaîne de critères d&apos;exportation</value>
+  </data>
+  <data name="ShowCriteria" xml:space="preserve">
+    <value>Afficher les critères</value>
+  </data>
+  <data name="HideCriteria" xml:space="preserve">
+    <value>Masquer les critères</value>
+  </data>
+  <data name="EndsWith" xml:space="preserve">
+    <value>Termine par</value>
+  </data>
+  <data name="ClickAddFilter" xml:space="preserve">
+    <value>Cliquer pour ajouter un filtre</value>
+  </data>
+  <data name="AddCriteria" xml:space="preserve">
+    <value>Ajouter des critères</value>
+  </data>
+  <data name="CreateFilterPopUpTitle" xml:space="preserve">
+    <value>Créer un filtre pour le champ {0}</value>
+  </data>
+  <data name="SetValueAsFieldName" xml:space="preserve">
+    <value>Définir valeur comme nom de champ</value>
+  </data>
+  <data name="Config" xml:space="preserve">
+    <value>Config.</value>
+  </data>
+  <data name="Column" xml:space="preserve">
+    <value>Colonne</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filtres</value>
+  </data>
+  <data name="ResultsPreview" xml:space="preserve">
+    <value>Aperçu des résultats</value>
+  </data>
+  <data name="ShowFilter" xml:space="preserve">
+    <value>Afficher filtre</value>
+  </data>
+  <data name="ReportName" xml:space="preserve">
+    <value>Nom du rapport</value>
+  </data>
+  <data name="SelectReport" xml:space="preserve">
+    <value>Sélectionner un rapport</value>
+  </data>
+  <data name="NoLicenseMessage" xml:space="preserve">
+    <value>Vous n&apos;avez pas de licence pour utiliser ce produit. Demandez de l&apos;aide à l&apos;administrateur de votre système.</value>
+  </data>
+  <data name="ClearFilters" xml:space="preserve">
+    <value>Effacer tous les filtres</value>
+  </data>
+  <data name="PerPage" xml:space="preserve">
+    <value>Par page :</value>
+  </data>
+  <data name="NoDrillDownInfo" xml:space="preserve">
+    <value>L&apos;information de zoom avant pour cet enregistrement est introuvable. Si vous utilisez l&apos;écran web, notez que vous devez utiliser l&apos;écran du bureau pour faire un zoom avant vers des transactions de Paie ou GP.</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtre :</value>
+    <comment>For general inquiry</comment>
+  </data>
+  <data name="NoFilter" xml:space="preserve">
+    <value>Aucun filtre</value>
+    <comment>For general inquiry</comment>
+  </data>
+  <data name="Template" xml:space="preserve">
+    <value>Modèle</value>
+    <comment>For general inquiry</comment>
+  </data>
+  <data name="InvalidTaxCode" xml:space="preserve">
+    <value>Le code de taxe n&apos;existe pas</value>
+  </data>
+  <data name="TaxWithheld" xml:space="preserve">
+    <value>Taxe retenue</value>
+  </data>
+  <data name="DetailTaxWithheld" xml:space="preserve">
+    <value>Détail de taxe retenue</value>
+  </data>
+  <data name="PendingTaxWithheld" xml:space="preserve">
+    <value>Taxe retenue en attente</value>
+  </data>
+  <data name="EmptyString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value>Tâche connexe</value>
+  </data>
+  <data name="PJCDetails" xml:space="preserve">
+    <value>Détails de GP</value>
+  </data>
+  <data name="ProjectAndJobCostingApplyDetails" xml:space="preserve">
+    <value>Imputer détails de Gestion de projet</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>Ressource</value>
+  </data>
+  <data name="DeleteAll" xml:space="preserve">
+    <value>Supprimer Tout</value>
+  </data>
+  <data name="Jobs" xml:space="preserve">
+    <value>Tâches</value>
+  </data>
+  <data name="DefaultFromInvoice" xml:space="preserve">
+    <value>Utiliser valeurs de facture</value>
+  </data>
+  <data name="GridCannotFindDataEntity" xml:space="preserve">
+    <value>Erreur interne. Impossible de localiser l’entité commerciale ACCPAC associée à une grille.</value>
+  </data>
+  <data name="GridCreateNewRecordFailed" xml:space="preserve">
+    <value>Erreur interne. Impossible de créer un nouvel enregistrement à partir de l’entité commerciale ACCPAC associée à une grille.</value>
+  </data>
+  <data name="GridInsertNewRecordFailed" xml:space="preserve">
+    <value>Erreur interne. Impossible d’insérer un nouvel enregistrement dans l’entité commerciale ACCPAC associée à une grille.</value>
+  </data>
+  <data name="GridMoveToRecordFailed" xml:space="preserve">
+    <value>Erreur interne. Échec du positionnement du pointeur dans l’entité commerciale ACCPAC associée à une grille.</value>
+  </data>
+  <data name="GridReadFailed" xml:space="preserve">
+    <value>Erreur interne. Échec de lecture à partir de l’entité commerciale ACCPAC associée à une grille pendant la mise à jour.</value>
+  </data>
+  <data name="GridRefreshCurrentRecordFailed" xml:space="preserve">
+    <value>Erreur interne. Échec d’enregistrement de valeur modifiée dans l’entité commerciale ACCPAC associée à une grille.</value>
+  </data>
+  <data name="UnsupportedDataType" xml:space="preserve">
+    <value>Type de données non pris en charge pour le champ {0}.</value>
+  </data>
+  <data name="GridReadEntityFailed" xml:space="preserve">
+    <value>Erreur interne. Échec de lecture à partir de l’entité commerciale ACCPAC associée à une grille.</value>
+  </data>
+  <data name="GridDeleteFailed" xml:space="preserve">
+    <value>Erreur interne. Échec de suppression d’un enregistrement dans l’entité commerciale ACCPAC associée à une grille.</value>
+  </data>
+  <data name="GridUpdateFailed" xml:space="preserve">
+    <value>Erreur interne. Échec de mise à jour de l’entité commerciale ACCPAC associée à une grille.</value>
+  </data>
+  <data name="BlankOptionalField" xml:space="preserve">
+    <value>Veuillez renseigner le champ optionnel</value>
+  </data>
+  <data name="DuplicateOptionalField" xml:space="preserve">
+    <value>Champ optionnel en double {0}</value>
+  </data>
+  <data name="InvalidTime" xml:space="preserve">
+    <value>Valeur d’heure non valide.</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Déconnexion</value>
+  </data>
+  <data name="MultiSessionSignOutConfirmationTemplate" xml:space="preserve">
+    <value>Vous êtes sur le point de vous déconnecter de &apos;{0}&apos; dans tous les onglets.\nSi vous continuez, vous perdrez tout changement non enregistré dans les autres onglets.</value>
+  </data>
+  <data name="SignOutConfirmation" xml:space="preserve">
+    <value>Confirmation de déconnexion</value>
+  </data>
+  <data name="AdminPageSignOut" xml:space="preserve">
+    <value>Vous êtes sur le point de vous déconnecter de tous les onglets qui sont connectés à cette base de donnée système. Si vous continuez, vous perdrez tout changement non enregistré dans les autres onglets.</value>
+  </data>
+  <data name="NotActivatedMessage" xml:space="preserve">
+    <value>Pour réaliser cette action, {0} doit être activé dans Sage 300.</value>
+  </data>
+  <data name="EvictionHeaderMessage" xml:space="preserve">
+    <value>Session terminée</value>
+  </data>
+  <data name="EvictionConfirmationMsg" xml:space="preserve">
+    <value>Votre administrateur système vous a déconnecté de Sage 300. Contactez votre administrateur système avant de vous reconnecter.</value>
+  </data>
+  <data name="RequestTimeout" xml:space="preserve">
+    <value>Votre requête n’a pas pu être traitée dans le délai imparti. Si vous avez besoin d’aide pour augmenter ce délai, demandez à votre administrateur de système comment changer le paramètre de délai d’attente des requêtes web.</value>
+  </data>
+  <data name="RequireValidEmail" xml:space="preserve">
+    <value>Avant de pouvoir spécifier les documents à envoyer à ce contact {0}, vous devez saisir son adresse courriel.</value>
+  </data>
+  <data name="ContactExist" xml:space="preserve">
+    <value>Le code de contact existe déjà.</value>
+  </data>
+  <data name="ContactInactive" xml:space="preserve">
+    <value>Vous ne pouvez pas utiliser le contact {0} car il est inactif.</value>
+  </data>
+  <data name="ContactNotExist" xml:space="preserve">
+    <value>Le contact {0} n’existe pas.</value>
+  </data>
+</root>
