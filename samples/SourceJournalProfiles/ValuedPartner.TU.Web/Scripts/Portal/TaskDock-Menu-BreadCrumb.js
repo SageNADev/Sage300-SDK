@@ -1137,6 +1137,7 @@ var TaskDockMenuBreadCrumbManager = function () {
             $('#homeNav > a').addClass('active');
             $('#topMenuTools').addClass('active');
 
+            sg.utls.loadCompanyColor();
             sg.utls.setBackgroundColor($("#header"));
 
             var isWidgetEmptyLnkClicked = false;

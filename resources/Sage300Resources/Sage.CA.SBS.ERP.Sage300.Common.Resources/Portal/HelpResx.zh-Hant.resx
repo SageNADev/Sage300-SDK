@@ -1027,10 +1027,10 @@
     <value>銀行總帳交易報表</value>
   </data>
   <data name="BK_BankImportOFXStatements_Article1" xml:space="preserve">
-    <value>關於OFX對帳單</value>
+    <value>關於電子對帳單</value>
   </data>
   <data name="BK_BankImportOFXStatements_Article2" xml:space="preserve">
-    <value>銀行調節OFX對帳單螢幕</value>
+    <value>銀行調節電子對帳單螢幕</value>
   </data>
   <data name="BK_BankImportOFXStatements_Screen" xml:space="preserve">
     <value>匯入OFX對帳單</value>
@@ -1063,13 +1063,13 @@
     <value>銀行過帳調節螢幕</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Article1" xml:space="preserve">
-    <value>調節OFX對帳單</value>
+    <value>調節電子對帳單</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Article2" xml:space="preserve">
-    <value>關於OFX對帳單</value>
+    <value>關於電子對帳單</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Screen" xml:space="preserve">
-    <value>銀行調節OFX對帳單螢幕</value>
+    <value>銀行調節電子對帳單螢幕</value>
   </data>
   <data name="BK_BankReconcileStatements_Article1" xml:space="preserve">
     <value>調節銀行科目</value>

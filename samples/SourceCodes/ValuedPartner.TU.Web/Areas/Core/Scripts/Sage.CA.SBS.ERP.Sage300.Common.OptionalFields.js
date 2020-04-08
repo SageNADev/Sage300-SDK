@@ -606,6 +606,7 @@ var optionalFieldUIGrid =
     optFldSrcName: null,
     retrivableCellOldVal: null,
     pristineData: { val: null, description: null },
+    afterDataBindEvent: null,
 
     baselineItem: {
         "OptionalField": null,
@@ -1707,6 +1708,11 @@ var optionalFieldUIGrid =
                     //
                     // End B-99599
                     //
+
+                    // Invoke after data bind event if specified
+                    if (optionalFieldUIGrid.afterDataBindEvent) {
+                       optionalFieldUIGrid.afterDataBindEvent(e);
+                    }
                 }
 
                 $("#" + optionalFieldUIGrid.selectAllCheckId).attr("checked", false);

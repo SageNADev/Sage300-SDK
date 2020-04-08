@@ -796,10 +796,6 @@
     <value>核准的金额</value>
     <comment>Auto-Generated</comment>
   </data>
-  <data name="EmailNotSpecified" xml:space="preserve">
-    <value>尚未指定客户{2}的{1}地址。</value>
-    <comment>Auto-Generated</comment>
-  </data>
   <data name="Entered" xml:space="preserve">
     <value>输入</value>
     <comment>Auto-Generated</comment>

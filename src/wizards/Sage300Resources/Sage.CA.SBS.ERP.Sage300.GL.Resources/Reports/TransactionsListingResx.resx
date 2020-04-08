@@ -160,4 +160,7 @@
     <value>G/L Transactions Listing</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="TaxInformation" xml:space="preserve">
+    <value>Tax Information</value>
+  </data>
 </root>

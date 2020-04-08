@@ -163,4 +163,13 @@
   <data name="Type" xml:space="preserve">
     <value>Type</value>
   </data>
+  <data name="TaxInformation" xml:space="preserve">
+    <value>Données de taxe</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantité</value>
+  </data>
+  <data name="UnitHeading" xml:space="preserve">
+    <value>UdeM</value>
+  </data>
 </root>

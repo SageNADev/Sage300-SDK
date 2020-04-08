@@ -184,7 +184,7 @@
     <value>日誌標題</value>
   </data>
   <data name="CreateNewBatch" xml:space="preserve">
-    <value>新建批次</value>
+    <value>建立新批次</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>描述</value>
@@ -335,7 +335,7 @@
     <comment>Added this for display in JournalEntry model</comment>
   </data>
   <data name="TextValue" xml:space="preserve">
-    <value>文本值</value>
+    <value>文字值</value>
     <comment>Added this for display in JournalDetailOptionalField model</comment>
   </data>
   <data name="TransactionNumber" xml:space="preserve">
@@ -552,5 +552,602 @@
   </data>
   <data name="EnteredBy" xml:space="preserve">
     <value>輸入者</value>
+  </data>
+  <data name="Allocated" xml:space="preserve">
+    <value>已分配</value>
+  </data>
+  <data name="AutoReversal" xml:space="preserve">
+    <value>自動迴轉</value>
+  </data>
+  <data name="AutoReversalOff" xml:space="preserve">
+    <value>自動迴轉關閉</value>
+  </data>
+  <data name="BatchNumber1" xml:space="preserve">
+    <value>批次編號</value>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>貸項通知單</value>
+  </data>
+  <data name="Credits" xml:space="preserve">
+    <value>貸項</value>
+  </data>
+  <data name="CustomerVendorNumber" xml:space="preserve">
+    <value>客戶/供應商編號</value>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>借項通知單</value>
+  </data>
+  <data name="Debits" xml:space="preserve">
+    <value>借項</value>
+  </data>
+  <data name="Description1" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>除</value>
+  </data>
+  <data name="DocumentDate1" xml:space="preserve">
+    <value>憑證日期</value>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>參考</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>憑證類型</value>
+  </data>
+  <data name="DrillDownApplicationSource1" xml:space="preserve">
+    <value>下鑽應用程式來源</value>
+  </data>
+  <data name="DrillDownLinkNumber1" xml:space="preserve">
+    <value>下鑽連結編號</value>
+  </data>
+  <data name="DrillDownType1" xml:space="preserve">
+    <value>下鑽類型</value>
+  </data>
+  <data name="EnteredBy1" xml:space="preserve">
+    <value>輸入者</value>
+  </data>
+  <data name="Entity1" xml:space="preserve">
+    <value>GL JournalHeader</value>
+  </data>
+  <data name="EntryNumber1" xml:space="preserve">
+    <value>分錄編號</value>
+  </data>
+  <data name="ErrorBatch1" xml:space="preserve">
+    <value>錯誤批次</value>
+  </data>
+  <data name="ErrorEntry1" xml:space="preserve">
+    <value>錯誤分錄</value>
+  </data>
+  <data name="Expense" xml:space="preserve">
+    <value>費用</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>會計期間</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>會計年度</value>
+  </data>
+  <data name="FunctionalAllocatedAmount1" xml:space="preserve">
+    <value>功能幣別已分配金額1</value>
+  </data>
+  <data name="FunctionalAllocatedAmount2" xml:space="preserve">
+    <value>功能幣別已分配金額2</value>
+  </data>
+  <data name="FunctionalAllocatedAmount3" xml:space="preserve">
+    <value>功能幣別已分配金額3</value>
+  </data>
+  <data name="FunctionalAllocatedAmount4" xml:space="preserve">
+    <value>功能幣別已分配金額4</value>
+  </data>
+  <data name="FunctionalAllocatedAmount5" xml:space="preserve">
+    <value>功能幣別已分配金額5</value>
+  </data>
+  <data name="FunctionalExpensedAmount1" xml:space="preserve">
+    <value>功能幣別已計費金額1</value>
+  </data>
+  <data name="FunctionalExpensedAmount2" xml:space="preserve">
+    <value>功能幣別已計費金額2</value>
+  </data>
+  <data name="FunctionalExpensedAmount3" xml:space="preserve">
+    <value>功能幣別已計費金額3</value>
+  </data>
+  <data name="FunctionalExpensedAmount4" xml:space="preserve">
+    <value>功能幣別已計費金額4</value>
+  </data>
+  <data name="FunctionalExpensedAmount5" xml:space="preserve">
+    <value>功能幣別已計費金額5</value>
+  </data>
+  <data name="FunctionalRecoverableAmount1" xml:space="preserve">
+    <value>功能幣別可退稅額1</value>
+  </data>
+  <data name="FunctionalRecoverableAmount2" xml:space="preserve">
+    <value>功能幣別可退稅額2</value>
+  </data>
+  <data name="FunctionalRecoverableAmount3" xml:space="preserve">
+    <value>功能幣別可退稅額3</value>
+  </data>
+  <data name="FunctionalRecoverableAmount4" xml:space="preserve">
+    <value>功能幣別可退稅額4</value>
+  </data>
+  <data name="FunctionalRecoverableAmount5" xml:space="preserve">
+    <value>功能幣別可退稅額5</value>
+  </data>
+  <data name="FunctionalTaxAmount1" xml:space="preserve">
+    <value>功能幣別稅額1</value>
+  </data>
+  <data name="FunctionalTaxAmount2" xml:space="preserve">
+    <value>功能幣別稅額2</value>
+  </data>
+  <data name="FunctionalTaxAmount3" xml:space="preserve">
+    <value>功能幣別稅額3</value>
+  </data>
+  <data name="FunctionalTaxAmount4" xml:space="preserve">
+    <value>功能幣別稅額4</value>
+  </data>
+  <data name="FunctionalTaxAmount5" xml:space="preserve">
+    <value>功能幣別稅額5</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount1" xml:space="preserve">
+    <value>功能幣別稅基金額1</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount2" xml:space="preserve">
+    <value>功能幣別稅基金額2</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount3" xml:space="preserve">
+    <value>功能幣別稅基金額3</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount4" xml:space="preserve">
+    <value>功能幣別稅基金額4</value>
+  </data>
+  <data name="FunctionalTaxBaseAmount5" xml:space="preserve">
+    <value>功能幣別稅基金額 5</value>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>利息</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>發票</value>
+  </data>
+  <data name="Liability" xml:space="preserve">
+    <value>負債</value>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>乘</value>
+  </data>
+  <data name="NextPeriod" xml:space="preserve">
+    <value>下一期間</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="NumberOfDetails1" xml:space="preserve">
+    <value>明細數目</value>
+  </data>
+  <data name="OrigDescription1" xml:space="preserve">
+    <value>始發者描述</value>
+  </data>
+  <data name="OrigExists1" xml:space="preserve">
+    <value>始發者存在</value>
+  </data>
+  <data name="OrigHomeCurrency" xml:space="preserve">
+    <value>始發者本國幣別</value>
+  </data>
+  <data name="OrigHomeCurrencyDecimals1" xml:space="preserve">
+    <value>始發者本國幣別小數位數</value>
+  </data>
+  <data name="Originator1" xml:space="preserve">
+    <value>始發者</value>
+  </data>
+  <data name="OrigMulticurrencySwitch1" xml:space="preserve">
+    <value>始發者多幣別開關</value>
+  </data>
+  <data name="OrigQtyDecimals1" xml:space="preserve">
+    <value>始發者數量小數位數</value>
+  </data>
+  <data name="OrigQtySwitch1" xml:space="preserve">
+    <value>始發者數量開關</value>
+  </data>
+  <data name="OrigStatus1" xml:space="preserve">
+    <value>始發者狀態</value>
+  </data>
+  <data name="OutOfBalanceBy1" xml:space="preserve">
+    <value>差額</value>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>過帳日期</value>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>預付款</value>
+  </data>
+  <data name="ProcessSwitches1" xml:space="preserve">
+    <value>處理開關</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>採購</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>進貨</value>
+  </data>
+  <data name="Recoverable" xml:space="preserve">
+    <value>可抵扣</value>
+  </data>
+  <data name="RefreshSourceLedgerField" xml:space="preserve">
+    <value>重新整理來源日記帳欄位</value>
+  </data>
+  <data name="Refund" xml:space="preserve">
+    <value>退款</value>
+  </data>
+  <data name="RESERVEDJournalEdit" xml:space="preserve">
+    <value>RESERVED Journal Edit</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>銷售</value>
+  </data>
+  <data name="SourceCodeDescription1" xml:space="preserve">
+    <value>來源代碼描述</value>
+  </data>
+  <data name="SourceCodeExists2" xml:space="preserve">
+    <value>來源代碼存在</value>
+  </data>
+  <data name="SourceLedger1" xml:space="preserve">
+    <value>來源分類帳</value>
+  </data>
+  <data name="SourceType1" xml:space="preserve">
+    <value>來源類型</value>
+  </data>
+  <data name="SpecificPeriod" xml:space="preserve">
+    <value>特定期間</value>
+  </data>
+  <data name="SpecificReversalPeriod2" xml:space="preserve">
+    <value>特定迴轉期間</value>
+  </data>
+  <data name="SpecificReversalYear1" xml:space="preserve">
+    <value>特定迴轉年度</value>
+  </data>
+  <data name="TaxAccountType" xml:space="preserve">
+    <value>稅務科目類型</value>
+  </data>
+  <data name="TaxAllocatedAmount1" xml:space="preserve">
+    <value>已分配稅額1</value>
+  </data>
+  <data name="TaxAllocatedAmount2" xml:space="preserve">
+    <value>已分配稅額2</value>
+  </data>
+  <data name="TaxAllocatedAmount3" xml:space="preserve">
+    <value>已分配稅額3</value>
+  </data>
+  <data name="TaxAllocatedAmount4" xml:space="preserve">
+    <value>已分配稅額4</value>
+  </data>
+  <data name="TaxAllocatedAmount5" xml:space="preserve">
+    <value>已分配稅額5</value>
+  </data>
+  <data name="TaxAmount1" xml:space="preserve">
+    <value>稅額1</value>
+  </data>
+  <data name="TaxAmount2" xml:space="preserve">
+    <value>稅額2</value>
+  </data>
+  <data name="TaxAmount3" xml:space="preserve">
+    <value>稅額3</value>
+  </data>
+  <data name="TaxAmount4" xml:space="preserve">
+    <value>稅額4</value>
+  </data>
+  <data name="TaxAmount5" xml:space="preserve">
+    <value>稅額5</value>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>稅務機構</value>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>稅務機構1</value>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>稅務機構2</value>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>稅務機構3</value>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>稅務機構4</value>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>稅務機構5</value>
+  </data>
+  <data name="TaxBaseAmount1" xml:space="preserve">
+    <value>稅基金額1</value>
+  </data>
+  <data name="TaxBaseAmount2" xml:space="preserve">
+    <value>稅基金額2</value>
+  </data>
+  <data name="TaxBaseAmount3" xml:space="preserve">
+    <value>稅基金額3</value>
+  </data>
+  <data name="TaxBaseAmount4" xml:space="preserve">
+    <value>稅基金額4</value>
+  </data>
+  <data name="TaxBaseAmount5" xml:space="preserve">
+    <value>稅基金額5</value>
+  </data>
+  <data name="TaxExpenseAccount1" xml:space="preserve">
+    <value>稅金計費科目1</value>
+  </data>
+  <data name="TaxExpenseAccount2" xml:space="preserve">
+    <value>稅金計費科目2</value>
+  </data>
+  <data name="TaxExpenseAccount3" xml:space="preserve">
+    <value>稅金計費科目3</value>
+  </data>
+  <data name="TaxExpenseAccount4" xml:space="preserve">
+    <value>稅金計費科目4</value>
+  </data>
+  <data name="TaxExpenseAccount5" xml:space="preserve">
+    <value>稅金計費科目5</value>
+  </data>
+  <data name="TaxExpenseAmount1" xml:space="preserve">
+    <value>稅務計費金額1</value>
+  </data>
+  <data name="TaxExpenseAmount2" xml:space="preserve">
+    <value>稅務計費金額2</value>
+  </data>
+  <data name="TaxExpenseAmount3" xml:space="preserve">
+    <value>稅務計費金額3</value>
+  </data>
+  <data name="TaxExpenseAmount4" xml:space="preserve">
+    <value>稅務計費金額4</value>
+  </data>
+  <data name="TaxExpenseAmount5" xml:space="preserve">
+    <value>稅務計費金額5</value>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>稅組</value>
+  </data>
+  <data name="TaxItemClass1" xml:space="preserve">
+    <value>產品稅級1</value>
+  </data>
+  <data name="TaxItemClass2" xml:space="preserve">
+    <value>產品稅級2</value>
+  </data>
+  <data name="TaxItemClass3" xml:space="preserve">
+    <value>產品稅級3</value>
+  </data>
+  <data name="TaxItemClass4" xml:space="preserve">
+    <value>產品稅級4</value>
+  </data>
+  <data name="TaxItemClass5" xml:space="preserve">
+    <value>產品稅級5</value>
+  </data>
+  <data name="TaxRate1" xml:space="preserve">
+    <value>稅率1</value>
+  </data>
+  <data name="TaxRate2" xml:space="preserve">
+    <value>稅率2</value>
+  </data>
+  <data name="TaxRate3" xml:space="preserve">
+    <value>稅率3</value>
+  </data>
+  <data name="TaxRate4" xml:space="preserve">
+    <value>稅率4</value>
+  </data>
+  <data name="TaxRate5" xml:space="preserve">
+    <value>稅率5</value>
+  </data>
+  <data name="TaxRecoverableAccount1" xml:space="preserve">
+    <value>可抵扣稅金科目1</value>
+  </data>
+  <data name="TaxRecoverableAccount2" xml:space="preserve">
+    <value>可抵扣稅金科目2</value>
+  </data>
+  <data name="TaxRecoverableAccount3" xml:space="preserve">
+    <value>可抵扣稅金科目3</value>
+  </data>
+  <data name="TaxRecoverableAccount4" xml:space="preserve">
+    <value>可抵扣稅金科目4</value>
+  </data>
+  <data name="TaxRecoverableAccount5" xml:space="preserve">
+    <value>可抵扣稅金科目5</value>
+  </data>
+  <data name="TaxRecoverableAmount1" xml:space="preserve">
+    <value>可退回稅額1</value>
+  </data>
+  <data name="TaxRecoverableAmount2" xml:space="preserve">
+    <value>可退回稅額2</value>
+  </data>
+  <data name="TaxRecoverableAmount3" xml:space="preserve">
+    <value>可退回稅額3</value>
+  </data>
+  <data name="TaxRecoverableAmount4" xml:space="preserve">
+    <value>可退回稅額4</value>
+  </data>
+  <data name="TaxRecoverableAmount5" xml:space="preserve">
+    <value>可退回稅額5</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount1" xml:space="preserve">
+    <value>稅務報告已分配金額1</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount2" xml:space="preserve">
+    <value>稅務報告已分配金額2</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount3" xml:space="preserve">
+    <value>稅務報告已分配金額3</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount4" xml:space="preserve">
+    <value>稅務報告已分配金額4</value>
+  </data>
+  <data name="TaxReportingAllocatedAmount5" xml:space="preserve">
+    <value>稅務報告已分配金額5</value>
+  </data>
+  <data name="TaxReportingAmount1" xml:space="preserve">
+    <value>稅務報告金額1</value>
+  </data>
+  <data name="TaxReportingAmount2" xml:space="preserve">
+    <value>稅務報告金額2</value>
+  </data>
+  <data name="TaxReportingAmount3" xml:space="preserve">
+    <value>稅務報告金額3</value>
+  </data>
+  <data name="TaxReportingAmount4" xml:space="preserve">
+    <value>稅務報告金額4</value>
+  </data>
+  <data name="TaxReportingAmount5" xml:space="preserve">
+    <value>稅務報告金額5</value>
+  </data>
+  <data name="TaxReportingCurrencyCode" xml:space="preserve">
+    <value>幣別代碼</value>
+  </data>
+  <data name="TaxReportingExpensed1" xml:space="preserve">
+    <value>稅務報告已計費1</value>
+  </data>
+  <data name="TaxReportingExpensed2" xml:space="preserve">
+    <value>稅務報告已計費2</value>
+  </data>
+  <data name="TaxReportingExpensed3" xml:space="preserve">
+    <value>稅務報告已計費3</value>
+  </data>
+  <data name="TaxReportingExpensed4" xml:space="preserve">
+    <value>稅務報告已計費4</value>
+  </data>
+  <data name="TaxReportingExpensed5" xml:space="preserve">
+    <value>稅務報告已計費5</value>
+  </data>
+  <data name="TaxReportingRate" xml:space="preserve">
+    <value>匯率</value>
+  </data>
+  <data name="TaxReportingRateDate" xml:space="preserve">
+    <value>匯率日期</value>
+  </data>
+  <data name="TaxReportingRateOperation" xml:space="preserve">
+    <value>稅務報告匯率運算</value>
+  </data>
+  <data name="TaxReportingRateType" xml:space="preserve">
+    <value>匯率類型</value>
+  </data>
+  <data name="TaxTransactionType" xml:space="preserve">
+    <value>稅務交易類型</value>
+  </data>
+  <data name="TaxVendorClass1" xml:space="preserve">
+    <value>供應商稅級 1</value>
+  </data>
+  <data name="TaxVendorClass2" xml:space="preserve">
+    <value>供應商稅級 2</value>
+  </data>
+  <data name="TaxVendorClass3" xml:space="preserve">
+    <value>供應商稅級 3</value>
+  </data>
+  <data name="TaxVendorClass4" xml:space="preserve">
+    <value>供應商稅級 4</value>
+  </data>
+  <data name="TaxVendorClass5" xml:space="preserve">
+    <value>供應商稅級 5</value>
+  </data>
+  <data name="TXRECVB1RC" xml:space="preserve">
+    <value>稅務報告可退回金額</value>
+  </data>
+  <data name="TXRECVB2RC" xml:space="preserve">
+    <value>稅務報告可退回金額</value>
+  </data>
+  <data name="TXRECVB3RC" xml:space="preserve">
+    <value>稅務報告可退回金額</value>
+  </data>
+  <data name="TXRECVB4RC" xml:space="preserve">
+    <value>稅務報告可退回金額</value>
+  </data>
+  <data name="TXRECVB5RC" xml:space="preserve">
+    <value>稅務報告可退回金額</value>
+  </data>
+  <data name="UnappliedCash" xml:space="preserve">
+    <value>未核銷現金</value>
+  </data>
+  <data name="DrillDownTaxDetail" xml:space="preserve">
+    <value>總帳稅務明細</value>
+  </data>
+  <data name="TaxAllocated" xml:space="preserve">
+    <value>已分配金額</value>
+  </data>
+  <data name="TaxExpense" xml:space="preserve">
+    <value>費用金額</value>
+  </data>
+  <data name="TaxRecoverable" xml:space="preserve">
+    <value>可抵扣金額</value>
+  </data>
+  <data name="ItemTaxClass" xml:space="preserve">
+    <value>產品稅級</value>
+  </data>
+  <data name="TaxGroupDescription" xml:space="preserve">
+    <value>稅組描述</value>
+  </data>
+  <data name="TaxAuthorityDesc" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="TaxAuthorityDescription1" xml:space="preserve">
+    <value>稅務機構描述1</value>
+  </data>
+  <data name="TaxAuthorityDescription2" xml:space="preserve">
+    <value>稅務機構描述2</value>
+  </data>
+  <data name="TaxAuthorityDescription3" xml:space="preserve">
+    <value>稅務機構描述3</value>
+  </data>
+  <data name="TaxAuthorityDescription4" xml:space="preserve">
+    <value>稅務機構描述4</value>
+  </data>
+  <data name="TaxAuthorityDescription5" xml:space="preserve">
+    <value>稅務機構描述5</value>
+  </data>
+  <data name="CreateTaxDetail" xml:space="preserve">
+    <value>建立稅務明細</value>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>客戶編號</value>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>供應商編號</value>
+  </data>
+  <data name="CustomerTaxClass" xml:space="preserve">
+    <value>客戶稅級</value>
+  </data>
+  <data name="GLTaxDetails" xml:space="preserve">
+    <value>稅務明細匯總</value>
+  </data>
+  <data name="VendorTaxClass" xml:space="preserve">
+    <value>供應商稅級</value>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>客戶名稱</value>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>供應商名稱</value>
+  </data>
+  <data name="CurrencyCodeDescription" xml:space="preserve">
+    <value>幣別代碼描述</value>
+  </data>
+  <data name="RateTypeDescription" xml:space="preserve">
+    <value>匯率類型描述</value>
+  </data>
+  <data name="TaxReportCaption" xml:space="preserve">
+    <value>幣別匯率</value>
+  </data>
+  <data name="PurchasesTax" xml:space="preserve">
+    <value>採購稅</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="SalesTax" xml:space="preserve">
+    <value>銷售稅</value>
+  </data>
+  <data name="EntryType" xml:space="preserve">
+    <value>分錄類型</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>標準</value>
+  </data>
+  <data name="DocumentTotal" xml:space="preserve">
+    <value>憑證合計</value>
   </data>
 </root>

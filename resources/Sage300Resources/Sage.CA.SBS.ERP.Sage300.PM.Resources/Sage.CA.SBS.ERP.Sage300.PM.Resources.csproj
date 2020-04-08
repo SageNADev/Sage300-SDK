@@ -46,7 +46,6 @@
     <EmbeddedResource Include="Forms\ProjectsResx.es.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.fr.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.resx" />
-    <EmbeddedResource Include="Forms\ProjectsResx.th.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.zh-Hant.resx" />
   </ItemGroup>

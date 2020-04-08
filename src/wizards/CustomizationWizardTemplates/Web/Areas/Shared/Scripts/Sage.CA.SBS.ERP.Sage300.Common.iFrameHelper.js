@@ -242,8 +242,8 @@ $.extend(sg.utls.iFrameHelper = {
                     parentMsgCallBackFunc();
                 }
 
-                //This is not required. Destroy calls the page unload event.
-                /*if (frameWindow) {
+                //This is not required. Destroy calls the page unload event. (Well, unless it is not from chrome)
+                if (sg.utls.isChrome() && frameWindow) {
                     //Call iframe unload event if it exists.
                     //This event is registered with Child window.
                     var unloadEvents = sg.utls.iFrameHelper.getUnloadEvents(frameWindow);
@@ -253,7 +253,7 @@ $.extend(sg.utls.iFrameHelper = {
                             evt();
                         });
                     }
-                }*/
+                }
 
                 // destroy the window on close.
                 divCtrl.data("kendoWindow").destroy();

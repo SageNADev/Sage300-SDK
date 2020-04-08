@@ -796,10 +796,6 @@
     <value>Approved Amount</value>
     <comment>Auto-Generated</comment>
   </data>
-  <data name="EmailNotSpecified" xml:space="preserve">
-    <value>The {1} address for customer {2} has not been specified.</value>
-    <comment>Auto-Generated</comment>
-  </data>
   <data name="Entered" xml:space="preserve">
     <value>Entered</value>
     <comment>Auto-Generated</comment>

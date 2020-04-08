@@ -142,6 +142,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Reports {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string Quantity {
+            get {
+                return ResourceManager.GetString("Quantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reference and Description.
         /// </summary>
         public static string RefAndDesc {
@@ -178,11 +187,29 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Reports {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tax Information.
+        /// </summary>
+        public static string TaxInformation {
+            get {
+                return ResourceManager.GetString("TaxInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type.
         /// </summary>
         public static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UOM.
+        /// </summary>
+        public static string UnitHeading {
+            get {
+                return ResourceManager.GetString("UnitHeading", resourceCulture);
             }
         }
     }

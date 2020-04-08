@@ -93,26 +93,22 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>APResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="APResx.th.resx" />
     <EmbeddedResource Include="ARResx.fr.resx" />
     <EmbeddedResource Include="ARResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ARResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ARResx.th.resx" />
     <EmbeddedResource Include="BKResx.fr.resx" />
     <EmbeddedResource Include="BKResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>BKResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="BKResx.th.resx" />
     <EmbeddedResource Include="Common\VPFCommonResx.es.resx" />
     <EmbeddedResource Include="Common\VPFCommonResx.fr.resx" />
     <EmbeddedResource Include="Common\VPFCommonResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>VPFCommonResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Common\VPFCommonResx.th.resx" />
     <EmbeddedResource Include="Common\VPFCommonResx.zh-Hans.resx" />
     <EmbeddedResource Include="Common\VPFCommonResx.zh-Hant.resx" />
     <EmbeddedResource Include="GLResx.fr.resx" />
@@ -120,9 +116,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GLResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="GLResx.th.resx" />
     <EmbeddedResource Include="ICMaintResx.fr.resx" />
-    <EmbeddedResource Include="ICMaintResx.th.resx" />
     <EmbeddedResource Include="ICResx.fr.resx" />
     <EmbeddedResource Include="ICResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -132,26 +126,22 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ICMaintResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ICResx.th.resx" />
     <EmbeddedResource Include="OEResx.fr.resx" />
     <EmbeddedResource Include="OEResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>OEResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="OEResx.th.resx" />
     <EmbeddedResource Include="POResx.fr.resx" />
     <EmbeddedResource Include="POResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>POResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="POResx.th.resx" />
     <EmbeddedResource Include="Services\FlowResx.es.resx" />
     <EmbeddedResource Include="Services\FlowResx.fr.resx" />
     <EmbeddedResource Include="Services\FlowResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FlowResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Services\FlowResx.th.resx" />
     <EmbeddedResource Include="Services\FlowResx.zh-Hans.resx" />
     <EmbeddedResource Include="Services\FlowResx.zh-Hant.resx" />
   </ItemGroup>

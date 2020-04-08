@@ -116,7 +116,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EnumerationsResx.th.resx" />
     <EmbeddedResource Include="Forms\ContactOptionalFieldValueResx.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ContactOptionalFieldValueResx.es.Designer.cs</LastGenOutput>
@@ -129,7 +128,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ContactOptionalFieldValueResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ContactOptionalFieldValueResx.th.resx" />
     <EmbeddedResource Include="Forms\ContactOptionalFieldValueResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ContactOptionalFieldValueResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\ContactResx.es.resx">
@@ -144,7 +142,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ContactResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ContactResx.th.resx" />
     <EmbeddedResource Include="Forms\ContactResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ContactResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\OptionalFieldDetailsResx.es.resx">
@@ -159,7 +156,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>OptionalFieldDetailsResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OptionalFieldDetailsResx.th.resx" />
     <EmbeddedResource Include="Forms\OptionalFieldDetailsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\OptionalFieldDetailsResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\OptionalFieldHeaderResx.es.resx">
@@ -174,7 +170,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>OptionalFieldHeaderResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OptionalFieldHeaderResx.th.resx" />
     <EmbeddedResource Include="Forms\OptionalFieldHeaderResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\OptionalFieldHeaderResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\OptionalFieldResx.es.resx" />
@@ -183,7 +178,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>OptionalFieldResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OptionalFieldResx.th.resx" />
     <EmbeddedResource Include="Forms\OptionalFieldResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\OptionalFieldResx.zh-Hant.resx" />
     <EmbeddedResource Include="MTCommonResx.resx">
@@ -192,7 +186,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MTCommonResx.es.resx" />
     <EmbeddedResource Include="MTCommonResx.fr.resx" />
-    <EmbeddedResource Include="MTCommonResx.th.resx" />
     <EmbeddedResource Include="MTCommonResx.zh-Hans.resx" />
     <EmbeddedResource Include="MTCommonResx.zh-Hant.resx" />
     <EmbeddedResource Include="EnumerationsResx.resx">

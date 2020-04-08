@@ -1027,10 +1027,10 @@
     <value>Bancos - Reporte de Transacciones del LM</value>
   </data>
   <data name="BK_BankImportOFXStatements_Article1" xml:space="preserve">
-    <value>Acerca de los estados de cuentas OFX</value>
+    <value>Acerca de los estados de cuentas-E</value>
   </data>
   <data name="BK_BankImportOFXStatements_Article2" xml:space="preserve">
-    <value>Pantalla Bancos - Conciliar Estados de Cuentas OFX</value>
+    <value>Pantalla Bancos - Conciliar Estados-E</value>
   </data>
   <data name="BK_BankImportOFXStatements_Screen" xml:space="preserve">
     <value>Importar Estados de Cuentas OFX</value>
@@ -1063,13 +1063,13 @@
     <value>Pantalla Bancos - Asentar Conciliación</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Article1" xml:space="preserve">
-    <value>Conciliar estados de cuentas OFX</value>
+    <value>Conciliar Estados-E</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Article2" xml:space="preserve">
-    <value>Acerca de los estados de cuentas OFX</value>
+    <value>Acerca de los estados de cuentas-E</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Screen" xml:space="preserve">
-    <value>Pantalla Bancos - Conciliar Estados de Cuentas OFX</value>
+    <value>Pantalla Bancos - Conciliar Estados-E</value>
   </data>
   <data name="BK_BankReconcileStatements_Article1" xml:space="preserve">
     <value>Conciliar una cuenta bancaria</value>

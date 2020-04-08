@@ -3031,15 +3031,6 @@ namespace Sage.CA.SBS.ERP.Sage300.OE.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The {1} address for customer {2} has not been specified..
-        /// </summary>
-        public static string EmailNotSpecified {
-            get {
-                return ResourceManager.GetString("EmailNotSpecified", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Entered.
         /// </summary>
         public static string Entered {
@@ -3306,6 +3297,15 @@ namespace Sage.CA.SBS.ERP.Sage300.OE.Resources {
         public static string ExtPriceNetOfDiscIncTax {
             get {
                 return ResourceManager.GetString("ExtPriceNetOfDiscIncTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Documents could not be emailed to contacts for customer {0}. Check that contacts for this customer are set up correctly..
+        /// </summary>
+        public static string FailedMTEmail {
+            get {
+                return ResourceManager.GetString("FailedMTEmail", resourceCulture);
             }
         }
         
@@ -11019,17 +11019,6 @@ namespace Sage.CA.SBS.ERP.Sage300.OE.Resources {
         public static string ZipPostalCode {
             get {
                 return ResourceManager.GetString("ZipPostalCode", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Documents could not be emailed to contacts for customer %1. Check that contacts for this customer are set up correctly.
-        /// </summary>
-        public static string FailedMTEmail
-        {
-            get
-            {
-                return ResourceManager.GetString("FailedMTEmail", resourceCulture);
             }
         }
     }

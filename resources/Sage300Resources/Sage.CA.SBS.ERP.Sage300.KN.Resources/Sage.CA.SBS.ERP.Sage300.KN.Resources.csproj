@@ -64,7 +64,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>NoteResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NoteResx.th.resx" />
     <EmbeddedResource Include="Forms\NoteResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\NoteResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\NotesSearchResx.es.resx" />
@@ -73,7 +72,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>NotesSearchResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NotesSearchResx.th.resx" />
     <EmbeddedResource Include="Forms\NotesSearchResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\NotesSearchResx.zh-Hant.resx" />
     <EmbeddedResource Include="MenuResx.es.resx" />
@@ -82,7 +80,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MenuResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuResx.th.resx" />
     <EmbeddedResource Include="MenuResx.zh-Hans.resx" />
     <EmbeddedResource Include="MenuResx.zh-Hant.resx" />
   </ItemGroup>

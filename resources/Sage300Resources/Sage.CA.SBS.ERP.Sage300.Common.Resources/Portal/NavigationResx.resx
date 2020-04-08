@@ -349,7 +349,7 @@
     <value>Post Reconciliation</value>
   </data>
   <data name="Bank_Trans_ReconcileOFXStatement" xml:space="preserve">
-    <value>Reconcile OFX Statements</value>
+    <value>Reconcile E-Statements</value>
   </data>
   <data name="Bank_Trans_ReconcileStatements" xml:space="preserve">
     <value>Reconcile Statements</value>

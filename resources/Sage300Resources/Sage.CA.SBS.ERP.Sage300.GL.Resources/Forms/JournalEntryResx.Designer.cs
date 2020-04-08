@@ -646,6 +646,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Document Total.
+        /// </summary>
+        public static string DocumentTotal {
+            get {
+                return ResourceManager.GetString("DocumentTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Document Type.
         /// </summary>
         public static string DocumentType {
@@ -858,6 +867,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string EntryPeriod {
             get {
                 return ResourceManager.GetString("EntryPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entry Type.
+        /// </summary>
+        public static string EntryType {
+            get {
+                return ResourceManager.GetString("EntryType", resourceCulture);
             }
         }
         
@@ -1699,6 +1717,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Purchases Tax.
+        /// </summary>
+        public static string PurchasesTax {
+            get {
+                return ResourceManager.GetString("PurchasesTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quantity.
         /// </summary>
         public static string Quantity {
@@ -1789,6 +1816,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Regular.
+        /// </summary>
+        public static string Regular {
+            get {
+                return ResourceManager.GetString("Regular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RESERVED Journal Edit.
         /// </summary>
         public static string RESERVEDJournalEdit {
@@ -1857,6 +1893,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string Sales {
             get {
                 return ResourceManager.GetString("Sales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales Tax.
+        /// </summary>
+        public static string SalesTax {
+            get {
+                return ResourceManager.GetString("SalesTax", resourceCulture);
             }
         }
         
@@ -2055,6 +2100,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         public static string SpecificReversalYear1 {
             get {
                 return ResourceManager.GetString("SpecificReversalYear1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Standard.
+        /// </summary>
+        public static string Standard {
+            get {
+                return ResourceManager.GetString("Standard", resourceCulture);
             }
         }
         

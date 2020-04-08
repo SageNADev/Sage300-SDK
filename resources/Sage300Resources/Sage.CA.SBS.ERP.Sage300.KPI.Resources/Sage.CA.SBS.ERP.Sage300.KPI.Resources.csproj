@@ -65,14 +65,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EnumerationsResx.th.resx" />
     <EmbeddedResource Include="Forms\ActivityTrendResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ActivityTrendResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActivityTrendResx.es.resx" />
     <EmbeddedResource Include="Forms\ActivityTrendResx.fr.resx" />
-    <EmbeddedResource Include="Forms\ActivityTrendResx.th.resx" />
     <EmbeddedResource Include="Forms\ActivityTrendResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ActivityTrendResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\InventoryItemPerformanceResx.resx">
@@ -81,7 +79,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventoryItemPerformanceResx.es.resx" />
     <EmbeddedResource Include="Forms\InventoryItemPerformanceResx.fr.resx" />
-    <EmbeddedResource Include="Forms\InventoryItemPerformanceResx.th.resx" />
     <EmbeddedResource Include="Forms\InventoryItemPerformanceResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\InventoryItemPerformanceResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\SalesPerSalespersonResx.resx">
@@ -90,7 +87,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SalesPerSalespersonResx.es.resx" />
     <EmbeddedResource Include="Forms\SalesPerSalespersonResx.fr.resx" />
-    <EmbeddedResource Include="Forms\SalesPerSalespersonResx.th.resx" />
     <EmbeddedResource Include="Forms\SalesPerSalespersonResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\SalesPerSalespersonResx.zh-Hant.resx" />
     <EmbeddedResource Include="KPICommonResx.resx">
@@ -99,7 +95,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KPICommonResx.es.resx" />
     <EmbeddedResource Include="KPICommonResx.fr.resx" />
-    <EmbeddedResource Include="KPICommonResx.th.resx" />
     <EmbeddedResource Include="KPICommonResx.zh-Hans.resx" />
     <EmbeddedResource Include="KPICommonResx.zh-Hant.resx" />
     <EmbeddedResource Include="EnumerationsResx.resx">

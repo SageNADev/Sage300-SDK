@@ -3904,7 +3904,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About OFX Statements.
+        ///   Looks up a localized string similar to About E-Statements.
         /// </summary>
         public static string BK_BankImportOFXStatements_Article1 {
             get {
@@ -3913,7 +3913,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bank Reconcile OFX Statements Screen.
+        ///   Looks up a localized string similar to Bank Reconcile E-Statements Screen.
         /// </summary>
         public static string BK_BankImportOFXStatements_Article2 {
             get {
@@ -4012,7 +4012,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reconciling OFX Statements.
+        ///   Looks up a localized string similar to Reconciling E-Statements.
         /// </summary>
         public static string BK_BankReconcileOFXStatements_Article1 {
             get {
@@ -4021,7 +4021,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About OFX Statements.
+        ///   Looks up a localized string similar to About E-Statements.
         /// </summary>
         public static string BK_BankReconcileOFXStatements_Article2 {
             get {
@@ -4030,7 +4030,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bank Reconcile OFX Statements Screen.
+        ///   Looks up a localized string similar to Bank Reconcile E-Statements Screen.
         /// </summary>
         public static string BK_BankReconcileOFXStatements_Screen {
             get {

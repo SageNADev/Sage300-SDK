@@ -1132,4 +1132,22 @@
   <data name="TaxReportCaption" xml:space="preserve">
     <value>Currency Rate</value>
   </data>
+  <data name="PurchasesTax" xml:space="preserve">
+    <value>Purchases Tax</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>Regular</value>
+  </data>
+  <data name="SalesTax" xml:space="preserve">
+    <value>Sales Tax</value>
+  </data>
+  <data name="EntryType" xml:space="preserve">
+    <value>Entry Type</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="DocumentTotal" xml:space="preserve">
+    <value>Document Total</value>
+  </data>
 </root>
