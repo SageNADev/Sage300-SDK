@@ -137,7 +137,7 @@
     <value>Processing</value>
   </data>
   <data name="ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion" xml:space="preserve">
-    <value>This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.7.2 in all projects in the solution being upgraded.</value>
+    <value>This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.8 in all projects in the solution being upgraded.</value>
   </data>
   <data name="GenerateXMLDocFile" xml:space="preserve">
     <value>Generate XML documentation file</value>
