@@ -72,8 +72,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// This is the version of the Microsoft .NET Framework 
             /// to target for all projects in the solution being upgraded.
             /// </summary>
-            public const string TargetedDotNetFrameworkVersion = "4.7.2";
-            public const string TargetFrameworkMoniker = ".NETFramework,Version=v4.7.2";
+            public const string TargetedDotNetFrameworkVersion = "4.8";
+            public const string TargetFrameworkMoniker = ".NETFramework,Version=v4.8";
         }
     }
 }

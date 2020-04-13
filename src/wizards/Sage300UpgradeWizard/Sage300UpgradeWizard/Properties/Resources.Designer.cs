@@ -574,7 +574,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.7.2 in all projects in the solution being upgraded..
+        ///   Looks up a localized string similar to This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.8 in all projects in the solution being upgraded..
         /// </summary>
         internal static string ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
             get {
