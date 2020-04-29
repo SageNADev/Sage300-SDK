@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -197,18 +197,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             //        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
             //                      Constants.Common.TargetedDotNetFrameworkVersion));
 
-            AddStep(Resources.ReleaseSpecificTitleUpdateThemeColor,
-                    Resources.ReleaseSpecificDescUpdateThemeColor,
-                    Resources.ReleaseSpecificUpdateThemeColor);
-
-            AddStep(Resources.ReleaseSpecificTitleUpdateCheckboxes,
-                    Resources.ReleaseSpecificDescUpdateCheckboxes,
-                    Resources.ReleaseSpecificUpdateCheckboxes);
-
-            AddStep(Resources.ReleaseSpecificTitleUpdateNewtonsoftPackage,
-                    Resources.ReleaseSpecificDescUpdateNewtonsoftPackage,
-                    Resources.ReleaseSpecificUpdateNewtonsoftPackage);
-
             #endregion
 
             #region Common for all upgrades - content specific to release
@@ -253,10 +241,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 #endif
             // Keep this around for the inevitable .NET framework 4.8 upgrade
             //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
-
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateThemeColor}");
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateCheckboxes}");
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateNewtonsoftPackage}");
 
             // End - Specific to release
 
