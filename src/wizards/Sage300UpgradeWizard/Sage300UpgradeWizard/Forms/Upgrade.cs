@@ -172,11 +172,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             #region Accpac .NET library update - Comment out if no update required
 
-            //AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
-            //        Resources.ReleaseAllDescSyncAccpacLibs,
-            //        string.Format(Resources.ReleaseAllSyncAccpacLibs,
-            //                      Constants.PerRelease.FromAccpacNumber,
-            //                      Constants.PerRelease.ToAccpacNumber));
+            AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
+                    Resources.ReleaseAllDescSyncAccpacLibs,
+                    string.Format(Resources.ReleaseAllSyncAccpacLibs,
+                                  Constants.PerRelease.FromAccpacNumber,
+                                  Constants.PerRelease.ToAccpacNumber));
 
             #endregion
 
@@ -232,7 +232,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncWebFiles}");
 
             #region Accpac .NET library update - Comment out if no update required
-            //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
             #endregion
 
             // Begin - Specific to release

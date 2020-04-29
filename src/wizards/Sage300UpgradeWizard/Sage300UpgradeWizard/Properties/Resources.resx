@@ -296,6 +296,9 @@
   <data name="ExceptionThrownPossibleLockedFile" xml:space="preserve">
     <value>Exception thrown. Possible locked file</value>
   </data>
+  <data name="ReleaseAllSyncAccpacLibs" type="System.Resources.ResXFileRef, System.Windows.Forms">	
+    <value>..\content\ReleaseAllSyncAccpacLibs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>	
+  </data>
   <data name="ReleaseAllDescSyncWebFiles" xml:space="preserve">
     <value>This step will upgrade the various global files included in the solution.</value>
   </data>

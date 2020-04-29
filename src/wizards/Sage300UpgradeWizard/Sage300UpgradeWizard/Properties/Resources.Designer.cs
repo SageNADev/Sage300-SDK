@@ -402,7 +402,23 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
                 return ResourceManager.GetString("ReleaseAllDescSyncWebFiles", resourceCulture);
             }
         }
-        
+
+        /// <summary>	
+        ///   Looks up a localized string similar to The versions of the Accpac Libraries are stored in a property file.	
+        ///	
+        ///Certain projects reference these libraries and the reference number 	
+        ///has changed from {0} to {1}. 	
+        ///	
+        ///This step will upgrade the AccpacDotNetVersion.props file..	
+        /// </summary>	
+        internal static string ReleaseAllSyncAccpacLibs
+        {
+            get
+            {
+                return ResourceManager.GetString("ReleaseAllSyncAccpacLibs", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to The Kendo UI for jQuery JavaScript library is not packaged with the 
         ///upgrade wizard for licensing reasons.

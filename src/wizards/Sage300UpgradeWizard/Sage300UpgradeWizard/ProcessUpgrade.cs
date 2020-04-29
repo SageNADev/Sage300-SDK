@@ -105,10 +105,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
                     #region Accpac .NET library update - Comment out if no update required
 
-                    //case 3:
-                    //    LogSpacerLine('-');
-                    //    SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
-                    //    break;
+                    case 3:
+                        LogSpacerLine('-');
+                        SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
+                        break;
 
                     #endregion
 
