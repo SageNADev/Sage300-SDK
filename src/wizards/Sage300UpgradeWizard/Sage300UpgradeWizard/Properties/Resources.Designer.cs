@@ -402,21 +402,23 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
                 return ResourceManager.GetString("ReleaseAllDescSyncWebFiles", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The versions of the Accpac Libraries are stored in a property file.
-        ///
-        ///Certain projects reference these libraries and the reference number 
-        ///has changed from {0} to {1}. 
-        ///
-        ///This step will upgrade the AccpacDotNetVersion.props file..
-        /// </summary>
-        internal static string ReleaseAllSyncAccpacLibs {
-            get {
+
+        /// <summary>	
+        ///   Looks up a localized string similar to The versions of the Accpac Libraries are stored in a property file.	
+        ///	
+        ///Certain projects reference these libraries and the reference number 	
+        ///has changed from {0} to {1}. 	
+        ///	
+        ///This step will upgrade the AccpacDotNetVersion.props file..	
+        /// </summary>	
+        internal static string ReleaseAllSyncAccpacLibs
+        {
+            get
+            {
                 return ResourceManager.GetString("ReleaseAllSyncAccpacLibs", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to The Kendo UI for jQuery JavaScript library is not packaged with the 
         ///upgrade wizard for licensing reasons.
@@ -538,33 +540,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will need to be done manually..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdateCheckboxes {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateCheckboxes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will need to be done manually..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdateNewtonsoftPackage {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateNewtonsoftPackage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will need to be done manually..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdateThemeColor {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateThemeColor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Consolidation of Enumeration Files.
         /// </summary>
         internal static string ReleaseSpecificTitleConsolidateEnumerations {
@@ -583,56 +558,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Checkboxes and Radio buttons changes.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateCheckboxes {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateCheckboxes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Update version of Newtonsoft.Json.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateNewtonsoftPackage {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateNewtonsoftPackage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Update targeted version of .NET Framework.
         /// </summary>
         internal static string ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Theme color changes.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateThemeColor {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateThemeColor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to In addition, as part of the framework changes in Sage 300c 2020.2, checkboxes
-        ///and radio buttons also had a visual upgrade.
-        ///
-        ///The updated elements will inherit the new visual upgrade correctly if they are
-        ///created using the Sage 300 HtmlHelperExtension. For customized elements that 
-        ///are not using the HtmlHelperExtension, you may make use of the utility so that
-        ///the elements will have the same visual style and benefit from the visual
-        ///upgrade.
-        ///
-        ///Please refer to the &apos;Checkboxes and Radio Buttons changes&apos; s [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ReleaseSpecificUpdateCheckboxes {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateCheckboxes", resourceCulture);
             }
         }
         
@@ -652,49 +582,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to As part of the framework changes in Sage 300c 2020.2, the Newtonsoft.Json
-        ///package need to be updated from 6.0.8 version to 9.0.1 version or above. If
-        ///your project is using a newer version than 9.0.1, you can ignore this step and
-        ///continue.
-        ///
-        ///The upgrade wizard is unable to automatically perform this modification and
-        ///therefore this step will require manual modifications.
-        ///
-        ///Please refer to the &apos;Upgrade Newtonsoft.Json Package&apos; subsection in the Sage
-        ///300 Upgrade Guide for 2020.1 to 2020.2 in the docs fol [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ReleaseSpecificUpdateNewtonsoftPackage {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateNewtonsoftPackage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The targeted version of the Microsoft .NET Framework will be updated to version {0} 
         ///for all projects in the solution..
         /// </summary>
         internal static string ReleaseSpecificUpdateTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateTargetedDotNetFrameworkVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to As part of the framework changes required to handle theme color in
-        ///Sage 300c 2020.2, several files need to be altered for the solution to
-        ///adapt the changes after the upgrade process.
-        ///
-        ///The upgrade wizard is unable to automatically perform this modification and
-        ///therefore this step will require manual modifications.
-        ///
-        ///Any JavaScript file that defines a customized Kendo window needs to be updated
-        ///for the customized popup to apply the new theme colors.
-        ///
-        ///Please refer to the &apos;Theme Color changes&apos; subsecti [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ReleaseSpecificUpdateThemeColor {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateThemeColor", resourceCulture);
             }
         }
         
@@ -844,38 +737,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The updates to support checkboxes and radio buttons must be made manually..
-        /// </summary>
-        internal static string UpdatesToSupportCheckboxesAreAManualStep {
-            get {
-                return ResourceManager.GetString("UpdatesToSupportCheckboxesAreAManualStep", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The updates to support multiple sessions must be made manually..
         /// </summary>
         internal static string UpdatesToSupportMultipleSessionsAreAManualStep {
             get {
                 return ResourceManager.GetString("UpdatesToSupportMultipleSessionsAreAManualStep", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The updates to Newtonsoft.Json package must be made manually..
-        /// </summary>
-        internal static string UpdatesToSupportNewtonsoftUpdateAreAManualStep {
-            get {
-                return ResourceManager.GetString("UpdatesToSupportNewtonsoftUpdateAreAManualStep", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The updates to support theme color must be made manually..
-        /// </summary>
-        internal static string UpdatesToSupportThemeColorAreAManualStep {
-            get {
-                return ResourceManager.GetString("UpdatesToSupportThemeColorAreAManualStep", resourceCulture);
             }
         }
         

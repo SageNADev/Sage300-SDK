@@ -296,8 +296,8 @@
   <data name="ExceptionThrownPossibleLockedFile" xml:space="preserve">
     <value>Exception thrown. Possible locked file</value>
   </data>
-  <data name="ReleaseAllSyncAccpacLibs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseAllSyncAccpacLibs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="ReleaseAllSyncAccpacLibs" type="System.Resources.ResXFileRef, System.Windows.Forms">	
+    <value>..\content\ReleaseAllSyncAccpacLibs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>	
   </data>
   <data name="ReleaseAllDescSyncWebFiles" xml:space="preserve">
     <value>This step will upgrade the various global files included in the solution.</value>
@@ -337,41 +337,5 @@
   </data>
   <data name="UpdatesToSupportMultipleSessionsAreAManualStep" xml:space="preserve">
     <value>The updates to support multiple sessions must be made manually.</value>
-  </data>
-  <data name="ReleaseSpecificDescUpdateThemeColor" xml:space="preserve">
-    <value>This step will need to be done manually.</value>
-  </data>
-  <data name="ReleaseSpecificTitleUpdateThemeColor" xml:space="preserve">
-    <value>Theme color changes</value>
-  </data>
-  <data name="UpdatesToSupportThemeColorAreAManualStep" xml:space="preserve">
-    <value>The updates to support theme color must be made manually.</value>
-  </data>
-  <data name="ReleaseSpecificUpdateThemeColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateThemeColor.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="ReleaseSpecificDescUpdateCheckboxes" xml:space="preserve">
-    <value>This step will need to be done manually.</value>
-  </data>
-  <data name="ReleaseSpecificTitleUpdateCheckboxes" xml:space="preserve">
-    <value>Checkboxes and Radio buttons changes</value>
-  </data>
-  <data name="ReleaseSpecificUpdateCheckboxes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateCheckboxes.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="UpdatesToSupportCheckboxesAreAManualStep" xml:space="preserve">
-    <value>The updates to support checkboxes and radio buttons must be made manually.</value>
-  </data>
-  <data name="ReleaseSpecificTitleUpdateNewtonsoftPackage" xml:space="preserve">
-    <value>Update version of Newtonsoft.Json</value>
-  </data>
-  <data name="ReleaseSpecificUpdateNewtonsoftPackage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateNewtonsoftPackage.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="ReleaseSpecificDescUpdateNewtonsoftPackage" xml:space="preserve">
-    <value>This step will need to be done manually.</value>
-  </data>
-  <data name="UpdatesToSupportNewtonsoftUpdateAreAManualStep" xml:space="preserve">
-    <value>The updates to Newtonsoft.Json package must be made manually.</value>
   </data>
 </root>
