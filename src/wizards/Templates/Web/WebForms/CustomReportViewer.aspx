@@ -7,7 +7,7 @@
 <head runat="server">
     <title></title>
     <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
-    <script src="../Scripts/jquery-1.11.3.js"></script>
+    <script src="../Scripts/jquery-3.4.1.js"></script>
     <script src="../Scripts/JQueryUI/iframeResizer.js"></script>
     <script src="../Scripts/Report/ReportBehaviour.js"></script>
 

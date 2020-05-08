@@ -511,8 +511,8 @@
 
                         });
                 $("#div_finder_grid .k-grid-content")
-                    .delegate("tbody>tr",
-                        "dblclick",
+                    .on("dblclick",
+                        "tbody>tr",
                         function() {
                             sg.viewFinderHelper.cancelFuncCall = $.noop;
                             that._getSelectedRow(that);
@@ -724,7 +724,7 @@ FinderPreferences = {
         var selectedColumns = [];
         $('#tblTBodyFinderPref input[name=chkFinderPrefCol][type=checkbox]').each(function () {
             if ($(this).is(':checkbox')) {
-                selectedColumns.push(FinderPreferences.GetGridColumn($(this).attr('data-finder-key'), $(this).attr('value'), $(this).is(':checked')));
+                selectedColumns.push(FinderPreferences.GetGridColumn($(this).attr('data-finder-key'), $(this).val(), $(this).is(':checked')));
             }
         });
         return selectedColumns;

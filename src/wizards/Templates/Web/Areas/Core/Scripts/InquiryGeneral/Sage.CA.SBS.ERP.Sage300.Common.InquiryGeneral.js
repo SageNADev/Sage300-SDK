@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 /* global kendo */
 /* exported InquiryGeneralUI */
@@ -271,7 +271,8 @@ var InquiryGeneralUI = function () {
           if (jsonResult.Errors) {
              sg.utls.showMessage(jsonResult);
           } else {
-             window.location = sg.utls.url.buildUrl("Core", "InquiryGeneral", "DownloadExport") + '?fileId=' + jsonResult.FileId + '&filename=' + InquiryGeneralViewModel.Title;
+             var filename = InquiryGeneralViewModel.Title.replace(/[/\\?%*:|"<>]/g, ''); //Strip illegal file/path name characters
+             window.location = sg.utls.url.buildUrl("Core", "InquiryGeneral", "DownloadExport") + '?fileId=' + jsonResult.FileId + '&filename=' + filename;
           }
        }
     }
@@ -553,7 +554,7 @@ var InquiryGeneralUI = function () {
         }
 
         if (item.IsDrilldown) {
-            template = kendo.format("<a href=''>#={0}#</a>", item.FieldAlias || item.Field);
+            template = kendo.format("<a href=''>#: {0} #</a>", item.FieldAlias || item.Field);
         }
 
         if (type === "datetime") {
@@ -608,7 +609,6 @@ var InquiryGeneralUI = function () {
                         if (list.length > 0) {
                             value = list[0].Text;
                         }
-
                     }
                     r[field] = value;
                 }
@@ -853,7 +853,7 @@ var InquiryGeneralUI = function () {
                                     var row = e.sender.tbody.find("[data-uid='" + items[j].uid + "']");
                                     var cell = row.find("td:eq(" + i + ")");
                                     if (cell) {
-                                        cell[0].innerHTML = cell[0].innerText;
+                                        cell[0].innerHTML = kendo.htmlEncode(cell[0].innerText);
                                     }
                                 }
                             }
@@ -885,8 +885,8 @@ var InquiryGeneralUI = function () {
             }
         }
         //Open popup window on drill down cell click
-        $("#inquiryGrid").delegate("tbody > tr > td > a", "click", initShowPopup);
-        $("#inquiryGrid").delegate("tbody > tr > td > img", "click", initShowPopup);
+        $("#inquiryGrid").on("click", "tbody > tr > td > a", initShowPopup);
+        $("#inquiryGrid").on("click", "tbody > tr > td > img", initShowPopup);
         //Init filter panel
         $("#filter").kendoGridFilterPanel({
             dataSource: dataSource,
@@ -1071,7 +1071,7 @@ var InquiryGeneralUI = function () {
                     for (var i = 1; i < length; i++) {
                         values += rowData[params[i].Field] + ",";
                     }
-                    paramsStr += "&id=" + values.slice(0, -1);
+                    paramsStr += "&id=" + encodeURIComponent(values.slice(0, -1));
                 }
             } else {
                 var paramValues = InquiryGeneralViewModel.Ids;
@@ -1084,7 +1084,7 @@ var InquiryGeneralUI = function () {
                     } else {
                         paramValue = rowData[fieldName] || fieldName; 
                     }
-                    paramsStr += kendo.format("{0}{1}={2}", (i == 0) ? "?" : "&", params[i].Name, paramValue);
+                    paramsStr += kendo.format("{0}{1}={2}", (i == 0) ? "?" : "&", params[i].Name, encodeURIComponent(paramValue));
                 }
             }
             url = sg.utls.url.buildUrl(controller.Area, controller.Controller, controller.Action) +"/" + paramsStr;

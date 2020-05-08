@@ -668,8 +668,8 @@
 
                         });
                 $("#div_finder_grid .k-grid-content")
-                    .delegate("tbody>tr",
-                        "dblclick",
+                    .on("dblclick",
+                        "tbody>tr",
                         function() {
                             sg.finderHelper.cancelFuncCall = $.noop;
                             that._getSelectedRow(that);

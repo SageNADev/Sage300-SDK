@@ -10,7 +10,7 @@
     <RootNamespace>$companynamespace$.$applicationid$.Services</RootNamespace>
     <AssemblyName>$companynamespace$.$applicationid$.Services</AssemblyName>
     <Sage300WebDir Condition="$(Sage300WebDir) == ''">$sage300webfolder$</Sage300WebDir>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>

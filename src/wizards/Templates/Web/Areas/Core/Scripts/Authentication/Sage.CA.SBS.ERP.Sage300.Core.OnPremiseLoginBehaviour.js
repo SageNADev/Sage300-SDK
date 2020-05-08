@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
@@ -676,6 +676,22 @@ var loginUICallback = {
                 if (loginUI.model.ForAdmin()) {
                     var systemId = $("#SystemId").data('kendoDropDownList').text();
                     url = url.replace("Core/Home", "AS/CustomScreen?id=Import&systemDbId=" + systemId);
+                }
+                else {
+                    // Product Experience - Engagement
+                    sessionStorage.setItem("account_id", jsonResult.engagement.Account.Id);
+                    sessionStorage.setItem("account_region", jsonResult.engagement.Account.Region);
+                    sessionStorage.setItem("account_client", jsonResult.engagement.Account.ClientId);
+                    sessionStorage.setItem("account_edition", jsonResult.engagement.Account.Edition);
+                    sessionStorage.setItem("account_version", jsonResult.engagement.Account.Version);
+                    sessionStorage.setItem("account_lanpakCount", jsonResult.engagement.Account.LanpakCount);
+
+                    sessionStorage.setItem("visitor_id", jsonResult.engagement.Visitor.Id);
+                    sessionStorage.setItem("visitor_company", jsonResult.engagement.Visitor.Company);
+                    sessionStorage.setItem("visitor_role", jsonResult.engagement.Visitor.Role);
+                    sessionStorage.setItem("visitor_language", jsonResult.engagement.Visitor.Language);
+                    sessionStorage.setItem("visitor_locale", jsonResult.engagement.Visitor.Locale);
+                    sessionStorage.setItem("engagementApiKey", jsonResult.engagement.ApiKey);
                 }
 
                 window.location.replace(url);

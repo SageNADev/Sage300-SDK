@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
@@ -68,7 +68,7 @@ var GLReferenceIntegrationUIGrid = {
                 attributes: { "class": "w200" },
                 title: glReferenceIntegrationGridColumns.headerTransactionType,
                 hidden: referenceIntegrationGridUtil.isColumnHidden(glReferenceIntegrationGridColumns.headerTransactionType),
-                template: '<div class="pencil-wrapper"><span class="pencil-txt">#= glIntegrationUtils.getSourceTransactionTypeValue(SourceTransactionType,SourceTransactionTypeList) #</span>' +
+                template: '<div class="pencil-wrapper"><span class="pencil-txt">#: glIntegrationUtils.getSourceTransactionTypeValue(SourceTransactionType,SourceTransactionTypeList) #</span>' +
                           '<span class="pencil-icon"><input type="button" class="icon edit-field glIntegrationEditBtn"/></span></div>',
                 //width: 180
             },
@@ -78,7 +78,7 @@ var GLReferenceIntegrationUIGrid = {
                 attributes: { "class": "w200" },
                 title: glReferenceIntegrationGridColumns.headerEntryDescription,
                 hidden: referenceIntegrationGridUtil.isColumnHidden(glReferenceIntegrationGridColumns.headerEntryDescription),
-                template: '<div class="pencil-wrapper"><span class="pencil-txt">#= glIntegrationUtils.GetValue(GLEntryDescription.Example) #</span>' +
+                template: '<div class="pencil-wrapper"><span class="pencil-txt">#: glIntegrationUtils.GetValue(GLEntryDescription.Example) #</span>' +
                         '<span class="pencil-icon"><input type="button" class="icon edit-field glIntegrationEditBtn"/></span></div>',
                 //width: 180
             },
@@ -88,7 +88,7 @@ var GLReferenceIntegrationUIGrid = {
                 attributes: { "class": "w200" },
                 title: glReferenceIntegrationGridColumns.headerDetailReference,
                 hidden: referenceIntegrationGridUtil.isColumnHidden(glReferenceIntegrationGridColumns.headerDetailReference),
-                template: '<div class="pencil-wrapper"><span class="pencil-txt">#= glIntegrationUtils.GetValue(GLDetailReference.Example) #</span>' +
+                template: '<div class="pencil-wrapper"><span class="pencil-txt">#: glIntegrationUtils.GetValue(GLDetailReference.Example) #</span>' +
                        '<span class="pencil-icon"><input type="button" class="icon edit-field glIntegrationEditBtn"/></span></div>',
                 //width: 180
             },
@@ -98,7 +98,7 @@ var GLReferenceIntegrationUIGrid = {
                 attributes: { "class": "w200" },
                 title: glReferenceIntegrationGridColumns.headerDetailDescription,
                 hidden: referenceIntegrationGridUtil.isColumnHidden(glReferenceIntegrationGridColumns.headerDetailDescription),
-                template: '<div class="pencil-wrapper"><span class="pencil-txt">#= glIntegrationUtils.GetValue(GLDetailDescription.Example) #</span>' +
+                template: '<div class="pencil-wrapper"><span class="pencil-txt">#: glIntegrationUtils.GetValue(GLDetailDescription.Example) #</span>' +
                       '<span class="pencil-icon"><input type="button" class="icon edit-field glIntegrationEditBtn"/></span></div>',
                 //width: 180
 
@@ -109,7 +109,7 @@ var GLReferenceIntegrationUIGrid = {
                 attributes: { "class": "w200" },
                 title: glReferenceIntegrationGridColumns.headerDetailComment,
                 hidden: referenceIntegrationGridUtil.isColumnHidden(glReferenceIntegrationGridColumns.headerDetailComment),
-                template: '<div class="pencil-wrapper"><span class="pencil-txt">#= glIntegrationUtils.GetValue(GLDetailComment.Example) #</span>' +
+                template: '<div class="pencil-wrapper"><span class="pencil-txt">#: glIntegrationUtils.GetValue(GLDetailComment.Example) #</span>' +
                      '<span class="pencil-icon"><input type="button" class="icon edit-field glIntegrationEditBtn"/></span></div>',
                 //width: 175
             }
@@ -121,4 +121,4 @@ var GLReferenceIntegrationUIGrid = {
 };
 
 // open popup window on edit cell click
-$("#gridGLReferenceIntegration").delegate("tbody > tr > td > div > span > input.glIntegrationEditBtn", "click", glIntegrationUI.initOpenPopup);
+$("#gridGLReferenceIntegration").on("click", "tbody > tr > td > div > span > input.glIntegrationEditBtn", glIntegrationUI.initOpenPopup);
