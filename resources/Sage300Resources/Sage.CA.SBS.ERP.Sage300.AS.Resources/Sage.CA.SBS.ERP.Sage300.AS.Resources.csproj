@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sage.CA.SBS.ERP.Sage300.AS.Resources</RootNamespace>
     <AssemblyName>Sage.CA.SBS.ERP.Sage300.AS.Resources</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -117,7 +117,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ASCommonResx.es.resx" />
     <EmbeddedResource Include="ASCommonResx.fr.resx" />
-    <EmbeddedResource Include="ASCommonResx.th.resx" />
     <EmbeddedResource Include="ASCommonResx.zh-Hans.resx" />
     <EmbeddedResource Include="ASCommonResx.zh-Hant.resx" />
     <EmbeddedResource Include="EnumerationsResx.resx">
@@ -126,7 +125,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EnumerationsResx.es.resx" />
     <EmbeddedResource Include="EnumerationsResx.fr.resx" />
-    <EmbeddedResource Include="EnumerationsResx.th.resx" />
     <EmbeddedResource Include="EnumerationsResx.zh-Hans.resx" />
     <EmbeddedResource Include="EnumerationsResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\ASCustomReportResx.es.resx">
@@ -140,7 +138,6 @@
       <LastGenOutput>ASCustomReportResx.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASCustomReportResx.th.resx" />
     <EmbeddedResource Include="Forms\ASCustomReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ASCustomReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\ASCustomScreenResx.es.resx" />
@@ -149,7 +146,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ASCustomScreenResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ASCustomScreenResx.th.resx" />
     <EmbeddedResource Include="Forms\ASCustomScreenResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ASCustomScreenResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\DataIntegrityResx.resx">
@@ -158,7 +154,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DataIntegrityResx.es.resx" />
     <EmbeddedResource Include="Forms\DataIntegrityResx.fr.resx" />
-    <EmbeddedResource Include="Forms\DataIntegrityResx.th.resx" />
     <EmbeddedResource Include="Forms\DataIntegrityResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\DataIntegrityResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\ReportProfileResx.es.resx" />
@@ -167,7 +162,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ReportProfileResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ReportProfileResx.th.resx" />
     <EmbeddedResource Include="Forms\ReportProfileResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ReportProfileResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\RestartMaintenanceResx.resx">
@@ -176,7 +170,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RestartMaintenanceResx.es.resx" />
     <EmbeddedResource Include="Forms\RestartMaintenanceResx.fr.resx" />
-    <EmbeddedResource Include="Forms\RestartMaintenanceResx.th.resx" />
     <EmbeddedResource Include="Forms\RestartMaintenanceResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\RestartMaintenanceResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\SecurityGroupsResx.resx">
@@ -185,17 +178,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SecurityGroupsResx.es.resx" />
     <EmbeddedResource Include="Forms\SecurityGroupsResx.fr.resx" />
-    <EmbeddedResource Include="Forms\SecurityGroupsResx.th.resx" />
     <EmbeddedResource Include="Forms\SecurityGroupsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\SecurityGroupsResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\UICustomizationProfileResx.th.resx" />
     <EmbeddedResource Include="Forms\UICustomizationResx.es.resx" />
     <EmbeddedResource Include="Forms\UICustomizationResx.fr.resx" />
     <EmbeddedResource Include="Forms\UICustomizationResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UICustomizationResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UICustomizationResx.th.resx" />
     <EmbeddedResource Include="Forms\UICustomizationResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\UICustomizationResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\UICustomizationProfileResx.es.resx" />
@@ -212,7 +202,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserAuthorizationsResx.es.resx" />
     <EmbeddedResource Include="Forms\UserAuthorizationsResx.fr.resx" />
-    <EmbeddedResource Include="Forms\UserAuthorizationsResx.th.resx" />
     <EmbeddedResource Include="Forms\UserAuthorizationsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\UserAuthorizationsResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\UserProfileResx.es.resx" />
@@ -221,17 +210,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UserProfileResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserProfileResx.th.resx" />
     <EmbeddedResource Include="Forms\UserProfileResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\UserProfileResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\UsersResx.th.resx" />
     <EmbeddedResource Include="Forms\WorkProfileResx.es.resx" />
     <EmbeddedResource Include="Forms\WorkProfileResx.fr.resx" />
     <EmbeddedResource Include="Forms\WorkProfileResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>WorkProfileResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WorkProfileResx.th.resx" />
     <EmbeddedResource Include="Forms\WorkProfileResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\WorkProfileResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\UsersResx.resx">

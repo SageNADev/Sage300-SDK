@@ -32,7 +32,7 @@ var exportResultRowNumber = 0;
             columns: [
                 { title: globalResource.Index, template: "#= ++exportResultRowNumber   #", width: 30 },
                 { field: "PriorityString", title: globalResource.Priority },
-                { field: "Message", title: globalResource.Description, width: 600, template: "#= sg.utls.formatMessageText(Message) #" }
+                { field: "Message", title: globalResource.Description, width: 600, template: "#: sg.utls.formatMessageText(Message) #" }
             ],
             dataBinding: function () {
                 exportResultRowNumber = 0;

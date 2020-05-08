@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -172,11 +172,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             #region Accpac .NET library update - Comment out if no update required
 
-            //AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
-            //        Resources.ReleaseAllDescSyncAccpacLibs,
-            //        string.Format(Resources.ReleaseAllSyncAccpacLibs,
-            //                      Constants.PerRelease.FromAccpacNumber,
-            //                      Constants.PerRelease.ToAccpacNumber));
+            AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
+                    Resources.ReleaseAllDescSyncAccpacLibs,
+                    string.Format(Resources.ReleaseAllSyncAccpacLibs,
+                                  Constants.PerRelease.FromAccpacNumber,
+                                  Constants.PerRelease.ToAccpacNumber));
 
             #endregion
 
@@ -196,14 +196,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             //        Resources.ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion,
             //        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
             //                      Constants.Common.TargetedDotNetFrameworkVersion));
-
-            AddStep(Resources.ReleaseSpecificTitleUpdateThemeColor,
-                    Resources.ReleaseSpecificDescUpdateThemeColor,
-                    Resources.ReleaseSpecificUpdateThemeColor);
-
-            AddStep(Resources.ReleaseSpecificTitleUpdateCheckboxes,
-                    Resources.ReleaseSpecificDescUpdateCheckboxes,
-                    Resources.ReleaseSpecificUpdateCheckboxes);
 
             #endregion
 
@@ -240,7 +232,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncWebFiles}");
 
             #region Accpac .NET library update - Comment out if no update required
-            //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
             #endregion
 
             // Begin - Specific to release
@@ -249,9 +241,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 #endif
             // Keep this around for the inevitable .NET framework 4.8 upgrade
             //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
-
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateThemeColor}");
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateCheckboxes}");
 
             // End - Specific to release
 

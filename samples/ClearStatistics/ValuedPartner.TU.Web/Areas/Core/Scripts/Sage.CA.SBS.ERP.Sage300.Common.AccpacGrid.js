@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var sg = sg || {};
@@ -1901,7 +1901,7 @@ sg.viewList = function () {
         } else if (type === ValueTypeEnum.Integer || type === ValueTypeEnum.Amount || type === ValueTypeEnum.Number) {
             return '<span style="float:right">' + sg.utls.kndoUI.getFormattedDecimalNumber(value || 0, decimals) + '</span>';
         } else {
-            return value;
+            return sg.utls.htmlEncode(value);
         }
     }
 

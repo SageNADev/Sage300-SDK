@@ -106,8 +106,9 @@ var RecentWindowsMenu = function () {
 
             // Now that we have a menuId, we need to find the matching menu item from the main menu.
             var menuItemText = sg.utls.getMenuLabelFromMenuItemId(menuItemId);
-
-            cachedMarkup = cachedMarkup.replace(menuTextToBeConverted, menuItemText);
+            if (menuItemText) {
+                cachedMarkup = cachedMarkup.replace(menuTextToBeConverted, menuItemText);
+            }
         });
 
 

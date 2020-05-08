@@ -95,6 +95,12 @@ The **patch** folder contains any patches which may be required to be applied to
 A README.md file in the patch folder will explain the patch, the reason for the patch 
 and the action to be taken.
 
+### resources
+
+The **resources** folder contains the Sage 300 Resources used to localize the Web Screens.
+They are located here to be leveraged by the Sage 300 Language Resource Wizard if the 
+generation of non-supported language resource files are required.
+
 ### samples
 
 The **samples** folder contains sample projects, which are stand-alone, runnable versions of 

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2017 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 2020 Sage Software, Inc.  All rights reserved.
 "use strict";
 
 var savedQueryGridUI = {
@@ -31,7 +31,7 @@ var savedQueryGridUI = {
                     field: "Data.InquiryQueryType",
                     title: savedQueryResources.Type,
                     width: 80,
-                    template: '#= savedQueryGridUI.getTypeName(Data.InquiryQueryType) #'
+                    template: '#: savedQueryGridUI.getTypeName(Data.InquiryQueryType) #'
                 },
                 {
                     field: "Data.DateModified",

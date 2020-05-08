@@ -1027,10 +1027,10 @@
     <value>Bank G/L Transactions Report</value>
   </data>
   <data name="BK_BankImportOFXStatements_Article1" xml:space="preserve">
-    <value>About OFX Statements</value>
+    <value>About E-Statements</value>
   </data>
   <data name="BK_BankImportOFXStatements_Article2" xml:space="preserve">
-    <value>Bank Reconcile OFX Statements Screen</value>
+    <value>Bank Reconcile E-Statements Screen</value>
   </data>
   <data name="BK_BankImportOFXStatements_Screen" xml:space="preserve">
     <value>Importing OFX Statements</value>
@@ -1063,13 +1063,13 @@
     <value>Bank Post Reconciliation Screen</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Article1" xml:space="preserve">
-    <value>Reconciling OFX Statements</value>
+    <value>Reconciling E-Statements</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Article2" xml:space="preserve">
-    <value>About OFX Statements</value>
+    <value>About E-Statements</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Screen" xml:space="preserve">
-    <value>Bank Reconcile OFX Statements Screen</value>
+    <value>Bank Reconcile E-Statements Screen</value>
   </data>
   <data name="BK_BankReconcileStatements_Article1" xml:space="preserve">
     <value>Reconciling a Bank Account</value>

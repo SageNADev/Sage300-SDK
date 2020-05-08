@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sage.CA.SBS.ERP.Sage300.AR.Resources</RootNamespace>
     <AssemblyName>Sage.CA.SBS.ERP.Sage300.AR.Resources</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -405,7 +405,6 @@
     <EmbeddedResource Include="EnumerationsResx.fr.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="EnumerationsResx.th.resx" />
     <EmbeddedResource Include="EnumerationsResx.zh-Hans.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -418,7 +417,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AccountSetsResx.es.resx" />
     <EmbeddedResource Include="Forms\AccountSetsResx.fr.resx" />
-    <EmbeddedResource Include="Forms\AccountSetsResx.th.resx" />
     <EmbeddedResource Include="Forms\AccountSetsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\AccountSetsResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\AdjustmentBatchListResx.resx">
@@ -427,7 +425,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdjustmentBatchListResx.es.resx" />
     <EmbeddedResource Include="Forms\AdjustmentBatchListResx.fr.resx" />
-    <EmbeddedResource Include="Forms\AdjustmentBatchListResx.th.resx" />
     <EmbeddedResource Include="Forms\AdjustmentBatchListResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\AdjustmentBatchListResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\AdjustmentEntryResx.resx">
@@ -436,17 +433,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdjustmentEntryResx.es.resx" />
     <EmbeddedResource Include="Forms\AdjustmentEntryResx.fr.resx" />
-    <EmbeddedResource Include="Forms\AdjustmentEntryResx.th.resx" />
     <EmbeddedResource Include="Forms\AdjustmentEntryResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\AdjustmentEntryResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\ARCommonResx.th.resx" />
     <EmbeddedResource Include="Forms\BillingCyclesResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>BillingCyclesResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BillingCyclesResx.es.resx" />
     <EmbeddedResource Include="Forms\BillingCyclesResx.fr.resx" />
-    <EmbeddedResource Include="Forms\BillingCyclesResx.th.resx" />
     <EmbeddedResource Include="Forms\BillingCyclesResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\BillingCyclesResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\ARCommonResx.resx">
@@ -472,13 +466,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CommentTypesResx.es.resx" />
     <EmbeddedResource Include="Forms\CommentTypesResx.fr.resx" />
-    <EmbeddedResource Include="Forms\CommentTypesResx.th.resx" />
     <EmbeddedResource Include="Forms\CommentTypesResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\CommentTypesResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\CustomerGroupsResx.th.resx" />
-    <EmbeddedResource Include="Forms\CustomerInquiryResx.th.resx" />
-    <EmbeddedResource Include="Forms\CustomersResx.th.resx" />
-    <EmbeddedResource Include="Forms\DistributionCodesResx.th.resx" />
     <EmbeddedResource Include="Forms\DocumentInquiryResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DocumentInquiryResx.Designer.cs</LastGenOutput>
@@ -486,33 +475,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DocumentInquiryResx.es.resx" />
     <EmbeddedResource Include="Forms\DocumentInquiryResx.fr.resx" />
-    <EmbeddedResource Include="Forms\DocumentInquiryResx.th.resx" />
     <EmbeddedResource Include="Forms\DocumentInquiryResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\DocumentInquiryResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\DunningMessagesResx.th.resx" />
-    <EmbeddedResource Include="Forms\EmailMessagesResx.th.resx" />
-    <EmbeddedResource Include="Forms\GLIntegrationResx.th.resx" />
-    <EmbeddedResource Include="Forms\IntegrityCheckerResx.th.resx" />
-    <EmbeddedResource Include="Forms\InterestProfilesResx.th.resx" />
-    <EmbeddedResource Include="Forms\InvoiceBatchListResx.th.resx" />
-    <EmbeddedResource Include="Forms\InvoiceEntryResx.th.resx" />
-    <EmbeddedResource Include="Forms\ItemsResx.th.resx" />
     <EmbeddedResource Include="Forms\JobResourceValidationResx.es.resx" />
     <EmbeddedResource Include="Forms\JobResourceValidationResx.fr.resx" />
     <EmbeddedResource Include="Forms\JobResourceValidationResx.resx" />
-    <EmbeddedResource Include="Forms\JobResourceValidationResx.th.resx" />
-    <EmbeddedResource Include="Forms\NationalAccountsResx.th.resx" />
-    <EmbeddedResource Include="Forms\OptionalFieldsResx.th.resx" />
-    <EmbeddedResource Include="Forms\OptionsResx.th.resx" />
-    <EmbeddedResource Include="Forms\PaymentCodesResx.th.resx" />
-    <EmbeddedResource Include="Forms\PaymentInfoResx.th.resx" />
-    <EmbeddedResource Include="Forms\PostBatchesResx.th.resx" />
-    <EmbeddedResource Include="Forms\QuickReceiptEntryResx.th.resx" />
-    <EmbeddedResource Include="Forms\ReceiptBatchListResx.th.resx" />
-    <EmbeddedResource Include="Forms\ReceiptEntryResx.th.resx" />
-    <EmbeddedResource Include="Forms\ReceiptInquiryResx.th.resx" />
-    <EmbeddedResource Include="Forms\RecurringChargeResx.th.resx" />
-    <EmbeddedResource Include="Forms\RefundBatchListResx.th.resx" />
     <EmbeddedResource Include="Forms\RefundDetailJob.Resx.es.resx" />
     <EmbeddedResource Include="Forms\RefundDetailJob.Resx.fr.resx" />
     <EmbeddedResource Include="Forms\RefundDetailJob.Resx.resx">
@@ -522,20 +489,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RefundDetailJob.Resx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\RefundDetailJob.Resx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\RefundDetailJob.th.resx" />
-    <EmbeddedResource Include="Forms\RefundEntryResx.th.resx" />
-    <EmbeddedResource Include="Forms\RefundInquiryResx.th.resx" />
-    <EmbeddedResource Include="Forms\SalespersonsResx.th.resx" />
-    <EmbeddedResource Include="Forms\ShipToLocationResx.th.resx" />
-    <EmbeddedResource Include="Forms\TermsCodeResx.th.resx" />
-    <EmbeddedResource Include="Forms\UpdateRecurringChargesResx.th.resx" />
     <EmbeddedResource Include="Process\ClearHistoryResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ClearHistoryResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Process\ClearHistoryResx.es.resx" />
     <EmbeddedResource Include="Process\ClearHistoryResx.fr.resx" />
-    <EmbeddedResource Include="Process\ClearHistoryResx.th.resx" />
     <EmbeddedResource Include="Process\ClearHistoryResx.zh-Hans.resx" />
     <EmbeddedResource Include="Process\ClearHistoryResx.zh-Hant.resx" />
     <EmbeddedResource Include="Process\ClearStatisticsResx.resx">
@@ -544,22 +503,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Process\ClearStatisticsResx.es.resx" />
     <EmbeddedResource Include="Process\ClearStatisticsResx.fr.resx" />
-    <EmbeddedResource Include="Process\ClearStatisticsResx.th.resx" />
     <EmbeddedResource Include="Process\ClearStatisticsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Process\ClearStatisticsResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Process\CreateGLBatchResx.th.resx" />
-    <EmbeddedResource Include="Process\CreateInterestBatchResx.th.resx" />
-    <EmbeddedResource Include="Process\CreateRecurringChargeResx.th.resx" />
-    <EmbeddedResource Include="Process\CreateRetainageBatchResx.th.resx" />
-    <EmbeddedResource Include="Process\CreateWriteOffBatchResx.th.resx" />
-    <EmbeddedResource Include="Process\DeleteInactiveRecordsResx.th.resx" />
     <EmbeddedResource Include="Process\ProcessCreditCardPaymentResx.es.resx" />
     <EmbeddedResource Include="Process\ProcessCreditCardPaymentResx.fr.resx" />
     <EmbeddedResource Include="Process\ProcessCreditCardPaymentResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ProcessCreditCardPaymentResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Process\ProcessCreditCardPaymentResx.th.resx" />
     <EmbeddedResource Include="Process\ProcessCreditCardPaymentResx.zh-Hans.resx" />
     <EmbeddedResource Include="Process\ProcessCreditCardPaymentResx.zh-Hant.resx" />
     <EmbeddedResource Include="Process\DeleteInactiveRecordsResx.resx">
@@ -578,18 +529,12 @@
     <EmbeddedResource Include="Forms\UpdateRecurringChargesResx.fr.resx" />
     <EmbeddedResource Include="Forms\UpdateRecurringChargesResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\UpdateRecurringChargesResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Process\ProcessYearEndResx.th.resx" />
-    <EmbeddedResource Include="Reports\AgedRetainageResx.th.resx" />
-    <EmbeddedResource Include="Reports\AgedTrialBalanceResx.th.resx" />
-    <EmbeddedResource Include="Reports\BatchListingResx.th.resx" />
-    <EmbeddedResource Include="Reports\BatchStatusReportResx.th.resx" />
     <EmbeddedResource Include="Reports\CustomerGroupsReportResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CustomerGroupsReportResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CustomerGroupsReportResx.es.resx" />
     <EmbeddedResource Include="Reports\CustomerGroupsReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\CustomerGroupsReportResx.th.resx" />
     <EmbeddedResource Include="Reports\CustomerGroupsReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\CustomerGroupsReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\CustomerGroupsResx.resx">
@@ -925,7 +870,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CustomersReportResx.es.resx" />
     <EmbeddedResource Include="Reports\CustomersReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\CustomersReportResx.th.resx" />
     <EmbeddedResource Include="Reports\CustomersReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\CustomersReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\CustTransRptResx.resx">
@@ -934,7 +878,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CustTransRptResx.es.resx" />
     <EmbeddedResource Include="Reports\CustTransRptResx.fr.resx" />
-    <EmbeddedResource Include="Reports\CustTransRptResx.th.resx" />
     <EmbeddedResource Include="Reports\CustTransRptResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\CustTransRptResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\DepositSlipResx.resx">
@@ -943,7 +886,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\DepositSlipResx.es.resx" />
     <EmbeddedResource Include="Reports\DepositSlipResx.fr.resx" />
-    <EmbeddedResource Include="Reports\DepositSlipResx.th.resx" />
     <EmbeddedResource Include="Reports\DepositSlipResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\DepositSlipResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\GLTransactionsReportResx.resx">
@@ -952,7 +894,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\GLTransactionsReportResx.es.resx" />
     <EmbeddedResource Include="Reports\GLTransactionsReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\GLTransactionsReportResx.th.resx" />
     <EmbeddedResource Include="Reports\GLTransactionsReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\GLTransactionsReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\InvoicesResx.resx">
@@ -961,7 +902,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\InvoicesResx.es.resx" />
     <EmbeddedResource Include="Reports\InvoicesResx.fr.resx" />
-    <EmbeddedResource Include="Reports\InvoicesResx.th.resx" />
     <EmbeddedResource Include="Reports\InvoicesResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\InvoicesResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\ItemSalesHistoryReportResx.resx">
@@ -970,7 +910,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ItemSalesHistoryReportResx.es.resx" />
     <EmbeddedResource Include="Reports\ItemSalesHistoryReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\ItemSalesHistoryReportResx.th.resx" />
     <EmbeddedResource Include="Reports\ItemSalesHistoryReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\ItemSalesHistoryReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\LabelsResx.resx">
@@ -979,7 +918,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\LabelsResx.es.resx" />
     <EmbeddedResource Include="Reports\LabelsResx.fr.resx" />
-    <EmbeddedResource Include="Reports\LabelsResx.th.resx" />
     <EmbeddedResource Include="Reports\LabelsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\LabelsResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\NationalAccountsReportResx.resx">
@@ -988,7 +926,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\NationalAccountsReportResx.es.resx" />
     <EmbeddedResource Include="Reports\NationalAccountsReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\NationalAccountsReportResx.th.resx" />
     <EmbeddedResource Include="Reports\NationalAccountsReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\NationalAccountsReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\PostingErrorReportResx.resx">
@@ -997,7 +934,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\PostingErrorReportResx.es.resx" />
     <EmbeddedResource Include="Reports\PostingErrorReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\PostingErrorReportResx.th.resx" />
     <EmbeddedResource Include="Reports\PostingErrorReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\PostingErrorReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\PostingJournalReportResx.resx">
@@ -1006,7 +942,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\PostingJournalReportResx.es.resx" />
     <EmbeddedResource Include="Reports\PostingJournalReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\PostingJournalReportResx.th.resx" />
     <EmbeddedResource Include="Reports\PostingJournalReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\PostingJournalReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\PostingJournalResx.resx">
@@ -1015,7 +950,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\PostingJournalResx.es.resx" />
     <EmbeddedResource Include="Reports\PostingJournalResx.fr.resx" />
-    <EmbeddedResource Include="Reports\PostingJournalResx.th.resx" />
     <EmbeddedResource Include="Reports\PostingJournalResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\PostingJournalResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\ReceiptsResx.resx">
@@ -1024,7 +958,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReceiptsResx.es.resx" />
     <EmbeddedResource Include="Reports\ReceiptsResx.fr.resx" />
-    <EmbeddedResource Include="Reports\ReceiptsResx.th.resx" />
     <EmbeddedResource Include="Reports\ReceiptsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\ReceiptsResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\RecurringChargeReportResx.resx">
@@ -1033,7 +966,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\RecurringChargeReportResx.es.resx" />
     <EmbeddedResource Include="Reports\RecurringChargeReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\RecurringChargeReportResx.th.resx" />
     <EmbeddedResource Include="Reports\RecurringChargeReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\RecurringChargeReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\ShipToLocationsReportResx.resx">
@@ -1042,7 +974,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ShipToLocationsReportResx.es.resx" />
     <EmbeddedResource Include="Reports\ShipToLocationsReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\ShipToLocationsReportResx.th.resx" />
     <EmbeddedResource Include="Reports\ShipToLocationsReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\ShipToLocationsReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\StatementsLettersLabelsResx.resx">
@@ -1051,7 +982,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\StatementsLettersLabelsResx.es.resx" />
     <EmbeddedResource Include="Reports\StatementsLettersLabelsResx.fr.resx" />
-    <EmbeddedResource Include="Reports\StatementsLettersLabelsResx.th.resx" />
     <EmbeddedResource Include="Reports\StatementsLettersLabelsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\StatementsLettersLabelsResx.zh-Hant.resx" />
   </ItemGroup>

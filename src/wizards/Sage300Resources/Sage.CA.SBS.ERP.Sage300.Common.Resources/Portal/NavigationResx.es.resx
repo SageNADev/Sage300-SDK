@@ -349,7 +349,7 @@
     <value>Asentar Conciliación</value>
   </data>
   <data name="Bank_Trans_ReconcileOFXStatement" xml:space="preserve">
-    <value>Conciliar Estados de Cuentas OFX</value>
+    <value>Conciliar Estados-E</value>
   </data>
   <data name="Bank_Trans_ReconcileStatements" xml:space="preserve">
     <value>Conciliar Estados de Cuentas</value>
@@ -1598,5 +1598,13 @@
   </data>
   <data name="MT_Contacts_Contacts" xml:space="preserve">
     <value>Contactos</value>
+  </data>
+  <data name="SetCompanyColor" xml:space="preserve">
+    <value>Personalizar Color de Tema</value>
+    <comment>Settings Menu</comment>
+  </data>
+  <data name="SetCompanyColorDB" xml:space="preserve">
+    <value>Establecer Color de Tema Según Base de Datos</value>
+    <comment>Settings Menu</comment>
   </data>
 </root>

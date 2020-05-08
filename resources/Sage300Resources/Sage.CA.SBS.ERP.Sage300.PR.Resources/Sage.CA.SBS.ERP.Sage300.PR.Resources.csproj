@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sage.CA.SBS.ERP.Sage300.PR.Resources</RootNamespace>
     <AssemblyName>Sage.CA.SBS.ERP.Sage300.PR.Resources</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -165,14 +165,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeResx.th.resx" />
     <EmbeddedResource Include="EmployeeTimecardResx.fr.resx" />
     <EmbeddedResource Include="EmployeeTimecardResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeTimecardResx.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeTimecardResx.th.resx" />
     <EmbeddedResource Include="Forms\EmployeeEarningsDeductionResx.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeEarningsDeductionResx.es.Designer.cs</LastGenOutput>
@@ -185,7 +183,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeEarningsDeductionResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeEarningsDeductionResx.th.resx" />
     <EmbeddedResource Include="Forms\EmployeeEFTBankResx.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeEFTBankResx.es.Designer.cs</LastGenOutput>
@@ -198,7 +195,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeEFTBankResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeEFTBankResx.th.resx" />
     <EmbeddedResource Include="Forms\EmployeeGarnishmentResx.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeGarnishmentResx.es.Designer.cs</LastGenOutput>
@@ -211,7 +207,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeGarnishmentResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeGarnishmentResx.th.resx" />
     <EmbeddedResource Include="Forms\EmployeeNoteResx.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeNoteResx.es.Designer.cs</LastGenOutput>
@@ -224,7 +219,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeNoteResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeNoteResx.th.resx" />
     <EmbeddedResource Include="Forms\EmployeeOptionalFieldValueResx.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeOptionalFieldValueResx.es.Designer.cs</LastGenOutput>
@@ -237,7 +231,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeOptionalFieldValueResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeOptionalFieldValueResx.th.resx" />
     <EmbeddedResource Include="Forms\EmployeeTaxeResx.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeTaxeResx.es.Designer.cs</LastGenOutput>
@@ -250,7 +243,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeTaxeResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeTaxeResx.th.resx" />
     <EmbeddedResource Include="Forms\EmployeeTimecardDetailResx.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeTimecardDetailResx.es.Designer.cs</LastGenOutput>
@@ -263,7 +255,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeTimecardDetailResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeTimecardDetailResx.th.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

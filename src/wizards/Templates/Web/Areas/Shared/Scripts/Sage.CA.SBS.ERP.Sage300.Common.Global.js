@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 // @ts-check
 
@@ -57,6 +57,15 @@ sg.utls.EntityErrorPriority = {
     Security: 4
 };
 
+/**
+ * Sage 300 license status
+ */
+sg.utls.LicenseStatus = {
+    Expired: -2,
+    NotFound: -1,
+    OK: 0
+};
+
 var fnTimeout = 0;
 
 $.extend(sg.utls.regExp, {
@@ -93,6 +102,7 @@ $.extend(sg.utls.url, {
     destroyPoolUrl: function () { return sg.utls.url.buildUrl("Core", "Session", "DestroyPool"); },
     destroySessionUrl: function () { return sg.utls.url.buildUrl("Core", "Session", "Destroy"); },
     getApplicationConfigUrl: function () { return sg.utls.url.buildUrl("CS", "CompanyProfile", "GetApplicationConfig"); },
+    getCompanyColorUrl: function () { return sg.utls.url.buildUrl("Core", "Common", "GetCompanyColorCode"); },
 
     baseUrl: function () {
         return $("#hdnUrl").val();
@@ -415,12 +425,9 @@ $.extend(sg.utls, {
      * @returns {boolean} True if the browser is Internet Explorer, otherwise false. 
      */
     isInternetExplorer: function () {
-        var isIE = $.browser.msie;
         var ua = window.navigator.userAgent;
         var tridentFound = ua.indexOf('Trident/') > 0;
-        var edgeFound = ua.indexOf('Edge/') > 0;
-
-        return (isIE || tridentFound || edgeFound);
+        return tridentFound;
     },
 
     /**
@@ -429,10 +436,8 @@ $.extend(sg.utls, {
      * @returns {boolean} True if the browser is Mozilla Firefox, otherwise false. 
      */
     isMozillaFirefox: function () {
-        var isMozilla = $.browser.mozilla;
-        var isIE = sg.utls.isInternetExplorer();
-
-        return (isMozilla && !isIE);
+        var isMozilla = window.navigator.userAgent.indexOf('Firefox/') > 0;
+        return isMozilla;
     },
 
     /**
@@ -490,12 +495,12 @@ $.extend(sg.utls, {
     releaseSession: function () {
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length === 0 || sessionPerPage.val() === "False") {
-            sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "ReleaseSession"), {}, function () { });
+            sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "ReleaseSession"), {}, function () { });
         }
     },
 
     destroySessions: function () {
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "DestroyPool"), {}, function () { });
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "DestroyPool"), {}, function () { });
         sage.cache.session.clearAll();
         sg.utls.destroyPoolForReport(false);
     },
@@ -505,7 +510,7 @@ $.extend(sg.utls, {
         var sessionId = sage.cache.session.get("session");
         sage.cache.session.clearAll();
         sage.cache.session.set("session", sessionId);
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Session", "Destroy"), {}, function () { });
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "Destroy"), {}, function () { });
     },
 
     /**
@@ -575,7 +580,7 @@ $.extend(sg.utls, {
         sg.utls.logMessage("Calling sg.utls.logOut() for context session id = '" + sessionId + "'");
 
         var currentCompany = sg.utls.getCurrentCompanyName();
-        var message = isAdminLogout ? globalRes.AdminSignOutConfirmation : sg.utls.formatString(globalRes.MultiSessionSignOutConfirmationTemplate, currentCompany);
+        var message = isAdminLogout ? globalRes.AdminSignOutConfirmation : sg.utls.formatString(globalRes.MultiSessionSignOutConfirmationTemplate, kendo.htmlEncode(currentCompany));
         var title = globalRes.SignOutConfirmation;
         var btnYes = globalRes.SignOut;
         var btnNo = globalRes.Cancel;
@@ -788,6 +793,10 @@ $.extend(sg.utls, {
 
     loadHomeCurrency: function () {
         sg.utls.ajaxCache(sg.utls.url.buildUrl("CS", "CompanyProfile", "GetApplicationConfig"), {}, ajaxSuccess.getCurrency, "HomeCurrency");
+    },
+
+    loadCompanyColor: function () {
+        sg.utls.ajaxCache(sg.utls.url.getCompanyColorUrl(), {}, $.noop, "CompanyColor");
     },
 
     openDialog: function (ajaxUrl, title) {
@@ -1113,6 +1122,22 @@ $.extend(sg.utls, {
         sg.utls.showMessage(ret, $.noop, false, false);
     },
 
+    getJsonResultHandler: function (externalHandler) {
+        return function (result) {
+            if (externalHandler && typeof externalHandler === "function") {
+                // this is the only way to test if result can be convert to JSON
+                var callbackValue = null;
+                try {
+                    callbackValue = JSON.parse(result);
+                } catch(err) {
+                    console.warn("Error parsing value: " + result + " to JSON");
+                } finally {
+                    externalHandler(callbackValue);
+                }
+            }
+        };
+    },
+
     ajaxErrorHandler: function (jqXhr, textStatus, errorThrown) {
         $('#ajaxSpinner').slideUp();
         if (jqXhr != null && jqXhr.responseText != null && jqXhr.responseText != "" && jqXhr.status != "401") {
@@ -1127,15 +1152,15 @@ $.extend(sg.utls, {
     },
 
     ajaxGet: function (ajaxUrl, ajaxData, successHandler) {
-        sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "json", "get", true, sg.utls.ajaxErrorHandler);
+        sg.utls.ajaxInternal(ajaxUrl, ajaxData, sg.utls.getJsonResultHandler(successHandler), "text", "get", true, sg.utls.ajaxErrorHandler);
     },
 
     recursiveAjaxPost: function (ajaxUrl, ajaxData, successHandler, abortHandler) {
-        return sg.utls.recursiveAjax(ajaxUrl, ajaxData, successHandler, abortHandler, "json", "post");
+        return sg.utls.recursiveAjax(ajaxUrl, ajaxData, sg.utls.getJsonResultHandler(successHandler), abortHandler, "text", "post");
     },
 
     ajaxPost: function (ajaxUrl, ajaxData, successHandler) {
-        sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "json", "post", true, sg.utls.ajaxErrorHandler);
+        sg.utls.ajaxInternal(ajaxUrl, ajaxData, sg.utls.getJsonResultHandler(successHandler), "text", "post", true, sg.utls.ajaxErrorHandler);
     },
 
     ajaxCrossDomainPost: function (ajaxUrl, ajaxData, successHandler, errorHandler) {
@@ -1157,7 +1182,7 @@ $.extend(sg.utls, {
     },
 
     ajaxPostSync: function (ajaxUrl, ajaxData, successHandler) {
-        sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "json", "post", false, sg.utls.ajaxErrorHandler);
+        sg.utls.ajaxInternal(ajaxUrl, ajaxData, sg.utls.getJsonResultHandler(successHandler), "text", "post", false, sg.utls.ajaxErrorHandler);
     },
 
     ajaxCachePostHtml: function (ajaxUrl, ajaxData, successHandler, key) {
@@ -1867,10 +1892,10 @@ $.extend(sg.utls, {
 
         var menuLink = $(".dropDown-Menu > li");
         menuLink.find("> a").append('<span class="arrow-grey"></span>');
-        menuLink.hover(function () {
+        menuLink.on("mouseenter", function () {
             $(this).find(".arrow-grey").removeClass("arrow-grey").addClass("arrow-white");
             $(this).children(".sub-menu").show();
-        }, function () {
+        }).on("mouseleave", function () {
             $(this).find(".arrow-white").removeClass("arrow-white").addClass("arrow-grey");
             $(this).children(".sub-menu").hide();
         });
@@ -3211,6 +3236,11 @@ $.extend(sg.utls, {
      * @returns {boolean} true - Allow page unload event | false - Disallow page unload event
      */
     isPageUnloadEventEnabled: function (isDirty) {
+        //For CRM Sage 300 pages, always return false 
+        var url = window.location.href;
+        if (sessionStorage["productId"] || url.indexOf("productId") > 0) {
+            return false;
+        }
         var pageUnloadEventFlag = sg.utls.getPortalWindow().pageUnloadEventManager.isEnabled();
         return pageUnloadEventFlag && isDirty;
     },
@@ -3244,9 +3274,9 @@ $.extend(sg.utls, {
      */
     setBackgroundColor: function (element) {
         if (element && $.isFunction(element.css) && element.css("background-color")) {
-            sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "GetCompanyColorCode"), {}, function (result) {
+            sg.utls.ajaxCache(sg.utls.url.getCompanyColorUrl(), {}, function (result) {
                 sg.utls.setBackgroundColorHex(element, result);
-            });
+            }, "CompanyColor");
         }
     },
     /**
@@ -3593,6 +3623,187 @@ window.onerror = function (msg, url, line) {
     }
 };
 
+
+/************ NOTE!!!! This block of code here is to support Knockout before the upgrade, once it is done, the following code should be removed ************/
+
+var nodeNames = "abbr|article|aside|audio|bdi|canvas|data|datalist|details|figcaption|figure|footer|" +
+    "header|hgroup|mark|meter|nav|output|progress|section|summary|time|video";
+var rtbody = /<tbody/i;
+var rhtml = /<|&#?\w+;/;
+var rxhtmlTag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:]+)[^>]*)\/>/gi;
+var rtagName = /<([\w:]+)/;
+var wrapMap = {
+    option: [1, "<select multiple='multiple'>", "</select>"],
+    legend: [1, "<fieldset>", "</fieldset>"],
+    thead: [1, "<table>", "</table>"],
+    tr: [2, "<table><tbody>", "</tbody></table>"],
+    td: [3, "<table><tbody><tr>", "</tr></tbody></table>"],
+    col: [2, "<table><tbody></tbody><colgroup>", "</colgroup></table>"],
+    area: [1, "<map>", "</map>"],
+    _default: [0, "", ""]
+};
+var rleadingWhitespace = /^\s+/;
+var rcheckableType = /^(?:checkbox|radio)$/;
+var rscriptType = /\/(java|ecma)script/i;
+
+// Used in clean, fixes the defaultChecked property
+function fixDefaultChecked(elem) {
+    if (rcheckableType.test(elem.type)) {
+        elem.defaultChecked = elem.checked;
+    }
+}
+
+function createSafeFragment(document) {
+    var list = nodeNames.split("|"),
+        safeFrag = document.createDocumentFragment();
+
+    if (safeFrag.createElement) {
+        while (list.length) {
+            safeFrag.createElement(
+                list.pop()
+            );
+        }
+    }
+    return safeFrag;
+}
+
+jQuery.clean = function (elems, context, fragment, scripts) {
+    var i, j, elem, tag, wrap, depth, div, hasBody, tbody, len, handleScript, jsTags,
+        safe = context === document && safeFragment,
+        ret = [];
+
+    // Ensure that context is a document
+    if (!context || typeof context.createDocumentFragment === "undefined") {
+        context = document;
+    }
+
+    // Use the already-created safe fragment if context permits
+    for (i = 0; (elem = elems[i]) != null; i++) {
+        if (typeof elem === "number") {
+            elem += "";
+        }
+
+        if (!elem) {
+            continue;
+        }
+
+        // Convert html string into DOM nodes
+        if (typeof elem === "string") {
+            if (!rhtml.test(elem)) {
+                elem = context.createTextNode(elem);
+            } else {
+                // Ensure a safe container in which to render the html
+                safe = safe || createSafeFragment(context);
+                div = context.createElement("div");
+                safe.appendChild(div);
+
+                // Fix "XHTML"-style tags in all browsers
+                elem = elem.replace(rxhtmlTag, "<$1></$2>");
+
+                // Go to html and back, then peel off extra wrappers
+                tag = (rtagName.exec(elem) || ["", ""])[1].toLowerCase();
+                wrap = wrapMap[tag] || wrapMap._default;
+                depth = wrap[0];
+                div.innerHTML = wrap[1] + elem + wrap[2];
+
+                // Move to the right depth
+                while (depth--) {
+                    div = div.lastChild;
+                }
+
+                // Remove IE's autoinserted <tbody> from table fragments
+                if (!jQuery.support.tbody) {
+
+                    // String was a <table>, *may* have spurious <tbody>
+                    hasBody = rtbody.test(elem);
+                    tbody = tag === "table" && !hasBody ?
+                        div.firstChild && div.firstChild.childNodes :
+
+                        // String was a bare <thead> or <tfoot>
+                        wrap[1] === "<table>" && !hasBody ?
+                            div.childNodes :
+                            [];
+
+                    for (j = tbody.length - 1; j >= 0; --j) {
+                        if (jQuery.nodeName(tbody[j], "tbody") && !tbody[j].childNodes.length) {
+                            tbody[j].parentNode.removeChild(tbody[j]);
+                        }
+                    }
+                }
+
+                // IE completely kills leading whitespace when innerHTML is used
+                if (!jQuery.support.leadingWhitespace && rleadingWhitespace.test(elem)) {
+                    div.insertBefore(context.createTextNode(rleadingWhitespace.exec(elem)[0]), div.firstChild);
+                }
+
+                elem = div.childNodes;
+
+                // Take out of fragment container (we need a fresh div each time)
+                div.parentNode.removeChild(div);
+            }
+        }
+
+        if (elem.nodeType) {
+            ret.push(elem);
+        } else {
+            jQuery.merge(ret, elem);
+        }
+    }
+
+    // Fix #11356: Clear elements from safeFragment
+    if (div) {
+        elem = div = safe = null;
+    }
+
+    // Reset defaultChecked for any radios and checkboxes
+    // about to be appended to the DOM in IE 6/7 (#8060)
+    if (!jQuery.support.appendChecked) {
+        for (i = 0; (elem = ret[i]) != null; i++) {
+            if (jQuery.nodeName(elem, "input")) {
+                fixDefaultChecked(elem);
+            } else if (typeof elem.getElementsByTagName !== "undefined") {
+                jQuery.grep(elem.getElementsByTagName("input"), fixDefaultChecked);
+            }
+        }
+    }
+
+    // Append elements to a provided document fragment
+    if (fragment) {
+        // Special handling of each script element
+        handleScript = function (elem) {
+            // Check if we consider it executable
+            if (!elem.type || rscriptType.test(elem.type)) {
+                // Detach the script and store it in the scripts array (if provided) or the fragment
+                // Return truthy to indicate that it has been handled
+                return scripts ?
+                    scripts.push(elem.parentNode ? elem.parentNode.removeChild(elem) : elem) :
+                    fragment.appendChild(elem);
+            }
+        };
+
+        for (i = 0; (elem = ret[i]) != null; i++) {
+            // Check if we're done after handling an executable script
+            if (!(jQuery.nodeName(elem, "script") && handleScript(elem))) {
+                // Append to fragment and handle embedded scripts
+                fragment.appendChild(elem);
+                if (typeof elem.getElementsByTagName !== "undefined") {
+                    // handleScript alters the DOM, so use jQuery.merge to ensure snapshot iteration
+                    jsTags = jQuery.grep(jQuery.merge([], elem.getElementsByTagName("script")), handleScript);
+
+                    // Splice the scripts into ret after their former ancestor and advance our index beyond them
+                    ret.splice.apply(ret, [i + 1, 0].concat(jsTags));
+                    i += jsTags.length;
+                }
+            }
+        }
+    }
+
+    return ret;
+};
+
+/************ END OF THE BLOCK  ************/
+
+
 /**
  * Add Sage-specific functionality to the jQuery namespace.
  */
@@ -3683,10 +3894,10 @@ $(function () {
 
     var menuLink = $(".dropDown-Menu > li");
     menuLink.find("> a").append('<span class="arrow-grey"></span>');
-    menuLink.hover(function () {
+    menuLink.on("mouseenter", function () {
         $(this).find(".arrow-grey").removeClass("arrow-grey").addClass("arrow-white");
         $(this).children(".sub-menu").show();
-    }, function () {
+    }).on("mouseleave", function () {
         $(this).find(".arrow-white").removeClass("arrow-white").addClass("arrow-grey");
         $(this).children(".sub-menu").hide();
     });

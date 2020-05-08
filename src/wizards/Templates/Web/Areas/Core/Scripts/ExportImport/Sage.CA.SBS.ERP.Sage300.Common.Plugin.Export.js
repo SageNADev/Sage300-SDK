@@ -32,7 +32,7 @@ var exportResultRowNumber = 0;
             columns: [
                 { title: globalResource.Index, template: "#= ++exportResultRowNumber   #", width: 30 },
                 { field: "PriorityString", title: globalResource.Priority },
-                { field: "Message", title: globalResource.Description, width: 600, template: "#= sg.utls.formatMessageText(Message) #" }
+                { field: "Message", title: globalResource.Description, width: 600, template: "#: sg.utls.formatMessageText(Message) #" }
             ],
             dataBinding: function () {
                 exportResultRowNumber = 0;
@@ -632,10 +632,10 @@ var exportResultRowNumber = 0;
             // Option dropdown in popup screen
             var menuLink = $(".dropDown-Menu > li");
             menuLink.find("> a").append('<span class="arrow-grey"></span>');
-            menuLink.hover(function () {
+            menuLink.on("mouseenter", function () {
                 $(this).find(".arrow-grey").removeClass("arrow-grey").addClass("arrow-white");
                 $(this).children(".sub-menu").show();
-            }, function () {
+            }).on("mouseleave", function () {
                 $(this).find(".arrow-white").removeClass("arrow-white").addClass("arrow-grey");
                 $(this).children(".sub-menu").hide();
             });

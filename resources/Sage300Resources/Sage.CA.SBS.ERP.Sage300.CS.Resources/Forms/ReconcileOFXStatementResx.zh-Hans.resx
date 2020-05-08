@@ -122,11 +122,11 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrRateDiff" xml:space="preserve">
-    <value>OFX对帐单金额不同于银行服务金额。是否确要清算这一交易？</value>
+    <value>交易金额不同于银行服务金额。是否确要清算这一交易？</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrWriteOff" xml:space="preserve">
-    <value>OFX对帐单金额不同于银行服务金额。是否确要清算这一交易？</value>
+    <value>交易金额不同于银行服务金额。是否确要清算这一交易？</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmExitAddTrx" xml:space="preserve">
@@ -134,7 +134,7 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmProcess" xml:space="preserve">
-    <value>您已经做了尚未被处理的更改。是否处理{0}的OFX调节？</value>
+    <value>您有尚未被处理的更改。是否要处理{0}的调节？</value>
     <comment>Message</comment>
   </data>
   <data name="CutOffDate" xml:space="preserve">
@@ -146,15 +146,15 @@
     <comment>Option toggle</comment>
   </data>
   <data name="Detail" xml:space="preserve">
-    <value>匹配OFX交易到银行</value>
+    <value>匹配交易到银行</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="EMPTYLIST" xml:space="preserve">
-    <value>清单中没有OFX交易。</value>
+    <value>清单中没有交易。</value>
     <comment>Message</comment>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>调节OFX对帐单</value>
+    <value>调节电子对帐单</value>
     <comment>Screen Title</comment>
   </data>
   <data name="EntryDate" xml:space="preserve">
@@ -170,7 +170,7 @@
     <comment>Message</comment>
   </data>
   <data name="MiscellaneousCreated" xml:space="preserve">
-    <value>OFX交易添加到银行分录并过帐。</value>
+    <value>交易已成功添加到银行分录并过帐。</value>
     <comment>Message</comment>
   </data>
   <data name="NORECORD" xml:space="preserve">
@@ -186,7 +186,7 @@
     <comment>Message</comment>
   </data>
   <data name="OfxdateInvalid" xml:space="preserve">
-    <value>不能创建银行分录，因为OFX交易日期不在财务日历中。</value>
+    <value>无法创建银行分录，因为交易日期不在公共服务的财务日历中。</value>
     <comment>Message</comment>
   </data>
   <data name="OFXEXIST" xml:space="preserve">
@@ -257,7 +257,7 @@
     <value>备注</value>
   </data>
   <data name="NoOFXRecDate" xml:space="preserve">
-    <value>调节OFX交易之前您必须输入调节日期。</value>
+    <value>调节交易之前您必须输入调节日期。</value>
   </data>
   <data name="NoBankCode" xml:space="preserve">
     <value>无法找到银行帐户{0}。</value>
@@ -275,7 +275,7 @@
     <value>交易币种</value>
   </data>
   <data name="OFXInvalidDate" xml:space="preserve">
-    <value>不能创建银行分录，因为OFX交易日期不在财务日历中。</value>
+    <value>无法创建银行分录，因为交易日期不在公共服务的财务日历中。</value>
   </data>
   <data name="RecDateEmpty" xml:space="preserve">
     <value>调节日期不能空置。</value>
@@ -287,7 +287,7 @@
     <value>您不能输入一个早于先前调节日期的调节日期。</value>
   </data>
   <data name="ProcessCofirm" xml:space="preserve">
-    <value>是否调节OFX对帐单？</value>
+    <value>是否调节对帐单？</value>
   </data>
   <data name="TransactionClr" xml:space="preserve">
     <value>交易已清算。</value>
@@ -302,9 +302,20 @@
     <value>提款</value>
   </data>
   <data name="OFXPosting" xml:space="preserve">
-    <value>OFX交易已成功添加到银行分录并过帐。</value>
+    <value>交易已成功添加到银行分录并过帐。</value>
   </data>
   <data name="Memo" xml:space="preserve">
     <value>备注2</value>
+  </data>
+  <data name="BankFeeds" xml:space="preserve">
+    <value>银行馈送</value>
+  </data>
+  <data name="GetTransactionsSuccess" xml:space="preserve">
+    <value>已下载{0}个交易。最近的交易日期是{1}。</value>
+    <comment>Message</comment>
+  </data>
+  <data name="GetTransactions" xml:space="preserve">
+    <value>获取交易</value>
+    <comment>Button</comment>
   </data>
 </root>
