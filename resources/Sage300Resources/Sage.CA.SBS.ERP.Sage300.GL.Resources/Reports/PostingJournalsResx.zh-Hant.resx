@@ -194,6 +194,12 @@
     <comment>Field</comment>
   </data>
   <data name="TaxInformation" xml:space="preserve">
-    <value>Tax Information</value>
+    <value>稅務資訊</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <data name="UnitHeading" xml:space="preserve">
+    <value>單位</value>
   </data>
 </root>

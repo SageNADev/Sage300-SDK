@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 var optionalFieldEnum = optionalFieldEnum || {};
@@ -606,6 +606,7 @@ var optionalFieldUIGrid =
     optFldSrcName: null,
     retrivableCellOldVal: null,
     pristineData: { val: null, description: null },
+    afterDataBindEvent: null,
 
     baselineItem: {
         "OptionalField": null,
@@ -1148,7 +1149,7 @@ var optionalFieldUIGrid =
             grid.dataSource.page(retrievePage + 1);
         }
 
-        $("#" + chkAllId).attr("checked", false).parent().attr("class", "icon checkBox");
+        $("#" + chkAllId).attr("checked", false);
         sg.controls.disable("#" + btnDeleteId);
         sg.controls.enable("#" + optionalFieldUIGrid.btnAddLineId);
     },
@@ -1316,7 +1317,7 @@ var optionalFieldUIGrid =
         sg.controls.disable('#' + optionalFieldUIGrid.btnAddLineId);
         sg.controls.disable('#' + optionalFieldUIGrid.btnDeleteLineId);
         sg.controls.disable("#" + optionalFieldUIGrid.selectAllCheckId);
-        $("#" + optionalFieldUIGrid.selectAllCheckId).attr("checked", false).parent().attr("class", "icon checkBox");
+        $("#" + optionalFieldUIGrid.selectAllCheckId).attr("checked", false);
         grid.tbody.find("." + optionalFieldUIGrid.selectCheckId).each(function () {
             $(this).attr("disabled", true);
         });
@@ -1707,9 +1708,14 @@ var optionalFieldUIGrid =
                     //
                     // End B-99599
                     //
+
+                    // Invoke after data bind event if specified
+                    if (optionalFieldUIGrid.afterDataBindEvent) {
+                       optionalFieldUIGrid.afterDataBindEvent(e);
+                    }
                 }
 
-                $("#" + optionalFieldUIGrid.selectAllCheckId).attr("checked", false).parent().attr("class", "icon checkBox");
+                $("#" + optionalFieldUIGrid.selectAllCheckId).attr("checked", false);
                 sg.controls.enable("#" + optionalFieldUIGrid.btnAddLineId);
 
                 if (optionalFieldUIGrid.isReadOnly || optionalFieldUIGrid.disableButtons) {

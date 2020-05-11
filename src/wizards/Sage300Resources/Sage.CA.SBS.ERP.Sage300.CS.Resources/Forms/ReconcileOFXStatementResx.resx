@@ -122,11 +122,11 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrRateDiff" xml:space="preserve">
-    <value>The OFX statement amount is different than the Bank Services amount. Are you sure you want to clear this transaction?</value>
+    <value>The statement amount is different than the Bank Services amount. Are you sure you want to clear this transaction?</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrWriteOff" xml:space="preserve">
-    <value>The OFX statement amount is different than the Bank Services amount. Are you sure you want to clear this transaction?</value>
+    <value>The statement amount is different than the Bank Services amount. Are you sure you want to clear this transaction?</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmExitAddTrx" xml:space="preserve">
@@ -134,7 +134,7 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmProcess" xml:space="preserve">
-    <value>You have made changes that have not been processed. Do you want to process the OFX reconciliation for {0}?</value>
+    <value>You have made changes that have not been processed. Do you want to process the reconciliation for {0}?</value>
     <comment>Message</comment>
   </data>
   <data name="CutOffDate" xml:space="preserve">
@@ -146,15 +146,15 @@
     <comment>Option toggle</comment>
   </data>
   <data name="Detail" xml:space="preserve">
-    <value>Match OFX Transaction to Bank</value>
+    <value>Match Transaction to Bank</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="EMPTYLIST" xml:space="preserve">
-    <value>There are no OFX transactions in the list.</value>
+    <value>There are no transactions in the list.</value>
     <comment>Message</comment>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>Reconcile OFX Statements</value>
+    <value>Reconcile E-Statements</value>
     <comment>Screen Title</comment>
   </data>
   <data name="EntryDate" xml:space="preserve">
@@ -170,7 +170,7 @@
     <comment>Message</comment>
   </data>
   <data name="MiscellaneousCreated" xml:space="preserve">
-    <value>OFX transaction added to Bank Entry and posted.</value>
+    <value>The transaction has been successfully added to Bank Entry and posted.</value>
     <comment>Message</comment>
   </data>
   <data name="NORECORD" xml:space="preserve">
@@ -186,7 +186,7 @@
     <comment>Message</comment>
   </data>
   <data name="OfxdateInvalid" xml:space="preserve">
-    <value>The bank entry could not be created because the OFX transaction date is not in the Fiscal Calendar.</value>
+    <value>Cannot create bank entry because the transaction date is not in Common Services' Fiscal Calendar.</value>
     <comment>Message</comment>
   </data>
   <data name="OFXEXIST" xml:space="preserve">
@@ -254,10 +254,10 @@
     <value>Automatically Clear Reconciled Transactions</value>
   </data>
   <data name="Comment" xml:space="preserve">
-    <value>Comment</value>
+    <value>Comment 1</value>
   </data>
   <data name="NoOFXRecDate" xml:space="preserve">
-    <value>You must enter the Reconciliation date before reconciling OFX transactions</value>
+    <value>You must enter the Reconciliation date before reconciling the transactions</value>
   </data>
   <data name="NoBankCode" xml:space="preserve">
     <value>Cannot find bank account {0}.</value>
@@ -275,7 +275,7 @@
     <value>Transaction Currency</value>
   </data>
   <data name="OFXInvalidDate" xml:space="preserve">
-    <value>The bank entry could not be created because the OFX transaction date is not in the fiscal calendar.</value>
+    <value>Cannot create bank entry because the transaction date is not in Common Services' Fiscal Calendar.</value>
   </data>
   <data name="RecDateEmpty" xml:space="preserve">
     <value>Reconciliation Date cannot be blank.</value>
@@ -287,7 +287,7 @@
     <value>You cannot enter a reconciliation date that is earlier than the previous reconciliation date.</value>
   </data>
   <data name="ProcessCofirm" xml:space="preserve">
-    <value>Do you want to reconcile the OFX statements?</value>
+    <value>Do you want to reconcile the statements?</value>
   </data>
   <data name="TransactionClr" xml:space="preserve">
     <value>Transaction is cleared.</value>
@@ -302,6 +302,19 @@
     <value>Withdrawal</value>
   </data>
   <data name="OFXPosting" xml:space="preserve">
-    <value>OFX transaction has been successfully added to Bank Entry and posted.</value>
+    <value>Transaction has been successfully added to Bank Entry and posted.</value>
+  </data>
+  <data name="Memo" xml:space="preserve">
+    <value>Comment 2</value>
+  </data>
+  <data name="BankFeeds" xml:space="preserve">
+    <value>Bank Feeds</value>
+  </data>
+  <data name="GetTransactionsSuccess" xml:space="preserve">
+    <value>{0} transactions have been downloaded. The latest transaction date is {1}.</value>
+  </data>
+  <data name="GetTransactions" xml:space="preserve">
+    <value>Get Transactions</value>
+    <comment>Button</comment>
   </data>
 </root>

@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 /**
@@ -793,7 +793,7 @@ $.extend(sg.utls.kndoUI, {
         if (field == null || field == '') {
             return "";
         }
-        return '<div class="pencil-wrapper"><span class="pencil-txt">' + field + '</span><span class="pencil-icon"><input type="button" class="icon edit-field btn' + text + '"/></span></div>';
+        return '<div class="pencil-wrapper"><span class="pencil-txt">' + kendo.htmlEncode(field) + '</span><span class="pencil-icon"><input type="button" class="icon edit-field btn' + text + '"/></span></div>';
     },
 
     /**

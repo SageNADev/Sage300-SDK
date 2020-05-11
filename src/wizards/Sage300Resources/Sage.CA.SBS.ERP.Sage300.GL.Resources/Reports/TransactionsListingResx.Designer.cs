@@ -160,6 +160,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Reports {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tax Information.
+        /// </summary>
+        public static string TaxInformation {
+            get {
+                return ResourceManager.GetString("TaxInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transaction Optional Fields.
         /// </summary>
         public static string TransOpt {

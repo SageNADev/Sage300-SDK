@@ -122,11 +122,11 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrRateDiff" xml:space="preserve">
-    <value>Le montant du relevé OFX diffère de celui de Services bancaires. Voulez-vous vraiment compenser cette transaction?</value>
+    <value>Le montant de la transaction diffère de celui de Services bancaires. Voulez-vous vraiment compenser cette transaction?</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrWriteOff" xml:space="preserve">
-    <value>Le montant du relevé OFX diffère de celui de Services bancaires. Voulez-vous vraiment compenser cette transaction?</value>
+    <value>Le montant de la transaction diffère de celui de Services bancaires. Voulez-vous vraiment compenser cette transaction?</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmExitAddTrx" xml:space="preserve">
@@ -134,7 +134,7 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmProcess" xml:space="preserve">
-    <value>Vous avez apporté des modifications qui n'ont pas été traitées. Voulez-vous traiter le rapprochement OFX pour {0}?</value>
+    <value>Des changements n'ont pas été traités. Voulez-vous traiter le rapprochement pour {0}?</value>
     <comment>Message</comment>
   </data>
   <data name="CutOffDate" xml:space="preserve">
@@ -146,15 +146,15 @@
     <comment>Option toggle</comment>
   </data>
   <data name="Detail" xml:space="preserve">
-    <value>Apparier détail de relevés OFX</value>
+    <value>Apparier détail de relevés</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="EMPTYLIST" xml:space="preserve">
-    <value>Il n'y a aucune transaction OFX dans la liste.</value>
+    <value>Il n'y a aucune transaction dans la liste.</value>
     <comment>Message</comment>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>Rapprocher les relevés OFX</value>
+    <value>Rapprocher les relevés</value>
     <comment>Screen Title</comment>
   </data>
   <data name="EntryDate" xml:space="preserve">
@@ -170,7 +170,7 @@
     <comment>Message</comment>
   </data>
   <data name="MiscellaneousCreated" xml:space="preserve">
-    <value>La transaction OFX a été ajoutée à Transaction bancaire et elle a été reportée.</value>
+    <value>La transaction a été ajoutée à la transaction bancaire sans problème et elle a été reportée.</value>
     <comment>Message</comment>
   </data>
   <data name="NORECORD" xml:space="preserve">
@@ -186,7 +186,7 @@
     <comment>Message</comment>
   </data>
   <data name="OfxdateInvalid" xml:space="preserve">
-    <value>Impossible de créer l'opération bancaire car la date de la transaction OFX ne figure pas dans le calendrier fiscal.</value>
+    <value>Impossible de créer une transaction bancaire. La date de transaction ne figure pas dans le calendrier fiscal de Services Communs.</value>
     <comment>Message</comment>
   </data>
   <data name="OFXEXIST" xml:space="preserve">
@@ -235,6 +235,10 @@
   <data name="ExchangeRate" xml:space="preserve">
     <value>Taux de change</value>
   </data>
+  <data name="GetTransactions" xml:space="preserve">
+    <value>Importer les transactions</value>
+    <comment>Button</comment>
+  </data>
   <data name="SourceAmount" xml:space="preserve">
     <value>Montant devise de transaction</value>
   </data>
@@ -254,10 +258,10 @@
     <value>Suppression automatique des transactions appariées</value>
   </data>
   <data name="Comment" xml:space="preserve">
-    <value>Commentaire</value>
+    <value>Commentaire 1</value>
   </data>
   <data name="NoOFXRecDate" xml:space="preserve">
-    <value>Vous devez saisir la date de rapprochement avant de rapprocher des transactions OFX</value>
+    <value>Vous devez saisir la date de rapprochement avant de rapprocher des transactions</value>
   </data>
   <data name="NoBankCode" xml:space="preserve">
     <value>Le compte bancaire {0} est introuvable.</value>
@@ -275,7 +279,7 @@
     <value>Devise de transaction</value>
   </data>
   <data name="OFXInvalidDate" xml:space="preserve">
-    <value>L'opération bancaire n'a pas pu être créée car la date de transaction OFX ne figure pas dans le calendrier fiscal.</value>
+    <value>Impossible de créer une transaction bancaire. La date de transaction ne figure pas dans le calendrier fiscal de Services Communs.</value>
   </data>
   <data name="RecDateEmpty" xml:space="preserve">
     <value>La date de rapprochement ne peut pas être en blanc.</value>
@@ -287,7 +291,7 @@
     <value>Vous ne pouvez pas saisir une date de rapprochement qui est antérieure à la date de rapprochement précédente.</value>
   </data>
   <data name="ProcessCofirm" xml:space="preserve">
-    <value>Voulez-vous rapprocher les relevés OFX?</value>
+    <value>Voulez-vous rapprocher les relevés?</value>
   </data>
   <data name="TransactionClr" xml:space="preserve">
     <value>La transaction est compensée.</value>
@@ -302,6 +306,16 @@
     <value>Retrait</value>
   </data>
   <data name="OFXPosting" xml:space="preserve">
-    <value>La transaction OFX a été correctement ajoutée à Opération bancaire et reportée.</value>
+    <value>La transaction a été correctement ajoutée à Opération bancaire et reportée.</value>
+  </data>
+  <data name="Memo" xml:space="preserve">
+    <value>Commentaire 2</value>
+  </data>
+  <data name="BankFeeds" xml:space="preserve">
+    <value>Flux bancaires</value>
+  </data>
+  <data name="GetTransactionsSuccess" xml:space="preserve">
+    <value>{0} transactions ont été téléchargées. La date de la dernière transaction est le {1}.</value>
+    <comment>Message</comment>
   </data>
 </root>

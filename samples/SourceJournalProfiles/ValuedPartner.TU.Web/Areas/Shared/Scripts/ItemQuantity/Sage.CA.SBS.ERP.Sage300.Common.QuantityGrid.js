@@ -201,9 +201,9 @@ var quantityUIGrid =
 
                     var url = "#"
                     if (quantityUIGrid.currentDocumentType === 1 || quantityUIGrid.currentDocumentType === 2) {
-                        url = sg.utls.url.buildUrl("OE", "OrderEntry", "Index") + "?guid=" + guid + "&id=" + selectedData.DocumentNumber + "&isEditable=false";
+                        url = sg.utls.url.buildUrl("OE", "OrderEntry", "Index") + "?guid=" + guid + "&id=" + encodeURIComponent(selectedData.DocumentNumber) + "&isEditable=false";
                     } else {
-                        url = sg.utls.url.buildUrl("PO", "PurchaseOrderEntry", "Index") + "?guid=" + guid + "&id=" + selectedData.DocumentNumber + "&disableAll=true";
+                        url = sg.utls.url.buildUrl("PO", "PurchaseOrderEntry", "Index") + "?guid=" + guid + "&id=" + encodeURIComponent(selectedData.DocumentNumber) + "&disableAll=true";
                     }
 
                     sg.utls.iFrameHelper.openWindow(guid, "", url, 600);

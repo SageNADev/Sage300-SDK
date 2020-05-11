@@ -349,7 +349,7 @@
     <value>過帳調節</value>
   </data>
   <data name="Bank_Trans_ReconcileOFXStatement" xml:space="preserve">
-    <value>調節OFX對帳單</value>
+    <value>調節電子對帳單</value>
   </data>
   <data name="Bank_Trans_ReconcileStatements" xml:space="preserve">
     <value>調節對帳單</value>
@@ -1598,5 +1598,13 @@
   </data>
   <data name="MT_Contacts_Contacts" xml:space="preserve">
     <value>連絡人 </value>
+  </data>
+  <data name="SetCompanyColor" xml:space="preserve">
+    <value>自訂主題顏色</value>
+    <comment>Settings Menu</comment>
+  </data>
+  <data name="SetCompanyColorDB" xml:space="preserve">
+    <value>從資料庫設定主題顏色</value>
+    <comment>Settings Menu</comment>
   </data>
 </root>

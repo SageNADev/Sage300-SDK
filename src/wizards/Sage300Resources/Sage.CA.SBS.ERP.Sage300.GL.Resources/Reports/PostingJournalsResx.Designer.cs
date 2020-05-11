@@ -205,11 +205,29 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Reports {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string Quantity {
+            get {
+                return ResourceManager.GetString("Quantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select Journal.
         /// </summary>
         public static string SelectJournal {
             get {
                 return ResourceManager.GetString("SelectJournal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Information.
+        /// </summary>
+        public static string TaxInformation {
+            get {
+                return ResourceManager.GetString("TaxInformation", resourceCulture);
             }
         }
         
@@ -228,6 +246,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Reports {
         public static string TransDetail {
             get {
                 return ResourceManager.GetString("TransDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UOM.
+        /// </summary>
+        public static string UnitHeading {
+            get {
+                return ResourceManager.GetString("UnitHeading", resourceCulture);
             }
         }
     }

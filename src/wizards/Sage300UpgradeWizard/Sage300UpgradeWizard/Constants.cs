@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -32,16 +32,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2020.1";
+            public const string FromReleaseNumber = "2020.2";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2020.2";
+            public const string ToReleaseNumber = "2021.0";
 
             /// <summary> From Accpac Number </summary>
             public const string FromAccpacNumber = "6.7.0.0";
 
             /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "6.7.0.0";
+            public const string ToAccpacNumber = "6.8.0.0";
         }
 
         /// <summary>
@@ -72,8 +72,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// This is the version of the Microsoft .NET Framework 
             /// to target for all projects in the solution being upgraded.
             /// </summary>
-            public const string TargetedDotNetFrameworkVersion = "4.7.2";
-            public const string TargetFrameworkMoniker = ".NETFramework,Version=v4.7.2";
+            public const string TargetedDotNetFrameworkVersion = "4.8";
+            public const string TargetFrameworkMoniker = ".NETFramework,Version=v4.8";
         }
     }
 }

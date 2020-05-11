@@ -164,6 +164,12 @@
     <value>Tipo</value>
   </data>
   <data name="TaxInformation" xml:space="preserve">
-    <value>Tax Information</value>
+    <value>Información Fiscal</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="UnitHeading" xml:space="preserve">
+    <value>UM</value>
   </data>
 </root>

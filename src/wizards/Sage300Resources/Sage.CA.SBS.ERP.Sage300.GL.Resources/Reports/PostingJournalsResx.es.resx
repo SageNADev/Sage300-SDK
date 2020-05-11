@@ -193,4 +193,13 @@
     <value>Fecha del Documento</value>
     <comment>Field</comment>
   </data>
+  <data name="TaxInformation" xml:space="preserve">
+    <value>Información Fiscal</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="UnitHeading" xml:space="preserve">
+    <value>UM</value>
+  </data>
 </root>

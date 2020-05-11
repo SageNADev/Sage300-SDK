@@ -151,7 +151,7 @@ namespace Sage300UICustomizationWizard
         public void RunFinished()
         {
             var sln = (Solution2)_dte.Solution;
-            var csTemplatePath = sln.GetProjectTemplate("Web.zip|FrameworkVersion=4.7.2", "CSharp");
+            var csTemplatePath = sln.GetProjectTemplate("Web.zip|FrameworkVersion=4.8", "CSharp");
 
             sln.Create(_destinationFolder, _safeprojectname);
 
