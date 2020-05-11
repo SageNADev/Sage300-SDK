@@ -685,6 +685,7 @@ var loginUICallback = {
                     sessionStorage.setItem("account_edition", jsonResult.engagement.Account.Edition);
                     sessionStorage.setItem("account_version", jsonResult.engagement.Account.Version);
                     sessionStorage.setItem("account_lanpakCount", jsonResult.engagement.Account.LanpakCount);
+                    sessionStorage.setItem("account_product", jsonResult.engagement.Account.Product);
 
                     sessionStorage.setItem("visitor_id", jsonResult.engagement.Visitor.Id);
                     sessionStorage.setItem("visitor_company", jsonResult.engagement.Visitor.Company);

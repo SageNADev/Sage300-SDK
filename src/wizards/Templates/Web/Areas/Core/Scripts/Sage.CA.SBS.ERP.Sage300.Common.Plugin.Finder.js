@@ -821,10 +821,10 @@ FinderPreferences = {
 
     // Check/Uncheck the "Select All" checkbox based on the selection of list of columns
     SelectHeaderCheckBox: function () {
-        $('#chkSelectAll').attr('checked', 'checked').applyCheckboxStyle();
+        $('#chkSelectAll').prop('checked', true).applyCheckboxStyle();
         $('#tblTBodyFinderPref input[name=chkFinderPrefCol][type=checkbox]').each(function () {
             if (!$(this).is(':checked')) {
-                $('#chkSelectAll').removeAttr('checked').applyCheckboxStyle();
+                $('#chkSelectAll').prop('checked', false).applyCheckboxStyle();
                 return;
             }
         });
@@ -878,13 +878,13 @@ FinderPreferences = {
                 for (var i = 0; i < grid.columns.length; i++) {
                     if ($(this).attr('data-finder-key') === grid.columns[i].field) {
                         if (!grid.columns[i].hidden) {
-                            $(this).attr('checked', 'checked').applyCheckboxStyle();
+                            $(this).prop('checked', true).applyCheckboxStyle();
                             isChecked = true;
                         }
                     }
                 }
                 if (!isChecked) {
-                    $(this).removeAttr('checked').applyCheckboxStyle();
+                    $(this).prop('checked', false).applyCheckboxStyle();
                 }
             });
         }
@@ -894,9 +894,9 @@ FinderPreferences = {
     ChangeCheckState: function (flag) {
         $('#tblTBodyFinderPref input[name=chkFinderPrefCol][type=checkbox]').each(function () {
             if (flag) {
-                $(this).attr('checked', 'checked').applyCheckboxStyle();
+                $(this).prop('checked', true).applyCheckboxStyle();
             } else {
-                $(this).removeAttr('checked').applyCheckboxStyle();
+                $(this).prop('checked', false).applyCheckboxStyle();
             }
 
         });

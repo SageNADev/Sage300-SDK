@@ -1,0 +1,3 @@
+call CopyWebRepoFiles.bat
+call CreateTemplateZipFiles.bat
+call MoveTemplateZipFilesToFinalDestination.bat
