@@ -191,11 +191,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.FromReleaseNumber,
                                   Constants.PerRelease.ToReleaseNumber));
 #endif
-            // Keep this around for the inevitable .NET framework 4.8 upgrade
-            //AddStep(Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion,
-            //        Resources.ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion,
-            //        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
-            //                      Constants.Common.TargetedDotNetFrameworkVersion));
+            // Update the targeted version of Microsoft .NET framework 
+            //
+            // Note: Please leave this block in regardless of whether or not
+            // it's going to be used. Comment out only if not necessary.
+            AddStep(Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion,
+                    Resources.ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion,
+                    string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
+                                  Constants.Common.TargetedDotNetFrameworkVersion));
 
             #endregion
 

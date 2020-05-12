@@ -19,6 +19,7 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
+using EnvDTE;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities;
 using System;
@@ -104,22 +105,26 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     #endregion
 
                     #region Accpac .NET library update - Comment out if no update required
-
                     case 3:
                         LogSpacerLine('-');
                         SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
                         break;
-
                     #endregion
 
                     #region Release Specific Upgrade Steps
-
 #if ENABLE_TK_244885
                     case 3:
                         ConsolidateEnumerations(title);
                         break;
 #endif
-                        #endregion
+
+
+                    case 4:
+                        LogSpacerLine('-');
+                        UpdateTargetedDotNetFrameworkVersion(title);
+                        break;
+
+                    #endregion
                 }
             }
 
@@ -343,6 +348,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             {
                 Log($"{Resources.File} '{filePath}' {Resources.DoesNotExist}.");
             }
+        }
+
+        /// <summary>
+        /// Update the targeted version of the .NET Framework for
+        /// all solution projects
+        /// </summary>
+        /// <param name="title">Title of step being processed </param>
+        private void UpdateTargetedDotNetFrameworkVersion(string title)
+        {
+            // Log start of step
+            LogEventStart(title);
+
+            var projects = _settings.Solution.Projects;
+            var dotNetTargetName = Constants.Common.TargetFrameworkMoniker;
+            foreach (Project project in projects)
+            {
+                Log($"{DateTime.Now} - {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Upgrading {project.Name} .NET target to {dotNetTargetName}...");
+                project.Properties.Item("TargetFrameworkMoniker").Value = dotNetTargetName;
+            }
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
         }
 
 #if ENABLE_TK_244885
