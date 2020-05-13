@@ -338,6 +338,19 @@
   <data name="UpdatesToSupportMultipleSessionsAreAManualStep" xml:space="preserve">
     <value>The updates to support multiple sessions must be made manually.</value>
   </data>
+  <data name="ReleaseSpecificTitleDescRemovePreviousJqueryLibraries" xml:space="preserve">
+    <value>This step will automatially search for and remove all previous versions of jQuery specific library files from your solution and projects.</value>
+  </data>
+  <data name="ReleaseSpecificTitleRemovePreviousJqueryLibraries" xml:space="preserve">
+    <value>Remove previous version of jQuery libraries</value>
+  </data>
+  <data name="Template_ReleaseSpecificRemovePreviousJqueryLibraries" xml:space="preserve">
+    <value>The following previous versions of jQuery files will be removed from your solution and projects:
+
+jQuery Core V{0}
+jQuery UI V{1}
+jQuery Migrate V{2}</value>
+  </data>
   <data name="ReleaseSpecificDescUnifyDisabled" xml:space="preserve">
     <value>This step will need to be done manually.</value>
   </data>

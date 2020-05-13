@@ -160,25 +160,31 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.ToReleaseNumber),
                     BuildMainContentStep());
 
-            AddStep(Resources.ReleaseAllTitleSyncKendoFiles, 
-                    Resources.ReleaseAllDescSyncKendoFiles, 
-                    Resources.ReleaseAllSyncKendoFiles);
+            if (Constants.PerRelease.SyncKendoFiles == true)
+            {
+                AddStep(Resources.ReleaseAllTitleSyncKendoFiles,
+                        Resources.ReleaseAllDescSyncKendoFiles,
+                        Resources.ReleaseAllSyncKendoFiles);
+            }
 
-            AddStep(Resources.ReleaseAllTitleSyncWebFiles,
+            if (Constants.PerRelease.SyncWebFiles == true)
+            {
+                AddStep(Resources.ReleaseAllTitleSyncWebFiles,
                     Resources.ReleaseAllDescSyncWebFiles,
                     Resources.ReleaseAllSyncWebFiles);
+            }
 
             #endregion
 
-            #region Accpac .NET library update - Comment out if no update required
+            if (Constants.PerRelease.UpdateAccpacDotNetLibrary == true)
+            {
+                AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
+                        Resources.ReleaseAllDescSyncAccpacLibs,
+                        string.Format(Resources.ReleaseAllSyncAccpacLibs,
+                                      Constants.PerRelease.FromAccpacNumber,
+                                      Constants.PerRelease.ToAccpacNumber));
 
-            AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
-                    Resources.ReleaseAllDescSyncAccpacLibs,
-                    string.Format(Resources.ReleaseAllSyncAccpacLibs,
-                                  Constants.PerRelease.FromAccpacNumber,
-                                  Constants.PerRelease.ToAccpacNumber));
-
-            #endregion
+            }
 
             #region Release Specific Steps...
 
@@ -191,11 +197,31 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.FromReleaseNumber,
                                   Constants.PerRelease.ToReleaseNumber));
 #endif
-            // Keep this around for the inevitable .NET framework 4.8 upgrade
-            //AddStep(Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion,
-            //        Resources.ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion,
-            //        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
-            //                      Constants.Common.TargetedDotNetFrameworkVersion));
+
+            if (Constants.PerRelease.RemovePreviousJqueryLibraries == true)
+            {
+                //
+                // Remove previous version of jQuery from file system and any references
+                // within the solution .csproj files.
+                //
+                AddStep(Resources.ReleaseSpecificTitleRemovePreviousJqueryLibraries,
+                        Resources.ReleaseSpecificTitleDescRemovePreviousJqueryLibraries,
+                        string.Format(Resources.Template_ReleaseSpecificRemovePreviousJqueryLibraries,
+                                        Constants.PerRelease.FromJqueryCoreVersion,
+                                        Constants.PerRelease.FromJqueryUIVersion,
+                                        Constants.PerRelease.FromJqueryMigrateVersion));
+            }
+
+            if (Constants.PerRelease.UpdateMicrosoftDotNetFramework == true)
+            {
+                //
+                // Update the targeted version of Microsoft .NET framework 
+                //
+                AddStep(Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion,
+                        Resources.ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion,
+                        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
+                                      Constants.Common.TargetedDotNetFrameworkVersion));
+            }
 
             AddStep(Resources.ReleaseSpecificTitleUnifyDisabled,
                     Resources.ReleaseSpecificDescUnifyDisabled,
@@ -235,16 +261,25 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncKendoFiles}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncWebFiles}");
 
-            #region Accpac .NET library update - Comment out if no update required
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
-            #endregion
+            if (Constants.PerRelease.UpdateAccpacDotNetLibrary == true)
+            {
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
+            }
 
             // Begin - Specific to release
 #if ENABLE_TK_244885
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleConsolidateEnumerations}");
 #endif
-            // Keep this around for the inevitable .NET framework 4.8 upgrade
-            //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
+
+            if (Constants.PerRelease.RemovePreviousJqueryLibraries == true)
+            {
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleRemovePreviousJqueryLibraries}");
+            }
+
+            if (Constants.PerRelease.UpdateMicrosoftDotNetFramework == true)
+            {
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
+            }
 
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUnifyDisabled}");
 
@@ -473,7 +508,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             // Write out log file with upgrade being complete
             WriteLogFile();
-
         }
 
         /// <summary> Help Button</summary>

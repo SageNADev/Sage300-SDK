@@ -42,6 +42,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             /// <summary> To Accpac Number </summary>
             public const string ToAccpacNumber = "6.8.0.0";
+
+            /// <summary> Flag that determines whether or not to synchronize the Kendo files. </summary>
+            public const bool SyncKendoFiles = true;
+
+            /// <summary> Flag that determines whether or not to synchronize the Web files. </summary>
+            public const bool SyncWebFiles = true;
+
+            /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
+            public const bool UpdateAccpacDotNetLibrary = true;
+
+            /// <summary> Flag that determines whether or not to update the .NET framework in solution projects. </summary>
+            public const bool UpdateMicrosoftDotNetFramework = true;
+
+            /// <summary> Flag that determines whether or not to remove previous versions of the various JQuery libraries. </summary>
+            public const bool RemovePreviousJqueryLibraries = true;
+
+            public const string FromJqueryCoreVersion = "1.11.3";
+            public const string FromJqueryUIVersion = "1.11.4";
+            public const string FromJqueryMigrateVersion = "1.2.1";
+
+            public const string ToJqueryCoreVersion = "3.4.1";
+            public const string ToJqueryUIVersion = "1.12.1";
+            public const string ToJqueryMigrateVersion = "3.1.0";
         }
 
         /// <summary>
@@ -67,6 +90,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             /// <summary> Just a dummy ModuleId </summary>
             public const string DummyModuleId = "XX";
+
+            // <summary> The name of the 'Scripts' folder </summary>
+            public const string ScriptsFolderName = "Scripts";
 
             /// <summary> 
             /// This is the version of the Microsoft .NET Framework 

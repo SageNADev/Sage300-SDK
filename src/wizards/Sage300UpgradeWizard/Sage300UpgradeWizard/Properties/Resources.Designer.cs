@@ -556,11 +556,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will automatially search for and remove all previous versions of jQuery specific library files from your solution and projects..
+        /// </summary>
+        internal static string ReleaseSpecificTitleDescRemovePreviousJqueryLibraries {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleDescRemovePreviousJqueryLibraries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.8 in all projects in the solution being upgraded..
         /// </summary>
         internal static string ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove previous version of jQuery libraries.
+        /// </summary>
+        internal static string ReleaseSpecificTitleRemovePreviousJqueryLibraries {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleRemovePreviousJqueryLibraries", resourceCulture);
             }
         }
         
@@ -741,6 +759,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Template_AttemptingToUpdateAllCsprojFiles {
             get {
                 return ResourceManager.GetString("Template_AttemptingToUpdateAllCsprojFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The following previous versions of jQuery files will be removed from your solution and projects:
+        ///
+        ///jQuery Core V{0}
+        ///jQuery UI V{1}
+        ///jQuery Migrate V{2}.
+        /// </summary>
+        internal static string Template_ReleaseSpecificRemovePreviousJqueryLibraries {
+            get {
+                return ResourceManager.GetString("Template_ReleaseSpecificRemovePreviousJqueryLibraries", resourceCulture);
             }
         }
         
