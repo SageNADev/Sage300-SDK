@@ -885,8 +885,8 @@ var InquiryGeneralUI = function () {
             }
         }
         //Open popup window on drill down cell click
-        $("#inquiryGrid").delegate("tbody > tr > td > a", "click", initShowPopup);
-        $("#inquiryGrid").delegate("tbody > tr > td > img", "click", initShowPopup);
+        $("#inquiryGrid").on("click", "tbody > tr > td > a", initShowPopup);
+        $("#inquiryGrid").on("click", "tbody > tr > td > img", initShowPopup);
         //Init filter panel
         $("#filter").kendoGridFilterPanel({
             dataSource: dataSource,

@@ -1149,7 +1149,7 @@ var optionalFieldUIGrid =
             grid.dataSource.page(retrievePage + 1);
         }
 
-        $("#" + chkAllId).attr("checked", false);
+        $("#" + chkAllId).prop("checked", false);
         sg.controls.disable("#" + btnDeleteId);
         sg.controls.enable("#" + optionalFieldUIGrid.btnAddLineId);
     },
@@ -1317,7 +1317,7 @@ var optionalFieldUIGrid =
         sg.controls.disable('#' + optionalFieldUIGrid.btnAddLineId);
         sg.controls.disable('#' + optionalFieldUIGrid.btnDeleteLineId);
         sg.controls.disable("#" + optionalFieldUIGrid.selectAllCheckId);
-        $("#" + optionalFieldUIGrid.selectAllCheckId).attr("checked", false);
+        $("#" + optionalFieldUIGrid.selectAllCheckId).prop("checked", false);
         grid.tbody.find("." + optionalFieldUIGrid.selectCheckId).each(function () {
             $(this).attr("disabled", true);
         });
@@ -1715,7 +1715,7 @@ var optionalFieldUIGrid =
                     }
                 }
 
-                $("#" + optionalFieldUIGrid.selectAllCheckId).attr("checked", false);
+                $("#" + optionalFieldUIGrid.selectAllCheckId).prop("checked", false);
                 sg.controls.enable("#" + optionalFieldUIGrid.btnAddLineId);
 
                 if (optionalFieldUIGrid.isReadOnly || optionalFieldUIGrid.disableButtons) {

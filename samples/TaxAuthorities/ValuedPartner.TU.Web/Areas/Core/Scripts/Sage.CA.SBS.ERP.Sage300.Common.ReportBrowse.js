@@ -112,7 +112,7 @@ var reportBrowseUI = function () {
             gridDataBound(this);
         }),
 
-        grid.element.delegate("tbody>tr", "dblclick", function () {
+        grid.element.on("dblclick", "tbody>tr", function () {
             btnRptSelect.trigger("click");
         });
 

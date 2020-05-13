@@ -81,9 +81,9 @@ GridPreferences = {
         $('#tblTBodyGridPref input[name=chkNewGridPref]').each(function () {
             if ($(this).is(':checkbox') && $(this).id != 'chkGridPrefSelectAll') {
                 if (flag) {
-                    $(this).attr('checked', 'checked').applyCheckboxStyle();
+                    $(this).prop('checked', true).applyCheckboxStyle();
                 } else {
-                    $(this).removeAttr('checked').applyCheckboxStyle();
+                    $(this).prop('checked', false).applyCheckboxStyle();
                 }
             }
         });
@@ -93,10 +93,10 @@ GridPreferences = {
      * @method setHeaderCheckBox      
      */
     setHeaderCheckBox: function () {
-        $('#chkGridPrefSelectAll').attr('checked', 'checked').applyCheckboxStyle();
+        $('#chkGridPrefSelectAll').prop('checked', true).applyCheckboxStyle();
         $('#tblTBodyGridPref input[name=chkNewGridPref]').each(function () {
             if ($(this).is(':checkbox') && !$(this).is(':checked')) {
-                $('#chkGridPrefSelectAll').removeAttr('checked').applyCheckboxStyle();
+                $('#chkGridPrefSelectAll').prop('checked', false).applyCheckboxStyle();
                 return;
             }
         });
@@ -112,9 +112,9 @@ GridPreferences = {
                 for (var i = 0; i < grid.columns.length; i++) {
                     if ($(this).attr('data-finder-key') === grid.columns[i].field) {
                         if (!grid.columns[i].hidden)
-                            $(this).attr('checked', 'checked').applyCheckboxStyle();
+                            $(this).prop('checked', true).applyCheckboxStyle();
                         else {
-                            $(this).removeAttr('checked').applyCheckboxStyle();
+                            $(this).prop('checked', false).applyCheckboxStyle();
                         }
                     }
                 }
