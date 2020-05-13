@@ -119,7 +119,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         ConsolidateEnumerations(title);
                         break;
 #endif
-                        #endregion
+
+                    case 4:
+                        LogSpacerLine('-');
+                        UpdateUnifyDisabled(title);
+                        break;
+
+                    #endregion
                 }
             }
 
@@ -299,6 +305,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                 Constants.PerRelease.FromAccpacNumber,
                                 Constants.PerRelease.ToAccpacNumber);
             Log(msg);
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Unify html 'disabled' attribute
+        /// </summary>
+        /// <param name="title"></param>
+        private void UpdateUnifyDisabled(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.UpdatesToUnifyDisabledAreAManualStep;
 
             // Log end of step
             LogEventEnd(title);

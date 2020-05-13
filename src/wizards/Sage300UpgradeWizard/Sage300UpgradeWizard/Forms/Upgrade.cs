@@ -197,6 +197,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             //        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
             //                      Constants.Common.TargetedDotNetFrameworkVersion));
 
+            AddStep(Resources.ReleaseSpecificTitleUnifyDisabled,
+                    Resources.ReleaseSpecificDescUnifyDisabled,
+                    Resources.ReleaseSpecificUnifyDisabled);
+
             #endregion
 
             #region Common for all upgrades - content specific to release
@@ -241,6 +245,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 #endif
             // Keep this around for the inevitable .NET framework 4.8 upgrade
             //content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
+
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUnifyDisabled}");
 
             // End - Specific to release
 

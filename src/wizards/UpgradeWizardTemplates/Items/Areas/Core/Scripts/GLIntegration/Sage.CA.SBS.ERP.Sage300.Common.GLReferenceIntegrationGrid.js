@@ -121,4 +121,4 @@ var GLReferenceIntegrationUIGrid = {
 };
 
 // open popup window on edit cell click
-$("#gridGLReferenceIntegration").delegate("tbody > tr > td > div > span > input.glIntegrationEditBtn", "click", glIntegrationUI.initOpenPopup);
+$("#gridGLReferenceIntegration").on("click", "tbody > tr > td > div > span > input.glIntegrationEditBtn", glIntegrationUI.initOpenPopup);
