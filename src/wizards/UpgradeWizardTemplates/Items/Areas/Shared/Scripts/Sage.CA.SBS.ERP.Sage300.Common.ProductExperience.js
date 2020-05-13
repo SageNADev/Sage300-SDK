@@ -24,8 +24,8 @@
                 id: sessionStorage.getItem("visitor_id"),   // Required if user is logged in
                 company: sessionStorage.getItem("visitor_company"),
                 role: sessionStorage.getItem("visitor_role"),
-                language: sessionStorage.getItem("visitor_language"),
-                locale: sessionStorage.getItem("visitor_locale")
+                user_language: sessionStorage.getItem("visitor_language"),
+                user_locale: sessionStorage.getItem("visitor_locale")
 
                 // You can add any additional visitor level key-values here,
                 // as long as it's not one of the above reserved names.
@@ -44,6 +44,7 @@
                 edition: sessionStorage.getItem("account_edition"),
                 version: sessionStorage.getItem("account_version"),
                 lanpakCount: sessionStorage.getItem("account_lanpakCount"),
+                product: sessionStorage.getItem("account_product"),
 
                 // You can add any additional account level key-values here,
                 // as long as it's not one of the above reserved names.
