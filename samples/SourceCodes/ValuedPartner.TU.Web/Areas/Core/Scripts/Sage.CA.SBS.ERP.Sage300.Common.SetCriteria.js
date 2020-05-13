@@ -501,7 +501,7 @@ setCriteriaUI = {
         var $grid = $("#SetCriteriaGrid");
         var gridCell = $grid.find(".gridcell");
         gridCell.off("hover");
-        gridCell.hover(function () {
+        gridCell.on("mouseenter mouseleave", function () {
             var td = $(this).closest("td");
             var cellText = td.text().trim();
             if (cellText) {
@@ -512,7 +512,7 @@ setCriteriaUI = {
 
         var gridHeader = $grid.find(".k-header");
         gridHeader.off("hover");
-        gridHeader.hover(function () {
+        gridHeader.on("mouseenter mouseleave", function () {
             $(this).children('.edit-gridcell-options').toggleClass('show');
         });
 

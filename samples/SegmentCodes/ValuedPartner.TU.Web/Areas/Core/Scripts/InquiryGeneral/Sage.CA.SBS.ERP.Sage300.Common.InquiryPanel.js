@@ -163,7 +163,7 @@ inquiryPanelUI = {
             element.append(subElement);
         }
 
-        var li = $(element.selector + ' li');
+        var li = $("#" + element[0].id + " li")
         li.off('click');
         li.click(function () {
             var parameterData = $(this).data();
@@ -351,7 +351,7 @@ inquiryPanelUI = {
 
         initKendoGrid("#saveQueryPanelGrid");
         initKendoGrid("#openQueryPanelGrid");
-        $("#openQueryPanelGrid").delegate("tbody>tr", "dblclick", function () {
+        $("#openQueryPanelGrid").on("dblclick", "tbody>tr", function () {
             $('#btnOpenQuery').click();
         });
     },

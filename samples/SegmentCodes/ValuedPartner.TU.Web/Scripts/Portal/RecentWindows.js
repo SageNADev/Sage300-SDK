@@ -147,7 +147,7 @@ var RecentWindowsMenu = function () {
     function removeNonPermittedItems() {
         $(constants.DV_RECENTWINDOWS_SPAN_SELECTOR).each(
             function (index, elem) {
-                var currentMenuId = $($(elem).attr(constants.DATAMENUID_SELECTOR));
+                var currentMenuId = $(elem).attr(constants.DATAMENUID_SELECTOR);
 
                 // Remove any recent windows over the limit
                 if (currentMenuId) {
@@ -175,7 +175,7 @@ var RecentWindowsMenu = function () {
         // Remove items in reverse order from the list - FIFO
         $($(constants.DV_RECENTWINDOWS_SPAN_SELECTOR).get().reverse()).each(
             function (index, elem) {
-                var currentMenuId = $($(elem).attr(constants.DATAMENUID_SELECTOR));
+                var currentMenuId = $(elem).attr(constants.DATAMENUID_SELECTOR);
 
                 // Remove any recent windows over the limit
                 if (currentMenuId) {
@@ -194,7 +194,7 @@ var RecentWindowsMenu = function () {
 
                     // Remove screen name from recent window list
                     // if a screen with matching menu id is found
-                    if (currentMenuId.selector === menuId) {
+                    if (currentMenuId === menuId) {
                         $(elem).closest("div").remove();
                         // breaking out of the .each call.
                         return false;
@@ -218,7 +218,7 @@ var RecentWindowsMenu = function () {
 
         // Only on initial load.
         if ("" === menuId) {
-            var currentParentId = $($(elem).attr(constants.PARENTID_SELECTOR));
+            var currentParentId = $(elem).attr(constants.PARENTID_SELECTOR);
 
             // Remove screen name if user has no rights to it
             if (currentMenuId && currentParentId) {
@@ -247,8 +247,8 @@ var RecentWindowsMenu = function () {
     function checkIsPermitted(menuUrlList, otherUrlList, menuId, parentId) {
         var permitted = false;
         for (var i = 0; i < menuUrlList.length; i++) {
-            if (menuUrlList[i].Data.MenuId === menuId.selector &&
-                menuUrlList[i].Data.ParentMenuId === parentId.selector) {
+            if (menuUrlList[i].Data.MenuId === menuId &&
+                menuUrlList[i].Data.ParentMenuId === parentId) {
                 permitted = true;
                 break;
             }
@@ -257,8 +257,8 @@ var RecentWindowsMenu = function () {
         // if not permitted from menuUrlList, check to see if it is third party screen
         if (!permitted) {
             for (i = 0; i < otherUrlList.length; i++) {
-                if (otherUrlList[i].Data.MenuId === menuId.selector &&
-                    otherUrlList[i].Data.ParentMenuId === parentId.selector) {
+                if (otherUrlList[i].Data.MenuId === menuId &&
+                    otherUrlList[i].Data.ParentMenuId === parentId) {
                     permitted = true;
                     break;
                 }

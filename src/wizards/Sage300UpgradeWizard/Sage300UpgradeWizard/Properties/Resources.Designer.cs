@@ -538,6 +538,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will need to be done manually..
+        /// </summary>
+        internal static string ReleaseSpecificDescUnifyDisabled {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescUnifyDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consolidation of Enumeration Files.
         /// </summary>
         internal static string ReleaseSpecificTitleConsolidateEnumerations {
@@ -574,11 +583,39 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unify HTML &apos;disabled&apos; attribute.
+        /// </summary>
+        internal static string ReleaseSpecificTitleUnifyDisabled {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleUnifyDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update targeted version of .NET Framework.
         /// </summary>
         internal static string ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As part of the framework changes required to unify the usage of HTML &apos;disable&apos;
+        ///attribute in Sage HtmlHelper controls.
+        ///
+        ///The upgrade wizard is unable to automatically perform this modification and
+        ///therefore this step will require manual modifications.
+        ///
+        ///Any cshtml file that defines a Sage HtmlHelper control needs to be updated
+        ///to match the new standard of the definition of &apos;disabled&apos; html attribute.
+        ///
+        ///Please refer to the &apos;Unified Disabled Attribute&apos; subsection in the Sage 300
+        ///Upgrade Guide for 2020.2  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificUnifyDisabled {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificUnifyDisabled", resourceCulture);
             }
         }
         
@@ -771,6 +808,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string UpdatesToSupportMultipleSessionsAreAManualStep {
             get {
                 return ResourceManager.GetString("UpdatesToSupportMultipleSessionsAreAManualStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The updates to unify HTML &apos;disabled&apos; attribute must be made manually..
+        /// </summary>
+        internal static string UpdatesToUnifyDisabledAreAManualStep {
+            get {
+                return ResourceManager.GetString("UpdatesToUnifyDisabledAreAManualStep", resourceCulture);
             }
         }
         

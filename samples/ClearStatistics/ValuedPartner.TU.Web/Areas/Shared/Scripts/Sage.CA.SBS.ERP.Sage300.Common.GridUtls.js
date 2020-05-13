@@ -335,7 +335,7 @@ sg.utls.grid = {
     */
     getDefaultEditor: function (container, options) {
         var self = this;
-        sg.utls.grid.savePreviousText(self.gridId, container.context.cellIndex, options.field);
+        sg.utls.grid.savePreviousText(self.gridId, container[0].cellIndex, options.field);
         var decimalPlace = self.decimalPlace;
         var data = $("#" + self.gridId).data("kendoGrid").dataSource.data();
         var tbId = "tbGridCell_" + options.field;
@@ -444,7 +444,7 @@ sg.utls.grid = {
             //save current state before finder open
             gridCellFocusSwitch = !gridCellFocusSwitch;
             sg.utls.grid.savePreviousText(finderConfiguration.gridId,
-                container.context.cellIndex,
+                container[0].cellIndex,
                 options.field);
 
             //Set finder filters
@@ -576,7 +576,7 @@ sg.utls.grid = {
     */
     getDropdownEditor: function (container, options) {
         var self = this;
-        sg.utls.grid.savePreviousText(self.gridId, container.context.cellIndex, options.field);
+        sg.utls.grid.savePreviousText(self.gridId, container[0].cellIndex, options.field);
         var grid = $('#' + self.gridId).getKendoGrid();
         var colInfo = grid.columns.find(function (v, i) {
             var col = grid.columns[i];

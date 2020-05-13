@@ -233,7 +233,7 @@ $.extend(sg.utls.kndoUI, {
     nonEditable: function (grid, container) {
         grid.closeCell();
 
-        if (container.context.cellIndex == 0 && sg.utls.isShiftKeyPressed) {
+        if (container[0].cellIndex == 0 && sg.utls.isShiftKeyPressed) {
             var prevRowIndex = sg.utls.kndoUI.getSelectedRowIndex(grid) - 1;
             if (prevRowIndex >= 0) {
                 grid.select(grid.tbody.find(">tr:eq(" + prevRowIndex + ")"));
@@ -242,7 +242,7 @@ $.extend(sg.utls.kndoUI, {
             grid.select(container.closest("tr"));
         }
 
-        sg.utls.kndoUI.skipTab(grid, container.context.cellIndex);
+        sg.utls.kndoUI.skipTab(grid, container[0].cellIndex);
     },
     /**
      * Skips the tab from the column

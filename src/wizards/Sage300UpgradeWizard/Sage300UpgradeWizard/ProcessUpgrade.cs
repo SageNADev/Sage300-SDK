@@ -103,6 +103,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         }
                         break;
 
+                    #region Release Specific Upgrade Steps
+
                     case 3:
                         LogSpacerLine('-');
                         if (Constants.PerRelease.UpdateAccpacDotNetLibrary == true)
@@ -127,11 +129,18 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         }
                         break;
 
+                    case 6:
+                        LogSpacerLine('-');
+                        UpdateUnifyDisabled(title);
+                        break;
+
 #if ENABLE_TK_244885
                     case X:
                         ConsolidateEnumerations(title);
                         break;
 #endif
+
+                    #endregion
                 }
             }
 
@@ -259,6 +268,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                 Constants.PerRelease.FromAccpacNumber,
                                 Constants.PerRelease.ToAccpacNumber);
             Log(msg);
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Unify html 'disabled' attribute
+        /// </summary>
+        /// <param name="title"></param>
+        private void UpdateUnifyDisabled(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.UpdatesToUnifyDisabledAreAManualStep;
 
             // Log end of step
             LogEventEnd(title);

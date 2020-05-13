@@ -223,6 +223,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                       Constants.Common.TargetedDotNetFrameworkVersion));
             }
 
+            AddStep(Resources.ReleaseSpecificTitleUnifyDisabled,
+                    Resources.ReleaseSpecificDescUnifyDisabled,
+                    Resources.ReleaseSpecificUnifyDisabled);
+
             #endregion
 
             #region Common for all upgrades - content specific to release
@@ -276,6 +280,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             {
                 content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
             }
+
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUnifyDisabled}");
 
             // End - Specific to release
 

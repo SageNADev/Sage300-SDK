@@ -194,16 +194,20 @@ ko.bindingHandlers.SagekendoGrid =
                                 }
                                 pageUrl = pageUrl || binding.gridOptions.pageUrl;
 
-                                sg.utls.ajaxPost(pageUrl, params, function (successData) {
-                                    binding.gridOptions.param = null;
-                                    binding.gridOptions.pageUrl = options.pageUrl;
-                                    var data = options.buildGridData(successData);
-                                    if (data != null) {
-                                        optionResult.success(data);
-                                    } else {
-                                        optionResult.error();
-                                    }
-                                });
+                                if(pageUrl){ // only send request for data if URL of the grid is defined
+                                    sg.utls.ajaxPost(pageUrl, params, function (successData) {
+                                        binding.gridOptions.param = null;
+                                        binding.gridOptions.pageUrl = options.pageUrl;
+                                        var data = options.buildGridData(successData);
+                                        if (data != null) {
+                                            optionResult.success(data);
+                                        } else {
+                                            optionResult.error();
+                                        }
+                                    });
+                                }else{
+                                    optionResult.error();
+                                }
                             }
                         }
                     },
