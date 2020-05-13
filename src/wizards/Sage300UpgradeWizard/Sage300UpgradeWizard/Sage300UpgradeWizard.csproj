@@ -131,6 +131,7 @@
     </Compile>
     <Compile Include="Utilities\FileUtilities.cs" />
     <Compile Include="Utilities\MenuManager.cs" />
+    <Compile Include="Utilities\SolutionBackupManager.cs" />
     <Compile Include="WizardStep.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
