@@ -103,6 +103,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         }
                         break;
 
+                    #region Release Specific Upgrade Steps
+
                     case 3:
                         LogSpacerLine('-');
                         if (Constants.PerRelease.UpdateAccpacDotNetLibrary == true)
@@ -127,16 +129,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         }
                         break;
 
+                    case 6:
+                        LogSpacerLine('-');
+                        UpdateUnifyDisabled(title);
+                        break;
+
 #if ENABLE_TK_244885
                     case X:
                         ConsolidateEnumerations(title);
                         break;
 #endif
-
-                    case 4:
-                        LogSpacerLine('-');
-                        UpdateUnifyDisabled(title);
-                        break;
 
                     #endregion
                 }
