@@ -120,7 +120,7 @@
   <data name="Start" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="StepDescriptionMain" xml:space="preserve">
+  <data name="Template_StepDescriptionMain" xml:space="preserve">
     <value>Upgrade from {0} to {1}</value>
   </data>
   <data name="EndUpgradeProcess" xml:space="preserve">
@@ -137,7 +137,7 @@
     <value>Processing</value>
   </data>
   <data name="Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion" xml:space="preserve">
-    <value>This step will automatically convert the targeted version of the Microsoft .NET Framework to {0} in all projects in the solution being upgraded.</value>
+    <value>This step will automatically convert the targeted version of the Microsoft .NET Framework to V{0} in all projects in the solution being upgraded.</value>
   </data>
   <data name="GenerateXMLDocFile" xml:space="preserve">
     <value>Generate XML documentation file</value>
@@ -169,7 +169,7 @@
   <data name="BeforeUpdate" xml:space="preserve">
     <value>Before update</value>
   </data>
-  <data name="UpgradeLibrary" xml:space="preserve">
+  <data name="Template_UpgradeLibrary" xml:space="preserve">
     <value>Upgrade library from {0} to {1}</value>
   </data>
   <data name="ReleaseSpecificTitleConsolidateEnumerations" xml:space="preserve">
@@ -208,7 +208,7 @@
   <data name="ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion" xml:space="preserve">
     <value>Update targeted version of .NET Framework</value>
   </data>
-  <data name="SolutionUpgrade" xml:space="preserve">
+  <data name="Template_SolutionUpgrade" xml:space="preserve">
     <value>Solution Upgrade Wizard - V{0}</value>
   </data>
   <data name="ReleaseAllDescSyncAccpacLibs" xml:space="preserve">
@@ -287,7 +287,7 @@
   <data name="ReleaseAllDescRecompile" xml:space="preserve">
     <value>The Solution and Project files have been upgraded.</value>
   </data>
-  <data name="ProcessingStep" xml:space="preserve">
+  <data name="Template_ProcessingStep" xml:space="preserve">
     <value>Processing {0}...</value>
   </data>
   <data name="InsertedCommand" xml:space="preserve">

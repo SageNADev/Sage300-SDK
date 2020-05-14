@@ -60,6 +60,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <param name="settings">Settings for processing</param>
 		public void Process(Settings settings)
 		{
+            const int WORKINGSTEPS = 6;
+
             LogSpacerLine('-');
             Log(Resources.BeginUpgradeProcess);
             LogSpacerLine();
@@ -67,7 +69,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Save settings for local usage
             _settings = settings;
 
-            if (Constants.Common.EnableSolutionBackup == true)
+            if (Constants.Common.EnableSolutionBackup)
             {
                 DoOptionalSolutionBackup(backupSelected: _settings.WizardSteps[0].CheckboxValue, 
                                          solutionFolder: _settings.DestinationSolutionFolder);
@@ -86,23 +88,26 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 				LaunchProcessingEvent(title);
 
                 // Insert a spacer line for each case statement below
-                if (index >= 1 && index <= 5) { LogSpacerLine('-'); }
+                if (index >= 1 && index <= WORKINGSTEPS) { LogSpacerLine('-'); }
 
                 // Step 0 is Main and Last two steps are Upgrade and Upgraded
                 switch (index)
 				{
+                    //
+                    // Developer Note:
+                    //   Ensure the constant WORKINGSTEPS, defined at start of function,  has been 
+                    //   updated if steps are added or removed from the following switch statement.
+                    //
                     case 1: if (Constants.PerRelease.SyncKendoFiles) { SyncKendoFiles(title); } break;
                     case 2: if (Constants.PerRelease.SyncWebFiles) { SyncWebFiles(title); } break;
                     case 3: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
                     case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
                     case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
-                    case 6: UpdateUnifyDisabled(title); break;
+                    case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
 
 #if ENABLE_TK_244885
                     case X: ConsolidateEnumerations(title); break;
 #endif
-
-                    #endregion
                 }
             }
 
@@ -130,8 +135,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 LogSpacerLine('-');
                 LogEventStart(Resources.BackupStarting);
 
+                // Do the backup
                 var backupFolder = SolutionBackupManager.BackupSolution(solutionFolder);
 
+                // Log the results
                 if (Directory.Exists(backupFolder))
                 {
                     Log(string.Format(Resources.Template_SolutionBackupCompleted, backupFolder));
@@ -142,7 +149,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 }
             }
         }
-
 
         /// <summary> Synchronization of Kendo files </summary>
         /// <param name="title">Title of step being processed </param>
@@ -255,7 +261,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Always copy the new props file to the solution root
             PropsFileManager.CopyAccpacPropsFileToSolutionFolder(_settings);
 
-            msg = string.Format(Resources.UpgradeLibrary,
+            msg = string.Format(Resources.Template_UpgradeLibrary,
                                 Constants.PerRelease.FromAccpacNumber,
                                 Constants.PerRelease.ToAccpacNumber);
             Log(msg);
@@ -275,6 +281,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             // Nothing to do. This is a manual partner step :)
             var msg = Resources.UpdatesToUnifyDisabledAreAManualStep;
+            Log(msg);
 
             // Log end of step
             LogEventEnd(title);
@@ -331,7 +338,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             }
             catch (Exception e)
             {
-                Log($"{DateTime.Now} - {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Exception caught: {e.Message}");
+                Log($"{Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Exception caught: {e.Message}");
             }
 
             // Log end of step

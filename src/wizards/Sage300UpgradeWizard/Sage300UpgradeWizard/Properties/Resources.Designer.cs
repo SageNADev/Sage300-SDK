@@ -386,15 +386,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Processing {0}....
-        /// </summary>
-        internal static string ProcessingStep {
-            get {
-                return ResourceManager.GetString("ProcessingStep", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Project.
         /// </summary>
         internal static string Project {
@@ -643,11 +634,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         ///The upgrade wizard is unable to automatically perform this modification and
         ///therefore this step will require manual modifications.
         ///
-        ///Any cshtml file that defines a Sage HtmlHelper control needs to be updated
-        ///to match the new standard of the definition of &apos;disabled&apos; html attribute.
+        ///Any cshtml file that defines a Sage HtmlHelper control needs to be updated to
+        ///match the standard of the usage of HTML &apos;disabled&apos; attribute.
         ///
-        ///Please refer to the &apos;Unified Disabled Attribute&apos; subsection in the Sage 300
-        ///Upgrade Guide for 2020.2  [rest of string was truncated]&quot;;.
+        ///Please refer to the &quot;Unified &apos;disabled&apos; Attribute&quot; subsection in the Sage 300
+        ///Upgrade Guide for 2020.2 to 2021 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReleaseSpecificUnifyDisabled {
             get {
@@ -736,15 +727,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solution Upgrade Wizard - V{0}.
-        /// </summary>
-        internal static string SolutionUpgrade {
-            get {
-                return ResourceManager.GetString("SolutionUpgrade", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to If you&apos;ve selected the &apos;Backup entire solution&apos; option, the solution will be 
         ///backed up prior to upgrade..
         /// </summary>
@@ -769,15 +751,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Step {
             get {
                 return ResourceManager.GetString("Step", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upgrade from {0} to {1}.
-        /// </summary>
-        internal static string StepDescriptionMain {
-            get {
-                return ResourceManager.GetString("StepDescriptionMain", resourceCulture);
             }
         }
         
@@ -809,6 +782,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Processing {0}....
+        /// </summary>
+        internal static string Template_ProcessingStep {
+            get {
+                return ResourceManager.GetString("Template_ProcessingStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A log file will be generated with the results of the upgrade.
         ///
         ///Note: {0}.
@@ -833,7 +815,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will automatically convert the targeted version of the Microsoft .NET Framework to {0} in all projects in the solution being upgraded..
+        ///   Looks up a localized string similar to This step will automatically convert the targeted version of the Microsoft .NET Framework to V{0} in all projects in the solution being upgraded..
         /// </summary>
         internal static string Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
             get {
@@ -856,6 +838,33 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Template_SolutionBackupCompleted {
             get {
                 return ResourceManager.GetString("Template_SolutionBackupCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solution Upgrade Wizard - V{0}.
+        /// </summary>
+        internal static string Template_SolutionUpgrade {
+            get {
+                return ResourceManager.GetString("Template_SolutionUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade from {0} to {1}.
+        /// </summary>
+        internal static string Template_StepDescriptionMain {
+            get {
+                return ResourceManager.GetString("Template_StepDescriptionMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade library from {0} to {1}.
+        /// </summary>
+        internal static string Template_UpgradeLibrary {
+            get {
+                return ResourceManager.GetString("Template_UpgradeLibrary", resourceCulture);
             }
         }
         
@@ -901,15 +910,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Upgrade {
             get {
                 return ResourceManager.GetString("Upgrade", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upgrade library from {0} to {1}.
-        /// </summary>
-        internal static string UpgradeLibrary {
-            get {
-                return ResourceManager.GetString("UpgradeLibrary", resourceCulture);
             }
         }
     }

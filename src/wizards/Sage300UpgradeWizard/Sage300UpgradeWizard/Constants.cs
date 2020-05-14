@@ -55,6 +55,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// <summary> Flag that determines whether or not to update the .NET framework in solution projects. </summary>
             public const bool UpdateMicrosoftDotNetFramework = true;
 
+            /// <summary> Flag that determines whether or not to execute the 'UpdateUnifyDisabled' process. </summary>
+            public const bool UpdateUnifyDisabled = true;
+
             /// <summary> Flag that determines whether or not to remove previous versions of the various JQuery libraries. </summary>
             public const bool RemovePreviousJqueryLibraries = true;
 
