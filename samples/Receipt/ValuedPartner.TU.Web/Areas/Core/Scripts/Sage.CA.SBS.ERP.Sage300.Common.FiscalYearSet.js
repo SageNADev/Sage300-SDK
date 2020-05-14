@@ -211,7 +211,7 @@ var fiscalyearSetUI = {
                 that._getSelectedRow(that);
             });
 
-            $("#divFiscalGridControl .k-grid-content").delegate("tbody>tr", "dblclick", function () {
+            $("#divFiscalGridControl .k-grid-content").on("dblclick", "tbody>tr", function () {
                 sg.fiscalHelper.cancelFuncCall = $.noop;
                 that._getSelectedRow(that);
             });

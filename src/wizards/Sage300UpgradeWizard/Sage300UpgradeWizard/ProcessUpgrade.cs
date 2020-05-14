@@ -96,10 +96,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     case 3: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
                     case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
                     case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
+                    case 6: UpdateUnifyDisabled(title); break;
 
 #if ENABLE_TK_244885
                     case X: ConsolidateEnumerations(title); break;
 #endif
+
+                    #endregion
                 }
             }
 
@@ -256,6 +259,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                 Constants.PerRelease.FromAccpacNumber,
                                 Constants.PerRelease.ToAccpacNumber);
             Log(msg);
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Unify html 'disabled' attribute
+        /// </summary>
+        /// <param name="title">The title of this step</param>
+        private void UpdateUnifyDisabled(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.UpdatesToUnifyDisabledAreAManualStep;
 
             // Log end of step
             LogEventEnd(title);

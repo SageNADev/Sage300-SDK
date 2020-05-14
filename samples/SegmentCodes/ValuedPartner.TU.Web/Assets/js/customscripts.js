@@ -24,10 +24,10 @@ $(document).ready(function(){
 	$("#numeric").kendoNumericTextBox();
 	$("#numeric1").kendoNumericTextBox();
 	$("#numeric2").kendoNumericTextBox();
-	$( ".dropDown-Menu a" ).hover(
+	$( ".dropDown-Menu a" ).on("mouseenter",
 		function() {
 			$( this ).find("span").removeClass("arrow-grey").addClass("arrow-white");
-		  }, function() {
+		  }).on("mouseleave", function() {
 			$( this ).find("span").removeClass("arrow-white").addClass("arrow-grey");
 		  }
 	);
@@ -44,7 +44,7 @@ $(document).ready(function(){
         
     });
 
-      $('a.label-menu').hover(function(e) {
+      $('a.label-menu').on("mouseenter mouseleave", function(e) {
     	e.preventDefault();
     	var btn = $(this);
           $('.label-menu-popup').css({

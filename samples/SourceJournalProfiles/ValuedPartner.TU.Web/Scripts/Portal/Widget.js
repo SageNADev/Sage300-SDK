@@ -300,7 +300,7 @@ function setWidgetFrameSource(iframeId, src)
     $originalFrame.replaceWith($newFrame);
 
     $newFrame.addClass('widgetLoading');
-    $newFrame.load(function () {
+    $newFrame.on("load", function () {
         $newFrame.removeClass('widgetLoading');
     });
 
@@ -321,7 +321,7 @@ function setConfigFrameSource(iframeId, src)
     $originalFrame.replaceWith($newFrame);
 
     $newFrame.addClass('widgetLoading');
-    $newFrame.load(function () {
+    $newFrame.on("load", function () {
         $newFrame.removeClass('widgetLoading');
     });
 
@@ -348,7 +348,7 @@ $(document).ready(function () {
         taskDockMenuBreadCrumbManager.setDefaultScreenId();
     });
 
-    widgetOrder = $.parseJSON(NavigableMenuDetail.WidgetOrders);
+    widgetOrder = JSON.parse(NavigableMenuDetail.WidgetOrders || "null"); // in case for empty string (will throw exception)
 
     loadWidgets(widgetOrder);
 
@@ -370,7 +370,7 @@ $(document).ready(function () {
             else
             {
                 $('#widgetMsgDiv').fadeIn().removeClass('hide');
-                $('#' + chkId).attr('checked', false);
+                $('#' + chkId).prop('checked', false);
                 $('#' + chkId).parent().removeClass('selected');
             }
         }

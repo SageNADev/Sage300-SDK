@@ -1,6 +1,6 @@
 @*
     The MIT License (MIT)
-    Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+    Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of
     this software and associated documentation files (the "Software"), to deal in
@@ -30,19 +30,19 @@
     <div class="form-group">
         <div class="input-group">
             @Html.SageLabel("lblFunctionalCurrency", ReceiptResx.FunctionalCurrency)
-            @Html.KoSageTextBox("txtFunctionalCurrency", new { @value = "Data.HomeCurrency" }, new { @maxlength = "3", @disabled = "true", @tabindex = -1, @class = "txt-upper default" })
+            @Html.KoSageTextBox("txtFunctionalCurrency", new { @value = "Data.HomeCurrency" }, new { @maxlength = "3", @disabled = "disabled", @tabindex = -1, @class = "txt-upper default" })
         </div>
     </div>
     <div class="form-group">
         <div class="input-group">
             @Html.SageLabel("lblReceiptCurrency", ReceiptResx.ReceiptCurrency)
-            @Html.KoSageTextBox("txtReceiptCurrency", new { @value = "Data.ReceiptCurrency" }, new { @maxlength = "3", @disabled = "true", @tabindex = -1, @class = "txt-upper default" })
+            @Html.KoSageTextBox("txtReceiptCurrency", new { @value = "Data.ReceiptCurrency" }, new { @maxlength = "3", @disabled = "disabled", @tabindex = -1, @class = "txt-upper default" })
         </div>
     </div>
     <div class="form-group">
         <div class="datepicker-group">
             @Html.SageLabel("lblRateDate", ReceiptResx.RateDate)
-            @Html.KoSageTextBoxFor(model => model.Data.RateDate, new { @sageDatePicker = "Data.RateDate" }, new { @disabled = "true", @tabindex = -1, @id = "txtRateDate", @class = "datepicker default" })
+            @Html.KoSageTextBoxFor(model => model.Data.RateDate, new { @sageDatePicker = "Data.RateDate" }, new { @disabled = "disabled", @tabindex = -1, @id = "txtRateDate", @class = "datepicker default" })
         </div>
     </div>
     <div class="form-group">

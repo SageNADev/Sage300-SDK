@@ -108,7 +108,7 @@ Customization = {
                             modelProperty(defaultValue);
                         }
                     } else if (property.is(':radio')) {
-                        if ($(this).attr("value") === defaultValue) {
+                        if ($(this).val() === defaultValue) {
                             var modelProperty = Customization.getModelProperty(model, property, "sagechecked")
                             if (modelProperty() == null || modelProperty() == 0) {
                                 modelProperty(defaultValue);
@@ -127,7 +127,7 @@ Customization = {
                     } else if (property.is(':checkbox')) {
                         property.prop('checked', defaultValue);
                     } else if (property.is(':radio')) {
-                        if (property.attr("value") === defaultValue) {
+                        if (property.val() === defaultValue) {
                             property.prop('checked', true);
                         }
                     }
@@ -235,7 +235,7 @@ Customization = {
 
         grid.bind("save", Customization.gridSave);
 
-        grid.tbody.delegate(":checkbox", "change", function (e) {
+        grid.tbody.on("change", ":checkbox", function (e) {
             var checkBox = $(this);
             var colName = this.attributes["Name"].value;
             var model = grid.dataItem(checkBox.closest("tr"));
@@ -246,7 +246,7 @@ Customization = {
             }
         });
 
-        grid.tbody.delegate(":checkbox", "focus", function (e) {
+        grid.tbody.on("focus", ":checkbox", function (e) {
             var checkBox = $(this);
             var colName = this.attributes["Name"].value;
             var model = grid.dataItem(checkBox.closest("tr"));
@@ -406,7 +406,7 @@ Customization = {
 
     onEdit: function (e) {
         var data = e.model;
-        var columnIndex = e.container.context.cellIndex;
+        var columnIndex = e.container[0].cellIndex;
 
         if (data.Type !== "Label" && data.Type !== "Button" && columnIndex === 3) {
             this.closeCell();

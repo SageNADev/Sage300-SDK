@@ -402,7 +402,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                     $iframe.attr("src", targetUrl);
                 }
 
-                $iframe.load(function () {
+                $iframe.on("load", function () {
                     // remove the loading/spinner after the page is loaded
                     $(this).removeClass('screenLoading');
                 });
@@ -530,8 +530,10 @@ var TaskDockMenuBreadCrumbManager = function () {
 
             $('#dvWindows > div').each(function () { $(this).find("span").removeClass('selected'); });
 
-            if ($(this).attr("data-modulename") !== "" && $.parseHTML($(this).attr("data-modulename")) != null && $(this).attr("data-moduleName") != "null") {
+            if ($(this).attr("data-modulename") && $.parseHTML($(this).attr("data-modulename")) != null && $(this).attr("data-moduleName") != "null") {
                 windowtext = portalBehaviourResources.PagetitleInManager.format($(this).attr("data-modulename"), $(event.target).text());
+            } else if ($(this).find("a").attr("data-modulename")) {
+                windowtext = portalBehaviourResources.PagetitleInManager.format($(this).find("a").attr("data-modulename"), $(event.target).text());
             }
 
             if ($(this).attr("data-isreport") === "true" || $(this).attr("data-isreport") === "True") {
@@ -607,10 +609,10 @@ var TaskDockMenuBreadCrumbManager = function () {
                 $("#breadcrumb").html(bcContent);
             }
 
-            $(".innerdd").hover(function () {
+            $(".innerdd").on("mouseenter", function () {
 
                 $(this).find("ul").show();
-            },
+            }).on("mouseleave",
                 function () {
                     $(this).find("ul").hide();
                 });
@@ -1181,21 +1183,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                 }
             );
 
-            /* hiding tooltip */
-            /* ---------------------------------------------------------- */
-
-            //$(".std-menu").hover(
-            //    function () {
-            //        if (mainToolTip) {
-            //            mainToolTip.hide();
-            //        }
-            //    }
-            //);
-
-            /* close menu */
-            /* ---------------------------------------------------------- */
-
-            $(".portal-main-body, header, #draggable").hover(
+            $(".portal-main-body, header, #draggable").on("mouseenter mouseleave", 
                 function () {
                     if ($('html').hasClass('page-collapsed')) {
                         $('#navbarSide').removeClass('active').addClass('side-nav-collapsed').find('.top-tier.open').removeClass('open').find('.std-menu.active').removeClass('active');
@@ -1285,7 +1273,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                 }
             });
 
-            $("#windowManager").hover(function () {
+            $("#windowManager").on("mouseenter", function () {
                 if ($('#dvWindows').children().length > 0)
                     $("#windowManager > div").show();
 
@@ -1310,11 +1298,11 @@ var TaskDockMenuBreadCrumbManager = function () {
                         return false;
                     }
                 });
-            }, function () {
+            }).on("mouseleave", function () {
                 $("#windowManager > div").hide();
             });
 
-            $("#recentWindowManager").hover(recentWindowsMenu.show, recentWindowsMenu.hide);
+            $("#recentWindowManager").on("mouseenter", recentWindowsMenu.show).on("mouseleave", recentWindowsMenu.hide);
 
             $('.top_nav_drop_content').click(function () {
                 isReload = false;
@@ -1347,7 +1335,7 @@ var TaskDockMenuBreadCrumbManager = function () {
             // onload event handling on iframes
             $('#screenLayout').children().each(function () {
                 var $iframe = $(this).find("iframe");
-                $iframe.load(function (e) {
+                $iframe.on("load", function (e) {
                     iFrameLoadEvent(e, $(this));
                     window.scrollTo(0, 0);
                 });

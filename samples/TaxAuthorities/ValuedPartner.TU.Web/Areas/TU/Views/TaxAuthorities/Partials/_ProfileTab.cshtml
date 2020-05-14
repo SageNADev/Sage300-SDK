@@ -1,6 +1,6 @@
 @*
   The MIT License (MIT) 
-  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+  Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
  
   Permission is hereby granted, free of charge, to any person obtaining a copy of 
   this software and associated documentation files (the "Software"), to deal in 
@@ -43,12 +43,12 @@
                 </div>
                 <div class="input-group">
                     @Html.SageLabel("taxReportingCurrencydesc", TaxAuthoritiesResx.TaxReportingCurrencyDesc, null)
-                    @Html.KoSageTextBox("txtTaxReportingCurrencydesc", new { @sagevalue = "CurrencyDescription" }, new { @disabled = "true", @class = "large" })
+                    @Html.KoSageTextBox("txtTaxReportingCurrencydesc", new { @sagevalue = "CurrencyDescription" }, new { @disabled = "disabled", @class = "large" })
                 </div>
             }
             <div class="input-group">
                 @Html.SageLabelFor(m => m.Data.LastMaintained)
-                @Html.KoSageTextBoxFor(m => m.Data.LastMaintained, new { @value = "LastMaintainedString" }, new { @disabled = true, @tabindex = "-1", @class = "default" })
+                @Html.KoSageTextBoxFor(m => m.Data.LastMaintained, new { @value = "LastMaintainedString" }, new { @disabled = "disabled", @tabindex = " - 1", @class = "default" })
             </div>
         </div>
         

@@ -176,7 +176,7 @@ var saleSplitGridUI = {
 
                 // ko.mapping.fromJS(list, {}, saleSplitGridUI.items.SalesSplitDetail.Items);
                 if (grid.dataSource.total() === 0) {
-                    $("#" + chkAllId).attr("checked", false);
+                    $("#" + chkAllId).prop("checked", false);
                     sg.controls.disable("#" + chkAllId);
                     $('#message').empty();
                 } else {
@@ -334,7 +334,7 @@ var saleSplitGridUI = {
         sg.controls.disable('#' + saleSplitGridUI.btnAddLineId);
         sg.controls.disable('#' + saleSplitGridUI.btnDeleteLineId);
         sg.controls.disable("#" + saleSplitGridUI.selectAllChkId);
-        $("#" + saleSplitGridUI.selectAllChkId).attr("checked", false);
+        $("#" + saleSplitGridUI.selectAllChkId).prop("checked", false);
         grid.tbody.find("." + saleSplitGridUI.selectChkId).each(function () {
             $(this).attr("disabled", true);
         });
@@ -428,7 +428,7 @@ var saleSplitGridUI = {
                         sg.controls.disable("#" + saleSplitGridUI.selectAllChkId);
                     }
                 }
-                $("#" + saleSplitGridUI.selectAllChkId).attr("checked", false);
+                $("#" + saleSplitGridUI.selectAllChkId).prop("checked", false);
                 if (grid.dataSource.data().length == 5) {
                     sg.controls.disable("#" + saleSplitGridUI.btnAddLineId);
                 } else {

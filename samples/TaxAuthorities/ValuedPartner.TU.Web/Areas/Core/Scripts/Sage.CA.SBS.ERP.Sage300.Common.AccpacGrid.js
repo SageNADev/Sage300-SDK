@@ -692,13 +692,13 @@ sg.viewList = function () {
     function _noEditor(container, gridName) {
         var grid = $('#' + gridName).data("kendoGrid");
         grid.closeCell();
-        if (container.context.cellIndex === 0 && sg.utls.isShiftKeyPressed) {
+        if (container[0].cellIndex === 0 && sg.utls.isShiftKeyPressed) {
             var prevRowIndex = sg.utls.kndoUI.getSelectedRowIndex(grid) - 1;
             if (prevRowIndex >= 0) {
                 grid.select(grid.tbody.find(">tr:eq(" + prevRowIndex + ")"));
             }
         } 
-        sg.utls.kndoUI.skipTab(grid, container.context.cellIndex);
+        sg.utls.kndoUI.skipTab(grid, container[0].cellIndex);
     }
 
     /**
@@ -1792,9 +1792,9 @@ sg.viewList = function () {
         });
 
         //binding the drilldown popup window
-        $("#" + gridName).delegate("tbody > tr > td > a", "click", _initShowPopup);
+        $("#" + gridName).on("click", "tbody > tr > td > a", _initShowPopup);
 
-        $("#" + gridName).delegate("tbody > tr > td > img", "click", _initShowPopup);
+        $("#" + gridName).on("click", "tbody > tr > td > img", _initShowPopup);
 
         //When close the pop up error message, focus the last edit cell
         $(document).on("click", ".msgCtrl-close", function (e) {

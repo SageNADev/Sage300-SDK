@@ -116,7 +116,7 @@ $.extend(sg.utls.iFrameHelper = {
 
     // id is divId - before opening the window, it will create a div and create a iframe window.
     openWindow: function (id, title, url, height, width, parentMsgCallBackFunc, source) {
-        var htmlDiv = '<div id=div' + id + '/>';
+        var htmlDiv = '<div id=div' + id + ' />';
 
         var contentFrame;
         var form;

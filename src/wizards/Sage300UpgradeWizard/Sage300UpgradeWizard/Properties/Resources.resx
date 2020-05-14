@@ -351,6 +351,18 @@ jQuery Core V{0}
 jQuery UI V{1}
 jQuery Migrate V{2}</value>
   </data>
+  <data name="ReleaseSpecificDescUnifyDisabled" xml:space="preserve">
+    <value>This step will need to be done manually.</value>
+  </data>
+  <data name="ReleaseSpecificTitleUnifyDisabled" xml:space="preserve">
+    <value>Unify HTML 'disabled' attribute</value>
+  </data>
+  <data name="ReleaseSpecificUnifyDisabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUnifyDisabled.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="UpdatesToUnifyDisabledAreAManualStep" xml:space="preserve">
+    <value>The updates to unify HTML 'disabled' attribute must be made manually.</value>
+  </data>
   <data name="BackupCompleted" xml:space="preserve">
     <value>Backup of solution completed.</value>
   </data>
