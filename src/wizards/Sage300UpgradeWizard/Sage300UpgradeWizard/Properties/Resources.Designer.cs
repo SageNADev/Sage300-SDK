@@ -97,6 +97,33 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup of solution completed..
+        /// </summary>
+        internal static string BackupCompleted {
+            get {
+                return ResourceManager.GetString("BackupCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup entire solution.
+        /// </summary>
+        internal static string BackupEntireSolution {
+            get {
+                return ResourceManager.GetString("BackupEntireSolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting backup of solution....
+        /// </summary>
+        internal static string BackupStarting {
+            get {
+                return ResourceManager.GetString("BackupStarting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Before update.
         /// </summary>
         internal static string BeforeUpdate {
@@ -174,6 +201,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string DoesNotExist {
             get {
                 return ResourceManager.GetString("DoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the checkbox below to enable a backup of your entire Visual Studio solution..
+        /// </summary>
+        internal static string EnableBackup {
+            get {
+                return ResourceManager.GetString("EnableBackup", resourceCulture);
             }
         }
         
@@ -310,6 +346,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string MainMenuNodeFoundButDoesNotHaveExistingMenuBackGoundEntry {
             get {
                 return ResourceManager.GetString("MainMenuNodeFoundButDoesNotHaveExistingMenuBackGoundEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please be sure you have backed up the solution and project files before proceeding!.
+        /// </summary>
+        internal static string ManualBackupMessage {
+            get {
+                return ResourceManager.GetString("ManualBackupMessage", resourceCulture);
             }
         }
         
@@ -556,15 +601,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.8 in all projects in the solution being upgraded..
-        /// </summary>
-        internal static string ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Remove previous version of jQuery libraries.
         /// </summary>
         internal static string ReleaseSpecificTitleRemovePreviousJqueryLibraries {
@@ -672,6 +708,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If you&apos;ve selected the &apos;Backup entire solution&apos; option, the solution will be 
+        ///backed up prior to upgrade..
+        /// </summary>
+        internal static string SolutionWillBeBackedUp {
+            get {
+                return ResourceManager.GetString("SolutionWillBeBackedUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start.
         /// </summary>
         internal static string Start {
@@ -726,6 +772,17 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A log file will be generated with the results of the upgrade.
+        ///
+        ///Note: {0}.
+        /// </summary>
+        internal static string Template_ReleaseAllContentConfirmation {
+            get {
+                return ResourceManager.GetString("Template_ReleaseAllContentConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The following previous versions of jQuery files will be removed from your solution and projects:
         ///
         ///jQuery Core V{0}
@@ -739,11 +796,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will automatically convert the targeted version of the Microsoft .NET Framework to {0} in all projects in the solution being upgraded..
+        /// </summary>
+        internal static string Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
+            get {
+                return ResourceManager.GetString("Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Removing all copies of {0} located in project folders..
         /// </summary>
         internal static string Template_RemovingAllCopiesOfAccpacPropsFile {
             get {
                 return ResourceManager.GetString("Template_RemovingAllCopiesOfAccpacPropsFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your solution has been successfully backed up and is located in the folder &apos;{0}&apos;..
+        /// </summary>
+        internal static string Template_SolutionBackupCompleted {
+            get {
+                return ResourceManager.GetString("Template_SolutionBackupCompleted", resourceCulture);
             }
         }
         

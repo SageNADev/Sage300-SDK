@@ -158,7 +158,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     string.Format(Resources.StepDescriptionMain,
                                   Constants.PerRelease.FromReleaseNumber,
                                   Constants.PerRelease.ToReleaseNumber),
-                    BuildMainContentStep());
+                    BuildMainContentStep(),
+                    showCheckbox: Constants.Common.EnableSolutionBackup, 
+                    checkboxText: Resources.BackupEntireSolution,
+                    checkboxValue: false);
 
             if (Constants.PerRelease.SyncKendoFiles == true)
             {
@@ -217,19 +220,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 //
                 // Update the targeted version of Microsoft .NET framework 
                 //
+                var version = Constants.Common.TargetedDotNetFrameworkVersion;
                 AddStep(Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion,
-                        Resources.ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion,
-                        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
-                                      Constants.Common.TargetedDotNetFrameworkVersion));
+                        string.Format(Resources.Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion, version),
+                        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion, version));
             }
 
             #endregion
 
             #region Common for all upgrades - content specific to release
 
+            var contentText = String.Format(Resources.Template_ReleaseAllContentConfirmation, 
+                                            Constants.Common.EnableSolutionBackup ? Resources.SolutionWillBeBackedUp
+                                                                                  : Resources.ManualBackupMessage);
             AddStep(Resources.ReleaseAllTitleConfirmation,
                     Resources.ReleaseAllDescConfirmation,
-                    Resources.ReleaseAllUpgrade);
+                    contentText);
 
             AddStep(Resources.ReleaseAllTitleRecompile,
                     Resources.ReleaseAllDescRecompile,
@@ -263,9 +269,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             }
 
             // Begin - Specific to release
-#if ENABLE_TK_244885
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleConsolidateEnumerations}");
-#endif
 
             if (Constants.PerRelease.RemovePreviousJqueryLibraries == true)
             {
@@ -277,13 +280,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
             }
 
+#if ENABLE_TK_244885
+            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleConsolidateEnumerations}");
+#endif
+
             // End - Specific to release
 
             // Same for all upgrades
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleRecompile}");
             content.AppendLine("");
-            content.AppendLine(Resources.EnsureBackup);
+
+            var backupInstructions = Constants.Common.EnableSolutionBackup ? Resources.EnableBackup : Resources.EnsureBackup;
+            content.AppendLine(backupInstructions);
 
             return content.ToString();
         }

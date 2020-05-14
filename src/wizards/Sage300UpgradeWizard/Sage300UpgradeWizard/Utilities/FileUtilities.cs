@@ -194,5 +194,34 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
                 }
             }
         }
+
+        /// <summary>
+        /// Move the specified directory up one level from the sourceFolder
+        /// Example:
+        ///     sourceFolder =    C:\projects\Sage300-SDK\2020.2 (Read Only)\samples\SegmentCodes
+        ///     directoryToMove = C:\projects\Sage300-SDK\2020.2 (Read Only)\samples\SegmentCodes\SegmentCodes-Backup-20200513-114518
+        ///     
+        /// Result:
+        ///     destinationFolder = C:\projects\Sage300-SDK\2020.2 (Read Only)\samples\SegmentCodes-Backup-20200513-114518
+        /// </summary>
+        /// <param name="sourceFolder">The source folder where the directory to move currently lives</param>
+        /// <param name="directoryToMove">The name of the directory to move</param>
+        /// <returns>The fully-qualified path to the final destination folder</returns>
+        public static string MoveDirectoryUpOneLevel(string sourceFolder, string directoryToMove)
+        {
+            var sourceDirectory = directoryToMove;
+
+            // Extract just the source directory name (without the full path)
+            var parts = sourceDirectory.Split('\\');
+            var sourceDirectoryNameOnly = parts[parts.Length - 1].Trim();
+
+            // Determine the directory one level up from the sourceFolder
+            var destinationDirectory = new DirectoryInfo(sourceFolder).Parent.FullName;
+            destinationDirectory = Path.Combine(destinationDirectory, sourceDirectoryNameOnly);
+
+            Directory.Move(sourceDirectory, destinationDirectory);
+
+            return destinationDirectory;
+        }
     }
 }

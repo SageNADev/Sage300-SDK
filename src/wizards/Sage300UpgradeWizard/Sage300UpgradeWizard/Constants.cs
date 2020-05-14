@@ -100,6 +100,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// </summary>
             public const string TargetedDotNetFrameworkVersion = "4.8";
             public const string TargetFrameworkMoniker = ".NETFramework,Version=v4.8";
+
+            /// <summary> 
+            /// Name of the nuget project that shows up in the list of projects in the solution
+            /// when attempting to upgrade the targeted .NET framework. An exception is
+            /// generated when attempting to 'update' this project. This setting
+            /// is used so we can exclude/ignore this project when processing.
+            /// </summary>
+            public const string NugetName = ".nuget";
+
+            /// <summary> 
+            /// Flag that determines whether or not to allow backups of the original solution and projects. 
+            /// 
+            /// true : The ability to perform a backup is enabled
+            /// false : The ability to perform a backup is disabled (and hidden from the UI)
+            /// </summary>
+            public const bool EnableSolutionBackup = true;
         }
     }
 }

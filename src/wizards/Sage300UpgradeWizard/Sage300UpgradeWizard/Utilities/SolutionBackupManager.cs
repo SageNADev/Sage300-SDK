@@ -50,10 +50,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
             // because it lives within the solution folder itself.
             FileUtilities.DirectoryCopy(solutionFolder, backupFolder, ignoreDestinationFolder: true);
 
+            // Now, move the backup folder OUTSIDE of the solution folder
+            var destinationFolder = FileUtilities.MoveDirectoryUpOneLevel(solutionFolder, backupFolder);
+
             //LogEventEnd($"Backup complete.");
             //Log("");
 
-            return backupFolder;
+            return destinationFolder;
         }
 
         /// <summary>
@@ -63,7 +66,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
         /// <returns>The string representing the fully-qualified path to the backup folder</returns>
         private static string CreateBackupFolder(string currentFolder)
         {
-            string BackupFolderName = CreateBackupFolderName();
+            string BackupFolderName = CreateBackupFolderName(currentFolder);
             var backupFolder = Path.Combine(currentFolder, BackupFolderName);
             if (!Directory.Exists(backupFolder))
             {
@@ -73,13 +76,20 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
         }
 
         /// <summary>
-        /// Create a name for the backup folder based on the current date and time
+        /// Create a name for the backup folder based on the current solution folder name and the current date & time
+        /// 
+        /// Note: The output is only the backup folder name, not the full path to it.
+        /// 
+        /// Example input  : "C:\projects\Sage300-SDK\2020.2 (Read Only)\samples\SegmentCodes"
+        /// Example output : "SegmentCodes-Backup-20200513-111532"
         /// </summary>
         /// <returns>A string representing the name of the backup folder</returns>
-        private static string CreateBackupFolderName()
+        private static string CreateBackupFolderName(string currentFolder)
         {
+            var parts = currentFolder.Split('\\');
+            var solutionName = parts[parts.Length - 1].Trim();
             var dateStamp = DateTime.Now.ToString("yyyyMMdd-HHmmss");
-            return $"Backup-{dateStamp}";
+            return $"{solutionName}-Backup-{dateStamp}";
         }
     }
 }

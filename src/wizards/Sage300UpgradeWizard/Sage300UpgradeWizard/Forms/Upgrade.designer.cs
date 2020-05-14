@@ -203,9 +203,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // checkBox
             // 
             this.checkBox.AutoSize = true;
+            this.checkBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.checkBox.Location = new System.Drawing.Point(10, 8);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(183, 15);
+            this.checkBox.Size = new System.Drawing.Size(213, 19);
+            this.checkBox.Style = MetroFramework.MetroColorStyle.Green;
             this.checkBox.TabIndex = 0;
             this.checkBox.Text = "Text to be supplied by the step";
             this.checkBox.UseSelectable = true;
