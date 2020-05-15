@@ -366,20 +366,20 @@ jQuery Migrate V{2}</value>
   <data name="BackupCompleted" xml:space="preserve">
     <value>Backup of solution completed.</value>
   </data>
-  <data name="BackupEntireSolution" xml:space="preserve">
-    <value>Backup entire solution</value>
+  <data name="BackupSolution" xml:space="preserve">
+    <value>Backup solution</value>
   </data>
   <data name="BackupStarting" xml:space="preserve">
     <value>Starting backup of solution...</value>
   </data>
   <data name="EnableBackup" xml:space="preserve">
-    <value>Select the checkbox below to enable a backup of your entire Visual Studio solution.</value>
+    <value>Select the checkbox below to enable a backup of your Visual Studio solution.</value>
   </data>
   <data name="ManualBackupMessage" xml:space="preserve">
     <value>Please be sure you have backed up the solution and project files before proceeding!</value>
   </data>
   <data name="SolutionWillBeBackedUp" xml:space="preserve">
-    <value>If you've selected the 'Backup entire solution' option, the solution will be 
+    <value>If you've selected the 'Backup solution' option, the solution will be 
 backed up prior to upgrade.</value>
   </data>
   <data name="Template_ReleaseAllContentConfirmation" xml:space="preserve">

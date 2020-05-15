@@ -106,11 +106,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Backup entire solution.
+        ///   Looks up a localized string similar to Backup solution.
         /// </summary>
-        internal static string BackupEntireSolution {
+        internal static string BackupSolution {
             get {
-                return ResourceManager.GetString("BackupEntireSolution", resourceCulture);
+                return ResourceManager.GetString("BackupSolution", resourceCulture);
             }
         }
         
@@ -205,7 +205,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select the checkbox below to enable a backup of your entire Visual Studio solution..
+        ///   Looks up a localized string similar to Select the checkbox below to enable a backup of your Visual Studio solution..
         /// </summary>
         internal static string EnableBackup {
             get {
@@ -727,7 +727,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you&apos;ve selected the &apos;Backup entire solution&apos; option, the solution will be 
+        ///   Looks up a localized string similar to If you&apos;ve selected the &apos;Backup solution&apos; option, the solution will be 
         ///backed up prior to upgrade..
         /// </summary>
         internal static string SolutionWillBeBackedUp {
