@@ -35,7 +35,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 	#region Private Variables
 		/// <summary> Settings from UI </summary>
 		private Settings _settings;
-		private string _backupFolder = String.Empty;
     #endregion
 
     #region Public Delegates
@@ -57,10 +56,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 	#endregion
 
 	#region Public Methods
-		/// <summary> Start the generation process </summary>
+		/// <summary> Start the solution upgrade process </summary>
 		/// <param name="settings">Settings for processing</param>
 		public void Process(Settings settings)
 		{
+            const int WORKINGSTEPS = 6;
+
             LogSpacerLine('-');
             Log(Resources.BeginUpgradeProcess);
             LogSpacerLine();
@@ -68,12 +69,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Save settings for local usage
             _settings = settings;
 
-			// Track whether or not the AccpacDotNetVersion.props file originally existed in the Solution folder
-            bool AccpacPropsFileOriginallyInSolutionfolder = false;
+            if (Constants.Common.EnableSolutionBackup)
+            {
+                DoOptionalSolutionBackup(backupSelected: _settings.WizardSteps[0].CheckboxValue, 
+                                         solutionFolder: _settings.DestinationSolutionFolder);
+            }
 
-            #region Backup Solution - Currently Disabled
-            //_backupFolder = SolutionBackupManager.BackupSolution(_settings.DestinationSolutionFolder);
-            #endregion
+            // Track whether or not the AccpacDotNetVersion.props file originally existed in the Solution folder
+            bool AccpacPropsFileOriginallyInSolutionfolder = false;
 
             // Does the AccpacDotNetVersion.props file exist in the Solution folder?
             AccpacPropsFileOriginallyInSolutionfolder = PropsFileManager.IsAccpacDotNetVersionPropsLocatedInSolutionFolder(_settings);
@@ -84,63 +87,27 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 				var title = _settings.WizardSteps[index].Title;
 				LaunchProcessingEvent(title);
 
-				// Step 0 is Main and Last two steps are Upgrade and Upgraded
-				switch (index)
+                // Insert a spacer line for each case statement below
+                if (index >= 1 && index <= WORKINGSTEPS) { LogSpacerLine('-'); }
+
+                // Step 0 is Main and Last two steps are Upgrade and Upgraded
+                switch (index)
 				{
-                    case 1:
-                        LogSpacerLine('-');
-                        if (Constants.PerRelease.SyncKendoFiles == true)
-                        {
-                            SyncKendoFiles(title);
-                        }
-                        break;
-
-                    case 2:
-                        LogSpacerLine('-');
-                        if (Constants.PerRelease.SyncWebFiles == true)
-                        {
-                            SyncWebFiles(title);
-                        }
-                        break;
-
-                    #region Release Specific Upgrade Steps
-
-                    case 3:
-                        LogSpacerLine('-');
-                        if (Constants.PerRelease.UpdateAccpacDotNetLibrary == true)
-                        {
-                            SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
-                        }
-                        break;
-
-                    case 4:
-                        LogSpacerLine('-');
-                        if (Constants.PerRelease.RemovePreviousJqueryLibraries == true)
-                        {
-                            RemovePreviousJqueryLibraries(title);
-                        }
-                        break;
-
-                    case 5:
-                        LogSpacerLine('-');
-                        if (Constants.PerRelease.UpdateMicrosoftDotNetFramework == true)
-                        {
-                            UpdateTargetedDotNetFrameworkVersion(title);
-                        }
-                        break;
-
-                    case 6:
-                        LogSpacerLine('-');
-                        UpdateUnifyDisabled(title);
-                        break;
+                    //
+                    // Developer Note:
+                    //   Ensure the constant WORKINGSTEPS, defined at start of function,  has been 
+                    //   updated if steps are added or removed from the following switch statement.
+                    //
+                    case 1: if (Constants.PerRelease.SyncKendoFiles) { SyncKendoFiles(title); } break;
+                    case 2: if (Constants.PerRelease.SyncWebFiles) { SyncWebFiles(title); } break;
+                    case 3: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
+                    case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
+                    case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
+                    case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
 
 #if ENABLE_TK_244885
-                    case X:
-                        ConsolidateEnumerations(title);
-                        break;
+                    case X: ConsolidateEnumerations(title); break;
 #endif
-
-                    #endregion
                 }
             }
 
@@ -152,6 +119,36 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         #endregion
 
         #region Private methods
+
+        /// <summary>
+        /// Do an optional backup of the Visual Studio solution
+        /// </summary>
+        /// <param name="backupSelected">Boolean flag representing whether or not the backup should be executed</param>
+        /// <param name="solutionFolder">Fully-qualified string representing the solution path</param>
+        private void DoOptionalSolutionBackup(bool backupSelected, string solutionFolder)
+        {
+            if (backupSelected)
+            {
+                LaunchProcessingEvent(Resources.BackupStarting);
+
+                LogSpacerLine();
+                LogSpacerLine('-');
+                LogEventStart(Resources.BackupStarting);
+
+                // Do the backup
+                var backupFolder = SolutionBackupManager.BackupSolution(solutionFolder);
+
+                // Log the results
+                if (Directory.Exists(backupFolder))
+                {
+                    Log(string.Format(Resources.Template_SolutionBackupCompleted, backupFolder));
+
+                    LaunchProcessingEvent(Resources.BackupCompleted);
+
+                    LogEventEnd(Resources.BackupCompleted);
+                }
+            }
+        }
 
         /// <summary> Synchronization of Kendo files </summary>
         /// <param name="title">Title of step being processed </param>
@@ -264,7 +261,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Always copy the new props file to the solution root
             PropsFileManager.CopyAccpacPropsFileToSolutionFolder(_settings);
 
-            msg = string.Format(Resources.UpgradeLibrary,
+            msg = string.Format(Resources.Template_UpgradeLibrary,
                                 Constants.PerRelease.FromAccpacNumber,
                                 Constants.PerRelease.ToAccpacNumber);
             Log(msg);
@@ -277,13 +274,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <summary>
         /// Unify html 'disabled' attribute
         /// </summary>
-        /// <param name="title"></param>
+        /// <param name="title">The title of this step</param>
         private void UpdateUnifyDisabled(string title)
         {
             LogEventStart(title);
 
             // Nothing to do. This is a manual partner step :)
             var msg = Resources.UpdatesToUnifyDisabledAreAManualStep;
+            Log(msg);
 
             // Log end of step
             LogEventEnd(title);
@@ -323,12 +321,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Log start of step
             LogEventStart(title);
 
-            var projects = _settings.Solution.Projects;
-            var dotNetTargetName = Constants.Common.TargetFrameworkMoniker;
-            foreach (Project project in projects)
+            try
             {
-                Log($"{DateTime.Now} - {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Upgrading {project.Name} .NET target to {dotNetTargetName}...");
-                project.Properties.Item("TargetFrameworkMoniker").Value = dotNetTargetName;
+                var projects = _settings.Solution.Projects;
+                var dotNetTargetName = Constants.Common.TargetFrameworkMoniker;
+                foreach (Project project in projects)
+                {
+                    var projectName = project.Name;
+                    if (projectName != Constants.Common.NugetName)
+                    {
+                        Log($"{Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Attempting to upgrading {project.Name} .NET target to {dotNetTargetName}...");
+                        project.Properties.Item("TargetFrameworkMoniker").Value = dotNetTargetName;
+                        Log($"{Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Upgrade successful.");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Log($"{Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Exception caught: {e.Message}");
             }
 
             // Log end of step
@@ -347,49 +357,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             var webScriptsFolder = Path.Combine(_settings.DestinationWebFolder, Constants.Common.ScriptsFolderName);
 
-            //
-            // jQuery Core
-            //
-            var rootFilename = $"jquery-{Constants.PerRelease.FromJqueryCoreVersion}";
-            var filename = $"{rootFilename}.js";
-            var filePath = Path.Combine(webScriptsFolder, filename);
-            FileUtilities.RemoveExistingFile(filePath);
+            var filesToDelete = new List<string>
+            {
+                // jQuery Core
+                "jquery-1.11.3.js",
+                "jquery-1.11.3.min.js",
+                "jquery-1.11.3.intellisense.js",
+                "jquery-1.11.3.min.map",
 
-            filename = $"{rootFilename}.intellisense.js";
-            filePath = Path.Combine(webScriptsFolder, filename);
-            FileUtilities.RemoveExistingFile(filePath);
+                // jQuery UI
+                "jquery-ui-1.11.4.js",
+                "jquery-ui-1.11.4.min.js",
 
-            filename = $"{rootFilename}.min.js";
-            filePath = Path.Combine(webScriptsFolder, filename);
-            FileUtilities.RemoveExistingFile(filePath);
+                // jQuery Migrate
+                "jquery-migrate-1.2.1.js",
+                "jquery-migrate-1.2.1.min.js",
+            };
 
-            filename = $"{rootFilename}.min.map";
-            filePath = Path.Combine(webScriptsFolder, filename);
-            FileUtilities.RemoveExistingFile(filePath);
-
-            //
-            // jQuery UI
-            //
-            rootFilename = $"jquery-ui-{Constants.PerRelease.FromJqueryUIVersion}";
-            filename = $"{rootFilename}.js";
-            filePath = Path.Combine(webScriptsFolder, filename);
-            FileUtilities.RemoveExistingFile(filePath);
-
-            filename = $"{rootFilename}.min.js";
-            filePath = Path.Combine(webScriptsFolder, filename);
-            FileUtilities.RemoveExistingFile(filePath);
-
-            //
-            // jQuery Migrate
-            //
-            rootFilename = $"jquery-migrate-{Constants.PerRelease.FromJqueryMigrateVersion}";
-            filename = $"{rootFilename}.js";
-            filePath = Path.Combine(webScriptsFolder, filename);
-            FileUtilities.RemoveExistingFile(filePath);
-
-            filename = $"{rootFilename}.min.js";
-            filePath = Path.Combine(webScriptsFolder, filename);
-            FileUtilities.RemoveExistingFile(filePath);
+            foreach (var filename in filesToDelete)
+            {
+                var filePath = Path.Combine(webScriptsFolder, filename);
+                FileUtilities.RemoveExistingFile(filePath);
+                Log($"Removed {filePath}");
+            }
 
             // Log end of step
             LogEventEnd(title);

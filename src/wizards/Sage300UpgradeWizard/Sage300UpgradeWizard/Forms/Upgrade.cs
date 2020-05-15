@@ -155,19 +155,22 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             #region Common for all upgrades
 
             AddStep(Resources.StepTitleMain,
-                    string.Format(Resources.StepDescriptionMain,
+                    string.Format(Resources.Template_StepDescriptionMain,
                                   Constants.PerRelease.FromReleaseNumber,
                                   Constants.PerRelease.ToReleaseNumber),
-                    BuildMainContentStep());
+                    BuildMainContentStep(),
+                    showCheckbox: Constants.Common.EnableSolutionBackup, 
+                    checkboxText: Resources.BackupEntireSolution,
+                    checkboxValue: false);
 
-            if (Constants.PerRelease.SyncKendoFiles == true)
+            if (Constants.PerRelease.SyncKendoFiles)
             {
                 AddStep(Resources.ReleaseAllTitleSyncKendoFiles,
                         Resources.ReleaseAllDescSyncKendoFiles,
                         Resources.ReleaseAllSyncKendoFiles);
             }
 
-            if (Constants.PerRelease.SyncWebFiles == true)
+            if (Constants.PerRelease.SyncWebFiles)
             {
                 AddStep(Resources.ReleaseAllTitleSyncWebFiles,
                     Resources.ReleaseAllDescSyncWebFiles,
@@ -176,7 +179,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             #endregion
 
-            if (Constants.PerRelease.UpdateAccpacDotNetLibrary == true)
+            if (Constants.PerRelease.UpdateAccpacDotNetLibrary)
             {
                 AddStep(Resources.ReleaseAllTitleSyncAccpacLibs,
                         Resources.ReleaseAllDescSyncAccpacLibs,
@@ -198,7 +201,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.ToReleaseNumber));
 #endif
 
-            if (Constants.PerRelease.RemovePreviousJqueryLibraries == true)
+            if (Constants.PerRelease.RemovePreviousJqueryLibraries)
             {
                 //
                 // Remove previous version of jQuery from file system and any references
@@ -212,28 +215,34 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                         Constants.PerRelease.FromJqueryMigrateVersion));
             }
 
-            if (Constants.PerRelease.UpdateMicrosoftDotNetFramework == true)
+            if (Constants.PerRelease.UpdateMicrosoftDotNetFramework)
             {
                 //
                 // Update the targeted version of Microsoft .NET framework 
                 //
+                var version = Constants.Common.TargetedDotNetFrameworkVersion;
                 AddStep(Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion,
-                        Resources.ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion,
-                        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion,
-                                      Constants.Common.TargetedDotNetFrameworkVersion));
+                        string.Format(Resources.Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion, version),
+                        string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion, version));
             }
 
-            AddStep(Resources.ReleaseSpecificTitleUnifyDisabled,
-                    Resources.ReleaseSpecificDescUnifyDisabled,
-                    Resources.ReleaseSpecificUnifyDisabled);
+            if (Constants.PerRelease.UpdateUnifyDisabled)
+            {
+                AddStep(Resources.ReleaseSpecificTitleUnifyDisabled,
+                        Resources.ReleaseSpecificDescUnifyDisabled,
+                        Resources.ReleaseSpecificUnifyDisabled);
+            }
 
             #endregion
 
             #region Common for all upgrades - content specific to release
 
+            var contentText = String.Format(Resources.Template_ReleaseAllContentConfirmation, 
+                                            Constants.Common.EnableSolutionBackup ? Resources.SolutionWillBeBackedUp
+                                                                                  : Resources.ManualBackupMessage);
             AddStep(Resources.ReleaseAllTitleConfirmation,
                     Resources.ReleaseAllDescConfirmation,
-                    Resources.ReleaseAllUpgrade);
+                    contentText);
 
             AddStep(Resources.ReleaseAllTitleRecompile,
                     Resources.ReleaseAllDescRecompile,
@@ -261,27 +270,27 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncKendoFiles}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncWebFiles}");
 
-            if (Constants.PerRelease.UpdateAccpacDotNetLibrary == true)
+            if (Constants.PerRelease.UpdateAccpacDotNetLibrary)
             {
                 content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
             }
 
             // Begin - Specific to release
-#if ENABLE_TK_244885
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleConsolidateEnumerations}");
-#endif
 
-            if (Constants.PerRelease.RemovePreviousJqueryLibraries == true)
+            if (Constants.PerRelease.RemovePreviousJqueryLibraries)
             {
                 content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleRemovePreviousJqueryLibraries}");
             }
 
-            if (Constants.PerRelease.UpdateMicrosoftDotNetFramework == true)
+            if (Constants.PerRelease.UpdateMicrosoftDotNetFramework)
             {
                 content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
             }
 
-            content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUnifyDisabled}");
+            if (Constants.PerRelease.UpdateUnifyDisabled)
+            {
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUnifyDisabled}");
+            }
 
             // End - Specific to release
 
@@ -289,7 +298,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleConfirmation}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleRecompile}");
             content.AppendLine("");
-            content.AppendLine(Resources.EnsureBackup);
+
+            var backupInstructions = Constants.Common.EnableSolutionBackup ? Resources.EnableBackup : Resources.EnsureBackup;
+            content.AppendLine(backupInstructions);
 
             return content.ToString();
         }
@@ -465,7 +476,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <param name="text">Text to display in status bar</param>
         private void Processing(string text)
         {
-            lblProcessing.Text = string.IsNullOrEmpty(text) ? text : string.Format(Resources.ProcessingStep, text);
+            lblProcessing.Text = string.IsNullOrEmpty(text) ? text : string.Format(Resources.Template_ProcessingStep, text);
 
             pnlButtons.Refresh();
         }
@@ -523,7 +534,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <summary> Localize </summary>
         private void Localize()
         {
-            Text = String.Format(Resources.SolutionUpgrade, Constants.PerRelease.ToReleaseNumber);
+            Text = String.Format(Resources.Template_SolutionUpgrade, Constants.PerRelease.ToReleaseNumber);
 
             btnBack.Text = Resources.Back;
             btnBack.Enabled = false;
