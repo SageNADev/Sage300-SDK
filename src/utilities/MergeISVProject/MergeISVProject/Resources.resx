@@ -159,6 +159,9 @@
   <data name="Msg_ApplicationRunComplete" xml:space="preserve">
     <value>The application has completed.</value>
   </data>
+  <data name="Msg_ApplicationRunCompleteWithErrors" xml:space="preserve">
+    <value>The application has completed with errors.</value>
+  </data>
   <data name="Msg_ArgumentList" xml:space="preserve">
     <value>Argument List:</value>
   </data>

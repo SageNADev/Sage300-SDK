@@ -160,7 +160,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.ToReleaseNumber),
                     BuildMainContentStep(),
                     showCheckbox: Constants.Common.EnableSolutionBackup, 
-                    checkboxText: Resources.BackupEntireSolution,
+                    checkboxText: Resources.BackupSolution,
                     checkboxValue: false);
 
             if (Constants.PerRelease.SyncKendoFiles)

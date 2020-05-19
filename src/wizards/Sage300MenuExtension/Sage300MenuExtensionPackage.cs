@@ -98,10 +98,12 @@ namespace Sage.Sage300MenuExtension
         private void MenuItemCallback(object sender, EventArgs e)
         {
             var dte = (DTE2)GetService(typeof(DTE));
-
-            // New wizard
-            var codeGenerator = new CodeGenerationWizard();
-            codeGenerator.Execute(dte.Solution);
+            if (dte != null)
+            {
+                // New wizard
+                var codeGenerator = new CodeGenerationWizard();
+                codeGenerator.Execute(dte.Solution);
+            }
         }
     }
 }
