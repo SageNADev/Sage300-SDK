@@ -24,7 +24,7 @@
 using MergeISVProject.Constants;
 using MergeISVProject.CustomExceptions;
 using MergeISVProject.Interfaces;
-using Microsoft.Ajax.Utilities;
+//using Microsoft.Ajax.Utilities;
 using Microsoft.VisualBasic.FileIO;
 using Microsoft.Win32;
 using System;
@@ -859,7 +859,7 @@ namespace MergeISVProject
 			foreach (var file in Directory.GetFiles(pathFrom, pattern))
 			{
 				var fileName = Path.GetFileName(file);
-				if (fileName.IsNullOrWhiteSpace() ||
+				if (string.IsNullOrWhiteSpace(fileName) ||
 					fileName.Equals("CrystalDecisions.Web.dll") ||
 					(fileName.EndsWith("Web.dll") && !copyWebFile))
 				{
@@ -917,9 +917,13 @@ namespace MergeISVProject
 			_Logger.Log($"{Messages.Msg_DestinationFolder}: {dest}");
 			if (!testOnly)
 			{
-				FileSystem.CopyDirectory(source, dest, overwrite);
-			}
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+                // Old VB-based call
+                //FileSystem.CopyDirectory(source, dest, overwrite);
+
+                var util = new FileUtilities(_Logger);
+                util.DirectoryCopy(source, dest);
+            }
+            _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
 #endregion // Private Methods
