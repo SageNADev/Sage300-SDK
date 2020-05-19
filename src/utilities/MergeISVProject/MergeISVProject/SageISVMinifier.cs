@@ -1,4 +1,4 @@
-﻿// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+﻿// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -28,7 +28,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-
+//using DouglasCrockford.JsMin;
 #endregion
 
 namespace MergeISVProject
@@ -220,6 +220,9 @@ namespace MergeISVProject
         /// <param name="hiddenWindow">Visible or hidden window flag</param>
         private void ExecuteCommand(string programToRun, string workingDirectory, string arguments, bool hiddenWindow = true)
         {
+            var methodName = $"{this.GetType().Name}.{Utilities.GetCurrentMethod()}";
+            _Logger.LogMethodHeader(methodName);
+
             var p = new Process
             {
                 StartInfo =
@@ -233,6 +236,8 @@ namespace MergeISVProject
             };
             p.Start();
             p.WaitForExit(60000);
+
+            _Logger.LogMethodFooter(methodName);
         }
 
         #endregion
@@ -315,6 +320,70 @@ namespace MergeISVProject
                 _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
             }
         }
+
+
+        ///// <summary>
+        ///// Minify the javascript files and rename back to usable names
+        ///// Example: TrustedVendor.PM.PaymentCodesBehaviour.min.js --> TrustedVendor.PM.PaymentCodesBehaviour.js
+        ///// </summary>
+        //public void MinifyJavascriptFilesAndCleanup2()
+        //{
+        //    _Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+        //    var error = false;
+
+        //    try
+        //    {
+        //        var jsCompressor = new JsMinifier(); // Douglas Crockford
+
+        //        var workingFolder = _Folders.Staging.AreasScripts;
+        //        var jsFolder = workingFolder;
+
+        //        _Logger.Log($"jsFolder = {jsFolder}");
+        //        if (Directory.Exists(jsFolder))
+        //        {
+        //            //var folders = Directory.EnumerateDirectories(jsFolder, "*.js", System.IO.SearchOption.AllDirectories);
+        //            var folders = Directory.EnumerateDirectories(jsFolder);
+        //            foreach (var folder in folders)
+        //            {
+        //                // Get a list of all files in the working javascript folder (Staging.AreasScripts)
+        //                var jsFiles = Directory.EnumerateFiles(folder);
+        //                foreach (var jsFile in jsFiles)
+        //                {
+        //                    var fileContentsMinified = string.Empty;
+
+        //                    _Logger.Log($"Reading the contents of {jsFile}.");
+        //                    var fileContents = File.ReadAllText(jsFile);
+
+        //                    _Logger.Log($"Minifying the text...");
+        //                    fileContentsMinified = jsCompressor.Minify(fileContents);
+
+        //                    _Logger.Log($"Writing the minified content to {jsFile}.");
+        //                    File.WriteAllText(jsFile, fileContentsMinified);
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            error = true;
+        //            _Logger.Log($"The directory '{jsFolder}' does not exist. There are no files to minify.");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        error = true;
+        //        var msg = $"{Messages.Error_MinificationFailed}{Environment.NewLine}{ex.Message}";
+        //        throw new MergeISVProjectException(_Logger, msg);
+        //    }
+        //    finally
+        //    {
+        //        if (!error)
+        //        {
+        //            _Logger.Log(Messages.Msg_MinificationSuccessful);
+        //        }
+        //        _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+        //    }
+        //}
 
         /// <summary>
         /// Copy minified javascript files to the Final Staging folder
