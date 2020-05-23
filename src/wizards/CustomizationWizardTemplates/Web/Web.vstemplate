@@ -57,14 +57,13 @@
         </Folder>
       </Folder>
       <Folder Name="Scripts" TargetFolderName="Scripts">
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.11.3.intellisense.js">jquery-1.11.3.intellisense.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.11.3.js">jquery-1.11.3.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.11.3.min.js">jquery-1.11.3.min.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.11.3.min.map">jquery-1.11.3.min.map</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-1.2.1.js">jquery-migrate-1.2.1.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-1.2.1.min.js">jquery-migrate-1.2.1.min.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.11.4.js">jquery-ui-1.11.4.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.11.4.min.js">jquery-ui-1.11.4.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.4.1.js">jquery-3.4.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.4.1.min.js">jquery-3.4.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.4.1.min.map">jquery-3.4.1.min.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.1.0.js">jquery-migrate-3.1.0.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.1.0.min.js">jquery-migrate-3.1.0.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.12.1.js">jquery-ui-1.12.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.12.1.min.js">jquery-ui-1.12.1.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie-1.4.1.min.js">jquery.cookie-1.4.1.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie.js">jquery.cookie.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.js">jquery.form.js</ProjectItem>
@@ -389,6 +388,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.KendoCurrencyFormatExt.js">Sage.CA.SBS.ERP.Sage300.Common.KendoCurrencyFormatExt.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js">Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js">Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ProductExperience.js">Sage.CA.SBS.ERP.Sage300.Common.ProductExperience.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Report.js">Sage.CA.SBS.ERP.Sage300.Common.Report.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js">Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js">Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js</ProjectItem>
