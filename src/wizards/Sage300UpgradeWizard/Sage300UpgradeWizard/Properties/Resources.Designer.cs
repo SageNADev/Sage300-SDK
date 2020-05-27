@@ -583,6 +583,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add &apos;BinInclude.txt&apos; file to Web project.
+        /// </summary>
+        internal static string ReleaseSpecificTitle_AddBinIncludeFile {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitle_AddBinIncludeFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consolidation of Enumeration Files.
         /// </summary>
         internal static string ReleaseSpecificTitleConsolidateEnumerations {
@@ -798,6 +807,37 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Template_ReleaseAllContentConfirmation {
             get {
                 return ResourceManager.GetString("Template_ReleaseAllContentConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will automatically add a file called &apos;{0}&apos; to the Web project. 
+        ///
+        ///This file is used during the release compilation process to allow the 
+        ///specification of additional objects to be deployed. 
+        ///
+        ///For example, if your project contains an object called 
+        ///YourCompany.XX.dll that you wish to be deployed in addition
+        ///to all the other files that are deployed, you can add a line
+        ///to the &apos;{0}&apos; as follows:
+        ///
+        ///YourCompany.XX.dll
+        ///
+        ///When the solution is built in &apos;Release&apos; mode, any files specified
+        ///in the fil [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Template_ReleaseSpecificContent_AddBinIncludeFile {
+            get {
+                return ResourceManager.GetString("Template_ReleaseSpecificContent_AddBinIncludeFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will automatically add a new file called &apos;{0}&apos;.
+        /// </summary>
+        internal static string Template_ReleaseSpecificDesc_AddBinIncludeFile {
+            get {
+                return ResourceManager.GetString("Template_ReleaseSpecificDesc_AddBinIncludeFile", resourceCulture);
             }
         }
         

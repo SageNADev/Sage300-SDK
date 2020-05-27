@@ -28,8 +28,10 @@ using MergeISVProject.Interfaces;
 using Microsoft.VisualBasic.FileIO;
 using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 #endregion
 
 namespace MergeISVProject
@@ -239,16 +241,51 @@ namespace MergeISVProject
 				};
 			}
 
-			CopyFilesBasedOnPatternList(_FolderManager.Originals.Bin, _FolderManager.Staging.Bin, inclusionPatterns);
+            // Add any extra files (defined within BinIncludes.txt)
+            inclusionPatterns = AddBinIncludeFiles(inclusionPatterns);
+
+            CopyFilesBasedOnPatternList(_FolderManager.Originals.Bin, _FolderManager.Staging.Bin, inclusionPatterns);
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
-		/// <summary>
-		/// Compile the Razor views and put into the 'Compiled' folder.
-		/// Move the compiled files back to the 'Staging' folder
-		/// </summary>
-		private void _Stage_CompileViewsAndMoveResultsToStagingFolder()
+        /// <summary>
+        /// Add any additional files to the inclusion list
+        /// Sourced from an external file (BinInclude.txt)
+        /// </summary>
+        /// <param name="existingList">The current inclusion list</param>
+        /// <returns>The extended inclusion list</returns>
+        private string[] AddBinIncludeFiles(IEnumerable<string> existingList)
+        {
+            _Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+            const string INCLUDE_FILENAME = @"\BinInclude.txt";
+
+            var results = new List<string>();
+
+            // Add the existing list to the eventual output list
+            results.AddRange(existingList);
+
+            // If the BinInclude.txt file exists and contains one or more files, add them to the output list
+            if (File.Exists(_FolderManager.Originals.Root + INCLUDE_FILENAME))
+            {
+                var isvInclude = File.ReadAllLines(@_FolderManager.Originals.Root + INCLUDE_FILENAME).ToList();
+                if (isvInclude?.Count > 0)
+                {
+                    results.AddRange(isvInclude);
+                }
+            }
+
+            _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+
+            return results.ToArray();
+        }
+
+        /// <summary>
+        /// Compile the Razor views and put into the 'Compiled' folder.
+        /// Move the compiled files back to the 'Staging' folder
+        /// </summary>
+        private void _Stage_CompileViewsAndMoveResultsToStagingFolder()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -261,20 +298,24 @@ namespace MergeISVProject
 					Arguments = $" -v / -p \"{_FolderManager.Staging.Root}\" -fixednames \"{_FolderManager.Compiled.Root}\""
 				}
 			};
-			p.Start();
+            _Logger.Log($"Starting Process {p.StartInfo.FileName}...");
+            p.Start();
 			p.WaitForExit();
+            _Logger.Log($"Process {p.StartInfo.FileName} completed.");
 
-			// Now, move the results of the compilation back to the Staging folder
+            // Now, move the results of the compilation back to the Staging folder
 
-			// Clear out the Staging/Bin folder
+            // Clear out the Staging/Bin folder
+            _Logger.Log("Clearing out Staging/Bin folder...");
 			var fileList = Directory.GetFiles(_FolderManager.Staging.Bin, "*.*");
 			foreach (var file in fileList)
 			{
 				FileSystem.DeleteFile(file);
 			}
 
-			// Copy compile/bin back to staging/bin
-			FileSystem.CopyDirectory(_FolderManager.Compiled.Bin, _FolderManager.Staging.Bin);
+            // Copy compile/bin back to staging/bin
+            _Logger.Log("Copying Compile/Bin back to Staging/Bin...");
+            FileSystem.CopyDirectory(_FolderManager.Compiled.Bin, _FolderManager.Staging.Bin);
 
 			// Delete non-vendor related files from staging/bin folder
 			string[] patternFilesToRemove = {
@@ -282,16 +323,19 @@ namespace MergeISVProject
 				"Sage.CA.SBS.ERP.*.dll",
 				"*.Web.Infrastructure.dll"
 			};
-			DeleteFilesFromFolderBasedOnPatternList(_FolderManager.Staging.Bin, patternFilesToRemove);
+            _Logger.Log("Deleting non-vendor related files from Staging/Bin folder...");
+            DeleteFilesFromFolderBasedOnPatternList(_FolderManager.Staging.Bin, patternFilesToRemove);
 
 
-			// Areas folder
-			// Clear out the Staging/Areas folder
-			Directory.Delete(_FolderManager.Staging.Areas, recursive: true);
+            // Areas folder
+            // Clear out the Staging/Areas folder
+            _Logger.Log("Clearing out the Staging/Areas folder...");
+            Directory.Delete(_FolderManager.Staging.Areas, recursive: true);
 			Directory.CreateDirectory(_FolderManager.Staging.Areas);
 
-			// Copy compile/areas back to staging/areas
-			FileSystem.CopyDirectory(_FolderManager.Compiled.Areas, _FolderManager.Staging.Areas);
+            // Copy compile/areas back to staging/areas
+            _Logger.Log("Copying compile/areas back to staging/areas...");
+            FileSystem.CopyDirectory(_FolderManager.Compiled.Areas, _FolderManager.Staging.Areas);
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
@@ -460,6 +504,8 @@ namespace MergeISVProject
                 };
             }
 
+            inclusionPatterns = AddBinIncludeFiles(inclusionPatterns);
+
             CopyFilesBasedOnPatternList(_FolderManager.Staging.Bin, _FolderManager.FinalWorker.Root, inclusionPatterns);
 
             _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
@@ -620,56 +666,6 @@ namespace MergeISVProject
 		}
 
 		/// <summary>
-		/// Copy the menu background image and icon from 
-		/// to the Staging folder
-		/// </summary>
-		//private void _Deploy_Images()
-		//{
-		//	_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
-
-		//	var menuName = _Options.MenuFilename.OptionValue;
-
-		//	// Get the company name, icon file name, and background image file name 
-		//	//var menuFilePath = Path.Combine(pathWebProj, menuFileName);
-		//	var pathMenuDir = Path.Combine(_FolderManager.Live.Web, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL);
-		//	var menuFilePath = Path.Combine(pathMenuDir, menuName);
-		//	var menuFileContent = File.ReadAllText(menuFilePath);
-		//	var companyName = Regex.Match(menuFileContent, @"<IconName>(.*?)/menuIcon.png</IconName>").Groups[1].Value;
-		//	var menuIconName = Regex.Match(menuFileContent, @"/(.*?)</IconName>").Groups[1].Value;
-		//	var menuBackGroundImage = Regex.Match(menuFileContent, @"/(.*?)</MenuBackGoundImage>").Groups[1].Value;
-
-		//	var pathImageFrom = Path.Combine(_FolderManager.Final.Root, @"External\Content\Images\nav", companyName);
-		//	var pathImageTo = Path.Combine(_FolderManager.Live.Web, @"External\Content\Images\nav", companyName);
-		//	_Logger.Log($"pathImageFrom = '{pathImageFrom}'");
-		//	_Logger.Log($"pathImageTo = '{pathImageTo}'");
-
-
-		//	if (!Directory.Exists(pathImageTo))
-		//	{
-		//		Directory.CreateDirectory(pathImageTo);
-		//		_Logger.Log($"Created directory '{pathImageTo}'");
-		//	}
-		//	string[] imageNames = { menuIconName, menuBackGroundImage };
-		//	foreach (var image in imageNames)
-		//	{
-		//		var pathImageFileFrom = Path.Combine(pathImageFrom, image);
-		//		if (File.Exists(pathImageFileFrom))
-		//		{
-		//			_Logger.Log($"File '{pathImageFileFrom}' exists.");
-
-		//			var pathImageFileTo = Path.Combine(pathImageTo, image);
-		//			File.Copy(pathImageFileFrom, pathImageFileTo, true);
-		//		}
-		//		else
-		//		{
-		//			_Logger.Log($"File '{pathImageFileFrom}' does not exist.");
-		//		}
-		//	}
-
-		//	_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-		//}
-
-		/// <summary>
 		/// Deploy the Area scripts to the Sage 300 installation
 		/// </summary>
 		private void _Deploy_AreaScripts()
@@ -772,13 +768,16 @@ namespace MergeISVProject
 					$"*.{_Options.ModuleId}.*.dll"
 				};
 
-				foreach (var pattern in validWebFiles)
+                validWebFiles = AddBinIncludeFiles(validWebFiles);
+                foreach (var pattern in validWebFiles)
 				{
 					CopyFiles(simulateCopy, pathBuildBin, pattern, pathLiveWebBin, OVERWRITE);
 				}
 
 				string[] validWorkerFiles = { $"*.{_Options.ModuleId}.*.dll" };
-				foreach (var pattern in validWorkerFiles)
+                validWorkerFiles = AddBinIncludeFiles(validWorkerFiles);
+
+                foreach (var pattern in validWorkerFiles)
 				{
 					CopyFiles(simulateCopy, pathBuildBin, pattern, pathLiveWorker, OVERWRITE, copyWebFile: false);
 				}

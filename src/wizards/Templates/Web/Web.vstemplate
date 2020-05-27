@@ -17,6 +17,7 @@
   <TemplateContent>
     <Project TargetFileName="TPA.Web.csproj" File="TPA.Web.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="false" TargetFileName="Antlr3.Runtime.dll">Antlr3.Runtime.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="BinInclude.txt">BinInclude.txt</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="BundleRegistration.cs">BundleRegistration.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="EvictUserWatcher.cs">EvictUserWatcher.cs</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>

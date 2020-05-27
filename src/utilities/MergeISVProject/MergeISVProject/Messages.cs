@@ -88,7 +88,7 @@ namespace MergeISVProject
 			Msg_LiveDeployment,
 			Msg_CheckingForRegistryKeys,
 			Msg_FilesFound,
-			Msg_ApplicationModeOption,
+			Msg_ApplicationModeOption
 		}
 	#endregion
 
@@ -156,7 +156,6 @@ namespace MergeISVProject
 		public static string Msg_CheckingForRegistryKeys => RM.GetString(IndexEnum.Msg_CheckingForRegistryKeys.ToString());
 		public static string Msg_FilesFound => RM.GetString(IndexEnum.Msg_FilesFound.ToString());
 		public static string Msg_ApplicationModeOption => RM.GetString(IndexEnum.Msg_ApplicationModeOption.ToString());
-
-		#endregion
-	}
+        #endregion
+    }
 }

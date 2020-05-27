@@ -262,7 +262,7 @@ namespace MergeISVProject
                 var tempPathToWG = Path.Combine(currentExePath, WG_EXE);
                 if (!File.Exists(tempPathToWG))
                 {
-                    _Logger.Log($"If looks like WG cannot be found.");
+                    _Logger.Log($"It looks like WG cannot be found.");
 
                     var msg = string.Format(Messages.Error_UnableToFindTheProgram, WG_EXE, tempPathToWG);
                     throw new Exception(msg);
