@@ -358,9 +358,9 @@ namespace MergeISVProject
             };
 	        LoadOption(Log, cleanArgList);
 
-			#endregion
+            #endregion
 
-			this.UsageMessage = BuildUsageMessage();
+            this.UsageMessage = BuildUsageMessage();
         }
 		#endregion
 

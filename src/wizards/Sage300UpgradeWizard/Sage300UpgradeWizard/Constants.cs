@@ -58,6 +58,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// <summary> Flag that determines whether or not to execute the 'UpdateUnifyDisabled' process. </summary>
             public const bool UpdateUnifyDisabled = true;
 
+            /// <summary> 
+            /// Flag that determines whether or not to add a new file called 'BinInclude.txt'
+            /// to the root of the Web project.
+            /// </summary>
+            public const bool AddBinIncludeFile = true;
+
             /// <summary> Flag that determines whether or not to remove previous versions of the various JQuery libraries. </summary>
             public const bool RemovePreviousJqueryLibraries = true;
 
@@ -104,6 +110,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const string TargetedDotNetFrameworkVersion = "4.8";
             public const string TargetFrameworkMoniker = ".NETFramework,Version=v4.8";
 
+            /// <summary>
+            /// The name of the file that will contain the names of additional 
+            /// files that can be deployed during build.
+            /// </summary>
+            public const string BinIncludeFile = "BinInclude.txt";
+
             /// <summary> 
             /// Name of the nuget project that shows up in the list of projects in the solution
             /// when attempting to upgrade the targeted .NET framework. An exception is
@@ -119,6 +131,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// false : The ability to perform a backup is disabled (and hidden from the UI)
             /// </summary>
             public const bool EnableSolutionBackup = true;
+
+            /// <summary>
+            /// The search pattern for the solutions web project
+            /// </summary>
+            public const string WebProjectNamePattern = @".web.csproj";
         }
     }
 }

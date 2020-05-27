@@ -104,6 +104,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
                     case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
                     case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
+                    case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
 
 #if ENABLE_TK_244885
                     case X: ConsolidateEnumerations(title); break;
@@ -286,6 +287,58 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Log end of step
             LogEventEnd(title);
             Log("");
+        }
+
+        /// <summary>
+        /// Add the new 'BinInclude.txt' file to the Web project
+        /// </summary>
+        /// <param name="title">The title of this step</param>
+        private void AddBinIncludeFile(string title)
+        {
+            LogEventStart(title);
+
+            // Check for the existence of BinInclude.txt file
+            // If it exists, then just leave it as is.
+            var binInclude = Path.Combine(_settings.DestinationWebFolder, Constants.Common.BinIncludeFile);
+            if (!File.Exists(binInclude))
+            {
+                // File doesn't yet exist. Let's create an empty one and add it to the Web project
+                FileUtilities.CreateEmptyFile(binInclude);
+
+                // Add this file to the project definition (if it was actually created successfully)
+                if (File.Exists(binInclude))
+                {
+                    var solution = _settings.Solution;
+                    var projects = solution.Projects;
+                    foreach (Project project in projects)
+                    {
+                        var fullName = project.FullName;
+                        if (IsWebProject(fullName))
+                        {
+                            project.ProjectItems.AddFromFile(binInclude);
+
+                            // No need to iterate the rest of the projects
+                            // We've found the Web project already.
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Check the full name of a Visual Studio project for the existence 
+        /// of the Web project search pattern
+        /// </summary>
+        /// <param name="projectPath">The fully-qualified path to the Visual Studio project</param>
+        /// <returns>true = path contains the search pattern | false = path does not contain the search pattern</returns>
+        private bool IsWebProject(string projectPath)
+        {
+            return projectPath.ToLowerInvariant().Contains(Constants.Common.WebProjectNamePattern);
         }
 
         /// <summary>

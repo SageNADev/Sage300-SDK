@@ -233,6 +233,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         Resources.ReleaseSpecificUnifyDisabled);
             }
 
+            if (Constants.PerRelease.AddBinIncludeFile)
+            {
+                var additionalFilename = Constants.Common.BinIncludeFile;
+                AddStep(Resources.ReleaseSpecificTitle_AddBinIncludeFile,
+                        string.Format(Resources.Template_ReleaseSpecificDesc_AddBinIncludeFile, additionalFilename),
+                        string.Format(Resources.Template_ReleaseSpecificContent_AddBinIncludeFile, additionalFilename));
+            }
+
             #endregion
 
             #region Common for all upgrades - content specific to release
@@ -290,6 +298,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             if (Constants.PerRelease.UpdateUnifyDisabled)
             {
                 content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUnifyDisabled}");
+            }
+
+            if (Constants.PerRelease.AddBinIncludeFile)
+            {
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitle_AddBinIncludeFile}");
             }
 
             // End - Specific to release

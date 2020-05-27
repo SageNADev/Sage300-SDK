@@ -343,6 +343,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+	<Content Include="BinInclude.txt" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Shared\**" />
     <Content Include="Areas\Core\**" />

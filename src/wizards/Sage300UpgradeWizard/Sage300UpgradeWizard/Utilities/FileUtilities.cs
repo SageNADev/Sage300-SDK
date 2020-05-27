@@ -223,5 +223,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
 
             return destinationDirectory;
         }
+
+        /// <summary>
+        /// Create an empty text file and ensure it's closed immediately.
+        /// </summary>
+        /// <param name="filename">The fully-qualified path to the directory and name where the file should be created</param>
+        public static void CreateEmptyFile(string filename)
+        {
+            File.Create(filename).Dispose();
+        }
     }
 }

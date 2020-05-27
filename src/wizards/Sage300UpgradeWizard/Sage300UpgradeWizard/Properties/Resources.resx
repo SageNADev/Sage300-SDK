@@ -390,4 +390,26 @@ Note: {0}</value>
   <data name="Template_SolutionBackupCompleted" xml:space="preserve">
     <value>Your solution has been successfully backed up and is located in the folder '{0}'.</value>
   </data>
+  <data name="ReleaseSpecificTitle_AddBinIncludeFile" xml:space="preserve">
+    <value>Add 'BinInclude.txt' file to Web project</value>
+  </data>
+  <data name="Template_ReleaseSpecificContent_AddBinIncludeFile" xml:space="preserve">
+    <value>This step will automatically add a file called '{0}' to the Web project. 
+
+This file is used during the release compilation process to allow the 
+specification of additional objects to be deployed. 
+
+For example, if your project contains an object called 
+YourCompany.XX.dll that you wish to be deployed in addition
+to all the other files that are deployed, you can add a line
+to the '{0}' as follows:
+
+YourCompany.XX.dll
+
+When the solution is built in 'Release' mode, any files specified
+in the file '{0}' will also be included in the final output.</value>
+  </data>
+  <data name="Template_ReleaseSpecificDesc_AddBinIncludeFile" xml:space="preserve">
+    <value>This step will automatically add a new file called '{0}'</value>
+  </data>
 </root>
