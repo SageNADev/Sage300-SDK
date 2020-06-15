@@ -2869,6 +2869,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Detail Tax Withheld.
+        /// </summary>
+        public static string DetailTaxWithheld {
+            get {
+                return ResourceManager.GetString("DetailTaxWithheld", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Detail Total.
         /// </summary>
         public static string DetailTotal {
@@ -3328,6 +3337,24 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Estimated Tax Withheld.
+        /// </summary>
+        public static string EstimatedTaxWithheld {
+            get {
+                return ResourceManager.GetString("EstimatedTaxWithheld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estimated Withholding Amount.
+        /// </summary>
+        public static string EstimatedWithholdingAmount {
+            get {
+                return ResourceManager.GetString("EstimatedWithholdingAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exchange Gain.
         /// </summary>
         public static string ExchangeGain {
@@ -3423,6 +3450,24 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         public static string ExternalBatch {
             get {
                 return ResourceManager.GetString("ExternalBatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Documents could not be emailed to contacts for customer {0}. Check that contacts for this customer are set up correctly..
+        /// </summary>
+        public static string FailedMTEmail {
+            get {
+                return ResourceManager.GetString("FailedMTEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Documents could not be emailed to contacts for national account {0}. Check that contacts for this national account are set up correctly..
+        /// </summary>
+        public static string FailedMTNationalAccountEmail {
+            get {
+                return ResourceManager.GetString("FailedMTNationalAccountEmail", resourceCulture);
             }
         }
         
@@ -5902,6 +5947,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pending Tax Withheld.
+        /// </summary>
+        public static string PendingTaxWithheld {
+            get {
+                return ResourceManager.GetString("PendingTaxWithheld", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Pending Payment Total.
         /// </summary>
         public static string PendPaymentTotal {
@@ -8152,6 +8206,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tax Withheld.
+        /// </summary>
+        public static string TaxWithheld {
+            get {
+                return ResourceManager.GetString("TaxWithheld", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Phone.
         /// </summary>
         public static string Telephone {
@@ -8427,6 +8490,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         public static string TotalDiscountAmount {
             get {
                 return ResourceManager.GetString("TotalDiscountAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Estimated Tax Withheld.
+        /// </summary>
+        public static string TotalEstimatedTaxWithheld {
+            get {
+                return ResourceManager.GetString("TotalEstimatedTaxWithheld", resourceCulture);
             }
         }
         
@@ -9210,24 +9282,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         public static string ZipPostalCode {
             get {
                 return ResourceManager.GetString("ZipPostalCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Documents could not be emailed to contacts for customer %1. Check that contacts for this customer are set up correctly.
-        /// </summary>
-        public static string FailedMTEmail {
-            get {
-                return ResourceManager.GetString("FailedMTEmail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Documents could not be emailed to contacts for national account %1. Check that contacts for this national account are set up correctly.
-        /// </summary>
-        public static string FailedMTNationalAccountEmail {
-            get {
-                return ResourceManager.GetString("FailedMTNationalAccountEmail", resourceCulture);
             }
         }
     }

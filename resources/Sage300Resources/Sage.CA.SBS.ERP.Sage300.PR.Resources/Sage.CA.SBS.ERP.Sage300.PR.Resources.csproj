@@ -160,7 +160,7 @@
     <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EmployeeResx.fr.resx" />
+    <EmbeddedResource Include="EmployeeResx.fr-CA.resx" />
     <EmbeddedResource Include="EmployeeResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeResx.Designer.cs</LastGenOutput>

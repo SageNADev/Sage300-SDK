@@ -374,7 +374,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="BatchHasBeenCleared" xml:space="preserve">
-    <value>含有这一凭证的批次已被清除。</value>
+    <value>含有此凭证的批次已被清除。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="BatchInformation" xml:space="preserve">
@@ -606,7 +606,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ConcurrentEntry" xml:space="preserve">
-    <value>另一用户已创建了分录编号{0}。这一分录已被分派了分录编号{1}。</value>
+    <value>另一用户已创建了分录编号{0}。此分录已被分派了分录编号{1}。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ConsolidateGLBatches" xml:space="preserve">
@@ -718,7 +718,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="CreditExceeds" xml:space="preserve">
-    <value>这一金额超过{0}。</value>
+    <value>此金额超过{0}。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="CreditLimit" xml:space="preserve">
@@ -726,7 +726,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="CreditLimitExceededBy" xml:space="preserve">
-    <value>信贷限额超过</value>
+    <value>信贷限额超过达</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="CreditNote" xml:space="preserve">
@@ -966,7 +966,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="DeleteBatchVoids" xml:space="preserve">
-    <value>批次{0}有一个或更多已打印的支票。所有已打印支票将在银行服务中被标记为无效。是否确要删除这一批次？</value>
+    <value>批次{0}有一个或更多已打印的支票。所有已打印支票将在银行服务中被标记为无效。是否确要删除此批次？</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Deleted" xml:space="preserve">
@@ -974,7 +974,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="DeleteEntryVoids" xml:space="preserve">
-    <value>分录{0}有一个或更多已打印的支票。所有已打印支票将在银行服务中被标记为无效。是否确要删除这一分录？</value>
+    <value>分录{0}有一个或更多已打印的支票。所有已打印支票将在银行服务中被标记为无效。是否确要删除此分录？</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="DeliveryMethod" xml:space="preserve">
@@ -1014,7 +1014,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="DepSlipPrinted" xml:space="preserve">
-    <value>这一批次的存款单已打印。未在应收帐款选项中选择《允许编辑已打印的存款单》选项。您可以查看但无法修改其内容。</value>
+    <value>此批次的存款单已打印。未在应收帐款选项中选择《允许编辑已打印的存款单》选项。您可以查看但无法修改其内容。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="DeriveRate" xml:space="preserve">
@@ -1055,6 +1055,10 @@
   </data>
   <data name="DetailTaxClass" xml:space="preserve">
     <value>明细税级</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="DetailTaxWithheld" xml:space="preserve">
+    <value>明细预扣税</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="DetailTotal" xml:space="preserve">
@@ -1130,7 +1134,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="DocumentCleared" xml:space="preserve">
-    <value>这一凭证已被清除。</value>
+    <value>此凭证已被清除。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="DocumentDate" xml:space="preserve">
@@ -1178,7 +1182,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="DrillDownNotAvail" xml:space="preserve">
-    <value>没有这一记录的下钻信息。</value>
+    <value>没有此记录的下钻信息。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="DueDate" xml:space="preserve">
@@ -1434,7 +1438,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="IncludeExtraInformation" xml:space="preserve">
-    <value>包括额外讯息</value>
+    <value>包括额外信息</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="IncludePrepayments" xml:space="preserve">
@@ -1446,7 +1450,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="InsertVoidCheck" xml:space="preserve">
-    <value>尚未在银行服务中记录来自银行{1}的支票{0}的一个分录。您想在银行服务中为这一支票创造一个分录并将其标记为无效吗？</value>
+    <value>尚未在银行服务中记录来自银行{1}的支票{0}的一个分录。您想在银行服务中为此支票创造一个分录并将其标记为无效吗？</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Integration" xml:space="preserve">
@@ -1674,7 +1678,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="LaunchDocBlankCust" xml:space="preserve">
-    <value>如果该客户空置您不能打开这一凭证的凭证查询。</value>
+    <value>如果该客户空置您不能打开此凭证的凭证查询。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="LaunchDocNotExist" xml:space="preserve">
@@ -1698,7 +1702,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="LineNotExists" xml:space="preserve">
-    <value>行{0}在这一分录中不存在。</value>
+    <value>行{0}在此分录中不存在。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="LineNumber" xml:space="preserve">
@@ -1762,7 +1766,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="NoHistory" xml:space="preserve">
-    <value>无法提供这一批次的数据。</value>
+    <value>无法提供此批次的数据。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="NonTaxableAmount" xml:space="preserve">
@@ -1770,7 +1774,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="NoPostSeqNo" xml:space="preserve">
-    <value>这一批次尚未过帐，所以您不能打印过帐日志报表。</value>
+    <value>此批次尚未过帐，所以您不能打印过帐日志报表。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="NoPrepayDepositedBatch" xml:space="preserve">
@@ -2059,6 +2063,10 @@
   </data>
   <data name="PendingReceipts" xml:space="preserve">
     <value>待处理收款</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="PendingTaxWithheld" xml:space="preserve">
+    <value>待处理预扣税</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="PendPaymentTotal" xml:space="preserve">
@@ -2442,7 +2450,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="RemovesHistory" xml:space="preserve">
-    <value>这一选项移除所有您选择的批次的交易历史。您将无法从总帐下钻到这些批次，或从批次清单窗口查看这些批次，或重新打印这些批次的发票或存款单。</value>
+    <value>此选项移除所有您选择的批次的交易历史。您将无法从总帐下钻到这些批次，或从批次清单窗口查看这些批次，或重新打印这些批次的发票或存款单。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ReportFormat" xml:space="preserve">
@@ -2478,11 +2486,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="RestartRecordForBatch" xml:space="preserve">
-    <value>有这一批次的重启纪录。必须首先处理这一记录。是否继续？</value>
+    <value>有此批次的重启纪录。必须首先处理此记录。是否继续？</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="RestartRecordForEntry" xml:space="preserve">
-    <value>有这一批次的分录{0}的重启纪录。必须首先处理这一记录。是否继续？</value>
+    <value>有此批次的分录{0}的重启纪录。必须首先处理此记录。是否继续？</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="RestoreDefaults" xml:space="preserve">
@@ -2794,7 +2802,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="TaxClassChanged" xml:space="preserve">
-    <value>您已经为这一凭证更改了税级。请核实各个明细行上的税级并进行必要的修改。</value>
+    <value>您已经为此凭证更改了税级。请核实各个明细行上的税级并进行必要的修改。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="TaxFields" xml:space="preserve">
@@ -2806,7 +2814,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="TaxGroupChanged" xml:space="preserve">
-    <value>您已经为这一凭证更改了税组。请相应核实税务信息。</value>
+    <value>您已经为此凭证更改了税组。请相应核实税务信息。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="TaxIncluded" xml:space="preserve">
@@ -2835,6 +2843,10 @@
   </data>
   <data name="TaxReportingTotal" xml:space="preserve">
     <value>税务报告合计</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxWithheld" xml:space="preserve">
+    <value>预扣税</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Telephone" xml:space="preserve">
@@ -3042,7 +3054,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="WarnBatchNotReadyPost" xml:space="preserve">
-    <value>批次{0}未设为待过帐。是否过帐这一批次？</value>
+    <value>批次{0}未设为待过帐。是否过帐此批次？</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="WebSite" xml:space="preserve">
@@ -3810,7 +3822,7 @@
     <comment>Invoicing - Field</comment>
   </data>
   <data name="BatchOrDepositSlipPrintedMessage" xml:space="preserve">
-    <value>{0}已为这一批次打印。未在应收帐款选项中选择{1}的选项。您可以查看但无法修改其内容。</value>
+    <value>{0}已为此批次打印。未在应收帐款选项中选择{1}的选项。您可以查看但无法修改其内容。</value>
   </data>
   <data name="DocumentSchedulePayment" xml:space="preserve">
     <value>凭证排程付款</value>
@@ -3858,7 +3870,7 @@
     <value>清除所有</value>
   </data>
   <data name="PostingErrorMessage" xml:space="preserve">
-    <value>这一批次没有过帐错误。</value>
+    <value>此批次没有过帐错误。</value>
     <comment>Prompt Posting Error message when batch is posted</comment>
   </data>
   <data name="NoEditAfterPrint_Message" xml:space="preserve">
@@ -3899,7 +3911,7 @@
     <value>下钻</value>
   </data>
   <data name="NoDrillDownInfo" xml:space="preserve">
-    <value>无法找到这一记录的下钻信息。</value>
+    <value>无法找到此记录的下钻信息。</value>
   </data>
   <data name="SpecifyValidDate" xml:space="preserve">
     <value>必须指定一个有效日期</value>
@@ -3924,11 +3936,11 @@
     <value>更新经常性收费指示</value>
   </data>
   <data name="PostingErrorMsg" xml:space="preserve">
-    <value>无法打印这一批次的过帐日志报表因为它已过帐。</value>
+    <value>无法打印此批次的过帐日志报表因为它已过帐。</value>
     <comment>Error</comment>
   </data>
   <data name="PostingReportError" xml:space="preserve">
-    <value>无法打印这一批次的过帐错误报表因为它已过帐。</value>
+    <value>无法打印此批次的过帐错误报表因为它已过帐。</value>
     <comment>Error</comment>
   </data>
   <data name="authorizationCodeResource" xml:space="preserve">
@@ -3966,5 +3978,14 @@
   </data>
   <data name="FailedMTNationalAccountEmail" xml:space="preserve">
     <value>无法将文档通过电邮发送给统一帐户{0}的联系人。检查是否正确设置了此统一帐户的联系人。</value>
+  </data>
+  <data name="EstimatedWithholdingAmount" xml:space="preserve">
+    <value>预估预扣金额</value>
+  </data>
+  <data name="TotalEstimatedTaxWithheld" xml:space="preserve">
+    <value>合计预估预扣税</value>
+  </data>
+  <data name="EstimatedTaxWithheld" xml:space="preserve">
+    <value>预估预扣税</value>
   </data>
 </root>

@@ -3579,4 +3579,10 @@
   <data name="CustomerName" xml:space="preserve">
     <value>Customer Name</value>
   </data>
+  <data name="PaymentsID" xml:space="preserve">
+    <value>SF Payments Acceptance ID</value>
+  </data>
+  <data name="PaymentsURL" xml:space="preserve">
+    <value>SF Payments Acceptance URL</value>
+  </data>
 </root>

@@ -1057,6 +1057,10 @@
     <value>Detail Tax Class</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="DetailTaxWithheld" xml:space="preserve">
+    <value>Detail Tax Withheld</value>
+    <comment>Auto-Generated</comment>
+  </data>
   <data name="DetailTotal" xml:space="preserve">
     <value>Detail Total</value>
     <comment>Auto-Generated</comment>
@@ -2061,6 +2065,10 @@
     <value>Pending Receipts</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="PendingTaxWithheld" xml:space="preserve">
+    <value>Pending Tax Withheld</value>
+    <comment>Auto-Generated</comment>
+  </data>
   <data name="PendPaymentTotal" xml:space="preserve">
     <value>Pending Payment Total</value>
     <comment>Auto-Generated</comment>
@@ -2835,6 +2843,10 @@
   </data>
   <data name="TaxReportingTotal" xml:space="preserve">
     <value>Tax Reporting Total</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxWithheld" xml:space="preserve">
+    <value>Tax Withheld</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Telephone" xml:space="preserve">
@@ -3966,5 +3978,14 @@
   </data>
   <data name="FailedMTNationalAccountEmail" xml:space="preserve">
     <value>Documents could not be emailed to contacts for national account {0}. Check that contacts for this national account are set up correctly.</value>
+  </data>
+  <data name="EstimatedWithholdingAmount" xml:space="preserve">
+    <value>Estimated Withholding Amount</value>
+  </data>
+  <data name="TotalEstimatedTaxWithheld" xml:space="preserve">
+    <value>Total Estimated Tax Withheld</value>
+  </data>
+  <data name="EstimatedTaxWithheld" xml:space="preserve">
+    <value>Estimated Tax Withheld</value>
   </data>
 </root>
