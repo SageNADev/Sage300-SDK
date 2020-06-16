@@ -662,6 +662,9 @@
   <data name="TaxReportingRateType" xml:space="preserve">
     <value>稅務報告匯率類型</value>
   </data>
+  <data name="TaxWithheld" xml:space="preserve">
+    <value>預扣稅</value>
+  </data>
   <data name="Time" xml:space="preserve">
     <value>時間</value>
     <comment>Credit - Group Field</comment>

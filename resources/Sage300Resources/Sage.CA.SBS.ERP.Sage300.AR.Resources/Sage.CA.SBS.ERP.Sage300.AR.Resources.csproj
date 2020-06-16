@@ -620,6 +620,7 @@
     <EmbeddedResource Include="Forms\InvoiceEntryResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>InvoiceEntryResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InvoiceEntryResx.es.resx" />
     <EmbeddedResource Include="Forms\InvoiceEntryResx.fr.resx" />

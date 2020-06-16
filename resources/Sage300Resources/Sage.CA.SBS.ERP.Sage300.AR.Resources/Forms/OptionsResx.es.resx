@@ -504,4 +504,10 @@
     <value>Programa</value>
     <comment>Retainage Tab</comment>
   </data>
+  <data name="PaymentsAcceptanceDefaultBankCode" xml:space="preserve">
+    <value>Código de Banco de Aceptación de Pagos</value>
+  </data>
+  <data name="PaymentsAcceptanceDefaultBankCodeDesc" xml:space="preserve">
+    <value>Descripción Código de Banco de Aceptación de Pagos</value>
+  </data>
 </root>

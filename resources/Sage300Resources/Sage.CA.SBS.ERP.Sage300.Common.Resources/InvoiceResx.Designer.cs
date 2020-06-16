@@ -3724,6 +3724,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SF Payments Acceptance ID.
+        /// </summary>
+        public static string PaymentsID {
+            get {
+                return ResourceManager.GetString("PaymentsID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SF Payments Acceptance URL.
+        /// </summary>
+        public static string PaymentsURL {
+            get {
+                return ResourceManager.GetString("PaymentsURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Percentage Due.
         /// </summary>
         public static string PercentageDue {

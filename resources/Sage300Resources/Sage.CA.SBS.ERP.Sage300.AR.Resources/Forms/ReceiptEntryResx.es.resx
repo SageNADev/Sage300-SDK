@@ -662,6 +662,9 @@
   <data name="TaxReportingRateType" xml:space="preserve">
     <value>Tipo Tasa Moneda de Reporte Fiscal</value>
   </data>
+  <data name="TaxWithheld" xml:space="preserve">
+    <value>Impuesto Retenido</value>
+  </data>
   <data name="Time" xml:space="preserve">
     <value>Hora</value>
     <comment>Credit - Group Field</comment>

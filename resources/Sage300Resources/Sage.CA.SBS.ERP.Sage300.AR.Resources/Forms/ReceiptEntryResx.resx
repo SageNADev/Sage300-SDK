@@ -662,6 +662,9 @@
   <data name="TaxReportingRateType" xml:space="preserve">
     <value>Tax Reporting Rate Type</value>
   </data>
+  <data name="TaxWithheld" xml:space="preserve">
+    <value>Tax Withheld</value>
+  </data>
   <data name="Time" xml:space="preserve">
     <value>Time</value>
     <comment>Credit - Group Field</comment>

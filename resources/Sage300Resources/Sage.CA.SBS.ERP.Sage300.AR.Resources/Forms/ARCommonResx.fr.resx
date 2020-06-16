@@ -1057,6 +1057,10 @@
     <value>Détail de classe de taxe</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="DetailTaxWithheld" xml:space="preserve">
+    <value>Détail de taxe retenue</value>
+    <comment>Auto-Generated</comment>
+  </data>
   <data name="DetailTotal" xml:space="preserve">
     <value>Total détail</value>
     <comment>Auto-Generated</comment>
@@ -2061,6 +2065,10 @@
     <value>Encaissements en suspens</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="PendingTaxWithheld" xml:space="preserve">
+    <value>Taxe retenue en suspens</value>
+    <comment>Auto-Generated</comment>
+  </data>
   <data name="PendPaymentTotal" xml:space="preserve">
     <value>Total paiements en suspens</value>
     <comment>Auto-Generated</comment>
@@ -2835,6 +2843,10 @@
   </data>
   <data name="TaxReportingTotal" xml:space="preserve">
     <value>Total monnaie de publication</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxWithheld" xml:space="preserve">
+    <value>Taxe retenue</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Telephone" xml:space="preserve">
@@ -3966,5 +3978,14 @@
   </data>
   <data name="FailedMTNationalAccountEmail" xml:space="preserve">
     <value>Les documents n’ont pas pu être envoyés par courriel aux contacts du compte national {0}. Vérifiez que les contacts de ce compte national soient correctement configurés.</value>
+  </data>
+  <data name="EstimatedWithholdingAmount" xml:space="preserve">
+    <value>Montant retenu estimé</value>
+  </data>
+  <data name="TotalEstimatedTaxWithheld" xml:space="preserve">
+    <value>Total taxe retenue estimée</value>
+  </data>
+  <data name="EstimatedTaxWithheld" xml:space="preserve">
+    <value>Taxe retenue estimée</value>
   </data>
 </root>

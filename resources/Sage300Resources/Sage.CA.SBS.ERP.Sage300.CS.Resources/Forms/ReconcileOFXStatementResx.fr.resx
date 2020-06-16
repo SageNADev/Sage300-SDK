@@ -235,10 +235,6 @@
   <data name="ExchangeRate" xml:space="preserve">
     <value>Taux de change</value>
   </data>
-  <data name="GetTransactions" xml:space="preserve">
-    <value>Importer les transactions</value>
-    <comment>Button</comment>
-  </data>
   <data name="SourceAmount" xml:space="preserve">
     <value>Montant devise de transaction</value>
   </data>
@@ -316,6 +312,9 @@
   </data>
   <data name="GetTransactionsSuccess" xml:space="preserve">
     <value>{0} transactions ont été téléchargées. La date de la dernière transaction est le {1}.</value>
-    <comment>Message</comment>
+  </data>
+  <data name="GetTransactions" xml:space="preserve">
+    <value>Importer les transactions</value>
+    <comment>Button</comment>
   </data>
 </root>

@@ -1607,4 +1607,24 @@
     <value>Établir la couleur de thème en fonction de base de donnée</value>
     <comment>Settings Menu</comment>
   </data>
+  <data name="Large" xml:space="preserve">
+    <value>Grand</value>
+    <comment>Form Size Menu</comment>
+  </data>
+  <data name="Medium" xml:space="preserve">
+    <value>Moyen</value>
+    <comment>Form Size Menu</comment>
+  </data>
+  <data name="Small" xml:space="preserve">
+    <value>Petit</value>
+    <comment>Form Size Menu</comment>
+  </data>
+  <data name="TextSize" xml:space="preserve">
+    <value>Taille du texte</value>
+    <comment>Form Size Menu</comment>
+  </data>
+  <data name="FormSizeResetConfirmation" xml:space="preserve">
+    <value />
+    <comment>Setting Menu Form Size</comment>
+  </data>
 </root>

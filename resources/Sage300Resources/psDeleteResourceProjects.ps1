@@ -15,7 +15,7 @@
 # None
 
 # Settings
-$ModuleNameList = "AP,AR,AS,CS,GL,IC,KN,KPI,MT,OE,PM,PO,PR,VPF"
+$ModuleNameList = "AP,AR,AS,CS,GL,IC,KN,KPI,MT,OE,PM,PO,PR,VPF,TA,TS,TW"
 
 # ---------------------------------------------------------------------------------------
 # Remove existing module Resource project folders

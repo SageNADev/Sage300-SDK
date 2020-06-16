@@ -504,4 +504,10 @@
     <value>Journal de planification</value>
     <comment>Retainage Tab</comment>
   </data>
+  <data name="PaymentsAcceptanceDefaultBankCode" xml:space="preserve">
+    <value>Code banque d’acceptation de paiements</value>
+  </data>
+  <data name="PaymentsAcceptanceDefaultBankCodeDesc" xml:space="preserve">
+    <value>Description code banque d’acceptation de paiements</value>
+  </data>
 </root>

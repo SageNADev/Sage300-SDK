@@ -504,4 +504,10 @@
     <value>Schedule</value>
     <comment>Retainage Tab</comment>
   </data>
+  <data name="PaymentsAcceptanceDefaultBankCode" xml:space="preserve">
+    <value>Payments Acceptance Bank Code</value>
+  </data>
+  <data name="PaymentsAcceptanceDefaultBankCodeDesc" xml:space="preserve">
+    <value>Payments Acceptance Bank Code Description</value>
+  </data>
 </root>

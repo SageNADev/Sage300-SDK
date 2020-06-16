@@ -1200,7 +1200,7 @@
     <value>País</value>
   </data>
   <data name="CreditCardChargesAccount" xml:space="preserve">
-    <value>Cuenta de Cargos de Tarjeta de Crédito</value>
+    <value>Cuenta de Cargos</value>
   </data>
   <data name="DocumentType" xml:space="preserve">
     <value>Tipo de Documento</value>

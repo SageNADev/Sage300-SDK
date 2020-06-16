@@ -2840,7 +2840,18 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
                 return ResourceManager.GetString("TaxTotal", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Withheld.
+        /// </summary>
+        public static string TaxWithheld
+        {
+            get
+            {
+                return ResourceManager.GetString("TaxWithheld", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Time.
         /// </summary>

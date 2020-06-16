@@ -1057,6 +1057,10 @@
     <value>明細稅級</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="DetailTaxWithheld" xml:space="preserve">
+    <value>明細預扣稅</value>
+    <comment>Auto-Generated</comment>
+  </data>
   <data name="DetailTotal" xml:space="preserve">
     <value>明細合計</value>
     <comment>Auto-Generated</comment>
@@ -2061,6 +2065,10 @@
     <value>待處理收款</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="PendingTaxWithheld" xml:space="preserve">
+    <value>待處理預扣稅</value>
+    <comment>Auto-Generated</comment>
+  </data>
   <data name="PendPaymentTotal" xml:space="preserve">
     <value>待處理付款合計</value>
     <comment>Auto-Generated</comment>
@@ -2686,7 +2694,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ShipToLocInformation" xml:space="preserve">
-    <value>發貨至地點資訊</value>
+    <value>發運至地點資訊</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ShipVia" xml:space="preserve">
@@ -2835,6 +2843,10 @@
   </data>
   <data name="TaxReportingTotal" xml:space="preserve">
     <value>稅務報告合計</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxWithheld" xml:space="preserve">
+    <value>預扣稅</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Telephone" xml:space="preserve">
@@ -3966,5 +3978,14 @@
   </data>
   <data name="FailedMTNationalAccountEmail" xml:space="preserve">
     <value>無法將憑證通過電郵發送給統一帳戶商{0}的連絡人。檢查是否正確設定了此統一帳戶的連絡人。</value>
+  </data>
+  <data name="EstimatedWithholdingAmount" xml:space="preserve">
+    <value>預估預扣金額</value>
+  </data>
+  <data name="TotalEstimatedTaxWithheld" xml:space="preserve">
+    <value>合計預估預扣稅</value>
+  </data>
+  <data name="EstimatedTaxWithheld" xml:space="preserve">
+    <value>預估預扣稅</value>
   </data>
 </root>
