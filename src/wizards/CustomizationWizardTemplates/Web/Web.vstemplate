@@ -372,6 +372,7 @@
           </Folder>
         </Folder>
         <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
           <Folder Name="Scripts" TargetFolderName="Scripts">
             <ProjectItem ReplaceParameters="true" TargetFileName="PageUnloadEventManager.js">PageUnloadEventManager.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Cache.js">Sage.CA.SBS.ERP.Sage300.Common.Cache.js</ProjectItem>

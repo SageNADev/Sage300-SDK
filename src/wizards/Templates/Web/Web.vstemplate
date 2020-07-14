@@ -713,6 +713,8 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="arrow.png">arrow.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="edit-columns-icon.png">edit-columns-icon.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="icon-edit-sprite.png">icon-edit-sprite.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_info.png">icon_info.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_sage.png">icon_sage.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="logo-img-holder.png">logo-img-holder.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite.png">sprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_form.png">sprite_form.png</ProjectItem>
@@ -761,6 +763,7 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="boxed-elements.less">boxed-elements.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="breadcrumbs.less">breadcrumbs.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="buttons.less">buttons.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="card.less">card.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="close.less">close.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="component-animations.less">component-animations.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="crm.less">crm.less</ProjectItem>
@@ -772,6 +775,7 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="footer.less">footer.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="form-footer.less">form-footer.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="form-header.less">form-header.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="form-size.less">form-size.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="forms.less">forms.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="forms_backup.less">forms_backup.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="global-search.less">global-search.less</ProjectItem>
@@ -1712,6 +1716,7 @@
           </Folder>
         </Folder>
         <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
           <Folder Name="Scripts" TargetFolderName="Scripts">
             <ProjectItem ReplaceParameters="true" TargetFileName="PageUnloadEventManager.js">PageUnloadEventManager.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Cache.js">Sage.CA.SBS.ERP.Sage300.Common.Cache.js</ProjectItem>

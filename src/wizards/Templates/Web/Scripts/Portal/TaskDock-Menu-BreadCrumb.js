@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
@@ -55,7 +55,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name hideIframes
-     * @description TODO - Add description
+     * @description Hide Iframe
      * @private
      */
     function hideIframes() {
@@ -66,7 +66,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name helpSearchForMenuItem
-     * @description TODO - Add description
+     * @description Search for Help Menu
      * @private
      * @param {any} id - TODO Add description
      * 
@@ -82,7 +82,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name ShowHomePage
-     * @description TODO - Add description
+     * @description Show Homepage
      * @private
      */
     function ShowHomePage() {
@@ -131,7 +131,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name showCorrectLayout
-     * @description
+     * @description Set Correct Layout 
      * @private
      */
     function showCorrectLayout() {
@@ -151,7 +151,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name initializeMainMenu
-     * @description TODO - Add description
+     * @description Initialize Main Menu
      * @private
      */
     function initializeMainMenu() {
@@ -220,7 +220,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name iFrameLoadEvent
-     * @description TODO - Add description
+     * @description Load Iframe
      * @private
      * @param {any} e - TODO Add description
      * @param {any} $iframe - TODO Add description
@@ -322,7 +322,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name taskAdded
-     * @description TODO - Add description
+     * @description Display 'Window opening...' popup in the Window Manager
      * @private
      */
     function taskAdded() {
@@ -332,11 +332,11 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name assignUrl
-     * @description - TODO description
-     * @param {string} windowText - TODO description
-     * @param {string} parentid - TODO description
-     * @param {string} menuid - TODO descripion
-     * @param {bool} isExcludingParameters - TODO descripion
+     * @description - Assign URL
+     * @param {string} windowText - Window Title
+     * @param {string} parentid - Parent ID
+     * @param {string} menuid - Menu ID
+     * @param {bool} isExcludingParameters - Determine if parameters are excluded
      */
     function assignUrl(windowText, parentid, menuid, isExcludingParameters) {
         var control = {};
@@ -405,6 +405,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                 $iframe.on("load", function () {
                     // remove the loading/spinner after the page is loaded
                     $(this).removeClass('screenLoading');
+                    initFormSize();
                 });
                 $iframe.show();
 
@@ -452,7 +453,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name isMaxScreenNumReachedAndNotOpen
-     * @description TODO - Add description
+     * @description Determine if the maximum screen number is reached and the screen is not open
      * @private
      * @param {string} targetUrl - TODO Add description
      * @returns {boolean} true | false
@@ -471,7 +472,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name screenLauncher
-     * @description TODO - Add description
+     * @description Launch Screen
      * @param {any} event - TODO Add description
      */
     function screenLauncher(event) {
@@ -553,7 +554,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name loadBreadCrumb
-     * @description TODO - Add description
+     * @description Load Bread Crumb
      * @private
      * @param {any} parentidVal - TODO Add description
      */
@@ -743,7 +744,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name createInquiryURLWithParameters
-     * @description TODO - Add Description
+     * @description Create Inquiry URL with parameters
      * @private
      * @param {any} inquiryParameter - TODO add description
      * @returns {string} - TODO add description
@@ -755,7 +756,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name createInquiryURLWithName
-     * @description TODO - Add description
+     * @description Create Inquiry URL with name
      * @private
      * @param {any} inquiryParameter - TODO add description
      * @returns {string} - TODO add description
@@ -984,7 +985,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name decrementOpenScreenCounterAndNotifySiblings
-     * @description TODO - Add description
+     * @description Descrement open screen counter and notifying siblings
      * @private
      */
     function decrementOpenScreenCounterAndNotifySiblings() {
@@ -1000,7 +1001,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name incrementOpenScreenCounterAndNotifySiblings
-     * @description TODO - Add description
+     * @description Increment open screen counter and notifying siblings
      * @private
      */
     function incrementOpenScreenCounterAndNotifySiblings() {
@@ -1016,7 +1017,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name initSideMenu
-     * @description TODO - Add description
+     * @description Initialize Side Menu
      * @private
      */
     function initSideMenu() {
@@ -1025,7 +1026,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                 if (result === "expanded") {
                     menuLayoutExpanded();
                 }
-                else if (result === "collapsed") {
+                else {
                     menuLayoutCollapsed();
                 }
             }
@@ -1034,7 +1035,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name menuLayoutCollapsed
-     * @description TODO - Add description
+     * @description Layout for Side Menu Collapsed Status & User Preferences & showing Tooltips
      * @private
      */
     function menuLayoutCollapsed() {
@@ -1065,7 +1066,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name menuLayoutExpanded
-     * @description TODO - Add description
+     * @description Layout for Side Menu Expanded Status & User Preferences & hiding Tooptips
      * @private
      */
     function menuLayoutExpanded() {
@@ -1087,7 +1088,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name showMenuExpandButton
-     * @description TODO - Add description
+     * @description Show Expand Button
      * @private
      */
     function showMenuExpandButton() {
@@ -1097,12 +1098,140 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name showMenuCollapseButton
-     * @description TODO - Add description
+     * @description Show Collapse Button
      * @private
      */
     function showMenuCollapseButton() {
         $('#btnExpandMenu, #btnExpandMenuAlt').hide();
         $('#btnCollapseMenu, #btnCollapseMenuAlt').show();
+    }
+
+    /**
+     * @name initFormSize
+     * @description Initialize Form Size & Save User Preference
+     * @private
+     */
+    function initFormSize() {
+        sg.utls.getUserPreferences(formSizeUserPreferenceKey, function (result) {
+            if (result) {
+                if (result === "medium") {
+                    formSizeMedium();
+                }
+                else if (result === "small") {
+                    formSizeSmall();
+                }
+                else {
+                    formSizeLarge();
+                }
+            }
+        });
+    }
+
+    /**
+     * @name formSizeHandler
+     * @description To handle switch form size
+     * @param {function} fn Function to show button
+     * @param {string} size The size
+     * @param {string} className The class name
+     */
+    function formSizeHandler(fn, size, className) {
+        if (fn && typeof fn === "function") {
+            fn();
+        }
+
+        $.each($('[id^="iFrameMenu"]').contents().find('html'), function (index, targetHTML) {
+            var $targetHTML = $(targetHTML);
+            if (!$targetHTML.attr(sg.utls.localFormSizeDataTag)) {
+                // only apply class name if there no local form size can be found
+                $targetHTML.removeClass('form-large form-medium form-small').addClass(className);
+                // also select the local size select box
+                var btnFormSizeUILevel = 'btnFormSizeUILevelLarge';
+                switch (className) {
+                    case 'form-large': btnFormSizeUILevel = 'btnFormSizeUILevelLarge';
+                        break;
+                    case 'form-medium': btnFormSizeUILevel = 'btnFormSizeUILevelMedium';
+                        break;
+                    case 'form-small': btnFormSizeUILevel = 'btnFormSizeUILevelSmall';
+                        break;
+                }
+                var targetSelection = $targetHTML.find("#" + btnFormSizeUILevel);
+                if (targetSelection.length > 0) {
+                    targetSelection.siblings().removeClass("menu-active");
+                    targetSelection.addClass("menu-active");
+                }
+            }
+        });
+
+        sg.utls.saveUserPreferences(formSizeUserPreferenceKey, size);
+    }
+
+    /**
+     * @name formSizeLarge
+     * @description Set Large Form Size
+     * @private
+     */
+    function formSizeLarge() {
+        formSizeHandler(showMenuLargeButton, 'large', 'form-large');
+    }
+
+    /**
+     * @name formSizeMedium
+     * @description Set Medium Form Size
+     * @private
+     */
+    function formSizeMedium() {
+        formSizeHandler(showMenuMediumButton, 'medium', 'form-medium');
+    }
+
+    /**
+     * @name formSizeSmall
+     * @description Set Small Form Size
+     * @private
+     */
+    function formSizeSmall() {
+        formSizeHandler(showMenuSmallButton, 'small', 'form-small');
+    }
+
+    /**
+     * @name formSizeReset
+     * @description Reset form size
+     */
+    function formSizeReset() {
+        sg.utls.showConfirmationDialogYesNo(function () {
+            sg.utls.deleteScreenLevelUserPreference();
+            sg.utls.resetAllScreenSize();
+            formSizeLarge();
+        }, $.noop(), formSizeResetConfirmation, formSizeResetConfirmationTitle);
+    }
+
+    /**
+     * @name showMenuLargeButton
+     * @description Show an indicator (active status) when the Large Text Size menu is active
+     * @private
+     */
+    function showMenuLargeButton() {
+        $('#btnFormSizeMedium, #btnFormSizeSmall').removeClass('menu-active');
+        $('#btnFormSizeLarge').addClass('menu-active');
+    }
+
+    /**
+     * @name showMenuMediumButton
+     * @description Show an indicator (active status) when the Medium Text Size menu is active
+     * @private
+     */
+    function showMenuMediumButton() {
+        $('#btnFormSizeLarge, #btnFormSizeSmall').removeClass('menu-active');
+        $('#btnFormSizeMedium').addClass('menu-active');
+    }
+
+    /**
+     * @name showMenuSmallButton
+     * @description Show an indicator (active status) when the Small Text Size menu is active
+     * @private
+     */
+    function showMenuSmallButton() {
+        $('#btnFormSizeLarge, #btnFormSizeMedium').removeClass('menu-active');
+        $('#btnFormSizeSmall').addClass('menu-active');
     }
 
     /**
@@ -1164,6 +1293,18 @@ var TaskDockMenuBreadCrumbManager = function () {
             /* ---------------------------------------------------------- */
 
             initSideMenu();
+
+            showMenuLargeButton(); // by default: form is large, so highlight large button
+
+            $('#btnFormSizeLarge').click(formSizeLarge);
+            $('#btnFormSizeMedium').click(formSizeMedium);
+            $('#btnFormSizeSmall').click(formSizeSmall);
+            $('#btnFormSizeReset').click(formSizeReset);
+
+            /* Initialize for Form Size Setting (Regular/Small/Extra Small) */
+            /* ---------------------------------------------------------- */
+
+            initFormSize();
 
             /* open menu */
             /* ---------------------------------------------------------- */
@@ -1338,6 +1479,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                 $iframe.on("load", function (e) {
                     iFrameLoadEvent(e, $(this));
                     window.scrollTo(0, 0);
+                    initFormSize();
                 });
             });
 
@@ -1374,7 +1516,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                                     currentRank = element["rank"];
                                 }
                             });
-                            var iframeHtml = sg.utls.formatString("<iframe scrolling='no' sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation' id='{0}' src='' class='screenIframe' style='display: none;'></iframe>",
+                            var iframeHtml = sg.utls.formatString("<iframe scrolling='no' sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation allow-downloads' id='{0}' src='' class='screenIframe' style='display: none;'></iframe>",
                                 currentIframeId);
                             $currentIframeId.parent().empty().append(iframeHtml);
                             iFrameLoadEvent(null, $currentIframeId);

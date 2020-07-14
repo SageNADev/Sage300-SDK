@@ -126,11 +126,17 @@ namespace MergeISVProject.Interfaces
 		/// </summary>
 		CommandLineOption<bool> Log { get; set; }
 
-		/// <summary>
-		/// Were there any errors during loading?
-		/// </summary>
-		/// <returns></returns>
-		bool AnyErrors();
+        /// <summary>
+        /// This will contain a comma separated list of language specifiers
+        /// that need to be handled in addition to the four default languages
+        /// </summary>
+        CommandLineOption<string> ExtraResourceLanguages { get; set; }
+
+        /// <summary>
+        /// Were there any errors during loading?
+        /// </summary>
+        /// <returns></returns>
+        bool AnyErrors();
 
 		/// <summary>
 		/// Return a string containing all
