@@ -56,7 +56,7 @@ namespace MergeISVProject
 		#endregion
 
 		#region Private Variables
-		private readonly string[] Languages = { "es", "fr", "zh-Hans", "zh-Hant" };
+		private string[] Languages = { "es", "fr", "zh-Hans", "zh-Hant" };
 		private readonly ICommandLineOptions _Options = null;
 		private readonly ILogger _Logger = null;
 		private readonly FolderManager _FolderManager = null;
@@ -421,30 +421,77 @@ namespace MergeISVProject
 			var pathWebBinTo = _FolderManager.Staging.Bin;
 			var pattern = $"*.{_Options.ModuleId}.*.dll";
 
+            AppendToLanguageList(ref Languages, _Options.ExtraResourceLanguages.OptionValue);
+
 			foreach (var language in Languages)
 			{
 				var fromFolder = Path.Combine(pathBinFrom, language);
 				var toWebFolder = Path.Combine(pathWebBinTo, language);
 
-				foreach (var file in Directory.GetFiles(fromFolder, pattern))
-				{
-					var fileName = Path.GetFileName(file);
-					if (!string.IsNullOrEmpty(fileName))
-					{
-						// Ensure that the destination directory exists
-						Directory.CreateDirectory(toWebFolder);
-						var destinationFile = Path.Combine(toWebFolder, fileName);
-						CopyFile(testOnly: false, source: file, dest: destinationFile, overwrite: true);
-					}
-				}
-			}
+                // If the source folder doesn't exist, then just continue
+                if (!Directory.Exists(fromFolder))
+                    continue;
+
+                foreach (var file in Directory.GetFiles(fromFolder, pattern))
+                {
+                    var fileName = Path.GetFileName(file);
+                    if (!string.IsNullOrEmpty(fileName))
+                    {
+                        // Ensure that the destination directory exists
+                        Directory.CreateDirectory(toWebFolder);
+                        var destinationFile = Path.Combine(toWebFolder, fileName);
+                        CopyFile(testOnly: false, source: file, dest: destinationFile, overwrite: true);
+                    }
+                }
+            }
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
-		/// <summary>
-		/// Copy all staging files to the final staging folder(s)
-		/// </summary>
-		private void _Stage_CopyAllToFinal()
+        /// <summary>
+        /// Add any user-specified languages to the langauge list
+        /// 
+        /// Example Input:
+        /// 
+        ///     "fr-CA, jp"
+        /// </summary>
+        /// <param name="target">The target list to add entries to</param>
+        /// <param name="sourceList">The source list of extra languages</param>
+        private void AppendToLanguageList(ref string[] target, string sourceList)
+        {
+            if (sourceList.Length == 0) { return; }
+
+            List<string> workingBuffer = new List<string>();
+            workingBuffer.AddRange(target);
+
+            if (sourceList.Contains(",") == true)
+            {
+                // Possible multiple additional languages
+                var extraLanguages = sourceList.Split(new char[] { ',' });
+                foreach (var language in extraLanguages)
+                {
+                    // Add language code if it's not yet in the list
+                    if (workingBuffer.Contains(language.Trim()) == false)
+                    {
+                        workingBuffer.Add(language);
+                    }
+                }
+            }
+            else
+            {
+                // Possible single additional language
+                if (workingBuffer.Contains(sourceList.Trim()) == false)
+                {
+                    workingBuffer.Add(sourceList);
+                }
+            }
+
+            target = workingBuffer.ToArray();
+        }
+
+        /// <summary>
+        /// Copy all staging files to the final staging folder(s)
+        /// </summary>
+        private void _Stage_CopyAllToFinal()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -811,7 +858,9 @@ namespace MergeISVProject
 			var pattern = $"*.{_Options.ModuleId}.*.dll";
 			bool testOnly = _Options.TestDeploy.OptionValue;
 
-			foreach (var language in Languages)
+            AppendToLanguageList(ref Languages, _Options.ExtraResourceLanguages.OptionValue);
+
+            foreach (var language in Languages)
 			{
 				var fromFolder = Path.Combine(pathBinFrom, language);
 				var toWebFolder = Path.Combine(pathWebBinTo, language);

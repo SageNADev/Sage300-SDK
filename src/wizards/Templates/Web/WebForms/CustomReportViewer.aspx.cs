@@ -46,6 +46,8 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
             {
                 var repository = report.Context.Container.Resolve<ILandlordRepository>();
                 var reportPath = repository.GetSharedDirectory(report.Context.TenantId);
+                CommonUtil.ValidatePathName(reportPath);
+                CommonUtil.ValidateFileName(reportName);
                 var reportFullName = Path.Combine(reportPath, "Reports", reportName);
                 var accpacReport = session.SelectReport(reportFullName, "", null);
 

@@ -13,7 +13,7 @@ $(function () {
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            async: false,
+            async: true,
             cache: false
         });
     });

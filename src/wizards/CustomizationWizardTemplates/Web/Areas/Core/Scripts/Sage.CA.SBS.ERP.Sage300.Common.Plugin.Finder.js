@@ -539,7 +539,7 @@
 
             var top = that.options.top;
 
-            kendoWindow = $(dialogId).html("<span class='sage_loading'></span>").kendoWindow({
+            kendoWindow = $(dialogId).html("<div class='bounce bounce1'></div><div class='bounce bounce2'></div><div class='bounce bounce3'></div>").kendoWindow({
                 modal: true,
                 title: that.options.title,
                 resizable: false,
