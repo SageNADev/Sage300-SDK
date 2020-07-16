@@ -368,9 +368,8 @@ namespace MergeISVProject
             ExtraResourceLanguages = new CommandLineOption<string>()
             {
                 Name = "extraresourcelanguages",
-                AliasList = new List<string>() { "extralanguages"  },
-                //Description = Messages.Msg_NetFrameworkPathContainingAspnetCompileDotExe,
-                Description = "Specify any extra language codes",
+                AliasList = new List<string>() { "extralanguages" },
+                Description = Messages.Msg_ExtraResourceLanguages,
                 OptionValue = "",
                 ExampleValue = @"fr-CA"
             };
