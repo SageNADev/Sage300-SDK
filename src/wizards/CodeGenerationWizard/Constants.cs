@@ -31,6 +31,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> The version of this wizard </summary>
         public static string Version = "2021.0";
 
+        public const string ResourceFileExtension = @".resx";
+
         public static class LanguageExtensions
         {
             public const string English = @"";
@@ -38,6 +40,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string French = @"fr";
             public const string ChineseSimplified = @"zh-Hans";
             public const string ChineseTraditional = @"zh-Hant";
+        }
+
+        public static class LanguageIndex
+        {
+            public const int English = 0;
+            public const int Spanish = 1;
+            public const int French = 2;
+            public const int ChineseSimplified = 3;
+            public const int ChineseTraditional = 4;
         }
     }
 }
