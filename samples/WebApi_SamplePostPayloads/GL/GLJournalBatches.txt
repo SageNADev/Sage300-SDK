@@ -1,7 +1,6 @@
-GL JOURNAL ENTRY - 2 ENTRIES
-
 {
   "BatchNumber": "000490",
+  "Status": "Open",
   "Description": "gl journal entry",
   "JournalHeaders": [
     {
@@ -18,6 +17,7 @@ GL JOURNAL ENTRY - 2 ENTRIES
           "TransactionNumber": "0000000020",
           "AccountNumber": "9999",
           "Amount": 30,
+          "SourceCurrencyAmount": 30,
           "Description": "desc",
           "Reference": "ref"
         },
@@ -26,14 +26,16 @@ GL JOURNAL ENTRY - 2 ENTRIES
           "EntryNumber": "00001",
           "TransactionNumber": "0000000040",
           "AccountNumber": "1000",
-          "Amount": -10
+          "Amount": -10,
+          "SourceCurrencyAmount": -10
         },
         {
           "BatchNumber": "000490",
           "EntryNumber": "00001",
           "TransactionNumber": "0000000060",
           "AccountNumber": "6000",
-          "Amount": -20
+          "Amount": -20,
+          "SourceCurrencyAmount": -20
         }
       ]
     },
@@ -50,14 +52,16 @@ GL JOURNAL ENTRY - 2 ENTRIES
           "EntryNumber": "00002",
           "TransactionNumber": "0000000020",
           "AccountNumber": "6000100",
-          "Amount": 20
+          "Amount": 20,
+          "SourceCurrencyAmount": 20
         },
         {
           "BatchNumber": "000490",
           "EntryNumber": "00002",
           "TransactionNumber": "0000000040",
           "AccountNumber": "9999",
-          "Amount": -20
+          "Amount": -20,
+          "SourceCurrencyAmount": -20
         }
       ]
     }

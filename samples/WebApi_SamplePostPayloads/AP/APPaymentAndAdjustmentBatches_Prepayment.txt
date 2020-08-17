@@ -2,6 +2,7 @@
   "BatchSelector": "PY",
   "BatchNumber": 83,
   "BatchDate": "2020-01-05",
+  "BatchStatus": "Open",
   "Description": "test prepayment",
   "BankCode": "SEATAC",
   "BankCurrencyCode": "USD",
@@ -11,7 +12,7 @@
       "BatchType": "PY",
       "BatchNumber": 83,
       "EntryNumber": 1,
-      "CheckNumber": "000000000000",
+      "CheckNumber": "123456789012345",
       "VendorNumber": "1500",
       "PaymentDateAdjustmentDate": "2020-01-05",
       "EntryDescription": "entry 1",
@@ -20,9 +21,8 @@
       "CheckAmountInVendorCurrency": 35,
       "TotalPrepayVendorCurrency": 35,
       "PaymentTransactionType": "Prepayment",
-      "CheckPrintRequired": "Yes",
+      "CheckPrintRequired": "No",
       "EntryReference": "",
-      "CheckPrintedStatus": "Notprinted",
       "AppliedPayments": [
         {
           "BatchType": "PY",
@@ -31,7 +31,7 @@
           "LineNumber": 20,
           "VendorNumber": "1500",
           "PaymentType": "Prepayment",
-		  "PaymentAmount": 35
+          "PaymentAmount": 35
         }
       ]
     }
