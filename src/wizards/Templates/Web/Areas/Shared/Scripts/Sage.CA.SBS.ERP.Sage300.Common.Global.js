@@ -792,6 +792,8 @@ $.extend(sg.utls, {
 
     homeCurrency: null,
 
+    reportDisplayInSeparateTab: null,
+
     isPhoneNumberFormatRequired: null,
 
     loadHomeCurrency: function () {
@@ -830,13 +832,26 @@ $.extend(sg.utls, {
         }
     },
 
+    setReportDisplayInSeparateTab: function () {
+        // Set report display in separate tab, if not already set
+        if (sg.utls.reportDisplayInSeparateTab === null) {
+            sg.utls.ajaxCache(sg.utls.url.buildUrl("Core", "Common", "GetReportDisplayInSeparateTab"), {}, function (result) {
+                sg.utls.reportDisplayInSeparateTab = result.ReportDisplayInSeparateTab;
+            }, "ReportDisplayInSeparateTab");
+        }
+    },
+
     openReport: function (reportToken, checkTitle, callbackOnClose) {
         //report use web forms, not using route, session id put on query string
         var reportUrlFormat = $("#hdnUrl").val() + "../../WebForms/ReportViewer.aspx?token={0}&session={1}";
         var urls = $("#hdnUrl").val().split('/').filter(function (el) { return el; });
         var reportUrl = kendo.format(reportUrlFormat, reportToken, urls[urls.length-1]);
 
-        if (!sg.utls.isPortalIntegrated()) {
+        // Set var for report display in separate tab, if not already set
+        sg.utls.setReportDisplayInSeparateTab();
+
+        // Display on seperate tab if web.config entry is true OR being printted from host other than the Sage 300 home page
+        if (sg.utls.reportDisplayInSeparateTab || !sg.utls.isPortalIntegrated()) {
             window.open(reportUrl);
         } else {
             //TODO: this is method to open report in Portal Windows Dock
@@ -1862,6 +1877,8 @@ $.extend(sg.utls, {
     },
 
     openKendoWindowPopup: function (id, data, defaultWidth) {
+        $(id + " .menu-with-submenu").remove();    // to remove Text sizing option, this is because the popup is not from iFrame ...
+
         var kendoWindow = $(id).data("kendoWindow");
 
         if (data != null) {
