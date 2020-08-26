@@ -415,7 +415,10 @@ namespace MergeISVProject
 		/// </summary>
 		private void _Stage_ResourceSatelliteFiles() 
 		{
-			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+            const int INDENTBY = 3;
+            var indent3 = new String(' ', INDENTBY);
+
+            _Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
 			var pathBinFrom = _FolderManager.Originals.Bin;
 			var pathWebBinTo = _FolderManager.Staging.Bin;
@@ -425,8 +428,14 @@ namespace MergeISVProject
 
 			foreach (var language in Languages)
 			{
-				var fromFolder = Path.Combine(pathBinFrom, language);
+                _Logger.Log($" ");
+                _Logger.Log($"{indent3}Processing Language '{language}'");
+
+                var fromFolder = Path.Combine(pathBinFrom, language);
 				var toWebFolder = Path.Combine(pathWebBinTo, language);
+
+                _Logger.Log($"{indent3}Source Folder = '{fromFolder}'");
+                _Logger.Log($"{indent3}Target Web Folder = '{toWebFolder}'");
 
                 // If the source folder doesn't exist, then just continue
                 if (!Directory.Exists(fromFolder))
@@ -440,7 +449,7 @@ namespace MergeISVProject
                         // Ensure that the destination directory exists
                         Directory.CreateDirectory(toWebFolder);
                         var destinationFile = Path.Combine(toWebFolder, fileName);
-                        CopyFile(testOnly: false, source: file, dest: destinationFile, overwrite: true);
+                        CopyFile(testOnly: false, source: file, dest: destinationFile, overwrite: true, createDestFolderIfNotExist: true, loggingIndent: INDENTBY);
                     }
                 }
             }
@@ -479,7 +488,8 @@ namespace MergeISVProject
             else
             {
                 // Possible single additional language
-                if (workingBuffer.Contains(sourceList.Trim()) == false)
+                sourceList = sourceList.Trim();
+                if (workingBuffer.Contains(sourceList) == false)
                 {
                     workingBuffer.Add(sourceList);
                 }
@@ -850,6 +860,9 @@ namespace MergeISVProject
 		/// </summary>
 		private void _Deploy_ResourceSatelliteFiles()
 		{
+            const int INDENTBY = 3;
+            var indent3 = new String(' ', INDENTBY);
+
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
 			var pathBinFrom = _FolderManager.FinalWeb.Bin;
@@ -862,12 +875,19 @@ namespace MergeISVProject
 
             foreach (var language in Languages)
 			{
-				var fromFolder = Path.Combine(pathBinFrom, language);
+                _Logger.Log($" ");
+                _Logger.Log($"{indent3}Processing Language '{language}'");
+
+                var fromFolder = Path.Combine(pathBinFrom, language);
 				var toWebFolder = Path.Combine(pathWebBinTo, language);
 				var toWorkerFolder = Path.Combine(pathWorkerTo, language);
 
-				// If the source folder doesn't exist, then just continue
-				if (!Directory.Exists(fromFolder))
+                _Logger.Log($"{indent3}Source Folder = '{fromFolder}'");
+                _Logger.Log($"{indent3}Target Web Folder = '{toWebFolder}'");
+                _Logger.Log($"{indent3}Target Worker Folder = '{toWorkerFolder}'");
+
+                // If the source folder doesn't exist, then just continue
+                if (!Directory.Exists(fromFolder))
 					continue;
 
 				// Source folder actually exists, so let's proceed.
@@ -876,11 +896,15 @@ namespace MergeISVProject
 					var fileName = Path.GetFileName(file);
 					if (!string.IsNullOrEmpty(fileName))
 					{
-						var pathFile = Path.Combine(toWebFolder, fileName);
-						CopyFile(testOnly, file, pathFile, OVERWRITE);
+                        _Logger.Log($"{indent3}Source File = '{file}'");
+
+                        var pathFile = Path.Combine(toWebFolder, fileName);
+                        _Logger.Log($"{indent3}Target Path (Web) = '{pathFile}'");
+                        CopyFile(testOnly, file, pathFile, OVERWRITE, createDestFolderIfNotExist: true, loggingIndent: INDENTBY);
 
 						pathFile = Path.Combine(toWorkerFolder, fileName);
-						CopyFile(testOnly, file, pathFile, OVERWRITE);
+                        _Logger.Log($"{indent3}Target Path (Worker) = '{pathFile}'");
+                        CopyFile(testOnly, file, pathFile, OVERWRITE, createDestFolderIfNotExist: true, loggingIndent: INDENTBY);
 					}
 				}
 			}
@@ -919,23 +943,44 @@ namespace MergeISVProject
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
-		/// <summary>
-		/// Wrapper function for calling File.Copy
-		/// Adds ability to just simulate the copy process.
-		/// </summary>
-		/// <param name="testOnly">true = Simulate file copy | false = Real file copy</param>
-		/// <param name="source">The fully-qualified path to the source file</param>
-		/// <param name="dest">The fully-qualified path to the destination file</param>
-		/// <param name="overwrite">true = Overwrite file | false = Do not overwrite file</param>
-		private void CopyFile(bool testOnly, string source, string dest, bool overwrite)
+        /// <summary>
+        /// Wrapper function for calling File.Copy
+        /// Adds ability to just simulate the copy process.
+        /// </summary>
+        /// <param name="testOnly">true = Simulate file copy | false = Real file copy</param>
+        /// <param name="source">The fully-qualified path to the source file</param>
+        /// <param name="dest">The fully-qualified path to the destination file</param>
+        /// <param name="overwrite">true = Overwrite file | false = Do not overwrite file</param>
+        private void CopyFile(bool testOnly, string source, string dest, bool overwrite, bool createDestFolderIfNotExist = false, int loggingIndent = 0)
 		{
 			try
 			{
 				var simulationText = testOnly ? $"[{Messages.Msg_Simulation}] " : "";
 				var sourceFilenameOnly = new FileInfo(source).Name;
 
-				_Logger.Log($"{simulationText}{Messages.Msg_CopyingFile} {sourceFilenameOnly}.");
-				if (!testOnly) { File.Copy(source, dest, overwrite); }
+                string indentBy = string.Empty;
+                if (loggingIndent > 0)
+                {
+                    indentBy = new string(' ', loggingIndent);
+                }
+
+				_Logger.Log($"{indentBy}{simulationText}{Messages.Msg_CopyingFile} {sourceFilenameOnly}.");
+				if (!testOnly)
+                {
+                    if (createDestFolderIfNotExist)
+                    {
+                        FileInfo fi = new FileInfo(dest);
+                        var destDirectory = fi.DirectoryName;
+                        // Does destination folder exist?
+                        if (Directory.Exists(destDirectory) == false)
+                        {
+                            // Create the directory
+                            Directory.CreateDirectory(destDirectory);
+                        }
+                    }
+
+                    File.Copy(source, dest, overwrite);
+                }
 			}
 			catch (IOException e)
 			{

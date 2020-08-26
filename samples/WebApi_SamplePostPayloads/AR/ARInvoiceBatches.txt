@@ -1,6 +1,7 @@
 {
   "BatchNumber": 75,
   "BatchDate": "2020-01-15",
+  "BatchStatus": "Open",
   "Description": "TEST WEBAPI",
   "Invoices": [
     {

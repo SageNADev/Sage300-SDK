@@ -1,0 +1,40 @@
+{
+  "CurrencyCode": "USD",
+  "UnformattedItemNumber": "A14500",
+  "PriceListCode": "WHS",
+  "Description": "Bulletin Board",
+  "MarkupCost": 11.11,
+  "MarkupUnitOfMeasure": "Ea.",
+  "MarkupConversionFactor": 1,
+  "SellingPriceBasedon": "Discount",
+  "DiscountMarkupPriceby": "Percentage",
+  "DiscountMarkupPercentage1": 5.5,
+  "DiscountMarkupPercentage2": 10.5,
+  "DiscountMarkupPercentage3": 15.5,
+  "DiscountMarkupPercentage4": 20.5,
+  "DiscountMarkupPercentage5": 25.5,
+  "PriceDeterminedby": "CustomerType",
+  "MarkupFactor": 4.25,
+  "PriceBy": "Quantity",
+  "ItemPricingDetails": [
+    {
+      "CurrencyCode": "USD",
+      "UnformattedItemNumber": "A14500",
+      "PriceListCode": "WHS",
+      "PriceDetailType": "BasePriceQuantity",
+      "QuantityUnit": "Ea.",
+      "UnitPrice": 88.05,
+      "UpdateOperation": "Unspecified"
+    },
+    {
+      "CurrencyCode": "USD",
+      "UnformattedItemNumber": "A14500",
+      "PriceListCode": "WHS",
+      "PriceDetailType": "SalePriceQuantity",
+      "QuantityUnit": "Ea.",
+      "UnitPrice": 72.99,
+      "UpdateOperation": "Unspecified"
+    }
+  ],
+  "UpdateOperation": "Unspecified"
+}
