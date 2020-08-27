@@ -9,6 +9,7 @@
 @using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service.Base
 @using Sage.CA.SBS.ERP.Sage300.Common.Utilities
 @using System.Reflection
+
 @{
     var import = ViewData[OptionsMenu.Import] == null ?
         Model.SecurityType.HasFlag(SecurityType.Modify) && Model.SecurityType.HasFlag(SecurityType.Import) && !Model.DisableImportExport :
@@ -98,19 +99,23 @@
                 //$("#" + targetId).trigger("click");
             }
 
-            if (localScreenFormSizePreference !== '' && localScreenFormSizePreference) {
-                // now localScreenFormSizePreference should be either large, medium, small ...
-                $("HTML").attr(sg.utls.localFormSizeDataTag, localScreenFormSizePreference);
-                setFormSize(localScreenFormSizePreference);
+            if (sessionStorage["productId"] === "CRM") {
+                $(".options-menu .sub-menu .menu-with-submenu").remove();
             } else {
-                if (sg.utls.isSameOrigin()) { //Prevent iFrame cross domain issues, like access screens from CRM
-                    // User global level
-                    if (window.top.formSizeUserPreferenceKey) {
-                        sg.utls.getUserPreferences(window.top.formSizeUserPreferenceKey, function (result) {
-                            setFormSize(result);
-                        });
-                    } else {
-                        console.error("Can not find value window.top.formSizeUserPreferenceKey: " + window.top.formSizeUserPreferenceKey);
+                if (localScreenFormSizePreference !== '' && localScreenFormSizePreference) {
+                    // now localScreenFormSizePreference should be either large, medium, small ...
+                    $("HTML").attr(sg.utls.localFormSizeDataTag, localScreenFormSizePreference);
+                    setFormSize(localScreenFormSizePreference);
+                } else {
+                    if (sg.utls.isSameOrigin()) { //Prevent iFrame cross domain issues, like access screens from CRM
+                        // User global level
+                        if (window.top.formSizeUserPreferenceKey) {
+                            sg.utls.getUserPreferences(window.top.formSizeUserPreferenceKey, function (result) {
+                                setFormSize(result);
+                            });
+                        } else {
+                            console.error("Can not find value window.top.formSizeUserPreferenceKey: " + window.top.formSizeUserPreferenceKey);
+                        }
                     }
                 }
             }

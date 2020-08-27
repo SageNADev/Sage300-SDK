@@ -1,7 +1,7 @@
 ﻿"use strict";
 $(function () {
 
-    $(window).on("beforeunload", function() {
+    $(window).on("pagehide", function() {
 
         var token = $('#hiddenToken').val();
         var sessionId = $('#hiddenSessionId').val();
