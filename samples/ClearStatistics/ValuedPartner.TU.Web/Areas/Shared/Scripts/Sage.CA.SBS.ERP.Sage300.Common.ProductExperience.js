@@ -40,7 +40,7 @@
                 // Sage 300 (Account)
                 id: sessionStorage.getItem("account_id"), // Highly recommended
                 region: sessionStorage.getItem("account_region"),
-                client: sessionStorage.getItem("account_client"),
+                serialNumber: sessionStorage.getItem("account_serialNumber"),
                 edition: sessionStorage.getItem("account_edition"),
                 version: sessionStorage.getItem("account_version"),
                 lanpakCount: sessionStorage.getItem("account_lanpakCount"),

@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Utilities
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
@@ -36,21 +36,23 @@
 
 </head>
 <body>
-    <div id="ajaxSpinner" class="ajaxSpinner">
-        <span class="sage_loading"></span>
+    <div id="ajaxSpinner" class="spinner">
+        <div class="bounce bounce1"></div>
+        <div class="bounce bounce2"></div>
+        <div class="bounce bounce3"></div>
     </div>
     @Html.Partial("~/Views/Partials/_CommonLayout.cshtml")
     <div ondragstart="return false" draggable="false" class="wraper">
         @RenderBody()
     </div>
-    
+
     <script id="delete-confirmation" type="text/x-kendo-template">
         <div class="fild_set">
             <div class="fild-title delete-message" id="del-message">
-                <div id="title-text" />
+                <div id="title-text"></div>
             </div>
             <div class="fild-content">
-                <div id="body-text" />
+                <div id="body-text"></div>
                 <div class="modelBox_controlls">
                     <input type="button" class="btn btn-secondary delete-cancel" id="kendoConfirmationCancelButton" value=@CommonResx.No />
                     <input type="button" class="btn btn-primary delete-confirm" id="kendoConfirmationAcceptButton" value=@CommonResx.Yes />
@@ -62,10 +64,10 @@
     <script id="dialog-confirmation" type="text/x-kendo-template">
         <div class="fild_set">
             <div class="fild-title dialog-message" id="dialog-message">
-                <div id="title-text" />
+                <div id="title-text"></div>
             </div>
             <div class="fild-content">
-                <div id="body-text" />
+                <div id="body-text"></div>
                 <div class="modelBox_controlls">
                     <input type="button" class="btn btn-secondary dialog-cancel" id="kendoConfirmationCancelButton" value=@CommonResx.No />
                     <input type="button" class="btn btn-primary dialog-confirm" id="kendoConfirmationAcceptButton" value=@CommonResx.Yes />

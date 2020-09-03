@@ -96,3 +96,5 @@ populated with values from the **SAMLTD** database.
   *	ARReceiptAndAdjustmentBatches endpoint:
     *	ARReceiptAndAdjustmentBatches_Adjustment.txt (AR Adjustment Entry)
     *	ARReceiptAndAdjustmentBatches_Prepayment.txt (AR Receipts – Prepayment type)
+
+>The batch file named **UpdateSamplesFromColumbusWeb.bat** is used to synchronize the Sage 300 framework codebase with the Sage 300 Web SDK samples. This batch file is only used by internal Sage developers, not our development partners.

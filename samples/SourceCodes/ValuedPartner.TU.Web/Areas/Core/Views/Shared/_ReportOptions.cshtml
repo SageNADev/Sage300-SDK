@@ -1,7 +1,23 @@
-﻿@* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. *@
 
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service.Base
+@using Sage.CA.SBS.ERP.Sage300.Common.Utilities
+@using System.Reflection
 
+@{
+    var screenName = ViewContext.Controller.GetType().BaseType.GetProperty("ScreenFormName", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(ViewContext.Controller);
+    var context = ViewContext.Controller.GetType().GetProperty("Context", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(ViewContext.Controller) as Sage.CA.SBS.ERP.Sage300.Common.Models.Context;
+    var service = Utilities.Resolve<ICommonService>(context);
+    var formSizePrefix = "localScreenFormSizeKey_";
+    var localScreenFormSizePreference = service.GetScreenLevelUserPreference(formSizePrefix + screenName);
+    var localScreenFormSizeKey = formSizePrefix + screenName;
+}
 
 <ul class="options-menu">
     <li>
@@ -9,6 +25,59 @@
         <ul class="sub-menu">
             <li><a id="btnSaveUserPreference">@CommonResx.SaveSettings</a></li>
             <li><a id="btnClearUserPreference">@CommonResx.ClearSavedSettings</a></li>
+            <li class="menu-with-submenu">
+                <a id="btnFormSizeUILevel">@NavigationResx.TextSize</a>
+                <ul class="sub-menu">
+                    <li id="btnFormSizeUILevelLarge"><a class="" id="labelFormSizeUILevelLarge" onclick="sg.utls.localFormSizeHandler(this, 'large', '@localScreenFormSizeKey')">@NavigationResx.Large</a></li>
+                    <li id="btnFormSizeUILevelMedium"><a class="" id="labelFormSizeUILevelMedium" onclick="sg.utls.localFormSizeHandler(this, 'medium', '@localScreenFormSizeKey')">@NavigationResx.Medium</a></li>
+                    <li id="btnFormSizeUILevelSmall"><a class="" id="labelFormSizeUILevelSmall" onclick="sg.utls.localFormSizeHandler(this, 'small', '@localScreenFormSizeKey')">@NavigationResx.Small</a></li>
+                </ul>
+            </li>
         </ul>
     </li>
 </ul>
+
+<script>
+        var currentScreenName = '@screenName';
+        var localScreenFormSizeKey = '@localScreenFormSizeKey';
+        var localScreenFormSizePreference = '@localScreenFormSizePreference';
+
+        $(function () {
+            function setFormSize(size) {
+                var targetId = 'labelFormSizeUILevelLarge';
+                switch (size) {
+                    case "large":
+                        targetId = 'labelFormSizeUILevelLarge'; break;
+                    case "medium":
+                        targetId = 'labelFormSizeUILevelMedium'; break;
+                    case "small":
+                        targetId = 'labelFormSizeUILevelSmall'; break;
+                }
+
+                sg.utls.localFormSizeHandler($("#" + targetId)[0], size, localScreenFormSizeKey, true);
+                //$("#" + targetId).trigger("click");
+            }
+
+            if (sessionStorage["productId"] === "CRM") {
+                $(".options-menu .sub-menu .menu-with-submenu").remove();
+            } else {
+                if (localScreenFormSizePreference !== '' && localScreenFormSizePreference) {
+                    // now localScreenFormSizePreference should be either large, medium, small ...
+                    $("HTML").attr(sg.utls.localFormSizeDataTag, localScreenFormSizePreference);
+                    setFormSize(localScreenFormSizePreference);
+                } else {
+                    if (sg.utls.isSameOrigin()) { //Prevent iFrame cross domain issues, like access screens from CRM
+                        // User global level
+                        if (window.top.formSizeUserPreferenceKey) {
+                            sg.utls.getUserPreferences(window.top.formSizeUserPreferenceKey, function (result) {
+                                setFormSize(result);
+                            });
+                        } else {
+                            console.error("Can not find value window.top.formSizeUserPreferenceKey: " + window.top.formSizeUserPreferenceKey);
+                        }
+                    }
+                }
+            }
+        });
+
+</script>

@@ -41,7 +41,7 @@ sessionDateSetup = {
         var modifiedCookie = todayDateString + "|" + todayDateString;
         $.cookie.raw = true;
         var cookieExpiresdate = new Date(9999, 11, 31);
-        $.cookie(sg.utls.SessionCookieName, modifiedCookie, { path: '/', expires: cookieExpiresdate, secure: window.location.protocol === "http:" ? false : true });
+        $.cookie(sg.utls.SessionCookieName, modifiedCookie, { path: '/', sameSite: 'None', expires: cookieExpiresdate, secure: window.location.protocol === "http:" ? false : true });
     }
 }
 

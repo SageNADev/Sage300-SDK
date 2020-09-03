@@ -681,7 +681,7 @@ var loginUICallback = {
                     // Product Experience - Engagement
                     sessionStorage.setItem("account_id", jsonResult.engagement.Account.Id);
                     sessionStorage.setItem("account_region", jsonResult.engagement.Account.Region);
-                    sessionStorage.setItem("account_client", jsonResult.engagement.Account.ClientId);
+                    sessionStorage.setItem("account_serialNumber", jsonResult.engagement.Account.SerialNumber);
                     sessionStorage.setItem("account_edition", jsonResult.engagement.Account.Edition);
                     sessionStorage.setItem("account_version", jsonResult.engagement.Account.Version);
                     sessionStorage.setItem("account_lanpakCount", jsonResult.engagement.Account.LanpakCount);
