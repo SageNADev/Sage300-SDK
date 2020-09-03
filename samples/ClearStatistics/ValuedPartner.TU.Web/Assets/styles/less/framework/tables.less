@@ -262,7 +262,7 @@ table {
   }
 
   .k-widget {
-    width: 100%;
+    width: 100% !important;
     height: 24px;
 
     .k-numeric-wrap {
@@ -417,20 +417,20 @@ table {
     }
 
     .leftbox:disabled + .separator {
-      border-color: darken(@input-bg-disabled, 3%);
+      border-color: @input-border-disabled;
       background-color: @input-bg-disabled;
     }
 
     .rightbox {
-      width: 163px;
+      width: 160px;
     }
 
     .btn-fiscal-picker {
-      background-position: -52px 1px;
+      background-position: -50px 1px;
       height: 24px;
       width: 30px;
       border-left: 0;
-      right: -1px;
+      right: -4px;
       border-top: 1px solid @btn-default-border;
       border-right: 1px solid @btn-default-border;
       border-bottom: 1px solid @btn-default-border;

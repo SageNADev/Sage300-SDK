@@ -102,13 +102,33 @@
             // Add new AS finders here
         },
 
+        BK: {
+            Banks: {
+                viewID: "BK0001",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["BANK"],
+                displayFieldNames: ["BANK", "NAME", "CURNSTMT", "ADDR1", "ADDR2", "ADDR3", "ADDR4", "CITY", "STATE",
+                    "COUNTRY", "POSTAL", "CONTACT", "PHONE", "FAX", "TRANSIT", "INACTIVE", "INACTDATE", "IDACCT",
+                    "BKACCT", "IDACCTERR", "LSTMNTND"]
+            },
+        },
+
         CS: {
+            BankEntry: {
+                viewID: "BK0450",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["ENTRYNBR"],
+                displayFieldNames: ["ENTRYNBR", "REFERENCE", "BANK", "TOTSRCEGRO", "TOTFUNCGRO", "STATUS", "POSTDATE", "TRANSTYPE"]
+            },
+
             CurrencyCodes: {
                 viewID: "CS0003",
                 viewOrder: 0,
 				parentValAsInitKey: true,
                 returnFieldNames: ["CURID", "CURNAME"],
-                displayFieldNames: ["CURID", "CURNAME", "SYMBOL"],
+                displayFieldNames: ["CURID", "CURNAME", "SYMBOL"]
             },
 
             FiscalCalendars: {
@@ -195,6 +215,91 @@
             }
         },
 
+        OE: {
+            OrderEntry: {
+                viewID: "OE0520",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["ORDNUMBER"],
+                displayFieldNames: ["ORDNUMBER", "DESC", "ORDDATE", "TYPE", "CUSTOMER", "BILNAME", "PONUMBER", "REFERENCE",
+                    "EXPDATE", "QUONUMBER", "QTEXPDATE", "ONHOLD", "ORDERSOURC", "PRINTSTAT", "COMPLETE",
+                    "BILADDR1", "BILADDR2", "BILADDR3", "BILADDR4", "BILCITY", "BILSTATE", "BILZIP",
+                    "BILCOUNTRY", "BILPHONE", "BILFAX", "BILCONTACT", "SHPNAME", "SHPADDR1", "SHPADDR2",
+                    "SHPADDR3", "SHPADDR4", "SHPCITY", "SHPSTATE", "SHPZIP", "SHPCOUNTRY", "SHPPHONE",
+                    "SHPFAX", "SHPCONTACT", "SHIPVIA", "ORDPAYMENT", "INVNETWTX", "SALES1NAME", "SALES2NAME",
+                    "SALES3NAME", "SALES4NAME", "SALES5NAME", "HASPREAUTH"]
+                //optionalFieldBindings: "PM0850,PM0500[1]"
+            }
+        },
+
+        PM: { // aka PJC
+            Contract: {
+                viewID: "PM0021",
+                viewOrder: 1,
+                returnFieldNames: ["FMTCONTNO"],
+                displayFieldNames: ["FMTCONTNO", "DESC", "CUSTOMER", "MANAGER", "STATUS", "STARTDATE", "CURENDDATE", "CLOSEDDATE"],
+                //optionalFieldBindings: "PM0850,PM0500[1]"
+            },
+            Project: {
+                viewID: "PM0022",
+                viewOrder: 2,
+                displayFieldNames: ["PROJECT", "DESC", "CUSTOMER", "IDACCTSET", "CUSTCCY", "MULTICUST", "PONUMBER", "PROJSTAT",
+                    "PROJTYPE", "REVREC", "BILLTYPE", "CLOSEBILL", "CLOSECOST", "STARTDATE", "CURENDDATE", "ORJENDDATE",
+                    "CLOSEDDATE", "CODETAXGRP"],
+                returnFieldNames: ["PROJECT"],
+                /*extra*/
+                filterTemplate: "CONTRACT = \"{0}\" ",
+                //optionalFieldBindings: "PM0851,PM0500[2]"
+            },
+            Category: {
+                viewID: "PM0039",
+                viewOrder: 2,
+                displayFieldNames: ["CATEGORY", "DESC", "COSTTYPE", "TYPE", "BILLTYPE", "OVERHD", "LABOR"],
+                returnFieldNames: ["CATEGORY"],
+                /*extra*/
+                filterTemplate: "CONTRACT = \"{0}\" AND PROJECT = \"{1}\" ",
+                //optionalFieldBindings: "PM0852,PM0500[3]"
+            },
+            Resource: {
+                viewID: "PM0121",
+                viewOrder: 3,
+                displayFieldNames: ["RESOURCE", "RESDESC"],
+                returnFieldNames: ["RESOURCE"],
+                /*extra*/
+                filterTemplate: "CONTRACT = \"{0}\" AND PROJECT = \"{1}\" AND CATEGORY = \"{2}\" "
+            },
+            Labor: {
+                viewID: "PM0002",
+                viewOrder: 0,
+                displayFieldNames: ["STAFFCODE", "NAME", "INACTIVE", "EARNCODE", "GROUP"],
+                returnFieldNames: ["STAFFCODE"]
+            },
+            Equipment: {
+                viewID: "PM0025",
+                viewOrder: 0,
+                displayFieldNames: ["EQUIPMENT", "DESC", "INACTIVE"],
+                returnFieldNames: ["EQUIPMENT"]
+            },
+            Subcontractor: {
+                viewID: "PM0026",
+                viewOrder: 0,
+                displayFieldNames: ["SUBCONT", "NAME", "DESC", "INACTIVE", "VENDORID"],
+                returnFieldNames: ["SUBCONT"]
+            },
+            Overhead: {
+                viewID: "PM0029",
+                viewOrder: 0,
+                displayFieldNames: ["OHCODE", "DESC", "INACTIVE"],
+                returnFieldNames: ["OHCODE"]
+            },
+            Miscellaneous: {
+                viewID: "PM0028",
+                viewOrder: 0,
+                displayFieldNames: ["MISCCODE", "DESC", "INACTIVE"],
+                returnFieldNames: ["MISCCODE"]
+            },
+        },
+
         PO: {
 
             CreditDebitNote: {
@@ -261,87 +366,7 @@
             },
         },
 
-        TX: {
-            TaxAuthorities: {
-                viewID: "TX0002",
-                viewOrder: 0,
-				parentValAsInitKey: true,
-                returnFieldNames: ["AUTHORITY"],
-                displayFieldNames: ["AUTHORITY", "DESC", "SCURN", "MAXTAX", "MINTAX", "TXBASE",
-                    "INCLUDABLE", "LIABILITY", "AUDITLEVEL", "RECOVERABL", "RATERECOV",
-                    "ACCTRECOV", "EXPSEPARTE", "ACCTEXP", "LASTMAINT"],
-            },
-        },
-
-        PM: { // aka PJC
-            Contract: {
-                viewID: "PM0021",
-                viewOrder: 1,
-                returnFieldNames: ["FMTCONTNO"],
-                displayFieldNames: ["FMTCONTNO", "DESC", "CUSTOMER", "MANAGER", "STATUS", "STARTDATE", "CURENDDATE", "CLOSEDDATE"],
-                //optionalFieldBindings: "PM0850,PM0500[1]"
-            },
-            Project: {
-                viewID: "PM0022",
-                viewOrder: 2,
-                displayFieldNames: ["PROJECT", "DESC", "CUSTOMER", "IDACCTSET", "CUSTCCY", "MULTICUST", "PONUMBER", "PROJSTAT",
-                                    "PROJTYPE", "REVREC", "BILLTYPE", "CLOSEBILL", "CLOSECOST", "STARTDATE", "CURENDDATE", "ORJENDDATE",
-                                    "CLOSEDDATE", "CODETAXGRP"],
-                returnFieldNames: ["PROJECT"],
-                /*extra*/
-                filterTemplate: "CONTRACT = \"{0}\" ",
-                //optionalFieldBindings: "PM0851,PM0500[2]"
-            },
-            Category: {
-                viewID: "PM0039",
-                viewOrder: 2,
-                displayFieldNames: ["CATEGORY", "DESC", "COSTTYPE", "TYPE", "BILLTYPE", "OVERHD", "LABOR"],
-                returnFieldNames: ["CATEGORY"],
-                /*extra*/
-                filterTemplate: "CONTRACT = \"{0}\" AND PROJECT = \"{1}\" ",
-                //optionalFieldBindings: "PM0852,PM0500[3]"
-            },
-            Resource: {
-                viewID: "PM0121",
-                viewOrder: 3,
-                displayFieldNames: ["RESOURCE", "RESDESC"],
-                returnFieldNames: ["RESOURCE"],
-                /*extra*/
-                filterTemplate: "CONTRACT = \"{0}\" AND PROJECT = \"{1}\" AND CATEGORY = \"{2}\" "
-            },
-            Labor: {
-                viewID: "PM0002",
-                viewOrder: 0,
-                displayFieldNames: ["STAFFCODE", "NAME", "INACTIVE", "EARNCODE", "GROUP"],
-                returnFieldNames: ["STAFFCODE"]
-            },
-            Equipment: {
-                viewID: "PM0025",
-                viewOrder: 0,
-                displayFieldNames: ["EQUIPMENT", "DESC", "INACTIVE"],
-                returnFieldNames: ["EQUIPMENT"]
-            },
-            Subcontractor: {
-                viewID: "PM0026",
-                viewOrder: 0,
-                displayFieldNames: ["SUBCONT", "NAME", "DESC", "INACTIVE", "VENDORID"],
-                returnFieldNames: ["SUBCONT"]
-            },
-            Overhead: {
-                viewID: "PM0029",
-                viewOrder: 0,
-                displayFieldNames: ["OHCODE", "DESC", "INACTIVE"],
-                returnFieldNames: ["OHCODE"]
-            },
-            Miscellaneous: {
-                viewID: "PM0028",
-                viewOrder: 0,
-                displayFieldNames: ["MISCCODE", "DESC", "INACTIVE"],
-                returnFieldNames: ["MISCCODE"]
-            },
-        },
-
-        PR: { //Payroll
+        PR: { // Payroll
             CAEmployeeTimecard: {
                 viewID: "CP0102",
                 viewOrder: 0,
@@ -371,6 +396,18 @@
                 returnFieldNames: ["EMPLOYEE", "FULLNAME"],
                 filterTemplate: "TCUSERID = \"{0}\" ",
                 hidePageNavigation: true
+            }
+        },
+
+        TX: {
+            TaxAuthorities: {
+                viewID: "TX0002",
+                viewOrder: 0,
+				parentValAsInitKey: true,
+                returnFieldNames: ["AUTHORITY"],
+                displayFieldNames: ["AUTHORITY", "DESC", "SCURN", "MAXTAX", "MINTAX", "TXBASE",
+                    "INCLUDABLE", "LIABILITY", "AUDITLEVEL", "RECOVERABL", "RATERECOV",
+                    "ACCTRECOV", "EXPSEPARTE", "ACCTEXP", "LASTMAINT"],
             }
         }
     };
