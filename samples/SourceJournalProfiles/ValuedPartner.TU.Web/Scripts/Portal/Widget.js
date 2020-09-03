@@ -290,7 +290,7 @@ function getNextAvailableSlotId()
 function setWidgetFrameSource(iframeId, src)
 {
     var $originalFrame = $('#' + iframeId);
-    var $newFrame = $("<iframe sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts' scrolling='no' class='iframeContainer'></iframe>");
+    var $newFrame = $("<iframe sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-downloads' scrolling='no' class='iframeContainer'></iframe>");
     $newFrame.attr('id', $originalFrame.attr('id'));
     $newFrame.attr('width', $originalFrame.attr('width'));
     $newFrame.attr('height', $originalFrame.attr('height'));
@@ -314,7 +314,7 @@ function setWidgetFrameSource(iframeId, src)
 function setConfigFrameSource(iframeId, src)
 {
     var $originalFrame = $('#' + iframeId);
-    var $newFrame = $("<iframe sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts' scrolling='no'></iframe>");
+    var $newFrame = $("<iframe sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-downloads' scrolling='no'></iframe>");
     $newFrame.attr('id', $originalFrame.attr('id'));
     $newFrame.attr('width', $originalFrame.attr('width'));
     $newFrame.attr('height', $originalFrame.attr('height'));

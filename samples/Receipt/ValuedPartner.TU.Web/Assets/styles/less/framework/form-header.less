@@ -59,6 +59,7 @@
 .options-menu { 
 	list-style: none;
 	margin: 0;
+  font-size: 13px;
 
 	> li { 
   	position: relative;  
@@ -87,7 +88,7 @@
 }
 
 .options-menu > li > a { 
-	padding: 6px 30px 5px 20px;  
+	padding: 6px 30px 5px 10px;  
 	text-decoration: none;  
 	display: inline-block;  
 	color: @sage-dark-gray;  
@@ -147,9 +148,10 @@
     width: 100%;
     background: none;
     border: none;
+    font-size: 13px;
 
     &:hover {
-      background-color: #e8effe;
+      background-color: @btn-link-hover-color;
       cursor: pointer;
     }
 
@@ -161,9 +163,68 @@
   }
 
 	a:hover { 
-		background-color: #e8effe;
+		background-color: @btn-link-hover-color;
     text-decoration: none;
 	}
+
+  .menu-with-submenu {
+    position: relative;
+
+    &:after {
+      content: "";
+      width: 0; 
+      height: 0; 
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-right: 5px solid @brand-primary;
+      position: absolute;
+      right: 10px;
+      top: 9px;
+    }
+
+    .sub-menu {
+      opacity: 0;
+      min-width: 140px;
+      right: 100px;
+      top: 0;
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+
+      >li {
+
+        &.menu-active {
+          position: relative;
+
+          &:before {
+            content: "";
+            border: 1px solid;
+            border-width: 0 3px 3px 0;
+            height: 11px;
+            left: 10px;
+            position: absolute;
+            top: 6px;
+            transform: rotate(45deg);
+            width: 7px;
+            border-color: @brand-primary;
+          }
+        }
+
+        >a {
+          padding-left: 28px;
+        }
+      }
+    }
+
+    &:hover {
+
+      .sub-menu {
+        opacity: 1;
+        right: 170px;
+      }
+    }
+  }
 }
 
 .flag-required {
@@ -176,8 +237,9 @@
   .req-option:before {
     content: "*";
     font-family: Calibri,Arial;
-    color: #41a940;
+    color: @brand-primary;
     margin-right: 3px;
+    font-weight: bold;
   }
 
   label.required:after {
@@ -206,7 +268,7 @@
     margin:0 auto auto -4px; 
 
     &:hover { 
-      background-color: #e8effe;
+      background-color: @btn-link-hover-color;
     }
 
     &.active { 
