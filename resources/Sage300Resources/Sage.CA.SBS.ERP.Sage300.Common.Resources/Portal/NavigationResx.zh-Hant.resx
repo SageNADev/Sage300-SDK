@@ -1607,4 +1607,24 @@
     <value>從資料庫設定主題顏色</value>
     <comment>Settings Menu</comment>
   </data>
+  <data name="Large" xml:space="preserve">
+    <value>大</value>
+    <comment>Form Size Menu</comment>
+  </data>
+  <data name="Medium" xml:space="preserve">
+    <value>中</value>
+    <comment>Form Size Menu</comment>
+  </data>
+  <data name="Small" xml:space="preserve">
+    <value>小</value>
+    <comment>Form Size Menu</comment>
+  </data>
+  <data name="TextSize" xml:space="preserve">
+    <value>字型大小</value>
+    <comment>Form Size Menu</comment>
+  </data>
+  <data name="FormSizeResetConfirmation" xml:space="preserve">
+    <value />
+    <comment>Setting Menu Form Size</comment>
+  </data>
 </root>

@@ -322,6 +322,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Less Estimated Tax Withheld.
+        /// </summary>
+        public static string LessEstTaxWithheld {
+            get {
+                return ResourceManager.GetString("LessEstTaxWithheld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Less Prepayment:.
         /// </summary>
         public static string LessPrepaymentC {

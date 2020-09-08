@@ -236,12 +236,12 @@ glIntegrationUI = {
             // set G/L TransactionDetail Dirty
             glIntegrationUtils.setGLReferenceIntegrationDirty();
         });
-        $("#fromSegmentList").delegate("div", "dblclick", function (e) {
+        $("#fromSegmentList").on("dblclick", "div", function (e) {
             glIntegrationUtils.moveSegmentItem(glIntegrationUI.fromSegmentList, glIntegrationUI.toSegmentList, true);
             // set G/L TransactionDetail Dirty
             glIntegrationUtils.setGLReferenceIntegrationDirty();
         });
-        $("#toSegmentList").delegate("div", "dblclick", function (e) {
+        $("#toSegmentList").on("dblclick", "div", function (e) {
             glIntegrationUtils.moveSegmentItem(glIntegrationUI.toSegmentList, glIntegrationUI.fromSegmentList, false);
             // set G/L TransactionDetail Dirty
             glIntegrationUtils.setGLReferenceIntegrationDirty();

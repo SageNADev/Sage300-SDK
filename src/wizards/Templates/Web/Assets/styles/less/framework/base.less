@@ -3257,7 +3257,7 @@ textarea,
   }
 
   .seperator,
-  .seperator[disabled=True] {
+  .seperator[disabled] {
     width: 10px; 
     clear: none; 
     border-left: 0; 
@@ -4081,6 +4081,49 @@ textarea,
   width: 40px;
   height: 40px;
   display: block;
+}
+
+.spinner {
+  position: fixed; 
+  display: none; 
+  text-align: center; 
+  z-index: 9999;
+  left: 50%;
+  margin-top: 100px;
+
+  .bounce {
+    animation: bouncedelay 1s infinite ease-in-out both;
+    background-color: @sage-blue;
+    display: inline-block;
+    height: 8px;
+    margin-right: 6px;
+    width: 8px;
+
+    &.bounce1 {
+      animation-delay: 0s;
+    }
+
+    &.bounce2 {
+      animation-delay: 0.2s;
+    }
+
+    &.bounce3 {
+      animation-delay: 0.4s;
+      margin-right: 0;
+    }
+  }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /*--------------------------------- Success pop-up styles ---------------------------------*/

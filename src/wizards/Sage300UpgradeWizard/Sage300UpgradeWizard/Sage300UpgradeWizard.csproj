@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.9.23\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props" Condition="Exists('..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.9.23\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props')" />
+  <Import Project="..\Sage300UpgradeWizardPackage\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.3.0.0\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props" Condition="Exists('..\Sage300UpgradeWizardPackage\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.3.0.0\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
@@ -17,7 +17,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sage.CA.SBS.ERP.Sage300.UpgradeWizard</RootNamespace>
     <AssemblyName>Sage.CA.SBS.ERP.Sage300.UpgradeWizard</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
@@ -95,6 +95,7 @@
     <Reference Include="Microsoft.Build" />
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.VisualStudio.Shell.15.0, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Threading, Version=15.8.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression.FileSystem" />
@@ -130,6 +131,7 @@
     </Compile>
     <Compile Include="Utilities\FileUtilities.cs" />
     <Compile Include="Utilities\MenuManager.cs" />
+    <Compile Include="Utilities\SolutionBackupManager.cs" />
     <Compile Include="WizardStep.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -140,7 +142,9 @@
       <DependentUpon>Upgrade.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ai.snk" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -179,11 +183,9 @@
     <Content Include="content\ReleaseAllSyncAccpacLibs.txt" />
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
     <Content Include="content\ReleaseAllUpgraded.txt" />
-    <Content Include="content\ReleaseSpecificUpdateCheckboxes.txt" />
+    <Content Include="content\ReleaseSpecificUnifyDisabled.txt" />
     <Content Include="content\ReleaseSpecificUpdateConsolidateEnumerations.txt" />
-    <Content Include="content\ReleaseSpecificUpdateNewtonsoftPackage.txt" />
     <Content Include="content\ReleaseSpecificUpdateTargetedDotNetFrameworkVersion.txt" />
-    <Content Include="content\ReleaseSpecificUpdateThemeColor.txt" />
     <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\Sage_All.ico" />
@@ -196,23 +198,16 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\analyzers\cs\Microsoft.VisualStudio.SDK.Analyzers.dll" />
-    <Analyzer Include="..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Threading.Analyzers.16.0.102\analyzers\cs\Microsoft.VisualStudio.Threading.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Threading.Analyzers.16.0.102\analyzers\cs\Microsoft.VisualStudio.Threading.Analyzers.dll" />
+    <Analyzer Include="..\Sage300UpgradeWizardPackage\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.3.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.BannedApiAnalyzers.dll" />
+    <Analyzer Include="..\Sage300UpgradeWizardPackage\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.3.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.BannedApiAnalyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.9.23\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.9.23\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props'))" />
-    <Error Condition="!Exists('..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.9.23\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.9.23\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets'))" />
-    <Error Condition="!Exists('..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Threading.Analyzers.16.0.102\build\Microsoft.VisualStudio.Threading.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Threading.Analyzers.16.0.102\build\Microsoft.VisualStudio.Threading.Analyzers.targets'))" />
-    <Error Condition="!Exists('..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\build\Microsoft.VisualStudio.SDK.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\build\Microsoft.VisualStudio.SDK.Analyzers.targets'))" />
+    <Error Condition="!Exists('..\Sage300UpgradeWizardPackage\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.3.0.0\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Sage300UpgradeWizardPackage\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.3.0.0\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props'))" />
   </Target>
-  <Import Project="..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.9.23\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets" Condition="Exists('..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.9.23\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets')" />
-  <Import Project="..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Threading.Analyzers.16.0.102\build\Microsoft.VisualStudio.Threading.Analyzers.targets" Condition="Exists('..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.Threading.Analyzers.16.0.102\build\Microsoft.VisualStudio.Threading.Analyzers.targets')" />
-  <Import Project="..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\build\Microsoft.VisualStudio.SDK.Analyzers.targets" Condition="Exists('..\Sage300UpgradeWizardPackage\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\build\Microsoft.VisualStudio.SDK.Analyzers.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

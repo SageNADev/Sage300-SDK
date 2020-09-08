@@ -1,6 +1,6 @@
 @*
   The MIT License (MIT) 
-  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+  Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
  
   Permission is hereby granted, free of charge, to any person obtaining a copy of 
   this software and associated documentation files (the "Software"), to deal in 
@@ -40,7 +40,7 @@
         </div>
         <div class="input-group">
             @Html.SageLabel("AccountsTab_TxLiabilityAcctDesc", TaxAuthoritiesResx.TaxLiabilityAcctDesc)
-            @Html.KoSageTextBoxFor(m => m.LiabilityAccountDescription, new { @sagevalue = "LiabilityAccountDescription", @valueUpdate = "'input'" }, new { @id = "txtTaxLiabilityAccountdesc", @disabled = "true", @class = "large" })
+            @Html.KoSageTextBoxFor(m => m.LiabilityAccountDescription, new { @sagevalue = "LiabilityAccountDescription", @valueUpdate = "'input'" }, new { @id = "txtTaxLiabilityAccountdesc", @disabled = "disabled", @class = "large" })
         </div>
     </div>
     <div class="form-group">
@@ -60,11 +60,11 @@
         </div>
         <div class="input-group">
             @Html.SageLabel("AccountsTab_RecoTxAcctDesc", TaxAuthoritiesResx.RecoverableTaxAcctDesc)
-            @Html.KoSageTextBox("txtRecoTxAcctDesc", new { @sagevalue = "RecoverableTaxAccountDescription", @valueUpdate = "'input'" }, new { @class = "large", @disabled = "true" })
+            @Html.KoSageTextBox("txtRecoTxAcctDesc", new { @sagevalue = "RecoverableTaxAccountDescription", @valueUpdate = "'input'" }, new { @class = "large", @disabled = "disabled" })
         </div>
         <div class="numeric-group">
             @Html.SageLabelFor(m => m.Data.RecoverableRate)
-            @Html.KoSageTextBoxFor(m => m.Data.RecoverableRate, new { @sagevalue = "Data.RecoverableRate", @valueUpdate = "'input'" }, new { @id = "txtRecoRate", @class = "default align-right", @disabled = "true", @maxlength = 9 })
+            @Html.KoSageTextBoxFor(m => m.Data.RecoverableRate, new { @sagevalue = "Data.RecoverableRate", @valueUpdate = "'input'" }, new { @id = "txtRecoRate", @class = "default align-right", @disabled = "disabled", @maxlength = 9 })
         </div>
     </div>
     <div class="clear-fix"></div>
@@ -85,7 +85,7 @@
         </div>
         <div class="input-group">
             @Html.SageLabel("AccountsTab_ExpAcctDesc", TaxAuthoritiesResx.ExpenseAcctDesc)
-            @Html.KoSageTextBox("txtExpAcctDesc", new { @sagevalue = "ExpenseAccountDescription", @valueUpdate = "'input'" }, new { @class = "large", @disabled = "true" })
+            @Html.KoSageTextBox("txtExpAcctDesc", new { @sagevalue = "ExpenseAccountDescription", @valueUpdate = "'input'" }, new { @class = "large", @disabled = "disabled" })
         </div>
     </div>
                                                                          

@@ -876,11 +876,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             list.ForEach(i =>
             {
-                if (i == GlobalConstants.LanguageExtensions.English) _includeEnglish = true;
-                if (i == GlobalConstants.LanguageExtensions.French) _includeFrench = true;
-                if (i == GlobalConstants.LanguageExtensions.Spanish) _includeSpanish = true;
-                if (i == GlobalConstants.LanguageExtensions.ChineseSimplified) _includeChineseSimplified = true;
-                if (i == GlobalConstants.LanguageExtensions.ChineseTraditional) _includeChineseTraditional = true;
+                var temp = i.Trim().ToLowerInvariant();
+                if (temp == GlobalConstants.LanguageExtensions.English.ToLowerInvariant()) _includeEnglish = true;
+                if (temp == GlobalConstants.LanguageExtensions.French.ToLowerInvariant()) _includeFrench = true;
+                if (temp == GlobalConstants.LanguageExtensions.Spanish.ToLowerInvariant()) _includeSpanish = true;
+                if (temp == GlobalConstants.LanguageExtensions.ChineseSimplified.ToLowerInvariant()) _includeChineseSimplified = true;
+                if (temp == GlobalConstants.LanguageExtensions.ChineseTraditional.ToLowerInvariant()) _includeChineseTraditional = true;
             });
         }
 

@@ -1,7 +1,11 @@
-﻿/* Copyright (c) 2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2020 Sage Software, Inc.  All rights reserved. */
 
 using CrystalDecisions.CrystalReports.Engine;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
 using System;
+using ACCPAC.Advantage;
+using Sage.CA.SBS.ERP.Sage300.Core.Logging;
 
 namespace $companynamespace$.$applicationid$.Web
 {
@@ -16,14 +20,20 @@ namespace $companynamespace$.$applicationid$.Web
         /// Private Crystal report document
         /// </summary>
         public ReportDocument CrystalReportDocument { get; private set; }
+        private IBusinessEntitySession Session { get; set; }
+        private ACCPAC.Advantage.Report AccpacReport { get; set; }
 
         /// <summary>
         /// Constructor with Crystal report document
         /// </summary>
         /// <param name="rp"></param>
-        public SageWebReportDocument(ReportDocument rp)
+        /// <param name="session"></param>
+        /// <param name="accpacReport"></param>
+        public SageWebReportDocument(ReportDocument rp, IBusinessEntitySession session, ACCPAC.Advantage.Report accpacReport)
         {
             CrystalReportDocument = rp;
+            Session = session;
+            AccpacReport = accpacReport;
         }
 
         #region IDisposable Support
@@ -41,6 +51,8 @@ namespace $companynamespace$.$applicationid$.Web
                 {
                     CrystalReportDocument?.Close();
                     CrystalReportDocument?.Dispose();
+                    AccpacReport.Dispose();
+                    Session?.Dispose();
                 }
 
                 disposedValue = true;

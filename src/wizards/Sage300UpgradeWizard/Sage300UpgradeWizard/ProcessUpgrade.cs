@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -19,6 +19,7 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
+using EnvDTE;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities;
 using System;
@@ -34,7 +35,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 	#region Private Variables
 		/// <summary> Settings from UI </summary>
 		private Settings _settings;
-		private string _backupFolder = String.Empty;
     #endregion
 
     #region Public Delegates
@@ -56,10 +56,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 	#endregion
 
 	#region Public Methods
-		/// <summary> Start the generation process </summary>
+		/// <summary> Start the solution upgrade process </summary>
 		/// <param name="settings">Settings for processing</param>
 		public void Process(Settings settings)
 		{
+            const int WORKINGSTEPS = 6;
+
             LogSpacerLine('-');
             Log(Resources.BeginUpgradeProcess);
             LogSpacerLine();
@@ -67,16 +69,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Save settings for local usage
             _settings = settings;
 
-			// Track whether or not the AccpacDotNetVersion.props file originally existed in the Solution folder
+            if (Constants.Common.EnableSolutionBackup)
+            {
+                DoOptionalSolutionBackup(backupSelected: _settings.WizardSteps[0].CheckboxValue, 
+                                         solutionFolder: _settings.DestinationSolutionFolder);
+            }
+
+            // Track whether or not the AccpacDotNetVersion.props file originally existed in the Solution folder
             bool AccpacPropsFileOriginallyInSolutionfolder = false;
-
-            //Utilities.InitSettings(_settings);
-            //var commonSteps = new CommonReleaseUpgradeSteps(_settings);
-            //var customSteps = new CustomReleaseUpgradeSteps(_settings);
-
-            #region Backup Solution - Currently Disabled
-            //_backupFolder = BackupSolution();
-            #endregion
 
             // Does the AccpacDotNetVersion.props file exist in the Solution folder?
             AccpacPropsFileOriginallyInSolutionfolder = PropsFileManager.IsAccpacDotNetVersionPropsLocatedInSolutionFolder(_settings);
@@ -87,54 +87,28 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 				var title = _settings.WizardSteps[index].Title;
 				LaunchProcessingEvent(title);
 
-				// Step 0 is Main and Last two steps are Upgrade and Upgraded
-				switch (index)
+                // Insert a spacer line for each case statement below
+                if (index >= 1 && index <= WORKINGSTEPS) { LogSpacerLine('-'); }
+
+                // Step 0 is Main and Last two steps are Upgrade and Upgraded
+                switch (index)
 				{
-                    #region Common Upgrade Steps
-                    case 1:
-                        LogSpacerLine('-');
-                        SyncKendoFiles(title);
-                        break;
-
-                    case 2:
-                        LogSpacerLine('-');
-                        SyncWebFiles(title);
-                        break;
-
-                    #endregion
-
-                    #region Accpac .NET library update - Comment out if no update required
-
-                    //case 3:
-                    //    LogSpacerLine('-');
-                    //    SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder);
-                    //    break;
-
-                    #endregion
-
-                    #region Release Specific Upgrade Steps
+                    //
+                    // Developer Note:
+                    //   Ensure the constant WORKINGSTEPS, defined at start of function,  has been 
+                    //   updated if steps are added or removed from the following switch statement.
+                    //
+                    case 1: if (Constants.PerRelease.SyncKendoFiles) { SyncKendoFiles(title); } break;
+                    case 2: if (Constants.PerRelease.SyncWebFiles) { SyncWebFiles(title); } break;
+                    case 3: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
+                    case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
+                    case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
+                    case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
+                    case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
 
 #if ENABLE_TK_244885
-                    case 3:
-                        ConsolidateEnumerations(title);
-                        break;
+                    case X: ConsolidateEnumerations(title); break;
 #endif
-
-                    case 3:
-                        LogSpacerLine('-');
-                        UpdateThemeColor(title);
-                        break;
-
-                    case 4:
-                        LogSpacerLine('-');
-                        UpdateCheckboxes(title);
-                        break;
-
-                    case 5:
-                        LogSpacerLine('-');
-                        UpdateNewtonsoftPackage(title);
-                        break;
-                        #endregion
                 }
             }
 
@@ -146,6 +120,36 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         #endregion
 
         #region Private methods
+
+        /// <summary>
+        /// Do an optional backup of the Visual Studio solution
+        /// </summary>
+        /// <param name="backupSelected">Boolean flag representing whether or not the backup should be executed</param>
+        /// <param name="solutionFolder">Fully-qualified string representing the solution path</param>
+        private void DoOptionalSolutionBackup(bool backupSelected, string solutionFolder)
+        {
+            if (backupSelected)
+            {
+                LaunchProcessingEvent(Resources.BackupStarting);
+
+                LogSpacerLine();
+                LogSpacerLine('-');
+                LogEventStart(Resources.BackupStarting);
+
+                // Do the backup
+                var backupFolder = SolutionBackupManager.BackupSolution(solutionFolder);
+
+                // Log the results
+                if (Directory.Exists(backupFolder))
+                {
+                    Log(string.Format(Resources.Template_SolutionBackupCompleted, backupFolder));
+
+                    LaunchProcessingEvent(Resources.BackupCompleted);
+
+                    LogEventEnd(Resources.BackupCompleted);
+                }
+            }
+        }
 
         /// <summary> Synchronization of Kendo files </summary>
         /// <param name="title">Title of step being processed </param>
@@ -180,7 +184,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LogEventStart(title);
 
             // Do the work :)
-            DirectoryCopy(_settings.SourceFolder, _settings.DestinationWebFolder, ignoreDestinationFolder: false);
+            FileUtilities.DirectoryCopy(_settings.SourceFolder, _settings.DestinationWebFolder, ignoreDestinationFolder: false);
             Log($"{Resources.CopiedAllFilesFrom} '{_settings.SourceFolder}' {Resources.To} '{_settings.DestinationWebFolder}'.");
 
             // Remove the files that are not actually part of the 'Web' bundle.
@@ -193,58 +197,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LogEventEnd(title);
             Log("");
         }
-
-        /// <summary>
-        /// Backup the solution
-        /// Note: Not currently used.
-        /// </summary>
-        private string BackupSolution()
-        {
-            LogEventStart($"Backing up solution...");
-            LaunchProcessingEvent($"Backing up solution...");
-
-            // Create a backup folder if it doesn't already exist.
-            var solutionFolder = _settings.DestinationSolutionFolder;
-            var backupFolder = CreateBackupFolder(solutionFolder);
-
-            // Do the backup (ensuring that we don't backup the backup folder 
-            // because it lives within the solution folder itself.
-            DirectoryCopy(solutionFolder, backupFolder, ignoreDestinationFolder: true);
-
-            LogEventEnd($"Backup complete.");
-            Log("");
-
-            return backupFolder;
-        }
-
-        /// <summary>
-        /// Create a new folder for the backup
-        /// </summary>
-        /// <param name="currentFolder">This is the folder in which we wish to create the backup folder</param>
-        /// <returns>The string representing the fully-qualified path to the backup folder</returns>
-        private string CreateBackupFolder(string currentFolder)
-        {
-            string BackupFolderName = CreateBackupFolderName();
-            var backupFolder = Path.Combine(currentFolder, BackupFolderName);
-            if (!Directory.Exists(backupFolder))
-            {
-                new DirectoryInfo(backupFolder).Create();
-            }
-            return backupFolder;
-        }
-
-        /// <summary>
-        /// Create a name for the backup folder based on the current date and time
-        /// </summary>
-        /// <returns>A string representing the name of the backup folder</returns>
-        private string CreateBackupFolderName()
-        {
-            var dateStamp = DateTime.Now.ToString("yyyyMMdd-HHmmss");
-            return $"Backup-{dateStamp}";
-        }
-
-        /// <summary> Upgrade project reference to use new verion Accpac.Net </summary>
-        /// <param name="title">Title of step being processed </param>
 
         /// <summary> Upgrade project reference to use new verion Accpac.Net </summary>
         /// <param name="title">The title of this step</param>
@@ -310,7 +262,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Always copy the new props file to the solution root
             PropsFileManager.CopyAccpacPropsFileToSolutionFolder(_settings);
 
-            msg = string.Format(Resources.UpgradeLibrary,
+            msg = string.Format(Resources.Template_UpgradeLibrary,
                                 Constants.PerRelease.FromAccpacNumber,
                                 Constants.PerRelease.ToAccpacNumber);
             Log(msg);
@@ -321,6 +273,75 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
+        /// Unify html 'disabled' attribute
+        /// </summary>
+        /// <param name="title">The title of this step</param>
+        private void UpdateUnifyDisabled(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.UpdatesToUnifyDisabledAreAManualStep;
+            Log(msg);
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Add the new 'BinInclude.txt' file to the Web project
+        /// </summary>
+        /// <param name="title">The title of this step</param>
+        private void AddBinIncludeFile(string title)
+        {
+            LogEventStart(title);
+
+            // Check for the existence of BinInclude.txt file
+            // If it exists, then just leave it as is.
+            var binInclude = Path.Combine(_settings.DestinationWebFolder, Constants.Common.BinIncludeFile);
+            if (!File.Exists(binInclude))
+            {
+                // File doesn't yet exist. Let's create an empty one and add it to the Web project
+                FileUtilities.CreateEmptyFile(binInclude);
+
+                // Add this file to the project definition (if it was actually created successfully)
+                if (File.Exists(binInclude))
+                {
+                    var solution = _settings.Solution;
+                    var projects = solution.Projects;
+                    foreach (Project project in projects)
+                    {
+                        var fullName = project.FullName;
+                        if (IsWebProject(fullName))
+                        {
+                            project.ProjectItems.AddFromFile(binInclude);
+
+                            // No need to iterate the rest of the projects
+                            // We've found the Web project already.
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Check the full name of a Visual Studio project for the existence 
+        /// of the Web project search pattern
+        /// </summary>
+        /// <param name="projectPath">The fully-qualified path to the Visual Studio project</param>
+        /// <returns>true = path contains the search pattern | false = path does not contain the search pattern</returns>
+        private bool IsWebProject(string projectPath)
+        {
+            return projectPath.ToLowerInvariant().Contains(Constants.Common.WebProjectNamePattern);
+        }
+
+        /// <summary>
         /// Remove an existing AccpacDotNetVersion.props file from the
         /// solution folder if it exists.
         /// </summary>
@@ -328,7 +349,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         {
             var oldPropsFile = Path.Combine(_settings.DestinationSolutionFolder, 
                                             Constants.Common.AccpacPropsFile);
-            RemoveExistingFile(oldPropsFile);
+            FileUtilities.RemoveExistingFile(oldPropsFile);
         }
 
         /// <summary>
@@ -339,38 +360,39 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         {
             var oldPropsFile = Path.Combine(_settings.DestinationWebFolder,
                                             Constants.Common.AccpacPropsFile);
-            RemoveExistingFile(oldPropsFile);
+            //RemoveExistingFile(oldPropsFile);
+            FileUtilities.RemoveExistingFile(oldPropsFile);
         }
 
         /// <summary>
-        /// Remove an existing file
+        /// Update the targeted version of the .NET Framework for
+        /// all solution projects
         /// </summary>
-        /// <param name="filePath">The file path specification</param>
-        private void RemoveExistingFile(string filePath)
+        /// <param name="title">Title of step being processed </param>
+        private void UpdateTargetedDotNetFrameworkVersion(string title)
         {
-            if (File.Exists(filePath))
-            {
-                Log($"{Resources.File} '{filePath}' {Resources.Exists}.");
-                File.Delete(filePath);
-                Log($"{Resources.File} '{filePath}' {Resources.Deleted}.");
-            }
-            else
-            {
-                Log($"{Resources.File} '{filePath}' {Resources.DoesNotExist}.");
-            }
-        }
-
-        /// <summary>
-        /// Theme color changes
-        /// Update kendo window open behavior
-        /// </summary>
-        /// <param name="title"></param>
-        private void UpdateThemeColor(string title)
-        {
+            // Log start of step
             LogEventStart(title);
 
-            // Nothing to do. This is a manual partner step :)
-            var msg = Resources.UpdatesToSupportThemeColorAreAManualStep;
+            try
+            {
+                var projects = _settings.Solution.Projects;
+                var dotNetTargetName = Constants.Common.TargetFrameworkMoniker;
+                foreach (Project project in projects)
+                {
+                    var projectName = project.Name;
+                    if (projectName != Constants.Common.NugetName)
+                    {
+                        Log($"{Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Attempting to upgrading {project.Name} .NET target to {dotNetTargetName}...");
+                        project.Properties.Item("TargetFrameworkMoniker").Value = dotNetTargetName;
+                        Log($"{Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Upgrade successful.");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Log($"{Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion} : Exception caught: {e.Message}");
+            }
 
             // Log end of step
             LogEventEnd(title);
@@ -378,31 +400,39 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
-        /// Checkboxes visual update
+        /// Remove instances of previous jQuery libraries from project folders and any references in the .csproj files
         /// </summary>
-        /// <param name="title"></param>
-        private void UpdateCheckboxes(string title)
+        /// <param name="title">Title of step being processed </param>
+        private void RemovePreviousJqueryLibraries(string title)
         {
+            // Log start of step
             LogEventStart(title);
 
-            // Nothing to do. This is a manual partner step :)
-            var msg = Resources.UpdatesToSupportCheckboxesAreAManualStep;
+            var webScriptsFolder = Path.Combine(_settings.DestinationWebFolder, Constants.Common.ScriptsFolderName);
 
-            // Log end of step
-            LogEventEnd(title);
-            Log("");
-        }
+            var filesToDelete = new List<string>
+            {
+                // jQuery Core
+                "jquery-1.11.3.js",
+                "jquery-1.11.3.min.js",
+                "jquery-1.11.3.intellisense.js",
+                "jquery-1.11.3.min.map",
 
-        /// <summary>
-        /// Update Newtonsoft.Json package
-        /// </summary>
-        /// <param name="title"></param>
-        private void UpdateNewtonsoftPackage(string title)
-        {
-            LogEventStart(title);
+                // jQuery UI
+                "jquery-ui-1.11.4.js",
+                "jquery-ui-1.11.4.min.js",
 
-            // Nothing to do. This is a manual partner step :)
-            var msg = Resources.UpdatesToSupportNewtonsoftUpdateAreAManualStep;
+                // jQuery Migrate
+                "jquery-migrate-1.2.1.js",
+                "jquery-migrate-1.2.1.min.js",
+            };
+
+            foreach (var filename in filesToDelete)
+            {
+                var filePath = Path.Combine(webScriptsFolder, filename);
+                FileUtilities.RemoveExistingFile(filePath);
+                Log($"Removed {filePath}");
+            }
 
             // Log end of step
             LogEventEnd(title);
@@ -438,58 +468,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             LaunchLogEvent("");
         }
 #endif
-
-        /// <summary> Copy folder and files </summary>
-        /// <param name="sourceDirectoryName">Source directory name</param>
-        /// <param name="destinationDirectoryName">Destination directory name</param>
-        private void DirectoryCopy(string sourceDirectoryName, string destinationDirectoryName, bool ignoreDestinationFolder = true)
-        {
-            var dir = new DirectoryInfo(sourceDirectoryName);
-            var dirs = dir.GetDirectories();
-
-            // Create directory if not exists
-            if (!Directory.Exists(destinationDirectoryName))
-            {
-                Directory.CreateDirectory(destinationDirectoryName);
-            }
-
-            // Iterate files
-            foreach (var file in dir.GetFiles())
-            {
-                try
-                {
-                    var filePath = Path.Combine(destinationDirectoryName, file.Name);
-                    file.CopyTo(filePath, true);
-
-                    // Log detail
-                    Log($"{Resources.AddReplaceFile} {filePath}");
-                }
-                catch (IOException e)
-                {
-                    // Likely just a locked file.
-                    // Just log it and move on.
-                    Log($"{Resources.ExceptionThrownPossibleLockedFile} : {file.FullName.ToString()}");
-                    Log($"{e.Message}");
-                }
-            }
-
-            // For recursion
-            foreach (DirectoryInfo subdir in dirs)
-            {
-                var subdirectoryName = subdir.FullName;
-                if (ignoreDestinationFolder)
-                {
-                    if (subdirectoryName != destinationDirectoryName)
-                    {
-                        DirectoryCopy(subdirectoryName, Path.Combine(destinationDirectoryName, subdir.Name));
-                    }
-                }
-                else
-                {
-                    DirectoryCopy(subdirectoryName, Path.Combine(destinationDirectoryName, subdir.Name));
-                }
-            }
-        }
 
         /// <summary> Update UI </summary>
         /// <param name="text">Step name</param>

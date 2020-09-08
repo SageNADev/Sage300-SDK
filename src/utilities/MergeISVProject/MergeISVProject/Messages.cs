@@ -83,11 +83,13 @@ namespace MergeISVProject
 			Msg_Application,
 			Msg_InnerException,
 			Msg_ApplicationRunComplete,
+            Msg_ApplicationRunCompleteWithErrors,
 			Msg_SimulatedDeploymentOnly,
 			Msg_LiveDeployment,
 			Msg_CheckingForRegistryKeys,
 			Msg_FilesFound,
 			Msg_ApplicationModeOption,
+            Msg_ExtraResourceLanguages
 		}
 	#endregion
 
@@ -149,12 +151,13 @@ namespace MergeISVProject
 		public static string Msg_Application => RM.GetString(IndexEnum.Msg_Application.ToString());
 		public static string Msg_InnerException => RM.GetString(IndexEnum.Msg_InnerException.ToString());
 		public static string Msg_ApplicationRunComplete => RM.GetString(IndexEnum.Msg_ApplicationRunComplete.ToString());
-		public static string Msg_SimulatedDeploymentOnly => RM.GetString(IndexEnum.Msg_SimulatedDeploymentOnly.ToString());
+        public static string Msg_ApplicationRunCompleteWithErrors => RM.GetString(IndexEnum.Msg_ApplicationRunCompleteWithErrors.ToString());
+        public static string Msg_SimulatedDeploymentOnly => RM.GetString(IndexEnum.Msg_SimulatedDeploymentOnly.ToString());
 		public static string Msg_LiveDeployment => RM.GetString(IndexEnum.Msg_LiveDeployment.ToString());
 		public static string Msg_CheckingForRegistryKeys => RM.GetString(IndexEnum.Msg_CheckingForRegistryKeys.ToString());
 		public static string Msg_FilesFound => RM.GetString(IndexEnum.Msg_FilesFound.ToString());
 		public static string Msg_ApplicationModeOption => RM.GetString(IndexEnum.Msg_ApplicationModeOption.ToString());
-
-		#endregion
-	}
+        public static string Msg_ExtraResourceLanguages => RM.GetString(IndexEnum.Msg_ExtraResourceLanguages.ToString());
+        #endregion
+    }
 }

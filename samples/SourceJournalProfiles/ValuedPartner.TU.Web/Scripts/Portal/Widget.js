@@ -290,7 +290,7 @@ function getNextAvailableSlotId()
 function setWidgetFrameSource(iframeId, src)
 {
     var $originalFrame = $('#' + iframeId);
-    var $newFrame = $("<iframe sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts' scrolling='no' class='iframeContainer'></iframe>");
+    var $newFrame = $("<iframe sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-downloads' scrolling='no' class='iframeContainer'></iframe>");
     $newFrame.attr('id', $originalFrame.attr('id'));
     $newFrame.attr('width', $originalFrame.attr('width'));
     $newFrame.attr('height', $originalFrame.attr('height'));
@@ -300,7 +300,7 @@ function setWidgetFrameSource(iframeId, src)
     $originalFrame.replaceWith($newFrame);
 
     $newFrame.addClass('widgetLoading');
-    $newFrame.load(function () {
+    $newFrame.on("load", function () {
         $newFrame.removeClass('widgetLoading');
     });
 
@@ -314,14 +314,14 @@ function setWidgetFrameSource(iframeId, src)
 function setConfigFrameSource(iframeId, src)
 {
     var $originalFrame = $('#' + iframeId);
-    var $newFrame = $("<iframe sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts' scrolling='no'></iframe>");
+    var $newFrame = $("<iframe sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-downloads' scrolling='no'></iframe>");
     $newFrame.attr('id', $originalFrame.attr('id'));
     $newFrame.attr('width', $originalFrame.attr('width'));
     $newFrame.attr('height', $originalFrame.attr('height'));
     $originalFrame.replaceWith($newFrame);
 
     $newFrame.addClass('widgetLoading');
-    $newFrame.load(function () {
+    $newFrame.on("load", function () {
         $newFrame.removeClass('widgetLoading');
     });
 
@@ -348,7 +348,7 @@ $(document).ready(function () {
         taskDockMenuBreadCrumbManager.setDefaultScreenId();
     });
 
-    widgetOrder = $.parseJSON(NavigableMenuDetail.WidgetOrders);
+    widgetOrder = JSON.parse(NavigableMenuDetail.WidgetOrders || "null"); // in case for empty string (will throw exception)
 
     loadWidgets(widgetOrder);
 
@@ -370,7 +370,7 @@ $(document).ready(function () {
             else
             {
                 $('#widgetMsgDiv').fadeIn().removeClass('hide');
-                $('#' + chkId).attr('checked', false);
+                $('#' + chkId).prop('checked', false);
                 $('#' + chkId).parent().removeClass('selected');
             }
         }

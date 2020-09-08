@@ -24,12 +24,14 @@
 using MergeISVProject.Constants;
 using MergeISVProject.CustomExceptions;
 using MergeISVProject.Interfaces;
-using Microsoft.Ajax.Utilities;
+//using Microsoft.Ajax.Utilities;
 using Microsoft.VisualBasic.FileIO;
 using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 #endregion
 
 namespace MergeISVProject
@@ -54,7 +56,7 @@ namespace MergeISVProject
 		#endregion
 
 		#region Private Variables
-		private readonly string[] Languages = { "es", "fr", "zh-Hans", "zh-Hant" };
+		private string[] Languages = { "es", "fr", "zh-Hans", "zh-Hant" };
 		private readonly ICommandLineOptions _Options = null;
 		private readonly ILogger _Logger = null;
 		private readonly FolderManager _FolderManager = null;
@@ -239,16 +241,51 @@ namespace MergeISVProject
 				};
 			}
 
-			CopyFilesBasedOnPatternList(_FolderManager.Originals.Bin, _FolderManager.Staging.Bin, inclusionPatterns);
+            // Add any extra files (defined within BinIncludes.txt)
+            inclusionPatterns = AddBinIncludeFiles(inclusionPatterns);
+
+            CopyFilesBasedOnPatternList(_FolderManager.Originals.Bin, _FolderManager.Staging.Bin, inclusionPatterns);
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
-		/// <summary>
-		/// Compile the Razor views and put into the 'Compiled' folder.
-		/// Move the compiled files back to the 'Staging' folder
-		/// </summary>
-		private void _Stage_CompileViewsAndMoveResultsToStagingFolder()
+        /// <summary>
+        /// Add any additional files to the inclusion list
+        /// Sourced from an external file (BinInclude.txt)
+        /// </summary>
+        /// <param name="existingList">The current inclusion list</param>
+        /// <returns>The extended inclusion list</returns>
+        private string[] AddBinIncludeFiles(IEnumerable<string> existingList)
+        {
+            _Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+
+            const string INCLUDE_FILENAME = @"\BinInclude.txt";
+
+            var results = new List<string>();
+
+            // Add the existing list to the eventual output list
+            results.AddRange(existingList);
+
+            // If the BinInclude.txt file exists and contains one or more files, add them to the output list
+            if (File.Exists(_FolderManager.Originals.Root + INCLUDE_FILENAME))
+            {
+                var isvInclude = File.ReadAllLines(@_FolderManager.Originals.Root + INCLUDE_FILENAME).ToList();
+                if (isvInclude?.Count > 0)
+                {
+                    results.AddRange(isvInclude);
+                }
+            }
+
+            _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+
+            return results.ToArray();
+        }
+
+        /// <summary>
+        /// Compile the Razor views and put into the 'Compiled' folder.
+        /// Move the compiled files back to the 'Staging' folder
+        /// </summary>
+        private void _Stage_CompileViewsAndMoveResultsToStagingFolder()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -261,20 +298,24 @@ namespace MergeISVProject
 					Arguments = $" -v / -p \"{_FolderManager.Staging.Root}\" -fixednames \"{_FolderManager.Compiled.Root}\""
 				}
 			};
-			p.Start();
+            _Logger.Log($"Starting Process {p.StartInfo.FileName}...");
+            p.Start();
 			p.WaitForExit();
+            _Logger.Log($"Process {p.StartInfo.FileName} completed.");
 
-			// Now, move the results of the compilation back to the Staging folder
+            // Now, move the results of the compilation back to the Staging folder
 
-			// Clear out the Staging/Bin folder
+            // Clear out the Staging/Bin folder
+            _Logger.Log("Clearing out Staging/Bin folder...");
 			var fileList = Directory.GetFiles(_FolderManager.Staging.Bin, "*.*");
 			foreach (var file in fileList)
 			{
 				FileSystem.DeleteFile(file);
 			}
 
-			// Copy compile/bin back to staging/bin
-			FileSystem.CopyDirectory(_FolderManager.Compiled.Bin, _FolderManager.Staging.Bin);
+            // Copy compile/bin back to staging/bin
+            _Logger.Log("Copying Compile/Bin back to Staging/Bin...");
+            FileSystem.CopyDirectory(_FolderManager.Compiled.Bin, _FolderManager.Staging.Bin);
 
 			// Delete non-vendor related files from staging/bin folder
 			string[] patternFilesToRemove = {
@@ -282,16 +323,19 @@ namespace MergeISVProject
 				"Sage.CA.SBS.ERP.*.dll",
 				"*.Web.Infrastructure.dll"
 			};
-			DeleteFilesFromFolderBasedOnPatternList(_FolderManager.Staging.Bin, patternFilesToRemove);
+            _Logger.Log("Deleting non-vendor related files from Staging/Bin folder...");
+            DeleteFilesFromFolderBasedOnPatternList(_FolderManager.Staging.Bin, patternFilesToRemove);
 
 
-			// Areas folder
-			// Clear out the Staging/Areas folder
-			Directory.Delete(_FolderManager.Staging.Areas, recursive: true);
+            // Areas folder
+            // Clear out the Staging/Areas folder
+            _Logger.Log("Clearing out the Staging/Areas folder...");
+            Directory.Delete(_FolderManager.Staging.Areas, recursive: true);
 			Directory.CreateDirectory(_FolderManager.Staging.Areas);
 
-			// Copy compile/areas back to staging/areas
-			FileSystem.CopyDirectory(_FolderManager.Compiled.Areas, _FolderManager.Staging.Areas);
+            // Copy compile/areas back to staging/areas
+            _Logger.Log("Copying compile/areas back to staging/areas...");
+            FileSystem.CopyDirectory(_FolderManager.Compiled.Areas, _FolderManager.Staging.Areas);
 
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
@@ -371,36 +415,93 @@ namespace MergeISVProject
 		/// </summary>
 		private void _Stage_ResourceSatelliteFiles() 
 		{
-			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
+            const int INDENTBY = 3;
+            var indent3 = new String(' ', INDENTBY);
+
+            _Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
 			var pathBinFrom = _FolderManager.Originals.Bin;
 			var pathWebBinTo = _FolderManager.Staging.Bin;
 			var pattern = $"*.{_Options.ModuleId}.*.dll";
 
+            AppendToLanguageList(ref Languages, _Options.ExtraResourceLanguages.OptionValue);
+
 			foreach (var language in Languages)
 			{
-				var fromFolder = Path.Combine(pathBinFrom, language);
+                _Logger.Log($" ");
+                _Logger.Log($"{indent3}Processing Language '{language}'");
+
+                var fromFolder = Path.Combine(pathBinFrom, language);
 				var toWebFolder = Path.Combine(pathWebBinTo, language);
 
-				foreach (var file in Directory.GetFiles(fromFolder, pattern))
-				{
-					var fileName = Path.GetFileName(file);
-					if (!string.IsNullOrEmpty(fileName))
-					{
-						// Ensure that the destination directory exists
-						Directory.CreateDirectory(toWebFolder);
-						var destinationFile = Path.Combine(toWebFolder, fileName);
-						CopyFile(testOnly: false, source: file, dest: destinationFile, overwrite: true);
-					}
-				}
-			}
+                _Logger.Log($"{indent3}Source Folder = '{fromFolder}'");
+                _Logger.Log($"{indent3}Target Web Folder = '{toWebFolder}'");
+
+                // If the source folder doesn't exist, then just continue
+                if (!Directory.Exists(fromFolder))
+                    continue;
+
+                foreach (var file in Directory.GetFiles(fromFolder, pattern))
+                {
+                    var fileName = Path.GetFileName(file);
+                    if (!string.IsNullOrEmpty(fileName))
+                    {
+                        // Ensure that the destination directory exists
+                        Directory.CreateDirectory(toWebFolder);
+                        var destinationFile = Path.Combine(toWebFolder, fileName);
+                        CopyFile(testOnly: false, source: file, dest: destinationFile, overwrite: true, createDestFolderIfNotExist: true, loggingIndent: INDENTBY);
+                    }
+                }
+            }
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
-		/// <summary>
-		/// Copy all staging files to the final staging folder(s)
-		/// </summary>
-		private void _Stage_CopyAllToFinal()
+        /// <summary>
+        /// Add any user-specified languages to the langauge list
+        /// 
+        /// Example Input:
+        /// 
+        ///     "fr-CA, jp"
+        /// </summary>
+        /// <param name="target">The target list to add entries to</param>
+        /// <param name="sourceList">The source list of extra languages</param>
+        private void AppendToLanguageList(ref string[] target, string sourceList)
+        {
+            if (sourceList.Length == 0) { return; }
+
+            List<string> workingBuffer = new List<string>();
+            workingBuffer.AddRange(target);
+
+            if (sourceList.Contains(",") == true)
+            {
+                // Possible multiple additional languages
+                var extraLanguages = sourceList.Split(new char[] { ',' });
+                foreach (var language in extraLanguages)
+                {
+                    // Add language code if it's not yet in the list
+                    if (workingBuffer.Contains(language.Trim()) == false)
+                    {
+                        workingBuffer.Add(language);
+                    }
+                }
+            }
+            else
+            {
+                // Possible single additional language
+                sourceList = sourceList.Trim();
+                if (workingBuffer.Contains(sourceList) == false)
+                {
+                    workingBuffer.Add(sourceList);
+                }
+            }
+
+            target = workingBuffer.ToArray();
+        }
+
+        /// <summary>
+        /// Copy all staging files to the final staging folder(s)
+        /// </summary>
+        private void _Stage_CopyAllToFinal()
 		{
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
@@ -459,6 +560,8 @@ namespace MergeISVProject
                     $"*.{_Options.ModuleId}.Services.dll",
                 };
             }
+
+            inclusionPatterns = AddBinIncludeFiles(inclusionPatterns);
 
             CopyFilesBasedOnPatternList(_FolderManager.Staging.Bin, _FolderManager.FinalWorker.Root, inclusionPatterns);
 
@@ -620,56 +723,6 @@ namespace MergeISVProject
 		}
 
 		/// <summary>
-		/// Copy the menu background image and icon from 
-		/// to the Staging folder
-		/// </summary>
-		//private void _Deploy_Images()
-		//{
-		//	_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
-
-		//	var menuName = _Options.MenuFilename.OptionValue;
-
-		//	// Get the company name, icon file name, and background image file name 
-		//	//var menuFilePath = Path.Combine(pathWebProj, menuFileName);
-		//	var pathMenuDir = Path.Combine(_FolderManager.Live.Web, FolderNameConstants.APPDATA, FolderNameConstants.MENUDETAIL);
-		//	var menuFilePath = Path.Combine(pathMenuDir, menuName);
-		//	var menuFileContent = File.ReadAllText(menuFilePath);
-		//	var companyName = Regex.Match(menuFileContent, @"<IconName>(.*?)/menuIcon.png</IconName>").Groups[1].Value;
-		//	var menuIconName = Regex.Match(menuFileContent, @"/(.*?)</IconName>").Groups[1].Value;
-		//	var menuBackGroundImage = Regex.Match(menuFileContent, @"/(.*?)</MenuBackGoundImage>").Groups[1].Value;
-
-		//	var pathImageFrom = Path.Combine(_FolderManager.Final.Root, @"External\Content\Images\nav", companyName);
-		//	var pathImageTo = Path.Combine(_FolderManager.Live.Web, @"External\Content\Images\nav", companyName);
-		//	_Logger.Log($"pathImageFrom = '{pathImageFrom}'");
-		//	_Logger.Log($"pathImageTo = '{pathImageTo}'");
-
-
-		//	if (!Directory.Exists(pathImageTo))
-		//	{
-		//		Directory.CreateDirectory(pathImageTo);
-		//		_Logger.Log($"Created directory '{pathImageTo}'");
-		//	}
-		//	string[] imageNames = { menuIconName, menuBackGroundImage };
-		//	foreach (var image in imageNames)
-		//	{
-		//		var pathImageFileFrom = Path.Combine(pathImageFrom, image);
-		//		if (File.Exists(pathImageFileFrom))
-		//		{
-		//			_Logger.Log($"File '{pathImageFileFrom}' exists.");
-
-		//			var pathImageFileTo = Path.Combine(pathImageTo, image);
-		//			File.Copy(pathImageFileFrom, pathImageFileTo, true);
-		//		}
-		//		else
-		//		{
-		//			_Logger.Log($"File '{pathImageFileFrom}' does not exist.");
-		//		}
-		//	}
-
-		//	_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
-		//}
-
-		/// <summary>
 		/// Deploy the Area scripts to the Sage 300 installation
 		/// </summary>
 		private void _Deploy_AreaScripts()
@@ -772,13 +825,16 @@ namespace MergeISVProject
 					$"*.{_Options.ModuleId}.*.dll"
 				};
 
-				foreach (var pattern in validWebFiles)
+                validWebFiles = AddBinIncludeFiles(validWebFiles);
+                foreach (var pattern in validWebFiles)
 				{
 					CopyFiles(simulateCopy, pathBuildBin, pattern, pathLiveWebBin, OVERWRITE);
 				}
 
 				string[] validWorkerFiles = { $"*.{_Options.ModuleId}.*.dll" };
-				foreach (var pattern in validWorkerFiles)
+                validWorkerFiles = AddBinIncludeFiles(validWorkerFiles);
+
+                foreach (var pattern in validWorkerFiles)
 				{
 					CopyFiles(simulateCopy, pathBuildBin, pattern, pathLiveWorker, OVERWRITE, copyWebFile: false);
 				}
@@ -804,6 +860,9 @@ namespace MergeISVProject
 		/// </summary>
 		private void _Deploy_ResourceSatelliteFiles()
 		{
+            const int INDENTBY = 3;
+            var indent3 = new String(' ', INDENTBY);
+
 			_Logger.LogMethodHeader($"{this.GetType().Name}.{Utilities.GetCurrentMethod()}");
 
 			var pathBinFrom = _FolderManager.FinalWeb.Bin;
@@ -812,14 +871,23 @@ namespace MergeISVProject
 			var pattern = $"*.{_Options.ModuleId}.*.dll";
 			bool testOnly = _Options.TestDeploy.OptionValue;
 
-			foreach (var language in Languages)
+            AppendToLanguageList(ref Languages, _Options.ExtraResourceLanguages.OptionValue);
+
+            foreach (var language in Languages)
 			{
-				var fromFolder = Path.Combine(pathBinFrom, language);
+                _Logger.Log($" ");
+                _Logger.Log($"{indent3}Processing Language '{language}'");
+
+                var fromFolder = Path.Combine(pathBinFrom, language);
 				var toWebFolder = Path.Combine(pathWebBinTo, language);
 				var toWorkerFolder = Path.Combine(pathWorkerTo, language);
 
-				// If the source folder doesn't exist, then just continue
-				if (!Directory.Exists(fromFolder))
+                _Logger.Log($"{indent3}Source Folder = '{fromFolder}'");
+                _Logger.Log($"{indent3}Target Web Folder = '{toWebFolder}'");
+                _Logger.Log($"{indent3}Target Worker Folder = '{toWorkerFolder}'");
+
+                // If the source folder doesn't exist, then just continue
+                if (!Directory.Exists(fromFolder))
 					continue;
 
 				// Source folder actually exists, so let's proceed.
@@ -828,11 +896,15 @@ namespace MergeISVProject
 					var fileName = Path.GetFileName(file);
 					if (!string.IsNullOrEmpty(fileName))
 					{
-						var pathFile = Path.Combine(toWebFolder, fileName);
-						CopyFile(testOnly, file, pathFile, OVERWRITE);
+                        _Logger.Log($"{indent3}Source File = '{file}'");
+
+                        var pathFile = Path.Combine(toWebFolder, fileName);
+                        _Logger.Log($"{indent3}Target Path (Web) = '{pathFile}'");
+                        CopyFile(testOnly, file, pathFile, OVERWRITE, createDestFolderIfNotExist: true, loggingIndent: INDENTBY);
 
 						pathFile = Path.Combine(toWorkerFolder, fileName);
-						CopyFile(testOnly, file, pathFile, OVERWRITE);
+                        _Logger.Log($"{indent3}Target Path (Worker) = '{pathFile}'");
+                        CopyFile(testOnly, file, pathFile, OVERWRITE, createDestFolderIfNotExist: true, loggingIndent: INDENTBY);
 					}
 				}
 			}
@@ -859,7 +931,7 @@ namespace MergeISVProject
 			foreach (var file in Directory.GetFiles(pathFrom, pattern))
 			{
 				var fileName = Path.GetFileName(file);
-				if (fileName.IsNullOrWhiteSpace() ||
+				if (string.IsNullOrWhiteSpace(fileName) ||
 					fileName.Equals("CrystalDecisions.Web.dll") ||
 					(fileName.EndsWith("Web.dll") && !copyWebFile))
 				{
@@ -871,23 +943,44 @@ namespace MergeISVProject
 			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
-		/// <summary>
-		/// Wrapper function for calling File.Copy
-		/// Adds ability to just simulate the copy process.
-		/// </summary>
-		/// <param name="testOnly">true = Simulate file copy | false = Real file copy</param>
-		/// <param name="source">The fully-qualified path to the source file</param>
-		/// <param name="dest">The fully-qualified path to the destination file</param>
-		/// <param name="overwrite">true = Overwrite file | false = Do not overwrite file</param>
-		private void CopyFile(bool testOnly, string source, string dest, bool overwrite)
+        /// <summary>
+        /// Wrapper function for calling File.Copy
+        /// Adds ability to just simulate the copy process.
+        /// </summary>
+        /// <param name="testOnly">true = Simulate file copy | false = Real file copy</param>
+        /// <param name="source">The fully-qualified path to the source file</param>
+        /// <param name="dest">The fully-qualified path to the destination file</param>
+        /// <param name="overwrite">true = Overwrite file | false = Do not overwrite file</param>
+        private void CopyFile(bool testOnly, string source, string dest, bool overwrite, bool createDestFolderIfNotExist = false, int loggingIndent = 0)
 		{
 			try
 			{
 				var simulationText = testOnly ? $"[{Messages.Msg_Simulation}] " : "";
 				var sourceFilenameOnly = new FileInfo(source).Name;
 
-				_Logger.Log($"{simulationText}{Messages.Msg_CopyingFile} {sourceFilenameOnly}.");
-				if (!testOnly) { File.Copy(source, dest, overwrite); }
+                string indentBy = string.Empty;
+                if (loggingIndent > 0)
+                {
+                    indentBy = new string(' ', loggingIndent);
+                }
+
+				_Logger.Log($"{indentBy}{simulationText}{Messages.Msg_CopyingFile} {sourceFilenameOnly}.");
+				if (!testOnly)
+                {
+                    if (createDestFolderIfNotExist)
+                    {
+                        FileInfo fi = new FileInfo(dest);
+                        var destDirectory = fi.DirectoryName;
+                        // Does destination folder exist?
+                        if (Directory.Exists(destDirectory) == false)
+                        {
+                            // Create the directory
+                            Directory.CreateDirectory(destDirectory);
+                        }
+                    }
+
+                    File.Copy(source, dest, overwrite);
+                }
 			}
 			catch (IOException e)
 			{
@@ -917,9 +1010,13 @@ namespace MergeISVProject
 			_Logger.Log($"{Messages.Msg_DestinationFolder}: {dest}");
 			if (!testOnly)
 			{
-				FileSystem.CopyDirectory(source, dest, overwrite);
-			}
-			_Logger.LogMethodFooter(Utilities.GetCurrentMethod());
+                // Old VB-based call
+                //FileSystem.CopyDirectory(source, dest, overwrite);
+
+                var util = new FileUtilities(_Logger);
+                util.DirectoryCopy(source, dest);
+            }
+            _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
 		}
 
 #endregion // Private Methods

@@ -1,0 +1,30 @@
+{
+  "SequenceNumber": 2881,
+  "Description": "INTERNAL USAGE DESCRIPTION",
+  "InternalUsageDate": "2020-06-30",
+  "RecordStatus": "Entered",
+  "Reference": "REF",
+  "InternalUsageDetails": [
+    {
+      "SequenceNumber": 2881,
+      "LineNumber": 64,
+      "ItemNumber": "A1-105/0",
+      "Location": "1",
+      "Quantity": 5,
+      "UnitOfMeasure": "Ea.",
+      "Comments": "COMMENT",
+      "UsageAccount": "5410-100-10"
+    },
+    {
+      "SequenceNumber": 2881,
+      "LineNumber": 128,
+      "ItemNumber": "A1-401/0",
+      "Location": "1",
+      "Quantity": 3,
+      "UnitOfMeasure": "Ea.",
+      "UnitCost": 5.25,
+      "Comments": "This item has User specified costing so Unit Cost field is included",
+      "UsageAccount": "5410-100-10"
+    }
+  ]
+}

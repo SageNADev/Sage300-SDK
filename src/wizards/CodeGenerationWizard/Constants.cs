@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -29,7 +29,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     public static class GlobalConstants
     {
         /// <summary> The version of this wizard </summary>
-        public static string Version = "2020.2";
+        public static string Version = "2021.0";
+
+        public const string ResourceFileExtension = @".resx";
 
         public static class LanguageExtensions
         {
@@ -38,6 +40,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string French = @"fr";
             public const string ChineseSimplified = @"zh-Hans";
             public const string ChineseTraditional = @"zh-Hant";
+        }
+
+        public static class LanguageIndex
+        {
+            public const int English = 0;
+            public const int Spanish = 1;
+            public const int French = 2;
+            public const int ChineseSimplified = 3;
+            public const int ChineseTraditional = 4;
         }
     }
 }

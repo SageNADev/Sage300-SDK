@@ -309,4 +309,7 @@
   <data name="PostInvoiceEntry" xml:space="preserve">
     <value>C/C - Asentar Asiento de Factura</value>
   </data>
+  <data name="LessEstTaxWithheld" xml:space="preserve">
+    <value>Menos Impuesto Retenido Estimado</value>
+  </data>  
 </root>

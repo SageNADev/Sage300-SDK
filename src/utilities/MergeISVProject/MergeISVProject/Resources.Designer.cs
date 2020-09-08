@@ -187,6 +187,15 @@ namespace MergeISVProject {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The application has completed with errors..
+        /// </summary>
+        internal static string Msg_ApplicationRunCompleteWithErrors {
+            get {
+                return ResourceManager.GetString("Msg_ApplicationRunCompleteWithErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Argument List:.
         /// </summary>
         internal static string Msg_ArgumentList {
@@ -273,6 +282,15 @@ namespace MergeISVProject {
         internal static string Msg_End {
             get {
                 return ResourceManager.GetString("Msg_End", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify any extra language resources outside the currently supported languages (English, French, Spanish, Chinese [simplified and traditional]). Multiple languages can be separated by commas..
+        /// </summary>
+        internal static string Msg_ExtraResourceLanguages {
+            get {
+                return ResourceManager.GetString("Msg_ExtraResourceLanguages", resourceCulture);
             }
         }
         

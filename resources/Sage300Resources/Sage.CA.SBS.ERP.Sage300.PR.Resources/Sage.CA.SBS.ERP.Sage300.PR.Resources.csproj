@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sage.CA.SBS.ERP.Sage300.PR.Resources</RootNamespace>
     <AssemblyName>Sage.CA.SBS.ERP.Sage300.PR.Resources</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -160,7 +160,7 @@
     <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EmployeeResx.fr.resx" />
+    <EmbeddedResource Include="EmployeeResx.fr-CA.resx" />
     <EmbeddedResource Include="EmployeeResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeResx.Designer.cs</LastGenOutput>

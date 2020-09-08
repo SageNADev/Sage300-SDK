@@ -1439,43 +1439,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 #region Local Constants
             const int IndexBaseFile = 0;
             const int IndexCommonFile = 1;
-
-            const int IndexEnglish = 0;
-            const int IndexSpanish = 1;
-            const int IndexFrench = 2;
-            const int IndexChineseS = 3;
-            const int IndexChineseT = 4;
-
-            const string extension = @".resx";
 #endregion
 
             // This is the list of resource files for each supported language 
             // (Normal resources and Common resources)
             var resourceFileNames = new string[][]
             {
-                new string[] { baseFilename + extension,
-                               commonFilename + extension },
-                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.Spanish + extension,
-                               commonFilename + "." + GlobalConstants.LanguageExtensions.Spanish + extension },
-                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.French + extension,
-                               commonFilename + "." + GlobalConstants.LanguageExtensions.French + extension },
-                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.ChineseSimplified + extension,
-                               commonFilename + "." + GlobalConstants.LanguageExtensions.ChineseSimplified + extension },
-                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.ChineseTraditional + extension,
-                               commonFilename + "." + GlobalConstants.LanguageExtensions.ChineseTraditional + extension },
+                new string[] { baseFilename + GlobalConstants.ResourceFileExtension,
+                               commonFilename + GlobalConstants.ResourceFileExtension },
+                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.Spanish + GlobalConstants.ResourceFileExtension,
+                               commonFilename + "." + GlobalConstants.LanguageExtensions.Spanish + GlobalConstants.ResourceFileExtension },
+                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.French + GlobalConstants.ResourceFileExtension,
+                               commonFilename + "." + GlobalConstants.LanguageExtensions.French + GlobalConstants.ResourceFileExtension },
+                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.ChineseSimplified + GlobalConstants.ResourceFileExtension,
+                               commonFilename + "." + GlobalConstants.LanguageExtensions.ChineseSimplified + GlobalConstants.ResourceFileExtension },
+                new string[] { baseFilename + "." + GlobalConstants.LanguageExtensions.ChineseTraditional + GlobalConstants.ResourceFileExtension,
+                               commonFilename + "." + GlobalConstants.LanguageExtensions.ChineseTraditional + GlobalConstants.ResourceFileExtension },
             };
 
             // Create the resource files based on whether or not the language has been selected.
-            if (settings.includeEnglish) { CreateResx(view, resourceFileNames[IndexEnglish][IndexBaseFile], 
-                                                            resourceFileNames[IndexEnglish][IndexCommonFile], addDescription: true); }
-            if (settings.includeSpanish) { CreateResx(view, resourceFileNames[IndexSpanish][IndexBaseFile], 
-                                                            resourceFileNames[IndexSpanish][IndexCommonFile], true); }
-            if (settings.includeFrench) { CreateResx(view, resourceFileNames[IndexFrench][IndexBaseFile], 
-                                                           resourceFileNames[IndexFrench][IndexCommonFile], true); }
-            if (settings.includeChineseSimplified) { CreateResx(view, resourceFileNames[IndexChineseS][IndexBaseFile], 
-                                                                      resourceFileNames[IndexChineseS][IndexCommonFile], true); }
-            if (settings.includeChineseTraditional) { CreateResx(view, resourceFileNames[IndexChineseT][IndexBaseFile], 
-                                                                       resourceFileNames[IndexChineseT][IndexCommonFile], true); }
+            if (settings.includeEnglish) { CreateResx(view, resourceFileNames[GlobalConstants.LanguageIndex.English][IndexBaseFile], 
+                                                            resourceFileNames[GlobalConstants.LanguageIndex.English][IndexCommonFile], addDescription: true); }
+            if (settings.includeSpanish) { CreateResx(view, resourceFileNames[GlobalConstants.LanguageIndex.Spanish][IndexBaseFile], 
+                                                            resourceFileNames[GlobalConstants.LanguageIndex.Spanish][IndexCommonFile], true); }
+            if (settings.includeFrench) { CreateResx(view, resourceFileNames[GlobalConstants.LanguageIndex.French][IndexBaseFile], 
+                                                           resourceFileNames[GlobalConstants.LanguageIndex.French][IndexCommonFile], true); }
+            if (settings.includeChineseSimplified) { CreateResx(view, resourceFileNames[GlobalConstants.LanguageIndex.ChineseSimplified][IndexBaseFile], 
+                                                                      resourceFileNames[GlobalConstants.LanguageIndex.ChineseSimplified][IndexCommonFile], true); }
+            if (settings.includeChineseTraditional) { CreateResx(view, resourceFileNames[GlobalConstants.LanguageIndex.ChineseTraditional][IndexBaseFile], 
+                                                                       resourceFileNames[GlobalConstants.LanguageIndex.ChineseTraditional][IndexCommonFile], true); }
         }
 
         /// <summary>

@@ -286,7 +286,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Credit Card Charges Account.
+        ///   Looks up a localized string similar to Charges Account.
         /// </summary>
         public static string CreditCardChargesAccount {
             get {

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -120,6 +120,117 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
             }
 
             return parentPath;
+        }
+
+        /// <summary>
+        /// Remove an existing file
+        /// </summary>
+        /// <param name="filePath">The file path specification</param>
+        public static void RemoveExistingFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                //Log($"{Resources.File} '{filePath}' {Resources.Exists}.");
+                File.Delete(filePath);
+                //Log($"{Resources.File} '{filePath}' {Resources.Deleted}.");
+            }
+            else
+            {
+                // Do nothing. File doesn't actually exist
+
+                //Log($"{Resources.File} '{filePath}' {Resources.DoesNotExist}.");
+            }
+        }
+
+        /// <summary> Copy folder and files </summary>
+        /// <param name="sourceDirectoryName">Source directory name</param>
+        /// <param name="destinationDirectoryName">Destination directory name</param>
+        public static void DirectoryCopy(string sourceDirectoryName, string destinationDirectoryName, bool ignoreDestinationFolder = true)
+        {
+            var dir = new DirectoryInfo(sourceDirectoryName);
+            var dirs = dir.GetDirectories();
+
+            // Create directory if not exists
+            if (!Directory.Exists(destinationDirectoryName))
+            {
+                Directory.CreateDirectory(destinationDirectoryName);
+            }
+
+            // Iterate files
+            foreach (var file in dir.GetFiles())
+            {
+                try
+                {
+                    var filePath = Path.Combine(destinationDirectoryName, file.Name);
+                    file.CopyTo(filePath, true);
+
+                    // Log detail
+                    //Log($"{Resources.AddReplaceFile} {filePath}");
+                }
+                catch (IOException e)
+                {
+                    // Likely just a locked file.
+                    // Just log it and move on.
+                    var msg = e.Message;
+                    //Log($"{Resources.ExceptionThrownPossibleLockedFile} : {file.FullName.ToString()}");
+                    //Log($"{msg}");
+                }
+            }
+
+            // For recursion
+            foreach (DirectoryInfo subdir in dirs)
+            {
+                var subdirectoryName = subdir.FullName;
+                if (ignoreDestinationFolder)
+                {
+                    if (subdirectoryName != destinationDirectoryName)
+                    {
+                        DirectoryCopy(subdirectoryName, Path.Combine(destinationDirectoryName, subdir.Name));
+                    }
+                }
+                else
+                {
+                    DirectoryCopy(subdirectoryName, Path.Combine(destinationDirectoryName, subdir.Name));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Move the specified directory up one level from the sourceFolder
+        /// Example:
+        ///     sourceFolder =    C:\projects\Sage300-SDK\2020.2 (Read Only)\samples\SegmentCodes
+        ///     directoryToMove = C:\projects\Sage300-SDK\2020.2 (Read Only)\samples\SegmentCodes\SegmentCodes-Backup-20200513-114518
+        ///     
+        /// Result:
+        ///     destinationFolder = C:\projects\Sage300-SDK\2020.2 (Read Only)\samples\SegmentCodes-Backup-20200513-114518
+        /// </summary>
+        /// <param name="sourceFolder">The source folder where the directory to move currently lives</param>
+        /// <param name="directoryToMove">The name of the directory to move</param>
+        /// <returns>The fully-qualified path to the final destination folder</returns>
+        public static string MoveDirectoryUpOneLevel(string sourceFolder, string directoryToMove)
+        {
+            var sourceDirectory = directoryToMove;
+
+            // Extract just the source directory name (without the full path)
+            var parts = sourceDirectory.Split('\\');
+            var sourceDirectoryNameOnly = parts[parts.Length - 1].Trim();
+
+            // Determine the directory one level up from the sourceFolder
+            var destinationDirectory = new DirectoryInfo(sourceFolder).Parent.FullName;
+            destinationDirectory = Path.Combine(destinationDirectory, sourceDirectoryNameOnly);
+
+            Directory.Move(sourceDirectory, destinationDirectory);
+
+            return destinationDirectory;
+        }
+
+        /// <summary>
+        /// Create an empty text file and ensure it's closed immediately.
+        /// </summary>
+        /// <param name="filename">The fully-qualified path to the directory and name where the file should be created</param>
+        public static void CreateEmptyFile(string filename)
+        {
+            File.Create(filename).Dispose();
         }
     }
 }

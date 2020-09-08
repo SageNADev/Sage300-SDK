@@ -118,7 +118,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Extensions
             var rootFiles = Directory.EnumerateFiles(dir);
 
             // Optionally get the files in all subfolders
-            if (includeSubDirectories == true)
+            if (includeSubDirectories)
             {
                 rootFiles = rootFiles.Concat(Directory.EnumerateDirectories(dir)
                                                       .SelectMany(subdir => GetFileNames(subdir)));

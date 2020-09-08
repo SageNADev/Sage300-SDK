@@ -934,6 +934,7 @@ namespace Sage300UICustomizationWizard
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(982, 746);
             this.Controls.Add(this.splitBase);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -944,7 +945,6 @@ namespace Sage300UICustomizationWizard
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Web Customization";
-            this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.splitBase.Panel1.ResumeLayout(false);
             this.splitBase.Panel1.PerformLayout();
             this.splitBase.Panel2.ResumeLayout(false);

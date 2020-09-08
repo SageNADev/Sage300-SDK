@@ -86,7 +86,7 @@ var taxGridUI = {
         });
     },
 
-    rwColumns: [
+    rcColumns: [
         {
             field: "ReverseChargeBaseAmt",
             title: taxesGridResources.ReverseChargeBase,
@@ -148,7 +148,9 @@ var taxGridUI = {
                     }
                 }
             }
-        },
+        }],
+
+    whtColumns: [
         {
             field: "TaxWithheldAmt",
             title: taxesGridResources.TaxWithheld,
@@ -416,7 +418,7 @@ var taxGridUI = {
             },
 
             //This is a temp solution in case. we should not hack the code.
-            columns: area === 'AP' || area === 'PO' ? taxGridUI.columns.concat(taxGridUI.rwColumns) : taxGridUI.columns,
+            columns: area === 'AP' || area === 'PO' ? taxGridUI.columns.concat(taxGridUI.rcColumns).concat(taxGridUI.whtColumns) : area === 'AR' ? taxGridUI.columns.concat(taxGridUI.whtColumns): taxGridUI.columns,
             dataChange: function (changedData) {
                 taxGridUI.taxeschange(changedData);
             }

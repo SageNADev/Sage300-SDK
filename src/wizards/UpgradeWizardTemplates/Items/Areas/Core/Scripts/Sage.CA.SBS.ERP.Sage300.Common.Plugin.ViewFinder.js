@@ -375,7 +375,7 @@
 
             var top = theOptions.top;
 
-            kendoWindow = $(dialogId).html("<span class='sage_loading'></span>").kendoWindow({
+            kendoWindow = $(dialogId).html("<div class='bounce bounce1'></div><div class='bounce bounce2'></div><div class='bounce bounce3'></div>").kendoWindow({
                 modal: true,
                 title: theOptions.title,
                 resizable: false,
@@ -511,8 +511,8 @@
 
                         });
                 $("#div_finder_grid .k-grid-content")
-                    .delegate("tbody>tr",
-                        "dblclick",
+                    .on("dblclick",
+                        "tbody>tr",
                         function() {
                             sg.viewFinderHelper.cancelFuncCall = $.noop;
                             that._getSelectedRow(that);
@@ -690,10 +690,10 @@ FinderPreferences = {
 
     // Check/Uncheck the "Select All" checkbox based on the selection of list of columns
     SelectHeaderCheckBox: function () {
-        $('#chkSelectAll').attr('checked', 'checked').applyCheckboxStyle();
+        $('#chkSelectAll').prop('checked', true).applyCheckboxStyle();
         $('#tblTBodyFinderPref input[name=chkFinderPrefCol][type=checkbox]').each(function () {
             if (!$(this).is(':checked')) {
-                $('#chkSelectAll').removeAttr('checked').applyCheckboxStyle();
+                $('#chkSelectAll').prop('checked', false).applyCheckboxStyle();
                 return;
             }
         });
@@ -724,7 +724,7 @@ FinderPreferences = {
         var selectedColumns = [];
         $('#tblTBodyFinderPref input[name=chkFinderPrefCol][type=checkbox]').each(function () {
             if ($(this).is(':checkbox')) {
-                selectedColumns.push(FinderPreferences.GetGridColumn($(this).attr('data-finder-key'), $(this).attr('value'), $(this).is(':checked')));
+                selectedColumns.push(FinderPreferences.GetGridColumn($(this).attr('data-finder-key'), $(this).val(), $(this).is(':checked')));
             }
         });
         return selectedColumns;
@@ -748,13 +748,13 @@ FinderPreferences = {
                 for (var i = 0; i < grid.columns.length; i++) {
                     if ($(this).attr('data-finder-key') === grid.columns[i].field) {
                         if (!grid.columns[i].hidden) {
-                            $(this).attr('checked', 'checked').applyCheckboxStyle();
+                            $(this).prop('checked', true).applyCheckboxStyle();
                             isChecked = true;
                         }
                     }
                 }
                 if (!isChecked) {
-                    $(this).removeAttr('checked').applyCheckboxStyle();
+                    $(this).prop('checked', false).applyCheckboxStyle();
                 }
             });
         }
@@ -764,9 +764,9 @@ FinderPreferences = {
     ChangeCheckState: function (flag) {
         $('#tblTBodyFinderPref input[name=chkFinderPrefCol][type=checkbox]').each(function () {
             if (flag) {
-                $(this).attr('checked', 'checked').applyCheckboxStyle();
+                $(this).prop('checked', true).applyCheckboxStyle();
             } else {
-                $(this).removeAttr('checked').applyCheckboxStyle();
+                $(this).prop('checked', false).applyCheckboxStyle();
             }
 
         });

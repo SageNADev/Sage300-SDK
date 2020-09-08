@@ -50,6 +50,7 @@ Date = function (a, b, c, d, e, f, g) {
 Date.prototype = _DefaultDateConstructor.prototype;
 Date.parse = _DefaultDateConstructor.parse;
 Date.UTC = _DefaultDateConstructor.UTC;
+Date.now = _DefaultDateConstructor.now;
 
  Date.prototype.toJSON = toJSON;
  function toJSON() {

@@ -3724,6 +3724,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The report file &apos;{0}&apos; could not be located. Please contact your administrator for assistance..
+        /// </summary>
+        public static string Template_ReportCouldNotBeLocated {
+            get {
+                return ResourceManager.GetString("Template_ReportCouldNotBeLocated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Text.
         /// </summary>
         public static string Text {

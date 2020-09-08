@@ -1,6 +1,6 @@
 @*
     The MIT License (MIT)
-    Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+    Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of
     this software and associated documentation files (the "Software"), to deal in
@@ -92,7 +92,7 @@
         </div>
         <div class="input-group">
             @Html.SageLabel("lblEnteredBy", ReceiptResx.EnteredBy)
-            @Html.KoSageTextBoxFor(model => model.Data.EnteredBy, new { @value = "Data.EnteredBy" }, new { @disabled = "true", @class = "small" })
+            @Html.KoSageTextBoxFor(model => model.Data.EnteredBy, new { @value = "Data.EnteredBy" }, new { @disabled = "disabled", @class = "small" })
         </div>
     </div>
 
@@ -122,7 +122,7 @@
         </div>
         <div class="input-group">
             @Html.SageLabel("lblYearPeriod", "Year/Period")
-            @Html.KoSageTextBox("txtYearPeriod", new { @value = "Data.ComputedYearPeriod" }, new { @disabled = "true", @tabindex = -1, @class = "small" })
+            @Html.KoSageTextBox("txtYearPeriod", new { @value = "Data.ComputedYearPeriod" }, new { @disabled = "disabled", @tabindex = -1, @class = "small" })
         </div>
         <div class="ctrl-group">
             <div>
@@ -130,8 +130,8 @@
                 @Html.KoSageLabelFor(model => model.Data.IsRequireLabel, ReceiptResx.RequireLabels, new { @sagedisable = "IsPosted" })
             </div>
             <div>
-                @Html.KoSageCheckBoxFor(model => model.Data.IsOptionalFields, new { @sagechecked = "IsOptionalFields", @valueUpdate = "'input'" }, new { @id = "chkIsOptionalFields", @class = "", @disabled = "true" })
-                @Html.KoSageLabelFor(model => model.Data.IsOptionalFields, CommonResx.OptionalFields, new { @sagedisable = "true" }, new { @disabled = "true" })
+                @Html.KoSageCheckBoxFor(model => model.Data.IsOptionalFields, new { @sagechecked = "IsOptionalFields", @valueUpdate = "'input'" }, new { @id = "chkIsOptionalFields", @class = "", @disabled = "disabled" })
+                @Html.KoSageLabelFor(model => model.Data.IsOptionalFields, CommonResx.OptionalFields, new { @sagedisable = "true" }, new { @disabled = "disabled" })
                 @Html.SageHamburger("#", null, null, new { @id = "lnkOptionalField" })
             </div>
         </div>
@@ -151,7 +151,7 @@
         </div>
         <div class="input-group">
             @Html.SageLabel("lblVendorName", "VendorDescription")
-            @Html.KoSageTextBox("txtVendorName", new { @value = "Data.VendorShortName" }, new { @disabled = "true", @tabindex = -1, @class = "large" })
+            @Html.KoSageTextBox("txtVendorName", new { @value = "Data.VendorShortName" }, new { @disabled = "disabled", @tabindex = -1, @class = "large" })
         </div>
     </div>
 
@@ -169,7 +169,7 @@
         </div>
         <div class="input-group">
             @Html.KoSageLabelFor(model => model.Data.ReceiptCurrency, "Receipt Currency Description", new { @visible = "IsMulticurrency" })
-            @Html.KoSageTextBox("txtReceiptCurrencyDescription", new { @value = "ReceiptCurrencyDescription", @visible = "IsMulticurrency" }, new { @maxlength = "60", @disabled = "true", @tabindex = -1, @class = "large" })
+            @Html.KoSageTextBox("txtReceiptCurrencyDescription", new { @value = "ReceiptCurrencyDescription", @visible = "IsMulticurrency" }, new { @maxlength = "60", @disabled = "disabled", @tabindex = -1, @class = "large" })
         </div>
     </div>
     <div class="form-group" data-bind="visible:IsMulticurrency">
@@ -182,7 +182,7 @@
         <div class="search-group">
             @Html.KoSageLabelFor(model => model.Data.AdditionalCostCurrency, ReceiptResx.AdditionalCostCurrency, new { @visible = "IsMulticurrency" })
             @Html.KoSageTextBoxFor(model => model.Data.AdditionalCostCurrency, new { @sagevalue = "Data.AdditionalCostCurrency", @valueUpdate = "'input'", @sagedisable = "Data.isControlsDisabledOnReadMode", @visible = "IsMulticurrency" }, new { @maxlength = "3", @class = "txt-upper smaller", @formatTextbox = "alphaNumeric" })
-            @Html.KoSageButton("btnAddlCostCurrency", new { @value = "Data.AdditionalCostCurrency", @disabled = "true", @visible = "IsMulticurrency", @sagedisable = "Data.isControlsDisabledOnReadMode" }, new
+            @Html.KoSageButton("btnAddlCostCurrency", new { @value = "Data.AdditionalCostCurrency", @visible = "IsMulticurrency", @sagedisable = "Data.isControlsDisabledOnReadMode" }, new
             {
                 @id = "btnAddlCostCurrency",
                 @tabindex = -1,
@@ -192,7 +192,7 @@
         </div>
         <div class="input-group">
             @Html.KoSageLabelFor(model => model.Data.AdditionalCostCurrency, "Additional Cost Currency Description", new { @visible = "IsMulticurrency" })
-            @Html.KoSageTextBox("txtAddlCostCurrencyDescription", new { @value = "AddlCostCurrencyDescription", @visible = "IsMulticurrency", }, new { @disabled = "true", @tabindex = -1, @class = "default" })
+            @Html.KoSageTextBox("txtAddlCostCurrencyDescription", new { @value = "AddlCostCurrencyDescription", @visible = "IsMulticurrency", }, new { @disabled = "disabled", @tabindex = -1, @class = "default" })
         </div>
         <div class="dropdown-group" data-bind="visible:IsVisibleAllocType">
             @Html.KoSageLabelFor(model => model.Data.AdditionalCostAllocationType, ReceiptResx.AdditionalCost, new { @visible = "IsVisibleAllocType" })
@@ -207,27 +207,27 @@
     <div class="form-group">
         <div class="input-group" data-bind="visible: Data.IsTotalCostReceiptAdditional">
             @Html.KoSageLabelFor(model => model.Data.TotalReturnCost, ReceiptResx.TotalCost, new { @text = "lblTotalCost" })
-            @Html.KoSageNumericBox("txtTotalCost", new { @valueUpdate = "'input'", @sagevalue = "Data.TotalCostReceiptAdditional" }, new { @disabled = "true", @tabindex = -1, @class = "default align-right kendonumeric" })
+            @Html.KoSageNumericBox("txtTotalCost", new { @valueUpdate = "'input'", @sagevalue = "Data.TotalCostReceiptAdditional" }, new { @disabled = "disabled", @tabindex = -1, @class = "default align-right kendonumeric" })
         </div>
         <div class="input-group" data-bind="visible: Data.IsTotalReturnCost">
             @Html.KoSageLabelFor(model => model.Data.TotalReturnCost, ReceiptResx.TotalCost, new { @text = "lblTotalCost" })
-            @Html.KoSageNumericBox("txtTotalReturnCost", new { @valueUpdate = "'input'", @sagevalue = "Data.TotalReturnCost" }, new { @disabled = "true", @tabindex = -1, @class = "default align-right kendonumeric" })
+            @Html.KoSageNumericBox("txtTotalReturnCost", new { @valueUpdate = "'input'", @sagevalue = "Data.TotalReturnCost" }, new { @disabled = "disabled", @tabindex = -1, @class = "default align-right kendonumeric" })
         </div>
         <div class="input-group" data-bind="visible: Data.IsTotalAdjustmentCost">
             @Html.KoSageLabelFor(model => model.Data.TotalReturnCost, ReceiptResx.TotalCost, new { @text = "lblTotalCost" })
-            @Html.KoSageNumericBox("txtTotalAdjustmentCost", new { @valueUpdate = "'input'", @sagevalue = "Data.TotalAdjCostReceiptAddl" }, new { @disabled = "true", @tabindex = -1, @class = "default align-right kendonumeric" })
+            @Html.KoSageNumericBox("txtTotalAdjustmentCost", new { @valueUpdate = "'input'", @sagevalue = "Data.TotalAdjCostReceiptAddl" }, new { @disabled = "disabled", @tabindex = -1, @class = "default align-right kendonumeric" })
         </div>
         <div class="input-group">
             @Html.KoSageLabelFor(model => model.TotalCostCurrency, ReceiptResx.Currency, new { @visible = "IsMulticurrency" })
-            @Html.KoSageTextBox("txtTotalCostCurrency", new { @sagevalue = "TotalExtendedCostCurrency", @valueUpdate = "'input'", @visible = "IsMulticurrency" }, new { @disabled = "true", @tabindex = -1, @class = "smaller" })
+            @Html.KoSageTextBox("txtTotalCostCurrency", new { @sagevalue = "TotalExtendedCostCurrency", @valueUpdate = "'input'", @visible = "IsMulticurrency" }, new { @disabled = "disabled", @tabindex = -1, @class = "smaller" })
         </div>
         <div class="input-group" data-bind="visible:IsMultiCurrAndReturn">
             @Html.KoSageLabelFor(model => model.Data.TotalExtendedCostSource, "Total Extended Cost", new { })
-            @Html.KoSageNumericBox("txtTotalExtendedCost", new { @value = "Data.TotalExtendedCostSource", @sagevalue = "TotalExtendedCost", @valueUpdate = "'input'" }, new { @disabled = "true", @tabindex = -1, @class = "default align-right" })
+            @Html.KoSageNumericBox("txtTotalExtendedCost", new { @value = "Data.TotalExtendedCostSource", @sagevalue = "TotalExtendedCost", @valueUpdate = "'input'" }, new { @disabled = "disabled", @tabindex = -1, @class = "default align-right" })
         </div>
         <div class="input-group" data-bind="visible:IsMultiCurrAndReturn">
             @Html.KoSageLabelFor(model => model.ExtendedCostCurrency, ReceiptResx.Currency, new { })
-            @Html.KoSageTextBox("txtExtendedCostCurrency", new { @sagevalue = "Data.ReceiptCurrency", @valueUpdate = "'input'" }, new { @disabled = "true", @tabindex = -1, @class = "smaller" })
+            @Html.KoSageTextBox("txtExtendedCostCurrency", new { @sagevalue = "Data.ReceiptCurrency", @valueUpdate = "'input'" }, new { @disabled = "disabled", @tabindex = -1, @class = "smaller" })
         </div>
         <div class="buttons-group no-label">
             @Html.KoSageButton("btnRefresh", new { @sagedisable = "IsDisableOnlyComplete" }, new { @class = "btn btn-secondary", @id = "btnRefresh", @value = CommonResx.Refresh })

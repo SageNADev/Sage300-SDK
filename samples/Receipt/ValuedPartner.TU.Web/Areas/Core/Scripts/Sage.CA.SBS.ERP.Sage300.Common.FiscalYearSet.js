@@ -114,7 +114,7 @@ var fiscalyearSetUI = {
             ko.mapping.fromJS(fiscalyearSetUI.fiscalyearSetModel, data.FiscalYearSet);
             that.divFiscalDialogId = 'divFiscalCalender';
             var kendoWindow = $("#" + that.divFiscalDialogId).kendoWindow({
-                // var kendoWindow = $(that.divFiscalDialogId).html("<span class='sage_loading'></span>").kendoWindow({
+                // var kendoWindow = $(that.divFiscalDialogId).html("<div class='bounce bounce1'></div><div class='bounce bounce2'></div><div class='bounce bounce3'></div>").kendoWindow({
                 modal: true,
                 title: "Year",
                 resizable: false,
@@ -211,7 +211,7 @@ var fiscalyearSetUI = {
                 that._getSelectedRow(that);
             });
 
-            $("#divFiscalGridControl .k-grid-content").delegate("tbody>tr", "dblclick", function () {
+            $("#divFiscalGridControl .k-grid-content").on("dblclick", "tbody>tr", function () {
                 sg.fiscalHelper.cancelFuncCall = $.noop;
                 that._getSelectedRow(that);
             });

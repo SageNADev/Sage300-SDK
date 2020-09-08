@@ -120,7 +120,7 @@
   <data name="Start" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="StepDescriptionMain" xml:space="preserve">
+  <data name="Template_StepDescriptionMain" xml:space="preserve">
     <value>Upgrade from {0} to {1}</value>
   </data>
   <data name="EndUpgradeProcess" xml:space="preserve">
@@ -136,8 +136,8 @@
   <data name="Processing" xml:space="preserve">
     <value>Processing</value>
   </data>
-  <data name="ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion" xml:space="preserve">
-    <value>This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.7.2 in all projects in the solution being upgraded.</value>
+  <data name="Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion" xml:space="preserve">
+    <value>This step will automatically convert the targeted version of the Microsoft .NET Framework to V{0} in all projects in the solution being upgraded.</value>
   </data>
   <data name="GenerateXMLDocFile" xml:space="preserve">
     <value>Generate XML documentation file</value>
@@ -169,7 +169,7 @@
   <data name="BeforeUpdate" xml:space="preserve">
     <value>Before update</value>
   </data>
-  <data name="UpgradeLibrary" xml:space="preserve">
+  <data name="Template_UpgradeLibrary" xml:space="preserve">
     <value>Upgrade library from {0} to {1}</value>
   </data>
   <data name="ReleaseSpecificTitleConsolidateEnumerations" xml:space="preserve">
@@ -208,7 +208,7 @@
   <data name="ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion" xml:space="preserve">
     <value>Update targeted version of .NET Framework</value>
   </data>
-  <data name="SolutionUpgrade" xml:space="preserve">
+  <data name="Template_SolutionUpgrade" xml:space="preserve">
     <value>Solution Upgrade Wizard - V{0}</value>
   </data>
   <data name="ReleaseAllDescSyncAccpacLibs" xml:space="preserve">
@@ -287,7 +287,7 @@
   <data name="ReleaseAllDescRecompile" xml:space="preserve">
     <value>The Solution and Project files have been upgraded.</value>
   </data>
-  <data name="ProcessingStep" xml:space="preserve">
+  <data name="Template_ProcessingStep" xml:space="preserve">
     <value>Processing {0}...</value>
   </data>
   <data name="InsertedCommand" xml:space="preserve">
@@ -338,40 +338,78 @@
   <data name="UpdatesToSupportMultipleSessionsAreAManualStep" xml:space="preserve">
     <value>The updates to support multiple sessions must be made manually.</value>
   </data>
-  <data name="ReleaseSpecificDescUpdateThemeColor" xml:space="preserve">
+  <data name="ReleaseSpecificTitleDescRemovePreviousJqueryLibraries" xml:space="preserve">
+    <value>This step will automatially search for and remove all previous versions of jQuery specific library files from your solution and projects.</value>
+  </data>
+  <data name="ReleaseSpecificTitleRemovePreviousJqueryLibraries" xml:space="preserve">
+    <value>Remove previous version of jQuery libraries</value>
+  </data>
+  <data name="Template_ReleaseSpecificRemovePreviousJqueryLibraries" xml:space="preserve">
+    <value>The following previous versions of jQuery files will be removed from your solution and projects:
+
+jQuery Core V{0}
+jQuery UI V{1}
+jQuery Migrate V{2}</value>
+  </data>
+  <data name="ReleaseSpecificDescUnifyDisabled" xml:space="preserve">
     <value>This step will need to be done manually.</value>
   </data>
-  <data name="ReleaseSpecificTitleUpdateThemeColor" xml:space="preserve">
-    <value>Theme color changes</value>
+  <data name="ReleaseSpecificTitleUnifyDisabled" xml:space="preserve">
+    <value>Unify HTML 'disabled' attribute</value>
   </data>
-  <data name="UpdatesToSupportThemeColorAreAManualStep" xml:space="preserve">
-    <value>The updates to support theme color must be made manually.</value>
+  <data name="ReleaseSpecificUnifyDisabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificUnifyDisabled.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ReleaseSpecificUpdateThemeColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateThemeColor.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="UpdatesToUnifyDisabledAreAManualStep" xml:space="preserve">
+    <value>The updates to unify HTML 'disabled' attribute must be made manually.</value>
   </data>
-  <data name="ReleaseSpecificDescUpdateCheckboxes" xml:space="preserve">
-    <value>This step will need to be done manually.</value>
+  <data name="BackupCompleted" xml:space="preserve">
+    <value>Backup of solution completed.</value>
   </data>
-  <data name="ReleaseSpecificTitleUpdateCheckboxes" xml:space="preserve">
-    <value>Checkboxes and Radio buttons changes</value>
+  <data name="BackupSolution" xml:space="preserve">
+    <value>Backup solution</value>
   </data>
-  <data name="ReleaseSpecificUpdateCheckboxes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateCheckboxes.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="BackupStarting" xml:space="preserve">
+    <value>Starting backup of solution...</value>
   </data>
-  <data name="UpdatesToSupportCheckboxesAreAManualStep" xml:space="preserve">
-    <value>The updates to support checkboxes and radio buttons must be made manually.</value>
+  <data name="EnableBackup" xml:space="preserve">
+    <value>Select the checkbox below to enable a backup of your Visual Studio solution.</value>
   </data>
-  <data name="ReleaseSpecificTitleUpdateNewtonsoftPackage" xml:space="preserve">
-    <value>Update version of Newtonsoft.Json</value>
+  <data name="ManualBackupMessage" xml:space="preserve">
+    <value>Please be sure you have backed up the solution and project files before proceeding!</value>
   </data>
-  <data name="ReleaseSpecificUpdateNewtonsoftPackage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\content\ReleaseSpecificUpdateNewtonsoftPackage.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="SolutionWillBeBackedUp" xml:space="preserve">
+    <value>If you've selected the 'Backup solution' option, the solution will be 
+backed up prior to upgrade.</value>
   </data>
-  <data name="ReleaseSpecificDescUpdateNewtonsoftPackage" xml:space="preserve">
-    <value>This step will need to be done manually.</value>
+  <data name="Template_ReleaseAllContentConfirmation" xml:space="preserve">
+    <value>A log file will be generated with the results of the upgrade.
+
+Note: {0}</value>
   </data>
-  <data name="UpdatesToSupportNewtonsoftUpdateAreAManualStep" xml:space="preserve">
-    <value>The updates to Newtonsoft.Json package must be made manually.</value>
+  <data name="Template_SolutionBackupCompleted" xml:space="preserve">
+    <value>Your solution has been successfully backed up and is located in the folder '{0}'.</value>
+  </data>
+  <data name="ReleaseSpecificTitle_AddBinIncludeFile" xml:space="preserve">
+    <value>Add 'BinInclude.txt' file to Web project</value>
+  </data>
+  <data name="Template_ReleaseSpecificContent_AddBinIncludeFile" xml:space="preserve">
+    <value>This step will automatically add a file called '{0}' to the Web project. 
+
+This file is used during the release compilation process to allow the 
+specification of additional objects to be deployed. 
+
+For example, if your project contains an object called 
+YourCompany.XX.dll that you wish to be deployed in addition
+to all the other files that are deployed, you can add a line
+to the '{0}' as follows:
+
+YourCompany.XX.dll
+
+When the solution is built in 'Release' mode, any files specified
+in the file '{0}' will also be included in the final output.</value>
+  </data>
+  <data name="Template_ReleaseSpecificDesc_AddBinIncludeFile" xml:space="preserve">
+    <value>This step will automatically add a new file called '{0}'</value>
   </data>
 </root>

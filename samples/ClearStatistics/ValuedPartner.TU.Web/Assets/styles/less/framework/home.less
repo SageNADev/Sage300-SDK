@@ -648,56 +648,58 @@ li.helpSearch .k-link form {
   background-image: url('@{image-path}/default/loading_new.gif');
   background-repeat: no-repeat; 
   background-position: 50% 50%; 
-  background-size: 40px 40px;
+  background-size: 48px 48px;
 }
 
 .screenLoading {
   background-image: url('@{image-path}/default/loading_new.gif');
   background-repeat: no-repeat; 
-  background-position: 50% 125px; 
-  background-size: 40px 40px;
+  background-position: 50% 83px; 
+  background-size: 48px 48px;
 }
 
-.ajaxSpinner { 
+.spinner {
   position: fixed; 
   display: none; 
   text-align: center; 
-  z-index: 99999999;
+  z-index: 9999;
   left: 50%;
   margin-top: 100px;
+
+  .bounce {
+    animation: bouncedelay 1s infinite ease-in-out both;
+    background-color: @sage-blue;
+    display: inline-block;
+    height: 8px;
+    margin-right: 6px;
+    width: 8px;
+
+    &.bounce1 {
+      animation-delay: 0s;
+    }
+
+    &.bounce2 {
+      animation-delay: 0.2s;
+    }
+
+    &.bounce3 {
+      animation-delay: 0.4s;
+      margin-right: 0;
+    }
+  }
 }
 
-.screenLoading:before,
-.ajaxSpinner:before { 
-  position: absolute;
-  display: block;
-  content: "";
-  width: 44px;
-  height: 44px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  background-color: white;
-  top: 30px;
-  left: -2px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
-
-.sage_loading {
-  position: absolute;
-  top: 32px;
-  left: 0;
-  background-image: url('@{image-path}/default/loading_new.gif');
-  background-size: 40px 40px;
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-  display: block;
-}
-
-
 
 /* Styels for IPad */
 

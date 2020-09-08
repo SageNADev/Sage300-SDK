@@ -309,4 +309,7 @@
   <data name="PostInvoiceEntry" xml:space="preserve">
     <value>应收帐款过帐发票分录</value>
   </data>
+  <data name="LessEstTaxWithheld" xml:space="preserve">
+    <value>减预估预扣税 </value>
+  </data>  
 </root>

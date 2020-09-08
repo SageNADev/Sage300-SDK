@@ -171,11 +171,18 @@ namespace MergeISVProject
         [IsExistingFolder]
         public CommandLineOption<string> DotNetFrameworkPath { get; set; }
 
-	    /// <summary>
-	    /// This represents the mode that the application will
-	    /// be run in.
-	    /// </summary>
-	    [RequiredArgument]
+        /// <summary>
+        /// This will contain a comma separated list of language specifiers
+        /// that need to be handled in addition to the four default languages
+        /// </summary>
+        [OptionalArgument]
+        public CommandLineOption<string> ExtraResourceLanguages { get; set; }
+
+        /// <summary>
+        /// This represents the mode that the application will
+        /// be run in.
+        /// </summary>
+        [RequiredArgument]
 	    public CommandLineOption<int> Mode { get; set; }
 
 		// Optional Command-Line Arguments
@@ -358,9 +365,19 @@ namespace MergeISVProject
             };
 	        LoadOption(Log, cleanArgList);
 
-			#endregion
+            ExtraResourceLanguages = new CommandLineOption<string>()
+            {
+                Name = "extraresourcelanguages",
+                AliasList = new List<string>() { "extralanguages" },
+                Description = Messages.Msg_ExtraResourceLanguages,
+                OptionValue = "",
+                ExampleValue = @"fr-CA"
+            };
+            LoadOption(ExtraResourceLanguages, cleanArgList);
 
-			this.UsageMessage = BuildUsageMessage();
+            #endregion
+
+            this.UsageMessage = BuildUsageMessage();
         }
 		#endregion
 

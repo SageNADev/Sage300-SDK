@@ -140,7 +140,7 @@ namespace MergeISVProject
 			{
 				// Errors have already been logged to log file.
 				applicationError = true;
-				_Logger.Log(Messages.Msg_ApplicationRunComplete);
+				_Logger.Log(Messages.Msg_ApplicationRunCompleteWithErrors);
 			}
 			finally
 			{

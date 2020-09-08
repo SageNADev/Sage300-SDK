@@ -6,18 +6,25 @@
 
    Run the batch file 'CopyWebRepoFiles.bat'
 
-2. Rebuild the Web.vstemplate file located in the 'Web' folder
+2. Update the AccpacDotNetVersion.props file
+
+   Run the batch file UpdateAccpacDotNetVersionProps.bat
+
+3. Rebuild the Web.vstemplate file located in the 'Web' folder
 
    Run the batch file 'RebuildWebDotVstemplateFile.bat'
 
-3. Create/Update the two zip files located in this folder
+4. Create/Update the two zip files located in this folder
 
    Run the batch file 'CreateTemplateZipFiles.bat'
 
-4. Move the resulting zip files to their final destination
+5. Move the resulting zip files to their final destination
 
-   Run the batch file 'MoveTemplateZipFilesToFinalDestination.bat' 
+   Run the batch file 'MoveZipArchivesToFinalDestination.bat' 
 
-5. The Customization Wizard can now be rebuilt with the
+6. The Customization Wizard can now be rebuilt with the
    latest Sage 300 Web Screen Framework source code!
  
+
+Alternatively, you can call RebuildAndDeployAll.bat to run all the
+above steps in order.

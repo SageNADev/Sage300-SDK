@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -32,16 +32,48 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2020.1";
+            public const string FromReleaseNumber = "2020.2";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2020.2";
+            public const string ToReleaseNumber = "2021.0";
 
             /// <summary> From Accpac Number </summary>
             public const string FromAccpacNumber = "6.7.0.0";
 
             /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "6.7.0.0";
+            public const string ToAccpacNumber = "6.8.0.0";
+
+            /// <summary> Flag that determines whether or not to synchronize the Kendo files. </summary>
+            public const bool SyncKendoFiles = true;
+
+            /// <summary> Flag that determines whether or not to synchronize the Web files. </summary>
+            public const bool SyncWebFiles = true;
+
+            /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
+            public const bool UpdateAccpacDotNetLibrary = true;
+
+            /// <summary> Flag that determines whether or not to update the .NET framework in solution projects. </summary>
+            public const bool UpdateMicrosoftDotNetFramework = true;
+
+            /// <summary> Flag that determines whether or not to execute the 'UpdateUnifyDisabled' process. </summary>
+            public const bool UpdateUnifyDisabled = true;
+
+            /// <summary> 
+            /// Flag that determines whether or not to add a new file called 'BinInclude.txt'
+            /// to the root of the Web project.
+            /// </summary>
+            public const bool AddBinIncludeFile = true;
+
+            /// <summary> Flag that determines whether or not to remove previous versions of the various JQuery libraries. </summary>
+            public const bool RemovePreviousJqueryLibraries = true;
+
+            public const string FromJqueryCoreVersion = "1.11.3";
+            public const string FromJqueryUIVersion = "1.11.4";
+            public const string FromJqueryMigrateVersion = "1.2.1";
+
+            public const string ToJqueryCoreVersion = "3.4.1";
+            public const string ToJqueryUIVersion = "1.12.1";
+            public const string ToJqueryMigrateVersion = "3.1.0";
         }
 
         /// <summary>
@@ -68,12 +100,42 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// <summary> Just a dummy ModuleId </summary>
             public const string DummyModuleId = "XX";
 
+            // <summary> The name of the 'Scripts' folder </summary>
+            public const string ScriptsFolderName = "Scripts";
+
             /// <summary> 
             /// This is the version of the Microsoft .NET Framework 
             /// to target for all projects in the solution being upgraded.
             /// </summary>
-            public const string TargetedDotNetFrameworkVersion = "4.7.2";
-            public const string TargetFrameworkMoniker = ".NETFramework,Version=v4.7.2";
+            public const string TargetedDotNetFrameworkVersion = "4.8";
+            public const string TargetFrameworkMoniker = ".NETFramework,Version=v4.8";
+
+            /// <summary>
+            /// The name of the file that will contain the names of additional 
+            /// files that can be deployed during build.
+            /// </summary>
+            public const string BinIncludeFile = "BinInclude.txt";
+
+            /// <summary> 
+            /// Name of the nuget project that shows up in the list of projects in the solution
+            /// when attempting to upgrade the targeted .NET framework. An exception is
+            /// generated when attempting to 'update' this project. This setting
+            /// is used so we can exclude/ignore this project when processing.
+            /// </summary>
+            public const string NugetName = ".nuget";
+
+            /// <summary> 
+            /// Flag that determines whether or not to allow backups of the original solution and projects. 
+            /// 
+            /// true : The ability to perform a backup is enabled
+            /// false : The ability to perform a backup is disabled (and hidden from the UI)
+            /// </summary>
+            public const bool EnableSolutionBackup = true;
+
+            /// <summary>
+            /// The search pattern for the solutions web project
+            /// </summary>
+            public const string WebProjectNamePattern = @".web.csproj";
         }
     }
 }

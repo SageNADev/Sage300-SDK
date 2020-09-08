@@ -116,7 +116,7 @@ $.extend(sg.utls.iFrameHelper = {
 
     // id is divId - before opening the window, it will create a div and create a iframe window.
     openWindow: function (id, title, url, height, width, parentMsgCallBackFunc, source) {
-        var htmlDiv = '<div id=div' + id + '/>';
+        var htmlDiv = '<div id=div' + id + ' />';
 
         var contentFrame;
         var form;
@@ -286,6 +286,23 @@ $.extend(sg.utls.iFrameHelper = {
                 if (contentHeight < maxHeight) {
                     iframeContent.contents().find('html').css('overflow-y', 'auto');
                 }
+
+                // Set the size of the iframe based on user preference
+                var formSize = "form-large"; //default
+                var iframeParent = window.parent;
+                if (iframeParent && iframeParent.formSizeUserPreferenceKey == undefined) {
+                    iframeParent = iframeParent.parent; //Two level of iframe at max allowed. This is a work around as it appears passing the formSizeUserKey becomes challenging
+                }
+                if (iframeParent && iframeParent.formSizeUserPreferenceKey) { //If still can't find the key, then fallback to default
+                    sg.utls.getUserPreferences(iframeParent.formSizeUserPreferenceKey, function (result) {
+                        if (result) {
+                            if (result === "medium" || result === "small" || result === "large") {
+                                formSize = "form-" + result;
+                            }
+                        }
+                    });
+                }
+                iframeContent.contents().find('html').addClass(formSize);
             },
 
             //Open Kendo Window

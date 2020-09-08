@@ -1,7 +1,7 @@
 ﻿"use strict";
 $(function () {
 
-    $(window).on("beforeunload", function() {
+    $(window).on("pagehide", function() {
 
         var token = $('#hiddenToken').val();
         var sessionId = $('#hiddenSessionId').val();
@@ -13,7 +13,7 @@ $(function () {
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            async: false,
+            async: true,
             cache: false
         });
     });

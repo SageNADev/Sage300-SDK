@@ -250,7 +250,7 @@ var exportResultRowNumber = 0;
 
         _setUpExportImportOptionWindow: function (that) {
             that.divExportDialogId = 'div_' + that.options.name + '_optionDialog';
-            $('<div id="' + that.divExportDialogId + '"  style="display:none"/>').appendTo('body');
+            $('<div id="' + that.divExportDialogId + '"  style="display:none"></div>').appendTo('body');
             var dialogId = "#" + that.divExportDialogId;
             var data = {
                 viewModel: { Name: that.options.name, ExportRequest: { Name: that.options.name } }
@@ -307,7 +307,7 @@ var exportResultRowNumber = 0;
             };
 
             that.divExportDialogId = 'div_' + that.options.name + '_dialog';
-            $('<div id="' + that.divExportDialogId + '" class="export-window"  style="display:none"/>').appendTo('body');
+            $('<div id="' + that.divExportDialogId + '" class="export-window"  style="display:none"></div>').appendTo('body');
             var dialogId = "#" + that.divExportDialogId;
 
             kendoWindow = $(dialogId).kendoWindow({
@@ -632,10 +632,10 @@ var exportResultRowNumber = 0;
             // Option dropdown in popup screen
             var menuLink = $(".dropDown-Menu > li");
             menuLink.find("> a").append('<span class="arrow-grey"></span>');
-            menuLink.hover(function () {
+            menuLink.on("mouseenter", function () {
                 $(this).find(".arrow-grey").removeClass("arrow-grey").addClass("arrow-white");
                 $(this).children(".sub-menu").show();
-            }, function () {
+            }).on("mouseleave", function () {
                 $(this).find(".arrow-white").removeClass("arrow-white").addClass("arrow-grey");
                 $(this).children(".sub-menu").hide();
             });

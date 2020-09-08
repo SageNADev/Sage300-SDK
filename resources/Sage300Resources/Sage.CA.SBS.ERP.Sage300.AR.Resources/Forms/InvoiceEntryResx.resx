@@ -309,4 +309,7 @@
   <data name="PostInvoiceEntry" xml:space="preserve">
     <value>A/R Post Invoice Entry</value>
   </data>
+  <data name="LessEstTaxWithheld" xml:space="preserve">
+    <value>Less Estimated Tax Withheld</value>
+  </data>
 </root>

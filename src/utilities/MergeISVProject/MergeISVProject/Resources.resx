@@ -159,6 +159,9 @@
   <data name="Msg_ApplicationRunComplete" xml:space="preserve">
     <value>The application has completed.</value>
   </data>
+  <data name="Msg_ApplicationRunCompleteWithErrors" xml:space="preserve">
+    <value>The application has completed with errors.</value>
+  </data>
   <data name="Msg_ArgumentList" xml:space="preserve">
     <value>Argument List:</value>
   </data>
@@ -188,6 +191,9 @@
   </data>
   <data name="Msg_End" xml:space="preserve">
     <value>End</value>
+  </data>
+  <data name="Msg_ExtraResourceLanguages" xml:space="preserve">
+    <value>Specify any extra language resources outside the currently supported languages (English, French, Spanish, Chinese [simplified and traditional]). Multiple languages can be separated by commas.</value>
   </data>
   <data name="Msg_FilesDotCount" xml:space="preserve">
     <value>files.Count() = {0}</value>

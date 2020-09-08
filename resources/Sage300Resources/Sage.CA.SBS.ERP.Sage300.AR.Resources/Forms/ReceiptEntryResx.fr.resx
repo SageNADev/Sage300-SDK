@@ -662,6 +662,9 @@
   <data name="TaxReportingRateType" xml:space="preserve">
     <value>Type taux monnaie de publication</value>
   </data>
+  <data name="TaxWithheld" xml:space="preserve">
+    <value>Impôt retenu</value>
+  </data>
   <data name="Time" xml:space="preserve">
     <value>Heure</value>
     <comment>Credit - Group Field</comment>

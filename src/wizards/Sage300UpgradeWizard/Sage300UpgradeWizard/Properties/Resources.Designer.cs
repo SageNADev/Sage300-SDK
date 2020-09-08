@@ -97,6 +97,33 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup of solution completed..
+        /// </summary>
+        internal static string BackupCompleted {
+            get {
+                return ResourceManager.GetString("BackupCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup solution.
+        /// </summary>
+        internal static string BackupSolution {
+            get {
+                return ResourceManager.GetString("BackupSolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting backup of solution....
+        /// </summary>
+        internal static string BackupStarting {
+            get {
+                return ResourceManager.GetString("BackupStarting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Before update.
         /// </summary>
         internal static string BeforeUpdate {
@@ -174,6 +201,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string DoesNotExist {
             get {
                 return ResourceManager.GetString("DoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the checkbox below to enable a backup of your Visual Studio solution..
+        /// </summary>
+        internal static string EnableBackup {
+            get {
+                return ResourceManager.GetString("EnableBackup", resourceCulture);
             }
         }
         
@@ -314,6 +350,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please be sure you have backed up the solution and project files before proceeding!.
+        /// </summary>
+        internal static string ManualBackupMessage {
+            get {
+                return ResourceManager.GetString("ManualBackupMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
         internal static string Next {
@@ -337,15 +382,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Processing {
             get {
                 return ResourceManager.GetString("Processing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Processing {0}....
-        /// </summary>
-        internal static string ProcessingStep {
-            get {
-                return ResourceManager.GetString("ProcessingStep", resourceCulture);
             }
         }
         
@@ -540,27 +576,18 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         /// <summary>
         ///   Looks up a localized string similar to This step will need to be done manually..
         /// </summary>
-        internal static string ReleaseSpecificDescUpdateCheckboxes {
+        internal static string ReleaseSpecificDescUnifyDisabled {
             get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateCheckboxes", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificDescUnifyDisabled", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will need to be done manually..
+        ///   Looks up a localized string similar to Add &apos;BinInclude.txt&apos; file to Web project.
         /// </summary>
-        internal static string ReleaseSpecificDescUpdateNewtonsoftPackage {
+        internal static string ReleaseSpecificTitle_AddBinIncludeFile {
             get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateNewtonsoftPackage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will need to be done manually..
-        /// </summary>
-        internal static string ReleaseSpecificDescUpdateThemeColor {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificDescUpdateThemeColor", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificTitle_AddBinIncludeFile", resourceCulture);
             }
         }
         
@@ -574,29 +601,29 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will automatically convert the targeted version of the Microsoft .NET Framework to V4.7.2 in all projects in the solution being upgraded..
+        ///   Looks up a localized string similar to This step will automatially search for and remove all previous versions of jQuery specific library files from your solution and projects..
         /// </summary>
-        internal static string ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
+        internal static string ReleaseSpecificTitleDescRemovePreviousJqueryLibraries {
             get {
-                return ResourceManager.GetString("ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificTitleDescRemovePreviousJqueryLibraries", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Checkboxes and Radio buttons changes.
+        ///   Looks up a localized string similar to Remove previous version of jQuery libraries.
         /// </summary>
-        internal static string ReleaseSpecificTitleUpdateCheckboxes {
+        internal static string ReleaseSpecificTitleRemovePreviousJqueryLibraries {
             get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateCheckboxes", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificTitleRemovePreviousJqueryLibraries", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update version of Newtonsoft.Json.
+        ///   Looks up a localized string similar to Unify HTML &apos;disabled&apos; attribute.
         /// </summary>
-        internal static string ReleaseSpecificTitleUpdateNewtonsoftPackage {
+        internal static string ReleaseSpecificTitleUnifyDisabled {
             get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateNewtonsoftPackage", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificTitleUnifyDisabled", resourceCulture);
             }
         }
         
@@ -610,29 +637,21 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Theme color changes.
-        /// </summary>
-        internal static string ReleaseSpecificTitleUpdateThemeColor {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitleUpdateThemeColor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to In addition, as part of the framework changes in Sage 300c 2020.2, checkboxes
-        ///and radio buttons also had a visual upgrade.
+        ///   Looks up a localized string similar to As part of the framework changes required to unify the usage of HTML &apos;disable&apos;
+        ///attribute in Sage HtmlHelper controls.
         ///
-        ///The updated elements will inherit the new visual upgrade correctly if they are
-        ///created using the Sage 300 HtmlHelperExtension. For customized elements that 
-        ///are not using the HtmlHelperExtension, you may make use of the utility so that
-        ///the elements will have the same visual style and benefit from the visual
-        ///upgrade.
+        ///The upgrade wizard is unable to automatically perform this modification and
+        ///therefore this step will require manual modifications.
         ///
-        ///Please refer to the &apos;Checkboxes and Radio Buttons changes&apos; s [rest of string was truncated]&quot;;.
+        ///Any cshtml file that defines a Sage HtmlHelper control needs to be updated to
+        ///match the standard of the usage of HTML &apos;disabled&apos; attribute.
+        ///
+        ///Please refer to the &quot;Unified &apos;disabled&apos; Attribute&quot; subsection in the Sage 300
+        ///Upgrade Guide for 2020.2 to 2021 [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string ReleaseSpecificUpdateCheckboxes {
+        internal static string ReleaseSpecificUnifyDisabled {
             get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateCheckboxes", resourceCulture);
+                return ResourceManager.GetString("ReleaseSpecificUnifyDisabled", resourceCulture);
             }
         }
         
@@ -652,49 +671,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to As part of the framework changes in Sage 300c 2020.2, the Newtonsoft.Json
-        ///package need to be updated from 6.0.8 version to 9.0.1 version or above. If
-        ///your project is using a newer version than 9.0.1, you can ignore this step and
-        ///continue.
-        ///
-        ///The upgrade wizard is unable to automatically perform this modification and
-        ///therefore this step will require manual modifications.
-        ///
-        ///Please refer to the &apos;Upgrade Newtonsoft.Json Package&apos; subsection in the Sage
-        ///300 Upgrade Guide for 2020.1 to 2020.2 in the docs fol [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ReleaseSpecificUpdateNewtonsoftPackage {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateNewtonsoftPackage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The targeted version of the Microsoft .NET Framework will be updated to version {0} 
         ///for all projects in the solution..
         /// </summary>
         internal static string ReleaseSpecificUpdateTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("ReleaseSpecificUpdateTargetedDotNetFrameworkVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to As part of the framework changes required to handle theme color in
-        ///Sage 300c 2020.2, several files need to be altered for the solution to
-        ///adapt the changes after the upgrade process.
-        ///
-        ///The upgrade wizard is unable to automatically perform this modification and
-        ///therefore this step will require manual modifications.
-        ///
-        ///Any JavaScript file that defines a customized Kendo window needs to be updated
-        ///for the customized popup to apply the new theme colors.
-        ///
-        ///Please refer to the &apos;Theme Color changes&apos; subsecti [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ReleaseSpecificUpdateThemeColor {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificUpdateThemeColor", resourceCulture);
             }
         }
         
@@ -754,11 +736,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Solution Upgrade Wizard - V{0}.
+        ///   Looks up a localized string similar to If you&apos;ve selected the &apos;Backup solution&apos; option, the solution will be 
+        ///backed up prior to upgrade..
         /// </summary>
-        internal static string SolutionUpgrade {
+        internal static string SolutionWillBeBackedUp {
             get {
-                return ResourceManager.GetString("SolutionUpgrade", resourceCulture);
+                return ResourceManager.GetString("SolutionWillBeBackedUp", resourceCulture);
             }
         }
         
@@ -777,15 +760,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Step {
             get {
                 return ResourceManager.GetString("Step", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upgrade from {0} to {1}.
-        /// </summary>
-        internal static string StepDescriptionMain {
-            get {
-                return ResourceManager.GetString("StepDescriptionMain", resourceCulture);
             }
         }
         
@@ -817,11 +791,120 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Processing {0}....
+        /// </summary>
+        internal static string Template_ProcessingStep {
+            get {
+                return ResourceManager.GetString("Template_ProcessingStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A log file will be generated with the results of the upgrade.
+        ///
+        ///Note: {0}.
+        /// </summary>
+        internal static string Template_ReleaseAllContentConfirmation {
+            get {
+                return ResourceManager.GetString("Template_ReleaseAllContentConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will automatically add a file called &apos;{0}&apos; to the Web project. 
+        ///
+        ///This file is used during the release compilation process to allow the 
+        ///specification of additional objects to be deployed. 
+        ///
+        ///For example, if your project contains an object called 
+        ///YourCompany.XX.dll that you wish to be deployed in addition
+        ///to all the other files that are deployed, you can add a line
+        ///to the &apos;{0}&apos; as follows:
+        ///
+        ///YourCompany.XX.dll
+        ///
+        ///When the solution is built in &apos;Release&apos; mode, any files specified
+        ///in the fil [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Template_ReleaseSpecificContent_AddBinIncludeFile {
+            get {
+                return ResourceManager.GetString("Template_ReleaseSpecificContent_AddBinIncludeFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will automatically add a new file called &apos;{0}&apos;.
+        /// </summary>
+        internal static string Template_ReleaseSpecificDesc_AddBinIncludeFile {
+            get {
+                return ResourceManager.GetString("Template_ReleaseSpecificDesc_AddBinIncludeFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The following previous versions of jQuery files will be removed from your solution and projects:
+        ///
+        ///jQuery Core V{0}
+        ///jQuery UI V{1}
+        ///jQuery Migrate V{2}.
+        /// </summary>
+        internal static string Template_ReleaseSpecificRemovePreviousJqueryLibraries {
+            get {
+                return ResourceManager.GetString("Template_ReleaseSpecificRemovePreviousJqueryLibraries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will automatically convert the targeted version of the Microsoft .NET Framework to V{0} in all projects in the solution being upgraded..
+        /// </summary>
+        internal static string Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
+            get {
+                return ResourceManager.GetString("Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Removing all copies of {0} located in project folders..
         /// </summary>
         internal static string Template_RemovingAllCopiesOfAccpacPropsFile {
             get {
                 return ResourceManager.GetString("Template_RemovingAllCopiesOfAccpacPropsFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your solution has been successfully backed up and is located in the folder &apos;{0}&apos;..
+        /// </summary>
+        internal static string Template_SolutionBackupCompleted {
+            get {
+                return ResourceManager.GetString("Template_SolutionBackupCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solution Upgrade Wizard - V{0}.
+        /// </summary>
+        internal static string Template_SolutionUpgrade {
+            get {
+                return ResourceManager.GetString("Template_SolutionUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade from {0} to {1}.
+        /// </summary>
+        internal static string Template_StepDescriptionMain {
+            get {
+                return ResourceManager.GetString("Template_StepDescriptionMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade library from {0} to {1}.
+        /// </summary>
+        internal static string Template_UpgradeLibrary {
+            get {
+                return ResourceManager.GetString("Template_UpgradeLibrary", resourceCulture);
             }
         }
         
@@ -844,15 +927,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The updates to support checkboxes and radio buttons must be made manually..
-        /// </summary>
-        internal static string UpdatesToSupportCheckboxesAreAManualStep {
-            get {
-                return ResourceManager.GetString("UpdatesToSupportCheckboxesAreAManualStep", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The updates to support multiple sessions must be made manually..
         /// </summary>
         internal static string UpdatesToSupportMultipleSessionsAreAManualStep {
@@ -862,20 +936,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The updates to Newtonsoft.Json package must be made manually..
+        ///   Looks up a localized string similar to The updates to unify HTML &apos;disabled&apos; attribute must be made manually..
         /// </summary>
-        internal static string UpdatesToSupportNewtonsoftUpdateAreAManualStep {
+        internal static string UpdatesToUnifyDisabledAreAManualStep {
             get {
-                return ResourceManager.GetString("UpdatesToSupportNewtonsoftUpdateAreAManualStep", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The updates to support theme color must be made manually..
-        /// </summary>
-        internal static string UpdatesToSupportThemeColorAreAManualStep {
-            get {
-                return ResourceManager.GetString("UpdatesToSupportThemeColorAreAManualStep", resourceCulture);
+                return ResourceManager.GetString("UpdatesToUnifyDisabledAreAManualStep", resourceCulture);
             }
         }
         
@@ -885,15 +950,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Upgrade {
             get {
                 return ResourceManager.GetString("Upgrade", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upgrade library from {0} to {1}.
-        /// </summary>
-        internal static string UpgradeLibrary {
-            get {
-                return ResourceManager.GetString("UpgradeLibrary", resourceCulture);
             }
         }
     }

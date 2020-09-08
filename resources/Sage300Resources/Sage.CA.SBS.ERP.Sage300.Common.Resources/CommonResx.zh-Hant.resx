@@ -1552,4 +1552,7 @@
   <data name="ContactNotExist" xml:space="preserve">
     <value>連絡人{0}不存在。</value>
   </data>
+  <data name="Template_ReportCouldNotBeLocated" xml:space="preserve">
+    <value>** TO BE TRANSLATED ** The report file '{0}' could not be located. Please contact your administrator for assistance.</value>
+  </data>
 </root>

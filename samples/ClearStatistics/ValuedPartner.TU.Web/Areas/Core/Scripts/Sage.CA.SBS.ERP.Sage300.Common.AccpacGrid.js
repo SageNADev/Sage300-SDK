@@ -692,13 +692,13 @@ sg.viewList = function () {
     function _noEditor(container, gridName) {
         var grid = $('#' + gridName).data("kendoGrid");
         grid.closeCell();
-        if (container.context.cellIndex === 0 && sg.utls.isShiftKeyPressed) {
+        if (container[0].cellIndex === 0 && sg.utls.isShiftKeyPressed) {
             var prevRowIndex = sg.utls.kndoUI.getSelectedRowIndex(grid) - 1;
             if (prevRowIndex >= 0) {
                 grid.select(grid.tbody.find(">tr:eq(" + prevRowIndex + ")"));
             }
         } 
-        sg.utls.kndoUI.skipTab(grid, container.context.cellIndex);
+        sg.utls.kndoUI.skipTab(grid, container[0].cellIndex);
     }
 
     /**
@@ -1286,25 +1286,64 @@ sg.viewList = function () {
      * @param {function} callBack The callBack function after the action is completed
      */
     function _sendRequest(gridName, requestType, fieldName, isNewLine, insertedIndex, rowData, callBack) {
-        var grid = _getGrid(gridName),
-            record = rowData || grid.dataItem(grid.select());
+        var grid = _getGrid(gridName);
+        var record = rowData || grid.dataItem(grid.select());
+
+        // D-40982
+        removeDisabledFieldsFromAjaxPayload(record);
 
         if (grid) {
-            var data = { 'viewID': $("#" + gridName).attr('viewID'), 'record': record, 'fieldName': fieldName },
-                requestName = _getRequestName(requestType),
-                url = _getRequestUrl(gridName, requestName);
+            var data = {
+                'viewID': $("#" + gridName).attr('viewID'),
+                'record': record,
+                'fieldName': fieldName
+            };
+            var requestName = _getRequestName(requestType);
+            var url = _getRequestUrl(gridName, requestName);
 
             if (requestType === RequestTypeEnum.Refresh) {
                 data.isNewRecord = isNewLine || false;
             }
-                
+
             sg.utls.ajaxPostSync(url, data, function (jsonResult) {
                 var isSuccess = true;
-                if (jsonResult && jsonResult.UserMessage.Errors && jsonResult.UserMessage.Errors.length > 0 ) {
+                if (jsonResult && jsonResult.UserMessage.Errors && jsonResult.UserMessage.Errors.length > 0) {
                     isSuccess = false;
                 }
                 _requestComplete(requestType, isSuccess, gridName, jsonResult, fieldName, isNewLine, insertedIndex, rowData ? rowData.uid : "", callBack);
             });
+        }
+    }
+
+    /**
+     * @description D-40982 - Remove disabled fields from Ajax payload
+     * @param {object} record The record object
+     */
+    function removeDisabledFieldsFromAjaxPayload(record) {
+        var ATTRIBUTE_DISABLED = 4;
+
+        if (record && record.AccpacViewFieldAttributes) {
+            // Remove any fields marked as disabled from the record object BEFORE
+            // we make the ajaxPostSync call.
+
+            // 1. Find any fields whose attribute is marked as 4 (disabled)
+            var disabledFields = [];
+            for (var property in record.AccpacViewFieldAttributes) {
+                var propertyValue = record.AccpacViewFieldAttributes[property];
+                if (propertyValue === ATTRIBUTE_DISABLED) {
+                    disabledFields.push(property);
+                }
+            }
+            // 2. If disabled property found, delete it
+            if (disabledFields.length > 0) {
+                // Note: The next line will not pass unit testing
+                //disabledFields.forEach(element => delete record[element]);
+                // Note: The following block WILL PASS unit testing
+                for (var i = 0; i < disabledFields.length; i++) {
+                    var name = disabledFields[i];
+                    delete record[name];
+                }
+            }
         }
     }
 
@@ -1792,9 +1831,9 @@ sg.viewList = function () {
         });
 
         //binding the drilldown popup window
-        $("#" + gridName).delegate("tbody > tr > td > a", "click", _initShowPopup);
+        $("#" + gridName).on("click", "tbody > tr > td > a", _initShowPopup);
 
-        $("#" + gridName).delegate("tbody > tr > td > img", "click", _initShowPopup);
+        $("#" + gridName).on("click", "tbody > tr > td > img", _initShowPopup);
 
         //When close the pop up error message, focus the last edit cell
         $(document).on("click", ".msgCtrl-close", function (e) {

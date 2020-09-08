@@ -342,6 +342,9 @@ $.extend(sg.utls, {
 
     isSameOrigin: function () {
         var url = window.location.href;
+        if (window.name === 'CRMFrame') {
+            return false;
+        }
         if (sessionStorage["productId"] || url.indexOf("productId") > 0) {
             return false;
         }
@@ -425,12 +428,9 @@ $.extend(sg.utls, {
      * @returns {boolean} True if the browser is Internet Explorer, otherwise false. 
      */
     isInternetExplorer: function () {
-        var isIE = $.browser.msie;
         var ua = window.navigator.userAgent;
         var tridentFound = ua.indexOf('Trident/') > 0;
-        var edgeFound = ua.indexOf('Edge/') > 0;
-
-        return (isIE || tridentFound || edgeFound);
+        return tridentFound;
     },
 
     /**
@@ -439,10 +439,8 @@ $.extend(sg.utls, {
      * @returns {boolean} True if the browser is Mozilla Firefox, otherwise false. 
      */
     isMozillaFirefox: function () {
-        var isMozilla = $.browser.mozilla;
-        var isIE = sg.utls.isInternetExplorer();
-
-        return (isMozilla && !isIE);
+        var isMozilla = window.navigator.userAgent.indexOf('Firefox/') > 0;
+        return isMozilla;
     },
 
     /**
@@ -794,6 +792,8 @@ $.extend(sg.utls, {
 
     homeCurrency: null,
 
+    reportDisplayInSeparateTab: null,
+
     isPhoneNumberFormatRequired: null,
 
     loadHomeCurrency: function () {
@@ -832,13 +832,26 @@ $.extend(sg.utls, {
         }
     },
 
+    setReportDisplayInSeparateTab: function () {
+        // Set report display in separate tab, if not already set
+        if (sg.utls.reportDisplayInSeparateTab === null) {
+            sg.utls.ajaxCache(sg.utls.url.buildUrl("Core", "Common", "GetReportDisplayInSeparateTab"), {}, function (result) {
+                sg.utls.reportDisplayInSeparateTab = result.ReportDisplayInSeparateTab;
+            }, "ReportDisplayInSeparateTab");
+        }
+    },
+
     openReport: function (reportToken, checkTitle, callbackOnClose) {
         //report use web forms, not using route, session id put on query string
         var reportUrlFormat = $("#hdnUrl").val() + "../../WebForms/ReportViewer.aspx?token={0}&session={1}";
         var urls = $("#hdnUrl").val().split('/').filter(function (el) { return el; });
         var reportUrl = kendo.format(reportUrlFormat, reportToken, urls[urls.length-1]);
 
-        if (!sg.utls.isPortalIntegrated()) {
+        // Set var for report display in separate tab, if not already set
+        sg.utls.setReportDisplayInSeparateTab();
+
+        // Display on seperate tab if web.config entry is true OR being printted from host other than the Sage 300 home page
+        if (sg.utls.reportDisplayInSeparateTab || !sg.utls.isPortalIntegrated()) {
             window.open(reportUrl);
         } else {
             //TODO: this is method to open report in Portal Windows Dock
@@ -1127,6 +1140,22 @@ $.extend(sg.utls, {
         sg.utls.showMessage(ret, $.noop, false, false);
     },
 
+    getJsonResultHandler: function (externalHandler) {
+        return function (result) {
+            if (externalHandler && typeof externalHandler === "function") {
+                // this is the only way to test if result can be convert to JSON
+                var callbackValue = null;
+                try {
+                    callbackValue = JSON.parse(result);
+                } catch(err) {
+                    console.warn("Error parsing value: " + result + " to JSON");
+                } finally {
+                    externalHandler(callbackValue);
+                }
+            }
+        };
+    },
+
     ajaxErrorHandler: function (jqXhr, textStatus, errorThrown) {
         $('#ajaxSpinner').slideUp();
         if (jqXhr != null && jqXhr.responseText != null && jqXhr.responseText != "" && jqXhr.status != "401") {
@@ -1141,15 +1170,15 @@ $.extend(sg.utls, {
     },
 
     ajaxGet: function (ajaxUrl, ajaxData, successHandler) {
-        sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "json", "get", true, sg.utls.ajaxErrorHandler);
+        sg.utls.ajaxInternal(ajaxUrl, ajaxData, sg.utls.getJsonResultHandler(successHandler), "text", "get", true, sg.utls.ajaxErrorHandler);
     },
 
     recursiveAjaxPost: function (ajaxUrl, ajaxData, successHandler, abortHandler) {
-        return sg.utls.recursiveAjax(ajaxUrl, ajaxData, successHandler, abortHandler, "json", "post");
+        return sg.utls.recursiveAjax(ajaxUrl, ajaxData, sg.utls.getJsonResultHandler(successHandler), abortHandler, "text", "post");
     },
 
     ajaxPost: function (ajaxUrl, ajaxData, successHandler) {
-        sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "json", "post", true, sg.utls.ajaxErrorHandler);
+        sg.utls.ajaxInternal(ajaxUrl, ajaxData, sg.utls.getJsonResultHandler(successHandler), "text", "post", true, sg.utls.ajaxErrorHandler);
     },
 
     ajaxCrossDomainPost: function (ajaxUrl, ajaxData, successHandler, errorHandler) {
@@ -1171,7 +1200,7 @@ $.extend(sg.utls, {
     },
 
     ajaxPostSync: function (ajaxUrl, ajaxData, successHandler) {
-        sg.utls.ajaxInternal(ajaxUrl, ajaxData, successHandler, "json", "post", false, sg.utls.ajaxErrorHandler);
+        sg.utls.ajaxInternal(ajaxUrl, ajaxData, sg.utls.getJsonResultHandler(successHandler), "text", "post", false, sg.utls.ajaxErrorHandler);
     },
 
     ajaxCachePostHtml: function (ajaxUrl, ajaxData, successHandler, key) {
@@ -1302,9 +1331,9 @@ $.extend(sg.utls, {
 
             kendoWindow.data("kendoWindow").center().open();
 
-            kendoWindow.find("#dialogConfirmation_header").html(globalResource.SessionExpiredDialogHeader);
-            kendoWindow.find("#dialogConfirmation_msg1").html(globalResource.SessionExpiredDialogMsg1);
-            kendoWindow.find("#dialogConfirmation_msg2").html(globalResource.SessionExpiredDialogMsg2);
+            kendoWindow.find("#dialogConfirmation_header").text(globalResource.SessionExpiredDialogHeader);
+            kendoWindow.find("#dialogConfirmation_msg1").text(globalResource.SessionExpiredDialogMsg1);
+            kendoWindow.find("#dialogConfirmation_msg2").text(globalResource.SessionExpiredDialogMsg2);
 
             var yesBinderArray = ["msgCtrl-close", "btn-primary"];
             var noBinderArray = ["btn-secondary"];
@@ -1312,37 +1341,36 @@ $.extend(sg.utls, {
 
         switch (dialogType) {
             case sg.utls.DialogBoxType.YesNo:
-                $(idOK).html(globalResource.Yes);
-                $(idCancel).html(globalResource.No);
+                $(idOK).text(globalResource.Yes);
+                $(idCancel).text(globalResource.No);
                 break;
             case sg.utls.DialogBoxType.OKCancel:
-                $(idOK).html(globalResource.OK);
-                $(idCancel).html(globalResource.Cancel);
+                $(idOK).text(globalResource.OK);
+                $(idCancel).text(globalResource.Cancel);
                 break;
             case sg.utls.DialogBoxType.OK:
                 defaultTitle = globalResource.Info;
-                $(idOK).html(globalResource.OK);
+                $(idOK).text(globalResource.OK);
                 $(idCancel).hide();
                 break;
             case sg.utls.DialogBoxType.Close:
                 defaultTitle = globalResource.Error;
                 $(idOK).hide();
-                $(idCancel).html(globalResource.Close);
+                $(idCancel).text(globalResource.Close);
                 break;
             case sg.utls.DialogBoxType.DeleteCancel:
-                $(idOK).html(globalResource.Delete);
-                $(idCanel).html(globalResource.Cancel);
+                $(idOK).text(globalResource.Delete);
+                $(idCanel).text(globalResource.Cancel);
                 break;
             case sg.utls.DialogBoxType.Continue:
-                kendoWindow.find("#dialogConfirmation_header").html(title);
-                kendoWindow.find("#dialogConfirmation_msg1").html(message);
+                kendoWindow.find("#dialogConfirmation_header").text(title);
+                kendoWindow.find("#dialogConfirmation_msg1").text(message);
                 $(idOK).hide();
                 $(idCancel).val(globalResource.Continue);
                 break;
         }
-
         title = title || defaultTitle;
-        kendoWindow.find("#title-text").html(title);
+        kendoWindow.find("#title-text").text(title);
 
         $.each(yesBinderArray, function (index, value) {
             kendoWindow.find("." + value).click(function () {
@@ -1464,9 +1492,9 @@ $.extend(sg.utls, {
 
     showCommonConfirmationDialog: function (id, callbackYes, callbackNo, message) {
         var dialogId = 'div_' + id + 'confirm_dialog';
-        $('<div  class="modelWindow" id="' + dialogId + '" />').appendTo('body');
+        $('<div  class="modelWindow" id="' + dialogId + '" ></div>').appendTo('body');
 
-        var kendoWindow = $('<div class="modelWindow" id="' + dialogId + '" />').kendoWindow({
+        var kendoWindow = $('<div class="modelWindow" id="' + dialogId + '" ></div>').kendoWindow({
             title: '',
             resizable: false,
             modal: true,
@@ -1523,13 +1551,16 @@ $.extend(sg.utls, {
         var randomPostfix = sg.utls.makeRandomString(5);
         var InpageTemplateID = InpageTemplateIDRoot + randomPostfix;
 
+        messageIn = sg.utls.htmlEncode(messageIn);
+        titleIn = sg.utls.htmlEncode(titleIn);
+
         var template = "<script id=\"" + InpageTemplateID + "\" type=\"text/x-kendo-template\">" +
             "<div class=\"fild_set\">" +
             "<div class=\"fild-title generic-message\" id=\"gen-message" + randomPostfix + "\">" +
-            "<div id=\"title-text" + randomPostfix + "\" />" +
+            "<div id=\"title-text" + randomPostfix + "\" ></div>" +
             "</div>" +
             "<div class=\"fild-content\">" +
-            "<div id=\"body-text" + randomPostfix + "\" />" +
+            "<div id=\"body-text" + randomPostfix + "\" ></div>" +
             "<div class=\"modelBox_controlls\">" +
             "<input type=\"button\" class=\"btn btn-secondary generic-cancel\" id=\"kendoConfirmationCancelButton" + randomPostfix + "\" value=\"@CommonResx.No\" />" +
             "<input type=\"button\" class=\"btn btn-primary generic-confirm\" id=\"kendoConfirmationAcceptButton" + randomPostfix + "\" value=\"@CommonResx.Yes\" />" +
@@ -1695,7 +1726,7 @@ $.extend(sg.utls, {
     },
 
     showKendoMessageDialog: function (callbackok, message) {
-        var kendoWindow = $("<div class='modelWindow' id='" + "messageDialog " + "' />").kendoWindow({
+        var kendoWindow = $("<div class='modelWindow' id='" + "messageDialog " + "' ></div>").kendoWindow({
             title: '',
             resizable: false,
             modal: true,
@@ -1846,6 +1877,8 @@ $.extend(sg.utls, {
     },
 
     openKendoWindowPopup: function (id, data, defaultWidth) {
+        $(id + " .menu-with-submenu").remove();    // to remove Text sizing option, this is because the popup is not from iFrame ...
+
         var kendoWindow = $(id).data("kendoWindow");
 
         if (data != null) {
@@ -1881,10 +1914,10 @@ $.extend(sg.utls, {
 
         var menuLink = $(".dropDown-Menu > li");
         menuLink.find("> a").append('<span class="arrow-grey"></span>');
-        menuLink.hover(function () {
+        menuLink.on("mouseenter", function () {
             $(this).find(".arrow-grey").removeClass("arrow-grey").addClass("arrow-white");
             $(this).children(".sub-menu").show();
-        }, function () {
+        }).on("mouseleave", function () {
             $(this).find(".arrow-white").removeClass("arrow-white").addClass("arrow-grey");
             $(this).children(".sub-menu").hide();
         });
@@ -3115,6 +3148,19 @@ $.extend(sg.utls, {
         });
     },
 
+    saveScreenLevelUserPreferences: function (key, value) {
+        var data = { key: key, value: value };
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "SaveScreenLevelUserPreference"), data, function(result) {
+            console.log("SaveScreenLevelUserPreference: " + result); //result is either true or false
+        });
+    },
+
+    deleteScreenLevelUserPreference: function(){
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "DeleteScreenLevelUserPreference"), {}, function(result) {
+            console.log("DeleteScreenLevelUserPreference: " + result); //result is either true or false
+        });
+    },
+
     getUserPreferences: function (key, successHandler) {
         var data = { key: key };
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "GetUserPreference"), data, successHandler);
@@ -3313,6 +3359,48 @@ $.extend(sg.utls, {
             menuItemText = '';
         }
         return menuItemText;
+    },
+
+    localFormSizeDataTag: "data-local-form-size",
+
+    /**
+     * @name localFormSizeHandler
+     * @description To handle add form-<size> to current HTML tag
+     * @param {object} src The current object
+     * @param {string} size Size to set
+     * @param {string} preferenceKey The preference key used to be saved
+     * @param {bool} isSkipSavePreference Flag to indicate if it should save the preference
+     */
+    localFormSizeHandler: function (src, size, preferenceKey, isSkipSavePreference) {
+        var classToSet = "form-large";
+        switch (size) {
+            case "large": classToSet = "form-large"; break;
+            case "medium": classToSet = "form-medium"; break;
+            case "small": classToSet = "form-small"; break;
+        }
+
+        $(src).parent().siblings().removeClass("menu-active");
+        $(src).parent().addClass("menu-active");
+        $(src).parents("HTML").removeClass("form-large form-medium form-small").addClass(classToSet);
+
+        if (!isSkipSavePreference) {
+            // save value to user preference
+            sg.utls.saveScreenLevelUserPreferences(preferenceKey, size);
+            // mark HTML as it has local setting
+            $(src).parents("HTML").attr(sg.utls.localFormSizeDataTag, size);
+        }
+    },
+
+    /**
+     * @name resetAllScreenSize
+     */
+    resetAllScreenSize: function(){
+        $.each($('[id^="iFrameMenu"]').contents().find('html'), function (index, targetHTML) {
+            var $targetHTML = $(targetHTML);
+            // remote data tag
+            $targetHTML.removeAttr(sg.utls.localFormSizeDataTag);
+            
+        });
     }
 
     //initBackgroundImageCycling: function () {
@@ -3612,6 +3700,187 @@ window.onerror = function (msg, url, line) {
     }
 };
 
+
+/************ NOTE!!!! This block of code here is to support Knockout before the upgrade, once it is done, the following code should be removed ************/
+
+var nodeNames = "abbr|article|aside|audio|bdi|canvas|data|datalist|details|figcaption|figure|footer|" +
+    "header|hgroup|mark|meter|nav|output|progress|section|summary|time|video";
+var rtbody = /<tbody/i;
+var rhtml = /<|&#?\w+;/;
+var rxhtmlTag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:]+)[^>]*)\/>/gi;
+var rtagName = /<([\w:]+)/;
+var wrapMap = {
+    option: [1, "<select multiple='multiple'>", "</select>"],
+    legend: [1, "<fieldset>", "</fieldset>"],
+    thead: [1, "<table>", "</table>"],
+    tr: [2, "<table><tbody>", "</tbody></table>"],
+    td: [3, "<table><tbody><tr>", "</tr></tbody></table>"],
+    col: [2, "<table><tbody></tbody><colgroup>", "</colgroup></table>"],
+    area: [1, "<map>", "</map>"],
+    _default: [0, "", ""]
+};
+var rleadingWhitespace = /^\s+/;
+var rcheckableType = /^(?:checkbox|radio)$/;
+var rscriptType = /\/(java|ecma)script/i;
+
+// Used in clean, fixes the defaultChecked property
+function fixDefaultChecked(elem) {
+    if (rcheckableType.test(elem.type)) {
+        elem.defaultChecked = elem.checked;
+    }
+}
+
+function createSafeFragment(document) {
+    var list = nodeNames.split("|"),
+        safeFrag = document.createDocumentFragment();
+
+    if (safeFrag.createElement) {
+        while (list.length) {
+            safeFrag.createElement(
+                list.pop()
+            );
+        }
+    }
+    return safeFrag;
+}
+
+jQuery.clean = function (elems, context, fragment, scripts) {
+    var i, j, elem, tag, wrap, depth, div, hasBody, tbody, len, handleScript, jsTags,
+        safe = context === document && safeFragment,
+        ret = [];
+
+    // Ensure that context is a document
+    if (!context || typeof context.createDocumentFragment === "undefined") {
+        context = document;
+    }
+
+    // Use the already-created safe fragment if context permits
+    for (i = 0; (elem = elems[i]) != null; i++) {
+        if (typeof elem === "number") {
+            elem += "";
+        }
+
+        if (!elem) {
+            continue;
+        }
+
+        // Convert html string into DOM nodes
+        if (typeof elem === "string") {
+            if (!rhtml.test(elem)) {
+                elem = context.createTextNode(elem);
+            } else {
+                // Ensure a safe container in which to render the html
+                safe = safe || createSafeFragment(context);
+                div = context.createElement("div");
+                safe.appendChild(div);
+
+                // Fix "XHTML"-style tags in all browsers
+                elem = elem.replace(rxhtmlTag, "<$1></$2>");
+
+                // Go to html and back, then peel off extra wrappers
+                tag = (rtagName.exec(elem) || ["", ""])[1].toLowerCase();
+                wrap = wrapMap[tag] || wrapMap._default;
+                depth = wrap[0];
+                div.innerHTML = wrap[1] + elem + wrap[2];
+
+                // Move to the right depth
+                while (depth--) {
+                    div = div.lastChild;
+                }
+
+                // Remove IE's autoinserted <tbody> from table fragments
+                if (!jQuery.support.tbody) {
+
+                    // String was a <table>, *may* have spurious <tbody>
+                    hasBody = rtbody.test(elem);
+                    tbody = tag === "table" && !hasBody ?
+                        div.firstChild && div.firstChild.childNodes :
+
+                        // String was a bare <thead> or <tfoot>
+                        wrap[1] === "<table>" && !hasBody ?
+                            div.childNodes :
+                            [];
+
+                    for (j = tbody.length - 1; j >= 0; --j) {
+                        if (jQuery.nodeName(tbody[j], "tbody") && !tbody[j].childNodes.length) {
+                            tbody[j].parentNode.removeChild(tbody[j]);
+                        }
+                    }
+                }
+
+                // IE completely kills leading whitespace when innerHTML is used
+                if (!jQuery.support.leadingWhitespace && rleadingWhitespace.test(elem)) {
+                    div.insertBefore(context.createTextNode(rleadingWhitespace.exec(elem)[0]), div.firstChild);
+                }
+
+                elem = div.childNodes;
+
+                // Take out of fragment container (we need a fresh div each time)
+                div.parentNode.removeChild(div);
+            }
+        }
+
+        if (elem.nodeType) {
+            ret.push(elem);
+        } else {
+            jQuery.merge(ret, elem);
+        }
+    }
+
+    // Fix #11356: Clear elements from safeFragment
+    if (div) {
+        elem = div = safe = null;
+    }
+
+    // Reset defaultChecked for any radios and checkboxes
+    // about to be appended to the DOM in IE 6/7 (#8060)
+    if (!jQuery.support.appendChecked) {
+        for (i = 0; (elem = ret[i]) != null; i++) {
+            if (jQuery.nodeName(elem, "input")) {
+                fixDefaultChecked(elem);
+            } else if (typeof elem.getElementsByTagName !== "undefined") {
+                jQuery.grep(elem.getElementsByTagName("input"), fixDefaultChecked);
+            }
+        }
+    }
+
+    // Append elements to a provided document fragment
+    if (fragment) {
+        // Special handling of each script element
+        handleScript = function (elem) {
+            // Check if we consider it executable
+            if (!elem.type || rscriptType.test(elem.type)) {
+                // Detach the script and store it in the scripts array (if provided) or the fragment
+                // Return truthy to indicate that it has been handled
+                return scripts ?
+                    scripts.push(elem.parentNode ? elem.parentNode.removeChild(elem) : elem) :
+                    fragment.appendChild(elem);
+            }
+        };
+
+        for (i = 0; (elem = ret[i]) != null; i++) {
+            // Check if we're done after handling an executable script
+            if (!(jQuery.nodeName(elem, "script") && handleScript(elem))) {
+                // Append to fragment and handle embedded scripts
+                fragment.appendChild(elem);
+                if (typeof elem.getElementsByTagName !== "undefined") {
+                    // handleScript alters the DOM, so use jQuery.merge to ensure snapshot iteration
+                    jsTags = jQuery.grep(jQuery.merge([], elem.getElementsByTagName("script")), handleScript);
+
+                    // Splice the scripts into ret after their former ancestor and advance our index beyond them
+                    ret.splice.apply(ret, [i + 1, 0].concat(jsTags));
+                    i += jsTags.length;
+                }
+            }
+        }
+    }
+
+    return ret;
+};
+
+/************ END OF THE BLOCK  ************/
+
+
 /**
  * Add Sage-specific functionality to the jQuery namespace.
  */
@@ -3702,10 +3971,10 @@ $(function () {
 
     var menuLink = $(".dropDown-Menu > li");
     menuLink.find("> a").append('<span class="arrow-grey"></span>');
-    menuLink.hover(function () {
+    menuLink.on("mouseenter", function () {
         $(this).find(".arrow-grey").removeClass("arrow-grey").addClass("arrow-white");
         $(this).children(".sub-menu").show();
-    }, function () {
+    }).on("mouseleave", function () {
         $(this).find(".arrow-white").removeClass("arrow-white").addClass("arrow-grey");
         $(this).children(".sub-menu").hide();
     });

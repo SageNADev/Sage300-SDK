@@ -1057,6 +1057,10 @@
     <value>Clase Fiscal de Detalle</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="DetailTaxWithheld" xml:space="preserve">
+    <value>Detalle del Impuesto Retenido</value>
+    <comment>Auto-Generated</comment>
+  </data>
   <data name="DetailTotal" xml:space="preserve">
     <value>Total de Detalle</value>
     <comment>Auto-Generated</comment>
@@ -2061,6 +2065,10 @@
     <value>Recibos Pendientes</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="PendingTaxWithheld" xml:space="preserve">
+    <value>Impuesto Retenido Pendiente</value>
+    <comment>Auto-Generated</comment>
+  </data>
   <data name="PendPaymentTotal" xml:space="preserve">
     <value>Pago Pendiente Total</value>
     <comment>Auto-Generated</comment>
@@ -2835,6 +2843,10 @@
   </data>
   <data name="TaxReportingTotal" xml:space="preserve">
     <value>Total en Moneda de Reporte Fiscal</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="TaxWithheld" xml:space="preserve">
+    <value>Impuesto Retenido</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Telephone" xml:space="preserve">
@@ -3966,5 +3978,14 @@
   </data>
   <data name="FailedMTNationalAccountEmail" xml:space="preserve">
     <value>No se pudieron enviar los documentos por correo electrónico a los contactos de la cuenta nacional {0}. Verifique que los contactos de esta cuenta nacional estén bien configurados.</value>
+  </data>
+  <data name="EstimatedWithholdingAmount" xml:space="preserve">
+    <value>Importe Retenido Estimado</value>
+  </data>
+  <data name="TotalEstimatedTaxWithheld" xml:space="preserve">
+    <value>Total Impuesto Retenido Estimado</value>
+  </data>
+  <data name="EstimatedTaxWithheld" xml:space="preserve">
+    <value>Impuesto Retenido Estimado</value>
   </data>
 </root>

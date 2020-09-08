@@ -1552,4 +1552,7 @@
   <data name="ContactNotExist" xml:space="preserve">
     <value>Contact {0} does not exist.</value>
   </data>
+  <data name="Template_ReportCouldNotBeLocated" xml:space="preserve">
+    <value>The report file '{0}' could not be located. Please contact your administrator for assistance.</value>
+  </data>
 </root>

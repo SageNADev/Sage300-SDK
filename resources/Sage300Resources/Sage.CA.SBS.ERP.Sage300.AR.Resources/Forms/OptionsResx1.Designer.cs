@@ -718,6 +718,24 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Payments Acceptance Bank Code.
+        /// </summary>
+        public static string PaymentsAcceptanceDefaultBankCode {
+            get {
+                return ResourceManager.GetString("PaymentsAcceptanceDefaultBankCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payments Acceptance Bank Code Description.
+        /// </summary>
+        public static string PaymentsAcceptanceDefaultBankCodeDesc {
+            get {
+                return ResourceManager.GetString("PaymentsAcceptanceDefaultBankCodeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Period Type.
         /// </summary>
         public static string PeriodType {

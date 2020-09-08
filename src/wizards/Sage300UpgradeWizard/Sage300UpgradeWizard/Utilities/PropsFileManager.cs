@@ -64,6 +64,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
                         catch (Microsoft.Build.Exceptions.InvalidProjectFileException ex)
                         {
                             // Likely the <import> statement couldn't be resolved. That's ok.
+
+                            // Just a line to resolve compiler warning.
+                            var msg = ex.Message; 
+
                             continue;
                         }
 
