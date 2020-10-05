@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -84,6 +84,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string AlternateName {
             get {
                 return ResourceManager.GetString("AlternateName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available Fields.
+        /// </summary>
+        internal static string AvailableFields {
+            get {
+                return ResourceManager.GetString("AvailableFields", resourceCulture);
             }
         }
         
@@ -310,6 +319,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drop Down.
+        /// </summary>
+        internal static string Dropdown {
+            get {
+                return ResourceManager.GetString("Dropdown", resourceCulture);
             }
         }
         
@@ -567,11 +585,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate UI.
+        /// </summary>
+        internal static string GenerateUI {
+            get {
+                return ResourceManager.GetString("GenerateUI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the &apos;Generate UI&apos; button to invoke the UI Generation screen for a WYSIWG UI editor for creating a basic layout..
+        /// </summary>
+        internal static string GenerateUICodeInstructions {
+            get {
+                return ResourceManager.GetString("GenerateUICodeInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generating File {0}....
         /// </summary>
         internal static string GeneratingFile {
             get {
                 return ResourceManager.GetString("GeneratingFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grid Container.
+        /// </summary>
+        internal static string GridContainer {
+            get {
+                return ResourceManager.GetString("GridContainer", resourceCulture);
             }
         }
         
@@ -956,6 +1001,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Radio Buttons.
+        /// </summary>
+        internal static string RadioButtons {
+            get {
+                return ResourceManager.GetString("RadioButtons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lookup a Sage 300 report .ini file.
         /// </summary>
         internal static string ReportIniDialogTip {
@@ -1137,6 +1191,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} Entities are used to generate UI code..
+        /// </summary>
+        internal static string StepDescriptionGenerateUICode {
+            get {
+                return ResourceManager.GetString("StepDescriptionGenerateUICode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select Code Type and Credentials.
         /// </summary>
         internal static string StepTitleCodeType {
@@ -1173,12 +1236,30 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate a UI layout.
+        /// </summary>
+        internal static string StepTitleGenerateUICode {
+            get {
+                return ResourceManager.GetString("StepTitleGenerateUICode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Success {
             get {
                 object obj = ResourceManager.GetObject("Success", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tab Control.
+        /// </summary>
+        internal static string TabControl {
+            get {
+                return ResourceManager.GetString("TabControl", resourceCulture);
             }
         }
         

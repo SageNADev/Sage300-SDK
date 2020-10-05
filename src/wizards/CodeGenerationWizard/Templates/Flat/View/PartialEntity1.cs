@@ -17,9 +17,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class Entity : EntityBase
+    public partial class PartialEntity : PartialEntityBase
     {
 #line hidden
         /// <summary>
@@ -28,121 +28,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 25 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 26 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
 
     // Locals
     var entityName = view.Properties[BusinessView.Constants.EntityName];
@@ -150,7 +150,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
-    var keyFieldName = view.Keys.FirstOrDefault();
     var modelName = view.Properties[BusinessView.Constants.ModelName];
 
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
@@ -163,380 +162,111 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
             #line hidden
             this.Write("@* ");
             
-            #line 40 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 40 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
             #line hidden
-            this.Write(" *@\r\n");
-            
-            #line 41 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            this.Write(@" *@
 
-if (view.Options[BusinessView.Constants.GenerateGrid])
-{
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using AnnotationsResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.AnnotationsResx
 
+@using ");
             
-            #line default
-            #line hidden
-            this.Write("\t@model ");
-            
-            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".Models.");
-            
-            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write("ViewModel\r\n");
-            
-            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
-}
-else
-{
-
-            
-            #line default
-            #line hidden
-            this.Write("\t@model ");
-            
-            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".Models.");
-            
-            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write("ViewModel<");
-            
-            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
-            
-            #line default
-            #line hidden
-            this.Write(".Models.");
-            
-            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
-            
-            #line default
-            #line hidden
-            this.Write(">\r\n");
-            
-            #line 52 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
-}
-
-            
-            #line default
-            #line hidden
-            this.Write("\r\n@using ");
-            
-            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Resources.Forms.");
             
-            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
-            this.Write(@"
-
-@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
-@using Sage.CA.SBS.ERP.Sage300.Common.Resources
-@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
-@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
-@using AnnotationsResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.AnnotationsResx
-
-<script type=""text/javascript"">
-    @Html.ConvertToJsVariableUsingNewtonSoft(""");
+            this.Write("\r\n\r\n@model ");
             
-            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
+            
+            #line default
+            #line hidden
+            this.Write(".Models.");
+            
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write("ViewModel\", Model)\r\n</script>\r\n\r\n@Html.Partial(\"~/Areas/");
+            this.Write("ViewModel<");
             
-            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
-            this.Write("/Views/");
+            this.Write(".Models.");
             
-            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
-            
-            #line default
-            #line hidden
-            this.Write(@"/Partials/_Localization.cshtml"")
-
-<div id=""success"" class=""message""></div>
-
-<div class=""form-screen"">
-    <div id=""message""></div>
-    <header>
-        <section class=""header-group-1"">
-            <div class=""header-wrapper"">
-                <div class=""header-headline"">
-                    @Html.SageHeader1Label(""");
-            
-            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
-            this.Write("Header\", ");
+            this.Write(">\r\n\r\n<div>\r\n");
             
-            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
-            
-            #line default
-            #line hidden
-            this.Write(".Entity)\r\n                </div>\r\n                @Html.Partial(Core.OptionsMenu," +
-                    " Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })\t" +
-                    "\r\n\t");
-            
-            #line 81 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 53 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
+ 
+// Counter for indentation
+int depth = 0;
 
-	if (!view.Options[BusinessView.Constants.GenerateGrid])
-	{
-    
-            
-            #line default
-            #line hidden
-            this.Write(@"			<div class=""header-options"">
-                    @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
-                    {
-                        @Html.KoSageButton(""btnNew"", null, new { @value = CommonResx.CreateNew, @id = ""btnNew"", @class = ""btn btn-primary"" })
-                    }
-                </div>
-");
-            
-            #line 91 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
+// Iterate xml and apply snippets directly to template
+if (element.HasElements)
+{
+    // Recursion
+    ReadXMLRecursion(depth, element);
 }
 
             
             #line default
             #line hidden
-            this.Write("            </div>\r\n            <div class=\"flag-required\">\r\n                <spa" +
-                    "n class=\"req-option\">@CommonResx.RequiredLegend</span>\r\n            </div>\r\n    " +
-                    "    </section>\r\n    </header>\r\n    ");
-            
-            #line 100 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
-        }
-    
-            
-            #line default
-            #line hidden
-            this.Write("\r\n\t");
-            
-            #line 107 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
- 
-	if (view.Options[BusinessView.Constants.GenerateGrid])
-	{
-		var gridName = entityName.Substring(0, 1).ToLower() +  entityName.Substring(1);
-		WriteLine("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
-	}
-    else if (xmlLayout != null)
-    {
-        // XML Layout has been specified and therefore generate layout using this instead of generating
-        // only the key field
-
-        // Counter for indentation
-        int depth = 0;
-
-        // Get first element and proceed if there are elements specified
-        var element = xmlLayout.Root.Descendants().First();
-
-        // Iterate xml and apply snippets directly to template
-        if (element.HasElements)
-        {
-            // Recursion
-            ReadXMLRecursion(depth, element);
-        }
-    }
-	else
-	{
-    
-            
-            #line default
-            #line hidden
-            this.Write("\t\t<div class=\"search-group\">\r\n            @Html.SageLabelFor(model => model.Data." +
-                    "");
-            
-            #line 135 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write(", new { @id = \"lbl");
-            
-            #line 135 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", @class = \"required\" })\r\n            @Html.KoSageTextBoxFor(model => model.Data" +
-                    ".");
-            
-            #line 136 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write(", new { @sagevalue = \"Data.");
-            
-            #line 136 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", @valueUpdate = \"\'input\'\" }, new { @id = \"txt");
-            
-            #line 136 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", @class = \"default\", @formatTextbox = \"alphaNumeric\" })\r\n            @Html.KoSa" +
-                    "geButton(\"btnLoad");
-            
-            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", null, new { @id = \"btnLoad\", @class = \"icon btn-go\", @tabindex = \"-1\" })\r\n    " +
-                    "        @Html.KoSageButton(\"btnFinder");
-            
-            #line 138 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", null, new { @class = \"icon btn-search\", @id = \"btnFinder");
-            
-            #line 138 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write("\", @tabindex = \"-1\" })\r\n            @Html.ValidationMessageFor(model => model.Dat" +
-                    "a.");
-            
-            #line 139 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
-            
-            #line default
-            #line hidden
-            this.Write(")\r\n        </div>\r\n\t");
-            
-            #line 141 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
-	}
-	
-            
-            #line default
-            #line hidden
-            this.Write("    ");
-            
-            #line 144 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "</div>");
-        }
-    
-            
-            #line default
-            #line hidden
-            this.Write(@"
-    <section class=""footer-group-1"">
-        @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
-        {
-            @Html.KoSageButton(""btnSave"", new { }, new { @value = CommonResx.Save, @id = ""btnSave"", @class = ""btn btn-primary"" })
-
-    ");
-            
-            #line 156 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
-	if (!view.Options[BusinessView.Constants.GenerateGrid])
-	{
-    
-            
-            #line default
-            #line hidden
-            this.Write("\t\t\t@Html.KoSageButton(\"btnDelete\", new { }, new { @value = CommonResx.Delete, @id" +
-                    " = \"btnDelete\", @class = \"btn btn-primary\" })\r\n\t");
-            
-            #line 161 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
-	}
-	
-            
-            #line default
-            #line hidden
-            this.Write("      }\r\n    </section>\r\n</div>\r\n");
+            this.Write("</div>\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 167 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+        #line 66 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
 
     // Class Feature Block in T4
     private void ReadXMLRecursion(int depth, XElement element)
@@ -655,28 +385,25 @@ else
             {
                 // Tab Snippet
                 var id = controlElement.Attribute("id").Value;
-                var entityName = view.Properties[BusinessView.Constants.EntityName];
                 var resxName = view.Properties[BusinessView.Constants.ResxName];
+                var entityName = view.Properties[BusinessView.Constants.EntityName];
 
                 WriteLine(new string(' ', depth * 4) + "<div id=\" + id + \" class=\"xsmall tab-group\">");
                 WriteLine(new string(' ', (depth + 1) * 4) + "<ul>");
                 // Iterate tab pages
-                var tabCount = 0;
                 foreach (var tabPageElement in controlElement.Descendants().First().Elements())
                 {
                     // Tab Page Snippet
                     var pageId = tabPageElement.Attribute("id").Value;
-                    var elementType = tabPageElement.Attribute("type").Value;
-                    var activePage = string.Empty;
-                    tabCount++;
+                    var activePage = tabPageElement.Attribute("widget").Value;
 
-                    // Determine class
-                    if (tabCount == 1)
+                    // Determine for class name
+                    if (activePage == "TabPage")
                     {
                         activePage = " class=\"k-state-active\"";
                     }
 
-                    WriteLine(new string(' ', (depth + 2) * 4) + "<" + elementType + activePage + " id=\"tab " + pageId + "\">@" + resxName + "." + pageId + "</" + elementType + ">");
+                    WriteLine(new string(' ', (depth + 2) * 4) + "<li" + activePage + " id=\"tab " + pageId + "\">@" + resxName + "." + pageId + "</li>");
                 }
 
                 WriteLine(new string(' ', (depth + 1) * 4) + "</ul>");
@@ -694,7 +421,7 @@ else
             }
 
             // children?
-            if (controlElement.HasElements && !controlElement.Attribute("widget").Value.Equals("Tab"))
+            if (controlElement.HasElements)
             {
                 ReadXMLRecursion(depth, controlElement.Descendants().First());
             }
@@ -711,7 +438,7 @@ else
         #line default
         #line hidden
         
-        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\PartialEntity.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 
@@ -736,6 +463,19 @@ private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings settings
     get
     {
         return this._settingsField;
+    }
+}
+
+private global::System.Xml.Linq.XElement _elementField;
+
+/// <summary>
+/// Access the element parameter of the template.
+/// </summary>
+private global::System.Xml.Linq.XElement element
+{
+    get
+    {
+        return this._elementField;
     }
 }
 
@@ -775,6 +515,20 @@ if ((settingsValueAcquired == false))
         this._settingsField = ((global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings)(data));
     }
 }
+bool elementValueAcquired = false;
+if (this.Session.ContainsKey("element"))
+{
+    this._elementField = ((global::System.Xml.Linq.XElement)(this.Session["element"]));
+    elementValueAcquired = true;
+}
+if ((elementValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("element");
+    if ((data != null))
+    {
+        this._elementField = ((global::System.Xml.Linq.XElement)(data));
+    }
+}
 
 
     }
@@ -793,7 +547,7 @@ if ((settingsValueAcquired == false))
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class EntityBase
+    public class PartialEntityBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

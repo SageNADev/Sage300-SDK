@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -25,6 +25,9 @@
     var entityName = view.Properties[BusinessView.Constants.EntityName];
     var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
     var copyright = settings.Copyright;
+
+    var xmlLayout = settings.XmlLayout;
+    var widgets = settings.Widgets;
 #>
 /* <#=copyright#> */
 
@@ -40,5 +43,38 @@ function <#=localEntityName#>ObservableExtension(viewModel, uiMode) {
     model.UIMode = ko.observable(uiMode);
 
     // Computed Fields go here
+<#
+    
+    // Create disabled properties, if any date or checkbox controls
+    // Iterate XML, if any
+    if (xmlLayout != null)
+    {
+        // Iterate date widgets, if any
+        if (widgets.ContainsKey("DateTime"))
+        {
+            foreach (var widget in widgets["DateTime"])
+            {
+                WriteLine(new string(' ', 4) + "model.Is" + widget + "Disabled = ko.computed(function () {");
+                WriteLine(new string(' ', 8) + "// Default to false");
+                WriteLine(new string(' ', 8) + "return 1 === 2;");
+                WriteLine(new string(' ', 4) + "});");
+                WriteLine("");
+            }
+        }
 
+        // Iterate checkbox widgets, if any
+        if (widgets.ContainsKey("Checkbox"))
+        {
+            foreach (var widget in widgets["Checkbox"])
+            {
+                WriteLine(new string(' ', 4) + "model.Is" + widget + "Disabled = ko.computed(function () {");
+                WriteLine(new string(' ', 8) + "// Default to false");
+                WriteLine(new string(' ', 8) + "return 1 === 2;");
+                WriteLine(new string(' ', 4) + "});");
+                WriteLine("");
+            }
+        }
+    }
+
+#>
 };

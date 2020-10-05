@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -126,6 +126,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> XDocument for processing to understand hierarchy </summary>
         private XDocument _xmlEntities;
+
+        /// <summary> XDocument for XML Layout, if one is generated </summary>
+        private XDocument _xmlLayout = null;
+
+        /// <summary> Dictonary of widgets for XML Layout, if layout is generated </summary>
+        private Dictionary<string, List<string>> _widgets = new Dictionary<string, List<string>>();
 
         /// <summary> Entities Container Name </summary>
         private string _entitiesContainerName;
@@ -547,7 +553,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Check for dupes only in add mode since in edit mode the view id cannot be changed
-            var dupeFound = false;
             if (_modeType.Equals(ModeTypeEnum.Add))
             {
                 // Iterate existing entities specified thus far
@@ -696,7 +701,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             tabPage4.ToolTipText = Resources.CompositionTip;
 
             tooltip.SetToolTip(grdEntityCompositions, Resources.EntityCompositionGridTip);
-            
+
+            // UI Generation Step
+            lblGenerateUIInstructions.Text = Resources.GenerateUICodeInstructions;
+            btnGenerateUI.Text = Resources.GenerateUI;
+
             // Generate Step
             lblGenerateHelp.Text = Resources.GenerateTip;
 
@@ -1951,6 +1960,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 #endif
 
                         txtEntitiesToGenerate.Text = _xmlEntities.ToString();
+                        txtLayoutToGenerate.Text = _xmlLayout != null ? _xmlLayout.ToString() : string.Empty;
 
                         // for header-detail type, mark each entity in the header-detail tree
                         if (repositoryType.Equals(RepositoryType.HeaderDetail))
@@ -2198,12 +2208,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Init Panels
                 InitPanel(pnlCodeType);
                 InitPanel(pnlEntities);
+
+                InitPanel(pnlUIGeneration);
                 InitPanel(pnlGenerateCode);
                 InitPanel(pnlGeneratedCode);
 
                 // Add steps
                 AddStep(Resources.StepTitleCodeType, Resources.StepDescriptionCodeType, pnlCodeType);
                 AddStep(Resources.StepTitleEntities, Resources.StepDescriptionEntities, pnlEntities);
+
+                AddStep(Resources.StepTitleGenerateUICode, Resources.StepDescriptionGenerateUICode, pnlUIGeneration);
 
                 AddStep(Resources.StepTitleGenerateCode, Resources.StepDescriptionGenerateCode, pnlGenerateCode);
                 AddStep(Resources.StepTitleGeneratedCode, Resources.StepDescriptionGeneratedCode, pnlGeneratedCode);
@@ -2535,6 +2549,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 Entities = _entities,
 
                 XmlEntities = _xmlEntities,
+                XmlLayout = _xmlLayout,
+                Widgets = _widgets,
 
                 PromptIfExists = false,
                 Projects = _projects,
@@ -3177,6 +3193,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-#endregion
+        /// <summary> Launch UI Generation screen </summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void btnGenerateUI_Click(object sender, EventArgs e)
+        {
+            // Load UI Generation form and pass in entities
+            var form = new UIGeneration();
+            form.LoadEntities(_entities);
+
+            // Show it modally
+            form.ShowDialog(this);
+
+            // Get the XML layout if one was created
+            _xmlLayout = form.XMLLayout;
+            _widgets = form.Widgets;
+
+            // Dispose
+            form.Dispose();
+        }
+
+        #endregion
     }
 }

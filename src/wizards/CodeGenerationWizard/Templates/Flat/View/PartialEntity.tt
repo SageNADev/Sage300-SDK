@@ -22,6 +22,7 @@
 <#@ import namespace="System.Xml.Linq" #>
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#@ parameter type="System.Xml.Linq.XElement" name="element" #>
 <#
     // Locals
     var entityName = view.Properties[BusinessView.Constants.EntityName];
@@ -29,7 +30,6 @@
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
-    var keyFieldName = view.Keys.FirstOrDefault();
     var modelName = view.Properties[BusinessView.Constants.ModelName];
 
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
@@ -38,132 +38,31 @@
     var xmlLayout = settings.XmlLayout;
 #>
 @* <#=copyright#> *@
-<#
-if (view.Options[BusinessView.Constants.GenerateGrid])
-{
-#>
-	@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel
-<#
-}
-else
-{
-#>
-	@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel<<#=companyNamespace#>.<#=moduleId#>.Models.<#=modelName#>>
-<#
-}
-#>
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using AnnotationsResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.AnnotationsResx
 
 @using <#=resxName#> = <#=companyNamespace#>.<#=moduleId#>.Resources.Forms.<#=resxName#>
 
-@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
-@using Sage.CA.SBS.ERP.Sage300.Common.Resources
-@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
-@using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
-@using AnnotationsResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.AnnotationsResx
+@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel<<#=companyNamespace#>.<#=moduleId#>.Models.<#=modelName#>>
 
-<script type="text/javascript">
-    @Html.ConvertToJsVariableUsingNewtonSoft("<#=entityName#>ViewModel", Model)
-</script>
+<div>
+<# 
+// Counter for indentation
+int depth = 0;
 
-@Html.Partial("~/Areas/<#=moduleId#>/Views/<#=entityName#>/Partials/_Localization.cshtml")
-
-<div id="success" class="message"></div>
-
-<div class="form-screen">
-    <div id="message"></div>
-    <header>
-        <section class="header-group-1">
-            <div class="header-wrapper">
-                <div class="header-headline">
-                    @Html.SageHeader1Label("<#=entityName#>Header", <#=resxName#>.Entity)
-                </div>
-                @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })	
-	<#
-	if (!view.Options[BusinessView.Constants.GenerateGrid])
-	{
-    #>
-			<div class="header-options">
-                    @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
-                    {
-                        @Html.KoSageButton("btnNew", null, new { @value = CommonResx.CreateNew, @id = "btnNew", @class = "btn btn-primary" })
-                    }
-                </div>
-<#
+// Iterate xml and apply snippets directly to template
+if (element.HasElements)
+{
+    // Recursion
+    ReadXMLRecursion(depth, element);
 }
 #>
-            </div>
-            <div class="flag-required">
-                <span class="req-option">@CommonResx.RequiredLegend</span>
-            </div>
-        </section>
-    </header>
-    <#
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
-        }
-    #>
-
-	<# 
-	if (view.Options[BusinessView.Constants.GenerateGrid])
-	{
-		var gridName = entityName.Substring(0, 1).ToLower() +  entityName.Substring(1);
-		WriteLine("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
-	}
-    else if (xmlLayout != null)
-    {
-        // XML Layout has been specified and therefore generate layout using this instead of generating
-        // only the key field
-
-        // Counter for indentation
-        int depth = 0;
-
-        // Get first element and proceed if there are elements specified
-        var element = xmlLayout.Root.Descendants().First();
-
-        // Iterate xml and apply snippets directly to template
-        if (element.HasElements)
-        {
-            // Recursion
-            ReadXMLRecursion(depth, element);
-        }
-    }
-	else
-	{
-    #>
-		<div class="search-group">
-            @Html.SageLabelFor(model => model.Data.<#=keyFieldName#>, new { @id = "lbl<#=keyFieldName#>", @class = "required" })
-            @Html.KoSageTextBoxFor(model => model.Data.<#=keyFieldName#>, new { @sagevalue = "Data.<#=keyFieldName#>", @valueUpdate = "'input'" }, new { @id = "txt<#=keyFieldName#>", @class = "default", @formatTextbox = "alphaNumeric" })
-            @Html.KoSageButton("btnLoad<#=keyFieldName#>", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
-            @Html.KoSageButton("btnFinder<#=keyFieldName#>", null, new { @class = "icon btn-search", @id = "btnFinder<#=keyFieldName#>", @tabindex = "-1" })
-            @Html.ValidationMessageFor(model => model.Data.<#=keyFieldName#>)
-        </div>
-	<#
-	}
-	#>
-    <#
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "</div>");
-        }
-    #>
-
-    <section class="footer-group-1">
-        @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
-        {
-            @Html.KoSageButton("btnSave", new { }, new { @value = CommonResx.Save, @id = "btnSave", @class = "btn btn-primary" })
-
-    <#
-	if (!view.Options[BusinessView.Constants.GenerateGrid])
-	{
-    #>
-			@Html.KoSageButton("btnDelete", new { }, new { @value = CommonResx.Delete, @id = "btnDelete", @class = "btn btn-primary" })
-	<#
-	}
-	#>
-      }
-    </section>
 </div>
+
 <#+
     // Class Feature Block in T4
     private void ReadXMLRecursion(int depth, XElement element)
@@ -282,28 +181,25 @@ else
             {
                 // Tab Snippet
                 var id = controlElement.Attribute("id").Value;
-                var entityName = view.Properties[BusinessView.Constants.EntityName];
                 var resxName = view.Properties[BusinessView.Constants.ResxName];
+                var entityName = view.Properties[BusinessView.Constants.EntityName];
 
                 WriteLine(new string(' ', depth * 4) + "<div id=\" + id + \" class=\"xsmall tab-group\">");
                 WriteLine(new string(' ', (depth + 1) * 4) + "<ul>");
                 // Iterate tab pages
-                var tabCount = 0;
                 foreach (var tabPageElement in controlElement.Descendants().First().Elements())
                 {
                     // Tab Page Snippet
                     var pageId = tabPageElement.Attribute("id").Value;
-                    var elementType = tabPageElement.Attribute("type").Value;
-                    var activePage = string.Empty;
-                    tabCount++;
+                    var activePage = tabPageElement.Attribute("widget").Value;
 
-                    // Determine class
-                    if (tabCount == 1)
+                    // Determine for class name
+                    if (activePage == "TabPage")
                     {
                         activePage = " class=\"k-state-active\"";
                     }
 
-                    WriteLine(new string(' ', (depth + 2) * 4) + "<" + elementType + activePage + " id=\"tab " + pageId + "\">@" + resxName + "." + pageId + "</" + elementType + ">");
+                    WriteLine(new string(' ', (depth + 2) * 4) + "<li" + activePage + " id=\"tab " + pageId + "\">@" + resxName + "." + pageId + "</li>");
                 }
 
                 WriteLine(new string(' ', (depth + 1) * 4) + "</ul>");
@@ -321,7 +217,7 @@ else
             }
 
             // children?
-            if (controlElement.HasElements && !controlElement.Attribute("widget").Value.Equals("Tab"))
+            if (controlElement.HasElements)
             {
                 ReadXMLRecursion(depth, controlElement.Descendants().First());
             }

@@ -52,6 +52,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblStepDescription = new MetroFramework.Controls.MetroLabel();
             this.lblStepTitle = new MetroFramework.Controls.MetroLabel();
             this.splitSteps = new System.Windows.Forms.SplitContainer();
+            this.pnlUIGeneration = new System.Windows.Forms.Panel();
+            this.btnGenerateUI = new MetroFramework.Controls.MetroButton();
+            this.lblGenerateUIInstructions = new System.Windows.Forms.Label();
             this.pnlCodeType = new System.Windows.Forms.Panel();
             this.lblCodeTypeFilesHelp = new MetroFramework.Controls.MetroLabel();
             this.lblUnknownCodeTypeFilesHelp = new MetroFramework.Controls.MetroLabel();
@@ -100,6 +103,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlComposition = new System.Windows.Forms.Panel();
             this.grdEntityCompositions = new System.Windows.Forms.DataGridView();
             this.pnlGenerateCode = new System.Windows.Forms.Panel();
+            this.txtLayoutToGenerate = new MetroFramework.Controls.MetroTextBox();
             this.txtEntitiesToGenerate = new MetroFramework.Controls.MetroTextBox();
             this.lblGenerateHelp = new MetroFramework.Controls.MetroLabel();
             this.pnlButtons = new System.Windows.Forms.Panel();
@@ -120,6 +124,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.splitSteps.Panel1.SuspendLayout();
             this.splitSteps.Panel2.SuspendLayout();
             this.splitSteps.SuspendLayout();
+            this.pnlUIGeneration.SuspendLayout();
             this.pnlCodeType.SuspendLayout();
             this.grpCredentials.SuspendLayout();
             this.pnlGeneratedCode.SuspendLayout();
@@ -502,6 +507,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // splitSteps.Panel1
             // 
+            this.splitSteps.Panel1.Controls.Add(this.pnlUIGeneration);
             this.splitSteps.Panel1.Controls.Add(this.pnlCodeType);
             this.splitSteps.Panel1.Controls.Add(this.pnlGeneratedCode);
             this.splitSteps.Panel1.Controls.Add(this.pnlEntities);
@@ -514,6 +520,39 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.splitSteps.Size = new System.Drawing.Size(997, 513);
             this.splitSteps.SplitterDistance = 430;
             this.splitSteps.TabIndex = 52;
+            //
+            // pnlUIGeneration
+            // 
+            this.pnlUIGeneration.Controls.Add(this.btnGenerateUI);
+            this.pnlUIGeneration.Controls.Add(this.lblGenerateUIInstructions);
+            this.pnlUIGeneration.Location = new System.Drawing.Point(829, 214);
+            this.pnlUIGeneration.Name = "pnlUIGeneration";
+            this.pnlUIGeneration.Size = new System.Drawing.Size(611, 48);
+            this.pnlUIGeneration.TabIndex = 52;
+            // 
+            // btnGenerateUI
+            // 
+            this.btnGenerateUI.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerateUI.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnGenerateUI.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnGenerateUI.Highlight = true;
+            this.btnGenerateUI.Location = new System.Drawing.Point(257, 105);
+            this.btnGenerateUI.Name = "btnGenerateUI";
+            this.btnGenerateUI.Size = new System.Drawing.Size(99, 25);
+            this.btnGenerateUI.Style = MetroFramework.MetroColorStyle.Green;
+            this.btnGenerateUI.TabIndex = 20;
+            this.btnGenerateUI.Text = "Generate UI";
+            this.btnGenerateUI.UseSelectable = true;
+            this.btnGenerateUI.Click += new System.EventHandler(this.btnGenerateUI_Click);
+            // 
+            // lblGenerateUIInstructions
+            // 
+            this.lblGenerateUIInstructions.Location = new System.Drawing.Point(146, 51);
+            this.lblGenerateUIInstructions.Name = "lblGenerateUIInstructions";
+            this.lblGenerateUIInstructions.Size = new System.Drawing.Size(364, 79);
+            this.lblGenerateUIInstructions.TabIndex = 0;
+            this.lblGenerateUIInstructions.Text = "Select the \'Generate UI\' button to invoke the UI Generation screen for a WYSIWYG " +
+    "UI editor for creatting a basic layout";
             // 
             // pnlCodeType
             // 
@@ -1224,12 +1263,47 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // pnlGenerateCode
             // 
+            this.pnlGenerateCode.Controls.Add(this.txtLayoutToGenerate);
             this.pnlGenerateCode.Controls.Add(this.txtEntitiesToGenerate);
             this.pnlGenerateCode.Controls.Add(this.lblGenerateHelp);
             this.pnlGenerateCode.Location = new System.Drawing.Point(829, 233);
             this.pnlGenerateCode.Name = "pnlGenerateCode";
             this.pnlGenerateCode.Size = new System.Drawing.Size(468, 64);
             this.pnlGenerateCode.TabIndex = 50;
+            // 
+            // txtLayoutToGenerate
+            // 
+            this.txtLayoutToGenerate.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtLayoutToGenerate.CustomButton.Image = null;
+            this.txtLayoutToGenerate.CustomButton.Location = new System.Drawing.Point(548, 2);
+            this.txtLayoutToGenerate.CustomButton.Name = "";
+            this.txtLayoutToGenerate.CustomButton.Size = new System.Drawing.Size(161, 161);
+            this.txtLayoutToGenerate.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtLayoutToGenerate.CustomButton.TabIndex = 1;
+            this.txtLayoutToGenerate.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtLayoutToGenerate.CustomButton.UseSelectable = true;
+            this.txtLayoutToGenerate.CustomButton.Visible = false;
+            this.txtLayoutToGenerate.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtLayoutToGenerate.Lines = new string[0];
+            this.txtLayoutToGenerate.Location = new System.Drawing.Point(0, 208);
+            this.txtLayoutToGenerate.MaxLength = 32767;
+            this.txtLayoutToGenerate.Multiline = true;
+            this.txtLayoutToGenerate.Name = "txtLayoutToGenerate";
+            this.txtLayoutToGenerate.PasswordChar = '\0';
+            this.txtLayoutToGenerate.ReadOnly = true;
+            this.txtLayoutToGenerate.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtLayoutToGenerate.SelectedText = "";
+            this.txtLayoutToGenerate.SelectionLength = 0;
+            this.txtLayoutToGenerate.SelectionStart = 0;
+            this.txtLayoutToGenerate.ShortcutsEnabled = true;
+            this.txtLayoutToGenerate.Size = new System.Drawing.Size(712, 166);
+            this.txtLayoutToGenerate.TabIndex = 3;
+            this.txtLayoutToGenerate.UseSelectable = true;
+            this.txtLayoutToGenerate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtLayoutToGenerate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtEntitiesToGenerate
             // 
@@ -1400,6 +1474,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.splitSteps.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitSteps)).EndInit();
             this.splitSteps.ResumeLayout(false);
+            this.pnlUIGeneration.ResumeLayout(false);
             this.pnlCodeType.ResumeLayout(false);
             this.pnlCodeType.PerformLayout();
             this.grpCredentials.ResumeLayout(false);
@@ -1514,6 +1589,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUpperBorder;
         private System.Windows.Forms.Label lblLowerBorder;
+        private System.Windows.Forms.Panel pnlUIGeneration;
+        private MetroFramework.Controls.MetroButton btnGenerateUI;
+        private System.Windows.Forms.Label lblGenerateUIInstructions;
+        private MetroFramework.Controls.MetroTextBox txtLayoutToGenerate;
     }
 }
 

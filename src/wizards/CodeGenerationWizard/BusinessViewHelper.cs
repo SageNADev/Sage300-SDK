@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -25,7 +25,8 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml;
-#endregion
+using System.Xml.Linq;
+    #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
@@ -139,6 +140,52 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     txtLines.Insert(pos, textlineToAdded);
                 }
                 File.WriteAllLines(bundleFile, txtLines);
+            }
+        }
+
+        /// <summary>
+        /// Update Flat Constants
+        /// </summary>
+        /// <param name="view">Business View</param>
+        /// <param name="settings">Settings</param>
+        public static void UpdateFlatConstants(BusinessView view, Settings settings)
+        {
+            // Locals
+            var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+            var entityName = view.Properties[BusinessView.Constants.EntityName];
+            var projectInfoWeb = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId];
+            var pathProj = Path.Combine(projectInfoWeb.ProjectFolder, "Areas", moduleId, "Constants");
+            var constantFile = Path.Combine(pathProj, "Constant.cs");
+            string textToAdd = string.Empty;
+
+            // Tag for insertion point in Constant.cs
+            const string tag = "#region Partial Views";
+
+            // Proceed if the file exists
+            if (File.Exists(constantFile))
+            {
+                var txtLines = File.ReadAllLines(constantFile).ToList();
+                var trimLines = (File.ReadAllLines(constantFile)).Select(l => l.Trim()).ToList();
+                var index = trimLines.IndexOf(tag);
+
+                // Proceed if insertion point exists
+                if (index > -1)
+                {
+
+                    // Get first element and proceed if there are elements
+                    var element = settings.XmlLayout.Root.Descendants().First();
+
+                    // Iterate xml
+                    if (element.HasElements)
+                    {
+                        // Recursion
+                        BuildFlatConstants(element, moduleId, entityName, ref textToAdd);
+                    }
+
+                    // Insert the next constant text
+                    txtLines.Insert(index + 2, textToAdd);
+                }
+                File.WriteAllLines(constantFile, txtLines);
             }
         }
 
@@ -996,6 +1043,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 File.WriteAllLines(filePath, txtLines);
             }
         }
+
+        /// <summary>
+        /// Reads the XML recursively to build the string to insert into Constants
+        /// </summary>
+        /// <param name="element">XML Element</param>
+        /// <param name="moduleId">Module Id</param>
+        /// <param name="entityName">Entity Name</param>
+        /// <param name="text">Text to add</param>
+        private static void BuildFlatConstants(XElement element, string moduleId, string entityName, ref string text)
+        {
+            // Iterate elements
+            foreach (var controlElement in element.Elements())
+            {
+                if (controlElement.Attribute("widget").Value.Equals("Tab"))
+                {
+                    // Iterate tab pages
+                    foreach (var tabPageElement in controlElement.Descendants().First().Elements())
+                    {
+                        // Tab Page Snippet
+                        var pageId = tabPageElement.Attribute("id").Value;
+                        text += string.Format(Constants.TabTwo + @"/// <summary>" + "\r\n" +
+                                              Constants.TabTwo + @"/// {0}{2}" + "\r\n" +
+                                              Constants.TabTwo + @"/// </summary>" + "\r\n" +
+                                              Constants.TabTwo + @"public const string {0}{2} = ""~/Areas/{1}/Views/{0}/Partials/_{2}.cshtml;""" + "\r\n",
+                                              entityName, moduleId, pageId);
+                    }
+                }
+
+                // children?
+                if (controlElement.HasElements)
+                {
+                    BuildFlatConstants(controlElement.Descendants().First(), moduleId, entityName, ref text);
+                }
+            }
+        }
+
         #endregion
     }
 }

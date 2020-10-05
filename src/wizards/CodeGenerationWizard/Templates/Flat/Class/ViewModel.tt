@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -42,6 +42,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using <#=companyNamespace#>.<#=moduleId#>.Models;
 <#
 	if (enumsCount > 0)
@@ -83,5 +84,16 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
 <#
         }
 #>
+        /// <summary>
+        /// Returns true if User has Modify Access
+        /// </summary>
+        public bool HasModifyAccess
+        {
+            get
+            {
+                return UserAccess == null || UserAccess.SecurityType.HasFlag(SecurityType.Modify);
+            }
+        }
+
     }
 }

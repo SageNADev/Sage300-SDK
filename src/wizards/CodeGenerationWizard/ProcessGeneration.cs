@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -26,6 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml.Linq;
 using System.Resources;
 using System.Text;
 using System.Windows.Forms;
@@ -947,8 +948,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="view">Business View</param>
         /// <param name="settings">settings</param>
         /// <param name="templateClassName">template class name</param>
+        /// <param name="element">XElement for UI Elements</param>
         /// <returns>string </returns>
-        private static string TransformTemplateToText(BusinessView view, Settings settings, string templateClassName)
+        private static string TransformTemplateToText(BusinessView view, Settings settings, 
+            string templateClassName, XElement element = null)
         {
             // instantiate a template class
             var type = Type.GetType("Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard." + templateClassName);
@@ -965,6 +968,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             templateClassInstance.Session["view"] = view;
             templateClassInstance.Session["settings"] = settings;
+
+            // UI Elements
+            if (element != null)
+            {
+                templateClassInstance.Session["element"] = element;
+            }
 
             templateClassInstance.Initialize();
 
@@ -1627,6 +1636,40 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             TransformTemplateToText(view, _settings, "Templates.Flat.View.Entity"),
                             Constants.WebKey, Constants.SubFolderWebLocalizationKey);
 
+                // Create partial views for tabs, if any
+                if (_settings.Widgets.ContainsKey("Tab"))
+                {
+                    // Iterate in case multiple tabs created
+                    foreach (var tab in _settings.Widgets["Tab"])
+                    {
+                        // Get tab pages for tab
+                        XElement root = _settings.XmlLayout.Root;
+                        IEnumerable<XElement> tabPages =
+                            from element in root.Elements("Control")
+                            where (string)element.Attribute("id") == tab
+                            select element;
+
+                        // Iterate tab pages to create partial views
+                        foreach (XElement element in tabPages)
+                        {
+                            var tabPageElement = element.Descendants().First();
+                            if (tabPageElement.HasElements)
+                            {
+                                var pageId = tabPageElement.Attribute("id").Value;
+                                var controlElement = tabPageElement.Descendants().First();
+                                if (controlElement.HasElements)
+                                {
+                                    fileName = "_" + pageId + ".cshtml";
+                                    CreateClass(view,
+                                                fileName,
+                                                TransformTemplateToText(view, _settings, "Templates.Flat.View.PartialEntity", controlElement),
+                                                Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+                                }
+                            }
+                        }
+                    }
+                }
+
                 // Create grid json files
                 if (view.Options[BusinessView.Constants.GenerateGrid])
                 {
@@ -1643,6 +1686,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (generateClientFiles)
             {
                 BusinessViewHelper.UpdateBundles(view, _settings);
+            }
+
+            // Add to constant.cs if partial views (Tab Control) 
+            if (_settings.Widgets.ContainsKey("Tab"))
+            {
+                BusinessViewHelper.UpdateFlatConstants(view, _settings);
             }
 
             // set the start page
@@ -2311,6 +2360,32 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                     // Add the enum name to the list of unique strings
                     uniqueList.Add(name);
+                }
+
+                // Iterate tab pages, if any
+                if (_settings.Widgets.ContainsKey("Tab"))
+                {
+                    // Iterate in case multiple tabs created
+                    foreach (var tab in _settings.Widgets["Tab"])
+                    {
+                        // Get tab pages for tab
+                        XElement root = _settings.XmlLayout.Root;
+                        IEnumerable<XElement> tabPages =
+                            from element in root.Elements("Control")
+                            where (string)element.Attribute("id") == tab
+                            select element;
+
+                        // Iterate tab pages to create partial views
+                        foreach (XElement element in tabPages)
+                        {
+                            var name = element.Attribute("id").Value;
+                            var value = addDescription ? element.Attribute("text").Value : string.Empty;
+                            resourceManager.InsertIfNotExist(name, value);
+
+                            // Add to the list of unique strings
+                            uniqueList.Add(name);
+                        }
+                    }
                 }
 
                 // Iterate the actual enumeration values

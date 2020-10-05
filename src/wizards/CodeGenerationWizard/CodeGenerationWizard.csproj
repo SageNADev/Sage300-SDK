@@ -114,6 +114,7 @@
     <Compile Include="BusinessViewHelper.cs" />
     <Compile Include="Composition.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="ControlInfo.cs" />
     <Compile Include="Forms\ContainerName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +129,12 @@
     </Compile>
     <Compile Include="Forms\Generation.Designer.cs">
       <DependentUpon>Generation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UIGeneration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UIGeneration.Designer.cs">
+      <DependentUpon>UIGeneration.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcessGeneration.cs" />
     <Compile Include="CodeGenerationWizard.cs" />
@@ -174,6 +181,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Behaviour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Flat\View\PartialEntity1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartialEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\HeaderDetail\Script\Behaviour.cs">
       <DependentUpon>Behaviour.tt</DependentUpon>
@@ -495,6 +507,9 @@
     <EmbeddedResource Include="Forms\Generation.resx">
       <DependentUpon>Generation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UIGeneration.resx">
+      <DependentUpon>UIGeneration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -746,9 +761,11 @@
     <Content Include="Images\Exit24.ico" />
     <Content Include="Images\finder16X.bmp" />
     <Content Include="Images\Go24.ico" />
+    <Content Include="Images\Grid.png" />
     <Content Include="Images\Help_24.ico" />
     <Content Include="Images\ImportSetting24.ico" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\new16X.bmp" />
     <Content Include="Images\ProgressError.ico" />
     <Content Include="Images\ProgressSuccess.ico" />
     <Content Include="Images\RowAdd.ico" />
@@ -756,6 +773,11 @@
     <Content Include="Images\RowsDelete.ico" />
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
+    <Content Include="Images\Tab.png" />
+    <None Include="Templates\Flat\View\PartialEntity.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PartialEntity1.cs</LastGenOutput>
+    </None>
     <None Include="Templates\Flat\Class\Grid\ViewModel.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ViewModel.cs</LastGenOutput>
