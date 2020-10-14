@@ -289,7 +289,28 @@ else
             
             #line default
             #line hidden
-            this.Write(@"
+            this.Write("\r\n@using ");
+            
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            
+            #line default
+            #line hidden
+            this.Write(".Web.Areas.");
+            
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            
+            #line default
+            #line hidden
+            this.Write(@".Constants
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
@@ -300,21 +321,21 @@ else
 <script type=""text/javascript"">
     @Html.ConvertToJsVariableUsingNewtonSoft(""");
             
-            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 66 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ViewModel\", Model)\r\n</script>\r\n\r\n@Html.Partial(\"~/Areas/");
             
-            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 69 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write("/Views/");
             
-            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 69 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -331,14 +352,14 @@ else
                 <div class=""header-headline"">
                     @Html.SageHeader1Label(""");
             
-            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Header\", ");
             
-            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
@@ -347,7 +368,7 @@ else
                     " Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })\t" +
                     "\r\n\t");
             
-            #line 81 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 82 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
 	if (!view.Options[BusinessView.Constants.GenerateGrid])
 	{
@@ -363,7 +384,7 @@ else
                 </div>
 ");
             
-            #line 91 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 92 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
 }
 
@@ -374,7 +395,7 @@ else
                     "n class=\"req-option\">@CommonResx.RequiredLegend</span>\r\n            </div>\r\n    " +
                     "    </section>\r\n    </header>\r\n    ");
             
-            #line 100 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 101 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
         if (xmlLayout == null)
         {
@@ -386,7 +407,7 @@ else
             #line hidden
             this.Write("\r\n\t");
             
-            #line 107 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 108 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  
 	if (view.Options[BusinessView.Constants.GenerateGrid])
 	{
@@ -420,14 +441,14 @@ else
             this.Write("\t\t<div class=\"search-group\">\r\n            @Html.SageLabelFor(model => model.Data." +
                     "");
             
-            #line 135 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 136 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", new { @id = \"lbl");
             
-            #line 135 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 136 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -435,21 +456,21 @@ else
             this.Write("\", @class = \"required\" })\r\n            @Html.KoSageTextBoxFor(model => model.Data" +
                     ".");
             
-            #line 136 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", new { @sagevalue = \"Data.");
             
-            #line 136 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\", @valueUpdate = \"\'input\'\" }, new { @id = \"txt");
             
-            #line 136 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -457,7 +478,7 @@ else
             this.Write("\", @class = \"default\", @formatTextbox = \"alphaNumeric\" })\r\n            @Html.KoSa" +
                     "geButton(\"btnLoad");
             
-            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 138 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -465,14 +486,14 @@ else
             this.Write("\", null, new { @id = \"btnLoad\", @class = \"icon btn-go\", @tabindex = \"-1\" })\r\n    " +
                     "        @Html.KoSageButton(\"btnFinder");
             
-            #line 138 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 139 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write("\", null, new { @class = \"icon btn-search\", @id = \"btnFinder");
             
-            #line 138 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 139 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
@@ -480,14 +501,14 @@ else
             this.Write("\", @tabindex = \"-1\" })\r\n            @Html.ValidationMessageFor(model => model.Dat" +
                     "a.");
             
-            #line 139 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 140 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(")\r\n        </div>\r\n\t");
             
-            #line 141 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 142 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
 	}
 	
@@ -496,7 +517,7 @@ else
             #line hidden
             this.Write("    ");
             
-            #line 144 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 145 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
         if (xmlLayout == null)
         {
@@ -514,7 +535,7 @@ else
 
     ");
             
-            #line 156 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 157 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
 	if (!view.Options[BusinessView.Constants.GenerateGrid])
 	{
@@ -525,7 +546,7 @@ else
             this.Write("\t\t\t@Html.KoSageButton(\"btnDelete\", new { }, new { @value = CommonResx.Delete, @id" +
                     " = \"btnDelete\", @class = \"btn btn-primary\" })\r\n\t");
             
-            #line 161 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 162 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
 	}
 	
@@ -536,7 +557,7 @@ else
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 167 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+        #line 168 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
     // Class Feature Block in T4
     private void ReadXMLRecursion(int depth, XElement element)
@@ -551,8 +572,21 @@ else
             // If row is found
             if (controlElement.Attribute("newRow").Value.Equals("true"))
             {
-                // Start a row
-                WriteLine(new string(' ', depth * 4) + "<div class=\"form-group\">");
+                // If new row is for a tab, then remove the class from the div
+                var className = "class=\"form-group\"";
+                if (controlElement.HasElements)
+                {
+                    var tabElement = controlElement.Descendants().First();
+                    if (tabElement != null && tabElement.HasElements)
+                    {
+                        if (tabElement.Elements().First().Attribute("widget").Value.Equals("Tab"))
+                        {
+                            className = "";
+                        }
+                    }
+                }
+
+                WriteLine(new string(' ', depth * 4) + "<div " + className + ">");
                 rowStarted = true;
             }
             else if (controlElement.Attribute("widget").Value.Equals("Finder"))
@@ -658,7 +692,7 @@ else
                 var entityName = view.Properties[BusinessView.Constants.EntityName];
                 var resxName = view.Properties[BusinessView.Constants.ResxName];
 
-                WriteLine(new string(' ', depth * 4) + "<div id=\" + id + \" class=\"xsmall tab-group\">");
+                WriteLine(new string(' ', depth * 4) + "<div id=\"" + id + "\" class=\"xsmall tab-group\">");
                 WriteLine(new string(' ', (depth + 1) * 4) + "<ul>");
                 // Iterate tab pages
                 var tabCount = 0;
@@ -676,7 +710,7 @@ else
                         activePage = " class=\"k-state-active\"";
                     }
 
-                    WriteLine(new string(' ', (depth + 2) * 4) + "<" + elementType + activePage + " id=\"tab " + pageId + "\">@" + resxName + "." + pageId + "</" + elementType + ">");
+                    WriteLine(new string(' ', (depth + 2) * 4) + "<" + elementType + activePage + " id=\"tab" + pageId + "\">@" + resxName + "." + pageId + "</" + elementType + ">");
                 }
 
                 WriteLine(new string(' ', (depth + 1) * 4) + "</ul>");

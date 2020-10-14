@@ -186,6 +186,10 @@ GridPreferences = {
         for (var i = 0; i < grid.columns.length; i++) {
             attributeNotExists = false;
 
+            if (!grid.columns[i].title) {
+                continue;
+            }
+
             if (grid.columns[i].attributes == null) {
                 attributeNotExists = true;
             } else {

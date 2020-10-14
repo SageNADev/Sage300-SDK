@@ -1951,8 +1951,13 @@ sg.viewList = function () {
      * @return {string} return the text by value
      */
     function getListText(field, dataItem) {
-        var list = this.filter(function (i) { return i.Value.toLowerCase() === (dataItem[field] ? dataItem[field].toString().toLowerCase() : ""); });
-        return list && list.length > 0 ? list[0].Text : (dataItem[field] ? dataItem[field] : "");
+        var list = this.filter(function (i) {
+            return i.Value.toLowerCase() === ((dataItem[field] || dataItem[field] === 0) ?
+                dataItem[field].toString().toLowerCase() : "");
+        });
+        return list && list.length > 0 ?
+            list[0].Text : ((dataItem[field] || dataItem[field] === 0) ?
+            dataItem[field] : "");
     }
 
     /**
@@ -2304,6 +2309,16 @@ sg.viewList = function () {
         _sendRequest(gridName, RequestTypeEnum.Update);
     }
 
+    /**
+     * Clear all records in the grid
+     * @param {any} gridName The grid name
+     */
+    function clear(gridName) {
+        var grid = _getGrid(gridName);
+        var dataSource = grid.dataSource;
+        dataSource.data([]);
+    }
+
     //Module(class) public methods
     return {
         init: init,
@@ -2333,6 +2348,7 @@ sg.viewList = function () {
         refreshCurrentRow: refreshCurrentRow,
         updateCurrentRow: updateCurrentRow,
         isEmpty: isEmpty,
-        cancel: cancel
+        cancel: cancel,
+        clear: clear
     };
 }();

@@ -171,15 +171,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Proceed if insertion point exists
                 if (index > -1)
                 {
-
-                    // Get first element and proceed if there are elements
-                    var element = settings.XmlLayout.Root.Descendants().First();
-
-                    // Iterate xml
-                    if (element.HasElements)
+                    // Iterate tab pages to create partial views
+                    foreach (string tabPage in settings.Widgets["TabPage"])
                     {
-                        // Recursion
-                        BuildFlatConstants(element, moduleId, entityName, ref textToAdd);
+                        textToAdd += string.Format(Constants.TabTwo + @"/// <summary>" + "\r\n" +
+                                              Constants.TabTwo + @"/// {0}{2}" + "\r\n" +
+                                              Constants.TabTwo + @"/// </summary>" + "\r\n" +
+                                              Constants.TabTwo + @"public const string {0}{2} = ""~/Areas/{1}/Views/{0}/Partials/_{2}.cshtml"";" + "\r\n",
+                                              entityName, moduleId, tabPage);
                     }
 
                     // Insert the next constant text
@@ -1043,42 +1042,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 File.WriteAllLines(filePath, txtLines);
             }
         }
-
-        /// <summary>
-        /// Reads the XML recursively to build the string to insert into Constants
-        /// </summary>
-        /// <param name="element">XML Element</param>
-        /// <param name="moduleId">Module Id</param>
-        /// <param name="entityName">Entity Name</param>
-        /// <param name="text">Text to add</param>
-        private static void BuildFlatConstants(XElement element, string moduleId, string entityName, ref string text)
-        {
-            // Iterate elements
-            foreach (var controlElement in element.Elements())
-            {
-                if (controlElement.Attribute("widget").Value.Equals("Tab"))
-                {
-                    // Iterate tab pages
-                    foreach (var tabPageElement in controlElement.Descendants().First().Elements())
-                    {
-                        // Tab Page Snippet
-                        var pageId = tabPageElement.Attribute("id").Value;
-                        text += string.Format(Constants.TabTwo + @"/// <summary>" + "\r\n" +
-                                              Constants.TabTwo + @"/// {0}{2}" + "\r\n" +
-                                              Constants.TabTwo + @"/// </summary>" + "\r\n" +
-                                              Constants.TabTwo + @"public const string {0}{2} = ""~/Areas/{1}/Views/{0}/Partials/_{2}.cshtml;""" + "\r\n",
-                                              entityName, moduleId, pageId);
-                    }
-                }
-
-                // children?
-                if (controlElement.HasElements)
-                {
-                    BuildFlatConstants(controlElement.Descendants().First(), moduleId, entityName, ref text);
-                }
-            }
-        }
-
         #endregion
     }
 }

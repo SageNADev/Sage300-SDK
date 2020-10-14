@@ -38,7 +38,7 @@
                 viewFinder.viewOrder = properties.viewOrder;
                 viewFinder.displayFieldNames = properties.displayFieldNames;
                 viewFinder.returnFieldNames = properties.returnFieldNames;
-
+                viewFinder.calculatePageCount = properties.calculatePageCount;
                 // Optional
                 //     Only useful for UIs such as Invoice Entry finder where you 
                 //     want to restrict the entries to a specific batch
@@ -328,8 +328,8 @@
                 finderOptions.Filter = theOptions.filterAction();
             }
 
-            if (theOptions.finderProperties.calculatePageCount)
-                finderOptions.CalculatePageCount = theOptions.finderProperties.calculatePageCount;
+            if (theOptions.finderProperties.calculatePageCount === false)
+                finderOptions.CalculatePageCount = false;
 
             if (theOptions.finderProperties.reinterpretInitKeyValues)
                 finderOptions.ReinterpretInitKeyValues = theOptions.finderProperties.reinterpretInitKeyValues;

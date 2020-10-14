@@ -95,7 +95,18 @@
                 returnFieldNames: ["CNTLINE"],
                 displayFieldNames: ["CNTLINE", "CONTRACT", "PROJECT", "CATEGORY", "COSTCLASS", "RESOURCE", "BILLDATE", "IDITEM","UNITMEAS", "QTYINVC", "IDDIST", "IDGLACCT", "AMTINVCTC", "AMTDUETC", "SWDISCABL", "RTGAMTTC", "RTGOAMTTC", "RTGDATEDUE"],
                 filterTemplate: "IDCUST = \"{0}\" AND IDINVC = \"{1}\""
-            }
+            },
+
+            PostedReceipts: {
+                viewID: "AR0040",
+                viewOrder: 0,
+                initialKeyFieldInDropdownList: "IDRMIT",
+                returnFieldNames: ["IDRMIT"],
+                displayFieldNames: ["IDRMIT", "IDBANK", "IDCUST", "DATERMIT", "DEPSTNBR", "DATEBTCH", "AMTRMITTC", "AMTPAYM",
+                    "AMTDISC", "PAYMCODE", "CODECURN", "IDRATETYPE", "RATEEXCHHC", "SWOVRDRATE", "TEXTRETRN",
+                    "DATELSTMTN", "DATELSTSTM", "AMTROUNDER", "DATERATE", "FISCYR", "FISCPER", "NAMERMIT",
+                    "CNTBTCH", "CNTITEM", "SWCHKCLRD", "AMTRMITHC", "AMTADJ", "DEPSEQ"]
+            },
         }, 
 
         AS: {

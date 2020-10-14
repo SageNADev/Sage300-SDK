@@ -54,6 +54,7 @@ else
 #>
 
 @using <#=resxName#> = <#=companyNamespace#>.<#=moduleId#>.Resources.Forms.<#=resxName#>
+@using <#=companyNamespace#>.<#=moduleId#>.Web.Areas.<#=moduleId#>.Constants
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
@@ -178,8 +179,21 @@ else
             // If row is found
             if (controlElement.Attribute("newRow").Value.Equals("true"))
             {
-                // Start a row
-                WriteLine(new string(' ', depth * 4) + "<div class=\"form-group\">");
+                // If new row is for a tab, then remove the class from the div
+                var className = "class=\"form-group\"";
+                if (controlElement.HasElements)
+                {
+                    var tabElement = controlElement.Descendants().First();
+                    if (tabElement != null && tabElement.HasElements)
+                    {
+                        if (tabElement.Elements().First().Attribute("widget").Value.Equals("Tab"))
+                        {
+                            className = "";
+                        }
+                    }
+                }
+
+                WriteLine(new string(' ', depth * 4) + "<div " + className + ">");
                 rowStarted = true;
             }
             else if (controlElement.Attribute("widget").Value.Equals("Finder"))
@@ -285,7 +299,7 @@ else
                 var entityName = view.Properties[BusinessView.Constants.EntityName];
                 var resxName = view.Properties[BusinessView.Constants.ResxName];
 
-                WriteLine(new string(' ', depth * 4) + "<div id=\" + id + \" class=\"xsmall tab-group\">");
+                WriteLine(new string(' ', depth * 4) + "<div id=\"" + id + "\" class=\"xsmall tab-group\">");
                 WriteLine(new string(' ', (depth + 1) * 4) + "<ul>");
                 // Iterate tab pages
                 var tabCount = 0;
@@ -303,7 +317,7 @@ else
                         activePage = " class=\"k-state-active\"";
                     }
 
-                    WriteLine(new string(' ', (depth + 2) * 4) + "<" + elementType + activePage + " id=\"tab " + pageId + "\">@" + resxName + "." + pageId + "</" + elementType + ">");
+                    WriteLine(new string(' ', (depth + 2) * 4) + "<" + elementType + activePage + " id=\"tab" + pageId + "\">@" + resxName + "." + pageId + "</" + elementType + ">");
                 }
 
                 WriteLine(new string(' ', (depth + 1) * 4) + "</ul>");

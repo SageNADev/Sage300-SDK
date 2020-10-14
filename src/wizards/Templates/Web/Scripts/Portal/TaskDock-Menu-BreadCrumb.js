@@ -1414,7 +1414,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                 }
             });
 
-            $("#windowManager").on("mouseenter", function () {
+            $("#windowManager").on("click", function () {
                 if ($('#dvWindows').children().length > 0)
                     $("#windowManager > div").show();
 
@@ -1439,11 +1439,26 @@ var TaskDockMenuBreadCrumbManager = function () {
                         return false;
                     }
                 });
+
+                $("#recentWindowManager > div").hide();
+
             }).on("mouseleave", function () {
                 $("#windowManager > div").hide();
             });
 
-            $("#recentWindowManager").on("mouseenter", recentWindowsMenu.show).on("mouseleave", recentWindowsMenu.hide);
+            $("#recentWindowManager").on("click", recentWindowsMenu.show).on("mouseleave", recentWindowsMenu.hide);
+
+            // D-41776 iPad issue - Closing the Window Manager when touched outside of the popup
+
+            $("#recentWindowManager, #navbarSide, #breadcrumb, #screenLayout, #btnViewReports, #btnViewInquiries, #btnViewNotes, #globalHeader").click(function () {
+                $("#windowManager > div").hide();
+            });
+
+            // D-41776 iPad issue - Closing the Recently Opened Windows when touched outside of the popup
+
+            $("#windowManager, #navbarSide, #breadcrumb, #screenLayout, #btnViewReports, #btnViewInquiries, #btnViewNotes,  #globalHeader").click(function () {
+                $("#recentWindowManager > div").hide();
+            });
 
             $('.top_nav_drop_content').click(function () {
                 isReload = false;
@@ -1791,3 +1806,6 @@ window.addEventListener("message", function (e) {
         }
     }
 }, false);
+
+
+

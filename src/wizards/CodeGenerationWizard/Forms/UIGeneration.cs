@@ -104,7 +104,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         private const string PrefixPalette = "palette";
         private const string PrefixColumn = "Column";
-        private const string PrefixTab = "tab";
+        private const string PrefixTab = "tabStrip";
         private const string PrefixGrid = "grid";
 
         private const string SuffixTabTage = "_page";
@@ -703,7 +703,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             DataGridView.HitTestInfo hitTestInfo = null;
             CellInfo cellInfo = null;
 
-            // If dropping a tab, can only drop on a cell and not on another tab
+            // If dropping a tab,
             if (toolboxControl == WidgetTab)
             {
                 // Can only drop on a data grid view
@@ -713,6 +713,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
                 // Can't drop on a data grid view if it's parent is a tab
                 else if (control.Parent != null && control.Parent.GetType() == typeof(TabPage))
+                {
+                    return;
+                }
+
+                // Can only have 1 tab control
+                if (DoesTabExist())
                 {
                     return;
                 }
@@ -972,6 +978,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
             }
             // Fail safe
+            return retVal;
+        }
+
+        /// <summary>
+        /// Does tab already exist?
+        /// </summary>
+        private bool DoesTabExist()
+        {
+            // Init
+            var retVal = false;
+
+            // Iterate collection looking for a tab control
+            foreach (var controlInfo in _controlsList.Values)
+            {
+                if (controlInfo.Control != null && controlInfo.Control.GetType() == typeof(TabControl))
+                {
+                    retVal = true;
+                    break;
+                }
+            }
+
             return retVal;
         }
 
@@ -1655,6 +1682,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="element">XElement </param>
         private void BuildXmlFromControls(DataGridView grid, XElement element)
         {
+            var key = string.Empty;
 
             // Iterate grid rows
             for (int row = 0; row < grid.Rows.Count; row++)
@@ -1707,7 +1735,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             formGroupControlsElement.Add(controlElement);
 
                             // If a drop down/date/checkbox/radio button widget, then add to the list of controls
-                            var key = string.Empty;
+                            key = string.Empty;
                             if (controlInfo.Widget.Equals(WidgetDropDown))
                             {
                                 key = WidgetDropDown;
@@ -1759,12 +1787,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             {
                                 // Controls and control element for tab page
                                 var tabPageControlElement = new XElement(NodeControl);
+                                var tabPageName = tabPage.Text.Replace(" ", string.Empty);
 
                                 // Add attributes
                                 tabPageControlElement.Add(new XAttribute(AttributeType, AttributeLi));
                                 tabPageControlElement.Add(new XAttribute(AttributeRewRow, AttributeTrue));
                                 tabPageControlElement.Add(new XAttribute(AttributeWidget, WidgetTabPage));
-                                tabPageControlElement.Add(new XAttribute(AttributeId, tabPage.Text.Replace(" ", string.Empty)));
+                                tabPageControlElement.Add(new XAttribute(AttributeId, tabPageName));
                                 tabPageControlElement.Add(new XAttribute(AttributeText, tabPage.Text));
 
                                 // Now, recursion with palette on tab page
@@ -1772,6 +1801,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                                 // Add to controls element
                                 tabPageControlsElement.Add(tabPageControlElement);
+
+                                // Add to dictionary
+                                key = WidgetTabPage;
+                                if (Widgets.ContainsKey(key))
+                                {
+                                    Widgets[key].Add(tabPageName);
+                                }
+                                else
+                                {
+                                    Widgets.Add(key, new List<string> { tabPageName });
+                                }
+
                             }
 
                             // Add to control and controls elements
@@ -1779,7 +1820,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             formGroupControlsElement.Add(controlElement);
 
                             // Add to dictionary
-                            var key = WidgetTab;
+                            key = WidgetTab;
                             if (Widgets.ContainsKey(key))
                             {
                                 Widgets[key].Add(control.Name);

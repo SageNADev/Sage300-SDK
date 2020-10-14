@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -34,6 +34,7 @@
     var xmlLayout = settings.XmlLayout;
     var widgets = settings.Widgets;
     var ignoredProperties = string.Empty;
+    var firstTabPage = string.Empty;
 
     // Build list of ignored properties
     // Iterate XML, if any
@@ -61,6 +62,32 @@
 var modelData;
 var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 
+<# 
+    // Create tab strip var if needed
+    if (xmlLayout != null)
+    {
+        // Iterate tab page widgets, if any
+        if (widgets.ContainsKey("TabPage"))
+        {
+            // tabStrip
+            WriteLine("var " + localEntityName + "TabStrip = " + localEntityName + "TabStrip || {};");
+            WriteLine(localEntityName + "TabStrip.ValueType = {");
+            var count = 0;
+            foreach (var widget in widgets["TabPage"])
+            {
+                count++;
+                var addComma = widgets["TabPage"].Count != count ? "," : string.Empty;
+                WriteLine(new string(' ', 4) + widget + ": \"" + widget + "\"" + addComma);
+                if (count == 1)
+                {
+                    firstTabPage = localEntityName + "TabStrip.ValueType." + widget;
+                }
+            }
+            WriteLine("};");
+        }
+    }
+#>
+
 <#=localEntityName#>UI = {
     <#=localEntityName#>Model: {},
     ignoreIsDirtyProperties: ["<#=keyFieldName#>"<#=ignoredProperties#>],
@@ -75,6 +102,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 	 * @method init
 	 */
     init: function () {
+    <#=localEntityName#>UI.initTabs();
     <#=localEntityName#>UI.initButtons();
     <#=localEntityName#>UI.initFinders();
     <#=localEntityName#>UI.initTextboxes();
@@ -144,7 +172,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 	 * @method initDropDownList
 	 */
     initDropDownList: function () {
-    <#
+<#
         // Iterate XML, if any
         if (xmlLayout != null)
         {
@@ -157,7 +185,36 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
                 }
             }
         }
-    #>
+#>
+    },
+
+    /**
+     * Initialize the Tab Widgets, if any
+	 *
+	 * @method initTabs
+	 */
+    initTabs: function () {
+
+<#
+        // Iterate XML, if any
+        if (xmlLayout != null)
+        {
+            // Iterate tab, if any
+            if (widgets.ContainsKey("Tab"))
+            {
+                foreach (var widget in widgets["Tab"])
+                {
+                    WriteLine(new string(' ', 8) + "sg.utls.kndoUI.initTab(\"" + widget + "\");");
+                    WriteLine(new string(' ', 8) + "sg.utls.kndoUI.selectTab(\"" + widget + "\", " + firstTabPage + ");");
+                    WriteLine("");
+                    WriteLine(new string(' ', 8) + "var tabStrip = $(\"#" + widget + "\").data(\"kendoTabStrip\");");
+                    WriteLine(new string(' ', 8) + "if (tabStrip) {");
+                    WriteLine(new string(' ', 12) + "tabStrip.bind(\"select\", " + localEntityName + "UI.onTabSelect);");
+                    WriteLine(new string(' ', 8) + "}");
+                }
+            }
+        }
+#>
     },
 
 	/**
@@ -166,7 +223,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 	 * @method initFinders
 	 */
     initFinders: function () {
-            sg.viewFinderHelper.setViewFinder("btnFinder<#=keyFieldName#>", "txt<#=keyFieldName#>",<#        
+        sg.viewFinderHelper.setViewFinder("btnFinder<#=keyFieldName#>", "txt<#=keyFieldName#>",<#        
         Write("/*TODO Modify the finder property*/ {{viewID:\"{0}\", ", view.Properties[BusinessView.Constants.ViewId]);
         Write("viewOrder:0, displayFieldNames:[");
         
@@ -182,13 +239,13 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 #>
     },
 
-        /**
+     /**
      * Initialize the Textboxes, if any
 	 *
 	 * @method initTextboxes
     */
     initTextboxes: function () {
-    <#
+<#
         // Init date widgets, if any
         // Iterate XML, if any
         if (xmlLayout != null)
@@ -209,7 +266,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
                 }
             }
         }
-    #>
+#>
     },
 
 	/**
@@ -230,6 +287,36 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         sg.utls.clearValidations("frm<#=containerName#>");
         <#=localEntityName#>Repository.create(<#=localEntityName#>UISuccess.create);
     },
+<#
+        // Iterate XML, if any
+        if (xmlLayout != null)
+        {
+            // Iterate tab, if any
+            if (widgets.ContainsKey("TabPage"))
+            {
+                WriteLine(new string(' ', 4) + "");
+                WriteLine(new string(' ', 4) + @"/**");
+                WriteLine(new string(' ', 4) + @"* onTabSelect");
+                WriteLine(new string(' ', 4) + @"*");
+                WriteLine(new string(' ', 4) + @"* @method onTabSelect");
+                WriteLine(new string(' ', 4) + @"*/");
+
+                WriteLine(new string(' ', 4) + "onTabSelect: function (e) {");
+                WriteLine(new string(' ', 8) + "var selectedTab = e.item.id;");
+                WriteLine(new string(' ', 8) + "switch (selectedTab) {");
+
+                foreach (var widget in widgets["TabPage"])
+                {
+                    WriteLine(new string(' ', 12) + "case " + localEntityName + "TapStrip.ValueType." + widget + ":");
+                    WriteLine(new string(' ', 16) + "// Place logic here for selected tab page");
+                    WriteLine(new string(' ', 16) + "");
+                    WriteLine(new string(' ', 16) + "break;");
+                }
+                WriteLine(new string(' ', 8) + "}");
+                WriteLine(new string(' ', 4) + "},");
+            }
+        }
+#>
 
 	/**
      * Is Dirty check
@@ -311,6 +398,22 @@ var <#=localEntityName#>UISuccess = {
         <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
         <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
         <#=localEntityName#>UISuccess.setkey();
+
+<#
+    // Iterate XML, if any
+    if (xmlLayout != null)
+    {
+        // Iterate tab, if any
+        if (widgets.ContainsKey("Tab"))
+        {
+            foreach (var widget in widgets["Tab"])
+            {
+                WriteLine(new string(' ', 8) + "sg.utls.kndoUI.selectTab(\"" + widget + "\", " + firstTabPage + ");");
+            }
+            WriteLine("");
+        }
+    }
+#>
         sg.controls.Focus($("#txt<#=keyFieldName#>"));
     },
 
@@ -326,6 +429,22 @@ var <#=localEntityName#>UISuccess = {
             <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
             <#=localEntityName#>UISuccess.setkey();
         }
+
+<#
+    // Iterate XML, if any
+    if (xmlLayout != null)
+    {
+        // Iterate tab, if any
+        if (widgets.ContainsKey("Tab"))
+        {
+            foreach (var widget in widgets["Tab"])
+            {
+                WriteLine(new string(' ', 8) + "sg.utls.kndoUI.selectTab(\"" + widget + "\", " + firstTabPage + ");");
+            }
+        }
+    }
+#>
+
         sg.utls.showMessage(jsonResult);
     },
 
@@ -352,11 +471,27 @@ var <#=localEntityName#>UISuccess = {
                     <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
                 }
             }
+<# 
+        // Enable/Disable based upon values (default to enable)
+        if (xmlLayout != null)
+        {
+            // Iterate tab page widgets, if any
+            if (widgets.ContainsKey("TabPage"))
+            {
+                WriteLine("");
+                WriteLine(new string(' ', 12) + "// Enable/Disable tabs");
+                foreach (var widget in widgets["TabPage"])
+                {
+                    WriteLine(new string(' ', 12) + localEntityName + "Utility.tabStripEnable(true, " + localEntityName + "TabStrip.ValueType." + widget + ");");
+                }
+            }
+        }
+#>
 
             if (!<#=localEntityName#>UI.isKendoControlNotInitialised) {
                 <#=localEntityName#>UI.isKendoControlNotInitialised = true;
                 <#=localEntityName#>UI.initDropDownList();
-                <#
+<#
                     // Iterate XML, if any
                     if (xmlLayout != null)
                     {
@@ -369,10 +504,10 @@ var <#=localEntityName#>UISuccess = {
                             }
                         }
                     }
-                #>
+#>
             } else {
                 // 
-                <#
+<#
                     // Iterate XML, if any
                     if (xmlLayout != null)
                     {
@@ -385,7 +520,7 @@ var <#=localEntityName#>UISuccess = {
                             }
                         }
                     }
-                #>            }
+#>          }
         }
     },
 
@@ -396,6 +531,21 @@ var <#=localEntityName#>UISuccess = {
 	 * @param result
 	 */
     initialLoad: function (result) {
+<#
+        // Iterate XML, if any
+        if (xmlLayout != null)
+        {
+            // Iterate tab, if any
+            if (widgets.ContainsKey("Tab"))
+            {
+                foreach (var widget in widgets["Tab"])
+                {
+                    WriteLine(new string(' ', 8) + "$(\"#" + widget + "\").show();");
+                }
+                WriteLine("");
+            }
+        }
+#>
         if (result) {
             <#=localEntityName#>UISuccess.displayResult(result, sg.utls.OperationMode.NEW);
         } else {
@@ -403,7 +553,6 @@ var <#=localEntityName#>UISuccess = {
         }
         sg.controls.Focus($("#txt<#=keyFieldName#>"));
     },
-
 
 	/**
      * Is New
@@ -417,6 +566,36 @@ var <#=localEntityName#>UISuccess = {
         }
         return false;
     }
+};
+
+// Utility
+var <#=localEntityName#>Utility = {
+
+<#
+    // Iterate XML, if any
+    if (xmlLayout != null)
+    {
+        // Iterate tab, if any
+        if (widgets.ContainsKey("Tab"))
+        {
+            WriteLine(new string(' ', 4) + "tabStripEnable: function (value, id) {");
+            foreach (var widget in widgets["Tab"])
+            {
+                WriteLine(new string(' ', 8) + "var tabStrip = $(\"#" + widget + "\").data(\"kendoTabStrip\");");
+                WriteLine(new string(' ', 8) + "var items = tabStrip.items();");
+                WriteLine(new string(' ', 8) + "if (value) {");
+                WriteLine(new string(' ', 12) + "// Enable");
+                WriteLine(new string(' ', 12) + "tabStrip.enable(items[id]);");
+                WriteLine(new string(' ', 8) + "}");
+                WriteLine(new string(' ', 8) + "else {");
+                WriteLine(new string(' ', 12) + "// Disable");
+                WriteLine(new string(' ', 12) + "tabStrip.disable(items[id]);");
+                WriteLine(new string(' ', 8) + "}");
+                WriteLine(new string(' ', 4) + "},");
+            }
+        }
+    }
+#>
 };
 
 // Initial Entry

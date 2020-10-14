@@ -1643,26 +1643,25 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     foreach (var tab in _settings.Widgets["Tab"])
                     {
                         // Get tab pages for tab
-                        XElement root = _settings.XmlLayout.Root;
                         IEnumerable<XElement> tabPages =
-                            from element in root.Elements("Control")
-                            where (string)element.Attribute("id") == tab
+                            from element in _settings.XmlLayout.Descendants("Control")
+                            where (string)element.Attribute("id") == tab &&
+                            (string)element.Attribute("widget") == "Tab"
                             select element;
 
                         // Iterate tab pages to create partial views
-                        foreach (XElement element in tabPages)
+                        foreach (XElement element in tabPages.Elements())
                         {
                             var tabPageElement = element.Descendants().First();
                             if (tabPageElement.HasElements)
                             {
                                 var pageId = tabPageElement.Attribute("id").Value;
-                                var controlElement = tabPageElement.Descendants().First();
-                                if (controlElement.HasElements)
+                                if (tabPageElement.HasElements)
                                 {
                                     fileName = "_" + pageId + ".cshtml";
                                     CreateClass(view,
                                                 fileName,
-                                                TransformTemplateToText(view, _settings, "Templates.Flat.View.PartialEntity", controlElement),
+                                                TransformTemplateToText(view, _settings, "Templates.Flat.View.PartialEntity", tabPageElement),
                                                 Constants.WebKey, Constants.SubFolderWebLocalizationKey);
                                 }
                             }
@@ -1689,7 +1688,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Add to constant.cs if partial views (Tab Control) 
-            if (_settings.Widgets.ContainsKey("Tab"))
+            if (_settings.Widgets.ContainsKey("TabPage"))
             {
                 BusinessViewHelper.UpdateFlatConstants(view, _settings);
             }
@@ -2363,23 +2362,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 // Iterate tab pages, if any
-                if (_settings.Widgets.ContainsKey("Tab"))
+                if (_settings.Widgets.ContainsKey("TabPage"))
                 {
                     // Iterate in case multiple tabs created
                     foreach (var tab in _settings.Widgets["Tab"])
                     {
                         // Get tab pages for tab
-                        XElement root = _settings.XmlLayout.Root;
                         IEnumerable<XElement> tabPages =
-                            from element in root.Elements("Control")
-                            where (string)element.Attribute("id") == tab
+                            from element in _settings.XmlLayout.Descendants("Control")
+                            where (string)element.Attribute("id") == tab &&
+                            (string)element.Attribute("widget") == "Tab"
                             select element;
 
                         // Iterate tab pages to create partial views
-                        foreach (XElement element in tabPages)
+                        foreach (XElement element in tabPages.Elements())
                         {
-                            var name = element.Attribute("id").Value;
-                            var value = addDescription ? element.Attribute("text").Value : string.Empty;
+                            var tabPageElement = element.Descendants().First();
+                            var name = tabPageElement.Attribute("id").Value;
+                            var value = addDescription ? tabPageElement.Attribute("text").Value : string.Empty;
                             resourceManager.InsertIfNotExist(name, value);
 
                             // Add to the list of unique strings

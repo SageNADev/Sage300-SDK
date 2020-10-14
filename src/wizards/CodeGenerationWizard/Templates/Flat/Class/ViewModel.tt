@@ -71,12 +71,9 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
 			var enumName = value.Name;
 #>
         /// <summary>
-        /// <#=enumName#> list
+        /// Get<#=enumName#>
         /// </summary>
-<#
-            var plural = BusinessViewHelper.PluralName(enumName);
-#>
-        public IEnumerable<CustomSelectList> <#=plural#>
+        public IEnumerable<CustomSelectList> Get<#=enumName#>
         {
             get { return EnumUtility.GetItemsList<<#=companyNamespace#>.<#=moduleId#>.Models.Enums.<#=enumName#>>(); }
         }
