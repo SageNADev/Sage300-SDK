@@ -56,6 +56,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.splitDesigner = new System.Windows.Forms.SplitContainer();
             this.treeEntities = new System.Windows.Forms.TreeView();
             this.grpContainers = new System.Windows.Forms.GroupBox();
+            this.txtPropWidget = new System.Windows.Forms.TextBox();
             this.tbrProperties = new System.Windows.Forms.ToolStrip();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -64,7 +65,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtPropText = new System.Windows.Forms.TextBox();
             this.picTab = new System.Windows.Forms.PictureBox();
             this.tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.txtPropWidget = new System.Windows.Forms.TextBox();
             this.pnlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitDesigner)).BeginInit();
             this.splitDesigner.Panel2.SuspendLayout();
@@ -152,6 +152,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grpContainers.TabStop = false;
             this.grpContainers.Text = "Toolbox";
             // 
+            // txtPropWidget
+            // 
+            this.txtPropWidget.Location = new System.Drawing.Point(142, 16);
+            this.txtPropWidget.Name = "txtPropWidget";
+            this.txtPropWidget.Size = new System.Drawing.Size(119, 20);
+            this.txtPropWidget.TabIndex = 18;
+            // 
             // tbrProperties
             // 
             this.tbrProperties.Dock = System.Windows.Forms.DockStyle.None;
@@ -222,13 +229,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.picTab.TabIndex = 4;
             this.picTab.TabStop = false;
             this.picTab.Tag = "Tab";
-            // 
-            // txtPropWidget
-            // 
-            this.txtPropWidget.Location = new System.Drawing.Point(142, 16);
-            this.txtPropWidget.Name = "txtPropWidget";
-            this.txtPropWidget.Size = new System.Drawing.Size(119, 20);
-            this.txtPropWidget.TabIndex = 18;
             // 
             // UIGeneration
             // 

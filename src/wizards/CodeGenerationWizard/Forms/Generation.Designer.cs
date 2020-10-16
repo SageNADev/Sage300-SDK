@@ -53,7 +53,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblStepTitle = new MetroFramework.Controls.MetroLabel();
             this.splitSteps = new System.Windows.Forms.SplitContainer();
             this.pnlUIGeneration = new System.Windows.Forms.Panel();
-            this.btnGenerateUI = new MetroFramework.Controls.MetroButton();
             this.lblGenerateUIInstructions = new System.Windows.Forms.Label();
             this.pnlCodeType = new System.Windows.Forms.Panel();
             this.lblCodeTypeFilesHelp = new MetroFramework.Controls.MetroLabel();
@@ -107,6 +106,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtEntitiesToGenerate = new MetroFramework.Controls.MetroTextBox();
             this.lblGenerateHelp = new MetroFramework.Controls.MetroLabel();
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btnLayout = new MetroFramework.Controls.MetroButton();
+            this.btnMock = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.lblLowerBorder = new System.Windows.Forms.Label();
             this.lblProcessingFile = new MetroFramework.Controls.MetroLabel();
@@ -520,30 +521,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.splitSteps.Size = new System.Drawing.Size(997, 513);
             this.splitSteps.SplitterDistance = 430;
             this.splitSteps.TabIndex = 52;
-            //
+            // 
             // pnlUIGeneration
             // 
-            this.pnlUIGeneration.Controls.Add(this.btnGenerateUI);
             this.pnlUIGeneration.Controls.Add(this.lblGenerateUIInstructions);
-            this.pnlUIGeneration.Location = new System.Drawing.Point(829, 214);
+            this.pnlUIGeneration.Location = new System.Drawing.Point(42, 59);
             this.pnlUIGeneration.Name = "pnlUIGeneration";
-            this.pnlUIGeneration.Size = new System.Drawing.Size(611, 48);
+            this.pnlUIGeneration.Size = new System.Drawing.Size(589, 135);
             this.pnlUIGeneration.TabIndex = 52;
-            // 
-            // btnGenerateUI
-            // 
-            this.btnGenerateUI.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerateUI.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnGenerateUI.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnGenerateUI.Highlight = true;
-            this.btnGenerateUI.Location = new System.Drawing.Point(257, 105);
-            this.btnGenerateUI.Name = "btnGenerateUI";
-            this.btnGenerateUI.Size = new System.Drawing.Size(99, 25);
-            this.btnGenerateUI.Style = MetroFramework.MetroColorStyle.Green;
-            this.btnGenerateUI.TabIndex = 20;
-            this.btnGenerateUI.Text = "Generate UI";
-            this.btnGenerateUI.UseSelectable = true;
-            this.btnGenerateUI.Click += new System.EventHandler(this.btnGenerateUI_Click);
             // 
             // lblGenerateUIInstructions
             // 
@@ -551,8 +536,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblGenerateUIInstructions.Name = "lblGenerateUIInstructions";
             this.lblGenerateUIInstructions.Size = new System.Drawing.Size(364, 79);
             this.lblGenerateUIInstructions.TabIndex = 0;
-            this.lblGenerateUIInstructions.Text = "Select the \'Generate UI\' button to invoke the UI Generation screen for a WYSIWYG " +
-    "UI editor for creatting a basic layout";
+            this.lblGenerateUIInstructions.Text = "Select the \'Mock\' button to invoke the UI Designer for a Mocked CSHTML file or se" +
+    "lect the \'Layout\' button to invoke the UI Designer for a WYSIWG UI editor for cr" +
+    "eating a basic layout.";
             // 
             // pnlCodeType
             // 
@@ -656,9 +642,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // pnlEntities
             // 
             this.pnlEntities.Controls.Add(this.splitEntities);
-            this.pnlEntities.Location = new System.Drawing.Point(828, 115);
+            this.pnlEntities.Location = new System.Drawing.Point(832, 114);
             this.pnlEntities.Name = "pnlEntities";
-            this.pnlEntities.Size = new System.Drawing.Size(397, 73);
+            this.pnlEntities.Size = new System.Drawing.Size(499, 58);
             this.pnlEntities.TabIndex = 45;
             // 
             // splitEntities
@@ -676,8 +662,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // splitEntities.Panel2
             // 
             this.splitEntities.Panel2.Controls.Add(this.tabEntity);
-            this.splitEntities.Size = new System.Drawing.Size(397, 73);
-            this.splitEntities.SplitterDistance = 40;
+            this.splitEntities.Size = new System.Drawing.Size(499, 58);
+            this.splitEntities.SplitterDistance = 29;
             this.splitEntities.TabIndex = 20;
             // 
             // pnlEntityTree
@@ -687,7 +673,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityTree.Location = new System.Drawing.Point(0, 0);
             this.pnlEntityTree.Name = "pnlEntityTree";
-            this.pnlEntityTree.Size = new System.Drawing.Size(397, 40);
+            this.pnlEntityTree.Size = new System.Drawing.Size(499, 29);
             this.pnlEntityTree.TabIndex = 0;
             // 
             // pnlEntityGrid
@@ -696,7 +682,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityGrid.Location = new System.Drawing.Point(0, 26);
             this.pnlEntityGrid.Name = "pnlEntityGrid";
-            this.pnlEntityGrid.Size = new System.Drawing.Size(397, 14);
+            this.pnlEntityGrid.Size = new System.Drawing.Size(499, 3);
             this.pnlEntityGrid.TabIndex = 3;
             // 
             // treeEntities
@@ -706,7 +692,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.treeEntities.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeEntities.Location = new System.Drawing.Point(0, 0);
             this.treeEntities.Name = "treeEntities";
-            this.treeEntities.Size = new System.Drawing.Size(397, 14);
+            this.treeEntities.Size = new System.Drawing.Size(499, 3);
             this.treeEntities.TabIndex = 0;
             this.treeEntities.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeEntities_NodeMouseClick);
             this.treeEntities.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeEntities_NodeMouseDoubleClick);
@@ -717,7 +703,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntitiesLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEntitiesLabel.Location = new System.Drawing.Point(0, 0);
             this.pnlEntitiesLabel.Name = "pnlEntitiesLabel";
-            this.pnlEntitiesLabel.Size = new System.Drawing.Size(397, 26);
+            this.pnlEntitiesLabel.Size = new System.Drawing.Size(499, 26);
             this.pnlEntitiesLabel.TabIndex = 2;
             // 
             // lblEntities
@@ -727,7 +713,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblEntities.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblEntities.Location = new System.Drawing.Point(0, 0);
             this.lblEntities.Name = "lblEntities";
-            this.lblEntities.Size = new System.Drawing.Size(397, 26);
+            this.lblEntities.Size = new System.Drawing.Size(499, 26);
             this.lblEntities.TabIndex = 1;
             this.lblEntities.Text = "Right-Click on entities or entity to Add, Edit or Delete";
             // 
@@ -742,7 +728,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabEntity.Location = new System.Drawing.Point(0, 0);
             this.tabEntity.Name = "tabEntity";
             this.tabEntity.SelectedIndex = 0;
-            this.tabEntity.Size = new System.Drawing.Size(397, 29);
+            this.tabEntity.Size = new System.Drawing.Size(499, 25);
             this.tabEntity.Style = MetroFramework.MetroColorStyle.Green;
             this.tabEntity.TabIndex = 1;
             this.tabEntity.UseSelectable = true;
@@ -770,7 +756,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(389, 0);
+            this.tabPage1.Size = new System.Drawing.Size(491, 0);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Entity";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -858,10 +844,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // cboReportKeys
             // 
             this.cboReportKeys.FormattingEnabled = true;
-            this.cboReportKeys.ItemHeight = 24;
+            this.cboReportKeys.ItemHeight = 23;
             this.cboReportKeys.Location = new System.Drawing.Point(83, 77);
             this.cboReportKeys.Name = "cboReportKeys";
-            this.cboReportKeys.Size = new System.Drawing.Size(189, 30);
+            this.cboReportKeys.Size = new System.Drawing.Size(189, 29);
             this.cboReportKeys.Style = MetroFramework.MetroColorStyle.Green;
             this.cboReportKeys.TabIndex = 8;
             this.cboReportKeys.UseSelectable = true;
@@ -1031,7 +1017,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(389, 0);
+            this.tabPage2.Size = new System.Drawing.Size(491, 0);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1152,7 +1138,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage3.HorizontalScrollbarSize = 10;
             this.tabPage3.Location = new System.Drawing.Point(4, 38);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(389, 0);
+            this.tabPage3.Size = new System.Drawing.Size(491, 0);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Properties";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1167,7 +1153,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlColumns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlColumns.Location = new System.Drawing.Point(0, 0);
             this.pnlColumns.Name = "pnlColumns";
-            this.pnlColumns.Size = new System.Drawing.Size(389, 0);
+            this.pnlColumns.Size = new System.Drawing.Size(491, 0);
             this.pnlColumns.TabIndex = 19;
             // 
             // grdEntityFields
@@ -1178,7 +1164,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityFields.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityFields.Location = new System.Drawing.Point(0, 27);
             this.grdEntityFields.Name = "grdEntityFields";
-            this.grdEntityFields.Size = new System.Drawing.Size(389, 0);
+            this.grdEntityFields.Size = new System.Drawing.Size(491, 0);
             this.grdEntityFields.TabIndex = 18;
             // 
             // tbrEntity
@@ -1190,7 +1176,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnDeleteRows});
             this.tbrEntity.Location = new System.Drawing.Point(0, 0);
             this.tbrEntity.Name = "tbrEntity";
-            this.tbrEntity.Size = new System.Drawing.Size(389, 27);
+            this.tbrEntity.Size = new System.Drawing.Size(491, 27);
             this.tbrEntity.TabIndex = 17;
             this.tbrEntity.Text = "toolStrip1";
             // 
@@ -1232,7 +1218,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage4.HorizontalScrollbarSize = 10;
             this.tabPage4.Location = new System.Drawing.Point(4, 38);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(389, 0);
+            this.tabPage4.Size = new System.Drawing.Size(491, 0);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Composition";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1246,7 +1232,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlComposition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlComposition.Location = new System.Drawing.Point(0, 0);
             this.pnlComposition.Name = "pnlComposition";
-            this.pnlComposition.Size = new System.Drawing.Size(389, 0);
+            this.pnlComposition.Size = new System.Drawing.Size(491, 0);
             this.pnlComposition.TabIndex = 0;
             // 
             // grdEntityCompositions
@@ -1257,7 +1243,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityCompositions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityCompositions.Location = new System.Drawing.Point(0, 0);
             this.grdEntityCompositions.Name = "grdEntityCompositions";
-            this.grdEntityCompositions.Size = new System.Drawing.Size(389, 0);
+            this.grdEntityCompositions.Size = new System.Drawing.Size(491, 0);
             this.grdEntityCompositions.TabIndex = 1;
             this.grdEntityCompositions.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdEntityCompositions_CellFormatting);
             // 
@@ -1278,7 +1264,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // 
             this.txtLayoutToGenerate.CustomButton.Image = null;
-            this.txtLayoutToGenerate.CustomButton.Location = new System.Drawing.Point(548, 2);
+            this.txtLayoutToGenerate.CustomButton.Location = new System.Drawing.Point(304, 2);
             this.txtLayoutToGenerate.CustomButton.Name = "";
             this.txtLayoutToGenerate.CustomButton.Size = new System.Drawing.Size(161, 161);
             this.txtLayoutToGenerate.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1288,7 +1274,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtLayoutToGenerate.CustomButton.Visible = false;
             this.txtLayoutToGenerate.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtLayoutToGenerate.Lines = new string[0];
-            this.txtLayoutToGenerate.Location = new System.Drawing.Point(0, 208);
+            this.txtLayoutToGenerate.Location = new System.Drawing.Point(0, -102);
             this.txtLayoutToGenerate.MaxLength = 32767;
             this.txtLayoutToGenerate.Multiline = true;
             this.txtLayoutToGenerate.Name = "txtLayoutToGenerate";
@@ -1299,7 +1285,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtLayoutToGenerate.SelectionLength = 0;
             this.txtLayoutToGenerate.SelectionStart = 0;
             this.txtLayoutToGenerate.ShortcutsEnabled = true;
-            this.txtLayoutToGenerate.Size = new System.Drawing.Size(712, 166);
+            this.txtLayoutToGenerate.Size = new System.Drawing.Size(468, 166);
             this.txtLayoutToGenerate.TabIndex = 3;
             this.txtLayoutToGenerate.UseSelectable = true;
             this.txtLayoutToGenerate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1352,6 +1338,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // pnlButtons
             // 
+            this.pnlButtons.Controls.Add(this.btnLayout);
+            this.pnlButtons.Controls.Add(this.btnMock);
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.lblLowerBorder);
             this.pnlButtons.Controls.Add(this.lblProcessingFile);
@@ -1363,6 +1351,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(997, 79);
             this.pnlButtons.TabIndex = 2;
+            // 
+            // btnLayout
+            // 
+            this.btnLayout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLayout.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnLayout.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnLayout.Highlight = true;
+            this.btnLayout.Location = new System.Drawing.Point(776, 50);
+            this.btnLayout.Name = "btnLayout";
+            this.btnLayout.Size = new System.Drawing.Size(68, 25);
+            this.btnLayout.Style = MetroFramework.MetroColorStyle.Green;
+            this.btnLayout.TabIndex = 54;
+            this.btnLayout.Text = "Layout";
+            this.btnLayout.UseSelectable = true;
+            this.btnLayout.Visible = false;
+            this.btnLayout.Click += new System.EventHandler(this.btnLayout_Click);
+            // 
+            // btnMock
+            // 
+            this.btnMock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMock.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnMock.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnMock.Highlight = true;
+            this.btnMock.Location = new System.Drawing.Point(702, 50);
+            this.btnMock.Name = "btnMock";
+            this.btnMock.Size = new System.Drawing.Size(68, 25);
+            this.btnMock.Style = MetroFramework.MetroColorStyle.Green;
+            this.btnMock.TabIndex = 53;
+            this.btnMock.Text = "Mock";
+            this.btnMock.UseSelectable = true;
+            this.btnMock.Visible = false;
+            this.btnMock.Click += new System.EventHandler(this.btnMock_Click);
             // 
             // btnCancel
             // 
@@ -1590,9 +1610,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private System.Windows.Forms.Label lblUpperBorder;
         private System.Windows.Forms.Label lblLowerBorder;
         private System.Windows.Forms.Panel pnlUIGeneration;
-        private MetroFramework.Controls.MetroButton btnGenerateUI;
         private System.Windows.Forms.Label lblGenerateUIInstructions;
         private MetroFramework.Controls.MetroTextBox txtLayoutToGenerate;
+        private MetroFramework.Controls.MetroButton btnLayout;
+        private MetroFramework.Controls.MetroButton btnMock;
     }
 }
 

@@ -754,7 +754,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
 
                 foreach (var widget in widgets["TabPage"])
                 {
-                    WriteLine(new string(' ', 12) + "case " + localEntityName + "TapStrip.ValueType." + widget + ":");
+                    WriteLine(new string(' ', 12) + "case " + localEntityName + "TabStrip.ValueType." + widget + ":");
                     WriteLine(new string(' ', 16) + "// Place logic here for selected tab page");
                     WriteLine(new string(' ', 16) + "");
                     WriteLine(new string(' ', 16) + "break;");

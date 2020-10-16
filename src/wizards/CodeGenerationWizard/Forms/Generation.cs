@@ -161,6 +161,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 			/// <summary> Panel Name for pnlEntities </summary>
 			public const string PanelEntities = "pnlEntities";
 
+            /// <summary> Panel Name for pnlUIGeneration </summary>
+            public const string PanelUIGeneration = "pnlUIGeneration";
+
 			/// <summary> Panel Name for pnlGenerated </summary>
 			public const string PanelGenerated = "pnlGeneratedCode";
 
@@ -619,6 +622,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Set the application title
             Text = Resources.CodeGenerationWizard;
 
+            btnMock.Text = Resources.Mock;
+            btnLayout.Text = Resources.Layout;
             btnSave.Text = Resources.Save;
             btnCancel.Text = Resources.Cancel;
             btnBack.Text = Resources.Back;
@@ -704,7 +709,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // UI Generation Step
             lblGenerateUIInstructions.Text = Resources.GenerateUICodeInstructions;
-            btnGenerateUI.Text = Resources.GenerateUI;
 
             // Generate Step
             lblGenerateHelp.Text = Resources.GenerateTip;
@@ -1942,6 +1946,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                     _currentWizardStep++;
 
+                    // If Step is UI generation, enabled buttons
+                    var uiGenerationStep = IsCurrentPanel(Constants.PanelUIGeneration);
+                    btnMock.Visible = uiGenerationStep;
+                    btnLayout.Visible = uiGenerationStep;
+
                     // if Step is Screens, expand tree control
 					if (IsCurrentPanel(Constants.PanelEntities))
                     {
@@ -2141,6 +2150,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 _currentWizardStep--;
 
                 ShowStep(true);
+
+                // If Step is UI generation, enabled buttons
+                var uiGenerationStep = IsCurrentPanel(Constants.PanelUIGeneration);
+                btnMock.Visible = uiGenerationStep;
+                btnLayout.Visible = uiGenerationStep;
 
                 // Enable back button?
                 if (_currentWizardStep.Equals(0))
@@ -3193,10 +3207,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary> Launch UI Generation screen </summary>
+        /// <summary> Launch UI Generation screen for manual creation </summary>
         /// <param name="sender">Sender object </param>
         /// <param name="e">Event Args </param>
-        private void btnGenerateUI_Click(object sender, EventArgs e)
+        private void btnLayout_Click(object sender, EventArgs e)
         {
             // Load UI Generation form and pass in entities
             var form = new UIGeneration();
@@ -3211,8 +3225,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Dispose
             form.Dispose();
+
         }
 
+        /// <summary> Launch UI Generation screen based upon Mock </summary>
+        /// <param name="sender">Sender object </param>
+        /// <param name="e">Event Args </param>
+        private void btnMock_Click(object sender, EventArgs e)
+        {
+            DisplayMessage("Under construction", MessageBoxIcon.Exclamation);
+        }
         #endregion
+
+        
     }
 }

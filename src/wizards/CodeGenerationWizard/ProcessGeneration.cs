@@ -1636,35 +1636,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             TransformTemplateToText(view, _settings, "Templates.Flat.View.Entity"),
                             Constants.WebKey, Constants.SubFolderWebLocalizationKey);
 
-                // Create partial views for tabs, if any
-                if (_settings.Widgets.ContainsKey("Tab"))
+                // Create partial views fro tabs, if any
+                if (_settings.Widgets.ContainsKey("TabPage"))
                 {
-                    // Iterate in case multiple tabs created
-                    foreach (var tab in _settings.Widgets["Tab"])
-                    {
-                        // Get tab pages for tab
-                        IEnumerable<XElement> tabPages =
-                            from element in _settings.XmlLayout.Descendants("Control")
-                            where (string)element.Attribute("id") == tab &&
-                            (string)element.Attribute("widget") == "Tab"
-                            select element;
+                    // Get tab pages
+                    IEnumerable<XElement> tabPages =
+                        from element in _settings.XmlLayout.Descendants("Control")
+                        where (string)element.Attribute("widget") == "TabPage"
+                        select element;
 
-                        // Iterate tab pages to create partial views
-                        foreach (XElement element in tabPages.Elements())
+                    // Iterate tab pages to create partial views
+                    foreach (XElement element in tabPages)
+                    {
+                        if (element.HasElements)
                         {
-                            var tabPageElement = element.Descendants().First();
-                            if (tabPageElement.HasElements)
-                            {
-                                var pageId = tabPageElement.Attribute("id").Value;
-                                if (tabPageElement.HasElements)
-                                {
-                                    fileName = "_" + pageId + ".cshtml";
-                                    CreateClass(view,
-                                                fileName,
-                                                TransformTemplateToText(view, _settings, "Templates.Flat.View.PartialEntity", tabPageElement),
-                                                Constants.WebKey, Constants.SubFolderWebLocalizationKey);
-                                }
-                            }
+                            var pageId = element.Attribute("id").Value;
+                            fileName = "_" + pageId + ".cshtml";
+                            CreateClass(view,
+                                        fileName,
+                                        TransformTemplateToText(view, _settings, "Templates.Flat.View.PartialEntity", element),
+                                        Constants.WebKey, Constants.SubFolderWebLocalizationKey);
                         }
                     }
                 }
@@ -2364,27 +2355,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Iterate tab pages, if any
                 if (_settings.Widgets.ContainsKey("TabPage"))
                 {
-                    // Iterate in case multiple tabs created
-                    foreach (var tab in _settings.Widgets["Tab"])
+                    // Get tab pages
+                    IEnumerable<XElement> tabPages =
+                        from element in _settings.XmlLayout.Descendants("Control")
+                        where (string)element.Attribute("widget") == "TabPage"
+                        select element;
+
+                    // Iterate tab pages to create partial views
+                    foreach (XElement element in tabPages)
                     {
-                        // Get tab pages for tab
-                        IEnumerable<XElement> tabPages =
-                            from element in _settings.XmlLayout.Descendants("Control")
-                            where (string)element.Attribute("id") == tab &&
-                            (string)element.Attribute("widget") == "Tab"
-                            select element;
+                        var name = element.Attribute("id").Value;
+                        var value = addDescription ? element.Attribute("text").Value : string.Empty;
+                        resourceManager.InsertIfNotExist(name, value);
 
-                        // Iterate tab pages to create partial views
-                        foreach (XElement element in tabPages.Elements())
-                        {
-                            var tabPageElement = element.Descendants().First();
-                            var name = tabPageElement.Attribute("id").Value;
-                            var value = addDescription ? tabPageElement.Attribute("text").Value : string.Empty;
-                            resourceManager.InsertIfNotExist(name, value);
-
-                            // Add to the list of unique strings
-                            uniqueList.Add(name);
-                        }
+                        // Add to the list of unique strings
+                        uniqueList.Add(name);
                     }
                 }
 

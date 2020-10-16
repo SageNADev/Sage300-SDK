@@ -539,7 +539,7 @@
     <value>Generate UI</value>
   </data>
   <data name="GenerateUICodeInstructions" xml:space="preserve">
-    <value>Select the 'Generate UI' button to invoke the UI Generation screen for a WYSIWG UI editor for creating a basic layout.</value>
+    <value>Select the 'Mock' button to invoke the UI Designer for a Mocked CSHTML file or select the 'Layout' button to invoke the UI Designer for a WYSIWG UI editor for creating a basic layout.</value>
   </data>
   <data name="GridContainer" xml:space="preserve">
     <value>Grid Container</value>
@@ -555,5 +555,11 @@
   </data>
   <data name="TabControl" xml:space="preserve">
     <value>Tab Control</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="Mock" xml:space="preserve">
+    <value>Mock</value>
   </data>
 </root>

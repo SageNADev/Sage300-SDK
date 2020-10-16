@@ -78,6 +78,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             InitializeComponent();
             Localize();
             InitWizardSteps();
+            txtCompanyName.Focus();
         }
         #endregion
 

@@ -594,7 +594,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select the &apos;Generate UI&apos; button to invoke the UI Generation screen for a WYSIWG UI editor for creating a basic layout..
+        ///   Looks up a localized string similar to Select the &apos;Mock&apos; button to invoke the UI Designer for a Mocked CSHTML file or select the &apos;Layout&apos; button to invoke the UI Designer for a WYSIWG UI editor for creating a basic layout..
         /// </summary>
         internal static string GenerateUICodeInstructions {
             get {
@@ -892,12 +892,30 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Layout.
+        /// </summary>
+        internal static string Layout {
+            get {
+                return ResourceManager.GetString("Layout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mock.
+        /// </summary>
+        internal static string Mock {
+            get {
+                return ResourceManager.GetString("Mock", resourceCulture);
             }
         }
         
