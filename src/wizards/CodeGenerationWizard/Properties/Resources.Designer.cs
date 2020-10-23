@@ -70,6 +70,33 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Finder.
+        /// </summary>
+        internal static string AddFinder {
+            get {
+                return ResourceManager.GetString("AddFinder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select to search for a JavaScript file containing finder definitions.
+        /// </summary>
+        internal static string AddFinderButtonTip {
+            get {
+                return ResourceManager.GetString("AddFinderButtonTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select to specify a Finder to be associated with the current property.
+        /// </summary>
+        internal static string AddFinderTip {
+            get {
+                return ResourceManager.GetString("AddFinderTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Row.
         /// </summary>
         internal static string AddRow {
@@ -269,6 +296,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Control.
+        /// </summary>
+        internal static string Control {
+            get {
+                return ResourceManager.GetString("Control", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  - .
         /// </summary>
         internal static string Dash {
@@ -319,6 +355,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display:.
+        /// </summary>
+        internal static string Display {
+            get {
+                return ResourceManager.GetString("Display", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the finder property to be displayed or select &apos;None&apos; for no displayed property.
+        /// </summary>
+        internal static string DisplayTip {
+            get {
+                return ResourceManager.GetString("DisplayTip", resourceCulture);
             }
         }
         
@@ -441,6 +495,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File:.
+        /// </summary>
+        internal static string File {
+            get {
+                return ResourceManager.GetString("File", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The file &apos;{0}&apos; already exists. Overwrite this file?.
         /// </summary>
         internal static string FileExists {
@@ -459,11 +522,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specify the JavaScript file which contains finder definitions.
+        /// </summary>
+        internal static string FileTip {
+            get {
+                return ResourceManager.GetString("FileTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ini Files (.ini)|*.ini|All Files (*.*)|*.*.
         /// </summary>
         internal static string Filter {
             get {
                 return ResourceManager.GetString("Filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finder:.
+        /// </summary>
+        internal static string Finder {
+            get {
+                return ResourceManager.GetString("Finder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the finder defintion to be associated with the current property.
+        /// </summary>
+        internal static string FinderTip {
+            get {
+                return ResourceManager.GetString("FinderTip", resourceCulture);
             }
         }
         
@@ -892,30 +982,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Layout.
-        /// </summary>
-        internal static string Layout {
-            get {
-                return ResourceManager.GetString("Layout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mock.
-        /// </summary>
-        internal static string Mock {
-            get {
-                return ResourceManager.GetString("Mock", resourceCulture);
             }
         }
         
@@ -1278,6 +1350,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string TabControl {
             get {
                 return ResourceManager.GetString("TabControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text:.
+        /// </summary>
+        internal static string Text {
+            get {
+                return ResourceManager.GetString("Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defaulted from the business view and certain widgets allow value to be overridden.
+        /// </summary>
+        internal static string TextTip {
+            get {
+                return ResourceManager.GetString("TextTip", resourceCulture);
             }
         }
         

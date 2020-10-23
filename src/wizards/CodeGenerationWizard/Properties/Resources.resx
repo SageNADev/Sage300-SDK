@@ -556,10 +556,40 @@
   <data name="TabControl" xml:space="preserve">
     <value>Tab Control</value>
   </data>
-  <data name="Layout" xml:space="preserve">
-    <value>Layout</value>
+  <data name="AddFinder" xml:space="preserve">
+    <value>Finder</value>
   </data>
-  <data name="Mock" xml:space="preserve">
-    <value>Mock</value>
+  <data name="AddFinderButtonTip" xml:space="preserve">
+    <value>Select to search for a JavaScript file containing finder definitions</value>
+  </data>
+  <data name="AddFinderTip" xml:space="preserve">
+    <value>Select to specify a Finder to be associated with the current property</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="Display" xml:space="preserve">
+    <value>Display:</value>
+  </data>
+  <data name="DisplayTip" xml:space="preserve">
+    <value>Select the finder property to be displayed or select 'None' for no displayed property</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File:</value>
+  </data>
+  <data name="FileTip" xml:space="preserve">
+    <value>Specify the JavaScript file which contains finder definitions</value>
+  </data>
+  <data name="Finder" xml:space="preserve">
+    <value>Finder:</value>
+  </data>
+  <data name="FinderTip" xml:space="preserve">
+    <value>Select the finder defintion to be associated with the current property</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Text:</value>
+  </data>
+  <data name="TextTip" xml:space="preserve">
+    <value>Defaulted from the business view and certain widgets allow value to be overridden</value>
   </data>
 </root>

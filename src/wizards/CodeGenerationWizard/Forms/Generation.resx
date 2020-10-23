@@ -120,13 +120,95 @@
   <metadata name="wrkBackground.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>208, 17</value>
   </metadata>
-  <data name="lblCodeTypeFilesHelp.Text" xml:space="preserve">
-    <value>Based upon the Code Type selected, Interface files, a Service file, a Repository file, a View Model file, Controller files and Razor View files (stubs only for certain Code Types) may also be generated.</value>
-  </data>
   <metadata name="tbrEntity.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>553, 5</value>
   </metadata>
+  <metadata name="tbrProperties.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>973, 17</value>
+  </metadata>
+  <metadata name="tbrProperties.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>973, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnTab.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAALkAAACcCAYAAAAjzArZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPvSURBVHhe7d0xThtpGMdh91yAgpI7UHEFSkp6N/QIH4Az
+        IHEFVqLiANzApZEoXAAFkWiAzutvd1Jk+XZiFMD+/vO80qNIg63oJT9PiGcgo7u7u8V0Oh205+fnxevr
+        Kw3rm9F4PF6MRqNBm81m1U8c7eib0fHxcfUPfkhE3r6+EfmSyNvXNyJfEnn7+kbkSyJvX9+IfEnk7eub
+        3sjLx05PTxcnJydNm0wmi729veqOhcjb1ze9kT8+Pi7++vEjQom9tmMh8vb1TW/k5UJRLZgW9e3584IQ
+        bRJ5p29P2nZ1ddXlXB+R07zr6+su5/qInOaJvCPyXCLviDyXyDsizyXyTt+eBwcHi8PDwwjb29vVHbe2
+        tqqPb8X+/n51r0Lknb495/N59TktKi/Y2o47OzvVx7eihFzbqxB5p2/PcsWz9pwWpUZe3guv7VWIvCNy
+        kVeJvD0ifz8iXxL55hP5CkQu8iqRt0fk70fkSyLffCJfgchFXiXy9oj8/Yh8SeSbT+QrELnIq0TeHpG/
+        H5EviXzziXwFfXu6C3HzlZBrexUi7/TtWT5WfgBRgt3d3eqO5X7y2uNbcXR0VN2rEHmnb0/aJvKOyHOJ
+        vCPyXCLviDyXyDsizyXyjshzibxTdvnvf21IG8rFuvPz82qjhciJUEKuNVqInAgu6xNP5MQTOfFETjyR
+        E0/kxBM58UROPJETT+TEEznxRE68iMjf3t6qx6kb2ufLmTyIF3udyIkncuKJPMDLy0v1OP8SeQCR9xM5
+        8UROPJETT+TEEznxRE68JiP3lhkf4UxOPJETT+T8r593NbZ+d6PIiSdy4omceCL/Rr5zZz1E/kFCbY/I
+        /5DoN5/IiSdy4omceCInnsiJJ3LiiZx4IieeyHu40JNhcJH71rnhcSYnnsiJN8jIfcnSL+3fIs7k/CLx
+        BCDyQP6m+pXIiSdy4ol8BS4KtU3kxBM58UROPJETT+TEE3mw29vb6vGhEfkKWn0L8eHhoXp8aEROPJHz
+        6Z6enqrH10Xk32goV07v7++rx9dF5HyqTXwhi/yLDe2+l028zVfkxBM58UROPJETT+R8Ku+uwBqInHgi
+        J57IP2BoF3ZSiJx4IieeyIkncuKJ/Av5wZubYbCRC3A4nMmJJ3LiiZx4IieeyIkncuKJnHgiJ57IiSdy
+        4omceCInnsiJJ3LiiZx4IieeyIkncuJ9WeTz+bz6G8J3+7LIb25u/jmbz2YzWJvS4MXFRbXR4o8ihxaI
+        nHgiJ57IiSdy4v028vF4XH0itOK3kV9eXi7Ozs6gSZPJZDGdTruc6zPqfjUmdkRu4kfkJn5EbuJH5CZ+
+        RG7iR+QmfkRuwmex+BtRNgzpy0TW3QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnGrid.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAALcAAACZCAYAAABtyKvZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAa7SURBVHhe7Z1Na9toFEb9d7PpvrQ/IP+gX7iQVTdtSkMX
+        gVIoJdBFFl1kUdpQUsYMQ5mZRVedfICHN0SQ+D6WbEuydR+fBw7TUXQj39zj17Js0Ojs7Gx6cnJiyyL9
+        /fr1a/r79+/ULNKnqsvIohnt7OxMR6MRQFoODw9vdL6b0b1792QBQBaQG2xBbrAFucEW5AZbVpK7/OzB
+        gwfT+/fvp8W9vwr3Pg8ODmRvhZXk/vnz5/Tx5ePUuPdXKNd+m/os+6jaDJTH3rnc5YMBdbBMuPdX4d4n
+        cgvq+lP7ZwW5Y5DbgG//fUNuEU5LRE0nXDT8f4d8vPiI3CKs3Al4dPlIbq94c/EGuUWQ2wSnOb64fBG2
+        Ibegrr/vP77Lmoy4zxG5BXX9fZl8kTWt6fH8eh7IHbPVcn/946usyQhyx/jKfbN6NvV3eH4YaxPS9Rz3
+        Lvbk9k2B3IKm/l5dvpJ12ehrjk+unsjt6wa5BXX9ff7zs6xZhCeXwxh6hfsckVtQ19+Hvz/Imowgd8xW
+        y/3u33eyZlGaPlxZJ8gdg9yiJiPIHZNW7kVXzTZyr+O8uqtjtJrjzHX5Ib0iVbByC9rIvS66ENx9jsgt
+        aC33uj5tbHmc1nPcwKeqy7B9ci8wkLr+3v/zXtZkxH2RYuUW1PV3/NexrMlIb3O8Ets2AHIL6vpT+2+C
+        5xfP5fZlcJ/j1sn99uqt3H6bDHJ3AXLHsHJvmo7eyLWa48DfTBaQWzAkufu8bj74J3FLkFvQ99CH8gWq
+        Tctd/g6t/hYNb1yRW+DeX4V7n8gt2PSKti7c+0RuAXIjt4TTkjxY9Smu3iC3wH1Fq3CfI3ILkNtjjk+f
+        PpW9FZBb4NBfhXufRWDVWwG5BS5yH58f279CcVoicB96hUOfzy6fzf0qAHILkNtjjsgtQG7klrjL7dBf
+        BXLH1Mo9mUzkgTLh3l+h6bYhpU/uZjbD0dHR9bP+9PQ0Le79VTj3WR77eDyWvRVWkhsgA8gNtiA32ILc
+        YAtygy3IDbasJPfu7q4FqreC2jczqseC2jcjqrfCSnKrC+rZqOuvXD8tUXWZKGnqU9VloZcPcdSBsuE8
+        9Nu498l3SwTuT94K5I5BbhOQO2ar5b7d38HVwZ26bCB3DCu3Ccgdg9wmIHcMpyWiJiPIHcPKbQJyxyC3
+        Ccgdw2mJqOmb11ev5fY2IHcMK7cJTXMc4l2BlwG5BZnlfnn1Um5XuM8RuQXu/VUgdwwrtwmD67PjO6Qh
+        twC5N9Nn1+f4yC1w768CuWNYuU1w73Mwcg/pshNyr3+R6mP+rNwC5PaY43bLPefdOXKvd459vWpvr9w1
+        l53cV7QK9z6HKXfDPb3n0dU91ev6U/tnZRByd3xt+zYpV+5yH5RP55/kz7oAuVm5JWv5o7R4ti+yursP
+        vWKZPod0NWtR8snd48tYRV1/av+suD+Jt/MNZcMTBLn7mWNX74kWxU7uLl4+3Ve0iqX7XMOrZpf4rdwr
+        Xmm5TV1/av+s9DLHAT0BtvO0pAHk9pgjcgvc+6tA7hhWbhOQOwa5TUDuGOQ2Idscl70ShtwC5GblliB3
+        Hpz6LN83mt3WudyzB8iK6q2g9p1l72JPbh8a7nNE7jmo3gpq36wgd4z9aUlB9VZQ+2bFfY6dyz2ZTK5v
+        k6YOlgnVW6H0p/bPRpmR8xx7uVXf0dHR9bP+9PT0GnXgDKjeCrP9zaP6PXX/boP6PXW/W/1smTk2Me/Y
+        s9vn7XebRfZpojz28XgseyusJDdABpAbbEFusAW5wRbkBluQG2xZSe7d3V0LVG8FtW9mVI8FtW9GVG+F
+        leQuqa5TZqSkrr9y/bRE1WaipKlPVZcJvlsicB96hfsckVuA3MgtcRg+ciO3BLnz4N4ncguQG7klyJ0H
+        5I5BblGTEeSOQW5RkxHkjkFuUZMR5I5BblGTEeSOQW5RkxHkjkFuUZMR5I5BblGTEeSOQW5RkxHkjkFu
+        UZMR5I5BblGTEeSOQW5RkxHkjkFuUZMR5I5BblGTEeSOQW5RkxHkjkFuUZMR5I5BblGTEeSOQW5RkxHk
+        jkFuUZMR5I5BblGTEeSOQW5RkxHkjkFuUZMR5I5BblGTEeSOQW5RkxHkjkFuUZMR5I5BblGTEeSOQW5R
+        kxHkjkFuUZMR5I5BblGTEeSOQW5RkxHkjqmV2+HG/+79Vbj32bncy94Qf4i491fh3Gd57OPxWPZWWElu
+        gAwgN9iC3GALcoMtyA22zJV7Z2dHFgBkYa7c+/v78ibyABl4+PDh9OTk5Ebnuxnd/JcQuyA3sQ1yE9sg
+        N7ENchPTTKf/AxP6ge64yZw6AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnDeleteControl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEFSURBVDhPrZKvEoJAEMYv+zgGAw9CNPoABCOBYCASCAYC
+        gWAwEIkEAo9gMFw0GIyGPW+X+wsyyIw7881y+7E/PwR2DQKxRmxcOIS2FdB1i30WwKPoJ80C1kit/bGq
+        40a4unVnwfteFGFIwmucffMMAJ4HKwAy8U/jZWkg8G7NMs7RJwgBHnsrBeB5PoFQLwp6K9jj7XYAuNIx
+        0eRZJqBpCGag6kzLS2Ugde11b3mcQMtLkqYCqor65JfxZrjLr9HV62Kf+ZQIkM/L43jo8oxzta4BOyt3
+        GZdkZOyUxDkbiBubYPotyE8XZGTsOjZBnLmXxC00IEm8ZV0GIv2x5xWaczdYj7EPaVP0imCCLucAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="btnAddTabPage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAySURBVDhPY/hPIaCtAY4rHcAYHxg1AMkAmGJiMQxQzwBs
+        AF0xNjBqAAEDiAEUGvD/PwAh1avqD9iH0QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="lblCodeTypeFilesHelp.Text" xml:space="preserve">
+    <value>Based upon the Code Type selected, Interface files, a Service file, a Repository file, a View Model file, Controller files and Razor View files (stubs only for certain Code Types) may also be generated.</value>
+  </data>
   <data name="btnRowAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

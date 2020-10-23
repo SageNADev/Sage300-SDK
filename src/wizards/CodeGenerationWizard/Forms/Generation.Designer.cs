@@ -53,7 +53,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblStepTitle = new MetroFramework.Controls.MetroLabel();
             this.splitSteps = new System.Windows.Forms.SplitContainer();
             this.pnlUIGeneration = new System.Windows.Forms.Panel();
-            this.lblGenerateUIInstructions = new System.Windows.Forms.Label();
+            this.splitDesigner = new System.Windows.Forms.SplitContainer();
+            this.treeUIEntities = new System.Windows.Forms.TreeView();
+            this.grpContainers = new System.Windows.Forms.GroupBox();
+            this.cboFinderDisplay = new System.Windows.Forms.ComboBox();
+            this.lblFinderDisplay = new System.Windows.Forms.Label();
+            this.cboFinderProp = new System.Windows.Forms.ComboBox();
+            this.lblFinderProp = new System.Windows.Forms.Label();
+            this.btnFinderPropFile = new System.Windows.Forms.Button();
+            this.txtFinderPropFile = new System.Windows.Forms.TextBox();
+            this.lblFinderPropFile = new System.Windows.Forms.Label();
+            this.lblPropText = new System.Windows.Forms.Label();
+            this.chkUIFinder = new System.Windows.Forms.CheckBox();
+            this.tbrProperties = new System.Windows.Forms.ToolStrip();
+            this.btnTab = new System.Windows.Forms.ToolStripButton();
+            this.btnGrid = new System.Windows.Forms.ToolStripButton();
+            this.btnDeleteControl = new System.Windows.Forms.ToolStripButton();
+            this.btnAddTabPage = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtPropWidget = new System.Windows.Forms.ToolStripTextBox();
+            this.txtPropText = new System.Windows.Forms.TextBox();
             this.pnlCodeType = new System.Windows.Forms.Panel();
             this.lblCodeTypeFilesHelp = new MetroFramework.Controls.MetroLabel();
             this.lblUnknownCodeTypeFilesHelp = new MetroFramework.Controls.MetroLabel();
@@ -106,8 +125,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtEntitiesToGenerate = new MetroFramework.Controls.MetroTextBox();
             this.lblGenerateHelp = new MetroFramework.Controls.MetroLabel();
             this.pnlButtons = new System.Windows.Forms.Panel();
-            this.btnLayout = new MetroFramework.Controls.MetroButton();
-            this.btnMock = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.lblLowerBorder = new System.Windows.Forms.Label();
             this.lblProcessingFile = new MetroFramework.Controls.MetroLabel();
@@ -126,6 +143,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.splitSteps.Panel2.SuspendLayout();
             this.splitSteps.SuspendLayout();
             this.pnlUIGeneration.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitDesigner)).BeginInit();
+            this.splitDesigner.Panel2.SuspendLayout();
+            this.splitDesigner.SuspendLayout();
+            this.grpContainers.SuspendLayout();
+            this.tbrProperties.SuspendLayout();
             this.pnlCodeType.SuspendLayout();
             this.grpCredentials.SuspendLayout();
             this.pnlGeneratedCode.SuspendLayout();
@@ -524,21 +546,226 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // pnlUIGeneration
             // 
-            this.pnlUIGeneration.Controls.Add(this.lblGenerateUIInstructions);
-            this.pnlUIGeneration.Location = new System.Drawing.Point(42, 59);
+            this.pnlUIGeneration.Controls.Add(this.splitDesigner);
+            this.pnlUIGeneration.Location = new System.Drawing.Point(17, 49);
             this.pnlUIGeneration.Name = "pnlUIGeneration";
-            this.pnlUIGeneration.Size = new System.Drawing.Size(589, 135);
+            this.pnlUIGeneration.Size = new System.Drawing.Size(797, 359);
             this.pnlUIGeneration.TabIndex = 52;
             // 
-            // lblGenerateUIInstructions
+            // splitDesigner
             // 
-            this.lblGenerateUIInstructions.Location = new System.Drawing.Point(146, 51);
-            this.lblGenerateUIInstructions.Name = "lblGenerateUIInstructions";
-            this.lblGenerateUIInstructions.Size = new System.Drawing.Size(364, 79);
-            this.lblGenerateUIInstructions.TabIndex = 0;
-            this.lblGenerateUIInstructions.Text = "Select the \'Mock\' button to invoke the UI Designer for a Mocked CSHTML file or se" +
-    "lect the \'Layout\' button to invoke the UI Designer for a WYSIWG UI editor for cr" +
-    "eating a basic layout.";
+            this.splitDesigner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitDesigner.Location = new System.Drawing.Point(0, 0);
+            this.splitDesigner.Name = "splitDesigner";
+            // 
+            // splitDesigner.Panel1
+            // 
+            this.splitDesigner.Panel1.AllowDrop = true;
+            this.splitDesigner.Panel1.BackColor = System.Drawing.Color.White;
+            this.splitDesigner.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            // 
+            // splitDesigner.Panel2
+            // 
+            this.splitDesigner.Panel2.Controls.Add(this.treeUIEntities);
+            this.splitDesigner.Panel2.Controls.Add(this.grpContainers);
+            this.splitDesigner.Size = new System.Drawing.Size(797, 359);
+            this.splitDesigner.SplitterDistance = 558;
+            this.splitDesigner.TabIndex = 2;
+            // 
+            // treeUIEntities
+            // 
+            this.treeUIEntities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeUIEntities.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeUIEntities.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeUIEntities.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.treeUIEntities.Location = new System.Drawing.Point(0, 163);
+            this.treeUIEntities.Name = "treeUIEntities";
+            this.treeUIEntities.Size = new System.Drawing.Size(235, 196);
+            this.treeUIEntities.TabIndex = 4;
+            this.treeUIEntities.TabStop = false;
+            // 
+            // grpContainers
+            // 
+            this.grpContainers.BackColor = System.Drawing.Color.White;
+            this.grpContainers.Controls.Add(this.cboFinderDisplay);
+            this.grpContainers.Controls.Add(this.lblFinderDisplay);
+            this.grpContainers.Controls.Add(this.cboFinderProp);
+            this.grpContainers.Controls.Add(this.lblFinderProp);
+            this.grpContainers.Controls.Add(this.btnFinderPropFile);
+            this.grpContainers.Controls.Add(this.txtFinderPropFile);
+            this.grpContainers.Controls.Add(this.lblFinderPropFile);
+            this.grpContainers.Controls.Add(this.lblPropText);
+            this.grpContainers.Controls.Add(this.chkUIFinder);
+            this.grpContainers.Controls.Add(this.tbrProperties);
+            this.grpContainers.Controls.Add(this.txtPropText);
+            this.grpContainers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grpContainers.Location = new System.Drawing.Point(0, 0);
+            this.grpContainers.Name = "grpContainers";
+            this.grpContainers.Size = new System.Drawing.Size(235, 163);
+            this.grpContainers.TabIndex = 3;
+            this.grpContainers.TabStop = false;
+            this.grpContainers.Text = "Toolbox";
+            // 
+            // cboFinderDisplay
+            // 
+            this.cboFinderDisplay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFinderDisplay.Enabled = false;
+            this.cboFinderDisplay.FormattingEnabled = true;
+            this.cboFinderDisplay.Location = new System.Drawing.Point(55, 129);
+            this.cboFinderDisplay.Name = "cboFinderDisplay";
+            this.cboFinderDisplay.Size = new System.Drawing.Size(186, 21);
+            this.cboFinderDisplay.TabIndex = 28;
+            // 
+            // lblFinderDisplay
+            // 
+            this.lblFinderDisplay.AutoSize = true;
+            this.lblFinderDisplay.Location = new System.Drawing.Point(4, 132);
+            this.lblFinderDisplay.Name = "lblFinderDisplay";
+            this.lblFinderDisplay.Size = new System.Drawing.Size(47, 13);
+            this.lblFinderDisplay.TabIndex = 27;
+            this.lblFinderDisplay.Text = "Display:";
+            // 
+            // cboFinderProp
+            // 
+            this.cboFinderProp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFinderProp.Enabled = false;
+            this.cboFinderProp.FormattingEnabled = true;
+            this.cboFinderProp.Location = new System.Drawing.Point(55, 102);
+            this.cboFinderProp.Name = "cboFinderProp";
+            this.cboFinderProp.Size = new System.Drawing.Size(189, 21);
+            this.cboFinderProp.TabIndex = 26;
+            // 
+            // lblFinderProp
+            // 
+            this.lblFinderProp.AutoSize = true;
+            this.lblFinderProp.Location = new System.Drawing.Point(6, 105);
+            this.lblFinderProp.Name = "lblFinderProp";
+            this.lblFinderProp.Size = new System.Drawing.Size(43, 13);
+            this.lblFinderProp.TabIndex = 25;
+            this.lblFinderProp.Text = "Finder:";
+            // 
+            // btnFinderPropFile
+            // 
+            this.btnFinderPropFile.Enabled = false;
+            this.btnFinderPropFile.Location = new System.Drawing.Point(217, 74);
+            this.btnFinderPropFile.Name = "btnFinderPropFile";
+            this.btnFinderPropFile.Size = new System.Drawing.Size(29, 22);
+            this.btnFinderPropFile.TabIndex = 24;
+            this.btnFinderPropFile.Text = "...";
+            this.btnFinderPropFile.UseVisualStyleBackColor = true;
+            // 
+            // txtFinderPropFile
+            // 
+            this.txtFinderPropFile.Enabled = false;
+            this.txtFinderPropFile.Location = new System.Drawing.Point(55, 74);
+            this.txtFinderPropFile.Name = "txtFinderPropFile";
+            this.txtFinderPropFile.Size = new System.Drawing.Size(156, 22);
+            this.txtFinderPropFile.TabIndex = 23;
+            // 
+            // lblFinderPropFile
+            // 
+            this.lblFinderPropFile.AutoSize = true;
+            this.lblFinderPropFile.Location = new System.Drawing.Point(21, 77);
+            this.lblFinderPropFile.Name = "lblFinderPropFile";
+            this.lblFinderPropFile.Size = new System.Drawing.Size(28, 13);
+            this.lblFinderPropFile.TabIndex = 22;
+            this.lblFinderPropFile.Text = "File:";
+            // 
+            // lblPropText
+            // 
+            this.lblPropText.AutoSize = true;
+            this.lblPropText.Location = new System.Drawing.Point(22, 52);
+            this.lblPropText.Name = "lblPropText";
+            this.lblPropText.Size = new System.Drawing.Size(29, 13);
+            this.lblPropText.TabIndex = 21;
+            this.lblPropText.Text = "Text:";
+            // 
+            // chkUIFinder
+            // 
+            this.chkUIFinder.AutoSize = true;
+            this.chkUIFinder.Enabled = false;
+            this.chkUIFinder.Location = new System.Drawing.Point(182, 51);
+            this.chkUIFinder.Name = "chkUIFinder";
+            this.chkUIFinder.Size = new System.Drawing.Size(59, 17);
+            this.chkUIFinder.TabIndex = 20;
+            this.chkUIFinder.Text = "Finder";
+            this.chkUIFinder.UseVisualStyleBackColor = true;
+            // 
+            // tbrProperties
+            // 
+            this.tbrProperties.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnTab,
+            this.btnGrid,
+            this.btnDeleteControl,
+            this.btnAddTabPage,
+            this.toolStripSeparator1,
+            this.txtPropWidget});
+            this.tbrProperties.Location = new System.Drawing.Point(3, 18);
+            this.tbrProperties.Name = "tbrProperties";
+            this.tbrProperties.Size = new System.Drawing.Size(229, 25);
+            this.tbrProperties.TabIndex = 19;
+            this.tbrProperties.Text = "toolStrip1";
+            // 
+            // btnTab
+            // 
+            this.btnTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnTab.Image = ((System.Drawing.Image)(resources.GetObject("btnTab.Image")));
+            this.btnTab.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnTab.Name = "btnTab";
+            this.btnTab.Size = new System.Drawing.Size(23, 22);
+            this.btnTab.Tag = "Tab";
+            this.btnTab.ToolTipText = "Tab Control";
+            // 
+            // btnGrid
+            // 
+            this.btnGrid.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGrid.Image = ((System.Drawing.Image)(resources.GetObject("btnGrid.Image")));
+            this.btnGrid.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGrid.Name = "btnGrid";
+            this.btnGrid.Size = new System.Drawing.Size(23, 22);
+            this.btnGrid.Tag = "Grid";
+            this.btnGrid.ToolTipText = "Grid Control";
+            // 
+            // btnDeleteControl
+            // 
+            this.btnDeleteControl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeleteControl.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteControl.Image")));
+            this.btnDeleteControl.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeleteControl.Name = "btnDeleteControl";
+            this.btnDeleteControl.Size = new System.Drawing.Size(23, 22);
+            this.btnDeleteControl.ToolTipText = "Delete";
+            this.btnDeleteControl.Click += new System.EventHandler(this.btnDeleteControl_Click);
+            // 
+            // btnAddTabPage
+            // 
+            this.btnAddTabPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddTabPage.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTabPage.Image")));
+            this.btnAddTabPage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddTabPage.Name = "btnAddTabPage";
+            this.btnAddTabPage.Size = new System.Drawing.Size(23, 22);
+            this.btnAddTabPage.ToolTipText = "Add Tab Tage";
+            this.btnAddTabPage.Click += new System.EventHandler(this.btnAddTabPage_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // txtPropWidget
+            // 
+            this.txtPropWidget.AutoSize = false;
+            this.txtPropWidget.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPropWidget.Name = "txtPropWidget";
+            this.txtPropWidget.ReadOnly = true;
+            this.txtPropWidget.Size = new System.Drawing.Size(119, 23);
+            // 
+            // txtPropText
+            // 
+            this.txtPropText.Location = new System.Drawing.Point(55, 46);
+            this.txtPropText.Name = "txtPropText";
+            this.txtPropText.Size = new System.Drawing.Size(119, 22);
+            this.txtPropText.TabIndex = 17;
+            this.txtPropText.TextChanged += new System.EventHandler(this.txtPropText_TextChanged);
             // 
             // pnlCodeType
             // 
@@ -1338,8 +1565,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // pnlButtons
             // 
-            this.pnlButtons.Controls.Add(this.btnLayout);
-            this.pnlButtons.Controls.Add(this.btnMock);
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.lblLowerBorder);
             this.pnlButtons.Controls.Add(this.lblProcessingFile);
@@ -1351,38 +1576,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(997, 79);
             this.pnlButtons.TabIndex = 2;
-            // 
-            // btnLayout
-            // 
-            this.btnLayout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLayout.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnLayout.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnLayout.Highlight = true;
-            this.btnLayout.Location = new System.Drawing.Point(776, 50);
-            this.btnLayout.Name = "btnLayout";
-            this.btnLayout.Size = new System.Drawing.Size(68, 25);
-            this.btnLayout.Style = MetroFramework.MetroColorStyle.Green;
-            this.btnLayout.TabIndex = 54;
-            this.btnLayout.Text = "Layout";
-            this.btnLayout.UseSelectable = true;
-            this.btnLayout.Visible = false;
-            this.btnLayout.Click += new System.EventHandler(this.btnLayout_Click);
-            // 
-            // btnMock
-            // 
-            this.btnMock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMock.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnMock.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnMock.Highlight = true;
-            this.btnMock.Location = new System.Drawing.Point(702, 50);
-            this.btnMock.Name = "btnMock";
-            this.btnMock.Size = new System.Drawing.Size(68, 25);
-            this.btnMock.Style = MetroFramework.MetroColorStyle.Green;
-            this.btnMock.TabIndex = 53;
-            this.btnMock.Text = "Mock";
-            this.btnMock.UseSelectable = true;
-            this.btnMock.Visible = false;
-            this.btnMock.Click += new System.EventHandler(this.btnMock_Click);
             // 
             // btnCancel
             // 
@@ -1495,6 +1688,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             ((System.ComponentModel.ISupportInitialize)(this.splitSteps)).EndInit();
             this.splitSteps.ResumeLayout(false);
             this.pnlUIGeneration.ResumeLayout(false);
+            this.splitDesigner.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitDesigner)).EndInit();
+            this.splitDesigner.ResumeLayout(false);
+            this.grpContainers.ResumeLayout(false);
+            this.grpContainers.PerformLayout();
+            this.tbrProperties.ResumeLayout(false);
+            this.tbrProperties.PerformLayout();
             this.pnlCodeType.ResumeLayout(false);
             this.pnlCodeType.PerformLayout();
             this.grpCredentials.ResumeLayout(false);
@@ -1610,10 +1810,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private System.Windows.Forms.Label lblUpperBorder;
         private System.Windows.Forms.Label lblLowerBorder;
         private System.Windows.Forms.Panel pnlUIGeneration;
-        private System.Windows.Forms.Label lblGenerateUIInstructions;
         private MetroFramework.Controls.MetroTextBox txtLayoutToGenerate;
-        private MetroFramework.Controls.MetroButton btnLayout;
-        private MetroFramework.Controls.MetroButton btnMock;
+        private System.Windows.Forms.SplitContainer splitDesigner;
+        private System.Windows.Forms.TreeView treeUIEntities;
+        private System.Windows.Forms.GroupBox grpContainers;
+        private System.Windows.Forms.TextBox txtPropText;
+        private System.Windows.Forms.ToolStrip tbrProperties;
+        private System.Windows.Forms.ToolStripButton btnTab;
+        private System.Windows.Forms.ToolStripButton btnGrid;
+        private System.Windows.Forms.ToolStripButton btnDeleteControl;
+        private System.Windows.Forms.ToolStripButton btnAddTabPage;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripTextBox txtPropWidget;
+        private System.Windows.Forms.CheckBox chkUIFinder;
+        private System.Windows.Forms.Button btnFinderPropFile;
+        private System.Windows.Forms.TextBox txtFinderPropFile;
+        private System.Windows.Forms.Label lblFinderPropFile;
+        private System.Windows.Forms.Label lblPropText;
+        private System.Windows.Forms.ComboBox cboFinderDisplay;
+        private System.Windows.Forms.Label lblFinderDisplay;
+        private System.Windows.Forms.ComboBox cboFinderProp;
+        private System.Windows.Forms.Label lblFinderProp;
     }
 }
 

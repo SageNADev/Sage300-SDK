@@ -130,12 +130,6 @@
     <Compile Include="Forms\Generation.Designer.cs">
       <DependentUpon>Generation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UIGeneration.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UIGeneration.Designer.cs">
-      <DependentUpon>UIGeneration.cs</DependentUpon>
-    </Compile>
     <Compile Include="ProcessGeneration.cs" />
     <Compile Include="CodeGenerationWizard.cs" />
     <Compile Include="ProjectInfo.cs" />
@@ -506,9 +500,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Generation.resx">
       <DependentUpon>Generation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UIGeneration.resx">
-      <DependentUpon>UIGeneration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
