@@ -1,10 +1,14 @@
-﻿@* Copyright (c) 2018 Sage Software, Inc.  All rights reserved. *@
-
+﻿@* Copyright (c) 2020 Sage Software, Inc.  All rights reserved. *@
 @model Sage.CA.SBS.ERP.Sage300.Common.Models.UserAccess
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service.Base
+@using Sage.CA.SBS.ERP.Sage300.Common.Utilities
+@using System.Reflection
 
 @{
     var import = ViewData[OptionsMenu.Import] == null ?
@@ -13,11 +17,10 @@
     var export = ViewData[OptionsMenu.Export] == null ?
         Model.SecurityType.HasFlag(SecurityType.Inquire) && Model.SecurityType.HasFlag(SecurityType.Export) && !Model.DisableImportExport :
         Convert.ToBoolean(ViewData[OptionsMenu.Export]);
-    var customize = ViewData[OptionsMenu.Customize] == null ? 
-        Model.SecurityType.HasFlag(SecurityType.Admin) : 
+    var customize = ViewData[OptionsMenu.Customize] == null ?
+        Model.SecurityType.HasFlag(SecurityType.Admin) :
         Convert.ToBoolean(ViewData[OptionsMenu.Customize]);
 }
-
 @if (export || import || customize)
 {
     string sImport = "", sExport = "";
@@ -26,7 +29,7 @@
     string divEndTag = hasHeadOptions ? "</div>" : "";
     string importId = (ViewData[OptionsMenu.ImportId] == null) ? "btnOptionImport" : ViewData[OptionsMenu.ImportId].ToString();
     string exportId = (ViewData[OptionsMenu.ExportId] == null) ? "btnOptionExport" : ViewData[OptionsMenu.ExportId].ToString();
-    
+
     if (ViewData[OptionsMenu.EnableBinding] != null)
     {
         sImport = "<li><input type='button' id='{0}' data-bind='enable: Data.ImportOptionsEnabled' value='{1}'></li>";
@@ -38,26 +41,85 @@
         sExport = "<li><a id='{0}'>{1}</a></li>";
     }
 
+    var screenName = ViewContext.Controller.GetType().BaseType.GetProperty("ScreenFormName", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(ViewContext.Controller);
+    var context = ViewContext.Controller.GetType().GetProperty("Context", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(ViewContext.Controller) as Sage.CA.SBS.ERP.Sage300.Common.Models.Context;
+    var service = Utilities.Resolve<ICommonService>(context);
+    var formSizePrefix = "localScreenFormSizeKey_";
+    var localScreenFormSizePreference = service.GetScreenLevelUserPreference(formSizePrefix + screenName);
+    var localScreenFormSizeKey = formSizePrefix + screenName;
+
     @Html.Raw(headOptions)
     @Html.Raw(string.Format("<ul class='{0}'>", "options-menu"))
-            <li>
-                <a>@CommonResx.Options<span class="arrow-grey"></span></a>
+    <li>
+        <a>@CommonResx.Options<span class="arrow-grey"></span></a>
+        <ul class="sub-menu">
+            @if (import)
+            {
+                @Html.Raw(string.Format(sImport, importId, CommonResx.Import))
+            }
+            @if (export)
+            {
+                @Html.Raw(string.Format(sExport, exportId, CommonResx.Export))
+            }
+            @if (customize)
+            {
+                <li><a id="btnCustomizeUI">@CommonResx.Customize</a></li>
+            }
+            <li class="menu-with-submenu">
+                <a id="btnFormSizeUILevel">@NavigationResx.TextSize</a>
                 <ul class="sub-menu">
-                    @if (import)
-                    {
-                        @Html.Raw(string.Format(sImport, importId, CommonResx.Import))
-                    }
-                    @if (export)
-                    {
-                        @Html.Raw(string.Format(sExport, exportId, CommonResx.Export))
-                    }
-                    @if (customize)
-                    {
-                        <li><a id="btnCustomizeUI">@CommonResx.Customize</a></li>
-                    }
+                    <li id="btnFormSizeUILevelLarge"><a class="" id="labelFormSizeUILevelLarge" onclick="sg.utls.localFormSizeHandler(this, 'large', '@localScreenFormSizeKey')">@NavigationResx.Large</a></li>
+                    <li id="btnFormSizeUILevelMedium"><a class="" id="labelFormSizeUILevelMedium" onclick="sg.utls.localFormSizeHandler(this, 'medium', '@localScreenFormSizeKey')">@NavigationResx.Medium</a></li>
+                    <li id="btnFormSizeUILevelSmall"><a class="" id="labelFormSizeUILevelSmall" onclick="sg.utls.localFormSizeHandler(this, 'small', '@localScreenFormSizeKey')">@NavigationResx.Small</a></li>
                 </ul>
             </li>
-        @Html.Raw("</ul>")
+        </ul>
+    </li>
+    @Html.Raw("</ul>")
     @Html.Raw(divEndTag)
-}
 
+    <script>
+        var currentScreenName = '@screenName';
+        var localScreenFormSizeKey = '@localScreenFormSizeKey';
+        var localScreenFormSizePreference = '@localScreenFormSizePreference';
+
+        $(function () {
+            function setFormSize(size) {
+                var targetId = 'labelFormSizeUILevelLarge';
+                switch (size) {
+                    case "large":
+                        targetId = 'labelFormSizeUILevelLarge'; break;
+                    case "medium":
+                        targetId = 'labelFormSizeUILevelMedium'; break;
+                    case "small":
+                        targetId = 'labelFormSizeUILevelSmall'; break;
+                }
+
+                sg.utls.localFormSizeHandler($("#" + targetId)[0], size, localScreenFormSizeKey, true);
+                //$("#" + targetId).trigger("click");
+            }
+
+            if (sessionStorage["productId"] === "CRM") {
+                $(".options-menu .sub-menu .menu-with-submenu").remove();
+            } else {
+                if (localScreenFormSizePreference !== '' && localScreenFormSizePreference) {
+                    // now localScreenFormSizePreference should be either large, medium, small ...
+                    $("HTML").attr(sg.utls.localFormSizeDataTag, localScreenFormSizePreference);
+                    setFormSize(localScreenFormSizePreference);
+                } else {
+                    if (sg.utls.isSameOrigin()) { //Prevent iFrame cross domain issues, like access screens from CRM
+                        // User global level
+                        if (window.top.formSizeUserPreferenceKey) {
+                            sg.utls.getUserPreferences(window.top.formSizeUserPreferenceKey, function (result) {
+                                setFormSize(result);
+                            });
+                        } else {
+                            console.error("Can not find value window.top.formSizeUserPreferenceKey: " + window.top.formSizeUserPreferenceKey);
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+}

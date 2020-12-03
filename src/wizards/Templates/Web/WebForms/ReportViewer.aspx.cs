@@ -77,7 +77,7 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                 errorLabel.Text = CommonResx.NotAuthorizedMesage;
                 return;
             }
-            
+
             report.Context.Container = ConfigurationHelper.Container;
 
             bool isNew;
@@ -88,55 +88,58 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
             {
                 using (var watcher = new WADLogWatcher("ReportWatcher"))
                 {
-                    using (var session = BusinessPoolManager.GetSession(report.Context, DBLinkType.Company, out isNew))
+                    var session = BusinessPoolManager.GetSession(report.Context, DBLinkType.Company, out isNew);
+
+                    watcher.Print("Session Created.");
+
+                    // Throw an exception if the Crystal Reports template file is not found
+                    var output = GetReportTemplatePath(report.Name, session.UserLanguage);
+                    var reportPath = output.Item1;
+                    var filenameOnly = output.Item2;
+                    if (!File.Exists(reportPath))
                     {
-                        watcher.Print("Session Created.");
-
-                        // Throw an exception if the Crystal Reports template file is not found
-                        var output = GetReportTemplatePath(report.Name, session.UserLanguage);
-                        var reportPath = output.Item1;
-                        var filenameOnly = output.Item2;
-                        if (!File.Exists(reportPath))
-                        {
-                            //
-                            // Security Consideration:
-                            //    Do not use the full path in the message. Use only the filename
-                            //
-                            var msg = string.Format(CommonResx.Template_ReportCouldNotBeLocated, filenameOnly);
-                            throw new MissingFileException(msg);
-                        }
-
-                        ACCPAC.Advantage.Report accpacReport = session.SelectReport(report.Name, report.ProgramId, report.MenuId);
-                        foreach (var parameter in report.Parameters)
-                        {
-                            var value = GetValue(parameter);
-                            accpacReport.SetParam(parameter.Id, value);
-                        }
-
-                        var userId = session.GetSession().UserID;
-                        EvictUserWatcher.AddUserIdToPauseEviction(userId);
-
-                        try
-                        {
-                            // Use lock to fix CRM multiple users concurrency printing issues. 
-                            lock (Lock)
-                            {
-                                var doc = accpacReport.GetReportDocument();
-                                reportDocument = new SageWebReportDocument(doc);
-                            }
-                        }
-                        finally
-                        {
-                            // Make sure we remove that from EvictUserWatcher no matter what happen
-                            EvictUserWatcher.RemoveUserIdFromPauseEviction(userId);
-                        }
-
-                        watcher.Print("Report Document Created.");
-
-                        // store the report object in the memory
-                        InMemoryCacheProvider.Instance.Set(reportDocumentKey, reportDocument);
+                        //
+                        // Security Consideration:
+                        //    Do not use the full path in the message. Use only the filename
+                        //
+                        var msg = string.Format(CommonResx.Template_ReportCouldNotBeLocated, filenameOnly);
+                        throw new MissingFileException(msg);
                     }
+
+                    ACCPAC.Advantage.Report accpacReport = session.SelectReport(report.Name, report.ProgramId, report.MenuId);
+                    foreach (var parameter in report.Parameters)
+                    {
+                        var value = GetValue(parameter);
+                        accpacReport.SetParam(parameter.Id, value);
+                    }
+
+                    var userId = session.GetSession().UserID;
+                    EvictUserWatcher.AddUserIdToPauseEviction(userId);
+
+                    try
+                    {
+                        // Use lock to fix CRM multiple users concurrency printing issues. 
+                        lock (Lock)
+                        {
+                            var doc = accpacReport.GetReportDocument();
+                            reportDocument = new SageWebReportDocument(doc, session, accpacReport);
+
+                        }
+                    }
+                    finally
+                    {
+                        // Make sure we remove that from EvictUserWatcher no matter what happen
+                        EvictUserWatcher.RemoveUserIdFromPauseEviction(userId);
+                    }
+
+                    watcher.Print("Report Document Created.");
+
+                    // store the report object in the memory
+                    InMemoryCacheProvider.Instance.Set(reportDocumentKey,
+                        reportDocument,
+                        ConfigurationHelper.ReportCacheExpirationInMinutes);
                 }
+
             }
 
             if (reportDocument != null)
@@ -242,7 +245,7 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                     CommonUtil.ValidateFileName(sessionId);
 
                     var path = Path.Combine(RegistryHelper.SharedDataDirectory, $"{sessionId}{Constants.REPORTEXTENSION}");
-                    
+
                     if (File.Exists(path))
                     {
                         var report = File.ReadAllText(path);
@@ -347,11 +350,11 @@ namespace $companynamespace$.$applicationid$.Web.WebForms
                 if (!emptyBrackets)
                 {
                     extractedViewName = viewName.Substring(start, end);
-                } 
+                }
                 else
                 {
                     // Scenario 4
-                    extractedViewName = viewName.Substring(0, start-1);
+                    extractedViewName = viewName.Substring(0, start - 1);
                 }
 
                 area = GetAreaFromViewName(extractedViewName);

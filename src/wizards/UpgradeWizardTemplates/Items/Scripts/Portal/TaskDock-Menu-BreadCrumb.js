@@ -1639,15 +1639,25 @@ var TaskDockMenuBreadCrumbManager = function () {
             widgetUI = { NavigableMenuDetail: {} };
 
             $(".kpi .btnOpenReport").on("click", function (event) {
-                hideIframes();
+                // Set var for report display in separate tab, if not already set
+                sg.utls.setReportDisplayInSeparateTab();
+                // If printing in a separate tab, we will not show/hide/etc.
+
+                if (!sg.utls.reportDisplayInSeparateTab) {
+                    hideIframes();
+                }
                 iFrameUrl = $(this).closest(".kpi").find("iframe").attr("src");
                 if (iFrameUrl.indexOf("AgedPayable") > 0) {
-                    $('#screenLayout').show();
-                    $('#widgetLayout').hide();
+                    if (!sg.utls.reportDisplayInSeparateTab) {
+                        $('#screenLayout').show();
+                        $('#widgetLayout').hide();
+                    }
                     sg.utls.ajaxPost(sg.utls.url.buildUrl("KPI", "AgedPayablesReport", "Execute"), {}, loadOptions.executeAgedPayableReport);
                 } else if (iFrameUrl.indexOf("AgedReceivable") > 0) {
-                    $('#screenLayout').show();
-                    $('#widgetLayout').hide();
+                    if (!sg.utls.reportDisplayInSeparateTab) {
+                        $('#screenLayout').show();
+                        $('#widgetLayout').hide();
+                    }
                     sg.utls.ajaxPost(sg.utls.url.buildUrl("KPI", "AgedReceivablesReport", "Execute"), {}, loadOptions.executeAgedReceivableReport);
                 }
             });

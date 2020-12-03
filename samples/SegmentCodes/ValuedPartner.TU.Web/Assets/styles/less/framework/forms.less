@@ -48,6 +48,48 @@
   }
 }
 
+.spinner {
+  position: fixed; 
+  display: none; 
+  text-align: center; 
+  z-index: 9999;
+  left: 50%;
+  margin-top: 100px;
+
+  .bounce {
+    animation: bouncedelay 1s infinite ease-in-out both;
+    background-color: @sage-blue;
+    display: inline-block;
+    height: 8px;
+    margin-right: 6px;
+    width: 8px;
+
+    &.bounce1 {
+      animation-delay: 0s;
+    }
+
+    &.bounce2 {
+      animation-delay: 0.2s;
+    }
+
+    &.bounce3 {
+      animation-delay: 0.4s;
+      margin-right: 0;
+    }
+  }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 // Form container
 
@@ -1040,8 +1082,9 @@ input[class*="btn-"] {
 label.required:after {
   content: "*";
   font-family: Calibri, Arial;
-  color: @sage-green;
+  color: @brand-primary;
   margin: 0 0 0 4px;
+  font-weight: bold;
 }
 
 /* disabled input group */
@@ -1055,14 +1098,16 @@ textarea {
   }
 }
 
-input.numeric {
+input.numeric,
+input.grid_Cell_Number_Right_Align {
   text-align: right;
 }
 
 .go-group,
 .search-group,
 .plus-group,
-.numeric-search-group {
+.numeric-search-group,
+.numeric-go-group {
 
   input.numeric,
   input.align-right {
@@ -1405,7 +1450,10 @@ textarea {
   }
 
   .k-link.k-state-selected {
-    background-color: #dadadd;
+    background-color: transparent;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+
   }
 }
 
@@ -1764,6 +1812,11 @@ td.k-state-focused.k-state-selected {
     input {
       background-color: transparent;
       border: none;
+
+      &:disabled {
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+      }
     }
 
     .fiscalHeadingLable {
@@ -1843,8 +1896,7 @@ td.k-state-focused.k-state-selected {
 
 .label-menu-popup{ 
   background: @gray-lighter;
-  box-shadow: 0 0 5px #ccc;
-  border: 1px solid #ccc;
+  border: 1px solid @input-border;
   margin-top: -11px;
   margin-left: 14px;
   top: 25px;
@@ -2402,14 +2454,13 @@ div.k-treeview {
 
   > span {
     position: relative;
-    background: @sage-dark-gray;
-    border: 1px solid @sage-dark-gray;
+    background: @sage-red;
+    border: 1px solid @sage-red;
     display: block;
     padding: 5px;
     font-size: 12px;
     color: @white;
     line-height: 1.5;
-    box-shadow: 2px 2px 5px 1px #aaa;
 
     &:after, 
     &:before {
@@ -2426,7 +2477,7 @@ div.k-treeview {
     &:after {
       border-color:rgba(194, 225, 245, 0);
       
-      border-bottom-color: @sage-dark-gray;
+      border-bottom-color: @sage-red;
       border-width: 7px;
       margin-left: -10px;
     }
@@ -2437,6 +2488,44 @@ div.k-treeview {
       border-width: 7px;
       margin-left: -11px;
     }
+  }
+}
+
+// New Validation (Red)
+
+.validation-error  {
+  position: absolute;
+  left: 0;
+  top: 106%;
+  width: 100%;
+  z-index: 100;
+  white-space: normal;
+  background: @sage-red;
+  border: 1px solid @sage-red;
+  display: block;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: @white;
+  line-height: 1.5;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    border-color: transparent;
+    pointer-events: none;
+    border-bottom-color: @sage-red;
+    top: 0;
+    left: 10px;
+    margin-top: -13px;
+    pointer-events: none;
+  }
+
+  &.show + input {
+    border: 2px solid @sage-red;
   }
 }
 
@@ -2517,7 +2606,7 @@ div.k-treeview {
 
 .export-required {
   font-family: Calibri,Arial;
-  color: #41a940;
+  color: @brand-primary;
 }
 
 // Inquiry Tool styles
@@ -2754,4 +2843,54 @@ div.k-treeview {
 
 .k-grid .k-grid-content label.checkbox-container {
   height: 22px;
+}
+
+// Payments Acceptance
+
+.icon-lock {
+  font: normal normal normal 16px/1 FontAwesome;
+  margin-right: 8px;
+  vertical-align: baseline;
+
+  &:before {
+    content: "\f023";
+  }
+}
+
+#countryMessageToolTip.help-icon {
+  position: absolute;
+  right: 85px;
+}
+
+.payments-popup {
+
+  .secure-connection {
+    color: @gray-darker;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 0 0 12px;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    margin-top: -6px;
+  }
+
+  i.help-icon {
+    background-position: -402px 1px;
+    position: relative;
+    top: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+  }
 }
