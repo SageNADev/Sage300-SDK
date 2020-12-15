@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -731,7 +731,10 @@ receiptUI = {
     initReceiptNumberFinder: function (viewFinder) {
         viewFinder.viewID = "IC0590";
         viewFinder.viewOrder = 2;
-        viewFinder.displayFieldNames = ["RECPNUMBER", "RECPDESC", "RECPDATE", "FISCYEAR", "FISCPERIOD", "PONUM", "REFERENCE", "RECPTYPE", "RATEOP", "VENDNUMBER", "RECPCUR", "RECPRATE", "RATETYPE", "RATEDATE", "RATEOVRRD", "ADDCOST", "ADDCOSTHM", "ADDCOSTSRC", "ADDCUR", "TOTCSTHM", "TOTCSTSRC", "NUMCSTDETL", "LABELS", "ADDCSTTYPE", "ORIGTOTSRC", "ORIGTOTHM", "ADDCSTHOME", "TOTALCOST", "RECPDECIML", "VENDNAME", "VENDEXISTS", "STATUS"];
+        viewFinder.displayFieldNames = ["RECPNUMBER", "RECPDESC", "RECPDATE", "FISCYEAR", "FISCPERIOD", "PONUM", "REFERENCE",
+            "RECPTYPE", "RATEOP", "VENDNUMBER", "RECPCUR", "RECPRATE", "RATETYPE", "RATEDATE", "RATEOVRRD", "ADDCOST",
+            "ADDCOSTHM", "ADDCOSTSRC", "ADDCUR", "TOTCSTHM", "TOTCSTSRC", "NUMCSTDETL", "LABELS", "ADDCSTTYPE", "ORIGTOTSRC",
+            "ORIGTOTHM", "ADDCSTHOME", "TOTALCOST", "RECPDECIML", "VENDNAME", "VENDEXISTS", "STATUS"];
         viewFinder.returnFieldNames = ["RECPNUMBER"];
         viewFinder.parentValAsInitKey = $("#txtReceiptNumber").val() === "*** NEW ***" ? false : true;
         viewFinder.filter = "DELETED = 0";
@@ -741,7 +744,8 @@ receiptUI = {
     initVendorNumberFinder: function (viewFinder) {
         viewFinder.viewID = "AP0015";
         viewFinder.viewOrder = 0;
-        viewFinder.displayFieldNames = ["VENDORID", "VENDNAME", "SWACTV", "IDGRP", "CURNCODE", "SHORTNAME", "SWHOLD", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4", "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2"];
+        viewFinder.displayFieldNames = ["VENDORID", "VENDNAME", "SWACTV", "IDGRP", "CURNCODE", "SHORTNAME", "SWHOLD",
+            "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4", "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2"];
         viewFinder.returnFieldNames = ["VENDORID"];
         viewFinder.parentValAsInitKey = true;
         //viewFinder.optionalFieldBindings = "AP0407,AP0500[0]";  // comment out for now as CSFND doesn't support filterCount yet
@@ -810,7 +814,6 @@ receiptUI = {
         var selectedvalue = $('#Data_ReceiptType').data("kendoDropDownList").dataItem().value;
         if (selectedvalue) {
             receiptUI.showHideColumns(selectedvalue);
-            receiptUI.receiptModel.Data.ReceiptType(selectedvalue);
             receiptRepository.refresh(receiptUI.receiptModel.Data);
         }
     },
@@ -856,21 +859,15 @@ receiptUI = {
     costSelectionChanged: function (e) {
         var selectedvalue = $('#Data_AdditionalCostAllocationType').data("kendoDropDownList").dataItem().value;
         if (selectedvalue) {
-            receiptUI.receiptModel.Data.AdditionalCostAllocationType(selectedvalue);
             receiptUI.enableReceiptType(false);
         }
     },
 
-    //Get receipt number
+    // Get receipt number
     get: function () {
         var receiptNumber = receiptUI.receiptModel.Data.ReceiptNumber();
         receiptUI.receiptModel.UIMode(sg.utls.OperationMode.LOAD);
         receiptRepository.get(receiptNumber, receiptUI.receiptModel.DisableScreen());
-    },
-
-    populateDropDownList: function () {
-        $("#Data_ReceiptType").data("kendoDropDownList").value(receiptUI.receiptModel.Data.ReceiptType());
-        $("#Data_AdditionalCostAllocationType").data("kendoDropDownList").value(receiptUI.receiptModel.Data.AdditionalCostAllocationType());
     },
 
     enableReceiptType: function (isEnable) {
@@ -1205,7 +1202,6 @@ var receiptUISuccess = {
             }
 
             receiptGridUtility.updateTextBox();
-            receiptUI.populateDropDownList();
             sg.utls.showMessage(jsonResult);
             if (uiMode !== sg.utls.OperationMode.NEW) {
                 receiptUI.receiptModel.isModelDirty.reset();
