@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -230,7 +230,6 @@ var clearStatisticsUI = (function (self, $) {
      * @private
      */
     function initCheckBox() {
-
         $("#Data_ClearCustomerStatistics").click(function (e) {
             if ($(this).is(':checked')) {
                 setTimeout(function () {
@@ -755,6 +754,7 @@ var clearStatisticsUI = (function (self, $) {
         _initialized = init;
     }
 
+    // Public Methods
     return {
 
         /**
@@ -815,15 +815,15 @@ var onSuccess = (function (self, $) {
          * @namespace onSuccess
          * @public
          * 
-         * @param {object} jsonResult - The result of the operation
+         * @param {object} result - JSON result payload
          */
-        process: function (jsonResult) {
-            if (jsonResult.UserMessage.IsSuccess) {
+        process: function (result) {
+            if (result.UserMessage.IsSuccess) {
                 let model = clearStatisticsUI.getModel();
-                window.ko.mapping.fromJS(jsonResult.WorkflowInstanceId, {}, model.WorkflowInstanceId);
+                window.ko.mapping.fromJS(result.WorkflowInstanceId, {}, model.WorkflowInstanceId);
                 window.progressUI.progress();
             } else {
-                sg.utls.showMessage(jsonResult);
+                sg.utls.showMessage(result);
             }
         },
 
