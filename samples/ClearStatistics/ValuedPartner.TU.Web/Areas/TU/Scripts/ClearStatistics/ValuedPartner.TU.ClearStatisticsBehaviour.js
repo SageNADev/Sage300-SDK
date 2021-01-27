@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -32,30 +32,32 @@ var clearStatisticsConstants = (function (self) {
 
 var clearStatisticsUI = (function (self, $) {
 
-    var _initialized = false;
+    let _initialized = false;
 
-    var _model = {};
-    var computedProperties = ["bClearCustomerStatistics", "bClearGroupStatistics",
+    let _model = {};
+    let computedProperties = ["bClearCustomerStatistics", "bClearGroupStatistics",
                               "bClearNationalAcctStatistics", "bClearSalespersonStatistics"];
-    var customerFiscalYear = null;
-    var customerGroupFiscalYear = null;
-    var nationalAcctFiscalYear = null;
-    var salespersonFiscalYear = null;
-    var itemFiscalYear = null;
-    var customerFiscalPeriod = null;
-    var customerGroupFiscalPeriod = null;
-    var nationalAcctFiscalPeriod = null;
-    var salespersonFiscalPeriod = null;
-    var itemFiscalPeriod = null;
+    let customerFiscalYear = null;
+    let customerGroupFiscalYear = null;
+    let nationalAcctFiscalYear = null;
+    let salespersonFiscalYear = null;
+    let itemFiscalYear = null;
+    let customerFiscalPeriod = null;
+    let customerGroupFiscalPeriod = null;
+    let nationalAcctFiscalPeriod = null;
+    let salespersonFiscalPeriod = null;
+    let itemFiscalPeriod = null;
 
     /**
+     * @function
      * @name initKendoBindings
-     * @desc Initialize the Kendo bindings
+     * @description Initialize the Kendo bindings
+     * @namespace clearStatisticsUI
      * @private
      */
     function initKendoBindings() {
         // Reduce code noise
-        var utils = clearStatisticsUtilities;
+        let utils = clearStatisticsUtilities;
 
         _model = ko.mapping.fromJS(ClearStatisticsViewModel);
 
@@ -87,8 +89,10 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function 
      * @name initFinders
-     * @desc Initialize all of the finders on the page
+     * @description Initialize all of the finders on the page
+     * @namespace clearStatisticsUI
      * @private
      */
     function initFinders() {
@@ -101,13 +105,15 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name initCustomerNumberFinders
-     * @desc Initialize the Customer Number finders
+     * @description Initialize the Customer Number finders
+     * @namespace clearStatisticsUI
      * @private
      */
     function initCustomerNumberFinders() {
-        var props = sg.viewFinderProperties.AR.Customers;
-        var controls = [
+        let props = sg.viewFinderProperties.AR.Customers;
+        let controls = [
             { buttonId: "btnFromCustomerFinder", dataControlId: "Data_FromCustomerNo" },
             { buttonId: "btnToCustomerFinder", dataControlId: "Data_ToCustomerNo" },
         ];
@@ -115,13 +121,15 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name initCustomerGroupFinders
-     * @desc Initialize the Customer Group finders
+     * @description Initialize the Customer Group finders
+     * @namespace clearStatisticsUI
      * @private
      */
     function initCustomerGroupFinders() {
-        var props = sg.viewFinderProperties.AR.CustomerGroups;
-        var controls = [
+        let props = sg.viewFinderProperties.AR.CustomerGroups;
+        let controls = [
             { buttonId: "btnFromCustomerGroupFinder", dataControlId: "Data_FromGroupCode" },
             { buttonId: "btnToCustomerGroupFinder", dataControlId: "Data_ToGroupCode" },
         ];
@@ -129,13 +137,15 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name initNationalAcctFinders
-     * @desc Initialize the National Accounts finders
+     * @description Initialize the National Accounts finders
+     * @namespace clearStatisticsUI
      * @private
      */
     function initNationalAcctFinders() {
-        var props = sg.viewFinderProperties.AR.NationalAccounts;
-        var controls = [
+        let props = sg.viewFinderProperties.AR.NationalAccounts;
+        let controls = [
             { buttonId: "btnFromNationalAcctFinder", dataControlId: "Data_FromNationalAccount" },
             { buttonId: "btnToNationalAcctFinder", dataControlId: "Data_ToNationalAccount" },
         ];
@@ -143,13 +153,15 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name initSalespersonFinders
-     * @desc Initialize the National Accounts finder
+     * @description Initialize the National Accounts finder
+     * @namespace clearStatisticsUI
      * @private
      */
     function initSalespersonFinders() {
-        var props = sg.viewFinderProperties.AR.Salespersons;
-        var controls = [
+        let props = sg.viewFinderProperties.AR.Salespersons;
+        let controls = [
             { buttonId: "btnFromSalespersonFinder", dataControlId: "Data_FromSalesPerson" },
             { buttonId: "btnToSalespersonFinder", dataControlId: "Data_ToSalesPerson" },
         ];
@@ -157,13 +169,15 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name initItemFinders
-     * @desc Initialize the Item finders
+     * @description Initialize the Item finders
+     * @namespace clearStatisticsUI
      * @private
      */
     function initItemFinders() {
-        var props = sg.viewFinderProperties.AR.Items;
-        var controls = [
+        let props = sg.viewFinderProperties.AR.Items;
+        let controls = [
             { buttonId: "btnFromItemFinder", dataControlId: "Data_FromItem" },
             { buttonId: "btnToItemFinder", dataControlId: "Data_ToItem" },
         ];
@@ -171,14 +185,15 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name initFiscalYearFinders
-     * @desc Initialize the Fiscal Year finders
+     * @description Initialize the Fiscal Year finders
+     * @namespace clearStatisticsUI
      * @private
      */
     function initFiscalYearFinders() {
-
-        var props = sg.viewFinderProperties.CS.FiscalCalendars;
-        var controls = [
+        let props = sg.viewFinderProperties.CS.FiscalCalendars;
+        let controls = [
             { buttonId: "btnFindCustomerYear", dataControlId: "Data_ThroughCustomerYear" },
             { buttonId: "btnFindCustomerGroupYear", dataControlId: "Data_ThroughGroupYear" },
             { buttonId: "btnFindNationalAcctYear", dataControlId: "Data_ThroughNationalAcctYear" },
@@ -189,9 +204,12 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name _initFinderGroup
-     * @desc Generic routine to initialize a group of finders
+     * @description Generic routine to initialize a group of finders
+     * @namespace clearStatisticsUI
      * @private
+     * 
      * @param {array} controls - Array of objects containing button and data control names
      * @param {object} info - Object containing various settings for the finder
      * @param {object} filter = "" | The optional filter used to filter the finder results
@@ -205,8 +223,10 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name initCheckBox
-     * @desc Initialize the click handlers for check boxes
+     * @description Initialize the click handlers for check boxes
+     * @namespace clearStatisticsUI
      * @private
      */
     function initCheckBox() {
@@ -253,8 +273,10 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name initBlur
-     * @desc Initialize the onChange handlers for various controls
+     * @description Initialize the onChange handlers for various controls
+     * @namespace clearStatisticsUI
      * @private
      */
     function initBlur() {
@@ -269,9 +291,9 @@ var clearStatisticsUI = (function (self, $) {
         $("#Data_ThroughCustomerYear").on('change', function (e) {
             let $control = $("#Data_ThroughCustomerYear");
             sg.delayOnChange("btnFindCustomerYear", $control, function () {
-                var validatePeriodForYear = true;
-                var year = $control.val();
-                var oldYear = customerFiscalYear;
+                let validatePeriodForYear = true;
+                let year = $control.val();
+                let oldYear = customerFiscalYear;
                 if (_model.CalendarYear()) {
                     if (year < clearStatisticsConstants.MINIMUMFISCALYEAR) {
                         _model.Data.ThroughCustomerYear(oldYear);
@@ -309,9 +331,9 @@ var clearStatisticsUI = (function (self, $) {
         $("#Data_ThroughGroupYear").on('change', function (e) {
             let $control = $("#Data_ThroughGroupYear");
             sg.delayOnChange("btnFindCustomerGroupYear", $control, function () {
-                var validatePeriodForYear = true;
-                var year = $control.val();
-                var oldYear = customerGroupFiscalYear;
+                let validatePeriodForYear = true;
+                let year = $control.val();
+                let oldYear = customerGroupFiscalYear;
                 if (_model.CalendarYear()) {
                     if (year < clearStatisticsConstants.MINIMUMFISCALYEAR) {
                         _model.Data.ThroughGroupYear(oldYear);
@@ -350,9 +372,9 @@ var clearStatisticsUI = (function (self, $) {
         $("#Data_ThroughNationalAcctYear").on('change', function (e) {
             let $control = $("#Data_ThroughNationalAcctYear");
             sg.delayOnChange("btnFindNationalAcctYear", $control, function () {
-                var validatePeriodForYear = true;
-                var year = $control.val();
-                var oldYear = nationalAcctFiscalYear;
+                let validatePeriodForYear = true;
+                let year = $control.val();
+                let oldYear = nationalAcctFiscalYear;
                 if (_model.CalendarYear()) {
                     if (year < clearStatisticsConstants.MINIMUMFISCALYEAR) {
                         _model.Data.ThroughNationalAcctYear(oldYear);
@@ -391,9 +413,9 @@ var clearStatisticsUI = (function (self, $) {
         $("#Data_ThroughSalesPersonYear").on('change', function (e) {
             let $control = $("#Data_ThroughSalesPersonYear");
             sg.delayOnChange("btnFindSalespersonYear", $control, function () {
-                var validatePeriodForYear = true;
-                var year = $control.val();
-                var oldYear = salespersonFiscalYear;
+                let validatePeriodForYear = true;
+                let year = $control.val();
+                let oldYear = salespersonFiscalYear;
                 if (_model.SalesCalendarYear()) {
                     if (year < clearStatisticsConstants.MINIMUMFISCALYEAR) {
                         _model.Data.ThroughSalesPersonYear(oldYear);
@@ -432,9 +454,9 @@ var clearStatisticsUI = (function (self, $) {
         $("#Data_ThroughItemYear").on('change', function (e) {
             let $control = $("#Data_ThroughItemYear");
             sg.delayOnChange("btnFindItemYear", $control, function () {
-                var validatePeriodForYear = true;
-                var year = $control.val();
-                var oldYear = itemFiscalYear;
+                let validatePeriodForYear = true;
+                let year = $control.val();
+                let oldYear = itemFiscalYear;
                 if (_model.ItemCalendarYear()) {
                     if (year < clearStatisticsConstants.MINIMUMFISCALYEAR) {
                         _model.Data.ThroughItemYear(oldYear);
@@ -489,8 +511,10 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name initTextBox
-     * @desc Initialize the Kendo text boxes
+     * @description Initialize the Kendo text boxes
+     * @namespace clearStatisticsUI
      * @private
      */
     function initTextBox() {
@@ -568,8 +592,10 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name initButtons
-     * @desc Initialize the button click handlers
+     * @description Initialize the button click handlers
+     * @namespace clearStatisticsUI
      * @private
      */
     function initButtons() {
@@ -580,16 +606,18 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name process
-     * @desc Handler for the process button
+     * @description Handler for the process button
+     * @namespace clearStatisticsUI
      * @private
      */
     function process() {
         debugger;
         sg.utls.isProcessRunning = true;
-        var processUrl = sg.utls.url.buildUrl("TU", "ClearStatistics", "Process");
+        let processUrl = sg.utls.url.buildUrl("TU", "ClearStatistics", "Process");
 
-        var isChecked = (_model.Data.bClearCustomerStatistics()
+        let isChecked = (_model.Data.bClearCustomerStatistics()
             || _model.Data.bClearGroupStatistics()
             || _model.Data.bClearNationalAcctStatistics()
             || _model.Data.bClearSalespersonStatistics()
@@ -608,34 +636,38 @@ var clearStatisticsUI = (function (self, $) {
                 $("#message").empty();
                 sg.utls.clearValidations("frmClearStatistics");
                 sg.utls.isProcessRunning = true;
-                var data = { model: ko.mapping.toJS(_model, computedProperties) };
+                let data = { model: ko.mapping.toJS(_model, computedProperties) };
                 sg.utls.ajaxPost(processUrl, data, onSuccess.process)
             }
         }
     }
 
     /**
+     * @function
      * @name initProcessUI
-     * @desc 
+     * @description
+     * @namespace clearStatisticsUI
      * @private
      */
     function initProcessUI() {
-        var progressUrl = sg.utls.url.buildUrl(clearStatisticsConstants.MODULEID, clearStatisticsConstants.ACTION, "Progress");
-        var cancelUrl = sg.utls.url.buildUrl(clearStatisticsConstants.MODULEID, clearStatisticsConstants.ACTION, "Cancel");
+        let progressUrl = sg.utls.url.buildUrl(clearStatisticsConstants.MODULEID, clearStatisticsConstants.ACTION, "Progress");
+        let cancelUrl = sg.utls.url.buildUrl(clearStatisticsConstants.MODULEID, clearStatisticsConstants.ACTION, "Cancel");
         // @ts-ignore
         window.progressUI.init(progressUrl, cancelUrl, _model, screenName, onSuccess.onProcessComplete);
     }
 
     /**
+     * @function
      * @name Validation
-     * @desc Page validator
+     * @description Page validator
+     * @namespace clearStatisticsUI
      * @private
      */
     function Validation() {
-        var errorRangeMessage = "";
-        var inputValid = true;
+        let errorRangeMessage = "";
+        let inputValid = true;
         // @ts-ignore
-        var resources = clearStatisticsResources;
+        let resources = clearStatisticsResources;
 
         // If FromCustomer is greater than ToCustomer, throw an exception
         if (_model.Data.ClearCustomerStatistics() && (_model.Data.FromCustomerNo() != null &&
@@ -689,10 +721,13 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name fiscalYrExists
-     * @desc Check to see if a year is a FiscalYear
+     * @description Check to see if a year is a FiscalYear
+     * @namespace clearStatisticsUI
      * @private
-     * @param Year
+     * 
+     * @param {number} Year
      * @returns {boolean} true | false
      */
     function fiscalYrExists(Year) {
@@ -708,10 +743,13 @@ var clearStatisticsUI = (function (self, $) {
     }
 
     /**
+     * @function
      * @name setInitialized
-     * @desc set or unset the _initialized flag
+     * @description set or unset the _initialized flag
+     * @namespace clearStatisticsUI
      * @private
-     * @param {boolean} true | false
+     * 
+     * @param {boolean} init true | false
      */
     function setInitialized(init) {
         _initialized = init;
@@ -720,8 +758,10 @@ var clearStatisticsUI = (function (self, $) {
     return {
 
         /**
+         * @function
          * @name init
-         * @desc Initialize the controls and apply kendo bindings
+         * @description Initialize the controls and apply kendo bindings
+         * @namespace clearStatisticsUI
          * @public
          */
         init: function () {
@@ -737,9 +777,12 @@ var clearStatisticsUI = (function (self, $) {
         },
 
         /**
+         * @function
          * @name getInitialized
-         * @desc Check to see if page has been initialized
+         * @description Check to see if page has been initialized
+         * @namespace clearStatisticsUI
          * @public
+         * 
          * @returns {boolean} _initialized
          */
         getInitialized: function () {
@@ -747,9 +790,12 @@ var clearStatisticsUI = (function (self, $) {
         },
 
         /**
+         * @function
          * @name getModel
-         * @desc Get the _model property
+         * @description Get the _model property
+         * @namespace clearStatisticsUI
          * @public
+         * 
          * @returns {object} _model
          */
         getModel: function () {
@@ -763,14 +809,17 @@ var onSuccess = (function (self, $) {
 
     return {
         /**
+         * @function
          * @name process
-         * @desc
+         * @description
+         * @namespace onSuccess
          * @public
+         * 
          * @param {object} jsonResult - The result of the operation
          */
         process: function (jsonResult) {
             if (jsonResult.UserMessage.IsSuccess) {
-                var model = clearStatisticsUI.getModel();
+                let model = clearStatisticsUI.getModel();
                 window.ko.mapping.fromJS(jsonResult.WorkflowInstanceId, {}, model.WorkflowInstanceId);
                 window.progressUI.progress();
             } else {
@@ -779,9 +828,12 @@ var onSuccess = (function (self, $) {
         },
 
         /**
+         * @function
          * @name onProcessComplete
-         * @desc
+         * @description
+         * @namespace onSuccess
          * @public
+         * 
          * @param {object} result - The result of the operation
          */
         onProcessComplete: function (result) {
@@ -797,9 +849,12 @@ var onSuccess = (function (self, $) {
 var clearStatisticsUtility = (function (self, $) {
     return {
         /**
+         * @function
          * @name checkIsDirty
-         * @desc
+         * @description If the model data has changed, display confirmation dialog box
+         * @namespace clearStatisticsUtility
          * @public
+         * 
          * @param {object} yesFunctionToCall - Callback for Yes
          * @param {object} noFunctionToCall - Callback for No
          */
@@ -819,8 +874,10 @@ var clearStatisticsUtility = (function (self, $) {
         },
 
         /**
+         * @function
          * @name setFocusToFiscalYear
-         * @desc Set the current cursor focus to the 'Through Customer Year' field
+         * @description Set the current cursor focus to the 'Through Customer Year' field
+         * @namespace clearStatisticsUtility
          * @public
          */
         setFocusToFiscalYear: function () {
@@ -831,21 +888,24 @@ var clearStatisticsUtility = (function (self, $) {
 
 var clearStatisticsUtilities = (function (self, $) {
 
-    var customerYearBackup = null;
-    var customerGroupYearBackup = null;
-    var nationalAcctYearBackup = null;
-    var salespersonYearBackup = null;
-    var itemYearBackup = null;
-    var customerPeriodBackup = null;
-    var customerGroupPeriodBackup = null;
-    var nationalAcctPeriodBackup = null;
-    var salespersonPeriodBackup = null;
-    var itemPeriodBackup = null;
+    let customerYearBackup = null;
+    let customerGroupYearBackup = null;
+    let nationalAcctYearBackup = null;
+    let salespersonYearBackup = null;
+    let itemYearBackup = null;
+    let customerPeriodBackup = null;
+    let customerGroupPeriodBackup = null;
+    let nationalAcctPeriodBackup = null;
+    let salespersonPeriodBackup = null;
+    let itemPeriodBackup = null;
 
     /**
+     * @function
      * @name _validationPeriod
      * @description Method used by other validation methods in this object
+     * @namespace clearStatisticsUtilities
      * @private
+     * 
      * @param {string} dataItemId
      * @param {number} periodBackup
      * @param {number} maxPeriod
@@ -855,8 +915,8 @@ var clearStatisticsUtilities = (function (self, $) {
      */
     function _validatePeriod(dataItemId, periodBackup, maxPeriod, modelCurrentPeriodMethod, throughPeriodMethod, refreshStatisticMethod) {
         sg.utls.clearValidations("frmClearStatistics");
-        var period = $("#" + dataItemId).val();
-        var oldPeriod = periodBackup;
+        let period = $("#" + dataItemId).val();
+        let oldPeriod = periodBackup;
         if ((parseInt(maxPeriod) < parseInt(period)) || (period == "") || (period == "00") || ((period == "0"))) {
             modelCurrentPeriodMethod(periodBackup);
             throughPeriodMethod(periodBackup);
@@ -879,99 +939,132 @@ var clearStatisticsUtilities = (function (self, $) {
         itemPeriodBackup: itemPeriodBackup,
 
         /**
+         * @function
          * @name backupCustomerYearValue
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         * 
+         * @public
          */
         backupCustomerYearValue: function () { 
             customerYearBackup = clearStatisticsUI.getModel().Data.ThroughCustomerYear();
         },
 
         /**
+         * @function
          * @name backupGroupYearValue
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         backupGroupYearValue: function () {
             customerGroupYearBackup = clearStatisticsUI.getModel().Data.ThroughGroupYear();
         },
 
         /**
+         * @function
          * @name backupNationalAcctYearValue
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         backupNationalAcctYearValue: function () {
             nationalAcctYearBackup = clearStatisticsUI.getModel().Data.ThroughNationalAcctYear();
         },
 
         /**
+         * @function
          * @name backupSalespersonYearValue
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         backupSalespersonYearValue: function () {
             salespersonYearBackup = clearStatisticsUI.getModel().Data.ThroughSalesPersonYear();
         },
 
         /**
+         * @function
          * @name backupItemYearValue
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         backupItemYearValue: function () {
             itemYearBackup = clearStatisticsUI.getModel().Data.ThroughItemYear();
         },
 
         /**
+         * @function
          * @name backupCustomerPeriodValue
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         backupCustomerPeriodValue: function () {
             customerPeriodBackup = clearStatisticsUI.getModel().Data.ThroughCustomerPeriod();
         },
 
         /**
+         * @function
          * @name backupGroupPeriodValue
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         backupGroupPeriodValue: function () {
             customerGroupPeriodBackup = clearStatisticsUI.getModel().Data.ThroughGroupPeriod();
         },
 
         /**
+         * @function
          * @name backupNationalAcctPeriodValue
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         backupNationalAcctPeriodValue: function () {
             nationalAcctPeriodBackup = clearStatisticsUI.getModel().Data.ThroughNationalAcctPeriod();
         },
 
         /**
+         * @function
          * @name backupSalespersonPeriodValue
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         backupSalespersonPeriodValue: function () {
             salespersonPeriodBackup = clearStatisticsUI.getModel().Data.ThroughSalesPersonPeriod();
         },
 
         /**
+         * @function
          * @name backupItemPeriodValue
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         backupItemPeriodValue: function () {
             itemPeriodBackup = clearStatisticsUI.getModel().Data.ThroughItemPeriod();
         },
 
         /**
+         * @function
          * @name refreshCustomerStatistic
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         refreshCustomerStatistic: function () {
             clearStatisticsUtilities.backupCustomerPeriodValue();
@@ -979,9 +1072,12 @@ var clearStatisticsUtilities = (function (self, $) {
         },
 
         /**
+         * @function
          * @name refreshGroupStatistic
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         refreshGroupStatistic: function () {
             clearStatisticsUtilities.backupGroupPeriodValue();
@@ -989,9 +1085,12 @@ var clearStatisticsUtilities = (function (self, $) {
         },
 
         /**
+         * @function
          * @name refreshNationalAcctStatistic
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         refreshNationalAcctStatistic: function () {
             clearStatisticsUtilities.backupNationalAcctPeriodValue();
@@ -999,9 +1098,12 @@ var clearStatisticsUtilities = (function (self, $) {
         },
 
         /**
+         * @function
          * @name refreshSalespersonStatistic
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         refreshSalespersonStatistic: function () {
             clearStatisticsUtilities.backupSalespersonPeriodValue();
@@ -1009,9 +1111,12 @@ var clearStatisticsUtilities = (function (self, $) {
         },
 
         /**
+         * @function
          * @name refreshItemStatistic
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         refreshItemStatistic: function () {
             clearStatisticsUtilities.backupItemPeriodValue();
@@ -1019,54 +1124,72 @@ var clearStatisticsUtilities = (function (self, $) {
         },
 
         /**
+         * @function
          * @name validateCustomerYear
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         validateCustomerYear: function () {
             clearStatisticsRepository.getCustomerMaxPeriodForValidYear($("#Data_ThroughCustomerYear").val());
         },
 
         /**
+         * @function
          * @name validateGroupYear
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         validateGroupYear: function () {
             clearStatisticsRepository.getGroupMaxPeriodForValidYear($("#Data_ThroughGroupYear").val());
         },
 
         /**
+         * @function
          * @name validateNationalAcctYear
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         validateNationalAcctYear: function () {
             clearStatisticsRepository.getNationalAcctMaxPeriodForValidYear($("#Data_ThroughNationalAcctYear").val());
         },
 
         /**
+         * @function
          * @name validateSalespersonYear
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         validateSalespersonYear: function () {
             clearStatisticsRepository.getSalespersonMaxPeriodForValidYear($("#Data_ThroughSalesPersonYear").val());
         },
 
         /**
+         * @function
          * @name validateItemYear
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         validateItemYear: function () {
             clearStatisticsRepository.getItemMaxPeriodForValidYear($("#Data_ThroughItemYear").val());
         },
 
         /**
+         * @function
          * @name validateCustomerPeriod
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         validateCustomerPeriod: function () {
             _validatePeriod("Data_ThroughCustomerPeriod", customerPeriodBackup, clearStatisticsUI.getModel().MaximumPeriod(),
@@ -1075,9 +1198,12 @@ var clearStatisticsUtilities = (function (self, $) {
         },
 
         /**
+         * @function
          * @name validateGroupPeriod
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         validateGroupPeriod: function () {
             _validatePeriod("Data_ThroughGroupPeriod", customerGroupPeriodBackup, clearStatisticsUI.getModel().MaximumPeriod(),
@@ -1086,9 +1212,12 @@ var clearStatisticsUtilities = (function (self, $) {
         },
 
         /**
+         * @function
          * @name validateNationalAcctPeriod
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         validateNationalAcctPeriod: function () {
             _validatePeriod("Data_ThroughNationalAcctPeriod", nationalAcctPeriodBackup, clearStatisticsUI.getModel().MaximumPeriod(),
@@ -1097,9 +1226,12 @@ var clearStatisticsUtilities = (function (self, $) {
         },
 
         /**
+         * @function
          * @name validateSalespersonPeriod
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         validateSalespersonPeriod: function () {
             _validatePeriod("Data_ThroughSalesPersonPeriod", salespersonPeriodBackup, clearStatisticsUI.getModel().SalesPersonMaximumPeriod(),
@@ -1108,9 +1240,12 @@ var clearStatisticsUtilities = (function (self, $) {
         },
 
         /**
+         * @function
          * @name validateItemPeriod
          * @description 
-         * @private
+         * @namespace clearStatisticsUtilities
+         *
+         * @public
          */
         validateItemPeriod: function () {
             _validatePeriod("Data_ThroughItemPeriod", itemPeriodBackup, clearStatisticsUI.getModel().ItemMaximumPeriod(),
@@ -1124,9 +1259,12 @@ var clearStatisticsUtilities = (function (self, $) {
 var clearStatisticsUISuccess = (function (self, $) {
 
     /**
+     * @function
      * @name _commonHandler
      * @description Method used by the public methods in this object
+     * @namespace clearStatisticsUISuccess
      * @private
+     * 
      * @param {any} result
      * @param {any} dataItemId
      * @param {any} throughYearMethod
@@ -1152,10 +1290,13 @@ var clearStatisticsUISuccess = (function (self, $) {
     return {
 
         /**
+         * @function
          * @name fillCustomerFiscalYear
          * @description
-         * @private
-         * @param result
+         * @namespace clearStatisticsUISuccess
+         * @public
+         * 
+         * @param {Object} result The JSON result object
          */
         fillCustomerFiscalYear: function (result) {
             _commonHandler(result, "Data_ThroughCustomerPeriod", clearStatisticsUI.getModel().Data.ThroughCustomerYear,
@@ -1164,10 +1305,13 @@ var clearStatisticsUISuccess = (function (self, $) {
         },
 
         /**
+         * @function
          * @name fillGroupFiscalYear
          * @description
-         * @private
-         * @param result
+         * @namespace clearStatisticsUISuccess
+         * @public
+         * 
+         * @param {Object} result The JSON result object
          */
         fillGroupFiscalYear: function (result) {
             _commonHandler(result, "Data_ThroughGroupPeriod", clearStatisticsUI.getModel().Data.ThroughGroupYear,
@@ -1176,10 +1320,13 @@ var clearStatisticsUISuccess = (function (self, $) {
         },
 
         /**
+         * @function
          * @name fillNationalAcctFiscalYear
          * @description
-         * @private
-         * @param result
+         * @namespace clearStatisticsUISuccess
+         * @public
+         *
+         * @param {Object} result The JSON result object
          */
         fillNationalAcctFiscalYear: function (result) {
             _commonHandler(result, "Data_ThroughNationalAcctPeriod", clearStatisticsUI.getModel().Data.ThroughNationalAcctYear,
@@ -1188,10 +1335,13 @@ var clearStatisticsUISuccess = (function (self, $) {
         },
 
         /**
+         * @function
          * @name fillSalespersonFiscalYear
          * @description
-         * @private
-         * @param result
+         * @namespace clearStatisticsUISuccess
+         * @public
+         *
+         * @param {Object} result The JSON result object
          */
         fillSalespersonFiscalYear: function (result) {
             _commonHandler(result, "Data_ThroughSalesPersonPeriod", clearStatisticsUI.getModel().Data.ThroughSalesPersonYear,
@@ -1200,10 +1350,13 @@ var clearStatisticsUISuccess = (function (self, $) {
         },
 
         /**
+         * @function
          * @name fillItemFiscalYear
          * @description
-         * @private
-         * @param result
+         * @namespace clearStatisticsUISuccess
+         * @public
+         *
+         * @param {Object} result The JSON result object
          */
         fillItemFiscalYear: function (result) {
             _commonHandler(result, "Data_ThroughItemPeriod", clearStatisticsUI.getModel().Data.ThroughItemYear,
