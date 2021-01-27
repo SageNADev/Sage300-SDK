@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,11 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
+
+/*
+ * The following are global objects external to this source file
+ */
 /*global receiptRepository*/
 /*global receiptResources*/
 /*global ko*/
@@ -55,7 +60,7 @@ const DateChangedEnum = Object.freeze({
     postingDate: 2
 });
 
-const HeaderFieldsEnum = {
+const HeaderFieldsEnum = Object.freeze({
     ReceiptType: 8,
     AdditionalCost: 16,
     RequireLabels: 26,
@@ -64,7 +69,7 @@ const HeaderFieldsEnum = {
     VendorNumber: 10,
     ExchangeRate: 12,
     RateType: 13
-};
+});
 
 const TypeEnum = Object.freeze({
     RECEIPT: 1,
@@ -153,9 +158,10 @@ receiptUI = {
      * @function
      * @name columnIsEditable
      * @description For using new grid and optional grid
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} colName TODO - Add parameter description
+     * @param {string} colName The column name
      */
     columnIsEditable: function (colName) {
         let model = receiptUI.receiptModel;
@@ -185,6 +191,7 @@ receiptUI = {
      * @function
      * @name updateGridModel
      * @description Update grid model run time before build grid
+     * @namespace receiptUI
      * @public
      */
     updateGridModel: function () {
@@ -210,6 +217,7 @@ receiptUI = {
      * @function
      * @name updateGridColDecimal
      * @description Update column decimal place using column template
+     * @namespace receiptUI
      * @public
      */
     updateGridColDecimal: function () {
@@ -228,9 +236,10 @@ receiptUI = {
      * @function
      * @name convertIntToTime
      * @description Convert integer time seconds to time string format like timecard screen
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} intTime TODO - Add parameter description
+     * @param {number} The time specification
      */
     convertIntToTime: function (intTime) {
         let date = new Date(null);
@@ -242,11 +251,12 @@ receiptUI = {
     /**
      * @function
      * @name showGridTimeColumn
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Set the column template type
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} e TODO - Add parameter description
-     * @param {any} column TODO - Add parameter description
+     * @param {any} e The event specifier
+     * @param {object} column The column specification
      */
     showGridTimeColumn: function (e, column) {
         column.Template = '#=receiptUI.convertIntToTime(data.RECPQTY)#';
@@ -258,8 +268,8 @@ receiptUI = {
      * @description Custom function to set column template used in Grid JSON configuration
      * @public
      *
-     * @param {any} e TODO - Add parameter description
-     * @param {any} column TODO - Add parameter description
+     * @param {any} e The event specifier
+     * @param {object} column The column specification
      */
     showGridCommentColumn: function (e, column) {
         column.Template = '#:receiptUI.showCommentBasedOnItem(data.COMMENTS, data.ITEMNO)#';
@@ -269,27 +279,29 @@ receiptUI = {
      * @function
      * @name showCommentBasedOnItem
      * @description Show comments column based on item value. If item value is start 'A', 
-     *              show comments as comment value + "The item name is starts 'A', other 
+     *              show comments as comment value + "The item name starts with 'A', other 
      *              wise just show empty.
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} comments TODO - Add parameter description
-     * @param {any} itemNo TODO - Add parameter description
+     * @param {string} comments The comments string
+     * @param {string} itemNo The item number string
      *  
-     * @returns {string} TODO - Add return value description
+     * @returns {string} The return string
      */
     showCommentBasedOnItem: function (comments, itemNo) {
-        return itemNo.startsWith("A") ? comments + " The item name is starts with 'A'" : "";
+        return itemNo.startsWith("A") ? comments + " The item name starts with 'A'" : "";
     },
 
     /**
      * @function
      * @name updateFinderFilter
-     * @description TODO - Add 
+     * @description 
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} record TODO - Add parameter description
-     * @param {any} finder TODO - Add parameter description
+     * @param {any} record 
+     * @param {object} finder 
      */
     updateFinderFilter: function (record, finder) {
         //finder.Filter = "RECPQTY=111";
@@ -299,10 +311,11 @@ receiptUI = {
      * @function
      * @name showCustomIcon
      * @description Show detail optional field in popup window
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} e TODO - Add parameter description
-     * @param {any} column TODO - Add parameter description
+     * @param {any} e The event
+     * @param {object} column The column specification
      */
     showCustomIcon: function (e, column) {
         column.Template = kendo.template('<span style="padding-right:50px;">Yes</span><input class="icon pencil-edit" type="button">');
@@ -312,10 +325,11 @@ receiptUI = {
      * @function
      * @name showIcons
      * @description Show detail optional field in popup window
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} e TODO - Add parameter description
-     * @param {any} column TODO - Add parameter description
+     * @param {any} e The event
+     * @param {object} column The column specification
      */
     showIcons: function (e, column) {
         // Data is current record, such data.VENDNAME
@@ -326,6 +340,7 @@ receiptUI = {
      * @function
      * @name ShowDetailOptionalField
      * @description Show detail optional field in popup window
+     * @namespace receiptUI
      * @public
      */
     showDetailOptionalField: function () {
@@ -339,8 +354,9 @@ receiptUI = {
 
     /**
      * @function
-     * @name showOptonalField
+     * @name showOptionalField
      * @description Show optional field in popup window
+     * @namespace receiptUI
      * @public
      */
     showOptionalField: function () {
@@ -351,7 +367,8 @@ receiptUI = {
     /**
      * @function
      * @name initPopUps
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize the various popup windows
+     * @namespace receiptUI
      * @public
      */
     initPopUps: function () {
@@ -365,22 +382,76 @@ receiptUI = {
         sg.utls.intializeKendoWindowPopup('#exchangeRate', receiptResources.RateSelection);
     },
 
-    // TODO: Custom call back functions
+    /**
+     * @function
+     * @name customGridChanged
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     * 
+     * @param value
+     */
     customGridChanged: function (value) {
     },
 
+    /**
+     * @function
+     * @name customGridAfterSetActiveRecord
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param value
+     */
     customGridAfterSetActiveRecord: function (value) {
     },
 
+    /**
+     * @function
+     * @name customGridBeforeDelete
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param value
+     * @param event
+     */
     customGridBeforeDelete: function (value, event) {
     },
 
+    /**
+     * @function
+     * @name customGridAfterDelete
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param value
+     */
     customGridAfterDelete: function (value) {
     },
 
+    /**
+     * @function
+     * @name customGridBeforeCreate
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param event
+     */
     customGridBeforeCreate: function (event) {
     },
 
+    /**
+     * @function
+     * @name customGridAfterCreate
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param value
+     */
     customGridAfterCreate: function (value) {
         // After create detail grid record, create default detail optional fields
         let url = sg.utls.url.buildUrl("IC", "Receipt", "InsertDetailOptionalField");
@@ -403,25 +474,96 @@ receiptUI = {
 
     },
 
+    /**
+     * @function
+     * @name customGridAfterInsert
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param value
+     */
     customGridAfterInsert: function (value) {
     },
 
+    /**
+     * @function
+     * @name customColumnChanged
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param currentValue
+     * @param value
+     * @param event
+     */
     customColumnChanged: function (currentValue, value, event) {
     },
 
+    /**
+     * @function
+     * @name customColumnBeforeDisplay
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param value
+     * @param properties
+     */
     customColumnBeforeDisplay: function (value, properties) {
     },
 
+    /**
+     * @function
+     * @name customColumnDoubleClick
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param value
+     * @param event
+     */
     customColumnDoubleClick: function (value, event) {
     },
 
+    /**
+     * @function
+     * @name customColumnBeforeFinder
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param value
+     * @param options
+     */
     customColumnBeforeFinder: function (value, options) {
     },
 
+    /**
+     * @function
+     * @name customColumnBeforeEdit
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param value
+     * @param event
+     * @param fieldName
+     */
     customColumnBeforeEdit: function (value, event, fieldName) {
         event.preventDefault();
     },
 
+    /**
+     * @function
+     * @name customColumnStartEdit
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param value
+     * @param editor
+     */
     customColumnStartEdit: function (value, editor) {
         $(editor).after('<input class="icon pencil-edit" style="margin-left:-20px;" id="btnDetailJobs" tabindex="-1" type="button" />');
         $("input.icon").click(function () {
@@ -429,13 +571,24 @@ receiptUI = {
         });
     },
 
+    /**
+     * @function
+     * @name customColumnEndEdit
+     * @description Custom message handler
+     * @namespace receiptUI
+     * @public
+     *
+     * @param value
+     * @param editor
+     */
     customColumnEndEdit: function (value, editor) {
     },
 
     /**
      * @function
      * @name init
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Primary initialization routine
+     * @namespace receiptUI
      * @public
      */
     init: function () {
@@ -466,7 +619,8 @@ receiptUI = {
     /**
      * @function
      * @name initButtons
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize buttons
+     * @namespace receiptUI
      * @public
      */
     initButtons: function () {
@@ -704,6 +858,7 @@ receiptUI = {
      * @function
      * @name initNumericTextBox
      * @description Initialize the Kendo numeric controls
+     * @namespace receiptUI
      * @public
      */
     initNumericTextBox: function () {
@@ -761,7 +916,8 @@ receiptUI = {
     /**
      * @function
      * @name initDropDownList
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize the drop down list boxes
+     * @namespace receiptUI
      * @public
      */
     initDropDownList: function () {
@@ -776,11 +932,12 @@ receiptUI = {
 
     /**
      * @function
-     * @name create
-     * @description TODO - Add a detailed description of this functions intent
+     * @name updateFiscalYearPeriod
+     * @description Update the fiscal year period
+     * @namespace receiptUI
      * @public
      *  
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result The JSON results object
      */
     updateFiscalYearPeriod: function (result) {
         let model = receiptUI.receiptModel.Data;
@@ -799,7 +956,8 @@ receiptUI = {
     /**
      * @function
      * @name create
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Create a new receipt
+     * @namespace receiptUI
      * @public
      */
     create: function () {
@@ -811,7 +969,8 @@ receiptUI = {
     /**
      * @function
      * @name save
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Save a receipt
+     * @namespace receiptUI
      * @public
      */
     save: function () {
@@ -823,7 +982,8 @@ receiptUI = {
     /**
      * @function
      * @name receiptSave
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Save a receipt
+     * @namespace receiptUI
      * @public
      */
     receiptSave: function () {
@@ -839,10 +999,11 @@ receiptUI = {
     /**
      * @function
      * @name checkIsDirty
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Check to see if the model data has been changed
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} functionToCall TODO - Add a detailed description of this parameter
+     * @param {Function} functionToCall The callback function to invoke
      */
     checkIsDirty: function (functionToCall) {
         let modelData = receiptUI.receiptModel.Data;
@@ -853,7 +1014,7 @@ receiptUI = {
         if (receiptUI.receiptModel.UIMode() === sg.utls.OperationMode.NEW && !receiptUI.isFromReceiptFInder) {
             if (modelDirty || gridDirty && receiptUI.receiptNumber) {
                 let data = ko.mapping.toJS(modelData, receiptUI.ignoreIsDirtyProperties);
-                exists = receiptRepository.isExists(modelData.ReceiptNumber(), data);
+                exists = receiptRepository.receiptExists(modelData.ReceiptNumber(), data);
             }
         }
 
@@ -884,7 +1045,8 @@ receiptUI = {
     /**
      * @function
      * @name openExchangeRate
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Open the exchange rate popup window
+     * @namespace receiptUI
      * @public
      */
     openExchangeRate: function () {
@@ -901,12 +1063,13 @@ receiptUI = {
     /**
      * @function
      * @name initGridLocationFinder
-     * @description TODO - Add a detailed description of this functions intent
+     * @description 
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} viewFinder TODO - Add a detailed description of this parameter
+     * @param {object} viewFinder The viewFinder object
      * 
-     * @returns {object} TODO - Add return value description
+     * @returns {object} The altered viewFinder object
      */
     initGridLocationFinder: function (viewFinder) {
         // Add custom defined properties here, grid generic editor will call it
@@ -917,10 +1080,11 @@ receiptUI = {
     /**
      * @function
      * @name initReceiptNumberFinder
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize the Receipt Number finder
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} viewFinder TODO - Add a detailed description of this parameter
+     * @param {object} viewFinder The viewFinder object
      */
     initReceiptNumberFinder: function (viewFinder) {
         viewFinder.viewID = "IC0590";
@@ -938,10 +1102,11 @@ receiptUI = {
     /**
      * @function
      * @name initVendorNumberFinder
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize the Vendor Number finder
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} viewFinder TODO - Add a detailed description of this parameter
+     * @param {object} viewFinder The viewFinder object
      */
     initVendorNumberFinder: function (viewFinder) {
         viewFinder.viewID = "AP0015";
@@ -956,10 +1121,11 @@ receiptUI = {
     /**
      * @function
      * @name initCurrencyCodeFinderCommon
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize the Currency Code finder
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} viewFinder TODO - Add a detailed description of this parameter
+     * @param {object} viewFinder The viewFinder object
      */
     initCurrencyCodeFinderCommon: function (viewFinder) {
         viewFinder.viewID = "CS0003";
@@ -972,10 +1138,11 @@ receiptUI = {
     /**
      * @function
      * @name initReceiptCurrencyFinder
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize the Receipt Currenty finder
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} viewFinder TODO - Add a detailed description of this parameter
+     * @param {object} viewFinder The viewFinder object
      */
     initReceiptCurrencyFinder: function (viewFinder) {
         receiptUI.initCurrencyCodeFinderCommon(viewFinder);
@@ -984,10 +1151,11 @@ receiptUI = {
     /**
      * @function
      * @name initAddlCostCurrencyFinder
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize the Additional Cost Currency finder
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} viewFinder TODO - Add a detailed description of this parameter
+     * @param {object} viewFinder The viewFinder object
      */
     initAddlCostCurrencyFinder: function (viewFinder) {
         receiptUI.initCurrencyCodeFinderCommon(viewFinder);
@@ -996,10 +1164,11 @@ receiptUI = {
     /**
      * @function
      * @name initRateTypeFinder
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize the Rate Type finder
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} viewFinder TODO - Add a detailed description of this parameter
+     * @param {object} viewFinder The viewFinder object
      */
     initRateTypeFinder: function (viewFinder) {
         viewFinder.viewID = "CS0004";
@@ -1012,10 +1181,11 @@ receiptUI = {
     /**
      * @function
      * @name initExchangeRateFinder
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize the Exchange Rate finder
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} viewFinder TODO - Add a detailed description of this parameter
+     * @param {object} viewFinder The viewFinder object
      */
     initExchangeRateFinder: function (viewFinder) {
         viewFinder.viewID = "CS0006";
@@ -1035,23 +1205,26 @@ receiptUI = {
     /**
      * @function
      * @name initFinders
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize the finders
+     * @namespace receiptUI
      * @public
      */
     initFinders: function () {
-        //let helper = sg.viewFinderHelper;
-        sg.viewFinderHelper.setViewFinder("btnReceiptNumberFinder", "txtReceiptNumber", this.initReceiptNumberFinder);
-        sg.viewFinderHelper.setViewFinder("btnVendorNumberFinder", "Data_VendorNumber", this.initVendorNumberFinder);
-        sg.viewFinderHelper.setViewFinder("btnReceiptCurrencyFinder", "Data_ReceiptCurrency", this.initReceiptCurrencyFinder);
-        sg.viewFinderHelper.setViewFinder("btnAddlCostCurrencyFinder", "Data_AdditionalCostCurrency", this.initAddlCostCurrencyFinder);
-        sg.viewFinderHelper.setViewFinder("btnRateTypeFinder", "Data_RateType", this.initRateTypeFinder);
-        sg.viewFinderHelper.setViewFinder("btnExchangeRateFinder", "txtpopupExchangeRate", this.initExchangeRateFinder);
+
+        var helper = sg.viewFinderHelper;
+        helper.setViewFinder("btnReceiptNumberFinder", "txtReceiptNumber", this.initReceiptNumberFinder);
+        helper.setViewFinder("btnVendorNumberFinder", "Data_VendorNumber", this.initVendorNumberFinder);
+        helper.setViewFinder("btnReceiptCurrencyFinder", "Data_ReceiptCurrency", this.initReceiptCurrencyFinder);
+        helper.setViewFinder("btnAddlCostCurrencyFinder", "Data_AdditionalCostCurrency", this.initAddlCostCurrencyFinder);
+        helper.setViewFinder("btnRateTypeFinder", "Data_RateType", this.initRateTypeFinder);
+        helper.setViewFinder("btnExchangeRateFinder", "txtpopupExchangeRate", this.initExchangeRateFinder);
     },
 
     /**
      * @function
      * @name initHamburgers
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Initialize the hamburger menus
+     * @namespace receiptUI
      * @public
      */
     initHamburgers: function () {
@@ -1067,10 +1240,11 @@ receiptUI = {
     /**
      * @function
      * @name typeSelectionChanged
-     * @description TODO - Add a detailed description of this functions intent
+     * @description The Receipt Type changed event handler
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} e TODO - Add a detailed description of this parameter
+     * @param {object} e The event specifier
      */
     typeSelectionChanged: function (e) {
         let selectedvalue = $('#Data_ReceiptType').data("kendoDropDownList").dataItem().value;
@@ -1083,10 +1257,11 @@ receiptUI = {
     /**
      * @function
      * @name showColumn
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Show a grid column
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} field TODO - Add a detailed description of this parameter
+     * @param {object} field The field specifier
      */
     showColumn: function (field) {
         let grid = $('#receiptGrid').data("kendoGrid");
@@ -1098,10 +1273,11 @@ receiptUI = {
     /**
      * @function
      * @name hideColumn
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Hide a grid column
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} field TODO - Add a detailed description of this parameter
+     * @param {object} field The field specifier
      */
     hideColumn: function (field) {
         let grid = $('#receiptGrid').data("kendoGrid");
@@ -1113,10 +1289,11 @@ receiptUI = {
     /**
      * @function
      * @name showHideColumns
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Show or hide a column
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} value TODO - Add a detailed description of this parameter
+     * @param {any} value 
      */
     showHideColumns: function (value) {
         let grid = $('#receiptGrid').data("kendoGrid");
@@ -1146,10 +1323,11 @@ receiptUI = {
     /**
      * @function
      * @name costSelectionChanged
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Additional Cost Allocation change handler
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} e TODO - Add a detailed description of this parameter
+     * @param {any} e The event specifier
      */
     costSelectionChanged: function (e) {
         let selectedvalue = $('#Data_AdditionalCostAllocationType').data("kendoDropDownList").dataItem().value;
@@ -1161,7 +1339,8 @@ receiptUI = {
     /**
      * @function
      * @name get
-     * @description Get receipt number
+     * @description Get a receipt
+     * @namespace receiptUI
      * @public
      */
     get: function () {
@@ -1173,10 +1352,11 @@ receiptUI = {
     /**
      * @function
      * @name enableReceiptType
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Enable or disable the Receipt Type dropdownlist
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} isEnable TODO - Add a detailed description of this parameter
+     * @param {boolean} isEnable Boolean flag
      */
     enableReceiptType: function (isEnable) {
         let ctrl = $("#Data_ReceiptType").data("kendoDropDownList");
@@ -1189,10 +1369,11 @@ receiptUI = {
     /**
      * @function
      * @name setExchangeRate
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Set the exchange rate
+     * @namespace receiptUI
      * @public
      *
-     * @param {any} jsonResult TODO - Add a detailed description of this parameter
+     * @param {any} jsonResult The JSON result payload
      */
     setExchangeRate: function (jsonResult) {
         let rate = jsonResult.Data.Rate;
@@ -1206,19 +1387,25 @@ receiptUI = {
     /**
      * @function
      * @name setExchangeRateValue
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Set the exchange rate value
+     * @namespace receiptUI
      * @public
      */
     setExchangeRateValue: function () {
-        receiptRepository.GetExchangeRate(receiptUI.receiptModel.Data.RateType(),
-            receiptUI.receiptModel.Data.ReceiptCurrency(), receiptUI.receiptModel.Data.RateDate(),
-            receiptUI.receiptModel.Data.ExchangeRate(), receiptUI.receiptModel.Data.HomeCurrency());
+        receiptRepository.GetExchangeRate(
+            receiptUI.receiptModel.Data.RateType(),
+            receiptUI.receiptModel.Data.ReceiptCurrency(),
+            receiptUI.receiptModel.Data.RateDate(),
+            receiptUI.receiptModel.Data.ExchangeRate(),
+            receiptUI.receiptModel.Data.HomeCurrency()
+        );
     },
 
     /**
      * @function
      * @name refreshHeader
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Refresh the header
+     * @namespace receiptUI
      * @public
      */
     RefreshHeader: function () {
@@ -1231,10 +1418,18 @@ receiptUI = {
  * TODO - Add description for this object
  */
 let receiptUISuccess = {
+
+
+    finderSuccess: function (data) {
+        if (data) {
+        }
+    },
+
     /**
      * @function
      * @name setkey
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Store the receipt number for later use
+     * @namespace receiptUISuccess
      * @public
      */
     setkey: function () {
@@ -1244,10 +1439,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name onSaveDetailsCompleted
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Save details completed event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
     onSaveDetailsCompleted: function (result) {
         let modelData = receiptUI.receiptModel.Data;
@@ -1268,10 +1464,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name refreshReceiptDetail
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Refrech receipt detail event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
     refreshReceiptDetail: function (result) {
         receiptGridUtility.isDataRefreshInProgress = true;
@@ -1287,10 +1484,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name deleteDetailSuccess
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Delete detail success event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
     DeleteDetailSuccess: function (result) {
         let grid = $("#receiptGrid").data("kendoGrid");
@@ -1300,10 +1498,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name getVendorDetailsSuccess
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Get vendor details success event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
     getVendorDetailsSuccess: function (result) {
         if (result.Data) {
@@ -1318,10 +1517,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name rateTypeSelect
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Rate type select success event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
     rateTypeSelect: function (result) {
         if (!result) return;
@@ -1330,30 +1530,32 @@ let receiptUISuccess = {
     /**
      * @function
      * @name getExchangeRate
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Get the exchange rate
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} jsonResult TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
-    getExchangeRate: function (jsonResult) {
-        if (jsonResult.UserMessage.Message) {
-            receiptUI.setExchangeRate(jsonResult);
+    getExchangeRate: function (result) {
+        if (result.UserMessage.Message) {
+            receiptUI.setExchangeRate(result);
         }
         if (receiptUI.isReceiptDateModified === true || receiptUI.isWrongRateType === true) {
-            receiptUI.setExchangeRate(jsonResult);
+            receiptUI.setExchangeRate(result);
         }
     },
 
     /**
      * @function
      * @name getRateSpread
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Get rate spread event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} jsonResult TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
-    getRateSpread: function (jsonResult) {
-        if (jsonResult.UserMessage.Message) {
+    getRateSpread: function (result) {
+        if (result.UserMessage.Message) {
             sg.utls.showKendoConfirmationDialog(
                 // Click on Yes
                 function () {
@@ -1375,7 +1577,7 @@ let receiptUISuccess = {
                         receiptUI.receiptModel.Data.ExchangeRate(receiptUI.prevExRate);
                     }
                 },
-                jsonResult.UserMessage.Message);
+                result.UserMessage.Message);
         } else {
             receiptUI.prevExRate = receiptUI.receiptModel.Data.ExchangeRate();
             receiptUI.exchangeRateOldValue = receiptUI.prevExRate;
@@ -1389,46 +1591,48 @@ let receiptUISuccess = {
     /**
      * @function
      * @name getItemTypeSuccess
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Get item type success event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} jsonResult TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
-    getItemTypeSuccess: function (jsonResult) {
-        sg.ic.utls.setItemTypeResponse(jsonResult, "#btnManufacturerItemFinder", receiptUISuccess.manufacturerItem);
+    getItemTypeSuccess: function (result) {
+        sg.ic.utls.setItemTypeResponse(result, "#btnManufacturerItemFinder", receiptUISuccess.manufacturerItem);
     },
 
     /**
      * @function
      * @name getResult
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Get result success event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} jsonResult TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
-    getResult: function (jsonResult) {
+    getResult: function (result) {
         let modelData = receiptUI.receiptModel.Data;
-        if (jsonResult.UserMessage && jsonResult.UserMessage.IsSuccess) {
+        if (result.UserMessage && result.UserMessage.IsSuccess) {
             receiptUI.addLineClicked = false;
-            if (jsonResult.IsExists === true) {
-                receiptUISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
+            if (result.IsExists === true) {
+                receiptUISuccess.displayResult(result, sg.utls.OperationMode.SAVE);
                 if (modelData.ReceiptType() === TypeEnum.RECEIPT || modelData.ReceiptType() === TypeEnum.ADJUSTMENT) {
                     sg.controls.Focus($("#txtDescription"));
                 } else {
                     sg.controls.KendoDropDownFocus($("#Data_ReceiptType"));
                 }
             } else {
-                receiptUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
+                receiptUISuccess.displayResult(result, sg.utls.OperationMode.NEW);
             }
             receiptUISuccess.setkey();
         } else {
             modelData.ReceiptNumber(receiptUI.receiptNumber);
-            if (jsonResult) {
-                modelData.TotalCostReceiptAdditionalDecimal(jsonResult.TotalCostReceiptAdditionalDecimal);
-                modelData.TotalReturnCostDecimal(jsonResult.TotalReturnCostDecimal);
+            if (result) {
+                modelData.TotalCostReceiptAdditionalDecimal(result.TotalCostReceiptAdditionalDecimal);
+                modelData.TotalReturnCostDecimal(result.TotalReturnCostDecimal);
             }
         }
-        sg.utls.showMessage(jsonResult);
+        sg.utls.showMessage(result);
         sg.viewList.dirty("receiptGrid", false);
         receiptGrid.setFirstLineEditable = false;
         if (modelData.ReceiptType() === TypeEnum.RETURN) {
@@ -1439,25 +1643,26 @@ let receiptUISuccess = {
     /**
      * @function
      * @name actionSuccess
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Action success event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} action TODO - Add a detailed description of this parameter
-     * @param {any} jsonResult TODO - Add a detailed description of this parameter
+     * @param {string} action The action verb
+     * @param {object} result JSON result payload
      */
-    actionSuccess: function (action, jsonResult) {
-        if (jsonResult.UserMessage.IsSuccess) {
+    actionSuccess: function (action, result) {
+        if (result.UserMessage.IsSuccess) {
             if (action === "add" || action === "update" || action === "post" || action === "create") {
                 receiptUI.addLineClicked = false;
             }
-            receiptUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
+            receiptUISuccess.displayResult(result, sg.utls.OperationMode.NEW);
             receiptUI.receiptModel.isModelDirty.reset();
             receiptUISuccess.setkey();
         }
-        if (jsonResult.UserMessage.Warnings && jsonResult.UserMessage.Warnings.length > 0 && action === "add") {
-            sg.utls.showMessageInfo(sg.utls.msgType.WARNING, jsonResult.UserMessage.Warnings[0].Message);
+        if (result.UserMessage.Warnings && result.UserMessage.Warnings.length > 0 && action === "add") {
+            sg.utls.showMessageInfo(sg.utls.msgType.WARNING, result.UserMessage.Warnings[0].Message);
         }
-        sg.utls.showMessage(jsonResult);
+        sg.utls.showMessage(result);
         if (action === "add" || action === "update") {
             receiptGrid.setFirstLineEditable = false;
         }
@@ -1469,10 +1674,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name getHeaderValues
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Get header values event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
     getHeaderValues: function (result) {
         if (result && result.UserMessage) {
@@ -1543,10 +1749,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name getRateType
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Get rate type success event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
     getRateType: function (result) {
         if (result && result.UserMessage) {
@@ -1564,15 +1771,16 @@ let receiptUISuccess = {
     /**
      * @function
      * @name checkDate
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Check date event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} jsonResult TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
-    checkDate: function (jsonResult) {
+    checkDate: function (result) {
         let receiptDate = sg.utls.kndoUI.getFormattedDate($("#txtReceiptDate").val());
         let postingDate = sg.utls.kndoUI.getFormattedDate($("#txtPostingDate").val());
-        if (jsonResult.UserMessage.Message && jsonResult.UserMessage.IsSuccess) {
+        if (result.UserMessage.Message && result.UserMessage.IsSuccess) {
             sg.utls.showKendoConfirmationDialog(
                 // Click on Yes
                 function () {
@@ -1593,7 +1801,7 @@ let receiptUISuccess = {
                     if (receiptUI.controlToBeFocused === "#txtPostingDate") {
                         receiptUI.receiptModel.Data.PostingDate(postingDate);
                     }
-                    receiptUI.updateFiscalYearPeriod(jsonResult);
+                    receiptUI.updateFiscalYearPeriod(result);
                 },
                 // Click on No
                 function () {
@@ -1604,7 +1812,7 @@ let receiptUISuccess = {
                         receiptUI.receiptModel.Data.PostingDate(receiptUI.previousPostingDate);
                     }
                 },
-                jsonResult.UserMessage.Message);
+                result.UserMessage.Message);
         } else {
             if (receiptUI.dateChangeBy === DateChangedEnum.receiptDate) {
                 receiptUI.isReceiptDateModified = true;
@@ -1615,30 +1823,31 @@ let receiptUISuccess = {
                     receiptUI.enableReceiptType(false);
                 }
             }
-            receiptUI.updateFiscalYearPeriod(jsonResult);
+            receiptUI.updateFiscalYearPeriod(result);
         }
     },
 
     /**
      * @function
      * @name displayResult
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Display the results
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} jsonResult TODO - Add a detailed description of this parameter
-     * @param {any} uiMode TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
+     * @param {number} uiMode The UI mode specifier
      */
-    displayResult: function (jsonResult, uiMode) {
-        if (jsonResult) {
+    displayResult: function (result, uiMode) {
+        if (result) {
             if (!receiptUI.hasKoBindingApplied) {
-                receiptUI.receiptModel = ko.mapping.fromJS(jsonResult);
+                receiptUI.receiptModel = ko.mapping.fromJS(result);
                 receiptObservableExtension(receiptUI.receiptModel, uiMode);
                 receiptUI.receiptModel.UIMode(uiMode);
                 receiptUI.hasKoBindingApplied = true;
                 receiptUI.receiptModel.isModelDirty = new ko.dirtyFlag(receiptUI.receiptModel.Data, receiptUI.ignoreIsDirtyProperties);
                 window.ko.applyBindings(receiptUI.receiptModel);
             } else {
-                ko.mapping.fromJS(jsonResult, receiptUI.receiptModel);
+                ko.mapping.fromJS(result, receiptUI.receiptModel);
                 // Get new grid data
                 let grid = $("#receiptGrid").data("kendoGrid");
                 receiptUI.updateGridColDecimal();
@@ -1658,7 +1867,7 @@ let receiptUISuccess = {
             }
 
             receiptGridUtility.updateTextBox();
-            sg.utls.showMessage(jsonResult);
+            sg.utls.showMessage(result);
             if (uiMode !== sg.utls.OperationMode.NEW) {
                 receiptUI.receiptModel.isModelDirty.reset();
             }
@@ -1686,10 +1895,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name initialLoad
-     * @description TODO - Add a detailed description of this functions intent
+     * @description The initial load event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
     initialLoad: function (result) {
         if (result) {
@@ -1701,10 +1911,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name receiptNumberFinderSuccess
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Receipt number finder success event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} data TODO - Add a detailed description of this parameter
+     * @param {object} data The finder data
      */
     receiptNumberfinderSuccess: function (data) {
         if (data) {
@@ -1717,7 +1928,8 @@ let receiptUISuccess = {
     /**
      * @function
      * @name setReceiptNumberFinderData
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Set the Receipt number finder data
+     * @namespace receiptUISuccess
      * @public
      */
     setReceiptNumberFinderData: function () {
@@ -1729,10 +1941,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name rateTypeFinderSuccess
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Rate type finder success event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} data TODO - Add a detailed description of this parameter
+     * @param {object} data The finder data
      */
     rateTypeFinderSuccess: function (data) {
         if (data) {
@@ -1744,7 +1957,8 @@ let receiptUISuccess = {
     /**
      * @function
      * @name setRateTypeFinderData
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Set the rate type finder data
+     * @namespace receiptUISuccess
      * @public
      */
     setRateTypeFinderData: function () {
@@ -1753,17 +1967,18 @@ let receiptUISuccess = {
             receiptUI.isWrongRateType = true;
             receiptUI.receiptModel.Data.ExchangeRate(1);
             let data = ko.mapping.toJS(receiptUI.receiptModel.Data, receiptUI.ignoreIsDirtyProperties);
-            receiptRepository.refresh(receiptUI.receiptModel.Data);
+            receiptRepository.refresh(data);
         }
     },
 
     /**
      * @function
-     * @name currentyRateFinderSuccess
-     * @description TODO - Add a detailed description of this functions intent
+     * @name currencyRateFinderSuccess
+     * @description Currency rate finder success event handler
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} data TODO - Add a detailed description of this parameter
+     * @param {object} data The finder data
      */
     currencyRateFinderSuccess: function (data) {
         if (data) {
@@ -1775,7 +1990,8 @@ let receiptUISuccess = {
     /**
      * @function
      * @name setCurrencyRateFinderData
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Set the currently rate finder data
+     * @namespace receiptUISuccess
      * @public
      */
     setCurrencyRateFinderData: function () {
@@ -1794,10 +2010,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name vendorResult
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Set some vendor related fields
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
     vendorResult: function (result) {
         if (result.VendorNumber) {
@@ -1819,10 +2036,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name receiptCurrencyResult
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Set some receipt currency results
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
     receiptCurrencyResult: function (result) {
         if (result) {
@@ -1850,10 +2068,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name costCurrencyResult
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Set cost currency results
+     * @namespace receiptUISuccess
      * @public
      *
-     * @param {any} result TODO - Add a detailed description of this parameter
+     * @param {object} result JSON result payload
      */
     costCurrencyResult: function (result) {
         if (result) {
@@ -1876,7 +2095,8 @@ let receiptUISuccess = {
     /**
      * @function
      * @name updateGridButtonState
-     * @description TODO - Add a detailed description of this functions intent
+     * @description 
+     * @namespace receiptUISuccess
      * @public
      */
     updateGridButtonState: function () {
@@ -1888,10 +2108,11 @@ let receiptUISuccess = {
     /**
      * @function
      * @name refresh
-     * @description TODO - Add a detailed description of this functions intent
-     * @public 
+     * @description 
+     * @namespace receiptUISuccess
+     * @public
      * 
-     * @param {any} result
+     * @param {object} result JSON result payload
      */
     refresh: function (result) {
         $("#message").empty();
@@ -1962,7 +2183,7 @@ let receiptUISuccess = {
 };
 
 /*
- * TODO - Add a description of this object
+ * General grid related utilities
  */
 let receiptGridUtility = {
     isCellEditable: true,
@@ -1972,11 +2193,12 @@ let receiptGridUtility = {
     /**
      * @function
      * @name updateNumericTextBox
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Update numeric textbox based on field id
+     * @namespace receiptGridUtility
      * @public
      * 
-     * @param {any} id TODO - Add a description of this parameter
-     * @param {any} value TODO - Add a description of this parameter
+     * @param {string} id The field id from the DOM
+     * @param {number} value The value
      */
     updateNumericTextBox: function (id, value) {
         let numericTextbox = $("#" + id).data("kendoNumericTextBox");
@@ -2005,7 +2227,8 @@ let receiptGridUtility = {
     /**
      * @function
      * @name updateTextBox
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Update some textboxes
+     * @namespace receiptGridUtility
      * @public
      */
     updateTextBox: function () {
@@ -2022,10 +2245,11 @@ let receiptGridUtility = {
     /**
      * @function
      * @name getCurrentRowCell
-     * @description TODO - Add a detailed description of this functions intent
+     * @description Get the current grid row cell
+     * @namespace receiptGridUtility
      * @public
      * 
-     * @param {any} colIndex TODO - Add a detailed description of this parameter
+     * @param {number} colIndex The column index
      */
     getCurrentRowCell: function (colIndex) {
         let grid = $('#receiptGrid').data("kendoGrid");

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,11 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
+
+/*
+ * The following are global objects external to this source file
+ */
 /*global receiptResources*/
 /*global ko*/
 /*global kendo*/
@@ -28,9 +33,9 @@
 /**
  * @function
  * @name receiptObservableExtension
- * @description TODO - Add description
- * @param {any} viewModel TODO - Add description
- * @param {any} uiMode TODO - Add description
+ * @description Create Knockout observables and attach to view model
+ * @param {object} viewModel The viewModel object
+ * @param {number} uiMode The UI mode designation
  */
 function receiptObservableExtension(viewModel, uiMode) {
 

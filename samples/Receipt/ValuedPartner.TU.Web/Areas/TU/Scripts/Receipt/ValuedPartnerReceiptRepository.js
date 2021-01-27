@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,11 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
+
+/*
+ * The following are global objects external to this source file
+ */
 /*global ko*/
 /*global receiptUI*/
 /*global receiptUISuccess*/
@@ -43,16 +48,17 @@ let receiptRepository = {
 
     /**
      * @function
-     * @name isExists
-     * @description TODO - Add descripton
+     * @name receiptExists
+     * @description Check for the existence of a receipt
+     * @namespace receiptRepository
      * @public
      * 
-     * @param {string} receiptNumber TODO - Add description
-     * @param {object} model TODO - Add description
+     * @param {string} receiptNumber The receipt number
+     * @param {object} model The model data
      * 
-     * @returns {object} TODO - Add description
+     * @returns {object} JSON object containing the results
      */
-    isExists: function (receiptNumber, model) {
+    receiptExists: function (receiptNumber, model) {
         let data = { 'id': receiptNumber, 'model': model };
         let result = null;
         let url = sg.utls.url.buildUrl("TU", "Receipt", "Exists");
@@ -66,12 +72,13 @@ let receiptRepository = {
     /**
      * @function
      * @name deleteDetail
-     * @description TODO - Add description
+     * @description Delete the details for an existing receipt
+     * @namespace receiptRepository
      * @public
      * 
-     * @param {number} pageNumber TODO - Add description
-     * @param {number} pageSize TODO - Add description
-     * @param {object} model TODO - Add description
+     * @param {number} pageNumber The page number
+     * @param {number} pageSize The page size
+     * @param {object} model The model data
      */
     deleteDetail: function (pageNumber, pageSize, model) {
         let data = { 'pageNumber': pageNumber, 'pageSize': pageSize, 'model': model }; 
@@ -82,10 +89,11 @@ let receiptRepository = {
     /**
      * @function
      * @name create
-     * @description TODO - Add description
+     * @description Create a new receipt
+     * @namespace receiptRepository
      * @public
      * 
-     * @param {string} receiptNumber TODO - Add description
+     * @param {string} receiptNumber The receipt number
      */
     create: function (receiptNumber) {
         let data = { 'receiptNumber': receiptNumber }; 
@@ -96,11 +104,12 @@ let receiptRepository = {
     /**
      * @function
      * @name deleteReceipt
-     * @description TODO - Add description
+     * @description Delete an existing receipt
+     * @namespace receiptRepository
      * @public
      * 
-     * @param {string} receiptNumber TODO - Add description
-     * @param {number} sequenceNumber TODO - Add description
+     * @param {string} receiptNumber The receipt number
+     * @param {number} sequenceNumber The sequence number
      */
     deleteReceipt: function (receiptNumber, sequenceNumber) {
         let data = { 'receiptNumber': receiptNumber, 'sequenceNumber': sequenceNumber };
@@ -111,10 +120,11 @@ let receiptRepository = {
     /**
      * @function
      * @name add
-     * @description TODO - Add description
+     * @description Add a new receipt
+     * @namespace receiptRepository
      * @public
      *
-     * @param {object} data TODO - Add description
+     * @param {object} data The model data
      */
     add: function (data) {
         let url = sg.utls.url.buildUrl("TU", "Receipt", "Add");
@@ -124,10 +134,11 @@ let receiptRepository = {
     /**
      * @function
      * @name update
-     * @description TODO - Add description
+     * @description Update/Save an existing receipt
+     * @namespace receiptRepository
      * @public
      *
-     * @param {object} data TODO - Add description
+     * @param {object} data The model data
      */
     update: function (data) {
         let url = sg.utls.url.buildUrl("TU", "Receipt", "Save");
@@ -137,10 +148,11 @@ let receiptRepository = {
     /**
      * @function
      * @name getItemType
-     * @description TODO - Add description
+     * @description Get the item type
+     * @namespace receiptRepository
      * @public
      *
-     * @param {string} itemNumber TODO - Add description
+     * @param {string} itemNumber The item number
      */
     getItemType: function (itemNumber) {
         let data = { 'itemId': itemNumber };
@@ -151,11 +163,12 @@ let receiptRepository = {
     /**
      * @function
      * @name get
-     * @description TODO - Add description
+     * @description Get an existing receipt by receipt number
+     * @namespace receiptRepository
      * @public
      *
-     * @param {string} receiptNumber TODO - Add description
-     * @param {boolean} disableScreen TODO - Add description
+     * @param {string} receiptNumber The receipt number
+     * @param {boolean} disableScreen The disable screen flag
      */
     get: function (receiptNumber, disableScreen) {
         let data = { 'id': receiptNumber, 'oldRecordDeleted': false, 'isCalledAsPopup': disableScreen };
@@ -166,12 +179,13 @@ let receiptRepository = {
     /**
      * @function
      * @name post
-     * @description TODO - Add description
+     * @description Post an existing receipt
+     * @namespace receiptRepository
      * @public
      *
-     * @param {object} model TODO - Add description
-     * @param {boolean} sequenceNumber TODO - Add description
-     * @param {boolean} yesNo TODO - Add description
+     * @param {object} model The model data
+     * @param {boolean} sequenceNumber The sequence number
+     * @param {boolean} yesNo The yes/no flag
      */
     post: function (model, sequenceNumber, yesNo) {
         let data = {
@@ -184,11 +198,12 @@ let receiptRepository = {
     /**
      * @function
      * @name checkDate
-     * @description TODO - Add description
-     * @public 
+     * @description Validate the date of an existing receipt
+     * @namespace receiptRepository
+     * @public
      * 
-     * @param {string} date TODO - Add description
-     * @param {string} eventType TODO - Add description
+     * @param {string} date The date
+     * @param {string} eventType The event type
      */
     checkDate: function (date, eventType) {
         let data = { 'date': date, 'eventType': eventType };
@@ -199,13 +214,14 @@ let receiptRepository = {
     /**
      * @function
      * @name getVendorDetails
-     * @description TODO - Add description
+     * @description Get the vendor details for a receipt
+     * @namespace receiptRepository
      * @public
      * 
-     * @param {string} id TODO - Add description
+     * @param {string} vendorNumber The vendor number
      */
-    getVendorDetails: function (id) {
-        let data = { 'vendorNumber': id };
+    getVendorDetails: function (vendorNumber) {
+        let data = { 'vendorNumber': vendorNumber };
         let url = sg.utls.url.buildUrl("TU", "Receipt", "GetVendorDetail");
         sg.utls.ajaxPostSync(url, data, receiptUISuccess.getVendorDetailsSuccess);
     },
@@ -213,11 +229,12 @@ let receiptRepository = {
     /**
      * @function
      * @name GetHeaderValues
-     * @description TODO - Add description
+     * @description Get the header values for a receipt
+     * @namespace receiptRepository
      * @public
      *
-     * @param {object} modelData TODO - Add description
-     * @param {object} eventType TODO - Add description
+     * @param {object} modelData The model data
+     * @param {object} eventType The event type
      */
     GetHeaderValues: function (modelData, eventType) {
         let data = { 'model': modelData, 'eventType': eventType };
@@ -228,10 +245,11 @@ let receiptRepository = {
     /**
      * @function
      * @name refresh
-     * @description TODO - Add description
+     * @description Refresh the receipt data
+     * @namespace receiptRepository
      * @public
      *
-     * @param {object} model TODO - Add description
+     * @param {object} model The model data
      */
     refresh: function (model) {
         let data = {
@@ -244,10 +262,11 @@ let receiptRepository = {
     /**
      * @function
      * @name setOptionalFieldValue
-     * @description TODO - Add description
+     * @description Set an optional field value
+     * @namespace receiptRepository
      * @public
      *
-     * @param {object} model TODO - Add description
+     * @param {object} model The model data
      */
     setOptionalFieldValue: function (model) {
         model.IsDetailOptionalField = false;
@@ -261,14 +280,15 @@ let receiptRepository = {
     /**
      * @function
      * @name checkRateSpread
-     * @description TODO - Add description
+     * @description Check the rate spread for a receipt
+     * @namespace receiptRepository
      * @public
      *
-     * @param {string} rateType TODO - Add description
-     * @param {string} fromCurrency TODO - Add description
-     * @param {date} rateDate TODO - Add description
-     * @param {number} rate TODO - Add description
-     * @param {string} tocurrency TODO - Add description
+     * @param {string} rateType The rate type
+     * @param {string} fromCurrency The 'From' currency
+     * @param {date} rateDate The rate date
+     * @param {number} rate The rate
+     * @param {string} tocurrency The 'To' currency
      */
     checkRateSpread: function(rateType, fromCurrency, rateDate, rate, tocurrency) {
         let data = {
@@ -285,14 +305,15 @@ let receiptRepository = {
     /**
      * @function
      * @name GetExchangeRate
-     * @description TODO - Add description
+     * @description Get the exchange rate for a receipt
+     * @namespace receiptRepository
      * @public
      *
-     * @param {string} rateType TODO - Add description
-     * @param {string} fromCurrency TODO - Add description
-     * @param {date} rateDate TODO - Add description
-     * @param {number} rate TODO - Add description
-     * @param {string} tocurrency TODO - Add description
+     * @param {string} rateType The rate type
+     * @param {string} fromCurrency The 'From' currency
+     * @param {date} rateDate The rate date
+     * @param {number} rate The rate
+     * @param {string} tocurrency The 'To' currency
      */
     GetExchangeRate: function (rateType, fromCurrency, rateDate, rate, tocurrency) {
         let data = {
@@ -309,10 +330,11 @@ let receiptRepository = {
     /**
      * @function
      * @name saveReceiptDetails
-     * @description TODO - Add description
+     * @description Save the receipt details
+     * @namespace receiptRepository
      * @public
      *
-     * @param {object} model TODO - Add description
+     * @param {object} model The model data
      */
     saveReceiptDetails: function (model) {
         let data = {

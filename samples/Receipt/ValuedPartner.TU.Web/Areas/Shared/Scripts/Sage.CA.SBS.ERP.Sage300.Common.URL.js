@@ -1,13 +1,15 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
+var sg = sg || {};
+sg.utls = sg.utls || {};
 
-var URL = {
+sg.utls.URL = {
 
     BuildUrl: function (action) {
         return url = location.href + '/' + action;
     },
 
     BuildFinderUrl: function (area, controller, action) {
-        var baseUrl = URL.getBaseURL();
+        var baseUrl = sg.utls.URL.getBaseURL();
         return url = baseUrl + '/' + area + '/' + controller + '/' + action;
     },
 
