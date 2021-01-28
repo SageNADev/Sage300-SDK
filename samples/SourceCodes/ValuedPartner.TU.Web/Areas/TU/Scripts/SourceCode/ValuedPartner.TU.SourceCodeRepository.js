@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,46 +18,100 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+//@ts-check
+
 "use strict";
 
 // Ajax call to controller
 var sourceCodeAjax = {
 
+    /**
+     * @function
+     * @name call
+     * @description Invoke ajax call
+     * @namespace sourceCodeAjax
+     * @public 
+     *  
+     * @param {string} method The method name
+     * @param {object} data The data payload
+     * @param {Function} callbackMethod The function to call on success
+     */
     call: function (method, data, callbackMethod) {
-        var url = sg.utls.url.buildUrl("TU", "SourceCode", method);
+        let url = sg.utls.url.buildUrl("TU", "SourceCode", method);
         sg.utls.ajaxPost(url, data, callbackMethod);
     }
 };
 
 var sourceCodeRepository = {
-    // Create
+
+    /**
+     * @function
+     * @name create
+     * @description Invoke ajax call to create a source code
+     * @namespace sourceCodeRepository
+     * @public
+     */
     create: function () {
-        var data = {};
+        let data = {};
         sourceCodeAjax.call("Create", data, sourceCodeUISuccess.create);
     },
 
-    // Get
+    /**
+     * @function
+     * @name get
+     * @description Invoke ajax call to create a source code
+     * @namespace sourceCodeRepository
+     * @public
+     * 
+     * @param {string} sourceLedger The source ledger specification
+     * @param {string} sourceType the source type specification
+     */
     get: function (sourceLedger, sourceType) {
-        var data = { 'sourceLedger': sourceLedger, 'sourceType': sourceType };
+        let data = { 'sourceLedger': sourceLedger, 'sourceType': sourceType };
         sourceCodeAjax.call("Get", data, sourceCodeUISuccess.get);
     },
 
-    // Delete
+    /**
+     * @function
+     * @name delete
+     * @description Invoke ajax call to delete a source code
+     * @namespace sourceCodeRepository
+     * @public
+     *
+     * @param {string} sourceLedger The source ledger specification
+     * @param {string} sourceType the source type specification
+     */
     delete: function (sourceLedger, sourceType) {
-        var data = { 'sourceLedger': sourceLedger, 'sourceType': sourceType };
+        let data = { 'sourceLedger': sourceLedger, 'sourceType': sourceType };
         sourceCodeAjax.call("Delete", data, sourceCodeUISuccess.delete);
     },
 
-    // Add
+    /**
+     * @function
+     * @name add
+     * @description Invoke ajax call to add a source code
+     * @namespace sourceCodeRepository
+     * @public
+     *
+     * @param {string} sourceLedger The source ledger specification
+     * @param {string} sourceType the source type specification
+     */
     add: function (data) {
         sourceCodeAjax.call("Add", data, sourceCodeUISuccess.update);
     },
 
-    // Update
+    /**
+     * @function
+     * @name update
+     * @description Invoke ajax call to save/update a source code
+     * @namespace sourceCodeRepository
+     * @public
+     *
+     * @param {object} data The source code data
+     */
     update: function (data) {
         sourceCodeAjax.call("Save", data, sourceCodeUISuccess.update);
     },
 
-    // Additional methods go here
-
+    // Add Additional methods here
 };
