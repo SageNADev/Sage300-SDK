@@ -366,7 +366,7 @@
                 viewID: "AR0012",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["PAYMCODE", "PAYMTYPE"],
+                returnFieldNames: ["PAYMCODE", "PAYMTYPE", "TEXTDESC"],
                 displayFieldNames: ["PAYMCODE", "ACTVSW", "TEXTDESC", "PAYMTYPE"]
             },
 
@@ -377,6 +377,14 @@
                 returnFieldNames: ["IDACCTSET"],
                 displayFieldNames: ["IDACCTSET", "TEXTDESC", "ACTVSW", "CURNCODE"],
                 filterTemplate: "CURNCODE = \"{0}\""
+            },
+
+            BillingCycle: {
+                viewID: "AR0014",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["IDCYCL", "TEXTDESC", "ACTVSW"],
+                displayFieldNames: ["IDCYCL", "TEXTDESC", "ACTVSW"]
             },
 
             DistributionCode: {
@@ -401,6 +409,14 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["CODESLSP", "NAMEEMPL"],
                 displayFieldNames: ["CODESLSP", "NAMEEMPL", "SWACTV"]
+            },
+
+            InterestProfiles: {
+                viewID: "AR0020",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["CODESVCCHR", "TEXTDESC", "ACTVSW"],
+                displayFieldNames: ["CODESVCCHR", "TEXTDESC", "ACTVSW"]
             },
 
             ShipToLocation: {
@@ -439,8 +455,8 @@
                 viewID: "AR0025",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["IDGRP"],
-                displayFieldNames: ["IDGRP", "TEXTDESC", "SWACTV"],
+                returnFieldNames: ["IDGRP", "TEXTDESC"],
+                displayFieldNames: ["IDGRP", "TEXTDESC", "SWACTV"]
             },
 
             NationalAccounts: {
@@ -476,6 +492,15 @@
                 returnFieldNames: ["CNTITEM"],
                 displayFieldNames: ["CNTITEM", "IDCUST", "IDINVC", "DATEINVC", "INVCDESC", "AMTDUE"],
                 filterTemplate: "CNTBTCH = \"{0}\""
+            },
+
+            InvoicesForDocumentNumber: {
+                viewID: "AR0032",
+                viewOrder: 2,
+                parentValAsInitKey: true,
+                returnFieldNames: ["IDINVC"],
+                displayFieldNames: ["IDINVC", "IDCUST", "TEXTTRX", "CNTBTCH", "CNTITEM", "DATEINVC", "SWPRTINVC"],
+                filter: "TEXTTRX = \"1\""
             },
 
             Documents: {
@@ -649,6 +674,14 @@
                 displayFieldNames: ["CNTITEM", "DOCNBR", "IDRMIT", "IDCUST", "DATERMIT",
                     "TEXTRMIT", "TEXTPAYOR", "AMTRMIT"],
                 filterTemplate: "CNTBTCH = \"{0}\" AND  CODEPYMTYP = \"{1}\" "
+            },
+
+            CommentTypes: {
+                viewID: "AR0094",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["CMNTTYPE"],
+                displayFieldNames: ["CMNTTYPE", "TEXTDESC", "ACTVSW", "ACTVSW"]
             },
 
             PaymentsDocumentNumber: {
@@ -1071,6 +1104,16 @@
                 displayFieldNames: ["PRICELIST", "DESC"]
             },
 
+            DetailedPriceListCodes: {
+                viewID: "IC0390",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["PRICELIST", "DESC"],
+                displayFieldNames: ["PRICELIST", "DESC", "PRICETYPE", "PRICEFMT", "PRCNTLVL1", "PRCNTLVL2", "PRCNTLVL3", "PRCNTLVL4", "PRCNTLVL5",
+                    "PRICEBASE", "PRICEQTY1", "PRICEQTY2", "PRICEQTY3", "PRICEQTY4", "PRICEQTY5", "PRICEDECS", "ROUNDMETHD", "ROUNDAMT",
+                    "AMOUNTLVL1", "AMOUNTLVL2", "AMOUNTLVL3", "AMOUNTLVL4", "AMOUNTLVL5"]
+            },
+
             ItemPricing: {
                 viewID: "IC0480",
                 viewOrder: 2,
@@ -1223,7 +1266,7 @@
                 viewID: "OE0760",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["CODE"],
+                returnFieldNames: ["CODE", "NAME"],
                 displayFieldNames: ["CODE", "NAME", "ADDRESS1", "ADDRESS2", "ADDRESS3", "ADDRESS4", "CITY", "STATE", "ZIP",
                     "COUNTRY", "PHONE", "FAX", "CONTACT", "COMMENT", "EMAIL", "PHONEC", "FAXC", "EMAILC"]
             }
