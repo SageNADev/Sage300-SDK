@@ -55,177 +55,176 @@
     margin: 0 0 0 6px;
 }
 
-/** Header dropdown menu **/
-.options-menu { 
-	list-style: none;
-	margin: 0;
-  font-size: 13px;
+/** Form header dropdown menu **/
 
-	> li { 
-  	position: relative;  
-  	float: left;
-	}
+.options-menu {       
+  position: relative;
 
-	.arrow-grey {
-    width: 24px;  
-    height: 24px;
-    position: absolute; 
-    right: 0;
-    top: 0;
-    background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -845px 3px;
-    background-size: 1100px 110px;
-	}
-
-  .more-icon {
-    width: 24px;  
-    height: 24px;
-    position: absolute; 
-    right: 0;
-    top: 0;
-    background: transparent url('@{image-path}/ui/sprite_icons.png') no-repeat -662px 5px;
-    background-size: 900px 90px;
-  }
-}
-
-.options-menu > li > a { 
-	padding: 6px 30px 5px 10px;  
-	text-decoration: none;  
-	display: inline-block;  
-	color: @sage-dark-gray;  
-	line-height: @line-height-base;
-}
-
-.options-menu > li:hover > a {  
-	background-color: @sage-blue;  
-	color: @white;
-
-  .arrow-grey {
-    background-position: -845px -40px;
-  }
-
-  .more-icon {
-    background-position: -662px -30px;
-  }
-}
-
-.options-menu > li:hover .sub-menu {
-  display: block;
-}
-
-.options-menu .sub-menu { 
-	display: none;  
-	position: absolute;
-	border: 1px solid @sage-mid-gray;  
-	min-width: 180px;  
-	z-index: 99999;  
-	background: #fff;  
-	list-style: none;  
-	right: 0;  
-	padding: 0;
-
-	> li > a { 
-  	padding: @padding-small-vertical @padding-small-horizontal;  
-  	display: block;  
-  	color: inherit;  
-  	cursor: pointer;
-    text-align: left;
-
-    &.not-active,
-    &.inactive {
-    pointer-events: none;
-    cursor: default;
-    color: #bababc;
-    }
-
-    &.selected {
-    color: white;
-    background-color: #255bc7;
-    }
-	}
-
-  > li > input {
-    text-align: left;
-    width: 100%;
-    background: none;
+  /** To hide text while loading javascript for Kendo Menu widget **/
+  a,
+  input[type=button] {
+    color: @white;
     border: none;
-    font-size: 13px;
+  }
 
-    &:hover {
-      background-color: @btn-link-hover-color;
-      cursor: pointer;
-    }
+  li {
+    list-style-type: none;
+  }
 
-    &:disabled {
-      pointer-events: none;
-      cursor: default;
-      color: #bababc;
+  >.k-menu.k-header {
+    border: none;
+
+    .btn-screen-options.k-item {
+      color: @sage-dark-gray;
+      font-size: 13px;
+      padding: 0;
+      position: relative;
+      border: 0;
+      text-align: left;
+
+      &.k-state-focused {
+        outline: #ffb500 solid 3px;
+        box-shadow: none;
+      }
+
+      >.k-link {
+        color: @sage-dark-gray;
+        font-size: 13px;
+        padding: 6px 26px 7px 10px;
+
+        >.k-i-arrow-s,
+        >.k-i-arrow-60-down {
+          display: none;
+        }
+      }
+
+      >.k-link:before,
+      >.k-link.k-state-down:before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: url('@{image-path}/ui/sprite_icons.png') -843px 2px no-repeat;
+        background-size: 1100px 110px;
+      }
+
+      &.k-state-hover>.k-link {
+        background-color: @sage-blue;
+        color: @white;
+
+        &:before {
+          background: url('@{image-path}/ui/sprite_icons.png') -843px -41px no-repeat;
+          background-size: 1100px 110px;
+        }
+      }
+
     }
   }
 
-	a:hover { 
-		background-color: @btn-link-hover-color;
-    text-decoration: none;
-	}
+  .k-menu {
 
-  .menu-with-submenu {
-    position: relative;
-
-    &:after {
-      content: "";
-      width: 0; 
-      height: 0; 
-      border-top: 4px solid transparent;
-      border-bottom: 4px solid transparent;
-      border-right: 5px solid @brand-primary;
-      position: absolute;
-      right: 10px;
-      top: 9px;
+    .k-menu-group .k-item.k-state-focused, 
+    &.k-context-menu .k-item.k-state-focused {
+      background-color: #d9e0e4;
     }
 
-    .sub-menu {
-      opacity: 0;
-      min-width: 140px;
-      right: 100px;
-      top: 0;
-      -webkit-transition: all 0.2s ease-out;
-      -moz-transition: all 0.2s ease-out;
-      -o-transition: all 0.2s ease-out;
-      transition: all 0.2s ease-out;
+    &.k-context-menu.k-menu-vertical>.k-item>.k-link, 
+    .k-menu-group .k-item>.k-link {
+      padding: .48em 2.4em .48em 0.75em;
+      font-size: 13px;
+      color: @sage-dark-gray;
+    }
 
-      >li {
+    .k-menu-group .k-item>.k-link>.k-menu-expand-arrow, 
+    .k-menu-scroll-wrapper .k-item>.k-link>.k-i-arrow-60-right, 
+    .k-menu-vertical .k-item>.k-link>.k-menu-expand-arrow, 
+    .k-popups-wrapper .k-item>.k-link>.k-i-arrow-60-right {
+      background: none;
+      color: @sage-blue;
+      margin-top: -13px;
+      right: -6px;
+      font-size: 14px;
+    }
 
-        &.menu-active {
-          position: relative;
+    .k-menu-group {
+      box-shadow: none;
+      border: 1px solid @sage-mid-gray;
+      min-width: 180px;
 
-          &:before {
-            content: "";
-            border: 1px solid;
-            border-width: 0 3px 3px 0;
-            height: 11px;
-            left: 10px;
-            position: absolute;
-            top: 6px;
-            transform: rotate(45deg);
-            width: 7px;
-            border-color: @brand-primary;
+      .k-state-hover>.k-link, 
+      .k-state-selected>.k-link {
+        background-image: none;
+        background-color: @btn-link-hover-color;
+      }
+
+      .k-item.menu-with-input-button {
+
+        >.k-link {
+          padding: 0;
+
+          >input {
+            text-align: left;
+            width: 100%;
+            background: 0 0;
+            border: none;
+            font-size: 13px;
+            color: @sage-dark-gray;
+
+            &:hover {
+              background-color: @btn-link-hover-color;
+              cursor: pointer;
+            }
+
+            &:focus,
+            &:active {
+              outline: none;
+            }
+
+            &:disabled {
+              pointer-events: none;
+              cursor: default;
+              color: #bababc;
+            }
           }
         }
 
-        >a {
-          padding-left: 28px;
+        &.k-state-hover>.k-link {
+          cursor: default;
+          background: none;
         }
       }
     }
 
-    &:hover {
+    #menuOptionsTextSize.k-menu-group {
+      min-width: 120px;
+    }
 
-      .sub-menu {
-        opacity: 1;
-        right: 170px;
+    #menuOptionsTextSize>li  {
+      
+      .k-link {
+        padding-left: 2.4em;
+        padding-right: 1.25em;
+      }
+
+      &.menu-active .k-link:before {
+        content: "";
+        border: 1px solid;
+        border-width: 0 3px 3px 0;
+        height: 8px;
+        left: 10px;
+        position: absolute;
+        top: 6px;
+        transform: rotate(45deg);
+        width: 4px;
+        border-color: #3399cc;
       }
     }
   }
 }
+
+/** Form Header Required Legend **/
 
 .flag-required {
   text-align: right;
@@ -251,6 +250,8 @@
 .header-group-1 > .flag-required {
   margin-bottom: -20px;
 }
+
+/** Form Header View Option Buttons **/
 
 .header-view-options {
   display: table-cell;
