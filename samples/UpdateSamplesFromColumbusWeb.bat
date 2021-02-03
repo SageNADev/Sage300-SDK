@@ -10,9 +10,6 @@ set DestinationSamplesRoot=%Drive%\Projects\Sage300-SDK\Develop\Samples
 REM
 REM List of Samples to update
 REM
-REM set WebSDKSampleList=ClearStatistics Receipt SegmentCodes SourceCodes SourceJournalProfiles SourceJournalProfilesReports TaxAuthorities
-set WebSDKSampleList=SegmentCodes
-
 
 (for %%a in (%WebSDKSampleList%) do ( 
    Call :ProcessSample %%a
