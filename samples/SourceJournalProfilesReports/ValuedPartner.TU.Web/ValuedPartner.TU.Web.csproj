@@ -35,7 +35,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ValuedPartner.TU.Web</RootNamespace>
     <AssemblyName>ValuedPartner.TU.Web</AssemblyName>
-    <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300\programs\Online\Web</Sage300WebDir>
+    <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage\Sage300\Online\Web</Sage300WebDir>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -352,10 +352,7 @@
     <Compile Include="Areas\TU\Controllers\Finder\FindSourceJournalProfileControllerInternal.cs" />
     <Compile Include="Areas\TU\Controllers\Reports\SourceJournalProfileReportController.cs" />
     <Compile Include="Areas\TU\Controllers\Reports\SourceJournalProfileReportControllerInternal.cs" />
-    <Compile Include="Areas\TU\Controllers\SourceJournalProfileController.cs" />
-    <Compile Include="Areas\TU\Controllers\SourceJournalProfileControllerInternal.cs" />
     <Compile Include="Areas\TU\Models\Reports\SourceJournalProfileReportViewModel.cs" />
-    <Compile Include="Areas\TU\Models\SourceJournalProfileViewModel.cs" />
     <Compile Include="TUAreaRegistration.cs" />
     <Compile Include="TUWebBootstrapper.cs" />
     <Compile Include="BundleRegistration.cs" />
@@ -387,9 +384,6 @@
     <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportBehaviour.js" />
     <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportKoExtn.js" />
     <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportRepository.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileBehaviour.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileKoExtn.js" />
-    <Content Include="Areas\TU\Scripts\SourceJournalProfile\ValuedPartner.TU.SourceJournalProfileRepository.js" />
     <Content Include="pageUrl.txt" />
     <Content Include="TUBootstrapper.xml">
       <SubType>Designer</SubType>
@@ -444,9 +438,6 @@
     <Content Include="Areas\TU\Views\_ViewStart.cshtml" />
     <Content Include="Areas\TU\Views\SourceJournalProfileReport\Index.cshtml" />
     <Content Include="Areas\TU\Views\SourceJournalProfileReport\Partials\_Localization.cshtml" />
-    <Content Include="Areas\TU\Views\SourceJournalProfile\Index.cshtml" />
-    <Content Include="Areas\TU\Views\SourceJournalProfile\Partials\_Localization.cshtml" />
-    <Content Include="Areas\TU\Views\SourceJournalProfile\Partials\_SourceJournalProfile.cshtml" />
     <Content Include="Areas\TU\Views\SourceJournalProfileReport\Partials\_SourceJournalProfileReport.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

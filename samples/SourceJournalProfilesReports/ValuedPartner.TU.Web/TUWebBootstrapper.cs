@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,6 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#region Imports
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Web.Areas.TU.Controllers;
 using ValuedPartner.TU.Web.Areas.TU.Controllers.Finder;
@@ -33,6 +34,7 @@ using System.Web.Mvc;
 using ValuedPartner.TU.Models.Reports;
 using ValuedPartner.TU.Web.Areas.TU.Controllers.Reports;
 using Constants = ValuedPartner.TU.Web.Areas.TU.Constants;
+#endregion
 
 namespace ValuedPartner.TU.Web
 {
@@ -51,7 +53,6 @@ namespace ValuedPartner.TU.Web
         {
             RegisterController(container);
             RegisterFinder(container);
-            RegisterExportImportController(container);
         }
 
         /// <summary>
@@ -60,7 +61,6 @@ namespace ValuedPartner.TU.Web
         /// <param name="container">The Unity container</param>
         private void RegisterController(IUnityContainer container)
         {
-			UnityUtil.RegisterType<IController, SourceJournalProfileController<SourceJournalProfile>>(container, "TUSourceJournalProfile");
             UnityUtil.RegisterType<IController, SourceJournalProfileReportController<SourceJournalProfileReport>>(container, "TUSourceJournalProfileReport");
         }
 
@@ -71,15 +71,6 @@ namespace ValuedPartner.TU.Web
         private void RegisterFinder(IUnityContainer container)
         {
 			UnityUtil.RegisterType<IFinder, FindSourceJournalProfileControllerInternal<SourceJournalProfile>>(container, "tusourcejournalprofile", new InjectionConstructor(typeof(Context)));
-        }
-
-        /// <summary>
-        /// Register import/export controllers
-        /// </summary>
-        /// <param name="container">The Unity container</param>
-        private void RegisterExportImportController(IUnityContainer container)
-        {
-			UnityUtil.RegisterType<IExportImportController, SourceJournalProfileControllerInternal<SourceJournalProfile>>(container, "tusourcejournalprofile", new InjectionConstructor(typeof(Context)));
         }
     }
 }
