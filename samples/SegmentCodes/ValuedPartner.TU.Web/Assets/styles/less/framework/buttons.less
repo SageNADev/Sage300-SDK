@@ -59,6 +59,17 @@
   &.btn-small, 
   &.small {
     min-width: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+button[type=button],
+input[type=button],
+div[role=button],
+.btn {
+  &:focus {
+    outline: 3px solid @input-border-focus;
   }
 }
 
@@ -70,6 +81,7 @@
   .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
   font-size: 13px;
   vertical-align: middle;
+  font-weight: 400;
   line-height: 1;
 }
 .btn-default:focus {
@@ -102,8 +114,9 @@
 
 .btn-tertiary {
   .button-variant(@btn-tertiary-color; @btn-tertiary-bg; @btn-tertiary-border);
-  font-weight: 700;
+  font-weight: 400;
   font-size: 12px;
+  line-height: 1em;
 
   &:hover {
     background-color: darken(@btn-default-bg, 5%);
