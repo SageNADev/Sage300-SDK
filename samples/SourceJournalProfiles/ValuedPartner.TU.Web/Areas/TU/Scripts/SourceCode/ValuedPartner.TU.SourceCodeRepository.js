@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,47 +18,103 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
+
 "use strict";
 
 // Ajax call to controller
 var sourceCodeAjax = {
 
+    /**
+     * @function
+     * @name call
+     * @description Generic method for making Ajax post calls
+     * @namespace sourceCodeAjax
+     * @public
+     * 
+     * @param {string} method The name of the method to call
+     * @param {object} data The data payload object
+     * @param {Function} callbackMethod The method to call upon a successful ajax call
+     */
     call: function (method, data, callbackMethod) {
-        var url = sg.utls.url.buildUrl("TU", "SourceCode", method);
+        let url = sg.utls.url.buildUrl("TU", "SourceCode", method);
         sg.utls.ajaxPost(url, data, callbackMethod);
     }
 };
 
 var sourceCodeRepository = {
 
-    // Get
+    /**
+     * @function
+     * @name get
+     * @description Invoke the Source Code server-side Get method
+     * @namespace sourceCodeAjax
+     * @public
+     *
+     * @param {string} id The source code specifier
+     * @param {Function} callbackMethod The method to call upon a successful ajax call
+     */
     get: function(id, callbackMethod) {
-        var data = { 'id': id };
+        let data = { 'id': id };
         sourceCodeAjax.call("Get", data, callbackMethod);
     },
 
-    // Create
+    /**
+     * @function
+     * @name create
+     * @description Invoke the Source Code server-side Create method
+     * @namespace sourceCodeAjax
+     * @public
+     *
+     * @param {Function} callbackMethod The method to call upon a successful ajax call
+     */
     create: function(callbackMethod) {
-        var data = {};
+        let data = {};
         sourceCodeAjax.call("Create", data, callbackMethod);
     },
 
-    // Delete
+    /**
+     * @function
+     * @name delete
+     * @description Invoke the Source Code server-side Delete method
+     * @namespace sourceCodeAjax
+     * @public
+     *
+     * @param {string} id The source code specifier
+     * @param {Function} callbackMethod The method to call upon a successful ajax call
+     */
     delete: function(id, callbackMethod) {
-        var data = { 'id': id };
+        let data = { 'id': id };
         sourceCodeAjax.call("Delete", data, callbackMethod);
     },
 
-    // Add
+    /**
+     * @function
+     * @name delete
+     * @description Invoke the Source Code server-side Add method
+     * @namespace sourceCodeAjax
+     * @public
+     *
+     * @param {string} id The source code specifier
+     * @param {Function} callbackMethod The method to call upon a successful ajax call
+     */
     add: function(data, callbackMethod) {
         sourceCodeAjax.call("Add", data, callbackMethod);
     },
 
-    // Update
+    /**
+     * @function
+     * @name update
+     * @description Invoke the Source Code server-side Update method
+     * @namespace sourceCodeAjax
+     * @public
+     *
+     * @param {string} id The source code specifier
+     * @param {Function} callbackMethod The method to call upon a successful ajax call
+     */
     update: function(data, callbackMethod) {
         sourceCodeAjax.call("Save", data, callbackMethod);
     }
 
     // Additional methods go here
-
 };
