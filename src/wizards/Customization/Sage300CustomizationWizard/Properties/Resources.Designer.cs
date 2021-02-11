@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -1024,16 +1024,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard.Properties {
         ///
         ///&quot;use strict&quot;;
         ///
-        ///var $companyname$$screenName$CustomizationUI = $companyname$$screenName$CustomizationUI || {};
-        ///var $companyname$$screenName$customizationViewModel;
+        ///var $companyname$$customizationName$$screenName$CustomizationUI = $companyname$$customizationName$$screenName$CustomizationUI || {};
+        ///var $companyname$$customizationName$$screenName$customizationViewModel;
         ///
-        ///$companyname$$screenName$CustomizationUI = {
+        ///$companyname$$customizationName$$screenName$CustomizationUI = {
         ///
         ///    // Init
         ///    init: function () {
-        ///        $companyname$$screenName$CustomizationUI.initIntercept();
-        ///        $companyname$$screenName$CustomizationUI.initAjaxCallIntercept();
-        ///        $companyname$$screenName$CustomizationUI.initButtons(); [rest of string was truncated]&quot;;.
+        ///        $companyname$$customizationName$$screenName$CustomizationUI.initIntercept();
+        ///        $companyname$$customizationName$$sc [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ScreenCustomization {
             get {

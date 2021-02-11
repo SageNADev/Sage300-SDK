@@ -63,8 +63,6 @@ namespace Sage300UICustomizationWizard
             this.txtKendoFolder = new MetroFramework.Controls.MetroTextBox();
             this.chkKendoLicense = new MetroFramework.Controls.MetroCheckBox();
             this.pnlCreateEdit = new System.Windows.Forms.Panel();
-            this.txtModule = new MetroFramework.Controls.MetroTextBox();
-            this.lblModule = new MetroFramework.Controls.MetroLabel();
             this.txtProject = new MetroFramework.Controls.MetroTextBox();
             this.lblProject = new MetroFramework.Controls.MetroLabel();
             this.txtEula = new MetroFramework.Controls.MetroTextBox();
@@ -302,8 +300,6 @@ namespace Sage300UICustomizationWizard
             // 
             // pnlCreateEdit
             // 
-            this.pnlCreateEdit.Controls.Add(this.txtModule);
-            this.pnlCreateEdit.Controls.Add(this.lblModule);
             this.pnlCreateEdit.Controls.Add(this.txtProject);
             this.pnlCreateEdit.Controls.Add(this.lblProject);
             this.pnlCreateEdit.Controls.Add(this.txtEula);
@@ -331,56 +327,13 @@ namespace Sage300UICustomizationWizard
             this.pnlCreateEdit.Size = new System.Drawing.Size(604, 387);
             this.pnlCreateEdit.TabIndex = 1;
             // 
-            // txtModule
-            // 
-            // 
-            // 
-            // 
-            this.txtModule.CustomButton.Image = null;
-            this.txtModule.CustomButton.Location = new System.Drawing.Point(33, 1);
-            this.txtModule.CustomButton.Margin = new System.Windows.Forms.Padding(2);
-            this.txtModule.CustomButton.Name = "";
-            this.txtModule.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.txtModule.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtModule.CustomButton.TabIndex = 1;
-            this.txtModule.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtModule.CustomButton.UseSelectable = true;
-            this.txtModule.CustomButton.Visible = false;
-            this.txtModule.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtModule.Lines = new string[0];
-            this.txtModule.Location = new System.Drawing.Point(127, 257);
-            this.txtModule.MaxLength = 2;
-            this.txtModule.Name = "txtModule";
-            this.txtModule.PasswordChar = '\0';
-            this.txtModule.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtModule.SelectedText = "";
-            this.txtModule.SelectionLength = 0;
-            this.txtModule.SelectionStart = 0;
-            this.txtModule.ShortcutsEnabled = true;
-            this.txtModule.Size = new System.Drawing.Size(57, 25);
-            this.txtModule.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtModule.TabIndex = 18;
-            this.txtModule.UseSelectable = true;
-            this.txtModule.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtModule.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lblModule
-            // 
-            this.lblModule.AutoSize = true;
-            this.lblModule.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblModule.Location = new System.Drawing.Point(58, 257);
-            this.lblModule.Name = "lblModule";
-            this.lblModule.Size = new System.Drawing.Size(59, 19);
-            this.lblModule.TabIndex = 17;
-            this.lblModule.Text = "Module:";
-            // 
             // txtProject
             // 
             // 
             // 
             // 
             this.txtProject.CustomButton.Image = null;
-            this.txtProject.CustomButton.Location = new System.Drawing.Point(291, 1);
+            this.txtProject.CustomButton.Location = new System.Drawing.Point(462, 1);
             this.txtProject.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtProject.CustomButton.Name = "";
             this.txtProject.CustomButton.Size = new System.Drawing.Size(23, 23);
@@ -390,16 +343,17 @@ namespace Sage300UICustomizationWizard
             this.txtProject.CustomButton.UseSelectable = true;
             this.txtProject.CustomButton.Visible = false;
             this.txtProject.Lines = new string[0];
-            this.txtProject.Location = new System.Drawing.Point(127, 286);
+            this.txtProject.Location = new System.Drawing.Point(127, 253);
             this.txtProject.MaxLength = 32767;
             this.txtProject.Name = "txtProject";
             this.txtProject.PasswordChar = '\0';
+            this.txtProject.ReadOnly = true;
             this.txtProject.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtProject.SelectedText = "";
             this.txtProject.SelectionLength = 0;
             this.txtProject.SelectionStart = 0;
             this.txtProject.ShortcutsEnabled = true;
-            this.txtProject.Size = new System.Drawing.Size(315, 25);
+            this.txtProject.Size = new System.Drawing.Size(486, 25);
             this.txtProject.Style = MetroFramework.MetroColorStyle.Green;
             this.txtProject.TabIndex = 20;
             this.txtProject.UseSelectable = true;
@@ -411,7 +365,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblProject.AutoSize = true;
             this.lblProject.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblProject.Location = new System.Drawing.Point(63, 286);
+            this.lblProject.Location = new System.Drawing.Point(63, 253);
             this.lblProject.Name = "lblProject";
             this.lblProject.Size = new System.Drawing.Size(54, 19);
             this.lblProject.TabIndex = 19;
@@ -435,7 +389,7 @@ namespace Sage300UICustomizationWizard
             this.txtEula.CustomButton.Visible = false;
             this.txtEula.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtEula.Lines = new string[0];
-            this.txtEula.Location = new System.Drawing.Point(127, 220);
+            this.txtEula.Location = new System.Drawing.Point(127, 222);
             this.txtEula.MaxLength = 32767;
             this.txtEula.Name = "txtEula";
             this.txtEula.PasswordChar = '\0';
@@ -469,7 +423,7 @@ namespace Sage300UICustomizationWizard
             // 
             // 
             this.txtAssembly.CustomButton.Image = null;
-            this.txtAssembly.CustomButton.Location = new System.Drawing.Point(291, 1);
+            this.txtAssembly.CustomButton.Location = new System.Drawing.Point(462, 1);
             this.txtAssembly.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtAssembly.CustomButton.Name = "";
             this.txtAssembly.CustomButton.Size = new System.Drawing.Size(23, 23);
@@ -479,7 +433,7 @@ namespace Sage300UICustomizationWizard
             this.txtAssembly.CustomButton.UseSelectable = true;
             this.txtAssembly.CustomButton.Visible = false;
             this.txtAssembly.Lines = new string[0];
-            this.txtAssembly.Location = new System.Drawing.Point(127, 352);
+            this.txtAssembly.Location = new System.Drawing.Point(127, 313);
             this.txtAssembly.MaxLength = 32767;
             this.txtAssembly.Name = "txtAssembly";
             this.txtAssembly.PasswordChar = '\0';
@@ -489,7 +443,7 @@ namespace Sage300UICustomizationWizard
             this.txtAssembly.SelectionLength = 0;
             this.txtAssembly.SelectionStart = 0;
             this.txtAssembly.ShortcutsEnabled = true;
-            this.txtAssembly.Size = new System.Drawing.Size(315, 25);
+            this.txtAssembly.Size = new System.Drawing.Size(486, 25);
             this.txtAssembly.Style = MetroFramework.MetroColorStyle.Green;
             this.txtAssembly.TabIndex = 24;
             this.txtAssembly.UseSelectable = true;
@@ -500,7 +454,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblAssembly.AutoSize = true;
             this.lblAssembly.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblAssembly.Location = new System.Drawing.Point(47, 352);
+            this.lblAssembly.Location = new System.Drawing.Point(47, 313);
             this.lblAssembly.Name = "lblAssembly";
             this.lblAssembly.Size = new System.Drawing.Size(70, 19);
             this.lblAssembly.TabIndex = 23;
@@ -513,7 +467,7 @@ namespace Sage300UICustomizationWizard
             // 
             // 
             this.txtBootstrapper.CustomButton.Image = null;
-            this.txtBootstrapper.CustomButton.Location = new System.Drawing.Point(291, 1);
+            this.txtBootstrapper.CustomButton.Location = new System.Drawing.Point(462, 1);
             this.txtBootstrapper.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtBootstrapper.CustomButton.Name = "";
             this.txtBootstrapper.CustomButton.Size = new System.Drawing.Size(23, 23);
@@ -523,7 +477,7 @@ namespace Sage300UICustomizationWizard
             this.txtBootstrapper.CustomButton.UseSelectable = true;
             this.txtBootstrapper.CustomButton.Visible = false;
             this.txtBootstrapper.Lines = new string[0];
-            this.txtBootstrapper.Location = new System.Drawing.Point(127, 323);
+            this.txtBootstrapper.Location = new System.Drawing.Point(127, 284);
             this.txtBootstrapper.MaxLength = 32767;
             this.txtBootstrapper.Name = "txtBootstrapper";
             this.txtBootstrapper.PasswordChar = '\0';
@@ -533,7 +487,7 @@ namespace Sage300UICustomizationWizard
             this.txtBootstrapper.SelectionLength = 0;
             this.txtBootstrapper.SelectionStart = 0;
             this.txtBootstrapper.ShortcutsEnabled = true;
-            this.txtBootstrapper.Size = new System.Drawing.Size(315, 25);
+            this.txtBootstrapper.Size = new System.Drawing.Size(486, 25);
             this.txtBootstrapper.Style = MetroFramework.MetroColorStyle.Green;
             this.txtBootstrapper.TabIndex = 22;
             this.txtBootstrapper.UseSelectable = true;
@@ -544,7 +498,7 @@ namespace Sage300UICustomizationWizard
             // 
             this.lblBootstrapper.AutoSize = true;
             this.lblBootstrapper.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblBootstrapper.Location = new System.Drawing.Point(30, 323);
+            this.lblBootstrapper.Location = new System.Drawing.Point(30, 284);
             this.lblBootstrapper.Name = "lblBootstrapper";
             this.lblBootstrapper.Size = new System.Drawing.Size(87, 19);
             this.lblBootstrapper.TabIndex = 21;
@@ -998,8 +952,6 @@ namespace Sage300UICustomizationWizard
         private MetroFramework.Controls.MetroTextBox txtProject;
         private MetroFramework.Controls.MetroLabel lblProject;
         private System.Windows.Forms.ToolTip tooltip;
-        private MetroFramework.Controls.MetroTextBox txtModule;
-        private MetroFramework.Controls.MetroLabel lblModule;
         private System.Windows.Forms.Panel pnlKendo;
         private MetroFramework.Controls.MetroButton btnBack;
         private MetroFramework.Controls.MetroLabel lblKendoVersionHelp;
