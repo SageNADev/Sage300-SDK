@@ -162,7 +162,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="EstimatedTax" xml:space="preserve">
-    <value>（預估稅金%1）</value>
+    <value>(預估保留款稅費 %1)</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="InvoiceAmount" xml:space="preserve">
@@ -271,7 +271,7 @@
     <value>客戶明細</value>
   </data>
   <data name="CreateNewBatch" xml:space="preserve">
-    <value>新建批次</value>
+    <value>建立新批次</value>
   </data>
   <data name="CreateNewEntry" xml:space="preserve">
     <value>建立新分錄</value>
@@ -283,7 +283,7 @@
     <value>發票</value>
   </data>
   <data name="EstimatedTaxAmount" xml:space="preserve">
-    <value>預估稅費</value>
+    <value>預估保留款稅金</value>
   </data>
   <data name="InvalidSalesperson" xml:space="preserve">
     <value>未在應收帳款業務員代碼中定義業務員代碼{0}。</value>
@@ -309,7 +309,7 @@
   <data name="PostInvoiceEntry" xml:space="preserve">
     <value>應收帳款過帳發票分錄</value>
   </data>
-    <data name="LessEstTaxWithheld" xml:space="preserve">
-    <value>減迴轉收費</value>
+  <data name="LessEstTaxWithheld" xml:space="preserve">
+    <value>減預估預扣稅</value>
   </data>
 </root>

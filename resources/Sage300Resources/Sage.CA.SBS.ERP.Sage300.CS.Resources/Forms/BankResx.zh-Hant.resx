@@ -166,7 +166,7 @@
     <value>國家</value>
   </data>
   <data name="CreditCardChargesAccount" xml:space="preserve">
-    <value>信用卡收費科目</value>
+    <value>收費科目</value>
   </data>
   <data name="Currency" xml:space="preserve">
     <value>幣別</value>
@@ -223,7 +223,7 @@
     <value>省/市/區</value>
   </data>
   <data name="Taxes" xml:space="preserve">
-    <value>稅費</value>
+    <value>稅金</value>
   </data>
   <data name="TotalChecks" xml:space="preserve">
     <value>- 提款</value>

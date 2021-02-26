@@ -101,6 +101,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClearStatisticsResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Process\CustomerListResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerListResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Process\ProcessCreditCardPaymentResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -505,6 +510,14 @@
     <EmbeddedResource Include="Process\ClearStatisticsResx.fr.resx" />
     <EmbeddedResource Include="Process\ClearStatisticsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Process\ClearStatisticsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\CustomerListResx.es.resx" />
+    <EmbeddedResource Include="Process\CustomerListResx.fr.resx" />
+    <EmbeddedResource Include="Process\CustomerListResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomerListResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\CustomerListResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\CustomerListResx.zh-Hant.resx" />
     <EmbeddedResource Include="Process\ProcessCreditCardPaymentResx.es.resx" />
     <EmbeddedResource Include="Process\ProcessCreditCardPaymentResx.fr.resx" />
     <EmbeddedResource Include="Process\ProcessCreditCardPaymentResx.resx">

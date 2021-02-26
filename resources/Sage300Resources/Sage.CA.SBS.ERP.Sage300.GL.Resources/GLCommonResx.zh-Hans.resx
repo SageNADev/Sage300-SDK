@@ -248,19 +248,19 @@
     <value>批次描述</value>
   </data>
   <data name="FromToValidation" xml:space="preserve">
-    <value>《从》框中的录入不能大于《到》框中的录入</value>
+    <value>&lt;从&gt;框中的录入不能大于&lt;到&gt;框中的录入</value>
   </data>
   <data name="Open" xml:space="preserve">
-    <value>开放</value>
+    <value>未结</value>
   </data>
   <data name="Date" xml:space="preserve">
     <value>日期</value>
   </data>
   <data name="NoDrillDownInfo" xml:space="preserve">
-    <value>无法找到这一记录的下钻信息。如果您正在使用网页屏幕，请注意，您必须使用桌面屏幕才可以下钻到薪资管理或项目成本管理交易。</value>
+    <value>无法找到此记录的下钻信息。如果您正在使用网页屏幕，请注意，您必须使用桌面屏幕才可以下钻到薪资管理或项目成本管理交易。</value>
   </data>
   <data name="PostingErrorMessage" xml:space="preserve">
-    <value>这一批次没有过帐错误。</value>
+    <value>此批次没有过帐错误。</value>
     <comment>Prompt Posting Error message when batch is posted</comment>
   </data>
   <data name="CannotLockBatchReadyToPost" xml:space="preserve">
@@ -274,5 +274,9 @@
   </data>
   <data name="In" xml:space="preserve">
     <value>以</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>币种类型</value>
+    <comment>List</comment>
   </data>
 </root>

@@ -629,6 +629,12 @@
   <data name="DocumentType_RoundingReversed" xml:space="preserve">
     <value>Rounding - Reversed</value>
   </data>
+  <data name="DocumentType_TaxWithheldPosted" xml:space="preserve">
+    <value>Tax Withheld - Posted</value>
+  </data>
+  <data name="DocumentType_TaxWithheldReversed" xml:space="preserve">
+    <value>Tax Withheld - Reversed</value>
+  </data>
   <data name="DocumentType_UnappliedCashApplied" xml:space="preserve">
     <value>Unapplied Cash - Applied</value>
   </data>

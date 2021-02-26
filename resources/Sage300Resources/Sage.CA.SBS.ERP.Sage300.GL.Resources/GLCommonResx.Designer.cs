@@ -187,6 +187,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Currency Type.
+        /// </summary>
+        public static string CurrencyType {
+            get {
+                return ResourceManager.GetString("CurrencyType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string Date {

@@ -97,15 +97,6 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Process {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Currency Type.
-        /// </summary>
-        public static string CurrencyType {
-            get {
-                return ResourceManager.GetString("CurrencyType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Difference.
         /// </summary>
         public static string Difference {

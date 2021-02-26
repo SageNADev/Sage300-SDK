@@ -70,6 +70,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get Online Payments.
+        /// </summary>
+        public static string GetOnlinePayments {
+            get {
+                return ResourceManager.GetString("GetOnlinePayments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of Entries.
         /// </summary>
         public static string NumOfEntries1 {

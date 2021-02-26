@@ -433,4 +433,8 @@
     <value>Le lot qui contient ce document a été effacé.</value>
     <comment>Error Message</comment>
   </data>
+  <data name="ReceiptInformation" xml:space="preserve">
+    <value>Données de l'encaissement</value>
+    <comment>Button</comment>
+  </data>
 </root>

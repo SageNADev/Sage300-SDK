@@ -162,7 +162,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="EstimatedTax" xml:space="preserve">
-    <value>(Impuesto Estimado %1)</value>
+    <value>(Impuesto Retenido Estimado %1)</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="InvoiceAmount" xml:space="preserve">
@@ -283,7 +283,7 @@
     <value>Factura</value>
   </data>
   <data name="EstimatedTaxAmount" xml:space="preserve">
-    <value>Impuesto Estimado</value>
+    <value>Impuesto Retenido Estimado</value>
   </data>
   <data name="InvalidSalesperson" xml:space="preserve">
     <value>El código de vendedor {0} no está definido en C/C - Vendedores.</value>
@@ -311,5 +311,5 @@
   </data>
   <data name="LessEstTaxWithheld" xml:space="preserve">
     <value>Menos Impuesto Retenido Estimado</value>
-  </data>  
+  </data>
 </root>

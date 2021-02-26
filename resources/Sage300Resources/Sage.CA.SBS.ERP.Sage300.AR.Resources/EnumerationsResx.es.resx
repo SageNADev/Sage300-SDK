@@ -629,6 +629,12 @@
   <data name="DocumentType_RoundingReversed" xml:space="preserve">
     <value>Redondeo - Revertido</value>
   </data>
+  <data name="DocumentType_TaxWithheldPosted" xml:space="preserve">
+    <value>Impuesto Retenido - Asentado</value>
+  </data>
+  <data name="DocumentType_TaxWithheldReversed" xml:space="preserve">
+    <value>Impuesto Retenido - Revertido</value>
+  </data>
   <data name="DocumentType_UnappliedCashApplied" xml:space="preserve">
     <value>Efectivo No Aplicado - Aplicado</value>
   </data>

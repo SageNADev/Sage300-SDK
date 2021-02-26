@@ -142,7 +142,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The {0} or {1} is incorrect. Try again..
+        ///   Looks up a localized string similar to The {0} or {1} is incorrect. Try again, or contact your system administrator for assistance..
         /// </summary>
         public static string ErrorPasswordMessage {
             get {
@@ -322,6 +322,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password and Verify do not match..
+        /// </summary>
+        public static string PasswordsDoNotMatch {
+            get {
+                return ResourceManager.GetString("PasswordsDoNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The credentials for the Portal database are not valid. Ask your system administrator for help..
         /// </summary>
         public static string PortalLoginMessage {
@@ -444,6 +453,24 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
         public static string UserRestrictedMessage {
             get {
                 return ResourceManager.GetString("UserRestrictedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verify.
+        /// </summary>
+        public static string Verify {
+            get {
+                return ResourceManager.GetString("Verify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verify Password.
+        /// </summary>
+        public static string VerifyPassword {
+            get {
+                return ResourceManager.GetString("VerifyPassword", resourceCulture);
             }
         }
     }

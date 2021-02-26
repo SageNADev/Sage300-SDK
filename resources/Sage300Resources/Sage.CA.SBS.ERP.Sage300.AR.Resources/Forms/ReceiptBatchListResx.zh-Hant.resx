@@ -121,6 +121,9 @@
     <value>應收帳款收款批次清單</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="GetOnlinePayments" xml:space="preserve">
+    <value>獲取線上付款</value>
+  </data>
   <data name="NumOfEntries1" xml:space="preserve">
     <value>分錄數目</value>
     <comment>Column</comment>

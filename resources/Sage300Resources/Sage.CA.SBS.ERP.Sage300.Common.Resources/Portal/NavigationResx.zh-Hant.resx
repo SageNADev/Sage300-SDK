@@ -292,7 +292,10 @@
     <value>安全群組</value>
   </data>
   <data name="AS_UserAuthorizations" xml:space="preserve">
-    <value>用戶許可權</value>
+    <value>用戶授權</value>
+  </data>
+  <data name="AS_UserAuthorizationsReport" xml:space="preserve">
+    <value>用戶授權報表</value>
   </data>
   <data name="Bank_PeriodicProcessing" xml:space="preserve">
     <value>銀行定期處理</value>
@@ -1281,6 +1284,9 @@
   <data name="GL_Fiscal_Set_Comparison" xml:space="preserve">
     <value>財務資料集比較</value>
   </data>
+  <data name="GL_Account_History_Inquiry" xml:space="preserve">
+    <value>科目歷史查詢</value>
+  </data>
   <data name="IC_Bills_of_Material" xml:space="preserve">
     <value>用料清單</value>
   </data>
@@ -1597,34 +1603,49 @@
     <value>多個連絡人</value>
   </data>
   <data name="MT_Contacts_Contacts" xml:space="preserve">
-    <value>連絡人 </value>
+    <value>連絡人</value>
   </data>
   <data name="SetCompanyColor" xml:space="preserve">
     <value>自訂主題顏色</value>
     <comment>Settings Menu</comment>
   </data>
   <data name="SetCompanyColorDB" xml:space="preserve">
-    <value>從資料庫設定主題顏色</value>
+    <value>在資料庫中設定主題顏色</value>
     <comment>Settings Menu</comment>
-  </data>
-  <data name="Large" xml:space="preserve">
-    <value>大</value>
-    <comment>Form Size Menu</comment>
-  </data>
-  <data name="Medium" xml:space="preserve">
-    <value>中</value>
-    <comment>Form Size Menu</comment>
   </data>
   <data name="Small" xml:space="preserve">
     <value>小</value>
-    <comment>Form Size Menu</comment>
+    <comment>Setting Menu Form Size</comment>
   </data>
   <data name="TextSize" xml:space="preserve">
-    <value>字型大小</value>
-    <comment>Form Size Menu</comment>
+    <value>文字大小</value>
+    <comment>Setting Menu</comment>
+  </data>
+  <data name="Large" xml:space="preserve">
+    <value>大</value>
+    <comment>Setting Menu Form Size</comment>
+  </data>
+  <data name="Medium" xml:space="preserve">
+    <value>中</value>
+    <comment>Setting Menu Form Size</comment>
   </data>
   <data name="FormSizeResetConfirmation" xml:space="preserve">
-    <value />
+    <value>是否清除單個螢幕上的所有文字大小設定，然後將文本大小重置為預設值（大）？</value>
     <comment>Setting Menu Form Size</comment>
+  </data>
+  <data name="CS_PaymentsAcceptance" xml:space="preserve">
+    <value>付款承兌</value>
+  </data>
+  <data name="CS_ServiceCenter" xml:space="preserve">
+    <value>服務中心</value>
+  </data>
+  <data name="AR_Customer_List" xml:space="preserve">
+    <value>客戶清單</value>
+  </data>
+  <data name="GL_SourceCurrencyInquiry" xml:space="preserve">
+    <value>來源幣別查詢</value>
+  </data>
+  <data name="GL_BudgetMaintenance" xml:space="preserve">
+    <value>預算維護 </value>
   </data>
 </root>

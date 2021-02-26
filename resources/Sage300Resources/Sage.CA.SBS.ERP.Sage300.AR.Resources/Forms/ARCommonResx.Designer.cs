@@ -1510,11 +1510,29 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Comment Expiration.
+        /// </summary>
+        public static string CommentExpiration {
+            get {
+                return ResourceManager.GetString("CommentExpiration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comment Fields.
         /// </summary>
         public static string CommentFields {
             get {
                 return ResourceManager.GetString("CommentFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comment Follow-Up.
+        /// </summary>
+        public static string CommentFollowUp {
+            get {
+                return ResourceManager.GetString("CommentFollowUp", resourceCulture);
             }
         }
         
@@ -1942,6 +1960,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Current Due.
+        /// </summary>
+        public static string CurrentDue {
+            get {
+                return ResourceManager.GetString("CurrentDue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Current Functional Balance.
         /// </summary>
         public static string CurrentFuncBal {
@@ -2095,6 +2122,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer List Preview.
+        /// </summary>
+        public static string CustomerListPreview {
+            get {
+                return ResourceManager.GetString("CustomerListPreview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customer Name.
         /// </summary>
         public static string CustomerName {
@@ -2136,6 +2172,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         public static string CustomerPriceList {
             get {
                 return ResourceManager.GetString("CustomerPriceList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Range.
+        /// </summary>
+        public static string CustomerRange {
+            get {
+                return ResourceManager.GetString("CustomerRange", resourceCulture);
             }
         }
         
@@ -2876,7 +2921,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
                 return ResourceManager.GetString("DetailTaxWithheld", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Detail Total.
         /// </summary>
@@ -3589,6 +3634,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The entry in the From box cannot be greater than the entry in the To box.
+        /// </summary>
+        public static string FromToRangeErrorMessage {
+            get {
+                return ResourceManager.GetString("FromToRangeErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The From Year/Period cannot be later than the To Year/Period..
         /// </summary>
         public static string FromToYearPeriodError {
@@ -3670,6 +3724,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Functional A/R Balance.
+        /// </summary>
+        public static string FuncionalARBalance {
+            get {
+                return ResourceManager.GetString("FuncionalARBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Functional.
         /// </summary>
         public static string Functional {
@@ -3702,6 +3765,33 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         public static string FunctionalCurrency {
             get {
                 return ResourceManager.GetString("FunctionalCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Current Due.
+        /// </summary>
+        public static string FunctionalCurrentDue {
+            get {
+                return ResourceManager.GetString("FunctionalCurrentDue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Outstanding Retainage.
+        /// </summary>
+        public static string FunctionalOutstandingRetainage {
+            get {
+                return ResourceManager.GetString("FunctionalOutstandingRetainage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Functional Overdue Amount.
+        /// </summary>
+        public static string FunctionalOverdueAmount {
+            get {
+                return ResourceManager.GetString("FunctionalOverdueAmount", resourceCulture);
             }
         }
         
@@ -5002,6 +5092,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to National A/R Balance.
+        /// </summary>
+        public static string NationalARBalance {
+            get {
+                return ResourceManager.GetString("NationalARBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Net Balance.
         /// </summary>
         public static string NetBalance {
@@ -5758,6 +5857,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overdue Amount.
+        /// </summary>
+        public static string OverdueAmount {
+            get {
+                return ResourceManager.GetString("OverdueAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Overhead.
         /// </summary>
         public static string Overhead {
@@ -5954,7 +6062,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
                 return ResourceManager.GetString("PendingTaxWithheld", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Pending Payment Total.
         /// </summary>
@@ -8213,7 +8321,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
                 return ResourceManager.GetString("TaxWithheld", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Phone.
         /// </summary>

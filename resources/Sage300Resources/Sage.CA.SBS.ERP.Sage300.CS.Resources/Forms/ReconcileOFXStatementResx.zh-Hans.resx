@@ -122,19 +122,19 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrRateDiff" xml:space="preserve">
-    <value>交易金额不同于银行服务金额。是否确要清算这一交易？</value>
+    <value>对帐单金额不同于银行服务金额。是否确要清算此交易？</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrWriteOff" xml:space="preserve">
-    <value>交易金额不同于银行服务金额。是否确要清算这一交易？</value>
+    <value>对帐单金额不同于银行服务金额。是否确要清算此交易？</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmExitAddTrx" xml:space="preserve">
-    <value>这一交易尚未添加到银行分录。是否添加这一交易？</value>
+    <value>此交易尚未添加到银行分录。是否添加此交易？</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmProcess" xml:space="preserve">
-    <value>您有尚未被处理的更改。是否要处理{0}的调节？</value>
+    <value>您已经做了尚未被处理的更改。是否处理{0}的调节？</value>
     <comment>Message</comment>
   </data>
   <data name="CutOffDate" xml:space="preserve">
@@ -190,7 +190,7 @@
     <comment>Message</comment>
   </data>
   <data name="OFXEXIST" xml:space="preserve">
-    <value>这一交易已经存在于银行分录中。</value>
+    <value>此交易已经存在于银行分录中。</value>
     <comment>Message</comment>
   </data>
   <data name="Reconcile" xml:space="preserve">
@@ -214,7 +214,7 @@
     <comment>Message</comment>
   </data>
   <data name="ZeroAmount" xml:space="preserve">
-    <value>这一分录含有一个零金额。是否继续并创建该分录？</value>
+    <value>此分录含有一个零金额。是否继续并创建该分录？</value>
     <comment>Message</comment>
   </data>
   <data name="BankCode" xml:space="preserve">
@@ -254,7 +254,7 @@
     <value>自动清除调节的交易</value>
   </data>
   <data name="Comment" xml:space="preserve">
-    <value>备注</value>
+    <value>备注1</value>
   </data>
   <data name="NoOFXRecDate" xml:space="preserve">
     <value>调节交易之前您必须输入调节日期。</value>
@@ -263,7 +263,7 @@
     <value>无法找到银行帐户{0}。</value>
   </data>
   <data name="ClrTransaction" xml:space="preserve">
-    <value>是否确要清算这一交易？</value>
+    <value>是否确要清算此交易？</value>
   </data>
   <data name="ReceiptAmount" xml:space="preserve">
     <value>收款金额</value>
@@ -312,10 +312,83 @@
   </data>
   <data name="GetTransactionsSuccess" xml:space="preserve">
     <value>已下载{0}个交易。最近的交易日期是{1}。</value>
-    <comment>Message</comment>
   </data>
   <data name="GetTransactions" xml:space="preserve">
     <value>获取交易</value>
     <comment>Button</comment>
+  </data>
+  <data name="Agreement" xml:space="preserve">
+    <value>为了且代表我的企业，我已经阅读并同意Sage银行馈送的条款和条件以及依据Sage的隐私权政策使用数据。</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Sage银行馈送需要一个电邮地址。我们可能需要不时与您联系。</value>
+  </data>
+  <data name="EasilyImport" xml:space="preserve">
+    <value>通过Sage银行馈送从您的银行轻松安全地导入帐户交易。这可以节省手动输入交易的时间，简化银行对帐，并确保您的企业帐户为最新且准确。</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>电邮地址</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>入门</value>
+    <comment>Button</comment>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>进一步了解Sage银行馈送</value>
+  </data>
+  <data name="LinkDirectly" xml:space="preserve">
+    <value>Sage银行馈送允许您将银行帐户直接链接到Sage 300，这意味着您可以自动将您或客户的银行帐户交易数据导入Sage软件。Sage将使用此数据执行以下操作：(i) 使您能够访问软件中的更全面的信息； (ii) 进行汇总分析，以进一步了解我们的客户；以及 (iii) 提供增值服务。</value>
+  </data>
+  <data name="ProvideEmail" xml:space="preserve">
+    <value>在开始导入交易之前，提供一个您要用于Sage银行馈送帐户的电邮地址。您还需要接受Sage银行馈送的条款和条件。</value>
+  </data>
+  <data name="TermsAndConditions" xml:space="preserve">
+    <value>条款和条件</value>
+  </data>
+  <data name="SagePrivacyPolicy" xml:space="preserve">
+    <value>Sage的隐私权政策</value>
+  </data>
+  <data name="SageTermsAndConditions" xml:space="preserve">
+    <value>Sage银行馈送的条款和条件</value>
+  </data>
+  <data name="UseOfData" xml:space="preserve">
+    <value>使用数据，依据</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>连接银行馈送</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>断开银行馈送</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>确认电邮</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>电邮</value>
+  </data>
+  <data name="EmailNotValid" xml:space="preserve">
+    <value>此电邮无效。</value>
+  </data>
+  <data name="EmailsBlank" xml:space="preserve">
+    <value>此电邮不能空置。</value>
+  </data>
+  <data name="EmailsNotSame" xml:space="preserve">
+    <value>电邮不相同</value>
+  </data>
+  <data name="Secure" xml:space="preserve">
+    <value>安全连接</value>
+  </data>
+  <data name="SignupDetails" xml:space="preserve">
+    <value>此电邮地址用于您的Sage银行馈送帐户，并且用于公司中的所有银行。您可能会收到有关您的Sage银行馈送帐户的电邮。</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>欢迎</value>
+  </data>
+  <data name="WelcomeScreenTitle" xml:space="preserve">
+    <value>Sage银行馈送</value>
+  </data>
+  <data name="DeleteConfirmMessage" xml:space="preserve">
+    <value>是否确要断开{0}的银行馈送？</value>
+    <comment>Message</comment>
   </data>
 </root>

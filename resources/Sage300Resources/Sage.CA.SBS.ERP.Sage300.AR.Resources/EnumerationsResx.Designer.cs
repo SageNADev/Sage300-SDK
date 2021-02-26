@@ -959,7 +959,29 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources {
                 return ResourceManager.GetString("DocumentType_RoundingReversed", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Withheld - Posted.
+        /// </summary>
+        public static string DocumentType_TaxWithheldPosted
+        {
+            get
+            {
+                return ResourceManager.GetString("DocumentType_TaxWithheldPosted", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Withheld - Reversed.
+        /// </summary>
+        public static string DocumentType_TaxWithheldReversed
+        {
+            get
+            {
+                return ResourceManager.GetString("DocumentType_TaxWithheldReversed", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Unapplied Cash - Applied.
         /// </summary>
