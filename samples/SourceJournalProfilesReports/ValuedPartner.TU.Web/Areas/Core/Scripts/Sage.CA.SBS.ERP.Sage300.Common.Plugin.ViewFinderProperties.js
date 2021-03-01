@@ -21,7 +21,7 @@
                 viewID: "AP0005",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["DISTID", "TEXTDESC", "SWACTV", "IDGLACCT", "SWDISCABL"],
+                returnFieldNames: ["DISTID", "TEXTDESC", "SWACTV"],
                 displayFieldNames: ["DISTID", "TEXTDESC", "SWACTV", "IDGLACCT"]
             },
 
@@ -281,13 +281,6 @@
                 filter: "IDSELECT != \"SYSTEM\""
             },
 
-            RecurringPayable: {
-                viewID: "AP0064",
-                viewOrder: 1,
-                returnFieldNames: ["IDRECURR", "IDVEND"],
-                displayFieldNames: ["IDRECURR", "IDVEND", "DESC", "SCHEDKEY", "SWACTV"]
-            },
-
             StartingDocuments: {
                 viewID: "AP0110",
                 viewOrder: 0,
@@ -313,13 +306,6 @@
                 filterTemplate: "IDVEND = \"{0}\""
             },
 
-            EmailMessages: {
-                viewID: "AP0120",
-                viewOrder: 0,
-                returnFieldNames: ["MSGID", "TEXTDESC", "DTELSTMNTN", "ACTIVESW", "DATEINAC", "SUBJECT", "BODY"],
-                displayFieldNames: ["MSGID", "TEXTDESC", "SUBJECT", "BODY"]
-            },
-
             OpenDocumentDetails: {
                 viewID: "AP0200",
                 viewOrder: 0,
@@ -334,14 +320,6 @@
                 returnFieldNames: ["CNTLINE"],
                 displayFieldNames: ["CNTLINE", "IDDIST", "IDGLACCT", "RTGAMTTC", "RTGOAMTTC", "RTGDATEDUE"],
                 filterTemplate: "(IDVEND = \"{0}\") AND (IDINVC = \"{1}\") AND (RTGAMTTC != 0)"
-            },
-
-            PostingJournals: {
-                viewID: "AP0512",
-                viewOrder: 0,
-                returnFieldNames: ["POSTSEQNCE"],
-                displayFieldNames: ["POSTSEQNCE", "DATEPOSTED", "DATEBUS", "SWPRINTED", "SWPOSTGL", "DATEPOSTGL"],
-                filterTemplate: "TYPEBTCH = \"{0}\""
             }
         },
 
@@ -366,7 +344,7 @@
                 viewID: "AR0012",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["PAYMCODE", "PAYMTYPE", "TEXTDESC"],
+                returnFieldNames: ["PAYMCODE", "PAYMTYPE"],
                 displayFieldNames: ["PAYMCODE", "ACTVSW", "TEXTDESC", "PAYMTYPE"]
             },
 
@@ -377,14 +355,6 @@
                 returnFieldNames: ["IDACCTSET"],
                 displayFieldNames: ["IDACCTSET", "TEXTDESC", "ACTVSW", "CURNCODE"],
                 filterTemplate: "CURNCODE = \"{0}\""
-            },
-
-            BillingCycle: {
-                viewID: "AR0014",
-                viewOrder: 0,
-                parentValAsInitKey: true,
-                returnFieldNames: ["IDCYCL", "TEXTDESC", "ACTVSW"],
-                displayFieldNames: ["IDCYCL", "TEXTDESC", "ACTVSW"]
             },
 
             DistributionCode: {
@@ -409,14 +379,6 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["CODESLSP", "NAMEEMPL"],
                 displayFieldNames: ["CODESLSP", "NAMEEMPL", "SWACTV"]
-            },
-
-            InterestProfiles: {
-                viewID: "AR0020",
-                viewOrder: 0,
-                parentValAsInitKey: true,
-                returnFieldNames: ["CODESVCCHR", "TEXTDESC", "ACTVSW"],
-                displayFieldNames: ["CODESVCCHR", "TEXTDESC", "ACTVSW"]
             },
 
             ShipToLocation: {
@@ -455,8 +417,8 @@
                 viewID: "AR0025",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["IDGRP", "TEXTDESC"],
-                displayFieldNames: ["IDGRP", "TEXTDESC", "SWACTV"]
+                returnFieldNames: ["IDGRP"],
+                displayFieldNames: ["IDGRP", "TEXTDESC", "SWACTV"],
             },
 
             NationalAccounts: {
@@ -492,15 +454,6 @@
                 returnFieldNames: ["CNTITEM"],
                 displayFieldNames: ["CNTITEM", "IDCUST", "IDINVC", "DATEINVC", "INVCDESC", "AMTDUE"],
                 filterTemplate: "CNTBTCH = \"{0}\""
-            },
-
-            InvoicesForDocumentNumber: {
-                viewID: "AR0032",
-                viewOrder: 2,
-                parentValAsInitKey: true,
-                returnFieldNames: ["IDINVC"],
-                displayFieldNames: ["IDINVC", "IDCUST", "TEXTTRX", "CNTBTCH", "CNTITEM", "DATEINVC", "SWPRTINVC"],
-                filter: "TEXTTRX = \"1\""
             },
 
             Documents: {
@@ -674,14 +627,6 @@
                 displayFieldNames: ["CNTITEM", "DOCNBR", "IDRMIT", "IDCUST", "DATERMIT",
                     "TEXTRMIT", "TEXTPAYOR", "AMTRMIT"],
                 filterTemplate: "CNTBTCH = \"{0}\" AND  CODEPYMTYP = \"{1}\" "
-            },
-
-            CommentTypes: {
-                viewID: "AR0094",
-                viewOrder: 0,
-                parentValAsInitKey: true,
-                returnFieldNames: ["CMNTTYPE"],
-                displayFieldNames: ["CMNTTYPE", "TEXTDESC", "ACTVSW", "ACTVSW"]
             },
 
             PaymentsDocumentNumber: {
@@ -877,6 +822,7 @@
 
             OptionalFieldValue: {
                 viewID: "CS0012",
+                url: ["CS"],
                 viewOrder: 1,
                 parentValAsInitKey: false,
                 returnFieldNames: ["VALUE", "TYPE", "VALIFTEXT", "VALIFMONEY", "VALIFNUM", "VALIFLONG", "VALIFBOOL", "VALIFDATE", "VALIFTIME"],
@@ -884,18 +830,10 @@
                 filterTemplate: "OPTFIELD = \"{0}\""
             },
 
-            Schedules: {
-                viewID: "CS0030",
-                viewOrder: 0,
-                parentValAsInitKey: true,
-                returnFieldNames: ["SCHEDKEY"],
-                displayFieldNames: ["SCHEDKEY", "SCHEDDESC"]
-            },
-
             BankCurrency: {
                 viewID: "BK0002",
                 viewOrder: 0,
-                returnFieldNames: ["CURN", "CURDESC", "RTYPCHK"],
+                returnFieldNames: ["CURN", "CURDESC"],
                 displayFieldNames: ["BANK", "CURN", "RTYPCHK", "RTYPDEP", "GAINACCT", "LOSSACCT"],
                 filterTemplate: "BANK = \"{0}\""
             }
@@ -1104,16 +1042,6 @@
                 displayFieldNames: ["PRICELIST", "DESC"]
             },
 
-            DetailedPriceListCodes: {
-                viewID: "IC0390",
-                viewOrder: 0,
-                parentValAsInitKey: true,
-                returnFieldNames: ["PRICELIST", "DESC"],
-                displayFieldNames: ["PRICELIST", "DESC", "PRICETYPE", "PRICEFMT", "PRCNTLVL1", "PRCNTLVL2", "PRCNTLVL3", "PRCNTLVL4", "PRCNTLVL5",
-                    "PRICEBASE", "PRICEQTY1", "PRICEQTY2", "PRICEQTY3", "PRICEQTY4", "PRICEQTY5", "PRICEDECS", "ROUNDMETHD", "ROUNDAMT",
-                    "AMOUNTLVL1", "AMOUNTLVL2", "AMOUNTLVL3", "AMOUNTLVL4", "AMOUNTLVL5"]
-            },
-
             ItemPricing: {
                 viewID: "IC0480",
                 viewOrder: 2,
@@ -1266,7 +1194,7 @@
                 viewID: "OE0760",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["CODE", "NAME"],
+                returnFieldNames: ["CODE"],
                 displayFieldNames: ["CODE", "NAME", "ADDRESS1", "ADDRESS2", "ADDRESS3", "ADDRESS4", "CITY", "STATE", "ZIP",
                     "COUNTRY", "PHONE", "FAX", "CONTACT", "COMMENT", "EMAIL", "PHONEC", "FAXC", "EMAILC"]
             }

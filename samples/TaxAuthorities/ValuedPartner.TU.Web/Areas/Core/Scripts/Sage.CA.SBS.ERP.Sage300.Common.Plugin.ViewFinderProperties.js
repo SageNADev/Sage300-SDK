@@ -21,7 +21,7 @@
                 viewID: "AP0005",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["DISTID", "TEXTDESC", "SWACTV", "IDGLACCT", "SWDISCABL"],
+                returnFieldNames: ["DISTID", "TEXTDESC", "SWACTV"],
                 displayFieldNames: ["DISTID", "TEXTDESC", "SWACTV", "IDGLACCT"]
             },
 
@@ -281,13 +281,6 @@
                 filter: "IDSELECT != \"SYSTEM\""
             },
 
-            RecurringPayable: {
-                viewID: "AP0064",
-                viewOrder: 1,
-                returnFieldNames: ["IDRECURR", "IDVEND"],
-                displayFieldNames: ["IDRECURR", "IDVEND", "DESC", "SCHEDKEY", "SWACTV"]
-            },
-
             StartingDocuments: {
                 viewID: "AP0110",
                 viewOrder: 0,
@@ -313,13 +306,6 @@
                 filterTemplate: "IDVEND = \"{0}\""
             },
 
-            EmailMessages: {
-                viewID: "AP0120",
-                viewOrder: 0,
-                returnFieldNames: ["MSGID", "TEXTDESC", "DTELSTMNTN", "ACTIVESW", "DATEINAC", "SUBJECT", "BODY"],
-                displayFieldNames: ["MSGID", "TEXTDESC", "SUBJECT", "BODY"]
-            },
-
             OpenDocumentDetails: {
                 viewID: "AP0200",
                 viewOrder: 0,
@@ -334,14 +320,6 @@
                 returnFieldNames: ["CNTLINE"],
                 displayFieldNames: ["CNTLINE", "IDDIST", "IDGLACCT", "RTGAMTTC", "RTGOAMTTC", "RTGDATEDUE"],
                 filterTemplate: "(IDVEND = \"{0}\") AND (IDINVC = \"{1}\") AND (RTGAMTTC != 0)"
-            },
-
-            PostingJournals: {
-                viewID: "AP0512",
-                viewOrder: 0,
-                returnFieldNames: ["POSTSEQNCE"],
-                displayFieldNames: ["POSTSEQNCE", "DATEPOSTED", "DATEBUS", "SWPRINTED", "SWPOSTGL", "DATEPOSTGL"],
-                filterTemplate: "TYPEBTCH = \"{0}\""
             }
         },
 
@@ -844,6 +822,7 @@
 
             OptionalFieldValue: {
                 viewID: "CS0012",
+                url: ["CS"],
                 viewOrder: 1,
                 parentValAsInitKey: false,
                 returnFieldNames: ["VALUE", "TYPE", "VALIFTEXT", "VALIFMONEY", "VALIFNUM", "VALIFLONG", "VALIFBOOL", "VALIFDATE", "VALIFTIME"],
@@ -851,18 +830,10 @@
                 filterTemplate: "OPTFIELD = \"{0}\""
             },
 
-            Schedules: {
-                viewID: "CS0030",
-                viewOrder: 0,
-                parentValAsInitKey: true,
-                returnFieldNames: ["SCHEDKEY"],
-                displayFieldNames: ["SCHEDKEY", "SCHEDDESC"]
-            },
-
             BankCurrency: {
                 viewID: "BK0002",
                 viewOrder: 0,
-                returnFieldNames: ["CURN", "CURDESC", "RTYPCHK"],
+                returnFieldNames: ["CURN", "CURDESC"],
                 displayFieldNames: ["BANK", "CURN", "RTYPCHK", "RTYPDEP", "GAINACCT", "LOSSACCT"],
                 filterTemplate: "BANK = \"{0}\""
             }
