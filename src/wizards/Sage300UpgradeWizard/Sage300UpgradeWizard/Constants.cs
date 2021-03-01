@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -32,16 +32,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2020.2";
+            public const string FromReleaseNumber = "2021.0";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2021.0";
+            public const string ToReleaseNumber = "2021.2";
 
             /// <summary> From Accpac Number </summary>
-            public const string FromAccpacNumber = "6.7.0.0";
+            public const string FromAccpacNumber = "6.8.0.0";
 
             /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "6.8.0.0";
+            public const string ToAccpacNumber = "6.9.0.0";
 
             /// <summary> Flag that determines whether or not to synchronize the Kendo files. </summary>
             public const bool SyncKendoFiles = true;
@@ -53,19 +53,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const bool UpdateAccpacDotNetLibrary = true;
 
             /// <summary> Flag that determines whether or not to update the .NET framework in solution projects. </summary>
-            public const bool UpdateMicrosoftDotNetFramework = true;
+            public const bool UpdateMicrosoftDotNetFramework = false;
 
             /// <summary> Flag that determines whether or not to execute the 'UpdateUnifyDisabled' process. </summary>
-            public const bool UpdateUnifyDisabled = true;
+            public const bool UpdateUnifyDisabled = false;
 
             /// <summary> 
             /// Flag that determines whether or not to add a new file called 'BinInclude.txt'
             /// to the root of the Web project.
             /// </summary>
-            public const bool AddBinIncludeFile = true;
+            public const bool AddBinIncludeFile = false;
 
             /// <summary> Flag that determines whether or not to remove previous versions of the various JQuery libraries. </summary>
-            public const bool RemovePreviousJqueryLibraries = true;
+            public const bool RemovePreviousJqueryLibraries = false;
 
             public const string FromJqueryCoreVersion = "1.11.3";
             public const string FromJqueryUIVersion = "1.11.4";
