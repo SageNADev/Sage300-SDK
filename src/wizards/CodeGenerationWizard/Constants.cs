@@ -29,7 +29,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     public static class GlobalConstants
     {
         /// <summary> The version of this wizard </summary>
-        public static string Version = "2021.0";
+        public static string Version = "2021.2";
+
+        /// <summary> The Accpac Net Version </summary>
+        public static string AccpacDotNetVersion = "69A";
 
         public const string ResourceFileExtension = @".resx";
 

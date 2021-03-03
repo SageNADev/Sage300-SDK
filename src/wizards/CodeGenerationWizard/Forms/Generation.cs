@@ -700,6 +700,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Generate Step
             lblGenerateHelp.Text = Resources.GenerateTip;
 
+            txtVersion.Text = GlobalConstants.AccpacDotNetVersion;
         }
         /// <summary> Determine if the Solution is valid </summary>
         /// <param name="solution">Solution </param>

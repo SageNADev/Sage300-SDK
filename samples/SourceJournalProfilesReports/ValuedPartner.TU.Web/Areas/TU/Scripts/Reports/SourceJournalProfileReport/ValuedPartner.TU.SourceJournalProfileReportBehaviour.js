@@ -30,7 +30,7 @@ sourceJournalProfileReportUI = {
      * @function
      * @name init
      * @description Primary Initialization Routine
-     * @namespace sourceJournalProfileReportModel
+     * @namespace sourceJournalProfileReportUI
      * @public
      */
     init: function () {
@@ -45,7 +45,7 @@ sourceJournalProfileReportUI = {
      * @function
      * @name initFinders
      * @description Initialize the finders
-     * @namespace sourceJournalProfileReportModel
+     * @namespace sourceJournalProfileReportUI
      * @public
      */
     initFinders: function () {
@@ -63,7 +63,7 @@ sourceJournalProfileReportUI = {
      * @function
      * @name initKendoBindings
      * @description Initialize the Kendo bindings
-     * @namespace sourceJournalProfileReportModel
+     * @namespace sourceJournalProfileReportUI
      * @public
      */
     initKendoBindings: function () {
@@ -74,7 +74,7 @@ sourceJournalProfileReportUI = {
      * @function
      * @name initButton
      * @description Initialize the buttons
-     * @namespace sourceJournalProfileReportModel
+     * @namespace sourceJournalProfileReportUI
      * @public
      */
     initButton: function () {

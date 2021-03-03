@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CustomReportViewer.aspx.cs" Inherits="Sage.CA.SBS.ERP.Sage300.Web.WebForms.CustomReportViewer" %>
-<%@ Register Assembly="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
+<%@ Register Assembly="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
 
 <!DOCTYPE html>
 
@@ -7,9 +7,9 @@
 <head runat="server">
     <title></title>
     <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
-    <script src="Scripts/jquery-2.1.4.js"></script>
-    <script src="Scripts/JQueryUI/iframeResizer.js"></script>
-    <script src="Scripts/Report/ReportBehaviour.js"></script>
+    <script src="../Scripts/jquery-3.4.1.js"></script>
+    <script src="../Scripts/JQueryUI/iframeResizer.js"></script>
+    <script src="../Scripts/Report/CustomReportBehaviour.js"></script>
 
     <style>
         #CrystalReportViewerSage300__UI, #CrystalReportViewerSage300 {
