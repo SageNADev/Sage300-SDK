@@ -70,6 +70,9 @@ segmentCodesUI = {
                 }
             }
         });
+
+        var dropdownlist = $("#SegmentNameList").data("kendoDropDownList");
+        dropdownlist.trigger("change");
     },
 
     /**
