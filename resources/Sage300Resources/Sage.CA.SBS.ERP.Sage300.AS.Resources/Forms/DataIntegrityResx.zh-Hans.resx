@@ -241,11 +241,15 @@
     <comment>Application Options Pop up window</comment>
   </data>
   <data name="CheckforOrphanRecords" xml:space="preserve">
-    <value>检查孤立数据</value>
+    <value>检查孤项记录</value>
     <comment>Application Options Pop up window</comment>
   </data>
   <data name="DeleteOrphanRecords" xml:space="preserve">
     <value>删除孤项记录</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="OptionURLNotValid" xml:space="preserve">
+    <value>无法完成您的请求，因为没有可用的选项，或者因为{0}.INI文件中的某个设置未正确配置。联络您的系统管理员获取帮助。</value>
     <comment>Application Options Pop up window</comment>
   </data>
 </root>

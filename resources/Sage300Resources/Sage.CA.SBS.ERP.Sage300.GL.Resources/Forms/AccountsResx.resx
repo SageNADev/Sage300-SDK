@@ -544,4 +544,7 @@
   <data name="NotAllowRetrieve" xml:space="preserve">
     <value>You are not allowed to retrieve account {0}.</value>
   </data>
+  <data name="AccountHistoryInquiry" xml:space="preserve">
+    <value>Account History Inquiry</value>
+  </data>
 </root>

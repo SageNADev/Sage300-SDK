@@ -60,7 +60,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <param name="settings">Settings for processing</param>
 		public void Process(Settings settings)
 		{
-            const int WORKINGSTEPS = 6;
+            const int WORKINGSTEPS = 2;
 
             LogSpacerLine('-');
             Log(Resources.BeginUpgradeProcess);
@@ -101,10 +101,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     case 1: if (Constants.PerRelease.SyncKendoFiles) { SyncKendoFiles(title); } break;
                     case 2: if (Constants.PerRelease.SyncWebFiles) { SyncWebFiles(title); } break;
                     case 3: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
-                    case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
-                    case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
-                    case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
-                    case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
+                    //case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
+                    //case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
+                    //case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
+                    //case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
 
 #if ENABLE_TK_244885
                     case X: ConsolidateEnumerations(title); break;

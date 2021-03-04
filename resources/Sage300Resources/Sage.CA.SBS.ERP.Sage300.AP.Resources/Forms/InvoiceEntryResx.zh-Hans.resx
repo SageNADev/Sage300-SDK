@@ -391,7 +391,7 @@
     <comment>on Document tab and Prepayment screen</comment>
   </data>
   <data name="EstimatedTax" xml:space="preserve">
-    <value>预估税费：</value>
+    <value>预估保留款税费：</value>
     <comment>on Totals tab</comment>
   </data>
   <data name="ExchangeRate" xml:space="preserve">
@@ -524,7 +524,7 @@
     <comment>on Prepayment screen</comment>
   </data>
   <data name="PrintCheckButton" xml:space="preserve">
-    <value>打印支票…</value>
+    <value>打印支票...</value>
     <comment>Button</comment>
   </data>
   <data name="RateDate" xml:space="preserve">
@@ -532,7 +532,7 @@
     <comment>on Rates tab and Batch Information screen</comment>
   </data>
   <data name="RateOverride" xml:space="preserve">
-    <value>汇率替换</value>
+    <value>汇率撤换</value>
     <comment>Screen title</comment>
   </data>
   <data name="Rates" xml:space="preserve">
@@ -540,7 +540,7 @@
     <comment>Tab</comment>
   </data>
   <data name="RatesButton" xml:space="preserve">
-    <value>汇率…</value>
+    <value>汇率...</value>
     <comment>Button</comment>
   </data>
   <data name="RateType" xml:space="preserve">
@@ -564,15 +564,15 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="RemitToDescription" xml:space="preserve">
-    <value>汇款至描述</value>
+    <value>&lt;汇款至&gt;描述</value>
     <comment>on Document tab and modal screens</comment>
   </data>
   <data name="RemitToInformation" xml:space="preserve">
-    <value>汇款至信息</value>
+    <value>&lt;汇款至&gt;信息</value>
     <comment>on Remit-To Information screen</comment>
   </data>
   <data name="RemitToLocation" xml:space="preserve">
-    <value>汇款至地点</value>
+    <value>&lt;汇款至&gt;地点</value>
     <comment>on Document tab and modal screens</comment>
   </data>
   <data name="Retainage" xml:space="preserve">
@@ -780,7 +780,7 @@
     <value>回转收费金额</value>
   </data>
   <data name="LessEstTaxWithhedld" xml:space="preserve">
-    <value>减预估预扣税 </value>
+    <value>减预估预扣税</value>
   </data>
   <data name="LessReverseCharges" xml:space="preserve">
     <value>减回转收费</value>

@@ -1,101 +1,243 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountType_Timecard" xml:space="preserve">
+    <value>工時卡</value>
+  </data>
+  <data name="AccountType_User" xml:space="preserve">
+    <value>用戶</value>
+  </data>
+  <data name="AuthenticationMethod_Both" xml:space="preserve">
+    <value>兩者</value>
+  </data>
+  <data name="AuthenticationMethod_Sage300ERP" xml:space="preserve">
+    <value>Sage 300</value>
+  </data>
+  <data name="AuthenticationMethod_Windows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="Language_ChineseSimplifiedChina" xml:space="preserve">
+    <value>中文（簡體）（中國）</value>
+  </data>
+  <data name="Language_ChineseSimplifiedSingapore" xml:space="preserve">
+    <value>中文（簡體）（新加坡）</value>
+  </data>
+  <data name="Language_ChineseTraditionalHongKong" xml:space="preserve">
+    <value>中文（繁體）（香港）</value>
+  </data>
+  <data name="Language_ChineseTraditionalTaiwan" xml:space="preserve">
+    <value>中文（繁體）（臺灣）</value>
+  </data>
+  <data name="Language_Eng" xml:space="preserve">
+    <value>英文</value>
+  </data>
+  <data name="Language_English" xml:space="preserve">
+    <value>英文</value>
+  </data>
+  <data name="Language_EnglishAustralia" xml:space="preserve">
+    <value>英文（澳大利亞）</value>
+  </data>
+  <data name="Language_EnglishCanada" xml:space="preserve">
+    <value>英文（加拿大）</value>
+  </data>
+  <data name="Language_EnglishSouthAfrica" xml:space="preserve">
+    <value>英文（南非）</value>
+  </data>
+  <data name="Language_EnglishUnitedStates" xml:space="preserve">
+    <value>英文（美國）</value>
+  </data>
+  <data name="Language_FrenchCanada" xml:space="preserve">
+    <value>法文（加拿大）</value>
+  </data>
+  <data name="Language_Spanish" xml:space="preserve">
+    <value>西班牙文</value>
+  </data>
+  <data name="Language_SpanishSpain" xml:space="preserve">
+    <value>西班牙文（西班牙）</value>
+  </data>
+  <data name="Role_AccountantOrBookkeeperOrClerk" xml:space="preserve">
+    <value>會計或簿記員或文員</value>
+  </data>
+  <data name="Role_AccountingManagerOrController" xml:space="preserve">
+    <value>會計主管或財務總監</value>
+  </data>
+  <data name="Role_AdminAssistantOrOfficeManager" xml:space="preserve">
+    <value>管理員助理或辦公室經理</value>
+  </data>
+  <data name="Role_CFOOrVPofFinance" xml:space="preserve">
+    <value>首席財務官或財務副總裁</value>
+  </data>
+  <data name="Role_Consultant" xml:space="preserve">
+    <value>諮詢師</value>
+  </data>
+  <data name="Role_CustomerServiceAssociate" xml:space="preserve">
+    <value>客戶服務助理</value>
+  </data>
+  <data name="Role_DirectorOrSeniorManager" xml:space="preserve">
+    <value>主任或資深經理</value>
+  </data>
+  <data name="Role_HROrPayrollAdministrator" xml:space="preserve">
+    <value>人力資源或薪資管理員</value>
+  </data>
+  <data name="Role_ITAnalyst" xml:space="preserve">
+    <value>資訊技術分析師</value>
+  </data>
+  <data name="Role_MarketingAnalyst" xml:space="preserve">
+    <value>行銷分析師</value>
+  </data>
+  <data name="Role_OperationsOrWarehouseAssociate" xml:space="preserve">
+    <value>營運或倉庫助理</value>
+  </data>
+  <data name="Role_Other" xml:space="preserve">
+    <value>其它</value>
+  </data>
+  <data name="Role_OwnerOrPartnerOrPrincipalOrGM" xml:space="preserve">
+    <value>業主或夥伴或負責人或總經理</value>
+  </data>
+  <data name="Role_PresidentOrCEO" xml:space="preserve">
+    <value>總裁或首席執行官</value>
+  </data>
+  <data name="Role_Salesperson" xml:space="preserve">
+    <value>業務員</value>
+  </data>
+  <data name="Role_Selectyourjobrole" xml:space="preserve">
+    <value>選擇您的工作角色</value>
+  </data>
+  <data name="Weekday_Friday" xml:space="preserve">
+    <value>星期五</value>
+  </data>
+  <data name="Weekday_Monday" xml:space="preserve">
+    <value>星期一</value>
+  </data>
+  <data name="Weekday_Saturday" xml:space="preserve">
+    <value>星期六</value>
+  </data>
+  <data name="Weekday_Sunday" xml:space="preserve">
+    <value>星期日</value>
+  </data>
+  <data name="Weekday_Thursday" xml:space="preserve">
+    <value>星期四</value>
+  </data>
+  <data name="Weekday_Tuesday" xml:space="preserve">
+    <value>星期二</value>
+  </data>
+  <data name="Weekday_Wednesday" xml:space="preserve">
+    <value>星期三</value>
+  </data>
 </root>

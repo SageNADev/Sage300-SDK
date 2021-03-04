@@ -197,7 +197,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtVersion.CustomButton.Visible = false;
             this.txtVersion.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtVersion.Lines = new string[] {
-        "68A"};
+        "[VERSION SET IN CODE]"};
             this.txtVersion.Location = new System.Drawing.Point(287, 27);
             this.txtVersion.MaxLength = 32767;
             this.txtVersion.Name = "txtVersion";
@@ -210,7 +210,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtVersion.Size = new System.Drawing.Size(83, 25);
             this.txtVersion.Style = MetroFramework.MetroColorStyle.Green;
             this.txtVersion.TabIndex = 8;
-            this.txtVersion.Text = "68A";
+            this.txtVersion.Text = "[VERSION SET IN CODE]";
             this.txtVersion.UseSelectable = true;
             this.txtVersion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtVersion.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -441,14 +441,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.splitBase.Panel2.BackColor = System.Drawing.Color.White;
             this.splitBase.Panel2.Controls.Add(this.splitSteps);
             this.splitBase.Size = new System.Drawing.Size(997, 605);
-            this.splitBase.SplitterDistance = 88;
+            this.splitBase.SplitterDistance = 57;
             this.splitBase.TabIndex = 9;
             // 
             // lblUpperBorder
             // 
             this.lblUpperBorder.BackColor = System.Drawing.Color.Gainsboro;
             this.lblUpperBorder.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblUpperBorder.Location = new System.Drawing.Point(0, 87);
+            this.lblUpperBorder.Location = new System.Drawing.Point(0, 56);
             this.lblUpperBorder.Name = "lblUpperBorder";
             this.lblUpperBorder.Size = new System.Drawing.Size(997, 1);
             this.lblUpperBorder.TabIndex = 53;
@@ -511,7 +511,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // splitSteps.Panel2
             // 
             this.splitSteps.Panel2.Controls.Add(this.pnlButtons);
-            this.splitSteps.Size = new System.Drawing.Size(997, 513);
+            this.splitSteps.Size = new System.Drawing.Size(997, 544);
             this.splitSteps.SplitterDistance = 430;
             this.splitSteps.TabIndex = 52;
             // 
@@ -1287,7 +1287,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButtons.Location = new System.Drawing.Point(0, 0);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(997, 79);
+            this.pnlButtons.Size = new System.Drawing.Size(997, 110);
             this.pnlButtons.TabIndex = 2;
             // 
             // btnCancel

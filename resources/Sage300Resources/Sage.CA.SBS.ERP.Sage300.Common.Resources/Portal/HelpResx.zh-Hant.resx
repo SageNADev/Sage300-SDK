@@ -1207,7 +1207,7 @@
     <value>維護會計年曆</value>
   </data>
   <data name="CS_FiscalCalendar_Article2" xml:space="preserve">
-    <value>增加一個新會計年度</value>
+    <value>增加新會計年度</value>
   </data>
   <data name="CS_FiscalCalendar_Screen" xml:space="preserve">
     <value>會計年曆螢幕</value>
@@ -3737,11 +3737,11 @@
     <comment>CSH ID 369034001</comment>
   </data>
   <data name="AR_ReceiptInquiry_Article1" xml:space="preserve">
-    <value>關於從交易螢幕查詢客戶和憑證</value>
+    <value>檢視收款</value>
     <comment>CSH ID 18062002</comment>
   </data>
   <data name="AR_ReceiptInquiry_Article2" xml:space="preserve">
-    <value>檢視收款</value>
+    <value>關於處理收款</value>
     <comment>CSH ID 18062003</comment>
   </data>
   <data name="AR_ReceiptInquiry_Screen" xml:space="preserve">
@@ -3749,11 +3749,11 @@
     <comment>CSH ID 18062001</comment>
   </data>
   <data name="AR_RefundInquiry_Article1" xml:space="preserve">
-    <value>關於處理退款</value>
+    <value>檢視退款</value>
     <comment>CSH ID 18065002</comment>
   </data>
   <data name="AR_RefundInquiry_Article2" xml:space="preserve">
-    <value>檢視退款</value>
+    <value>關於處理退款</value>
     <comment>CSH ID 18065003</comment>
   </data>
   <data name="AR_RefundInquiry_Screen" xml:space="preserve">
@@ -4155,7 +4155,7 @@
     <comment>CSH ID 168031001</comment>
   </data>
   <data name="GL_CreateAccounts_Article1" xml:space="preserve">
-    <value>增加一個新科目</value>
+    <value>增加新科目</value>
     <comment>CSH ID 168028002</comment>
   </data>
   <data name="GL_CreateAccounts_Article2" xml:space="preserve">
@@ -4348,5 +4348,107 @@
   </data>
   <data name="Portal_GlobalSearch_Article2" xml:space="preserve">
     <value>常見問題</value>
+  </data>
+  <data name="PR_About_Employee_Timecards" xml:space="preserve">
+    <value>關於雇員工時卡</value>
+    <comment>CSH ID 536001003</comment>
+  </data>
+  <data name="PR_Employee_Timecards_Screen" xml:space="preserve">
+    <value>雇員工時卡螢幕</value>
+    <comment>CSH ID 536001001</comment>
+  </data>
+  <data name="PR_Entering_Employee_Timecards" xml:space="preserve">
+    <value>輸入雇員工時卡</value>
+    <comment>CSH ID 536001002</comment>
+  </data>
+  <data name="MT_About_Contacts" xml:space="preserve">
+    <value>關於連絡人</value>
+    <comment>CSH ID 332001003</comment>
+  </data>
+  <data name="MT_Adding_Optional_Fields_To_Contacts" xml:space="preserve">
+    <value>向連絡人增加自選欄位</value>
+    <comment>CSH ID 332002002</comment>
+  </data>
+  <data name="MT_Browse_Administration_Articles" xml:space="preserve">
+    <value>瀏覽管理文章</value>
+    <comment>CSH ID 332000001</comment>
+  </data>
+  <data name="MT_Contacts_Screen" xml:space="preserve">
+    <value>連絡人螢幕</value>
+    <comment>CSH ID 332001001</comment>
+  </data>
+  <data name="MT_Creating_Contacts" xml:space="preserve">
+    <value>建立連絡人</value>
+    <comment>CSH ID 332001002</comment>
+  </data>
+  <data name="MT_Optional_Fields_Screen" xml:space="preserve">
+    <value>M/T自選欄位螢幕</value>
+    <comment>CSH ID 332002001</comment>
+  </data>
+  <data name="CS_PaymentsAcceptance_Screen" xml:space="preserve">
+    <value>通過線上提供商接受付款</value>
+    <comment>CSH ID 71011001</comment>
+  </data>
+  <data name="CS_PaymentsAcceptance_Article1" xml:space="preserve">
+    <value>關於付款承兌</value>
+    <comment>CSH ID 71011002</comment>
+  </data>
+  <data name="CS_PaymentsAcceptance_Article2" xml:space="preserve">
+    <value>行政管理概述</value>
+    <comment>CSH ID 71011003</comment>
+  </data>
+  <data name="AR_CustomerList_Article1" xml:space="preserve">
+    <value>關於使用客戶清單螢幕建立特別報表</value>
+  </data>
+  <data name="AR_CustomerList_Article2" xml:space="preserve">
+    <value>列印一個客戶的清單</value>
+  </data>
+  <data name="AR_CustomerList_Screen" xml:space="preserve">
+    <value>應收帳款客戶清單螢幕</value>
+  </data>
+  <data name="AS_User_Article1" xml:space="preserve">
+    <value>增加，編輯，或刪除用戶</value>
+  </data>
+  <data name="AS_User_Article2" xml:space="preserve">
+    <value>分派用戶到安全群組</value>
+  </data>
+  <data name="AS_User_Screen" xml:space="preserve">
+    <value>用戶螢幕</value>
+  </data>
+  <data name="GL_SourceCurrencyInquiry_Article1" xml:space="preserve">
+    <value>指定一個幣別</value>
+    <comment>CSH ID 168024002</comment>
+  </data>
+  <data name="GL_SourceCurrencyInquiry_Article2" xml:space="preserve">
+    <value>檢視一個多幣別科目的來源幣別餘額</value>
+    <comment>CSH ID 168024003</comment>
+  </data>
+  <data name="GL_SourceCurrencyInquiry_Screen" xml:space="preserve">
+    <value>總帳來源幣別查詢螢幕</value>
+    <comment>CSH ID 168024001</comment>
+  </data>
+  <data name="GL_Account_History_Inquiry_Article1" xml:space="preserve">
+    <value>關於輸入科目餘額，歷史資料，和數量</value>
+    <comment>CSH ID 168022002</comment>
+  </data>
+  <data name="GL_Account_History_Inquiry_Article2" xml:space="preserve">
+    <value>增加新科目</value>
+    <comment>CSH ID 168022003</comment>
+  </data>
+  <data name="GL_Account_History_Inquiry_Screen" xml:space="preserve">
+    <value>總帳科目歷史查詢螢幕</value>
+    <comment>CSH ID 168022001</comment>
+  </data>
+  <data name="GL_About_Budgets" xml:space="preserve">
+    <value>關於預算</value>
+    <comment>CSH ID 168023002</comment>
+  </data>
+  <data name="GL_Budget_Maintenance_Screen" xml:space="preserve">
+    <value>總帳預算維護螢幕</value>
+    <comment>CSH ID 168023001</comment>
+  </data>
+  <data name="GL_Editing_Budget_Data" xml:space="preserve">
+    <value>編輯預算資料</value>
+    <comment>CSH ID 168023003</comment>
   </data>
 </root>

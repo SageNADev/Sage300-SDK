@@ -61,6 +61,24 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1099.
+        /// </summary>
+        public static string _1099 {
+            get {
+                return ResourceManager.GetString("_1099", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount Type.
+        /// </summary>
+        public static string AmountType {
+            get {
+                return ResourceManager.GetString("AmountType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1099_CPRS Codes.
         /// </summary>
         public static string AP0007 {
@@ -70,11 +88,29 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CPRS.
+        /// </summary>
+        public static string CPRS {
+            get {
+                return ResourceManager.GetString("CPRS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1099/CPRS Code Description.
         /// </summary>
         public static string CPRSCodeDesc {
             get {
                 return ResourceManager.GetString("CPRSCodeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Empty {
+            get {
+                return ResourceManager.GetString("Empty", resourceCulture);
             }
         }
         
@@ -93,6 +129,33 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
         public static string MinAmtToRpt {
             get {
                 return ResourceManager.GetString("MinAmtToRpt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1099-Misc.
+        /// </summary>
+        public static string Misc {
+            get {
+                return ResourceManager.GetString("Misc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1099-Nec.
+        /// </summary>
+        public static string Nec {
+            get {
+                return ResourceManager.GetString("Nec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T5018.
+        /// </summary>
+        public static string T5018 {
+            get {
+                return ResourceManager.GetString("T5018", resourceCulture);
             }
         }
     }

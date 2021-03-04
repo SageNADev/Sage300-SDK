@@ -61,6 +61,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For and on behalf of the Business that I represent, I have read and agree to the Sage Bank Feeds Terms and Conditions and use of data in accordance with Sage’s privacy policy..
+        /// </summary>
+        public static string Agreement {
+            get {
+                return ResourceManager.GetString("Agreement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transaction Amount.
         /// </summary>
         public static string Amount {
@@ -151,6 +160,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm email.
+        /// </summary>
+        public static string Confirm {
+            get {
+                return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The statement amount is different than the Bank Services amount. Are you sure you want to clear this transaction?.
         /// </summary>
         public static string ConfirmClrRateDiff {
@@ -187,11 +205,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connect Bank Feed.
+        /// </summary>
+        public static string Connect {
+            get {
+                return ResourceManager.GetString("Connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage Bank Feeds requires an email address. We may need to contact you from time to time..
+        /// </summary>
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reconciliation Cutoff Date.
         /// </summary>
         public static string CutOffDate {
             get {
                 return ResourceManager.GetString("CutOffDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to disconnect the bank feed for {0} ?.
+        /// </summary>
+        public static string DeleteConfirmMessage {
+            get {
+                return ResourceManager.GetString("DeleteConfirmMessage", resourceCulture);
             }
         }
         
@@ -210,6 +255,69 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string Detail {
             get {
                 return ResourceManager.GetString("Detail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disconnect Bank Feed.
+        /// </summary>
+        public static string Disconnect {
+            get {
+                return ResourceManager.GetString("Disconnect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Easily and securely import account transactions from your bank through Sage Bank Feeds. This saves time manually entering transactions, simplifies your bank reconciliation, and ensures your business accounts are up to date and accurate..
+        /// </summary>
+        public static string EasilyImport {
+            get {
+                return ResourceManager.GetString("EasilyImport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email address.
+        /// </summary>
+        public static string EmailAddress {
+            get {
+                return ResourceManager.GetString("EmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This email is not valid.
+        /// </summary>
+        public static string EmailNotValid {
+            get {
+                return ResourceManager.GetString("EmailNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This email cannot be blank.
+        /// </summary>
+        public static string EmailsBlank {
+            get {
+                return ResourceManager.GetString("EmailsBlank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emails are not the same.
+        /// </summary>
+        public static string EmailsNotSame {
+            get {
+                return ResourceManager.GetString("EmailsNotSame", resourceCulture);
             }
         }
         
@@ -246,6 +354,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string ExchangeRate {
             get {
                 return ResourceManager.GetString("ExchangeRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get Started.
+        /// </summary>
+        public static string GetStarted {
+            get {
+                return ResourceManager.GetString("GetStarted", resourceCulture);
             }
         }
         
@@ -291,6 +408,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string LblTransactionCurrency {
             get {
                 return ResourceManager.GetString("LblTransactionCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn more about Sage Bank Feeds.
+        /// </summary>
+        public static string LearnMore {
+            get {
+                return ResourceManager.GetString("LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage Bank Feeds allows you to link your bank account directly into Sage 300, meaning you can automatically import your, or your client’s Bank Account transaction data into your Sage software. This data will be used by Sage to: (i) give you access to more comprehensive information in the software; (ii) perform aggregated analytics to understand more about our customers’ and (iii) provide value add services..
+        /// </summary>
+        public static string LinkDirectly {
+            get {
+                return ResourceManager.GetString("LinkDirectly", resourceCulture);
             }
         }
         
@@ -421,6 +556,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Before you can begin importing transactions, provide an email address that you want to use for your Sage Bank Fees account. You also need to accept the terms and conditions for Sage Bank Feeds..
+        /// </summary>
+        public static string ProvideEmail {
+            get {
+                return ResourceManager.GetString("ProvideEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reconciliation Date cannot be blank..
         /// </summary>
         public static string RecDateEmpty {
@@ -462,6 +606,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string ReconciliationDate {
             get {
                 return ResourceManager.GetString("ReconciliationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage’s privacy policy.
+        /// </summary>
+        public static string SagePrivacyPolicy {
+            get {
+                return ResourceManager.GetString("SagePrivacyPolicy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage Bank Feeds Terms and Conditions.
+        /// </summary>
+        public static string SageTermsAndConditions {
+            get {
+                return ResourceManager.GetString("SageTermsAndConditions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Secure Connection.
+        /// </summary>
+        public static string Secure {
+            get {
+                return ResourceManager.GetString("Secure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This email address is for your Sage Bank Feeds account and is used for all banks in your company. You may receive emails about your Sage Bank Feeds account..
+        /// </summary>
+        public static string SignupDetails {
+            get {
+                return ResourceManager.GetString("SignupDetails", resourceCulture);
             }
         }
         
@@ -511,6 +691,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Term and Conditions.
+        /// </summary>
+        public static string TermsAndConditions {
+            get {
+                return ResourceManager.GetString("TermsAndConditions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transaction.
         /// </summary>
         public static string Transaction {
@@ -543,6 +732,33 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string TransactionType {
             get {
                 return ResourceManager.GetString("TransactionType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to and use of data in accordance with.
+        /// </summary>
+        public static string UseOfData {
+            get {
+                return ResourceManager.GetString("UseOfData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome.
+        /// </summary>
+        public static string Welcome {
+            get {
+                return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage Bank Feeds.
+        /// </summary>
+        public static string WelcomeScreenTitle {
+            get {
+                return ResourceManager.GetString("WelcomeScreenTitle", resourceCulture);
             }
         }
         

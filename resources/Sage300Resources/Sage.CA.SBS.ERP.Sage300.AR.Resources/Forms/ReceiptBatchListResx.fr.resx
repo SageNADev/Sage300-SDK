@@ -121,6 +121,9 @@
     <value>Liste des lots d'encaissements de CC</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="GetOnlinePayments" xml:space="preserve">
+    <value>Recevoir les paiements en ligne</value>
+  </data>
   <data name="NumOfEntries1" xml:space="preserve">
     <value>Nombre de saisies</value>
     <comment>Column</comment>

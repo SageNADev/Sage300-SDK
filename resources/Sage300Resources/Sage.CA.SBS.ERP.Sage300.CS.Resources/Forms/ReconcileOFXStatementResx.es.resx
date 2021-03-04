@@ -312,10 +312,83 @@
   </data>
   <data name="GetTransactionsSuccess" xml:space="preserve">
     <value>Se han descargado {0} transacciones. La fecha de transacción más reciente es el {1}.</value>
-    <comment>Message</comment>
   </data>
   <data name="GetTransactions" xml:space="preserve">
     <value>Recuperar Transacciones</value>
     <comment>Button</comment>
+  </data>
+  <data name="Agreement" xml:space="preserve">
+    <value>En nombre de la empresa a la que represento, he leído y acepto los términos y condiciones de Sage Bank Feeds y el uso de los datos de acuerdo con la política de privacidad de Sage.</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Sage Bank Feeds requiere una dirección de correo electrónico. Podríamos tener que contactarlo de vez en cuando.</value>
+  </data>
+  <data name="EasilyImport" xml:space="preserve">
+    <value>Importa de forma sencilla y segura las transacciones de su cuenta bancaria a través de Sage Bank Feeds. Así, ahorrará tiempo al no tener que introducir las transacciones de forma manual, simplificará la conciliación bancaria y garantizará que sus cuentas estén actualizadas y sean precisas.</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Dirección de correo electrónico</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>Comienza ahora</value>
+    <comment>Button</comment>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Más acerca de Sage Bank Feeds</value>
+  </data>
+  <data name="LinkDirectly" xml:space="preserve">
+    <value>Sage Bank Feeds le permite vincular su cuenta bancaria directamente con Sage 300 y poder así importar automáticamente los datos de sus transacciones bancarias, o las de su cliente, en su software Sage. Sage utilizará dichos datos para: (i) darle acceso a informaciones más completas dentro del software; (ii) realizar análisis agregados y entender más acerca de nuestros clientes y (iii) ofrecer servicios de valor añadido.</value>
+  </data>
+  <data name="ProvideEmail" xml:space="preserve">
+    <value>Antes de poder empezar a importar transacciones, necesita proporcionar la dirección de correo electrónico que desea usar para su cuenta de Sage Bank Feeds. Necesita también aceptar los términos y condiciones de Sage Bank Feeds.</value>
+  </data>
+  <data name="TermsAndConditions" xml:space="preserve">
+    <value>Términos y condiciones</value>
+  </data>
+  <data name="SagePrivacyPolicy" xml:space="preserve">
+    <value>Política de privacidad de Sage</value>
+  </data>
+  <data name="SageTermsAndConditions" xml:space="preserve">
+    <value>Términos y condiciones de Sage Bank Feeds</value>
+  </data>
+  <data name="UseOfData" xml:space="preserve">
+    <value>y el uso de los datos de acuerdo con</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Conectar Importación Bancaria</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Desconectar Importación Bancaria</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirmar la dirección de correo electrónico</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="EmailNotValid" xml:space="preserve">
+    <value>Esta dirección de correo electrónico no es válida</value>
+  </data>
+  <data name="EmailsBlank" xml:space="preserve">
+    <value>Esta dirección de correo electrónico no puede estar en blanco</value>
+  </data>
+  <data name="EmailsNotSame" xml:space="preserve">
+    <value>Las direcciones de correo electrónico no son iguales</value>
+  </data>
+  <data name="Secure" xml:space="preserve">
+    <value>Conexión segura</value>
+  </data>
+  <data name="SignupDetails" xml:space="preserve">
+    <value>Esta dirección de correo electrónico es para su cuenta de Sage Bank Feeds y se usará para todos los bancos de su empresa. Podría recibir correos electrónicos acerca de su cuenta de Sage Bank Feeds.</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bienvenido</value>
+  </data>
+  <data name="WelcomeScreenTitle" xml:space="preserve">
+    <value>Sage Bank Feeds</value>
+  </data>
+  <data name="DeleteConfirmMessage" xml:space="preserve">
+    <value>¿Está seguro de que desea desconectar la importación bancaria para {0}?</value>
+    <comment>Message</comment>
   </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccountType_Timecard" xml:space="preserve">
-    <value>Time card</value>
+    <value>工时卡</value>
   </data>
   <data name="AccountType_User" xml:space="preserve">
     <value>用户</value>
@@ -130,10 +130,46 @@
     <value>Sage 300</value>
   </data>
   <data name="AuthenticationMethod_Windows" xml:space="preserve">
-    <value>Windows</value>
+    <value>窗口</value>
+  </data>
+  <data name="Language_ChineseSimplifiedChina" xml:space="preserve">
+    <value>中文（简体）（中国）</value>
+  </data>
+  <data name="Language_ChineseSimplifiedSingapore" xml:space="preserve">
+    <value>中文（简体）（新加坡）</value>
+  </data>
+  <data name="Language_ChineseTraditionalHongKong" xml:space="preserve">
+    <value>中文（繁体）（香港）</value>
+  </data>
+  <data name="Language_ChineseTraditionalTaiwan" xml:space="preserve">
+    <value>中文（繁体）（台湾）</value>
   </data>
   <data name="Language_Eng" xml:space="preserve">
     <value>英文</value>
+  </data>
+  <data name="Language_English" xml:space="preserve">
+    <value>英文</value>
+  </data>
+  <data name="Language_EnglishAustralia" xml:space="preserve">
+    <value>英文（澳大利亚）</value>
+  </data>
+  <data name="Language_EnglishCanada" xml:space="preserve">
+    <value>英文（加拿大）</value>
+  </data>
+  <data name="Language_EnglishSouthAfrica" xml:space="preserve">
+    <value>英文（南非）</value>
+  </data>
+  <data name="Language_EnglishUnitedStates" xml:space="preserve">
+    <value>英文（美国）</value>
+  </data>
+  <data name="Language_FrenchCanada" xml:space="preserve">
+    <value>法文（加拿大）</value>
+  </data>
+  <data name="Language_Spanish" xml:space="preserve">
+    <value>西班牙文</value>
+  </data>
+  <data name="Language_SpanishSpain" xml:space="preserve">
+    <value>西班牙文（西班牙）</value>
   </data>
   <data name="Role_AccountantOrBookkeeperOrClerk" xml:space="preserve">
     <value>会计或簿记员或文员</value>
@@ -181,6 +217,27 @@
     <value>业务员</value>
   </data>
   <data name="Role_Selectyourjobrole" xml:space="preserve">
-    <value>选择您的工作职责</value>
+    <value>选择您的工作角色</value>
+  </data>
+  <data name="Weekday_Friday" xml:space="preserve">
+    <value>星期五</value>
+  </data>
+  <data name="Weekday_Monday" xml:space="preserve">
+    <value>星期一</value>
+  </data>
+  <data name="Weekday_Saturday" xml:space="preserve">
+    <value>星期六</value>
+  </data>
+  <data name="Weekday_Sunday" xml:space="preserve">
+    <value>星期日</value>
+  </data>
+  <data name="Weekday_Thursday" xml:space="preserve">
+    <value>星期四</value>
+  </data>
+  <data name="Weekday_Tuesday" xml:space="preserve">
+    <value>星期二</value>
+  </data>
+  <data name="Weekday_Wednesday" xml:space="preserve">
+    <value>星期三</value>
   </data>
 </root>

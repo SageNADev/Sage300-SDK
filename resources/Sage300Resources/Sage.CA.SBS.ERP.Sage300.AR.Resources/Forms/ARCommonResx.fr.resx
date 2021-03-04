@@ -1186,7 +1186,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="DueDate" xml:space="preserve">
-    <value>Date échéance</value>
+    <value>Date d'échéance</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="DunningMessages" xml:space="preserve">
@@ -1266,7 +1266,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ExpirationDate" xml:space="preserve">
-    <value>Date échéance</value>
+    <value>Date d'échéance</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ExtendedAmt" xml:space="preserve">
@@ -3987,5 +3987,41 @@
   </data>
   <data name="EstimatedTaxWithheld" xml:space="preserve">
     <value>Taxe retenue estimée</value>
+  </data>
+  <data name="CommentExpiration" xml:space="preserve">
+    <value>Échéance du commentaire</value>
+  </data>
+  <data name="CommentFollowUp" xml:space="preserve">
+    <value>Rappel du commentaire</value>
+  </data>
+  <data name="CurrentDue" xml:space="preserve">
+    <value>Montant actuel à payer</value>
+  </data>
+  <data name="FuncionalARBalance" xml:space="preserve">
+    <value>Solde de CC en devise fonctionnelle</value>
+  </data>
+  <data name="FunctionalCurrentDue" xml:space="preserve">
+    <value>Montant actuel à payer en devise fonctionnelle</value>
+  </data>
+  <data name="FunctionalOutstandingRetainage" xml:space="preserve">
+    <value>Retenue impayée en devise fonctionnelle</value>
+  </data>
+  <data name="FunctionalOverdueAmount" xml:space="preserve">
+    <value>Montant en retard en devise fonctionnelle</value>
+  </data>
+  <data name="NationalARBalance" xml:space="preserve">
+    <value>Solde de CC du compte national</value>
+  </data>
+  <data name="OverdueAmount" xml:space="preserve">
+    <value>Montant en retard</value>
+  </data>
+  <data name="CustomerListPreview" xml:space="preserve">
+    <value>Aperçu de la liste des clients</value>
+  </data>
+  <data name="FromToRangeErrorMessage" xml:space="preserve">
+    <value>La saisie de la case De doit être inférieure à celle de la case À</value>
+  </data>
+  <data name="CustomerRange" xml:space="preserve">
+    <value>Plage de clients</value>
   </data>
 </root>

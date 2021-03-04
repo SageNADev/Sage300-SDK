@@ -126,11 +126,11 @@
     <comment>Label</comment>
   </data>
   <data name="EIN" xml:space="preserve">
-    <value>雇主身份证号码</value>
+    <value>雇主标识编号</value>
     <comment>Group - List Option</comment>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>应付帐款打印1099/1096表格</value>
+    <value>应付帐款打印1099/1096表单</value>
     <comment>Screen Title</comment>
   </data>
   <data name="FinalFiling" xml:space="preserve">
@@ -146,7 +146,7 @@
     <comment>Field</comment>
   </data>
   <data name="PreaddressedForm" xml:space="preserve">
-    <value>预印地址的表格</value>
+    <value>预印地址的表单</value>
     <comment>Check Box</comment>
   </data>
   <data name="SSN" xml:space="preserve">
@@ -154,7 +154,7 @@
     <comment>Group - List Option</comment>
   </data>
   <data name="UseForm" xml:space="preserve">
-    <value>使用表格</value>
+    <value>使用表单</value>
     <comment>Field</comment>
   </data>
   <data name="Phone" xml:space="preserve">
@@ -204,5 +204,14 @@
   <data name="AddressLine2" xml:space="preserve">
     <value>地址行2</value>
     <comment>Label</comment>
+  </data>
+  <data name="FormType" xml:space="preserve">
+    <value>表单类型</value>
+  </data>
+  <data name="_1099Misc" xml:space="preserve">
+    <value>1099-MISC</value>
+  </data>
+  <data name="_1099Nec" xml:space="preserve">
+    <value>1099-NEC</value>
   </data>
 </root>

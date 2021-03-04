@@ -1,14 +1,13 @@
-﻿/* Copyright (c) 2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2019-2020 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var ViewFinderGridHelper = {
-    finderOptions:null,
+    finderOptions: null,
     fields: null,
     columns: null,
     viewModel: null,
     finderModel: null,
-    totalRecordsCount: 0,
-    isGridInitialised: false,
+    isGridInitialized: false,
     columnFilter: {},
 
     CreateSchemaModelFields: function (model) {
@@ -21,10 +20,10 @@ var ViewFinderGridHelper = {
 
     init: function (finderOptions) {
         this.finderOptions = finderOptions;
-        this.isGridInitialised = false;
+        this.isGridInitialized = false;
         this.fields = this.CreateSchemaModelFields(finderSchemaModelType);
         this.columns = finderModelColumnsList;
-        this.InitialiseFinderGrid();
+        this.InitializeFinderGrid();
         this.InitColumnGrid();
         this.HideFilterControls();
         this.ButtonClickEvent();
@@ -46,10 +45,9 @@ var ViewFinderGridHelper = {
         this.columnFilter = null;
     },
     
-    InitialiseFinderGrid: function () {
+    InitializeFinderGrid: function () {
         this.InitiateFilterDataToPost();
         this.finderModel = finderModelDetail;
-        this.totalRecordsCount = parseInt(finderTotalRecordsCount, 10) > 0 ? finderTotalRecordsCount : 0;
         sg.keys = this.GetKeyFieldObject();
 
         //initialize grid only with preferences columns Defect D-13975
@@ -62,14 +60,8 @@ var ViewFinderGridHelper = {
             pageSize: sg.finderHelper.pageSize,
             transport: {
                 read: function (options) {
-                    if (ViewFinderGridHelper.totalRecordsCount != 0 && ViewFinderGridHelper.finderModel) {
-                        ViewFinderGridHelper.ShowInitialisedGrid(options);
-                    } else {
-                        if (ViewFinderGridHelper.isGridInitialised) {
-                            ViewFinderGridHelper.RefreshFinderGrid(options);
-                        } else {
-                            ViewFinderGridHelper.ShowInitialisedGrid(options);
-                        }
+                    if (ViewFinderGridHelper.finderModel) {
+                        ViewFinderGridHelper.ShowInitializedGrid(options);
                     }
                 }
             },
@@ -78,7 +70,6 @@ var ViewFinderGridHelper = {
                 model: {
                     fields: ViewFinderGridHelper.fields
                 },
-                total: 'totalRecCount',
                 data: 'data'
             }
         });
@@ -92,36 +83,64 @@ var ViewFinderGridHelper = {
             scrollable: true,
             resizable: true,
             reorderable: false,
-            pageable: {
-                input: true,
-                numeric: false,
-                refresh: true
-            },
+            pageable: false,
             change: ViewFinderGridHelper.EnabledDialogButton
             });
     },
-    ShowInitialisedGrid: function (options) {
-        sg.utls.kndoUI.selectGridRow();
-        options.success({ data: this.finderModel, totalRecCount: this.totalRecordsCount });
-        this.totalRecordsCount = 0;
+    ShowInitializedGrid: function (options) {
+        options.success({ data: this.finderModel });
+
+        let grid = $('#div_finder_grid').data("kendoGrid");
+        let noMoreData = $("#last").attr('noMoreData');
+
+        // If there is no more data, select the last row
+        if (noMoreData) {
+            grid.select("tr:last");
+        } else {
+            grid.select("tr:eq(0)");
+        }
+
         this.finderModel = null;
-        this.isGridInitialised = true;
+        this.isGridInitialized = true;
     },
     EnabledDialogButton: function () {
         $('.selectKendoGrid').attr("disabled", false).removeClass("btnStyle2Disabled");
     },
-    
-    RefreshFinderGrid: function (options) {
-       
-        var data = { finderOptions: this.finderOptions };
 
-        data.finderOptions.PageNumber = options.data.page;
+    ReloadFinderGrid: function () {
+        let grid = $("#div_finder_grid").data("kendoGrid");
+        if (ViewFinderGridHelper.finderOptions) {
+            ViewFinderGridHelper.finderOptions.record = null;
+            ViewFinderGridHelper.finderOptions.isBackward = false;
+
+            ViewFinderGridHelper.RefreshFinderGrid(grid);
+        }
+    },
+
+    RefreshFinderGrid: function (grid) {
+        var data = { finderOptions: this.finderOptions };
         data.finderOptions.ColumnFilter = this.columnFilter;
 
         sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "ViewFinder", "RefreshGrid"), data, function (successData) {
-            options.success({ data: successData.Data, totalRecCount: successData.TotalRecordCount });
+            grid.dataSource.data(successData.Data);
+
+            let pageInfo = successData.PageInfo;
+
+            sg.controls.enableDisable("#first", pageInfo.IsFirstPage);
+            sg.controls.enableDisable("#previous", pageInfo.IsFirstPage);
+            sg.controls.enableDisable("#next", pageInfo.IsLastPage);
+            sg.controls.enableDisable("#last", pageInfo.IsLastPage);
+
+            if (pageInfo.IsPrevPageFull) {
+                $("#previous").removeAttr("toFirst");
+            } else {
+                $("#previous").attr("toFirst", "toFirst");
+            }
+
+            grid.select("tr:eq(0)");
         });
     },
+
     //This will set column, operator and values as per parent screen
     InitFinderValues: function (filter) {
        
@@ -206,10 +225,7 @@ var ViewFinderGridHelper = {
             // remove column filter
             ViewFinderGridHelper.InitiateFilterDataToPost();
 
-            // initialize the initial key values
-            ViewFinderGridHelper.finderOptions.InitKeyValues = [];
-
-            $("#div_finder_grid").data("kendoGrid").dataSource.page(1);
+            ViewFinderGridHelper.ReloadFinderGrid();
             $("#ValueTextBox").show();
         } else if (selectedValue.length > 0) {
 
@@ -223,7 +239,7 @@ var ViewFinderGridHelper = {
             ViewFinderGridHelper.HideFilterControls();
             var emptyData = { Field: { field: "" }, Operator: "", Value: "" };
             ViewFinderGridHelper.simpleFilterData = emptyData;
-            $("#div_finder_grid").data("kendoGrid").dataSource.page(1);
+            ViewFinderGridHelper.ReloadFinderGrid();
             $("#ValueTextBox").show();
         }
         dropdownlist.focus();
@@ -461,6 +477,35 @@ var ViewFinderGridHelper = {
         return keys;
     },
 
+    _getRecordKeyValues: function (grid, first) {
+        let keyValues = {};
+        let data = grid.dataSource.data()[first ? 0 : grid.dataSource.data().length - 1];
+        sg.keys.forEach(column => {
+            let cellVal = data[column.field];
+            let val;
+            // check data type
+            if (column.PresentationList !== null) {
+                var pval = $.grep(column.PresentationList, function (p) {
+                    return p.Text === cellVal;
+                });
+
+                if (pval.length > 0) {
+                    val = pval[0].Value;
+                }
+            }
+            else if (column.dataType === sg.finderDataType.Date) {
+                val = sg.utls.kndoUI.getFormattedDate(cellVal);
+            }
+            else {
+                val = cellVal;
+            }
+
+            keyValues[column.field] = val;
+        });
+
+        return keyValues;
+    },
+
     ExecuteSimpleFilter: function () {
         var dropdownlist = $("#ColumnDropdown").data("kendoDropDownList");
         var selectedValue = dropdownlist.value();
@@ -526,11 +571,71 @@ var ViewFinderGridHelper = {
             var emptyData = { Field: { field: "" }, Operator: "", Value: "" };
             this.columnFilter = emptyData;
         }
-        $("#div_finder_grid").data("kendoGrid").dataSource.page(1);
+        ViewFinderGridHelper.ReloadFinderGrid();
     },
     ButtonClickEvent: function () {
         $("#btnSearch").click(function () {
             ViewFinderGridHelper.ExecuteSimpleFilter();
+        });
+        $("#first").click(function (e) {
+            let isDisabled = $(this).attr('disabled');
+
+            // Disable click functionality when the button has disabled attribute due to the button being an <a> tag
+            if (!isDisabled) {
+                ViewFinderGridHelper.ReloadFinderGrid();
+            }
+
+            // Prevent the finder from shifting down
+            e.preventDefault();
+        });
+        $("#next").click(function (e) {
+            let isDisabled = $(this).attr('disabled');
+
+            // Disable click functionality when the button has disabled attribute due to the button being an <a> tag
+            if (!isDisabled) {
+                let grid = $("#div_finder_grid").data("kendoGrid");
+                ViewFinderGridHelper.finderOptions.record = ViewFinderGridHelper._getRecordKeyValues(grid, false);
+                ViewFinderGridHelper.finderOptions.isBackward = false;
+
+                ViewFinderGridHelper.RefreshFinderGrid(grid);
+            }
+
+            // Prevent the finder from shifting down
+            e.preventDefault();
+        });
+        $("#previous").click(function (e) {
+            let isDisabled = $(this).attr('disabled');
+
+            // Disable click functionality when the button has disabled attribute due to the button being an <a> tag
+            if (!isDisabled) {
+                if ($(this).attr('toFirst')) {
+                    ViewFinderGridHelper.ReloadFinderGrid();
+                } else {
+                    let grid = $("#div_finder_grid").data("kendoGrid");
+                    ViewFinderGridHelper.finderOptions.record = ViewFinderGridHelper._getRecordKeyValues(grid, true);
+                    ViewFinderGridHelper.finderOptions.isBackward = true;
+
+                    ViewFinderGridHelper.RefreshFinderGrid(grid);
+                }
+            }
+
+            // Prevent the finder from shifting down
+            e.preventDefault();
+        });
+        $("#last").click(function (e) {
+            let isDisabled = $(this).attr('disabled');
+
+            // Disable click functionality when the button has disabled attribute due to the button being an <a> tag
+            if (!isDisabled) {
+                let grid = $("#div_finder_grid").data("kendoGrid");
+                ViewFinderGridHelper.finderOptions.record = null;
+                ViewFinderGridHelper.finderOptions.isBackward = true;
+
+                ViewFinderGridHelper.RefreshFinderGrid(grid);
+            }
+
+            // Prevent the finder from shifting down
+            e.preventDefault();
         });
     },
     OnBlur: function () {

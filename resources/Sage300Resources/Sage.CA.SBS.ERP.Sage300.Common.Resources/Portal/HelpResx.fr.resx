@@ -3737,11 +3737,11 @@
     <comment>CSH ID 369034001</comment>
   </data>
   <data name="AR_ReceiptInquiry_Article1" xml:space="preserve">
-    <value>À propos de la consultation de clients et de documents à partir des écrans de transactions</value>
+    <value>Rechercher des encaissements</value>
     <comment>CSH ID 18062002</comment>
   </data>
   <data name="AR_ReceiptInquiry_Article2" xml:space="preserve">
-    <value>Rechercher des encaissements</value>
+    <value>À propos du traitement des encaissements</value>
     <comment>CSH ID 18062003</comment>
   </data>
   <data name="AR_ReceiptInquiry_Screen" xml:space="preserve">
@@ -3749,11 +3749,11 @@
     <comment>CSH ID 18062001</comment>
   </data>
   <data name="AR_RefundInquiry_Article1" xml:space="preserve">
-    <value>À propos du traitement des remboursements</value>
+    <value>Rechercher des remboursements</value>
     <comment>CSH ID 18065002</comment>
   </data>
   <data name="AR_RefundInquiry_Article2" xml:space="preserve">
-    <value>Rechercher des remboursements</value>
+    <value>À propos du traitement des remboursements</value>
     <comment>CSH ID 18065003</comment>
   </data>
   <data name="AR_RefundInquiry_Screen" xml:space="preserve">
@@ -4384,5 +4384,71 @@
   <data name="MT_Optional_Fields_Screen" xml:space="preserve">
     <value>Écran Champs optionnels de M/T</value>
     <comment>CSH ID 332002001</comment>
+  </data>
+  <data name="CS_PaymentsAcceptance_Screen" xml:space="preserve">
+    <value>Accepter des paiements par l’intermédiaire de prestataires en ligne</value>
+    <comment>CSH ID 71011001</comment>
+  </data>
+  <data name="CS_PaymentsAcceptance_Article1" xml:space="preserve">
+    <value>À propos d’Acceptation de paiements</value>
+    <comment>CSH ID 71011002</comment>
+  </data>
+  <data name="CS_PaymentsAcceptance_Article2" xml:space="preserve">
+    <value>Vue d’ensemble d’Adminstration</value>
+    <comment>CSH ID 71011003</comment>
+  </data>
+  <data name="AR_CustomerList_Article1" xml:space="preserve">
+    <value>À propos de l'utilisation de l'écran Liste des clients pour créer des rapports particuliers</value>
+  </data>
+  <data name="AR_CustomerList_Article2" xml:space="preserve">
+    <value>Imprimer une liste de clients</value>
+  </data>
+  <data name="AR_CustomerList_Screen" xml:space="preserve">
+    <value>Écran Liste des clients de CC</value>
+  </data>
+  <data name="AS_User_Article1" xml:space="preserve">
+    <value>Ajouter, modifier ou supprimer des utilisateurs</value>
+  </data>
+  <data name="AS_User_Article2" xml:space="preserve">
+    <value>Assigner des utilisateurs à des groupes de sécurité</value>
+  </data>
+  <data name="AS_User_Screen" xml:space="preserve">
+    <value>Écran Utilisateurs</value>
+  </data>
+  <data name="GL_SourceCurrencyInquiry_Article1" xml:space="preserve">
+    <value>Spécifier une devise</value>
+    <comment>CSH ID 168024002</comment>
+  </data>
+  <data name="GL_SourceCurrencyInquiry_Article2" xml:space="preserve">
+    <value>Visualiser les soldes en devise de transaction pour un compte multidevise</value>
+    <comment>CSH ID 168024003</comment>
+  </data>
+  <data name="GL_SourceCurrencyInquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation de la devise de transaction de GL</value>
+    <comment>CSH ID 168024001</comment>
+  </data>
+  <data name="GL_Account_History_Inquiry_Article1" xml:space="preserve">
+    <value>À propos de la saisie des soldes de comptes, données historiques et quantités</value>
+    <comment>CSH ID 168022002</comment>
+  </data>
+  <data name="GL_Account_History_Inquiry_Article2" xml:space="preserve">
+    <value>Ajouter un nouveau compte</value>
+    <comment>CSH ID 168022003</comment>
+  </data>
+  <data name="GL_Account_History_Inquiry_Screen" xml:space="preserve">
+    <value>Écran Consultation de l'historique de compte de GL</value>
+    <comment>CSH ID 168022001</comment>
+  </data>
+  <data name="GL_About_Budgets" xml:space="preserve">
+    <value>À propos des budgets</value>
+    <comment>CSH ID 168023002</comment>
+  </data>
+  <data name="GL_Budget_Maintenance_Screen" xml:space="preserve">
+    <value>Écran Mise à jour du budget de GL</value>
+    <comment>CSH ID 168023001</comment>
+  </data>
+  <data name="GL_Editing_Budget_Data" xml:space="preserve">
+    <value>Modification des données de budget</value>
+    <comment>CSH ID 168023003</comment>
   </data>
 </root>

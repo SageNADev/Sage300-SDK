@@ -121,9 +121,18 @@
     <value>Códigos de 1099/CPRS</value>
     <comment>Import/Export</comment>
   </data>
+  <data name="AmountType" xml:space="preserve">
+    <value>Tipo de Monto</value>
+  </data>
+  <data name="CPRS" xml:space="preserve">
+    <value>CPRS</value>
+  </data>
   <data name="CPRSCodeDesc" xml:space="preserve">
     <value>Descripción Código de 1099/CPRS</value>
     <comment>Field</comment>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value />
   </data>
   <data name="Entity" xml:space="preserve">
     <value>C/P - Códigos de 1099/CPRS</value>
@@ -132,5 +141,17 @@
   <data name="MinAmtToRpt" xml:space="preserve">
     <value>Monto Mínimo a Reportar</value>
     <comment>Auto-Generated</comment>
+  </data>
+  <data name="Misc" xml:space="preserve">
+    <value>1099-Misc</value>
+  </data>
+  <data name="Nec" xml:space="preserve">
+    <value>1099-Nec</value>
+  </data>
+  <data name="T5018" xml:space="preserve">
+    <value>T5018</value>
+  </data>
+  <data name="_1099" xml:space="preserve">
+    <value>1099</value>
   </data>
 </root>

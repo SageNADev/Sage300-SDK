@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -399,7 +399,7 @@
     <value>活动</value>
   </data>
   <data name="Copyright" xml:space="preserve">
-    <value>版权所有 (c) 1994-2015 Sage Software, Inc. 保留所有权利。</value>
+    <value>版权所有 (C) 1994-2015 Sage Software, Inc. 保留所有权利。</value>
   </data>
   <data name="Deleted" xml:space="preserve">
     <value>已删除</value>
@@ -462,7 +462,7 @@
     <value>分录</value>
   </data>
   <data name="DateRangeMessage" xml:space="preserve">
-    <value>输入的日期位于在公司概览中指定的范围之外。是否接受这一日期？</value>
+    <value>输入的日期位于在公司概览中指定的范围之外。是否接受此日期？</value>
   </data>
   <data name="Date" xml:space="preserve">
     <value>日期</value>
@@ -1427,7 +1427,7 @@
     <value>每页：</value>
   </data>
   <data name="NoDrillDownInfo" xml:space="preserve">
-    <value>无法找到这一记录的下钻信息。如果您正在使用网页屏幕，请注意，您必须使用桌面屏幕才可以下钻到薪资管理或项目成本管理交易。</value>
+    <value>无法找到此记录的下钻信息。如果您正在使用网页屏幕，请注意，您必须使用桌面屏幕才可以下钻到薪资管理或项目成本管理交易。</value>
   </data>
   <data name="Filter" xml:space="preserve">
     <value>筛选器：</value>
@@ -1541,18 +1541,60 @@
     <value>您的请求无法在限定时间内完成。有关增加时间限制的帮助，联络您的系统管理员以便更改网页请求超时设置。</value>
   </data>
   <data name="RequireValidEmail" xml:space="preserve">
-    <value>您必须输入此联系人的一个电邮地址后才可以指定要发送给此联系人{0}的文档。</value>
+    <value>您必须输入此联系人{0}的一个电邮地址后才可以指定要发送给此联系人的文档。</value>
   </data>
   <data name="ContactExist" xml:space="preserve">
     <value>该联系人代码已经存在。</value>
   </data>
   <data name="ContactInactive" xml:space="preserve">
-    <value>您无法使用联系人{0}，因为此联系人已被闲置。</value>
+    <value>您无法使用联系人{0}，因为此联系人为闲置。</value>
   </data>
   <data name="ContactNotExist" xml:space="preserve">
     <value>联系人{0}不存在。</value>
   </data>
   <data name="Template_ReportCouldNotBeLocated" xml:space="preserve">
-    <value>** TO BE TRANSLATED ** The report file '{0}' could not be located. Please contact your administrator for assistance.</value>
+    <value>无法找到报表文件'{0}'。请联系您的管理员获取协助。</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>代码</value>
+    <comment>Service Fabric Reauthentication  Content</comment>
+  </data>
+  <data name="ReauthenticationContent1" xml:space="preserve">
+    <value>一个唯一代码已发送到您存档的电邮地址。您需要尽快使用此代码，因为出于安全目的它将很快过期。</value>
+    <comment>Service Fabric Reauthentication Content</comment>
+  </data>
+  <data name="ReauthenticationContent2" xml:space="preserve">
+    <value>输入下面的代码，然后点击确定继续。</value>
+    <comment>Service Fabric Reauthentication Content</comment>
+  </data>
+  <data name="BracketNone" xml:space="preserve">
+    <value>（无）</value>
+  </data>
+  <data name="ToFirstPage" xml:space="preserve">
+    <value>首页</value>
+  </data>
+  <data name="ToLastPage" xml:space="preserve">
+    <value>末页</value>
+  </data>
+  <data name="ToNextPage" xml:space="preserve">
+    <value>下页</value>
+  </data>
+  <data name="ToPreviousPage" xml:space="preserve">
+    <value>前页</value>
+  </data>
+  <data name="FileFormat" xml:space="preserve">
+    <value>文件格式</value>
+  </data>
+  <data name="PageRange" xml:space="preserve">
+    <value>页面范围</value>
+  </data>
+  <data name="SelectPages" xml:space="preserve">
+    <value>选择页面</value>
+  </data>
+  <data name="ExportReport" xml:space="preserve">
+    <value>导出报表</value>
   </data>
 </root>

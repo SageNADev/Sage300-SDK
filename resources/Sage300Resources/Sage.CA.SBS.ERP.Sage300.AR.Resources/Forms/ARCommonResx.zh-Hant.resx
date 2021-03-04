@@ -3988,4 +3988,40 @@
   <data name="EstimatedTaxWithheld" xml:space="preserve">
     <value>預估預扣稅</value>
   </data>
+  <data name="CommentExpiration" xml:space="preserve">
+    <value>備註失效</value>
+  </data>
+  <data name="CommentFollowUp" xml:space="preserve">
+    <value>備註跟進</value>
+  </data>
+  <data name="CurrentDue" xml:space="preserve">
+    <value>目前到期</value>
+  </data>
+  <data name="FuncionalARBalance" xml:space="preserve">
+    <value>功能幣別應收帳款餘額</value>
+  </data>
+  <data name="FunctionalCurrentDue" xml:space="preserve">
+    <value>功能幣別目前到期</value>
+  </data>
+  <data name="FunctionalOutstandingRetainage" xml:space="preserve">
+    <value>功能幣別未結清保留款</value>
+  </data>
+  <data name="FunctionalOverdueAmount" xml:space="preserve">
+    <value>功能幣別逾期金額</value>
+  </data>
+  <data name="NationalARBalance" xml:space="preserve">
+    <value>統一帳戶應收帳款餘額</value>
+  </data>
+  <data name="OverdueAmount" xml:space="preserve">
+    <value>逾期金額</value>
+  </data>
+  <data name="CustomerListPreview" xml:space="preserve">
+    <value>客戶清單預覽</value>
+  </data>
+  <data name="FromToRangeErrorMessage" xml:space="preserve">
+    <value>&lt;從&gt;框中的錄入不能大於&lt;到&gt;框中的錄入</value>
+  </data>
+  <data name="CustomerRange" xml:space="preserve">
+    <value>客戶範圍</value>
+  </data>
 </root>

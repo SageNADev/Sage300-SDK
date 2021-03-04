@@ -275,4 +275,8 @@
   <data name="In" xml:space="preserve">
     <value>in</value>
   </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>Currency Type</value>
+    <comment>List</comment>
+  </data>
 </root>

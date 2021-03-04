@@ -248,10 +248,10 @@
     <value>批次描述</value>
   </data>
   <data name="FromToValidation" xml:space="preserve">
-    <value>《從》框中的錄入不能大於《到》框中的錄入</value>
+    <value>&lt;從&gt;框中的錄入不能大於&lt;到&gt;框中的錄入</value>
   </data>
   <data name="Open" xml:space="preserve">
-    <value>開放</value>
+    <value>未結</value>
   </data>
   <data name="Date" xml:space="preserve">
     <value>日期</value>
@@ -274,5 +274,9 @@
   </data>
   <data name="In" xml:space="preserve">
     <value>以</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>幣別類型</value>
+    <comment>List</comment>
   </data>
 </root>

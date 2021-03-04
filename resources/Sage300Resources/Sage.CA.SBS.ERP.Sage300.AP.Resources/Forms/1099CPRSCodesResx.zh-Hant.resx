@@ -121,9 +121,18 @@
     <value>1099/CPRS代碼</value>
     <comment>Import/Export</comment>
   </data>
+  <data name="AmountType" xml:space="preserve">
+    <value>金額類型</value>
+  </data>
+  <data name="CPRS" xml:space="preserve">
+    <value>CPRS</value>
+  </data>
   <data name="CPRSCodeDesc" xml:space="preserve">
     <value>1099/CPRS代碼描述</value>
     <comment>Field</comment>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value />
   </data>
   <data name="Entity" xml:space="preserve">
     <value>應付帳款1099/CPRS代碼</value>
@@ -132,5 +141,17 @@
   <data name="MinAmtToRpt" xml:space="preserve">
     <value>最低申報金額</value>
     <comment>Auto-Generated</comment>
+  </data>
+  <data name="Misc" xml:space="preserve">
+    <value>1099-雜項</value>
+  </data>
+  <data name="Nec" xml:space="preserve">
+    <value>1099-非員工補償</value>
+  </data>
+  <data name="T5018" xml:space="preserve">
+    <value>T5018</value>
+  </data>
+  <data name="_1099" xml:space="preserve">
+    <value>1099</value>
   </data>
 </root>

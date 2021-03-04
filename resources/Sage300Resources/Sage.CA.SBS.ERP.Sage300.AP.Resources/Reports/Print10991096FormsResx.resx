@@ -205,4 +205,13 @@
     <value>Address Line 2</value>
     <comment>Label</comment>
   </data>
+  <data name="FormType" xml:space="preserve">
+    <value>Form Type</value>
+  </data>
+  <data name="_1099Misc" xml:space="preserve">
+    <value>1099-MISC</value>
+  </data>
+  <data name="_1099Nec" xml:space="preserve">
+    <value>1099-NEC</value>
+  </data>
 </root>
