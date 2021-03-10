@@ -48,7 +48,7 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>e280c1ec</NuGetPackageImportStamp>
     <UseGlobalApplicationHostFile />
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>false</Use64BitIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -257,6 +257,9 @@
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.ExportReport">
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.ExportReport.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -483,8 +486,7 @@
   </ProjectExtensions>
   <Import Project="$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>Call "..\..\..\..\bin\utilities\MergeISVProject.exe" --mode=0 --solutionpath="$(SolutionDir)\" --webprojectpath="$(ProjectDir)\" --menufilename="TUMenuDetails.xml" --buildprofile="$(ConfigurationName)"  --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --minify --log
-powershell -ExecutionPolicy Unrestricted -File $(ProjectDir)CopyExportReport.ps1</PostBuildEvent>
+    <PostBuildEvent>Call "..\..\..\..\bin\utilities\MergeISVProject.exe" --mode=0 --solutionpath="$(SolutionDir)\" --webprojectpath="$(ProjectDir)\" --menufilename="TUMenuDetails.xml" --buildprofile="$(ConfigurationName)"  --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --minify --log</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
