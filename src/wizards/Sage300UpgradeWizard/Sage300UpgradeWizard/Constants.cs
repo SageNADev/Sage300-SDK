@@ -41,7 +41,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const string FromAccpacNumber = "6.8.0.0";
 
             /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "6.9.0.0";
+            public const string ToAccpacNumber = "6.8.0.0";
 
             /// <summary> Flag that determines whether or not to synchronize the Kendo files. </summary>
             public const bool SyncKendoFiles = true;
@@ -63,6 +63,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// to the root of the Web project.
             /// </summary>
             public const bool AddBinIncludeFile = false;
+
+            /// <summary> 
+            /// Flag that determines whether or not to add a couple of new references to the web project for handling 
+            /// reports
+            /// </summary>
+            public const bool ReportUpgrade = true;
 
             /// <summary> Flag that determines whether or not to remove previous versions of the various JQuery libraries. </summary>
             public const bool RemovePreviousJqueryLibraries = false;
