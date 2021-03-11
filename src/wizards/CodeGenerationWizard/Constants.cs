@@ -32,7 +32,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public static string Version = "2021.2";
 
         /// <summary> The Accpac Net Version </summary>
-        public static string AccpacDotNetVersion = "69A";
+        public static string AccpacDotNetVersion = "68A";
 
         public const string ResourceFileExtension = @".resx";
 

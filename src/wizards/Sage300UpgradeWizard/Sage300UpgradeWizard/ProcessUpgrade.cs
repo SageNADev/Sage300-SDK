@@ -60,7 +60,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <param name="settings">Settings for processing</param>
 		public void Process(Settings settings)
 		{
-            const int WORKINGSTEPS = 2;
+            // Developer Note: This number is one less than the number of steps in the main
+            //                 switch statement below.
+            const int WORKINGSTEPS = 3;
 
             LogSpacerLine('-');
             Log(Resources.BeginUpgradeProcess);
@@ -101,6 +103,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     case 1: if (Constants.PerRelease.SyncKendoFiles) { SyncKendoFiles(title); } break;
                     case 2: if (Constants.PerRelease.SyncWebFiles) { SyncWebFiles(title); } break;
                     case 3: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
+                    case 4: if (Constants.PerRelease.ReportUpgrade) { ReportUpgrade(title); } break;
+
+                    //case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
                     //case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
                     //case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
                     //case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
@@ -283,6 +288,48 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Nothing to do. This is a manual partner step :)
             var msg = Resources.UpdatesToUnifyDisabledAreAManualStep;
             Log(msg);
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Add a couple of new file references to the web project to handle changes
+        /// to how reports are done
+        /// </summary>
+        /// <param name="title">The title of this step</param>
+        private void ReportUpgrade(string title)
+        {
+            LogEventStart(title);
+
+            //// Check for the existence of BinInclude.txt file
+            //// If it exists, then just leave it as is.
+            //var binInclude = Path.Combine(_settings.DestinationWebFolder, Constants.Common.BinIncludeFile);
+            //if (!File.Exists(binInclude))
+            //{
+            //    // File doesn't yet exist. Let's create an empty one and add it to the Web project
+            //    FileUtilities.CreateEmptyFile(binInclude);
+
+            //    // Add this file to the project definition (if it was actually created successfully)
+            //    if (File.Exists(binInclude))
+            //    {
+            //        var solution = _settings.Solution;
+            //        var projects = solution.Projects;
+            //        foreach (Project project in projects)
+            //        {
+            //            var fullName = project.FullName;
+            //            if (IsWebProject(fullName))
+            //            {
+            //                project.ProjectItems.AddFromFile(binInclude);
+
+            //                // No need to iterate the rest of the projects
+            //                // We've found the Web project already.
+            //                break;
+            //            }
+            //        }
+            //    }
+            //}
 
             // Log end of step
             LogEventEnd(title);
