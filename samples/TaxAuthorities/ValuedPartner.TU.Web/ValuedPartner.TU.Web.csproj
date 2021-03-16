@@ -215,6 +215,9 @@
     <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.ExportReport">
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.ExportReport.exe</HintPath>
+    </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.GL.Interfaces">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.GL.Interfaces.dll</HintPath>
     </Reference>
@@ -437,9 +440,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51959</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51959/</IISUrl>
+          <IISUrl>http://localhost:58456/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

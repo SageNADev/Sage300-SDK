@@ -50,7 +50,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const bool SyncWebFiles = true;
 
             /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
-            public const bool UpdateAccpacDotNetLibrary = true;
+            public const bool UpdateAccpacDotNetLibrary = false;
 
             /// <summary> Flag that determines whether or not to update the .NET framework in solution projects. </summary>
             public const bool UpdateMicrosoftDotNetFramework = false;
@@ -65,10 +65,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const bool AddBinIncludeFile = false;
 
             /// <summary> 
-            /// Flag that determines whether or not to add a couple of new references to the web project for handling 
-            /// reports
+            /// Release 2021.2
+            /// 
+            /// Flag that determines whether or not to add a  
+            /// new reference to the web project for handling reports
             /// </summary>
-            public const bool ReportUpgrade = true;
+            public const bool ReportUpgrade_For_2021_2 = true;
 
             /// <summary> Flag that determines whether or not to remove previous versions of the various JQuery libraries. </summary>
             public const bool RemovePreviousJqueryLibraries = false;

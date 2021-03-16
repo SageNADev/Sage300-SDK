@@ -1,0 +1,174 @@
+﻿@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Models
+@using Sage.CA.SBS.ERP.Sage300.Core.Configuration;
+
+<div class="message-control multiError-msg" id="messageDiv" style="display:none">
+    <div class="title">
+        <span class="icon multiError-icon"></span>
+            <h3>@CommonResx.UnexpectedError:</h3>
+    </div>
+    <div class="msg-content">
+     <div id="errorMessage"></div>
+    </div>
+</div>
+
+<div id="popup" style="display:none">
+    <!-- Start of Export Popup -->
+    <div class="sub-section">
+        <div class="section-heading">@CommonResx.FileFormat:</div>
+        <div class="section-body">
+            <div class="form-group">
+                <div class="dropdown-group">
+                    <select class="medium single-select" id="report_ddlExportReport">
+                        <option value="5">PDF</option>
+                        <option value="10">CSV</option>
+                        <option value="4">Excel</option>
+                        <option value="8">Excel Record</option>
+                        <option value="13">XML</option>
+                        <option value="3">Word</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sub-section">
+        <div class="section-heading">@CommonResx.PageRange:</div>
+        <div class="section-body">
+            <div class="form-group">
+                <div class="ctrl-group">
+                    <div>
+                        <input type="radio" id="report_rdoAllPages" value="1" name="report_pageSelect" checked />
+                        <label for="rdoAllPages">@CommonResx.All</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="report_rdoSelectPages" value="3" name="report_pageSelect" />
+                        <label for="rdoSelectPages">@CommonResx.SelectPages</label>
+                        <div class="input-group ml20">
+                            <span class="inline">@CommonResx.From</span>
+                            <input type="text" value="" class="xsmall numeric" id="report_txtPageFrom">
+                            <span class="inline">@CommonResx.To</span>
+                            <input type="text" value="" class="xsmall numeric" id="report_txtPageTo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="footer-group-1">
+        <input class="btn btn-primary" name="report_btnExport" type="button" value="@CommonResx.Export" id="report_btnExport">
+    </section>
+</div> <!-- End of Export Popup -->
+
+<script src="~/Assets/js/input.Checkbox.js"></script>
+<script src="~/Assets/js/customscripts.js"></script>
+
+<script>
+
+    function PrintReport(format, usePageRange, firstPage, lastPage) {
+
+        let reportUrlFormat = sg.utls.url.buildUrl("Core", "ExportReport", "ExportReport") + "?token={0}&format={1}&usePageRange={2}&firstPage={3}&lastPage={4}";
+        let exportURL = kendo.format(reportUrlFormat, '@ViewBag.token', format, usePageRange, firstPage, lastPage);
+        $('#ajaxSpinner').fadeIn(1);
+        $.ajax({
+            url: exportURL,
+            method: 'GET',
+            xhrFields: {
+                responseType: 'blob'
+            },
+            success: function (data, textStatus, request) {
+                $('#ajaxSpinner').fadeOut(1);
+                var a = document.createElement('a');
+                var url = window.URL.createObjectURL(data);
+                a.href = url;
+                a.download = request.getResponseHeader("content-disposition").split(';')[1].split('=')[1].replace(/["]+/g,'');
+                document.body.append(a);
+                a.click();
+                a.remove();
+                window.URL.revokeObjectURL(url);
+                setTimeout(function () { window.close(); }, 5000);
+            },
+
+            error: function(jqXhr, textStatus, errorThrown) {
+                $("#errorMessage").html(errorThrown);
+                $("#messageDiv").show();
+                $('#ajaxSpinner').fadeOut(1);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+
+        if ("@ConfigurationHelper.ReportPromptForExportFormat" === "True") {
+            dropdownlist = $("#report_ddlExportReport").data("kendoDropDownList");
+            dropdownlist.bind("change", function () {
+                format = dropdownlist.value();
+                let pageRangedisabled = true;
+
+                // WORD, EXCEL, PDF support page range
+                if (format === "3" || format === "4" || format === "5") {
+                    pageRangedisabled = false;
+                }
+
+                // reset the radio button
+                $("#report_rdoAllPages").prop("checked", "checked");
+
+                $("#report_rdoSelectPages").prop("disabled", pageRangedisabled);
+                $("input[name='report_pageSelect']").trigger("change");
+            });
+
+            $("input[name='report_pageSelect']").change(function () {
+                $("#report_txtPageFrom").prop("disabled", !$("#report_rdoSelectPages").is(':checked'));
+                $("#report_txtPageTo").prop("disabled", !$("#report_rdoSelectPages").is(':checked'));
+            });
+
+            dropdownlist.value(@ConfigurationHelper.ReportDefaultExportFormat.ToString());
+            dropdownlist.trigger("change");
+            $("input[name='report_pageSelect']").trigger("change");
+
+            $("#report_btnExport").on('click.report.export', function () {
+                let firstPage = 0;
+                let lastPage = 0;
+                let usePageRange = false;
+                let format = $("#report_ddlExportReport").data("kendoDropDownList").value();
+
+                if ($("#report_rdoSelectPages").is(":checked")) {
+                    usePageRange = true;
+
+                    // check whether the firstPage, lastPage are valid numbers, and the range is correct
+                    firstPage = $('#report_txtPageFrom').val();
+                    lastPage = $('#report_txtPageTo').val();
+
+                    if (!($.isNumeric(firstPage) && Math.floor(firstPage) == firstPage) ||
+                        !($.isNumeric(lastPage) && Math.floor(lastPage) == lastPage) ||
+                        firstPage <= 0 ||
+                        lastPage <= 0 ||
+                        firstPage > lastPage) {
+                        return;
+                    }
+                }
+
+                win.destroy();
+                PrintReport(format, usePageRange, firstPage, lastPage);
+            });
+
+            let win = $("#popup").kendoWindow({
+                title: "@CommonResx.ExportReport",
+                visible: false,
+                actions: [],
+                modal: true,
+                resizable: false,
+                width: "400px",
+                height: "360px"
+            }).data("kendoWindow");
+
+            win.center();
+            win.open();
+        }
+        else {
+            PrintReport(@ConfigurationHelper.ReportDefaultExportFormat, false, 0, 0);
+        }
+    });
+
+</script>
