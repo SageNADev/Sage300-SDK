@@ -3,8 +3,8 @@ set SDKProjectFolder=\Projects\Sage300-SDK\Develop
 set SDKRoot=%SDKDrive%%SDKProjectFolder%
 
 REM Setup Visual Studio environment variables first
-REM set VisualStudioVersion=2017
-set VisualStudioVersion=2019
+set VisualStudioVersion=2017
+REM set VisualStudioVersion=2019
 call "C:\Program Files (x86)\Microsoft Visual Studio\%VisualStudioVersion%\Enterprise\Common7\Tools\VsDevCmd.bat"
 
 REM Sage 300 Solution and Code Generation Wizards
