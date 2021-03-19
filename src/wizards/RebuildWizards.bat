@@ -1,44 +1,39 @@
-set SDKDrive=D:
-set SDKProjectFolder=\Projects\Sage300-SDK\Develop
-set SDKRoot=%SDKDrive%%SDKProjectFolder%
+set RootDrive=D:
+set SDKRoot=%RootDrive%\Projects\Sage300-SDK\Develop
+set WizardSourceRoot=%SDKRoot%\src\wizards
+set BuildConfiguration=Release
 
 REM Setup Visual Studio environment variables first
-set VisualStudioVersion=2017
-REM set VisualStudioVersion=2019
-call "C:\Program Files (x86)\Microsoft Visual Studio\%VisualStudioVersion%\Enterprise\Common7\Tools\VsDevCmd.bat"
+set VSVersion=2019
+REM set VSVersion=2017
+call "C:\Program Files (x86)\Microsoft Visual Studio\%VSVersion%\Enterprise\Common7\Tools\VsDevCmd.bat"
 
-REM Sage 300 Solution and Code Generation Wizards
-cd %SDKRoot%\src\Wizards\
-cd Sage300UIWizardPackage
-set solutionFileName=Sage300UIWizardPackage.sln
-set buildConfigurationName=Release
-msbuild.exe %solutionFileName% /t:Rebuild /p:Configuration=%buildConfigurationName%
+REM --------------------------------------------------------------------------------------------------------
+REM (UI Wizards) Sage 300 Solution and Code Generation Wizards
+cd %WizardSourceRoot%\Sage300UIWizardPackage
+set sln=Sage300UIWizardPackage.sln
+msbuild.exe %sln% /t:Rebuild /p:Configuration=%BuildConfiguration%
 
-REM Sage 300 Upgrade Wizard
-cd %SDKRoot%\src\Wizards\
-cd Sage300UpgradeWizard\Sage300UpgradeWizardPackage
-set solutionFileName=Sage300UpgradeWizardPackage.sln
-set buildConfigurationName=Release
-msbuild.exe %solutionFileName% /t:Rebuild /p:Configuration=%buildConfigurationName%
+REM --------------------------------------------------------------------------------------------------------
+REM Upgrade Wizard
+cd %WizardSourceRoot%\Sage300UpgradeWizard\Sage300UpgradeWizardPackage
+set sln=Sage300UpgradeWizardPackage.sln
+msbuild.exe %sln% /t:Rebuild /p:Configuration=%BuildConfiguration%
 
-REM Sage 300 Language Resource Wizard
-cd %SDKRoot%\src\Wizards\
-cd Sage300LanguageResourceWizard\Sage300LanguageResourceWizardPackage
-set solutionFileName=Sage300LanguageResourceWizardPackage.sln
-set buildConfigurationName=Release
-msbuild.exe %solutionFileName% /t:Rebuild /p:Configuration=%buildConfigurationName%
+REM --------------------------------------------------------------------------------------------------------
+REM UI Customization Wizard (Plugin)
+cd %WizardSourceRoot%\Customization\Sage300UICustomizationWizard
+set sln=Sage300UICustomizationWizard.sln
+msbuild.exe %sln% /t:Rebuild /p:Configuration=%BuildConfiguration%
 
-REM Sage 300 UI Customization Wizard (Plugin)
-cd %SDKRoot%\src\Wizards\
-cd Customization\Sage300UICustomizationWizard
-set solutionFileName=Sage300UICustomizationWizard.sln
-set buildConfigurationName=Release
-msbuild.exe %solutionFileName% /t:Rebuild /p:Configuration=%buildConfigurationName%
+REM --------------------------------------------------------------------------------------------------------
+REM Customization Wizard (Standalone)
+cd %WizardSourceRoot%\Customization\Sage300CustomizationWizard
+set sln=Sage300CustomizationWizard.sln
+msbuild.exe %sln% /t:Rebuild /p:Configuration=%BuildConfiguration%
 
-REM Sage 300 Customization Wizard (Standalone)
-cd %SDKRoot%\src\Wizards\
-cd Customization\Sage300CustomizationWizard
-set solutionFileName=Sage300CustomizationWizard.sln
-set buildConfigurationName=Release
-msbuild.exe %solutionFileName% /t:Rebuild /p:Configuration=%buildConfigurationName%
-
+REM --------------------------------------------------------------------------------------------------------
+REM Language Resource Wizard
+cd %WizardSourceRoot%\Sage300LanguageResourceWizard\Sage300LanguageResourceWizardPackage
+set sln=Sage300LanguageResourceWizardPackage.sln
+msbuild.exe %sln% /t:Rebuild /p:Configuration=%BuildConfiguration%
