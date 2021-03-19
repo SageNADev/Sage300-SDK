@@ -86,7 +86,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <returns>Destination or Empty String</returns>
         public string DestinationDefault(Solution solution)
         {
-            Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             var retVal = string.Empty;
 
             try
@@ -106,7 +105,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <returns>Destination Web or Empty String</returns>
         public string DestinationWebDefault(Solution solution)
         {
-            Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             var retVal = string.Empty;
 
             try
