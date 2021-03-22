@@ -162,7 +162,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="EstimatedTax" xml:space="preserve">
-    <value>(Estimated Retainage Tax %1)</value>
+    <value>(Estimated Tax %1)</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="InvoiceAmount" xml:space="preserve">
@@ -283,7 +283,7 @@
     <value>Invoice</value>
   </data>
   <data name="EstimatedTaxAmount" xml:space="preserve">
-    <value>Estimated Retainage Tax</value>
+    <value>Estimated Tax</value>
   </data>
   <data name="InvalidSalesperson" xml:space="preserve">
     <value>Salesperson code {0} is not defined in A/R Salespersons.</value>

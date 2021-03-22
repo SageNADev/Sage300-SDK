@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
@@ -8,14 +8,7 @@
         <div class="message-control multiError-msg">
             <div class="title">
                 <span class="icon multiError-icon"></span>
-                @if (ViewBag.ErrorTitle != null)
-                {
-                    <h3>@ViewBag.ErrorTitle</h3>
-                }
-                else
-                {
-                    <h3>@CommonResx.UnexpectedError:</h3>
-                }
+                <h3>@CommonResx.UnexpectedError:</h3>
             </div>
             <div class="msg-content">
                 @if (Model != null && Model.Any())

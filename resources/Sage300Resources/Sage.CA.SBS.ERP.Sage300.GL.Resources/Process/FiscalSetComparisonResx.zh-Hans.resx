@@ -133,6 +133,10 @@
     <value>余额</value>
     <comment>Toggle</comment>
   </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>币种类型</value>
+    <comment>List</comment>
+  </data>
   <data name="Difference" xml:space="preserve">
     <value>差异</value>
     <comment>Table Column</comment>

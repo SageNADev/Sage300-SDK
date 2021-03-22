@@ -137,7 +137,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="BtnCheckCap" xml:space="preserve">
-    <value>Vérifier l'intégrité des données</value>
+    <value>Vérifier l&apos;intégrité des données</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="BtnExcludeAll" xml:space="preserve">
@@ -179,11 +179,11 @@
     <comment>Application Options Pop up window</comment>
   </data>
   <data name="IntegrityChecker" xml:space="preserve">
-    <value>Vérification de l'intégrité de {0}</value>
+    <value>Vérification de l&apos;intégrité de {0}</value>
     <comment>Application Options Pop up window</comment>
   </data>
   <data name="IntroText" xml:space="preserve">
-    <value>Rechercher des erreurs dans les données d'application et corriger les erreurs mineures.</value>
+    <value>Rechercher des erreurs dans les données d&apos;application et corriger les erreurs mineures.</value>
     <comment>Intro Text</comment>
   </data>
   <data name="LblAvailAppsCap" xml:space="preserve">
@@ -246,10 +246,6 @@
   </data>
   <data name="DeleteOrphanRecords" xml:space="preserve">
     <value>Supprimer les enregistrements orphelins</value>
-    <comment>Application Options Pop up window</comment>
-  </data>
-  <data name="OptionURLNotValid" xml:space="preserve">
-    <value>Votre demande n’a pas pu aboutir soit parce qu’aucune option n’est disponible ou parce que la configuration d’un paramètre du fichier {0}.INI est incorrecte. Contactez l'administrateur de votre système pour obtenir de l'aide.</value>
     <comment>Application Options Pop up window</comment>
   </data>
 </root>

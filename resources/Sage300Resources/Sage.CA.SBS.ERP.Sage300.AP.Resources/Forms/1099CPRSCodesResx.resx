@@ -118,21 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AP0007" xml:space="preserve">
-    <value>1099/CPRS Codes</value>
+    <value>1099_CPRS Codes</value>
     <comment>Import/Export</comment>
-  </data>
-  <data name="AmountType" xml:space="preserve">
-    <value>Amount Type</value>
-  </data>
-  <data name="CPRS" xml:space="preserve">
-    <value>CPRS</value>
   </data>
   <data name="CPRSCodeDesc" xml:space="preserve">
     <value>1099/CPRS Code Description</value>
     <comment>Field</comment>
-  </data>
-  <data name="Empty" xml:space="preserve">
-    <value />
   </data>
   <data name="Entity" xml:space="preserve">
     <value>A/P 1099/CPRS Codes</value>
@@ -141,17 +132,5 @@
   <data name="MinAmtToRpt" xml:space="preserve">
     <value>Minimum Amount to Report</value>
     <comment>Auto-Generated</comment>
-  </data>
-  <data name="Misc" xml:space="preserve">
-    <value>1099-Misc</value>
-  </data>
-  <data name="Nec" xml:space="preserve">
-    <value>1099-Nec</value>
-  </data>
-  <data name="T5018" xml:space="preserve">
-    <value>T5018</value>
-  </data>
-  <data name="_1099" xml:space="preserve">
-    <value>1099</value>
   </data>
 </root>

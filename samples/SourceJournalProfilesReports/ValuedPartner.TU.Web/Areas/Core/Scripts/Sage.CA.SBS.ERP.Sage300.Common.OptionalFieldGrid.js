@@ -263,7 +263,7 @@ sg.optionalFieldControl = function () {
             viewId = _settings[gridName].viewId,
             filter = _settings[gridName].filter,
             buttonId = "btnFinderGridCol" + field.toLowerCase(),
-            txtInput = '<div class="edit-container"><div class="edit-cell inpt-text"><input name="{0}" id="txtGridCol{0}" type="text" maxlength="{1}" class="{2}"/></div>',
+            txtInput = '<div class="edit-container"><div class="edit-cell inpt-text"><input name="{0}" id="txtGridCol{0}" maxlength="{1}" class="{2}"/></div>',
             txtFinder = '<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="{3}"/></div></div>',
             isFinderButton = false,
             html = kendo.format(txtInput + txtFinder, field, maxLength, txtClass, buttonId);
@@ -302,9 +302,6 @@ sg.optionalFieldControl = function () {
                 } else {
                     model.set(field, value);
                 }
-            } else if (e.altKey && e.keyCode === sg.constants.KeyCodeEnum.DownArrow) {
-                isFinderButton = true;
-                _isFinderButton = true;
             }
         });
 
@@ -323,7 +320,6 @@ sg.optionalFieldControl = function () {
                 errorMsg = kendo.format(globalResource.DuplicateOptionalField, value.toUpperCase());
 
             _isFinderButton = false;
-            _sendChange[gridName] = true;
             if (field === "OPTFIELD") {
                 if (_checkDuplicateOptField(gridName, value)) {
                     _showMessage(errorMsg);
@@ -373,7 +369,6 @@ sg.optionalFieldControl = function () {
             finder.initKeyValues = isValue ? [model.OPTFIELD, value || model.VALUE] : [initLocation, model.OPTFIELD || value];
             sg.viewFinderHelper.setViewFinder(buttonId, onFinderSelected.bind(null, options), finder, onFinderCancel.bind(null, options));
         });
-        sg.utls.findersList["txtGridCol" + field] = buttonId;
 
         _setEditorInitialValue(gridName, options);
     }

@@ -1414,7 +1414,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                 }
             });
 
-            $("#windowManager").on("click", function () {
+            $("#windowManager").on("mouseenter", function () {
                 if ($('#dvWindows').children().length > 0)
                     $("#windowManager > div").show();
 
@@ -1439,26 +1439,11 @@ var TaskDockMenuBreadCrumbManager = function () {
                         return false;
                     }
                 });
-
-                $("#recentWindowManager > div").hide();
-
             }).on("mouseleave", function () {
                 $("#windowManager > div").hide();
             });
 
-            $("#recentWindowManager").on("click", recentWindowsMenu.show).on("mouseleave", recentWindowsMenu.hide);
-
-            // D-41776 iPad issue - Closing the Window Manager when touched outside of the popup
-
-            $("#recentWindowManager, #navbarSide, #breadcrumb, #screenLayout, #btnViewReports, #btnViewInquiries, #btnViewNotes, #globalHeader").click(function () {
-                $("#windowManager > div").hide();
-            });
-
-            // D-41776 iPad issue - Closing the Recently Opened Windows when touched outside of the popup
-
-            $("#windowManager, #navbarSide, #breadcrumb, #screenLayout, #btnViewReports, #btnViewInquiries, #btnViewNotes,  #globalHeader").click(function () {
-                $("#recentWindowManager > div").hide();
-            });
+            $("#recentWindowManager").on("mouseenter", recentWindowsMenu.show).on("mouseleave", recentWindowsMenu.hide);
 
             $('.top_nav_drop_content').click(function () {
                 isReload = false;
@@ -1654,13 +1639,25 @@ var TaskDockMenuBreadCrumbManager = function () {
             widgetUI = { NavigableMenuDetail: {} };
 
             $(".kpi .btnOpenReport").on("click", function (event) {
-                hideIframes();
+                // Set var for report display in separate tab, if not already set
+                sg.utls.setReportDisplayInSeparateTab();
+                // If printing in a separate tab, we will not show/hide/etc.
+
+                if (!sg.utls.reportDisplayInSeparateTab) {
+                    hideIframes();
+                }
                 iFrameUrl = $(this).closest(".kpi").find("iframe").attr("src");
                 if (iFrameUrl.indexOf("AgedPayable") > 0) {
-                    $('#screenLayout').show();
+                    if (!sg.utls.reportDisplayInSeparateTab) {
+                        $('#screenLayout').show();
+                        $('#widgetLayout').hide();
+                    }
                     sg.utls.ajaxPost(sg.utls.url.buildUrl("KPI", "AgedPayablesReport", "Execute"), {}, loadOptions.executeAgedPayableReport);
                 } else if (iFrameUrl.indexOf("AgedReceivable") > 0) {
-                     $('#screenLayout').show();
+                    if (!sg.utls.reportDisplayInSeparateTab) {
+                        $('#screenLayout').show();
+                        $('#widgetLayout').hide();
+                    }
                     sg.utls.ajaxPost(sg.utls.url.buildUrl("KPI", "AgedReceivablesReport", "Execute"), {}, loadOptions.executeAgedReceivableReport);
                 }
             });
@@ -1691,16 +1688,6 @@ var TaskDockMenuBreadCrumbManager = function () {
             $('#nav-home').kendoMenu();
 
             $(".menu-section a:not(.with-menu)").on("click", screenLauncher);
-
-            // Closing Exceed Limit Message popup
-            var keyHandler = function (e) {
-                //if the key press is ESC
-                var KEY_ESC = 27;
-                if (e.keyCode === KEY_ESC) {
-                    $(".icon.msgCtrl-close").trigger("click");
-                }
-            };
-            $(document).on("keydown", keyHandler);
 
             $('.icon.msgCtrl-close').click(function () {
                 $('#dvWindowsExceedLimitErrorMessage').hide();
@@ -1804,6 +1791,3 @@ window.addEventListener("message", function (e) {
         }
     }
 }, false);
-
-
-

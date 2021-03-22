@@ -3579,10 +3579,4 @@
   <data name="CustomerName" xml:space="preserve">
     <value>Nombre del Cliente</value>
   </data>
-  <data name="PaymentsID" xml:space="preserve">
-    <value>ID de Aceptación de Pagos de CS</value>
-  </data>
-  <data name="PaymentsURL" xml:space="preserve">
-    <value>URL de Aceptación de Pagos de CS</value>
-  </data>
 </root>

@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 
 // @ts-check
 
@@ -257,7 +257,6 @@ $.extend(sg.utls, {
     gridPageSize: 10,
     reorderable: false,
     hasTriedToNotify: false,
-    findersList: {}, //List of finders for hotkey
     formatFiscalPeriod: function (fiscalPeriod) {
         if (fiscalPeriod === "14") {
             return "ADJ";
@@ -793,6 +792,8 @@ $.extend(sg.utls, {
 
     homeCurrency: null,
 
+    reportDisplayInSeparateTab: null,
+
     isPhoneNumberFormatRequired: null,
 
     loadHomeCurrency: function () {
@@ -831,9 +832,59 @@ $.extend(sg.utls, {
         }
     },
 
+    setReportDisplayInSeparateTab: function () {
+        // Set report display in separate tab, if not already set
+        if (sg.utls.reportDisplayInSeparateTab === null) {
+            sg.utls.ajaxCache(sg.utls.url.buildUrl("Core", "Common", "GetReportDisplayInSeparateTab"), {}, function (result) {
+                sg.utls.reportDisplayInSeparateTab = result.ReportDisplayInSeparateTab;
+            }, "ReportDisplayInSeparateTab");
+        }
+    },
+
     openReport: function (reportToken, checkTitle, callbackOnClose) {
-        var reportUrl = kendo.format(sg.utls.url.buildUrl("Core", "ExportReport", "ExportDialog") + "?token={0}", reportToken);
-        window.open(reportUrl);
+        //report use web forms, not using route, session id put on query string
+        var reportUrlFormat = $("#hdnUrl").val() + "../../WebForms/ReportViewer.aspx?token={0}&session={1}";
+        var urls = $("#hdnUrl").val().split('/').filter(function (el) { return el; });
+        var reportUrl = kendo.format(reportUrlFormat, reportToken, urls[urls.length-1]);
+
+        // Set var for report display in separate tab, if not already set
+        sg.utls.setReportDisplayInSeparateTab();
+
+        // Display on seperate tab if web.config entry is true OR being printted from host other than the Sage 300 home page
+        if (sg.utls.reportDisplayInSeparateTab || !sg.utls.isPortalIntegrated()) {
+            window.open(reportUrl);
+        } else {
+            //TODO: this is method to open report in Portal Windows Dock
+            var reportName = $("section.header-group h3").html();
+            if (reportName === undefined) {    // Transition to R3 layout
+                reportName = $("section.header-group-1 h3").html();
+            }
+            if (checkTitle !== undefined && typeof checkTitle == 'string') {
+                reportName = checkTitle;
+            }
+            window.top.postMessage("isReport" + " " + reportUrl + " " + reportName + " " + $('form').prop('action'), "*");
+
+            // If provided a callback, bind it to the report (crystal) window
+            if (sg.utls.isFunction(callbackOnClose)) {
+                // Need to delay a bit for the window to be established
+                setTimeout(function () {
+                    // Get the iFrame object where the report is loaded
+                    var iFrameObject = sg.utls.getReportIFrame(reportToken);
+                    if (iFrameObject !== undefined) {
+                        // Get the report window
+                        var reportWin = iFrameObject.contentWindow;
+                        // Need to bind to an event   
+                        $(iFrameObject).on("load", function () {
+                            // Bind to the before unload event
+                            $(reportWin).on("beforeunload", function () {
+                                // Invoke the callback
+                                callbackOnClose.call();
+                            });
+                        });
+                    }
+                }, 500);
+            }
+        }
     },
 
     // Determines which iFrame the report has been opened in
@@ -1493,11 +1544,11 @@ $.extend(sg.utls, {
      * @param {string} btnYesLabelIn - Optional - The text for the 'Yes' button
      * @param {string} btnNoLabelIn - Optional - The text for the 'No' button
      */
-    showConfirmationDialogYesNo: function (callbackYes, callbackNo, messageIn, titleIn, btnYesLabelIn, btnNoLabelIn, noPostFix = false) {
+    showConfirmationDialogYesNo: function (callbackYes, callbackNo, messageIn, titleIn, btnYesLabelIn, btnNoLabelIn) {
         var DialogID = 'confirmationDialog';
         var DialogParentID = 'confirmationParent';
         var InpageTemplateIDRoot = 'generic-confirmation';
-        var randomPostfix = noPostFix ? '' : sg.utls.makeRandomString(5);
+        var randomPostfix = sg.utls.makeRandomString(5);
         var InpageTemplateID = InpageTemplateIDRoot + randomPostfix;
 
         messageIn = sg.utls.htmlEncode(messageIn);
@@ -2027,16 +2078,6 @@ $.extend(sg.utls, {
                 };
                 $(document).on("click", ".msgCtrl-close", closeHandler);
             }
-            
-            var keyHandler = function (e) {
-                //if the key press is ESC
-                var KEY_ESC = 27;
-                if (e.keyCode === KEY_ESC) {
-                    $(".msgCtrl-close").trigger("click");
-                    $(document).off("keyup keydown", keyHandler);
-                }
-            };
-            $(document).on("keyup keydown", keyHandler);
         }
     },
 
@@ -2525,8 +2566,7 @@ $.extend(sg.utls, {
     },
 
     setFinder: function (id, searchFinder, filter, onSelectCallBack, onCancelCallBack, title, field) {
-        var element = $("#" + id);
-        element.Finder({
+        $("#" + id).Finder({
             searchFinder: searchFinder,
             pageNumber: 0,
             pageSize: 10,
@@ -2538,27 +2578,6 @@ $.extend(sg.utls, {
             title: title,
             id: id
         });
-
-        sg.utls.registerFinderHotkey(element, id);
-    },
-
-    registerFinderHotkey: function (element, finderId) {
-        if (element[0]) {
-            var textbox = $(element[0].parentElement).find("input:text")[0];
-            if (!textbox && element[0].parentElement) {
-                textbox = $(element[0].parentElement.parentElement).find("input:text")[0];
-            }
-            if (!textbox && element[0].parentElement.parentElement) {
-                textbox = $(element[0].parentElement.parentElement.parentElement).find("input:text")[0];
-            }
-            if (textbox && !sg.utls.findersList[textbox.id]) {
-                //Kendo numeric textbox has two html input elements and only the second one contains the id
-                if (!textbox.id) {
-                    textbox = textbox.nextSibling;
-                }
-                sg.utls.findersList[textbox.id] = finderId;
-            }
-        }
     },
 
     getTextBoxVal: function (id) {
@@ -2870,40 +2889,6 @@ $.extend(sg.utls, {
             return parseFloat(value)
         else
             return parseInt(value, 10);
-    },
-
-    // Init numeric textbox
-    initNumericTextBox: function (id, decimals, spinners, step, maxDigits, minValue, maxValue) {
-        $("#" + id).kendoNumericTextBox({
-            format: "n" + decimals,
-            spinners: spinners,
-            step: step,
-            decimals: decimals
-        }).data("kendoNumericTextBox");
-
-        // Get newly created config
-        var numericTextbox = $("#" + id).data("kendoNumericTextBox");
-        
-        // Use or generate minimum value
-        if (minValue === undefined) {
-            minValue = sg.utls.getMinValue("0", decimals, maxDigits, decimals > 0);
-        }
-        // Use or generate maximum value
-        if (maxValue === undefined) {
-            maxValue = sg.utls.getMaxValue("9", decimals, maxDigits, decimals > 0);
-        }
-
-        numericTextbox.options.min = minValue;
-        numericTextbox.options.max = maxValue;
-        sg.utls.kndoUI.restrictDecimals(numericTextbox, decimals, maxDigits);
-    },
-
-    // Set numeric textbox
-    setNumericTextBox: function (id) {
-        var numericTextbox = $("#" + id).data("kendoNumericTextBox");
-        if (numericTextbox !== undefined) {
-            numericTextbox.value($("#" + id).val());
-        }
     },
 
     formatPhoneNumber: function (value, isApplyFormat) {
@@ -3416,10 +3401,6 @@ $.extend(sg.utls, {
             $targetHTML.removeAttr(sg.utls.localFormSizeDataTag);
             
         });
-    },
-
-    deepCopy: function (obj) {
-        return JSON.parse(JSON.stringify(obj));
     }
 
     //initBackgroundImageCycling: function () {
@@ -3938,16 +3919,6 @@ $(function () {
         });
     }
 
-    var keyHandler = function (e) {
-        //if the key press is ESC
-        var KEY_ESC = 27;
-        if (e.keyCode === KEY_ESC) {
-            $(".msgCtrl-close").trigger("click");
-            $(document).off("keydown", keyHandler);
-        }
-    };
-    $(document).on("keydown", keyHandler);
-
     $(document).on("click", ".msgCtrl-close", function () {
         $("#message").hide();
         $("#message").empty();
@@ -3975,25 +3946,6 @@ $(function () {
         }
 
         return true;
-    });
-
-    // Open sibling finder when textbox is focused and Alt+DownArrow are pressed
-    $(document).on('keyup keydown', function (e) {
-        if (e.altKey && e.keyCode === sg.constants.KeyCodeEnum.DownArrow) {
-            var textbox = $(document.activeElement);
-            if (textbox.attr('type') === "text") {
-                var finderId = sg.utls.findersList[textbox.attr('id')];
-                if (finderId) {
-                    var finder = $("#" + finderId);
-                    if (finder.is(':visible') && !finder.is(':disabled')) {
-                        finder.focus();
-                        //Some finders are initialized on mousedown
-                        finder.trigger('mousedown');
-                        finder.trigger('click');
-                    }
-                }
-            }
-        }
     });
 
     $(document).on('mouseup mousedown', function (e) {

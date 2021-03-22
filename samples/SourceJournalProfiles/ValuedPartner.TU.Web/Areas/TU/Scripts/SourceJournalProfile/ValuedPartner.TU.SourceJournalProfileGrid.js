@@ -28,19 +28,6 @@ var sourceJournalProfileGrid = {
     lastSelectedColumn: null,
 
     utility: {
-
-        // URL to get the data from the server. 
-        pageUrl: sg.utls.url.buildUrl("TU", "SourceJournalProfile", "GetSourceJournal"),
-
-        /**
-         * @function
-         * @name getParam
-         * @description Create and return a grid parameters object
-         * @namespace sourceJournalProfileGrid.utility
-         * @public
-         * 
-         * @returns {object} The parameters object
-         */
         getParam: function () {
             var grid = $('#SourceCodeGrid').data("kendoGrid");
             var pageNumber = grid.dataSource.page();
@@ -58,18 +45,10 @@ var sourceJournalProfileGrid = {
             return parameters;
         },
 
-        /**
-         * @function
-         * @name buildGridData
-         * @description Call back function when Get is successful. In this, the data for the grid 
-         *              and the total results count are to be set along with updating knockout
-         * @namespace sourceJournalProfileGrid.utility
-         * @public
-         *
-         * @param {object} successData
-         * 
-         * @returns {object} The gridData object
-         */
+        // URL to get the data from the server. 
+        pageUrl: sg.utls.url.buildUrl("TU", "SourceJournalProfile", "GetSourceJournal"),
+
+        // Call back function when Get is successful. In this, the data for the grid and the total results count are to be set along with updating knockout
         buildGridData: function (successData) {
 
             var gridData = null;
@@ -114,13 +93,6 @@ var sourceJournalProfileGrid = {
             return gridData;
         },
 
-        /**
-         * @function
-         * @name afterDataBind
-         * @description 
-         * @namespace sourceJournalProfileGrid.utility
-         * @public
-         */
         afterDataBind: function () {
             var selectAllCheckBox = $("#selectAllChk");
             if (selectAllCheckBox.is(':checked')) {
@@ -155,47 +127,17 @@ var sourceJournalProfileGrid = {
             }
         },
         
-        /**
-         * @function
-         * @name dataChange
-         * @description
-         * @namespace sourceJournalProfileGrid.utility
-         * @public
-         * 
-         * @param {object} changedData The changedData object
-         */
         dataChange: function (changedData) {
             sourceJournalProfileUI.SerialNumber = changedData.rowData.SerialNumber;
         },
     },
     
-    /**
-     * @function
-     * @name resetFocus
-     * @description
-     * @namespace sourceJournalProfileGrid
-     * @public
-     *
-     * @param {object} grid The grid object
-     * @param {object} data The data item specification
-     * @param {string} columnName The column name
-     */
     resetFocus: function (grid, data, columnName) {
         var row = sg.utls.kndoUI.getRowForDataItem(data);
         grid.closeCell();
         grid.editCell(row.find(">td").eq(columnName));
     },
 
-    /**
-     * @function
-     * @name resetFocus2
-     * @description
-     * @namespace sourceJournalProfileGrid
-     * @public
-     *
-     * @param {object} dataItem The data item specification
-     * @param {number} index The column index
-     */
     resetFocus2: function (dataItem, index) {
         var row = sg.utls.kndoUI.getRowForDataItem(dataItem);
         setTimeout(function () {
@@ -203,13 +145,6 @@ var sourceJournalProfileGrid = {
         }, 10);
     },
 
-    /**
-     * @function
-     * @name deleteLine
-     * @description Delete a line in the grid with a confirmation dialog
-     * @namespace sourceJournalProfileGrid
-     * @public
-     */
     deleteLine: function () {
         var confirmationMsg;
         if ($("#selectAllChk").is(":checked") || $('.selectChk:checked').length > 1) {
@@ -258,19 +193,11 @@ var sourceJournalProfileGrid = {
         return false;
     },
 
-    /**
-     * @function
-     * @name bindAllEvents
-     * @description Set up bindings for grid events
-     * @namespace sourceJournalProfileGrid
-     * @public
-     */
     bindAllEvents: function () {
         SourceCodeGridConfig.editorEvents.Source.PreEditEvent = function(container, options) {
             sourceJournalProfileUI.sourceJournalLineId = options.model.uid;
             return true;
         };
-
         SourceCodeGridConfig.editorEvents.Source.PostEditEvent = function(container, options) {
             $("#Source").change(function (e) {
                 var sourceCode = e.target.value;

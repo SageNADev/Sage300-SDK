@@ -133,6 +133,10 @@
     <value>Saldo</value>
     <comment>Toggle</comment>
   </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>Tipo de Moneda</value>
+    <comment>List</comment>
+  </data>
   <data name="Difference" xml:space="preserve">
     <value>Diferencia</value>
     <comment>Table Column</comment>

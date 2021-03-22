@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -592,15 +592,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Updates for how reports are generated..
-        /// </summary>
-        internal static string ReleaseSpecificTitle_ReportUpdates_For_2021_2 {
-            get {
-                return ResourceManager.GetString("ReleaseSpecificTitle_ReportUpdates_For_2021_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Consolidation of Enumeration Files.
         /// </summary>
         internal static string ReleaseSpecificTitleConsolidateEnumerations {
@@ -842,39 +833,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will automatically add a reference to an executable program 
-        ///called &apos;{0}&apos; to the Web project. 
-        ///
-        ///This application is used to generate reports within Sage 300.
-        ///After this file is added as a reference to the web project,
-        ///it is recommended that one manually replace the hard-coded 
-        ///Sage 300 web path with the $(Sage300WebDir) macro. This can 
-        ///be done by unloading the Web project, editing the file and 
-        ///then reloading the Web project. The following is an example:
-        ///			 
-        ///Search for the following (N [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Template_ReleaseSpecificContent_ReportUpdates_For_2021_2 {
-            get {
-                return ResourceManager.GetString("Template_ReleaseSpecificContent_ReportUpdates_For_2021_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to This step will automatically add a new file called &apos;{0}&apos;.
         /// </summary>
         internal static string Template_ReleaseSpecificDesc_AddBinIncludeFile {
             get {
                 return ResourceManager.GetString("Template_ReleaseSpecificDesc_AddBinIncludeFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This step will automatically add a new file called &apos;{0}&apos;.
-        /// </summary>
-        internal static string Template_ReleaseSpecificDesc_ReportUpdates_For_2021_2 {
-            get {
-                return ResourceManager.GetString("Template_ReleaseSpecificDesc_ReportUpdates_For_2021_2", resourceCulture);
             }
         }
         

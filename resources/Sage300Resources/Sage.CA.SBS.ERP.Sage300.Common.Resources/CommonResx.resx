@@ -1555,46 +1555,4 @@
   <data name="Template_ReportCouldNotBeLocated" xml:space="preserve">
     <value>The report file '{0}' could not be located. Please contact your administrator for assistance.</value>
   </data>
-  <data name="SignUp" xml:space="preserve">
-    <value>Sign Up</value>
-  </data>
-  <data name="Code" xml:space="preserve">
-    <value>Code</value>
-    <comment>Service Fabric Reauthentication  Content</comment>
-  </data>
-  <data name="ReauthenticationContent1" xml:space="preserve">
-    <value>A unique code was sent to your email address on file. You need to use this code as soon as possible since it will soon expire for security purposes.</value>
-    <comment>Service Fabric Reauthentication Content</comment>
-  </data>
-  <data name="ReauthenticationContent2" xml:space="preserve">
-    <value>Enter the code below and then click OK to continue.</value>
-    <comment>Service Fabric Reauthentication Content</comment>
-  </data>
-  <data name="BracketNone" xml:space="preserve">
-    <value>(None)</value>
-  </data>
-  <data name="ToFirstPage" xml:space="preserve">
-    <value>First page</value>
-  </data>
-  <data name="ToLastPage" xml:space="preserve">
-    <value>Last page</value>
-  </data>
-  <data name="ToNextPage" xml:space="preserve">
-    <value>Next page</value>
-  </data>
-  <data name="ToPreviousPage" xml:space="preserve">
-    <value>Previous page</value>
-  </data>
-  <data name="FileFormat" xml:space="preserve">
-    <value>File Format</value>
-  </data>
-  <data name="PageRange" xml:space="preserve">
-    <value>Page Range</value>
-  </data>
-  <data name="SelectPages" xml:space="preserve">
-    <value>Select Pages</value>
-  </data>
-  <data name="ExportReport" xml:space="preserve">
-    <value>Export Report</value>
-  </data>
 </root>

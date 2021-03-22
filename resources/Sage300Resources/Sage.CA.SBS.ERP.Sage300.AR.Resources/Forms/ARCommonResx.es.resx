@@ -3988,40 +3988,4 @@
   <data name="EstimatedTaxWithheld" xml:space="preserve">
     <value>Impuesto Retenido Estimado</value>
   </data>
-  <data name="CommentExpiration" xml:space="preserve">
-    <value>Caducidad de Comentario</value>
-  </data>
-  <data name="CommentFollowUp" xml:space="preserve">
-    <value>Seguimiento de Comentario</value>
-  </data>
-  <data name="CurrentDue" xml:space="preserve">
-    <value>Monto a Pagar Actual</value>
-  </data>
-  <data name="FuncionalARBalance" xml:space="preserve">
-    <value>Saldo de C/C en Moneda Funcional</value>
-  </data>
-  <data name="FunctionalCurrentDue" xml:space="preserve">
-    <value>Monto a Pagar Actual en Moneda Funcional</value>
-  </data>
-  <data name="FunctionalOutstandingRetainage" xml:space="preserve">
-    <value>Retención Pendiente en Moneda Funcional</value>
-  </data>
-  <data name="FunctionalOverdueAmount" xml:space="preserve">
-    <value>Monto Vencido en Moneda Funcional</value>
-  </data>
-  <data name="NationalARBalance" xml:space="preserve">
-    <value>Saldo de C/C de Cuenta Nacional</value>
-  </data>
-  <data name="OverdueAmount" xml:space="preserve">
-    <value>Monto Vencido</value>
-  </data>
-  <data name="CustomerListPreview" xml:space="preserve">
-    <value>Vista Preliminar de Lista de Clientes</value>
-  </data>
-  <data name="FromToRangeErrorMessage" xml:space="preserve">
-    <value>El asiento en la casilla Desde no puede ser mayor que el asiento en la casilla Hasta</value>
-  </data>
-  <data name="CustomerRange" xml:space="preserve">
-    <value>Rango de Clientes</value>
-  </data>
 </root>

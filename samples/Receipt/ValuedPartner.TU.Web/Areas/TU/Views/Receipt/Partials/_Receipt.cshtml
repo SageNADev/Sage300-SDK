@@ -99,11 +99,7 @@
     <div class="form-group">
         <div class="dropdown-group" data-bind="visible:IsVisibleOnMode">
             @Html.KoSageLabelFor(model => model.Data.ReceiptType, "Type", new { @visible = "IsVisibleOnMode" })
-            @Html.KoSageDropDownListFor(model => model.Data.ReceiptType,
-                                        Model.ReceiptType,
-                                        null,
-                                        new { @value = "Data.ReceiptType", @optionsText = "'Text'", @optionsValue = "'Value'" },
-                                        new { @class = "default" })
+            @Html.KoSageDropDownListFor(model => model.Data.ReceiptType, Model.ReceiptType, null, new { @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @class = "default" })
         </div>
         <div class="input-group">
             @Html.SageLabel("lblPONumber", "PONumber")
@@ -200,11 +196,7 @@
         </div>
         <div class="dropdown-group" data-bind="visible:IsVisibleAllocType">
             @Html.KoSageLabelFor(model => model.Data.AdditionalCostAllocationType, ReceiptResx.AdditionalCost, new { @visible = "IsVisibleAllocType" })
-            @Html.KoSageDropDownListFor(model => model.Data.AdditionalCostAllocationType,
-                                        Model.AdditionalCostAllocationType,
-                                        null,
-                                        new { @value = "Data.AdditionalCostAllocationType", @optionsText = "'Text'", @optionsValue = "'Value'", @sagedisable = "Data.isControlsDisabledOnReadMode" },
-                                        new { @class = "default" })
+            @Html.KoSageDropDownListFor(model => model.Data.AdditionalCostAllocationType, Model.AdditionalCostAllocationType, null, new { @optionsText = "'Text'", @optionsValue = "'Value'", @sagedisable = "Data.isControlsDisabledOnReadMode" }, new { @class = "default" })
         </div>
         <div class="input-group">
             @Html.KoSageLabelFor(model => model.Data.AdditionalCost, ReceiptResx.AdditionalCost, new { @sagedisable = "disableAdditionalCost" })

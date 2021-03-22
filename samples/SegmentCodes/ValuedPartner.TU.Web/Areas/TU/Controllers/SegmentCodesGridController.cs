@@ -70,13 +70,11 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             {
                 // get the business entity from the session pool
                 var entity = GetBusinessEntityFromSessionPool(viewID);
+
                 CreateNewRecord(entity, record);
-                
-                if (record.Count != 0)
-                {
-                    entity.SetValue("SEGMENT", record["SEGMENT"], true);
-                }
-                     
+
+                entity.SetValue("SEGMENT", record["SEGMENT"], true);
+
                 return SerializeCurrentRecord(entity);
 
             }

@@ -393,10 +393,6 @@ table {
   padding: 0;
 }
 
-.k-widget.k-dropdown.k-state-border-down {
-  outline: 3px solid @input-border-focus;
-}
-
 /* `Font Global
 ----------------------------------------------------------------------------------------------------*/
 
@@ -412,7 +408,11 @@ textarea {
 .icon,
 .k-icon,
 .k-tool-icon,
-.k-column-menu .k-sprite{
+.k-grouping-dropclue,
+.k-drop-hint,
+.k-column-menu .k-sprite,
+.k-grid-mobile .k-resize-handle-inner:before,
+.k-grid-mobile .k-resize-handle-inner:after {
     background-image: url('@{image-path}/ui/sprite.png');
     background-repeat: no-repeat;
     background-size: auto;
@@ -431,7 +431,11 @@ only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device
   .k-icon:not(.k-loading), 
   .k-icon:not(.k-loading):not(.k-i-loading),
   .k-tool-icon, 
-  .k-column-menu .k-sprite  {
+  .k-grouping-dropclue, 
+  .k-drop-hint, 
+  .k-column-menu .k-sprite, 
+  .k-grid-mobile .k-resize-handle-inner:before, 
+  .k-grid-mobile .k-resize-handle-inner:after {
     background-image: url('@{image-path}/ui/sprite.png');
     background-repeat: no-repeat;
     background-size:auto ;
@@ -763,10 +767,17 @@ textarea:focus,
 .btn-plus:focus,
 .k-state-focused > .k-input,
 .k-datepicker .k-state-focused,
-.k-dropdown .k-state-focused,
+.k-dropdown .k-state-focused .k-input,
 .k-numeric-wrap.k-state-default.k-state-focused,
 .k-edit-cell > input[type="text"] { 
-    outline: 3px solid @input-border-focus;
+    outline: 0;
+    border-color: @input-border-focus;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -kthtml-transition: all .2s linear;
+    transition: all .2s linear;
 }
 
 .k-datepicker .k-picker-wrap:focus,
@@ -779,7 +790,13 @@ textarea:focus,
 .plus-group input:focus + .btn-go, 
 .misc-group input:focus + .btn-go,
 .fiscal-group .rightbox:focus + .btn-fiscal-picker {
-    outline: 3px solid @input-border-focus;
+    border-color: #66afe9;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -kthtml-transition: all .2s linear;
+    transition: all .2s linear;
 }
 
 .k-state-focused .k-input {
@@ -911,11 +928,7 @@ input[class*="btn-"] {
   -webkit-border-radius:      0;      
   -moz-border-radius:         0;      
   -o-border-radius:           0;      
-  border-radius:              0;    
-
-  &:focus {
-    outline: 3px solid @input-border-focus;
-  }  
+  border-radius:              0;      
 
 }
 
@@ -1108,7 +1121,17 @@ input[class*="icon"] {
 }
 
 .btn-default:focus { 
+  color:#000;
+  border-color: @input-border-focus;
   background-color:darken(@btn-default-bg, 5%);
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -kthtml-transition: all .2s linear;
+  transition: all .2s linear;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
 }
 
 .btn-info { background: #00a4cf; color: @white; width: 140px;}
@@ -1125,12 +1148,6 @@ input[class*="icon"] {
 
 .buttons-group input[class*="btn-"]:last-child {
     margin-right: 0px;
-}
-
-// Button focus styles
-
-input[type=button]:focus{
-  outline: 3px solid @input-border-focus;
 }
 
 // Buttons using anchor tag
@@ -1225,7 +1242,17 @@ a[class*="btn-"] {
     }
 
     &[type=button]:focus{
-      outline: 3px solid @input-border-focus;
+      -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+      -webkit-transition: all .2s linear;
+      -o-transition: all .2s linear;
+      -moz-transition: all .2s linear;
+      -ms-transition: all .2s linear;
+      -kthtml-transition: all .2s linear;
+      transition: all .2s linear;
+      color:#000;
+      border-color: #66afe9;
+      background-color:darken(@btn-default-bg, 5%);
     }
 
     &[type=button]:disabled {
@@ -1742,7 +1769,7 @@ a[class*="btn-"] {
       }
 
       &.k-state-active {
-        background: @gray-lighter;
+        background: @white;
         height: 40px;
         border-color: @sage-link;
         border-bottom-color: transparent;
@@ -1782,7 +1809,7 @@ a[class*="btn-"] {
     padding: 20px 0 0 0;
 
     &.k-state-active {
-      background: @gray-lighter;
+      background: @white;
       border: 0;
       border-top: 1px solid @sage-link;
       border-bottom: 1px solid #ccc;
@@ -1818,7 +1845,8 @@ a[class*="btn-"] {
 
   .k-grid-header {
     background-image: none;
-    background-color: @table-header-bg;
+    background-color: @sage-dark-gray;
+    padding-right: 0px !important;
 
     .k-grid-header-wrap {
       border-right: 0px;
@@ -1831,7 +1859,7 @@ a[class*="btn-"] {
           padding: 10px 20px;
           color: @white;
           font-weight: 700;
-          background-color: @table-header-bg;
+          background-color: @sage-dark-gray;
           background-image: none;
           border-color: @sage-mid-gray;
         }
@@ -3446,7 +3474,7 @@ textarea,
     th {
       border: none;
       border-right: 1px solid #eaeaea;
-      background-color: @table-header-bg;
+      background-color: @sage-dark-gray;
       padding: 10px 20px 10px 20px;
       font-weight: bold;
       color: #fff;
@@ -3900,7 +3928,7 @@ textarea,
 .modelWindow {
 
   .modelBox_controlls {
-    margin: 20px 3px 3px;
+    margin-top: 20px;
     text-align: right;
 
     button {
@@ -4459,8 +4487,8 @@ textarea,
   }
 
   .k-window-content {
-    padding: 3px 3px;
-    margin: (@margin-base - 3px) (@margin-base - 3px); // D-42509
+    padding: 0;
+    margin: 19px 20px 20px;
     background: transparent;
     border-radius: 0px;
     overflow-y: auto !important;
@@ -4635,7 +4663,7 @@ textarea,
 
   > table > thead td {
     padding: 10px;
-    background: @table-header-bg;
+    background: @sage-dark-gray;
     color: #fff;
     text-align: center;
   }
@@ -5318,7 +5346,6 @@ ul.list-bullet {
 
 .multiselect-group .k-multiselect.k-state-focused{
   border-color: #66afe9;
-  outline: #ffb500 solid 3px;
   -webkit-box-shadow: none;
   box-shadow: none;
   -webkit-transition: all .2s linear;

@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var sg = sg || {};
@@ -381,7 +381,7 @@ sg.viewList = function () {
             maskProps = _getTextBoxProps(mask),
             className = maskProps.class,
             maxlength = col.FieldSize || maskProps.maxLength,
-            txtInput = '<div class="edit-container"><div class="edit-cell inpt-text"><input name="{0}" id="{0}" type="text" maxlength="{1}" class="{2}"/></div>',
+            txtInput = '<div class="edit-container"><div class="edit-cell inpt-text"><input name="{0}" id="{0}" maxlength="{1}" class="{2}"/></div>',
             txtFinder = '<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="{3}"/></div></div>',
             html = kendo.format(txtInput + txtFinder, field, maxlength, className, buttonId);
        
@@ -475,11 +475,7 @@ sg.viewList = function () {
         }
 
         $("#" + field).on("keydown", function (e) {
-            if (e.altKey && e.keyCode === sg.constants.KeyCodeEnum.DownArrow) {
-                _sendChange[gridName] = false;
-            } else {
-                _sendChange[gridName] = true;
-            }
+            _sendChange[gridName] = true;
         });
 
         $("#" + buttonId).mousedown(function (e) {
@@ -505,7 +501,6 @@ sg.viewList = function () {
 
             sg.viewFinderHelper.setViewFinder(buttonId, onFinderSelected.bind(null, options, col), finder, onFinderCancel.bind(null, options));
         });
-        sg.utls.findersList[field] = buttonId;
 
         _setEditorInitialValue(gridName, options);
     }
@@ -1210,7 +1205,7 @@ sg.viewList = function () {
     */
     function _deleteSuccess(gridName, jsonResult) {
         _lastErrorResult[gridName] = {};
-        _dataChanged[gridName] = false;
+        _dataChanged[gridName] = true;
 
         var grid = $('#' + gridName).data("kendoGrid"),
             ds = grid.dataSource,
@@ -1493,10 +1488,7 @@ sg.viewList = function () {
                             event = _getEventObject();
 
                        record = record || grid.dataItem(grid.select());
-                        switch (functionName) {
-                            case "gridAfterLoadData":
-                                callback(grid.dataSource.data());
-                                return true;
+                       switch (functionName) {
                             case "gridChanged":
                             case "gridUpdated":
                                callback(record, fieldName);
@@ -1612,7 +1604,6 @@ sg.viewList = function () {
         $("#" + gridName).kendoGrid({
             height: model.Height || 430,
             columns: columns,
-            autoBind: false,
             navigatable: true,
             reorderable: true,
             filterable: false,
@@ -1704,9 +1695,6 @@ sg.viewList = function () {
                         _columnCallback(gridName, "columnDoubleClick", col.field);
                     }
                 }.bind(null, grid));
-
-                //Custom plug in for 'gridAfterLoadData' call back
-                _gridCallback(gridName, "gridAfterLoadData");
             },
 
             //Custom plug in for 'columnBeforeEdit'
@@ -1827,11 +1815,9 @@ sg.viewList = function () {
                     var row = e.sender.data()[e.sender.pageSize()];
                     var skipCommit = row && row.hasOwnProperty("skipCommit") && row["skipCommit"];
 
-                    // Commit any grid changes if there is a new line or data has changed while pagination
-                    if ((_newLine[gridName] && e.type === "read" || _dataChanged[gridName]) && _currentPage[gridName] !== this.page() && !skipCommit) {
+                    if (_newLine[gridName] && e.type === "read" && _currentPage[gridName] !== this.page() && !skipCommit) {
                         e.preventDefault();
                         if (_commitGrid(gridName)) {
-                            _dataChanged[gridName] = false;
                             _newLine[gridName] = false;
                             _currentPage[gridName] = this.page();
                             this.page(this.page());
@@ -1965,13 +1951,8 @@ sg.viewList = function () {
      * @return {string} return the text by value
      */
     function getListText(field, dataItem) {
-        var list = this.filter(function (i) {
-            return i.Value.toLowerCase() === ((dataItem[field] || dataItem[field] === 0) ?
-                dataItem[field].toString().toLowerCase() : "");
-        });
-        return list && list.length > 0 ?
-            list[0].Text : ((dataItem[field] || dataItem[field] === 0) ?
-            dataItem[field] : "");
+        var list = this.filter(function (i) { return i.Value.toLowerCase() === (dataItem[field] ? dataItem[field].toString().toLowerCase() : ""); });
+        return list && list.length > 0 ? list[0].Text : (dataItem[field] ? dataItem[field] : "");
     }
 
     /**
@@ -2323,16 +2304,6 @@ sg.viewList = function () {
         _sendRequest(gridName, RequestTypeEnum.Update);
     }
 
-    /**
-     * Clear all records in the grid
-     * @param {any} gridName The grid name
-     */
-    function clear(gridName) {
-        var grid = _getGrid(gridName);
-        var dataSource = grid.dataSource;
-        dataSource.data([]);
-    }
-
     //Module(class) public methods
     return {
         init: init,
@@ -2362,7 +2333,6 @@ sg.viewList = function () {
         refreshCurrentRow: refreshCurrentRow,
         updateCurrentRow: updateCurrentRow,
         isEmpty: isEmpty,
-        cancel: cancel,
-        clear: clear
+        cancel: cancel
     };
 }();

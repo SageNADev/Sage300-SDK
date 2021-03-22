@@ -3579,10 +3579,4 @@
   <data name="CustomerName" xml:space="preserve">
     <value>Nom du client</value>
   </data>
-  <data name="PaymentsID" xml:space="preserve">
-    <value>Code d'acceptation de paiements de FA</value>
-  </data>
-  <data name="PaymentsURL" xml:space="preserve">
-    <value>URL d'acceptation de paiements de FA</value>
-  </data>
 </root>

@@ -1,4 +1,3 @@
 call CopyWebRepoFiles.bat
 call CreateTemplateZipFiles.bat
 call MoveTemplateZipFilesToFinalDestination.bat
-call CopyAccpacDotNetVersionSettings.bat

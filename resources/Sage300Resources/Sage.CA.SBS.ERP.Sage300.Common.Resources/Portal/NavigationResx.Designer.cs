@@ -565,15 +565,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer List.
-        /// </summary>
-        public static string AR_Customer_List {
-            get {
-                return ResourceManager.GetString("AR_Customer_List", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to A/R Customer Reports.
         /// </summary>
         public static string AR_CustomerReports {
@@ -993,15 +984,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AS_UserAuthorizations {
             get {
                 return ResourceManager.GetString("AS_UserAuthorizations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User Authorizations Report.
-        /// </summary>
-        public static string AS_UserAuthorizationsReport {
-            get {
-                return ResourceManager.GetString("AS_UserAuthorizationsReport", resourceCulture);
             }
         }
         
@@ -1681,15 +1663,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Payments Acceptance.
-        /// </summary>
-        public static string CS_PaymentsAcceptance {
-            get {
-                return ResourceManager.GetString("CS_PaymentsAcceptance", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Reminder List.
         /// </summary>
         public static string CS_Reminder_List {
@@ -1713,15 +1686,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string CS_Scheduling {
             get {
                 return ResourceManager.GetString("CS_Scheduling", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Service Center.
-        /// </summary>
-        public static string CS_ServiceCenter {
-            get {
-                return ResourceManager.GetString("CS_ServiceCenter", resourceCulture);
             }
         }
         
@@ -1951,15 +1915,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account History Inquiry.
-        /// </summary>
-        public static string GL_Account_History_Inquiry {
-            get {
-                return ResourceManager.GetString("GL_Account_History_Inquiry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Account Permissions.
         /// </summary>
         public static string GL_Account_Permissions {
@@ -2001,15 +1956,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_Batch_Status {
             get {
                 return ResourceManager.GetString("GL_Batch_Status", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Budget Maintenance.
-        /// </summary>
-        public static string GL_BudgetMaintenance {
-            get {
-                return ResourceManager.GetString("GL_BudgetMaintenance", resourceCulture);
             }
         }
         
@@ -2226,15 +2172,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_Source_Journals {
             get {
                 return ResourceManager.GetString("GL_Source_Journals", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Source Currency Inquiry.
-        /// </summary>
-        public static string GL_SourceCurrencyInquiry {
-            get {
-                return ResourceManager.GetString("GL_SourceCurrencyInquiry", resourceCulture);
             }
         }
         

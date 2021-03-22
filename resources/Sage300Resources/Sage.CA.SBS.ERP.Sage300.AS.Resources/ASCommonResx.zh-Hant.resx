@@ -165,7 +165,7 @@
     <value>舊密碼</value>
   </data>
   <data name="ErrorPasswordMessage" xml:space="preserve">
-    <value>{0}或{1}不正確。再次嘗試，或連絡您的系統管理員尋求協助。</value>
+    <value>{0}或{1}不正確。再試一次。</value>
   </data>
   <data name="MinLengthPasswordMessage" xml:space="preserve">
     <value>{0}短於要求的最小密碼長度。</value>
@@ -256,14 +256,5 @@
   </data>
   <data name="LanPakMaxUserReached" xml:space="preserve">
     <value>目前登入的用戶數是您的LanPak使用權的最大數量。在其他用戶退出之前您無法登入。</value>
-  </data>
-  <data name="Verify" xml:space="preserve">
-    <value>核實</value>
-  </data>
-  <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>密碼與核實不符。</value>
-  </data>
-  <data name="VerifyPassword" xml:space="preserve">
-    <value>核實密碼</value>
   </data>
 </root>

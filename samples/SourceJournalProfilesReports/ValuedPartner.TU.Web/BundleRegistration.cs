@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -33,6 +33,14 @@ namespace ValuedPartner.TU.Web
         /// <param name="bundles"></param> 
         internal static void RegisterBundles(BundleCollection bundles)
         {
+			#region SourceJournalProfile
+			bundles.Add(new Bundle("~/bundles/ValuedPartnerSourceJournalProfile").Include(
+				"~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartner.TU.SourceJournalProfileBehaviour.js",
+                "~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartner.TU.SourceJournalProfileKoExtn.js",
+                "~/Areas/TU/Scripts/SourceJournalProfile/ValuedPartnerSource.TU.JournalProfileRepository.js",
+				"~/Areas/Core/Scripts/Process/Sage.CA.SBS.Sage300.Common.Process.js"));
+			#endregion
+
             #region SourceJournalProfileReport
             bundles.Add(new Bundle("~/bundles/ValuedPartnerSourceJournalProfileReport").Include(
                 "~/Areas/TU/Scripts/Reports/SourceJournalProfileReport/ValuedPartner.TU.SourceJournalProfileReportBehaviour.js",

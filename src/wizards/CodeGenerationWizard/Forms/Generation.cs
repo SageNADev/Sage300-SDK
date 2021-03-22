@@ -547,7 +547,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Check for dupes only in add mode since in edit mode the view id cannot be changed
-            //var dupeFound = false;
+            var dupeFound = false;
             if (_modeType.Equals(ModeTypeEnum.Add))
             {
                 // Iterate existing entities specified thus far
@@ -700,7 +700,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Generate Step
             lblGenerateHelp.Text = Resources.GenerateTip;
 
-            txtVersion.Text = GlobalConstants.AccpacDotNetVersion;
         }
         /// <summary> Determine if the Solution is valid </summary>
         /// <param name="solution">Solution </param>

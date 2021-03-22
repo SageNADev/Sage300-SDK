@@ -544,7 +544,4 @@
   <data name="NotAllowRetrieve" xml:space="preserve">
     <value>您不被允许撷取科目{0}。</value>
   </data>
-  <data name="AccountHistoryInquiry" xml:space="preserve">
-    <value>科目历史查询</value>
-  </data>
 </root>

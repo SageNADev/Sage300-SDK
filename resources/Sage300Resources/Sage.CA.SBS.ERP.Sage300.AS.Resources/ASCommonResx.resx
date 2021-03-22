@@ -165,7 +165,7 @@
     <value>Old Password</value>
   </data>
   <data name="ErrorPasswordMessage" xml:space="preserve">
-    <value>The {0} or {1} is incorrect. Try again, or contact your system administrator for assistance.</value>
+    <value>The {0} or {1} is incorrect. Try again.</value>
   </data>
   <data name="MinLengthPasswordMessage" xml:space="preserve">
     <value>The {0} is shorter than the minimum required password length.</value>
@@ -256,14 +256,5 @@
   </data>
   <data name="LanPakMaxUserReached" xml:space="preserve">
     <value>The number of users currently signed in is the maximum for your LanPak license. You cannot sign in until another user signs out.</value>
-  </data>
-  <data name="Verify" xml:space="preserve">
-    <value>Verify</value>
-  </data>
-  <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>Password and Verify do not match.</value>
-  </data>
-  <data name="VerifyPassword" xml:space="preserve">
-    <value>Verify Password</value>
   </data>
 </root>

@@ -925,15 +925,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fiscal Set.
-        /// </summary>
-        public static string FiscalSet {
-            get {
-                return ResourceManager.GetString("FiscalSet", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Date and Last.
         /// </summary>
         public static string Frequency_DateandLast {

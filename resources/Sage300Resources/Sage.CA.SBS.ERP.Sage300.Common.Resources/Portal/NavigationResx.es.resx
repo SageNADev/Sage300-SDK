@@ -294,9 +294,6 @@
   <data name="AS_UserAuthorizations" xml:space="preserve">
     <value>Autorizaciones de Usuarios</value>
   </data>
-  <data name="AS_UserAuthorizationsReport" xml:space="preserve">
-    <value>Reporte de Autorizaciones de Usuario</value>
-  </data>
   <data name="Bank_PeriodicProcessing" xml:space="preserve">
     <value>Bancos - Procesamiento Periódico</value>
   </data>
@@ -1284,9 +1281,6 @@
   <data name="GL_Fiscal_Set_Comparison" xml:space="preserve">
     <value>Comparación de Saldos Fiscales</value>
   </data>
-  <data name="GL_Account_History_Inquiry" xml:space="preserve">
-    <value>Consulta de Historial de Cuentas</value>
-  </data>
   <data name="IC_Bills_of_Material" xml:space="preserve">
     <value>Listas de Materiales</value>
   </data>
@@ -1613,39 +1607,24 @@
     <value>Establecer Color de Tema Según Base de Datos</value>
     <comment>Settings Menu</comment>
   </data>
-  <data name="Small" xml:space="preserve">
-    <value>Pequeño</value>
-    <comment>Setting Menu Form Size</comment>
-  </data>
-  <data name="TextSize" xml:space="preserve">
-    <value>Tamaño del Texto</value>
-    <comment>Setting Menu</comment>
-  </data>
   <data name="Large" xml:space="preserve">
     <value>Grande</value>
-    <comment>Setting Menu Form Size</comment>
+    <comment>Form Size Menu</comment>
   </data>
   <data name="Medium" xml:space="preserve">
     <value>Medio</value>
-    <comment>Setting Menu Form Size</comment>
+    <comment>Form Size Menu</comment>
+  </data>
+  <data name="Small" xml:space="preserve">
+    <value>Pequeño</value>
+    <comment>Form Size Menu</comment>
+  </data>
+  <data name="TextSize" xml:space="preserve">
+    <value>Tamaño del texto</value>
+    <comment>Form Size Menu</comment>
   </data>
   <data name="FormSizeResetConfirmation" xml:space="preserve">
-    <value>¿Borrar todos los parámetros de tamaño del texto en las pantallas individuales y restablecer el tamaño de texto predeterminado (Grande)?</value>
+    <value />
     <comment>Setting Menu Form Size</comment>
-  </data>
-  <data name="CS_PaymentsAcceptance" xml:space="preserve">
-    <value>Aceptatión de pagos</value>
-  </data>
-  <data name="CS_ServiceCenter" xml:space="preserve">
-    <value>Centro de servicios</value>
-  </data>
-  <data name="AR_Customer_List" xml:space="preserve">
-    <value>Lista de clientes</value>
-  </data>
-  <data name="GL_SourceCurrencyInquiry" xml:space="preserve">
-    <value>Consulta de Moneda de Origen</value>
-  </data>
-  <data name="GL_BudgetMaintenance" xml:space="preserve">
-    <value>Mantenimiento de Presupuesto</value>
   </data>
 </root>

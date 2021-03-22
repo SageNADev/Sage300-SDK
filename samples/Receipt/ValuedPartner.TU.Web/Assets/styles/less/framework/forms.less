@@ -942,7 +942,11 @@ input[type="checkbox"] {
 /** sprites **/
 .icon, 
 .k-icon, 
-.k-column-menu .k-sprite {
+.k-grouping-dropclue, 
+.k-drop-hint, 
+.k-column-menu .k-sprite, 
+.k-grid-mobile .k-resize-handle-inner:before, 
+.k-grid-mobile .k-resize-handle-inner:after {
   background-image: url('@{image-path}/ui/sprite_icons.png'); 
   background-repeat: no-repeat;
   background-size: 900px 90px; 
@@ -961,8 +965,12 @@ only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device
     .icon, 
     .k-icon, 
     .k-icon:not(.k-loading), 
-    .k-icon:not(.k-loading):not(.k-i-loading),
-    .k-column-menu .k-sprite{
+    .k-icon:not(.k-loading):not(.k-i-loading), 
+    .k-grouping-dropclue, 
+    .k-drop-hint, 
+    .k-column-menu .k-sprite, 
+    .k-grid-mobile .k-resize-handle-inner:before, 
+    .k-grid-mobile .k-resize-handle-inner:after {
       background-image: url('@{image-path}/ui/sprite_icons.png');
       background-repeat: no-repeat;
       background-size: 900px 90px;
@@ -1109,6 +1117,10 @@ input.grid_Cell_Number_Right_Align {
   span.k-numerictextbox {
   padding: 0;
 
+    &.default {
+      width: 220px;
+    }
+
     .k-numeric-wrap input.size-control {
       width: 168px;
     }
@@ -1137,11 +1149,8 @@ input,
 textarea,
 .datepicker-group .k-datepicker,
 .timepicker-group .k-timepicker,
-.timepicker-group .timepicker,
-.finder-group .k-numerictextbox,
 .numeric-group .k-numerictextbox,
 .numeric-search-group .k-numerictextbox,
-.numeric-finder-group .k-numerictextbox,
 .input-group .k-numerictextbox,
 .input-group .k-dropdown,
 .dropdown-group .k-dropdown,
@@ -1200,16 +1209,10 @@ textarea,
   width: 100%;
 }
 
-span.k-numerictextbox.numeric,
-span.k-numerictextbox.align-right {
+span.k-numerictextbox.numeric {
 
   &.size-control {
     width: 168px;
-  }
-
-  .k-formatted-value + input[type=text] {
-    border: 0;
-    height: 22px;
   }
 }
 
@@ -1252,13 +1255,6 @@ textarea {
   }
 }
 
-.input-group span > input[type="text"] {
-  
-  &.smaller.size-control {
-    width: 78px;
-  }
-}
-
 .plus-group input[type="text"] {
 
   &.size-control {
@@ -1273,6 +1269,7 @@ textarea {
     width: 360px;
   }
 }
+
 
 // Align Total Tax input field
 
@@ -2169,19 +2166,21 @@ div.k-treeview {
 
     .k-icon.k-i-expand,
     .k-icon.k-i-collapse  {
-      margin-left: -20px;
+      margin-left: 0;
     }
 }
-
+.k-treeview span.k-in {
+    display:inline-block;
+    line-height: 2.7rem;
+    
+    &.k-state-focused {
+      .box-shadow(none);
+    }
+}
 #exportTreeView {
     height: 230px;
     overflow-y: auto;
     border: 0;
-
-    &.k-treeview span.k-in {
-      display:inline-block;
-      line-height: 2.7rem;
-  }
 }
 
 #treeviewWrapper>.left:nth-child(2) {
@@ -2277,10 +2276,6 @@ div.k-treeview {
 }
 
 //Treeview alternate row colors for two levels
-
-#exportTreeView.k-treeview .k-icon {
-  margin-left: 0;
-}
 #exportTreeView li:nth-child(odd) {
     background: @white; /* default colour */
 }
@@ -2311,35 +2306,18 @@ div.k-treeview {
 
 .k-treeview {
     border: 1px solid #9a9b9c;
-
-    .k-i-collapse,
-    .k-minus,
-    .k-minus-disabled {
-      background-position: -84px 5px;
-    }
-
-    .k-i-expand, 
-    .k-plus, 
-    .k-plus-disabled {
-      background-position: -728px 3px;
-    }
 }
-
+.k-treeview .k-state-selected {
+    background-color: transparent;
+}
 .k-treeview .k-state-selected label {
     color: #333;
 }
 
 .k-treeview .k-state-hover {
-   background-color: #ebedef;
+   background-color: transparent;
 }
-
-.k-treeview .k-state-selected {
-  background-color: @brand-primary;
-  color: @white;
-}
-
-#exportTreeView .k-state-selected.k-state-focused,
-.k-treeview .k-state-selected.k-state-focused {
+#exportTreeView .k-state-selected.k-state-focused{
    box-shadow: none;
 }
 
@@ -2368,10 +2346,6 @@ div.k-treeview {
     margin-left: -20px;
     margin-top: 0;
   }
-}
-
-.k-treeview span.k-in {
-  line-height: 1.6;
 }
 
 // To support Kendo Native Tree view
@@ -2722,7 +2696,7 @@ div.k-treeview {
     color: rgba(0,0,0,.9);
     margin-bottom: 0;
 
-    input:not([type="text"]) {
+    input {
       position: absolute;
       opacity: 0;
       cursor: pointer;
@@ -2918,27 +2892,5 @@ div.k-treeview {
 
   .form-group {
     margin-bottom: 30px;
-  }
-}
-
-// Kendo Splitter
-
-.k-splitter .k-ghost-splitbar-horizontal, 
-.k-splitter .k-splitbar-horizontal {
-  width: 8px;
-}
-
-.k-splitbar:active, 
-.k-splitbar.k-state-focus, 
-.k-splitbar.k-state-focused {
-  background-color: @brand-primary;
-
-  .k-icon.k-expand-prev,
-  .k-icon.k-collapse-prev  {
-    color: @white;
-  }
-
-  .k-icon.k-resize-handle.k-i-vbar {
-    background-color: white;
   }
 }

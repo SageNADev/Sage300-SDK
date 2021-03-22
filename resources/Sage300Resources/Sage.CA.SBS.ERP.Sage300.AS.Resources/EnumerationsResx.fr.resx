@@ -132,44 +132,8 @@
   <data name="AuthenticationMethod_Windows" xml:space="preserve">
     <value>Windows</value>
   </data>
-  <data name="Language_ChineseSimplifiedChina" xml:space="preserve">
-    <value>Chinois (Simplifié) (Chine)</value>
-  </data>
-  <data name="Language_ChineseSimplifiedSingapore" xml:space="preserve">
-    <value>Chinois (Simplifié) (Singapour)</value>
-  </data>
-  <data name="Language_ChineseTraditionalHongKong" xml:space="preserve">
-    <value>Chinois (Traditionnel) (Hong Kong)</value>
-  </data>
-  <data name="Language_ChineseTraditionalTaiwan" xml:space="preserve">
-    <value>Chinois (Traditionnel) (Taïwan)</value>
-  </data>
   <data name="Language_Eng" xml:space="preserve">
     <value>Anglais</value>
-  </data>
-  <data name="Language_English" xml:space="preserve">
-    <value>Anglais</value>
-  </data>
-  <data name="Language_EnglishAustralia" xml:space="preserve">
-    <value>Anglais (Australie)</value>
-  </data>
-  <data name="Language_EnglishCanada" xml:space="preserve">
-    <value>Anglais (Canada)</value>
-  </data>
-  <data name="Language_EnglishSouthAfrica" xml:space="preserve">
-    <value>Anglais (Afrique du sud)</value>
-  </data>
-  <data name="Language_EnglishUnitedStates" xml:space="preserve">
-    <value>Anglais (États-Unis)</value>
-  </data>
-  <data name="Language_FrenchCanada" xml:space="preserve">
-    <value>Français (Canada)</value>
-  </data>
-  <data name="Language_Spanish" xml:space="preserve">
-    <value>Espagnol</value>
-  </data>
-  <data name="Language_SpanishSpain" xml:space="preserve">
-    <value>Espagnol (Espagne)</value>
   </data>
   <data name="Role_AccountantOrBookkeeperOrClerk" xml:space="preserve">
     <value>Comptable, aide-comptable ou commis</value>
@@ -218,26 +182,5 @@
   </data>
   <data name="Role_Selectyourjobrole" xml:space="preserve">
     <value>Sélectionnez votre fonction principale</value>
-  </data>
-  <data name="Weekday_Friday" xml:space="preserve">
-    <value>Vendredi</value>
-  </data>
-  <data name="Weekday_Monday" xml:space="preserve">
-    <value>Lundi</value>
-  </data>
-  <data name="Weekday_Saturday" xml:space="preserve">
-    <value>Samedi</value>
-  </data>
-  <data name="Weekday_Sunday" xml:space="preserve">
-    <value>Dimanche</value>
-  </data>
-  <data name="Weekday_Thursday" xml:space="preserve">
-    <value>Jeudi</value>
-  </data>
-  <data name="Weekday_Tuesday" xml:space="preserve">
-    <value>Mardi</value>
-  </data>
-  <data name="Weekday_Wednesday" xml:space="preserve">
-    <value>Mercredi</value>
   </data>
 </root>

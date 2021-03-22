@@ -2113,33 +2113,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Using the Customer List Screen to Create Special Reports.
-        /// </summary>
-        public static string AR_CustomerList_Article1 {
-            get {
-                return ResourceManager.GetString("AR_CustomerList_Article1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Printing a List of Customers.
-        /// </summary>
-        public static string AR_CustomerList_Article2 {
-            get {
-                return ResourceManager.GetString("AR_CustomerList_Article2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A/R Customer List Screen.
-        /// </summary>
-        public static string AR_CustomerList_Screen {
-            get {
-                return ResourceManager.GetString("AR_CustomerList_Screen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Adding and Modifying Customer Records.
         /// </summary>
         public static string AR_Customers_Article1 {
@@ -2968,7 +2941,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Looking Up Receipts.
+        ///   Looks up a localized string similar to About Inquiring on Customers and Documents from Transaction Screens.
         /// </summary>
         public static string AR_ReceiptInquiry_Article1 {
             get {
@@ -2977,7 +2950,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Processing Receipts.
+        ///   Looks up a localized string similar to Looking Up Receipts.
         /// </summary>
         public static string AR_ReceiptInquiry_Article2 {
             get {
@@ -3130,7 +3103,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Looking Up Refunds.
+        ///   Looks up a localized string similar to About Processing Refunds.
         /// </summary>
         public static string AR_RefundInquiry_Article1 {
             get {
@@ -3139,7 +3112,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Processing Refunds.
+        ///   Looks up a localized string similar to Looking Up Refunds.
         /// </summary>
         public static string AR_RefundInquiry_Article2 {
             get {
@@ -3495,33 +3468,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AS_SecurityGroups_Screen {
             get {
                 return ResourceManager.GetString("AS_SecurityGroups_Screen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Adding, Editing, or Deleting Users.
-        /// </summary>
-        public static string AS_User_Article1 {
-            get {
-                return ResourceManager.GetString("AS_User_Article1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Assigning Users to Security Groups.
-        /// </summary>
-        public static string AS_User_Article2 {
-            get {
-                return ResourceManager.GetString("AS_User_Article2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Users Screen.
-        /// </summary>
-        public static string AS_User_Screen {
-            get {
-                return ResourceManager.GetString("AS_User_Screen", resourceCulture);
             }
         }
         
@@ -4552,33 +4498,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Payments Acceptance.
-        /// </summary>
-        public static string CS_PaymentsAcceptance_Article1 {
-            get {
-                return ResourceManager.GetString("CS_PaymentsAcceptance_Article1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Administration Overview.
-        /// </summary>
-        public static string CS_PaymentsAcceptance_Article2 {
-            get {
-                return ResourceManager.GetString("CS_PaymentsAcceptance_Article2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Accepting Payments Through Online Providers.
-        /// </summary>
-        public static string CS_PaymentsAcceptance_Screen {
-            get {
-                return ResourceManager.GetString("CS_PaymentsAcceptance_Screen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Creating Schedules for Recurring Transactions.
         /// </summary>
         public static string CS_ReminderList_Article1 {
@@ -4629,42 +4548,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string CS_Schedules_Screen {
             get {
                 return ResourceManager.GetString("CS_Schedules_Screen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to About Budgets.
-        /// </summary>
-        public static string GL_About_Budgets {
-            get {
-                return ResourceManager.GetString("GL_About_Budgets", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to About Entering Account Balances, Historical Data, and Quantities.
-        /// </summary>
-        public static string GL_Account_History_Inquiry_Article1 {
-            get {
-                return ResourceManager.GetString("GL_Account_History_Inquiry_Article1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Adding a New Account.
-        /// </summary>
-        public static string GL_Account_History_Inquiry_Article2 {
-            get {
-                return ResourceManager.GetString("GL_Account_History_Inquiry_Article2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to G/L Account History Inquiry Screen.
-        /// </summary>
-        public static string GL_Account_History_Inquiry_Screen {
-            get {
-                return ResourceManager.GetString("GL_Account_History_Inquiry_Screen", resourceCulture);
             }
         }
         
@@ -4746,15 +4629,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_BatchStatus_Report_Screen {
             get {
                 return ResourceManager.GetString("GL_BatchStatus_Report_Screen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to G/L Budget Maintenance Screen.
-        /// </summary>
-        public static string GL_Budget_Maintenance_Screen {
-            get {
-                return ResourceManager.GetString("GL_Budget_Maintenance_Screen", resourceCulture);
             }
         }
         
@@ -4890,15 +4764,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_CreateRevaluationBatch_Screen {
             get {
                 return ResourceManager.GetString("GL_CreateRevaluationBatch_Screen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Editing Budget Data.
-        /// </summary>
-        public static string GL_Editing_Budget_Data {
-            get {
-                return ResourceManager.GetString("GL_Editing_Budget_Data", resourceCulture);
             }
         }
         
@@ -5502,33 +5367,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_SourceCodes_Report_Screen {
             get {
                 return ResourceManager.GetString("GL_SourceCodes_Report_Screen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Specifying a Currency.
-        /// </summary>
-        public static string GL_SourceCurrencyInquiry_Article1 {
-            get {
-                return ResourceManager.GetString("GL_SourceCurrencyInquiry_Article1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Viewing Source-Currency Balances for a Multicurrency Account.
-        /// </summary>
-        public static string GL_SourceCurrencyInquiry_Article2 {
-            get {
-                return ResourceManager.GetString("GL_SourceCurrencyInquiry_Article2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to G/L Source Currency Inquiry Screen.
-        /// </summary>
-        public static string GL_SourceCurrencyInquiry_Screen {
-            get {
-                return ResourceManager.GetString("GL_SourceCurrencyInquiry_Screen", resourceCulture);
             }
         }
         

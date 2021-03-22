@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReportViewer.aspx.cs" Inherits="ValuedPartner.TU.Web.WebForms.ReportViewer" %>
 
-<%@ Register Assembly="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
+<%@ Register Assembly="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +8,7 @@
 <head runat="server">
     <title></title>
     <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
-    <script src="../Scripts/jquery-3.4.1.js"></script>
+    <script src="../Scripts/jquery-1.11.3.js"></script>
     <script src="../Scripts/JQueryUI/iframeResizer.js"></script>
     <script src="../Scripts/Report/ReportBehaviour.js"></script>
 
@@ -30,7 +30,6 @@
             <CR:CrystalReportViewer ID="CrystalReportViewerSage300" PrintMode="Pdf" runat="server" AutoDataBind="true" EnableDatabaseLogonPrompt="False" ToolPanelView="None" EnableParameterPrompt="False" ReuseParameterValuesOnRefresh="True" />
         </div>
         <asp:HiddenField ID="hiddenToken" runat="server"></asp:HiddenField>
-        <asp:HiddenField ID="hiddenSessionId" runat="server"></asp:HiddenField>
         <div></div>
     </form>
 </body>

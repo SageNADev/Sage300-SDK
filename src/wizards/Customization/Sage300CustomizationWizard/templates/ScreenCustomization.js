@@ -4,24 +4,24 @@
 
 "use strict";
 
-var $companyname$$customizationName$$screenName$CustomizationUI = $companyname$$customizationName$$screenName$CustomizationUI || {};
-var $companyname$$customizationName$$screenName$customizationViewModel;
+var $companyname$$screenName$CustomizationUI = $companyname$$screenName$CustomizationUI || {};
+var $companyname$$screenName$customizationViewModel;
 
-$companyname$$customizationName$$screenName$CustomizationUI = {
+$companyname$$screenName$CustomizationUI = {
 
     // Init
     init: function () {
-        $companyname$$customizationName$$screenName$CustomizationUI.initIntercept();
-        $companyname$$customizationName$$screenName$CustomizationUI.initAjaxCallIntercept();
-        $companyname$$customizationName$$screenName$CustomizationUI.initButtons();
-        $companyname$$customizationName$$screenName$CustomizationUI.initFinders();
-        $companyname$$customizationName$$screenName$CustomizationUI.initTextbox();
-        $companyname$$customizationName$$screenName$CustomizationUI.initNumericTextBox();
-        $companyname$$customizationName$$screenName$CustomizationUI.initDropDownList();
-        $companyname$$customizationName$$screenName$CustomizationUI.initDatePicker();
-        $companyname$$customizationName$$screenName$CustomizationUI.initCheckBoxes();
-        $companyname$$customizationName$$screenName$CustomizationUI.initGrid();
-        $companyname$$customizationName$$screenName$CustomizationUI.initOtherControls();
+        $companyname$$screenName$CustomizationUI.initIntercept();
+        $companyname$$screenName$CustomizationUI.initAjaxCallIntercept();
+        $companyname$$screenName$CustomizationUI.initButtons();
+        $companyname$$screenName$CustomizationUI.initFinders();
+        $companyname$$screenName$CustomizationUI.initTextbox();
+        $companyname$$screenName$CustomizationUI.initNumericTextBox();
+        $companyname$$screenName$CustomizationUI.initDropDownList();
+        $companyname$$screenName$CustomizationUI.initDatePicker();
+        $companyname$$screenName$CustomizationUI.initCheckBoxes();
+        $companyname$$screenName$CustomizationUI.initGrid();
+        $companyname$$screenName$CustomizationUI.initOtherControls();
     },
 
     //Hijack and intercept events, before the event
@@ -62,7 +62,7 @@ $companyname$$customizationName$$screenName$CustomizationUI = {
 
     // Init Sage 300 Finders
     initFinders: function () {
-        //sg.finderHelper.setFinder("btnCustomCurrencyFinder", sg.finder.TaxCurrencyFinder, $companyname$$customizationName$$screenName$CustomizationUICallback.currencyCode, null, "Customization Currency Finder", sg.finderHelper.createDefaultFunction("txtCustomCurrency", "CurrencyCodeId", sg.finderOperator.StartsWith), null, true);
+        //sg.finderHelper.setFinder("btnCustomCurrencyFinder", sg.finder.TaxCurrencyFinder, $companyname$$screenName$CustomizationUICallback.currencyCode, null, "Customization Currency Finder", sg.finderHelper.createDefaultFunction("txtCustomCurrency", "CurrencyCodeId", sg.finderOperator.StartsWith), null, true);
     },
 
     //Init CheckBoxs
@@ -80,10 +80,10 @@ $companyname$$customizationName$$screenName$CustomizationUI = {
 };
 
 
-var $companyname$$customizationName$$screenName$CustomizationUICallback = {
+var $companyname$$screenName$CustomizationUICallback = {
 };
 
 // Initial Entry
 $(function () {
-    $companyname$$customizationName$$screenName$CustomizationUI.init();
+    $companyname$$screenName$CustomizationUI.init();
 });

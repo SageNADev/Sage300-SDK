@@ -88,29 +88,11 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Reports {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1099-MISC.
-        /// </summary>
-        public static string _1099Misc {
-            get {
-                return ResourceManager.GetString("_1099Misc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to AP1099.RPT.
         /// </summary>
         public static string _1099Name {
             get {
                 return ResourceManager.GetString("_1099Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 1099-NEC.
-        /// </summary>
-        public static string _1099Nec {
-            get {
-                return ResourceManager.GetString("_1099Nec", resourceCulture);
             }
         }
         
@@ -174,15 +156,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Reports {
         public static string ForeignEntity {
             get {
                 return ResourceManager.GetString("ForeignEntity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Form Type.
-        /// </summary>
-        public static string FormType {
-            get {
-                return ResourceManager.GetString("FormType", resourceCulture);
             }
         }
         

@@ -474,8 +474,6 @@ sg.utls.grid = {
                 sg.utls.grid.onFinderCancel);
             sg.utls.grid.finderWasClicked = true;
         });
-
-        sg.utls.findersList[tbId] = btnId;
     },
 
     /**

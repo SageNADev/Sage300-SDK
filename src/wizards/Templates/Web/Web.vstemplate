@@ -169,7 +169,6 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="Widget.js">Widget.js</ProjectItem>
         </Folder>
         <Folder Name="Report" TargetFolderName="Report">
-          <ProjectItem ReplaceParameters="true" TargetFileName="CustomReportBehaviour.js">CustomReportBehaviour.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="ReportBehaviour.js">ReportBehaviour.js</ProjectItem>
         </Folder>
       </Folder>
@@ -684,12 +683,6 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_ie.png">browser_ie.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_o.png">browser_o.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_safari.png">browser_safari.png</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="desktop-solid-white.svg">desktop-solid-white.svg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="desktop-solid.svg">desktop-solid.svg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="image1.jpg">image1.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="image2.jpg">image2.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="image3.jpg">image3.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="login-bg - Copy.jpg">login-bg - Copy.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg.jpg">login-bg.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg_admin.jpg">login-bg_admin.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="logo-printboss.png">logo-printboss.png</ProjectItem>
@@ -1684,9 +1677,6 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="ExportImportOption.cshtml">ExportImportOption.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Import.cshtml">Import.cshtml</ProjectItem>
             </Folder>
-            <Folder Name="ExportReport" TargetFolderName="ExportReport">
-              <ProjectItem ReplaceParameters="true" TargetFileName="ExportOption.cshtml">ExportOption.cshtml</ProjectItem>
-            </Folder>
             <Folder Name="Find" TargetFolderName="Find">
               <ProjectItem ReplaceParameters="true" TargetFileName="Find.cshtml">Find.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="FindPreference.cshtml">FindPreference.cshtml</ProjectItem>
@@ -1779,7 +1769,6 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.KendoCurrencyFormatExt.js">Sage.CA.SBS.ERP.Sage300.Common.KendoCurrencyFormatExt.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js">Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js">Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.OptionsMenu.js">Sage.CA.SBS.ERP.Sage300.Common.OptionsMenu.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ProductExperience.js">Sage.CA.SBS.ERP.Sage300.Common.ProductExperience.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Report.js">Sage.CA.SBS.ERP.Sage300.Common.Report.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js">Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js</ProjectItem>

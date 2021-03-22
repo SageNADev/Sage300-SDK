@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -32,6 +32,7 @@
 
 var modelData;
 var taxAuthoritiesUI = taxAuthoritiesUI || {};
+
 taxAuthoritiesUI = {
     taxAuthoritiesModel: {},
     ignoreIsDirtyProperties: ["TaxAuthority", "LastMaintainedString", "UIMode"],
@@ -41,14 +42,7 @@ taxAuthoritiesUI = {
     taxAuthority: null,
     acctDescName: "",
     acctDescId: "",
-
-    /**
-     * @function
-     * @name init
-     * @description Primary initialization routine
-     * @namespace taxAuthoritiesUI
-     * @public
-     */
+    // Init
     init: function () {
         taxAuthoritiesUI.initButtons();
         taxAuthoritiesUI.initFinders();
@@ -70,16 +64,10 @@ taxAuthoritiesUI = {
         taxAuthoritiesUISuccess.setkey();
     },
 
-    /**
-     * @function
-     * @name save
-     * @description Invoke tax authority add or update functionality
-     * @namespace taxAuthoritiesUI
-     * @public
-     */
+    // Save
     saveTaxAuthorities: function () {
         if ($("#frmTaxAuthorities").valid()) {
-            let data = sg.utls.ko.toJS(modelData, taxAuthoritiesUI.computedProperties);
+            var data = sg.utls.ko.toJS(modelData, taxAuthoritiesUI.computedProperties);
             if (modelData.UIMode() === sg.utls.OperationMode.SAVE) {
                 taxAuthoritiesRepository.update(data, taxAuthoritiesUISuccess.update);
             } else {
@@ -88,17 +76,11 @@ taxAuthoritiesUI = {
         }
     },
 
-    /**
-     * @function
-     * @name initButtons
-     * @description Initialize the buttons
-     * @namespace taxAuthoritiesUI
-     * @public
-     */
+    // Init Buttons
     initButtons: function () {
 
         // Key field with Finder
-        $("#txtTaxAuthority").on('blur', function () {
+        $("#txtTaxAuthority").bind('blur', function () {
             modelData.TaxAuthority($("#txtTaxAuthority").val());
             sg.delayOnBlur("btnFinderTaxAuthority", function () {
                 if (sg.controls.GetString(modelData.TaxAuthority() !== "")) {
@@ -110,19 +92,19 @@ taxAuthoritiesUI = {
         });
 
         // Create New Button
-        $("#btnNew").on('click', function () {
+        $("#btnNew").bind('click', function () {
             taxAuthoritiesUI.checkIsDirty(taxAuthoritiesUI.create, taxAuthoritiesUI.taxAuthority);
         });
 
         // Save Button
-        $("#btnSave").on('click', function () {
+        $("#btnSave").bind('click', function () {
             sg.utls.SyncExecute(taxAuthoritiesUI.saveTaxAuthorities);
         });
 
         // Delete Button
-        $("#btnDelete").on('click', function () {
+        $("#btnDelete").bind('click', function () {
             if ($("#frmTaxAuthorities").valid()) {
-                let message = jQuery.validator.format(taxAuthoritiesResources.DeleteConfirmationMessage, taxAuthoritiesResources.TaxAuthorityTitle, modelData.TaxAuthority());
+                var message = jQuery.validator.format(taxAuthoritiesResources.DeleteConfirmationMessage, taxAuthoritiesResources.TaxAuthorityTitle, modelData.TaxAuthority());
                 sg.utls.showKendoConfirmationDialog(function () {
                     sg.utls.clearValidations("frmTaxAuthorities");
                     taxAuthoritiesRepository.delete(modelData.TaxAuthority(), taxAuthoritiesUISuccess.delete);
@@ -131,17 +113,10 @@ taxAuthoritiesUI = {
         });
 
     },
-
-    /**
-     * @function
-     * @name initTextbox
-     * @description Initialize the textboxes
-     * @namespace taxAuthoritiesUI
-     * @public
-     */
+    // Init TextBoxes
     initTextbox: function(){
         $("#txtRecoRate").val(100);
-        $('#txtTaxAuthority').on("blur", function () {
+        $('#txtTaxAuthority').bind("blur", function () {
             sg.delayOnBlur("btntaxAuthorityFinder", function () {
                 if ($('#txtTaxAuthority').val() !== "") {
                     sg.controls.Focus($("#txtTaxDescription"));
@@ -149,8 +124,8 @@ taxAuthoritiesUI = {
             });
         });
 
-        $('#txtTaxReportingCurrency').on('change', function () {
-            let currencyCode = $('#txtTaxReportingCurrency').val();
+        $('#txtTaxReportingCurrency').bind('change', function () {
+            var currencyCode = $('#txtTaxReportingCurrency').val();
             sg.delayOnBlur("btnCurrencyFinder", function () {
                 if (currencyCode){
                     currencyCode = currencyCode.toUpperCase();
@@ -161,26 +136,24 @@ taxAuthoritiesUI = {
             });
         });
 
-        $('#txtTaxRecoverable').on("change", function () {
-            let accountNumber = $('#txtTaxRecoverable').val();
+        $('#txtTaxRecoverable').bind("change", function () {
+            var accountNumber = $('#txtTaxRecoverable').val();
             taxAuthoritiesUI.acctDescName = "RecoverableTaxAccountDescription";
             taxAuthoritiesUI.acctDescId = "txtTaxRecoverable";
             sg.delayOnChange("btnTaxRecoverableFinder", $('#txtTaxRecoverable'), function () {
                 taxAuthoritiesRepository.getAccountDescription({ id: accountNumber }, taxAuthoritiesUISuccess.displayAccountDescription);
             });
         });
-
-        $('#txtTaxLiabilityAccount').on("change", function () {
-            let accountNumber = $('#txtTaxLiabilityAccount').val();
+        $('#txtTaxLiabilityAccount').bind("change", function () {
+            var accountNumber = $('#txtTaxLiabilityAccount').val();
             taxAuthoritiesUI.acctDescName = "LiabilityAccountDescription";
             taxAuthoritiesUI.acctDescId = "txtTaxLiabilityAccount";
             sg.delayOnChange("btnLiabilityAccountFinder", $("#txtTaxLiabilityAccount"), function () {
                 taxAuthoritiesRepository.getAccountDescription({ id: accountNumber }, taxAuthoritiesUISuccess.displayAccountDescription);
             });
         });
-
-        $("#txtExpenseAccount").on("change", function () {
-            let accountNumber = $("#txtExpenseAccount").val();
+        $("#txtExpenseAccount").bind("change", function () {
+            var accountNumber = $("#txtExpenseAccount").val();
             taxAuthoritiesUI.acctDescName = "ExpenseAccountDescription";
             taxAuthoritiesUI.acctDescId = "txtExpenseAccount";
             sg.delayOnChange("btnExpenseAccountFinder", $("#txtExpenseAccount"), function () {
@@ -189,53 +162,28 @@ taxAuthoritiesUI = {
         });
     },
 
-    /**
-     * @function
-     * @name initTextBoxValue
-     * @description Initialize the numeric textboxes
-     * @namespace taxAuthoritiesUI
-     * @public
-     * 
-     * @param {string] id The textbox identifier string
-     * @param {number} value The value to set in the textbox
-     */
+    // Init Numeric TextBox
+
     initTextBoxValue: function (id, value) {
-        let numerictextbox = $('#' + id).data("kendoNumericTextBox");
+        var numerictextbox = $('#' + id).data("kendoNumericTextBox");
         numerictextbox.value(value);
     },
 
-    /**
-     * @function
-     * @name numericBoxChange
-     * @description Event handler for textbox changes
-     * @namespace taxAuthoritiesUI
-     * @public
-     *
-     * @param {object} e The event object
-     * @param {string} id The textbox identifier string
-     */
     numericBoxChange: function (e, id) {
-        let value = e.sender._value;
+        var value = e.sender._value;
         if (value) {
-            let expression = parseInt(value);
+            var expression = parseInt(value);
             $(this).val(expression.toString());
         } else {
             taxAuthoritiesUI.initTextBoxValue(id, 0);
         }
     },
 
-    /**
-     * @function
-     * @name initNumericTextBox
-     * @description Initialize the numeric textboxes
-     * @namespace taxAuthoritiesUI
-     * @public
-     */
     initNumericTextBox: function () {
-        let vm = taxAuthoritiesUI.taxAuthoritiesModel;
-        let curdecimal = vm.CurrencyDecimals();
-        let beforedecimal = 13;
-        let maxAllow = Array(beforedecimal + 1).join("9");
+        var vm = taxAuthoritiesUI.taxAuthoritiesModel;
+        var curdecimal = vm.CurrencyDecimals();
+        var beforedecimal = 13;
+        var maxAllow = Array(beforedecimal + 1).join("9");
 
         $("#txtMaximumTaxAllowable").val(maxAllow);
         vm.Data.MaximumTaxAllowable(maxAllow);
@@ -251,7 +199,7 @@ taxAuthoritiesUI = {
             }
         });
 
-        let maximumTax = $("#txtMaximumTaxAllowable").data("kendoNumericTextBox");
+        var maximumTax = $("#txtMaximumTaxAllowable").data("kendoNumericTextBox");
         $(maximumTax.element).unbind("input");
         sg.utls.kndoUI.restrictDecimals(maximumTax, curdecimal, beforedecimal);
 
@@ -266,7 +214,7 @@ taxAuthoritiesUI = {
             }
         });
 
-        let NochargeTxtBox = $("#txtNoTaxChargedBelow").data("kendoNumericTextBox");
+        var NochargeTxtBox = $("#txtNoTaxChargedBelow").data("kendoNumericTextBox");
         $(NochargeTxtBox.element).unbind("input");
         sg.utls.kndoUI.restrictDecimals(NochargeTxtBox, curdecimal, beforedecimal);
 
@@ -280,52 +228,41 @@ taxAuthoritiesUI = {
                 taxAuthoritiesUI.numericBoxChange(e, "txtRecoRate");
             }
         });
-        let RecoverRateTxtBox = $("#txtRecoRate").data("kendoNumericTextBox");
+        var RecoverRateTxtBox = $("#txtRecoRate").data("kendoNumericTextBox");
         sg.utls.kndoUI.restrictDecimals(RecoverRateTxtBox, 5, 3);
 
     },
 
-    /**
-     * @function
-     * @name initDropDownList
-     * @description Initialize the dropdown listboxes
-     * @namespace taxAuthoritiesUI
-     * @public
-     */
+    // Init Dropdowns
     initDropDownList: function () {
         sg.utls.kndoUI.dropDownList("ddlreportTaxRetainage");
         sg.utls.kndoUI.dropDownList("ddltaxBase");
         sg.utls.kndoUI.dropDownList("ddlreportLevel");
-        let data = taxAuthoritiesUI.taxAuthoritiesModel.Data;
+        var data = taxAuthoritiesUI.taxAuthoritiesModel.Data;
 
-        $("#ddlreportTaxRetainage").on('change', function () {
-            let selIndex = $('#ddlreportTaxRetainage').data("kendoDropDownList").selectedIndex;
+        $("#ddlreportTaxRetainage").change(function () {
+            var selIndex = $('#ddlreportTaxRetainage').data("kendoDropDownList").selectedIndex;
             $("#txtMaximumTaxAllowable").data("kendoNumericTextBox").enable(selIndex === 0);
             $("#txtNoTaxChargedBelow").data("kendoNumericTextBox").enable(selIndex === 0);
             data.ReportTaxonRetainageDocument(selIndex);
         });
 
-        $("#ddltaxBase").on('change', function () {
-            let selIndex = $('#ddltaxBase').data("kendoDropDownList").value();
+        $("#ddltaxBase").change(function () {
+            var selIndex = $('#ddltaxBase').data("kendoDropDownList").value();
             data.TaxBase(selIndex);
         });
-        $("#ddlreportLevel").on('change', function () {
-            let selIndex = $('#ddlreportLevel').data("kendoDropDownList").value();
+        $("#ddlreportLevel").change(function () {
+            var selIndex = $('#ddlreportLevel').data("kendoDropDownList").value();
             data.ReportLevel(selIndex);
         });
+
     },
 
-    /**
-     * @function
-     * @name initFinders
-     * @description Initialize the finders
-     * @namespace taxAuthoritiesUI
-     * @public
-     */
+    // Init Finders
     initFinders: function () {
-        let info = sg.viewFinderProperties.TX.TaxAuthorities;
-        let buttonId = "btnFinderTaxAuthority";
-        let dataControlIdOrSuccessCallback = onFinderSuccess.taxAuthority;
+        var info = sg.viewFinderProperties.TX.TaxAuthorities;
+        var buttonId = "btnFinderTaxAuthority";
+        var dataControlIdOrSuccessCallback = onFinderSuccess.taxAuthority;
         sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, taxAuthoritiesFilter.getFilter);
 
         info = sg.viewFinderProperties.CS.CurrencyCodes;
@@ -349,15 +286,9 @@ taxAuthoritiesUI = {
         sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info);
     },
 
-    /**
-     * @function
-     * @name initCheckBoxes
-     * @description Set up the change events for check boxes
-     * @namespace taxAuthoritiesUI
-     * @public
-     */
+    // Init CheckBoxes
     initCheckBoxes: function () {
-        $("#chktaxRecoverable").on("change", function () {
+        $("#chktaxRecoverable").bind("change", function () {
             if (!this.checked) {
                 taxAuthoritiesUI.taxAuthoritiesModel.Data.RecoverableTaxAccount("");
                 taxAuthoritiesUI.taxAuthoritiesModel.RecoverableTaxAccountDescription("");
@@ -370,7 +301,7 @@ taxAuthoritiesUI = {
             $("#btnTaxRecoverableFinder").enable(this.checked);
         });
 
-        $("#chkExpenseSeparately").on("change", function () {
+        $("#chkExpenseSeparately").bind("change", function () {
             if (!this.checked) {
                 taxAuthoritiesUI.taxAuthoritiesModel.Data.ExpenseAccount("");
                 taxAuthoritiesUI.taxAuthoritiesModel.ExpenseAccountDescription("");
@@ -382,18 +313,11 @@ taxAuthoritiesUI = {
 
         });
 
-        $("#chkallowTax").on("change", function () {
+        $("#chkallowTax").bind("change", function () {
             taxAuthoritiesUI.allowTaxInPricechk = this.checked;
         });
     },
     
-    /**
-     * @function
-     * @name disableControls
-     * @description Disable a select group of controls
-     * @namespace taxAuthoritiesUI
-     * @public
-     */
     disableControls: function () {
         $("#txtTaxRecoverable").enable(false);
         $("#btnLoadrecoverable").enable(false);
@@ -406,40 +330,18 @@ taxAuthoritiesUI = {
         $("#btnLoadexpense").enable(false);
     },
 
-    /**
-     * @function
-     * @name get
-     * @description Invoke the tax authority get functionality
-     * @namespace taxAuthoritiesUI
-     * @public
-     */
+    // Get
     get: function () {
         taxAuthoritiesRepository.get(modelData.TaxAuthority(), taxAuthoritiesUISuccess.get);
     },
 
-    /**
-     * @function
-     * @name create
-     * @description Invoke the tax authority create functionality
-     * @namespace taxAuthoritiesUI
-     * @public
-     */
+    // Create
     create: function () {
         sg.utls.clearValidations("frmTaxAuthorities");
         taxAuthoritiesRepository.create(taxAuthoritiesUISuccess.create);
     },
 
-    /**
-     * @function
-     * @name checkIsDirty
-     * @description Check if model as been changed. If it has, display a confirmation dialog box.
-     *              and invoke the specified callback function if the user selects 'Yes'
-     * @namespace taxAuthoritiesUI
-     * @public 
-     * 
-     * @param {Function} functionToCall Callback function 
-     * @param {string} taxAuthority The tax authority specification
-     */
+    // Is Dirty check
     checkIsDirty: function (functionToCall, taxAuthority) {
         if (taxAuthoritiesUI.taxAuthoritiesModel.isModelDirty.isDirty() && taxAuthority) {
             sg.utls.showKendoConfirmationDialog(
@@ -464,26 +366,12 @@ taxAuthoritiesUI = {
 // Callbacks
 var taxAuthoritiesUISuccess = {
 
-    /**
-     * @function
-     * @name setkey
-     * @description Set the tax authority key
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     */
+    // Setkey
     setkey: function () {
         taxAuthoritiesUI.taxAuthority = modelData.TaxAuthority();
     },
 
-    /**
-     * @function
-     * @name get
-     * @description Event handler for successful tax authority get 
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     * 
-     * @param {object} jsonResult JSON payload object
-     */
+    // Get
     get: function (jsonResult) {
         if (jsonResult.UserMessage && jsonResult.UserMessage.IsSuccess) {
             if (jsonResult.Data) {
@@ -498,15 +386,7 @@ var taxAuthoritiesUISuccess = {
         }
     },
 
-    /**
-     * @function
-     * @name update
-     * @description Event handler for successful tax authority update
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     *
-     * @param {object} jsonResult JSON payload object
-     */
+    // Update
     update: function (jsonResult) {
         if (jsonResult.UserMessage.IsSuccess) {
             taxAuthoritiesUISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
@@ -516,15 +396,7 @@ var taxAuthoritiesUISuccess = {
         sg.utls.showMessage(jsonResult);
     },
 
-    /**
-     * @function
-     * @name create
-     * @description Event handler for successful tax authority create
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     *
-     * @param {object} jsonResult JSON payload object
-     */
+    // Create
     create: function (jsonResult) {
         taxAuthoritiesUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
         taxAuthoritiesUI.taxAuthoritiesModel.isModelDirty.reset();
@@ -533,15 +405,7 @@ var taxAuthoritiesUISuccess = {
         sg.controls.Focus($("#txtTaxAuthority"));
     },
 
-    /**
-     * @function
-     * @name delete
-     * @description Event handler for successful tax authority deletion
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     *
-     * @param {object} jsonResult JSON payload object
-     */
+    // Delete
     delete: function (jsonResult) {
         if (jsonResult.UserMessage.IsSuccess) {
             taxAuthoritiesUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
@@ -552,16 +416,7 @@ var taxAuthoritiesUISuccess = {
         sg.utls.showMessage(jsonResult);
     },
 
-    /**
-     * @function
-     * @name displayResult
-     * @description Display the results of an ajax call
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     *
-     * @param {object} jsonResult JSON payload object
-     * @param {number} uiMode The UI mode
-     */
+    // Display Result
     displayResult: function (jsonResult, uiMode) {
         if (jsonResult) {
             if (!taxAuthoritiesUI.hasKoBindingApplied) {
@@ -582,8 +437,8 @@ var taxAuthoritiesUISuccess = {
             if (!taxAuthoritiesUI.isKendoControlNotInitialised) {
                 taxAuthoritiesUI.isKendoControlNotInitialised = true;
             } else {
-                let data = taxAuthoritiesUI.taxAuthoritiesModel.Data;
-                let selIndex = data.ReportTaxonRetainageDocument();
+                var data = taxAuthoritiesUI.taxAuthoritiesModel.Data;
+                var selIndex = data.ReportTaxonRetainageDocument();
                 $("#ddlreportTaxRetainage").data("kendoDropDownList").value(selIndex);
                 $("#ddltaxBase").data("kendoDropDownList").value(data.TaxBase());
                 $("#ddlreportLevel").data("kendoDropDownList").value(data.ReportLevel());
@@ -592,7 +447,7 @@ var taxAuthoritiesUISuccess = {
                 $("#chkExpenseSeparately").prop("checked", data.ExpenseSeparate()).applyCheckboxStyle();
                 $("#chkallowTax").prop("checked", data.AllowTaxPrice()).applyCheckboxStyle();
 
-                let maxAllow = (uiMode === sg.utls.OperationMode.NEW) ? "9999999999999" : data.MaximumTaxAllowable();
+                var maxAllow = (uiMode === sg.utls.OperationMode.NEW) ? "9999999999999" : data.MaximumTaxAllowable();
                 $("#txtMaximumTaxAllowable").data("kendoNumericTextBox").value(maxAllow);
                 $("#txtNoTaxChargedBelow").data("kendoNumericTextBox").value(data.NoTaxChargedBelow());
                 $("#txtRecoRate").data("kendoNumericTextBox").value(data.RecoverableRate());
@@ -612,13 +467,13 @@ var taxAuthoritiesUISuccess = {
                 $("#txtMaximumTaxAllowable").data("kendoNumericTextBox").enable(selIndex === 0);
                 $("#txtNoTaxChargedBelow").data("kendoNumericTextBox").enable(selIndex === 0);
 
-                let isTaxRecoverable = $("#chktaxRecoverable").prop("checked", data.TaxRecover()).applyCheckboxStyle()[0].checked;
+                var isTaxRecoverable = $("#chktaxRecoverable").prop("checked", data.TaxRecover()).applyCheckboxStyle()[0].checked;
                 $("#txtTaxRecoverable").enable(isTaxRecoverable);
                 $("#btnLoadrecoverable").enable(isTaxRecoverable);
                 $("#btnTaxRecoverableFinder").enable(isTaxRecoverable);
                 $("#txtRecoRate").data("kendoNumericTextBox").enable(isTaxRecoverable);
 
-                let isExpenseAccount = $("#chkExpenseSeparately").prop("checked", data.ExpenseSeparate()).applyCheckboxStyle()[0].checked;
+                var isExpenseAccount = $("#chkExpenseSeparately").prop("checked", data.ExpenseSeparate()).applyCheckboxStyle()[0].checked;
                 $("#txtExpenseAccount").enable(isExpenseAccount);
                 $("#btnLoadexpense").enable(isExpenseAccount);
                 $("#btnExpenseAccountFinder").enable(isExpenseAccount);
@@ -626,15 +481,7 @@ var taxAuthoritiesUISuccess = {
         }
     },
 
-    /**
-     * @function
-     * @name initialLoad
-     * @description Called during initial page load
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     *
-     * @param {object} result JSON payload object
-     */
+    // Initial Load
     initialLoad: function (result) {
         if (result) {
             taxAuthoritiesUISuccess.displayResult(result, sg.utls.OperationMode.NEW);
@@ -644,45 +491,24 @@ var taxAuthoritiesUISuccess = {
         sg.controls.Focus($("#txtTaxAuthority"));
     },
 
-    /**
-     * @function
-     * @name setFinderData
-     * @description Set the finder data
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     */
+    // Set Finder
     setFinderData: function () {
-        let authority = taxAuthoritiesUI.finderData.AUTHORITY;
+        var data = taxAuthoritiesUI.finderData;
         sg.utls.clearValidations("frmTaxAuthorities");
         taxAuthoritiesUI.finderData = null;
-        taxAuthoritiesRepository.get(authority, taxAuthoritiesUISuccess.get);
+        taxAuthoritiesRepository.get(data.AUTHORITY, taxAuthoritiesUISuccess.get);
     },
 
-    /**
-     * @function
-     * @name isNew
-     * @description Determine if we're creating a new tax authority
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     */
+    // Is New
     isNew: function (model) {
-        if (!model.TaxAuthority()) {
+        if (model.TaxAuthority() === null) {
            return true;
         }
         return false;
     },
 
-    /**
-     * @function
-     * @name displayAccountDescription
-     * @description Display the account description message
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     * 
-     * @param {object} result JSON payload object
-     */
     displayAccountDescription: function (result) {
-        let vm = taxAuthoritiesUI.taxAuthoritiesModel;
+        var vm = taxAuthoritiesUI.taxAuthoritiesModel;
         if (typeof result === "string" || result instanceof String) {
             vm[taxAuthoritiesUI.acctDescName](result);
         }
@@ -693,17 +519,8 @@ var taxAuthoritiesUISuccess = {
         sg.utls.showMessage(result);
     },
 
-    /**
-     * @function
-     * @name displayCurrencyDescription
-     * @description Display the currency description message
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     *
-     * @param {object} result JSON payload object
-     */
     displayCurrencyDescription: function (result) {
-        let vm = taxAuthoritiesUI.taxAuthoritiesModel;
+        var vm = taxAuthoritiesUI.taxAuthoritiesModel;
         if (typeof result === "string" || result instanceof String) {
             vm.CurrencyDescription(result);
         }
@@ -714,34 +531,18 @@ var taxAuthoritiesUISuccess = {
         sg.utls.showMessage(result);
     },
 
-    /**
-     * @function
-     * @name enableCurrency
-     * @description Display the currency description message
-     * @namespace taxAuthoritiesUISuccess
-     * @public
-     *
-     * @param {boolean} enable true = enable | false = disable
-     */
-    enableCurrency: function (enable) {
-        $("#txtTaxReportingCurrency").enable(enable);
-        $("#btnLoadcurrency").enable(enable);
-        $("#btnCurrencyFinder").enable(enable);
+    enableCurrency: function (e) {
+        $("#txtTaxReportingCurrency").enable(e);
+        $("#btnLoadcurrency").enable(e);
+        $("#btnCurrencyFinder").enable(e);
     }
 };
 
 // Finder Filter
 var taxAuthoritiesFilter = {
-    /**
-     * @function
-     * @name getFilter
-     * @description Get the finder filter
-     * @namespace taxAuthoritiesFilter
-     * @public
-     */
     getFilter: function () {
-        let filters = [[]];
-        let taxAuthoritiesName = $("#txtTaxAuthority").val();
+        var filters = [[]];
+        var taxAuthoritiesName = $("#txtTaxAuthority").val();
         filters[0][0] = sg.finderHelper.createFilter("TaxAuthority", sg.finderOperator.StartsWith, taxAuthoritiesName);
         return filters;
     }
@@ -749,15 +550,6 @@ var taxAuthoritiesFilter = {
 
 var onFinderSuccess = {
 
-    /**
-     * @function
-     * @name taxAuthority
-     * @description 
-     * @namespace onFinderSuccess
-     * @public
-     * 
-     * @param {object} data JSON payload object  
-     */
     taxAuthority: function (data) {
         if (data) {
             if (sg.controls.GetString(taxAuthoritiesUI.taxAuthority) !== data.AUTHORITY) {
@@ -767,19 +559,8 @@ var onFinderSuccess = {
         }
     },
 
-    /**
-     * @function
-     * @name currencyCode
-     * @description Event handler for currency code finder
-     *              This method will get selected currency id and name,
-     *              set the appropriate model fields and set the form focus
-     * @namespace onFinderSuccess
-     * @public
-     *
-     * @param {object} data JSON payload object
-     */
     currencyCode: function (data) {
-        let vm = taxAuthoritiesUI.taxAuthoritiesModel;
+        var vm = taxAuthoritiesUI.taxAuthoritiesModel;
         if (data) {
             vm.Data.TaxReportingCurrency(data.CURID);
             vm.CurrencyDescription(data.CURNAME);
@@ -787,19 +568,8 @@ var onFinderSuccess = {
         }
     },
 
-    /**
-     * @function
-     * @name currencyCode
-     * @description Event handler for liability account finder
-     *              This method will get selected account id and description
-     *              set the appropriate model fields and set the form focus
-     * @namespace onFinderSuccess
-     * @public
-     *
-     * @param {object} data JSON payload object
-     */
     liabilityAccount: function (data) {
-        let vm = taxAuthoritiesUI.taxAuthoritiesModel;
+        var vm = taxAuthoritiesUI.taxAuthoritiesModel;
         if (data) {
             vm.Data.TaxLiabilityAccount(data.ACCTFMTTD);
             vm.LiabilityAccountDescription(data.ACCTDESC);
@@ -807,19 +577,8 @@ var onFinderSuccess = {
         }
     },
 
-    /**
-     * @function
-     * @name expenseAccount
-     * @description Event handler for expense account finder
-     *              This method will get selected account id and description
-     *              set the appropriate model fields and set the form focus
-     * @namespace onFinderSuccess
-     * @public
-     *
-     * @param {object} data JSON payload object
-     */
     expenseAccount: function (data) {
-        let vm = taxAuthoritiesUI.taxAuthoritiesModel;
+        var vm = taxAuthoritiesUI.taxAuthoritiesModel;
         if (data) {
             vm.Data.ExpenseAccount(data.ACCTFMTTD);
             vm.ExpenseAccountDescription(data.ACCTDESC);
@@ -827,19 +586,8 @@ var onFinderSuccess = {
         }
     },
 
-    /**
-     * @function
-     * @name recoverableAccount
-     * @description Event handler for recoverable account finder
-     *              This method will get selected account id and description
-     *              set the appropriate model fields and set the form focus
-     * @namespace onFinderSuccess
-     * @public
-     *
-     * @param {object} data JSON payload object
-     */
     recoverableAccount: function (data) {
-        let vm = taxAuthoritiesUI.taxAuthoritiesModel;
+        var vm = taxAuthoritiesUI.taxAuthoritiesModel;
         if (data) {
             vm.Data.RecoverableTaxAccount(data.ACCTFMTTD);
             vm.RecoverableTaxAccountDescription(data.ACCTDESC);
@@ -851,9 +599,8 @@ var onFinderSuccess = {
 // Initial Entry
 $(function () {
     taxAuthoritiesUI.init();
-
     $(window).on('beforeunload', function () {
-        let dirty = taxAuthoritiesUI.taxAuthoritiesModel.isModelDirty.isDirty();
+        var dirty = taxAuthoritiesUI.taxAuthoritiesModel.isModelDirty.isDirty();
         if (sg.utls.isPageUnloadEventEnabled(dirty)) {
             return sg.utls.getDirtyMessage(taxAuthoritiesResources.TaxAuthorityTitle);
         }

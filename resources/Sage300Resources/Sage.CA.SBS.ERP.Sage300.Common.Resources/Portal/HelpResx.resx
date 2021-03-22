@@ -3737,11 +3737,11 @@
     <comment>CSH ID 369034001</comment>
   </data>
   <data name="AR_ReceiptInquiry_Article1" xml:space="preserve">
-    <value>Looking Up Receipts</value>
+    <value>About Inquiring on Customers and Documents from Transaction Screens</value>
     <comment>CSH ID 18062002</comment>
   </data>
   <data name="AR_ReceiptInquiry_Article2" xml:space="preserve">
-    <value>About Processing Receipts</value>
+    <value>Looking Up Receipts</value>
     <comment>CSH ID 18062003</comment>
   </data>
   <data name="AR_ReceiptInquiry_Screen" xml:space="preserve">
@@ -3749,11 +3749,11 @@
     <comment>CSH ID 18062001</comment>
   </data>
   <data name="AR_RefundInquiry_Article1" xml:space="preserve">
-    <value>Looking Up Refunds</value>
+    <value>About Processing Refunds</value>
     <comment>CSH ID 18065002</comment>
   </data>
   <data name="AR_RefundInquiry_Article2" xml:space="preserve">
-    <value>About Processing Refunds</value>
+    <value>Looking Up Refunds</value>
     <comment>CSH ID 18065003</comment>
   </data>
   <data name="AR_RefundInquiry_Screen" xml:space="preserve">
@@ -4384,71 +4384,5 @@
   <data name="MT_Optional_Fields_Screen" xml:space="preserve">
     <value>M/T Optional Fields Screen</value>
     <comment>CSH ID 332002001</comment>
-  </data>
-  <data name="CS_PaymentsAcceptance_Screen" xml:space="preserve">
-    <value>Accepting Payments Through Online Providers</value>
-    <comment>CSH ID 71011001</comment>
-  </data>
-  <data name="CS_PaymentsAcceptance_Article1" xml:space="preserve">
-    <value>About Payments Acceptance</value>
-    <comment>CSH ID 71011002</comment>
-  </data>
-  <data name="CS_PaymentsAcceptance_Article2" xml:space="preserve">
-    <value>Administration Overview</value>
-    <comment>CSH ID 71011003</comment>
-  </data>
-  <data name="AR_CustomerList_Article1" xml:space="preserve">
-    <value>About Using the Customer List Screen to Create Special Reports</value>
-  </data>
-  <data name="AR_CustomerList_Article2" xml:space="preserve">
-    <value>Printing a List of Customers</value>
-  </data>
-  <data name="AR_CustomerList_Screen" xml:space="preserve">
-    <value>A/R Customer List Screen</value>
-  </data>
-  <data name="AS_User_Article1" xml:space="preserve">
-    <value>Adding, Editing, or Deleting Users</value>
-  </data>
-  <data name="AS_User_Article2" xml:space="preserve">
-    <value>Assigning Users to Security Groups</value>
-  </data>
-  <data name="AS_User_Screen" xml:space="preserve">
-    <value>Users Screen</value>
-  </data>
-  <data name="GL_SourceCurrencyInquiry_Article1" xml:space="preserve">
-    <value>Specifying a Currency</value>
-    <comment>CSH ID 168024002</comment>
-  </data>
-  <data name="GL_SourceCurrencyInquiry_Article2" xml:space="preserve">
-    <value>Viewing Source-Currency Balances for a Multicurrency Account</value>
-    <comment>CSH ID 168024003</comment>
-  </data>
-  <data name="GL_SourceCurrencyInquiry_Screen" xml:space="preserve">
-    <value>G/L Source Currency Inquiry Screen</value>
-    <comment>CSH ID 168024001</comment>
-  </data>
-  <data name="GL_Account_History_Inquiry_Article1" xml:space="preserve">
-    <value>About Entering Account Balances, Historical Data, and Quantities</value>
-    <comment>CSH ID 168022002</comment>
-  </data>
-  <data name="GL_Account_History_Inquiry_Article2" xml:space="preserve">
-    <value>Adding a New Account</value>
-    <comment>CSH ID 168022003</comment>
-  </data>
-  <data name="GL_Account_History_Inquiry_Screen" xml:space="preserve">
-    <value>G/L Account History Inquiry Screen</value>
-    <comment>CSH ID 168022001</comment>
-  </data>
-  <data name="GL_About_Budgets" xml:space="preserve">
-    <value>About Budgets</value>
-    <comment>CSH ID 168023002</comment>
-  </data>
-  <data name="GL_Budget_Maintenance_Screen" xml:space="preserve">
-    <value>G/L Budget Maintenance Screen</value>
-    <comment>CSH ID 168023001</comment>
-  </data>
-  <data name="GL_Editing_Budget_Data" xml:space="preserve">
-    <value>Editing Budget Data</value>
-    <comment>CSH ID 168023003</comment>
   </data>
 </root>

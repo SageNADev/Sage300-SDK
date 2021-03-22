@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -24,16 +24,10 @@
 
 var tuClearStatisticsKoExtn = (function (self) {
 
-    /**
-     * @function
-     * @name convertToBoolean
-     * @description Converts a value into a boolean type
-     * @private
-     * 
-     * @param {any} value The value to convert to boolean
-     * 
-     * @returns The converted boolean value
-     */
+    //
+    // Private method
+    // Convert value to bool(True / False) 
+    //
     function convertToBoolean(value) {
         switch (value.toString().toLowerCase()) {
             case "true": case "yes": case "1": return true;
@@ -45,16 +39,8 @@ var tuClearStatisticsKoExtn = (function (self) {
     // Publicly exposed objects
     return {
 
-        /**
-         * @function
-         * @name tuClearStatisticsModelExtension
-         * @description
-         * @public
-         * 
-         * @param {Object} model
-         */
         tuClearStatisticsModelExtension: function (model) {
-            let modelData = model.Data;
+            var modelData = model.Data;
             modelData.Year = ko.observable("");
 
             modelData.IsKoStatisticsDirty = new ko.dirtyFlag(model);

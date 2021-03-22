@@ -15,11 +15,6 @@
 
    Run the batch file 'MoveTemplateZipFilesToFinalDestination.bat' 
 
-4. Ensure the correct version of AccpacDotNetVersion.props has been 
-   copied to the Upgrade Wizard ItemTemplates folder.
-
-   Run the batch file 'CopyAccpacDotNetVersionSettings.bat'
-
-5. The Upgrade Wizard can now be rebuilt with the latest Sage 300 
+4. The Upgrade Wizard can now be rebuilt with the latest Sage 300 
    Web Screen Framework source code!
 

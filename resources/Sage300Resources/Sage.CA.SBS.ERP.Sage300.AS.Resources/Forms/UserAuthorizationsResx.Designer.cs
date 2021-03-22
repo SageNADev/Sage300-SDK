@@ -70,15 +70,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to From User.
-        /// </summary>
-        public static string FromUser {
-            get {
-                return ResourceManager.GetString("FromUser", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Application.
         /// </summary>
         public static string GridASAUTHColAppCap {
@@ -120,24 +111,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources.Forms {
         public static string MultiUser {
             get {
                 return ResourceManager.GetString("MultiUser", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to To User.
-        /// </summary>
-        public static string ToUser {
-            get {
-                return ResourceManager.GetString("ToUser", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User Authorizations Report.
-        /// </summary>
-        public static string UserAuthorizationReport {
-            get {
-                return ResourceManager.GetString("UserAuthorizationReport", resourceCulture);
             }
         }
         

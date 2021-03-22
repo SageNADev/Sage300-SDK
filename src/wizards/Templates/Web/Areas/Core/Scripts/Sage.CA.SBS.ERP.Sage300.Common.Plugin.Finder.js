@@ -6,8 +6,7 @@
         sortDir: false,
         cancelFuncCall: $.noop,
         setFinder: function (id, searchFinder, onSelectCallBack, onCancelCallBack, title, filters, uid, postbackNotRequired, height, top) {
-            var element = $("#" + id);
-            element.Finder({
+            $("#" + id).Finder({
                 searchFinder: searchFinder,
                 sortDir: false,
                 select: onSelectCallBack,
@@ -19,8 +18,6 @@
                 height: height,
                 top: top
             });
-
-            sg.utls.registerFinderHotkey(element, id);
         },
 
         createFilter: function (field, operator, value, applyFilterIfNull) {

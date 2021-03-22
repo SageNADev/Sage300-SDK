@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -20,13 +20,11 @@
 
 #region Imports
 using EnvDTE;
-using EnvDTE80;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties;
 using Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using VSLangProj;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
@@ -62,9 +60,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <param name="settings">Settings for processing</param>
 		public void Process(Settings settings)
 		{
-            // Developer Note: This number is one less than the number of steps in the main
-            //                 switch statement below.
-            const int WORKINGSTEPS = 2;
+            const int WORKINGSTEPS = 6;
 
             LogSpacerLine('-');
             Log(Resources.BeginUpgradeProcess);
@@ -104,21 +100,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     //
                     case 1: if (Constants.PerRelease.SyncKendoFiles) { SyncKendoFiles(title); } break;
                     case 2: if (Constants.PerRelease.SyncWebFiles) { SyncWebFiles(title); } break;
-
-                    // Release specific Steps
-                    case 3: if (Constants.PerRelease.ReportUpgrade_For_2021_2) { ReportUpgrade_For_2021_2(title); } break;
-
-                    //
-                    // Developer Note: The following are optional steps from previous 
-                    //                 incarnations of the Upgrade Wizard
-                    //                 They have been left in place for future reference.
-                    //
-                    //case 6: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
-                    //case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
-                    //case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
-                    //case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
-                    //case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
-                    //case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
+                    case 3: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
+                    case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
+                    case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
+                    case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
+                    case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
 
 #if ENABLE_TK_244885
                     case X: ConsolidateEnumerations(title); break;
@@ -304,69 +290,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
-        /// Add a reference to the new ExportReport.exe located in the Local Sage 300 installation
-        /// </summary>
-        /// <param name="title">The title of this step</param>
-        private void ReportUpgrade_For_2021_2(string title)
-        {
-            LogEventStart(title);
-
-            string webProjectName = string.Empty;
-
-            // Check for the existence of the following file:
-            //
-            // [Sage300Installation]\Web\Online\bin\Sage.CA.SBS.ERP.Sage300.ExportReport.exe
-            //
-            // If this file exists, add it as a reference in the web.csproj file
-            //
-            var exportReportExePath = Path.Combine(RegistryHelper.Sage300CWebFolder, @"bin\Sage.CA.SBS.ERP.Sage300.ExportReport.exe");
-            if (File.Exists(exportReportExePath))
-            {
-                Log($"Found {exportReportExePath}");
-
-                var projects = _settings.Solution.Projects;
-                foreach (Project project in projects)
-                {
-                    // Find the Web project in the solution
-                    webProjectName = project.FullName;
-                    if (IsWebProject(webProjectName))
-                    {
-                        Log($"Found web project {webProjectName}");
-
-                        // Add the reference to the report exe
-                        //
-                        // Developer Note: This will add the reference with a normal path specification,
-                        //                 NOT one using the normal $(Sage300WebDir) macro.
-                        //                 This is a known limitation of the DTE interface.
-                        //                 https://developercommunity.visualstudio.com/t/adding-a-reference-to-vslangproj-with-a-path-based/1029534
-                        //
-                        //                 Changing the path to use the macro is a manual step if the end user wishes to do this.
-                        //                 It's not required.
-                        //
-                        var vsproj = (VSProject)project.Object;
-                        var pathText = exportReportExePath;
-                        vsproj.References.Add(pathText);
-
-                        Log($"Added {exportReportExePath} reference to {webProjectName}");
-
-                        // No need to iterate the rest of the projects
-                        // We've found the Web project already.
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                Log($"{exportReportExePath} not found.");
-                Log($"Reference to {exportReportExePath} was NOT added to {webProjectName}");
-            }
-
-            // Log end of step
-            LogEventEnd(title);
-            Log("");
-        }
-
-        /// <summary>
         /// Add the new 'BinInclude.txt' file to the Web project
         /// </summary>
         /// <param name="title">The title of this step</param>
@@ -374,6 +297,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         {
             LogEventStart(title);
 
+            // Check for the existence of BinInclude.txt file
+            // If it exists, then just leave it as is.
             var binInclude = Path.Combine(_settings.DestinationWebFolder, Constants.Common.BinIncludeFile);
             if (!File.Exists(binInclude))
             {

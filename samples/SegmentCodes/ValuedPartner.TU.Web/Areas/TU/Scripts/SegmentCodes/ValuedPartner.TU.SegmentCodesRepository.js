@@ -1,6 +1,6 @@
 
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -19,8 +19,6 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-//@ts-check
-
 "use strict";
 
 // Ajax call to controller
@@ -35,14 +33,11 @@ var segmentCodesAjax = {
 var segmentCodesRepository = {
 
 	/**
-     * @function
-	 * @name get
-	 * @description Get data
-	 * @namespace segmentCodesRepository
-	 * @public 
-	 * 
-	 * @param {number} id The segment code
-	 * @param {Function} callbackMethod Callback method to call on success
+     * Get
+	 *
+	 * @method get
+	 * @param id
+	 * @param callbackMethod
 	 */
     get: function(id, callbackMethod) {
         var data = { 'id': id };
@@ -50,13 +45,10 @@ var segmentCodesRepository = {
     },
 
 	/**
-	 * @function
-	 * @name create
-	 * @description Create a new segment code
-	 * @namespace segmentCodesRepository
-	 * @public
+     * Create
 	 *
-	 * @param {Function} callbackMethod Callback method to call on success
+	 * @method create
+	 * @param callbackMethod
 	 */
     create: function(callbackMethod) {
         var data = {};
@@ -64,14 +56,11 @@ var segmentCodesRepository = {
     },
 
 	/**
-	 * @function
-	 * @name delete
-	 * @description Delete segment code
-	 * @namespace segmentCodesRepository
-	 * @public
+     * Delete
 	 *
-	 * @param {number} id The segment code
-	 * @param {Function} callbackMethod Callback method to call on success
+	 * @method delete
+	 * @param id
+	 * @param callbackMethod
 	 */
     delete: function(id, callbackMethod) {
         var data = { 'id': id };
@@ -79,41 +68,33 @@ var segmentCodesRepository = {
     },
 
 	/**
-	 * @function
-	 * @name add
-	 * @description Add segment code
-	 * @namespace segmentCodesRepository
-	 * @public
+     * Add
 	 *
-	 * @param {number} id The segment code
-	 * @param {Function} callbackMethod Callback method to call on success
+	 * @method add
+	 * @param data
+	 * @param callbackMethod
 	 */
     add: function(data, callbackMethod) {
         segmentCodesAjax.call("Add", data, callbackMethod);
     },
 
 	/**
-	 * @function
-	 * @name update
-	 * @description Update segment code
-	 * @namespace segmentCodesRepository
-	 * @public
+     * Update
 	 *
-	 * @param {data} data The segment code data
-	 * @param {Function} callbackMethod Callback method to call on success
+	 * @method update
+	 * @param data
+	 * @param callbackMethod
 	 */
     update: function(data, callbackMethod) {
         segmentCodesAjax.call("Save", data, callbackMethod);
     },
 
 	/**
-	 * @function
-	 * @name post
-	 * @description post segment code
-	 * @namespace segmentCodesRepository
-	 * @public
+     * Post
 	 *
-	 * @param {Function} callbackMethod Callback method to call on success
+	 * @method update
+	 * @param data
+	 * @param callbackMethod
 	 */
     post: function(callbackMethod) {
         segmentCodesAjax.call("Post", null, callbackMethod);

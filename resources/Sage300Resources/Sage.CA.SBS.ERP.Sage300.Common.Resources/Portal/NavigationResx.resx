@@ -294,9 +294,6 @@
   <data name="AS_UserAuthorizations" xml:space="preserve">
     <value>User Authorizations</value>
   </data>
-  <data name="AS_UserAuthorizationsReport" xml:space="preserve">
-    <value>User Authorizations Report</value>
-  </data>
   <data name="Bank_PeriodicProcessing" xml:space="preserve">
     <value>Bank Periodic Processing</value>
   </data>
@@ -1284,9 +1281,6 @@
   <data name="GL_Fiscal_Set_Comparison" xml:space="preserve">
     <value>Fiscal Set Comparison</value>
   </data>
-  <data name="GL_Account_History_Inquiry" xml:space="preserve">
-    <value>Account History Inquiry</value>
-  </data>
   <data name="IC_Bills_of_Material" xml:space="preserve">
     <value>Bills of Material</value>
   </data>
@@ -1632,20 +1626,5 @@
   <data name="FormSizeResetConfirmation" xml:space="preserve">
     <value>Clear all text size settings on individual screens, and reset text size to the default (Large)?</value>
     <comment>Setting Menu Form Size</comment>
-  </data>
-  <data name="CS_PaymentsAcceptance" xml:space="preserve">
-    <value>Payments Acceptance</value>
-  </data>
-  <data name="CS_ServiceCenter" xml:space="preserve">
-    <value>Service Center</value>
-  </data>
-  <data name="AR_Customer_List" xml:space="preserve">
-    <value>Customer List</value>
-  </data>
-  <data name="GL_SourceCurrencyInquiry" xml:space="preserve">
-    <value>Source Currency Inquiry</value>
-  </data>
-  <data name="GL_BudgetMaintenance" xml:space="preserve">
-    <value>Budget Maintenance</value>
   </data>
 </root>

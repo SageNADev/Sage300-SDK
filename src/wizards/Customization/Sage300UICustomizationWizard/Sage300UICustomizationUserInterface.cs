@@ -120,9 +120,6 @@ namespace Sage300UICustomizationWizard
         private string _solutionFolder;
         /// <summary> Destination folder for solution </summary>
         private string _destinationFolder;
-        /// <summary> The Sage300 Web installation folder </summary>
-        private string _sageWebFolder;
-
 
         private DTE _dte;
         private string _safeprojectname;
@@ -158,9 +155,7 @@ namespace Sage300UICustomizationWizard
 
             sln.Create(_destinationFolder, _safeprojectname);
 
-            //var parameters = "$companyname$=" + _companyName + "|$module$=" + _moduleName + "|$project$=" + _projectName;
-            var parameters = $"$companyname$={_companyName}|$module$={_moduleName}|$project$={_projectName}|$sage300webfolder$={_sageWebFolder}";
-
+            var parameters = "$companyname$=" + _companyName + "|$module$=" + _moduleName + "|$project$=" + _projectName;
             var sourceFilenameAndParameters = csTemplatePath + "|" + parameters;
             var destFolder = Path.Combine(_destinationFolder, _assemblyName);
             sln.AddFromTemplate(sourceFilenameAndParameters, destFolder, _assemblyName);
@@ -224,8 +219,8 @@ namespace Sage300UICustomizationWizard
                 var inputForm = new UserInputForm();
 
                 // Default the location for the Kendo folder
-                _sageWebFolder = RegistryHelper.Sage300CWebFolder;
-                inputForm.KendoDefaultFolder = Path.Combine(_sageWebFolder, "Scripts", "Kendo");
+                var webFolder = RegistryHelper.Sage300CWebFolder;
+                inputForm.KendoDefaultFolder = Path.Combine(webFolder, "Scripts", "Kendo");
 
                 var res = inputForm.ShowDialog();
 
@@ -248,7 +243,6 @@ namespace Sage300UICustomizationWizard
                 replacementsDictionary.Add("$companyname$", _companyName);
                 replacementsDictionary.Add("$module$", _moduleName);
                 replacementsDictionary.Add("$project$", _projectName);
-                replacementsDictionary.Add("$sage300webfolder$", _sageWebFolder);
             }
             catch
             {

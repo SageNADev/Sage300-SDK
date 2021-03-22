@@ -13,10 +13,7 @@ sg.utls = sg.utls || {};
 @class sg.utls.kndoUI
 */
 sg.utls.kndoUI = sg.utls.kndoUI || {};
-/**
-@class sg.utls.kndoUI.timePicker
-*/
-sg.utls.kndoUI.timePicker = sg.utls.kndoUI.timePicker || {};
+
 
 $.extend(sg.utls.kndoUI, {
     /**
@@ -626,18 +623,14 @@ $.extend(sg.utls.kndoUI, {
     },
 
     /**
-     * @name getFormattedDecimalNumber
-     * @desc Gets the proper formatted number for decimal with thousand separator
-     * @param {any} val Value to parse
-     * @param {any} decimal Number of decimal places
-     * @return {string} value
-     */
+    * Gets the proper formatted number for decimal with thousand separator
+    * @method getFormattedDecimalNumber
+    * @param {} val,decimal
+    * @return value
+    */
     getFormattedDecimalNumber: function (val, decimal) {
         if (!decimal) {
             decimal = "0";
-        }
-        if (!val) {
-            val = "0";
         }
         val = parseFloat(val);
         return kendo.toString(val, "n" + decimal);
@@ -1223,256 +1216,8 @@ $.extend(sg.utls.kndoUI, {
                 grid.select(grid.current().closest("tr"));
             }
         });
-    },
-});
-
-$.extend(sg.utls.kndoUI.timePicker, {
-
-    /**
-     * @name getControlById
-     * @param {string} controlId The string identifier for the control
-     * @returns {object} A reference to the Kendo timepicker control
-     */
-    getControlById: function (controlId) {
-        return $(controlId).data("kendoTimePicker");
-    },
-
-    /**
-     * @name setModelTime
-     * @description Take the contents of a TimePicker control
-     *              and put into the correct model property in the correct format
-     * @param {any} timeModelItem Reference to Time model data item
-     * @param {any} timeValue Value for Time
-     */
-    setModelTime: function (timeModelItem, timeValue) {
-        // 1. Get the time from the timepicker control
-        // 2. Set the model Time property based on the previously gotten timepicker value
-        // Developer Note: This is necessary because on the client-side, the binding is to the 
-        //                 TimeTimeSpan, not Time. These property names may be different in your implementation.
-        //                 We need to manually move the data over so the server-side can pick it up correctly.
-        timeModelItem('1899-12-30T' + timeValue);
-    },
-
-    /**
-     * @name getReasonableTime
-     * @desc Calculate a reasonable time for the TimeBegin and TimeEnd fields
-     *       if they're entered incompletely.
-     * @param {string} controlId The controlId specifier
-     * @returns {string} A reasonable TimeBegin or TimeEnd value
-     */
-    getReasonableTime: function (controlId) {
-
-        var DEFAULT_STARTTIME = '09:00:00';
-        var DEFAULT_ENDTIME = '17:00:00';
-
-        var control = $(controlId).data("kendoMaskedTextBox");
-
-        var fixedTime = '';
-        var val = control.value();
-        if (val !== '') {
-            var parts = val.split(":");
-
-            var validHour = true;
-            var validMinute = true;
-            var validSecond = true;
-            var validHour0 = true;
-            var validHour1 = true;
-            var validMinute0 = true;
-            var validMinute1 = true;
-            var validSecond0 = true;
-            var validSecond1 = true;
-
-            var hour = parts[0];
-            var minute = parts[1];
-            var second = parts[2];
-
-            var hour0 = hour[0];
-            var hour1 = hour[1];
-
-            var minute0 = minute[0];
-            var minute1 = minute[1];
-
-            var second0 = second[0];
-            var second1 = second[1];
-
-            if (hour[0].includes("_")) { validHour0 = false; }
-            if (hour[1].includes("_")) { validHour1 = false; }
-            if (minute[0].includes("_")) { validMinute0 = false; }
-            if (minute[1].includes("_")) { validMinute1 = false; }
-            if (second[0].includes("_")) { validSecond0 = false; }
-            if (second[1].includes("_")) { validSecond1 = false; }
-
-            var pattern = new RegExp("[0-9]");
-            var result_h0 = pattern.test(hour[0]);
-            var result_h1 = pattern.test(hour[1]);
-
-            var result_m0 = pattern.test(minute[0]);
-            var result_m1 = pattern.test(minute[1]);
-
-            var result_s0 = pattern.test(second[0]);
-            var result_s1 = pattern.test(second[1]);
-
-            validHour = result_h0 && result_h1;
-            validMinute = result_m0 && result_m1;
-            validSecond = result_s0 && result_s1;
-
-            if (!validHour) {
-                if (!validHour0 && !validHour1) {
-                    hour0 = '0';
-                    hour1 = '9';
-                } else if (!validHour0 && validHour1) {
-                    hour0 = '0';
-                } else if (validHour0 && !validHour1) {
-
-                    // Move the hour0 value into hour1
-                    // Set hour0 to zero
-                    //hour1 = hour0;
-                    //hour0 = '0';
-
-                    // Reverted behaviour back to original
-                    hour1 = '0';
-                }
-            }
-
-            if (!validMinute) {
-                if (!validMinute0 && !validMinute1) {
-                    minute0 = '0';
-                    minute1 = '0';
-                } else if (!validMinute0 && validMinute1) {
-                    minute0 = '0';
-                } else if (validMinute0 && !validMinute1) {
-                    // Move the minute0 value into minute1
-                    // Set minute0 to zero
-                    //minute1 = minute0;
-                    //minute0 = '0';
-
-                    // Reverted behaviour back to original
-                    minute1 = '0';
-                }
-            }
-
-            if (!validSecond) {
-                if (!validSecond0 && !validSecond1) {
-                    second0 = '0';
-                    second1 = '0';
-                } else if (!validSecond0 && validSecond1) {
-                    second0 = '0';
-                } else if (validSecond0 && !validSecond1) {
-                    // Move the second0 value into second1
-                    // Set second0 to zero
-                    //second1 = second0;
-                    //second0 = '0';
-
-                    // Reverted behaviour back to original
-                    second1 = '0';
-                }
-            }
-
-            fixedTime = hour0 + hour1 + ':' + minute0 + minute1 + ':' + second0 + second1;
-        } else {
-            if (controlId === '#txtTimeBegin') {
-                fixedTime = DEFAULT_STARTTIME;
-            } else if (controlId === '#txtTimeEnd') {
-                fixedTime = DEFAULT_ENDTIME;
-            }
-        }
-
-        return fixedTime;
-    },
-
-    /**
-     * @name init
-     * @description Create and initialize the kendo timepicker control
-     * @param {string} controlId The string controlId
-     * @param {object} modelDataItemReference The reference to the model item associated with the control
-     * @param {object} dirtyManager The reference to the DirtyManager object (Called in 'change' event)
-     * @param {object} optionsIn The reference to the object containing optional parameters
-     */
-    init: function (controlId, modelDataItemReference, dirtyManager, optionsIn) {
-
-        var twentyPlus = false;
-        var timepicker = $(controlId);
-
-        let options = {
-            FormatMask: "HH:mm:ss",
-            IntervalInMinutes: 15
-        };
-        if (optionsIn !== null && optionsIn !== 'undefined') {
-            options = optionsIn;
-        }
-
-        timepicker.kendoMaskedTextBox({
-            promptChar: "_",
-            mask: "ab:cd:ef",
-            rules: {
-                "a": function (char) {
-                    var digit = parseInt(char);
-
-                    // Reject non-numeric characters
-                    if (isNaN(digit)) {
-                        return false;
-                    }
-
-                    // First digit can only be 0, 1 or 2
-                    if (digit >= 0 && digit <= 2) {
-
-                        // if first digit is a 2, then 
-                        // set flag so we know about it 
-                        // when processing the next digit
-                        if (digit === 2) {
-                            twentyPlus = true;
-                        } else {
-                            twentyPlus = false;
-                        }
-                        return true;
-                    } else {
-                        return false;
-                    }
-                },
-
-                "b": function (char) {
-                    var digit = parseInt(char);
-
-                    // if first digit is a two 
-                    // and second digit is greater than 3, reject it.
-                    if (twentyPlus === true) {
-                        if (digit > 3) {
-                            return false;
-                        }
-                    }
-
-                    return true;
-                },
-
-                "c": /[0-5]/,
-                "d": /[0-9]/,
-                "e": /[0-5]/,
-                "f": /[0-9]/
-            }
-        });
-
-        timepicker.kendoTimePicker({
-            format: options.FormatMask,
-            interval: options.IntervalInMinutes
-        });
-
-        timepicker.closest(".k-timepicker")
-            .add(timepicker)
-            .removeClass("k-textbox");
-
-        // Set 'blur' event handler
-        $(controlId).on('blur', function (e) {
-            var fixedTime = sg.utls.kndoUI.timePicker.getReasonableTime(controlId);
-            modelDataItemReference(fixedTime);
-        });
-
-        if (dirtyManager !== null && dirtyManager !== 'undefined') {
-            // Set 'change' event handler. Set the dirty flag
-            $(controlId).on('change', function () {
-                dirtyManager.isDirty(true);
-            });
-        }
     }
+
 });
 
 var SageNumericTextBoxPlugin = (function (init) {

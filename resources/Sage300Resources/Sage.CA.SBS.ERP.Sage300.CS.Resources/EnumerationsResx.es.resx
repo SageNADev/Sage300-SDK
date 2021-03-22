@@ -848,7 +848,4 @@
   <data name="Num13" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="FiscalSet" xml:space="preserve">
-    <value>Saldo Fiscal</value>
-  </data>
 </root>

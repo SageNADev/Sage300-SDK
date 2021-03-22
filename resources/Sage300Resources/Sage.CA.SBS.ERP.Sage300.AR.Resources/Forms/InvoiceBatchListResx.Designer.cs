@@ -61,15 +61,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For batch {0}, all invoices that can be paid online now include payment links..
-        /// </summary>
-        public static string AddMissingLinksSuccess {
-            get {
-                return ResourceManager.GetString("AddMissingLinksSuccess", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Default Invoice Type.
         /// </summary>
         public static string DefaultInvoiceType {
@@ -84,15 +75,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         public static string Entity {
             get {
                 return ResourceManager.GetString("Entity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Add Missing Payment Links.
-        /// </summary>
-        public static string MissingLinks {
-            get {
-                return ResourceManager.GetString("MissingLinks", resourceCulture);
             }
         }
         

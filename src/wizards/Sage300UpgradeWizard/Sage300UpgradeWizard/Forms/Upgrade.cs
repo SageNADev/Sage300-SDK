@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -87,6 +87,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <param name="text">Text for UI</param>
         private delegate void LogCallback(string text);
 
+
 		#endregion
 
 		#region Constructor
@@ -113,21 +114,27 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             _propsSourceFolder = Utilities.FileUtilities.GetParentPathFromPath(_sourceFolder);
 			_destinationWebFolder = Directory.GetDirectories(_destinationFolder).FirstOrDefault(dir => dir.ToLower().Contains(Constants.Common.WebSuffix));
 		}
-        #endregion
+		#endregion
 
-        #region Button Events
+		#region Button Events
 
-        /// <summary> Next/Upgrade toolbar button </summary>
-        /// <param name="sender">Sender object </param>
-        /// <param name="e">Event Args </param>
-        /// <remarks>Next wizard step or Upgrade if last step</remarks>
-        private void btnNext_Click(object sender, EventArgs e) => NextStep();
+		/// <summary> Next/Upgrade toolbar button </summary>
+		/// <param name="sender">Sender object </param>
+		/// <param name="e">Event Args </param>
+		/// <remarks>Next wizard step or Upgrade if last step</remarks>
+		private void btnNext_Click(object sender, EventArgs e)
+        {
+            NextStep();
+        }
 
         /// <summary> Back toolbar button </summary>
         /// <param name="sender">Sender object </param>
         /// <param name="e">Event Args </param>
         /// <remarks>Back wizard step</remarks>
-        private void btnBack_Click(object sender, EventArgs e) => BackStep();
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            BackStep();
+        }
 
         #endregion
 
@@ -193,15 +200,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.FromReleaseNumber,
                                   Constants.PerRelease.ToReleaseNumber));
 #endif
-
-            if (Constants.PerRelease.ReportUpgrade_For_2021_2)
-            {
-                var executableName = "Sage.CA.SBS.ERP.Sage300.ExportReport.exe";
-                var title = Resources.ReleaseSpecificTitle_ReportUpdates_For_2021_2;
-                var description = string.Format(Resources.Template_ReleaseSpecificDesc_ReportUpdates_For_2021_2, executableName);
-                var content = string.Format(Resources.Template_ReleaseSpecificContent_ReportUpdates_For_2021_2, executableName);
-                AddStep(title, description, content);
-            }
 
             if (Constants.PerRelease.RemovePreviousJqueryLibraries)
             {
@@ -280,19 +278,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncKendoFiles}");
             content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncWebFiles}");
 
-
-            // Begin - Specific to release
-
-            if (Constants.PerRelease.ReportUpgrade_For_2021_2)
-            {
-                var title = Resources.ReleaseSpecificTitle_ReportUpdates_For_2021_2; 
-                content.AppendLine($"{Resources.Step} {++step}. {title}");
-            }
-
             if (Constants.PerRelease.UpdateAccpacDotNetLibrary)
             {
                 content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseAllTitleSyncAccpacLibs}");
             }
+
+            // Begin - Specific to release
 
             if (Constants.PerRelease.RemovePreviousJqueryLibraries)
             {

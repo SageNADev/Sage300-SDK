@@ -433,8 +433,4 @@
     <value>Se borró el lote que contiene este documento.</value>
     <comment>Error Message</comment>
   </data>
-  <data name="ReceiptInformation" xml:space="preserve">
-    <value>Información de Recibo</value>
-    <comment>Button</comment>
-  </data>
 </root>

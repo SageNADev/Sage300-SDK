@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class EnumerationsResx {
@@ -61,7 +61,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Timecard.
+        ///   Looks up a localized string similar to Time card.
         /// </summary>
         public static string AccountType_Timecard {
             get {
@@ -106,119 +106,11 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chinese (Simplified) (China).
-        /// </summary>
-        public static string Language_ChineseSimplifiedChina {
-            get {
-                return ResourceManager.GetString("Language_ChineseSimplifiedChina", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Chinese (Simplified) (Singapore).
-        /// </summary>
-        public static string Language_ChineseSimplifiedSingapore {
-            get {
-                return ResourceManager.GetString("Language_ChineseSimplifiedSingapore", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Chinese (Traditional) (Hong Kong).
-        /// </summary>
-        public static string Language_ChineseTraditionalHongKong {
-            get {
-                return ResourceManager.GetString("Language_ChineseTraditionalHongKong", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Chinese (Traditional) (Taiwan).
-        /// </summary>
-        public static string Language_ChineseTraditionalTaiwan {
-            get {
-                return ResourceManager.GetString("Language_ChineseTraditionalTaiwan", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string Language_Eng {
             get {
                 return ResourceManager.GetString("Language_Eng", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to English.
-        /// </summary>
-        public static string Language_English {
-            get {
-                return ResourceManager.GetString("Language_English", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to English (Australia).
-        /// </summary>
-        public static string Language_EnglishAustralia {
-            get {
-                return ResourceManager.GetString("Language_EnglishAustralia", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to English (Canada).
-        /// </summary>
-        public static string Language_EnglishCanada {
-            get {
-                return ResourceManager.GetString("Language_EnglishCanada", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to English (South Africa).
-        /// </summary>
-        public static string Language_EnglishSouthAfrica {
-            get {
-                return ResourceManager.GetString("Language_EnglishSouthAfrica", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to English (United States).
-        /// </summary>
-        public static string Language_EnglishUnitedStates {
-            get {
-                return ResourceManager.GetString("Language_EnglishUnitedStates", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to French (Canada).
-        /// </summary>
-        public static string Language_FrenchCanada {
-            get {
-                return ResourceManager.GetString("Language_FrenchCanada", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spanish.
-        /// </summary>
-        public static string Language_Spanish {
-            get {
-                return ResourceManager.GetString("Language_Spanish", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spanish (Spain).
-        /// </summary>
-        public static string Language_SpanishSpain {
-            get {
-                return ResourceManager.GetString("Language_SpanishSpain", resourceCulture);
             }
         }
         
@@ -363,69 +255,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
         public static string Role_Selectyourjobrole {
             get {
                 return ResourceManager.GetString("Role_Selectyourjobrole", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Friday.
-        /// </summary>
-        public static string Weekday_Friday {
-            get {
-                return ResourceManager.GetString("Weekday_Friday", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Monday.
-        /// </summary>
-        public static string Weekday_Monday {
-            get {
-                return ResourceManager.GetString("Weekday_Monday", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Saturday.
-        /// </summary>
-        public static string Weekday_Saturday {
-            get {
-                return ResourceManager.GetString("Weekday_Saturday", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sunday.
-        /// </summary>
-        public static string Weekday_Sunday {
-            get {
-                return ResourceManager.GetString("Weekday_Sunday", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Thursday.
-        /// </summary>
-        public static string Weekday_Thursday {
-            get {
-                return ResourceManager.GetString("Weekday_Thursday", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tuesday.
-        /// </summary>
-        public static string Weekday_Tuesday {
-            get {
-                return ResourceManager.GetString("Weekday_Tuesday", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Wednesday.
-        /// </summary>
-        public static string Weekday_Wednesday {
-            get {
-                return ResourceManager.GetString("Weekday_Wednesday", resourceCulture);
             }
         }
     }

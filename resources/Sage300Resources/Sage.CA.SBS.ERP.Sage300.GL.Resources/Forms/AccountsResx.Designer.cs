@@ -106,15 +106,6 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account History Inquiry.
-        /// </summary>
-        public static string AccountHistoryInquiry {
-            get {
-                return ResourceManager.GetString("AccountHistoryInquiry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Account Number.
         /// </summary>
         public static string AccountNumber {

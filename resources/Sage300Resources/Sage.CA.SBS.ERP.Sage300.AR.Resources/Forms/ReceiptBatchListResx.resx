@@ -121,9 +121,6 @@
     <value>A/R Receipt Batch List</value>
     <comment>Screen Title</comment>
   </data>
-  <data name="GetOnlinePayments" xml:space="preserve">
-    <value>Get Online Payments</value>
-  </data>
   <data name="NumOfEntries1" xml:space="preserve">
     <value>Number of Entries</value>
     <comment>Column</comment>

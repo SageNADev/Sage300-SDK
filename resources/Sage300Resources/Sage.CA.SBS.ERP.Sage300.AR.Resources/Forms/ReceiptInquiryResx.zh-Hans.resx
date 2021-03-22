@@ -430,11 +430,7 @@
     <comment>Finder</comment>
   </data>
   <data name="BatchClearedMessage" xml:space="preserve">
-    <value>含有此凭证的批次已被清除。</value>
+    <value>含有这一凭证的批次已被清除。</value>
     <comment>Error Message</comment>
-  </data>
-  <data name="ReceiptInformation" xml:space="preserve">
-    <value>收款信息</value>
-    <comment>Button</comment>
   </data>
 </root>

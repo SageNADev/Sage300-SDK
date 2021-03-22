@@ -147,13 +147,4 @@
   <data name="UserName" xml:space="preserve">
     <value>Nom de l'utilisateur</value>
   </data>
-  <data name="FromUser" xml:space="preserve">
-    <value>De l’utilisateur</value>
-  </data>
-  <data name="ToUser" xml:space="preserve">
-    <value>À l’utilisateur</value>
-  </data>
-  <data name="UserAuthorizationReport" xml:space="preserve">
-    <value>Rapport Autorisations des utilisateurs</value>
-  </data>
 </root>

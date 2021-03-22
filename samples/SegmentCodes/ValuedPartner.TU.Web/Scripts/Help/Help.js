@@ -74,16 +74,6 @@ $(document).ready(function () {
         $('#FeatureTour').find('.ft-step').removeClass('show').eq(i).addClass('show'); /* steps indicator: add and remove class .show from .ft-step */
     });
 
-    var keyHandler = function (e) {
-        //if the key press is ESC
-        var KEY_ESC = 27;
-        if (e.keyCode === KEY_ESC) {
-            $("#FeatureTour .msgCtrl-close").trigger("click");
-            $(document).off("keydown", keyHandler);
-        }
-    };
-    $(document).on("keydown", keyHandler);
-
     $("#FeatureTour .msgCtrl-close").click(function () {
         $('#firstTimeLogin').find('.ft-step').removeClass('show').end().hide(); /* close button */
     });

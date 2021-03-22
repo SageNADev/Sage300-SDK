@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -33,13 +33,7 @@ sourceCodeUI = {
     isKendoControlNotInitialised: false,
     sourceLedger: null,
 
-    /**
-     * @function
-     * @name init
-     * @description Primary Initialization function
-     * @namespace sourceCodeUI
-     * @public
-     */
+    // Init
     init: function () {
         sourceCodeUI.initButtons();
         sourceCodeUI.initFinders();
@@ -47,16 +41,10 @@ sourceCodeUI = {
         sourceCodeUISuccess.setkey();
     },
 
-    /**
-     * @function
-     * @name saveSourceCode
-     * @description Invoke the Source code add or update functionality
-     * @namespace sourceCodeUI
-     * @public
-     */
+    // Save
     saveSourceCode: function () {
         if ($("#frmSourceCode").valid()) {
-            let data = sg.utls.ko.toJS(modelData, sourceCodeUI.computedProperties);
+            var data = sg.utls.ko.toJS(modelData, sourceCodeUI.computedProperties);
             if (modelData.UIMode() === sg.utls.OperationMode.SAVE) {
                 sourceCodeRepository.update(data, sourceCodeUISuccess.update);
             } else {
@@ -65,24 +53,18 @@ sourceCodeUI = {
         }
     },
 
-    /**
-     * @function
-     * @name initButtons
-     * @description Initialize the buttons
-     * @namespace sourceCodeUI
-     * @public
-     */
+    // Init Buttons
     initButtons: function () {
         // Import/Export Buttons
         sg.exportHelper.setExportEvent("btnOptionExport", "tusourcecode", false, $.noop);
         sg.importHelper.setImportEvent("btnOptionImport", "tusourcecode", false, $.noop);
 
         // Key field with Finder
-        $("#txtSourceLedger").on('blur', function (e) {
+        $("#txtSourceLedger").bind('blur', function (e) {
             modelData.SourceLedger($("#txtSourceLedger").val());
             sg.delayOnBlur("btnFinderSourceLedger", function () {
-                if (sg.controls.GetString(modelData.SourceLedger() !== "")) {
-                    if (sg.controls.GetString(sourceCodeUI.sourceLedger) !== sg.controls.GetString(modelData.SourceLedger())) {
+                if (sg.controls.GetString(modelData.SourceLedger() != "")) {
+                    if (sg.controls.GetString(sourceCodeUI.sourceLedger) != sg.controls.GetString(modelData.SourceLedger())) {
                         sourceCodeUI.checkIsDirty(sourceCodeUI.get, sourceCodeUI.sourceLedger);
                     }
                 }
@@ -90,19 +72,19 @@ sourceCodeUI = {
         });
 
         // Create New Button
-        $("#btnNew").on('click', function () {
+        $("#btnNew").bind('click', function () {
             sourceCodeUI.checkIsDirty(sourceCodeUI.create, sourceCodeUI.sourceLedger);
         });
 
         // Save Button
-        $("#btnSave").on('click', function () {
+        $("#btnSave").bind('click', function () {
             sg.utls.SyncExecute(sourceCodeUI.saveSourceCode);
         });
 
         // Delete Button
-        $("#btnDelete").on('click', function () {
+        $("#btnDelete").bind('click', function () {
             if ($("#frmSourceCode").valid()) {
-                let message = jQuery.validator.format(sourceCodeResources.DeleteConfirmMessage, sourceCodeResources.SourceLedgerTitle, modelData.SourceLedger());
+                var message = jQuery.validator.format(sourceCodeResources.DeleteConfirmMessage, sourceCodeResources.SourceLedgerTitle, modelData.SourceLedger());
                 sg.utls.showKendoConfirmationDialog(function () {
                     sg.utls.clearValidations("frmSourceCode");
                     sourceCodeRepository.delete(modelData.SourceLedger(), sourceCodeUISuccess.delete);
@@ -112,62 +94,37 @@ sourceCodeUI = {
 
     },
 
-    /**
-     * @function
-     * @name initFinders
-     * @description Initialize the finder(s)
-     * @namespace sourceCodeUI
-     * @public
-     */
+    // Init Dropdowns here
+
+    // Init Finders, if any
     initFinders: function () {
-        let info = sg.viewFinderProperties.GL.SourceCodes;
-        let buttonId = "btnFinderSourceLedger";
-        let dataControlIdOrSuccessCallback = sourceCodeUISuccess.finderSuccess;
+        var info = sg.viewFinderProperties.GL.SourceCodes;
+        var buttonId = "btnFinderSourceLedger";
+        var dataControlIdOrSuccessCallback = sourceCodeUISuccess.finderSuccess;
         sg.viewFinderHelper.initFinder(buttonId, dataControlIdOrSuccessCallback, info, sourceCodeFilter.getFilter);
     },
 
-    /**
-     * @function
-     * @name get
-     * @description Invoke the Source code get functionality
-     * @namespace sourceCodeUI
-     * @public
-     */
+    // Get
     get: function () {
         sourceCodeRepository.get(modelData.SourceLedger(), sourceCodeUISuccess.get);
     },
 
-    /**
-     * @function
-     * @name create
-     * @description Invoke the Source code create functionality
-     * @namespace sourceCodeUI
-     * @public
-     */
+    // Create
     create: function () {
         sg.utls.clearValidations("frmSourceCode");
         sourceCodeRepository.create(sourceCodeUISuccess.create);
     },
 
-    /**
-     * @function
-     * @name checkIsDirty
-     * @description Check the model for any changes. If there are changes, invoke a confirmation
-     *              dialog box. If the user selects 'Yes', invoke the callback function passed into the function
-     * @namespace sourceCodeUI
-     * @public
-     *
-     * @param {Function} functionToCall Method to call if user selects 'Yes' in confirmation dialog
-     */
+    // Is Dirty check
     checkIsDirty: function (functionToCall, sourceLedger) {
-        if (sourceCodeUI.sourceCodeModel.isModelDirty.isDirty() && sourceLedger !== null && sourceLedger !== "") {
+        if (sourceCodeUI.sourceCodeModel.isModelDirty.isDirty() && sourceLedger != null && sourceLedger != "") {
             sg.utls.showKendoConfirmationDialog(
                 function () { // Yes
                     sg.utls.clearValidations("frmSourceCode");
                     functionToCall.call();
                 },
                 function () { // No
-                    if (sg.controls.GetString(sourceLedger) !== sg.controls.GetString(modelData.SourceLedger())) {
+                    if (sg.controls.GetString(sourceLedger) != sg.controls.GetString(modelData.SourceLedger())) {
                         modelData.SourceLedger(sourceLedger);
                    }
                    return;
@@ -177,34 +134,21 @@ sourceCodeUI = {
             functionToCall.call();
         }
     }
+
 };
 
 // Callbacks
 var sourceCodeUISuccess = {
 
-    /**
-     * @function
-     * @name setkey
-     * @description Set the source code key
-     * @namespace sourceCodeUISuccess
-     * @public
-     */
+    // Setkey
     setkey: function () {
         sourceCodeUI.sourceLedger = modelData.SourceLedger();
     },
 
-    /**
-     * @function
-     * @name get
-     * @description Function called by repository upon successful Source Code get
-     * @namespace sourceCodeUISuccess
-     * @public
-     *
-     * @param {object} jsonResult The JSON payload object
-     */
+    // Get
     get: function (jsonResult) {
         if (jsonResult.UserMessage && jsonResult.UserMessage.IsSuccess) {
-            if (jsonResult.Data) {
+            if (jsonResult.Data != null) {
                 sourceCodeUISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
             } else {
                 modelData.UIMode(sg.utls.OperationMode.NEW);
@@ -213,15 +157,7 @@ var sourceCodeUISuccess = {
         }
     },
 
-    /**
-     * @function
-     * @name update
-     * @description Function called by repository upon successful Source Code update
-     * @namespace sourceCodeUISuccess
-     * @public
-     *
-     * @param {object} jsonResult The JSON payload object
-     */
+    // Update
     update: function (jsonResult) {
         if (jsonResult.UserMessage.IsSuccess) {
             sourceCodeUISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
@@ -230,15 +166,7 @@ var sourceCodeUISuccess = {
         sg.utls.showMessage(jsonResult);
     },
 
-    /**
-     * @function
-     * @name create
-     * @description Function called by repository upon successful Source Code create
-     * @namespace sourceCodeUISuccess
-     * @public
-     *
-     * @param {object} jsonResult The JSON payload object
-     */
+    // Create
     create: function (jsonResult) {
         sourceCodeUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
         sourceCodeUI.sourceCodeModel.isModelDirty.reset();
@@ -246,15 +174,7 @@ var sourceCodeUISuccess = {
         sg.controls.Focus($("#txtSourceLedger"));
     },
 
-    /**
-     * @function
-     * @name deleteSourceJournal
-     * @description Function called by repository upon successful Source Code deletion
-     * @namespace sourceCodeUISuccess
-     * @public
-     *
-     * @param {object} jsonResult The JSON payload object
-     */
+    // Delete
     delete: function (jsonResult) {
         if (jsonResult.UserMessage.IsSuccess) {
             sourceCodeUISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
@@ -264,18 +184,9 @@ var sourceCodeUISuccess = {
         sg.utls.showMessage(jsonResult);
     },
 
-    /**
-     * @function
-     * @name displayResult
-     * @description Display the results of a server-side call
-     * @namespace sourceCodeUISuccess
-     * @public
-     *
-     * @param {object} jsonResult The JSON payload object
-     * @param {number} uiMode The UI mode
-     */
+    // Display Result
     displayResult: function (jsonResult, uiMode) {
-        if (jsonResult) {
+        if (jsonResult != null) {
             if (!sourceCodeUI.hasKoBindingApplied) {
                 sourceCodeUI.sourceCodeModel = ko.mapping.fromJS(jsonResult);
                 sourceCodeUI.hasKoBindingApplied = true;
@@ -286,7 +197,7 @@ var sourceCodeUISuccess = {
             } else {
                 ko.mapping.fromJS(jsonResult, sourceCodeUI.sourceCodeModel);
                 modelData.UIMode(uiMode);
-                if (uiMode !== sg.utls.OperationMode.NEW) {
+                if (uiMode != sg.utls.OperationMode.NEW) {
                     sourceCodeUI.sourceCodeModel.isModelDirty.reset();
                 }
             }
@@ -299,15 +210,7 @@ var sourceCodeUISuccess = {
         }
     },
 
-    /**
-     * @function
-     * @name initialLoad
-     * @description Called on initial page load
-     * @namespace sourceCodeUISuccess
-     * @public
-     *
-     * @param {object} result The JSON payload object
-     */
+    // Initial Load
     initialLoad: function (result) {
         if (result) {
             sourceCodeUISuccess.displayResult(result, sg.utls.OperationMode.NEW);
@@ -317,45 +220,23 @@ var sourceCodeUISuccess = {
         sg.controls.Focus($("#txtSourceLedger"));
     },
 
-    /**
-     * @function
-     * @name finderSuccess
-     * @description Event handler for finder selection
-     * @namespace sourceCodeUISuccess
-     * @public
-     *
-     * @param {object} result The JSON payload object
-     */
+    // Finder Success
     finderSuccess: function (data) {
-        if (data) {
+        if (data != null) {
             sourceCodeUI.finderData = data;
             sourceCodeUI.checkIsDirty(sourceCodeUISuccess.setFinderData, sourceCodeUI.sourceLedger);
         }
     },
 
-    /**
-     * @function
-     * @name setFinderData
-     * @description Set the finder data
-     * @namespace sourceCodeUISuccess
-     * @public
-     */
+    // Set Finder
     setFinderData: function () {
-        let data = sourceCodeUI.finderData;
+        var data = sourceCodeUI.finderData;
         sg.utls.clearValidations("frmSourceCode");
         sourceCodeUI.finderData = null;
         sourceCodeRepository.get(data.SourceLedger, sourceCodeUISuccess.get);
     },
 
-    /**
-     * @function
-     * @name isNew
-     * @description Check to see if model is valid
-     * @namespace sourceCodeUISuccess
-     * @public
-     *
-     * @param {object} model The current model
-     */
+    // Is New
     isNew: function (model) {
         if (model.SourceLedger() === null) {
            return true;
@@ -367,19 +248,9 @@ var sourceCodeUISuccess = {
 
 // Finder Filter
 var sourceCodeFilter = {
-
-    /**
-     * @function
-     * @name getFilter
-     * @description Create the finder filter
-     * @namespace sourceCodeFilter
-     * @public 
-     *  
-     * @returns {object} The filters object
-     */
     getFilter: function () {
-        let filters = [[]];
-        let sourceCodeName = $("#txtSourceLedger").val();
+        var filters = [[]];
+        var sourceCodeName = $("#txtSourceLedger").val();
         filters[0][0] = sg.finderHelper.createFilter("SourceLedger", sg.finderOperator.StartsWith, sourceCodeName);
         return filters;
     }
@@ -388,9 +259,8 @@ var sourceCodeFilter = {
 // Initial Entry
 $(function () {
     sourceCodeUI.init();
-
     $(window).on('beforeunload', function () {
-        let dirty = sourceCodeUI.sourceCodeModel.isModelDirty.isDirty();
+        var dirty = sourceCodeUI.sourceCodeModel.isModelDirty.isDirty();
         if (sg.utls.isPageUnloadEventEnabled(dirty)) {
             return sg.utls.getDirtyMessage(sourceCodeResources.SourceLedgerTitle);
         }

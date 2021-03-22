@@ -38,20 +38,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\AccountBudgetCalculatorResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccountBudgetCalculatorResx.resx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AccountGroupsResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountGroupsResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AccountHistoryInquiryResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccountHistoryInquiryResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\AccountPermissionsResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -72,11 +62,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BatchListResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ChartOfAccountsResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChartOfAccountsResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\CreateAccountPreviewResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -142,11 +127,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RevaluationDtlsLossOptionalFldResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SourceCurrencyInquiryResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SourceCurrencyInquiryResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\SourceJournalProfilesResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -306,22 +286,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\AccountBudgetCalculatorResx.es.resx" />
-    <EmbeddedResource Include="Forms\AccountBudgetCalculatorResx.fr.resx" />
-    <EmbeddedResource Include="Forms\AccountBudgetCalculatorResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AccountBudgetCalculatorResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AccountBudgetCalculatorResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Forms\AccountBudgetCalculatorResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\AccountHistoryInquiryResx.es.resx" />
-    <EmbeddedResource Include="Forms\AccountHistoryInquiryResx.fr.resx" />
-    <EmbeddedResource Include="Forms\AccountHistoryInquiryResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AccountHistoryInquiryResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AccountHistoryInquiryResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Forms\AccountHistoryInquiryResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\AccountPermissionsResx.es.resx" />
     <EmbeddedResource Include="Forms\AccountPermissionsResx.fr.resx" />
     <EmbeddedResource Include="Forms\AccountPermissionsResx.resx">
@@ -333,20 +297,11 @@
     <EmbeddedResource Include="Forms\AccountsResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AccountsResx.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AccountsResx.es.resx" />
     <EmbeddedResource Include="Forms\AccountsResx.fr.resx" />
     <EmbeddedResource Include="Forms\AccountsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\AccountsResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\ChartOfAccountsResx.es.resx" />
-    <EmbeddedResource Include="Forms\ChartOfAccountsResx.fr.resx" />
-    <EmbeddedResource Include="Forms\ChartOfAccountsResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ChartOfAccountsResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChartOfAccountsResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Forms\ChartOfAccountsResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\CreateAccountPreviewResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CreateAccountPreviewResx.Designer.cs</LastGenOutput>
@@ -477,14 +432,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RevaluationDtlsLossOptionalFldResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\RevaluationDtlsLossOptionalFldResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\SourceCurrencyInquiryResx.es.resx" />
-    <EmbeddedResource Include="Forms\SourceCurrencyInquiryResx.fr.resx" />
-    <EmbeddedResource Include="Forms\SourceCurrencyInquiryResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>SourceCurrencyInquiryResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SourceCurrencyInquiryResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Forms\SourceCurrencyInquiryResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\SourceJournalProfilesResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SourceJournalProfilesResx.Designer.cs</LastGenOutput>
@@ -496,7 +443,6 @@
     <EmbeddedResource Include="GLCommonResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GLCommonResx.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GLCommonResx.es.resx" />
     <EmbeddedResource Include="GLCommonResx.fr.resx" />

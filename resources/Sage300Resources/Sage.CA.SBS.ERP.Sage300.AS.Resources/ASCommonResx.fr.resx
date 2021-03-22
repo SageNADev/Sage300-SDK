@@ -165,7 +165,7 @@
     <value>Ancien mot de passe</value>
   </data>
   <data name="ErrorPasswordMessage" xml:space="preserve">
-    <value>Le {0} ou {1} est incorrect. Réessayez ou demandez de l'aide à votre administrateur système.</value>
+    <value>Confirmez que vous avez donné le {0} et le {1} correct. </value>
   </data>
   <data name="MinLengthPasswordMessage" xml:space="preserve">
     <value>Le {0} est plus court que la longueur minimum exigée pour un mot de passe</value>
@@ -255,15 +255,6 @@
     <value>Votre langue assignée n'est pas configurée pour les écrans web de Sage 300c. Vous devez définir les paramètres régionaux de la langue. Contactez l'administrateur de votre système pour obtenir de l'aide.</value>
   </data>
   <data name="LanPakMaxUserReached" xml:space="preserve">
-    <value>Le nombre d'utilisateurs actuellement connectés a atteint le maximum de votre licence LanPak. Vous ne pourrez pas vous connecter tant qu’un autre utilisateur ne se sera pas déconnecté.</value>
-  </data>
-  <data name="Verify" xml:space="preserve">
-    <value>Vérifier</value>
-  </data>
-  <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>Les mots de passe ne correspondent pas.</value>
-  </data>
-  <data name="VerifyPassword" xml:space="preserve">
-    <value>Vérifier mot de passe</value>
+    <value>Le nombre d&apos;utilisateurs actuellement connectés a atteint le maximum de votre licence LanPak. Vous ne pourrez pas vous connecter tant qu’un autre utilisateur ne se sera pas déconnecté.</value>
   </data>
 </root>

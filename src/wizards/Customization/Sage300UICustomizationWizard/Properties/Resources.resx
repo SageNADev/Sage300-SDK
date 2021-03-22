@@ -124,6 +124,12 @@
   <data name="Assembly" xml:space="preserve">
     <value>Assembly:</value>
   </data>
+  <data name="InvalidModuleLength" xml:space="preserve">
+    <value>The module must be 2 characters</value>
+  </data>
+  <data name="ModuleTip" xml:space="preserve">
+    <value>Specify a module other than any of the application modules (i.e. AP, AR, GL, etc.)</value>
+  </data>
   <data name="WebCustomization" xml:space="preserve">
     <value>Web Customization</value>
   </data>
@@ -143,13 +149,13 @@
     <value>The verison for the customization (informational only)</value>
   </data>
   <data name="CustomizationNameTip" xml:space="preserve">
-    <value>A name to identify the customization</value>
+    <value>A name to identify the customization (informational only)</value>
   </data>
   <data name="Package" xml:space="preserve">
     <value>Package:</value>
   </data>
   <data name="ProjectTip" xml:space="preserve">
-    <value>Project name is company name plus customization name</value>
+    <value>Specify a project name (default is company name plus customization name)</value>
   </data>
   <data name="PackageFinderTip" xml:space="preserve">
     <value>Lookup a customization</value>
@@ -193,11 +199,17 @@
   <data name="KendoLicenseInvalid" xml:space="preserve">
     <value>The Kendo UI Commercial License must be checked to continue.</value>
   </data>
+  <data name="Module" xml:space="preserve">
+    <value>Module:</value>
+  </data>
   <data name="InvalidSettingRequiredField" xml:space="preserve">
     <value>The {0} has not been specified.</value>
   </data>
   <data name="BootstrapperTip" xml:space="preserve">
     <value>The Bootstrapper file will be created in the Visual Studio Customization Wizard if an endpoint is needed for this customization</value>
+  </data>
+  <data name="InvalidModuleUsage" xml:space="preserve">
+    <value>The specified module cannot be an application module (i.e. AP, AR, GL, etc.)</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Next</value>

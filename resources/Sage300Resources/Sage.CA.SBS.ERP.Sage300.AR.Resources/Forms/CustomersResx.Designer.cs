@@ -115,15 +115,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aging.
-        /// </summary>
-        public static string Aging {
-            get {
-                return ResourceManager.GetString("Aging", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Aging periods must be in ascending order..
         /// </summary>
         public static string AgingRangeMessage {
@@ -250,15 +241,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to % Available.
-        /// </summary>
-        public static string AvailablePercentage {
-            get {
-                return ResourceManager.GetString("AvailablePercentage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Average Days to Pay.
         /// </summary>
         public static string AverageDaystoPay {
@@ -363,15 +345,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         public static string CommentNumber {
             get {
                 return ResourceManager.GetString("CommentNumber", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Contact Information.
-        /// </summary>
-        public static string ContactInfo {
-            get {
-                return ResourceManager.GetString("ContactInfo", resourceCulture);
             }
         }
         
@@ -493,15 +466,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer List.
-        /// </summary>
-        public static string CustomerList {
-            get {
-                return ResourceManager.GetString("CustomerList", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Customer Number.
         /// </summary>
         public static string CustomerNumber {
@@ -516,24 +480,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         public static string CustomerPriceList {
             get {
                 return ResourceManager.GetString("CustomerPriceList", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Customers With No Comments.
-        /// </summary>
-        public static string CustomersWithNoComments {
-            get {
-                return ResourceManager.GetString("CustomersWithNoComments", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Customers with Zero A/R Balance.
-        /// </summary>
-        public static string CustomersWithZeroARBAlance {
-            get {
-                return ResourceManager.GetString("CustomersWithZeroARBAlance", resourceCulture);
             }
         }
         
@@ -727,24 +673,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No Credit Used.
-        /// </summary>
-        public static string NoCreditUsed {
-            get {
-                return ResourceManager.GetString("NoCreditUsed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No Limit.
-        /// </summary>
-        public static string NoLimit {
-            get {
-                return ResourceManager.GetString("NoLimit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cannot find O/E Ship-Via Code..
         /// </summary>
         public static string NoOeExist {
@@ -840,15 +768,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         public static string OverdueLimitforOverdueDays {
             get {
                 return ResourceManager.GetString("OverdueLimitforOverdueDays", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Over Limit.
-        /// </summary>
-        public static string OverLimit {
-            get {
-                return ResourceManager.GetString("OverLimit", resourceCulture);
             }
         }
         
@@ -1281,15 +1200,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         public static string TotalWriteOffsInFuncCurr {
             get {
                 return ResourceManager.GetString("TotalWriteOffsInFuncCurr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Up To.
-        /// </summary>
-        public static string UpTo {
-            get {
-                return ResourceManager.GetString("UpTo", resourceCulture);
             }
         }
         

@@ -158,7 +158,7 @@
     <comment>Added From APCommonResx</comment>
   </data>
   <data name="Open" xml:space="preserve">
-    <value>未结</value>
+    <value>开放</value>
     <comment>Added From AP EnumerationResx</comment>
   </data>
   <data name="Posted" xml:space="preserve">
@@ -1740,23 +1740,23 @@
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxAllocatedAmount1" xml:space="preserve">
-    <value>已分配税额1</value>
+    <value>已分配税金额1</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxAllocatedAmount2" xml:space="preserve">
-    <value>已分配税额2</value>
+    <value>已分配税金额2</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxAllocatedAmount3" xml:space="preserve">
-    <value>已分配税额3</value>
+    <value>已分配税金额3</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxAllocatedAmount4" xml:space="preserve">
-    <value>已分配税额4</value>
+    <value>已分配税金额4</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxAllocatedAmount5" xml:space="preserve">
-    <value>已分配税额5</value>
+    <value>已分配税金额5</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxRate1" xml:space="preserve">
@@ -1836,38 +1836,38 @@
     <comment>For ProcessCommand</comment>
   </data>
   <data name="CreditNoteItemEntered" xml:space="preserve">
-    <value>贷项通知单－货品已输入</value>
+    <value>贷项通知单 - 货品已输入</value>
   </data>
   <data name="CreditNoteItemIssued" xml:space="preserve">
     <value>贷项通知单－货品已发出</value>
   </data>
   <data name="CreditNoteSummaryEntered" xml:space="preserve">
-    <value>贷项通知单－汇总已输入</value>
+    <value>贷项通知单 - 汇总已输入</value>
     <comment>Transaction Type</comment>
   </data>
   <data name="CreditNoteSummaryIssued" xml:space="preserve">
-    <value>贷项通知单－汇总已发出</value>
+    <value>贷项通知单 - 汇总已发出</value>
   </data>
   <data name="CustomerOverCreditLimit" xml:space="preserve">
     <value>客户超出信贷限额</value>
     <comment>For CustOrNatlOverCreditFlag</comment>
   </data>
   <data name="DebitNoteItemEntered" xml:space="preserve">
-    <value>借项通知单－货品已输入</value>
+    <value>借项通知单 - 输入货品</value>
   </data>
   <data name="DebitNoteItemIssued" xml:space="preserve">
-    <value>借项通知单－货品已发出</value>
+    <value>借项通知单 - 发出货品</value>
   </data>
   <data name="DebitNoteSummaryEntered" xml:space="preserve">
-    <value>借项通知单－汇总已输入</value>
+    <value>借项通知单 - 汇总已输入</value>
     <comment>Transaction Type</comment>
   </data>
   <data name="DebitNoteSummaryIssued" xml:space="preserve">
-    <value>借项通知单－汇总已发出</value>
+    <value>借项通知单 - 发出汇总</value>
     <comment>For CustOrNatlOverCreditFlag</comment>
   </data>
   <data name="DeriveTaxReportingExchangeRate" xml:space="preserve">
-    <value>推算税务报告汇率</value>
+    <value>得出税务报告汇率</value>
     <comment>For ProcessCommand</comment>
   </data>
   <data name="DisableRateLookup" xml:space="preserve">
@@ -1895,13 +1895,13 @@
     <comment>For ProcessCommand</comment>
   </data>
   <data name="InvoiceItemEntered" xml:space="preserve">
-    <value>发票－货品已输入</value>
+    <value>发票 - 输入货品</value>
   </data>
   <data name="InvoiceItemIssued" xml:space="preserve">
-    <value>发票－货品已发出</value>
+    <value>发票 - 已发出货品</value>
   </data>
   <data name="InvoiceSummaryIssued" xml:space="preserve">
-    <value>发票－汇总已发出</value>
+    <value>发票 - 发出汇总</value>
   </data>
   <data name="ModeNormal1Batch2" xml:space="preserve">
     <value>模式：正常(1), 批次(2)</value>
@@ -1943,7 +1943,7 @@
     <value>客户编号</value>
   </data>
   <data name="VerifyTaxGroupMessage" xml:space="preserve">
-    <value>您已经为此凭证更改了税组。请相应核实税务信息。</value>
+    <value>您已经为这一凭证更改了税组。请相应核实税务信息。</value>
     <comment>Added for tax group change warning</comment>
   </data>
   <data name="BatchDescription" xml:space="preserve">
@@ -2048,7 +2048,7 @@
     <comment>Finder Column name</comment>
   </data>
   <data name="VerifyTaxClassMessage" xml:space="preserve">
-    <value>您已经为此凭证更改了税级。请核实各个明细行上的税级并进行必要的修改。</value>
+    <value>您已经为这一凭证更改了税级。请核实各个明细行上的税级并进行必要的修改。</value>
     <comment>Added for tax class  change warning</comment>
   </data>
   <data name="TransactionType" xml:space="preserve">
@@ -2252,19 +2252,19 @@
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="BillToAddress1" xml:space="preserve">
-    <value>帐单至地址1</value>
+    <value>帐单至1</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="BillToAddress2" xml:space="preserve">
-    <value>帐单至地址2</value>
+    <value>帐单至2</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="BillToAddress3" xml:space="preserve">
-    <value>帐单至地址3</value>
+    <value>帐单至3</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="BillToAddress4" xml:space="preserve">
-    <value>帐单至地址4</value>
+    <value>帐单至4</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="BillToCity" xml:space="preserve">
@@ -2855,7 +2855,7 @@
     <value>指令</value>
   </data>
   <data name="DerivedTaxReportingExchRate" xml:space="preserve">
-    <value>推算的税务报告兑换汇率</value>
+    <value>得出的税务报告兑换汇率</value>
   </data>
   <data name="DiscountAmount" xml:space="preserve">
     <value>折扣金额</value>
@@ -3434,7 +3434,7 @@
     <comment>For Invoice Entry Export</comment>
   </data>
   <data name="ManufacturersItemNumber" xml:space="preserve">
-    <value>制造商货品编号</value>
+    <value>制造商的货品编号</value>
     <comment>For Invoice Entry Export</comment>
   </data>
   <data name="Project" xml:space="preserve">
@@ -3578,11 +3578,5 @@
   </data>
   <data name="CustomerName" xml:space="preserve">
     <value>客户名称</value>
-  </data>
-  <data name="PaymentsID" xml:space="preserve">
-    <value>SF付款承兑标识</value>
-  </data>
-  <data name="PaymentsURL" xml:space="preserve">
-    <value>SF付款承兑URL</value>
   </data>
 </root>

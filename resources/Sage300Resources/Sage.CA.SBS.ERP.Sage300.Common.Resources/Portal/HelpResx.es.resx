@@ -1027,10 +1027,10 @@
     <value>Bancos - Reporte de Transacciones del LM</value>
   </data>
   <data name="BK_BankImportOFXStatements_Article1" xml:space="preserve">
-    <value>Acerca de los estados de cuentas electrónicos</value>
+    <value>Acerca de los estados de cuentas-E</value>
   </data>
   <data name="BK_BankImportOFXStatements_Article2" xml:space="preserve">
-    <value>Pantalla Bancos - Conciliar Estados de Cuentas Electrónicos</value>
+    <value>Pantalla Bancos - Conciliar Estados-E</value>
   </data>
   <data name="BK_BankImportOFXStatements_Screen" xml:space="preserve">
     <value>Importar Estados de Cuentas OFX</value>
@@ -1063,13 +1063,13 @@
     <value>Pantalla Bancos - Asentar Conciliación</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Article1" xml:space="preserve">
-    <value>Conciliar estados de cuentas electrónicos</value>
+    <value>Conciliar Estados-E</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Article2" xml:space="preserve">
-    <value>Acerca de los estados de cuentas electrónicos</value>
+    <value>Acerca de los estados de cuentas-E</value>
   </data>
   <data name="BK_BankReconcileOFXStatements_Screen" xml:space="preserve">
-    <value>Pantalla Bancos - Conciliar Estados de Cuentas Electrónicos</value>
+    <value>Pantalla Bancos - Conciliar Estados-E</value>
   </data>
   <data name="BK_BankReconcileStatements_Article1" xml:space="preserve">
     <value>Conciliar una cuenta bancaria</value>
@@ -3737,11 +3737,11 @@
     <comment>CSH ID 369034001</comment>
   </data>
   <data name="AR_ReceiptInquiry_Article1" xml:space="preserve">
-    <value>Consultar recibos</value>
+    <value>Acerca de la consulta de clientes y documentos a partir de las pantallas de transacciones</value>
     <comment>CSH ID 18062002</comment>
   </data>
   <data name="AR_ReceiptInquiry_Article2" xml:space="preserve">
-    <value>Acerca del procesamiento de recibos</value>
+    <value>Consultar recibos</value>
     <comment>CSH ID 18062003</comment>
   </data>
   <data name="AR_ReceiptInquiry_Screen" xml:space="preserve">
@@ -3749,11 +3749,11 @@
     <comment>CSH ID 18062001</comment>
   </data>
   <data name="AR_RefundInquiry_Article1" xml:space="preserve">
-    <value>Consultar reembolsos</value>
+    <value>Acerca del procesamiento de reembolsos</value>
     <comment>CSH ID 18065002</comment>
   </data>
   <data name="AR_RefundInquiry_Article2" xml:space="preserve">
-    <value>Acerca del procesamiento de reembolsos</value>
+    <value>Consultar reembolsos</value>
     <comment>CSH ID 18065003</comment>
   </data>
   <data name="AR_RefundInquiry_Screen" xml:space="preserve">
@@ -4384,71 +4384,5 @@
   <data name="MT_Optional_Fields_Screen" xml:space="preserve">
     <value>Pantalla M/T - Campos Opcionales</value>
     <comment>CSH ID 332002001</comment>
-  </data>
-  <data name="CS_PaymentsAcceptance_Screen" xml:space="preserve">
-    <value>Aceptar Pagos Por Medio de Proveedores en Línea</value>
-    <comment>CSH ID 71011001</comment>
-  </data>
-  <data name="CS_PaymentsAcceptance_Article1" xml:space="preserve">
-    <value>Acerca de Aceptación de Pagos</value>
-    <comment>CSH ID 71011002</comment>
-  </data>
-  <data name="CS_PaymentsAcceptance_Article2" xml:space="preserve">
-    <value>Información General de Administración</value>
-    <comment>CSH ID 71011003</comment>
-  </data>
-  <data name="AR_CustomerList_Article1" xml:space="preserve">
-    <value>Acerca del Uso de la Pantalla Lista de Clientes para Crear Reportes Especiales</value>
-  </data>
-  <data name="AR_CustomerList_Article2" xml:space="preserve">
-    <value>Imprimir una Lista de Clientes</value>
-  </data>
-  <data name="AR_CustomerList_Screen" xml:space="preserve">
-    <value>Pantalla C/C - Lista de Clientes</value>
-  </data>
-  <data name="AS_User_Article1" xml:space="preserve">
-    <value>Agregar, Editar o Eliminar Usuarios</value>
-  </data>
-  <data name="AS_User_Article2" xml:space="preserve">
-    <value>Asignar usuarios a los grupos de seguridad</value>
-  </data>
-  <data name="AS_User_Screen" xml:space="preserve">
-    <value>Pantalla Usuarios</value>
-  </data>
-  <data name="GL_SourceCurrencyInquiry_Article1" xml:space="preserve">
-    <value>Especificar una Moneda</value>
-    <comment>CSH ID 168024002</comment>
-  </data>
-  <data name="GL_SourceCurrencyInquiry_Article2" xml:space="preserve">
-    <value>Consultar los Saldos en Moneda de Origen para una Cuenta de Moneda Múltiple</value>
-    <comment>CSH ID 168024003</comment>
-  </data>
-  <data name="GL_SourceCurrencyInquiry_Screen" xml:space="preserve">
-    <value>Pantalla LM - Consulta de Moneda de Origen</value>
-    <comment>CSH ID 168024001</comment>
-  </data>
-  <data name="GL_Account_History_Inquiry_Article1" xml:space="preserve">
-    <value>Acerca del Ingreso de Saldos de Cuenta, Datos Históricos y Cantidades</value>
-    <comment>CSH ID 168022002</comment>
-  </data>
-  <data name="GL_Account_History_Inquiry_Article2" xml:space="preserve">
-    <value>Agregar una Nueva Cuenta</value>
-    <comment>CSH ID 168022003</comment>
-  </data>
-  <data name="GL_Account_History_Inquiry_Screen" xml:space="preserve">
-    <value>Pantalla LM - Consulta del Historial de Cuentas</value>
-    <comment>CSH ID 168022001</comment>
-  </data>
-  <data name="GL_About_Budgets" xml:space="preserve">
-    <value>Acerca de los Presupuestos</value>
-    <comment>CSH ID 168023002</comment>
-  </data>
-  <data name="GL_Budget_Maintenance_Screen" xml:space="preserve">
-    <value>Pantalla LM - Mantenimiento de Presupuesto</value>
-    <comment>CSH ID 168023001</comment>
-  </data>
-  <data name="GL_Editing_Budget_Data" xml:space="preserve">
-    <value>Editar Datos de Presupuestos</value>
-    <comment>CSH ID 168023003</comment>
   </data>
 </root>

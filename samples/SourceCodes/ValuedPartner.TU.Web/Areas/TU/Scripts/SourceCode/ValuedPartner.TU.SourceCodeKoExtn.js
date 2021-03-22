@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,8 +18,6 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-//@ts-check
-
 "use strict";
 
 function SourceCodeObservableExtension(sourceCodeModel, uiMode) {
@@ -29,23 +27,21 @@ function SourceCodeObservableExtension(sourceCodeModel, uiMode) {
     // Computed Fields go here
 
     model.SourceCode = ko.computed({
-        read: function () {
-            // Default value for Source Code is an empty string
-            let sourceCodeVal = "";
-            if (model.SourceLedger()) {
+        read: function() {
+            var sourceCodeVal = "";
+            if (model.SourceLedger() != undefined) {
                 sourceCodeVal = model.SourceLedger();
 
-                if (model.SourceType()) {
+                if (model.SourceType() != undefined) {
                     sourceCodeVal += '-' + model.SourceType();
                 }
             }
             return sourceCodeVal;
 
         },
-
         write: function (value) {
             if (value != undefined) {
-                let scData = sourceCodeObject.getSourceCodeElements(value);
+                var scData = sourceCodeObject.getSourceCodeElements(value);
                 model.SourceLedger(scData.SourceLedger);
                 model.SourceType(scData.SourceType);
             }
@@ -53,11 +49,18 @@ function SourceCodeObservableExtension(sourceCodeModel, uiMode) {
     });
 
     model.DisableAddSave = ko.computed(function () {
-        return (sg.controls.GetString(model.SourceCode()) === "" || model.SourceCode() === "-");
+        if (sg.controls.GetString(model.SourceCode()) === "" || model.SourceCode() === "-") {
+            return true;
+        }
+        return false;
     });
 
-    model.DisableDelete = ko.computed(function () {
-        return (sg.controls.GetString(model.SourceCode()) === "" || model.SourceCode() === "-" || model.UIMode() === sg.utls.OperationMode.NEW);
-    });
+    model.DisableDelete = ko.computed(
+        function() {
+            if (sg.controls.GetString(model.SourceCode()) === "" || model.SourceCode() === "-" || model.UIMode() === sg.utls.OperationMode.NEW) {
+                return true;
+            }
+            return false;
+        });
 
 };

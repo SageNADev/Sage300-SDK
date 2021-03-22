@@ -358,15 +358,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (None).
-        /// </summary>
-        public static string BracketNone {
-            get {
-                return ResourceManager.GetString("BracketNone", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Browse.
         /// </summary>
         public static string Browse {
@@ -525,15 +516,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string Close {
             get {
                 return ResourceManager.GetString("Close", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Code.
-        /// </summary>
-        public static string Code {
-            get {
-                return ResourceManager.GetString("Code", resourceCulture);
             }
         }
         
@@ -1303,15 +1285,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export Report.
-        /// </summary>
-        public static string ExportReport {
-            get {
-                return ResourceManager.GetString("ExportReport", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to {0}: {1} record(s) exported..
         /// </summary>
         public static string ExportResult {
@@ -1344,15 +1317,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string FederalTax {
             get {
                 return ResourceManager.GetString("FederalTax", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File Format.
-        /// </summary>
-        public static string FileFormat {
-            get {
-                return ResourceManager.GetString("FileFormat", resourceCulture);
             }
         }
         
@@ -2617,15 +2581,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Page Range.
-        /// </summary>
-        public static string PageRange {
-            get {
-                return ResourceManager.GetString("PageRange", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Paper Size.
         /// </summary>
         public static string PaperSize {
@@ -2901,24 +2856,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string ReadyToPost {
             get {
                 return ResourceManager.GetString("ReadyToPost", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A unique code was sent to your email address on file. You need to use this code as soon as possible since it will soon expire for security purposes..
-        /// </summary>
-        public static string ReauthenticationContent1 {
-            get {
-                return ResourceManager.GetString("ReauthenticationContent1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enter the code below and then click OK to continue..
-        /// </summary>
-        public static string ReauthenticationContent2 {
-            get {
-                return ResourceManager.GetString("ReauthenticationContent2", resourceCulture);
             }
         }
         
@@ -3301,15 +3238,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select Pages.
-        /// </summary>
-        public static string SelectPages {
-            get {
-                return ResourceManager.GetString("SelectPages", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Select Report.
         /// </summary>
         public static string SelectReport {
@@ -3531,15 +3459,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string SignOutConfirmation {
             get {
                 return ResourceManager.GetString("SignOutConfirmation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sign Up.
-        /// </summary>
-        public static string SignUp {
-            get {
-                return ResourceManager.GetString("SignUp", resourceCulture);
             }
         }
         
@@ -3900,42 +3819,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string ToDayEndNumber {
             get {
                 return ResourceManager.GetString("ToDayEndNumber", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to First page.
-        /// </summary>
-        public static string ToFirstPage {
-            get {
-                return ResourceManager.GetString("ToFirstPage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Last page.
-        /// </summary>
-        public static string ToLastPage {
-            get {
-                return ResourceManager.GetString("ToLastPage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Next page.
-        /// </summary>
-        public static string ToNextPage {
-            get {
-                return ResourceManager.GetString("ToNextPage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Previous page.
-        /// </summary>
-        public static string ToPreviousPage {
-            get {
-                return ResourceManager.GetString("ToPreviousPage", resourceCulture);
             }
         }
         

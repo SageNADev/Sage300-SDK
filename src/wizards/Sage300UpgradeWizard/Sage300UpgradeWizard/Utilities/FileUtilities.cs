@@ -232,26 +232,5 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Utilities
         {
             File.Create(filename).Dispose();
         }
-
-        /// <summary>
-        /// Replace a piece of text with another in a file
-        /// </summary>
-        /// <param name="filePath">The file to alter</param>
-        /// <param name="searchFor">The string to search for</param>
-        /// <param name="replaceWith">The string replacement</param>
-        public static void ReplaceTextInFile(string filePath, string searchFor, string replaceWith)
-        {
-            if (File.Exists(filePath))
-            {
-                // Load the file content
-                string lines = File.ReadAllText(filePath);
-
-                // Replace the text
-                var alteredLines = lines.Replace(searchFor, replaceWith);
-
-                // Save the text back to the file
-                File.WriteAllText(filePath, alteredLines);
-            }
-        }
     }
 }

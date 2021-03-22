@@ -165,7 +165,7 @@
     <value>Contraseña Anterior</value>
   </data>
   <data name="ErrorPasswordMessage" xml:space="preserve">
-    <value>{0} o {1} es incorrecto(a). Vuelva a intentar o pida ayuda a su administrador del sistema.</value>
+    <value>{0} o {1} es incorrecto(a). Intenta nuevamente.</value>
   </data>
   <data name="MinLengthPasswordMessage" xml:space="preserve">
     <value>La {0} es más corta que la longitud de contraseña mínima requerida.</value>
@@ -256,14 +256,5 @@
   </data>
   <data name="LanPakMaxUserReached" xml:space="preserve">
     <value>La cantidad actual de usuarios conectados alcanzó el máximo de su licencia Lanpak. No puede conectarse hasta que otro usuario se desconecte.</value>
-  </data>
-  <data name="Verify" xml:space="preserve">
-    <value>Verificar</value>
-  </data>
-  <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>Las contraseñas no coinciden.</value>
-  </data>
-  <data name="VerifyPassword" xml:space="preserve">
-    <value>Verificar Contraseña</value>
   </data>
 </root>

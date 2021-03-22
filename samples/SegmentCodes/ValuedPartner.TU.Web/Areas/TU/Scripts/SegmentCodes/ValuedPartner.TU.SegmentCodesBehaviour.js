@@ -1,6 +1,6 @@
 
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -19,8 +19,6 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-//@ts-check
-
 "use strict";
 
 var modelData;
@@ -32,13 +30,12 @@ segmentCodesUI = {
     hasKoBindingApplied: false,
     isKendoControlNotInitialised: false,
 
+
     /**
-     * @function
-     * @name applyBinding
-     * @description Apply Knockout bindings
-     * @namespace segmentCodesUI
-     * @public
-     */
+     * Apply binding
+	 *
+	 * @method applyBinding
+	 */
     applyBinding: function () {
         segmentCodesUI.segmentCodesModel = ko.mapping.fromJS(SegmentCodesViewModel);
         segmentCodesUI.segments = SegmentCodesViewModel.Segments;
@@ -52,13 +49,7 @@ segmentCodesUI = {
         ko.applyBindings(segmentCodesUI.segmentCodesModel);
     },
 
-    /**
-     * @function
-     * @name initdropDownList
-     * @description Initialize the dropdownlist
-     * @namespace segmentCodesUI
-     * @public
-     */
+    // Init Dropdowns here
     initDropDownList: function () {
         $("#SegmentNameList").kendoDropDownList({
             change: function () {
@@ -70,18 +61,13 @@ segmentCodesUI = {
                 }
             }
         });
-
-        var dropdownlist = $("#SegmentNameList").data("kendoDropDownList");
-        dropdownlist.trigger("change");
     },
 
-    /**
-     * @function
-     * @name init
-     * @description Primary initialization routine
-     * @namespace segmentCodesUI
-     * @public
-     */
+	/**
+     * Initialization
+	 *
+	 * @method init
+	 */
     init: function () {
         // initialize grid(s)
         sg.viewList.init("segmentCodesGrid");
@@ -90,30 +76,28 @@ segmentCodesUI = {
         $("#btnsegmentCodesGridEditCol").hide();
 
         segmentCodesUI.initButtons();
+
         segmentCodesUI.applyBinding();
+
         segmentCodesUI.initDropDownList();
     },
 
-    /**
-     * @function
-     * @name saveSegmentCodes
-     * @description Save segment codes
-     * @namespace segmentCodesUI
-     * @public
-     */
+	/**
+     * Save
+	 *
+	 * @method saveSegmentCodes
+	 */
     saveSegmentCodes: function () {
         if ($("#frmSegmentCodes").valid()) {
             segmentCodesRepository.post(segmentCodesUISuccess.post);
         }
     },
 
-    /**
-     * @function
-     * @name initButtons
-     * @description Initialize the page buttons
-     * @namespace segmentCodesUI
-     * @public
-     */
+	/**
+     * Initialize the Buttons
+	 *
+	 * @method initButtons
+	 */
     initButtons: function () {
         // Import/Export Buttons
         sg.exportHelper.setExportEvent("btnOptionExport", "tusegmentcodes", false, $.noop);
@@ -129,12 +113,7 @@ segmentCodesUI = {
     },
 
     /**
-     * @function
-     * @name columnStartEdit
-     * @description Customize segment code value input length based on dropdown list
-     * @namespace segmentCodesUI
-     * @public
-     * 
+     * Customize segment code value input length based on dropdown list
      * @param {any} record: the select row data
      * @param {object} evt: call back event object
      * @param {string} field: field name
@@ -169,31 +148,25 @@ segmentCodesUI = {
 
 // Callbacks
 var segmentCodesUISuccess = {
-    /**
-     * @function
-     * @name post
-     * @description post result event handler
-     * @namespace segmentCodesUI
-     * @public 
-     * 
-     * @param {object} result JSON result payload
-     */
-    post: function (result) {
-        if (result.UserMessage.IsSuccess) {
-            segmentCodesUISuccess.displayResult(result, sg.utls.OperationMode.SAVE);
+	/**
+     * Update
+	 *
+	 * @method update
+	 * @param jsonResult
+	 */
+    post: function (jsonResult) {
+        if (jsonResult.UserMessage.IsSuccess) {
+            segmentCodesUISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
         }
-        sg.utls.showMessage(result);
+        sg.utls.showMessage(jsonResult);
     },
 		
 	/**
-	 * @function
-     * @name displayResult
-     * @description
-     * @namespace segmentCodesUI
-     * @public
+     * Display Result
 	 *
-	 * @param {object} result JSON result payload
-	 * @param {number} uiMode UI Mode specifier
+	 * @method displayResult
+	 * @param jsonResult
+	 * @param uiMode
 	 */
 	displayResult: function (jsonResult, uiMode) {
         sg.viewList.refresh("segmentCodesGrid");

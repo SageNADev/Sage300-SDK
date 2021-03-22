@@ -40,11 +40,14 @@ var gridSaleColConfig = {
             var txtsalesPersonCode = '<input id="txtSalespersoncode" type="text"  maxlength="8" formatTextbox ="alphaNumeric" class="txt-upper" data-descField="' + options.model.SalespersonCode + '" name="' + options.field + '" data-bind="value:' + options.field + '" data-filter="SalespersonCode"/>';
             var findersalesPersonCode = '<input title="Finder" type="button" class="icon btn-search" id="btnSalespersonCode"/></div>';
             var html = txtsalesPersonCode + '' + findersalesPersonCode;
+            var salespersonFindertitle = jQuery.validator.format(salesSplitGridResources.FinderTitle, salesSplitGridResources.SalesPersonCode);
             $(html).appendTo(container);
-            sg.viewFinderHelper.setViewFinderEx("btnSalespersonCode", "txtSalespersoncode", sg.viewFinderProperties.AR.SalesPersons, saleSplitGridUI.OnSalespersonSelection, $.noop);
+            sg.finderHelper.setFinder("btnSalespersonCode", sg.finder.SalesPersonFinder, saleSplitGridUI.OnSalespersonSelection, $.noop, salespersonFindertitle, sg.finderHelper.createDefaultFunction("txtSalespersoncode", "SalesPersonCode", sg.finderOperator.StartsWith), null, true);
         } else {
-            gridSaleColConfig.noEditor(container, options);
+            gridSaleColConfig.noEditor(container, options)
         }
+
+
     },
     percentageEditor: function (container, options) {
         if (!saleSplitGridUI.isReadOnly) {
@@ -320,10 +323,10 @@ var saleSplitGridUI = {
             var gridData = sg.utls.kndoUI.getSelectedRowData(grid);
 
             if (gridData != undefined) {
-                gridData.set("SalesPersonCode", result.CODESLSP);
-                gridData.set("SalesPerson", result.NAMEEMPL);
+                gridData.set("SalesPersonCode", result.SalesPersonCode);
+                gridData.set("SalesPerson", result.Name);
             }
-            saleSplitGridUI.resetFocus(gridData, "SalesPersonCode");
+            saleSplitGridUI.resetFocus(gridData, "SalesPersonCode")
         }
     },
     disableGridButtons: function () {
@@ -451,9 +454,7 @@ var saleSplitGridUI = {
                 { field: salesPersonColumnName.IsDeleted, hidden: true, attributes: { sg_Customizable: false } },
             ],
             dataChange: function (changedData) {
-                sg.delayOnChange("btnSalespersonCode", $("#txtSalespersoncode"), function () {
-                   saleSplitGridUI.salesperchange(changedData);
-                });
+                saleSplitGridUI.salesperchange(changedData);
             },
 
             // Fired when the user selects a table row or cell in the grid

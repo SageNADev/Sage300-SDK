@@ -208,10 +208,6 @@
     <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Web.dll</HintPath>
     </Reference>
-	<!-- gvg - Added for 2021.2 (Sage.CA.SBS.ERP.Sage300.ExportReport.exe) -->
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.ExportReport">
-      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.ExportReport.exe</HintPath> 
-    </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Shared.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Shared.Web.dll</HintPath>
     </Reference>

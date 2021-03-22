@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccountType_Timecard" xml:space="preserve">
-    <value>Timecard</value>
+    <value>Time card</value>
   </data>
   <data name="AccountType_User" xml:space="preserve">
     <value>Usuario</value>
@@ -127,49 +127,13 @@
     <value>Ambos</value>
   </data>
   <data name="AuthenticationMethod_Sage300ERP" xml:space="preserve">
-    <value>Sage 300</value>
+    <value>Sage 300 ERP</value>
   </data>
   <data name="AuthenticationMethod_Windows" xml:space="preserve">
     <value>Windows</value>
   </data>
-  <data name="Language_ChineseSimplifiedChina" xml:space="preserve">
-    <value>Chino (Simplificado) (China)</value>
-  </data>
-  <data name="Language_ChineseSimplifiedSingapore" xml:space="preserve">
-    <value>Chino (Simplificado) (Singapur)</value>
-  </data>
-  <data name="Language_ChineseTraditionalHongKong" xml:space="preserve">
-    <value>Chino (Tradicional) (Hong Kong)</value>
-  </data>
-  <data name="Language_ChineseTraditionalTaiwan" xml:space="preserve">
-    <value>Chino (Tradicional) (Taiwán)</value>
-  </data>
   <data name="Language_Eng" xml:space="preserve">
     <value>Inglés</value>
-  </data>
-  <data name="Language_English" xml:space="preserve">
-    <value>Inglés</value>
-  </data>
-  <data name="Language_EnglishAustralia" xml:space="preserve">
-    <value>Inglés (Australia)</value>
-  </data>
-  <data name="Language_EnglishCanada" xml:space="preserve">
-    <value>Inglés (Canadá)</value>
-  </data>
-  <data name="Language_EnglishSouthAfrica" xml:space="preserve">
-    <value>Inglés (Sudáfrica)</value>
-  </data>
-  <data name="Language_EnglishUnitedStates" xml:space="preserve">
-    <value>Inglés (Estados Unidos)</value>
-  </data>
-  <data name="Language_FrenchCanada" xml:space="preserve">
-    <value>Francés (Canadá)</value>
-  </data>
-  <data name="Language_Spanish" xml:space="preserve">
-    <value>Español</value>
-  </data>
-  <data name="Language_SpanishSpain" xml:space="preserve">
-    <value>Español (España)</value>
   </data>
   <data name="Role_AccountantOrBookkeeperOrClerk" xml:space="preserve">
     <value>Contador o Auxiliar Contable</value>
@@ -218,26 +182,5 @@
   </data>
   <data name="Role_Selectyourjobrole" xml:space="preserve">
     <value>Seleccione su función</value>
-  </data>
-  <data name="Weekday_Friday" xml:space="preserve">
-    <value>Viernes</value>
-  </data>
-  <data name="Weekday_Monday" xml:space="preserve">
-    <value>Lunes</value>
-  </data>
-  <data name="Weekday_Saturday" xml:space="preserve">
-    <value>Sábado</value>
-  </data>
-  <data name="Weekday_Sunday" xml:space="preserve">
-    <value>Domingo</value>
-  </data>
-  <data name="Weekday_Thursday" xml:space="preserve">
-    <value>Jueves</value>
-  </data>
-  <data name="Weekday_Tuesday" xml:space="preserve">
-    <value>Martes</value>
-  </data>
-  <data name="Weekday_Wednesday" xml:space="preserve">
-    <value>Miércoles</value>
   </data>
 </root>

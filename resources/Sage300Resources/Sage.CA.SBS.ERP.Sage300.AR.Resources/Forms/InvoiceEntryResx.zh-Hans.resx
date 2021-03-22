@@ -162,7 +162,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="EstimatedTax" xml:space="preserve">
-    <value>(预估保留款税费 %1)</value>
+    <value>（预估税金%1）</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="InvoiceAmount" xml:space="preserve">
@@ -218,23 +218,23 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="Apply" xml:space="preserve">
-    <value>项目成本核算核销明细</value>
+    <value>项目成本管理核销明细</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="CustCreditDayOverdue" xml:space="preserve">
-    <value>该客户的合计未结清应收帐款余额（逾期{0}天或更多）为{1}。此金额超过{2}。</value>
+    <value>该客户的合计未结清应收帐款余额（逾期{0}天或更多）为{1}。这一金额超过{2}。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="CustCreditDaysOverdue" xml:space="preserve">
-    <value>该客户的合计未结清应收帐款余额（逾期{0}天或更多）为{1}。此金额超过{2}。</value>
+    <value>该客户的合计未结清应收帐款余额（逾期{0}天或更多）为{1}。这一金额超过{2}。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="NatCreditDayOverdue" xml:space="preserve">
-    <value>该统一帐户的未结清应收帐款余额合计（逾期{0}天或更多）为{1}。此金额超过{2}。</value>
+    <value>该统一帐户的未结清应收帐款余额合计（逾期{0}天或更多）为{1}。这一金额超过{2}。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="NatCreditDaysOverdue" xml:space="preserve">
-    <value>该统一帐户的未结清应收帐款余额合计（逾期{0}天或更多）为{1}。此金额超过{2}。</value>
+    <value>该统一帐户的未结清应收帐款余额合计（逾期{0}天或更多）为{1}。这一金额超过{2}。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="NoPrepayments" xml:space="preserve">
@@ -283,7 +283,7 @@
     <value>发票</value>
   </data>
   <data name="EstimatedTaxAmount" xml:space="preserve">
-    <value>预估保留款税费</value>
+    <value>预估税费</value>
   </data>
   <data name="InvalidSalesperson" xml:space="preserve">
     <value>未在应收帐款业务员代码中定义业务员代码{0}。</value>
@@ -310,6 +310,6 @@
     <value>应收帐款过帐发票分录</value>
   </data>
   <data name="LessEstTaxWithheld" xml:space="preserve">
-    <value>减预估预扣税</value>
-  </data>
+    <value>减预估预扣税 </value>
+  </data>  
 </root>

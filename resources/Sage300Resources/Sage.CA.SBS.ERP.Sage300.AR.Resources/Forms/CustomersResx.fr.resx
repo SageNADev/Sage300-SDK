@@ -572,34 +572,4 @@
   <data name="OrderEntry" xml:space="preserve">
     <value>Commandes clients</value>
   </data>
-  <data name="CustomerList" xml:space="preserve">
-    <value>Liste des clients</value>
-  </data>
-  <data name="Aging" xml:space="preserve">
-    <value>Âge</value>
-  </data>
-  <data name="AvailablePercentage" xml:space="preserve">
-    <value>% offert</value>
-  </data>
-  <data name="ContactInfo" xml:space="preserve">
-    <value>Coordonnées du contact</value>
-  </data>
-  <data name="CustomersWithZeroARBAlance" xml:space="preserve">
-    <value>Clients avec solde de CC à zéro</value>
-  </data>
-  <data name="NoCreditUsed" xml:space="preserve">
-    <value>Aucun crédit utilisé</value>
-  </data>
-  <data name="NoLimit" xml:space="preserve">
-    <value>Sans marge de crédit</value>
-  </data>
-  <data name="OverLimit" xml:space="preserve">
-    <value>Dépasse marge de crédit</value>
-  </data>
-  <data name="UpTo" xml:space="preserve">
-    <value>Jusqu'à</value>
-  </data>
-  <data name="CustomersWithNoComments" xml:space="preserve">
-    <value>Clients n'ayant aucun commentaire</value>
-  </data>
 </root>

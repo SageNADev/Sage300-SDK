@@ -304,21 +304,6 @@
                 display: none;
             }
         }
-
-        .wrapper .top-nav .options-menu:hover .sub-menu {
-            display: block;
-            top: 47px;
-            text-align: left;
-            left: 0;
-            min-width: 160px;
-
-            > li {
-                color: #2e2e2e;
-                padding: 0;
-                height: auto;
-                width: 100%;
-            }
-        } 
     }
 
     // Headline stypes
@@ -355,10 +340,6 @@
 
     // Content Styles
 
-    .col-md-10 {
-        width: ~"calc(100% - 220px)";
-    }
-
     .browsers, 
     .applications {
         margin-left: -40px;
@@ -367,7 +348,7 @@
 
     .container-box {
         border-radius: .5rem;
-        border: 1px solid #668592;
+        border: 1px solid rgba(0, 0, 0, 0.12);
         position: relative;
         vertical-align: top;
         padding: 15px 15px 0;
@@ -375,14 +356,9 @@
         min-height: 104px;
         background-color: #fff;
 
-        .page-header  {
-            margin-bottom: 20px;
-            margin-top: 0;
-        }
-
         p, 
         .browser-supported {
-            margin-left: 0;
+            margin-left: 28px;
 
             li {
                 display: inline-block;
@@ -405,40 +381,12 @@
                 &.browser-ie {
                     background-image: url("../../images/login/browser_ie.png");
                 }
-                &.browser-edge {
-                    background-image: url("../../images/login/browser_edge.png");
-                }
             }
         }
 
         label.bold {
             font-weight: bold;
         }
-
-        .browser-supported {
-            display: none;
-            position: absolute;
-            background-color: white;
-            padding: 12px 10px 10px;
-            z-index: 1;
-            border-radius: 4px;
-            height: 64px;
-            border: 1px solid #ddd;
-            top: -45px;
-            left: 237px;
-        }
-
-        .txt-supported-browsers {
-            position: relative;
-
-            &:hover + .browser-supported {
-                display: block;
-            }
-        }
-    }
-
-    .selection-application {
-        position: relative;
     }
 
     .selection-application .applications li {
@@ -447,11 +395,10 @@
         border-radius: 1rem;
         position: relative;
         vertical-align: middle;
-        width: 100px;
-        height: 100px;
-        margin-right: 20px;
-        margin-bottom: 20px;
-        font-size: 13px;
+        width: 110px;
+        height: 110px;
+        margin-right: 27px;
+        margin-bottom: 40px;
         -webkit-box-shadow: 0 4px 4px rgba(0,0,0,.15);
         box-shadow: 0 4px 4px rgba(0,0,0,.15);
 
@@ -464,11 +411,8 @@
 
             &:before {
                 content: attr(data-line);
-                width: 100px;
-                height: 100px;
-                margin-right: 20px;
-                margin-bottom: 20px;
-                font-size: 13px;
+                width: 110px;
+                height: 110px;
                 display: block;
                 background: #255bc7;
                 position: absolute;
@@ -507,15 +451,6 @@
 
         &.ms-word {
             background-color: #2b5796;
-
-            .other-app {
-                color: #fff;
-                text-align: center;
-            }
-        }
-
-        &.admin-access{
-            background-color: #3F51B5;
         }
 
         &.printboss {
@@ -523,29 +458,12 @@
         }
 
         .app-icon {
-            height: 100px;
+            height: 110px;
 
             .glyphicon {
                 color: #fff;
-                font-size: 40px;
-                text-align: center;
-                margin: 0;
-                position: relative;
-                top: 6px;
-
-                span {
-                    font-size: 13px;
-                    display: block;
-                    line-height: 1;
-                    width: 96px;
-                    margin: 0 2px;
-                    position: relative;
-                    bottom: 5px;
-                }
-            }
-
-            .icon-desktop {
-                height: 56px;
+                font-size: 58px;
+                margin-bottom: -24px;
             }
         }
 
@@ -555,64 +473,10 @@
             text-align: center;
             width: 110px;
         }
-
-        .icon-desktop-tooltip {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            z-index: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            top: 121px;
-            left: -51px;
-            color: #000;
-            width: 202px;
-            border-radius: 4px;
-        }
-
-        &#Explorer:hover .icon-desktop-tooltip {
-            display: block;
-        }
     }
 
-    .col-md-2 {
-        text-align: center;
-
-        h2 {
-            text-align: center;
-        }
-
-        .container-box .applications {
-
-            li:hover .icon-desktop-tooltip {
-                display: block;
-            }
-        }
-
-        .container-box.disabled {
-            background-color: #ebedef;
-
-            h2.page-header { 
-                color: #aaabad;
-            }
-
-            .applications li:hover {
-                cursor: default;
-
-                &:before,
-                &:after {
-                    content: none;
-                }
-
-                .icon-desktop-tooltip {
-                    display: none;
-                }
-            }
-
-            .applications li.admin-access {
-                opacity: 0.2;
-            }
-        }
+    #site {
+        width: 38%;
     }
 
     // Footer stypes
@@ -632,12 +496,9 @@
     .notification-box {
         display: none;
         float: right;
-        width: 50%;
+        width: 60%;
         position: relative;
         top: 13px;
-        z-index: 10;
-        margin: 0 30px 10px 0;
-        padding-bottom: 20px;
 
         &:before {
             content: "";
@@ -662,7 +523,7 @@
         padding: 1.375rem 2.5rem 1.3125rem 5rem;
         position: relative;
         color: inherit;
-        border: 1px solid #668592;
+        border: 1px solid rgba(0,0,0,.12);
         border-radius: .5rem;
         box-shadow: 0 4px 4px rgba(0,0,0,.05);
 

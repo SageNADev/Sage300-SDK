@@ -25,7 +25,6 @@ sg.constants.KeyCodeEnum = {
     Backspace: 8,
     Tab: 9,
     Space: 32,
-    DownArrow: 40,
     Dash: 45,
     Period: 46,
     ForwardSlash: 47,

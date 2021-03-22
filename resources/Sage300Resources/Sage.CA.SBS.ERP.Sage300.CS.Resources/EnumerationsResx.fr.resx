@@ -793,7 +793,7 @@
     <value>Équivalent</value>
   </data>
   <data name="Functional" xml:space="preserve">
-    <value>Fonctionnelle</value>
+    <value>Fonctionnel</value>
   </data>
   <data name="Reporting" xml:space="preserve">
     <value>Monnaie publication</value>
@@ -847,8 +847,5 @@
   </data>
   <data name="Num13" xml:space="preserve">
     <value>13</value>
-  </data>
-  <data name="FiscalSet" xml:space="preserve">
-    <value>Série financière</value>
   </data>
 </root>

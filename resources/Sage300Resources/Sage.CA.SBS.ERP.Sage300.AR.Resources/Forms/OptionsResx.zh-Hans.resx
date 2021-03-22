@@ -233,7 +233,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="DefaultOrderOpenDocs" xml:space="preserve">
-    <value>默认未结凭证顺序</value>
+    <value>未结凭证默认顺序</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="DefaultPaymCode" xml:space="preserve">
@@ -503,11 +503,5 @@
   <data name="Schedule" xml:space="preserve">
     <value>排程</value>
     <comment>Retainage Tab</comment>
-  </data>
-  <data name="PaymentsAcceptanceDefaultBankCode" xml:space="preserve">
-    <value>付款承兑银行代码</value>
-  </data>
-  <data name="PaymentsAcceptanceDefaultBankCodeDesc" xml:space="preserve">
-    <value>付款承兑银行代码描述</value>
   </data>
 </root>

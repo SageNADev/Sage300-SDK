@@ -609,18 +609,7 @@ $(document).ready(function () {
         e.stopPropagation();
         $(this).next('.container_popUp.Widget.widgetList').fadeIn(300);
     });
-
-    // Closing popup
-    var keyHandler = function (e) {
-        //if the key press is ESC
-        var KEY_ESC = 27;
-        if (e.keyCode === KEY_ESC) {
-            $(".portalIcon.closeIcon").trigger("click");
-            $(document).off("keyup keydown", keyHandler);
-        }
-    };
-    $(document).on("keydown", keyHandler);
-
+    // Setting popup
     $(".portalIcon.closeIcon").click(function () {
         $(this).closest(".container_popUp.Widget.widgetList").hide("fast");
     });

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -22,7 +22,6 @@
 using System.IO;
 using EnvDTE;
 using EnvDTE80;
-using VSLangProj;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
@@ -45,47 +44,18 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 			var sln = (Solution2)solution;
 			var templatePath = sln.GetProjectItemTemplate(payloadFileName, Constants.CSharpName);
 
-            if (UpgradeWizard.Constants.PerRelease.ReportUpgrade_For_2021_2)
-            {
-                //
-                // Developer Note: Without this block of code here, the similar block
-                //                 in ProcessUpgrade.cs will crash. 
-                //                 Cause unknown at this point.
-                //
-                //                 This code does not change any project within the solution
-                // 
-                foreach (Project project in sln.Projects)
-                {
-                    // Find the Web project in the solution
-                    var webProjectName = project.FullName;
-                    if (IsWebProject(webProjectName))
-                    {
-                        break;
-                    }
-                }
-            }
-
-            using (var form = new Upgrade(DestinationDefault(solution), DestinationWebDefault(solution), templatePath, sln))
+			using (var form = new Upgrade(DestinationDefault(solution), DestinationWebDefault(solution), templatePath, sln))
 			{
 				form.ShowDialog();
 			}
 		}
 
-        /// <summary>
-        /// Check a path to see if it's the Web project file
-        /// </summary>
-        /// <param name="projectPath">The path to check</param>
-        /// <returns></returns>
-        private bool IsWebProject(string projectPath)
+		/// <summary> Get Destination default </summary>
+		/// <param name="solution">Solution</param>
+		/// <returns>Destination or Empty String</returns>
+		public string DestinationDefault(Solution solution)
         {
-            return projectPath.ToLowerInvariant().Contains(UpgradeWizard.Constants.Common.WebProjectNamePattern);
-        }
-
-        /// <summary> Get Destination default </summary>
-        /// <param name="solution">Solution</param>
-        /// <returns>Destination or Empty String</returns>
-        public string DestinationDefault(Solution solution)
-        {
+            Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             var retVal = string.Empty;
 
             try
@@ -105,6 +75,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <returns>Destination Web or Empty String</returns>
         public string DestinationWebDefault(Solution solution)
         {
+            Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             var retVal = string.Empty;
 
             try

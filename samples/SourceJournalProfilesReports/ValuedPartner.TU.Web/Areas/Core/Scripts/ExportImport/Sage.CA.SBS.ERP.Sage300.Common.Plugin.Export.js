@@ -78,7 +78,6 @@ var exportResultRowNumber = 0;
 
     sg.dataMigration = {
         Account: "account",
-        AccountHistoryInquiry: "accounthistoryinquiry",
         AccountGroup: "accountgroup",
         AccountPermissions: "accountpermission",
         AccountSet: "icaccountset",
@@ -208,7 +207,6 @@ var exportResultRowNumber = 0;
         TsRCode: "tsrcode",
         TsTxMap: "tstxmap",
         UnitOfMeasure: "icunitsofmeasure",
-        ASUser: "asuser",
         UserAuthorization: "userauthorization",
         UserAuthorizationSystem: "userauthorizationsystem",
         Vendor: "vendor",
@@ -346,16 +344,7 @@ var exportResultRowNumber = 0;
         _initCriteriaTab: function () {
             if (sg.exportHelper.initCriteriaTabPage) {
                 var exportDataSource = exportModelData.ExportRequest.DataMigrationList;
-
-                var columns = exportDataSource[0].Items.filter(function (item) {
-                    return !item.IsVirtual;
-                });
-
-                // If every field is virtual, include them
-                if (columns.length === 0) {
-                    columns = exportDataSource[0].Items;
-                }
-
+                var columns = exportDataSource[0].Items.filter(function (item) { return !item.IsVirtual; });
                 setCriteriaUI.init(columns, "title", "columnName");
                 sg.exportHelper.initCriteriaTabPage = false;
             }

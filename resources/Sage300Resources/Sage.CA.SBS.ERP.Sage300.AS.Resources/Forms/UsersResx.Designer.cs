@@ -61,119 +61,11 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account is disabled.
-        /// </summary>
-        public static string AccountIsDisabled {
-            get {
-                return ResourceManager.GetString("AccountIsDisabled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Account is locked out.
-        /// </summary>
-        public static string AccountIsLockedOut {
-            get {
-                return ResourceManager.GetString("AccountIsLockedOut", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Account is restricted.
-        /// </summary>
-        public static string AccountIsRestricted {
-            get {
-                return ResourceManager.GetString("AccountIsRestricted", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Account Type.
-        /// </summary>
-        public static string AccountType {
-            get {
-                return ResourceManager.GetString("AccountType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to and.
-        /// </summary>
-        public static string and {
-            get {
-                return ResourceManager.GetString("and", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Authentication Method.
-        /// </summary>
-        public static string AuthenticationMethod {
-            get {
-                return ResourceManager.GetString("AuthenticationMethod", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Between the hours of.
-        /// </summary>
-        public static string BetweenTheHoursOf {
-            get {
-                return ResourceManager.GetString("BetweenTheHoursOf", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Contact Information.
-        /// </summary>
-        public static string ContactInformation {
-            get {
-                return ResourceManager.GetString("ContactInformation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to E-mail 1.
-        /// </summary>
-        public static string Email1 {
-            get {
-                return ResourceManager.GetString("Email1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to E-mail 2.
-        /// </summary>
-        public static string Email2 {
-            get {
-                return ResourceManager.GetString("Email2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to E-mail Account.
-        /// </summary>
-        public static string EmailAccount {
-            get {
-                return ResourceManager.GetString("EmailAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Users.
         /// </summary>
         public static string Entity {
             get {
                 return ResourceManager.GetString("Entity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Job Role.
-        /// </summary>
-        public static string JobRole {
-            get {
-                return ResourceManager.GetString("JobRole", resourceCulture);
             }
         }
         
@@ -192,6 +84,24 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources.Forms {
         public static string LanguageCode {
             get {
                 return ResourceManager.GetString("LanguageCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User ID.
+        /// </summary>
+        public static string LblUserID {
+            get {
+                return ResourceManager.GetString("LblUserID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Name.
+        /// </summary>
+        public static string LblUserName {
+            get {
+                return ResourceManager.GetString("LblUserName", resourceCulture);
             }
         }
         
@@ -219,132 +129,6 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources.Forms {
         public static string LblVerifyCap {
             get {
                 return ResourceManager.GetString("LblVerifyCap", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Microsoft Office 365 Integration.
-        /// </summary>
-        public static string MicrosoftOffice365Integration {
-            get {
-                return ResourceManager.GetString("MicrosoftOffice365Integration", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User must change password at next logon.
-        /// </summary>
-        public static string MustChangePasswordNextLogon {
-            get {
-                return ResourceManager.GetString("MustChangePasswordNextLogon", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to on.
-        /// </summary>
-        public static string on {
-            get {
-                return ResourceManager.GetString("on", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Password never expires.
-        /// </summary>
-        public static string PasswordNeverExpires {
-            get {
-                return ResourceManager.GetString("PasswordNeverExpires", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to delete {0} {1}?.
-        /// </summary>
-        public static string Template_DeleteConfirmMessage {
-            get {
-                return ResourceManager.GetString("Template_DeleteConfirmMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User.
-        /// </summary>
-        public static string User {
-            get {
-                return ResourceManager.GetString("User", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User cannot change password.
-        /// </summary>
-        public static string UserCannotChangePassword {
-            get {
-                return ResourceManager.GetString("UserCannotChangePassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User ID.
-        /// </summary>
-        public static string UserID {
-            get {
-                return ResourceManager.GetString("UserID", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User Name.
-        /// </summary>
-        public static string UserName {
-            get {
-                return ResourceManager.GetString("UserName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User receives e-mail from Sage with information relevant to job role.
-        /// </summary>
-        public static string UserReceivesEmailFromSage {
-            get {
-                return ResourceManager.GetString("UserReceivesEmailFromSage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Valid Times.
-        /// </summary>
-        public static string ValidTimes {
-            get {
-                return ResourceManager.GetString("ValidTimes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Windows Domain.
-        /// </summary>
-        public static string WindowsDomain {
-            get {
-                return ResourceManager.GetString("WindowsDomain", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Windows Domain Login.
-        /// </summary>
-        public static string WindowsDomainLogin {
-            get {
-                return ResourceManager.GetString("WindowsDomainLogin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Windows User Name.
-        /// </summary>
-        public static string WindowsUserName {
-            get {
-                return ResourceManager.GetString("WindowsUserName", resourceCulture);
             }
         }
     }

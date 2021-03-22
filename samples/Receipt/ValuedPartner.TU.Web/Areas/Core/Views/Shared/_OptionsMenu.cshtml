@@ -20,16 +20,10 @@
     var customize = ViewData[OptionsMenu.Customize] == null ?
         Model.SecurityType.HasFlag(SecurityType.Admin) :
         Convert.ToBoolean(ViewData[OptionsMenu.Customize]);
-
-    //var showOptionsMenu = import || export || customize;
-    var showOptionsMenu = true;
 }
-
-@if (showOptionsMenu)
+@if (export || import || customize)
 {
-    string sImport = "<li id='{0}'><a>{1}</a></li>";
-    string sExport = "<li id='{0}'><a>{1}</a></li>";
-
+    string sImport = "", sExport = "";
     bool hasHeadOptions = ViewData.Count == 0 || (ViewData.Count > 0 && ViewData[OptionsMenu.NoHeaderOptionsClass] == null);
     string headOptions = hasHeadOptions ? "<div class='header-options'>" : "";
     string divEndTag = hasHeadOptions ? "</div>" : "";
@@ -38,8 +32,13 @@
 
     if (ViewData[OptionsMenu.EnableBinding] != null)
     {
-        sImport = "<li class='menu-with-input-button'><input type='button' id='{0}' data-bind='enable: Data.ImportOptionsEnabled' value='{1}'></li>";
-        sExport = "<li class='menu-with-input-button'><input type='button' id='{0}' data-bind='enable: Data.ExportOptionsEnabled' value='{1}'></li>";
+        sImport = "<li><input type='button' id='{0}' data-bind='enable: Data.ImportOptionsEnabled' value='{1}'></li>";
+        sExport = "<li><input type='button' id='{0}' data-bind='enable: Data.ExportOptionsEnabled' value='{1}'></li>";
+    }
+    else
+    {
+        sImport = "<li><a id='{0}'>{1}</a></li>";
+        sExport = "<li><a id='{0}'>{1}</a></li>";
     }
 
     var screenName = ViewContext.Controller.GetType().BaseType.GetProperty("ScreenFormName", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(ViewContext.Controller);
@@ -48,14 +47,12 @@
     var formSizePrefix = "localScreenFormSizeKey_";
     var localScreenFormSizePreference = service.GetScreenLevelUserPreference(formSizePrefix + screenName);
     var localScreenFormSizeKey = formSizePrefix + screenName;
-    var optionsMenuId = "OptionsMenu";
 
     @Html.Raw(headOptions)
-    @Html.Raw(string.Format("<div class='{0}'>", "options-menu"))
-    @Html.Raw(string.Format("<ul id='{0}'>", "menuScreenOptions"))
-    <li class="btn-screen-options">
-        <a>@CommonResx.Options</a>
-        <ul class='sub-menu' id='@optionsMenuId'>
+    @Html.Raw(string.Format("<ul class='{0}'>", "options-menu"))
+    <li>
+        <a>@CommonResx.Options<span class="arrow-grey"></span></a>
+        <ul class="sub-menu">
             @if (import)
             {
                 @Html.Raw(string.Format(sImport, importId, CommonResx.Import))
@@ -70,7 +67,7 @@
             }
             <li class="menu-with-submenu">
                 <a id="btnFormSizeUILevel">@NavigationResx.TextSize</a>
-                <ul class="sub-menu" id="menuOptionsTextSize">
+                <ul class="sub-menu">
                     <li id="btnFormSizeUILevelLarge"><a class="" id="labelFormSizeUILevelLarge" onclick="sg.utls.localFormSizeHandler(this, 'large', '@localScreenFormSizeKey')">@NavigationResx.Large</a></li>
                     <li id="btnFormSizeUILevelMedium"><a class="" id="labelFormSizeUILevelMedium" onclick="sg.utls.localFormSizeHandler(this, 'medium', '@localScreenFormSizeKey')">@NavigationResx.Medium</a></li>
                     <li id="btnFormSizeUILevelSmall"><a class="" id="labelFormSizeUILevelSmall" onclick="sg.utls.localFormSizeHandler(this, 'small', '@localScreenFormSizeKey')">@NavigationResx.Small</a></li>
@@ -79,7 +76,6 @@
         </ul>
     </li>
     @Html.Raw("</ul>")
-    @Html.Raw(divEndTag)
     @Html.Raw(divEndTag)
 
     <script>
@@ -118,17 +114,11 @@
                                 setFormSize(result);
                             });
                         } else {
-                            console.debug("Standalone mode? Missing value of window.top.formSizeUserPreferenceKey: " + window.top.formSizeUserPreferenceKey);
+                            console.error("Can not find value window.top.formSizeUserPreferenceKey: " + window.top.formSizeUserPreferenceKey);
                         }
                     }
                 }
             }
-        });
-
-        $(document).ready(function () {
-            $("#menuScreenOptions").kendoMenu({
-                openOnClick: true
-            });
         });
 
     </script>

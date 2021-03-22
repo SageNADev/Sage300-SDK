@@ -1,10 +1,6 @@
 $(document).ready(function(){
   //  console.log("sdf");
-  $("select.single-select").kendoDropDownList();
-  $("select.multi-select").kendoMultiSelect(
-  	{
-        autoClose: false
-    });
+  $("select").kendoDropDownList();
   $(".datepicker").kendoDatePicker();
   $(".tab-group").kendoTabStrip({
 	    animation:  {
@@ -13,11 +9,6 @@ $(document).ready(function(){
 	        }
 	    }
 	});
-
-  $(".timepicker").kendoTimePicker({
-        format: "hh:mm:ss tt",
-        interval: 15
-    });
 
   // numeric textbox with spinner and without spinner
 	$("#with-spinner, #with-spinner1, #with-spinner2 ").kendoNumericTextBox({
@@ -33,10 +24,10 @@ $(document).ready(function(){
 	$("#numeric").kendoNumericTextBox();
 	$("#numeric1").kendoNumericTextBox();
 	$("#numeric2").kendoNumericTextBox();
-	$( ".dropDown-Menu a" ).hover(
+	$( ".dropDown-Menu a" ).on("mouseenter",
 		function() {
 			$( this ).find("span").removeClass("arrow-grey").addClass("arrow-white");
-		  }, function() {
+		  }).on("mouseleave", function() {
 			$( this ).find("span").removeClass("arrow-white").addClass("arrow-grey");
 		  }
 	);
@@ -53,7 +44,7 @@ $(document).ready(function(){
         
     });
 
-      $('a.label-menu').hover(function(e) {
+      $('a.label-menu').on("mouseenter mouseleave", function(e) {
     	e.preventDefault();
     	var btn = $(this);
           $('.label-menu-popup').css({

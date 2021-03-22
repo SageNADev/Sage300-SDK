@@ -30,6 +30,7 @@ var gridColConfig = {
 
 
 var taxGridUI = {
+
     getFormattedValue: function (fieldValue, decimal) {
         if (fieldValue != null)
             fieldValue = sg.utls.kndoUI.getFormattedDecimalNumber(!isNaN(parseFloat(fieldValue)) ? parseFloat(fieldValue) : 0, decimal);
@@ -41,23 +42,24 @@ var taxGridUI = {
 
     init: function (params, initialize) {
 
-        taxGridUI.gridId = params.gridId;
-        taxGridUI.modelData = params.modelData;
-        taxGridUI.currentRowTaxGroup = params.currentRowTaxGroup;
-        taxGridUI.btnEditColumnsId = params.btnEditColumnsId;
-        taxGridUI.preferencesTypeId = params.preferencesTypeId;
-        taxGridUI.taxeschange = params.taxeschange;
-        taxGridUI.taxamounteditable = params.taxamounteditable;
-        taxGridUI.taxbaseeditable = params.taxbaseeditable;
-        taxGridUI.taxreporteditable = params.taxreporteditable;
+        taxGridUI.gridId = params.gridId,
+            taxGridUI.modelData = params.modelData,
+            taxGridUI.currentRowTaxGroup = params.currentRowTaxGroup,
+            taxGridUI.btnEditColumnsId = params.btnEditColumnsId,
+            taxGridUI.preferencesTypeId = params.preferencesTypeId,
+            taxGridUI.taxeschange = params.taxeschange,
+            taxGridUI.taxclassFilter = params.taxclassFilter,
+            taxGridUI.taxamounteditable = params.taxamounteditable,
+            taxGridUI.taxbaseeditable = params.taxbaseeditable,
+            taxGridUI.taxreporteditable = params.taxreporteditable;
         taxGridUI.taxfromcurrency = params.taxfromcurrency;
         taxGridUI.taxtocurrency = params.taxtocurrency;
         taxGridUI.isReadOnly = params.isReadOnly;
-        taxGridUI.classType = params.classType;
-        taxGridUI.transactionType = params.transactionType
         if (initialize) {
             taxGridUI.initButton();
         }
+
+
     },
     gridId: "",
     btnEditColumnsId: "",
@@ -66,20 +68,13 @@ var taxGridUI = {
     preferencesTypeId: null,
     defaultColumns: null,
     taxeschange: null,
+    taxclassFilter: null,
     taxamounteditable: false,
     taxbaseeditable: false,
     taxreporteditable: false,
     taxfromcurrency: null,
     taxtocurrency: null,
     isReadOnly: false,
-    classTypeEnum: {
-        Customers: 1,
-        Items: 2
-    },
-    transactionTypeEnum: {
-        Sales: 1,
-        Purchases: 2
-    },
     initButton: function () {
 
         var grid = $('#' + taxGridUI.gridId).data("kendoGrid");
@@ -219,23 +214,9 @@ var taxGridUI = {
                     var txtTaxClass = '<input id="txtTaxClass" type="text"  maxlength="2" formatTextbox = "numeric" class="align-right pr25" data-descField="' + options.model.TaxClass + '" name="' + options.field + '" data-bind="value:' + options.field + '" data-filter="TaxClass"/>';
                     var finderTaxClass = '<input title="Finder" type="button" class="icon btn-search" id="btntaxclassfield"/></div>';
                     var html = txtTaxClass + '' + finderTaxClass;
+                    var taxclassFindertitle = jQuery.validator.format(taxesGridResources.FinderTitle, taxesGridResources.TaxClass);
                     $(html).appendTo(container);
-
-                    // Tax class finder
-                    const taxClassesFinderInfo = () => {
-                        const property = sg.utls.deepCopy(sg.viewFinderProperties.TX.TaxClasses);
-                        const selectedRowData = sg.utls.kndoUI.getSelectedRowData($(`#${taxGridUI.gridId}`).data("kendoGrid"));
-
-                        const authority = selectedRowData.TaxAuthority;
-                        const classType = taxGridUI.transactionType;
-                        const classAxis = taxGridUI.classType;
-
-                        property.initKeyValues = [authority, classType, classAxis, selectedRowData.TaxClass];
-                        property.filter = $.validator.format(property["filterTemplate"], authority, classType, classAxis);
-                        return property;
-                    };
-                    sg.viewFinderHelper.setViewFinder("btntaxclassfield", taxGridUI.OnTaxClassSelection,
-                        taxClassesFinderInfo, $.noop);
+                    sg.finderHelper.setFinder("btntaxclassfield", sg.finder.TaxClasses, taxGridUI.OnTaxClassSelection, $.noop, taxclassFindertitle, taxGridUI.taxclassFilter, null, true);
                 } else {
                     sg.utls.kndoUI.nonEditable($('#' + taxGridUI.gridId).data("kendoGrid"), container);
                 }
@@ -367,7 +348,7 @@ var taxGridUI = {
             var gridData = sg.utls.kndoUI.getSelectedRowData(grid);
 
             if (gridData != undefined) {
-                gridData.set("TaxClass", result.CLASS);
+                gridData.set("TaxClass", result.Class);
             }
         }
     },

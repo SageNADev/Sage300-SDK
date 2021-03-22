@@ -23,6 +23,8 @@
                 @Html.KoSageDropDownList("OperatorDropdown", null, new { @id = "OperatorDropdown", @class = "clsOperatorDropDown default" })
             </div>
         </div>
+    </div>
+    <div class="form-group">
         <div class="input-group">
             <div id="ValueDropDownDiv">
                 @Html.KoSageDropDownList("ValueDropDown", null, new { @id = "ValueDropDown", @class = "clsValueDropDown default" })
@@ -90,29 +92,7 @@
     <div id="div_finder_grid"></div>
 </div>
 <div class="clear-fix"></div>
-<div id="buttons" class="pager-group">
-    <div class="k-pager-wrap k-grid-pager" data-role="pager">
-        <a href="#" aria-label="@CommonResx.ToFirstPage" title="@CommonResx.ToFirstPage" class="k-link k-pager-nav k-pager-first left" id="first"
-            @{if (Model.IsFirstPage) { <text> disabled="disabled" </text> } }>
-            <span class="k-icon k-i-arrow-end-left"></span>
-        </a>
-        <a href="#" aria-label="@CommonResx.ToPreviousPage" title="@CommonResx.ToPreviousPage" class="k-link k-pager-nav left" id="previous"
-            @{if (Model.IsFirstPage) { <text> disabled="disabled" </text> } }
-            @{if (!Model.IsPrevPageFull) { <text> toFirst="toFirst" </text> } }>
-            <span class="k-icon k-i-arrow-60-left"></span>
-        </a>
-        <a href="#" aria-label="@CommonResx.ToNextPage" title="@CommonResx.ToNextPage" class="k-link k-pager-nav left" id="next"
-            @{if (Model.IsLastPage) { <text> disabled="disabled" </text> } }>
-            <span class="k-icon k-i-arrow-60-right"></span>
-        </a>
-        <a href="#" aria-label="@CommonResx.ToLastPage" title="@CommonResx.ToLastPage" class="k-link k-pager-nav k-pager-last left" id="last" 
-            @{if (Model.IsLastPage) { <text> disabled="disabled" </text> } }
-            @{if (Model.NoMoreData) { <text> noMoreData="noMoreData" </text> } }>
-            <span class="k-icon k-i-arrow-end-right"></span>
-        </a>
-    </div>
-</div>
-<div class="footer-group">
+<div id="buttons" class="footer-group">
     @Html.KoSageButton("Select", null, new { @class = "btn btn-primary", @value = CommonResx.Select1, @id = "select" })
     @Html.KoSageButton("Cancel", null, new { @class = "btn btn-secondary", @value = CommonResx.Cancel, @id = "cancel" })
 </div>
@@ -122,6 +102,7 @@
     @Html.ConvertToJsVariableUsingNewtonSoft("finderModelColumnsList", Model.GridColumns);
     @Html.ConvertToJsVariableUsingNewtonSoft("finderSchemaModelType", Model.GridSchemaColumns);
     @Html.ConvertToJsVariableUsingNewtonSoft("finderTitle", Model.FinderTitle);
+    @Html.ConvertToJsVariableUsingNewtonSoft("finderTotalRecordsCount", Model.TotalResultsCount);
     @Html.ConvertToJsVariableUsingNewtonSoft("SetFilterTitle", CommonResx.SetFilter);
     @Html.ConvertToJsVariableUsingNewtonSoft("StartsWith", CommonResx.StartsWith);
     @Html.ConvertToJsVariableUsingNewtonSoft("Contains", CommonResx.Contains);
