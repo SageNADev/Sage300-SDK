@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,15 +18,20 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+// @ts-check
+
+/*
+ * The following are global objects external to this source file
+ */
 /*global ko*/
 /*global receiptUI*/
 /*global receiptUISuccess*/
  
 "use strict";
 
-var receiptAjax = { 
+let receiptAjax = { 
     ConstructFindOptionsObject: function (searchFinder, simpleFilter) {
-        var finderOptions = {
+        let finderOptions = {
             SearchFinder: searchFinder,
             PageNumber: 0,
             PageSize: 1,
@@ -39,115 +44,303 @@ var receiptAjax = {
     }
 };
 
-var receiptRepository = {
-    isExists: function (receiptNumber, model) {
-        var data = { 'id': receiptNumber, 'model': model };
-        var result = null;
+let receiptRepository = {
 
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "Exists"), data, function (jsonResult) {
+    /**
+     * @function
+     * @name receiptExists
+     * @description Check for the existence of a receipt
+     * @namespace receiptRepository
+     * @public
+     * 
+     * @param {string} receiptNumber The receipt number
+     * @param {object} model The model data
+     * 
+     * @returns {object} JSON object containing the results
+     */
+    receiptExists: function (receiptNumber, model) {
+        let data = { 'id': receiptNumber, 'model': model };
+        let result = null;
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "Exists");
+        sg.utls.ajaxPostSync(url, data, function (jsonResult) {
             result = jsonResult;
         });
 
         return result;
     },
 
+    /**
+     * @function
+     * @name deleteDetail
+     * @description Delete the details for an existing receipt
+     * @namespace receiptRepository
+     * @public
+     * 
+     * @param {number} pageNumber The page number
+     * @param {number} pageSize The page size
+     * @param {object} model The model data
+     */
     deleteDetail: function (pageNumber, pageSize, model) {
-        var data = { 'pageNumber': pageNumber, 'pageSize': pageSize, 'model': model }; 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "DeleteDetails"), data, receiptUISuccess.DeleteDetailSucces);
+        let data = { 'pageNumber': pageNumber, 'pageSize': pageSize, 'model': model }; 
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "DeleteDetails");
+        sg.utls.ajaxPost(url, data, receiptUISuccess.DeleteDetailSucces);
     },
 
+    /**
+     * @function
+     * @name create
+     * @description Create a new receipt
+     * @namespace receiptRepository
+     * @public
+     * 
+     * @param {string} receiptNumber The receipt number
+     */
     create: function (receiptNumber) {
-        var data = { 'receiptNumber': receiptNumber }; 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Create"), data, receiptUISuccess.actionSuccess.bind(this, "create"));
+        let data = { 'receiptNumber': receiptNumber }; 
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "Create");
+        sg.utls.ajaxPost(url, data, receiptUISuccess.actionSuccess.bind(this, "create"));
     },
 
+    /**
+     * @function
+     * @name deleteReceipt
+     * @description Delete an existing receipt
+     * @namespace receiptRepository
+     * @public
+     * 
+     * @param {string} receiptNumber The receipt number
+     * @param {number} sequenceNumber The sequence number
+     */
     deleteReceipt: function (receiptNumber, sequenceNumber) {
-        var data = { 'receiptNumber': receiptNumber, 'sequenceNumber': sequenceNumber };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Delete"), data, receiptUISuccess.actionSuccess.bind(this, "delete"));
+        let data = { 'receiptNumber': receiptNumber, 'sequenceNumber': sequenceNumber };
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "Delete");
+        sg.utls.ajaxPost(url, data, receiptUISuccess.actionSuccess.bind(this, "delete"));
     },
 
+    /**
+     * @function
+     * @name add
+     * @description Add a new receipt
+     * @namespace receiptRepository
+     * @public
+     *
+     * @param {object} data The model data
+     */
     add: function (data) {
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Add"), data, receiptUISuccess.actionSuccess.bind(this, "add"));
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "Add");
+        sg.utls.ajaxPost(url, data, receiptUISuccess.actionSuccess.bind(this, "add"));
     },
 
-    update: function (data) { 
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Save"), data, receiptUISuccess.actionSuccess.bind(this, "update")); 
+    /**
+     * @function
+     * @name update
+     * @description Update/Save an existing receipt
+     * @namespace receiptRepository
+     * @public
+     *
+     * @param {object} data The model data
+     */
+    update: function (data) {
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "Save");
+        sg.utls.ajaxPost(url, data, receiptUISuccess.actionSuccess.bind(this, "update")); 
     }, 
 
+    /**
+     * @function
+     * @name getItemType
+     * @description Get the item type
+     * @namespace receiptRepository
+     * @public
+     *
+     * @param {string} itemNumber The item number
+     */
     getItemType: function (itemNumber) {
-        var data = { 'itemId': itemNumber };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Item", "GetItemType"), data, receiptUISuccess.getItemTypeSuccess);
+        let data = { 'itemId': itemNumber };
+        let url = sg.utls.url.buildUrl("TU", "Item", "GetItemType");
+        sg.utls.ajaxPost(url, data, receiptUISuccess.getItemTypeSuccess);
     },
 
-
-    get: function (receiptNumber,disableScreen) {
-        var data = { 'id': receiptNumber, 'oldRecordDeleted': false, 'isCalledAsPopup': disableScreen };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "GetById"), data, receiptUISuccess.getResult);
+    /**
+     * @function
+     * @name get
+     * @description Get an existing receipt by receipt number
+     * @namespace receiptRepository
+     * @public
+     *
+     * @param {string} receiptNumber The receipt number
+     * @param {boolean} disableScreen The disable screen flag
+     */
+    get: function (receiptNumber, disableScreen) {
+        let data = { 'id': receiptNumber, 'oldRecordDeleted': false, 'isCalledAsPopup': disableScreen };
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "GetById");
+        sg.utls.ajaxPost(url, data, receiptUISuccess.getResult);
     },
 
-    post: function (model,sequenceNumber, yesNo) {
-        var data = {
+    /**
+     * @function
+     * @name post
+     * @description Post an existing receipt
+     * @namespace receiptRepository
+     * @public
+     *
+     * @param {object} model The model data
+     * @param {boolean} sequenceNumber The sequence number
+     * @param {boolean} yesNo The yes/no flag
+     */
+    post: function (model, sequenceNumber, yesNo) {
+        let data = {
             'headerModel':ko.mapping.toJS(model), 'sequenceNumber': sequenceNumber, 'yesNo': yesNo
         };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "Post"), data, receiptUISuccess.actionSuccess.bind(this, "post"));
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "Post");
+        sg.utls.ajaxPost(url, data, receiptUISuccess.actionSuccess.bind(this, "post"));
     },
 
+    /**
+     * @function
+     * @name checkDate
+     * @description Validate the date of an existing receipt
+     * @namespace receiptRepository
+     * @public
+     * 
+     * @param {string} date The date
+     * @param {string} eventType The event type
+     */
     checkDate: function (date, eventType) {
-        var data = { 'date': date, 'eventType': eventType };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "ValidateDate"), data, receiptUISuccess.checkDate);
+        let data = { 'date': date, 'eventType': eventType };
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "ValidateDate");
+        sg.utls.ajaxPost(url, data, receiptUISuccess.checkDate);
     },
 
-    getVendorDetails: function (id) {
-        var data = { 'vendorNumber': id };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "GetVendorDetail"), data, receiptUISuccess.getVendorDetailsSuccess);
+    /**
+     * @function
+     * @name getVendorDetails
+     * @description Get the vendor details for a receipt
+     * @namespace receiptRepository
+     * @public
+     * 
+     * @param {string} vendorNumber The vendor number
+     */
+    getVendorDetails: function (vendorNumber) {
+        let data = { 'vendorNumber': vendorNumber };
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "GetVendorDetail");
+        sg.utls.ajaxPostSync(url, data, receiptUISuccess.getVendorDetailsSuccess);
     },
 
-    GetHeaderValues: function (data, eventType) {
-        var data = { 'model': data, 'eventType': eventType };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", "GetHeaderValues"), data, receiptUISuccess.GetHeaderValues);
+    /**
+     * @function
+     * @name GetHeaderValues
+     * @description Get the header values for a receipt
+     * @namespace receiptRepository
+     * @public
+     *
+     * @param {object} modelData The model data
+     * @param {object} eventType The event type
+     */
+    GetHeaderValues: function (modelData, eventType) {
+        let data = { 'model': modelData, 'eventType': eventType };
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "GetHeaderValues");
+        sg.utls.ajaxPost(url, data, receiptUISuccess.GetHeaderValues);
     },
 
+    /**
+     * @function
+     * @name refresh
+     * @description Refresh the receipt data
+     * @namespace receiptRepository
+     * @public
+     *
+     * @param {object} model The model data
+     */
     refresh: function (model) {
-        var data = {
+        let data = {
             model: ko.mapping.toJS(model)
         };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "Refresh"), data, receiptUISuccess.refresh);
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "Refresh");
+        sg.utls.ajaxPostSync(url, data, receiptUISuccess.refresh);
     },
 
+    /**
+     * @function
+     * @name setOptionalFieldValue
+     * @description Set an optional field value
+     * @namespace receiptRepository
+     * @public
+     *
+     * @param {object} model The model data
+     */
     setOptionalFieldValue: function (model) {
         model.IsDetailOptionalField = false;
-        var data = {
+        let data = {
             model: model
         };
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("TU", "Receipt", receiptUI.isDetailOptionalField ? "SetOptionalFieldValue" : "SetHeaderOptFieldValue"), data, receiptUISuccess.setOptionalFieldValue);
-    },
-     
-    checkRateSpread: function(rateType, fromCurrency, rateDate, rate, tocurrency) {
-        var data = {
-            'rateType': rateType,
-            'fromCurrency': fromCurrency,
-            'rateDate':sg.utls.kndoUI.getFormattedDate(rateDate),
-            'rate': rate,
-            'tocurrency': tocurrency
-        };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "CheckRateSpread"), data, receiptUISuccess.getRateSpread);
+        let url = sg.utls.url.buildUrl("TU", "Receipt", receiptUI.isDetailOptionalField ? "SetOptionalFieldValue" : "SetHeaderOptFieldValue");
+        sg.utls.ajaxPost(url, data, receiptUISuccess.setOptionalFieldValue);
     },
 
-    GetExchangeRate: function (rateType, fromCurrency, rateDate, rate, tocurrency) {
-        var data = {
+    /**
+     * @function
+     * @name checkRateSpread
+     * @description Check the rate spread for a receipt
+     * @namespace receiptRepository
+     * @public
+     *
+     * @param {string} rateType The rate type
+     * @param {string} fromCurrency The 'From' currency
+     * @param {date} rateDate The rate date
+     * @param {number} rate The rate
+     * @param {string} tocurrency The 'To' currency
+     */
+    checkRateSpread: function(rateType, fromCurrency, rateDate, rate, tocurrency) {
+        let data = {
             'rateType': rateType,
             'fromCurrency': fromCurrency,
             'rateDate':sg.utls.kndoUI.getFormattedDate(rateDate),
             'rate': rate,
             'tocurrency': tocurrency
         };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "CheckRateSpread"), data, receiptUISuccess.GetExchangeRate);
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "CheckRateSpread");
+        sg.utls.ajaxPostSync(url, data, receiptUISuccess.getRateSpread);
+    },
+
+    /**
+     * @function
+     * @name GetExchangeRate
+     * @description Get the exchange rate for a receipt
+     * @namespace receiptRepository
+     * @public
+     *
+     * @param {string} rateType The rate type
+     * @param {string} fromCurrency The 'From' currency
+     * @param {date} rateDate The rate date
+     * @param {number} rate The rate
+     * @param {string} tocurrency The 'To' currency
+     */
+    GetExchangeRate: function (rateType, fromCurrency, rateDate, rate, tocurrency) {
+        let data = {
+            'rateType': rateType,
+            'fromCurrency': fromCurrency,
+            'rateDate':sg.utls.kndoUI.getFormattedDate(rateDate),
+            'rate': rate,
+            'tocurrency': tocurrency
+        };
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "CheckRateSpread");
+        sg.utls.ajaxPostSync(url, data, receiptUISuccess.GetExchangeRate);
     }, 
-    
+
+    /**
+     * @function
+     * @name saveReceiptDetails
+     * @description Save the receipt details
+     * @namespace receiptRepository
+     * @public
+     *
+     * @param {object} model The model data
+     */
     saveReceiptDetails: function (model) {
-        var data = {
+        let data = {
             model: ko.mapping.toJS(model)
         }
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("TU", "Receipt", "SaveDetails"), data, receiptUISuccess.onSaveDetailsCompleted);
+        let url = sg.utls.url.buildUrl("TU", "Receipt", "SaveDetails");
+        sg.utls.ajaxPostSync(url, data, receiptUISuccess.onSaveDetailsCompleted);
     }
 }

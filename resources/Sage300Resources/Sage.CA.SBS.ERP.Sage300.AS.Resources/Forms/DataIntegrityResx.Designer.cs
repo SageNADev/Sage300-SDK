@@ -295,6 +295,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your request could not be completed, either because no options are available or because a setting is configured incorrectly in the {0}.INI file. Contact your system administrator for help..
+        /// </summary>
+        public static string OptionURLNotValid {
+            get {
+                return ResourceManager.GetString("OptionURLNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Orphan Records.
         /// </summary>
         public static string OrphanRecords {

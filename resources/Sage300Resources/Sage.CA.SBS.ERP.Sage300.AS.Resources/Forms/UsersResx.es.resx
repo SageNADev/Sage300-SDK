@@ -139,12 +139,84 @@
   <data name="Language" xml:space="preserve">
     <value>Idioma</value>
   </data>
-  <data name="LblUserID" xml:space="preserve">
+  <data name="UserID" xml:space="preserve">
     <value>ID Usuario</value>
     <comment>Field</comment>
   </data>
-  <data name="LblUserName" xml:space="preserve">
+  <data name="UserName" xml:space="preserve">
     <value>Nombre de Usuario</value>
     <comment>Field</comment>
+  </data>
+  <data name="AccountIsDisabled" xml:space="preserve">
+    <value>La cuenta está inhabilitada</value>
+  </data>
+  <data name="AccountIsLockedOut" xml:space="preserve">
+    <value>La cuenta está bloqueada</value>
+  </data>
+  <data name="AccountIsRestricted" xml:space="preserve">
+    <value>La cuenta está restringida</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>y</value>
+  </data>
+  <data name="AuthenticationMethod" xml:space="preserve">
+    <value>Método de Autenticación</value>
+  </data>
+  <data name="BetweenTheHoursOf" xml:space="preserve">
+    <value>Entre las horas de</value>
+  </data>
+  <data name="EmailAccount" xml:space="preserve">
+    <value>Cuenta de Correo-E</value>
+  </data>
+  <data name="JobRole" xml:space="preserve">
+    <value>Función</value>
+  </data>
+  <data name="MicrosoftOffice365Integration" xml:space="preserve">
+    <value>Integración de Microsoft Office 365</value>
+  </data>
+  <data name="on" xml:space="preserve">
+    <value>el</value>
+  </data>
+  <data name="PasswordNeverExpires" xml:space="preserve">
+    <value>La contraseña nunca caduca</value>
+  </data>
+  <data name="UserCannotChangePassword" xml:space="preserve">
+    <value>El usuario no puede cambiar contraseña</value>
+  </data>
+  <data name="MustChangePasswordNextLogon" xml:space="preserve">
+    <value>Debe cambiar contraseña en la siguiente conexión</value>
+  </data>
+  <data name="WindowsDomain" xml:space="preserve">
+    <value>Dominio de Windows</value>
+  </data>
+  <data name="WindowsDomainLogin" xml:space="preserve">
+    <value>Inicio de Conexión en Dominio de Windows</value>
+  </data>
+  <data name="WindowsUserName" xml:space="preserve">
+    <value>Nombre de Usuario de Windows</value>
+  </data>
+  <data name="AccountType" xml:space="preserve">
+    <value>Tipo de Cuenta</value>
+  </data>
+  <data name="ContactInformation" xml:space="preserve">
+    <value>Información de Contacto</value>
+  </data>
+  <data name="Email1" xml:space="preserve">
+    <value>Correo-E 1</value>
+  </data>
+  <data name="Email2" xml:space="preserve">
+    <value>Correo-E 2</value>
+  </data>
+  <data name="UserReceivesEmailFromSage" xml:space="preserve">
+    <value>El usuario recibe correos electrónicos de Sage con información relevante a su función</value>
+  </data>
+  <data name="ValidTimes" xml:space="preserve">
+    <value>Tiempos Válidos</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="Template_DeleteConfirmMessage" xml:space="preserve">
+    <value>¿Seguro de que desea eliminar {0} {1}?</value>
   </data>
 </root>

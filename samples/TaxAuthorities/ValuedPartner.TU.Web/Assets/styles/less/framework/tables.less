@@ -243,6 +243,25 @@ table {
   }
 }
 
+// Table Footer Styles 
+
+.k-grid-footer-wrap {
+  border-width: 0;
+
+  .k-footer-template {
+    td {
+      border-bottom: 0;
+    }
+  }
+}
+
+.k-grid-footer:focus {
+  box-shadow: inset 0 0 0 1px @sage-mid-gray;
+  -webkit-box-shadow: inset 0 0 0 1px @sage-mid-gray;
+  -moz-box-shadow: inset 0 0 0 1px @sage-mid-gray;
+  outline: none;
+}
+
 // Static table - fixed width 
 .staticgrid-group {
   max-width: 940px;
@@ -542,7 +561,6 @@ table {
   .k-grid-header {
     background-image: none;
     background-color: @table-header-bg;
-    padding-right: 0 !important; //D-39964
 
     > .k-grid-header-wrap {
       border-right: 0;
@@ -723,8 +741,8 @@ table {
     padding-top: 4px;
 
     .k-icon {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
     }
 
     .k-label { 
@@ -741,14 +759,22 @@ table {
         border-color: @btn-default-border;
       }
 
-      &.k-state-disabled {
+      &.k-state-disabled,
+      &[disabled] {
         border-color: darken(@input-bg-disabled, 3%);
         background-color: @input-bg-disabled;
         opacity: 1;
+        cursor: default !important;
+        pointer-event: none;
+
 
         &:hover {
           background-color: @input-bg-disabled;
           border-color: darken(@input-bg-disabled, 3%);
+        }
+
+        &:focus {
+          outline: none;
         }
 
         .k-icon {
@@ -839,7 +865,6 @@ table {
 
   .k-grid-content {
     min-height: 200px;
-    overflow-y: auto;
 
     &:focus {
       outline: none;
@@ -967,6 +992,11 @@ table {
       &.default {
         width: 100%;
       }
+
+      +.icon.edit-field {
+        right: 20px;
+        top: 1px;
+      }
     }
 
     .k-numeric-wrap {
@@ -978,6 +1008,10 @@ table {
           color: #c7384f;
           border-color: #c7384f;
         }
+      }
+
+      .k-input {
+        height: 22px;
       }
 
       .k-i-warning {
@@ -1046,11 +1080,22 @@ table {
         .box-shadow(none);  
         opacity: 0.6;
       }
+
+      &#btnDetailOptionalfield {
+        background-position: -607px -1px;
+      }
     }
 
     .pencil-edit {
-      background-position: -607px -2px;
-      top: 2px;
+      background-position: -607px -1px;
+    }
+
+    .k-numerictextbox.with-edit-icon {
+      padding-right: 25px;
+    }
+
+    .k-numerictextbox + .pencil-edit {
+      top: 5px;
     }
 
     .edit-container {
@@ -1885,4 +1930,26 @@ div.spreadsheet {
     white-space: pre-wrap;
     line-height: 1.5;
    } 
+}
+
+// New Finder Pagenation - disabled status
+
+.k-pager-wrap.k-grid-pager .k-pager-nav {
+
+  &[disabled] {
+    border-color: darken(@input-bg-disabled, 3%);
+    background-color: @input-bg-disabled;
+    opacity: 1;
+    cursor: default !important;
+    pointer-event: none;
+
+    .k-icon {
+      cursor: default !important;
+      opacity: .3;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
 }

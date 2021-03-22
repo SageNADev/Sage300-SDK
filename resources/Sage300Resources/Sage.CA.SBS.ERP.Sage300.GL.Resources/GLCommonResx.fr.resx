@@ -214,7 +214,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="UseRolledUpAmounts" xml:space="preserve">
-    <value>Utiliser montants cptes parents</value>
+    <value>Utiliser montants des comptes parents</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="WarningBackup" xml:space="preserve">
@@ -274,5 +274,9 @@
   </data>
   <data name="In" xml:space="preserve">
     <value>dans</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>Type de devise</value>
+    <comment>List</comment>
   </data>
 </root>

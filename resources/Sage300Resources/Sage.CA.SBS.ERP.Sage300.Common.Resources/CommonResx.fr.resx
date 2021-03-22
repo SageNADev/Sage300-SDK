@@ -1553,6 +1553,48 @@
     <value>Le contact {0} n’existe pas.</value>
   </data>
   <data name="Template_ReportCouldNotBeLocated" xml:space="preserve">
-    <value>** TO BE TRANSLATED ** The report file '{0}' could not be located. Please contact your administrator for assistance.</value>
+    <value>Le fichier de rapport '{0}' est introuvable. Veuillez communiquer avec votre administrateur pour obtenir de l'aide.</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>S'inscrire</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+    <comment>Service Fabric Reauthentication  Content</comment>
+  </data>
+  <data name="ReauthenticationContent1" xml:space="preserve">
+    <value>Nous avons envoyé un code unique à l’adresse courriel figurant dans votre dossier. Vous devez utiliser ce code dès que possible car il expirera bientôt pour des raisons de sécurité.</value>
+    <comment>Service Fabric Reauthentication Content</comment>
+  </data>
+  <data name="ReauthenticationContent2" xml:space="preserve">
+    <value>Entrez le code ci-dessous, puis cliquez sur OK pour continuer.</value>
+    <comment>Service Fabric Reauthentication Content</comment>
+  </data>
+  <data name="BracketNone" xml:space="preserve">
+    <value>(Nil)</value>
+  </data>
+  <data name="ToFirstPage" xml:space="preserve">
+    <value>Première page</value>
+  </data>
+  <data name="ToLastPage" xml:space="preserve">
+    <value>Dernière page</value>
+  </data>
+  <data name="ToNextPage" xml:space="preserve">
+    <value>Page suivante</value>
+  </data>
+  <data name="ToPreviousPage" xml:space="preserve">
+    <value>Page précédente</value>
+  </data>
+  <data name="FileFormat" xml:space="preserve">
+    <value>Format du fichier</value>
+  </data>
+  <data name="PageRange" xml:space="preserve">
+    <value>Plage de pages</value>
+  </data>
+  <data name="SelectPages" xml:space="preserve">
+    <value>Sélectionner les pages</value>
+  </data>
+  <data name="ExportReport" xml:space="preserve">
+    <value>Exporter le rapport</value>
   </data>
 </root>

@@ -457,6 +457,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Receipt Information.
+        /// </summary>
+        public static string ReceiptInformation {
+            get {
+                return ResourceManager.GetString("ReceiptInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reversed.
         /// </summary>
         public static string Reversed {

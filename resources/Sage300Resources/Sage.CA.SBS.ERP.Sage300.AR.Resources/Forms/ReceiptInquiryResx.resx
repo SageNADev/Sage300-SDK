@@ -433,4 +433,8 @@
     <value>The batch containing this document has been cleared.</value>
     <comment>Error Message</comment>
   </data>
+  <data name="ReceiptInformation" xml:space="preserve">
+    <value>Receipt Information</value>
+    <comment>Button</comment>
+  </data>
 </root>

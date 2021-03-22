@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -26,35 +26,80 @@ var clearStatisticsRepository = (function (parent) {
 
     // Private method
     function _commonHandler(year, method, defaultCallback, overrideCallback = null) {
-        var data = {'year': year };
+        let data = {'year': year };
 
-        var callback = defaultCallback;
+        let callback = defaultCallback;
         if (overrideCallback !== null) {
             callback = overrideCallback;
         }
 
-        var url = sg.utls.url.buildUrl(clearStatisticsConstants.MODULEID, clearStatisticsConstants.ACTION, method);
+        let url = sg.utls.url.buildUrl(clearStatisticsConstants.MODULEID, clearStatisticsConstants.ACTION, method);
         sg.utls.ajaxPostHtml(url, data, callback);
     }
 
     // Publicly exposed objects
     return {
+        /**
+         * @function
+         * @name getCustomerMaxPeriodForValidYear
+         * @description
+         * @public
+         * 
+         * @param {Number} year
+         * @param {Function} successCallback = null
+         */
         getCustomerMaxPeriodForValidYear: function(year, successCallback = null) {
             _commonHandler(year, "GetMaxPeriodForValidYear", clearStatisticsUISuccess.fillCustomerFiscalYear, successCallback);
         },
 
+        /**
+         * @function
+         * @name getGroupMaxPeriodForValidYear
+         * @description
+         * @public
+         *
+         * @param {Number} year
+         * @param {Function} successCallback = null
+         */
         getGroupMaxPeriodForValidYear: function(year, successCallback = null) {
             _commonHandler(year, "GetMaxPeriodForValidYear", clearStatisticsUISuccess.fillGroupFiscalYear, successCallback);
         },
 
+        /**
+         * @function
+         * @name getNationalAcctMaxPeriodForValidYear
+         * @description
+         * @public
+         *
+         * @param {Number} year
+         * @param {Function} successCallback = null
+         */
         getNationalAcctMaxPeriodForValidYear: function(year, successCallback = null) {
             _commonHandler(year, "GetMaxPeriodForValidYear", clearStatisticsUISuccess.fillNationalAcctFiscalYear, successCallback);
         },
 
+        /**
+         * @function
+         * @name getSalespersonMaxPeriodForValidYear
+         * @description
+         * @public
+         *
+         * @param {Number} year
+         * @param {Function} successCallback = null
+         */
         getSalespersonMaxPeriodForValidYear: function(year, successCallback = null) {
             _commonHandler(year, "GetSalesPersonMaxPeriodForValidYear", clearStatisticsUISuccess.fillSalespersonFiscalYear, successCallback);
         },
 
+        /**
+         * @function
+         * @name getItemMaxPeriodForValidYear
+         * @description
+         * @public
+         *
+         * @param {Number} year
+         * @param {Function} successCallback = null
+         */
         getItemMaxPeriodForValidYear: function(year, successCallback = null) {
             _commonHandler(year, "GetItemMaxPeriodForValidYear", clearStatisticsUISuccess.fillItemFiscalYear, successCallback);
         }

@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2016 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
@@ -28,7 +28,7 @@
         SessionExpired: '@CommonResx.SessionExpired',
         SessionDateNotInCalendar_Title: '@AccountMessagesResx.SessionDateNotInCalendar_Title',
         SessionDateinInactiveYear_Title: '@AccountMessagesResx.SessionDateinInactiveYear_Title',
-        SessionDateinLockedPeriod_Title: '@AccountMessagesResx.SessionDateinLockedPeriod_Title',
+        SessionDateinLockedPeriod_Title: '@Html.SageRaw(AccountMessagesResx.SessionDateinLockedPeriod_Title)',
         SignOut: '@CommonResx.SignOut',
         MultiSessionSignOutConfirmationTemplate: '@CommonResx.MultiSessionSignOutConfirmationTemplate',
         SignOutConfirmation: '@CommonResx.SignOutConfirmation',

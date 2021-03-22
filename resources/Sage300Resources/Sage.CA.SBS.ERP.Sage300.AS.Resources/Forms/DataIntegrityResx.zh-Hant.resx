@@ -241,11 +241,15 @@
     <comment>Application Options Pop up window</comment>
   </data>
   <data name="CheckforOrphanRecords" xml:space="preserve">
-    <value>檢查孤項資料</value>
+    <value>檢查孤項記錄</value>
     <comment>Application Options Pop up window</comment>
   </data>
   <data name="DeleteOrphanRecords" xml:space="preserve">
     <value>刪除孤項記錄</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
+  <data name="OptionURLNotValid" xml:space="preserve">
+    <value>無法完成您的請求，因為沒有可用的選項，或者因為{0}.INI檔案中的某個設定未正確配置。聯絡您的系統管理員獲取幫助。</value>
     <comment>Application Options Pop up window</comment>
   </data>
 </root>

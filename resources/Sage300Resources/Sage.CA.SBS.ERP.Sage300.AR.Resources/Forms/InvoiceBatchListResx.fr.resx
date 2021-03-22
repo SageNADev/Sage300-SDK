@@ -117,12 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddMissingLinksSuccess" xml:space="preserve">
+    <value>Pour le lot {0}, toutes les factures pouvant être payées en ligne incluent désormais un lien de paiement.</value>
+  </data>
   <data name="DefaultInvoiceType" xml:space="preserve">
     <value>Type facture par défaut</value>
   </data>
   <data name="Entity" xml:space="preserve">
     <value>Liste des lots de factures de CC</value>
     <comment>Auto-Generated</comment>
+  </data>
+  <data name="MissingLinks" xml:space="preserve">
+    <value>Ajouter les liens de paiement manquants</value>
   </data>
   <data name="PostingSeqCompleted" xml:space="preserve">
     <value>Séquence de report {0} terminée.</value>

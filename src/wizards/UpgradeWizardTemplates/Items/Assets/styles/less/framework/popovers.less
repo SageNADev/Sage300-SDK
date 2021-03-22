@@ -179,7 +179,7 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px) {  
   .k-widget.k-window {
     max-width: 1020px;
-    left: unset !important;
+    left: unset;
 
     .k-window-titlebar .k-window-actions {
         right: 30px;
@@ -267,8 +267,8 @@ and (max-device-width : 1024px) {
 }
 
 .k-window .k-window-content {
-    padding: 0;
-    margin: @margin-base @margin-base 0 @margin-base;
+    padding: 3px 3px 0;
+    margin: (@margin-base - 3px) (@margin-base - 3px) 0; // D-42509
     background: transparent;
     border-radius: 0px;
     overflow-y:auto;
@@ -281,6 +281,10 @@ and (max-device-width : 1024px) {
       .left:nth-child(2) {
         margin-right: 0;
       }
+    }
+
+    &.modal-msg {
+      padding: 0;
     }
 }
 
@@ -591,9 +595,18 @@ and (max-device-width : 1024px) {
     }
   }
 
+  .k-grid .k-grid-content {
+    overflow-y: auto;
+  }
+
   .k-grid tr.k-state-selected td:first-child {
     border-left: 3px solid @sage-blue;
     padding-left: 5px;
+  }
+
+  .pager-group .k-pager-wrap {
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
   }
 
   .k-button:focus:active:not(.k-state-disabled):not([disabled]),
@@ -1006,7 +1019,7 @@ and (max-device-width : 1024px) {
 }
 
 .modelWindow .modelBox_controlls {
-  margin-top: 20px; 
+  margin: 20px 3px 3px; 
   text-align: right; 
 
   input[class*="btn-"] { 
@@ -1029,6 +1042,7 @@ and (max-device-width : 1024px) {
 
   .k-window-content.modal-msg {
     margin: 0;
+    padding: 0;
 
     .message-control {
       margin-bottom: 0;

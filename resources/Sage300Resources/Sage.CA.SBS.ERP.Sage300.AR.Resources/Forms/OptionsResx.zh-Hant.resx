@@ -504,4 +504,10 @@
     <value>排程</value>
     <comment>Retainage Tab</comment>
   </data>
+  <data name="PaymentsAcceptanceDefaultBankCode" xml:space="preserve">
+    <value>付款承兌銀行代碼</value>
+  </data>
+  <data name="PaymentsAcceptanceDefaultBankCodeDesc" xml:space="preserve">
+    <value>付款承兌銀行代碼描述</value>
+  </data>
 </root>

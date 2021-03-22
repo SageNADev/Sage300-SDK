@@ -117,12 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddMissingLinksSuccess" xml:space="preserve">
+    <value>For batch {0}, all invoices that can be paid online now include payment links.</value>
+  </data>
   <data name="DefaultInvoiceType" xml:space="preserve">
     <value>Default Invoice Type</value>
   </data>
   <data name="Entity" xml:space="preserve">
     <value>A/R Invoice Batch List</value>
     <comment>Auto-Generated</comment>
+  </data>
+  <data name="MissingLinks" xml:space="preserve">
+    <value>Add Missing Payment Links</value>
   </data>
   <data name="PostingSeqCompleted" xml:space="preserve">
     <value>Posting Sequence {0} completed.</value>

@@ -29,6 +29,11 @@ Step 4
 	Note: The other folders (excluding 'Web') need to be updated manually. 
         These folders (and files) generally don't change so they can be left as is.
 
+Step 5 
+	Ensure the correct version of AccpacDotNetVersion.props has been 
+        copied to the Solution Wizard resources folder
+
+	Run the batch file 'CopyAccpacDotNetVersionSettings.bat'
 
 
 Alternatively, you can just run 'RebuildAndDeployAll.bat' to execute all the above steps.

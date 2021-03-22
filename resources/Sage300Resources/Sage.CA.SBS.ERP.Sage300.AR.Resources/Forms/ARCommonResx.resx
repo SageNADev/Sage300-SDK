@@ -3988,4 +3988,40 @@
   <data name="EstimatedTaxWithheld" xml:space="preserve">
     <value>Estimated Tax Withheld</value>
   </data>
+  <data name="CommentExpiration" xml:space="preserve">
+    <value>Comment Expiration</value>
+  </data>
+  <data name="CommentFollowUp" xml:space="preserve">
+    <value>Comment Follow-Up</value>
+  </data>
+  <data name="CurrentDue" xml:space="preserve">
+    <value>Current Due</value>
+  </data>
+  <data name="FuncionalARBalance" xml:space="preserve">
+    <value>Functional A/R Balance</value>
+  </data>
+  <data name="FunctionalCurrentDue" xml:space="preserve">
+    <value>Functional Current Due</value>
+  </data>
+  <data name="FunctionalOutstandingRetainage" xml:space="preserve">
+    <value>Functional Outstanding Retainage</value>
+  </data>
+  <data name="FunctionalOverdueAmount" xml:space="preserve">
+    <value>Functional Overdue Amount</value>
+  </data>
+  <data name="NationalARBalance" xml:space="preserve">
+    <value>National A/R Balance</value>
+  </data>
+  <data name="OverdueAmount" xml:space="preserve">
+    <value>Overdue Amount</value>
+  </data>
+  <data name="CustomerListPreview" xml:space="preserve">
+    <value>Customer List Preview</value>
+  </data>
+  <data name="FromToRangeErrorMessage" xml:space="preserve">
+    <value>The entry in the From box cannot be greater than the entry in the To box</value>
+  </data>
+  <data name="CustomerRange" xml:space="preserve">
+    <value>Customer Range</value>
+  </data>
 </root>

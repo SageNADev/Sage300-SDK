@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -62,10 +62,7 @@ namespace Sage300UICustomizationWizard
             public const string AssemblySuffix = ".Web.dll";
 
             /// <summary> Customization Module </summary>
-            public const string CustomizationModule = "CU";
-
-            /// <summary> Application Modules </summary>
-            public const string ApplicationModules = "AP,AR,AS,BK,TX,CS,GL,IC,OE,PO,";
+            public const string CustomizationModule = "Customization";
 
             /// <summary> Splitter Distance </summary>
             public const int SplitterDistance = 510;
@@ -136,7 +133,7 @@ namespace Sage300UICustomizationWizard
         private void NextStep()
         {
             // Proceed to next step
-            if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
+            if (!_currentWizardStep.Equals(-1) && _wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelKendo))
             {
                 // For other wizards, we don't normally validate on last step but the Kendo step 
                 // is our last step so we must validate for the customization wizard
@@ -148,7 +145,7 @@ namespace Sage300UICustomizationWizard
                 // Set vars for use in solution creation
                 BusinessPartnerName = txtCompanyName.Text.Trim();
                 ProjectName = txtProject.Text.Trim().Replace(".", "");
-                ModuleName = txtModule.Text.Trim().ToUpper();
+                ModuleName = Constants.CustomizationModule;
                 AssemblyName = txtAssembly.Text.Trim().Replace(".dll", "");
 
                 // Set flag indicating wizard screen closed normally as close is flag to run solution creation
@@ -175,7 +172,7 @@ namespace Sage300UICustomizationWizard
 
                 ShowStep(true);
 
-                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
+                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelKendo))
                 {
                     btnNext.Text = Resources.Generate;
                     btnNext.Enabled = chkKendoLicense.Checked;
@@ -193,7 +190,7 @@ namespace Sage300UICustomizationWizard
             if (!_currentWizardStep.Equals(0))
             {
                 // Proceed back a step
-                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals("pnlKendo"))
+                if (_wizardSteps[_currentWizardStep].Panel.Name.Equals(Constants.PanelKendo))
                 {
                     btnNext.Text = Resources.Next;
                 }
@@ -292,25 +289,6 @@ namespace Sage300UICustomizationWizard
             if (string.IsNullOrEmpty(txtCompanyName.Text.Trim()))
             {
                 return string.Format(Resources.InvalidSettingRequiredField, Resources.CompanyName.Replace(":", ""));
-            }
-
-            // Module
-            if (string.IsNullOrEmpty(txtModule.Text.Trim()))
-            {
-                return string.Format(Resources.InvalidSettingRequiredField, Resources.Module.Replace(":", ""));
-            }
-
-            // Module must be 2 characters
-            if (txtModule.Text.Trim().Length != 2)
-            {
-                return Resources.InvalidModuleLength;
-            }
-
-            // Module cannot be an application module
-            txtModule.Text = txtModule.Text.ToUpper();
-            if (Constants.ApplicationModules.Contains(txtModule.Text.Trim()))
-            {
-                return Resources.InvalidModuleUsage;
             }
 
             // Project
@@ -419,35 +397,10 @@ namespace Sage300UICustomizationWizard
             txtBootstrapper.Text = (string)CustomizationManifest.SelectToken(Sage300UICustomizationUserInterface.Constants.PropertyBootstrapper);
             txtAssembly.Text = (string)CustomizationManifest.SelectToken(Sage300UICustomizationUserInterface.Constants.PropertyAssembly);
 
-            // Assign name or default name
-            if (string.IsNullOrEmpty(txtAssembly.Text.Trim()))
-            {
-                // Default module
-                txtModule.Text = Constants.CustomizationModule;
-                // Default project company concatenated with customization name
-                txtProject.Text = txtCompanyName.Text.Replace(" ", "") +
-                                  Resources.Dot +
-                                  txtCustomizationName.Text.Replace(" ", "");
-            }
-            else
-            {
-                // Get segments of assembly
-                var segments = txtAssembly.Text.Trim().Split('.');
-                // Pull out module
-                txtModule.Text = segments[segments.Length - 3];
-                // Build project
-                var project = string.Empty;
-                for (int i = 0; i < segments.Length - 3; i++)
-                {
-                    // Append dot before next segment
-                    if (!string.IsNullOrEmpty(project))
-                    {
-                        project += Resources.Dot;
-                    }
-                    project += segments[i];
-                }
-                txtProject.Text = project;
-            }
+            // Build project name
+            txtProject.Text = txtCompanyName.Text.Replace(" ", "").Replace(Resources.Dot, "") +
+                                Resources.Dot +
+                                txtCustomizationName.Text.Replace(" ", "").Replace(Resources.Dot, "");
 
             // Get location from folder where found
             var path = Path.GetDirectoryName(fileName);
@@ -498,9 +451,6 @@ namespace Sage300UICustomizationWizard
 
             lblAssembly.Text = Resources.Assembly;
             tooltip.SetToolTip(lblAssembly, Resources.AssemblyTip);
-
-            lblModule.Text = Resources.Module;
-            tooltip.SetToolTip(lblModule, Resources.ModuleTip);
 
             lblProject.Text = Resources.Project;
             tooltip.SetToolTip(lblProject, Resources.ProjectTip);
@@ -570,23 +520,24 @@ namespace Sage300UICustomizationWizard
             txtKendoFolder.Text = dialog.SelectedPath.Trim();
         }
 
-        /// <summary> Update contents of Bootstrapper and Assembly based upon module/project content</summary>
+        /// <summary> Update contents of Bootstrapper and Assembly based upon project content</summary>
         /// <param name="sender">Sender object </param>
         /// <param name="e">Event Args </param>
-        private void ModuleProjectTextChanged(object sender, EventArgs e)
+        private void ProjectTextChanged(object sender, EventArgs e)
         {
             // Bootstrapper
-            txtBootstrapper.Text = txtProject.Text.Trim().Replace(Resources.Dot, "") + txtModule.Text.Trim() + Constants.BootstrapperSuffix;
+            txtBootstrapper.Text = txtProject.Text.Trim().Replace(Resources.Dot, "") + 
+                Constants.CustomizationModule + Constants.BootstrapperSuffix;
 
             // Assembly
-            txtAssembly.Text = txtProject.Text.Trim() + Resources.Dot + txtModule.Text.Trim() + Constants.AssemblySuffix;
+            txtAssembly.Text = txtProject.Text.Trim() + Resources.Dot + 
+                Constants.CustomizationModule + Constants.AssemblySuffix;
         }
 
         /// <summary> Initialize events for process generation class </summary>
         private void InitEvents()
         {
-            txtModule.TextChanged += ModuleProjectTextChanged;
-            txtProject.TextChanged += ModuleProjectTextChanged;
+            txtProject.TextChanged += ProjectTextChanged;
         }
     }
 }

@@ -34,7 +34,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ValuedPartner.TU.Web</RootNamespace>
     <AssemblyName>ValuedPartner.TU.Web</AssemblyName>
-    <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage300ERP\Online\Web</Sage300WebDir>
+    <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage\Sage300\Online\Web</Sage300WebDir>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -224,6 +224,9 @@
     <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.ExportReport">
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.ExportReport.exe</HintPath>
+    </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.IC.BusinessRepository">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.IC.BusinessRepository.dll</HintPath>
     </Reference>
@@ -252,6 +255,18 @@
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.KPI.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.KPI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SageNA.CE.CEDataServiceClient, Version=1.0.6141.40574, Culture=neutral, PublicKeyToken=babaf8a730227aee, processorArchitecture=MSIL">
+      <HintPath>$(Sage300WebDir)\bin\SageNA.CE.CEDataServiceClient.dll</HintPath>
+    </Reference>
+    <Reference Include="SageNA.CE.Common.URLEncryption, Version=1.0.6141.40574, Culture=neutral, PublicKeyToken=babaf8a730227aee, processorArchitecture=MSIL">
+      <HintPath>$(Sage300WebDir)\bin\SageNA.CE.Common.URLEncryption.dll</HintPath>
+    </Reference>
+    <Reference Include="SageNA.CE.UM.Client, Version=1.0.6141.40576, Culture=neutral, PublicKeyToken=babaf8a730227aee, processorArchitecture=MSIL">
+      <HintPath>$(Sage300WebDir)\bin\SageNA.CE.UM.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SageNA.CE.UMClientInterface, Version=1.0.6141.40575, Culture=neutral, PublicKeyToken=babaf8a730227aee, processorArchitecture=MSIL">
+      <HintPath>$(Sage300WebDir)\bin\SageNA.CE.UMClientInterface.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -446,9 +461,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51959</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51959/</IISUrl>
+          <IISUrl>http://localhost:54454/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

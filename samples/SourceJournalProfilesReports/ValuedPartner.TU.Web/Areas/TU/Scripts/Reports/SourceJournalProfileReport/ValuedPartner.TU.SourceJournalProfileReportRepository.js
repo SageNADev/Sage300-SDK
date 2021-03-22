@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -19,20 +19,39 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 // @ts-check
+
 "use strict";
 
 var SourceJournalProfileReportRepository = SourceJournalProfileReportRepository || {};
-
 SourceJournalProfileReportRepository = {
+
+    /**
+     * @function
+     * @name executeSourceJournalProfileReportRepositoryReport
+     * @description Execute an ajax post request
+     * @namespace SourceJournalProfileReportRepository
+     * @public
+     * 
+     * @param {object} viewModel The model data to post to server
+     */
     executeSourceJournalProfileReportRepositoryReport: function (viewModel) {
-        var data = SourceJournalProfileReportRepository.getUnobservableData(viewModel);
-        var url = sg.utls.url.buildUrl("TU", "SourceJournalProfileReport", "Execute");
-        var callback = sourceJournalProfileReportOnSuccess.executeSourceJournalProfileReport;
+        let data = SourceJournalProfileReportRepository.getUnobservableData(viewModel);
+        let url = sg.utls.url.buildUrl("TU", "SourceJournalProfileReport", "Execute");
+        let callback = sourceJournalProfileReportOnSuccess.executeSourceJournalProfileReport;
         sg.utls.ajaxPost(url, data, callback);
     },
 
+    /**
+     * @function
+     * @name getUnobservableData
+     * @description Setup model data 
+     * @namespace SourceJournalProfileReportRepository
+     * @public
+     *
+     * @param {object} model The model data to post to server
+     */
     getUnobservableData: function (model) {
-        var data = {
+        let data = {
             report: ko.mapping.toJS(model)
         };
         return data;

@@ -1553,6 +1553,48 @@
     <value>El contacto {0} no existe.</value>
   </data>
   <data name="Template_ReportCouldNotBeLocated" xml:space="preserve">
-    <value>** TO BE TRANSLATED ** The report file '{0}' could not be located. Please contact your administrator for assistance.</value>
+    <value>No se pudo encontrar el archivo de informe '{0}'. Póngase en contacto con su administrador para obtener ayuda.</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Registrarse</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Código</value>
+    <comment>Service Fabric Reauthentication  Content</comment>
+  </data>
+  <data name="ReauthenticationContent1" xml:space="preserve">
+    <value>Le hemos enviado un código único a su cuenta de correo electrónico registrada. Necesita utilizar este código tan pronto como sea posible ya que expirará pronto por cuestiones de seguridad.</value>
+    <comment>Service Fabric Reauthentication Content</comment>
+  </data>
+  <data name="ReauthenticationContent2" xml:space="preserve">
+    <value>Ingrese el código abajo y haga clic en Aceptar para continuar.</value>
+    <comment>Service Fabric Reauthentication Content</comment>
+  </data>
+  <data name="BracketNone" xml:space="preserve">
+    <value>(Ninguno)</value>
+  </data>
+  <data name="ToFirstPage" xml:space="preserve">
+    <value>Primera página</value>
+  </data>
+  <data name="ToLastPage" xml:space="preserve">
+    <value>Última página</value>
+  </data>
+  <data name="ToNextPage" xml:space="preserve">
+    <value>Página siguiente</value>
+  </data>
+  <data name="ToPreviousPage" xml:space="preserve">
+    <value>Página anterior</value>
+  </data>
+  <data name="FileFormat" xml:space="preserve">
+    <value>Formato de Archivo</value>
+  </data>
+  <data name="PageRange" xml:space="preserve">
+    <value>Rango de Páginas</value>
+  </data>
+  <data name="SelectPages" xml:space="preserve">
+    <value>Seleccionar Páginas</value>
+  </data>
+  <data name="ExportReport" xml:space="preserve">
+    <value>Exportar Reporte</value>
   </data>
 </root>

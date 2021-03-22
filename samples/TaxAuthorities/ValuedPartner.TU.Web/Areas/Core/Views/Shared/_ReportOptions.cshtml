@@ -19,23 +19,25 @@
     var localScreenFormSizeKey = formSizePrefix + screenName;
 }
 
-<ul class="options-menu">
-    <li>
-        <a>@CommonResx.Options<span class="arrow-grey"></span></a>
-        <ul class="sub-menu">
-            <li><a id="btnSaveUserPreference">@CommonResx.SaveSettings</a></li>
-            <li><a id="btnClearUserPreference">@CommonResx.ClearSavedSettings</a></li>
-            <li class="menu-with-submenu">
-                <a id="btnFormSizeUILevel">@NavigationResx.TextSize</a>
-                <ul class="sub-menu">
-                    <li id="btnFormSizeUILevelLarge"><a class="" id="labelFormSizeUILevelLarge" onclick="sg.utls.localFormSizeHandler(this, 'large', '@localScreenFormSizeKey')">@NavigationResx.Large</a></li>
-                    <li id="btnFormSizeUILevelMedium"><a class="" id="labelFormSizeUILevelMedium" onclick="sg.utls.localFormSizeHandler(this, 'medium', '@localScreenFormSizeKey')">@NavigationResx.Medium</a></li>
-                    <li id="btnFormSizeUILevelSmall"><a class="" id="labelFormSizeUILevelSmall" onclick="sg.utls.localFormSizeHandler(this, 'small', '@localScreenFormSizeKey')">@NavigationResx.Small</a></li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>
+<div class="options-menu">
+    <ul id="menuScreenOptions">
+        <li class="btn-screen-options">
+            <a>@CommonResx.Options<span class="arrow-grey"></span></a>
+            <ul class="sub-menu">
+                <li><a id="btnSaveUserPreference">@CommonResx.SaveSettings</a></li>
+                <li><a id="btnClearUserPreference">@CommonResx.ClearSavedSettings</a></li>
+                <li class="menu-with-submenu">
+                    <a id="btnFormSizeUILevel">@NavigationResx.TextSize</a>
+                    <ul class="sub-menu" id="menuOptionsTextSize">
+                        <li id="btnFormSizeUILevelLarge"><a class="" id="labelFormSizeUILevelLarge" onclick="sg.utls.localFormSizeHandler(this, 'large', '@localScreenFormSizeKey')">@NavigationResx.Large</a></li>
+                        <li id="btnFormSizeUILevelMedium"><a class="" id="labelFormSizeUILevelMedium" onclick="sg.utls.localFormSizeHandler(this, 'medium', '@localScreenFormSizeKey')">@NavigationResx.Medium</a></li>
+                        <li id="btnFormSizeUILevelSmall"><a class="" id="labelFormSizeUILevelSmall" onclick="sg.utls.localFormSizeHandler(this, 'small', '@localScreenFormSizeKey')">@NavigationResx.Small</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
 
 <script>
         var currentScreenName = '@screenName';
@@ -73,11 +75,17 @@
                                 setFormSize(result);
                             });
                         } else {
-                            console.error("Can not find value window.top.formSizeUserPreferenceKey: " + window.top.formSizeUserPreferenceKey);
+                            console.debug("Standalone mode? Missing value of window.top.formSizeUserPreferenceKey: " + window.top.formSizeUserPreferenceKey);
                         }
                     }
                 }
             }
+    });
+
+    $(document).ready(function () {
+        $("#menuScreenOptions").kendoMenu({
+            openOnClick: true
         });
+    });
 
 </script>

@@ -318,13 +318,30 @@ namespace MergeISVProject
             FileSystem.CopyDirectory(_FolderManager.Compiled.Bin, _FolderManager.Staging.Bin);
 
 			// Delete non-vendor related files from staging/bin folder
-			string[] patternFilesToRemove = {
+
+			// Base exclusion list
+			var patternFilesToRemove = new List<string>() {
 				"System.*.dll",
-				"Sage.CA.SBS.ERP.*.dll",
-				"*.Web.Infrastructure.dll"
+				"*.Web.Infrastructure.dll",
+				"Sage.CA.SBS.ERP.Sage300.PaymentsAcceptanceWrapper.*",
+				"Sage.CA.SBS.ERP.Sage300.Web.dll",
+				"Sage.CA.SBS.ERP.Sage300.Workflow.*",
 			};
-            _Logger.Log("Deleting non-vendor related files from Staging/Bin folder...");
-            DeleteFilesFromFolderBasedOnPatternList(_FolderManager.Staging.Bin, patternFilesToRemove);
+
+			string[] possibleSageModules =
+			{
+				"AP", "AR", "AS", "BC", "CS", "GL", "IC", "KN", "KPI", "MT", "OE", "PM", "PO", "TA", "TS", "TW", "Common", "Core", "Shared"
+			};
+
+			// Append the list of Sage modules 
+			foreach (var module in possibleSageModules)
+            {
+				var pattern = $"Sage.CA.SBS.ERP.Sage300.{module}.*.dll";
+				patternFilesToRemove.Add(pattern);
+            }
+		
+			_Logger.Log("Deleting non-vendor related files from Staging/Bin folder...");
+            DeleteFilesFromFolderBasedOnPatternList(_FolderManager.Staging.Bin, patternFilesToRemove.ToArray());
 
 
             // Areas folder
