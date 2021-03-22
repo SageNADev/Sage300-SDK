@@ -19,7 +19,7 @@ namespace Sage300UICustomizationWizard.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -169,7 +169,7 @@ namespace Sage300UICustomizationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A name to identify the customization (informational only).
+        ///   Looks up a localized string similar to A name to identify the customization.
         /// </summary>
         internal static string CustomizationNameTip {
             get {
@@ -250,24 +250,6 @@ namespace Sage300UICustomizationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The module must be 2 characters.
-        /// </summary>
-        internal static string InvalidModuleLength {
-            get {
-                return ResourceManager.GetString("InvalidModuleLength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The specified module cannot be an application module (i.e. AP, AR, GL, etc.).
-        /// </summary>
-        internal static string InvalidModuleUsage {
-            get {
-                return ResourceManager.GetString("InvalidModuleUsage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The {0} has not been specified..
         /// </summary>
         internal static string InvalidSettingRequiredField {
@@ -291,24 +273,6 @@ namespace Sage300UICustomizationWizard.Properties {
         internal static string KendoLicenseInvalid {
             get {
                 return ResourceManager.GetString("KendoLicenseInvalid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Module:.
-        /// </summary>
-        internal static string Module {
-            get {
-                return ResourceManager.GetString("Module", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Specify a module other than any of the application modules (i.e. AP, AR, GL, etc.).
-        /// </summary>
-        internal static string ModuleTip {
-            get {
-                return ResourceManager.GetString("ModuleTip", resourceCulture);
             }
         }
         
@@ -358,7 +322,7 @@ namespace Sage300UICustomizationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specify a project name (default is company name plus customization name).
+        ///   Looks up a localized string similar to Project name is company name plus customization name.
         /// </summary>
         internal static string ProjectTip {
             get {

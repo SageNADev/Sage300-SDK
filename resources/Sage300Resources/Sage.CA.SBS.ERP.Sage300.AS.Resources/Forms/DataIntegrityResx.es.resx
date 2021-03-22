@@ -248,4 +248,8 @@
     <value>Eliminar Registros Huérfanos</value>
     <comment>Application Options Pop up window</comment>
   </data>
+  <data name="OptionURLNotValid" xml:space="preserve">
+    <value>Su solicitud no se pudo llevar a cabo porque no hay ninguna opción disponible o porque algún parámetro en el archivo {0}.INI está incorrectamente configurado. Comuníquese con su administrador del sistema para obtener ayuda.</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
 </root>

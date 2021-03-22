@@ -629,6 +629,12 @@
   <data name="DocumentType_RoundingReversed" xml:space="preserve">
     <value>截位 - 已迴轉</value>
   </data>
+  <data name="DocumentType_TaxWithheldPosted" xml:space="preserve">
+    <value>預扣稅 - 已過帳</value>
+  </data>
+  <data name="DocumentType_TaxWithheldReversed" xml:space="preserve">
+    <value>預扣稅 - 已迴轉</value>
+  </data>
   <data name="DocumentType_UnappliedCashApplied" xml:space="preserve">
     <value>未核銷現金 - 已核銷</value>
   </data>

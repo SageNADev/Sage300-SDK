@@ -158,7 +158,7 @@
     <comment>Added From APCommonResx</comment>
   </data>
   <data name="Open" xml:space="preserve">
-    <value>開放</value>
+    <value>未結</value>
     <comment>Added From AP EnumerationResx</comment>
   </data>
   <data name="Posted" xml:space="preserve">
@@ -909,11 +909,11 @@
     <comment>Finder Column Name</comment>
   </data>
   <data name="ShipToContactsFax" xml:space="preserve">
-    <value>發運至地點連絡人傳真</value>
+    <value>發運至連絡人傳真</value>
     <comment>Finder Column Name</comment>
   </data>
   <data name="ShipToContactsPhone" xml:space="preserve">
-    <value>發運至地點連絡人電話</value>
+    <value>發運至連絡人電話</value>
     <comment>Finder Column Name</comment>
   </data>
   <data name="ShipToCountry" xml:space="preserve">
@@ -1304,7 +1304,7 @@
     <comment>From InvoiceEntryResx</comment>
   </data>
   <data name="ProcessCommandCode" xml:space="preserve">
-    <value>處理指令代碼</value>
+    <value>處理指示代碼</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="RecoverableAccount1" xml:space="preserve">
@@ -1740,23 +1740,23 @@
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxAllocatedAmount1" xml:space="preserve">
-    <value>已分配稅金額1</value>
+    <value>已分配稅額1</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxAllocatedAmount2" xml:space="preserve">
-    <value>已分配稅金額2</value>
+    <value>已分配稅額2</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxAllocatedAmount3" xml:space="preserve">
-    <value>已分配稅金額3</value>
+    <value>已分配稅額3</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxAllocatedAmount4" xml:space="preserve">
-    <value>已分配稅金額4</value>
+    <value>已分配稅額4</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxAllocatedAmount5" xml:space="preserve">
-    <value>已分配稅金額5</value>
+    <value>已分配稅額5</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="TaxRate1" xml:space="preserve">
@@ -1836,34 +1836,34 @@
     <comment>For ProcessCommand</comment>
   </data>
   <data name="CreditNoteItemEntered" xml:space="preserve">
-    <value>貸項通知單 - 產品已輸入</value>
+    <value>貸項通知單－產品已輸入</value>
   </data>
   <data name="CreditNoteItemIssued" xml:space="preserve">
-    <value>貸項通知單 - 產品已發出</value>
+    <value>貸項通知單－產品已發出</value>
   </data>
   <data name="CreditNoteSummaryEntered" xml:space="preserve">
-    <value>貸項通知單 - 彙總已輸入</value>
+    <value>貸項通知單－彙總已輸入</value>
     <comment>Transaction Type</comment>
   </data>
   <data name="CreditNoteSummaryIssued" xml:space="preserve">
-    <value>貸項通知單 - 彙總已發出</value>
+    <value>貸項通知單－彙總已發出</value>
   </data>
   <data name="CustomerOverCreditLimit" xml:space="preserve">
     <value>客戶超出信貸限額</value>
     <comment>For CustOrNatlOverCreditFlag</comment>
   </data>
   <data name="DebitNoteItemEntered" xml:space="preserve">
-    <value>借項通知單 - 產品已輸入</value>
+    <value>借項通知單－產品已輸入</value>
   </data>
   <data name="DebitNoteItemIssued" xml:space="preserve">
-    <value>借項通知單 - 產品已發出</value>
+    <value>借項通知單－產品已發出</value>
   </data>
   <data name="DebitNoteSummaryEntered" xml:space="preserve">
-    <value>借項通知單 - 彙總已輸入</value>
+    <value>借項通知單－彙總已輸入</value>
     <comment>Transaction Type</comment>
   </data>
   <data name="DebitNoteSummaryIssued" xml:space="preserve">
-    <value>借項通知單 - 彙總已發出</value>
+    <value>借項通知單－彙總已發出</value>
     <comment>For CustOrNatlOverCreditFlag</comment>
   </data>
   <data name="DeriveTaxReportingExchangeRate" xml:space="preserve">
@@ -1895,13 +1895,13 @@
     <comment>For ProcessCommand</comment>
   </data>
   <data name="InvoiceItemEntered" xml:space="preserve">
-    <value>發票 - 產品已輸入</value>
+    <value>發票－產品已輸入</value>
   </data>
   <data name="InvoiceItemIssued" xml:space="preserve">
-    <value>發票 - 產品已發出</value>
+    <value>發票－產品已發出</value>
   </data>
   <data name="InvoiceSummaryIssued" xml:space="preserve">
-    <value>發票 - 彙總已發出</value>
+    <value>發票－彙總已發出</value>
   </data>
   <data name="ModeNormal1Batch2" xml:space="preserve">
     <value>模式：正常(1), 批次(2)</value>
@@ -2044,7 +2044,7 @@
     <value>已含稅5</value>
   </data>
   <data name="ProcessCommand" xml:space="preserve">
-    <value>處理程序指示</value>
+    <value>處理指示</value>
     <comment>Finder Column name</comment>
   </data>
   <data name="VerifyTaxClassMessage" xml:space="preserve">
@@ -2232,7 +2232,7 @@
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="TaxExpenseAmount5" xml:space="preserve">
-    <value>稅務計費金額 5</value>
+    <value>稅務計費金額5</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="TotalTaxRecoverable" xml:space="preserve">
@@ -2468,23 +2468,23 @@
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="TaxReportingRecoverableAmt1" xml:space="preserve">
-    <value>稅務報告可退回金額1</value>
+    <value>稅務報告可退金額1</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="TaxReportingRecoverableAmt2" xml:space="preserve">
-    <value>稅務報告可退回金額2</value>
+    <value>稅務報告可退金額2</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="TaxReportingRecoverableAmt3" xml:space="preserve">
-    <value>稅務報告可退回金額3</value>
+    <value>稅務報告可退金額3</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="TaxReportingRecoverableAmt4" xml:space="preserve">
-    <value>稅務報告可退回金額4</value>
+    <value>稅務報告可退金額4</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="TaxReportingRecoverableAmt5" xml:space="preserve">
-    <value>稅務報告可退回金額5</value>
+    <value>稅務報告可退金額5</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="TaxReportingAllocatedAmount" xml:space="preserve">
@@ -3578,5 +3578,11 @@
   </data>
   <data name="CustomerName" xml:space="preserve">
     <value>客戶名稱</value>
+  </data>
+  <data name="PaymentsID" xml:space="preserve">
+    <value>SF付款承兌代號</value>
+  </data>
+  <data name="PaymentsURL" xml:space="preserve">
+    <value>SF付款承兌URL</value>
   </data>
 </root>

@@ -391,7 +391,7 @@
     <comment>on Document tab and Prepayment screen</comment>
   </data>
   <data name="EstimatedTax" xml:space="preserve">
-    <value>Impuesto Estimado:</value>
+    <value>Impuesto Retenido Estimado:</value>
     <comment>on Totals tab</comment>
   </data>
   <data name="ExchangeRate" xml:space="preserve">

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
+﻿// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -108,6 +108,62 @@ namespace MergeISVProject
             {
                 _Logger.LogMethodFooter(methodName);
             }
+        }
+
+        /// <summary>
+        /// Delete the unminified javascript files in a folder based on the list passed into method
+        /// This method will delete the unminified version of a file ONLY if a minified version 
+        /// exists in the same folder, otherwise the unminified version will be left alone.
+        /// This may happen if WebGrease cannot minify a file.
+        /// </summary>
+        /// <param name="unminifiedFiles">The string array of unminified filenames</param>
+        private void RemoveUnminifiedJavascriptFiles(string[] unminifiedFiles)
+        {
+            string methodName = string.Empty;
+            try
+            {
+                methodName = $"{this.GetType().Name}.{Utilities.GetCurrentMethod()}";
+                _Logger.LogMethodHeader(methodName);
+
+                //var files = GetListOfUnminifiedJavascriptFiles(folder);
+                var count = unminifiedFiles.Count();
+                _Logger.Log(string.Format(Messages.Msg_FilesDotCount, count));
+
+                if (count == 0) return;
+
+                foreach (var unminifiedFile in unminifiedFiles)
+                {
+                    // For each file in this list, look for the minified version in this directory
+                    var minifiedFilePath = MakeMinifiedName(unminifiedFile);
+
+                    // If the minified version of the file exists
+                    // then remove the unminified version.
+                    if (File.Exists(minifiedFilePath))
+                    {
+                        File.Delete(unminifiedFile);
+                        _Logger.Log(string.Format(Messages.Msg_DeleteFile, new FileInfo(unminifiedFile).Name));
+                    }
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                var msg = string.Format(Messages.Error_MethodCalledWithInvalidParameter, methodName);
+                throw new MergeISVProjectException(_Logger, msg, ex);
+            }
+            finally
+            {
+                _Logger.LogMethodFooter(methodName);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="unminifiedFilename"></param>
+        /// <returns></returns>
+        private string MakeMinifiedName(string unminifiedFilename)
+        {
+            return unminifiedFilename.Replace(".js", ".min.js");
         }
 
         /// <summary>
@@ -294,7 +350,7 @@ namespace MergeISVProject
                         _Logger.Log(Messages.Msg_MinificationComplete);
 
                         _Logger.Log(Messages.Msg_RenamingJavascriptFilesBackToUsableState);
-                        RemoveUnminifiedJavascriptFiles(dir);
+                        RemoveUnminifiedJavascriptFiles(files);
                         RenameMinifiedJavascriptFiles(dir);
                         _Logger.Log(Messages.Msg_RenamingComplete);
                     }

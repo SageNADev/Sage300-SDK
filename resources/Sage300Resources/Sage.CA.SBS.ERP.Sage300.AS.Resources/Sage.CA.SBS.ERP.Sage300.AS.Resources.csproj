@@ -109,6 +109,31 @@
       <DependentUpon>UsersResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\UserAuthorizationReportResx.es.Designer.cs">
+      <DependentUpon>UserAuthorizationReportResx.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\UserAuthorizationReportResx.fr.Designer.cs">
+      <DependentUpon>UserAuthorizationReportResx.fr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\UserAuthorizationReportResx.zh-Hans.Designer.cs">
+      <DependentUpon>UserAuthorizationReportResx.zh-Hans.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\UserAuthorizationReportResx.zh-Hant.Designer.cs">
+      <DependentUpon>UserAuthorizationReportResx.zh-Hant.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\UserAuthorizationReportResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserAuthorizationReportResx.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ASCommonResx.resx">
@@ -228,6 +253,26 @@
     <EmbeddedResource Include="Forms\UsersResx.fr.resx" />
     <EmbeddedResource Include="Forms\UsersResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\UsersResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Reports\UserAuthorizationReportResx.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserAuthorizationReportResx.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UserAuthorizationReportResx.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserAuthorizationReportResx.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UserAuthorizationReportResx.zh-Hans.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserAuthorizationReportResx.zh-Hans.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UserAuthorizationReportResx.zh-Hant.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserAuthorizationReportResx.zh-Hant.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UserAuthorizationReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserAuthorizationReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

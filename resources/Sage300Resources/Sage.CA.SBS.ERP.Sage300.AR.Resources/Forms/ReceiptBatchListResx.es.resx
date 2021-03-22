@@ -121,6 +121,9 @@
     <value>C/C - Lista de Lotes de Recibos</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="GetOnlinePayments" xml:space="preserve">
+    <value>Recibir pagos en línea</value>
+  </data>
   <data name="NumOfEntries1" xml:space="preserve">
     <value>Cantidad de Asientos</value>
     <comment>Column</comment>

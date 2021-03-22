@@ -412,4 +412,29 @@ in the file '{0}' will also be included in the final output.</value>
   <data name="Template_ReleaseSpecificDesc_AddBinIncludeFile" xml:space="preserve">
     <value>This step will automatically add a new file called '{0}'</value>
   </data>
+  <data name="ReleaseSpecificTitle_ReportUpdates_For_2021_2" xml:space="preserve">
+    <value>Updates for how reports are generated.</value>
+  </data>
+  <data name="Template_ReleaseSpecificContent_ReportUpdates_For_2021_2" xml:space="preserve">
+    <value>This step will automatically add a reference to an executable program 
+called '{0}' to the Web project. 
+
+This application is used to generate reports within Sage 300.
+After this file is added as a reference to the web project,
+it is recommended that one manually replace the hard-coded 
+Sage 300 web path with the $(Sage300WebDir) macro. This can 
+be done by unloading the Web project, editing the file and 
+then reloading the Web project. The following is an example:
+			 
+Search for the following (Note: The file path may differ from this example)
+
+ C:\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.ExportReport.exe
+
+and change to
+
+ $(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.ExportReport.exe</value>
+  </data>
+  <data name="Template_ReleaseSpecificDesc_ReportUpdates_For_2021_2" xml:space="preserve">
+    <value>This step will automatically add a new file called '{0}'</value>
+  </data>
 </root>

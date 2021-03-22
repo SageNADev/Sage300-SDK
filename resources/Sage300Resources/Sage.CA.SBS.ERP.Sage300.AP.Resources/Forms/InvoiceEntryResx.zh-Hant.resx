@@ -391,7 +391,7 @@
     <comment>on Document tab and Prepayment screen</comment>
   </data>
   <data name="EstimatedTax" xml:space="preserve">
-    <value>預估稅費：</value>
+    <value>預估保留款稅費：</value>
     <comment>on Totals tab</comment>
   </data>
   <data name="ExchangeRate" xml:space="preserve">
@@ -532,7 +532,7 @@
     <comment>on Rates tab and Batch Information screen</comment>
   </data>
   <data name="RateOverride" xml:space="preserve">
-    <value>匯率替換</value>
+    <value>匯率撤換</value>
     <comment>Screen title</comment>
   </data>
   <data name="Rates" xml:space="preserve">
@@ -564,15 +564,15 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="RemitToDescription" xml:space="preserve">
-    <value>匯款至描述</value>
+    <value>&lt;匯款至&gt;描述</value>
     <comment>on Document tab and modal screens</comment>
   </data>
   <data name="RemitToInformation" xml:space="preserve">
-    <value>匯款至資訊</value>
+    <value>&lt;匯款至&gt;資訊</value>
     <comment>on Remit-To Information screen</comment>
   </data>
   <data name="RemitToLocation" xml:space="preserve">
-    <value>匯款至地點</value>
+    <value>&lt;匯款至&gt;地點</value>
     <comment>on Document tab and modal screens</comment>
   </data>
   <data name="Retainage" xml:space="preserve">
@@ -780,7 +780,7 @@
     <value>迴轉收費金額</value>
   </data>
   <data name="LessEstTaxWithhedld" xml:space="preserve">
-    <value>減預估預扣稅 </value>
+    <value>減預估預扣稅</value>
   </data>
   <data name="LessReverseCharges" xml:space="preserve">
     <value>減迴轉收費</value>

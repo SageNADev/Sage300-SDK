@@ -22,7 +22,8 @@ progressUI = {
         kendo.ui.Window.fn._keydown = function (originalFn) {
             var KEY_ESC = 27;
             return function (e) {
-                if (e.which !== KEY_ESC) {
+                //Disable ESC key for processing popup
+                if (e.currentTarget.id !== "statusWindow" && this.element[0].id !== "statusWindow" || e.which !== KEY_ESC) {
                     originalFn.call(this, e);
                 }
             };

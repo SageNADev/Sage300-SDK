@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -201,6 +201,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
 
             /// <summary> Token for Screen Name </summary>
             public const string ScreenNameToken = "$screenName$";
+
+            /// <summary> Token for Customization Name </summary>
+            public const string CustomizationNameToken = "$customizationName$";
 
             /// <summary> Token for Generated Message </summary>
             public const string GeneratedMessageToken = "$generatedMessage$";
@@ -436,8 +439,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         /// <remarks>File(s) are {screen}_Customization.js</remarks>
         private void CreateJavaScriptFiles()
         {
-            var companyName = (string)_settings.Manifest.SelectToken(Constants.PropertyBusinessPartnerName);
-            companyName = companyName.Replace(" ", "");
+            var companyName = ((string)_settings.Manifest.SelectToken(Constants.PropertyBusinessPartnerName)).Trim().Replace(" ", "").Replace(".", "");
+            var customizationName = ((string)_settings.Manifest.SelectToken(Constants.PropertyName)).Trim().Replace(" ", "").Replace(".", "");
 
             // Read JSON to get the Screen Controls
             var webScreens =
@@ -468,7 +471,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                             Resources.GeneratedMessage).Replace(Constants.GeneratedWarningToken, Resources.GeneratedWarning);
 
                     // Replace tokens
-                    templateJavaScript = templateJavaScript.Replace(Constants.CompanyNameToken, companyName).Replace(Constants.ScreenNameToken, targetScreen);
+                    templateJavaScript = templateJavaScript
+                        .Replace(Constants.CompanyNameToken, companyName)
+                        .Replace(Constants.ScreenNameToken, targetScreen)
+                        .Replace(Constants.CustomizationNameToken, customizationName);
 
                     // Save the file
                     File.WriteAllText(fileName, templateJavaScript);

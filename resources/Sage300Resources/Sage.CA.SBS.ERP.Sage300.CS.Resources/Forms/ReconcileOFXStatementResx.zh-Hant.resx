@@ -122,11 +122,11 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrRateDiff" xml:space="preserve">
-    <value>交易金額不同於銀行服務金額。是否確要清算這一交易？</value>
+    <value>對帳單金額不同於銀行服務金額。是否確要清算此交易？</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmClrWriteOff" xml:space="preserve">
-    <value>交易金額不同於銀行服務金額。是否確要清算這一交易？</value>
+    <value>對帳單金額不同於銀行服務金額。是否確要清算此交易？</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmExitAddTrx" xml:space="preserve">
@@ -134,7 +134,7 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmProcess" xml:space="preserve">
-    <value>您有尚未被處理的更改。是否要處理{0}的調節？</value>
+    <value>您已經做了尚未被處理的變更。是否處理{0}的調節？</value>
     <comment>Message</comment>
   </data>
   <data name="CutOffDate" xml:space="preserve">
@@ -170,7 +170,7 @@
     <comment>Message</comment>
   </data>
   <data name="MiscellaneousCreated" xml:space="preserve">
-    <value>交易已成功添加到銀行分錄並過帳。</value>
+    <value>交易已成功增加到銀行分錄並過帳。</value>
     <comment>Message</comment>
   </data>
   <data name="NORECORD" xml:space="preserve">
@@ -186,7 +186,7 @@
     <comment>Message</comment>
   </data>
   <data name="OfxdateInvalid" xml:space="preserve">
-    <value>無法創建銀行分錄，因為交易日期不在公共服務的財務日曆中。</value>
+    <value>無法建立銀行分錄，因為交易日期不在公共服務的會計年曆中。</value>
     <comment>Message</comment>
   </data>
   <data name="OFXEXIST" xml:space="preserve">
@@ -254,7 +254,7 @@
     <value>自動清除調節的交易</value>
   </data>
   <data name="Comment" xml:space="preserve">
-    <value>備註</value>
+    <value>備註1</value>
   </data>
   <data name="NoOFXRecDate" xml:space="preserve">
     <value>調節交易之前您必須輸入調節日期。</value>
@@ -263,7 +263,7 @@
     <value>無法找到銀行帳戶{0}。</value>
   </data>
   <data name="ClrTransaction" xml:space="preserve">
-    <value>是否確要清算此一交易？</value>
+    <value>是否確要清算此交易？</value>
   </data>
   <data name="ReceiptAmount" xml:space="preserve">
     <value>收款金額</value>
@@ -275,7 +275,7 @@
     <value>交易幣別</value>
   </data>
   <data name="OFXInvalidDate" xml:space="preserve">
-    <value>無法創建銀行分錄，因為交易日期不在公共服務的財務日曆中。</value>
+    <value>無法建立銀行分錄，因為交易日期不在公共服務的會計年曆中。</value>
   </data>
   <data name="RecDateEmpty" xml:space="preserve">
     <value>調節日期不能空置。</value>
@@ -312,10 +312,83 @@
   </data>
   <data name="GetTransactionsSuccess" xml:space="preserve">
     <value>已下載{0}個交易。最近的交易日期是{1}。</value>
-    <comment>Message</comment>
   </data>
   <data name="GetTransactions" xml:space="preserve">
     <value>獲取交易</value>
     <comment>Button</comment>
+  </data>
+  <data name="Agreement" xml:space="preserve">
+    <value>為且代表我的企業，我已經閱讀並同意Sage銀行饋送的條款和條件以及依據Sage的隱私權政策使用資料。</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Sage銀行饋送需要一個電郵地址。我們可能需要不時與您連絡。</value>
+  </data>
+  <data name="EasilyImport" xml:space="preserve">
+    <value>通過Sage銀行饋送從您的銀行輕鬆安全地匯入帳戶交易。這可以節省手動輸入交易的時間，簡化銀行對帳，並確保您的企業帳戶為最新且準確。</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>電郵地址</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>入門</value>
+    <comment>Button</comment>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>進一步瞭解Sage銀行饋送</value>
+  </data>
+  <data name="LinkDirectly" xml:space="preserve">
+    <value>Sage銀行饋送允許您將銀行帳戶直接連結到Sage 300，這意味著您可以自動將您或客戶的銀行帳戶易資料匯入Sage軟體。Sage將使用此資料執行以下操作：(i) 使您能夠存取軟體中的更全面的資訊； (ii) 進行彙總分析，以進一步瞭解我們的客戶；以及 (iii) 提供增值服務。</value>
+  </data>
+  <data name="ProvideEmail" xml:space="preserve">
+    <value>在開始匯入交易之前，提供一個您要用於Sage銀行饋送帳戶的電郵地址。您還需要接受Sage銀行饋送的條款和條件。</value>
+  </data>
+  <data name="TermsAndConditions" xml:space="preserve">
+    <value>條款和條件</value>
+  </data>
+  <data name="SagePrivacyPolicy" xml:space="preserve">
+    <value>Sage的隱私權政策</value>
+  </data>
+  <data name="SageTermsAndConditions" xml:space="preserve">
+    <value>銀行饋送的條款和條件</value>
+  </data>
+  <data name="UseOfData" xml:space="preserve">
+    <value>使用資料，依據</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>連接銀行饋送</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>斷開銀行饋送</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>確認電郵</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>電郵</value>
+  </data>
+  <data name="EmailNotValid" xml:space="preserve">
+    <value>此電郵無效。</value>
+  </data>
+  <data name="EmailsBlank" xml:space="preserve">
+    <value>此電郵不能空置。</value>
+  </data>
+  <data name="EmailsNotSame" xml:space="preserve">
+    <value>電郵不相同</value>
+  </data>
+  <data name="Secure" xml:space="preserve">
+    <value>安全連接</value>
+  </data>
+  <data name="SignupDetails" xml:space="preserve">
+    <value>此電郵地址用於您的Sage銀行饋送帳戶，並且用於公司中的所有銀行。您可能會收到有關Sage銀行饋送帳戶的電郵。</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>歡迎</value>
+  </data>
+  <data name="WelcomeScreenTitle" xml:space="preserve">
+    <value>Sage銀行饋送</value>
+  </data>
+  <data name="DeleteConfirmMessage" xml:space="preserve">
+    <value>是否確要斷開{0}的銀行饋送？</value>
+    <comment>Message</comment>
   </data>
 </root>

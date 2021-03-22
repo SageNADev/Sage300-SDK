@@ -186,6 +186,10 @@ GridPreferences = {
         for (var i = 0; i < grid.columns.length; i++) {
             attributeNotExists = false;
 
+            if (!grid.columns[i].title) {
+                continue;
+            }
+
             if (grid.columns[i].attributes == null) {
                 attributeNotExists = true;
             } else {
@@ -239,7 +243,7 @@ GridPreferences = {
                         customizable = grid.columns[j].attributes["sg_Customizable"];
                     }
                     grid.reorderColumn(k, grid.columns[j]);
-                    if (attributeNotExists || customizable == null || customizable) {
+                    if (grid.columns[k].title && (attributeNotExists || customizable == null || customizable)) {
                         grid.showColumn(grid.columns[k].field);
                     }
                     break;

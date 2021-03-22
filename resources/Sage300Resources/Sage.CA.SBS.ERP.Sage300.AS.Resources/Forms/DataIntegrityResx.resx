@@ -248,4 +248,8 @@
     <value>Delete Orphan Records</value>
     <comment>Application Options Pop up window</comment>
   </data>
+  <data name="OptionURLNotValid" xml:space="preserve">
+    <value>Your request could not be completed, either because no options are available or because a setting is configured incorrectly in the {0}.INI file. Contact your system administrator for help.</value>
+    <comment>Application Options Pop up window</comment>
+  </data>
 </root>

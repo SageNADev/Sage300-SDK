@@ -572,4 +572,34 @@
   <data name="OrderEntry" xml:space="preserve">
     <value>Order Entry</value>
   </data>
+  <data name="CustomerList" xml:space="preserve">
+    <value>Customer List</value>
+  </data>
+  <data name="Aging" xml:space="preserve">
+    <value>Aging</value>
+  </data>
+  <data name="AvailablePercentage" xml:space="preserve">
+    <value>% Available</value>
+  </data>
+  <data name="ContactInfo" xml:space="preserve">
+    <value>Contact Information</value>
+  </data>
+  <data name="CustomersWithZeroARBAlance" xml:space="preserve">
+    <value>Customers with Zero A/R Balance</value>
+  </data>
+  <data name="NoCreditUsed" xml:space="preserve">
+    <value>No Credit Used</value>
+  </data>
+  <data name="NoLimit" xml:space="preserve">
+    <value>No Limit</value>
+  </data>
+  <data name="OverLimit" xml:space="preserve">
+    <value>Over Limit</value>
+  </data>
+  <data name="UpTo" xml:space="preserve">
+    <value>Up To</value>
+  </data>
+  <data name="CustomersWithNoComments" xml:space="preserve">
+    <value>Customers With No Comments</value>
+  </data>
 </root>

@@ -572,4 +572,34 @@
   <data name="OrderEntry" xml:space="preserve">
     <value>銷售訂單</value>
   </data>
+  <data name="CustomerList" xml:space="preserve">
+    <value>客戶清單</value>
+  </data>
+  <data name="Aging" xml:space="preserve">
+    <value>帳析</value>
+  </data>
+  <data name="AvailablePercentage" xml:space="preserve">
+    <value>%可用</value>
+  </data>
+  <data name="ContactInfo" xml:space="preserve">
+    <value>連絡人資訊</value>
+  </data>
+  <data name="CustomersWithZeroARBAlance" xml:space="preserve">
+    <value>應收帳款餘額為零的客戶</value>
+  </data>
+  <data name="NoCreditUsed" xml:space="preserve">
+    <value>未用過信貸</value>
+  </data>
+  <data name="NoLimit" xml:space="preserve">
+    <value>無限額</value>
+  </data>
+  <data name="OverLimit" xml:space="preserve">
+    <value>超過限額</value>
+  </data>
+  <data name="UpTo" xml:space="preserve">
+    <value>高達</value>
+  </data>
+  <data name="CustomersWithNoComments" xml:space="preserve">
+    <value>沒有備註的客戶</value>
+  </data>
 </root>

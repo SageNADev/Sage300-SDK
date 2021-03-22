@@ -544,4 +544,7 @@
   <data name="NotAllowRetrieve" xml:space="preserve">
     <value>No se le permite recuperar la cuenta {0}.</value>
   </data>
+  <data name="AccountHistoryInquiry" xml:space="preserve">
+    <value>Consulta de Historial de Cuentas</value>
+  </data>
 </root>
