@@ -233,7 +233,7 @@ prior to deployment.</value>
     <value>Company Name:</value>
   </data>
   <data name="KendoVersionTip" xml:space="preserve">
-    <value>The Kendo UI version used in these projects is v2019.1.115</value>
+    <value>The Kendo UI version used in these projects is v2021.1.224</value>
   </data>
   <data name="KendoFolderTip" xml:space="preserve">
     <value>Enter the folder containing the kendo.all.min.js file</value>

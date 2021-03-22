@@ -21,7 +21,7 @@
                 viewID: "AP0005",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["DISTID", "TEXTDESC", "SWACTV"],
+                returnFieldNames: ["DISTID", "TEXTDESC", "SWACTV", "IDGLACCT", "SWDISCABL"],
                 displayFieldNames: ["DISTID", "TEXTDESC", "SWACTV", "IDGLACCT"]
             },
 
@@ -281,6 +281,13 @@
                 filter: "IDSELECT != \"SYSTEM\""
             },
 
+            RecurringPayable: {
+                viewID: "AP0064",
+                viewOrder: 1,
+                returnFieldNames: ["IDRECURR", "IDVEND"],
+                displayFieldNames: ["IDRECURR", "IDVEND", "DESC", "SCHEDKEY", "SWACTV"]
+            },
+
             StartingDocuments: {
                 viewID: "AP0110",
                 viewOrder: 0,
@@ -306,6 +313,13 @@
                 filterTemplate: "IDVEND = \"{0}\""
             },
 
+            EmailMessages: {
+                viewID: "AP0120",
+                viewOrder: 0,
+                returnFieldNames: ["MSGID", "TEXTDESC", "DTELSTMNTN", "ACTIVESW", "DATEINAC", "SUBJECT", "BODY"],
+                displayFieldNames: ["MSGID", "TEXTDESC", "SUBJECT", "BODY"]
+            },
+
             OpenDocumentDetails: {
                 viewID: "AP0200",
                 viewOrder: 0,
@@ -320,6 +334,23 @@
                 returnFieldNames: ["CNTLINE"],
                 displayFieldNames: ["CNTLINE", "IDDIST", "IDGLACCT", "RTGAMTTC", "RTGOAMTTC", "RTGDATEDUE"],
                 filterTemplate: "(IDVEND = \"{0}\") AND (IDINVC = \"{1}\") AND (RTGAMTTC != 0)"
+            },
+
+            OptionalFields: {
+                viewID: "AP0500",
+                viewOrder: 0,
+                returnFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS", "DEFVAL", "VDESC", "SWSET", "ALLOWNULL", "VALIDATE",
+                                    "DVIFTEXT", "DVIFMONEY", "DVIFNUM", "DVIFLONG", "DVIFBOOL", "DVIFDATE", "DVIFTIME", "VDESC"],
+                displayFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS"],
+                filterTemplate: "LOCATION = \"{0}\""
+            },
+
+            PostingJournals: {
+                viewID: "AP0512",
+                viewOrder: 0,
+                returnFieldNames: ["POSTSEQNCE"],
+                displayFieldNames: ["POSTSEQNCE", "DATEPOSTED", "DATEBUS", "SWPRINTED", "SWPOSTGL", "DATEPOSTGL"],
+                filterTemplate: "TYPEBTCH = \"{0}\""
             }
         },
 
@@ -344,7 +375,7 @@
                 viewID: "AR0012",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["PAYMCODE", "PAYMTYPE"],
+                returnFieldNames: ["PAYMCODE", "PAYMTYPE", "TEXTDESC"],
                 displayFieldNames: ["PAYMCODE", "ACTVSW", "TEXTDESC", "PAYMTYPE"]
             },
 
@@ -355,6 +386,14 @@
                 returnFieldNames: ["IDACCTSET"],
                 displayFieldNames: ["IDACCTSET", "TEXTDESC", "ACTVSW", "CURNCODE"],
                 filterTemplate: "CURNCODE = \"{0}\""
+            },
+
+            BillingCycle: {
+                viewID: "AR0014",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["IDCYCL", "TEXTDESC", "ACTVSW"],
+                displayFieldNames: ["IDCYCL", "TEXTDESC", "ACTVSW"]
             },
 
             DistributionCode: {
@@ -379,6 +418,14 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["CODESLSP", "NAMEEMPL"],
                 displayFieldNames: ["CODESLSP", "NAMEEMPL", "SWACTV"]
+            },
+
+            InterestProfiles: {
+                viewID: "AR0020",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["CODESVCCHR", "TEXTDESC", "ACTVSW"],
+                displayFieldNames: ["CODESVCCHR", "TEXTDESC", "ACTVSW"]
             },
 
             ShipToLocation: {
@@ -417,8 +464,8 @@
                 viewID: "AR0025",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["IDGRP"],
-                displayFieldNames: ["IDGRP", "TEXTDESC", "SWACTV"],
+                returnFieldNames: ["IDGRP", "TEXTDESC"],
+                displayFieldNames: ["IDGRP", "TEXTDESC", "SWACTV"]
             },
 
             NationalAccounts: {
@@ -454,6 +501,15 @@
                 returnFieldNames: ["CNTITEM"],
                 displayFieldNames: ["CNTITEM", "IDCUST", "IDINVC", "DATEINVC", "INVCDESC", "AMTDUE"],
                 filterTemplate: "CNTBTCH = \"{0}\""
+            },
+
+            InvoicesForDocumentNumber: {
+                viewID: "AR0032",
+                viewOrder: 2,
+                parentValAsInitKey: true,
+                returnFieldNames: ["IDINVC"],
+                displayFieldNames: ["IDINVC", "IDCUST", "TEXTTRX", "CNTBTCH", "CNTITEM", "DATEINVC", "SWPRTINVC"],
+                filter: "TEXTTRX = \"1\""
             },
 
             Documents: {
@@ -629,6 +685,14 @@
                 filterTemplate: "CNTBTCH = \"{0}\" AND  CODEPYMTYP = \"{1}\" "
             },
 
+            CommentTypes: {
+                viewID: "AR0094",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["CMNTTYPE"],
+                displayFieldNames: ["CMNTTYPE", "TEXTDESC", "ACTVSW", "ACTVSW"]
+            },
+
             PaymentsDocumentNumber: {
                 viewID: "AR0139",
                 viewOrder: 0,
@@ -700,6 +764,15 @@
                 returnFieldNames: ["CNTLINE"],
                 displayFieldNames: ["CNTLINE", "IDITEM", "IDDIST", "IDGLACCT", "SWDISCABL"],
                 filterTemplate: "RTGAMTHC != \"{0}\" AND IDINVC = \"{1}\""
+            },
+
+            OptionalFields: {
+                viewID: "AR0500",
+                viewOrder: 0,
+                returnFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS", "DEFVAL", "VDESC", "SWSET", "ALLOWNULL", "VALIDATE",
+                                    "DVIFTEXT", "DVIFMONEY", "DVIFNUM", "DVIFLONG", "DVIFBOOL", "DVIFDATE", "DVIFTIME", "VDESC"],
+                displayFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS"],
+                filterTemplate: "LOCATION = \"{0}\""
             }
         }, 
 
@@ -820,20 +893,98 @@
                 filterTemplate: "RATETYPE = \"{0}\" AND HOMECUR = \"{1}\" AND SOURCECUR = \"{2}\" "
             },
 
+            OptionalFields: {
+                viewID: "CS0011",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS", "ALLOWNULL", "VALIDATE"],
+                displayFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS"],
+            },
+
             OptionalFieldValue: {
                 viewID: "CS0012",
-                url: ["CS"],
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["VALUE", "TYPE", "VDESC"],
+                displayFieldNames: ["VALUE", "VDESC"],
+                filterTemplate: "OPTFIELD = \"{0}\""
+            },
+
+            TextOptionalFieldValue: {
+                viewID: "CS0012",
                 viewOrder: 1,
                 parentValAsInitKey: false,
-                returnFieldNames: ["VALUE", "TYPE", "VALIFTEXT", "VALIFMONEY", "VALIFNUM", "VALIFLONG", "VALIFBOOL", "VALIFDATE", "VALIFTIME"],
-                displayFieldNames: ["VDESC"],
+                returnFieldNames: ["VALUE", "TYPE", "VALIFTEXT", "VDESC"],
+                displayFieldNames: ["VALIFTEXT", "VDESC"],
                 filterTemplate: "OPTFIELD = \"{0}\""
+            },
+
+            AmountOptionalFieldValue: {
+                viewID: "CS0012",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["VALUE", "TYPE", "VALIFMONEY", "VDESC"],
+                displayFieldNames: ["VALIFMONEY", "VDESC"],
+                filterTemplate: "OPTFIELD = \"{0}\""
+            },
+
+            NumberOptionalFieldValue: {
+                viewID: "CS0012",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["VALUE", "TYPE", "VALIFNUM", "VDESC"],
+                displayFieldNames: ["VALIFNUM", "VDESC"],
+                filterTemplate: "OPTFIELD = \"{0}\""
+            },
+
+            IntegerOptionalFieldValue: {
+                viewID: "CS0012",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["VALUE", "TYPE", "VALIFLONG", "VDESC"],
+                displayFieldNames: ["VALIFLONG", "VDESC"],
+                filterTemplate: "OPTFIELD = \"{0}\""
+            },
+
+            YesNoOptionalFieldValue: {
+                viewID: "CS0012",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["VALUE", "TYPE", "VALIFBOOL", "VDESC"],
+                displayFieldNames: ["VALIFBOOL", "VDESC"],
+                filterTemplate: "OPTFIELD = \"{0}\""
+            },
+
+            DateOptionalFieldValue: {
+                viewID: "CS0012",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["VALUE", "TYPE", "VALIFDATE", "VDESC"],
+                displayFieldNames: ["VALIFDATE", "VDESC"],
+                filterTemplate: "OPTFIELD = \"{0}\""
+            },
+
+            TimeOptionalFieldValue: {
+                viewID: "CS0012",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["VALUE", "TYPE", "VALIFTIME", "VDESC"],
+                displayFieldNames: ["VALIFTIME", "VDESC"],
+                filterTemplate: "OPTFIELD = \"{0}\""
+            },
+
+            Schedules: {
+                viewID: "CS0030",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["SCHEDKEY"],
+                displayFieldNames: ["SCHEDKEY", "SCHEDDESC"]
             },
 
             BankCurrency: {
                 viewID: "BK0002",
                 viewOrder: 0,
-                returnFieldNames: ["CURN", "CURDESC"],
+                returnFieldNames: ["CURN", "CURDESC", "RTYPCHK"],
                 displayFieldNames: ["BANK", "CURN", "RTYPCHK", "RTYPDEP", "GAINACCT", "LOSSACCT"],
                 filterTemplate: "BANK = \"{0}\""
             }
@@ -911,6 +1062,23 @@
                 parentValAsInitKey: true, 
                 returnFieldNames: ["SRCEJRNL"],
                 displayFieldNames: ["SRCEJRNL"]
+            },
+
+            AccountTransactionOptionalFields: {
+                viewID: "GL0401",
+                viewOrder: 0,
+                returnFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS", "DEFVAL", "VDESC", "SWSET", "ALLOWNULL", "VALIDATE"],
+                displayFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS"],
+                filterTemplate: "ACCTID = \"{0}\""
+            },
+
+            OptionalFields: {
+                viewID: "GL0500",
+                viewOrder: 0,
+                returnFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS", "DEFVAL", "VDESC", "SWSET", "ALLOWNULL", "VALIDATE",
+                                    "DVIFTEXT", "DVIFMONEY", "DVIFNUM", "DVIFLONG", "DVIFBOOL", "DVIFDATE", "DVIFTIME", "VDESC"],
+                displayFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS"],
+                filterTemplate: "LOCATION = \"{0}\""
             }
         },
 
@@ -1034,12 +1202,31 @@
                     "QTYSALORDR", "QTYAVAIL"]
             },
 
+            OptionalFields: {
+                viewID: "IC0377",
+                viewOrder: 0,
+                returnFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS", "DEFVAL", "VDESC", "SWSET", "ALLOWNULL", "VALIDATE",
+                    "DVIFTEXT", "DVIFMONEY", "DVIFNUM", "DVIFLONG", "DVIFBOOL", "DVIFDATE", "DVIFTIME", "VDESC"],
+                displayFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS"],
+                filterTemplate: "LOCATION = \"{0}\""
+            },
+
             PriceListCodes: {
                 viewID: "IC0390",
                 viewOrder: 0,
                 parentValAsInitKey: true,
                 returnFieldNames: ["PRICELIST", "DESC"],
                 displayFieldNames: ["PRICELIST", "DESC"]
+            },
+
+            DetailedPriceListCodes: {
+                viewID: "IC0390",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["PRICELIST", "DESC"],
+                displayFieldNames: ["PRICELIST", "DESC", "PRICETYPE", "PRICEFMT", "PRCNTLVL1", "PRCNTLVL2", "PRCNTLVL3", "PRCNTLVL4", "PRCNTLVL5",
+                    "PRICEBASE", "PRICEQTY1", "PRICEQTY2", "PRICEQTY3", "PRICEQTY4", "PRICEQTY5", "PRICEDECS", "ROUNDMETHD", "ROUNDAMT",
+                    "AMOUNTLVL1", "AMOUNTLVL2", "AMOUNTLVL3", "AMOUNTLVL4", "AMOUNTLVL5"]
             },
 
             ItemPricing: {
@@ -1146,6 +1333,15 @@
                 filterTemplate: "CURRENCY = \"{0}\""
             },
 
+            OptionalFields: {
+                viewID: "OE0470",
+                viewOrder: 0,
+                returnFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS", "DEFVAL", "VDESC", "SWSET", "ALLOWNULL", "VALIDATE",
+                    "DVIFTEXT", "DVIFMONEY", "DVIFNUM", "DVIFLONG", "DVIFBOOL", "DVIFDATE", "DVIFTIME", "VDESC"],
+                displayFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS"],
+                filterTemplate: "LOCATION = \"{0}\""
+            },
+
             OrderEntry: {
                 viewID: "OE0520",
                 viewOrder: 1,
@@ -1194,7 +1390,7 @@
                 viewID: "OE0760",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["CODE"],
+                returnFieldNames: ["CODE", "NAME"],
                 displayFieldNames: ["CODE", "NAME", "ADDRESS1", "ADDRESS2", "ADDRESS3", "ADDRESS4", "CITY", "STATE", "ZIP",
                     "COUNTRY", "PHONE", "FAX", "CONTACT", "COMMENT", "EMAIL", "PHONEC", "FAXC", "EMAILC"]
             }
@@ -1345,6 +1541,15 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["INVNUMBER", "INVHSEQ"],
                 displayFieldNames: ["INVNUMBER", "VDCODE", "VDNAME", "DATE", "DESCRIPTIO", "REFERENCE", "HASJOB"],
+            },
+
+            OptionalFields: {
+                viewID: "PO0580",
+                viewOrder: 0,
+                returnFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS", "DEFVAL", "VDESC", "SWSET", "ALLOWNULL", "VALIDATE",
+                    "DVIFTEXT", "DVIFMONEY", "DVIFNUM", "DVIFLONG", "DVIFBOOL", "DVIFDATE", "DVIFTIME", "VDESC"],
+                displayFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LENGTH", "DECIMALS"],
+                filterTemplate: "LOCATION = \"{0}\""
             },
 
             Templates: {

@@ -525,9 +525,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlCodeType.Controls.Add(this.grpCredentials);
             this.pnlCodeType.Controls.Add(this.lblModule);
             this.pnlCodeType.Controls.Add(this.cboModule);
-            this.pnlCodeType.Location = new System.Drawing.Point(832, 29);
+            this.pnlCodeType.Location = new System.Drawing.Point(832, 16);
             this.pnlCodeType.Name = "pnlCodeType";
-            this.pnlCodeType.Size = new System.Drawing.Size(719, 55);
+            this.pnlCodeType.Size = new System.Drawing.Size(719, 71);
             this.pnlCodeType.TabIndex = 44;
             // 
             // lblCodeTypeFilesHelp

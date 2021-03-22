@@ -391,12 +391,17 @@ sg.viewList = function () {
         finder.displayFieldNames = finder.DisplayFieldNames;
         finder.returnFieldNames = finder.ReturnFieldNames;
         finder.initKeyValues = [];
+        finder.buttonId = buttonId;
 
         var refKey = col.ReferenceField;
         if (refKey) {
             finder.filter = kendo.format("{0}={1}", refKey, model[refKey]);
         }
 
+        $('#' + field).focus(function () {
+			_columnCallback(gridName, "columnFinderFocus", field, finder);
+		})
+		
         //Finder has filter, get the filter, set finder calculatePageCount as false
         if (finder.Filter) {
             finder.filter = getFilter();
@@ -1437,6 +1442,7 @@ sg.viewList = function () {
                                 callback(value, event);
                                 return event.isProceed();
                             case "columnBeforeFinder":
+                            case "columnFinderFocus":
                                 callback(record, finder);
                                 return true;
                         }
@@ -1810,6 +1816,7 @@ sg.viewList = function () {
                     },
                     parameterMap: function (data, operation) {
                         data.viewID = $("#" + gridName).attr('viewID');
+                        data.gridJsonFilePath = window[gridName + "Model"].GridJsonFilePath;
                         if (operation === "read") {
                             _setModuleVariables(gridName, RowStatusEnum.NONE, "", -1, true, true, false);
                             data.fieldNames = eval(gridName + "_viewFieldNames");

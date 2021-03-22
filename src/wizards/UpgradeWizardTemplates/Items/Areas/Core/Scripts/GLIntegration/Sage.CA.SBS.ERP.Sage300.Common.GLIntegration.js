@@ -139,12 +139,19 @@ glIntegrationUI = {
         });
     },
     initKendoListView: function (listViewId, dataToBind) {
-        var kendoListview = $("#" + listViewId).kendoListView({
-            dataSource: dataToBind,
-            selectable: "single",
-            template: kendo.template($("#" + listViewId + "_Template").html()),
-        }).data("kendoListView");
-        return kendoListview;
+        let listView = $("#" + listViewId).data("kendoListView");
+
+        if (listView) { // case of defined list, just reset the data source
+            listView.setDataSource(dataToBind);
+            return listView;
+        } else {        // case of brand new, so need to init first
+            var kendoListview = $("#" + listViewId).kendoListView({
+                dataSource: dataToBind,
+                selectable: "single",
+                template: kendo.template($("#" + listViewId + "_Template").html()),
+            }).data("kendoListView");
+            return kendoListview;
+        }
     },
     intiListviewDataSource: function (dataList) {
         var dataSource = new kendo.data.DataSource({
@@ -396,7 +403,7 @@ glIntegrationUI = {
 
                         //checking for saved segment value in from list
                         if (glIntegrationUI.fromSegmentList.dataSource.data()[j].SegmentValue() === includeSegmentValue) {
-                            glIntegrationUI.fromSegmentList.select(glIntegrationUI.fromSegmentList.element.children()[j]);
+                            glIntegrationUI.fromSegmentList.select(glIntegrationUI.fromSegmentList.element.children().children()[j]);
 
                             //moving selected segment value from fromList to toList.
                             glIntegrationUtils.moveSegmentItem(glIntegrationUI.fromSegmentList, glIntegrationUI.toSegmentList, true);
@@ -410,10 +417,10 @@ glIntegrationUI = {
             var toLength = glIntegrationUI.toSegmentList.dataSource.data().length;
 
             if (fromLength > 0) {
-                glIntegrationUI.fromSegmentList.select(glIntegrationUI.fromSegmentList.element.children().first());
+                glIntegrationUI.fromSegmentList.select(glIntegrationUI.fromSegmentList.element.children().children().first());
             }
             if (toLength > 0) {
-                glIntegrationUI.toSegmentList.select(glIntegrationUI.toSegmentList.element.children().first());
+                glIntegrationUI.toSegmentList.select(glIntegrationUI.toSegmentList.element.children().children().first());
             }
             var includeEnable = false;
             //checking whether tolist is having more than 5 items if contains then we should not alow to include any more items. 
@@ -868,10 +875,10 @@ glIntegrationUtils = {
             //if selected row is the last record then we need to take the previous record from last else same index record.
             var fromListIndextoSelect = (index > fromLength - 1) ? fromLength - 1 : index;
 
-            fromList.select(fromList.element.children()[fromListIndextoSelect]);
+            fromList.select(fromList.element.children().children()[fromListIndextoSelect]);
         }
         if (toList.length = 1) {
-            toList.select(toList.element.children().first());
+            toList.select(toList.element.children().children().first());
         }
 
         //checking whether tolist is having more than 5 items if contains then we should not alow to include any more items. 

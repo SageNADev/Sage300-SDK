@@ -124,6 +124,27 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="_references.js">_references.js</ProjectItem>
         </Folder>
         <Folder Name="Kendo" TargetFolderName="Kendo">
+          <ProjectItem ReplaceParameters="true" TargetFileName="angular.min.js">angular.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.min.js">jquery.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jszip.min.js">jszip.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.angular.min.js">kendo.angular.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.appbar.min.js">kendo.appbar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.autocomplete.min.js">kendo.autocomplete.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.badge.min.js">kendo.badge.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.binder.min.js">kendo.binder.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.bottomnavigation.min.js">kendo.bottomnavigation.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.breadcrumb.min.js">kendo.breadcrumb.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.button.min.js">kendo.button.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.buttongroup.min.js">kendo.buttongroup.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.calendar.min.js">kendo.calendar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.chat.min.js">kendo.chat.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.checkboxgroup.min.js">kendo.checkboxgroup.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.color.min.js">kendo.color.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.colorpicker.min.js">kendo.colorpicker.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.columnmenu.min.js">kendo.columnmenu.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.columnsorter.min.js">kendo.columnsorter.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.combobox.min.js">kendo.combobox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.core.min.js">kendo.core.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-AU.min.js">kendo.culture.en-AU.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-CA.min.js">kendo.culture.en-CA.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-US.min.js">kendo.culture.en-US.min.js</ProjectItem>
@@ -139,6 +160,64 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-HK.min.js">kendo.culture.zh-HK.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-SG.min.js">kendo.culture.zh-SG.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-TW.min.js">kendo.culture.zh-TW.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.data.min.js">kendo.data.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.data.odata.min.js">kendo.data.odata.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.data.signalr.min.js">kendo.data.signalr.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.data.xml.min.js">kendo.data.xml.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.barcode.min.js">kendo.dataviz.barcode.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.chart.min.js">kendo.dataviz.chart.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.core.min.js">kendo.dataviz.core.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.diagram.min.js">kendo.dataviz.diagram.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.gauge.min.js">kendo.dataviz.gauge.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.map.min.js">kendo.dataviz.map.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.min.js">kendo.dataviz.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.mobile.min.js">kendo.dataviz.mobile.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.qrcode.min.js">kendo.dataviz.qrcode.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.sparkline.min.js">kendo.dataviz.sparkline.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.stock.min.js">kendo.dataviz.stock.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.themes.min.js">kendo.dataviz.themes.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.treemap.min.js">kendo.dataviz.treemap.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dateinput.min.js">kendo.dateinput.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.datepicker.min.js">kendo.datepicker.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.daterangepicker.min.js">kendo.daterangepicker.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.datetimepicker.min.js">kendo.datetimepicker.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dialog.min.js">kendo.dialog.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dom.min.js">kendo.dom.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.draganddrop.min.js">kendo.draganddrop.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.drawer.min.js">kendo.drawer.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.drawing.min.js">kendo.drawing.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dropdownlist.min.js">kendo.dropdownlist.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dropdowntree.min.js">kendo.dropdowntree.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.editable.min.js">kendo.editable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.editor.min.js">kendo.editor.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.excel.min.js">kendo.excel.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.expansionpanel.min.js">kendo.expansionpanel.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.filebrowser.min.js">kendo.filebrowser.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.filemanager.min.js">kendo.filemanager.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.filter.min.js">kendo.filter.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.filtercell.min.js">kendo.filtercell.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.filtermenu.min.js">kendo.filtermenu.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.floatingactionbutton.min.js">kendo.floatingactionbutton.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.floatinglabel.min.js">kendo.floatinglabel.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.form.min.js">kendo.form.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.fx.min.js">kendo.fx.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.gantt.data.min.js">kendo.gantt.data.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.gantt.editors.min.js">kendo.gantt.editors.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.gantt.list.min.js">kendo.gantt.list.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.gantt.min.js">kendo.gantt.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.gantt.timeline.min.js">kendo.gantt.timeline.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.grid.min.js">kendo.grid.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.groupable.min.js">kendo.groupable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.imagebrowser.min.js">kendo.imagebrowser.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.imageeditor.min.js">kendo.imageeditor.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.inputgroupbase.min.js">kendo.inputgroupbase.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.list.min.js">kendo.list.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.listbox.min.js">kendo.listbox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.listview.min.js">kendo.listview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.loader.min.js">kendo.loader.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.maskedtextbox.min.js">kendo.maskedtextbox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.mediaplayer.min.js">kendo.mediaplayer.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.menu.min.js">kendo.menu.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-AU.min.js">kendo.messages.en-AU.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-CA.min.js">kendo.messages.en-CA.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-US.min.js">kendo.messages.en-US.min.js</ProjectItem>
@@ -147,6 +226,66 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-CN.min.js">kendo.messages.zh-CN.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-HK.min.js">kendo.messages.zh-HK.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-TW.min.js">kendo.messages.zh-TW.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.multicolumncombobox.min.js">kendo.multicolumncombobox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.multiselect.min.js">kendo.multiselect.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.multiviewcalendar.min.js">kendo.multiviewcalendar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.notification.min.js">kendo.notification.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.numerictextbox.min.js">kendo.numerictextbox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.ooxml.min.js">kendo.ooxml.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pager.min.js">kendo.pager.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pane.min.js">kendo.pane.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.panelbar.min.js">kendo.panelbar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pdf.min.js">kendo.pdf.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pdfviewer.min.js">kendo.pdfviewer.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pivot.configurator.min.js">kendo.pivot.configurator.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pivot.fieldmenu.min.js">kendo.pivot.fieldmenu.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pivotgrid.min.js">kendo.pivotgrid.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.popup.min.js">kendo.popup.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.progressbar.min.js">kendo.progressbar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.radiogroup.min.js">kendo.radiogroup.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.rating.min.js">kendo.rating.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.reorderable.min.js">kendo.reorderable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.resizable.min.js">kendo.resizable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.responsivepanel.min.js">kendo.responsivepanel.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.ripple.min.js">kendo.ripple.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.router.min.js">kendo.router.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.agendaview.min.js">kendo.scheduler.agendaview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.dayview.min.js">kendo.scheduler.dayview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.min.js">kendo.scheduler.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.monthview.min.js">kendo.scheduler.monthview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.recurrence.min.js">kendo.scheduler.recurrence.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.timelineview.min.js">kendo.scheduler.timelineview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.view.min.js">kendo.scheduler.view.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scrollview.min.js">kendo.scrollview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.selectable.min.js">kendo.selectable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.slider.min.js">kendo.slider.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.sortable.min.js">kendo.sortable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.splitter.min.js">kendo.splitter.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.spreadsheet.min.js">kendo.spreadsheet.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.stepper.min.js">kendo.stepper.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.switch.min.js">kendo.switch.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.tabstrip.min.js">kendo.tabstrip.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.textarea.min.js">kendo.textarea.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.textbox.min.js">kendo.textbox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.tilelayout.min.js">kendo.tilelayout.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.timeline.min.js">kendo.timeline.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.timepicker.min.js">kendo.timepicker.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.timezones.min.js">kendo.timezones.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.toolbar.min.js">kendo.toolbar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.tooltip.min.js">kendo.tooltip.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.touch.min.js">kendo.touch.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.treelist.min.js">kendo.treelist.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.treeview.draganddrop.min.js">kendo.treeview.draganddrop.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.treeview.min.js">kendo.treeview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.upload.min.js">kendo.upload.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.userevents.min.js">kendo.userevents.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.validator.min.js">kendo.validator.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.view.min.js">kendo.view.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.virtuallist.min.js">kendo.virtuallist.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.web.min.js">kendo.web.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.window.min.js">kendo.window.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.wizard.min.js">kendo.wizard.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="pako_deflate.min.js">pako_deflate.min.js</ProjectItem>
         </Folder>
         <Folder Name="knockout" TargetFolderName="knockout">
           <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.1.0.debug.js">knockout-2.1.0.debug.js</ProjectItem>
@@ -653,14 +792,10 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.woff">sagearmonyeicons.woff</ProjectItem>
         </Folder>
         <Folder Name="images" TargetFolderName="images">
-          <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="footer_logo.png">footer_logo.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.png">sage_300_logo.png</ProjectItem>
           <Folder Name="default" TargetFolderName="default">
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_icons.png">browser_icons.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="DropDownArrow.png">DropDownArrow.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="loading_alternative.gif">loading_alternative.gif</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
           </Folder>
           <Folder Name="home" TargetFolderName="home">
@@ -686,10 +821,6 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_safari.png">browser_safari.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="desktop-solid-white.svg">desktop-solid-white.svg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="desktop-solid.svg">desktop-solid.svg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="image1.jpg">image1.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="image2.jpg">image2.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="image3.jpg">image3.jpg</ProjectItem>
-            <ProjectItem ReplaceParameters="false" TargetFileName="login-bg - Copy.jpg">login-bg - Copy.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg.jpg">login-bg.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg_admin.jpg">login-bg_admin.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="logo-printboss.png">logo-printboss.png</ProjectItem>
@@ -738,55 +869,23 @@
         </Folder>
         <Folder Name="js" TargetFolderName="js">
           <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.js">bootstrap.min.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="customscripts - Copy.js">customscripts - Copy.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="customscripts.js">customscripts.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="grids_employeetimecards.js">grids_employeetimecards.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="grids_optional_fields.js">grids_optional_fields.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="grids_timecards.js">grids_timecards.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="input.Checkbox.js">input.Checkbox.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.min.js">jquery.min.js</ProjectItem>
-          <Folder Name="Kendo" TargetFolderName="Kendo">
-            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.all.min.js">kendo.all.min.js</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.web.min.js">kendo.web.min.js</ProjectItem>
-          </Folder>
         </Folder>
         <Folder Name="styles" TargetFolderName="styles">
           <Folder Name="css" TargetFolderName="css">
             <ProjectItem ReplaceParameters="true" TargetFileName="base.min.css">base.min.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="custom.css">custom.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="default-home.min.css">default-home.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="default.min.css">default.min.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.common.min.css">kendo.common.min.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.default.min.css">kendo.default.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="stand-alone.css">stand-alone.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="widget.min.css">widget.min.css</ProjectItem>
             <Folder Name="default" TargetFolderName="default">
-              <ProjectItem ReplaceParameters="false" TargetFileName="loading-image-backup.gif">loading-image-backup.gif</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="loading-image.gif">loading-image.gif</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
             </Folder>
             <Folder Name="fonts" TargetFolderName="fonts">
-              <Folder Name="DejaVu" TargetFolderName="DejaVu">
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-Bold.ttf">DejaVuSans-Bold.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-BoldOblique.ttf">DejaVuSans-BoldOblique.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-ExtraLight.ttf">DejaVuSans-ExtraLight.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-Oblique.ttf">DejaVuSans-Oblique.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans.ttf">DejaVuSans.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-Bold.ttf">DejaVuSansMono-Bold.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-BoldOblique.ttf">DejaVuSansMono-BoldOblique.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-Oblique.ttf">DejaVuSansMono-Oblique.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono.ttf">DejaVuSansMono.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-Bold.ttf">DejaVuSerif-Bold.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-BoldItalic.ttf">DejaVuSerif-BoldItalic.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-Italic.ttf">DejaVuSerif-Italic.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif.ttf">DejaVuSerif.ttf</ProjectItem>
-              </Folder>
               <Folder Name="glyphs" TargetFolderName="glyphs">
-                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.eot">KendoUIGlyphs.eot</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.svg">KendoUIGlyphs.svg</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.ttf">KendoUIGlyphs.ttf</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.woff">KendoUIGlyphs.woff</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.eot">WebComponentsIcons.eot</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.svg">WebComponentsIcons.svg</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.ttf">WebComponentsIcons.ttf</ProjectItem>
@@ -1762,7 +1861,6 @@
           </Folder>
         </Folder>
         <Folder Name="Shared" TargetFolderName="Shared">
-          <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
           <Folder Name="Scripts" TargetFolderName="Scripts">
             <ProjectItem ReplaceParameters="true" TargetFileName="PageUnloadEventManager.js">PageUnloadEventManager.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Cache.js">Sage.CA.SBS.ERP.Sage300.Common.Cache.js</ProjectItem>

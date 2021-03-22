@@ -1,0 +1,2740 @@
+//
+// Form Size Classes
+// --------------------------------------------------
+
+// Form-medium
+// -------------------------
+
+html[data-local-form-size] {
+  .options-menu .sub-menu .menu-with-submenu .sub-menu>li.menu-active {
+    
+    &:before {
+      content: "";
+      border: 1px solid;
+      border-width: 0 3px 3px 0;
+      height: 8px;
+      left: 10px;
+      position: absolute;
+      top: 6px;
+      transform: rotate(45deg);
+      width: 4px;
+      border-color: #3399cc;
+    }
+  } 
+}
+
+// Form-medium
+// -------------------------
+
+html.form-medium {
+
+  // Font Size
+
+  body,
+  button, 
+  input, 
+  label, 
+  select,
+  .message-control,
+  .card .card-header .card-title-small {
+    font-size: 12px;
+  }
+
+  .card .card-header .card-title {
+    font-size: 19px;
+  }
+
+  // Header
+
+  header {
+
+  .header-headline {
+      h1, h2, h3 {
+        font-size: 21px;
+        font-weight: bold;
+
+        label {
+          font-size: 21px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .header-options {
+      font-size: 13px;
+
+      .options-menu .sub-menu>li>input {
+        font-size: 13px;
+      }
+
+      .btn {
+        height: 30px;
+        font-size: 13px;
+      }
+    }
+
+    .header-view-options {
+
+      .btn-view {
+        background-size: 900px 90px;
+        height: 30px;
+      }
+    }
+  }
+
+  // Sprite Image Size
+
+  .icon, 
+  .k-column-menu .k-sprite, 
+  .k-grouping-dropclue, .k-icon {
+    background-size: 800px 80px;
+  }
+
+  .k-icon.k-i-window-maximize,
+  .k-icon.k-i-window-restore {
+    background-size: 900px 90px;
+  }
+
+  .btn.btn-arrow {
+    padding-left: 35px;
+
+    &:before {
+      background-size: 800px 80px;
+      width: 22px;
+      height: 22px;
+      margin-left: 10px;
+    }
+
+    &.btn-arrow-f:before {
+      background-position: -147px 2px;
+    }
+
+    &.btn-arrow-ff:before {
+      background-position: -103px 2px;
+    }
+
+    &.btn-arrow-b:before {
+      background-position: -164px 2px;
+    }
+
+    &.btn-arrow-bb:before {
+      background-position: -125px 2px;
+    }
+
+    &.btn-arrow-f[disabled]:before {
+      background-position: -147px -61px;
+    }
+
+    &.btn-arrow-ff[disabled]:before {
+      background-position: -103px -61px;
+    }
+
+    &.btn-arrow-b[disabled]:before {
+      background-position: -164px -61px;
+    }
+
+    &.btn-arrow-bb[disabled]:before {
+      background-position: -125x -61px;
+    }
+  }
+
+  // Button sizes
+
+  input[class*="btn-"]{ 
+    height: 24px;
+  }
+
+  .button-wrapper, 
+  .fileUpload, 
+  .fileUploadReport { 
+    height: 24px;
+    font-size: 12px;
+    line-height: 0.9;
+  }
+
+  .form-group,
+  .form-basic {
+
+   h3 {
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    div[class*="-group"]{
+      margin-bottom: 8px;
+    }
+
+    // Button sizes
+
+    input[type="text"],
+    input[class*="btn-"],
+    input[type="email"],
+    input[type="password"]{ 
+      height: 24px;
+    }
+
+    input[class*="icon btn-"]{
+      width: 24px;
+    }
+
+    input.icon {
+      background-size: 800px 80px;
+
+      &.btn-search,
+      &.btn-finder {
+        background-position: 1px 2px;
+
+        &:disabled {
+          background-position: 1px -60px;
+        }
+      }
+
+      &.btn-go {
+        background-position: -21px 2px;
+
+        &:disabled {
+          background-position: -21px -60px;
+        }
+      }
+
+      &.btn-fiscal-picker, 
+      &.btn-go {
+        margin-left: -26px;
+      }
+
+      &.btn-plus {
+        background-position: -439px 2px;
+
+        &:disabled {
+          background-position: -439px -59px;
+        }
+      }
+
+      &.btn-more {
+        background-position: -586px 2px;
+
+        &:disabled {
+          background-position: -586px -61px;
+        }
+      }
+    }
+
+    .button-group.no-label,
+    .buttons-group.no-label {
+      margin-top: 22px;
+    }
+
+    // Size Control
+
+    .search-group>input[type=text].size-control:not(.large) {
+      width: 178px;
+    }
+
+    span.k-numerictextbox.numeric.size-control {
+      width: 170px;
+    }
+
+    .numeric-search-group .k-numeric-wrap input[type=text].size-control {
+      width: 169px;
+    }
+
+    .plus-group input[type=text].size-control {
+      width: 146px;
+    }
+
+    // Fiscal Calendar 
+
+    .fiscal-group {
+      .btn-fiscal-picker {
+        background-position: -48px 2px;
+
+        &:disabled {
+          background-position: -48px -60px;
+        }
+      }
+    }
+  }
+
+  .k-widget {
+
+    // Icons
+
+    .k-dropdown-wrap, 
+    .k-numeric-wrap, 
+    .k-picker-wrap {
+      height: 24px; 
+
+      input,
+      .k-input {
+        height: 22px;
+        font-size: 12px;
+      }
+
+      .k-select {
+        width: 22px;
+        height: 22px;
+
+        .k-icon {
+          height: 22px; 
+          width: 22px;
+          top: 0;
+          background-size: 800px 80px;
+
+          &.k-i-calendar {
+            background-position: -48px 0;
+          }
+
+          &.k-i-arrow-60-down, 
+          &.k-i-arrow-s {
+            background-position: -75px 0;
+          }          
+        }
+
+        .k-link {
+
+          .k-icon.k-i-arrow-60-up,
+          .k-icon.k-i-arrow-n {
+            background-position: -631px -3px;
+            height: 12px;
+          }
+
+          .k-icon.k-i-arrow-60-down,
+          .k-icon.k-i-arrow-s {
+            background-position: -75px -5px;
+            height: 12px;
+          }
+        }
+      }
+
+      &.k-state-disabled {
+
+        .k-icon {
+          background-color: transparent;
+
+          &.k-i-arrow-60-down, 
+          &.k-i-arrow-s  {
+            background-position: -76px -62px;
+          }
+
+          &.k-i-calendar  {
+            background-position: -48px -62px;
+          }
+        }
+
+        .k-link {
+
+          .k-icon.k-i-arrow-60-up,
+          .k-icon.k-i-arrow-n {
+            background-position: -631px -66px;
+            height: 12px;
+          }
+
+          .k-icon.k-i-arrow-60-down,
+          .k-icon.k-i-arrow-s {
+            background-position: -75px -68px;
+            height: 12px;
+          }
+        }
+      }
+    }
+  }
+  
+  .k-button-group, 
+  .k-icon, 
+  .k-sprite {
+    width: 24px;
+  }
+
+  div[class*="-group"]>label+.help-icon,
+  div[class*="-group"] .help-icon,
+  .help-icon {
+    background-size: 800px 80px;
+    background-position: -355px 1px;
+  }
+
+  // Summary
+
+  .summary {
+
+    h3,
+    label {
+      font-size: 12px;
+    }
+
+    > .summary-header {
+      padding: 5px 0;
+    }
+
+    > .summary-content {
+      padding: 10px 20px 0;
+
+      > .static-table td {
+        padding-bottom: 7px;
+      }
+    }
+  }
+
+  // Tab
+
+  .k-content.k-state-active {
+    padding: 10px 0 0;
+  }
+
+  .k-tabstrip .k-tabstrip-items .k-item {
+
+    .k-link {
+      padding: 6px 0;
+      font-size: 12px;
+    }
+  }
+
+  .tab-1 .tab-header .dropdown-group {
+    margin-bottom: 0;
+
+    .k-dropdown-wrap {
+      height: 24px;
+
+      .k-input {
+        line-height: 1.875;
+      }
+
+      .k-select:before {
+        line-height: 1.3;
+      }
+    }
+  }
+
+  .k-tabstrip-wrapper .k-tabstrip .k-tabstrip-items .dropdown-group {
+    height: 29px; 
+
+    .k-dropdown-wrap {
+      height: 30px;
+      margin-top: 0;
+
+      .k-input {
+        font-size: 12px;
+        height: 28px;
+        padding: 5px;
+        line-height: 1.6;
+      }
+
+      .k-icon.k-i-arrow-60-down {
+        top: 6px;
+      }
+
+      &.k-stated-disabled .k-icon {
+        background-position: -71px -61px;
+      }
+    }
+  }
+
+  // Panel 
+
+  .panel:not(.collapse) {
+    margin-bottom: 8px;
+
+    .panel-header h3 {
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+  }
+
+  .panel.collapse,
+  .panel.un-collapse {
+
+    .panel-header {
+      padding: 5px 0;
+
+      h3,
+      label {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+
+      .more {
+        top: 5px;
+      }
+    }
+
+    .panel-content {
+      padding: 10px 0 0;
+    }
+  }
+
+  .panel-group.accordion {
+    margin-bottom: 0;
+  }
+
+  // Section
+
+  .sub-section {
+    margin-bottom: 8px;
+
+    .section-heading{
+      margin-bottom: 8px;
+
+      .ctrl-group {
+        margin-bottom: 0;
+      }
+    }
+
+    .section-body.indented {
+      margin-left: 29px;
+    }
+
+    .input-group.with-checkbox {
+      margin-top: 0;
+    }
+  }
+
+  // Summary 
+
+  .totals-group {
+    padding: 10px 20px;
+    margin: 0 20px 10px 0;
+
+    table td {
+      padding-bottom: 0;
+
+      &:first-child {
+        padding-bottom: 0;
+      }
+
+      label {
+        font-size: 12px;
+      }
+
+      .k-numeric-wrap {
+        margin-bottom: 2px;
+
+        .kendonumeric.k-input {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  // Footer 
+
+  .footer-group,
+  .footer-group-1,
+  .footer {
+    padding-top: 10px;
+
+    input[class*=btn-] {
+      margin-bottom: 10px;
+      padding: 5px 24px;
+      font-size: 12px;
+      height: 24px;
+    }
+  }
+
+  // Grid
+
+  .datagrid-group {
+    margin-bottom: 10px;
+
+    .gh150 .k-grid-content {
+      height: 95px;
+      min-height: 95px;
+    }
+
+    .gh180 .k-grid-content {
+      height: 145px;
+    }
+
+    .gh320 .k-grid-content {
+      min-height: 271px;
+      max-height: 271px;
+      height: 271px;
+    }
+
+    .gh400 .k-grid-content {
+      height: 380px;
+    }
+  }
+
+  .k-grid {
+
+    th.k-header {
+
+      label.checkbox-container {
+        top: -5px;
+
+        span.checkbox-container {
+          top: 1px;
+        }
+      }
+    }
+
+    .k-edit-cell {
+
+      .edit-cell.inpt-text input, 
+      input[type=text],
+      input:not(.btn),
+      input:not(.icon){
+        height: 20px;
+      }
+
+      .btn-finder, 
+      .btn-search, 
+      .edit-cell.inpt-text .btn-finder, 
+      .edit-cell.inpt-text .btn-search, 
+      .pencil-edit {
+        height: 18px;
+        width: 18px;
+        -webkit-min-logical-height: 20px;
+        right: 16px;
+        top: 3px;
+      }
+
+      .k-numerictextbox + .pencil-edit {
+        background-position: -539px -2px;
+        top: 5px;
+      }
+
+      .k-dropdown .k-dropdown-wrap {
+        height: 20px;
+
+        .k-input {
+          padding: 0 10px;
+          line-height: 18px;
+          height: auto;
+          font-size: 12px;
+          background-color: transparent;
+        }
+      }
+
+      .k-datepicker {
+
+        &.dp-and-finder {
+          height: 20px;
+
+          .k-picker-wrap {
+            height: 20px;
+
+            .k-input, 
+            input[type=text] {
+              height: 18px;
+            }
+
+            .k-select {
+              height: 18px;
+
+              .k-i-calendar {
+                background-position: -46px -2px;
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+
+      .k-numeric-wrap {
+        height: 20px;
+
+        input[type="text"] {
+          height: 18px;
+          background-color: transparent;
+          margin-top: 0;
+        }
+      }
+    }
+
+    .k-grid-content .pencil-wrapper {
+      height: 24px;
+    }
+
+    .k-dropdown-wrap, 
+    .k-numeric-wrap, 
+    .k-picker-wrap {
+
+      .k-select {
+        height: 18px;
+      }
+    }
+
+    .btnOptionalFieldSettings, 
+    .edit-field, 
+    .pencil-edit {
+      background-position: -537px 0;
+
+      &:disabled {
+        background-position: -537px -62px;
+      }
+    }
+  }
+
+  .btnOptionalFieldSettings, 
+  .edit-field, 
+  .pencil-edit {
+    background-position: -537px 0;
+
+    &:disabled {
+      background-position: -537px -62px;
+    }
+  }
+
+  button.btn {
+    padding: 3px 10px 3px 15px;
+    height: 24px;
+  }
+
+  .gridcontrols-group,
+  .finder-window .gridcontrols-group {
+    padding-top: 6px;
+
+    .btn-grid-control {
+      margin-bottom: 6px;
+
+      &:before {
+        top: -1px;
+      }
+    }
+  }
+
+  .finder-window .gridcontrols-group,
+  .k-grid,
+  .finder-window .k-grid .k-grid-header {
+
+    th, td {
+      padding: 0 10px;
+
+      .checkbox-container input[type=checkbox]~.checkmark {
+        top: 2px;
+      }
+    }
+
+    td {
+      line-height: 24px;
+      height: 25px;
+      max-height: 25px;
+
+      .btn {
+        height: 24px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .user-preference {
+
+    .table-scroll td {
+      padding: 0 0 0 34px;
+      background-position: 10px 11px;
+
+      label {
+        margin: 0;
+      }
+    }
+
+    .btn {
+      height: 24px;
+      font-size: 12px;
+    }
+  }
+
+  .k-grid .k-pager-wrap>.k-link,
+  .pager-group .k-pager-wrap>.k-link  {
+    height: 24px;
+    width: 24px;
+
+    .k-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .k-grid .k-pager-input .k-textbox {
+    height: 24px;
+  }
+
+  .staticgrid-group .table {
+
+    .btn-search {
+      right: 3px;
+      bottom: 3px;
+      width: 20px;
+      height: 20px;
+    }
+
+    input[type=text] {
+      font-size: 12px;
+      height: 24px;
+    }
+
+    .k-widget {
+      height: 24px;
+
+      .k-state-default,
+      .k-state-disabled {
+        height: 24px;
+
+        .k-input,
+        input[type=text] {
+          height: 22px;
+        }
+
+        &.k-state-focused {
+
+          .k-input,
+          input[type=text] {
+            border: none;
+          }
+        }
+      }
+
+      .k-select {
+        height: 20px;
+        right: 1px;
+        top: 1px;
+
+        .k-i-calendar {
+          right: 0;
+          bottom: 1px;
+        }
+      }
+    }
+
+    .k-i-calendar {
+      background-position: -44px 4px;
+      right: 3px;
+      bottom: 2px;
+    }
+
+    .btn-search {
+      background-position: -1px 2px;
+    }
+
+    .fiscal-group .btn-fiscal-picker {
+      background-position: -49px 1px;
+      height: 24px;
+      width: 24px;
+      right: -10px;
+    }
+  }
+
+  // Condensed table w/ half padding
+
+  .table-condensed {
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          padding: 2px 0;
+        }
+      }
+    }
+  }
+
+
+  // Dropdownlist 
+
+  .k-list-scroller {
+    font-size: 12px;
+
+    .k-list .k-item {
+      padding: 2px 10px;
+    }
+  }
+
+  .k-i-arrow-60-down, .k-i-arrow-s,
+  .k-state-hover>*>.k-i-arrow-60-down, 
+  .k-state-hover>*>.k-i-arrow-s {
+    background-position: -71px 1px;
+  }
+
+  .fisicaldropdown {
+
+    .k-dropdown-wrap {
+      height: 24px;
+
+      .k-input {
+        height: 22px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  // Numeric Field
+
+  #NumericTextBoxDiv .k-numeric-wrap input[type=text] {
+    height: 22px;
+  }
+
+  .numeric-go-group {
+
+    .k-widget.k-numerictextbox.default.align-right,
+    .k-widget.k-numerictextbox.default.numeric,
+    .k-widget.k-numerictextbox.default.grid_Cell_Number_Right_Align {
+      width: 210px;
+    }
+  }
+
+  // Calendar 
+
+  .k-calendar {
+    font-size: 12px;
+    padding: 3px 0;
+    margin: 0;
+
+    .k-header, 
+    .k-footer {
+      width: auto;
+    }
+
+    .k-content {
+      height: auto;
+
+      td {
+        height: 24px;
+      }
+    }
+  }
+
+  .k-popup.k-calendar-container {
+    padding: 5px 10px;
+    width: 300px;
+  }
+
+  .k-i-arrow-60-left, 
+  .k-i-arrow-w, .k-link:not(.k-state-disabled):hover>.k-i-arrow-60-left, 
+  .k-link:not(.k-state-disabled):hover>.k-i-arrow-w, 
+  .k-state-hover>.k-i-arrow-60-left, 
+  .k-state-hover>.k-i-arrow-w {
+    background-position: -161px 2px;
+  }
+
+  .k-i-arrow-60-right, 
+  .k-i-arrow-e, 
+  .k-link:not(.k-state-disabled):hover>.k-i-arrow-60-right, 
+  .k-link:not(.k-state-disabled):hover>.k-i-arrow-e, 
+  .k-state-hover>.k-i-arrow-60-right, .k-state-hover>.k-i-arrow-e {
+    background-position: -142px 2px
+  }
+
+  // Checkbox and Radio buttons
+
+  input[type=checkbox], 
+  input[type=radio] {
+    margin: 0;
+  }
+
+  .ctrl-group.ctrl-group-inline,
+  .input-group.with-checkbox.ctrl-group-inline {
+
+    .checkbox-container~label, 
+    .radio-container~label {
+      top: -6px;
+    }
+  }
+
+  .ctrl-group div[class*="-group"] {
+    margin-bottom: 8px;
+  }
+
+  .ctrl-group input[type="text"] {
+    height: 20px;
+  }
+
+  // Textarea 
+
+  textarea {
+    min-height: 150px;
+  }
+
+  // Label Menu 
+
+  .label-menu-popup ul li input[type=button].action-btn {
+    font-size: 12px;
+    height: auto;
+    padding: 5px 10px;
+  }
+
+  // Multiselect 
+
+  .multiselect-group {
+    top: 11px;
+    height: auto;
+
+    .k-multiselect {
+      height: 24px;
+
+      .k-multiselect-wrap {
+        min-height: 22px;
+        height: 22px;
+
+        li {
+          margin: 0 5px 0 1px;
+          padding: 0 16px 0 10px;
+
+          &.k-button:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+
+  #dlgCustomize .multiselect-group {
+    top: 0;
+
+    .k-multiselect .k-multiselect-wrap .k-input {
+      height: 22px;
+      padding: 5px;
+    }
+  }
+
+  // Finder window height control 
+
+  .finder-window {
+    height: 480px !important;
+  }
+
+  // Popup and Messages 
+
+  .message-control.multiError-msg .title .msgCtrl-close, 
+  .message-control.multiInfo-msg .title .msgCtrl-close, 
+  .message-control.multiWarn-msg .title .msgCtrl-close {
+    width: 24px;
+    height: 24px;
+    right: 5px;
+    background-position: -185px -59px;
+    top: 6px;
+  }
+
+  // Treeview
+
+  .k-i-expand, 
+  .k-plus, 
+  .k-plus-disabled {
+    background-position: -646px 5px;
+  }
+
+  .k-i-collapse, .k-minus, .k-minus-disabled {
+    background-position: -74px 7px;
+  }
+
+  // Export Window 
+
+  .export-window .form-group .k-dropdown-wrap.k-state-default .k-select .k-icon {
+    top: 2px;
+  }
+
+  // Crossfield 
+
+  .cross-field {
+
+    .ctrl-group .k-dropdown .k-dropdown-wrap {
+      height: 22px;
+
+      .k-select {
+        height: 20px;
+      }
+
+      .k-input {
+        height: 20px;
+      }
+    }
+
+    input[type=text] {
+      height: 22px;
+    }
+  }
+
+  // Multilist
+
+  .multilist-wrapper .multilist-parent .multilist .item {
+    padding: 5px 10px;
+  }
+
+  .browse-group, 
+  .button-group, 
+  .datepicker-finder-group, 
+  .datepicker-group, 
+  .dropdown-group, 
+  .file-upload-group, 
+  .fileupload-group, 
+  .finder-group, 
+  .fiscal-group, 
+  .go-group, 
+  .input-group, 
+  .misc-group, 
+  .multiselect-group, 
+  .numeric-go-group, 
+  .numeric-group, 
+  .numeric-search-group, 
+  .plus-group, 
+  .search-group, 
+  .textarea-group {
+    margin-bottom: 8px;
+
+    > input[type=text] {
+      height: 24px;
+    }
+
+    > input.icon[class*=btn-] {
+      height: 24px;
+      width: 24px;
+
+      &.btn-finder {
+        background-position: 2px 2px;
+
+        &:disabled {
+          background-position: 2px -60px;
+        }
+      }
+    }
+  }
+
+  // Inquiry Table 
+
+  .form-screen.crm {
+
+    .k-block {
+      padding: 0 4px;
+    }
+
+    .k-grid {
+
+      .k-grouping-header {
+        padding: 2px 10px;
+      }
+
+      .k-grid-header .k-header {
+        height: auto; 
+        padding: 6px 8px 6px;
+      }
+    }
+  }
+
+  .k-filter-menu {
+
+    .k-textbox {
+      height: 22px;
+    }
+
+    .k-button {
+      height: 22px;
+    }
+  }
+
+  // Validation 
+
+  .validation-error {
+    padding: 2px 10px;
+  }
+
+  .field-validation-error>span {
+    padding: 2px 10px;
+  }
+
+  // Global Search
+
+  .global-search .header-group-1 .global-search-group .btn-finder {
+    height: 30px;
+    background-size: 900px 90px;
+  }
+
+  .global-search .header-group-1 .header-global-search div[class*="-group"] .treeview-group .k-treeview .k-item .k-i-collapse, 
+  .global-search .header-group-1 .header-global-search div[class*="-group"] .treeview-group .k-treeview .k-item .k-i-expand {
+    margin-left: 24px;
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),
+  only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device-pixel-ratio:1.2) {
+      .icon, 
+      .k-icon, 
+      .k-icon:not(.k-loading), 
+      .k-icon:not(.k-loading):not(.k-i-loading), 
+      .k-grouping-dropclue, 
+      .k-drop-hint, 
+      .k-column-menu .k-sprite, {
+        background-size: 800px 80px;
+      }
+  }
+
+  // Kendo Splitter
+
+  .k-icon.k-resize-handle{
+    width: 3px;
+  }
+
+  .k-icon.k-expand-prev {
+    width: 6px;
+  }
+
+  .k-splitbar-horizontal.k-splitbar-draggable-horizontal .k-i-arrow-60-left,
+  .k-splitbar-horizontal.k-splitbar-draggable-horizontal .k-i-arrow-60-right {
+    width: 7px;
+  }
+
+  // Kendo Basic Tree View
+
+  .k-treeview {
+
+    span.k-in {
+      line-height: 1.4;
+    }
+
+    .k-icon.k-i-collapse, 
+    .k-icon.k-i-expand {
+      height: 14px;
+      width: 20px;
+    }
+
+    .k-i-collapse, 
+    .k-minus, 
+    .k-minus-disabled {
+      background-position: -74px 0px;
+    }
+
+    .k-i-expand, 
+    .k-plus, 
+    .k-plus-disabled {
+      background-position: -646px -1px;
+    }
+  }
+}
+
+// Form-small
+// -------------------------
+
+
+html.form-small {
+
+  // Font Size
+
+  body,
+  button, 
+  input, 
+  label, 
+  select,
+  .message-control,
+  .card .card-header .card-title-small {
+    font-size: 11px;
+  }
+
+  .card .card-header .card-title {
+    font-size: 18px;
+  }
+
+  // Header
+
+  header {
+    .header-headline {
+      h1, h2, h3 {
+        font-size: 21px;
+        font-weight: bold;
+
+        label {
+          font-size: 21px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .header-options {
+      font-size: 13px;
+
+      .options-menu .sub-menu li input {
+        font-size: 13px;
+        height: 30px;
+        padding: 5px 10px;
+      }
+
+      .options-menu .sub-menu li a {
+        
+      }
+
+      .k-menu-group .k-item>.k-link>.k-menu-expand-arrow, 
+      .k-menu-scroll-wrapper .k-item>.k-link>.k-i-arrow-60-right, 
+      .k-menu-vertical .k-item>.k-link>.k-menu-expand-arrow, 
+      .k-popups-wrapper .k-item>.k-link>.k-i-arrow-60-right {
+        font-size: 14px;
+      }
+
+      .btn,
+      input[class*=btn-] {
+        height: 30px;
+        font-size: 13px;
+        padding: 6px 24px;
+      }
+    }
+
+    .header-view-options {
+
+      .btn-view {
+        background-size: 900px 90px;
+      }
+    }
+  }
+
+  // Sprite Image Size
+
+  .icon, 
+  .k-column-menu .k-sprite, 
+  .k-grouping-dropclue, .k-icon {
+    background-size: 700px 70px;
+    background-position: 0 2px;
+
+    &:disabled {
+      background-position: 0px -52px;
+    }
+  }
+
+  .k-icon:before {
+    font-size: 12px;
+  }
+
+  .k-icon.k-i-window-maximize,
+  .k-icon.k-i-window-restore {
+    background-size: 900px 90px;
+  }
+
+  .btn.btn-arrow {
+    padding-left: 35px;
+
+    &:before {
+      background-size: 700px 70px;
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+    }
+
+    &.btn-arrow-f:before {
+      background-position: -130px 1px;
+    }
+
+    &.btn-arrow-ff:before {
+      background-position: -91px 1px;
+    }
+
+    &.btn-arrow-b:before {
+      background-position: -145px 1px;
+    }
+
+    &.btn-arrow-bb:before {
+      background-position: -111px 1px;
+    }
+
+    &.btn-arrow-f[disabled]:before {
+      background-position: -130px -54px;
+    }
+
+    &.btn-arrow-ff[disabled]:before {
+      background-position: -91px -54px;
+    }
+
+    &.btn-arrow-b[disabled]:before {
+      background-position: -145px -54px;
+    }
+
+    &.btn-arrow-bb[disabled]:before {
+      background-position: -111x -54px;
+    }
+  }
+
+  // Input box padding control 
+
+  input, textarea {
+    padding: 5px;
+  }
+
+  // Button sizes
+
+  input[class*="btn-"]:not(.icon) { 
+    height: 20px;
+    padding: 0 15px;
+  }
+
+  .button-wrapper, 
+  .fileUpload, 
+  .fileUploadReport { 
+    height: 20px;
+    font-size: 11px;
+    line-height: 0.7;
+  }
+
+  .form-group,
+  .form-basic{
+
+    h3 {
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    div[class*="-group"]{
+      margin-bottom: 6px;
+    }
+
+    // Button sizes
+
+    input[type="text"],
+    input[class*="btn-"],
+    input[type="email"],
+    input[type="password"]{ 
+      height: 20px;
+      padding: 0 5px;
+    }
+
+    input[class*="icon btn-"]{
+      width: 20px;
+      padding: 0;
+    }
+
+    input.icon {
+      background-size: 700px 70px;
+
+      &.btn-search,
+      &.btn-finder {
+        background-position: 0 2px;
+
+        &:disabled {
+          background-position: 0 -53px;
+        }
+      }
+
+      &.btn-go {
+        background-position: -20px 2px;
+
+        &:disabled {
+          background-position: -20px -53px;
+        }
+      }
+
+      &.btn-fiscal-picker, 
+      &.btn-go {
+        margin-left: -23px;
+      }
+
+      &.btn-plus{
+        background-position: -385px 2px;
+
+        &:disabled {
+          background-position: -385px -53px;
+        }
+      }
+
+      &.btn-more {
+        background-position: -514px 1px;
+      }
+    }
+
+    .button-group.no-label,
+    .buttons-group.no-label {
+      margin-top: 17px;
+    }
+
+    // Size Control
+
+    .search-group>input[type=text].size-control:not(.large) {
+      width: 183px;
+    }
+
+    span.k-numerictextbox.numeric.size-control {
+      width: 168px;
+    }
+
+    .numeric-search-group .k-numeric-wrap input[type=text].size-control {
+      width: 166px;
+    }
+
+    .plus-group input[type=text].size-control {
+      width: 166px;
+    }
+
+    .go-group input.align-right, 
+    .go-group input.numeric, 
+    .numeric-search-group input.align-right, 
+    .numeric-search-group input.numeric, 
+    .plus-group input.align-right, 
+    .plus-group input.numeric, 
+    .search-group input.align-right, 
+    .search-group input.numeric {
+      padding-right: 26px;
+    }
+
+    div[class*="-group"]>label+.help-icon {
+      background-size: 700px 70px;
+      background-position: -308px 1px;
+    }
+
+    // Label and Label Menu
+
+    label {
+      margin-bottom: 2px;
+    }
+
+    .label-menu {
+      background-size: 700px 70px;
+      background-position: -508px 0;
+      width: 24px;
+      height: 12px;
+    }
+
+    // Fiscal Calendar 
+
+    .fiscal-group {
+      .btn-fiscal-picker {
+        background-position: -42px 1px;
+        height: 20px;
+        width: 20px;
+        right: -14px;
+
+        &:disabled {
+          background-position: -42px -54px;
+        }
+      }
+
+      .separator {
+        padding: 0;
+      }
+    }
+  }
+
+  // Icons
+
+  .k-widget {
+
+    .k-dropdown-wrap, 
+    .k-numeric-wrap, 
+    .k-picker-wrap {
+      height: 20px; 
+
+      input,
+      .k-input {
+        height: 18px;
+        font-size: 11px;
+        line-height: 1.75;
+      }
+
+      .k-select {
+        width: 19px;
+        height: 18px;
+
+        .k-icon {
+          height: 18px; 
+          width: 18px;
+          top: 0;
+          background-size: 700px 70px;
+
+          &.k-i-calendar {
+            background-position: -43px -1px;
+          }
+
+          &.k-i-arrow-60-down, 
+          &.k-i-arrow-s {
+            background-position: -66px -1px;
+          }          
+        }
+      }
+
+      &.k-state-disabled {
+
+        .k-icon {
+          background-color: transparent;
+
+          &.k-i-arrow-60-down, 
+          &.k-i-arrow-s  {
+            background-position: -67px -56px;
+          }
+
+          &.k-i-calendar  {
+            background-position: -43px -56px;
+          }
+        }
+      }
+    }
+
+    .k-numeric-wrap{
+      height: 20px; 
+
+      .k-select {
+
+        .k-icon {
+
+          &.k-i-arrow-60-up, 
+          &.k-i-arrow-n {
+            background-position: -553px -3px;
+            height: 9px;
+          }  
+
+          &.k-i-arrow-60-down, 
+          &.k-i-arrow-s {
+            background-position: -66px -6px;
+            height: 9px;
+          }          
+        }
+      }
+
+      &.k-state-disabled {
+
+        .k-icon {
+          background-color: transparent;
+
+          &.k-i-arrow-60-up, 
+          &.k-i-arrow-n  {
+            background-position: -553px -56px;
+          }
+
+          &.k-i-arrow-60-down, 
+          &.k-i-arrow-s  {
+            background-position: -67px -59px;
+          }
+        }
+      }
+    }
+  }
+
+  div[class*="-group"] .help-icon,
+  .help-icon {
+    background-size: 700px 70px;
+    background-position: -308px 1px;
+  }
+
+  .payments-popup i.help-icon {
+    top: 12px;
+    right: 3px;
+  }
+
+  // Summary
+
+  .summary {
+    margin-bottom: 5px;
+ 
+    h3,
+    label {
+      font-size: 11px;
+    }
+
+    > .summary-header {
+      padding: 5px 0;
+      margin: 0 10px;
+    }
+
+    > .summary-content {
+      padding: 10px 10px 0;
+
+      > .static-table td {
+        padding-bottom: 7px;
+      }
+    }
+  }
+
+  // Tab
+
+  .k-content.k-state-active {
+    padding: 10px 0 0;
+  }
+
+  .k-tabstrip .k-tabstrip-items {
+    margin-top: 5px;
+
+    .k-item {
+
+      .k-link {
+        padding: 4px 0 3px;
+        font-size: 11px;
+      }
+
+      &:not(.k-state-active):hover {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .tab-1 .tab-header .dropdown-group {
+    margin-bottom: 0;
+
+    .k-dropdown-wrap {
+      height: 20px;
+
+      .k-input {
+        line-height: 1.7;
+      }
+
+      .k-select:before {
+        top: -3px;
+        position: relative;
+      }
+    }
+  }
+
+  .k-tabstrip-wrapper .k-tabstrip .k-tabstrip-items .dropdown-group {
+    height: 23px; 
+
+    .k-dropdown-wrap {
+      height: 24px;
+      margin-top: 0;
+
+      .k-input {
+        font-size: 11px;
+        height: 22px;
+        padding: 5px;
+        line-height: 1.3;
+      }
+
+      .k-icon.k-i-arrow-60-down {
+        top: 5px;
+      }
+
+      &.k-state-disabled .k-icon {
+        background-position: -57px -55px;
+      }
+    }
+  }
+
+  // Panel 
+
+  .panel:not(.collapse) {
+    margin-bottom: 6px;
+
+    .panel-header h3 {
+      margin-bottom: 6px;
+      font-size: 11px;
+    }
+  }
+
+  .panel.collapse,
+  .panel.un-collapse {
+
+    .panel-header {
+      padding: 5px 0;
+
+      h3,
+      label {
+        font-size: 11px;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+
+      .more {
+        top: 5px;
+      }
+
+      .panel-icon {
+        background-size: 700px 70px;
+        background-position: -427px 0;
+
+        &.panel-icon-up {
+          background-position: -448px 0;
+        }
+      }
+    }
+
+    .panel-content {
+      padding: 10px 0 0;
+    }
+  }
+
+  .panel-group.accordion {
+    margin-bottom: 0;
+
+    .panel-heading a {
+      padding: 4px 10px 2px 40px;
+      font-size: 12px;
+
+      &:after {
+        width: 20px;
+        height: 20px;
+        top: 2px;
+        font-size: 16px;
+      }
+    }
+
+  }
+
+  // Section
+
+  .sub-section {
+    margin-bottom: 6px;
+
+    .section-heading {
+      margin-bottom: 5px;
+
+      .ctrl-group {
+        margin-bottom: 0;
+      }
+    }
+
+    .section-body.indented {
+      margin-left: 20px;
+
+      .input-group.with-checkbox {
+        margin-top: 0;
+      }
+    }
+
+    .input-group.with-checkbox {
+      margin-top: 2px;
+    }
+  }
+
+  // Summary 
+
+  .totals-group {
+    padding: 10px 20px;
+    margin: 0 20px 10px 0;
+
+    table td {
+      padding-bottom: 0;
+
+      &:first-child {
+        padding-bottom: 0;
+      }
+
+      label {
+        font-size: 11px;
+      }
+
+      input[type=text]{
+        height: 20px;
+      }
+
+      .k-numeric-wrap {
+        margin-bottom: 2px;
+        height: 20px;
+
+        .kendonumeric.k-input {
+          font-size: 11px;
+          height: 18px;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+
+  .summary-group .summary-default {
+    width: 388px;
+  }
+
+  // Footer 
+
+  .footer-group,
+  .footer-group-1,
+  .footer {
+    padding-top: 10px;
+
+    input[class*=btn-] {
+      margin-bottom: 10px;
+      padding: 4px 24px;
+      font-size: 11px;
+      height: 20px;
+    }
+  }
+
+  // Grid
+
+  .datagrid-group {
+    margin-bottom: 10px;
+
+    .gh150 .k-grid-content {
+      height: 95px;
+      min-height: 95px;
+    }
+
+    .gh180 .k-grid-content {
+      height: 145px;
+    }
+
+    .gh320 .k-grid-content {
+      min-height: 271px;
+      max-height: 271px;
+      height: 271px;
+    }
+
+    .gh400 .k-grid-content {
+      height: 380px;
+    }
+  }
+
+  .k-grid {
+    font-size: 11px;
+
+    th.k-header {
+      padding: 0 5px;
+
+      label.checkbox-container {
+        top: -5px;
+
+        span.checkbox-container {
+          top: 3px;
+        }
+      }
+
+       >.k-grid-filter .k-i-filter, 
+       >.k-header-column-menu .k-i-filter {
+        top: 3px;
+      }
+    }
+
+    .k-edit-cell {
+
+      .edit-cell.inpt-text input, 
+      input[type=text],
+      input:not(.btn),
+      input:not(.icon) {
+        height: 20px;
+        font-size: 11px;
+      }
+
+      .edit-container .edit-cell.inpt-finder {
+        top: -2px;
+      }
+
+      .btn-finder, 
+      .btn-search, 
+      .edit-cell.inpt-text .btn-finder, 
+      .edit-cell.inpt-text .btn-search, 
+      .pencil-edit {
+        height: 18px;
+        width: 18px;
+        -webkit-min-logical-height: 20px;
+        right: 10px;
+        top: 4px;
+      }
+
+      .k-numerictextbox + .pencil-edit {
+        background-position: -471px -2px;
+        top: 5px;
+      }
+
+      .k-dropdown .k-dropdown-wrap {
+        height: 20px;
+
+        .k-input {
+          padding: 0 10px;
+          line-height: 18px;
+          height: auto;
+          font-size: 11px;
+          background-color: transparent;
+        }
+      }
+
+      .k-datepicker {
+
+        &.dp-and-finder {
+          height: 20px;
+          width: 90%;
+
+          .k-picker-wrap {
+            height: 20px;
+
+            .k-input, 
+            input[type=text] {
+              height: 18px;
+            }
+
+            .k-select .k-i-calendar {
+              background-position: -42px 0;
+              width: 20px;
+              height: 20px;
+            }
+
+
+          }
+        }
+      }
+
+      .k-numeric-wrap {
+        height: 20px;
+
+        input[type="text"] {
+          height: 18px;
+          font-size: 11px;
+          background-color: transparent;
+          margin-top: 0;
+        }
+      }
+    }
+
+    .k-grid-content .pencil-wrapper {
+      height: 20px;
+    }
+
+    .btnOptionalFieldSettings, 
+    .edit-field, 
+    .pencil-edit {
+      background-position: -469px 1px;
+
+      &:disabled {
+        background-position: -469px -53px;
+      }
+    }
+  }
+
+  .btnOptionalFieldSettings, 
+  .edit-field, 
+  .pencil-edit {
+    background-position: -469px 1px;
+
+    &:disabled {
+      background-position: -469px -53px;
+    }
+  }
+
+  button.btn {
+    padding: 3px 10px 3px 15px;
+    height: 20px;
+  }
+
+  .gridcontrols-group,
+  .finder-window .gridcontrols-group,
+  .k-grid-toolbar,
+  .button-group {
+    padding-top: 6px;
+
+    .btn-grid-control {
+      margin-bottom: 6px;
+
+      &:before {
+        top: -1px;
+        background-size: 700px 70px;
+      }
+
+      &.btn-add:before {
+        background-position: -381px 2px;
+      }
+
+      &.btn-delete:before {
+        background-position: -490px 2px;
+      }
+
+      &.btn-edit-column:before {
+        background-position: -640px 2px;
+      }
+
+      &.btn-add[disabled]:before {
+          background-position: -381px -52px;
+      }
+
+      &.btn-delete[disabled]:before {
+        background-position: -490px -52px;
+      }
+
+      &.btn-edit-column[disabled]:before {
+        background-position: -640px -53px;
+      }
+
+      &.btn-refresh:before {
+        background-position: -359px 3px;
+      }
+    }
+  }
+
+  .finder-window .gridcontrols-group,
+  .k-grid,
+  .finder-window .k-grid .k-grid-header {
+
+    th, td {
+      padding: 0 5px;
+
+      .checkbox-container input[type=checkbox]~.checkmark {
+        top: 4px;
+      }
+    }
+
+    td {
+      line-height: 20px;
+      height: 25px;
+      max-height: 25px;
+
+      .btn {
+        height: 20px;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .user-preference {
+
+    .table-scroll td {
+      padding: 0 0 0 34px;
+      background-position: 10px 11px;
+
+      label {
+        margin: 0;
+
+        .checkmark {
+          top: 3px;
+        }
+      }
+    }
+
+    .btn {
+      height: 20px;
+      font-size: 11px;
+    }
+  }
+
+  .k-grid .k-pager-wrap>.k-link ,
+  .pager-group .k-pager-wrap>.k-link {
+    height: 20px;
+    width: 20px;
+    margin-top: 3px;
+    font-size: 6px;
+
+    .k-icon {
+      width: 20px;
+      height: 20px;
+
+      &.k-i-arrow-60-right {
+        left: 0;
+      }
+
+      &:before {
+        top: 2px;
+      }
+    }
+  }
+
+  .k-grid .k-pager-input .k-textbox {
+    height: 20px;
+  }
+
+  .staticgrid-group .table {
+
+    th, td {
+      font-size: 11px;
+    }
+
+    .btn-search {
+      width: 18px;
+      height: 18px;
+      right: 1px;
+      top: 0;
+
+      &:disabled {
+        background-position: 0px -52px;
+      }
+    }
+
+    input[type=text] {
+      font-size: 11px;
+      height: 20px;
+      padding: 0 5px;
+    }
+
+    .k-widget {
+      height: 20px;
+
+      .k-state-default {
+
+        .k-icon.k-i-calendar {
+          top: 1px;
+          right: 1px;
+          background-position: -38px 0;
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      .k-state-default,
+      .k-state-disabled {
+        font-size: 11px;
+        height: 20px;
+        padding: 0;
+
+        .k-input,
+        input[type=text] {
+          font-size: 11px;
+          height: 18px;
+          padding: 0 5px;
+          line-height: 18px;
+
+          &.with-finder {
+            padding-right: 20px;
+          }
+        }
+
+        &.k-state-focused {
+
+          .k-input,
+          input[type=text] {
+            border: none;
+          }
+        }
+      }
+
+      .k-select {
+        height: 16px;
+        right: 1px;
+        top: 1px;
+      }
+    }
+
+    .numeric-group .k-numeric-wrap {
+      height: 20px;
+
+      .k-input.k-format-value,
+      .k-input.numeric  {
+        height: 18px;
+        padding: 0 20px 0 5px
+      }
+
+      .k-select {
+        top: 0;
+
+        .k-link {
+
+          .k-icon {
+            background-size: 800px 80px;
+
+            &.k-i-arrow-60-up,
+            &.k-i-arrow-n {
+              background-position: -631px -4px;
+              height: 9px;
+            }
+
+            &.k-i-arrow-60-down,
+            &.k-i-arrow-s {
+              background-position: -75px -7px;
+              height: 9px;
+            }
+          }
+        }
+      }
+
+      &.k-state-disabled {
+
+        .k-select {
+          top: 0;
+
+          .k-link {
+
+            .k-icon {
+              background-size: 800px 80px;
+
+              &.k-i-arrow-60-up,
+              &.k-i-arrow-n {
+                background-position: -631px -66px;
+                height: 9px;
+              }
+
+              &.k-i-arrow-60-down,
+              &.k-i-arrow-s {
+                background-position: -75px -69px;
+                height: 9px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .fiscal-group .btn-fiscal-picker {
+      background-position: -42px 1px;
+      height: 20px;
+      width: 20px;
+      right: -14px;
+    }
+  }
+
+  // Dropdownlist 
+
+  .k-list-scroller {
+    font-size: 11px;
+
+    .k-list .k-item {
+      padding: 2px 5px;
+    }
+  }
+
+  .k-dropdown-wrap .k-input {
+    padding: 0 5px;
+  }
+
+  .k-i-arrow-60-down, .k-i-arrow-s,
+  .k-state-hover>*>.k-i-arrow-60-down, 
+  .k-state-hover>*>.k-i-arrow-s {
+    background-position: -61px 1px;
+  }
+
+  .fisicaldropdown {
+
+    .k-dropdown-wrap {
+      height: 20px;
+
+      .k-input {
+        height: 18px;
+        font-size: 11px;
+      }
+    }
+  }
+
+  // Numeric Field
+
+  #NumericTextBoxDiv .k-numeric-wrap input[type=text] {
+    height: 18px;
+  }
+
+  .numeric-go-group {
+
+    .k-widget.k-numerictextbox.default.align-right,
+    .k-widget.k-numerictextbox.default.numeric,
+    .k-widget.k-numerictextbox.default.grid_Cell_Number_Right_Align {
+      width: 210px;
+    }
+  }
+
+  // Calendar 
+
+  .k-calendar {
+    font-size: 11px;
+    padding: 3px 0;
+    margin: 5px 10px;
+
+    .k-header, 
+    .k-footer {
+      width: auto;
+    }
+
+    .k-content {
+      height: auto;
+
+      td {
+        height: 20px;
+      }
+    }
+  }
+
+  .k-popup.k-calendar-container {
+    padding: 0;
+    width: 260px;
+  }
+
+  .k-i-arrow-60-left, 
+  .k-i-arrow-w, .k-link:not(.k-state-disabled):hover>.k-i-arrow-60-left, 
+  .k-link:not(.k-state-disabled):hover>.k-i-arrow-w, 
+  .k-state-hover>.k-i-arrow-60-left, 
+  .k-state-hover>.k-i-arrow-w {
+    background-position: -142px 2px;
+    width: 20px;
+  }
+
+  .k-i-arrow-60-right, 
+  .k-i-arrow-e, 
+  .k-link:not(.k-state-disabled):hover>.k-i-arrow-60-right, 
+  .k-link:not(.k-state-disabled):hover>.k-i-arrow-e, 
+  .k-state-hover>.k-i-arrow-60-right, .k-state-hover>.k-i-arrow-e {
+    background-position: -126px 2px;
+    width: 20px;
+  }
+
+  // Checkbox and Radio button
+
+  input[type=checkbox], 
+  input[type=radio] {
+    margin: 0;
+  }
+
+  .checkbox-container .checkmark {
+    height: 12px;
+    width: 12px;
+
+    &:after {
+      width: 5px;
+      height: 8px;
+      left: 3px;
+      border-width: 0 2px 2px 0;
+    }
+  }
+
+  .radio-container .checkmark {
+    height: 12px;
+    width: 12px;
+
+    &:after { 
+      width: 6px;
+      height: 6px;
+      left: 2px;
+      top: 2px;
+    }
+  }
+
+  .ctrl-group div[class*="-group"] {
+    margin-bottom: 6px;
+  }
+
+  .ctrl-group,
+  .input-group.with-checkbox {
+
+    .checkbox-container,
+    .radio-container {
+
+      .checkmark {
+        height: 12px;
+        width: 12px;
+      }
+
+      &~label {
+        padding-left: 20px;
+      }
+    }
+
+    input[type=text] {
+      height: 18px;
+    }
+  }
+
+  .ctrl-group.ctrl-group-inline,
+  .input-group.with-checkbox.ctrl-group-inline {
+
+    .checkbox-container~label, 
+    .radio-container~label {
+      top: -7px;
+
+        &+.label-menu {
+        top: 4px;
+        right: 0;
+      }
+    }
+  }
+
+  // Textarea 
+
+  textarea {
+    min-height: 100px;
+  }
+
+  // Label Menu 
+
+  .label-menu-popup {
+    margin-top: -13px;
+    margin-left: 10px;
+    top: 25px;
+
+    ul li input[type=button].action-btn {
+      font-size: 11px;
+      height: auto;
+      padding: 5px 10px;
+    }
+  }
+
+  // Multiselect 
+
+  .multiselect-group {
+    top: 14px;
+    height: auto;
+
+    .k-multiselect {
+      height: 20px;
+
+      .k-multiselect-wrap {
+        min-height: 18px;
+        height: 18px;
+
+        li {
+          margin: 0 5px 0 1px;
+          padding: 0 16px 0 5px;
+
+          &.k-button:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+
+  #dlgCustomize .multiselect-group {
+    top: 0;
+
+    .k-multiselect .k-multiselect-wrap .k-input {
+      height: 18px;
+      padding: 0;
+    }
+  }
+
+  // Finder window height control 
+
+  .finder-window {
+    height: 460px !important;
+  }
+
+  // Popup and Messages 
+
+  .message-control.multiError-msg .title .msgCtrl-close, 
+  .message-control.multiInfo-msg .title .msgCtrl-close, 
+  .message-control.multiWarn-msg .title .msgCtrl-close {
+    width: 20px;
+    height: 20px;
+    background-position: -163px -53px;
+  }
+
+  // Treeview
+
+  .k-i-expand, 
+  .k-plus, 
+  .k-plus-disabled {
+    background-position: -565px 7px;
+  }
+
+  .k-i-collapse, 
+  .k-minus, 
+  .k-minus-disabled {
+    background-position: -61px 7px;
+  }
+
+  // Export Window 
+
+  .export-window {
+
+    .form-group .k-dropdown-wrap.k-state-default .k-select .k-icon {
+      top: 2px;
+    }
+
+    .footer-group-1 input[class*=btn-] {
+      margin-bottom: 0;
+      height: 20px;
+    }
+
+    button.btn-column-add {
+      padding: 0 10px;
+    }
+
+    .k-grid .k-grid-header .k-header {
+      padding: 1px 6px;
+    }
+
+    .k-content .datagrid-group {
+
+      .k-header .edit-gridcell-options {
+        top: 0px;
+        height: 25px;
+      }
+
+      .edit-gridcell-options .glyphicon {
+        height: 25px;
+        padding-top: 5px;
+      }
+    }
+
+    textarea {
+      min-height: 189px;
+      width: 628px;
+    }
+  }
+
+  // Crossfield 
+
+  .cross-field {
+
+    .ctrl-group .k-dropdown .k-dropdown-wrap {
+      height: 18px;
+
+      .k-select {
+        height: 16px;
+      }
+
+      .k-input {
+        height: 16px;
+        line-height: 1.5;
+        padding: 0 5px;
+      }
+    }
+
+    input[type=text] {
+      height: 18px;
+    }
+
+    #radioFrequency {
+      top: -10px;
+      width: 18px;
+    }
+  }
+
+  // Multilist
+
+  .multilist-wrapper .multilist-parent .multilist .item {
+    padding: 4px 5px;
+  }
+
+  // Kendo checkbox styles override
+
+  .k-checkbox-label:before {
+    width: 10px;
+    height: 10px;
+  }
+
+  .k-checkbox:checked+.k-checkbox-label:before,
+  .k-checkbox+.k-checkbox-label:before,
+  .k-checkbox.selected+.k-checkbox-label:before {
+    font: normal normal normal 11px/1 FontAwesome;
+  }
+
+  .k-checkbox:indeterminate+.k-checkbox-label:after {
+    width: 6px;
+    height: 6px;
+    left: 6px;
+    top: 6px;
+  }
+
+  // Tooltip 
+
+  .k-widget.k-tooltip {
+    font-size: 11px;
+    top: -7px;
+  }
+
+  .browse-group, 
+  .button-group, 
+  .datepicker-finder-group, 
+  .datepicker-group, 
+  .dropdown-group, 
+  .file-upload-group, 
+  .fileupload-group, 
+  .finder-group, 
+  .fiscal-group, 
+  .go-group, 
+  .input-group, 
+  .misc-group, 
+  .multiselect-group, 
+  .numeric-go-group, 
+  .numeric-group, 
+  .numeric-search-group, 
+  .plus-group, 
+  .search-group, 
+  .textarea-group {
+    margin-bottom: 6px;
+
+    > input[type=text] {
+      height: 20px;
+    }
+
+    > input.icon[class*=btn-] {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  // Inquiry Table 
+
+  .form-screen.crm {
+
+    .k-block {
+      padding: 0 4px;
+    }
+
+    .k-grid {
+
+      .k-grouping-header {
+        padding: 2px 10px;
+      }
+
+      .k-grid-header .k-header {
+        height: auto; 
+        padding: 6px 8px 6px;
+      }
+    }
+  }
+
+  .k-filter-menu {
+
+    .k-textbox {
+      height: 20px;
+    }
+
+    .k-button {
+      height: 20px;
+    }
+  }
+
+  .k-menu .k-item>.k-link {
+    font-size: 11px;
+    padding: 0;
+
+    .k-columns-item>.k-animation-container .k-group .k-item>.k-link {
+      padding: 5px 10px;
+      font-size: 11px;
+
+      input[type=checkbox] {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  // Validation 
+
+  .validation-error {
+    padding: 1px 5px;
+  }
+
+  .field-validation-error>span {
+    padding: 1px 5px;
+    font-size: 11px;
+  }
+
+  // Global Search
+
+  .global-search .header-group-1 .global-search-group .btn-finder {
+    height: 30px;
+    background-size: 900px 90px;
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),
+  only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device-pixel-ratio:1.2) {
+      .icon, 
+      .k-icon, 
+      .k-icon:not(.k-loading), 
+      .k-icon:not(.k-loading):not(.k-i-loading), 
+      .k-grouping-dropclue, 
+      .k-drop-hint, 
+      .k-column-menu .k-sprite{
+        background-size: 700px 70px;
+      }
+  }
+
+  // Kendo Splitter
+
+  .k-icon.k-resize-handle{
+    width: 3px;
+  }
+
+  .k-icon.k-expand-prev {
+    width: 6px;
+  }
+
+  .k-splitbar-horizontal.k-splitbar-draggable-horizontal .k-i-arrow-60-left,
+  .k-splitbar-horizontal.k-splitbar-draggable-horizontal .k-i-arrow-60-right {
+    width: 7px;
+  }
+
+  // Kendo Basic Tree View
+
+  .k-treeview {
+
+    span.k-in {
+      line-height: 1.2;
+    }
+
+    .k-icon.k-i-collapse, 
+    .k-icon.k-i-expand {
+      height: 12px;
+    }
+
+    .k-i-collapse, 
+    .k-minus, 
+    .k-minus-disabled {
+      background-position: -64px 0;
+    }
+
+    .k-i-expand, 
+    .k-plus, 
+    .k-plus-disabled {
+      background-position: -565px -2px;
+    }
+  }
+
+  // Kendo Upgrade 2021.1.224 
+
+    .k-dropdowntree>.k-multiselect-wrap>.k-clear-value, .k-multiselect-wrap>.k-clear-value {
+      top: ~"calc(1.00357143em - 15px)";
+    }
+}
+

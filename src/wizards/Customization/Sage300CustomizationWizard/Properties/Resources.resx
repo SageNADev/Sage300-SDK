@@ -443,7 +443,7 @@
     <value>Bootstrapper:</value>
   </data>
   <data name="CompatibilityDefault" xml:space="preserve">
-    <value>6.8A+</value>
+    <value>6.9A+</value>
   </data>
   <data name="FinderProperty" xml:space="preserve">
     <value>Finder Property</value>

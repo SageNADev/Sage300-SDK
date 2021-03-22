@@ -95,6 +95,7 @@
                 ""template"": ""<label class='checkbox-container'><span><input type='checkbox' class='selectChk' /><span class='checkmark'></span></span></label>"",
                 ""headerTemplate"": ""<label class='checkbox-container'><span><input type='checkbox' id='{0}' /><span class='checkmark'></span></span></label>"",
                 ""reorderable"": false,
+                ""editable"": function (e) {{ return false; }},
                 ""editor"": function (container) {{
                     var grid = $('#{1}').data(""kendoGrid"");
                     sg.utls.kndoUI.nonEditable(grid, container);

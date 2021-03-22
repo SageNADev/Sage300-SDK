@@ -1661,6 +1661,10 @@ textarea {
     }
   }
 
+  .k-calendar-view {
+    width: 100%;
+  }
+
   th {
     background-color: @white;
     text-align: center !important;
@@ -1670,7 +1674,8 @@ textarea {
     border: 0;
   }
 
-  td {
+  td,
+  .k-content td {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -1684,6 +1689,7 @@ textarea {
 
       > .k-link {
         color: @sage-link;
+        box-shadow: none;
       }
     }
 
@@ -1701,13 +1707,15 @@ textarea {
       .k-link {
         color: @white;
         background-color: @sage-link;
+        .box-shadow(none) !important;
+        border: 0;
+        background-image: none;
       }
     }
   }
 
   .k-content .k-link {
     text-align: center;
-    padding: 2px 0;
   }
 
   .k-footer {

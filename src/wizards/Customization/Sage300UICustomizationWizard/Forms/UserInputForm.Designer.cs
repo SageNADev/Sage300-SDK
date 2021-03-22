@@ -219,7 +219,7 @@ namespace Sage300UICustomizationWizard
             this.lblKendoVersionHelp.Name = "lblKendoVersionHelp";
             this.lblKendoVersionHelp.Size = new System.Drawing.Size(428, 36);
             this.lblKendoVersionHelp.TabIndex = 13;
-            this.lblKendoVersionHelp.Text = "The Kendo UI version used in these projects is v2019.1.115";
+            this.lblKendoVersionHelp.Text = "The Kendo UI version used in these projects is v2021.1.224";
             this.lblKendoVersionHelp.WrapToLine = true;
             // 
             // lblKendoLink
@@ -266,6 +266,7 @@ namespace Sage300UICustomizationWizard
             this.txtKendoFolder.MaxLength = 32767;
             this.txtKendoFolder.Name = "txtKendoFolder";
             this.txtKendoFolder.PasswordChar = '\0';
+            this.txtKendoFolder.PromptText = "Kendo Folder";
             this.txtKendoFolder.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtKendoFolder.SelectedText = "";
             this.txtKendoFolder.SelectionLength = 0;

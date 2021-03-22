@@ -296,7 +296,7 @@
             this.pnlCreateEdit.Controls.Add(this.lblPackageId);
             this.pnlCreateEdit.Location = new System.Drawing.Point(11, 16);
             this.pnlCreateEdit.Name = "pnlCreateEdit";
-            this.pnlCreateEdit.Size = new System.Drawing.Size(525, 60);
+            this.pnlCreateEdit.Size = new System.Drawing.Size(525, 57);
             this.pnlCreateEdit.TabIndex = 0;
             // 
             // btnDeleteAssembly

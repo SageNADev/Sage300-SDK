@@ -47,7 +47,7 @@ namespace Sage300UICustomizationWizard
         {
             public const string KendoLicenseUrl = @"http://www.telerik.com/purchase/license-agreement/kendo-ui-complete";
 
-            public const string KendoVersion = "v2019.1.115";
+            public const string KendoVersion = "v2021.1.224";
 
             /// <summary> Panel Name for pnlCreateEdit </summary>
             public const string PanelCreateEdit = "pnlCreateEdit";

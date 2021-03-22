@@ -89,7 +89,11 @@
                 parent: parent,
                 cancel: onCancelCallback,
                 height: height,
-                top: top
+                top: top,
+                // Note: 
+                //     Set the success parameter to be null in the case where setViewFinderEx is previously called causing
+                //     the success callback to persist into _getSelectedRow
+                success: null
             });
 
             sg.utls.registerFinderHotkey(element, id);
