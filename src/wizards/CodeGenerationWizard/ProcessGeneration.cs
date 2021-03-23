@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -26,10 +26,15 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml.Linq;
 using System.Resources;
 using System.Text;
 using System.Windows.Forms;
 using View = ACCPAC.Advantage.View;
+using System.Xml;
+using Newtonsoft.Json;
+using Jint.Runtime;
+using Newtonsoft.Json.Linq;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
@@ -126,6 +131,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             /// <summary> SubFolderWebScriptsKey is used as a dictionary key for subfolders </summary>
             public const string SubFolderWebScriptsKey = "Scripts";
+
+            /// <summary> SubFolderWebFinderDefKey is used as a dictionary key for subfolders </summary>
+            public const string SubFolderWebFinderDefKey = "FinderDef";
 
             /// <summary> SubFolderWebSqlKey is used as a dictionary key for subfolders </summary>
             public const string SubFolderWebSqlKey = "Sql";
@@ -285,6 +293,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             /// <summary> Constant for EntityName </summary>
             public const string ConstantEntityName = "EntityName";
+
+            public const string FinderDefFileName = "FinderDef.js";
         }
 #endregion
 
@@ -353,7 +363,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     {
                         var entityName = businessView.Properties[BusinessView.Constants.EntityName];
 
-
                         // Create the Model Fields class
                         CreateClass(businessView,
                                     entityName + "Fields.cs",
@@ -364,7 +373,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     }
 
                     IterateView(businessView);
+                    UpdateModel(businessView);
                 }
+
+                 //Generate Json configuration files for grid
+                 GenerateGridJsonFiles();
             }
             catch (Exception e)
             {
@@ -447,9 +460,350 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         }
 
-#endregion
+        #endregion
 
 #region Private Methods
+        private string ReplacePlaceHolder(string[] nameList, string[] valueList, string content)
+        {
+            var length = nameList.Length;
+            for (int i = 0; i < length; i++)
+            {
+                content = content.Replace(nameList[i], valueList[i]);
+            }
+            return content;
+        }
+
+        /// <summary>
+        /// Update model definition to add optional field
+        /// </summary>
+        /// <param name="entity"></param>
+        private void UpdateModel(BusinessView entity)
+        {
+            var module = entity.Properties[BusinessView.Constants.ModuleId];
+            var projectInfo = _settings.Projects[Constants.ModelsKey][module];
+            var modelFile = Path.Combine(projectInfo.ProjectFolder, entity.Text + ".cs");
+            if (File.Exists(modelFile))
+            {
+                var fs = File.OpenText(modelFile);
+                var sb = new StringBuilder();
+                string line;
+
+                while ((line = fs.ReadLine()) != null)
+                {
+                    sb.AppendLine(line);
+                    if (line.Contains("int NumberOfOptionalFields"))
+                    {
+                        sb.Append(CodeSnippet.HASOptionalFieldDef);
+                    }
+                }
+                fs.Close();
+                File.WriteAllText(modelFile, sb.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Lower the string first char
+        /// </summary>
+        /// <param name="inputString"></param>
+        /// <returns></returns>
+        private string LowerFirstChar(string inputString) 
+        {
+            return inputString.Substring(0, 1).ToLower() + inputString.Substring(1);
+        }
+
+        /// <summary>
+        /// Get names from entities for replace snippet code placeholders
+        /// </summary>
+        /// <returns></returns>
+        private IDictionary<string, string> GetNameFromEntity()
+        {
+            string[] names = { "", "", "", "", "" };
+            IDictionary<string, string> dicNames = new Dictionary<string, string>();
+            var modelName = LowerFirstChar(_settings.Entities[0].Text);
+
+            dicNames.Add("MODELNAME", modelName);
+            dicNames.Add("UIOBJECTNAME", modelName + "UI");
+
+            if (_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) && _settings.Entities.Count >= 4)
+            {
+                var detailEntity = _settings.Entities.First(e => e.ForGrid && !e.Keys.Contains("OptionalField"));
+                var fields = detailEntity.Fields;
+                var optionalFieldEntity = _settings.Entities.First(e => e.Keys.Contains("OptionalField") && e.Keys.Count == 2);
+                var detailOptionalFieldEntity = _settings.Entities.First(e => e.Keys.Contains("OptionalField") && e.Keys.Count == 3);
+
+                dicNames.Add("DGRIDNAME", LowerFirstChar(detailEntity.Text) + "Grid");
+                dicNames.Add("OFGRIDNAME", LowerFirstChar(optionalFieldEntity.Text) + "Grid");
+                dicNames.Add("OFDGRIDNAME", LowerFirstChar(detailOptionalFieldEntity.Text) + "Grid");
+
+                dicNames.Add("SEQ", fields[0].ServerFieldName);
+                dicNames.Add("LINENO", fields[1].ServerFieldName);
+            }
+
+            if (_settings.RepositoryType.Equals(RepositoryType.Flat) && _settings.Entities.Count(e=>e.ForGrid) >= 2) 
+            {
+                var header = _settings.Entities[0];
+                var detail = _settings.Entities[1];
+                var detailKey = detail.Fields[0].ServerFieldName;
+                dicNames.Add("HeaderGrid", LowerFirstChar(header.Text) + "Grid");
+                dicNames.Add("DetailGrid", LowerFirstChar(detail.Text) + "Grid");
+                dicNames.Add("DetailGridKey", detailKey);
+            }
+
+            return dicNames;
+        }
+        /// <summary>
+        /// Use Code Snippet to Update JavaScript Code
+        /// </summary>
+        private void UpdateJavaSciptCode(BusinessView entity, List<BusinessView> gridEntities, List<string> displayColumns, List<string> titles, List<string> colTypes, List<string> urls)
+        {
+            //var gridSnippet = CodeSnippet.JSReadOnlyGridDef;
+            var isHeaderDetail = _settings.RepositoryType.Equals(RepositoryType.HeaderDetail);
+            var name = isHeaderDetail ? _settings.EntitiesContainerName : entity.Text;
+            var module = entity.Properties[BusinessView.Constants.ModuleId];
+            var projectInfo = _settings.Projects[Constants.WebKey][module];
+            var jsPath = Path.Combine(projectInfo.ProjectFolder, string.Format(@"Areas\{0}\Scripts\{1}", module, name));
+            var fileName = projectInfo.ProjectName.Replace("Web", name + "Behaviour.js");
+            var jsFilePath = Path.Combine(jsPath, fileName);
+            var names = GetNameFromEntity();
+
+            if (File.Exists(jsFilePath))
+            {
+                var fs = File.OpenText(jsFilePath);
+                var sb = new StringBuilder();
+                string line;
+
+                while ((line = fs.ReadLine()) != null)
+                {
+                    if (line.Contains("initTimePickers: function () {") && isHeaderDetail)
+                    {
+                        var nameList = new string[] { "{OFGRIDNAME}", "{OFDGRIDNAME}", "{DGRIDNAME}", "{SEQ}", "{LINENO}" };
+                        var valueList = new string[] { names["OFGRIDNAME"], names["OFDGRIDNAME"], names["DGRIDNAME"], names["SEQ"], names["LINENO"] };
+                        var codeSnippet = ReplacePlaceHolder(nameList, valueList, CodeSnippet.JSShowOptionalFieldDef);
+                        sb.Append(codeSnippet);
+                    }
+
+                    if (line.Contains("initialLoad: function (result) {"))
+                    {
+                        if (names.ContainsKey("HeaderGrid"))
+                        {
+                            var nameList = new string[] { "{HeaderGrid}", "{DetailGrid}", "{DetailGridKey}", "{EntityName}" };
+                            var valueList = new string[] { names["HeaderGrid"], names["DetailGrid"], names["DetailGridKey"], LowerFirstChar(entity.Text) };
+                            var codeSnippet = ReplacePlaceHolder(nameList, valueList, CodeSnippet.JSSyncHeaderDetailGrid);
+                            sb.Append(codeSnippet);
+                        }
+                        sb.Append(CodeSnippet.JSCustomFunctionsDef.Replace("{EntityName}", LowerFirstChar(entity.Text)));
+                    }
+
+                    sb.AppendLine(line);
+
+                    if (line.Contains("initPopUps: function () {") && isHeaderDetail)
+                    {
+                        var nameList = new string[] { "{OFGRIDNAME}", "{OFDGRIDNAME}", "{DGRIDNAME}" };
+                        var valueList = new string[] { names["OFGRIDNAME"], names["OFDGRIDNAME"], names["DGRIDNAME"] };
+                        var codeSnippet = ReplacePlaceHolder(nameList, valueList, CodeSnippet.JSOptionalFieldPopUpDef);
+                        sb.Append(codeSnippet);
+                    }
+                    if (line.Contains("initHamburgers: function () {") && isHeaderDetail)
+                    {
+                        var codeSnippet = CodeSnippet.JSOptionalFieldHamburgerDef.Replace("{MODELNAME}", names["MODELNAME"]);
+                        sb.Append(codeSnippet);
+                    }
+                }
+                fs.Close();
+                File.WriteAllText(jsFilePath, sb.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Generate Grid Json configuration file
+        /// </summary>
+        /// <returns></returns>
+        private void GenerateGridJsonFiles()
+        {
+            var layout = _settings.XmlLayout;
+            if (layout == null)
+            {
+                return;
+            }
+
+            var entities = new List<BusinessView>();
+            var displayColumns = new List<string>();
+            var titles = new List<string>();
+            var colTypes = new List<string>();
+            var colUrls = new List<string>();
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(layout.Root.ToString());
+            var gridNodes = xmlDoc.SelectNodes("//Control[@widget='Grid']");
+            var keyNode = xmlDoc.SelectSingleNode("//Control[@widget='Finder']");
+            var keyEntityName = keyNode != null ?  keyNode.Attributes["entity"].Value : _settings.Entities[0].Text;
+            var isHeadDetail = _settings.RepositoryType.Equals(RepositoryType.HeaderDetail);
+            var isFlat = _settings.RepositoryType.Equals(RepositoryType.Flat);
+
+            if (gridNodes.Count > 0)
+            {
+                var index = 0;
+                foreach (XmlNode node in gridNodes)
+                {
+                    var hasColumns = node.ChildNodes[0].ChildNodes.Count > 0;
+                    // Generate Grid Json configuration file in View Folder
+                    if (hasColumns)
+                    {
+                        var jsonObj = new GridDefinition();
+                        jsonObj.GridType = 0;
+                        jsonObj.ReadOnly = false;
+                        jsonObj.ViewOrder = 0;
+                        jsonObj.PageSize = 10;
+
+                        if (isFlat && gridNodes.Count >= 2 && index == 0)
+                        {
+                            var gridCustomFunctions = new List<GridCustomFunction>();
+                            var func1 = new GridCustomFunction();
+                            func1.gridAfterLoadData = LowerFirstChar(keyEntityName) + "UISuccess.customGridAfterLoadData";
+                            gridCustomFunctions.Add(func1);
+                            var func2 = new GridCustomFunction();
+                            func2.gridAfterSetActiveRecord = LowerFirstChar(keyEntityName) + "UISuccess.customGridAfterSetActiveRecord";
+                            gridCustomFunctions.Add(func2);
+                            jsonObj.CustomFunctions = gridCustomFunctions;
+                        }
+
+                        index++;
+                        var cols = new List<ColumnDefinition>();
+                        XmlNodeList nodeList = node.ChildNodes[0].ChildNodes;
+                        BusinessView entity = null;
+                        var colIndex = 0;
+                        foreach (XmlNode colNode in nodeList)
+                        {
+                            var col = new ColumnDefinition();
+                            var finderProp = colNode.Attributes["finderProperty"]?.Value;
+                            var entityName = colNode.Attributes["entity"].Value;
+                            var propName = colNode.Attributes["property"].Value;
+                            entity = _settings.Entities.First(e => e.Properties[BusinessView.Constants.EntityName] == entityName);
+                            var fields = entity.Fields;
+                            var field = fields.First(f => f.Name == propName);
+                            var isLineNo = field.ServerFieldName == "LINENO";
+                            var isLookupFinder = finderProp != null;
+
+                            col.ColumnName = field.Description;
+                            col.FieldName = field.ServerFieldName;
+                            col.DataType = field.Type.ToString();
+                            col.IsEditable = (field.IsKey || field.IsCalculated || field.IsReadOnly || isLineNo) && isHeadDetail ? false : true;
+                            if (isHeadDetail && isLineNo)
+                            {
+                                col.IsLineNumber = true;
+                            }
+                            if (entity.Keys.Contains(propName) || isLookupFinder)
+                            {
+                                col.HasFinder = true;
+                                var finder = new FinderDefinition();
+
+                                dynamic lookupFinder = null;
+                                if (isLookupFinder)
+                                {
+                                    lookupFinder = _settings.FinderInfo[finderProp];
+                                }
+                                finder.ViewID = isLookupFinder ? lookupFinder.viewID : entity.Properties[BusinessView.Constants.ViewId];
+                                finder.ViewOrder = isLookupFinder ? Int32.Parse(lookupFinder.viewOrder.ToString()) : 0;
+                                finder.DisplayFieldNames = isLookupFinder ? lookupFinder.displayFieldNames :  entity.Fields.Select(f => f.ServerFieldName).Take(8).ToArray();
+                                finder.ReturnFieldNames = isLookupFinder ? lookupFinder.returnFieldNames : new string[] { entity.Fields[0].ServerFieldName };
+                                finder.Filter = "";
+                                finder.InitKeyFieldNames =new string[] { };
+                                col.Finder = finder;
+                            } else {
+                                col.HasFinder = null;
+                            }
+
+                            if (isFlat && colIndex < 2)
+                            {
+                                if (col.CustomFunctions == null)
+                                {
+                                    col.CustomFunctions = new List<CustomFunction>();
+                                }
+                                
+                                if (colIndex == 0)
+                                {
+                                    for (int i = 0; i < 2; i++)
+                                    {
+                                        var customFunction = new CustomFunction();
+                                        if (i== 0)
+                                        {
+                                            customFunction.columnBeforeFinder = LowerFirstChar(keyEntityName) + "UISuccess.changeFinderDefinition";
+                                        }
+                                        else
+                                        {
+                                            customFunction.columnFinderFocus = LowerFirstChar(keyEntityName) + "UISuccess.showHideFinderButton";
+                                        }
+                                        col.CustomFunctions.Add(customFunction);
+                                    }
+                                }
+                                else 
+                                {
+                                    var customFunction = new CustomFunction();
+                                    customFunction.columnBeforeDisplay = LowerFirstChar(keyEntityName) + "UISuccess.showPencilIcon";
+                                    col.CustomFunctions.Add(customFunction);
+                                }
+                            }
+                            cols.Add(col);
+                            colIndex++;
+                        }
+
+                        var optionalField = entity.Fields.FirstOrDefault(f => f.Name == "HASOPT");
+                        if (isHeadDetail && optionalField != null) 
+                        {
+                            var col = new ColumnDefinition();
+                            var customFunction = new CustomFunction();
+                            customFunction.OptionalField = "{UIOBJECTNAME}.showDetailOptionalField";
+                            col.ColumnName = optionalField.Description;
+                            col.FieldName = "HASOPT";
+                            col.IsOptionalField = true;
+                            col.CustomFunctions = new List<CustomFunction>();
+                            col.CustomFunctions.Add(customFunction);
+                            cols.Add(col);
+                        }
+
+                        jsonObj.ColumnDefinitions = cols;
+                        jsonObj.ViewID = entity.Properties[BusinessView.Constants.ViewId];
+
+                        entities.Add(entity);
+                        displayColumns.Add("'" + string.Join("','", cols.Select(c => c.FieldName)) + "'");
+                        titles.Add("'" + string.Join("','", cols.Select(c => c.ColumnName)) + "'");
+                        colTypes.Add("'" + string.Join("','", cols.Select(c => c.DataType)) + "'");
+
+                        var urls = new List<string>();
+                        foreach (var col in cols)
+                        {
+                            var url = string.Empty;
+                            if (entity.Keys.Contains(col.ColumnName.Replace(" ", "")))
+                            {
+                                var module = entity.Properties[BusinessView.Constants.ModuleId];
+                                var entityName = entity.Properties[BusinessView.Constants.EntityName];
+                                url = string.Format("{0}/{1}/Index", module, keyEntityName);
+                            }
+                            urls.Add(string.Format("{0}", url));
+                        }
+                        colUrls.Add("'" + string.Join("','", urls) + "'");
+
+                        var fileName = entity.Properties[BusinessView.Constants.EntityName] + "Grid.json";
+                        var jsonString = JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                        var isHeaderDetail = _settings.RepositoryType.Equals(RepositoryType.HeaderDetail);
+
+                        if (isHeaderDetail)
+                        {
+                            var uiObjectName =  LowerFirstChar(_settings.Entities[0].Text) + "UI";
+                            jsonString = jsonString.Replace("{UIOBJECTNAME}", uiObjectName);
+                        }
+                        entity = _settings.Entities.FirstOrDefault(e => e.Properties[BusinessView.Constants.EntityName] == keyEntityName);
+                        if (entity == null)
+                        {
+                            entity = _settings.Entities[0];
+                        }
+                        CreateClass(entity, fileName, jsonString, Constants.WebKey, Constants.SubFolderWebLocalizationKey, true, !_settings.RepositoryType.Equals(RepositoryType.HeaderDetail));
+                    }
+                }
+                var keyEntity = _settings.Entities.FirstOrDefault(e => e.Properties[BusinessView.Constants.EntityName] == keyEntityName);
+                UpdateJavaSciptCode(keyEntity, entities, displayColumns, titles, colTypes, colUrls);
+            }
+        }
 
         /// <summary> Save a file </summary>
         /// <param name="view">Business View</param>
@@ -460,12 +814,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="addToProject">True to add to project otherwise false</param>
         /// <returns>True if successful otherwise false</returns>
         private bool SaveFile(BusinessView view, string fileName, string content, string projectKey,
-            string subfolderKey, bool addToProject)
+            string subfolderKey, bool addToProject, bool forGrid)
         {
             // Local
             var retVal = true;
-            var projectInfo = _settings.Projects[projectKey][view.Properties[BusinessView.Constants.ModuleId]];
-            var filePath = BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, projectInfo.Subfolders[subfolderKey] });
+            var module = view.Properties[BusinessView.Constants.ModuleId];
+            var projectInfo = _settings.Projects[projectKey][module];
+            var subFolder = forGrid ? string.Format(@"Areas\{0}\Views\{1}\Partials", module, view.Text ) : projectInfo.Subfolders[subfolderKey];
+            var filePath = BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, subFolder });
             var fullFileName = BusinessViewHelper.ConcatStrings(new[] { filePath, fileName });
 
             // Determine if exists
@@ -525,6 +881,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     try
                     {
                         projectInfo.Project.ProjectItems.AddFromFile(fullFileName);
+                        projectInfo.Project.Save(projectInfo.Project.FullName);
                     }
                     catch
                     {
@@ -647,11 +1004,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     {Constants.SubFolderWebControllersKey, GetSubfolderName(BusinessViewHelper.ConcatStrings(new []{path, Constants.SubFolderNameControllers }))},
                     {Constants.SubFolderWebFinderKey, BusinessViewHelper.ConcatStrings(new []{path, Constants.SubFolderNameControllers, Constants.SubFolderNameFinder })},
                     {Constants.SubFolderWebSqlKey, BusinessViewHelper.ConcatStrings(new []{project.Value.ProjectFolder, string.Empty})},
-                    {Constants.SubFolderWebScriptsKey, BusinessViewHelper.ConcatStrings(new []{path, Constants.SubFolderNameScripts, entityName})}
+                    {Constants.SubFolderWebScriptsKey, BusinessViewHelper.ConcatStrings(new []{path, Constants.SubFolderNameScripts, entityName})},
+                    {Constants.SubFolderWebFinderDefKey, BusinessViewHelper.ConcatStrings(new []{path, Constants.SubFolderNameScripts})}
                 };
                 project.Value.Subfolders = subfolders;
             }
-
         }
 
         /// <summary> Get Sub Folder Name</summary>
@@ -836,6 +1193,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     field.ServerFieldName = field.Name;
                 }
 
+                if (repositoryType.Equals(RepositoryType.Report))
+                {
+                    field.Description = field.Name;
+                }
+
                 // Ensure name is unique
                 if (uniqueDescriptions.ContainsKey(field.Name))
                 {
@@ -887,6 +1249,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     IsCommon = false,
                     //AlternateName = string.Empty,
 #endif
+                    Precision = field.Precision,
+                    MinValue = field.MinValue,
+                    MaxValue = field.MaxValue
                 };
 
                 // No longer necessary (TK-253029)
@@ -947,8 +1312,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="view">Business View</param>
         /// <param name="settings">settings</param>
         /// <param name="templateClassName">template class name</param>
+        /// <param name="element">XElement for UI Elements</param>
         /// <returns>string </returns>
-        private static string TransformTemplateToText(BusinessView view, Settings settings, string templateClassName)
+        private static string TransformTemplateToText(BusinessView view, Settings settings, 
+            string templateClassName, XElement element = null)
         {
             // instantiate a template class
             var type = Type.GetType("Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard." + templateClassName);
@@ -965,6 +1332,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             templateClassInstance.Session["view"] = view;
             templateClassInstance.Session["settings"] = settings;
+
+            // UI Elements
+            if (element != null)
+            {
+                templateClassInstance.Session["element"] = element;
+            }
 
             templateClassInstance.Initialize();
 
@@ -1022,30 +1395,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelFields"),
                         Constants.ModelsKey, Constants.SubFolderModelFieldsKey);
 
-            if (isRepoTypeHeaderDetail == false)
+            if (!isRepoTypeHeaderDetail && !isRepoTypeDynamicQuery)
             {
                 if (generateClientFiles == true)
                 {
-                    if (isRepoTypeDynamicQuery == false)
+                    // Create _Index.cshtml and _Localization.cshtml
+                    var indexTemplate = "Templates.Common.View.Index";
+                    var localizationTemplate = "Templates.Common.View.Localization";
+
+                    if (isRepoTypeProcess)
                     {
-                        // Create _Index.cshtml
-                        var indexTemplate = isRepoTypeProcess == false ? "Templates.Common.View.Index"
-                                                                       : "Templates.Process.View.Index";
-
-                        CreateClass(view,
-                                    "Index.cshtml",
-                                    TransformTemplateToText(view, _settings, indexTemplate),
-                                    Constants.WebKey, Constants.SubFolderWebIndexKey);
-
-                        // Create _Localization.cshtml
-                        var localizationTemplate = isRepoTypeProcess == false ? "Templates.Common.View.Localization"
-                                                                              : "Templates.Process.View.Localization";
-
-                        CreateClass(view,
-                                    "_Localization.cshtml",
-                                    TransformTemplateToText(view, _settings, localizationTemplate),
-                                    Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+                        indexTemplate = "Templates.Process.View.Index";
+                        localizationTemplate = "Templates.Process.View.Localization";
                     }
+                    else if (isRepoTypeReport)
+                    {
+                        indexTemplate = "Templates.Reports.View.Index";
+                        localizationTemplate = "Templates.Reports.View.Localization";
+                    }
+
+                    CreateClass(view,
+                                "Index.cshtml",
+                                TransformTemplateToText(view, _settings, indexTemplate),
+                                Constants.WebKey, Constants.SubFolderWebIndexKey);
+
+                    CreateClass(view,
+                                "_Localization.cshtml",
+                                TransformTemplateToText(view, _settings, localizationTemplate),
+                                Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+
+                    // Update the plugin menu details
+                    BusinessViewHelper.UpdateMenuDetails(view, _settings);
+
                 }
             }
 
@@ -1477,23 +1858,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="view">The BusinessView</param>
         private void CreateRepositoryClassesByRepositoryType(RepositoryType type, BusinessView view)
         {
-            var isHeaderDetail = type.Equals(RepositoryType.HeaderDetail);
+            //var isHeaderDetail = type.Equals(RepositoryType.HeaderDetail);
             var isDynamicQuery = type.Equals(RepositoryType.DynamicQuery);
             var isProcess = type.Equals(RepositoryType.Process);
             var isFlat = type.Equals(RepositoryType.Flat);
             var isReport = type.Equals(RepositoryType.Report);
             var isInquiry = type.Equals(RepositoryType.Inquiry);
-            var generateFinder = view.Options[BusinessView.Constants.GenerateFinder];
 
-            if (isFlat == true)
-            {
-                CreateFlatRepositoryClasses(view);
-            }
-
-            if (isProcess == true) { CreateProcessRepositoryClasses(view); }
-            if (isDynamicQuery == true) { CreateDynamicQueryRepositoryClasses(view); }
-            if (isReport == true) { CreateReportRepositoryClasses(view); }
-            if (isInquiry == true) { CreateInquiryRepositoryClasses(view); }
+            if (isFlat) { CreateFlatRepositoryClasses(view); }
+            if (isProcess) { CreateProcessRepositoryClasses(view); }
+            if (isDynamicQuery) { CreateDynamicQueryRepositoryClasses(view); }
+            if (isReport) { CreateReportRepositoryClasses(view); }
+            if (isInquiry) { CreateInquiryRepositoryClasses(view); }
         }
 
         /// <summary> Create the class </summary>
@@ -1504,13 +1880,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="subfolderKey">Subfolder Key for Project Info</param>
         /// <param name="addToProject">True to add to project otherwise false</param>
         private void CreateClass(BusinessView view, string fileName, string content, string projectKey,
-            string subfolderKey, bool addToProject = true)
+            string subfolderKey, bool addToProject = true, bool forGrid = false)
         {
             // Update display of file being processed
             ProcessingEvent?.Invoke(fileName);
 
             // Save the file
-            var success = SaveFile(view, fileName, content, projectKey, subfolderKey, addToProject);
+            var success = SaveFile(view, fileName, content, projectKey, subfolderKey, addToProject, forGrid);
 
             // Update status
             LaunchStatusEvent(success, fileName);
@@ -1627,6 +2003,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             TransformTemplateToText(view, _settings, "Templates.Flat.View.Entity"),
                             Constants.WebKey, Constants.SubFolderWebLocalizationKey);
 
+                // Create partial views for tabs, if any
+                if (_settings.Widgets.ContainsKey("TabPage"))
+                {
+                    // Get tab pages
+                    IEnumerable<XElement> tabPages =
+                        from element in _settings.XmlLayout.Descendants("Control")
+                        where (string)element.Attribute("widget") == "TabPage"
+                        select element;
+
+                    // Iterate tab pages to create partial views
+                    foreach (XElement element in tabPages)
+                    {
+                        var pageId = element.Attribute("id").Value;
+                        fileName = "_" + pageId + ".cshtml";
+                        CreateClass(view,
+                                    fileName,
+                                    TransformTemplateToText(view, _settings, "Templates.Flat.View.PartialEntity", element),
+                                    Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+                    }
+                }
+
                 // Create grid json files
                 if (view.Options[BusinessView.Constants.GenerateGrid])
                 {
@@ -1643,6 +2040,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (generateClientFiles)
             {
                 BusinessViewHelper.UpdateBundles(view, _settings);
+            }
+
+            // Add to constant.cs if partial views (Tab Control) 
+            if (_settings.Widgets.ContainsKey("TabPage"))
+            {
+                BusinessViewHelper.UpdateConstants(view, _settings);
             }
 
             // set the start page
@@ -1703,9 +2106,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Create the Business Repository Interface class
             CreateClass(headerView, 
-                        "I" + containerName + "Repository.cs",
-                        TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.RepositoryInterface"),
-                        Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
+                "I" + containerName + "Repository.cs",
+                TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.Class.RepositoryInterface"),
+                Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
 
             // Create the Repository class
             CreateClass(headerView,
@@ -1739,6 +2142,29 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         TransformTemplateToText(headerView, settings, "Templates.HeaderDetail.View.Entity"),
                         Constants.WebKey, Constants.SubFolderWebLocalizationKey);
 
+            // Create partial views for tabs, if any
+            if (_settings.Widgets.ContainsKey("TabPage"))
+            {
+                // Get tab pages
+                IEnumerable<XElement> tabPages =
+                    from element in _settings.XmlLayout.Descendants("Control")
+                    where (string)element.Attribute("widget") == "TabPage"
+                    select element;
+
+                // Iterate tab pages to create partial views
+                foreach (XElement element in tabPages)
+                {
+                    if (element.HasElements)
+                    {
+                        var pageId = element.Attribute("id").Value;
+                        fileName = "_" + pageId + ".cshtml";
+                        CreateClass(headerView,
+                                    fileName,
+                                    TransformTemplateToText(headerView, _settings, "Templates.HeaderDetail.View.PartialEntity", element),
+                                    Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+                    }
+                }
+            }
             // Create grid json files
             foreach (var view in settings.Entities)
             {
@@ -1750,6 +2176,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                 TransformTemplateToText(view, settings, "Templates.HeaderDetail.View.GridJson"),
                                 Constants.WebKey, Constants.SubFolderWebLocalizationKey);
                 }
+            }
+
+            // Add to constant.cs if partial views (Tab Control) 
+            if (_settings.Widgets.ContainsKey("TabPage"))
+            {
+                BusinessViewHelper.UpdateConstants(headerView, _settings, true);
             }
 
             // Register types
@@ -2038,6 +2470,54 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         entityName + "Repository.cs",
                         TransformTemplateToText(view, _settings, "Templates.Reports.Class.Repository"),
                         Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
+
+            // Create partial view.cshtml
+            if (generateClientFiles)
+            {
+                var fileName = "_" + entityName + ".cshtml";
+                CreateClass(view,
+                            fileName,
+                            TransformTemplateToText(view, _settings, "Templates.Reports.View.Entity"),
+                            Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+            }
+
+            // For javascript files, the project name does not include the .Web segment
+            if (generateClientFiles)
+            {
+                var projectName =
+                _settings.Projects[Constants.WebKey][view.Properties[BusinessView.Constants.ModuleId]].ProjectName.Replace(".Web", string.Empty);
+
+                // Create the Behavior JavaScript file
+                CreateClass(view,
+                            projectName + "." + entityName + "Behaviour.js",
+                            TransformTemplateToText(view, _settings, "Templates.Reports.Script.Behaviour"),
+                            Constants.WebKey, Constants.SubFolderWebScriptsKey);
+
+                // Create the Knockout Extension JavaScript file
+                CreateClass(view,
+                            projectName + "." + entityName + "KoExtn.js",
+                            TransformTemplateToText(view, _settings, "Templates.Reports.Script.KoExtn"),
+                            Constants.WebKey, Constants.SubFolderWebScriptsKey);
+
+                // Create the Repository JavaScript file
+                CreateClass(view,
+                            projectName + "." + entityName + "Repository.js",
+                            TransformTemplateToText(view, _settings, "Templates.Reports.Script.Repository"),
+                            Constants.WebKey, Constants.SubFolderWebScriptsKey);
+            }
+
+            // Register types
+            BusinessViewHelper.UpdateReportBootStrappers(view, _settings);
+            if (generateClientFiles)
+            {
+                BusinessViewHelper.UpdateBundles(view, _settings);
+            }
+
+            // set the start page
+            if (generateClientFiles)
+            {
+                BusinessViewHelper.CreateViewPageUrl(view, _settings);
+            }
         }
 
         /// <summary> Create Inquiry Repository Classes </summary>
@@ -2313,6 +2793,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     uniqueList.Add(name);
                 }
 
+                // Iterate tab pages, if any
+                if (_settings.Widgets.ContainsKey("TabPage"))
+                {
+                    // Get tab pages
+                    IEnumerable<XElement> tabPages =
+                        from element in _settings.XmlLayout.Descendants("Control")
+                        where (string)element.Attribute("widget") == "TabPage"
+                        select element;
+
+                    // Iterate tab pages to create partial views
+                    foreach (XElement element in tabPages)
+                    {
+                        var name = element.Attribute("id").Value;
+                        var value = addDescription ? element.Attribute("text").Value : string.Empty;
+                        resourceManager.InsertIfNotExist(name, value);
+
+                        // Add to the list of unique strings
+                        uniqueList.Add(name);
+                    }
+                }
+
                 // Iterate the actual enumeration values
                 // We dealt with the enumeration names in the previous code block.
                 foreach (var enumHelper in view.Enums.Values)
@@ -2395,6 +2896,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 createdItem.Properties.Item("CustomTool").Value = "PublicResXFileCodeGenerator";
             }
+
+            pi.Project.Save(pi.Project.FullName);
         }
 
         /// <summary>
@@ -2461,5 +2964,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             string.IsNullOrEmpty(key) || list.Contains(key, StringComparer.CurrentCultureIgnoreCase);
 
 #endregion
+
     }
 }

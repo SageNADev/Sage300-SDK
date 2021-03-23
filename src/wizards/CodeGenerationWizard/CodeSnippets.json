@@ -1,0 +1,116 @@
+[
+  {
+    "Key": "JSGridDef",
+    "Text": "            $('#{0}').kendoGrid({
+                columns: get{1}Columns(),
+                dataSource: {
+                schema: {
+                    data: 'data',
+                    total: 'totalCount'
+                },
+                transport: {
+                    read: function (options) {
+                        var data = options.data;
+                        var paramters = { pageNumber: data.page - 1, pageSize: data.pageSize, filters: null };
+                        var url = sg.utls.url.buildUrl('{2}', '{3}', 'GetList');
+                        sg.utls.ajaxPost(url, paramters, function (successData) {
+                            //options.success({ data: getGridData(successData.Items), totalCount: successData.TotalResultsCount });
+                            options.success({ data: successData.Items, totalCount: successData.TotalResultsCount });
+                        });
+                    },
+                },
+                pageSize: 10,
+                serverPaging: true
+            },
+            height: 370,
+            scrollable: true,
+            resizable: true,
+            pageable: {
+                input: true,
+                numeric: false,
+                refresh: true,
+            }
+        }).data('kendoGrid');
+
+        function get{1}Columns(){
+            var cols = {3}ViewModel.{1}GridColumns;
+            var gridCols = [];
+            cols.forEach(c => {
+                let col = {};
+                col.title = c.ColumnName;
+                col.field = c.FieldName;
+                col.width = 150;
+                gridCols.push(col);
+            })
+            return gridCols;
+        };"
+  },
+  {
+	"Key": "JSReadOnlyGridDef",
+	"Text":"        //TODO: Get grid filter
+        function getFilter(id) {
+            return '';
+        };
+        // Define Grid Data Source
+        let {Name}DataSource = new kendo.data.DataSource({
+            serverPaging: true,
+            serverFiltering: true,
+            pageSize: 10,
+            transport: {
+                read: function (options) {
+                    let finder = {};
+                    finder.viewID = '{ViewId}';
+                    finder.viewOrder = 0;
+                    finder.displayFieldNames = [{Columns}];
+                    finder.returnFieldNames = [];
+                    //TODO: set finder filter
+                    finder.filter = getFilter('');
+
+                    var data = { finderOptions: finder };
+                    data.finderOptions.PageNumber = options.data.page;
+                    data.finderOptions.PageSize = 10;
+
+                    sg.utls.ajaxPost(sg.utls.url.buildUrl('Core', 'ViewFinder', 'RefreshGrid'), data, function (successData) {
+                        options.success({ data: successData.Data, totalRecCount: successData.TotalRecordCount });
+                    });
+                }
+            },
+            schema: {
+                total: 'totalRecCount',
+                data: 'data'
+            }
+        });
+
+        //Init grid
+        $('#{Name}Grid').kendoGrid({
+            autoBind: false,
+            dataSource: {Name}DataSource,
+            columns: get{Name}GridColumns(),
+            editable: false,
+            navigatable: true,
+            selectable: true,
+            scrollable: true,
+            resizable: true,
+            pageable: {
+                input: true,
+                numeric: false,
+                refresh: false
+            },
+        }).data('kendoGrid');
+
+        //Get grid columns
+        function get{Name}GridColumns()
+        {
+            let cols = [];
+            const titles = [{titles}]; 
+            const fileds = [{Columns}];
+            for (let i = 0; i < titles.length; i++) {
+                var col = {};
+                col.title = titles[i];
+                col.field = fileds[i];
+                cols.push(col);
+            }
+            return cols;
+        };"
+  }	
+]	

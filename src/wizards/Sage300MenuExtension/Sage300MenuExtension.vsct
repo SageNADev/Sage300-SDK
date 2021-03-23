@@ -2,7 +2,7 @@
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <!-- 
        The MIT License (MIT)
-       Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+       Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
   
        Permission is hereby granted, free of charge, to any person obtaining a copy of 
        this software and associated documentation files (the "Software"), to deal in
@@ -83,6 +83,13 @@
           <ButtonText>Sage 300 Code Generation Wizard</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidSage300MenuExtensionCmdSet" id="cmdidSage300ClassWizardFinder" priority="0x0100" type="Button">
+        <Parent guid="guidSage300MenuExtensionCmdSet" id="MyMenuGroup" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Sage 300 Finder Definition Generator</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
    
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -104,6 +111,7 @@
     <GuidSymbol name="guidSage300MenuExtensionCmdSet" value="{efcb2057-f513-4b39-ae85-cccc9b644875}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="cmdidSage300ClassWizard" value="0x0100" />
+      <IDSymbol name="cmdidSage300ClassWizardFinder" value="0x0101" />
     </GuidSymbol>
     
     <GuidSymbol name="guidImages" value="{d228e5e7-9569-405e-9f50-fa51a80f16fc}" >

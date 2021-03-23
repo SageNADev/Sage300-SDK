@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -45,6 +45,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             IsAlphaNumeric = false;
             IsNumeric = false;
             IsDynamicEnablement = false;
+            IsTimeOnly = false;
 
 #if ENABLE_TK_244885
             IsCommon = false;
@@ -82,6 +83,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public bool IsNumeric { get; set; }
         /// <summary> IsDynamicEnablement is true if field attribute contains 'X' otherwise false </summary>
         public bool IsDynamicEnablement { get; set; }
+        /// <summary> IsTimeOnly is true if date field only cares about the time portion otherwise false </summary>
+        public bool IsTimeOnly { get; set; }
+        /// <summary> Precison for numeric data type</summary>
+        public int Precision { get; set; }
+        /// <summary> Min value</summary>
+        public object MinValue { get; set; }
+        /// <summary> Max value</summary>
+        public object MaxValue { get; set; }
 
 
 #if ENABLE_TK_244885
@@ -90,7 +99,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         ///// <summary> AlternateName is used when the user wishes to use a different name than the default.</summary>
         //public string AlternateName { get; set; }
 #endif
-#endregion
+        #endregion
 
     }
 

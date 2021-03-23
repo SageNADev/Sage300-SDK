@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -203,6 +203,20 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
             };
         }
 
+        /// <summary>
+        /// Method that returns the list of records based on filter criterias
+        /// </summary>
+        /// <param name="pageNumber">An integer value that represents the page number</param>
+        /// <param name="pageSize">An integer value that represents the page size</param>
+        /// <param name="filters">A filter string</param>
+        /// <returns>Returns a JsonNetResult object</returns>
+        internal EnumerableResponse<T> GetList(int pageNumber, int pageSize, string filters)
+        {
+            // An expression to generate the filter expression from the passed filters string
+            Expression<Func<T, bool>> filterExpression = null;
+            var list = Service.Get(pageNumber, pageSize, filterExpression, null);
+            return list;
+        } 
         #endregion
 
 	}

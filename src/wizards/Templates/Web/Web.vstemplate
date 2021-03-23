@@ -23,6 +23,9 @@
       <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Login.aspx">Login.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Login.aspx.cs">Login.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Login.aspx.designer.cs">Login.aspx.designer.cs</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="MergeISVProject.exe">MergeISVProject.exe</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="Newtonsoft.Json.dll">Newtonsoft.Json.dll</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
@@ -35,6 +38,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.vstemplate.bak">Web.vstemplate.bak</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="WebGrease.dll">WebGrease.dll</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="WG.EXE">WG.EXE</ProjectItem>
       <Folder Name="WebForms" TargetFolderName="WebForms">
@@ -1967,6 +1971,7 @@
         <Folder Name="TU" TargetFolderName="$applicationid$">
           <Folder Name="Constants" TargetFolderName="Constants">
             <ProjectItem ReplaceParameters="true" TargetFileName="Constant.cs">Constant.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Constant.cs.bak">Constant.cs.bak</ProjectItem>
           </Folder>
           <Folder Name="Controllers" TargetFolderName="Controllers">
             <Folder Name="Finder" TargetFolderName="Finder" />

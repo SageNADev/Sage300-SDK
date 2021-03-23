@@ -208,10 +208,9 @@
     <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Web.dll</HintPath>
     </Reference>
-	<!-- gvg - Added for 2021.2 (Sage.CA.SBS.ERP.Sage300.ExportReport.exe) -->
     <Reference Include="Sage.CA.SBS.ERP.Sage300.ExportReport">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.ExportReport.exe</HintPath> 
-    </Reference>
+    </Reference>	
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Shared.Web">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Shared.Web.dll</HintPath>
     </Reference>
@@ -318,6 +317,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\$applicationid$\Constants\Constant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebForms\CustomReportViewer.aspx.cs">
@@ -343,6 +349,7 @@
     <Content Include="$applicationid$MenuDetails.xml" />
     <Content Include="MergeISVProject.exe" />
     <Content Include="favicon.ico" />
+    <Content Include="Login.aspx" />
     <Content Include="Customization\ScreenDefinitions.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>

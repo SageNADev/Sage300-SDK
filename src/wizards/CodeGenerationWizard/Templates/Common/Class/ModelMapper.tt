@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -265,8 +265,20 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers<#=exten
                     else
                     {
                         // Normal data type
+                        var fieldType = EnumValue.GetValue(field.Type);
+                        var ext = string.Empty;
+
+                        // TimeSpan special logic
+                        if (field.Type.Equals(BusinessDataType.TimeSpan))
+                        {
+                            fieldType = EnumValue.GetValue(BusinessDataType.DateTime);
+                            ext = ".TimeOfDay";
+                        }
+                        
+                        // TimeSpan special logic for DateTime treated as TimeSpan
+                        // TBD
 #>
-            model.<#=fieldName#> = entity.GetValue<<#=(field.Type.Equals(BusinessDataType.Enumeration) ? field.Name : EnumValue.GetValue(field.Type))#>>(<#=modelName#>.Index.<#=fieldName#>);
+            model.<#=fieldName#> = entity.GetValue<<#=fieldType#>>(<#=modelName#>.Index.<#=fieldName#>)<#=ext#>;
 <#
                     }
                 }
@@ -300,8 +312,19 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers<#=exten
 
                     // Locals
                     var commentChars = (field.IsReadOnly || field.IsCalculated) ? @"// " : string.Empty;
+                    var value = "model." + fieldName;
+                   
+                    // TimeSpan special logic
+                    if (field.Type.Equals(BusinessDataType.TimeSpan))
+                    {
+                        value = "DateUtil.GetMinDate().Add(model." + fieldName + ")";
+                    }
+                        
+                    // TimeSpan special logic for DateTime treated as TimeSpan
+                    // TBD
+
 #>
-            <#=commentChars#>entity.SetValue(<#=modelName#>.Index.<#=fieldName#>, model.<#=fieldName#>);
+            <#=commentChars#>entity.SetValue(<#=modelName#>.Index.<#=fieldName#>, <#=value#>);
 <#
                 }
 #>

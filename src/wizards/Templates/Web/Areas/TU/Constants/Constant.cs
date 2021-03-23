@@ -23,5 +23,9 @@ namespace $companynamespace$.$applicationid$.Web.Areas.$applicationid$.Constants
         #region Cache Key
 
         #endregion
+		
+		#region Partial Views
+		
+		#endregion
     }
 }

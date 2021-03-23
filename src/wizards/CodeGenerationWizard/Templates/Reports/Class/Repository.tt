@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -129,8 +129,8 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Reports
         {
             // TODO: Replace string.Empty with model's view name (i.e. AgeDocument.ViewName)
             // TODO: Delete TODO statements when complete
-        _businessEntity = OpenEntity(string.Empty);
-        return _businessEntity;
+            _businessEntity = OpenEntity(string.Empty);
+            return _businessEntity;
         }
 
         #endregion

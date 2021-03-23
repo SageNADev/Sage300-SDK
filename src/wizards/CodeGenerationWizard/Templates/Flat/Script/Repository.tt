@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -33,15 +33,25 @@
 #>
 /* <#=copyright#> */
 
-// Add the following commented line to enable TypeScript static type checking
-// Remove this line if not needed
-//@ts-check
+// Enable the following commented line to enable TypeScript static type checking
+// @ts-check
 
 "use strict";
 
 // Ajax call to controller
 var <#=localEntityName#>Ajax = {
 
+    /**
+     * @function
+     * @name call
+     * @description Common function used to invoke ajax calls
+     * @namespace <#=localEntityName#>Ajax
+     * @public 
+     *  
+     * @param {string} method The method to invoke
+     * @param {object} data The data for the method call
+     * @param {Function} callbackMethod The callback that's called on successful ajax post
+     */
     call: function (method, data, callbackMethod) {
         var url = sg.utls.url.buildUrl("<#=moduleId#>", "<#=entityName#>", method);
         sg.utls.ajaxPost(url, data, callbackMethod);
@@ -50,70 +60,87 @@ var <#=localEntityName#>Ajax = {
 
 var <#=localEntityName#>Repository = {
 
-	/**
-     * Get
-	 *
-	 * @method get
-	 * @param id
-	 * @param callbackMethod
-	 */
+    /**
+     * @function
+     * @name get
+     * @description get call
+     * @namespace <#=localEntityName#>Repository
+     * @public
+     *
+     * @param {string} id The key specifier
+     * @param {Function} callbackMethod The callback that's called on successful ajax post
+     */
     get: function(id, callbackMethod) {
         var data = { 'id': id };
         <#=localEntityName#>Ajax.call("Get", data, callbackMethod);
     },
 
-	/**
-     * Create
-	 *
-	 * @method create
-	 * @param callbackMethod
-	 */
+    /**
+     * @function
+     * @name create
+     * @description create call
+     * @namespace <#=localEntityName#>Repository
+     * @public
+     *
+     * @param {Function} callbackMethod The callback that's called on successful ajax post
+     */
     create: function(callbackMethod) {
         var data = {};
         <#=localEntityName#>Ajax.call("Create", data, callbackMethod);
     },
 
-	/**
-     * Delete
-	 *
-	 * @method delete
-	 * @param id
-	 * @param callbackMethod
-	 */
+    /**
+     * @function
+     * @name delete
+     * @description delete call
+     * @namespace <#=localEntityName#>Repository
+     * @public
+     *
+     * @param {string} id The key specifier
+     * @param {Function} callbackMethod The callback that's called on successful ajax post
+     */
     delete: function(id, callbackMethod) {
         var data = { 'id': id };
         <#=localEntityName#>Ajax.call("Delete", data, callbackMethod);
     },
 
-	/**
-     * Add
-	 *
-	 * @method add
-	 * @param data
-	 * @param callbackMethod
-	 */
+    /**
+     * @function
+     * @name add
+     * @description add call
+     * @namespace <#=localEntityName#>Repository
+     * @public
+     *
+     * @param {object} data The entity data object
+     * @param {Function} callbackMethod The callback that's called on successful ajax post
+     */
     add: function(data, callbackMethod) {
         <#=localEntityName#>Ajax.call("Add", data, callbackMethod);
     },
 
-	/**
-     * Update
-	 *
-	 * @method update
-	 * @param data
-	 * @param callbackMethod
-	 */
+    /**
+     * @function
+     * @name update
+     * @description update call
+     * @namespace <#=localEntityName#>Repository
+     * @public
+     *
+     * @param {object} data The entity data object
+     * @param {Function} callbackMethod The callback that's called on successful ajax post
+     */
     update: function(data, callbackMethod) {
         <#=localEntityName#>Ajax.call("Save", data, callbackMethod);
     },
 
-	/**
-     * Post
-	 *
-	 * @method update
-	 * @param data
-	 * @param callbackMethod
-	 */
+    /**
+     * @function
+     * @name post
+     * @description post call
+     * @namespace <#=localEntityName#>Repository
+     * @public
+     *
+     * @param {Function} callbackMethod The callback that's called on successful ajax post
+     */
     post: function(callbackMethod) {
         <#=localEntityName#>Ajax.call("Post", null, callbackMethod);
     }

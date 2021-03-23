@@ -529,4 +529,94 @@
   <data name="InvalidGridView" xml:space="preserve">
     <value>The 'Generate Grid' option is an invalid selection for {0} because it doesn't support a revision list.</value>
   </data>
+  <data name="AvailableFields" xml:space="preserve">
+    <value>Available Fields</value>
+  </data>
+  <data name="Dropdown" xml:space="preserve">
+    <value>Drop Down</value>
+  </data>
+  <data name="GenerateUI" xml:space="preserve">
+    <value>Generate UI</value>
+  </data>
+  <data name="GenerateUICodeInstructions" xml:space="preserve">
+    <value>Select the 'Mock' button to invoke the UI Designer for a Mocked CSHTML file or select the 'Layout' button to invoke the UI Designer for a WYSIWG UI editor for creating a basic layout.</value>
+  </data>
+  <data name="GridContainer" xml:space="preserve">
+    <value>Add Grid Control</value>
+  </data>
+  <data name="RadioButtons" xml:space="preserve">
+    <value>Radio Buttons</value>
+  </data>
+  <data name="StepDescriptionGenerateUICode" xml:space="preserve">
+    <value>The {0} Entities are used to generate UI code.</value>
+  </data>
+  <data name="StepTitleGenerateUICode" xml:space="preserve">
+    <value>Generate a UI layout</value>
+  </data>
+  <data name="TabControl" xml:space="preserve">
+    <value>Add Tab Control</value>
+  </data>
+  <data name="AddFinderButtonTip" xml:space="preserve">
+    <value>Select to search for a JavaScript file containing finder definitions</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="Display" xml:space="preserve">
+    <value>Display:</value>
+  </data>
+  <data name="DisplayTip" xml:space="preserve">
+    <value>Select the finder property to be displayed or select 'None' for no displayed property</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File:</value>
+  </data>
+  <data name="FileTip" xml:space="preserve">
+    <value>Specify the JavaScript file which contains finder definitions</value>
+  </data>
+  <data name="Finder" xml:space="preserve">
+    <value>Config:</value>
+  </data>
+  <data name="FinderTip" xml:space="preserve">
+    <value>Select the finder configuration to be associated with the current property</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Text:</value>
+  </data>
+  <data name="TextTip" xml:space="preserve">
+    <value>Defaulted from the business view and certain widgets allow value to be overridden</value>
+  </data>
+  <data name="StepDescriptionFinder" xml:space="preserve">
+    <value>Select key and display fields for the finder</value>
+  </data>
+  <data name="StepTitleFinder" xml:space="preserve">
+    <value>Create entity finder</value>
+  </data>
+  <data name="TimeOnly" xml:space="preserve">
+    <value>Time Only</value>
+  </data>
+  <data name="PropType" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="PropTypeTip" xml:space="preserve">
+    <value>Widget type for the property</value>
+  </data>
+  <data name="FinderTab" xml:space="preserve">
+    <value>Finder</value>
+  </data>
+  <data name="FinderTabTip" xml:space="preserve">
+    <value>Finder config properties</value>
+  </data>
+  <data name="HamburgerTab" xml:space="preserve">
+    <value>Hamburger</value>
+  </data>
+  <data name="HamburgerTabTip" xml:space="preserve">
+    <value>Hamburger config properties</value>
+  </data>
+  <data name="InfoTab" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="InfoTabTip" xml:space="preserve">
+    <value>Info config properties</value>
+  </data>
 </root>

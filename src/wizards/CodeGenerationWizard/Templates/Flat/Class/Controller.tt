@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -47,6 +47,7 @@ using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
+using Newtonsoft.Json;
 using <#=companyNamespace#>.<#=moduleId#>.Models;
 <#
 	if (enumsCount > 0)
@@ -128,6 +129,16 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
                         <#=resxName#>.<#=keyFieldName#>));
             }
 
+			<#
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.GenerateGrid] || view.ForGrid)
+				{
+                    var viewName = view.Properties[BusinessView.Constants.EntityName];
+                    WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", viewName);
+				}
+			 }
+			#>
             return View(viewModel);
         }
 
@@ -229,6 +240,27 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
                 return
                     JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException,
                         <#=resxName#>.<#=keyFieldName#>));
+            }
+        }
+
+        /// <summary>
+        /// Method that returns the list of records based on filter criterias
+        /// </summary>
+        /// <param name="pageNumber">An integer value that represents the page number</param>
+        /// <param name="pageSize">An integer value that represents the page size</param>
+        /// <param name="filters">A filter string</param>
+        /// <returns>Returns a JsonNetResult object</returns>
+        [HttpPost]
+        public virtual JsonNetResult GetList(int pageNumber, int pageSize = 10, string filters = null)
+        {
+            try
+            {
+                var list = ControllerInternal.GetList(pageNumber, pageSize, filters);
+                return JsonNet(list);
+            }
+            catch (BusinessException businessException)
+            {
+                return JsonNet(BuildErrorModelBase(string.Empty, businessException));
             }
         }
 

@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -29,6 +29,8 @@
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
     var containerName = settings.EntitiesContainerName;
+    var keyFieldName = settings.screenKeyFieldName;
+    var viewOrder = settings.screenKeyFieldIndex;
     var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
 #>
 // <#=copyright#>
@@ -217,11 +219,8 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
 
 #>
             CheckRights(<#=headerEntityName#>, SecurityType.Inquire);
-
-            var fields = GetKeyField(<#=headerEntityName#>);
-
-            <#=headerEntityName#>.SetValue(fields[0].ID, id);
-
+			<#=headerEntityName#>.Order = <#=viewOrder#>;
+			<#=headerEntityName#>.SetValue(<#=headerModelName#>.Fields.<#=keyFieldName#>, id.ToString(), true);
             return !<#=headerEntityName#>.Read(false) ? null : <#=headerMapperName#>.Map(<#=headerEntityName#>);
         }
 
