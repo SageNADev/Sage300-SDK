@@ -30,7 +30,7 @@ namespace $safeprojectname$
         public const string SYSTEM_KEY = "system";
         public const string SYSTEM_DEFAULT = "SAMSYS";
         public const string VERSION_KEY = "version";
-        public const string VERSION_DEFAULT = "68A";
+        public const string VERSION_DEFAULT = "69A";
         }
 
         /// <summary>

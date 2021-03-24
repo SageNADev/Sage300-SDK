@@ -38,7 +38,6 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="Web.vstemplate.bak">Web.vstemplate.bak</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="WebGrease.dll">WebGrease.dll</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="WG.EXE">WG.EXE</ProjectItem>
       <Folder Name="WebForms" TargetFolderName="WebForms">
@@ -1971,7 +1970,6 @@
         <Folder Name="TU" TargetFolderName="$applicationid$">
           <Folder Name="Constants" TargetFolderName="Constants">
             <ProjectItem ReplaceParameters="true" TargetFileName="Constant.cs">Constant.cs</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="Constant.cs.bak">Constant.cs.bak</ProjectItem>
           </Folder>
           <Folder Name="Controllers" TargetFolderName="Controllers">
             <Folder Name="Finder" TargetFolderName="Finder" />

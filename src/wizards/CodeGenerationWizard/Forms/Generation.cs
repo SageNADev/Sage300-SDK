@@ -2161,7 +2161,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Init properties
-            // tabUI.SelectTab(0); // Select Info tab page
+            tabUI.SelectTab(0); // Select Info tab page
             InitTextProp();
             InitControlProp();
         }
@@ -5638,6 +5638,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     }
                 }
 
+            }
+            else
+            {
+                tabUI.SelectTab(1); // Select Finder tab page
             }
         }
 

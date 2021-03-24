@@ -815,21 +815,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Add.ico" />
+    <Content Include="Images\addTabPage.png" />
     <Content Include="Images\Blank24.ico" />
-    <Content Include="Images\Button.ico" />
+    <Content Include="Images\button.png" />
     <Content Include="Images\Caaccpac.ico" />
-    <Content Include="Images\Delete.ico" />
+    <Content Include="Images\delete.png" />
     <Content Include="Images\Exit24.ico" />
-    <Content Include="Images\Finder.ico" />
-    <Content Include="Images\finder16X.bmp" />
-    <Content Include="Images\Go24.ico" />
+    <Content Include="Images\finder.png" />
     <Content Include="Images\Grid.ico" />
-    <Content Include="Images\Grid.png" />
-    <Content Include="Images\Help_24.ico" />
-    <Content Include="Images\ImportSetting24.ico" />
+    <Content Include="Images\grid.png" />
+    <Content Include="Images\hamburger.png" />
     <Content Include="Images\logo.png" />
-    <Content Include="Images\new16X.bmp" />
     <Content Include="Images\ProgressError.ico" />
     <Content Include="Images\ProgressSuccess.ico" />
     <Content Include="Images\RowAdd.ico" />
@@ -838,7 +834,7 @@
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
     <Content Include="Images\Tab.ico" />
-    <Content Include="Images\Tab.png" />
+    <Content Include="Images\tab.png" />
     <None Include="Templates\HeaderDetail\View\PartialEntity.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PartialEntity.cs</LastGenOutput>
@@ -926,8 +922,6 @@
     <Folder Include="Templates\DynamicQuery\View\" />
     <Folder Include="Templates\Inquiry\Script\" />
     <Folder Include="Templates\Inquiry\View\" />
-    <Folder Include="Templates\Reports\Script\" />
-    <Folder Include="Templates\Reports\View\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\Sage300UIWizardPackage\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.BannedApiAnalyzers.dll" />

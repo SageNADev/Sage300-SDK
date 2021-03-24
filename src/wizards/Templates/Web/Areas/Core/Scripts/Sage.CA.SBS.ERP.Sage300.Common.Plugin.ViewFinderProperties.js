@@ -88,6 +88,15 @@
                                     "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2"]
             },
 
+            ShortName: {
+                url: ["AP", "VendorViewFinder", "Find"],
+                viewID: "AP0015",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["SHORTNAME"],
+                displayFieldNames: ["SHORTNAME", "VENDNAME", "VENDORID", "SWACTV", "IDGRP", "CURNCODE", "NAMECTAC"]
+            },
+
             VendorGroups: {
                 viewID: "AP0016",
                 viewOrder: 0,
@@ -786,6 +795,15 @@
                 displayFieldNames: ["USERID", "USERNAME", "EMAIL1", "LANGUAGE"],
                 filter: null,
                 initKeyValues: []
+            },
+
+            GLAccountUsers: {
+                viewID: "AS0003",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["USERID"],
+                displayFieldNames: ["USERID", "USERNAME", "ACCTSTATUS", "ACCTTYPE"],
+                filter: "USERID != \"ADMIN\" AND ACCTTYPE = 0"
             }
         },
 
@@ -939,7 +957,7 @@
 
             IntegerOptionalFieldValue: {
                 viewID: "CS0012",
-                viewOrder: 0,
+                viewOrder: 1,
                 parentValAsInitKey: false,
                 returnFieldNames: ["VALUE", "TYPE", "VALIFLONG", "VDESC"],
                 displayFieldNames: ["VALIFLONG", "VDESC"],
@@ -1010,6 +1028,13 @@
                                     "MCSW", "QTYSW", "UOM"]
             },
 
+            MainAccountSegment: {
+                url: ["GL", "AccountViewFinder", "Find"],
+                viewID: "GL0001",
+                parentValAsInitKey: true,
+                displayFieldNames: ["ACCTFMTTD", "ACCTDESC", "ACTIVESW", "MCSW"]
+            },
+
             SourceInquiryAccounts: {
                 viewID: "GL0001",
                 viewOrder: 12,
@@ -1062,6 +1087,23 @@
                 parentValAsInitKey: true, 
                 returnFieldNames: ["SRCEJRNL"],
                 displayFieldNames: ["SRCEJRNL"]
+            },
+
+
+            SegmentCodes: {
+                viewID: "GL0021",
+                viewOrder: 0,
+                returnFieldNames: ["SEGVAL"],
+                displayFieldNames: ["SEGVAL", "SEGVALDESC"],
+                filterTemplate: "IDSEG = \"{0}\""
+            },
+
+            Users: {
+                viewID: "GL0054",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["USER"],
+                displayFieldNames: ["USER", "NAME"]
             },
 
             AccountTransactionOptionalFields: {

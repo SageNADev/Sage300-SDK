@@ -593,9 +593,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.treeUIEntities.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeUIEntities.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeUIEntities.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.treeUIEntities.Location = new System.Drawing.Point(0, 163);
+            this.treeUIEntities.Location = new System.Drawing.Point(0, 181);
             this.treeUIEntities.Name = "treeUIEntities";
-            this.treeUIEntities.Size = new System.Drawing.Size(235, 196);
+            this.treeUIEntities.Size = new System.Drawing.Size(235, 178);
             this.treeUIEntities.TabIndex = 4;
             this.treeUIEntities.TabStop = false;
             // 
@@ -607,7 +607,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grpContainers.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpContainers.Location = new System.Drawing.Point(0, 0);
             this.grpContainers.Name = "grpContainers";
-            this.grpContainers.Size = new System.Drawing.Size(235, 163);
+            this.grpContainers.Size = new System.Drawing.Size(235, 181);
             this.grpContainers.TabIndex = 3;
             this.grpContainers.TabStop = false;
             this.grpContainers.Text = "Toolbox";
@@ -617,11 +617,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabUI.Controls.Add(this.tabPageInfo);
             this.tabUI.Controls.Add(this.tabPageFinder);
             this.tabUI.Controls.Add(this.tabPageHamburger);
-            this.tabUI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabUI.Location = new System.Drawing.Point(3, 43);
+            this.tabUI.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabUI.Location = new System.Drawing.Point(3, 60);
             this.tabUI.Name = "tabUI";
             this.tabUI.SelectedIndex = 0;
-            this.tabUI.Size = new System.Drawing.Size(229, 117);
+            this.tabUI.Size = new System.Drawing.Size(229, 118);
             this.tabUI.TabIndex = 20;
             // 
             // tabPageInfo
@@ -633,7 +633,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPageInfo.Location = new System.Drawing.Point(4, 22);
             this.tabPageInfo.Name = "tabPageInfo";
             this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInfo.Size = new System.Drawing.Size(221, 91);
+            this.tabPageInfo.Size = new System.Drawing.Size(221, 74);
             this.tabPageInfo.TabIndex = 0;
             this.tabPageInfo.Text = "Info";
             this.tabPageInfo.UseVisualStyleBackColor = true;
@@ -677,7 +677,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPageFinder.Location = new System.Drawing.Point(4, 22);
             this.tabPageFinder.Name = "tabPageFinder";
             this.tabPageFinder.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFinder.Size = new System.Drawing.Size(221, 93);
+            this.tabPageFinder.Size = new System.Drawing.Size(221, 92);
             this.tabPageFinder.TabIndex = 1;
             this.tabPageFinder.Text = "Finder";
             this.tabPageFinder.UseVisualStyleBackColor = true;
@@ -694,7 +694,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlFinder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFinder.Location = new System.Drawing.Point(3, 3);
             this.pnlFinder.Name = "pnlFinder";
-            this.pnlFinder.Size = new System.Drawing.Size(215, 87);
+            this.pnlFinder.Size = new System.Drawing.Size(215, 86);
             this.pnlFinder.TabIndex = 0;
             // 
             // btnFinderPropFile
@@ -781,6 +781,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // tbrProperties
             // 
+            this.tbrProperties.ImageScalingSize = new System.Drawing.Size(25, 25);
             this.tbrProperties.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnTab,
             this.btnAddTabPage,
@@ -793,7 +794,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnFinder});
             this.tbrProperties.Location = new System.Drawing.Point(3, 18);
             this.tbrProperties.Name = "tbrProperties";
-            this.tbrProperties.Size = new System.Drawing.Size(229, 25);
+            this.tbrProperties.Size = new System.Drawing.Size(229, 32);
             this.tbrProperties.TabIndex = 19;
             this.tbrProperties.Text = "toolStrip1";
             // 
@@ -803,7 +804,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnTab.Image = ((System.Drawing.Image)(resources.GetObject("btnTab.Image")));
             this.btnTab.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnTab.Name = "btnTab";
-            this.btnTab.Size = new System.Drawing.Size(23, 22);
+            this.btnTab.Size = new System.Drawing.Size(29, 29);
             this.btnTab.Tag = "Tab";
             this.btnTab.ToolTipText = "Add Tab Control";
             // 
@@ -813,14 +814,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnAddTabPage.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTabPage.Image")));
             this.btnAddTabPage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddTabPage.Name = "btnAddTabPage";
-            this.btnAddTabPage.Size = new System.Drawing.Size(23, 22);
+            this.btnAddTabPage.Size = new System.Drawing.Size(29, 29);
             this.btnAddTabPage.ToolTipText = "Add Tab Page";
             this.btnAddTabPage.Click += new System.EventHandler(this.btnAddTabPage_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 32);
             // 
             // btnGrid
             // 
@@ -828,7 +829,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnGrid.Image = ((System.Drawing.Image)(resources.GetObject("btnGrid.Image")));
             this.btnGrid.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGrid.Name = "btnGrid";
-            this.btnGrid.Size = new System.Drawing.Size(23, 22);
+            this.btnGrid.Size = new System.Drawing.Size(29, 29);
             this.btnGrid.Tag = "Grid";
             this.btnGrid.ToolTipText = "Add Grid Control";
             // 
@@ -838,13 +839,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnButton.Image = ((System.Drawing.Image)(resources.GetObject("btnButton.Image")));
             this.btnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnButton.Name = "btnButton";
-            this.btnButton.Size = new System.Drawing.Size(23, 22);
+            this.btnButton.Size = new System.Drawing.Size(29, 29);
             this.btnButton.ToolTipText = "Add Button Control";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
             // 
             // btnDeleteControl
             // 
@@ -852,14 +853,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnDeleteControl.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteControl.Image")));
             this.btnDeleteControl.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeleteControl.Name = "btnDeleteControl";
-            this.btnDeleteControl.Size = new System.Drawing.Size(23, 22);
+            this.btnDeleteControl.Size = new System.Drawing.Size(29, 29);
             this.btnDeleteControl.ToolTipText = "Delete Control";
             this.btnDeleteControl.Click += new System.EventHandler(this.btnDeleteControl_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 32);
             // 
             // btnFinder
             // 
@@ -867,7 +868,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnFinder.Image = ((System.Drawing.Image)(resources.GetObject("btnFinder.Image")));
             this.btnFinder.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFinder.Name = "btnFinder";
-            this.btnFinder.Size = new System.Drawing.Size(23, 22);
+            this.btnFinder.Size = new System.Drawing.Size(29, 29);
             this.btnFinder.ToolTipText = "Configure Finder";
             this.btnFinder.CheckedChanged += new System.EventHandler(this.btnFinder_CheckedChanged);
             // 
