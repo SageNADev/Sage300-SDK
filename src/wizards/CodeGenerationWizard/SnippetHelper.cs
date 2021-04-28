@@ -154,12 +154,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 GetRequiredClassName(property, view)).Replace("  ", " ").Trim();
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "search-group"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SageLabelFor(property, view));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + KoSageTextBoxFor(property, "@sagevalue = \"Data." + property + "\", @valueUpdate = \"'input'\"",
-                className, "alphaNumeric"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + KoSageButton(property, "btnLoad", "icon btn-go", -1));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + KoSageButton(property, "btnFinder", "icon btn-search", -1));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + ValidationMessageFor(property));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgFinderWithLabelBound(property));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -1115,6 +1110,30 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 ", new { " + attributes + ", @sagedisable = \"Data.Is" + property + 
                 "Disabled\" }, new { @id = \"txt" + property + 
                 "\", @class = \"" + names + "\"" + formatValue + "})";
+        }
+
+        /// <summary>
+        /// Ko Sage Finder with Label Snippet
+        /// </summary>
+        /// <param name="property">Property Name</param>
+        private static string SgFinderWithLabelBound(string property)
+        {
+            var methodName = "@Html.SgFinderWithLabelBound";
+            var modelProperty   = $"model => model.Data.{property}";
+            var controlSwitches = "new ControlSwitches { IncludeValidation = true }";
+            var length = "16";
+            var finderButtonId = $"btnLoad{property}";
+            var searchButtonId = $"btnFinder{property}";
+            var textboxIdOverride = $"txt{property}";
+            var disableMethodName = "";
+            var textBoxFormat = "alphaNumeric";
+            var labelTextOverride = "";
+            var textBoxCssClass = "new List<CompositeExtensions.TextBoxCssClassTypeEnum> { CompositeExtensions.TextBoxCssClassTypeEnum.Default } ";
+
+            var output = $"{methodName}({modelProperty}, {controlSwitches}, {length}, \"{finderButtonId}\", \"{searchButtonId}\", \"{textboxIdOverride}\", " + 
+                         $"\"{disableMethodName}\", \"{textBoxFormat}\", \"{labelTextOverride}\", {textBoxCssClass})";
+
+            return output;
         }
 
         /// <summary>
