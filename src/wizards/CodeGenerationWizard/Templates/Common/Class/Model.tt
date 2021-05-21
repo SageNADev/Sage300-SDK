@@ -89,6 +89,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
     /// <summary>
     /// Partial class for <#=modelName#>
     /// </summary>
+    [ViewModel(Id = EntityName)]
     public partial class <#=modelName#> : <#=applicationNamespace#><#=(repositoryType.Equals(RepositoryType.Report) ? "ReportBase" : "ModelBase")#>
     {
 <#
@@ -169,6 +170,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
 
                 // Property
 #>
+        [ViewField(Name = Fields.<#=fieldName#>, Id = Index.<#=fieldName#>)]
         public <#=(field.Type.Equals(BusinessDataType.Enumeration) ? companyNamespace + "." + moduleId + ".Models.Enums" + extension + "." + fieldName : EnumValue.GetValue(field.Type))#> <#=fieldName#> { get; set; }
 
 <#

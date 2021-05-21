@@ -86,9 +86,12 @@
         ReportName: '@Html.SageRaw(CommonResx.ReportName)',
         ReportUrl: '@ConfigurationHelper.GetConfigValue("ReportUrl", false)',
         Complete: '@CommonResx.Complete',
-        AddLine: '@CommonResx.AddLine',
-        DeleteLine: '@CommonResx.DeleteLine',
-        EditColumns: '@CommonResx.EditColumns',
+
+        AddLine: '@Html.SageRaw(CommonResx.AddLine)',
+        DeleteLine: '@Html.SageRaw(CommonResx.DeleteLine)',
+        EditColumns: '@Html.SageRaw(CommonResx.EditColumns)',
+        ViewDetails: '@Html.SageRaw(CommonResx.ViewDetails)',
+        ViewDetailTax: '@Html.SageRaw(CommonResx.ViewDetailsTax)',
 
         SessionExpiredDialogHeader: '@Html.SageRaw(CommonResx.SessionExpiredDialogHeader)',
         SessionExpiredDialogMsg1: '@Html.SageRaw(CommonResx.SessionExpiredDialogMsg1)',

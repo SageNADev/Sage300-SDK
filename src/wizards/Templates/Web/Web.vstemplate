@@ -77,11 +77,11 @@
         </Folder>
       </Folder>
       <Folder Name="Scripts" TargetFolderName="Scripts">
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.4.1.js">jquery-3.4.1.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.4.1.min.js">jquery-3.4.1.min.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.4.1.min.map">jquery-3.4.1.min.map</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.1.0.js">jquery-migrate-3.1.0.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.1.0.min.js">jquery-migrate-3.1.0.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.js">jquery-3.6.0.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.min.js">jquery-3.6.0.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.min.map">jquery-3.6.0.min.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.js">jquery-migrate-3.3.2.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.min.js">jquery-migrate-3.3.2.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.12.1.js">jquery-ui-1.12.1.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.12.1.min.js">jquery-ui-1.12.1.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie-1.4.1.min.js">jquery.cookie-1.4.1.min.js</ProjectItem>
@@ -1697,6 +1697,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js">Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js">Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js">Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.TextAreaPopup.js">Sage.CA.SBS.ERP.Sage300.Common.TextAreaPopup.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ViewFinderGrid.js">Sage.CA.SBS.ERP.Sage300.Common.ViewFinderGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Wizard.js">Sage.CA.SBS.ERP.Sage300.Common.Wizard.js</ProjectItem>
             <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">

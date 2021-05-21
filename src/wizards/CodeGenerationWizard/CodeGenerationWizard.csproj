@@ -821,7 +821,6 @@
     <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\Exit24.ico" />
-    <Content Include="Images\finder.png" />
     <Content Include="Images\Grid.ico" />
     <Content Include="Images\grid.png" />
     <Content Include="Images\hamburger.png" />

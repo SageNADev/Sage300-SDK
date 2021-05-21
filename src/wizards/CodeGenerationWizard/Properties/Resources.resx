@@ -619,4 +619,7 @@
   <data name="InfoTabTip" xml:space="preserve">
     <value>Info config properties</value>
   </data>
+  <data name="Textbox" xml:space="preserve">
+    <value>Textbox</value>
+  </data>
 </root>

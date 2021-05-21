@@ -740,7 +740,7 @@ $.extend(sg.utls, {
      */
     getCurrentCompanyName: function () {
         var companyName = "";
-        $("#companyNameMenu").find('.txt-top-menu').each(function (index, element) {
+        $("#companyNameMenu").find('txt-top-menu').each(function (index, element) {
             companyName = $(this).text();
         });
 
@@ -1219,27 +1219,34 @@ $.extend(sg.utls, {
         return $("#antiforgerytoken_holder[data-antiforgerycookiename]").data("antiforgerycookiename");
     },
 
+    getFormattedDialogHtml: function(okButtonId, cancelButtonId) {
+        return this.getFormatedDialogHtml(okButtonId, cancelButtonId);
+    },
+
+    // Spelling error.
     getFormatedDialogHtml: function (okButtonId, cancelButtonId) {
 
-        var idOK = (typeof okButtonId !== 'undefined' && okButtonId !== null) ? okButtonId : "kendoConfirmationAcceptButton";
-        var idCancel = (typeof cancelButtonId !== 'undefined' && cancelButtonId !== null) ? cancelButtonId : "kendoConfirmationCancelButton";
+        let idOK = (typeof okButtonId !== 'undefined' && okButtonId !== null) ? okButtonId : "kendoConfirmationAcceptButton";
+        let idCancel = (typeof cancelButtonId !== 'undefined' && cancelButtonId !== null) ? cancelButtonId : "kendoConfirmationCancelButton";
+        let text = 
+            `<div id="dialogConfirmation" class="modal-msg">
+	            <div class="message-control multiWarn-msg"> 
+		        <div class="title"> 
+			        <span class="icon multiWarn-icon" /> 
+			        <h3 id="dialogConfirmation_header" />
+		        </div>
+		        <div class="msg-content">
+			        <p id="dialogConfirmation_msg1"></p>
+			        <p id="dialogConfirmation_msg2"></p> 
+			        <div class="button-group">
+				        <input class="btn btn-primary" id="${idOK}" type="button" value="OK" />
+                        <input class="btn btn-secondary" id="${idCancel}" type="button" value="Cancel" />
+			        </div> 
+		        </div> 
+	        </div> 
+        </div>`;
 
-        return "<div id=\"dialogConfirmation\" class=\"modal-msg\">" +
-	        "<div class=\"message-control multiWarn-msg\">" +
-		        "<div class=\"title\">" +
-			        "<span class=\"icon multiWarn-icon\"/>" +
-			        "<h3 id=\"dialogConfirmation_header\"></h3>" +
-		        "</div>" +
-		        "<div class=\"msg-content\">" +
-			        "<p id=\"dialogConfirmation_msg1\"></p>" +
-			        "<p id=\"dialogConfirmation_msg2\"></p>" +
-			        "<div class=\"button-group\">" +
-				        "<input class=\"btn btn-primary\" id=\"" + idOK + "\" type=\"button\" value=\"OK\" />" +
-                        "<input class=\"btn btn-secondary\" id=\"" + idCancel + "\" type=\"button\" value=\"Cancel\" />" +
-			        "</div>" +
-		        "</div>" +
-	        "</div>" +
-        "</div>";
+        return text;
     },
 
     showMessageDialog: function (callbackYes, callbackNo, message, dialogType, title, dialoghtml, okButtonId, cancelButtonId) {
@@ -1503,20 +1510,22 @@ $.extend(sg.utls, {
         messageIn = sg.utls.htmlEncode(messageIn);
         titleIn = sg.utls.htmlEncode(titleIn);
 
-        var template = "<script id=\"" + InpageTemplateID + "\" type=\"text/x-kendo-template\">" +
-            "<div class=\"fild_set\">" +
-            "<div class=\"fild-title generic-message\" id=\"gen-message" + randomPostfix + "\">" +
-            "<div id=\"title-text" + randomPostfix + "\" ></div>" +
-            "</div>" +
-            "<div class=\"fild-content\">" +
-            "<div id=\"body-text" + randomPostfix + "\" ></div>" +
-            "<div class=\"modelBox_controlls\">" +
-            "<input type=\"button\" class=\"btn btn-secondary generic-cancel\" id=\"kendoConfirmationCancelButton" + randomPostfix + "\" value=\"@CommonResx.No\" />" +
-            "<input type=\"button\" class=\"btn btn-primary generic-confirm\" id=\"kendoConfirmationAcceptButton" + randomPostfix + "\" value=\"@CommonResx.Yes\" />" +
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            "</script>";
+        var template = 
+            `<script id="${InpageTemplateID}" type="text/x-kendo-template">
+                <div class="fild_set">
+                    <div class="fild-title generic-message" id="gen-message${randomPostfix}">
+                        <div id="title-text${randomPostfix}"></div>
+                    </div>
+                    <div class="fild-content">
+                        <div id="body-text${randomPostfix}"></div>
+                        <div class="modelBox_controlls">
+                            <input type="button" class="btn btn-secondary generic-cancel" id="kendoConfirmationCancelButton${randomPostfix}" value="@CommonResx.No" />
+                            <input type="button" class="btn btn-primary generic-confirm" id="kendoConfirmationAcceptButton${randomPostfix}" value="@CommonResx.Yes" />
+                        </div>
+                    </div>
+                </div>
+            </script>`;
+
         $(template).appendTo('body');
 
         // This kendoWindow visibility check is added for the defect D-07638
@@ -1735,6 +1744,20 @@ $.extend(sg.utls, {
      * @param {function} onClose Handler for the popup's close event.
      * @param {object} maxConfig Kendo UI Window configuration object.
      */
+
+
+    /**
+     * @function
+     * @name initializeKendoWindowPopup
+     * @description Initializes a Kendo popup window
+     * @namespace sg.utls
+     * @public
+     * 
+     * @param {string} id The value for the window's CSS id attribute.
+     * @param {string} title The value for the window's title.
+     * @param {function} onClose Handler for the popup's close event.
+     * @param {function} maxConfig popup window width
+     */
     initializeKendoWindowPopup: function(id, title, onClose, maxConfig) {
         var winH = $(window).height();
         var winW = $(window).width();
@@ -1825,10 +1848,55 @@ $.extend(sg.utls, {
         this.initializeKendoWindowPopup(id, title, onClose);
     },
 
-    openKendoWindowPopup: function (id, data, defaultWidth) {
+    /**
+     * Initializes a Kendo popup window with specify width parameter. 
+     * 
+     * @deprecated Name is misspelled!
+     * 
+     * @param {string} id The value for the window's CSS id attribute.
+     * @param {string} title The value for the window's title.
+     * @param {function} onClose Handler for the popup's close event.
+     * @param {function} width popup window width
+     *
+     */
+    intializeKendoWindowPopupWithWidth: function (id, title, onClose, width) {
+        this.initializeKendoWindowPopup(id, title, onClose, {width: width});
+    },
+
+    /**
+     * @function
+     * @name initializeKendoWindowPopupWithWidth
+     * @description Initializes a Kendo popup window with a specified width parameter. 
+     * @namespace sg.utls
+     * @public
+     * 
+     * @param {string} id The value for the window's CSS id attribute.
+     * @param {string} title The value for the window's title.
+     * @param {function} onClose Handler for the popup's close event.
+     * @param {function} width popup window width
+     */
+    initializeKendoWindowPopupWithWidth: function (id, title, onClose, width) {
+        this.initializeKendoWindowPopup(id, title, onClose, { width: width });
+    },
+
+    /**
+     * @function
+     * @name openKendoWindowPopup
+     * @description 
+     * @namespace sg.utls
+     * @public
+     * 
+     * @param {string} id The value for the window's CSS id attribute.
+     * @param {object} data 
+     * @param {number} defaultWidth
+     */
+     openKendoWindowPopup: function (id, data, defaultWidth) {
         $(id + " .menu-with-submenu").remove();    // to remove Text sizing option, this is because the popup is not from iFrame ...
 
         var kendoWindow = $(id).data("kendoWindow");
+        if (!kendoWindow) {
+            console.log('Sage.CA.SBS.ERP.Sage300.Common.global.js -> openKendoWindowPopup() -> kendoWindow has not been initialized.')
+        }
 
         if (data != null) {
             $(id).html(data);

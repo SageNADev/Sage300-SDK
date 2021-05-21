@@ -407,6 +407,8 @@ and (max-device-width : 1024px) {
 .finder-window {
 
   margin: 16px 0 0;
+  min-height: 500px !important;
+  min-width: 860px !important;
   
   /*Finder window gridcontrol*/
 
@@ -596,7 +598,7 @@ and (max-device-width : 1024px) {
   }
 
   .k-grid .k-grid-content {
-    overflow-y: auto;
+    overflow-y: scroll;
   }
 
   .k-grid tr.k-state-selected td:first-child {
@@ -607,6 +609,7 @@ and (max-device-width : 1024px) {
   .pager-group .k-pager-wrap {
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
+    padding: 5px 0;
   }
 
   .k-button:focus:active:not(.k-state-disabled):not([disabled]),
@@ -619,6 +622,10 @@ and (max-device-width : 1024px) {
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       box-shadow: none;
+  }
+
+  .footer-group {
+    min-height: 51px;
   }
 }
 
@@ -867,7 +874,12 @@ and (max-device-width : 1024px) {
     }
 
     input[type="checkbox"] {
-      height: 20px;
+      height: 16px;
+      width: 16px;
+      border-radius: 0;
+      border: 1px solid @sage-mid-gray;
+      top: -3px;
+      left: 2px;
     }
 
     .k-icon:before {
@@ -876,6 +888,31 @@ and (max-device-width : 1024px) {
 
     .k-checkbox-wrapper {
       vertical-align: unset;
+    }
+
+    .k-checkbox {
+      &:hover {
+        outline: #ffb500 solid 3px;
+        box-shadow: none;
+        border-color: @sage-mid-gray;
+      }
+
+      &:focus {
+        outline: #ffb500 solid 3px;
+      }
+
+      &:checked::before {
+        color: @black;
+        font-size: 13px;
+        width: 13px;
+        height: 13px;
+        font-weight: bold;
+      }
+
+      &.k-state-indeterminate::before, 
+      &:indeterminate::before {
+        color: @black;
+      }
     }
   }
 

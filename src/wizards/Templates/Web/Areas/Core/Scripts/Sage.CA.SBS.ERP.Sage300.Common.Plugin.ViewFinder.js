@@ -4,6 +4,7 @@
     sg.viewFinderHelper = {
         pageSize: 5,
         cancelFuncCall: $.noop,
+        savePreferenceType: { None: 0, ColumnPreference: 1, Filter: 2, Maximize: 3},
 
         /**
          * @name getFinderSettings
@@ -365,7 +366,6 @@
                 PageSize: theOptions.finderProperties.pageSize ? theOptions.finderProperties.pageSize : theOptions.pageSize,
                 OptionalFieldBindings: theOptions.finderProperties.optionalFieldBindings,
                 CalculatePageCount: true,
-                InitialKeyFieldInDropdownList: theOptions.finderProperties.initialKeyFieldInDropdownList,
                 ReinterpretInitKeyValues: true,
                 ProcessRequiredFields: theOptions.finderProperties.processRequiredFields,
                 URL: sg.viewFinderHelper.buildViewFinderUrl(theOptions.finderProperties.url)
@@ -415,7 +415,14 @@
                 }
             }
 
-            var finderHeight = 552;
+            //TODO: Check window height, change minHeight css class
+            let finderHeight = 500;
+            const formSize = $(document).children("HTML").attr(sg.utls.localFormSizeDataTag);
+            switch (formSize) {
+                case "large": finderHeight = 500; break;
+                case "medium": finderHeight = 500; break;
+                case "small": finderHeight = 500; break;
+            }
             if (theOptions.height !== undefined && theOptions.height !== null && typeof theOptions.height === 'number') {
                 finderHeight = theOptions.height;
             }
@@ -425,37 +432,43 @@
             kendoWindow = $(dialogId).html("<div class='bounce bounce1'></div><div class='bounce bounce2'></div><div class='bounce bounce3'></div>").kendoWindow({
                 modal: true,
                 title: theOptions.title,
-                resizable: false,
+                resizable: true,
                 draggable: true,
                 scrollable: false,
                 visible: false,
                 navigatable: true,
+                actions: [
+                    "Maximize",
+                    "Close"
+                ],
                 width: finderWidth,
                 height: finderHeight,
                 activate: sg.utls.kndoUI.onActivate,
-                //Open Kendo Window in center of the Viewport
                 open: function () {
-                    var sameOrigin = sg.utls.isSameOrigin();
-                    if (sameOrigin) {
-                        var portalHeight = window.top.sg.utls.portalHeight;
-                        var windowHeight = $(window.top).scrollTop() - portalHeight;
-                        var finderTopPos = (($(window.top).height() - kendoWindow.options.height) / 2) + windowHeight;
-                        if (finderTopPos < 0) {
-                            finderTopPos = 0;
+                    if (!this.options.isMaximized) {
+                        //Open Kendo Window in center of the Viewport
+                        var sameOrigin = sg.utls.isSameOrigin();
+                        if (sameOrigin) {
+                            var portalHeight = window.top.sg.utls.portalHeight;
+                            var windowHeight = $(window.top).scrollTop() - portalHeight;
+                            var finderTopPos = (($(window.top).height() - kendoWindow.options.height) / 2) + windowHeight;
+                            if (finderTopPos < 0) {
+                                finderTopPos = 0;
+                            }
+                            if (top) {
+                                finderTopPos = top;
+                            }
+                        } else {
+                            finderTopPos = 20;
                         }
-                        if (top) {
-                            finderTopPos = top;
-                        }
-                    } else {
-                        finderTopPos = 20;
-                    }
 
-                    this.wrapper.css({ top: finderTopPos });
-                    this.wrapper.css({ left: finderLeftPos });
+                        this.wrapper.css({ top: finderTopPos });
+                        this.wrapper.css({ left: finderLeftPos });
+                    }
 
                     // For custom theme color
                     sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
-                },
+                }
             }).data("kendoWindow");
 
             //Close Event -Do same as cancel
@@ -468,6 +481,26 @@
                 }
                 sg.utls.isFinderClicked = false;
                 sg.findEvent = null;
+            });
+            kendoWindow.resizing._draggable.userEvents.bind("release", function () {
+                that._resizeFinderGrid(that);
+            });
+            kendoWindow.bind("maximize", function (e) {
+                //Set popup height to be less than the browser height
+                const bodyHeight = window.outerHeight - 190;
+                if (bodyHeight < e.sender.wrapper.height()) {
+                    e.sender.wrapper.height(bodyHeight);
+                }
+                ViewFinderGridHelper.finderOptions.SavePreferenceType = sg.viewFinderHelper.savePreferenceType.Maximize;
+                ViewFinderGridHelper.finderOptions.isMaximized = true;
+                that._resizeFinderGrid(that);
+                ViewFinderGridHelper.finderOptions.SavePreferenceType = sg.viewFinderHelper.savePreferenceType.None;
+            });
+            kendoWindow.bind("restore", function (e) {
+                ViewFinderGridHelper.finderOptions.SavePreferenceType = sg.viewFinderHelper.savePreferenceType.Maximize;
+                ViewFinderGridHelper.finderOptions.isMaximized = false;
+                that._resizeFinderGrid(that);
+                ViewFinderGridHelper.finderOptions.SavePreferenceType = sg.viewFinderHelper.savePreferenceType.None;
             });
 
             $(dialogId).parent().addClass("finder-window");
@@ -499,6 +532,12 @@
                 var $titleSpan = kendoWindow.wrapper.find('.k-window-title');
                 $titleSpan.html(finderTitle);
                 kendoWindow.open();
+                // Maximize needs to happen after open is done to calculate the grid height
+                setTimeout(function () {
+                    if (isMaximized) {
+                        kendoWindow.maximize();
+                    }
+                }, 500);
 
                 $(document)
                     .on('click.plugin.finderPref',
@@ -567,22 +606,19 @@
                             that._getSelectedRow(that);
                         });
             } else {
-                kendoWindow.destroy()
+                kendoWindow.destroy();
                 sg.utls.isFinderClicked = false;
             }
         },
 
-        _reload: function (that, deleteUserPreference) {
+        _reload: function (that, restoreColumnPreference) {
             var options = sg.finderOptions;
-            options.CanSavePreferences = options.CanDeletePreferences = false;
 
-            if (deleteUserPreference) {
-                options.CanDeletePreferences = true;
-            } else {
-                options.CanSavePreferences = true;
-                options.ColumnPreferences = FinderPreferences.GetSelectedColumns();
-            }
+            options.SavePreferenceType = sg.viewFinderHelper.savePreferenceType.ColumnPreference;
+            options.ColumnPreferences = restoreColumnPreference ? null : FinderPreferences.GetSelectedColumns();
+
             that._reloadFinder(that, options);
+            options.SavePreferenceType = sg.viewFinderHelper.savePreferenceType.None;
         },
 
         _reloadFinder: function (that, options) {
@@ -601,7 +637,10 @@
                     sg.delayVariables.RowData.set(sg.delayVariables.ColumnName, "");
                     sg.delayVariables.RowData.set(sg.delayVariables.ColumnName, data);
                 }
-                if (sg.delayVariables.TextBoxElement) {
+                // Note: The second condition was added due to the delay on change
+                //       function causing an asynchronous issue where the cancelFuncCall
+                //       would be set after being reset later in this function.
+                if (sg.delayVariables.TextBoxElement && sg.viewFinderHelper.cancelFuncCall === $.noop) {
                     sg.delayVariables.TextBoxElement.change();
                 }
             }
@@ -700,6 +739,34 @@
             } else {
                 finderElement[0].focus();
             }
+        },
+        _resizeFinderGrid: function (that) {
+            const divFinder = $("#" + that.divFinderDialogId),
+                otherElements = divFinder.children().not(".clear-fix");
+            let otherElementsHeight = 0;
+            otherElements.each(function () {
+                otherElementsHeight += $(this).is(":visible") ? $(this).outerHeight() : 0;
+            });
+            const grid = $("#div_finder_grid");
+            const wrapperHeight = divFinder.height() - otherElementsHeight;
+            grid.parent().height(wrapperHeight);
+            const headerHeight = grid.find(".k-grid-header").height();
+            const contentHeight = wrapperHeight - headerHeight;
+            grid.find(".k-grid-content").height(contentHeight);
+            let rowHeight = 30;
+            const formSize = $(document).children("HTML").attr(sg.utls.localFormSizeDataTag);
+            switch (formSize) {
+                case "large": rowHeight = 30; break;
+                case "medium":
+                case "small": rowHeight = 25; break;
+            }
+            let gridData = grid.data("kendoGrid");
+            ViewFinderGridHelper.finderOptions.record = ViewFinderGridHelper._getRecordKeyValues(gridData, true);
+            ViewFinderGridHelper.finderOptions.isBackward = false;
+            ViewFinderGridHelper.finderOptions.isResize = true;
+            ViewFinderGridHelper.finderOptions.PageSize = Math.floor(contentHeight / rowHeight);
+            ViewFinderGridHelper.RefreshFinderGrid(gridData);
+            ViewFinderGridHelper.finderOptions.isResize = false;
         }
     });
 

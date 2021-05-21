@@ -199,6 +199,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Menu Item for Time </summary>
         private readonly MenuItem _timeMenuItem = new MenuItem() { Text = Resources.TimeOnly, Tag = Constants.WidgetDateTime };
 
+        /// <summary> Menu Item for Textbox </summary>
+        private readonly MenuItem _textboxMenuItem = new MenuItem() { Text = Resources.Textbox, Tag = Constants.WidgetTextbox };
+
+        /// <summary> Menu Item for Finder </summary>
+        private readonly MenuItem _finderMenuItem = new MenuItem() { Text = Resources.FinderTab, Tag = Constants.WidgetFinder };
+
+
         /// <summary> Map from unique finder name finder detail info </summary>
         private IDictionary<string, dynamic> _finderLookup = new SortedDictionary<string, dynamic>();
 
@@ -1246,6 +1253,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _dropDownMenuItem.Click += LayoutMenuItemOnClick;
             _radioButtonsMenuItem.Click += LayoutMenuItemOnClick;
             _timeMenuItem.Click += LayoutMenuItemOnClick;
+            _textboxMenuItem.Click += LayoutMenuItemOnClick;
+            _finderMenuItem.Click += LayoutMenuItemOnClick;
 
             // Check box for all compositions
             _allCompositions = new CheckBox
@@ -1258,7 +1267,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             cboRepositoryType.SelectedIndex = Convert.ToInt32(RepositoryType.Flat);
 
             // UI Finder button allows checked behavior
-            btnFinder.CheckOnClick = true;
             txtFinderPropFile.ReadOnly = true;
             pnlFinder.Enabled = false;
             pnlHamburger.Enabled = false;
@@ -2039,7 +2047,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void LayoutMenuItemOnClick(object sender, EventArgs eventArgs)
         {
             var widget = ((MenuItem)sender).Tag.ToString();
-            _controlsList[_selectedControl.Name].Widget = ((MenuItem)sender).Tag.ToString();
+            _controlsList[_selectedControl.Name].Widget = widget;
 
             // Time Only
             if (widget == Constants.WidgetDateTime)
@@ -2048,6 +2056,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var newValue = !_controlsList[_selectedControl.Name].BusinessField.IsTimeOnly;
                 _controlsList[_selectedControl.Name].BusinessField.IsTimeOnly = newValue;
             }
+
+            // Textbox or Finder
+            if (widget == Constants.WidgetTextbox || widget == Constants.WidgetFinder)
+            {
+                // Set the correct values
+                SetFinderRelatedValues(_controlsList[_selectedControl.Name]);
+                InitProperties(_selectedControl);
+            }
+
         }
 
         /// <summary> Create palette </summary>
@@ -2490,13 +2507,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             // Init properties of clicked widget
             InitProperties((Control)sender);
-            ResetFinderRelatedValues();
 
             // Determine if context menu is requested for a label (business property)
             if (sender.GetType() == typeof(Label))
             {
                 // Determine type of widget for business property
                 var controlinfo = GetControlInfo(_selectedControl.Name);
+
+                // Set Finder
+                SetFinderRelatedValues(controlinfo);
 
                 // Set the border color since the selection of a label (property)
                 // does not select the cell
@@ -2540,8 +2559,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
                 else if (controlinfo.Widget == Constants.WidgetFinder || controlinfo.Widget == Constants.WidgetTextbox)
                 {
-                    SetFinderRelatedValues(controlinfo);
+                    var mouseEventArgs = (MouseEventArgs)e;
+                    if (mouseEventArgs != null && mouseEventArgs.Button == MouseButtons.Right)
+                    {
+                        // Clear, build, and show context menu
+                        _contextMenu.MenuItems.Clear();
+
+                        _textboxMenuItem.Checked = controlinfo.Widget == Constants.WidgetTextbox;
+                        _finderMenuItem.Checked = controlinfo.Widget == Constants.WidgetFinder;
+
+                        _contextMenu.MenuItems.Add(_textboxMenuItem);
+                        _contextMenu.MenuItems.Add(_finderMenuItem);
+
+                        SetFinderRelatedValues(controlinfo);
+
+                        _contextMenu.Show((Control)sender, mouseEventArgs.Location);
+                    }
+
                 }
+            }
+            else
+            {
+                ResetFinderRelatedValues(false);
             }
         }
 
@@ -3516,7 +3555,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 AssignEvents();
                 InitProperties(null);
-                ResetFinderRelatedValues();
+                ResetFinderRelatedValues(false);
             }
         }
 
@@ -3617,36 +3656,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             // Add to controls element
                             formGroupControlsElement.Add(controlElement);
 
-                            // If a drop down/date/checkbox/radio/numeric/time button widget, then add to the list of controls
+                            // If a certain widget, then add to the list of controls
+                            string[] widgetTypes = { "Dropdown", "DateTime", "Time", "Checkbox", 
+                                "RadioButtons", "Numeric", "Textbox", "Finder" };
                             key = string.Empty;
-                            if (controlInfo.Widget.Equals(Constants.WidgetDropDown))
+                            if (widgetTypes.Contains(controlInfo.Widget))
                             {
-                                key = Constants.WidgetDropDown;
-                            }
-                            // If a date widget, then add to the list of date controls
-                            else if (controlInfo.Widget.Equals(Constants.WidgetDateTime))
-                            {
-                                key = Constants.WidgetDateTime;
-                            }
-                            // If a checkbox widget, then add to the list of checkbox controls
-                            else if (controlInfo.Widget.Equals(Constants.WidgetCheckbox))
-                            {
-                                key = Constants.WidgetCheckbox;
-                            }
-                            // If a radio buttons widget, then add to the list of radio buttons controls
-                            else if (controlInfo.Widget.Equals(Constants.WidgetRadioButtons))
-                            {
-                                key = Constants.WidgetRadioButtons;
-                            }
-                            // If a numeric widget, then add to the list of numeric controls
-                            else if (controlInfo.Widget.Equals(Constants.WidgetNumeric))
-                            {
-                                key = Constants.WidgetNumeric;
-                            }
-                            // If a numeric widget, then add to the list of numeric controls
-                            else if (controlInfo.Widget.Equals(Constants.WidgetTime))
-                            {
-                                key = Constants.WidgetTime;
+                                key = controlInfo.Widget;
                             }
 
                             // Add to dictionary?
@@ -3818,7 +3834,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             else
             {
                 InitProperties(null);
-                ResetFinderRelatedValues();
+                ResetFinderRelatedValues(false);
             }
         }
 
@@ -5391,7 +5407,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _controlType = ControlType.None;
             _selectedControl = null;
             InitProperties(null);
-            ResetFinderRelatedValues();
+            ResetFinderRelatedValues(false);
         }
 
         /// <summary>
@@ -5478,10 +5494,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary>
         /// Reset Finder values
         /// </summary>
-        private void ResetFinderRelatedValues()
+        /// <param name="isFinder">true if finder otherwise false</param>
+        private void ResetFinderRelatedValues(bool isFinder)
         {
-            btnFinder.Checked = false;
-            btnFinder.Enabled = false;
+            FinderSelected(isFinder);
         }
 
         /// <summary>
@@ -5490,11 +5506,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="controlinfo">Control Info</param>
         private void SetFinderRelatedValues(ControlInfo controlinfo)
         {
-            btnFinder.Enabled = controlinfo.Widget == Constants.WidgetFinder || controlinfo.Widget == Constants.WidgetTextbox;
-            btnFinder.Checked = controlinfo.Widget == Constants.WidgetFinder;
-
-            if (btnFinder.Checked)
+            // Set finder values
+            if (controlinfo.Widget == Constants.WidgetFinder)
             {
+                FinderSelected(true);
+
                 if (controlinfo != null)
                 {
                     string fileName = controlinfo.FinderFileName;
@@ -5534,8 +5550,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     }
                 }
             }
-
+            else
+            {
+                FinderSelected(false);
+            }
         }
+
         /// <summary>
         /// Finder selection change event
         /// </summary>
@@ -5599,20 +5619,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Finder checkbox/button
+        /// Finder checked
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnFinder_CheckedChanged(object sender, EventArgs e)
+        /// <param name="isFinder">true if finder otherwise false</param>
+        private void FinderSelected(bool isFinder)
         {
-            var isChecked = btnFinder.Checked;
+            // Enable/disable tabs
+            pnlFinder.Enabled = isFinder;
+            pnlHamburger.Enabled = isFinder;
 
-            // Enable/disable tabs based upon checked
-            pnlFinder.Enabled = isChecked;
-            pnlHamburger.Enabled = isChecked;
-
-            // If not checked, need to ...
-            if (!isChecked)
+            // If not a finder, need to ...
+            if (!isFinder)
             {
                 // Clear fields
                 txtFinderPropFile.Text = string.Empty;
@@ -5637,11 +5654,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         }
                     }
                 }
-
             }
             else
             {
-                tabUI.SelectTab(1); // Select Finder tab page
+                // tabUI.SelectTab(1); // Select Finder tab page
             }
         }
 
@@ -5658,6 +5674,5 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 controlInfo.FinderDisplayField = (string)cboFinderDisplay.SelectedValue;
             }
         }
-
     }
 }

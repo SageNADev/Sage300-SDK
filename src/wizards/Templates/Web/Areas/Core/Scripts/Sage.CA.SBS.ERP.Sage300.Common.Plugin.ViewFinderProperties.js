@@ -82,7 +82,7 @@
                 viewID: "AP0015",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["VENDORID", "VENDNAME", "SHORTNAME", "RATETYPE"],
+                returnFieldNames: ["VENDORID", "VENDNAME", "SHORTNAME", "RATETYPE", "CURNCODE", "NAMECTAC"],
                 displayFieldNames: ["VENDORID", "VENDNAME", "SWACTV", "IDGRP", "CURNCODE", "SHORTNAME",
                                     "SWHOLD", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4",
                                     "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2"]
@@ -364,6 +364,14 @@
         },
 
         AR: {
+            DunningMessages: {
+                viewID: "AR0008",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["CODESTMT", "ACTIVESW"],
+                displayFieldNames: ["CODESTMT", "TEXTDESC", "ACTIVESW"]
+            },
+
             ItemPricing: {
                 viewID: "AR0009",
                 viewOrder: 0,
@@ -409,7 +417,7 @@
                 viewID: "AR0015",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["IDDIST"],
+                returnFieldNames: ["IDDIST", "SWACTV"],
                 displayFieldNames: ["IDDIST", "TEXTDESC", "SWACTV", "IDACCTREV", "IDACCTINV", "IDACCTCOGS"],
             },
 
@@ -446,6 +454,13 @@
                 filterTemplate: "IDCUST = \"{0}\""
             },
 
+            ShipToLocationForCustomerNumber: {
+                viewID: "AR0023",
+                viewOrder: 0,
+                returnFieldNames: ["IDCUST"],
+                displayFieldNames: ["IDCUST", "IDCUSTSHPT", "SWACTV", "NAMELOCN"]
+            },
+
             Customers: {
                 url: ["AR", "CustomerViewFinder", "Find"],
                 viewID: "AR0024",
@@ -467,6 +482,15 @@
                 displayFieldNames: ["IDCUST", "TEXTSNAM", "NAMECUST", "SWACTV", "SWHOLD", "IDGRP", "IDNATACCT", "SWBALFWD", "CODECURN",
                     "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4", "NAMECITY", "CODESTTE",
                     "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2", "NAMECTAC", "PRICLIST"]
+            },
+
+            ShortNameCustomers: {
+                url: ["AR", "CustomerViewFinder", "Find"],
+                viewID: "AR0024",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["TEXTSNAM"],
+                displayFieldNames: ["TEXTSNAM", "IDCUST", "NAMECUST", "IDGRP", "IDNATACCT", "CODECURN", "NAMECTAC"]
             },
 
             CustomerGroups: {
@@ -687,11 +711,33 @@
             ReceiptAdjustmentHeader: {
                 viewID: "AR0042",
                 viewOrder: 0,
-                parentValAsInitKey: false,
                 returnFieldNames: ["CNTITEM"],
                 displayFieldNames: ["CNTITEM", "DOCNBR", "IDRMIT", "IDCUST", "DATERMIT",
                     "TEXTRMIT", "TEXTPAYOR", "AMTRMIT"],
                 filterTemplate: "CNTBTCH = \"{0}\" AND  CODEPYMTYP = \"{1}\" "
+            },
+
+            ReceiptAdjustmentsForCheckReceiptNumber: {
+                viewID: "AR0042",
+                viewOrder: 2,
+                returnFieldNames: ["IDRMIT"],
+                displayFieldNames: ["IDRMIT", "IDCUST", "CNTBTCH", "CNTITEM", "DOCNBR", "SWPRINTED"],
+                filterTemplate: "CODEPYMTYP = \"{0}\" AND RMITTYPE != \"4\" AND (ERRBATCH = 0 and ERRENTRY = 0)"
+            },
+
+            ReceiptAdjustmentsForDocumentNumber: {
+                viewID: "AR0042",
+                viewOrder: 3,
+                returnFieldNames: ["DOCNBR"],
+                displayFieldNames: ["DOCNBR", "IDCUST", "CNTBTCH", "CNTITEM", "IDRMIT", "SWPRINTED"],
+                filterTemplate: "CODEPYMTYP = \"{0}\" AND RMITTYPE != \"4\" AND (ERRBATCH = 0 and ERRENTRY = 0)"
+            },
+
+            RecurringCharge: {
+                viewID: "AR0046",
+                viewOrder: 0,
+                returnFieldNames: ["IDSTDINVC", "IDCUST"],
+                displayFieldNames: ["IDSTDINVC", "IDCUST", "TEXTDESC", "SCHEDKEY", "SWACTV"]
             },
 
             CommentTypes: {
@@ -699,7 +745,46 @@
                 viewOrder: 0,
                 parentValAsInitKey: true,
                 returnFieldNames: ["CMNTTYPE"],
-                displayFieldNames: ["CMNTTYPE", "TEXTDESC", "ACTVSW", "ACTVSW"]
+                displayFieldNames: ["CMNTTYPE", "TEXTDESC", "ACTVSW"]
+            },
+
+            ReprintStatementRunDate: {
+                viewID: "AR0110",
+                viewOrder: 1,
+                returnFieldNames: ["STMTDATE"],
+                displayFieldNames: ["STMTDATE", "DATECUTOFF", "SWTYPERUN", "SWFINISH", "DELMETHOD", "SWDEBIT", "SWCREDIT",
+                                    "SWZEROBAL", "SWINCLPAID"]
+            },
+
+            ReprintStatementCustomersByStatements: {
+                viewID: "AR0111",
+                viewOrder: 1,
+                returnFieldNames: ["IDCUST"],
+                displayFieldNames: ["IDCUST", "STMTDATE", "SWPRINTED"]
+            },
+
+            ReprintStatementNATCustomersByRunDate: {
+                viewID: "AR0114",
+                viewOrder: 1,
+                returnFieldNames: ["IDNATACCT"],
+                displayFieldNames: ["IDNATACCT", "STMTDATE", "SWPRINTED"]
+            },
+
+            EmailMessages: {
+                viewID: "AR0120",
+                viewOrder: 0,
+                returnFieldNames: ["MSGTYPE", "MSGID", "ACTIVESW"],
+                displayFieldNames: ["MSGTYPE", "MSGID", "TEXTDESC", "SUBJECT", "BODY"]
+            },
+
+            ARDocuments: {
+                viewID: "AR0130",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["IDINVC"],
+                displayFieldNames: ["IDINVC", "IDCUST", "TRXTYPETXT", "CNTBTCH", "CNTITEM", "IDRMIT", "IDORDERNBR",
+                                    "IDCUSTPO", "DATEDUE", "TRXTYPEID", "DESCINVC", "DATEINVC", "CODETERM", "DATEDISC",
+                                    "SWPAID", "IDPREPAID"]
             },
 
             PaymentsDocumentNumber: {
@@ -775,6 +860,14 @@
                 filterTemplate: "RTGAMTHC != \"{0}\" AND IDINVC = \"{1}\""
             },
 
+            PostingJournals: {
+                viewID: "AR0409",
+                viewOrder: 0,
+                returnFieldNames: ["POSTSEQNCE"],
+                displayFieldNames: ["POSTSEQNCE", "DATEPOSTED", "DATEBUS", "SWPRINTED", "SWPOSTGL", "DATEPOSTGL"],
+                filterTemplate: "TYPEBTCH = \"{0}\""
+            },
+
             OptionalFields: {
                 viewID: "AR0500",
                 viewOrder: 0,
@@ -786,15 +879,20 @@
         }, 
 
         AS: {
+            SecurityGroups: {
+                viewID: "AS0001",
+                viewOrder: 0,
+                returnFieldNames: ["PROFILEID", "PROFDESC"],
+                displayFieldNames: ["PROFILEID", "PROFDESC"],
+                filterTemplate: "(PGMID = \"{0}\" AND PGMVER = \"{1}\" AND RESOURCEID = \" \" )"
+            },
+
             Users: {
                 viewID: "AS0003",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                calculatePageCount: false,
-                returnFieldNames: ["USERID"],
+                returnFieldNames: ["USERID", "USERNAME"],
                 displayFieldNames: ["USERID", "USERNAME", "EMAIL1", "LANGUAGE"],
-                filter: null,
-                initKeyValues: []
             },
 
             GLAccountUsers: {
@@ -804,6 +902,14 @@
                 returnFieldNames: ["USERID"],
                 displayFieldNames: ["USERID", "USERNAME", "ACCTSTATUS", "ACCTTYPE"],
                 filter: "USERID != \"ADMIN\" AND ACCTTYPE = 0"
+            },
+
+            UIProfileHeaders: {
+                viewID: "AS0005",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["PROFILEID"],
+                displayFieldNames: ["PROFILEID", "PROFDESC"],
             }
         },
 
@@ -819,13 +925,32 @@
                     "BKACCT", "IDACCTERR", "LSTMNTND"]
             },
 
+            BanksWithMultiCurrency: {
+                url: ["CS", "BankViewFinder", "Find"],
+                viewID: "BK0001",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["BANK", "MULTICUR", "NAME", "CURNSTMT", "INACTIVE", "BKACCT"],
+                displayFieldNames: ["BANK", "NAME", "CURNSTMT", "ADDR1", "ADDR2", "ADDR3", "ADDR4", "CITY", "STATE",
+                    "COUNTRY", "POSTAL", "CONTACT", "PHONE", "FAX", "TRANSIT", "MULTICUR", "INACTIVE", "INACTDATE", "IDACCT",
+                    "BKACCT", "IDACCTERR", "IDACCTCCC", "LSTMNTND"]
+            },
+
             BankCurrency: {
                 viewID: "BK0002",
                 viewOrder: 0,
                 parentValAsInitKey: false,
-                returnFieldNames: ["CURN"],
+                returnFieldNames: ["CURN", "CURDESC"],
                 displayFieldNames: ["CURN", "RTYPCHK", "RTYPDEP", "GAINACCT", "LOSSACCT"],
                 filterTemplate: "BANK = \"{0}\""
+            },
+
+            BankDistributionCodes: {
+                viewID: "BK0003",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["TYPE", "DESC", "ACCT", "INACTIVE"],
+                displayFieldNames: ["TYPE", "DESC", "ACCT", "INACTIVE", "INACTDATE","LSTMNTND"]
             },
 
             CheckStocks: {
@@ -837,12 +962,67 @@
                 filterTemplate: "BANK = \"{0}\" AND STKTYPE != 2"
             },
 
-            BankEntry: {
+            BankPostingJournal: {
+                viewID: "BK0020",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["PSTSEQ"],
+                displayFieldNames: ["PSTSEQ", "FROMBANK", "TOBANK", "POSTDATE", "POSTUSER", "PRINTED"]
+            },
+
+            CreditCardTypes: {
+                viewID: "BK0240",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["CCTYPE"],
+                displayFieldNames: ["CCTYPE", "DESC", "INACTIVE", "LASTMAINT", "INACTDATE"]
+            },
+
+            BankEntriesHeaderBySequenceNumber: {
+                url: ["CS", "BankEntriesHeaderViewFinder", "Find"],
+                viewID: "BK0450",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["SEQUENCENO"],
+                displayFieldNames: ["SEQUENCENO", "ENTRYNBR", "BANK", "TOTSRCEGRO", "TOTFUNCGRO", "POSTDATE", "TRANSTYPE", "STATUS"]
+            },
+
+            BankEntriesHeader: {
+                url: ["CS", "BankEntriesHeaderViewFinder", "Find"],
                 viewID: "BK0450",
                 viewOrder: 1,
                 parentValAsInitKey: true,
                 returnFieldNames: ["ENTRYNBR"],
                 displayFieldNames: ["ENTRYNBR", "REFERENCE", "BANK", "TOTSRCEGRO", "TOTFUNCGRO", "STATUS", "POSTDATE", "TRANSTYPE"]
+            },
+
+            BankDistributionSetHeader: {
+                viewID: "BK0445",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["DSETCODE"],
+                displayFieldNames: ["DSETCODE", "DESC", "DISTCUR", "INACTIVE", "INACTDATE", "LSTMNTND"]
+            },
+
+            BankTransactionDetailsByRemittanceID: {
+                viewID: "BK0840",
+                viewOrder: 6,
+                returnFieldNames: ["IDREMIT", "SERIAL", "LINE"],
+                displayFieldNames: ["IDREMIT", "PAYORID", "PAYORNAME", "DATEREMIT", "FUNCAMOUNT", "BTCHNBR", "ENTRYNBR",
+                    "SRCECURN", "SRCEAMOUNT", "RECOUTSTND", "VENDORNAME", "PAYMCODE", "COMMENT", "SRCEAPP", "CHKFORM",
+                    "SRCEDOCNUM"],
+                filterTemplate: "BANK = \"{0}\" AND SRCEAPP = \"{1}\" AND TRANSTYPE = {2} AND ENTRYTYPE = {3} AND STATUS = {4}"
+            },
+
+            BankTransactionDetails: {
+                viewID: "BK0840",
+                viewOrder: 7,
+                parentValAsInitKey: false,
+                returnFieldNames: ["IDREMIT", "SERIAL", "LINE"],
+                displayFieldNames: ["IDREMIT", "PAYORID", "PAYORNAME", "DATEREMIT", "FUNCAMOUNT",
+                    "BTCHNBR", "ENTRYNBR", "RECOUTSTND", "VENDORNAME", "PAYMCODE", "COMMENT",
+                    "SRCEAPP", "CHKFORM", "SRCEDOCNUM"],
+                filterTemplate: "BANK = \"{0}\" AND SRCEAPP = \"{1}\" AND TRANSTYPE = {2} AND ENTRYTYPE = {3} AND STATUS = {4}"
             },
 
             BankTransactionHeader: {
@@ -862,12 +1042,20 @@
                 viewID: "CS0002",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["FSCYEAR"],
+                returnFieldNames: ["FSCYEAR", "PERIODS"],
                 displayFieldNames: ["FSCYEAR", "PERIODS", "QTR4PERD", "ACTIVE", "BGNDATE1", "BGNDATE2", "BGNDATE3",
                     "BGNDATE4", "BGNDATE5", "BGNDATE6", "BGNDATE7", "BGNDATE8", "BGNDATE9",
                     "BGNDATE10", "BGNDATE11", "BGNDATE12", "BGNDATE13",
                     "ENDDATE1", "ENDDATE2", "ENDDATE3", "ENDDATE4", "ENDDATE5", "ENDDATE6",
                     "ENDDATE7", "ENDDATE8", "ENDDATE9", "ENDDATE10", "ENDDATE11", "ENDDATE12", "ENDDATE13"],
+            },
+
+            FiscalCalendarsWithMinimalDetails: {
+                viewID: "CS0002",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["FSCYEAR"],
+                displayFieldNames: ["FSCYEAR", "PERIODS", "ACTIVE"]
             },
 
             AccountSetCurrencyCodes: {
@@ -900,6 +1088,13 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["RATETYPE", "RATEDESC"],
                 displayFieldNames: ["RATETYPE", "RATEDESC"]
+            },
+
+            CurrencyTable: {
+                viewID: "CS0005",
+                viewOrder: 0,
+                returnFieldNames: ["HOMECUR", "RATETYPE"],
+                displayFieldNames: ["HOMECUR", "RATETYPE", "TABLEDESC", "DATEMATCH", "RATEOPER", "RATESRCE"]
             },
 
             CurrencyRate: {
@@ -957,7 +1152,7 @@
 
             IntegerOptionalFieldValue: {
                 viewID: "CS0012",
-                viewOrder: 1,
+                viewOrder: 0,
                 parentValAsInitKey: false,
                 returnFieldNames: ["VALUE", "TYPE", "VALIFLONG", "VDESC"],
                 displayFieldNames: ["VALIFLONG", "VDESC"],
@@ -999,6 +1194,13 @@
                 displayFieldNames: ["SCHEDKEY", "SCHEDDESC"]
             },
 
+            SchedulesWithDetails: {
+                viewID: "CS0030",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["SCHEDKEY", "SCHEDDESC", "FILTERDATE"],
+            },
+
             BankCurrency: {
                 viewID: "BK0002",
                 viewOrder: 0,
@@ -1023,9 +1225,27 @@
                 viewID: "GL0001",
                 viewOrder: 0,
                 parentValAsInitKey: true, 
-                returnFieldNames: ["ACCTFMTTD", "ACCTDESC", "MCSW", "ACCTID", "ACTIVESW"],
+                returnFieldNames: ["ACCTFMTTD", "ACCTDESC", "MCSW", "ACCTID", "ACTIVESW", "ACCTGRPCOD", "CONSLDSW", "ROLLUPSW",
+                                    "ACCTTYPE", "ACCTBAL", "ACCTSEGVAL"],
                 displayFieldNames: ["ACCTID", "ACCTFMTTD", "ACCTDESC", "ACTIVESW", "ACCTTYPE", "ABRKID", "CTRLACCTSW", "ALLOCSW",
                                     "MCSW", "QTYSW", "UOM"]
+            },
+
+            SegmentCodeSortedOnAccount: {
+                url: ["GL", "AccountViewFinder", "Find"],
+                viewID: "GL0001",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["ACCTSEGVAL", "ACCTID", "ACCTFMTTD", "ACSEGVAL01"],
+                displayFieldNames: ["ACSEGVAL01", "ACCTFMTTD", "ACCTDESC"]
+            },
+
+            AccountsForSegmentCode: {
+                url: ["GL", "AccountViewFinder", "Find"],
+                viewID: "GL0001",
+                viewOrder: 2,
+                returnFieldNames: ["ACCTSEGVAL", "ACCTID", "ACCTFMTTD", "ACSEGVAL01"],
+                displayFieldNames: ["ACSEGVAL01", "ACCTFMTTD", "ACCTDESC", "ACTIVESW", "MCSW"]
             },
 
             MainAccountSegment: {
@@ -1089,6 +1309,13 @@
                 displayFieldNames: ["SRCEJRNL"]
             },
 
+            RevaluationCodes: {
+                viewID: "GL0020",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["RVALID"],
+                displayFieldNames: ["RVALID", "DESC"]
+            },
 
             SegmentCodes: {
                 viewID: "GL0021",
@@ -1098,12 +1325,58 @@
                 filterTemplate: "IDSEG = \"{0}\""
             },
 
+            StructureCodes: {
+                viewID: "GL0023",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["ACCTBRKID", "ABRKDESC"],
+                displayFieldNames: ["ACCTBRKID", "ABRKDESC"]
+            },
+
+            RecurringJournalHeaders: {
+                viewID: "GL0041",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["RECID"],
+                displayFieldNames: ["RECID", "RECDESC", "SCHEDKEY", "SWACTIVE"]
+            },
+
+            PreviewAccounts: {
+                viewID: "GL0046",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["ACCTFMTTD", "ACCTDESC", "ACCTID"],
+                displayFieldNames: ["ACCTID", "ACCTFMTTD", "ACCTDESC", "ACTIVESW", "ACCTTYPE", "CTRLACCTSW", "MCSW", "QTYSW", "UOM"]
+            },
+
+            PreviewAccountsWithAccountKey: {
+                viewID: "GL0046",
+                viewOrder: 2,
+                returnFieldNames: ["ACCTFMTTD", "ACCTDESC", "ACCTID", "ACCTSEGVAL", "ACSEGVAL01"],
+                displayFieldNames: ["ACSEGVAL01", "ACCTFMTTD", "ACCTDESC", "ACTIVESW", "MCSW"]
+            },
+
             Users: {
                 viewID: "GL0054",
                 viewOrder: 0,
                 parentValAsInitKey: true,
                 returnFieldNames: ["USER"],
                 displayFieldNames: ["USER", "NAME"]
+            },
+
+            AccountGroups: {
+                viewID: "GL0055",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["ACCTGRPCOD", "SORTCODE"],
+                displayFieldNames: ["ACCTGRPCOD", "SORTCODE", "ACCTGRPDES", "GRPCOD"]
+            },
+
+            AccountGroupsSorted: {
+                viewID: "GL0055",
+                viewOrder: 1,
+                returnFieldNames: ["SORTCODE","ACCTGRPCOD"],
+                displayFieldNames: ["SORTCODE", "ACCTGRPCOD", "ACCTGRPDES", "GRPCOD"]
             },
 
             AccountTransactionOptionalFields: {
@@ -1125,6 +1398,14 @@
         },
 
         IC: {
+            AccountSet: {
+                viewID: "IC0100",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["CNTLACCT"],
+                displayFieldNames: ["CNTLACCT", "DESC", "INACTIVE", "COSTMETHOD"]
+            },
+
             AdjustmentHeader: {
                 viewID: "IC0120",
                 viewOrder: 3,
@@ -1172,7 +1453,7 @@
                 viewID: "IC0305",
                 viewOrder: 1,
                 parentValAsInitKey: false,
-                returnFieldNames: ["MANITEMNO", "ITEMNO", "FMTITEMNO", "ITEMDESC"],
+                returnFieldNames: ["MANITEMNO", "ITEMNO", "FMTITEMNO", "ITEMDESC", "UNIT"],
                 displayFieldNames: ["MANITEMNO", "FMTITEMNO", "UNIT", "ITEMDESC"],
                 filterTemplate: "MANITEMNO = \"{0}\""
             },
@@ -1181,7 +1462,7 @@
                 viewID: "IC0310",
                 viewOrder: 0,
                 parentValAsInitKey: false,
-                returnFieldNames: ["FMTITEMNO", "ITEMNO"],
+                returnFieldNames: ["FMTITEMNO", "ITEMNO", "STOCKUNIT", "DESC"],
                 displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "ITEMBRKID", "CATEGORY", "CNTLACCT", "STOCKITEM", "STOCKUNIT",
                     "PICKINGSEQ", "DEFPRICLST", "SELLABLE", "SERIALNO", "LOTITEM", "QTONHANDA", "QTONORDERA",
                     "QTSALORDRA", "QTAVAILA", "QTYCOMMITA", "PREVENDOR", "VENDITEM", "ITEMNO"]
@@ -1192,7 +1473,7 @@
                 viewID: "IC0310",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["FMTITEMNO", "ITEMNO", "COSTMETHOD", "STOCKITEM", "INACTIVE"],
+                returnFieldNames: ["FMTITEMNO", "ITEMNO", "COSTMETHOD", "STOCKITEM", "INACTIVE", "KITTING", "DESC", "STOCKUNIT", "SELLABLE", "PICKINGSEQ"],
                 displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "ITEMBRKID", "CATEGORY", "CNTLACCT", "STOCKITEM", "STOCKUNIT",
                     "PICKINGSEQ", "DEFPRICLST", "SELLABLE", "SERIALNO", "LOTITEM", "QTONHANDA", "QTONORDERA",
                     "QTSALORDRA", "QTAVAILA", "QTYCOMMITA", "PREVENDOR", "VENDITEM"]
@@ -1206,6 +1487,14 @@
                 displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "ITEMBRKID", "CATEGORY", "CNTLACCT", "STOCKITEM", "STOCKUNIT",
                     "PICKINGSEQ", "DEFPRICLST", "SELLABLE", "SERIALNO", "LOTITEM", "QTONHANDA", "QTONORDERA",
                     "QTSALORDRA", "QTAVAILA", "QTYCOMMITA", "PREVENDOR", "VENDITEM"]
+            },
+
+            ItemStructure: {
+                viewID: "IC0320",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["ITEMBRKID", "DESC"],
+                displayFieldNames: ["ITEMBRKID", "DESC"]
             },
 
             VendorItemNumbers: {
@@ -1222,7 +1511,7 @@
                 viewID: "IC0356",
                 viewOrder: 0,
                 parentValAsInitKey: false,
-                returnFieldNames: ["KITNO"],
+                returnFieldNames: ["KITNO", "FMTITEMNO", "ITEMDESC", "ITEMNO", "DESC"],
                 displayFieldNames: ["KITNO", "FMTITEMNO", "ITEMDESC", "DESC", "REMARK", "BUILDQTY", "UNIT"],
                 filterTemplate: "ITEMNO = \"{0}\" "
             },
@@ -1292,6 +1581,14 @@
                 //viewFinder.optionalFieldBindings = "IC0595, IC0377[2]";  // comment out for now as CSFND doesn't support filterCount yet
             },
 
+            SegmentCode: {
+                viewID: "IC0620",
+                viewOrder: 0,
+                returnFieldNames: ["SEGVAL", "DESC"],
+                displayFieldNames: ["SEGVAL", "DESC"],
+                filterTemplate: "SEGMENT = \"{0}\""
+            },
+
             ShipmentNumber: {
                 viewID: "IC0640",
                 viewOrder: 3,
@@ -1318,7 +1615,8 @@
                 parentValAsInitKey: false,
                 returnFieldNames: ["UNIT"],
                 displayFieldNames: ["UNIT", "CONVERSION"],
-                filterTemplate: "ITEMNO=\"{0}\""
+                filterTemplate: "ITEMNO=\"{0}\"",
+                filter: "ITEMNO=UNFMTITEM",
             },
 
             WeightUnitOfMeasure: {
@@ -1327,6 +1625,14 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["WEIGHTUNIT", "WUOMDESC"],
                 displayFieldNames: ["WEIGHTUNIT", "WUOMDESC", "CONVERSION", "DEFAULT"]
+            },
+
+            InventoryWorksheet: {
+                viewID: "IC0770",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["LOCATION"],
+                displayFieldNames: ["LOCATION", "POSTTYPE", "DESC", "COMMENT"]
             }
         },
 
@@ -1449,9 +1755,17 @@
             Contract: {
                 viewID: "PM0021",
                 viewOrder: 1,
-                returnFieldNames: ["FMTCONTNO"],
+                returnFieldNames: ["FMTCONTNO", "CONTRACT", "DESC"],
                 displayFieldNames: ["FMTCONTNO", "DESC", "CUSTOMER", "MANAGER", "STATUS", "STARTDATE", "CURENDDATE", "CLOSEDDATE"],
                 //optionalFieldBindings: "PM0850,PM0500[1]"
+            },
+
+            ContractGrid: {
+                viewID: "PM0021",
+                viewOrder: 1,
+                returnFieldNames: ["FMTCONTNO"],
+                displayFieldNames: ["FMTCONTNO", "DESC", "STATUS", "CONTBRKID", "CUSTOMER", "IDACCTSET", "MANAGER", "OPENED", "ARACCTSET"],
+                initKeyFieldNames: ["CONTRACT"],
             },
 
             Project: {
@@ -1460,10 +1774,19 @@
                 displayFieldNames: ["PROJECT", "DESC", "CUSTOMER", "IDACCTSET", "CUSTCCY", "MULTICUST", "PONUMBER", "PROJSTAT",
                     "PROJTYPE", "REVREC", "BILLTYPE", "CLOSEBILL", "CLOSECOST", "STARTDATE", "CURENDDATE", "ORJENDDATE",
                     "CLOSEDDATE", "CODETAXGRP"],
-                returnFieldNames: ["PROJECT"],
+                returnFieldNames: ["PROJECT", "DESC"],
                 /*extra*/
                 filterTemplate: "CONTRACT = \"{0}\" ",
                 //optionalFieldBindings: "PM0851,PM0500[2]"
+            },
+
+            ProjectGrid: {
+                viewID: "PM0022",
+                viewOrder: 2,
+                returnFieldNames: ["PROJECT"],
+                displayFieldNames: ["PROJECT", "DESC", "PROJSTAT", "CUSTOMER", "IDACCTSET", "CLOSECOST", "PROJTYPE", "REVREC", "BILLTYPE", "OPENED", "MULTICUST", "ARACCTSET"],
+                initKeyFieldNames: ["CONTRACT", "PROJECT"],
+                filter: "CONTRACT=CONTRACT",
             },
 
             Equipment: {
@@ -1498,19 +1821,77 @@
                 viewID: "PM0039",
                 viewOrder: 2,
                 displayFieldNames: ["CATEGORY", "DESC", "COSTTYPE", "TYPE", "BILLTYPE", "OVERHD", "LABOR"],
-                returnFieldNames: ["CATEGORY"],
+                returnFieldNames: ["CATEGORY", "DESC"],
                 /*extra*/
                 filterTemplate: "CONTRACT = \"{0}\" AND PROJECT = \"{1}\" ",
                 //optionalFieldBindings: "PM0852,PM0500[3]"
+            },
+
+            CategoryGrid: {
+                viewID: "PM0039",
+                viewOrder: 2,
+                displayFieldNames: ["CATEGORY", "DESC", "COSTTYPE", "BILLTYPE", "OVERHD", "LABOR"],
+                returnFieldNames: ["CATEGORY"],
+                initKeyFieldNames: ["CONTRACT", "PROJECT", "CATEGORY"],
+                filter: "CONTRACT=CONTRACT AND PROJECT=PROJECT",
             },
 
             Resource: {
                 viewID: "PM0121",
                 viewOrder: 3,
                 displayFieldNames: ["RESOURCE", "RESDESC"],
-                returnFieldNames: ["RESOURCE"],
+                returnFieldNames: ["RESOURCE", "RESDESC"],
                 /*extra*/
-                filterTemplate: "CONTRACT = \"{0}\" AND PROJECT = \"{1}\" AND CATEGORY = \"{2}\" "
+                filterTemplate: "CONTRACT = \"{0}\" AND PROJECT = \"{1}\" AND CATEGORY = \"{2}\" ",
+                filter: "CONTRACT=CONTRACT AND PROJECT=PROJECT AND CATEGORY=CATEGORY",
+            },
+
+            CostEntriesHeader: {
+                viewID: "PM0420",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["DOCNUM"],
+                displayFieldNames: ["DOCNUM", "DESC", "REFERENCE", "TRANSDATE", "COMPLETE"],
+            },
+
+            MaterialReturns: {
+                viewID: "PM0046",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["MATERIALNO"],
+                displayFieldNames: ["MATERIALNO", "DESC", "REFERENCE", "TRANSDATE", "COMPLETE"],
+            },
+
+            MaterialAllocationHeader: {
+                viewID: "PM0460",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["MALLOCNO"],
+                displayFieldNames: ["MALLOCNO", "DESC", "REFERENCE", "TRANSDATE", "COMPLETE"],
+            },
+
+            //MaterialAllocationItemNumber: {
+            //    viewID: "PM0460",
+            //    viewOrder: 1,
+            //    parentValAsInitKey: true,
+            //    returnFieldNames: ["MALLOCNO"],
+            //    displayFieldNames: ["MALLOCNO", "DESC", "REFERENCE", "TRANSDATE", "COMPLETE"],
+            //},
+
+            //MaterialAllocationLocation: {
+            //    viewID: "PM0460",
+            //    viewOrder: 1,
+            //    parentValAsInitKey: true,
+            //    returnFieldNames: ["MALLOCNO"],
+            //    displayFieldNames: ["MALLOCNO", "DESC", "REFERENCE", "TRANSDATE", "COMPLETE"],
+            //},
+
+            MaterialUsage: {
+                viewID: "PM0050",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["MATERIALNO"],
+                displayFieldNames: ["MATERIALNO", "DESC", "REFERENCE", "TRANSDATE", "COMPLETE"],
             }
         },
 
@@ -1719,10 +2100,10 @@
                 viewID: "TX0002",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["AUTHORITY"],
+                returnFieldNames: ["AUTHORITY", "DESC"],
                 displayFieldNames: ["AUTHORITY", "DESC", "SCURN", "MAXTAX", "MINTAX", "TXBASE",
                     "INCLUDABLE", "LIABILITY", "AUDITLEVEL", "RECOVERABL", "RATERECOV",
-                    "ACCTRECOV", "EXPSEPARTE", "ACCTEXP", "LASTMAINT"],
+                    "ACCTRECOV", "EXPSEPARTE", "ACCTEXP", "LASTMAINT"]
             },
 
             TaxGroups: {
@@ -1739,8 +2120,7 @@
                 url: ["CS", "TaxGroupViewFinder", "Find"],
                 viewID: "TX0003",
                 viewOrder: 0,
-                parentValAsInitKey: false,
-                returnFieldNames: ["GROUPID"],
+                returnFieldNames: ["GROUPID", "DESC"],
                 displayFieldNames: ["GROUPID", "DESC", "SRCCURN", "AUTHORITY1", "AUTHORITY2",
                     "AUTHORITY3", "AUTHORITY4", "AUTHORITY5", "CALCMETHOD", "LASTMAINT"],
                 filter: "TTYPE = \"1\""

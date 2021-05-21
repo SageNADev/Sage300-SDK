@@ -26,8 +26,17 @@ sg.viewList = function () {
         Delete: 5,
         MoveTo: 6,
         RefreshRow :7
+        },
+    PageByKeyTypeEnum = {
+        FirstPage: 0,
+        PreviousPage: 1,
+        NextPage: 2,
+        LastPage: 3,
+        Refresh: 4,
     },
     BtnTemplate = '<button class="btn btn-default btn-grid-control {0}" type="button" onclick="{1}" id="btn{3}{4}">{2}</button>';
+
+    var _defaultPageSize = 10;
 
     var _setDefaultRow = {},
         _lastRowNumber = {},
@@ -46,6 +55,9 @@ sg.viewList = function () {
         _selectRowUid = {},
         _skipMoveTo = {},
         _pagingRowData = {},
+        _pageByKeyType = {},
+        _refreshKey = {},
+        _showDetails = {},
         _gridList = [];
 
      /**
@@ -175,13 +187,9 @@ sg.viewList = function () {
             rowData = grid.dataItem(grid.select());
 
         if (rowData) {
-            if (!_newLine[gridName] || !rowData.isNewLine) {
-                _sendRequest(gridName, RequestTypeEnum.Update, undefined, undefined, undefined, undefined, callBack);
-                return true;
-            }
-            _sendRequest(gridName, RequestTypeEnum.Insert, undefined, undefined, undefined, undefined, callBack);
+            const type = (!_newLine[gridName] || !rowData.isNewLine) ? RequestTypeEnum.Update : RequestTypeEnum.Insert;
+            _sendRequest(gridName, type, ...Array(4), callBack);
         }
-
         return _valid[gridName];
     }
 
@@ -300,6 +308,7 @@ sg.viewList = function () {
             col.headerAttributes = { "class": attr };
             col.precision = column.Precision;
             col.hidden = column.IsHidden || false;
+            col.locked = column.Locked;
             col.presentationList = list;
             col.presentationMask = column.PresentationMask;
             col.finder = column.Finder;
@@ -339,6 +348,7 @@ sg.viewList = function () {
             }
             props.class = isA || isC || isN ? "txt-upper" : "";
             props.maxLength = number;
+            props.formattextbox = isN ? 'alphaNumeric': '';
         }
 
         return props;
@@ -374,16 +384,17 @@ sg.viewList = function () {
      */
     function _finderEditor(container, options, col, gridName) {
         var finder = col.Finder,
-            mask = col.PresentationMask,
             field = options.field,
             model = options.model,
+            mask = model.PresentationMasks[field] || col.mask,
             buttonId = "btnFinderGridCol" + field.toLowerCase(),
             maskProps = _getTextBoxProps(mask),
             className = maskProps.class,
+            formattextbox = maskProps.formattextbox,
             maxlength = col.FieldSize || maskProps.maxLength,
-            txtInput = '<div class="edit-container"><div class="edit-cell inpt-text"><input name="{0}" id="{0}" type="text" maxlength="{1}" class="{2}"/></div>',
+            txtInput = '<div class="edit-container"><div class="edit-cell inpt-text"><input name="{0}" id="{0}" type="text" maxlength="{1}" class="{2}" formattextbox="{4}"/></div>',
             txtFinder = '<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="{3}"/></div></div>',
-            html = kendo.format(txtInput + txtFinder, field, maxlength, className, buttonId);
+            html = kendo.format(txtInput + txtFinder, field, maxlength, className, buttonId, formattextbox);
        
         $(html).appendTo(container);
         finder.viewID = finder.ViewID;
@@ -392,6 +403,16 @@ sg.viewList = function () {
         finder.returnFieldNames = finder.ReturnFieldNames;
         finder.initKeyValues = [];
         finder.buttonId = buttonId;
+
+        if (finder.CustomFinderProperties) {
+            let customPropertiesFunc = _getFunction(finder.CustomFinderProperties);
+            if (typeof customPropertiesFunc === 'function') {
+                finder = customPropertiesFunc(container, options);
+            }
+            else{
+                finder = sg.utls.deepCopy(customPropertiesFunc);
+            }
+        }
 
         var refKey = col.ReferenceField;
         if (refKey) {
@@ -403,30 +424,37 @@ sg.viewList = function () {
 		})
 		
         //Finder has filter, get the filter, set finder calculatePageCount as false
-        if (finder.Filter) {
+        if (finder.filter || finder.Filter) {
             finder.filter = getFilter();
             finder.calculatePageCount = false;
         }
 
-        //Custom define filter
-        if (finder.CustomFinder) {
-            finder = _getFunction(finder.CustomFinder)(finder);
-        } 
-
         //Custom plug in for 'columnStartEdit' and 'columnEndEdit'
         _columnCallBackEdit(gridName, field);
+
+        function replaceLast(find, replace, string) {
+            var lastIndex = string.lastIndexOf(find);
+            if (lastIndex === -1) {
+                return string;
+            }
+            var beginString = string.substring(0, lastIndex);
+            var endString = string.substring(lastIndex + find.length);
+            return beginString + replace + endString;
+        }
 
         /**
          * @description Parse the filter expression, dynamically set the filter value, such as filter expression: "ITEMNO=UNFMTITMNO", the "UNFMTITMNO" should the item value like 'A11030'
          * @return {object} return the parsed filters 
          */
         function getFilter() {
-            var filters = finder.Filter.toUpperCase();
+            finder.filter = finder.Filter || finder.filter;
+            var filters = finder.filter.toUpperCase();
             var exprs = filters.split(' AND ').join(',').split(' OR ').join(',').split(',');
             exprs.forEach(function (expr) {
                 var field = expr.split('=').pop().trim();
                 if (model.hasOwnProperty(field)) {
-                    filters = filters.replace(field, model[field]);
+                    let value = col.DataType == 'Char' ? `"${model[field]}"` : model[field];
+                    filters = replaceLast(field, value, filters);
                 }
             });
             return filters;
@@ -491,11 +519,12 @@ sg.viewList = function () {
             //Set finder initial values
             _sendChange[gridName] = false;
             var value = $("#" + field).val().toUpperCase();
-            var length = finder.InitKeyFieldNames ? finder.InitKeyFieldNames.length : 0;
+            finder.initKeyFieldNames = finder.initKeyFieldNames || finder.InitKeyFieldNames;
+            var length = finder.initKeyFieldNames ? finder.initKeyFieldNames.length : 0;
             finder.initKeyValues = [];
             if (length > 0) {
                 for (var i = 0; i < length; i++) {
-                    var initField = finder.InitKeyFieldNames[i];
+                    var initField = finder.initKeyFieldNames[i];
                     var initValue = model.hasOwnProperty(initField) ? model[initField] : initField;
                     if (length === 1 || field === initField) {
                         initValue = value;
@@ -617,8 +646,8 @@ sg.viewList = function () {
      * @param {string} gridName The grid name
      */
     function _textEditor(container, options, col, gridName) {
-        var mask = col.PresentationMask,
-            field = options.field,
+        var field = options.field,
+            mask = options.model.PresentationMasks[field] || col.mask,
             maskProps = mask ? _getTextBoxProps(mask) : "",
             className = maskProps ? maskProps.class : "",
             maxlength = col.FieldSize || maskProps ? maskProps.maxLength : 64,
@@ -728,7 +757,7 @@ sg.viewList = function () {
         //$("#btnDetailOptionalField").on("click", callback());
         $("#btnDetailOptionalField").on("click", function () {
             if (typeof callback === "function") {
-                callback();
+                callback(options, gridName);
             }
         });
     }
@@ -844,8 +873,8 @@ sg.viewList = function () {
             return _optionalFieldEditor(container, options, col, gridName);
         }
 
-        if (col.HasFinder) {
-            return col.Finder ? _finderEditor(container, options, col, gridName) : null;
+        if (col.Finder) {
+            return _finderEditor(container, options, col, gridName);
         }
 
         if (col.PresentationList) {
@@ -1223,6 +1252,7 @@ sg.viewList = function () {
             length = ds.data().length;
 
         page > 1 ? ds.page(length > 1 ? page : page - 1) : ds.page(1);
+        _gridCallback(gridName, "gridAfterDelete");
     }
     /**
      * @description Send delete request error
@@ -1302,6 +1332,11 @@ sg.viewList = function () {
         // D-40982
         removeDisabledFieldsFromAjaxPayload(record);
 
+        // Only pass grid visible(configure) columns 
+        if (requestType === RequestTypeEnum.Insert) {
+            record = removeHideFieldsFromAjaxPayload(record, grid);
+        }
+
         if (grid) {
             var data = {
                 'viewID': $("#" + gridName).attr('viewID'),
@@ -1323,6 +1358,21 @@ sg.viewList = function () {
                 _requestComplete(requestType, isSuccess, gridName, jsonResult, fieldName, isNewLine, insertedIndex, rowData ? rowData.uid : "", callBack);
             });
         }
+    }
+
+    /**
+     * @description Remove hide fields(except key fields) from Ajax payload
+     * @param {object} record The record object
+     */
+    function removeHideFieldsFromAjaxPayload(record, grid) {
+        let newRecord = {};
+        const colNames = grid.columns.filter(c => !c.isOptionalField).map(c => c.field);
+        for (const field in record) {
+            if (colNames.includes(field)) {
+                newRecord[field] = record[field];
+            }
+        }
+        return newRecord;
     }
 
     /**
@@ -1443,7 +1493,7 @@ sg.viewList = function () {
                                 return event.isProceed();
                             case "columnBeforeFinder":
                             case "columnFinderFocus":
-                                callback(record, finder);
+                                callback(record, finder, event, field);
                                 return true;
                         }
                     }
@@ -1498,7 +1548,8 @@ sg.viewList = function () {
                         var grid = _getGrid(gridName),
                             event = _getEventObject();
 
-                       record = record || grid.dataItem(grid.select());
+                        record = record || grid.dataItem(grid.select());
+ 
                         switch (functionName) {
                             case "gridAfterLoadData":
                                 callback(grid.dataSource.data());
@@ -1508,11 +1559,13 @@ sg.viewList = function () {
                                callback(record, fieldName);
                                return true;
                             case "gridAfterSetActiveRecord":
-                            case "gridAfterDelete":
                             case "gridAfterCreate":
                             case "gridAfterInsert":
                                callback(record);
-                               return true;
+                                return true;
+                            case "gridAfterDelete":
+                                const isEmpty = grid.dataSource.total() - 1 === 0;
+                                callback(record, isEmpty)     
                             case "gridBeforeCreate":
                             case "gridBeforeDelete":
                                callback(record, event);
@@ -1576,6 +1629,65 @@ sg.viewList = function () {
         _readOnlyColumns[gridName] = [];
         _sendChange[gridName] = true;
         _selectRowUid[gridName] = "";
+        _pageByKeyType[gridName] = PageByKeyTypeEnum.FirstPage;
+        _refreshKey[gridName] = null;
+    }
+
+    /**
+     * @description For paging with key field, track which button was clicked
+     * @param {string} gridName The grid name
+     */
+    function _initPageByKeyPageClick(gridName) {
+        var model = window[gridName + "Model"];
+        if (model.PageByKey) {
+            var gridPager = _getGrid(gridName).pager.element;
+            gridPager.find(".k-pager-first").click(function () {
+                _pageByKeyType[gridName] = PageByKeyTypeEnum.FirstPage;
+            });
+            gridPager.find(".k-i-arrow-60-left").closest(".k-pager-nav").click(function () {
+                _pageByKeyType[gridName] = PageByKeyTypeEnum.PreviousPage;
+            });
+            gridPager.find(".k-i-arrow-60-right").closest(".k-pager-nav").click(function () {
+                _pageByKeyType[gridName] = PageByKeyTypeEnum.NextPage;
+            });
+            gridPager.find(".k-pager-last").click(function () {
+                _pageByKeyType[gridName] = PageByKeyTypeEnum.LastPage;
+            });
+
+            // total is hidden since total and page are not available
+            gridPager.find(".k-pager-info").hide();
+        }
+    }
+
+    /**
+     * @description For paging with key field, Kendo grid cannot use the page number and total to determine whether to disable paging buttons.
+     * If page is the first page, disable the first and previous page buttons. If page is the last page, disable the next and last page buttons.
+     * @param {string} gridName The grid name
+     * @param {bool} isFirstPage Is the current page the first page
+     * @param {bool} isLastPage Is the current page the last page
+     */
+    function _setPageByKeyPagerDisable(gridName, isFirstPage, isLastPage) {
+        var model = window[gridName + "Model"];
+        if (model.PageByKey) {
+            var gridPager = _getGrid(gridName).pager.element;
+            var disabledClass = 'k-state-disabled';
+            if (isFirstPage) {
+                gridPager.find(".k-pager-first").addClass(disabledClass);
+                gridPager.find(".k-i-arrow-60-left").closest(".k-pager-nav").addClass(disabledClass);
+            }
+            else {
+                gridPager.find(".k-pager-first").removeClass(disabledClass);
+                gridPager.find(".k-i-arrow-60-left").closest(".k-pager-nav").removeClass(disabledClass);
+            }
+            if (isLastPage) {
+                gridPager.find(".k-pager-last").addClass(disabledClass);
+                gridPager.find(".k-i-arrow-60-right").closest(".k-pager-nav").addClass(disabledClass);
+            }
+            else {
+                gridPager.find(".k-pager-last").removeClass(disabledClass);
+                gridPager.find(".k-i-arrow-60-right").closest(".k-pager-nav").removeClass(disabledClass);
+            }
+        }
     }
 
     /**
@@ -1594,21 +1706,28 @@ sg.viewList = function () {
      * @description Initialize a grid, creating dataSource to binding grid, register events handler
      * @param {string} gridName The name of the grid.
      * @param {boolean} readOnly Whether the grid allows editing(Optional).
-     * @param {object} updateColumnDefs Function or funcion name. To update the column definitions before build grid columns
+     * @param {object} updateColumnDefs Function or funcion name. To update the column definitions before build grid column
+     * @param {boolean} showDetailButton Whether the grid toolbar show detail/tax button or not.
+     * @param {string} showDetails The name of the show details function.
      * @return {object} Return kendo grid object
      */
-    function init(gridName, readOnly, updateColumnDefs) {
+    function init(gridName, readOnly, updateColumnDefs, showDetailButton = false, showDetails = null) {
 
         if (updateColumnDefs) {
             typeof updateColumnDefs === "function" ? updateColumnDefs() : _getFunction(updateColumnDefs)();
         }
 
+        if (showDetails) {
+            _showDetails[gridName] = showDetails;
+        }
         window.addEventListener("message", _receiveMessage, false);
         var model = window[gridName + "Model"],
             columns = _getGridColumns(gridName),
             addTemplate = kendo.format(BtnTemplate, 'btn-add', 'sg.viewList.addLine(&quot;' + gridName + '&quot;)', globalResource.AddLine, gridName, "Add"),
             delTemplate = kendo.format(BtnTemplate, 'btn-delete', 'sg.viewList.deleteLine(&quot;' + gridName + '&quot;)', globalResource.DeleteLine, gridName, "Delete"),
-            editTemplate = kendo.format(BtnTemplate, 'btn-edit-column', 'sg.viewList.editColumnSettings(&quot;' + gridName + '&quot;)', globalResource.EditColumns, gridName, "EditCol");
+            editTemplate = kendo.format(BtnTemplate, 'btn-edit-column', 'sg.viewList.editColumnSettings(&quot;' + gridName + '&quot;)', globalResource.EditColumns, gridName, "EditCol"),
+            detailTemplate = kendo.format(BtnTemplate, 'btn-details', 'sg.viewList.showDetails(&quot;' + gridName + '&quot;)', globalResource.ViewDetails, gridName, "ShowDetails");
+
 
         readOnly = readOnly || model.ReadOnly,
         _initModuleVariables(gridName);
@@ -1703,6 +1822,7 @@ sg.viewList = function () {
                 if (_setDefaultRow[gridName]) {
                     grid.select("tr:eq(0)");
                 }
+
                 //Custom plug in for 'columnDoubleClick' 
                 grid.tbody.find("td").dblclick(function (grid, e) {
                     var col = grid.columns[e.target.cellIndex];
@@ -1740,13 +1860,13 @@ sg.viewList = function () {
             },
 
             pageable: {
-                pageSize: model.PageSize || 10,
+                pageSize: model.PageSize || _defaultPageSize,
                 numeric: false,
                 buttonCount: 1,
-                input: true
+                input: !model.PageByKey, // hide page input for paging with key field
             },
 
-            toolbar: readOnly ? [{ template: editTemplate }] : [{ template: addTemplate }, { template: delTemplate }, { template: editTemplate }],
+            toolbar: readOnly ? [{ template: showDetailButton ? detailTemplate : "<Button/>" }, { template: editTemplate }] : [{ template: addTemplate }, { template: delTemplate }, { template: showDetailButton ? detailTemplate : "<Button/>" }, { template: editTemplate }],
 
             dataSource: {
                 serverPaging: true,
@@ -1755,6 +1875,8 @@ sg.viewList = function () {
                 schema: {
                     data: "Data",
                     total: "Total",
+                    isFirstPage: "IsFirstPage", // custom field for paging with key field
+                    isLastPage: "IsLastPage", // custom field for paging with key field
                     model: {
                         id: "KendoGridAccpacViewPrimaryKey",
                         fields: eval(gridName + "_fields")
@@ -1762,11 +1884,38 @@ sg.viewList = function () {
                 },
                 batch: true,
                 change: function (e) {
+                    var customGridMapperDefinitions = window[gridName + "Model"].CustomGridMapperDefinitions;
                     var grid = _getGrid(gridName),
                         count = grid.dataSource.total();
 
+                    if (customGridMapperDefinitions) {
+                        let column = e.field;
+                        let selectedItem = grid.dataItem(grid.select());
+                        if (column) {
+                            let val = selectedItem[column];
+                            var dataRows = grid.items();
+                            const rowIndex = dataRows.index(grid.select());
+                            const field = customGridMapperDefinitions[column][rowIndex];
+                            var data = {
+                                'viewID': $("#" + gridName).attr('viewID'),
+                                'fieldName': field,
+                                'value': val
+                            };
+                            var url = window.sg.utls.url.buildUrl("Core", "Grid", "SetValue");
+                            sg.utls.ajaxPostSync(url, data, function (jsonResult) {
+                                var isSuccess = true;
+                                if (jsonResult && jsonResult.UserMessage.Errors && jsonResult.UserMessage.Errors.length > 0) {
+                                    isSuccess = false;
+                                }
+                            });
+                        }
+                        return;
+                    }
+
+
                     var disabled = count === 0 || !_allowDelete[gridName];
                     $("#btn" + gridName + "Delete").prop("disabled", disabled);
+                    $("#btn" + gridName + "ShowDetails").prop("disabled", count === 0);
 
                     if (e.action && e.action !== "sync") {
                         _dataChanged[gridName] = true;
@@ -1796,7 +1945,7 @@ sg.viewList = function () {
 
                     //Adding line at the end of a page will create a dummy line to allow navigating to the next page
                     //Here we will add the actual line on the new page
-                    if (e.action === undefined && e.items.length === 0 && count !== 0) {
+                    if (e.action === undefined && e.items && e.items.length === 0 && count !== 0) {
                         _addLine(gridName);
                     }
                 },
@@ -1806,7 +1955,11 @@ sg.viewList = function () {
                         url: _getRequestUrl(gridName, "Read"),
                         contentType: "application/json",
                         type: "POST",
-                        headers: sg.utls.getHeadersForAjax()
+                        headers: sg.utls.getHeadersForAjax(),
+                        complete: function (response) {
+                            // callback from post
+                            _setPageByKeyPagerDisable(gridName, response.responseJSON.IsFirstPage, response.responseJSON.IsLastPage);
+                        }
                     },
                     destroy: {
                         url: window.sg.utls.url.buildUrl("Core", "Grid", "Delete"),
@@ -1816,11 +1969,42 @@ sg.viewList = function () {
                     },
                     parameterMap: function (data, operation) {
                         data.viewID = $("#" + gridName).attr('viewID');
-                        data.gridJsonFilePath = window[gridName + "Model"].GridJsonFilePath;
+                        data.columns = model.ColumnDefinitions.map(x => (
+                            {
+                                "FieldName": x.FieldName,
+                                "ViewID": x.ViewID,
+                                "PrimaryKeys": x.PrimaryKeys,
+                                "ForeignKeys": x.ForeignKeys,
+                            }
+                        ));
+                        data.columnsFromConfig = model.ColumnsFromConfig;
                         if (operation === "read") {
                             _setModuleVariables(gridName, RowStatusEnum.NONE, "", -1, true, true, false);
-                            data.fieldNames = eval(gridName + "_viewFieldNames");
                             data.filter = _filter[gridName];
+                            data.pageByKey = model.PageByKey;
+
+                            // Pass which page button is clicked and start record for paging with key field
+                            if (data.pageByKey) {
+                                data.pageType = _pageByKeyType[gridName];
+                                var items = _getGrid(gridName).dataSource.data();
+                                switch (data.pageType) {
+                                    case PageByKeyTypeEnum.Refresh:
+                                        data.record = _refreshKey[gridName];
+                                        _refreshKey[gridName] = null;
+                                        break;
+                                    case PageByKeyTypeEnum.PreviousPage:
+                                        if (items.length > 0)
+                                            data.record = items[0];
+                                        break;
+                                    case PageByKeyTypeEnum.NextPage:
+                                        if (items.length > 0)
+                                            data.record = items[items.length - 1];
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+
                             return JSON.stringify(data);
                         }
                         else {
@@ -1864,6 +2048,8 @@ sg.viewList = function () {
         //Set grid use preferences, such as show/hide column, order and width
         GridPreferencesHelper.setGrid("#" + gridName, model.GridColumnSettings);
 
+        _initPageByKeyPageClick(gridName);
+
         return _getGrid(gridName);
     }
 
@@ -1887,6 +2073,7 @@ sg.viewList = function () {
                 function () {
                     if (!rowData.isNewLine) {
                         _sendRequest(gridName, RequestTypeEnum.Delete, "");
+                        _dataChanged[gridName] = true;
                     } else {
                         var ds = grid.dataSource;
                         ds.remove(rowData);
@@ -1895,7 +2082,7 @@ sg.viewList = function () {
                         var page = ds.data().length === 0 && _currentPage[gridName] > 1 ? _currentPage[gridName] - 1 : _currentPage[gridName];
                         ds.page(page);
                     }
-                    _gridCallback(gridName, "gridAfterDelete", rowData);
+                    //_gridCallback(gridName, "gridAfterDelete", rowData);
                 },
                 function () { },
                 globalResource.DeleteLineMessage, window.DeleteTitle);
@@ -1939,6 +2126,18 @@ sg.viewList = function () {
         var btnEditElement = $("#" + gridName + " .k-grid-toolbar .btn-edit-column");
         GridPreferencesHelper.initialize('#' + gridName, window[gridName + "Model"].UserPreferencesUniqueId, $(btnEditElement), grid.columns);
     }
+
+    /**
+    * @description Show grid popup details screen, for grid toolbar template, grid internal use.
+    * @param {any} gridName The grid name
+    */
+    function toolbarShowDetails(gridName) {
+        const showDetails = _showDetails[gridName];
+        if (typeof showDetails === "function") {
+            showDetails.call();
+        }
+    }
+
 
     /**
      * @description Get column template, for grid template intenal use
@@ -2059,6 +2258,7 @@ sg.viewList = function () {
         function refreshGrid(gridName) {
             var grid = _getGrid(gridName);
             if (grid) {
+                console.log("refreshed???")
                 grid.dataSource.page(1);
             }
         }
@@ -2340,6 +2540,20 @@ sg.viewList = function () {
         dataSource.data([]);
     }
 
+    /**
+     * 
+     * @param {string} gridName The grid name
+     * @param {any} record The record to search, containing key fields and values
+     */
+    function refreshByKey(gridName, record) {
+        var model = window[gridName + "Model"];
+        if (model.PageByKey && record) {
+            _refreshKey[gridName] = record;
+            _pageByKeyType[gridName] = PageByKeyTypeEnum.Refresh;
+            refresh(gridName);
+        }
+    }
+
     //Module(class) public methods
     return {
         init: init,
@@ -2347,6 +2561,8 @@ sg.viewList = function () {
         addLine: toolbarAddLine,
         deleteLine: toolbarDeleteLine,
         editColumnSettings: toolbarEditColumn,
+        showDetails: toolbarShowDetails,
+
         getListText: getListText,
         getTemplate: getTemplate,
         moveToCurrentRow: moveToCurrentRow,
@@ -2370,6 +2586,7 @@ sg.viewList = function () {
         updateCurrentRow: updateCurrentRow,
         isEmpty: isEmpty,
         cancel: cancel,
-        clear: clear
+        clear: clear,
+        refreshByKey: refreshByKey
     };
 }();

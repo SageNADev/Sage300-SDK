@@ -1,8 +1,8 @@
-﻿/* Copyright (c) 2019-2020 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2019-2021 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var ViewFinderGridHelper = {
-    finderOptions: null,
+    finderOptions: {},
     fields: null,
     columns: null,
     viewModel: null,
@@ -198,11 +198,6 @@ var ViewFinderGridHelper = {
         if (!columnDropdown.text()) {
             columnDropdown.select(0);
         }
-        var operatorDropdown = $("#OperatorDropdown").data("kendoDropDownList");
-        if (!operatorDropdown.text()) {
-            operatorDropdown.select(0);
-        }
-
     },
     InitColumnGrid: function () {
         var dropdownDatasource = $.grep(this.columns, function (gridField) { return !gridField.IgnorePreferences && gridField.FinderDisplayType !== sg.FinderDisplayType.Grid; });
@@ -225,7 +220,9 @@ var ViewFinderGridHelper = {
             // remove column filter
             ViewFinderGridHelper.InitiateFilterDataToPost();
 
+            ViewFinderGridHelper.finderOptions.SavePreferenceType = sg.viewFinderHelper.savePreferenceType.Filter;
             ViewFinderGridHelper.ReloadFinderGrid();
+            ViewFinderGridHelper.finderOptions.SavePreferenceType = sg.viewFinderHelper.savePreferenceType.None;
             $("#ValueTextBox").show();
         } else if (selectedValue.length > 0) {
 
@@ -266,7 +263,6 @@ var ViewFinderGridHelper = {
                     { Text: globalResource.LessThanOrEqual, Value: sg.finderOperator.LessThanOrEqual },
                     { Text: globalResource.NotEqual, Value: sg.finderOperator.NotEqual }
                 ];
-
             }
         }
         if (operatorDatasource == undefined) {
@@ -282,6 +278,7 @@ var ViewFinderGridHelper = {
             dataValueField: "Value",
             dataSource: operatorDatasource
         });
+
         $operatorDropDown.data('kendoDropDownList').select(0);
     },
     InitValueGridDropdownOrTextBox: function (field, valueDropdownId, valueTextboxId, valueDropdownClass) {
@@ -571,7 +568,9 @@ var ViewFinderGridHelper = {
             var emptyData = { Field: { field: "" }, Operator: "", Value: "" };
             this.columnFilter = emptyData;
         }
+        ViewFinderGridHelper.finderOptions.SavePreferenceType = sg.viewFinderHelper.savePreferenceType.Filter;
         ViewFinderGridHelper.ReloadFinderGrid();
+        ViewFinderGridHelper.finderOptions.SavePreferenceType = sg.viewFinderHelper.savePreferenceType.None;
     },
     ButtonClickEvent: function () {
         $("#btnSearch").click(function () {

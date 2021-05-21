@@ -1435,6 +1435,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Textbox.
+        /// </summary>
+        internal static string Textbox {
+            get {
+                return ResourceManager.GetString("Textbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Defaulted from the business view and certain widgets allow value to be overridden.
         /// </summary>
         internal static string TextTip {

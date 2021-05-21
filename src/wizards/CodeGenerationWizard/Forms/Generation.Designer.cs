@@ -82,7 +82,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnDeleteControl = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnFinder = new System.Windows.Forms.ToolStripButton();
             this.pnlCodeType = new System.Windows.Forms.Panel();
             this.lblCodeTypeFilesHelp = new MetroFramework.Controls.MetroLabel();
             this.lblUnknownCodeTypeFilesHelp = new MetroFramework.Controls.MetroLabel();
@@ -633,7 +632,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPageInfo.Location = new System.Drawing.Point(4, 22);
             this.tabPageInfo.Name = "tabPageInfo";
             this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInfo.Size = new System.Drawing.Size(221, 74);
+            this.tabPageInfo.Size = new System.Drawing.Size(221, 92);
             this.tabPageInfo.TabIndex = 0;
             this.tabPageInfo.Text = "Info";
             this.tabPageInfo.UseVisualStyleBackColor = true;
@@ -766,7 +765,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPageHamburger.Controls.Add(this.pnlHamburger);
             this.tabPageHamburger.Location = new System.Drawing.Point(4, 22);
             this.tabPageHamburger.Name = "tabPageHamburger";
-            this.tabPageHamburger.Size = new System.Drawing.Size(221, 93);
+            this.tabPageHamburger.Size = new System.Drawing.Size(221, 92);
             this.tabPageHamburger.TabIndex = 2;
             this.tabPageHamburger.Text = "Hamburger";
             this.tabPageHamburger.UseVisualStyleBackColor = true;
@@ -776,7 +775,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlHamburger.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlHamburger.Location = new System.Drawing.Point(0, 0);
             this.pnlHamburger.Name = "pnlHamburger";
-            this.pnlHamburger.Size = new System.Drawing.Size(221, 93);
+            this.pnlHamburger.Size = new System.Drawing.Size(221, 92);
             this.pnlHamburger.TabIndex = 0;
             // 
             // tbrProperties
@@ -790,8 +789,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnButton,
             this.toolStripSeparator1,
             this.btnDeleteControl,
-            this.toolStripSeparator3,
-            this.btnFinder});
+            this.toolStripSeparator3});
             this.tbrProperties.Location = new System.Drawing.Point(3, 18);
             this.tbrProperties.Name = "tbrProperties";
             this.tbrProperties.Size = new System.Drawing.Size(229, 32);
@@ -861,16 +859,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 32);
-            // 
-            // btnFinder
-            // 
-            this.btnFinder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFinder.Image = ((System.Drawing.Image)(resources.GetObject("btnFinder.Image")));
-            this.btnFinder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFinder.Name = "btnFinder";
-            this.btnFinder.Size = new System.Drawing.Size(29, 29);
-            this.btnFinder.ToolTipText = "Configure Finder";
-            this.btnFinder.CheckedChanged += new System.EventHandler(this.btnFinder_CheckedChanged);
             // 
             // pnlCodeType
             // 
@@ -1943,7 +1931,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private System.Windows.Forms.Label lblFinderProp;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnButton;
-        private System.Windows.Forms.ToolStripButton btnFinder;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.TabControl tabUI;
         private System.Windows.Forms.TabPage tabPageInfo;

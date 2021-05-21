@@ -594,6 +594,11 @@ html.form-medium {
         top: 5px;
       }
 
+      .edit-cell.inpt-text input+.icon.edit-field, 
+      input[type=text]+.icon.edit-field {
+        top: 4px;
+      }
+
       .k-dropdown .k-dropdown-wrap {
         height: 20px;
 
@@ -695,6 +700,13 @@ html.form-medium {
     }
   }
 
+  .finder-window {
+
+    .footer-group {
+      min-height: 35px;
+    }
+  }
+
   .finder-window .gridcontrols-group,
   .k-grid,
   .finder-window .k-grid .k-grid-header {
@@ -720,6 +732,8 @@ html.form-medium {
   }
 
   .user-preference {
+
+  margin-top: 6px;
 
     .table-scroll td {
       padding: 0 0 0 34px;
@@ -989,12 +1003,6 @@ html.form-medium {
     }
   }
 
-  // Finder window height control 
-
-  .finder-window {
-    height: 480px !important;
-  }
-
   // Popup and Messages 
 
   .message-control.multiError-msg .title .msgCtrl-close, 
@@ -1138,11 +1146,6 @@ html.form-medium {
   .global-search .header-group-1 .global-search-group .btn-finder {
     height: 30px;
     background-size: 900px 90px;
-  }
-
-  .global-search .header-group-1 .header-global-search div[class*="-group"] .treeview-group .k-treeview .k-item .k-i-collapse, 
-  .global-search .header-group-1 .header-global-search div[class*="-group"] .treeview-group .k-treeview .k-item .k-i-expand {
-    margin-left: 24px;
   }
 
   @media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),
@@ -1904,6 +1907,11 @@ html.form-small {
         top: 5px;
       }
 
+      .edit-cell.inpt-text input+.icon.edit-field, 
+      input[type=text]+.icon.edit-field {
+        top: 4px;
+      }
+
       .k-dropdown .k-dropdown-wrap {
         height: 20px;
 
@@ -2027,6 +2035,13 @@ html.form-small {
     }
   }
 
+  .finder-window {
+
+    .footer-group {
+      min-height: 31px;
+    }
+  }
+
   .finder-window .gridcontrols-group,
   .k-grid,
   .finder-window .k-grid .k-grid-header {
@@ -2053,6 +2068,8 @@ html.form-small {
 
   .user-preference {
 
+    margin-top: 2px;
+
     .table-scroll td {
       padding: 0 0 0 34px;
       background-position: 10px 11px;
@@ -2076,7 +2093,6 @@ html.form-small {
   .pager-group .k-pager-wrap>.k-link {
     height: 20px;
     width: 20px;
-    margin-top: 3px;
     font-size: 6px;
 
     .k-icon {
@@ -2450,12 +2466,6 @@ html.form-small {
     }
   }
 
-  // Finder window height control 
-
-  .finder-window {
-    height: 460px !important;
-  }
-
   // Popup and Messages 
 
   .message-control.multiError-msg .title .msgCtrl-close, 
@@ -2574,6 +2584,25 @@ html.form-small {
     top: 6px;
   }
 
+  .export-window #exportTreeView input[type=checkbox] {
+    height: 12px;
+    width: 12px;
+    top: 0;
+
+    &:checked::before {
+      font-size: 10px;
+      width: 10px;
+      height: 10px;
+      font-weight: bold;
+    }
+
+    &.k-state-indeterminate::before, 
+    &:indeterminate::before {
+      width: 6px;
+      height: 6px;
+    }
+  }
+
   // Tooltip 
 
   .k-widget.k-tooltip {
@@ -2675,6 +2704,27 @@ html.form-small {
   .global-search .header-group-1 .global-search-group .btn-finder {
     height: 30px;
     background-size: 900px 90px;
+  }
+
+  .global-search .header-group-1 .header-global-search div[class*="-group"] .treeview-group .k-treeview span.k-in {
+    line-height: inherit;
+  }
+
+  .global-search .header-group-1 .header-global-search div[class*="-group"] .treeview-group .k-treeview .k-item .k-checkbox {
+    height: 12px;
+    width: 12px;
+
+    &:before {
+      font-size: 10px;
+      width: 10px;
+      height: 10px;
+    }
+
+    &.k-state-indeterminate::before, 
+    &:indeterminate::before {
+      width: 6px;
+      height: 6px;
+    }
   }
 
   @media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),

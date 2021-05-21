@@ -393,6 +393,7 @@ sg.optionalFieldControl = function () {
         finder.viewOrder = 0;
         finder.filter = "OPTFIELD=" + model.OPTFIELD;
         var value = swset === 0 && [6, 8, 100].indexOf(model.TYPE) > -1 ? 0 : model.VALUE;
+
         switch (model.TYPE) {
             case ValueTypeEnum.Date:
                 finder.displayFieldNames = ["VALIFDATE", "VDESC"];
@@ -428,6 +429,14 @@ sg.optionalFieldControl = function () {
             var model = options.model,
                 field = options.field,
                 value = retureFields[field];
+            let type = model.TYPE;
+
+            //the same logic once init edit template
+            if (type === ValueTypeEnum.Date) {
+                value = value === "00000000" ? "" : sg.utls.kndoUI.getFormattedDate(value);
+            } else if (type === ValueTypeEnum.Time && value.indexOf(':') < 0) {
+                value = value.substring(0, 2) + ":" + value.substring(2, 4) + ":" + value.substring(4, 6);
+            }
 
             _isFinderButton = false;
             model.set(field, value);
@@ -501,10 +510,9 @@ sg.optionalFieldControl = function () {
             }
         });
 
+        $("#btnFinderId").unbind();
         _setValueFinderEditor(options, gridName, "btnFinderId");
         _setEditorInitialValue(gridName, options);
-
-        $("#btnFinderId").unbind();
         $("#btnFinderId").mousedown(function () {
             _isFinderButton = true;
         });
@@ -996,6 +1004,9 @@ sg.optionalFieldControl = function () {
      * @param {object} e The event object
      */
     function _onDataChanged(gridName, e) {
+
+        const deleteButtonId = `#btn${gridName}Delete`;
+
         if (e.action) {
             _dataChanged[gridName] = true;
         }
@@ -1003,13 +1014,18 @@ sg.optionalFieldControl = function () {
             count = grid.dataSource.total();
 
         if (count === 0) {
-            $("#btn" + gridName + "Delete").prop("disabled", true);
+            disableButton(deleteButtonId);
+
         } else if (e.action === "add") {
-            $("#btn" + gridName + "Delete").prop("disabled", false);
-        }
-        else {
-            //To enable the delete button if records loaded by default
-            $("#btn" + gridName + "Delete").prop("disabled", false);
+            enableButton(deleteButtonId);
+
+        } else {
+            // To enable the delete button if records loaded by default
+            //enableButton(deleteButtonId);
+
+            // AT-67206
+            const allowDelete = _settings[gridName].allowDelete;
+            enableDisableButton(deleteButtonId, allowDelete);
         }
 
         if (e.items.length === 0 && grid.dataSource.page() !== 1 && count === 0) {
@@ -1145,8 +1161,10 @@ sg.optionalFieldControl = function () {
             }
         });
 
-        $("#btn" + gridName + "Add").prop("disabled", !settings.allowInsert);
-        $("#btn" + gridName + "Delete").prop("disabled", !settings.allowDelete);
+        const addButtonId = `#btn${gridName}Add`;
+        const deleteButtonId = `#btn${gridName}Delete`;
+        enableDisableButton(addButtonId, settings.allowInsert);
+        enableDisableButton(deleteButtonId, settings.allowDelete);
 
         $(document).on("click", ".msgCtrl-close", function (e) {
             _setGridCell.call(this, gridName);
@@ -1271,11 +1289,11 @@ sg.optionalFieldControl = function () {
     * @return {void}
     */
     function readOnly(gridName, readOnly) {
-        _getGrid(gridName).setOptions({ editable: !readOnly });
-        if (readOnly) {
-            $("#btn" + gridName + "Add").prop("disabled", true);
-            $("#btn" + gridName + "Delete").prop("disabled", true);
-        }
+        const grid = _getGrid(gridName);
+
+        grid.setOptions({ editable: !readOnly });
+        allowDelete(gridName, !readOnly);
+        allowInsert(gridName, !readOnly);
     }
 
     /**
@@ -1316,20 +1334,26 @@ sg.optionalFieldControl = function () {
      * @param {string} parentGridName The parent grid name
      */
     function closePopUp(gridName, parentGridName) {
-        var grid = _getGrid(gridName),
-            total = grid.dataSource.total(),
-            parentGrid = $("#" + parentGridName).data("kendoGrid"),
-            selectedItem = parentGrid.dataItem(parentGrid.select());
+        let grid = _getGrid(gridName);
+        let total = grid.dataSource.total();
 
-        if (selectedItem.VALUES !== total) {
-            // Note - Changing the traditional use of set call, instead directly assigning it because kendo doesn't allow "set" call if the field property
-            // is not editable. Which is a bit of concern for other fields, if we try to manually update the dataSource fields which is read only
-            // (most likely we don't even have to update the read only properties directly if they are non-editable)
-            selectedItem.VALUES = total;
-        }
+        if (parentGridName.length > 0) {
+            let parentGrid = $("#" + parentGridName).data("kendoGrid");
+            if (parentGrid) {
 
-        if (!selectedItem.isNewLine) {
-            sg.viewList.updateCurrentRow(parentGridName);
+                let selectedItem = parentGrid.dataItem(parentGrid.select());
+
+                if (selectedItem.VALUES !== total) {
+                    // Note - Changing the traditional use of set call, instead directly assigning it because kendo doesn't allow "set" call if the field property
+                    // is not editable. Which is a bit of concern for other fields, if we try to manually update the dataSource fields which is read only
+                    // (most likely we don't even have to update the read only properties directly if they are non-editable)
+                    selectedItem.VALUES = total;
+                }
+
+                if (!selectedItem.isNewLine) {
+                    sg.viewList.updateCurrentRow(parentGridName);
+                }
+            }
         }
 
         _reset(gridName);
@@ -1343,11 +1367,16 @@ sg.optionalFieldControl = function () {
      * @return {boolean} return true if the grid allows insert or null
      */
     function allowInsert(gridName, insertable) {
+
+        const addButtonId = `#btn${gridName}Add`;
+
         if (insertable !== undefined) {
-            $("#btn" + gridName + "Add").prop("disabled", !insertable);
+            _settings[gridName].allowInsert = insertable;
+
+            enableDisableButton(addButtonId, insertable);
             return;
         }
-        var disabled = $("#btn" + gridName + "Add").prop("disabled");
+        var disabled = $(addButtonId).prop("disabled");
         return !disabled;
     }
 
@@ -1359,11 +1388,16 @@ sg.optionalFieldControl = function () {
      * @return {boolean} return true if the grid allows delete or null
      */
     function allowDelete(gridName, deletable) {
+
+        const deleteButtonId = `#btn${gridName}Delete`;
+
         if (deletable !== undefined) {
-            $("#btn" + gridName + "Delete").prop("disabled", !deletable);
+            _settings[gridName].allowDelete = deletable;
+
+            enableDisableButton(deleteButtonId, deletable);
             return;
         }
-        var disabled = $("#btn" + gridName + "Delete").prop("disabled");
+        var disabled = $(deleteButtonId).prop("disabled");
         return !disabled;
     }
 
@@ -1412,14 +1446,15 @@ sg.optionalFieldControl = function () {
         var trigger = false;
         var grid = $("#" + _gridName).data("kendoGrid");
         //Ignore if inside finder was clicked
-        if (!GridUtls.finderWasClicked && !GridUtls.updateFailed) {
+        if (!_isFinderButton && !GridUtls.updateFailed) {
             var target;
-            if (e.target && e.relatedTarget === null) {
-                target = $("#" + _gridName).find(e.target);
-                if (target.length !== 0 && !target[0].id && target[0].tagName === "TABLE") {
-                    trigger = true;
-                }
-            }
+            // AT-66621
+            //if (e.target && e.relatedTarget === null) {
+            //    target = $("#" + _gridName).find(e.target);
+            //    if (target.length !== 0 && !target[0].id && target[0].tagName === "TABLE") {
+            //        trigger = true;
+            //    }
+            //}
             if (!trigger && e.target) {
                 target = $("#" + _gridName).find(e.target);
                 var elmType;
@@ -1469,11 +1504,82 @@ sg.optionalFieldControl = function () {
         }
     }
 
-    //Expose module(class) public methods
+    // Developer Note: Functions below are meant to be private and only consumed within this file.
+
+    /**
+     * @function
+     * @name enableButton
+     * @description Enable a button based on it's id
+     * @namespace sg.optionalFieldControl
+     * @private
+     *
+     * @param {string } _id The button id
+     */
+    function enableButton(_id) {
+        enableDisableButton(_id, true);
+    };
+
+    /**
+     * @function
+     * @name disableButton
+     * @description Disable a button based on it's id
+     * @namespace sg.optionalFieldControl
+     * @private
+     *
+     * @param {string } _id The button id
+     */
+    function disableButton(_id) {
+        enableDisableButton(_id, false);
+    };
+
+    /**
+     * @function
+     * @name enableDisableButton
+     * @description Enable or disable a button based on it's id
+     * @namespace sg.optionalFieldControl
+     * @private
+     *
+     * @param {string } _id The button id
+     * @param {boolean} _enable true = Enable | false = Disable
+     */
+    function enableDisableButton(_id, _enableOrDisable) {
+        // Ensure there's a '#' prefixed to id
+        let id = prependHashTag(_id);
+
+        if (_enableOrDisable) {
+            // Enable
+            $(id).prop('disabled', false);
+        } else {
+            // Disable
+            $(id).prop('disabled', true);
+        }
+    }
+
+    /**
+     * @function
+     * @name prependHashTag
+     * @description Given an id string, prepend a '#' character if it doesn't yet exist
+     * @namespace sg.optionalFieldControl
+     * @private
+     *   
+     * @returns {string} A string that begins with a '#' character
+     */
+    function prependHashTag(_id) {
+        let id = _id;
+
+        // Check for # character. Prepend if it doesn't exist
+        if (id.length > 0 && id.charAt(0) !== '#') {
+            id = `#${_id}`;
+        }
+
+        return id;
+    };
+
+    // Expose module(class) public methods
     return {
         init: init,
 
-        //Grid internal methods(For grid toolbar, column template use)
+        // Grid internal methods(For grid toolbar, column template use)
         addLine: toolbarAddLine,
         deleteLine: toolbarDeleteLine,
         getTemplate: getTemplate,
@@ -1481,7 +1587,7 @@ sg.optionalFieldControl = function () {
         showPopUp: showPopUp,
         closePopUp: closePopUp,
 
-        //Documented public methods
+        // Documented public methods
         allowInsert: allowInsert,
         allowDelete: allowDelete,
         readOnly: readOnly,

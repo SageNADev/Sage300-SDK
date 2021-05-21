@@ -40,10 +40,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private const string H3 = "h3";
         /// <summary> ul constant </summary>
         private const string UL = "ul";
-        /// <summary>
-        /// Number Of OptionalFields 
-        /// </summary>
+        /// <summary> Number Of OptionalFields  </summary>
         private const string NUMBEROFOPTIONALFIELDS = "NumberOfOptionalFields";
+        /// <summary> Widget types for special iterations  </summary>
+        private static readonly string[] WIDGET_TYPES = { "DateTime", "Time", "Checkbox", "Numeric", "Textbox", "Finder" };
+
         /// <summary>
         /// Generate Widgets
         /// </summary>
@@ -149,12 +150,33 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private static void FinderRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view)
         {
             var property = controlElement.Attribute("property").Value;
-            var className = (GetSizeClassName(property, view, true) + " " + 
-                GetUpperClassName(property, view) + " " +
-                GetRequiredClassName(property, view)).Replace("  ", " ").Trim();
+            var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
+
+            // temp until consolidate to simple helpers
+            var sizeClassName = GetSizeClassName(property, view, true);
+            if (sizeClassName == "xsmall" || sizeClassName == "smaller" || sizeClassName == "small")
+            {
+                sizeClassName = "Small";
+            }
+            else if (sizeClassName == "default")
+            {
+                sizeClassName = "Default";
+            }
+            else if (sizeClassName == "medium")
+            {
+                sizeClassName = "Medium";
+            }
+            else if (sizeClassName == "medium-large")
+            {
+                sizeClassName = "MediumLarge";
+            }
+            else if (sizeClassName == "large" || sizeClassName == "larger" || sizeClassName == "xlarge")
+            {
+                sizeClassName = "Large";
+            }
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "search-group"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgFinderWithLabelBound(property));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgFinderWithLabelBound(property, businessField, sizeClassName));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -450,39 +472,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var retVal = string.Empty;
 
-            // Iterate date widgets, if any
-            if (settings.Widgets.ContainsKey("DateTime"))
+            foreach (var key in WIDGET_TYPES)
             {
-                foreach (var widget in settings.Widgets["DateTime"])
+                // Iterate widgets, if any
+                if (settings.Widgets.ContainsKey(key))
                 {
-                    retVal += ", \"Is" + widget + "Disabled\"";
-                }
-            }
-
-            // Iterate checkbox widgets, if any
-            if (settings.Widgets.ContainsKey("Checkbox"))
-            {
-                foreach (var widget in settings.Widgets["Checkbox"])
-                {
-                    retVal += ", \"Is" + widget + "Disabled\"";
-                }
-            }
-
-            // Iterate numeric widgets, if any
-            if (settings.Widgets.ContainsKey("Numeric"))
-            {
-                foreach (var widget in settings.Widgets["Numeric"])
-                {
-                    retVal += ", \"Is" + widget + "Disabled\"";
-                }
-            }
-
-            // Iterate time widgets, if any
-            if (settings.Widgets.ContainsKey("Time"))
-            {
-                foreach (var widget in settings.Widgets["Time"])
-                {
-                    retVal += ", \"Is" + widget + "Disabled\"";
+                    foreach (var widget in settings.Widgets[key])
+                    {
+                        retVal += ", \"Is" + widget + "Disabled\"";
+                    }
                 }
             }
 
@@ -587,9 +585,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     if (widget == NUMBEROFOPTIONALFIELDS) continue;
                     // Get Business View
                     var businessField = view.Fields.Where(x => x.Name == widget).FirstOrDefault();
+                    var maxDigits = (businessField.Size - 1) * 2;
 
                     snippet.AppendLine(new string(' ', depth) + "sg.utls.initNumericTextBox(\"nbr" + widget + "\", " +
-                    businessField.Precision.ToString() + ", false, 0, 16, " +
+                    businessField.Precision.ToString() + ", false, 0, " + maxDigits + ", " +
                     businessField.MinValue.ToString() + ", " +
                     businessField.MaxValue.ToString() + ");");
                 }
@@ -925,10 +924,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public static void DisabledPropertiesJavaScript(int depth, Settings settings, StringBuilder snippet, 
             BusinessView view, string localEntityName)
         {
-            DisabledPropertiesWorkerJavaScript(4, settings, snippet, view, "DateTime", localEntityName);
-            DisabledPropertiesWorkerJavaScript(4, settings, snippet, view, "Checkbox", localEntityName);
-            DisabledPropertiesWorkerJavaScript(4, settings, snippet, view, "Numeric", localEntityName);
-            DisabledPropertiesWorkerJavaScript(4, settings, snippet, view, "Time", localEntityName);
+            foreach (var key in WIDGET_TYPES)
+            {
+                DisabledPropertiesWorkerJavaScript(4, settings, snippet, view, key, localEntityName);
+            }
         }
 
         /// <summary>
@@ -1116,19 +1115,22 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// Ko Sage Finder with Label Snippet
         /// </summary>
         /// <param name="property">Property Name</param>
-        private static string SgFinderWithLabelBound(string property)
+        /// <param name="field">Business Field</param>
+        /// <param name="cssClass">CSS Class</param>
+        private static string SgFinderWithLabelBound(string property, BusinessField field, string cssClass)
         {
             var methodName = "@Html.SgFinderWithLabelBound";
             var modelProperty   = $"model => model.Data.{property}";
-            var controlSwitches = "new ControlSwitches { IncludeValidation = true }";
-            var length = "16";
+            var controlSwitches = "new ControlSwitches { " + GetRequiredSwitch(field) + ", " +
+                GetUpperSwitch(field) + ", IncludeValidation = true }";
+            var length = field == null ? 20 : field.Size;
             var finderButtonId = $"btnLoad{property}";
             var searchButtonId = $"btnFinder{property}";
             var textboxIdOverride = $"txt{property}";
-            var disableMethodName = "";
+            var disableMethodName = "Data.Is" + property + "Disabled";
             var textBoxFormat = "alphaNumeric";
             var labelTextOverride = "";
-            var textBoxCssClass = "new List<CompositeExtensions.TextBoxCssClassTypeEnum> { CompositeExtensions.TextBoxCssClassTypeEnum.Default } ";
+            var textBoxCssClass = "new List<CompositeExtensions.TextBoxCssClassTypeEnum> { CompositeExtensions.TextBoxCssClassTypeEnum." + cssClass + " } ";
 
             var output = $"{methodName}({modelProperty}, {controlSwitches}, {length}, \"{finderButtonId}\", \"{searchButtonId}\", \"{textboxIdOverride}\", " + 
                          $"\"{disableMethodName}\", \"{textBoxFormat}\", \"{labelTextOverride}\", {textBoxCssClass})";
@@ -1247,6 +1249,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var isRequired = businessField != null && businessField.IsRequired;
 
             return isRequired ? "required" : string.Empty;
+        }
+
+        /// <summary>
+        /// Get the required switch
+        /// </summary>
+        /// <param name="field">Business Field</param>
+        /// <returns>Required switch</returns>
+        private static string GetRequiredSwitch(BusinessField field)
+        {
+            // Get the IsRequired from the business field
+            return $"IsRequired = {(field != null && field.IsRequired).ToString().ToLower()}";
+        }
+
+        /// <summary>
+        /// Get the upper switch
+        /// </summary>
+        /// <param name="field">Business Field</param>
+        /// <returns>Upper switch</returns>
+        private static string GetUpperSwitch(BusinessField field)
+        {
+            // Get the IsRequired from the business field
+            return $"MakeUppercase = {(field != null && field.IsUpperCase).ToString().ToLower()}";
         }
 
     }

@@ -251,33 +251,6 @@
         nMBXGgoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnFinder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
   <data name="lblCodeTypeFilesHelp.Text" xml:space="preserve">
     <value>Based upon the Code Type selected, Interface files, a Service file, a Repository file, a View Model file, Controller files and Razor View files (stubs only for certain Code Types) may also be generated.</value>
   </data>
