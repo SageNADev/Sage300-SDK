@@ -307,6 +307,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string AttributeGridColumn = "gridColumn";
             /// <summary> Attribute Finder </summary>
             public const string AttributeFinderProperty = "finderProperty";
+            /// <summary> Attribute Finder </summary>
+            public const string AttributeFinderUrl = "finderUrl";
             /// <summary> Attribute Time Only </summary>
             public const string AttributeTimeOnly = "timeOnly";
 
@@ -623,6 +625,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private string ValidUIStep()
         {
             // Are any validations required here?
+
+            // Warning only if finder url's are discovered
+            if (_controlsList.Values.Any(x => x.FinderUrl))
+            {
+                DisplayMessage(Resources.FinderUrlFound, MessageBoxIcon.Warning);
+            }
 
             return string.Empty;
         }
@@ -3368,6 +3376,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 controlInfo.FinderFileName = string.Empty;
                 controlInfo.FinderName = string.Empty;
                 controlInfo.FinderDisplayField = string.Empty;
+                controlInfo.FinderUrl = false;
             }
 
             if (controlInfo != null && controlInfo.BusinessField == null)
@@ -3650,6 +3659,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             if (controlInfo.Widget == Constants.WidgetFinder)
                             {
                                 controlElement.Add(new XAttribute(Constants.AttributeFinderProperty, controlInfo.FinderName));
+                                controlElement.Add(new XAttribute(Constants.AttributeFinderUrl, 
+                                    controlInfo.FinderUrl ? Constants.AttributeTrue : Constants.AttributeFalse));
                             }
                             controlElement.Add(new XAttribute(Constants.AttributeTimeOnly, controlInfo.BusinessField.IsTimeOnly));
 
@@ -3773,6 +3784,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                     if (controlInfo.Widget == Constants.WidgetFinder && !controlInfo.BusinessField.IsKey)
                                     {
                                         childControlElement.Add(new XAttribute(Constants.AttributeFinderProperty, controlInfo.FinderName));
+                                        childControlElement.Add(new XAttribute(Constants.AttributeFinderUrl, 
+                                            controlInfo.FinderUrl ? Constants.AttributeTrue : Constants.AttributeFalse));
                                     }
                                     // Add to controls element
                                     childControlsElement.Add(childControlElement);
@@ -5393,6 +5406,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     controlInfo.FinderFileName = string.Empty;
                     controlInfo.FinderName = string.Empty;
                     controlInfo.FinderDisplayField = string.Empty;
+                    controlInfo.FinderUrl = false;
 
                     // Reset to textbox if previously set as finder
                     if (controlInfo.Widget == Constants.WidgetFinder)
@@ -5579,6 +5593,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 if (controlInfo != null && !string.IsNullOrEmpty(cboFinderProp.Text))
                 {
                     controlInfo.FinderName = cboFinderProp.Text;
+                    var finderUrl = false;
+                    try
+                    {
+                        finderUrl = selectedValue.url != null;
+                    }
+                    catch 
+                    {
+                    }
+                    controlInfo.FinderUrl = finderUrl;
                     controlInfo.Widget = Constants.WidgetFinder;
                     InitControlProp();
                 }
@@ -5645,6 +5668,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         controlInfo.FinderFileName = string.Empty;
                         controlInfo.FinderName = string.Empty;
                         controlInfo.FinderDisplayField = string.Empty;
+                        controlInfo.FinderUrl = false;
 
                         // Reset to textbox if previously set as finder
                         if (controlInfo.Widget == Constants.WidgetFinder)

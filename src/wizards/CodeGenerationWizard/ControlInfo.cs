@@ -55,6 +55,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public string FinderName { get; set; }
         /// <summary> Finder display field </summary>
         public string FinderDisplayField { get; set; }
+        /// <summary> Finder Url </summary>
+        public bool FinderUrl { get; set; }
         #endregion
     }
 }

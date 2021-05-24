@@ -558,6 +558,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to One or more finders have a &apos;url&apos; property in the definition. For a debug session to properly display these finders, please ensure that the finder&apos;s module assemblies (i.e., BusinessRepository, Interfaces, Modules, Resources, Services and Web) are added to the web project if they are not already added..
+        /// </summary>
+        internal static string FinderUrlFound {
+            get {
+                return ResourceManager.GetString("FinderUrlFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finish.
         /// </summary>
         internal static string Finish {

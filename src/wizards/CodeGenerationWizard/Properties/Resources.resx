@@ -622,4 +622,7 @@
   <data name="Textbox" xml:space="preserve">
     <value>Textbox</value>
   </data>
+  <data name="FinderUrlFound" xml:space="preserve">
+    <value>One or more finders have a 'url' property in the definition. For a debug session to properly display these finders, please ensure that the finder's module assemblies (i.e., BusinessRepository, Interfaces, Modules, Resources, Services and Web) are added to the web project if they are not already added.</value>
+  </data>
 </root>
