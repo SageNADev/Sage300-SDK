@@ -27,10 +27,11 @@ This can be accomplished in the following ways:
 
 ## Database and Credentials
 
-By default, **SAMLTD** is the database and **ADMIN/ADMIN** are the credentials utilized by the samples. 
+By default, **SAMLTD** is the database and **ADMIN** is the user credential utilized by the samples. 
 
-These references are located in the Web project's **web.config** and **Global.asax** files. If a different 
-database or other credentials are required, these files will require modification.
+These references are located in the Web project's **web.config** and **Login.aspx** files. Credentials  
+are entered into a login page and stored in cookies in the developer's browser cache. Note that
+the password credential is not stored in a cookie.
 
 ## Web API WCF Data Services
 

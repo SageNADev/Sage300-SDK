@@ -1,6 +1,5 @@
-﻿
-// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+﻿// The MIT License (MIT) 
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -49,54 +48,6 @@ namespace ValuedPartner.TU.Web
     /// </summary>
     public class MvcApplication : HttpApplication
     {
-        private bool _isAuthenticated = false;
-
-        private void Session_Start(object sender, EventArgs e)
-        {
-            if (!_isAuthenticated)
-            {
-                var authenticationManager = new AuthenticationManagerOnPremise();
-                authenticationManager.Login();
-                var recordId = Guid.NewGuid();
-                var context = new Context
-                {
-                    AspNetSessionId = HttpContext.Current.Session.SessionID,
-                    ApplicationUserId = "ADMIN",
-                    Company = "SAMLTD",
-                    ProductUserId = recordId,
-                    TenantId = recordId,
-                    TenantAlias = Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants.Core.OnPremiseTenantAlias,
-                    ApplicationType = ApplicationType.WebApplication,
-                    Language = "en",
-                    ScreenContext = new ScreenContext(),
-                    ScreenName = "None",
-                    Container = BootstrapTaskManager.Container
-                };
-
-                var sessionId = $"{context.ApplicationUserId.Trim()}-{context.Company.Trim()}";
-                context.ScreenContext.ScreenName = "None";
-                context.SessionId = Encoding.UTF8.Base64Encode(sessionId);
-
-				//Set default company information
-                var companies =  new List<Organization>
-                {
-                    new Organization() { Id ="SAMLTD", Name = "SAMLTD", SystemId = "SAMSYS", System = "SAMSYS", IsSecurityEnabled = false }
-                };
-				
-                authenticationManager.LoginResult("SAMLTD", "ADMIN", "ADMIN", BootstrapTaskManager.Container, context, companies);
-                _isAuthenticated = true;
-
-                //Redirect to the last generated page
-                var fileUrlPath = Path.Combine(Server.MapPath("~"), "PageUrl.txt");
-                if (File.Exists(fileUrlPath))
-                {
-                    var url = File.ReadAllText(fileUrlPath).Trim();
-                    url = HttpContext.Current.Request.Url.AbsoluteUri + string.Format(url, context.SessionId);
-                    Response.Redirect(url);
-                }
-            }
-        }
-
         /// <summary>
         /// MVC appliction start event
         /// </summary>
@@ -145,12 +96,16 @@ namespace ValuedPartner.TU.Web
                 return;
             }
 
-            Logger.Error(LoggingConstants.ApplicationError, LoggingConstants.ModuleGlobal, null, exception);
-
             var context = HttpContext.Current.Items["Context"] as Context;
-            Response.Redirect(null != context && !string.IsNullOrEmpty(context.TenantAlias)
-                ? string.Format(@"~\{0}\Core\Error", context.TenantAlias)
-                : @"~\Core\Error");
+
+            if (context != null)
+            {
+                Logger.Error(LoggingConstants.ApplicationError, LoggingConstants.ModuleGlobal, null, exception);
+
+                Response.Redirect(null != context && !string.IsNullOrEmpty(context.TenantAlias)
+                    ? string.Format(@"~\{0}\Core\Error", context.TenantAlias)
+                    : @"~\Core\Error");
+            }
         }
 
         /// <summary>

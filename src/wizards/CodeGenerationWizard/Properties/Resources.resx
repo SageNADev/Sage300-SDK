@@ -625,4 +625,7 @@
   <data name="FinderUrlFound" xml:space="preserve">
     <value>One or more finders have a 'url' property in the definition. For a debug session to properly display these finders, please ensure that the finder's module assemblies (i.e., BusinessRepository, Interfaces, Modules, Resources, Services and Web) are added to the web project if they are not already added.</value>
   </data>
+  <data name="InvalidFinderConfig" xml:space="preserve">
+    <value>A finder has been designed for a property but a finder definition has not been selected. Please select a finder definition.</value>
+  </data>
 </root>

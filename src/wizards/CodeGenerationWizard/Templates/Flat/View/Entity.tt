@@ -99,14 +99,13 @@ else
             </div>
         </section>
     </header>
-    <#
+<#
         if (xmlLayout == null)
         {
             WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
         }
-    #>
-
-	<# 
+#>
+<# 
 	if (view.Options[BusinessView.Constants.GenerateGrid])
 	{
 		var gridName = entityName.Substring(0, 1).ToLower() +  entityName.Substring(1);
@@ -140,21 +139,21 @@ else
         {
             WriteLine(new string(' ', 4) + "</div>");
         }
-    #>
+#>
 
     <section class="footer-group-1">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {
             @Html.KoSageButton("btnSave", new { }, new { @value = CommonResx.Save, @id = "btnSave", @class = "btn btn-primary" })
 
-    <#
+<#
 	if (!view.Options[BusinessView.Constants.GenerateGrid])
 	{
-    #>
+#>
 			@Html.KoSageButton("btnDelete", new { }, new { @value = CommonResx.Delete, @id = "btnDelete", @class = "btn btn-primary" })
-	<#
+<#
 	}
-	#>
+#>
       }
     </section>
 </div>

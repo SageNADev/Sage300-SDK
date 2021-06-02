@@ -1229,12 +1229,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 var field = view.Fields[i];
+                var type = FieldType(field);
+                var isNumeric = type == BusinessDataType.Decimal ||
+                                type == BusinessDataType.Double ||
+                                type == BusinessDataType.Integer ||
+                                type == BusinessDataType.Long ||
+                                type == BusinessDataType.Short;
+
                 var businessField = new BusinessField
                 {
                     ServerFieldName = field.Name,
                     Name = FieldName(field, businessView.Properties[BusinessView.Constants.EntityName], uniqueDescriptions),
                     Description = field.Description,
-                    Type = FieldType(field),
+                    Type = type,
                     Id = field.ID,
                     Size = field.Size,
                     IsReadOnly = !field.Attributes.HasFlag(ViewFieldAttributes.Editable),
@@ -1243,7 +1250,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     IsKey = field.Attributes.HasFlag(ViewFieldAttributes.Key),
                     IsUpperCase = field.PresentationMask != null && field.PresentationMask.Contains("C"),
                     IsAlphaNumeric = field.PresentationMask != null && field.PresentationMask.Contains("N"),
-                    IsNumeric = field.PresentationMask != null && field.PresentationMask.Contains("D"),
+                    IsNumeric = isNumeric,
                     IsDynamicEnablement = field.Attributes.HasFlag(ViewFieldAttributes.CheckEditable),
 #if ENABLE_TK_244885
                     IsCommon = false,

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
   The MIT License (MIT) 
-  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+  Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
  
   Permission is hereby granted, free of charge, to any person obtaining a copy of 
   this software and associated documentation files (the "Software"), to deal in 
@@ -353,6 +353,13 @@
     <Compile Include="Areas\TU\Controllers\Reports\SourceJournalProfileReportController.cs" />
     <Compile Include="Areas\TU\Controllers\Reports\SourceJournalProfileReportControllerInternal.cs" />
     <Compile Include="Areas\TU\Models\Reports\SourceJournalProfileReportViewModel.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TUAreaRegistration.cs" />
     <Compile Include="TUWebBootstrapper.cs" />
     <Compile Include="BundleRegistration.cs" />
@@ -384,6 +391,7 @@
     <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportBehaviour.js" />
     <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportKoExtn.js" />
     <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportRepository.js" />
+    <Content Include="Login.aspx" />
     <Content Include="pageUrl.txt" />
     <Content Include="TUBootstrapper.xml">
       <SubType>Designer</SubType>

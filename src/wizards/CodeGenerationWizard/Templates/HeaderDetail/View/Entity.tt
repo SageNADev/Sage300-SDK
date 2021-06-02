@@ -77,14 +77,14 @@
             </div>
         </section>
     </header>
-    <#
+<#
         if (xmlLayout == null)
         {
             WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
         }
-    #>
+#>
 
-	<# 
+<# 
 	if (view.Options[BusinessView.Constants.GenerateGrid])
 	{
 		var gridName = entityName.Substring(0, 1).ToLower() +  entityName.Substring(1);
@@ -117,10 +117,9 @@
         {
             WriteLine(new string(' ', 4) + "</div>");
         }
-    #>
-
+#>
     <div class="form-group">
-			<#
+<#
 			 foreach(var view in settings.Entities)
 			 {
 				if (view.Options[BusinessView.Constants.GenerateGrid])
@@ -145,7 +144,7 @@
                     }				
                 }
 			 }
-			#>
+#>
     </div>
 
     <section class="footer-group-1">

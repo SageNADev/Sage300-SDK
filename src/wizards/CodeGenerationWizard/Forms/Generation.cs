@@ -626,6 +626,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             // Are any validations required here?
 
+            // Finder designated but no finder definition
+            if (_controlsList.Values.Any(x => x.Widget == "Finder" && string.IsNullOrEmpty(x.FinderName)))
+            {
+                return Resources.InvalidFinderConfig;
+            }
+
             // Warning only if finder url's are discovered
             if (_controlsList.Values.Any(x => x.FinderUrl))
             {

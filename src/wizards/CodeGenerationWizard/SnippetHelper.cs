@@ -26,7 +26,6 @@ using System.Xml.Linq;
 using System.Xml.XPath;
 #endregion
 
-
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
     /// <summary>
@@ -43,7 +42,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Number Of OptionalFields  </summary>
         private const string NUMBEROFOPTIONALFIELDS = "NumberOfOptionalFields";
         /// <summary> Widget types for special iterations  </summary>
-        private static readonly string[] WIDGET_TYPES = { "DateTime", "Time", "Checkbox", "Numeric", "Textbox", "Finder" };
+        private static readonly string[] WIDGET_TYPES = { "DateTime", "Time", "Checkbox", "Numeric", "Textbox", "Finder", "Dropdown" };
 
         /// <summary>
         /// Generate Widgets
@@ -88,9 +87,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     DropdownRazorView(depth, controlElement, snippet, view);
                 }
-                else if (controlElement.Attribute("widget").Value.Equals("DateTime"))
+                else if (controlElement.Attribute("widget").Value.Equals("DateTime") &&
+                    !Convert.ToBoolean(controlElement.Attribute("timeOnly").Value))
                 {
-                    DatetimeRazorView(depth, controlElement, snippet, Convert.ToBoolean(controlElement.Attribute("timeOnly").Value), view);
+                    DatetimeRazorView(depth, controlElement, snippet, view);
                 }
                 else if (controlElement.Attribute("widget").Value.Equals("Checkbox"))
                 {
@@ -121,9 +121,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         NumericRazorView(depth, controlElement, snippet, view);
                     }
                 }
-                else if (controlElement.Attribute("widget").Value.Equals("Time"))
+                else if (controlElement.Attribute("widget").Value.Equals("Time") ||
+                        ((controlElement.Attribute("widget").Value.Equals("DateTime") &&
+                        Convert.ToBoolean(controlElement.Attribute("timeOnly").Value))))
                 {
-                    TimeRazorView(depth, controlElement, snippet, view);
+                    TimeRazorView(depth, controlElement, snippet, 
+                        view, Convert.ToBoolean(controlElement.Attribute("timeOnly").Value));
                 }
 
                 // children?
@@ -151,32 +154,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var property = controlElement.Attribute("property").Value;
             var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
-
-            // temp until consolidate to simple helpers
-            var sizeClassName = GetSizeClassName(property, view, true);
-            if (sizeClassName == "xsmall" || sizeClassName == "smaller" || sizeClassName == "small")
-            {
-                sizeClassName = "Small";
-            }
-            else if (sizeClassName == "default")
-            {
-                sizeClassName = "Default";
-            }
-            else if (sizeClassName == "medium")
-            {
-                sizeClassName = "Medium";
-            }
-            else if (sizeClassName == "medium-large")
-            {
-                sizeClassName = "MediumLarge";
-            }
-            else if (sizeClassName == "large" || sizeClassName == "larger" || sizeClassName == "xlarge")
-            {
-                sizeClassName = "Large";
-            }
+            var cssClass = GetSizeClassName(businessField, true);
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "search-group"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgFinderWithLabelBound(property, businessField, sizeClassName));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgFinderWithLabelBound(property, businessField, cssClass));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -190,15 +171,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private static void TextboxRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view)
         {
             var property = controlElement.Attribute("property").Value;
-            var className = (GetSizeClassName(property, view) + " " + 
-                GetUpperClassName(property, view) + " " + 
-                GetRequiredClassName(property, view)).Replace("  ", " ").Trim();
+            var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
+            var cssClass = GetSizeClassName(businessField);
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "input-group"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SageLabelFor(property, view));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + KoSageTextBoxFor(property, "@value = \"Data." + property + "\", @valueUpdate = \"'input'\"",
-                className));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + ValidationMessageFor(property));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgTextboxWithLabelBound(property, businessField, cssClass));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -212,11 +189,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private static void DropdownRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view)
         {
             var property = controlElement.Attribute("property").Value;
+            var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
+            var cssClass = GetSizeClassName(businessField);
+
+            // No XLarge, so make it Larger
+            if (cssClass == "XLarge")
+            {
+                cssClass = "Larger";
+            }
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "dropdown-group"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SageLabelFor(property, view));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + KoSageDropDownListFor(property, "@value = \"Data." + property + 
-                "\", @optionsText = \"'Text'\", @optionsValue = \"'Value'\"", "default"));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgDropdownWithLabelBound(property, businessField, cssClass));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -228,20 +211,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="snippet">Snippet being constructed</param>
         /// <param name="isTimeOnly">True to treat DateTime as Time otherwise false </param>
         /// <param name="view">Business View</param>
-        private static void DatetimeRazorView(int depth, XElement controlElement, StringBuilder snippet, bool isTimeOnly, BusinessView view)
+        private static void DatetimeRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view)
         {
             var property = controlElement.Attribute("property").Value;
-            var className = isTimeOnly ? "timepicker-group" : "datepicker-group";
-            var textClassName = isTimeOnly ? "timepicker small" : "datepicker default";
-            var attributes = isTimeOnly ? "@sagevalue = \"Data." + property + "Ext\", @valueUpdate = \"'input'\"" : "@sageDatePicker = \"Data." + property + "\"";
+            var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
 
-            textClassName += " " + GetRequiredClassName(property, view);
-            textClassName = textClassName.Replace("  ", " ").Trim();
-
-            snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, className));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SageLabelFor(property, view));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + KoSageTextBoxFor(property, attributes, textClassName));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + ValidationMessageFor(property));
+            snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "datepicker-group"));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgDatepickerWithLabelBound(property, businessField));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -255,11 +231,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private static void CheckboxRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view)
         {
             var property = controlElement.Attribute("property").Value;
+            var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "ctrl-group"));
             snippet.AppendLine(new string(' ', (depth + 1) * 4) + StartingTag(DIV, "child"));
-            snippet.AppendLine(new string(' ', (depth + 2) * 4) + KoSageCheckBoxFor(property));
-            snippet.AppendLine(new string(' ', (depth + 2) * 4) + SageLabelFor(property, view, "checkBox-info"));
+            snippet.AppendLine(new string(' ', (depth + 2) * 4) + SgCheckboxWithLabelBound(property, businessField));
             snippet.AppendLine(new string(' ', (depth + 1) * 4) + EndingTag(DIV));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
@@ -273,15 +249,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="view">Business View</param>
         private static void CheckboxHamburgerRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view, string property)
         {
+            var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
+
             //@Html.SageHamburger("#", null, null, new { @id = "lnkOptionalField" })
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "ctrl-group"));
             snippet.AppendLine(new string(' ', (depth + 1) * 4) + StartingTag(DIV, "child"));
-            snippet.AppendLine(new string(' ', (depth + 2) * 4) + KoSageCheckBoxFor(property));
-            snippet.AppendLine(new string(' ', (depth + 2) * 4) + SageLabelFor(property, view, "checkBox-info"));
+            snippet.AppendLine(new string(' ', (depth + 2) * 4) + SgCheckboxWithLabelBound(property, businessField));
             snippet.AppendLine(new string(' ', (depth + 2) * 4) + SageHamburger(property));
             snippet.AppendLine(new string(' ', (depth + 1) * 4) + EndingTag(DIV));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
+
         /// <summary>
         /// RadioButtons Snippet Razor View
         /// </summary>
@@ -397,6 +375,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="controlElement">XML element</param>
         /// <param name="snippet">Snippet being constructed</param>
         /// <param name="view">Business View</param>
+        //private static void NumericRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view)
+        //{
+        //    var property = controlElement.Attribute("property").Value;
+        //    var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
+        //    var sizeClassName = GetSizeClassName(businessField, true);
+
+        //    snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "numeric-group"));
+        //    snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgTextboxWithLabelBound(property, businessField, sizeClassName));
+        //    snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
+
+        //    //snippet.AppendLine(new string(' ', (depth + 1) * 4) + KoSageNumericBoxFor(property, "numeric default kendonumeric"));
+        //}
         private static void NumericRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view)
         {
             var property = controlElement.Attribute("property").Value;
@@ -409,21 +399,46 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
+        /// Ko Sage Numeric Box For snippet
+        /// </summary>
+        /// <param name="property">Property Name</param>
+        /// <param name="name">Class Name</param>
+        private static string KoSageNumericBoxFor(string property, string name)
+        {
+            return "@Html.KoSageNumericBoxFor(model => model.Data." + property +
+                ", new { @value = \"Data." + property + "\", @sagevalue = \"Data." + property +
+                "\", @sagedisable = \"Data.Is" + property + "Disabled\" }, new { @id = \"nbr" + property +
+                "\", @class = \"" + name + "\" })";
+        }
+
+        /// <summary>
+        /// Validation Message For snippet
+        /// </summary>
+        /// <param name="property">Property Name</param>
+        /// <param name="name">Class Name</param>
+        private static string ValidationMessageFor(string property, string name = "")
+        {
+            return "@Html.ValidationMessageFor(model => model.Data." + property +
+                ", null, new { @class = \"" + name + "\" })";
+        }
+
+        /// <summary>
         /// Time Snippet Razor View
         /// </summary>
         /// <param name="depth">Indentation for generation</param>
         /// <param name="controlElement">XML element</param>
         /// <param name="snippet">Snippet being constructed</param>
         /// <param name="view">Business View</param>
-        private static void TimeRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view)
+        /// <param name="isTimeOnly">True if time only otherwise false</param>
+        private static void TimeRazorView(int depth, XElement controlElement, StringBuilder snippet, 
+            BusinessView view, bool isTimeOnly)
         {
             var property = controlElement.Attribute("property").Value;
-            var className = ("timepicker small " + GetRequiredClassName(property, view)).Replace("  ", " ").Trim();
+            var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "timepicker-group"));
             snippet.AppendLine(new string(' ', (depth + 1) * 4) + SageLabelFor(property, view));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + KoSageTextBoxFor(property, "@sagevalue = \"Data." + property + "\", @valueUpdate = \"'input'\"", className));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + ValidationMessageFor(property));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgTimepickerBound(property, businessField, isTimeOnly));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -1001,17 +1016,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Validation Message For snippet
-        /// </summary>
-        /// <param name="property">Property Name</param>
-        /// <param name="name">Class Name</param>
-        private static string ValidationMessageFor(string property, string name = "")
-        {
-            return "@Html.ValidationMessageFor(model => model.Data." + property + 
-                ", null, new { @class = \"" + name + "\" })";
-        }
-
-        /// <summary>
         /// Sage Label For snippet
         /// </summary>
         /// <param name="property">Property Name</param>
@@ -1055,19 +1059,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Ko Sage Numeric Box For snippet
-        /// </summary>
-        /// <param name="property">Property Name</param>
-        /// <param name="name">Class Name</param>
-        private static string KoSageNumericBoxFor(string property, string name)
-        {
-            return "@Html.KoSageNumericBoxFor(model => model.Data." + property + 
-                ", new { @value = \"Data." + property + "\", @sagevalue = \"Data." + property + 
-                "\", @sagedisable = \"Data.Is" + property + "Disabled\" }, new { @id = \"nbr" + property + 
-                "\", @class = \"" + name + "\" })";
-        }
-
-        /// <summary>
         /// Ko Sage Radio Button For snippet
         /// </summary>
         /// <param name="property">Property Name</param>
@@ -1081,34 +1072,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return "@Html.KoSageRadioButtonFor(model => model.Data." + property + 
                 ", (int)" + companyNamespace + "." + moduleId + ".Models.Enums." + enumName + "." + valueName + ", new { @sagechecked = \"Data." + enumName + 
                 "\", @sagedisable = \"Data.HasModifyAccess\" }, new { @id = \"chk" + property + valueName + "\" })";
-        }
-
-        /// <summary>
-        /// Ko Sage Check Box For snippet
-        /// </summary>
-        /// <param name="property">Property Name</param>
-        private static string KoSageCheckBoxFor(string property)
-        {
-            return "@Html.KoSageCheckBoxFor(model => model.Data." + property + 
-                ", new { @sagechecked = \"Data." + property + "\", @sagedisable = \"Data.Is" + property + 
-                "Disabled\"} , new { @id = \"chk" + property + "\", @autofocus = \"autofocus\" })";
-        }
-
-        /// <summary>
-        /// Ko Sage Text Box For snippet
-        /// </summary>
-        /// <param name="property">Property Name</param>
-        /// <param name="attributes">Attributes</param>
-        /// <param name="names">Class name(s)</param>
-        /// <param name="format">Format</param>
-        private static string KoSageTextBoxFor(string property, string attributes, string names, string format = "")
-        {
-            var formatValue = string.IsNullOrEmpty(format) ? string.Empty : ", @formatTextbox =\"" + format + "\"";
-
-            return "@Html.KoSageTextBoxFor(model => model.Data." + property + 
-                ", new { " + attributes + ", @sagedisable = \"Data.Is" + property + 
-                "Disabled\" }, new { @id = \"txt" + property + 
-                "\", @class = \"" + names + "\"" + formatValue + "})";
         }
 
         /// <summary>
@@ -1127,8 +1090,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var finderButtonId = $"btnLoad{property}";
             var searchButtonId = $"btnFinder{property}";
             var textboxIdOverride = $"txt{property}";
-            var disableMethodName = "Data.Is" + property + "Disabled";
-            var textBoxFormat = "alphaNumeric";
+            var disableMethodName = $"Data.Is{property}Disabled";
+            var textBoxFormat = field.IsAlphaNumeric ? "alphaNumeric" : "";
             var labelTextOverride = "";
             var textBoxCssClass = "new List<CompositeExtensions.TextBoxCssClassTypeEnum> { CompositeExtensions.TextBoxCssClassTypeEnum." + cssClass + " } ";
 
@@ -1139,16 +1102,118 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Ko Sage Drop Down List For snippet
+        /// Ko Sage Textbox with Label Snippet
         /// </summary>
         /// <param name="property">Property Name</param>
-        /// <param name="attributes">Attributes</param>
-        /// <param name="name">Class Name</param>
-        private static string KoSageDropDownListFor(string property, string attributes, string name)
+        /// <param name="field">Business Field</param>
+        /// <param name="cssClass">CSS Class</param>
+        private static string SgTextboxWithLabelBound(string property, BusinessField field, string cssClass)
         {
-            return "@Html.KoSageDropDownListFor(model => model.Data." + property + 
-                ", Model.Get" + property + ", null, new { " + attributes + " , @disable = \"Data.HasModifyAccess\" }, new { @id = \"ddl" + 
-                property + "\", @class = \"" + name + "\" })";
+            var isNumeric = field != null && field.IsNumeric;
+            var prefix = isNumeric ? "nbr" : "txt";
+
+            var methodName = "@Html.SgTextboxWithLabelBound";
+            var modelProperty = $"model => model.Data.{property}";
+            var controlSwitches = "new ControlSwitches { " + 
+                GetRequiredSwitch(field) + 
+                (!isNumeric ? ", " + GetUpperSwitch(field) : "") + ", IncludeValidation = true }";
+            var maxLength = field == null ? 20 : field.Size;
+            var textBoxCssClass = "new List<CompositeExtensions.TextBoxCssClassTypeEnum> { CompositeExtensions.TextBoxCssClassTypeEnum." + cssClass + 
+                                  (isNumeric ? ", CompositeExtensions.TextBoxCssClassTypeEnum.Numeric" : "") +  " } ";
+            var alternateDisplayProperty = "";
+            var textboxIdOverride = $"{prefix}{property}";
+            var disableMethodName = $"Data.Is{property}Disabled";
+            var textBoxFormat = isNumeric ? "numeric kendonumeric" : "";
+
+            var output = $"{methodName}({modelProperty}, {controlSwitches}, {maxLength}, {textBoxCssClass}, \"{alternateDisplayProperty}\", " + 
+                         $"\"{textboxIdOverride}\", \"{disableMethodName}\", \"\", \"{textBoxFormat}\")";
+
+            return output;
+        }
+
+        /// <summary>
+        /// Ko Sage Date Picker with Label Snippet
+        /// </summary>
+        /// <param name="property">Property Name</param>
+        /// <param name="field">Business Field</param>
+        private static string SgDatepickerWithLabelBound(string property, BusinessField field)
+        {
+            var methodName = "@Html.SgDatepickerWithLabelBound";
+            var modelProperty = $"model => model.Data.{property}";
+            var controlSwitches = "new ControlSwitches { " + GetRequiredSwitch(field) + ", IncludeValidation = true }";
+            var disableMethodName = $"Data.Is{property}Disabled";
+            var textboxIdOverride = $"txt{property}";
+
+            var output = $"{methodName}({modelProperty}, {controlSwitches}, \"{disableMethodName}\", " +
+                         $"\"{textboxIdOverride}\")";
+
+            return output;
+        }
+
+        /// <summary>
+        /// Ko Sage Time Picker with Label Snippet
+        /// </summary>
+        /// <param name="property">Property Name</param>
+        /// <param name="field">Business Field</param>
+        /// <param name="isTimeOnly">True if time only otherwise false</param>
+        private static string SgTimepickerBound(string property, BusinessField field, bool isTimeOnly)
+        {
+            var methodName = "@Html.SgTimepickerBound";
+            var modelProperty = $"model => model.Data.{property}";
+            var controlSwitches = "new ControlSwitches { " + GetRequiredSwitch(field) + ", IncludeValidation = true }";
+            var valueAttribute = $"Data.{property}" + (isTimeOnly ? "Ext" : "");
+            var textboxIdOverride = $"txt{property}";
+            var disableMethodName = $"Data.Is{property}Disabled";
+
+            var output = $"{methodName}({modelProperty}, {controlSwitches}, \"{valueAttribute}\", " +
+                         $"\"{textboxIdOverride}\", \"{disableMethodName}\")";
+
+            return output;
+        }
+
+        /// <summary>
+        /// Ko Sage Dropdown with Label Snippet
+        /// </summary>
+        /// <param name="property">Property Name</param>
+        /// <param name="field">Business Field</param>
+        /// <param name="cssClass">CSS Class</param>
+        private static string SgDropdownWithLabelBound(string property, BusinessField field, string cssClass)
+        {
+            var methodName = "@Html.SgDropdownWithLabelBound";
+            var modelProperty = $"model => model.Data.{property}";
+            var controlSwitches = "new ControlSwitches { " +
+                GetRequiredSwitch(field) +", IncludeValidation = true }";
+            var populateListMethodName = "Get" + property;
+            var disableMethodName = $"Data.Is{property}Disabled";
+            var dropdownIdOverride = $"ddl{property}";
+            // Override for dropbox since property length has nothing to do with what's displayed
+            cssClass = "Small";
+            var dropdownCssClass = "new List<CompositeExtensions.DropDownCssClassTypeEnum> { CompositeExtensions.DropDownCssClassTypeEnum." + cssClass + " } ";
+
+            var output = $"{methodName}({modelProperty}, {controlSwitches}, \"{populateListMethodName}\", \"{disableMethodName}\", " + 
+                         $"\"{dropdownIdOverride}\", {dropdownCssClass})";
+
+            return output;
+        }
+
+        /// <summary>
+        /// Ko Sage Checkbox with Label Snippet
+        /// </summary>
+        /// <param name="property">Property Name</param>
+        /// <param name="field">Business Field</param>
+        private static string SgCheckboxWithLabelBound(string property, BusinessField field)
+        {
+            var methodName = "@Html.SgCheckboxWithLabelBound";
+            var modelProperty = $"model => model.Data.{property}";
+            var controlSwitches = "new ControlSwitches { " +
+                GetRequiredSwitch(field) + ", IncludeValidation = true }";
+            var disableControlMethodName = $"Data.Is{property}Disabled";
+            var checkboxIdOverride = $"chk{property}";
+
+            var output = $"{methodName}({modelProperty}, {controlSwitches}, \"{disableControlMethodName}\", " +
+                         $"\"{checkboxIdOverride}\")";
+
+            return output;
         }
 
         /// <summary>
@@ -1163,17 +1228,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary>
         /// Get the size class name
         /// </summary>
-        /// <param name="property">Property Name</param>
-        /// <param name="view">Business View</param>
+        /// <param name="businessField">Business Field</param>
         /// <param name="hasGoButton">Has Go button assicated with property</param>
         /// <returns>Class name to be used for size. Default to 'default'</returns>
-        private static string GetSizeClassName(string property, BusinessView view, bool hasGoButton = false)
+        private static string GetSizeClassName(BusinessField businessField, bool hasGoButton = false)
         {
             // Default return 
-            var retVal = "default";
+            var retVal = "Default";
 
-            // Get the size from the business field
-            var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
+            // Get the size from the business field and set a default
             var size = businessField == null ? 20 : businessField.Size;
 
             // Offset if there is a "Go" button to increase size by 2 in case 
@@ -1183,57 +1246,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Evaluate based upon UX Guidelines
             if (size >= 0 && size <= 4)
             {
-                retVal = "xsmall";
+                retVal = "XSmall";
             }
             else if (size >= 5 && size <= 15)
             {
-                retVal = "smaller";
+                retVal = "Smaller";
             }
             else if (size >= 16 && size <= 19)
             {
-                retVal = "small";
+                retVal = "Small";
             }
             else if (size >= 20 && size <= 31)
             {
-                retVal = "default";
+                retVal = "Default";
             }
             else if (size >= 32 && size <= 36)
             {
-                retVal = "medium";
+                retVal = "Medium";
             }
             else if (size >= 37 && size <= 41)
             {
-                retVal = "medium-large";
+                retVal = "MediumLarge";
             }
             else if (size >= 42 && size <= 69)
             {
-                retVal = "large";
+                retVal = "Large";
             }
             else if (size >= 70 && size <= 84)
             {
-                retVal = "larger";
+                retVal = "Larger";
             }
             else if (size >= 85)
             {
-                retVal = "xlarge";
+                retVal = "XLarge";
             }
 
             return retVal;
-        }
-
-        /// <summary>
-        /// Get the upper class name
-        /// </summary>
-        /// <param name="property">Property Name</param>
-        /// <param name="view">Business View</param>
-        /// <returns>Class name to be used for upper case. Default to string.Empty</returns>
-        private static string GetUpperClassName(string property, BusinessView view)
-        {
-            // Get the IsUpperCase from the business field
-            var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
-            var isUpperCase = businessField != null && businessField.IsUpperCase;
-
-            return isUpperCase ? "txt-upper" : string.Empty;
         }
 
         /// <summary>

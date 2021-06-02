@@ -838,6 +838,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A finder has been designed for a property but a finder definition has not been selected. Please select a finder definition..
+        /// </summary>
+        internal static string InvalidFinderConfig {
+            get {
+                return ResourceManager.GetString("InvalidFinderConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The &apos;Generate Grid&apos; option is an invalid selection for {0} because it doesn&apos;t support a revision list..
         /// </summary>
         internal static string InvalidGridView {
