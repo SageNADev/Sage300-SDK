@@ -154,10 +154,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var property = controlElement.Attribute("property").Value;
             var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
-            var cssClass = GetSizeClassName(businessField, true);
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "search-group"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgFinderWithLabelBound(property, businessField, cssClass));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgFinderFor(property, businessField, depth + 2));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -172,10 +171,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var property = controlElement.Attribute("property").Value;
             var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
-            var cssClass = GetSizeClassName(businessField);
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "input-group"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgTextboxWithLabelBound(property, businessField, cssClass));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgTextFor(property, businessField, depth + 2));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -368,33 +366,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
-        /// <summary>
-        /// Numeric Snippet Razor View
-        /// </summary>
-        /// <param name="depth">Indentation for generation</param>
-        /// <param name="controlElement">XML element</param>
-        /// <param name="snippet">Snippet being constructed</param>
-        /// <param name="view">Business View</param>
-        //private static void NumericRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view)
-        //{
-        //    var property = controlElement.Attribute("property").Value;
-        //    var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
-        //    var sizeClassName = GetSizeClassName(businessField, true);
-
-        //    snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "numeric-group"));
-        //    snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgTextboxWithLabelBound(property, businessField, sizeClassName));
-        //    snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
-
-        //    //snippet.AppendLine(new string(' ', (depth + 1) * 4) + KoSageNumericBoxFor(property, "numeric default kendonumeric"));
-        //}
         private static void NumericRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view)
         {
             var property = controlElement.Attribute("property").Value;
+            var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "numeric-group"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SageLabelFor(property, view));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + KoSageNumericBoxFor(property, "numeric default kendonumeric"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + ValidationMessageFor(property));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgNumericFor(property, businessField, depth + 2));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -1075,58 +1053,73 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Ko Sage Finder with Label Snippet
+        /// sgFinderFor with Label Snippet
         /// </summary>
         /// <param name="property">Property Name</param>
         /// <param name="field">Business Field</param>
-        /// <param name="cssClass">CSS Class</param>
-        private static string SgFinderWithLabelBound(string property, BusinessField field, string cssClass)
+        /// <param name="depth">Indentation for generation</param>
+        private static string SgFinderFor(string property, BusinessField field, int depth)
         {
-            var methodName = "@Html.SgFinderWithLabelBound";
-            var modelProperty   = $"model => model.Data.{property}";
-            var controlSwitches = "new ControlSwitches { " + GetRequiredSwitch(field) + ", " +
-                GetUpperSwitch(field) + ", IncludeValidation = true }";
-            var length = field == null ? 20 : field.Size;
-            var finderButtonId = $"btnLoad{property}";
-            var searchButtonId = $"btnFinder{property}";
-            var textboxIdOverride = $"txt{property}";
-            var disableMethodName = $"Data.Is{property}Disabled";
-            var textBoxFormat = field.IsAlphaNumeric ? "alphaNumeric" : "";
-            var labelTextOverride = "";
-            var textBoxCssClass = "new List<CompositeExtensions.TextBoxCssClassTypeEnum> { CompositeExtensions.TextBoxCssClassTypeEnum." + cssClass + " } ";
+            var isNumeric = field != null && field.IsNumeric;
 
-            var output = $"{methodName}({modelProperty}, {controlSwitches}, {length}, \"{finderButtonId}\", \"{searchButtonId}\", \"{textboxIdOverride}\", " + 
-                         $"\"{disableMethodName}\", \"{textBoxFormat}\", \"{labelTextOverride}\", {textBoxCssClass})";
+            var methodName = "@Html.SgFinderFor";
+            var modelProperty   = $"model => model.Data.{property}";
+            var dataAttrs = "new { @sagevalue = " + $"\"Data.{property}\"" + ", @sagedisable = " + $"\"Data.Is{property}Disabled\"" + " }";
+            var htmlAttrs = "new { @id = " + $"\"{GetTextboxId(property, isNumeric)}\"" + 
+                ", @class = " + $"\"{GetUpperAttr(field)}\"" + (field.IsAlphaNumeric ? ", @formatTextbox = \"alphaNumeric\"" : "") + " }";
+            var size = GetSizeName(field);
+            var labelHtmlAttrs = GetRequiredAttr(field);
+            var buttonDataAttrs = ", buttonDataAttrs: new { @sagedisable = " + $"\"Data.Is{property}Disabled\"" + " }";
+
+            var output = $"{methodName}({modelProperty}, " + Environment.NewLine + new string(' ', (depth) * 4) +
+                         $"{dataAttrs}, " + Environment.NewLine + new string(' ', (depth) * 4) +
+                         $"{htmlAttrs}, size: \"{size}\", " + Environment.NewLine + new string(' ', (depth) * 4) +
+                         $"isNumeric: {isNumeric.ToString().ToLower()}{labelHtmlAttrs}{ buttonDataAttrs})";
 
             return output;
         }
 
         /// <summary>
-        /// Ko Sage Textbox with Label Snippet
+        /// sgNumericFor with Label Snippet
         /// </summary>
         /// <param name="property">Property Name</param>
         /// <param name="field">Business Field</param>
-        /// <param name="cssClass">CSS Class</param>
-        private static string SgTextboxWithLabelBound(string property, BusinessField field, string cssClass)
+        /// <param name="depth">Indentation for generation</param>
+        private static string SgNumericFor(string property, BusinessField field, int depth)
         {
-            var isNumeric = field != null && field.IsNumeric;
-            var prefix = isNumeric ? "nbr" : "txt";
-
-            var methodName = "@Html.SgTextboxWithLabelBound";
+            var methodName = "@Html.SgNumericFor";
             var modelProperty = $"model => model.Data.{property}";
-            var controlSwitches = "new ControlSwitches { " + 
-                GetRequiredSwitch(field) + 
-                (!isNumeric ? ", " + GetUpperSwitch(field) : "") + ", IncludeValidation = true }";
-            var maxLength = field == null ? 20 : field.Size;
-            var textBoxCssClass = "new List<CompositeExtensions.TextBoxCssClassTypeEnum> { CompositeExtensions.TextBoxCssClassTypeEnum." + cssClass + 
-                                  (isNumeric ? ", CompositeExtensions.TextBoxCssClassTypeEnum.Numeric" : "") +  " } ";
-            var alternateDisplayProperty = "";
-            var textboxIdOverride = $"{prefix}{property}";
-            var disableMethodName = $"Data.Is{property}Disabled";
-            var textBoxFormat = isNumeric ? "numeric kendonumeric" : "";
+            var dataAttrs = "new { @sagevalue = " + $"\"Data.{property}\"" + ", @sagedisable = " + $"\"Data.Is{property}Disabled\"" + " }";
+            var htmlAttrs = "new { @id = " + $"\"{GetTextboxId(property, true)}\"" + "}";
+            var size = GetSizeName(field);
+            var labelHtmlAttrs = GetRequiredAttr(field);
 
-            var output = $"{methodName}({modelProperty}, {controlSwitches}, {maxLength}, {textBoxCssClass}, \"{alternateDisplayProperty}\", " + 
-                         $"\"{textboxIdOverride}\", \"{disableMethodName}\", \"\", \"{textBoxFormat}\")";
+            var output = $"{methodName}({modelProperty}, " + Environment.NewLine + new string(' ', (depth) * 4) +
+                         $"{dataAttrs}, " + Environment.NewLine + new string(' ', (depth) * 4) +
+                         $"{htmlAttrs},  size: \"{size}\"{labelHtmlAttrs})";
+
+            return output;
+        }
+
+        /// <summary>
+        /// sgTextFor with Label Snippet
+        /// </summary>
+        /// <param name="property">Property Name</param>
+        /// <param name="field">Business Field</param>
+        /// <param name="depth">Indentation for generation</param>
+        private static string SgTextFor(string property, BusinessField field, int depth)
+        {
+            var methodName = "@Html.SgTextFor";
+            var modelProperty = $"model => model.Data.{property}";
+            var dataAttrs = "new { @sagevalue = " + $"\"Data.{property}\"" + ", @sagedisable = " + $"\"Data.Is{property}Disabled\"" + " }";
+            var htmlAttrs = "new { @id = " + $"\"{GetTextboxId(property, false)}\"" +
+                ", @class = " + $"\"{GetUpperAttr(field)}\"" + (field.IsAlphaNumeric ? ", @formatTextbox = \"alphaNumeric\"" : "") + " }";
+            var size = GetSizeName(field);
+            var labelHtmlAttrs = GetRequiredAttr(field);
+
+            var output = $"{methodName}({modelProperty}, " + Environment.NewLine + new string(' ', (depth) * 4) +
+                         $"{dataAttrs}, " + Environment.NewLine + new string(' ', (depth) * 4) +
+                         $"{htmlAttrs},  size: \"{size}\"{labelHtmlAttrs})";
 
             return output;
         }
@@ -1233,6 +1226,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <returns>Class name to be used for size. Default to 'default'</returns>
         private static string GetSizeClassName(BusinessField businessField, bool hasGoButton = false)
         {
+            // TODO: To be deprecated when not referenced anymore
+
             // Default return 
             var retVal = "Default";
 
@@ -1285,6 +1280,60 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
+        /// Get the size name
+        /// </summary>
+        /// <param name="businessField">Business Field</param>
+        /// <returns>Size name to be used for size. Default to 'default'</returns>
+        private static string GetSizeName(BusinessField businessField)
+        {
+            // Default return 
+            var retVal = "default";
+
+            // Get the size from the business field and set a default
+            var size = businessField == null ? 20 : businessField.Size;
+
+            // Evaluate based upon UX Guidelines
+            if (size >= 0 && size <= 4)
+            {
+                retVal = "xsmall";
+            }
+            else if (size >= 5 && size <= 15)
+            {
+                retVal = "smaller";
+            }
+            else if (size >= 16 && size <= 19)
+            {
+                retVal = "small";
+            }
+            else if (size >= 20 && size <= 31)
+            {
+                retVal = "default";
+            }
+            else if (size >= 32 && size <= 36)
+            {
+                retVal = "medium";
+            }
+            else if (size >= 37 && size <= 41)
+            {
+                retVal = "mediumlarge";
+            }
+            else if (size >= 42 && size <= 69)
+            {
+                retVal = "large";
+            }
+            else if (size >= 70 && size <= 84)
+            {
+                retVal = "larger";
+            }
+            else if (size >= 85)
+            {
+                retVal = "xlarge";
+            }
+
+            return retVal;
+        }
+
+        /// <summary>
         /// Get the required class name
         /// </summary>
         /// <param name="property">Property Name</param>
@@ -1300,6 +1349,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
+        /// Get the required attribute
+        /// </summary>
+        /// <param name="businessField">Business Field</param>
+        /// <returns>Class name to be used for required. Default to string.Empty</returns>
+        private static string GetRequiredAttr(BusinessField businessField)
+        {
+            // Get the IsRequired from the business field
+            var isRequired = businessField != null && businessField.IsRequired;
+
+            return isRequired ? ", labelHtmlAttrs: new { @class = \"required\" }" : "";
+        }
+
+        /// <summary>
         /// Get the required switch
         /// </summary>
         /// <param name="field">Business Field</param>
@@ -1311,15 +1373,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Get the upper switch
+        /// Get the upper attribute
         /// </summary>
         /// <param name="field">Business Field</param>
         /// <returns>Upper switch</returns>
-        private static string GetUpperSwitch(BusinessField field)
+        private static string GetUpperAttr(BusinessField field)
         {
-            // Get the IsRequired from the business field
-            return $"MakeUppercase = {(field != null && field.IsUpperCase).ToString().ToLower()}";
+            // Get the IsUpperCase from the business field
+            return (field != null && field.IsUpperCase) ? "txt-upper" : "";
         }
 
+    /// <summary>
+    /// Get the textbox id
+    /// </summary>
+    /// <param name="property">Property</param>
+    /// <param name="isNumeric">True if numeric otherwise false</param>
+    /// <returns>Textbox id</returns>
+    private static string GetTextboxId(string property, bool isNumeric)
+    {
+        return (isNumeric ? "nbr" : "txt") + property;
     }
+
+}
 }
