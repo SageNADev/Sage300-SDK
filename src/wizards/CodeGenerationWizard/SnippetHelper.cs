@@ -383,17 +383,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Validation Message For snippet
-        /// </summary>
-        /// <param name="property">Property Name</param>
-        /// <param name="name">Class Name</param>
-        private static string ValidationMessageFor(string property, string name = "")
-        {
-            return "@Html.ValidationMessageFor(model => model.Data." + property +
-                ", null, new { @class = \"" + name + "\" })";
-        }
-
-        /// <summary>
         /// Time Snippet Razor View
         /// </summary>
         /// <param name="depth">Indentation for generation</param>
@@ -408,8 +397,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "timepicker-group"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SageLabelFor(property, view));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgTimepickerBound(property, businessField, isTimeOnly));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgTimepickerFor(property, businessField, isTimeOnly, depth + 2));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -1139,22 +1127,23 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Ko Sage Time Picker with Label Snippet
+        /// SgTimepickerFor with Label Snippet
         /// </summary>
         /// <param name="property">Property Name</param>
         /// <param name="field">Business Field</param>
         /// <param name="isTimeOnly">True if time only otherwise false</param>
-        private static string SgTimepickerBound(string property, BusinessField field, bool isTimeOnly)
+        /// <param name="depth">Indentation for generation</param>
+        private static string SgTimepickerFor(string property, BusinessField field, bool isTimeOnly, int depth)
         {
-            var methodName = "@Html.SgTimepickerBound";
+            var methodName = "@Html.SgTimepickerFor";
             var modelProperty = $"model => model.Data.{property}";
-            var controlSwitches = "new ControlSwitches { " + GetRequiredSwitch(field) + ", IncludeValidation = true }";
-            var valueAttribute = $"Data.{property}" + (isTimeOnly ? "Ext" : "");
-            var textboxIdOverride = $"txt{property}";
-            var disableMethodName = $"Data.Is{property}Disabled";
+            var dataAttrs = "new { @sagevalue = " + $"\"Data.{property}" + (isTimeOnly ? "Ext" : "") + "\", @sagedisable = " + $"\"Data.Is{property}Disabled\"" + " }";
+            var htmlAttrs = "new { @id = " + $"\"txt{property}\"" + " }";
+            var labelHtmlAttrs = GetRequiredAttr(field);
 
-            var output = $"{methodName}({modelProperty}, {controlSwitches}, \"{valueAttribute}\", " +
-                         $"\"{textboxIdOverride}\", \"{disableMethodName}\")";
+            var output = $"{methodName}({modelProperty}, " + NewLine(depth) +
+                         $"{dataAttrs}, " + NewLine(depth) +
+                         $"{htmlAttrs}{labelHtmlAttrs})";
 
             return output;
         }

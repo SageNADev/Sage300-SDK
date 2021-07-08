@@ -663,6 +663,6 @@ $(function () {
         }
     });
     $(window).on('unload', function () {
-        sg.utls.releaseSession();
+        sg.utls.destroySession();
     });
 });
