@@ -538,5 +538,17 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         {
             return _wizardSteps[_currentWizardStep].Panel.Name.Equals(panelName);
         }
+
+        /// <summary> Do not allow punctuation chars in company name </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">event args</param>
+        private void txtCompanyName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsPunctuation(e.KeyChar))
+            {
+                // Swallow key stroke for punctuation chars
+                e.Handled = true;
+            }
+        }
     }
 }

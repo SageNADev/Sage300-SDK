@@ -1849,13 +1849,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (settings.includeEnglish) { CreateResx(view, resourceFileNames[GlobalConstants.LanguageIndex.English][IndexBaseFile], 
                                                             resourceFileNames[GlobalConstants.LanguageIndex.English][IndexCommonFile], addDescription: true); }
             if (settings.includeSpanish) { CreateResx(view, resourceFileNames[GlobalConstants.LanguageIndex.Spanish][IndexBaseFile], 
-                                                            resourceFileNames[GlobalConstants.LanguageIndex.Spanish][IndexCommonFile], true); }
+                                                            resourceFileNames[GlobalConstants.LanguageIndex.Spanish][IndexCommonFile]); }
             if (settings.includeFrench) { CreateResx(view, resourceFileNames[GlobalConstants.LanguageIndex.French][IndexBaseFile], 
-                                                           resourceFileNames[GlobalConstants.LanguageIndex.French][IndexCommonFile], true); }
+                                                           resourceFileNames[GlobalConstants.LanguageIndex.French][IndexCommonFile]); }
             if (settings.includeChineseSimplified) { CreateResx(view, resourceFileNames[GlobalConstants.LanguageIndex.ChineseSimplified][IndexBaseFile], 
-                                                                      resourceFileNames[GlobalConstants.LanguageIndex.ChineseSimplified][IndexCommonFile], true); }
+                                                                      resourceFileNames[GlobalConstants.LanguageIndex.ChineseSimplified][IndexCommonFile]); }
             if (settings.includeChineseTraditional) { CreateResx(view, resourceFileNames[GlobalConstants.LanguageIndex.ChineseTraditional][IndexBaseFile], 
-                                                                       resourceFileNames[GlobalConstants.LanguageIndex.ChineseTraditional][IndexCommonFile], true); }
+                                                                       resourceFileNames[GlobalConstants.LanguageIndex.ChineseTraditional][IndexCommonFile]); }
         }
 
         /// <summary>

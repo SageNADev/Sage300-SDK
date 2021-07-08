@@ -188,16 +188,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var property = controlElement.Attribute("property").Value;
             var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
-            var cssClass = GetSizeClassName(businessField);
-
-            // No XLarge, so make it Larger
-            if (cssClass == "XLarge")
-            {
-                cssClass = "Larger";
-            }
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "dropdown-group"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgDropdownWithLabelBound(property, businessField, cssClass));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgDropdownFor(property, businessField, depth + 2));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -215,7 +208,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var businessField = view.Fields.Where(x => x.Name == property).FirstOrDefault();
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "datepicker-group"));
-            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgDatepickerWithLabelBound(property, businessField));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + SgDatepickerFor(property, businessField, depth + 2));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
@@ -1071,9 +1064,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var labelHtmlAttrs = GetRequiredAttr(field);
             var buttonDataAttrs = ", buttonDataAttrs: new { @sagedisable = " + $"\"Data.Is{property}Disabled\"" + " }";
 
-            var output = $"{methodName}({modelProperty}, " + Environment.NewLine + new string(' ', (depth) * 4) +
-                         $"{dataAttrs}, " + Environment.NewLine + new string(' ', (depth) * 4) +
-                         $"{htmlAttrs}, size: \"{size}\", " + Environment.NewLine + new string(' ', (depth) * 4) +
+            var output = $"{methodName}({modelProperty}, " + NewLine(depth) +
+                         $"{dataAttrs}, " + NewLine(depth) +
+                         $"{htmlAttrs}, size: \"{size}\", " + NewLine(depth) +
                          $"isNumeric: {isNumeric.ToString().ToLower()}{labelHtmlAttrs}{ buttonDataAttrs})";
 
             return output;
@@ -1094,8 +1087,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var size = GetSizeName(field);
             var labelHtmlAttrs = GetRequiredAttr(field);
 
-            var output = $"{methodName}({modelProperty}, " + Environment.NewLine + new string(' ', (depth) * 4) +
-                         $"{dataAttrs}, " + Environment.NewLine + new string(' ', (depth) * 4) +
+            var output = $"{methodName}({modelProperty}, " + NewLine(depth) +
+                         $"{dataAttrs}, " + NewLine(depth) +
                          $"{htmlAttrs},  size: \"{size}\"{labelHtmlAttrs})";
 
             return output;
@@ -1117,28 +1110,30 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var size = GetSizeName(field);
             var labelHtmlAttrs = GetRequiredAttr(field);
 
-            var output = $"{methodName}({modelProperty}, " + Environment.NewLine + new string(' ', (depth) * 4) +
-                         $"{dataAttrs}, " + Environment.NewLine + new string(' ', (depth) * 4) +
+            var output = $"{methodName}({modelProperty}, " + NewLine(depth) +
+                         $"{dataAttrs}, " + NewLine(depth) +
                          $"{htmlAttrs},  size: \"{size}\"{labelHtmlAttrs})";
 
             return output;
         }
 
         /// <summary>
-        /// Ko Sage Date Picker with Label Snippet
+        /// sgDatepickerFor with Label Snippet
         /// </summary>
         /// <param name="property">Property Name</param>
         /// <param name="field">Business Field</param>
-        private static string SgDatepickerWithLabelBound(string property, BusinessField field)
+        /// <param name="depth">Indentation for generation</param>
+        private static string SgDatepickerFor(string property, BusinessField field, int depth)
         {
-            var methodName = "@Html.SgDatepickerWithLabelBound";
+            var methodName = "@Html.SgDatepickerFor";
             var modelProperty = $"model => model.Data.{property}";
-            var controlSwitches = "new ControlSwitches { " + GetRequiredSwitch(field) + ", IncludeValidation = true }";
-            var disableMethodName = $"Data.Is{property}Disabled";
-            var textboxIdOverride = $"txt{property}";
+            var dataAttrs = "new { @sageDatePicker = " + $"\"Data.{property}\"" + ", @sagedisable = " + $"\"Data.Is{property}Disabled\"" + " }";
+            var htmlAttrs = "new { @id = " + $"\"txt{property}\"" + " }";
+            var labelHtmlAttrs = GetRequiredAttr(field);
 
-            var output = $"{methodName}({modelProperty}, {controlSwitches}, \"{disableMethodName}\", " +
-                         $"\"{textboxIdOverride}\")";
+            var output = $"{methodName}({modelProperty}, " + NewLine(depth) +
+                         $"{dataAttrs}, " + NewLine(depth) +
+                         $"{htmlAttrs}{labelHtmlAttrs})";
 
             return output;
         }
@@ -1165,26 +1160,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Ko Sage Dropdown with Label Snippet
+        /// sgDropdownFor with Label Snippet
         /// </summary>
         /// <param name="property">Property Name</param>
         /// <param name="field">Business Field</param>
-        /// <param name="cssClass">CSS Class</param>
-        private static string SgDropdownWithLabelBound(string property, BusinessField field, string cssClass)
+        /// <param name="depth">Indentation for generation</param>
+        private static string SgDropdownFor(string property, BusinessField field, int depth)
         {
-            var methodName = "@Html.SgDropdownWithLabelBound";
+            var methodName = "@Html.SgDropdownFor";
             var modelProperty = $"model => model.Data.{property}";
-            var controlSwitches = "new ControlSwitches { " +
-                GetRequiredSwitch(field) +", IncludeValidation = true }";
-            var populateListMethodName = "Get" + property;
-            var disableMethodName = $"Data.Is{property}Disabled";
-            var dropdownIdOverride = $"ddl{property}";
-            // Override for dropbox since property length has nothing to do with what's displayed
-            cssClass = "Small";
-            var dropdownCssClass = "new List<CompositeExtensions.DropDownCssClassTypeEnum> { CompositeExtensions.DropDownCssClassTypeEnum." + cssClass + " } ";
+            var dataAttrs = "new { @value = " + $"\"Data.{property}\"" + ", @sagedisable = " + $"\"Data.Is{property}Disabled\"" + " }";
+            var htmlAttrs = "new { @id = " + $"\"ddl{property}\", @class = \"single-select\"" + " }";
+            var selectList = $"selectList: Model.Get{property}";
+            var size = "small";
+            var labelHtmlAttrs = GetRequiredAttr(field);
 
-            var output = $"{methodName}({modelProperty}, {controlSwitches}, \"{populateListMethodName}\", \"{disableMethodName}\", " + 
-                         $"\"{dropdownIdOverride}\", {dropdownCssClass})";
+            var output = $"{methodName}({modelProperty}," + NewLine(depth) +
+                         $"{dataAttrs}, {htmlAttrs}," + NewLine(depth) +
+                         $"{selectList}, size: \"{size}\"{labelHtmlAttrs})";
 
             return output;
         }
@@ -1216,67 +1209,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private static string SageHamburger(string property)
         {
             return "@Html.SageHamburger(\"#\", null, null, new { @id = \"lnk" + property + "\" })";
-        }
-
-        /// <summary>
-        /// Get the size class name
-        /// </summary>
-        /// <param name="businessField">Business Field</param>
-        /// <param name="hasGoButton">Has Go button assicated with property</param>
-        /// <returns>Class name to be used for size. Default to 'default'</returns>
-        private static string GetSizeClassName(BusinessField businessField, bool hasGoButton = false)
-        {
-            // TODO: To be deprecated when not referenced anymore
-
-            // Default return 
-            var retVal = "Default";
-
-            // Get the size from the business field and set a default
-            var size = businessField == null ? 20 : businessField.Size;
-
-            // Offset if there is a "Go" button to increase size by 2 in case 
-            // it bumps to the next size pattern
-            // size += hasGoButton ? 2 : 0;
-
-            // Evaluate based upon UX Guidelines
-            if (size >= 0 && size <= 4)
-            {
-                retVal = "XSmall";
-            }
-            else if (size >= 5 && size <= 15)
-            {
-                retVal = "Smaller";
-            }
-            else if (size >= 16 && size <= 19)
-            {
-                retVal = "Small";
-            }
-            else if (size >= 20 && size <= 31)
-            {
-                retVal = "Default";
-            }
-            else if (size >= 32 && size <= 36)
-            {
-                retVal = "Medium";
-            }
-            else if (size >= 37 && size <= 41)
-            {
-                retVal = "MediumLarge";
-            }
-            else if (size >= 42 && size <= 69)
-            {
-                retVal = "Large";
-            }
-            else if (size >= 70 && size <= 84)
-            {
-                retVal = "Larger";
-            }
-            else if (size >= 85)
-            {
-                retVal = "XLarge";
-            }
-
-            return retVal;
         }
 
         /// <summary>
@@ -1383,16 +1315,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return (field != null && field.IsUpperCase) ? "txt-upper" : "";
         }
 
-    /// <summary>
-    /// Get the textbox id
-    /// </summary>
-    /// <param name="property">Property</param>
-    /// <param name="isNumeric">True if numeric otherwise false</param>
-    /// <returns>Textbox id</returns>
-    private static string GetTextboxId(string property, bool isNumeric)
-    {
-        return (isNumeric ? "nbr" : "txt") + property;
-    }
+        /// <summary>
+        /// Get the textbox id
+        /// </summary>
+        /// <param name="property">Property</param>
+        /// <param name="isNumeric">True if numeric otherwise false</param>
+        /// <returns>Textbox id</returns>
+        private static string GetTextboxId(string property, bool isNumeric)
+        {
+            return (isNumeric ? "nbr" : "txt") + property;
+        }
 
-}
+        /// <summary>
+        /// Add a new line
+        /// </summary>
+        /// <returns>New line</returns>
+        /// <param name="depth">Indentation for generation</param>
+        private static string NewLine(int depth)
+        {
+            return Environment.NewLine + new string(' ', (depth) * 4);
+        }
+
+    }
 }
