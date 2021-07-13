@@ -47,7 +47,7 @@
 }
 
 @section scripts{
-    @Scripts.Render("~/bundles/<#=companyNamespace#><#=moduleId#><#=entityName#>")
+    @Scripts.Render("~/bundles/<#=moduleId#><#=entityName#>")
 }
 
 @{

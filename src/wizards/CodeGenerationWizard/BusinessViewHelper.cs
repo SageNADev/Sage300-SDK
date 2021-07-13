@@ -137,7 +137,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             const string tag = "internal static void RegisterBundles(BundleCollection bundles)";
 
             var textlineToAdded = string.Format(Constants.TabThree + @"#region {0}" + "\r\n" +
-                                                Constants.TabThree + @"bundles.Add(new Bundle(""~/bundles/{2}{1}{0}"").Include(" + "\r\n" +
+                                                Constants.TabThree + @"bundles.Add(new Bundle(""~/bundles/{1}{0}"").Include(" + "\r\n" +
                                                 Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Behaviour.js""," + "\r\n" +
                                                 Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}KoExtn.js""," + "\r\n" +
                                                 Constants.TabFour + @"""~/Areas/{1}/Scripts/{0}/{2}.{1}.{0}Repository.js""," + "\r\n" +
