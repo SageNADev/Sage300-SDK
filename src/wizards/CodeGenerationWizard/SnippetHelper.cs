@@ -226,7 +226,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "ctrl-group"));
             snippet.AppendLine(new string(' ', (depth + 1) * 4) + StartingTag(DIV, "child"));
-            snippet.AppendLine(new string(' ', (depth + 2) * 4) + SgCheckboxWithLabelBound(property, businessField));
+            snippet.AppendLine(new string(' ', (depth + 2) * 4) + SgCheckboxFor(property, businessField, depth + 3));
             snippet.AppendLine(new string(' ', (depth + 1) * 4) + EndingTag(DIV));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
@@ -245,7 +245,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             //@Html.SageHamburger("#", null, null, new { @id = "lnkOptionalField" })
             snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "ctrl-group"));
             snippet.AppendLine(new string(' ', (depth + 1) * 4) + StartingTag(DIV, "child"));
-            snippet.AppendLine(new string(' ', (depth + 2) * 4) + SgCheckboxWithLabelBound(property, businessField));
+            snippet.AppendLine(new string(' ', (depth + 2) * 4) + SgCheckboxFor(property, businessField, depth + 3));
             snippet.AppendLine(new string(' ', (depth + 2) * 4) + SageHamburger(property));
             snippet.AppendLine(new string(' ', (depth + 1) * 4) + EndingTag(DIV));
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
@@ -1176,17 +1176,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// </summary>
         /// <param name="property">Property Name</param>
         /// <param name="field">Business Field</param>
-        private static string SgCheckboxWithLabelBound(string property, BusinessField field)
+        /// <param name="depth">Indentation for generation</param> 
+        private static string SgCheckboxFor(string property, BusinessField field, int depth)
         {
-            var methodName = "@Html.SgCheckboxWithLabelBound";
+            var methodName = "@Html.SgCheckboxFor";
             var modelProperty = $"model => model.Data.{property}";
-            var controlSwitches = "new ControlSwitches { " +
-                GetRequiredSwitch(field) + ", IncludeValidation = true }";
-            var disableControlMethodName = $"Data.Is{property}Disabled";
-            var checkboxIdOverride = $"chk{property}";
+            var dataAttrs = "new { @sagechecked = " + $"\"Data.{property}\"" + ", @sagedisable = " + $"\"Data.Is{property}Disabled\"" + " }";
+            var htmlAttrs = "new { @id = " + $"\"chk{property}\"" + " }";
+            var labelHtmlAttrs = GetRequiredAttr(field);
 
-            var output = $"{methodName}({modelProperty}, {controlSwitches}, \"{disableControlMethodName}\", " +
-                         $"\"{checkboxIdOverride}\")";
+            var output = $"{methodName}({modelProperty}, " + NewLine(depth) +
+                         $"{dataAttrs}, " + NewLine(depth) +
+                         $"{htmlAttrs}{labelHtmlAttrs})";
 
             return output;
         }
