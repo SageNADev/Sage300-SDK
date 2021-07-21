@@ -28,7 +28,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-//using DouglasCrockford.JsMin;
+using System.Threading.Tasks;
+
 #endregion
 
 namespace MergeISVProject
@@ -343,15 +344,23 @@ namespace MergeISVProject
                             continue;
                         }
 
-                        var arguments = string.Format(WG_COMMAND_ARGUMENT_TEMPLATE, dir, dir);
                         _Logger.Log(string.Format(Messages.Msg_BeginningMinificationProcessOnDirectory, dir));
-                        _Logger.Log(string.Format(Messages.Msg_RunningCommand, arguments));
-                        ExecuteCommand(pathToWG, workingFolder, arguments);
+                        Parallel.ForEach(Directory.GetFiles(dir, "*.js"), file =>
+                        {
+                            var content = File.ReadAllText(file);
+                            var minified = NUglify.Uglify.Js(content);
+                            if (minified.HasErrors)
+                            {
+                                foreach (var e in minified.Errors)
+                                {
+                                    _Logger.Log(e.ToString());
+                                }
+                            }
+                            File.WriteAllText(file, minified.Code);
+                        });
+
                         _Logger.Log(Messages.Msg_MinificationComplete);
 
-                        _Logger.Log(Messages.Msg_RenamingJavascriptFilesBackToUsableState);
-                        RemoveUnminifiedJavascriptFiles(files);
-                        RenameMinifiedJavascriptFiles(dir);
                         _Logger.Log(Messages.Msg_RenamingComplete);
                     }
                 }
