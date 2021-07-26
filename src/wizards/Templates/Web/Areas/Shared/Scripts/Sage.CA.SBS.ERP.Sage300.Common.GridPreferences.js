@@ -395,11 +395,10 @@ GridPreferencesHelper = {
         if (grid == null || grid.columns == null) {
             return;
         }
-        var j;
         var index = 0;
         //Reorder column
         for (var k = 0; k < result.length; k++) {
-            for (j = 0; j < grid.columns.length; j++) {
+            for (let j = 0; j < grid.columns.length; j++) {
                 if (grid.columns[j].field === result[k].field && index < grid.columns.length) {
                     grid.reorderColumn(index, grid.columns[j]);
                     index++;
@@ -409,11 +408,28 @@ GridPreferencesHelper = {
         }
         //Show/Hide Column
         for (var i = 0; i < grid.columns.length; i++) {
-            grid.hideColumn(grid.columns[i].field);
-            for (j = 0; j < result.length; j++) {
-                if (result[j].field === grid.columns[i].field && !result[j].isHidden) {
-                    grid.showColumn(grid.columns[i].field);
-                    break;
+            grid.showColumn(grid.columns[i].field);
+
+            // hide column if column is hidden, and preference does not show it
+            if (grid.columns[i].hidden) {
+                let shouldHide = true;
+                for (let j = 0; j < result.length; j++) {
+                    if (result[j].field === grid.columns[i].field && !result[j].isHidden) {
+                        shouldHide = false;
+                        break;
+                    }
+                }
+                if (shouldHide) {
+                    grid.hideColumn(grid.columns[i].field);
+                }
+            }
+            // hide column if is column is not hidden, but preference hides it
+            else {
+                for (let j = 0; j < result.length; j++) {
+                    if (result[j].field === grid.columns[i].field && result[j].isHidden) {
+                        grid.hideColumn(grid.columns[i].field);
+                        break;
+                    }
                 }
             }
         }

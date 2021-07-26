@@ -934,7 +934,9 @@ $.extend(sg.utls.kndoUI, {
         } else {
             numericTextBoxDataValue = numericTextBoxData;
         }
+
         $(numericTextBoxDataValue).off("input");
+        
         $(numericTextBoxDataValue).on("input", function (e) {
             var val = numericTextBoxDataValue.val();
             var decimalSeparator = kendo.culture().numberFormat['.'];

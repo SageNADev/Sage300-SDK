@@ -42,6 +42,7 @@ sg.viewList = function () {
         _lastRowNumber = {},
         _lastColField = {},
         _lastRowStatus = {},
+        _lastGridAction = {},
         _newLine = {},
         _lastErrorResult = {},
         _valid = {},
@@ -58,6 +59,7 @@ sg.viewList = function () {
         _pageByKeyType = {},
         _refreshKey = {},
         _showDetails = {},
+        _showWarnings = {},
         _gridList = [];
 
      /**
@@ -129,7 +131,7 @@ sg.viewList = function () {
     function _setNextEditCell(grid, model, row, startIndex) {
         for (var i = startIndex; i < grid.columns.length; i++) {
             var col = grid.columns[i];
-            if (col.field && col.field.hidden !== true) {
+            if (col.field && col.field.hidden !== true && col.editable !== undefined && col.editable()) {
                 var colField = model.fields[col.field];
                 if (colField && colField.editable) {
                     grid.editRow(row);
@@ -180,7 +182,7 @@ sg.viewList = function () {
      * @description Save the the current line to send ajax request
      * @param {string} gridName The current grid name
      * @param {function} callBack The callBack function after the action is completed
-     * @return {boolean} A boolean flag to indicate the current grid valid status
+     * @return {boolean} A boolean flag to indicate the current grid valid status. True if no current line selected (nothing to save).
      */
     function _commitGrid(gridName, callBack) {
         var grid = _getGrid(gridName),
@@ -189,8 +191,14 @@ sg.viewList = function () {
         if (rowData) {
             const type = (!_newLine[gridName] || !rowData.isNewLine) ? RequestTypeEnum.Update : RequestTypeEnum.Insert;
             _sendRequest(gridName, type, ...Array(4), callBack);
+            return _valid[gridName];
         }
-        return _valid[gridName];
+        else {
+            if (callBack && typeof callBack === "function") {
+                callBack(true);
+            }
+            return true;
+        }
     }
 
     /**
@@ -287,7 +295,7 @@ sg.viewList = function () {
             cols = [{field: "isNewLine", hidden : true}],
             numbers = ["int32", "int64", "int16", "int", "integer", "long", "byte", "real", "decimal"];
 
-        for (var i = 0, length = columns.length; i < length; i++) {
+        for (let i = 0, length = columns.length; i < length; i++) {
             var col = {},
                 column = columns[i],
                 dataType = column.DataType ? column.DataType.toLowerCase() : "string",
@@ -322,6 +330,10 @@ sg.viewList = function () {
             col.template = column.Template || _getColumnTemplate(col);
             col.editor = function (container, options) {
                 return _getColumnEditor(container, options, columns, gridName);
+            };
+            col.editable = () => {
+                //Custom plug in for 'columnBeforeEdit'
+                return _columnCallback(gridName, "columnBeforeEdit", columns[i].FieldName);
             };
 
             cols.push(col);
@@ -384,19 +396,76 @@ sg.viewList = function () {
      */
     function _finderEditor(container, options, col, gridName) {
         var finder = col.Finder,
+            numbers = ["int32", "int64", "int16", "int", "integer", "long", "byte", "real", "decimal"],
             field = options.field,
             model = options.model,
-            mask = model.PresentationMasks[field] || col.mask,
-            buttonId = "btnFinderGridCol" + field.toLowerCase(),
-            maskProps = _getTextBoxProps(mask),
-            className = maskProps.class,
+            mask = col.mask,
+            buttonId = "btnFinderGridCol" + field.toLowerCase();
+        if (model["PresentationMasks"]) {
+            mask = model.PresentationMasks[field] || col.mask;
+        }
+        var maskProps = _getTextBoxProps(mask),
+            className = maskProps.class, 
             formattextbox = maskProps.formattextbox,
             maxlength = col.FieldSize || maskProps.maxLength,
             txtInput = '<div class="edit-container"><div class="edit-cell inpt-text"><input name="{0}" id="{0}" type="text" maxlength="{1}" class="{2}" formattextbox="{4}"/></div>',
             txtFinder = '<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="{3}"/></div></div>',
             html = kendo.format(txtInput + txtFinder, field, maxlength, className, buttonId, formattextbox);
-       
-        $(html).appendTo(container);
+
+        if (numbers.indexOf(col.DataType) > -1) {
+            var grid = _getGrid(gridName),
+                precision = grid.columns.filter(function (c) { return c.field === field; })[0].precision,
+                dataType = col.DataType.toLowerCase(),
+                size = col.FieldSize,
+                maxLength, max, min = 0;
+
+            txtInput = '<div class="edit-container"><div class="edit-cell inpt-text"><input id="{0}" name="{0}" class="{2} pr25" /></div>';
+            txtFinder = '<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="{1}"/></div></div>';
+            html = kendo.format(txtInput + txtFinder, field, buttonId, className);
+
+            switch (dataType) {
+                case "int":
+                case "integer":
+                case "int16":
+                    min = -32768;
+                    max = 32767;
+                    maxLength = 5;
+                    break;
+                case "long":
+                case "int32":
+                    min = -2147483648;
+                    max = 2147483647;
+                    maxLength = 10;
+                    break;
+                case "byte":
+                    min = 0;
+                    max = 255;
+                    maxLength = 3;
+                    break;
+                case "decimal":
+                    max = Math.pow(10, size * 2) - 1;
+                    min = - 1 * max;
+                    maxLength = 2 * size;
+                    if (maxLength > 16) {
+                        maxLength = 16;
+                    }
+            }
+            $(html).appendTo(container);
+
+            var txtNumeric = $("#"+field).kendoNumericTextBox({
+                format: "n" + precision,
+                spinners: false,
+                min: min,
+                max: max,
+                decimals: precision
+            });
+
+            sg.utls.kndoUI.restrictDecimals(txtNumeric, precision, maxLength - precision);
+            _setEditorInitialValue(gridName, options);
+        }
+        else {
+            $(html).appendTo(container);
+        }
         finder.viewID = finder.ViewID;
         finder.viewOrder = finder.ViewOrder;
         finder.displayFieldNames = finder.DisplayFieldNames;
@@ -489,9 +558,18 @@ sg.viewList = function () {
          * @param {any} value The finder selected row value
          */
         function onFinderSelected(options, col, value) {
-            var returnValue = value[Object.keys(value)[0]];
+            const returnValue = value[Object.keys(value)[0]];
+            const field = options.field;
+            const isNewLine = options.model.isNewLine;
+            const sendRequest = options.model[field] === returnValue;
+
             _sendChange[gridName] = true;
-            options.model.set(options.field, returnValue);
+            options.model.set(field, returnValue);
+            // When finder selected value is the same as options model field value, the set method not trigger the change, need manually send refresh request to update view
+            if (sendRequest & !window[gridName + "Model"].CustomGridMapperDefinitions) {
+                //If grid had Custom mapper, avoid to refresh due to mis-matched fileds/columns between client/sever side. 
+                _sendRequest(gridName, RequestTypeEnum.RefreshRow, field, isNewLine);
+            }
         }
         
         /**
@@ -749,7 +827,7 @@ sg.viewList = function () {
      */
     function _optionalFieldEditor(container, options, col, gridName) {
         var html = '<div class="edit-container"><div class="wrapper"><div class="edit-cell inpt-text"><input class="grid_inpt" data-bind="value:OptionalField" disabled></div>' +
-                   '<div class="edit-cell inpt-finder"><input class="icon btn-search" id="btnDetailOptionalField" type="button"></div></div></div>';
+                   '<div class="edit-cell inpt-finder"><input class="icon pencil-edit" id="btnDetailOptionalField" type="button"></div></div></div>';
 
         $(html).appendTo(container);
         options.model.OptionalField = options.model.VALUES > 0 ? globalResource.Yes : globalResource.No;
@@ -1027,6 +1105,9 @@ sg.viewList = function () {
             dataSource = grid.dataSource,
             currentPage = dataSource.page(),
             pageSize = dataSource.pageSize();
+
+        _lastGridAction[gridName] = RequestTypeEnum.Create;
+
         // If the current record reaches maximum of current page, make it a dummy record and go to next page
         if (index === pageSize) {
             data.skipCommit = true;
@@ -1038,6 +1119,14 @@ sg.viewList = function () {
             dataSource.insert(index, data);
             grid.refresh();
         }
+
+        //D-41977 (Firefox Issue)
+        if (grid.scrollables) {
+            for (var i = 0; i < grid.scrollables.length; i++) { //in theory there should be only 2 one for header and one for body
+                grid.scrollables[i].scrollLeft = 0; //reset the scroll position
+            }
+        }
+
         var row = _selectGridRow(grid, keyValue);
         _setModuleVariables(gridName, RowStatusEnum.INSERT, "", index, true, false, true);
         _setNextEditCell(grid, grid.dataSource.options.schema.model, row, 0);
@@ -1088,14 +1177,17 @@ sg.viewList = function () {
 
         if (rowData) {
             rowData.isNewLine = false;
+            rowData.dirty = false;
+            sg.utls.fieldCopy(jsonResult.Data, rowData);
         } else {
             grid.dataSource.data().forEach(function (row) { row.isNewLine = false;});
         }
 
-        // could be just warnings, but still need to show to users
-        if(jsonResult && jsonResult.UserMessage && 
-            (jsonResult.UserMessage.Warnings && jsonResult.UserMessage.Warnings ||
-             jsonResult.UserMessage.Errors && jsonResult.UserMessage.Errors)){
+        // Show warnings or not based on settings(pjc require improvements)
+        const showMessage = _showWarnings[gridName] ? jsonResult && jsonResult.UserMessage && (jsonResult.UserMessage.Warnings || jsonResult.UserMessage.Errors)
+            : jsonResult && jsonResult.UserMessage && (jsonResult.UserMessage.Errors);
+
+        if (showMessage) {
             sg.utls.showMessage(jsonResult);
         }
 
@@ -1146,9 +1238,7 @@ sg.viewList = function () {
 
         if (dataItem) {
             for (var field in jsonResult.Data) {
-                if (dataItem.hasOwnProperty(field)) {
                     dataItem[field] = jsonResult.Data[field];
-                }
             }
         }
 
@@ -1183,10 +1273,11 @@ sg.viewList = function () {
         _gridCallback(gridName, "gridUpdated", jsonResult.Data, "");
         _setModuleVariables(gridName, status, "", rowIndex, true, false);
 
-        // could be just warnings, but still need to show to users
-        if(jsonResult && jsonResult.UserMessage && 
-            (jsonResult.UserMessage.Warnings && jsonResult.UserMessage.Warnings ||
-             jsonResult.UserMessage.Errors && jsonResult.UserMessage.Errors)){
+        // Show warnings or not based on settings(pjc require improvements)
+        const showMessage = _showWarnings[gridName] ? jsonResult && jsonResult.UserMessage && (jsonResult.UserMessage.Warnings || jsonResult.UserMessage.Errors)
+            : jsonResult && jsonResult.UserMessage && (jsonResult.UserMessage.Errors);
+
+        if (showMessage) {
             sg.utls.showMessage(jsonResult);
         }
 
@@ -1251,6 +1342,8 @@ sg.viewList = function () {
             page = ds.page(),
             length = ds.data().length;
 
+        _lastGridAction[gridName] = RequestTypeEnum.Delete;
+
         page > 1 ? ds.page(length > 1 ? page : page - 1) : ds.page(1);
         _gridCallback(gridName, "gridAfterDelete");
     }
@@ -1293,6 +1386,8 @@ sg.viewList = function () {
             }
             _setModuleVariables(gridName, status, "", rowIndex, true, false);
         }
+
+        _gridCallback(gridName, "gridAfterRefreshRow");
     }
 
     /**
@@ -1347,7 +1442,16 @@ sg.viewList = function () {
             var url = _getRequestUrl(gridName, requestName);
 
             if (requestType === RequestTypeEnum.Refresh) {
-                data.isNewRecord = isNewLine || false;
+                const model = window[gridName + "Model"];
+                data.cols = model.ColumnDefinitions.map(x => (
+                    {
+                        "FieldName": x.FieldName,
+                        "ViewID": x.ViewID,
+                        "PrimaryKeys": x.PrimaryKeys,
+                        "ForeignKeys": x.ForeignKeys,
+                    }
+                ));
+                data.columnsFromConfig = model.ColumnsFromConfig;
             }
 
             sg.utls.ajaxPostSync(url, data, function (jsonResult) {
@@ -1533,9 +1637,10 @@ sg.viewList = function () {
      * @param {string} functionName The call back function name
      * @param {string} record The selected row data
      * @param {string} fieldName The changed field name
+     * @param {int} actionType The last grid action
      * @return {boolean} The boolean flag to indicate whether continue or stop
      */
-    function _gridCallback(gridName, functionName, record, fieldName) {
+    function _gridCallback(gridName, functionName, record, fieldName, actionType) {
         var viewModel = window[gridName + "Model"];
         var data = viewModel.CustomFunctions;
         if (data && data instanceof Array ) {
@@ -1552,20 +1657,25 @@ sg.viewList = function () {
  
                         switch (functionName) {
                             case "gridAfterLoadData":
-                                callback(grid.dataSource.data());
+                                callback(grid.dataSource.data(), actionType);
+                                _lastGridAction[gridName] = undefined;
                                 return true;
                             case "gridChanged":
                             case "gridUpdated":
-                               callback(record, fieldName);
-                               return true;
+                                callback(record, fieldName);
+                                return true;
                             case "gridAfterSetActiveRecord":
                             case "gridAfterCreate":
                             case "gridAfterInsert":
-                               callback(record);
+                                callback(record);
+                                return true;
+                            case "gridAfterRefreshRow":
+                                callback();
                                 return true;
                             case "gridAfterDelete":
                                 const isEmpty = grid.dataSource.total() - 1 === 0;
-                                callback(record, isEmpty)     
+                                callback(record, isEmpty);
+                                return true;
                             case "gridBeforeCreate":
                             case "gridBeforeDelete":
                                callback(record, event);
@@ -1631,6 +1741,7 @@ sg.viewList = function () {
         _selectRowUid[gridName] = "";
         _pageByKeyType[gridName] = PageByKeyTypeEnum.FirstPage;
         _refreshKey[gridName] = null;
+        _showWarnings[gridName] = true;
     }
 
     /**
@@ -1777,12 +1888,12 @@ sg.viewList = function () {
                     }
                 }
                 //Skip insert or update if the record is out of range of the page size
-                if (lastRowNumber > -1 && lastRowNumber < pageSize) {
+                if (lastRowNumber > -1 && lastRowNumber < pageSize && !window[gridName + "Model"].CustomGridMapperDefinitions ) {
                     if (selectedIndex !== lastRowNumber) {
                         var lastRowData = grid.dataSource.data()[lastRowNumber];
-                        if (lastRowData.isNewLine) {
+                        if (lastRowData && lastRowData.isNewLine) {
                             _sendRequest(gridName, RequestTypeEnum.Insert, "", false, -1, lastRowData);
-                        } else if (lastRowData.dirty) {
+                        } else if (lastRowData && lastRowData.dirty) {
                             _sendRequest(gridName, RequestTypeEnum.Update, "", false, -1, lastRowData);
                         }
                     }
@@ -1804,7 +1915,7 @@ sg.viewList = function () {
             dataBound: function (e) {
                 var grid = e.sender,
                     rows = this.items(),
-                    page = grid.dataSource.page(),
+                    page = _currentPage[gridName], //Dev Note grid.dataSource.page() returns wrong page if there is error before paging and switch focus to the detail popup in between
                     pageSize = grid.dataSource.pageSize(),
                     ps = pageSize - 1;
 
@@ -1832,16 +1943,7 @@ sg.viewList = function () {
                 }.bind(null, grid));
 
                 //Custom plug in for 'gridAfterLoadData' call back
-                _gridCallback(gridName, "gridAfterLoadData");
-            },
-
-            //Custom plug in for 'columnBeforeEdit'
-            beforeEdit: function (e) {
-                var field = _getFieldNameByCellIndex(e.sender, e.sender._lastCellIndex);
-                var isProceed = _columnCallback(gridName, "columnBeforeEdit", field);
-                if (!isProceed) {
-                    e.preventDefault();
-                }
+                _gridCallback(gridName, "gridAfterLoadData", "", "", _lastGridAction[gridName]);
             },
 
             edit: function (e) {
@@ -1907,11 +2009,23 @@ sg.viewList = function () {
                                 if (jsonResult && jsonResult.UserMessage.Errors && jsonResult.UserMessage.Errors.length > 0) {
                                     isSuccess = false;
                                 }
+                                var lastRowData = grid.dataSource.data()[rowIndex];
+                                if (!isSuccess) {
+                                    //Return previous valid value when update error
+                                    lastRowData.dirty = false;
+                                    selectedItem[column] = _lastErrorResult[gridName][column + "Value"];
+                                } else {
+                                    _dataChanged[gridName] = true;
+                                }
+
+                                isSuccess ? _gridCallback(gridName, "gridUpdated", jsonResult.Data, "") : _updateError(gridName, jsonResult, fieldName, lastRowData.uid);
+                                var updateRow = grid.table.find("[data-uid=" + lastRowData.uid + "]");
+                                _lastRowNumber[gridName] = rowIndex - 1;
+                                grid.select(updateRow);
                             });
                         }
                         return;
                     }
-
 
                     var disabled = count === 0 || !_allowDelete[gridName];
                     $("#btn" + gridName + "Delete").prop("disabled", disabled);
@@ -1944,9 +2058,9 @@ sg.viewList = function () {
                     }
 
                     //Adding line at the end of a page will create a dummy line to allow navigating to the next page
-                    //Here we will add the actual line on the new page
-                    if (e.action === undefined && e.items && e.items.length === 0 && count !== 0) {
-                        _addLine(gridName);
+                    //Here we will add the actual line on the new page, the count should be page * pageSize, such as 10, 20, 30, ...
+                    if (e.action === undefined && e.items && e.items.length === 0 && count !== 0 && count % grid.dataSource.pageSize() === 0) {
+                       _addLine(gridName);
                     }
                 },
 
@@ -2021,12 +2135,14 @@ sg.viewList = function () {
                     // Commit any grid changes if there is a new line or data has changed while pagination
                     if ((_newLine[gridName] && e.type === "read" || _dataChanged[gridName]) && _currentPage[gridName] !== this.page() && !skipCommit) {
                         e.preventDefault();
-                        if (_commitGrid(gridName)) {
-                            _dataChanged[gridName] = false;
-                            _newLine[gridName] = false;
-                            _currentPage[gridName] = this.page();
-                            this.page(this.page());
-                        } 
+                        _commitGrid(gridName, (isSuccess) => {
+                            if (isSuccess) {
+                                _dataChanged[gridName] = false;
+                                _newLine[gridName] = false;
+                                _currentPage[gridName] = this.page();
+                                this.page(this.page());
+                            }
+                        });
                         return;
                     }
                     _currentPage[gridName] = this.page();
@@ -2056,8 +2172,9 @@ sg.viewList = function () {
     /**
      * @description Delete grid line, for grid toolbar template, grid internal use
      * @param {string} gridName The name of the grid.
+     * @param {boolean} showConfirmation Show a confirmation dialog.
      */
-    function toolbarDeleteLine(gridName) {
+    function toolbarDeleteLine(gridName, showConfirmation = true) {
         var grid = _getGrid(gridName),
             select = grid.select(),
             selectedIndex = select.index(),
@@ -2068,24 +2185,35 @@ sg.viewList = function () {
             return;
         }
 
+        var doDelete = () => {
+            if (!rowData.isNewLine) {
+                _sendRequest(gridName, RequestTypeEnum.Delete, "");
+                _dataChanged[gridName] = true;
+            } else {
+                var ds = grid.dataSource;
+                _gridCallback(gridName, "gridAfterDelete", rowData);
+                ds.remove(rowData);
+                _newLine[gridName] = false;
+                // Set the correct current page
+                var page = ds.data().length === 0 && _currentPage[gridName] > 1 ? _currentPage[gridName] - 1 : _currentPage[gridName];
+                _lastGridAction[gridName] = RequestTypeEnum.Delete;
+                ds.page(page);
+            }
+        }
+
         if (selectedIndex > -1) {
-            sg.utls.showKendoConfirmationDialog(
-                function () {
-                    if (!rowData.isNewLine) {
-                        _sendRequest(gridName, RequestTypeEnum.Delete, "");
-                        _dataChanged[gridName] = true;
-                    } else {
-                        var ds = grid.dataSource;
-                        ds.remove(rowData);
-                        _newLine[gridName] = false;
-                        // Set the correct current page
-                        var page = ds.data().length === 0 && _currentPage[gridName] > 1 ? _currentPage[gridName] - 1 : _currentPage[gridName];
-                        ds.page(page);
-                    }
-                    //_gridCallback(gridName, "gridAfterDelete", rowData);
-                },
-                function () { },
-                globalResource.DeleteLineMessage, window.DeleteTitle);
+            if (showConfirmation) {
+                sg.utls.showKendoConfirmationDialog(
+                    function () {
+                        doDelete();
+                        //_gridCallback(gridName, "gridAfterDelete", rowData);
+                    },
+                    function () { },
+                    globalResource.DeleteLineMessage, window.DeleteTitle);
+            }
+            else {
+                doDelete();
+            }
         }
     }
 
@@ -2258,7 +2386,6 @@ sg.viewList = function () {
         function refreshGrid(gridName) {
             var grid = _getGrid(gridName);
             if (grid) {
-                console.log("refreshed???")
                 grid.dataSource.page(1);
             }
         }
@@ -2554,6 +2681,24 @@ sg.viewList = function () {
         }
     }
 
+    /**
+    *
+    * @param {string} gridName The grid name
+    * @param {boolean} show The flag to specify whether to show warnings when insert/update record successfully.
+    */
+    function showWarnings(gridName, show = true) {
+        _showWarnings[gridName] = show;
+    }
+
+    /**
+    *
+    * @param {string} gridName The grid name
+    */
+    function currentPage(gridName) {
+        return _currentPage[gridName];
+    }
+
+
     //Module(class) public methods
     return {
         init: init,
@@ -2587,6 +2732,8 @@ sg.viewList = function () {
         isEmpty: isEmpty,
         cancel: cancel,
         clear: clear,
-        refreshByKey: refreshByKey
+        refreshByKey: refreshByKey,
+        showWarnings: showWarnings,
+        currentPage: currentPage
     };
 }();

@@ -16,6 +16,7 @@
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="TPA.Web.csproj" File="TPA.Web.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="Antlr3.Runtime.dll">Antlr3.Runtime.dll</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="BinInclude.txt">BinInclude.txt</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="BundleRegistration.cs">BundleRegistration.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="EvictUserWatcher.cs">EvictUserWatcher.cs</ProjectItem>
@@ -37,6 +38,8 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="WebGrease.dll">WebGrease.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="WG.EXE">WG.EXE</ProjectItem>
       <Folder Name="WebForms" TargetFolderName="WebForms">
         <ProjectItem ReplaceParameters="true" TargetFileName="BaseWebPage.cs">BaseWebPage.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="CustomReportViewer.aspx">CustomReportViewer.aspx</ProjectItem>
@@ -124,8 +127,6 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="_references.js">_references.js</ProjectItem>
         </Folder>
         <Folder Name="Kendo" TargetFolderName="Kendo">
-          <ProjectItem ReplaceParameters="true" TargetFileName="angular.min.js">angular.min.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.min.js">jquery.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="jszip.min.js">jszip.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.angular.min.js">kendo.angular.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="kendo.appbar.min.js">kendo.appbar.min.js</ProjectItem>
@@ -452,6 +453,7 @@
           <Folder Name="nav" TargetFolderName="nav">
             <ProjectItem ReplaceParameters="false" TargetFileName="drilldown.png">drilldown.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="icon_home.svg">icon_home.svg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="logo_sda.png">logo_sda.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="menuIcon.svg">menuIcon.svg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu@2x.png">sprite_global_menu@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu_rev@2x.png">sprite_global_menu_rev@2x.png</ProjectItem>
@@ -1681,13 +1683,11 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AccpacGrid.js">Sage.CA.SBS.ERP.Sage300.Common.AccpacGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js">Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js">Sage.CA.SBS.ERP.Sage300.Common.FinderGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js">Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js">Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Home.js">Sage.CA.SBS.ERP.Sage300.Common.Home.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.OptionalFieldGrid.js">Sage.CA.SBS.ERP.Sage300.Common.OptionalFieldGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js">Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Finder.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js</ProjectItem>
@@ -1788,7 +1788,6 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="ExportOption.cshtml">ExportOption.cshtml</ProjectItem>
             </Folder>
             <Folder Name="Find" TargetFolderName="Find">
-              <ProjectItem ReplaceParameters="true" TargetFileName="Find.cshtml">Find.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="FindPreference.cshtml">FindPreference.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="ViewFinder.cshtml">ViewFinder.cshtml</ProjectItem>
             </Folder>

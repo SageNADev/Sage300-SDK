@@ -57,7 +57,7 @@ var ViewFinderGridHelper = {
         var dataSource = new kendo.data.DataSource({
             serverPaging: true,
             serverFiltering: true,
-            pageSize: sg.finderHelper.pageSize,
+            pageSize: sg.viewFinderHelper.pageSize,
             transport: {
                 read: function (options) {
                     if (ViewFinderGridHelper.finderModel) {
@@ -121,6 +121,9 @@ var ViewFinderGridHelper = {
         var data = { finderOptions: this.finderOptions };
         data.finderOptions.ColumnFilter = this.columnFilter;
 
+        let selectRow = grid.select();
+        const rowIndex = selectRow.index();
+
         sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "ViewFinder", "RefreshGrid"), data, function (successData) {
             grid.dataSource.data(successData.Data);
 
@@ -137,7 +140,11 @@ var ViewFinderGridHelper = {
                 $("#previous").attr("toFirst", "toFirst");
             }
 
-            grid.select("tr:eq(0)");
+            grid.select("tr:eq(" + rowIndex+ ")");
+            selectRow = grid.select();
+            if (selectRow.length === 0) {
+                grid.select("tr:eq(0)");
+            }
         });
     },
 
@@ -159,7 +166,7 @@ var ViewFinderGridHelper = {
             this.HideFilterControls();
             $("#ValueTextBox").show();
         }
-        else if (field.PresentationList == undefined) {
+        else if (field.PresentationList == undefined && field.dataType !== sg.finderDataType.Boolean) {
             //TextBox Scenario - select the column, operator, and pur the initial value in textbox
             columnDropdown.value(filter.Field.field);
             this.InitOperatorDropdown(field, "#OperatorDropdown");
@@ -186,7 +193,8 @@ var ViewFinderGridHelper = {
                 }
             }
         } else {
-            //Dropdown Scenario
+            // In the case of boolean and presentation lists, the numeric text box should be hidden
+            // and the value text box should be disabled
             columnDropdown.value(filter.Field.field);
             this.InitOperatorDropdown(field, "#OperatorDropdown");
             $("#OperatorDropdown").data("kendoDropDownList").value(filter.Value);
@@ -225,10 +233,9 @@ var ViewFinderGridHelper = {
             ViewFinderGridHelper.finderOptions.SavePreferenceType = sg.viewFinderHelper.savePreferenceType.None;
             $("#ValueTextBox").show();
         } else if (selectedValue.length > 0) {
-
             var field = ViewFinderGridHelper.GetFieldObject(selectedValue);
             ViewFinderGridHelper.InitOperatorDropdown(field, "#OperatorDropdown");
-            if ((field.PresentationList == undefined && field.PresentationList == null)) {
+            if (field.dataType !== sg.finderDataType.Boolean && (field.PresentationList == undefined && field.PresentationList == null)) {
                 ViewFinderGridHelper.InitValueGridDropdownOrTextBox(field, "#ValueDropDown", "#ValueTextBox", ".clsValueDropDown");
             }
             $("#btnSearch").attr("disabled", false);
@@ -247,8 +254,18 @@ var ViewFinderGridHelper = {
         $operatorDropDown.show();
         $operatorDropDown.removeAttr('disabled');
         if (field != null) {
-            if (field.dataType === sg.finderDataType.Boolean || (field.PresentationList != undefined && field.PresentationList != null && field.PresentationList.length > 0)) {
+            if (field.PresentationList != undefined && field.PresentationList != null && field.PresentationList.length > 0) {
                 operatorDatasource = field.PresentationList;
+                $("#NumericTextBoxDiv").hide();
+                $("#ValueTextBox").show();
+                $("#ValueTextBox").val("");
+                this.RemoveCustomAttributesInTextBox("#ValueTextBox");
+                $("#ValueTextBox").attr('disabled', true);
+            } else if (field.dataType === sg.finderDataType.Boolean) {
+                operatorDatasource = [
+                    { Text: globalResource.Yes, Value: true },
+                    { Text: globalResource.No, Value: false }
+                ];
                 $("#NumericTextBoxDiv").hide();
                 $("#ValueTextBox").show();
                 $("#ValueTextBox").val("");
@@ -352,7 +369,14 @@ var ViewFinderGridHelper = {
 
         var numericTextbox = $("#NumericTextBox").data("kendoNumericTextBox");
         if (numericTextbox) {
+            // Reference: https://docs.telerik.com/kendo-ui/knowledge-base/numerictextbox-error-on-initialization
+            // When destroying a kendo numeric text box, the wrapper that contains the additional input element
+            // will need to be removed before the reinitialization
+            const origin = numericTextbox.element.show();
+            origin.insertAfter(numericTextbox.wrapper);
+
             numericTextbox.destroy();
+            numericTextbox.wrapper.remove();
         }
 
         //If phoneNumber attribute is defined
@@ -509,7 +533,7 @@ var ViewFinderGridHelper = {
         var field = this.GetFieldObject(selectedValue);
         var value;
         if (field != null) {
-            if (field.PresentationList != undefined && field.PresentationList != null && field.PresentationList.length > 0) {
+            if (field.dataType === sg.finderDataType.Boolean || field.PresentationList != undefined && field.PresentationList != null && field.PresentationList.length > 0) {
                 value = $("#OperatorDropdown").val();
                 var data = { Field: field, Operator: sg.finderOperator.Equal, Value: value };
                 this.columnFilter = data;
