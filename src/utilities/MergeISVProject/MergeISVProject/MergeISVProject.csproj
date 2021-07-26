@@ -37,9 +37,6 @@
   <ItemGroup>
     <Reference Include="Microsoft.Build" />
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="NUglify, Version=1.13.12.0, Culture=neutral, PublicKeyToken=15bc7810aec21b5e, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUglify.1.13.12\lib\net40\NUglify.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -92,25 +89,21 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>set SourceApp=$(TargetDir)$(TargetName).exe
-set NUglifyDLL=$(TargetDir)NUglify.dll
 set SDKRootDir=$(SolutionDir)..\..\..\
 
 REM \bin\utilities\
 set Destination=%25SDKRootDir%25bin\utilities\
 copy %25SourceApp%25 %25Destination%25
-copy %25NUglifyDLL%25 %25Destination%25
 echo Copied to %25Destination%25
 
 REM \src\wizards\Templates\Web\
 set Destination=%25SDKRootDir%25src\wizards\Templates\Web\
 copy %25SourceApp%25 %25Destination%25
-copy %25NUglifyDLL%25 %25Destination%25
 echo Copied to %25Destination%25
 
 REM \src\wizards\UpgradeWizardTemplates\Items\
 set Destination=%25SDKRootDir%25src\wizards\UpgradeWizardTemplates\Items\
 copy %25SourceApp%25 %25Destination%25
-copy %25NUglifyDLL%25 %25Destination%25
 echo Copied to %25Destination%25
 
 

@@ -23,7 +23,6 @@ using MergeISVProject.CustomExceptions;
 using MergeISVProject.Interfaces;
 using Microsoft.VisualBasic.FileIO;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;

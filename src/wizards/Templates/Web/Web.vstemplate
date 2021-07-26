@@ -27,7 +27,6 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Login.aspx.designer.cs">Login.aspx.designer.cs</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="MergeISVProject.exe">MergeISVProject.exe</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="Newtonsoft.Json.dll">Newtonsoft.Json.dll</ProjectItem>
-      <ProjectItem ReplaceParameters="false" TargetFileName="NUglify.dll">NUglify.dll</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="SageWebReportDocument.cs">SageWebReportDocument.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="TPA.Web.csproj">TPA.Web.csproj</ProjectItem>
