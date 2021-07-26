@@ -23,6 +23,7 @@ using MergeISVProject.CustomExceptions;
 using MergeISVProject.Interfaces;
 using Microsoft.VisualBasic.FileIO;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -38,7 +39,9 @@ namespace MergeISVProject
     public class SageISVMinifier
     {
         #region Constants
-        private const string NUGLIFY_DLL = @"NUglify.dll";
+        private const string NODEJS = @"Node.js";
+        private const string TERSER = @"terser";
+        private const string MinifyCommand = "node %AppData%\\npm\\node_modules\\terser\\bin {0} -o {1}";
         #endregion
 
         #region Private Variables
@@ -78,24 +81,31 @@ namespace MergeISVProject
             {
                 var currentExePath = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
 
-                // Ensure that the Nuglify.dll file is available
-                var tempPathToNUglify = Path.Combine(currentExePath, NUGLIFY_DLL);
-                if (!File.Exists(tempPathToNUglify))
+                // Check if Node.js is installed
+                if (!ExecuteCommand("where node"))
                 {
-                    _Logger.Log($"It looks like NUglify cannot be found.");
+                    _Logger.Log($"It looks like Node.js cannot be found.");
 
-                    var msg = string.Format(Messages.Error_UnableToFindTheProgram, NUGLIFY_DLL, tempPathToNUglify);
+                    var msg = string.Format(Messages.Error_UnableToFindTheProgram, NODEJS, string.Empty);
                     throw new Exception(msg);
                 }
 
-                var pathToWG = Path.Combine(currentExePath, NUGLIFY_DLL);
+                // Install Terser via Node.js
+                if (!ExecuteCommand("npm install -g terser"))
+                {
+                    _Logger.Log($"It looks like terser cannot be installed.");
+
+                    var msg = string.Format(Messages.Error_UnableToFindTheProgram, TERSER, string.Empty);
+                    throw new Exception(msg);
+                }
+
                 var workingFolder = _Folders.Staging.AreasScripts;
                 var jsFolder = workingFolder;
 
                 _Logger.Log($"jsFolder = {jsFolder}");
                 if (Directory.Exists(jsFolder))
                 {
-                    // NUglify only does contents, so iteration is here (
+                    // Terser only does files, so iteration is here (
                     foreach (var dir in Directory.GetDirectories(jsFolder, "*.*", System.IO.SearchOption.AllDirectories))
                     {
                         _Logger.Log($"Processing directory '{dir}'");
@@ -108,18 +118,11 @@ namespace MergeISVProject
                         }
 
                         _Logger.Log(string.Format(Messages.Msg_BeginningMinificationProcessOnDirectory, dir));
-                        Parallel.ForEach(Directory.GetFiles(dir, "*.js"), file =>
+
+                        Parallel.ForEach(files, file =>
                         {
-                            var content = File.ReadAllText(file);
-                            var minified = NUglify.Uglify.Js(content);
-                            if (minified.HasErrors)
-                            {
-                                foreach (var e in minified.Errors)
-                                {
-                                    _Logger.Log(e.ToString());
-                                }
-                            }
-                            File.WriteAllText(file, minified.Code);
+                            var command = string.Format(MinifyCommand, file, file);
+                            ExecuteCommand(command);
                         });
 
                         _Logger.Log(Messages.Msg_MinificationComplete);
@@ -155,6 +158,51 @@ namespace MergeISVProject
             var source = _Folders.Staging.Areas;
             var dest = _Folders.FinalWeb.Areas;
             FileSystem.CopyDirectory(source, dest, overwrite: true);
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        /// <summary>
+        /// Execute commnad line for minifying JS files
+        /// </summary>
+        /// <param name="command">comamnd line</param>
+        private bool ExecuteCommand(string command)
+        {
+            var methodName = $"{this.GetType().Name}.{Utilities.GetCurrentMethod()}";
+            _Logger.LogMethodHeader(methodName);
+
+            var success = false;
+
+            try
+            {
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.Arguments = "/C " + command;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                var error = process.StandardError.ReadToEnd();
+                process.WaitForExit();
+                success = process.ExitCode == 0;
+                if (!success)
+                {
+                    _Logger.Log("Error: " + error);
+                }
+            }
+            catch (Exception ex)
+            {
+                //handle your exception...
+                _Logger.Log("Minify Sage300 JavaScript files failure!");
+                _Logger.Log("Error: " + ex.Message);
+            }
+
+            _Logger.LogMethodFooter(methodName);
+
+            return success;
         }
 
         #endregion
