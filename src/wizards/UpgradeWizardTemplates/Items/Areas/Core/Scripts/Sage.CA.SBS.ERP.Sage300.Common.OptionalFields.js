@@ -1367,6 +1367,7 @@ var optionalFieldUIGrid =
 
     updateValueInGrid: function (optionalField, value) {
         optionalFieldUIGrid.setOptionalFieldValue(value, "", false);
+        optionalFieldUIGrid.save();
     },
 
     disableGridButtons: function () {
@@ -1417,11 +1418,23 @@ var optionalFieldUIGrid =
                 //selectRow.set("AllowBlank", rowdata.AllowBlankValue);
                 // Comments the above line because AllowBlankValue only exists in IC and CS model. 
                 // However this function also need to handle the other models as OE, AP
-                // I just put a condition here, After the determine where the allowBlankVaule has been used. Please Update this changes
-                const allowBlank = rowdata.ALLOWNULL;
+                // I just put a condition here, After the determine where the allowBlankVaule has been used. Please Update this change
+
+                const convertToBool = (val) => {
+                    let str = String(val).toLowerCase();
+                    if (str === 'true') {
+                        return 1;
+                    }
+                    else if (str === 'false') {
+                        return 0;
+                    }
+                    return str;
+                }
+
+                var allowBlank = convertToBool(rowdata.ALLOWNULL);
                 selectRow.set("AllowBlank", allowBlank);
 
-                var validate = rowdata.VALIDATE;
+                var validate = convertToBool(rowdata.VALIDATE);
                 // Just in case we support the integer value as flag. 1: checked, 0: unchecked
                 if (validate <= allowBlank) {
                     valueSet = 1;
@@ -1453,6 +1466,7 @@ var optionalFieldUIGrid =
             if (optionalFieldUIGrid.settingsEditor) {
                 gridColConfig.registerSettingsEvent();
             }
+            optionalFieldUIGrid.save();
 
             optionalFieldUIGrid.hasInvalidData = false;
             optionalFieldUIGrid.resetFocus(selectRow, 'OptionalField');

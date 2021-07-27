@@ -224,6 +224,18 @@ html.form-medium {
       margin-top: 22px;
     }
 
+    // Disabling Go-button next to disabled input field
+
+    .search-group input[disabled] ~ .btn-go, 
+    .finder-group input[disabled] ~ .btn-go, 
+    .plus-group input[disabled] ~ .btn-go {
+        background-position: -20px -60px;
+
+        &:focus {
+          outline: none;
+        }
+    }
+
     // Size Control
 
     .search-group>input[type=text].size-control:not(.large) {
@@ -508,7 +520,7 @@ html.form-medium {
       .k-numeric-wrap {
         margin-bottom: 2px;
 
-        .kendonumeric.k-input {
+        .k-input {
           font-size: 12px;
         }
       }
@@ -592,6 +604,11 @@ html.form-medium {
       .k-numerictextbox + .pencil-edit {
         background-position: -539px -2px;
         top: 5px;
+      }
+
+      .edit-cell.inpt-text input+.icon.edit-field, 
+      input[type=text]+.icon.edit-field {
+        top: 4px;
       }
 
       .k-dropdown .k-dropdown-wrap {
@@ -695,6 +712,13 @@ html.form-medium {
     }
   }
 
+  .finder-window {
+
+    .footer-group {
+      min-height: 35px;
+    }
+  }
+
   .finder-window .gridcontrols-group,
   .k-grid,
   .finder-window .k-grid .k-grid-header {
@@ -720,6 +744,8 @@ html.form-medium {
   }
 
   .user-preference {
+
+  margin-top: 6px;
 
     .table-scroll td {
       padding: 0 0 0 34px;
@@ -875,6 +901,51 @@ html.form-medium {
     }
   }
 
+  .k-widget.k-numerictextbox.with-selector .k-numeric-wrap .k-input {
+    padding-right: 30px;
+  }
+
+  // Numerictextbox alternative - Data navigation form field related */
+
+  .k-widget.k-numerictextbox.data-nav {
+
+    .k-input {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    
+    .k-select .k-link {
+      height: 22px;
+
+      &.k-link-decrease {
+        left: -125px;
+      }
+
+      span.k-i-arrow-60-up, 
+      span.k-i-arrow-n {
+        background-position: -146px 2px;
+        height: 22px;
+      }
+
+      span.k-i-arrow-60-down, 
+      span.k-i-arrow-s {
+        background-position: -163px 2px;
+        height: 22px;
+      }
+    }
+
+    &.default {
+
+      .k-numeric-wrap {
+        width: 210px;
+
+        .k-select .k-link.k-link-decrease {
+          left: -187px;
+        }
+      }
+    }
+  }
+
   // Calendar 
 
   .k-calendar {
@@ -987,12 +1058,6 @@ html.form-medium {
       height: 22px;
       padding: 5px;
     }
-  }
-
-  // Finder window height control 
-
-  .finder-window {
-    height: 480px !important;
   }
 
   // Popup and Messages 
@@ -1140,17 +1205,14 @@ html.form-medium {
     background-size: 900px 90px;
   }
 
-  .global-search .header-group-1 .header-global-search div[class*="-group"] .treeview-group .k-treeview .k-item .k-i-collapse, 
-  .global-search .header-group-1 .header-global-search div[class*="-group"] .treeview-group .k-treeview .k-item .k-i-expand {
-    margin-left: 24px;
-  }
-
   @media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),
   only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device-pixel-ratio:1.2) {
       .icon, 
       .k-icon, 
       .k-icon:not(.k-loading), 
-      .k-icon:not(.k-loading):not(.k-i-loading), 
+      .k-icon:not(.k-i-loading),
+      .k-icon:not(.k-i-window-maximize),
+      .k-icon:not(.k-i-window-restore),
       .k-grouping-dropclue, 
       .k-drop-hint, 
       .k-column-menu .k-sprite, {
@@ -1428,6 +1490,18 @@ html.form-small {
     .button-group.no-label,
     .buttons-group.no-label {
       margin-top: 17px;
+    }
+
+    // Disabling Go-button next to disabled input field
+
+    .search-group input[disabled] ~ .btn-go, 
+    .finder-group input[disabled] ~ .btn-go, 
+    .plus-group input[disabled] ~ .btn-go {
+        background-position: -20px -53px;
+
+        &:focus {
+          outline: none;
+        }
     }
 
     // Size Control
@@ -1800,7 +1874,7 @@ html.form-small {
         margin-bottom: 2px;
         height: 20px;
 
-        .kendonumeric.k-input {
+        .k-input {
           font-size: 11px;
           height: 18px;
           padding: 0 5px;
@@ -1902,6 +1976,11 @@ html.form-small {
       .k-numerictextbox + .pencil-edit {
         background-position: -471px -2px;
         top: 5px;
+      }
+
+      .edit-cell.inpt-text input+.icon.edit-field, 
+      input[type=text]+.icon.edit-field {
+        top: 4px;
       }
 
       .k-dropdown .k-dropdown-wrap {
@@ -2024,6 +2103,22 @@ html.form-small {
       &.btn-refresh:before {
         background-position: -359px 3px;
       }
+
+      &.btn-details[disabled]:before {
+        background-position: 2px -53px;
+      }
+
+      &.btn-details:after {
+        left: -4px;
+        top: 2px;
+      }
+    }
+  }
+
+  .finder-window {
+
+    .footer-group {
+      min-height: 31px;
     }
   }
 
@@ -2053,6 +2148,8 @@ html.form-small {
 
   .user-preference {
 
+    margin-top: 2px;
+
     .table-scroll td {
       padding: 0 0 0 34px;
       background-position: 10px 11px;
@@ -2076,7 +2173,6 @@ html.form-small {
   .pager-group .k-pager-wrap>.k-link {
     height: 20px;
     width: 20px;
-    margin-top: 3px;
     font-size: 6px;
 
     .k-icon {
@@ -2282,6 +2378,51 @@ html.form-small {
     }
   }
 
+  .k-widget.k-numerictextbox.with-selector .k-numeric-wrap .k-input {
+    padding-right: 25px;
+  }
+
+  // Numerictextbox alternative - Data navigation form field related */
+
+  .k-numerictextbox.data-nav {
+    .k-input {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    
+    .k-select .k-link {
+      height: 18px;
+      width: 20px;
+
+      &.k-link-decrease {
+        left: -116px;
+      }
+
+      span.k-i-arrow-60-up, 
+      span.k-i-arrow-n {
+        background-position: -128px 1px;
+        height: 18px;
+      }
+
+      span.k-i-arrow-60-down, 
+      span.k-i-arrow-s {
+        background-position: -144px 1px;
+        height: 18px;
+      }
+    }
+
+    &.default {
+
+      .k-numeric-wrap {
+        width: 210px;
+
+        .k-select .k-link.k-link-decrease {
+          left: -190px;
+        }
+      }
+    }
+  }
+
   // Calendar 
 
   .k-calendar {
@@ -2450,12 +2591,6 @@ html.form-small {
     }
   }
 
-  // Finder window height control 
-
-  .finder-window {
-    height: 460px !important;
-  }
-
   // Popup and Messages 
 
   .message-control.multiError-msg .title .msgCtrl-close, 
@@ -2574,6 +2709,25 @@ html.form-small {
     top: 6px;
   }
 
+  .export-window #exportTreeView input[type=checkbox] {
+    height: 12px;
+    width: 12px;
+    top: 0;
+
+    &:checked::before {
+      font-size: 10px;
+      width: 10px;
+      height: 10px;
+      font-weight: bold;
+    }
+
+    &.k-state-indeterminate::before, 
+    &:indeterminate::before {
+      width: 6px;
+      height: 6px;
+    }
+  }
+
   // Tooltip 
 
   .k-widget.k-tooltip {
@@ -2677,12 +2831,35 @@ html.form-small {
     background-size: 900px 90px;
   }
 
+  .global-search .header-group-1 .header-global-search div[class*="-group"] .treeview-group .k-treeview span.k-in {
+    line-height: inherit;
+  }
+
+  .global-search .header-group-1 .header-global-search div[class*="-group"] .treeview-group .k-treeview .k-item .k-checkbox {
+    height: 12px;
+    width: 12px;
+
+    &:before {
+      font-size: 10px;
+      width: 10px;
+      height: 10px;
+    }
+
+    &.k-state-indeterminate::before, 
+    &:indeterminate::before {
+      width: 6px;
+      height: 6px;
+    }
+  }
+
   @media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),
   only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device-pixel-ratio:1.2) {
       .icon, 
       .k-icon, 
       .k-icon:not(.k-loading), 
-      .k-icon:not(.k-loading):not(.k-i-loading), 
+      .k-icon:not(.k-i-loading),
+      .k-icon:not(.k-i-window-maximize),
+      .k-icon:not(.k-i-window-restore),
       .k-grouping-dropclue, 
       .k-drop-hint, 
       .k-column-menu .k-sprite{

@@ -6,10 +6,11 @@
 .msg {
   margin: 0 0 20px;
   position: relative;
-  padding: 0 0 0 50px;
+  padding: 0;
+  border: 1px solid @sage-mid-gray;
 
   &:before {
-    background: #003349;
+    background: @brand-info;
     content: '';
     display: block;
     left: 0;
@@ -28,19 +29,18 @@
     opacity: 1;
     position: absolute;
     top: ~"calc(50% - 16px)";
+    left: 0;
   }
 
   .heading {
     background-color: @white;
-    border: 1px solid #9a9b9c;
-    border-bottom: 0;
+    padding: 16px 16px 16px 48px;
   }
 
   .msg-content {
     background-color: @white;
-    margin-bottom: 20px;
-    border: 1px solid #9a9b9c;
     border-top: 0px;
+    padding: 0 16px 16px 48px;
 
     ul, ol {
     padding: 6px 0 0 15px;
@@ -50,8 +50,22 @@
       }
     }
   }
+
+  &.msg-success {
+    border-color: @sage-green;
+
+    &:before {
+      background-color: @sage-green;
+    }
+
+    &:after {
+      background-position: -430px -29px;
+    }
+  }
   
   &.msg-info {
+    border-color: @brand-info;
+
     &:before {
       background-color: @brand-info;
     }
@@ -62,6 +76,8 @@
   }
 
   &.msg-warning {
+    border-color: @brand-warning;
+
     &:before {
       background-color: @brand-warning;
     }
@@ -72,6 +88,8 @@
   }
 
   &.msg-error {
+    border-color: @brand-danger;
+
     &:before {
       background-color: @brand-danger;
     }
