@@ -627,7 +627,7 @@ namespace MergeISVProject
 		{
 			var requiredParams = GetRequiredPropertiesAsString();
 			var optionalParams = GetOptionalPropertiesAsString();
-            var required3rdPartyComponents = "NUglify.dll";
+            var required3rdPartyComponents = "Node.js";
 			var msg = divider + Environment.NewLine;
 			msg += string.Format(Messages.Msg_ProgramUsageMessage, ApplicationName,
 																   ApplicationVersion,
