@@ -188,7 +188,11 @@ label {
   margin-bottom: 5px;
 
   &.disabled {
-    color: @sage-gray;
+    color: @gray-dark;
+
+    &:hover{
+      cursor: not-allowed;
+    }
   }
 
   &.flag-status {
@@ -886,6 +890,10 @@ input[type="checkbox"] {
     background-color: @input-bg-disabled;
     border-color: @input-border-disabled;
   }
+
+  .k-numerictextbox.with-selector .k-input {
+    padding-right: 40px;
+  }
 }
 
 .fiscal-group {
@@ -1209,7 +1217,6 @@ span.k-numerictextbox.align-right {
 
   .k-formatted-value + input[type=text] {
     border: 0;
-    height: 22px;
   }
 }
 
@@ -1291,6 +1298,10 @@ textarea {
     background-color: @input-bg-disabled;
     background-position: -23px -66px;
     cursor: default;
+
+    &:focus {
+      outline: none;
+    }
 }
 
 // Data Records Navigation
@@ -1360,10 +1371,11 @@ textarea {
   border: 1px solid @sage-mid-gray;
   border-radius: @input-border-radius;
   box-sizing: border-box;
+  padding-right: 0;
 
   .k-input {
     height: 28px;
-    padding: 0 10px;
+    padding: 0 10px 0;
     text-indent: 0;
     box-sizing: border-box;
     -moz-border-radius: 0;
@@ -1628,6 +1640,76 @@ textarea {
   background-image: none;
 }
 
+/* Numerictextbox alternative - Data navigation form field related */
+
+.k-numerictextbox.data-nav {
+
+  .k-numeric-wrap .k-input {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  .k-select .k-link {
+    height: 2em;
+    width: 2em;
+    position: absolute;
+    background-color: @btn-default-bg;
+
+    &.k-link-increase {
+      right: 0;
+      border-left: 1px solid @sage-mid-gray;
+    }
+
+    &.k-link-decrease {
+      left: -144px;
+      border-right: 1px solid @sage-mid-gray;
+      border-radius: 0;
+    }
+
+    span.k-i-arrow-60-up, 
+    span.k-i-arrow-n {
+      background-position: -163px 4px;
+    }
+
+    span.k-i-arrow-60-down, 
+    span.k-i-arrow-s {
+      background-position: -183px 4px;
+    }
+
+    &:hover {
+      background-color: darken(@btn-default-bg, 5%);
+    }
+  }
+
+  &.default {
+    .k-select .k-link.k-link-decrease {
+      left: -181px;
+    }
+  }
+
+  &.small {
+    .k-select .k-link.k-link-decrease {
+      left: -133px;
+    }
+  }
+
+  &.smaller {
+    .k-select .k-link.k-link-decrease {
+      left: -93px;
+    }
+  }
+
+  .k-numeric-wrap .k-select:hover {
+    background-color: #f1f1f3;
+    background-image: none;
+  }
+
+  .k-link:hover {
+    background-color: #e3e3e7;
+  }
+}
+
+
 /* calendar related */
 .k-calendar {
   font-size: 14px;
@@ -1683,13 +1765,12 @@ textarea {
     font-weight: 600;
 
     &.k-today {
-      -webkit-box-shadow: inset 0 0 0 1px @sage-link;
-      -moz-box-shadow: inset 0 0 0 1px @sage-link;
-      box-shadow: inset 0 0 0 1px @sage-link;
-
+    
       > .k-link {
         color: @sage-link;
-        box-shadow: none;
+        -webkit-box-shadow: inset 0 0 0 1px @sage-link;
+        -moz-box-shadow: inset 0 0 0 1px @sage-link;
+        box-shadow: inset 0 0 0 1px @sage-link;
       }
     }
 
@@ -1700,7 +1781,6 @@ textarea {
 
     &.k-state-focused,
     &.k-state-focused.k-state-selected {
-      background-color: @sage-link;
       .box-shadow(none) !important; // override kendo defualt ui
       background-image: none;
 
@@ -1756,7 +1836,6 @@ td.k-state-focused.k-state-selected {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  background-color: @brand-primary;
 }
 
 .k-state-selected > .k-link {
@@ -1778,11 +1857,10 @@ td.k-state-focused.k-state-selected {
 .k-calendar-container .k-calendar td.k-state-hover, 
 .k-calendar-container .k-calendar .k-state-hover.k-other-month  {
   background-image: none; 
-  background-color: @sage-light-gray;
 
   > a {
     color: @text-color;
-    background: none;
+    background: @sage-light-gray;
   } 
 }
 /* Kendo control - Kendo 2016.2 update */
@@ -2253,8 +2331,10 @@ div.k-treeview {
       background: #ebedef;
     }
 
-    &.k-state-selected {
-      background: #e8effe;
+    &.k-state-selected,
+    &.k-state-focused {
+      background: @brand-primary;
+      color: @white;
     }
 
     &.k-link {
@@ -2667,7 +2747,6 @@ div.k-treeview {
 
 .checkbox-container,
 .radio-container {
-  cursor: pointer;
   display: block;
   position: relative;
   padding-left: 28px;
@@ -2712,6 +2791,16 @@ div.k-treeview {
       border-color: @sage-gray;
     }
   }
+
+  /* Show disabled status */
+
+  input:disabled ~ label {
+    color: @gray-dark;
+
+    &:hover{
+      cursor: not-allowed;
+    }
+  }
 }
 
 .ctrl-group,
@@ -2719,7 +2808,6 @@ div.k-treeview {
   
   .checkbox-container,
   .radio-container {
-    cursor: pointer;
     display: block;
     position: relative;
     user-select: none;
@@ -2749,6 +2837,10 @@ div.k-treeview {
       &:hover{
         cursor: pointer;
       }
+
+      &.disabled:hover {
+        cursor: not-allowed;
+      }
     }
 
     /* Create a custom checkbox */
@@ -2763,13 +2855,17 @@ div.k-treeview {
       width: 16px;
     }
 
-    input:disabled ~ .checkmark {
-      background-color: @input-bg-disabled;
-      border-color: @input-border-disabled;
+    input:disabled {
       cursor: not-allowed;
 
-      &:after {
-        border-color: @sage-gray;
+      ~ .checkmark {
+        background-color: @input-bg-disabled;
+        border-color: @input-border-disabled;
+        cursor: not-allowed;
+
+        &:after {
+          border-color: @sage-gray;
+        }
       }
     }
   }

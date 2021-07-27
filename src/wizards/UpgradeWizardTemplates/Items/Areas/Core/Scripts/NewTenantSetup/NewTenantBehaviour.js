@@ -1,4 +1,4 @@
-﻿// Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved.
 
 "use strict";
 var firstTimeLoginUI = firstTimeLoginUI || {};
@@ -97,20 +97,12 @@ var firstTimeLoginUI = {
       
     },
     initFinders: function () {
-        var title = jQuery.validator.format(NewTenantResources.FinderTitle, NewTenantResources.CurrencyCodeTitle);
-        sg.finderHelper.setFinder(
-            "btnFinderCurrencyCodes",
-            sg.finder.CurrencyCode,
-            firstTimeLoginUI.finderSuccess,
-            $.noop(),
-            title,
-            sg.finderHelper.createDefaultFunction(
-            "txtCurrencyCode", "CurrencyCodeId",
-            sg.finderOperator.StartsWith), null, true);
+        sg.viewFinderHelper.setViewFinderEx("btnFinderCurrencyCodes", "txtCurrencyCode", sg.viewFinderProperties.CS.CurrencyCodes,
+            firstTimeLoginUI.finderSuccess, $.noop);
     },
     finderSuccess: function (result) {
-        if (result != null) {
-            $('#txtCurrencyCode').val(result.CurrencyCodeId);         
+        if (result) {
+            $('#txtCurrencyCode').val(result.CURID);         
         }
     }
 };
@@ -118,7 +110,7 @@ var currencyCodeFilter = {
     getFilter: function () {
         var filters = [[]];
         var currencyCodeName = $("#txtCurrencyCode").val();
-        filters[0][0] = sg.finderHelper.createFilter("CurrencyCode", sg.finderOperator.StartsWith, currencyCodeName);
+        filters[0][0] = sg.filterHelper.createFilter("CurrencyCode", sg.finderOperator.StartsWith, currencyCodeName);
         return filters;
     }
 };

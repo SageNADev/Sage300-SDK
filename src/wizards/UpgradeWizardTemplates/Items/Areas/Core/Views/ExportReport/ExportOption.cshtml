@@ -39,11 +39,11 @@
                 <div class="ctrl-group">
                     <div>
                         <input type="radio" id="report_rdoAllPages" value="1" name="report_pageSelect" checked />
-                        <label for="rdoAllPages">@CommonResx.All</label>
+                        <label for="report_rdoAllPages">@CommonResx.All</label>
                     </div>
                     <div>
                         <input type="radio" id="report_rdoSelectPages" value="3" name="report_pageSelect" />
-                        <label for="rdoSelectPages">@CommonResx.SelectPages</label>
+                        <label for="report_rdoSelectPages">@CommonResx.SelectPages</label>
                         <div class="input-group ml20">
                             <span class="inline">@CommonResx.From</span>
                             <input type="text" value="" class="xsmall numeric" id="report_txtPageFrom">
@@ -87,7 +87,11 @@
                 a.click();
                 a.remove();
                 window.URL.revokeObjectURL(url);
-                setTimeout(function () { window.close(); }, 5000);
+                const channel = new BroadcastChannel("ReportExportChannel");
+                setTimeout(function () {
+                    window.close();
+                    channel.postMessage("OK");
+                }, 5000);
             },
 
             error: function(jqXhr, textStatus, errorThrown) {

@@ -739,8 +739,12 @@ $.extend(sg.utls, {
      * @returns {string} The current company name
      */
     getCurrentCompanyName: function () {
+        if (window.location !== window.parent.location) { // in iframe (within a page), go up one level
+            return parent.sg.utls.getCurrentCompanyName();
+        } 
+
         var companyName = "";
-        $("#companyNameMenu").find('txt-top-menu').each(function (index, element) {
+        $("#companyNameMenu").find('.txt-top-menu').each(function (index, element) {
             companyName = $(this).text();
         });
 
@@ -972,7 +976,7 @@ $.extend(sg.utls, {
             success: successHandler,
             error: errorHandler,
             beforeSend: function () {
-                $('#ajaxSpinner').fadeIn(1);
+                $("#ajaxSpinner").css("display", "block");
                 if (sg.utls.isSameOrigin()) {
                     var iFrame = window.top.$('iframe.screenIframe:visible');
                     if (iFrame && iFrame.length > 0) {
@@ -981,7 +985,7 @@ $.extend(sg.utls, {
                 }
             },
             complete: function () {
-                $('#ajaxSpinner').fadeOut(1);
+                $("#ajaxSpinner").css("display", "none");
                 sg.utls.ajaxRunning = false;
                 sg.utls.isProcessRunning = false;
                 sg.utls.fireStackedCalls();
@@ -1255,7 +1259,7 @@ $.extend(sg.utls, {
         var idCancel = (typeof cancelButtonId !== 'undefined' && cancelButtonId !== null) ? "#" + cancelButtonId : "#kendoConfirmationCancelButton";
 
         if (dialoghtml === null || dialoghtml === undefined) {
-            var kendoWindow = $("<div class='modelWindow' id='" + "dialogConfirmation " + "' />").kendoWindow({
+            var kendoWindow = $("<div class='modelWindow' id='dialogConfirmation' />").kendoWindow({
                 title: '',
                 resizable: false,
                 modal: true,
@@ -1433,7 +1437,10 @@ $.extend(sg.utls, {
 
         // Removed the line below because if modal is true, the z-index value increasing 
         // automatically. We cannot guarantee 999999 is the largest value on the screen.
-        //divDeleteConfirmParent.css('z-index', '999999');
+
+        // There is a defect in the behaviour of Kendo Window,
+        // when a modal is opened on another modal, the z-index is not calculated correctly.
+        divDeleteConfirmParent.css('z-index', '999999');
 
         divDeleteConfirmParent.css('position', 'absolute');
         divDeleteConfirmParent.css('left', ($(window).width() - divDeleteConfirmParent.width()) / 2);
@@ -1767,7 +1774,7 @@ $.extend(sg.utls, {
             modal: true,
             title: title,
             resizable: false,
-            draggable: false,
+            draggable: true,
             scrollable: true,
             visible: false,
             width: width,
@@ -1799,7 +1806,6 @@ $.extend(sg.utls, {
         if (maxConfig && maxConfig.height) {
             kendoWindow.setOptions({ height: maxConfig.height });
         }
-
     },
 
     /**
@@ -2963,7 +2969,8 @@ $.extend(sg.utls, {
 
         numericTextbox.options.min = minValue;
         numericTextbox.options.max = maxValue;
-        sg.utls.kndoUI.restrictDecimals(numericTextbox, decimals, maxDigits);
+        numericTextbox.options.upArrowText = globalResource.Next;
+        numericTextbox.options.downArrowText = globalResource.Previous;
     },
 
     // Set numeric textbox
@@ -3488,7 +3495,22 @@ $.extend(sg.utls, {
 
     deepCopy: function (obj) {
         return JSON.parse(JSON.stringify(obj));
+    },
+
+    /**
+     * Copy value field by field from source to target
+     * @param {object} source object copying from
+     * @param {object} target object copying to
+     */
+    fieldCopy: function (source, target) {
+        for (let key in source) {
+            if (target[key] !== null && target[key] !== undefined &&   // make sure it has value
+                target[key] !== source[key]) {                         // and only if they are different
+                target[key] = source[key];
+            }
+        }
     }
+
 
     //initBackgroundImageCycling: function () {
     //    var TIMEOUT_MS = 2000;
@@ -4061,6 +4083,16 @@ $(function () {
                     }
                 }
             }
+        }
+    });
+
+    // Mapping Left/Right Arrow key when numerictextbox is focused
+    $(document).on('keyup', ".data-nav input[data-role='numerictextbox']", function (e) {
+        const numericTextBox = $(document.activeElement).data("kendoNumericTextBox");
+        if (e.keyCode === sg.constants.KeyCodeEnum.LeftArrow) {
+            numericTextBox._step(-1);
+        } else if (e.keyCode === sg.constants.KeyCodeEnum.RightArrow) {
+            numericTextBox._step(1);
         }
     });
 

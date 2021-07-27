@@ -864,6 +864,10 @@ table {
 
   &#div_finder_grid {
     margin-bottom: 0;
+
+    &:focus {
+      .focus-input-box;
+    }
   }
 }
 
@@ -875,7 +879,7 @@ table {
   }
 
   .k-grid-content {
-    min-height: 200px;
+    min-height: 186px;
 
     &:focus {
       outline: none;
@@ -1270,8 +1274,8 @@ table {
   -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
 
   &#divFinderPrefEditCols {
-    margin-top: -2px;
-    margin-left: 1px;
+    top: 80px !important;
+    left: 14px !important;
   }
 
   table { 

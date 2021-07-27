@@ -824,19 +824,42 @@
     background-image: url('@{image-path}/nav/SIRC/bg_menu_sirc.jpg'), linear-gradient(180deg, #FFFFFF 0%, #EBEDEF 30%);
 
     > li {
-      padding: 1rem !important;
+      padding: 1rem 1rem 0.35rem;
       width: 29rem;
 
-      &.feature-menu-header > span {
-        font-size: 1.35rem;
-        color: #858780;
-        font-weight: normal;
-        display: inline-block;
+      &.feature-menu-header {
+        padding-bottom: 0;
+        
+        > span {
+          font-size: 1.35rem;
+          color: #858780;
+          font-weight: normal;
+          display: inline-block;
+        }
       }
 
       p {
         margin-bottom: 1rem;
       }
+
+      &.feature-menu-content {
+
+        h2 {
+          font-size: 1rem;
+          color: #858780;
+          font-weight: normal;
+          margin-bottom: 16px;
+          display: inline-block;
+        }
+
+        .logo-sda {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    hr {
+      margin-bottom: 0;
     }
   }
 

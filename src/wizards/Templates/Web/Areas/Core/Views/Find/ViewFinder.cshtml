@@ -87,7 +87,7 @@
 </div>
 
 <div class="clear-fix">
-    <div id="div_finder_grid"></div>
+    <div id="div_finder_grid" tabindex="0"></div>
 </div>
 <div class="clear-fix"></div>
 <div id="buttons" class="pager-group">
@@ -112,9 +112,9 @@
         </a>
     </div>
 </div>
-<div class="footer-group">
-    @Html.KoSageButton("Select", null, new { @class = "btn btn-primary", @value = CommonResx.Select1, @id = "select" })
+<div class="footer-group-1">
     @Html.KoSageButton("Cancel", null, new { @class = "btn btn-secondary", @value = CommonResx.Cancel, @id = "cancel" })
+    @Html.KoSageButton("Select", null, new { @class = "btn btn-primary", @value = CommonResx.Select1, @id = "select" })
 </div>
 <div class="clear-fix"></div>
 <script type="text/javascript">

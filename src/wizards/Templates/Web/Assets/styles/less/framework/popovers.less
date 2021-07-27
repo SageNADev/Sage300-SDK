@@ -221,8 +221,9 @@ and (max-device-width : 1024px) {
 }
 .k-window-titlebar .k-window-actions{
     opacity: 1;
-    top: 5px;
+    top: 4px;
     right: 10px;
+    position: absolute;
 }
 
 .k-window-titlebar .k-window-action {
@@ -231,6 +232,10 @@ and (max-device-width : 1024px) {
   height: 30px;
   position: relative;
   margin-left: 6px;
+
+  &:focus {
+    outline: 3px solid @input-border-focus;
+  }
 }
 .k-window-titlebar .k-window-actions .k-i-close{
     background-image: none;
@@ -247,8 +252,7 @@ and (max-device-width : 1024px) {
     vertical-align: top;
     opacity: 1;
 
-    &:hover,
-    &:focus {
+    &:hover {
       outline: none;
       border: none;
     }
@@ -268,7 +272,7 @@ and (max-device-width : 1024px) {
 
 .k-window .k-window-content {
     padding: 3px 3px 0;
-    margin: (@margin-base - 3px) (@margin-base - 3px) 0; // D-42509
+    margin: (@margin-base - 3px) (@margin-base - 3px) -3px; // D-42509
     background: transparent;
     border-radius: 0px;
     overflow-y:auto;
@@ -601,9 +605,14 @@ and (max-device-width : 1024px) {
     overflow-y: scroll;
   }
 
-  .k-grid tr.k-state-selected td:first-child {
-    border-left: 3px solid @sage-blue;
-    padding-left: 5px;
+  .k-grid tr.k-state-selected {
+
+    border: 1px solid @input-border;
+
+    td:first-child {
+      border-left: 3px solid @sage-blue;
+      padding-left: 5px;
+    }
   }
 
   .pager-group .k-pager-wrap {

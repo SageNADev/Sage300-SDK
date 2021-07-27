@@ -10,7 +10,7 @@ var sg = sg || {};
 sg.textAreaPopup = (function () {
     const _defaultMaxLength = '250';
     const _defaultPopupWidth = 680;
-    const _defaultInnerClass = 'p10 w640 h180';
+    const _defaultInnerClass = 'p10 w640 h180 max-h535';
     const _defaultOuterClass = 'textarea-group';
 
     /**
@@ -25,17 +25,19 @@ sg.textAreaPopup = (function () {
      * @param {string} textAreaClass (optional) textarea css class
      * @param {string} containerClass (optional) textarea container css class
      * @param {string} maxLength (optional) textarea maxlength
+     * @param {int} popupWidth (optional) popup window width
      */
-    const init = (id, title, fieldName, closeCallback, textAreaId, textAreaClass, containerClass, maxLength) => {
+    const init = (id, title, fieldName, closeCallback, textAreaId, textAreaClass, containerClass, maxLength, popupWidth) => {
         const innerClass = textAreaClass === undefined ? _defaultInnerClass : textAreaClass;
         const outerClass = containerClass === undefined ? _defaultOuterClass : containerClass;
         const max = maxLength === undefined ? _defaultMaxLength : maxLength;
         const innerId = textAreaId === undefined ? `${id}_txt${fieldName}` : textAreaId;
+        const width = popupWidth === undefined ? _defaultPopupWidth : popupWidth;
 
         const template =
             `<div class=\"${outerClass}\">
                 <textarea id=\"${innerId}\" 
-                    maxlength=\"${max}\" 
+                    maxlength=\"${max}\"
                     class=\"${innerClass}\"
                     data-bind="sagevalue:${fieldName},valueUpdate:'input'"
                 ></textarea>
@@ -43,7 +45,7 @@ sg.textAreaPopup = (function () {
 
         $(id).append(template);
 
-        sg.utls.initializeKendoWindowPopup(id, title, closeCallback);
+        sg.utls.initializeKendoWindowPopupWithWidth(id, title, closeCallback, width);
     }
 
     /**
@@ -52,12 +54,9 @@ sg.textAreaPopup = (function () {
      * @description Display the popup
      * @param {string} id popup html id attribute
      * @param {bool} isReadOnly textarea is disabled
-     * @param {int} popupWidth popup window width
      */
-    const showPopUp = (id, isReadOnly, popupWidth) => {
-        const width = popupWidth === undefined ? _defaultPopupWidth : popupWidth;
-        sg.utls.openKendoWindowPopup(id, null, width);
-        $(id).data("kendoWindow").center();
+    const showPopUp = (id, isReadOnly) => {
+        sg.utls.openKendoWindowPopup(id, null);
 
         if (isReadOnly !== undefined)
             sg.textAreaPopup.readOnly(id, isReadOnly);

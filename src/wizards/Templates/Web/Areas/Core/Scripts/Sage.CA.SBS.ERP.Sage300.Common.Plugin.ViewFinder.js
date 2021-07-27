@@ -4,6 +4,7 @@
     sg.viewFinderHelper = {
         pageSize: 5,
         cancelFuncCall: $.noop,
+        isSelected: false,
         savePreferenceType: { None: 0, ColumnPreference: 1, Filter: 2, Maximize: 3},
 
         /**
@@ -161,6 +162,50 @@
                 url = sg.utls.url.buildUrl(customUrlProperty[0], customUrlProperty[1], customUrlProperty[2]);
             }
             return url;
+        }
+    };
+
+    sg.filterHelper = {
+        createFilter: function (field, operator, value, applyFilterIfNull) {
+            if (applyFilterIfNull == null || applyFilterIfNull == undefined) {
+                applyFilterIfNull = false;
+            }
+            return { Field: { field: field }, Value: value, Operator: operator, ApplyFilterIfNull: applyFilterIfNull };
+        },
+
+        createInquiryFilter: function (field, operator, value, applyFilterIfNull, isAndOperation, logisticGroup) {
+            if (applyFilterIfNull == null || applyFilterIfNull == undefined) {
+                applyFilterIfNull = false;
+            }
+            return { Field: { field: field }, Value: value, SqlOperator: operator, ApplyFilterIfNull: applyFilterIfNull };
+        },
+
+        createDefaultFunction: function (fieldControl, field, operator) {
+            var func = function () {
+                if (operator == undefined || operator.length == 0) {
+                    operator = sg.finderOperator.StartsWith;
+                }
+                var filterData = [[]];
+                var value = $("#" + fieldControl).val();
+                filterData[0][0] = { Field: { field: field }, Operator: operator, Value: value };
+                return filterData;
+            };
+            return func;
+        },
+    };
+
+    // Old finder is deprecated. We will keep the interfaces for filters.
+    sg.finderHelper = {
+        createFilter: function (field, operator, value, applyFilterIfNull) {
+            return sg.filterHelper.createFilter(field, operator, value, applyFilterIfNull);
+        },
+
+        createInquiryFilter: function (field, operator, value, applyFilterIfNull, isAndOperation, logisticGroup) {
+            return sg.filterHelper.createInquiryFilter(field, operator, value, applyFilterIfNull, isAndOperation, logisticGroup);
+        },
+
+        createDefaultFunction: function (fieldControl, field, operator) {
+            return sg.filterHelper.createDefaultFunction(fieldControl, field, operator);
         }
     };
 
@@ -368,7 +413,8 @@
                 CalculatePageCount: true,
                 ReinterpretInitKeyValues: true,
                 ProcessRequiredFields: theOptions.finderProperties.processRequiredFields,
-                URL: sg.viewFinderHelper.buildViewFinderUrl(theOptions.finderProperties.url)
+                URL: sg.viewFinderHelper.buildViewFinderUrl(theOptions.finderProperties.url),
+                FinderTitle: theOptions.finderProperties.finderTitle,
             };
 
             if (typeof theOptions.filterAction === 'function') {
@@ -473,13 +519,17 @@
 
             //Close Event -Do same as cancel
             kendoWindow.bind("close", function () {
-                that._triggerChange(that);
-                kendoWindow.destroy();
-                var cancel = theOptions.cancel;
-                if (cancel) {
-                    cancel();
+                if (!sg.viewFinderHelper.isSelected) {
+                    that._triggerChange(that);
+                    var cancel = theOptions.cancel;
+                    if (cancel) {
+                        cancel();
+                    }
                 }
+                kendoWindow.destroy();
+                window.removeEventListener("keydown", that._keyHandler);
                 sg.utls.isFinderClicked = false;
+                sg.viewFinderHelper.isSelected = false;
                 sg.findEvent = null;
             });
             kendoWindow.resizing._draggable.userEvents.bind("release", function () {
@@ -530,13 +580,17 @@
 
                 FinderPreferences.Initialize();
                 var $titleSpan = kendoWindow.wrapper.find('.k-window-title');
-                $titleSpan.html(finderTitle);
+                const title = (sg.finderOptions.FinderTitle) ? sg.finderOptions.FinderTitle : finderTitle;
+                $titleSpan.html(title);
                 kendoWindow.open();
                 // Maximize needs to happen after open is done to calculate the grid height
                 setTimeout(function () {
                     if (isMaximized) {
                         kendoWindow.maximize();
                     }
+
+                    // Focus on grid to enable keyboard access
+                    $("#div_finder_grid").focus();
                 }, 500);
 
                 $(document)
@@ -586,17 +640,8 @@
                 $("#cancel")
                     .on('click',
                         function () {
-                            that._triggerChange(that);
-                            var theOptions = that.options;
-                            var cancel = theOptions.cancel;
-                            if (cancel) {
-                                $(this).on('click', cancel(theOptions.sourceId));
-                            }
                             var finderWin = $("#" + that.divFinderDialogId).data("kendoWindow");
-                            finderWin.destroy();
-                            sg.utls.isFinderClicked = false;
-                            sg.findEvent = null;
-
+                            finderWin.close();
                         });
                 $("#div_finder_grid .k-grid-content")
                     .on("dblclick",
@@ -604,7 +649,9 @@
                         function () {
                             sg.viewFinderHelper.cancelFuncCall = $.noop;
                             that._getSelectedRow(that);
-                        });
+                    });
+
+                window.addEventListener('keydown', that._keyHandler);
             } else {
                 kendoWindow.destroy();
                 sg.utls.isFinderClicked = false;
@@ -726,9 +773,8 @@
 
                 var finderWin = $("#" + that.divFinderDialogId).data("kendoWindow");
                 if (finderWin !== undefined) {
-                    finderWin.destroy();
-                    sg.utls.isFinderClicked = false;
-                    sg.findEvent = null;
+                    sg.viewFinderHelper.isSelected = true;
+                    finderWin.close();
                 }
             }
         },
@@ -767,6 +813,38 @@
             ViewFinderGridHelper.finderOptions.PageSize = Math.floor(contentHeight / rowHeight);
             ViewFinderGridHelper.RefreshFinderGrid(gridData);
             ViewFinderGridHelper.finderOptions.isResize = false;
+        },
+
+        _keyHandler: function (e) {
+            if (document.activeElement.id === "div_finder_grid") {
+                if (e.keyCode === sg.constants.KeyCodeEnum.Enter) {
+                    $("#select").trigger("click");
+                } else if (e.keyCode === sg.constants.KeyCodeEnum.Home) {
+                    e.preventDefault();
+                    $("#first").trigger("click");
+                } else if (e.keyCode === sg.constants.KeyCodeEnum.PgUp) {
+                    e.preventDefault();
+                    $("#previous").trigger("click");
+                } else if (e.keyCode === sg.constants.KeyCodeEnum.PgDn) {
+                    e.preventDefault();
+                    $("#next").trigger("click");
+                } else if (e.keyCode === sg.constants.KeyCodeEnum.End) {
+                    e.preventDefault();
+                    $("#last").trigger("click");
+                } else if (e.keyCode === sg.constants.KeyCodeEnum.UpArrow) {
+                    e.preventDefault();
+                    const grid = $('#div_finder_grid').data("kendoGrid");
+                    const selectedIndex = grid.select().index();
+                    if (selectedIndex > 0) {
+                        grid.select("tr:eq(" + (selectedIndex - 1) + ")");
+                    }
+                } else if (e.keyCode === sg.constants.KeyCodeEnum.DownArrow) {
+                    e.preventDefault();
+                    const grid = $('#div_finder_grid').data("kendoGrid");
+                    const selectedIndex = grid.select().index();
+                    grid.select("tr:eq(" + (selectedIndex + 1) + ")");
+                }
+            }
         }
     });
 

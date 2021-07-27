@@ -224,6 +224,18 @@ html.form-medium {
       margin-top: 22px;
     }
 
+    // Disabling Go-button next to disabled input field
+
+    .search-group input[disabled] ~ .btn-go, 
+    .finder-group input[disabled] ~ .btn-go, 
+    .plus-group input[disabled] ~ .btn-go {
+        background-position: -20px -60px;
+
+        &:focus {
+          outline: none;
+        }
+    }
+
     // Size Control
 
     .search-group>input[type=text].size-control:not(.large) {
@@ -508,7 +520,7 @@ html.form-medium {
       .k-numeric-wrap {
         margin-bottom: 2px;
 
-        .kendonumeric.k-input {
+        .k-input {
           font-size: 12px;
         }
       }
@@ -889,6 +901,51 @@ html.form-medium {
     }
   }
 
+  .k-widget.k-numerictextbox.with-selector .k-numeric-wrap .k-input {
+    padding-right: 30px;
+  }
+
+  // Numerictextbox alternative - Data navigation form field related */
+
+  .k-widget.k-numerictextbox.data-nav {
+
+    .k-input {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    
+    .k-select .k-link {
+      height: 22px;
+
+      &.k-link-decrease {
+        left: -125px;
+      }
+
+      span.k-i-arrow-60-up, 
+      span.k-i-arrow-n {
+        background-position: -146px 2px;
+        height: 22px;
+      }
+
+      span.k-i-arrow-60-down, 
+      span.k-i-arrow-s {
+        background-position: -163px 2px;
+        height: 22px;
+      }
+    }
+
+    &.default {
+
+      .k-numeric-wrap {
+        width: 210px;
+
+        .k-select .k-link.k-link-decrease {
+          left: -187px;
+        }
+      }
+    }
+  }
+
   // Calendar 
 
   .k-calendar {
@@ -1153,7 +1210,9 @@ html.form-medium {
       .icon, 
       .k-icon, 
       .k-icon:not(.k-loading), 
-      .k-icon:not(.k-loading):not(.k-i-loading), 
+      .k-icon:not(.k-i-loading),
+      .k-icon:not(.k-i-window-maximize),
+      .k-icon:not(.k-i-window-restore),
       .k-grouping-dropclue, 
       .k-drop-hint, 
       .k-column-menu .k-sprite, {
@@ -1431,6 +1490,18 @@ html.form-small {
     .button-group.no-label,
     .buttons-group.no-label {
       margin-top: 17px;
+    }
+
+    // Disabling Go-button next to disabled input field
+
+    .search-group input[disabled] ~ .btn-go, 
+    .finder-group input[disabled] ~ .btn-go, 
+    .plus-group input[disabled] ~ .btn-go {
+        background-position: -20px -53px;
+
+        &:focus {
+          outline: none;
+        }
     }
 
     // Size Control
@@ -1803,7 +1874,7 @@ html.form-small {
         margin-bottom: 2px;
         height: 20px;
 
-        .kendonumeric.k-input {
+        .k-input {
           font-size: 11px;
           height: 18px;
           padding: 0 5px;
@@ -2031,6 +2102,15 @@ html.form-small {
 
       &.btn-refresh:before {
         background-position: -359px 3px;
+      }
+
+      &.btn-details[disabled]:before {
+        background-position: 2px -53px;
+      }
+
+      &.btn-details:after {
+        left: -4px;
+        top: 2px;
       }
     }
   }
@@ -2295,6 +2375,51 @@ html.form-small {
     .k-widget.k-numerictextbox.default.numeric,
     .k-widget.k-numerictextbox.default.grid_Cell_Number_Right_Align {
       width: 210px;
+    }
+  }
+
+  .k-widget.k-numerictextbox.with-selector .k-numeric-wrap .k-input {
+    padding-right: 25px;
+  }
+
+  // Numerictextbox alternative - Data navigation form field related */
+
+  .k-numerictextbox.data-nav {
+    .k-input {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    
+    .k-select .k-link {
+      height: 18px;
+      width: 20px;
+
+      &.k-link-decrease {
+        left: -116px;
+      }
+
+      span.k-i-arrow-60-up, 
+      span.k-i-arrow-n {
+        background-position: -128px 1px;
+        height: 18px;
+      }
+
+      span.k-i-arrow-60-down, 
+      span.k-i-arrow-s {
+        background-position: -144px 1px;
+        height: 18px;
+      }
+    }
+
+    &.default {
+
+      .k-numeric-wrap {
+        width: 210px;
+
+        .k-select .k-link.k-link-decrease {
+          left: -190px;
+        }
+      }
     }
   }
 
@@ -2732,7 +2857,9 @@ html.form-small {
       .icon, 
       .k-icon, 
       .k-icon:not(.k-loading), 
-      .k-icon:not(.k-loading):not(.k-i-loading), 
+      .k-icon:not(.k-i-loading),
+      .k-icon:not(.k-i-window-maximize),
+      .k-icon:not(.k-i-window-restore),
       .k-grouping-dropclue, 
       .k-drop-hint, 
       .k-column-menu .k-sprite{
