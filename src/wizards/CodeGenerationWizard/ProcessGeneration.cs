@@ -417,7 +417,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             businessView.Options.Clear();
             businessView.Properties.Clear();
             businessView.Compositions.Clear();
-            businessView.Protocol = view.InstanceProtcol;
+            try
+            {
+                businessView.Protocol = view.InstanceProtcol;
+            }
+            catch
+            {
+                // Seems like not all views have an instance protocol (i.e., AS0020)
+            }
 
             businessView.Properties[BusinessView.Constants.ViewId] = view.ViewID;
             businessView.Properties[BusinessView.Constants.ModuleId] = moduleId;
