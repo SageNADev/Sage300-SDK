@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Max6" xml:space="preserve">
+    <value>最多6</value>
+  </data>
+  <data name="Field18" xml:space="preserve">
+    <value>欄位18</value>
+  </data>
+  <data name="GeneratedSequenceNumber" xml:space="preserve">
+    <value>產生的序列編號</value>
+  </data>
+  <data name="FieldName3" xml:space="preserve">
+    <value>欄位名稱3</value>
+  </data>
+  <data name="Max9" xml:space="preserve">
+    <value>最多9</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Field12" xml:space="preserve">
+    <value>欄位12</value>
+  </data>
+  <data name="Field9" xml:space="preserve">
+    <value>欄位9</value>
+  </data>
+  <data name="FieldName8" xml:space="preserve">
+    <value>欄位名稱8</value>
+  </data>
+  <data name="Min4" xml:space="preserve">
+    <value>最少4</value>
+  </data>
+  <data name="Type18" xml:space="preserve">
+    <value>類型18</value>
+  </data>
+  <data name="Field3" xml:space="preserve">
+    <value>欄位3</value>
+  </data>
+  <data name="FieldName13" xml:space="preserve">
+    <value>欄位名稱13</value>
+  </data>
+  <data name="Period2" xml:space="preserve">
+    <value>期間2</value>
+  </data>
+  <data name="Type12" xml:space="preserve">
+    <value>類型12</value>
+  </data>
+  <data name="Field5" xml:space="preserve">
+    <value>欄位5</value>
+  </data>
+  <data name="Type11" xml:space="preserve">
+    <value>類型11</value>
+  </data>
+  <data name="SequenceNumber" xml:space="preserve">
+    <value>序號</value>
+  </data>
+  <data name="CutoffDate" xml:space="preserve">
+    <value>截止日期</value>
+  </data>
+  <data name="Max4" xml:space="preserve">
+    <value>最多4</value>
+  </data>
+  <data name="MaxKey" xml:space="preserve">
+    <value>最多值鍵</value>
+  </data>
+  <data name="Min3" xml:space="preserve">
+    <value>最少3</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>應收帳款客戶清單</value>
+  </data>
+  <data name="Min8" xml:space="preserve">
+    <value>最少8</value>
+  </data>
+  <data name="Type6" xml:space="preserve">
+    <value>類型6</value>
+  </data>
+  <data name="Type7" xml:space="preserve">
+    <value>類型7</value>
+  </data>
+  <data name="Type4" xml:space="preserve">
+    <value>類型4</value>
+  </data>
+  <data name="Type5" xml:space="preserve">
+    <value>類型5</value>
+  </data>
+  <data name="Type2" xml:space="preserve">
+    <value>類型2</value>
+  </data>
+  <data name="Type3" xml:space="preserve">
+    <value>類型3</value>
+  </data>
+  <data name="Type1" xml:space="preserve">
+    <value>類型1</value>
+  </data>
+  <data name="MinKey" xml:space="preserve">
+    <value>最少值鍵</value>
+  </data>
+  <data name="IncludeNoComments" xml:space="preserve">
+    <value>包括未含備註</value>
+  </data>
+  <data name="IncludePrepayments" xml:space="preserve">
+    <value>包括預付款</value>
+  </data>
+  <data name="Type8" xml:space="preserve">
+    <value>類型8</value>
+  </data>
+  <data name="Type9" xml:space="preserve">
+    <value>類型9</value>
+  </data>
+  <data name="AgeBy" xml:space="preserve">
+    <value>帳析類型</value>
+  </data>
+  <data name="Field17" xml:space="preserve">
+    <value>欄位17</value>
+  </data>
+  <data name="FieldName18" xml:space="preserve">
+    <value>欄位名稱18</value>
+  </data>
+  <data name="FieldName7" xml:space="preserve">
+    <value>欄位名稱7</value>
+  </data>
+  <data name="FieldName2" xml:space="preserve">
+    <value>欄位名稱2</value>
+  </data>
+  <data name="FieldName1" xml:space="preserve">
+    <value>欄位名稱1</value>
+  </data>
+  <data name="Min7" xml:space="preserve">
+    <value>最少7</value>
+  </data>
+  <data name="Field8" xml:space="preserve">
+    <value>欄位8</value>
+  </data>
+  <data name="Max10" xml:space="preserve">
+    <value>最多10</value>
+  </data>
+  <data name="Field2" xml:space="preserve">
+    <value>欄位2</value>
+  </data>
+  <data name="Field1" xml:space="preserve">
+    <value>欄位1</value>
+  </data>
+  <data name="Field4" xml:space="preserve">
+    <value>欄位4</value>
+  </data>
+  <data name="Type10" xml:space="preserve">
+    <value>類型10</value>
+  </data>
+  <data name="Type17" xml:space="preserve">
+    <value>類型17</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>鍵值</value>
+  </data>
+  <data name="Type15" xml:space="preserve">
+    <value>類型15</value>
+  </data>
+  <data name="Max17" xml:space="preserve">
+    <value>最多17</value>
+  </data>
+  <data name="Field15" xml:space="preserve">
+    <value>欄位15</value>
+  </data>
+  <data name="Min6" xml:space="preserve">
+    <value>最少6</value>
+  </data>
+  <data name="Min9" xml:space="preserve">
+    <value>最少9</value>
+  </data>
+  <data name="Max13" xml:space="preserve">
+    <value>最多13</value>
+  </data>
+  <data name="Max12" xml:space="preserve">
+    <value>最多12</value>
+  </data>
+  <data name="Max11" xml:space="preserve">
+    <value>最多11</value>
+  </data>
+  <data name="Field11" xml:space="preserve">
+    <value>欄位11</value>
+  </data>
+  <data name="FieldName17" xml:space="preserve">
+    <value>欄位名稱17</value>
+  </data>
+  <data name="Field13" xml:space="preserve">
+    <value>欄位13</value>
+  </data>
+  <data name="FieldName12" xml:space="preserve">
+    <value>欄位名稱12</value>
+  </data>
+  <data name="Period3" xml:space="preserve">
+    <value>期間3</value>
+  </data>
+  <data name="FieldName4" xml:space="preserve">
+    <value>欄位名稱4</value>
+  </data>
+  <data name="KeyName" xml:space="preserve">
+    <value>鍵名稱</value>
+  </data>
+  <data name="Field16" xml:space="preserve">
+    <value>欄位16</value>
+  </data>
+  <data name="RunDate" xml:space="preserve">
+    <value>執行日期</value>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>處理指示</value>
+  </data>
+  <data name="Max5" xml:space="preserve">
+    <value>最多5</value>
+  </data>
+  <data name="Min12" xml:space="preserve">
+    <value>最少12</value>
+  </data>
+  <data name="Min5" xml:space="preserve">
+    <value>最少5</value>
+  </data>
+  <data name="Max3" xml:space="preserve">
+    <value>最多3</value>
+  </data>
+  <data name="FieldName10" xml:space="preserve">
+    <value>欄位名稱10</value>
+  </data>
+  <data name="Period1" xml:space="preserve">
+    <value>期間1</value>
+  </data>
+  <data name="FieldName16" xml:space="preserve">
+    <value>欄位名稱16</value>
+  </data>
+  <data name="Max14" xml:space="preserve">
+    <value>最多14</value>
+  </data>
+  <data name="FieldName14" xml:space="preserve">
+    <value>欄位名稱14</value>
+  </data>
+  <data name="FieldName6" xml:space="preserve">
+    <value>欄位名稱6</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>類型</value>
+  </data>
+  <data name="FieldName5" xml:space="preserve">
+    <value>欄位名稱5</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Min18" xml:space="preserve">
+    <value>最少18</value>
+  </data>
+  <data name="FieldName9" xml:space="preserve">
+    <value>欄位名稱9</value>
+  </data>
+  <data name="Field7" xml:space="preserve">
+    <value>欄位7</value>
+  </data>
+  <data name="Type13" xml:space="preserve">
+    <value>類型13</value>
+  </data>
+  <data name="CustomerList" xml:space="preserve">
+    <value>客戶清單</value>
+  </data>
+  <data name="Type16" xml:space="preserve">
+    <value>類型16</value>
+  </data>
+  <data name="TypeKey" xml:space="preserve">
+    <value>類型鍵</value>
+  </data>
+  <data name="Max18" xml:space="preserve">
+    <value>最多18</value>
+  </data>
+  <data name="IncludeZeroBalance" xml:space="preserve">
+    <value>包括零餘額</value>
+  </data>
+  <data name="Max1" xml:space="preserve">
+    <value>最多1</value>
+  </data>
+  <data name="Max16" xml:space="preserve">
+    <value>最多16</value>
+  </data>
+  <data name="Type14" xml:space="preserve">
+    <value>類型14</value>
+  </data>
+  <data name="Min1" xml:space="preserve">
+    <value>最少1</value>
+  </data>
+  <data name="Min17" xml:space="preserve">
+    <value>最少17</value>
+  </data>
+  <data name="Min16" xml:space="preserve">
+    <value>最少16</value>
+  </data>
+  <data name="Min15" xml:space="preserve">
+    <value>最少15</value>
+  </data>
+  <data name="Min14" xml:space="preserve">
+    <value>最少14</value>
+  </data>
+  <data name="Min13" xml:space="preserve">
+    <value>最少13</value>
+  </data>
+  <data name="Field6" xml:space="preserve">
+    <value>欄位6</value>
+  </data>
+  <data name="Min11" xml:space="preserve">
+    <value>最少11</value>
+  </data>
+  <data name="Min10" xml:space="preserve">
+    <value>最少10</value>
+  </data>
+  <data name="Max2" xml:space="preserve">
+    <value>最多2</value>
+  </data>
+  <data name="Max8" xml:space="preserve">
+    <value>最多8</value>
+  </data>
+  <data name="Field14" xml:space="preserve">
+    <value>欄位14</value>
+  </data>
+  <data name="Period4" xml:space="preserve">
+    <value>期間4</value>
+  </data>
+  <data name="Field10" xml:space="preserve">
+    <value>欄位10</value>
+  </data>
+  <data name="FieldName11" xml:space="preserve">
+    <value>欄位名稱11</value>
+  </data>
+  <data name="Max15" xml:space="preserve">
+    <value>最多15</value>
+  </data>
+  <data name="Max7" xml:space="preserve">
+    <value>最多7</value>
+  </data>
+  <data name="FieldName15" xml:space="preserve">
+    <value>欄位名稱15</value>
+  </data>
+  <data name="Min2" xml:space="preserve">
+    <value>最少2</value>
+  </data>
+  <data name="DaysToPay" xml:space="preserve">
+    <value>付款天數</value>
+  </data>
+  <data name="InvoicesPaid" xml:space="preserve">
+    <value>已付發票</value>
+  </data>
+  <data name="ReportTitle" xml:space="preserve">
+    <value>應收帳款客戶清單(ARCULT05)</value>
+  </data>
+  <data name="Aging" xml:space="preserve">
+    <value>帳析</value>
+  </data>
+  <data name="ExcludePrepayments" xml:space="preserve">
+    <value>排除預付款</value>
+  </data>
+  <data name="PrintAging" xml:space="preserve">
+    <value>A帳析按{0}，帳析至{1}，截止日期{2}, {3}</value>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>憑證日期</value>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>到期日期</value>
+  </data>
+  <data name="PercentageAvailable" xml:space="preserve">
+    <value>多達{0}個可用</value>
+  </data>
+  <data name="IncludeContactInformation" xml:space="preserve">
+    <value>包括連絡人資訊</value>
+  </data>
+  <data name="IncludeCustomersWithNoComments" xml:space="preserve">
+    <value>包括沒有備註的客戶</value>
+  </data>
+  <data name="IncludeCustomersWithZeroBalance" xml:space="preserve">
+    <value>包括有零應收帳款餘額的客戶</value>
+  </data>
+  <data name="CreditAvailablePercent" xml:space="preserve">
+    <value>可用信貸%</value>
+  </data>
+</root>

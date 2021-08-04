@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm email</value>
+  </data>
+  <data name="ConfirmCountry" xml:space="preserve">
+    <value>After connecting Payments Acceptance, you cannot change the country/region for your company. Connect with {0} as the country/region?</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="ConnectionErrorMessage1" xml:space="preserve">
+    <value>You can also try reestablishing the connection by requesting a unique code. Click OK, and a code will be sent to your email address on file.</value>
+    <comment>Sage Payment Connection Error Message</comment>
+  </data>
+  <data name="ConnectionErrorMessage2" xml:space="preserve">
+    <value>To change the email address for your Sage Payments Acceptance, please contact Customer Support.</value>
+    <comment>Sage Payment Connection Error Message</comment>
+  </data>
+  <data name="ConnectionWarningTitle" xml:space="preserve">
+    <value>Warning: Invoice payments has encountered an error. Please try again later.</value>
+    <comment>Sage Payment Connection Error Message</comment>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Invoice Payments requires an email address. We may need to contact you from time to time.</value>
+  </data>
+  <data name="ConvienantEmails" xml:space="preserve">
+    <value>After signing up, your customers will see a Pay Now button in the invoice emails you send to them. This makes it convenient and easy for them to quickly pay their invoices.</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country or Region</value>
+  </data>
+  <data name="CountryTooltip" xml:space="preserve">
+    <value>Select a country or region that uses your company’s functional currency.</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Add a Pay Now button to invoices and accept payments through providers such as PayPal and Stripe. Third-party fees apply.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailNotValid" xml:space="preserve">
+    <value>This email is not valid</value>
+  </data>
+  <data name="EmailsBlank" xml:space="preserve">
+    <value>This email cannot be blank</value>
+  </data>
+  <data name="EmailsNotSame" xml:space="preserve">
+    <value>Emails are not the same</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Payments Acceptance</value>
+  </data>
+  <data name="GetPaidFaster" xml:space="preserve">
+    <value>Get paid faster with Invoice Payments by accepting online payments from your customers via a secure payment provider.</value>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>Card &amp; Wallet Payments</value>
+  </data>
+  <data name="InvalidCountry" xml:space="preserve">
+    <value>Select a country or region.</value>
+  </data>
+  <data name="PaymentsAcceptanceAllCaps" xml:space="preserve">
+    <value>PAYMENTS ACCEPTANCE</value>
+  </data>
+  <data name="Secure" xml:space="preserve">
+    <value>Secure Connection</value>
+  </data>
+  <data name="SendNewCode" xml:space="preserve">
+    <value>Send another code</value>
+    <comment>Sage PaymentReauthentication Content</comment>
+  </data>
+  <data name="ServiceFabricDescription" xml:space="preserve">
+    <value>Expand the capabilities of your Sage 300C subscription with approved apps and services.</value>
+  </data>
+  <data name="Signup" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
+  <data name="SignupDetails" xml:space="preserve">
+    <value>This email address is for your Invoice Payments account. You may receive emails about your account.</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WelcomeScreenTitle" xml:space="preserve">
+    <value>Sage Invoice Payments</value>
+  </data>
+</root>

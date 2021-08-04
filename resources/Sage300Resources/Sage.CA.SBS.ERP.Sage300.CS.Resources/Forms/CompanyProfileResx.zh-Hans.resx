@@ -358,4 +358,16 @@
   <data name="BccEmailMessageHelp" xml:space="preserve">
     <value>如果您输入多个电邮地址，使用分号（;）分隔它们。</value>
   </data>
+  <data name="SDAHeader" xml:space="preserve">
+    <value>Sage Data &amp; Analytics</value>
+  </data>
+  <data name="Subdomain" xml:space="preserve">
+    <value>网址子域</value>
+  </data>
+  <data name="SubdomainTooltip" xml:space="preserve">
+    <value>这是您独有的Sage Data &amp; Analytics网址的一部分。子域紧跟在"https://"之后和".sagedataanalytics.com"之前。</value>
+  </data>
+  <data name="BlankSDAError" xml:space="preserve">
+    <value>要使用Sage Data &amp; Analytics，您必须在公司概览屏幕上指定一个相关的网址子域。 </value>
+  </data>
 </root>

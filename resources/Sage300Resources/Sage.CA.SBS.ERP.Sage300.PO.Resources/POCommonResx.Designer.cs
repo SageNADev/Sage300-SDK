@@ -1492,6 +1492,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Documents could not be emailed to contacts for vendor {0}. Check that contacts for this vendor are set up correctly..
+        /// </summary>
+        public static string FailedMTEmail {
+            get {
+                return ResourceManager.GetString("FailedMTEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot find fiscal period {0}..
         /// </summary>
         public static string FiscalPeriodNotExist {
@@ -3454,11 +3463,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set Arrival Date.
+        /// </summary>
+        public static string SetArrivalDate {
+            get {
+                return ResourceManager.GetString("SetArrivalDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set Drop-Shipment Address to.
         /// </summary>
         public static string SetDropShipmentAddressto {
             get {
                 return ResourceManager.GetString("SetDropShipmentAddressto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Location.
+        /// </summary>
+        public static string SetLocation {
+            get {
+                return ResourceManager.GetString("SetLocation", resourceCulture);
             }
         }
         
@@ -4404,17 +4431,6 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources {
         public static string ZipPostalCode {
             get {
                 return ResourceManager.GetString("ZipPostalCode", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Documents could not be emailed to contacts for vendor %1. Check that contacts for this vendor are set up correctly.
-        /// </summary>
-        public static string FailedMTEmail
-        {
-            get
-            {
-                return ResourceManager.GetString("FailedMTEmail", resourceCulture);
             }
         }
     }

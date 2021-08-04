@@ -197,6 +197,8 @@
     <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\Sage_All.ico" />
+    <None Include="Resources\ReleaseSpecificFinalAlterations.txt" />
+    <None Include="Resources\ReleaseSpecificFinderAlterations.txt" />
     <None Include="Resources\sage-logo-square.png" />
   </ItemGroup>
   <ItemGroup>

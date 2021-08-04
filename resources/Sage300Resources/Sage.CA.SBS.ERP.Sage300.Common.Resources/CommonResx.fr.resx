@@ -127,10 +127,10 @@
     <value>Impossible d’ajouter {0} car le nombre maximum de {1} a été atteint.</value>
   </data>
   <data name="AddFailedMessage" xml:space="preserve">
-    <value>Un problème est survenu. Impossible d'ajouter {0}. Veuillez réessayer.</value>
+    <value>Un problème est survenu. Impossible d’ajouter {0}. Veuillez réessayer.</value>
   </data>
   <data name="AddLineFailedMessage" xml:space="preserve">
-    <value>Suite à un problème, la nouvelle ligne n'a pas pu être ajoutée. Veuillez réessayer.</value>
+    <value>Suite à un problème, la nouvelle ligne n’a pas pu être ajoutée. Veuillez réessayer.</value>
   </data>
   <data name="AddSuccessMessage" xml:space="preserve">
     <value>Ajout nouveau {0} "{1}".</value>
@@ -154,7 +154,7 @@
     <value>Effacer les détails de {0}?</value>
   </data>
   <data name="ClearDetailsFailedMessage" xml:space="preserve">
-    <value>Un problème est survenu. Impossible d'effacer les détails de {0}. Veuillez réessayer.</value>
+    <value>Un problème est survenu. Impossible d’effacer les détails de {0}. Veuillez réessayer.</value>
   </data>
   <data name="ClearSuccessMessage" xml:space="preserve">
     <value>Suppression de {0} "{1}".</value>
@@ -266,7 +266,7 @@
     <value>Traiter</value>
   </data>
   <data name="ProcessFailedMessage" xml:space="preserve">
-    <value>Un problème est survenu et vos modifications n'ont pas pu être enregistrées. Veuillez réessayer.</value>
+    <value>Un problème est survenu et vos modifications n’ont pas pu être enregistrées. Veuillez réessayer.</value>
   </data>
   <data name="Processing" xml:space="preserve">
     <value>Traitement...</value>
@@ -275,7 +275,7 @@
     <value>{0} "{1}" introuvable.</value>
   </data>
   <data name="RefreshDetailsFailedMessage" xml:space="preserve">
-    <value>Un problème est survenu. Impossible d'actualiser les détails de {0}. Veuillez réessayer.</value>
+    <value>Un problème est survenu. Impossible d’actualiser les détails de {0}. Veuillez réessayer.</value>
   </data>
   <data name="RemoveColumn" xml:space="preserve">
     <value>Supprimer</value>
@@ -297,10 +297,10 @@
     <value>Enregistrer les modifications apportées à {0} "{1}"?</value>
   </data>
   <data name="SaveFailedMessage" xml:space="preserve">
-    <value>Un problème est survenu et vos modifications n'ont pas pu être enregistrées. Veuillez réessayer.</value>
+    <value>Un problème est survenu et vos modifications n’ont pas pu être enregistrées. Veuillez réessayer.</value>
   </data>
   <data name="SaveFailedMessage2" xml:space="preserve">
-    <value>Un problème est survenu et les modifications que vous avez apportées à {0} n'ont pas pu être enregistrées. Veuillez réessayer.</value>
+    <value>Un problème est survenu et les modifications que vous avez apportées à {0} n’ont pas pu être enregistrées. Veuillez réessayer.</value>
   </data>
   <data name="SaveSuccessMessage" xml:space="preserve">
     <value>Modifications enregistrées.</value>
@@ -336,16 +336,16 @@
     <value>À</value>
   </data>
   <data name="UpdateFailedMessage" xml:space="preserve">
-    <value>Impossible d'enregistrer vos modifications car un autre utilisateur a supprimé cet {0}.</value>
+    <value>Impossible d’enregistrer vos modifications car un autre utilisateur a supprimé cet {0}.</value>
   </data>
   <data name="NotAuthorizedMesage" xml:space="preserve">
-    <value>Vous n'êtes pas autorisé à réaliser cette tâche. Contactez l'administrateur de votre système pour obtenir de l'aide.</value>
+    <value>Vous n’êtes pas autorisé à réaliser cette tâche. Contactez l’administrateur de votre système pour obtenir de l’aide.</value>
   </data>
   <data name="FunctionalCurrency" xml:space="preserve">
     <value>Devise fonctionnelle</value>
   </data>
   <data name="GetKeysFailedMessage" xml:space="preserve">
-    <value>L'entité commerciale dispose de plusieurs champs clés et est inaccessible avec la clé "{0}".</value>
+    <value>L’entité commerciale dispose de plusieurs champs clés et est inaccessible avec la clé "{0}".</value>
   </data>
   <data name="UnsavedChangesMessage" xml:space="preserve">
     <value>Il y a des modifications non sauvegardées dans {0} "{1}". Poursuivre?</value>
@@ -462,7 +462,7 @@
     <value>Saisie</value>
   </data>
   <data name="DateRangeMessage" xml:space="preserve">
-    <value>La date saisie est hors de la plage spécifiée dans le profil de l'entreprise. Accepter cette date?</value>
+    <value>La date saisie est hors de la plage spécifiée dans le profil de l’entreprise. Accepter cette date?</value>
   </data>
   <data name="Date" xml:space="preserve">
     <value>Date</value>
@@ -501,7 +501,7 @@
     <comment>Used In Export/Import</comment>
   </data>
   <data name="ImportType" xml:space="preserve">
-    <value>Type d'importation</value>
+    <value>Type d’importation</value>
     <comment>Used In Export/Import</comment>
   </data>
   <data name="Name" xml:space="preserve">
@@ -513,7 +513,7 @@
     <comment>Used In Export/Import</comment>
   </data>
   <data name="Progress" xml:space="preserve">
-    <value>État d'avancement</value>
+    <value>État d’avancement</value>
     <comment>Used In Export/Import</comment>
   </data>
   <data name="TitleRecord" xml:space="preserve">
@@ -527,22 +527,22 @@
     <value>Enregistrer les paramètres comme implicites</value>
   </data>
   <data name="ClearPreferenceFailedMessage" xml:space="preserve">
-    <value>Un problème est survenu et vos préférences n'ont pas pu être effacées. Veuillez réessayer.</value>
+    <value>Un problème est survenu et vos préférences n’ont pas pu être effacées. Veuillez réessayer.</value>
   </data>
   <data name="ClearPreferenceSaveMessage" xml:space="preserve">
     <value>Préférences effacées</value>
   </data>
   <data name="SavePreferenceFailedMessage" xml:space="preserve">
-    <value>Un problème est survenu et vos préférences n'ont pas pu être enregistrées. Veuillez réessayer.</value>
+    <value>Un problème est survenu et vos préférences n’ont pas pu être enregistrées. Veuillez réessayer.</value>
   </data>
   <data name="SavePreferenceMessage" xml:space="preserve">
     <value>Préférences enregistrées</value>
   </data>
   <data name="DeleteFailedNoRecordMessage" xml:space="preserve">
-    <value>L'enregistrement n'a pas pu être supprimé. Un autre utilisateur l'a peut-être supprimé.</value>
+    <value>L’enregistrement n’a pas pu être supprimé. Un autre utilisateur l’a peut-être supprimé.</value>
   </data>
   <data name="UpdateFailedNoRecordMessage" xml:space="preserve">
-    <value>L'enregistrement n'a pas pu être mis à jour. Un autre utilisateur l'a peut-être supprimé.</value>
+    <value>L’enregistrement n’a pas pu être mis à jour. Un autre utilisateur l’a peut-être supprimé.</value>
   </data>
   <data name="DeleteLinesMessage" xml:space="preserve">
     <value>Supprimer les lignes sélectionnées?</value>
@@ -590,7 +590,7 @@
     <value>La valeur du champ De {0} doit correspondre à celle du champ À.</value>
   </data>
   <data name="OptinalFieldDefaultValue" xml:space="preserve">
-    <value>La valeur implicite "{0}" n'existe pas pour le champ optionnel {1}.</value>
+    <value>La valeur implicite "{0}" n’existe pas pour le champ optionnel {1}.</value>
   </data>
   <data name="Inactive" xml:space="preserve">
     <value>Inactif</value>
@@ -659,7 +659,7 @@
     <value>/ Barre oblique</value>
   </data>
   <data name="SymbolHyphen" xml:space="preserve">
-    <value>- Trait d'union</value>
+    <value>- Trait d’union</value>
   </data>
   <data name="SymbolLeftParenthesis" xml:space="preserve">
     <value>( Parenthèse ouvrante</value>
@@ -692,7 +692,7 @@
     <value>Code postal</value>
   </data>
   <data name="RecordNotFoundWarning" xml:space="preserve">
-    <value>{0}  "{1}" n'existe pas, mais peut être utilisé(e).</value>
+    <value>{0}  "{1}" n’existe pas, mais peut être utilisé(e).</value>
   </data>
   <data name="UnsavedChangesMessage4" xml:space="preserve">
     <value>Modifications non sauvegardées dans {0} "{1}",{2} "{3}". Voulez-vous poursuivre?</value>
@@ -702,7 +702,7 @@
     <comment>REMOVE - Add new string to CommonResx (ID "InactiveWarningMessage" and value "{0} "{1}" is inactive, but can be used.")</comment>
   </data>
   <data name="GLAccountNotExistsWarning" xml:space="preserve">
-    <value>{0} "{1}" n'existe pas, mais peut être utilisé(e).</value>
+    <value>{0} "{1}" n’existe pas, mais peut être utilisé(e).</value>
     <comment>REMOVE - Use RecordNotFoundMessage from CommonResx</comment>
   </data>
   <data name="NotFoundMessage" xml:space="preserve">
@@ -712,28 +712,28 @@
     <value>Un problème est survenu. Impossible de traiter le fichier. Veuillez réessayer.</value>
   </data>
   <data name="ImportFailedMessage" xml:space="preserve">
-    <value>Un problème est survenu pendant l'importation de données à partir du fichier. Veuillez réessayer.</value>
+    <value>Un problème est survenu pendant l’importation de données à partir du fichier. Veuillez réessayer.</value>
   </data>
   <data name="ProcessCancelErrorMessage" xml:space="preserve">
-    <value>Un problème est survenu pendant l'annulation du processus.</value>
+    <value>Un problème est survenu pendant l’annulation du processus.</value>
   </data>
   <data name="ProcessErrorMessage" xml:space="preserve">
-    <value>Un problème est survenu et la requête n'a pas pu être traitée.</value>
+    <value>Un problème est survenu et la requête n’a pas pu être traitée.</value>
   </data>
   <data name="UnhandledExceptionMessage" xml:space="preserve">
-    <value>Un problème imprévu s'est produit. Veuillez réessayer ou demander de l'aide à votre administrateur.</value>
+    <value>Un problème imprévu s’est produit. Veuillez réessayer ou demander de l’aide à votre administrateur.</value>
   </data>
   <data name="DetailsAlreadyExists" xml:space="preserve">
     <value>Des détails existent déjà pour {0} "{1}".</value>
   </data>
   <data name="TaxClassInvalid" xml:space="preserve">
-    <value>{0} "{1}" et {2} "{3}" n'existent pas.</value>
+    <value>{0} "{1}" et {2} "{3}" n’existent pas.</value>
   </data>
   <data name="TaxIncludedNotAllowed" xml:space="preserve">
     <value>{0} "{1}" ne permet pas les taxes comprises.</value>
   </data>
   <data name="UpdateFailedRecordModifiedMessage" xml:space="preserve">
-    <value>L'enregistrement n'a pas pu être mis à jour car un autre utilisateur l'a modifié.</value>
+    <value>L’enregistrement n’a pas pu être mis à jour car un autre utilisateur l’a modifié.</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Paramètres</value>
@@ -787,15 +787,15 @@
     <comment>Error message</comment>
   </data>
   <data name="CurrencyCodeInvalid" xml:space="preserve">
-    <value>Le code de devise "{0}" n'est pas défini dans Services Communs.</value>
+    <value>Le code de devise "{0}" n’est pas défini dans Services Communs.</value>
     <comment>Error message</comment>
   </data>
   <data name="InvalidAccountError" xml:space="preserve">
-    <value>{0} "{1}" n'est pas défini dans Grand livre.</value>
+    <value>{0} "{1}" n’est pas défini dans Grand livre.</value>
     <comment>Field</comment>
   </data>
   <data name="InvalidAccountWarning" xml:space="preserve">
-    <value>{0} "{1}" n'est pas défini dans Grand livre.</value>
+    <value>{0} "{1}" n’est pas défini dans Grand livre.</value>
     <comment>Field</comment>
   </data>
   <data name="ImportFileContentNotValid" xml:space="preserve">
@@ -827,7 +827,7 @@
     <comment>TaxType - Field</comment>
   </data>
   <data name="StateTax" xml:space="preserve">
-    <value>Taxe d'état</value>
+    <value>Taxe d’état</value>
     <comment>TaxType - Field</comment>
   </data>
   <data name="VAT" xml:space="preserve">
@@ -842,7 +842,7 @@
     <value>Créer nouveau</value>
   </data>
   <data name="InvalidScriptFile" xml:space="preserve">
-    <value>Un problème est survenu et le script n'a pas pu être chargé. Sélectionnez un fichier XML et réessayez.</value>
+    <value>Un problème est survenu et le script n’a pas pu être chargé. Sélectionnez un fichier XML et réessayez.</value>
   </data>
   <data name="DiscountDayofMonthErrorMessage" xml:space="preserve">
     <value>Jour du mois pour remise</value>
@@ -857,15 +857,15 @@
     <comment>AR/AP Terms grid validations</comment>
   </data>
   <data name="DueDayofMonthErrorMessage" xml:space="preserve">
-    <value>Jour du mois pour date d'échéance</value>
+    <value>Jour du mois pour date d’échéance</value>
     <comment>AR/AP Terms grid validations</comment>
   </data>
   <data name="DueEndingDayErrorMessage" xml:space="preserve">
-    <value>Jour de fin pour table de date d'échéance</value>
+    <value>Jour de fin pour table de date d’échéance</value>
     <comment>AR/AP Terms grid validations</comment>
   </data>
   <data name="DueStartingDayErrorMessage" xml:space="preserve">
-    <value>Jour de début pour table de date d'échéance</value>
+    <value>Jour de début pour table de date d’échéance</value>
     <comment>AR/AP Terms grid validations</comment>
   </data>
   <data name="DeleteSuccessMessage2" xml:space="preserve">
@@ -890,13 +890,13 @@
     <value>Type de fournisseur</value>
   </data>
   <data name="InsertFailedMessage" xml:space="preserve">
-    <value>Un problème est survenu. L'enregistrement n'a pas pu être ajouté.</value>
+    <value>Un problème est survenu. L’enregistrement n’a pas pu être ajouté.</value>
   </data>
   <data name="ProcessingStopped" xml:space="preserve">
     <value>Interruption du traitement à enregistrement {0} dans {1}.</value>
   </data>
   <data name="UpdateRecordFailedMessage" xml:space="preserve">
-    <value>Un problème est survenu. L'enregistrement n'a pas pu être mis à jour.</value>
+    <value>Un problème est survenu. L’enregistrement n’a pas pu être mis à jour.</value>
   </data>
   <data name="End" xml:space="preserve">
     <value>Fin</value>
@@ -911,10 +911,10 @@
     <value>État du chèque</value>
   </data>
   <data name="InvalidFiscalPeriod" xml:space="preserve">
-    <value>La période {0} de l'exercice {1} n'est pas définie dans le calendrier fiscal de Services communs.</value>
+    <value>La période {0} de l’exercice {1} n’est pas définie dans le calendrier fiscal de Services communs.</value>
   </data>
   <data name="InvalidFiscalYear" xml:space="preserve">
-    <value>L'exercice {0} n'est pas défini dans le calendrier fiscal de Services communs.</value>
+    <value>L’exercice {0} n’est pas défini dans le calendrier fiscal de Services communs.</value>
   </data>
   <data name="Contains" xml:space="preserve">
     <value>Contient</value>
@@ -930,7 +930,7 @@
     <comment>To display title for error message in the Unexpected error page.</comment>
   </data>
   <data name="Today" xml:space="preserve">
-    <value>Aujourd'hui</value>
+    <value>Aujourd’hui</value>
   </data>
   <data name="ServerDownDataRefreshMessage" xml:space="preserve">
     <value>Suite à des problèmes de serveur, vous avez été transféré à un autre serveur. Veuillez actualiser votre navigateur et ressaisir vos données.</value>
@@ -1005,7 +1005,7 @@
     <value>Sélectionner formulaire</value>
   </data>
   <data name="InvalidFiscalDateMessage" xml:space="preserve">
-    <value>La date {0} n'existe pas dans Calendrier fiscal de Services communs.</value>
+    <value>La date {0} n’existe pas dans Calendrier fiscal de Services communs.</value>
   </data>
   <data name="ReportCurrency" xml:space="preserve">
     <value>Devise du rapport</value>
@@ -1014,10 +1014,10 @@
     <value>Format du rapport</value>
   </data>
   <data name="ThroughPostingSequence" xml:space="preserve">
-    <value>Jusqu'à séquence de report</value>
+    <value>Jusqu’à séquence de report</value>
   </data>
   <data name="BankCurrencyCodeError" xml:space="preserve">
-    <value>La banque {0} n'est pas configurée pour utiliser la devise {1}.</value>
+    <value>La banque {0} n’est pas configurée pour utiliser la devise {1}.</value>
   </data>
   <data name="NotApplicable" xml:space="preserve">
     <value>Sans objet</value>
@@ -1030,7 +1030,7 @@
     <comment>Used in Print checks screen when another user has opened Print Checks for same Module, Database &amp; Batch</comment>
   </data>
   <data name="RecordDoesNotExist" xml:space="preserve">
-    <value>{0}  "{1}" n'existe pas.</value>
+    <value>{0}  "{1}" n’existe pas.</value>
   </data>
   <data name="PageNotFound" xml:space="preserve">
     <value>Page introuvable</value>
@@ -1040,10 +1040,10 @@
     <comment>Link Button Field</comment>
   </data>
   <data name="NotDefinedInCommonService" xml:space="preserve">
-    <value>{0} "{1}" n'est pas défini(e) dans Services communs.</value>
+    <value>{0} "{1}" n’est pas défini(e) dans Services communs.</value>
   </data>
   <data name="NotDefinedInBankService" xml:space="preserve">
-    <value>{0} "{1}" n'est pas défini(e) dans Services bancaires.</value>
+    <value>{0} "{1}" n’est pas défini(e) dans Services bancaires.</value>
     <comment>Error Message</comment>
   </data>
   <data name="Inquiry" xml:space="preserve">
@@ -1054,7 +1054,7 @@
     <value>Requête dynamique</value>
   </data>
   <data name="SqlInjectionMessage" xml:space="preserve">
-    <value>La demande de consultation n'a pas été autorisée car elle pourrait compromettre la sécurité de vos données.</value>
+    <value>La requête n’a pas pu être autorisée car un ou plusieurs champs contiennent du texte qui ne peut pas être utilisé pour des raisons de sécurité.</value>
   </data>
   <data name="AddConfirmMessage" xml:space="preserve">
     <value>Ajouter {0} "{1}"?</value>
@@ -1118,14 +1118,14 @@
     <value>Calendriers fiscaux</value>
   </data>
   <data name="NoPrepayNotOpenBatch" xml:space="preserve">
-    <value>Le lot {0} n'est pas un lot ouvert. Vous ne pouvez donc pas ajouter un paiement anticipé.</value>
+    <value>Le lot {0} n’est pas un lot ouvert. Vous ne pouvez donc pas ajouter un paiement anticipé.</value>
   </data>
   <data name="MessageIDInactive" xml:space="preserve">
     <value>Le code de message {0} est inactif.</value>
     <comment>Messege</comment>
   </data>
   <data name="InvalidPeriod" xml:space="preserve">
-    <value>La période {0} n'est pas valide.</value>
+    <value>La période {0} n’est pas valide.</value>
   </data>
   <data name="AccountDescription" xml:space="preserve">
     <value>Description compte</value>
@@ -1140,7 +1140,7 @@
     <value>Rester connecté?</value>
   </data>
   <data name="SessionExpiredDialogMsg1" xml:space="preserve">
-    <value>Vous êtes sur le point d'être déconnecté pour cause d'inactivité. Pour rester connecté, cliquez sur OK.</value>
+    <value>Vous êtes sur le point d’être déconnecté pour cause d’inactivité. Pour rester connecté, cliquez sur OK.</value>
   </data>
   <data name="SessionExpiredDialogMsg2" xml:space="preserve">
     <value />
@@ -1149,7 +1149,7 @@
     <value>La session a expiré</value>
   </data>
   <data name="SessionExpired_Msg1" xml:space="preserve">
-    <value>Pour votre sécurité, vous avez été déconnecté après une certaine période d'inactivité.</value>
+    <value>Pour votre sécurité, vous avez été déconnecté après une certaine période d’inactivité.</value>
   </data>
   <data name="SessionExpired_Msg2" xml:space="preserve">
     <value />
@@ -1162,7 +1162,7 @@
     <value>Continuer</value>
   </data>
   <data name="FeatureNotAvailableWeb_Message" xml:space="preserve">
-    <value>Votre demande n'a pas pu être terminée car {0} n'est pas disponible dans les écrans web. Vous pouvez éventuellement utiliser l'écran du bureau.</value>
+    <value>Votre demande n’a pas pu être terminée car {0} n’est pas disponible dans les écrans web. Vous pouvez éventuellement utiliser l’écran du bureau.</value>
     <comment>Used in AP-AR Payment Intery for Job related items</comment>
   </data>
   <data name="CreditCardType" xml:space="preserve">
@@ -1170,7 +1170,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ExpirationDate" xml:space="preserve">
-    <value>Date d'expiration</value>
+    <value>Date d’expiration</value>
   </data>
   <data name="Time" xml:space="preserve">
     <value>Heure</value>
@@ -1184,7 +1184,7 @@
     <comment>Drop-Shipment dropdownlist item</comment>
   </data>
   <data name="CustomerShipToAddress" xml:space="preserve">
-    <value>Adresse d'expédition du client</value>
+    <value>Adresse d’expédition du client</value>
     <comment>Drop-Shipment dropdownlist item</comment>
   </data>
   <data name="InventoryLocationAddress" xml:space="preserve">
@@ -1196,7 +1196,7 @@
     <comment>Message</comment>
   </data>
   <data name="UnsavedChangesPostMessage" xml:space="preserve">
-    <value>{0} "{1}" n'a pas été reporté. Si vous continuez, toute modification apportée sera supprimée. Voulez-vous continuer?</value>
+    <value>{0} "{1}" n’a pas été reporté. Si vous continuez, toute modification apportée sera supprimée. Voulez-vous continuer?</value>
   </data>
   <data name="ValueBetweenRangeError" xml:space="preserve">
     <value>{0} doit être entre {1} et {2}.</value>
@@ -1208,17 +1208,17 @@
     <value>Dépisteur</value>
   </data>
   <data name="UnsavedChangesMessage6" xml:space="preserve">
-    <value>Des modifications dans {0} "{1}", "{2}" n'ont pas été enregistrées. Voulez-vous continuer?</value>
+    <value>Des modifications dans {0} "{1}", "{2}" n’ont pas été enregistrées. Voulez-vous continuer?</value>
     <comment>Used when the model is dirty.</comment>
   </data>
   <data name="InvalidValueSetMessage" xml:space="preserve">
-    <value>La valeur du champ optionnel {0} n'a pas été définie.</value>
+    <value>La valeur du champ optionnel {0} n’a pas été définie.</value>
   </data>
   <data name="TaxAmountErrorMsg" xml:space="preserve">
     <value>Le montant de taxes ne peut être ni négatif ni supérieur au montant total.</value>
   </data>
   <data name="ScreenNotAvailableMessage" xml:space="preserve">
-    <value>L'écran {0} n'est pas disponible.</value>
+    <value>L’écran {0} n’est pas disponible.</value>
     <comment>Temporary Key. Should be removed once all screens are available</comment>
   </data>
   <data name="MaximumAmount" xml:space="preserve">
@@ -1237,7 +1237,7 @@
     <value>Voulez-vous vraiment supprimer {0} {1}?</value>
   </data>
   <data name="DuplicateMessage2" xml:space="preserve">
-    <value>L'enregistrement {0} existe déjà.</value>
+    <value>L’enregistrement {0} existe déjà.</value>
   </data>
   <data name="Equipment" xml:space="preserve">
     <value>Équipement</value>
@@ -1259,7 +1259,7 @@
     <value>Assemblage de GS</value>
   </data>
   <data name="NoScreenAvailable" xml:space="preserve">
-    <value>Votre demande n'a pas pu être terminée car {0} n'est pas disponible dans les écrans web. Vous pouvez éventuellement utiliser l'écran du bureau.</value>
+    <value>Votre demande n’a pas pu être terminée car {0} n’est pas disponible dans les écrans web. Vous pouvez éventuellement utiliser l’écran du bureau.</value>
   </data>
   <data name="OEInvoice" xml:space="preserve">
     <value>Saisie des factures de CmC</value>
@@ -1303,7 +1303,7 @@
     <value>Restaurer</value>
   </data>
   <data name="RestoreMessage" xml:space="preserve">
-    <value>Voulez-vous vraiment restaurer les paramètres par défaut de l'écran?</value>
+    <value>Voulez-vous vraiment restaurer les paramètres par défaut de l’écran?</value>
   </data>
   <data name="RestoreTitle" xml:space="preserve">
     <value>Restaurer paramètres par défaut</value>
@@ -1361,10 +1361,10 @@
     <value>Inférieur à</value>
   </data>
   <data name="NotEqual" xml:space="preserve">
-    <value>N'est pas</value>
+    <value>N’est pas</value>
   </data>
   <data name="Error_NotAuthorizedToDrillDown" xml:space="preserve">
-    <value>Vous n'êtes pas autorisé à faire un zoom avant pour cet enregistrement. Pour obtenir de l'aide concernant les autorisations de sécurité, contactez votre administrateur système.</value>
+    <value>Vous n’êtes pas autorisé à faire un zoom avant pour cet enregistrement. Pour obtenir de l’aide concernant les autorisations de sécurité, contactez votre administrateur système.</value>
   </data>
   <data name="ModuleInactivatedError" xml:space="preserve">
     <value>Activez aussi les programmes Sage 300 suivants :{0}.</value>
@@ -1373,7 +1373,7 @@
     <value>Établir critères...</value>
   </data>
   <data name="SetCriteriaString" xml:space="preserve">
-    <value>Chaîne de critères d'exportation</value>
+    <value>Chaîne de critères d’exportation</value>
   </data>
   <data name="ShowCriteria" xml:space="preserve">
     <value>Afficher les critères</value>
@@ -1418,7 +1418,7 @@
     <value>Sélectionner un rapport</value>
   </data>
   <data name="NoLicenseMessage" xml:space="preserve">
-    <value>Vous n'avez pas de licence pour utiliser ce produit. Demandez de l'aide à l'administrateur de votre système.</value>
+    <value>Vous n’avez pas de licence pour utiliser ce produit. Demandez de l’aide à l’administrateur de votre système.</value>
   </data>
   <data name="ClearFilters" xml:space="preserve">
     <value>Effacer tous les filtres</value>
@@ -1427,7 +1427,7 @@
     <value>Par page :</value>
   </data>
   <data name="NoDrillDownInfo" xml:space="preserve">
-    <value>L'information de zoom avant pour cet enregistrement est introuvable. Si vous utilisez l'écran web, notez que vous devez utiliser l'écran du bureau pour faire un zoom avant vers des transactions de Paie ou GP.</value>
+    <value>L’information de zoom avant pour cet enregistrement est introuvable. Si vous utilisez l’écran web, notez que vous devez utiliser l’écran du bureau pour faire un zoom avant vers des transactions de Paie ou GP.</value>
   </data>
   <data name="Filter" xml:space="preserve">
     <value>Filtre :</value>
@@ -1442,7 +1442,7 @@
     <comment>For general inquiry</comment>
   </data>
   <data name="InvalidTaxCode" xml:space="preserve">
-    <value>Le code de taxe n'existe pas</value>
+    <value>Le code de taxe n’existe pas</value>
   </data>
   <data name="TaxWithheld" xml:space="preserve">
     <value>Taxe retenue</value>
@@ -1553,10 +1553,10 @@
     <value>Le contact {0} n’existe pas.</value>
   </data>
   <data name="Template_ReportCouldNotBeLocated" xml:space="preserve">
-    <value>Le fichier de rapport '{0}' est introuvable. Veuillez communiquer avec votre administrateur pour obtenir de l'aide.</value>
+    <value>Le fichier de rapport '{0}' est introuvable. Veuillez communiquer avec votre administrateur pour obtenir de l’aide.</value>
   </data>
   <data name="SignUp" xml:space="preserve">
-    <value>S'inscrire</value>
+    <value>S’inscrire</value>
   </data>
   <data name="Code" xml:space="preserve">
     <value>Code</value>
@@ -1596,5 +1596,35 @@
   </data>
   <data name="ExportReport" xml:space="preserve">
     <value>Exporter le rapport</value>
+  </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>Afficher les détails</value>
+  </data>
+  <data name="ViewDetailsTax" xml:space="preserve">
+    <value>Afficher les détails/taxes</value>
+  </data>
+  <data name="EditDetails" xml:space="preserve">
+    <value>Modifier les détails</value>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>Autorité fiscale</value>
+  </data>
+  <data name="TaxAuthorityDescription" xml:space="preserve">
+    <value>Description autorité fiscale</value>
+  </data>
+  <data name="TaxClass" xml:space="preserve">
+    <value>Classe de taxe</value>
+  </data>
+  <data name="TaxClassDescritpion" xml:space="preserve">
+    <value>Description classe de taxe</value>
+  </data>
+  <data name="TaxIncluded" xml:space="preserve">
+    <value>Taxe comprise</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Précédent</value>
   </data>
 </root>

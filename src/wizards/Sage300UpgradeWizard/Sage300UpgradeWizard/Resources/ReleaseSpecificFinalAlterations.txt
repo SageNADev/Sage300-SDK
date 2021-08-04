@@ -1,0 +1,9 @@
+As part of the framework changes required to unify the usage of HTML 'disable'
+attribute in Sage HtmlHelper controls.
+
+The upgrade wizard is unable to automatically perform this modification and
+therefore this step will require manual modifications.
+
+Please refer to the "Final Alterations" subsection in the Sage 300
+Upgrade Guide for 2021.2 to 2022.0 in the docs folder of the Web SDK for
+detailed instructions. The samples code may also be used as a guide.

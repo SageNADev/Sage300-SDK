@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -2025,5 +2025,13 @@
   </data>
   <data name="FailedMTEmail" xml:space="preserve">
     <value>Documents could not be emailed to contacts for vendor {0}. Check that contacts for this vendor are set up correctly.</value>
+  </data>
+  <data name="SetArrivalDate" xml:space="preserve">
+    <value>Set Arrival Date</value>
+    <comment>Label (button)</comment>
+  </data>
+  <data name="SetLocation" xml:space="preserve">
+    <value>Set Location</value>
+    <comment>Label (button)</comment>
   </data>
 </root>

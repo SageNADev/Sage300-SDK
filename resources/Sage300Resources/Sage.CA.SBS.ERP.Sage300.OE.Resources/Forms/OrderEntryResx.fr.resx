@@ -3003,4 +3003,20 @@
   <data name="btnOneClickPreAuth" xml:space="preserve">
     <value>Préautorisation rapide</value>
   </data>
+  <data name="SetLocation" xml:space="preserve">
+    <value>Définir l’emplacement</value>
+    <comment>button</comment>
+  </data>
+  <data name="SetShipDate" xml:space="preserve">
+    <value>Définir la date d’expédition</value>
+    <comment>button</comment>
+  </data>
+  <data name="SetShipDateWarning" xml:space="preserve">
+    <value>Utiliser la date d’expédition définie pour la commande comme date d’expédition prévue de tous les détails?</value>
+    <comment>confirmation message</comment>
+  </data>
+  <data name="SetLocationWarning" xml:space="preserve">
+    <value>Utiliser l’emplacement défini pour la commande comme emplacement de tous les détails?  L’emplacement ne sera pas modifié si l’article spécifié pour le détail n’est pas admis à cet endroit.</value>
+    <comment>confirmation message</comment>
+  </data>
 </root>

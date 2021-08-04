@@ -635,3 +635,70 @@ input.btn-filter-delete:hover {
     }
   }
 }
+
+
+// Data Navigation Button styles
+
+div.data-nav-group {
+    margin-bottom: 0 !important;
+    margin-right: 0 !important;
+
+    > input:focus {
+      outline: 0;
+  }
+
+  &.focused {
+    outline: @input-border-focus solid 3px;
+  }
+
+  .btn-first {
+    background-position: -139px 4px;
+    margin-left: 0;
+
+    &:disabled {
+      background-position: -139px -66px;
+      border-right: 1px solid @sage-mid-gray !important;
+    }
+  }
+
+  .btn-previous {
+    background-position: -183px 4px;
+    margin-left: -5px;
+    margin-right: -4px;
+
+    &:disabled {
+      background-position: -183px -66px;
+      border-right: 1px solid @sage-mid-gray !important;
+    }
+  }
+
+  .btn-next {
+    background-position: -162px 4px;
+    margin-left: -5px;
+    margin-right: -4px;
+
+    &:disabled {
+      background-position: -162px -66px;
+      border-left: 1px solid @sage-mid-gray !important;
+    }
+  }
+
+  .btn-last {
+    background-position: -113px 4px;
+    margin-left: -1px;
+    margin-right: 0;
+
+    &:disabled {
+      background-position: -113px -66px;
+    }
+  }
+}
+
+input[class*="icon btn-"] {
+  width: 30px;
+  border: 1px solid @sage-mid-gray;
+  text-indent: -9999px;
+  background-color: @btn-default-bg;
+  position: relative;
+}
+

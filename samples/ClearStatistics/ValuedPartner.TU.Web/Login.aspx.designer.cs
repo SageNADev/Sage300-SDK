@@ -7,7 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
 namespace ValuedPartner.TU.Web
 {
     public partial class Login

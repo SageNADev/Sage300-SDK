@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Period01InquiryAmount" xml:space="preserve">
+    <value>期間01查詢金額</value>
+  </data>
+  <data name="Period12InquiryAmount" xml:space="preserve">
+    <value>期間12查詢金額</value>
+  </data>
+  <data name="AddTo" xml:space="preserve">
+    <value>增加到</value>
+  </data>
+  <data name="Period02InquiryAmount" xml:space="preserve">
+    <value>期間02查詢金額</value>
+  </data>
+  <data name="Period06WorkAmount" xml:space="preserve">
+    <value>期間06預算金額</value>
+  </data>
+  <data name="CopyWithAmountIncrease" xml:space="preserve">
+    <value>含金額增加複製</value>
+  </data>
+  <data name="PeriodEnd" xml:space="preserve">
+    <value>截止期間</value>
+  </data>
+  <data name="CopyWithProratedSpread" xml:space="preserve">
+    <value>含已分攤差額複製</value>
+  </data>
+  <data name="BudgetMethodCode" xml:space="preserve">
+    <value>預算方法代碼</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>總帳預算維護</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>合計金額</value>
+  </data>
+  <data name="Period04WorkAmount" xml:space="preserve">
+    <value>期間04預算金額</value>
+  </data>
+  <data name="PeriodStart" xml:space="preserve">
+    <value>期間起始</value>
+  </data>
+  <data name="Period12WorkAmount" xml:space="preserve">
+    <value>期間12預算金額</value>
+  </data>
+  <data name="Period08WorkAmount" xml:space="preserve">
+    <value>期間08預算金額</value>
+  </data>
+  <data name="CopyWithPercentIncrease" xml:space="preserve">
+    <value>含％增加複製</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>替換</value>
+  </data>
+  <data name="Period05WorkAmount" xml:space="preserve">
+    <value>期間05預算金額</value>
+  </data>
+  <data name="Period14InquiryAmount" xml:space="preserve">
+    <value>期間14查詢金額</value>
+  </data>
+  <data name="BaseWithPercentIncrease" xml:space="preserve">
+    <value>含％增加基本額</value>
+  </data>
+  <data name="FixedAmount" xml:space="preserve">
+    <value>固定金額</value>
+  </data>
+  <data name="Period06InquiryAmount" xml:space="preserve">
+    <value>期間06查詢金額</value>
+  </data>
+  <data name="Period14WorkAmount" xml:space="preserve">
+    <value>期間14預算金額</value>
+  </data>
+  <data name="Period10WorkAmount" xml:space="preserve">
+    <value>期間10預算金額</value>
+  </data>
+  <data name="InputAmount" xml:space="preserve">
+    <value>輸入金額</value>
+  </data>
+  <data name="Period04InquiryAmount" xml:space="preserve">
+    <value>期間04查詢金額</value>
+  </data>
+  <data name="InputIncreaseAmount" xml:space="preserve">
+    <value>輸入增加金額</value>
+  </data>
+  <data name="Period05InquiryAmount" xml:space="preserve">
+    <value>期間05查詢金額</value>
+  </data>
+  <data name="BaseWithAmountIncrease" xml:space="preserve">
+    <value>含金額增加基本額</value>
+  </data>
+  <data name="SpreadAmount" xml:space="preserve">
+    <value>差額</value>
+  </data>
+  <data name="InputIncreasePercent" xml:space="preserve">
+    <value>輸入增加百分比</value>
+  </data>
+  <data name="Period01WorkAmount" xml:space="preserve">
+    <value>期間01預算金額</value>
+  </data>
+  <data name="Period09WorkAmount" xml:space="preserve">
+    <value>期間09預算金額</value>
+  </data>
+  <data name="Period11WorkAmount" xml:space="preserve">
+    <value>期間11預算金額</value>
+  </data>
+  <data name="Period07InquiryAmount" xml:space="preserve">
+    <value>期間07查詢金額</value>
+  </data>
+  <data name="Period10InquiryAmount" xml:space="preserve">
+    <value>期間10查詢金額</value>
+  </data>
+  <data name="Period13InquiryAmount" xml:space="preserve">
+    <value>期間13查詢金額</value>
+  </data>
+  <data name="Period03WorkAmount" xml:space="preserve">
+    <value>期間03預算金額</value>
+  </data>
+  <data name="Period11InquiryAmount" xml:space="preserve">
+    <value>期間11查詢金額</value>
+  </data>
+  <data name="Period08InquiryAmount" xml:space="preserve">
+    <value>期間08查詢金額</value>
+  </data>
+  <data name="CopyAsIs" xml:space="preserve">
+    <value>原樣複製</value>
+  </data>
+  <data name="Period13WorkAmount" xml:space="preserve">
+    <value>期間13預算金額</value>
+  </data>
+  <data name="Period09InquiryAmount" xml:space="preserve">
+    <value>期間09查詢金額</value>
+  </data>
+  <data name="Period02WorkAmount" xml:space="preserve">
+    <value>期間02預算金額</value>
+  </data>
+  <data name="Period07WorkAmount" xml:space="preserve">
+    <value>期間07預算金額</value>
+  </data>
+  <data name="TypeOfUpdate" xml:space="preserve">
+    <value>更新類型</value>
+  </data>
+  <data name="Period03InquiryAmount" xml:space="preserve">
+    <value>期間 03 查詢金額</value>
+  </data>
+  <data name="BudgetMethod" xml:space="preserve">
+    <value>預算方法</value>
+  </data>
+  <data name="FiscalSetLookup" xml:space="preserve">
+    <value>財務資料集查找</value>
+  </data>
+  <data name="BudgetSet" xml:space="preserve">
+    <value>預算集</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>幣別</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>幣別類型</value>
+  </data>
+  <data name="FiscalSet" xml:space="preserve">
+    <value>財務集</value>
+  </data>
+  <data name="TotalBudgetAmount" xml:space="preserve">
+    <value>合計預算金額</value>
+  </data>
+  <data name="TotalInquiryAmount" xml:space="preserve">
+    <value>財務集合計</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>年度</value>
+  </data>
+  <data name="BudgetMaintenance" xml:space="preserve">
+    <value>預算維護</value>
+  </data>
+  <data name="AccountNotDefinedMessage" xml:space="preserve">
+    <value>未在總帳中定義科目。</value>
+  </data>
+  <data name="AccountNotSpecifiedMessage" xml:space="preserve">
+    <value>未指定任何科目。</value>
+  </data>
+  <data name="AmountIncrease" xml:space="preserve">
+    <value>金額增加</value>
+  </data>
+  <data name="BaseAmount" xml:space="preserve">
+    <value>基數金額</value>
+  </data>
+  <data name="BudgetAmount" xml:space="preserve">
+    <value>預算金額</value>
+  </data>
+  <data name="ClearBudgetAmount" xml:space="preserve">
+    <value>清除預算金額</value>
+  </data>
+  <data name="ClearBudgetAmountMessage" xml:space="preserve">
+    <value>是否確要將所有預算金額清零？</value>
+  </data>
+  <data name="CurrencyCodeNotDefinedMessage" xml:space="preserve">
+    <value>未在公共服務中定義幣別代碼。</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>截止日期</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>增加</value>
+  </data>
+  <data name="InquiryAmount" xml:space="preserve">
+    <value>財務集金額</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>期間</value>
+  </data>
+  <data name="BudgetCurrency" xml:space="preserve">
+    <value>預算幣別</value>
+  </data>
+  <data name="Specific" xml:space="preserve">
+    <value>具體</value>
+  </data>
+  <data name="DifferentCurrenyCodeMessage" xml:space="preserve">
+    <value>在預算查找和財務集查找中指定了不同的幣別代碼，因此預算金額和財務集金額將以不同的幣別表示。</value>
+  </data>
+  <data name="DeleteBudgetSet" xml:space="preserve">
+    <value>刪除此預算集{0}？</value>
+  </data>
+  <data name="ShowBudgetAmounts" xml:space="preserve">
+    <value>顯示預算金額</value>
+  </data>
+  <data name="ShowFiscalSetAmounts" xml:space="preserve">
+    <value>顯示財務集金額</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>合計</value>
+  </data>
+  <data name="BudgetAmounts" xml:space="preserve">
+    <value>變更預算金額</value>
+  </data>
+  <data name="BudgetLookup" xml:space="preserve">
+    <value>預算查找</value>
+  </data>
+  <data name="LockedInfo" xml:space="preserve">
+    <value>此預算集已鎖定，因此您無法儲存所做的變更。變更預算金額？</value>
+  </data>
+  <data name="ModifyLockedBudgetMsg" xml:space="preserve">
+    <value>此預算集已鎖定，因此您無法變更或刪除它。您可以在總帳選項螢幕的過帳索引標籤上解鎖預算集。</value>
+  </data>
+  <data name="ProratedDiffMessage" xml:space="preserve">
+    <value>您輸入的攤配誤差金額{0}不等於各個期間{1}的已增加/已替換預算金額的總和。</value>
+  </data>
+</root>

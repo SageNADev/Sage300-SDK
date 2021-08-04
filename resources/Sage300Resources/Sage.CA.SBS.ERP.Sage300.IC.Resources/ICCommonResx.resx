@@ -2787,4 +2787,7 @@
   <data name="LastProcessedTime" xml:space="preserve">
     <value>Last Processed Time</value>
   </data>
+  <data name="FractionalQuantityWarning" xml:space="preserve">
+    <value>If you select the option to allow fractional quantities, you cannot change this later. Are you sure you want to allow fractional quantities?</value>
+  </data>
 </root>

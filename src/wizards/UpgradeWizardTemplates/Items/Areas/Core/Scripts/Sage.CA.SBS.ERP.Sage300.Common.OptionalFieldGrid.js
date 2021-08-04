@@ -201,15 +201,22 @@ sg.optionalFieldControl = function () {
      * @return {boolean} A boolean flag to indicate the current grid valid status
     */
     function _commitGrid(gridName, callBack) {
-        var isSuccess = true;
-        if (callBack && typeof callBack === "function") {
-            callBack(isSuccess);
+
+        var grid = _getGrid(gridName),
+            selectedRowData = grid.dataItem(grid.select());
+
+        if (selectedRowData && selectedRowData.dirty) {
+            _sendRequest(gridName, RequestTypeEnum.Save, "", callBack && typeof callBack === "function" ? callBack : null);
         }
-        return isSuccess;
+        else {
+            if (callBack && typeof callBack === "function") {
+                callBack(true);
+            }
+        }
     }
 
     /**
-    * @description Set editor initail value
+    * @description Set editor initial value
     * @param {string} gridName The name of the grid
     * @param {any} options Editor options object
     */
@@ -263,6 +270,18 @@ sg.optionalFieldControl = function () {
         $("#" + buttonId).mousedown(function (e) {
             isFinderButton = true;
             _isFinderButton = true;
+        });
+
+        $("#txtGridColOPTFIELD, #txtGridColVALUE").on("keydown", function (e) {
+            _sendChange[gridName] = false;
+            if (e.keyCode === 9 || e.keyCode === 13) {
+                var value = field === "VALUE" ? this.value : this.value.toUpperCase();
+                _sendChange[gridName] = true;
+                model.set(field, value);
+            } else if (e.altKey && e.keyCode === sg.constants.KeyCodeEnum.DownArrow) {
+                isFinderButton = true;
+                _isFinderButton = true;
+            }
         });
 
         /**
@@ -929,7 +948,7 @@ sg.optionalFieldControl = function () {
             _requestComplete(requestType, isSuccess, gridName, jsonResult, fieldName);
 
             if (callback)
-                callback();
+                callback(isSuccess);
         });
     }
 
@@ -1296,11 +1315,13 @@ sg.optionalFieldControl = function () {
                 rowData.dirty = true;
                 dirty(gridName, true);
             }
+
             if (rowData && rowData.dirty) {
                 _sendRequest(gridName, RequestTypeEnum.Save);
             }
-            if (parentGridName) {
-                sg.viewList.commit(parentGridName);
+
+            if (parentGridName && _dataChanged[gridName]) {
+                setTimeout(() => sg.viewList.commit(parentGridName), 100);
             }
         });
     }
@@ -1395,11 +1416,13 @@ sg.optionalFieldControl = function () {
      * @return {boolean} Return a boolean flag to indicate success or not
      */
     function commit(gridName, callBack) {
-        var result = true;
         if (gridName) {
             result = _commitGrid(gridName, callBack);
         }
-        return result;
+
+        // always return TRUE for backward compatibility. A caller should use a callback function 
+        // to check whether commit is successful
+        return true;
     }
 
 

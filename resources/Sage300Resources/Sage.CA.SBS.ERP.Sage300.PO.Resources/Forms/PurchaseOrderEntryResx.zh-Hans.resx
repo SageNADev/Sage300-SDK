@@ -287,16 +287,16 @@
     <value>保存时自动税务计算</value>
   </data>
   <data name="BillToAddress1" xml:space="preserve">
-    <value>帐单至1</value>
+    <value>帐单至地址1</value>
   </data>
   <data name="BillToAddress2" xml:space="preserve">
-    <value>帐单至2</value>
+    <value>帐单至地址2</value>
   </data>
   <data name="BillToAddress3" xml:space="preserve">
-    <value>帐单至3</value>
+    <value>帐单至地址3</value>
   </data>
   <data name="BillToAddress4" xml:space="preserve">
-    <value>帐单至4</value>
+    <value>帐单至地址4</value>
   </data>
   <data name="BillToCity" xml:space="preserve">
     <value>帐单至城市</value>
@@ -308,10 +308,10 @@
     <value>帐单至联系人电邮</value>
   </data>
   <data name="BillToContactFax" xml:space="preserve">
-    <value>汇款至联系人传真</value>
+    <value>帐单至联系人传真</value>
   </data>
   <data name="BillToContactPhone" xml:space="preserve">
-    <value>汇款至联系人电话</value>
+    <value>帐单至联系人电话</value>
   </data>
   <data name="BillToCountry" xml:space="preserve">
     <value>帐单至国家</value>
@@ -353,7 +353,7 @@
     <value>小数位数</value>
   </data>
   <data name="DerivedTaxReportingExchRate" xml:space="preserve">
-    <value>得出的税务报告汇率</value>
+    <value>推算的税务报告汇率</value>
   </data>
   <data name="DiscountAmountSum" xml:space="preserve">
     <value>折扣金额总计</value>
@@ -497,16 +497,16 @@
     <value>申购序列键码</value>
   </data>
   <data name="ShipToAddress1" xml:space="preserve">
-    <value>发货至地址1</value>
+    <value>发运至地址1</value>
   </data>
   <data name="ShipToAddress2" xml:space="preserve">
-    <value>发货至地址2</value>
+    <value>发运至地址2</value>
   </data>
   <data name="ShipToAddress3" xml:space="preserve">
-    <value>发货至地址3</value>
+    <value>发运至地址3</value>
   </data>
   <data name="ShipToAddress4" xml:space="preserve">
-    <value>发货至地址4</value>
+    <value>发运至地址4</value>
   </data>
   <data name="ShipToCity" xml:space="preserve">
     <value>发运至城市</value>
@@ -545,31 +545,31 @@
     <value>发运至邮政编码</value>
   </data>
   <data name="TaxAllocatedAmount1" xml:space="preserve">
-    <value>已分配税金额1</value>
+    <value>已分配税额1</value>
   </data>
   <data name="TaxAllocatedAmount1Sum" xml:space="preserve">
     <value>已分配税额1总计</value>
   </data>
   <data name="TaxAllocatedAmount2" xml:space="preserve">
-    <value>已分配税金额2</value>
+    <value>已分配税额2</value>
   </data>
   <data name="TaxAllocatedAmount2Sum" xml:space="preserve">
     <value>已分配税额2总计</value>
   </data>
   <data name="TaxAllocatedAmount3" xml:space="preserve">
-    <value>已分配税金额3</value>
+    <value>已分配税额3</value>
   </data>
   <data name="TaxAllocatedAmount3Sum" xml:space="preserve">
     <value>已分配税额3总计</value>
   </data>
   <data name="TaxAllocatedAmount4" xml:space="preserve">
-    <value>已分配税金额4</value>
+    <value>已分配税额4</value>
   </data>
   <data name="TaxAllocatedAmount4Sum" xml:space="preserve">
     <value>已分配税额4总计</value>
   </data>
   <data name="TaxAllocatedAmount5" xml:space="preserve">
-    <value>已分配税金额5</value>
+    <value>已分配税额5</value>
   </data>
   <data name="TaxAllocatedAmount5Sum" xml:space="preserve">
     <value>已分配税额5总计</value>
@@ -1435,6 +1435,13 @@
     <value>销售订单复制订购单</value>
   </data>
   <data name="InvalidDerivedRate" xml:space="preserve">
-    <value>无法得出税率，因为使用当前税务合计和税务报告合计导致一个无效税率。手动输入税率。</value>
+    <value>无法推算汇率，因为使用当前税务合计和税务报告合计导致一个无效汇率。手动输入税率。</value>
+  </data>
+  <data name="UpdateArrivalDates" xml:space="preserve">
+    <value>是否将所有明细的预计到货日期设置为与订购单的到货日期相同？</value>
+    <comment>Message (confirmation dialog)</comment>
+  </data>
+  <data name="UpdateShiptoLocations" xml:space="preserve">
+    <value>是否将所有明细的地点设置为与订购单的发货至地点相同？  如果在发货至地点不允许为该明细指定的货品，该明细的地点不会更改。</value>
   </data>
 </root>

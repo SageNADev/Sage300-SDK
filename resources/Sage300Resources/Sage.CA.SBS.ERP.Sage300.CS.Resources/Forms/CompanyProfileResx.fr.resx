@@ -133,7 +133,7 @@
     <value>Adresse ligne 4</value>
   </data>
   <data name="CS0001" xml:space="preserve">
-    <value>Profil de l'entreprise</value>
+    <value>Profil de l’entreprise</value>
     <comment>For Export</comment>
   </data>
   <data name="Branch" xml:space="preserve">
@@ -186,7 +186,7 @@
     <value>Faire affaire comme</value>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>Profil de l'entreprise</value>
+    <value>Profil de l’entreprise</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Euro" xml:space="preserve">
@@ -203,7 +203,7 @@
     <value>Méthode comptable de gain/perte</value>
   </data>
   <data name="GnLssMthdOneWayChg" xml:space="preserve">
-    <value>Le changement de méthode comptable Gain/Perte pour "Gain/Perte constaté" est permanent. Vous serez incapable de revenir à 'Gain/Perte réalisé et non réalisé' après avoir sauvegardé le profil de l'entreprise.</value>
+    <value>Le changement de méthode comptable Gain/Perte pour "Gain/Perte constaté" est permanent. Vous serez incapable de revenir à 'Gain/Perte réalisé et non réalisé' après avoir sauvegardé le profil de l’entreprise.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="InactiveAccount" xml:space="preserve">
@@ -216,10 +216,10 @@
     <value>Nom commercial</value>
   </data>
   <data name="LocationCode" xml:space="preserve">
-    <value>Code d'emplacement</value>
+    <value>Code d’emplacement</value>
   </data>
   <data name="LocationType" xml:space="preserve">
-    <value>Type d'emplacement</value>
+    <value>Type d’emplacement</value>
   </data>
   <data name="LockedFiscalPeriod" xml:space="preserve">
     <value>Période verrouillée</value>
@@ -272,25 +272,25 @@
     <value>Code postal</value>
   </data>
   <data name="CompanyLogo" xml:space="preserve">
-    <value>Logo de l'entreprise</value>
+    <value>Logo de l’entreprise</value>
   </data>
   <data name="SelectLogo" xml:space="preserve">
-    <value>Sélectionner le logo de l'entreprise</value>
+    <value>Sélectionner le logo de l’entreprise</value>
   </data>
   <data name="UpLoad" xml:space="preserve">
     <value>Téléverser</value>
   </data>
   <data name="FileFormatError" xml:space="preserve">
-    <value>Sélectionnez un type d'image pris en charge (JPEG ou PNG).</value>
+    <value>Sélectionnez un type d’image pris en charge (JPEG ou PNG).</value>
   </data>
   <data name="UpLoadMessage" xml:space="preserve">
-    <value>Logo de l'entreprise téléversé avec succès.</value>
+    <value>Logo de l’entreprise téléversé avec succès.</value>
   </data>
   <data name="DeleteLogoMessage" xml:space="preserve">
-    <value>Logo de l'entreprise supprimé avec succès.</value>
+    <value>Logo de l’entreprise supprimé avec succès.</value>
   </data>
   <data name="FileSizeError" xml:space="preserve">
-    <value>La taille maximale de l'image est de 100 Ko. Veuillez sélectionner une image plus petite.</value>
+    <value>La taille maximale de l’image est de 100 Ko. Veuillez sélectionner une image plus petite.</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Courriel</value>
@@ -314,13 +314,13 @@
     <value>Paramètres</value>
   </data>
   <data name="UserName" xml:space="preserve">
-    <value>Nom d'utilisateur</value>
+    <value>Nom d’utilisateur</value>
   </data>
   <data name="UseSSL" xml:space="preserve">
     <value>Utiliser SSL</value>
   </data>
   <data name="EmailBody" xml:space="preserve">
-    <value>Il s'agit d'un message de test envoyé à partir de Sage 300.</value>
+    <value>Il s’agit d’un message de test envoyé à partir de Sage 300.</value>
   </data>
   <data name="EmailSendMessage" xml:space="preserve">
     <value>Courriel envoyé avec succès.</value>
@@ -329,22 +329,22 @@
     <value>Message de test depuis Sage 300</value>
   </data>
   <data name="EmailAddress" xml:space="preserve">
-    <value>Depuis l'adresse courriel</value>
+    <value>Depuis l’adresse courriel</value>
   </data>
   <data name="EmailAuthenticatedFailed" xml:space="preserve">
-    <value>Le serveur SMTP requiert une connexion sécurisée ou le client n'a pas été authentifié.</value>
+    <value>Le serveur SMTP requiert une connexion sécurisée ou le client n’a pas été authentifié.</value>
   </data>
   <data name="EmailBoxBusy" xml:space="preserve">
     <value>La boîte aux lettres est occupée, réessayez plus tard.</value>
   </data>
   <data name="EmailDeliveryFailed" xml:space="preserve">
-    <value>Les paramètres de messagerie sont incomplets ou incorrects. Vérifiez les paramètres dans l'onglet Courriel de l'écran Profil de l'entreprise.</value>
+    <value>Les paramètres de messagerie sont incomplets ou incorrects. Vérifiez les paramètres dans l’onglet Courriel de l’écran Profil de l’entreprise.</value>
   </data>
   <data name="EmailInfoMessage" xml:space="preserve">
-    <value>Vous devez remplir les champs dans l'onglet Courriel si vous souhaitez utiliser la messagerie électronique comme mode d'envoi pour les clients et fournisseurs.</value>
+    <value>Vous devez remplir les champs dans l’onglet Courriel si vous souhaitez utiliser la messagerie électronique comme mode d’envoi pour les clients et fournisseurs.</value>
   </data>
   <data name="EmailQueuedMessage" xml:space="preserve">
-    <value>Les messages électroniques ont été correctement créés et ajoutés à la file d'attente d'impression pour envoi.</value>
+    <value>Les messages électroniques ont été correctement créés et ajoutés à la file d’attente d’impression pour envoi.</value>
   </data>
   <data name="InvalidEmailAddress" xml:space="preserve">
     <value>Adresse courriel non valide.</value>
@@ -356,6 +356,18 @@
     <value>Adresse courriel Cci</value>
   </data>
   <data name="BccEmailMessageHelp" xml:space="preserve">
-    <value>Si vous saisissez plusieurs adresses courriel, séparez-les à l'aide d'un point-virgule (;).</value>
+    <value>Si vous saisissez plusieurs adresses courriel, séparez-les à l’aide d’un point-virgule (;).</value>
+  </data>
+  <data name="SDAHeader" xml:space="preserve">
+    <value>Sage Data &amp; Analytics</value>
+  </data>
+  <data name="Subdomain" xml:space="preserve">
+    <value>Sous-domaine d’adresse web</value>
+  </data>
+  <data name="SubdomainTooltip" xml:space="preserve">
+    <value>Cela fait partie de votre adresse web unique de Sage Data &amp; Analytics. Le sous-domaine apparaît immédiatement après &quot;https://&quot; et avant &quot;.sagedataanalytics.com&quot;.</value>
+  </data>
+  <data name="BlankSDAError" xml:space="preserve">
+    <value>Pour utiliser Sage Data &amp; Analytics, vous devez spécifier un sous-domaine d’adresse web connexe à l’écran Profil de l’entreprise.</value>
   </data>
 </root>

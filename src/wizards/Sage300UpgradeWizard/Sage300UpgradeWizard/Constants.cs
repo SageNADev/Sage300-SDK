@@ -50,7 +50,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const bool SyncWebFiles = true;
 
             /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
-            public const bool UpdateAccpacDotNetLibrary = false;
+            public const bool UpdateAccpacDotNetLibrary = true;
 
             /// <summary> Flag that determines whether or not to update the .NET framework in solution projects. </summary>
             public const bool UpdateMicrosoftDotNetFramework = false;
@@ -64,24 +64,30 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// </summary>
             public const bool AddBinIncludeFile = false;
 
+            /// <summary> Flag that determines whether or not to execute the 'FinderAlterations' process. </summary>
+            public const bool FinderAlterations = true;
+
+            /// <summary> Flag that determines whether or not to execute the 'FinalAlterations' process. </summary>
+            public const bool FinalAlterations = true;
+
             /// <summary> 
             /// Release 2021.2
             /// 
             /// Flag that determines whether or not to add a  
             /// new reference to the web project for handling reports
             /// </summary>
-            public const bool ReportUpgrade_For_2021_2 = true;
+            public const bool ReportUpgrade_For_2021_2 = false;
 
             /// <summary> Flag that determines whether or not to remove previous versions of the various JQuery libraries. </summary>
-            public const bool RemovePreviousJqueryLibraries = false;
+            public const bool RemovePreviousJqueryLibraries = true;
 
-            public const string FromJqueryCoreVersion = "1.11.3";
-            public const string FromJqueryUIVersion = "1.11.4";
-            public const string FromJqueryMigrateVersion = "1.2.1";
+            public const string FromJqueryCoreVersion = "3.4.1";
+            public const string FromJqueryUIVersion = "1.12.1";
+            public const string FromJqueryMigrateVersion = "3.1.0";
 
-            public const string ToJqueryCoreVersion = "3.4.1";
+            public const string ToJqueryCoreVersion = "3.6.0";
             public const string ToJqueryUIVersion = "1.12.1";
-            public const string ToJqueryMigrateVersion = "3.1.0";
+            public const string ToJqueryMigrateVersion = "3.3.2";
         }
 
         /// <summary>

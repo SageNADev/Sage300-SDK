@@ -1457,4 +1457,7 @@
   <data name="ViewWidgets" xml:space="preserve">
     <value>Afficher les composants graphiques</value>
   </data>
+  <data name="PJC" xml:space="preserve">
+    <value>GP - </value>
+  </data>
 </root>

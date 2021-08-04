@@ -622,7 +622,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorFdNotActiveFld" xml:space="preserve">
-    <value>查找器未在这一字段激活</value>
+    <value>查找器未在此字段激活</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorFiscalPeriodRange" xml:space="preserve">
@@ -646,11 +646,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorNoOEPO" xml:space="preserve">
-    <value>不能使用这一功能因为销售订单和采购订单均未激活。</value>
+    <value>不能使用此功能因为销售订单和采购订单均未激活。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorNoWorksheetGenerated" xml:space="preserve">
-    <value>没有为这一地点生成任何盘存工作表。</value>
+    <value>没有为此地点生成任何盘存工作表。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorPriceListNotExist" xml:space="preserve">
@@ -706,7 +706,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ExpectedShipDate" xml:space="preserve">
-    <value>预期发货日期</value>
+    <value>预期发运日期</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ExpiryDate" xml:space="preserve">
@@ -814,7 +814,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="IcSystemErrorNoDrilldownAVAIL" xml:space="preserve">
-    <value>没有这一记录的下钻信息。</value>
+    <value>没有此记录的下钻信息。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Import" xml:space="preserve">
@@ -962,7 +962,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ManItemNumber" xml:space="preserve">
-    <value>制造商的货品编号</value>
+    <value>制造商货品编号</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ManufItemNo" xml:space="preserve">
@@ -1158,7 +1158,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="PostEntry" xml:space="preserve">
-    <value>是否过帐这一{0}？</value>
+    <value>是否过帐此{0}？</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="PostingCompleted" xml:space="preserve">
@@ -1242,7 +1242,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="PromptDelete" xml:space="preserve">
-    <value>是否在过帐后删除这一{0}？如果您选择是，您将无法在以后查看{1}明细或从总帐下钻到明细。如果您选择否，您可以使用清除历史删除{2}。</value>
+    <value>是否在过帐后删除此{0}？如果您选择是，您将无法在以后查看{1}明细或从总帐下钻到明细。如果您选择否，您可以使用清除历史删除{2}。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="PurchaseTaxClass" xml:space="preserve">
@@ -1462,11 +1462,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="SaveDetail" xml:space="preserve">
-    <value>是否保存这一{0}明细行？</value>
+    <value>是否保存此{0}明细行？</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="SaveEntry" xml:space="preserve">
-    <value>是否保存这一{0}？</value>
+    <value>是否保存此{0}？</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="SaveSerials" xml:space="preserve">
@@ -1686,7 +1686,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="Transfer" xml:space="preserve">
-    <value>转帐</value>
+    <value>转移</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="TransferLower" xml:space="preserve">
@@ -1694,7 +1694,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="TransferNumber" xml:space="preserve">
-    <value>转帐编号</value>
+    <value>转移编号</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Transferred" xml:space="preserve">
@@ -1840,7 +1840,7 @@
     <value>日历年度</value>
   </data>
   <data name="ChangeAtYearEndMessage" xml:space="preserve">
-    <value>您仅应该在年末更改这一选项。如果您在年中某时更改它，编辑统计以更正各个期间的合计。</value>
+    <value>您仅应该在年末更改此选项。如果您在年中某时更改它，编辑统计以更正各个期间的合计。</value>
   </data>
   <data name="DisassemblyNumber" xml:space="preserve">
     <value>拆卸编号</value>
@@ -2080,7 +2080,7 @@
     <value>无法找到指定的采购税级。</value>
   </data>
   <data name="FaxNumber" xml:space="preserve">
-    <value>传真</value>
+    <value>传真号码</value>
   </data>
   <data name="PhoneNumber" xml:space="preserve">
     <value>电话</value>
@@ -2317,7 +2317,7 @@
     <value>整数</value>
   </data>
   <data name="Number" xml:space="preserve">
-    <value>编号</value>
+    <value>数字</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Text" xml:space="preserve">
@@ -2390,7 +2390,7 @@
     <value>汇率运算</value>
   </data>
   <data name="RateOverride" xml:space="preserve">
-    <value>汇率替换</value>
+    <value>汇率撤换</value>
   </data>
   <data name="ReceiptType" xml:space="preserve">
     <value>进货类型</value>
@@ -2432,7 +2432,7 @@
     <value>退回的批别数量</value>
   </data>
   <data name="ManufacturersItemNumber" xml:space="preserve">
-    <value>制造商的货品编号</value>
+    <value>制造商货品编号</value>
   </data>
   <data name="NumberOfLotsToGenerate" xml:space="preserve">
     <value>要生成的批别数目</value>
@@ -2559,7 +2559,7 @@
     <comment>Used in post success</comment>
   </data>
   <data name="PostWarning1" xml:space="preserve">
-    <value>是否在过帐后删除这一{0}？</value>
+    <value>是否在过帐后删除此{0}？</value>
     <comment>Used for post warning</comment>
   </data>
   <data name="PostWarning2" xml:space="preserve">
@@ -2583,7 +2583,7 @@
     <value>无效</value>
   </data>
   <data name="DateOutOfRange" xml:space="preserve">
-    <value>输入的日期位于在公司概览中指定的范围之外。是否接受这一日期？</value>
+    <value>输入的日期位于在公司概览中指定的范围之外。是否接受此日期？</value>
     <comment>Date Range validation</comment>
   </data>
   <data name="DeletedRecord" xml:space="preserve">
@@ -2734,14 +2734,14 @@
     <value>货品{0}作为{1}存在于存货中，但也是{2}的一个制造商货品编号。如果您输入{0}，{2}将不会被自动选择。</value>
   </data>
   <data name="NoDrillDownInfo" xml:space="preserve">
-    <value>无法找到这一记录的下钻信息。</value>
+    <value>无法找到此记录的下钻信息。</value>
     <comment>Message</comment>
   </data>
   <data name="DefaultValue" xml:space="preserve">
     <value>*** NEW ***</value>
   </data>
   <data name="NotallowedTodrilldown" xml:space="preserve">
-    <value>您没有授权下钻到</value>
+    <value>您未获授权下钻到</value>
     <comment>Error Message</comment>
   </data>
   <data name="NoParentDrilDown" xml:space="preserve">
@@ -2770,7 +2770,7 @@
     <comment>Screen Name -Temporary Uses</comment>
   </data>
   <data name="ICCompanyLockMessage" xml:space="preserve">
-    <value>这一公司的所有其他用户退出存货控制而且所有存货控制屏幕都关闭之前您不能{0}。</value>
+    <value>此公司的所有其他用户退出存货控制而且所有存货控制屏幕都关闭之前您不能{0}。</value>
   </data>
   <data name="Invoices" xml:space="preserve">
     <value>发票</value>
@@ -2786,5 +2786,8 @@
   </data>
   <data name="LastProcessedTime" xml:space="preserve">
     <value>上一处理时间</value>
+  </data>
+  <data name="FractionalQuantityWarning" xml:space="preserve">
+    <value>如果您选择允许非整数数量的选项，以后无法更改。是否确要允许非整数数量？</value>
   </data>
 </root>

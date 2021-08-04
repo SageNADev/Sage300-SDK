@@ -9,6 +9,14 @@
   </TemplateData>
   <TemplateContent>
     <References />
-	<ProjectItem SubType="" TargetFileName="$fileinputname$.props" ReplaceParameters="false">AccpacDotNetVersion.props</ProjectItem>
+    <ProjectItem ReplaceParameters="false" SubType="" TargetFileName="$fileinputname$.props">AccpacDotNetVersion.props</ProjectItem>
+
+    <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="Login.aspx">Login.aspx</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="Login.aspx.cs">Login.aspx.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="Login.aspx.designer.cs">Login.aspx.designer.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="SageWebReportDocument.cs">SageWebReportDocument.cs</ProjectItem>
+
   </TemplateContent>
 </VSTemplate>

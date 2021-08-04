@@ -422,7 +422,7 @@
     <comment>Label</comment>
   </data>
   <data name="DateOutOfRange" xml:space="preserve">
-    <value>输入的日期位于在公司概览中指定的范围之外。是否接受这一日期？</value>
+    <value>输入的日期位于在公司概览中指定的范围之外。是否接受此日期？</value>
     <comment>Message</comment>
   </data>
   <data name="Days" xml:space="preserve">
@@ -1170,7 +1170,7 @@
     <comment>Label</comment>
   </data>
   <data name="RecoverableTax" xml:space="preserve">
-    <value>可退回税</value>
+    <value>可退税</value>
     <comment>Label</comment>
   </data>
   <data name="Reference" xml:space="preserve">
@@ -1716,7 +1716,7 @@
     <value>成本</value>
   </data>
   <data name="Approved" xml:space="preserve">
-    <value>核准</value>
+    <value>已核准</value>
   </data>
   <data name="InsertItemLotOptionalFields" xml:space="preserve">
     <value>插入货品批别可选字段</value>
@@ -2025,5 +2025,13 @@
   </data>
   <data name="FailedMTEmail" xml:space="preserve">
     <value>无法将凭证通过电邮发送给供应商{0}的联系人。检查是否正确设置了此供应商的联系人。</value>
+  </data>
+  <data name="SetArrivalDate" xml:space="preserve">
+    <value>设置到货日期</value>
+    <comment>Label (button)</comment>
+  </data>
+  <data name="SetLocation" xml:space="preserve">
+    <value>设置地点</value>
+    <comment>Label (button)</comment>
   </data>
 </root>

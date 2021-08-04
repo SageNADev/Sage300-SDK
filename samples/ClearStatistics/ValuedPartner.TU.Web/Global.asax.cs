@@ -19,26 +19,18 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region
-
-using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Services;
-using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
-using Sage.CA.SBS.ERP.Sage300.Common.Web.Security;
 using Sage.CA.SBS.ERP.Sage300.Core.Logging;
 using Sage.CA.SBS.ERP.Sage300.Core.Web;
 using Sage.CA.SBS.ERP.Sage300.Web;
 using Sage.CA.SBS.ERP.Sage300.Web.Models;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-
 #endregion
 
 namespace ValuedPartner.TU.Web
@@ -48,6 +40,7 @@ namespace ValuedPartner.TU.Web
     /// </summary>
     public class MvcApplication : HttpApplication
     {
+
         /// <summary>
         /// MVC appliction start event
         /// </summary>

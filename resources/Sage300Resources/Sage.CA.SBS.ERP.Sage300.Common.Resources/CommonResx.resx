@@ -1054,7 +1054,7 @@
     <value>Dynamic Query</value>
   </data>
   <data name="SqlInjectionMessage" xml:space="preserve">
-    <value>The inquiry request was not allowed because it could compromise the security of your data.</value>
+    <value>The request was not allowed because one or more fields include text that cannot be used for security reasons.</value>
   </data>
   <data name="AddConfirmMessage" xml:space="preserve">
     <value>Add {0} "{1}"?</value>
@@ -1596,5 +1596,35 @@
   </data>
   <data name="ExportReport" xml:space="preserve">
     <value>Export Report</value>
+  </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>View Details</value>
+  </data>
+  <data name="ViewDetailsTax" xml:space="preserve">
+    <value>View Details/Taxes</value>
+  </data>
+  <data name="EditDetails" xml:space="preserve">
+    <value>Edit Details</value>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>Tax Authority</value>
+  </data>
+  <data name="TaxAuthorityDescription" xml:space="preserve">
+    <value>Tax Authority Description</value>
+  </data>
+  <data name="TaxClass" xml:space="preserve">
+    <value>Tax Class</value>
+  </data>
+  <data name="TaxClassDescritpion" xml:space="preserve">
+    <value>Tax Class Description</value>
+  </data>
+  <data name="TaxIncluded" xml:space="preserve">
+    <value>Tax Included</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
   </data>
 </root>

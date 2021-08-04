@@ -42,7 +42,6 @@ namespace ValuedPartner.TU.Web
         public void Execute(IUnityContainer container)
         {
             RegisterController(container);
-            RegisterFinder(container);
             RegisterExportImportController(container);
         }
 
@@ -53,14 +52,6 @@ namespace ValuedPartner.TU.Web
         private void RegisterController(IUnityContainer container)
         {
             UnityUtil.RegisterType<IController, ClearStatisticsController<ClearStatistics>>(container, "TUClearStatistics");
-        }
-
-        /// <summary>
-        /// Register finders
-        /// </summary>
-        /// <param name="container">The Unity container</param>
-        private void RegisterFinder(IUnityContainer container)
-        {
         }
 
         /// <summary>

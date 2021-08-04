@@ -1394,7 +1394,7 @@
     <comment>Label</comment>
   </data>
   <data name="ShipToLocInfo" xml:space="preserve">
-    <value>發貨至地點資訊</value>
+    <value>發運至地點資訊</value>
     <comment>Label</comment>
   </data>
   <data name="Shipvia" xml:space="preserve">
@@ -1716,7 +1716,7 @@
     <value>成本</value>
   </data>
   <data name="Approved" xml:space="preserve">
-    <value>核準</value>
+    <value>已核準</value>
   </data>
   <data name="InsertItemLotOptionalFields" xml:space="preserve">
     <value>插入產品批別自選欄位</value>
@@ -2025,5 +2025,13 @@
   </data>
   <data name="FailedMTEmail" xml:space="preserve">
     <value>無法將憑證通過電郵發送給供應商{0}的連絡人。檢查是否正確設定了此供應商的連絡人。</value>
+  </data>
+  <data name="SetArrivalDate" xml:space="preserve">
+    <value>設置到貨日期</value>
+    <comment>Label (button)</comment>
+  </data>
+  <data name="SetLocation" xml:space="preserve">
+    <value>設置地點</value>
+    <comment>Label (button)</comment>
   </data>
 </root>

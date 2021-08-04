@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2019-2020 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 2019-2021 Sage Software, Inc.  All rights reserved.
 
 "use strict";
 var sg = sg || {};
@@ -195,41 +195,28 @@ sg.optionalFieldControl = function () {
     }
 
     /**
-     * @description Check duplicate optional field
-     * @param {string} gridName The name of the grid
-     * @param {string} value The optional field name
-     * @return {boolean} A boolean flag
-     */
-    function _checkDuplicateOptField(gridName, value) {
-        var ds = _getGrid(gridName).dataSource.data();
-        return ds.filter(function (row) { return row.OPTFIELD === value; }).length > 0;
-    }
-
-    /**
-     * @description Show error message
-     * @param {string} errorMessage Error message
-     */
-    function _showMessage(errorMessage) {
-        var message = { UserMessage: { Message: "", Errors: [{ Message: errorMessage }] } };
-        sg.utls.showMessage(message);
-    }
-
-    /**
      * @description Save the the current line to send ajax request. For optional field, it's already send insert request to view, just reture true.
      * @param {string} gridName The current grid name
      * @param {function} callBack The callBack function after the action is completed
      * @return {boolean} A boolean flag to indicate the current grid valid status
     */
     function _commitGrid(gridName, callBack) {
-        var isSuccess = true;
-        if (callBack && typeof callBack === "function") {
-            callBack(isSuccess);
+
+        var grid = _getGrid(gridName),
+            selectedRowData = grid.dataItem(grid.select());
+
+        if (selectedRowData && selectedRowData.dirty) {
+            _sendRequest(gridName, RequestTypeEnum.Save, "", callBack && typeof callBack === "function" ? callBack : null);
         }
-        return isSuccess;
+        else {
+            if (callBack && typeof callBack === "function") {
+                callBack(true);
+            }
+        }
     }
 
     /**
-    * @description Set editor initail value
+    * @description Set editor initial value
     * @param {string} gridName The name of the grid
     * @param {any} options Editor options object
     */
@@ -285,23 +272,12 @@ sg.optionalFieldControl = function () {
             _isFinderButton = true;
         });
 
-
         $("#txtGridColOPTFIELD, #txtGridColVALUE").on("keydown", function (e) {
             _sendChange[gridName] = false;
             if (e.keyCode === 9 || e.keyCode === 13) {
-                var value = field === "VALUE" ? this.value : this.value.toUpperCase(),
-                    errorMsg = kendo.format(globalResource.DuplicateOptionalField, value.toUpperCase());
-
+                var value = field === "VALUE" ? this.value : this.value.toUpperCase();
                 _sendChange[gridName] = true;
-                if (_checkDuplicateOptField(gridName, value)) {
-                    _showMessage(errorMsg);
-                    setTimeout(function () {
-                        _lastColField[gridName] = field;
-                        model.set(field, "");
-                    }, 50);
-                } else {
-                    model.set(field, value);
-                }
+                model.set(field, value);
             } else if (e.altKey && e.keyCode === sg.constants.KeyCodeEnum.DownArrow) {
                 isFinderButton = true;
                 _isFinderButton = true;
@@ -325,10 +301,6 @@ sg.optionalFieldControl = function () {
             _isFinderButton = false;
             _sendChange[gridName] = true;
             if (field === "OPTFIELD") {
-                if (_checkDuplicateOptField(gridName, value)) {
-                    _showMessage(errorMsg);
-                    return;
-                }
                 var keyValue = seq + line + optField;
                 model.set(field, value);
                 model["KendoGridAccpacViewPrimaryKey"] = keyValue;
@@ -393,6 +365,7 @@ sg.optionalFieldControl = function () {
         finder.viewOrder = 0;
         finder.filter = "OPTFIELD=" + model.OPTFIELD;
         var value = swset === 0 && [6, 8, 100].indexOf(model.TYPE) > -1 ? 0 : model.VALUE;
+
         switch (model.TYPE) {
             case ValueTypeEnum.Date:
                 finder.displayFieldNames = ["VALIFDATE", "VDESC"];
@@ -428,6 +401,14 @@ sg.optionalFieldControl = function () {
             var model = options.model,
                 field = options.field,
                 value = retureFields[field];
+            let type = model.TYPE;
+
+            //the same logic once init edit template
+            if (type === ValueTypeEnum.Date) {
+                value = value === "00000000" ? "" : sg.utls.kndoUI.getFormattedDate(value);
+            } else if (type === ValueTypeEnum.Time && value.indexOf(':') < 0) {
+                value = value.substring(0, 2) + ":" + value.substring(2, 4) + ":" + value.substring(4, 6);
+            }
 
             _isFinderButton = false;
             model.set(field, value);
@@ -501,10 +482,9 @@ sg.optionalFieldControl = function () {
             }
         });
 
+        $("#btnFinderId").unbind();
         _setValueFinderEditor(options, gridName, "btnFinderId");
         _setEditorInitialValue(gridName, options);
-
-        $("#btnFinderId").unbind();
         $("#btnFinderId").mousedown(function () {
             _isFinderButton = true;
         });
@@ -798,7 +778,7 @@ sg.optionalFieldControl = function () {
         GridUtls.updateFailed = true;
         var grid = $('#' + gridName).data("kendoGrid");
         var rowIndex = grid.select().index();
-        sg.utls.showMessage(jsonResult, errorMsgClose.bind(gridName, _lastLine, _lastColField[gridName]), false, true);
+        sg.utls.showMessage(jsonResult, errorMsgClose.bind(gridName, _lastLine, _lastColField[gridName]), true, true);
         _lastRowNumber[gridName] = _lastLine;
     }
 
@@ -900,13 +880,20 @@ sg.optionalFieldControl = function () {
             dataItem = grid.dataItem(selectRow);
 
         _setModuleVariables(gridName, RowStatusEnum.UPDATE, jsonResult, rowIndex);
-        sg.utls.showMessage(jsonResult);
+
+        sg.utls.showMessage(jsonResult, AfterUpdateError.bind(sg.optionalFieldControl, gridName, dataItem, fieldName, rowIndex), false, true);
+    }
+
+    function AfterUpdateError(gridName, dataItem, fieldName, rowIndex) {
+        console.log("AfterUpdateError");
+
+        var grid = $('#' + gridName).data("kendoGrid");
+
         _lastErrorResult[gridName].message = "";
         //_lastRowNumber[gridName] = -1;
         dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
         _setEditCell(grid, rowIndex, fieldName);
     }
-
     /**
 * @description Send delete request success, refresh the grid
 * @param {string} gridName The grid name
@@ -947,9 +934,9 @@ sg.optionalFieldControl = function () {
      * @param {number} requestType The request type
      * @param {string} fieldName The field name
      */
-    function _sendRequest(gridName, requestType, fieldName) {
+    function _sendRequest(gridName, requestType, fieldName, callback) {
         var grid = _getGrid(gridName),
-            data = { 'viewID': $("#" + gridName).attr('viewID'), 'record': grid.dataItem(grid.select()), 'fieldName': fieldName, 'isNewRecord': requestType === (RequestTypeEnum.Refresh || RequestTypeEnum.Put) },
+            data = { 'viewID': $("#" + gridName).attr('viewID'), 'record': grid.dataItem(grid.select()), 'fieldName': fieldName },
             requestName = _getRequestName(requestType);
 
         var url = sg.utls.url.buildUrl("Core", "GridOptionalField", requestName);
@@ -959,6 +946,9 @@ sg.optionalFieldControl = function () {
                 isSuccess = false;
             }
             _requestComplete(requestType, isSuccess, gridName, jsonResult, fieldName);
+
+            if (callback)
+                callback(isSuccess);
         });
     }
 
@@ -996,6 +986,9 @@ sg.optionalFieldControl = function () {
      * @param {object} e The event object
      */
     function _onDataChanged(gridName, e) {
+
+        const deleteButtonId = `#btn${gridName}Delete`;
+
         if (e.action) {
             _dataChanged[gridName] = true;
         }
@@ -1003,13 +996,18 @@ sg.optionalFieldControl = function () {
             count = grid.dataSource.total();
 
         if (count === 0) {
-            $("#btn" + gridName + "Delete").prop("disabled", true);
+            disableButton(deleteButtonId);
+
         } else if (e.action === "add") {
-            $("#btn" + gridName + "Delete").prop("disabled", false);
-        }
-        else {
-            //To enable the delete button if records loaded by default
-            $("#btn" + gridName + "Delete").prop("disabled", false);
+            enableButton(deleteButtonId);
+
+        } else {
+            // To enable the delete button if records loaded by default
+            //enableButton(deleteButtonId);
+
+            // AT-67206
+            const allowDelete = _settings[gridName].allowDelete;
+            enableDisableButton(deleteButtonId, allowDelete);
         }
 
         if (e.items.length === 0 && grid.dataSource.page() !== 1 && count === 0) {
@@ -1049,6 +1047,7 @@ sg.optionalFieldControl = function () {
         }
         _settings[gridName] = settings;
         _reset(gridName);
+        _filter[gridName] = "";
         _dataChanged[gridName] = false;
 
         $("#" + gridName).kendoGrid({
@@ -1145,13 +1144,14 @@ sg.optionalFieldControl = function () {
             }
         });
 
-        $("#btn" + gridName + "Add").prop("disabled", !settings.allowInsert);
-        $("#btn" + gridName + "Delete").prop("disabled", !settings.allowDelete);
+        const addButtonId = `#btn${gridName}Add`;
+        const deleteButtonId = `#btn${gridName}Delete`;
+        enableDisableButton(addButtonId, settings.allowInsert);
+        enableDisableButton(deleteButtonId, settings.allowDelete);
 
         $(document).on("click", ".msgCtrl-close", function (e) {
             _setGridCell.call(this, gridName);
         });
-        focusOut();
     }
 
     /**
@@ -1167,10 +1167,10 @@ sg.optionalFieldControl = function () {
                 function () {
                     var dataItem = grid.dataItem(grid.select());
 
-                    if (dataItem.OPTFIELD) {
-                        _sendRequest(gridName, RequestTypeEnum.Delete, "");
-                    } else {
+                    if (dataItem.KendoGridAccpacViewIsRecordNew) {
                         grid.dataSource.remove(dataItem);
+                    } else {
+                        _sendRequest(gridName, RequestTypeEnum.Delete, "");
                     }
                     grid.dataSource.read();
                 },
@@ -1184,34 +1184,26 @@ sg.optionalFieldControl = function () {
      * @param {string} gridName The grid name.
      */
     function toolbarAddLine(gridName) {
-        var preventEvent = false;
-        var grid = _getGrid(gridName),
-            rowIndex = grid.select().index();
+
+        var grid = _getGrid(gridName);
 
         var selectedRowData = null;
+
         if (_lastRowNumber[gridName] !== -1) {
-            var row = grid.tbody.find("tr[data-uid='" + _lastRowNumber[gridName] + "']");
-            selectedRowData = sg.utls.kndoUI.getDataItemForRow(row, grid);
-            if (selectedRowData && !selectedRowData.ContractCode) {
-                preventEvent = true;
+            selectedRowData = grid.dataItem(grid.select());
+
+            if (selectedRowData.dirty) {
+
+                // Save the row
+                _sendRequest(gridName, RequestTypeEnum.Save, "", function () {
+                    console.log("add line call back");
+                    _addLine(gridName);
+                });
+
+                return;
             }
         }
-        if (GridUtls.updateFailed || preventEvent || GridUtls.addingLine) {
-            return;
-        }
-
-
-        // set the row status to update as it is not finished yet due to error
-        if (_lastRowStatus[gridName] === RowStatusEnum.UPDATE && _lastErrorResult[gridName].message) {
-            setTimeout(function (rowIndex) {
-                grid.select("tr:eq(" + rowIndex + ")");
-                sg.utls.showMessage(_lastErrorResult[gridName].message);
-            }.bind(null, rowIndex));
-            return;
-        }
-        setTimeout(function () {
-            _addLine(gridName);
-        }, 100);
+        _addLine(gridName);
     }
 
     /**
@@ -1271,11 +1263,11 @@ sg.optionalFieldControl = function () {
     * @return {void}
     */
     function readOnly(gridName, readOnly) {
-        _getGrid(gridName).setOptions({ editable: !readOnly });
-        if (readOnly) {
-            $("#btn" + gridName + "Add").prop("disabled", true);
-            $("#btn" + gridName + "Delete").prop("disabled", true);
-        }
+        const grid = _getGrid(gridName);
+
+        grid.setOptions({ editable: !readOnly });
+        allowDelete(gridName, !readOnly);
+        allowInsert(gridName, !readOnly);
     }
 
     /**
@@ -1308,6 +1300,30 @@ sg.optionalFieldControl = function () {
         }
         var grid = $('#' + gridName).data("kendoGrid");
         grid.dataSource.page(1);
+
+        const btnWinClose = $('#' + popupElementId).closest('.k-window').find('.k-icon.k-i-close').closest('a');
+        btnWinClose.off('click');
+        btnWinClose.on("click", function (e) {
+            const grid = _getGrid(gridName);
+            const row = grid.select();
+            const rowData = grid.dataItem(row);
+            const value = $('input[name=VALUE]').val();
+
+            if (value && rowData && rowData.VALUE != value) {
+                rowData.VALUE = value;
+                _sendRequest(gridName, RequestTypeEnum.Put, 'VALUE');
+                rowData.dirty = true;
+                dirty(gridName, true);
+            }
+
+            if (rowData && rowData.dirty) {
+                _sendRequest(gridName, RequestTypeEnum.Save);
+            }
+
+            if (parentGridName && _dataChanged[gridName]) {
+                setTimeout(() => sg.viewList.commit(parentGridName), 100);
+            }
+        });
     }
 
     /**
@@ -1316,20 +1332,23 @@ sg.optionalFieldControl = function () {
      * @param {string} parentGridName The parent grid name
      */
     function closePopUp(gridName, parentGridName) {
-        var grid = _getGrid(gridName),
-            total = grid.dataSource.total(),
-            parentGrid = $("#" + parentGridName).data("kendoGrid"),
-            selectedItem = parentGrid.dataItem(parentGrid.select());
+        let grid = _getGrid(gridName);
+        let total = grid.dataSource.total();
 
-        if (selectedItem.VALUES !== total) {
-            // Note - Changing the traditional use of set call, instead directly assigning it because kendo doesn't allow "set" call if the field property
-            // is not editable. Which is a bit of concern for other fields, if we try to manually update the dataSource fields which is read only
-            // (most likely we don't even have to update the read only properties directly if they are non-editable)
-            selectedItem.VALUES = total;
-        }
+        if (parentGridName.length > 0) {
+            let parentGrid = $("#" + parentGridName).data("kendoGrid");
+            if (parentGrid) {
 
-        if (!selectedItem.isNewLine) {
-            sg.viewList.updateCurrentRow(parentGridName);
+                let selectedItem = parentGrid.dataItem(parentGrid.select());
+
+                if (sg.optionalFieldControl.dirty(gridName)) {
+                    // Note - Changing the traditional use of set call, instead directly assigning it because kendo doesn't allow "set" call if the field property
+                    // is not editable. Which is a bit of concern for other fields, if we try to manually update the dataSource fields which is read only
+                    // (most likely we don't even have to update the read only properties directly if they are non-editable)
+                    selectedItem.VALUES = total;
+                    selectedItem.trigger("change", { field: "VALUES" });
+                }
+            }
         }
 
         _reset(gridName);
@@ -1343,11 +1362,16 @@ sg.optionalFieldControl = function () {
      * @return {boolean} return true if the grid allows insert or null
      */
     function allowInsert(gridName, insertable) {
+
+        const addButtonId = `#btn${gridName}Add`;
+
         if (insertable !== undefined) {
-            $("#btn" + gridName + "Add").prop("disabled", !insertable);
+            _settings[gridName].allowInsert = insertable;
+
+            enableDisableButton(addButtonId, insertable);
             return;
         }
-        var disabled = $("#btn" + gridName + "Add").prop("disabled");
+        var disabled = $(addButtonId).prop("disabled");
         return !disabled;
     }
 
@@ -1359,11 +1383,16 @@ sg.optionalFieldControl = function () {
      * @return {boolean} return true if the grid allows delete or null
      */
     function allowDelete(gridName, deletable) {
+
+        const deleteButtonId = `#btn${gridName}Delete`;
+
         if (deletable !== undefined) {
-            $("#btn" + gridName + "Delete").prop("disabled", !deletable);
+            _settings[gridName].allowDelete = deletable;
+
+            enableDisableButton(deleteButtonId, deletable);
             return;
         }
-        var disabled = $("#btn" + gridName + "Delete").prop("disabled");
+        var disabled = $(deleteButtonId).prop("disabled");
         return !disabled;
     }
 
@@ -1387,93 +1416,92 @@ sg.optionalFieldControl = function () {
      * @return {boolean} Return a boolean flag to indicate success or not
      */
     function commit(gridName, callBack) {
-        var result = true;
         if (gridName) {
             result = _commitGrid(gridName, callBack);
         }
-        return result;
+
+        // always return TRUE for backward compatibility. A caller should use a callback function 
+        // to check whether commit is successful
+        return true;
     }
 
-    /**
-    * Register the focus-out listener for the Optional Feild Grid.
-    */
-    function focusOut() {
-        //Unbind the focus-out listener  
-        $("#" + _gridName).unbind("focusout");
-        //register focus-out listener
-        $("#" + _gridName).focusout(outOfFocus);
-    }
+
+    // Developer Note: Functions below are meant to be private and only consumed within this file.
 
     /**
-    * This function is used to handle the event behaviour once the focus out of the grid 
-    * @param {any} e Event for focus-out
-    */
-    function outOfFocus(e) {
-        var trigger = false;
-        var grid = $("#" + _gridName).data("kendoGrid");
-        //Ignore if inside finder was clicked
-        if (!GridUtls.finderWasClicked && !GridUtls.updateFailed) {
-            var target;
-            if (e.target && e.relatedTarget === null) {
-                target = $("#" + _gridName).find(e.target);
-                if (target.length !== 0 && !target[0].id && target[0].tagName === "TABLE") {
-                    trigger = true;
-                }
-            }
-            if (!trigger && e.target) {
-                target = $("#" + _gridName).find(e.target);
-                var elmType;
-                var elmId;
-                var isDeleteBtn;
-                if (e.relatedTarget) {
-                    elmType = (e.relatedTarget.type === 'button');
-                    elmId = (!e.relatedTarget.id.includes("btnFinderGridCol"));
-                    isDeleteBtn = (e.relatedTarget.id === "btn" + _gridName + "Delete" || e.relatedTarget.id === "btnFinderId");
-                }
-                if (elmType && elmId && !GridUtls.addingLine && !isDeleteBtn) {
-                    trigger = true;
-                }
-                //else if (e.target.id === 'txtGridColVALUE' && e.target.getAttribute("data-bind") === 'value:VALUE' && $("#" + e.target.id).val()) {
-                else if (e.target.getAttribute("data-bind") === 'value:VALUE' && $("#" + e.target.id).val() && !_isFinderButton) {
-                    trigger = true;
-                }
-            }
-            if (!trigger && e.relatedTarget) {
-                //focus on the rest elements of the Grid
-                target = $("#" + _gridName).find(e.relatedTarget);
-                if (target.length === 0) {
-                    var regex = /div_[a-zA-Z0-9_.-]*_dialog/g;
-                    var found = e.relatedTarget.id.match(regex);
-                    if (e.relatedTarget.id !== "btnFinderGridColoptfield" && !found && e.relatedTarget.id !== "deleteConfirmation") {
-                        trigger = true;
-                    }
-                }
-                else if (e.relatedTarget.name === "OPTFIELD" && _lastRowStatus[_gridName] === RowStatusEnum.UPDATE) {
-                    trigger = true;
-                }
-                else {
-                    //pager
-                    target = $('div[data-role="pager"]').find(target);
-                    if (target.length !== 0) {
-                        trigger = true;
-                    }
-                }
-            }
-        }
-        if (trigger && _lastRowNumber[_gridName] !== -1) {
-            //trigger update or insert....
-            //check we have the pre select line.
+     * @function
+     * @name enableButton
+     * @description Enable a button based on it's id
+     * @namespace sg.optionalFieldControl
+     * @private
+     *
+     * @param {string } _id The button id
+     */
+    function enableButton(_id) {
+        enableDisableButton(_id, true);
+    };
 
-            _sendRequest("" + _gridName, RequestTypeEnum.Save, "");
-            grid.closeCell($("#" + _gridName + "td:eq(1)"));
+    /**
+     * @function
+     * @name disableButton
+     * @description Disable a button based on it's id
+     * @namespace sg.optionalFieldControl
+     * @private
+     *
+     * @param {string } _id The button id
+     */
+    function disableButton(_id) {
+        enableDisableButton(_id, false);
+    };
+
+    /**
+     * @function
+     * @name enableDisableButton
+     * @description Enable or disable a button based on it's id
+     * @namespace sg.optionalFieldControl
+     * @private
+     *
+     * @param {string } _id The button id
+     * @param {boolean} _enable true = Enable | false = Disable
+     */
+    function enableDisableButton(_id, _enableOrDisable) {
+        // Ensure there's a '#' prefixed to id
+        let id = prependHashTag(_id);
+
+        if (_enableOrDisable) {
+            // Enable
+            $(id).prop('disabled', false);
+        } else {
+            // Disable
+            $(id).prop('disabled', true);
         }
     }
 
-    //Expose module(class) public methods
+    /**
+     * @function
+     * @name prependHashTag
+     * @description Given an id string, prepend a '#' character if it doesn't yet exist
+     * @namespace sg.optionalFieldControl
+     * @private
+     *   
+     * @returns {string} A string that begins with a '#' character
+     */
+    function prependHashTag(_id) {
+        let id = _id;
+
+        // Check for # character. Prepend if it doesn't exist
+        if (id.length > 0 && id.charAt(0) !== '#') {
+            id = `#${_id}`;
+        }
+
+        return id;
+    };
+
+    // Expose module(class) public methods
     return {
         init: init,
 
-        //Grid internal methods(For grid toolbar, column template use)
+        // Grid internal methods(For grid toolbar, column template use)
         addLine: toolbarAddLine,
         deleteLine: toolbarDeleteLine,
         getTemplate: getTemplate,
@@ -1481,7 +1509,7 @@ sg.optionalFieldControl = function () {
         showPopUp: showPopUp,
         closePopUp: closePopUp,
 
-        //Documented public methods
+        // Documented public methods
         allowInsert: allowInsert,
         allowDelete: allowDelete,
         readOnly: readOnly,
@@ -1489,7 +1517,5 @@ sg.optionalFieldControl = function () {
         dirty: dirty,
         commit: commit,
         refresh: refresh,
-        focusOut: focusOut,
-        outOfFocus: outOfFocus
     };
 }();

@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 /**
@@ -935,9 +935,7 @@ $.extend(sg.utls.kndoUI, {
             numericTextBoxDataValue = numericTextBoxData;
         }
 
-        $(numericTextBoxDataValue).off("input");
-        
-        $(numericTextBoxDataValue).on("input", function (e) {
+        const eventHandler = () => {
             var val = numericTextBoxDataValue.val();
             var decimalSeparator = kendo.culture().numberFormat['.'];
             var parts = val.split(decimalSeparator);
@@ -961,7 +959,10 @@ $.extend(sg.utls.kndoUI, {
                     }
                 }
             }
-        });
+        };
+
+        $(numericTextBoxDataValue).off("input", eventHandler);
+        $(numericTextBoxDataValue).on("input", eventHandler);
     },
 
     /**

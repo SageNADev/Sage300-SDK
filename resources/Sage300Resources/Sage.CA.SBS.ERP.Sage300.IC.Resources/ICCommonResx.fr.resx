@@ -146,7 +146,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="AdditionalItemInformation" xml:space="preserve">
-    <value>Info supplémentaire de l'article</value>
+    <value>Info supplémentaire de l’article</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Address" xml:space="preserve">
@@ -202,11 +202,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="AllowLotQtyDif" xml:space="preserve">
-    <value>Permettre quantité numéros de lot d'être différente de celle dans les saisies</value>
+    <value>Permettre quantité numéros de lot d’être différente de celle dans les saisies</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="AllowSerQtyDif" xml:space="preserve">
-    <value>Permettre quantité numéros de série d'être différente de celle dans les saisies</value>
+    <value>Permettre quantité numéros de série d’être différente de celle dans les saisies</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Amount" xml:space="preserve">
@@ -406,7 +406,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="CostingError" xml:space="preserve">
-    <value>Un problème est survenu et l'évaluation des coûts n'a pas pu être terminée.</value>
+    <value>Un problème est survenu et l’évaluation des coûts n’a pas pu être terminée.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="CostingMeterCaption" xml:space="preserve">
@@ -498,11 +498,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="DeletePriceCheckDef" xml:space="preserve">
-    <value>Supprimer la vérification du prix pour l'utilisateur par défaut?</value>
+    <value>Supprimer la vérification du prix pour l’utilisateur par défaut?</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="DeleteWorksheet" xml:space="preserve">
-    <value>Supprimer la feuille de calcul de l'inventaire pour l'emplacement {0}?</value>
+    <value>Supprimer la feuille de calcul de l’inventaire pour l’emplacement {0}?</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Detail" xml:space="preserve">
@@ -594,19 +594,19 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorAdjPluralNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série ajustés doivent être un multiple de {0}. Vous avez ajusté {1} numéros de série. {2} n'est pas un multiple de {3}.</value>
+    <value>Les numéros de série ajustés doivent être un multiple de {0}. Vous avez ajusté {1} numéros de série. {2} n’est pas un multiple de {3}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorAdjSingleNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série ajustés doivent être un multiple de {0}. Vous avez ajusté 1 numéro de série. 1 n'est pas un multiple de {1}.</value>
+    <value>Les numéros de série ajustés doivent être un multiple de {0}. Vous avez ajusté 1 numéro de série. 1 n’est pas un multiple de {1}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorAlcPluralNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série alloués doivent être un multiple de {0}. Vous avez alloué {1} numéros de série. {2} n'est pas un multiple de {3}.</value>
+    <value>Les numéros de série alloués doivent être un multiple de {0}. Vous avez alloué {1} numéros de série. {2} n’est pas un multiple de {3}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorAlcSingleNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série alloués doivent être un multiple de {0}. Vous avez alloué 1 numéro de série. 1 n'est pas un multiple de {1}.</value>
+    <value>Les numéros de série alloués doivent être un multiple de {0}. Vous avez alloué 1 numéro de série. 1 n’est pas un multiple de {1}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorConvOverflow" xml:space="preserve">
@@ -630,11 +630,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorGenPluralNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série créés doivent être un multiple de {0}. Vous avez créé {1} numéros de série. {2} n'est pas un multiple de {3}.</value>
+    <value>Les numéros de série créés doivent être un multiple de {0}. Vous avez créé {1} numéros de série. {2} n’est pas un multiple de {3}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorGenSingleNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série créés doivent être un multiple de {0}. Vous avez créé 1 numéro de série. 1 n'est pas un multiple de {1}.</value>
+    <value>Les numéros de série créés doivent être un multiple de {0}. Vous avez créé 1 numéro de série. 1 n’est pas un multiple de {1}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorNoClearHistory" xml:space="preserve">
@@ -650,11 +650,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorNoWorksheetGenerated" xml:space="preserve">
-    <value>Il n'y a aucune feuille de calcul de l'inventaire créée pour cet emplacement.</value>
+    <value>Il n’y a aucune feuille de calcul de l’inventaire créée pour cet emplacement.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorPriceListNotExist" xml:space="preserve">
-    <value>Le code de la liste de prix n'existe pas.</value>
+    <value>Le code de la liste de prix n’existe pas.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorReportExt" xml:space="preserve">
@@ -662,15 +662,15 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorRetPluralNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série extournés doivent être un multiple de {0}. Vous avez extourné {1} numéros de série. {2} n'est pas un multiple de {3}.</value>
+    <value>Les numéros de série extournés doivent être un multiple de {0}. Vous avez extourné {1} numéros de série. {2} n’est pas un multiple de {3}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorRetSingleNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série extournés doivent être un multiple de {0}. Vous avez extourné 1 numéro de série. 1 n'est pas un multiple de {1}.</value>
+    <value>Les numéros de série extournés doivent être un multiple de {0}. Vous avez extourné 1 numéro de série. 1 n’est pas un multiple de {1}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorSelectOneCostingMethod" xml:space="preserve">
-    <value>Vous devez au moins sélectionner une méthode d'évaluation des stocks au coût.</value>
+    <value>Vous devez au moins sélectionner une méthode d’évaluation des stocks au coût.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorSerialDoesExist" xml:space="preserve">
@@ -678,19 +678,19 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorShpPluralNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série expédiés doivent être un multiple de {0}. Vous avez expédié {1} numéros de série. {2} n'est pas un multiple de {3}.</value>
+    <value>Les numéros de série expédiés doivent être un multiple de {0}. Vous avez expédié {1} numéros de série. {2} n’est pas un multiple de {3}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorShpSingleNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série expédiés doivent être un multiple de {0}. Vous avez expédié 1 numéro de série. 1 n'est pas un multiple de {1}.</value>
+    <value>Les numéros de série expédiés doivent être un multiple de {0}. Vous avez expédié 1 numéro de série. 1 n’est pas un multiple de {1}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorXfrPluralNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série virés doivent être un multiple de {0}. Vous avez viré {1} numéros de série. {2} n'est pas un multiple de {3}.</value>
+    <value>Les numéros de série virés doivent être un multiple de {0}. Vous avez viré {1} numéros de série. {2} n’est pas un multiple de {3}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ErrorXfrSingleNotMultipleOf" xml:space="preserve">
-    <value>Les numéros de série virés doivent être un multiple de {0}. Vous avez viré 1 numéro de série. 1 n'est pas un multiple de {1}.</value>
+    <value>Les numéros de série virés doivent être un multiple de {0}. Vous avez viré 1 numéro de série. 1 n’est pas un multiple de {1}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ExchangeRate" xml:space="preserve">
@@ -750,7 +750,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="FromLocation" xml:space="preserve">
-    <value>De l'emplacement</value>
+    <value>De l’emplacement</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="FromPriceList" xml:space="preserve">
@@ -770,7 +770,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="FromYear" xml:space="preserve">
-    <value>De l'exercice</value>
+    <value>De l’exercice</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="FunctionalCurrency" xml:space="preserve">
@@ -866,7 +866,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="InUnitStock" xml:space="preserve">
-    <value>en unité de mesure de stockage de l'article</value>
+    <value>en unité de mesure de stockage de l’article</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="InWeightUnitDefault" xml:space="preserve">
@@ -970,7 +970,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="MappingItemNotSelected" xml:space="preserve">
-    <value>L'article {0} existe en stock comme {1}, mais il est également un numéro d'article du fabricant pour {2}. Si vous saisissez {0}, {2} ne sera pas sélectionné automatiquement.</value>
+    <value>L’article {0} existe en stock comme {1}, mais il est également un numéro d’article du fabricant pour {2}. Si vous saisissez {0}, {2} ne sera pas sélectionné automatiquement.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="MarginBase" xml:space="preserve">
@@ -1054,7 +1054,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="NotAutoGenerate" xml:space="preserve">
-    <value>Création automatique des numéros de série ne s'est pas terminée. Vous devez saisir un nouveau numéro de série.</value>
+    <value>Création automatique des numéros de série ne s’est pas terminée. Vous devez saisir un nouveau numéro de série.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="NotAvailable" xml:space="preserve">
@@ -1066,11 +1066,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="NotGenerate" xml:space="preserve">
-    <value>Le numéro de série suivant n'a pu être créé. Vous devez saisir un nouveau numéro de série.</value>
+    <value>Le numéro de série suivant n’a pu être créé. Vous devez saisir un nouveau numéro de série.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="NotGenerateSingle" xml:space="preserve">
-    <value>Le numéro de série suivant n'a pu être créé.</value>
+    <value>Le numéro de série suivant n’a pu être créé.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="NullDate" xml:space="preserve">
@@ -1082,7 +1082,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="OpenReportDlgTitle" xml:space="preserve">
-    <value>Ouvrir fichier d'états à imprimer</value>
+    <value>Ouvrir fichier d’états à imprimer</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="OpenScreen" xml:space="preserve">
@@ -1226,7 +1226,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="PrintSetup" xml:space="preserve">
-    <value>Mise en page de l'impression...</value>
+    <value>Mise en page de l’impression...</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="PrintTransList" xml:space="preserve">
@@ -1242,7 +1242,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="PromptDelete" xml:space="preserve">
-    <value>Voulez-vous supprimer ce {0} après le report? Si vous choisissez Oui, vous ne pourrez ni consulter les détails, ni effectuer de zoom avant vers ceux-ci depuis Grand livre. Si vous choisissez Non, vous pouvez supprimer {2} à l'aide de Effacer l'historique.</value>
+    <value>Voulez-vous supprimer ce {0} après le report? Si vous choisissez Oui, vous ne pourrez ni consulter les détails, ni effectuer de zoom avant vers ceux-ci depuis Grand livre. Si vous choisissez Non, vous pouvez supprimer {2} à l’aide de Effacer l’historique.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="PurchaseTaxClass" xml:space="preserve">
@@ -1410,7 +1410,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="RoundingMethod" xml:space="preserve">
-    <value>Méthode d'arrondi</value>
+    <value>Méthode d’arrondi</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="RoundtoaMultipleof" xml:space="preserve">
@@ -1458,7 +1458,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="SaveChanges" xml:space="preserve">
-    <value>Voulez-vous sauvegarder les modifications apportées à l'article {0}?</value>
+    <value>Voulez-vous sauvegarder les modifications apportées à l’article {0}?</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="SaveDetail" xml:space="preserve">
@@ -1490,7 +1490,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="SelectNearestMatchingSN" xml:space="preserve">
-    <value>Le numéro de série {0} n'existe pas. Sélectionner le numéro de série suivant {1}?</value>
+    <value>Le numéro de série {0} n’existe pas. Sélectionner le numéro de série suivant {1}?</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="SelectProcess" xml:space="preserve">
@@ -1642,7 +1642,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ThroughDayEndNumber" xml:space="preserve">
-    <value>Jusqu'à numéro clôture journalière</value>
+    <value>Jusqu’à numéro clôture journalière</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="To" xml:space="preserve">
@@ -1817,7 +1817,7 @@
     <value>Supprimer la ou les lignes sélectionnées?</value>
   </data>
   <data name="DeleteFailedMessage" xml:space="preserve">
-    <value>{0} {1} et tous les enregistrements suivants n'ont pas été supprimés car {0} {1} est utilisé dans l'enregistrement d'un article.</value>
+    <value>{0} {1} et tous les enregistrements suivants n’ont pas été supprimés car {0} {1} est utilisé dans l’enregistrement d’un article.</value>
     <comment>Validation Error. {0} is field name and {1} filed value name.</comment>
   </data>
   <data name="InvalidLength" xml:space="preserve">
@@ -1840,7 +1840,7 @@
     <value>Année civile</value>
   </data>
   <data name="ChangeAtYearEndMessage" xml:space="preserve">
-    <value>Vous devriez modifier cette option seulement à la fin de l'exercice. Si vous le faites à mi-chemin de l'exercice, modifiez les statistiques pour rectifier les totaux de chaque période.</value>
+    <value>Vous devriez modifier cette option seulement à la fin de l’exercice. Si vous le faites à mi-chemin de l’exercice, modifiez les statistiques pour rectifier les totaux de chaque période.</value>
   </data>
   <data name="DisassemblyNumber" xml:space="preserve">
     <value>Numéro désassemblage</value>
@@ -1889,7 +1889,7 @@
     <value>Numéro réception du transfert</value>
   </data>
   <data name="WarningSeparatorOnOff" xml:space="preserve">
-    <value>Après avoir modifié la configuration d'un séparateur d'articles pour que celui-ci ne puisse plus être utilisé, vous ne pourrez pas réautoriser son utilisation. Voulez-vous poursuivre?</value>
+    <value>Après avoir modifié la configuration d’un séparateur d’articles pour que celui-ci ne puisse plus être utilisé, vous ne pourrez pas réautoriser son utilisation. Voulez-vous poursuivre?</value>
   </data>
   <data name="Weekly" xml:space="preserve">
     <value>Hebdomadaire</value>
@@ -1911,7 +1911,7 @@
     <comment>Added to display Separator in Item Separator grid Header</comment>
   </data>
   <data name="ItemSeparatorHyphen" xml:space="preserve">
-    <value>- Trait d'union</value>
+    <value>- Trait d’union</value>
     <comment>Added to display Hyphen in Item Separator grid</comment>
   </data>
   <data name="ItemSeparatorLeftParenthesis" xml:space="preserve">
@@ -1958,7 +1958,7 @@
     <comment>GL -Account</comment>
   </data>
   <data name="InventoryControlFromLocation" xml:space="preserve">
-    <value>Gestion stocks (De l'emplacement)</value>
+    <value>Gestion stocks (De l’emplacement)</value>
     <comment>GL -Account</comment>
   </data>
   <data name="InventoryControlGitLocation" xml:space="preserve">
@@ -1970,11 +1970,11 @@
     <comment>GL -Account</comment>
   </data>
   <data name="InventoryControlToLocation" xml:space="preserve">
-    <value>Gestion stocks (À l'emplacement)</value>
+    <value>Gestion stocks (À l’emplacement)</value>
     <comment>GL -Account</comment>
   </data>
   <data name="NonStockClearing" xml:space="preserve">
-    <value>Compte d'attente hors stock</value>
+    <value>Compte d’attente hors stock</value>
     <comment>GL -Account</comment>
   </data>
   <data name="PayablesClearing" xml:space="preserve">
@@ -1982,11 +1982,11 @@
     <comment>GL -Account </comment>
   </data>
   <data name="TransferClearing" xml:space="preserve">
-    <value>Compte d'attente transfert</value>
+    <value>Compte d’attente transfert</value>
     <comment>GL -Account</comment>
   </data>
   <data name="InvalidSegment" xml:space="preserve">
-    <value>Le code de segment n'est pas défini dans Grand livre.</value>
+    <value>Le code de segment n’est pas défini dans Grand livre.</value>
   </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>Adresse ligne 1</value>
@@ -2071,13 +2071,13 @@
     <value>Avertissement</value>
   </data>
   <data name="TaxAuthNotExist" xml:space="preserve">
-    <value>L'autorité fiscale n'existe pas</value>
+    <value>L’autorité fiscale n’existe pas</value>
   </data>
   <data name="SalesTaxClassNotExist" xml:space="preserve">
     <value>La classe de taxe de vente spécifiée est introuvable.</value>
   </data>
   <data name="PurchaseTaxClassNotExist" xml:space="preserve">
-    <value>La classe de taxe d'achat spécifiée est introuvable.</value>
+    <value>La classe de taxe d’achat spécifiée est introuvable.</value>
   </data>
   <data name="FaxNumber" xml:space="preserve">
     <value>Numéro de fax</value>
@@ -2111,7 +2111,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="NotInRange" xml:space="preserve">
-    <value>{0} n'est pas dans la plage: {1} - {2}.</value>
+    <value>{0} n’est pas dans la plage: {1} - {2}.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="MustBeBetween" xml:space="preserve">
@@ -2131,7 +2131,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="RecordExists" xml:space="preserve">
-    <value>L'enregistrement existe</value>
+    <value>L’enregistrement existe</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="WeightAmounts" xml:space="preserve">
@@ -2150,13 +2150,13 @@
     <comment>Added for finder</comment>
   </data>
   <data name="ItemSummary" xml:space="preserve">
-    <value>Sommaire numéro d'article</value>
+    <value>Sommaire numéro d’article</value>
   </data>
   <data name="PriceSummary" xml:space="preserve">
     <value>Sommaire de liste de prix</value>
   </data>
   <data name="RecordDoesNotExist" xml:space="preserve">
-    <value>{0}  et "{1}" n'existe pas.</value>
+    <value>{0}  et "{1}" n’existe pas.</value>
   </data>
   <data name="StartEndValueMessage" xml:space="preserve">
     <value>La valeur de début est supérieure à la valeur de fin.</value>
@@ -2174,7 +2174,7 @@
     <value>Prix unitaire calculé</value>
   </data>
   <data name="CheckItemExistence" xml:space="preserve">
-    <value>Vérifier existence de l'article</value>
+    <value>Vérifier existence de l’article</value>
   </data>
   <data name="ExpirationDate" xml:space="preserve">
     <value>Date d’expiration</value>
@@ -2246,7 +2246,7 @@
     <value>Type saisie</value>
   </data>
   <data name="FromLocationName" xml:space="preserve">
-    <value>De nom d'emplacement</value>
+    <value>De nom d’emplacement</value>
   </data>
   <data name="GITLocation" xml:space="preserve">
     <value>Emplacement MET</value>
@@ -2264,7 +2264,7 @@
     <value>Code source</value>
   </data>
   <data name="ToLocationName" xml:space="preserve">
-    <value>À nom d'emplacement</value>
+    <value>À nom d’emplacement</value>
   </data>
   <data name="UnformattedItemNumber" xml:space="preserve">
     <value>Numéro article non formaté</value>
@@ -2333,10 +2333,10 @@
     <value>Mouvement inter stocks</value>
   </data>
   <data name="InsertItemLotOptionalFields" xml:space="preserve">
-    <value>Insérer champs optionnels d'article de lot</value>
+    <value>Insérer champs optionnels d’article de lot</value>
   </data>
   <data name="InsertItemSerialOptionalFields" xml:space="preserve">
-    <value>Insérer champs optionnels d'article en série</value>
+    <value>Insérer champs optionnels d’article en série</value>
   </data>
   <data name="InsertOptionalFields" xml:space="preserve">
     <value>Insérer champs optionnels</value>
@@ -2567,7 +2567,7 @@
     <comment>Used for post warning</comment>
   </data>
   <data name="PostWarning3" xml:space="preserve">
-    <value>Si vous choisissez Non, vous pouvez supprimer le {0} dans l'écran Effacer l'historique de GS.</value>
+    <value>Si vous choisissez Non, vous pouvez supprimer le {0} dans l’écran Effacer l’historique de GS.</value>
     <comment>Used for post warning</comment>
   </data>
   <data name="Date" xml:space="preserve">
@@ -2580,10 +2580,10 @@
     <value>Unités de mesure de poids</value>
   </data>
   <data name="IsInvalid" xml:space="preserve">
-    <value>n'est pas valide</value>
+    <value>n’est pas valide</value>
   </data>
   <data name="DateOutOfRange" xml:space="preserve">
-    <value>La date saisie est hors de la plage spécifiée dans le profil de l'entreprise. Accepter cette date?</value>
+    <value>La date saisie est hors de la plage spécifiée dans le profil de l’entreprise. Accepter cette date?</value>
     <comment>Date Range validation</comment>
   </data>
   <data name="DeletedRecord" xml:space="preserve">
@@ -2627,7 +2627,7 @@
     <value>Date dernier coût standard</value>
   </data>
   <data name="LeadTimeSIA" xml:space="preserve">
-    <value>Délai d'approvisionnement (SIA)</value>
+    <value>Délai d’approvisionnement (SIA)</value>
   </data>
   <data name="NumberOfUncostedTransactions" xml:space="preserve">
     <value>Nombre de transactions sans coût évalué</value>
@@ -2710,7 +2710,7 @@
     <value>Coût quantité disponible</value>
   </data>
   <data name="OriginalCost" xml:space="preserve">
-    <value>Coût d'origine</value>
+    <value>Coût d’origine</value>
   </data>
   <data name="OriginalQuantity" xml:space="preserve">
     <value>Quantité initiale</value>
@@ -2731,7 +2731,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="InventoryManufacturedItemMessage" xml:space="preserve">
-    <value>L'article {0} existe en stock en tant que {1}, mais est aussi le numéro d'article du fournisseur pour {2}. {2} ne sera pas sélectionné automatiquement si vous saisissez {0}.</value>
+    <value>L’article {0} existe en stock en tant que {1}, mais est aussi le numéro d’article du fournisseur pour {2}. {2} ne sera pas sélectionné automatiquement si vous saisissez {0}.</value>
   </data>
   <data name="NoDrillDownInfo" xml:space="preserve">
     <value>Aucune donnée de zoom avant pour cet enregistrement.</value>
@@ -2741,7 +2741,7 @@
     <value>*** NOUVEAU ***</value>
   </data>
   <data name="NotallowedTodrilldown" xml:space="preserve">
-    <value>Vous n'êtes pas autorisé à réaliser un zoom avant vers</value>
+    <value>Vous n’êtes pas autorisé à réaliser un zoom avant vers</value>
     <comment>Error Message</comment>
   </data>
   <data name="NoParentDrilDown" xml:space="preserve">
@@ -2752,7 +2752,7 @@
     <value>Le taux de change saisi est hors de la plage spécifiée dans les tables de devises. Voulez-vous continuer?</value>
   </data>
   <data name="NumberOfLabels" xml:space="preserve">
-    <value>Nombre d'étiquettes</value>
+    <value>Nombre d’étiquettes</value>
   </data>
   <data name="PrintedString" xml:space="preserve">
     <value>Chaîne imprimée</value>
@@ -2770,7 +2770,7 @@
     <comment>Screen Name -Temporary Uses</comment>
   </data>
   <data name="ICCompanyLockMessage" xml:space="preserve">
-    <value>Vous ne pourrez pas {0} tant que tous les autres utilisateurs n'auront pas quitté Gestion des stocks et tant que tous les autres écrans de Gestion des stocks ne seront pas fermés pour cette entreprise.</value>
+    <value>Vous ne pourrez pas {0} tant que tous les autres utilisateurs n’auront pas quitté Gestion des stocks et tant que tous les autres écrans de Gestion des stocks ne seront pas fermés pour cette entreprise.</value>
   </data>
   <data name="Invoices" xml:space="preserve">
     <value>Factures</value>
@@ -2786,5 +2786,8 @@
   </data>
   <data name="LastProcessedTime" xml:space="preserve">
     <value>Heure du dernier traitement</value>
+  </data>
+  <data name="FractionalQuantityWarning" xml:space="preserve">
+    <value>Si vous choisissez d’autoriser les quantités fractionnaires, vous ne pourrez pas changer cette option par la suite. Voulez-vous vraiment autoriser les quantités fractionnaires?</value>
   </data>
 </root>
