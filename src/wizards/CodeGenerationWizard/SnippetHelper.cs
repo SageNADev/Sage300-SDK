@@ -104,6 +104,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     GridRazorView(depth, controlElement, snippet);
                 }
+                else if (controlElement.Attribute("widget").Value.Equals("Button"))
+                {
+                    ButtonRazorView(depth, controlElement, snippet);
+                }
                 else if (controlElement.Attribute("widget").Value.Equals("Tab"))
                 {
                     var entityName = isHeaderDetails? settings.EntitiesContainerName : view.Properties[BusinessView.Constants.EntityName];
@@ -359,6 +363,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
+        /// <summary>
+        /// Numeric Snippet Razor View
+        /// </summary>
+        /// <param name="depth">Indentation for generation</param>
+        /// <param name="controlElement">XML element</param>
+        /// <param name="snippet">Snippet being constructed</param>
+        /// <param name="view">Business View</param>
         private static void NumericRazorView(int depth, XElement controlElement, StringBuilder snippet, BusinessView view)
         {
             var property = controlElement.Attribute("property").Value;
@@ -370,16 +381,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Ko Sage Numeric Box For snippet
+        /// Button Snippet Razor View
         /// </summary>
-        /// <param name="property">Property Name</param>
-        /// <param name="name">Class Name</param>
-        private static string KoSageNumericBoxFor(string property, string name)
+        /// <param name="depth">Indentation for generation</param>
+        /// <param name="controlElement">XML element</param>
+        /// <param name="snippet">Snippet being constructed</param>
+        private static void ButtonRazorView(int depth, XElement controlElement, StringBuilder snippet)
         {
-            return "@Html.KoSageNumericBoxFor(model => model.Data." + property +
-                ", new { @value = \"Data." + property + "\", @sagevalue = \"Data." + property +
-                "\", @sagedisable = \"Data.Is" + property + "Disabled\" }, new { @id = \"nbr" + property +
-                "\", @class = \"" + name + "\" })";
+            var id = controlElement.Attribute("id").Value;
+            var text = controlElement.Attribute("text").Value;
+
+            snippet.AppendLine(new string(' ', depth * 4) + StartingTag(DIV, "button-group no-label"));
+            snippet.AppendLine(new string(' ', (depth + 1) * 4) + KoSageButton(id, text));
+            snippet.AppendLine(new string(' ', depth * 4) + EndingTag(DIV));
         }
 
         /// <summary>
@@ -511,6 +525,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 foreach (var widget in settings.Widgets["Dropdown"])
                 {
                     snippet.AppendLine(new string(' ', depth) + "sg.utls.kndoUI.dropDownList(\"ddl" + widget + "\");");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Init Buttons Snippet JavaScript
+        /// </summary>
+        /// <param name="depth">Indentation for generation</param>
+        /// <param name="settings">Settings object</param>
+        /// <param name="snippet">Snippet being constructed</param>
+        /// <returns>Code snippet or empty if none</returns>
+        public static void InitButtonsJavaScript(int depth, Settings settings, StringBuilder snippet)
+        {
+            // Iterate button widgets, if any
+            if (settings.Widgets.ContainsKey("Button"))
+            {
+                foreach (var widget in settings.Widgets["Button"])
+                {
+                    snippet.AppendLine(new string(' ', depth));
+                    snippet.AppendLine(new string(' ', depth) + "$(\"#" + widget + "\").bind('click', function (e) {");
+                    snippet.AppendLine(new string(' ', depth) + "});");
                 }
             }
         }
@@ -648,7 +683,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 ", " + localEntityName + "UI." + localEntityName + "Model.isModelDirty, null);");
             snippet.AppendLine(new string(' ', depth) + "}");
         }
-
 
         /// <summary>
         /// Init Numeric Textboxes Snippet JavaScript
@@ -1006,15 +1040,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary>
         /// Ko Sage Button snippet
         /// </summary>
-        /// <param name="property">Property Name</param>
         /// <param name="id">ID</param>
-        /// <param name="name">Class Name</param>
-        /// <param name="index">Tab Index</param>
-        private static string KoSageButton(string property, string id, string name, int index)
+        /// <param name="text">Button text</param>
+        private static string KoSageButton(string id, string text)
         {
-            return "@Html.KoSageButton(\"" + id + property + 
-                "\", null, new { @id = \"" + id + property + "\", @class = \"" + name + 
-                "\", @tabindex = \"" + index.ToString() + "\" })";
+            return "@Html.KoSageButton(\"" + id + "\", null, new { @id = \"" + id + "\", " + 
+                "@class = \"btn btn-primary\", @value = \"" + text + "\" })";
         }
 
         /// <summary>
@@ -1281,17 +1312,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var isRequired = businessField != null && businessField.IsRequired;
 
             return isRequired ? ", labelHtmlAttrs: new { @class = \"required\" }" : "";
-        }
-
-        /// <summary>
-        /// Get the required switch
-        /// </summary>
-        /// <param name="field">Business Field</param>
-        /// <returns>Required switch</returns>
-        private static string GetRequiredSwitch(BusinessField field)
-        {
-            // Get the IsRequired from the business field
-            return $"IsRequired = {(field != null && field.IsRequired).ToString().ToLower()}";
         }
 
         /// <summary>

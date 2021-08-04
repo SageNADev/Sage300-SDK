@@ -628,4 +628,10 @@
   <data name="InvalidFinderConfig" xml:space="preserve">
     <value>A finder has been designed for a property but a finder definition has not been selected. Please select a finder definition.</value>
   </data>
+  <data name="ButtonControl" xml:space="preserve">
+    <value>Add Button Control</value>
+  </data>
+  <data name="Checkbox" xml:space="preserve">
+    <value>Checkbox</value>
+  </data>
 </root>
