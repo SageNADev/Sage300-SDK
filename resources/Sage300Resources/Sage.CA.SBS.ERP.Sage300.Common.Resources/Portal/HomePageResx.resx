@@ -1457,4 +1457,7 @@
   <data name="ViewWidgets" xml:space="preserve">
     <value>View Widgets</value>
   </data>
+  <data name="PJC" xml:space="preserve">
+    <value>PJC</value>
+  </data>
 </root>

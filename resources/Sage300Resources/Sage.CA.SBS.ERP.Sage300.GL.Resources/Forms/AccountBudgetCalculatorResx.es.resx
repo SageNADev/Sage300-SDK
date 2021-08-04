@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Period01InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 01</value>
+  </data>
+  <data name="Period12InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 12</value>
+  </data>
+  <data name="AddTo" xml:space="preserve">
+    <value>Agregar a</value>
+  </data>
+  <data name="Period02InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 02</value>
+  </data>
+  <data name="Period06WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 06</value>
+  </data>
+  <data name="CopyWithAmountIncrease" xml:space="preserve">
+    <value>Copiar con Incremento del Monto</value>
+  </data>
+  <data name="PeriodEnd" xml:space="preserve">
+    <value>Fin de Período</value>
+  </data>
+  <data name="CopyWithProratedSpread" xml:space="preserve">
+    <value>Copiar con Dispersión Prorrateada</value>
+  </data>
+  <data name="BudgetMethodCode" xml:space="preserve">
+    <value>Código del Método de Presupuesto</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>LM - Mantenimiento de Presupuesto</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Monto Total</value>
+  </data>
+  <data name="Period04WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 04</value>
+  </data>
+  <data name="PeriodStart" xml:space="preserve">
+    <value>Inicio de Período</value>
+  </data>
+  <data name="Period12WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 12</value>
+  </data>
+  <data name="Period08WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 08</value>
+  </data>
+  <data name="CopyWithPercentIncrease" xml:space="preserve">
+    <value>Copiar con Incremento Porcentual</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>Reemplazar</value>
+  </data>
+  <data name="Period05WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 05</value>
+  </data>
+  <data name="Period14InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 14</value>
+  </data>
+  <data name="BaseWithPercentIncrease" xml:space="preserve">
+    <value>Base con Incremento Porcentual</value>
+  </data>
+  <data name="FixedAmount" xml:space="preserve">
+    <value>Monto Fijo</value>
+  </data>
+  <data name="Period06InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 06</value>
+  </data>
+  <data name="Period14WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 14</value>
+  </data>
+  <data name="Period10WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 10</value>
+  </data>
+  <data name="InputAmount" xml:space="preserve">
+    <value>Ingresar el Monto</value>
+  </data>
+  <data name="Period04InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 04</value>
+  </data>
+  <data name="InputIncreaseAmount" xml:space="preserve">
+    <value>Ingresar el Incremento del Monto</value>
+  </data>
+  <data name="Period05InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 05</value>
+  </data>
+  <data name="BaseWithAmountIncrease" xml:space="preserve">
+    <value>Base con Incremento del Monto</value>
+  </data>
+  <data name="SpreadAmount" xml:space="preserve">
+    <value>Monto Prorrateado</value>
+  </data>
+  <data name="InputIncreasePercent" xml:space="preserve">
+    <value>Ingresar el Incremento Porcentual</value>
+  </data>
+  <data name="Period01WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 01</value>
+  </data>
+  <data name="Period09WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 09</value>
+  </data>
+  <data name="Period11WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 11</value>
+  </data>
+  <data name="Period07InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 07</value>
+  </data>
+  <data name="Period10InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 10</value>
+  </data>
+  <data name="Period13InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 13</value>
+  </data>
+  <data name="Period03WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 03</value>
+  </data>
+  <data name="Period11InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 11</value>
+  </data>
+  <data name="Period08InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 08</value>
+  </data>
+  <data name="CopyAsIs" xml:space="preserve">
+    <value>Copiar Como Está</value>
+  </data>
+  <data name="Period13WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 13</value>
+  </data>
+  <data name="Period09InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 09</value>
+  </data>
+  <data name="Period02WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 02</value>
+  </data>
+  <data name="Period07WorkAmount" xml:space="preserve">
+    <value>Monto de Trabajo del Período 07</value>
+  </data>
+  <data name="TypeOfUpdate" xml:space="preserve">
+    <value>Tipo de Actualización</value>
+  </data>
+  <data name="Period03InquiryAmount" xml:space="preserve">
+    <value>Monto de Consulta del Período 03</value>
+  </data>
+  <data name="BudgetMethod" xml:space="preserve">
+    <value>Método de Presupuesto</value>
+  </data>
+  <data name="FiscalSetLookup" xml:space="preserve">
+    <value>Consulta de Saldo Fiscal</value>
+  </data>
+  <data name="BudgetSet" xml:space="preserve">
+    <value>Presupuesto</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Moneda</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>Tipo de Moneda</value>
+  </data>
+  <data name="FiscalSet" xml:space="preserve">
+    <value>Saldo Fiscal</value>
+  </data>
+  <data name="TotalBudgetAmount" xml:space="preserve">
+    <value>Monto de Presupuesto Total</value>
+  </data>
+  <data name="TotalInquiryAmount" xml:space="preserve">
+    <value>Total del Saldo Fiscal</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Año</value>
+  </data>
+  <data name="BudgetMaintenance" xml:space="preserve">
+    <value>Mantenimiento de Presupuesto</value>
+  </data>
+  <data name="AccountNotDefinedMessage" xml:space="preserve">
+    <value>La cuenta no está definida en el Libro Mayor.</value>
+  </data>
+  <data name="AccountNotSpecifiedMessage" xml:space="preserve">
+    <value>No se ha especificado cuenta alguna.</value>
+  </data>
+  <data name="AmountIncrease" xml:space="preserve">
+    <value>Incremento del Monto</value>
+  </data>
+  <data name="BaseAmount" xml:space="preserve">
+    <value>Monto Base</value>
+  </data>
+  <data name="BudgetAmount" xml:space="preserve">
+    <value>Monto de Presupuesto</value>
+  </data>
+  <data name="ClearBudgetAmount" xml:space="preserve">
+    <value>Borrar Montos de Presupuesto</value>
+  </data>
+  <data name="ClearBudgetAmountMessage" xml:space="preserve">
+    <value>¿Realmente desea borrar todas los montos de presupuesto a cero?</value>
+  </data>
+  <data name="CurrencyCodeNotDefinedMessage" xml:space="preserve">
+    <value>El código de moneda no está definido en Servicios Comunes.</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Fecha de Fin</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Incremento</value>
+  </data>
+  <data name="InquiryAmount" xml:space="preserve">
+    <value>Monto del Saldo Fiscal</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>Período</value>
+  </data>
+  <data name="BudgetCurrency" xml:space="preserve">
+    <value>Moneda del Presupuesto</value>
+  </data>
+  <data name="Specific" xml:space="preserve">
+    <value>Específico</value>
+  </data>
+  <data name="DifferentCurrenyCodeMessage" xml:space="preserve">
+    <value>Se usan códigos de moneda diferentes en la consulta de presupuestos y en la consulta de saldos fiscales. Por lo tanto, los montos de los presupuestos y de los saldos fiscales serán en monedas diferentes.</value>
+  </data>
+  <data name="DeleteBudgetSet" xml:space="preserve">
+    <value>¿Eliminar este presupuesto {0}?</value>
+  </data>
+  <data name="ShowBudgetAmounts" xml:space="preserve">
+    <value>Mostrar Montos de Presupuestos</value>
+  </data>
+  <data name="ShowFiscalSetAmounts" xml:space="preserve">
+    <value>Mostrar Montos de Saldos Fiscales</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="BudgetAmounts" xml:space="preserve">
+    <value>Cambiar Montos de Presupuestos</value>
+  </data>
+  <data name="BudgetLookup" xml:space="preserve">
+    <value>Consulta de Presupuesto</value>
+  </data>
+  <data name="LockedInfo" xml:space="preserve">
+    <value>No se pueden guardar sus cambios porque este presupuesto está bloqueado. ¿Cambiar los montos del presupuesto?</value>
+  </data>
+  <data name="ModifyLockedBudgetMsg" xml:space="preserve">
+    <value>No se puede cambiar o eliminar este presupuesto porque está bloqueado. Usted puede desbloquear los presuspuestos en la ficha Asentamiento de la pantalla Opciones del LM.</value>
+  </data>
+  <data name="ProratedDiffMessage" xml:space="preserve">
+    <value>El monto de dispersión prorrateado {0} ingresado no es igual a la suma de los montos de presupuesto agregados/reemplazados para cada período {1}</value>
+  </data>
+</root>

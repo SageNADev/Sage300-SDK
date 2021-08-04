@@ -234,7 +234,7 @@
     <comment>PO - Table Column</comment>
   </data>
   <data name="ExpectedShipDate" xml:space="preserve">
-    <value>預期發貨日期</value>
+    <value>預期發運日期</value>
     <comment>Order - Field</comment>
   </data>
   <data name="FromMultipleQUOTES" xml:space="preserve">
@@ -246,7 +246,7 @@
     <comment>Field</comment>
   </data>
   <data name="LastShipmentNo1" xml:space="preserve">
-    <value>上一發貨編號</value>
+    <value>上一發運編號</value>
     <comment>Fieldset Row</comment>
   </data>
   <data name="LessOrderDISCOUNT" xml:space="preserve">
@@ -270,7 +270,7 @@
     <comment>Error</comment>
   </data>
   <data name="MustInvoiceShipmentBeforeAddingPreAuth" xml:space="preserve">
-    <value>一個或更多從此一銷貨單建立的發貨尚未開發票。預授權一個信用卡付款之前，您必須關閉銷貨單分錄螢幕然後為所有從此一銷貨單建立的發貨開發票。</value>
+    <value>一個或更多從此一銷貨單建立的發運尚未開發票。預授權一個信用卡付款之前，您必須關閉銷貨單分錄螢幕然後為所有從此一銷貨單建立的發運開發票。</value>
     <comment>Message</comment>
   </data>
   <data name="NoItemMessage" xml:space="preserve">
@@ -278,11 +278,11 @@
     <comment>Message</comment>
   </data>
   <data name="NoShipWithPreauthMessage" xml:space="preserve">
-    <value>一個信用卡預付款已為此一銷貨單預授權。處理一個付款之前，您必須指定一個發貨數量或一個雜項付款，然後選擇建立發票選項。</value>
+    <value>一個信用卡預付款已為此一銷貨單預授權。處理一個付款之前，您必須指定一個發運數量或一個雜項付款，然後選擇建立發票選項。</value>
     <comment>Message</comment>
   </data>
   <data name="NotAllowCapturePreauthWithIncompleteShipment" xml:space="preserve">
-    <value>一個發運已從預授權銷貨單{0}建立。您必須使用發貨分錄或發票分錄視窗捕捉{1}的預授權支付。</value>
+    <value>一個發運已從預授權銷貨單{0}建立。您必須使用發運分錄或發票分錄視窗捕捉{1}的預授權支付。</value>
     <comment>Message</comment>
   </data>
   <data name="OnHoldClearSerialsLots" xml:space="preserve">
@@ -390,7 +390,7 @@
     <comment>Confirmation</comment>
   </data>
   <data name="PrintFormPrompt" xml:space="preserve">
-    <value>過帳已完成。銷貨單編號：{0}發貨編號：{1}發票編號：{2}是否列印：</value>
+    <value>過帳已完成。銷貨單編號：{0}發運編號：{1}發票編號：{2}是否列印：</value>
     <comment>Message</comment>
   </data>
   <data name="PrintFormPromptNoInvoice" xml:space="preserve">
@@ -426,23 +426,23 @@
     <comment>Confirmation</comment>
   </data>
   <data name="ShipmentActivateTAXCAL" xml:space="preserve">
-    <value>自動稅務計算已關閉，但銷貨單正在部分發貨。不能為一個來自銷售訂單的部分發貨輸入手動稅務金額。是否往下？如果您選擇是，任何手動稅額將被忽略，發運將被建立而開啟自動計稅。該銷貨單的稅費將會重新計算。如果您選擇否，您可以繼續編輯該銷貨單。</value>
+    <value>自動稅務計算已關閉，但銷貨單正在部分發運。不能為一個來自銷售訂單的部分發運輸入手動稅務金額。是否往下？如果您選擇是，任何手動稅額將被忽略，發運將被建立而開啟自動計稅。該銷貨單的稅費將會重新計算。如果您選擇否，您可以繼續編輯該銷貨單。</value>
     <comment>Message</comment>
   </data>
   <data name="ShipmentActivateTAXRPTCAL" xml:space="preserve">
-    <value>自動稅務报告已關閉，但銷貨單正在部分發貨。不能為一個來自銷售訂單的部分發貨輸入手動稅務報告金額。是否往下？如果您選擇是，任何手動稅額將被忽略，發運將被建立而開啟自動計稅。該銷貨單的稅費將會重新計算。如果您選擇否，您可以繼續編輯該銷貨單。</value>
+    <value>自動稅務报告已關閉，但銷貨單正在部分發運。不能為一個來自銷售訂單的部分發運輸入手動稅務報告金額。是否往下？如果您選擇是，任何手動稅額將被忽略，發運將被建立而開啟自動計稅。該銷貨單的稅費將會重新計算。如果您選擇否，您可以繼續編輯該銷貨單。</value>
     <comment>Message</comment>
   </data>
   <data name="ShipmentDetails" xml:space="preserve">
-    <value>發貨明細</value>
+    <value>發運明細</value>
     <comment>Order - Field Head</comment>
   </data>
   <data name="ShipmentsInvoices" xml:space="preserve">
-    <value>發貨/發票</value>
+    <value>發運/發票</value>
     <comment>Modal - Title</comment>
   </data>
   <data name="ShipmentTotal" xml:space="preserve">
-    <value>發貨合計</value>
+    <value>發運合計</value>
     <comment>Prepayment - Field</comment>
   </data>
   <data name="ShipViaCode" xml:space="preserve">
@@ -450,7 +450,7 @@
     <comment>Order - Field</comment>
   </data>
   <data name="ShipViaName" xml:space="preserve">
-    <value>發貨經由名稱</value>
+    <value>發運經由名稱</value>
     <comment>Order - Field</comment>
   </data>
   <data name="SystemBUSY" xml:space="preserve">
@@ -646,7 +646,7 @@
     <comment>Field</comment>
   </data>
   <data name="Allowpartialshipments" xml:space="preserve">
-    <value>執行部分發貨</value>
+    <value>執行部分發運</value>
     <comment>Field</comment>
   </data>
   <data name="AmountDueLessCurrPrepayment" xml:space="preserve">
@@ -1110,7 +1110,7 @@
     <comment>Field</comment>
   </data>
   <data name="OrderPartiallyShipped" xml:space="preserve">
-    <value>銷貨單部分發貨</value>
+    <value>銷貨單部分發運</value>
     <comment>Field</comment>
   </data>
   <data name="OrderPrintStatus" xml:space="preserve">
@@ -1366,7 +1366,7 @@
     <comment>Field</comment>
   </data>
   <data name="RequiresShippingLabels" xml:space="preserve">
-    <value>要求發貨標籤</value>
+    <value>要求發運標籤</value>
     <comment>Field</comment>
   </data>
   <data name="RetainageExchangeRate" xml:space="preserve">
@@ -1446,63 +1446,63 @@
     <comment>Field</comment>
   </data>
   <data name="Shidate" xml:space="preserve">
-    <value>發貨日期</value>
+    <value>發運日期</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentDateMatch" xml:space="preserve">
-    <value>發貨日期匹配</value>
+    <value>發運日期匹配</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentHomeCurrency" xml:space="preserve">
-    <value>發貨本位幣別</value>
+    <value>發運本位幣別</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentHomeCurrencyDesc" xml:space="preserve">
-    <value>發貨本位幣別描述</value>
+    <value>發運本位幣別描述</value>
     <comment>Import/Export</comment>
   </data>
   <data name="ShipmentNumber" xml:space="preserve">
-    <value>發貨編號</value>
+    <value>發運編號</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentRate" xml:space="preserve">
-    <value>發貨匯率</value>
+    <value>發運匯率</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentRateDate" xml:space="preserve">
-    <value>發貨匯率日期</value>
+    <value>發運匯率日期</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentRateOperator" xml:space="preserve">
-    <value>發貨匯率運算子</value>
+    <value>發運匯率運算子</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentRateOverrideFlag" xml:space="preserve">
-    <value>發貨匯率撤換旗標</value>
+    <value>發運匯率撤換旗標</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentRateType" xml:space="preserve">
-    <value>發貨匯率類型</value>
+    <value>發運匯率類型</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentRateTypeDescription" xml:space="preserve">
-    <value>發貨匯率類型描述</value>
+    <value>發運匯率類型描述</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentSourceCurrency" xml:space="preserve">
-    <value>發貨來源幣別</value>
+    <value>發運來源幣別</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentSourceCurrencyDesc" xml:space="preserve">
-    <value>發貨來源幣別描述</value>
+    <value>發運來源幣別描述</value>
     <comment>Import/Export</comment>
   </data>
   <data name="ShipmentSpread" xml:space="preserve">
-    <value>發貨分佈範圍</value>
+    <value>發運分佈範圍</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentTrackingNumber" xml:space="preserve">
-    <value>發貨追蹤編號</value>
+    <value>發運追蹤編號</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentUniquifier" xml:space="preserve">
@@ -1510,7 +1510,7 @@
     <comment>Import/Export</comment>
   </data>
   <data name="ShippingLabelsPrinted" xml:space="preserve">
-    <value>發貨標籤已列印</value>
+    <value>發運標籤已列印</value>
     <comment>Field</comment>
   </data>
   <data name="ShipToContactEmail" xml:space="preserve">
@@ -1650,7 +1650,7 @@
     <comment>Field</comment>
   </data>
   <data name="TaxReportingShipmentTRCurr" xml:space="preserve">
-    <value>稅務報告發貨（TR）幣別</value>
+    <value>稅務報告發運（TR）幣別</value>
     <comment>Field</comment>
   </data>
   <data name="TaxReportingTrCurrency" xml:space="preserve">
@@ -1706,51 +1706,51 @@
     <comment>Import/Export</comment>
   </data>
   <data name="TrExcludedTaxAmount1" xml:space="preserve">
-    <value>稅務報告已排除稅額1</value>
+    <value>稅務報告未含稅金額1</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TrExcludedTaxAmount2" xml:space="preserve">
-    <value>稅務報告已排除稅額2</value>
+    <value>稅務報告未含稅金額2</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRExcludedTaxAmount3" xml:space="preserve">
-    <value>稅務報告已排除稅額3</value>
+    <value>稅務報告未含稅金額3</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRExcludedTaxAmount4" xml:space="preserve">
-    <value>稅務報告已排除稅額4</value>
+    <value>稅務報告未含稅金額4</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRExcludedTaxAmount5" xml:space="preserve">
-    <value>稅務報告已排除稅額5</value>
+    <value>稅務報告未含稅金額5</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRExcludedTaxTotal" xml:space="preserve">
-    <value>稅務報告已排除稅務合計</value>
+    <value>稅務報告未含稅合計</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxAmount1" xml:space="preserve">
-    <value>稅務報告已包括稅額1</value>
+    <value>稅務報告已含稅金額1</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxAmount2" xml:space="preserve">
-    <value>稅務報告已包括稅額2</value>
+    <value>稅務報告已含稅金額2</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxAmount3" xml:space="preserve">
-    <value>稅務報告已包括稅額3</value>
+    <value>稅務報告已含稅金額3</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxAmount4" xml:space="preserve">
-    <value>稅務報告已包括稅額4</value>
+    <value>稅務報告已含稅金額4</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxAmount5" xml:space="preserve">
-    <value>稅務報告已包括稅額5</value>
+    <value>稅務報告已含稅金額5</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxTotal" xml:space="preserve">
-    <value>稅務報告已包括稅務合計</value>
+    <value>稅務報告已含稅合計</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRInvoiceCurrencyDescription" xml:space="preserve">
@@ -1818,39 +1818,39 @@
     <comment>Import/Export</comment>
   </data>
   <data name="TRShipmentCurrencyDescription" xml:space="preserve">
-    <value>稅務報告發貨幣別描述</value>
+    <value>稅務報告發運幣別描述</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRShipmentRate" xml:space="preserve">
-    <value>稅務報告發貨匯率</value>
+    <value>稅務報告發運匯率</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRShipmentRateDate" xml:space="preserve">
-    <value>稅務報告發貨匯率日期</value>
+    <value>稅務報告發運匯率日期</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRShipmentRateDateMatching" xml:space="preserve">
-    <value>稅務報告發貨匯率日期匹配</value>
+    <value>稅務報告發運匯率日期匹配</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRShipmentRateOperator" xml:space="preserve">
-    <value>稅務報告發貨匯率運算子</value>
+    <value>稅務報告發運匯率運算子</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRShipmentRateOverrideFlag" xml:space="preserve">
-    <value>稅務報告發貨匯率撤換旗標</value>
+    <value>稅務報告發運匯率撤換旗標</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRShipmentRateType" xml:space="preserve">
-    <value>稅務報告發貨匯率類型</value>
+    <value>稅務報告發運匯率類型</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRShipmentRateTypeDescriptio" xml:space="preserve">
-    <value>稅務報告發貨匯率類型描述</value>
+    <value>稅務報告發運匯率類型描述</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRShipmentSpread" xml:space="preserve">
-    <value>稅務報告發貨分佈範圍</value>
+    <value>稅務報告發運分佈範圍</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TrSpread" xml:space="preserve">
@@ -1970,7 +1970,7 @@
     <comment>Import/Export</comment>
   </data>
   <data name="ShipmentPostingDate" xml:space="preserve">
-    <value>發貨過帳日期</value>
+    <value>發運過帳日期</value>
     <comment>Field</comment>
   </data>
   <data name="PerformForcedTaxCalculation" xml:space="preserve">
@@ -1982,7 +1982,7 @@
     <comment>Field</comment>
   </data>
   <data name="LastShipmentNumber" xml:space="preserve">
-    <value>上一發貨編號</value>
+    <value>上一發運編號</value>
     <comment>Field</comment>
   </data>
   <data name="TaxRepCurrInvoiceExchRate" xml:space="preserve">
@@ -1994,7 +1994,7 @@
     <comment>Field</comment>
   </data>
   <data name="TaxRepCurrShipmentExchRate" xml:space="preserve">
-    <value>稅務報告幣別發貨匯率</value>
+    <value>稅務報告幣別發運匯率</value>
     <comment>Field</comment>
   </data>
   <data name="TaxReportingCurrency" xml:space="preserve">
@@ -2162,7 +2162,7 @@
     <comment>Message</comment>
   </data>
   <data name="ShipmentsCreatedError" xml:space="preserve">
-    <value>一個或更多從此一銷貨單建立的發貨尚未開發票。預授權一個信用卡付款之前，您必須關閉銷貨單分錄螢幕然後為所有從此一銷貨單建立的發貨開發票。</value>
+    <value>一個或更多從此一銷貨單建立的發運尚未開發票。預授權一個信用卡付款之前，您必須關閉銷貨單分錄螢幕然後為所有從此一銷貨單建立的發運開發票。</value>
     <comment>Message</comment>
   </data>
   <data name="Bank" xml:space="preserve">
@@ -2226,7 +2226,7 @@
     <comment>Field</comment>
   </data>
   <data name="ShipAllMessage" xml:space="preserve">
-    <value>您已經至少在一行上輸入了已發貨數量。是否仍要發運全部產品？如果您選擇是，當您過帳時程式將發運所有可用的產品。如果您選擇否，您可以繼續編輯該數量。</value>
+    <value>您已經至少在一行上輸入了已發運數量。是否仍要發運全部產品？如果您選擇是，當您過帳時程式將發運所有可用的產品。如果您選擇否，您可以繼續編輯該數量。</value>
     <comment>Message</comment>
   </data>
   <data name="Invoice" xml:space="preserve">
@@ -2250,7 +2250,7 @@
     <comment>Confirmation</comment>
   </data>
   <data name="ShipmentPickingSlip" xml:space="preserve">
-    <value>發貨取貨單</value>
+    <value>發運取貨單</value>
     <comment>Field</comment>
   </data>
   <data name="OE0180" xml:space="preserve">
@@ -2446,7 +2446,7 @@
     <comment>Field</comment>
   </data>
   <data name="ExtendedShippedAmtOverride" xml:space="preserve">
-    <value>總已發貨撤換金額</value>
+    <value>總已發運撤換金額</value>
     <comment>Import/Export</comment>
   </data>
   <data name="ExtPriceNetOfDiscIncTax" xml:space="preserve">
@@ -2678,7 +2678,7 @@
     <comment>Field</comment>
   </data>
   <data name="ProcessCommand" xml:space="preserve">
-    <value>進程指令</value>
+    <value>處理指示</value>
     <comment>Field</comment>
   </data>
   <data name="ProjectCode" xml:space="preserve">
@@ -2694,7 +2694,7 @@
     <comment>Field</comment>
   </data>
   <data name="QtyShippedInStockingUOM" xml:space="preserve">
-    <value>以庫存計量單位表示的已發貨數量</value>
+    <value>以庫存計量單位表示的已發運數量</value>
     <comment>Field</comment>
   </data>
   <data name="QuantityInStockingUOM" xml:space="preserve">
@@ -2982,14 +2982,14 @@
     <comment>Field</comment>
   </data>
   <data name="NegativeInventoryWarning" xml:space="preserve">
-    <value>發貨將減少此一地點的產品數量到零以下。是否往下？</value>
+    <value>發運將減少此一地點的產品數量到零以下。是否往下？</value>
     <comment>Message</comment>
   </data>
   <data name="DeliverByDateConfirmation" xml:space="preserve">
-    <value>在此之前送達日期早於預期發貨日期。是否繼續？</value>
+    <value>在此之前送達日期早於預期發運日期。是否繼續？</value>
   </data>
   <data name="ExpectedShipDateConfirmation" xml:space="preserve">
-    <value>預期發貨日期遲於在此之前送達日期。是否繼續？</value>
+    <value>預期發運日期遲於在此之前送達日期。是否繼續？</value>
   </data>
   <data name="MustSavePreauthorization" xml:space="preserve">
     <value>必須過帳此一銷貨單因為一個預授權已在Sage付款解決方案中進行了處理。如果您不過帳該憑證，您必須在Sage Exchange Virtual Terminal中作廢該預付款。</value>
@@ -3002,5 +3002,21 @@
   </data>
   <data name="btnOneClickPreAuth" xml:space="preserve">
     <value>快速預授權</value>
+  </data>
+  <data name="SetLocation" xml:space="preserve">
+    <value>設置地點</value>
+    <comment>button</comment>
+  </data>
+  <data name="SetShipDate" xml:space="preserve">
+    <value>設置發運日期</value>
+    <comment>button</comment>
+  </data>
+  <data name="SetShipDateWarning" xml:space="preserve">
+    <value>是否將所有明細的預期發運日期設定為與訂單的發運日期相同？</value>
+    <comment>confirmation message</comment>
+  </data>
+  <data name="SetLocationWarning" xml:space="preserve">
+    <value>是否將所有明細的地點設定為與訂單的地點相同？  如果該地點不允許為明細指定的產品，明細的地點不會變更。</value>
+    <comment>confirmation message</comment>
   </data>
 </root>

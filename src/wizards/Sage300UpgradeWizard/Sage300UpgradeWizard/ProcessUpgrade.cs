@@ -64,7 +64,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		{
             // Developer Note: This number is one less than the number of steps in the main
             //                 switch statement below.
-            const int WORKINGSTEPS = 2;
+            const int WORKINGSTEPS = 5;
 
             LogSpacerLine('-');
             Log(Resources.BeginUpgradeProcess);
@@ -106,16 +106,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     case 2: if (Constants.PerRelease.SyncWebFiles) { SyncWebFiles(title); } break;
 
                     // Release specific Steps
-                    case 3: if (Constants.PerRelease.ReportUpgrade_For_2021_2) { ReportUpgrade_For_2021_2(title); } break;
+                    //case 3: if (Constants.PerRelease.ReportUpgrade_For_2021_2) { ReportUpgrade_For_2021_2(title); } break;
+
+                    case 3: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
+                    case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
+                    case 5: if (Constants.PerRelease.FinderAlterations) { FinderAlterations(title); } break;
+                    case 6: if (Constants.PerRelease.FinalAlterations) { FinalAlterations(title); } break;
 
                     //
                     // Developer Note: The following are optional steps from previous 
                     //                 incarnations of the Upgrade Wizard
                     //                 They have been left in place for future reference.
                     //
-                    //case 6: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
-                    //case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
-                    //case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
+
                     //case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
                     //case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
                     //case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
@@ -304,6 +307,40 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
+        /// Finder Alterations (2022.0)
+        /// </summary>
+        /// <param name="title">The title of this step</param>
+        private void FinderAlterations(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.UpdatesToFinderAlterationsAreAManualStep;
+            Log(msg);
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Final Alterations (2022.0)
+        /// </summary>
+        /// <param name="title">The title of this step</param>
+        private void FinalAlterations(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.FinalAlterationsAreAManualStep;
+            Log(msg);
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
         /// Add a reference to the new ExportReport.exe located in the Local Sage 300 installation
         /// </summary>
         /// <param name="title">The title of this step</param>
@@ -476,6 +513,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
         /// <summary>
         /// Remove instances of previous jQuery libraries from project folders and any references in the .csproj files
+        /// Developer Note: 
+        ///   Updated Jquery files will be included in web project automatically via wildcard mechanism as follows:
+        ////       <Content Include="Scripts\**" />
         /// </summary>
         /// <param name="title">Title of step being processed </param>
         private void RemovePreviousJqueryLibraries(string title)
@@ -488,18 +528,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             var filesToDelete = new List<string>
             {
                 // jQuery Core
-                "jquery-1.11.3.js",
-                "jquery-1.11.3.min.js",
-                "jquery-1.11.3.intellisense.js",
-                "jquery-1.11.3.min.map",
-
-                // jQuery UI
-                "jquery-ui-1.11.4.js",
-                "jquery-ui-1.11.4.min.js",
+                "jquery-3.4.1.js",
+                "jquery-3.4.1.min.js",
+                "jquery-3.4.1.min.map",
 
                 // jQuery Migrate
-                "jquery-migrate-1.2.1.js",
-                "jquery-migrate-1.2.1.min.js",
+                "jquery-migrate-3.1.0.js",
+                "jquery-migrate-3.1.0.min.js",
             };
 
             foreach (var filename in filesToDelete)

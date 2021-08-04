@@ -1634,7 +1634,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="Taxes" xml:space="preserve">
-    <value>稅費</value>
+    <value>稅務</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Telephone" xml:space="preserve">
@@ -2390,7 +2390,7 @@
     <value>匯率運算</value>
   </data>
   <data name="RateOverride" xml:space="preserve">
-    <value>匯率替換</value>
+    <value>匯率撤換</value>
   </data>
   <data name="ReceiptType" xml:space="preserve">
     <value>進貨類型</value>
@@ -2545,7 +2545,7 @@
     <comment>Used in Import/Export</comment>
   </data>
   <data name="ProcessCommand" xml:space="preserve">
-    <value>處理程序指示</value>
+    <value>處理指示</value>
     <comment>Used in Import/Export</comment>
   </data>
   <data name="RevisionListLineNumber" xml:space="preserve">
@@ -2734,7 +2734,7 @@
     <value>產品{0}作為{1}存在於存貨中，但也是{2}的一個製造商產品編號。如果您輸入{0}，{2}將不會被自動選擇。</value>
   </data>
   <data name="NoDrillDownInfo" xml:space="preserve">
-    <value>無法找到此一記錄的下鑽資訊。</value>
+    <value>無法找到此記錄的下鑽資訊。</value>
     <comment>Message</comment>
   </data>
   <data name="DefaultValue" xml:space="preserve">
@@ -2786,5 +2786,8 @@
   </data>
   <data name="LastProcessedTime" xml:space="preserve">
     <value>上一處理時間</value>
+  </data>
+  <data name="FractionalQuantityWarning" xml:space="preserve">
+    <value>如果您選擇允許非整數數量的選項，以後無法變更。是否確要允許非整數數量？</value>
   </data>
 </root>

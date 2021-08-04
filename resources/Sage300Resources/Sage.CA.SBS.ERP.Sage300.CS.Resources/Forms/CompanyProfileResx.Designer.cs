@@ -124,6 +124,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To use Sage Data &amp; Analytics, you must specify a related web address subdomain on the Company Profile screen..
+        /// </summary>
+        public static string BlankSDAError {
+            get {
+                return ResourceManager.GetString("BlankSDAError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Branch.
         /// </summary>
         public static string Branch {
@@ -601,6 +610,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sage Data &amp; Analytics.
+        /// </summary>
+        public static string SDAHeader {
+            get {
+                return ResourceManager.GetString("SDAHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select Company Logo.
         /// </summary>
         public static string SelectLogo {
@@ -669,6 +687,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string StateProv {
             get {
                 return ResourceManager.GetString("StateProv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web Address Subdomain.
+        /// </summary>
+        public static string Subdomain {
+            get {
+                return ResourceManager.GetString("Subdomain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is part of your unique Sage Data &amp; Analytics web address. The subdomain appears immediately after &quot;https://&quot; and before &quot;.sagedataanalytics.com&quot;..
+        /// </summary>
+        public static string SubdomainTooltip {
+            get {
+                return ResourceManager.GetString("SubdomainTooltip", resourceCulture);
             }
         }
         

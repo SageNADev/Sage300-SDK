@@ -1054,7 +1054,7 @@
     <value>动态问询</value>
   </data>
   <data name="SqlInjectionMessage" xml:space="preserve">
-    <value>不允许请求的查询，因为它可能会危及您的数据的安全性。</value>
+    <value>该请求未被允许，因为一个或多个字段包括了出于安全原因无法使用的文本。</value>
   </data>
   <data name="AddConfirmMessage" xml:space="preserve">
     <value>添加{0} "{1}"？</value>
@@ -1596,5 +1596,35 @@
   </data>
   <data name="ExportReport" xml:space="preserve">
     <value>导出报表</value>
+  </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>查看明细</value>
+  </data>
+  <data name="ViewDetailsTax" xml:space="preserve">
+    <value>查看明细/税务</value>
+  </data>
+  <data name="EditDetails" xml:space="preserve">
+    <value>编辑明细</value>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>税务机构</value>
+  </data>
+  <data name="TaxAuthorityDescription" xml:space="preserve">
+    <value>税务机构描述</value>
+  </data>
+  <data name="TaxClass" xml:space="preserve">
+    <value>税级</value>
+  </data>
+  <data name="TaxClassDescritpion" xml:space="preserve">
+    <value>税级描述</value>
+  </data>
+  <data name="TaxIncluded" xml:space="preserve">
+    <value>已含税</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>下个</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>上个</value>
   </data>
 </root>

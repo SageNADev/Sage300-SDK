@@ -348,8 +348,7 @@
     <value>The following previous versions of jQuery files will be removed from your solution and projects:
 
 jQuery Core V{0}
-jQuery UI V{1}
-jQuery Migrate V{2}</value>
+jQuery Migrate V{1}</value>
   </data>
   <data name="ReleaseSpecificDescUnifyDisabled" xml:space="preserve">
     <value>This step will need to be done manually.</value>
@@ -436,5 +435,29 @@ and change to
   </data>
   <data name="Template_ReleaseSpecificDesc_ReportUpdates_For_2021_2" xml:space="preserve">
     <value>This step will automatically add a new file called '{0}'</value>
+  </data>
+  <data name="ReleaseSpecificDescFinderAlterations" xml:space="preserve">
+    <value>This step will need to be done manually.</value>
+  </data>
+  <data name="ReleaseSpecificFinderAlterations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReleaseSpecificFinderAlterations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="ReleaseSpecificTitleFinderAlterations" xml:space="preserve">
+    <value>Finder Alterations</value>
+  </data>
+  <data name="UpdatesToFinderAlterationsAreAManualStep" xml:space="preserve">
+    <value>The updates to alter finders must be made manually.</value>
+  </data>
+  <data name="FinalAlterationsAreAManualStep" xml:space="preserve">
+    <value>The final alterations must be made manually.</value>
+  </data>
+  <data name="ReleaseSpecificDescFinalAlterations" xml:space="preserve">
+    <value>This step will need to be done manually.</value>
+  </data>
+  <data name="ReleaseSpecificFinalAlterations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReleaseSpecificFinalAlterations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReleaseSpecificTitleFinalAlterations" xml:space="preserve">
+    <value>Final Alterations</value>
   </data>
 </root>

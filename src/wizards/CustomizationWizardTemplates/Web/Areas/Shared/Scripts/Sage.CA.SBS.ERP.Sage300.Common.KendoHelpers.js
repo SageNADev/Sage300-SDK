@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 /**
@@ -28,6 +28,10 @@ $.extend(sg.utls.kndoUI, {
     onActivate: function (e) {
         var windowElement = this.wrapper,
             windowContent = this.element;
+
+        //D-42917 Have to force kendo window focus here, ever since we upgrade jQuery to 3.6.0.
+        //Current kendo version v2021.1.224 only (officially) support jQuery up to 3.5.1
+        windowElement[0].focus();
 
         $(document).off("keydown.kendoWindow").on("keydown.kendoWindow", function (e) {
             var focusedElement = $(document.activeElement);
@@ -930,8 +934,8 @@ $.extend(sg.utls.kndoUI, {
         } else {
             numericTextBoxDataValue = numericTextBoxData;
         }
-        $(numericTextBoxDataValue).off("input");
-        $(numericTextBoxDataValue).on("input", function (e) {
+
+        const eventHandler = () => {
             var val = numericTextBoxDataValue.val();
             var decimalSeparator = kendo.culture().numberFormat['.'];
             var parts = val.split(decimalSeparator);
@@ -955,7 +959,10 @@ $.extend(sg.utls.kndoUI, {
                     }
                 }
             }
-        });
+        };
+
+        $(numericTextBoxDataValue).off("input", eventHandler);
+        $(numericTextBoxDataValue).on("input", eventHandler);
     },
 
     /**

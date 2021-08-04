@@ -1367,7 +1367,6 @@ var optionalFieldUIGrid =
 
     updateValueInGrid: function (optionalField, value) {
         optionalFieldUIGrid.setOptionalFieldValue(value, "", false);
-        optionalFieldUIGrid.save();
     },
 
     disableGridButtons: function () {
@@ -1466,7 +1465,6 @@ var optionalFieldUIGrid =
             if (optionalFieldUIGrid.settingsEditor) {
                 gridColConfig.registerSettingsEvent();
             }
-            optionalFieldUIGrid.save();
 
             optionalFieldUIGrid.hasInvalidData = false;
             optionalFieldUIGrid.resetFocus(selectRow, 'OptionalField');

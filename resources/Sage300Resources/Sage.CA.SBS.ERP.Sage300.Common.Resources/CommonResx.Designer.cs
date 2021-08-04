@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class CommonResx {
@@ -1137,6 +1137,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string EditColumns {
             get {
                 return ResourceManager.GetString("EditColumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Details.
+        /// </summary>
+        public static string EditDetails {
+            get {
+                return ResourceManager.GetString("EditDetails", resourceCulture);
             }
         }
         
@@ -2302,6 +2311,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string Next {
+            get {
+                return ResourceManager.GetString("Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string No {
@@ -2748,6 +2766,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string Preview {
             get {
                 return ResourceManager.GetString("Preview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Previous.
+        /// </summary>
+        public static string Previous {
+            get {
+                return ResourceManager.GetString("Previous", resourceCulture);
             }
         }
         
@@ -3589,7 +3616,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The inquiry request was not allowed because it could compromise the security of your data..
+        ///   Looks up a localized string similar to The request was not allowed because one or more fields include text that cannot be used for security reasons..
         /// </summary>
         public static string SqlInjectionMessage {
             get {
@@ -3769,11 +3796,56 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tax Authority.
+        /// </summary>
+        public static string TaxAuthority {
+            get {
+                return ResourceManager.GetString("TaxAuthority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authority Description.
+        /// </summary>
+        public static string TaxAuthorityDescription {
+            get {
+                return ResourceManager.GetString("TaxAuthorityDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Class.
+        /// </summary>
+        public static string TaxClass {
+            get {
+                return ResourceManager.GetString("TaxClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Class Description.
+        /// </summary>
+        public static string TaxClassDescritpion {
+            get {
+                return ResourceManager.GetString("TaxClassDescritpion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} &quot;{1}&quot; and {2} &quot;{3}&quot; do not exist..
         /// </summary>
         public static string TaxClassInvalid {
             get {
                 return ResourceManager.GetString("TaxClassInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Included.
+        /// </summary>
+        public static string TaxIncluded {
+            get {
+                return ResourceManager.GetString("TaxIncluded", resourceCulture);
             }
         }
         
@@ -4170,6 +4242,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string View {
             get {
                 return ResourceManager.GetString("View", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Details.
+        /// </summary>
+        public static string ViewDetails {
+            get {
+                return ResourceManager.GetString("ViewDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Details/Taxes.
+        /// </summary>
+        public static string ViewDetailsTax {
+            get {
+                return ResourceManager.GetString("ViewDetailsTax", resourceCulture);
             }
         }
         

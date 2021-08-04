@@ -318,7 +318,7 @@
     <comment>Field</comment>
   </data>
   <data name="RemindersTo" xml:space="preserve">
-    <value>Rappels à</value>
+    <value>Rappel</value>
   </data>
   <data name="RunDate" xml:space="preserve">
     <value>Date exécution</value>
@@ -402,5 +402,14 @@
   </data>
   <data name="NextRunDate" xml:space="preserve">
     <value>Date prochaine exécution</value>
+  </data>
+  <data name="ReminderList" xml:space="preserve">
+    <value>Liste des rappels</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>Liste</value>
+  </data>
+  <data name="ScheduleButton" xml:space="preserve">
+    <value>Planifier</value>
   </data>
 </root>

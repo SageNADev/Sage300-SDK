@@ -2266,6 +2266,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If you select the option to allow fractional quantities, you cannot change this later. Are you sure you want to allow fractional quantities?.
+        /// </summary>
+        public static string FractionalQuantityWarning {
+            get {
+                return ResourceManager.GetString("FractionalQuantityWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Account Set.
         /// </summary>
         public static string FromAccountSet {

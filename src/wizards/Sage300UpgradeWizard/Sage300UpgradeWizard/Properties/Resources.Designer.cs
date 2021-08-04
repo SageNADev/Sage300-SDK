@@ -277,6 +277,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The final alterations must be made manually..
+        /// </summary>
+        internal static string FinalAlterationsAreAManualStep {
+            get {
+                return ResourceManager.GetString("FinalAlterationsAreAManualStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finish.
         /// </summary>
         internal static string Finish {
@@ -576,9 +585,63 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         /// <summary>
         ///   Looks up a localized string similar to This step will need to be done manually..
         /// </summary>
+        internal static string ReleaseSpecificDescFinalAlterations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescFinalAlterations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will need to be done manually..
+        /// </summary>
+        internal static string ReleaseSpecificDescFinderAlterations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescFinderAlterations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will need to be done manually..
+        /// </summary>
         internal static string ReleaseSpecificDescUnifyDisabled {
             get {
                 return ResourceManager.GetString("ReleaseSpecificDescUnifyDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As part of the framework changes required to unify the usage of HTML &apos;disable&apos;
+        ///attribute in Sage HtmlHelper controls.
+        ///
+        ///The upgrade wizard is unable to automatically perform this modification and
+        ///therefore this step will require manual modifications.
+        ///
+        ///Please refer to the &quot;Final Alterations&quot; subsection in the Sage 300
+        ///Upgrade Guide for 2021.2 to 2022.0 in the docs folder of the Web SDK for
+        ///detailed instructions. The samples code may also be used as a guide..
+        /// </summary>
+        internal static string ReleaseSpecificFinalAlterations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificFinalAlterations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As part of the framework changes required to unify the usage of HTML &apos;disable&apos;
+        ///attribute in Sage HtmlHelper controls.
+        ///
+        ///The upgrade wizard is unable to automatically perform this modification and
+        ///therefore this step will require manual modifications.
+        ///
+        ///Any cshtml file that defines a Sage HtmlHelper control needs to be updated to
+        ///match the standard of the usage of HTML &apos;disabled&apos; attribute.
+        ///
+        ///Please refer to the &quot;Finder Alterations&quot; subsection in the Sage 300
+        ///Upgrade Guide for 2021.2 to 2022.0 in the  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificFinderAlterations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificFinderAlterations", resourceCulture);
             }
         }
         
@@ -615,6 +678,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificTitleDescRemovePreviousJqueryLibraries {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleDescRemovePreviousJqueryLibraries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Final Alterations.
+        /// </summary>
+        internal static string ReleaseSpecificTitleFinalAlterations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleFinalAlterations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finder Alterations.
+        /// </summary>
+        internal static string ReleaseSpecificTitleFinderAlterations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleFinderAlterations", resourceCulture);
             }
         }
         
@@ -882,8 +963,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         ///   Looks up a localized string similar to The following previous versions of jQuery files will be removed from your solution and projects:
         ///
         ///jQuery Core V{0}
-        ///jQuery UI V{1}
-        ///jQuery Migrate V{2}.
+        ///jQuery Migrate V{1}.
         /// </summary>
         internal static string Template_ReleaseSpecificRemovePreviousJqueryLibraries {
             get {
@@ -960,6 +1040,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string To {
             get {
                 return ResourceManager.GetString("To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The updates to alter finders must be made manually..
+        /// </summary>
+        internal static string UpdatesToFinderAlterationsAreAManualStep {
+            get {
+                return ResourceManager.GetString("UpdatesToFinderAlterationsAreAManualStep", resourceCulture);
             }
         }
         

@@ -265,13 +265,13 @@
     <value>Rapports des transactions de CC</value>
   </data>
   <data name="AR_TransactionReports_ItemSalesHistory" xml:space="preserve">
-    <value>Historique de ventes d'articles</value>
+    <value>Historique de ventes d’articles</value>
   </data>
   <data name="AR_Transactions" xml:space="preserve">
     <value>Transactions de CC</value>
   </data>
   <data name="AR_Transactions_ReceiptBatchList" xml:space="preserve">
-    <value>Liste des lots d'encaissements</value>
+    <value>Liste des lots d’encaissements</value>
   </data>
   <data name="AR_TransReports_AgedRetainage" xml:space="preserve">
     <value>Retenue de garantie âgée</value>
@@ -292,7 +292,7 @@
     <value>Groupes de sécurité</value>
   </data>
   <data name="AS_UserAuthorizations" xml:space="preserve">
-    <value>Autorisations de l'utilisateur</value>
+    <value>Autorisations de l’utilisateur</value>
   </data>
   <data name="AS_UserAuthorizationsReport" xml:space="preserve">
     <value>Rapport Autorisations des utilisateurs</value>
@@ -301,7 +301,7 @@
     <value>Traitement périodique de Banque</value>
   </data>
   <data name="Bank_PeriodicProcessing_ClearHistory" xml:space="preserve">
-    <value>Effacer l'historique</value>
+    <value>Effacer l’historique</value>
   </data>
   <data name="Bank_Setup" xml:space="preserve">
     <value>Configuration de banque</value>
@@ -310,10 +310,10 @@
     <value>Opérations bancaires</value>
   </data>
   <data name="Bank_TransReports" xml:space="preserve">
-    <value>Rapports d'opérations bancaires</value>
+    <value>Rapports d’opérations bancaires</value>
   </data>
   <data name="Bank_TransReports_BankEntriesPostingJournal" xml:space="preserve">
-    <value>Journal de report d'opérations bancaires</value>
+    <value>Journal de report d’opérations bancaires</value>
   </data>
   <data name="Bank_TransReports_BankReconciliation" xml:space="preserve">
     <value>Rapprochement bancaire</value>
@@ -433,7 +433,7 @@
     <value>Fin de l’exercice</value>
   </data>
   <data name="CS_CompanyProfile" xml:space="preserve">
-    <value>Profil de l'entreprise</value>
+    <value>Profil de l’entreprise</value>
   </data>
   <data name="CS_FiscalCalendar" xml:space="preserve">
     <value>Calendrier fiscal</value>
@@ -475,7 +475,7 @@
     <value>Créer un nouvel exercice</value>
   </data>
   <data name="GL_Processing_CreateRecEntBatch" xml:space="preserve">
-    <value>Créer lot d'écritures récurrentes</value>
+    <value>Créer lot d’écritures récurrentes</value>
   </data>
   <data name="GL_Reports" xml:space="preserve">
     <value>Rapports de GL</value>
@@ -523,7 +523,7 @@
     <value>Articles</value>
   </data>
   <data name="CNAPortalHelpCenter" xml:space="preserve">
-    <value>Centre d'aide</value>
+    <value>Centre d’aide</value>
   </data>
   <data name="CNAPortalHelpContactSupport" xml:space="preserve">
     <value>Contacter le soutien technique</value>
@@ -547,7 +547,7 @@
     <value>Sage University</value>
   </data>
   <data name="CNAPortalHelpSettingHomePageWidgets" xml:space="preserve">
-    <value>Configurer les composants graphiques de la page d'accueil</value>
+    <value>Configurer les composants graphiques de la page d’accueil</value>
   </data>
   <data name="CNAPortalHelpShareIdeas" xml:space="preserve">
     <value>Partagez vos idées</value>
@@ -556,7 +556,7 @@
     <value>Quoi de neuf</value>
   </data>
   <data name="Demonstration_ReportDesigner" xml:space="preserve">
-    <value>Concepteur d'états de démonstration</value>
+    <value>Concepteur d’états de démonstration</value>
   </data>
   <data name="Financial_BalanceSheet" xml:space="preserve">
     <value>Bilan financier</value>
@@ -736,7 +736,7 @@
     <value>Rapports analytiques de CmF</value>
   </data>
   <data name="PO_Clear_History" xml:space="preserve">
-    <value>Effacer l'historique</value>
+    <value>Effacer l’historique</value>
   </data>
   <data name="IC_Alternate_Items" xml:space="preserve">
     <value>Articles de remplacement</value>
@@ -751,7 +751,7 @@
     <value>Rapports de gestion des stocks de GS</value>
   </data>
   <data name="PO_Payables_Clearing_Audit_List_Report" xml:space="preserve">
-    <value>Liste d'audit des réceptions non facturées</value>
+    <value>Liste d’audit des réceptions non facturées</value>
   </data>
   <data name="IC_Price_Lists" xml:space="preserve">
     <value>Listes de prix</value>
@@ -766,7 +766,7 @@
     <value>Mouvement des stocks</value>
   </data>
   <data name="IC_Inventory_Worksheet" xml:space="preserve">
-    <value>Feuille de calcul de l'inventaire</value>
+    <value>Feuille de calcul de l’inventaire</value>
   </data>
   <data name="IC_Posting_Journals" xml:space="preserve">
     <value>Journaux de report</value>
@@ -817,7 +817,7 @@
     <value>Créer bons de commande de CmF</value>
   </data>
   <data name="OE_Clear_History" xml:space="preserve">
-    <value>Effacer l'historique</value>
+    <value>Effacer l’historique</value>
   </data>
   <data name="PO_Forms" xml:space="preserve">
     <value>Formulaires de CmF</value>
@@ -832,7 +832,7 @@
     <value>Statistiques des achats</value>
   </data>
   <data name="IC_Transaction_History_Inquiry" xml:space="preserve">
-    <value>Consultation de l'historique des transactions</value>
+    <value>Consultation de l’historique des transactions</value>
   </data>
   <data name="OE_Miscellaneous_Charges" xml:space="preserve">
     <value>Frais divers</value>
@@ -841,7 +841,7 @@
     <value>État de la commande</value>
   </data>
   <data name="OE_Ship_Via_Codes" xml:space="preserve">
-    <value>Codes d'expédition</value>
+    <value>Codes d’expédition</value>
   </data>
   <data name="PO_Email_Messages" xml:space="preserve">
     <value>Courriels</value>
@@ -853,7 +853,7 @@
     <value>État des bons de commande</value>
   </data>
   <data name="IC_Kitting_Items" xml:space="preserve">
-    <value>Trousses d'articles</value>
+    <value>Trousses d’articles</value>
   </data>
   <data name="IC_LIFO_FIFO_Inquiry" xml:space="preserve">
     <value>Consultation de LIFO/FIFO</value>
@@ -880,7 +880,7 @@
     <value>Articles à rotation lente</value>
   </data>
   <data name="PO_Create_POs_from_Requisitions" xml:space="preserve">
-    <value>Créer BC à partir de demandes d'achat</value>
+    <value>Créer BC à partir de demandes d’achat</value>
   </data>
   <data name="IC_StockTransactionsInquiry" xml:space="preserve">
     <value>Consultation des transactions de stock</value>
@@ -895,7 +895,7 @@
     <value>Coûts additionnels</value>
   </data>
   <data name="IC_Item_Pricing" xml:space="preserve">
-    <value>Prix de l'article </value>
+    <value>Prix de l’article </value>
   </data>
   <data name="OE_Invoice" xml:space="preserve">
     <value>Factures</value>
@@ -904,7 +904,7 @@
     <value>Statistiques des ventes</value>
   </data>
   <data name="OE_ShippingLabels" xml:space="preserve">
-    <value>Étiquettes d'expédition</value>
+    <value>Étiquettes d’expédition</value>
   </data>
   <data name="PO_Copy_Purchase_Order" xml:space="preserve">
     <value>Copier des bons de commande</value>
@@ -925,10 +925,10 @@
     <value>Report des transactions</value>
   </data>
   <data name="IC_Item_Loc_Detail_Qty_Inquiry" xml:space="preserve">
-    <value>Consultation détails des quantités d'articles par emplacement</value>
+    <value>Consultation détails des quantités d’articles par emplacement</value>
   </data>
   <data name="IC_Generate_Inventory_Worksheet" xml:space="preserve">
-    <value>Création feuille de calcul d'inventaire</value>
+    <value>Création feuille de calcul d’inventaire</value>
   </data>
   <data name="PO_Purchase_Order_Entry" xml:space="preserve">
     <value>Saisie des bons de commande</value>
@@ -937,7 +937,7 @@
     <value>Étiquettes de casier/rayon</value>
   </data>
   <data name="IC_Inventory_Reconciliation" xml:space="preserve">
-    <value>Rapprochement de l'inventaire</value>
+    <value>Rapprochement de l’inventaire</value>
   </data>
   <data name="IC_Stock_Transactions" xml:space="preserve">
     <value>Transactions de stock</value>
@@ -1009,7 +1009,7 @@
     <value>Bons de réception</value>
   </data>
   <data name="PO_RequisitionEntry" xml:space="preserve">
-    <value>Saisie des demandes d'achat</value>
+    <value>Saisie des demandes d’achat</value>
   </data>
   <data name="PO_Returns" xml:space="preserve">
     <value>Retours</value>
@@ -1024,7 +1024,7 @@
     <value>Commandes en attente livrables</value>
   </data>
   <data name="PO_Ship_Via_Codes" xml:space="preserve">
-    <value>Codes d'expédition</value>
+    <value>Codes d’expédition</value>
   </data>
   <data name="PO_Statistics_Inquiries" xml:space="preserve">
     <value>Statistiques et consultations de CmF</value>
@@ -1039,7 +1039,7 @@
     <value>Transactions de CmF</value>
   </data>
   <data name="PO_Vendor_Contract_Costs" xml:space="preserve">
-    <value>Contrats d'achat avec fournisseur</value>
+    <value>Contrats d’achat avec fournisseur</value>
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Projets</value>
@@ -1075,7 +1075,7 @@
     <value>Suivi des taxes</value>
   </data>
   <data name="Tax_ClearHistory" xml:space="preserve">
-    <value>Effacer l'historique</value>
+    <value>Effacer l’historique</value>
   </data>
   <data name="Templates" xml:space="preserve">
     <value>Modèles</value>
@@ -1093,16 +1093,16 @@
     <value>État des articles</value>
   </data>
   <data name="IC_Physical_Inventory_Quantities" xml:space="preserve">
-    <value>Quantités de l'inventaire physique</value>
+    <value>Quantités de l’inventaire physique</value>
   </data>
   <data name="IC_Reorder_Quantities" xml:space="preserve">
     <value>Réapprovisionnement des quantités</value>
   </data>
   <data name="IC_Update_Item_Pricing" xml:space="preserve">
-    <value>Mise à jour du prix de l'article</value>
+    <value>Mise à jour du prix de l’article</value>
   </data>
   <data name="IC_Item_Labels" xml:space="preserve">
-    <value>Étiquettes d'articles</value>
+    <value>Étiquettes d’articles</value>
   </data>
   <data name="OE_Picking_Slips" xml:space="preserve">
     <value>Bons de collecte</value>
@@ -1111,10 +1111,10 @@
     <value>Consultation réceptions en suspens</value>
   </data>
   <data name="IC_Post_Inventory_Reconciliation" xml:space="preserve">
-    <value>Report rapprochement d'inventaire</value>
+    <value>Report rapprochement d’inventaire</value>
   </data>
   <data name="PO_Requisitions" xml:space="preserve">
-    <value>Demandes d'achat</value>
+    <value>Demandes d’achat</value>
   </data>
   <data name="OE_CreditDebit_Notes" xml:space="preserve">
     <value>Notes de crédit/débit</value>
@@ -1126,7 +1126,7 @@
     <value>Transferts</value>
   </data>
   <data name="PO_Mailing_Labels" xml:space="preserve">
-    <value>Étiquettes d'adresse</value>
+    <value>Étiquettes d’adresse</value>
   </data>
   <data name="OE_Pending_Shipments_Inquiry" xml:space="preserve">
     <value>Consultation des expéditions en suspens</value>
@@ -1153,7 +1153,7 @@
     <value>Usage interne</value>
   </data>
   <data name="GL_Clear_History" xml:space="preserve">
-    <value>Effacer l'historique</value>
+    <value>Effacer l’historique</value>
   </data>
   <data name="AR_Processing_CreateRecurringChargeBatch" xml:space="preserve">
     <value>Créer lot de frais périodiques de CC</value>
@@ -1237,7 +1237,7 @@
     <value>Codes sources</value>
   </data>
   <data name="IC_Clear_History" xml:space="preserve">
-    <value>Effacer l'historique</value>
+    <value>Effacer l’historique</value>
   </data>
   <data name="IC_Copy_Bills_of_Material" xml:space="preserve">
     <value>Copier les nomenclatures</value>
@@ -1306,28 +1306,28 @@
     <value>Frais périodiques</value>
   </data>
   <data name="AP_Adjustment_Batch_List" xml:space="preserve">
-    <value>Liste des lots d'ajustements</value>
+    <value>Liste des lots d’ajustements</value>
   </data>
   <data name="AR_Clear_History" xml:space="preserve">
-    <value>Effacer l'historique</value>
+    <value>Effacer l’historique</value>
   </data>
   <data name="AR_Clear_Statistics" xml:space="preserve">
     <value>Effacer les statistiques</value>
   </data>
   <data name="AR_Quick_Receipt_Entry" xml:space="preserve">
-    <value>Saisie d'encaissement rapide</value>
+    <value>Saisie d’encaissement rapide</value>
   </data>
   <data name="IC_Contract_Codes" xml:space="preserve">
     <value>Codes de contrat</value>
   </data>
   <data name="AP_Clear_History" xml:space="preserve">
-    <value>Effacer l'historique</value>
+    <value>Effacer l’historique</value>
   </data>
   <data name="AR_Delete_Inactive_Records" xml:space="preserve">
     <value>Effacer les enregistrements inactifs</value>
   </data>
   <data name="AR_Adjustment_Batch_List" xml:space="preserve">
-    <value>Liste des lots d'ajustements</value>
+    <value>Liste des lots d’ajustements</value>
   </data>
   <data name="AR_Adjustment_Entry" xml:space="preserve">
     <value>Saisie des ajustements</value>
@@ -1354,7 +1354,7 @@
     <value>Articles</value>
   </data>
   <data name="AR_Create_Write_Off_Batch" xml:space="preserve">
-    <value>Créer lot d'annulations</value>
+    <value>Créer lot d’annulations</value>
   </data>
   <data name="IC_Serial_Registration" xml:space="preserve">
     <value>Enregistrement de numéro de série</value>
@@ -1363,7 +1363,7 @@
     <value>Codes de garantie</value>
   </data>
   <data name="AR_Ship_To_Locations" xml:space="preserve">
-    <value>Adresses d'expédition</value>
+    <value>Adresses d’expédition</value>
   </data>
   <data name="AP_Adjustment_Entry" xml:space="preserve">
     <value>Saisie des ajustements</value>
@@ -1387,10 +1387,10 @@
     <value>Personnaliser le menu de navigation</value>
   </data>
   <data name="AS_MenuCustomization_Instructions" xml:space="preserve">
-    <value>Personnalisez le menu de navigation en masquant ou affichant des écrans web et des catégories. Si vous masquez tous les écrans d'un module, le module n'apparaît pas dans le menu de navigation.</value>
+    <value>Personnalisez le menu de navigation en masquant ou affichant des écrans web et des catégories. Si vous masquez tous les écrans d’un module, le module n’apparaît pas dans le menu de navigation.</value>
   </data>
   <data name="CompanySetup" xml:space="preserve">
-    <value>Configuration de l'entreprise</value>
+    <value>Configuration de l’entreprise</value>
   </data>
   <data name="DataAndMaintenance" xml:space="preserve">
     <value>Données et maintenance</value>
@@ -1428,10 +1428,10 @@
   <data name="AS_WorkProfile" xml:space="preserve">
     <value>Profils IU</value>
   </data>
-  <data name="SIR_Msg1" xml:space="preserve">
+  <data name="SIR_Msg3" xml:space="preserve">
     <value>Sage Intelligence Reporting Cloud</value>
   </data>
-  <data name="SIR_Msg2" xml:space="preserve">
+  <data name="SIR_Msg4" xml:space="preserve">
     <value>Dressez un tableau plus précis de votre entreprise grâce à des états financiers dynamiques que vous pouvez exporter et personnaliser dans Microsoft Excel® ou Excel Online.</value>
   </data>
   <data name="SIR_Report1" xml:space="preserve">
@@ -1475,7 +1475,7 @@
     <value>Requêtes enregistrées </value>
   </data>
   <data name="Inquiry_ToolTip" xml:space="preserve">
-    <value>Cette requête présente les résultats dans un format particulier comportant plusieurs tables interactives. Vous ne pouvez pas l'utiliser comme base pour les requêtes personnalisées enregistrées.</value>
+    <value>Cette requête présente les résultats dans un format particulier comportant plusieurs tables interactives. Vous ne pouvez pas l’utiliser comme base pour les requêtes personnalisées enregistrées.</value>
   </data>
   <data name="Tools" xml:space="preserve">
     <value>Outils</value>
@@ -1490,11 +1490,11 @@
     <comment>Expand Menu</comment>
   </data>
   <data name="HelpTitle" xml:space="preserve">
-    <value>Trouver de l'aide sur la configuration et l'utilisation de Sage 300c</value>
+    <value>Trouver de l’aide sur la configuration et l’utilisation de Sage 300c</value>
     <comment>Top Menu</comment>
   </data>
   <data name="ToolsTitle" xml:space="preserve">
-    <value>Afficher ou masquer la barre d'outils web</value>
+    <value>Afficher ou masquer la barre d’outils web</value>
     <comment>Top Menu</comment>
   </data>
   <data name="Search" xml:space="preserve">
@@ -1509,7 +1509,7 @@
     <value>Recherche globale</value>
   </data>
   <data name="GlobalSearchFailed" xml:space="preserve">
-    <value>Un problème est survenu et la recherche n'a pas abouti. Contactez l'administrateur de votre système pour obtenir de l'aide.</value>
+    <value>Un problème est survenu et la recherche n’a pas abouti. Contactez l’administrateur de votre système pour obtenir de l’aide.</value>
   </data>
   <data name="CustomizedQueries" xml:space="preserve">
     <value>Requêtes personnalisées</value>
@@ -1537,13 +1537,13 @@
     <value>Rapports de taxe - Australie</value>
   </data>
   <data name="TW_BusinessActivityStatement" xml:space="preserve">
-    <value>Relevé d'activités commerciales</value>
+    <value>Relevé d’activités commerciales</value>
   </data>
   <data name="TW_Configurations" xml:space="preserve">
     <value>Paramétrages</value>
   </data>
   <data name="Tax_WithholdingTaxRates" xml:space="preserve">
-    <value>Taux de retenue d'impôt</value>
+    <value>Taux de retenue d’impôt</value>
   </data>
   <data name="MalaysiaGST" xml:space="preserve">
     <value>Rapports de taxe - Malaisie</value>
@@ -1564,7 +1564,7 @@
     <value>Options</value>
   </data>
   <data name="BusinessActivityStatement" xml:space="preserve">
-    <value>Relevé d'activités commerciales</value>
+    <value>Relevé d’activités commerciales</value>
   </data>
   <data name="Configurations" xml:space="preserve">
     <value>Paramétrages</value>
@@ -1647,5 +1647,53 @@
   </data>
   <data name="GL_BudgetMaintenance" xml:space="preserve">
     <value>Mise à jour du budget</value>
+  </data>
+  <data name="Module_PM" xml:space="preserve">
+    <value>Gestion de projet</value>
+  </data>
+  <data name="PM_Costs" xml:space="preserve">
+    <value>Coûts</value>
+  </data>
+  <data name="PM_Material_Allocation" xml:space="preserve">
+    <value>Coût alloué-Utilisation des matériaux</value>
+  </data>
+  <data name="PM_Material_Return" xml:space="preserve">
+    <value>Retours des matériaux</value>
+  </data>
+  <data name="PM_Material_Usage" xml:space="preserve">
+    <value>Utilisation des matériaux</value>
+  </data>
+  <data name="PM_Transactions" xml:space="preserve">
+    <value>Transactions de GP</value>
+  </data>
+  <data name="PM_OpeningBalances" xml:space="preserve">
+    <value>Soldes d’ouverture</value>
+  </data>
+  <data name="PM_Transaction_Listing" xml:space="preserve">
+    <value>Liste des transactions</value>
+  </data>
+  <data name="PM_Transaction_Reports" xml:space="preserve">
+    <value>Rapports de transactions de GP</value>
+  </data>
+  <data name="PM_Transaction_Posting" xml:space="preserve">
+    <value>Reporter des transactions</value>
+  </data>
+  <data name="SIR_Msg1" xml:space="preserve">
+    <value>Business Intelligence Reporting</value>
+  </data>
+  <data name="SIR_Msg2" xml:space="preserve">
+    <value>Business Intelligence Reporting Solutions</value>
+  </data>
+  <data name="SIR_SDAMsg1" xml:space="preserve">
+    <value>Sage Data &amp; Analytics</value>
+  </data>
+  <data name="SIR_SDAMsg2" xml:space="preserve">
+    <value>Obtenez des informations commerciales provenant d’états financiers axés sur les données afin de gérer votre entreprise plus efficacement.</value>
+  </data>
+  <data name="PM_Setup" xml:space="preserve">
+    <value>Configuration de GP</value>
+  </data>
+  <data name="PM_CostTypes" xml:space="preserve">
+    <value>Types de coût</value>
   </data>
 </root>

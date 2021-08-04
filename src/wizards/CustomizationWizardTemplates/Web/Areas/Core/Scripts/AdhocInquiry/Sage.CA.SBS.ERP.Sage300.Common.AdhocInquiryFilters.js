@@ -166,7 +166,7 @@ adhocInquiryFilters = {
         //var finderFilter = function () {
         //    var filters = [[]];
         //    var filter = $("#" + textBoxId).val().toUpperCase();
-        //    filters[0][0] = sg.finderHelper.createFilter(fieldName, sg.finderOperator.StartsWith, filter);
+        //    filters[0][0] = sg.filterHelper.createFilter(fieldName, sg.finderOperator.StartsWith, filter);
         //    return filters;
         //};
 

@@ -158,7 +158,7 @@
     <comment>Message</comment>
   </data>
   <data name="History1" xml:space="preserve">
-    <value>歷史</value>
+    <value>歷史...</value>
     <comment>Button</comment>
   </data>
   <data name="ItemTax2" xml:space="preserve">
@@ -308,10 +308,10 @@
     <value>帳單至連絡人電郵</value>
   </data>
   <data name="BillToContactFax" xml:space="preserve">
-    <value>匯款至連絡人傳真</value>
+    <value>帳單至連絡人傳真</value>
   </data>
   <data name="BillToContactPhone" xml:space="preserve">
-    <value>匯款至連絡人電話</value>
+    <value>帳單至連絡人電話</value>
   </data>
   <data name="BillToCountry" xml:space="preserve">
     <value>帳單至國家</value>
@@ -497,16 +497,16 @@
     <value>請購序列鍵碼</value>
   </data>
   <data name="ShipToAddress1" xml:space="preserve">
-    <value>發貨至地址1</value>
+    <value>發運至地址1</value>
   </data>
   <data name="ShipToAddress2" xml:space="preserve">
-    <value>發貨至地址2</value>
+    <value>發運至地址2</value>
   </data>
   <data name="ShipToAddress3" xml:space="preserve">
-    <value>發貨至地址3</value>
+    <value>發運至地址3</value>
   </data>
   <data name="ShipToAddress4" xml:space="preserve">
-    <value>發貨至地址4</value>
+    <value>發運至地址4</value>
   </data>
   <data name="ShipToCity" xml:space="preserve">
     <value>發運至城市</value>
@@ -545,31 +545,31 @@
     <value>發運至郵遞區號</value>
   </data>
   <data name="TaxAllocatedAmount1" xml:space="preserve">
-    <value>已分配稅金額1</value>
+    <value>已分配稅額1</value>
   </data>
   <data name="TaxAllocatedAmount1Sum" xml:space="preserve">
     <value>已分配稅額1總計</value>
   </data>
   <data name="TaxAllocatedAmount2" xml:space="preserve">
-    <value>已分配稅金額2</value>
+    <value>已分配稅額2</value>
   </data>
   <data name="TaxAllocatedAmount2Sum" xml:space="preserve">
     <value>已分配稅額2總計</value>
   </data>
   <data name="TaxAllocatedAmount3" xml:space="preserve">
-    <value>已分配稅金額3</value>
+    <value>已分配稅額3</value>
   </data>
   <data name="TaxAllocatedAmount3Sum" xml:space="preserve">
     <value>已分配稅額3總計</value>
   </data>
   <data name="TaxAllocatedAmount4" xml:space="preserve">
-    <value>已分配稅金額4</value>
+    <value>已分配稅額4</value>
   </data>
   <data name="TaxAllocatedAmount4Sum" xml:space="preserve">
     <value>已分配稅額4總計</value>
   </data>
   <data name="TaxAllocatedAmount5" xml:space="preserve">
-    <value>已分配稅金額5</value>
+    <value>已分配稅額5</value>
   </data>
   <data name="TaxAllocatedAmount5Sum" xml:space="preserve">
     <value>已分配稅額5總計</value>
@@ -1087,7 +1087,7 @@
     <value>建立系列批別清單</value>
   </data>
   <data name="DefaultAndTranferOptionalFields" xml:space="preserve">
-    <value>預設和轉移自選欄位</value>
+    <value>明細和轉移自選欄位</value>
   </data>
   <data name="DefaultOptFieldsDuringRecordGeneration" xml:space="preserve">
     <value>產生記錄期間的預設自選欄位</value>
@@ -1267,10 +1267,10 @@
     <value>要求到貨日期</value>
   </data>
   <data name="IsCanadianPayrollActive" xml:space="preserve">
-    <value>&lt;加拿大薪資&gt;是否為活動？</value>
+    <value>加拿大薪資是否為活動？</value>
   </data>
   <data name="IsUsPayrollActive" xml:space="preserve">
-    <value>&lt;美國薪資&gt;是否為活動？</value>
+    <value>美國薪資是否為活動？</value>
   </data>
   <data name="LocationDescription" xml:space="preserve">
     <value>地點描述</value>
@@ -1329,7 +1329,7 @@
     <value>帳單匯率轉換係數</value>
   </data>
   <data name="CommentIdentifier" xml:space="preserve">
-    <value>備註識別字</value>
+    <value>備注辨識符</value>
   </data>
   <data name="DateValue" xml:space="preserve">
     <value>日期值</value>
@@ -1401,7 +1401,7 @@
     <value>鍵入的值欄位索引</value>
   </data>
   <data name="UnitBillingAmount" xml:space="preserve">
-    <value>單位計費金額</value>
+    <value>單位帳單金額</value>
   </data>
   <data name="Validate" xml:space="preserve">
     <value>驗證</value>
@@ -1436,5 +1436,12 @@
   </data>
   <data name="InvalidDerivedRate" xml:space="preserve">
     <value>無法得出稅率，因為使用目前稅務合計和稅務報告合計導致一個無效稅率。手動輸入稅率。</value>
+  </data>
+  <data name="UpdateArrivalDates" xml:space="preserve">
+    <value>是否將所有明細的預計到貨日期設定為與訂購單的到貨日期相同？</value>
+    <comment>Message (confirmation dialog)</comment>
+  </data>
+  <data name="UpdateShiptoLocations" xml:space="preserve">
+    <value>是否將所有明細的地點設定為與訂購單的發貨至地點相同？  如果在發貨至地點不允許為該明細指定的產品，該明細的地點不會變更。</value>
   </data>
 </root>

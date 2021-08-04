@@ -3085,6 +3085,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PJC.
+        /// </summary>
+        public static string PJC {
+            get {
+                return ResourceManager.GetString("PJC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to P/O.
         /// </summary>
         public static string PO {

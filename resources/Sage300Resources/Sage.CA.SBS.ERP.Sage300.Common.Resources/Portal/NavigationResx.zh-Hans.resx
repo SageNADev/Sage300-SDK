@@ -1428,10 +1428,10 @@
   <data name="AS_WorkProfile" xml:space="preserve">
     <value>用户界面概览</value>
   </data>
-  <data name="SIR_Msg1" xml:space="preserve">
+  <data name="SIR_Msg3" xml:space="preserve">
     <value>Sage Intelligence Reporting Cloud</value>
   </data>
-  <data name="SIR_Msg2" xml:space="preserve">
+  <data name="SIR_Msg4" xml:space="preserve">
     <value>通过您可以导出并在Microsoft Excel®或Excel在线中自定义的动态财务报表帮助您更清楚地了解您的业务。</value>
   </data>
   <data name="SIR_Report1" xml:space="preserve">
@@ -1646,6 +1646,54 @@
     <value>来源币种查询</value>
   </data>
   <data name="GL_BudgetMaintenance" xml:space="preserve">
-    <value>预算维护 </value>
+    <value>预算维护</value>
+  </data>
+  <data name="Module_PM" xml:space="preserve">
+    <value>项目成本管理</value>
+  </data>
+  <data name="PM_Costs" xml:space="preserve">
+    <value>成本</value>
+  </data>
+  <data name="PM_Material_Allocation" xml:space="preserve">
+    <value>物料分配</value>
+  </data>
+  <data name="PM_Material_Return" xml:space="preserve">
+    <value>物料退回</value>
+  </data>
+  <data name="PM_Material_Usage" xml:space="preserve">
+    <value>物料使用</value>
+  </data>
+  <data name="PM_Transactions" xml:space="preserve">
+    <value>交易</value>
+  </data>
+  <data name="PM_OpeningBalances" xml:space="preserve">
+    <value>期初余额</value>
+  </data>
+  <data name="PM_Transaction_Listing" xml:space="preserve">
+    <value>交易列表</value>
+  </data>
+  <data name="PM_Transaction_Reports" xml:space="preserve">
+    <value>项目成本管理交易报表</value>
+  </data>
+  <data name="PM_Transaction_Posting" xml:space="preserve">
+    <value>交易过帐</value>
+  </data>
+  <data name="SIR_Msg1" xml:space="preserve">
+    <value>Business Intelligence Reporting</value>
+  </data>
+  <data name="SIR_Msg2" xml:space="preserve">
+    <value>Business Intelligence Reporting Solutions</value>
+  </data>
+  <data name="SIR_SDAMsg1" xml:space="preserve">
+    <value>Sage Data &amp; Analytics</value>
+  </data>
+  <data name="SIR_SDAMsg2" xml:space="preserve">
+    <value>从数据驱动的财务报表中获得业务洞察力，以便您可以更有效地管理您的业务。</value>
+  </data>
+  <data name="PM_Setup" xml:space="preserve">
+    <value>项目成本管理设置</value>
+  </data>
+  <data name="PM_CostTypes" xml:space="preserve">
+    <value>成本类型 </value>
   </data>
 </root>

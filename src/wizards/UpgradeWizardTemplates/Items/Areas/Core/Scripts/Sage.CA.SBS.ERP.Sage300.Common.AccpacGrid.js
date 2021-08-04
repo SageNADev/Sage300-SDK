@@ -191,6 +191,11 @@ sg.viewList = function () {
         if (rowData) {
             const type = (!_newLine[gridName] || !rowData.isNewLine) ? RequestTypeEnum.Update : RequestTypeEnum.Insert;
             _sendRequest(gridName, type, ...Array(4), callBack);
+            if (_valid[gridName]) {
+                _newLine[gridName] = false;
+                //NOTE: Wont be dirty after commit successful, we may need to reset the dirty flag as well
+                //_dataChanged[gridName] = false;
+            }
             return _valid[gridName];
         }
         else {
@@ -726,9 +731,9 @@ sg.viewList = function () {
     function _textEditor(container, options, col, gridName) {
         var field = options.field,
             mask = options.model.PresentationMasks[field] || col.mask,
-            maskProps = mask ? _getTextBoxProps(mask) : "",
+            maskProps = mask ? _getTextBoxProps(mask) : undefined,
             className = maskProps ? maskProps.class : "",
-            maxlength = col.FieldSize || maskProps ? maskProps.maxLength : 64,
+            maxlength = col.FieldSize || (maskProps ? maskProps.maxLength : 64),
             html = kendo.format('<input type="text" id="{0}" name="{0}" class="{1}" maxlength="{2}" />', field, className, maxlength);
 
         $(html).addClass('k-input k-textbox')
@@ -1069,6 +1074,9 @@ sg.viewList = function () {
             case RequestTypeEnum.Delete:
                 isSuccess ? _deleteSuccess(gridName, jsonResult) : _deleteError(gridName, jsonResult);
                 break;
+            case RequestTypeEnum.MoveTo:
+                if (isSuccess) _moveToSuccess(gridName, jsonResult);
+                break;
             case RequestTypeEnum.RefreshRow:
                 _refreshRow(gridName, jsonResult, fieldName);
                 break;
@@ -1304,27 +1312,38 @@ sg.viewList = function () {
     function _updateError(gridName, jsonResult, fieldName, uid) {
         var grid = $('#' + gridName).data("kendoGrid"),
             selectRow = grid.select(),
-            rowIndex = selectRow.index(),
-            newLine = _newLine[gridName],
-            dataItem = grid.dataItem(selectRow);
-
+            rowIndex = selectRow.index();
+            
         //Return previous valid value when update error
-        dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
-        _setModuleVariables(gridName, RowStatusEnum.UPDATE, "", rowIndex, false, false, newLine);
-        sg.utls.showMessage(jsonResult);
-    
-        var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName, true);
-        var row;
-        if (uid) {
-            row = grid.table.find("[data-uid=" + uid + "]");
-            _lastRowNumber[gridName] = row.index();
-            grid.select(row);
-        } else {
-            row = _selectGridRow(grid, dataItem["KendoGridAccpacViewPrimaryKey"]);
+        if (0 <= rowIndex && typeof fieldName !== 'undefined') {
+            var newLine = _newLine[gridName],
+                dataItem = grid.dataItem(selectRow);
+            dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
+            _setModuleVariables(gridName, RowStatusEnum.UPDATE, "", rowIndex, false, false, newLine);
+            sg.utls.showMessage(jsonResult);
+
+            var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName, true);
+            var row;
+            if (uid) {
+                row = grid.table.find("[data-uid=" + uid + "]");
+                _lastRowNumber[gridName] = row.index();
+                grid.select(row);
+            } else {
+                row = _selectGridRow(grid, dataItem["KendoGridAccpacViewPrimaryKey"]);
+            }
+            grid._lastCellIndex = index - 1;
+            grid.editCell(row.find(">td").eq(index));
+            _skipMoveTo[gridName] = true;
         }
-        grid._lastCellIndex = index - 1;
-        grid.editCell(row.find(">td").eq(index));
-        _skipMoveTo[gridName] = true;
+    }
+
+    /**
+     * @description MoveTo request success
+     * @param {string} gridName The grid name
+     * @param {object} jsonResult The request call back result
+     */
+    function _moveToSuccess(gridName, jsonResult) {
+        _gridCallback(gridName, "gridAfterSetActiveRecordCompleted", jsonResult.Data, "");
     }
 
     /**
@@ -1367,10 +1386,10 @@ sg.viewList = function () {
     function _refreshRow(gridName, jsonResult, fieldName) {
         var grid = $('#' + gridName).data("kendoGrid"),
             refreshRowData = grid.dataItem(grid.select()),
-            uid = refreshRowData.uid,
             status = _lastRowStatus[gridName] === RowStatusEnum.UPDATE ? RowStatusEnum.NONE : _lastRowStatus[gridName];
 
         if (refreshRowData) {
+            var uid = refreshRowData.uid;
             for (var field in jsonResult.Data) {
                 if (refreshRowData.hasOwnProperty(field)) {
                     refreshRowData[field] = jsonResult.Data[field];
@@ -1665,6 +1684,7 @@ sg.viewList = function () {
                                 callback(record, fieldName);
                                 return true;
                             case "gridAfterSetActiveRecord":
+                            case "gridAfterSetActiveRecordCompleted":
                             case "gridAfterCreate":
                             case "gridAfterInsert":
                                 callback(record);

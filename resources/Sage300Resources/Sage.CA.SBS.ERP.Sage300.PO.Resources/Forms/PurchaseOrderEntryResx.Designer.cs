@@ -3769,6 +3769,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set the expected arrival date for all details to be the same as the arrival date for the purchase order?.
+        /// </summary>
+        public static string UpdateArrivalDates {
+            get {
+                return ResourceManager.GetString("UpdateArrivalDates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set the location for all details to be the same as the ship-to location for the purchase order?\n\nThe location will not be changed for a detail if the item specified for the detail is not allowed at the ship-to location..
+        /// </summary>
+        public static string UpdateShiptoLocations {
+            get {
+                return ResourceManager.GetString("UpdateShiptoLocations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Blank Vendors.
         /// </summary>
         public static string UseBlankVendors {

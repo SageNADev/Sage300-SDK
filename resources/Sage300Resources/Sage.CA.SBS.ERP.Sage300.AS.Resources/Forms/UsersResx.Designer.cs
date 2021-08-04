@@ -259,6 +259,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reserve a LanPak License.
+        /// </summary>
+        public static string ReserveLanPakLicense {
+            get {
+                return ResourceManager.GetString("ReserveLanPakLicense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to delete {0} {1}?.
         /// </summary>
         public static string Template_DeleteConfirmMessage {

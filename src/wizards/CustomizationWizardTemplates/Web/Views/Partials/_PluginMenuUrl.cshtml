@@ -46,16 +46,31 @@
 
 @foreach (var level2Item in level2Items.Where(m => m.Data.ParentMenuId == homepageKey).OrderBy(m => m.Data.MenuItemOrder))
 {
-    if (level2Item.Data.Isintelligence.HasValue && level2Item.Data.Isintelligence.Value && !string.IsNullOrEmpty(level2Item.Data.Content))
+    if (level2Item.Data.Isintelligence.HasValue && level2Item.Data.Isintelligence.Value)
     {
-        if (ViewBag.IsSIRCEnable == true)
-        {
-            @Html.Raw(HttpUtility.HtmlDecode(string.Format(level2Item.Data.Content,
-                NavigationResx.SIR_Msg1,
-                NavigationResx.SIR_Msg1,
-                NavigationResx.SIR_Msg2,
-                NavigationResx.SIR_Btn)))
-        }
+        <li class="menu-item top-tier menu-ir" id="SIR">
+            <div class="nav-icon"><img src="../../../Content/Images/nav/SIRC/icon_sirc.svg" width="20" height="20"></div>
+            <a>@NavigationResx.SIR_Msg1</a>
+            <ul class="std-menu">
+                <li class="feature-menu-header">
+                    <span class="logo"></span><span>@NavigationResx.SIR_Msg2</span>
+                </li>
+                @if (ViewBag.IsSIRCEnable == true)
+                {
+                    <li class="feature-menu-content">
+                        <h2>@NavigationResx.SIR_Msg3</h2>
+                        <p>@NavigationResx.SIR_Msg4</p>
+                        <p><input class="btn btn-accent" id="btnIntelligence" name="btnIntelligence" type="button" value="@NavigationResx.SIR_Btn"></p>
+                    </li>
+                }
+                <hr>
+                <li class="feature-menu-content">
+                    <div class="logo-sda"><img src="../../../Content/Images/nav/logo_sda.png" width="156" height="24" alt="@NavigationResx.SIR_SDAMsg1"></div>
+                    <p>@NavigationResx.SIR_SDAMsg2</p>
+                    <p><input class="btn btn-accent" id="btnSDA" name="btnSDA" type="button" value="@NavigationResx.SIR_Btn"></p>
+                </li>
+            </ul>
+        </li>
     }
     else if (level2Item.Data.IsRootItem.HasValue && level2Item.Data.IsRootItem.Value && !string.IsNullOrEmpty(level2Item.Data.Content))
     {

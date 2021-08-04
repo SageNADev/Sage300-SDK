@@ -194,15 +194,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.ToReleaseNumber));
 #endif
 
-            if (Constants.PerRelease.ReportUpgrade_For_2021_2)
-            {
-                var executableName = "Sage.CA.SBS.ERP.Sage300.ExportReport.exe";
-                var title = Resources.ReleaseSpecificTitle_ReportUpdates_For_2021_2;
-                var description = string.Format(Resources.Template_ReleaseSpecificDesc_ReportUpdates_For_2021_2, executableName);
-                var content = string.Format(Resources.Template_ReleaseSpecificContent_ReportUpdates_For_2021_2, executableName);
-                AddStep(title, description, content);
-            }
-
             if (Constants.PerRelease.RemovePreviousJqueryLibraries)
             {
                 //
@@ -213,7 +204,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         Resources.ReleaseSpecificTitleDescRemovePreviousJqueryLibraries,
                         string.Format(Resources.Template_ReleaseSpecificRemovePreviousJqueryLibraries,
                                         Constants.PerRelease.FromJqueryCoreVersion,
-                                        Constants.PerRelease.FromJqueryUIVersion,
                                         Constants.PerRelease.FromJqueryMigrateVersion));
             }
 
@@ -226,6 +216,20 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 AddStep(Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion,
                         string.Format(Resources.Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion, version),
                         string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion, version));
+            }
+
+            if (Constants.PerRelease.FinderAlterations)
+            {
+                AddStep(Resources.ReleaseSpecificTitleFinderAlterations,
+                        Resources.ReleaseSpecificDescFinderAlterations,
+                        Resources.ReleaseSpecificFinderAlterations);
+            }
+
+            if (Constants.PerRelease.FinalAlterations)
+            {
+                AddStep(Resources.ReleaseSpecificTitleFinalAlterations,
+                        Resources.ReleaseSpecificDescFinalAlterations,
+                        Resources.ReleaseSpecificFinalAlterations);
             }
 
             if (Constants.PerRelease.UpdateUnifyDisabled)
@@ -267,6 +271,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
         /// <summary>
         /// Build Main Content Step
+        /// Developer Note: This method builds the list of steps displayed on the first page
+        ///                 of the Upgrade Wizard
         /// </summary>
         /// <returns>Content for main screen</returns>
         private static string BuildMainContentStep()
@@ -302,6 +308,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             if (Constants.PerRelease.UpdateMicrosoftDotNetFramework)
             {
                 content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
+            }
+
+            if (Constants.PerRelease.FinderAlterations)
+            {
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleFinderAlterations}");
+            }
+
+            if (Constants.PerRelease.FinalAlterations)
+            {
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleFinalAlterations}");
             }
 
             if (Constants.PerRelease.UpdateUnifyDisabled)

@@ -794,10 +794,14 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.woff">sagearmonyeicons.woff</ProjectItem>
         </Folder>
         <Folder Name="images" TargetFolderName="images">
+          <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="footer_logo.png">footer_logo.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.png">sage_300_logo.png</ProjectItem>
           <Folder Name="default" TargetFolderName="default">
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_icons.png">browser_icons.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="DropDownArrow.png">DropDownArrow.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="loading_alternative.gif">loading_alternative.gif</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
           </Folder>
           <Folder Name="home" TargetFolderName="home">
@@ -823,6 +827,10 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_safari.png">browser_safari.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="desktop-solid-white.svg">desktop-solid-white.svg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="desktop-solid.svg">desktop-solid.svg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="image1.jpg">image1.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="image2.jpg">image2.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="image3.jpg">image3.jpg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="login-bg - Copy.jpg">login-bg - Copy.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg.jpg">login-bg.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg_admin.jpg">login-bg_admin.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="logo-printboss.png">logo-printboss.png</ProjectItem>
@@ -871,23 +879,55 @@
         </Folder>
         <Folder Name="js" TargetFolderName="js">
           <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.js">bootstrap.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="customscripts - Copy.js">customscripts - Copy.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="customscripts.js">customscripts.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="grids_employeetimecards.js">grids_employeetimecards.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="grids_optional_fields.js">grids_optional_fields.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="grids_timecards.js">grids_timecards.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="input.Checkbox.js">input.Checkbox.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.min.js">jquery.min.js</ProjectItem>
+          <Folder Name="Kendo" TargetFolderName="Kendo">
+            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.all.min.js">kendo.all.min.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.web.min.js">kendo.web.min.js</ProjectItem>
+          </Folder>
         </Folder>
         <Folder Name="styles" TargetFolderName="styles">
           <Folder Name="css" TargetFolderName="css">
             <ProjectItem ReplaceParameters="true" TargetFileName="base.min.css">base.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="custom.css">custom.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="default-home.min.css">default-home.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="default.min.css">default.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.common.min.css">kendo.common.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.default.min.css">kendo.default.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="stand-alone.css">stand-alone.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="widget.min.css">widget.min.css</ProjectItem>
             <Folder Name="default" TargetFolderName="default">
+              <ProjectItem ReplaceParameters="false" TargetFileName="loading-image-backup.gif">loading-image-backup.gif</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="loading-image.gif">loading-image.gif</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
             </Folder>
             <Folder Name="fonts" TargetFolderName="fonts">
+              <Folder Name="DejaVu" TargetFolderName="DejaVu">
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-Bold.ttf">DejaVuSans-Bold.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-BoldOblique.ttf">DejaVuSans-BoldOblique.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-ExtraLight.ttf">DejaVuSans-ExtraLight.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-Oblique.ttf">DejaVuSans-Oblique.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans.ttf">DejaVuSans.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-Bold.ttf">DejaVuSansMono-Bold.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-BoldOblique.ttf">DejaVuSansMono-BoldOblique.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-Oblique.ttf">DejaVuSansMono-Oblique.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono.ttf">DejaVuSansMono.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-Bold.ttf">DejaVuSerif-Bold.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-BoldItalic.ttf">DejaVuSerif-BoldItalic.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-Italic.ttf">DejaVuSerif-Italic.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif.ttf">DejaVuSerif.ttf</ProjectItem>
+              </Folder>
               <Folder Name="glyphs" TargetFolderName="glyphs">
+                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.eot">KendoUIGlyphs.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.svg">KendoUIGlyphs.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.ttf">KendoUIGlyphs.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.woff">KendoUIGlyphs.woff</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.eot">WebComponentsIcons.eot</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.svg">WebComponentsIcons.svg</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.ttf">WebComponentsIcons.ttf</ProjectItem>
@@ -1861,7 +1901,9 @@
           </Folder>
         </Folder>
         <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
           <Folder Name="Scripts" TargetFolderName="Scripts">
+            <ProjectItem ReplaceParameters="true" TargetFileName="dir.txt">dir.txt</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="PageUnloadEventManager.js">PageUnloadEventManager.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Cache.js">Sage.CA.SBS.ERP.Sage300.Common.Cache.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
