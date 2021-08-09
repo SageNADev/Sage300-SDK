@@ -838,6 +838,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnButton.Name = "btnButton";
             this.btnButton.Size = new System.Drawing.Size(29, 29);
+            this.btnButton.Tag = "Button";
             this.btnButton.ToolTipText = "Add Button Control";
             // 
             // toolStripSeparator1

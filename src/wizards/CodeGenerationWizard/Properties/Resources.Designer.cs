@@ -134,11 +134,29 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Button Control.
+        /// </summary>
+        internal static string ButtonControl {
+            get {
+                return ResourceManager.GetString("ButtonControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checkbox.
+        /// </summary>
+        internal static string Checkbox {
+            get {
+                return ResourceManager.GetString("Checkbox", resourceCulture);
             }
         }
         

@@ -151,6 +151,15 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
                 }, null, message, <#=localEntityName#>Resources.DeleteTitle);
             }
         });
+<#
+    // Create code for buttons, if any
+    snippet = new StringBuilder();
+    SnippetHelper.InitButtonsJavaScript(8, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
     },
 
     /**

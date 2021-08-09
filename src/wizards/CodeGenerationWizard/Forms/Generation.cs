@@ -259,6 +259,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string WidgetTabPage = "TabPage";
             /// <summary> Widget Grid </summary>
             public const string WidgetGrid = "Grid";
+            /// <summary> Widget Button </summary>
+            public const string WidgetButton = "Button";
 
             /// <summary> Prefix Palette </summary>
             public const string PrefixPalette = "palette";
@@ -268,6 +270,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string PrefixTab = "tabStrip";
             /// <summary> Prefix Grid </summary>
             public const string PrefixGrid = "grid";
+            /// <summary> Prefix Button </summary>
+            public const string PrefixButton = "btn";
 
             /// <summary> Suffix Tab Page </summary>
             public const string SuffixTabTage = "_page";
@@ -345,7 +349,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             /// <summary> Label control (business property) </summary>
             Label = 2,
             /// <summary> Grid control </summary>
-            Grid = 3
+            Grid = 3,
+            /// <summary> Button control </summary>
+            Button = 4
         }
 
         #endregion
@@ -1650,6 +1656,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             DeleteControlFromLayout(control, ControlType.Grid);
                             break;
                         }
+                        else if (type == typeof(Button))
+                        {
+                            // Delete the button
+                            DeleteControlFromLayout(control, ControlType.Button);
+                            break;
+                        }
                     }
                 } while (palette.Controls.Count > 2);
             }
@@ -2141,6 +2153,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var enableButtons = GetRepositoryType().Equals(RepositoryType.Report);
             btnTab.Enabled = !enableButtons;
             btnGrid.Enabled = !enableButtons;
+            
+            btnButton.Enabled = true;
 
             btnDeleteControl.Enabled = false;
             btnAddTabPage.Enabled = false;
@@ -2184,6 +2198,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 else if (type == typeof(FlowLayoutPanel))
                 {
                     _controlType = ControlType.Grid;
+                }
+                else if (type == typeof(Button))
+                {
+                    _controlType = ControlType.Button;
                 }
                 else
                 {
@@ -2237,6 +2255,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 // Control is a grid
                 txtPropWidget.Text = string.Format("{0} {1}", Constants.WidgetGrid, Resources.Control);
+            }
+            else if (_controlType == ControlType.Button)
+            {
+                // Control is a button
+                txtPropWidget.Text = string.Format("{0} {1}", Constants.WidgetButton, Resources.Control);
             }
             else if (_controlType == ControlType.Label)
             {
@@ -2302,6 +2325,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             MouseHandlerEvents(treeUIEntities, "");
             MouseHandlerEvents(btnTab, Resources.TabControl);
             MouseHandlerEvents(btnGrid, Resources.GridContainer);
+            MouseHandlerEvents(btnButton, Resources.ButtonControl);
 
             // Main palette
             splitDesigner.Panel1.DragEnter += DragEnterHandler;
@@ -2372,7 +2396,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             CellInfo cellInfo = null;
 
             // Get cell info
-            if (control.GetType() == typeof(Label) || control.GetType() == typeof(TabControl) || control.GetType() == typeof(FlowLayoutPanel))
+            if (control.GetType() == typeof(Label) || 
+                control.GetType() == typeof(TabControl) || 
+                control.GetType() == typeof(FlowLayoutPanel) ||
+                control.GetType() == typeof(Button))
             {
                 // In a grid (grid!)
                 if (((Control)control).Parent.GetType() == typeof(FlowLayoutPanel))
@@ -2539,7 +2566,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     cellInfo.Control.CurrentCell = cellInfo.Control[cellInfo.ColIndex, cellInfo.RowIndex];
                 }
 
-                if (controlinfo.Widget == Constants.WidgetDropDown || controlinfo.Widget == Constants.WidgetRadioButtons)
+                if (controlinfo.Widget == Constants.WidgetDropDown || 
+                    controlinfo.Widget == Constants.WidgetRadioButtons)
                 {
                     var mouseEventArgs = (MouseEventArgs)e;
                     if (mouseEventArgs != null && mouseEventArgs.Button == MouseButtons.Right)
@@ -2589,7 +2617,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                         _contextMenu.Show((Control)sender, mouseEventArgs.Location);
                     }
-
+                }
+            }
+            else if (sender.GetType() == typeof(Button))
+            {
+                // Set the border color since the selection of a button
+                // does not select the cell
+                var cellInfo = GetCellInfo(sender);
+                if (cellInfo != null)
+                {
+                    cellInfo.Control.CurrentCell = cellInfo.Control[cellInfo.ColIndex, cellInfo.RowIndex];
                 }
             }
             else
@@ -2710,6 +2747,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var tabControl = (TabControl)e.Data.GetData(typeof(TabControl));
             var toolboxControl = (string)e.Data.GetData(DataFormats.Text);
             var flowPanel = (FlowLayoutPanel)e.Data.GetData(typeof(FlowLayoutPanel));
+            var buttonControl = (Button)e.Data.GetData(typeof(Button));
             var control = (Control)sender;
             var type = control.GetType();
             DataGridView.HitTestInfo hitTestInfo = null;
@@ -2745,7 +2783,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
             }
 
-            // If dropping a grid, can only drop on a cell and not on another grid
+            // If dropping a grid, can only drop on a cell
             if (toolboxControl == Constants.WidgetGrid)
             {
                 // Can only drop on a data grid view
@@ -2755,7 +2793,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
             }
 
-            // Get point where field is being dropped or moved to
+            // If dropping a button, can only drop on a cell
+            if (toolboxControl == Constants.WidgetButton)
+            {
+                // Can only drop on a data grid view
+                if (type != typeof(DataGridView))
+                {
+                    return;
+                }
+            }
+
+            // Get point where widget is being dropped or moved to
             var point = control.PointToClient(new Point(e.X, e.Y));
 
             // If dropping in grid, then get cell info for targetted cell
@@ -2820,6 +2868,22 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 CreateGrid(point, control, cellInfo);
             }
+            else if (!string.IsNullOrEmpty(toolboxControl) && toolboxControl == Constants.WidgetButton)
+            {
+                if (type == typeof(DataGridView))
+                {
+
+                    cellInfo = CellInfoForDrop(control, hitTestInfo, ref point, Constants.WidgetButton);
+
+                    // Can't drop into an occupied cell
+                    if (cellInfo == null)
+                    {
+                        return;
+                    }
+                }
+
+                CreateButton(point, control, cellInfo);
+            }
             else if (label != null || tabControl != null)
             {
                 Control movingControl = label != null ? label : (Control)tabControl;
@@ -2851,6 +2915,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 MoveControl(flowPanel, point, control, e);
+            }
+            else if (buttonControl != null)
+            {
+                cellInfo = CellInfoForMove(control, hitTestInfo, ref point, buttonControl);
+
+                // Can't move
+                if (cellInfo == null)
+                {
+                    return;
+                }
+
+                MoveControl(buttonControl, point, control, e);
             }
         }
 
@@ -2963,6 +3039,50 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 FlowDirection = FlowDirection.LeftToRight,
                 BackColor = SystemColors.Window,
                 Tag = cellInfo
+            };
+
+            // Add handlers
+            AddHandlers(control, true);
+
+            // Add the newly created control
+            AddNewControl(control, destinationControl);
+
+            return control;
+        }
+
+        /// <summary>
+        /// Create a button
+        /// </summary>
+        /// <param name="point">Location to create</param>
+        /// <param name="destinationControl">Destination Control</param>
+        /// <param name="cellInfo">Cell info for tag property</param>
+        /// <returns>Created control</returns>
+        private Control CreateButton(Point point, Control destinationControl, CellInfo cellInfo)
+        {
+            var name = GetUniqueControlName(Constants.PrefixButton);
+
+            if (cellInfo != null)
+            {
+                cellInfo.Name = name;
+            }
+
+            // Size button to cell
+            var size = ((DataGridView)destinationControl)[cellInfo.ColIndex, cellInfo.RowIndex].Size;
+            size.Width -= 20;
+            point.X += 10;
+
+            // Create a new button in the layout
+            var control = new Button
+            {
+                Name = name,
+                Location = point,
+                Size = size,
+                AllowDrop = true,
+                FlatStyle = FlatStyle.Popup,
+                ForeColor = Color.FromArgb(0, 0, 255),
+                BackColor = SystemColors.Window,
+                Tag = cellInfo,
+                Font = new Font("Segoe UI", 7)
             };
 
             // Add handlers
@@ -3353,7 +3473,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
-        /// Delete a Control (grid, container, label), but not tab 
+        /// Delete a Control (grid, container, label, button), but not tab 
         /// </summary>
         /// <param name="control">Control to delete</param>
         private void DeleteControl(Control control)
@@ -3482,7 +3602,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
                 else
                 {
-                    // Delete container, grid, or label
+                    // Delete container, grid, button, or label
                     DeleteControl(child);
                 }
             }
@@ -3692,6 +3812,39 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                 else
                                 {
                                     _widgets.Add(key, new List<string> { control.Text });
+                                }
+                            }
+                        }
+
+                        // If a button then create an element (no children)
+                        else if (control.GetType() == typeof(Button))
+                        {
+                            // Create control element
+                            var controlElement = new XElement(Constants.NodeControl);
+                            var controlInfo = GetControlInfo(control.Name);
+
+                            // Add attributes
+                            controlElement.Add(new XAttribute(Constants.AttributeType, Constants.AttributeDiv));
+                            controlElement.Add(new XAttribute(Constants.AttributeNewRow, Constants.AttributeFalse));
+                            controlElement.Add(new XAttribute(Constants.AttributeWidget, Constants.WidgetButton));
+                            controlElement.Add(new XAttribute(Constants.AttributeId, control.Name));
+                            controlElement.Add(new XAttribute(Constants.AttributeText, control.Text));
+
+                            // Add to controls element
+                            formGroupControlsElement.Add(controlElement);
+
+                            key = Constants.WidgetButton;
+
+                            // Add to dictionary?
+                            if (!string.IsNullOrEmpty(key))
+                            {
+                                if (_widgets.ContainsKey(key))
+                                {
+                                    _widgets[key].Add(control.Name);
+                                }
+                                else
+                                {
+                                    _widgets.Add(key, new List<string> { control.Name });
                                 }
                             }
                         }
@@ -5399,7 +5552,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
             else
             {
-                // Delete container, grid, or label
+                // Delete container, grid, button, or label
                 DeleteControl(control);
             }
 
