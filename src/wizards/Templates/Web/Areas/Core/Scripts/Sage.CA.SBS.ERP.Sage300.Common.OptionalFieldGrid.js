@@ -213,6 +213,11 @@ sg.optionalFieldControl = function () {
                 callBack(true);
             }
         }
+		
+        // always return TRUE for backward compatibility. A caller should use a callback function 
+        // to check whether commit is successful
+        return true;
+
     }
 
     /**
@@ -1416,13 +1421,12 @@ sg.optionalFieldControl = function () {
      * @return {boolean} Return a boolean flag to indicate success or not
      */
     function commit(gridName, callBack) {
+		var result = true;
         if (gridName) {
             result = _commitGrid(gridName, callBack);
         }
 
-        // always return TRUE for backward compatibility. A caller should use a callback function 
-        // to check whether commit is successful
-        return true;
+        return result;
     }
 
 

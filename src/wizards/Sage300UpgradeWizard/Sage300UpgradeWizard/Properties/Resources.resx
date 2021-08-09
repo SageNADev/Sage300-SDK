@@ -348,7 +348,12 @@
     <value>The following previous versions of jQuery files will be removed from your solution and projects:
 
 jQuery Core V{0}
-jQuery Migrate V{1}</value>
+jQuery Migrate V{1}
+
+The following files will be updated to reference the correct version of jQuery:
+
+\Web\WebForms\CustomReportViewer.aspx
+\Web\WebForms\ReportViewer.aspx</value>
   </data>
   <data name="ReleaseSpecificDescUnifyDisabled" xml:space="preserve">
     <value>This step will need to be done manually.</value>
@@ -439,9 +444,6 @@ and change to
   <data name="ReleaseSpecificDescFinderAlterations" xml:space="preserve">
     <value>This step will need to be done manually.</value>
   </data>
-  <data name="ReleaseSpecificFinderAlterations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ReleaseSpecificFinderAlterations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
-  </data>
   <data name="ReleaseSpecificTitleFinderAlterations" xml:space="preserve">
     <value>Finder Alterations</value>
   </data>
@@ -451,13 +453,43 @@ and change to
   <data name="FinalAlterationsAreAManualStep" xml:space="preserve">
     <value>The final alterations must be made manually.</value>
   </data>
-  <data name="ReleaseSpecificDescFinalAlterations" xml:space="preserve">
+  <data name="ReleaseSpecificDescNamespaceAndWebProjectUpdates" xml:space="preserve">
+    <value>This step will automatically update the namespace in some files as well as apply updates to the Web project file.</value>
+  </data>
+  <data name="ReleaseSpecificTitleNamespaceAndWebProjectUpdates" xml:space="preserve">
+    <value>Namespace and Web Project Updates</value>
+  </data>
+  <data name="ReleaseSpecificFinderAlterations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificFinderAlterations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReleaseSpecificNamespaceAndWebProjectUpdates" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificNamespaceAndWebProjectUpdates.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Namespace" xml:space="preserve">
+    <value>Namespace</value>
+  </data>
+  <data name="Template_SuccessfullyAddedFileToWebProject" xml:space="preserve">
+    <value>Successfully added {0} to {1}.</value>
+  </data>
+  <data name="Template_SuccessfullyUpdatedNamespaceInFile" xml:space="preserve">
+    <value>Successfully updated namespace in {0}.</value>
+  </data>
+  <data name="UnableToDetermineNamespace" xml:space="preserve">
+    <value>Error: The Upgrade Wizard was unable to determine the namespace.</value>
+  </data>
+  <data name="JavascriptMinificationUpdatesAreAManualStep" xml:space="preserve">
+    <value>The updates to the Javascript Minification Process must be made manually.</value>
+  </data>
+  <data name="ReleaseSpecificDescJavascriptMinificationUpdates" xml:space="preserve">
     <value>This step will need to be done manually.</value>
   </data>
-  <data name="ReleaseSpecificFinalAlterations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ReleaseSpecificFinalAlterations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="ReleaseSpecificJavascriptMinificationUpdates" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificJavascriptMinificationUpdates.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="ReleaseSpecificTitleFinalAlterations" xml:space="preserve">
-    <value>Final Alterations</value>
+  <data name="ReleaseSpecificTitleJavascriptMinificationUpdates" xml:space="preserve">
+    <value>Javascript Minification Updates</value>
+  </data>
+  <data name="Template_SuccessfullyUpdatedJQueryVersionInFile" xml:space="preserve">
+    <value>Successfully updated the version of jQuery from {0} to {1} in file {2}.</value>
   </data>
 </root>
