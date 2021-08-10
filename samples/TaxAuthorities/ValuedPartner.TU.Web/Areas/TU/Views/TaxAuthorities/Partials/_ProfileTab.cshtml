@@ -1,6 +1,6 @@
 @*
   The MIT License (MIT) 
-  Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
+  Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
  
   Permission is hereby granted, free of charge, to any person obtaining a copy of 
   this software and associated documentation files (the "Software"), to deal in 
@@ -34,21 +34,21 @@
         <div class="form-group">
             @if (Model.Data.IsMultiCurrency)
             {
-                <div class="search-group">
-                    @Html.SageLabelFor(m => m.Data.TaxReportingCurrency)
-                    @Html.KoSageTextBoxFor(m => m.Data.TaxReportingCurrency, new { @sagevalue = "Data.TaxReportingCurrency", @valueUpdate = "'input'" }, new { @id = "txtTaxReportingCurrency", @disable = false, @class = "smaller txt-upper" })
-                    @Html.KoSageButton("btnLoadcurrency", null, new { @class = "icon btn-go", @id = "btnLoadcurrency", @tabindex = "-1" })
-                    @Html.KoSageButton("btnCurrencyFinder", null, new { @class = "icon btn-search", @id = "btnCurrencyFinder", @tabindex = "-1" })
-                    @Html.ValidationMessageFor(m => m.Data.TaxReportingCurrency)
-                </div>
+            <div class="search-group">
+                @Html.SgFinderFor(m => m.Data.TaxReportingCurrency,
+                      new { @sagevalue = "Data.TaxReportingCurrency" },
+                      new { @id = "txtTaxReportingCurrency", @class = "txt-upper" }, size: "smaller",
+                      goButtonId: "btnLoadcurrency", findButtonId: "btnCurrencyFinder")
+            </div>
                 <div class="input-group">
                     @Html.SageLabel("taxReportingCurrencydesc", TaxAuthoritiesResx.TaxReportingCurrencyDesc, null)
                     @Html.KoSageTextBox("txtTaxReportingCurrencydesc", new { @sagevalue = "CurrencyDescription" }, new { @disabled = "disabled", @class = "large" })
                 </div>
             }
             <div class="input-group">
-                @Html.SageLabelFor(m => m.Data.LastMaintained)
-                @Html.KoSageTextBoxFor(m => m.Data.LastMaintained, new { @value = "LastMaintainedString" }, new { @disabled = "disabled", @tabindex = " - 1", @class = "default" })
+                @Html.SgDatepickerFor(m => m.Data.LastMaintained,
+                      new { @value = "LastMaintainedString" },
+                      new { @disabled = "disabled", @tabindex = " -1"})
             </div>
         </div>
         
@@ -58,12 +58,14 @@
                 @Html.KoSageDropDownList("ddlreportTaxRetainage", new { @options = "ReportTaxonRetainageDocuments", @value = "Data.ReportTaxonRetainageDocument", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "ddlreportTaxRetainage", @class = "medium" })
             </div>
             <div class="numeric-group">
-                @Html.SageLabelFor(m => m.Data.MaximumTaxAllowable)
-                @Html.KoSageTextBoxFor(m => m.Data.MaximumTaxAllowable, new { @sagevalue = "Data.MaximumTaxAllowable", @valueUpdate = "'input'" }, new { @id = "txtMaximumTaxAllowable", @class = "default align-right" })
+                @Html.SgNumericFor(m => m.Data.MaximumTaxAllowable,
+                      new { @sagevalue = "Data.MaximumTaxAllowable" },
+                      new { @id = "txtMaximumTaxAllowable", @class = "align-right" })
             </div>
             <div class="numeric-group">
-                @Html.SageLabelFor(m => m.Data.NoTaxChargedBelow)
-                @Html.KoSageTextBoxFor(m => m.Data.NoTaxChargedBelow, new { @sagevalue = "Data.NoTaxChargedBelow", @valueUpdate = "'input'" }, new { @id = "txtNoTaxChargedBelow", @class = "default align-right" })
+                @Html.SgNumericFor(m => m.Data.NoTaxChargedBelow,
+                      new { @sagevalue = "Data.NoTaxChargedBelow" },
+                      new { @id = "txtNoTaxChargedBelow", @class = "align-right" })
             </div>
         </div>
         <div class="form-group">
@@ -77,8 +79,11 @@
             </div>
             <div class="ctrl-group no-label">
                 <div class="child">
-                    @Html.KoSageCheckBoxFor(m => m.Data.AllowTaxPrice, new { @sagechecked = "Data.AllowTaxPrice", @valueUpdate = "'input'" }, new { @id = "chkallowTax" })
-                    @Html.SageLabel("chkallowTax", TaxAuthoritiesResx.AllowTaxInPrice, new { @class = "" })
+                    @Html.SgCheckboxFor(m => m.Data.AllowTaxPrice,
+                          new { @sagechecked = "Data.AllowTaxPrice" },
+                          new { @id = "chkallowTax" },
+                          labelText: TaxAuthoritiesResx.AllowTaxInPrice,
+                          labelHtmlAttrs: new { @id = "chkallowTax" })
                 </div>
             </div>
         </div>

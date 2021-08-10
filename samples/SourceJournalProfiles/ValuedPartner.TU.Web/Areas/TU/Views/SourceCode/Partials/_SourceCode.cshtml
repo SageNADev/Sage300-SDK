@@ -62,11 +62,12 @@
 
     <div class="form-group">
         <div class="search-group">
-            @Html.SageLabel("SourceLedger", SourceCodeResx.SourceLedger, new { @class = "required" })
-            @Html.KoSageTextBoxFor(model => model.Data.SourceLedger, new { @sagevalue = "Data.SourceLedger", @valueUpdate = "'input'" }, new { @id = "txtSourceLedger", @class = "default txt-upper", @formatTextbox = "alphaNumeric" })
-            @Html.KoSageButton("btnLoadSourceLedger", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
-            @Html.KoSageButton("btnFinderSourceLedger", null, new { @class = "icon btn-search", @id = "btnFinderSourceLedger", @tabindex = "-1" })
-            @Html.ValidationMessageFor(model => model.Data.SourceLedger)
+            @Html.SgFinderFor(m => m.Data.SourceLedger,
+                  new { @sagevalue = "Data.SourceLedger" }, 
+                  new { @id = "txtSourceLedger", @class = "txt-upper", @formatTextbox = "alphaNumeric" },
+                  goButtonId: "btnLoad",
+                  buttonDataAttrs: new { @disable = "Data.IsModifyAccess" },
+                  labelText: SourceCodeResx.SourceLedger, labelHtmlAttrs: new { @id = "SourceLedger", @class = "required" })
         </div>
     </div>
     <section class="footer-group-1">
