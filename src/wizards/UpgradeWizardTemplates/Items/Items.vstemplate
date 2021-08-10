@@ -19,7 +19,6 @@
 	<ProjectItem ReplaceParameters="true" TargetFileName="Login.aspx">Login.aspx</ProjectItem>
 	<ProjectItem ReplaceParameters="true" TargetFileName="Login.aspx.cs">Login.aspx.cs</ProjectItem>
 	<ProjectItem ReplaceParameters="true" TargetFileName="Login.aspx.designer.cs">Login.aspx.designer.cs</ProjectItem>
-	<ProjectItem ReplaceParameters="true" TargetFileName="SageWebReportDocument.cs">SageWebReportDocument.cs</ProjectItem>
 	<!-- End - New Lines -->
 	
   </TemplateContent>

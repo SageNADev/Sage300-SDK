@@ -218,6 +218,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion, version));
             }
 
+            if (Constants.PerRelease.NamespaceAndWebProjectUpdates)
+            {
+                AddStep(Resources.ReleaseSpecificTitleNamespaceAndWebProjectUpdates,
+                        Resources.ReleaseSpecificDescNamespaceAndWebProjectUpdates,
+                        Resources.ReleaseSpecificNamespaceAndWebProjectUpdates);
+            }
+
             if (Constants.PerRelease.FinderAlterations)
             {
                 AddStep(Resources.ReleaseSpecificTitleFinderAlterations,
@@ -225,11 +232,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         Resources.ReleaseSpecificFinderAlterations);
             }
 
-            if (Constants.PerRelease.FinalAlterations)
+            if (Constants.PerRelease.JavascriptMinificationUpdates)
             {
-                AddStep(Resources.ReleaseSpecificTitleFinalAlterations,
-                        Resources.ReleaseSpecificDescFinalAlterations,
-                        Resources.ReleaseSpecificFinalAlterations);
+                AddStep(Resources.ReleaseSpecificTitleJavascriptMinificationUpdates,
+                        Resources.ReleaseSpecificDescJavascriptMinificationUpdates,
+                        Resources.ReleaseSpecificJavascriptMinificationUpdates);
             }
 
             if (Constants.PerRelease.UpdateUnifyDisabled)
@@ -310,14 +317,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
             }
 
+            if (Constants.PerRelease.NamespaceAndWebProjectUpdates)
+            {
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleNamespaceAndWebProjectUpdates}");
+            }
+
             if (Constants.PerRelease.FinderAlterations)
             {
                 content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleFinderAlterations}");
             }
 
-            if (Constants.PerRelease.FinalAlterations)
+            if (Constants.PerRelease.JavascriptMinificationUpdates)
             {
-                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleFinalAlterations}");
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleJavascriptMinificationUpdates}");
             }
 
             if (Constants.PerRelease.UpdateUnifyDisabled)
