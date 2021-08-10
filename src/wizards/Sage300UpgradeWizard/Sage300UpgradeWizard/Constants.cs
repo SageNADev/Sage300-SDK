@@ -67,8 +67,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// <summary> Flag that determines whether or not to execute the 'FinderAlterations' process. </summary>
             public const bool FinderAlterations = true;
 
-            /// <summary> Flag that determines whether or not to execute the 'FinalAlterations' process. </summary>
-            public const bool FinalAlterations = true;
+            /// <summary> Flag that determines whether or not to execute the 'NamespaceAndWebProjectUpdates' process. </summary>
+            public const bool NamespaceAndWebProjectUpdates = true;
+
+            /// <summary> Flag that determines whether or not to execute the 'JavascriptMinificationUpdates' process. </summary>
+            public const bool JavascriptMinificationUpdates = true;
 
             /// <summary> 
             /// Release 2021.2
@@ -130,6 +133,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// </summary>
             public const string BinIncludeFile = "BinInclude.txt";
 
+            /// <summary>
+            /// The generic name of the Web Bootstrapper file
+            /// </summary>
+            public const string WebBootstrapper = @"*WebBootstrapper.cs";
+
+            /// <summary>
+            /// The placeholder text for the replaceable safe project name
+            /// </summary>
+            public const string SafeProjectNamePlaceholder = @"$safeprojectname$";
+
             /// <summary> 
             /// Name of the nuget project that shows up in the list of projects in the solution
             /// when attempting to upgrade the targeted .NET framework. An exception is
@@ -150,6 +163,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// The search pattern for the solutions web project
             /// </summary>
             public const string WebProjectNamePattern = @".web.csproj";
+
+            /// <summary>
+            /// The name of the WebForms folder
+            /// </summary>
+            public const string WebFormsFolderName = @"WebForms";
         }
     }
 }

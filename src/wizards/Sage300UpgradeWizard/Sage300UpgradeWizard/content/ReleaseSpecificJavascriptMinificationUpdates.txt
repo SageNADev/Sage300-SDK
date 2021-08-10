@@ -1,0 +1,8 @@
+For the 2022.0 release of Sage 300, the javascript minification process 
+no longer uses a tool/application called Web Grease. It has been replaced 
+by a new application called Terser. Terser is a NodeJS-based component and 
+requires the download and installation of NodeJS.
+
+Please refer to the "Javascript Minification Updates" subsection in the Sage 300
+Upgrade Guide for 2021.2 to 2022.0 in the docs folder of the Web SDK for
+detailed instructions. The samples code may also be used as a guide.
