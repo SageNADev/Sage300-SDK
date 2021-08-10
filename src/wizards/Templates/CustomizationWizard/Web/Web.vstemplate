@@ -1,0 +1,620 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Sage300UICustomization</Name>
+    <Description>Sage300 UI Customization</Description>
+    <Hidden>true</Hidden>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType></ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Sage300UICustomization</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="ValuedPartner.Web.csproj" File="ValuedPartner.Web.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="AccpacDotNetVersion.props">AccpacDotNetVersion.props</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="BundleRegistration.cs">BundleRegistration.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$module$AreaRegistration.cs">CUAreaRegistration.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$project$$module$Bootstrapper.xml">CUBootstrapper.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$module$WebBootstrapper.cs">CUWebBootstrapper.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="pageUrl.txt">pageUrl.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+      <Folder Name="Views" TargetFolderName="Views">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Portal.cshtml">Portal.cshtml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+        <Folder Name="Partials" TargetFolderName="Partials">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_CommonLayout.cshtml">_CommonLayout.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_ConfigurePopUp.cshtml">_ConfigurePopUp.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_FeatureTour.cshtml">_FeatureTour.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Footer.cshtml">_Footer.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_HomePageHelp.cshtml">_HomePageHelp.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_MenuHelp.cshtml">_MenuHelp.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_MenuUrl.cshtml">_MenuUrl.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_PluginMenuUrl.cshtml">_PluginMenuUrl.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_QuickMenu.cshtml">_QuickMenu.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Widget.cshtml">_Widget.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_WidgetUrl.cshtml">_WidgetUrl.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="true" TargetFileName="PassivePing.cshtml">PassivePing.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_GenericLayout.cshtml">_GenericLayout.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="UnsupportedBrowser" TargetFolderName="UnsupportedBrowser">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Error.cshtml">Error.cshtml</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.js">jquery-3.6.0.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.min.js">jquery-3.6.0.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.min.map">jquery-3.6.0.min.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.js">jquery-migrate-3.3.2.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.min.js">jquery-migrate-3.3.2.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.12.1.js">jquery-ui-1.12.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.12.1.min.js">jquery-ui-1.12.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie-1.4.1.min.js">jquery.cookie-1.4.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie.js">jquery.cookie.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.js">jquery.form.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.min.js">jquery.form.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.min.js.map">jquery.form.min.js.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.signalR-2.4.1.js">jquery.signalR-2.4.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.signalR-2.4.1.min.js">jquery.signalR-2.4.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate-vsdoc.js">jquery.validate-vsdoc.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.js">jquery.validate.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.min.js">jquery.validate.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.unobtrusive.js">jquery.validate.unobtrusive.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.unobtrusive.min.js">jquery.validate.unobtrusive.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendo.js">knockout-kendo.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="knockout-kendoGrid.js">knockout-kendoGrid.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="modernizr-2.8.3.js">modernizr-2.8.3.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="xregexp-all.js">xregexp-all.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="xregexp-all.min.js">xregexp-all.min.js</ProjectItem>
+        <Folder Name="AjaxQ" TargetFolderName="AjaxQ">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ajaxq.js">ajaxq.js</ProjectItem>
+        </Folder>
+        <Folder Name="DragandDrop" TargetFolderName="DragandDrop">
+          <ProjectItem ReplaceParameters="true" TargetFileName="modernizr.custom.08307.js">modernizr.custom.08307.js</ProjectItem>
+        </Folder>
+        <Folder Name="Help" TargetFolderName="Help">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Help.js">Help.js</ProjectItem>
+        </Folder>
+        <Folder Name="jasmine" TargetFolderName="jasmine">
+          <ProjectItem ReplaceParameters="true" TargetFileName="boot.js">boot.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="console.js">console.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jasmine-html.js">jasmine-html.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jasmine.js">jasmine.js</ProjectItem>
+        </Folder>
+        <Folder Name="JQueryUI" TargetFolderName="JQueryUI">
+          <ProjectItem ReplaceParameters="true" TargetFileName="iframe-resizer-reports.js">iframe-resizer-reports.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="iframeResizer.js">iframeResizer.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.formparams.js">jquery.formparams.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.json.min.js">jquery.json.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.mask.min.js">jquery.mask.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.menu-aim.js">jquery.menu-aim.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.numeric.js">jquery.numeric.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_references.js">_references.js</ProjectItem>
+        </Folder>
+        <Folder Name="Kendo" TargetFolderName="Kendo">
+          <ProjectItem ReplaceParameters="true" TargetFileName="jszip.min.js">jszip.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.angular.min.js">kendo.angular.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.appbar.min.js">kendo.appbar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.autocomplete.min.js">kendo.autocomplete.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.badge.min.js">kendo.badge.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.binder.min.js">kendo.binder.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.bottomnavigation.min.js">kendo.bottomnavigation.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.breadcrumb.min.js">kendo.breadcrumb.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.button.min.js">kendo.button.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.buttongroup.min.js">kendo.buttongroup.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.calendar.min.js">kendo.calendar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.chat.min.js">kendo.chat.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.checkboxgroup.min.js">kendo.checkboxgroup.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.color.min.js">kendo.color.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.colorpicker.min.js">kendo.colorpicker.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.columnmenu.min.js">kendo.columnmenu.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.columnsorter.min.js">kendo.columnsorter.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.combobox.min.js">kendo.combobox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.core.min.js">kendo.core.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-AU.min.js">kendo.culture.en-AU.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-CA.min.js">kendo.culture.en-CA.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-US.min.js">kendo.culture.en-US.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en-ZA.min.js">kendo.culture.en-ZA.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.en.min.js">kendo.culture.en.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.es-ES.min.js">kendo.culture.es-ES.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.es.min.js">kendo.culture.es.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.fr-CA.min.js">kendo.culture.fr-CA.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.fr.min.js">kendo.culture.fr.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-CN.min.js">kendo.culture.zh-CN.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-Hans.min.js">kendo.culture.zh-Hans.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-Hant.min.js">kendo.culture.zh-Hant.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-HK.min.js">kendo.culture.zh-HK.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-SG.min.js">kendo.culture.zh-SG.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.culture.zh-TW.min.js">kendo.culture.zh-TW.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.data.min.js">kendo.data.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.data.odata.min.js">kendo.data.odata.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.data.signalr.min.js">kendo.data.signalr.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.data.xml.min.js">kendo.data.xml.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.barcode.min.js">kendo.dataviz.barcode.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.chart.min.js">kendo.dataviz.chart.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.core.min.js">kendo.dataviz.core.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.diagram.min.js">kendo.dataviz.diagram.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.gauge.min.js">kendo.dataviz.gauge.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.map.min.js">kendo.dataviz.map.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.min.js">kendo.dataviz.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.mobile.min.js">kendo.dataviz.mobile.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.qrcode.min.js">kendo.dataviz.qrcode.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.sparkline.min.js">kendo.dataviz.sparkline.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.stock.min.js">kendo.dataviz.stock.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.themes.min.js">kendo.dataviz.themes.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dataviz.treemap.min.js">kendo.dataviz.treemap.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dateinput.min.js">kendo.dateinput.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.datepicker.min.js">kendo.datepicker.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.daterangepicker.min.js">kendo.daterangepicker.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.datetimepicker.min.js">kendo.datetimepicker.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dialog.min.js">kendo.dialog.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dom.min.js">kendo.dom.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.draganddrop.min.js">kendo.draganddrop.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.drawer.min.js">kendo.drawer.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.drawing.min.js">kendo.drawing.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dropdownlist.min.js">kendo.dropdownlist.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.dropdowntree.min.js">kendo.dropdowntree.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.editable.min.js">kendo.editable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.editor.min.js">kendo.editor.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.excel.min.js">kendo.excel.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.expansionpanel.min.js">kendo.expansionpanel.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.filebrowser.min.js">kendo.filebrowser.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.filemanager.min.js">kendo.filemanager.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.filter.min.js">kendo.filter.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.filtercell.min.js">kendo.filtercell.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.filtermenu.min.js">kendo.filtermenu.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.floatingactionbutton.min.js">kendo.floatingactionbutton.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.floatinglabel.min.js">kendo.floatinglabel.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.form.min.js">kendo.form.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.fx.min.js">kendo.fx.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.gantt.data.min.js">kendo.gantt.data.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.gantt.editors.min.js">kendo.gantt.editors.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.gantt.list.min.js">kendo.gantt.list.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.gantt.min.js">kendo.gantt.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.gantt.timeline.min.js">kendo.gantt.timeline.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.grid.min.js">kendo.grid.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.groupable.min.js">kendo.groupable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.imagebrowser.min.js">kendo.imagebrowser.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.imageeditor.min.js">kendo.imageeditor.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.inputgroupbase.min.js">kendo.inputgroupbase.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.list.min.js">kendo.list.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.listbox.min.js">kendo.listbox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.listview.min.js">kendo.listview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.loader.min.js">kendo.loader.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.maskedtextbox.min.js">kendo.maskedtextbox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.mediaplayer.min.js">kendo.mediaplayer.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.menu.min.js">kendo.menu.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-AU.min.js">kendo.messages.en-AU.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-CA.min.js">kendo.messages.en-CA.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.en-US.min.js">kendo.messages.en-US.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.es-ES.min.js">kendo.messages.es-ES.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.fr-CA.min.js">kendo.messages.fr-CA.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-CN.min.js">kendo.messages.zh-CN.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-HK.min.js">kendo.messages.zh-HK.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.messages.zh-TW.min.js">kendo.messages.zh-TW.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.multicolumncombobox.min.js">kendo.multicolumncombobox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.multiselect.min.js">kendo.multiselect.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.multiviewcalendar.min.js">kendo.multiviewcalendar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.notification.min.js">kendo.notification.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.numerictextbox.min.js">kendo.numerictextbox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.ooxml.min.js">kendo.ooxml.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pager.min.js">kendo.pager.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pane.min.js">kendo.pane.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.panelbar.min.js">kendo.panelbar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pdf.min.js">kendo.pdf.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pdfviewer.min.js">kendo.pdfviewer.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pivot.configurator.min.js">kendo.pivot.configurator.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pivot.fieldmenu.min.js">kendo.pivot.fieldmenu.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.pivotgrid.min.js">kendo.pivotgrid.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.popup.min.js">kendo.popup.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.progressbar.min.js">kendo.progressbar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.radiogroup.min.js">kendo.radiogroup.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.rating.min.js">kendo.rating.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.reorderable.min.js">kendo.reorderable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.resizable.min.js">kendo.resizable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.responsivepanel.min.js">kendo.responsivepanel.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.ripple.min.js">kendo.ripple.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.router.min.js">kendo.router.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.agendaview.min.js">kendo.scheduler.agendaview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.dayview.min.js">kendo.scheduler.dayview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.min.js">kendo.scheduler.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.monthview.min.js">kendo.scheduler.monthview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.recurrence.min.js">kendo.scheduler.recurrence.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.timelineview.min.js">kendo.scheduler.timelineview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scheduler.view.min.js">kendo.scheduler.view.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.scrollview.min.js">kendo.scrollview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.selectable.min.js">kendo.selectable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.slider.min.js">kendo.slider.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.sortable.min.js">kendo.sortable.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.splitter.min.js">kendo.splitter.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.spreadsheet.min.js">kendo.spreadsheet.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.stepper.min.js">kendo.stepper.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.switch.min.js">kendo.switch.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.tabstrip.min.js">kendo.tabstrip.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.textarea.min.js">kendo.textarea.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.textbox.min.js">kendo.textbox.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.tilelayout.min.js">kendo.tilelayout.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.timeline.min.js">kendo.timeline.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.timepicker.min.js">kendo.timepicker.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.timezones.min.js">kendo.timezones.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.toolbar.min.js">kendo.toolbar.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.tooltip.min.js">kendo.tooltip.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.touch.min.js">kendo.touch.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.treelist.min.js">kendo.treelist.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.treeview.draganddrop.min.js">kendo.treeview.draganddrop.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.treeview.min.js">kendo.treeview.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.upload.min.js">kendo.upload.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.userevents.min.js">kendo.userevents.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.validator.min.js">kendo.validator.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.view.min.js">kendo.view.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.virtuallist.min.js">kendo.virtuallist.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.web.min.js">kendo.web.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.window.min.js">kendo.window.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="kendo.wizard.min.js">kendo.wizard.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="pako_deflate.min.js">pako_deflate.min.js</ProjectItem>
+        </Folder>
+        <Folder Name="knockout" TargetFolderName="knockout">
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.1.0.debug.js">knockout-2.1.0.debug.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.1.0.js">knockout-2.1.0.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout.mapping-latest.debug.js">knockout.mapping-latest.debug.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="knockout.mapping-latest.js">knockout.mapping-latest.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.Sage300.Custom.BindingHandlers.js">Sage.CA.SBS.Sage300.Custom.BindingHandlers.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js">Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js</ProjectItem>
+        </Folder>
+        <Folder Name="Less" TargetFolderName="Less">
+          <ProjectItem ReplaceParameters="true" TargetFileName="less-1.6.1.min.js">less-1.6.1.min.js</ProjectItem>
+        </Folder>
+        <Folder Name="Portal" TargetFolderName="Portal">
+          <ProjectItem ReplaceParameters="true" TargetFileName="FeatureTour.js">FeatureTour.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="OpenScreenCountManager.js">OpenScreenCountManager.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="RecentWindows.js">RecentWindows.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="SessionDate.js">SessionDate.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="SessionDateCookie.js">SessionDateCookie.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="TaskDock-Menu-BreadCrumb.js">TaskDock-Menu-BreadCrumb.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Widget.js">Widget.js</ProjectItem>
+        </Folder>
+        <Folder Name="Report" TargetFolderName="Report">
+          <ProjectItem ReplaceParameters="true" TargetFileName="CustomReportBehaviour.js">CustomReportBehaviour.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ReportBehaviour.js">ReportBehaviour.js</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Areas" TargetFolderName="Areas">
+        <Folder Name="Core" TargetFolderName="Core">
+          <Folder Name="Scripts" TargetFolderName="Scripts">
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AccpacGrid.js">Sage.CA.SBS.ERP.Sage300.Common.AccpacGrid.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js">Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js">Sage.CA.SBS.ERP.Sage300.Common.FiscalCalendar.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js">Sage.CA.SBS.ERP.Sage300.Common.FiscalYearSet.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Home.js">Sage.CA.SBS.ERP.Sage300.Common.Home.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.OptionalFieldGrid.js">Sage.CA.SBS.ERP.Sage300.Common.OptionalFieldGrid.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js">Sage.CA.SBS.ERP.Sage300.Common.OptionalFields.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js">Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js">Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js">Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.TextAreaPopup.js">Sage.CA.SBS.ERP.Sage300.Common.TextAreaPopup.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ViewFinderGrid.js">Sage.CA.SBS.ERP.Sage300.Common.ViewFinderGrid.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Wizard.js">Sage.CA.SBS.ERP.Sage300.Common.Wizard.js</ProjectItem>
+            <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryFilters.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryFilters.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryGrid.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryKoExtn.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryKoExtn.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryRepository.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryRepository.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.SaveAdhocInquiryQueryGrid.js</ProjectItem>
+            </Folder>
+            <Folder Name="Authentication" TargetFolderName="Authentication">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js</ProjectItem>
+            </Folder>
+            <Folder Name="ExportImport" TargetFolderName="ExportImport">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Import.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Import.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Upload.js">Sage.CA.SBS.ERP.Sage300.Common.Upload.js</ProjectItem>
+            </Folder>
+            <Folder Name="GLIntegration" TargetFolderName="GLIntegration">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLIntegration.js">Sage.CA.SBS.ERP.Sage300.Common.GLIntegration.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLPostingSequenceGrid.js">Sage.CA.SBS.ERP.Sage300.Common.GLPostingSequenceGrid.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLReferenceIntegrationGrid.js">Sage.CA.SBS.ERP.Sage300.Common.GLReferenceIntegrationGrid.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLSourceCodeGrid.js">Sage.CA.SBS.ERP.Sage300.Common.GLSourceCodeGrid.js</ProjectItem>
+            </Folder>
+            <Folder Name="GlobalSearch" TargetFolderName="GlobalSearch">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GlobalSearchBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.GlobalSearchBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GlobalSearchRepository.js">Sage.CA.SBS.ERP.Sage300.Common.GlobalSearchRepository.js</ProjectItem>
+            </Folder>
+            <Folder Name="Inquiry" TargetFolderName="Inquiry">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryGridHelper.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryGridHelper.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquirySecondGrid.js">Sage.CA.SBS.ERP.Sage300.Common.InquirySecondGrid.js</ProjectItem>
+            </Folder>
+            <Folder Name="InquiryGeneral" TargetFolderName="InquiryGeneral">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryGeneral.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryGeneral.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryPanel.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryPanel.js</ProjectItem>
+            </Folder>
+            <Folder Name="NewTenantSetup" TargetFolderName="NewTenantSetup">
+              <ProjectItem ReplaceParameters="true" TargetFileName="NewTenantBehaviour.js">NewTenantBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="NewTenantRepository.js">NewTenantRepository.js</ProjectItem>
+            </Folder>
+            <Folder Name="Process" TargetFolderName="Process">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.Sage300.Common.Process.js">Sage.CA.SBS.Sage300.Common.Process.js</ProjectItem>
+            </Folder>
+            <Folder Name="Tenant" TargetFolderName="Tenant">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js">Sage.CA.SBS.ERP.Sage300.Common.TenantBehavior.js</ProjectItem>
+            </Folder>
+          </Folder>
+          <Folder Name="Views" TargetFolderName="Views">
+            <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+            <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_AdhocInquiry.cshtml">_AdhocInquiry.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_AdhocInquiryFilterControl.cshtml">_AdhocInquiryFilterControl.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_OpenQueryPanel.cshtml">_OpenQueryPanel.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_SavedTab.cshtml">_SavedTab.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_SaveQueryPanel.cshtml">_SaveQueryPanel.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="Authentication" TargetFolderName="Authentication">
+              <ProjectItem ReplaceParameters="true" TargetFileName="OnPremiseLogin.cshtml">OnPremiseLogin.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="RedirectToLogin.cshtml">RedirectToLogin.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="SessionEvicted.cshtml">SessionEvicted.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="SessionExpired.cshtml">SessionExpired.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_OnPremiseLogin.cshtml">_OnPremiseLogin.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="Error" TargetFolderName="Error">
+              <ProjectItem ReplaceParameters="true" TargetFileName="AccountNotAvailable.cshtml">AccountNotAvailable.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="AccountNotProvisioned.cshtml">AccountNotProvisioned.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="AuthorizedError.cshtml">AuthorizedError.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="ICTNotAvailable.cshtml">ICTNotAvailable.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="MissingModules.cshtml">MissingModules.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="ExportImport" TargetFolderName="ExportImport">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Export.cshtml">Export.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="ExportImportOption.cshtml">ExportImportOption.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Import.cshtml">Import.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="ExportReport" TargetFolderName="ExportReport">
+              <ProjectItem ReplaceParameters="true" TargetFileName="ExportOption.cshtml">ExportOption.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Find" TargetFolderName="Find">
+              <ProjectItem ReplaceParameters="true" TargetFileName="FindPreference.cshtml">FindPreference.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="ViewFinder.cshtml">ViewFinder.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="FiscalYear" TargetFolderName="FiscalYear">
+              <ProjectItem ReplaceParameters="true" TargetFileName="FiscalYearSet.cshtml">FiscalYearSet.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="GLIntegration" TargetFolderName="GLIntegration">
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_GLIntegrationDetail.cshtml">_GLIntegrationDetail.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_GLPostingSequence.cshtml">_GLPostingSequence.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_GLReferenceIntegration.cshtml">_GLReferenceIntegration.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_GLSourceCodes.cshtml">_GLSourceCodes.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_TransactionsOptions.cshtml">_TransactionsOptions.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="GlobalSearch" TargetFolderName="GlobalSearch">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_GlobalSearch.cshtml">_GlobalSearch.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="Home" TargetFolderName="Home">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Inquiry" TargetFolderName="Inquiry">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_InquiryTool.cshtml">_InquiryTool.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Inquiry.cshtml">_Inquiry.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_InquiryFilter.cshtml">_InquiryFilter.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_InquiryGrid.cshtml">_InquiryGrid.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="InquiryGeneral" TargetFolderName="InquiryGeneral">
+              <ProjectItem ReplaceParameters="true" TargetFileName="GridConfig.json">GridConfig.json</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="OEAllOrderDetails.json">OEAllOrderDetails.json</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="OEAllOrders.json">OEAllOrders.json</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="OEAllShipments.json">OEAllShipments.json</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="OECreditDebitNotes.json">OECreditDebitNotes.json</ProjectItem>
+            </Folder>
+            <Folder Name="Instrumentation" TargetFolderName="Instrumentation">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="NewTenant" TargetFolderName="NewTenant">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_newtenantsetup.cshtml">_newtenantsetup.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="OptionalFields" TargetFolderName="OptionalFields">
+              <ProjectItem ReplaceParameters="true" TargetFileName="OptionalFields.cshtml">OptionalFields.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Shared" TargetFolderName="Shared">
+              <ProjectItem ReplaceParameters="true" TargetFileName="FiscalCalendar.cshtml">FiscalCalendar.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="GridPage.cshtml">GridPage.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="GridPreferences.cshtml">GridPreferences.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="LabelMenuPopup.cshtml">LabelMenuPopup.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_OptionsMenu.cshtml">_OptionsMenu.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ProcessingStatus.cshtml">_ProcessingStatus.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ReportOptions.cshtml">_ReportOptions.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Tenant" TargetFolderName="Tenant">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder Name="CU" TargetFolderName="$module$">
+          <Folder Name="Assets" TargetFolderName="Assets">
+            <Folder Name="images" TargetFolderName="images">
+              <ProjectItem ReplaceParameters="false" TargetFileName="footer_logo.png">footer_logo.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_white.png">sage_300_logo_white.png</ProjectItem>
+              <Folder Name="nav" TargetFolderName="nav">
+                <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu_rev@2x.png">sprite_global_menu_rev@2x.png</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="styles" TargetFolderName="styles">
+              <Folder Name="css" TargetFolderName="css">
+                <ProjectItem ReplaceParameters="true" TargetFileName="default.min.css">default.min.css</ProjectItem>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder Name="Controllers" TargetFolderName="Controllers">
+            <ProjectItem ReplaceParameters="true" TargetFileName="$project$CustomizationController.cs">ValuedPartnerCustomizationController.cs</ProjectItem>
+            <Folder Name="Finder" TargetFolderName="Finder" />
+          </Folder>
+          <Folder Name="Models" TargetFolderName="Models">
+            <ProjectItem ReplaceParameters="true" TargetFileName="$project$CustomizationViewModel.cs">CustomizationViewModel.cs</ProjectItem>
+          </Folder>
+          <Folder Name="Scripts" TargetFolderName="Scripts" />
+          <Folder Name="Views" TargetFolderName="Views">
+            <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+            <Folder Name="ValuedPartnerCustomization" TargetFolderName="$project$Customization">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder Name="Shared" TargetFolderName="Shared">
+          <Folder Name="Scripts" TargetFolderName="Scripts">
+            <ProjectItem ReplaceParameters="true" TargetFileName="PageUnloadEventManager.js">PageUnloadEventManager.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Cache.js">Sage.CA.SBS.ERP.Sage300.Common.Cache.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Constants.js">Sage.CA.SBS.ERP.Sage300.Common.Constants.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Controls.js">Sage.CA.SBS.ERP.Sage300.Common.Controls.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ControlsR3.js">Sage.CA.SBS.ERP.Sage300.Common.ControlsR3.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Customization.js">Sage.CA.SBS.ERP.Sage300.Common.Customization.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Global.js">Sage.CA.SBS.ERP.Sage300.Common.Global.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js">Sage.CA.SBS.ERP.Sage300.Common.GridPreferences.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GridUtls.js">Sage.CA.SBS.ERP.Sage300.Common.GridUtls.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js">Sage.CA.SBS.ERP.Sage300.Common.iFrameHelper.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js">Sage.CA.SBS.ERP.Sage300.Common.InquiryGrid.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js">Sage.CA.SBS.ERP.Sage300.Common.JavaScriptExtensions.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.KendoCurrencyFormatExt.js">Sage.CA.SBS.ERP.Sage300.Common.KendoCurrencyFormatExt.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js">Sage.CA.SBS.ERP.Sage300.Common.KendoHelpers.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js">Sage.CA.SBS.ERP.Sage300.Common.LabelMenuHelper.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.OptionsMenu.js">Sage.CA.SBS.ERP.Sage300.Common.OptionsMenu.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ProductExperience.js">Sage.CA.SBS.ERP.Sage300.Common.ProductExperience.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Report.js">Sage.CA.SBS.ERP.Sage300.Common.Report.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js">Sage.CA.SBS.ERP.Sage300.Common.SalesSplitGrid.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js">Sage.CA.SBS.ERP.Sage300.Common.SessionTimeOut.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SignalR.js">Sage.CA.SBS.ERP.Sage300.Common.SignalR.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.TaxesGrid.js">Sage.CA.SBS.ERP.Sage300.Common.TaxesGrid.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.UIWidget.RecordNavigation.js">Sage.CA.SBS.ERP.Sage300.Common.UIWidget.RecordNavigation.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.URL.js">Sage.CA.SBS.ERP.Sage300.Common.URL.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Validate.js">Sage.CA.SBS.ERP.Sage300.Common.Validate.js</ProjectItem>
+            <Folder Name="DocumentHistory" TargetFolderName="DocumentHistory">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js">Sage.CA.SBS.ERP.Sage300.Common.DocumentHistory.js</ProjectItem>
+            </Folder>
+            <Folder Name="ItemQuantity" TargetFolderName="ItemQuantity">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js">Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js</ProjectItem>
+            </Folder>
+            <Folder Name="Report" TargetFolderName="Report">
+              <Folder Name="GLTransaction" TargetFolderName="GLTransaction">
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionBehaviour.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionKoExtn.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js">Sage.CA.SBS.ERP.Sage300.Common.GLTransactionRepository.js</ProjectItem>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder Name="Views" TargetFolderName="Views">
+            <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+            <Folder Name="DocumentHistory" TargetFolderName="DocumentHistory">
+              <ProjectItem ReplaceParameters="true" TargetFileName="DocumentHistory.cshtml">DocumentHistory.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Partials" TargetFolderName="Partials">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_AddLineButton.cshtml">_AddLineButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ButtonBase.cshtml">_ButtonBase.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_DeleteButton.cshtml">_DeleteButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_DeleteLineButton.cshtml">_DeleteLineButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_GenericButton.cshtml">_GenericButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_OptionalButton.cshtml">_OptionalButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_PrintButton.cshtml">_PrintButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ProceedButton.cshtml">_ProceedButton.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_SaveButton.cshtml">_SaveButton.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="QuantityGrid" TargetFolderName="QuantityGrid">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_QuantityGrid.cshtml">_QuantityGrid.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Report" TargetFolderName="Report">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+              <Folder Name="GLTransaction" TargetFolderName="GLTransaction">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_GLSubledgerTransactionReport.cshtml">_GLSubledgerTransactionReport.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="Revaluation" TargetFolderName="Revaluation">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Index.cshtml">_Index.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Details.cshtml">_Details.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_DetailsOptionalFields.cshtml">_DetailsOptionalFields.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="RevaluationHistory" TargetFolderName="RevaluationHistory">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Index.cshtml">_Index.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="SalesSplitGrid" TargetFolderName="SalesSplitGrid">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_SalesSplitGrid.cshtml">_SalesSplitGrid.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Shared" TargetFolderName="Shared">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_GlobalLayout.cshtml">_GlobalLayout.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_GridActions.cshtml">_GridActions.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_LocalizedLayout.cshtml">_LocalizedLayout.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_LocalizedLayoutR2.cshtml">_LocalizedLayoutR2.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ProcessingFooter.cshtml">_ProcessingFooter.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ReportFooter.cshtml">_ReportFooter.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_SetupFooter.cshtml">_SetupFooter.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="TaxesGrid" TargetFolderName="TaxesGrid">
+              <ProjectItem ReplaceParameters="true" TargetFileName="TaxesGrid.cshtml">TaxesGrid.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
