@@ -24,7 +24,16 @@ sg.constants.KeyCodeEnum = sg.constants.KeyCodeEnum || {};
 sg.constants.KeyCodeEnum = {
     Backspace: 8,
     Tab: 9,
+    Enter: 13,
+    ESC: 27,
     Space: 32,
+    PgUp: 33,
+    PgDn: 34,
+    End: 35,
+    Home: 36,
+    LeftArrow: 37,
+    UpArrow: 38,
+    RightArrow: 39,
     DownArrow: 40,
     Dash: 45,
     Period: 46,
@@ -39,4 +48,3 @@ sg.constants.KeyCodeEnum = {
     v: 118,
     z: 122,
 };
-

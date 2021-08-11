@@ -1,4 +1,4 @@
-﻿// Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved.
 
 "use strict";
 
@@ -126,7 +126,7 @@ var fiscalyearSetUI = {
                 open: function () {
                     // For custom theme color
                     sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
-                }
+                },
                 activate: sg.utls.kndoUI.onActivate
             }).data("kendoWindow");
 

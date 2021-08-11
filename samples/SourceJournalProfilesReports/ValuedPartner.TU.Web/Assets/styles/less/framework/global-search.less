@@ -54,12 +54,35 @@
               }
 
               .k-checkbox {
-                width: 10px;
-                position: relative;
+                height: 16px;
+                width: 16px;
+                border-radius: 0;
+                border: 1px solid @sage-mid-gray;
+                margin-right: 4px;
+
+                &:hover,
+                &:focus {
+                  outline: @input-border-focus solid 3px;
+                  box-shadow: none;
+                  border-color: @sage-mid-gray;
+                }
+
+                &:checked::before {
+                  color: @black;
+                  font-size: 13px;
+                  width: 13px;
+                  height: 13px;
+                  font-weight: 700;
+                }
+
+                &:indeterminate::before {
+                  color: @black;
+                }
               }
 
               span.k-in {
                 margin: 0;
+                border-radius: 0;
               }
             }
 

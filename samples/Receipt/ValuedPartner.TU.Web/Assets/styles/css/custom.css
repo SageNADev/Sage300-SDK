@@ -1,0 +1,23 @@
+/*!
+ * custom CSS for AUG GST Worksheet
+ */
+
+.grid-group.grid-small .k-grid .k-grid-content {
+	min-height: unset;
+}
+
+label > span.highlighted,
+span.highlighted {
+	background-color: #ff9900;
+	padding:  0 6px;
+	border-radius: 4px;
+	color: #fff;
+	margin-right: 10px;
+	display: inline-block;
+	min-width: 30px;
+	text-align: center;
+}
+
+span.highlighted.gray {
+	background-color: #a7a9aa;
+}

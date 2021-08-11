@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 var optionalFieldEnum = optionalFieldEnum || {};
@@ -109,6 +109,40 @@ var optFldGridUtils = {
     },
 
     setRowData: function (gridData, rowdata, prefix) {
+        switch (parseInt(rowdata.TYPE, 10)) {
+            case optionalFieldEnum.Type.Text:
+                gridData.set(prefix + "TextValue", rowdata.DVIFTEXT);
+                break;
+            case optionalFieldEnum.Type.Integer:
+                gridData.set(prefix + "IntegerValue", rowdata.DVIFLONG || 0);
+                break;
+            case optionalFieldEnum.Type.Number:
+                gridData.set(prefix + "NumberValue", rowdata.DVIFNUM || 0);
+                break;
+            case optionalFieldEnum.Type.Date:
+                //Because we do not have default date value for web screen 
+                gridData.set(prefix + "DateValue", rowdata.DVIFDATE || null);
+                gridData.set(prefix + "Value", rowdata.DVIFDATE || null);
+                break;
+            case optionalFieldEnum.Type.YesNo:
+                gridData.set(prefix + "YesOrNoValue", rowdata.DVIFBOOL === "True" ? "1" : "0");
+                break;
+            case optionalFieldEnum.Type.Amount:
+                gridData.set(prefix + "AmountValue", rowdata.DVIFMONEY || 0);
+                break;
+            case optionalFieldEnum.Type.Time:
+                if (rowdata.DVIFTIME != null) {
+                    gridData.set(prefix + "TimeValue", rowdata.DVIFTIME);
+                    gridData.set(prefix + "Value", rowdata.DVIFTIME.substr(-8));
+                } else {
+                    gridData.set(prefix + "TimeValue", null);
+                    gridData.set(prefix + "Value", null);
+                }
+                break;
+        }
+    },
+
+    setServerRowData: function (gridData, rowdata, prefix) {
         switch (rowdata.Type) {
             case optionalFieldEnum.Type.Text:
                 gridData.set(prefix + "TextValue", rowdata.DefaultTextValue);
@@ -140,8 +174,7 @@ var optFldGridUtils = {
                 }
                 break;
         }
-    },
-
+    }
 };
 
 var gridColConfig = {
@@ -157,7 +190,6 @@ var gridColConfig = {
         optionalFieldUIGrid.serialNumber = (options.model.SerialNumber) ? options.model.SerialNumber : options.model.DisplayIndex;
         if (options.model.IsNewLine) {
             var html = optionalFieldFields.txtOptionalField + optionalFieldFields.finderOptionalField;
-            var title = $.validator.format(optionalFieldsResources.finderTitle, optionalFieldsResources.optionalFieldTitle);
             $(html).appendTo(container);
             optionalFieldUIGrid.optionalFieldFilterData = options.model.OptionalField || "";
             gridColConfig.optionalFieldFilterDataChanged = false;
@@ -165,13 +197,8 @@ var gridColConfig = {
                 optionalFieldUIGrid.optionalFieldFilterValue = options.model[optionalFieldUIGrid.optionalFieldFilterName];
             }
             optionalFieldUIGrid.optionalFieldLineId = options.model.uid;
-            sg.finderHelper.setFinder(
-                "optFieldFinder",
-                optionalFieldUIGrid.finder,
-                optionalFieldUIGrid.OnOptionalFieldSelection,
-                optionalFieldUIGrid.optionalFieldCancel,
-                title,
-                optionalFieldUIGrid.optionalFieldFilter);
+            sg.viewFinderHelper.setViewFinderEx("optFieldFinder", "txtoptionalfield", optionalFieldUIGrid.finder,
+                optionalFieldUIGrid.OnOptionalFieldSelection, optionalFieldUIGrid.optionalFieldCancel);
         } else {
             var grid = $('#' + optionalFieldUIGrid.gridId).data("kendoGrid");
             grid.closeCell();
@@ -366,8 +393,39 @@ var gridColConfig = {
                 $("#txtOptFieldValue").parents().removeClass("pr25");
             }
 
-            var title = $.validator.format(optionalFieldsResources.finderTitle, optionalFieldsResources.optionalFieldValueTitle);
-            sg.finderHelper.setFinder("optFieldValueFinder", sg.finder.OptionalFieldValue, optionalFieldUIGrid.OnOptionalFieldValueSelection, optionalFieldUIGrid.optionalFieldValueCancel, title, optionalFieldUIGrid.optionalFieldValueFilter, null, true);
+            const optionalFieldValueFinderInfo = () => {
+                const optionalField = options.model;
+                const selectedOptionalField = optionalField.OptionalField;
+                let property = sg.utls.deepCopy(sg.viewFinderProperties.CS.OptionalFieldValue);
+                let value = typeof optionalField.DefaultValue !== 'undefined' ? optionalField.DefaultValue : optionalField.Value;
+                switch (optionalField.Type) {
+                    case optionalFieldEnum.Type.Text:
+                        property = sg.utls.deepCopy(sg.viewFinderProperties.CS.TextOptionalFieldValue);
+                        break;
+                    case optionalFieldEnum.Type.Amount:
+                        property = sg.utls.deepCopy(sg.viewFinderProperties.CS.AmountOptionalFieldValue);
+                        break;
+                    case optionalFieldEnum.Type.Number:
+                        property = sg.utls.deepCopy(sg.viewFinderProperties.CS.NumberOptionalFieldValue);
+                        break;
+                    case optionalFieldEnum.Type.Integer:
+                        property = sg.utls.deepCopy(sg.viewFinderProperties.CS.IntegerOptionalFieldValue);
+                        break;
+                    case optionalFieldEnum.Type.Date:
+                        property = sg.utls.deepCopy(sg.viewFinderProperties.CS.DateOptionalFieldValue);
+                        value = sg.utls.kndoUI.getDateYYYMMDDFormat(value);
+                        break;
+                    case optionalFieldEnum.Type.Time:
+                        property = sg.utls.deepCopy(sg.viewFinderProperties.CS.TimeOptionalFieldValue);
+                        value = value.replaceAll(':', '');
+                        break;
+                }
+                property.initKeyValues = [selectedOptionalField, value];
+                property.filter = $.validator.format(property["filterTemplate"], selectedOptionalField);
+                return property;
+            };
+            sg.viewFinderHelper.setViewFinder("optFieldValueFinder", optionalFieldUIGrid.OnOptionalFieldValueSelection,
+                optionalFieldValueFinderInfo, optionalFieldUIGrid.optionalFieldValueCancel);
 
             if (options.model.Type !== optionalFieldEnum.Type.YesNo && options.model.Type !== optionalFieldEnum.Type.Time) {
                 var numericType = [optionalFieldEnum.Type.Integer, optionalFieldEnum.Type.Number, optionalFieldEnum.Type.Amount];
@@ -555,7 +613,6 @@ var optionalFieldUIGrid =
     modelData: null,
     modelName: "OptionalFields",
     newLineItem: null,
-    optionalFieldFilter: null,
     pageFilter: null,
     isValueSetEditable: false,
     getOptionalFieldData: null,
@@ -1333,6 +1390,98 @@ var optionalFieldUIGrid =
             var selectRow = sg.utls.kndoUI.getSelectedRowData(grid);
             optionalFieldUIGrid.serialNumber = (selectRow.SerialNumber) ? selectRow.SerialNumber : selectRow.DisplayIndex;
 
+            var optionalField = rowdata.OPTFIELD;
+            const type = parseInt(rowdata.TYPE, 10);
+
+            selectRow.set("OptionalField", optionalField);
+            selectRow.set("OptionalFieldDescription", rowdata.FDESC);
+            selectRow.set("Type", type);
+            selectRow.set("Length", rowdata.LENGTH);
+            selectRow.set("Decimals", rowdata.DECIMALS);
+            var fldValue = (selectRow.DefaultValue === undefined) ? "Value" : "DefaultValue";
+            if (rowdata.DEFVAL) {
+                selectRow.set(fldValue, rowdata.DEFVAL);
+            } else {
+                var defaultValue = ([6, 8, 100].indexOf(type) > -1) ? 0 : "";
+                selectRow.set(fldValue, defaultValue);
+            }
+            var fldValueDesc = (selectRow.DefaultValueDescription) ? "ValueDescription" : "DefaultValueDescription";
+            if (rowdata.VDESC !== undefined) {
+                selectRow.set("ValueDescription", rowdata.VDESC);
+                selectRow.set("DefaultValueDescription", rowdata.VDESC);
+            } else {
+                selectRow.set(fldValueDesc, "");
+            }
+            var valueSet = rowdata.SWSET;
+            if (type === optionalFieldEnum.Type.Text || type === optionalFieldEnum.Type.Date) {
+                //selectRow.set("AllowBlank", rowdata.AllowBlankValue);
+                // Comments the above line because AllowBlankValue only exists in IC and CS model. 
+                // However this function also need to handle the other models as OE, AP
+                // I just put a condition here, After the determine where the allowBlankVaule has been used. Please Update this change
+
+                const convertToBool = (val) => {
+                    let str = String(val).toLowerCase();
+                    if (str === 'true') {
+                        return 1;
+                    }
+                    else if (str === 'false') {
+                        return 0;
+                    }
+                    return str;
+                }
+
+                var allowBlank = convertToBool(rowdata.ALLOWNULL);
+                selectRow.set("AllowBlank", allowBlank);
+
+                var validate = convertToBool(rowdata.VALIDATE);
+                // Just in case we support the integer value as flag. 1: checked, 0: unchecked
+                if (validate <= allowBlank) {
+                    valueSet = 1;
+                }
+                selectRow.set("Validate", validate);
+            } else {
+                selectRow.set("AllowBlank", 0);
+            }
+            if (valueSet !== undefined) {
+                selectRow.set("ValueSet", valueSet);
+                selectRow.set("ValueSetString", valueSet);
+            } else {
+                selectRow.set("ValueSet", 0);
+            }
+
+            optFldGridUtils.setRowData(selectRow, rowdata, (selectRow.Value === undefined) ? "Default" : "");
+
+            if (optionalFieldUIGrid.isCheckDuplicateRecord) {
+                if (optionalFieldUIGrid.checkDuplicateRecord == null)
+                    optFldGridUtils.checkDuplicateRecord(grid.dataSource, "OptionalField", optionalField, selectRow);
+                else {
+                    var id = "";
+                    if (optionalFieldUIGrid.modelData.AccountNumber !== undefined) {
+                        id = optionalFieldUIGrid.modelData.AccountNumber();
+                    }
+                    optionalFieldUIGrid.checkDuplicateRecord(gridId, "OptionalField", rowdata.OPTFIELD, "btnAddOptionalFieldLine", optionalFieldsResources.optionalFieldTitle, optionalFieldUIGrid.optionalFieldLineId, id);
+                }
+            }
+            if (optionalFieldUIGrid.settingsEditor) {
+                gridColConfig.registerSettingsEvent();
+            }
+
+            optionalFieldUIGrid.hasInvalidData = false;
+            optionalFieldUIGrid.resetFocus(selectRow, 'OptionalField');
+        }
+    },
+
+    // This is the overwritten method for repository calls
+    OnOptionalFieldSuccess: function (rowdata) {
+        if ($("#windowmessage")) $("#windowmessage").empty();
+        if ($("#windowmessage1")) $("#windowmessage1").empty();
+
+        var gridId = optionalFieldUIGrid.gridId;
+        if ($('#' + gridId)) {
+            var grid = $('#' + gridId).data("kendoGrid");
+            var selectRow = sg.utls.kndoUI.getSelectedRowData(grid);
+            optionalFieldUIGrid.serialNumber = (selectRow.SerialNumber) ? selectRow.SerialNumber : selectRow.DisplayIndex;
+
             var optionalField = (rowdata.OptionalFieldKey == null) ? rowdata.OptionalField : rowdata.OptionalFieldKey;
             var optionalFieldDesc = (rowdata.Description == null) ? rowdata.OptionalFieldDescription : rowdata.Description;
 
@@ -1360,7 +1509,6 @@ var optionalFieldUIGrid =
             var valueSet = rowdata.ValueSet;
             var allowBlank;
             if (rowdata.Type != optionalFieldEnum.Type.YesNo) {
-                //selectRow.set("AllowBlank", rowdata.AllowBlankValue);
                 // Comments the above line because AllowBlankValue only exists in IC and CS model. 
                 // However this function also need to handle the other models as OE, AP
                 // I just put a condition here, After the determine where the allowBlankVaule has been used. Please Update this changes
@@ -1390,7 +1538,7 @@ var optionalFieldUIGrid =
                 selectRow.set("ValueSet", 0);
             }
 
-            optFldGridUtils.setRowData(selectRow, rowdata, (selectRow.Value === undefined) ? "Default" : "");
+            optFldGridUtils.setServerRowData(selectRow, rowdata, (selectRow.Value === undefined) ? "Default" : "");
 
             if (optionalFieldUIGrid.isCheckDuplicateRecord) {
                 if (optionalFieldUIGrid.checkDuplicateRecord == null)
@@ -1417,7 +1565,16 @@ var optionalFieldUIGrid =
         var selectRow = sg.utls.kndoUI.getSelectedRowData(grid);
         var prefix = (selectRow.Value === undefined) ? "Default" : "";
 
-        optionalFieldUIGrid.setOptionalFieldValue(rowdata.Value, rowdata.ValueDescription, true);
+        const type = parseInt(rowdata.TYPE, 10);
+        let value = rowdata.VALUE;
+
+        if (type === optionalFieldEnum.Type.Time) {
+            value = sg.utls.kndoUI.getTimeFormate(rowdata.VALIFTIME);
+        } else if (type === optionalFieldEnum.Type.Date) {
+            value = sg.utls.kndoUI.convertStringToDate(rowdata.VALIFDATE);
+        }
+
+        optionalFieldUIGrid.setOptionalFieldValue(value, rowdata.VDESC, true);
         optionalFieldUIGrid.hasInvalidData = false;
         optionalFieldUIGrid.resetFocus(selectRow, prefix + "Value");
     },
@@ -1430,42 +1587,6 @@ var optionalFieldUIGrid =
             return gridData;
         }
         return null;
-    },
-
-    optionalFieldValueFilter: function () {
-        var filters = [[]];
-        var value = $("#txtOptFieldValue").val();
-
-        var selectRow = sg.utls.kndoUI.getSelectedRowData($('#' + optionalFieldUIGrid.gridId).data("kendoGrid"));
-        filters[0][1] = sg.finderHelper.createFilter("OptionalField", sg.finderOperator.Equal, optionalFieldUIGrid.optionalFieldFilterData);
-        filters[0][1].IsMandatory = true;
-        if (!value && (selectRow.Type === optionalFieldEnum.Type.Amount || selectRow.Type === optionalFieldEnum.Type.Number || selectRow.Type === optionalFieldEnum.Type.Integer)) {
-            value = 0;
-        }
-        if (selectRow.Type === optionalFieldEnum.Type.Integer) {
-            optionalFieldUIGrid.optionalFieldValueFilterData = parseFloat(value);
-            filters[0][0] = sg.finderHelper.createFilter("Value", sg.finderOperator.Equal, optionalFieldUIGrid.optionalFieldValueFilterData);
-            filters[0][0].Field.dataType = sg.finderDataType.Integer;
-        } else if (selectRow.Type === optionalFieldEnum.Type.Amount) {
-            optionalFieldUIGrid.optionalFieldValueFilterData = parseFloat(value);
-            filters[0][0] = sg.finderHelper.createFilter("Value", sg.finderOperator.Equal, optionalFieldUIGrid.optionalFieldValueFilterData);
-            filters[0][0].Field.dataType = sg.finderDataType.Amount;
-        } else if (selectRow.Type === optionalFieldEnum.Type.Number) {
-            optionalFieldUIGrid.optionalFieldValueFilterData = parseFloat(value);
-            filters[0][0] = sg.finderHelper.createFilter("Value", sg.finderOperator.Equal, optionalFieldUIGrid.optionalFieldValueFilterData);
-            filters[0][0].Field.dataType = sg.finderDataType.Number;
-            filters[0][0].Field.customAttributes = { decimal: selectRow.Decimals };
-        } else if (selectRow.Type === optionalFieldEnum.Type.Time) {
-            filters[0][0] = sg.finderHelper.createFilter("Value", sg.finderOperator.Equal, value);
-            filters[0][0].Field.dataType = sg.finderDataType.Time;
-        } else if (selectRow.Type === optionalFieldEnum.Type.Date) {
-            filters[0][0] = sg.finderHelper.createFilter("Value", sg.finderOperator.Equal, value);
-            filters[0][0].Field.dataType = sg.finderDataType.Date;
-        } else {
-            filters[0][0] = sg.finderHelper.createFilter("Value", sg.finderOperator.StartsWith, value);
-        }
-
-        return filters;
     },
 
     optionalFieldConfig: function (area, controller, action, gridId, isDefault, isDefaultValueDesc, isValueSet, modelName, showSettings, isDetailOptField, disableAutoBind) {

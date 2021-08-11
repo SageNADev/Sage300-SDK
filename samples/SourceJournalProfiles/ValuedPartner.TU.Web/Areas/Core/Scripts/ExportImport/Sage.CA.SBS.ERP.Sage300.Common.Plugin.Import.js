@@ -211,6 +211,12 @@ var importResultRowNumber = 0;
                 sg.utls.clearValidations("frmImport");
             });
 
+            $('#btnFileImport').focus(function () {
+                $(this).parent().addClass('focused');
+            }).blur(function () {
+                $(this).parent().removeClass('focused');
+            });
+
         },
 
         _destroyKendoWindow: function (e) {

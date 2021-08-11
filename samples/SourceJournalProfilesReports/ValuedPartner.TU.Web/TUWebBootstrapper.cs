@@ -21,7 +21,6 @@
 #region Imports
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Web.Areas.TU.Controllers;
-using ValuedPartner.TU.Web.Areas.TU.Controllers.Finder;
 using Microsoft.Practices.Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Controller;
@@ -52,7 +51,6 @@ namespace ValuedPartner.TU.Web
         public void Execute(IUnityContainer container)
         {
             RegisterController(container);
-            RegisterFinder(container);
         }
 
         /// <summary>
@@ -62,15 +60,6 @@ namespace ValuedPartner.TU.Web
         private void RegisterController(IUnityContainer container)
         {
             UnityUtil.RegisterType<IController, SourceJournalProfileReportController<SourceJournalProfileReport>>(container, "TUSourceJournalProfileReport");
-        }
-
-        /// <summary>
-        /// Register finders
-        /// </summary>
-        /// <param name="container">The Unity container</param>
-        private void RegisterFinder(IUnityContainer container)
-        {
-			UnityUtil.RegisterType<IFinder, FindSourceJournalProfileControllerInternal<SourceJournalProfile>>(container, "tusourcejournalprofile", new InjectionConstructor(typeof(Context)));
         }
     }
 }
