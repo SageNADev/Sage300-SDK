@@ -64,11 +64,10 @@
 
     <div class="form-group">
         <div class="search-group">
-            @Html.SageLabelFor(model => model.Data.SourceJournalName)
-            @Html.KoSageTextBoxFor(model => model.Data.SourceJournalName, new { @sagevalue = "Data.SourceJournalName", @valueUpdate = "'input'" }, new { @class = "large" })
-            @Html.SageButton("btnGoSourceCode", new { @id = "btnGoSourceCode", @class = "icon btn-go", @tabindex = "-1" })
-            @Html.SageButton("btnSourceJournalCodeFinder", new { @id = "btnSourceJournalCodeFinder", @class = "icon btn-search", @tabindex = "-1", @disable = "Data.IsModifyAccess" })
-            @Html.ValidationMessageFor(m => m.Data.SourceJournalName)
+            @Html.SgFinderFor(m => m.Data.SourceJournalName,
+                  new { @sagevalue = "Data.SourceJournalName" }, size: "large",
+                  goButtonId: "btnGoSourceCode", findButtonId: "btnSourceJournalCodeFinder",
+                  buttonDataAttrs: new { @disable = "Data.IsModifyAccess" })
         </div>
     </div>
     

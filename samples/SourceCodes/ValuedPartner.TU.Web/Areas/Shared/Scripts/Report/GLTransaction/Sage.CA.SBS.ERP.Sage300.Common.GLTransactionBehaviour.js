@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var GLTransactionUI = GLTransactionUI || {};
@@ -6,6 +6,8 @@ GLTransactionUI = {
     hasKoApplied: false,
     isKendoControlNotInitialised: false,
     GLTransactionViewModel: {},
+    GLBatchTransferred: { False: 0, True: 1 },
+    PostingStatus: { Posting: 1, PendingPrint: 2, Printed: 3, Purging: 4, PendingPurge: 5},
     ReportFormat: { Detail: 0, Summary: 1 },
     Module: { Bank: "BK", CommonServices: "CS", InventoryControl: "IC", OrderEntry: "OE", PostingOrder: "PO" },
     computedProperties: ["DisableReportControls", "IsSortByAmountVisible", "IsSortByDropDownVisible", "IsFinderVisible"],
@@ -23,16 +25,11 @@ GLTransactionUI = {
 
     //Finder for Bank Module
     initFinder: function () {
-        var bankPostingJournalTitle = jQuery.validator.format(GLTransactionResources.FinderTitle, GLTransactionResources.PostingSequence);
-        sg.finderHelper.setFinder(
-            "btnBankPostingJournalFinder",
-            sg.finder.BankPostingJournalFinder,
-            onSuccess.throughPostingSequence,
-            $.noop,
-            bankPostingJournalTitle,
-            filters.throughPostingSequenceFilter,
-            null, true
-            );
+        const journalEntryFilter = () => {
+            return `GLTRANS = ${GLTransactionUI.GLBatchTransferred.False} AND POSTSTAT != ${GLTransactionUI.PostingStatus.Posting}`;
+        };
+        sg.viewFinderHelper.setViewFinderEx("btnBankPostingJournalFinder", "Data_ThroughPostingSequence", sg.viewFinderProperties.BK.BankPostingJournal,
+            onSuccess.throughPostingSequence, $.noop, journalEntryFilter);
     },
 
     initButton: function () {
@@ -123,21 +120,6 @@ GLTransactionUI = {
             return numerictextbox.value();
       }
       
-    },
-
-};
-
-//Finder filters for Bank Module
-var filters = {
-    throughPostingSequenceFilter: function () {
-        var filters = [[]];
-        var sequenceNumber = GLTransactionUI.getTextBoxValue("Data_ThroughPostingSequence");
-        filters[0][0] = sg.finderHelper.createFilter("PostingSequence", sg.finderOperator.Equal, sequenceNumber);
-        filters[0][1] = sg.finderHelper.createFilter("TypeGorLBatchTransferred", sg.finderOperator.Equal, 0);
-        filters[0][2] = sg.finderHelper.createFilter("TypePostingStatus", sg.finderOperator.NotEqual, 1);
-        filters[0][1].IsMandatory = true;
-        filters[0][2].IsMandatory = true;
-        return filters;
     }
 };
 
@@ -196,8 +178,8 @@ var onSuccess = {
 
     //Setting selected finder value to the model
     throughPostingSequence: function (result) {
-        GLTransactionUI.GLTransactionViewModel.Data.ThroughPostingSequence(result.PostingSequence);
-        GLTransactionUI.setTextBoxValue("Data_ThroughPostingSequence", result.PostingSequence);
+        GLTransactionUI.GLTransactionViewModel.Data.ThroughPostingSequence(result.PSTSEQ);
+        GLTransactionUI.setTextBoxValue("Data_ThroughPostingSequence", result.PSTSEQ);
     }
 
 };

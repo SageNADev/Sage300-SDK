@@ -1,6 +1,6 @@
 @*
   The MIT License (MIT) 
-  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+  Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
  
   Permission is hereby granted, free of charge, to any person obtaining a copy of 
   this software and associated documentation files (the "Software"), to deal in 
@@ -60,15 +60,16 @@
 
     <div class="form-group">
         <div class="search-group">
-            @Html.SageLabel("TaxAuthority", TaxAuthoritiesResx.TaxAuthority, new { @class = "required" })
-            @Html.KoSageTextBoxFor(model => model.Data.TaxAuthority, new { @sagevalue = "Data.TaxAuthority", @valueUpdate = "'input'" }, new { @id = "txtTaxAuthority", @class = "default txt-upper", @formatTextbox = "alphaNumeric" })
-            @Html.KoSageButton("btnLoadTaxAuthority", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
-            @Html.KoSageButton("btnFinderTaxAuthority", null, new { @class = "icon btn-search", @id = "btnFinderTaxAuthority", @tabindex = "-1" })
-            @Html.ValidationMessageFor(model => model.Data.TaxAuthority)
+            @Html.SgFinderFor(m => m.Data.TaxAuthority,
+                  new { @sagevalue = "Data.TaxAuthority" }, 
+                  new { @id = "txtTaxAuthority", @class = "txt-upper", @formatTextbox = "alphaNumeric" },
+                  goButtonId: "btnLoad", labelText: TaxAuthoritiesResx.TaxAuthority,
+                  labelHtmlAttrs: new { @id = "TaxAuthority", @class = "required" })
         </div>
         <div class="input-group">
-            @Html.SageLabelFor(model => model.Data.Description)
-            @Html.KoSageTextBoxFor(model => model.Data.Description, new { @sagevalue = "Data.Description", @valueUpdate = "'input'" }, new { @id = "txtTaxDescription", @disable = false, @class = "large" })
+            @Html.SgTextFor(m => m.Data.Description,
+                  new { @sagevalue = "Data.Description" }, 
+                  new { @id = "txtTaxDescription" }, size: "large", includeValidation: false)
         </div>
     </div>
     <div class="tab-group">

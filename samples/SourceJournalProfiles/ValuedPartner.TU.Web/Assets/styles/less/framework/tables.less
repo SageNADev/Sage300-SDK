@@ -506,7 +506,8 @@ table {
   &.small {
     padding-bottom: 20px;
     
-    .k-grid .k-grid-content {
+    .k-grid .k-grid-content,
+    .k-grid-content {
       height: 167px !important;
       min-height: 167px !important;
       max-height: 167px !important;
@@ -553,6 +554,7 @@ table {
   border-width: 0;
   font-size: 12px;
   border: 1px solid @table-border-color;
+  margin-bottom: 20px;
 
   .k-dirty {
     margin: 0 0 0 -.6rem;
@@ -599,8 +601,9 @@ table {
     }
   }
 
-  .k-header.k-grid-toolbar {
+  .k-grid-toolbar {
     padding: @table-cell-padding @table-cell-padding 0;
+    background-color: @white;
   }
 
   &.gh180 .k-grid-header, 
@@ -733,6 +736,10 @@ table {
     &.k-edit-cell input[type=text].with-finder.numeric {
       padding-right: 24px;
     }
+
+    > .k-widget.k-dropdown {
+      width: ~"calc(100% - 25px)";
+    }
   }
 
   .k-grid-pager {
@@ -854,6 +861,14 @@ table {
     position: relative;
     height: 20px;
   }
+
+  &#div_finder_grid {
+    margin-bottom: 0;
+
+    &:focus {
+      .focus-input-box;
+    }
+  }
 }
 
 
@@ -864,7 +879,7 @@ table {
   }
 
   .k-grid-content {
-    min-height: 200px;
+    min-height: 186px;
 
     &:focus {
       outline: none;
@@ -936,7 +951,7 @@ table {
 
       .pencil-icon {
         position: absolute;
-        right: -10px;
+        right: -6px;
         display: inline-block;
         width: 35px;
         height: 24px;
@@ -993,9 +1008,14 @@ table {
         width: 100%;
       }
 
-      +.icon.edit-field {
-        right: 20px;
-        top: 1px;
+      +.icon.edit-field { // D-42855 (Kendo Upgrade 2021)
+        right: 10px;
+        top: 6px;
+        position: absolute;
+
+        &:focus {
+          outline: none;
+        }
       }
     }
 
@@ -1247,15 +1267,15 @@ table {
   border:1px solid @table-border-color; 
   max-width: 274px;
   min-width: 260px;
-  margin-top: 5px;
+  margin-top: 8px;
   margin-left: -1px;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
   -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
   -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
 
   &#divFinderPrefEditCols {
-    margin-top: -2px;
-    margin-left: 1px;
+    top: 80px !important;
+    left: 14px !important;
   }
 
   table { 

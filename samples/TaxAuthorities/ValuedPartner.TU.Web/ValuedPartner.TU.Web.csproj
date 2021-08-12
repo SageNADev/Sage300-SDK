@@ -344,8 +344,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Areas\TU\Controllers\Finder\FindTaxAuthoritiesAccountControllerInternal.cs" />
-    <Compile Include="Areas\TU\Controllers\Finder\FindTaxAuthoritiesControllerInternal.cs" />
     <Compile Include="Areas\TU\Controllers\TaxAuthoritiesController.cs" />
     <Compile Include="Areas\TU\Controllers\TaxAuthoritiesControllerInternal.cs" />
     <Compile Include="Areas\TU\Models\TaxAuthoritiesViewModel.cs" />
@@ -431,6 +429,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\TU\Controllers\Finder\" />
     <Folder Include="Areas\TU\Controllers\Process\" />
     <Folder Include="Areas\TU\Controllers\Reports\" />
     <Folder Include="Areas\TU\Models\Process\" />

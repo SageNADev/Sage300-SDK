@@ -1305,6 +1305,10 @@ a[class*="btn-"] {
   text-indent: 15px;
   height: 26px;
 
+  &:focus{
+    outline: 3px solid @input-border-focus;
+  }
+
   &:before {
     content: "";
     width: 24px;
@@ -2176,8 +2180,8 @@ a[class*="btn-"] {
   }
 
   .k-grid-content {
-    min-height: 200px;
     overflow-y: auto;
+    min-height: 163px;
 
     .checkBox {
       position: relative;
@@ -4410,9 +4414,28 @@ textarea,
     font-size: 14px;
 
     .k-window-actions {
-      right: -7px;
+      right: 35px;
       top: 10px;
       opacity: 1;
+      position: absolute;
+      color: @sage-mid-gray;
+
+      .k-window-action {
+        margin-right: 15px;
+
+        .k-icon {
+
+          &.k-i-window-maximize {
+            background: none;
+            font-size: 20px;
+            left: -2px;
+          }
+
+          &.k-i-window-restore {
+            background: none;
+          }
+        }
+      }
 
       .k-i-close {
         background-image: none;
@@ -4452,6 +4475,7 @@ textarea,
     }
 
     &.dark-bg .k-window-title,
+    &.dark-bg .k-window-actions .k-icon,
     &.dark-bg .k-window-actions .k-i-close {
       font-weight: normal;
       color: @white;
@@ -4464,7 +4488,7 @@ textarea,
     background: transparent;
     border-radius: 0px;
     overflow-y: auto !important;
-    max-height: 560px !important;
+    max-height: 560px;
 
     .container_16 {
       width: auto;
@@ -4472,6 +4496,13 @@ textarea,
       > * {
         margin-left: 0px;
       }
+    }
+  }
+
+  &.finder-window.k-window-maximized {
+    .k-window-content {
+      max-height: unset !important;
+      height: unset !important;
     }
   }
 
@@ -4546,7 +4577,59 @@ textarea,
 }
 
 .finder-window {
-  height: 560px !important;
+  margin-top: 10px;
+  min-height: 500px!important;
+  min-width: 860px!important;
+
+  &.k-window-maximized {
+    margin-top: 0;
+    max-height: unset!important;
+  }
+
+  #div_finder_grid:focus {
+    outline: 3px solid @input-border-focus;
+  }
+
+  .footer-group-1 {
+    margin: auto;
+  }
+
+  .pager-group .k-pager-wrap {
+    border-top: 0;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    padding: 5px 0;
+
+     .k-link {
+      border-radius: 0;
+      width: 26px;
+      height: 26px;
+      margin: 0 5px;
+      border-color: @sage-mid-gray;
+      min-width: unset;
+
+      &:hover {
+        background-color: #e3e3e7;
+        border-color: @sage-mid-gray;
+      }
+
+      &:focus{
+        outline: 3px solid @input-border-focus;
+      }
+
+      &.k-pager-nav[disabled] {
+        border-color: #e9eef0;
+        background-color: @gray-lighter;
+        opacity: 1;
+        cursor: default !important;
+
+        .k-icon {
+          cursor: default !important;
+          opacity: .3;
+        }
+      }
+    }
+  }
 
   input[type=text] {
     border: 1px solid #9a9b9c;

@@ -30,10 +30,15 @@ Customization = {
     },
 
     initFinders: function () {
-        var finderTitle = jQuery.validator.format(globalResource.FinderTitle, globalResource.CustomizationID);
-        sg.finderHelper.setFinder("btnCommonCustomizationIDFinder", sg.finder.UICustomizationFinder,
-            Customization.customizationFinderSuccess, $.noop, finderTitle,
-            Customization.getCustomizationFilter);
+        const finderProps = () => {
+            const props = sg.utls.deepCopy(sg.viewFinderProperties.AS.Customizations);
+            const screenName = $("#ScreenName").val().toUpperCase();
+            props.finderTitle = jQuery.validator.format(globalResource.FinderTitle, globalResource.CustomizationID);
+            props.filter = $.validator.format(props.filterTemplate, screenName);
+            props.initKeyValues = [screenName, $('#commonCustomizationID').val().trim().toUpperCase()];
+            return props;
+        };
+        sg.viewFinderHelper.setViewFinderEx("btnCommonCustomizationIDFinder", "commonCustomizationID", finderProps, Customization.customizationFinderSuccess);
     },
 
     customizationFinderSuccess: function (data) {
@@ -44,17 +49,10 @@ Customization = {
     },
 
     setCustomizationFinderData: function () {
-        $('#commonCustomizationID').val(Customization.finderData.CustomizationID);
-        $('#commonCustomizationDescription').val(Customization.finderData.Description);
+        $('#commonCustomizationID').val(Customization.finderData.CUSTID);
+        $('#commonCustomizationDescription').val(Customization.finderData.DESCRIPT);
         $("#commonCustomizationID").trigger('change');
         sg.controls.Focus($("#commonCustomizationDescription"));
-    },
-
-    getCustomizationFilter: function () {
-        var filters = [[]];
-        var customizationName = $("#commonCustomizationID").val().trim().toUpperCase();
-        filters[0][0] = sg.finderHelper.createFilter("CustomizationID", sg.finderOperator.StartsWith, customizationName);
-        return filters;
     },
 
     initCustomizationMultiSelect: function () {
