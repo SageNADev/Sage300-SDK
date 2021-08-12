@@ -69,9 +69,9 @@
             @Html.ValidationMessage("sourceCode")
         </div>
         <div class="input-group">
-            @Html.SageLabelFor(model => model.Data.Description)
-            @Html.KoSageTextBoxFor(model => model.Data.Description, new { @value = "Data.Description", @valueUpdate = "'input'" }, new { @class = "reqField-default large" })
-            @Html.ValidationMessageFor(model => model.Data.Description, null, new { @class = "vlidation-left" })
+            @Html.SgTextFor(m => m.Data.Description,
+                  new { @sagevalue = "Data.Description" }, new { @id = "txtShortName", @class = "reqField-default" },
+                  size: "large", validationHtmlAttrs: new { @class = "vlidation-left" })
         </div>
     </div>
     <section class="footer-group-1">
