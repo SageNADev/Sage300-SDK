@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var wizardUI = {
@@ -129,22 +129,13 @@ var wizardUI = {
     },
 
     initFinders: function () {
-        var title = jQuery.validator.format(wizardResources.FinderTitle, wizardResources.CurrencyCodeTitle);
-        
-        sg.finderHelper.setFinder(
-            "btnFinderCurrencyCodes",
-            sg.finder.CurrencyCode,
-            wizardUI.finderSuccess,
-            $.noop(),
-            title,
-            sg.finderHelper.createDefaultFunction(
-            "txtCurrencyCode", "CurrencyCodeId",
-            sg.finderOperator.StartsWith), null, true, 550);
+        sg.viewFinderHelper.setViewFinderEx("btnFinderCurrencyCodes", "txtCurrencyCode", sg.viewFinderProperties.CS.CurrencyCodes,
+            wizardUI.finderSuccess, $.noop, null, 550);
     },
 
     finderSuccess: function (result) {
-        if (result !== null && result.CurrencyCodeId !== null) {
-            wizardUI.newTenantViewModel.Data.FunctionalCurrency(result.CurrencyCodeId);
+        if (result) {
+            wizardUI.newTenantViewModel.Data.FunctionalCurrency(result.CURID);
         }
     },
 

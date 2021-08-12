@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
@@ -35,7 +35,7 @@
 
 </head>
 <body>
-    <div id="ajaxSpinner"  class="spinner">
+    <div id="ajaxSpinner" class="spinner">
         <div class="bounce bounce1"></div>
         <div class="bounce bounce2"></div>
         <div class="bounce bounce3"></div>
@@ -94,6 +94,15 @@
             @Scripts.Render(string.Format("~/bundles/kendoCulture{0}", language));
         }
     }
+
+    @* This test is to deal with screens that only have a single text input field which
+        causes the enter key to submit the screen which is default behavior in the HTML 2.0 spec.
+        Therefore, a hidden text field will be added thus preventing the default (bad) behavior *@
+    <script type="text/javascript">
+        if ($("form input:text").length == 1) {
+            $("form").append("<input type='text' style='display:none;' />");
+        }
+    </script>
 
     @RenderSection("scripts", required: false)
 </body>

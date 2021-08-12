@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2016-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2016-2021 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 var invoiceTypeUI = { Item: 0, Summary: 1, Item_JobRelated: 2, Item_Retainage: 3, Item_JobRelated_Retainage: 4, Summary_JobRelated: 5, Summary_Retainage: 6, Summary_JobRelated_Retainage: 7 };
@@ -101,9 +101,9 @@ inquiryUI = {
                             return obj.objectType == "fromtextbox"; 
                         })[0];
                         inquiryUI.initFinder(renderedObj.Id,
-                            control.inquiryFilterControl.Title,
+                            control.inquiryFilterControl.Module,
                             control.inquiryFilterControl.FinderName,
-                            control.inquiryFilterControl.Field,
+                            control.inquiryFilterControl.FinderField,
                             textBox.Id);
                         break;
 
@@ -112,9 +112,9 @@ inquiryUI = {
                             return obj.objectType == "totextbox";
                         })[0];
                         inquiryUI.initFinder(renderedObj.Id,
-                            control.inquiryFilterControl.Title,
+                            control.inquiryFilterControl.Module,
                             control.inquiryFilterControl.FinderName,
-                            control.inquiryFilterControl.Field,
+                            control.inquiryFilterControl.FinderField,
                             textBox.Id);
                         break;
 
@@ -159,23 +159,15 @@ inquiryUI = {
         }
     },
 
-    initFinder: function(id, finderTitle, finderName, fieldName, textBoxId) {
-        var title = $.validator.format(InquiryResources.FinderTitle, finderTitle);
-        var onSuccess = function(result) {
-            if (result != null) {
+    initFinder: function (id, module, finderName, fieldName, textBoxId) {
+        var onSuccess = function (result) {
+            if (result) {
                 $("#" + textBoxId).val(result[fieldName]);
             }
         };
-        var finderFilter = function() {
-            var filters = [[]];
-            var filter = $("#" + textBoxId).val().toUpperCase();
-            filters[0][0] = sg.finderHelper.createFilter(fieldName,
-                sg.finderOperator.StartsWith,
-                filter);
-            return filters;
-        };
 
-        sg.finderHelper.setFinder(id, sg.finder[finderName], onSuccess, $.noop, title, finderFilter);
+        sg.viewFinderHelper.setViewFinderEx(id, textBoxId, sg.viewFinderProperties[module][finderName],
+            onSuccess, $.noop);
     },
 
     initMultiSelect: function (id) {

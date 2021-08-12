@@ -1,6 +1,6 @@
 
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -21,7 +21,6 @@
 
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Web.Areas.TU.Controllers;
-using ValuedPartner.TU.Web.Areas.TU.Controllers.Finder;
 using Microsoft.Practices.Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Controller;
@@ -50,7 +49,6 @@ namespace ValuedPartner.TU.Web
         public void Execute(IUnityContainer container)
         {
             RegisterController(container);
-            RegisterFinder(container);
             RegisterExportImportController(container);
         }
 
@@ -61,17 +59,6 @@ namespace ValuedPartner.TU.Web
         private void RegisterController(IUnityContainer container)
         {
 			UnityUtil.RegisterType<IController, TaxAuthoritiesController<TaxAuthorities>>(container, "TUTaxAuthorities");
-        }
-
-        /// <summary>
-        /// Register finders
-        /// </summary>
-        /// <param name="container">The Unity container</param>
-        private void RegisterFinder(IUnityContainer container)
-        {
-			UnityUtil.RegisterType<IFinder, FindTaxAuthoritiesControllerInternal<TaxAuthorities>>(container, "tutaxauthorities", new InjectionConstructor(typeof(Context)));
-            UnityUtil.RegisterType<IFinder, FindTaxAuthoritiesAccountControllerInternal<Account>>(container, "tutaxauthoritiesaccount", new InjectionConstructor(typeof(Context)));
-
         }
 
         /// <summary>

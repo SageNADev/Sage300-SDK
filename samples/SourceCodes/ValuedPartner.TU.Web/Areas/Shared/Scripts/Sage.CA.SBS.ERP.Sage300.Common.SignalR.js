@@ -1,9 +1,9 @@
-﻿/* Copyright (c) 2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2019-2021 Sage Software, Inc.  All rights reserved. */
 
 var SignalR = {
     //Initialize and establish connection to SignalR
     initialize: function (id) {
-        var connection = $.hubConnection("/Sage300/sagesignalr", { useDefaultPath: false });
+        var connection = $.hubConnection(`/${window.location.pathname.split('/')[1]}/sagesignalr`, { useDefaultPath: false });
         connection.qs = { 'key': id };
         var signalRHub = connection.createHubProxy('SageSignalRHub')
 

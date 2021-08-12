@@ -242,6 +242,18 @@
                         }
                     }
                     break;
+                case "checkbox":
+                    if (element.parentElement && element.parentElement.parentElement && element.parentElement.parentElement.nextElementSibling &&
+                        element.parentElement.parentElement.nextElementSibling.nodeName &&
+                        element.parentElement.parentElement.nextElementSibling.nodeName.toLowerCase() === "label") {
+                        let label = element.parentElement.parentElement.nextElementSibling;
+                        if (currentModelValue) {
+                            $(label).removeClass("disabled");
+                        } else {
+                            $(label).addClass("disabled");
+                        }
+                    }
+                    break;
             }
         },
 

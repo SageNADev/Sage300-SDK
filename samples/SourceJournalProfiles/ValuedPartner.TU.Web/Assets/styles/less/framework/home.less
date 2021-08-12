@@ -412,6 +412,16 @@ i {
       }
     }
 
+    .quick-menu-window-bookmark {
+      background-color: #08afb9;
+
+      > .glyphicon {
+        top: 8px;
+        left: -1px;
+        font-size: 1.2rem;
+      }
+    }
+
     .quick-menu-notes,
     .quick-menu-add-note {
       background-color: #ed1c5f;
@@ -513,13 +523,46 @@ i {
           color: #323332; 
         }
 
-        span:nth-of-type(2) { 
+        span.with-bookmark { 
+          width: ~"calc(100% - 38px)"; 
+        }
+
+        span:nth-of-type(2),
+        span.rcbox-btn-close { 
           background:url('@{image-path}/home/close.png') no-repeat; 
           width:15px; 
           height:15px; 
           background-size:15px; 
           float:right; 
           margin-top:2px; 
+        }
+
+        span.rcbox-btn-bookmark {
+          
+          font-family: "Sage Armonye Icons";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.85rem;
+          font-variant: normal;
+          text-transform: none;
+          speak: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          vertical-align: top;
+          background: none;
+          width:15px; 
+          height:15px; 
+          float:left; 
+          margin:2px 4px 0 4px; 
+
+          &:before {
+            content: "\2666";
+          }
+
+          &.bookmarked:before {
+            color: #4fdce4;
+          }
         }
       }
     }
@@ -887,4 +930,135 @@ and (max-device-width : 1024px) {
         left: 0;
     }
 }   
+
+/* Temp - Hackathone - Voice Assistant
+------------------------------------------------------------------------------*/
+
+.icon-microphone-wave {
+  width: 60px;
+  height: 60px;
+  background-color: #8DC794;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: wave 4s infinite ease-in-out;
+  opacity: 0.5;
+  position: absolute;
+  top: 170px;
+  left: 110px;
+
+}
+
+@keyframes wave{
+  100% {
+    opacity: 0;
+    border: 10px solid #8DC794; 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%;
+    top: 170px;
+  left: 110px;
+  }
+  0% {
+    opacity: 0.5;
+    border: 10px solid #8DC794; 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%;
+    top: 170px;
+    left: 110px;
+  }
+  40%{
+    opacity: 0;
+    border: 10px solid @white; 
+    width: 140px; 
+    height: 140px; 
+    border-radius: 50%;
+    top: 130px;
+    left: 70px;
+  }
+}
+
+.icon-microphone {
+  background-image: url('@{image-path}/home/icon_microphone.png');
+  background-repeat: no-repeat;
+  background-size: 38px 57px;
+  position: absolute;
+  top: 170px;
+  width: 38px;
+  height: 57px;
+  left: 121px;
+}
+
+.btn-voice-assistant,
+.btn-voice-assistant-close {
+  background-image: url('@{image-path}/home/btn_microphone.png');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  box-shadow: 0px 5px 10px #a6a6a6;
+  width: 48px;
+  height: 48px;
+  background-color: #028202;
+  position: fixed;
+  bottom: 100px;
+  right: 16px;
+  border-radius: 50%;
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -kthtml-transition: all .2s linear;
+  transition: all .2s linear;
+
+  &:hover {
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    background-size: 52px 52px;
+    bottom: 98px;
+    right: 14px;
+  }
+
+  &.hide {
+    display: none !important;
+  }
+
+  &.show {
+    display: block !important;
+  }
+}
+
+.btn-voice-assistant-close {
+    background-image: url('@{image-path}/home/btn_microphone_close.png');
+}
+
+.popup-voice-assistant {
+  background-color: @white;
+  border: 1px solid #ddd;
+  position: fixed;
+  bottom: 160px;
+  right: 40px;
+  width: 280px;
+  height: 280px;
+  box-shadow: 0 5px 20px #dddddd;
+  padding: 20px;
+
+  label {
+    font-size: 20px;
+    font-family: foco;
+    font-weight: 100;
+    text-align: center;
+    display: block;
+    position: relative;
+    top: 30px;
+
+    &#lblVoiceToText1,
+    &#lblVoiceToText2 {
+      display: none;
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+}
 

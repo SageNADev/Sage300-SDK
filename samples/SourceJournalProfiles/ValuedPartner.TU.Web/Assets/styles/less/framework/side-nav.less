@@ -290,6 +290,13 @@
           }
         }
       }
+
+      // Hide Search Menu when navigation bar is collapsed
+
+      .input-menu-search,
+      .input-menu-search-popup {
+        display: none;
+      }
     }
   }
 
@@ -370,10 +377,129 @@
             right: .5rem;
           }
         }
+
+        // Search Menu
+
+        &.invisible {
+          opacity: 0;
+          cursor: default;
+        }
       }
+
+      .input-menu-search-popup {
+        opacity: 0;
+        visibility: hidden;
+        width: ~"calc(100% - 57px)";
+        background-color: @white;
+        position: absolute;
+        right: 1px;
+        top: -20px;
+        z-index: 10;
+        color: #050505;
+        font-size: 13px;
+        padding: 0;
+        height: 680px;
+        overflow: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 20%);
+        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 20%);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 20%);
+        cursor: default;
+        transition: all .4s ease;
+        background-image: url('@{image-path}/nav/background_menu_search.png');
+        background-repeat: no-repeat;
+        background-position: 34px 500px;
+        background-size: 70%;
+
+        &.open {
+          opacity: 1;
+          visibility: visible;
+          top: 45px;
+        }
+
+        li.search-menu-module:not(:first-child){
+          border-top: 1px solid @gray-lighter;
+
+          > ul {
+            border-top: 1px solid @gray-lighter;
+          }
+        }
+
+        li.search-menu-module {
+          padding-left: 14px;
+          padding-right: 14px;
+          padding-left: 14px;
+          color: @sage-mid-gray;
+          background-color: @gray-lighter;
+          line-height: 2.35;
+
+          li.search-menu-screen {
+            margin: 0 -13px;
+            padding: 0 13px;
+            background-color: @white;
+
+            a {
+              padding-left: 14px;
+              color: #050505;
+              font-size: 13px;
+              font-weight: normal;
+              cursor: pointer;
+              margin: 0 -13px;
+              padding: 0 0 0 20px;
+              line-height: 2.35;
+              opacity: 1;
+
+              span.search-highlight {
+                font-weight: bold;
+                display: inline;
+              }
+            }
+
+            &:hover {
+              background-color: @sage-blue;
+
+              > a {
+                color: @white;
+              }
+            }
+          }
+        }
+      }
+
       .menu-item.menu-tc > a:hover:after,
       .menu-item#homeNav > a:hover:after  {
         content: none;
+      }
+
+      // Search Menu
+
+      .input-menu-search {
+        position: absolute;
+        right: 0;
+        width: ~"calc(100% - 56px)";
+        border: 1px solid @gray-lighter;
+        height: 100%;
+        top: 0;
+        margin: 0;
+        padding: 14px;
+        font-size: 13px;
+        z-index: 11;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: @gray-light;
+          opacity: 1; /* Firefox */
+        }
+
+        &::-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color: @gray-light
+        }
+
+        &::-ms-input-placeholder { /* Microsoft Edge */
+          color: @gray-light;
+        }
       }
     }
   }
@@ -698,19 +824,42 @@
     background-image: url('@{image-path}/nav/SIRC/bg_menu_sirc.jpg'), linear-gradient(180deg, #FFFFFF 0%, #EBEDEF 30%);
 
     > li {
-      padding: 1rem !important;
+      padding: 1rem 1rem 0.35rem;
       width: 29rem;
 
-      &.feature-menu-header > span {
-        font-size: 1.35rem;
-        color: #858780;
-        font-weight: normal;
-        display: inline-block;
+      &.feature-menu-header {
+        padding-bottom: 0;
+        
+        > span {
+          font-size: 1.35rem;
+          color: #858780;
+          font-weight: normal;
+          display: inline-block;
+        }
       }
 
       p {
         margin-bottom: 1rem;
       }
+
+      &.feature-menu-content {
+
+        h2 {
+          font-size: 1rem;
+          color: #858780;
+          font-weight: normal;
+          margin-bottom: 16px;
+          display: inline-block;
+        }
+
+        .logo-sda {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    hr {
+      margin-bottom: 0;
     }
   }
 
@@ -860,8 +1009,8 @@
   padding: 8px;
 
   .k-callout-w {
-    left: -10px;
-    margin-top: -5px;
+    left: 0;
+    margin-top: 0;
     border-right-color: #003348;
   }
 

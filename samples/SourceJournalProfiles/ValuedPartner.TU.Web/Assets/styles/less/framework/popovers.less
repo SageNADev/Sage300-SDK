@@ -221,8 +221,9 @@ and (max-device-width : 1024px) {
 }
 .k-window-titlebar .k-window-actions{
     opacity: 1;
-    top: 5px;
+    top: 4px;
     right: 10px;
+    position: absolute;
 }
 
 .k-window-titlebar .k-window-action {
@@ -231,6 +232,10 @@ and (max-device-width : 1024px) {
   height: 30px;
   position: relative;
   margin-left: 6px;
+
+  &:focus {
+    outline: 3px solid @input-border-focus;
+  }
 }
 .k-window-titlebar .k-window-actions .k-i-close{
     background-image: none;
@@ -247,8 +252,7 @@ and (max-device-width : 1024px) {
     vertical-align: top;
     opacity: 1;
 
-    &:hover,
-    &:focus {
+    &:hover {
       outline: none;
       border: none;
     }
@@ -268,7 +272,7 @@ and (max-device-width : 1024px) {
 
 .k-window .k-window-content {
     padding: 3px 3px 0;
-    margin: (@margin-base - 3px) (@margin-base - 3px) 0; // D-42509
+    margin: (@margin-base - 3px) (@margin-base - 3px) -3px; // D-42509
     background: transparent;
     border-radius: 0px;
     overflow-y:auto;
@@ -407,6 +411,8 @@ and (max-device-width : 1024px) {
 .finder-window {
 
   margin: 16px 0 0;
+  min-height: 500px !important;
+  min-width: 860px !important;
   
   /*Finder window gridcontrol*/
 
@@ -596,17 +602,23 @@ and (max-device-width : 1024px) {
   }
 
   .k-grid .k-grid-content {
-    overflow-y: auto;
+    overflow-y: scroll;
   }
 
-  .k-grid tr.k-state-selected td:first-child {
-    border-left: 3px solid @sage-blue;
-    padding-left: 5px;
+  .k-grid tr.k-state-selected {
+
+    border: 1px solid @input-border;
+
+    td:first-child {
+      border-left: 3px solid @sage-blue;
+      padding-left: 5px;
+    }
   }
 
   .pager-group .k-pager-wrap {
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
+    padding: 5px 0;
   }
 
   .k-button:focus:active:not(.k-state-disabled):not([disabled]),
@@ -619,6 +631,10 @@ and (max-device-width : 1024px) {
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       box-shadow: none;
+  }
+
+  .footer-group {
+    min-height: 51px;
   }
 }
 
@@ -649,7 +665,7 @@ and (max-device-width : 1024px) {
 
   .script-btn-group {
     display: inline-block;
-    margin-left: 40px;
+    margin-left: 80px;
     position: absolute;
     top: 12px;
 
@@ -867,7 +883,12 @@ and (max-device-width : 1024px) {
     }
 
     input[type="checkbox"] {
-      height: 20px;
+      height: 16px;
+      width: 16px;
+      border-radius: 0;
+      border: 1px solid @sage-mid-gray;
+      top: -3px;
+      left: 2px;
     }
 
     .k-icon:before {
@@ -876,6 +897,31 @@ and (max-device-width : 1024px) {
 
     .k-checkbox-wrapper {
       vertical-align: unset;
+    }
+
+    .k-checkbox {
+      &:hover {
+        outline: #ffb500 solid 3px;
+        box-shadow: none;
+        border-color: @sage-mid-gray;
+      }
+
+      &:focus {
+        outline: #ffb500 solid 3px;
+      }
+
+      &:checked::before {
+        color: @black;
+        font-size: 13px;
+        width: 13px;
+        height: 13px;
+        font-weight: bold;
+      }
+
+      &.k-state-indeterminate::before, 
+      &:indeterminate::before {
+        color: @black;
+      }
     }
   }
 
