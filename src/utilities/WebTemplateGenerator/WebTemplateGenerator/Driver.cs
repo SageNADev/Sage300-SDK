@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -146,7 +146,6 @@ namespace WebTemplateGenerator
             var sdkRoot = _Options.SDKRootFolder.OptionValue;
             var templatesFolder = Path.Combine(sdkRoot, WebTemplateGenerator.Constants.TemplateFolder_CustomizationWizard);
             var webTargetFolder = Path.Combine(templatesFolder, WebTemplateGenerator.Constants.TemplateFolder_Web);
-            var webSourceFolder = (_Options.WebSourceFolder.OptionValue.Length > 0) ? _Options.WebSourceFolder.OptionValue : string.Empty;
 
             // Start a timer
             Stopwatch sw = new Stopwatch();
