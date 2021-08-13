@@ -308,8 +308,8 @@ namespace Sage300FinderGenerator
                     {
                         _finderLookup = CreateFinderLookup(finderProps);
                         PopuplateFinderDropDown(lstFinder, _finderLookup);
-                        fileBtn.Enabled = false;
-                        btmNew.Enabled = true;
+                        definitionFileTxt.ShowButton = false;
+                        btnNew.Enabled = true;
                     }
                 }
             }
@@ -376,7 +376,7 @@ namespace Sage300FinderGenerator
             finderDataSet.SetDataValue(finderInfoLookup, fullFinderName.Split(FinderDataSet.ModuleNameSeparator)[1], fullFinderName.Split(FinderDataSet.ModuleNameSeparator)[0]);
 
             // Reset buttons (just in case)
-            btmNew.Enabled = true;
+            btnNew.Enabled = true;
             btmInsert.Enabled = false;
         }
 
@@ -432,7 +432,7 @@ namespace Sage300FinderGenerator
             finderInfo[fieldName] = newArray;
         }
 
-        private void btmNew_Click(object sender, EventArgs e)
+        private void btnNew_Click(object sender, EventArgs e)
         {
             // create a *empty* finder lookup detail object
             IDictionary<string, object> newFinderDetail = new Dictionary<string, object>();
@@ -450,7 +450,7 @@ namespace Sage300FinderGenerator
             // Now update the dataset
             finderDataSet.SetDataValue(newFinderDetail, string.Empty, string.Empty);
 
-            btmNew.Enabled = false;
+            btnNew.Enabled = false;
             btmInsert.Enabled = true;
         }
 
@@ -482,7 +482,7 @@ namespace Sage300FinderGenerator
             PopuplateFinderDropDown(lstFinder, _finderLookup);
             lstFinder.SetSelected(lstFinder.Items.Count - 1, true);
 
-            btmNew.Enabled = true;
+            btnNew.Enabled = true;
             btmInsert.Enabled = false;
         }
     }
