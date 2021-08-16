@@ -103,6 +103,11 @@
     <Compile Include="FinderDefinitionControl.Designer.cs">
       <DependentUpon>FinderDefinitionControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FinderDefinitionControl.resx">
@@ -111,11 +116,18 @@
     <EmbeddedResource Include="FinderDefinitionForm.resx">
       <DependentUpon>FinderDefinitionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="SDKKeyFile.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sage-logo-square.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

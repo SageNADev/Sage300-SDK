@@ -39,14 +39,13 @@
             this.mskPassword = new MetroFramework.Controls.MetroTextBox();
             this.txtUserName = new MetroFramework.Controls.MetroTextBox();
             this.definitionFileTxt = new MetroFramework.Controls.MetroTextBox();
-            this.fileBtn = new MetroFramework.Controls.MetroButton();
             this.separatorLbl = new MetroFramework.Controls.MetroLabel();
             this.lstFinder = new System.Windows.Forms.ListBox();
             this.lblFinderList = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtFinderName = new MetroFramework.Controls.MetroTextBox();
             this.txtFinderModule = new MetroFramework.Controls.MetroTextBox();
-            this.btmNew = new MetroFramework.Controls.MetroButton();
+            this.btnNew = new MetroFramework.Controls.MetroButton();
             this.btmInsert = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
@@ -66,7 +65,7 @@
             this.txtViewId.CustomButton.UseSelectable = true;
             this.txtViewId.CustomButton.Visible = false;
             this.txtViewId.Lines = new string[0];
-            this.txtViewId.Location = new System.Drawing.Point(250, 206);
+            this.txtViewId.Location = new System.Drawing.Point(242, 176);
             this.txtViewId.MaxLength = 32767;
             this.txtViewId.Name = "txtViewId";
             this.txtViewId.PasswordChar = '\0';
@@ -77,6 +76,7 @@
             this.txtViewId.SelectionStart = 0;
             this.txtViewId.ShortcutsEnabled = true;
             this.txtViewId.Size = new System.Drawing.Size(218, 25);
+            this.txtViewId.Style = MetroFramework.MetroColorStyle.Green;
             this.txtViewId.TabIndex = 10;
             this.txtViewId.UseSelectable = true;
             this.txtViewId.WaterMark = "View ID";
@@ -89,10 +89,11 @@
             this.cboKeys.FontSize = MetroFramework.MetroComboBoxSize.Small;
             this.cboKeys.FormattingEnabled = true;
             this.cboKeys.ItemHeight = 19;
-            this.cboKeys.Location = new System.Drawing.Point(250, 248);
+            this.cboKeys.Location = new System.Drawing.Point(242, 218);
             this.cboKeys.Name = "cboKeys";
             this.cboKeys.PromptText = "Finder View Order";
             this.cboKeys.Size = new System.Drawing.Size(218, 25);
+            this.cboKeys.Style = MetroFramework.MetroColorStyle.Green;
             this.cboKeys.TabIndex = 11;
             this.cboKeys.UseSelectable = true;
             // 
@@ -101,7 +102,7 @@
             this.chklstReturnFields.AllowDrop = true;
             this.chklstReturnFields.CheckOnClick = true;
             this.chklstReturnFields.FormattingEnabled = true;
-            this.chklstReturnFields.Location = new System.Drawing.Point(474, 305);
+            this.chklstReturnFields.Location = new System.Drawing.Point(466, 275);
             this.chklstReturnFields.Name = "chklstReturnFields";
             this.chklstReturnFields.Size = new System.Drawing.Size(184, 154);
             this.chklstReturnFields.TabIndex = 12;
@@ -115,7 +116,7 @@
             this.chklstDisplayFields.AllowDrop = true;
             this.chklstDisplayFields.CheckOnClick = true;
             this.chklstDisplayFields.FormattingEnabled = true;
-            this.chklstDisplayFields.Location = new System.Drawing.Point(250, 305);
+            this.chklstDisplayFields.Location = new System.Drawing.Point(242, 275);
             this.chklstDisplayFields.Name = "chklstDisplayFields";
             this.chklstDisplayFields.Size = new System.Drawing.Size(184, 154);
             this.chklstDisplayFields.TabIndex = 11;
@@ -127,26 +128,32 @@
             // lblDisplayField
             // 
             this.lblDisplayField.AutoSize = true;
-            this.lblDisplayField.Location = new System.Drawing.Point(250, 283);
+            this.lblDisplayField.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblDisplayField.Location = new System.Drawing.Point(242, 253);
             this.lblDisplayField.Name = "lblDisplayField";
-            this.lblDisplayField.Size = new System.Drawing.Size(87, 19);
+            this.lblDisplayField.Size = new System.Drawing.Size(100, 19);
             this.lblDisplayField.TabIndex = 13;
             this.lblDisplayField.Text = "Display Fields";
             // 
             // lblReturnField
             // 
             this.lblReturnField.AutoSize = true;
-            this.lblReturnField.Location = new System.Drawing.Point(461, 283);
+            this.lblReturnField.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblReturnField.Location = new System.Drawing.Point(466, 253);
             this.lblReturnField.Name = "lblReturnField";
-            this.lblReturnField.Size = new System.Drawing.Size(84, 19);
+            this.lblReturnField.Size = new System.Drawing.Size(95, 19);
             this.lblReturnField.TabIndex = 14;
             this.lblReturnField.Text = "Return Fields";
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(572, 16);
+            this.btnConfirm.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnConfirm.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnConfirm.Highlight = true;
+            this.btnConfirm.Location = new System.Drawing.Point(564, 12);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(86, 23);
+            this.btnConfirm.Style = MetroFramework.MetroColorStyle.Green;
             this.btnConfirm.TabIndex = 4;
             this.btnConfirm.Text = "Login";
             this.btnConfirm.UseSelectable = true;
@@ -159,7 +166,7 @@
             // 
             // 
             this.txtCompany.CustomButton.Image = null;
-            this.txtCompany.CustomButton.Location = new System.Drawing.Point(145, 1);
+            this.txtCompany.CustomButton.Location = new System.Drawing.Point(148, 1);
             this.txtCompany.CustomButton.Name = "";
             this.txtCompany.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtCompany.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -168,7 +175,7 @@
             this.txtCompany.CustomButton.UseSelectable = true;
             this.txtCompany.CustomButton.Visible = false;
             this.txtCompany.Lines = new string[0];
-            this.txtCompany.Location = new System.Drawing.Point(378, 16);
+            this.txtCompany.Location = new System.Drawing.Point(367, 12);
             this.txtCompany.MaxLength = 32767;
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.PasswordChar = '\0';
@@ -178,7 +185,8 @@
             this.txtCompany.SelectionLength = 0;
             this.txtCompany.SelectionStart = 0;
             this.txtCompany.ShortcutsEnabled = true;
-            this.txtCompany.Size = new System.Drawing.Size(167, 23);
+            this.txtCompany.Size = new System.Drawing.Size(170, 23);
+            this.txtCompany.Style = MetroFramework.MetroColorStyle.Green;
             this.txtCompany.TabIndex = 3;
             this.txtCompany.UseSelectable = true;
             this.txtCompany.WaterMark = "Company";
@@ -192,7 +200,7 @@
             // 
             // 
             this.mskPassword.CustomButton.Image = null;
-            this.mskPassword.CustomButton.Location = new System.Drawing.Point(128, 1);
+            this.mskPassword.CustomButton.Location = new System.Drawing.Point(152, 1);
             this.mskPassword.CustomButton.Name = "";
             this.mskPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.mskPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -201,7 +209,7 @@
             this.mskPassword.CustomButton.UseSelectable = true;
             this.mskPassword.CustomButton.Visible = false;
             this.mskPassword.Lines = new string[0];
-            this.mskPassword.Location = new System.Drawing.Point(202, 16);
+            this.mskPassword.Location = new System.Drawing.Point(187, 12);
             this.mskPassword.MaxLength = 32767;
             this.mskPassword.Name = "mskPassword";
             this.mskPassword.PasswordChar = '*';
@@ -211,7 +219,8 @@
             this.mskPassword.SelectionLength = 0;
             this.mskPassword.SelectionStart = 0;
             this.mskPassword.ShortcutsEnabled = true;
-            this.mskPassword.Size = new System.Drawing.Size(150, 23);
+            this.mskPassword.Size = new System.Drawing.Size(174, 23);
+            this.mskPassword.Style = MetroFramework.MetroColorStyle.Green;
             this.mskPassword.TabIndex = 2;
             this.mskPassword.UseSelectable = true;
             this.mskPassword.WaterMark = "Password";
@@ -225,7 +234,7 @@
             // 
             // 
             this.txtUserName.CustomButton.Image = null;
-            this.txtUserName.CustomButton.Location = new System.Drawing.Point(128, 1);
+            this.txtUserName.CustomButton.Location = new System.Drawing.Point(147, 1);
             this.txtUserName.CustomButton.Name = "";
             this.txtUserName.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtUserName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -234,7 +243,7 @@
             this.txtUserName.CustomButton.UseSelectable = true;
             this.txtUserName.CustomButton.Visible = false;
             this.txtUserName.Lines = new string[0];
-            this.txtUserName.Location = new System.Drawing.Point(20, 16);
+            this.txtUserName.Location = new System.Drawing.Point(12, 12);
             this.txtUserName.MaxLength = 32767;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
@@ -244,7 +253,8 @@
             this.txtUserName.SelectionLength = 0;
             this.txtUserName.SelectionStart = 0;
             this.txtUserName.ShortcutsEnabled = true;
-            this.txtUserName.Size = new System.Drawing.Size(150, 23);
+            this.txtUserName.Size = new System.Drawing.Size(169, 23);
+            this.txtUserName.Style = MetroFramework.MetroColorStyle.Green;
             this.txtUserName.TabIndex = 1;
             this.txtUserName.UseSelectable = true;
             this.txtUserName.WaterMark = "User Name";
@@ -257,16 +267,15 @@
             // 
             // 
             this.definitionFileTxt.CustomButton.Image = null;
-            this.definitionFileTxt.CustomButton.Location = new System.Drawing.Point(501, 1);
+            this.definitionFileTxt.CustomButton.Location = new System.Drawing.Point(614, 1);
             this.definitionFileTxt.CustomButton.Name = "";
             this.definitionFileTxt.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.definitionFileTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.definitionFileTxt.CustomButton.TabIndex = 1;
             this.definitionFileTxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.definitionFileTxt.CustomButton.UseSelectable = true;
-            this.definitionFileTxt.CustomButton.Visible = false;
             this.definitionFileTxt.Lines = new string[0];
-            this.definitionFileTxt.Location = new System.Drawing.Point(20, 68);
+            this.definitionFileTxt.Location = new System.Drawing.Point(12, 51);
             this.definitionFileTxt.MaxLength = 32767;
             this.definitionFileTxt.Name = "definitionFileTxt";
             this.definitionFileTxt.PasswordChar = '\0';
@@ -276,35 +285,28 @@
             this.definitionFileTxt.SelectionLength = 0;
             this.definitionFileTxt.SelectionStart = 0;
             this.definitionFileTxt.ShortcutsEnabled = true;
-            this.definitionFileTxt.Size = new System.Drawing.Size(525, 25);
+            this.definitionFileTxt.ShowButton = true;
+            this.definitionFileTxt.Size = new System.Drawing.Size(638, 25);
+            this.definitionFileTxt.Style = MetroFramework.MetroColorStyle.Green;
             this.definitionFileTxt.TabIndex = 5;
             this.definitionFileTxt.UseSelectable = true;
             this.definitionFileTxt.WaterMark = "Definition File";
             this.definitionFileTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.definitionFileTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // fileBtn
-            // 
-            this.fileBtn.Location = new System.Drawing.Point(572, 68);
-            this.fileBtn.Name = "fileBtn";
-            this.fileBtn.Size = new System.Drawing.Size(86, 25);
-            this.fileBtn.TabIndex = 6;
-            this.fileBtn.Text = "File...";
-            this.fileBtn.UseSelectable = true;
-            this.fileBtn.Click += new System.EventHandler(this.fileBtn_Click);
+            this.definitionFileTxt.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.fileBtn_Click);
             // 
             // separatorLbl
             // 
             this.separatorLbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.separatorLbl.Location = new System.Drawing.Point(47, 125);
+            this.separatorLbl.Location = new System.Drawing.Point(12, 95);
             this.separatorLbl.Name = "separatorLbl";
-            this.separatorLbl.Size = new System.Drawing.Size(570, 2);
+            this.separatorLbl.Size = new System.Drawing.Size(638, 1);
             this.separatorLbl.TabIndex = 19;
             // 
             // lstFinder
             // 
             this.lstFinder.FormattingEnabled = true;
-            this.lstFinder.Location = new System.Drawing.Point(20, 169);
+            this.lstFinder.Location = new System.Drawing.Point(12, 139);
             this.lstFinder.Name = "lstFinder";
             this.lstFinder.Size = new System.Drawing.Size(198, 290);
             this.lstFinder.TabIndex = 7;
@@ -313,9 +315,10 @@
             // lblFinderList
             // 
             this.lblFinderList.AutoSize = true;
-            this.lblFinderList.Location = new System.Drawing.Point(20, 147);
+            this.lblFinderList.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblFinderList.Location = new System.Drawing.Point(12, 117);
             this.lblFinderList.Name = "lblFinderList";
-            this.lblFinderList.Size = new System.Drawing.Size(68, 19);
+            this.lblFinderList.Size = new System.Drawing.Size(77, 19);
             this.lblFinderList.TabIndex = 21;
             this.lblFinderList.Text = "Finder List";
             // 
@@ -323,11 +326,11 @@
             // 
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Small;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(491, 220);
+            this.metroLabel1.Location = new System.Drawing.Point(472, 190);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(117, 53);
+            this.metroLabel1.Size = new System.Drawing.Size(178, 53);
             this.metroLabel1.TabIndex = 22;
-            this.metroLabel1.Text = "* User right mouse button to drag to reorder fields order";
+            this.metroLabel1.Text = "* Use right mouse button to drag to reorder fields";
             this.metroLabel1.WrapToLine = true;
             // 
             // txtFinderName
@@ -345,7 +348,7 @@
             this.txtFinderName.CustomButton.UseSelectable = true;
             this.txtFinderName.CustomButton.Visible = false;
             this.txtFinderName.Lines = new string[0];
-            this.txtFinderName.Location = new System.Drawing.Point(323, 165);
+            this.txtFinderName.Location = new System.Drawing.Point(315, 135);
             this.txtFinderName.MaxLength = 32767;
             this.txtFinderName.Name = "txtFinderName";
             this.txtFinderName.PasswordChar = '\0';
@@ -356,6 +359,7 @@
             this.txtFinderName.SelectionStart = 0;
             this.txtFinderName.ShortcutsEnabled = true;
             this.txtFinderName.Size = new System.Drawing.Size(145, 25);
+            this.txtFinderName.Style = MetroFramework.MetroColorStyle.Green;
             this.txtFinderName.TabIndex = 9;
             this.txtFinderName.UseSelectable = true;
             this.txtFinderName.WaterMark = "FinderName";
@@ -377,7 +381,7 @@
             this.txtFinderModule.CustomButton.UseSelectable = true;
             this.txtFinderModule.CustomButton.Visible = false;
             this.txtFinderModule.Lines = new string[0];
-            this.txtFinderModule.Location = new System.Drawing.Point(250, 165);
+            this.txtFinderModule.Location = new System.Drawing.Point(242, 135);
             this.txtFinderModule.MaxLength = 2;
             this.txtFinderModule.Name = "txtFinderModule";
             this.txtFinderModule.PasswordChar = '\0';
@@ -388,29 +392,38 @@
             this.txtFinderModule.SelectionStart = 0;
             this.txtFinderModule.ShortcutsEnabled = true;
             this.txtFinderModule.Size = new System.Drawing.Size(67, 25);
+            this.txtFinderModule.Style = MetroFramework.MetroColorStyle.Green;
             this.txtFinderModule.TabIndex = 8;
             this.txtFinderModule.UseSelectable = true;
             this.txtFinderModule.WaterMark = "Module";
             this.txtFinderModule.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtFinderModule.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // btmNew
+            // btnNew
             // 
-            this.btmNew.Enabled = false;
-            this.btmNew.Location = new System.Drawing.Point(480, 165);
-            this.btmNew.Name = "btmNew";
-            this.btmNew.Size = new System.Drawing.Size(86, 25);
-            this.btmNew.TabIndex = 12;
-            this.btmNew.Text = "New";
-            this.btmNew.UseSelectable = true;
-            this.btmNew.Click += new System.EventHandler(this.btmNew_Click);
+            this.btnNew.Enabled = false;
+            this.btnNew.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnNew.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnNew.Highlight = true;
+            this.btnNew.Location = new System.Drawing.Point(472, 135);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(86, 25);
+            this.btnNew.Style = MetroFramework.MetroColorStyle.Green;
+            this.btnNew.TabIndex = 12;
+            this.btnNew.Text = "New";
+            this.btnNew.UseSelectable = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btmInsert
             // 
             this.btmInsert.Enabled = false;
-            this.btmInsert.Location = new System.Drawing.Point(572, 165);
+            this.btmInsert.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btmInsert.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btmInsert.Highlight = true;
+            this.btmInsert.Location = new System.Drawing.Point(564, 135);
             this.btmInsert.Name = "btmInsert";
             this.btmInsert.Size = new System.Drawing.Size(86, 25);
+            this.btmInsert.Style = MetroFramework.MetroColorStyle.Green;
             this.btmInsert.TabIndex = 13;
             this.btmInsert.Text = "Insert";
             this.btmInsert.UseSelectable = true;
@@ -422,14 +435,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.btmInsert);
-            this.Controls.Add(this.btmNew);
+            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.txtFinderModule);
             this.Controls.Add(this.txtFinderName);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.lblFinderList);
             this.Controls.Add(this.lstFinder);
             this.Controls.Add(this.separatorLbl);
-            this.Controls.Add(this.fileBtn);
             this.Controls.Add(this.definitionFileTxt);
             this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.btnConfirm);
@@ -442,7 +454,7 @@
             this.Controls.Add(this.cboKeys);
             this.Controls.Add(this.txtViewId);
             this.Name = "FinderDefinitionControl";
-            this.Size = new System.Drawing.Size(692, 509);
+            this.Size = new System.Drawing.Size(661, 443);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,14 +472,13 @@
         private MetroFramework.Controls.MetroTextBox mskPassword;
         private MetroFramework.Controls.MetroTextBox txtUserName;
         private MetroFramework.Controls.MetroTextBox definitionFileTxt;
-        private MetroFramework.Controls.MetroButton fileBtn;
         private MetroFramework.Controls.MetroLabel separatorLbl;
         private System.Windows.Forms.ListBox lstFinder;
         private MetroFramework.Controls.MetroLabel lblFinderList;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox txtFinderName;
         private MetroFramework.Controls.MetroTextBox txtFinderModule;
-        private MetroFramework.Controls.MetroButton btmNew;
+        private MetroFramework.Controls.MetroButton btnNew;
         private MetroFramework.Controls.MetroButton btmInsert;
     }
 }
