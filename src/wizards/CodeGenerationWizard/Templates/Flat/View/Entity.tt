@@ -133,14 +133,13 @@ else
     }
 	else
 	{
-    
+        // No XML layout speciified, therefore we will no longer generate only the key field
 	}
         if (xmlLayout == null)
         {
             WriteLine(new string(' ', 4) + "</div>");
         }
 #>
-
     <section class="footer-group-1">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {

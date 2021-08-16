@@ -435,7 +435,7 @@ else
     }
 	else
 	{
-    
+        // No XML layout speciified, therefore we will no longer generate only the key field
 	}
         if (xmlLayout == null)
         {
@@ -445,15 +445,14 @@ else
             
             #line default
             #line hidden
-            this.Write(@"
-    <section class=""footer-group-1"">
+            this.Write(@"    <section class=""footer-group-1"">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {
             @Html.KoSageButton(""btnSave"", new { }, new { @value = CommonResx.Save, @id = ""btnSave"", @class = ""btn btn-primary"" })
 
 ");
             
-            #line 149 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 148 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
 	if (!view.Options[BusinessView.Constants.GenerateGrid])
 	{
@@ -464,7 +463,7 @@ else
             this.Write("\t\t\t@Html.KoSageButton(\"btnDelete\", new { }, new { @value = CommonResx.Delete, @id" +
                     " = \"btnDelete\", @class = \"btn btn-primary\" })\r\n");
             
-            #line 154 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 153 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
 	}
 

@@ -60,19 +60,16 @@
             </div>
         </section>
     </header>
-
     <#
     if (xmlLayout == null)
     {
         WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
     }
     #>
-
     <#
     if (xmlLayout != null)
     {
-        // XML Layout has been specified and therefore generate layout using this instead of generating
-        // only the key field
+        // XML Layout has been specified and therefore generate layout
 
         // Counter for indentation
         int depth = 0;
@@ -90,14 +87,12 @@
         }
     }
     #>
-
     <#
         if (xmlLayout == null)
         {
             WriteLine(new string(' ', 4) + "</div>");
         }
     #>
-
     <section class="footer-group-1">
         @Html.KoSageButton("btnPrint", null, new { @id = "btnPrint", @class = "btn btn-primary", @value = CommonResx.Print })
     </section>

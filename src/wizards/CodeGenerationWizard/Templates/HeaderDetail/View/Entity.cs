@@ -318,9 +318,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             
             #line default
             #line hidden
-            this.Write("\r\n");
             
-            #line 87 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
+            #line 86 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
  
 	if (view.Options[BusinessView.Constants.GenerateGrid])
 	{
@@ -360,7 +359,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             #line hidden
             this.Write("    <div class=\"form-group\">\r\n");
             
-            #line 122 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
+            #line 121 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
 
 			 foreach(var view in settings.Entities)
 			 {
@@ -391,7 +390,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             #line default
             #line hidden
             this.Write(@"    </div>
-
     <section class=""footer-group-1"">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {

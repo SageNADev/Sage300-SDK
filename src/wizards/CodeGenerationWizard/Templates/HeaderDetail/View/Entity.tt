@@ -83,7 +83,6 @@
             WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
         }
 #>
-
 <# 
 	if (view.Options[BusinessView.Constants.GenerateGrid])
 	{
@@ -146,7 +145,6 @@
 			 }
 #>
     </div>
-
     <section class="footer-group-1">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {

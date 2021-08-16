@@ -2113,6 +2113,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             control.DefaultCellStyle.SelectionBackColor = SystemColors.Window;
             control.ScrollBars = ScrollBars.None;
 
+
             // Add the new control
             AddNewControl(control, parent);
 
@@ -2149,12 +2150,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="control">Selected control</param>
         private void InitProperties(Control control)
         {
-            // Disable if Report Type else enable
-            var enableButtons = GetRepositoryType().Equals(RepositoryType.Report);
-            btnTab.Enabled = !enableButtons;
-            btnGrid.Enabled = !enableButtons;
-            
-            btnButton.Enabled = true;
+            // Disable if not Flat or Header-Detail
+            var enableButtons = SupportsToolboxDrop();
+            btnTab.Enabled = enableButtons;
+            btnGrid.Enabled = enableButtons;
+            btnButton.Enabled = enableButtons;
 
             btnDeleteControl.Enabled = false;
             btnAddTabPage.Enabled = false;
@@ -2697,7 +2697,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Info from previous and destination cell
             var fromCellInfo = _cellInfo;
             var toCellInfo = gridControl != null ? gridControl[hitTestInfo.ColumnIndex, hitTestInfo.RowIndex].Tag : null;
-            if (toCellInfo != null && fromCellInfo.Name == ((CellInfo)toCellInfo).Name)
+            if (fromCellInfo == null)
+            {
+                // Dropping on a tab control not allowed
+                return null;
+
+            }
+            else if (toCellInfo != null && fromCellInfo.Name == ((CellInfo)toCellInfo).Name)
             {
                 // Moving to itself
                 return null;
@@ -2736,6 +2742,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary>
+        /// Determine if toolbox control is allowed to be dropped onto palette for the
+        /// selected repository type
+        /// </summary>
+        /// <param name="repositoryType">The repository type selected (Flat, Header, etc.)</param>
+        /// <returns>True if supported otherwise false</returns>
+        /// <remarks>For 2022, only Flat and Header-Detail to support tabs, grids, buttons</remarks>
+        private bool SupportsToolboxDrop()
+        {
+            var repositoryType = GetRepositoryType();
+            return repositoryType.Equals(RepositoryType.Flat) ||
+                   repositoryType.Equals(RepositoryType.HeaderDetail);
+        }
+
+        /// <summary>
         /// Dropping field or moving existing field in the added fields area (layout)
         /// </summary>
         /// <param name="sender"></param>
@@ -2752,6 +2772,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var type = control.GetType();
             DataGridView.HitTestInfo hitTestInfo = null;
             CellInfo cellInfo = null;
+            var repositoryType = GetRepositoryType();
 
             // If dropping a tab,
             if (toolboxControl == Constants.WidgetTab)
@@ -2774,8 +2795,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
             }
 
-            // If moving a tab, can't move on another tab
-            if (tabControl != null && type == typeof(DataGridView))
+            // If moving a tab, can't move on another tab or button
+            if (tabControl != null && (type == typeof(DataGridView) || type == typeof(Button)))
             {
                 if (control.Parent != null && control.Parent.GetType() == typeof(TabPage))
                 {
@@ -2815,6 +2836,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Is it is a new business field being dropped?
             if (controlInfo != null)
             {
+                // Can't drop on a button
+                if (type == typeof(Button))
+                {
+                    return;
+                }
+
                 if (type == typeof(DataGridView))
                 {
                     cellInfo = CellInfoForDrop(control, hitTestInfo, ref point, controlInfo.ParentNodeName + "_" + controlInfo.BusinessField.Name);
@@ -2886,6 +2913,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
             else if (label != null || tabControl != null)
             {
+                // Can't move to a button
+                if (control.GetType() == typeof(Button))
+                {
+                    return;
+                }
+
                 Control movingControl = label != null ? label : (Control)tabControl;
                 cellInfo = CellInfoForMove(control, hitTestInfo, ref point, movingControl);
 
@@ -2906,6 +2939,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
             else if (flowPanel != null)
             {
+                // Can't move to a button
+                if (control.GetType() == typeof(Button))
+                {
+                    return;
+                }
                 cellInfo = CellInfoForMove(control, hitTestInfo, ref point, flowPanel);
 
                 // Can't move
@@ -2918,6 +2956,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
             else if (buttonControl != null)
             {
+                // Can't move to a button
+                if (control.GetType() == typeof(Button))
+                {
+                    return;
+                }
+
                 cellInfo = CellInfoForMove(control, hitTestInfo, ref point, buttonControl);
 
                 // Can't move
@@ -2927,6 +2971,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 MoveControl(buttonControl, point, control, e);
+
+                // Set current cell for border behavior
+                if (control.GetType() == typeof(DataGridView))
+                {
+                    ((DataGridView)control).CurrentCell = ((DataGridView)control)[cellInfo.ColIndex, cellInfo.RowIndex];
+                }
+
             }
         }
 
@@ -3082,7 +3133,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 ForeColor = Color.FromArgb(0, 0, 255),
                 BackColor = SystemColors.Window,
                 Tag = cellInfo,
-                Font = new Font("Segoe UI", 7)
+                Font = new Font("Segoe UI", 7),
+                Text = name
             };
 
             // Add handlers
@@ -3285,8 +3337,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 control.Location = new Point(e.X, e.Y);
             }
 
-            // Adjust width if non-label
-            if (control.GetType() != typeof(Label))
+            // Adjust width if grid or tab
+            if (control.GetType() == typeof(TabControl) || control.GetType() == typeof(FlowLayoutPanel))
             {
                 control.Width = destinationControl.Width - point.X - 2;
 
@@ -3306,6 +3358,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     RealignLabels(control);
                 }
             }
+            else if (control.GetType() == typeof(Button))
+            {
+                // Size button to cell
+                var cellInfo = GetCellInfo(control);
+                var size = ((DataGridView)destinationControl)[cellInfo.ColIndex, cellInfo.RowIndex].Size;
+                control.Width = size.Width - 20;
+                control.Left = point.X + 10;
+            }
+
             control.Refresh();
         }
 
