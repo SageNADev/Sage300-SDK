@@ -47,7 +47,7 @@
     </header>
     
     <div class="form-group">
-        <div class="go-group">
+        <div class="search-group">
             @Html.SgFinderFor(m => m.Data.Frjrnl,
                   new { @sagevalue = "Data.Frjrnl" },
                   new { @maxlength = 60, @id = "Data_Frjrnl", @class = "txt" }, size: "large",
@@ -55,7 +55,7 @@
                   labelText: SourceJournalProfileReportResx.FromProfile,
                   labelHtmlAttrs: new { @id = "lblFromProfile" })
         </div>
-        <div class="go-group">
+        <div class="search-group">
             @Html.SgFinderFor(m => m.Data.Tojrnl,
                   new { @sagevalue = "Data.Tojrnl" },
                   new { @maxlength = 60, @id = "Data_Tojrnl", @class = "txt" }, size: "large",
