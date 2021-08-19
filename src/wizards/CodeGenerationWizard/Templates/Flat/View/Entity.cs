@@ -435,7 +435,7 @@ else
     }
 	else
 	{
-        // No XML layout speciified, therefore we will no longer generate only the key field
+        // No XML layout specified, therefore we will no longer generate only the key field
 	}
         if (xmlLayout == null)
         {

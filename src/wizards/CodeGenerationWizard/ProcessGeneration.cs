@@ -2335,6 +2335,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             fileName,
                             TransformTemplateToText(view, _settings, "Templates.Process.View.Entity"),
                             Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+
+                // Create partial views for tabs, if any
+                if (_settings.Widgets.ContainsKey("TabPage"))
+                {
+                    // Get tab pages
+                    IEnumerable<XElement> tabPages =
+                        from element in _settings.XmlLayout.Descendants("Control")
+                        where (string)element.Attribute("widget") == "TabPage"
+                        select element;
+
+                    // Iterate tab pages to create partial views
+                    foreach (XElement element in tabPages)
+                    {
+                        var pageId = element.Attribute("id").Value;
+                        fileName = "_" + pageId + ".cshtml";
+                        CreateClass(view,
+                                    fileName,
+                                    TransformTemplateToText(view, _settings, "Templates.Process.View.PartialEntity", element),
+                                    Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+                    }
+                }
             }
 
             // Register types
@@ -2342,6 +2363,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (generateClientFiles)
             {
                 BusinessViewHelper.UpdateBundles(view, _settings);
+            }
+
+            // Add to constant.cs if partial views (Tab Control) 
+            if (_settings.Widgets.ContainsKey("TabPage"))
+            {
+                BusinessViewHelper.UpdateConstants(view, _settings);
             }
 
             // set the start page
@@ -2493,6 +2520,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             fileName,
                             TransformTemplateToText(view, _settings, "Templates.Reports.View.Entity"),
                             Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+
+                // Create partial views for tabs, if any
+                if (_settings.Widgets.ContainsKey("TabPage"))
+                {
+                    // Get tab pages
+                    IEnumerable<XElement> tabPages =
+                        from element in _settings.XmlLayout.Descendants("Control")
+                        where (string)element.Attribute("widget") == "TabPage"
+                        select element;
+
+                    // Iterate tab pages to create partial views
+                    foreach (XElement element in tabPages)
+                    {
+                        var pageId = element.Attribute("id").Value;
+                        fileName = "_" + pageId + ".cshtml";
+                        CreateClass(view,
+                                    fileName,
+                                    TransformTemplateToText(view, _settings, "Templates.Reports.View.PartialEntity", element),
+                                    Constants.WebKey, Constants.SubFolderWebLocalizationKey);
+                    }
+                }
             }
 
             // For javascript files, the project name does not include the .Web segment
@@ -2525,6 +2573,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (generateClientFiles)
             {
                 BusinessViewHelper.UpdateBundles(view, _settings);
+            }
+
+            // Add to constant.cs if partial views (Tab Control) 
+            if (_settings.Widgets.ContainsKey("TabPage"))
+            {
+                BusinessViewHelper.UpdateConstants(view, _settings);
             }
 
             // set the start page

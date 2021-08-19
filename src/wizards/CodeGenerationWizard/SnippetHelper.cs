@@ -906,8 +906,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="depth">Indentation for generation</param>
         /// <param name="settings">Settings object</param>
         /// <param name="snippet">Snippet being constructed</param>
-        /// <param name="keyFieldName">Key Field Name</param>
-        public static void FinderJavaScript(int depth, Settings settings, StringBuilder snippet, string keyFieldName)
+        public static void FinderJavaScript(int depth, Settings settings, StringBuilder snippet)
         {
             if (settings.XmlLayout != null)
             {

@@ -19,6 +19,7 @@
 <# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
 <#@ template language="C#" #>
 <#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
@@ -28,6 +29,7 @@
     var moduleId = view.Properties[BusinessView.Constants.ModuleId].ToLower();
     var moduleIdUpper = view.Properties[BusinessView.Constants.ModuleId];
     var copyright = settings.Copyright;
+    var snippet = new StringBuilder();
 #>
 /* <#=copyright#> */
 
@@ -52,9 +54,13 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
     init: function () {     
         // Initialize the controls and apply kendo bindings 
         <#=localEntityName#>UI.initKendoBindings();          
+        <#=localEntityName#>UI.initGrids();
+        <#=localEntityName#>UI.initTabs();
         <#=localEntityName#>UI.initFinders();
         <#=localEntityName#>UI.initButtons();
+        <#=localEntityName#>UI.initNumericTextboxes();
         <#=localEntityName#>UI.initTextboxes();
+        <#=localEntityName#>UI.initTimePickers();
         <#=localEntityName#>UI.initCheckBoxes();
         <#=localEntityName#>UI.initBlur();
         <#=localEntityName#>UI.initProcessUI();
@@ -74,6 +80,28 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
     },
 
     /**
+     * @function
+     * @name initGrids
+     * @description Initialize the grids, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initGrids: function () {
+
+    },
+
+    /**
+     * @function
+     * @name initTabs
+     * @description Initialize the tabs, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initTabs: function () {
+
+    },
+
+    /**
      * @function 
      * @name initFinders
      * @description Initialize all of the finders on the page, if any
@@ -81,7 +109,34 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
      * @public
      */
     initFinders: function() {
+<#
+    // Create code for finder
+    snippet = new StringBuilder();
+    SnippetHelper.FinderJavaScript(8, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
 
+     /**
+     * @function
+     * @name initNumericTextboxes
+     * @description Initialize the numeric textboxes, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initNumericTextboxes: function () {
+<#
+    // Create code for init numeric textboxes
+    snippet = new StringBuilder();
+    SnippetHelper.InitNumericTextboxesJavaScript(8, settings, snippet, view);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
     },
 
     /**
@@ -114,7 +169,34 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
      * @public
      */
     initTextboxes: function () {
+<#
+    // Create code for init textboxes
+    snippet = new StringBuilder();
+    SnippetHelper.InitTextboxesJavaScript(8, settings, snippet, entityName);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
 
+    /**
+     * @function
+     * @name initTimePickers
+     * @description Initialize the time pickers, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initTimePickers: function () {
+<#
+    // Create code for init timepickers
+    snippet = new StringBuilder();
+    SnippetHelper.InitTimePickersJavaScript(8, settings, snippet, localEntityName, view);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
     },
     
     /**
@@ -128,6 +210,16 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
         $("#btnProcess").click(function (e) {
             sg.utls.SyncExecute(<#=localEntityName#>UI.process);
         });
+<#
+    // Create code for buttons, if any
+    snippet = new StringBuilder();
+    SnippetHelper.InitButtonsJavaScript(8, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+
     },
     
     /**

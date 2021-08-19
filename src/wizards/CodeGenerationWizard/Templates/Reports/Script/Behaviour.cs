@@ -17,7 +17,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Behaviour : BehaviourBase
     {
@@ -28,121 +28,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 25 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 25 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
 
     // Locals
     var entityName = view.Properties[BusinessView.Constants.EntityName];
@@ -158,7 +158,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             #line hidden
             this.Write("/* ");
             
-            #line 35 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 35 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -166,28 +166,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             this.Write(" */\r\n\r\n// Enable the following commented line to enable TypeScript static type ch" +
                     "ecking\r\n// @ts-check\r\n\r\n\"use strict\";\r\n\r\nvar ");
             
-            #line 42 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 42 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI = ");
             
-            #line 42 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 42 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI || {}\r\n\r\n");
             
-            #line 44 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 44 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI = {\r\n    ");
             
-            #line 45 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -195,7 +195,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             this.Write("Model: {},\r\n    computedProperties: [],\r\n\r\n    /**\r\n     * @function\r\n     * @nam" +
                     "e init\r\n     * @description Primary Initialization Routine\r\n     * @namespace ");
             
-            #line 52 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 52 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -203,56 +203,84 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             this.Write("UI\r\n     * @public\r\n     */\r\n    init: function () {     \r\n        // Initialize " +
                     "the controls and apply kendo bindings \r\n        ");
             
-            #line 57 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.initKendoBindings();          \r\n        ");
             
-            #line 58 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 58 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UI.initGrids();\r\n        ");
+            
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UI.initTabs();\r\n        ");
+            
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.initFinders();\r\n        ");
             
-            #line 59 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.initButtons();\r\n        ");
             
-            #line 60 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UI.initNumericTextboxes();\r\n        ");
+            
+            #line 63 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.initTextboxes();\r\n        ");
             
-            #line 61 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 64 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UI.initTimePickers();\r\n        ");
+            
+            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.initCheckBoxes();\r\n        ");
             
-            #line 62 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 66 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.initBlur();\r\n        ko.applyBindings(");
             
-            #line 63 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 63 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -260,75 +288,93 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             this.Write("Model);\r\n    },\r\n    \r\n    /**\r\n     * @function\r\n     * @name initKendoBindings\r" +
                     "\n     * @description Initialization of Kendo bindings\r\n     * @namespace ");
             
-            #line 70 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 74 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI\r\n     * @public\r\n     */\r\n    initKendoBindings: function () {\r\n        ");
             
-            #line 74 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 74 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model = ko.mapping.fromJS(");
             
-            #line 74 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ViewModel);       \r\n        ");
             
-            #line 75 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("KoExtn.");
             
-            #line 75 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("ReportExtension(");
             
-            #line 75 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 75 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("Model);\r\n    },\r\n\r\n    /**\r\n     * @function\r\n     * @name initFinders\r\n     * @d" +
-                    "escription Initialize the finders\r\n     * @namespace ");
+            this.Write("Model);\r\n    },\r\n\r\n    /**\r\n     * @function\r\n     * @name initGrids\r\n     * @des" +
+                    "cription Initialize the grids, if any\r\n     * @namespace ");
             
-            #line 82 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 86 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UI\r\n     * @public\r\n     */\r\n    initGrids: function () {\r\n\r\n    },\r\n\r\n    /**\r\n " +
+                    "    * @function\r\n     * @name initTabs\r\n     * @description Initialize the tabs," +
+                    " if any\r\n     * @namespace ");
+            
+            #line 97 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UI\r\n     * @public\r\n     */\r\n    initTabs: function () {\r\n\r\n    },\r\n\r\n    /**\r\n  " +
+                    "   * @function\r\n     * @name initFinders\r\n     * @description Initialize the fin" +
+                    "ders\r\n     * @namespace ");
+            
+            #line 108 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI\r\n     * @public\r\n     */\r\n    initFinders: function() {\r\n    ");
             
-            #line 86 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 112 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
 
     // Create code for finder
     snippet = new StringBuilder();
-    SnippetHelper.FinderJavaScript(8, settings, snippet, keyFieldName);
+    SnippetHelper.FinderJavaScript(8, settings, snippet);
     if (!string.IsNullOrEmpty(snippet.ToString()))
     {
         WriteLine(snippet.ToString());
@@ -340,7 +386,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             this.Write("    },\r\n\r\n    /**\r\n    * @function\r\n    * @name initCheckBoxes\r\n    * @descriptio" +
                     "n Set up the change events for check boxes, if any\r\n    * @namespace ");
             
-            #line 101 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 127 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -349,23 +395,69 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
                     " /**\r\n    * @function\r\n    * @name initBlur\r\n    * @description Set up the blur " +
                     "events, if needed\r\n    * @namespace ");
             
-            #line 112 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 138 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI\r\n    * @public\r\n    */\r\n    initBlur:function() {\r\n\r\n    },    \r\n\r\n    /**\r\n  " +
-                    "   * @function\r\n     * @name initTextboxes\r\n     * @description Initialize the t" +
-                    "extboxes, if any\r\n     * @namespace ");
+                    "   * @function\r\n     * @name initTimePickers\r\n     * @description Initialize the" +
+                    " time pickers, if any\r\n     * @namespace ");
             
-            #line 123 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 149 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UI\r\n     * @public\r\n     */\r\n    initTimePickers: function () {\r\n");
+            
+            #line 153 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+
+    // Create code for init timepickers
+    snippet = new StringBuilder();
+    SnippetHelper.InitTimePickersJavaScript(8, settings, snippet, localEntityName, view);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("    },\r\n\r\n    /**\r\n     * @function\r\n     * @name initNumericTextboxes\r\n     * @d" +
+                    "escription Initialize the numeric textboxes, if any\r\n     * @namespace ");
+            
+            #line 168 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
+            
+            #line default
+            #line hidden
+            this.Write("UI\r\n     * @public\r\n     */\r\n    initNumericTextboxes: function () {\r\n");
+            
+            #line 172 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+
+    // Create code for init numeric textboxes
+    snippet = new StringBuilder();
+    SnippetHelper.InitNumericTextboxesJavaScript(8, settings, snippet, view);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("    },\r\n\r\n    /**\r\n     * @function\r\n     * @name initTextboxes\r\n     * @descript" +
+                    "ion Initialize the textboxes, if any\r\n     * @namespace ");
+            
+            #line 187 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI\r\n     * @public\r\n     */\r\n    initTextboxes: function () {\r\n    ");
             
-            #line 127 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 191 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
 
     // Create code for init textboxes
     snippet = new StringBuilder();
@@ -381,7 +473,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             this.Write("    },\r\n    \r\n    /**\r\n     * @function\r\n     * @name initButtons\r\n     * @descri" +
                     "ption Initialize the buttons\r\n     * @namespace ");
             
-            #line 142 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 206 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -389,15 +481,30 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             this.Write("UI\r\n     * @public\r\n     */\r\n    initButtons: function () {\r\n        $(\"#btnPrint" +
                     "\").on(\'click\', function () {\r\n            sg.utls.SyncExecute(");
             
-            #line 147 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 211 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("UI.print);\r\n        });\r\n    },\r\n    \r\n    /**\r\n     * @function\r\n     * @name pr" +
-                    "int\r\n     * @description Print \r\n     * @namespace ");
+            this.Write("UI.print);\r\n        });\r\n");
             
-            #line 155 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 213 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+
+    // Create code for buttons, if any
+    snippet = new StringBuilder();
+    SnippetHelper.InitButtonsJavaScript(8, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("    },\r\n    \r\n    /**\r\n     * @function\r\n     * @name print\r\n     * @description " +
+                    "Print \r\n     * @namespace ");
+            
+            #line 228 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -406,14 +513,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
                     "essRunning) {\r\n            return;\r\n        }\r\n\r\n        // Check if form is val" +
                     "id\r\n        if ($(\"#frm");
             
-            #line 164 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 237 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\").valid()) {\r\n            // Check Validations\r\n            if (");
             
-            #line 166 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 239 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -421,7 +528,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             this.Write("UI.validation()) {\r\n                $(\"#message\").empty();\r\n                sg.ut" +
                     "ls.clearValidations(\"frm");
             
-            #line 168 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 241 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -429,35 +536,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             this.Write("\");\r\n                sg.utls.isProcessRunning = true;\r\n\r\n                let mode" +
                     "l = ");
             
-            #line 171 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 244 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.");
             
-            #line 171 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 244 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Model.Data;\r\n                let data = sg.utls.ko.toJS(model, ");
             
-            #line 172 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 245 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("UI.computedProperties);\r\n               \r\n                ");
             
-            #line 174 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 247 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
             this.Write("Repository.execute");
             
-            #line 174 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 247 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -466,7 +573,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
                     "nction\r\n     * @name validation\r\n     * @description Validation \r\n     * @namesp" +
                     "ace ");
             
-            #line 183 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 256 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -482,7 +589,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             if (errorRangeMessage != """") {
                 sg.utls.showMessageInfo(sg.utls.msgType.ERROR, jQuery.validator.format(");
             
-            #line 192 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 265 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -501,7 +608,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
 // Callbacks
 var ");
             
-            #line 204 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 277 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -509,7 +616,7 @@ var ");
             this.Write("OnSuccess = {\r\n    /**\r\n     * @function\r\n     * @name execute\r\n     * @descripti" +
                     "on Open the report result or display a message\r\n     * @namespace ");
             
-            #line 209 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 282 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -531,7 +638,7 @@ var ");
 // UI Callbacks
 var ");
             
-            #line 224 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 297 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -540,7 +647,7 @@ var ");
                     ";\r\n\r\n// Finder cancel callback\r\nvar onFinderCancel = {\r\n};\r\n\r\n\r\n// Primary page " +
                     "entry point\r\n$(function () {\r\n    ");
             
-            #line 239 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+            #line 312 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
@@ -549,7 +656,7 @@ var ");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 
