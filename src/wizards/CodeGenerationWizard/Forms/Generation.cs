@@ -900,8 +900,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             tabUI.TabPages[1].Text = Resources.FinderTab;
             tooltip.SetToolTip(tabUI.TabPages[1], Resources.FinderTabTip);
 
-            tabUI.TabPages[2].Text = Resources.HamburgerTab;
-            tooltip.SetToolTip(tabUI.TabPages[2], Resources.HamburgerTabTip);
+            // No available for 2022
+            //tabUI.TabPages[2].Text = Resources.HamburgerTab;
+            //tooltip.SetToolTip(tabUI.TabPages[2], Resources.HamburgerTabTip);
 
             lblPropText.Text = Resources.Text;
             tooltip.SetToolTip(lblPropText, Resources.TextTip);
@@ -1289,7 +1290,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // UI Finder button allows checked behavior
             txtFinderPropFile.ReadOnly = true;
             pnlFinder.Enabled = false;
-            pnlHamburger.Enabled = false;
+            // Hamburger not available for 2022
+            // pnlHamburger.Enabled = false;
         }
 
         /// <summary> New Entity</summary>
@@ -4547,8 +4549,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             AddStep(Resources.StepTitleCodeType, Resources.StepDescriptionCodeType, pnlCodeType);
             AddStep(Resources.StepTitleEntities, Resources.StepDescriptionEntities, pnlEntities);
 
-            // Exclude Dynamic Query from UI Layout
-            if (!repositoryType.Equals(RepositoryType.DynamicQuery))
+            // Exclude Dynamic Query and Inquiry from UI Layout
+            if (repositoryType.Equals(RepositoryType.DynamicQuery) ||
+                repositoryType.Equals(RepositoryType.Inquiry))
+            {
+                // Will be prevented from displaying layout step
+            }
+            else
             {
                 AddStep(Resources.StepTitleGenerateUICode, Resources.StepDescriptionGenerateUICode, pnlUIGeneration);
             }
@@ -4981,16 +4988,39 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var dbLink = session.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
                 var view = dbLink.OpenView(viewId);
 
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(settings.XmlLayout.Root.ToString());
-                var firstNode = xmlDoc.SelectSingleNode("//Control[@widget!='']");
-                settings.screenKeyFieldName = firstNode.Attributes["property"].Value;
-                for (int i = 0; i < view.Keys.Count; i++)
+                try
                 {
-                    var key = view.Keys[i];
-                    if (key.Name.Replace(" ", "") == settings.screenKeyFieldName)
+                    // There is an assumption that the UI was layed out. But, 
+                    // if it has not, this logic will not work. Therefore, the try-catch
+                    // to satisfy this requirement if the layout was not specified or
+                    // was not layed out as "expected" for a header-detail screen
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(settings.XmlLayout.Root.ToString());
+                    var firstNode = xmlDoc.SelectSingleNode("//Control[@widget!='']");
+                    settings.screenKeyFieldName = firstNode.Attributes["property"].Value;
+                    for (int i = 0; i < view.Keys.Count; i++)
                     {
-                        settings.screenKeyFieldIndex = key.ID;
+                        var key = view.Keys[i];
+                        if (key.Name.Replace(" ", "") == settings.screenKeyFieldName)
+                        {
+                            settings.screenKeyFieldIndex = key.ID;
+                        }
+                    }
+                }
+                catch
+                {
+                    // If no UI or unexpected layout, then just get first key from view
+                    // Iterate keys to get a key
+                    if (view.Keys.Count > 0)
+                    {
+                        settings.screenKeyFieldName = view.Keys[0].Name.Replace(" ", "");
+                        settings.screenKeyFieldIndex = view.Keys[0].ID;
+                    }
+                    else
+                    {
+                        // Fail safe
+                        settings.screenKeyFieldName = string.Empty;
+                        settings.screenKeyFieldIndex = 0;
                     }
                 }
             }
@@ -5869,7 +5899,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             // Enable/disable tabs
             pnlFinder.Enabled = isFinder;
-            pnlHamburger.Enabled = isFinder;
+            // Hamburger not available for 2022
+            // pnlHamburger.Enabled = isFinder;
 
             // If not a finder, need to ...
             if (!isFinder)

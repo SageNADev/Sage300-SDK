@@ -71,8 +71,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblFinderProp = new System.Windows.Forms.Label();
             this.cboFinderProp = new System.Windows.Forms.ComboBox();
             this.cboFinderDisplay = new System.Windows.Forms.ComboBox();
-            this.tabPageHamburger = new System.Windows.Forms.TabPage();
-            this.pnlHamburger = new System.Windows.Forms.Panel();
             this.tbrProperties = new System.Windows.Forms.ToolStrip();
             this.btnTab = new System.Windows.Forms.ToolStripButton();
             this.btnAddTabPage = new System.Windows.Forms.ToolStripButton();
@@ -160,7 +158,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPageInfo.SuspendLayout();
             this.tabPageFinder.SuspendLayout();
             this.pnlFinder.SuspendLayout();
-            this.tabPageHamburger.SuspendLayout();
             this.tbrProperties.SuspendLayout();
             this.pnlCodeType.SuspendLayout();
             this.grpCredentials.SuspendLayout();
@@ -615,7 +612,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.tabUI.Controls.Add(this.tabPageInfo);
             this.tabUI.Controls.Add(this.tabPageFinder);
-            this.tabUI.Controls.Add(this.tabPageHamburger);
             this.tabUI.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabUI.Location = new System.Drawing.Point(3, 60);
             this.tabUI.Name = "tabUI";
@@ -759,24 +755,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.cboFinderDisplay.Size = new System.Drawing.Size(186, 21);
             this.cboFinderDisplay.TabIndex = 28;
             this.cboFinderDisplay.SelectionChangeCommitted += new System.EventHandler(this.cboFinderDisplay_SelectionChangeCommitted);
-            // 
-            // tabPageHamburger
-            // 
-            this.tabPageHamburger.Controls.Add(this.pnlHamburger);
-            this.tabPageHamburger.Location = new System.Drawing.Point(4, 22);
-            this.tabPageHamburger.Name = "tabPageHamburger";
-            this.tabPageHamburger.Size = new System.Drawing.Size(221, 92);
-            this.tabPageHamburger.TabIndex = 2;
-            this.tabPageHamburger.Text = "Hamburger";
-            this.tabPageHamburger.UseVisualStyleBackColor = true;
-            // 
-            // pnlHamburger
-            // 
-            this.pnlHamburger.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHamburger.Location = new System.Drawing.Point(0, 0);
-            this.pnlHamburger.Name = "pnlHamburger";
-            this.pnlHamburger.Size = new System.Drawing.Size(221, 92);
-            this.pnlHamburger.TabIndex = 0;
             // 
             // tbrProperties
             // 
@@ -1793,7 +1771,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPageFinder.ResumeLayout(false);
             this.pnlFinder.ResumeLayout(false);
             this.pnlFinder.PerformLayout();
-            this.tabPageHamburger.ResumeLayout(false);
             this.tbrProperties.ResumeLayout(false);
             this.tbrProperties.PerformLayout();
             this.pnlCodeType.ResumeLayout(false);
@@ -1938,9 +1915,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private System.Windows.Forms.TextBox txtPropWidget;
         private System.Windows.Forms.Label lblPropType;
         private System.Windows.Forms.TabPage tabPageFinder;
-        private System.Windows.Forms.TabPage tabPageHamburger;
         private System.Windows.Forms.Panel pnlFinder;
-        private System.Windows.Forms.Panel pnlHamburger;
     }
 }
 
