@@ -4981,16 +4981,39 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var dbLink = session.OpenDBLink(DBLinkType.Company, DBLinkFlags.ReadOnly);
                 var view = dbLink.OpenView(viewId);
 
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(settings.XmlLayout.Root.ToString());
-                var firstNode = xmlDoc.SelectSingleNode("//Control[@widget!='']");
-                settings.screenKeyFieldName = firstNode.Attributes["property"].Value;
-                for (int i = 0; i < view.Keys.Count; i++)
+                try
                 {
-                    var key = view.Keys[i];
-                    if (key.Name.Replace(" ", "") == settings.screenKeyFieldName)
+                    // There is an assumption that the UI was layed out. But, 
+                    // if it has not, this logic will not work. Therefore, the try-catch
+                    // to satisfy this requirement if the layout was not specified or
+                    // was not layed out as "expected" for a header-detail screen
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(settings.XmlLayout.Root.ToString());
+                    var firstNode = xmlDoc.SelectSingleNode("//Control[@widget!='']");
+                    settings.screenKeyFieldName = firstNode.Attributes["property"].Value;
+                    for (int i = 0; i < view.Keys.Count; i++)
                     {
-                        settings.screenKeyFieldIndex = key.ID;
+                        var key = view.Keys[i];
+                        if (key.Name.Replace(" ", "") == settings.screenKeyFieldName)
+                        {
+                            settings.screenKeyFieldIndex = key.ID;
+                        }
+                    }
+                }
+                catch
+                {
+                    // If no UI or unexpected layout, then just get first key from view
+                    // Iterate keys to get a key
+                    if (view.Keys.Count > 0)
+                    {
+                        settings.screenKeyFieldName = view.Keys[0].Name.Replace(" ", "");
+                        settings.screenKeyFieldIndex = view.Keys[0].ID;
+                    }
+                    else
+                    {
+                        // Fail safe
+                        settings.screenKeyFieldName = string.Empty;
+                        settings.screenKeyFieldIndex = 0;
                     }
                 }
             }

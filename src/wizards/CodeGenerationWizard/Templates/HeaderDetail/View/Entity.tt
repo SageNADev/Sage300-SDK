@@ -112,10 +112,11 @@
 	else
 	{
 	}
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "</div>");
-        }
+
+    if (xmlLayout == null)
+    {
+        WriteLine(new string(' ', 4) + "</div>");
+    }
 #>
     <div class="form-group">
 <#

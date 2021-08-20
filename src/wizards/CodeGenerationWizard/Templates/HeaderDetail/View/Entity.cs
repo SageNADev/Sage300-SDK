@@ -349,17 +349,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
 	else
 	{
 	}
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "</div>");
-        }
+
+    if (xmlLayout == null)
+    {
+        WriteLine(new string(' ', 4) + "</div>");
+    }
 
             
             #line default
             #line hidden
             this.Write("    <div class=\"form-group\">\r\n");
             
-            #line 121 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
+            #line 122 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
 
 			 foreach(var view in settings.Entities)
 			 {
