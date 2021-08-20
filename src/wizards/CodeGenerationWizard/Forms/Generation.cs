@@ -900,8 +900,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             tabUI.TabPages[1].Text = Resources.FinderTab;
             tooltip.SetToolTip(tabUI.TabPages[1], Resources.FinderTabTip);
 
-            tabUI.TabPages[2].Text = Resources.HamburgerTab;
-            tooltip.SetToolTip(tabUI.TabPages[2], Resources.HamburgerTabTip);
+            // No available for 2022
+            //tabUI.TabPages[2].Text = Resources.HamburgerTab;
+            //tooltip.SetToolTip(tabUI.TabPages[2], Resources.HamburgerTabTip);
 
             lblPropText.Text = Resources.Text;
             tooltip.SetToolTip(lblPropText, Resources.TextTip);
@@ -1289,7 +1290,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // UI Finder button allows checked behavior
             txtFinderPropFile.ReadOnly = true;
             pnlFinder.Enabled = false;
-            pnlHamburger.Enabled = false;
+            // Hamburger not available for 2022
+            // pnlHamburger.Enabled = false;
         }
 
         /// <summary> New Entity</summary>
@@ -4547,8 +4549,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             AddStep(Resources.StepTitleCodeType, Resources.StepDescriptionCodeType, pnlCodeType);
             AddStep(Resources.StepTitleEntities, Resources.StepDescriptionEntities, pnlEntities);
 
-            // Exclude Dynamic Query from UI Layout
-            if (!repositoryType.Equals(RepositoryType.DynamicQuery))
+            // Exclude Dynamic Query and Inquiry from UI Layout
+            if (repositoryType.Equals(RepositoryType.DynamicQuery) ||
+                repositoryType.Equals(RepositoryType.Inquiry))
+            {
+                // Will be prevented from displaying layout step
+            }
+            else
             {
                 AddStep(Resources.StepTitleGenerateUICode, Resources.StepDescriptionGenerateUICode, pnlUIGeneration);
             }
@@ -5892,7 +5899,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             // Enable/disable tabs
             pnlFinder.Enabled = isFinder;
-            pnlHamburger.Enabled = isFinder;
+            // Hamburger not available for 2022
+            // pnlHamburger.Enabled = isFinder;
 
             // If not a finder, need to ...
             if (!isFinder)
