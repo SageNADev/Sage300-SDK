@@ -23,6 +23,7 @@ using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.TemplateWizard;
 using Microsoft.Win32;
+using Sage.CA.SBS.ERP.Sage300.SolutionWizard.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -72,16 +73,16 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         private string _lowercaseapplicationId;
         private string _solutionFolder;
         private string _destinationFolder;
-        private DTE	   _dte;
+        private DTE _dte;
         private string _safeprojectname;
         private string _namespace;
         private string _sage300Webfolder;
         private string _kendoFolder;
-        private bool   _includeEnglish;
-        private bool   _includeChineseSimplified;
-        private bool   _includeChineseTraditional;
-        private bool   _includeSpanish;
-        private bool   _includeFrench;
+        private bool _includeEnglish;
+        private bool _includeChineseSimplified;
+        private bool _includeChineseTraditional;
+        private bool _includeSpanish;
+        private bool _includeFrench;
         #endregion
 
 
@@ -111,6 +112,9 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         {
             var sln = (Solution2)_dte.Solution;
 
+            // Will set later.
+            var startupProjectName = "";
+
             var csTemplatePath = Path.GetDirectoryName(sln.GetProjectTemplate("Sage 300 Solution Wizard", "CSharp")) + @"\..\";
 
             //this will create a solution
@@ -131,6 +135,9 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 var sourceFilenameAndParameters = csTemplatePath + proj + @".zip\" + templateFilename + "|" + parameters;
                 if (string.Compare(proj, "Web", StringComparison.OrdinalIgnoreCase) == 0)
                 {
+                    //
+                    // Processing Web project
+                    //
                     var destFolder = Path.Combine(_destinationFolder, _namespace + "." + _applicationId + "." + proj);
 
                     // Before the web project is created, the props file must be manually 
@@ -139,11 +146,14 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                     File.WriteAllBytes(Path.Combine(_destinationFolder, "AccpacDotNetVersion.props"),
                                             Properties.Resources.AccpacDotNetVersion);
 
-                    var projectName = _namespace + "." + _applicationId + "." + proj;
-                    sln.AddFromTemplate(FileName:    sourceFilenameAndParameters, 
-                                        Destination: destFolder, 
-                                        ProjectName: projectName, 
-                                        Exclusive:   false);
+                    // Example: TrustedPartner.TU.Web
+                    var projectName = $"{_namespace}.{_applicationId}.{proj}";
+                    startupProjectName = projectName;
+
+                    sln.AddFromTemplate(FileName: sourceFilenameAndParameters,
+                                        Destination: destFolder,
+                                        ProjectName: projectName,
+                                        Exclusive: false);
 
                     // Newly added web project (first one added)
                     var item = sln.Projects.GetEnumerator();
@@ -161,26 +171,24 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                     // Add to project
                     webProject.ProjectItems.AddFromFile(allMinFileDest);
 
-                    //// Remove aspnet_client from project (but folder will remain)
-                    //foreach (ProjectItem projectItem in webProject.ProjectItems)
-                    //{
-                    //    // Remove if aspnet_client
-                    //    if (projectItem.Name.Equals("aspnet_client"))
-                    //    {
-                    //        // Remove from project
-                    //        projectItem.Remove();
-                    //    }
-                    //}
-
+                    //
+                    // Update the .csproj.user file
+                    // Set the start page to Login.aspx
+                    //
+                    webProject.Properties.Item("WebApplication.StartPageUrl").Value = "Login.aspx";
+                    webProject.Properties.Item("WebApplication.DebugStartAction").Value = 1;
                 }
                 else
                 {
+                    //
+                    // Processing Other (non-web) projects
+                    //
                     var destination = Path.Combine(_destinationFolder, _namespace + "." + _applicationId + "." + proj);
                     var projectName = _namespace + "." + _applicationId + "." + proj;
-                    sln.AddFromTemplate(FileName:    sourceFilenameAndParameters,
-                                        Destination: destination, 
-                                        ProjectName: projectName, 
-                                        Exclusive:   false);
+                    sln.AddFromTemplate(FileName: sourceFilenameAndParameters,
+                                        Destination: destination,
+                                        ProjectName: projectName,
+                                        Exclusive: false);
 
                     // If project is Resources, remove language resources not selected
                     if (proj.Equals("Resources"))
@@ -206,11 +214,12 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                                 projectItem.Delete();
                             }
                         }
-
                     }
-                    
                 }
             }
+
+            // Now, set the start project for the solution
+            sln.Properties.Item("StartupProject").Value = startupProjectName;
         }
 
         /// <summary> Run started </summary>
