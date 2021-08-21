@@ -1,11 +1,4 @@
-As part of the framework changes required to unify the usage of HTML 'disable'
-attribute in Sage HtmlHelper controls.
-
-The upgrade wizard is unable to automatically perform this modification and
-therefore this step will require manual modifications.
-
-Any cshtml file that defines a Sage HtmlHelper control needs to be updated to
-match the standard of the usage of HTML 'disabled' attribute.
+For the 2022.0 release, the finder implementation has changed.
 
 Please refer to the "Finder Alterations" subsection in the Sage 300
 Upgrade Guide for 2021.2 to 2022.0 in the docs folder of the Web SDK for
