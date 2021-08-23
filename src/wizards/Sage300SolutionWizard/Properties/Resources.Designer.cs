@@ -170,9 +170,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select the &apos;Generate&apos; button below to generate the solution based upon the information entered and selected in the proceeding steps.
-        ///
-        ///Note: After the solution is created, set the &apos;Login.aspx&apos; file in the Web project as the startup page by Right-Clicking the &apos;Login.aspx&apos; file in the Solution Explorer and selecting &apos;Set As Start Page&apos;. .
+        ///   Looks up a localized string similar to Select the &apos;Generate&apos; button below to generate the solution based upon the information entered and selected in the proceeding steps..
         /// </summary>
         internal static string GenerateTip {
             get {
@@ -262,7 +260,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Kendo UI version used in these projects is v2019.1.115.
+        ///   Looks up a localized string similar to The Kendo UI version used in these projects is v2021.1.224.
         /// </summary>
         internal static string KendoVersionTip {
             get {

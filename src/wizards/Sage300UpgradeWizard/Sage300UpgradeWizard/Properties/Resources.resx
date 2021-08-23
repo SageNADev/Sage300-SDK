@@ -492,4 +492,10 @@ and change to
   <data name="Template_SuccessfullyUpdatedJQueryVersionInFile" xml:space="preserve">
     <value>Successfully updated the version of jQuery from {0} to {1} in file {2}.</value>
   </data>
+  <data name="Template_SetSolutionStartProject" xml:space="preserve">
+    <value>Successfully set {0} as the Solution startup project.</value>
+  </data>
+  <data name="Template_SetWebProjectStartFile" xml:space="preserve">
+    <value>Successfully set {0} as the Web project start file.</value>
+  </data>
 </root>

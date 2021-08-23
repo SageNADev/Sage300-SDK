@@ -1052,6 +1052,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Successfully set {0} as the Solution startup project..
+        /// </summary>
+        internal static string Template_SetSolutionStartProject {
+            get {
+                return ResourceManager.GetString("Template_SetSolutionStartProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully set {0} as the Web project start file..
+        /// </summary>
+        internal static string Template_SetWebProjectStartFile {
+            get {
+                return ResourceManager.GetString("Template_SetWebProjectStartFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your solution has been successfully backed up and is located in the folder &apos;{0}&apos;..
         /// </summary>
         internal static string Template_SolutionBackupCompleted {

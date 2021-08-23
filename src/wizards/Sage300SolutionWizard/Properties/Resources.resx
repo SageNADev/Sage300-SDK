@@ -206,9 +206,7 @@ prior to deployment.</value>
     <value>Lookup the location of the kendo.all.min.js file</value>
   </data>
   <data name="GenerateTip" xml:space="preserve">
-    <value>Select the 'Generate' button below to generate the solution based upon the information entered and selected in the proceeding steps.
-
-Note: After the solution is created, set the 'Login.aspx' file in the Web project as the startup page by Right-Clicking the 'Login.aspx' file in the Solution Explorer and selecting 'Set As Start Page'. </value>
+    <value>Select the 'Generate' button below to generate the solution based upon the information entered and selected in the proceeding steps.</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Next</value>

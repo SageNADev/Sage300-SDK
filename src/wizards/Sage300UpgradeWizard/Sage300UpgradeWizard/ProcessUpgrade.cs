@@ -422,11 +422,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 //
                 var solution = _settings.Solution;
                 var projects = solution.Projects;
+                var webProjectName = string.Empty;
                 foreach (Project project in projects)
                 {
-                    var webProjectName = project.FullName;
-                    if (IsWebProject(webProjectName))
+                    var projectName = project.FullName;
+                    if (IsWebProject(projectName))
                     {
+                        webProjectName = projectName;
+
                         try
                         {
                             var web = _settings.DestinationWebFolder;
@@ -441,9 +444,17 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                             foreach (var file in files)
                             {
                                 project.ProjectItems.AddFromFile(Path.Combine(web, file));
-                                var msg = String.Format(Resources.Template_SuccessfullyAddedFileToWebProject, file, webProjectName);
-                                Log(msg);
+                                Log(String.Format(Resources.Template_SuccessfullyAddedFileToWebProject, file, webProjectName));
                             }
+
+                            //
+                            // Update the .csproj.user file
+                            // Set the start page to Login.aspx
+                            //
+                            var startFile = "Login.aspx";
+                            project.Properties.Item("WebApplication.StartPageUrl").Value = startFile;
+                            project.Properties.Item("WebApplication.DebugStartAction").Value = 1;
+                            Log(String.Format(Resources.Template_SetWebProjectStartFile, startFile));
                         }
                         catch (Exception e)
                         {
@@ -455,6 +466,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         break;
                     }
                 }
+
+                // Now, set the start project for the solution
+                var filenameWithoutExtension = Path.GetFileNameWithoutExtension(webProjectName);
+                solution.Properties.Item("StartupProject").Value = filenameWithoutExtension;
+                Log(String.Format(Resources.Template_SetSolutionStartProject, filenameWithoutExtension));
             }
 
             // Log end of step
