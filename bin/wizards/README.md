@@ -59,7 +59,7 @@ folder and run this file
 The following steps illustrate how to uninstall the package from Visual Studio:
 
 * Load Visual Studio
-* Select **Tools\Extensions and Updates…**
+* Select **Extensions\Manage Extensions**
 * Search for and select the **Sage 300 UI Customization Wizard**
 * Select the **Uninstall** button
 * Select **Yes** to confirm uninstallation of the package
@@ -83,7 +83,7 @@ run this file.
 The following steps illustrate how to uninstall the package from Visual Studio:
 
 * Load Visual Studio
-* Select **Tools\Extensions and Updates…**
+* Select **Extensions\Manage Extensions**
 * Search for and select the **Sage 300 Upgrade Wizard Package**
 * Select the **Uninstall** button
 * Select **Yes** to confirm uninstallation of the package
@@ -109,7 +109,7 @@ run this file.
 The following steps illustrate how to uninstall the package from Visual Studio:
 
 * Load Visual Studio
-* Select **Tools\Extensions and Updates…**
+* Select **Extensions\Manage Extensions**
 * Search for and select the **Sage 300 Language Resource Wizard Package**
 * Select the **Uninstall** button
 * Select **Yes** to confirm uninstallation of the package
