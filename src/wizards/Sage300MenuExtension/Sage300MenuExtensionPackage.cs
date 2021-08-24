@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -27,6 +27,7 @@ using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
 using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard;
+using Sage300FinderGenerator;
 
 namespace Sage.Sage300MenuExtension
 {
@@ -85,6 +86,11 @@ namespace Sage.Sage300MenuExtension
                 var menuCommandID = new CommandID(GuidList.guidSage300MenuExtensionCmdSet, (int)PkgCmdIDList.cmdidSage300ClassWizard);
                 var menuItem = new MenuCommand(MenuItemCallback, menuCommandID );
                 mcs.AddCommand( menuItem );
+
+                // Create the command for the menu item (finder).
+                var menuCommandFinderID = new CommandID(GuidList.guidSage300MenuExtensionCmdSet, (int)PkgCmdIDList.cmdidSage300ClassWizardFinder);
+                var menuItemFinder = new MenuCommand(MenuItemCallbackForFinder, menuCommandFinderID);
+                mcs.AddCommand(menuItemFinder);
             }
         }
 
@@ -103,6 +109,21 @@ namespace Sage.Sage300MenuExtension
                 // New wizard
                 var codeGenerator = new CodeGenerationWizard();
                 codeGenerator.Execute(dte.Solution);
+            }
+        }
+
+        /// <summary>
+        /// This function is the callback used to execute a command when the a menu item is clicked.
+        /// See the Initialize method to see how the menu item is associated to this function using
+        /// the OleMenuCommandService service and the MenuCommand class.
+        /// </summary>
+        private void MenuItemCallbackForFinder(object sender, EventArgs e)
+        {
+            var dte = (DTE2)GetService(typeof(DTE));
+            if (dte != null)
+            {
+                var finderGenerator = new FinderGenerator();
+                finderGenerator.Execute(dte.Solution);
             }
         }
     }

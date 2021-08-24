@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Max6" xml:space="preserve">
+    <value>Max 6</value>
+  </data>
+  <data name="Field18" xml:space="preserve">
+    <value>Field 18</value>
+  </data>
+  <data name="GeneratedSequenceNumber" xml:space="preserve">
+    <value>Generated Sequence No.</value>
+  </data>
+  <data name="FieldName3" xml:space="preserve">
+    <value>Field Name 3</value>
+  </data>
+  <data name="Max9" xml:space="preserve">
+    <value>Max 9</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Field12" xml:space="preserve">
+    <value>Field 12</value>
+  </data>
+  <data name="Field9" xml:space="preserve">
+    <value>Field 9</value>
+  </data>
+  <data name="FieldName8" xml:space="preserve">
+    <value>Field Name 8</value>
+  </data>
+  <data name="Min4" xml:space="preserve">
+    <value>Min 4</value>
+  </data>
+  <data name="Type18" xml:space="preserve">
+    <value>Type 18</value>
+  </data>
+  <data name="Field3" xml:space="preserve">
+    <value>Field 3</value>
+  </data>
+  <data name="FieldName13" xml:space="preserve">
+    <value>Field Name 13</value>
+  </data>
+  <data name="Period2" xml:space="preserve">
+    <value>Period 2</value>
+  </data>
+  <data name="Type12" xml:space="preserve">
+    <value>Type 12</value>
+  </data>
+  <data name="Field5" xml:space="preserve">
+    <value>Field 5</value>
+  </data>
+  <data name="Type11" xml:space="preserve">
+    <value>Type 11</value>
+  </data>
+  <data name="SequenceNumber" xml:space="preserve">
+    <value>Sequence No.</value>
+  </data>
+  <data name="CutoffDate" xml:space="preserve">
+    <value>Cutoff Date</value>
+  </data>
+  <data name="Max4" xml:space="preserve">
+    <value>Max 4</value>
+  </data>
+  <data name="MaxKey" xml:space="preserve">
+    <value>Max Key</value>
+  </data>
+  <data name="Min3" xml:space="preserve">
+    <value>Min 3</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>A/R Customer List</value>
+  </data>
+  <data name="Min8" xml:space="preserve">
+    <value>Min 8</value>
+  </data>
+  <data name="Type6" xml:space="preserve">
+    <value>Type 6</value>
+  </data>
+  <data name="Type7" xml:space="preserve">
+    <value>Type 7</value>
+  </data>
+  <data name="Type4" xml:space="preserve">
+    <value>Type 4</value>
+  </data>
+  <data name="Type5" xml:space="preserve">
+    <value>Type 5</value>
+  </data>
+  <data name="Type2" xml:space="preserve">
+    <value>Type 2</value>
+  </data>
+  <data name="Type3" xml:space="preserve">
+    <value>Type 3</value>
+  </data>
+  <data name="Type1" xml:space="preserve">
+    <value>Type 1</value>
+  </data>
+  <data name="MinKey" xml:space="preserve">
+    <value>Min Key</value>
+  </data>
+  <data name="IncludeNoComments" xml:space="preserve">
+    <value>Include No Comments</value>
+  </data>
+  <data name="IncludePrepayments" xml:space="preserve">
+    <value>Include Prepayments</value>
+  </data>
+  <data name="Type8" xml:space="preserve">
+    <value>Type 8</value>
+  </data>
+  <data name="Type9" xml:space="preserve">
+    <value>Type 9</value>
+  </data>
+  <data name="AgeBy" xml:space="preserve">
+    <value>Age By</value>
+  </data>
+  <data name="Field17" xml:space="preserve">
+    <value>Field 17</value>
+  </data>
+  <data name="FieldName18" xml:space="preserve">
+    <value>Field Name 18</value>
+  </data>
+  <data name="FieldName7" xml:space="preserve">
+    <value>Field Name 7</value>
+  </data>
+  <data name="FieldName2" xml:space="preserve">
+    <value>Field Name 2</value>
+  </data>
+  <data name="FieldName1" xml:space="preserve">
+    <value>Field Name 1</value>
+  </data>
+  <data name="Min7" xml:space="preserve">
+    <value>Min 7</value>
+  </data>
+  <data name="Field8" xml:space="preserve">
+    <value>Field 8</value>
+  </data>
+  <data name="Max10" xml:space="preserve">
+    <value>Max 10</value>
+  </data>
+  <data name="Field2" xml:space="preserve">
+    <value>Field 2</value>
+  </data>
+  <data name="Field1" xml:space="preserve">
+    <value>Field 1</value>
+  </data>
+  <data name="Field4" xml:space="preserve">
+    <value>Field 4</value>
+  </data>
+  <data name="Type10" xml:space="preserve">
+    <value>Type 10</value>
+  </data>
+  <data name="Type17" xml:space="preserve">
+    <value>Type 17</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="Type15" xml:space="preserve">
+    <value>Type 15</value>
+  </data>
+  <data name="Max17" xml:space="preserve">
+    <value>Max 17</value>
+  </data>
+  <data name="Field15" xml:space="preserve">
+    <value>Field 15</value>
+  </data>
+  <data name="Min6" xml:space="preserve">
+    <value>Min 6</value>
+  </data>
+  <data name="Min9" xml:space="preserve">
+    <value>Min 9</value>
+  </data>
+  <data name="Max13" xml:space="preserve">
+    <value>Max 13</value>
+  </data>
+  <data name="Max12" xml:space="preserve">
+    <value>Max 12</value>
+  </data>
+  <data name="Max11" xml:space="preserve">
+    <value>Max 11</value>
+  </data>
+  <data name="Field11" xml:space="preserve">
+    <value>Field 11</value>
+  </data>
+  <data name="FieldName17" xml:space="preserve">
+    <value>Field Name 17</value>
+  </data>
+  <data name="Field13" xml:space="preserve">
+    <value>Field 13</value>
+  </data>
+  <data name="FieldName12" xml:space="preserve">
+    <value>Field Name 12</value>
+  </data>
+  <data name="Period3" xml:space="preserve">
+    <value>Period 3</value>
+  </data>
+  <data name="FieldName4" xml:space="preserve">
+    <value>Field Name 4</value>
+  </data>
+  <data name="KeyName" xml:space="preserve">
+    <value>Key Name</value>
+  </data>
+  <data name="Field16" xml:space="preserve">
+    <value>Field 16</value>
+  </data>
+  <data name="RunDate" xml:space="preserve">
+    <value>Run Date</value>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>Process Command</value>
+  </data>
+  <data name="Max5" xml:space="preserve">
+    <value>Max 5</value>
+  </data>
+  <data name="Min12" xml:space="preserve">
+    <value>Min 12</value>
+  </data>
+  <data name="Min5" xml:space="preserve">
+    <value>Min 5</value>
+  </data>
+  <data name="Max3" xml:space="preserve">
+    <value>Max 3</value>
+  </data>
+  <data name="FieldName10" xml:space="preserve">
+    <value>Field Name 10</value>
+  </data>
+  <data name="Period1" xml:space="preserve">
+    <value>Period 1</value>
+  </data>
+  <data name="FieldName16" xml:space="preserve">
+    <value>Field Name 16</value>
+  </data>
+  <data name="Max14" xml:space="preserve">
+    <value>Max 14</value>
+  </data>
+  <data name="FieldName14" xml:space="preserve">
+    <value>Field Name 14</value>
+  </data>
+  <data name="FieldName6" xml:space="preserve">
+    <value>Field Name 6</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="FieldName5" xml:space="preserve">
+    <value>Field Name 5</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Min18" xml:space="preserve">
+    <value>Min 18</value>
+  </data>
+  <data name="FieldName9" xml:space="preserve">
+    <value>Field Name 9</value>
+  </data>
+  <data name="Field7" xml:space="preserve">
+    <value>Field 7</value>
+  </data>
+  <data name="Type13" xml:space="preserve">
+    <value>Type 13</value>
+  </data>
+  <data name="CustomerList" xml:space="preserve">
+    <value>Customer List</value>
+  </data>
+  <data name="Type16" xml:space="preserve">
+    <value>Type 16</value>
+  </data>
+  <data name="TypeKey" xml:space="preserve">
+    <value>Type Key</value>
+  </data>
+  <data name="Max18" xml:space="preserve">
+    <value>Max 18</value>
+  </data>
+  <data name="IncludeZeroBalance" xml:space="preserve">
+    <value>Include Zero Balance</value>
+  </data>
+  <data name="Max1" xml:space="preserve">
+    <value>Max 1</value>
+  </data>
+  <data name="Max16" xml:space="preserve">
+    <value>Max 16</value>
+  </data>
+  <data name="Type14" xml:space="preserve">
+    <value>Type 14</value>
+  </data>
+  <data name="Min1" xml:space="preserve">
+    <value>Min 1</value>
+  </data>
+  <data name="Min17" xml:space="preserve">
+    <value>Min 17</value>
+  </data>
+  <data name="Min16" xml:space="preserve">
+    <value>Min 16</value>
+  </data>
+  <data name="Min15" xml:space="preserve">
+    <value>Min 15</value>
+  </data>
+  <data name="Min14" xml:space="preserve">
+    <value>Min 14</value>
+  </data>
+  <data name="Min13" xml:space="preserve">
+    <value>Min 13</value>
+  </data>
+  <data name="Field6" xml:space="preserve">
+    <value>Field 6</value>
+  </data>
+  <data name="Min11" xml:space="preserve">
+    <value>Min 11</value>
+  </data>
+  <data name="Min10" xml:space="preserve">
+    <value>Min 10</value>
+  </data>
+  <data name="Max2" xml:space="preserve">
+    <value>Max 2</value>
+  </data>
+  <data name="Max8" xml:space="preserve">
+    <value>Max 8</value>
+  </data>
+  <data name="Field14" xml:space="preserve">
+    <value>Field 14</value>
+  </data>
+  <data name="Period4" xml:space="preserve">
+    <value>Period 4</value>
+  </data>
+  <data name="Field10" xml:space="preserve">
+    <value>Field 10</value>
+  </data>
+  <data name="FieldName11" xml:space="preserve">
+    <value>Field Name 11</value>
+  </data>
+  <data name="Max15" xml:space="preserve">
+    <value>Max 15</value>
+  </data>
+  <data name="Max7" xml:space="preserve">
+    <value>Max 7</value>
+  </data>
+  <data name="FieldName15" xml:space="preserve">
+    <value>Field Name 15</value>
+  </data>
+  <data name="Min2" xml:space="preserve">
+    <value>Min 2</value>
+  </data>
+  <data name="DaysToPay" xml:space="preserve">
+    <value>Days To Pay</value>
+  </data>
+  <data name="InvoicesPaid" xml:space="preserve">
+    <value>Invoices Paid</value>
+  </data>
+  <data name="ReportTitle" xml:space="preserve">
+    <value>A/R Customer List (ARCULT05)</value>
+  </data>
+  <data name="Aging" xml:space="preserve">
+    <value>Aging</value>
+  </data>
+  <data name="ExcludePrepayments" xml:space="preserve">
+    <value>Exclude Prepayments</value>
+  </data>
+  <data name="PrintAging" xml:space="preserve">
+    <value>Age By {0}, Age As Of {1}, Cutoff Date {2}, {3}</value>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Document Date</value>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>Due Date</value>
+  </data>
+  <data name="PercentageAvailable" xml:space="preserve">
+    <value>Up to {0} Available</value>
+  </data>
+  <data name="IncludeContactInformation" xml:space="preserve">
+    <value>Include Contact Information</value>
+  </data>
+  <data name="IncludeCustomersWithNoComments" xml:space="preserve">
+    <value>Include Customers with No Comments</value>
+  </data>
+  <data name="IncludeCustomersWithZeroBalance" xml:space="preserve">
+    <value>Include Customers with Zero A/R Balance</value>
+  </data>
+  <data name="CreditAvailablePercent" xml:space="preserve">
+    <value>Credit Available %</value>
+  </data>
+</root>

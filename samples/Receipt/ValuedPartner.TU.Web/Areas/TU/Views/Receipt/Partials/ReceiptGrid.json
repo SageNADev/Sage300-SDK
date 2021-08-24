@@ -21,7 +21,7 @@
     },
     {
       "FieldName": "SEQUENCENO"
-    },	
+    },
     {
       "FieldName": "ITEMNO",
       "Precision": 0,
@@ -60,6 +60,13 @@
       ]
     },
     {
+      "ViewID": "IC0310",
+      "FieldName": "CNTLACCT",
+      "ForeignKeys": "ITEMNO",
+      "PrimaryKeys": "ITEMNO",
+      "IsEditable": false
+    },
+    {
       "FieldName": "CATEGORY",
       "CustomFunctions": [
         { "columnBeforeFinder": "receiptUI.updateFinderFilter" },
@@ -73,8 +80,8 @@
       "FieldName": "LOCATION",
       "IsEditable": true,
       "Precision": 0,
-	  "CustomFunctions": [
-      { "columnBeforeFinder": "receiptUI.updateFinderFilter" }
+      "CustomFunctions": [
+        { "columnBeforeFinder": "receiptUI.updateFinderFilter" }
       ],
       "HasFinder": true,
       "Finder": {

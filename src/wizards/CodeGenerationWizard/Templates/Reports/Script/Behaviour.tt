@@ -1,0 +1,313 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
+    var moduleId = view.Properties[BusinessView.Constants.ModuleId].ToLower();
+    var copyright = settings.Copyright;
+    var containerName = settings.EntitiesContainerName;
+    var keyFieldName = settings.screenKeyFieldName;
+    var snippet = new StringBuilder();
+#>
+/* <#=copyright#> */
+
+// Enable the following commented line to enable TypeScript static type checking
+// @ts-check
+
+"use strict";
+
+var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
+
+<#=localEntityName#>UI = {
+    <#=localEntityName#>Model: {},
+    computedProperties: [],
+
+    /**
+     * @function
+     * @name init
+     * @description Primary Initialization Routine
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    init: function () {     
+        // Initialize the controls and apply kendo bindings 
+        <#=localEntityName#>UI.initKendoBindings();          
+        <#=localEntityName#>UI.initGrids();
+        <#=localEntityName#>UI.initTabs();
+        <#=localEntityName#>UI.initFinders();
+        <#=localEntityName#>UI.initButtons();
+        <#=localEntityName#>UI.initNumericTextboxes();
+        <#=localEntityName#>UI.initTextboxes();
+        <#=localEntityName#>UI.initTimePickers();
+        <#=localEntityName#>UI.initCheckBoxes();
+        <#=localEntityName#>UI.initBlur();
+        ko.applyBindings(<#=localEntityName#>UI.<#=localEntityName#>Model);
+    },
+    
+    /**
+     * @function
+     * @name initKendoBindings
+     * @description Initialization of Kendo bindings
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initKendoBindings: function () {
+        <#=localEntityName#>UI.<#=localEntityName#>Model = ko.mapping.fromJS(<#=entityName#>ViewModel);       
+        <#=localEntityName#>KoExtn.<#=localEntityName#>ReportExtension(<#=localEntityName#>UI.<#=localEntityName#>Model);
+    },
+
+    /**
+     * @function
+     * @name initGrids
+     * @description Initialize the grids, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initGrids: function () {
+
+    },
+
+    /**
+     * @function
+     * @name initTabs
+     * @description Initialize the tabs, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initTabs: function () {
+
+    },
+
+    /**
+     * @function
+     * @name initFinders
+     * @description Initialize the finders
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initFinders: function() {
+    <#
+    // Create code for finder
+    snippet = new StringBuilder();
+    SnippetHelper.FinderJavaScript(8, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+    #>
+    },
+
+    /**
+    * @function
+    * @name initCheckBoxes
+    * @description Set up the change events for check boxes, if any
+    * @namespace <#=localEntityName#>UI
+    * @public
+    */
+    initCheckBoxes: function () {
+
+    },
+    
+    /**
+    * @function
+    * @name initBlur
+    * @description Set up the blur events, if needed
+    * @namespace <#=localEntityName#>UI
+    * @public
+    */
+    initBlur:function() {
+
+    },    
+
+    /**
+     * @function
+     * @name initTimePickers
+     * @description Initialize the time pickers, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initTimePickers: function () {
+<#
+    // Create code for init timepickers
+    snippet = new StringBuilder();
+    SnippetHelper.InitTimePickersJavaScript(8, settings, snippet, localEntityName, view);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+    /**
+     * @function
+     * @name initNumericTextboxes
+     * @description Initialize the numeric textboxes, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initNumericTextboxes: function () {
+<#
+    // Create code for init numeric textboxes
+    snippet = new StringBuilder();
+    SnippetHelper.InitNumericTextboxesJavaScript(8, settings, snippet, view);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+    /**
+     * @function
+     * @name initTextboxes
+     * @description Initialize the textboxes, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initTextboxes: function () {
+    <#
+    // Create code for init textboxes
+    snippet = new StringBuilder();
+    SnippetHelper.InitTextboxesJavaScript(8, settings, snippet, containerName);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+    #>
+    },
+    
+    /**
+     * @function
+     * @name initButtons
+     * @description Initialize the buttons
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initButtons: function () {
+        $("#btnPrint").on('click', function () {
+            sg.utls.SyncExecute(<#=localEntityName#>UI.print);
+        });
+<#
+    // Create code for buttons, if any
+    snippet = new StringBuilder();
+    SnippetHelper.InitButtonsJavaScript(8, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+    
+    /**
+     * @function
+     * @name print
+     * @description Print 
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    print: function () {
+        if (sg.utls.isProcessRunning) {
+            return;
+        }
+
+        // Check if form is valid
+        if ($("#frm<#=entityName#>").valid()) {
+            // Check Validations
+            if (<#=localEntityName#>UI.validation()) {
+                $("#message").empty();
+                sg.utls.clearValidations("frm<#=entityName#>");
+                sg.utls.isProcessRunning = true;
+
+                let model = <#=localEntityName#>UI.<#=localEntityName#>Model.Data;
+                let data = sg.utls.ko.toJS(model, <#=localEntityName#>UI.computedProperties);
+               
+                <#=localEntityName#>Repository.execute<#=localEntityName#>RepositoryReport(model);
+            }
+        }
+    },
+
+    /**
+     * @function
+     * @name validation
+     * @description Validation 
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    validation: function () {
+        var errorRangeMessage = "";
+        var inputValid = true;
+
+        if (!inputValid) {
+            if (errorRangeMessage != "") {
+                sg.utls.showMessageInfo(sg.utls.msgType.ERROR, jQuery.validator.format(<#=localEntityName#>Resources.ErrorFromToValueMessage, errorRangeMessage));
+            } else if (errorMessage != "") {
+                sg.utls.showMessageInfo(sg.utls.msgType.ERROR, errorMessage);
+            }
+        }
+
+        return inputValid;
+    }
+
+};
+
+// Callbacks
+var <#=localEntityName#>OnSuccess = {
+    /**
+     * @function
+     * @name execute
+     * @description Open the report result or display a message
+     * @namespace <#=localEntityName#>OnSuccess
+     * @public
+     *
+     * @param {object} result The JSON result payload
+     */
+    execute: function (result) {
+        if (result !== null && result.UserMessage.IsSuccess) {
+            window.sg.utls.openReport(result.ReportToken);
+        } else {
+            sg.utls.showMessage(result);
+        }
+    }
+};
+
+// UI Callbacks
+var <#=localEntityName#>UISuccess = {    
+};
+
+
+// Finder success callback
+var onFinderSuccess = {
+};
+
+// Finder cancel callback
+var onFinderCancel = {
+};
+
+
+// Primary page entry point
+$(function () {
+    <#=localEntityName#>UI.init();
+});

@@ -160,7 +160,7 @@ var clearStatisticsUI = (function (self, $) {
      * @private
      */
     function initSalespersonFinders() {
-        let props = sg.viewFinderProperties.AR.Salespersons;
+        let props = sg.viewFinderProperties.AR.SalesPersons;
         let controls = [
             { buttonId: "btnFromSalespersonFinder", dataControlId: "Data_FromSalesPerson" },
             { buttonId: "btnToSalespersonFinder", dataControlId: "Data_ToSalesPerson" },

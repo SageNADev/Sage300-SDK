@@ -1,6 +1,6 @@
 @*
   The MIT License (MIT) 
-  Copyright (c) 1994-2020 The Sage Group plc or its licensors.  All rights reserved.
+  Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
  
   Permission is hereby granted, free of charge, to any person obtaining a copy of 
   this software and associated documentation files (the "Software"), to deal in 
@@ -33,55 +33,68 @@
 <div class="sublevel-1">
     <div class="form-group">
         <div class="search-group">
-            @Html.SageLabelFor(m => m.Data.TaxLiabilityAccount)
-            @Html.KoSageTextBoxFor(m => m.Data.TaxLiabilityAccount, new { @sagevalue = "Data.TaxLiabilityAccount", @valueUpdate = "'input'" }, new { @id = "txtTaxLiabilityAccount", @disable = false, @class = "default txt-upper" })
-            @Html.SageButton("btnLoadliability", new { @class = "icon btn-go", @id = "btnLoadliability", @tabindex = "-1" })
-            @Html.SageButton("btnLiabilityAccountFinder", new { @class = "icon btn-search", @id = "btnLiabilityAccountFinder", @tabindex = "-1" })
+            @Html.SgFinderFor(m => m.Data.TaxLiabilityAccount,
+                  new { @sagevalue = "Data.TaxLiabilityAccount" },
+                  new { @id = "txtTaxLiabilityAccount", @class = "txt-upper" },
+                  goButtonId: "btnLoadliability", findButtonId: "btnLiabilityAccountFinder",
+                  includeValidation: false)
         </div>
         <div class="input-group">
-            @Html.SageLabel("AccountsTab_TxLiabilityAcctDesc", TaxAuthoritiesResx.TaxLiabilityAcctDesc)
-            @Html.KoSageTextBoxFor(m => m.LiabilityAccountDescription, new { @sagevalue = "LiabilityAccountDescription", @valueUpdate = "'input'" }, new { @id = "txtTaxLiabilityAccountdesc", @disabled = "disabled", @class = "large" })
+            @Html.SgTextFor(m => m.LiabilityAccountDescription,
+                  new { @sagevalue = "LiabilityAccountDescription" },
+                  new { @id = "txtTaxLiabilityAccountdesc", @disabled = "disabled" }, size: "large",
+                  labelText: TaxAuthoritiesResx.TaxLiabilityAcctDesc,
+                  labelHtmlAttrs: new { @id = "AccountsTab_TxLiabilityAcctDesc" })
         </div>
     </div>
     <div class="form-group">
         <div class="ctrl-group">
             <div class="child">
-            @Html.KoSageCheckBoxFor(m => m.Data.TaxRecover, new { @sagechecked = "Data.TaxRecover", @valueUpdate = "'input'" }, new { @id = "chktaxRecoverable" })
-            @Html.SageLabel("chktaxRecoverable", TaxAuthoritiesResx.TaxRecoverable, new { @class = "" })
+                @Html.SgCheckboxFor(m => m.Data.TaxRecover,
+                      new { @sagechecked = "Data.TaxRecover" },
+                      new { @id = "chktaxRecoverable" },
+                      labelText: TaxAuthoritiesResx.TaxRecoverable,
+                      labelHtmlAttrs: new { @id = "chktaxRecoverable" })
             </div>
         </div>
     </div>
     <div class="form-group">
         <div class="search-group">
-            @Html.SageLabelFor(m => m.Data.RecoverableTaxAccount)
-            @Html.KoSageTextBoxFor(m => m.Data.RecoverableTaxAccount, new { @sagevalue = "Data.RecoverableTaxAccount", @valueUpdate = "'input'" }, new { @id = "txtTaxRecoverable", @disable = false, @class = "default txt-upper" })
-            @Html.SageButton("btnLoadrecoverable", new { @class = "icon btn-go", @id = "btnLoadrecoverable", @tabindex = "-1" })
-            @Html.SageButton("btnTaxRecoverableFinder", new { @class = "icon btn-search", @id = "btnTaxRecoverableFinder", @tabindex = "-1" })
+            @Html.SgFinderFor(m => m.Data.RecoverableTaxAccount,
+                  new { @sagevalue = "Data.RecoverableTaxAccount" },
+                  new { @id = "txtTaxRecoverable", @class = "txt-upper" },
+                  goButtonId: "btnLoadrecoverable", findButtonId: "btnTaxRecoverableFinder",
+                  includeValidation: false)
         </div>
         <div class="input-group">
             @Html.SageLabel("AccountsTab_RecoTxAcctDesc", TaxAuthoritiesResx.RecoverableTaxAcctDesc)
             @Html.KoSageTextBox("txtRecoTxAcctDesc", new { @sagevalue = "RecoverableTaxAccountDescription", @valueUpdate = "'input'" }, new { @class = "large", @disabled = "disabled" })
         </div>
         <div class="numeric-group">
-            @Html.SageLabelFor(m => m.Data.RecoverableRate)
-            @Html.KoSageTextBoxFor(m => m.Data.RecoverableRate, new { @sagevalue = "Data.RecoverableRate", @valueUpdate = "'input'" }, new { @id = "txtRecoRate", @class = "default align-right", @disabled = "disabled", @maxlength = 9 })
+            @Html.SgNumericFor(m => m.Data.RecoverableRate,
+                  new { @sagevalue = "Data.RecoverableRate" },
+                  new { @id = "txtRecoRate", @class = "align-right", @disabled = "disabled", @maxlength = 9 })
         </div>
     </div>
     <div class="clear-fix"></div>
     <div class="form-group">
         <div class="ctrl-group">
             <div class="child">
-                @Html.KoSageCheckBoxFor(m => m.Data.ExpenseSeparate, new { @sagechecked = "Data.ExpenseSeparate", @valueUpdate = "'input'" }, new { @id = "chkExpenseSeparately" })
-                @Html.SageLabel("chkExpenseSeparately", TaxAuthoritiesResx.ExpenseSeparately, new { @class = "" })
+                @Html.SgCheckboxFor(m => m.Data.ExpenseSeparate,
+                      new { @sagechecked = "Data.ExpenseSeparate" },
+                      new { @id = "chkExpenseSeparately" },
+                      labelText: TaxAuthoritiesResx.ExpenseSeparately,
+                      labelHtmlAttrs: new { @id = "chkExpenseSeparately" })
             </div>
         </div>
     </div>
     <div class="form-group">
         <div class="search-group">
-            @Html.SageLabelFor(m => m.Data.ExpenseAccount)
-            @Html.KoSageTextBoxFor(m => m.Data.ExpenseAccount, new { @sagevalue = "Data.ExpenseAccount", @valueUpdate = "'input'" }, new { @id = "txtExpenseAccount", @class = "default txt-upper" })
-            @Html.SageButton("btnLoadexpense", new { @class = "icon btn-go", @id = "btnLoadexpense", @tabindex = "-1" })
-            @Html.SageButton("btnExpenseAccountFinder", new { @class = "icon btn-search", @id = "btnExpenseAccountFinder", @tabindex = "-1" })
+            @Html.SgFinderFor(m => m.Data.ExpenseAccount,
+                  new { @sagevalue = "Data.ExpenseAccount" },
+                  new { @id = "txtExpenseAccount", @class = "txt-upper" },
+                  goButtonId: "btnLoadexpense", findButtonId: "btnExpenseAccountFinder",
+                  includeValidation: false)
         </div>
         <div class="input-group">
             @Html.SageLabel("AccountsTab_ExpAcctDesc", TaxAuthoritiesResx.ExpenseAcctDesc)

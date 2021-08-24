@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
   The MIT License (MIT) 
-  Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+  Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
  
   Permission is hereby granted, free of charge, to any person obtaining a copy of 
   this software and associated documentation files (the "Software"), to deal in 
@@ -22,6 +22,7 @@
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(SolutionDir)\..\..\settings\AccpacDotNetVersion.props" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -71,6 +72,12 @@
     <DocumentationFile>bin\ValuedPartner.TU.Web.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="$(RefAccpacAdvantage)">
+      <SpecificVersion>$(IsAccpacAdvantageSpecificVersion)</SpecificVersion>
+    </Reference>
+    <Reference Include="$(RefAccpacAdvantageTypes)">
+      <SpecificVersion>$(IsAccpacAdvantageTypesSpecificVersion)</SpecificVersion>
+    </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
@@ -346,6 +353,13 @@
     <Compile Include="Areas\TU\Controllers\Process\ClearStatisticsController.cs" />
     <Compile Include="Areas\TU\Controllers\Process\ClearStatisticsControllerInternal.cs" />
     <Compile Include="Areas\TU\Models\Process\ClearStatisticsViewModel.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TUAreaRegistration.cs" />
     <Compile Include="TUWebBootstrapper.cs" />
     <Compile Include="BundleRegistration.cs" />
@@ -360,6 +374,7 @@
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsBehaviour.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsKoExtn.js" />
     <Content Include="Areas\TU\Scripts\ClearStatistics\ValuedPartner.TU.ClearStatisticsRepository.js" />
+    <Content Include="Login.aspx" />
     <Content Include="pageUrl.txt" />
     <Content Include="TUBootstrapper.xml" />
     <Content Include="TUMenuDetails.xml" />

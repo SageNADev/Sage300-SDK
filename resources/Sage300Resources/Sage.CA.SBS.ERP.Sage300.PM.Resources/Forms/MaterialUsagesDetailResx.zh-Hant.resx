@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TOTCOSTSR" xml:space="preserve">
+    <value>合計成本</value>
+  </data>
+  <data name="CONTRACT" xml:space="preserve">
+    <value>合約</value>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>已含稅1</value>
+  </data>
+  <data name="BillAmountBasedOn" xml:space="preserve">
+    <value>帳單金額基於</value>
+  </data>
+  <data name="OverheadPercentage" xml:space="preserve">
+    <value>費用百分比</value>
+  </data>
+  <data name="ForcePopupSN" xml:space="preserve">
+    <value>強制彈出系列編號</value>
+  </data>
+  <data name="Billable" xml:space="preserve">
+    <value>可開帳單</value>
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>批別</value>
+  </data>
+  <data name="CustomerCurrency" xml:space="preserve">
+    <value>客戶幣別</value>
+  </data>
+  <data name="TimeAndMaterials" xml:space="preserve">
+    <value>時間和材料</value>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>已含稅5</value>
+  </data>
+  <data name="Nonbillable" xml:space="preserve">
+    <value>不可計費</value>
+  </data>
+  <data name="CostPlus" xml:space="preserve">
+    <value>成本加價</value>
+  </data>
+  <data name="MovingAverage" xml:space="preserve">
+    <value>移動平均</value>
+  </data>
+  <data name="ItemUnitOfMeasure" xml:space="preserve">
+    <value>產品計量單位</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>備註</value>
+  </data>
+  <data name="SNInterCommunicationID" xml:space="preserve">
+    <value>系列編號互通代號</value>
+  </data>
+  <data name="AdditionalCost" xml:space="preserve">
+    <value>附加成本</value>
+  </data>
+  <data name="ARItemNumber" xml:space="preserve">
+    <value>應收帳款產品編號</value>
+  </data>
+  <data name="ClearLots" xml:space="preserve">
+    <value>清除批別</value>
+  </data>
+  <data name="ExtendedCostHome" xml:space="preserve">
+    <value>總成本</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>行號</value>
+  </data>
+  <data name="OHDESC" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="PriceList" xml:space="preserve">
+    <value>價目表</value>
+  </data>
+  <data name="ExtendedCost" xml:space="preserve">
+    <value>總成本</value>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>已含稅3</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>專案</value>
+  </data>
+  <data name="LaborHoursPercentageComplete" xml:space="preserve">
+    <value>人力小時百分比完成</value>
+  </data>
+  <data name="AccrualBasis" xml:space="preserve">
+    <value>應計制</value>
+  </data>
+  <data name="InvoiceType" xml:space="preserve">
+    <value>發票類型</value>
+  </data>
+  <data name="WorkInProgressAccountDescription" xml:space="preserve">
+    <value>在製品科目描述</value>
+  </data>
+  <data name="OHHM" xml:space="preserve">
+    <value>費用金額</value>
+  </data>
+  <data name="AutoGenerateSerials" xml:space="preserve">
+    <value>自動產生系列</value>
+  </data>
+  <data name="ExtendedBillingAmount" xml:space="preserve">
+    <value>總帳單金額</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>金額</value>
+  </data>
+  <data name="FormattedContractNumber" xml:space="preserve">
+    <value>合約</value>
+  </data>
+  <data name="BillingRate" xml:space="preserve">
+    <value>帳單費率</value>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>稅務機構3</value>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>稅務機構2</value>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>稅務機構1</value>
+  </data>
+  <data name="GenerateICSequence" xml:space="preserve">
+    <value>產生存貨控制序列</value>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>稅務機構5</value>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>稅務機構4</value>
+  </data>
+  <data name="Template" xml:space="preserve">
+    <value>範本</value>
+  </data>
+  <data name="TOTCOSTHM" xml:space="preserve">
+    <value>合計成本</value>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>類別描述</value>
+  </data>
+  <data name="CostCurrency" xml:space="preserve">
+    <value>幣別</value>
+  </data>
+  <data name="MaterialUsageNumber" xml:space="preserve">
+    <value>物料使用編號</value>
+  </data>
+  <data name="CloseSN" xml:space="preserve">
+    <value>關閉SN</value>
+  </data>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>計量單位</value>
+  </data>
+  <data name="UnitCost" xml:space="preserve">
+    <value>單位成本</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="ProjectDescription" xml:space="preserve">
+    <value>專案描述</value>
+  </data>
+  <data name="Auto_AllocateLots" xml:space="preserve">
+    <value>Auto_Allocate Lots</value>
+  </data>
+  <data name="LocationDescription" xml:space="preserve">
+    <value>地點描述</value>
+  </data>
+  <data name="NumberOfLotsToGenerate" xml:space="preserve">
+    <value>要產生的批別數目</value>
+  </data>
+  <data name="ForcePopupLT" xml:space="preserve">
+    <value>強制彈出批別追蹤</value>
+  </data>
+  <data name="SeperateQuantities" xml:space="preserve">
+    <value>分列數量</value>
+  </data>
+  <data name="AutoGenerateLots" xml:space="preserve">
+    <value>自動生成批別</value>
+  </data>
+  <data name="CloseLT" xml:space="preserve">
+    <value>關閉LT</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>產品描述</value>
+  </data>
+  <data name="QuantityPerLot" xml:space="preserve">
+    <value>數量每批別</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>地點</value>
+  </data>
+  <data name="ARUnitOfMeasure" xml:space="preserve">
+    <value>應收帳款計量單位</value>
+  </data>
+  <data name="InvoiceThisAmount" xml:space="preserve">
+    <value>開票金額</value>
+  </data>
+  <data name="ContractDescription" xml:space="preserve">
+    <value>合約描述</value>
+  </data>
+  <data name="MostRecentCost" xml:space="preserve">
+    <value>最近成本</value>
+  </data>
+  <data name="NumberOfLots" xml:space="preserve">
+    <value>批別數目</value>
+  </data>
+  <data name="BillingType" xml:space="preserve">
+    <value>帳單類型</value>
+  </data>
+  <data name="InvoiceBasedOnExchangeRate" xml:space="preserve">
+    <value>開票匯率</value>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>已含稅4</value>
+  </data>
+  <data name="NumberOfSerials" xml:space="preserve">
+    <value>系列數目</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>類別</value>
+  </data>
+  <data name="OverheadType" xml:space="preserve">
+    <value>費用類型</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <data name="LIFO" xml:space="preserve">
+    <value>後進先出</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>系列</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="ProjectPercentageComplete" xml:space="preserve">
+    <value>專案百分比完成</value>
+  </data>
+  <data name="FIFO" xml:space="preserve">
+    <value>先進先出</value>
+  </data>
+  <data name="RevenueAndCostCurrency" xml:space="preserve">
+    <value>營收和成本幣別</value>
+  </data>
+  <data name="OverheadRate" xml:space="preserve">
+    <value>管理費用費率</value>
+  </data>
+  <data name="AssetDescription" xml:space="preserve">
+    <value>資產描述</value>
+  </data>
+  <data name="CostMethod" xml:space="preserve">
+    <value>成本方法</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PM MaterialUsagesDetail</value>
+  </data>
+  <data name="AccountingMethod" xml:space="preserve">
+    <value>核算方法</value>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>基本</value>
+  </data>
+  <data name="ClearSerials" xml:space="preserve">
+    <value>清除系列</value>
+  </data>
+  <data name="NoCharge" xml:space="preserve">
+    <value>不收費</value>
+  </data>
+  <data name="UsedBy" xml:space="preserve">
+    <value>使用者</value>
+  </data>
+  <data name="CheckBelowZero" xml:space="preserve">
+    <value>檢查少於零</value>
+  </data>
+  <data name="PopupSN" xml:space="preserve">
+    <value>彈出系列編號</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>專案類型</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>彙總</value>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>已含稅2</value>
+  </data>
+  <data name="AllocateSerialFrom" xml:space="preserve">
+    <value>分配系列從</value>
+  </data>
+  <data name="SerialLotQuantityToProcess" xml:space="preserve">
+    <value>要處理的系列/批別數量</value>
+  </data>
+  <data name="ARItemDescription" xml:space="preserve">
+    <value>應收帳款產品描述</value>
+  </data>
+  <data name="RevenueAndCostsInCustomerCurrency" xml:space="preserve">
+    <value>營收和成本(客戶幣別)</value>
+  </data>
+  <data name="ICAccountDescription" xml:space="preserve">
+    <value>存貨控制科目描述</value>
+  </data>
+  <data name="ICAccount" xml:space="preserve">
+    <value>存貨控制科目</value>
+  </data>
+  <data name="BillingCurrency" xml:space="preserve">
+    <value>幣別</value>
+  </data>
+  <data name="MeterHandle" xml:space="preserve">
+    <value>尺規控制碼</value>
+  </data>
+  <data name="VALUES" xml:space="preserve">
+    <value>自選欄位</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>公司</value>
+  </data>
+  <data name="Database" xml:space="preserve">
+    <value>資料庫</value>
+  </data>
+  <data name="OHSR" xml:space="preserve">
+    <value>費用金額</value>
+  </data>
+  <data name="AllocateLotFrom" xml:space="preserve">
+    <value>分配批別從</value>
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>稅級5</value>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>稅級4</value>
+  </data>
+  <data name="AssetQuantity" xml:space="preserve">
+    <value>資產數量</value>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>稅級1</value>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>稅級3</value>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>稅級2</value>
+  </data>
+  <data name="StandardCost" xml:space="preserve">
+    <value>標準成本</value>
+  </data>
+  <data name="BillingsAndCosts" xml:space="preserve">
+    <value>帳單和成本</value>
+  </data>
+  <data name="Conversion" xml:space="preserve">
+    <value>轉換</value>
+  </data>
+  <data name="HASOPT" xml:space="preserve">
+    <value>自選欄位</value>
+  </data>
+  <data name="OverheadAccount" xml:space="preserve">
+    <value>管理費用科目</value>
+  </data>
+  <data name="DetailNumber" xml:space="preserve">
+    <value>明細編號</value>
+  </data>
+  <data name="CategoryPercentageComplete" xml:space="preserve">
+    <value>類別百分比完成</value>
+  </data>
+  <data name="ProcessCommand" xml:space="preserve">
+    <value>處理指示</value>
+  </data>
+  <data name="StockItem" xml:space="preserve">
+    <value>庫存產品</value>
+  </data>
+  <data name="FASAttached" xml:space="preserve">
+    <value>FAS Attached</value>
+  </data>
+  <data name="LTInterCommunicationID" xml:space="preserve">
+    <value>批別追蹤互通代號</value>
+  </data>
+  <data name="CompletedProject" xml:space="preserve">
+    <value>完成的專案</value>
+  </data>
+  <data name="LoadOptionalFields" xml:space="preserve">
+    <value>載入自選欄位</value>
+  </data>
+  <data name="FixedPrice" xml:space="preserve">
+    <value>固定價格</value>
+  </data>
+  <data name="RevenueAndCostsInFunctionalCurrency" xml:space="preserve">
+    <value>營收和成本(功能幣別)</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>產品編號</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="ContractStyle" xml:space="preserve">
+    <value>合約類型</value>
+  </data>
+  <data name="Userspecified" xml:space="preserve">
+    <value>用戶指定</value>
+  </data>
+  <data name="Sequence" xml:space="preserve">
+    <value>序列編號</value>
+  </data>
+  <data name="PopupLT" xml:space="preserve">
+    <value>彈出批別追蹤</value>
+  </data>
+  <data name="RevenueInCustomerCurrency" xml:space="preserve">
+    <value>營收(客戶幣別)</value>
+  </data>
+  <data name="AutoAllocateSerials" xml:space="preserve">
+    <value>自動分配系列</value>
+  </data>
+  <data name="InternalUsage" xml:space="preserve">
+    <value>內部使用</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>客戶</value>
+  </data>
+  <data name="Function" xml:space="preserve">
+    <value>函數</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>標準</value>
+  </data>
+  <data name="TotalCostPercentageComplete" xml:space="preserve">
+    <value>合計成本百分比完成</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>產品</value>
+  </data>
+  <data name="WorkInProgressAccount" xml:space="preserve">
+    <value>在製品科目</value>
+  </data>
+  <data name="UNFMTITEM" xml:space="preserve">
+    <value>產品編號</value>
+  </data>
+</root>

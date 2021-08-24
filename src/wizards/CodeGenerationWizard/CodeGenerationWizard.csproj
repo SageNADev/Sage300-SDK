@@ -85,6 +85,9 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <HintPath>..\..\..\..\..\..\Windows\assembly\GAC\EnvDTE80\8.0.0.0__b03f5f7f11d50a3a\envdte80.dll</HintPath>
     </Reference>
+    <Reference Include="Jint, Version=0.0.0.0, Culture=neutral, PublicKeyToken=2e92ba9c8d81157f, processorArchitecture=MSIL">
+      <HintPath>..\Sage300UIWizardPackage\packages\Jint.2.11.58\lib\net451\Jint.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\Sage300UIWizardPackage\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -93,6 +96,9 @@
     </Reference>
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\Sage300UIWizardPackage\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Sage300UIWizardPackage\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
@@ -112,8 +118,10 @@
     <Compile Include="BusinessField.cs" />
     <Compile Include="BusinessView.cs" />
     <Compile Include="BusinessViewHelper.cs" />
+    <Compile Include="CodeSnippet.cs" />
     <Compile Include="Composition.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="ControlInfo.cs" />
     <Compile Include="Forms\ContainerName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +137,7 @@
     <Compile Include="Forms\Generation.Designer.cs">
       <DependentUpon>Generation.cs</DependentUpon>
     </Compile>
+    <Compile Include="GridFinder.cs" />
     <Compile Include="ProcessGeneration.cs" />
     <Compile Include="CodeGenerationWizard.cs" />
     <Compile Include="ProjectInfo.cs" />
@@ -140,6 +149,7 @@
     </Compile>
     <Compile Include="Info.cs" />
     <Compile Include="RepositoryType.cs" />
+    <Compile Include="SnippetHelper.cs" />
     <Compile Include="Templates\Flat\Class\Grid\Controller.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,6 +185,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Behaviour.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\Flat\View\PartialEntity1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartialEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Templates\HeaderDetail\Script\Behaviour.cs">
       <DependentUpon>Behaviour.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -189,6 +204,21 @@
       <DependentUpon>Entity.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\HeaderDetail\View\PartialEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartialEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Process\View\PartialEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartialEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Reports\View\PartialEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartialEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ResXManager.cs" />
     <Compile Include="Settings.cs" />
@@ -487,6 +517,36 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Templates\Reports\Script\Behaviour.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Behaviour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Reports\Script\KoExtn.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KoExtn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Reports\Script\Repository.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Reports\View\Entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Reports\View\Index.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Reports\View\Localization.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.tt</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\Utilities.cs" />
     <Compile Include="WizardStep.cs" />
     <EmbeddedResource Include="Forms\ContainerName.resx">
@@ -719,6 +779,30 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ViewModel.cs</LastGenOutput>
     </None>
+    <None Include="Templates\Reports\Script\Behaviour.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Behaviour.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\Script\KoExtn.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>KoExtn.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\Script\Repository.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Repository.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\View\Entity.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Entity.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\View\Index.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Index.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Reports\View\Localization.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Localization.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -741,13 +825,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\addTabPage.png" />
     <Content Include="Images\Blank24.ico" />
+    <Content Include="Images\button.png" />
     <Content Include="Images\Caaccpac.ico" />
+    <Content Include="Images\delete.png" />
     <Content Include="Images\Exit24.ico" />
-    <Content Include="Images\finder16X.bmp" />
-    <Content Include="Images\Go24.ico" />
-    <Content Include="Images\Help_24.ico" />
-    <Content Include="Images\ImportSetting24.ico" />
+    <Content Include="Images\Grid.ico" />
+    <Content Include="Images\grid.png" />
+    <Content Include="Images\hamburger.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\ProgressError.ico" />
     <Content Include="Images\ProgressSuccess.ico" />
@@ -756,6 +842,24 @@
     <Content Include="Images\RowsDelete.ico" />
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\Sage_All.ico" />
+    <Content Include="Images\Tab.ico" />
+    <Content Include="Images\tab.png" />
+    <Content Include="Templates\Process\View\PartialEntity.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PartialEntity.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Reports\View\PartialEntity.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PartialEntity.cs</LastGenOutput>
+    </Content>
+    <None Include="Templates\HeaderDetail\View\PartialEntity.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PartialEntity.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Flat\View\PartialEntity.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PartialEntity1.cs</LastGenOutput>
+    </None>
     <None Include="Templates\Flat\Class\Grid\ViewModel.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ViewModel.cs</LastGenOutput>
@@ -835,8 +939,6 @@
     <Folder Include="Templates\DynamicQuery\View\" />
     <Folder Include="Templates\Inquiry\Script\" />
     <Folder Include="Templates\Inquiry\View\" />
-    <Folder Include="Templates\Reports\Script\" />
-    <Folder Include="Templates\Reports\View\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\Sage300UIWizardPackage\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.BannedApiAnalyzers.dll" />
@@ -845,6 +947,12 @@
     <Analyzer Include="..\Sage300UIWizardPackage\packages\Microsoft.VisualStudio.SDK.Analyzers.16.3.14\analyzers\cs\Microsoft.VisualStudio.SDK.Analyzers.dll" />
     <Analyzer Include="..\Sage300UIWizardPackage\packages\Microsoft.VisualStudio.Threading.Analyzers.16.6.13\analyzers\cs\Microsoft.VisualStudio.Threading.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\Sage300UIWizardPackage\packages\Microsoft.VisualStudio.Threading.Analyzers.16.6.13\analyzers\cs\Microsoft.VisualStudio.Threading.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sage300FinderGenerator\Sage300FinderGenerator.csproj">
+      <Project>{4682C28D-B8C4-4A68-B509-1912CB3277F9}</Project>
+      <Name>Sage300FinderGenerator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

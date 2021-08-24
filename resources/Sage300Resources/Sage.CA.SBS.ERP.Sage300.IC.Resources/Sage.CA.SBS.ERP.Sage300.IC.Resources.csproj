@@ -396,7 +396,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerDetailsReportResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\InventoryManagementReportResx.Designer.cs">
+    <Compile Include="Reports\InventoryMovementReportResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>InventoryMovementReportResx.resx</DependentUpon>

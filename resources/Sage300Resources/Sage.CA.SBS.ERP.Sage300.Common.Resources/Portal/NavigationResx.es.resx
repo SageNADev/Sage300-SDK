@@ -1428,10 +1428,10 @@
   <data name="AS_WorkProfile" xml:space="preserve">
     <value>Perfiles UI</value>
   </data>
-  <data name="SIR_Msg1" xml:space="preserve">
+  <data name="SIR_Msg3" xml:space="preserve">
     <value>Sage Intelligence Reporting Cloud</value>
   </data>
-  <data name="SIR_Msg2" xml:space="preserve">
+  <data name="SIR_Msg4" xml:space="preserve">
     <value>Obtenga una mejor visibilidad de su negocio con informes financieros dinámicos que puede exportar y personalizar en Microsoft Excel® o Excel Online.</value>
   </data>
   <data name="SIR_Report1" xml:space="preserve">
@@ -1647,5 +1647,53 @@
   </data>
   <data name="GL_BudgetMaintenance" xml:space="preserve">
     <value>Mantenimiento de Presupuesto</value>
+  </data>
+  <data name="Module_PM" xml:space="preserve">
+    <value>Cálculo de Costos de Proyectos y Trabajos</value>
+  </data>
+  <data name="PM_Costs" xml:space="preserve">
+    <value>Costos</value>
+  </data>
+  <data name="PM_Material_Allocation" xml:space="preserve">
+    <value>Asignación de Materiales</value>
+  </data>
+  <data name="PM_Material_Return" xml:space="preserve">
+    <value>Devoluciones de Materiales</value>
+  </data>
+  <data name="PM_Material_Usage" xml:space="preserve">
+    <value>Uso de Materiales</value>
+  </data>
+  <data name="PM_Transactions" xml:space="preserve">
+    <value>Transacciones de PJC</value>
+  </data>
+  <data name="PM_OpeningBalances" xml:space="preserve">
+    <value>Saldos de Apertura</value>
+  </data>
+  <data name="PM_Transaction_Listing" xml:space="preserve">
+    <value>Listado de Transacciones</value>
+  </data>
+  <data name="PM_Transaction_Reports" xml:space="preserve">
+    <value>PJC - Reportes de Transacciones</value>
+  </data>
+  <data name="PM_Transaction_Posting" xml:space="preserve">
+    <value>Asentar Transacciones</value>
+  </data>
+  <data name="SIR_Msg1" xml:space="preserve">
+    <value>Business Intelligence Reporting</value>
+  </data>
+  <data name="SIR_Msg2" xml:space="preserve">
+    <value>Business Intelligence Reporting Solutions</value>
+  </data>
+  <data name="SIR_SDAMsg1" xml:space="preserve">
+    <value>Sage Data &amp; Analytics</value>
+  </data>
+  <data name="SIR_SDAMsg2" xml:space="preserve">
+    <value>Obtenga información empresarial a partir de informes financieros basados en datos para que pueda gestionar su negocio de forma más eficaz.</value>
+  </data>
+  <data name="PM_Setup" xml:space="preserve">
+    <value>PJC - Configuración</value>
+  </data>
+  <data name="PM_CostTypes" xml:space="preserve">
+    <value>Tipos de Costos</value>
   </data>
 </root>

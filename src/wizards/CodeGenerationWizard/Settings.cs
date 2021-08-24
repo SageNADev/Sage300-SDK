@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,9 +18,9 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-using System;
+
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
-using System.Xml;
 using System.Xml.Linq;
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
@@ -36,6 +36,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             Entities = new List<BusinessView>();
             RepositoryType = RepositoryType.Flat;
             XmlEntities = new XDocument();
+            XmlLayout = null;
+            Widgets = new Dictionary<string, List<string>>();
         }
         #endregion
 
@@ -52,8 +54,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public RepositoryType RepositoryType { get; set; }
         /// <summary> Business Views (Entities) </summary>
         public List<BusinessView> Entities { get; set; }
+        /// <summary> Widgets (Widget Type, List(Property Names))</Property>) </summary>
+        public Dictionary<string, List<string>> Widgets { get; set; }
         /// <summary> XDocument of Business Views (Entities) </summary>
         public XDocument XmlEntities { get; set; }
+        /// <summary> XDocument of layout, if one is generated </summary>
+        public XDocument XmlLayout { get; set; }
         /// <summary> Prompt if Exists </summary>
         public bool PromptIfExists { get; set; }
         /// <summary> Module ID </summary>
@@ -90,6 +96,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public string EntitiesContainerName { get; set; }
         /// <summary> Root node in the header-detail tree </summary>
         public XElement HeaderNode { get; set; }
+        /// <summary>
+        /// Finder Informations
+        /// </summary>
+        public IDictionary<string, dynamic> FinderInfo { get; set; }
+        /// <summary>
+        /// Screen key field name
+        /// </summary>
+        public string screenKeyFieldName { get; set; }
+        /// <summary>
+        /// Screen key field index
+        /// </summary>
+        public int screenKeyFieldIndex { get; set; }
         #endregion
     }
 

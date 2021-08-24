@@ -234,7 +234,7 @@
     <comment>PO - Table Column</comment>
   </data>
   <data name="ExpectedShipDate" xml:space="preserve">
-    <value>预期发货日期</value>
+    <value>预期发运日期</value>
     <comment>Order - Field</comment>
   </data>
   <data name="FromMultipleQUOTES" xml:space="preserve">
@@ -414,7 +414,7 @@
     <comment>Modal - Column</comment>
   </data>
   <data name="Rates1" xml:space="preserve">
-    <value>汇率…</value>
+    <value>汇率...</value>
     <comment>Prepayment - Button</comment>
   </data>
   <data name="RateTypeDesc" xml:space="preserve">
@@ -450,7 +450,7 @@
     <comment>Order - Field</comment>
   </data>
   <data name="ShipViaName" xml:space="preserve">
-    <value>发货经由名称</value>
+    <value>发运经由名称</value>
     <comment>Order - Field</comment>
   </data>
   <data name="SystemBUSY" xml:space="preserve">
@@ -638,7 +638,7 @@
     <comment>Field</comment>
   </data>
   <data name="TermsRateOverride" xml:space="preserve">
-    <value>条件汇率撤换</value>
+    <value>条款汇率撤换</value>
     <comment>Field</comment>
   </data>
   <data name="TotalTermsAmountDue" xml:space="preserve">
@@ -690,11 +690,11 @@
     <comment>Field</comment>
   </data>
   <data name="BillToContactFax" xml:space="preserve">
-    <value>汇款至联系人传真</value>
+    <value>帐单至联系人传真</value>
     <comment>Field</comment>
   </data>
   <data name="BillToContactPhone" xml:space="preserve">
-    <value>汇款至联系人电话</value>
+    <value>帐单至联系人电话</value>
     <comment>Field</comment>
   </data>
   <data name="BillToEmail" xml:space="preserve">
@@ -1330,7 +1330,7 @@
     <comment>Field</comment>
   </data>
   <data name="RecalcMultiPaymentDates" xml:space="preserve">
-    <value>重新计算多个付款日期</value>
+    <value>重新计算多次付款日期</value>
     <comment>Field</comment>
   </data>
   <data name="RecalculateTax" xml:space="preserve">
@@ -1502,7 +1502,7 @@
     <comment>Field</comment>
   </data>
   <data name="ShipmentTrackingNumber" xml:space="preserve">
-    <value>发货追踪编号</value>
+    <value>发运追踪编号</value>
     <comment>Field</comment>
   </data>
   <data name="ShipmentUniquifier" xml:space="preserve">
@@ -1510,7 +1510,7 @@
     <comment>Import/Export</comment>
   </data>
   <data name="ShippingLabelsPrinted" xml:space="preserve">
-    <value>发货标签已打印</value>
+    <value>发运标签已打印</value>
     <comment>Field</comment>
   </data>
   <data name="ShipToContactEmail" xml:space="preserve">
@@ -1666,7 +1666,7 @@
     <comment>Field</comment>
   </data>
   <data name="TermsPaymentsAsOfDate" xml:space="preserve">
-    <value>日期条件付款</value>
+    <value>条款付款至日期</value>
     <comment>Field</comment>
   </data>
   <data name="TotalAmtItems" xml:space="preserve">
@@ -1706,51 +1706,51 @@
     <comment>Import/Export</comment>
   </data>
   <data name="TrExcludedTaxAmount1" xml:space="preserve">
-    <value>税务报告已排除税额1</value>
+    <value>税务报告未含税金额1</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TrExcludedTaxAmount2" xml:space="preserve">
-    <value>税务报告已排除税额2</value>
+    <value>税务报告未含税金额2</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRExcludedTaxAmount3" xml:space="preserve">
-    <value>税务报告已排除税额3</value>
+    <value>税务报告未含税金额3</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRExcludedTaxAmount4" xml:space="preserve">
-    <value>税务报告已排除税额4</value>
+    <value>税务报告未含税金额4</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRExcludedTaxAmount5" xml:space="preserve">
-    <value>税务报告已排除税额5</value>
+    <value>税务报告未含税金额5</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRExcludedTaxTotal" xml:space="preserve">
-    <value>税务报告已排除税务合计</value>
+    <value>税务报告未含税合计</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxAmount1" xml:space="preserve">
-    <value>税务报告已包括税额1</value>
+    <value>税务报告已含税金额1</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxAmount2" xml:space="preserve">
-    <value>税务报告已包括税额2</value>
+    <value>税务报告已含税金额2</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxAmount3" xml:space="preserve">
-    <value>税务报告已包括税额3</value>
+    <value>税务报告已含税金额3</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxAmount4" xml:space="preserve">
-    <value>税务报告已包括税额4</value>
+    <value>税务报告已含税金额4</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxAmount5" xml:space="preserve">
-    <value>税务报告已包括税额5</value>
+    <value>税务报告已含税金额5</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRIncludedTaxTotal" xml:space="preserve">
-    <value>税务报告已包括税务合计</value>
+    <value>税务报告已含税合计</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRInvoiceCurrencyDescription" xml:space="preserve">
@@ -1858,23 +1858,23 @@
     <comment>Import/Export</comment>
   </data>
   <data name="TRTaxAmount1" xml:space="preserve">
-    <value>税务报告税额 1</value>
+    <value>税务报告税额1</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRTaxAmount2" xml:space="preserve">
-    <value>税务报告税额 2</value>
+    <value>税务报告税额2</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRTaxAmount3" xml:space="preserve">
-    <value>税务报告税额 3</value>
+    <value>税务报告税额3</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRTaxAmount4" xml:space="preserve">
-    <value>税务报告税额 4</value>
+    <value>税务报告税额4</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRTaxAmount5" xml:space="preserve">
-    <value>税务报告税额 5</value>
+    <value>税务报告税额5</value>
     <comment>Import/Export</comment>
   </data>
   <data name="TRTaxTotal" xml:space="preserve">
@@ -2206,7 +2206,7 @@
     <comment>Error</comment>
   </data>
   <data name="TaxGroupChanged" xml:space="preserve">
-    <value>您已经为这一凭证更改了税组。往下之前，核实税务信息。</value>
+    <value>您已经为此凭证更改了税组。往下之前，核实税务信息。</value>
     <comment>Message</comment>
   </data>
   <data name="TaxReportCurrencymismatch" xml:space="preserve">
@@ -2362,11 +2362,11 @@
     <comment>Field</comment>
   </data>
   <data name="CloseLT" xml:space="preserve">
-    <value>关闭LT</value>
+    <value>关闭批别</value>
     <comment>Field</comment>
   </data>
   <data name="CloseSN" xml:space="preserve">
-    <value>关闭SN</value>
+    <value>关闭系列编号</value>
     <comment>Field</comment>
   </data>
   <data name="COGSWIPAccount" xml:space="preserve">
@@ -3002,5 +3002,21 @@
   </data>
   <data name="btnOneClickPreAuth" xml:space="preserve">
     <value>快速预授权</value>
+  </data>
+  <data name="SetLocation" xml:space="preserve">
+    <value>设置地点</value>
+    <comment>button</comment>
+  </data>
+  <data name="SetShipDate" xml:space="preserve">
+    <value>设置发运日期</value>
+    <comment>button</comment>
+  </data>
+  <data name="SetShipDateWarning" xml:space="preserve">
+    <value>是否将所有明细的预期发运日期设置为与订单的发运日期相同？</value>
+    <comment>confirmation message</comment>
+  </data>
+  <data name="SetLocationWarning" xml:space="preserve">
+    <value>是否将所有明细的地点设置为与订单的地点相同？  如果该地点不允许为明细指定的货品，明细的地点不会更改。</value>
+    <comment>confirmation message</comment>
   </data>
 </root>

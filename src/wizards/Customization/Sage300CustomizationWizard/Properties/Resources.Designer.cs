@@ -224,7 +224,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 6.8A+.
+        ///   Looks up a localized string similar to 6.9A+.
         /// </summary>
         internal static string CompatibilityDefault {
             get {

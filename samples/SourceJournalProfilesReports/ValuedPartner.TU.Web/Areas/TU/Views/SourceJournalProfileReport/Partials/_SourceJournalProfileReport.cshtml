@@ -47,15 +47,21 @@
     </header>
     
     <div class="form-group">
-        <div class="go-group">
-            @Html.SageLabel("lblFromProfile", SourceJournalProfileReportResx.FromProfile)
-            @Html.KoSageTextBoxFor(model => model.Data.Frjrnl, new { @sagevalue = "Data.Frjrnl" }, new { @maxlength = 60, @id = "Data_Frjrnl", @class = "txt large " })           
-            @Html.KoSageButton("btnFromSrcJournalFinder", null, new { @class = "icon btn-search", @id = "btnFromSrcJournalFinder", @tabindex = "-1" })
+        <div class="search-group">
+            @Html.SgFinderFor(m => m.Data.Frjrnl,
+                  new { @sagevalue = "Data.Frjrnl" },
+                  new { @maxlength = 60, @id = "Data_Frjrnl", @class = "txt" }, size: "large",
+                  findButtonId: "btnFromSrcJournalFinder",
+                  labelText: SourceJournalProfileReportResx.FromProfile,
+                  labelHtmlAttrs: new { @id = "lblFromProfile" })
         </div>
-        <div class="go-group">
-            @Html.SageLabel("lblToProfile", SourceJournalProfileReportResx.ToProfile)
-            @Html.KoSageTextBoxFor(model => model.Data.Tojrnl, new { @sagevalue = "Data.Tojrnl" }, new { @maxlength = 60, @id = "Data_Tojrnl", @class = "txt large " })            
-            @Html.KoSageButton("btnToSrcJournalFinder", null, new { @class = "icon btn-search", @id = "btnToSrcJournalFinder", @tabindex = "-1" })
+        <div class="search-group">
+            @Html.SgFinderFor(m => m.Data.Tojrnl,
+                  new { @sagevalue = "Data.Tojrnl" },
+                  new { @maxlength = 60, @id = "Data_Tojrnl", @class = "txt" }, size: "large",
+                  findButtonId: "btnToSrcJournalFinder",
+                  labelText: SourceJournalProfileReportResx.ToProfile,
+                  labelHtmlAttrs: new { @id = "lblToProfile" })
         </div>
     </div>
     <section class="footer-group-1">

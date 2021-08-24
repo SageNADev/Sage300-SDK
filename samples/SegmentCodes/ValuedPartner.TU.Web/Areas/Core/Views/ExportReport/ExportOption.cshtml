@@ -39,11 +39,11 @@
                 <div class="ctrl-group">
                     <div>
                         <input type="radio" id="report_rdoAllPages" value="1" name="report_pageSelect" checked />
-                        <label for="rdoAllPages">@CommonResx.All</label>
+                        <label for="report_rdoAllPages">@CommonResx.All</label>
                     </div>
                     <div>
                         <input type="radio" id="report_rdoSelectPages" value="3" name="report_pageSelect" />
-                        <label for="rdoSelectPages">@CommonResx.SelectPages</label>
+                        <label for="report_rdoSelectPages">@CommonResx.SelectPages</label>
                         <div class="input-group ml20">
                             <span class="inline">@CommonResx.From</span>
                             <input type="text" value="" class="xsmall numeric" id="report_txtPageFrom">
@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <section class="footer-group-1">
+    <section class="footer-group-1 mb0">
         <input class="btn btn-primary" name="report_btnExport" type="button" value="@CommonResx.Export" id="report_btnExport">
     </section>
 </div> <!-- End of Export Popup -->
@@ -87,7 +87,11 @@
                 a.click();
                 a.remove();
                 window.URL.revokeObjectURL(url);
-                setTimeout(function () { window.close(); }, 5000);
+                const channel = new BroadcastChannel("ReportExportChannel");
+                setTimeout(function () {
+                    window.close();
+                    channel.postMessage("OK");
+                }, 5000);
             },
 
             error: function(jqXhr, textStatus, errorThrown) {
@@ -144,7 +148,7 @@
                         !($.isNumeric(lastPage) && Math.floor(lastPage) == lastPage) ||
                         firstPage <= 0 ||
                         lastPage <= 0 ||
-                        firstPage > lastPage) {
+                        firstPage > lastPage || firstPage > 2147483647 || lastPage > 2147483647) {
                         return;
                     }
                 }
@@ -160,7 +164,7 @@
                 modal: true,
                 resizable: false,
                 width: "400px",
-                height: "360px"
+                height: "370px"
             }).data("kendoWindow");
 
             win.center();

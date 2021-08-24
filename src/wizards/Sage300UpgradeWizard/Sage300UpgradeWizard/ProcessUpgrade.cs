@@ -64,7 +64,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		{
             // Developer Note: This number is one less than the number of steps in the main
             //                 switch statement below.
-            const int WORKINGSTEPS = 2;
+            const int WORKINGSTEPS = 6;
 
             LogSpacerLine('-');
             Log(Resources.BeginUpgradeProcess);
@@ -106,19 +106,23 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     case 2: if (Constants.PerRelease.SyncWebFiles) { SyncWebFiles(title); } break;
 
                     // Release specific Steps
-                    case 3: if (Constants.PerRelease.ReportUpgrade_For_2021_2) { ReportUpgrade_For_2021_2(title); } break;
+                    //case 3: if (Constants.PerRelease.ReportUpgrade_For_2021_2) { ReportUpgrade_For_2021_2(title); } break;
 
-                    //
-                    // Developer Note: The following are optional steps from previous 
-                    //                 incarnations of the Upgrade Wizard
-                    //                 They have been left in place for future reference.
-                    //
-                    //case 6: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
-                    //case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
-                    //case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
-                    //case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
-                    //case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
-                    //case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
+                    case 3: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
+                    case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
+                    case 5: if (Constants.PerRelease.NamespaceAndWebProjectUpdates) { NamespaceAndWebProjectUpdates(title); } break;
+                    case 6: if (Constants.PerRelease.FinderAlterations) { FinderAlterations(title); } break;
+                    case 7: if (Constants.PerRelease.JavascriptMinificationUpdates) { JavascriptMinificationUpdates(title); } break;
+
+                        //
+                        // Developer Note: The following are optional steps from previous 
+                        //                 incarnations of the Upgrade Wizard
+                        //                 They have been left in place for future reference.
+                        //
+
+                        //case 5: if (Constants.PerRelease.UpdateMicrosoftDotNetFramework) { UpdateTargetedDotNetFrameworkVersion(title); } break;
+                        //case 6: if (Constants.PerRelease.UpdateUnifyDisabled) { UpdateUnifyDisabled(title); } break;
+                        //case 7: if (Constants.PerRelease.AddBinIncludeFile) { AddBinIncludeFile(title); } break;
 
 #if ENABLE_TK_244885
                     case X: ConsolidateEnumerations(title); break;
@@ -304,6 +308,177 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         }
 
         /// <summary>
+        /// Finder Alterations (2022.0)
+        /// </summary>
+        /// <param name="title">The title of this step</param>
+        private void FinderAlterations(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.UpdatesToFinderAlterationsAreAManualStep;
+            Log(msg);
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Javascript Minification Updates (2022.0)
+        /// </summary>
+        /// <param name="title">The title of this step</param>
+        private void JavascriptMinificationUpdates(string title)
+        {
+            LogEventStart(title);
+
+            // Nothing to do. This is a manual partner step :)
+            var msg = Resources.JavascriptMinificationUpdatesAreAManualStep;
+            Log(msg);
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Namespace and Web Project Updates (2022.0)
+        /// </summary>
+        /// <param name="title">The title of this step</param>
+        private void NamespaceAndWebProjectUpdates(string title)
+        {
+            LogEventStart(title);
+
+            //// Nothing to do. This is a manual partner step :)
+            //var msg = Resources.FinalAlterationsAreAManualStep;
+            //Log(msg);
+
+            //
+            // Step 1 : Open the *WebBootstrapper.cs file and extract the namespace 
+            //
+            var theNamespace = String.Empty;
+            var webBootstrapperFiles = System.IO.Directory.GetFiles(_settings.DestinationWebFolder, Constants.Common.WebBootstrapper);
+            if (webBootstrapperFiles.Length == 1)
+            {
+                using (StreamReader sr = File.OpenText(webBootstrapperFiles[0]))
+                {
+                    var line = string.Empty;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        line = line.Trim();
+                        if (line.StartsWith("namespace "))
+                        {
+                            // Found the namespace line. 
+                            // Let's get the actual namespace value
+                            var parts = line.Split(new string[] { " " }, StringSplitOptions.None);
+                            theNamespace = parts[1];
+                            break;
+                        }
+                    }
+                }
+
+                // Log the namespace (or lackthereof)
+                if (theNamespace.Length > 0)
+                {
+                    Log($"{Resources.Namespace} = {theNamespace}");
+                }
+                else
+                {
+                    Log($"{Resources.UnableToDetermineNamespace}");
+                }
+            }
+
+            if (theNamespace.Length > 0)
+            {
+                //
+                // Step 2 : Replace the placeholder text $safeprojectname$ in the following files
+                //
+                //          Login.cs, Login.aspx, Login.aspx.designer.cs
+                //          Global.asax, Global.asax.cs
+                //
+                //          with the namespace name from Step 1
+                //
+                List<string> fileList = new List<string>
+                {
+                    "Login.aspx",
+                    "Login.aspx.cs",
+                    "Login.aspx.designer.cs",
+                    "Global.asax",
+                    "Global.asax.cs"
+                };
+
+                foreach (var name in fileList)
+                {
+                    var filePath = Path.Combine(_settings.DestinationWebFolder, name);
+                    FileUtilities.ReplaceTextInFile(filePath, Constants.Common.SafeProjectNamePlaceholder, theNamespace);
+
+                    // Log the result of the namespace replacement
+                    var msg = String.Format(Resources.Template_SuccessfullyUpdatedNamespaceInFile, filePath);
+                    Log(msg);
+                }
+
+                //
+                // Step 3 : Add Login.cs, Login.aspx and Login.aspx.designer.cs to the Web project
+                //
+                var solution = _settings.Solution;
+                var projects = solution.Projects;
+                var webProjectName = string.Empty;
+                foreach (Project project in projects)
+                {
+                    var projectName = project.FullName;
+                    if (IsWebProject(projectName))
+                    {
+                        webProjectName = projectName;
+
+                        try
+                        {
+                            var web = _settings.DestinationWebFolder;
+
+                            List<string> files = new List<string>
+                            {
+                                "Login.aspx",
+                                "Login.aspx.cs",
+                                "Login.aspx.designer.cs",
+                            };
+
+                            foreach (var file in files)
+                            {
+                                project.ProjectItems.AddFromFile(Path.Combine(web, file));
+                                Log(String.Format(Resources.Template_SuccessfullyAddedFileToWebProject, file, webProjectName));
+                            }
+
+                            //
+                            // Update the .csproj.user file
+                            // Set the start page to Login.aspx
+                            //
+                            var startFile = "Login.aspx";
+                            project.Properties.Item("WebApplication.StartPageUrl").Value = startFile;
+                            project.Properties.Item("WebApplication.DebugStartAction").Value = 1;
+                            Log(String.Format(Resources.Template_SetWebProjectStartFile, startFile));
+                        }
+                        catch (Exception e)
+                        {
+                            Log(e.Message);
+                        }
+
+                        // No need to iterate the rest of the projects
+                        // We've found the Web project already.
+                        break;
+                    }
+                }
+
+                // Now, set the start project for the solution
+                var filenameWithoutExtension = Path.GetFileNameWithoutExtension(webProjectName);
+                solution.Properties.Item("StartupProject").Value = filenameWithoutExtension;
+                Log(String.Format(Resources.Template_SetSolutionStartProject, filenameWithoutExtension));
+            }
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
         /// Add a reference to the new ExportReport.exe located in the Local Sage 300 installation
         /// </summary>
         /// <param name="title">The title of this step</param>
@@ -476,6 +651,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
         /// <summary>
         /// Remove instances of previous jQuery libraries from project folders and any references in the .csproj files
+        /// Developer Note: 
+        ///   Updated Jquery files will be included in web project automatically via wildcard mechanism as follows:
+        ////       <Content Include="Scripts\**" />
         /// </summary>
         /// <param name="title">Title of step being processed </param>
         private void RemovePreviousJqueryLibraries(string title)
@@ -485,21 +663,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
             var webScriptsFolder = Path.Combine(_settings.DestinationWebFolder, Constants.Common.ScriptsFolderName);
 
+            // 
+            // Step 1 - Remove old versions of jQuery libraries
+            //
             var filesToDelete = new List<string>
             {
                 // jQuery Core
-                "jquery-1.11.3.js",
-                "jquery-1.11.3.min.js",
-                "jquery-1.11.3.intellisense.js",
-                "jquery-1.11.3.min.map",
-
-                // jQuery UI
-                "jquery-ui-1.11.4.js",
-                "jquery-ui-1.11.4.min.js",
+                "jquery-3.4.1.js",
+                "jquery-3.4.1.min.js",
+                "jquery-3.4.1.min.map",
 
                 // jQuery Migrate
-                "jquery-migrate-1.2.1.js",
-                "jquery-migrate-1.2.1.min.js",
+                "jquery-migrate-3.1.0.js",
+                "jquery-migrate-3.1.0.min.js",
             };
 
             foreach (var filename in filesToDelete)
@@ -507,6 +683,28 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 var filePath = Path.Combine(webScriptsFolder, filename);
                 FileUtilities.RemoveExistingFile(filePath);
                 Log($"Removed {filePath}");
+            }
+
+            //
+            // Step 2 - Update some jQuery references to the latest version
+            //
+            List<string> fileList = new List<string>
+            {
+                "CustomReportViewer.aspx",
+                "ReportViewer.aspx"
+            };
+
+            var previousVersion = "3.4.1";
+            var newVersion = "3.6.0";
+
+            foreach (var name in fileList)
+            {
+                var filePath = Path.Combine(_settings.DestinationWebFolder, Constants.Common.WebFormsFolderName, name);
+                FileUtilities.ReplaceTextInFile(filePath, $"jquery-{previousVersion}.js", $"jquery-{newVersion}.js");
+
+                // Log the result of the namespace replacement
+                var msg = String.Format(Resources.Template_SuccessfullyUpdatedJQueryVersionInFile, previousVersion, newVersion, filePath);
+                Log(msg);
             }
 
             // Log end of step

@@ -219,4 +219,7 @@
   <data name="Template_DeleteConfirmMessage" xml:space="preserve">
     <value>¿Seguro de que desea eliminar {0} {1}?</value>
   </data>
+  <data name="ReserveLanPakLicense" xml:space="preserve">
+    <value>Reservar una licencia LanPak</value>
+  </data>
 </root>

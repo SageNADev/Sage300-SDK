@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2460C7E4-FCB5-4AEA-8AE6-021610FF98A3}</ProjectGuid>
+    <ProjectGuid>{5750AC42-09F9-455E-BCDF-3FED188E9277}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sage.CA.SBS.ERP.Sage300.TS.Resources</RootNamespace>

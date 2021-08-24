@@ -52,6 +52,34 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblStepDescription = new MetroFramework.Controls.MetroLabel();
             this.lblStepTitle = new MetroFramework.Controls.MetroLabel();
             this.splitSteps = new System.Windows.Forms.SplitContainer();
+            this.pnlUIGeneration = new System.Windows.Forms.Panel();
+            this.splitDesigner = new System.Windows.Forms.SplitContainer();
+            this.treeUIEntities = new System.Windows.Forms.TreeView();
+            this.grpContainers = new System.Windows.Forms.GroupBox();
+            this.tabUI = new System.Windows.Forms.TabControl();
+            this.tabPageInfo = new System.Windows.Forms.TabPage();
+            this.txtPropWidget = new System.Windows.Forms.TextBox();
+            this.lblPropType = new System.Windows.Forms.Label();
+            this.txtPropText = new System.Windows.Forms.TextBox();
+            this.lblPropText = new System.Windows.Forms.Label();
+            this.tabPageFinder = new System.Windows.Forms.TabPage();
+            this.pnlFinder = new System.Windows.Forms.Panel();
+            this.btnFinderPropFile = new System.Windows.Forms.Button();
+            this.txtFinderPropFile = new System.Windows.Forms.TextBox();
+            this.lblFinderPropFile = new System.Windows.Forms.Label();
+            this.lblFinderDisplay = new System.Windows.Forms.Label();
+            this.lblFinderProp = new System.Windows.Forms.Label();
+            this.cboFinderProp = new System.Windows.Forms.ComboBox();
+            this.cboFinderDisplay = new System.Windows.Forms.ComboBox();
+            this.tbrProperties = new System.Windows.Forms.ToolStrip();
+            this.btnTab = new System.Windows.Forms.ToolStripButton();
+            this.btnAddTabPage = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnGrid = new System.Windows.Forms.ToolStripButton();
+            this.btnButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnDeleteControl = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.pnlCodeType = new System.Windows.Forms.Panel();
             this.lblCodeTypeFilesHelp = new MetroFramework.Controls.MetroLabel();
             this.lblUnknownCodeTypeFilesHelp = new MetroFramework.Controls.MetroLabel();
@@ -100,6 +128,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlComposition = new System.Windows.Forms.Panel();
             this.grdEntityCompositions = new System.Windows.Forms.DataGridView();
             this.pnlGenerateCode = new System.Windows.Forms.Panel();
+            this.txtLayoutToGenerate = new MetroFramework.Controls.MetroTextBox();
             this.txtEntitiesToGenerate = new MetroFramework.Controls.MetroTextBox();
             this.lblGenerateHelp = new MetroFramework.Controls.MetroLabel();
             this.pnlButtons = new System.Windows.Forms.Panel();
@@ -120,6 +149,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.splitSteps.Panel1.SuspendLayout();
             this.splitSteps.Panel2.SuspendLayout();
             this.splitSteps.SuspendLayout();
+            this.pnlUIGeneration.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitDesigner)).BeginInit();
+            this.splitDesigner.Panel2.SuspendLayout();
+            this.splitDesigner.SuspendLayout();
+            this.grpContainers.SuspendLayout();
+            this.tabUI.SuspendLayout();
+            this.tabPageInfo.SuspendLayout();
+            this.tabPageFinder.SuspendLayout();
+            this.pnlFinder.SuspendLayout();
+            this.tbrProperties.SuspendLayout();
             this.pnlCodeType.SuspendLayout();
             this.grpCredentials.SuspendLayout();
             this.pnlGeneratedCode.SuspendLayout();
@@ -441,14 +480,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.splitBase.Panel2.BackColor = System.Drawing.Color.White;
             this.splitBase.Panel2.Controls.Add(this.splitSteps);
             this.splitBase.Size = new System.Drawing.Size(997, 605);
-            this.splitBase.SplitterDistance = 57;
+            this.splitBase.SplitterDistance = 88;
             this.splitBase.TabIndex = 9;
             // 
             // lblUpperBorder
             // 
             this.lblUpperBorder.BackColor = System.Drawing.Color.Gainsboro;
             this.lblUpperBorder.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblUpperBorder.Location = new System.Drawing.Point(0, 56);
+            this.lblUpperBorder.Location = new System.Drawing.Point(0, 87);
             this.lblUpperBorder.Name = "lblUpperBorder";
             this.lblUpperBorder.Size = new System.Drawing.Size(997, 1);
             this.lblUpperBorder.TabIndex = 53;
@@ -502,6 +541,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // splitSteps.Panel1
             // 
+            this.splitSteps.Panel1.Controls.Add(this.pnlUIGeneration);
             this.splitSteps.Panel1.Controls.Add(this.pnlCodeType);
             this.splitSteps.Panel1.Controls.Add(this.pnlGeneratedCode);
             this.splitSteps.Panel1.Controls.Add(this.pnlEntities);
@@ -511,9 +551,293 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // splitSteps.Panel2
             // 
             this.splitSteps.Panel2.Controls.Add(this.pnlButtons);
-            this.splitSteps.Size = new System.Drawing.Size(997, 544);
+            this.splitSteps.Size = new System.Drawing.Size(997, 513);
             this.splitSteps.SplitterDistance = 430;
             this.splitSteps.TabIndex = 52;
+            // 
+            // pnlUIGeneration
+            // 
+            this.pnlUIGeneration.Controls.Add(this.splitDesigner);
+            this.pnlUIGeneration.Location = new System.Drawing.Point(17, 49);
+            this.pnlUIGeneration.Name = "pnlUIGeneration";
+            this.pnlUIGeneration.Size = new System.Drawing.Size(797, 359);
+            this.pnlUIGeneration.TabIndex = 52;
+            // 
+            // splitDesigner
+            // 
+            this.splitDesigner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitDesigner.Location = new System.Drawing.Point(0, 0);
+            this.splitDesigner.Name = "splitDesigner";
+            // 
+            // splitDesigner.Panel1
+            // 
+            this.splitDesigner.Panel1.AllowDrop = true;
+            this.splitDesigner.Panel1.BackColor = System.Drawing.Color.White;
+            this.splitDesigner.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            // 
+            // splitDesigner.Panel2
+            // 
+            this.splitDesigner.Panel2.Controls.Add(this.treeUIEntities);
+            this.splitDesigner.Panel2.Controls.Add(this.grpContainers);
+            this.splitDesigner.Size = new System.Drawing.Size(797, 359);
+            this.splitDesigner.SplitterDistance = 558;
+            this.splitDesigner.TabIndex = 2;
+            // 
+            // treeUIEntities
+            // 
+            this.treeUIEntities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeUIEntities.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeUIEntities.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeUIEntities.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.treeUIEntities.Location = new System.Drawing.Point(0, 181);
+            this.treeUIEntities.Name = "treeUIEntities";
+            this.treeUIEntities.Size = new System.Drawing.Size(235, 178);
+            this.treeUIEntities.TabIndex = 4;
+            this.treeUIEntities.TabStop = false;
+            // 
+            // grpContainers
+            // 
+            this.grpContainers.BackColor = System.Drawing.Color.White;
+            this.grpContainers.Controls.Add(this.tabUI);
+            this.grpContainers.Controls.Add(this.tbrProperties);
+            this.grpContainers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grpContainers.Location = new System.Drawing.Point(0, 0);
+            this.grpContainers.Name = "grpContainers";
+            this.grpContainers.Size = new System.Drawing.Size(235, 181);
+            this.grpContainers.TabIndex = 3;
+            this.grpContainers.TabStop = false;
+            this.grpContainers.Text = "Toolbox";
+            // 
+            // tabUI
+            // 
+            this.tabUI.Controls.Add(this.tabPageInfo);
+            this.tabUI.Controls.Add(this.tabPageFinder);
+            this.tabUI.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabUI.Location = new System.Drawing.Point(3, 60);
+            this.tabUI.Name = "tabUI";
+            this.tabUI.SelectedIndex = 0;
+            this.tabUI.Size = new System.Drawing.Size(229, 118);
+            this.tabUI.TabIndex = 20;
+            // 
+            // tabPageInfo
+            // 
+            this.tabPageInfo.Controls.Add(this.txtPropWidget);
+            this.tabPageInfo.Controls.Add(this.lblPropType);
+            this.tabPageInfo.Controls.Add(this.txtPropText);
+            this.tabPageInfo.Controls.Add(this.lblPropText);
+            this.tabPageInfo.Location = new System.Drawing.Point(4, 22);
+            this.tabPageInfo.Name = "tabPageInfo";
+            this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageInfo.Size = new System.Drawing.Size(221, 92);
+            this.tabPageInfo.TabIndex = 0;
+            this.tabPageInfo.Text = "Info";
+            this.tabPageInfo.UseVisualStyleBackColor = true;
+            // 
+            // txtPropWidget
+            // 
+            this.txtPropWidget.Location = new System.Drawing.Point(41, 16);
+            this.txtPropWidget.Name = "txtPropWidget";
+            this.txtPropWidget.Size = new System.Drawing.Size(174, 22);
+            this.txtPropWidget.TabIndex = 23;
+            // 
+            // lblPropType
+            // 
+            this.lblPropType.AutoSize = true;
+            this.lblPropType.Location = new System.Drawing.Point(5, 19);
+            this.lblPropType.Name = "lblPropType";
+            this.lblPropType.Size = new System.Drawing.Size(33, 13);
+            this.lblPropType.TabIndex = 22;
+            this.lblPropType.Text = "Type:";
+            // 
+            // txtPropText
+            // 
+            this.txtPropText.Location = new System.Drawing.Point(41, 44);
+            this.txtPropText.Name = "txtPropText";
+            this.txtPropText.Size = new System.Drawing.Size(174, 22);
+            this.txtPropText.TabIndex = 17;
+            this.txtPropText.TextChanged += new System.EventHandler(this.txtPropText_TextChanged);
+            // 
+            // lblPropText
+            // 
+            this.lblPropText.AutoSize = true;
+            this.lblPropText.Location = new System.Drawing.Point(5, 47);
+            this.lblPropText.Name = "lblPropText";
+            this.lblPropText.Size = new System.Drawing.Size(30, 13);
+            this.lblPropText.TabIndex = 21;
+            this.lblPropText.Text = "Text:";
+            // 
+            // tabPageFinder
+            // 
+            this.tabPageFinder.Controls.Add(this.pnlFinder);
+            this.tabPageFinder.Location = new System.Drawing.Point(4, 22);
+            this.tabPageFinder.Name = "tabPageFinder";
+            this.tabPageFinder.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageFinder.Size = new System.Drawing.Size(221, 92);
+            this.tabPageFinder.TabIndex = 1;
+            this.tabPageFinder.Text = "Finder";
+            this.tabPageFinder.UseVisualStyleBackColor = true;
+            // 
+            // pnlFinder
+            // 
+            this.pnlFinder.Controls.Add(this.btnFinderPropFile);
+            this.pnlFinder.Controls.Add(this.txtFinderPropFile);
+            this.pnlFinder.Controls.Add(this.lblFinderPropFile);
+            this.pnlFinder.Controls.Add(this.lblFinderDisplay);
+            this.pnlFinder.Controls.Add(this.lblFinderProp);
+            this.pnlFinder.Controls.Add(this.cboFinderProp);
+            this.pnlFinder.Controls.Add(this.cboFinderDisplay);
+            this.pnlFinder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFinder.Location = new System.Drawing.Point(3, 3);
+            this.pnlFinder.Name = "pnlFinder";
+            this.pnlFinder.Size = new System.Drawing.Size(215, 86);
+            this.pnlFinder.TabIndex = 0;
+            // 
+            // btnFinderPropFile
+            // 
+            this.btnFinderPropFile.Location = new System.Drawing.Point(218, 6);
+            this.btnFinderPropFile.Name = "btnFinderPropFile";
+            this.btnFinderPropFile.Size = new System.Drawing.Size(29, 22);
+            this.btnFinderPropFile.TabIndex = 24;
+            this.btnFinderPropFile.Text = "...";
+            this.btnFinderPropFile.UseVisualStyleBackColor = true;
+            this.btnFinderPropFile.Click += new System.EventHandler(this.btnFinderPropFile_Click);
+            // 
+            // txtFinderPropFile
+            // 
+            this.txtFinderPropFile.Location = new System.Drawing.Point(56, 6);
+            this.txtFinderPropFile.Name = "txtFinderPropFile";
+            this.txtFinderPropFile.Size = new System.Drawing.Size(156, 22);
+            this.txtFinderPropFile.TabIndex = 23;
+            // 
+            // lblFinderPropFile
+            // 
+            this.lblFinderPropFile.AutoSize = true;
+            this.lblFinderPropFile.Location = new System.Drawing.Point(22, 9);
+            this.lblFinderPropFile.Name = "lblFinderPropFile";
+            this.lblFinderPropFile.Size = new System.Drawing.Size(28, 13);
+            this.lblFinderPropFile.TabIndex = 22;
+            this.lblFinderPropFile.Text = "File:";
+            // 
+            // lblFinderDisplay
+            // 
+            this.lblFinderDisplay.AutoSize = true;
+            this.lblFinderDisplay.Location = new System.Drawing.Point(5, 64);
+            this.lblFinderDisplay.Name = "lblFinderDisplay";
+            this.lblFinderDisplay.Size = new System.Drawing.Size(47, 13);
+            this.lblFinderDisplay.TabIndex = 27;
+            this.lblFinderDisplay.Text = "Display:";
+            // 
+            // lblFinderProp
+            // 
+            this.lblFinderProp.AutoSize = true;
+            this.lblFinderProp.Location = new System.Drawing.Point(7, 37);
+            this.lblFinderProp.Name = "lblFinderProp";
+            this.lblFinderProp.Size = new System.Drawing.Size(45, 13);
+            this.lblFinderProp.TabIndex = 25;
+            this.lblFinderProp.Text = "Config:";
+            // 
+            // cboFinderProp
+            // 
+            this.cboFinderProp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFinderProp.FormattingEnabled = true;
+            this.cboFinderProp.Location = new System.Drawing.Point(56, 34);
+            this.cboFinderProp.Name = "cboFinderProp";
+            this.cboFinderProp.Size = new System.Drawing.Size(189, 21);
+            this.cboFinderProp.TabIndex = 26;
+            this.cboFinderProp.SelectedIndexChanged += new System.EventHandler(this.cboFinderProp_SelectedIndexChanged);
+            // 
+            // cboFinderDisplay
+            // 
+            this.cboFinderDisplay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFinderDisplay.FormattingEnabled = true;
+            this.cboFinderDisplay.Location = new System.Drawing.Point(56, 61);
+            this.cboFinderDisplay.Name = "cboFinderDisplay";
+            this.cboFinderDisplay.Size = new System.Drawing.Size(186, 21);
+            this.cboFinderDisplay.TabIndex = 28;
+            this.cboFinderDisplay.SelectionChangeCommitted += new System.EventHandler(this.cboFinderDisplay_SelectionChangeCommitted);
+            // 
+            // tbrProperties
+            // 
+            this.tbrProperties.ImageScalingSize = new System.Drawing.Size(25, 25);
+            this.tbrProperties.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnTab,
+            this.btnAddTabPage,
+            this.toolStripSeparator2,
+            this.btnGrid,
+            this.btnButton,
+            this.toolStripSeparator1,
+            this.btnDeleteControl,
+            this.toolStripSeparator3});
+            this.tbrProperties.Location = new System.Drawing.Point(3, 18);
+            this.tbrProperties.Name = "tbrProperties";
+            this.tbrProperties.Size = new System.Drawing.Size(229, 32);
+            this.tbrProperties.TabIndex = 19;
+            this.tbrProperties.Text = "toolStrip1";
+            // 
+            // btnTab
+            // 
+            this.btnTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnTab.Image = ((System.Drawing.Image)(resources.GetObject("btnTab.Image")));
+            this.btnTab.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnTab.Name = "btnTab";
+            this.btnTab.Size = new System.Drawing.Size(29, 29);
+            this.btnTab.Tag = "Tab";
+            this.btnTab.ToolTipText = "Add Tab Control";
+            // 
+            // btnAddTabPage
+            // 
+            this.btnAddTabPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddTabPage.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTabPage.Image")));
+            this.btnAddTabPage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddTabPage.Name = "btnAddTabPage";
+            this.btnAddTabPage.Size = new System.Drawing.Size(29, 29);
+            this.btnAddTabPage.ToolTipText = "Add Tab Page";
+            this.btnAddTabPage.Click += new System.EventHandler(this.btnAddTabPage_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 32);
+            // 
+            // btnGrid
+            // 
+            this.btnGrid.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGrid.Image = ((System.Drawing.Image)(resources.GetObject("btnGrid.Image")));
+            this.btnGrid.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGrid.Name = "btnGrid";
+            this.btnGrid.Size = new System.Drawing.Size(29, 29);
+            this.btnGrid.Tag = "Grid";
+            this.btnGrid.ToolTipText = "Add Grid Control";
+            // 
+            // btnButton
+            // 
+            this.btnButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnButton.Image = ((System.Drawing.Image)(resources.GetObject("btnButton.Image")));
+            this.btnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnButton.Name = "btnButton";
+            this.btnButton.Size = new System.Drawing.Size(29, 29);
+            this.btnButton.Tag = "Button";
+            this.btnButton.ToolTipText = "Add Button Control";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
+            // 
+            // btnDeleteControl
+            // 
+            this.btnDeleteControl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeleteControl.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteControl.Image")));
+            this.btnDeleteControl.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeleteControl.Name = "btnDeleteControl";
+            this.btnDeleteControl.Size = new System.Drawing.Size(29, 29);
+            this.btnDeleteControl.ToolTipText = "Delete Control";
+            this.btnDeleteControl.Click += new System.EventHandler(this.btnDeleteControl_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 32);
             // 
             // pnlCodeType
             // 
@@ -525,7 +849,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlCodeType.Controls.Add(this.grpCredentials);
             this.pnlCodeType.Controls.Add(this.lblModule);
             this.pnlCodeType.Controls.Add(this.cboModule);
-            this.pnlCodeType.Location = new System.Drawing.Point(832, 29);
+            this.pnlCodeType.Location = new System.Drawing.Point(951, 25);
             this.pnlCodeType.Name = "pnlCodeType";
             this.pnlCodeType.Size = new System.Drawing.Size(719, 55);
             this.pnlCodeType.TabIndex = 44;
@@ -609,7 +933,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // pnlGeneratedCode
             // 
             this.pnlGeneratedCode.Controls.Add(this.grdResourceInfo);
-            this.pnlGeneratedCode.Location = new System.Drawing.Point(829, 316);
+            this.pnlGeneratedCode.Location = new System.Drawing.Point(966, 348);
             this.pnlGeneratedCode.Name = "pnlGeneratedCode";
             this.pnlGeneratedCode.Size = new System.Drawing.Size(497, 50);
             this.pnlGeneratedCode.TabIndex = 51;
@@ -617,9 +941,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // pnlEntities
             // 
             this.pnlEntities.Controls.Add(this.splitEntities);
-            this.pnlEntities.Location = new System.Drawing.Point(828, 115);
+            this.pnlEntities.Location = new System.Drawing.Point(964, 109);
             this.pnlEntities.Name = "pnlEntities";
-            this.pnlEntities.Size = new System.Drawing.Size(397, 73);
+            this.pnlEntities.Size = new System.Drawing.Size(499, 58);
             this.pnlEntities.TabIndex = 45;
             // 
             // splitEntities
@@ -637,8 +961,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // splitEntities.Panel2
             // 
             this.splitEntities.Panel2.Controls.Add(this.tabEntity);
-            this.splitEntities.Size = new System.Drawing.Size(397, 73);
-            this.splitEntities.SplitterDistance = 40;
+            this.splitEntities.Size = new System.Drawing.Size(499, 58);
+            this.splitEntities.SplitterDistance = 29;
             this.splitEntities.TabIndex = 20;
             // 
             // pnlEntityTree
@@ -648,7 +972,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityTree.Location = new System.Drawing.Point(0, 0);
             this.pnlEntityTree.Name = "pnlEntityTree";
-            this.pnlEntityTree.Size = new System.Drawing.Size(397, 40);
+            this.pnlEntityTree.Size = new System.Drawing.Size(499, 29);
             this.pnlEntityTree.TabIndex = 0;
             // 
             // pnlEntityGrid
@@ -657,7 +981,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityGrid.Location = new System.Drawing.Point(0, 26);
             this.pnlEntityGrid.Name = "pnlEntityGrid";
-            this.pnlEntityGrid.Size = new System.Drawing.Size(397, 14);
+            this.pnlEntityGrid.Size = new System.Drawing.Size(499, 3);
             this.pnlEntityGrid.TabIndex = 3;
             // 
             // treeEntities
@@ -667,7 +991,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.treeEntities.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeEntities.Location = new System.Drawing.Point(0, 0);
             this.treeEntities.Name = "treeEntities";
-            this.treeEntities.Size = new System.Drawing.Size(397, 14);
+            this.treeEntities.Size = new System.Drawing.Size(499, 3);
             this.treeEntities.TabIndex = 0;
             this.treeEntities.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeEntities_NodeMouseClick);
             this.treeEntities.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeEntities_NodeMouseDoubleClick);
@@ -678,7 +1002,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntitiesLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEntitiesLabel.Location = new System.Drawing.Point(0, 0);
             this.pnlEntitiesLabel.Name = "pnlEntitiesLabel";
-            this.pnlEntitiesLabel.Size = new System.Drawing.Size(397, 26);
+            this.pnlEntitiesLabel.Size = new System.Drawing.Size(499, 26);
             this.pnlEntitiesLabel.TabIndex = 2;
             // 
             // lblEntities
@@ -688,7 +1012,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblEntities.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblEntities.Location = new System.Drawing.Point(0, 0);
             this.lblEntities.Name = "lblEntities";
-            this.lblEntities.Size = new System.Drawing.Size(397, 26);
+            this.lblEntities.Size = new System.Drawing.Size(499, 26);
             this.lblEntities.TabIndex = 1;
             this.lblEntities.Text = "Right-Click on entities or entity to Add, Edit or Delete";
             // 
@@ -703,7 +1027,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabEntity.Location = new System.Drawing.Point(0, 0);
             this.tabEntity.Name = "tabEntity";
             this.tabEntity.SelectedIndex = 0;
-            this.tabEntity.Size = new System.Drawing.Size(397, 29);
+            this.tabEntity.Size = new System.Drawing.Size(499, 25);
             this.tabEntity.Style = MetroFramework.MetroColorStyle.Green;
             this.tabEntity.TabIndex = 1;
             this.tabEntity.UseSelectable = true;
@@ -731,7 +1055,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(389, 0);
+            this.tabPage1.Size = new System.Drawing.Size(491, 0);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Entity";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -819,10 +1143,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // cboReportKeys
             // 
             this.cboReportKeys.FormattingEnabled = true;
-            this.cboReportKeys.ItemHeight = 24;
+            this.cboReportKeys.ItemHeight = 23;
             this.cboReportKeys.Location = new System.Drawing.Point(83, 77);
             this.cboReportKeys.Name = "cboReportKeys";
-            this.cboReportKeys.Size = new System.Drawing.Size(189, 30);
+            this.cboReportKeys.Size = new System.Drawing.Size(189, 29);
             this.cboReportKeys.Style = MetroFramework.MetroColorStyle.Green;
             this.cboReportKeys.TabIndex = 8;
             this.cboReportKeys.UseSelectable = true;
@@ -992,7 +1316,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(389, 0);
+            this.tabPage2.Size = new System.Drawing.Size(491, 0);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1113,7 +1437,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage3.HorizontalScrollbarSize = 10;
             this.tabPage3.Location = new System.Drawing.Point(4, 38);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(389, 0);
+            this.tabPage3.Size = new System.Drawing.Size(491, 0);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Properties";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1128,7 +1452,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlColumns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlColumns.Location = new System.Drawing.Point(0, 0);
             this.pnlColumns.Name = "pnlColumns";
-            this.pnlColumns.Size = new System.Drawing.Size(389, 0);
+            this.pnlColumns.Size = new System.Drawing.Size(491, 0);
             this.pnlColumns.TabIndex = 19;
             // 
             // grdEntityFields
@@ -1139,7 +1463,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityFields.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityFields.Location = new System.Drawing.Point(0, 27);
             this.grdEntityFields.Name = "grdEntityFields";
-            this.grdEntityFields.Size = new System.Drawing.Size(389, 0);
+            this.grdEntityFields.Size = new System.Drawing.Size(491, 0);
             this.grdEntityFields.TabIndex = 18;
             // 
             // tbrEntity
@@ -1151,7 +1475,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnDeleteRows});
             this.tbrEntity.Location = new System.Drawing.Point(0, 0);
             this.tbrEntity.Name = "tbrEntity";
-            this.tbrEntity.Size = new System.Drawing.Size(389, 27);
+            this.tbrEntity.Size = new System.Drawing.Size(491, 27);
             this.tbrEntity.TabIndex = 17;
             this.tbrEntity.Text = "toolStrip1";
             // 
@@ -1193,7 +1517,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage4.HorizontalScrollbarSize = 10;
             this.tabPage4.Location = new System.Drawing.Point(4, 38);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(389, 0);
+            this.tabPage4.Size = new System.Drawing.Size(491, 0);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Composition";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1207,7 +1531,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlComposition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlComposition.Location = new System.Drawing.Point(0, 0);
             this.pnlComposition.Name = "pnlComposition";
-            this.pnlComposition.Size = new System.Drawing.Size(389, 0);
+            this.pnlComposition.Size = new System.Drawing.Size(491, 0);
             this.pnlComposition.TabIndex = 0;
             // 
             // grdEntityCompositions
@@ -1218,18 +1542,53 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityCompositions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityCompositions.Location = new System.Drawing.Point(0, 0);
             this.grdEntityCompositions.Name = "grdEntityCompositions";
-            this.grdEntityCompositions.Size = new System.Drawing.Size(389, 0);
+            this.grdEntityCompositions.Size = new System.Drawing.Size(491, 0);
             this.grdEntityCompositions.TabIndex = 1;
             this.grdEntityCompositions.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdEntityCompositions_CellFormatting);
             // 
             // pnlGenerateCode
             // 
+            this.pnlGenerateCode.Controls.Add(this.txtLayoutToGenerate);
             this.pnlGenerateCode.Controls.Add(this.txtEntitiesToGenerate);
             this.pnlGenerateCode.Controls.Add(this.lblGenerateHelp);
-            this.pnlGenerateCode.Location = new System.Drawing.Point(829, 233);
+            this.pnlGenerateCode.Location = new System.Drawing.Point(972, 236);
             this.pnlGenerateCode.Name = "pnlGenerateCode";
             this.pnlGenerateCode.Size = new System.Drawing.Size(468, 64);
             this.pnlGenerateCode.TabIndex = 50;
+            // 
+            // txtLayoutToGenerate
+            // 
+            this.txtLayoutToGenerate.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtLayoutToGenerate.CustomButton.Image = null;
+            this.txtLayoutToGenerate.CustomButton.Location = new System.Drawing.Point(304, 2);
+            this.txtLayoutToGenerate.CustomButton.Name = "";
+            this.txtLayoutToGenerate.CustomButton.Size = new System.Drawing.Size(161, 161);
+            this.txtLayoutToGenerate.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtLayoutToGenerate.CustomButton.TabIndex = 1;
+            this.txtLayoutToGenerate.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtLayoutToGenerate.CustomButton.UseSelectable = true;
+            this.txtLayoutToGenerate.CustomButton.Visible = false;
+            this.txtLayoutToGenerate.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtLayoutToGenerate.Lines = new string[0];
+            this.txtLayoutToGenerate.Location = new System.Drawing.Point(0, -102);
+            this.txtLayoutToGenerate.MaxLength = 32767;
+            this.txtLayoutToGenerate.Multiline = true;
+            this.txtLayoutToGenerate.Name = "txtLayoutToGenerate";
+            this.txtLayoutToGenerate.PasswordChar = '\0';
+            this.txtLayoutToGenerate.ReadOnly = true;
+            this.txtLayoutToGenerate.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtLayoutToGenerate.SelectedText = "";
+            this.txtLayoutToGenerate.SelectionLength = 0;
+            this.txtLayoutToGenerate.SelectionStart = 0;
+            this.txtLayoutToGenerate.ShortcutsEnabled = true;
+            this.txtLayoutToGenerate.Size = new System.Drawing.Size(468, 166);
+            this.txtLayoutToGenerate.TabIndex = 3;
+            this.txtLayoutToGenerate.UseSelectable = true;
+            this.txtLayoutToGenerate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtLayoutToGenerate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtEntitiesToGenerate
             // 
@@ -1287,7 +1646,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButtons.Location = new System.Drawing.Point(0, 0);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(997, 110);
+            this.pnlButtons.Size = new System.Drawing.Size(997, 79);
             this.pnlButtons.TabIndex = 2;
             // 
             // btnCancel
@@ -1400,6 +1759,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.splitSteps.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitSteps)).EndInit();
             this.splitSteps.ResumeLayout(false);
+            this.pnlUIGeneration.ResumeLayout(false);
+            this.splitDesigner.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitDesigner)).EndInit();
+            this.splitDesigner.ResumeLayout(false);
+            this.grpContainers.ResumeLayout(false);
+            this.grpContainers.PerformLayout();
+            this.tabUI.ResumeLayout(false);
+            this.tabPageInfo.ResumeLayout(false);
+            this.tabPageInfo.PerformLayout();
+            this.tabPageFinder.ResumeLayout(false);
+            this.pnlFinder.ResumeLayout(false);
+            this.pnlFinder.PerformLayout();
+            this.tbrProperties.ResumeLayout(false);
+            this.tbrProperties.PerformLayout();
             this.pnlCodeType.ResumeLayout(false);
             this.pnlCodeType.PerformLayout();
             this.grpCredentials.ResumeLayout(false);
@@ -1514,6 +1887,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUpperBorder;
         private System.Windows.Forms.Label lblLowerBorder;
+        private System.Windows.Forms.Panel pnlUIGeneration;
+        private MetroFramework.Controls.MetroTextBox txtLayoutToGenerate;
+        private System.Windows.Forms.SplitContainer splitDesigner;
+        private System.Windows.Forms.TreeView treeUIEntities;
+        private System.Windows.Forms.GroupBox grpContainers;
+        private System.Windows.Forms.TextBox txtPropText;
+        private System.Windows.Forms.ToolStrip tbrProperties;
+        private System.Windows.Forms.ToolStripButton btnTab;
+        private System.Windows.Forms.ToolStripButton btnGrid;
+        private System.Windows.Forms.ToolStripButton btnDeleteControl;
+        private System.Windows.Forms.ToolStripButton btnAddTabPage;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Button btnFinderPropFile;
+        private System.Windows.Forms.TextBox txtFinderPropFile;
+        private System.Windows.Forms.Label lblFinderPropFile;
+        private System.Windows.Forms.Label lblPropText;
+        private System.Windows.Forms.ComboBox cboFinderDisplay;
+        private System.Windows.Forms.Label lblFinderDisplay;
+        private System.Windows.Forms.ComboBox cboFinderProp;
+        private System.Windows.Forms.Label lblFinderProp;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton btnButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.TabControl tabUI;
+        private System.Windows.Forms.TabPage tabPageInfo;
+        private System.Windows.Forms.TextBox txtPropWidget;
+        private System.Windows.Forms.Label lblPropType;
+        private System.Windows.Forms.TabPage tabPageFinder;
+        private System.Windows.Forms.Panel pnlFinder;
     }
 }
 

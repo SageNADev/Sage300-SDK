@@ -32,16 +32,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2021.0";
+            public const string FromReleaseNumber = "2021.2";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2021.2";
+            public const string ToReleaseNumber = "2022.0";
 
             /// <summary> From Accpac Number </summary>
             public const string FromAccpacNumber = "6.8.0.0";
 
             /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "6.8.0.0";
+            public const string ToAccpacNumber = "6.9.0.0";
 
             /// <summary> Flag that determines whether or not to synchronize the Kendo files. </summary>
             public const bool SyncKendoFiles = true;
@@ -50,7 +50,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const bool SyncWebFiles = true;
 
             /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
-            public const bool UpdateAccpacDotNetLibrary = false;
+            public const bool UpdateAccpacDotNetLibrary = true;
 
             /// <summary> Flag that determines whether or not to update the .NET framework in solution projects. </summary>
             public const bool UpdateMicrosoftDotNetFramework = false;
@@ -64,24 +64,33 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// </summary>
             public const bool AddBinIncludeFile = false;
 
+            /// <summary> Flag that determines whether or not to execute the 'FinderAlterations' process. </summary>
+            public const bool FinderAlterations = true;
+
+            /// <summary> Flag that determines whether or not to execute the 'NamespaceAndWebProjectUpdates' process. </summary>
+            public const bool NamespaceAndWebProjectUpdates = true;
+
+            /// <summary> Flag that determines whether or not to execute the 'JavascriptMinificationUpdates' process. </summary>
+            public const bool JavascriptMinificationUpdates = true;
+
             /// <summary> 
             /// Release 2021.2
             /// 
             /// Flag that determines whether or not to add a  
             /// new reference to the web project for handling reports
             /// </summary>
-            public const bool ReportUpgrade_For_2021_2 = true;
+            public const bool ReportUpgrade_For_2021_2 = false;
 
             /// <summary> Flag that determines whether or not to remove previous versions of the various JQuery libraries. </summary>
-            public const bool RemovePreviousJqueryLibraries = false;
+            public const bool RemovePreviousJqueryLibraries = true;
 
-            public const string FromJqueryCoreVersion = "1.11.3";
-            public const string FromJqueryUIVersion = "1.11.4";
-            public const string FromJqueryMigrateVersion = "1.2.1";
+            public const string FromJqueryCoreVersion = "3.4.1";
+            public const string FromJqueryUIVersion = "1.12.1";
+            public const string FromJqueryMigrateVersion = "3.1.0";
 
-            public const string ToJqueryCoreVersion = "3.4.1";
+            public const string ToJqueryCoreVersion = "3.6.0";
             public const string ToJqueryUIVersion = "1.12.1";
-            public const string ToJqueryMigrateVersion = "3.1.0";
+            public const string ToJqueryMigrateVersion = "3.3.2";
         }
 
         /// <summary>
@@ -124,6 +133,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// </summary>
             public const string BinIncludeFile = "BinInclude.txt";
 
+            /// <summary>
+            /// The generic name of the Web Bootstrapper file
+            /// </summary>
+            public const string WebBootstrapper = @"*WebBootstrapper.cs";
+
+            /// <summary>
+            /// The placeholder text for the replaceable safe project name
+            /// </summary>
+            public const string SafeProjectNamePlaceholder = @"$safeprojectname$";
+
             /// <summary> 
             /// Name of the nuget project that shows up in the list of projects in the solution
             /// when attempting to upgrade the targeted .NET framework. An exception is
@@ -144,6 +163,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             /// The search pattern for the solutions web project
             /// </summary>
             public const string WebProjectNamePattern = @".web.csproj";
+
+            /// <summary>
+            /// The name of the WebForms folder
+            /// </summary>
+            public const string WebFormsFolderName = @"WebForms";
         }
     }
 }

@@ -194,15 +194,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                                   Constants.PerRelease.ToReleaseNumber));
 #endif
 
-            if (Constants.PerRelease.ReportUpgrade_For_2021_2)
-            {
-                var executableName = "Sage.CA.SBS.ERP.Sage300.ExportReport.exe";
-                var title = Resources.ReleaseSpecificTitle_ReportUpdates_For_2021_2;
-                var description = string.Format(Resources.Template_ReleaseSpecificDesc_ReportUpdates_For_2021_2, executableName);
-                var content = string.Format(Resources.Template_ReleaseSpecificContent_ReportUpdates_For_2021_2, executableName);
-                AddStep(title, description, content);
-            }
-
             if (Constants.PerRelease.RemovePreviousJqueryLibraries)
             {
                 //
@@ -213,7 +204,6 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                         Resources.ReleaseSpecificTitleDescRemovePreviousJqueryLibraries,
                         string.Format(Resources.Template_ReleaseSpecificRemovePreviousJqueryLibraries,
                                         Constants.PerRelease.FromJqueryCoreVersion,
-                                        Constants.PerRelease.FromJqueryUIVersion,
                                         Constants.PerRelease.FromJqueryMigrateVersion));
             }
 
@@ -226,6 +216,27 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 AddStep(Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion,
                         string.Format(Resources.Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion, version),
                         string.Format(Resources.ReleaseSpecificUpdateTargetedDotNetFrameworkVersion, version));
+            }
+
+            if (Constants.PerRelease.NamespaceAndWebProjectUpdates)
+            {
+                AddStep(Resources.ReleaseSpecificTitleNamespaceAndWebProjectUpdates,
+                        Resources.ReleaseSpecificDescNamespaceAndWebProjectUpdates,
+                        Resources.ReleaseSpecificNamespaceAndWebProjectUpdates);
+            }
+
+            if (Constants.PerRelease.FinderAlterations)
+            {
+                AddStep(Resources.ReleaseSpecificTitleFinderAlterations,
+                        Resources.ReleaseSpecificDescFinderAlterations,
+                        Resources.ReleaseSpecificFinderAlterations);
+            }
+
+            if (Constants.PerRelease.JavascriptMinificationUpdates)
+            {
+                AddStep(Resources.ReleaseSpecificTitleJavascriptMinificationUpdates,
+                        Resources.ReleaseSpecificDescJavascriptMinificationUpdates,
+                        Resources.ReleaseSpecificJavascriptMinificationUpdates);
             }
 
             if (Constants.PerRelease.UpdateUnifyDisabled)
@@ -267,6 +278,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 
         /// <summary>
         /// Build Main Content Step
+        /// Developer Note: This method builds the list of steps displayed on the first page
+        ///                 of the Upgrade Wizard
         /// </summary>
         /// <returns>Content for main screen</returns>
         private static string BuildMainContentStep()
@@ -302,6 +315,21 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             if (Constants.PerRelease.UpdateMicrosoftDotNetFramework)
             {
                 content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleUpdateTargetedDotNetFrameworkVersion}");
+            }
+
+            if (Constants.PerRelease.NamespaceAndWebProjectUpdates)
+            {
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleNamespaceAndWebProjectUpdates}");
+            }
+
+            if (Constants.PerRelease.FinderAlterations)
+            {
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleFinderAlterations}");
+            }
+
+            if (Constants.PerRelease.JavascriptMinificationUpdates)
+            {
+                content.AppendLine($"{Resources.Step} {++step}. {Resources.ReleaseSpecificTitleJavascriptMinificationUpdates}");
             }
 
             if (Constants.PerRelease.UpdateUnifyDisabled)

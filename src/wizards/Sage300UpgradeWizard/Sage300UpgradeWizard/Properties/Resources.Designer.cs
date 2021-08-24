@@ -277,6 +277,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The final alterations must be made manually..
+        /// </summary>
+        internal static string FinalAlterationsAreAManualStep {
+            get {
+                return ResourceManager.GetString("FinalAlterationsAreAManualStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finish.
         /// </summary>
         internal static string Finish {
@@ -322,6 +331,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The updates to the Javascript Minification Process must be made manually..
+        /// </summary>
+        internal static string JavascriptMinificationUpdatesAreAManualStep {
+            get {
+                return ResourceManager.GetString("JavascriptMinificationUpdatesAreAManualStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap logo {
@@ -355,6 +373,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ManualBackupMessage {
             get {
                 return ResourceManager.GetString("ManualBackupMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Namespace.
+        /// </summary>
+        internal static string Namespace {
+            get {
+                return ResourceManager.GetString("Namespace", resourceCulture);
             }
         }
         
@@ -576,9 +603,93 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         /// <summary>
         ///   Looks up a localized string similar to This step will need to be done manually..
         /// </summary>
+        internal static string ReleaseSpecificDescFinderAlterations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescFinderAlterations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will need to be done manually..
+        /// </summary>
+        internal static string ReleaseSpecificDescJavascriptMinificationUpdates {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescJavascriptMinificationUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will automatically update the namespace in some files as well as apply updates to the Web project file..
+        /// </summary>
+        internal static string ReleaseSpecificDescNamespaceAndWebProjectUpdates {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescNamespaceAndWebProjectUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will need to be done manually..
+        /// </summary>
         internal static string ReleaseSpecificDescUnifyDisabled {
             get {
                 return ResourceManager.GetString("ReleaseSpecificDescUnifyDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As part of the framework changes required to unify the usage of HTML &apos;disable&apos;
+        ///attribute in Sage HtmlHelper controls.
+        ///
+        ///The upgrade wizard is unable to automatically perform this modification and
+        ///therefore this step will require manual modifications.
+        ///
+        ///Any cshtml file that defines a Sage HtmlHelper control needs to be updated to
+        ///match the standard of the usage of HTML &apos;disabled&apos; attribute.
+        ///
+        ///Please refer to the &quot;Finder Alterations&quot; subsection in the Sage 300
+        ///Upgrade Guide for 2021.2 to 2022.0 in the  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReleaseSpecificFinderAlterations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificFinderAlterations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For the 2022.0 release of Sage 300, the javascript minification process 
+        ///no longer uses a tool/application called Web Grease. It has been replaced 
+        ///by a new application called Terser. Terser is a NodeJS-based component and 
+        ///requires the download and installation of NodeJS.
+        ///
+        ///Please refer to the &quot;Javascript Minification Updates&quot; subsection in the Sage 300
+        ///Upgrade Guide for 2021.2 to 2022.0 in the docs folder of the Web SDK for
+        ///detailed instructions. The samples code may also be used as a guide..
+        /// </summary>
+        internal static string ReleaseSpecificJavascriptMinificationUpdates {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificJavascriptMinificationUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This step will perform the following: 
+        ///
+        ///	1. Update the namespace in the following files:
+        ///
+        ///		Login.aspx
+        ///		Login.aspx.cs
+        ///		Login.aspx.designer.cs
+        ///
+        ///		Global.asax
+        ///		Global.asax.ca
+        ///
+        ///	2. Add Login.aspx (and associated files) to the Web.csproj file.
+        ///
+        ///.
+        /// </summary>
+        internal static string ReleaseSpecificNamespaceAndWebProjectUpdates {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificNamespaceAndWebProjectUpdates", resourceCulture);
             }
         }
         
@@ -615,6 +726,33 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificTitleDescRemovePreviousJqueryLibraries {
             get {
                 return ResourceManager.GetString("ReleaseSpecificTitleDescRemovePreviousJqueryLibraries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finder Alterations.
+        /// </summary>
+        internal static string ReleaseSpecificTitleFinderAlterations {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleFinderAlterations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Javascript Minification Updates.
+        /// </summary>
+        internal static string ReleaseSpecificTitleJavascriptMinificationUpdates {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleJavascriptMinificationUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Namespace and Web Project Updates.
+        /// </summary>
+        internal static string ReleaseSpecificTitleNamespaceAndWebProjectUpdates {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleNamespaceAndWebProjectUpdates", resourceCulture);
             }
         }
         
@@ -882,8 +1020,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         ///   Looks up a localized string similar to The following previous versions of jQuery files will be removed from your solution and projects:
         ///
         ///jQuery Core V{0}
-        ///jQuery UI V{1}
-        ///jQuery Migrate V{2}.
+        ///jQuery Migrate V{1}
+        ///
+        ///The following files will be updated to reference the correct version of jQuery:
+        ///
+        ///\Web\WebForms\CustomReportViewer.aspx
+        ///\Web\WebForms\ReportViewer.aspx.
         /// </summary>
         internal static string Template_ReleaseSpecificRemovePreviousJqueryLibraries {
             get {
@@ -906,6 +1048,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Template_RemovingAllCopiesOfAccpacPropsFile {
             get {
                 return ResourceManager.GetString("Template_RemovingAllCopiesOfAccpacPropsFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully set {0} as the Solution startup project..
+        /// </summary>
+        internal static string Template_SetSolutionStartProject {
+            get {
+                return ResourceManager.GetString("Template_SetSolutionStartProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully set {0} as the Web project start file..
+        /// </summary>
+        internal static string Template_SetWebProjectStartFile {
+            get {
+                return ResourceManager.GetString("Template_SetWebProjectStartFile", resourceCulture);
             }
         }
         
@@ -937,6 +1097,33 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Successfully added {0} to {1}..
+        /// </summary>
+        internal static string Template_SuccessfullyAddedFileToWebProject {
+            get {
+                return ResourceManager.GetString("Template_SuccessfullyAddedFileToWebProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully updated the version of jQuery from {0} to {1} in file {2}..
+        /// </summary>
+        internal static string Template_SuccessfullyUpdatedJQueryVersionInFile {
+            get {
+                return ResourceManager.GetString("Template_SuccessfullyUpdatedJQueryVersionInFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully updated namespace in {0}..
+        /// </summary>
+        internal static string Template_SuccessfullyUpdatedNamespaceInFile {
+            get {
+                return ResourceManager.GetString("Template_SuccessfullyUpdatedNamespaceInFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upgrade library from {0} to {1}.
         /// </summary>
         internal static string Template_UpgradeLibrary {
@@ -960,6 +1147,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string To {
             get {
                 return ResourceManager.GetString("To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: The Upgrade Wizard was unable to determine the namespace..
+        /// </summary>
+        internal static string UnableToDetermineNamespace {
+            get {
+                return ResourceManager.GetString("UnableToDetermineNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The updates to alter finders must be made manually..
+        /// </summary>
+        internal static string UpdatesToFinderAlterationsAreAManualStep {
+            get {
+                return ResourceManager.GetString("UpdatesToFinderAlterationsAreAManualStep", resourceCulture);
             }
         }
         

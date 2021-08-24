@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
@@ -984,6 +984,19 @@ var TaskDockMenuBreadCrumbManager = function () {
     }
 
     /**
+    * @name onSDASuccess
+    * @description Open SDA link
+    * @private
+    */
+    function onSDASuccess(result) {
+        if (result && !result.UserMessage) {
+            window.open(result);
+        } else {
+            sg.utls.showMessage(result);
+        }
+    }
+
+    /**
      * @name decrementOpenScreenCounterAndNotifySiblings
      * @description Descrement open screen counter and notifying siblings
      * @private
@@ -1754,6 +1767,10 @@ var TaskDockMenuBreadCrumbManager = function () {
                 var url = oAuthLocation + "connect/endsession" + cb;
                 var win = window.open(url, "_blank", "");
                 _oAuthWindow = win;
+            });
+
+            $("#btnSDA").click(function () {
+                sg.utls.ajaxPost(sg.utls.url.buildUrl("CS", "CompanyProfile", "GetSDASubdomain"), null, onSDASuccess);
             });
         },
 

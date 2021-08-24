@@ -1,0 +1,82 @@
+//
+// Horizontal rules
+// --------------------------------------------------
+
+.card {
+    background: @white;
+    box-shadow: 0 3px 3px 0 rgba(0,20,29,0.2), 0 2px 6px 0 rgba(0,20,29,0.15);
+    margin-bottom: 20px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    width: 490px;
+
+    &:hover {
+	    box-shadow: 0 5px 5px 0 rgba(0,20,29,0.2), 0 10px 10px 0 rgba(0,20,29,0.1);
+	}
+
+    .card-header {
+    	padding: 70px 32px 0px;
+
+    	.card-title-small {
+    		color: @gray-dark;
+		    font-size: 13px;
+		    text-transform: uppercase;
+		    margin-bottom: 8px;
+    	}
+
+    	.card-title {
+		    font-size: 22px;
+		    font-weight: 700;
+		    line-height: 26px;
+		    margin-bottom: 4px;
+		}
+
+		i.icon-sage {
+		    position: absolute;
+		    left: 32px;
+		    top: 28px;
+		    width: 32px;
+		    height: 32px;
+		    background-image: url('@{image-path}/ui/icon_sage.png');
+		}
+	}
+
+	.card-content {
+		padding: 6px 32px 0px;
+	    margin-bottom: 32px;
+	}
+
+	.card-footer {
+	    background-color: @gray-lighter;
+	    border-top: 1px solid @gray-silver;
+	    height: 56px;
+	    line-height: 56px;
+	    padding: 0;
+	    text-align: center;
+
+	    .btn {
+	    	height: 32px;
+		    line-height: 32px;
+		    padding: 0px 16px;
+    		font-weight: 600;
+    		color: @sage-blue;
+    		font-size: 14px;
+
+	    	&:focus {
+	    		outline: 3px solid @input-border-focus;
+				outline-offset: 0;
+	    	}
+
+	    	.icon-link {
+	    		font: normal normal normal 16px/1 FontAwesome;
+	    		margin-right: 8px;
+	    		vertical-align: text-top;
+
+	    		&:before {
+	    			content: "\f08e";
+	    		}
+	    	}
+	    }
+	}
+}
+

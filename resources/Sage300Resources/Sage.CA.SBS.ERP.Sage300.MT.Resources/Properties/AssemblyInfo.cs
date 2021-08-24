@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sage Software, Inc.")]
 [assembly: AssemblyProduct("Sage.CA.SBS.ERP.Sage300.MT.Resources")]
-[assembly: AssemblyCopyright("Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved.")]
+[assembly: AssemblyCopyright("Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

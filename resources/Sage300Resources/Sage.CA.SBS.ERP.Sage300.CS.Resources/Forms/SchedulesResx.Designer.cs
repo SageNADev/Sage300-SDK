@@ -259,6 +259,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to List.
+        /// </summary>
+        public static string List {
+            get {
+                return ResourceManager.GetString("List", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to and last day of the month.
         /// </summary>
         public static string LDOM {
@@ -421,6 +430,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reminder List.
+        /// </summary>
+        public static string ReminderList {
+            get {
+                return ResourceManager.GetString("ReminderList", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Reminders To.
         /// </summary>
         public static string RemindersTo {
@@ -480,6 +498,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string SchedRecType {
             get {
                 return ResourceManager.GetString("SchedRecType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Schedule Button.
+        /// </summary>
+        public static string ScheduleButton {
+            get {
+                return ResourceManager.GetString("ScheduleButton", resourceCulture);
             }
         }
         

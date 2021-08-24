@@ -1428,10 +1428,10 @@
   <data name="AS_WorkProfile" xml:space="preserve">
     <value>UI Profiles</value>
   </data>
-  <data name="SIR_Msg1" xml:space="preserve">
+  <data name="SIR_Msg3" xml:space="preserve">
     <value>Sage Intelligence Reporting Cloud</value>
   </data>
-  <data name="SIR_Msg2" xml:space="preserve">
+  <data name="SIR_Msg4" xml:space="preserve">
     <value>Gain better visibility into your business with dynamic financial reports that you can export and customize in Microsoft Excel® or Excel Online.</value>
   </data>
   <data name="SIR_Report1" xml:space="preserve">
@@ -1647,5 +1647,53 @@
   </data>
   <data name="GL_BudgetMaintenance" xml:space="preserve">
     <value>Budget Maintenance</value>
+  </data>
+  <data name="Module_PM" xml:space="preserve">
+    <value>Project and Job Costing</value>
+  </data>
+  <data name="PM_Costs" xml:space="preserve">
+    <value>Costs</value>
+  </data>
+  <data name="PM_Material_Allocation" xml:space="preserve">
+    <value>Material Allocation</value>
+  </data>
+  <data name="PM_Material_Return" xml:space="preserve">
+    <value>Material Returns</value>
+  </data>
+  <data name="PM_Material_Usage" xml:space="preserve">
+    <value>Material Usage</value>
+  </data>
+  <data name="PM_Transactions" xml:space="preserve">
+    <value>PJC Transactions</value>
+  </data>
+  <data name="PM_OpeningBalances" xml:space="preserve">
+    <value>Opening Balances</value>
+  </data>
+  <data name="PM_Transaction_Listing" xml:space="preserve">
+    <value>Transaction Listing</value>
+  </data>
+  <data name="PM_Transaction_Reports" xml:space="preserve">
+    <value>PJC Transaction Reports</value>
+  </data>
+  <data name="PM_Transaction_Posting" xml:space="preserve">
+    <value>Post Transactions</value>
+  </data>
+  <data name="SIR_Msg1" xml:space="preserve">
+    <value>Business Intelligence Reporting</value>
+  </data>
+  <data name="SIR_Msg2" xml:space="preserve">
+    <value>Business Intelligence Reporting Solutions</value>
+  </data>
+  <data name="SIR_SDAMsg1" xml:space="preserve">
+    <value>Sage Data &amp; Analytics</value>
+  </data>
+  <data name="SIR_SDAMsg2" xml:space="preserve">
+    <value>Gain business insights from data-driven financial reports so you can manage your business more effectively.</value>
+  </data>
+  <data name="PM_Setup" xml:space="preserve">
+    <value>PJC Setup</value>
+  </data>
+  <data name="PM_CostTypes" xml:space="preserve">
+    <value>Cost Types</value>
   </data>
 </root>

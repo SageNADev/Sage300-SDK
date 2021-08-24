@@ -1767,6 +1767,15 @@
   <data name="TX_Module" xml:space="preserve">
     <value>浏览税务服务文章</value>
   </data>
+  <data name="TX_ReverseCharges_Article1" xml:space="preserve">
+    <value>设置回转收费</value>
+  </data>
+  <data name="TX_ReverseCharges_Article2" xml:space="preserve">
+    <value>关于回转收费</value>
+  </data>
+  <data name="TX_ReverseCharges_Screen" xml:space="preserve">
+    <value>回转收费屏幕</value>
+  </data>
   <data name="TX_TaxAuthorities_Article1" xml:space="preserve">
     <value>添加税务机构</value>
   </data>
@@ -1811,6 +1820,15 @@
   </data>
   <data name="TX_TaxTrackingReport_Screen" xml:space="preserve">
     <value>税务追踪报表</value>
+  </data>
+  <data name="TX_WithholdingTaxRates_Article1" xml:space="preserve">
+    <value>输入预扣税率</value>
+  </data>
+  <data name="TX_WithholdingTaxRates_Article2" xml:space="preserve">
+    <value>关于预扣税</value>
+  </data>
+  <data name="TX_WithholdingTaxRates_Screen" xml:space="preserve">
+    <value>预扣税率屏幕</value>
   </data>
   <data name="YP_Module" xml:space="preserve">
     <value>浏览付款处理文章</value>
@@ -1919,6 +1937,10 @@
   <data name="OE_Module" xml:space="preserve">
     <value>浏览销售订单文章</value>
     <comment>CSH ID 369000001</comment>
+  </data>
+  <data name="PM_Module" xml:space="preserve">
+    <value>浏览项目成本管理文章</value>
+    <comment>CSH ID 403000001</comment>
   </data>
   <data name="PO_Module" xml:space="preserve">
     <value>浏览采购订单文章</value>
@@ -2583,6 +2605,18 @@
   <data name="IC_StockTransactionsInquiry_Screen" xml:space="preserve">
     <value>存货控制库存交易查询屏幕</value>
     <comment>CSH ID 211028001</comment>
+  </data>
+  <data name="PM_PostTransactions_Article1" xml:space="preserve">
+    <value>过帐交易</value>
+    <comment>CSH ID 403073002</comment>
+  </data>
+  <data name="PM_PostTransactions_Article2" xml:space="preserve">
+    <value>关于项目成本管理交易屏幕的共同特性</value>
+    <comment>CSH ID 403073003</comment>
+  </data>
+  <data name="PM_PostTransactions_Screen" xml:space="preserve">
+    <value>项目成本管理交易屏幕</value>
+    <comment>CSH ID 403073001</comment>
   </data>
   <data name="PO_AdditionalCosts_Article1" xml:space="preserve">
     <value>关于附加成本代码</value>
@@ -4450,5 +4484,98 @@
   <data name="GL_Editing_Budget_Data" xml:space="preserve">
     <value>编辑预算数据</value>
     <comment>CSH ID 168023003</comment>
+  </data>
+  <data name="GL_ChartOfAccounts_Article1" xml:space="preserve">
+    <value>关于输入科目余额，历史数据，和数量</value>
+    <comment>CSH ID 168026002</comment>
+  </data>
+  <data name="GL_ChartOfAccounts_Article2" xml:space="preserve">
+    <value>查看科目表信息</value>
+    <comment>CSH ID 168026003</comment>
+  </data>
+  <data name="GL_ChartOfAccounts_Screen" xml:space="preserve">
+    <value>总帐科目表屏幕</value>
+    <comment>CSH ID 168026001</comment>
+  </data>
+  <data name="PM_MaterialAllocation_Article1" xml:space="preserve">
+    <value>关于跟踪项目中使用的物料</value>
+    <comment>403078002</comment>
+  </data>
+  <data name="PM_MaterialAllocation_Article2" xml:space="preserve">
+    <value>为AIA报表分配存储的物料</value>
+    <comment>403078003</comment>
+  </data>
+  <data name="PM_MaterialAllocation_Screen" xml:space="preserve">
+    <value>项目成本管理物料分配屏幕</value>
+    <comment>403078001</comment>
+  </data>
+  <data name="PJC_Cost_Types_Screen" xml:space="preserve">
+    <value>项目成本管理成本类型屏幕</value>
+    <comment>403052001</comment>
+  </data>
+  <data name="Adding_or_Modifying_Cost_Types" xml:space="preserve">
+    <value>添加或修改成本类型</value>
+    <comment>403052002</comment>
+  </data>
+  <data name="About_Planning_a_Cost_Classification_System" xml:space="preserve">
+    <value>关于计划成本分类系统</value>
+    <comment>403052003</comment>
+  </data>
+  <data name="PM_OpeningBalance_Article1" xml:space="preserve">
+    <value>关于输入持续合约的期初余额</value>
+    <comment>403072002</comment>
+  </data>
+  <data name="PM_OpeningBalance_Article2" xml:space="preserve">
+    <value>输入期初实际余额</value>
+    <comment>403072003</comment>
+  </data>
+  <data name="PM_OpeningBalance_Screen" xml:space="preserve">
+    <value>项目成本管理期初余额屏幕</value>
+    <comment>403072001</comment>
+  </data>
+  <data name="PM_About_Common_Features_of_PJC_Transactions_Screens" xml:space="preserve">
+    <value>关于项目成本管理交易屏幕的共同特性</value>
+    <comment>CSH ID 403065003</comment>
+  </data>
+  <data name="PM_Costs_Screen" xml:space="preserve">
+    <value>项目成本管理成本屏幕</value>
+    <comment>CSH ID 403065001</comment>
+  </data>
+  <data name="PM_Entering_Miscellaneous_Costs" xml:space="preserve">
+    <value>输入杂项成本</value>
+    <comment>CSH ID 403065002</comment>
+  </data>
+  <data name="PM_MaterialUsage_Screen" xml:space="preserve">
+    <value>项目成本管理物料使用屏幕</value>
+    <comment>403071001</comment>
+  </data>
+  <data name="PM_MaterialUsage_Article1" xml:space="preserve">
+    <value>将物料从库存转移到项目</value>
+    <comment>403071002</comment>
+  </data>
+  <data name="PM_MaterialUsage_Article2" xml:space="preserve">
+    <value>关于项目成本管理交易屏幕的共同特性</value>
+    <comment>403071003</comment>
+  </data>
+  <data name="PM_Printing_PJC_Reports" xml:space="preserve">
+    <value>打印项目成本管理报表</value>
+  </data>
+  <data name="PM_Printing_Transaction_Listing_Report" xml:space="preserve">
+    <value>关于项目成本管理报表</value>
+  </data>
+  <data name="PM_Transaction_Listing_Report_Screen" xml:space="preserve">
+    <value>项目成本管理交易列表报表屏幕</value>
+  </data>
+  <data name="PM_MaterialReturn_Article1" xml:space="preserve">
+    <value>将物料从项目退回库存</value>
+    <comment>403070002</comment>
+  </data>
+  <data name="PM_MaterialReturn_Article2" xml:space="preserve">
+    <value>关于项目成本管理交易屏幕的共同特性</value>
+    <comment>403070003</comment>
+  </data>
+  <data name="PM_MaterialReturn_Screen" xml:space="preserve">
+    <value>项目成本管理物料退回屏幕</value>
+    <comment>403070001</comment>
   </data>
 </root>

@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -29,7 +29,7 @@
     var resxName = view.Properties[BusinessView.Constants.ResxName];
     var modelName = view.Properties[BusinessView.Constants.ModelName];
     var entityName = view.Properties[BusinessView.Constants.EntityName];
-    var keyFieldName = view.Keys.FirstOrDefault();
+    var keyFieldName = settings.screenKeyFieldName;
     var containerName = settings.EntitiesContainerName;
     var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
 
@@ -181,11 +181,9 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <returns>JSON object for <#=modelName#></returns>
         internal <#=containerName#>ViewModel Delete(string id)
         {
-			Expression<Func<<#=headerModelName#>, bool>> filter = param => param.<#=keyFieldName#> == <#=convertId#>;
+			Expression<Func<<#=headerModelName#>, bool>> filter = param => param.<#=keyFieldName#> == id;
 			var data = _repository.Delete(filter);
-            var userMessage = new UserMessage(data,
-                string.Format(CommonResx.DeleteSuccessMessage, <#=resxName#>.<#=keyFieldName#>, data.<#=keyFieldName#>));
-
+            var userMessage = new UserMessage(data, string.Format(CommonResx.DeleteSuccessMessage, <#=resxName#>.<#=keyFieldName#>, data.<#=keyFieldName#>));
             return GetViewModel(data, userMessage);
         }
 

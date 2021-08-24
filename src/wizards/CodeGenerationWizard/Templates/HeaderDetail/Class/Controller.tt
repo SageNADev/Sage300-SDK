@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -29,7 +29,7 @@
     var resxName = view.Properties[BusinessView.Constants.ResxName];
     var modelName = view.Properties[BusinessView.Constants.ModelName];
     var entityName = view.Properties[BusinessView.Constants.EntityName];
-    var keyFieldName = view.Keys.FirstOrDefault();
+    var keyFieldName = settings.screenKeyFieldName;
     var containerName = settings.EntitiesContainerName;
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");
@@ -120,9 +120,19 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
 			<#
 			 foreach(var view in settings.Entities)
 			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid])
+				if (view.Options[BusinessView.Constants.GenerateGrid] || view.ForGrid)
 				{
-					WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", view.Properties[BusinessView.Constants.EntityName]);
+                    var viewName = view.Properties[BusinessView.Constants.EntityName];
+                    var viewId = view.Properties[BusinessView.Constants.ViewId];
+                    var isOptionalGrid = view.Keys.Contains("OptionalField");
+                    if(isOptionalGrid)
+                    {
+                        WriteLine(new string(' ', 12) + "ViewBag.{0}Grid = ControllerInternal.CreateOptionalFieldGridDefinition(\"{1}\");", viewName, viewId);
+                    }
+                    else
+                    {
+                        WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", viewName);
+                    }
 				}
 			 }
 			#>

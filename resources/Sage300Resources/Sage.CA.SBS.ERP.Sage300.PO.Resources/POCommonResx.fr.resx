@@ -2026,4 +2026,12 @@
   <data name="FailedMTEmail" xml:space="preserve">
     <value>Les documents n’ont pas pu être envoyés par courriel aux contacts du fournisseur {0}. Vérifiez que les contacts de ce fournisseur soient correctement configurés.</value>
   </data>
+  <data name="SetArrivalDate" xml:space="preserve">
+    <value>Définir la date d’arrivée</value>
+    <comment>Label (button)</comment>
+  </data>
+  <data name="SetLocation" xml:space="preserve">
+    <value>Définir l’emplacement</value>
+    <comment>Label (button)</comment>
+  </data>
 </root>

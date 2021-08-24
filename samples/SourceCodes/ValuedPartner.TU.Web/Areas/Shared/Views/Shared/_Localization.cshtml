@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
@@ -86,9 +86,15 @@
         ReportName: '@Html.SageRaw(CommonResx.ReportName)',
         ReportUrl: '@ConfigurationHelper.GetConfigValue("ReportUrl", false)',
         Complete: '@CommonResx.Complete',
-        AddLine: '@CommonResx.AddLine',
-        DeleteLine: '@CommonResx.DeleteLine',
-        EditColumns: '@CommonResx.EditColumns',
+        Previous: '@Html.SageRaw(CommonResx.Previous)',
+        Next: '@Html.SageRaw(CommonResx.Next)',
+
+        AddLine: '@Html.SageRaw(CommonResx.AddLine)',
+        DeleteLine: '@Html.SageRaw(CommonResx.DeleteLine)',
+        EditColumns: '@Html.SageRaw(CommonResx.EditColumns)',
+        ViewDetails: '@Html.SageRaw(CommonResx.ViewDetails)',
+        ViewDetailTax: '@Html.SageRaw(CommonResx.ViewDetailsTax)',
+        EditDetails: '@Html.SageRaw(CommonResx.EditDetails)',
 
         SessionExpiredDialogHeader: '@Html.SageRaw(CommonResx.SessionExpiredDialogHeader)',
         SessionExpiredDialogMsg1: '@Html.SageRaw(CommonResx.SessionExpiredDialogMsg1)',
@@ -115,6 +121,14 @@
         RequireValidEmail: '@Html.SageRaw(CommonResx.RequireValidEmail)',
         ContactInactive: '@Html.SageRaw(CommonResx.ContactInactive)',
         ContactNotExist: '@Html.SageRaw(CommonResx.ContactNotExist)',
-        ContactExist: '@Html.SageRaw(CommonResx.ContactExist)'
+        ContactExist: '@Html.SageRaw(CommonResx.ContactExist)',
+
+        @* Taxes popup *@
+        TAUTH: '@Html.SageRaw(CommonResx.TaxAuthority)',
+        TAUTHDESC: '@Html.SageRaw(@CommonResx.TaxAuthorityDescription)',
+        TCLASS: '@Html.SageRaw(@CommonResx.TaxClass)',
+        TDESC: '@Html.SageRaw(@CommonResx.TaxClassDescritpion)',
+        TINCLUDED: '@Html.SageRaw(@CommonResx.TaxIncluded)'
+
     }
 </script>

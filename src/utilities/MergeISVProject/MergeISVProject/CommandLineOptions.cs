@@ -627,7 +627,7 @@ namespace MergeISVProject
 		{
 			var requiredParams = GetRequiredPropertiesAsString();
 			var optionalParams = GetOptionalPropertiesAsString();
-            var required3rdPartyComponents = "WebGrease.dll, WG.exe, Newtonsoft.Json.dll, Antlr3.Runtime.dll";
+            var required3rdPartyComponents = "Node.js";
 			var msg = divider + Environment.NewLine;
 			msg += string.Format(Messages.Msg_ProgramUsageMessage, ApplicationName,
 																   ApplicationVersion,

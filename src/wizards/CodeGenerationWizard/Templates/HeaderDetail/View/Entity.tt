@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -19,27 +19,27 @@
 <# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
 <#@ template language="C#" #>
 <#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="System.Text" #>
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
     // Locals
     var entityName = settings.EntitiesContainerName;
-    var resxName = settings.EntitiesContainerName + "Resx";
+    var resxName = view.Properties[BusinessView.Constants.ResxName];
     var moduleId = settings.ModuleId;
     var copyright = settings.Copyright;
     var companyNamespace = settings.CompanyNamespace;
     var keyFieldName = view.Keys.FirstOrDefault();
     var modelName = view.Properties[BusinessView.Constants.ModelName];
-
-    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
-	"Web.Areas." + moduleId : moduleId + ".Web");
-
+    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + "Web.Areas." + moduleId : moduleId + ".Web");
+    var xmlLayout = settings.XmlLayout;
 #>
 @* <#=copyright#> *@
 
 @model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel
 @using <#=resxName#> = <#=companyNamespace#>.<#=moduleId#>.Resources.Forms.<#=resxName#>
-
+@using <#=companyNamespace#>.<#=moduleId#>.Web.Areas.<#=moduleId#>.Constants
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
@@ -51,15 +51,8 @@
 </script>
 
 @Html.Partial("~/Areas/<#=moduleId#>/Views/<#=entityName#>/Partials/_Localization.cshtml")
-<#
-foreach(var view in settings.Entities)
-{
-	if (view.Options[BusinessView.Constants.GenerateGrid])
-	{
-		WriteLine("@Html.Partial(Core.GridPreferences)");
-	}
-}
-#>
+@Html.Partial(Core.HamburgerMenu)
+@Html.Partial(Core.GridPreferences)
 
 <div id="success" class="message"></div>
 
@@ -71,7 +64,7 @@ foreach(var view in settings.Entities)
                 <div class="header-headline">
                     @Html.SageHeader1Label("<#=entityName#>Header", <#=resxName#>.Entity)
                 </div>
-                @Html.Partial(Core.OptionsMenu, Model.UserAccess, new ViewDataDictionary { { OptionsMenu.UseLessCss, true } })
+                @Html.Partial(Core.OptionsMenu, Model.UserAccess)
                 <div class="header-options">
                     @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
                     {
@@ -84,34 +77,75 @@ foreach(var view in settings.Entities)
             </div>
         </section>
     </header>
+<#
+        if (xmlLayout == null)
+        {
+            WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
+        }
+#>
+<# 
+	if (view.Options[BusinessView.Constants.GenerateGrid])
+	{
+		var gridName = entityName.Substring(0, 1).ToLower() +  entityName.Substring(1);
+		WriteLine("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
+	}
+    else if (xmlLayout != null)
+    {
+        // XML Layout has been specified and therefore generate layout using this instead of generating
+        // only the key field
 
+        // Counter for indentation
+        int depth = 0;
+
+        // Get first element and proceed if there are elements specified
+        var element = xmlLayout.Root.Descendants().First();
+
+        // Iterate xml and apply snippets directly to template
+        if (element.HasElements)
+        {
+            // Recursion
+            var snippet = new StringBuilder();
+            SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
+            WriteLine(snippet.ToString());
+        }
+    }
+	else
+	{
+	}
+
+    if (xmlLayout == null)
+    {
+        WriteLine(new string(' ', 4) + "</div>");
+    }
+#>
     <div class="form-group">
-        <div class="search-group">
-            @Html.SageLabelFor(model => model.Data.<#=keyFieldName#>, new { @id = "lbl<#=keyFieldName#>", @class = "required" })
-            @Html.KoSageTextBoxFor(model => model.Data.<#=keyFieldName#>, new { @sagevalue = "Data.<#=keyFieldName#>", @valueUpdate = "'input'" }, new { @id = "txt<#=keyFieldName#>", @class = "default", @formatTextbox = "alphaNumeric" })
-            @Html.KoSageButton("btnLoad<#=keyFieldName#>", null, new { @id = "btnLoad", @class = "icon btn-go", @tabindex = "-1" })
-            @Html.KoSageButton("btnFinder<#=keyFieldName#>", null, new { @class = "icon btn-search", @id = "btnFinder<#=keyFieldName#>", @tabindex = "-1" })
-
-            @Html.ValidationMessageFor(model => model.Data.<#=keyFieldName#>)
-        </div>
-    </div>
-
-    <div class="form-group">
-			<#
+<#
 			 foreach(var view in settings.Entities)
 			 {
 				if (view.Options[BusinessView.Constants.GenerateGrid])
 				{
                     var temp = view.Properties[BusinessView.Constants.EntityName];
                     var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
-
-					WriteLine("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
-				}
-			 
+                    if(gridName.Contains("Optional")) 
+                    {
+                        if(gridName.Contains("Detail"))
+                        {
+                            WriteLine(new string(' ', 4) + "<div id=\"detailOptionalField\" style=\"display: none; \">");
+                        }
+                        else 
+                        {
+                             WriteLine(new string(' ', 4) + "<div id=\"optionalField\" style=\"display: none; \">");
+                        }
+                    }
+					WriteLine(new string(' ', 8) + "@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
+                    if(gridName.Contains("Optional")) 
+                    {
+                        WriteLine(new string(' ', 4) + "</div>");
+                    }				
+                }
 			 }
-			#>
+#>
     </div>
-
     <section class="footer-group-1">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {

@@ -1054,7 +1054,7 @@
     <value>動態問詢</value>
   </data>
   <data name="SqlInjectionMessage" xml:space="preserve">
-    <value>不允許請求的查詢，因為它可能會危及您的資料的安全性。</value>
+    <value>該請求未被允許，因為一個或多個欄位包括了出於安全原因無法使用的文字。</value>
   </data>
   <data name="AddConfirmMessage" xml:space="preserve">
     <value>增加{0} "{1}"？</value>
@@ -1427,7 +1427,7 @@
     <value>每頁：</value>
   </data>
   <data name="NoDrillDownInfo" xml:space="preserve">
-    <value>無法找到此一記錄的下鑽資訊。如果您正在使用網頁螢幕，請注意，您必須使用桌面螢幕方可以下鑽到薪資管理或專案成本管理交易。</value>
+    <value>無法找到此記錄的下鑽資訊。如果您正在使用網頁螢幕，請注意，您必須使用桌面螢幕方可以下鑽到薪資管理或專案成本管理交易。</value>
   </data>
   <data name="Filter" xml:space="preserve">
     <value>篩檢程式：</value>
@@ -1596,5 +1596,35 @@
   </data>
   <data name="ExportReport" xml:space="preserve">
     <value>匯出報表</value>
+  </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>檢視明細</value>
+  </data>
+  <data name="ViewDetailsTax" xml:space="preserve">
+    <value>檢視明細/稅務</value>
+  </data>
+  <data name="EditDetails" xml:space="preserve">
+    <value>編輯明細</value>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>稅務機構</value>
+  </data>
+  <data name="TaxAuthorityDescription" xml:space="preserve">
+    <value>稅務機構描述</value>
+  </data>
+  <data name="TaxClass" xml:space="preserve">
+    <value>稅級</value>
+  </data>
+  <data name="TaxClassDescritpion" xml:space="preserve">
+    <value>稅級描述</value>
+  </data>
+  <data name="TaxIncluded" xml:space="preserve">
+    <value>已含稅</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>下個</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>上個</value>
   </data>
 </root>

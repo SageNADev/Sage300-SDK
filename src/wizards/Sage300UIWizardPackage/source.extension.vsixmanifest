@@ -3,7 +3,7 @@
     <Metadata>
         <Identity Id="Sage300UIWizardPackage.Sage.f289e6b3-2280-42c9-bd7e-6f3054c0b35b" Version="6.8.0.0" Language="en-US" Publisher="Sage" />
         <DisplayName>Sage 300 UI Wizard Package</DisplayName>
-        <Description xml:space="preserve">This package contains two wizards: Sage 300 Solution Wizard and Sage 300 Code Generation Wizard.
+        <Description xml:space="preserve">This package contains three wizards: Sage 300 Solution Wizard, Sage 300 Code Generation Wizard, and Sage 300 Finder Definition Generator.
 </Description>
     </Metadata>
     <Installation AllUsers="true">

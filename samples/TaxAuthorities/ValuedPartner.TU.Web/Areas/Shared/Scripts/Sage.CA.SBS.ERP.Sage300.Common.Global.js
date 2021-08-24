@@ -739,6 +739,10 @@ $.extend(sg.utls, {
      * @returns {string} The current company name
      */
     getCurrentCompanyName: function () {
+        if (window.location !== window.parent.location) { // in iframe (within a page), go up one level
+            return parent.sg.utls.getCurrentCompanyName();
+        } 
+
         var companyName = "";
         $("#companyNameMenu").find('.txt-top-menu').each(function (index, element) {
             companyName = $(this).text();
@@ -972,7 +976,7 @@ $.extend(sg.utls, {
             success: successHandler,
             error: errorHandler,
             beforeSend: function () {
-                $('#ajaxSpinner').fadeIn(1);
+                $("#ajaxSpinner").css("display", "block");
                 if (sg.utls.isSameOrigin()) {
                     var iFrame = window.top.$('iframe.screenIframe:visible');
                     if (iFrame && iFrame.length > 0) {
@@ -981,7 +985,7 @@ $.extend(sg.utls, {
                 }
             },
             complete: function () {
-                $('#ajaxSpinner').fadeOut(1);
+                $("#ajaxSpinner").css("display", "none");
                 sg.utls.ajaxRunning = false;
                 sg.utls.isProcessRunning = false;
                 sg.utls.fireStackedCalls();
@@ -1219,27 +1223,34 @@ $.extend(sg.utls, {
         return $("#antiforgerytoken_holder[data-antiforgerycookiename]").data("antiforgerycookiename");
     },
 
+    getFormattedDialogHtml: function(okButtonId, cancelButtonId) {
+        return this.getFormatedDialogHtml(okButtonId, cancelButtonId);
+    },
+
+    // Spelling error.
     getFormatedDialogHtml: function (okButtonId, cancelButtonId) {
 
-        var idOK = (typeof okButtonId !== 'undefined' && okButtonId !== null) ? okButtonId : "kendoConfirmationAcceptButton";
-        var idCancel = (typeof cancelButtonId !== 'undefined' && cancelButtonId !== null) ? cancelButtonId : "kendoConfirmationCancelButton";
+        let idOK = (typeof okButtonId !== 'undefined' && okButtonId !== null) ? okButtonId : "kendoConfirmationAcceptButton";
+        let idCancel = (typeof cancelButtonId !== 'undefined' && cancelButtonId !== null) ? cancelButtonId : "kendoConfirmationCancelButton";
+        let text = 
+            `<div id="dialogConfirmation" class="modal-msg">
+	            <div class="message-control multiWarn-msg"> 
+		        <div class="title"> 
+			        <span class="icon multiWarn-icon" /> 
+			        <h3 id="dialogConfirmation_header" />
+		        </div>
+		        <div class="msg-content">
+			        <p id="dialogConfirmation_msg1"></p>
+			        <p id="dialogConfirmation_msg2"></p> 
+			        <div class="button-group">
+				        <input class="btn btn-primary" id="${idOK}" type="button" value="OK" />
+                        <input class="btn btn-secondary" id="${idCancel}" type="button" value="Cancel" />
+			        </div> 
+		        </div> 
+	        </div> 
+        </div>`;
 
-        return "<div id=\"dialogConfirmation\" class=\"modal-msg\">" +
-	        "<div class=\"message-control multiWarn-msg\">" +
-		        "<div class=\"title\">" +
-			        "<span class=\"icon multiWarn-icon\"/>" +
-			        "<h3 id=\"dialogConfirmation_header\"></h3>" +
-		        "</div>" +
-		        "<div class=\"msg-content\">" +
-			        "<p id=\"dialogConfirmation_msg1\"></p>" +
-			        "<p id=\"dialogConfirmation_msg2\"></p>" +
-			        "<div class=\"button-group\">" +
-				        "<input class=\"btn btn-primary\" id=\"" + idOK + "\" type=\"button\" value=\"OK\" />" +
-                        "<input class=\"btn btn-secondary\" id=\"" + idCancel + "\" type=\"button\" value=\"Cancel\" />" +
-			        "</div>" +
-		        "</div>" +
-	        "</div>" +
-        "</div>";
+        return text;
     },
 
     showMessageDialog: function (callbackYes, callbackNo, message, dialogType, title, dialoghtml, okButtonId, cancelButtonId) {
@@ -1248,7 +1259,7 @@ $.extend(sg.utls, {
         var idCancel = (typeof cancelButtonId !== 'undefined' && cancelButtonId !== null) ? "#" + cancelButtonId : "#kendoConfirmationCancelButton";
 
         if (dialoghtml === null || dialoghtml === undefined) {
-            var kendoWindow = $("<div class='modelWindow' id='" + "dialogConfirmation " + "' />").kendoWindow({
+            var kendoWindow = $("<div class='modelWindow' id='dialogConfirmation' />").kendoWindow({
                 title: '',
                 resizable: false,
                 modal: true,
@@ -1426,7 +1437,10 @@ $.extend(sg.utls, {
 
         // Removed the line below because if modal is true, the z-index value increasing 
         // automatically. We cannot guarantee 999999 is the largest value on the screen.
-        //divDeleteConfirmParent.css('z-index', '999999');
+
+        // There is a defect in the behaviour of Kendo Window,
+        // when a modal is opened on another modal, the z-index is not calculated correctly.
+        divDeleteConfirmParent.css('z-index', '999999');
 
         divDeleteConfirmParent.css('position', 'absolute');
         divDeleteConfirmParent.css('left', ($(window).width() - divDeleteConfirmParent.width()) / 2);
@@ -1503,20 +1517,22 @@ $.extend(sg.utls, {
         messageIn = sg.utls.htmlEncode(messageIn);
         titleIn = sg.utls.htmlEncode(titleIn);
 
-        var template = "<script id=\"" + InpageTemplateID + "\" type=\"text/x-kendo-template\">" +
-            "<div class=\"fild_set\">" +
-            "<div class=\"fild-title generic-message\" id=\"gen-message" + randomPostfix + "\">" +
-            "<div id=\"title-text" + randomPostfix + "\" ></div>" +
-            "</div>" +
-            "<div class=\"fild-content\">" +
-            "<div id=\"body-text" + randomPostfix + "\" ></div>" +
-            "<div class=\"modelBox_controlls\">" +
-            "<input type=\"button\" class=\"btn btn-secondary generic-cancel\" id=\"kendoConfirmationCancelButton" + randomPostfix + "\" value=\"@CommonResx.No\" />" +
-            "<input type=\"button\" class=\"btn btn-primary generic-confirm\" id=\"kendoConfirmationAcceptButton" + randomPostfix + "\" value=\"@CommonResx.Yes\" />" +
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            "</script>";
+        var template = 
+            `<script id="${InpageTemplateID}" type="text/x-kendo-template">
+                <div class="fild_set">
+                    <div class="fild-title generic-message" id="gen-message${randomPostfix}">
+                        <div id="title-text${randomPostfix}"></div>
+                    </div>
+                    <div class="fild-content">
+                        <div id="body-text${randomPostfix}"></div>
+                        <div class="modelBox_controlls">
+                            <input type="button" class="btn btn-secondary generic-cancel" id="kendoConfirmationCancelButton${randomPostfix}" value="@CommonResx.No" />
+                            <input type="button" class="btn btn-primary generic-confirm" id="kendoConfirmationAcceptButton${randomPostfix}" value="@CommonResx.Yes" />
+                        </div>
+                    </div>
+                </div>
+            </script>`;
+
         $(template).appendTo('body');
 
         // This kendoWindow visibility check is added for the defect D-07638
@@ -1735,6 +1751,20 @@ $.extend(sg.utls, {
      * @param {function} onClose Handler for the popup's close event.
      * @param {object} maxConfig Kendo UI Window configuration object.
      */
+
+
+    /**
+     * @function
+     * @name initializeKendoWindowPopup
+     * @description Initializes a Kendo popup window
+     * @namespace sg.utls
+     * @public
+     * 
+     * @param {string} id The value for the window's CSS id attribute.
+     * @param {string} title The value for the window's title.
+     * @param {function} onClose Handler for the popup's close event.
+     * @param {function} maxConfig popup window width
+     */
     initializeKendoWindowPopup: function(id, title, onClose, maxConfig) {
         var winH = $(window).height();
         var winW = $(window).width();
@@ -1744,7 +1774,7 @@ $.extend(sg.utls, {
             modal: true,
             title: title,
             resizable: false,
-            draggable: false,
+            draggable: true,
             scrollable: true,
             visible: false,
             width: width,
@@ -1776,7 +1806,6 @@ $.extend(sg.utls, {
         if (maxConfig && maxConfig.height) {
             kendoWindow.setOptions({ height: maxConfig.height });
         }
-
     },
 
     /**
@@ -1825,10 +1854,55 @@ $.extend(sg.utls, {
         this.initializeKendoWindowPopup(id, title, onClose);
     },
 
-    openKendoWindowPopup: function (id, data, defaultWidth) {
+    /**
+     * Initializes a Kendo popup window with specify width parameter. 
+     * 
+     * @deprecated Name is misspelled!
+     * 
+     * @param {string} id The value for the window's CSS id attribute.
+     * @param {string} title The value for the window's title.
+     * @param {function} onClose Handler for the popup's close event.
+     * @param {function} width popup window width
+     *
+     */
+    intializeKendoWindowPopupWithWidth: function (id, title, onClose, width) {
+        this.initializeKendoWindowPopup(id, title, onClose, {width: width});
+    },
+
+    /**
+     * @function
+     * @name initializeKendoWindowPopupWithWidth
+     * @description Initializes a Kendo popup window with a specified width parameter. 
+     * @namespace sg.utls
+     * @public
+     * 
+     * @param {string} id The value for the window's CSS id attribute.
+     * @param {string} title The value for the window's title.
+     * @param {function} onClose Handler for the popup's close event.
+     * @param {function} width popup window width
+     */
+    initializeKendoWindowPopupWithWidth: function (id, title, onClose, width) {
+        this.initializeKendoWindowPopup(id, title, onClose, { width: width });
+    },
+
+    /**
+     * @function
+     * @name openKendoWindowPopup
+     * @description 
+     * @namespace sg.utls
+     * @public
+     * 
+     * @param {string} id The value for the window's CSS id attribute.
+     * @param {object} data 
+     * @param {number} defaultWidth
+     */
+     openKendoWindowPopup: function (id, data, defaultWidth) {
         $(id + " .menu-with-submenu").remove();    // to remove Text sizing option, this is because the popup is not from iFrame ...
 
         var kendoWindow = $(id).data("kendoWindow");
+        if (!kendoWindow) {
+            console.log('Sage.CA.SBS.ERP.Sage300.Common.global.js -> openKendoWindowPopup() -> kendoWindow has not been initialized.')
+        }
 
         if (data != null) {
             $(id).html(data);
@@ -2895,7 +2969,8 @@ $.extend(sg.utls, {
 
         numericTextbox.options.min = minValue;
         numericTextbox.options.max = maxValue;
-        sg.utls.kndoUI.restrictDecimals(numericTextbox, decimals, maxDigits);
+        numericTextbox.options.upArrowText = globalResource.Next;
+        numericTextbox.options.downArrowText = globalResource.Previous;
     },
 
     // Set numeric textbox
@@ -3420,7 +3495,22 @@ $.extend(sg.utls, {
 
     deepCopy: function (obj) {
         return JSON.parse(JSON.stringify(obj));
+    },
+
+    /**
+     * Copy value field by field from source to target
+     * @param {object} source object copying from
+     * @param {object} target object copying to
+     */
+    fieldCopy: function (source, target) {
+        for (let key in source) {
+            if (target[key] !== null && target[key] !== undefined &&   // make sure it has value
+                target[key] !== source[key]) {                         // and only if they are different
+                target[key] = source[key];
+            }
+        }
     }
+
 
     //initBackgroundImageCycling: function () {
     //    var TIMEOUT_MS = 2000;
@@ -3993,6 +4083,16 @@ $(function () {
                     }
                 }
             }
+        }
+    });
+
+    // Mapping Left/Right Arrow key when numerictextbox is focused
+    $(document).on('keyup', ".data-nav input[data-role='numerictextbox']", function (e) {
+        const numericTextBox = $(document.activeElement).data("kendoNumericTextBox");
+        if (e.keyCode === sg.constants.KeyCodeEnum.LeftArrow) {
+            numericTextBox._step(-1);
+        } else if (e.keyCode === sg.constants.KeyCodeEnum.RightArrow) {
+            numericTextBox._step(1);
         }
     });
 

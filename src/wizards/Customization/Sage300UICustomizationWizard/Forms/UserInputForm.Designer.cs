@@ -219,7 +219,7 @@ namespace Sage300UICustomizationWizard
             this.lblKendoVersionHelp.Name = "lblKendoVersionHelp";
             this.lblKendoVersionHelp.Size = new System.Drawing.Size(428, 36);
             this.lblKendoVersionHelp.TabIndex = 13;
-            this.lblKendoVersionHelp.Text = "The Kendo UI version used in these projects is v2019.1.115";
+            this.lblKendoVersionHelp.Text = "The Kendo UI version used in these projects is v2021.1.224";
             this.lblKendoVersionHelp.WrapToLine = true;
             // 
             // lblKendoLink

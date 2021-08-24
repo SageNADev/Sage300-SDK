@@ -1437,4 +1437,11 @@
   <data name="InvalidDerivedRate" xml:space="preserve">
     <value>No se pudo derivar la tasa porque se obtiene un tipo de cambio inválido al usar el total de impuesto actual y el total en moneda de reporte fiscal. Ingrese la tasa manualmente.</value>
   </data>
+  <data name="UpdateArrivalDates" xml:space="preserve">
+    <value>¿Utilizar la fecha de llegada de la orden de compra como fecha de llegada prevista para todos los detalles?</value>
+    <comment>Message (confirmation dialog)</comment>
+  </data>
+  <data name="UpdateShiptoLocations" xml:space="preserve">
+    <value>¿Utilizar la dirección de envío de la orden de compra como ubicación para todos los detalles?  No se cambiará la ubicación de un detalle si el artículo especificado para el detalle no está admitido en la dirección de envío.</value>
+  </data>
 </root>

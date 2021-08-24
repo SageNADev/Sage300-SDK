@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -29,12 +29,9 @@
     var modelName = view.Properties[BusinessView.Constants.ModelName];
     var entityName = view.Properties[BusinessView.Constants.EntityName];
     var containerName = settings.EntitiesContainerName;
-
-    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
-	"Web.Areas." + moduleId : moduleId + ".Web");
-    
+    var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + "Web.Areas." + moduleId : moduleId + ".Web");
     var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
-
+    var enumsCount = view.Enums.Count;
 #>
 // <#=copyright#>
 
@@ -42,10 +39,19 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using <#=companyNamespace#>.<#=moduleId#>.Models;
-
+<#
+	if (enumsCount > 0)
+	{
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums;
+<#
+	}	
+#>
 #endregion
 
 namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
@@ -55,6 +61,43 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
     /// </summary>
     public class <#=containerName#>ViewModel : ViewModelBase<<#=headerModelName#>>
     {
+<#
+        foreach (var value in view.Enums.Values)
+        {
+			// Did the user want to override the name?
+			//var enumName = value.AlternateName.Length > 0 ? value.AlternateName : value.Name;
+			var enumName = value.Name;
+#>
+        /// <summary>
+        /// Get<#=enumName#>
+        /// </summary>
+        public IEnumerable<CustomSelectList> Get<#=enumName#>
+        {
+            get { return EnumUtility.GetItemsList<<#=companyNamespace#>.<#=moduleId#>.Models.Enums.<#=enumName#>>(); }
+        }
+
+<#
+        }
+#>
+        /// <summary>
+        /// Returns true if User has Modify Access
+        /// </summary>
+        public bool HasModifyAccess
+        {
+            get
+            {
+                return UserAccess == null || UserAccess.SecurityType.HasFlag(SecurityType.Modify);
+            }
+        }
+
+		<#
+			foreach(var view in settings.Entities)
+			{
+			    if (view.ForGrid)
+			    {
+                    var viewName = view.Properties[BusinessView.Constants.EntityName];
+			    }
+			}
+		#>
     }
 }
-					

@@ -219,4 +219,7 @@
   <data name="Template_DeleteConfirmMessage" xml:space="preserve">
     <value>Are you sure you want to delete {0} {1}?</value>
   </data>
+  <data name="ReserveLanPakLicense" xml:space="preserve">
+    <value>Reserve a LanPak License</value>
+  </data>
 </root>

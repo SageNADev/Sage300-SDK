@@ -618,7 +618,7 @@
     <value>安全群组</value>
   </data>
   <data name="CNA_Home_Mor_Admin_Ser_User_Auth" xml:space="preserve">
-    <value>用户权限</value>
+    <value>用户授权</value>
   </data>
   <data name="CNA_Home_Mor_Bnk_Periodic_Pro" xml:space="preserve">
     <value>银行定期处理</value>
@@ -1456,5 +1456,8 @@
   </data>
   <data name="ViewWidgets" xml:space="preserve">
     <value>查看挂件</value>
+  </data>
+  <data name="PJC" xml:space="preserve">
+    <value>项目成本管理</value>
   </data>
 </root>

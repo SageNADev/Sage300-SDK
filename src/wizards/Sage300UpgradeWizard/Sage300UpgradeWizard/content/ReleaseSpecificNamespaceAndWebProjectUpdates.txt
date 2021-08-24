@@ -1,0 +1,16 @@
+﻿This step will perform the following: 
+
+	1. Update the namespace in the following files:
+
+		Login.aspx
+		Login.aspx.cs
+		Login.aspx.designer.cs
+
+		Global.asax
+		Global.asax.ca
+
+	2. Add Login.aspx (and associated files) to the Web.csproj file.
+
+	The Upgrade Wizard will also set the Web project as the startup project
+	It will also set the file Login.aspx as the start file.
+

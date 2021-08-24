@@ -55,8 +55,11 @@
 
     <div class="form-group">
         <div class="dropdown-group">
-            @Html.SageLabel("lblSegmentName", SegmentCodesResx.SegmentName)
-            @Html.KoSageDropDownList("SegmentNameList", new { @options = "Segments", @optionsText = "'Text'", @optionsValue = "'Value'" }, new { @id = "SegmentNameList", @class = "large" })
+            @Html.SgDropdownFor(m => m.Data.SegmentCode,
+                  new { @options = "Segments", @value = "Data.Segments" },
+                  new { @id = "SegmentNameList" }, size: "large",
+                  labelHtmlAttrs: new { @id = " lblSegmentName" },
+                  labelText: SegmentCodesResx.SegmentName)
         </div>
 
         @Html.SageGrid("segmentCodesGrid", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.SegmentCodesGrid)

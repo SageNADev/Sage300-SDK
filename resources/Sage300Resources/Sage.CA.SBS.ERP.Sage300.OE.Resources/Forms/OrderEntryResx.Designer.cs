@@ -4651,6 +4651,42 @@ namespace Sage.CA.SBS.ERP.Sage300.OE.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set Location.
+        /// </summary>
+        public static string SetLocation {
+            get {
+                return ResourceManager.GetString("SetLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set the location for all details to be the same as the location for the order?  The location will not be changed for a detail if the item specified for the detail is not allowed at the location..
+        /// </summary>
+        public static string SetLocationWarning {
+            get {
+                return ResourceManager.GetString("SetLocationWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Ship Date.
+        /// </summary>
+        public static string SetShipDate {
+            get {
+                return ResourceManager.GetString("SetShipDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set the expected ship date for all details to be the same as the ship date for the order?.
+        /// </summary>
+        public static string SetShipDateWarning {
+            get {
+                return ResourceManager.GetString("SetShipDateWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shipment Date.
         /// </summary>
         public static string Shidate {

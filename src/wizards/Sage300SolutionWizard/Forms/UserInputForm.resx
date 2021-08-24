@@ -117,6 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblGenerateHelp.Text" xml:space="preserve">
+    <value>Select the 'Generate' button below to generate the solution based upon the information entered and selected in the proceeding steps.
+
+Note: After the solution is created, set the 'Login.aspx' file in the Web project as the startup page by Right-Clicking the 'Login.aspx' file in the Solution Explorer and selecting 'Set As Start Page'. </value>
+  </data>
   <metadata name="tooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

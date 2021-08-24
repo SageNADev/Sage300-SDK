@@ -358,4 +358,16 @@
   <data name="BccEmailMessageHelp" xml:space="preserve">
     <value>Si usted introduce varias direcciones de correo electrónico, sepárelas con un punto y coma (;).</value>
   </data>
+  <data name="SDAHeader" xml:space="preserve">
+    <value>Sage Data &amp; Analytics</value>
+  </data>
+  <data name="Subdomain" xml:space="preserve">
+    <value>Subdominio de dirección web</value>
+  </data>
+  <data name="SubdomainTooltip" xml:space="preserve">
+    <value>Esto es parte de su dirección web única de Sage Data &amp; Analytics. El subdominio aparece inmediatamente después de &quot;https://&quot; y antes de &quot;.sagedataanalytics.com&quot;.</value>
+  </data>
+  <data name="BlankSDAError" xml:space="preserve">
+    <value>Para utilizar Sage Data &amp; Analytics, debe especificar un subdominio de dirección web relacionado en la pantalla Perfil de la Empresa.</value>
+  </data>
 </root>

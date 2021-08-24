@@ -29,6 +29,10 @@ $.extend(sg.utls.kndoUI, {
         var windowElement = this.wrapper,
             windowContent = this.element;
 
+        //D-42917 Have to force kendo window focus here, ever since we upgrade jQuery to 3.6.0.
+        //Current kendo version v2021.1.224 only (officially) support jQuery up to 3.5.1
+        windowElement[0].focus();
+
         $(document).off("keydown.kendoWindow").on("keydown.kendoWindow", function (e) {
             var focusedElement = $(document.activeElement);
             if (e.keyCode == kendo.keys.TAB && focusedElement.closest(windowElement).length == 0) {
@@ -930,7 +934,9 @@ $.extend(sg.utls.kndoUI, {
         } else {
             numericTextBoxDataValue = numericTextBoxData;
         }
+
         $(numericTextBoxDataValue).off("input");
+        
         $(numericTextBoxDataValue).on("input", function (e) {
             var val = numericTextBoxDataValue.val();
             var decimalSeparator = kendo.culture().numberFormat['.'];

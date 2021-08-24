@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>科目編號</value>
+  </data>
+  <data name="Fiscalsetyear" xml:space="preserve">
+    <value>財務集年度</value>
+  </data>
+  <data name="FiscalsetDesignator" xml:space="preserve">
+    <value>財務集標示</value>
+  </data>
+  <data name="Currencycode" xml:space="preserve">
+    <value>幣別代碼</value>
+  </data>
+  <data name="RESERVEDRevaluationswitch" xml:space="preserve">
+    <value>保留的重評價開關</value>
+  </data>
+  <data name="RESERVEDRevaluationcode" xml:space="preserve">
+    <value>保留的重評價代碼</value>
+  </data>
+  <data name="Sourcecurrencydecimals" xml:space="preserve">
+    <value>來源幣別小數位</value>
+  </data>
+  <data name="Period01netamount" xml:space="preserve">
+    <value>期間01淨額</value>
+  </data>
+  <data name="Period02netamount" xml:space="preserve">
+    <value>期間02淨額</value>
+  </data>
+  <data name="Period03netamount" xml:space="preserve">
+    <value>期間03淨額</value>
+  </data>
+  <data name="Period04netamount" xml:space="preserve">
+    <value>期間04淨額</value>
+  </data>
+  <data name="Period05netamount" xml:space="preserve">
+    <value>期間05淨額</value>
+  </data>
+  <data name="Period06netamount" xml:space="preserve">
+    <value>期間06淨額</value>
+  </data>
+  <data name="Period07netamount" xml:space="preserve">
+    <value>期間07淨額</value>
+  </data>
+  <data name="Period08netamount" xml:space="preserve">
+    <value>期間08淨額</value>
+  </data>
+  <data name="Period09netamount" xml:space="preserve">
+    <value>期間09淨額</value>
+  </data>
+  <data name="Period10netamount" xml:space="preserve">
+    <value>期間10淨額</value>
+  </data>
+  <data name="Period11netamount" xml:space="preserve">
+    <value>期間11淨額</value>
+  </data>
+  <data name="Period12netamount" xml:space="preserve">
+    <value>期間12淨額</value>
+  </data>
+  <data name="Period13netamount" xml:space="preserve">
+    <value>期間13淨額</value>
+  </data>
+  <data name="Period14netamount" xml:space="preserve">
+    <value>期間14淨額</value>
+  </data>
+  <data name="Period15netamount" xml:space="preserve">
+    <value>期間15淨額</value>
+  </data>
+  <data name="RESERVEDDate" xml:space="preserve">
+    <value>保留的日期</value>
+  </data>
+  <data name="Allowspecificcurrenciesswitch" xml:space="preserve">
+    <value>允許特定幣別開關</value>
+  </data>
+  <data name="Processasytdbalancesswitch" xml:space="preserve">
+    <value>作為累計餘額處理開關</value>
+  </data>
+  <data name="RESERVEDupdateswitch" xml:space="preserve">
+    <value>保留的更新開關</value>
+  </data>
+  <data name="YearTodateamount" xml:space="preserve">
+    <value>累計金額</value>
+  </data>
+  <data name="Period01balanceamount" xml:space="preserve">
+    <value>期間01餘額</value>
+  </data>
+  <data name="Period02balanceamount" xml:space="preserve">
+    <value>期間02餘額</value>
+  </data>
+  <data name="Period03balanceamount" xml:space="preserve">
+    <value>期間03餘額</value>
+  </data>
+  <data name="Period04balanceamount" xml:space="preserve">
+    <value>期間04餘額</value>
+  </data>
+  <data name="Period05balanceamount" xml:space="preserve">
+    <value>期間05餘額</value>
+  </data>
+  <data name="Period06balanceamount" xml:space="preserve">
+    <value>期間06餘額</value>
+  </data>
+  <data name="Period07balanceamount" xml:space="preserve">
+    <value>期間07餘額</value>
+  </data>
+  <data name="Period08balanceamount" xml:space="preserve">
+    <value>期間08餘額</value>
+  </data>
+  <data name="Period09balanceamount" xml:space="preserve">
+    <value>期間09餘額</value>
+  </data>
+  <data name="Period10balanceamount" xml:space="preserve">
+    <value>期間10餘額</value>
+  </data>
+  <data name="Period11balanceamount" xml:space="preserve">
+    <value>期間11餘額</value>
+  </data>
+  <data name="Period12balanceamount" xml:space="preserve">
+    <value>期間12餘額</value>
+  </data>
+  <data name="Period13balanceamount" xml:space="preserve">
+    <value>期間13餘額</value>
+  </data>
+  <data name="Period14balanceamount" xml:space="preserve">
+    <value>期間14餘額</value>
+  </data>
+  <data name="Period15balanceamount" xml:space="preserve">
+    <value>期間15餘額</value>
+  </data>
+  <data name="Replacementswitch" xml:space="preserve">
+    <value>取代開關</value>
+  </data>
+  <data name="Overrideratetypecode" xml:space="preserve">
+    <value>替換匯率類型代碼</value>
+  </data>
+  <data name="Overriderate" xml:space="preserve">
+    <value>替換匯率</value>
+  </data>
+  <data name="Activityswitch" xml:space="preserve">
+    <value>活動開關</value>
+  </data>
+  <data name="Rollupswitch" xml:space="preserve">
+    <value>上捲開關</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>總帳科目歷史查詢</value>
+    <comment>Screen Title</comment>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>餘額</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>截止日期</value>
+  </data>
+  <data name="NetChange" xml:space="preserve">
+    <value>淨變動</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>期間</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <data name="BeginningBalance" xml:space="preserve">
+    <value>期初餘額</value>
+  </data>
+  <data name="ShowQuantity" xml:space="preserve">
+    <value>顯示數量</value>
+  </data>
+  <data name="TotalNetChange" xml:space="preserve">
+    <value>淨變動合計</value>
+  </data>
+  <data name="TotalQuantity" xml:space="preserve">
+    <value>合計數量</value>
+  </data>
+</root>

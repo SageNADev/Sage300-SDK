@@ -219,4 +219,7 @@
   <data name="Template_DeleteConfirmMessage" xml:space="preserve">
     <value>是否确要删除{0} {1}？</value>
   </data>
+  <data name="ReserveLanPakLicense" xml:space="preserve">
+    <value>保留一个LanPak许可证</value>
+  </data>
 </root>

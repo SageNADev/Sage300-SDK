@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -49,6 +49,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string GenerateIfAlreadyExists = "GenerateIfAlreadyExists";
             public const string GenerateEnumsInSingleFile = "GenerateEnumsInSingleFile";
             public const string WorkflowKindId = "WorkflowKindId";
+            public const string ForGrid = "ForGrid";
 #if ENABLE_TK_244885
             public const string CustomCommonResxName = "CustomCommonResxName";
 #endif
@@ -102,6 +103,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         /// <summary> Is this part of a HeaderDetail Composition? </summary>
         public bool IsPartofHeaderDetailComposition { get; set; }
+
+		/// <summary> Is this entity for grid </summary>
+        public bool ForGrid { get; set; } = false;
         
 #endregion
 

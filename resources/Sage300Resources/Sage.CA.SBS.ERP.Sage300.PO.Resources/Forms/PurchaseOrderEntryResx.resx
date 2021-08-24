@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1436,5 +1436,12 @@
   </data>
   <data name="InvalidDerivedRate" xml:space="preserve">
     <value>The rate could not be derived because using the current tax total and tax reporting total yields a rate that is invalid. Enter the rate manually.</value>
+  </data>
+  <data name="UpdateArrivalDates" xml:space="preserve">
+    <value>Set the expected arrival date for all details to be the same as the arrival date for the purchase order?</value>
+    <comment>Message (confirmation dialog)</comment>
+  </data>
+  <data name="UpdateShiptoLocations" xml:space="preserve">
+    <value>Set the location for all details to be the same as the ship-to location for the purchase order?  The location will not be changed for a detail if the item specified for the detail is not allowed at the ship-to location.</value>
   </data>
 </root>

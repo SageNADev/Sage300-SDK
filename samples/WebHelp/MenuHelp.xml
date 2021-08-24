@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--  MenuHelp.xml for Third Party menu items -->
+<!-- 'root' (required) - The root element -->
+<root>
+  <!-- 'url' (optional) - The url for all items, if not specified, every item must specify a url)
+       'value' (required) - The url for all items and can be overridden by the item -->
+  <url value="https://help.sage300.sageinternal.com/{0}/2022/web/index.htm#cshid={1}?utm_source=helpmenu&amp;utm_medium=inproduct&amp;utm_campaign=sage300" /> 
+  <!-- 'resource' (optional) - Resource for localizing descriptions
+       'name' (required) - The name of a resource dll
+       'class' (required) - The class in the resource dll -->
+  <resource name="ValuedPartner.dll" class="ValuedPartner.Localization" /> 
+  <!-- 'menu' (required) - The list of menus (screens) to be added to help list
+       'id' (required) - Identifies the menu (screen) and comes from XXMenuDetails.xml -->
+  <menu id="TU4001" > <!-- Third party menu (screen) with two menu items -->
+    <!-- 'item' (required) - The list of items for the menu (screen)
+	     'resourceKey' (optional) - Key to localization resource
+		 'description' (required) - Description of item if not localized or if localization fails
+		 'url' (optional) - If specified, will override url specified for all items -->
+    <item resourceKey="Clone" description="Pay Code Clone" url = "">
+      <!-- 'token' (optional) - The list of tokens to be replaced in url
+		   'token' (required) - The token to be replaced (i.e. {0} or {whatever} or FOO or ...)
+           'value' (optional) - The value to be used for the token
+		                        If 'local' == "true", the 'value' will be ignored
+								If 'locale' not specified, a 'value' must be specified
+           'locale' (optional) - Flag to specify whether to use the user's web locale -->
+      <token token="{0}" locale="true" />
+      <token token="{1}" value="18003001" />
+    </item>
+    <item resourceKey="Google" description="Google" url = "http://Google.com" />
+  </menu>
+  <menu id="AR5107" > <!-- Sage 300 A/R Payment Codes menu (screen) with 1 additional menu item -->
+    <item resourceKey="Google" description="Google" url = "http://Google.com" />
+    <item resourceKey="Clone" description="Pay Code Clone" url = "">
+      <!-- 'token' (optional) - The list of tokens to be replaced in url
+		   'token' (required) - The token to be replaced (i.e. {0} or {whatever} or FOO or ...)
+           'value' (optional) - The value to be used for the token
+		                        If 'local' == "true", the 'value' will be ignored
+								If 'locale' not specified, a 'value' must be specified
+           'locale' (optional) - Flag to specify whether to use the user's web locale -->
+      <token token="{0}" locale="true" />
+      <token token="{1}" value="18003001" />
+    </item>
+  </menu>
+</root>

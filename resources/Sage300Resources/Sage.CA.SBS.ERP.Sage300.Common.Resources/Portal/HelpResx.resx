@@ -1767,6 +1767,15 @@
   <data name="TX_Module" xml:space="preserve">
     <value>Browse Tax Services Articles</value>
   </data>
+  <data name="TX_ReverseCharges_Article1" xml:space="preserve">
+    <value>Setting Up Reverse Charges</value>
+  </data>
+  <data name="TX_ReverseCharges_Article2" xml:space="preserve">
+    <value>About Reverse Charges</value>
+  </data>
+  <data name="TX_ReverseCharges_Screen" xml:space="preserve">
+    <value>Reverse Charges Screen</value>
+  </data>
   <data name="TX_TaxAuthorities_Article1" xml:space="preserve">
     <value>Adding Tax Authorities</value>
   </data>
@@ -1811,6 +1820,15 @@
   </data>
   <data name="TX_TaxTrackingReport_Screen" xml:space="preserve">
     <value>Tax Tracking Report</value>
+  </data>
+  <data name="TX_WithholdingTaxRates_Article1" xml:space="preserve">
+    <value>Entering Withholding Tax Rates</value>
+  </data>
+  <data name="TX_WithholdingTaxRates_Article2" xml:space="preserve">
+    <value>About Withholding Taxes</value>
+  </data>
+  <data name="TX_WithholdingTaxRates_Screen" xml:space="preserve">
+    <value>Withholding Tax Rates Screen</value>
   </data>
   <data name="YP_Module" xml:space="preserve">
     <value>Browse Payment Processing Articles</value>
@@ -1919,6 +1937,10 @@
   <data name="OE_Module" xml:space="preserve">
     <value>Browse Order Entry Articles</value>
     <comment>CSH ID 369000001</comment>
+  </data>
+  <data name="PM_Module" xml:space="preserve">
+    <value>Browse Project and Job Costing Articles</value>
+    <comment>CSH ID 403000001</comment>
   </data>
   <data name="PO_Module" xml:space="preserve">
     <value>Browse Purchase Orders Articles</value>
@@ -2583,6 +2605,18 @@
   <data name="IC_StockTransactionsInquiry_Screen" xml:space="preserve">
     <value>I/C Stock Transactions Inquiry Screen</value>
     <comment>CSH ID 211028001</comment>
+  </data>
+  <data name="PM_PostTransactions_Article1" xml:space="preserve">
+    <value>Posting Transactions</value>
+    <comment>CSH ID 403073002</comment>
+  </data>
+  <data name="PM_PostTransactions_Article2" xml:space="preserve">
+    <value>About Common Features of PJC Transactions Screens</value>
+    <comment>CSH ID 403073003</comment>
+  </data>
+  <data name="PM_PostTransactions_Screen" xml:space="preserve">
+    <value>PJC Post Transactions Screen</value>
+    <comment>CSH ID 403073001</comment>
   </data>
   <data name="PO_AdditionalCosts_Article1" xml:space="preserve">
     <value>About Additional Cost Codes</value>
@@ -4450,5 +4484,98 @@
   <data name="GL_Editing_Budget_Data" xml:space="preserve">
     <value>Editing Budget Data</value>
     <comment>CSH ID 168023003</comment>
+  </data>
+  <data name="GL_ChartOfAccounts_Article1" xml:space="preserve">
+    <value>About Entering Account Balances, Historical Data, and Quantities</value>
+    <comment>CSH ID 168026002</comment>
+  </data>
+  <data name="GL_ChartOfAccounts_Article2" xml:space="preserve">
+    <value>Viewing Chart of Accounts Information</value>
+    <comment>CSH ID 168026003</comment>
+  </data>
+  <data name="GL_ChartOfAccounts_Screen" xml:space="preserve">
+    <value>G/L Chart of Accounts Screen</value>
+    <comment>CSH ID 168026001</comment>
+  </data>
+  <data name="PM_MaterialAllocation_Article1" xml:space="preserve">
+    <value>About Tracking Material Used on Projects</value>
+    <comment>403078002</comment>
+  </data>
+  <data name="PM_MaterialAllocation_Article2" xml:space="preserve">
+    <value>Allocating Stored Material for AIA Reports</value>
+    <comment>403078003</comment>
+  </data>
+  <data name="PM_MaterialAllocation_Screen" xml:space="preserve">
+    <value>PJC Material Allocation Screen</value>
+    <comment>403078001</comment>
+  </data>
+  <data name="PJC_Cost_Types_Screen" xml:space="preserve">
+    <value>PJC Cost Types Screen</value>
+    <comment>403052001</comment>
+  </data>
+  <data name="Adding_or_Modifying_Cost_Types" xml:space="preserve">
+    <value>Adding or Modifying Cost Types</value>
+    <comment>403052002</comment>
+  </data>
+  <data name="About_Planning_a_Cost_Classification_System" xml:space="preserve">
+    <value>About Planning a Cost Classification System</value>
+    <comment>403052003</comment>
+  </data>
+  <data name="PM_OpeningBalance_Article1" xml:space="preserve">
+    <value>About Entering Opening Balances for Ongoing Contracts</value>
+    <comment>403072002</comment>
+  </data>
+  <data name="PM_OpeningBalance_Article2" xml:space="preserve">
+    <value>Entering Opening Actuals Balances</value>
+    <comment>403072003</comment>
+  </data>
+  <data name="PM_OpeningBalance_Screen" xml:space="preserve">
+    <value>PJC Opening Balances Screen</value>
+    <comment>403072001</comment>
+  </data>
+  <data name="PM_About_Common_Features_of_PJC_Transactions_Screens" xml:space="preserve">
+    <value>About Common Features of PJC Transactions Screens</value>
+    <comment>CSH ID 403065003</comment>
+  </data>
+  <data name="PM_Costs_Screen" xml:space="preserve">
+    <value>PJC Costs Screen</value>
+    <comment>CSH ID 403065001</comment>
+  </data>
+  <data name="PM_Entering_Miscellaneous_Costs" xml:space="preserve">
+    <value>Entering Miscellaneous Costs</value>
+    <comment>CSH ID 403065002</comment>
+  </data>
+  <data name="PM_MaterialUsage_Screen" xml:space="preserve">
+    <value>PJC Material Usage Screen</value>
+    <comment>403071001</comment>
+  </data>
+  <data name="PM_MaterialUsage_Article1" xml:space="preserve">
+    <value>Transferring Material from Inventory to a Project</value>
+    <comment>403071002</comment>
+  </data>
+  <data name="PM_MaterialUsage_Article2" xml:space="preserve">
+    <value>About Common Features of PJC Transactions Screens</value>
+    <comment>403071003</comment>
+  </data>
+  <data name="PM_Printing_PJC_Reports" xml:space="preserve">
+    <value>Printing Project and Job Costing Reports</value>
+  </data>
+  <data name="PM_Printing_Transaction_Listing_Report" xml:space="preserve">
+    <value>About Project and Job Costing Reports</value>
+  </data>
+  <data name="PM_Transaction_Listing_Report_Screen" xml:space="preserve">
+    <value>PJC Transaction Listing Report Screen</value>
+  </data>
+  <data name="PM_MaterialReturn_Article1" xml:space="preserve">
+    <value>Returning Material from a Project to Inventory</value>
+    <comment>403070002</comment>
+  </data>
+  <data name="PM_MaterialReturn_Article2" xml:space="preserve">
+    <value>About Common Features of PJC Transactions Screens</value>
+    <comment>403070003</comment>
+  </data>
+  <data name="PM_MaterialReturn_Screen" xml:space="preserve">
+    <value>PJC Material Returns Screen</value>
+    <comment>403070001</comment>
   </data>
 </root>

@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class HelpResx {
@@ -57,6 +57,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Planning a Cost Classification System.
+        /// </summary>
+        public static string About_Planning_a_Cost_Classification_System {
+            get {
+                return ResourceManager.GetString("About_Planning_a_Cost_Classification_System", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adding or Modifying Cost Types.
+        /// </summary>
+        public static string Adding_or_Modifying_Cost_Types {
+            get {
+                return ResourceManager.GetString("Adding_or_Modifying_Cost_Types", resourceCulture);
             }
         }
         
@@ -4759,6 +4777,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Entering Account Balances, Historical Data, and Quantities.
+        /// </summary>
+        public static string GL_ChartOfAccounts_Article1 {
+            get {
+                return ResourceManager.GetString("GL_ChartOfAccounts_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Viewing Chart of Accounts Information.
+        /// </summary>
+        public static string GL_ChartOfAccounts_Article2 {
+            get {
+                return ResourceManager.GetString("GL_ChartOfAccounts_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Chart of Accounts Screen.
+        /// </summary>
+        public static string GL_ChartOfAccounts_Screen {
+            get {
+                return ResourceManager.GetString("GL_ChartOfAccounts_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Period-End Procedures.
         /// </summary>
         public static string GL_ClearHistory_Article1 {
@@ -9277,6 +9322,213 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PJC Cost Types Screen.
+        /// </summary>
+        public static string PJC_Cost_Types_Screen {
+            get {
+                return ResourceManager.GetString("PJC_Cost_Types_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Common Features of PJC Transactions Screens.
+        /// </summary>
+        public static string PM_About_Common_Features_of_PJC_Transactions_Screens {
+            get {
+                return ResourceManager.GetString("PM_About_Common_Features_of_PJC_Transactions_Screens", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Costs Screen.
+        /// </summary>
+        public static string PM_Costs_Screen {
+            get {
+                return ResourceManager.GetString("PM_Costs_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entering Miscellaneous Costs.
+        /// </summary>
+        public static string PM_Entering_Miscellaneous_Costs {
+            get {
+                return ResourceManager.GetString("PM_Entering_Miscellaneous_Costs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Tracking Material Used on Projects.
+        /// </summary>
+        public static string PM_MaterialAllocation_Article1 {
+            get {
+                return ResourceManager.GetString("PM_MaterialAllocation_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allocating Stored Material for AIA Reports.
+        /// </summary>
+        public static string PM_MaterialAllocation_Article2 {
+            get {
+                return ResourceManager.GetString("PM_MaterialAllocation_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Material Allocation Screen.
+        /// </summary>
+        public static string PM_MaterialAllocation_Screen {
+            get {
+                return ResourceManager.GetString("PM_MaterialAllocation_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Returning Material from a Project to Inventory.
+        /// </summary>
+        public static string PM_MaterialReturn_Article1 {
+            get {
+                return ResourceManager.GetString("PM_MaterialReturn_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Common Features of PJC Transactions Screens.
+        /// </summary>
+        public static string PM_MaterialReturn_Article2 {
+            get {
+                return ResourceManager.GetString("PM_MaterialReturn_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Material Returns Screen.
+        /// </summary>
+        public static string PM_MaterialReturn_Screen {
+            get {
+                return ResourceManager.GetString("PM_MaterialReturn_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transferring Material from Inventory to a Project.
+        /// </summary>
+        public static string PM_MaterialUsage_Article1 {
+            get {
+                return ResourceManager.GetString("PM_MaterialUsage_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Common Features of PJC Transactions Screens.
+        /// </summary>
+        public static string PM_MaterialUsage_Article2 {
+            get {
+                return ResourceManager.GetString("PM_MaterialUsage_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Material Usage Screen.
+        /// </summary>
+        public static string PM_MaterialUsage_Screen {
+            get {
+                return ResourceManager.GetString("PM_MaterialUsage_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse Project and Job Costing Articles.
+        /// </summary>
+        public static string PM_Module {
+            get {
+                return ResourceManager.GetString("PM_Module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Entering Opening Balances for Ongoing Contracts.
+        /// </summary>
+        public static string PM_OpeningBalance_Article1 {
+            get {
+                return ResourceManager.GetString("PM_OpeningBalance_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entering Opening Actuals Balances.
+        /// </summary>
+        public static string PM_OpeningBalance_Article2 {
+            get {
+                return ResourceManager.GetString("PM_OpeningBalance_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Opening Balances Screen.
+        /// </summary>
+        public static string PM_OpeningBalance_Screen {
+            get {
+                return ResourceManager.GetString("PM_OpeningBalance_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posting Transactions.
+        /// </summary>
+        public static string PM_PostTransactions_Article1 {
+            get {
+                return ResourceManager.GetString("PM_PostTransactions_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Common Features of PJC Transactions Screens.
+        /// </summary>
+        public static string PM_PostTransactions_Article2 {
+            get {
+                return ResourceManager.GetString("PM_PostTransactions_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Post Transactions Screen.
+        /// </summary>
+        public static string PM_PostTransactions_Screen {
+            get {
+                return ResourceManager.GetString("PM_PostTransactions_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Printing_PJC_Reports {
+            get {
+                return ResourceManager.GetString("PM_Printing_PJC_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Printing_Transaction_Listing_Report {
+            get {
+                return ResourceManager.GetString("PM_Printing_Transaction_Listing_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Transaction Listing Report Screen.
+        /// </summary>
+        public static string PM_Transaction_Listing_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_Transaction_Listing_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Additional Cost Codes.
         /// </summary>
         public static string PO_AdditionalCosts_Article1 {
@@ -10654,6 +10906,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Setting Up Reverse Charges.
+        /// </summary>
+        public static string TX_ReverseCharges_Article1 {
+            get {
+                return ResourceManager.GetString("TX_ReverseCharges_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Reverse Charges.
+        /// </summary>
+        public static string TX_ReverseCharges_Article2 {
+            get {
+                return ResourceManager.GetString("TX_ReverseCharges_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reverse Charges Screen.
+        /// </summary>
+        public static string TX_ReverseCharges_Screen {
+            get {
+                return ResourceManager.GetString("TX_ReverseCharges_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adding Tax Authorities.
         /// </summary>
         public static string TX_TaxAuthorities_Article1 {
@@ -10812,6 +11091,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string TX_TaxTrackingReport_Screen {
             get {
                 return ResourceManager.GetString("TX_TaxTrackingReport_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entering Withholding Tax Rates.
+        /// </summary>
+        public static string TX_WithholdingTaxRates_Article1 {
+            get {
+                return ResourceManager.GetString("TX_WithholdingTaxRates_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Withholding Taxes.
+        /// </summary>
+        public static string TX_WithholdingTaxRates_Article2 {
+            get {
+                return ResourceManager.GetString("TX_WithholdingTaxRates_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Withholding Tax Rates Screen.
+        /// </summary>
+        public static string TX_WithholdingTaxRates_Screen {
+            get {
+                return ResourceManager.GetString("TX_WithholdingTaxRates_Screen", resourceCulture);
             }
         }
         

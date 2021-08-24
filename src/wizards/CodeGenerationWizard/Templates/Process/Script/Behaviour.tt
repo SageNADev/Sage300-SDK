@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -19,6 +19,7 @@
 <# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
 <#@ template language="C#" #>
 <#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
 <#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
 <#
@@ -28,12 +29,12 @@
     var moduleId = view.Properties[BusinessView.Constants.ModuleId].ToLower();
     var moduleIdUpper = view.Properties[BusinessView.Constants.ModuleId];
     var copyright = settings.Copyright;
+    var snippet = new StringBuilder();
 #>
 /* <#=copyright#> */
 
-// Add the following commented line to enable TypeScript static type checking
-// Remove this line if not needed
-//@ts-check
+// Enable the following commented line to enable TypeScript static type checking
+// @ts-check
 
 "use strict";
 
@@ -43,84 +44,192 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
     <#=localEntityName#>Model: {},
     computedProperties: [],
 
-	/**
-     * Initialization
-	 *
-	 * @method init
-	 */
+    /**
+    * @function
+    * @name init
+    * @description Initialize the controls and apply kendo bindings
+    * @namespace <#=localEntityName#>UI
+    * @public
+    */
     init: function () {     
         // Initialize the controls and apply kendo bindings 
         <#=localEntityName#>UI.initKendoBindings();          
-        <#=localEntityName#>UI.initFinder();
+        <#=localEntityName#>UI.initGrids();
+        <#=localEntityName#>UI.initTabs();
+        <#=localEntityName#>UI.initFinders();
         <#=localEntityName#>UI.initButtons();
-        <#=localEntityName#>UI.initTextBox();
-        <#=localEntityName#>UI.initCheckBox();
+        <#=localEntityName#>UI.initNumericTextboxes();
+        <#=localEntityName#>UI.initTextboxes();
+        <#=localEntityName#>UI.initTimePickers();
+        <#=localEntityName#>UI.initCheckBoxes();
         <#=localEntityName#>UI.initBlur();
         <#=localEntityName#>UI.initProcessUI();
         ko.applyBindings(<#=localEntityName#>UI.<#=localEntityName#>Model);
     },
     
-	/**
-     * Initialize the Kendo bindings
-	 *
-	 * @method initKendoBindings
-	 */
+    /**
+     * @function
+     * @name initKendoBindings
+     * @description Initialize the Kendo bindings
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
     initKendoBindings: function () {
         <#=localEntityName#>UI.<#=localEntityName#>Model = ko.mapping.fromJS(<#=entityName#>ViewModel);       
         <#=moduleId#><#=entityName#>KoExtn.<#=moduleId#><#=entityName#>ModelExtension(<#=localEntityName#>UI.<#=localEntityName#>Model);
     },
 
-	/**
-     * Initialize the Finder
-	 *
-	 * @method initFinder
-	 */
-    initFinder: function() {
+    /**
+     * @function
+     * @name initGrids
+     * @description Initialize the grids, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initGrids: function () {
+
     },
 
-	/**
-     * Initialize the Check Boxes
-	 *
-	 * @method initCheckBox
-	 */
-    initCheckBox: function () {
+    /**
+     * @function
+     * @name initTabs
+     * @description Initialize the tabs, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initTabs: function () {
+
+    },
+
+    /**
+     * @function 
+     * @name initFinders
+     * @description Initialize all of the finders on the page, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initFinders: function() {
+<#
+    // Create code for finder
+    snippet = new StringBuilder();
+    SnippetHelper.FinderJavaScript(8, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+     /**
+     * @function
+     * @name initNumericTextboxes
+     * @description Initialize the numeric textboxes, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initNumericTextboxes: function () {
+<#
+    // Create code for init numeric textboxes
+    snippet = new StringBuilder();
+    SnippetHelper.InitNumericTextboxesJavaScript(8, settings, snippet, view);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+    /**
+     * @function
+     * @name initCheckBoxes
+     * @description Initialize the click handlers for check boxes, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initCheckBoxes: function () {
+
     },
     
-	/**
-     * Initialize the Blur binding
-	 *
-	 * @method initBlur
-	 */
+    /**
+     * @function
+     * @name initBlur
+     * @description Initialize the onChange handlers for various controls, if needed
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
     initBlur:function() {
+
     },    
 
-	/**
-     * Initialize Textbox bindings
-	 *
-	 * @method initTextBox
-	 */
-    initTextBox: function ()
+    /**
+     * @function
+     * @name initTextboxes
+     * @description Initialize the Kendo text boxes, if needed
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initTextboxes: function () {
+<#
+    // Create code for init textboxes
+    snippet = new StringBuilder();
+    SnippetHelper.InitTextboxesJavaScript(8, settings, snippet, entityName);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
     {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+    /**
+     * @function
+     * @name initTimePickers
+     * @description Initialize the time pickers, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initTimePickers: function () {
+<#
+    // Create code for init timepickers
+    snippet = new StringBuilder();
+    SnippetHelper.InitTimePickersJavaScript(8, settings, snippet, localEntityName, view);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
     },
     
-	/**
-     * Initialize the Buttons
-	 *
-	 * @method initButtons
-	 */
+    /**
+     * @function
+     * @name initButtons
+     * @description Initialize the button click handlers
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
     initButtons: function () {
         $("#btnProcess").click(function (e) {
             sg.utls.SyncExecute(<#=localEntityName#>UI.process);
         });
+<#
+    // Create code for buttons, if any
+    snippet = new StringBuilder();
+    SnippetHelper.InitButtonsJavaScript(8, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+
     },
     
-	/**
-     * Process
-	 *
-	 * @method process
-	 */
+    /**
+     * @function
+     * @name process
+     * @description Handler for the process button
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
     process: function () {
-        // debugger;
         sg.utls.isProcessRunning = true;
         var processUrl = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Process");
         
@@ -145,22 +254,26 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
         }
     },
     
-	/**
-     * Initialize the Process UI
-	 *
-	 * @method initProcessUI
-	 */
+    /**
+     * @function
+     * @name initProcessUI
+     * @description
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
     initProcessUI: function() {
         var progressUrl = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Progress");
         var cancelUrl = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Cancel");
         window.progressUI.init(progressUrl, cancelUrl, <#=localEntityName#>UI.<#=localEntityName#>Model, screenName, onSuccess.onProcessComplete);
     },
 
-	/**
-     * Validation
-	 *
-	 * @method Validation
-	 */
+    /**
+     * @function
+     * @name Validation
+     * @description Page validator
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
     Validation: function () {
         var errorRangeMessage = "";
         var inputValid = true;
@@ -178,12 +291,17 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
 
 };
 
+// Callbacks
 var onSuccess = {
-	/**
-     * Process Success
-	 *
-	 * @method process
-	 */
+    /**
+    * @function
+    * @name process
+    * @description Process success
+    * @namespace onSuccess
+    * @public
+    * 
+    * @param {object} result - JSON result payload
+    */
     process: function (jsonResult) {
         if (jsonResult.UserMessage.IsSuccess) {
             var model = <#=localEntityName#>UI.<#=localEntityName#>Model;
@@ -194,11 +312,15 @@ var onSuccess = {
         }
     },
 
-	/**
-     * On Process Complete
-	 *
-	 * @method onProcessComplete
-	 */
+    /**
+    * @function
+    * @name onProcessComplete
+    * @description
+    * @namespace onSuccess
+    * @public
+    * 
+    * @param {object} result - The result of the operation
+    */
     onProcessComplete: function (result) {
         if (result.ProcessResult.Results.length <= 0) {
             $("#processingResultGrid").hide();
@@ -212,14 +334,18 @@ var onSuccess = {
 var onFinderSuccess = {
 };
 
+// Utility
 var <#=localEntityName#>Utility = {   
-	/**
-     * Check the Dirty Flag
-	 *
-	 * @method checkIsDirty
-	 * @param yesFunctionToCall
-	 * @param noFunctionToCall
-	 */
+    /**
+    * @function
+    * @name checkIsDirty
+    * @description If the model data has changed, display confirmation dialog box
+    * @namespace <#=localEntityName#>Utility
+    * @public
+    * 
+    * @param {object} yesFunctionToCall - Callback for Yes
+    * @param {object} noFunctionToCall - Callback for No
+    */
     checkIsDirty: function (yesFunctionToCall, noFunctionToCall) {
         if (<#=localEntityName#>UI.<#=localEntityName#>Model.IsKo<#=entityName#>Dirty && <#=localEntityName#>UI.<#=localEntityName#>Model.IsKo<#=entityName#>Dirty.isDirty()) {
             sg.utls.showKendoConfirmationDialog(
@@ -236,15 +362,17 @@ var <#=localEntityName#>Utility = {
     },
 };
 
+// UI Callbacks
+var <#=localEntityName#>UISuccess = {   
 
-var <#=localEntityName#>UISuccess = {    
 };
 
 // Finder Cancel method
 var onFinderCancel = {
+
 };
 
-
+// Initial Entry
 $(function () {
     <#=localEntityName#>UI.init();
 });

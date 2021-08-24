@@ -403,4 +403,13 @@
   <data name="NextRunDate" xml:space="preserve">
     <value>下一运行日期</value>
   </data>
+  <data name="ReminderList" xml:space="preserve">
+    <value>提示清单</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>清单</value>
+  </data>
+  <data name="ScheduleButton" xml:space="preserve">
+    <value>排程</value>
+  </data>
 </root>

@@ -191,12 +191,15 @@
     <Content Include="content\ReleaseAllSyncAccpacLibs.txt" />
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
     <Content Include="content\ReleaseAllUpgraded.txt" />
+    <None Include="content\ReleaseSpecificJavascriptMinificationUpdates.txt" />
     <Content Include="content\ReleaseSpecificUnifyDisabled.txt" />
     <Content Include="content\ReleaseSpecificUpdateConsolidateEnumerations.txt" />
     <Content Include="content\ReleaseSpecificUpdateTargetedDotNetFrameworkVersion.txt" />
     <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\Sage_All.ico" />
+    <Content Include="content\ReleaseSpecificNamespaceAndWebProjectUpdates.txt" />
+    <None Include="content\ReleaseSpecificFinderAlterations.txt" />
     <None Include="Resources\sage-logo-square.png" />
   </ItemGroup>
   <ItemGroup>

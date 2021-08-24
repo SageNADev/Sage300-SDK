@@ -1437,4 +1437,11 @@
   <data name="InvalidDerivedRate" xml:space="preserve">
     <value>Impossible de dériver le taux car le taux obtenu en utilisant le total de taxe courant et celui en monnaie de publication n'est pas valide. Saisissez le taux manuellement.</value>
   </data>
+  <data name="UpdateArrivalDates" xml:space="preserve">
+    <value>Utiliser la date d’arrivée définie pour le bon de commande comme date d’arrivée prévue de tous les détails?</value>
+    <comment>Message (confirmation dialog)</comment>
+  </data>
+  <data name="UpdateShiptoLocations" xml:space="preserve">
+    <value>Utiliser l’adresse d’expédition définie pour le bon de commande comme emplacement pour tous les détails?  L’emplacement ne sera pas modifié si l’article spécifié pour le détail n’est pas admis à l’adresse d’expédition.</value>
+  </data>
 </root>

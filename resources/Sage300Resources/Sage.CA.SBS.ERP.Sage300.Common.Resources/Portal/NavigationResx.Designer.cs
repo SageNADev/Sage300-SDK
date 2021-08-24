@@ -3265,6 +3265,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Project and Job Costing.
+        /// </summary>
+        public static string Module_PM {
+            get {
+                return ResourceManager.GetString("Module_PM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchase Orders.
         /// </summary>
         public static string Module_PurchaseOrders {
@@ -3684,6 +3693,105 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PinMenu {
             get {
                 return ResourceManager.GetString("PinMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Costs.
+        /// </summary>
+        public static string PM_Costs {
+            get {
+                return ResourceManager.GetString("PM_Costs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cost Types.
+        /// </summary>
+        public static string PM_CostTypes {
+            get {
+                return ResourceManager.GetString("PM_CostTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Material Allocation.
+        /// </summary>
+        public static string PM_Material_Allocation {
+            get {
+                return ResourceManager.GetString("PM_Material_Allocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Material Returns.
+        /// </summary>
+        public static string PM_Material_Return {
+            get {
+                return ResourceManager.GetString("PM_Material_Return", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Material Usage.
+        /// </summary>
+        public static string PM_Material_Usage {
+            get {
+                return ResourceManager.GetString("PM_Material_Usage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opening Balances.
+        /// </summary>
+        public static string PM_OpeningBalances {
+            get {
+                return ResourceManager.GetString("PM_OpeningBalances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Setup.
+        /// </summary>
+        public static string PM_Setup {
+            get {
+                return ResourceManager.GetString("PM_Setup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction Listing.
+        /// </summary>
+        public static string PM_Transaction_Listing {
+            get {
+                return ResourceManager.GetString("PM_Transaction_Listing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Post Transactions.
+        /// </summary>
+        public static string PM_Transaction_Posting {
+            get {
+                return ResourceManager.GetString("PM_Transaction_Posting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Transaction Reports.
+        /// </summary>
+        public static string PM_Transaction_Reports {
+            get {
+                return ResourceManager.GetString("PM_Transaction_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Transactions.
+        /// </summary>
+        public static string PM_Transactions {
+            get {
+                return ResourceManager.GetString("PM_Transactions", resourceCulture);
             }
         }
         
@@ -4228,7 +4336,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sage Intelligence Reporting Cloud.
+        ///   Looks up a localized string similar to Business Intelligence Reporting.
         /// </summary>
         public static string SIR_Msg1 {
             get {
@@ -4237,11 +4345,29 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gain better visibility into your business with dynamic financial reports that you can export and customize in Microsoft Excel® or Excel Online..
+        ///   Looks up a localized string similar to Business Intelligence Reporting Solutions.
         /// </summary>
         public static string SIR_Msg2 {
             get {
                 return ResourceManager.GetString("SIR_Msg2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage Intelligence Reporting Cloud.
+        /// </summary>
+        public static string SIR_Msg3 {
+            get {
+                return ResourceManager.GetString("SIR_Msg3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gain better visibility into your business with dynamic financial reports that you can export and customize in Microsoft Excel® or Excel Online..
+        /// </summary>
+        public static string SIR_Msg4 {
+            get {
+                return ResourceManager.GetString("SIR_Msg4", resourceCulture);
             }
         }
         
@@ -4278,6 +4404,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string SIR_Report4 {
             get {
                 return ResourceManager.GetString("SIR_Report4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage Data &amp; Analytics.
+        /// </summary>
+        public static string SIR_SDAMsg1 {
+            get {
+                return ResourceManager.GetString("SIR_SDAMsg1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gain business insights from data-driven financial reports so you can manage your business more effectively..
+        /// </summary>
+        public static string SIR_SDAMsg2 {
+            get {
+                return ResourceManager.GetString("SIR_SDAMsg2", resourceCulture);
             }
         }
         
