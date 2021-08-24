@@ -6,8 +6,8 @@ As of the 2020.0 release of the Sage 300 Web SDK, this program is used by the Sa
 and the Sage300UIWizardPackage (solution wizard). 
 
 It's purpose is to facilitate the rebuilding of the Web.vstemplate files that exist in 
-src\wizards\CustomizationWizardTemplates\Web (customization wizard) and 
-src\wizards\Templates\Web (solution wizard). 
+src\wizards\Templates\CustomizationWizard\Web (customization wizard) and 
+src\wizards\Templates\UIWizards\Web (solution wizard). 
 
 ## MergeISVProject.exe
 
@@ -21,7 +21,7 @@ When updating the MergeISVProject.exe application, ensure that you copy the appl
 following folders and zip archives:
 
 - \bin\utilities\MergeISVProject.exe [This folder]
-- \src\wizards\Templates\Web\MergeISVProject.exe
+- \src\wizards\Templates\UIWizards\Web\MergeISVProject.exe
 - \src\wizards\Sage300UpgradeWizard\Sage300UpgradeWizardPackage\ItemTemplates\Items.zip
 - \src\wizards\Sage300UIWizardPackage\ProjectTemplates\Web.zip
 
