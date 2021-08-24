@@ -1321,7 +1321,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private static string GetUpperAttr(BusinessField field)
         {
             // Get the IsUpperCase from the business field
-            return (field != null && field.IsUpperCase) ? "txt-upper" : "";
+            return (field != null && (field.IsUpperCase || field.IsAlphaNumeric)) ? "txt-upper" : "";
         }
 
         /// <summary>
