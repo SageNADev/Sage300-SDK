@@ -1,0 +1,5 @@
+REM call CopyWebRepoFiles.bat
+call RebuildWebDotVstemplateFile.bat
+call CreateTemplateZipFiles.bat
+call MoveTemplateZipFilesToFinalDestination.bat
+call CopyAccpacDotNetVersionSettings.bat

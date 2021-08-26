@@ -96,16 +96,15 @@ set Destination=%25SDKRootDir%25bin\utilities\
 copy %25SourceApp%25 %25Destination%25
 echo Copied to %25Destination%25
 
-REM \src\wizards\Templates\Web\
-set Destination=%25SDKRootDir%25src\wizards\Templates\Web\
+REM \src\wizards\Templates\UIWizards\Web\
+set Destination=%25SDKRootDir%25src\wizards\Templates\UIWizards\Web\
 copy %25SourceApp%25 %25Destination%25
 echo Copied to %25Destination%25
 
-REM \src\wizards\UpgradeWizardTemplates\Items\
-set Destination=%25SDKRootDir%25src\wizards\UpgradeWizardTemplates\Items\
+REM \src\wizards\Templates\UpgradeWizard\Items\
+set Destination=%25SDKRootDir%25src\wizards\Templates\UpgradeWizard\Items\
 copy %25SourceApp%25 %25Destination%25
 echo Copied to %25Destination%25
-
 
 
 </PostBuildEvent>
