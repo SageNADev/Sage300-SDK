@@ -37,3 +37,6 @@ Step 5
 
 
 Alternatively, you can just run 'RebuildAndDeployAll.bat' to execute all the above steps.
+
+Note: To bypass the synchronization process (grabbing assets from the Columbus-Web folder),
+      use the alternative batch file called 'NoWebSync_RebuildAndDeployAll.bat'
