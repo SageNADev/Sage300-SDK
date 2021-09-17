@@ -102,13 +102,11 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <returns>JSON object for <#=modelName#></returns>
         public virtual ActionResult Index()
         {
-            <#=containerName#>ViewModel viewModel;
-
 			<#
 			WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", view.Properties[BusinessView.Constants.EntityName]);
 			#>
-			viewModel = ControllerInternal.Create();
-            return View(viewModel);
+            return ViewWithCatch(() => ControllerInternal.Create(),
+                CommonResx.UnhandledExceptionMessage);
         }
 
         /// <summary>
@@ -117,14 +115,8 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         [HttpPost]
         public virtual JsonNetResult Post()
         {
-            try
-            {
-				return JsonNet(ControllerInternal.Post());
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
-            }
+            return CallWithCatch(() => ControllerInternal.Post(),
+                CommonResx.SaveFailedMessage);
         }
 
         #endregion

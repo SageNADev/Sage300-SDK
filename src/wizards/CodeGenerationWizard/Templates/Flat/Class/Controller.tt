@@ -116,30 +116,18 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <returns>JSON object for <#=modelName#></returns>
         public virtual ActionResult Index(string id)
         {
-            <#=entityName#>ViewModel<T>  viewModel;
-
-            try
-            {
-                viewModel = !string.IsNullOrEmpty(id) ? ControllerInternal.GetById(id) : ControllerInternal.Create();
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
-                        <#=resxName#>.<#=keyFieldName#>));
-            }
-
-			<#
-			 foreach(var view in settings.Entities)
-			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid] || view.ForGrid)
-				{
-                    var viewName = view.Properties[BusinessView.Constants.EntityName];
-                    WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", viewName);
-				}
-			 }
-			#>
-            return View(viewModel);
+<#
+	foreach(var view in settings.Entities)
+	{
+	    if (view.Options[BusinessView.Constants.GenerateGrid] || view.ForGrid)
+	    {
+            var viewName = view.Properties[BusinessView.Constants.EntityName];
+            WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", viewName);
+	    }
+	}
+#>
+            return ViewWithCatch(() => ControllerInternal.GetById(id),
+                CommonResx.GetFailedMessage, <#=resxName#>.<#=keyFieldName#>);
         }
 
         /// <summary>
@@ -150,21 +138,8 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         [HttpPost]
         public virtual JsonNetResult Get(string id)
         {
-            try
-            {
-                if (!string.IsNullOrEmpty(id))
-                {
-                    return JsonNet(ControllerInternal.GetById(id));
-                }
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
-                        <#=resxName#>.<#=keyFieldName#>));
-            }
-
-            return JsonNet(new <#=entityName#>ViewModel<T>());
+            return CallWithCatch(() => ControllerInternal.GetById(id),
+                CommonResx.GetFailedMessage, <#=resxName#>.<#=keyFieldName#>);
         }
 
         /// <summary>
@@ -175,20 +150,13 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         [HttpPost]
         public virtual JsonNetResult Add(T model)
         {
-            try
+            if (!ValidateModelState(ModelState, out ViewModelBase<ModelBase> viewModel))
             {
-                ViewModelBase<ModelBase> viewModel;
+                return JsonNet(viewModel);
+            }
 
-                return ValidateModelState(ModelState, out viewModel)
-                   ? JsonNet(ControllerInternal.Add(model))
-                   : JsonNet(viewModel);
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException,
-                        <#=resxName#>.<#=keyFieldName#>));
-            }
+            return CallWithCatch(() => ControllerInternal.Add(model),
+                CommonResx.AddFailedMessage, <#=resxName#>.<#=keyFieldName#>);
         }
 
         /// <summary>
@@ -198,7 +166,8 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         [HttpPost]
         public virtual JsonNetResult Create()
         {
-            return JsonNet(ControllerInternal.Create());
+            return CallWithCatch(() => ControllerInternal.Create(),
+                CommonResx.UnhandledExceptionMessage);
         }
 
         /// <summary>
@@ -209,18 +178,13 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         [HttpPost]
         public virtual JsonNetResult Save(T model)
         {
-            try
+            if (!ValidateModelState(ModelState, out ViewModelBase<ModelBase> viewModel))
             {
-                ViewModelBase<ModelBase> viewModel;
+                return JsonNet(viewModel);
+            }
 
-                return ValidateModelState(ModelState, out viewModel)
-                    ? JsonNet(ControllerInternal.Save(model))
-                    : JsonNet(viewModel);
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
-            }
+            return CallWithCatch(() => ControllerInternal.Save(model),
+                CommonResx.SaveFailedMessage);
         }
 
         /// <summary>
@@ -231,16 +195,8 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         [HttpPost]
         public virtual JsonNetResult Delete(string id)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Delete(id));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException,
-                        <#=resxName#>.<#=keyFieldName#>));
-            }
+            return CallWithCatch(() => ControllerInternal.Delete(id),
+                CommonResx.DeleteFailedMessage, <#=resxName#>.<#=keyFieldName#>);
         }
 
         /// <summary>
@@ -253,15 +209,8 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         [HttpPost]
         public virtual JsonNetResult GetList(int pageNumber, int pageSize = 10, string filters = null)
         {
-            try
-            {
-                var list = ControllerInternal.GetList(pageNumber, pageSize, filters);
-                return JsonNet(list);
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(string.Empty, businessException));
-            }
+            return CallWithCatch(() => ControllerInternal.GetList(pageNumber, pageSize, filters),
+                string.Empty);
         }
 
         #endregion

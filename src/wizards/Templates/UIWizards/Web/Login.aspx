@@ -1,6 +1,6 @@
 ﻿<%-- Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. --%>
 
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="$safeprojectname$.Login" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ValuedPartner.TU.Web.Login" %>
 
 <!DOCTYPE html>
 
@@ -46,6 +46,14 @@
                             <asp:Label ID="VersionLabel" style="font-family:Arial; color:#555" runat="server" Text="Version "></asp:Label></td>  
                         <td>  
                             <asp:TextBox ID="VersionText" runat="server" style='text-transform:uppercase' CssClass="auto-style2"></asp:TextBox></td>  
+                    </tr>  
+                    <tr>
+                        <td class="auto-style3">
+                            <asp:Label ID="DateLabel" Style="font-family: Arial; color: #555" runat="server" Text="Session Date "></asp:Label></td>
+                        <td>
+                            <asp:TextBox ID="SessionDateText" runat="server" Style='text-transform: uppercase' CssClass="auto-style2"></asp:TextBox></td>
+                        <td class="auto-style3">
+                            <asp:Label ID="DateLabelInfo" Style="font-family: Arial; color: #555" runat="server" Text="(YYYYMMDD only) "></asp:Label></td>
                     </tr>  
                 </table>  
                 <p>  

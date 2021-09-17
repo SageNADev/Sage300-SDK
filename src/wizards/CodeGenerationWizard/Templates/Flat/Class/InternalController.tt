@@ -121,7 +121,6 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         internal <#=entityName#>ViewModel<T> Create()
         {
             var viewModel = GetViewModel(new T(), null);
-
             viewModel.UserAccess = GetAccessRights();
 
             return viewModel;
@@ -134,10 +133,17 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <returns>JSON object for <#=modelName#></returns>
         internal <#=entityName#>ViewModel<T> GetById(string id)
         {
-            var data = Service.GetById(id);
-            var userMessage = new UserMessage(data);
+            if (!string.IsNullOrEmpty(id))
+            {
+                var data = Service.GetById(id);
+                var userMessage = new UserMessage(data);
 
-            return GetViewModel(data, userMessage);
+                return GetViewModel(data, userMessage);
+            }
+            else
+            {
+                return Create();
+            }
         }
 
         /// <summary>
@@ -148,7 +154,6 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         internal <#=entityName#>ViewModel<T> Add(T model)
         {
             var data = Service.Add(model);
-
             var userMessage = new UserMessage(data,
                 string.Format(CommonResx.AddSuccessMessage, <#=resxName#>.<#=keyFieldName#>, data.<#=keyFieldName#>));
 
@@ -215,6 +220,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
             // An expression to generate the filter expression from the passed filters string
             Expression<Func<T, bool>> filterExpression = null;
             var list = Service.Get(pageNumber, pageSize, filterExpression, null);
+            
             return list;
         } 
         #endregion

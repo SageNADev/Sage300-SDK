@@ -66,6 +66,14 @@ sg.utls.LicenseStatus = {
     OK: 0
 };
 
+sg.utls.NavigationAction = {
+    None: 0,
+    First: 1,
+    Previous: 2,
+    Next: 3,
+    Last: 4
+};
+
 var fnTimeout = 0;
 
 $.extend(sg.utls.regExp, {
@@ -258,6 +266,199 @@ $.extend(sg.utls, {
     reorderable: false,
     hasTriedToNotify: false,
     findersList: {}, //List of finders for hotkey
+
+    //Navigation control support
+    bindingNavigationActions: (uiObject, keyFieldName, txtBoxId, navGroupIndex = 0, checkDirtyFuncName ='checkIsDirty', getFuncName ='get', gridName = "") => {
+        //Attach navigation action handler
+        const suffix = navGroupIndex == 0 ? '' : navGroupIndex.toString();
+        [`btnDataFirst${suffix}`, `btnDataPrevious${suffix}`, `btnDataNext${suffix}`, `btnDataLast${suffix}`].forEach((id, index) => {
+            $('#' + id).on('click', (e) => {
+                uiObject[`navigationAction${suffix}`] = index + 1;
+                $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}, #btnDataNext${suffix}, #btnDataLast${suffix}`).prop('disabled', true);
+                if (!gridName) {
+                    let func = uiObject[checkDirtyFuncName];
+                    if (checkDirtyFuncName.includes('.')) {
+                        const ns = checkDirtyFuncName.split('.');
+                        func = ns.length > 1 ? ns.reduce(function (obj, i) { return obj[i]; }, window) : window[checkDirtyFuncName];
+                    }
+                    if (func && func instanceof Function) {
+                        let getFunc = uiObject[getFuncName];
+                        if (!getFunc && getFuncName.includes('.')) {
+                            const ns = getFuncName.split('.');
+                            getFunc = ns.length > 1 ? ns.reduce(function (obj, i) { return obj[i]; }, window) : window[getFuncName];
+                        }
+                        func(getFunc, uiObject[keyFieldName]);
+                    } else {
+                        const getFunc = uiObject[getFuncName];
+                        if (getFunc && getFunc instanceof Function) {
+                            uiObject[getFuncName]();
+                        }
+                    }
+                }
+                // detail popup
+                else {
+                    let func = uiObject[checkDirtyFuncName];
+                    if (checkDirtyFuncName.includes('.')) {
+                        const ns = checkDirtyFuncName.split('.');
+                        func = ns.length > 1 ? ns.reduce(function (obj, i) { return obj[i]; }, window) : window[checkDirtyFuncName];
+                    }
+                    if (func && func instanceof Function) {
+                        func().then((ret) => {
+                            if (ret) {
+                                const message = sg.viewList.currentRecord(gridName).isNewLine ? message = jQuery.validator.format(globalResource.AddNewLineMessage) : jQuery.validator.format(globalResource.SaveChangesMessage);
+                                sg.utls.showKendoConfirmationDialog(gridChangeLine, () => {
+                                    sg.utls.naviControlStatusFocus(uiObject, keyFieldName, txtBoxId, suffix, gridName);
+                                }, message);
+                            }
+                            else {
+                                gridChangeLine();
+                            }
+                        });
+                    }
+                    else {
+                        gridChangeLine();
+                    }
+                }
+            });
+        });
+        
+        if (txtBoxId) {
+        //Navigation key support
+            let id = txtBoxId.startsWith("#") ? txtBoxId : '#' + txtBoxId;
+            $(id).on('keydown', e => {
+                switch (e.key) {
+                    case "ArrowLeft":
+                        e.preventDefault();
+                        $(e.ctrlKey ? `#btnDataFirst${suffix}` : `#btnDataPrevious${suffix}`).trigger('click');
+                        break;
+                    case "ArrowRight":
+                        e.preventDefault();
+                        $(e.ctrlKey ? `#btnDataLast${suffix}` : `#btnDataNext${suffix}`).trigger('click');
+                        break;
+                }
+            })
+
+            //Navigation control focus
+            $(id).focus(function () {
+                $(`#divNavGroup${suffix}`).addClass("focused");
+            });
+            $(id).focusout(function () {
+                $(`#divNavGroup${suffix}`).removeClass("focused");
+            });
+            $(`#divNavGroup${suffix}`).addClass("focused");
+
+            // detail popup change and add line
+            if (gridName) {
+                $(`#${txtBoxId}`).on('change', function (e) {
+                    if (!isNaN(this.value)) {
+                        uiObject[`navigationPromise${suffix}`] = new Promise((resolve) => {
+                            uiObject[`navigationResolve${suffix}`] = resolve;
+                            gridChangeLine();
+                        }).catch(() => {
+                            uiObject[`navigationPromise${suffix}`] = null;
+                            uiObject[`navigationResolve${suffix}`] = null;
+                        });
+                    }
+                });
+
+                $(`#btnNew${suffix}`).on('click', function () {
+                    if (uiObject[`navigationPromise${suffix}`]) {
+                        uiObject[`navigationPromise${suffix}`].then(() => {
+                            sg.viewList.addLine(gridName);
+                            uiObject[`navigationPromise${suffix}`] = null;
+                            uiObject[`navigationResolve${suffix}`] = null;
+                        });
+                    }
+                    else {
+                        sg.viewList.addLine(gridName);
+                    }
+                });
+            }
+        };
+
+        // select grid row calculated from navigationAction
+        const gridChangeLine = () => {
+            const grid = $(`#${gridName}`).data('kendoGrid');
+            const total = grid.dataSource.total();
+            let currentLine = sg.viewList.getCurrentLineNumber(gridName);
+            const lastLine = currentLine;
+            switch (uiObject[`navigationAction${suffix}`]) {
+                case sg.utls.NavigationAction.First:
+                    currentLine = 1;
+                    break;
+                case sg.utls.NavigationAction.Previous:
+                    if (currentLine > 1)
+                        currentLine--;
+                    break;
+                case sg.utls.NavigationAction.Next:
+                    if (currentLine < total)
+                        currentLine++;
+                    break;
+                case sg.utls.NavigationAction.Last:
+                    currentLine = total;
+                    break;
+                case sg.utls.NavigationAction.None:
+                    let dest = parseInt($(`#${txtBoxId}`).val());
+                    if (isNaN(dest)) dest = currentLine;
+                    if (dest > total) {
+                        $(`#${txtBoxId}`).val(currentLine);
+                    }
+                    else {
+                        currentLine = dest;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            if (lastLine !== currentLine)
+                sg.viewList.moveToRow(gridName, currentLine);
+        };
+    },
+
+    // Navigation control focus, buttons enable/disabled after navigate
+    naviControlStatusFocus: (uiObject, keyFieldName, txtBoxId, navGroupIndex = 0, gridName = "") => {
+        const suffix = navGroupIndex == 0 ? '' : navGroupIndex.toString();
+        // header
+        if (!gridName) {
+            if (uiObject[`navigationAction${suffix}`]) {
+                $('#' + txtBoxId).focus();
+                $(`#divNavGroup${suffix}`).addClass("focused");
+            }
+
+            const sameValue = $('#' + txtBoxId).val() == uiObject[keyFieldName];
+            let disabled = uiObject[`navigationAction${suffix}`] === sg.utls.NavigationAction.First || (uiObject[`navigationAction${suffix}`] === sg.utls.NavigationAction.Previous && sameValue);
+            $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}`).prop('disabled', disabled);
+
+            disabled = uiObject[`navigationAction${suffix}`] === sg.utls.NavigationAction.Last || (uiObject[`navigationAction${suffix}`] === sg.utls.NavigationAction.Next && sameValue);
+            $(`#btnDataLast${suffix}, #btnDataNext${suffix}`).prop('disabled', disabled);        
+        }
+        // detail popup
+        else {
+            const grid = $(`#${gridName}`).data('kendoGrid');
+            const lineNo = sg.viewList.getCurrentLineNumber(gridName);
+            $(`#${txtBoxId}`).val(lineNo);
+            $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}`).prop('disabled', lineNo === 1);
+            $(`#btnDataLast${suffix}, #btnDataNext${suffix}`).prop('disabled', lineNo === grid.dataSource.total());
+        }
+        uiObject[`navigationAction${suffix}`] = sg.utls.NavigationAction.None;
+
+        // resolve promise to do actions after navigate, such as add line
+        if (uiObject[`navigationResolve${suffix}`]) {
+            uiObject[`navigationResolve${suffix}`]();
+        }
+    },
+
+    // Reset navigation control focus and status
+    resetNaviControlStatusFocus: (uiObject, navGroupIndex = 0, reset = false) => {
+        const suffix = navGroupIndex == 0 ? '' : navGroupIndex.toString();
+        if (uiObject[`navigationAction${suffix}`] !== sg.utls.NavigationAction.None || reset) {
+            $(`#divNavGroup${suffix}`).addClass("focused");
+            uiObject[`navigationAction${suffix}`] = sg.utls.NavigationAction.None;
+            $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}, #btnDataNext${suffix}, #btnDataLast${suffix}`).prop('disabled', false);
+        }
+    },
+
     formatFiscalPeriod: function (fiscalPeriod) {
         if (fiscalPeriod === "14") {
             return "ADJ";
@@ -499,12 +700,12 @@ $.extend(sg.utls, {
     releaseSession: function () {
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length === 0 || sessionPerPage.val() === "False") {
-            sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "ReleaseSession"), {}, function () { });
+            sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "ReleaseSession"));
         }
     },
 
     destroySessions: function () {
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "DestroyPool"), {}, function () { });
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "DestroyPool"));
         sage.cache.session.clearAll();
         sg.utls.destroyPoolForReport(false);
     },
@@ -514,7 +715,7 @@ $.extend(sg.utls, {
         var sessionId = sage.cache.session.get("session");
         sage.cache.session.clearAll();
         sage.cache.session.set("session", sessionId);
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "Destroy"), {}, function () { });
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "Destroy"));
     },
 
     /**

@@ -1541,6 +1541,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Options tab
             chkGenerateFinder.Checked = businessView.Options[BusinessView.Constants.GenerateFinder];
             chkGenerateGrid.Checked = businessView.Options[BusinessView.Constants.GenerateGrid];
+            chkGenerateGridModel.Checked = businessView.Options[BusinessView.Constants.GenerateGridModel];
             chkSequenceRevisionList.Checked = businessView.Options[BusinessView.Constants.SeqenceRevisionList];
             chkGenerateDynamicEnablement.Checked = businessView.Options[BusinessView.Constants.GenerateDynamicEnablement];
             chkGenerateClientFiles.Checked = businessView.Options[BusinessView.Constants.GenerateClientFiles];
@@ -1796,6 +1797,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             businessView.Options[BusinessView.Constants.GenerateFinder] = chkGenerateFinder.Checked;
             businessView.Options[BusinessView.Constants.GenerateGrid] = chkGenerateGrid.Checked;
+            businessView.Options[BusinessView.Constants.GenerateGridModel] = chkGenerateGridModel.Checked;
             businessView.Options[BusinessView.Constants.SeqenceRevisionList] = chkSequenceRevisionList.Checked;
             businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = chkGenerateDynamicEnablement.Checked;
             businessView.Options[BusinessView.Constants.GenerateClientFiles] = chkGenerateClientFiles.Checked;
@@ -1987,6 +1989,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 text += ProcessGeneration.Constants.PropertyFinder + "=\"" + businessView.Options[BusinessView.Constants.GenerateFinder].ToString() + "\" ";
                 text += ProcessGeneration.Constants.PropertyGrid + "=\"" + businessView.Options[BusinessView.Constants.GenerateGrid].ToString() + "\" ";
+                text += ProcessGeneration.Constants.PropertyGridModel + "=\"" + businessView.Options[BusinessView.Constants.GenerateGridModel].ToString() + "\" ";
                 text += ProcessGeneration.Constants.PropertyEnablement + "=\"" + businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString() + "\" ";
             }
 
@@ -4210,6 +4213,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 businessView.Options[BusinessView.Constants.GenerateFinder] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyFinder).Value);
                 businessView.Options[BusinessView.Constants.GenerateGrid] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyGrid).Value);
+                businessView.Options[BusinessView.Constants.GenerateGridModel] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyGridModel).Value);
                 businessView.Options[BusinessView.Constants.SeqenceRevisionList] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertySequenceRevisionList)?.Value??"false");
                 businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyEnablement).Value);
                 businessView.Options[BusinessView.Constants.GenerateClientFiles] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyClientFiles).Value);
@@ -4375,6 +4379,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var optionElement = new XElement(ProcessGeneration.Constants.PropertyOption);
 
                 optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyGrid, businessView.Options[BusinessView.Constants.GenerateGrid].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyGridModel, businessView.Options[BusinessView.Constants.GenerateGridModel].ToString()));
                 optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyFinder, businessView.Options[BusinessView.Constants.GenerateFinder].ToString()));
                 optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEnablement, businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString()));
                 optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyClientFiles, businessView.Options[BusinessView.Constants.GenerateClientFiles].ToString()));
@@ -4522,10 +4527,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // uncheck generate grid option
             chkGenerateGrid.Checked = false;
+            chkGenerateGridModel.Checked = false;
             chkSequenceRevisionList.Visible = false;
 
-            chkGenerateGrid.Visible = (repositoryType == RepositoryType.Flat || 
+            var visible = (repositoryType == RepositoryType.Flat ||
                 repositoryType == RepositoryType.HeaderDetail);
+            chkGenerateGrid.Visible = visible;
+            chkGenerateGridModel.Visible = visible;
 
             // Default
             btnBack.Enabled = false;
@@ -5358,6 +5366,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     AssignGrids(businessView);
 
                     chkGenerateGrid.Checked = false;
+                    chkGenerateGridModel.Checked = false;
                     chkGenerateFinder.Enabled = true;
 
                     if (GetRepositoryType() == RepositoryType.HeaderDetail &&

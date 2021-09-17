@@ -68,8 +68,23 @@
 
     function PrintReport(format, usePageRange, firstPage, lastPage) {
 
-        let reportUrlFormat = sg.utls.url.buildUrl("Core", "ExportReport", "ExportReport") + "?token={0}&format={1}&usePageRange={2}&firstPage={3}&lastPage={4}";
-        let exportURL = kendo.format(reportUrlFormat, '@ViewBag.token', format, usePageRange, firstPage, lastPage);
+         @{
+            if (ViewBag.CustomReport == true)
+            {
+                <text>
+                    let reportUrlFormat = sg.utls.url.buildUrl("Core", "ExportReport", "ExportCustomReport") + "?report={0}&paramValue={1}&format={2}&usePageRange={3}&firstPage={4}&lastPage={5}";
+                    let exportURL = kendo.format(reportUrlFormat, '@ViewBag.report', '@ViewBag.parameterValue', format, usePageRange, firstPage, lastPage);
+                </text>
+            }
+            else
+            {
+                <text>
+                    let reportUrlFormat = sg.utls.url.buildUrl("Core", "ExportReport", "ExportReport") + "?token={0}&format={1}&usePageRange={2}&firstPage={3}&lastPage={4}";
+                    let exportURL = kendo.format(reportUrlFormat, '@ViewBag.token', format, usePageRange, firstPage, lastPage);
+                </text>
+            }
+         }
+
         $('#ajaxSpinner').fadeIn(1);
         $.ajax({
             url: exportURL,

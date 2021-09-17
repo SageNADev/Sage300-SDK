@@ -975,8 +975,7 @@
                 viewOrder: 0,
                 returnFieldNames: ["FORMID"],
                 displayFieldNames: ["BANK", "FORMID", "DESC", "STKTYPE", "FORMSPEC1", "FORMSPEC2", "ADVICE", "LANGUAGE"],
-                //StockType CheckThenAdvice is not supported in web
-                filterTemplate: "BANK = \"{0}\" AND STKTYPE != 2"
+                filterTemplate: "BANK = \"{0}\""
             },
 
             BankPostingJournal: {
@@ -1856,6 +1855,14 @@
                 initKeyFieldNames: ["CONTRACT"],
             },
 
+            ChargeCode: {
+                viewID: "PM0023",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["CHARGECODE"],
+                displayFieldNames: ["CHARGECODE", "DESC", "INACTIVE"]
+            },
+
             MaterialAllocationCategory: {
                 viewID: "PM0039",
                 viewOrder: 2,
@@ -2061,9 +2068,40 @@
                 parentValAsInitKey: true,
                 displayFieldNames: ["DOCNUM", "DESC", "TRANSDATE", "COMPLETE"],
                 returnFieldNames: ["DOCNUM"]
-            }
-        },
+            },
 
+            RetainageNumber: {
+                viewID: "PM0412",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: [
+                    "DOCNUM",
+                    "RETTYPE",
+                    "TRANSDATE",
+                    "FISCALYEAR",
+                    "FISCALPER",
+                    "COMPLETE",
+                    "REFERENCE",
+                    "DESC"
+                ],
+                displayFieldNames: [
+                    "DOCNUM",
+                    "TRANSDATE",
+                    "COMPLETE",
+                    "REFERENCE",
+                    "DESC"
+                ]
+            },
+
+            RetainageNumberDetail: {
+                viewID: "PM0410",
+                viewOrder: 1,
+                parentValAsInitKey: false,
+                returnFieldNames: ["LINENO"],
+                displayFieldNames: ["LINENO", "CUSTCCY", "FMTCONTNO", "PROJECT", "CATEGORY", "ODOCNUM"],
+                filterTemplate: "DOCNUM = \"{0}\"",
+            },
+        },
         PO: {
             ItemPOStandalone: {
                 viewID: "PO0124",

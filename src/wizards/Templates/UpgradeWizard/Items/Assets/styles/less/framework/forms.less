@@ -1121,6 +1121,16 @@ input.grid_Cell_Number_Right_Align {
       width: 168px;
     }
   }
+
+  .data-nav-group input[type=text] {
+
+    &.text-right,
+    &.numeric,
+    &.align-right {
+      text-align: right;
+      padding-right: 10px;
+    }
+  }
 }
 
 .numeric-finder-group {
@@ -2356,6 +2366,10 @@ div.k-treeview {
   }
 }
 
+#contractMtnTreeview div.k-treeview {
+  height: unset;
+}
+
 //For all browsers
 .k-treeview span.k-in span.newcontrol + label{
     display:inline-block;
@@ -2424,6 +2438,7 @@ div.k-treeview {
 .k-treeview .k-state-selected {
   background-color: @brand-primary;
   color: @white;
+  border-radius: 0;
 }
 
 #exportTreeView .k-state-selected.k-state-focused,
@@ -3044,5 +3059,11 @@ div.k-treeview {
 
   .k-icon.k-resize-handle.k-i-vbar {
     background-color: white;
+  }
+}
+
+#right-pane {
+  .pane-content {
+    margin-left: 20px;
   }
 }

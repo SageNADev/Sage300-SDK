@@ -71,10 +71,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
         /// <summary>
         /// Get<#=enumName#>
         /// </summary>
-        public IEnumerable<CustomSelectList> Get<#=enumName#>
-        {
-            get { return EnumUtility.GetItemsList<<#=companyNamespace#>.<#=moduleId#>.Models.Enums.<#=enumName#>>(); }
-        }
+        public IEnumerable<CustomSelectList> Get<#=enumName#> => EnumUtility.GetItemsList<<#=companyNamespace#>.<#=moduleId#>.Models.Enums.<#=enumName#>>();
 
 <#
         }
@@ -82,13 +79,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
         /// <summary>
         /// Returns true if User has Modify Access
         /// </summary>
-        public bool HasModifyAccess
-        {
-            get
-            {
-                return UserAccess == null || UserAccess.SecurityType.HasFlag(SecurityType.Modify);
-            }
-        }
+        public bool HasModifyAccess => UserAccess == null || UserAccess.SecurityType.HasFlag(SecurityType.Modify);
 
 		<#
 			foreach(var view in settings.Entities)

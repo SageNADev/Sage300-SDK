@@ -555,6 +555,7 @@ table {
   font-size: 12px;
   border: 1px solid @table-border-color;
   margin-bottom: 20px;
+  height: auto !important;
 
   .k-dirty {
     margin: 0 0 0 -.6rem;
@@ -880,6 +881,7 @@ table {
 
   .k-grid-content {
     min-height: 186px;
+    height: auto !important;
 
     &:focus {
       outline: none;
@@ -1101,7 +1103,8 @@ table {
         opacity: 0.6;
       }
 
-      &#btnDetailOptionalfield {
+      &#btnDetailOptionalfield,
+      &#btnDetailOptionalfldFinder {
         background-position: -607px -1px;
       }
     }
