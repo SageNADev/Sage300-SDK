@@ -313,6 +313,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string AttributeFinderProperty = "finderProperty";
             /// <summary> Attribute Finder </summary>
             public const string AttributeFinderUrl = "finderUrl";
+            /// <summary> Attribute Finder File Name </summary>
+            public const string AttributeFinderFileName = "finderFileName";
             /// <summary> Attribute Time Only </summary>
             public const string AttributeTimeOnly = "timeOnly";
 
@@ -3853,6 +3855,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                 controlElement.Add(new XAttribute(Constants.AttributeFinderProperty, controlInfo.FinderName));
                                 controlElement.Add(new XAttribute(Constants.AttributeFinderUrl, 
                                     controlInfo.FinderUrl ? Constants.AttributeTrue : Constants.AttributeFalse));
+                                controlElement.Add(new XAttribute(Constants.AttributeFinderFileName, controlInfo.FinderFileName));
                             }
                             controlElement.Add(new XAttribute(Constants.AttributeTimeOnly, controlInfo.BusinessField.IsTimeOnly));
 
@@ -5752,16 +5755,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <returns>Finder file path</returns>
         private string GetInitPath()
         {
-            var regPath = string.Empty;
-            using (RegistryKey key = Registry.LocalMachine.OpenSubKey("Software\\Wow6432Node\\ACCPAC International, Inc.\\ACCPAC\\Configuration"))
-            {
-                if (key != null)
-                {
-                    regPath = (string)key.GetValue("Programs");
-                }
-            }
-
-            return !string.IsNullOrEmpty(regPath) ? Path.Combine(regPath, "Online", "Web", "Areas", "Core", "Scripts") : regPath;
+            //var regPath = string.Empty;
+            //using (RegistryKey key = Registry.LocalMachine.OpenSubKey("Software\\Wow6432Node\\ACCPAC International, Inc.\\ACCPAC\\Configuration"))
+            //{
+            //    if (key != null)
+            //    {
+            //        regPath = (string)key.GetValue("Programs");
+            //    }
+            //}
+            //return !string.IsNullOrEmpty(regPath) ? Path.Combine(regPath, "Online", "Web", "Areas", "Core", "Scripts") : regPath;
+            var regPath = _projects["Web"][cboModule.Text].ProjectFolder;
+            return !string.IsNullOrEmpty(regPath) ? Path.Combine(regPath, "Areas", "Core", "Scripts") : regPath;
         }
 
         /// <summary>

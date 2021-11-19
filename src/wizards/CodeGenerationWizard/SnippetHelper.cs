@@ -24,6 +24,7 @@ using System.Text;
 using System.Linq;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using System.IO;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
@@ -913,8 +914,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var finderControls = settings.XmlLayout.Root.XPathSelectElements("//Control[@widget='Finder']"); // get all finder widgets
                 foreach (var finderControl in finderControls)
                 {
+                    // Need to read view finder file (NON MINIFIED)
+                    // // to get object as may not be sg.viewFinderProperties
+                    var objectName = "sg.viewFinderProperties";
+                    var lines = File.ReadLines(finderControl.Attribute("finderFileName")?.Value);
+
+                    foreach (var line in lines)
+                    {
+                        // The first line containing this will be the object name
+                        if (line.Contains("="))
+                        {
+                            var split = line.Split('=');
+                            objectName = split[0].Trim();
+                            break;
+                        }
+                    }
+
                     var finderName = finderControl.Attribute("property")?.Value;
-                    var finderProperty = finderControl.Attribute("finderProperty")?.Value != null ? $", sg.viewFinderProperties.{finderControl.Attribute("finderProperty").Value}" : string.Empty;
+                    var finderProperty = finderControl.Attribute("finderProperty")?.Value != null ? $", {objectName}.{finderControl.Attribute("finderProperty").Value}" : string.Empty;
                     snippet.AppendLine(new string(' ', depth) + $@"sg.viewFinderHelper.setViewFinder(""btnFinder{finderName}"", ""txt{finderName}"" {finderProperty});");
                 }
             }
