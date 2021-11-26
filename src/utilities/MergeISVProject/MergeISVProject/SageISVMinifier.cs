@@ -23,6 +23,7 @@ using MergeISVProject.CustomExceptions;
 using MergeISVProject.Interfaces;
 using Microsoft.VisualBasic.FileIO;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -41,6 +42,7 @@ namespace MergeISVProject
         private const string NODEJS = @"Node.js";
         private const string TERSER = @"terser";
         private const string MinifyCommand = "node %AppData%\\npm\\node_modules\\terser\\bin {0} -o {1}";
+        private const string JAVASCRIPT_FILE_FILTER = @"*.js";
         #endregion
 
         #region Private Variables
@@ -98,39 +100,42 @@ namespace MergeISVProject
                     throw new Exception(msg);
                 }
 
-                var workingFolder = _Folders.Staging.AreasScripts;
-                var jsFolder = workingFolder;
-
-                _Logger.Log($"jsFolder = {jsFolder}");
-                if (Directory.Exists(jsFolder))
+                // Release 2022.1
+                // Need to process two different folders (AreasScripts and AreasExternalContent)
+                // as per partner request.
+                var foldersToProcess = new List<string>
                 {
-                    // Terser only does files, so iteration is here (
-                    foreach (var dir in Directory.GetDirectories(jsFolder, "*.*", System.IO.SearchOption.AllDirectories))
+                    _Folders.Staging.AreasScripts,
+                    _Folders.Staging.AreasExternalContent
+                };
+
+                foreach (var workingFolder in foldersToProcess)
+                {
+                    var jsFolder = workingFolder;
+
+                    _Logger.Log($"jsFolder = {jsFolder}");
+                    if (Directory.Exists(jsFolder))
                     {
-                        _Logger.Log($"Processing directory '{dir}'");
-
-                        var files = Directory.GetFiles(dir);
-                        if (files.Count() == 0)
+                        // Check to see if this folder contains any subfolders. 
+                        var subFolders = Directory.GetDirectories(jsFolder, "*.*", System.IO.SearchOption.AllDirectories);
+                        if (subFolders.Length > 0)
                         {
-                            _Logger.Log($"No files found in folder '{dir}'. Skipping to next directory in list.");
-                            continue;
+                            // Terser only does files, so iteration is here (
+                            foreach (var dir in subFolders)
+                            {
+                                ProcessFolder(dir);
+                            }
+                        } 
+                        else
+                        {
+                            ProcessFolder(jsFolder);
                         }
-
-                        _Logger.Log(string.Format(Messages.Msg_BeginningMinificationProcessOnDirectory, dir));
-
-                        Parallel.ForEach(files, file =>
-                        {
-                            var command = string.Format(MinifyCommand, file, file);
-                            ExecuteCommand(command);
-                        });
-
-                        _Logger.Log(Messages.Msg_MinificationComplete);
                     }
-                }
-                else
-                {
-                    error = true;
-                    _Logger.Log($"The directory '{jsFolder}' does not exist. There are no files to minify.");
+                    else
+                    {
+                        error = true;
+                        _Logger.Log($"The directory '{jsFolder}' does not exist. There are no files to minify.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -147,6 +152,33 @@ namespace MergeISVProject
                 }
                 _Logger.LogMethodFooter(Utilities.GetCurrentMethod());
             }
+        }
+
+        /// <summary>
+        /// Run the minification on a particular folder
+        /// </summary>
+        /// <param name="folder">The name of the folder to process</param>
+        private void ProcessFolder(string folder)
+        {
+            _Logger.Log($"Processing directory '{folder}'");
+
+            var filter = JAVASCRIPT_FILE_FILTER;
+            var files = Directory.GetFiles(folder, filter);
+            if (files.Count() == 0)
+            {
+                _Logger.Log($"No files found in folder '{folder}'. Skipping to next directory in list.");
+                return;
+            }
+
+            _Logger.Log(string.Format(Messages.Msg_BeginningMinificationProcessOnDirectory, folder));
+
+            Parallel.ForEach(files, file =>
+            {
+                var command = string.Format(MinifyCommand, file, file);
+                ExecuteCommand(command);
+            });
+
+            _Logger.Log(Messages.Msg_MinificationComplete);
         }
 
         /// <summary>

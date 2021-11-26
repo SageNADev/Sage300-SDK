@@ -514,6 +514,18 @@ table {
     }
   }
 
+  // grid with 3 rows
+  &.xsmall {
+    padding-bottom: 20px;
+    
+    .k-grid .k-grid-content,
+    .k-grid-content {
+      height: 95px !important;
+      min-height: 95px !important;
+      max-height: 95px !important;
+    }
+  }
+
   // Added to fix D-36047
   span.k-widget.k-numerictextbox.pr25 {
     padding-right: 0 !important; 
@@ -559,6 +571,10 @@ table {
 
   .k-dirty {
     margin: 0 0 0 -.6rem;
+  }
+
+  table {
+      min-width: 100%; //D-42123
   }
 
   .k-grid-header {
@@ -880,7 +896,7 @@ table {
   }
 
   .k-grid-content {
-    min-height: 186px;
+    min-height: 321px;
     height: auto !important;
 
     &:focus {
@@ -948,12 +964,16 @@ table {
         width: 95%;
         overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap;
+        position: absolute;
+        top: 0;
+        left: 0;
+        white-space: pre;
       }
 
       .pencil-icon {
         position: absolute;
-        right: -6px;
+        right: 0;
+        top: 2px;
         display: inline-block;
         width: 35px;
         height: 24px;
@@ -963,6 +983,12 @@ table {
 
         .locationDetailEditCell {
           position: relative;
+          top: 5px;
+        }
+
+        input.icon.pencil-edit {
+          position: absolute;
+          right: -6px;
           top: 5px;
         }
       }

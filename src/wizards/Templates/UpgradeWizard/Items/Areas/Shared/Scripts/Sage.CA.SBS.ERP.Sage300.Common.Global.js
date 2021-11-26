@@ -5,8 +5,8 @@
 // Note: 
 //       Enabling 'use strict' line below seems to cause unit tests to fail.
 //       Also, using some ECMAScript 6 features will cause unit tests to fail.
-//       For example, declaring a variable using 'let' instead of 'var' will
-//       cause unit tests to fail.
+//       For example, using the ?. or ?? constructs will cause unit tests to fail.
+//       Using let (or const) over var is ok.
 //
 //"use strict";
 
@@ -297,27 +297,7 @@ $.extend(sg.utls, {
                 }
                 // detail popup
                 else {
-                    let func = uiObject[checkDirtyFuncName];
-                    if (checkDirtyFuncName.includes('.')) {
-                        const ns = checkDirtyFuncName.split('.');
-                        func = ns.length > 1 ? ns.reduce(function (obj, i) { return obj[i]; }, window) : window[checkDirtyFuncName];
-                    }
-                    if (func && func instanceof Function) {
-                        func().then((ret) => {
-                            if (ret) {
-                                const message = sg.viewList.currentRecord(gridName).isNewLine ? message = jQuery.validator.format(globalResource.AddNewLineMessage) : jQuery.validator.format(globalResource.SaveChangesMessage);
-                                sg.utls.showKendoConfirmationDialog(gridChangeLine, () => {
-                                    sg.utls.naviControlStatusFocus(uiObject, keyFieldName, txtBoxId, suffix, gridName);
-                                }, message);
-                            }
-                            else {
-                                gridChangeLine();
-                            }
-                        });
-                    }
-                    else {
-                        gridChangeLine();
-                    }
+                    gridChangeLine();
                 }
             });
         });
@@ -345,34 +325,89 @@ $.extend(sg.utls, {
             $(id).focusout(function () {
                 $(`#divNavGroup${suffix}`).removeClass("focused");
             });
-            $(`#divNavGroup${suffix}`).addClass("focused");
+            $(`#divNavGroup`).addClass("focused");
+
+            if (gridName) {
+                $(`#divNavGroup${suffix}`).addClass("focused");
+            }
+
+            if ((navGroupIndex > 0) && ($(id).val() == "" || $(id).val() == "0") && !gridName) {
+                $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}, #btnDataNext${suffix}, #btnDataLast${suffix}`).prop('disabled', true);
+            }
 
             // detail popup change and add line
             if (gridName) {
-                $(`#${txtBoxId}`).on('change', function (e) {
-                    if (!isNaN(this.value)) {
-                        uiObject[`navigationPromise${suffix}`] = new Promise((resolve) => {
-                            uiObject[`navigationResolve${suffix}`] = resolve;
-                            gridChangeLine();
-                        }).catch(() => {
-                            uiObject[`navigationPromise${suffix}`] = null;
-                            uiObject[`navigationResolve${suffix}`] = null;
-                        });
+                $(`#${txtBoxId}`).on('blur keypress', function (e) {
+                    // 1. formattextbox=numeric prevents non-digits from being entered, need to specify keypress event for enter key
+                    // 2. preventDefault in keypress event from formattextbox=numeric sometimes causes change event to be cancelled due to the order of events in some browsers. Use blur event instead
+                    if ((e.type === 'blur' || (e.type === 'keypress' && e.which === sg.constants.KeyCodeEnum.Enter))
+                        && this.lastValue !== this.value) {
+                        if (!isNaN(this.value)) {
+                            uiObject[`navigationPromise${suffix}`] = new Promise((resolve) => {
+                                uiObject[`navigationResolve${suffix}`] = resolve;
+                                gridChangeLine();
+                            }).catch(() => {
+                                uiObject[`navigationPromise${suffix}`] = null;
+                                uiObject[`navigationResolve${suffix}`] = null;
+                            });
+                        }
                     }
+                });
+                // save previous value to check for change in blur event
+                $(`#${txtBoxId}`).on('focus', function (e) {
+                    this.lastValue = this.value;
                 });
 
                 $(`#btnNew${suffix}`).on('click', function () {
                     if (uiObject[`navigationPromise${suffix}`]) {
                         uiObject[`navigationPromise${suffix}`].then(() => {
-                            sg.viewList.addLine(gridName);
+                            gridAddLine();
                             uiObject[`navigationPromise${suffix}`] = null;
                             uiObject[`navigationResolve${suffix}`] = null;
                         });
                     }
                     else {
-                        sg.viewList.addLine(gridName);
+                        gridAddLine();
                     }
                 });
+            }
+        };
+
+        // select grid row calculated from navigationAction
+        const gridAddLine = () => {
+            let func = uiObject[checkDirtyFuncName];
+            if (checkDirtyFuncName.includes('.')) {
+                const ns = checkDirtyFuncName.split('.');
+                func = ns.length > 1 ? ns.reduce(function (obj, i) { return obj[i]; }, window) : window[checkDirtyFuncName];
+            }
+            if (func && func instanceof Function) {
+                func().then((ret) => {
+                    const currentRecord = sg.viewList.currentRecord(gridName);
+                    const isNewLine = currentRecord ? currentRecord.isNewLine : false;
+                    if (ret) {
+                        const message = sg.viewList.currentRecord(gridName).isNewLine ? jQuery.validator.format(globalResource.AddNewLineMessage) : jQuery.validator.format(globalResource.SaveChangesMessage);
+                        sg.utls.showKendoConfirmationDialog(() => {
+                            sg.viewList.addLine(gridName, ret, currentRecord);
+                        }, () => {
+                            sg.utls.naviControlStatusFocus(uiObject, keyFieldName, txtBoxId, suffix, gridName);
+                            if (isNewLine) {
+                                sg.viewList.clearNewRow(gridName);
+                            }
+                            else {
+                                sg.viewList.resetCurrentRow(gridName, () => {
+                                    sg.viewList.addLine(gridName, false, currentRecord);
+                                });
+                            }
+
+                        }, message);
+                    }
+                    else {
+                        sg.viewList.addLine(gridName, ret, currentRecord);
+                    }
+                });
+            }
+            else {
+                sg.viewList.addLine(gridName, false);
             }
         };
 
@@ -411,8 +446,50 @@ $.extend(sg.utls, {
                     break;
             }
 
-            if (lastLine !== currentLine)
-                sg.viewList.moveToRow(gridName, currentLine);
+            if (lastLine !== currentLine) {
+                let func = uiObject[checkDirtyFuncName];
+                if (checkDirtyFuncName.includes('.')) {
+                    const ns = checkDirtyFuncName.split('.');
+                    func = ns.length > 1 ? ns.reduce(function (obj, i) { return obj[i]; }, window) : window[checkDirtyFuncName];
+                }
+                if (func && func instanceof Function) {
+                    func().then((ret) => {
+                        const currentRecord = sg.viewList.currentRecord(gridName);
+                        const isNewLine = currentRecord ? currentRecord.isNewLine : false;
+                        if (ret) {
+                            const message = currentRecord && currentRecord.isNewLine ? jQuery.validator.format(globalResource.AddNewLineMessage) : jQuery.validator.format(globalResource.SaveChangesMessage);
+                            sg.utls.showKendoConfirmationDialog(() => {
+                                sg.viewList.moveToRow(gridName, currentLine, ret);
+                            }, () => {
+                                sg.utls.naviControlStatusFocus(uiObject, keyFieldName, txtBoxId, suffix, gridName);
+                                if (isNewLine) {
+                                    sg.viewList.deleteLine(gridName, false, () => {
+                                        sg.viewList.moveToRow(gridName, currentLine, false);
+                                    });
+                                }
+                                else{
+                                    sg.viewList.resetCurrentRow(gridName, () => {
+                                        sg.viewList.moveToRow(gridName, currentLine, false);
+                                    });
+                                }
+                            }, message);
+                        }
+                        else {
+                            if (isNewLine) {
+                                sg.viewList.deleteLine(gridName, false, () => {
+                                    sg.viewList.moveToRow(gridName, currentLine, false);
+                                });
+                            }
+                            else {
+                                sg.viewList.moveToRow(gridName, currentLine, ret);
+                            }
+                        }
+                    });
+                }
+                else {
+                    sg.viewList.moveToRow(gridName, currentLine, false);
+                }
+            }
         };
     },
 
@@ -431,7 +508,11 @@ $.extend(sg.utls, {
             $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}`).prop('disabled', disabled);
 
             disabled = uiObject[`navigationAction${suffix}`] === sg.utls.NavigationAction.Last || (uiObject[`navigationAction${suffix}`] === sg.utls.NavigationAction.Next && sameValue);
-            $(`#btnDataLast${suffix}, #btnDataNext${suffix}`).prop('disabled', disabled);        
+            $(`#btnDataLast${suffix}, #btnDataNext${suffix}`).prop('disabled', disabled);
+
+            if (navGroupIndex > 0 && ($('#' + txtBoxId).val() == "" || $('#' + txtBoxId).val() == "0")) {
+                $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}, #btnDataNext${suffix}, #btnDataLast${suffix}`).prop('disabled', true);
+            }
         }
         // detail popup
         else {
@@ -440,6 +521,7 @@ $.extend(sg.utls, {
             $(`#${txtBoxId}`).val(lineNo);
             $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}`).prop('disabled', lineNo === 1);
             $(`#btnDataLast${suffix}, #btnDataNext${suffix}`).prop('disabled', lineNo === grid.dataSource.total());
+            $(`#${txtBoxId}`).focus();
         }
         uiObject[`navigationAction${suffix}`] = sg.utls.NavigationAction.None;
 
@@ -450,13 +532,176 @@ $.extend(sg.utls, {
     },
 
     // Reset navigation control focus and status
-    resetNaviControlStatusFocus: (uiObject, navGroupIndex = 0, reset = false) => {
+    resetNaviControlStatusFocus: (uiObject, navGroupIndex = 0, reset = false, gridName = "") => {
         const suffix = navGroupIndex == 0 ? '' : navGroupIndex.toString();
         if (uiObject[`navigationAction${suffix}`] !== sg.utls.NavigationAction.None || reset) {
-            $(`#divNavGroup${suffix}`).addClass("focused");
+            $(`#divNavGroup`).addClass("focused");
             uiObject[`navigationAction${suffix}`] = sg.utls.NavigationAction.None;
-            $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}, #btnDataNext${suffix}, #btnDataLast${suffix}`).prop('disabled', false);
+            if (!gridName) {
+                $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}, #btnDataNext${suffix}, #btnDataLast${suffix}`).prop('disabled', false);
+            }
+            else {
+                const grid = $(`#${gridName}`).data('kendoGrid');
+                const lineNo = sg.viewList.getCurrentLineNumber(gridName);
+                $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}`).prop('disabled', lineNo === 1);
+                $(`#btnDataLast${suffix}, #btnDataNext${suffix}`).prop('disabled', lineNo === grid.dataSource.total());
+            }
         }
+    },
+
+    /**
+     * @description Initialize the keyboard navigation handlers for the grid
+     * @param {string} gridName The name of the grid.
+     * @param {boolean} isNewGrid true = Using new grid | false = Using previous grid
+     * @param {object} eventHandlers Click handlers for Insert, Delete, F9 and Alt+c
+     * @param {object} buttonNames The names of the Insert, Delete, View/Edit Details and Configure grid buttons
+     */
+    initGridKeyboardHandlers: function (gridName, isNewGrid, eventHandlers, buttonNames) {
+
+        // 20211109 - Remove this after code freeze
+        return;
+
+        const gridId = `#${gridName}`;
+
+        // Event handlers
+        const { addLine, deleteLine, showDetails, editColumnSettings} = eventHandlers;
+
+        // Button Names
+        const { addLineButtonName, deleteLineButtonName, viewEditDetailsButtonName, editColumnSettingsButtonName } = buttonNames;
+
+        // Hotkey to give focus to the grid
+        $(document.body).keydown(function (e) {
+            // Alt + G
+            if (e.altKey && e.keyCode == sg.constants.KeyCodeEnum.G) {
+                sg.utls.gridFocusByName(gridName);
+            }
+        });
+
+        // This stuff only seems to work with the new grid code (AccpacGrid.js)
+        // Note: Also, this only works when focus is INSIDE the grid
+        // If outside of main grid, the keydown handler below this block is used instead.
+        if (isNewGrid) {
+            // Override the default Kendo Home and End behaviour (Only for new grid)
+            kendo.ui.Grid.fn._handleHome = function () {
+                new AccpacGridHelper(gridName).firstPage();
+            };
+            kendo.ui.Grid.fn._handleEnd = function () {
+                new AccpacGridHelper(gridName).lastPage();
+            };
+        }
+
+        $(`#${gridName}`).on('keydown', function (e) {
+
+            const gridHelper = new AccpacGridHelper(gridName);
+            const keyCodes = sg.constants.KeyCodeEnum;
+            const code = e.keyCode;
+            const altPressed = e.altKey;
+            const isEditMode = $(gridId).find('.k-grid-edit-row').length > 0;
+            const isPagerFocused = $(gridId).find(".k-pager-input > input.k-textbox").is(":focus");
+
+            let insertButtonDisabled = true;
+            let deleteButtonDisabled = true;
+            insertButtonDisabled = $(`#${addLineButtonName}`).prop('disabled');
+            deleteButtonDisabled = $(`#${deleteLineButtonName}`).prop('disabled');
+
+            if (code === keyCodes.Insert) {
+
+                if (!insertButtonDisabled && addLine) {
+                    if (isNewGrid) {
+                        sg.viewList.commit(gridName);
+                        addLine(gridName);
+                    } else {
+                        addLine();
+                    }
+                }
+
+            } else if (code === keyCodes.Delete) {
+
+                if (!deleteButtonDisabled && deleteLine && !isEditMode && !isPagerFocused) {
+                    isNewGrid ? deleteLine(gridName) : deleteLine();
+                }
+
+            } else if (code === keyCodes.F9) {
+                if (showDetails) {
+                    isNewGrid ? showDetails(gridName) : showDetails();
+                }
+
+            } else if (altPressed && code === keyCodes.C) {
+                if (editColumnSettings) {
+                    isNewGrid ? editColumnSettings(gridName) : editColumnSettings();
+                }
+
+            } else if (code === keyCodes.Home) {
+                if (!isEditMode) {
+                    gridHelper.firstPage();
+                }
+
+            } else if (code === keyCodes.End) {
+                if (!isEditMode) {
+                    gridHelper.lastPage();
+                }
+
+            } else if (code === keyCodes.PgUp) {
+                if (!isEditMode) {
+                    gridHelper.previousPage();
+                }
+
+            } else if (code === keyCodes.PgDn) {
+                if (!isEditMode) {
+                    gridHelper.nextPage();
+                }
+
+            } else if (code === keyCodes.ESC) {
+
+                // If row/cell is in edit mode then close cell 
+                // but don't allow downstream handler to be called otherwise 
+                // Optional Field popup will also close.
+                if (isEditMode) {
+                    $(gridId).data('kendoGrid').closeCell();
+                    sg.utls.gridFocusByName(gridName);
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                }
+            }
+
+        });
+    },
+
+    /**
+     * @function
+     * @name gridFocusByName
+     * @description Set the focus to the grid table specifying the grid name
+     * @namespace sg.utls
+     * @public
+     * 
+     * @param {string} gridName The grid name
+     */
+    gridFocusByName: function (gridName) {
+        if (gridName && gridName.length > 0) {
+            $(`#${gridName}`).data('kendoGrid').table.focus();
+        }
+    },
+
+    /**
+     * @function
+     * @name removePrependedHashtag
+     * @description Remove the preceding hashtag from a string if it exists
+     *              If the string doesn't start with an hashtag, just return 
+     *              the original input string.
+     * @namespace sg.utls
+     * @public
+     *
+     * @param {string} nameWithHashtag The string containing the possible preceding hashtag to remove
+     */
+    removePrependedHashtag: function (nameWithHashtag) {
+        let rval = nameWithHashtag;
+        if (nameWithHashtag && nameWithHashtag.length > 0) {
+            let hashtagIndex = nameWithHashtag.indexOf('#');
+            if (hashtagIndex === 0) {
+                rval = nameWithHashtag.substring(1);
+            }
+        }
+        return rval;
     },
 
     formatFiscalPeriod: function (fiscalPeriod) {
@@ -1554,7 +1799,7 @@ $.extend(sg.utls, {
         });
     },
 
-    showKendoConfirmationDialog: function (callbackYes, callbackNo, message, typeOfAction, isMessageEncoded, callbackCancel) {
+    showKendoConfirmationDialog: function (callbackYes, callbackNo, message, typeOfAction, isMessageEncoded, callbackCancel, gridName = '') {
 
         // true : Confirmation dialog title will be positioned in the header bar of dialog box
         // false : Confirmation dialog title will be positioned just above the body text instead (original behaviour)
@@ -1580,7 +1825,19 @@ $.extend(sg.utls, {
                 sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
             },
             // Custom function to support focus within kendo window
-            activate: sg.utls.kndoUI.onActivate
+            activate: (e) => {
+                sg.utls.kndoUI.onActivate(e);
+
+                // Set the initial control focus to 'Yes' or 'Ok' button
+                // Note: Seem to need small delay before this works correctly.
+                let $okButton = $('#kendoConfirmationAcceptButton');
+                if ($okButton) {
+                    const delay = 500;
+                    setTimeout(() => {
+                        $okButton.focus();
+                    }, delay);
+                }
+            }
         });
 
         kendoWindow.data("kendoWindow").content($("#delete-confirmation").html()).center().open();
@@ -1591,6 +1848,11 @@ $.extend(sg.utls, {
             }
             else if (callbackNo != null && typeOfAction !== "YesNoCancel") {
                 callbackNo();
+            }
+
+            // If gridName has been specified, set focus back to grid
+            if (gridName.length > 0) {
+                sg.utls.gridFocusByName(gridName);
             }
         });
 
@@ -1629,6 +1891,11 @@ $.extend(sg.utls, {
                         callbackCancel();
                     }
                     kendoWindow.data("kendoWindow").destroy();
+                }
+
+                // If gridName has been specified, set focus back to grid
+                if (gridName.length > 0) {
+                    sg.utls.gridFocusByName(gridName);
                 }
             }).end();
 
@@ -1709,6 +1976,7 @@ $.extend(sg.utls, {
      * @param {string} btnNoLabelIn - Optional - The text for the 'No' button
      */
     showConfirmationDialogYesNo: function (callbackYes, callbackNo, messageIn, titleIn, btnYesLabelIn, btnNoLabelIn, noPostFix = false) {
+
         var DialogID = 'confirmationDialog';
         var DialogParentID = 'confirmationParent';
         var InpageTemplateIDRoot = 'generic-confirmation';
@@ -1945,16 +2213,6 @@ $.extend(sg.utls, {
     },
 
     /**
-     * Initializes a Kendo popup window. 
-     * 
-     * @param {string} id The value for the window's CSS id attribute.
-     * @param {string} title The value for the window's title.
-     * @param {function} onClose Handler for the popup's close event.
-     * @param {object} maxConfig Kendo UI Window configuration object.
-     */
-
-
-    /**
      * @function
      * @name initializeKendoWindowPopup
      * @description Initializes a Kendo popup window
@@ -2151,6 +2409,11 @@ $.extend(sg.utls, {
     closeKendoWindowPopup: function (id, data) {
         var kendoWindow = $(id).data("kendoWindow");
         kendoWindow.close();
+    },
+
+    isKendoWindowPopupOpen: (id) => {
+        let kendoWindow = $(id).data("kendoWindow");
+        return kendoWindow ? !kendoWindow.element.is(":hidden") : false;
     },
 
     showConfirmationDialog: function (callbackYes, callbackNo, message) {
@@ -3434,22 +3697,16 @@ $.extend(sg.utls, {
 
     saveUserPreferences: function (key, value) {
         var data = { key: key, value: value };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "SaveUserPreference"), data, function(result) {
-            console.log("SaveUserPreferences: " + result); //result is either true or false
-        });
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "SaveUserPreference"), data, () => { });
     },
 
     saveScreenLevelUserPreferences: function (key, value) {
         var data = { key: key, value: value };
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "SaveScreenLevelUserPreference"), data, function(result) {
-            console.log("SaveScreenLevelUserPreference: " + result); //result is either true or false
-        });
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "SaveScreenLevelUserPreference"), data, () => { });
     },
 
     deleteScreenLevelUserPreference: function(){
-        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "DeleteScreenLevelUserPreference"), {}, function(result) {
-            console.log("DeleteScreenLevelUserPreference: " + result); //result is either true or false
-        });
+        sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "DeleteScreenLevelUserPreference"), {}, () => { });
     },
 
     getUserPreferences: function (key, successHandler) {
@@ -4211,7 +4468,9 @@ $(function () {
     var sharedIndex = window.location.href.indexOf("/Shared/");
     var customAdmin = window.location.href.indexOf("/AS/CustomScreen");
 
-    if ((coreIndex < 0) && sharedIndex < 0 && customAdmin < 0) {
+
+    if (coreIndex < 0 && sharedIndex < 0 && customAdmin < 0
+        && !document.getElementById("frmOnPremiseLogin")) { // don't ask for currency info in login page as users are not login yet
         sg.utls.loadHomeCurrency();
     }
 
@@ -4258,6 +4517,7 @@ $(function () {
 
     // Set flag if shift key is pressed. Used for grid tabbing
     $(document).on('keyup keydown', function (e) {
+
         sg.utls.isShiftKeyPressed = e.shiftKey;
         sg.utls.isCtrlKeyPressed = e.ctrlKey;
         var keyCode = e.keyCode || e.which;
@@ -4525,7 +4785,6 @@ $(function () {
 
 (function ($) {
     function hasScroll(el, index, match) {
-        console.log("scroll");
         var $el = $(el),
             sX = $el.css('overflow-x'),
             sY = $el.css('overflow-y'),

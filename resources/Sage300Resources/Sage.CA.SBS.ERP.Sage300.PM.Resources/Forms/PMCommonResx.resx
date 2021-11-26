@@ -276,4 +276,10 @@
   <data name="CostOfSalesAccountDescription" xml:space="preserve">
     <value>Cost of Sales Account Description</value>
   </data>
+  <data name="EditDetails" xml:space="preserve">
+    <value>Edit Details</value>
+  </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>View Details</value>
+  </data>
 </root>

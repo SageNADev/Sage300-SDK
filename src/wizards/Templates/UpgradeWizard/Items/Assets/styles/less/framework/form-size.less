@@ -548,7 +548,13 @@ html.form-medium {
   .grid-group {
     margin-bottom: 10px;
 
-    .gh150 .k-grid-content {
+    &.xsmall .k-grid-content {
+      height: 75px;
+      min-height: 75px;
+    }
+
+    .gh150 .k-grid-content,
+    &.small .k-grid-content {
       height: 95px;
       min-height: 95px;
     }
@@ -1244,17 +1250,11 @@ html.form-medium {
 
   // Kendo Splitter
 
-  .k-icon.k-resize-handle{
-    width: 3px;
-  }
-
-  .k-icon.k-expand-prev {
-    width: 6px;
-  }
-
-  .k-splitbar-horizontal.k-splitbar-draggable-horizontal .k-i-arrow-60-left,
-  .k-splitbar-horizontal.k-splitbar-draggable-horizontal .k-i-arrow-60-right {
-    width: 7px;
+  .k-splitbar {
+  
+    .k-resize-handle {
+      width: 6px;
+    }
   }
 
   // Kendo Basic Tree View
@@ -1262,7 +1262,7 @@ html.form-medium {
   .k-treeview {
 
     span.k-in {
-      line-height: 1.4;
+      line-height: 2.4;
     }
 
     .k-icon.k-i-collapse, 
@@ -1282,6 +1282,15 @@ html.form-medium {
     .k-plus-disabled {
       background-position: -646px -1px;
     }
+  }
+
+  #left-pane .k-dropdown .k-dropdown-wrap.k-state-default .k-input {
+    line-height: 1.75;
+  }
+
+  .k-sprite.folder + .k-state-default {
+    line-height: 2.2;
+    margin-left: 2px;
   }
 }
 
@@ -1553,6 +1562,17 @@ html.form-small {
     .search-group input.align-right, 
     .search-group input.numeric {
       padding-right: 26px;
+    }
+
+    .go-group .data-nav-group input.align-right, 
+    .go-group .data-nav-group input.numeric, 
+    .numeric-search-group .data-nav-group input.align-right, 
+    .numeric-search-group .data-nav-group input.numeric, 
+    .plus-group .data-nav-group input.align-right, 
+    .plus-group .data-nav-group input.numeric, 
+    .search-group .data-nav-group input.align-right, 
+    .search-group .data-nav-group input.numeric {
+      padding-right: 10px;
     }
 
     div[class*="-group"]>label+.help-icon {
@@ -1930,7 +1950,13 @@ html.form-small {
   .grid-group {
     margin-bottom: 10px;
 
-    .gh150 .k-grid-content {
+    &.xsmall .k-grid-content {
+      height: 75px;
+      min-height: 75px;
+    }
+
+    .gh150 .k-grid-content,
+    &.small .k-grid-content {
       height: 95px;
       min-height: 95px;
     }
@@ -2913,17 +2939,15 @@ html.form-small {
 
   // Kendo Splitter
 
-  .k-icon.k-resize-handle{
-    width: 3px;
-  }
+  .k-splitbar {
 
-  .k-icon.k-expand-prev {
-    width: 6px;
-  }
+    .k-resize-handle {
+      width: 6px;
+    }
 
-  .k-splitbar-horizontal.k-splitbar-draggable-horizontal .k-i-arrow-60-left,
-  .k-splitbar-horizontal.k-splitbar-draggable-horizontal .k-i-arrow-60-right {
-    width: 7px;
+    .k-icon:before {
+      font-size: 17px;
+    }
   }
 
   // Kendo Basic Tree View
@@ -2931,7 +2955,7 @@ html.form-small {
   .k-treeview {
 
     span.k-in {
-      line-height: 1.2;
+      line-height: 2.4;
     }
 
     .k-icon.k-i-collapse, 
@@ -2952,10 +2976,27 @@ html.form-small {
     }
   }
 
+  #left-pane .k-dropdown .k-dropdown-wrap.k-state-default .k-input {
+    line-height: 1.75;
+    font-size: 11px;
+  }
+
+  #treeviewMenu.k-menu .k-item>.k-link {
+    padding: .28em 1.8em .38em .9em;
+  }
+
+  .k-sprite.folder {
+    font-size: 1.5rem;
+  }
+
+  .k-sprite.folder + .k-state-default {
+    line-height: 2.0;
+  }
+
   // Kendo Upgrade 2021.1.224 
 
-    .k-dropdowntree>.k-multiselect-wrap>.k-clear-value, .k-multiselect-wrap>.k-clear-value {
-      top: ~"calc(1.00357143em - 15px)";
-    }
+  .k-dropdowntree>.k-multiselect-wrap>.k-clear-value, .k-multiselect-wrap>.k-clear-value {
+    top: ~"calc(1.00357143em - 15px)";
+  }
 }
 

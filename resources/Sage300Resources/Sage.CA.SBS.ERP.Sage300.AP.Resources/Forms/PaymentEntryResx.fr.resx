@@ -545,6 +545,9 @@
     <value>Montant non imputé</value>
     <comment>Field</comment>
   </data>
+  <data name="UnformattedContractCode" xml:space="preserve">
+    <value>Code contrat non formaté</value>
+  </data>
   <data name="VendorAmount" xml:space="preserve">
     <value>Montant fournisseur</value>
     <comment>Field</comment>
@@ -1022,7 +1025,7 @@
     <comment>Import/Export</comment>
   </data>
   <data name="VendorCurrencyCode" xml:space="preserve">
-    <value>Code devise fournisseur</value>
+    <value>Devise fournisseur</value>
     <comment>Import/Export</comment>
   </data>
   <data name="VendorExchangeRate" xml:space="preserve">
@@ -1127,6 +1130,9 @@
   </data>
   <data name="ProjectOrCategoryResource" xml:space="preserve">
     <value>Ressource projet ou catégorie</value>
+  </data>
+  <data name="ProjectStyle" xml:space="preserve">
+    <value>Style de projet</value>
   </data>
   <data name="RetainageDistributionAmount" xml:space="preserve">
     <value>Montant retenue ventilée</value>
@@ -1534,7 +1540,7 @@
     <value>Remise non imputée tâche</value>
   </data>
   <data name="UnappliedJobPaymentAmount" xml:space="preserve">
-    <value>Paiement non imputé tâche</value>
+    <value>Montant non imputé</value>
   </data>
   <data name="VendCurrencyAmountDue" xml:space="preserve">
     <value>Montant à payer devise fournisseur</value>
@@ -1562,13 +1568,13 @@
     <value>Taxes du détail</value>
   </data>
   <data name="MiscellaneousAdjustmentEntry" xml:space="preserve">
-    <value>Saisie d'ajustements divers</value>
+    <value>Saisie d&apos;ajustements divers</value>
   </data>
   <data name="EntryDoesNotExistsForBatch" xml:space="preserve">
-    <value>La saisie {0} n'existe pas pour ce lot.</value>
+    <value>La saisie {0} n&apos;existe pas pour ce lot.</value>
   </data>
   <data name="BatchStatusWarningMessage" xml:space="preserve">
-    <value>L'état du lot est sur {0}. Vous pouvez consulter son contenu mais vous ne pouvez pas le modifier.</value>
+    <value>L&apos;état du lot est sur {0}. Vous pouvez consulter son contenu mais vous ne pouvez pas le modifier.</value>
   </data>
   <data name="DuplicateCheck" xml:space="preserve">
     <value>Le chèque numéro {0} a déjà été reporté.</value>
@@ -1580,13 +1586,13 @@
     <value>Le numéro du fournisseur ne peut pas être en blanc.</value>
   </data>
   <data name="TaxReportCurrencymismatch" xml:space="preserve">
-    <value>La devise du document {0} diffère de la monnaie de publication {1} du groupe de taxes {2}</value>
+    <value>La devise du document {0} diffère de la monnaie de publication {1} du groupe de taxes {2}.</value>
   </data>
   <data name="TaxGroupVendorNotFound" xml:space="preserve">
     <value>Le groupe de taxe ne peut pas être en blanc lorsque le numéro du fournisseur est spécifié</value>
   </data>
   <data name="DateValidate" xml:space="preserve">
-    <value>La date saisie est hors de la plage spécifiée dans le profil de l'entreprise. Accepter cette date?</value>
+    <value>La date saisie est hors de la plage spécifiée dans le profil de l&apos;entreprise. Accepter cette date?</value>
   </data>
   <data name="CPRSDescription" xml:space="preserve">
     <value>Description SDPC </value>
@@ -1599,7 +1605,7 @@
     <comment>Warning message</comment>
   </data>
   <data name="DeleteWithPrintedChecks" xml:space="preserve">
-    <value>La saisie {0} a un ou plusieurs chèques imprimés. Tous les chèques imprimés seront marqués "Annulé" dans Services bancaires. Voulez-vous vraiment supprimer cette saisie?</value>
+    <value>La saisie {0} a un ou plusieurs chèques imprimés. Tous les chèques imprimés seront marqués &quot;Annulé&quot; dans Services bancaires. Voulez-vous vraiment supprimer cette saisie?</value>
   </data>
   <data name="InvoiceDate" xml:space="preserve">
     <value>Date facture</value>
@@ -1653,16 +1659,16 @@
    <value>{0} doit être 1 ou supérieur.</value>
   </data>
   <data name="CheckVoidMessage" xml:space="preserve">
-    <value>Chèque {0} pour la banque {1} a été marqué "Annulé"</value>
+    <value>Chèque {0} pour la banque {1} a été marqué &quot;Annulé&quot;</value>
   </data>
   <data name="TaxDeriveRateInvalid" xml:space="preserve">
-    <value>Dériver taux a échoué puisque l'utilisation du total de taxe courant et de celui en monnaie de publication produit un taux non valide. Entrez le taux manuellement.</value>
+    <value>Dériver taux a échoué puisque l&apos;utilisation du total de taxe courant et de celui en monnaie de publication produit un taux non valide. Entrez le taux manuellement.</value>
   </data>
   <data name="CannotOpenBatches" xml:space="preserve">
-    <value>Vous ne pouvez pas ouvrir des lots ayant l'état Prêt à reporter ou Supprimé.</value>
+    <value>Vous ne pouvez pas ouvrir des lots ayant l&apos;état Prêt à reporter ou Supprimé.</value>
   </data>
   <data name="MarkVoidCheck" xml:space="preserve">
-    <value>Aucune écriture n'a été enregistrée pour le chèque {0} de la banque {1} dans Services bancaires. Voulez-vous créer une écriture pour ce chèque dans Services bancaires et indiquer qu'il est annulé?</value>
+    <value>Aucune écriture n&apos;a été enregistrée pour le chèque {0} de la banque {1} dans Services bancaires. Voulez-vous créer une écriture pour ce chèque dans Services bancaires et indiquer qu&apos;il est annulé?</value>
   </data>
   <data name="PostPaymentEntry" xml:space="preserve">
     <value>Report saisie de paiement de CC</value>

@@ -2,9 +2,9 @@
 # File: psDeleteResourceProjects.ps1
 #
 # Purpose: This Powershell file will remove/delete all Web Resource projects from
-#          the Sage300-SDK\src\wizards\Sage300Resources\ folder
+#          the Sage300-SDK\resources\Sage300Resources\ folder
 #
-#          This file is meant to be called from DeleteResourceProjects.bat
+#          This file is meant to be called from UpdateLocalResourceProjects.bat
 #
 # ---------------------------------------------------------------------------------------
 
@@ -14,8 +14,8 @@
 #
 # None
 
-# Settings
-$ModuleNameList = "AP,AR,AS,CS,GL,IC,KN,KPI,MT,OE,PM,PO,PR,VPF,TA,TS,TW"
+# Settings [Common and Core are not included in this list but handled later in file]
+$ModuleNameList = "AP,AR,AS,CS,GL,IC,KN,KPI,MT,OE,PM,PO,PR,TA,TS,TW,VPF"
 
 # ---------------------------------------------------------------------------------------
 # Remove existing module Resource project folders

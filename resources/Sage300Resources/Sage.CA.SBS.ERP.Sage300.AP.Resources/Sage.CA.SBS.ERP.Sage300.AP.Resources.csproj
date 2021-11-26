@@ -118,6 +118,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GLIntegrationResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\JobResourceValidationResx.Designer.cs" />
     <Compile Include="Forms\InvoiceBatchListResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -496,6 +497,11 @@
     <EmbeddedResource Include="Forms\InvoiceEntryResx.fr.resx" />
     <EmbeddedResource Include="Forms\InvoiceEntryResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\InvoiceEntryResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\JobResourceValidationResx.es.resx" />
+    <EmbeddedResource Include="Forms\JobResourceValidationResx.fr.resx" />
+    <EmbeddedResource Include="Forms\JobResourceValidationResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\JobResourceValidationResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\JobResourceValidationResx.resx" />
     <EmbeddedResource Include="Forms\OptionalFieldsResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>OptionalFieldsResx.Designer.cs</LastGenOutput>
@@ -548,6 +554,7 @@
     <EmbeddedResource Include="Forms\PaymentSelectionCodesResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>PaymentSelectionCodesResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PaymentSelectionCodesResx.es.resx" />
     <EmbeddedResource Include="Forms\PaymentSelectionCodesResx.fr.resx" />

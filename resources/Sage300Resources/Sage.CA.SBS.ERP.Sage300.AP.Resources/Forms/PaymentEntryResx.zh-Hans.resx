@@ -434,7 +434,7 @@
     <comment>Check box</comment>
   </data>
   <data name="PrintCheckButton" xml:space="preserve">
-    <value>打印支票…</value>
+    <value>打印支票...</value>
     <comment>Button</comment>
   </data>
   <data name="RateDate" xml:space="preserve">
@@ -442,11 +442,11 @@
     <comment>on modal screens</comment>
   </data>
   <data name="RateOverride" xml:space="preserve">
-    <value>汇率替换</value>
+    <value>汇率撤换</value>
     <comment>Screen title</comment>
   </data>
   <data name="RatesButton" xml:space="preserve">
-    <value>汇率…</value>
+    <value>汇率...</value>
     <comment>Button</comment>
   </data>
   <data name="RateType" xml:space="preserve">
@@ -544,6 +544,9 @@
   <data name="UnappliedAmount" xml:space="preserve">
     <value>未核销金额</value>
     <comment>Field</comment>
+  </data>
+  <data name="UnformattedContractCode" xml:space="preserve">
+    <value>未格式化合约代码</value>
   </data>
   <data name="VendorAmount" xml:space="preserve">
     <value>供应商币种金额</value>
@@ -1022,7 +1025,7 @@
     <comment>Import/Export</comment>
   </data>
   <data name="VendorCurrencyCode" xml:space="preserve">
-    <value>供应商币种代码</value>
+    <value>供应商币种</value>
     <comment>Import/Export</comment>
   </data>
   <data name="VendorExchangeRate" xml:space="preserve">
@@ -1127,6 +1130,9 @@
   </data>
   <data name="ProjectOrCategoryResource" xml:space="preserve">
     <value>项目或类别资源</value>
+  </data>
+  <data name="ProjectStyle" xml:space="preserve">
+    <value>项目样式</value>
   </data>
   <data name="RetainageDistributionAmount" xml:space="preserve">
     <value>保留款分配金额</value>
@@ -1444,19 +1450,19 @@
     <value>系列编号</value>
   </data>
   <data name="TaxAllocatedAmount1" xml:space="preserve">
-    <value>已分配税金额1</value>
+    <value>已分配税额1</value>
   </data>
   <data name="TaxAllocatedAmount2" xml:space="preserve">
-    <value>已分配税金额2</value>
+    <value>已分配税额2</value>
   </data>
   <data name="TaxAllocatedAmount3" xml:space="preserve">
-    <value>已分配税金额3</value>
+    <value>已分配税额3</value>
   </data>
   <data name="TaxAllocatedAmount4" xml:space="preserve">
-    <value>已分配税金额4</value>
+    <value>已分配税额4</value>
   </data>
   <data name="TaxAllocatedAmount5" xml:space="preserve">
-    <value>已分配税金额5</value>
+    <value>已分配税额5</value>
   </data>
   <data name="TaxExpensed1" xml:space="preserve">
     <value>已计费税1</value>
@@ -1534,7 +1540,7 @@
     <value>未核销作业折扣金额</value>
   </data>
   <data name="UnappliedJobPaymentAmount" xml:space="preserve">
-    <value>未核销作业付款金额</value>
+    <value>未核销金额</value>
   </data>
   <data name="VendCurrencyAmountDue" xml:space="preserve">
     <value>供应商币种到期金额</value>
@@ -1580,13 +1586,13 @@
     <value>供应商编号不能空置。</value>
   </data>
   <data name="TaxReportCurrencymismatch" xml:space="preserve">
-    <value>税组{2}的凭证币种{0}不同于税务报告币种{1}</value>
+    <value>税组{2}的凭证币种{0}不同于税务报告币种{1}。</value>
   </data>
   <data name="TaxGroupVendorNotFound" xml:space="preserve">
     <value>税组不能空置。</value>
   </data>
   <data name="DateValidate" xml:space="preserve">
-    <value>输入的日期位于在公司概览中指定的范围之外。是否接受这一日期？</value>
+    <value>输入的日期位于在公司概览中指定的范围之外。是否接受此日期？</value>
   </data>
   <data name="CPRSDescription" xml:space="preserve">
     <value>CPRS描述 </value>
@@ -1599,7 +1605,7 @@
     <comment>Warning message</comment>
   </data>
   <data name="DeleteWithPrintedChecks" xml:space="preserve">
-    <value>分录{0}有一个或更多已打印的支票。所有已打印支票将在银行服务中被标记为无效。是否确要删除这一分录？</value>
+    <value>分录{0}有一个或更多已打印的支票。所有已打印支票将在银行服务中被标记为无效。是否确要删除此分录？</value>
   </data>
   <data name="InvoiceDate" xml:space="preserve">
     <value>发票日期</value>
@@ -1656,13 +1662,13 @@
     <value>银行{1}支票{0}已标记为作废。</value>
   </data>
   <data name="TaxDeriveRateInvalid" xml:space="preserve">
-    <value>得出税率失败，因为使用当前税务合计和税务报告合计导致一个无效税率。手动输入税率。</value>
+    <value>推算汇率失败，因为使用当前税务合计和税务报告合计导致一个无效汇率。手动输入税率。</value>
   </data>
   <data name="CannotOpenBatches" xml:space="preserve">
     <value>不能打开正在过帐或已删除的批次。</value>
   </data>
   <data name="MarkVoidCheck" xml:space="preserve">
-    <value>尚未在银行服务中记录来自银行{1}的支票{0}的一个分录。您想在银行服务中为这一支票创造一个分录并将其标记为无效吗？</value>
+    <value>尚未在银行服务中记录来自银行{1}的支票{0}的一个分录。您想在银行服务中为此支票创造一个分录并将其标记为无效吗？</value>
   </data>
   <data name="PostPaymentEntry" xml:space="preserve">
     <value>应收帐款过帐付款分录</value>

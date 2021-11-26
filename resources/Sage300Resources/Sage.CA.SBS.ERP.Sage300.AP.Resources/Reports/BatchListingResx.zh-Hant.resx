@@ -129,6 +129,9 @@
   <data name="ShowComments" xml:space="preserve">
     <value>顯示備註</value>
   </data>
+  <data name="ShowJobDetails" xml:space="preserve">
+    <value>顯示作業明細</value>
+  </data>
   <data name="ShowOptionalFields" xml:space="preserve">
     <value>顯示自選欄位</value>
   </data>

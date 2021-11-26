@@ -545,6 +545,9 @@
     <value>Monto sin Aplicar</value>
     <comment>Field</comment>
   </data>
+  <data name="UnformattedContractCode" xml:space="preserve">
+    <value>Código de Contrato Sin Formato</value>
+  </data>
   <data name="VendorAmount" xml:space="preserve">
     <value>Monto del Proveedor</value>
     <comment>Field</comment>
@@ -1022,7 +1025,7 @@
     <comment>Import/Export</comment>
   </data>
   <data name="VendorCurrencyCode" xml:space="preserve">
-    <value>Código de Moneda del Proveedor</value>
+    <value>Moneda del Proveedor</value>
     <comment>Import/Export</comment>
   </data>
   <data name="VendorExchangeRate" xml:space="preserve">
@@ -1127,6 +1130,9 @@
   </data>
   <data name="ProjectOrCategoryResource" xml:space="preserve">
     <value>Recurso de Proyecto o Categoría</value>
+  </data>
+  <data name="ProjectStyle" xml:space="preserve">
+    <value>Estilo de Proyecto</value>
   </data>
   <data name="RetainageDistributionAmount" xml:space="preserve">
     <value>Monto Distribución de Retención</value>
@@ -1534,7 +1540,7 @@
     <value>Monto de Descuento del Trabajo No Aplicado</value>
   </data>
   <data name="UnappliedJobPaymentAmount" xml:space="preserve">
-    <value>Monto de Pago del Trabajo No Aplicado</value>
+    <value>Monto No Aplicado</value>
   </data>
   <data name="VendCurrencyAmountDue" xml:space="preserve">
     <value>Monto a Pagar Moneda del Proveedor</value>

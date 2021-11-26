@@ -39,10 +39,30 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ChargeDetailResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChargeDetailResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChargeResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChargeResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContractsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContractsResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CostTypesResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CostTypesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EquipmentResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EquipmentResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\MaterialAllocationDetailResx.Designer.cs">
       <DependentUpon>MaterialAllocationDetailResx.resx</DependentUpon>
@@ -105,6 +125,11 @@
       <DependentUpon>OpeningBalancesDetailResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProjectsResx.Designer.cs" />
+    <Compile Include="Forms\UpdateRetainageResx.Designer.cs">
+      <DependentUpon>UpdateRetainageResx.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="Process\TransactionPostingResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +144,35 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="Forms\ChargeDetailResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChargeDetailResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChargeDetailResx.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChargeDetailResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChargeDetailResx.zh-Hans.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChargeDetailResx.zh-Hant.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChargeResx.es.resx" />
+    <EmbeddedResource Include="Forms\ChargeResx.fr.resx" />
+    <EmbeddedResource Include="Forms\ChargeResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChargeResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChargeResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\ChargeResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\ContractsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContractsResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CostEntriesHeaderResx.es.resx" />
     <EmbeddedResource Include="Forms\CostEntriesHeaderResx.fr.resx" />
     <EmbeddedResource Include="Forms\CostEntriesHeaderResx.zh-Hans.resx" />
@@ -143,11 +197,28 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CostTypesResx.zh-Hant.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EquipmentResx.es.resx">
+      <DependentUpon>EquipmentResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EquipmentResx.fr.resx">
+      <DependentUpon>EquipmentResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EquipmentResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EquipmentResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EquipmentResx.zh-Hans.resx">
+      <DependentUpon>EquipmentResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EquipmentResx.zh-Hant.resx">
+      <DependentUpon>EquipmentResx.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MaterialAllocationDetailResx.es.resx" />
     <EmbeddedResource Include="Forms\MaterialAllocationDetailResx.fr.resx" />
     <EmbeddedResource Include="Forms\MaterialAllocationDetailResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MaterialAllocationDetailResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MaterialAllocationDetailResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\MaterialAllocationDetailResx.zh-Hant.resx" />
@@ -165,6 +236,7 @@
     <EmbeddedResource Include="Forms\MaterialReturnDetailResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MaterialReturnDetailResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MaterialReturnDetailResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\MaterialReturnDetailResx.zh-Hant.resx" />
@@ -234,6 +306,22 @@
     <EmbeddedResource Include="Forms\ProjectsResx.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\UpdateRetainageResx.es.resx">
+      <DependentUpon>UpdateRetainageResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateRetainageResx.fr.resx">
+      <DependentUpon>UpdateRetainageResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateRetainageResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UpdateRetainageResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateRetainageResx.zh-Hans.resx">
+      <DependentUpon>UpdateRetainageResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateRetainageResx.zh-Hant.resx">
+      <DependentUpon>UpdateRetainageResx.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Process\TransactionPostingResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>TransactionPostingResx.Designer.cs</LastGenOutput>

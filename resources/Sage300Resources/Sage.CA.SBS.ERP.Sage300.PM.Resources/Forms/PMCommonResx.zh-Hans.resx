@@ -276,4 +276,10 @@
   <data name="CostOfSalesAccountDescription" xml:space="preserve">
     <value>销货成本科目描述</value>
   </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>查看明细</value>
+  </data>
+  <data name="EditDetails" xml:space="preserve">
+    <value>编辑明细</value>
+  </data>
 </root>

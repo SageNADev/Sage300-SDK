@@ -20,13 +20,16 @@ sg.viewList = function () {
         Time: 4
     },
     RequestTypeEnum = {
+        Invalid: -1,
         Create: 1,
         Insert: 2,
         Update: 3,
         Refresh: 4,
         Delete: 5,
         MoveTo: 6,
-        RefreshRow :7
+        RefreshRow: 7,
+        ResetRow: 8,
+        ClearNewRow: 9
         },
     PageByKeyTypeEnum = {
         FirstPage: 0,
@@ -61,9 +64,12 @@ sg.viewList = function () {
         _refreshKey = {},
         _showDetails = {},
         _showWarnings = {},
+        _showErrors = {},
         _gridList = [],
         _forms = {},
-        _selectedRow = {};
+        _selectedRow = {},
+        _commitDetail = {},
+        _lastRecord = {};
 
      /**
      *   @description get kendo grid.
@@ -79,7 +85,7 @@ sg.viewList = function () {
      *   @param {object} rowData The current select row data
      *   @return {void}  
      */
-    function _addLine(gridName, rowData) {
+    function _addLine(gridName, rowData, commitDetail) {
         var grid = _getGrid(gridName),
             dataSource = grid.dataSource,
             insertedIndex = grid.select().index() + 1,
@@ -103,8 +109,14 @@ sg.viewList = function () {
             rowData = _pagingRowData[gridName];
         }
         _setDefaultRow[gridName] = false;
+        const formId = _forms[gridName];
+        let commitRecord = true;
+        //Skip update/insert detail if detail is not dirty based on the value we passed in.
+        if (formId && $(`#${formId}`).is(":visible") && !_commitDetail[gridName]) {
+            commitRecord = false;
+        }
         //If the record is dirty, update the current row first before adding a new row
-        if (rowData && rowData.dirty) {
+        if (rowData && rowData.dirty && commitRecord) {
             _sendRequest(gridName, RequestTypeEnum.Update, "", false, insertedIndex, rowData);
         } else {
             _sendRequest(gridName, RequestTypeEnum.Create, "", false, insertedIndex, rowData);
@@ -143,7 +155,7 @@ sg.viewList = function () {
     function _setNextEditCell(grid, model, row, startIndex) {
         for (var i = startIndex; i < grid.columns.length; i++) {
             var col = grid.columns[i];
-            if (col.field && col.field.hidden !== true && col.editable !== undefined && col.editable()) {
+            if (col.field && col.hidden !== true && col.editable !== undefined && col.editable()) {
                 var colField = model.fields[col.field];
                 if (colField && colField.editable) {
                     // focus next form control if it's visible
@@ -221,7 +233,8 @@ sg.viewList = function () {
         }
 
         if (rowData) {
-            const type = (!_newLine[gridName] || !rowData.isNewLine) ? RequestTypeEnum.Update : RequestTypeEnum.Insert;
+            const type = (!_newLine[gridName] || !rowData.isNewLine) ?  RequestTypeEnum.Update : RequestTypeEnum.Insert;
+
             _sendRequest(gridName, type, ...Array(3), rowData, callBack);
             if (_valid[gridName]) {
                 _newLine[gridName] = false;
@@ -329,7 +342,7 @@ sg.viewList = function () {
      */
     function _getGridColumns(gridName) {
         var columns = window[gridName + "Model"].ColumnDefinitions,
-            cols = [{field: "isNewLine", hidden : true}],
+            cols = [{field: "isNewLine", hidden: true, isInternal: true}],
             numbers = ["int32", "int64", "int16", "int", "integer", "long", "byte", "real", "decimal"];
 
         for (let i = 0, length = columns.length; i < length; i++) {
@@ -339,10 +352,19 @@ sg.viewList = function () {
                 list = column.PresentationList,
                 attr = numbers.indexOf(dataType) > -1 && list === null ? "align-right " : "align-left ";
 
+            //Allow white spaces displayed
+            if (!column.PresentationMask && dataType === "char") {
+                attr = attr + "space-preserved ";
+            }
+
             //custom call back column definitions
             _columnSettingCallback(gridName, "columnBeforeDisplay", column);
 
-            col.title = column.ColumnName;
+            let title = column.ColumnName;
+            if (title.includes('Resx.')) {
+                title = title.split('.').reduce((obj, i) => obj[i] , window);
+            }
+            col.title = title;
             col.isPrimaryKeyField = column.IsPrimaryKeyField;
             col.field = column.FieldName;
             col.dataType = dataType;
@@ -353,6 +375,7 @@ sg.viewList = function () {
             col.headerAttributes = { "class": attr };
             col.precision = column.Precision;
             col.hidden = column.IsHidden || false;
+            col.isInternal = column.IsInternal || false;
             col.locked = column.Locked;
             col.presentationList = list;
             col.presentationMask = column.PresentationMask;
@@ -602,10 +625,12 @@ sg.viewList = function () {
 
             _sendChange[gridName] = true;
             options.model.set(field, returnValue);
-            // When finder selected value is the same as options model field value, the set method not trigger the change, need manually send refresh request to update view
+            // When finder selected value is the same as options model field value, the set method 
+            // not trigger the change, need manually send refresh request to update view
             if (sendRequest & !window[gridName + "Model"].CustomGridMapperDefinitions) {
-                //If grid had Custom mapper, avoid to refresh due to mis-matched fileds/columns between client/sever side. 
-                _sendRequest(gridName, RequestTypeEnum.RefreshRow, field, isNewLine);
+                // If grid had Custom mapper, avoid to refresh due to mis-matched fields/columns 
+                // between client / server side. 
+                _sendRequest(gridName, RequestTypeEnum.Refresh, field, isNewLine); // Previously RequestTypeEnum.RefreshRow
             }
         }
         
@@ -631,6 +656,12 @@ sg.viewList = function () {
         });
 
         $("#" + buttonId).mousedown(function (e) {
+            // do not set grid finder when it is opened from outside the grid with hotkey
+            const formId = _forms[gridName];
+            if (formId && $(`#${formId}`).is(":visible")) {
+                return;
+            }
+
             //Set finder initial values
             _sendChange[gridName] = false;
             var value = $("#" + field).val().toUpperCase();
@@ -1073,6 +1104,12 @@ sg.viewList = function () {
             case RequestTypeEnum.RefreshRow:
                 requestName = "RefreshCurrentRecord";
                 break;
+            case RequestTypeEnum.ResetRow:
+                requestName = "ResetCurrentRecord";
+                break;
+            case RequestTypeEnum.ClearNewRow:
+                requestName = "ClearNewRecord";
+                break;
         }
         return requestName;
     }
@@ -1111,6 +1148,12 @@ sg.viewList = function () {
                 break;
             case RequestTypeEnum.RefreshRow:
                 _refreshRow(gridName, jsonResult, fieldName);
+                break;
+            case RequestTypeEnum.ResetRow:
+                _resetRow(gridName, jsonResult);
+                break;
+            case RequestTypeEnum.ClearNewRow:
+                isSuccess ? _createSuccess(gridName, jsonResult, insertedIndex) : _createError(gridName, jsonResult);
                 break;
             default:
         }
@@ -1202,7 +1245,11 @@ sg.viewList = function () {
     function _createError(gridName, jsonResult) {
         _lastRowNumber[gridName] = -1;
         _valid[gridName] = false;
-        sg.utls.showMessage(jsonResult);
+        setTimeout(() => {
+            if (_showErrors[gridName]) {
+                sg.utls.showMessage(jsonResult);
+            }
+        }, 100);
     }
 
     /**
@@ -1262,7 +1309,11 @@ sg.viewList = function () {
         _lastErrorResult[gridName].message = jsonResult;
         _lastErrorResult[gridName].colName = _lastColField[gridName];
         _skipMoveTo[gridName] = true;
-        sg.utls.showMessage(jsonResult);
+        setTimeout(() => {
+            if (_showErrors[gridName]) {
+                sg.utls.showMessage(jsonResult);
+            }
+        }, 100);
         grid.select("tr:eq(" + rowIndex + ")");
         setTimeout(function () {
             _setEditCell(grid, rowIndex, _lastColField[gridName]);
@@ -1293,6 +1344,7 @@ sg.viewList = function () {
 
         _gridCallback(gridName, "gridChanged", jsonResult.Data, fieldName, null, jsonResult);
         _setModuleVariables(gridName, status, "", rowIndex, true, false);
+        _skipMoveTo[gridName] = false;
 
         if (dataItem) {
             for (var field in jsonResult.Data) {
@@ -1390,24 +1442,33 @@ sg.viewList = function () {
             rowIndex = selectRow.index();
             
         //Return previous valid value when update error
-        if (0 <= rowIndex && typeof fieldName !== 'undefined') {
+        if (0 <= rowIndex ) {
             var newLine = _newLine[gridName],
                 dataItem = grid.dataItem(selectRow);
-            dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
-            _setModuleVariables(gridName, RowStatusEnum.UPDATE, "", rowIndex, false, false, newLine);
-            sg.utls.showMessage(jsonResult);
 
-            var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName, true);
-            var row;
-            if (uid) {
-                row = grid.table.find("[data-uid=" + uid + "]");
-                _lastRowNumber[gridName] = row.index();
-                grid.select(row);
-            } else {
-                row = _selectGridRow(grid, dataItem["KendoGridAccpacViewPrimaryKey"]);
+            _setModuleVariables(gridName, RowStatusEnum.UPDATE, "", rowIndex, false, false, newLine);
+
+            setTimeout(() => {
+                if (_showErrors[gridName]) {
+                    sg.utls.showMessage(jsonResult);
+                }
+            }, 100);
+
+            if (typeof fieldName !== 'undefined') {
+                dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
+
+                var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName, true);
+                var row;
+                if (uid) {
+                    row = grid.table.find("[data-uid=" + uid + "]");
+                    _lastRowNumber[gridName] = row.index();
+                    grid.select(row);
+                } else {
+                    row = _selectGridRow(grid, dataItem["KendoGridAccpacViewPrimaryKey"]);
+                }
+                grid._lastCellIndex = index - 1;
+                grid.editCell(row.find(">td").eq(index));
             }
-            grid._lastCellIndex = index - 1;
-            grid.editCell(row.find(">td").eq(index));
         }
     }
 
@@ -1437,6 +1498,7 @@ sg.viewList = function () {
     function _deleteSuccess(gridName, jsonResult) {
         _lastErrorResult[gridName] = {};
         _dataChanged[gridName] = false;
+        _skipMoveTo[gridName] = false;
 
         var grid = $('#' + gridName).data("kendoGrid"),
             ds = grid.dataSource,
@@ -1456,7 +1518,11 @@ sg.viewList = function () {
     function _deleteError(gridName, jsonResult) {
         var grid = $('#' + gridName).data("kendoGrid");
         grid.dataSource.read();
-        sg.utls.showMessage(jsonResult);
+        setTimeout(() => {
+            if (_showErrors[gridName]) {
+                sg.utls.showMessage(jsonResult);
+            }
+        }, 100);
     }
 
     /**
@@ -1489,6 +1555,28 @@ sg.viewList = function () {
         }
 
         _gridCallback(gridName, "gridAfterRefreshRow");
+    }
+
+    /**
+     * @description Reset current select row
+     * @param {string} gridName The grid name
+     * @param {any} jsonResult The request call back result
+     */
+    function _resetRow(gridName, jsonResult) {
+        var grid = $('#' + gridName).data("kendoGrid"),
+            refreshRowData = grid.dataItem(grid.select()),
+            status = _lastRowStatus[gridName] === RowStatusEnum.UPDATE ? RowStatusEnum.NONE : _lastRowStatus[gridName];
+
+        if (refreshRowData) {
+            for (var field in jsonResult.Data) {
+                if (refreshRowData.hasOwnProperty(field)) {
+                    refreshRowData[field] = jsonResult.Data[field];
+                }
+            }
+            grid.refresh();
+            var rowIndex = grid.select().index();
+            _setModuleVariables(gridName, status, "", rowIndex, true, false);
+        }
     }
 
     /**
@@ -1553,6 +1641,27 @@ sg.viewList = function () {
                     }
                 ));
                 data.columnsFromConfig = model.ColumnsFromConfig;
+            }
+
+            if (requestType === RequestTypeEnum.ClearNewRow) {
+                var ds = grid.dataSource;
+                const lastRecordIndex = _lastRowNumber[gridName] - 1;
+                let lastRecord = null;
+                insertedIndex = 0;
+                if (lastRecordIndex > 0) {
+                    lastRecord = ds.at(lastRecordIndex);
+                    insertedIndex = lastRecordIndex + 1;
+                }
+                else if (grid.dataSource.total() > 1 && _lastRecord[gridName]) {
+                    //because the datasource doesn't contain last page's rows, get lastrecord from there it doesnt work
+                    lastRecord = _lastRecord[gridName];
+                    insertedIndex = lastRecordIndex + 1;
+                }
+                ds.remove(record);
+                data = {
+                    'viewID': $("#" + gridName).attr('viewID'),
+                    'record': lastRecord
+                };
             }
 
             sg.utls.ajaxPostSync(url, data, function (jsonResult) {
@@ -1784,7 +1893,10 @@ sg.viewList = function () {
                             case "gridBeforeCreate":
                             case "gridBeforeDelete":
                                callback(record, event);
-                               return event.isProceed();
+                                return event.isProceed();
+                            case "gridAfterError":
+                                callback();
+                                return true;
                         }
                     }
                 }
@@ -1847,6 +1959,7 @@ sg.viewList = function () {
         _pageByKeyType[gridName] = PageByKeyTypeEnum.FirstPage;
         _refreshKey[gridName] = null;
         _showWarnings[gridName] = true;
+        _showErrors[gridName] = true;
         _selectedRow[gridName] = -1;
     }
 
@@ -1855,6 +1968,7 @@ sg.viewList = function () {
      * @param {string} gridName The grid name
      */
     function _initPageByKeyPageClick(gridName) {
+
         var model = window[gridName + "Model"];
         if (model.PageByKey) {
             var gridPager = _getGrid(gridName).pager.element;
@@ -1931,6 +2045,8 @@ sg.viewList = function () {
      */
     function init(gridName, readOnly, updateColumnDefs, showDetailButton = false, showDetails = null, formName = null) {
 
+        const self = this;
+
         if (updateColumnDefs) {
             typeof updateColumnDefs === "function" ? updateColumnDefs() : _getFunction(updateColumnDefs)();
         }
@@ -2004,21 +2120,41 @@ sg.viewList = function () {
                 if (selectedIndex !== lastRowNumber && errorMessage) {
                     setTimeout(function (error) {
                         grid.select("tr:eq(" + lastRowNumber + ")");
+                        _gridCallback(gridName, "gridAfterError");
                         sg.utls.showMessage(error);
                     }.bind(null, errorMessage));
 
-                    if(!errorMessage.UserMessage.IsSuccess){
+                    if (!errorMessage.UserMessage.IsSuccess) {
+                        const formId = _forms[gridName];
+                        //reset error message for detail pop-up due we we have a option to move line without save.
+                        if (formId && $(`#${formId}`).is(":visible")) {
+                            _lastErrorResult[gridName].message = "";
+                        }
                         return;
                     }
                 }
+                else if (errorMessage) {
+                    _gridCallback(gridName, "gridAfterError");
+                }
+
                 //Skip insert or update if the record is out of range of the page size
-                if (lastRowNumber > -1 && lastRowNumber < pageSize && !window[gridName + "Model"].CustomGridMapperDefinitions ) {
+                if (lastRowNumber > -1 && lastRowNumber < pageSize && !window[gridName + "Model"].CustomGridMapperDefinitions) {
                     if (selectedIndex !== lastRowNumber) {
                         var lastRowData = grid.dataSource.data()[lastRowNumber];
-                        if (lastRowData && lastRowData.isNewLine) {
-                            _sendRequest(gridName, RequestTypeEnum.Insert, "", false, -1, lastRowData);
-                        } else if (lastRowData && lastRowData.dirty) {
-                            _sendRequest(gridName, RequestTypeEnum.Update, "", false, -1, lastRowData);
+                        const formId = _forms[gridName];
+                        let commitRecord = true;
+                        //Skip update/insert detail if detail is not dirty based on the value we passed in.
+                        if (formId && $(`#${formId}`).is(":visible") && !_commitDetail[gridName]) {
+                            commitRecord = false;
+                        }
+                        if (commitRecord && lastRowData) {
+                            let requestType = RequestTypeEnum.Invalid;
+                            if (lastRowData.isNewLine) {
+                                requestType = RequestTypeEnum.Insert;
+                            } else if (lastRowData.dirty) {
+                                requestType = RequestTypeEnum.Update;
+                            }
+                            _sendRequest(gridName, requestType, "", false, -1, lastRowData);
                         }
                     }
                 }
@@ -2270,8 +2406,16 @@ sg.viewList = function () {
                 },
                 //When paging, save the unsaved row
                 requestStart: function (e) {
-                    var row = e.sender.data()[e.sender.pageSize()];
-                    var skipCommit = row && row.hasOwnProperty("skipCommit") && row["skipCommit"];
+                    var skipCommit = false;
+                    const formId = _forms[gridName];
+                    //Skip Commit if detail is not dirty for detail pop-up, otherwise, check with row data.
+                    if (formId && $(`#${formId}`).is(":visible")) {
+                        skipCommit = !_commitDetail[gridName];
+                    }
+                    else {
+                        const row = e.sender.data()[e.sender.pageSize()];
+                        skipCommit = row && row.hasOwnProperty("skipCommit") && row["skipCommit"];
+                    }
 
                     // Commit any grid changes if there is a new line or data has changed while pagination
                     if ((_newLine[gridName] && e.type === "read" || _dataChanged[gridName]) && _currentPage[gridName] !== this.page() && !skipCommit) {
@@ -2303,9 +2447,23 @@ sg.viewList = function () {
         });
 
         //Set grid use preferences, such as show/hide column, order and width
-        GridPreferencesHelper.setGrid("#" + gridName, model.GridColumnSettings);
+        GridPreferencesHelper.setGrid("#" + gridName, model.GridColumnSettings, false, _getGridColumns(gridName));
 
         _initPageByKeyPageClick(gridName);
+
+        sg.utls.initGridKeyboardHandlers(gridName, true,
+        {
+            addLine: self.addLine,
+            deleteLine: self.deleteLine,
+            showDetails: self.showDetails,
+            editColumnSettings: self.editColumnSettings,
+        },
+        {
+            addLineButtonName: `btn${gridName}Add`,
+            deleteLineButtonName: `btn${gridName}Delete`,
+            viewEditDetailsButtonName: '',
+            editColumnSettingsButtonName: ''
+        });
 
         return _getGrid(gridName);
     }
@@ -2314,8 +2472,9 @@ sg.viewList = function () {
      * @description Delete grid line, for grid toolbar template, grid internal use
      * @param {string} gridName The name of the grid.
      * @param {boolean} showConfirmation Show a confirmation dialog.
+     * @param {function} callback The callBack function after the action is completed, when deleting from form.
      */
-    function toolbarDeleteLine(gridName, showConfirmation = true) {
+    function toolbarDeleteLine(gridName, showConfirmation = true, callback = null) {
         var grid = _getGrid(gridName),
             select = grid.select(),
             selectedIndex = select.index(),
@@ -2338,7 +2497,19 @@ sg.viewList = function () {
                 // Set the correct current page
                 var page = ds.data().length === 0 && _currentPage[gridName] > 1 ? _currentPage[gridName] - 1 : _currentPage[gridName];
                 _lastGridAction[gridName] = RequestTypeEnum.Delete;
-                ds.page(page);
+                const formId = _forms[gridName];
+                //Show changes saved message for detail pop-up
+                if (formId && $(`#${formId}`).is(":visible") && callback) {
+                    //Reset the delete flags for unsaved line. 
+                    _setModuleVariables(gridName, RowStatusEnum.NONE, "", -1, true, true, false);
+                    _dataChanged[gridName] = false;
+                    _skipMoveTo[gridName] = false;
+                    callback();
+                }
+                else {
+                    ds.page(page);
+                }
+                
             }
         }
 
@@ -2350,7 +2521,11 @@ sg.viewList = function () {
                         //_gridCallback(gridName, "gridAfterDelete", rowData);
                     },
                     function () { },
-                    globalResource.DeleteLineMessage, window.DeleteTitle);
+                    globalResource.DeleteLineMessage, // message
+                    window.DeleteTitle, // typeOfAction
+                    undefined, // isMessageEncoded
+                    undefined, // callbackCancel
+                    gridName); // gridName (When specified, set focus back to grid when confirmation dialog is closed)
             }
             else {
                 doDelete();
@@ -2361,10 +2536,20 @@ sg.viewList = function () {
     /**
      * @description Add grid new line, for grid toolbar template, grid internal use.
      * @param {string} gridName The grid name.
+     * @param {boolean} commitDetail True for update/insert record to show 'changes saved' message for detail popup
+     * @param {object} lastRecord Optional. Record to be added as new line
      */
-    function toolbarAddLine(gridName) {
+    function toolbarAddLine(gridName, commitDetail, lastRecord) {
         var grid = _getGrid(gridName),
             rowData = grid.dataItem(grid.select());
+        const formId = _forms[gridName];
+        //Show changes saved message for detail pop-up
+        if (formId && $(`#${formId}`).is(":visible")) {
+            _commitDetail[gridName] = commitDetail;
+            if (lastRecord) {
+                _lastRecord[gridName] = lastRecord;
+            }
+        }
         //has update error, show error message and return
         if (_lastRowStatus[gridName] === RowStatusEnum.UPDATE && _lastErrorResult[gridName].message !== "") {
             setTimeout(function () {
@@ -2380,7 +2565,7 @@ sg.viewList = function () {
         }
 
         //add new line or send insert request and add new line
-        rowData && rowData.isNewLine ? _sendRequest(gridName, RequestTypeEnum.Insert, "", true) : _addLine(gridName);
+        rowData && rowData.isNewLine ? _sendRequest(gridName, RequestTypeEnum.Insert, "", true) : _addLine(gridName, undefined, commitDetail);
 
         //custom plugin after create new line
         _gridCallback(gridName, "gridAfterCreate");
@@ -2391,9 +2576,9 @@ sg.viewList = function () {
      * @param {any} gridName The grid name
      */
     function toolbarEditColumn(gridName) {
-        var grid = _getGrid(gridName);
         var btnEditElement = $("#" + gridName + " .k-grid-toolbar .btn-edit-column");
-        GridPreferencesHelper.initialize('#' + gridName, window[gridName + "Model"].UserPreferencesUniqueId, $(btnEditElement), grid.columns);
+        GridPreferencesHelper.initialize('#' + gridName, window[gridName + "Model"].UserPreferencesUniqueId, $(btnEditElement), _getGridColumns(gridName));
+        $('#chkGridPrefSelectAll').focus();
     }
 
     /**
@@ -2790,6 +2975,23 @@ sg.viewList = function () {
     }
 
     /**
+    * Resets the current selected row, reverting any changes
+    * @param {string} gridName The grid name
+    * @param {function} callback The callBack function after the action is completed
+    */
+    function resetCurrentRow(gridName, callback) {
+        _sendRequest(gridName, RequestTypeEnum.ResetRow, ...Array(4), callback);
+    }
+
+    /**
+    * Clears the current new row and generates a new record at the current row
+    * @param {string} gridName The grid name
+    */
+    function clearNewRow(gridName) {
+        _sendRequest(gridName, RequestTypeEnum.ClearNewRow);
+    }
+
+    /**
      * Update current select row
      * @param {any} gridName The grid name
      */
@@ -2808,7 +3010,7 @@ sg.viewList = function () {
     }
 
     /**
-     * 
+     * When PageByKey setting is true, reads data from server from specified record
      * @param {string} gridName The grid name
      * @param {any} record The record to search, containing key fields and values
      */
@@ -2822,7 +3024,7 @@ sg.viewList = function () {
     }
 
     /**
-    *
+    * Show warnings when insert/update record successfully
     * @param {string} gridName The grid name
     * @param {boolean} show The flag to specify whether to show warnings when insert/update record successfully.
     */
@@ -2831,7 +3033,16 @@ sg.viewList = function () {
     }
 
     /**
-    *
+    * Show errors when insert/update/create/delete record fails
+    * @param {string} gridName The grid name
+    * @param {boolean} show The flag to specify whether to show errors when insert/update/create/delete record fails.
+    */
+    function showErrors(gridName, show = true) {
+        _showErrors[gridName] = show;
+    }
+
+    /**
+    * Gets the current page
     * @param {string} gridName The grid name
     */
     function currentPage(gridName) {
@@ -2844,22 +3055,28 @@ sg.viewList = function () {
     */
     function getCurrentLineNumber(gridName) {
         var grid = _getGrid(gridName);
-        return grid.select().index() + 1 + grid.dataSource.pageSize() * (grid.dataSource.page() - 1);
+        return grid.select().index() + 1 + grid.dataSource.pageSize() * (_currentPage[gridName] - 1);
     }
 
     /**
     * Selects specified row, paging if necessary
     * @param {string} gridName The grid name
-    * @param {int} lineNumber The line number to select
+    * @param {number} lineNumber The line number to select
+    * @param {boolean} commitDetail True for update/insert record to show 'changes saved' message for detail popup
     */
-    function moveToRow(gridName, lineNumber) {
+    function moveToRow(gridName, lineNumber, commitDetail) {
         const grid = _getGrid(gridName);
         const pageSize = grid.dataSource.pageSize();
+        const formId = _forms[gridName];
         let nextPage = (lineNumber % pageSize === 0) ? Math.floor(lineNumber / pageSize) : Math.floor(lineNumber / pageSize) + 1; // page containing selected row
         let selectedIndex = (lineNumber % pageSize === 0) ? pageSize - 1 : (lineNumber % pageSize) - 1; // index in page
+        //Show changes saved message for detail pop-up
+        if (formId && $(`#${formId}`).is(":visible")) {
+            _commitDetail[gridName] = commitDetail;
+        }
         if (!isNaN(nextPage) && !isNaN(selectedIndex)) {
             // change page and select row in gridAfterLoadData
-            if (grid.dataSource.page() !== nextPage) {
+            if (_currentPage[gridName] !== nextPage) {
                 _selectedRow[gridName] = selectedIndex;
                 grid.dataSource.page(nextPage);
             // same page, select row
@@ -2870,11 +3087,13 @@ sg.viewList = function () {
     }
 
     /**
-    * Adds disabled properties to the grid row, used for data binding
+    * Adds disabled properties to the grid row, used for data binding.
+    * The 'value' data-bind attribute must be set.
+    * The property name for the 'disabled' data-bind attribute is either passed in, or [FieldName]Disabled if not defined
     * @param {string} gridName The grid name
     * @param {any} columns The grid columns
     * @param {any} record The grid row data
-    * @return {any} The grid row data with a [FIELD]Disabled property for each column
+    * @return {any} The grid row data with a disabled property for each column.
     */
     function addDisabledProperties(gridName, columns, record) {
         if (record) {
@@ -2947,6 +3166,7 @@ sg.viewList = function () {
         filter: filter,
         readOnly: readOnly,
         fieldName: fieldName,
+        clearNewRow: clearNewRow,
         columnCount: columnCount,
         columnTitle: columnTitle,
         columnEditable: columnEditable,
@@ -2955,12 +3175,14 @@ sg.viewList = function () {
         commit: commit,
         refresh: refresh,
         refreshCurrentRow: refreshCurrentRow,
+        resetCurrentRow: resetCurrentRow,
         updateCurrentRow: updateCurrentRow,
         isEmpty: isEmpty,
         cancel: cancel,
         clear: clear,
         refreshByKey: refreshByKey,
         showWarnings: showWarnings,
+        showErrors: showErrors,
         currentPage: currentPage,
         getCurrentLineNumber: getCurrentLineNumber,
         moveToRow: moveToRow,

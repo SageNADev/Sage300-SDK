@@ -276,7 +276,14 @@
                 isFound = elementInfocusAttrId != elementId;
             }
             if (elementInfocus == null || elementInfocusAttrId == null || isFound) {
-                funcCall();
+                const id = elementInfocusAttrId;
+                let isNavigationButton = false;
+                if (id) {
+                    isNavigationButton = id.includes('btnDataFirst') || id.includes('btnDataPrevious') || id.includes('btnDataNext') || id.includes('btnDataLast');
+                }
+                if (!isNavigationButton) {
+                    funcCall();
+                }
             } else {
                 sg.viewFinderHelper.cancelFuncCall = funcCall;
             }
@@ -304,7 +311,14 @@
                 isFound = elementInfocusAttrId != elementId;
             }
             if (elementInfocus == null || elementInfocusAttrId == null || isFound) {
-                funcCall();
+                const id = elementInfocusAttrId;
+                let isNavigationButton = false;
+                if (id) {
+                    isNavigationButton = id.includes('btnDataFirst') || id.includes('btnDataPrevious') || id.includes('btnDataNext') || id.includes('btnDataLast');
+                }
+                if (!isNavigationButton) {
+                    funcCall();
+                }
             }
             else {
                 sg.delayVariables.IsInProgress = true;

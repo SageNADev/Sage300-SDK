@@ -1657,6 +1657,9 @@
   <data name="PM_Material_Allocation" xml:space="preserve">
     <value>Material Allocation</value>
   </data>
+  <data name="PM_Update_Retainage" xml:space="preserve">
+    <value>Update Retainage</value>
+  </data>
   <data name="PM_Material_Return" xml:space="preserve">
     <value>Material Returns</value>
   </data>
@@ -1695,5 +1698,17 @@
   </data>
   <data name="PM_CostTypes" xml:space="preserve">
     <value>Cost Types</value>
+  </data>
+  <data name="PM_Charges" xml:space="preserve">
+    <value>Charges</value>
+  </data>
+  <data name="PM_Equipment" xml:space="preserve">
+    <value>Equipment Usage</value>
+  </data>
+  <data name="PM_Revise_Estimates" xml:space="preserve">
+    <value>Revise Estimates</value>
+  </data>
+  <data name="PM_ContractMaintenance" xml:space="preserve">
+    <value>Contract Maintenance</value>
   </data>
 </root>

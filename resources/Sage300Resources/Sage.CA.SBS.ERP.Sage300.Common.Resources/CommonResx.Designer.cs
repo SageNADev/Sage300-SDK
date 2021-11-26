@@ -205,6 +205,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to add this detail line?.
+        /// </summary>
+        public static string AddNewLineMessage {
+            get {
+                return ResourceManager.GetString("AddNewLineMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Address Entered.
         /// </summary>
         public static string AddressEntered {
@@ -1483,6 +1492,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Finish.
+        /// </summary>
+        public static string Finish {
+            get {
+                return ResourceManager.GetString("Finish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First.
         /// </summary>
         public static string First {
@@ -2104,6 +2122,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Labor.
+        /// </summary>
+        public static string Labor {
+            get {
+                return ResourceManager.GetString("Labor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string Language {
@@ -2617,6 +2644,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overhead.
+        /// </summary>
+        public static string Overhead {
+            get {
+                return ResourceManager.GetString("Overhead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Page Not Found.
         /// </summary>
         public static string PageNotFound {
@@ -3040,6 +3076,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A problem occurred while generating the report. Check that all required settings and options for the report are specified, and then try again..
+        /// </summary>
+        public static string ReportGenFailedMessageForCustomReport {
+            get {
+                return ResourceManager.GetString("ReportGenFailedMessageForCustomReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A problem occurred and the report cannot be viewed. Please try again. If the problem continues, contact Customer Support..
         /// </summary>
         public static string ReportGetFailedMessage {
@@ -3189,6 +3234,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to save changes to this detail line?.
+        /// </summary>
+        public static string SaveChangesMessage {
+            get {
+                return ResourceManager.GetString("SaveChangesMessage", resourceCulture);
             }
         }
         

@@ -1544,7 +1544,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                                     currentRank = element["rank"];
                                 }
                             });
-                            var iframeHtml = sg.utls.formatString("<iframe scrolling='no' sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation allow-downloads' id='{0}' src='' class='screenIframe' style='display: none;'></iframe>",
+                            var iframeHtml = sg.utls.formatString("<iframe scrolling='no' sandbox='allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation allow-downloads allow-modals' id='{0}' src='' class='screenIframe' style='display: none;'></iframe>",
                                 currentIframeId);
                             $currentIframeId.parent().empty().append(iframeHtml);
                             iFrameLoadEvent(null, $currentIframeId);

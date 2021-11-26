@@ -1692,7 +1692,7 @@
     <comment>Added for Export Import</comment>
   </data>
   <data name="RetainageDistributionAmount" xml:space="preserve">
-    <value>保留款分配金額</value>
+    <value>保留款分佈金額</value>
     <comment>Added for Export Import</comment>
   </data>
   <data name="RetainageTaxAllocated" xml:space="preserve">
@@ -1990,7 +1990,7 @@
     <value>週期性收費代碼</value>
   </data>
   <data name="ShipmentNumber" xml:space="preserve">
-    <value>發貨編號</value>
+    <value>發運編號</value>
   </data>
   <data name="SpecialInstructions" xml:space="preserve">
     <value>指示</value>
@@ -3321,7 +3321,7 @@
     <value>攤配方法</value>
   </data>
   <data name="ReprorationMethod" xml:space="preserve">
-    <value>再分攤方法</value>
+    <value>再攤配方法</value>
   </data>
   <data name="ReturnAccount" xml:space="preserve">
     <value>退貨科目</value>
@@ -3339,7 +3339,7 @@
     <comment>For Invoice Entry Export</comment>
   </data>
   <data name="CommentIdentifier" xml:space="preserve">
-    <value>備註識別字</value>
+    <value>備注辨識符</value>
     <comment>From ReturnEntryResx</comment>
   </data>
   <data name="CostCategory" xml:space="preserve">
@@ -3472,7 +3472,7 @@
     <value>不收費</value>
   </data>
   <data name="Nonbillable" xml:space="preserve">
-    <value>不可開帳單</value>
+    <value>不可計費</value>
   </data>
   <data name="ExportDeclarationNumber" xml:space="preserve">
     <value>出口報關號</value>

@@ -230,7 +230,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="PFRLblInstructionCap" xml:space="preserve">
-    <value>Especifique un rango de cheques y seleccione un estado a aplicar. Los cheques con el estado "No Impreso" se incluirán en la próxima ejecución de impresión.</value>
+    <value>Especifique un rango de cheques y seleccione un estado a aplicar. Los cheques con el estado &quot;No Impreso&quot; se incluirán en la próxima ejecución de impresión.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="PFRBKPRFUNStatusCap" xml:space="preserve">
@@ -270,7 +270,13 @@
     <value>Seleccione los cheques a reimprimir.</value>
   </data>
   <data name="CheckStockInUse" xml:space="preserve">
-    <value>Otro usuario está usando el surtido de cheques "{0}".</value>
+    <value>Otro usuario está usando el surtido de cheques &quot;{0}&quot;.</value>
     <comment>Used when check stock is locked</comment>
+  </data>
+  <data name="AdviceForm" xml:space="preserve">
+    <value>Formulario de Notificación</value>
+  </data>
+  <data name="CheckForm" xml:space="preserve">
+    <value>Formulario de Cheque</value>
   </data>
 </root>
