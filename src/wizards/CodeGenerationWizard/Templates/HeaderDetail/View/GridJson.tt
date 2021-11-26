@@ -46,7 +46,7 @@
 			WriteLine("\"FieldName\": \"{0}\",", field.ServerFieldName);
 	        WriteLine("\"IsEditable\": {0},",  (!field.IsReadOnly && !field.IsCalculated).ToString().ToLower());
 	        WriteLine("\"IsLineNumber\": {0},",  "false");
-		    WriteLine("\"HasFinder\": {0},",  "false");
+		    // WriteLine("\"HasFinder\": {0},",  "false");
 	        WriteLine("\"IsCustomData\": {0},",  "false");
 	        WriteLine("\"IsHidden\": {0}",  "false");
 			PopIndent();	
