@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class PaymentEntryResx {
@@ -2383,6 +2383,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Project Style.
+        /// </summary>
+        public static string ProjectStyle {
+            get {
+                return ResourceManager.GetString("ProjectStyle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchase Orders.
         /// </summary>
         public static string PurchaseOrders {
@@ -3652,11 +3661,20 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unapplied Job Payment Amount.
+        ///   Looks up a localized string similar to Unapplied Amount.
         /// </summary>
         public static string UnappliedJobPaymentAmount {
             get {
                 return ResourceManager.GetString("UnappliedJobPaymentAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unformatted Contract Code.
+        /// </summary>
+        public static string UnformattedContractCode {
+            get {
+                return ResourceManager.GetString("UnformattedContractCode", resourceCulture);
             }
         }
         
@@ -3697,7 +3715,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vendor Currency Code.
+        ///   Looks up a localized string similar to Vendor Currency.
         /// </summary>
         public static string VendorCurrencyCode {
             get {

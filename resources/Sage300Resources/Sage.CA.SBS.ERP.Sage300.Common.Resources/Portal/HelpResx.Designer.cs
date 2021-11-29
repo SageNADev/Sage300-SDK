@@ -9340,6 +9340,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Charging for Fees and Services.
+        /// </summary>
+        public static string PM_Charges_Article1 {
+            get {
+                return ResourceManager.GetString("PM_Charges_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Common Features of PJC Transactions Screens.
+        /// </summary>
+        public static string PM_Charges_Article2 {
+            get {
+                return ResourceManager.GetString("PM_Charges_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Charges Screen.
+        /// </summary>
+        public static string PM_Charges_Screen {
+            get {
+                return ResourceManager.GetString("PM_Charges_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PJC Costs Screen.
         /// </summary>
         public static string PM_Costs_Screen {
@@ -9525,6 +9552,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PM_Transaction_Listing_Report_Screen {
             get {
                 return ResourceManager.GetString("PM_Transaction_Listing_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entering Opening Retainage Balances.
+        /// </summary>
+        public static string PM_UpdateRetainage_Article1 {
+            get {
+                return ResourceManager.GetString("PM_UpdateRetainage_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Common Features of PJC Transactions Screens.
+        /// </summary>
+        public static string PM_UpdateRetainage_Article2 {
+            get {
+                return ResourceManager.GetString("PM_UpdateRetainage_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Update Retainage Screen.
+        /// </summary>
+        public static string PM_UpdateRetainage_Screen {
+            get {
+                return ResourceManager.GetString("PM_UpdateRetainage_Screen", resourceCulture);
             }
         }
         

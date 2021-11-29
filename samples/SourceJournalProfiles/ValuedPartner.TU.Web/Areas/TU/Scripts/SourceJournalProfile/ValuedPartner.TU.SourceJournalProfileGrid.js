@@ -323,8 +323,20 @@ var sourceJournalProfileGrid = {
             return true;
         };
 
+        // Setup the correct finder filtering
+        const sourceCodeFinderProperties = () => {
+            const properties = sg.utls.deepCopy(sg.viewFinderProperties.GL.SourceCodes);
+            const sourceCode = $("#Source").val().toUpperCase();
+            const splitParameters = sourceCode.split("-");
+            const sourceLedger = splitParameters[0];
+            const sourceType = splitParameters[1];
+            properties.initKeyValues = [sourceLedger, sourceType];
+            return properties;
+        };
+
         SourceCodeGridConfig.editorEvents.Source.FinderSelect = onFinderSuccess.onSourceCode;
         SourceCodeGridConfig.editorEvents.Source.FinderCancel = $.noop;
         SourceCodeGridConfig.editorEvents.Source.FinderFilter = sourceJournalFilter.sourceCode;
+        SourceCodeGridConfig.editorEvents.Source.FinderProperty = sourceCodeFinderProperties;
     }
 };

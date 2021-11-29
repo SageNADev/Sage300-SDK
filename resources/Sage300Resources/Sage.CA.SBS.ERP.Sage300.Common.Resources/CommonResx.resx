@@ -1251,6 +1251,12 @@
   <data name="Subcontractor" xml:space="preserve">
     <value>Subcontractor</value>
   </data>
+  <data name="Labor" xml:space="preserve">
+    <value>Labor</value>
+  </data>
+  <data name="Overhead" xml:space="preserve">
+    <value>Overhead</value>
+  </data>
   <data name="Default" xml:space="preserve">
     <value>Default</value>
     <comment>Moving this Resource key from module specific to common</comment>
@@ -1626,5 +1632,18 @@
   </data>
   <data name="Previous" xml:space="preserve">
     <value>Previous</value>
+  </data>
+  <data name="AddNewLineMessage" xml:space="preserve">
+    <value>Do you want to add this detail line?</value>
+  </data>
+  <data name="SaveChangesMessage" xml:space="preserve">
+    <value>Do you want to save changes to this detail line?</value>
+  </data>
+  <data name="ReportGenFailedMessageForCustomReport" xml:space="preserve">
+    <value>A problem occurred while generating the report. Check that all required settings and options for the report are specified, and then try again.</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Finish</value>
+    <comment>button caption for wizard finish button</comment>
   </data>
 </root>

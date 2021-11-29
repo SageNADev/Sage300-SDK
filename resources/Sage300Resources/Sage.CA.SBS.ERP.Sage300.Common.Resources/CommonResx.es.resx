@@ -1251,6 +1251,12 @@
   <data name="Subcontractor" xml:space="preserve">
     <value>Subcontratista</value>
   </data>
+  <data name="Labor" xml:space="preserve">
+    <value>Mano de Obra</value>
+  </data>
+  <data name="Overhead" xml:space="preserve">
+    <value>Gastos Generales</value>
+  </data>
   <data name="Default" xml:space="preserve">
     <value>Predeterminado</value>
     <comment>Moving this Resource key from module specific to common</comment>
@@ -1626,5 +1632,14 @@
   </data>
   <data name="Previous" xml:space="preserve">
     <value>Anterior</value>
+  </data>
+  <data name="AddNewLineMessage" xml:space="preserve">
+    <value>¿Desea agregar esta línea de detalle?</value>
+  </data>
+  <data name="SaveChangesMessage" xml:space="preserve">
+    <value>¿Desea guardar los cambios realizados a esta línea de detalle?</value>
+  </data>
+  <data name="ReportGenFailedMessageForCustomReport" xml:space="preserve">
+    <value>Ha ocurrido un problema al generar el reporte. Verifique que se hayan especificado todas las opciones y todos los parámetros requeridos para el informe e inténtelo de nuevo.</value>
   </data>
 </root>

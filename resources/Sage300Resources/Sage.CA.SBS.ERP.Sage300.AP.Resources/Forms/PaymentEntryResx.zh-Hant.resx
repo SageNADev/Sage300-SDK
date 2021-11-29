@@ -334,7 +334,7 @@
     <comment>Field</comment>
   </data>
   <data name="History" xml:space="preserve">
-    <value>歷史</value>
+    <value>歷史...</value>
     <comment>Button</comment>
   </data>
   <data name="InvoiceNumber" xml:space="preserve">
@@ -442,7 +442,7 @@
     <comment>on modal screens</comment>
   </data>
   <data name="RateOverride" xml:space="preserve">
-    <value>匯率替換</value>
+    <value>匯率撤換</value>
     <comment>Screen title</comment>
   </data>
   <data name="RatesButton" xml:space="preserve">
@@ -544,6 +544,9 @@
   <data name="UnappliedAmount" xml:space="preserve">
     <value>未核銷金額</value>
     <comment>Field</comment>
+  </data>
+  <data name="UnformattedContractCode" xml:space="preserve">
+    <value>未格式化合約代碼</value>
   </data>
   <data name="VendorAmount" xml:space="preserve">
     <value>供應商幣別金額</value>
@@ -734,7 +737,7 @@
     <comment>Import/Export</comment>
   </data>
   <data name="ProcessCommandCode" xml:space="preserve">
-    <value>處理指令代碼</value>
+    <value>處理指示代碼</value>
     <comment>Import/Export</comment>
   </data>
   <data name="State" xml:space="preserve">
@@ -1022,7 +1025,7 @@
     <comment>Import/Export</comment>
   </data>
   <data name="VendorCurrencyCode" xml:space="preserve">
-    <value>供應商幣別代碼</value>
+    <value>供應商幣別</value>
     <comment>Import/Export</comment>
   </data>
   <data name="VendorExchangeRate" xml:space="preserve">
@@ -1127,6 +1130,9 @@
   </data>
   <data name="ProjectOrCategoryResource" xml:space="preserve">
     <value>專案或類別資源</value>
+  </data>
+  <data name="ProjectStyle" xml:space="preserve">
+    <value>專案樣式</value>
   </data>
   <data name="RetainageDistributionAmount" xml:space="preserve">
     <value>保留款分佈金額</value>
@@ -1426,7 +1432,7 @@
     <value>預付匹配憑證類型</value>
   </data>
   <data name="ProcessCommand" xml:space="preserve">
-    <value>處理指令</value>
+    <value>處理指示</value>
   </data>
   <data name="RetainageTermsCode" xml:space="preserve">
     <value>保留款條款代碼</value>
@@ -1444,19 +1450,19 @@
     <value>系列編號</value>
   </data>
   <data name="TaxAllocatedAmount1" xml:space="preserve">
-    <value>已分配稅金額1</value>
+    <value>已分配稅額1</value>
   </data>
   <data name="TaxAllocatedAmount2" xml:space="preserve">
-    <value>已分配稅金額2</value>
+    <value>已分配稅額2</value>
   </data>
   <data name="TaxAllocatedAmount3" xml:space="preserve">
-    <value>已分配稅金額3</value>
+    <value>已分配稅額3</value>
   </data>
   <data name="TaxAllocatedAmount4" xml:space="preserve">
-    <value>已分配稅金額4</value>
+    <value>已分配稅額4</value>
   </data>
   <data name="TaxAllocatedAmount5" xml:space="preserve">
-    <value>已分配稅金額5</value>
+    <value>已分配稅額5</value>
   </data>
   <data name="TaxExpensed1" xml:space="preserve">
     <value>已計費稅1</value>
@@ -1534,7 +1540,7 @@
     <value>未核銷作業折扣金額</value>
   </data>
   <data name="UnappliedJobPaymentAmount" xml:space="preserve">
-    <value>未核銷作業付款金額</value>
+    <value>未核銷金額</value>
   </data>
   <data name="VendCurrencyAmountDue" xml:space="preserve">
     <value>供應商幣別到期金額</value>
@@ -1580,7 +1586,7 @@
     <value>供應商編號不能空置。</value>
   </data>
   <data name="TaxReportCurrencymismatch" xml:space="preserve">
-    <value>稅組{2}的憑證幣別{0}不同於稅務報告幣別{1}</value>
+    <value>稅組{2}的憑證幣別{0}不同於稅務報告幣別{1}。</value>
   </data>
   <data name="TaxGroupVendorNotFound" xml:space="preserve">
     <value>稅組不能空置。</value>

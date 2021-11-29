@@ -157,7 +157,7 @@
                 returnFieldNames: ["IDINVC"],
                 displayFieldNames: ["IDINVC", "IDRMIT", "IDORDERNBR", "IDPONBR", "DATEINVCDU", "IDTRXTYPE", "TXTTRXTYPE", "DESCINVC",
                                     "DATEINVC", "RTGAMTTC", "CODETERM", "DATEDISC", "AMTDUETC", "AMTDISCTC", "SWPAID", "IDPREPAY"],
-                filterTemplate: "(IDVEND = \"{0}\") AND (TXTTRXTYPE = 1) AND (RTGAPPLYTO = \"\") AND (SWRTGOUT = 1)"
+                filterTemplate: "(IDVEND = \"{0}\") AND (TXTTRXTYPE = \"{1}\") AND (RTGAPPLYTO = \"\") AND (SWRTGOUT = 1)"
             },
 
             DocumentNumber: {
@@ -1839,6 +1839,20 @@
                 returnFieldNames: ["STAFFCODE"]
             },
 
+            ContractStructure: {
+                viewID: "PM0011",
+                viewOrder: 0,
+                returnFieldNames: ["JOBBRKID", "DESC"],
+                displayFieldNames: ["JOBBRKID", "DESC"]
+            },
+
+            AccountSet: {
+                viewID: "PM0017",
+                viewOrder: 0,
+                returnFieldNames: ["IDACCTSET", "TEXTDESC"],
+                displayFieldNames: ["IDACCTSET", "TEXTDESC", "INACTIVE", 'CURNCODE']
+            },
+
             Contract: {
                 viewID: "PM0021",
                 viewOrder: 1,
@@ -1847,10 +1861,11 @@
                 //optionalFieldBindings: "PM0850,PM0500[1]"
             },
 
+
             ContractGrid: {
                 viewID: "PM0021",
                 viewOrder: 1,
-                returnFieldNames: ["FMTCONTNO"],
+                returnFieldNames: ["FMTCONTNO", "CONTRACT"],
                 displayFieldNames: ["FMTCONTNO", "DESC", "STATUS", "CONTBRKID", "CUSTOMER", "IDACCTSET", "MANAGER", "OPENED", "ARACCTSET"],
                 initKeyFieldNames: ["CONTRACT"],
             },

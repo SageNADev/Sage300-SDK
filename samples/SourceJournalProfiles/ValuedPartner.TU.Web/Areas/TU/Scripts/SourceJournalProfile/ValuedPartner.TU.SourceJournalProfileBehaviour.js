@@ -321,10 +321,10 @@ var onFinderSuccess = {
             let row = grid.tbody.find("tr[data-uid='" + sourceJournalProfileUI.sourceJournalLineId + "']");
             let gridData = grid.dataItem(row);
 
-            let source = data.SourceLedger + "-" + data.SourceType;
+            let source = `${data.SRCELEDGER}-${data.SRCETYPE}`; 
             gridData.set("Source", source);
             gridData.set("PreviousSourceValue", source);
-            gridData.set("Description", data.Description);
+            gridData.set("Description", data.SRCEDESC);
 
             sourceJournalProfileGrid.resetFocus(grid, gridData, 1);
             sourceJournalProfileUtility.checkDuplicateRecord(gridData);

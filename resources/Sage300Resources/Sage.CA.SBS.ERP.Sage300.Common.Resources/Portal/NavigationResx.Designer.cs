@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class NavigationResx {
@@ -3697,6 +3697,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Charges.
+        /// </summary>
+        public static string PM_Charges {
+            get {
+                return ResourceManager.GetString("PM_Charges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract Maintenance.
+        /// </summary>
+        public static string PM_ContractMaintenance {
+            get {
+                return ResourceManager.GetString("PM_ContractMaintenance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Costs.
         /// </summary>
         public static string PM_Costs {
@@ -3711,6 +3729,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PM_CostTypes {
             get {
                 return ResourceManager.GetString("PM_CostTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment Usage.
+        /// </summary>
+        public static string PM_Equipment {
+            get {
+                return ResourceManager.GetString("PM_Equipment", resourceCulture);
             }
         }
         
@@ -3747,6 +3774,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PM_OpeningBalances {
             get {
                 return ResourceManager.GetString("PM_OpeningBalances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revise Estimates.
+        /// </summary>
+        public static string PM_Revise_Estimates {
+            get {
+                return ResourceManager.GetString("PM_Revise_Estimates", resourceCulture);
             }
         }
         
@@ -3792,6 +3828,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PM_Transactions {
             get {
                 return ResourceManager.GetString("PM_Transactions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Retainage.
+        /// </summary>
+        public static string PM_Update_Retainage {
+            get {
+                return ResourceManager.GetString("PM_Update_Retainage", resourceCulture);
             }
         }
         

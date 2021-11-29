@@ -1078,6 +1078,47 @@ input[class*="btn-"] {
 .btn-numeric                { background-position: 3px 4px; }
 .btn-numeric:disabled       { background-position: 3px -65px; }
 
+.k-sprite.folder,
+.k-sprite.rootfolder {
+  font-family: "Sage Armonye Icons";
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: top;
+  font-size: 1.75rem;
+  color: #f90;
+
+  &:before {
+    content: "\4a";
+  }
+
+  &.folder-blue {
+      color: @sage-blue;
+  }
+  &.folder-green {
+      color: #00cc00;
+  }
+  &.folder-red {
+      color: #ff3300;
+  }
+  &.folder-grey {
+      color: #999999;
+  }
+  &.folder-magenta {
+      color: #cc00cc;
+  }
+  &.folder-black {
+      color: #000;
+  }
+}
+
+
+
 /* required field flag */
 label.required:after {
   content: "*";
@@ -1119,6 +1160,16 @@ input.grid_Cell_Number_Right_Align {
 
     .k-numeric-wrap input.size-control {
       width: 168px;
+    }
+  }
+
+  .data-nav-group input[type=text] {
+
+    &.text-right,
+    &.numeric,
+    &.align-right {
+      text-align: right;
+      padding-right: 10px;
     }
   }
 }
@@ -2279,49 +2330,11 @@ div.k-treeview {
    
 }
 
+div.k-treeview.treeview-with-icon,
 #treeview-with-icon {
   padding-top: 10px; 
   margin-top: 6px;
-
-  .k-sprite {
-    font-family: "Sage Armonye Icons";
-    font-style: normal;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-    speak: none;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    vertical-align: top;
-    font-size: 1.75rem;
-
-    &.rootfolder:before,
-    &.folder:before {
-      content: "\4a"; 
-      color: #f90;
-    }
-
-    &.folder-blue:before {
-      content: "\4a"; 
-      color: @sage-link;
-    }
-
-    &.folder-green:before {
-      content: "\4a"; 
-      color: @sage-green;
-    }
-
-    &.folder-red:before {
-      content: "\4a"; 
-      color: #ed1c5f;
-    }
-
-    &.folder-gray:before {
-      content: "\4a"; 
-      color: @sage-mid-gray;
-    }
-  }
+  overflow: unset;
 
   .k-in {
     width: 100%;
@@ -2333,7 +2346,7 @@ div.k-treeview {
 
     &.k-state-selected,
     &.k-state-focused {
-      background: @brand-primary;
+      background: #b6b6b6;
       color: @white;
     }
 
@@ -2354,6 +2367,10 @@ div.k-treeview {
       }
     }
   }
+}
+
+#contractMtnTreeview div.k-treeview {
+  height: unset;
 }
 
 //For all browsers
@@ -2424,6 +2441,7 @@ div.k-treeview {
 .k-treeview .k-state-selected {
   background-color: @brand-primary;
   color: @white;
+  border-radius: 0;
 }
 
 #exportTreeView .k-state-selected.k-state-focused,
@@ -2459,7 +2477,7 @@ div.k-treeview {
 }
 
 .k-treeview span.k-in {
-  line-height: 1.6;
+  line-height: 1.9;
 }
 
 // To support Kendo Native Tree view
@@ -2679,7 +2697,15 @@ div.k-treeview {
   src: url('@{icon-font-path}@{icon-font-name-awesome}.eot');
   src: url('@{icon-font-path}@{icon-font-name-awesome}.woff') format('woff'),
        url('@{icon-font-path}@{icon-font-name-awesome}.woff2') format('woff2'),
-       url('@{icon-font-path}@{icon-font-name-awesome}.ttf') format('truetype')
+       url('@{icon-font-path}@{icon-font-name-awesome}.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "SageDesignSystem";
+  src: url(@{icon-font-path}@{icon-font-name-sds}.woff) format("woff"), 
+       url(@{icon-font-path}@{icon-font-name-sds}.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
 
 // Kendo checkbox styles override
@@ -3030,19 +3056,106 @@ div.k-treeview {
 .k-splitter .k-ghost-splitbar-horizontal, 
 .k-splitter .k-splitbar-horizontal {
   width: 8px;
+
+  &.k-splitbar-draggable-horizontal .k-i-arrow-60-left {
+    margin-top: -40px;
+    font-size: 17px;
+    width: 14px;
+    background: none;
+    left: -2px;
+    color: @sage-dark-gray;
+  }
 }
 
-.k-splitbar:active, 
-.k-splitbar.k-state-focus, 
-.k-splitbar.k-state-focused {
-  background-color: @brand-primary;
+.k-splitbar {
 
-  .k-icon.k-expand-prev,
-  .k-icon.k-collapse-prev  {
-    color: @white;
+  &:active, 
+  &.k-state-focus, 
+  &.k-state-focused {
+    background-color: @brand-primary;
+
+    .k-icon.k-expand-prev,
+    .k-icon.k-collapse-prev  {
+      color: @white;
+    }
+
+    .k-icon.k-resize-handle.k-i-vbar {
+        background-color: white;
+      }
+    }
+
+  .k-resize-handle {
+    background-color: @sage-dark-gray;
+    width: 6px;
+    background-image: none;
+  }
+   
+  .k-i-arrow-60-right {
+    font-size: 17px;
+    left: -2px;
+    width: 14px;
+    background: none;
+    color: @sage-dark-gray;
+  }
+}
+
+#right-pane {
+  .pane-content {
+    margin-top: -16px;
+    margin-right: 32px;
+  }
+}
+
+#left-pane {
+  padding: 0 0 0 16px;
+}
+
+#vertical {
+  height: 100%;
+}
+
+#top-pane {
+  position: relative !important;
+}
+
+.k-splitbar {
+    .k-icon:before {
+      width: 2.5em;
+      height: 1em;
+      left: -14px;
+    }
+}
+
+#cmTreeView {
+  margin-left: -10px;
+}
+
+#left-pane .k-dropdown {
+  margin-bottom: 20px;
+  text-align: center;
+
+  .k-dropdown-wrap.k-state-default {
+    background-color: @white;
+    border-color: @sage-blue;
+
+    .k-input {
+        line-height: 2.2;
+        margin-left: -5px;
+        font-size: 13px;
+        color: @sage-blue;
+      }
+
+    .k-select {
+      background-color: @white;
+      border-left: 0;
+
+      &:hover {
+        background-color: @white;
+      }
+    }
   }
 
-  .k-icon.k-resize-handle.k-i-vbar {
-    background-color: white;
+  .k-state-hover .k-input {
+    color: @sage-blue;
   }
 }

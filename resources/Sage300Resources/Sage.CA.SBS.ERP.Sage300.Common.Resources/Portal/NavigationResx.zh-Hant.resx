@@ -1657,6 +1657,9 @@
   <data name="PM_Material_Allocation" xml:space="preserve">
     <value>物料分攤</value>
   </data>
+  <data name="PM_Update_Retainage" xml:space="preserve">
+    <value>更新保留款</value>
+  </data>
   <data name="PM_Material_Return" xml:space="preserve">
     <value>物料退回</value>
   </data>
@@ -1694,6 +1697,12 @@
     <value>專案成本管理設定</value>
   </data>
   <data name="PM_CostTypes" xml:space="preserve">
-    <value>成本類型 </value>
+    <value>成本類型</value>
+  </data>
+  <data name="PM_Charges" xml:space="preserve">
+    <value>收費</value>
+  </data>
+  <data name="PM_Equipment" xml:space="preserve">
+    <value>Equipment Usage</value>
   </data>
 </root>

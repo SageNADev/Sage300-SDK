@@ -6,10 +6,10 @@
 :: Purpose: This batch file will do the following:
 ::
 ::          * Remove all Resource projects from 
-::            SDK\src\wizards\Sage300Resources\ folder
+::            SDK\resources\Sage300Resources\ folder
 ::
 ::			* Copy all Columbus-Web Resource projects to 
-::            SDK\src\wizards\Sage300Resources\ folder
+::            SDK\resources\Sage300Resources\ folder
 ::
 :: Usage Example:
 ::          UpdateLocalResourceProjects.bat

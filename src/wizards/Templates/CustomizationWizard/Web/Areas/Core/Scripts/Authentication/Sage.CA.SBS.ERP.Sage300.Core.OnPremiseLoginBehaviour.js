@@ -81,6 +81,8 @@ loginUI = {
     },
     // Init events
     initEvents: function () {
+        $("#btnPasswordCancel").on('click', loginUI.hidePassword);
+
         // Sign in button
         $("#btnLogin").bind('click', function () {
 
@@ -95,7 +97,8 @@ loginUI = {
                 forAdmin: $("#loginHeader2").is(":visible"),
                 companies: ko.mapping.toJS(loginUI.model.Companies())
             };
-            loginRepository.login(data, loginUICallback.loginResult);
+            $("#btnLogin").addClass('active');
+            loginRepository.login(data).then(loginUICallback.loginResult, loginUICallback.loginError);
         });
 
         /**
@@ -118,10 +121,17 @@ loginUI = {
         });
 
         /**
+         * Register the event for input box of password 
+         */
+        $("#txtPassword").on("input", loginUI.clearMessage);
+
+
+        /**
          * Register the event for input context changed at first time
          */
         $("#txtUserId").on("input",
             function () {
+                loginUI.clearMessage();
                 if ($("#txtPassword").val() && loginUI.userIdUpdated) {
                     loginUI.userIdUpdated = false;
                     $("#txtPassword").val("");
@@ -217,7 +227,8 @@ loginUI = {
             forAdmin: $("#loginHeader2").is(":visible"),
             companies: ko.mapping.toJS(loginUI.model.Companies())
         };
-        loginRepository.login(data, loginUICallback.loginResult);
+        $("#btnLogin").addClass('active');
+        loginRepository.login(data).then(loginUICallback.loginResult, loginUICallback.loginError);
     },
 
     // Clear success
@@ -228,7 +239,6 @@ loginUI = {
 
     // Clear message
     clearMessage: function () {
-        $("#injectedOverlayTransparent").remove();
         $("#message").empty();
     },
 
@@ -236,25 +246,27 @@ loginUI = {
     showMessage: function (html, jsonResult) {
         loginUI.clearSuccess();
         loginUI.clearMessage();
-        $("#frmOnPremiseLogin").keydown(false);
 
         $("#message").html(html);
-        $("#message").parent().append("<div id='injectedOverlayTransparent' class='k-overlay k-overlay-transparent' ></div>");
         $("#message").show();
+    },
 
-        // Add Event
-        $("#btnMessage").on('click', jsonResult, loginUI.hideMessage);
+    // Clear Change Password message
+    clearChangePasswordMessage: function () {
+        $("#messageChangePassword").empty();
+    },
 
-        // Set focus
-        $("#btnMessage").focus();
+    // Show message
+    showChangePasswordMessage: function (html, jsonResult) {
+        loginUI.clearChangePasswordMessage();
+
+        $("#messageChangePassword").html(html);
+        $("#messageChangePassword").show();
     },
 
     // Hide message
     hideMessage: function (jsonResult) {
         // Remove Event
-        $("#injectedOverlayTransparent").remove();
-        $("#btnMessage").off('click', loginUI.hideMessage);
-        $("#frmOnPremiseLogin").unbind("keydown");
         $("#txtPassword").val("").focus();
 
         $("#message").hide();
@@ -284,10 +296,12 @@ loginUI = {
 
         // Default userid from login screen
         $("#txtPasswordUserId").val($("#txtUserId").val());
+        $("#txtPasswordOld").val("");
+        $("#txtPasswordNew").val("");
+        $("#txtPasswordConfirm").val("");
 
         // Add Events
-        $("#btnPasswordCancel").on('click', loginUI.hidePassword);
-        $("#btnPasswordClose").on('click', loginUI.hidePassword);
+        //$("#btnPasswordCancel").on('click', loginUI.hidePassword);
         $("#btnPasswordOk").on('click', loginUI.changePassword);
 
         // Set focus
@@ -297,9 +311,8 @@ loginUI = {
     // Hide password
     hidePassword: function () {
         // Remove Events
-        $("#btnPasswordCancel").off('click', loginUI.hidePassword);
-        $("#btnPasswordClose").off('click', loginUI.hidePassword);
-
+        $("#bodyMain").removeClass('hide').addClass('show');
+        $("#changePasswordWrapper").removeClass('show').addClass('hide');
         $("#changePassword").hide();
     },
 
@@ -307,6 +320,7 @@ loginUI = {
     changePassword: function () {
         // Remove Event
         $("#btnPasswordOk").off('click', loginUI.changePassword);
+        loginUI.clearChangePasswordMessage();
 
         var data = {
             userId: $("#txtPasswordUserId").val(),
@@ -319,6 +333,7 @@ loginUI = {
 
     // Resume Login
     resumeLogin: function () {
+        
         // Remove Events
         $("#btnPasswordExpiresNo").off('click', loginUI.resumeLogin);
 
@@ -331,7 +346,8 @@ loginUI = {
             forAdmin: $("#loginHeader2").is(":visible"),
             companies: ko.mapping.toJS(loginUI.model.Companies())
         };
-        loginRepository.login(data, loginUICallback.loginResult);
+        $("#btnLogin").addClass('active');
+        loginRepository.login(data).then(loginUICallback.loginResult, loginUICallback.loginError);
     },
 
     // Show password expires
@@ -430,9 +446,6 @@ loginUI = {
         html = html + "</div>";
         html = html + "<div class='msg-content'>";
         html = html + "<p>" + jsonResult.Message + "</p>";
-        html = html + "<div class='button-group right'>";
-        html = html + "<input id='btnMessage' class='btn btn-primary' type='button' value= " + loginResources.OkButton + "></input>";
-        html = html + "</div>";
         html = html + "</div>";
         html = html + "</div>";
         html = html + "</div>";
@@ -442,55 +455,44 @@ loginUI = {
         loginUI.showMessage(html, jsonResult);
     },
 
-    // Change Password
-    displayPassword: function () {
+    // Display error/warning message(s)
+    displayChangePasswordMessage: function (jsonResult) {
 
         // Build HTML
-        var html = "<div class='modal modal-wide'>";
-        html = html + "<div class='wrapper-change-password'>";
-        html = html + "<div class='k-window-titlebar k-header'>";
-        html = html + "<span class='k-window-title'>" + loginResources.ChangePasswordTitle + "</span>";
-        html = html + "<div class='k-window-actions'>";
-        html = html + "<a id='btnPasswordClose' role='button' href='#' class='k-window-action k-link'>";
-        html = html + "<span role='presentation' class='k-icon k-i-close'>Close</span>";
-        html = html + "</a>";
+        var html = "<div class='modal-msg k-window-content'>";
+
+        if (jsonResult.Priority == 2) {
+            html = html + "<div class='message-control multiWarn-msg'>";
+        } else {
+            html = html + "<div class='message-control multiError-msg'>";
+        }
+
+        html = html + "<div class='title'>";
+
+        if (jsonResult.Priority == 2) {
+            html = html + "<span class='icon multiWarn-icon'></span>";
+            html = html + "<h3 id='dialogConfirmation_header'>" + loginResources.warningMessageTitle + "</h3>";
+        } else {
+            html = html + "<span class='icon multiError-icon'></span>";
+            html = html + "<h3 id='dialogConfirmation_header'>" + loginResources.errorMessageTitle + "</h3>";
+        }
+
         html = html + "</div>";
-        html = html + "</div>";
-        html = html + "<div class='k-window-content k-content'>";
-        html = html + "<div class='form-group'>";
-        html = html + "<div class='input-group'>";
-        html = html + "<label>" + loginResources.UserIdTitle + "</label>";
-        html = html + "<input id='txtPasswordUserId' type='text' value='' class='medium txt-upper'>";
-        html = html + "</div>";
-        html = html + "</div>";
-        html = html + "<div class='form-group'>";
-        html = html + "<div class='input-group'>";
-        html = html + "<label>" + loginResources.OldPasswordTitle + "</label>";
-        html = html + "<input id='txtPasswordOld' type='password' class='medium txt-upper' maxlength='64'>";
-        html = html + "</div>";
-        html = html + "</div>";
-        html = html + "<div class='form-group'>";
-        html = html + "<div class='input-group'>";
-        html = html + "<label>" + loginResources.NewPasswordTitle + "</label>";
-        html = html + "<input id='txtPasswordNew' type='password' class='medium txt-upper' maxlength='64'>";
-        html = html + "</div>";
-        html = html + "</div>";
-        html = html + "<div class='form-group'>";
-        html = html + "<div class='input-group'>";
-        html = html + "<label>" + loginResources.ConfirmNewPasswordTitle + "</label>";
-        html = html + "<input id='txtPasswordConfirm' type='password' class='medium txt-upper' maxlength='64'>";
-        html = html + "</div>";
-        html = html + "</div>";
-        html = html + "<div class='button-group right'>";
-        html = html + "<input id='btnPasswordCancel' class='btn btn-secondary' type='button' value=" + loginResources.CancelButton + " />";
-        html = html + "<input id='btnPasswordOk' class='btn btn-primary' type='button' value=" + loginResources.OkButton + " />";
-        html = html + "</div>";
+        html = html + "<div class='msg-content'>";
+        html = html + "<p>" + jsonResult.Message + "</p>";
         html = html + "</div>";
         html = html + "</div>";
         html = html + "</div>";
 
-        // Add html, events and show password
-        loginUI.showPassword(html);
+
+        // Add html, event and show message
+        loginUI.showChangePasswordMessage(html, jsonResult);
+    },
+
+    // Display Change Password UI
+    displayPassword: function () {
+        $("#bodyMain").removeClass('show').addClass('hide');
+        $("#changePasswordWrapper").removeClass('hide').addClass('show');
     },
 
     // Password Expires
@@ -518,9 +520,9 @@ loginUI = {
         html = html + "</div>";
         html = html + "<div class='msg-content'>";
         html = html + "<p>" + jsonResult.Message + "</p>";
-        html = html + "<div class='button-group right'>";
-        html = html + "<input id='btnPasswordExpiresNo' class='btn btn-secondary' type='button' value=" + loginResources.NoButton + " />";
-        html = html + "<input id='btnPasswordExpiresYes' class='btn btn-primary' type='button' value=" + loginResources.YesButton + " />";
+        html = html + "<div class='message-footer'>";
+        html = html + "<a id='btnPasswordExpiresNo' class='text-button' type='button'>" + loginResources.NoButton + "</a>";
+        html = html + "<a id='btnPasswordExpiresYes' class='btn btn-primary' type='button'>" + loginResources.YesButton + "</a>";
         html = html + "</div>";
         html = html + "</div>";
         html = html + "</div>";
@@ -540,6 +542,7 @@ var loginUIUtilities = {
         $('#CompanyId').kendoDropDownList({
             dataTextField: "text",
             dataValueField: "value",
+            select: loginUI.clearMessage
         });
     },
 
@@ -696,21 +699,27 @@ var loginUICallback = {
                 }
 
                 window.location.replace(url);
-            } else {
-                // Not a success. Display errors/warnings or redirect
-                if (jsonResult.PasswordExpires) {
-                    loginUI.displayPasswordExpires(jsonResult);
-                } else {
-                    loginUI.displayMessage(jsonResult);
-                }
             }
         }
     },
 
+    loginError: function (jsonResult) {
+        $("#btnLogin").removeClass('active');
+        // Not a success. Display errors/warnings or redirect
+        if (jsonResult.PasswordExpires) {
+            loginUI.displayPasswordExpires(jsonResult);
+        } else {
+            loginUI.displayMessage(jsonResult);
+        }
+
+    },
+
     changePasswordLink: function () {
+        loginUI.clearChangePasswordMessage();
 
         // Display Change Password Dialog
         loginUI.displayPassword();
+        loginUI.showPassword();
     },
 
     changePasswordResult: function (jsonResult) {
@@ -721,7 +730,7 @@ var loginUICallback = {
                 loginUI.hidePassword();
             } else {
                 // Not a success. Display errors/warnings and re-add click event for ok button
-                loginUI.displayMessage(jsonResult);
+                loginUI.displayChangePasswordMessage(jsonResult);
                 $("#btnPasswordOk").on('click', loginUI.changePassword);
             }
         }

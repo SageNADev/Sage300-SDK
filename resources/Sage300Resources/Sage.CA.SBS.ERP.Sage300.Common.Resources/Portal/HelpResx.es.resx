@@ -4526,7 +4526,7 @@
     <comment>403072002</comment>
   </data>
   <data name="PM_OpeningBalance_Article2" xml:space="preserve">
-    <value>Ingresar Saldo de Apertura Reales</value>
+    <value>Ingresar Saldos de Apertura Reales</value>
     <comment>403072003</comment>
   </data>
   <data name="PM_OpeningBalance_Screen" xml:space="preserve">
@@ -4577,5 +4577,29 @@
   <data name="PM_MaterialReturn_Screen" xml:space="preserve">
     <value>Pantalla PJC - Devoluciones de Materiales</value>
     <comment>403070001</comment>
+  </data>
+  <data name="PM_Charges_Article1" xml:space="preserve">
+    <value>Cobro por Tarifas y Servicios</value>
+    <comment>CSH ID 403068002</comment>
+  </data>
+  <data name="PM_Charges_Article2" xml:space="preserve">
+    <value>Acerca de las Funciones Comunes en las Pantallas de Transacciones de PJC</value>
+    <comment>CSH ID 403068003</comment>
+  </data>
+  <data name="PM_Charges_Screen" xml:space="preserve">
+    <value>Pantalla PJC - Cargos</value>
+    <comment>CSH ID 403068001</comment>
+  </data>
+  <data name="PM_UpdateRetainage_Article1" xml:space="preserve">
+    <value>Ingresar Saldos de Apertura de Retención</value>
+    <comment>403077002</comment>
+  </data>
+  <data name="PM_UpdateRetainage_Article2" xml:space="preserve">
+    <value>Acerca de las Funciones Comunes en las Pantallas de Transacciones de PJC</value>
+    <comment>403077003</comment>
+  </data>
+  <data name="PM_UpdateRetainage_Screen" xml:space="preserve">
+    <value>PJC - Pantalla Actualizar Retención</value>
+    <comment>403077001</comment>
   </data>
 </root>

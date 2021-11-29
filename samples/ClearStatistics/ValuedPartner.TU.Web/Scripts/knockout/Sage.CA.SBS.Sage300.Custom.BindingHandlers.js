@@ -539,3 +539,11 @@ ko.bindingHandlers.sageDatePicker = {
         //$(element.form).validate().element($(element));
     }
 };
+
+// Stop ko binding on child elements with data-bind="stopBindings: true"
+ko.bindingHandlers.stopBinding = {
+    init: function () {
+        return { controlsDescendantBindings: true };
+    }
+};
+ko.virtualElements.allowedBindings.stopBinding = true;

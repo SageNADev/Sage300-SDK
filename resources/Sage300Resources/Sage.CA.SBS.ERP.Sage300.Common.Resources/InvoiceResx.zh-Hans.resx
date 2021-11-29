@@ -1328,7 +1328,7 @@
     <comment>Added for Export Import</comment>
   </data>
   <data name="RecoverableTax" xml:space="preserve">
-    <value>可退回税</value>
+    <value>可退税</value>
     <comment>From APCommonResx</comment>
   </data>
   <data name="RecurringPayableCode" xml:space="preserve">
@@ -1990,7 +1990,7 @@
     <value>经常性收费代码</value>
   </data>
   <data name="ShipmentNumber" xml:space="preserve">
-    <value>发货编号</value>
+    <value>发运编号</value>
   </data>
   <data name="SpecialInstructions" xml:space="preserve">
     <value>指示</value>

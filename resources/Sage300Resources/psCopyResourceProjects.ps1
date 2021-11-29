@@ -8,7 +8,7 @@
 #          CNA2_SOURCE_ROOT that points to the root of your local CNA2 
 #          source repository.
 #
-#          This file is meant to be called from CopyResourceProjects.bat
+#          This file is meant to be called from UpdateLocalResourceProjects.bat
 #
 # ---------------------------------------------------------------------------------------
 
@@ -33,8 +33,8 @@ if ($rootCNA2SourceFolder -eq '') {
   Write-Host 'Example: $rootCNA2SourceFolder="C:\projects\SageAzureDev\"'
 }
 
-# Settings
-$ModuleNameList = "AP,AR,AS,CS,GL,IC,KN,KPI,MT,OE,PM,PO,PR,VPF,TA,TS,TW"
+# Settings [Common and Core are not included in this list but handled later in file]
+$ModuleNameList = "AP,AR,AS,CS,GL,IC,KN,KPI,MT,OE,PM,PO,PR,TA,TS,TW,VPF"
 
 # ---------------------------------------------------------------------------------------
 # Copy all module resource projects

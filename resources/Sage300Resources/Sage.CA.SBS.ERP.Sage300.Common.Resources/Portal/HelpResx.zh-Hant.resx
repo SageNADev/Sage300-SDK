@@ -4578,4 +4578,28 @@
     <value>專案成本管理物料退回螢幕</value>
     <comment>403070001</comment>
   </data>
+  <data name="PM_Charges_Article1" xml:space="preserve">
+    <value>徵收費用和服務</value>
+    <comment>CSH ID 403068002</comment>
+  </data>
+  <data name="PM_Charges_Article2" xml:space="preserve">
+    <value>關於專案成本管理交易螢幕的共同特性</value>
+    <comment>CSH ID 403068003</comment>
+  </data>
+  <data name="PM_Charges_Screen" xml:space="preserve">
+    <value>專案成本管理收費螢幕</value>
+    <comment>CSH ID 403068001</comment>
+  </data>
+  <data name="PM_UpdateRetainage_Article1" xml:space="preserve">
+    <value>輸入期初保留款餘額</value>
+    <comment>403077002</comment>
+  </data>
+  <data name="PM_UpdateRetainage_Article2" xml:space="preserve">
+    <value>關於專案成本管理交易螢幕的共同特性</value>
+    <comment>403077003</comment>
+  </data>
+  <data name="PM_UpdateRetainage_Screen" xml:space="preserve">
+    <value>專案成本管理更新保留款螢幕</value>
+    <comment>403077001</comment>
+  </data>
 </root>

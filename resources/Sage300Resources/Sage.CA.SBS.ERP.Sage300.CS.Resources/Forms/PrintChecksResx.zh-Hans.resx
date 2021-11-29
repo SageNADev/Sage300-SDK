@@ -273,4 +273,10 @@
     <value>另一用户正在使用支票簿&quot;{0}&quot;。</value>
     <comment>Used when check stock is locked</comment>
   </data>
+  <data name="AdviceForm" xml:space="preserve">
+    <value>通知表格</value>
+  </data>
+  <data name="CheckForm" xml:space="preserve">
+    <value>支票表格</value>
+  </data>
 </root>

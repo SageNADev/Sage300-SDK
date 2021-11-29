@@ -702,3 +702,84 @@ input[class*="icon btn-"] {
   position: relative;
 }
 
+button.size-small {
+    height: 30px;
+    line-height: 28px;
+    padding: 0px 16px;
+    font-size: 1.25rem;
+}
+
+button.business-medium.secondary {
+    background-color: transparent;
+    border: 1px solid @sage-blue;
+    color: @sage-blue;
+}
+
+.button-multi > button.size-small .button-icon-right > .icon {
+    padding-left: 16px;
+}
+
+.icon-dropdown::before {
+    content: "\e910";
+}
+
+i.icon {
+    line-height: 1rem;
+    background-image: none;
+}
+
+[class^=icon-]::before, 
+[class*=" icon-"]::before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: SageDesignSystem;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1rem;
+    vertical-align: middle;
+}
+
+button.business-medium:hover {
+    background-color: #005c9a;
+    border-color: #005c9a;
+    color: white;
+}
+
+.button-multi .button-multi-list {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px @sage-light-gray;
+    z-index: 1;
+
+    button {
+      width: 100%;
+      text-align: left;
+      border: 0;
+      white-space: nowrap;
+      margin-right: 0;
+  }
+}
+
+button:focus {
+    outline: 3px solid @input-border-focus;
+    outline-offset: 0;
+    z-index: 900;
+}
+
+.button-multi {
+    position: relative;
+    display: inline-block;
+}
+
+button.ui-menu-noaction:hover {
+    background-color: transparent;
+    color: @sage-blue;
+    cursor: default;
+}
+
+button.ui-menu-noaction:focus {
+    outline: none;
+}
