@@ -277,6 +277,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit Details.
+        /// </summary>
+        public static string EditDetails {
+            get {
+                return ResourceManager.GetString("EditDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extended Cost.
         /// </summary>
         public static string ExtendedCost {
@@ -489,6 +498,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string UnitCost {
             get {
                 return ResourceManager.GetString("UnitCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Details.
+        /// </summary>
+        public static string ViewDetails {
+            get {
+                return ResourceManager.GetString("ViewDetails", resourceCulture);
             }
         }
         

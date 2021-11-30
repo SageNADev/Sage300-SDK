@@ -5,9 +5,9 @@
 var loginRepository = {
 
     // Invoke controller to validate credentials and attempt login
-    login: function (data, callback) {
+    login: function (data) {
         var url = sg.utls.url.buildUrl("Core", "Authentication", "LoginResultOnPremise");
-        sg.utls.ajaxPost(url, data, callback);
+        return loginRepository.ajaxCall(url, data);
     },
 
     // Invoke controller to validate credentials and attempt to change password
@@ -48,17 +48,20 @@ var loginRepository = {
             dataType: "json",
             contentType: 'application/json',
             beforeSend: function () {
-                $('#ajaxSpinner').fadeIn(1);
+                $('#btnAjaxSpinner').show();
                 sg.utls.showMessagesInViewPort();
             },
             complete: function () {
-                $('#ajaxSpinner').fadeOut(1);
+                $('#btnAjaxSpinner').hide();
                 sg.utls.ajaxRunning = false;
                 sg.utls.isProcessRunning = false;
             },
         }).then(function (data) {
             var d = $.Deferred();
-            if (!data.UserMessage.IsSuccess) {
+            if (data && data.UserMessage && !data.UserMessage.IsSuccess) {
+                return d.reject(data);
+            }
+            else if (data && !data.IsSuccess) {
                 return d.reject(data);
             }
             return d.resolve(data);

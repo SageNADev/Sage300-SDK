@@ -1657,6 +1657,9 @@
   <data name="PM_Material_Allocation" xml:space="preserve">
     <value>Coût alloué-Utilisation des matériaux</value>
   </data>
+  <data name="PM_Update_Retainage" xml:space="preserve">
+    <value>Mise à jour de retenue</value>
+  </data>
   <data name="PM_Material_Return" xml:space="preserve">
     <value>Retours des matériaux</value>
   </data>
@@ -1695,5 +1698,17 @@
   </data>
   <data name="PM_CostTypes" xml:space="preserve">
     <value>Types de coût</value>
+  </data>
+  <data name="PM_Charges" xml:space="preserve">
+    <value>Frais</value>
+  </data>
+  <data name="PM_Equipment" xml:space="preserve">
+    <value>Utilisation du matériel</value>
+  </data>
+  <data name="PM_Revise_Estimates" xml:space="preserve">
+    <value>Estimations révisées</value>
+  </data>
+  <data name="PM_ContractMaintenance" xml:space="preserve">
+    <value>Maintenance des contrats</value>
   </data>
 </root>

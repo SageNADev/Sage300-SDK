@@ -129,6 +129,9 @@
   <data name="ShowComments" xml:space="preserve">
     <value>Show Comments</value>
   </data>
+  <data name="ShowJobDetails" xml:space="preserve">
+    <value>Show Job Details</value>
+  </data>
   <data name="ShowOptionalFields" xml:space="preserve">
     <value>Show Optional Fields</value>
   </data>

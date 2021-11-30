@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Reports {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class BatchListingResx {
@@ -93,6 +93,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Reports {
         public static string ShowComments {
             get {
                 return ResourceManager.GetString("ShowComments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Job Details.
+        /// </summary>
+        public static string ShowJobDetails {
+            get {
+                return ResourceManager.GetString("ShowJobDetails", resourceCulture);
             }
         }
         

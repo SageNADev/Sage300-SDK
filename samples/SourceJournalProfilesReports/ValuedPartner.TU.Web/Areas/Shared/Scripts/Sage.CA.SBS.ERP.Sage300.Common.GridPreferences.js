@@ -1,9 +1,11 @@
-﻿/* Copyright (c) 1994-2018 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 /* Grid Columns Customization */
 var GridPreferences = GridPreferences || {};
 GridPreferences = {
+
+    gridName: '',
 
     initialize: function (gridName, userPreferenceKey, btnEdit, gridColumns) {
 
@@ -19,12 +21,15 @@ GridPreferences = {
         GridPreferences.initializeInternal(gridName, userPreferenceKey, btnEdit, gridColumns);
     },
 
-    //Should not call this method directly. This is for only for internal use
+    // Should not call this method directly. This is for only for internal use
     initializeInternal: function (gridName, userPreferenceKey, btnEdit, gridColumns, postApplyCallback) {
+
+        // Cache the grid name 
+        GridPreferences.gridName = window.sg.utls.removePrependedHashtag(gridName);
 
         var grid = $(gridName).data('kendoGrid');
 
-        //hide if there is preference window is opened. In case of multiple grids only 1 preference window can be opened.
+        // Hide if there is preference window is opened. In case of multiple grids only 1 preference window can be opened.
         GridPreferences.hide();
 
         $(document).off('.gridPref');
@@ -53,7 +58,7 @@ GridPreferences = {
         $(document).on('click.gridPref', "#btnGridPrefApply", function () {
             var data = { key: userPreferenceKey, value: GridPreferences.getSelectedColumns(grid) };
             window.sg.utls.ajaxPostHtml(window.sg.utls.url.buildUrl("Core", "Common", "SaveGridPreferences"), data);
-            GridPreferencesHelper.loadGridPreferences(grid, data.value);
+            GridPreferencesHelper.loadGridPreferences(grid, data.value, gridColumns);
             GridPreferences.hide();
             // Invoke postApplyCallback if supplied
             if (postApplyCallback !== undefined) {
@@ -69,7 +74,7 @@ GridPreferences = {
             GridPreferences.hide();
         });
 
-        GridPreferences.showColumns(grid, btnEdit);
+        GridPreferences.showColumns(grid, btnEdit, gridColumns);
     },
 
     /**
@@ -139,13 +144,18 @@ GridPreferences = {
             parentForm.append(container);
             sg.utls.GridPrefParentForm = "";
         }
+
+        // After the preferences dialog closes set the focus back to the underlying grid
+        sg.utls.gridFocusByName(`${GridPreferences.gridName}`);
     },
     /**
      * Show list of columns
      * @method showColumns      
      * @param {} grid - instance of grid.
+     * @param {} btnEdit - edit columns button.
+     * @param {} gridColumns - columns from grid config.
      */
-    showColumns: function (grid, btnEdit)
+    showColumns: function (grid, btnEdit, gridColumns)
     {
         var container = $('#divGridPrefEditCols');
         var containerLeftPos = btnEdit.offset().left + 0;
@@ -163,17 +173,26 @@ GridPreferences = {
             containerLeftPos = containerLeftPos - (parentKendoWindowPosition.left + 21);
         }
 
-        GridPreferences.populateColumnsFromGrid(grid);
+        GridPreferences.populateColumnsFromGrid(grid, gridColumns);
         GridPreferences.checkGridPrefCols(grid);
         container.css({ top: containerTopPos, left: containerLeftPos, position: 'absolute', "z-index": "2147483647" });
         container.show();
+
+        // Hide grid preferences if ESC key clicked
+        container.keydown(function (e) {
+            if (e.keyCode == sg.constants.KeyCodeEnum.ESC) {
+                GridPreferences.hide();
+            }
+        });
     },
+
     /**
      * Get the columns from the grid for checkbox list
      * @method populateColumnsFromGrid      
      * @param {} grid - instance of grid.
+     * @param {} gridColumns - columns from grid config.
      */
-    populateColumnsFromGrid: function (grid) {
+    populateColumnsFromGrid: function (grid, gridColumns) {
         var attributeNotExists;
         var customizable;
         var tableBody = $("#tblTBodyGridPref");
@@ -186,7 +205,10 @@ GridPreferences = {
         for (var i = 0; i < grid.columns.length; i++) {
             attributeNotExists = false;
 
-            if (!grid.columns[i].title) {
+            if (gridColumns && gridColumns.constructor.name === 'Object')
+                gridColumns = Object.values(gridColumns);
+            const configColumn = gridColumns ? gridColumns.find(x => x.field === grid.columns[i].field) : undefined;
+            if (!grid.columns[i].title || (configColumn && configColumn.isInternal)) {
                 continue;
             }
 
@@ -222,10 +244,12 @@ GridPreferences = {
         }
         tableBody.sortable({ cursor: "move" }).disableSelection();
     },
+
     /**
      * Restore the default columns in the grid
      * @method RestoreGridColumns      
      * @param {} grid - instance of grid.
+     * @param {} gridColumns - columns from grid config.
      */
     restoreGridColumns: function (grid, gridColumns) {
         if (grid == null) {
@@ -243,14 +267,18 @@ GridPreferences = {
                         customizable = grid.columns[j].attributes["sg_Customizable"];
                     }
                     grid.reorderColumn(k, grid.columns[j]);
-                    if (grid.columns[k].title && (attributeNotExists || customizable == null || customizable)) {
+                    if (grid.columns[k].title && (attributeNotExists || customizable == null || customizable) && !gridColumns[k].hidden && !gridColumns[k].isInternal) {
                         grid.showColumn(grid.columns[k].field);
+                    }
+                    else if (gridColumns[k].hidden || gridColumns[k].isInternal) {
+                        grid.hideColumn(grid.columns[k].field);
                     }
                     break;
                 }
             }
         }
     },
+
     /**
      * Get the selected columns to save on click of 'Apply'
      * @method GetSelectedColumns      
@@ -299,6 +327,7 @@ GridPreferencesHelper = {
         }
         GridPreferences.initializeInternal(gridName, userPreferenceKey, btnEdit, gridConfigColumns, postApplyCallback);
     },
+
     /**
      * Returns the GridColum object
      * @method getColumnIndex      
@@ -311,6 +340,7 @@ GridPreferencesHelper = {
         gridColumn.isHidden = !isChecked;
         return gridColumn;
     },
+
     /**
      * Hides the list of columns. This is added because div element(columns list) is not hiding while closing the popup which has editable grid.
      * @method close
@@ -320,6 +350,7 @@ GridPreferencesHelper = {
             GridPreferences.hide();
         }
     },
+
     /**
      * Returns true if grid column exists
      * @method IsGridColumnExists      
@@ -362,12 +393,12 @@ GridPreferencesHelper = {
     },
 
     /**
-    * Returns the current index of the specific column
-    * @method getColumnIndex      
-    * @param {} gridName - name of the grid
-    * @param {} columnName - column name
-    * @param {} ignoreHidden - flag to ignoreHidden column
-    */
+     * Returns the current index of the specific column
+     * @method getColumnIndex      
+     * @param {} gridName - name of the grid
+     * @param {} columnName - column name
+     * @param {} ignoreHidden - flag to ignoreHidden column
+     */
     getGridColumnIndex: function ($grid, columnName, ignoreHidden) {
         var colIndex = null;
         var cols = $grid.columns;
@@ -385,13 +416,15 @@ GridPreferencesHelper = {
         }
         return colIndex;
     },
+
     /**
      * Apply the saved user preferences (Column Reorder and Visibility) to the grid
      * @method LoadGridPreferences      
      * @param {} grid - instance of gri.d
      * @param {} result - list of saved grid columns
+     * @param {} gridColumns - columns from grid config.
      */
-    loadGridPreferences: function (grid, result) {
+    loadGridPreferences: function (grid, result, gridColumns) {
         if (grid == null || grid.columns == null) {
             return;
         }
@@ -410,8 +443,15 @@ GridPreferencesHelper = {
         for (var i = 0; i < grid.columns.length; i++) {
             grid.showColumn(grid.columns[i].field);
 
+            // hide columns with IsInternal in json config
+            if (gridColumns && gridColumns.constructor.name === 'Object')
+                gridColumns = Object.values(gridColumns);
+            const configColumn = gridColumns ? gridColumns.find(x => x.field === grid.columns[i].field) : undefined;
+            if (configColumn && configColumn.isInternal) {
+                grid.hideColumn(grid.columns[i].field);
+            }
             // hide column if column is hidden, and preference does not show it
-            if (grid.columns[i].hidden) {
+            else if (grid.columns[i].hidden) {
                 let shouldHide = true;
                 for (let j = 0; j < result.length; j++) {
                     if (result[j].field === grid.columns[i].field && !result[j].isHidden) {
@@ -440,9 +480,10 @@ GridPreferencesHelper = {
      * @method setGrid      
      * @param {} grid - instance of gri.d 
      * @param {} result - list of saved grid columns 
-     * @param {} isJSObject - true 
+     * @param {} isJSObject - true
+     * @param {} gridColumns - columns from grid config.
      */
-    setGrid: function (gridName, result, isJSObject) {
+    setGrid: function (gridName, result, isJSObject, gridColumns) {
         if (result === "" || result === false) {
             return;
         }
@@ -450,7 +491,7 @@ GridPreferencesHelper = {
             result = JSON.parse(sg.utls.htmlDecode(result));
         }
         var grid = $(gridName).data('kendoGrid');
-        GridPreferencesHelper.loadGridPreferences(grid, result);
+        GridPreferencesHelper.loadGridPreferences(grid, result, gridColumns);
     },
 
     /**

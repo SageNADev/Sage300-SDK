@@ -310,15 +310,14 @@
 
                 var finderHandlerFormat = "{0}.editorEvents.{1}.{2}";
 
-                colConfigStr.AppendLine(
-                    string.Format(
+                var line = string.Format(
                         "sg.viewFinderHelper.setViewFinder(\"{0}\", {1}, {2}, {3});",
                             btnName,
                             string.Format(finderHandlerFormat, model.GridConfigName, propertyName, "FinderSelect"),
                             string.Format(finderHandlerFormat, model.GridConfigName, propertyName, "FinderProperty"),
-                            string.Format(finderHandlerFormat, model.GridConfigName, propertyName, "FinderCancel")
-                    )
-                );
+                            string.Format(finderHandlerFormat, model.GridConfigName, propertyName, "FinderCancel"));
+
+                colConfigStr.AppendLine(line);
             }
         }
         else if (gridInfo.EditorType == GridEditorEnum.Dropdown)

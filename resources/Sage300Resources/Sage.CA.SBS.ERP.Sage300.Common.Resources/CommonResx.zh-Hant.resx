@@ -1251,6 +1251,12 @@
   <data name="Subcontractor" xml:space="preserve">
     <value>分包商</value>
   </data>
+  <data name="Labor" xml:space="preserve">
+    <value>勞務</value>
+  </data>
+  <data name="Overhead" xml:space="preserve">
+    <value>間接費用</value>
+  </data>
   <data name="Default" xml:space="preserve">
     <value>預設</value>
     <comment>Moving this Resource key from module specific to common</comment>
@@ -1626,5 +1632,14 @@
   </data>
   <data name="Previous" xml:space="preserve">
     <value>上個</value>
+  </data>
+  <data name="AddNewLineMessage" xml:space="preserve">
+    <value>是否增加此明細行？</value>
+  </data>
+  <data name="SaveChangesMessage" xml:space="preserve">
+    <value>是否儲存對此明細行的變更？</value>
+  </data>
+  <data name="ReportGenFailedMessageForCustomReport" xml:space="preserve">
+    <value>產生報表時發生一個問題。檢查是否指定了報表所需的所有設定和選項，然後重試。</value>
   </data>
 </root>

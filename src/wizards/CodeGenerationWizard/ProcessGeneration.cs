@@ -241,6 +241,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string PropertyGrid = "grid";
 
             /// <summary> Property for Grid </summary>
+            public const string PropertyGridModel = "gridmodel";
+
+            /// <summary> Property for Grid </summary>
             public const string PropertySequenceRevisionList = "sequencerevisionlist";
 
             /// <summary> Property for Enablement </summary>
@@ -358,16 +361,44 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Iterate Views
                 foreach (var businessView in settings.Entities)
                 {
-                    // if we are going to generate grid for a view, only create fields as it contains the entity name
-                    if (businessView.Options[BusinessView.Constants.GenerateGrid] && _settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
+                    // Special logic for header detail type
+                    if (_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) &&
+                        businessView.Options[BusinessView.Constants.GenerateGrid])
                     {
                         var entityName = businessView.Properties[BusinessView.Constants.EntityName];
 
                         // Create the Model Fields class
                         CreateClass(businessView,
-                                    entityName + "Fields.cs",
-                                    TransformTemplateToText(businessView, _settings, "Templates.Common.Class.ModelFields"),
-                                    Constants.ModelsKey, Constants.SubFolderModelFieldsKey);
+                                entityName + "Fields.cs",
+                                TransformTemplateToText(businessView, _settings, "Templates.Common.Class.ModelFields"),
+                                Constants.ModelsKey, Constants.SubFolderModelFieldsKey);
+
+                        // If generate model is true, create class for model, resource, and enums (if any)
+                        // Note: This is required for a detail class that has a grid AND
+                        // will display a popup screen based on the grid since the razor view
+                        // for the popup will require a model for html helpers
+                        if (businessView.Options[BusinessView.Constants.GenerateGridModel])
+                        {
+                            // Create the Model class
+                            CreateClass(businessView,
+                                        entityName + ".cs",
+                                        TransformTemplateToText(businessView, _settings, "Templates.Common.Class.Model"),
+                                        Constants.ModelsKey, Constants.SubFolderModelKey);
+                            
+                            // Create the Resx Files if the MenuResx file for that language exists
+                            CreateResxFilesByLanguage(_settings, businessView);
+
+                            // Create enums, if any
+                            foreach (var value in businessView.Enums.Values)
+                            {
+                                _settings.EnumHelper = value;
+
+                                CreateClass(businessView,
+                                    value.Name + ".cs",
+                                    TransformTemplateToText(businessView, _settings, "Templates.Common.Class.ModelEnums"),
+                                    Constants.ModelsKey, Constants.SubFolderModelEnumsKey);
+                            }
+                        }
 
                         continue;
                     }

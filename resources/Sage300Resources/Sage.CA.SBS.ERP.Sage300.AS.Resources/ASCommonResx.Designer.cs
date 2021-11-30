@@ -385,7 +385,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sign In to Sage 300.
+        ///   Looks up a localized string similar to Sign in to Sage 300.
         /// </summary>
         public static string SignInSage300 {
             get {
@@ -408,6 +408,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
         public static string SignOut {
             get {
                 return ResourceManager.GetString("SignOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        public static string System {
+            get {
+                return ResourceManager.GetString("System", resourceCulture);
             }
         }
         

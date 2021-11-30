@@ -126,23 +126,23 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="InvalidSrceAppMsg" xml:space="preserve">
-    <value>Le code d'application client source est manquant ou non valide.</value>
+    <value>Le code d&apos;application client source est manquant ou non valide.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="InvalidAppRunNumMsg" xml:space="preserve">
-    <value>Le numéro d'exécution de l'application est manquant ou non valide.</value>
+    <value>Le numéro d&apos;exécution de l&apos;application est manquant ou non valide.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="InvalidChkStockMsg" xml:space="preserve">
-    <value>Le code de formule de chèque n'est pas valide.</value>
+    <value>Le code de formule de chèque n&apos;est pas valide.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="IntErrChkStkPrefMsg" xml:space="preserve">
-    <value>Le code de formule de chèque n'est pas valide.</value>
+    <value>Le code de formule de chèque n&apos;est pas valide.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="NoCheckStocksMsg" xml:space="preserve">
-    <value>Il n'y aucune formule de chèque ou alors toutes les formules de chèque sont utilisées par d'autres utilisateurs.</value>
+    <value>Il n&apos;y aucune formule de chèque ou alors toutes les formules de chèque sont utilisées par d&apos;autres utilisateurs.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="BlankChkAdvForm" xml:space="preserve">
@@ -154,7 +154,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="QAllPrintedOK" xml:space="preserve">
-    <value>Vous n'avez coché aucun chèque à réimprimer. Les chèques ont-ils tous été imprimés sans problème?</value>
+    <value>Vous n&apos;avez coché aucun chèque à réimprimer. Les chèques ont-ils tous été imprimés sans problème?</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="QChkPrinted" xml:space="preserve">
@@ -174,15 +174,15 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="AdvPrinting" xml:space="preserve">
-    <value>Impression des talons. Insérez le talon dans l'imprimante et appuyez sur OK.</value>
+    <value>Impression des talons. Insérez le talon dans l&apos;imprimante et appuyez sur OK.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ChkPrinting" xml:space="preserve">
-    <value>Impression des chèques. Insérez le chèque dans l'imprimante et appuyez sur OK.</value>
+    <value>Impression des chèques. Insérez le chèque dans l&apos;imprimante et appuyez sur OK.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="QCancelChkRun" xml:space="preserve">
-    <value>Les chèques n'ont pas tous été imprimés. Voulez-vous annuler l'exécution des chèques (annulation de tous les chèques imprimés)?</value>
+    <value>Les chèques n&apos;ont pas tous été imprimés. Voulez-vous annuler l&apos;exécution des chèques (annulation de tous les chèques imprimés)?</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="VlsBKREGColSrcecurnCap" xml:space="preserve">
@@ -230,11 +230,11 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="PFRLblInstructionCap" xml:space="preserve">
-    <value>Spécifiez une plage de chèques et indiquez l'état à appliquer. Les chèques dont l'état est "Non imprimé" seront inclus dans la prochaine impression.</value>
+    <value>Spécifiez une plage de chèques et indiquez l&apos;état à appliquer. Les chèques dont l&apos;état est &quot;Non imprimé&quot; seront inclus dans la prochaine impression.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="PFRBKPRFUNStatusCap" xml:space="preserve">
-    <value>Mettre l'état à</value>
+    <value>Mettre l&apos;état à</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="PFRFrmSetupFailTxt" xml:space="preserve">
@@ -242,7 +242,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="PFRNoFormHelpMsg" xml:space="preserve">
-    <value>Impossible d'obtenir de l'aide pour</value>
+    <value>Impossible d&apos;obtenir de l&apos;aide pour</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="FromCheckNumber" xml:space="preserve">
@@ -255,7 +255,7 @@
     <value>La valeur initiale ne peut pas être supérieure à la valeur finale.</value>
   </data>
   <data name="SelectReportFile" xml:space="preserve">
-    <value>Sélectionner le fichier d'édition</value>
+    <value>Sélectionner le fichier d&apos;édition</value>
   </data>
   <data name="StockDescription" xml:space="preserve">
     <value>Description formule</value>
@@ -270,7 +270,13 @@
     <value>Sélectionnez des chèques à imprimer.</value>
   </data>
   <data name="CheckStockInUse" xml:space="preserve">
-    <value>Un autre utilisateur utilise actuellement la formule de chèque "{0}".</value>
+    <value>Un autre utilisateur utilise actuellement la formule de chèque &quot;{0}&quot;.</value>
     <comment>Used when check stock is locked</comment>
+  </data>
+  <data name="AdviceForm" xml:space="preserve">
+    <value>Formule de talon</value>
+  </data>
+  <data name="CheckForm" xml:space="preserve">
+    <value>Formule de chèque</value>
   </data>
 </root>

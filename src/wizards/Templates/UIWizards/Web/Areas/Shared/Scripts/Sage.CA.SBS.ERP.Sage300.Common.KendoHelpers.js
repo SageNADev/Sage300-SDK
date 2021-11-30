@@ -26,12 +26,14 @@ $.extend(sg.utls.kndoUI, {
      * @return 
      */
     onActivate: function (e) {
-        var windowElement = this.wrapper,
-            windowContent = this.element;
+        const windowElement = e.sender.wrapper;
+        const windowContent = e.sender.element;
 
-        //D-42917 Have to force kendo window focus here, ever since we upgrade jQuery to 3.6.0.
-        //Current kendo version v2021.1.224 only (officially) support jQuery up to 3.5.1
-        windowElement[0].focus();
+        if (windowElement) {
+            // D-42917 Have to force kendo window focus here, ever since we upgrade jQuery to 3.6.0.
+            // Current kendo version v2021.1.224 only (officially) support jQuery up to 3.5.1
+            windowElement[0].focus();
+        }
 
         $(document).off("keydown.kendoWindow").on("keydown.kendoWindow", function (e) {
             var focusedElement = $(document.activeElement);
@@ -40,6 +42,7 @@ $.extend(sg.utls.kndoUI, {
             }
         });
     },
+
 
     /**
      * @method onOpen

@@ -41,6 +41,7 @@ sg.optionalFieldControl = function () {
         _lastColField = {},
         _lastRowStatus = {},
         _lastErrorResult = {},
+        _currentPage = {},
         _dataChanged = {},
         _filter = {},
         _sendChange = {},
@@ -1040,6 +1041,9 @@ sg.optionalFieldControl = function () {
      * @param {boolean} readOnly Whether the grid allows editing(Optional).
      */
     function init(gridName, settings, readOnly) {
+
+        const self = this;
+
         var columns = _getGridColumns(gridName),
             addTemplate = kendo.format(ButtonTemplate, 'btn-add', 'sg.optionalFieldControl.addLine(&quot;' + gridName + '&quot;)', globalResource.AddLine, gridName, "Add"),
             delTemplate = kendo.format(ButtonTemplate, 'btn-delete', 'sg.optionalFieldControl.deleteLine(&quot;' + gridName + '&quot;)', globalResource.DeleteLine, gridName, "Delete");
@@ -1054,6 +1058,7 @@ sg.optionalFieldControl = function () {
         _reset(gridName);
         _filter[gridName] = "";
         _dataChanged[gridName] = false;
+		_currentPage[gridName] = 1;
 
         $("#" + gridName).kendoGrid({
             height: 450,
@@ -1145,6 +1150,22 @@ sg.optionalFieldControl = function () {
                             return JSON.stringify(data);
                         }
                     }
+                },
+				//When paging, save the unsaved row
+                requestStart: function (e) {
+                    // Commit any grid changes if there is a new line or data has changed while pagination
+                    if (_dataChanged[gridName] && _currentPage[gridName] !== this.page()) {
+                        e.preventDefault();
+                        _commitGrid(gridName, (isSuccess) => {
+                            if (isSuccess) {
+                                _dataChanged[gridName] = false;
+                                _currentPage[gridName] = this.page();
+                                this.page(this.page());
+                            }
+                        });
+                        return;
+                    }
+                    _currentPage[gridName] = this.page();
                 }
             }
         });
@@ -1157,6 +1178,21 @@ sg.optionalFieldControl = function () {
         $(document).on("click", ".msgCtrl-close", function (e) {
             _setGridCell.call(this, gridName);
         });
+
+        sg.utls.initGridKeyboardHandlers(gridName, true,
+            {
+                addLine: self.addLine,
+                deleteLine: self.deleteLine,
+                showDetails: null, // Not needed
+                editColumnSettings: null, // Not needed
+            },
+            {
+                addLineButtonName: `btn${gridName}Add`,
+                deleteLineButtonName: `btn${gridName}Delete`,
+                viewEditDetailsButtonName: '',
+                editColumnSettingsButtonName: ''
+            }
+        );
     }
 
     /**

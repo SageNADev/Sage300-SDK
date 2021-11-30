@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Controller : ControllerBase
     {
@@ -27,121 +27,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 24 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
 
    // Locals
     var moduleId = settings.ModuleId;
@@ -160,7 +160,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
             #line hidden
             this.Write("// ");
             
-            #line 37 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 37 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -178,77 +178,77 @@ using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using ");
             
-            #line 48 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 48 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\nusing ");
             
-            #line 49 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 49 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Resources.Forms;\r\nusing ");
             
-            #line 50 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 50 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 54 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 54 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Controllers\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 57 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write(" Public Controller\r\n    /// </summary>\r\n    public class ");
             
-            #line 59 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("Controller : MultitenantControllerBase<");
             
-            #line 59 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -257,7 +257,7 @@ using ");
                     "     /// Gets or sets the internal controller\r\n        /// </summary>\r\n        p" +
                     "ublic ");
             
-            #line 66 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 66 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -265,7 +265,7 @@ using ");
             this.Write("ControllerInternal ControllerInternal { get; set; }\r\n\r\n        #endregion\r\n\r\n    " +
                     "    #region Constructor\r\n\r\n        /// <summary>\r\n        /// Constructor for ");
             
-            #line 73 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 73 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -273,20 +273,20 @@ using ");
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"container\">Unity Container</pa" +
                     "ram>\r\n        public ");
             
-            #line 76 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 76 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("Controller(IUnityContainer container)\r\n            : base(container,\"");
             
-            #line 77 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             
-            #line 77 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -308,7 +308,7 @@ using ");
             base.Initialize(requestContext);
             ControllerInternal = new ");
             
-            #line 92 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 92 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -317,29 +317,22 @@ using ");
                     "Public methods\r\n\r\n\t    /// <summary>\r\n        /// Load screen\r\n        /// </sum" +
                     "mary>\r\n        /// <returns>JSON object for ");
             
-            #line 102 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 102 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
-            this.Write("</returns>\r\n        public virtual ActionResult Index()\r\n        {\r\n            ");
+            this.Write("</returns>\r\n        public virtual ActionResult Index()\r\n        {\r\n\t\t\t");
             
-            #line 105 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
-            
-            #line default
-            #line hidden
-            this.Write("ViewModel viewModel;\r\n\r\n\t\t\t");
-            
-            #line 107 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 105 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
 
 			WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", view.Properties[BusinessView.Constants.EntityName]);
 			
             
             #line default
             #line hidden
-            this.Write(@"			viewModel = ControllerInternal.Create();
-            return View(viewModel);
+            this.Write(@"            return ViewWithCatch(() => ControllerInternal.Create(),
+                CommonResx.UnhandledExceptionMessage);
         }
 
         /// <summary>
@@ -348,14 +341,8 @@ using ");
         [HttpPost]
         public virtual JsonNetResult Post()
         {
-            try
-            {
-				return JsonNet(ControllerInternal.Post());
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
-            }
+            return CallWithCatch(() => ControllerInternal.Post(),
+                CommonResx.SaveFailedMessage);
         }
 
         #endregion
@@ -364,7 +351,7 @@ using ");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

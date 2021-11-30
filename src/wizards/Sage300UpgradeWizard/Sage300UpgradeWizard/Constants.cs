@@ -32,13 +32,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2021.2";
+            public const string FromReleaseNumber = "2022.0";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2022.0";
+            public const string ToReleaseNumber = "2022.1";
 
             /// <summary> From Accpac Number </summary>
-            public const string FromAccpacNumber = "6.8.0.0";
+            public const string FromAccpacNumber = "6.9.0.0";
 
             /// <summary> To Accpac Number </summary>
             public const string ToAccpacNumber = "6.9.0.0";
@@ -50,7 +50,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const bool SyncWebFiles = true;
 
             /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
-            public const bool UpdateAccpacDotNetLibrary = true;
+            public const bool UpdateAccpacDotNetLibrary = false;
 
             /// <summary> Flag that determines whether or not to update the .NET framework in solution projects. </summary>
             public const bool UpdateMicrosoftDotNetFramework = false;
@@ -65,13 +65,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const bool AddBinIncludeFile = false;
 
             /// <summary> Flag that determines whether or not to execute the 'FinderAlterations' process. </summary>
-            public const bool FinderAlterations = true;
+            public const bool FinderAlterations = false;
 
             /// <summary> Flag that determines whether or not to execute the 'NamespaceAndWebProjectUpdates' process. </summary>
-            public const bool NamespaceAndWebProjectUpdates = true;
+            public const bool NamespaceAndWebProjectUpdates = false;
 
             /// <summary> Flag that determines whether or not to execute the 'JavascriptMinificationUpdates' process. </summary>
-            public const bool JavascriptMinificationUpdates = true;
+            public const bool JavascriptMinificationUpdates = false;
 
             /// <summary> 
             /// Release 2021.2
@@ -82,7 +82,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const bool ReportUpgrade_For_2021_2 = false;
 
             /// <summary> Flag that determines whether or not to remove previous versions of the various JQuery libraries. </summary>
-            public const bool RemovePreviousJqueryLibraries = true;
+            public const bool RemovePreviousJqueryLibraries = false;
 
             public const string FromJqueryCoreVersion = "3.4.1";
             public const string FromJqueryUIVersion = "1.12.1";

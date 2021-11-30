@@ -273,4 +273,10 @@
     <value>Check stock "{0}" is in use by another user.</value>
     <comment>Used when check stock is locked</comment>
   </data>
+  <data name="AdviceForm" xml:space="preserve">
+    <value>Advice Form</value>
+  </data>
+  <data name="CheckForm" xml:space="preserve">
+    <value>Check Form</value>
+  </data>
 </root>

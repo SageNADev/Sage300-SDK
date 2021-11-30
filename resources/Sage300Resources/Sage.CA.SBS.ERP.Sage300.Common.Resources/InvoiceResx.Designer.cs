@@ -1582,7 +1582,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Distibution Net of Tax.
+        ///   Looks up a localized string similar to Distribution Net of Tax.
         /// </summary>
         public static string DistNetOfTax {
             get {

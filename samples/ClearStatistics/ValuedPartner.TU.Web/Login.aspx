@@ -47,6 +47,14 @@
                         <td>  
                             <asp:TextBox ID="VersionText" runat="server" style='text-transform:uppercase' CssClass="auto-style2"></asp:TextBox></td>  
                     </tr>  
+                    <tr>
+                        <td class="auto-style3">
+                            <asp:Label ID="DateLabel" Style="font-family: Arial; color: #555" runat="server" Text="Session Date "></asp:Label></td>
+                        <td>
+                            <asp:TextBox ID="SessionDateText" runat="server" Style='text-transform: uppercase' CssClass="auto-style2"></asp:TextBox></td>
+                        <td class="auto-style3">
+                            <asp:Label ID="DateLabelInfo" Style="font-family: Arial; color: #555" runat="server" Text="(YYYYMMDD only) "></asp:Label></td>
+                    </tr>  
                 </table>  
                 <p>  
                     <asp:Button ID="LoginButton" runat="server" Text="Login" style="padding-left: 50px; padding-right: 50px; padding-top: 5px; padding-bottom: 5px; margin-left: 80px; font-family:Arial; color:#555; background-color:#0077c8; color:white" OnClick="LoginButton_Click" />  

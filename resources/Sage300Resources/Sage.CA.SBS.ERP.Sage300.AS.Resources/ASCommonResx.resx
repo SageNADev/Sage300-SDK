@@ -231,7 +231,7 @@
     <value>Report Name</value>
   </data>
   <data name="SignInSage300" xml:space="preserve">
-    <value>Sign In to Sage 300</value>
+    <value>Sign in to Sage 300</value>
     <comment>Login Screen</comment>
   </data>
   <data name="SignInSage300Admin" xml:space="preserve">
@@ -265,5 +265,9 @@
   </data>
   <data name="VerifyPassword" xml:space="preserve">
     <value>Verify Password</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+    <comment>Admin Login</comment>
   </data>
 </root>

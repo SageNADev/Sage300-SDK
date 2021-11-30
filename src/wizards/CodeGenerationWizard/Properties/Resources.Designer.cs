@@ -675,6 +675,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate Grid Model.
+        /// </summary>
+        internal static string GenerateGridModel {
+            get {
+                return ResourceManager.GetString("GenerateGridModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generate if Files Already Exist.
         /// </summary>
         internal static string GenerateIfExist {

@@ -71,10 +71,8 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models.Process
         /// <summary>
         /// <#=enumName#> list
         /// </summary>
-        public IEnumerable<CustomSelectList> <#=enumName#>
-        {
-            get { return EnumUtility.GetItemsList<<#=enumName#>>(); }
-        }
+        public IEnumerable<CustomSelectList> <#=enumName#> => EnumUtility.GetItemsList<<#=enumName#>>();
+
 <#
         }
 #>

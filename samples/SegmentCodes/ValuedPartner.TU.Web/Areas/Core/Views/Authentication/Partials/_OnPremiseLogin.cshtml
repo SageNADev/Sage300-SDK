@@ -15,65 +15,122 @@
 
 @Html.Partial(Core.OnPremiseLocalization)
 <div id="success"></div>
-<div id="message" class="k-window"></div>
-<div id="changePassword" class="k-window"></div>
-<section class="header login">
+
+@*<div id="changePassword" class="k-window"></div>*@
+<section class="header login" id="sectionLogin">
     <div class="wrapper">
         <div class="Sage_logo"><img src="~/Assets/images/login/sage300-logo-sq.png" height="132" width="134" alt="Sage 300"></div>
-        <div class="main-body login">
+        <div class="main-body login show" id="bodyMain">
             <div>
                 @Html.ValidationSummary(true)
             </div>
 
             <h1 class="page-header" id="loginHeader">@ASCommonResx.SignInSage300</h1>
+
             @if (Model.ForAdmin)
             {
                 <h2 class="page-header-2" id="loginHeader2">@ASCommonResx.SignInSage300Admin</h2>
             }
+            <div id="message" class="message-login"></div>
             <div class="form-group">
                 <div class="input-group">
-                    @Html.KoSageTextBoxFor(m => m.UserId, new { @sagevalue = "UserId" }, new { @id = "txtUserId", @class = "txt-upper login", data_val = "true", @maxlength = "8", @placeholder = ASCommonResx.UserID, @autocomplete = "off" })
+                    <label class="label-login">@ASCommonResx.UserID</label>
+                    @Html.KoSageTextBoxFor(m => m.UserId, new { @sagevalue = "UserId" }, new { @id = "txtUserId", @class = "txt-upper login", data_val = "true", @maxlength = "8", @autocomplete = "off" })
                 </div>
             </div>
             <div class="form-group" id="passwordDiv">
+                <label class="label-login">@ASCommonResx.Password</label>
                 <div class="input-group">
-                    @Html.KoSagePasswordFor(m => m.Password, new { @sagevalue = "Password" }, new { @id = "txtPassword", @class = "txt-upper login", data_val = "true", @maxlength = "64", @placeholder = ASCommonResx.Password, @autocomplete = "off" })
+                    @Html.KoSagePasswordFor(m => m.Password, new { @sagevalue = "Password" }, new { @id = "txtPassword", @class = "txt-upper login", data_val = "true", @maxlength = "64", @autocomplete = "off" })
                 </div>
             </div>
             <div class="form-group">
                 @if (Model.ForAdmin)
                 {
                     <div class="dropdown-group" style="display: none">
+                        <label class="label-login">@ASCommonResx.Company</label>
                         @Html.SageDropDownListFor(model => model.CompanyDisplayList, Model.CompanyDisplayList, new { @class = "login", @id = "CompanyId" })
                     </div>
                     <div class="dropdown-group">
+                        <label class="label-login">@ASCommonResx.System</label>
                         @Html.SageDropDownListFor(model => model.SystemIdDisplayList, Model.SystemIdDisplayList, new { @class = "login", @id = "SystemId" })
                     </div>
                 }
                 else
                 {
                     <div class="dropdown-group">
+                        <label class="label-login">@ASCommonResx.Company</label>
                         @Html.SageDropDownListFor(model => model.CompanyDisplayList, Model.CompanyDisplayList, new { @class = "login", @id = "CompanyId" })
                     </div>
                 }
             </div>
             <div class="button-group">
+                <div id="btnAjaxSpinner" class="spinner">
+                    <div class="bounce bounce1"></div>
+                    <div class="bounce bounce2"></div>
+                    <div class="bounce bounce3"></div>
+                    <div class="bounce bounce4"></div>
+                    <div class="bounce bounce5"></div>
+                    <div class="bounce bounce6"></div>
+                    <div class="bounce bounce7"></div>
+                    <div class="bounce bounce8"></div>
+                    <div class="bounce bounce9"></div>
+                    <div class="bounce bounce10"></div>
+                    <div class="bounce bounce11"></div>
+                    <div class="bounce bounce12"></div>
+                </div>
                 @Html.KoSageButton("btnLogin", new { }, new { @value = ASCommonResx.Login, @id = "btnLogin", @class = "btn btn-primary btn-login" })
                 @if (!Model.ForAdmin)
                 {
-                    <div class="left" id="changePasswordDiv">
-                        <a id="lnkChangePassword" href="#" onclick=" javascript: loginUICallback.changePasswordLink() ">@ASCommonResx.ChangePassword</a>
+                    <div id="changePasswordDiv" class="button-footer align-left">
+                        <a id="lnkChangePassword" class="text-button" href="#" onclick=" javascript: loginUICallback.changePasswordLink() ">@ASCommonResx.ChangePassword</a>
                     </div>
                 }
             </div>
+            <div class="version">@System.Configuration.ConfigurationManager.AppSettings["Sage300Version"]</div>
+        </div>
+
+        <div class="main-body login hide" id="changePasswordWrapper">
+
+            <h1 class="page-header" id="loginHeaderChangePW">@ASCommonResx.ChangePassword</h1>
+            <div id="messageChangePassword" class="message-login"></div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label class="label-login">@ASCommonResx.UserID</label>
+                    <input id="txtPasswordUserId" type="text" class="txt-upper">
+                </div>
+            </div>
+            <div class="form-group" id="passwordDiv">
+                <label class="label-login">@ASCommonResx.OldPassword</label>
+                <div class="input-group">
+                    <input id="txtPasswordOld" type="password" class="txt-upper" maxlength="64">
+                </div>
+            </div>
+            <div class="form-group" id="passwordDiv">
+                <label class="label-login">@ASCommonResx.NewPassword</label>
+                <div class="input-group">
+                    <input id="txtPasswordNew" type="password" class="txt-upper" maxlength="64">
+                </div>
+            </div>
+            <div class="form-group" id="passwordDiv">
+                <label class="label-login">@ASCommonResx.ConfirmPassword</label>
+                <div class="input-group">
+                    <input id="txtPasswordConfirm" type="password" class="txt-upper" maxlength="64">
+                </div>
+            </div>
+            <div class="button-group">
+                @Html.KoSageButton("btnOK", new { }, new { @value = CommonResx.OK, @id = "btnPasswordOk", @class = "btn btn-primary btn-login" })
+                <div id="btnPasswordCancel" class="button-footer align-left">
+                    <a id="btnPasswordCancel" class="text-button" href="#">@CommonResx.Cancel</a>
+                </div>
+            </div>
+            <div class="version">@System.Configuration.ConfigurationManager.AppSettings["Sage300Version"]</div>
         </div>
     </div>
 </section>
 
-<section class="footer">
+<section class="footer" id="loginFooter">
     <div class="wrapper">
-        <div class="version">@System.Configuration.ConfigurationManager.AppSettings["Sage300Version"]</div>
-        <a class="logo-sage" href="http://na.sage.com"><img src="~/content/images/footer_logo.png" width="60" height="25" alt="Sage"></a>
-        @string.Format(CommonResx.GlobalCopyright, DateTime.Today.Year)
-    </div>
+        <span class="copyright">@string.Format(CommonResx.GlobalCopyright, DateTime.Today.Year)</span>
+</div>
 </section>

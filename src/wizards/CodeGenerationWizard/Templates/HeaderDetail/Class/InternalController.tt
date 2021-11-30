@@ -127,7 +127,6 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         internal <#=containerName#>ViewModel Create()
         {
             var newData = _repository.CreateNewRecord();
-
             var viewModel = GetViewModel(newData, null);
             viewModel.UserAccess = GetAccessRights();
 
@@ -141,10 +140,17 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <returns>JSON object for <#=modelName#></returns>
         internal <#=containerName#>ViewModel GetById(string id)
         {
-            var data = _repository.GetById(id);
-            var userMessage = new UserMessage(data);
+            if (!string.IsNullOrEmpty(id))
+            {
+                var data = _repository.GetById(id);
+                var userMessage = new UserMessage(data);
 
-            return GetViewModel(data, userMessage);
+                return GetViewModel(data, userMessage);
+            }
+            else
+            {
+                return Create();
+            }
         }
         /// <summary>
         /// Add a <#=modelName#>
@@ -154,7 +160,6 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         internal <#=containerName#>ViewModel Add(<#=headerModelName#> model)
         {
             var data = _repository.Add(model);
-
             var userMessage = new UserMessage(data,
                 string.Format(CommonResx.AddSuccessMessage, <#=resxName#>.<#=keyFieldName#>, data.<#=keyFieldName#>));
 
@@ -184,6 +189,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
 			Expression<Func<<#=headerModelName#>, bool>> filter = param => param.<#=keyFieldName#> == id;
 			var data = _repository.Delete(filter);
             var userMessage = new UserMessage(data, string.Format(CommonResx.DeleteSuccessMessage, <#=resxName#>.<#=keyFieldName#>, data.<#=keyFieldName#>));
+            
             return GetViewModel(data, userMessage);
         }
 

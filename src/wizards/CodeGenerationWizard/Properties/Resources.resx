@@ -634,4 +634,7 @@
   <data name="Checkbox" xml:space="preserve">
     <value>Checkbox</value>
   </data>
+  <data name="GenerateGridModel" xml:space="preserve">
+    <value>Generate Grid Model</value>
+  </data>
 </root>

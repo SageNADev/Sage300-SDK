@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Approved" xml:space="preserve">
+    <value>已核准</value>
+  </data>
+  <data name="ApprovedAt" xml:space="preserve">
+    <value>核准日期</value>
+  </data>
+  <data name="ApprovedBy" xml:space="preserve">
+    <value>核准者</value>
+  </data>
+  <data name="ApprovedOn" xml:space="preserve">
+    <value>核准于</value>
+  </data>
+  <data name="ChargeNumber" xml:space="preserve">
+    <value>收费号</value>
+  </data>
+  <data name="CreatedAt" xml:space="preserve">
+    <value>创建日期</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>创建者</value>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>创建于</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>输入</value>
+  </data>
+  <data name="EnteredBy" xml:space="preserve">
+    <value>输入者</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>收费</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>假</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>财务期间</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>财务年度</value>
+  </data>
+  <data name="Function" xml:space="preserve">
+    <value>函数</value>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>生成</value>
+  </data>
+  <data name="Imported" xml:space="preserve">
+    <value>导入</value>
+  </data>
+  <data name="LoadOptionalFields" xml:space="preserve">
+    <value>加载可选字段</value>
+  </data>
+  <data name="Meter" xml:space="preserve">
+    <value>标尺</value>
+  </data>
+  <data name="MeterButNoCancelButton" xml:space="preserve">
+    <value>标尺但没有取消按钮</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="NextDetailNumber" xml:space="preserve">
+    <value>下一明细编号</value>
+  </data>
+  <data name="NoMeter" xml:space="preserve">
+    <value>没有标尺</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="Num1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Num10" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="Num11" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Num12" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="Num13" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="Num2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Num3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Num4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Num5" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Num6" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Num7" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Num8" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Num9" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="NumberOfDetails" xml:space="preserve">
+    <value>明细数目</value>
+  </data>
+  <data name="NumberOfOptionalFields" xml:space="preserve">
+    <value>可选字段</value>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>已过帐</value>
+  </data>
+  <data name="PostedAt" xml:space="preserve">
+    <value>过帐日期</value>
+  </data>
+  <data name="PostedBy" xml:space="preserve">
+    <value>过帐者</value>
+  </data>
+  <data name="PostedOn" xml:space="preserve">
+    <value>过帐于</value>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>过帐日期</value>
+  </data>
+  <data name="Printed" xml:space="preserve">
+    <value>已打印</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>参考</value>
+  </data>
+  <data name="Sequence" xml:space="preserve">
+    <value>序列</value>
+  </data>
+  <data name="ShowProgressBarDuringPosting" xml:space="preserve">
+    <value>过帐期间显示进度栏</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="TotalQuantity" xml:space="preserve">
+    <value>合计数量</value>
+  </data>
+  <data name="TOTBILLHM" xml:space="preserve">
+    <value>合计可计费金额</value>
+  </data>
+  <data name="TOTBILLSR" xml:space="preserve">
+    <value>合计可计费金额</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>交易日期</value>
+  </data>
+  <data name="TransactionStatus" xml:space="preserve">
+    <value>交易状态</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>真</value>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>年度/期间</value>
+  </data>
+</root>

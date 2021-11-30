@@ -43,6 +43,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string ResxName = "ResxName";
             public const string GenerateFinder = "GenerateFinder";
             public const string GenerateGrid = "GenerateGrid";
+            public const string GenerateGridModel = "GenerateGridModel";
             public const string SeqenceRevisionList = "SequenceRevisionList";
             public const string GenerateDynamicEnablement = "GenerateDynamicEnablement";
             public const string GenerateClientFiles = "GenerateClientFiles";

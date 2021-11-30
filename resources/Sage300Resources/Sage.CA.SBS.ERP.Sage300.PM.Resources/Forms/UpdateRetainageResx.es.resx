@@ -118,82 +118,85 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Approved" xml:space="preserve">
-    <value>已核準</value>
+    <value>Aprobado</value>
   </data>
   <data name="ApprovedAt" xml:space="preserve">
-    <value>核準日期</value>
+    <value>Aprobado en</value>
   </data>
   <data name="ApprovedBy" xml:space="preserve">
-    <value>核準者</value>
+    <value>Aprobado por</value>
   </data>
   <data name="ApprovedOn" xml:space="preserve">
-    <value>核準於</value>
+    <value>Aprobado el</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>Descripción de Categoría</value>
   </data>
   <data name="Comments" xml:space="preserve">
-    <value>備註</value>
+    <value>Comentarios</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Contrato</value>
+  </data>
+  <data name="ContractDescription" xml:space="preserve">
+    <value>Descripción de Contrato</value>
   </data>
   <data name="CreatedAt" xml:space="preserve">
-    <value>建立日期</value>
+    <value>Creado en</value>
   </data>
   <data name="CreatedBy" xml:space="preserve">
-    <value>建立者</value>
+    <value>Creado por</value>
   </data>
   <data name="CreatedOn" xml:space="preserve">
-    <value>建立於</value>
+    <value>Creado el</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>描述</value>
+    <value>Descripción</value>
   </data>
-  <data name="DetailOptionalFields" xml:space="preserve">
-    <value>明細自選欄位</value>
+  <data name="DetailUpdateRetainage" xml:space="preserve">
+    <value>Actualizar Retención en Detalle</value>
   </data>
   <data name="Entered" xml:space="preserve">
-    <value>輸入</value>
+    <value>Ingresado</value>
   </data>
   <data name="EnteredBy" xml:space="preserve">
-    <value>輸入者</value>
+    <value>Ingresado por</value>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>專案成本管理/物料分攤</value>
+    <value>PJC - Actualizar Retención</value>
   </data>
   <data name="False" xml:space="preserve">
-    <value>假</value>
+    <value>Falso</value>
   </data>
   <data name="FiscalPeriod" xml:space="preserve">
-    <value>會計期間</value>
+    <value>Período Fiscal</value>
   </data>
   <data name="FiscalYear" xml:space="preserve">
-    <value>會計年度</value>
+    <value>Año Fiscal</value>
   </data>
-  <data name="Function" xml:space="preserve">
-    <value>函數</value>
+  <data name="Generated" xml:space="preserve">
+    <value>Generado</value>
   </data>
-  <data name="HeaderOptFieldTitle" xml:space="preserve">
-    <value>自選欄位</value>
+  <data name="Imported" xml:space="preserve">
+    <value>Importado</value>
   </data>
-  <data name="LoadOptionalFields" xml:space="preserve">
-    <value>載入自選欄位</value>
+  <data name="InvoiceRetainagePayable" xml:space="preserve">
+    <value>Cuentas por Pagar de Retenciones de Factura</value>
   </data>
-  <data name="MaterialAllocationNumber" xml:space="preserve">
-    <value>物料分攤編號</value>
+  <data name="InvoiceRetainageReceivable" xml:space="preserve">
+    <value>Cuentas por Cobrar de Retenciones de Factura</value>
   </data>
-  <data name="Meter" xml:space="preserve">
-    <value>尺規</value>
-  </data>
-  <data name="MeterButNoCancelButton" xml:space="preserve">
-    <value>尺規但沒有取消按鈕</value>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Número de Línea</value>
   </data>
   <data name="New" xml:space="preserve">
-    <value>新增</value>
+    <value>Nuevo</value>
   </data>
   <data name="NextDetailNumber" xml:space="preserve">
-    <value>下一明細編號</value>
-  </data>
-  <data name="NoMeter" xml:space="preserve">
-    <value>沒有尺規</value>
-  </data>
-  <data name="None" xml:space="preserve">
-    <value>無</value>
+    <value>Número de Detalle Siguiente</value>
   </data>
   <data name="Num1" xml:space="preserve">
     <value>1</value>
@@ -235,51 +238,81 @@
     <value>9</value>
   </data>
   <data name="NumberOfDetails" xml:space="preserve">
-    <value>明細數目</value>
+    <value>Cantidad de Detalles</value>
   </data>
-  <data name="NumberOfOptionalFields" xml:space="preserve">
-    <value>自選欄位</value>
+  <data name="OpeningRetainagePayable" xml:space="preserve">
+    <value>Cuentas por Pagar de Retenciones de Apertura</value>
+  </data>
+  <data name="OpeningRetainageReceivable" xml:space="preserve">
+    <value>Cuentas por Cobrar de Retenciones de Apertura</value>
+  </data>
+  <data name="OriginalDocumentNumber" xml:space="preserve">
+    <value>Número de Documento Original</value>
   </data>
   <data name="Posted" xml:space="preserve">
-    <value>已過帳</value>
+    <value>Asentado</value>
   </data>
   <data name="PostedAt" xml:space="preserve">
-    <value>過帳日期</value>
+    <value>Asentado en</value>
   </data>
   <data name="PostedBy" xml:space="preserve">
-    <value>過帳按</value>
+    <value>Asentado por</value>
   </data>
   <data name="PostedOn" xml:space="preserve">
-    <value>過帳於</value>
+    <value>Asentado el</value>
   </data>
   <data name="PostingDate" xml:space="preserve">
-    <value>過帳日期</value>
+    <value>Fecha de Asentamiento</value>
   </data>
   <data name="PostingDateOverrideTitle" xml:space="preserve">
-    <value>過帳日期撤換</value>
+    <value>Sustitución de Fecha de Asentamiento</value>
   </data>
-  <data name="PrintStatus" xml:space="preserve">
-    <value>列印狀態</value>
+  <data name="Printed" xml:space="preserve">
+    <value>Impreso</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Proyecto</value>
+  </data>
+  <data name="ProjectDescription" xml:space="preserve">
+    <value>Descripción de Proyecto</value>
   </data>
   <data name="Reference" xml:space="preserve">
-    <value>參考</value>
+    <value>Referencia</value>
+  </data>
+  <data name="RetainageAmount" xml:space="preserve">
+    <value>Monto de Retención</value>
+  </data>
+  <data name="RetainageInvoiceAmount" xml:space="preserve">
+    <value>Monto de Factura de Retenciones</value>
+  </data>
+  <data name="RetainageNumber" xml:space="preserve">
+    <value>Número de Retención</value>
+  </data>
+  <data name="RetainagePayable" xml:space="preserve">
+    <value>Cuentas por Pagar de Retenciones</value>
+  </data>
+  <data name="RetainageReceivable" xml:space="preserve">
+    <value>Cuentas por Cobrar de Retenciones</value>
+  </data>
+  <data name="RetainageType" xml:space="preserve">
+    <value>Tipo de Retención</value>
   </data>
   <data name="Sequence" xml:space="preserve">
-    <value>序列編號</value>
+    <value>Secuencia</value>
   </data>
   <data name="ShowProgressBarDuringPosting" xml:space="preserve">
-    <value>過帳期間顯示進度欄</value>
+    <value>Mostrar barra de progreso durante el asentamiento</value>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>狀態</value>
+    <value>Estado</value>
   </data>
   <data name="TransactionDate" xml:space="preserve">
-    <value>交易日期</value>
+    <value>Fecha de Transacción</value>
   </data>
   <data name="TransactionStatus" xml:space="preserve">
-    <value>交易狀態</value>
+    <value>Estado de Transacción</value>
   </data>
   <data name="True" xml:space="preserve">
-    <value>真</value>
+    <value>Verdadero</value>
   </data>
 </root>

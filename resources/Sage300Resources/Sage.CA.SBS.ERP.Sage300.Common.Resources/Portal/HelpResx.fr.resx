@@ -4578,4 +4578,28 @@
     <value>Écran Retour des matériaux de GP</value>
     <comment>403070001</comment>
   </data>
+  <data name="PM_Charges_Article1" xml:space="preserve">
+    <value>Facturer des frais et des services</value>
+    <comment>CSH ID 403068002</comment>
+  </data>
+  <data name="PM_Charges_Article2" xml:space="preserve">
+    <value>Fonctionnalités communes dans les écrans de transactions de GP</value>
+    <comment>CSH ID 403068003</comment>
+  </data>
+  <data name="PM_Charges_Screen" xml:space="preserve">
+    <value>Écran Frais de GP</value>
+    <comment>CSH ID 403068001</comment>
+  </data>
+  <data name="PM_UpdateRetainage_Article1" xml:space="preserve">
+    <value>Saisir des soldes d’ouverture de retenue de garantie</value>
+    <comment>403077002</comment>
+  </data>
+  <data name="PM_UpdateRetainage_Article2" xml:space="preserve">
+    <value>Fonctionnalités communes dans les écrans de transactions de GP</value>
+    <comment>403077003</comment>
+  </data>
+  <data name="PM_UpdateRetainage_Screen" xml:space="preserve">
+    <value>Écran Mise à jour de retenue de GP</value>
+    <comment>403077001</comment>
+  </data>
 </root>

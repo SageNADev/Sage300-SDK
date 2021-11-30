@@ -117,193 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Approved" xml:space="preserve">
-    <value>Aprobado</value>
+  <data name="ARItemNumber" xml:space="preserve">
+    <value>A/R Item Number</value>
   </data>
-  <data name="ApprovedAt" xml:space="preserve">
-    <value>Aprobado en</value>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>Unit of Measure</value>
   </data>
-  <data name="ApprovedBy" xml:space="preserve">
-    <value>Aprobado por</value>
+  <data name="BillingAmount" xml:space="preserve">
+    <value>Billing Amount</value>
   </data>
-  <data name="ApprovedOn" xml:space="preserve">
-    <value>Aprobado el</value>
+  <data name="BillingType" xml:space="preserve">
+    <value>Billing Type</value>
+  </data>
+  <data name="BillingCurrency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="ChargeCode" xml:space="preserve">
+    <value>Charge Code</value>
   </data>
   <data name="Comments" xml:space="preserve">
-    <value>Comentarios</value>
+    <value>Comments</value>
   </data>
-  <data name="CommentsTitle" xml:space="preserve">
-    <value>Comentarios</value>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Line Number</value>
   </data>
-  <data name="CreatedAt" xml:space="preserve">
-    <value>Creado en</value>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
   </data>
-  <data name="CreatedBy" xml:space="preserve">
-    <value>Creado por</value>
+  <data name="Resource" xml:space="preserve">
+    <value>Resources</value>
   </data>
-  <data name="CreatedOn" xml:space="preserve">
-    <value>Creado el</value>
+  <data name="MyContract" xml:space="preserve">
+    <value>MyContract</value>
   </data>
-  <data name="Description" xml:space="preserve">
-    <value>Descripción</value>
+  <data name="DESC" xml:space="preserve">
+    <value>Description</value>
   </data>
-  <data name="DetailOptionalFields" xml:space="preserve">
-    <value>Campos Opcionales de Detalle</value>
+  <data name="ChargesDetails" xml:space="preserve">
+    <value>Charges Details</value>
   </data>
-  <data name="EditDetails" xml:space="preserve">
-    <value>Editar Detalles</value>
+  <data name="ContractDescription" xml:space="preserve">
+    <value>Contract Description</value>
   </data>
-  <data name="Entered" xml:space="preserve">
-    <value>Ingresado</value>
+  <data name="ProjectDescription" xml:space="preserve">
+    <value>Project Description</value>
   </data>
-  <data name="EnteredBy" xml:space="preserve">
-    <value>Ingresado por</value>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>Category Description</value>
   </data>
-  <data name="Entity" xml:space="preserve">
-    <value>PJC - Asignación de Materiales</value>
+  <data name="ResourcesDescription" xml:space="preserve">
+    <value>Resources Description</value>
   </data>
-  <data name="False" xml:space="preserve">
-    <value>Falso</value>
+  <data name="ChargeCodeDescription" xml:space="preserve">
+    <value>Charge Code Description</value>
   </data>
-  <data name="FiscalPeriod" xml:space="preserve">
-    <value>Período Fiscal</value>
-  </data>
-  <data name="FiscalYear" xml:space="preserve">
-    <value>Ejercicio</value>
-  </data>
-  <data name="Function" xml:space="preserve">
-    <value>Función</value>
-  </data>
-  <data name="HeaderOptFieldTitle" xml:space="preserve">
-    <value>Campos Opcionales</value>
-  </data>
-  <data name="InvalidQuantity" xml:space="preserve">
-    <value>La cantidad asignada excede la cantidad almacenada</value>
-  </data>
-  <data name="LoadOptionalFields" xml:space="preserve">
-    <value>Cargar Campos Opcionales</value>
-  </data>
-  <data name="MaterialAllocationDetails" xml:space="preserve">
-    <value>Detalles de Asignación de Materiales</value>
-  </data>
-  <data name="MaterialAllocationNumber" xml:space="preserve">
-    <value>Número de Asignación de Materiales</value>
-  </data>
-  <data name="Meter" xml:space="preserve">
-    <value>Medidor</value>
-  </data>
-  <data name="MeterButNoCancelButton" xml:space="preserve">
-    <value>Medidor pero sin botón cancelar</value>
-  </data>
-  <data name="New" xml:space="preserve">
-    <value>Nuevo</value>
-  </data>
-  <data name="NextDetailNumber" xml:space="preserve">
-    <value>Número de Detalle Siguiente</value>
-  </data>
-  <data name="NoMeter" xml:space="preserve">
-    <value>Sin medidor</value>
-  </data>
-  <data name="None" xml:space="preserve">
-    <value>Ninguno</value>
-  </data>
-  <data name="Num1" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Num10" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="Num11" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="Num12" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="Num13" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="Num2" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="Num3" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="Num4" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="Num5" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="Num6" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="Num7" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="Num8" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="Num9" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="NumberOfDetails" xml:space="preserve">
-    <value>Cantidad de Detalles</value>
-  </data>
-  <data name="NumberOfOptionalFields" xml:space="preserve">
-    <value>Campos Opcionales</value>
-  </data>
-  <data name="PeriodLocked" xml:space="preserve">
-    <value>La fecha {0} corresponde al período {1} en el año fiscal {2}, el cual está bloqueado para Cálculo de Costos de Proyectos y Trabajos en el Calendario Fiscal de Servicios Comunes.</value>
-  </data>
-  <data name="Posted" xml:space="preserve">
-    <value>Asentado</value>
-  </data>
-  <data name="PostedAt" xml:space="preserve">
-    <value>Asentado en</value>
-  </data>
-  <data name="PostedBy" xml:space="preserve">
-    <value>Asentado por</value>
-  </data>
-  <data name="PostedOn" xml:space="preserve">
-    <value>Asentado el</value>
-  </data>
-  <data name="PostingDate" xml:space="preserve">
-    <value>Fecha de Asentamiento</value>
-  </data>
-  <data name="PostingDateOverrideTitle" xml:space="preserve">
-    <value>Sustitución de Fecha de Asentamiento</value>
-  </data>
-  <data name="PrintStatus" xml:space="preserve">
-    <value>Estado de Impresión</value>
-  </data>
-  <data name="Reference" xml:space="preserve">
-    <value>Referencia</value>
-  </data>
-  <data name="Sequence" xml:space="preserve">
-    <value>Secuencia</value>
-  </data>
-  <data name="ShowProgressBarDuringPosting" xml:space="preserve">
-    <value>Mostrar barra de progreso durante el asentamiento</value>
-  </data>
-  <data name="Status" xml:space="preserve">
-    <value>Estado</value>
-  </data>
-  <data name="STRDUOM" xml:space="preserve">
-    <value>Unidad de Medida</value>
-  </data>
-  <data name="TransactionDate" xml:space="preserve">
-    <value>Fecha de Transacción</value>
-  </data>
-  <data name="TransactionStatus" xml:space="preserve">
-    <value>Estado de Transacción</value>
-  </data>
-  <data name="True" xml:space="preserve">
-    <value>Verdadero</value>
-  </data>
-  <data name="UOM" xml:space="preserve">
-    <value>Unidad de Medida Asignada</value>
-  </data>
-  <data name="ViewDetails" xml:space="preserve">
-    <value>Ver Detalles</value>
+  <data name="ARItemDescription" xml:space="preserve">
+    <value>A/R Item Description</value>
   </data>
 </root>

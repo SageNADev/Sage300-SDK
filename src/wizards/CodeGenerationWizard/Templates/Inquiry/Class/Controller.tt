@@ -107,20 +107,8 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <returns>JSON object for <#=modelName#></returns>
         public virtual ActionResult Index()
         {
-            <#=entityName#>ViewModel<T>  viewModel;
-
-            try
-            {
-                viewModel = ControllerInternal.Get();
-            }
-            catch (BusinessException businessException)
-            {
-                // TODO: Replace string.Empty with Resx string (i.e. <#=entityName#>sResx.SomeString)
-                // TODO: Delete TODO statements when complete
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, string.Empty));
-            }
-
-            return View(viewModel);
+            return ViewWithCatch(() => ControllerInternal.Get(),
+                CommonResx.GetFailedMessage, string.Empty);
         }
 
         /// <summary>
@@ -134,16 +122,8 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         [HttpPost]
         public virtual JsonNetResult Get(T model, int pageNumber, int pageSize,  Expression<Func<T, bool>> filters)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Get(model, pageNumber, pageSize, filters));
-            }
-            catch (BusinessException businessException)
-            {
-                // TODO: Replace string.Empty with Resx string (i.e. <#=entityName#>sResx.SomeString)
-                // TODO: Delete TODO statements when complete
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, string.Empty));
-            }
+            return CallWithCatch(() => ControllerInternal.Get(model, pageNumber, pageSize, filters),
+                CommonResx.GetFailedMessage, string.Empty);
         }
 
         #endregion
