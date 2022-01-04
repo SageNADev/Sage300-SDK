@@ -915,21 +915,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 foreach (var finderControl in finderControls)
                 {
                     // Need to read view finder file (NON MINIFIED)
-                    // // to get object as may not be sg.viewFinderProperties
-                    var objectName = "sg.viewFinderProperties";
-                    var lines = File.ReadLines(finderControl.Attribute("finderFileName")?.Value);
-
-                    foreach (var line in lines)
-                    {
-                        // The first line containing this will be the object name
-                        if (line.Contains("="))
-                        {
-                            var split = line.Split('=');
-                            objectName = split[0].Trim();
-                            break;
-                        }
-                    }
-
+                    // to get object as may not be sg.viewFinderProperties
+                    var objectName = GetObjectName(finderControl.Attribute("finderFileName")?.Value);
                     var finderName = finderControl.Attribute("property")?.Value;
                     var finderProperty = finderControl.Attribute("finderProperty")?.Value != null ? $", {objectName}.{finderControl.Attribute("finderProperty").Value}" : string.Empty;
                     snippet.AppendLine(new string(' ', depth) + $@"sg.viewFinderHelper.setViewFinder(""btnFinder{finderName}"", ""txt{finderName}"" {finderProperty});");
@@ -1362,5 +1349,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return Environment.NewLine + new string(' ', (depth) * 4);
         }
 
+        /// <summary> Object and method name in JavaScript file may NOT be named "sg.viewFinderProperties" </summary>
+        /// <param name="fileName">JavaScript filename</param>
+        /// <returns>Object and method name found in file</returns>
+        /// <remarks>There are two formats that must be scanned to retrieve the object and method name
+        /// 1. ...@namespace ObjectName.MethodName (note: method name must be properly cased)
+        /// 2. ObjectName.MethodName = ...
+        /// </remarks>
+        private static string GetObjectName(string fileName)
+        {
+            // Default
+            string result = "sg.viewFinderProperties";
+
+            try
+            {
+                // Read view finder file (NON-MINIFIED)
+                var lines = File.ReadLines(fileName);
+
+                // Tokens
+                string[] token = { "namespace ", "=" };
+
+                // Iterate file
+                foreach (var line in lines)
+                {
+                    // Investigate tokens
+                    if (line.Contains(token[0]) || line.Contains(token[1]))
+                    {
+                        var split = line.Split(token, StringSplitOptions.RemoveEmptyEntries);
+                        result = split[line.Contains(token[0]) ? 1 : 0].Trim();
+                        break;
+                    }
+                }
+            }
+            catch
+            {
+            }
+            return result;
+        }
     }
 }

@@ -97,15 +97,18 @@ namespace Sage300FinderGenerator
             JObject result = default;
             try
             {
+                // Object name in JavaScript file may NOT be named "sg"
+                var objectName = GetObjectName(fileName);
+
                 using (var fileStream = File.Open(fileName, FileMode.Open))
                 {
                     using (StreamReader reader = new StreamReader(fileStream))
                     {
                         var fileContent = reader.ReadToEnd();
-                        fileContent = $"var jQuery = {{}};{fileContent}; function GetSg(){{return JSON.stringify(sg);}};";
+                        fileContent = $"var jQuery = {{}};{fileContent}; function GetObject(){{return JSON.stringify({objectName});}};";
                         var jIntEngine = new Jint.Engine();
                         jIntEngine.Execute(fileContent);
-                        result = JsonConvert.DeserializeObject(jIntEngine.Invoke("GetSg").AsString()) as JObject;
+                        result = JsonConvert.DeserializeObject(jIntEngine.Invoke("GetObject").AsString()) as JObject;
                     }
                 }
             }
@@ -115,6 +118,48 @@ namespace Sage300FinderGenerator
             }
             return result;
         }
+
+        /// <summary> Object name in JavaScript file may NOT be named "sg" </summary>
+        /// <param name="fileName">JavaScript filename</param>
+        /// <returns>Object name found in file</returns>
+        /// <remarks>There are two formats that must be scanned to retrieve the object name
+        /// 1. ...@namespace ObjectName.MethodName (note: method name must be properly cased)
+        /// 2. ObjectName.MethodName = ...
+        /// </remarks>
+        private static string GetObjectName(string fileName)
+        {
+            // Default
+            string result = "sg";
+
+            try
+            {
+                // Read view finder file (NON-MINIFIED)
+                var lines = File.ReadLines(fileName);
+
+                // Tokens
+                string[] token = { "namespace ", "=" };
+
+                // Iterate file
+                foreach (var line in lines)
+                {
+                    // Investigate tokens
+                    if (line.Contains(token[0]) || line.Contains(token[1]))
+                    {
+                        var split = line.Split(token, StringSplitOptions.RemoveEmptyEntries);
+                        var objectAndMethodName = split[line.Contains(token[0]) ? 1 : 0].Trim();
+                        split = objectAndMethodName.Split('.');
+                        result = split[0].Trim();
+                        break;
+                    }
+                }
+            }
+            catch
+            {
+                //TODO log something here!!
+            }
+            return result;
+        }
+
         /*
         public static string CombineFinderDefs(string existingFinderFilePath, JObject newFinderDef, string moduleName)
         {
