@@ -35,7 +35,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Script
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Script\KoExtn.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -214,8 +214,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Script
             
             #line default
             #line hidden
-            this.Write("ModelExtension: function (modelData) {\r\n        var model = modelData.Data;\r\n\r\n  " +
-                    "      model.IsKo");
+            this.Write("ModelExtension: (modelData) => {\r\n        let model = modelData.Data;\r\n\r\n        " +
+                    "model.IsKo");
             
             #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Script\KoExtn.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
@@ -255,7 +255,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Script
     },
 
     /**
-     * @function
      * @name convertToBoolean
      * @description Converts a value into a boolean type
      * @private
@@ -264,7 +263,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Script
      * 
      * @returns The converted boolean value
      */
-    convertToBoolean: function (value) {
+    convertToBoolean: (value) => {
         switch (value.toString().toLowerCase()) {
             case ""true"": case ""yes"": case ""1"": return true;
             case ""false"": case ""no"": case ""0"": case null: return false;

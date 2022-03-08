@@ -290,10 +290,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // txtPassword
             // 
-            this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
             this.txtPassword.CustomButton.Image = null;
             this.txtPassword.CustomButton.Location = new System.Drawing.Point(91, 1);
             this.txtPassword.CustomButton.Name = "";

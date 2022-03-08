@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -38,7 +38,6 @@ var <#=localEntityName#>Repository = <#=localEntityName#>Repository || {};
 
 <#=localEntityName#>Repository = {
     /**
-     * @function
      * @name execute<#=localEntityName#>RepositoryReport
      * @description Execute an ajax post request
      * @namespace <#=localEntityName#>Repository
@@ -46,7 +45,7 @@ var <#=localEntityName#>Repository = <#=localEntityName#>Repository || {};
      * 
      * @param {object} viewModel The model data to post to server
      */
-    execute<#=localEntityName#>RepositoryReport: function (viewModel) {
+    execute<#=localEntityName#>RepositoryReport: (viewModel) => {
         let data = <#=localEntityName#>Repository.getUnobservableData(viewModel);
         let url = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Execute");
         let callback = <#=localEntityName#>OnSuccess.execute;
@@ -54,7 +53,6 @@ var <#=localEntityName#>Repository = <#=localEntityName#>Repository || {};
     },
 
     /**
-     * @function
      * @name getUnobservableData
      * @description Gets observable data
      * @namespace <#=localEntityName#>Repository
@@ -62,7 +60,7 @@ var <#=localEntityName#>Repository = <#=localEntityName#>Repository || {};
      * 
      * @param {object} model The model data
      */
-    getUnobservableData: function (model) {
+    getUnobservableData: (model) => {
         var data = {
             report: ko.mapping.toJS(model)
         };

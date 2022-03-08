@@ -107,7 +107,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             return new SourceJournalProfileViewModel<T>
             {
                 Data = new T(),
-                UserMessage = new UserMessage { IsSuccess = true }
+                UserMessage = new UserMessage { IsSuccess = true },
+                UserAccess = GetAccessRights()
             };
         }
 
@@ -118,6 +119,11 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>JSON object for SourceJournalProfile</returns>
         internal SourceJournalProfileViewModel<T> Get(string id)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                return Create();
+            }
+
             var data = Service.GetById(id);
             data.SourceCodeList=new EnumerableResponse<SourceCode>();
 

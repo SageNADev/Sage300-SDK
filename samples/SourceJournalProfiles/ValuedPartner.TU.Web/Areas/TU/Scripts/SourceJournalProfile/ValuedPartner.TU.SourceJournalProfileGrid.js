@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -33,7 +33,6 @@ var sourceJournalProfileGrid = {
         pageUrl: sg.utls.url.buildUrl("TU", "SourceJournalProfile", "GetSourceJournal"),
 
         /**
-         * @function
          * @name getParam
          * @description Create and return a grid parameters object
          * @namespace sourceJournalProfileGrid.utility
@@ -41,7 +40,7 @@ var sourceJournalProfileGrid = {
          * 
          * @returns {object} The parameters object
          */
-        getParam: function () {
+        getParam: () => {
             var grid = $('#SourceCodeGrid').data("kendoGrid");
             var pageNumber = grid.dataSource.page();
             var pageSize = grid.dataSource.pageSize();
@@ -59,7 +58,6 @@ var sourceJournalProfileGrid = {
         },
 
         /**
-         * @function
          * @name buildGridData
          * @description Call back function when Get is successful. In this, the data for the grid 
          *              and the total results count are to be set along with updating knockout
@@ -70,7 +68,7 @@ var sourceJournalProfileGrid = {
          * 
          * @returns {object} The gridData object
          */
-        buildGridData: function (successData) {
+        buildGridData: (successData) => {
 
             var gridData = null;
 
@@ -115,7 +113,6 @@ var sourceJournalProfileGrid = {
         },
 
         /**
-         * @function
          * @name afterDataBind
          * @description 
          * @namespace sourceJournalProfileGrid.utility
@@ -156,7 +153,6 @@ var sourceJournalProfileGrid = {
         },
         
         /**
-         * @function
          * @name dataChange
          * @description
          * @namespace sourceJournalProfileGrid.utility
@@ -164,13 +160,12 @@ var sourceJournalProfileGrid = {
          * 
          * @param {object} changedData The changedData object
          */
-        dataChange: function (changedData) {
+        dataChange: (changedData) => {
             sourceJournalProfileUI.SerialNumber = changedData.rowData.SerialNumber;
         },
     },
     
     /**
-     * @function
      * @name resetFocus
      * @description
      * @namespace sourceJournalProfileGrid
@@ -180,14 +175,13 @@ var sourceJournalProfileGrid = {
      * @param {object} data The data item specification
      * @param {string} columnName The column name
      */
-    resetFocus: function (grid, data, columnName) {
+    resetFocus: (grid, data, columnName) => {
         var row = sg.utls.kndoUI.getRowForDataItem(data);
         grid.closeCell();
         grid.editCell(row.find(">td").eq(columnName));
     },
 
     /**
-     * @function
      * @name resetFocus2
      * @description
      * @namespace sourceJournalProfileGrid
@@ -196,7 +190,7 @@ var sourceJournalProfileGrid = {
      * @param {object} dataItem The data item specification
      * @param {number} index The column index
      */
-    resetFocus2: function (dataItem, index) {
+    resetFocus2: (dataItem, index) => {
         var row = sg.utls.kndoUI.getRowForDataItem(dataItem);
         setTimeout(function () {
             sourceJournalProfileUtility.fetchSourceJournalGrid().editCell(row.find(">td").eq(index));
@@ -259,24 +253,23 @@ var sourceJournalProfileGrid = {
     },
 
     /**
-     * @function
      * @name bindAllEvents
      * @description Set up bindings for grid events
      * @namespace sourceJournalProfileGrid
      * @public
      */
-    bindAllEvents: function () {
-        SourceCodeGridConfig.editorEvents.Source.PreEditEvent = function(container, options) {
+    bindAllEvents: () => {
+        SourceCodeGridConfig.editorEvents.Source.PreEditEvent = (container, options) => {
             sourceJournalProfileUI.sourceJournalLineId = options.model.uid;
             return true;
         };
 
-        SourceCodeGridConfig.editorEvents.Source.PostEditEvent = function(container, options) {
-            $("#Source").change(function (e) {
+        SourceCodeGridConfig.editorEvents.Source.PostEditEvent = (container, options) => {
+            $("#Source").change((e) => {
                 var sourceCode = e.target.value;
                 var message = "";
                 var grid = $('#SourceCodeGrid').data("kendoGrid");
-                sg.delayOnBlur(["btnSource", "btnSave"], function () {
+                sg.delayOnBlur(["btnSource", "btnSave"], () => {
                     if (sourceCode != "" && sourceCode != null) {
                         sourceCode = sg.utls.toUpperCase(sourceCode);
 

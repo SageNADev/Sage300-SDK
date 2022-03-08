@@ -53,6 +53,25 @@ body {
   position: relative;
 }
 
+/* Skip Menu */
+/* ----------------------------------------------------------------------------------- */
+
+.skip-menu {
+    position: absolute;
+    top: 10px;
+    z-index: -1;
+    margin-left: 7px;
+    padding: 7px 8px 7px 8px;
+    background-color: #fff;
+    border: 1px solid #555;
+    border-radius: 3px;
+
+    &:focus {
+      z-index: 500;
+    }
+
+}
+
 
 /* header / Top Navigation */
 /* ----------------------------------------------------------------------------------- */
@@ -176,7 +195,7 @@ body {
               height: 24px;
               background: none;
               font-size: 14px;
-              width: 247px !important;
+              width: 235px !important;
               padding-left: 0;
               line-height: 0;
             }
@@ -233,6 +252,12 @@ body {
           &:before {
             content: none;
           }
+        }
+
+        &.k-state-focused,
+        &:focus {
+          outline: #005c9a auto 5px;
+          outline-offset: -2px;
         }
 
         &.menu-item-with-icon {
@@ -475,8 +500,6 @@ body {
     background-image: url('@{image-path}/home/sage_300_logo_black.png');
   }
 }
-
-
 
 .color-picker {
   background: transparent url('@{image-path}/home/color_picker_bg.png') no-repeat;

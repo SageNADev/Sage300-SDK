@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -22,8 +22,6 @@
 
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
-using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
-using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.Reports;
 using ValuedPartner.TU.Interfaces.Services.Reports;
@@ -63,17 +61,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Reports
         /// <returns>Index view model which needs to be display.</returns>
         public override ActionResult Index()
         {
-            try
-            {
-                return View(ControllerInternal.Get());
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                     JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
-                        GLCommonResx.Profile));
-            }
+            return ViewWithCatch(() => ControllerInternal.Get(),
+                CommonResx.GetFailedMessage, GLCommonResx.Profile);
         }
-
     }
 }

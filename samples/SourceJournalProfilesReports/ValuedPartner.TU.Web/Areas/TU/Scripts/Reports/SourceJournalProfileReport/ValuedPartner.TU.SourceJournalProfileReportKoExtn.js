@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -26,7 +26,6 @@ var sourceJournalProfileReportKoExtn = sourceJournalProfileReportKoExtn || {};
 sourceJournalProfileReportKoExtn = {
 
     /**
-     * @function 
      * @name sourceJournalProfileReportExtension
      * @description Knockout extensions (currently none defined)
      * @namespace sourceJournalProfileReportKoExtn
@@ -34,6 +33,6 @@ sourceJournalProfileReportKoExtn = {
      *  
      * @param model
      */
-    sourceJournalProfileReportExtension: function (model) {
+    sourceJournalProfileReportExtension: (model) => {
     }
 }

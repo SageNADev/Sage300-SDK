@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2019 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -22,7 +22,6 @@
 
 using Microsoft.Practices.Unity;
 using System.Web.Mvc;
-using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using ValuedPartner.TU.Models;
@@ -85,9 +84,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>View</returns>
         public ActionResult Index(string id = null)
         {
-            var model = ControllerInternal.Get(id);
-            model.UserAccess = ControllerInternal.GetAccessRights();
-            return View(model);
+            return ViewWithCatch(() => ControllerInternal.Get(id),
+                CommonResx.GetFailedMessage, SourceJournalProfileResx.SourceJournalProfile);
         }
 
         /// <summary>
@@ -96,15 +94,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>View</returns>
         public ActionResult Create()
         {
-            try
-            {
-                var model = ControllerInternal.Create();
-                return JsonNet(model);
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, SourceJournalProfileResx.SourceJournalProfile));
-            }
+            return CallWithCatch(() => ControllerInternal.Create(),
+                CommonResx.UnhandledExceptionMessage);
         }
 
         /// <summary>
@@ -113,15 +104,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>View</returns>
         public ActionResult Get(string id)
         {
-            try
-            {
-                var model = ControllerInternal.Get(id);
-                return JsonNet(model);
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, SourceJournalProfileResx.SourceJournalProfile));
-            }
+            return CallWithCatch(() => ControllerInternal.Get(id),
+                CommonResx.GetFailedMessage, SourceJournalProfileResx.SourceJournalProfile);
         }
 
         /// <summary>
@@ -136,21 +120,14 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         public virtual JsonNetResult GetSourceJournal(int insertIndex, int pageNumber, int pageSize,
             T model, bool bloadSourceJournalChange)
         {
-            try
+            if (bloadSourceJournalChange)
             {
-                if (bloadSourceJournalChange)
-                {
-                    return
-                        JsonNet(ControllerInternal.CloneSourceJournal(insertIndex, pageNumber, pageSize, model));
-                }
+                return CallWithCatch(() => ControllerInternal.CloneSourceJournal(insertIndex, pageNumber, pageSize, model),
+                    CommonResx.GetFailedMessage, SourceJournalProfileResx.SourceJournalProfile);
+            }
 
-                var sourceCode = ControllerInternal.GetSourceJournal(insertIndex, pageNumber, pageSize, model);
-                return JsonNet(sourceCode);
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, SourceJournalProfileResx.SourceJournalProfile));
-            }
+            return CallWithCatch(() => ControllerInternal.GetSourceJournal(insertIndex, pageNumber, pageSize, model),
+                CommonResx.GetFailedMessage, SourceJournalProfileResx.SourceJournalProfile);
         }
 
         /// <summary>
@@ -161,16 +138,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Delete(string id)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Delete(id));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException,
-                        SourceJournalProfileResx.SourceJournalProfile));
-            }
+            return CallWithCatch(() => ControllerInternal.Delete(id),
+                CommonResx.DeleteFailedMessage, SourceJournalProfileResx.SourceJournalProfile);
         }
 
         /// <summary>
@@ -181,14 +150,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Save(T model)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Save(model));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
-            }
+            return CallWithCatch(() => ControllerInternal.Save(model),
+                CommonResx.SaveFailedMessage);
         }
 
         /// <summary>
@@ -199,16 +162,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>JsonNetResult</returns>
         public virtual JsonNetResult GetSourceCodeById(string sourceLedger, string sourceType)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.GetSourceCodeById(sourceLedger, sourceType));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
-                        SourceJournalProfileResx.SourceJournalProfile));
-            }
+            return CallWithCatch(() => ControllerInternal.GetSourceCodeById(sourceLedger, sourceType),
+                CommonResx.GetFailedMessage, SourceJournalProfileResx.SourceJournalProfile);
         }
 
         /// <summary>
@@ -220,15 +175,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult IsExist(string source, string id)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.IsExist(source, id));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, SourceJournalProfileResx.SourceJournalProfile));
-            }
+            return CallWithCatch(() => ControllerInternal.IsExist(source, id),
+                CommonResx.GetFailedMessage, SourceJournalProfileResx.SourceJournalProfile);
         }
 
         #endregion

@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -28,7 +28,6 @@
 var taxAuthoritiesAjax = {
 
     /**
-     * @function
      * @name call
      * @description Common function used to invoke ajax calls
      * @namespace taxAuthoritiesAjax
@@ -38,8 +37,8 @@ var taxAuthoritiesAjax = {
      * @param {object} data The data for the method call
      * @param {Function} callbackMethod The callback that's called on successful ajax post
      */
-    call: function (method, data, callbackMethod) {
-        var url = sg.utls.url.buildUrl("TU", "TaxAuthorities", method);
+    call: (method, data, callbackMethod) => {
+        let url = sg.utls.url.buildUrl("TU", "TaxAuthorities", method);
         sg.utls.ajaxPost(url, data, callbackMethod);
     }
 };
@@ -47,7 +46,6 @@ var taxAuthoritiesAjax = {
 var taxAuthoritiesRepository = {
 
     /**
-     * @function
      * @name get
      * @description tax authority get call
      * @namespace taxAuthoritiesAjax
@@ -56,13 +54,12 @@ var taxAuthoritiesRepository = {
      * @param {string} id The tax authority specifier
      * @param {Function} callbackMethod The callback that's called on successful ajax post
      */
-    get: function(id, callbackMethod) {
+    get: (id, callbackMethod) => {
         var data = { 'id': id };
         taxAuthoritiesAjax.call("Get", data, callbackMethod);
     },
 
     /**
-     * @function
      * @name create
      * @description tax authority create call
      * @namespace taxAuthoritiesAjax
@@ -70,13 +67,12 @@ var taxAuthoritiesRepository = {
      *
      * @param {Function} callbackMethod The callback that's called on successful ajax post
      */
-    create: function(callbackMethod) {
-        var data = {};
+    create: (callbackMethod) => {
+        let data = {};
         taxAuthoritiesAjax.call("Create", data, callbackMethod);
     },
 
     /**
-     * @function
      * @name delete
      * @description tax authority delete call
      * @namespace taxAuthoritiesAjax
@@ -85,13 +81,12 @@ var taxAuthoritiesRepository = {
      * @param {string} id The tax authority specifier
      * @param {Function} callbackMethod The callback that's called on successful ajax post
      */
-    delete: function(id, callbackMethod) {
-        var data = { 'id': id };
+    delete: (id, callbackMethod) => {
+        let data = { 'id': id };
         taxAuthoritiesAjax.call("Delete", data, callbackMethod);
     },
 
     /**
-     * @function
      * @name add
      * @description tax authority add call
      * @namespace taxAuthoritiesAjax
@@ -100,12 +95,11 @@ var taxAuthoritiesRepository = {
      * @param {object} data The tax authority data object
      * @param {Function} callbackMethod The callback that's called on successful ajax post
      */
-    add: function(data, callbackMethod) {
+    add: (data, callbackMethod) => {
         taxAuthoritiesAjax.call("Add", data, callbackMethod);
     },
 
     /**
-     * @function
      * @name update
      * @description tax authority update call
      * @namespace taxAuthoritiesAjax
@@ -114,12 +108,11 @@ var taxAuthoritiesRepository = {
      * @param {object} data The tax authority data object
      * @param {Function} callbackMethod The callback that's called on successful ajax post
      */
-    update: function(data, callbackMethod) {
+    update: (data, callbackMethod) => {
         taxAuthoritiesAjax.call("Save", data, callbackMethod);
     },
 
     /**
-     * @function
      * @name getAccountDescription
      * @description tax authority get account description
      * @namespace taxAuthoritiesAjax
@@ -128,12 +121,11 @@ var taxAuthoritiesRepository = {
      * @param {object} data The tax authority data object
      * @param {Function} callbackMethod The callback that's called on successful ajax post
      */
-    getAccountDescription: function (data, callbackMethod) {
+    getAccountDescription: (data, callbackMethod) => {
         taxAuthoritiesAjax.call("GetAccount", data, callbackMethod);
     },
 
     /**
-     * @function
      * @name getCurrencyDescription
      * @description tax authority get currency description
      * @namespace taxAuthoritiesAjax
@@ -142,7 +134,7 @@ var taxAuthoritiesRepository = {
      * @param {object} data The tax authority data object
      * @param {Function} callbackMethod The callback that's called on successful ajax post
      */
-    getCurrencyDescription: function( data, callbackMethod) {
+    getCurrencyDescription: ( data, callbackMethod) => {
         taxAuthoritiesAjax.call("GetCurrencyDescription", data, callbackMethod);
     }    
 };

@@ -567,7 +567,6 @@ table {
   font-size: 12px;
   border: 1px solid @table-border-color;
   margin-bottom: 20px;
-  height: auto !important;
 
   .k-dirty {
     margin: 0 0 0 -.6rem;
@@ -633,6 +632,17 @@ table {
 
     &:hover {
       background-color: @table-bg-hover;
+    }
+
+    &.k-state-selected {
+
+      .text-value-positive {
+        color: @sage-blue;
+      } 
+
+      .text-value-negative {
+        color: @sage-red;
+      }
     }
 
     th {
@@ -714,7 +724,15 @@ table {
             top: 3px;
           }
         }
-      }     
+      }
+
+      &.text-value-positive {
+        color: @sage-blue;
+      } 
+
+      &.text-value-negative {
+        color: @sage-red;
+      }    
     }
 
     &.k-alt {
@@ -897,7 +915,6 @@ table {
 
   .k-grid-content {
     min-height: 321px;
-    height: auto !important;
 
     &:focus {
       outline: none;
@@ -1008,6 +1025,12 @@ table {
 
     label {
       font-size: 12px;
+    }
+
+    span.pencil-edit {
+      display: inline-block;
+      cursor: default;
+      pointer-events: none;
     }
   }
 

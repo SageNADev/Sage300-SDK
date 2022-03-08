@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -40,8 +40,8 @@
 var <#=moduleId#><#=entityName#>KoExtn = <#=moduleId#><#=entityName#>KoExtn || {};
 
 <#=moduleId#><#=entityName#>KoExtn = {
-    <#=moduleId#><#=entityName#>ModelExtension: function (modelData) {
-        var model = modelData.Data;
+    <#=moduleId#><#=entityName#>ModelExtension: (modelData) => {
+        let model = modelData.Data;
 
         model.IsKo<#=entityName#>Dirty = new ko.dirtyFlag(<#=localEntityName#>UI.<#=localEntityName#>Model);
 
@@ -59,7 +59,6 @@ var <#=moduleId#><#=entityName#>KoExtn = <#=moduleId#><#=entityName#>KoExtn || {
     },
 
     /**
-     * @function
      * @name convertToBoolean
      * @description Converts a value into a boolean type
      * @private
@@ -68,7 +67,7 @@ var <#=moduleId#><#=entityName#>KoExtn = <#=moduleId#><#=entityName#>KoExtn || {
      * 
      * @returns The converted boolean value
      */
-    convertToBoolean: function (value) {
+    convertToBoolean: (value) => {
         switch (value.toString().toLowerCase()) {
             case "true": case "yes": case "1": return true;
             case "false": case "no": case "0": case null: return false;

@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -26,7 +26,6 @@
 var sourceCodeAjax = {
 
     /**
-     * @function
      * @name call
      * @description Generic method for making Ajax post calls
      * @namespace sourceCodeAjax
@@ -36,7 +35,7 @@ var sourceCodeAjax = {
      * @param {object} data The data payload object
      * @param {Function} callbackMethod The method to call upon a successful ajax call
      */
-    call: function (method, data, callbackMethod) {
+    call: (method, data, callbackMethod) => {
         let url = sg.utls.url.buildUrl("TU", "SourceCode", method);
         sg.utls.ajaxPost(url, data, callbackMethod);
     }
@@ -45,7 +44,6 @@ var sourceCodeAjax = {
 var sourceCodeRepository = {
 
     /**
-     * @function
      * @name get
      * @description Invoke the Source Code server-side Get method
      * @namespace sourceCodeAjax
@@ -54,13 +52,12 @@ var sourceCodeRepository = {
      * @param {string} id The source code specifier
      * @param {Function} callbackMethod The method to call upon a successful ajax call
      */
-    get: function(id, callbackMethod) {
+    get: (id, callbackMethod) => {
         let data = { 'id': id };
         sourceCodeAjax.call("Get", data, callbackMethod);
     },
 
     /**
-     * @function
      * @name create
      * @description Invoke the Source Code server-side Create method
      * @namespace sourceCodeAjax
@@ -68,13 +65,12 @@ var sourceCodeRepository = {
      *
      * @param {Function} callbackMethod The method to call upon a successful ajax call
      */
-    create: function(callbackMethod) {
+    create: (callbackMethod) => {
         let data = {};
         sourceCodeAjax.call("Create", data, callbackMethod);
     },
 
     /**
-     * @function
      * @name delete
      * @description Invoke the Source Code server-side Delete method
      * @namespace sourceCodeAjax
@@ -83,14 +79,13 @@ var sourceCodeRepository = {
      * @param {string} id The source code specifier
      * @param {Function} callbackMethod The method to call upon a successful ajax call
      */
-    delete: function(id, callbackMethod) {
+    delete: (id, callbackMethod) => {
         let data = { 'id': id };
         sourceCodeAjax.call("Delete", data, callbackMethod);
     },
 
     /**
-     * @function
-     * @name delete
+     * @name add
      * @description Invoke the Source Code server-side Add method
      * @namespace sourceCodeAjax
      * @public
@@ -98,12 +93,11 @@ var sourceCodeRepository = {
      * @param {string} id The source code specifier
      * @param {Function} callbackMethod The method to call upon a successful ajax call
      */
-    add: function(data, callbackMethod) {
+    add: (data, callbackMethod) => {
         sourceCodeAjax.call("Add", data, callbackMethod);
     },
 
     /**
-     * @function
      * @name update
      * @description Invoke the Source Code server-side Update method
      * @namespace sourceCodeAjax
@@ -112,7 +106,7 @@ var sourceCodeRepository = {
      * @param {string} id The source code specifier
      * @param {Function} callbackMethod The method to call upon a successful ajax call
      */
-    update: function(data, callbackMethod) {
+    update: (data, callbackMethod) => {
         sourceCodeAjax.call("Save", data, callbackMethod);
     }
 

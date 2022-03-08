@@ -1,6 +1,5 @@
-
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -26,8 +25,8 @@
 // Ajax call to controller
 var segmentCodesAjax = {
 
-    call: function (method, data, callbackMethod) {
-        var url = sg.utls.url.buildUrl("TU", "SegmentCodes", method);
+    call: (method, data, callbackMethod) => {
+        let url = sg.utls.url.buildUrl("TU", "SegmentCodes", method);
         sg.utls.ajaxPost(url, data, callbackMethod);
     }
 };
@@ -35,7 +34,6 @@ var segmentCodesAjax = {
 var segmentCodesRepository = {
 
 	/**
-     * @function
 	 * @name get
 	 * @description Get data
 	 * @namespace segmentCodesRepository
@@ -44,13 +42,12 @@ var segmentCodesRepository = {
 	 * @param {number} id The segment code
 	 * @param {Function} callbackMethod Callback method to call on success
 	 */
-    get: function(id, callbackMethod) {
-        var data = { 'id': id };
+    get: (id, callbackMethod) => {
+        let data = { 'id': id };
         segmentCodesAjax.call("Get", data, callbackMethod);
     },
 
 	/**
-	 * @function
 	 * @name create
 	 * @description Create a new segment code
 	 * @namespace segmentCodesRepository
@@ -58,13 +55,12 @@ var segmentCodesRepository = {
 	 *
 	 * @param {Function} callbackMethod Callback method to call on success
 	 */
-    create: function(callbackMethod) {
-        var data = {};
+    create: (callbackMethod) => {
+        let data = {};
         segmentCodesAjax.call("Create", data, callbackMethod);
     },
 
 	/**
-	 * @function
 	 * @name delete
 	 * @description Delete segment code
 	 * @namespace segmentCodesRepository
@@ -73,13 +69,12 @@ var segmentCodesRepository = {
 	 * @param {number} id The segment code
 	 * @param {Function} callbackMethod Callback method to call on success
 	 */
-    delete: function(id, callbackMethod) {
-        var data = { 'id': id };
+    delete: (id, callbackMethod) => {
+        let data = { 'id': id };
         segmentCodesAjax.call("Delete", data, callbackMethod);
     },
 
 	/**
-	 * @function
 	 * @name add
 	 * @description Add segment code
 	 * @namespace segmentCodesRepository
@@ -88,12 +83,11 @@ var segmentCodesRepository = {
 	 * @param {number} id The segment code
 	 * @param {Function} callbackMethod Callback method to call on success
 	 */
-    add: function(data, callbackMethod) {
+    add: (data, callbackMethod) => {
         segmentCodesAjax.call("Add", data, callbackMethod);
     },
 
 	/**
-	 * @function
 	 * @name update
 	 * @description Update segment code
 	 * @namespace segmentCodesRepository
@@ -102,12 +96,11 @@ var segmentCodesRepository = {
 	 * @param {data} data The segment code data
 	 * @param {Function} callbackMethod Callback method to call on success
 	 */
-    update: function(data, callbackMethod) {
+    update: (data, callbackMethod) => {
         segmentCodesAjax.call("Save", data, callbackMethod);
     },
 
 	/**
-	 * @function
 	 * @name post
 	 * @description post segment code
 	 * @namespace segmentCodesRepository
@@ -115,7 +108,7 @@ var segmentCodesRepository = {
 	 *
 	 * @param {Function} callbackMethod Callback method to call on success
 	 */
-    post: function(callbackMethod) {
+    post: (callbackMethod) => {
         segmentCodesAjax.call("Post", null, callbackMethod);
     }
 

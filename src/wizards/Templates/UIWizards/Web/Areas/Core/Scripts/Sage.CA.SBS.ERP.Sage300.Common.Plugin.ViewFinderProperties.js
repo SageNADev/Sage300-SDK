@@ -1507,6 +1507,14 @@
                 filterTemplate: "MANITEMNO = \"{0}\""
             },
 
+            MaskStructure: {
+                viewID: "IC0805",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["MASKCODE"],
+                displayFieldNames: ["MASKCODE", "MASKTYPE", "DESC", "MASKSTRUCT"]
+            },
+
             Item: {
                 viewID: "IC0310",
                 viewOrder: 0,
@@ -1705,6 +1713,22 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["LOCATION"],
                 displayFieldNames: ["LOCATION", "POSTTYPE", "DESC", "COMMENT"]
+            },
+
+            ContractCode: {
+                viewID: "IC0800",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["CONTCODE"],
+                displayFieldNames: ["CONTCODE", "CONTDESC"]
+            },
+
+            WarrantyCode: {
+                viewID: "IC0850",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["WARRCODE"],
+                displayFieldNames: ["WARRCODE", "WARRDESC"]
             }
         },
 
@@ -1751,6 +1775,14 @@
                 returnFieldNames: ["MISCCHARGE", "CURRENCY"],
                 displayFieldNames: ["MISCCHARGE", "DESC", "HASJOB", "MISCACCT", "AMOUNT", "MISCACDESC"],
                 filterTemplate: "CURRENCY = \"{0}\""
+            },
+
+            MiscellaneousChargeReport: {
+                viewID: "OE0440",
+                parentValAsInitKey: true,
+                viewOrder: 1,
+                returnFieldNames: ["MISCCHARGE"],
+                displayFieldNames: ["MISCCHARGE", "DESC", "HASJOB", "MISCACCT", "AMOUNT", "MISCACDESC"],
             },
 
             EmailMessage: {
@@ -1849,6 +1881,7 @@
             AccountSet: {
                 viewID: "PM0017",
                 viewOrder: 0,
+                parentValAsInitKey: true,
                 returnFieldNames: ["IDACCTSET", "TEXTDESC"],
                 displayFieldNames: ["IDACCTSET", "TEXTDESC", "INACTIVE", 'CURNCODE']
             },
@@ -1937,6 +1970,14 @@
                 //optionalFieldBindings: "PM0851,PM0500[2]"
             },
 
+            ProjectReport: {
+                viewID: "PM0006",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                displayFieldNames: ["PROJECT", "DESC", "INACTIVE", "PROJTYPE", "REVREC", "BILLTYPE"],
+                returnFieldNames: ["PROJECT"],
+            },
+
             ProjectGrid: {
                 viewID: "PM0022",
                 viewOrder: 2,
@@ -1950,6 +1991,7 @@
             Equipment: {
                 viewID: "PM0025",
                 viewOrder: 0,
+                parentValAsInitKey: true,
                 displayFieldNames: ["EQUIPMENT", "DESC", "INACTIVE"],
                 returnFieldNames: ["EQUIPMENT"]
             },
@@ -1957,19 +1999,30 @@
             Subcontractor: {
                 viewID: "PM0026",
                 viewOrder: 0,
+                parentValAsInitKey: true,
                 displayFieldNames: ["SUBCONT", "NAME", "DESC", "INACTIVE", "VENDORID"],
                 returnFieldNames: ["SUBCONT"]
+            },
+
+            StructureCode: {
+                viewID: "PM0011",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                displayFieldNames: ["JOBBRKID", "DESC"],
+                returnFieldNames: ["JOBBRKID"]
             },
 
             Miscellaneous: {
                 viewID: "PM0028",
                 viewOrder: 0,
+                parentValAsInitKey: true,
                 displayFieldNames: ["MISCCODE", "DESC", "INACTIVE"],
                 returnFieldNames: ["MISCCODE"]
             },
 
             Overhead: {
                 viewID: "PM0029",
+                parentValAsInitKey: true,
                 viewOrder: 0,
                 displayFieldNames: ["OHCODE", "DESC", "INACTIVE"],
                 returnFieldNames: ["OHCODE"]
@@ -1983,6 +2036,14 @@
                 /*extra*/
                 filterTemplate: "CONTRACT = \"{0}\" AND PROJECT = \"{1}\" ",
                 //optionalFieldBindings: "PM0852,PM0500[3]"
+            },
+
+            CategoryReport: {
+                viewID: "PM0018",
+                parentValAsInitKey: true,
+                viewOrder: 0,
+                displayFieldNames: ["CATEGORY", "DESC", "INACTIVE", "COSTTYPE", "TYPE", "OVERHD", "LABOR"],
+                returnFieldNames: ["CATEGORY"],
             },
 
             CategoryGrid: {
@@ -2035,6 +2096,14 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["MATERIALNO"],
                 displayFieldNames: ["MATERIALNO", "DESC", "REFERENCE", "TRANSDATE", "COMPLETE"],
+            },
+
+            Employee: {
+                viewID: "PM0002",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["STAFFCODE"],
+                displayFieldNames: ["STAFFCODE", "NAME", "INACTIVE", "EARNCODE","GROUP"],
             },
 
             EquipmentUsage: {
@@ -2116,8 +2185,26 @@
                 displayFieldNames: ["LINENO", "CUSTCCY", "FMTCONTNO", "PROJECT", "CATEGORY", "ODOCNUM"],
                 filterTemplate: "DOCNUM = \"{0}\"",
             },
+
+            SegmentCode: {
+                viewID: "PM0014",
+                viewOrder: 0,
+                //parentValAsInitKey: true,
+                returnFieldNames: ["SEGVAL"],
+                displayFieldNames: ["SEGVAL", "DESC"],
+                filterTemplate: "SEGMENT = \"{0}\"",
+            }
         },
         PO: {
+
+            AccountSet: {
+                viewID: "PO0100",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["CNTLACCT"],
+                displayFieldNames: ["CNTLACCT", "DESC", "INACTIVE", 'COSTMETHOD']
+            },
+
             ItemPOStandalone: {
                 viewID: "PO0124",
                 viewOrder: 3,
@@ -2125,6 +2212,14 @@
                 returnFieldNames: ["FMTITEMNO"],
                 displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "CNTLACCT", "SELLABLE"],
                 //optionalFieldBindings: "PO0125,PO0119[0]"
+            },
+
+            Items: {
+                viewID: "PO0124",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["ITEMNO"],
+                displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "CNTLACCT", "SELLABLE"]
             },
 
             VendorContractCosts: {

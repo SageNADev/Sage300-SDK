@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -22,9 +22,7 @@
 
 using Microsoft.Practices.Unity;
 using System.Web.Mvc;
-using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using ValuedPartner.TU.Models;
@@ -88,17 +86,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Source Code View</returns>
         public virtual ActionResult Index(string sourceLedger, string sourceType)
         {
-            SourceCodeViewModel<T> model;
-            if (string.IsNullOrEmpty(sourceLedger) && string.IsNullOrEmpty(sourceType))
-            {
-                model = new SourceCodeViewModel<T> { UserAccess = ControllerInternal.GetAccessRights() };
-            }
-            else
-            {
-                model = ControllerInternal.Get(sourceLedger, sourceType);
-                model.UserAccess = ControllerInternal.GetAccessRights();
-            }
-            return View(model);
+            return ViewWithCatch(() => ControllerInternal.Get(sourceLedger, sourceType),
+                CommonResx.GetFailedMessage, SourceCodeResx.SourceCode);
         }
 
         /// <summary>
@@ -111,16 +100,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         
         public virtual JsonNetResult Get(string sourceLedger, string sourceType)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Get(sourceLedger, sourceType));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
-                        SourceCodeResx.SourceCode));
-            }
+            return CallWithCatch(() => ControllerInternal.Get(sourceLedger, sourceType),
+                CommonResx.GetFailedMessage, SourceCodeResx.SourceCode);
         }
 
         /// <summary>
@@ -132,19 +113,13 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         
         public virtual JsonNetResult Add(T model)
         {
-            try
+            if (!ValidateModelState(ModelState, out ViewModelBase<ModelBase> viewModel))
             {
-                ViewModelBase<ModelBase> viewModel;
-                return ValidateModelState(ModelState, out viewModel)
-                    ? JsonNet(ControllerInternal.Add(model))
-                    : JsonNet(viewModel);
+                return JsonNet(viewModel);
             }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException,
-                        SourceCodeResx.SourceCode));
-            }
+
+            return CallWithCatch(() => ControllerInternal.Add(model),
+                CommonResx.AddFailedMessage, SourceCodeResx.SourceCode);
         }
 
         /// <summary>
@@ -155,7 +130,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         
         public virtual JsonNetResult Create()
         {
-            return JsonNet(ControllerInternal.Create());
+            return CallWithCatch(() => ControllerInternal.Create(),
+                CommonResx.UnhandledExceptionMessage);
         }
 
         /// <summary>
@@ -167,17 +143,13 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         
         public virtual JsonNetResult Save(T model)
         {
-            try
+            if (!ValidateModelState(ModelState, out ViewModelBase<ModelBase> viewModel))
             {
-                ViewModelBase<ModelBase> viewModel;
-                return ValidateModelState(ModelState, out viewModel)
-                    ? JsonNet(ControllerInternal.Save(model))
-                    : JsonNet(viewModel);
+                return JsonNet(viewModel);
             }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
-            }
+
+            return CallWithCatch(() => ControllerInternal.Save(model),
+                CommonResx.SaveFailedMessage);
         }
 
         /// <summary>
@@ -190,16 +162,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         
         public virtual JsonNetResult Delete(string sourceLedger, string sourceType)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Delete(sourceLedger, sourceType));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException,
-                        SourceCodeResx.SourceCode));
-            }
+            return CallWithCatch(() => ControllerInternal.Delete(sourceLedger, sourceType),
+                CommonResx.DeleteFailedMessage, SourceCodeResx.SourceCode);
         }
 
         #endregion
