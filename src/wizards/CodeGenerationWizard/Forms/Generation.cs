@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -1807,6 +1807,31 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             businessView.Options[BusinessView.Constants.GenerateEnumsInSingleFile] = true; // Checkbox has been removed
 
             businessView.Fields = _entityFields.ToList();
+
+            // Clean up enums in case any property names have been changed. This is because the enum helper list
+            // was build when the accpac view was assigned to the business view and this is prior to being
+            // able to override the field names in the properties grid.
+            foreach (var field in businessView.Fields)
+            {
+                // Only care about enum fields
+                if (field.Type == BusinessDataType.Enumeration)
+                {
+                    // Only need cleaning IF previous and current name are different
+                    if (field.PreviousName != field.Name)
+                    {
+                        // Save off enumeration first
+                        var enumHelper = businessView.Enums[field.PreviousName];
+                        // Remove enumeration
+                        businessView.Enums.Remove(field.PreviousName);
+                        // Add back with new field name
+                        enumHelper.Name = field.Name;
+                        businessView.Enums.Add(enumHelper.Name, enumHelper);
+                        // Update previous name to current name now that clean up is done
+                        field.PreviousName = field.Name;
+                    }
+                }
+            }
+
             if (repositoryType.Equals(RepositoryType.HeaderDetail))
             {
                 businessView.Compositions = _entityCompositions.ToList();
