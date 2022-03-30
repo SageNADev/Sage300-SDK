@@ -1,7 +1,5 @@
 {
   "PurchaseOrderNumber": "PO01",
-  "ReceiptDate": "2022-04-01T00:00:00Z",
-  "PostingDate": "2022-04-09T00:00:00Z",
   "Vendor": "1400",
   "Description": "PO Receipt desc",
   "Reference": "Web API 1",
