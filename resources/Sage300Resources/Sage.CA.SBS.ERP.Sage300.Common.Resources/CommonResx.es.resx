@@ -1642,4 +1642,10 @@
   <data name="ReportGenFailedMessageForCustomReport" xml:space="preserve">
     <value>Ha ocurrido un problema al generar el reporte. Verifique que se hayan especificado todas las opciones y todos los parámetros requeridos para el informe e inténtelo de nuevo.</value>
   </data>
+  <data name="ItemNumberFrom" xml:space="preserve">
+    <value>N° Artículo de</value>
+  </data>
+  <data name="ItemNumberTo" xml:space="preserve">
+    <value>N° Artículo a</value>
+  </data>
 </root>

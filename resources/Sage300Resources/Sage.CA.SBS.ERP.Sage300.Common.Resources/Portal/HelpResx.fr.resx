@@ -4602,4 +4602,12 @@
     <value>Écran Mise à jour de retenue de GP</value>
     <comment>403077001</comment>
   </data>
+  <data name="PM_Account_Sets_Screen" xml:space="preserve">
+    <value>Écran Groupes de comptes de GP</value>
+    <comment>CSH ID 403053001</comment>
+  </data>
+  <data name="PM_Adding_or_Modifying_Account_Sets" xml:space="preserve">
+    <value>Ajouter ou modifier des groupes de comptes</value>
+    <comment>CSH ID 403053002</comment>
+  </data>
 </root>

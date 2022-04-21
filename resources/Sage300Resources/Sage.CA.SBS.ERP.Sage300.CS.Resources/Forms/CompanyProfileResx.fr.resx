@@ -370,4 +370,25 @@
   <data name="BlankSDAError" xml:space="preserve">
     <value>Pour utiliser Sage Data &amp; Analytics, vous devez spécifier un sous-domaine d’adresse web connexe à l’écran Profil de l’entreprise.</value>
   </data>
+  <data name="BasicAuthentication" xml:space="preserve">
+    <value>Authentification de base SMTP</value>
+  </data>
+  <data name="MicrosoftGraph" xml:space="preserve">
+    <value>Microsoft Graph</value>
+  </data>
+  <data name="EmailMethod" xml:space="preserve">
+    <value>Service de courriel</value>
+  </data>
+  <data name="ClientID" xml:space="preserve">
+    <value>Code du client</value>
+    <comment>Microsoft Graph specific control labels</comment>
+  </data>
+  <data name="ClientSecret" xml:space="preserve">
+    <value>Secret du client</value>
+    <comment>Microsoft Graph specific control labels</comment>
+  </data>
+  <data name="TenantID" xml:space="preserve">
+    <value>Code du locataire</value>
+    <comment>Microsoft Graph specific control labels</comment>
+  </data>
 </root>

@@ -1460,4 +1460,11 @@
   <data name="PJC" xml:space="preserve">
     <value>GP - </value>
   </data>
+  <data name="SkipMenu" xml:space="preserve">
+    <value>Ignorer le menu de navigation</value>
+    <comment>Bypass Block Button</comment>
+  </data>
+  <data name="SessionDateChangedWarning" xml:space="preserve">
+    <value>La nouvelle date de session ne sera pas utilisée dans les écrans actuellement ouverts. Pour utiliser la nouvelle date de session dans ces écrans, fermez les écrans, puis ouvrez-les à nouveau.</value>
+  </data>
 </root>

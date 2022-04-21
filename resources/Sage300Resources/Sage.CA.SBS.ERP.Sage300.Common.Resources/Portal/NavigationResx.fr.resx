@@ -1703,12 +1703,91 @@
     <value>Frais</value>
   </data>
   <data name="PM_Equipment" xml:space="preserve">
-    <value>Utilisation du matériel</value>
+    <value>Matériel</value>
   </data>
   <data name="PM_Revise_Estimates" xml:space="preserve">
     <value>Estimations révisées</value>
   </data>
   <data name="PM_ContractMaintenance" xml:space="preserve">
     <value>Maintenance des contrats</value>
+  </data>
+  <data name="PM_Account_Sets" xml:space="preserve">
+    <value>Groupes de comptes</value>
+  </data>
+  <data name="PM_Subcontractor" xml:space="preserve">
+    <value>Sous-traitants</value>
+  </data>
+  <data name="PM_Projects" xml:space="preserve">
+    <value>Projets</value>
+  </data>
+  <data name="PM_Setup_Reports" xml:space="preserve">
+    <value>Rapports de configuration de GP</value>
+  </data>
+  <data name="AP_Setup_Reports" xml:space="preserve">
+    <value>Rapports de configuration de CF</value>
+  </data>
+  <data name="PM_GLIntegration" xml:space="preserve">
+    <value>Intégration GL</value>
+  </data>
+  <data name="PM_OptionalFields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="PM_MiscellaneousExpenses" xml:space="preserve">
+    <value>Charges diverses</value>
+  </data>
+  <data name="PM_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="PM_OverheadExpenses" xml:space="preserve">
+    <value>Frais généraux</value>
+  </data>
+  <data name="PO_Items" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="PO_VendorDetails" xml:space="preserve">
+    <value>Détails des fournisseurs</value>
+  </data>
+  <data name="PO_WeightUOM" xml:space="preserve">
+    <value>Unité de mesure-Poids</value>
+  </data>
+  <data name="PM_EquipmentUsage" xml:space="preserve">
+    <value>Utilisation du matériel</value>
+  </data>
+  <data name="PM_ContractStructures" xml:space="preserve">
+    <value>Structures de contrat</value>
+  </data>
+  <data name="PM_Categories" xml:space="preserve">
+    <value>Catégories</value>
+  </data>
+  <data name="PO_AccountSets" xml:space="preserve">
+    <value>Groupes de comptes</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="PM_SegmentCodes" xml:space="preserve">
+    <value>Codes de segment</value>
+  </data>
+  <data name="PM_Employees" xml:space="preserve">
+    <value>Employés</value>
+  </data>
+  <data name="AR_Setup_Reports" xml:space="preserve">
+    <value>Rapports de configuration de CC</value>
+  </data>
+  <data name="OE_Setup_Report" xml:space="preserve">
+    <value>Rapports de configuration de CmC</value>
+  </data>
+  <data name="IC_GL_Integration" xml:space="preserve">
+    <value>Intégration GL</value>
+  </data>
+  <data name="IC_Mask_Structures" xml:space="preserve">
+    <value>Structures de masque</value>
+  </data>
+  <data name="IC_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="IC_Warranty_Contract_Codes" xml:space="preserve">
+    <value>Codes de contrat/garantie</value>
+  </data>
+  <data name="Bank_Setup_Reports" xml:space="preserve">
+    <value>Rapports de configuration de banque</value>
   </data>
 </root>

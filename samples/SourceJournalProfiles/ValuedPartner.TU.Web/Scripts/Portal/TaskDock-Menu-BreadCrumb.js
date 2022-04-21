@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
@@ -160,46 +160,24 @@ var TaskDockMenuBreadCrumbManager = function () {
 
         $menu.menuAim({
             activate: function (row) {
-                var $row = $(row);
+                // close submenus opened by keyboard
+                $(row).parent().find('li').each(function () {
+                    deactivateMenu(this);
+                });
 
-                // Move on to the first menu (non-header) item if user is moused to header
-                if ($row.hasClass("sub-heading")) {
-                    $row = $row.next();
-                }
-                $row.find(".sub-menu-wrap").first().show();
-
-                // Clear the possibility of first menu to be active
-                $row.siblings("li:not(.sub-heading)").first().find('a:first').removeClass('active');
-                $row.find("a:first").addClass("active");
+                activateMenu(row);
             },
             deactivate: function (row) {
-                var $row = $(row);
-
-                // move on to the first menu (non-header) item if user is moused to header
-                if ($row.hasClass("sub-heading")) {
-                    $row = $row.next();
-                }
-                $row.find(".sub-menu-wrap").first().hide();
-                $row.find("a:first").removeClass('active');
+                deactivateMenu(row);
             }
         });
 
         $subLevelMenu.menuAim({
             activate: function (row) {
-                var $submenu = $(row).find(".sub-menu-wrap").first();
-                $submenu.addClass("child");
-
-                if ($(row).find("div:first").length) {
-                    $(row).find("a:first").addClass("active");
-                }
-                
-                $submenu.show();
+                activateSubMenu(row);
             },
             deactivate: function (row) {
-                var $submenu = $(row).find(".sub-menu-wrap").first();
-                $submenu.hide();
-                $submenu.removeClass("child");
-                $(row).find("a:first").removeClass("active");
+                deactivateSubMenu(row);
             },
             exitMenu: function (row) {
                 // To deactivate current row
@@ -213,8 +191,373 @@ var TaskDockMenuBreadCrumbManager = function () {
         });
 
         $('.side-nav .menu-item').children('label, a, .nav-icon').click(function () {
-            $(this).parent('.menu-item').toggleClass('open').find('.std-menu').toggleClass('active');
-            $(this).parent('.menu-item').siblings().removeClass('open').find('.std-menu').removeClass('active');
+            toggleTopMenu(this);
+        });
+    }
+
+    /**
+     * @name toggleTopMenu
+     * @description Highlight/Unhighlight the selected menu item and open/close the submenu. Unhighlight and close other submenus in the same top level menu.
+     * @private
+     * @param {any} link <a> element in menu item
+     */
+    function toggleTopMenu(link) {
+        $(link).parent('.menu-item').toggleClass('open').find('.std-menu').toggleClass('active');
+        $(link).parent('.menu-item').siblings().removeClass('open').find('.std-menu').removeClass('active');
+    }
+
+    /**
+     * @name getFirstMenuItem
+     * @description Get the first child menu item
+     * @private
+     * @param {any} parent <li> element menu item
+     * @param {boolean} isSubMenu is sub menu
+     * @returns {any} first child <li> menu item
+     */
+    function getFirstMenuItem(parent, isSubMenu) {
+        let first = parent.find('li').first();
+        // skip header li
+        if (isSubMenu && first.hasClass("sub-heading")) {
+            first = first.next();
+        }
+        return first;
+    }
+
+    /**
+     * @name getLastMenuItem
+     * @description Get the last child menu item
+     * @private
+     * @param {any} parent <li> element menu item
+     * @returns {any} last child <li> menu item
+     */
+    function getLastMenuItem(parent) {
+        return parent.children('li').last();
+    }
+
+    /**
+     * @name getActiveMenuItem
+     * @description Get the active child menu item, or the first if no child active menu item
+     * @private
+     * @param {any} parent <li> element menu item
+     * @returns {any} active child <li> menu item
+     */
+    function getActiveMenuItem(parent, isSubMenu) {
+        let active = parent.find('li > a.active').first().parent();
+        if (active.length === 0) {
+            active = getFirstMenuItem(parent, isSubMenu);
+        }
+        return active;
+    }
+
+    /**
+     * @name getPreviousMenuItem
+     * @description Get the previous menu item in the current level of the selected menu item. If current is the first, get the last menu item
+     * @private
+     * @param {any} current <li> element menu item
+     * @param {boolean} isSubMenu is sub menu
+     * @returns {any} previous <li> menu item
+     */
+    function getPreviousMenuItem(current, isSubMenu) {
+        let prev = current.prevAll('li').first();
+        // skip header li
+        // if first item in the list, go to last
+        if ((isSubMenu && prev.hasClass("sub-heading"))
+            || prev.length === 0) {
+            prev = getLastMenuItem(current.parent());
+        }
+        return prev;
+    }
+
+    /**
+     * @name getNextMenuItem
+     * @description Get the next menu item in the current level of the selected menu item. If current is the last, get the first menu item
+     * @private
+     * @param {any} current <li> element menu item
+     * @param {boolean} isSubMenu is sub menu
+     * @returns {any} next <li> menu item
+     */
+    function getNextMenuItem(current, isSubMenu) {
+        let next = current.nextAll('li').first();
+        // if last item in list, go to first
+        if (next.length === 0) {
+            next = getFirstMenuItem(current.parent(), isSubMenu);
+        }
+        return next;
+    }
+
+    /**
+     * @name getParentMenuItem
+     * @description Get parent menu item
+     * @private
+     * @param {any} current <li> element menu item
+     * @returns {any} parent <li> menu item
+     */
+    function getParentMenuItem(current) {
+        return current.parent().closest('li');
+    }
+
+    /**
+     * @name getMenuLink
+     * @description Get link in menu item
+     * @private
+     * @param {any} current <li> element menu item
+     * @returns {any} <a> element in menu item
+     */
+    function getMenuLink(current) {
+        return current.find('a').first()[0];
+    }
+
+    /**
+     * @name disableDefaultMenuKeys
+     * @description Disables keys to prevent scrolling while in the menu
+     * @private
+     * @param {any} e keypress event
+     */
+    function disableDefaultMenuKeys(e) {
+        // disable default scrolling behaviour
+        if (e.keyCode == sg.constants.KeyCodeEnum.Home
+            || e.keyCode == sg.constants.KeyCodeEnum.End
+            || e.keyCode == sg.constants.KeyCodeEnum.Enter
+            || e.keyCode == sg.constants.KeyCodeEnum.Space
+            || e.keyCode == sg.constants.KeyCodeEnum.LeftArrow
+            || e.keyCode == sg.constants.KeyCodeEnum.RightArrow
+            || e.keyCode == sg.constants.KeyCodeEnum.UpArrow
+            || e.keyCode == sg.constants.KeyCodeEnum.DownArrow) {
+            e.preventDefault();
+        }
+    }
+
+    /**
+     * @name activateMenu
+     * @description 
+     * @private
+     * @param {any} row <li> element menu item
+     */
+    function activateMenu(row) {
+        var $row = $(row);
+
+        // Move on to the first menu (non-header) item if user is moused to header
+        if ($row.hasClass("sub-heading")) {
+            $row = $row.next();
+        }
+        $row.find(".sub-menu-wrap").first().show();
+
+        // Clear the possibility of first menu to be active
+        $row.siblings("li:not(.sub-heading)").first().find('a:first').removeClass('active');
+        $row.find("a:first").addClass("active");
+    }
+
+    /**
+     * @name deactivateMenu
+     * @description
+     * @private
+     * @param {any} row <li> element menu item
+     */
+    function deactivateMenu(row) {
+        var $row = $(row);
+
+        // move on to the first menu (non-header) item if user is moused to header
+        if ($row.hasClass("sub-heading")) {
+            $row = $row.next();
+        }
+        $row.find(".sub-menu-wrap").first().hide();
+        $row.find("a:first").removeClass('active');
+    }
+
+    /**
+     * @name activateSubMenu
+     * @description
+     * @private
+     * @param {any} row <li> element menu item
+     */
+    function activateSubMenu(row) {
+        var $submenu = $(row).find(".sub-menu-wrap").first();
+        $submenu.addClass("child");
+
+        if ($(row).find("div:first").length) {
+            $(row).find("a:first").addClass("active");
+        }
+
+        $submenu.show();
+    }
+
+    /**
+     * @name deactivateSubMenu
+     * @description
+     * @private
+     * @param {any} row <li> element menu item
+     */
+    function deactivateSubMenu(row) {
+        var $submenu = $(row).find(".sub-menu-wrap").first();
+        $submenu.hide();
+        $submenu.removeClass("child");
+        $(row).find("a:first").removeClass("active");
+    }
+
+    /**
+     * @name hasValidLink
+     * @description Checks if link has navigation
+     * @private
+     * @param {any} link <a> element in menu item
+     * @returns {boolean} true if link has navigation
+     */
+    function hasValidLink(link) {
+        const attr = $(link).attr('data-url');
+        return (typeof attr !== 'undefined' && attr !== false && attr.length > 0)
+            || $(link).parent()[0].id == 'homeNav'; // home has no url, but goes to homepage
+    }
+
+    /**
+     * @name initMenuHotkeys
+     * @description Initialize menu hot keys
+     * @private
+     */
+    function initMenuHotkeys() {
+        const topMenu = $('.side-nav > div > ul > li > a');
+        const firstLevelMenu = $('.side-nav .std-menu > li > a');
+        const secondLevelMenu = $('.side-nav .k-item > a')
+
+        // Top level menu
+        topMenu.keydown((e) => {
+            disableDefaultMenuKeys(e);
+
+            const current = $(e.target).parent(); // li element
+            let next = undefined; // link inside li element
+            switch (e.keyCode) {
+                case sg.constants.KeyCodeEnum.DownArrow:
+                    next = getMenuLink(getNextMenuItem(current));
+                    break;
+                case sg.constants.KeyCodeEnum.UpArrow:
+                    next = getMenuLink(getPreviousMenuItem(current));
+                    break;
+                case sg.constants.KeyCodeEnum.Home:
+                    next = getMenuLink(getFirstMenuItem(current.parent()));
+                    break;
+                case sg.constants.KeyCodeEnum.End:
+                    next = getMenuLink(getLastMenuItem(current.parent()));
+                    break;
+                case sg.constants.KeyCodeEnum.RightArrow:
+                case sg.constants.KeyCodeEnum.Enter:
+                case sg.constants.KeyCodeEnum.Space:
+                    const currentLink = getMenuLink(current);
+                    if (hasValidLink(currentLink)) {
+                        currentLink.click();
+                    }
+                    else {
+                        // go to active or first item in 1st level menu
+                        $('.side-nav').addClass('active');
+                        toggleTopMenu(currentLink);
+                        next = getActiveMenuItem(current, true);
+                        activateMenu(next);
+                        next = getMenuLink(next);
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            // focus on next item
+            if (next !== undefined) {
+                next.focus();
+            }
+        });
+
+        // 1st level menu
+        firstLevelMenu.keydown((e) => {
+            disableDefaultMenuKeys(e);
+
+            const current = $(e.target).parent(); // li element
+            let next = undefined; // link inside li element
+            switch (e.keyCode) {
+                case sg.constants.KeyCodeEnum.DownArrow:
+                    next = getMenuLink(getNextMenuItem(current, true));
+                    break;
+                case sg.constants.KeyCodeEnum.UpArrow:
+                    next = getMenuLink(getPreviousMenuItem(current, true));
+                    break;
+                case sg.constants.KeyCodeEnum.LeftArrow:
+                case sg.constants.KeyCodeEnum.ESC:
+                    // go to parent top level menu
+                    next = getMenuLink(getParentMenuItem(current));
+                    toggleTopMenu(next);
+                    break;
+                case sg.constants.KeyCodeEnum.Home:
+                    next = getMenuLink(getFirstMenuItem(current.parent(), true));
+                    break;
+                case sg.constants.KeyCodeEnum.End:
+                    next = getMenuLink(getLastMenuItem(current.parent()));
+                    break;
+                case sg.constants.KeyCodeEnum.RightArrow:
+                case sg.constants.KeyCodeEnum.Enter:
+                case sg.constants.KeyCodeEnum.Space:
+                    const currentLink = getMenuLink(current);
+                    if (hasValidLink(currentLink)) {
+                        currentLink.click();
+                    }
+                    else {
+                        // go to active or first item in 2st level menu and close other submenus
+                        current.parent().find('li').each(function () {
+                            deactivateMenu(this);
+                        });
+                        activateMenu(current);
+                        next = getActiveMenuItem(current, true);
+                        deactivateSubMenu(next);
+                        next = getMenuLink(next);
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            // focus on next item
+            if (next !== undefined) {
+                next.focus();
+            }
+        });
+
+        // 2nd level menu
+        secondLevelMenu.keydown((e) => {
+            disableDefaultMenuKeys(e);
+
+            const current = $(e.target).parent(); // li element
+            let next = undefined; // link inside li element
+            switch (e.keyCode) {
+                case sg.constants.KeyCodeEnum.DownArrow:
+                    next = getMenuLink(getNextMenuItem(current, true));
+                    break;
+                case sg.constants.KeyCodeEnum.UpArrow:
+                    next = getMenuLink(getPreviousMenuItem(current, true));
+                    break;
+                case sg.constants.KeyCodeEnum.LeftArrow:
+                    // go to parent 1st level menu
+                    deactivateSubMenu(current);
+                    next = getMenuLink(getParentMenuItem(current));
+                    break;
+                case sg.constants.KeyCodeEnum.Home:
+                    next = getMenuLink(getFirstMenuItem(current.parent(), true));
+                    break;
+                case sg.constants.KeyCodeEnum.End:
+                    next = getMenuLink(getLastMenuItem(current.parent()));
+                    break;
+                case sg.constants.KeyCodeEnum.Enter:
+                case sg.constants.KeyCodeEnum.Space:
+                    // open page and close menus
+                    getMenuLink(current).click();
+                    break;
+                case sg.constants.KeyCodeEnum.ESC:
+                    // go to parent top level menu
+                    deactivateSubMenu(current);
+                    next = getMenuLink(getParentMenuItem(getParentMenuItem(current)));
+                    toggleTopMenu(next);
+                    break;
+                default:
+                    break;
+            }
+
+            // focus on next item
+            if (next !== undefined) {
+                next.focus();
+            }
         });
     }
 
@@ -236,9 +579,6 @@ var TaskDockMenuBreadCrumbManager = function () {
                 $('#' + currentIframeId).hide();
             }
             if (!flag) {
-
-                // Close the maximum number of windows message box
-                $('#dvWindowsExceedLimitErrorMessage').hide();
 
                 // Remove task from the window
                 $("#" + $("#" + currentDiv + "").attr('id') + "").remove();
@@ -464,7 +804,7 @@ var TaskDockMenuBreadCrumbManager = function () {
         var isScreenOpen = isScreenAlreadyOpen(targetUrl);
         var activeScreenCount = recentWindowsMenu.activeScreenCount();
         if (!isScreenOpen && activeScreenCount >= constants.MAXIMUM_ALLOWABLE_ACTIVE_WINDOWS) {
-            $('#dvWindowsExceedLimitErrorMessage').show();
+            sg.utls.showMessageInfo(sg.utls.msgType.INFO, portalBehaviourResources.MaxWindowExceeded);
             return true;
         }
         return false;
@@ -505,10 +845,6 @@ var TaskDockMenuBreadCrumbManager = function () {
             if (isScreenOpen || isMaxScreenCountReachedAndNotOpen) {
                 return;
             }
-
-            // Increment the open screen count and notify sibling tabs to disable
-            // their session date pickers
-            incrementOpenScreenCounterAndNotifySiblings();
 
             if (activeScreenCountWithinMaximumAllowable()) {
                 hideIframes();
@@ -640,10 +976,6 @@ var TaskDockMenuBreadCrumbManager = function () {
                     return;
                 }
 
-                // Increment the open screen count and notify sibling tabs to disable
-                // their session date pickers
-                incrementOpenScreenCounterAndNotifySiblings();
-
                 if (activeScreenCountWithinMaximumAllowable()) {
                     hideIframes();
                 }
@@ -676,20 +1008,31 @@ var TaskDockMenuBreadCrumbManager = function () {
 
     /**
      * @name isScreenAlreadyOpen
-     * @description Check whether the screen is opened, use currently src url and original url
-     * @param {string} url - TODO Add description
-     * @returns {boolean} true | false
+     * @description Determine whether or not a screen is currently open
+     *              If open, the window will be activated (brought to the foreground)
+     * @param {string} urlToTest - The url of the screen that we're attempting to open
+     * @returns {boolean} true = Screen is currently open | false = Screen is not currently open
      */
-    function isScreenAlreadyOpen(url) {
-        var result = false;
-        // Check if the screen is already open
+    function isScreenAlreadyOpen(urlToTest) {
+        let result = false;
+
         $('#screenLayout').children().each(function () {
-            var $iframe = $(this).find("iframe");
-            var srcUrl = $iframe.attr("src");
-            var originalUrl = $iframe.prop("originalSrc");
-            result = (sg.utls.getUrlPath(srcUrl) === url && _globalSearchDrillDownParameter === null) || (originalUrl && originalUrl === url);
+            const $iframe = $(this).find("iframe");
+            const frameId = $iframe[0].id;
+            const srcUrl = $iframe.attr("src");
+            const originalUrl = $iframe.prop("originalSrc");
+            const urlMatch = srcUrl === urlToTest;
+
+            const foundWindow1 = urlMatch && _globalSearchDrillDownParameter === null; 
+            const foundWindow2 = (originalUrl != 'undefined' && originalUrl === urlToTest);
+
+            result = foundWindow1 || foundWindow2;
             if (result) {
-                $("#dvWindows span[command='Add'][frameid='" + $iframe[0].id + "']").trigger("click");
+                // Activate the already opened window
+                $(`#dvWindows span[command='Add'][frameid='${frameId}']`).trigger('click');
+
+                // This will break us out of the .each() loop, 
+                // not return from the function.
                 return false;
             }
         });
@@ -794,10 +1137,6 @@ var TaskDockMenuBreadCrumbManager = function () {
                 hideIframes();
             }
 
-            // Increment the open screen count and notify sibling tabs to disable
-            // their session date pickers
-            incrementOpenScreenCounterAndNotifySiblings();
-
             // Do not show the breadcrumb for inquiry reports
             $('#breadcrumb').hide();
 
@@ -823,10 +1162,6 @@ var TaskDockMenuBreadCrumbManager = function () {
             if (activeScreenCountWithinMaximumAllowable()) {
                 hideIframes();
             }
-
-            // Increment the open screen count and notify sibling tabs to disable
-            // their session date pickers
-            incrementOpenScreenCounterAndNotifySiblings();
 
             // Do not show the breadcrumb for printed reports
             $('#breadcrumb').hide();
@@ -966,10 +1301,6 @@ var TaskDockMenuBreadCrumbManager = function () {
 
             if (isMaxScreenNumReachedAndNotOpen(targetUrl)) return;
 
-            // Increment the open screen count and notify sibling tabs to disable
-            // their session date pickers
-            incrementOpenScreenCounterAndNotifySiblings();
-
             $('#breadcrumb').hide();
 
             if (activeScreenCountWithinMaximumAllowable()) {
@@ -993,38 +1324,6 @@ var TaskDockMenuBreadCrumbManager = function () {
             window.open(result);
         } else {
             sg.utls.showMessage(result);
-        }
-    }
-
-    /**
-     * @name decrementOpenScreenCounterAndNotifySiblings
-     * @description Descrement open screen counter and notifying siblings
-     * @private
-     */
-    function decrementOpenScreenCounterAndNotifySiblings() {
-        if (openScreenCountManager.decrementCounter() === 0) {
-            sg.utls.enablePortalSessionDatePicker();
-
-            // Notify sibling tabs to enable their session date pickers
-            var key = "ALLSESSIONS_EnablePortalSessionDatePicker";
-            var randomValue = sg.utls.makeRandomString(5);
-            sage.cache.local.set(key, randomValue);
-        }
-    }
-
-    /**
-     * @name incrementOpenScreenCounterAndNotifySiblings
-     * @description Increment open screen counter and notifying siblings
-     * @private
-     */
-    function incrementOpenScreenCounterAndNotifySiblings() {
-        if (openScreenCountManager.incrementCounter() > 0) {
-            sg.utls.disablePortalSessionDatePicker();
-
-            // Notify sibling tabs to disable their session date pickers
-            var key = "ALLSESSIONS_DisablePortalSessionDatePicker";
-            var randomValue = sg.utls.makeRandomString(5);
-            sage.cache.local.set(key, randomValue);
         }
     }
 
@@ -1275,6 +1574,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
             _screenId = constants.DEFAULT_SCREENID;
 
+            $('#logoSage300').focus();
             $('#searchHelpDiv').show();
 
             // Home button, Tools button active state
@@ -1394,6 +1694,9 @@ var TaskDockMenuBreadCrumbManager = function () {
 
             initializeMainMenu();
 
+            // add menu hotkeys
+            //initMenuHotkeys(); Disabled for 2022.2
+
             // Initialize count of currently open UI windows (it should be 0)
             $('#spWindowCount').text($('#dvWindows').children().length);
 
@@ -1428,8 +1731,9 @@ var TaskDockMenuBreadCrumbManager = function () {
             });
 
             $("#windowManager").on("click", function () {
-                if ($('#dvWindows').children().length > 0)
+                if ($('#dvWindows').children().length > 0) {
                     $("#windowManager > div").show();
+                }
 
                 // Reset selection
                 $("#dvWindows span").removeClass('selected');
@@ -1523,11 +1827,6 @@ var TaskDockMenuBreadCrumbManager = function () {
                     var $currentIframeId = $("#" + currentIframeId);
                     var url = $currentIframeId.attr("src");
                     var isReport = url.indexOf("ReportViewer.aspx?token") > 0 || url.indexOf("CustomReportViewer.aspx?reportName") > 0;
-
-                    // Decrement the current open window counter
-                    // If active window count drops to zero (or below),
-                    // notify all other tabs
-                    decrementOpenScreenCounterAndNotifySiblings();
 
                     $currentIframeId.attr("src", "about:blank");
                     currentDiv = $(this).attr('controlToRemove');
@@ -1639,10 +1938,6 @@ var TaskDockMenuBreadCrumbManager = function () {
                     return;
                 }
 
-                // Increment the open screen count and notify sibling tabs to disable
-                // their session date pickers
-                incrementOpenScreenCounterAndNotifySiblings();
-
                 if ($('#widgetHplayout').is(":visible")) {
                     $('#widgetHplayout').hide();
                 }
@@ -1714,10 +2009,6 @@ var TaskDockMenuBreadCrumbManager = function () {
                 }
             };
             $(document).on("keydown", keyHandler);
-
-            $('.icon.msgCtrl-close').click(function () {
-                $('#dvWindowsExceedLimitErrorMessage').hide();
-            });
 
             $('#addWidgetBtnProcess').click(function () {
                 $('#widgetMsgDiv').hide();

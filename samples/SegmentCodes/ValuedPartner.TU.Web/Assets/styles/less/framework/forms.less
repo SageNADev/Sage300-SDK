@@ -1796,6 +1796,7 @@ textarea {
 
   .k-calendar-view {
     width: 100%;
+    height: 100%;
   }
 
   th {
@@ -3053,9 +3054,25 @@ div.k-treeview.treeview-with-icon,
 
 // Kendo Splitter
 
+.k-pane,
+div#vertical1 {
+  border-width: 0;
+  height: 100vh;
+}
+
+.k-pane>.k-splitter {
+  height: 100vh !important;
+  border-width: 1px;
+  overflow-x: auto;
+}
+
+div#horizontal {
+  height: inherit !important;
+}
+
 .k-splitter .k-ghost-splitbar-horizontal, 
 .k-splitter .k-splitbar-horizontal {
-  width: 8px;
+  width: 8px !important;
 
   &.k-splitbar-draggable-horizontal .k-i-arrow-60-left {
     margin-top: -40px;
@@ -3100,14 +3117,21 @@ div.k-treeview.treeview-with-icon,
 }
 
 #right-pane {
+  width: unset !important;
+
   .pane-content {
     margin-top: -16px;
     margin-right: 32px;
   }
 }
 
+.k-window-content #right-pane .form-screen {
+  margin-left: 16px;
+}
+
 #left-pane {
   padding: 0 0 0 16px;
+  height: 100% !important;
 }
 
 #vertical {
@@ -3158,4 +3182,8 @@ div.k-treeview.treeview-with-icon,
   .k-state-hover .k-input {
     color: @sage-blue;
   }
+}
+
+#top-pane1 {
+  height: 100vh !important;
 }

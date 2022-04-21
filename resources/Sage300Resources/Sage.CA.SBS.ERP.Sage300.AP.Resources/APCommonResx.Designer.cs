@@ -880,6 +880,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Category Code.
+        /// </summary>
+        public static string CategoryCode {
+            get {
+                return ResourceManager.GetString("CategoryCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check Amount.
         /// </summary>
         public static string CheckAmount {
@@ -1065,6 +1074,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources {
         public static string ContactsPhone {
             get {
                 return ResourceManager.GetString("ContactsPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract Code.
+        /// </summary>
+        public static string ContractCode {
+            get {
+                return ResourceManager.GetString("ContractCode", resourceCulture);
             }
         }
         
@@ -2397,6 +2415,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources {
         public static string ExternalCostTransactions {
             get {
                 return ResourceManager.GetString("ExternalCostTransactions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Documents could not be emailed to contacts for vendor {0}. Check that contacts for this vendor are set up correctly..
+        /// </summary>
+        public static string FailedMTEmail {
+            get {
+                return ResourceManager.GetString("FailedMTEmail", resourceCulture);
             }
         }
         
@@ -4354,6 +4381,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Project.
+        /// </summary>
+        public static string Project {
+            get {
+                return ResourceManager.GetString("Project", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Project And Job Costing.
         /// </summary>
         public static string ProjectAndJobCosting {
@@ -5367,6 +5403,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources {
         public static string TaxNumber {
             get {
                 return ResourceManager.GetString("TaxNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Number Type.
+        /// </summary>
+        public static string TaxNumberType {
+            get {
+                return ResourceManager.GetString("TaxNumberType", resourceCulture);
             }
         }
         
@@ -6584,16 +6629,5 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources {
                 return ResourceManager.GetString("ZipPostalCode", resourceCulture);
             }
         }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Documents could not be emailed to contacts for vendor %1. Check that contacts for this vendor are set up correctly.
-        /// </summary>
-        public static string FailedMTEmail
-        {
-            get
-            {
-                return ResourceManager.GetString("FailedMTEmail", resourceCulture);
-            }
-        }
-	}
+    }
 }

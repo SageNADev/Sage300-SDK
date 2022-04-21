@@ -259,6 +259,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A/P Setup Reports.
+        /// </summary>
+        public static string AP_Setup_Reports {
+            get {
+                return ResourceManager.GetString("AP_Setup_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/P Transaction Reports.
         /// </summary>
         public static string AP_TransactionReports {
@@ -853,6 +862,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A/R Setup Reports.
+        /// </summary>
+        public static string AR_Setup_Reports {
+            get {
+                return ResourceManager.GetString("AR_Setup_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Salespersons.
         /// </summary>
         public static string AR_Setup_Salespersons {
@@ -1083,6 +1101,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string Bank_Setup {
             get {
                 return ResourceManager.GetString("Bank_Setup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank Setup Reports.
+        /// </summary>
+        public static string Bank_Setup_Reports {
+            get {
+                return ResourceManager.GetString("Bank_Setup_Reports", resourceCulture);
             }
         }
         
@@ -2536,6 +2563,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to G/L Integration.
+        /// </summary>
+        public static string IC_GL_Integration {
+            get {
+                return ResourceManager.GetString("IC_GL_Integration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Internal Usage.
         /// </summary>
         public static string IC_Internal_Usage {
@@ -2734,11 +2770,29 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mask Structures.
+        /// </summary>
+        public static string IC_Mask_Structures {
+            get {
+                return ResourceManager.GetString("IC_Mask_Structures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Optional Fields.
         /// </summary>
         public static string IC_Optional_Fields {
             get {
                 return ResourceManager.GetString("IC_Optional_Fields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string IC_Options {
+            get {
+                return ResourceManager.GetString("IC_Options", resourceCulture);
             }
         }
         
@@ -3144,6 +3198,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_Warranty_Codes {
             get {
                 return ResourceManager.GetString("IC_Warranty_Codes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warranty/Contract Codes.
+        /// </summary>
+        public static string IC_Warranty_Contract_Codes {
+            get {
+                return ResourceManager.GetString("IC_Warranty_Contract_Codes", resourceCulture);
             }
         }
         
@@ -3616,6 +3679,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O/E Setup Reports.
+        /// </summary>
+        public static string OE_Setup_Report {
+            get {
+                return ResourceManager.GetString("OE_Setup_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ship-Via Codes.
         /// </summary>
         public static string OE_Ship_Via_Codes {
@@ -3697,6 +3769,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account Sets.
+        /// </summary>
+        public static string PM_Account_Sets {
+            get {
+                return ResourceManager.GetString("PM_Account_Sets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Categories.
+        /// </summary>
+        public static string PM_Categories {
+            get {
+                return ResourceManager.GetString("PM_Categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Charges.
         /// </summary>
         public static string PM_Charges {
@@ -3711,6 +3801,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PM_ContractMaintenance {
             get {
                 return ResourceManager.GetString("PM_ContractMaintenance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract Structures.
+        /// </summary>
+        public static string PM_ContractStructures {
+            get {
+                return ResourceManager.GetString("PM_ContractStructures", resourceCulture);
             }
         }
         
@@ -3733,11 +3832,38 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Equipment Usage.
+        ///   Looks up a localized string similar to Employees.
+        /// </summary>
+        public static string PM_Employees {
+            get {
+                return ResourceManager.GetString("PM_Employees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment.
         /// </summary>
         public static string PM_Equipment {
             get {
                 return ResourceManager.GetString("PM_Equipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment Usage.
+        /// </summary>
+        public static string PM_EquipmentUsage {
+            get {
+                return ResourceManager.GetString("PM_EquipmentUsage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Integration.
+        /// </summary>
+        public static string PM_GLIntegration {
+            get {
+                return ResourceManager.GetString("PM_GLIntegration", resourceCulture);
             }
         }
         
@@ -3769,11 +3895,56 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Miscellaneous Expenses.
+        /// </summary>
+        public static string PM_MiscellaneousExpenses {
+            get {
+                return ResourceManager.GetString("PM_MiscellaneousExpenses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Opening Balances.
         /// </summary>
         public static string PM_OpeningBalances {
             get {
                 return ResourceManager.GetString("PM_OpeningBalances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Fields.
+        /// </summary>
+        public static string PM_OptionalFields {
+            get {
+                return ResourceManager.GetString("PM_OptionalFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string PM_Options {
+            get {
+                return ResourceManager.GetString("PM_Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overhead Expenses.
+        /// </summary>
+        public static string PM_OverheadExpenses {
+            get {
+                return ResourceManager.GetString("PM_OverheadExpenses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Projects.
+        /// </summary>
+        public static string PM_Projects {
+            get {
+                return ResourceManager.GetString("PM_Projects", resourceCulture);
             }
         }
         
@@ -3787,11 +3958,38 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Segment Codes.
+        /// </summary>
+        public static string PM_SegmentCodes {
+            get {
+                return ResourceManager.GetString("PM_SegmentCodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PJC Setup.
         /// </summary>
         public static string PM_Setup {
             get {
                 return ResourceManager.GetString("PM_Setup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Setup Reports.
+        /// </summary>
+        public static string PM_Setup_Reports {
+            get {
+                return ResourceManager.GetString("PM_Setup_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subcontractors.
+        /// </summary>
+        public static string PM_Subcontractor {
+            get {
+                return ResourceManager.GetString("PM_Subcontractor", resourceCulture);
             }
         }
         
@@ -3855,6 +4053,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PO_4th_Level_Transaction_Template {
             get {
                 return ResourceManager.GetString("PO_4th_Level_Transaction_Template", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account Sets.
+        /// </summary>
+        public static string PO_AccountSets {
+            get {
+                return ResourceManager.GetString("PO_AccountSets", resourceCulture);
             }
         }
         
@@ -3972,6 +4179,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PO_Invoice_Entry {
             get {
                 return ResourceManager.GetString("PO_Invoice_Entry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items.
+        /// </summary>
+        public static string PO_Items {
+            get {
+                return ResourceManager.GetString("PO_Items", resourceCulture);
             }
         }
         
@@ -4251,6 +4467,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PO_Vendor_Contract_Costs {
             get {
                 return ResourceManager.GetString("PO_Vendor_Contract_Costs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vendor Details.
+        /// </summary>
+        public static string PO_VendorDetails {
+            get {
+                return ResourceManager.GetString("PO_VendorDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weight Unit of Measure.
+        /// </summary>
+        public static string PO_WeightUOM {
+            get {
+                return ResourceManager.GetString("PO_WeightUOM", resourceCulture);
             }
         }
         

@@ -64,6 +64,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSeedingResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="DeclarativeReportResx.Designer.cs">
+      <DependentUpon>DeclarativeReportResx.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="DistributeProrationResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -212,6 +217,22 @@
     <EmbeddedResource Include="DataSeedingResx.fr.resx" />
     <EmbeddedResource Include="DataSeedingResx.zh-Hans.resx" />
     <EmbeddedResource Include="DataSeedingResx.zh-Hant.resx" />
+    <EmbeddedResource Include="DeclarativeReportResx.es.resx">
+      <DependentUpon>DeclarativeReportResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeclarativeReportResx.fr.resx">
+      <DependentUpon>DeclarativeReportResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeclarativeReportResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DeclarativeReportResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeclarativeReportResx.zh-Hans.resx">
+      <DependentUpon>DeclarativeReportResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeclarativeReportResx.zh-Hant.resx">
+      <DependentUpon>DeclarativeReportResx.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DistributeProrationResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DistributeProrationResx.Designer.cs</LastGenOutput>
@@ -285,6 +306,7 @@
     <EmbeddedResource Include="SPSCommonResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SPSCommonResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SPSCommonResx.es.resx" />
     <EmbeddedResource Include="SPSCommonResx.fr.resx" />

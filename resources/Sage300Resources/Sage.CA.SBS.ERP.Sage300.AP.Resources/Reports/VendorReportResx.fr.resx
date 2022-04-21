@@ -126,6 +126,9 @@
   <data name="RecurringPayables" xml:space="preserve">
     <value>Factures récurrentes</value>
   </data>
+  <data name="ShowTaxNumbers" xml:space="preserve">
+    <value>Afficher les numéros de taxes</value>
+  </data>
   <data name="ReportType_VendorActivityStatistics" xml:space="preserve">
     <value>Statistiques activité du fournisseur</value>
   </data>

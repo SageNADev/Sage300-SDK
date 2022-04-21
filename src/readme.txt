@@ -2,7 +2,7 @@
 -         Rebuilding MergeISVProject, Templates and Wizards
 -------------------------------------------------------------------------
 
-The batch file 'NoWebSync_RebuildAndDeployAll.bat' is used to do the following:
+The batch file 'NoWebSync_RebuildMergeISVProjectAndWizards.bat' is used to do the following:
 
 1. Rebuild the utility MergeISVProject.exe and copy it to the following locations:
 

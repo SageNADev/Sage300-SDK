@@ -48,8 +48,8 @@ GridPreferences = {
 
         $(document).on('click.gridPref', function (e) {
             var container = $('#divGridPrefEditCols');
-            // if the target of the click isn't the container... nor a descendant of the container
-            if (!container.is(e.target) && !btnEdit.is(e.target) && container.has(e.target).length === 0) {
+            // Close edit columns popup when clicking outside it
+            if (!container.is(e.target) && !btnEdit.is(e.target) && container.has(e.target).length === 0 && $(container).is(":visible")) {
                 GridPreferences.hide();
             }
         });
@@ -146,7 +146,7 @@ GridPreferences = {
         }
 
         // After the preferences dialog closes set the focus back to the underlying grid
-        sg.utls.gridFocusByName(`${GridPreferences.gridName}`);
+        //sg.utls.gridFocusByName(`${GridPreferences.gridName}`);
     },
     /**
      * Show list of columns
@@ -441,33 +441,17 @@ GridPreferencesHelper = {
         }
         //Show/Hide Column
         for (var i = 0; i < grid.columns.length; i++) {
-            grid.showColumn(grid.columns[i].field);
-
             // hide columns with IsInternal in json config
             if (gridColumns && gridColumns.constructor.name === 'Object')
                 gridColumns = Object.values(gridColumns);
             const configColumn = gridColumns ? gridColumns.find(x => x.field === grid.columns[i].field) : undefined;
-            if (configColumn && configColumn.isInternal) {
-                grid.hideColumn(grid.columns[i].field);
-            }
-            // hide column if column is hidden, and preference does not show it
-            else if (grid.columns[i].hidden) {
-                let shouldHide = true;
+
+            grid.hideColumn(grid.columns[i].field);
+
+            if (!(configColumn && configColumn.isInternal)) {
                 for (let j = 0; j < result.length; j++) {
                     if (result[j].field === grid.columns[i].field && !result[j].isHidden) {
-                        shouldHide = false;
-                        break;
-                    }
-                }
-                if (shouldHide) {
-                    grid.hideColumn(grid.columns[i].field);
-                }
-            }
-            // hide column if is column is not hidden, but preference hides it
-            else {
-                for (let j = 0; j < result.length; j++) {
-                    if (result[j].field === grid.columns[i].field && result[j].isHidden) {
-                        grid.hideColumn(grid.columns[i].field);
+                        grid.showColumn(grid.columns[i].field);
                         break;
                     }
                 }

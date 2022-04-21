@@ -137,10 +137,10 @@ body {
       cursor: pointer;
       color: #003348;
       display: inline-block;
-      top: -23px;
+      top: -28px;
       position: relative;
-      padding: 0 8px 0 0;
-      height: 2.2rem;
+      padding: 14px 10px 0 8px;
+      height: 3.5rem;
 
       .glyphicon {
         margin-right: 6px;
@@ -154,10 +154,22 @@ body {
           opacity: .7;
           filter: alpha(opacity=70);
         }
+
+        > span {
+          position: relative;
+          top: 5px;
+        }
+
+        &:focus {
+          outline: #005c9a auto;
+          outline-offset: -2px;
+        }
       }
 
       .session-date-widget-container {
         display: none;
+        position: relative;
+        top: 5px;
 
         .session-date-widget {
           border: 1px solid @sage-gray;
@@ -401,9 +413,10 @@ body {
           top: 3.575rem !important;
 
           li.k-item.k-state-hover,
+          li.k-item.k-state-focused,
           li.k-item:hover {
             background-image: none;
-            background-color: @white;
+            background-color: @btn-link-hover-color;
           }
 
           .k-animation-container{
@@ -415,6 +428,7 @@ body {
               padding-left: 18px;
 
               &.k-state-hover,
+              &.k-state-focused,
               &:hover {
                 background-image: none;
                 background-color: @btn-link-hover-color;

@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ASCommonResx {
@@ -102,6 +102,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
         public static string CompanyId {
             get {
                 return ResourceManager.GetString("CompanyId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password must include at least one of each of the following: lower case letter, upper case letter, number, and special character (such as * or #)..
+        /// </summary>
+        public static string ComplexAdvancedPasswordMessage {
+            get {
+                return ResourceManager.GetString("ComplexAdvancedPasswordMessage", resourceCulture);
             }
         }
         

@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var sg = sg || {};
@@ -29,7 +29,8 @@ sg.viewList = function () {
         MoveTo: 6,
         RefreshRow: 7,
         ResetRow: 8,
-        ClearNewRow: 9
+        ClearNewRow: 9,
+        GetParentData: 10
         },
     PageByKeyTypeEnum = {
         FirstPage: 0,
@@ -361,7 +362,7 @@ sg.viewList = function () {
             _columnSettingCallback(gridName, "columnBeforeDisplay", column);
 
             let title = column.ColumnName;
-            if (title.includes('Resx.')) {
+            if (title && title.includes('Resx.')) {
                 title = title.split('.').reduce((obj, i) => obj[i] , window);
             }
             col.title = title;
@@ -1110,6 +1111,9 @@ sg.viewList = function () {
             case RequestTypeEnum.ClearNewRow:
                 requestName = "ClearNewRecord";
                 break;
+            case RequestTypeEnum.GetParentData:
+                requestName = "GetParentData";
+                break;
         }
         return requestName;
     }
@@ -1154,6 +1158,8 @@ sg.viewList = function () {
                 break;
             case RequestTypeEnum.ClearNewRow:
                 isSuccess ? _createSuccess(gridName, jsonResult, insertedIndex) : _createError(gridName, jsonResult);
+                break;
+            case RequestTypeEnum.GetParentData:
                 break;
             default:
         }
@@ -2426,6 +2432,10 @@ sg.viewList = function () {
                                 _newLine[gridName] = false;
                                 _currentPage[gridName] = this.page();
                                 this.page(this.page());
+                            } else {
+                                // "this.page" is already set to the new page number when coming into "requestStart". However if _commmitGrid
+                                // fails the page switch doesn't happen, therefore "this.page" should be reset back to the "_currentPage"!
+                                this.page(_currentPage[gridName]);
                             }
                         });
                         return;
@@ -2658,6 +2668,8 @@ sg.viewList = function () {
 
     /**
      * @description Get/Set whether a view list grid has been changed.
+     * Note: This flag handles dirty state for the whole grid level.
+     *       For line level dirty flag please use sg.viewList.currentRecord(gridName).dirty.
      * @param {any} gridName The name of grid
      * @param {any} dirtyFlag A boolean flag
      * @return {boolean} Grid dirty flag or none
@@ -2720,6 +2732,20 @@ sg.viewList = function () {
         } else {
             for (var i = 0, length = _gridList.length; i < length; i++) {
                 refreshGrid(_gridList[i]);
+            }
+        }
+    }
+
+    /**
+     * @description Read data from the server side, refresh the view list display, and reset the focus to the current row.
+     * @param {string} gridName The name of the grid.
+     */
+    function refreshAndMoveToCurrent(gridName) {
+        if (gridName) {
+            const grid = _getGrid(gridName);
+            if (grid) {
+                _selectedRow[gridName] = grid.select().index(); // set _selectedRow[gridName] so after refreshing, the grid sets focus to this row
+                grid.dataSource.read(); // refresh grid
             }
         }
     }
@@ -3146,6 +3172,30 @@ sg.viewList = function () {
         return false;
     }
 
+    /**
+     * Get the parent view data from provided by ParentViewIDs
+     * @param {string} gridName The grid name
+     * @param {function} callBack The callBack function after the action is completed
+     */
+    function getParentData(gridName, callback) {
+        const data = {
+            'parentViewIDs': $("#" + gridName).attr('parentViewIDs'),
+        };
+
+        const requestName = _getRequestName(RequestTypeEnum.GetParentData);
+        const url = _getRequestUrl(gridName, requestName);
+
+        sg.utls.ajaxPost(url, data, (jsonResult) => {
+            if (typeof callback === 'function' && jsonResult && jsonResult.UserMessage) {
+                if (jsonResult.UserMessage.IsSuccess) {
+                    callback(jsonResult);
+                } else {
+                    sg.utls.showMessage(jsonResult);
+                }
+            }
+        });
+    }
+
     //Module(class) public methods
     return {
         init: init,
@@ -3174,6 +3224,7 @@ sg.viewList = function () {
         dirty: dirty,
         commit: commit,
         refresh: refresh,
+        refreshAndMoveToCurrent: refreshAndMoveToCurrent,
         refreshCurrentRow: refreshCurrentRow,
         resetCurrentRow: resetCurrentRow,
         updateCurrentRow: updateCurrentRow,
@@ -3187,5 +3238,6 @@ sg.viewList = function () {
         getCurrentLineNumber: getCurrentLineNumber,
         moveToRow: moveToRow,
         isFieldDisabled: isFieldDisabled,
+        getParentData: getParentData
     };
 }();

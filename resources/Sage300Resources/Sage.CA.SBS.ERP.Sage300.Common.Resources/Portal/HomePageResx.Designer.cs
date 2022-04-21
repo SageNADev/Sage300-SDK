@@ -3355,6 +3355,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The new session date will not be used in screens that are currently open. To use the new session date in these screens, close the screens and then open them again..
+        /// </summary>
+        public static string SessionDateChangedWarning {
+            get {
+                return ResourceManager.GetString("SessionDateChangedWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You can change the session date only if no windows are open..
         /// </summary>
         public static string SessionDateDisabledInfo {
@@ -3378,6 +3387,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string SessionSuccess {
             get {
                 return ResourceManager.GetString("SessionSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skip Navigation Menu.
+        /// </summary>
+        public static string SkipMenu {
+            get {
+                return ResourceManager.GetString("SkipMenu", resourceCulture);
             }
         }
         

@@ -1460,4 +1460,11 @@
   <data name="PJC" xml:space="preserve">
     <value>專案成本管理</value>
   </data>
+  <data name="SkipMenu" xml:space="preserve">
+    <value>跳過導航功能表</value>
+    <comment>Bypass Block Button</comment>
+  </data>
+  <data name="SessionDateChangedWarning" xml:space="preserve">
+    <value>新的工作階段日期不會在目前開啟的螢幕中使用。要在這些螢幕中使用新的工作階段日期，關閉這些螢幕然後再次開啟它們。</value>
+  </data>
 </root>

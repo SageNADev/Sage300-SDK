@@ -798,10 +798,14 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.woff">sagearmonyeicons.woff</ProjectItem>
         </Folder>
         <Folder Name="images" TargetFolderName="images">
+          <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="footer_logo.png">footer_logo.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.png">sage_300_logo.png</ProjectItem>
           <Folder Name="default" TargetFolderName="default">
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_icons.png">browser_icons.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="DropDownArrow.png">DropDownArrow.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="loading.gif">loading.gif</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="loading_alternative.gif">loading_alternative.gif</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
           </Folder>
           <Folder Name="home" TargetFolderName="home">
@@ -816,6 +820,8 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.png">sage_300_logo.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_black.png">sage_300_logo_black.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_white.png">sage_300_logo_white.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage_logo_black.png">sage_logo_black.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage_logo_green.png">sage_logo_green.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="startup-sprite.png">startup-sprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="tour_icon_sprite.png">tour_icon_sprite.png</ProjectItem>
           </Folder>
@@ -835,6 +841,11 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="ui-logo-sage-dark@2x.png">ui-logo-sage-dark@2x.png</ProjectItem>
           </Folder>
           <Folder Name="nav" TargetFolderName="nav">
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-code.png">icon-code.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-howto.png">icon-howto.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-ideas.png">icon-ideas.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-spanner.png">icon-spanner.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-tips.png">icon-tips.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu@2x.png">sprite_global_menu@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu_rev@2x.png">sprite_global_menu_rev@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_navigation.png">sprite_navigation.png</ProjectItem>
@@ -860,6 +871,7 @@
           <Folder Name="ui" TargetFolderName="ui">
             <ProjectItem ReplaceParameters="false" TargetFileName="arrow.png">arrow.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="edit-columns-icon.png">edit-columns-icon.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-code-snippet.png">icon-code-snippet.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="icon-edit-sprite.png">icon-edit-sprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="icon_info.png">icon_info.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="icon_sage.png">icon_sage.png</ProjectItem>
@@ -876,13 +888,25 @@
         <Folder Name="js" TargetFolderName="js">
           <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.js">bootstrap.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="customscripts.js">customscripts.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="grids_employeetimecards.js">grids_employeetimecards.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="grids_optional_fields.js">grids_optional_fields.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="grids_timecards.js">grids_timecards.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="input.Checkbox.js">input.Checkbox.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery.min.js">jquery.min.js</ProjectItem>
+          <Folder Name="Kendo" TargetFolderName="Kendo">
+            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.all.min.js">kendo.all.min.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.web.min.js">kendo.web.min.js</ProjectItem>
+          </Folder>
         </Folder>
         <Folder Name="styles" TargetFolderName="styles">
           <Folder Name="css" TargetFolderName="css">
             <ProjectItem ReplaceParameters="true" TargetFileName="base.min.css">base.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="custom.css">custom.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="default-home.min.css">default-home.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="default.min.css">default.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="doc.css">doc.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.common.min.css">kendo.common.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="kendo.default.min.css">kendo.default.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="stand-alone.css">stand-alone.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="widget.min.css">widget.min.css</ProjectItem>
             <Folder Name="customreport" TargetFolderName="customreport">
@@ -894,7 +918,26 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="loading_new.gif">loading_new.gif</ProjectItem>
             </Folder>
             <Folder Name="fonts" TargetFolderName="fonts">
+              <Folder Name="DejaVu" TargetFolderName="DejaVu">
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-Bold.ttf">DejaVuSans-Bold.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-BoldOblique.ttf">DejaVuSans-BoldOblique.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-ExtraLight.ttf">DejaVuSans-ExtraLight.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans-Oblique.ttf">DejaVuSans-Oblique.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSans.ttf">DejaVuSans.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-Bold.ttf">DejaVuSansMono-Bold.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-BoldOblique.ttf">DejaVuSansMono-BoldOblique.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono-Oblique.ttf">DejaVuSansMono-Oblique.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSansMono.ttf">DejaVuSansMono.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-Bold.ttf">DejaVuSerif-Bold.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-BoldItalic.ttf">DejaVuSerif-BoldItalic.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif-Italic.ttf">DejaVuSerif-Italic.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="DejaVuSerif.ttf">DejaVuSerif.ttf</ProjectItem>
+              </Folder>
               <Folder Name="glyphs" TargetFolderName="glyphs">
+                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.eot">KendoUIGlyphs.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.svg">KendoUIGlyphs.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.ttf">KendoUIGlyphs.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="KendoUIGlyphs.woff">KendoUIGlyphs.woff</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.eot">WebComponentsIcons.eot</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.svg">WebComponentsIcons.svg</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="WebComponentsIcons.ttf">WebComponentsIcons.ttf</ProjectItem>
@@ -906,6 +949,7 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="base.less">base.less</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="default-home.less">default-home.less</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="default.less">default.less</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="doc.less">doc.less</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="stand-alone.less">stand-alone.less</ProjectItem>
             <Folder Name="framework" TargetFolderName="framework">
               <ProjectItem ReplaceParameters="false" TargetFileName="aging-period.less">aging-period.less</ProjectItem>
@@ -966,6 +1010,7 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="blank.less">blank.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="crm.less">crm.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="desktop.small.less">desktop.small.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="doc.less">doc.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="grid.less">grid.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="home.less">home.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="master-stand-alone.less">master-stand-alone.less</ProjectItem>
@@ -1723,6 +1768,10 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReportRepository.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReportRepository.js</ProjectItem>
               <Folder Name="Shared" TargetFolderName="Shared">
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.FiscalCalendarRepository.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.FiscalCalendarRepository.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.GetICManufacturerItem.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.GetICManufacturerItem.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown - BROKEN.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown - BROKEN.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICSegmentCodeDropdown.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICSegmentCodeDropdown.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ResetDropdownListDataSource.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ResetDropdownListDataSource.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrency.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrency.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrencyDecimals.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrencyDecimals.js</ProjectItem>
@@ -1806,6 +1855,11 @@
               <Folder Name="Partials" TargetFolderName="Partials">
                 <ProjectItem ReplaceParameters="true" TargetFileName="_DeclarativeReport.cshtml">_DeclarativeReport.cshtml</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+                <Folder Name="Shared" TargetFolderName="Shared">
+                  <ProjectItem ReplaceParameters="true" TargetFileName="_APLocalization.cshtml">_APLocalization.cshtml</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="_GLLocalization.cshtml">_GLLocalization.cshtml</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="_ICLocalization.cshtml">_ICLocalization.cshtml</ProjectItem>
+                </Folder>
               </Folder>
             </Folder>
             <Folder Name="Error" TargetFolderName="Error">
@@ -1930,6 +1984,90 @@
             </Folder>
             <Folder Name="ItemQuantity" TargetFolderName="ItemQuantity">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js">Sage.CA.SBS.ERP.Sage300.Common.QuantityGrid.js</ProjectItem>
+            </Folder>
+            <Folder Name="out" TargetFolderName="out">
+              <ProjectItem ReplaceParameters="true" TargetFileName="classes.list.html">classes.list.html</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="index.html">index.html</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="module-sg.html">module-sg.html</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="modules.list.html">modules.list.html</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="namespaces.list.html">namespaces.list.html</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="quicksearch.html">quicksearch.html</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.OptionsMenu.js.html">Sage.CA.SBS.ERP.Sage300.Common.OptionsMenu.js.html</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="sg.utls.html">sg.utls.html</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="sg.utls.OptionsMenu.html">sg.utls.OptionsMenu.html</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="sg.utls.OptionsMenu.MenuItem.html">sg.utls.OptionsMenu.MenuItem.html</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="sg.utls.OptionsMenu.SubMenu.html">sg.utls.OptionsMenu.SubMenu.html</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="sg.utls.OptionsMenu.SubMenu.MenuItem.html">sg.utls.OptionsMenu.SubMenu.MenuItem.html</ProjectItem>
+              <Folder Name="fonts" TargetFolderName="fonts">
+                <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.eot">glyphicons-halflings-regular.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.svg">glyphicons-halflings-regular.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.ttf">glyphicons-halflings-regular.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.woff">glyphicons-halflings-regular.woff</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.woff2">glyphicons-halflings-regular.woff2</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Bold-webfont.eot">OpenSans-Bold-webfont.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Bold-webfont.svg">OpenSans-Bold-webfont.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Bold-webfont.woff">OpenSans-Bold-webfont.woff</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-BoldItalic-webfont.eot">OpenSans-BoldItalic-webfont.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-BoldItalic-webfont.svg">OpenSans-BoldItalic-webfont.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-BoldItalic-webfont.woff">OpenSans-BoldItalic-webfont.woff</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Italic-webfont.eot">OpenSans-Italic-webfont.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Italic-webfont.svg">OpenSans-Italic-webfont.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Italic-webfont.woff">OpenSans-Italic-webfont.woff</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Light-webfont.eot">OpenSans-Light-webfont.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Light-webfont.svg">OpenSans-Light-webfont.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Light-webfont.woff">OpenSans-Light-webfont.woff</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-LightItalic-webfont.eot">OpenSans-LightItalic-webfont.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-LightItalic-webfont.svg">OpenSans-LightItalic-webfont.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-LightItalic-webfont.woff">OpenSans-LightItalic-webfont.woff</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Regular-webfont.eot">OpenSans-Regular-webfont.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Regular-webfont.svg">OpenSans-Regular-webfont.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Regular-webfont.woff">OpenSans-Regular-webfont.woff</ProjectItem>
+              </Folder>
+              <Folder Name="img" TargetFolderName="img">
+                <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-white.png">glyphicons-halflings-white.png</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings.png">glyphicons-halflings.png</ProjectItem>
+              </Folder>
+              <Folder Name="scripts" TargetFolderName="scripts">
+                <ProjectItem ReplaceParameters="true" TargetFileName="docstrap.lib.js">docstrap.lib.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="fulltext-search-ui.js">fulltext-search-ui.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="fulltext-search.js">fulltext-search.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="linenumber.js">linenumber.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="lunr.min.js">lunr.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="sunlight.js">sunlight.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="toc.js">toc.js</ProjectItem>
+                <Folder Name="prettify" TargetFolderName="prettify">
+                  <ProjectItem ReplaceParameters="true" TargetFileName="Apache-License-2.0.txt">Apache-License-2.0.txt</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.min.js">jquery.min.js</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="lang-css.js">lang-css.js</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="prettify.js">prettify.js</ProjectItem>
+                </Folder>
+              </Folder>
+              <Folder Name="styles" TargetFolderName="styles">
+                <ProjectItem ReplaceParameters="true" TargetFileName="darkstrap.css">darkstrap.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="jsdoc-default.css">jsdoc-default.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="prettify-jsdoc.css">prettify-jsdoc.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="prettify-tomorrow.css">prettify-tomorrow.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.cerulean.css">site.cerulean.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.cosmo.css">site.cosmo.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.cyborg.css">site.cyborg.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.darkly.css">site.darkly.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.darkstrap.css">site.darkstrap.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.dibs-bootstrap.css">site.dibs-bootstrap.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.flatly.css">site.flatly.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.journal.css">site.journal.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.lumen.css">site.lumen.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.paper.css">site.paper.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.readable.css">site.readable.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.sandstone.css">site.sandstone.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.simplex.css">site.simplex.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.slate.css">site.slate.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.spacelab.css">site.spacelab.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.superhero.css">site.superhero.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.united.css">site.united.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="site.yeti.css">site.yeti.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="sunlight.dark.css">sunlight.dark.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="sunlight.default.css">sunlight.default.css</ProjectItem>
+              </Folder>
             </Folder>
             <Folder Name="Report" TargetFolderName="Report">
               <Folder Name="GLTransaction" TargetFolderName="GLTransaction">

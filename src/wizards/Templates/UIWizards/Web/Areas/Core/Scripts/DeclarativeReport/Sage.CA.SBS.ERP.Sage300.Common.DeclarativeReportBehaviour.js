@@ -25,6 +25,10 @@ declarativeReportUI = {
     computedProperties: [],
     parameters: null,
 
+    // Controls whether or not the validation() function in this file is called
+    pageIsValid: true,
+    doFrameworkValidation: true, // Default this to true
+
     /**
      * @function
      * @name init
@@ -138,8 +142,14 @@ declarativeReportUI = {
 
         // Check if form is valid
         if ($("#frmDeclarativeReport").valid()) {
+
             // Check Validations
-            if (declarativeReportUI.validation()) {
+            let isValid = declarativeReportUI.pageIsValid;
+            if (declarativeReportUI.doFrameworkValidation && isValid) {
+                isValid &= declarativeReportUI.validation();
+            }
+
+            if (isValid) {
                 $("#message").empty();
                 sg.utls.clearValidations("frmDeclarativeReport");
                 sg.utls.isProcessRunning = true;
@@ -214,7 +224,7 @@ declarativeReportUI = {
     /**
      * @function
      * @name validation
-     * @description Validation 
+     * @description Validation
      * @namespace declarativeReportUI
      * @public
      */

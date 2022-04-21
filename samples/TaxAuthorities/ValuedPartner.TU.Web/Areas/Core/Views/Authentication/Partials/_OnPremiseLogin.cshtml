@@ -41,7 +41,7 @@
             <div class="form-group" id="passwordDiv">
                 <label class="label-login">@ASCommonResx.Password</label>
                 <div class="input-group">
-                    @Html.KoSagePasswordFor(m => m.Password, new { @sagevalue = "Password" }, new { @id = "txtPassword", @class = "txt-upper login", data_val = "true", @maxlength = "64", @autocomplete = "off" })
+                    @Html.KoSagePasswordFor(m => m.Password, new { @sagevalue = "Password" }, new { @id = "txtPassword", @class = "login", data_val = "true", @maxlength = "64", @autocomplete = "off" })
                 </div>
             </div>
             <div class="form-group">
@@ -103,19 +103,19 @@
             <div class="form-group" id="passwordDiv">
                 <label class="label-login">@ASCommonResx.OldPassword</label>
                 <div class="input-group">
-                    <input id="txtPasswordOld" type="password" class="txt-upper" maxlength="64">
+                    <input id="txtPasswordOld" type="password" class="login" maxlength="64">
                 </div>
             </div>
             <div class="form-group" id="passwordDiv">
                 <label class="label-login">@ASCommonResx.NewPassword</label>
                 <div class="input-group">
-                    <input id="txtPasswordNew" type="password" class="txt-upper" maxlength="64">
+                    <input id="txtPasswordNew" type="password" class="login" maxlength="64">
                 </div>
             </div>
             <div class="form-group" id="passwordDiv">
                 <label class="label-login">@ASCommonResx.ConfirmPassword</label>
                 <div class="input-group">
-                    <input id="txtPasswordConfirm" type="password" class="txt-upper" maxlength="64">
+                    <input id="txtPasswordConfirm" type="password" class="login" maxlength="64">
                 </div>
             </div>
             <div class="button-group">

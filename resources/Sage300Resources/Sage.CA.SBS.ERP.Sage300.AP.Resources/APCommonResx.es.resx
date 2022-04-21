@@ -2828,4 +2828,16 @@
   <data name="FailedMTEmail" xml:space="preserve">
     <value>No se pudieron enviar los documentos por correo electrónico a los contactos del proveedor {0}. Verifique que los contactos de este proveedor estén bien configurados.</value>
   </data>
+  <data name="ContractCode" xml:space="preserve">
+    <value>Código de Contrato</value>
+  </data>
+  <data name="CategoryCode" xml:space="preserve">
+    <value>Código de Categoría</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Proyecto</value>
+  </data>
+  <data name="TaxNumberType" xml:space="preserve">
+    <value>Tipo de Número de Impuesto</value>
+  </data>
 </root>

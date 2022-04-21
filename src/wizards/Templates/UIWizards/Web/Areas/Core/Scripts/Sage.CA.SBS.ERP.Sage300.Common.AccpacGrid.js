@@ -29,7 +29,8 @@ sg.viewList = function () {
         MoveTo: 6,
         RefreshRow: 7,
         ResetRow: 8,
-        ClearNewRow: 9
+        ClearNewRow: 9,
+        GetParentData: 10
         },
     PageByKeyTypeEnum = {
         FirstPage: 0,
@@ -1110,6 +1111,9 @@ sg.viewList = function () {
             case RequestTypeEnum.ClearNewRow:
                 requestName = "ClearNewRecord";
                 break;
+            case RequestTypeEnum.GetParentData:
+                requestName = "GetParentData";
+                break;
         }
         return requestName;
     }
@@ -1154,6 +1158,8 @@ sg.viewList = function () {
                 break;
             case RequestTypeEnum.ClearNewRow:
                 isSuccess ? _createSuccess(gridName, jsonResult, insertedIndex) : _createError(gridName, jsonResult);
+                break;
+            case RequestTypeEnum.GetParentData:
                 break;
             default:
         }
@@ -3166,6 +3172,30 @@ sg.viewList = function () {
         return false;
     }
 
+    /**
+     * Get the parent view data from provided by ParentViewIDs
+     * @param {string} gridName The grid name
+     * @param {function} callBack The callBack function after the action is completed
+     */
+    function getParentData(gridName, callback) {
+        const data = {
+            'parentViewIDs': $("#" + gridName).attr('parentViewIDs'),
+        };
+
+        const requestName = _getRequestName(RequestTypeEnum.GetParentData);
+        const url = _getRequestUrl(gridName, requestName);
+
+        sg.utls.ajaxPost(url, data, (jsonResult) => {
+            if (typeof callback === 'function' && jsonResult && jsonResult.UserMessage) {
+                if (jsonResult.UserMessage.IsSuccess) {
+                    callback(jsonResult);
+                } else {
+                    sg.utls.showMessage(jsonResult);
+                }
+            }
+        });
+    }
+
     //Module(class) public methods
     return {
         init: init,
@@ -3208,5 +3238,6 @@ sg.viewList = function () {
         getCurrentLineNumber: getCurrentLineNumber,
         moveToRow: moveToRow,
         isFieldDisabled: isFieldDisabled,
+        getParentData: getParentData
     };
 }();

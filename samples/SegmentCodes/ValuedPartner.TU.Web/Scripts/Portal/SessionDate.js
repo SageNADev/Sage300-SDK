@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
 
 //@ts-check
 "use strict";
@@ -80,12 +80,13 @@ var SessionDateCookieSetup = function () {
                 }
                 $("#spnSessionDate").html(formattedDate);
 
-                showSuccessMessage();
-
                 // Put the new session date into local storage and let the message handler
                 // update the session date on any other open tabs for this user/company.
                 var key = "ALLSESSIONS_UpdatePortalSessionDate";
                 sage.cache.local.set(key, formattedDate);
+
+                sg.utls.showMessageInfo(sg.utls.msgType.WARNING, portalBehaviourResources.SessionDateChangedWarning);
+
             }
         }
     }
@@ -264,20 +265,6 @@ var SessionDateCookieSetup = function () {
 
             sg.utls.ajaxPost(verifySessionDateUrl, null, onSuccess.process);
 
-            // If there are any open modules active, disable the Session Date Picker
-            var activeModuleCount = openScreenCountManager.get();
-            if (activeModuleCount) {
-                if (activeModuleCount > 0) {
-                    sg.utls.disablePortalSessionDatePicker();
-                } else {
-                    sg.utls.enablePortalSessionDatePicker();
-                }
-            } else {
-                // Couldn't find the screen count in localStorage
-                // Probably means there are no open, active modules
-                // OK to enable Portal Session Date Picker
-                sg.utls.enablePortalSessionDatePicker();
-            }
         },
 
         /**

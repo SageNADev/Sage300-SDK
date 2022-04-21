@@ -1460,4 +1460,11 @@
   <data name="PJC" xml:space="preserve">
     <value>PJC</value>
   </data>
+  <data name="SkipMenu" xml:space="preserve">
+    <value>Skip Navigation Menu</value>
+    <comment>Bypass Block Button</comment>
+  </data>
+  <data name="SessionDateChangedWarning" xml:space="preserve">
+    <value>The new session date will not be used in screens that are currently open. To use the new session date in these screens, close the screens and then open them again.</value>
+  </data>
 </root>

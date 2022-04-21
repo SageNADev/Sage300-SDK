@@ -648,8 +648,8 @@
   <data name="DeliveryMethod_Email" xml:space="preserve">
     <value>Email (vendor)</value>
     <comment>Auto-Generated</comment>
-   </data>
-   <data name="DeriveRate" xml:space="preserve">
+  </data>
+  <data name="DeriveRate" xml:space="preserve">
     <value>Derive Rate</value>
     <comment>Auto-Generated</comment>
   </data>
@@ -2827,5 +2827,17 @@
   </data>
   <data name="FailedMTEmail" xml:space="preserve">
     <value>Documents could not be emailed to contacts for vendor {0}. Check that contacts for this vendor are set up correctly.</value>
+  </data>
+  <data name="ContractCode" xml:space="preserve">
+    <value>Contract Code</value>
+  </data>
+  <data name="CategoryCode" xml:space="preserve">
+    <value>Category Code</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="TaxNumberType" xml:space="preserve">
+    <value>Tax Number Type</value>
   </data>
 </root>

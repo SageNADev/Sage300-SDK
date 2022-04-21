@@ -126,6 +126,9 @@
   <data name="RecurringPayables" xml:space="preserve">
     <value>Efectos a Pagar Recurrentes</value>
   </data>
+  <data name="ShowTaxNumbers" xml:space="preserve">
+    <value>Mostrar Números de Impuestos</value>
+  </data>
   <data name="ReportType_VendorActivityStatistics" xml:space="preserve">
     <value>Estadísticas de Actividad del Proveedor</value>
   </data>
