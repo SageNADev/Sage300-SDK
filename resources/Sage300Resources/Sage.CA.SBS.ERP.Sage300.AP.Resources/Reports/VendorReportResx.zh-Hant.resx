@@ -126,6 +126,9 @@
   <data name="RecurringPayables" xml:space="preserve">
     <value>週期性應付</value>
   </data>
+  <data name="ShowTaxNumbers" xml:space="preserve">
+    <value>顯示稅務編號</value>
+  </data>
   <data name="ReportType_VendorActivityStatistics" xml:space="preserve">
     <value>供應商活動統計</value>
   </data>

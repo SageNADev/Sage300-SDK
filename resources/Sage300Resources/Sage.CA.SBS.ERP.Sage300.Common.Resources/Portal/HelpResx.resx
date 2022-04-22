@@ -4602,4 +4602,12 @@
     <value>PJC Update Retainage Screen</value>
     <comment>403077001</comment>
   </data>
+  <data name="PM_Account_Sets_Screen" xml:space="preserve">
+    <value>PJC Account Sets Screen</value>
+    <comment>CSH ID 403053001</comment>
+  </data>
+  <data name="PM_Adding_or_Modifying_Account_Sets" xml:space="preserve">
+    <value>Adding or Modifying Account Sets</value>
+    <comment>CSH ID 403053002</comment>
+  </data>
 </root>

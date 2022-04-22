@@ -53,6 +53,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmailMessagesResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ICOptionResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ICOptionResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InvoiceEntryResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,6 +229,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TransactionListResx.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\ICOptionResx.es.resx">
+      <DependentUpon>ICOptionResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ICOptionResx.fr.resx">
+      <DependentUpon>ICOptionResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ICOptionResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ICOptionResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ICOptionResx.zh-Hans.resx">
+      <DependentUpon>ICOptionResx.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ICOptionResx.zh-Hant.resx">
+      <DependentUpon>ICOptionResx.resx</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Reports\Transaction\" />

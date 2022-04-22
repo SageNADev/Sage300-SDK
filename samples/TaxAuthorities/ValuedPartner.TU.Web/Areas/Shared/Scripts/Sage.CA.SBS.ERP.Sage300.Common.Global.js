@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
 
 // @ts-check
 
@@ -2549,13 +2549,20 @@ $.extend(sg.utls, {
                     messageDiv.empty();
                 }, showTime);
             }
-
-            if (isModal === true) {
-                //Inject an overlay that has higher z-index than kendo widgets ( handled in css). 
-                messageDiv.parent().append("<div id='injectedOverlay' class='k-overlay'></div>");
-            }
-            if (isModalTransparent === true) {
-                messageDiv.parent().append("<div id='injectedOverlayTransparent' class='k-overlay k-overlay-transparent' ></div>");
+			
+            if ($("#message").length && $("#message").html().length > 0) {
+                if (!(isModal === false)) {
+                    if (isModalTransparent === true && $('#injectedOverlayTransparent').length === 0) {
+                        //Inject an overlay that is transparent. 
+                        messageDiv.parent().append("<div id='injectedOverlayTransparent' class='k-overlay k-overlay-transparent' ></div>");
+                        $('#injectedOverlayTransparent').css('z-index', '999998');
+                    }
+                    else if ($('#injectedOverlay').length === 0){
+                        //Inject an overlay that is semi-opaque. 
+                        messageDiv.parent().append("<div id='injectedOverlay' class='k-overlay'></div>");
+                        $('#injectedOverlay').css('z-index', '999998');
+                    }
+                }
             }
 
             if (handler !== undefined && handler !== null) {
@@ -2896,6 +2903,13 @@ $.extend(sg.utls, {
             var errorHTML = sg.utls.generateMessage(defaultErrorMsg);
             messageHTML = messageHTML + "<div class='" + errorCSS + "'><div class='title'><span class='icon multiError-icon'></span><h3>" + globalResource.ShowMessageBoxTitle + "</h3><span class='icon msgCtrl-close'>Close</span></div><div class='msg-content'> " + errorHTML + " </div></div>";
             $("#message").html(messageHTML);
+			
+					
+           if ($('#injectedOverlay').length === 0){
+				//Inject an overlay that is semi-opaque. 
+				$("#message").parent().append("<div id='injectedOverlay' class='k-overlay'></div>");
+				$('#injectedOverlay').css('z-index', '999998');
+			}
         }
     },
 
@@ -3030,6 +3044,13 @@ $.extend(sg.utls, {
         sg.utls.showMessagesInViewPort();
 
         messageDiv.show();
+		
+        if ($('#injectedOverlay').length === 0){
+			//Inject an overlay that is semi-opaque. 
+            messageDiv.parent().append("<div id='injectedOverlay' class='k-overlay'></div>");
+            $('#injectedOverlay').css('z-index', '999998');
+        }
+
     },
 
     showMessageInfoInCustomDivWithoutClose: function (messageType, message, divId) {
@@ -3713,45 +3734,7 @@ $.extend(sg.utls, {
         var data = { key: key };
         sg.utls.ajaxPostSync(sg.utls.url.buildUrl("Core", "Common", "GetUserPreference"), data, successHandler);
     },
-
-    /**
-     * @name enablePortalSessionDatePicker
-     * @description Enable the portal session date picker
-     */
-    enablePortalSessionDatePicker: function () {
-        $('#spnSessionDate').removeClass('disabled');
-        $('#sessionDatelabel').removeClass('disabled');
-        $('#sessionDateIcon').removeClass('disabled');
-        $('#sessionDateIcon').removeClass('glyphicon-lock');
-        $('#sessionDateIcon').addClass('glyphicon-calendar-1');
-    },
-
-    /**
-     * @name disablePortalSessionDatePicker
-     * @description Disable the portal session date picker
-     *              Note: Close any visible date pickers as well
-     */
-    disablePortalSessionDatePicker: function () {
-        $('#spnSessionDate').addClass('disabled');
-        $('#sessionDatelabel').addClass('disabled');
-        $('#sessionDateIcon').addClass('disabled');
-        $('#sessionDateIcon').removeClass('glyphicon-calendar-1');
-        $('#sessionDateIcon').addClass('glyphicon-lock');
-
-        // D-39978 - Close the date picker if selector is disabled
-        try {
-            if (sessionDateCookieSetup) {
-                var datePicker = sessionDateCookieSetup.getControl();
-                if (datePicker) {
-                    datePicker.close();
-                }
-            }
-        } catch (e) {
-            // Likely sessionDateCookieSetup is undefined.
-            // Just ignore this exception.
-        }
-    },
-
+    
     /**
      * @name logMessage
      * @description Log a message to the Sage 300 Webscreen server log file
@@ -4753,18 +4736,7 @@ $(function () {
                     // Set session date in top menu
                     $("#spnSessionDate").html(dt);
                     return;
-
-                } else if (message === "DisablePortalSessionDatePicker") {
-
-                    sg.utls.disablePortalSessionDatePicker();
-                    return;
-
-                } else if (message === "EnablePortalSessionDatePicker") {
-
-                    sg.utls.enablePortalSessionDatePicker();
-                    return;
                 } else if (message === "Sage300Timeout") {
-
                     window.parent.postMessage({ id: 'Sage300Logout' }, "*");
                     return;
                 } else if (message === "LogoutInitiated" || message === "EvictInitiated") {

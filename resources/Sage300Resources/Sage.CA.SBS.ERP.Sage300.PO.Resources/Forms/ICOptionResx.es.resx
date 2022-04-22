@@ -1,0 +1,939 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NextCombineNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AdjustmentNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextShipmentNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ICDisassemblies" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AllowDifferentSerialQty" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseRightParenthesisAsItemSe" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TransferNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MaximumQuantityMarginFactor" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreatingANewBatch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DayEndProcessing" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BackSlash" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsAsteriskAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ForwardSlash" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AllowLotAllocOnQtyOrdered" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CombineNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppendToGLBatch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextShipmentEntrySequence" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PostToClosedFiscalPeriods" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReleaseNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LocalTimeLastDayEnd" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorPeriod" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLReferenceField" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AccumulateItemStatistics" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextShipmentNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextHistoryEntrySequence" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DummyField" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RecallReleaseSequenceNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConsolidateGLBatch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ICReceiptAdjustments" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Hyphen" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseSerialsDaysToExpire" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LocalDateLastDayEnd" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsBackSlashAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SortLotsBy" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultNumberDaysForFollowUp" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RightBrace" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HighlightSalesVarianceAbove" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsLeftParenthesisAsSep" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorRightParenthesis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextReconciliationNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReferenceNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsLeftBraceAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UsePeriodAsItemSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextTransferEntrySequence" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultDisassemblyNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextAlternateItemSetNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AgingPeriod2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsLeftBraceAsSep" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextSplitNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextAdjustmentNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsFwdSlashAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorAsterisk" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsPoundSignAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SessionDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FourWeeks" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomerVendorNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultReleaseNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ICShipments" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultCommentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorLeftBracket" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DayEndTransactionsOutstanding" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Quarterly" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ICConsolidatedEntry" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsAsteriskAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextTransitReceiptNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultReceiptNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsRightBracketAsSep" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextRecallNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeferredGLPosting" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReconciliationNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextReceiptEntrySequence" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StopAllocationOfExpiredSeria" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SplitNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DisassemblyNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomerVendorName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShipmentNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultGoodsInTransitLocatio" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReleaseNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextInternalUsageNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorRightBrace" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ICReceiptReturns" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextNonCostedReceiptDayEnd" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AllowDifferentLotQty" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorBackSlash" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ICShipmentReturns" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextRecallNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReconciliationSequenceNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CostAndLedger" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SalesStatsPeriodsToUse" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsRightBracketAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotNumberMask" xml:space="preserve">
+    <value />
+  </data>
+  <data name="None" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultRateType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RecallNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Leave" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultAdjustmentNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TransitReceiptNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextDisassemblyNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorForwardSlash" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextReceiptNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsDaysToExpire" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditStatistics" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Annually" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextReceiptNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseForwardSlashAsItemSepara" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SourceCodeDayEndNumberEntryNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AllowDuplicateSerials" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UpdateLocationDetailsMinQty" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextTransactionNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AssemblyNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ICInternalUsage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsLeftParenthesisAsSep" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AdjustmentNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReceiptNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsLeftBracketAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ICReceipts" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsLeftBracketAsSep" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextAssemblyNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StopAllocationOfExpiredLots" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultNumberDaysForExpiry" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseAsteriskAsItemSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NumberSign" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CalendarYear" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalUsageNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TransitReceiptNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultWeightUnitOfMeasure" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorHyhen" xml:space="preserve">
+    <value />
+  </data>
+  <data name="KeepTransactionHistory" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AdditionalCostOnReceiptReturns" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SplitNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RecallNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatisticsPeriod" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPostingDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextTransferNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorLeftBrace" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLDescriptionField" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PromptToDeleteDuringPosting" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AssemblyNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="No" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsPeriodAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextShipmentReturnNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OnlyUseDefinedUOM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatisticsCalendar" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HomeCurrency" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Asterisk" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextAdjustmentEntrySequence" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsFwdSlashAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FractionalQuantities" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AddingToAnExistingBatch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultAssemblyNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ICAssemblies" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FractionalQuantityDecimals" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Bimonthly" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseLeftParenthesisAsItemSep" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PeriodLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultTransitReceiptNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsRightBraceAsSep" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Multicurrency" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AgingPeriod1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextSplitNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PeriodType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextTransferNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LeftBracket" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Latest" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Earliest" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReceiptNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultSplitNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConversionFactorDecimals" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextShipmentReturnNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SortSerialsBy" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SevenDays" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseBackSlashAsItemSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConsolidateTransactionDetailsByAccount" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultInternalUsageNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SortLotsFirstBy" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShipmentReturnNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Cost1Name" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsRightParenthesisAsSep" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RightBracket" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextAssemblyEntrySequence" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsPoundSignAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Posting" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsDaysToExpire" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UsePoundSignAsItemSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DisassemblyNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReconciliationNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextInternalUsageEntrySequence" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AllowItemsAtAllLocations" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseHyhenAsItemSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsBackSlashAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LeftParenthesis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsHyphenAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreateSubledgerAuditDuring" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ICTransfers" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AgingPeriod3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultRecallNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Semiannually" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Cost2Name" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorNumberSign" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextAdjustmentNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorLeftParenthesis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AllowReceiptOfNonStockItems" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ICAdjustments" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseLotsDaysToExpire" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AllowBlankCommentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultCombineNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextTransitReceiptNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsHyphenAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLTransCreatedThruDayEnd" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsRightParenthesisAsSep" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InternalUsageNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextDisassemblyNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatisticalPeriods" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CostOnly" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShipmentReturnNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextReleaseNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UTCTimeLastDayEnd" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MinimumQuantityMarginFactor" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConsolidateByAccountAndFiscalPeriod" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HeaderDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prorate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextReconciliationNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QuantityOnly" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseLotsDaysOnQuarantine" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RightParenthesis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AllowSerialAllocOnQtyOrdered" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultReconciliationNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextReleaseNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TransitLocationDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextInternalUsageNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TransactionPostDepCost" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextCombineNumberDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultShipmentReturnNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HighlightTrendVarianceAbove" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialNumberMask" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CostDuring" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HighlightMinMaxVarianceAbove" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Biweekly" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextDayEndPostingSequence" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TransferNumberLength" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SortSerialsFirstBy" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AllowNegativeQuantities" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparatorRightBracket" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreatingAndPostingANewBatch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DoNotConsolidate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShipmentNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultShipmentNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConsolidateByAccountFiscalPeriodAndSource" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsDaysOnQuarantine" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultItemStructure" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SerialsPeriodAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultTransferNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CombineSplitSequenceNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NextAssemblyNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LeftBrace" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UTCDateLastDayEnd" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LotsRightBraceAsSeparator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InterfaceWithJobCost" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CombineNumberPrefix" xml:space="preserve">
+    <value />
+  </data>
+</root>

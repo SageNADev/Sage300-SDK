@@ -130,7 +130,7 @@
     <comment>Message</comment>
   </data>
   <data name="ConfirmExitAddTrx" xml:space="preserve">
-    <value>此一交易尚未增加到銀行分錄。是否增加此一交易？</value>
+    <value>此交易尚未增加到銀行分錄。是否增加此交易？</value>
     <comment>Message</comment>
   </data>
   <data name="ConfirmProcess" xml:space="preserve">
@@ -390,5 +390,8 @@
   <data name="DeleteConfirmMessage" xml:space="preserve">
     <value>是否確要斷開{0}的銀行饋送？</value>
     <comment>Message</comment>
+  </data>
+  <data name="BankFeedExist" xml:space="preserve">
+    <value>銀行饋送交易代號已存在於另一個銀行分錄中。請將此資訊提供給Sage 300客戶支援。</value>
   </data>
 </root>

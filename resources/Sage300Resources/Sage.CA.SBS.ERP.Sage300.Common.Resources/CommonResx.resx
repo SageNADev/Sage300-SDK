@@ -1646,4 +1646,18 @@
     <value>Finish</value>
     <comment>button caption for wizard finish button</comment>
   </data>
+  <data name="InvalidReportParameterSettingMessage" xml:space="preserve">
+    <value>The value "{0}" is invalid for property "{1}" of parameter "{2}" of report "{3}". Please check the report setting.</value>
+    <comment>Invalid setting in Declarative Report</comment>
+  </data>
+  <data name="InvalidReportSettingMessage" xml:space="preserve">
+    <value>The value "{0}" is invalid for property "{1}" of report "{2}". Please check the report setting.</value>
+    <comment>Invalid setting in Declarative Report</comment>
+  </data>
+  <data name="ItemNumberFrom" xml:space="preserve">
+    <value>Item Number From</value>
+  </data>
+  <data name="ItemNumberTo" xml:space="preserve">
+    <value>Item Number To</value>
+  </data>
 </root>

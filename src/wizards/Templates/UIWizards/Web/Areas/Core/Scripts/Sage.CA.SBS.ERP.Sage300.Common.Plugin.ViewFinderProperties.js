@@ -1780,7 +1780,7 @@
             MiscellaneousChargeReport: {
                 viewID: "OE0440",
                 parentValAsInitKey: true,
-                viewOrder: 1,
+                viewOrder: 0,
                 returnFieldNames: ["MISCCHARGE"],
                 displayFieldNames: ["MISCCHARGE", "DESC", "HASJOB", "MISCACCT", "AMOUNT", "MISCACDESC"],
             },

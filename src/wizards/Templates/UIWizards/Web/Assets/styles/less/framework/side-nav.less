@@ -597,6 +597,27 @@
     bottom: 0;
     left: 14.5rem;
     width: 14.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Scrollbar style - Chrome only */
+
+    &::-webkit-scrollbar-track {
+      background-color: @gray-silver;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: @gray-silver;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: @gray-dim;
+    } 
+
+    &::-webkit-scrollbar-corner {
+      background-color: @gray-silver;
+    }
 
     &.child {
       background-color: #ebedef;

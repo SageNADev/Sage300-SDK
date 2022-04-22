@@ -1,0 +1,16 @@
+@* Copyright (c) 2021 Sage300  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmDeclarativeReport" }))
+{
+    <div id="antiforgerytoken_holder">
+        @Html.AntiForgeryToken()
+    </div>
+    @Html.Partial("~/Areas/Core/Views/DeclarativeReport/Partials/_Localization.cshtml")
+    @Html.Partial("~/Areas/Core/Views/DeclarativeReport/Partials/_DeclarativeReport.cshtml")
+}
+
+@{
+    Layout = Shared.GlobalLayout;
+}

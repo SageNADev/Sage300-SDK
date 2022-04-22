@@ -44,3 +44,10 @@
         @Scripts.Render(@url)
     }
 }
+@if (Model.Data.RazorViews != null)
+{
+    foreach (var razorView in Model.Data.RazorViews)
+    {
+        @Html.Partial(@razorView)
+    }
+}

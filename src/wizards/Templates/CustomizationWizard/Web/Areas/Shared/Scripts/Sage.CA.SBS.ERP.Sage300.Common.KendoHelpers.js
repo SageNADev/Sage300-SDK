@@ -565,7 +565,7 @@ $.extend(sg.utls.kndoUI, {
         return {
             format: sg.utls.kndoUI.getDateFormat(),
             parseFormats: sg.utls.kndoUI.getDatePatterns(),
-            footer: globalResource.Today + " - #: kendo.toString(data, '" + globalResource.DateFormat+ "') #",
+            footer: globalResource.Today + " - #: kendo.toString(data, '" + globalResource.DateFormat + "') #",
             min: new Date(1000, 1, 1),
             max: new Date(9999, 12, 31)
         };
@@ -815,7 +815,7 @@ $.extend(sg.utls.kndoUI, {
      * @param {} field - this value will display on the grid
      * @returns {} 
      */
-    getHideZeroTemplate: function(field) {
+    getHideZeroTemplate: function (field) {
         //target both string type and integer type
         if (field == 0) {
             return "";
@@ -928,7 +928,7 @@ $.extend(sg.utls.kndoUI, {
     },
 
     restrictDecimals: function (numericTextBoxData, numberOfDecimals, numberOfNumerals) {
-        if (typeof numericTextBoxData === "undefined" ) {
+        if (typeof numericTextBoxData === "undefined") {
             return;
         }
         var numericTextBoxDataValue;
@@ -937,9 +937,7 @@ $.extend(sg.utls.kndoUI, {
         } else {
             numericTextBoxDataValue = numericTextBoxData;
         }
-
-        $(numericTextBoxDataValue).off("input");
-        
+        $(numericTextBoxDataValue).off("input keydown");
         $(numericTextBoxDataValue).on("input", function (e) {
             var val = numericTextBoxDataValue.val();
             var decimalSeparator = kendo.culture().numberFormat['.'];
@@ -963,6 +961,35 @@ $.extend(sg.utls.kndoUI, {
                         numericTextBoxDataValue.val(val.substr(0, numeralLength - 1));
                     }
                 }
+            }
+        });
+
+        $(numericTextBoxDataValue).keydown(e => {
+            const cultureDecimalCharacter = kendo.culture().numberFormat['.'];
+            const validChars = [
+                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-',
+                'Tab', 'Backspace', 'Delete', 'ArrowLeft', 'ArrowRight',
+                'Shift', 'Home', 'End'
+            ];
+
+            // Crtl+a (Select All) is a valid combination
+            if (e.key == 'a' && e.ctrlKey) {
+                return;
+            }
+
+            // Add decimal 'point' (for whichever culture) to
+            // list of valid characters
+            if (numberOfDecimals > 0) {
+                validChars.push(cultureDecimalCharacter);
+            };
+
+            // Determine invalid scenarios
+            const isInvalidCharacter = !validChars.includes(e.key);
+            const isMinusSignNotInitialCharacter = (e.key === '-' &&
+                (e.currentTarget.selectionStart > 0 || e.target.value.includes('-')));
+
+            if (isInvalidCharacter || isMinusSignNotInitialCharacter) {
+                e.preventDefault();
             }
         });
     },

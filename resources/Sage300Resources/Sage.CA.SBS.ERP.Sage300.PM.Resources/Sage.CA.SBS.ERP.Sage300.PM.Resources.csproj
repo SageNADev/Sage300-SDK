@@ -39,6 +39,11 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AccountSetResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountSetResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ChargeDetailResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -144,6 +149,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="Forms\AccountSetResx.es.resx" />
+    <EmbeddedResource Include="Forms\AccountSetResx.fr.resx" />
+    <EmbeddedResource Include="Forms\AccountSetResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountSetResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AccountSetResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\AccountSetResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\ChargeDetailResx.es.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

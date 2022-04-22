@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -32,10 +32,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2022.0";
+            public const string FromReleaseNumber = "2022.1";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2022.1";
+            public const string ToReleaseNumber = "2022.2";
 
             /// <summary> From Accpac Number </summary>
             public const string FromAccpacNumber = "6.9.0.0";

@@ -260,7 +260,7 @@
 
       > a {
       text-indent: -1000px;
-      opacity: 0;
+      opacity: 1;
       width: @side-nav-width;
       line-height: 1.25;
       }
@@ -304,6 +304,11 @@
   li > a {
     cursor: pointer;
     display: block;
+
+    &:focus {
+      outline: 5px auto #005c9a;
+      outline-offset: -3px;
+    }
   }
 
   .wrapper {
@@ -592,6 +597,27 @@
     bottom: 0;
     left: 14.5rem;
     width: 14.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Scrollbar style - Chrome only */
+
+    &::-webkit-scrollbar-track {
+      background-color: @gray-silver;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: @gray-silver;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: @gray-dim;
+    } 
+
+    &::-webkit-scrollbar-corner {
+      background-color: @gray-silver;
+    }
 
     &.child {
       background-color: #ebedef;
@@ -758,6 +784,14 @@
         text-decoration: none;
       }
     }
+  }
+}
+
+.k-ff .side-nav { // To make the focus line visible in Firefox
+  li > a:focus {
+    outline: none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 1px #1a1200, 0 0 0 2px @input-border-focus;
   }
 }
 
@@ -938,6 +972,10 @@
     background-color: @sage-light-gray;
   }
 
+  &:focus {
+    background-color: @input-border-focus;
+  }
+
   &:after {
     content: "";
     position: absolute;
@@ -948,6 +986,10 @@
     left: 3px;
     cursor: pointer;
     z-index: 1;
+
+    &:focus {
+      border-left-color: @white;
+    }
   }
 }
 
@@ -963,6 +1005,10 @@
     left: -3px;
     cursor: pointer;
     z-index: 1;
+
+    &:focus {
+      border-right-color: @white;
+    }
   }
 }
 
@@ -1052,3 +1098,20 @@
     }
 }
 
+
+.menu-section .k-item .glyphicon-star,
+.menu-section .k-item .glyphicon-star-empty {
+  float: right;
+  right: -18px;
+  position: relative;
+  color: #e6ebed;
+
+  &:hover {
+    color: @white;
+    background: none;
+  }
+}
+
+.menu-section .k-item a > .glyphicon-star {
+  color: #FFCC00;
+}

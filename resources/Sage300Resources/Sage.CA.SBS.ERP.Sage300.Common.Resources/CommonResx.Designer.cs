@@ -2050,6 +2050,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The value &quot;{0}&quot; is invalid for property &quot;{1}&quot; of parameter &quot;{2}&quot; of report &quot;{3}&quot;. Please check the report setting..
+        /// </summary>
+        public static string InvalidReportParameterSettingMessage {
+            get {
+                return ResourceManager.GetString("InvalidReportParameterSettingMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value &quot;{0}&quot; is invalid for property &quot;{1}&quot; of report &quot;{2}&quot;. Please check the report setting..
+        /// </summary>
+        public static string InvalidReportSettingMessage {
+            get {
+                return ResourceManager.GetString("InvalidReportSettingMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A problem occurred and the script could not be loaded. Select a valid XML file and try again..
         /// </summary>
         public static string InvalidScriptFile {
@@ -2100,6 +2118,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string Is {
             get {
                 return ResourceManager.GetString("Is", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item Number From.
+        /// </summary>
+        public static string ItemNumberFrom {
+            get {
+                return ResourceManager.GetString("ItemNumberFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item Number To.
+        /// </summary>
+        public static string ItemNumberTo {
+            get {
+                return ResourceManager.GetString("ItemNumberTo", resourceCulture);
             }
         }
         
@@ -4269,6 +4305,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string VAT {
             get {
                 return ResourceManager.GetString("VAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vendor Number From.
+        /// </summary>
+        public static string VendorNumberFrom {
+            get {
+                return ResourceManager.GetString("VendorNumberFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vendor Number To.
+        /// </summary>
+        public static string VendorNumberTo {
+            get {
+                return ResourceManager.GetString("VendorNumberTo", resourceCulture);
             }
         }
         

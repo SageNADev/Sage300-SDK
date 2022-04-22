@@ -86,7 +86,16 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Reports {
                 return ResourceManager.GetString("RecurringPayables", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Show Tax Numbers.
+        /// </summary>
+        public static string ShowTaxNumbers {
+            get
+            {
+                return ResourceManager.GetString("ShowTaxNumbers", resourceCulture);
+            }
+        }
         /// <summary>
         ///   Looks up a localized string similar to Vendor Activity Statistics.
         /// </summary>

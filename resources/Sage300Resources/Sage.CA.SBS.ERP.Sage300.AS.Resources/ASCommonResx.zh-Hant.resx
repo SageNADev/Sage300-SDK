@@ -266,4 +266,7 @@
   <data name="VerifyPassword" xml:space="preserve">
     <value>核實密碼</value>
   </data>
+  <data name="ComplexAdvancedPasswordMessage" xml:space="preserve">
+    <value>您的密碼必須至少包含以下各項之一：小寫字母、大寫字母、數字和特殊字符（例如 * 或 #）。</value>
+  </data>
 </root>

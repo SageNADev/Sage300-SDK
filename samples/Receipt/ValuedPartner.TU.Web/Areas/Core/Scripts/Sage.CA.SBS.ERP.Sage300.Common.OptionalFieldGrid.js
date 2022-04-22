@@ -784,7 +784,7 @@ sg.optionalFieldControl = function () {
         GridUtls.updateFailed = true;
         var grid = $('#' + gridName).data("kendoGrid");
         var rowIndex = grid.select().index();
-        sg.utls.showMessage(jsonResult, errorMsgClose.bind(gridName, _lastLine, _lastColField[gridName]), true, true);
+        sg.utls.showMessage(jsonResult, errorMsgClose.bind(gridName, _lastLine, _lastColField[gridName]));
         _lastRowNumber[gridName] = _lastLine;
     }
 
@@ -887,7 +887,7 @@ sg.optionalFieldControl = function () {
 
         _setModuleVariables(gridName, RowStatusEnum.UPDATE, jsonResult, rowIndex);
 
-        sg.utls.showMessage(jsonResult, AfterUpdateError.bind(sg.optionalFieldControl, gridName, dataItem, fieldName, rowIndex), false, true);
+        sg.utls.showMessage(jsonResult, AfterUpdateError.bind(sg.optionalFieldControl, gridName, dataItem, fieldName, rowIndex));
     }
 
     function AfterUpdateError(gridName, dataItem, fieldName, rowIndex) {

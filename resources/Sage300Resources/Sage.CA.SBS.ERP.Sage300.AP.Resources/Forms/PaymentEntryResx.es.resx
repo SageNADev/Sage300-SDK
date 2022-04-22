@@ -713,7 +713,7 @@
     <comment>Import/Export</comment>
   </data>
   <data name="JobApplyMethod" xml:space="preserve">
-    <value>Método a Aplicar del Trabajo</value>
+    <value>Método a Aplicar</value>
     <comment>Import/Export</comment>
   </data>
   <data name="JobRelated" xml:space="preserve">
@@ -1288,13 +1288,13 @@
     <value>Monto de Débito</value>
   </data>
   <data name="DiscountAmount" xml:space="preserve">
-    <value>Monto de Descuento</value>
+    <value>Descuento Aceptado</value>
   </data>
   <data name="DiscountAmountAvailable" xml:space="preserve">
     <value>Monto de Descuento Disponible</value>
   </data>
   <data name="DiscountAmountTaken" xml:space="preserve">
-    <value>Monto de Descuento Aceptado</value>
+    <value>Descuento Aceptado</value>
   </data>
   <data name="DistributionGLAccount" xml:space="preserve">
     <value>Cuenta de Distribución del LM</value>
@@ -1306,10 +1306,10 @@
     <value>Monto de Documento a Pagar</value>
   </data>
   <data name="DocumentLineNumber" xml:space="preserve">
-    <value>N° Línea de Documento</value>
+    <value>Aplicar Número de Línea</value>
   </data>
   <data name="DocumentNetBalance" xml:space="preserve">
-    <value>Saldo Neto del Documento</value>
+    <value>Saldo Neto</value>
   </data>
   <data name="DocVersionCreatedIn" xml:space="preserve">
     <value>Creada en Versión de Documento</value>
@@ -1537,7 +1537,7 @@
     <value>Índice de Campo de Valor Escrito</value>
   </data>
   <data name="UnappliedJobDiscountAmount" xml:space="preserve">
-    <value>Monto de Descuento del Trabajo No Aplicado</value>
+    <value>Monto de Descuento No Aplicado</value>
   </data>
   <data name="UnappliedJobPaymentAmount" xml:space="preserve">
     <value>Monto No Aplicado</value>

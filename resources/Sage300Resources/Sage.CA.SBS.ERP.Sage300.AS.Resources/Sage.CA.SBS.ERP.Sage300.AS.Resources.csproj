@@ -139,6 +139,7 @@
     <EmbeddedResource Include="ASCommonResx.resx">
       <LastGenOutput>ASCommonResx.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ASCommonResx.es.resx" />
     <EmbeddedResource Include="ASCommonResx.fr.resx" />

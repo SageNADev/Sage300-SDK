@@ -1703,12 +1703,91 @@
     <value>Charges</value>
   </data>
   <data name="PM_Equipment" xml:space="preserve">
-    <value>Equipment Usage</value>
+    <value>Equipment</value>
   </data>
   <data name="PM_Revise_Estimates" xml:space="preserve">
     <value>Revise Estimates</value>
   </data>
   <data name="PM_ContractMaintenance" xml:space="preserve">
     <value>Contract Maintenance</value>
+  </data>
+  <data name="PM_Account_Sets" xml:space="preserve">
+    <value>Account Sets</value>
+  </data>
+  <data name="PM_Subcontractor" xml:space="preserve">
+    <value>Subcontractors</value>
+  </data>
+  <data name="PM_Projects" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="PM_Setup_Reports" xml:space="preserve">
+    <value>PJC Setup Reports</value>
+  </data>
+  <data name="AP_Setup_Reports" xml:space="preserve">
+    <value>A/P Setup Reports</value>
+  </data>
+  <data name="PM_GLIntegration" xml:space="preserve">
+    <value>G/L Integration</value>
+  </data>
+  <data name="PM_OptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="PM_MiscellaneousExpenses" xml:space="preserve">
+    <value>Miscellaneous Expenses</value>
+  </data>
+  <data name="PM_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="PM_OverheadExpenses" xml:space="preserve">
+    <value>Overhead Expenses</value>
+  </data>
+  <data name="PO_Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="PO_VendorDetails" xml:space="preserve">
+    <value>Vendor Details</value>
+  </data>
+  <data name="PO_WeightUOM" xml:space="preserve">
+    <value>Weight Unit of Measure</value>
+  </data>
+  <data name="PM_EquipmentUsage" xml:space="preserve">
+    <value>Equipment Usage</value>
+  </data>
+  <data name="PM_ContractStructures" xml:space="preserve">
+    <value>Contract Structures</value>
+  </data>
+  <data name="PM_Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="PO_AccountSets" xml:space="preserve">
+    <value>Account Sets</value>
+    <comment>Top Menu</comment>
+  </data>
+  <data name="PM_SegmentCodes" xml:space="preserve">
+    <value>Segment Codes</value>
+  </data>
+  <data name="PM_Employees" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="AR_Setup_Reports" xml:space="preserve">
+    <value>A/R Setup Reports</value>
+  </data>
+  <data name="OE_Setup_Report" xml:space="preserve">
+    <value>O/E Setup Reports</value>
+  </data>
+  <data name="IC_GL_Integration" xml:space="preserve">
+    <value>G/L Integration</value>
+  </data>
+  <data name="IC_Mask_Structures" xml:space="preserve">
+    <value>Mask Structures</value>
+  </data>
+  <data name="IC_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="IC_Warranty_Contract_Codes" xml:space="preserve">
+    <value>Warranty/Contract Codes</value>
+  </data>
+  <data name="Bank_Setup_Reports" xml:space="preserve">
+    <value>Bank Setup Reports</value>
   </data>
 </root>

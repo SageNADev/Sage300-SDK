@@ -310,7 +310,6 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties_BACKUP.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties_BACKUP.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js">Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js">Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js">Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js</ProjectItem>
@@ -330,6 +329,33 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js</ProjectItem>
+            </Folder>
+            <Folder Name="DeclarativeReport" TargetFolderName="DeclarativeReport">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReportBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReportBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReportRepository.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReportRepository.js</ProjectItem>
+              <Folder Name="Shared" TargetFolderName="Shared">
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.FiscalCalendarRepository.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.FiscalCalendarRepository.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.GetICManufacturerItem.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.GetICManufacturerItem.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown - BROKEN.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown - BROKEN.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICSegmentCodeDropdown.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICSegmentCodeDropdown.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ResetDropdownListDataSource.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ResetDropdownListDataSource.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrency.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrency.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrencyDecimals.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrencyDecimals.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActiveYN.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActiveYN.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetICActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetICActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetICActiveYN.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetICActiveYN.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetMultiCurrency.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetMultiCurrency.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetMultiCurrencyYN.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetMultiCurrencyYN.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetNAActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetNAActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOBActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOBActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOEActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOEActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOptionalFieldLicense.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOptionalFieldLicense.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetPayrollActiveYN.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetPayrollActiveYN.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetPMActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetPMActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetSNActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetSNActive.js</ProjectItem>
+              </Folder>
             </Folder>
             <Folder Name="ExportImport" TargetFolderName="ExportImport">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js</ProjectItem>
@@ -389,6 +415,18 @@
               <Folder Name="Partials" TargetFolderName="Partials">
                 <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="_OnPremiseLogin.cshtml">_OnPremiseLogin.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="DeclarativeReport" TargetFolderName="DeclarativeReport">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Load.cshtml">Load.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_DeclarativeReport.cshtml">_DeclarativeReport.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+                <Folder Name="Shared" TargetFolderName="Shared">
+                  <ProjectItem ReplaceParameters="true" TargetFileName="_APLocalization.cshtml">_APLocalization.cshtml</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="_GLLocalization.cshtml">_GLLocalization.cshtml</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="_ICLocalization.cshtml">_ICLocalization.cshtml</ProjectItem>
+                </Folder>
               </Folder>
             </Folder>
             <Folder Name="Error" TargetFolderName="Error">

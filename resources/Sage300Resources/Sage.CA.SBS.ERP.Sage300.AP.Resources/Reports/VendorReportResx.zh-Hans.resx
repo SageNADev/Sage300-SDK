@@ -126,6 +126,9 @@
   <data name="RecurringPayables" xml:space="preserve">
     <value>经常性应付</value>
   </data>
+  <data name="ShowTaxNumbers" xml:space="preserve">
+    <value>显示税务编号</value>
+  </data>
   <data name="ReportType_VendorActivityStatistics" xml:space="preserve">
     <value>供应商活动统计</value>
   </data>

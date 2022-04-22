@@ -53,6 +53,25 @@ body {
   position: relative;
 }
 
+/* Skip Menu */
+/* ----------------------------------------------------------------------------------- */
+
+.skip-menu {
+    position: absolute;
+    top: 10px;
+    z-index: -1;
+    margin-left: 7px;
+    padding: 7px 8px 7px 8px;
+    background-color: #fff;
+    border: 1px solid #555;
+    border-radius: 3px;
+
+    &:focus {
+      z-index: 500;
+    }
+
+}
+
 
 /* header / Top Navigation */
 /* ----------------------------------------------------------------------------------- */
@@ -118,10 +137,10 @@ body {
       cursor: pointer;
       color: #003348;
       display: inline-block;
-      top: -23px;
+      top: -28px;
       position: relative;
-      padding: 0 8px 0 0;
-      height: 2.2rem;
+      padding: 14px 10px 0 8px;
+      height: 3.5rem;
 
       .glyphicon {
         margin-right: 6px;
@@ -135,10 +154,22 @@ body {
           opacity: .7;
           filter: alpha(opacity=70);
         }
+
+        > span {
+          position: relative;
+          top: 5px;
+        }
+
+        &:focus {
+          outline: #005c9a auto;
+          outline-offset: -2px;
+        }
       }
 
       .session-date-widget-container {
         display: none;
+        position: relative;
+        top: 5px;
 
         .session-date-widget {
           border: 1px solid @sage-gray;
@@ -176,7 +207,7 @@ body {
               height: 24px;
               background: none;
               font-size: 14px;
-              width: 247px !important;
+              width: 235px !important;
               padding-left: 0;
               line-height: 0;
             }
@@ -233,6 +264,12 @@ body {
           &:before {
             content: none;
           }
+        }
+
+        &.k-state-focused,
+        &:focus {
+          outline: #005c9a auto 5px;
+          outline-offset: -2px;
         }
 
         &.menu-item-with-icon {
@@ -376,9 +413,10 @@ body {
           top: 3.575rem !important;
 
           li.k-item.k-state-hover,
+          li.k-item.k-state-focused,
           li.k-item:hover {
             background-image: none;
-            background-color: @white;
+            background-color: @btn-link-hover-color;
           }
 
           .k-animation-container{
@@ -390,6 +428,7 @@ body {
               padding-left: 18px;
 
               &.k-state-hover,
+              &.k-state-focused,
               &:hover {
                 background-image: none;
                 background-color: @btn-link-hover-color;
@@ -475,8 +514,6 @@ body {
     background-image: url('@{image-path}/home/sage_300_logo_black.png');
   }
 }
-
-
 
 .color-picker {
   background: transparent url('@{image-path}/home/color_picker_bg.png') no-repeat;
