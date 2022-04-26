@@ -1,0 +1,1061 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="1099CPRSCode" xml:space="preserve">
+    <value>1099/CPRS 代码</value>
+  </data>
+  <data name="1099CPRSCodeFrom" xml:space="preserve">
+    <value>从 1099/CPRS 代码</value>
+  </data>
+  <data name="1099CPRSCodeTo" xml:space="preserve">
+    <value>到 1099/CPRS 代码</value>
+  </data>
+  <data name="AccountSet" xml:space="preserve">
+    <value>科目集合</value>
+  </data>
+  <data name="AccountSetFrom" xml:space="preserve">
+    <value>从科目集合</value>
+  </data>
+  <data name="AccountSetTo" xml:space="preserve">
+    <value>到科目集合</value>
+  </data>
+  <data name="AP_1099CPRSCodesTitle" xml:space="preserve">
+    <value>应付帐款/1099/CPRS 代码报表</value>
+  </data>
+  <data name="AP_AccountSetsTitle" xml:space="preserve">
+    <value>应付帐款/科目集合报表</value>
+  </data>
+  <data name="AP_DistributionCodesTitle" xml:space="preserve">
+    <value>应付帐款/分配代码报表</value>
+  </data>
+  <data name="AP_DistributionSetsTitle" xml:space="preserve">
+    <value>应付帐款/分配集合报表</value>
+  </data>
+  <data name="AP_EmailMessagesTitle" xml:space="preserve">
+    <value>应付帐款/电邮讯息报表</value>
+  </data>
+  <data name="AP_GLIntegrationTitle" xml:space="preserve">
+    <value>应付帐款/总帐整合报表</value>
+  </data>
+  <data name="AP_OptionalFieldsTitle" xml:space="preserve">
+    <value>应付帐款/自选字段报表</value>
+  </data>
+  <data name="AP_OptionsTitle" xml:space="preserve">
+    <value>应付帐款/选项报表</value>
+  </data>
+  <data name="AP_PaymentCodesTitle" xml:space="preserve">
+    <value>应付帐款/付款代码报表</value>
+  </data>
+  <data name="AP_PaymentSelectionCodesTitle" xml:space="preserve">
+    <value>应付帐款/付款选择代码报表</value>
+  </data>
+  <data name="AP_TermsTitle" xml:space="preserve">
+    <value>应付帐款/条款代码</value>
+  </data>
+  <data name="ChargeCodeFrom" xml:space="preserve">
+    <value>从收费代码</value>
+  </data>
+  <data name="ChargeCodeTo" xml:space="preserve">
+    <value>到收费代码</value>
+  </data>
+  <data name="Charges" xml:space="preserve">
+    <value>项目成本管理/收费报表</value>
+  </data>
+  <data name="ChargesTitle" xml:space="preserve">
+    <value>项目成本管理/收费报表</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="CurrencyFieldLabel" xml:space="preserve">
+    <value>[ZH-HANS] Currency Field Label</value>
+    <comment>Translation Unnecessary</comment>
+  </data>
+  <data name="DateFieldLabel" xml:space="preserve">
+    <value>[ZH-HANS] Date Field Label</value>
+    <comment>Translation Unnecessary</comment>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>分配代码</value>
+  </data>
+  <data name="DistributionCodeFrom" xml:space="preserve">
+    <value>从分配代码</value>
+  </data>
+  <data name="DistributionCodeTo" xml:space="preserve">
+    <value>到分配代码</value>
+  </data>
+  <data name="DistributionSet" xml:space="preserve">
+    <value>分配集合</value>
+  </data>
+  <data name="DistributionSetFrom" xml:space="preserve">
+    <value>从分配集合</value>
+  </data>
+  <data name="DistributionSetTo" xml:space="preserve">
+    <value>到分配集合</value>
+  </data>
+  <data name="Error_MissingFinderForRange" xml:space="preserve">
+    <value>Could not find associated finder control for range.</value>
+    <comment>Internal system message - no translation necessary</comment>
+  </data>
+  <data name="IncludeMultiplePaymentSchedules" xml:space="preserve">
+    <value>包括排程</value>
+  </data>
+  <data name="IncludeOptionalFields" xml:space="preserve">
+    <value>包括自选字段</value>
+  </data>
+  <data name="MiscellaneousCodeFrom" xml:space="preserve">
+    <value>从杂项代码</value>
+  </data>
+  <data name="MiscellaneousCodeTo" xml:space="preserve">
+    <value>到杂项代码</value>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>货品编号</value>
+  </data>
+  <data name="ItemNumberFrom" xml:space="preserve">
+    <value>货品编号从</value>
+  </data>
+  <data name="ItemNumberTo" xml:space="preserve">
+    <value>货品编号到</value>
+  </data>
+  <data name="ItemStatus_ActiveItems" xml:space="preserve">
+    <value>活动货品</value>
+  </data>
+  <data name="ItemStatus_AllItems" xml:space="preserve">
+    <value>所有货品</value>
+  </data>
+  <data name="ItemStatus_InactiveItems" xml:space="preserve">
+    <value>闲置货品</value>
+  </data>
+  <data name="NumericFieldLabel" xml:space="preserve">
+    <value>[ZH-HANS] Numeric Field Label</value>
+    <comment>Translation Unnecessary</comment>
+  </data>
+  <data name="Option1" xml:space="preserve">
+    <value>[ZH-HANS] Option 1</value>
+    <comment>Translation Unnecessary</comment>
+  </data>
+  <data name="Option2" xml:space="preserve">
+    <value>[ZH-HANS] Option 2</value>
+    <comment>Translation Unnecessary</comment>
+  </data>
+  <data name="Option3" xml:space="preserve">
+    <value>[ZH-HANS] Option 3</value>
+    <comment>Translation Unnecessary</comment>
+  </data>
+  <data name="Option4" xml:space="preserve">
+    <value>[ZH-HANS] Option 4</value>
+    <comment>Translation Unnecessary</comment>
+  </data>
+  <data name="Option5" xml:space="preserve">
+    <value>[ZH-HANS] Option 5</value>
+    <comment>Translation Unnecessary</comment>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>自选字段</value>
+  </data>
+  <data name="OverheadCodeFrom" xml:space="preserve">
+    <value>从管理费用代码</value>
+  </data>
+  <data name="OverheadCodeTo" xml:space="preserve">
+    <value>到管理费用代码</value>
+  </data>
+  <data name="PaymentSelectionCode" xml:space="preserve">
+    <value>选择代码</value>
+  </data>
+  <data name="PaymentSelectionCodeFrom" xml:space="preserve">
+    <value>从选择代码</value>
+  </data>
+  <data name="PaymentSelectionCodeTo" xml:space="preserve">
+    <value>到选择代码</value>
+  </data>
+  <data name="PM_AccountSetTitle" xml:space="preserve">
+    <value>项目成本管理/科目集合报表</value>
+  </data>
+  <data name="PM_GLIntegrationTitle" xml:space="preserve">
+    <value>项目成本管理/总帐整合报表</value>
+  </data>
+  <data name="PM_MiscellaneousExpensesTitle" xml:space="preserve">
+    <value>项目成本管理/ 杂项费用报表</value>
+  </data>
+  <data name="PM_OptionalFieldTitle" xml:space="preserve">
+    <value>项目成本管理/自选字段报表</value>
+  </data>
+  <data name="PM_OptionsTitle" xml:space="preserve">
+    <value>项目成本管理/选项报表</value>
+  </data>
+  <data name="PM_OverheadExpensesTitle" xml:space="preserve">
+    <value>项目成本管理/管理费用报表</value>
+  </data>
+  <data name="PO_GLIntegrationTitle" xml:space="preserve">
+    <value>采购订单总帐整合报表</value>
+  </data>
+  <data name="PO_ItemsTitle" xml:space="preserve">
+    <value>采购订单/货品报表</value>
+  </data>
+  <data name="PO_OptionalFieldsTitle" xml:space="preserve">
+    <value>采购订单/自选字段报表</value>
+  </data>
+  <data name="PO_OptionsTitle" xml:space="preserve">
+    <value>采购订单/选项报表</value>
+  </data>
+  <data name="PO_ShipViaCodesTitle" xml:space="preserve">
+    <value>采购订单/发货经由代码报表</value>
+  </data>
+  <data name="PO_TemplatesTitle" xml:space="preserve">
+    <value>采购订单/模板报表</value>
+  </data>
+  <data name="PO_WeightUOMTitle" xml:space="preserve">
+    <value>采购订单重量计量单位報表</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>打印</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>概览</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>项目</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>项目</value>
+  </data>
+  <data name="ProjectTypeCostPlus" xml:space="preserve">
+    <value>成本加</value>
+  </data>
+  <data name="ProjectTypeFixedPrice" xml:space="preserve">
+    <value>固定价格</value>
+  </data>
+  <data name="ProjectTypeTimeAndMaterials" xml:space="preserve">
+    <value>时间和材料</value>
+  </data>
+  <data name="RadioButtonGroupLabel" xml:space="preserve">
+    <value>[ZH-HANS] Radio Button Group Label</value>
+    <comment>Translation Unnecessary</comment>
+  </data>
+  <data name="ShipViaCodeFrom" xml:space="preserve">
+    <value>从发货经由代码</value>
+  </data>
+  <data name="ShipViaCodes" xml:space="preserve">
+    <value>发货经由代码</value>
+  </data>
+  <data name="ShipViaCodeTo" xml:space="preserve">
+    <value>到发货经由代码</value>
+  </data>
+  <data name="ShowSettings" xml:space="preserve">
+    <value>显示设置</value>
+  </data>
+  <data name="Subcontractor" xml:space="preserve">
+    <value>分包商</value>
+  </data>
+  <data name="SubcontractorFrom" xml:space="preserve">
+    <value>从分包商</value>
+  </data>
+  <data name="SubcontractorTitle" xml:space="preserve">
+    <value>项目成本管理/分包商报表</value>
+  </data>
+  <data name="SubcontractorTo" xml:space="preserve">
+    <value>到分包商</value>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>税务</value>
+  </data>
+  <data name="TemplateCodeFrom" xml:space="preserve">
+    <value>从模板代码</value>
+  </data>
+  <data name="TemplateCodes" xml:space="preserve">
+    <value>模板代码</value>
+  </data>
+  <data name="TemplateCodeTo" xml:space="preserve">
+    <value>到模板代码</value>
+  </data>
+  <data name="TermsCode" xml:space="preserve">
+    <value>条款代码</value>
+  </data>
+  <data name="TermsCodeFrom" xml:space="preserve">
+    <value>从条款代码</value>
+  </data>
+  <data name="TermsCodeTo" xml:space="preserve">
+    <value>到条款代码</value>
+  </data>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>计量单位</value>
+  </data>
+  <data name="Vendors" xml:space="preserve">
+    <value>供应商</value>
+  </data>
+  <data name="MiscellaneousCode" xml:space="preserve">
+    <value>杂项代码</value>
+  </data>
+  <data name="OverheadCode" xml:space="preserve">
+    <value>管理费用代码</value>
+  </data>
+  <data name="EquipmentCode" xml:space="preserve">
+    <value>设备代码</value>
+  </data>
+  <data name="EquipmentCodeFrom" xml:space="preserve">
+    <value>从设备代码</value>
+  </data>
+  <data name="EquipmentCodeTo" xml:space="preserve">
+    <value>到设备代码</value>
+  </data>
+  <data name="PM_EquipmentTitle" xml:space="preserve">
+    <value>项目成本管理/设备报表</value>
+  </data>
+  <data name="PM_ContractStructuresTitle" xml:space="preserve">
+    <value>项目成本管理/合约结构报表</value>
+  </data>
+  <data name="StructureCode" xml:space="preserve">
+    <value>结构代码</value>
+  </data>
+  <data name="StructureCodeFrom" xml:space="preserve">
+    <value>从结构代码</value>
+  </data>
+  <data name="StructureCodeTo" xml:space="preserve">
+    <value>到结构代码</value>
+  </data>
+  <data name="Includes" xml:space="preserve">
+    <value>包括</value>
+  </data>
+  <data name="CategoryFromTemplate" xml:space="preserve">
+    <value>从%1</value>
+  </data>
+  <data name="CategoryToTemplate" xml:space="preserve">
+    <value>到%1</value>
+  </data>
+  <data name="CostType" xml:space="preserve">
+    <value>成本类型</value>
+  </data>
+  <data name="CostTypeFrom" xml:space="preserve">
+    <value>从成本类型</value>
+  </data>
+  <data name="CostTypeTo" xml:space="preserve">
+    <value>到成本类型</value>
+  </data>
+  <data name="PM_CategoriesTitle" xml:space="preserve">
+    <value>项目成本管理/%1报表</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>包括</value>
+  </data>
+  <data name="PM_ProjectsTitle" xml:space="preserve">
+    <value>项目成本管理/%1报表</value>
+  </data>
+  <data name="ProjectCodeFrom" xml:space="preserve">
+    <value>从%1</value>
+  </data>
+  <data name="ProjectCodeTo" xml:space="preserve">
+    <value>到%1</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>%1类型</value>
+  </data>
+  <data name="ProjectTypeAll" xml:space="preserve">
+    <value>所有</value>
+  </data>
+  <data name="PO_AccountSetsTitle" xml:space="preserve">
+    <value>采购订单/科目集合报表</value>
+  </data>
+  <data name="AllSegments" xml:space="preserve">
+    <value>所有节段</value>
+  </data>
+  <data name="PMSegmentCodeTitle" xml:space="preserve">
+    <value>项目成本管理/节段代码报表</value>
+  </data>
+  <data name="Segment" xml:space="preserve">
+    <value>节段</value>
+  </data>
+  <data name="SpecificSegment" xml:space="preserve">
+    <value>特定节段</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>明细</value>
+  </data>
+  <data name="PO_VendorContractCostsTitle" xml:space="preserve">
+    <value>采购订单/供应商合约成本报表</value>
+  </data>
+  <data name="PrintAmountsIn" xml:space="preserve">
+    <value>打印金额以</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>汇总</value>
+  </data>
+  <data name="VendorContractCost" xml:space="preserve">
+    <value>供应商合约成本</value>
+  </data>
+  <data name="VendorCurrency" xml:space="preserve">
+    <value>供应商币种</value>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>供应商编号</value>
+  </data>
+  <data name="Error_InvalidOrUnknownSectionRenderingDirection" xml:space="preserve">
+    <value>Invalid or unknown Section Rendering Direction value specified.</value>
+    <comment>Internal System Message - Translation unnecessary</comment>
+  </data>
+  <data name="PO_VendorDetailsTitle" xml:space="preserve">
+    <value>采购订单/供应商明细</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>雇员</value>
+  </data>
+  <data name="EmployeeFrom" xml:space="preserve">
+    <value>从雇员</value>
+  </data>
+  <data name="EmployeeTo" xml:space="preserve">
+    <value>到雇员</value>
+  </data>
+  <data name="PayrollType" xml:space="preserve">
+    <value>薪资类型</value>
+  </data>
+  <data name="PM_EmployeesTitle" xml:space="preserve">
+    <value>项目成本管理/雇员报表</value>
+  </data>
+  <data name="AR_SalespersonsTitle" xml:space="preserve">
+    <value>应收帐款/业务员报表</value>
+  </data>
+  <data name="IncludeCommissionRates" xml:space="preserve">
+    <value>包括佣金率</value>
+  </data>
+  <data name="PeriodFrom" xml:space="preserve">
+    <value>从期间</value>
+  </data>
+  <data name="Salesperson" xml:space="preserve">
+    <value>业务员</value>
+  </data>
+  <data name="SalespersonFrom" xml:space="preserve">
+    <value>从业务员</value>
+  </data>
+  <data name="SalespersonProfile" xml:space="preserve">
+    <value>业务员概览</value>
+  </data>
+  <data name="SalespersonStatistics" xml:space="preserve">
+    <value>业务员统计</value>
+  </data>
+  <data name="SalespersonTo" xml:space="preserve">
+    <value>到业务员</value>
+  </data>
+  <data name="YearFrom" xml:space="preserve">
+    <value>从年度</value>
+  </data>
+  <data name="PO_AdditionalCostsTitle" xml:space="preserve">
+    <value>采购订单/附加成本报表</value>
+  </data>
+  <data name="AdditionalCost" xml:space="preserve">
+    <value>附加成本</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>币种</value>
+  </data>
+  <data name="FromAdditionalCost" xml:space="preserve">
+    <value>从附加成本</value>
+  </data>
+  <data name="FromCurrency" xml:space="preserve">
+    <value>从币种</value>
+  </data>
+  <data name="FromVendorNumber" xml:space="preserve">
+    <value>从供应商编号</value>
+  </data>
+  <data name="ToAdditionalCost" xml:space="preserve">
+    <value>到附加成本</value>
+  </data>
+  <data name="ToCurrency" xml:space="preserve">
+    <value>到币种</value>
+  </data>
+  <data name="ToVendorNumber" xml:space="preserve">
+    <value>到供应商编号</value>
+  </data>
+  <data name="CostClass" xml:space="preserve">
+    <value>成本级别</value>
+  </data>
+  <data name="PM_CostTypesTitle" xml:space="preserve">
+    <value>项目成本管理/成本类型报表</value>
+  </data>
+  <data name="AR_OptionsTitle" xml:space="preserve">
+    <value>应收帐款/选项报表</value>
+  </data>
+  <data name="AR_AccountSetsTitle" xml:space="preserve">
+    <value>应收帐款/科目集合报表</value>
+  </data>
+  <data name="AR_BillingCyclesTitle" xml:space="preserve">
+    <value>应收帐款/帐单周期报表</value>
+  </data>
+  <data name="AR_DistributionCodesTitle" xml:space="preserve">
+    <value>应收帐款/分配代码报表</value>
+  </data>
+  <data name="AR_DunningMessagesTitle" xml:space="preserve">
+    <value>应收帐款/催款讯息报表</value>
+  </data>
+  <data name="BillingCycle" xml:space="preserve">
+    <value>帐单周期</value>
+  </data>
+  <data name="BillingCycleFrom" xml:space="preserve">
+    <value>从帐单周期</value>
+  </data>
+  <data name="BillingCycleTo" xml:space="preserve">
+    <value>到帐单周期</value>
+  </data>
+  <data name="AR_InterestProfilesTitle" xml:space="preserve">
+    <value>应收帐款/利息概览报表</value>
+  </data>
+  <data name="AR_ItemsTitle" xml:space="preserve">
+    <value>应收帐款/货品报表</value>
+  </data>
+  <data name="AR_PaymentCodesTitle" xml:space="preserve">
+    <value>应收帐款/付款代码报表</value>
+  </data>
+  <data name="AR_TermsTitle" xml:space="preserve">
+    <value>应收帐款/条款报表</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>币种代码</value>
+  </data>
+  <data name="CurrencyCodeFrom" xml:space="preserve">
+    <value>从币种代码</value>
+  </data>
+  <data name="InterestProfile" xml:space="preserve">
+    <value>利息概览</value>
+  </data>
+  <data name="InterestProfileFrom" xml:space="preserve">
+    <value>从利息概览</value>
+  </data>
+  <data name="InterestProfileTo" xml:space="preserve">
+    <value>到利息概览</value>
+  </data>
+  <data name="PO_EmailMessagesTitle" xml:space="preserve">
+    <value>应付帐款/电邮讯息报表</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>货品</value>
+  </data>
+  <data name="ItemComments" xml:space="preserve">
+    <value>货品备注</value>
+  </data>
+  <data name="ItemCost" xml:space="preserve">
+    <value>货品成本</value>
+  </data>
+  <data name="ItemFrom" xml:space="preserve">
+    <value>从货品</value>
+  </data>
+  <data name="TaxInformation" xml:space="preserve">
+    <value>税务信息</value>
+  </data>
+  <data name="IC_AccountSetsTitle" xml:space="preserve">
+    <value>存货控制/科目集合报表</value>
+  </data>
+  <data name="IC_AlternateItemsTitle" xml:space="preserve">
+    <value>存货控制/替代货品报表</value>
+  </data>
+  <data name="IC_BillsOfMaterialsTitle" xml:space="preserve">
+    <value>存货控制/用料单报表</value>
+  </data>
+  <data name="IC_CategoriesTitle" xml:space="preserve">
+    <value>存货控制/类别报表</value>
+  </data>
+  <data name="IC_CustomerDetailsTitle" xml:space="preserve">
+    <value>存货控制/客户明细报表</value>
+  </data>
+  <data name="IC_GLIntegrationTitle" xml:space="preserve">
+    <value>存货控制/总帐整合报表</value>
+  </data>
+  <data name="IC_ItemStructuresTitle" xml:space="preserve">
+    <value>存货控制/货品结构报表</value>
+  </data>
+  <data name="IC_KittingItemsTitle" xml:space="preserve">
+    <value>存货控制/配套货品报表</value>
+  </data>
+  <data name="IC_LocationDetailsTitle" xml:space="preserve">
+    <value>存货控制/地点明细报表</value>
+  </data>
+  <data name="IC_LocationsTitle" xml:space="preserve">
+    <value>存货控制/地点报表</value>
+  </data>
+  <data name="IC_ManufacturersItemsTitle" xml:space="preserve">
+    <value>存货控制/制造商货品报表</value>
+  </data>
+  <data name="IC_MaskStructuresTitle" xml:space="preserve">
+    <value>存货控制/屏蔽结构报表</value>
+  </data>
+  <data name="IC_OptionalFieldsTitle" xml:space="preserve">
+    <value>存货控制/自选字段报表</value>
+  </data>
+  <data name="IC_OptionsTitle" xml:space="preserve">
+    <value>存货控制/选项报表</value>
+  </data>
+  <data name="IC_PriceListCodesTitle" xml:space="preserve">
+    <value>存货控制/价目表代码报表</value>
+  </data>
+  <data name="IC_ReorderQuantitiesTitle" xml:space="preserve">
+    <value>存货控制/再订货数量报表</value>
+  </data>
+  <data name="IC_SegmentCodesTitle" xml:space="preserve">
+    <value>存货控制/节段代码报表</value>
+  </data>
+  <data name="IC_UnitsOfMeasureTitle" xml:space="preserve">
+    <value>存货控制/计量单位报表</value>
+  </data>
+  <data name="IC_VendorDetailsTitle" xml:space="preserve">
+    <value>存货控制/供应商明细报表</value>
+  </data>
+  <data name="IC_WarrantyCodesTitle" xml:space="preserve">
+    <value>存货控制/保修代码报表</value>
+  </data>
+  <data name="IC_WeightUnitsOfMeasureTitle" xml:space="preserve">
+    <value>存货控制/重量计量单位报表</value>
+  </data>
+  <data name="AR_CommentTypesTitle" xml:space="preserve">
+    <value>应收帐款/备注类型报表</value>
+  </data>
+  <data name="AR_EmailMessagesTitle" xml:space="preserve">
+    <value>应收帐款/电邮讯息报表</value>
+  </data>
+  <data name="AR_GLIntegrationTitle" xml:space="preserve">
+    <value>应收帐款/总帐整合报表</value>
+  </data>
+  <data name="AR_OptionalFieldsTitle" xml:space="preserve">
+    <value>应收帐款/自选字段报表</value>
+  </data>
+  <data name="CommentType" xml:space="preserve">
+    <value>备注类型</value>
+  </data>
+  <data name="CommentTypeFrom" xml:space="preserve">
+    <value>从备注类型</value>
+  </data>
+  <data name="CommentTypeTo" xml:space="preserve">
+    <value>到备注类型</value>
+  </data>
+  <data name="ItemStructure" xml:space="preserve">
+    <value>货品结构</value>
+  </data>
+  <data name="ItemStructureFrom" xml:space="preserve">
+    <value>从货品结构</value>
+  </data>
+  <data name="ItemStructureTo" xml:space="preserve">
+    <value>到货品结构</value>
+  </data>
+  <data name="MaskStructure" xml:space="preserve">
+    <value>屏蔽结构</value>
+  </data>
+  <data name="MaskStructureFrom" xml:space="preserve">
+    <value>从屏蔽结构</value>
+  </data>
+  <data name="MaskStructureTo" xml:space="preserve">
+    <value>到屏蔽结构</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>地点</value>
+  </data>
+  <data name="FromLocation" xml:space="preserve">
+    <value>从地点</value>
+  </data>
+  <data name="ToLocation" xml:space="preserve">
+    <value>到地点</value>
+  </data>
+  <data name="ManufacturersItemNumber" xml:space="preserve">
+    <value>制造商货品编号</value>
+  </data>
+  <data name="ManufacturersItemNumberFrom" xml:space="preserve">
+    <value>从制造商货品编号</value>
+  </data>
+  <data name="ManufacturersItemNumberTo" xml:space="preserve">
+    <value>到制造商货品编号</value>
+  </data>
+  <data name="AllLocations" xml:space="preserve">
+    <value>所有地点</value>
+  </data>
+  <data name="ReorderQuantitiesFor" xml:space="preserve">
+    <value>再订货数量地点</value>
+  </data>
+  <data name="SpecificAndAllLocations" xml:space="preserve">
+    <value>特定和所有地点</value>
+  </data>
+  <data name="SpecificLocation" xml:space="preserve">
+    <value>特定地点</value>
+  </data>
+  <data name="OE_OptionsTitle" xml:space="preserve">
+    <value>销售订单/选项报表</value>
+  </data>
+  <data name="OE_ShipViaCodesTitle" xml:space="preserve">
+    <value>销售订单/发货经由代码报表</value>
+  </data>
+  <data name="OE_TemplatesTitle" xml:space="preserve">
+    <value>销售订单/模板报表</value>
+  </data>
+  <data name="OE_EmailMessagesTitle" xml:space="preserve">
+    <value>销售订单/电邮讯息报表</value>
+  </data>
+  <data name="OE_GLIntegrationTitle" xml:space="preserve">
+    <value>销售订单/总帐整合报表</value>
+  </data>
+  <data name="JobRelatedDetails" xml:space="preserve">
+    <value>作业相关明细</value>
+  </data>
+  <data name="MiscellaneousCharge" xml:space="preserve">
+    <value>杂项收费</value>
+  </data>
+  <data name="MiscellaneousChargeFrom" xml:space="preserve">
+    <value>从杂项收费</value>
+  </data>
+  <data name="MiscellaneousChargeTo" xml:space="preserve">
+    <value>到杂项收费</value>
+  </data>
+  <data name="OE_MiscellaneousChargesTitle" xml:space="preserve">
+    <value>销售订单/杂项收费报表</value>
+  </data>
+  <data name="CurrencyCodeTo" xml:space="preserve">
+    <value>到币种代码</value>
+  </data>
+  <data name="ItemTo" xml:space="preserve">
+    <value>到货品</value>
+  </data>
+  <data name="PeriodTo" xml:space="preserve">
+    <value>到期间</value>
+  </data>
+  <data name="YearTo" xml:space="preserve">
+    <value>到年度</value>
+  </data>
+  <data name="PrintAllDetails" xml:space="preserve">
+    <value>所有地点明细</value>
+  </data>
+  <data name="PrintDetailsWithItemAllowed" xml:space="preserve">
+    <value>允许存放货品地点明细</value>
+  </data>
+  <data name="PrintDetailsWithItemNotAllowed" xml:space="preserve">
+    <value>不允许存放货品地点明细</value>
+  </data>
+  <data name="OE_OptionalFieldTitle" xml:space="preserve">
+    <value>销售订单/自选字段报表</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>类别</value>
+  </data>
+  <data name="CategoryFrom" xml:space="preserve">
+    <value>从类别</value>
+  </data>
+  <data name="CategoryTo" xml:space="preserve">
+    <value>到类别</value>
+  </data>
+  <data name="PriceListCode" xml:space="preserve">
+    <value>价目表代码</value>
+  </data>
+  <data name="PriceListCodeFrom" xml:space="preserve">
+    <value>从价目表代码</value>
+  </data>
+  <data name="PriceListCodeTo" xml:space="preserve">
+    <value>到价目表代码</value>
+  </data>
+  <data name="ContractCode" xml:space="preserve">
+    <value>合约代码</value>
+  </data>
+  <data name="ContractCodeFrom" xml:space="preserve">
+    <value>从合约代码</value>
+  </data>
+  <data name="ContractCodeTo" xml:space="preserve">
+    <value>到合约代码</value>
+  </data>
+  <data name="IC_ContractCodesTitle" xml:space="preserve">
+    <value>存货控制/合约代码报表</value>
+  </data>
+  <data name="WarrantyCode" xml:space="preserve">
+    <value>保修代码</value>
+  </data>
+  <data name="WarrantyCodeFrom" xml:space="preserve">
+    <value>从保修代码</value>
+  </data>
+  <data name="WarrantyCodeTo" xml:space="preserve">
+    <value>到保修代码</value>
+  </data>
+  <data name="VendorNumberFrom" xml:space="preserve">
+    <value>供应商编号来自</value>
+  </data>
+  <data name="VendorNumberTo" xml:space="preserve">
+    <value>供应商编号</value>
+  </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>从货品编号</value>
+  </data>
+  <data name="LocationFrom" xml:space="preserve">
+    <value>地点从</value>
+  </data>
+  <data name="LocationTo" xml:space="preserve">
+    <value>地点到</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>到货品编号</value>
+  </data>
+  <data name="ItemSegment" xml:space="preserve">
+    <value>货品节段</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>颜色</value>
+  </data>
+  <data name="Long" xml:space="preserve">
+    <value>长</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>模型</value>
+  </data>
+  <data name="Series" xml:space="preserve">
+    <value>系列</value>
+  </data>
+  <data name="Style" xml:space="preserve">
+    <value>风格</value>
+  </data>
+  <data name="GL_AccountStructuresTitle" xml:space="preserve">
+    <value>总帐/科目结构报表</value>
+  </data>
+  <data name="GL_RevaluationCodesTitle" xml:space="preserve">
+    <value>总帐/重估代码报表</value>
+  </data>
+  <data name="RevaluationCode" xml:space="preserve">
+    <value>重估代码</value>
+  </data>
+  <data name="RevaluationCodeFrom" xml:space="preserve">
+    <value>从重估代码</value>
+  </data>
+  <data name="RevaluationCodeTo" xml:space="preserve">
+    <value>到重估代码</value>
+  </data>
+  <data name="GL_OptionalFieldTitle" xml:space="preserve">
+    <value>总帐/自选字段报表</value>
+  </data>
+  <data name="GL_OptionsTitle" xml:space="preserve">
+    <value>总帐/选项报表</value>
+  </data>
+  <data name="CustomerItemNumber" xml:space="preserve">
+    <value>客户货品编号</value>
+  </data>
+  <data name="CustomerItemNumberFrom" xml:space="preserve">
+    <value>从客户项目编号</value>
+  </data>
+  <data name="CustomerItemNumberTo" xml:space="preserve">
+    <value>至客户项目编号</value>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>客户编号</value>
+  </data>
+  <data name="CustomerNumberFrom" xml:space="preserve">
+    <value>从客户编号</value>
+  </data>
+  <data name="CustomerNumberTo" xml:space="preserve">
+    <value>到客户编号</value>
+  </data>
+  <data name="BK_BanksTitle" xml:space="preserve">
+    <value>银行报表</value>
+  </data>
+  <data name="BK_CreditCardTypesTitle" xml:space="preserve">
+    <value>信用卡类型报表</value>
+  </data>
+  <data name="BK_DistributionCodesTitle" xml:space="preserve">
+    <value>银行分配代码报表</value>
+  </data>
+  <data name="BK_DistributionSetsTitle" xml:space="preserve">
+    <value>银行分配集合报表</value>
+  </data>
+  <data name="BK_GLIntegrationTitle" xml:space="preserve">
+    <value>银行总帐整合报表</value>
+  </data>
+  <data name="BK_OptionsTitle" xml:space="preserve">
+    <value>银行 选项报表</value>
+  </data>
+  <data name="TX_TaxAuthoritiesTitle" xml:space="preserve">
+    <value>税务机关报表</value>
+  </data>
+  <data name="TX_TaxClassesTitle" xml:space="preserve">
+    <value>税级报表</value>
+  </data>
+  <data name="TX_TaxGroupsTitle" xml:space="preserve">
+    <value>税组报表</value>
+  </data>
+  <data name="TX_TaxRatesTitle" xml:space="preserve">
+    <value>税率报表</value>
+  </data>
+  <data name="GL_SegmentCodeTitle" xml:space="preserve">
+    <value>总帐/节段代码报表</value>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>银行代码</value>
+  </data>
+  <data name="BankCodeFrom" xml:space="preserve">
+    <value>从银行代码</value>
+  </data>
+  <data name="BankCodeTo" xml:space="preserve">
+    <value>到银行代码</value>
+  </data>
+  <data name="GL_SegmentCodesTitle" xml:space="preserve">
+    <value>总帐/节段代码报表</value>
+  </data>
+  <data name="IncludeTaxInformation" xml:space="preserve">
+    <value>已含税信息</value>
+  </data>
+  <data name="CreditCardType" xml:space="preserve">
+    <value>信用卡类型</value>
+  </data>
+  <data name="CreditCardTypeFrom" xml:space="preserve">
+    <value>从信用卡类型</value>
+  </data>
+  <data name="CreditCardTypeTo" xml:space="preserve">
+    <value>到信用卡类型</value>
+  </data>
+  <data name="GL_AccountGroupsTitle" xml:space="preserve">
+    <value>总帐/科目群组报表</value>
+  </data>
+  <data name="AccountGroup" xml:space="preserve">
+    <value>科目群组</value>
+  </data>
+  <data name="SortCodeAccountGroup" xml:space="preserve">
+    <value>排序代码 - 科目群组</value>
+  </data>
+  <data name="FromTaxAuthority" xml:space="preserve">
+    <value>从税务机关</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>采购</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>销售</value>
+  </data>
+  <data name="ToTaxAuthority" xml:space="preserve">
+    <value>到税务机关</value>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>交易类型</value>
+  </data>
+  <data name="FromTaxGroup" xml:space="preserve">
+    <value>从税组</value>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>税组</value>
+  </data>
+  <data name="ToTaxGroup" xml:space="preserve">
+    <value>到税组</value>
+  </data>
+  <data name="AccountGroupCode" xml:space="preserve">
+    <value>科目群组代码</value>
+  </data>
+  <data name="AccountGroupSortCode" xml:space="preserve">
+    <value>科目群组排序代码</value>
+  </data>
+  <data name="FromAccountGroupCode" xml:space="preserve">
+    <value>从科目群组代码</value>
+  </data>
+  <data name="ToAccountGroupCode" xml:space="preserve">
+    <value>到科目群组代码</value>
+  </data>
+</root>

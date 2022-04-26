@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -27,13 +27,12 @@ sourceJournalProfileReportUI = {
     sourceJournalProfileReportModel: {},
 
     /**
-     * @function
      * @name init
      * @description Primary Initialization Routine
      * @namespace sourceJournalProfileReportUI
      * @public
      */
-    init: function () {
+    init: () => {
         sourceJournalProfileReportOnSuccess.display(sourceJournalProfileReportModel);
         sourceJournalProfileReportUI.initButton();
         sourceJournalProfileReportUI.initFinders();
@@ -42,13 +41,12 @@ sourceJournalProfileReportUI = {
     },
 
     /**
-     * @function
      * @name initFinders
      * @description Initialize the finders
      * @namespace sourceJournalProfileReportUI
      * @public
      */
-    initFinders: function () {
+    initFinders: () => {
         let info = sg.viewFinderProperties.GL.SourceJournalProfiles;
         let buttonId = "btnFromSrcJournalFinder";
         let dataControlIdOrSuccessCallback = onFinderSuccess.FromProfile;
@@ -60,25 +58,23 @@ sourceJournalProfileReportUI = {
     },
 
     /**
-     * @function
      * @name initKendoBindings
      * @description Initialize the Kendo bindings
      * @namespace sourceJournalProfileReportUI
      * @public
      */
-    initKendoBindings: function () {
+    initKendoBindings: () => {
         sourceJournalProfileReportUI.sourceJournalProfileReportModel = ko.mapping.fromJS(sourceJournalProfileReportViewModel);
     },
 
     /**
-     * @function
      * @name initButton
      * @description Initialize the buttons
      * @namespace sourceJournalProfileReportUI
      * @public
      */
-    initButton: function () {
-        $("#btnPrint").on('click', function () {
+    initButton: () => {
+        $("#btnPrint").on('click', () => {
             if ($("#frmSourceJournalProfileReport").valid()) {
                 sg.utls.clearValidations("frmSourceJournalProfileReport");
                 let model = sourceJournalProfileReportUI.sourceJournalProfileReportModel.Data;
@@ -89,7 +85,7 @@ sourceJournalProfileReportUI = {
                     sg.utls.showMessageInfo(sg.utls.msgType.ERROR, jQuery.validator.format(sourceJournalProfileReportResources.FromToErrorMessage, sourceJournalProfileReportResources.Profile));
                 }
 
-                setTimeout(function () {
+                setTimeout(() => {
                     if (!errorMessage) {
                         $("#message").empty();
                         let data = sg.utls.ko.toJS(model, sourceJournalProfileReportUI.computedProperties);
@@ -105,7 +101,6 @@ sourceJournalProfileReportUI = {
 var onFinderSuccess = {
 
     /**
-     * @function
      * @name FromProfile
      * @description Event handler for successful finder selection
      * @namespace onFinderSuccess
@@ -113,7 +108,7 @@ var onFinderSuccess = {
      * 
      * @param {object} result The JSON result payload
      */
-    FromProfile: function (result) {
+    FromProfile: (result) => {
         if (result) {
             let sourceJournalName = result.SRCEJRNL;
             sourceJournalProfileReportUI.sourceJournalProfileReportModel.Data.Frjrnl(sourceJournalName);
@@ -123,7 +118,6 @@ var onFinderSuccess = {
     },
 
     /**
-     * @function
      * @name ToProfile
      * @description Event handler for successful finder selection
      * @namespace onFinderSuccess
@@ -131,7 +125,7 @@ var onFinderSuccess = {
      *
      * @param {object} result The JSON result payload
      */
-    ToProfile: function (result) {
+    ToProfile: (result) => {
         if (result) {
             let sourceJournalName = result.SRCEJRNL;
             sourceJournalProfileReportUI.sourceJournalProfileReportModel.Data.Tojrnl(sourceJournalName);
@@ -144,7 +138,6 @@ var onFinderSuccess = {
 var finderFilter = {
 
     /**
-     * @function
      * @name getFromProfileFilter
      * @description Setup the filter for 'FromProfile' finder
      * @namespace finderFilter
@@ -152,7 +145,7 @@ var finderFilter = {
      * 
      * @returns {object} The filter object
      */
-    getFromProfileFilter: function () {
+    getFromProfileFilter: () => {
         let filters = [[]];
         let documentType = $("#Data_Frjrnl").val();
         filters[0][0] = sg.finderHelper.createFilter("SourceJournalName", sg.finderOperator.StartsWith, documentType);
@@ -161,7 +154,6 @@ var finderFilter = {
     },
 
     /**
-     * @function
      * @name getToProfileFilter
      * @description Setup the filter for 'ToProfile' finder
      * @namespace finderFilter
@@ -169,7 +161,7 @@ var finderFilter = {
      *
      * @returns {object} The filter object
      */
-    getToProfileFilter: function () {
+    getToProfileFilter: () => {
         let filters = [[]];
         let documentType = $("#Data_Tojrnl").val();
         filters[0][0] = sg.finderHelper.createFilter("SourceJournalName", sg.finderOperator.StartsWith, documentType);
@@ -181,7 +173,6 @@ var finderFilter = {
 var sourceJournalProfileReportOnSuccess = {
 
     /**
-     * @function
      * @name display
      * @description Display the results
      * @namespace sourceJournalProfileReportOnSuccess
@@ -189,7 +180,7 @@ var sourceJournalProfileReportOnSuccess = {
      *
      * @param {object} result The JSON result payload
      */
-    display: function (result) {
+    display: (result) => {
         if (result) {
             if (!sourceJournalProfileReportUI.hasKoApplied) {
                 sourceJournalProfileReportUI.sourceJournalProfileReportModel = window.ko.mapping.fromJS(result);
@@ -204,7 +195,6 @@ var sourceJournalProfileReportOnSuccess = {
     },
 
     /**
-     * @function
      * @name executeSourceJournalProfileReport
      * @description Open the report result or display a message
      * @namespace sourceJournalProfileReportOnSuccess
@@ -212,7 +202,7 @@ var sourceJournalProfileReportOnSuccess = {
      *
      * @param {object} result The JSON result payload
      */
-    executeSourceJournalProfileReport: function (result) {
+    executeSourceJournalProfileReport: (result) => {
         if (result && result.UserMessage.IsSuccess) {
             sg.utls.openReport(result.ReportToken);
         } else {
@@ -222,6 +212,6 @@ var sourceJournalProfileReportOnSuccess = {
 };
 
 // Primary page entry point
-$(function () {
+$(() => {
     sourceJournalProfileReportUI.init();
 });

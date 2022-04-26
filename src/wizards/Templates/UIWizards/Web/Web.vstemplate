@@ -820,6 +820,8 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.png">sage_300_logo.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_black.png">sage_300_logo_black.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_white.png">sage_300_logo_white.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage_logo_black.png">sage_logo_black.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage_logo_green.png">sage_logo_green.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="startup-sprite.png">startup-sprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="tour_icon_sprite.png">tour_icon_sprite.png</ProjectItem>
           </Folder>
@@ -839,6 +841,11 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="ui-logo-sage-dark@2x.png">ui-logo-sage-dark@2x.png</ProjectItem>
           </Folder>
           <Folder Name="nav" TargetFolderName="nav">
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-code.png">icon-code.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-howto.png">icon-howto.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-ideas.png">icon-ideas.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-spanner.png">icon-spanner.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-tips.png">icon-tips.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu@2x.png">sprite_global_menu@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu_rev@2x.png">sprite_global_menu_rev@2x.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_navigation.png">sprite_navigation.png</ProjectItem>
@@ -864,6 +871,7 @@
           <Folder Name="ui" TargetFolderName="ui">
             <ProjectItem ReplaceParameters="false" TargetFileName="arrow.png">arrow.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="edit-columns-icon.png">edit-columns-icon.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-code-snippet.png">icon-code-snippet.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="icon-edit-sprite.png">icon-edit-sprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="icon_info.png">icon_info.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="icon_sage.png">icon_sage.png</ProjectItem>
@@ -896,6 +904,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="custom.css">custom.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="default-home.min.css">default-home.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="default.min.css">default.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="doc.css">doc.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="kendo.common.min.css">kendo.common.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="kendo.default.min.css">kendo.default.min.css</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="stand-alone.css">stand-alone.css</ProjectItem>
@@ -940,6 +949,7 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="base.less">base.less</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="default-home.less">default-home.less</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="default.less">default.less</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="doc.less">doc.less</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="stand-alone.less">stand-alone.less</ProjectItem>
             <Folder Name="framework" TargetFolderName="framework">
               <ProjectItem ReplaceParameters="false" TargetFileName="aging-period.less">aging-period.less</ProjectItem>
@@ -1000,6 +1010,7 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="blank.less">blank.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="crm.less">crm.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="desktop.small.less">desktop.small.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="doc.less">doc.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="grid.less">grid.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="home.less">home.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="master-stand-alone.less">master-stand-alone.less</ProjectItem>
@@ -1732,7 +1743,6 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.MultiSelection.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinder.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties.js</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties_BACKUP.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.ViewFinderProperties_BACKUP.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js">Sage.CA.SBS.ERP.Sage300.Common.ReportBrowse.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js">Sage.CA.SBS.ERP.Sage300.Common.ReportOptions.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js">Sage.CA.SBS.ERP.Sage300.Common.SetCriteria.js</ProjectItem>
@@ -1752,6 +1762,33 @@
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginBehaviour.js</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginKoExtn.js</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js">Sage.CA.SBS.ERP.Sage300.Core.OnPremiseLoginRepository.js</ProjectItem>
+            </Folder>
+            <Folder Name="DeclarativeReport" TargetFolderName="DeclarativeReport">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReportBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReportBehaviour.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReportRepository.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReportRepository.js</ProjectItem>
+              <Folder Name="Shared" TargetFolderName="Shared">
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.FiscalCalendarRepository.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.FiscalCalendarRepository.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.GetICManufacturerItem.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.GetICManufacturerItem.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown - BROKEN.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown - BROKEN.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICSegmentCodeDropdown.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICSegmentCodeDropdown.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ResetDropdownListDataSource.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ResetDropdownListDataSource.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrency.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrency.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrencyDecimals.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrencyDecimals.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActiveYN.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActiveYN.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetICActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetICActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetICActiveYN.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetICActiveYN.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetMultiCurrency.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetMultiCurrency.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetMultiCurrencyYN.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetMultiCurrencyYN.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetNAActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetNAActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOBActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOBActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOEActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOEActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOptionalFieldLicense.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetOptionalFieldLicense.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetPayrollActiveYN.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetPayrollActiveYN.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetPMActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetPMActive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetSNActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetSNActive.js</ProjectItem>
+              </Folder>
             </Folder>
             <Folder Name="ExportImport" TargetFolderName="ExportImport">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js">Sage.CA.SBS.ERP.Sage300.Common.Plugin.Export.js</ProjectItem>
@@ -1811,6 +1848,18 @@
               <Folder Name="Partials" TargetFolderName="Partials">
                 <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="_OnPremiseLogin.cshtml">_OnPremiseLogin.cshtml</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="DeclarativeReport" TargetFolderName="DeclarativeReport">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Load.cshtml">Load.cshtml</ProjectItem>
+              <Folder Name="Partials" TargetFolderName="Partials">
+                <ProjectItem ReplaceParameters="true" TargetFileName="_DeclarativeReport.cshtml">_DeclarativeReport.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
+                <Folder Name="Shared" TargetFolderName="Shared">
+                  <ProjectItem ReplaceParameters="true" TargetFileName="_APLocalization.cshtml">_APLocalization.cshtml</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="_GLLocalization.cshtml">_GLLocalization.cshtml</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="_ICLocalization.cshtml">_ICLocalization.cshtml</ProjectItem>
+                </Folder>
               </Folder>
             </Folder>
             <Folder Name="Error" TargetFolderName="Error">

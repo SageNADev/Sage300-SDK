@@ -1,4 +1,4 @@
-﻿<%-- Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. --%>
+﻿<%-- Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. --%>
 
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ValuedPartner.TU.Web.Login" %>
 
@@ -27,7 +27,7 @@
                         <td class="auto-style3">  
                             <asp:Label ID="PwdLabel" style="font-family:Arial; color:#555" runat="server" Text="User Password "></asp:Label></td>  
                         <td>  
-                            <asp:TextBox ID="PwdText" TextMode="Password" runat="server" style='text-transform:uppercase' CssClass="auto-style2"></asp:TextBox></td>  
+                            <asp:TextBox ID="PwdText" TextMode="Password" runat="server" CssClass="auto-style2"></asp:TextBox></td>  
                     </tr>  
                     <tr>  
                         <td class="auto-style3">  

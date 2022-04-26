@@ -2828,4 +2828,7 @@
   <data name="FailedMTEmail" xml:space="preserve">
     <value>无法将凭证通过电邮发送给供应商{0}的联系人。检查是否正确设置了此供应商的联系人。</value>
   </data>
+  <data name="TaxNumberType" xml:space="preserve">
+    <value>税务编号类型</value>
+  </data>
 </root>

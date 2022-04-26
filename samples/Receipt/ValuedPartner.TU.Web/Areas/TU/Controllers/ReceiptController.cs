@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -114,14 +114,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult GetById(string id, bool oldRecordDeleted = false, bool isCalledAsPopup = false)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.GetById(id, oldRecordDeleted, isCalledAsPopup));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
-            }
+            return CallWithCatch(() => ControllerInternal.GetById(id, oldRecordDeleted, isCalledAsPopup),
+                CommonResx.GetFailedMessage, ReceiptHeaderResx.Receipt);
         }
 
         /// <summary>
@@ -135,15 +129,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult GetPagedReceiptDetails(int pageNumber, int pageSize, ReceiptHeader model, IList<IList<Sage.CA.SBS.ERP.Sage300.Common.Models.Filter>> filters)
         {
-            try
-            {
-                var receiptDetail = ControllerInternal.GetPagedDetail(pageNumber, pageSize, model, filters);
-                return JsonNet(receiptDetail);
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
-            }
+            return CallWithCatch(() => ControllerInternal.GetPagedDetail(pageNumber, pageSize, model, filters),
+                CommonResx.GetFailedMessage, ReceiptHeaderResx.Receipt);
         }
 
         /// <summary>
@@ -153,16 +140,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Header Optional Field model</returns>
         public JsonNetResult GetOptionalFieldFinderData(string optionalField)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.GetOptionalFieldFinderData(optionalField));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage2, businessException,
-                        CommonResx.OptionalField));
-            }
+            return CallWithCatch(() => ControllerInternal.GetOptionalFieldFinderData(optionalField),
+                CommonResx.SaveFailedMessage2, CommonResx.OptionalField);
         }
 
         /// <summary>
@@ -172,16 +151,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Detail Optional Field model</returns>
         public JsonNetResult GetDetailOptFieldFinderData(string optionalField)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.GetDetailOptFieldFinderData(optionalField));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage2, businessException,
-                        CommonResx.OptionalField));
-            }
+            return CallWithCatch(() => ControllerInternal.GetDetailOptFieldFinderData(optionalField),
+                CommonResx.SaveFailedMessage2, CommonResx.OptionalField);
         }
 
         /// <summary>
@@ -210,14 +181,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Refreshed header model</returns>
         public virtual JsonNetResult Refresh(ReceiptHeader model)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Refresh(model));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipts));
-            }
+            return CallWithCatch(() => ControllerInternal.Refresh(model),
+                CommonResx.GetFailedMessage, ReceiptHeaderResx.Receipts);
         }
 
         /// <summary>
@@ -228,14 +193,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult SetOptionalFieldValue(ReceiptDetailOptionalField model)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.SetOptionalFieldValue(model));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException, CommonResx.OptionalField));
-            }
+            return CallWithCatch(() => ControllerInternal.SetOptionalFieldValue(model),
+                CommonResx.AddFailedMessage, CommonResx.OptionalField);
         }
 
         /// <summary>
@@ -246,14 +205,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult SetHeaderOptFieldValue(ReceiptOptionalField model)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.SetOptionalFieldValue(model));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException, CommonResx.OptionalField));
-            }
+            return CallWithCatch(() => ControllerInternal.SetOptionalFieldValue(model),
+                CommonResx.AddFailedMessage, CommonResx.OptionalField);
         }
 
 
@@ -285,15 +238,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult SaveDetails(ReceiptHeader model)
         {
-            var response = new ViewModelBase<ReceiptHeader> { UserMessage = new UserMessage { IsSuccess = true } };
-            try
-            {
-                return JsonNet(ControllerInternal.SaveDetails(model));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.RefreshDetailsFailedMessage, businessException, "Receipt Detail"));
-            }
+            return CallWithCatch(() => ControllerInternal.SaveDetails(model),
+                CommonResx.RefreshDetailsFailedMessage, CommonResx.Detail);
         }
 
         #endregion
@@ -307,15 +253,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Create()
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Create());
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException, ReceiptHeaderResx.Receipt));
-            }
+            return CallWithCatch(() => ControllerInternal.Create(),
+                CommonResx.AddFailedMessage, ReceiptHeaderResx.Receipt);
         }
 
         /// <summary>
@@ -329,15 +268,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult CreateDetail(ReceiptHeader model, int index, int pageSize, int pageNumber)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.CreateDetail(model, index, pageSize, pageNumber));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException, "Receipt Number"));
-            }
+            return CallWithCatch(() => ControllerInternal.CreateDetail(model, index, pageSize, pageNumber),
+                CommonResx.AddFailedMessage, ReceiptHeaderResx.ReceiptNumber);
         }
 
         /// <summary>
@@ -350,15 +282,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult DeleteDetails(ReceiptHeader model, int pageNumber, int pageSize)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.DeleteDetails(model, pageNumber, pageSize));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException, ReceiptHeaderResx.Receipt));
-            }
+            return CallWithCatch(() => ControllerInternal.DeleteDetails(model, pageNumber, pageSize),
+                CommonResx.DeleteFailedMessage, ReceiptHeaderResx.Receipt);
         }
 
         /// <summary>
@@ -369,24 +294,13 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Add(ReceiptHeader model)
         {
-            ViewModelBase<ReceiptViewModel> viewModel;
-
-            if (!ValidateModelState(ModelState, out viewModel))
+            if (!ValidateModelState(ModelState, out ViewModelBase<ModelBase> viewModel))
             {
                 return JsonNet(viewModel);
             }
 
-            try
-            {
-                var receiptAdded = ControllerInternal.Add(model);
-                return JsonNet(receiptAdded);
-            }
-
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException, ReceiptHeaderResx.Receipt));
-            }
+            return CallWithCatch(() => ControllerInternal.Add(model),
+                CommonResx.AddFailedMessage, ReceiptHeaderResx.Receipt);
         }
 
         /// <summary>
@@ -401,28 +315,14 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         public JsonNetResult CheckRateSpread(string rateType, string fromCurrency, DateTime rateDate, decimal rate,
             string toCurrency)
         {
-            try
-            {
-                return
-                    JsonNet(ControllerInternal.CheckRateSpread(rateType, fromCurrency, rateDate, rate, toCurrency));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, "Exchange Rate"));
-            }
+            return CallWithCatch(() => ControllerInternal.CheckRateSpread(rateType, fromCurrency, rateDate, rate, toCurrency),
+                CommonResx.GetFailedMessage, ReceiptHeaderResx.ExchangeRate);
         }
 
         public JsonNetResult GetVendorDetail(string vendorNumber)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.GetVendorDetail(vendorNumber));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.VendorNumber));
-            }
+            return CallWithCatch(() => ControllerInternal.GetVendorDetail(vendorNumber),
+                CommonResx.GetFailedMessage, ReceiptHeaderResx.VendorNumber);
         }
 
         /// <summary>
@@ -432,16 +332,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns></returns>
         public JsonNetResult ValidateDate(string date)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.ValidateDate(DateUtil.GetDate(date, DateUtil.GetMinDate())));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
-            }
-
-
+            return CallWithCatch(() => ControllerInternal.ValidateDate(DateUtil.GetDate(date, DateUtil.GetMinDate())),
+                CommonResx.GetFailedMessage, ReceiptHeaderResx.Receipt);
         }
 
         #endregion
@@ -456,22 +348,13 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Save(ReceiptHeader model)
         {
-            ViewModelBase<ReceiptViewModel> viewModel;
-
-            if (!ValidateModelState(ModelState, out viewModel))
+            if (!ValidateModelState(ModelState, out ViewModelBase<ModelBase> viewModel))
             {
                 return JsonNet(viewModel);
             }
 
-            try
-            {
-                var receiptUpdated = ControllerInternal.Save(model);
-                return JsonNet(receiptUpdated);
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
-            }
+            return CallWithCatch(() => ControllerInternal.Save(model),
+                CommonResx.SaveFailedMessage);
         }
 
         /// <summary>
@@ -484,14 +367,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Post(ReceiptHeader headerModel, long sequenceNumber, bool yesNo)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Post(headerModel, sequenceNumber, yesNo));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.PostingFailedMessage, businessException, ReceiptHeaderResx.Receipts));
-            }
+            return CallWithCatch(() => ControllerInternal.Post(headerModel, sequenceNumber, yesNo),
+                CommonResx.PostingFailedMessage, ReceiptHeaderResx.Receipts);
         }
 
         /// <summary>
@@ -504,14 +381,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult SaveDetailOptFields(List<ReceiptDetailOptionalField> receiptOptionalField, string receiptNumber, bool isDetail)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.SaveOptionalFields(receiptOptionalField, receiptNumber, isDetail));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage2, businessException, CommonResx.OptionalField));
-            }
+            return CallWithCatch(() => ControllerInternal.SaveOptionalFields(receiptOptionalField, receiptNumber, isDetail),
+                CommonResx.SaveFailedMessage2, CommonResx.OptionalField);
         }
 
         /// <summary>
@@ -525,14 +396,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         public virtual JsonNetResult DeleteOptionalFields(EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber,
             int pageSize)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.DeleteOptionalFields(model, pageNumber, pageSize, false));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException, CommonResx.OptionalField));
-            }
+            return CallWithCatch(() => ControllerInternal.DeleteOptionalFields(model, pageNumber, pageSize, false),
+                CommonResx.DeleteFailedMessage, CommonResx.OptionalField);
         }
 
         /// <summary>
@@ -546,16 +411,9 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         public virtual JsonNetResult DeleteDetailOptFields(EnumerableResponse<ReceiptDetailOptionalField> model, int pageNumber,
             int pageSize)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.DeleteOptionalFields(model, pageNumber, pageSize, true));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException, CommonResx.OptionalField));
-            }
+            return CallWithCatch(() => ControllerInternal.DeleteOptionalFields(model, pageNumber, pageSize, true),
+                CommonResx.DeleteFailedMessage, CommonResx.OptionalField);
         }
-
 
         /// <summary>
         /// Gets Receipt Detail optional fields
@@ -567,15 +425,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult GetDetailOptFields(int pageNumber, int pageSize, EnumerableResponse<ReceiptDetailOptionalField> model)
         {
-            try
-            {
-                var detailOptionalFields = ControllerInternal.GetDetailOptFields(pageNumber, pageSize, model);
-                return JsonNet(detailOptionalFields);
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
-            }
+            return CallWithCatch(() => ControllerInternal.GetDetailOptFields(pageNumber, pageSize, model),
+                CommonResx.GetFailedMessage, ReceiptHeaderResx.Receipt);
         }
 
         /// <summary>
@@ -588,15 +439,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult GetOptFields(int pageNumber, int pageSize, EnumerableResponse<ReceiptDetailOptionalField> model)
         {
-            try
-            {
-                var receiptOptionalFields = ControllerInternal.GetOptFields(pageNumber, pageSize, model);
-                return JsonNet(receiptOptionalFields);
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
-            }
+            return CallWithCatch(() => ControllerInternal.GetOptFields(pageNumber, pageSize, model),
+                CommonResx.GetFailedMessage, ReceiptHeaderResx.Receipt);
         }
 
         /// <summary>
@@ -607,14 +451,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult SetDetail(ReceiptDetail currentDetail)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.SetDetail(currentDetail));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException, ReceiptHeaderResx.Receipt));
-            }
+            return CallWithCatch(() => ControllerInternal.SetDetail(currentDetail),
+                CommonResx.SaveFailedMessage, ReceiptHeaderResx.Receipt);
         }
 
         /// <summary>
@@ -626,15 +464,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult RefreshDetail(ReceiptDetail model, string eventType)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.RefreshDetail(model, eventType));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.RefreshDetailsFailedMessage, businessException, ReceiptHeaderResx.Receipts));
-            }
+            return CallWithCatch(() => ControllerInternal.RefreshDetail(model, eventType),
+                CommonResx.RefreshDetailsFailedMessage, ReceiptHeaderResx.Receipts);
         }
         
         /// <summary>
@@ -644,15 +475,10 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult RefreshOptField()
         {
-            try
-            {
-                return JsonNet(ControllerInternal.RefreshOptField());
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.RefreshDetailsFailedMessage, businessException, ReceiptHeaderResx.Receipts));
-            }
+            return CallWithCatch(() => ControllerInternal.RefreshOptField(),
+                CommonResx.RefreshDetailsFailedMessage, ReceiptHeaderResx.Receipts);
         }
+
         /// <summary>
         /// Insert default details optional fields.
         /// </summary>
@@ -679,14 +505,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Returns a JsonNetResult object</returns>
         public virtual JsonNetResult Exists(string id, ReceiptHeader model)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Exists(id, model));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.ReceiptNumber));
-            }
+            return CallWithCatch(() => ControllerInternal.Exists(id, model),
+                CommonResx.GetFailedMessage, ReceiptHeaderResx.ReceiptNumber);
         }
 
         #endregion
@@ -702,14 +522,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Delete(string receiptNumber, long sequenceNumber)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Delete(receiptNumber, sequenceNumber));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException, ReceiptHeaderResx.Receipt));
-            }
+            return CallWithCatch(() => ControllerInternal.Delete(receiptNumber, sequenceNumber),
+                CommonResx.DeleteFailedMessage, ReceiptHeaderResx.Receipt);
         }
 
         /// <summary>
@@ -747,14 +561,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult GetHeaderValues(ReceiptHeader model, int eventType)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.GetHeaderValues(model, eventType));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ReceiptHeaderResx.Receipt));
-            }
+            return CallWithCatch(() => ControllerInternal.GetHeaderValues(model, eventType),
+                CommonResx.GetFailedMessage, ReceiptHeaderResx.Receipt);
         }
 
         #endregion

@@ -636,3 +636,96 @@
     float: left;
 }
 
+.portal-main-body .mystuff-container {
+    clear: both;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    min-height: 250px;
+    width: 100%;
+
+    .mystuff {
+      border: 1px solid #e0e0e0;
+      background-color: @white;
+      padding: 1rem;
+      position: absolute;
+      border-radius: 0.25rem;
+      width: ~"calc(100% - 46px)";
+      height: auto;
+
+      &:hover {
+        cursor: move;
+        -webkit-box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
+      }
+
+      h2 {
+        font-size: 1.125rem;
+        font-weight: normal;
+        color: #64006e;
+        margin-bottom: 1.25rem;
+        margin-top: 0.25rem;
+      }
+
+      button.btn-favorite {
+        width: 140px;
+        font-size: 14px;
+        min-height: 140px;
+        border-radius: 10px;
+        background-color: #E4E4E4;
+        border: 0;
+        padding: 0;
+        position: relative;
+        margin-right: 30px;
+        margin-bottom: 5px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .btn-favorite-icon {
+          top: -8px;
+          position: relative;
+        }
+
+        .portalIcon.closeIcon {
+          opacity: 0;
+        }
+
+        .btn-label {
+          position: absolute;
+          bottom: 0;
+          height: 40px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &:hover {
+          background-color: #3399CC;
+
+            .btn-label a { 
+              color: @white;
+
+              &:hover,
+              &:focus,
+              &:active,
+              &:visited {
+                color: @white;
+              }
+            }
+
+            .portalIcon.closeIcon {
+              background-position: -69px -14px;
+              opacity: 1;
+          }
+        }
+
+        &:focus {
+          outline: #005c9a auto 5px;
+          outline-offset: -3px;
+        }
+      }
+    }
+}

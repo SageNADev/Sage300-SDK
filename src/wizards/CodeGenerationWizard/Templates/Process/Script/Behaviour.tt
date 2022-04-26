@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -45,13 +45,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
     computedProperties: [],
 
     /**
-    * @function
     * @name init
     * @description Initialize the controls and apply kendo bindings
     * @namespace <#=localEntityName#>UI
     * @public
     */
-    init: function () {     
+    init: () => {     
         // Initialize the controls and apply kendo bindings 
         <#=localEntityName#>UI.initKendoBindings();          
         <#=localEntityName#>UI.initGrids();
@@ -68,47 +67,43 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
     },
     
     /**
-     * @function
      * @name initKendoBindings
      * @description Initialize the Kendo bindings
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initKendoBindings: function () {
+    initKendoBindings: () => {
         <#=localEntityName#>UI.<#=localEntityName#>Model = ko.mapping.fromJS(<#=entityName#>ViewModel);       
         <#=moduleId#><#=entityName#>KoExtn.<#=moduleId#><#=entityName#>ModelExtension(<#=localEntityName#>UI.<#=localEntityName#>Model);
     },
 
     /**
-     * @function
      * @name initGrids
      * @description Initialize the grids, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initGrids: function () {
+    initGrids: () => {
 
     },
 
     /**
-     * @function
      * @name initTabs
      * @description Initialize the tabs, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initTabs: function () {
+    initTabs: () => {
 
     },
 
     /**
-     * @function 
      * @name initFinders
      * @description Initialize all of the finders on the page, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initFinders: function() {
+    initFinders: () => {
 <#
     // Create code for finder
     snippet = new StringBuilder();
@@ -121,13 +116,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
     },
 
      /**
-     * @function
      * @name initNumericTextboxes
      * @description Initialize the numeric textboxes, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initNumericTextboxes: function () {
+    initNumericTextboxes: () => {
 <#
     // Create code for init numeric textboxes
     snippet = new StringBuilder();
@@ -140,35 +134,32 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
     },
 
     /**
-     * @function
      * @name initCheckBoxes
      * @description Initialize the click handlers for check boxes, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initCheckBoxes: function () {
+    initCheckBoxes: () => {
 
     },
     
     /**
-     * @function
      * @name initBlur
      * @description Initialize the onChange handlers for various controls, if needed
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initBlur:function() {
+    initBlur: () => {
 
     },    
 
     /**
-     * @function
      * @name initTextboxes
      * @description Initialize the Kendo text boxes, if needed
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initTextboxes: function () {
+    initTextboxes: () => {
 <#
     // Create code for init textboxes
     snippet = new StringBuilder();
@@ -181,13 +172,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
     },
 
     /**
-     * @function
      * @name initTimePickers
      * @description Initialize the time pickers, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initTimePickers: function () {
+    initTimePickers: () => {
 <#
     // Create code for init timepickers
     snippet = new StringBuilder();
@@ -200,14 +190,13 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
     },
     
     /**
-     * @function
      * @name initButtons
      * @description Initialize the button click handlers
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initButtons: function () {
-        $("#btnProcess").click(function (e) {
+    initButtons: () => {
+        $("#btnProcess").click((e) => {
             sg.utls.SyncExecute(<#=localEntityName#>UI.process);
         });
 <#
@@ -223,17 +212,16 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
     },
     
     /**
-     * @function
      * @name process
      * @description Handler for the process button
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    process: function () {
+    process: () => {
         sg.utls.isProcessRunning = true;
-        var processUrl = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Process");
+        let processUrl = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Process");
         
-        var isChecked = false;
+        let isChecked = false;
 
         if (!isChecked) {
             // Do not process
@@ -248,35 +236,33 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
                 $("#message").empty();
                 sg.utls.clearValidations("frm<#=entityName#>");
                 sg.utls.isProcessRunning = true;
-                var data = { model: ko.mapping.toJS(<#=localEntityName#>UI.<#=localEntityName#>Model, <#=localEntityName#>UI.computedProperties) };
+                let data = { model: ko.mapping.toJS(<#=localEntityName#>UI.<#=localEntityName#>Model, <#=localEntityName#>UI.computedProperties) };
                 sg.utls.ajaxPost(processUrl, data, onSuccess.process)
             }
         }
     },
     
     /**
-     * @function
      * @name initProcessUI
      * @description
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initProcessUI: function() {
-        var progressUrl = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Progress");
-        var cancelUrl = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Cancel");
+    initProcessUI: () => {
+        let progressUrl = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Progress");
+        let cancelUrl = sg.utls.url.buildUrl("<#=moduleIdUpper#>", "<#=entityName#>", "Cancel");
         window.progressUI.init(progressUrl, cancelUrl, <#=localEntityName#>UI.<#=localEntityName#>Model, screenName, onSuccess.onProcessComplete);
     },
 
     /**
-     * @function
      * @name Validation
      * @description Page validator
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    Validation: function () {
-        var errorRangeMessage = "";
-        var inputValid = true;
+    Validation: () => {
+        let errorRangeMessage = "";
+        let inputValid = true;
 
         if (!inputValid) {
             if (errorRangeMessage != "") {
@@ -294,7 +280,6 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
 // Callbacks
 var onSuccess = {
     /**
-    * @function
     * @name process
     * @description Process success
     * @namespace onSuccess
@@ -302,9 +287,9 @@ var onSuccess = {
     * 
     * @param {object} result - JSON result payload
     */
-    process: function (jsonResult) {
+    process: (jsonResult) => {
         if (jsonResult.UserMessage.IsSuccess) {
-            var model = <#=localEntityName#>UI.<#=localEntityName#>Model;
+            let model = <#=localEntityName#>UI.<#=localEntityName#>Model;
             window.ko.mapping.fromJS(jsonResult.WorkflowInstanceId, {}, model.WorkflowInstanceId);
             window.progressUI.progress();
         } else {
@@ -313,7 +298,6 @@ var onSuccess = {
     },
 
     /**
-    * @function
     * @name onProcessComplete
     * @description
     * @namespace onSuccess
@@ -321,10 +305,10 @@ var onSuccess = {
     * 
     * @param {object} result - The result of the operation
     */
-    onProcessComplete: function (result) {
+    onProcessComplete: (result) => {
         if (result.ProcessResult.Results.length <= 0) {
             $("#processingResultGrid").hide();
-            var errorMessage = <#=localEntityName#>Resources.ProcessingComplete;
+            let errorMessage = <#=localEntityName#>Resources.ProcessingComplete;
             sg.utls.showMessageInfoInCustomDivWithoutClose(sg.utls.msgType.INFO, errorMessage, 'messageDiv');
         }
     },
@@ -337,7 +321,6 @@ var onFinderSuccess = {
 // Utility
 var <#=localEntityName#>Utility = {   
     /**
-    * @function
     * @name checkIsDirty
     * @description If the model data has changed, display confirmation dialog box
     * @namespace <#=localEntityName#>Utility
@@ -346,13 +329,13 @@ var <#=localEntityName#>Utility = {
     * @param {object} yesFunctionToCall - Callback for Yes
     * @param {object} noFunctionToCall - Callback for No
     */
-    checkIsDirty: function (yesFunctionToCall, noFunctionToCall) {
+    checkIsDirty: (yesFunctionToCall, noFunctionToCall) => {
         if (<#=localEntityName#>UI.<#=localEntityName#>Model.IsKo<#=entityName#>Dirty && <#=localEntityName#>UI.<#=localEntityName#>Model.IsKo<#=entityName#>Dirty.isDirty()) {
             sg.utls.showKendoConfirmationDialog(
-                function () { // Yes
+                () => { // Yes
                     yesFunctionToCall.call();
                 },
-                function () { // No
+                () => { // No
                     noFunctionToCall.call();
                 },
                 $.validator.format(globalResource.SaveConfirm));
@@ -373,6 +356,6 @@ var onFinderCancel = {
 };
 
 // Initial Entry
-$(function () {
+$(() => {
     <#=localEntityName#>UI.init();
 });

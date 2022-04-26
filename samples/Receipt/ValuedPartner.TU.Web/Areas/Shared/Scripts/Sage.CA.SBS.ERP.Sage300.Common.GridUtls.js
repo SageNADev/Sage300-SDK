@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2019-2021 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 var sg = sg || {};
@@ -657,7 +657,7 @@ sg.utls.grid = {
 
     onError: function (elementId, ret) {
         $("#" + elementId).keydown(false);
-        sg.utls.showMessage(ret, this.errorMsgClose.bind(elementId), false, true);
+        sg.utls.showMessage(ret, this.errorMsgClose.bind(elementId));
     },
 
     /**

@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -40,13 +40,12 @@ var sourceJournalProfileUI = {
 
 
     /**
-     * @function
      * @name init
-     * @description Primary initialization function
+     * @description Primary initialization
      * @namespace sourceJournalProfileUI
      * @public
      */
-    init: function () {
+    init: () => {
         sg.utls.maskSourceCode("sg-mask-sourcecode");
         sourceJournalProfileUI.initGrid();
         sourceJournalProfileUI.initFinders();
@@ -57,25 +56,23 @@ var sourceJournalProfileUI = {
     },
 
     /**
-     * @function
      * @name initGrid
      * @description Initialize the grid
      * @namespace sourceJournalProfileUI
      * @public
      */
-    initGrid: function() {
+    initGrid: () => {
         sg.utls.mergeGridConfiguration(["pageUrl", "getParam", "buildGridData", "afterDataBind", "dataChange"], SourceCodeGridConfig, sourceJournalProfileGrid.utility);
         sourceJournalProfileGrid.bindAllEvents();
     },
     
     /**
-     * @function
      * @name initGrid
      * @description Initialize the finder(s)
      * @namespace sourceJournalProfileUI
      * @public
      */
-    initFinders: function () {
+    initFinders: () => {
         let info = sg.viewFinderHelper.getFinderSettings("GL", "SourceJournalProfiles");
         let buttonId = "btnSourceJournalCodeFinder";
         let dataControlIdOrSuccessCallback = onFinderSuccess.onSourceJournalProfile;
@@ -83,20 +80,18 @@ var sourceJournalProfileUI = {
     },
 
     /**
-     * @function
      * @name initTextBox
      * @description Initialize the text box
      * @namespace sourceJournalProfileUI
      * @public
      */
-    initTextBox: function () {
-        $("#Data_SourceJournalName").on('change', function (e) {
+    initTextBox: () => {
+        $("#Data_SourceJournalName").on('change', (e) => {
             sourceJournalProfileUI.checkIsDirty(sourceJournalProfileUI.sourceJournalChange);
         });
     },
 
     /**
-     * @function
      * @name initCheckBox
      * @description Initialize the checkboxes
      * @namespace sourceJournalProfileUI
@@ -150,40 +145,39 @@ var sourceJournalProfileUI = {
     },
 
     /**
-     * @function
      * @name initButtons
      * @description Initialize the buttons
      * @namespace sourceJournalProfileUI
      * @public
      */
-    initButtons: function () {
+    initButtons: () => {
         //----------------------------------------------------options link start--------------------------------------------------
         sg.exportHelper.setExportEvent("btnOptionExport", sg.dataMigration.GLSourceJournalProfile, false, $.noop);
         sg.importHelper.setImportEvent("btnOptionImport", sg.dataMigration.GLSourceJournalProfile, false, $.noop);
 
         //----------------------------------------------------options link end--------------------------------------------------
-        $("#btnSave").on('click', function () {
+        $("#btnSave").on('click', () => {
             $('#message').empty();
             sourceJournalProfileUI.sourceJournalModel.Data.ETag(sourceJournalProfileUI.sourceJournalEtag);
             sg.utls.SyncExecute(sourceJournalRepository.saveSourceJournal(sourceJournalProfileUI.sourceJournalModel.Data));
         });
 
         // Add Line in Grid
-        $('#btnAddLine').on('click', function () {
+        $('#btnAddLine').on('click', () => {
             sg.utls.SyncExecute(sourceJournalProfileUtility.addNewSourceJournalLine);
         });
 
         // Delete Line in Grid
-        $('#btnDeleteLine').on('click', function () {
+        $('#btnDeleteLine').on('click', () => {
             $('#message').empty();
             sg.utls.SyncExecute(sourceJournalProfileUtility.deleteSourceJournalLine);
         });
 
-        $("#btnDeleteSourceJounalProfile").on('click', function () {
+        $("#btnDeleteSourceJounalProfile").on('click', () => {
             $('#message').empty();
             if ($("#frmSourceJournalProfile").valid()) {
                 let message = jQuery.validator.format(sourceJournalProfileResources.DeleteConfirmMessage, sourceJournalProfileResources.SourceJournalProfile, sourceJournalProfileUI.sourceJournalModel.Data.SourceJournalName());
-                sg.utls.showKendoConfirmationDialog(function () {
+                sg.utls.showKendoConfirmationDialog(() => {
                     sg.utls.clearValidations("frmSourceJournalProfile");
                     sourceJournalRepository.deleteSourceJournal(sourceJournalProfileUI.sourceJournalModel.Data.SourceJournalName());
                 },
@@ -192,19 +186,18 @@ var sourceJournalProfileUI = {
             }
         });
 
-        $("#btnNewSourceJournal").on("click", function (e) {
+        $("#btnNewSourceJournal").on("click", (e) => {
             sourceJournalProfileUI.checkIsDirty(sourceJournalRepository.create);
         });
     },
 
     /**
-     * @function
      * @name sourceJournalChange
      * @description Event handler for the change event for the Source Journal Name field
      * @namespace sourceJournalProfileUI
      * @public
      */
-    sourceJournalChange: function () {
+    sourceJournalChange: () => {
         let value = $("#Data_SourceJournalName").val();
         if (value) {
             sg.controls.enable("#btnAddLine");
@@ -216,7 +209,6 @@ var sourceJournalProfileUI = {
     },
 
     /**
-     * @function
      * @name checkIsDirty
      * @description Check the model for any changes. If there are changes, invoke a confirmation
      *              dialog box. If the user selects 'Yes', invoke the callback function passed into the function
@@ -225,14 +217,14 @@ var sourceJournalProfileUI = {
      * 
      * @param {Function} functionToCall Method to call if user selects 'Yes' in confirmation dialog
      */
-    checkIsDirty: function (functionToCall) {
+    checkIsDirty: (functionToCall) => {
         if (sourceJournalProfileUI.sourceJournalModel.isModelDirty.isDirty() && sg.controls.GetString(sourceJournalProfileUI.souceJournalName) !== "") {
             sg.utls.showKendoConfirmationDialog(
-                function () { // Yes
+                () => { // Yes
                     sg.utls.clearValidations("frmSourceJournalProfile");
                     functionToCall.call();
                 },
-                function () { // No
+                () => { // No
                     if (sourceJournalProfileUI.souceJournalName !== sg.controls.GetString(sourceJournalProfileUI.sourceJournalModel.Data.SourceJournalName())) {
                         sourceJournalProfileUI.sourceJournalModel.Data.SourceJournalName(sourceJournalProfileUI.souceJournalName);
                     }
@@ -247,7 +239,6 @@ var sourceJournalProfileUI = {
 
 var sourceJournalFilter = {
     /**
-     * @function
      * @name sourceJournalProfile
      * @description Create the filter for the Source Journal finder
      * @namespace sourceJournalFilter
@@ -255,7 +246,7 @@ var sourceJournalFilter = {
      *  
      * @returns {object} The filters object
      */
-    sourceJournalProfile: function () {
+    sourceJournalProfile: () => {
         let filters = [[]];
         let sourceJournalName = $("#Data_SourceJournalName").val();
         filters[0][0] = sg.finderHelper.createFilter("SourceJournalName", sg.finderOperator.StartsWith, sourceJournalName);
@@ -263,7 +254,6 @@ var sourceJournalFilter = {
     },
 
     /**
-     * @function
      * @name sourceCode
      * @description Create the filter for the Source Code finder
      * @namespace sourceJournalFilter
@@ -271,7 +261,7 @@ var sourceJournalFilter = {
      *
      * @returns {object} The filters object
      */
-    sourceCode: function () {
+    sourceCode: () => {
         let filters = [[]];
         let sourceCode = $("#Source").val().toUpperCase();
         let splitParameters = sourceCode.split("-");
@@ -286,7 +276,6 @@ var sourceJournalFilter = {
 var onFinderSuccess = {
 
     /**
-     * @function
      * @name onSourceJournalProfile
      * @description Event handler for finder selection
      * @namespace onFinderSuccess
@@ -294,7 +283,7 @@ var onFinderSuccess = {
      * 
      * @param {object} result The JSON payload object
      */
-    onSourceJournalProfile: function (result) {
+    onSourceJournalProfile: (result) => {
         $('#message').empty();
         if (result) {
             let name = result.SRCEJRNL;
@@ -306,7 +295,6 @@ var onFinderSuccess = {
     },
 
     /**
-     * @function
      * @name onSourceCode
      * @description Event handler for finder selection
      * @namespace onFinderSuccess
@@ -314,7 +302,7 @@ var onFinderSuccess = {
      *
      * @param {object} result The JSON payload object
      */
-    onSourceCode: function (data) {
+    onSourceCode: (data) => {
         $('#message').empty();
         let grid = $("#SourceCodeGrid").data("kendoGrid");
         if (grid) {
@@ -335,7 +323,6 @@ var onFinderSuccess = {
 var sourceJournalProfileUISuccess = {
 
     /**
-     * @function
      * @name initialLoad
      * @description Called on initial page load
      * @namespace sourceJournalProfileUISuccess
@@ -343,7 +330,7 @@ var sourceJournalProfileUISuccess = {
      *
      * @param {object} result The JSON payload object
      */
-    initialLoad: function (result) {
+    initialLoad: (result) => {
         $('#message').empty();
         if (result) {
             let uiMode;
@@ -367,7 +354,6 @@ var sourceJournalProfileUISuccess = {
     },
 
     /**
-     * @function
      * @name deleteSourceJournal
      * @description Function called by repository upon successful Source Journal deletion
      * @namespace sourceJournalProfileUISuccess
@@ -375,7 +361,7 @@ var sourceJournalProfileUISuccess = {
      *
      * @param {object} result The JSON payload object
      */
-    deleteSourceJournal: function (result) {
+    deleteSourceJournal: (result) => {
         if (result.UserMessage && result.UserMessage.IsSuccess) {
             ko.mapping.fromJS(result, sourceJournalProfileUI.sourceJournalModel);
             sourceJournalProfileUI.sourceJournalEtag = result.Data.ETag;
@@ -389,7 +375,6 @@ var sourceJournalProfileUISuccess = {
     },
 
     /**
-     * @function
      * @name update
      * @description Function called by repository upon successful Source Journal update
      * @namespace sourceJournalProfileUISuccess
@@ -397,7 +382,7 @@ var sourceJournalProfileUISuccess = {
      *
      * @param {object} result The JSON payload object
      */
-    update: function (result) {
+    update: (result) => {
         $('#message').empty();
         if (result.UserMessage && result.UserMessage.IsSuccess) {
             ko.mapping.fromJS(result, sourceJournalProfileUI.sourceJournalModel);
@@ -411,15 +396,14 @@ var sourceJournalProfileUISuccess = {
     },
 
     /**
-     * @function
-     * @name update
+     * @name is Exists success
      * @description Function called by repository upon successful Source Journal IsExist check
      * @namespace sourceJournalProfileUISuccess
      * @public
      *
      * @param {object} result The JSON payload object
      */
-    isExistSuccess: function (result) {
+    isExistSuccess: (result) => {
         if (result.IsSourceCodeExists) {
             sg.utls.showMessage(result);
             sourceJournalProfileUISuccess.clearGridRowData();
@@ -427,13 +411,12 @@ var sourceJournalProfileUISuccess = {
     },
 
     /**
-     * @function
      * @name clearGridRowData
      * @description Clears a grids row data
      * @namespace sourceJournalProfileUISuccess
      * @public
      */
-    clearGridRowData: function () {
+    clearGridRowData: () => {
         let grid = sourceJournalProfileUtility.fetchSourceJournalGrid();
         let row = grid.tbody.find("tr[data-uid='" + sourceJournalProfileUI.sourceJournalLineId + "']");
         let gridData = grid.dataItem(row);
@@ -446,7 +429,6 @@ var sourceJournalProfileUISuccess = {
     },
 
     /**
-     * @function
      * @name displayResult
      * @description Function Not Used
      * @namespace sourceJournalProfileUISuccess
@@ -455,7 +437,7 @@ var sourceJournalProfileUISuccess = {
      * @param {object} result The JSON payload object
      * @param {Function} functionToCall Parameter not used
      */
-    displayResult: function (result, functionToCall) {
+    displayResult: (result, functionToCall) => {
         if (result) {
             functionToCall(result);
             sg.utls.showMessage(result);
@@ -463,7 +445,6 @@ var sourceJournalProfileUISuccess = {
     },
 
     /**
-     * @function
      * @name get
      * @description Function called by repository upon successful Source Journal get
      * @namespace sourceJournalProfileUISuccess
@@ -471,7 +452,7 @@ var sourceJournalProfileUISuccess = {
      *
      * @param {object} result The JSON payload object
      */
-    get: function (result) {
+    get: (result) => {
         if (result.UserMessage && result.UserMessage.IsSuccess) {
             if (result.Data) {
                 sourceJournalProfileUI.sourceJournalEtag = result.Data.ETag;
@@ -497,7 +478,6 @@ var sourceJournalProfileUISuccess = {
     },
 
     /**
-     * @function
      * @name sourceCodeSuccess
      * @description Function called by repository upon successful Source Journal get
      * @namespace sourceJournalProfileUISuccess
@@ -505,7 +485,7 @@ var sourceJournalProfileUISuccess = {
      *
      * @param {object} jsonResult The JSON payload object
      */
-    sourceCodeSuccess: function (jsonResult) {
+    sourceCodeSuccess: (jsonResult) => {
         $('#message').empty();
         let grid = sourceJournalProfileUtility.fetchSourceJournalGrid();
         let row = grid.tbody.find("tr[data-uid='" + sourceJournalProfileUI.sourceJournalLineId + "']");
@@ -530,7 +510,6 @@ var sourceJournalProfileUISuccess = {
     },
 
     /**
-     * @function
      * @name isNew
      * @description Check to see if model is valid
      * @namespace sourceJournalProfileUISuccess
@@ -538,7 +517,7 @@ var sourceJournalProfileUISuccess = {
      *
      * @param {object} model The current model
      */
-    isNew: function (model) {
+    isNew: (model) => {
         if (model.SourceCodeID01() === null) {
             return true;
         }
@@ -546,7 +525,6 @@ var sourceJournalProfileUISuccess = {
     },
 
     /**
-     * @function
      * @name create
      * @description Function called by repository upon successful Source Journal create
      * @namespace sourceJournalProfileUISuccess
@@ -554,7 +532,7 @@ var sourceJournalProfileUISuccess = {
      *
      * @param {object} result The JSON payload object
      */
-    create: function (result) {
+    create: (result) => {
         sg.controls.disable("#btnAddLine");
         sourceJournalProfileUI.hasKoApplied = false;
         ko.mapping.fromJS(result, sourceJournalProfileUI.sourceJournalModel);
@@ -571,7 +549,6 @@ var sourceJournalProfileUtility = {
     currentPageNumber: 0,
 
     /**
-     * @function
      * @name newSourceJournalLineItem
      * @description Create a new Source Journal Line object
      * @namespace sourceJournalProfileUtility
@@ -579,7 +556,7 @@ var sourceJournalProfileUtility = {
      *  
      * @returns {object} A newly created Source Journal Line object
      */
-    newSourceJournalLineItem: function () {
+    newSourceJournalLineItem: () => {
         let newSourceJournalLine = {
             "Source": null,
             "Description": null,
@@ -594,18 +571,16 @@ var sourceJournalProfileUtility = {
     },
 
     /**
-     * @function
      * @name fetchSourceJournalGrid
      * @description Get a reference to the Source Journal grid
      * @namespace sourceJournalProfileUtility
      * @public
      */
-    fetchSourceJournalGrid: function () {
+    fetchSourceJournalGrid: () => {
         return $('#SourceCodeGrid').data("kendoGrid");
     },
 
     /**
-     * @function
      * @name getSourceJournalParamPaging
      * @description Set up pagination for the grid
      * @namespace sourceJournalProfileUtility
@@ -616,7 +591,7 @@ var sourceJournalProfileUtility = {
      * @param {number} pageSize The page size
      * @param {number} newinsertIndex The new insertion index
      */
-    getSourceJournalParamPaging: function (data, pageNumber, pageSize, newinsertIndex) {
+    getSourceJournalParamPaging: (data, pageNumber, pageSize, newinsertIndex) => {
         let currentPageNumber = sourceJournalProfileUtility.currentPageNumber;
         let model = ko.mapping.toJS(sourceJournalProfileUI.sourceJournalModel.Data);
         let sourceJournalData = model.SourceCodeList.Items; 
@@ -634,13 +609,12 @@ var sourceJournalProfileUtility = {
     },
 
     /**
-     * @function
      * @name addNewSourceJournalLine
      * @description Add a new source journal line
      * @namespace sourceJournalProfileUtility
      * @public
      */
-    addNewSourceJournalLine: function () {
+    addNewSourceJournalLine: () => {
         const MAXLIMIT = 50;
         let newSourceJournalExist = false;
         let sournceJournalModel = sourceJournalProfileUI.sourceJournalModel.Data.SourceCodeList;
@@ -653,7 +627,7 @@ var sourceJournalProfileUtility = {
         sourceJournalProfileGrid.addLineClicked = true;
         //Do not allow user to allow a add line when a new empty line already exists
         if (sournceJournalModel.Items() && sournceJournalModel.Items().length > 0) {
-            $.each(sournceJournalModel.Items(), function (index, item) {
+            $.each(sournceJournalModel.Items(), (index, item) => {
                 if ((item.Source() === null || item.Source() === "") && item.IsDeleted() !== true) {
                     newSourceJournalExist = true;
                     return;
@@ -680,18 +654,16 @@ var sourceJournalProfileUtility = {
     },
 
     /**
-     * @function
      * @name deleteSourceJournalLine
      * @description Delete a source journal line
      * @namespace sourceJournalProfileUtility
      * @public
      */
-    deleteSourceJournalLine: function () {
+    deleteSourceJournalLine: () => {
         sourceJournalProfileGrid.deleteLine();
     },
 
     /**
-     * @function
      * @name checkDuplicateRecord
      * @description Check for the existence of a grid row
      * @namespace sourceJournalProfileUtility
@@ -699,13 +671,13 @@ var sourceJournalProfileUtility = {
      *  
      * @param {object} row The row object
      */
-    checkDuplicateRecord: function (row) {
+    checkDuplicateRecord: (row) => {
         let grid = sourceJournalProfileUtility.fetchSourceJournalGrid();
         let dataSource = grid.dataSource;
         let count = 0;
         // For uncached records
         if (dataSource.total() <= 10) {
-            $.each(dataSource.data(), function (key) {
+            $.each(dataSource.data(), (key) => {
                 if (dataSource.data()[key]["Source"] === row.Source) {
                     count = count + 1;
                 }
@@ -724,6 +696,6 @@ var sourceJournalProfileUtility = {
     },
 };
 
-$(function () {
+$(() => {
     sourceJournalProfileUI.init();
 });

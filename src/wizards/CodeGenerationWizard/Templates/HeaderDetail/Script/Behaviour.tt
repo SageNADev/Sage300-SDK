@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -43,7 +43,7 @@
 
 "use strict";
 
-var modelData;
+let modelData;
 var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 
 <# 
@@ -65,13 +65,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     <#=localKeyFieldName#>: null,
 
     /**
-     * @function
      * @name init
      * @description Primary initialization routine
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    init: function () {
+    init: () => {
         // initialize grid(s)
         <#
              PushIndent("        ");
@@ -112,15 +111,14 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     },
 
     /**
-     * @function
      * @name save<#=entityName#>
-     * @description Invoke add or update functionality
+     * @description Invoke add or update
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    save<#=entityName#>: function () {
+    save<#=entityName#>: () => {
         if ($("#frm<#=containerName#>").valid()) {
-            var data = sg.utls.ko.toJS(modelData, <#=localEntityName#>UI.computedProperties);
+            let data = sg.utls.ko.toJS(modelData, <#=localEntityName#>UI.computedProperties);
 <#
     // Create code for time only dates
     snippet = new StringBuilder();
@@ -139,19 +137,18 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     },
 
     /**
-     * @function
      * @name initButtons
      * @description Initialize buttons
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initButtons: function () {
+    initButtons: () => {
         // Import/Export Buttons
         sg.exportHelper.setExportEvent("btnOptionExport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
         sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop);
 
         // Key field blur event
-        $("#txt<#=keyFieldName#>").on('blur', function (e) {
+        $("#txt<#=keyFieldName#>").on('blur', (e) => {
             modelData.<#=keyFieldName#>($("#txt<#=keyFieldName#>").val());
             if (sg.controls.GetString(modelData.<#=keyFieldName#>()) !== "") {
                 <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
@@ -159,20 +156,20 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
         });
 
         // Create New Button
-        $("#btnNew").on('click', function () {
+        $("#btnNew").on('click', () => {
             <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.create, <#=localEntityName#>UI.<#=localKeyFieldName#>);
         });
 
         // Save Button
-        $("#btnSave").on('click', function () {
+        $("#btnSave").on('click', () => {
             sg.utls.SyncExecute(<#=localEntityName#>UI.save<#=entityName#>);
         });
 
         // Delete Button
-        $("#btnDelete").on('click', function () {
+        $("#btnDelete").on('click', () => {
             if ($("#frm<#=containerName#>").valid()) {
-                var message = jQuery.validator.format(<#=localEntityName#>Resources.DeleteConfirmMessage, <#=localEntityName#>Resources.<#=keyFieldName#>Title, modelData.<#=keyFieldName#>());
-                sg.utls.showKendoConfirmationDialog(function () {
+                let message = jQuery.validator.format(<#=localEntityName#>Resources.DeleteConfirmMessage, <#=localEntityName#>Resources.<#=keyFieldName#>Title, modelData.<#=keyFieldName#>());
+                sg.utls.showKendoConfirmationDialog(() => {
                     sg.utls.clearValidations("frm<#=containerName#>");
                     <#=localEntityName#>Repository.delete(modelData.<#=keyFieldName#>(), <#=localEntityName#>UISuccess.delete);
                 }, null, message, <#=localEntityName#>Resources.DeleteTitle);
@@ -181,13 +178,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     },
 
     /**
-     * @function
      * @name initDropDownList
      * @description Initialize the drop down list boxes, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initDropDownList: function () {
+    initDropDownList: () => {
 <#
     // Create code for dropdown list
     snippet = new StringBuilder();
@@ -200,35 +196,32 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     },
 
     /**
-     * @function
      * @name initPopUps
      * @description Initialize the various popup windows, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initPopUps: function () {
+    initPopUps: () => {
 
     },
 
     /**
-     * @function
      * @name initHamburgers
      * @description Initialize the hamburger menus, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initHamburgers: function () {
+    initHamburgers: () => {
 
     },
 
     /**
-     * @function
      * @name initTabs
      * @description Initialize the tabs, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initTabs: function () {
+    initTabs: () => {
 
 <#
     // Create code for init tabs
@@ -242,24 +235,22 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     },
 
     /**
-     * @function
      * @name initGrids
      * @description Initialize the grids, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initGrids: function () {
+    initGrids: () => {
 
     },
 
     /**
-     * @function
      * @name initFinders
      * @description Initialize the finders, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initFinders: function () {
+    initFinders: () => {
 <#
     // Create code for finder
     snippet = new StringBuilder();
@@ -272,13 +263,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     },
 
     /**
-     * @function
      * @name initNumericTextboxes
      * @description Initialize the Kendo numeric controls, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initNumericTextboxes: function () {
+    initNumericTextboxes: () => {
 <#
     // Create code for init numeric textboxes
     snippet = new StringBuilder();
@@ -291,13 +281,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     },
 
     /**
-     * @function
      * @name initTextboxes
      * @description Initialize the Kendo text controls, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initTextboxes: function () {
+    initTextboxes: () => {
 <#
     // Create code for init textboxes
     snippet = new StringBuilder();
@@ -310,13 +299,12 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     },
 
     /**
-     * @function
      * @name initTimePickers
      * @description Initialize the time pickers, if any
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    initTimePickers: function () {
+    initTimePickers: () => {
 <#
     // Create code for init timepickers
     snippet = new StringBuilder();
@@ -329,29 +317,27 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     },
 
     /**
-     * @function
      * @name get
-     * @description Invoke the get functionality
+     * @description Invoke the get
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    get: function () {
+    get: () => {
         <#=localEntityName#>Repository.get(modelData.<#=keyFieldName#>(), <#=localEntityName#>UISuccess.get);
     },
 
     /**
-     * @function
      * @name create
-     * @description Invoke the create functionality
+     * @description Invoke the create
      * @namespace <#=localEntityName#>UI
      * @public
      */
-    create: function () {
+    create: () => {
         sg.utls.clearValidations("frm<#=containerName#>");
         <#=localEntityName#>Repository.create(<#=localEntityName#>UISuccess.create);
     },
 <#
-    // Create code for create function
+    // Create code for create
     snippet = new StringBuilder();
     SnippetHelper.CreateJavaScript(4, settings, localEntityName, snippet);
     if (!string.IsNullOrEmpty(snippet.ToString()))
@@ -361,7 +347,6 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 #>
 
     /**
-     * @function
      * @name checkIsDirty
      * @description Check to see if the model data has been changed
      * @namespace <#=localEntityName#>UI
@@ -369,14 +354,14 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
      *
      * @param {Function} functionToCall The callback function to invoke
      */
-    checkIsDirty: function (functionToCall, <#=localKeyFieldName#>) {
+    checkIsDirty: (functionToCall, <#=localKeyFieldName#>) => {
         if (<#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty() && <#=localKeyFieldName#> != null && <#=localKeyFieldName#> != "") {
             sg.utls.showKendoConfirmationDialog(
-                function () { // Yes
+                () => { // Yes
                     sg.utls.clearValidations("frm<#=containerName#>");
                     functionToCall.call();
                 },
-                function () { // No
+                () => { // No
                     if (sg.controls.GetString(<#=localKeyFieldName#>) != sg.controls.GetString(modelData.<#=keyFieldName#>())) {
                         modelData.<#=keyFieldName#>(<#=localKeyFieldName#>);
                    }
@@ -393,18 +378,16 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 var <#=localEntityName#>UISuccess = {
 
     /**
-     * @function
      * @name setkey
      * @description Set the key
      * @namespace <#=localEntityName#>UISuccess
      * @public
      */
-    setkey: function () {
+    setkey: () => {
         <#=localEntityName#>UI.<#=localKeyFieldName#> = modelData.<#=keyFieldName#>();
     },
 
     /**
-     * @function
      * @name get
      * @description Event handler for successful get 
      * @namespace <#=localEntityName#>UISuccess
@@ -412,7 +395,7 @@ var <#=localEntityName#>UISuccess = {
      * 
      * @param {object} jsonResult JSON payload object
      */
-    get: function (jsonResult) {
+    get: (jsonResult) => {
         if (jsonResult.UserMessage && jsonResult.UserMessage.IsSuccess) {
             if (jsonResult.Data != null) {
                 <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
@@ -441,7 +424,6 @@ var <#=localEntityName#>UISuccess = {
     },
 
     /**
-     * @function
      * @name update
      * @description Event handler for successful update
      * @namespace <#=localEntityName#>UISuccess
@@ -449,7 +431,7 @@ var <#=localEntityName#>UISuccess = {
      *
      * @param {object} jsonResult JSON payload object
      */
-    update: function (jsonResult) {
+    update: (jsonResult) => {
         if (jsonResult.UserMessage.IsSuccess) {
             <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
             <#=localEntityName#>UISuccess.setkey();
@@ -458,7 +440,6 @@ var <#=localEntityName#>UISuccess = {
     },
 
     /**
-     * @function
      * @name create
      * @description Event handler for successful create
      * @namespace <#=localEntityName#>UISuccess
@@ -466,7 +447,7 @@ var <#=localEntityName#>UISuccess = {
      *
      * @param {object} jsonResult JSON payload object
      */
-    create: function (jsonResult) {
+    create: (jsonResult) => {
         <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
         <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
         <#=localEntityName#>UISuccess.setkey();
@@ -484,7 +465,6 @@ var <#=localEntityName#>UISuccess = {
     },
 
     /**
-     * @function
      * @name delete
      * @description Event handler for successful deletion
      * @namespace <#=localEntityName#>UISuccess
@@ -492,7 +472,7 @@ var <#=localEntityName#>UISuccess = {
      *
      * @param {object} jsonResult JSON payload object
      */
-    delete: function (jsonResult) {
+    delete: (jsonResult) => {
         if (jsonResult.UserMessage.IsSuccess) {
             <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
             <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
@@ -513,7 +493,6 @@ var <#=localEntityName#>UISuccess = {
     },
 
     /**
-     * @function
      * @name displayResult
      * @description Display the results of an ajax call
      * @namespace <#=localEntityName#>UISuccess
@@ -522,7 +501,7 @@ var <#=localEntityName#>UISuccess = {
      * @param {object} jsonResult JSON payload object
      * @param {number} uiMode The UI mode
      */
-    displayResult: function (jsonResult, uiMode) {
+    displayResult: (jsonResult, uiMode) => {
         if (jsonResult != null) {
             if (!<#=localEntityName#>UI.hasKoBindingApplied) {
                 <#=localEntityName#>UI.<#=localEntityName#>Model = ko.mapping.fromJS(jsonResult);
@@ -599,7 +578,6 @@ var <#=localEntityName#>UISuccess = {
     },
 
     /**
-     * @function
      * @name initialLoad
      * @description Called during initial page load
      * @namespace <#=localEntityName#>UISuccess
@@ -607,7 +585,7 @@ var <#=localEntityName#>UISuccess = {
      *
      * @param {object} result JSON payload object
      */
-    initialLoad: function (result) {
+    initialLoad: (result) => {
 <#
     // Create code for show tab
     snippet = new StringBuilder();
@@ -626,13 +604,12 @@ var <#=localEntityName#>UISuccess = {
     },
 
     /**
-     * @function
      * @name isNew
      * @description Determine if we're creating a new entity
      * @namespace <#=localEntityName#>UISuccess
      * @public
      */
-    isNew: function (model) {
+    isNew: (model) => {
         if (model.<#=keyFieldName#>() === null) {
            return true;
         }
@@ -655,14 +632,14 @@ var <#=localEntityName#>Utility = {
 };
 
 // Initial Entry
-$(function () {
+$(() => {
     <#=localEntityName#>UI.init();
-    $(window).on('beforeunload', function () {
+    $(window).on('beforeunload', () => {
         if (globalResource.AllowPageUnloadEvent && <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty()) {
             return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, <#=localEntityName#>Resources.<#=keyFieldName#>Title)).text();
         }
     });
-    $(window).on('unload', function () {
+    $(window).on('unload', () => {
         sg.utls.destroySession();
     });
 });

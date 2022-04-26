@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
 
 #region
 using ACCPAC.Advantage;
@@ -186,7 +186,7 @@ namespace ValuedPartner.TU.Web
         {
             // Force case and trim
             var user = UserText.Text.ToUpper().Trim();
-            var pwd = PwdText.Text.ToUpper().Trim();
+            var pwd = PwdText.Text.Trim();
             var company = CompanyText.Text.ToUpper().Trim();
             var system = SystemText.Text.ToUpper().Trim();
             var version = VersionText.Text.ToUpper().Trim();

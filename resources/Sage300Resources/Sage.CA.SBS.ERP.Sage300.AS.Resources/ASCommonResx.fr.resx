@@ -266,4 +266,7 @@
   <data name="VerifyPassword" xml:space="preserve">
     <value>Vérifier mot de passe</value>
   </data>
+  <data name="ComplexAdvancedPasswordMessage" xml:space="preserve">
+    <value>Votre mot de passe doit comporter au moins un de chacun des caractères suivants : lettre minuscule, lettre majuscule, chiffre et caractère spécial (par exemple * ou #).</value>
+  </data>
 </root>

@@ -370,4 +370,25 @@
   <data name="BlankSDAError" xml:space="preserve">
     <value>要使用Sage Data &amp; Analytics，您必須在公司概況螢幕上指定一個相關的網址子域。 </value>
   </data>
+  <data name="BasicAuthentication" xml:space="preserve">
+    <value>基本認證SMTP</value>
+  </data>
+  <data name="ClientID" xml:space="preserve">
+    <value>用戶代號</value>
+    <comment>Microsoft Graph specific control labels</comment>
+  </data>
+  <data name="ClientSecret" xml:space="preserve">
+    <value>用戶密碼</value>
+    <comment>Microsoft Graph specific control labels</comment>
+  </data>
+  <data name="EmailMethod" xml:space="preserve">
+    <value>電郵服務</value>
+  </data>
+  <data name="MicrosoftGraph" xml:space="preserve">
+    <value>微軟Graph</value>
+  </data>
+  <data name="TenantID" xml:space="preserve">
+    <value>租戶代號</value>
+    <comment>Microsoft Graph specific control labels</comment>
+  </data>
 </root>

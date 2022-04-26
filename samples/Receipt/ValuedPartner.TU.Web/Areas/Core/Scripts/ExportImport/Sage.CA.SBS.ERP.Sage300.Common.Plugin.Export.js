@@ -165,6 +165,7 @@ var exportResultRowNumber = 0;
         PaymentEntry: "appaymententry",
         PhysicalInvQuantity: "physicalinvquantity",
         PhysicalInvQuantityHeader: "physicalinvquantityheader",
+        PMAccountSet: "pmaccountset",
         POAdditionalCost: "poadditionalcost",
         POCreditDebitNoteEntry: "pocreditdebitnoteentry",
         POEmailMessages: "poemailmessages",

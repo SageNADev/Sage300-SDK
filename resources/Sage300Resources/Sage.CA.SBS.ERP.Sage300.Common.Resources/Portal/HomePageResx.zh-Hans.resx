@@ -1460,4 +1460,11 @@
   <data name="PJC" xml:space="preserve">
     <value>项目成本管理</value>
   </data>
+  <data name="SkipMenu" xml:space="preserve">
+    <value>跳过导航菜单</value>
+    <comment>Bypass Block Button</comment>
+  </data>
+  <data name="SessionDateChangedWarning" xml:space="preserve">
+    <value>新的会话日期不会在当前打开的屏幕中使用。要在这些屏幕中使用新的会话日期，关闭这些屏幕然后再次打开它们。</value>
+  </data>
 </root>

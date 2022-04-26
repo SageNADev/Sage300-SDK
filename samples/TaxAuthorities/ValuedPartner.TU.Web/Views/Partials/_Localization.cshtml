@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Core.Configuration
@@ -16,6 +16,7 @@
         MoreItems: '@Html.SageRaw(@NavResx.Module_More)',
         SessionSuccessMsg: '@Html.SageRaw(@HomeResx.SessionSuccess)',
         SessionDateDisabledInfo: '@Html.SageRaw(@HomeResx.SessionDateDisabledInfo)',
+        SessionDateChangedWarning: '@Html.SageRaw(@HomeResx.SessionDateChangedWarning)',
         Report: '@Html.SageRaw(@HomeResx.Report)',
         PayableAging: '@Html.SageRaw(@HomeResx.PayablesAging)',
         ReceivableAging: '@Html.SageRaw(@HomeResx.ReceivablesAging)',
@@ -28,7 +29,8 @@
         PagetitleInManager: '@Html.SageRaw(@KPICommonResx.PagetitleInManager)',
         ManageUsers: '@Html.SageRaw(@HomeResx.TopNav_Manage_Users)',
         Inquiry: '@Html.SageRaw(@InquiryResx.Inquiry)',
-        GlobalSearch: '@Html.SageRaw(@NavResx.GlobalSearch)'
+        GlobalSearch: '@Html.SageRaw(@NavResx.GlobalSearch)',
+        MaxWindowExceeded: '@Html.SageRaw(@HomeResx.MaxWindowExceeded)'
     }
 </script>
 

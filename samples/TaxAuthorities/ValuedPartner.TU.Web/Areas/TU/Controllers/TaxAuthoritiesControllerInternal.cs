@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -87,6 +87,11 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>JSON object for TaxAuthorities</returns>
         internal TaxAuthoritiesViewModel<T> GetById(string id)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                return Create();
+            }
+
             var data = Service.GetById(id);
             var userMessage = new UserMessage(data);
             var viewModel = GetViewModel(data, userMessage);
@@ -261,46 +266,6 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             var currency = currencyService.Get(filter);
             return (currency.Items.FirstOrDefault());
         }
-
-
-        ///// <summary>
-        ///// Get account formatted number and description
-        ///// </summary>
-        ///// <param name="id"> account code</param>
-        ///// <param name="nonExistent"> account code not exist</param>
-        ///// <param name="inactive"> account code inactive</param>
-        ///// <returns>list of account number and description</returns>
-        //private List<string> GetAccountDescription(string id, LockedFiscalPeriod nonExistent, LockedFiscalPeriod inactive)
-        //{
-        //    var accountService = Context.Container.Resolve<IAccountService<Account>>(new ParameterOverride("context", Context));
-        //    var account = accountService.GetById(id);
-
-        //    if (string.IsNullOrEmpty(account.AccountNumber)) // case of account id does not exist
-        //    {
-        //        var error = GenerateAccountDescriptionEntityError(nonExistent, CommonResx.RecordNotFoundMessage, id);
-
-        //        if (error.Priority == Priority.Error || error.Priority == Priority.Warning)
-        //        {
-        //            throw new BusinessException(error.Message, null, new List<EntityError> { error });
-        //        }
-        //    }
-        //    else if (account.Status == Sage.CA.SBS.ERP.Sage300.GL.Models.Enums.Status.Inactive) // case of account exist but inactive
-        //    {
-        //        var error = GenerateAccountDescriptionEntityError(inactive, CommonResx.InactiveErrorMessage, id);
-        //        error.Tag = account.AccountNumber + "|" + account.Description;
-        //        if (error.Priority == Priority.Error || error.Priority == Priority.Warning)
-        //        {
-        //            throw new BusinessException(error.Message, null, new List<EntityError> { error });
-        //        }
-        //    }
-
-        //    //return id as passed in if non-existent account is allowed.
-        //    if (string.IsNullOrEmpty(account.AccountNumber)) return new List<string>() { id, string.Empty };
-
-        //    // valid case
-        //    var description = account.Description ?? string.Empty;
-        //    return new List<string>() { account.AccountNumber, description };
-        //}
 
         private static EntityError GenerateAccountDescriptionEntityError(LockedFiscalPeriod period, string messageTemplate, string id)
         {

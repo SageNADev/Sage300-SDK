@@ -1,0 +1,53 @@
+@* Copyright (c) 2021 Sage300  All rights reserved. *@
+
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.DeclarativeReportViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Reports.DeclarativeReport>
+
+<script type="text/javascript">
+    @Html.ConvertToJsVariableUsingNewtonSoft("DeclarativeReportViewModel", Model)
+    @Html.ConvertToJsVariableUsingNewtonSoft("screenName", "DECLARATIVEREPORT")
+</script>
+
+<div id="message"></div>
+<div class="form-screen">
+    <header>
+        <section class="header-group-1">
+            <div class="header-wrapper">
+                <div class="header-headline">
+                    @Html.SageHeader3Label("lblReportTitle", "")
+                </div>
+            </div>
+        </section>
+
+    </header>
+
+    <div id="declarativeReportBody"></div>
+
+    @{
+        var footerClass = "footer-group-1";
+        if (Model.SuppressFooterBorder)
+        {
+            footerClass += " no-top-border";
+        }
+    }
+    <section class="@footerClass">
+        @Html.KoSageButton("btnPrint", null, new { @id = "btnPrint", @class = "btn btn-primary", @value = CommonResx.Print })
+    </section>
+</div>
+
+@Scripts.Render("~/bundles/DeclarativeReport")
+@if (Model.Data.CustomScripts != null)
+{
+    foreach (var url in Model.Data.CustomScripts)
+    {
+        @Scripts.Render(@url)
+    }
+}
+@if (Model.Data.RazorViews != null)
+{
+    foreach (var razorView in Model.Data.RazorViews)
+    {
+        @Html.Partial(@razorView)
+    }
+}

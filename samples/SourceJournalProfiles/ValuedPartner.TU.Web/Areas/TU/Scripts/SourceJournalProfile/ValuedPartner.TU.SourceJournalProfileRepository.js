@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -25,7 +25,6 @@
 // Ajax call to controller
 var sourceJournalAjax = {
     /**
-     * @function
      * @name call
      * @description Invoke Ajax post
      * @namespace sourceJournalAjax
@@ -35,13 +34,12 @@ var sourceJournalAjax = {
      * @param {object} data The data payload object
      * @param {Function} successMethod The callback function to invoke on successful Ajax post
      */
-    call: function (method, data, successMethod) {
-        var url = sg.utls.url.buildUrl("TU", "SourceJournalProfile", method);
+    call: (method, data, successMethod) => {
+        let url = sg.utls.url.buildUrl("TU", "SourceJournalProfile", method);
         sg.utls.ajaxPost(url, data, successMethod);
     },
 
     /**
-     * @function
      * @name callHtml
      * @description Invoke Ajax post
      * @namespace sourceJournalAjax
@@ -51,13 +49,12 @@ var sourceJournalAjax = {
      * @param {object} data The data payload object
      * @param {Function} successMethod The callback function to invoke on successful Ajax post
      */
-    callHtml: function (method, data, successMethod) {
-        var url = sg.utls.url.buildUrl("TU", "SourceJournalProfile", method);
+    callHtml: (method, data, successMethod) => {
+        let url = sg.utls.url.buildUrl("TU", "SourceJournalProfile", method);
         sg.utls.ajaxPostHtml(url, data, successMethod);
     },
 
     /**
-     * @function
      * @name syncCall
      * @description Invoke Ajax post
      * @namespace sourceJournalAjax
@@ -67,8 +64,8 @@ var sourceJournalAjax = {
      * @param {object} data The data payload object
      * @param {Function} successMethod The callback function to invoke on successful Ajax post
      */
-    syncCall: function (method, data, successMethod) {
-        var url = sg.utls.url.buildUrl("TU", "SourceJournalProfile", method);
+    syncCall: (method, data, successMethod) => {
+        let url = sg.utls.url.buildUrl("TU", "SourceJournalProfile", method);
         sg.utls.ajaxPostSync(url, data, successMethod);
     },
 };
@@ -76,7 +73,6 @@ var sourceJournalAjax = {
 var sourceJournalRepository = {
 
     /**
-     * @function
      * @name get
      * @description Invoke the server-side 'Get' method
      * @namespace sourceJournalRepository
@@ -84,25 +80,23 @@ var sourceJournalRepository = {
      *
      * @param {string} sourceJournalProfile The Source Journal Profile specifier
      */
-    get: function (sourceJournalProfile) {
-        var data = { id: sourceJournalProfile };
+    get: (sourceJournalProfile) => {
+        let data = { id: sourceJournalProfile };
         sourceJournalAjax.syncCall("Get", data, sourceJournalProfileUISuccess.get);
     },
 
     /**
-     * @function
      * @name create
      * @description Invoke the server-side 'Create' method 
      * @namespace sourceJournalRepository
      * @public
      */
-    create: function () {
-        var data = {};
+    create: () => {
+        let data = {};
         sourceJournalAjax.call("Create", data, sourceJournalProfileUISuccess.create);
     },
 
     /**
-     * @function
      * @name deleteSourceJournal
      * @description Invoke the server-side 'Delete' method
      * @namespace sourceJournalRepository
@@ -110,13 +104,12 @@ var sourceJournalRepository = {
      *
      * @param {string} sourceJournalProfile The Source Journal Profile specifier
      */
-    deleteSourceJournal: function (sourceJournalProfile) {
-        var data = { 'id': sourceJournalProfile };
+    deleteSourceJournal: (sourceJournalProfile) => {
+        let data = { 'id': sourceJournalProfile };
         sourceJournalAjax.call("Delete", data, sourceJournalProfileUISuccess.deleteSourceJournal);
     },
 
     /**
-     * @function
      * @name saveSourceJournal
      * @description Invoke the server-side 'Save' method
      * @namespace sourceJournalRepository
@@ -124,15 +117,14 @@ var sourceJournalRepository = {
      *
      * @param {object} model The Source Journal Profile model data object
      */
-    saveSourceJournal: function (model) {
-        var data = { 'model': ko.mapping.toJS(model) };
+    saveSourceJournal: (model) => {
+        let data = { 'model': ko.mapping.toJS(model) };
         sourceJournalAjax.call("Save", data, sourceJournalProfileUISuccess.update);
     },
 
     // Additional methods go here
 
     /**
-     * @function
      * @name getSourceCodeById
      * @description Invoke the server-side 'GetSourceCodeById' method
      * @namespace sourceJournalRepository
@@ -141,8 +133,8 @@ var sourceJournalRepository = {
      * @param {string} sourceLedger The Source Ledger specifier
      * @param {string} sourceType The Source Type specifier
      */
-    getSourceCodeById: function (sourceLedger, sourceType) {
-        var data = {
+    getSourceCodeById: (sourceLedger, sourceType) => {
+        let data = {
             'sourceLedger': sourceLedger,
             'sourceType': sourceType,
         };
@@ -150,7 +142,6 @@ var sourceJournalRepository = {
     },
 
     /**
-     * @function
      * @name isExist
      * @description Invoke the server-side 'IsExist' method
      * @namespace sourceJournalRepository
@@ -159,8 +150,8 @@ var sourceJournalRepository = {
      * @param {string} source The Source specifier
      * @param {string} sourceType The Source Journal name specifier
      */
-    isExist: function (source, sourceJournalName) {
-        var data = {
+    isExist: (source, sourceJournalName) => {
+        let data = {
             source: source,
             sourceJournalName: sourceJournalName
         };

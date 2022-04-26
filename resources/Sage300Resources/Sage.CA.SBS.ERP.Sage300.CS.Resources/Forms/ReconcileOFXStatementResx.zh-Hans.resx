@@ -391,4 +391,7 @@
     <value>是否确要断开{0}的银行馈送？</value>
     <comment>Message</comment>
   </data>
+  <data name="BankFeedExist" xml:space="preserve">
+    <value>银行馈送交易标识已存在于另一个银行分录中。请将此信息提供给Sage 300客户支持。</value>
+  </data>
 </root>

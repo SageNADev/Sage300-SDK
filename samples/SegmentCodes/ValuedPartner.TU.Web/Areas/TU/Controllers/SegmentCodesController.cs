@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -19,18 +19,11 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Namespace
-
 using Microsoft.Practices.Unity;
 using System.Web.Mvc;
-using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
-using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
-using ValuedPartner.TU.Models;
-using ValuedPartner.TU.Resources.Forms;
 using ValuedPartner.TU.Web.Areas.TU.Models;
-
 #endregion
 
 namespace ValuedPartner.TU.Web.Areas.TU.Controllers
@@ -84,11 +77,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>JSON object for SegmentCodes</returns>
         public virtual ActionResult Index()
         {
-            SegmentCodesViewModel viewModel;
-
 			ViewBag.SegmentCodesGrid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath("SegmentCodesGrid"));
-			viewModel = ControllerInternal.Create();
-            return View(viewModel);
+            return ViewWithCatch(() => ControllerInternal.Create(), CommonResx.UnhandledExceptionMessage);
         }
 
         /// <summary>
@@ -97,16 +87,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Post()
         {
-            try
-            {
-				return JsonNet(ControllerInternal.Post());
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
-            }
+            return CallWithCatch(() => ControllerInternal.Post(), CommonResx.SaveFailedMessage);
         }
-
         #endregion
     }
 }

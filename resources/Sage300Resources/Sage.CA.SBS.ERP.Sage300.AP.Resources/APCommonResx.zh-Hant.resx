@@ -2828,4 +2828,7 @@
   <data name="FailedMTEmail" xml:space="preserve">
     <value>無法將憑證通過電郵發送給供應商{0}的連絡人。檢查是否正確設定了此供應商的連絡人。</value>
   </data>
+  <data name="TaxNumberType" xml:space="preserve">
+    <value>稅務編號類型</value>
+  </data>
 </root>

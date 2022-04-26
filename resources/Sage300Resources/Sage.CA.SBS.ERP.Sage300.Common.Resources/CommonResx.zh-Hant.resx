@@ -1642,4 +1642,10 @@
   <data name="ReportGenFailedMessageForCustomReport" xml:space="preserve">
     <value>產生報表時發生一個問題。檢查是否指定了報表所需的所有設定和選項，然後重試。</value>
   </data>
+  <data name="ItemNumberFrom" xml:space="preserve">
+    <value>產品編號從</value>
+  </data>
+  <data name="ItemNumberTo" xml:space="preserve">
+    <value>產品編號到</value>
+  </data>
 </root>

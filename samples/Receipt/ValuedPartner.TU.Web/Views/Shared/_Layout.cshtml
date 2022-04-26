@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. *@
 
 @using System.Web.UI.WebControls
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -90,9 +90,11 @@
         @Html.Partial(Constants.CommonPortalLayout)
         <div id="message"></div>
         <div id="success"></div>
+
         <header class="header" id="globalHeader">
             <div class="header-global" id="header">
-                <a class="logo-product" id="logoSage300"></a>
+                <a class="logo-product" id="logoSage300" autofocus="autofocus" alt="Sage 300" href="javascript:;"></a>
+                @*<a id="skipMenu" tabindex="0" class="skip-menu" href="#menuPrefButton">@HomePageResx.SkipMenu</a>*@
                 <div class="globalNavigation">
                     <div class="last_container session-date">
                         <span class="glyphicon glyphicon-calendar" id="sessionDateIcon"></span>
@@ -152,9 +154,9 @@
                                 <i class="settings glyphicon glyphicon-md glyphicon-setting" title="Settings"><span>@NavigationResx.Settings</span></i>
                                 <ul>
                                     @*<li id="unpinMainNav"><i class="unpin"></i><span class="settings-menulist" id="labelUnpin">@NavigationResx.UnpinMenu</span></li>
-                                    <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">@NavigationResx.PinMenu</span></li>
-                                    <li id="btnColorPicker"><span class="settings-menulist" id="labelCompanyColor">@NavigationResx.SetCompanyColor</span></li>
-                                    <li id="btnColorPickerDB"><span class="settings-menulist" id="labelCompanyColorDB">@NavigationResx.SetCompanyColorDB</span></li>*@
+                            <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">@NavigationResx.PinMenu</span></li>
+                            <li id="btnColorPicker"><span class="settings-menulist" id="labelCompanyColor">@NavigationResx.SetCompanyColor</span></li>
+                            <li id="btnColorPickerDB"><span class="settings-menulist" id="labelCompanyColorDB">@NavigationResx.SetCompanyColorDB</span></li>*@
                                     <li id="btnFormSize">
                                         <span class="settings-menulist" id="labelFormSize">@NavigationResx.TextSize</span>
                                         <ul>
@@ -174,18 +176,18 @@
                 </div>
                 @*NOTE: Company Theme Color - color picker - leaving the code for the future useage*@
                 @*<div class="color-picker" id="colorPicker">
-                    <div class="wrapper-color-picker">
-                        <div class="column">
-                            <h3 class="title">Select Theme Color</h3>
-                            <div id="palette"></div>
-                        </div>
-                        <div class="column">
-                            <h3 class="title"><label for="picker">Choose Custome Theme Color</label></h3>
-                            <input id="picker" />
-                        </div>
-                    </div>
-                    <div class="glyphicon glyphicon-close dismiss" title="Dismiss" id="btnColorPickerClose"></div>
-                </div>*@
+            <div class="wrapper-color-picker">
+                <div class="column">
+                    <h3 class="title">Select Theme Color</h3>
+                    <div id="palette"></div>
+                </div>
+                <div class="column">
+                    <h3 class="title"><label for="picker">Choose Custome Theme Color</label></h3>
+                    <input id="picker" />
+                </div>
+            </div>
+            <div class="glyphicon glyphicon-close dismiss" title="Dismiss" id="btnColorPickerClose"></div>
+        </div>*@
             </div>
         </header>
         <div class="master-wrapper">
@@ -202,6 +204,7 @@
                         @Html.Partial("~/Views/Partials/_PluginMenuUrl.cshtml", othersUrlList)
                     </ul>
                     <div id="menuPrefTogglerAlt">
+                        <a name="menuPrefButton" id="menuPrefButton"></a>
                         <button id="btnExpandMenuAlt" class="btn-nav-expand" title="@NavigationResx.ExpandMenu"></button>
                         <button id="btnCollapseMenuAlt" class="btn-nav-collapse" title="@NavigationResx.CollapseMenu"></button>
                     </div>
@@ -264,7 +267,7 @@
                     </div>
                     <div class="widgetHpCotainer">
                         <div class="empty-state-postage">
-                            <img src="~/Content/Images/empty_state.svg" width="100%" />
+                            <img src="~/Content/Images/empty_state.svg" width="100%" alt="@HomePageResx.SeeIntoYourData - @HomePageResx.ViewWidgets" />
                         </div>
                         <div class="empty-state-text">
                             <h1 id="lblSeeIntoYourData">@HomePageResx.SeeIntoYourData</h1>
@@ -326,14 +329,6 @@
         <div class="clear"></div>
         <input type="hidden" id="hdnNumberOfActiveWindows" value="@numberOfActiveWindows">
         <input type="hidden" id="hdnTenantName" value="@ViewBag.TenantName" />
-        <div class="message-control multiInfo-msg pFixTop hide" id="dvWindowsExceedLimitErrorMessage">
-            <div class="title">
-                <span class="icon multiInfo-icon"></span>
-                <h3>@CommonResx.Info</h3>
-                <span class="icon msgCtrl-close">@CommonResx.Close</span>
-            </div>
-            <div class="msg-content"> @HomePageResx.MaxWindowExceeded </div>
-        </div>
         <!--Quick Menu (draggable sidebar)-->
         @Html.Partial(Constants.QuickMenu)
 
@@ -367,10 +362,10 @@
         <script id="delete-confirmation" type="text/x-kendo-template">
             <div class="fild_set">
                 <div class="fild-title delete-message" id="del-message">
-                    <div id="title-text" ></div>
+                    <div id="title-text"></div>
                 </div>
                 <div class="fild-content">
-                    <div id="body-text" ></div>
+                    <div id="body-text"></div>
                     <div class="modelBox_controlls">
                         <input type="button" class="btn btn-secondary delete-cancel" id="kendoConfirmationCancelButton" value=@CommonResx.No />
                         <input type="button" class="btn btn-primary delete-confirm" id="kendoConfirmationAcceptButton" value=@CommonResx.Yes />
@@ -381,10 +376,10 @@
         <script id="dialog-confirmation" type="text/x-kendo-template">
             <div class="fild_set">
                 <div class="fild-title dialog-message" id="dialog-message">
-                    <div id="title-text" ></div>
+                    <div id="title-text"></div>
                 </div>
                 <div class="fild-content">
-                    <div id="body-text" ></div>
+                    <div id="body-text"></div>
                     <div class="modelBox_controlls">
                         <input type="button" class="btn btn-secondary dialog-cancel" id="kendoConfirmationCancelButton" value=@CommonResx.No />
                         <input type="button" class="btn btn-primary dialog-confirm" id="kendoConfirmationAcceptButton" value=@CommonResx.Yes />

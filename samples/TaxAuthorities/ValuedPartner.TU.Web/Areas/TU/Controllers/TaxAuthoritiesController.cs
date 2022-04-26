@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -22,13 +22,10 @@
 
 using Microsoft.Practices.Unity;
 using System.Web.Mvc;
-using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using ValuedPartner.TU.Models;
-using ValuedPartner.TU.Models.Enums;
 using ValuedPartner.TU.Resources.Forms;
 using ValuedPartner.TU.Web.Areas.TU.Models;
 
@@ -88,20 +85,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>JSON object for TaxAuthority</returns>
         public virtual ActionResult Index(string id)
         {
-            TaxAuthoritiesViewModel<T>  viewModel;
-
-            try
-            {
-                viewModel = !string.IsNullOrEmpty(id) ? ControllerInternal.GetById(id) : ControllerInternal.Create();
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
-                        TaxAuthoritiesResx.TaxAuthority));
-            }
-
-            return View(viewModel);
+            return ViewWithCatch(() => ControllerInternal.GetById(id),
+                CommonResx.GetFailedMessage, TaxAuthoritiesResx.TaxAuthority);
         }
 
         /// <summary>
@@ -112,21 +97,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Get(string id)
         {
-            try
-            {
-                if (!string.IsNullOrEmpty(id))
-                {
-                    return JsonNet(ControllerInternal.GetById(id));
-                }
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
-                        TaxAuthoritiesResx.TaxAuthority));
-            }
-
-            return JsonNet(new TaxAuthoritiesViewModel<T>());
+            return CallWithCatch(() => ControllerInternal.GetById(id),
+                CommonResx.GetFailedMessage, TaxAuthoritiesResx.TaxAuthority);
         }
 
         /// <summary>
@@ -137,20 +109,13 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Add(T model)
         {
-            try
+            if (!ValidateModelState(ModelState, out ViewModelBase<ModelBase> viewModel))
             {
-                ViewModelBase<ModelBase> viewModel;
+                return JsonNet(viewModel);
+            }
 
-                return ValidateModelState(ModelState, out viewModel)
-                   ? JsonNet(ControllerInternal.Add(model))
-                   : JsonNet(viewModel);
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.AddFailedMessage, businessException,
-                        TaxAuthoritiesResx.TaxAuthority));
-            }
+            return CallWithCatch(() => ControllerInternal.Add(model),
+                CommonResx.AddFailedMessage, TaxAuthoritiesResx.TaxAuthority);
         }
 
         /// <summary>
@@ -160,7 +125,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Create()
         {
-            return JsonNet(ControllerInternal.Create());
+            return CallWithCatch(() => ControllerInternal.Create(),
+                CommonResx.UnhandledExceptionMessage);
         }
 
         /// <summary>
@@ -171,18 +137,13 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Save(T model)
         {
-            try
+            if (!ValidateModelState(ModelState, out ViewModelBase<ModelBase> viewModel))
             {
-                ViewModelBase<ModelBase> viewModel;
+                return JsonNet(viewModel);
+            }
 
-                return ValidateModelState(ModelState, out viewModel)
-                    ? JsonNet(ControllerInternal.Save(model))
-                    : JsonNet(viewModel);
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
-            }
+            return CallWithCatch(() => ControllerInternal.Save(model),
+                CommonResx.SaveFailedMessage);
         }
 
         /// <summary>
@@ -193,16 +154,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public virtual JsonNetResult Delete(string id)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.Delete(id));
-            }
-            catch (BusinessException businessException)
-            {
-                return
-                    JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException,
-                        TaxAuthoritiesResx.TaxAuthority));
-            }
+            return CallWithCatch(() => ControllerInternal.Delete(id),
+                CommonResx.DeleteFailedMessage, TaxAuthoritiesResx.TaxAuthority);
         }
 
         /// <summary>
@@ -213,14 +166,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public JsonNetResult GetAccount(string id)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.GetGlAccount(id).Description);
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorOrWarningModelBase(CommonResx.GetFailedMessage, businessException, id));
-            }
+            return CallWithCatch(() => ControllerInternal.GetGlAccount(id).Description,
+                CommonResx.GetFailedMessage, id);
         }
 
         /// <summary>
@@ -231,14 +178,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         [HttpPost]
         public JsonNetResult GetCurrencyDescription(string id)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.GetCurrencyDescription(id));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorOrWarningModelBase(CommonResx.GetFailedMessage, businessException, id));
-            }
+            return CallWithCatch(() => ControllerInternal.GetCurrencyDescription(id),
+                CommonResx.GetFailedMessage, id);
         }
 
         #endregion

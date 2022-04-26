@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -545,7 +545,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 foreach (var widget in settings.Widgets["Button"])
                 {
                     snippet.AppendLine(new string(' ', depth));
-                    snippet.AppendLine(new string(' ', depth) + "$(\"#" + widget + "\").bind('click', function (e) {");
+                    snippet.AppendLine(new string(' ', depth) + "$(\"#" + widget + "\").bind('click', (e) => {");
                     snippet.AppendLine(new string(' ', depth) + "});");
                 }
             }
@@ -570,7 +570,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     snippet.AppendLine(new string(' ', depth) + "sg.utls.kndoUI.initTab(\"" + widget + "\");");
                     snippet.AppendLine(new string(' ', depth) + "sg.utls.kndoUI.selectTab(\"" + widget + "\", " + firstTabPage + ");");
                     snippet.AppendLine("");
-                    snippet.AppendLine(new string(' ', depth) + "var tabStrip = $(\"#" + widget + "\").data(\"kendoTabStrip\");");
+                    snippet.AppendLine(new string(' ', depth) + "let tabStrip = $(\"#" + widget + "\").data(\"kendoTabStrip\");");
                     snippet.AppendLine(new string(' ', depth) + "if (tabStrip) {");
                     snippet.AppendLine(new string(' ', depth + 4) + "tabStrip.bind(\"select\", " + localEntityName + "UI.onTabSelect);");
                     snippet.AppendLine(new string(' ', depth) + "}");
@@ -619,7 +619,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 foreach (var widget in settings.Widgets["DateTime"])
                 {
-                    snippet.AppendLine(new string(' ', depth) + "$(\"#txt" + widget + "\").on('change', function(e) {");
+                    snippet.AppendLine(new string(' ', depth) + "$(\"#txt" + widget + "\").on('change', (e) => {");
                     snippet.AppendLine(new string(' ', depth + 4) + "if (sg.utls.kndoUI.checkForValidDate($(\"#txt" + widget + "\").val())) {");
                     snippet.AppendLine(new string(' ', depth + 8) + "sg.utls.clearValidations(\"frm" + containerName + "\");");
                     snippet.AppendLine(new string(' ', depth + 4) + "} else {");
@@ -731,15 +731,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 snippet.AppendLine(new string(' ', depth) + "");
                 snippet.AppendLine(new string(' ', depth) + @"/**");
-                snippet.AppendLine(new string(' ', depth) + @"* @function");
                 snippet.AppendLine(new string(' ', depth) + @"* @name onTabSelect");
                 snippet.AppendLine(new string(' ', depth) + @"* @description Tab page selection ");
                 snippet.AppendLine(new string(' ', depth) + @"* @namespace " + localEntityName + "UI");
                 snippet.AppendLine(new string(' ', depth) + @"* @public");
                 snippet.AppendLine(new string(' ', depth) + @"*/");
 
-                snippet.AppendLine(new string(' ', depth) + "onTabSelect: function (e) {");
-                snippet.AppendLine(new string(' ', depth + 4) + "var selectedTab = e.item.id;");
+                snippet.AppendLine(new string(' ', depth) + "onTabSelect: (e) => {");
+                snippet.AppendLine(new string(' ', depth + 4) + "let selectedTab = e.item.id;");
                 snippet.AppendLine(new string(' ', depth + 4) + "switch (selectedTab) {");
 
                 foreach (var widget in settings.Widgets["TabPage"])
@@ -883,11 +882,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Iterate tab, if any
             if (settings.Widgets.ContainsKey("Tab"))
             {
-                snippet.AppendLine(new string(' ', depth) + "tabStripEnable: function (value, id) {");
+                snippet.AppendLine(new string(' ', depth) + "tabStripEnable: (value, id) => {");
                 foreach (var widget in settings.Widgets["Tab"])
                 {
-                    snippet.AppendLine(new string(' ', depth + 4) + "var tabStrip = $(\"#" + widget + "\").data(\"kendoTabStrip\");");
-                    snippet.AppendLine(new string(' ', depth + 4) + "var items = tabStrip.items();");
+                    snippet.AppendLine(new string(' ', depth + 4) + "let tabStrip = $(\"#" + widget + "\").data(\"kendoTabStrip\");");
+                    snippet.AppendLine(new string(' ', depth + 4) + "let items = tabStrip.items();");
                     snippet.AppendLine(new string(' ', depth + 4) + "if (value) {");
                     snippet.AppendLine(new string(' ', depth + 8) + "// Enable");
                     snippet.AppendLine(new string(' ', depth + 8) + "tabStrip.enable(items[id]);");
@@ -915,21 +914,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 foreach (var finderControl in finderControls)
                 {
                     // Need to read view finder file (NON MINIFIED)
-                    // // to get object as may not be sg.viewFinderProperties
-                    var objectName = "sg.viewFinderProperties";
-                    var lines = File.ReadLines(finderControl.Attribute("finderFileName")?.Value);
-
-                    foreach (var line in lines)
-                    {
-                        // The first line containing this will be the object name
-                        if (line.Contains("="))
-                        {
-                            var split = line.Split('=');
-                            objectName = split[0].Trim();
-                            break;
-                        }
-                    }
-
+                    // to get object as may not be sg.viewFinderProperties
+                    var objectName = GetObjectName(finderControl.Attribute("finderFileName")?.Value);
                     var finderName = finderControl.Attribute("property")?.Value;
                     var finderProperty = finderControl.Attribute("finderProperty")?.Value != null ? $", {objectName}.{finderControl.Attribute("finderProperty").Value}" : string.Empty;
                     snippet.AppendLine(new string(' ', depth) + $@"sg.viewFinderHelper.setViewFinder(""btnFinder{finderName}"", ""txt{finderName}"" {finderProperty});");
@@ -974,9 +960,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     // Get Business View
                     var businessField = view.Fields.Where(x => x.Name == widget).FirstOrDefault();
 
-                    snippet.AppendLine(new string(' ', depth) + "model.Is" + widget + "Disabled = ko.computed(function () {");
+                    snippet.AppendLine(new string(' ', depth) + "model.Is" + widget + "Disabled = ko.computed(() => {");
                     snippet.AppendLine(new string(' ', depth + 4) + "// Default to IsReadOnly property in business view");
-                    snippet.AppendLine(new string(' ', depth + 4) + "var isReadOnly = " + businessField.IsReadOnly.ToString().ToLower() + ";");
+                    snippet.AppendLine(new string(' ', depth + 4) + "let isReadOnly = " + businessField.IsReadOnly.ToString().ToLower() + ";");
 
                     // Enable/disable the dropdown portion of the timepicker control
                     if ((key == "DateTime" && businessField.IsTimeOnly) || key == "Time")
@@ -984,7 +970,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         snippet.AppendLine(new string(' ', depth + 4) + "// Get widget");
                         snippet.AppendLine(new string(' ', depth + 4) + "let widget = \"#txt" + widget + "\";");
                         snippet.AppendLine(new string(' ', depth + 4) + "// Enable/disable the dropdown portion of the timepicker control");
-                        snippet.AppendLine(new string(' ', depth + 4) + "var timepicker = sg.utls.kndoUI.timePicker.getControlById(widget);");
+                        snippet.AppendLine(new string(' ', depth + 4) + "let timepicker = sg.utls.kndoUI.timePicker.getControlById(widget);");
                         snippet.AppendLine(new string(' ', depth + 4) + "// Init if needed");
                         snippet.AppendLine(new string(' ', depth + 4) + "if (timepicker === undefined) {");
                         snippet.AppendLine(new string(' ', depth + 8) + localEntityName + "UI.initTimePickers();");
@@ -1362,5 +1348,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return Environment.NewLine + new string(' ', (depth) * 4);
         }
 
+        /// <summary> Object and method name in JavaScript file may NOT be named "sg.viewFinderProperties" </summary>
+        /// <param name="fileName">JavaScript filename</param>
+        /// <returns>Object and method name found in file</returns>
+        /// <remarks>There are two formats that must be scanned to retrieve the object and method name
+        /// 1. ...@namespace ObjectName.MethodName (note: method name must be properly cased)
+        /// 2. ObjectName.MethodName = ...
+        /// </remarks>
+        private static string GetObjectName(string fileName)
+        {
+            // Default
+            string result = "sg.viewFinderProperties";
+
+            try
+            {
+                // Read view finder file (NON-MINIFIED)
+                var lines = File.ReadLines(fileName);
+
+                // Tokens
+                string[] token = { "namespace ", "=" };
+
+                // Iterate file
+                foreach (var line in lines)
+                {
+                    // Investigate tokens
+                    if (line.Contains(token[0]) || line.Contains(token[1]))
+                    {
+                        var split = line.Split(token, StringSplitOptions.RemoveEmptyEntries);
+                        result = split[line.Contains(token[0]) ? 1 : 0].Trim();
+                        break;
+                    }
+                }
+            }
+            catch
+            {
+            }
+            return result;
+        }
     }
 }

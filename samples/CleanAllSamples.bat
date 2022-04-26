@@ -1,6 +1,11 @@
 @echo off
 REM
-REM This batch file will remove the following folders from each Web SDK sample
+REM This batch file will remove the following folders and files 
+REM from each Web SDK sample.
+REM
+REM -----------------------------------------------------------------
+REM  Folders
+REM -----------------------------------------------------------------
 REM
 REM 	.vs
 REM 	packages
@@ -18,142 +23,64 @@ REM     ValuedPartner.TU.Web\___DEPLOY___
 REM     ValuedPartner.TU.Web\bin
 REM     ValuedPartner.TU.Web\logs
 REM     ValuedPartner.TU.Web\obj
+REM		ValuedPartner.TU.Web\Areas\Shared\Scripts\out
+REM
+REM -----------------------------------------------------------------
+REM  Individual Files
+REM -----------------------------------------------------------------
+REM
+REM		UpgradeLog.txt
+REM		ValuedPartner.TU.Web\Antlr3.Runtime.dll
+REM		ValuedPartner.TU.Web\MergeISVProject.exe
+REM		ValuedPartner.TU.Web\Newtonsoft.Json.dll
+REM		ValuedPartner.TU.Web\WebGrease.dll
+REM		ValuedPartner.TU.Web\WG.EXE
+REM
 
 set Drive=D:
-set SamplesRoot=%Drive%\Projects\Sage300-SDK\Develop\Samples
+set Branch=Develop
+set SamplesRoot=%Drive%\Projects\Sage300-SDK\%Branch%\Samples
 
-set SampleName=ClearStatistics
-@echo Cleaning %SampleName%...
-RD /S /Q %SamplesRoot%\%SampleName%\.vs
-RD /S /Q %SamplesRoot%\%SampleName%\packages
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\___DEPLOY___
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\logs
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\obj
+@echo Beginning WebSDK Sample Cleanup...
+call:CleanSample "ClearStatistics"
+call:CleanSample "Receipt"
+call:CleanSample "SegmentCodes"
+call:CleanSample "SourceCodes"
+call:CleanSample "SourceJournalProfiles"
+call:CleanSample "SourceJournalProfilesReports"
+call:CleanSample "TaxAuthorities"
+@echo End of WebSDK Sample Cleanup.
+goto:eof
 
-set SampleName=Receipt
-@echo Cleaning %SampleName%...
-RD /S /Q %SamplesRoot%\%SampleName%\.vs
-RD /S /Q %SamplesRoot%\%SampleName%\packages
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\___DEPLOY___
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\logs
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\obj
+:CleanSample
+REM -----------------------------------------------------------------
+REM  Folders
+REM -----------------------------------------------------------------
+RD /S /Q %SamplesRoot%\%~1\.vs
+RD /S /Q %SamplesRoot%\%~1\packages
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.BusinessRepository\bin
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.BusinessRepository\obj
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Interfaces\bin
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Interfaces\obj
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Models\bin
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Models\obj
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Resources\bin
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Resources\obj
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Services\bin
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Services\obj
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Web\___DEPLOY___
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Web\bin
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Web\logs
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Web\obj
+RD /S /Q %SamplesRoot%\%~1\ValuedPartner.TU.Web\Areas\Shared\Scripts\out
 
-set SampleName=SegmentCodes
-@echo Cleaning %SampleName%...
-RD /S /Q %SamplesRoot%\%SampleName%\.vs
-RD /S /Q %SamplesRoot%\%SampleName%\packages
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\___DEPLOY___
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\logs
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\obj
-
-set SampleName=SourceCodes
-@echo Cleaning %SampleName%...
-RD /S /Q %SamplesRoot%\%SampleName%\.vs
-RD /S /Q %SamplesRoot%\%SampleName%\packages
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\___DEPLOY___
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\logs
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\obj
-
-set SampleName=SourceJournalProfiles
-@echo Cleaning %SampleName%...
-RD /S /Q %SamplesRoot%\%SampleName%\.vs
-RD /S /Q %SamplesRoot%\%SampleName%\packages
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\___DEPLOY___
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\logs
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\obj
-
-set SampleName=SourceJournalProfilesReports
-@echo Cleaning %SampleName%...
-RD /S /Q %SamplesRoot%\%SampleName%\.vs
-RD /S /Q %SamplesRoot%\%SampleName%\packages
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\___DEPLOY___
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\logs
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\obj
-
-set SampleName=TaxAuthorities
-@echo Cleaning %SampleName%...
-RD /S /Q %SamplesRoot%\%SampleName%\.vs
-RD /S /Q %SamplesRoot%\%SampleName%\packages
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.BusinessRepository\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Interfaces\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Models\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Resources\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Services\obj
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\___DEPLOY___
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\bin
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\logs
-RD /S /Q %SamplesRoot%\%SampleName%\ValuedPartner.TU.Web\obj
-
-
-
+REM -----------------------------------------------------------------
+REM  Individual Files
+REM -----------------------------------------------------------------
+DEL /F %SamplesRoot%\%~1\UpgradeLog.txt
+DEL /F %SamplesRoot%\%~1\ValuedPartner.TU.Web\Antlr3.Runtime.dll
+DEL /F %SamplesRoot%\%~1\ValuedPartner.TU.Web\MergeISVProject.exe
+DEL /F %SamplesRoot%\%~1\ValuedPartner.TU.Web\Newtonsoft.Json.dll
+DEL /F %SamplesRoot%\%~1\ValuedPartner.TU.Web\WebGrease.dll
+DEL /F %SamplesRoot%\%~1\ValuedPartner.TU.Web\WG.EXE
+goto:eof

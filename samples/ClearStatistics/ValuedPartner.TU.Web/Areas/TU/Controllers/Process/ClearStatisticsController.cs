@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -27,7 +27,6 @@ using ValuedPartner.TU.Models.Process;
 using ValuedPartner.TU.Web.Areas.TU.Models.Process;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.Process;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
-using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms;
 
@@ -87,14 +86,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Process
         /// <returns>Maximum period if fiscal year is valid or else 0</returns>
         public JsonNetResult GetMaxPeriodForValidYear(string year)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.GetMaxPeriodForValidYear(year, CustomerType));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ARCommonResx.Customer));
-            }
+            return CallWithCatch(() => ControllerInternal.GetMaxPeriodForValidYear(year, CustomerType),
+                CommonResx.GetFailedMessage, ARCommonResx.Customer);
         }
 
         /// <summary>
@@ -104,14 +97,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Process
         /// <returns>Maximum period if fiscal year is valid or else 0</returns>
         public JsonNetResult GetSalesPersonMaxPeriodForValidYear(string year)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.GetMaxPeriodForValidYear(year, SalesType));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ARCommonResx.SalespersonStatistics));
-            }
+            return CallWithCatch(() => ControllerInternal.GetMaxPeriodForValidYear(year, SalesType),
+                CommonResx.GetFailedMessage, ARCommonResx.SalespersonStatistics);
         }
 
         /// <summary>
@@ -121,14 +108,8 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Process
         /// <returns>Maximum period if fiscal year is valid or else 0</returns>
         public JsonNetResult GetItemMaxPeriodForValidYear(string year)
         {
-            try
-            {
-                return JsonNet(ControllerInternal.GetMaxPeriodForValidYear(year, ItemType));
-            }
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, ARCommonResx.ItemStatistics));
-            }
+            return CallWithCatch(() => ControllerInternal.GetMaxPeriodForValidYear(year, ItemType),
+                CommonResx.GetFailedMessage, ARCommonResx.ItemStatistics);
         }
 
         #endregion

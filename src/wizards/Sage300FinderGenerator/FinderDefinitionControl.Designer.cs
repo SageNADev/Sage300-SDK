@@ -195,10 +195,6 @@
             // 
             // mskPassword
             // 
-            this.mskPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
             this.mskPassword.CustomButton.Image = null;
             this.mskPassword.CustomButton.Location = new System.Drawing.Point(152, 1);
             this.mskPassword.CustomButton.Name = "";

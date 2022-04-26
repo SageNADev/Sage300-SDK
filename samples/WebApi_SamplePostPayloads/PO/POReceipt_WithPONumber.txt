@@ -1,0 +1,24 @@
+{
+  "PurchaseOrderNumber": "PO01",
+  "Vendor": "1400",
+  "Description": "PO Receipt desc",
+  "Reference": "Web API 1",
+  "ReceiptLine2s": [
+    {
+      "LineNumber": 10,
+      "ItemNumber": "A1-105/0",
+      "Location": "1",
+      "UnitOfMeasure": "Ea.",
+      "QuantityReceived": 2,
+      "UnitCost": 5
+    },
+    {
+      "LineNumber": 20,
+      "ItemNumber": "A1-450/0",
+      "Location": "1",
+      "UnitOfMeasure": "Ea.",
+      "QuantityReceived": 3,
+      "UnitCost": 1.25
+    }
+  ]
+}

@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class CompanyProfileResx {
@@ -106,6 +106,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Basic Authentication SMTP.
+        /// </summary>
+        public static string BasicAuthentication {
+            get {
+                return ResourceManager.GetString("BasicAuthentication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bcc Email Address.
         /// </summary>
         public static string BccEmailAddress {
@@ -165,6 +174,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string City {
             get {
                 return ResourceManager.GetString("City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client ID.
+        /// </summary>
+        public static string ClientID {
+            get {
+                return ResourceManager.GetString("ClientID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client Secret.
+        /// </summary>
+        public static string ClientSecret {
+            get {
+                return ResourceManager.GetString("ClientSecret", resourceCulture);
             }
         }
         
@@ -358,6 +385,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email Service.
+        /// </summary>
+        public static string EmailMethod {
+            get {
+                return ResourceManager.GetString("EmailMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email messages successfully created and added to the print queue for delivery..
         /// </summary>
         public static string EmailQueuedMessage {
@@ -516,6 +552,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string LockedFiscalPeriod {
             get {
                 return ResourceManager.GetString("LockedFiscalPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Microsoft Graph.
+        /// </summary>
+        public static string MicrosoftGraph {
+            get {
+                return ResourceManager.GetString("MicrosoftGraph", resourceCulture);
             }
         }
         
@@ -732,6 +777,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string TaxNumber {
             get {
                 return ResourceManager.GetString("TaxNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tenant ID.
+        /// </summary>
+        public static string TenantID {
+            get {
+                return ResourceManager.GetString("TenantID", resourceCulture);
             }
         }
         

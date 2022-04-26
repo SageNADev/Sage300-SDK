@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -19,20 +19,15 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Namespace
-
 using System;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Collections.Generic;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
-using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
 using ValuedPartner.TU.Interfaces.Services;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Resources.Forms;
 using ValuedPartner.TU.Web.Areas.TU.Models;
-
 #endregion
 
 namespace ValuedPartner.TU.Web.Areas.TU.Controllers
@@ -45,11 +40,9 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         where T : SourceCode, new()
     {
         #region Private variables
-
         #endregion
 
         #region Constructor
-
         /// <summary>
         /// New instance of <see cref="SourceCodeControllerInternal{T}"/>
         /// </summary>
@@ -58,11 +51,9 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             : base(context)
         {
         }
-
         #endregion
 
         #region Internal methods
-
         /// <summary>
         /// Get Source Code
         /// </summary>
@@ -71,13 +62,17 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Json object for Source Code </returns>
         internal SourceCodeViewModel<T> Get(string sourceLedger, string sourceType)
         {
-            var sourceCode = Service.GetByIds(sourceLedger, sourceType);
-
-            return new SourceCodeViewModel<T>
+            if (!string.IsNullOrEmpty(sourceLedger) && !string.IsNullOrEmpty(sourceType))
             {
-                Data = sourceCode,
-                UserMessage = new UserMessage(sourceCode)
-            };
+                var data = Service.GetByIds(sourceLedger, sourceType);
+                var userMessage = new UserMessage(data);
+
+                return GetViewModel(data, userMessage);
+            }
+            else
+            {
+                return Create();
+            }
         }
 
         /// <summary>
@@ -86,7 +81,10 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>JSON object for SourceCode</returns>
         internal SourceCodeViewModel<T> Create()
         {
-            return new SourceCodeViewModel<T>();
+            var viewModel = GetViewModel(new T(), null);
+            viewModel.UserAccess = GetAccessRights();
+
+            return viewModel;
         }
 
         /// <summary>
@@ -97,12 +95,10 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         internal SourceCodeViewModel<T> Add(T model)
         {
             var data = Service.Add(model);
+            var userMessage = new UserMessage(data,
+                string.Format(CommonResx.AddSuccessMessage, SourceCodeResx.SourceCode, data.SourceLedger + "-" + data.SourceType));
 
-            return new SourceCodeViewModel<T>
-            {
-                Data = data,
-                UserMessage = new UserMessage(data, string.Format(CommonResx.AddSuccessMessage, SourceCodeResx.SourceCode, data.SourceLedger + "-" + data.SourceType))
-            };
+            return GetViewModel(data, userMessage);
        }
 
         /// <summary>
@@ -113,12 +109,9 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         internal SourceCodeViewModel<T> Save(T model)
         {
             var data = Service.Save(model);
+            var userMessage = new UserMessage(data, CommonResx.SaveSuccessMessage);
 
-            return new SourceCodeViewModel<T>
-            {
-                Data = data,
-                UserMessage = new UserMessage(data, CommonResx.SaveSuccessMessage)
-            };
+            return GetViewModel(data, userMessage);
         }
 
         /// <summary>
@@ -130,20 +123,32 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         internal SourceCodeViewModel<T> Delete(string sourceLedger, string sourceType)
         {
             Expression<Func<T, bool>> filter = param => param.SourceLedger == sourceLedger && param.SourceType == sourceType;
-            var sourceCodes = Service.Delete(filter);
+            var data = Service.Delete(filter);
+            var userMessage = new UserMessage(data,
+                string.Format(CommonResx.DeleteSuccessMessage, SourceCodeResx.SourceCode, data.SourceLedger + "-" + data.SourceType));
 
-            return new SourceCodeViewModel<T>
-            {
-                Data = sourceCodes,
-                UserMessage = new UserMessage(sourceCodes, string.Format(CommonResx.DeleteSuccessMessage, SourceCodeResx.SourceCode, sourceCodes.SourceLedger + "-" + sourceCodes.SourceType))
-            };
+            return GetViewModel(data, userMessage);
         }
 
         #endregion
 
         #region Private methods
+        /// <summary>
+        /// Generic routine to return a view model for Source Code
+        /// </summary>
+        /// <param name="model">Model for Source Code</param>
+        /// <param name="userMessage">User Message for Source Code</param>
+        /// <returns>View Model for Source Code</returns>
+        private SourceCodeViewModel<T> GetViewModel(T model, UserMessage userMessage)
+        {
+            return new SourceCodeViewModel<T>
+            {
+                Data = model,
+                UserMessage = userMessage
+            };
+        }
 
         #endregion
 
-	}
+    }
 }

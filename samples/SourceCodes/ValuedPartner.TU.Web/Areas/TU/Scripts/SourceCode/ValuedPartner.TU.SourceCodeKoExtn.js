@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -23,13 +23,13 @@
 "use strict";
 
 function SourceCodeObservableExtension(sourceCodeModel, uiMode) {
-    var model = sourceCodeModel;
+    let model = sourceCodeModel;
     model.UIMode = ko.observable(uiMode);
 
     // Computed Fields go here
 
     model.SourceCode = ko.computed({
-        read: function () {
+        read: () => {
             // Default value for Source Code is an empty string
             let sourceCodeVal = "";
             if (model.SourceLedger()) {
@@ -43,7 +43,7 @@ function SourceCodeObservableExtension(sourceCodeModel, uiMode) {
 
         },
 
-        write: function (value) {
+        write: (value) => {
             if (value != undefined) {
                 let scData = sourceCodeObject.getSourceCodeElements(value);
                 model.SourceLedger(scData.SourceLedger);
@@ -52,11 +52,11 @@ function SourceCodeObservableExtension(sourceCodeModel, uiMode) {
         }
     });
 
-    model.DisableAddSave = ko.computed(function () {
+    model.DisableAddSave = ko.computed(() => {
         return (sg.controls.GetString(model.SourceCode()) === "" || model.SourceCode() === "-");
     });
 
-    model.DisableDelete = ko.computed(function () {
+    model.DisableDelete = ko.computed(() => {
         return (sg.controls.GetString(model.SourceCode()) === "" || model.SourceCode() === "-" || model.UIMode() === sg.utls.OperationMode.NEW);
     });
 

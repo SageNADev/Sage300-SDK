@@ -1,0 +1,15 @@
+@* Copyright (c) 2021 Sage300  All rights reserved. *@
+
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using MenuResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal.NavigationResx
+
+<script type="text/javascript">
+    var declarativeReportResources = {
+        FinderTitle: '@CommonResx.Select',
+        ErrorFromToValueMessage: '@Html.SageRaw(CommonResx.FromToValueMessage)',
+        From: '@Html.SageRaw(CommonResx.From)',
+        To: '@Html.SageRaw(CommonResx.To)',
+        Projects: '@Html.SageRaw(MenuResx.PM_Projects)',
+        Categories: '@Html.SageRaw(MenuResx.PM_Categories)'
+    };
+</script>

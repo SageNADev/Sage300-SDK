@@ -1,0 +1,23 @@
+﻿@* Copyright (c) 2022 Sage300  All rights reserved. *@
+
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@using DeclarativeReportResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.DeclarativeReportResx
+
+<script type="text/javascript">
+    var declarativeReportICResources = {
+        ItemNumberFrom: '@Html.SageRaw(DeclarativeReportResx.ItemNumberFrom)',
+        ItemNumberTo: '@Html.SageRaw(DeclarativeReportResx.ItemNumberTo)',
+        LocationFrom: '@Html.SageRaw(DeclarativeReportResx.LocationFrom)',
+        LocationTo: '@Html.SageRaw(DeclarativeReportResx.LocationTo)',
+        Location: '@Html.SageRaw(DeclarativeReportResx.Location)',
+        VendorNumber: '@Html.SageRaw(DeclarativeReportResx.VendorNumber)',
+        Category: '@Html.SageRaw(DeclarativeReportResx.Category)',
+        ItemNumber: '@Html.SageRaw(DeclarativeReportResx.ItemNumber)',
+        ItemSegment: '@Html.SageRaw(DeclarativeReportResx.ItemSegment)',
+        From: '@Html.SageRaw(CommonResx.From)',
+        To: '@Html.SageRaw(CommonResx.To)',
+        RecordDoesNotExist: '@Html.SageRaw(CommonResx.RecordDoesNotExist)',
+        CannotBeBlankMessage: '@Html.SageRaw(CommonResx.CannotBeBlankMessage)',
+        InvalidDate: '@Html.SageRaw(CommonResx.InvalidDate)'
+    };
+</script>

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -22,10 +22,9 @@
 
 "use strict";
 
-var tuClearStatisticsKoExtn = (function (self) {
+var tuClearStatisticsKoExtn = ((self) => {
 
     /**
-     * @function
      * @name convertToBoolean
      * @description Converts a value into a boolean type
      * @private
@@ -46,25 +45,24 @@ var tuClearStatisticsKoExtn = (function (self) {
     return {
 
         /**
-         * @function
          * @name tuClearStatisticsModelExtension
          * @description
          * @public
          * 
          * @param {Object} model
          */
-        tuClearStatisticsModelExtension: function (model) {
+        tuClearStatisticsModelExtension: (model) => {
             let modelData = model.Data;
             modelData.Year = ko.observable("");
 
             modelData.IsKoStatisticsDirty = new ko.dirtyFlag(model);
 
             modelData.bClearCustomerStatistics = ko.computed({
-                read: function () {
+                read: () => {
                     // return original value
                     return convertToBoolean(model.Data.ClearCustomerStatistics());
                 },
-                write: function (newValue) {
+                write: (newValue) => {
                     // convert boolean to appropriate enum and assign
                     var parsedValue = newValue ? 1 : 0;
                     model.Data.ClearCustomerStatistics(parsedValue);
@@ -73,11 +71,11 @@ var tuClearStatisticsKoExtn = (function (self) {
             });
 
             modelData.bClearGroupStatistics = ko.computed({
-                read: function () {
+                read: () => {
                     // return original value
                     return convertToBoolean(model.Data.ClearGroupStatistics());
                 },
-                write: function (newValue) {
+                write: (newValue) => {
                     // convert boolean to appropriate enum and assign
                     var parsedValue = newValue ? 1 : 0;
                     model.Data.ClearGroupStatistics(parsedValue);
@@ -86,11 +84,11 @@ var tuClearStatisticsKoExtn = (function (self) {
             });
 
             modelData.bClearNationalAcctStatistics = ko.computed({
-                read: function () {
+                read: () => {
                     // return original value
                     return convertToBoolean(model.Data.ClearNationalAcctStatistics());
                 },
-                write: function (newValue) {
+                write: (newValue) => {
                     //convert boolean to appropriate enum and assign
                     var parsedValue = newValue ? 1 : 0;
                     model.Data.ClearNationalAcctStatistics(parsedValue);
@@ -99,11 +97,11 @@ var tuClearStatisticsKoExtn = (function (self) {
             });
 
             modelData.bClearSalespersonStatistics = ko.computed({
-                read: function () {
+                read: () => {
                     // return original value
                     return convertToBoolean(model.Data.ClearSalesPersonStatistics());
                 },
-                write: function (newValue) {
+                write: (newValue) => {
                     // convert boolean to appropriate enum and assign
                     var parsedValue = newValue ? 1 : 0;
                     model.Data.ClearSalesPersonStatistics(parsedValue);
@@ -112,11 +110,11 @@ var tuClearStatisticsKoExtn = (function (self) {
             });
 
             modelData.bClearItemStatistics = ko.computed({
-                read: function () {
+                read: () => {
                     // return original value
                     return convertToBoolean(model.Data.ClearItemStatistics());
                 },
-                write: function (newValue) {
+                write: (newValue) => {
                     // convert boolean to appropriate enum and assign
                     var parsedValue = newValue ? 1 : 0;
                     model.Data.ClearItemStatistics(parsedValue);

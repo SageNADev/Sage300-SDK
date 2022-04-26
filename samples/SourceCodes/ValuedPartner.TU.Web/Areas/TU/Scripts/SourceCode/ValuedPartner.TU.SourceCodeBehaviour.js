@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -31,13 +31,12 @@ sourceCodeUI = {
     sourceCode: null,
 
     /**
-     * @function
      * @name init
      * @description Primary initialization routine
      * @namespace sourceCodeUI
      * @public
      */
-    init: function () {
+    init: () => {
         sg.utls.maskSourceCode("sg-mask-sourcecode");
         sourceCodeUI.initButtons();
         sourceCodeUI.initFinders();
@@ -47,13 +46,12 @@ sourceCodeUI = {
     },
 
     /**
-     * @function
      * @name saveSourceCode
      * @description Save a source code entry
      * @namespace sourceCodeUI
      * @public
      */
-    saveSourceCode: function () {
+    saveSourceCode: () => {
         if ($("#frmSourceCodes").valid()) {
 
             if (sg.controls.GetString(sourceCodeUI.sourceCodeModel.Data.SourceType()) === "") {
@@ -71,24 +69,23 @@ sourceCodeUI = {
     },
 
     /**
-     * @function
      * @name initButtons
      * @description Initialize buttons
      * @namespace sourceCodeUI
      * @public
      */
-    initButtons: function () {
+    initButtons: () => {
         // Import/Export Buttons
         sg.exportHelper.setExportEvent("btnOptionExport", "tusourcecode", false, $.noop);
         sg.importHelper.setImportEvent("btnOptionImport", "tusourcecode", false, $.noop);
 
         // Key field with Finder
-        $("#sourceCode").on('blur', function (e) {
+        $("#sourceCode").on('blur', (e) => {
             // The below line of code is not correct as KO should only do this.
             // KO is not firing because Masking is there. This doesn't happens in the new version of mask plugin.
             // We can remove this once new version is applied.
             sourceCodeUI.sourceCodeModel.Data.SourceCode($("#sourceCode").val());
-            sg.delayOnBlur("btnFinderSourceCode", function() {
+            sg.delayOnBlur("btnFinderSourceCode", () => {
                 if (sg.controls.GetString(sourceCodeUI.sourceCodeModel.Data.SourceLedger()) !== "") {
                     if (sg.controls.GetString(sourceCodeUI.sourceCode) !== sg.controls.GetString(sourceCodeUI.sourceCodeModel.Data.SourceCode())) {
                         sourceCodeUI.checkIsDirty(sourceCodeUI.get, sourceCodeUI.sourceCode);
@@ -98,20 +95,20 @@ sourceCodeUI = {
         });
 
         // Create New Button
-        $("#btnNewSourceCode").on('click', function () {
+        $("#btnNewSourceCode").on('click', () => {
             sourceCodeUI.checkIsDirty(sourceCodeUI.create, sourceCodeUI.sourceCode);
         });
 
         // Save Button
-        $("#btnSaveSourceCode").on('click', function () {
+        $("#btnSaveSourceCode").on('click', () => {
             sg.utls.SyncExecute(sourceCodeUI.saveSourceCode);
         });
 
         // Delete Button
-        $("#btnDeleteSourceCode").on('click', function () {
+        $("#btnDeleteSourceCode").on('click', () => {
             if ($("#frmSourceCodes").valid()) {
                 let message = jQuery.validator.format(sourceCodeResources.DeleteConfirmMessage, sourceCodeResources.SourceCodeTitle, sourceCodeUI.sourceCodeModel.Data.SourceCode());
-                sg.utls.showKendoConfirmationDialog(function() {
+                sg.utls.showKendoConfirmationDialog(() => {
                         sg.utls.clearValidations("frmSourceCodes");
                         sourceCodeRepository.delete(sourceCodeUI.sourceCodeModel.Data.SourceLedger(), sourceCodeUI.sourceCodeModel.Data.SourceType());
                     },
@@ -122,13 +119,12 @@ sourceCodeUI = {
     },
 
     /**
-     * @function
      * @name initFinders
      * @description Initialize the finders
      * @namespace sourceCodeUI
      * @public
      */
-    initFinders: function () {
+    initFinders: () => {
         let info = sg.viewFinderProperties.GL.SourceCodes;
         let buttonId = "btnFinderSourceCode";
         let dataControlIdOrSuccessCallback = sourceCodeUISuccess.finderSuccess;
@@ -136,13 +132,12 @@ sourceCodeUI = {
     },
 
     /**
-     * @function
      * @name get
      * @description Get an existing source code
      * @namespace sourceCodeUI
      * @public
      */
-    get: function () {
+    get: () => {
         sourceCodeRepository.get(
             sourceCodeUI.sourceCodeModel.Data.SourceLedger(),
             sourceCodeUI.sourceCodeModel.Data.SourceType()
@@ -150,19 +145,17 @@ sourceCodeUI = {
     },
 
     /**
-     * @function
      * @name create
      * @description Create a new source code
      * @namespace sourceCodeUI
      * @public
      */
-    create: function () {
+    create: () => {
         sg.utls.clearValidations("frmSourceCodes");
         sourceCodeRepository.create();
     },
 
     /**
-     * @function
      * @name checkIsDirty
      * @description Check to see if model has been altered
      * @namespace sourceCodeUI
@@ -172,14 +165,14 @@ sourceCodeUI = {
      *                                  user selects Yes in confirmation dialog box
      * @param {string} sourceCode The source code specification
      */
-    checkIsDirty: function (functionToCall, sourceCode) {
+    checkIsDirty: (functionToCall, sourceCode) => {
         if (sourceCodeUI.sourceCodeModel.isModelDirty.isDirty()) {
             sg.utls.showKendoConfirmationDialog(
-                function () { // Yes
+                () => { // Yes
                     sg.utls.clearValidations("frmSourceCodes");
                     functionToCall.call();
                 },
-                function () { // No
+                () => { // No
                     if (sg.controls.GetString(sourceCode) != sg.controls.GetString(sourceCodeUI.sourceCodeModel.Data.SourceCode())) {
                         sourceCodeUI.sourceCodeModel.Data.SourceCode(sourceCode);
                     }
@@ -196,18 +189,16 @@ sourceCodeUI = {
 var sourceCodeUISuccess = {
 
     /**
-     * @function
      * @name setKey
      * @description Set the current key
      * @namespace sourceCodeUISuccess
      * @public
      */
-    setKey: function () {
+    setKey: () => {
         sourceCodeUI.sourceCode = sourceCodeObject.generateSourceCode(sourceCodeUI.sourceCodeModel.Data.SourceLedger(), sourceCodeUI.sourceCodeModel.Data.SourceType());
     },
 
     /**
-     * @function
      * @name get
      * @description Event handler for successful get
      * @namespace sourceCodeUISuccess
@@ -215,8 +206,8 @@ var sourceCodeUISuccess = {
      *  
      * @param {object} data The returned data
      */
-    get: function (data) {
-        sourceCodeUISuccess.displayResult(data, function (result) {
+    get: (data) => {
+        sourceCodeUISuccess.displayResult(data, (result) => {
             if (result.UserMessage && result.UserMessage.IsSuccess) {
                 if (result.Data) {
                     ko.mapping.fromJS(result, sourceCodeUI.sourceCodeModel);
@@ -232,7 +223,6 @@ var sourceCodeUISuccess = {
     },
 
     /**
-     * @function
      * @name update
      * @description Event handler for successful update
      * @namespace sourceCodeUISuccess
@@ -240,8 +230,8 @@ var sourceCodeUISuccess = {
      *
      * @param {object} data The returned data
      */
-    update: function (data) {
-        sourceCodeUISuccess.displayResult(data, function (result) {
+    update: (data) => {
+        sourceCodeUISuccess.displayResult(data, (result) => {
             if (result.UserMessage && result.UserMessage.IsSuccess) {
                 ko.mapping.fromJS(result, sourceCodeUI.sourceCodeModel);
                 sourceCodeUI.sourceCodeModel.Data.UIMode(sg.utls.OperationMode.SAVE);
@@ -252,7 +242,6 @@ var sourceCodeUISuccess = {
     },
 
     /**
-     * @function
      * @name update
      * @description Event handler for successful create
      * @namespace sourceCodeUISuccess
@@ -260,29 +249,26 @@ var sourceCodeUISuccess = {
      *
      * @param {object} data The returned data
      */
-    create: function (data) {
-        sourceCodeUISuccess.displayResult(data, function (result) {
-            if (result.UserMessage && result.UserMessage.IsSuccess) {
-                ko.mapping.fromJS(result, sourceCodeUI.sourceCodeModel);
-                sourceCodeUI.sourceCodeModel.Data.UIMode(sg.utls.OperationMode.NEW);
-                sourceCodeUI.sourceCodeModel.isModelDirty.reset();
-                sourceCodeUISuccess.setKey();
-                sg.controls.Focus($("#sourceCode"));
-            }
+    create: (data) => {
+        sourceCodeUISuccess.displayResult(data, (result) => {
+            sourceCodeUI.sourceCodeModel = ko.mapping.fromJS(result, sourceCodeUI.sourceCodeModel)
+            sourceCodeUI.sourceCodeModel.Data.UIMode(sg.utls.OperationMode.NEW);
+            sourceCodeUI.sourceCodeModel.isModelDirty.reset();
+            sourceCodeUISuccess.setKey();
+            sg.controls.Focus($("#sourceCode"));
         });
     },
 
     /**
-     * @function
-     * @name update
+     * @name delete
      * @description Event handler for successful delete
      * @namespace sourceCodeUISuccess
      * @public
      *
      * @param {object} data The returned data
      */
-    delete: function (data) {
-        sourceCodeUISuccess.displayResult(data, function (result) {
+    delete: (data) => {
+        sourceCodeUISuccess.displayResult(data, (result) => {
             if (result.UserMessage && result.UserMessage.IsSuccess) {
                 ko.mapping.fromJS(result, sourceCodeUI.sourceCodeModel);
                 sourceCodeUI.sourceCodeModel.Data.UIMode(sg.utls.OperationMode.NEW);
@@ -293,7 +279,6 @@ var sourceCodeUISuccess = {
     },
 
     /**
-     * @function
      * @name displayResult
      * @description Event handler for successful displayResult call
      * @namespace sourceCodeUISuccess
@@ -302,7 +287,7 @@ var sourceCodeUISuccess = {
      * @param {object} result JSON payload object
      * @param {Function} functionToCall Function to call on successful result
      */
-    displayResult: function (result, functionToCall) {
+    displayResult: (result, functionToCall) => {
         if (result) {
             functionToCall(result);
             sg.utls.showMessage(result);
@@ -313,7 +298,6 @@ var sourceCodeUISuccess = {
     },
 
     /**
-     * @function
      * @name initialLoad
      * @description Method called on initial page load
      * @namespace sourceCodeUISuccess
@@ -321,9 +305,9 @@ var sourceCodeUISuccess = {
      * 
      * @param {object} result JSON payload object
      */
-    initialLoad: function (result) {
+    initialLoad: (result) => {
         if (result) {
-            var uiMode;
+            let uiMode;
             sourceCodeUI.sourceCodeModel = ko.mapping.fromJS(result);
             if (sourceCodeUISuccess.isNew(sourceCodeUI.sourceCodeModel.Data)) {
                 uiMode = sg.utls.OperationMode.NEW;
@@ -342,7 +326,6 @@ var sourceCodeUISuccess = {
     },
 
     /**
-     * @function
      * @name finderSuccess
      * @description Event handler for successful finder call
      * @namespace sourceUISuccess
@@ -350,7 +333,7 @@ var sourceCodeUISuccess = {
      * 
      * @param {object} data JSON payload object
      */
-    finderSuccess: function (data) {
+    finderSuccess: (data) => {
         if (data) {
             sourceCodeUI.finderData = data;
             sourceCodeUI.checkIsDirty(sourceCodeUISuccess.setFinderData, sourceCodeUI.sourceCode);
@@ -358,16 +341,15 @@ var sourceCodeUISuccess = {
     },
 
     /**
-     * @function
      * @name setFinderData
      * @description 
      * @namespace sourceUISuccess
      * @public
      */
-    setFinderData: function () {
-        var data = sourceCodeUI.finderData;
-        var sourceLedger = data.SRCELEDGER;
-        var sourceType = data.SRCETYPE;
+    setFinderData: () => {
+        let data = sourceCodeUI.finderData;
+        let sourceLedger = data.SRCELEDGER;
+        let sourceType = data.SRCETYPE;
 
         sg.utls.clearValidations("frmSourceCodes");
         sourceCodeUI.finderData = null;
@@ -375,7 +357,6 @@ var sourceCodeUISuccess = {
     },
 
     /**
-     * @function
      * @name isNew
      * @description Determines if model data is populated
      * @namespace sourceUISuccess
@@ -384,7 +365,7 @@ var sourceCodeUISuccess = {
      *  
      * @returns {boolean} true = New record | false = existing record
      */
-    isNew: function (model) {
+    isNew: (model) => {
         if (!model.SourceLedger() && !model.SourceType()) {
             return true;
         }
@@ -396,7 +377,6 @@ var sourceCodeUISuccess = {
 // Finder Filter
 var sourceCodeFilter = {
     /**
-     * @function
      * @name getFilter
      * @description Create the finder filter
      * @namespace sourceCodeFilter
@@ -404,8 +384,8 @@ var sourceCodeFilter = {
      * 
      * @returns {Array} The filters array
      */
-    getFilter: function () {
-        var filters = [[]];
+    getFilter: () => {
+        let filters = [[]];
         filters[0][0] = sg.finderHelper.createFilter("SourceLedger", sg.finderOperator.StartsWith, sourceCodeUI.sourceCodeModel.Data.SourceLedger());
         filters[0][1] = sg.finderHelper.createFilter("SourceType", sg.finderOperator.StartsWith, sourceCodeUI.sourceCodeModel.Data.SourceType());
         return filters;
@@ -415,7 +395,6 @@ var sourceCodeFilter = {
 // Source Code Object
 var sourceCodeObject = {
     /**
-     * @function
      * @name getSourceCodeElements
      * @description
      * @namespace sourceCodeObject
@@ -425,10 +404,10 @@ var sourceCodeObject = {
      * 
      * @returns {object} The source code object
      */
-    getSourceCodeElements: function (srceCode) {
-        var sourceCode = { SourceLedger: null, SourceType: null };
-        var items = srceCode.split("-");
-        $.each(items, function (index, chunk) {
+    getSourceCodeElements: (srceCode) => {
+        let sourceCode = { SourceLedger: null, SourceType: null };
+        let items = srceCode.split("-");
+        $.each(items, (index, chunk) => {
             if (index === 0) {
                 sourceCode.SourceLedger = sourceCodeObject.sourceLedger = items[0].toUpperCase();
             }
@@ -440,7 +419,6 @@ var sourceCodeObject = {
     },
 
     /**
-     * @function
      * @name generateSourceCode
      * @description Generate a source code based on Source Ledger and Source Type
      * @namespace sourceCodeObject
@@ -451,8 +429,8 @@ var sourceCodeObject = {
      * 
      * @returns {string} The generated source code specification
      */
-    generateSourceCode: function (sourceLedger, sourceType) {
-        var sourceCode = "";
+    generateSourceCode: (sourceLedger, sourceType) => {
+        let sourceCode = "";
         if (sourceLedger) {
             sourceCode = sourceLedger;
             if (sourceType) {
@@ -464,10 +442,10 @@ var sourceCodeObject = {
 };
 
 // Initial Entry
-$(function () {
+$(() => {
     sourceCodeUI.init();
-    $(window).on('beforeunload', function () {
-        var dirty = sourceCodeUI.sourceCodeModel.isModelDirty.isDirty();
+    $(window).on('beforeunload', () => {
+        let dirty = sourceCodeUI.sourceCodeModel.isModelDirty.isDirty();
         if (sg.utls.isPageUnloadEventEnabled(dirty)) {
             return sg.utls.getDirtyMessage(sourceCodeResources.SourceCodeTitle);
         }

@@ -9340,6 +9340,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PJC Account Sets Screen.
+        /// </summary>
+        public static string PM_Account_Sets_Screen {
+            get {
+                return ResourceManager.GetString("PM_Account_Sets_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adding or Modifying Account Sets.
+        /// </summary>
+        public static string PM_Adding_or_Modifying_Account_Sets {
+            get {
+                return ResourceManager.GetString("PM_Adding_or_Modifying_Account_Sets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Charging for Fees and Services.
         /// </summary>
         public static string PM_Charges_Article1 {

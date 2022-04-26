@@ -290,10 +290,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // txtPassword
             // 
-            this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
             this.txtPassword.CustomButton.Image = null;
             this.txtPassword.CustomButton.Location = new System.Drawing.Point(91, 1);
             this.txtPassword.CustomButton.Name = "";
@@ -673,7 +669,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPageFinder.Location = new System.Drawing.Point(4, 22);
             this.tabPageFinder.Name = "tabPageFinder";
             this.tabPageFinder.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFinder.Size = new System.Drawing.Size(132, 92);
+            this.tabPageFinder.Size = new System.Drawing.Size(254, 92);
             this.tabPageFinder.TabIndex = 1;
             this.tabPageFinder.Text = "Finder";
             this.tabPageFinder.UseVisualStyleBackColor = true;
@@ -690,7 +686,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlFinder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFinder.Location = new System.Drawing.Point(3, 3);
             this.pnlFinder.Name = "pnlFinder";
-            this.pnlFinder.Size = new System.Drawing.Size(126, 86);
+            this.pnlFinder.Size = new System.Drawing.Size(248, 86);
             this.pnlFinder.TabIndex = 0;
             // 
             // btnFinderPropFile
@@ -963,7 +959,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.splitEntities.Panel2.Controls.Add(this.tabEntity);
             this.splitEntities.Size = new System.Drawing.Size(623, 49);
-            this.splitEntities.SplitterDistance = 27;
+            this.splitEntities.SplitterDistance = 25;
             this.splitEntities.TabIndex = 20;
             // 
             // pnlEntityTree
@@ -973,7 +969,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityTree.Location = new System.Drawing.Point(0, 0);
             this.pnlEntityTree.Name = "pnlEntityTree";
-            this.pnlEntityTree.Size = new System.Drawing.Size(623, 27);
+            this.pnlEntityTree.Size = new System.Drawing.Size(623, 25);
             this.pnlEntityTree.TabIndex = 0;
             // 
             // pnlEntityGrid
@@ -982,7 +978,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlEntityGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEntityGrid.Location = new System.Drawing.Point(0, 26);
             this.pnlEntityGrid.Name = "pnlEntityGrid";
-            this.pnlEntityGrid.Size = new System.Drawing.Size(623, 1);
+            this.pnlEntityGrid.Size = new System.Drawing.Size(623, 0);
             this.pnlEntityGrid.TabIndex = 3;
             // 
             // treeEntities
@@ -992,7 +988,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.treeEntities.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeEntities.Location = new System.Drawing.Point(0, 0);
             this.treeEntities.Name = "treeEntities";
-            this.treeEntities.Size = new System.Drawing.Size(623, 1);
+            this.treeEntities.Size = new System.Drawing.Size(623, 0);
             this.treeEntities.TabIndex = 0;
             this.treeEntities.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeEntities_NodeMouseClick);
             this.treeEntities.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeEntities_NodeMouseDoubleClick);
@@ -1056,7 +1052,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(857, 98);
+            this.tabPage1.Size = new System.Drawing.Size(615, 0);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Entity";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1454,7 +1450,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage3.HorizontalScrollbarSize = 10;
             this.tabPage3.Location = new System.Drawing.Point(4, 38);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(857, 98);
+            this.tabPage3.Size = new System.Drawing.Size(615, 0);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Properties";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1469,7 +1465,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlColumns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlColumns.Location = new System.Drawing.Point(0, 0);
             this.pnlColumns.Name = "pnlColumns";
-            this.pnlColumns.Size = new System.Drawing.Size(857, 98);
+            this.pnlColumns.Size = new System.Drawing.Size(615, 0);
             this.pnlColumns.TabIndex = 19;
             // 
             // grdEntityFields
@@ -1480,7 +1476,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityFields.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityFields.Location = new System.Drawing.Point(0, 27);
             this.grdEntityFields.Name = "grdEntityFields";
-            this.grdEntityFields.Size = new System.Drawing.Size(857, 71);
+            this.grdEntityFields.Size = new System.Drawing.Size(615, 0);
             this.grdEntityFields.TabIndex = 18;
             // 
             // tbrEntity
@@ -1492,7 +1488,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.btnDeleteRows});
             this.tbrEntity.Location = new System.Drawing.Point(0, 0);
             this.tbrEntity.Name = "tbrEntity";
-            this.tbrEntity.Size = new System.Drawing.Size(857, 27);
+            this.tbrEntity.Size = new System.Drawing.Size(615, 27);
             this.tbrEntity.TabIndex = 17;
             this.tbrEntity.Text = "toolStrip1";
             // 
@@ -1534,7 +1530,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage4.HorizontalScrollbarSize = 10;
             this.tabPage4.Location = new System.Drawing.Point(4, 38);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(857, 98);
+            this.tabPage4.Size = new System.Drawing.Size(615, 0);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Composition";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1548,7 +1544,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlComposition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlComposition.Location = new System.Drawing.Point(0, 0);
             this.pnlComposition.Name = "pnlComposition";
-            this.pnlComposition.Size = new System.Drawing.Size(857, 98);
+            this.pnlComposition.Size = new System.Drawing.Size(615, 0);
             this.pnlComposition.TabIndex = 0;
             // 
             // grdEntityCompositions
@@ -1559,7 +1555,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grdEntityCompositions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdEntityCompositions.Location = new System.Drawing.Point(0, 0);
             this.grdEntityCompositions.Name = "grdEntityCompositions";
-            this.grdEntityCompositions.Size = new System.Drawing.Size(857, 98);
+            this.grdEntityCompositions.Size = new System.Drawing.Size(615, 0);
             this.grdEntityCompositions.TabIndex = 1;
             this.grdEntityCompositions.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdEntityCompositions_CellFormatting);
             // 
