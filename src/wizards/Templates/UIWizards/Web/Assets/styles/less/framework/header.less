@@ -360,6 +360,7 @@ body {
           >.k-item .k-popup {
             margin-top: -57px;
             margin-left: 7px !important; 
+            right: unset !important;
           }
           
           .k-state-hover .k-link span a:hover {
@@ -407,64 +408,70 @@ body {
 
         &#helpMenu .k-group.k-popup {
           width: 230px;
+          right: 41px;
+        }
+
+        &#topMenuSettings .k-group.k-popup {
+          right: 41px;
         }
 
         .k-animation-container {
           top: 3.575rem !important;
 
-          li.k-item.k-state-hover,
-          li.k-item.k-state-focused,
-          li.k-item:hover {
+          > li.k-item.k-state-hover,
+          > li.k-item.k-state-focused,
+          > li.k-item:hover {
             background-image: none;
             background-color: @btn-link-hover-color;
           }
 
-          .k-animation-container{
+          li.k-item {
+            background-image: none;
+            background-color: @white;
 
-            li.k-item {
-              background-image: none;
-              background: none;
-              background-color: @white;
-              padding-left: 18px;
-
-              &.k-state-hover,
-              &.k-state-focused,
-              &:hover {
-                background-image: none;
-                background-color: @btn-link-hover-color;
-              }
-
-              &.menu-active {
-
-                .settings-menulist {
-
-                  &:before {
-                    content: "";
-                    border: 1px solid;
-                    border-width: 0 3px 3px 0;
-                    height: 11px;
-                    left: 10px;
-                    position: absolute;
-                    top: 6px;
-                    transform: rotate(45deg);
-                    width: 7px;
-                    border-color: @brand-primary;
-                  }
-                }
-              }
-            }
-          }
-
-          .k-link { 
-            font-size:12px;
-            color:#000;
-            text-align: left;
             &.k-state-hover,
+            &.k-state-focused,
             &:hover {
               background-image: none;
               background-color: @btn-link-hover-color;
             }
+
+            &.menu-active {
+
+              .settings-menulist {
+
+                &:before {
+                  content: "";
+                  border: 1px solid;
+                  border-width: 0 3px 3px 0;
+                  height: 11px;
+                  left: 10px;
+                  position: absolute;
+                  top: 6px;
+                  transform: rotate(45deg);
+                  width: 7px;
+                  border-color: @brand-primary;
+                }
+              }
+            }
+
+            .k-link { 
+              font-size:12px;
+              color:#000;
+              text-align: left;
+              &.k-state-hover,
+              &:hover {
+                background-image: none;
+                background-color: @btn-link-hover-color;
+              }
+            }
           }
+
+          .k-animation-container {
+            li.k-item { 
+              padding-left: 18px;
+            }
+          }      
         }
       }
     }

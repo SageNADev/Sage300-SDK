@@ -96,7 +96,7 @@
                 <a class="logo-product" id="logoSage300" autofocus="autofocus" alt="Sage 300" href="javascript:;"></a>
                 @*<a id="skipMenu" tabindex="0" class="skip-menu" href="#menuPrefButton">@HomePageResx.SkipMenu</a>*@
                 <div class="globalNavigation">
-                    <div class="last_container session-date">
+                    <a class="last_container session-date" href="javascript:sessionDateClick()">
                         <span class="glyphicon glyphicon-calendar" id="sessionDateIcon"></span>
                         <span class="text-right" id="sessionDatelabel">@HomePageResx.Session_Date:&nbsp;</span>
                         <span id="spnSessionDate"></span>
@@ -120,9 +120,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="top_nav">
-                        <ul id="topMenu" class="k-rtl">
+                        <ul id="topMenu" class="">
                             <li id="topMenuUser">
                                 <span class="txt-top-menu">@RenderSection("username", required: false)</span>
                                 <ul>
@@ -145,9 +145,7 @@
                             }
                             <li class="menu-item-with-icon" id="helpMenu">
                                 <i class="help glyphicon glyphicon-md glyphicon-quick-help" title="@NavigationResx.HelpTitle"><span>@NavigationResx.Help</span></i>
-                                <ul>
-                                    <li id="searchHelpDiv">
-                                    </li>
+                                <ul id="searchHelpDiv">
                                 </ul>
                             </li>
                             <li class="menu-item-with-icon" id="topMenuSettings">
@@ -160,10 +158,10 @@
                                     <li id="btnFormSize">
                                         <span class="settings-menulist" id="labelFormSize">@NavigationResx.TextSize</span>
                                         <ul>
-                                            <li id="btnFormSizeLarge"><span class="settings-menulist" id="labelFormSizeLarge">@NavigationResx.Large</span></li>
-                                            <li id="btnFormSizeMedium"><span class="settings-menulist" id="labelFormSizeMedium">@NavigationResx.Medium</span></li>
-                                            <li id="btnFormSizeSmall"><span class="settings-menulist" id="labelFormSizeSmall">@NavigationResx.Small</span></li>
-                                            <li id="btnFormSizeReset"><span class="settings-menulist" id="labelFormSizeReset">@CommonResx.Reset</span></li>
+                                            <li id="btnFormSizeLarge"><a href="javascript:;" class="settings-menulist" id="labelFormSizeLarge">@NavigationResx.Large</a></li>
+                                            <li id="btnFormSizeMedium"><a href="javascript:;" class="settings-menulist" id="labelFormSizeMedium">@NavigationResx.Medium</a></li>
+                                            <li id="btnFormSizeSmall"><a href="javascript:;" class="settings-menulist" id="labelFormSizeSmall">@NavigationResx.Small</a></li>
+                                            <li id="btnFormSizeReset"><a href="javascript:;" class="settings-menulist" id="labelFormSizeReset">@CommonResx.Reset</a></li>
                                         </ul>
                                     </li>
                                 </ul>

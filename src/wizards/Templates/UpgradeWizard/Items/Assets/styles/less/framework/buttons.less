@@ -383,6 +383,57 @@ input[type="button"] {
       width: 0;
     }
   }
+
+  &.btn-report {
+    background-color: @white;
+
+    &[disabled] {
+      background-color: @input-bg-disabled;
+      border: 1px solid @sage-gray;
+      cursor: default;
+      color: @sage-light-gray;
+    }
+
+    &:hover {
+      background-color: #d9e0e4;
+    }
+  }
+
+  &.btn-add {
+    background-color: @btn-primary-bg;
+    border-color: @btn-primary-bg;
+    color: @white;
+
+    &:before {
+      background-position: -493px -33px;
+    }
+
+    &:hover {
+      background-color: darken(@btn-primary-bg, 10%);
+    }
+  }
+
+  &.btn-edit {
+
+    &:before {
+      background-position: -605px 3px;
+    }
+
+    &[disabled]:before {
+      background-position: -605px -68px;
+    }
+  }
+
+  &.btn-save {
+
+    &:before {
+      background-position: -802px 2px;
+    }
+
+    &[disabled]:before {
+      background-position: -802px -68px;
+    }
+  }
 }
 
 // Buttons using anchor tag
