@@ -34,7 +34,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -353,30 +353,29 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             
             #line default
             #line hidden
-            this.Write("\r\n    /// </summary>\r\n    [ViewModel(Id = EntityName)]\r\n    public partial class " +
-                    "");
+            this.Write("\r\n    /// </summary>\r\n    public partial class ");
             
-            #line 93 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 92 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(" : ");
             
-            #line 93 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 92 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(applicationNamespace));
             
             #line default
             #line hidden
             
-            #line 93 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 92 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((repositoryType.Equals(RepositoryType.Report) ? "ReportBase" : "ModelBase")));
             
             #line default
             #line hidden
             this.Write("\r\n    {\r\n");
             
-            #line 95 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 94 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                 // Iterate fields collection
             for (var i = 0; i < view.Fields.Count; i++)
@@ -404,7 +403,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             this.Write("        // TODO The naming convention of this property has to be manually evaluat" +
                     "ed\r\n");
             
-            #line 117 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 116 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                 }
 
@@ -413,14 +412,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        /// <summary>\r\n        /// Gets or sets ");
             
-            #line 121 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 120 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n");
             
-            #line 123 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 122 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                 if (!repositoryType.Equals(RepositoryType.DynamicQuery) && !repositoryType.Equals(RepositoryType.Report))
                 {
@@ -434,14 +433,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        ");
             
-            #line 131 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 130 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(annotation));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 132 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 131 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                     }
 
@@ -455,14 +454,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        ");
             
-            #line 140 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 139 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(annotation));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 141 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 140 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                     }
 
@@ -476,14 +475,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        ");
             
-            #line 149 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 148 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(annotation));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 150 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 149 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                     }
 
@@ -497,14 +496,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        ");
             
-            #line 158 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 157 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(annotation));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 159 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 158 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                     }
                 }
@@ -518,21 +517,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        [Display(Name = \"");
             
-            #line 167 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 166 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write("\", ResourceType = typeof (");
             
-            #line 167 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 166 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write("))]\r\n");
             
-            #line 168 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 167 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                 }
 
@@ -543,35 +542,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        [ViewField(Name = Fields.");
             
-            #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 172 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(", Id = Index.");
             
-            #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 172 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(")]\r\n        public ");
             
-            #line 174 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((field.Type.Equals(BusinessDataType.Enumeration) ? companyNamespace + "." + moduleId + ".Models.Enums" + extension + "." + fieldName : EnumValue.GetValue(field.Type))));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 174 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(" { get; set; }\r\n\r\n");
             
-            #line 176 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 175 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                 // Special logic for DateTime fields treated as Time only
                 if (field.IsTimeOnly)
@@ -582,28 +581,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        /// <summary>\r\n        /// Gets the time part from ");
             
-            #line 182 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 181 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        public TimeSpan ");
             
-            #line 184 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 183 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write("Ext => ");
             
-            #line 184 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 183 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(".TimeOfDay;\r\n\r\n");
             
-            #line 186 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 185 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                 }
             }
@@ -617,7 +616,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        #region UI Strings\r\n\r\n");
             
-            #line 196 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 195 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                 // UI access methods
                 foreach (var value in view.Enums.Values)
@@ -631,28 +630,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        /// <summary>\r\n        /// Gets ");
             
-            #line 205 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 204 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
             #line hidden
             this.Write(" string value\r\n        /// </summary>\r\n        public string ");
             
-            #line 207 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 206 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
             #line hidden
             this.Write("String => EnumUtility.GetStringValue(");
             
-            #line 207 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 206 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
             #line hidden
             this.Write(");\r\n\r\n");
             
-            #line 209 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 208 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
                 }
 
@@ -661,7 +660,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("        #endregion\r\n");
             
-            #line 213 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
+            #line 212 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\Model.tt"
 
             }
 
