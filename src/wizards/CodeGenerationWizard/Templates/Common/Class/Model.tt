@@ -37,6 +37,7 @@
     var repositoryType = settings.RepositoryType;
     var applicationNamespace = (settings.RepositoryType.Equals(RepositoryType.DynamicQuery)) ? "Application" : string.Empty;
 	var enumsCount = view.Enums.Count;
+    string[] entityFieldType = new string[10] {"Char", "Byte", "Date", "Time", "Real", "Decimal", "Int", "Long", "Bool", "LongLong"};
 #>
 // <#=copyright#>
 
@@ -169,7 +170,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
 
                 // Property
 #>
-        [ViewField(Name = Fields.<#=fieldName#>, Id = Index.<#=fieldName#>)]
+        [ViewField(Name = Fields.<#=fieldName#>, Id = Index.<#=fieldName#>, FieldType = EntityFieldType.<#=entityFieldType[field.EntityFieldType - 1]#><#=(field.Size > 0 ? ", Size = " + field.Size : "")#><#=(field.Precision > 0 ? ", Precision = " + field.Precision : "")#><#=(!string.IsNullOrEmpty(field.Mask) ? ", Mask = \"" + field.Mask + "\"" : "")#>)]
         public <#=(field.Type.Equals(BusinessDataType.Enumeration) ? companyNamespace + "." + moduleId + ".Models.Enums" + extension + "." + fieldName : EnumValue.GetValue(field.Type))#> <#=fieldName#> { get; set; }
 
 <#

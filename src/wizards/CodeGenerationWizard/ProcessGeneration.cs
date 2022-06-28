@@ -1296,7 +1296,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 #endif
                     Precision = field.Precision,
                     MinValue = field.MinValue,
-                    MaxValue = field.MaxValue
+                    MaxValue = field.MaxValue,
+                    EntityFieldType = Convert.ToInt32(field.Type),
+                    Mask = field.PresentationMask
                 };
 
                 // No longer necessary (TK-253029)
