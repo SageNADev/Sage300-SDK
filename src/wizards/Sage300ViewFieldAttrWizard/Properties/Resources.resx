@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="StepDescriptionWizardSummary" xml:space="preserve">
+    <value>Select 'Next' to add/modify ViewField attributes on most models.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\ProgressError.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InvalidSettingRequiredField" xml:space="preserve">
+    <value>The {0} has not been specified.</value>
+  </data>
+  <data name="Success" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\ProgressSuccess.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>Load the solution in Visual Studio and select 'Build --&gt; Build Solution'.
+
+Note: While the wizard has been coded for known patterns, unexpected patterns may create a condition which must be resolved manually.</value>
+  </data>
+  <data name="StepDescriptionGenerated" xml:space="preserve">
+    <value>The files noted below have been modified to include the ViewField attribute.</value>
+  </data>
+  <data name="StepDescriptionGenerate" xml:space="preserve">
+    <value>Select 'Modify' to modify the model files based upon the content from the previous steps.</value>
+  </data>
+  <data name="StepTitleGenerated" xml:space="preserve">
+    <value>Modified Model Files Complete</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="StepTitleWizardSummary" xml:space="preserve">
+    <value>Add/Modify ViewField Attributes</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="Dash" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Blank24.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="ProcessingFile" xml:space="preserve">
+    <value>Processing {0}...</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Folder:</value>
+  </data>
+  <data name="FolderNameTip" xml:space="preserve">
+    <value>The top-level folder for source code containing the model class files</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="StepTitleGenerate" xml:space="preserve">
+    <value>Modify Model Files</value>
+  </data>
+  <data name="ViewFieldAttributesWizard" xml:space="preserve">
+    <value>ViewField Attributes Wizard</value>
+  </data>
+  <data name="VersionTip" xml:space="preserve">
+    <value>A valid Sage 300 version</value>
+  </data>
+  <data name="StepTitleFolderCreds" xml:space="preserve">
+    <value>Business View Credentials and Source Code Folder Path</value>
+  </data>
+  <data name="StepDescriptionFolderCreds" xml:space="preserve">
+    <value>Enter the credentials for accessing the business views and the folder path for the source code .</value>
+  </data>
+  <data name="FilesToModifyTip" xml:space="preserve">
+    <value>{0} Discovered files in the model folders that might be modified (pending valid properties and structure):</value>
+  </data>
+  <data name="sage_logo_square" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sage_logo_square.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company:</value>
+  </data>
+  <data name="CompanyTip" xml:space="preserve">
+    <value>A valid Sage 300 company</value>
+  </data>
+  <data name="InvalidSettingCredentials" xml:space="preserve">
+    <value>Unable to establish connection with entered credentials.</value>
+  </data>
+  <data name="InvalidSettingFolderExists" xml:space="preserve">
+    <value>The {0} specified does not exist.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="PasswordTip" xml:space="preserve">
+    <value>A valid Sage 300 password</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User:</value>
+  </data>
+  <data name="UserTip" xml:space="preserve">
+    <value>A valid Sage 300 user</value>
+  </data>
+  <data name="WizardSummary" xml:space="preserve">
+    <value>This step will perform the following:
+
+1. Add ViewField attributes to all model public properties  (except report models)
+   where the public property is a field in the underlying business view.
+
+2. Hydrate the ViewField attribute with properties from the underlying
+   business view (i.e., name, id, size, field type, mask, numeric domain, etc.)
+
+Note: Not all business view properties will be included in the ViewField
+          attribute properties if their values equal the default property value.</value>
+  </data>
+  <data name="ErrorAssembly" xml:space="preserve">
+    <value>Assembly {0} could not be accessed.</value>
+  </data>
+  <data name="ErrorEntityViewName" xml:space="preserve">
+    <value>Model {0} does not contain either the EntityName or ViewName constant.</value>
+  </data>
+  <data name="ErrorFile" xml:space="preserve">
+    <value>File could not be accessed.</value>
+  </data>
+  <data name="ErrorModel" xml:space="preserve">
+    <value>Not a model to be modified since the model {0} could not be accessed.</value>
+  </data>
+  <data name="ErrorModelIndex" xml:space="preserve">
+    <value>Not a model to be modified since the model's Index class {0} could not be accessed.</value>
+  </data>
+  <data name="ErrorNamespaceClass" xml:space="preserve">
+    <value>Not a model to be modified since the namespace or class name could not be retrieved.</value>
+  </data>
+  <data name="ErrorView" xml:space="preserve">
+    <value>View {0} could not be opened.</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ErrorModelFields" xml:space="preserve">
+    <value>Not a model to be modified since the model's Fields class {0} could not be accessed.</value>
+  </data>
+</root>
