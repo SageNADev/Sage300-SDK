@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <Sage300WebDir Condition="$(Sage300WebDir) == ''">C:\Sage\Sage300\Online\Web</Sage300WebDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,49 +57,49 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.AP.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AP.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.AP.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.AR.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AR.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.AR.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.AS.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.AS.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.AS.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.Common.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.CS.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.CS.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.GL.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.GL.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.GL.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.IC.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.IC.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.IC.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.KN.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.KN.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.KN.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.KPI.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.KPI.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.KPI.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.MT.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.MT.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.MT.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.OE.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.OE.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.OE.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.PM.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.PM.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.PM.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.PO.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.PO.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.PO.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.PR.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.PR.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.PR.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.VPF.Models">
-      <HintPath>..\..\..\..\..\..\..\Sage\Sage300\Online\Web\bin\Sage.CA.SBS.ERP.Sage300.VPF.Models.dll</HintPath>
+      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.VPF.Models.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
