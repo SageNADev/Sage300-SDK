@@ -475,8 +475,13 @@ namespace Sage.CA.SBS.ERP.Sage300.ViewFieldAttrWizard
                         }
                         else
                         {
-                            // Modify the line
-                            file[file.IndexOf(attrLine)] = stringBuilder.ToString();
+                            // Modify the line. However, if the attribute already exists BUT there is 
+                            // no Fields property, then do not modify line
+                            if (hasFieldsProperty)
+                            {
+                                // Modify the line
+                                file[file.IndexOf(attrLine)] = stringBuilder.ToString();
+                            }
                         }
                         break;
                     }
