@@ -257,13 +257,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties.Resources.sage_logo_square;
-            this.pictureBox1.InitialImage = global::Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties.Resources.sage_logo_square;
-            this.pictureBox1.Location = new System.Drawing.Point(574, 0);
+            this.pictureBox1.Image = global::Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties.Resources.sage300_logo_sq;
+            this.pictureBox1.InitialImage = global::Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties.Resources.sage300_logo_sq;
+            this.pictureBox1.Location = new System.Drawing.Point(546, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(100, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 

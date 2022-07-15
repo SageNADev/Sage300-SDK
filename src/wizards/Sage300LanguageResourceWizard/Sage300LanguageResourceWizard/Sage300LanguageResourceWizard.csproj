@@ -290,7 +290,7 @@
     <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\Sage_All.ico" />
-    <None Include="Resources\sage-logo-square.png" />
+    <Content Include="Resources\sage300-logo-sq.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

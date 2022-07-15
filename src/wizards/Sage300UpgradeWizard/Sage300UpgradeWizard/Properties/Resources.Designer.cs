@@ -637,17 +637,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to As part of the framework changes required to unify the usage of HTML &apos;disable&apos;
-        ///attribute in Sage HtmlHelper controls.
-        ///
-        ///The upgrade wizard is unable to automatically perform this modification and
-        ///therefore this step will require manual modifications.
-        ///
-        ///Any cshtml file that defines a Sage HtmlHelper control needs to be updated to
-        ///match the standard of the usage of HTML &apos;disabled&apos; attribute.
+        ///   Looks up a localized string similar to For the 2022.0 release, the finder implementation has changed.
         ///
         ///Please refer to the &quot;Finder Alterations&quot; subsection in the Sage 300
-        ///Upgrade Guide for 2021.2 to 2022.0 in the  [rest of string was truncated]&quot;;.
+        ///Upgrade Guide for 2021.2 to 2022.0 in the docs folder of the Web SDK for
+        ///detailed instructions. The samples code may also be used as a guide..
         /// </summary>
         internal static string ReleaseSpecificFinderAlterations {
             get {
@@ -684,6 +678,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         ///		Global.asax.ca
         ///
         ///	2. Add Login.aspx (and associated files) to the Web.csproj file.
+        ///
+        ///	The Upgrade Wizard will also set the Web project as the startup project
+        ///	It will also set the file Login.aspx as the start file.
         ///
         ///.
         /// </summary>
@@ -830,9 +827,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sage_logo_square {
+        internal static System.Drawing.Bitmap sage300_logo_sq {
             get {
-                object obj = ResourceManager.GetObject("sage-logo-square", resourceCulture);
+                object obj = ResourceManager.GetObject("sage300_logo_sq", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

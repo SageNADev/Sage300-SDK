@@ -156,12 +156,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\Caaccpac.ico" />
+    <Content Include="images\sage_300_logo_gray.png" />
     <Content Include="images\Save.ico" />
-    <None Include="Resources\sage_logo_square.png" />
+    <Content Include="Resources\sage300-logo-sq.png" />
     <None Include="images\ProgressSuccess.ico" />
     <None Include="images\ProgressError.ico" />
     <None Include="images\Blank24.ico" />
-    <Content Include="images\sage_300_logo.png" />
     <Content Include="images\Sage_All.ico" />
   </ItemGroup>
   <ItemGroup />

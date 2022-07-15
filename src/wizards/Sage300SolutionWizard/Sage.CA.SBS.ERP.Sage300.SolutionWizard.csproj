@@ -114,9 +114,9 @@
   <ItemGroup>
     <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\finder16X.bmp" />
-    <Content Include="Images\sage_300_logo.png" />
+    <Content Include="Images\sage_300_logo_gray.png" />
     <Content Include="Images\Sage_All.ico" />
-    <None Include="Resources\sage_logo_square.png" />
+    <Content Include="Resources\sage300-logo-sq.png" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\Sage300UIWizardPackage\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.BannedApiAnalyzers.dll" />

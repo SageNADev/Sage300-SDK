@@ -290,6 +290,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // txtPassword
             // 
+            // 
+            // 
+            // 
             this.txtPassword.CustomButton.Image = null;
             this.txtPassword.CustomButton.Location = new System.Drawing.Point(91, 1);
             this.txtPassword.CustomButton.Name = "";
@@ -300,8 +303,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtPassword.CustomButton.UseSelectable = true;
             this.txtPassword.CustomButton.Visible = false;
             this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtPassword.Lines = new string[] {
-        "ADMIN"};
+            this.txtPassword.Lines = new string[0];
             this.txtPassword.Location = new System.Drawing.Point(84, 57);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
@@ -314,7 +316,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.txtPassword.Size = new System.Drawing.Size(115, 25);
             this.txtPassword.Style = MetroFramework.MetroColorStyle.Green;
             this.txtPassword.TabIndex = 6;
-            this.txtPassword.Text = "";
             this.txtPassword.UseSelectable = true;
             this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -491,11 +492,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties.Resources.sage_logo_square;
-            this.pictureBox1.Location = new System.Drawing.Point(919, 0);
+            this.pictureBox1.Image = global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties.Resources.sage300_logo_sq;
+            this.pictureBox1.Location = new System.Drawing.Point(887, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(105, 84);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 

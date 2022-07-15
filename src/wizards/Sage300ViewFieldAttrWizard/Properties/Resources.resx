@@ -201,9 +201,6 @@ Note: While the wizard has been coded for known patterns, unexpected patterns ma
   <data name="FilesToModifyTip" xml:space="preserve">
     <value>{0} Discovered files in the model folders that might be modified (pending valid properties and structure):</value>
   </data>
-  <data name="sage_logo_square" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sage_logo_square.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Company" xml:space="preserve">
     <value>Company:</value>
   </data>
@@ -269,5 +266,8 @@ Note: Not all business view properties will be included in the ViewField
   </data>
   <data name="ErrorModelFields" xml:space="preserve">
     <value>Not a model to be modified since the model's Fields class {0} could not be accessed.</value>
+  </data>
+  <data name="sage300_logo_sq" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sage300-logo-sq.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

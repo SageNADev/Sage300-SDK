@@ -844,6 +844,7 @@
     <Content Include="Images\Sage_All.ico" />
     <Content Include="Images\Tab.ico" />
     <Content Include="Images\tab.png" />
+    <Content Include="Resources\sage300-logo-sq.png" />
     <Content Include="Templates\Process\View\PartialEntity.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PartialEntity.cs</LastGenOutput>
@@ -884,7 +885,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Controller.cs</LastGenOutput>
     </None>
-    <None Include="Resources\sage_logo_square.png" />
     <None Include="Templates\HeaderDetail\View\GridJson.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GridJson.cs</LastGenOutput>

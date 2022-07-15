@@ -127,7 +127,7 @@
     <None Include="SDKKeyFile.snk" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sage-logo-square.png" />
+    <Content Include="Resources\sage300-logo-sq.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
