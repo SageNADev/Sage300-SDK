@@ -82,8 +82,8 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.min.map">jquery-3.6.0.min.map</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.js">jquery-migrate-3.3.2.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.min.js">jquery-migrate-3.3.2.min.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.12.1.js">jquery-ui-1.12.1.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.12.1.min.js">jquery-ui-1.12.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.1.js">jquery-ui-1.13.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.1.min.js">jquery-ui-1.13.1.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie-1.4.1.min.js">jquery.cookie-1.4.1.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie.js">jquery.cookie.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.js">jquery.form.js</ProjectItem>
@@ -524,11 +524,6 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_sirc.png">icon_sirc.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_sirc.svg">icon_sirc.svg</ProjectItem>
             </Folder>
-            <Folder Name="TA" TargetFolderName="TA">
-              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ta.jpg">bg_menu_ta.jpg</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="icon_ta.png">icon_ta.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="icon_ta.svg">icon_ta.svg</ProjectItem>
-            </Folder>
             <Folder Name="TM" TargetFolderName="TM">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_tm.jpg">bg_menu_tm.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tm.png">icon_tm.png</ProjectItem>
@@ -538,6 +533,11 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ts.jpg">bg_menu_ts.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_ts.png">icon_ts.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_ts.svg">icon_ts.svg</ProjectItem>
+            </Folder>
+            <Folder Name="TW" TargetFolderName="TW">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ta.jpg">bg_menu_ta.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_tw.png">icon_tw.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_tw.svg">icon_tw.svg</ProjectItem>
             </Folder>
             <Folder Name="TX" TargetFolderName="TX">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_tx.jpg">bg_menu_tx.jpg</ProjectItem>
@@ -665,97 +665,6 @@
             </Folder>
           </Folder>
         </Folder>
-        <Folder Name="themes" TargetFolderName="themes">
-          <Folder Name="base" TargetFolderName="base">
-            <ProjectItem ReplaceParameters="true" TargetFileName="accordion.css">accordion.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="all.css">all.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="autocomplete.css">autocomplete.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="base.css">base.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="button.css">button.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="core.css">core.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="datepicker.css">datepicker.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="dialog.css">dialog.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="draggable.css">draggable.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui.css">jquery-ui.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui.min.css">jquery-ui.min.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.accordion.css">jquery.ui.accordion.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.all.css">jquery.ui.all.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.autocomplete.css">jquery.ui.autocomplete.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.base.css">jquery.ui.base.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.button.css">jquery.ui.button.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.core.css">jquery.ui.core.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.datepicker.css">jquery.ui.datepicker.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.dialog.css">jquery.ui.dialog.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.progressbar.css">jquery.ui.progressbar.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.resizable.css">jquery.ui.resizable.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.selectable.css">jquery.ui.selectable.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.slider.css">jquery.ui.slider.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.tabs.css">jquery.ui.tabs.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.theme.css">jquery.ui.theme.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="menu.css">menu.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="progressbar.css">progressbar.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="resizable.css">resizable.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="selectable.css">selectable.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="selectmenu.css">selectmenu.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="slider.css">slider.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="sortable.css">sortable.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="spinner.css">spinner.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="tabs.css">tabs.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="theme.css">theme.css</ProjectItem>
-            <ProjectItem ReplaceParameters="true" TargetFileName="tooltip.css">tooltip.css</ProjectItem>
-            <Folder Name="images" TargetFolderName="images">
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_flat_0_aaaaaa_40x100.png">ui-bg_flat_0_aaaaaa_40x100.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_flat_75_ffffff_40x100.png">ui-bg_flat_75_ffffff_40x100.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_55_fbf9ee_1x400.png">ui-bg_glass_55_fbf9ee_1x400.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_65_ffffff_1x400.png">ui-bg_glass_65_ffffff_1x400.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_75_dadada_1x400.png">ui-bg_glass_75_dadada_1x400.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_75_e6e6e6_1x400.png">ui-bg_glass_75_e6e6e6_1x400.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_95_fef1ec_1x400.png">ui-bg_glass_95_fef1ec_1x400.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_highlight-soft_75_cccccc_1x100.png">ui-bg_highlight-soft_75_cccccc_1x100.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_222222_256x240.png">ui-icons_222222_256x240.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_2e83ff_256x240.png">ui-icons_2e83ff_256x240.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_444444_256x240.png">ui-icons_444444_256x240.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_454545_256x240.png">ui-icons_454545_256x240.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_555555_256x240.png">ui-icons_555555_256x240.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_777620_256x240.png">ui-icons_777620_256x240.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_777777_256x240.png">ui-icons_777777_256x240.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_888888_256x240.png">ui-icons_888888_256x240.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_cc0000_256x240.png">ui-icons_cc0000_256x240.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_cd0a0a_256x240.png">ui-icons_cd0a0a_256x240.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_ffffff_256x240.png">ui-icons_ffffff_256x240.png</ProjectItem>
-            </Folder>
-            <Folder Name="minified" TargetFolderName="minified">
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui.min.css">jquery-ui.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.accordion.min.css">jquery.ui.accordion.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.autocomplete.min.css">jquery.ui.autocomplete.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.button.min.css">jquery.ui.button.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.core.min.css">jquery.ui.core.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.datepicker.min.css">jquery.ui.datepicker.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.dialog.min.css">jquery.ui.dialog.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.progressbar.min.css">jquery.ui.progressbar.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.resizable.min.css">jquery.ui.resizable.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.selectable.min.css">jquery.ui.selectable.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.slider.min.css">jquery.ui.slider.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.tabs.min.css">jquery.ui.tabs.min.css</ProjectItem>
-              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.theme.min.css">jquery.ui.theme.min.css</ProjectItem>
-              <Folder Name="images" TargetFolderName="images">
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_flat_0_aaaaaa_40x100.png">ui-bg_flat_0_aaaaaa_40x100.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_flat_75_ffffff_40x100.png">ui-bg_flat_75_ffffff_40x100.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_55_fbf9ee_1x400.png">ui-bg_glass_55_fbf9ee_1x400.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_65_ffffff_1x400.png">ui-bg_glass_65_ffffff_1x400.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_75_dadada_1x400.png">ui-bg_glass_75_dadada_1x400.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_75_e6e6e6_1x400.png">ui-bg_glass_75_e6e6e6_1x400.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_glass_95_fef1ec_1x400.png">ui-bg_glass_95_fef1ec_1x400.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-bg_highlight-soft_75_cccccc_1x100.png">ui-bg_highlight-soft_75_cccccc_1x100.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_222222_256x240.png">ui-icons_222222_256x240.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_2e83ff_256x240.png">ui-icons_2e83ff_256x240.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_454545_256x240.png">ui-icons_454545_256x240.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_888888_256x240.png">ui-icons_888888_256x240.png</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ui-icons_cd0a0a_256x240.png">ui-icons_cd0a0a_256x240.png</ProjectItem>
-              </Folder>
-            </Folder>
-          </Folder>
-        </Folder>
       </Folder>
       <Folder Name="Assets" TargetFolderName="Assets">
         <Folder Name="fonts" TargetFolderName="fonts">
@@ -866,6 +775,7 @@
           </Folder>
           <Folder Name="ui" TargetFolderName="ui">
             <ProjectItem ReplaceParameters="false" TargetFileName="arrow.png">arrow.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="character-illustration_benefits-features_chart-of-accounts-1.svg">character-illustration_benefits-features_chart-of-accounts-1.svg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="edit-columns-icon.png">edit-columns-icon.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="icon-code-snippet.png">icon-code-snippet.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="icon-edit-sprite.png">icon-edit-sprite.png</ProjectItem>
@@ -875,6 +785,7 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite.png">sprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_form.png">sprite_form.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_icons.png">sprite_icons.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sprite_icons_fr.png">sprite_icons_fr.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_msg.png">sprite_msg.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons.png">toolBar_icons.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="toolBar_icons_disabled.png">toolBar_icons_disabled.png</ProjectItem>
@@ -958,6 +869,7 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="portal-side-panel.less">portal-side-panel.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="portal-stand-alone.less">portal-stand-alone.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="progress-bars.less">progress-bars.less</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="rebranding2022.less">rebranding2022.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="scaffolding.less">scaffolding.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="setup-wizard.less">setup-wizard.less</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="side-nav.less">side-nav.less</ProjectItem>

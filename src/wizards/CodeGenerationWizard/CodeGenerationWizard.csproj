@@ -828,9 +828,9 @@
     <Content Include="Images\addTabPage.png" />
     <Content Include="Images\Blank24.ico" />
     <Content Include="Images\button.png" />
-    <Content Include="Images\Caaccpac.ico" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\Exit24.ico" />
+    <Content Include="Images\favicon.ico" />
     <Content Include="Images\Grid.ico" />
     <Content Include="Images\grid.png" />
     <Content Include="Images\hamburger.png" />

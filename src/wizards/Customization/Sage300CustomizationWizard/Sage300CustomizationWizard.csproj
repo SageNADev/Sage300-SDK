@@ -120,8 +120,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\Caaccpac.ico" />
     <Content Include="images\Edit16.ico" />
+    <Content Include="images\favicon.ico" />
     <Content Include="images\remove16X.bmp" />
     <Content Include="images\Save.ico" />
     <Content Include="Resources\sage300-logo-sq.png" />

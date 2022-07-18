@@ -245,7 +245,7 @@ var importResultRowNumber = 0;
             sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "ExportImport", "Import"), data, function (result) {
                 ko.mapping.fromJS(result.Data.ImportResponse, {}, sg.importHelper.importModel.ImportResponse);
                 var data = { viewModel: ko.mapping.toJS(sg.importHelper.importModel) };
-                window.sg.utls.recursiveAjaxPost(sg.utls.url.buildUrl("Core", "ExportImport", "ImportProgress"), data, that._progress, that._abort);
+                window.sg.utls.recursiveAjaxPost(sg.utls.url.buildUrl("Core", "ExportImport", "ImportProgress"), data, that._progress.bind(that), that._abort.bind(that));
             });
         },
 

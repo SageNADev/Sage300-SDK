@@ -127,6 +127,7 @@
     <None Include="SDKKeyFile.snk" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\favicon.ico" />
     <Content Include="Resources\sage300-logo-sq.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

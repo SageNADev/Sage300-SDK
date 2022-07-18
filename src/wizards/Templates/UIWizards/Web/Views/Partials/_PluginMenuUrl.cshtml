@@ -50,10 +50,10 @@
     {
         <li class="menu-item top-tier menu-ir" id="SIR">
             <div class="nav-icon"><img src="../../../Content/Images/nav/SIRC/icon_sirc.svg" width="20" height="20" alt="@NavigationResx.SIR_Msg1"></div>
-            <a>@NavigationResx.SIR_Msg1</a>
+            <a tabindex="0">@NavigationResx.SIR_Msg1</a>
             <ul class="std-menu">
                 <li class="feature-menu-header">
-                    <span class="logo"></span><span>@NavigationResx.SIR_Msg2</span>
+                    <span>@NavigationResx.SIR_Msg2</span>
                 </li>
                 @if (ViewBag.IsSIRCEnable == true)
                 {
@@ -65,7 +65,7 @@
                 }
                 <hr>
                 <li class="feature-menu-content">
-                    <div class="logo-sda"><img src="../../../Content/Images/nav/logo_sda.png" width="156" height="24" alt="@NavigationResx.SIR_SDAMsg1"></div>
+                    <h2>@NavigationResx.SIR_SDAMsg1</h2>
                     <p>@NavigationResx.SIR_SDAMsg2</p>
                     <p><input class="btn btn-accent" id="btnSDA" name="btnSDA" type="button" value="@NavigationResx.SIR_Btn"></p>
                 </li>
@@ -115,7 +115,7 @@
             <div class="nav-icon">
                 <img src=@iconPath width="20" height="20" alt="@level2ItemName">
             </div>
-            <a>@level2ItemName</a>
+            <a tabindex="0">@level2ItemName</a>
             <ul class="std-menu">
                 <li class="sub-heading">@level2ItemName</li>
                 @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
@@ -157,7 +157,7 @@
         return;
     }
     <li class="@parentItemClass">
-        <a data-menuid='@parentItem.Data.MenuId' class="@nodeClass">
+        <a tabindex="0" data-menuid='@parentItem.Data.MenuId' class="@nodeClass">
             @parentItem.Data.MenuName
             @if (parentItem.Data.IsReport == true)
             {
@@ -219,7 +219,7 @@
         if (menuItem.Data.Isintelligence == true)
         {
             <li class="k-item">
-                <a data-url='@menuItem.Data.ScreenUrl' data-menuid='@menuItem.Data.MenuId' data-isintelligence='@menuItem.Data.Isintelligence' data-modulename='@menuItem.Data.ModuleName'> @menuItem.Data.MenuName</a>
+                <a tabindex="0" data-url='@menuItem.Data.ScreenUrl' data-menuid='@menuItem.Data.MenuId' data-isintelligence='@menuItem.Data.Isintelligence' data-modulename='@menuItem.Data.ModuleName'> @menuItem.Data.MenuName</a>
             </li>
         }
         if (menuItem.Data.IsGroupHeader == false && menuItem.Data.Isintelligence == false)
@@ -227,13 +227,13 @@
             if (menuItem.Data.ScreenUrl == notAvailable)
             {
                 <li class="k-item">
-                    <a data-url='' data-menuid='@menuItem.Data.MenuId' data-parentid='@menuItem.Data.ParentMenuId' data-modulename='@menuItem.Data.ModuleName' data-isreport="@menuItem.Data.IsReport"> @menuItem.Data.MenuName</a>
+                    <a tabindex="0" data-url='' data-menuid='@menuItem.Data.MenuId' data-parentid='@menuItem.Data.ParentMenuId' data-modulename='@menuItem.Data.ModuleName' data-isreport="@menuItem.Data.IsReport"> @menuItem.Data.MenuName</a>
                 </li>
             }
             else
             {
                 <li class="k-item">
-                    <a data-url='@domainUrl@menuItem.Data.ScreenUrl' data-menuid='@menuItem.Data.MenuId' data-parentid='@menuItem.Data.ParentMenuId' data-modulename='@menuItem.Data.ModuleName' data-isreport="@menuItem.Data.IsReport"> @menuItem.Data.MenuName</a>
+                    <a tabindex="0" data-url='@domainUrl@menuItem.Data.ScreenUrl' data-menuid='@menuItem.Data.MenuId' data-parentid='@menuItem.Data.ParentMenuId' data-modulename='@menuItem.Data.ModuleName' data-isreport="@menuItem.Data.IsReport"> @menuItem.Data.MenuName</a>
                 </li>
             }
         }

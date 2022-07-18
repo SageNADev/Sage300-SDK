@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FinderDefinitionForm));
             this.btnCreateFinderDef = new MetroFramework.Controls.MetroButton();
             this.finderDefinitionControl = new Sage300FinderGenerator.FinderDefinitionControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -75,6 +76,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.finderDefinitionControl);
             this.Controls.Add(this.btnCreateFinderDef);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FinderDefinitionForm";

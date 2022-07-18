@@ -581,7 +581,7 @@ table {
     background-color: @table-header-bg;
 
     > .k-grid-header-wrap {
-      border-right: 0;
+      border-color: inherit;
     }
 
     .k-header {
@@ -715,7 +715,6 @@ table {
         input[type=checkbox] {
           width: 16px;
           height: 16px;
-          position: absolute;
           z-index: 2;
           cursor: pointer;
 
@@ -1790,7 +1789,7 @@ span.highlighted.gray {
       margin-left: 6px;
 
       &:hover {
-        background-color: darken(@btn-primary-bg, 10%);
+        background-color: darken(@btn-primary-bg, 5%);
         color: @btn-primary-color;
         border-color: @btn-primary-border;
         background-image: none;
@@ -1803,7 +1802,7 @@ span.highlighted.gray {
 
       &:focus:active:not(.k-state-disabled):not([disabled]) {
         color: @btn-primary-color;
-        background-color: darken(@btn-primary-bg, 10%);
+        background-color: darken(@btn-primary-bg, 5%);
         border-color: @btn-primary-border;
         text-decoration: none;
         outline: 0;
@@ -1853,7 +1852,7 @@ span.highlighted.gray {
 .k-button.k-state-active:hover, 
 .k-button:active:hover {
   color: #fff;
-  background: darken(@btn-primary-bg, 10%);
+  background: darken(@btn-primary-bg, 5%);
   border-color: @btn-primary-border;
 }
 

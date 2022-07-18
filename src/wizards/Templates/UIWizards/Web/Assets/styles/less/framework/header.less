@@ -31,7 +31,7 @@
 @header-secondary-height:   2.75rem;
 @collapse-distance:         -(@header-global-height + @header-secondary-height + .0625rem);
 @collapse-distance-simple:  -(@header-global-height);
-@side-nav-width:            17.75rem;
+@side-nav-width:            15.75rem;
 @side-nav-width-collapsed:  3.5rem;
 
 
@@ -123,7 +123,7 @@ body {
 }
 
 .header-global {
-  background-color: @white;
+  background-color: @black;
   height: @header-global-height;
   font-weight: 300;
   position: relative;
@@ -135,7 +135,7 @@ body {
 
     .last_container {
       cursor: pointer;
-      color: #003348;
+      color: @white;
       display: inline-block;
       top: -28px;
       position: relative;
@@ -144,7 +144,7 @@ body {
 
       .glyphicon {
         margin-right: 6px;
-        color: #003348;
+        color: @white;
       }
 
       /* Session Date Widget */
@@ -161,7 +161,7 @@ body {
         }
 
         &:focus {
-          outline: #005c9a auto;
+          outline: @brand-primary auto;
           outline-offset: -2px;
         }
       }
@@ -259,7 +259,7 @@ body {
         
         &.k-state-default .k-i-arrow-s,
         &.k-state-default .k-i-arrow-60-down {
-          background-position: -185px -157px;
+          background-position: -185px -124px;
 
           &:before {
             content: none;
@@ -268,7 +268,7 @@ body {
 
         &.k-state-focused,
         &:focus {
-          outline: #005c9a auto 5px;
+          outline: @brand-primary auto 5px;
           outline-offset: -2px;
         }
 
@@ -301,7 +301,7 @@ body {
         }
 
         &.k-item > .k-link { 
-          color: #003348;
+          color: @white;
           height: 3.5rem;
           cursor: default;
           background: none;
@@ -327,7 +327,7 @@ body {
               height: auto;
               padding: 0;
               position: relative;
-              color: #003348;
+              color: @white;
               line-height: 1.35rem;
             }
 
@@ -516,6 +516,33 @@ body {
 }
 
 .header-global.light-bg {
+
+  .globalNavigation {
+    
+    .last_container,
+    .last_container .glyphicon,
+    .top_nav #topMenu>li,
+    .top_nav #topMenu>li.k-item>.k-link,
+    .top_nav #topMenu>li.k-item>.k-link .global-search>span, 
+    .top_nav #topMenu>li.k-item>.k-link .help>span, 
+    .top_nav #topMenu>li.k-item>.k-link .settings>span {
+      color: @black;
+    }
+
+    #topMenuTools>.k-link,
+    #topMenuTools>.k-link span,
+    .top_nav #topMenu>li.k-state-border-down>.k-link,
+    .top_nav #topMenu>li.k-state-border-down>.k-link span {
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+    }
+
+    .top_nav #topMenu>li.k-state-default .k-i-arrow-60-down, 
+    .top_nav #topMenu>li.k-state-default .k-i-arrow-s {
+      background-position: -183px -157px;
+    }
+
+  }
   
   .logo-product  {
     background-image: url('@{image-path}/home/sage_300_logo_black.png');

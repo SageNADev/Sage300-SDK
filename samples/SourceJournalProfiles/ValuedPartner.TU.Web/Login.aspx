@@ -14,7 +14,7 @@
             <div class="Sage_logo">
                 <img src="~/Assets/images/login/sage300-logo-sq.png" height="132" width="134" alt="Sage 300" runat="server" style="padding-left: 80px; padding-top: 15px"/>
             </div>
-           <h1 style="font-family:Arial; color:#555">Sign In to Sage 300</h1>  
+           <h1 style="font-family:Arial; color:#555">Sign in to Sage 300</h1>  
            <asp:Panel ID="p" runat="server" DefaultButton="LoginButton">
                 <table class="auto-style1">  
                     <tr>  
@@ -57,7 +57,7 @@
                     </tr>  
                 </table>  
                 <p>  
-                    <asp:Button ID="LoginButton" runat="server" Text="Login" style="padding-left: 50px; padding-right: 50px; padding-top: 5px; padding-bottom: 5px; margin-left: 80px; font-family:Arial; color:#555; background-color:#0077c8; color:white" OnClick="LoginButton_Click" />  
+                    <asp:Button ID="LoginButton" runat="server" Text="Sign In" style="padding-left: 50px; padding-right: 50px; padding-top: 5px; padding-bottom: 5px; margin-left: 80px; font-family:Arial; font-weight:700; color:#fff; font-size:90%; background-color:#007e45; color:white" OnClick="LoginButton_Click" />  
                 </p>  
                 <table class="auto-style1">  
                     <tr>  

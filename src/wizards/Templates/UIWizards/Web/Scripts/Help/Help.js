@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var navUrl;
@@ -28,9 +28,6 @@ $(document).ready(function () {
         $('#screenLayout').hide();
         $('#widgetlayout').show();
         $('#widgetHplayout').hide();
-
-        //When footer logo is clicked
-        taskDockMenuBreadCrumbManager.setDefaultScreenId();
 
         $('#breadcrumb').hide();
 

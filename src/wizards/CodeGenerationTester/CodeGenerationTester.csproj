@@ -124,7 +124,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Sage_All.ico" />
+    <Content Include="Images\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeGenerationWizard\CodeGenerationWizard.csproj">

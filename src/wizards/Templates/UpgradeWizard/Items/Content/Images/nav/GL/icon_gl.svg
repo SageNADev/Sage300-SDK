@@ -1,1 +1,11 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs><style>.cls-1{fill:#fff;fill-rule:evenodd;}</style></defs><title>icon_gl</title><path id="icon-folders" class="cls-1" d="M1,3.28A1.13,1.13,0,0,1,2.11,2.14H6.63a3.15,3.15,0,0,1,1.92.8L10,4.39h4.5a1.13,1.13,0,0,1,1.12,1.14V6.66H3.25V17.89H1ZM4.37,8.89A1.13,1.13,0,0,1,5.5,7.77H17.87A1.13,1.13,0,0,1,19,8.89v7.88a1.13,1.13,0,0,1-1.13,1.12H4.37Z"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;}
+</style>
+<path id="icon-folders" class="st0" d="M1,3.3c0-0.6,0.5-1.1,1.1-1.1h4.5c0.7,0,1.4,0.3,1.9,0.8L10,4.4h4.5c0.6,0,1.1,0.5,1.1,1.1
+	c0,0,0,0,0,0v1.1H3.2v11.2H1V3.3z M4.4,8.9c0-0.6,0.5-1.1,1.1-1.1h12.4c0.6,0,1.1,0.5,1.1,1.1v7.9c0,0.6-0.5,1.1-1.1,1.1H4.4V8.9z"
+	/>
+</svg>

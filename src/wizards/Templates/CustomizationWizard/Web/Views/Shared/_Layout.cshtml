@@ -94,7 +94,7 @@
         <header class="header" id="globalHeader">
             <div class="header-global" id="header">
                 <a class="logo-product" id="logoSage300" autofocus="autofocus" alt="Sage 300" href="javascript:;"></a>
-                @*<a id="skipMenu" tabindex="0" class="skip-menu" href="#menuPrefButton">@HomePageResx.SkipMenu</a>*@
+                <a id="skipMenu" tabindex="0" class="skip-menu" href="#menuPrefButton">@HomePageResx.SkipMenu</a>
                 <div class="globalNavigation">
                     <a class="last_container session-date" href="javascript:sessionDateClick()">
                         <span class="glyphicon glyphicon-calendar" id="sessionDateIcon"></span>
@@ -196,7 +196,7 @@
                             <div class="nav-icon">
                                 <img src="~/Content/Images/nav/icon_home.svg" alt="Home" width="20" height="20">
                             </div>
-                            <a>@NavigationResx.Home</a>
+                            <a tabindex="0">@NavigationResx.Home</a>
                         </li>
                         @Html.Partial(Constants.PortalMenu, menuUrlList)
                         @Html.Partial("~/Views/Partials/_PluginMenuUrl.cshtml", othersUrlList)
