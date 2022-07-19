@@ -110,9 +110,8 @@
     <None Include="Sage300Custom.snk" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\favicon.ico" />
-    <Content Include="Images\sage_300_logo.png" />
     <None Include="Images\sage_300_logo_gray.png" />
+    <Content Include="Images\SAGE.ico" />
     <Content Include="Resources\sage300-logo-sq.png" />
   </ItemGroup>
   <ItemGroup>

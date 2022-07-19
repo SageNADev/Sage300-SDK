@@ -121,8 +121,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\Edit16.ico" />
-    <Content Include="images\favicon.ico" />
     <Content Include="images\remove16X.bmp" />
+    <Content Include="images\SAGE.ico" />
     <Content Include="images\Save.ico" />
     <Content Include="Resources\sage300-logo-sq.png" />
     <None Include="templates\ScreenSettings.xml" />
@@ -133,7 +133,6 @@
     <Content Include="images\finder16X.bmp" />
     <Content Include="images\new16X.bmp" />
     <Content Include="images\sage_300_logo.png" />
-    <Content Include="images\Sage_All.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

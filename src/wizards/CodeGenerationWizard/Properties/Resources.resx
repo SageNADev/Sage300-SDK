@@ -418,9 +418,6 @@
   <data name="Success" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\ProgressSuccess.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ReportKeysTip" xml:space="preserve">
     <value>Select a report from the .ini file</value>
   </data>

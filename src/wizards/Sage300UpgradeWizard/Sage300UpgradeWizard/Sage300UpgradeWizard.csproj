@@ -191,7 +191,7 @@
     <Content Include="content\ReleaseAllSyncAccpacLibs.txt" />
     <Content Include="content\ReleaseAllSyncWebFiles.txt" />
     <Content Include="content\ReleaseAllUpgraded.txt" />
-    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\SAGE.ico" />
     <Content Include="Resources\sage300-logo-sq.png" />
     <None Include="content\ReleaseSpecificJavascriptMinificationUpdates.txt" />
     <Content Include="content\ReleaseSpecificUnifyDisabled.txt" />

@@ -57,7 +57,7 @@
                     </tr>  
                 </table>  
                 <p>  
-                    <asp:Button ID="LoginButton" runat="server" Text="Sign In" style="padding-left: 50px; padding-right: 50px; padding-top: 5px; padding-bottom: 5px; margin-left: 80px; font-family:Arial; font-weight:700; color:#fff; font-size:90%; background-color:#007e45; color:white" OnClick="LoginButton_Click" />  
+                    <asp:Button ID="LoginButton" runat="server" Text="Sign In" style="padding-left: 50px; padding-right: 50px; padding-top: 5px; padding-bottom: 5px; margin-left: 80px; font-family:Arial; font-weight:700; color:#fff; font-size:90%; background-color:#007e45; border: #006537" OnClick="LoginButton_Click" />  
                 </p>  
                 <table class="auto-style1">  
                     <tr>  
