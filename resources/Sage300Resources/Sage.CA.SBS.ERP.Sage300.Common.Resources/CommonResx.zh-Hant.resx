@@ -1648,4 +1648,8 @@
   <data name="ItemNumberTo" xml:space="preserve">
     <value>產品編號到</value>
   </data>
+  <data name="Template_GenericReportException" xml:space="preserve">
+    <value>One or more errors occurred while attempting to generate the report:  {0}</value>
+    <comment>Internal use only. No translation necessary.</comment>
+  </data>
 </root>

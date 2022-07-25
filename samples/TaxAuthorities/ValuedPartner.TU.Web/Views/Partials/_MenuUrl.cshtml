@@ -44,7 +44,7 @@
         <div class="nav-icon">
             <img src=@iconPath width="20" height="20" alt="@level2Item.Data.MenuName">
         </div>
-        <a data-menuid='@level2Item.Data.MenuId'> @level2Item.Data.MenuName </a>
+        <a tabindex="0" data-menuid='@level2Item.Data.MenuId'> @level2Item.Data.MenuName </a>
         <ul class="std-menu">
             <li class="sub-heading">@level2Item.Data.MenuName</li>
             @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == level2ItemId).OrderBy(m => m.Data.MenuItemOrder))
@@ -93,7 +93,7 @@
 
     <li class="@parentItemClass">
 
-        <a data-menuid='@parentItem.Data.MenuId' class="@nodeClass">
+        <a tabindex="0" data-menuid='@parentItem.Data.MenuId' class="@nodeClass">
             @parentItem.Data.MenuName
         </a>
 
@@ -151,7 +151,7 @@
         if (menuItem.Data.Isintelligence == true)
         {
             <li class="k-item">
-                <a data-url='@menuItem.Data.ScreenUrl' data-menuid='@menuItem.Data.MenuId' data-isintelligence='@menuItem.Data.Isintelligence' data-modulename='@menuItem.Data.ModuleName'> @menuItem.Data.MenuName</a>
+                <a tabindex="0" data-url='@menuItem.Data.ScreenUrl' data-menuid='@menuItem.Data.MenuId' data-isintelligence='@menuItem.Data.Isintelligence' data-modulename='@menuItem.Data.ModuleName'> @menuItem.Data.MenuName</a>
             </li>
         }
         if (menuItem.Data.IsGroupHeader == false && menuItem.Data.Isintelligence == false)
@@ -159,13 +159,13 @@
             if (menuItem.Data.ScreenUrl == notAvailable)
             {
                 <li class="k-item">
-                    <a data-url='' data-menuid='@menuItem.Data.MenuId' data-parentid='@menuItem.Data.ParentMenuId' data-modulename='@menuItem.Data.ModuleName' data-isreport="@menuItem.Data.IsReport"> @menuItem.Data.MenuName</a>
+                    <a tabindex="0" data-url='' data-menuid='@menuItem.Data.MenuId' data-parentid='@menuItem.Data.ParentMenuId' data-modulename='@menuItem.Data.ModuleName' data-isreport="@menuItem.Data.IsReport"> @menuItem.Data.MenuName</a>
                 </li>
             }
             else
             {
                 <li class="k-item">
-                    <a data-url='@domainUrl@menuItem.Data.ScreenUrl' data-menuid='@menuItem.Data.MenuId' data-parentid='@menuItem.Data.ParentMenuId' data-modulename='@menuItem.Data.ModuleName' data-isreport="@menuItem.Data.IsReport"> @menuItem.Data.MenuName</a>
+                    <a tabindex="0" data-url='@domainUrl@menuItem.Data.ScreenUrl' data-menuid='@menuItem.Data.MenuId' data-parentid='@menuItem.Data.ParentMenuId' data-modulename='@menuItem.Data.ModuleName' data-isreport="@menuItem.Data.IsReport"> @menuItem.Data.MenuName</a>
                 </li>
             }
         }

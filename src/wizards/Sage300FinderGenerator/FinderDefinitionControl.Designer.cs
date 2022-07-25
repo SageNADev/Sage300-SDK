@@ -69,7 +69,6 @@
             this.txtViewId.MaxLength = 32767;
             this.txtViewId.Name = "txtViewId";
             this.txtViewId.PasswordChar = '\0';
-            this.txtViewId.PromptText = "View ID";
             this.txtViewId.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtViewId.SelectedText = "";
             this.txtViewId.SelectionLength = 0;
@@ -179,7 +178,6 @@
             this.txtCompany.MaxLength = 32767;
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.PasswordChar = '\0';
-            this.txtCompany.PromptText = "Company";
             this.txtCompany.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtCompany.SelectedText = "";
             this.txtCompany.SelectionLength = 0;
@@ -209,7 +207,6 @@
             this.mskPassword.MaxLength = 32767;
             this.mskPassword.Name = "mskPassword";
             this.mskPassword.PasswordChar = '*';
-            this.mskPassword.PromptText = "Password";
             this.mskPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mskPassword.SelectedText = "";
             this.mskPassword.SelectionLength = 0;
@@ -243,7 +240,6 @@
             this.txtUserName.MaxLength = 32767;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
-            this.txtUserName.PromptText = "User Name";
             this.txtUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtUserName.SelectedText = "";
             this.txtUserName.SelectionLength = 0;
@@ -275,7 +271,6 @@
             this.definitionFileTxt.MaxLength = 32767;
             this.definitionFileTxt.Name = "definitionFileTxt";
             this.definitionFileTxt.PasswordChar = '\0';
-            this.definitionFileTxt.PromptText = "Definition File";
             this.definitionFileTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.definitionFileTxt.SelectedText = "";
             this.definitionFileTxt.SelectionLength = 0;
@@ -348,7 +343,6 @@
             this.txtFinderName.MaxLength = 32767;
             this.txtFinderName.Name = "txtFinderName";
             this.txtFinderName.PasswordChar = '\0';
-            this.txtFinderName.PromptText = "FinderName";
             this.txtFinderName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFinderName.SelectedText = "";
             this.txtFinderName.SelectionLength = 0;
@@ -381,7 +375,6 @@
             this.txtFinderModule.MaxLength = 2;
             this.txtFinderModule.Name = "txtFinderModule";
             this.txtFinderModule.PasswordChar = '\0';
-            this.txtFinderModule.PromptText = "Module";
             this.txtFinderModule.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFinderModule.SelectedText = "";
             this.txtFinderModule.SelectionLength = 0;

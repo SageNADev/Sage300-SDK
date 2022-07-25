@@ -196,15 +196,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Company Logo.
-        /// </summary>
-        public static string CompanyLogo {
-            get {
-                return ResourceManager.GetString("CompanyLogo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string Contact {
@@ -300,15 +291,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string DefaultRateType {
             get {
                 return ResourceManager.GetString("DefaultRateType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Company logo deleted successfully..
-        /// </summary>
-        public static string DeleteLogoMessage {
-            get {
-                return ResourceManager.GetString("DeleteLogoMessage", resourceCulture);
             }
         }
         
@@ -435,24 +417,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string Euro {
             get {
                 return ResourceManager.GetString("Euro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select a supported image type (JPEG or PNG)..
-        /// </summary>
-        public static string FileFormatError {
-            get {
-                return ResourceManager.GetString("FileFormatError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Maximum image size is 100 KB. Please select a smaller image..
-        /// </summary>
-        public static string FileSizeError {
-            get {
-                return ResourceManager.GetString("FileSizeError", resourceCulture);
             }
         }
         
@@ -664,15 +628,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select Company Logo.
-        /// </summary>
-        public static string SelectLogo {
-            get {
-                return ResourceManager.GetString("SelectLogo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Send Copies To.
         /// </summary>
         public static string SendCopyTo {
@@ -786,24 +741,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string TenantID {
             get {
                 return ResourceManager.GetString("TenantID", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upload.
-        /// </summary>
-        public static string UpLoad {
-            get {
-                return ResourceManager.GetString("UpLoad", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Company logo uploaded successfully..
-        /// </summary>
-        public static string UpLoadMessage {
-            get {
-                return ResourceManager.GetString("UpLoadMessage", resourceCulture);
             }
         }
         

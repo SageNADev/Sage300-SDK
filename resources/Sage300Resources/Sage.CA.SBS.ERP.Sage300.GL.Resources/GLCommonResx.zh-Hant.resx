@@ -279,4 +279,10 @@
     <value>幣別類型</value>
     <comment>List</comment>
   </data>
+  <data name="Consolidated" xml:space="preserve">
+    <value>合併</value>
+  </data>
+  <data name="Separate" xml:space="preserve">
+    <value>分列</value>
+  </data>
 </root>

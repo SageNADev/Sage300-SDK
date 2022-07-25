@@ -279,4 +279,10 @@
     <value>Type de devise</value>
     <comment>List</comment>
   </data>
+  <data name="Consolidated" xml:space="preserve">
+    <value>Consolidé</value>
+  </data>
+  <data name="Separate" xml:space="preserve">
+    <value>Séparé</value>
+  </data>
 </root>

@@ -13,110 +13,107 @@
     var helpUrl = Utilities.GetHelpUrl("");
 }
 
-<div>
-    <ul>
-        <li class="k-state-default clrBGreen helpSearch">
-            <div class="k-link">
-                <form method="get" action="#" id="helpSearch" class="clrBGreen helpSearch">
-                    @Html.KoSageTextBox("Help", new { @sagevalue = "Help" }, new { @id = "helpSearchfl", @maxlength = "40", @placeholder = HelpResx.Search_Help })
-                    <input type="image" id="helpSearchbtn" src="~/Content/Images/helpSerchIcon.png" />
-                </form>
-            </div>
-        </li>
+    <li class="k-state-default helpSearch">
+        <div class="k-link">
+            <form method="get" action="#" id="helpSearch" class="clrBGreen helpSearch">
+                @Html.KoSageTextBox("Help", new { @sagevalue = "Help" }, new { @id = "helpSearchfl", @maxlength = "40", @placeholder = HelpResx.Search_Help })
+                <input type="image" id="helpSearchbtn" src="~/Content/Images/helpSerchIcon.png" />
+            </form>
+        </div>
+    </li>
 
-        <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.Portal_Help</span></li>
+    <li class="k-item k-state-default sub-heading top_brd1"><span class="k-link">@HelpResx.Portal_Help</span></li>
 
-        @if (Model.Data.ScreenHelps != null)
+    @if (Model.Data.ScreenHelps != null)
+    {
+        foreach (var portalSearchHelp in Model.Data.ScreenHelps)
         {
-            foreach (var portalSearchHelp in Model.Data.ScreenHelps)
-            {
-                @* Determine if Sage or third party help *@
-                var link = string.IsNullOrEmpty(portalSearchHelp.ExternalUrl) ?
-                         Utilities.GetLearnMoreUrl(portalSearchHelp.CshId) :
-                         portalSearchHelp.ExternalUrl;
-                var desc = string.IsNullOrEmpty(portalSearchHelp.ExternalUrl) ?
-                         HelpResx.ResourceManager.GetString(portalSearchHelp.ResourceKey, HelpResx.Culture) :
-                         portalSearchHelp.ExternalDescription;
+            @* Determine if Sage or third party help *@
+            var link = string.IsNullOrEmpty(portalSearchHelp.ExternalUrl) ?
+                        Utilities.GetLearnMoreUrl(portalSearchHelp.CshId) :
+                        portalSearchHelp.ExternalUrl;
+            var desc = string.IsNullOrEmpty(portalSearchHelp.ExternalUrl) ?
+                        HelpResx.ResourceManager.GetString(portalSearchHelp.ResourceKey, HelpResx.Culture) :
+                        portalSearchHelp.ExternalDescription;
 
-                <li class="k-item k-state-default" role="menuitem">
-                    <span class="k-link">
-                        <a href=@link target="_blank">@desc</a>
-                    </span>
-                </li>
-            }
-        }
-        <li class="k-item k-state-default" role="menuitem">
-            <span class="k-link">
-                <a href=@Utilities.GetLearnMoreUrl("677001008") target="_blank">@HelpResx.Portal_WhatsNew</a>
-            </span>
-        </li>
-        @if (ViewBag.TimeCardUser == null || !ViewBag.TimeCardUser)
-        {
             <li class="k-item k-state-default" role="menuitem">
-                <span class="k-link" id="featureTourLink">
-                    <a>@HelpResx.Resources_FeatureTour</a>
+                <span class="k-link">
+                    <a href=@link target="_blank" onclick="return false;">@desc</a>
                 </span>
             </li>
         }
+    }
+    <li class="k-item k-state-default" role="menuitem">
+        <span class="k-link">
+            <a href=@Utilities.GetLearnMoreUrl("677001008") target="_blank" onclick="return false;">@HelpResx.Portal_WhatsNew</a>
+        </span>
+    </li>
+    @if (ViewBag.TimeCardUser == null || !ViewBag.TimeCardUser)
+    {
         <li class="k-item k-state-default" role="menuitem">
-            <span class="k-link">
-                <a href=@ConfigurationHelper.ProductDocumentsUrl target="_blank">@HelpResx.Portal_ProductDocuments</a>
+            <span class="k-link" id="featureTourLink">
+                <a>@HelpResx.Resources_FeatureTour</a>
             </span>
         </li>
+    }
+    <li class="k-item k-state-default" role="menuitem">
+        <span class="k-link">
+            <a href=@ConfigurationHelper.ProductDocumentsUrl target="_blank" onclick="return false;">@HelpResx.Portal_ProductDocuments</a>
+        </span>
+    </li>
 
-        <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.SageSupport</span></li>
+    <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.SageSupport</span></li>
 
-        <li class="k-item k-state-default" role="menuitem">
-            <span class="k-link">
-                <a href=@ConfigurationHelper.KnowledgebaseUrl target="_blank">@HelpResx.SageSupport_Knowledgebase</a>
-            </span>
-        </li>
+    <li class="k-item k-state-default" role="menuitem">
+        <span class="k-link">
+            <a href=@ConfigurationHelper.KnowledgebaseUrl target="_blank" onclick="return false;">@HelpResx.SageSupport_Knowledgebase</a>
+        </span>
+    </li>
 
-        <li class="k-item k-state-default" role="menuitem">
-            <span class="k-link">
-                <a href=@ConfigurationHelper.LiveChatUrl target="_blank">@HelpResx.SageSupport_LiveChat</a>
-            </span>
-        </li>
+    <li class="k-item k-state-default" role="menuitem">
+        <span class="k-link">
+            <a href=@ConfigurationHelper.LiveChatUrl target="_blank" onclick="return false;">@HelpResx.SageSupport_LiveChat</a>
+        </span>
+    </li>
 
-        <li class="k-item k-state-default" role="menuitem">
-            <span class="k-link">
-                <a href=@ConfigurationHelper.RemoteSupportSessionUrl target="_blank">@HelpResx.SageSupport_Remote</a>
-            </span>
-        </li>
+    <li class="k-item k-state-default" role="menuitem">
+        <span class="k-link">
+            <a href=@ConfigurationHelper.RemoteSupportSessionUrl target="_blank" onclick="return false;">@HelpResx.SageSupport_Remote</a>
+        </span>
+    </li>
 
-        <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.Resources</span></li>
+    <li class="k-item k-state-default clrBGreen sub-heading top_brd1"><span class="k-link">@HelpResx.Resources</span></li>
 
-        <li class="k-item k-state-default" role="menuitem">
-            <span class="k-link">
-                <a href=@ConfigurationHelper.OnlineCommunityUrl target="_blank">@HelpResx.Resources_OnlineCommunity</a>
-            </span>
-        </li>
+    <li class="k-item k-state-default" role="menuitem">
+        <span class="k-link">
+            <a href=@ConfigurationHelper.OnlineCommunityUrl target="_blank" onclick="return false;">@HelpResx.Resources_OnlineCommunity</a>
+        </span>
+    </li>
 
-        <li class="k-item k-state-default" role="menuitem">
-            <span class="k-link">
-                <a href=@ConfigurationHelper.SageUniversityUrl target="_blank">@HelpResx.Resources_SageUniversity</a>
-            </span>
-        </li>
+    <li class="k-item k-state-default" role="menuitem">
+        <span class="k-link">
+            <a href=@ConfigurationHelper.SageUniversityUrl target="_blank" onclick="return false;">@HelpResx.Resources_SageUniversity</a>
+        </span>
+    </li>
 
-        <li class="k-item k-state-default" role="menuitem">
-            <span class="k-link">
-                <a href=@ConfigurationHelper.OrderChecksFormsUrl target="_blank">@HelpResx.Resources_OrderChecksForms</a>
-            </span>
-        </li>
+    <li class="k-item k-state-default" role="menuitem">
+        <span class="k-link">
+            <a href=@ConfigurationHelper.OrderChecksFormsUrl target="_blank" onclick="return false;">@HelpResx.Resources_OrderChecksForms</a>
+        </span>
+    </li>
 
-        <li class="k-item k-state-default" role="menuitem">
-            <span class="k-link">
-                <a href=@ConfigurationHelper.Sage300HomeUrl target="_blank">@HelpResx.Resources_Sage300Home</a>
-            </span>
-        </li>
+    <li class="k-item k-state-default" role="menuitem">
+        <span class="k-link">
+            <a href=@ConfigurationHelper.Sage300HomeUrl target="_blank" onclick="return false;">@HelpResx.Resources_Sage300Home</a>
+        </span>
+    </li>
 
-        <li class="k-item k-state-default k-last" role="menuitem">
-            <span class="k-link">
-                <a href=@ConfigurationHelper.SubmitProductIdeaUrl target="_blank">@HelpResx.Resources_SubmitIdea</a>
-            </span>
-        </li>
-    </ul>
-</div>
+    <li class="k-item k-state-default k-last" role="menuitem">
+        <span class="k-link">
+            <a href=@ConfigurationHelper.SubmitProductIdeaUrl target="_blank" onclick="return false;">@HelpResx.Resources_SubmitIdea</a>
+        </span>
+    </li>
+
 
 @Scripts.Render("~/bundles/protalHelp")
 

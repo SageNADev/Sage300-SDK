@@ -637,7 +637,7 @@
     <value>發票操作</value>
   </data>
   <data name="OE_Reports" xml:space="preserve">
-    <value>銷售訂單報表</value>
+    <value>銷售訂單分析報表</value>
   </data>
   <data name="OE_SalesStatistics" xml:space="preserve">
     <value>銷售統計</value>

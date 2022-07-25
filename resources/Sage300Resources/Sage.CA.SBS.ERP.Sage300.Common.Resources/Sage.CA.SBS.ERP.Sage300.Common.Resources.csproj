@@ -364,6 +364,7 @@
     <EmbeddedResource Include="Portal\HelpResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HelpResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Portal\HelpResx.es.resx" />
     <EmbeddedResource Include="Portal\HelpResx.fr.resx" />

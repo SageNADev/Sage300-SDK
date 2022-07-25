@@ -133,7 +133,7 @@
     <value>From Account Set</value>
   </data>
   <data name="PM_AccountSetTitle" xml:space="preserve">
-    <value>PJC Account Set Report</value>
+    <value>PJC Account Sets Report</value>
   </data>
   <data name="AccountSetTo" xml:space="preserve">
     <value>To Account Set</value>
@@ -181,7 +181,7 @@
     <value>Charges</value>
   </data>
   <data name="ChargesTitle" xml:space="preserve">
-    <value>Charges Report</value>
+    <value>PJC Charges Report</value>
   </data>
   <data name="CurrencyFieldLabel" xml:space="preserve">
     <value>Currency Field Label</value>
@@ -657,7 +657,7 @@
     <value>I/C Alternate Items Report</value>
   </data>
   <data name="IC_BillsOfMaterialsTitle" xml:space="preserve">
-    <value>I/C Bills of Materials Report</value>
+    <value>I/C Bills of Material Report</value>
   </data>
   <data name="IC_CategoriesTitle" xml:space="preserve">
     <value>I/C Categories Report</value>

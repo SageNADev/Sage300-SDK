@@ -332,13 +332,14 @@ declarativeReportUI = {
                     break;
 
                 case ControlTypeEnum.Dropdown:
-                    //sg.utls.kndoUI.dropDownList(param.ID);
                     $(controlId).kendoDropDownList({
                         dataTextField: "LabelText",
                         dataValueField: "Value",
                         dataSource: param.DataSource
                     });
-
+                    $(controlId).data("kendoDropDownList").select((dataItem) => {
+                        return dataItem.Value === defaultValue;
+                    });
                     break;
 
                 case ControlTypeEnum.Checkbox:
@@ -418,6 +419,9 @@ declarativeReportUI = {
             if (param.Hidden || (param.IsOptionalFields && !isOBActive)) {
                 if (param.ControlType === ControlTypeEnum.Checkbox) {
                     $(`#${param.ID}`).closest('div').hide();
+                }
+                else if (param.ControlType === ControlTypeEnum.Section) {
+                    $(`#${param.ID}`).hide();
                 }
                 else {
                     $(`#${param.ID}`).closest('.form-group').hide();

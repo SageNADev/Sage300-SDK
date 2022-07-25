@@ -40,15 +40,6 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="WebGrease.dll">WebGrease.dll</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="WG.EXE">WG.EXE</ProjectItem>
-      <Folder Name="WebForms" TargetFolderName="WebForms">
-        <ProjectItem ReplaceParameters="true" TargetFileName="BaseWebPage.cs">BaseWebPage.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="CustomReportViewer.aspx">CustomReportViewer.aspx</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="CustomReportViewer.aspx.cs">CustomReportViewer.aspx.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="CustomReportViewer.aspx.designer.cs">CustomReportViewer.aspx.designer.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="ReportViewer.aspx">ReportViewer.aspx</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="ReportViewer.aspx.cs">ReportViewer.aspx.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="ReportViewer.aspx.designer.cs">ReportViewer.aspx.designer.cs</ProjectItem>
-      </Folder>
       <Folder Name="Views" TargetFolderName="Views">
         <ProjectItem ReplaceParameters="true" TargetFileName="Portal.cshtml">Portal.cshtml</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
@@ -307,10 +298,6 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="SessionDateCookie.js">SessionDateCookie.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="TaskDock-Menu-BreadCrumb.js">TaskDock-Menu-BreadCrumb.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Widget.js">Widget.js</ProjectItem>
-        </Folder>
-        <Folder Name="Report" TargetFolderName="Report">
-          <ProjectItem ReplaceParameters="true" TargetFileName="CustomReportBehaviour.js">CustomReportBehaviour.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="ReportBehaviour.js">ReportBehaviour.js</ProjectItem>
         </Folder>
       </Folder>
       <Folder Name="Properties" TargetFolderName="Properties">

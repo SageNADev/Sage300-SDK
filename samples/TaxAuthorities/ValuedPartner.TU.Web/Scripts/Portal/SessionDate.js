@@ -68,7 +68,7 @@ var SessionDateCookieSetup = function () {
                 var todayDateString = (todayDate.getMonth() + 1 + "/" + todayDate.getDate() + "/" + todayDate.getFullYear() + " " + todayDate.getHours() + ":" + todayDate.getMinutes() + ":" + todayDate.getSeconds()).toString();
                 var modifiedCookie = sessionDateString + "|" + todayDateString;
                 $("#divDatePicker").hide();
-                $(".last_container").css("top", "-23px");
+                $(".last_container").css("top", "-28px");
                 $.cookie.raw = true;
                 var cookieExpiresdate = new Date(9999, 12, 31);
                 $.cookie(sg.utls.SessionCookieName, modifiedCookie, { path: '/', expires: cookieExpiresdate, secure: window.location.protocol === "http:" ? false : true });
@@ -132,7 +132,7 @@ var SessionDateCookieSetup = function () {
      * @description Session date click handler
      */
     function sessionDateClick() {
-        $("#spnSessionDate, #sessionDatelabel, #sessionDateIcon").on("click", function (e) {
+        $(".last_container.session-date").on("click", function (e) {
             sessionDateClickCommon(e);
         });
     }
@@ -214,7 +214,7 @@ var SessionDateCookieSetup = function () {
             // Code below will close the date picker
             datePicker.unbind('close');
             $("#divDatePicker").hide();
-            $(".last_container").css("top", "-23px");
+            $(".last_container").css("top", "-28px");
 
             // Delay 300 milliseconds to allow Kendo DatePicker to close properly
             setTimeout(function () {
@@ -231,7 +231,7 @@ var SessionDateCookieSetup = function () {
     function openCalendar() {
 
         $("#divDatePicker").show();
-        $(".last_container").css("top", "4px");
+        $(".last_container").css("top", "-1px");
         var datePicker = _public.getControl();
 
         // NOTE!!! Has to be done this way because the session date format in the cookie is fixed
