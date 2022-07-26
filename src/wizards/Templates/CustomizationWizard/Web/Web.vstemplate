@@ -288,10 +288,6 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="TaskDock-Menu-BreadCrumb.js">TaskDock-Menu-BreadCrumb.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Widget.js">Widget.js</ProjectItem>
         </Folder>
-        <Folder Name="Report" TargetFolderName="Report">
-          <ProjectItem ReplaceParameters="true" TargetFileName="CustomReportBehaviour.js">CustomReportBehaviour.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="ReportBehaviour.js">ReportBehaviour.js</ProjectItem>
-        </Folder>
       </Folder>
       <Folder Name="Properties" TargetFolderName="Properties">
         <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>

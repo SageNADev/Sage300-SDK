@@ -4,9 +4,15 @@ set WizardSourceRoot=%SDKRoot%\src\wizards
 set BuildConfiguration=Release
 
 REM Setup Visual Studio environment variables first
+REM set VSVersion=2022
 set VSVersion=2019
 REM set VSVersion=2017
+
+REM VS 2019
 call "C:\Program Files (x86)\Microsoft Visual Studio\%VSVersion%\Enterprise\Common7\Tools\VsDevCmd.bat"
+
+REM VS 2022
+REM call "C:\Program Files\Microsoft Visual Studio\%VSVersion%\Enterprise\Common7\Tools\VsDevCmd.bat"
 
 REM --------------------------------------------------------------------------------------------------------
 REM (UI Wizards) Sage 300 Solution and Code Generation Wizards

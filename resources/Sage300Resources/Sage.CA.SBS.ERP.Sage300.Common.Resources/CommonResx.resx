@@ -1660,4 +1660,7 @@
   <data name="ItemNumberTo" xml:space="preserve">
     <value>Item Number To</value>
   </data>
+  <data name="Template_GenericReportException" xml:space="preserve">
+    <value>One or more errors occurred while attempting to generate the report:  {0}</value>
+  </data>
 </root>

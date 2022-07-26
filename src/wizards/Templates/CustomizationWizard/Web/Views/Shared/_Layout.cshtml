@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. *@
 
 @using System.Web.UI.WebControls
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -31,8 +31,7 @@
     var othersUrlList = ViewBag.OthersUrlList as List<WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>>;
     var widgetUrlList = ViewBag.WidgetUrlList as WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>;
     int numberOfActiveWindows;
-    int.TryParse(ConfigurationHelper.GetConfigValue("NumberOfActiveWindows", false), out numberOfActiveWindows);
-    var isOnPremise = ConfigurationHelper.IsOnPremise;
+    int.TryParse(ConfigurationHelper.GetConfigValue("NumberOfActiveWindows"), out numberOfActiveWindows);
     var oAuthServer = string.Format(ConfigurationHelper.GetConfigValue("OAuthServerTemplate"), Request.Url.Host);
     var hasGlobalSearchLicense = ViewBag.HasGlobalSearchLicense;
 }
@@ -126,10 +125,6 @@
                             <li id="topMenuUser">
                                 <span class="txt-top-menu">@RenderSection("username", required: false)</span>
                                 <ul>
-                                    @if (!isOnPremise)
-                                    {
-                                        <li id="liManageUsers" class="top_nav_drop_content"></li>
-                                    }
                                     <li id="liSignOut" class="top_nav_drop_content">
                                     </li>
                                 </ul>

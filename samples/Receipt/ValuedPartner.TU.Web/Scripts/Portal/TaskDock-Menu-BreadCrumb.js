@@ -44,7 +44,7 @@ var TaskDockMenuBreadCrumbManager = function () {
     // Private Properties
 
     // Screen Id hold value for each menu screen menu Id
-    var _screenId = 0;
+    var _screenId = -1;
 
     // To be used to record extra parameter in order to screen with specific record
     var _globalSearchDrillDownParameter = null;
@@ -75,7 +75,64 @@ var TaskDockMenuBreadCrumbManager = function () {
         var data = { screenId: id };
         var helpUrl = sg.utls.url.buildUrl("Core", "Help", "Index");
         var key = helpUrl + "_" + id + "_" + globalResource.Culture;
-        var callBack = function (result) { $('#searchHelpDiv').html(result); };
+        var callBack = function (result) { 
+            if ($("#topMenu").data("kendoMenu")) 
+                $("#topMenu").data("kendoMenu").destroy();
+            $('#searchHelpDiv').html(result); 
+            var menu = $("#topMenu").kendoMenu({ openOnClick: true, closeOnClick: true }).data("kendoMenu");
+            
+            menu.bind("select", function(e) {
+                
+                if (e.item.id == "globalSearch") {
+                    // only open the global search if it is invoked by keyboard
+                    if (e.sender._keyTriggered) {
+                        $("#globalSearch").triggerHandler( "click" );
+                         $("#topMenu").data("kendoMenu").close();
+                    }
+                }
+                else if (e.item.id == "topMenuTools") {
+                    e.preventDefault();
+                    $('.quick-menu').toggle();
+                    $(this).parent('.menu-item-with-icon').toggleClass('inactive');
+                }
+                else 
+                {
+                    // special handling of the help menu
+                    if (e.item.parentElement.id === 'searchHelpDiv') {
+                        
+                        let searchBox = $(e.item).find('#helpSearchfl');
+                        
+                        if (searchBox.length > 0) {
+                            
+                            menu.setOptions({closeOnClick: false });
+                            
+                            searchBox.focus();
+                            $("#helpSearchfl").keydown(function handleSearch( event ) {
+                                if ( event.which == 13 ) {
+                                    event.preventDefault();
+                                    $("#helpSearchbtn").click();
+                                    $("#topMenu").data("kendoMenu").close();
+                                }
+                            });
+                        }
+                        else {
+                            if ($(e.item).find('#featureTourLink').length > 0) {
+                                $("#featureTourLink").triggerHandler( "click" );
+                            }
+                            else {
+                                let url = $(e.item).find("a").attr('href');
+                                if (url) {
+                                    let win = window.open(url, '_blank');
+                                    if (win) {
+                                        win.focus();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        };
 
         sg.utls.ajaxCachePostHtml(helpUrl, data, callBack, key);
     }
@@ -94,7 +151,8 @@ var TaskDockMenuBreadCrumbManager = function () {
         $('#widgetHplayout').hide();
 
         // When footer logo is clicked
-        _screenId = constants.DEFAULT_SCREENID;
+		_public.setScreenId(constants.DEFAULT_SCREENID);
+		
 
         $('#breadcrumb').hide();
 
@@ -600,7 +658,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                     $('#breadcrumb').hide();
 
                     $('#spWindowCount').text("0");
-                    _screenId = constants.DEFAULT_SCREENID;
+					_public.setScreenId(constants.DEFAULT_SCREENID);
 
                     $('#screenLayout').hide();
 
@@ -783,9 +841,10 @@ var TaskDockMenuBreadCrumbManager = function () {
                 // Called help according to screenId i.e menuid
                 // Checking the Taskdoc having a generated Report Screen or not
                 if (_screenId !== constants.REPORT_SCREEN_ID) {
-                    _screenId = menuid;
+					_public.setScreenId(menuid);
+
                 } else {
-                    _screenId = constants.REPORT_SCREEN_HELP;
+					_public.setScreenId(constants.REPORT_SCREEN_HELP);
                 }
             }
         });
@@ -854,11 +913,12 @@ var TaskDockMenuBreadCrumbManager = function () {
             var parentidVal = $(this).data('parentid');
 
             // Get menu id as screenId for Help Menu Search
-            _screenId = $(this).attr("data-menuid");
+			_public.setScreenId($(this).attr("data-menuid"));
+
 
             // screen could be launched from level 2 menu from an "li", so keep searching
             if (!_screenId && $(this).is("li")) {
-                _screenId = $(this).find("a").attr("data-menuid");
+				_public.setScreenId($(this).find("a").attr("data-menuid"));
             }
 
             loadBreadCrumb(parentidVal);
@@ -990,7 +1050,8 @@ var TaskDockMenuBreadCrumbManager = function () {
                 var parentidVal = $(this).attr("data-parentid");
 
                 // Get menu id as screenId for Help Menu Search
-                _screenId = $(this).attr("data-menuid");
+				_public.setScreenId($(this).attr("data-menuid"));
+
 
                 $('#dvWindows > div').each(function () { $(this).find("span").removeClass('selected'); });
 
@@ -1188,7 +1249,7 @@ var TaskDockMenuBreadCrumbManager = function () {
             assignUrl(windowText, parentId, menuid);
 
             // Update Help Menu after Report Generated from a Screen
-            _screenId = constants.REPORT_SCREEN_HELP;
+			_public.setScreenId(constants.REPORT_SCREEN_HELP);
 
         } else if (evtData.indexOf("isScreen") >= 0) {
 
@@ -1567,12 +1628,10 @@ var TaskDockMenuBreadCrumbManager = function () {
         OAuthWindow: _oAuthWindow,
 
         setDefaultScreenId: function () {
-            _screenId = constants.DEFAULT_SCREENID;
+            _public.setScreenId(constants.DEFAULT_SCREENID);
         },
 
         init: function () {
-
-            _screenId = constants.DEFAULT_SCREENID;
 
             $('#logoSage300').focus();
             $('#searchHelpDiv').show();
@@ -1591,9 +1650,26 @@ var TaskDockMenuBreadCrumbManager = function () {
                 // This is to fix D-33845
                 // For the menu item that contains a textbox, there is an Kendo issue on Chrome
                 // The workaround is to focus on an input when menu is activated.
-                // https://github.com/telerik/kendo-ui-core/issues/2524
+                //https://github.com/telerik/kendo-ui-core/issues/2524
                 if (e.item.is('#helpMenu')) {
                     e.item.find('input').first().focus();
+                }
+            });
+
+			_public.setScreenId(constants.DEFAULT_SCREENID);
+
+            $("#topMenu").keydown(function (e) {
+                if (e.key === 'Tab') {
+                    let newKey = e.shiftKey ? 'ArrowLeft' : 'ArrowRight';
+                    let newKeyCode = e.shiftKey ? 37 : 39;
+                    let lastItem = $(e.target).children(".k-menu-item.k-state-focused.k-last")[0];
+                    let firstItem = $(e.target).children(".k-menu-item.k-state-focused.k-first")[0];
+                    if(!firstItem && !lastItem || lastItem && e.shiftKey || firstItem && !e.shiftKey) {
+                        e.preventDefault();
+                        $(e.target).trigger(
+                            $.Event('keydown', {key: newKey, keyCode: newKeyCode, which: newKeyCode})
+                        );
+                    }
                 }
             });
 
@@ -1695,7 +1771,7 @@ var TaskDockMenuBreadCrumbManager = function () {
             initializeMainMenu();
 
             // add menu hotkeys
-            //initMenuHotkeys(); Disabled for 2022.2
+            initMenuHotkeys();
 
             // Initialize count of currently open UI windows (it should be 0)
             $('#spWindowCount').text($('#dvWindows').children().length);
@@ -1710,11 +1786,6 @@ var TaskDockMenuBreadCrumbManager = function () {
 
             recentWindowsMenu.onLoadPopulateRecentWindowsListFromStorage();
 
-            $('#topMenu').mouseenter(function () {
-                if (!$("#helpSearchfl").is(':focus')) {
-                    helpSearchForMenuItem(_screenId);
-                }
-            });
 
             // Update the current open window title in windows manager
             window.addEventListener('message', function (event) {
@@ -1747,11 +1818,14 @@ var TaskDockMenuBreadCrumbManager = function () {
 
                         // Getting screenId from Taskdoc which having class as selected
                         _screenId = $('#dvWindows div span.selected').attr("data-menuid");
+						
 
                         // Checking whether Taskdoc Item having a generated report from screen or not
                         if (_screenId === constants.REPORT_SCREEN_ID) {
                             _screenId = constants.REPORT_SCREEN_HELP;
                         }
+
+						_public.setScreenId(_screenId);
 
                         return false;
                     }
@@ -1798,14 +1872,14 @@ var TaskDockMenuBreadCrumbManager = function () {
             $('.std-menu').click(function (event) {
                 event.stopPropagation();
             });
-
+/*
             $('#topMenuTools .k-link').click(function () {
                 $('.quick-menu').toggle();
                 $(this).parent('.menu-item-with-icon').toggleClass('inactive');
                 return false;
             });
 
-            // onload event handling on iframes
+  */          // onload event handling on iframes
             $('#screenLayout').children().each(function () {
                 var $iframe = $(this).find("iframe");
                 $iframe.on("load", function (e) {
@@ -1902,6 +1976,8 @@ var TaskDockMenuBreadCrumbManager = function () {
                         _screenId = constants.REPORT_SCREEN_HELP;
                     }
 
+					_public.setScreenId(_screenId);
+
                     // Notify change inquiry data source 
                     var winUrl = $("#" + currentDiv).attr("src");
                     if (winUrl.indexOf("Core/InquiryGeneral/Index/?templateId") > -1) {
@@ -1932,9 +2008,16 @@ var TaskDockMenuBreadCrumbManager = function () {
                 var parts = sg.utls.url.extractAreaControllerActionAndParametersFromPartialUrl(targetUrl);
                 targetUrl = sg.utls.url.buildUrl(parts.AreaName, parts.ControllerName, parts.ActionName, parts.ParametersName);
 
+                const lastScreenId = _screenId;
                 var isScreenOpen = isScreenAlreadyOpen(targetUrl);
                 var isMaxScreenCountReachedAndNotOpen = isMaxScreenNumReachedAndNotOpen(targetUrl);
                 if (isScreenOpen || isMaxScreenCountReachedAndNotOpen) {
+
+                    helpSearchForMenuItem(_screenId);
+                    hideIframes();
+                    assignUrl(this.innerHTML, parentidVal, _screenId);
+
+
                     return;
                 }
 
@@ -1948,12 +2031,14 @@ var TaskDockMenuBreadCrumbManager = function () {
                 loadBreadCrumb(parentidVal);
 
                 // Menu Help - Load Menu Help on window management item selection
-                _screenId = $(this).attr("data-menuid");
+                const recentScreenId = $(this).attr("data-menuid");
 
                 // Checking the Taskdoc having a generated Report Screen or not
-                if (_screenId === constants.REPORT_SCREEN_ID) {
-                    _screenId = constants.REPORT_SCREEN_HELP;
+                if (recentScreenId === constants.REPORT_SCREEN_ID) {
+                    recentScreenId = constants.REPORT_SCREEN_HELP;
                 }
+
+                _public.setScreenId(recentScreenId);
 
                 hideIframes();
                 assignUrl(this.innerHTML, parentidVal, _screenId);
@@ -2072,7 +2157,11 @@ var TaskDockMenuBreadCrumbManager = function () {
         },
 
         setScreenId: function (id) {
-            _screenId = id;
+			
+			if (_screenId != id) {
+				_screenId = id;
+				helpSearchForMenuItem(_screenId);
+			}
         },
 
         getGlobalSearchDrillDownParameter: function () {

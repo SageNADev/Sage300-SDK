@@ -574,7 +574,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Charges Report.
+        ///   Looks up a localized string similar to PJC Charges Report.
         /// </summary>
         public static string ChargesTitle {
             get {
@@ -1114,7 +1114,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I/C Bills of Materials Report.
+        ///   Looks up a localized string similar to I/C Bill of Material Report.
         /// </summary>
         public static string IC_BillsOfMaterialsTitle {
             get {
@@ -1897,7 +1897,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PJC Account Set Report.
+        ///   Looks up a localized string similar to PJC Account Sets Report.
         /// </summary>
         public static string PM_AccountSetTitle {
             get {

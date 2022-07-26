@@ -3967,6 +3967,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to One or more errors occurred while attempting to generate the report:  {0}.
+        /// </summary>
+        public static string Template_GenericReportException {
+            get {
+                return ResourceManager.GetString("Template_GenericReportException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The report file &apos;{0}&apos; could not be located. Please contact your administrator for assistance..
         /// </summary>
         public static string Template_ReportCouldNotBeLocated {
@@ -4305,24 +4314,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string VAT {
             get {
                 return ResourceManager.GetString("VAT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vendor Number From.
-        /// </summary>
-        public static string VendorNumberFrom {
-            get {
-                return ResourceManager.GetString("VendorNumberFrom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vendor Number To.
-        /// </summary>
-        public static string VendorNumberTo {
-            get {
-                return ResourceManager.GetString("VendorNumberTo", resourceCulture);
             }
         }
         

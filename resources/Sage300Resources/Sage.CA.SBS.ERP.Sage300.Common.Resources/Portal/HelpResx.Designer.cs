@@ -97,6 +97,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Printing the 1099/CPRS Codes Report.
+        /// </summary>
+        public static string AP_1099CPRSCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AP_1099CPRSCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Payable Reports.
+        /// </summary>
+        public static string AP_1099CPRSCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AP_1099CPRSCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P 1099/CPRS Codes Report.
+        /// </summary>
+        public static string AP_1099CPRSCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("AP_1099CPRSCodes_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/P 1099/CPRS Codes Screen.
         /// </summary>
         public static string AP_1099CPRSCodes_Screen {
@@ -174,6 +201,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AP_AccountSets_Article2 {
             get {
                 return ResourceManager.GetString("AP_AccountSets_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Account Sets Report.
+        /// </summary>
+        public static string AP_AccountSets_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AP_AccountSets_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Payable Reports.
+        /// </summary>
+        public static string AP_AccountSets_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AP_AccountSets_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P Account Sets Report.
+        /// </summary>
+        public static string AP_AccountSets_Report_Screen {
+            get {
+                return ResourceManager.GetString("AP_AccountSets_Report_Screen", resourceCulture);
             }
         }
         
@@ -637,6 +691,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Printing the Distribution Codes Report.
+        /// </summary>
+        public static string AP_DistributionCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AP_DistributionCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Payable Reports.
+        /// </summary>
+        public static string AP_DistributionCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AP_DistributionCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P Distribution Codes Report.
+        /// </summary>
+        public static string AP_DistributionCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("AP_DistributionCodes_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/P Distribution Codes Screen.
         /// </summary>
         public static string AP_DistributionCodes_Screen {
@@ -660,6 +741,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AP_DistributionSets_Article2 {
             get {
                 return ResourceManager.GetString("AP_DistributionSets_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Distribution Sets Report.
+        /// </summary>
+        public static string AP_DistributionSets_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AP_DistributionSets_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Payable Reports.
+        /// </summary>
+        public static string AP_DistributionSets_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AP_DistributionSets_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P Distribution Sets Report.
+        /// </summary>
+        public static string AP_DistributionSets_Report_Screen {
+            get {
+                return ResourceManager.GetString("AP_DistributionSets_Report_Screen", resourceCulture);
             }
         }
         
@@ -691,6 +799,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Printing the Email Messages Report.
+        /// </summary>
+        public static string AP_EmailMessages_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AP_EmailMessages_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Payable Reports.
+        /// </summary>
+        public static string AP_EmailMessages_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AP_EmailMessages_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P Email Messages Report.
+        /// </summary>
+        public static string AP_EmailMessages_Report_Screen {
+            get {
+                return ResourceManager.GetString("AP_EmailMessages_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/P Email Messages Screen.
         /// </summary>
         public static string AP_EmailMessages_Screen {
@@ -714,6 +849,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AP_GL_Integration_Article2 {
             get {
                 return ResourceManager.GetString("AP_GL_Integration_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the G/L Integration Report.
+        /// </summary>
+        public static string AP_GL_Integration_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AP_GL_Integration_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Payable Reports.
+        /// </summary>
+        public static string AP_GL_Integration_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AP_GL_Integration_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P G/L Integration Report.
+        /// </summary>
+        public static string AP_GL_Integration_Report_Screen {
+            get {
+                return ResourceManager.GetString("AP_GL_Integration_Report_Screen", resourceCulture);
             }
         }
         
@@ -862,6 +1024,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Printing the Optional Fields Report.
+        /// </summary>
+        public static string AP_OptionalFields_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AP_OptionalFields_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Payable Reports.
+        /// </summary>
+        public static string AP_OptionalFields_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AP_OptionalFields_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P Optional Fields Report.
+        /// </summary>
+        public static string AP_OptionalFields_Report_Screen {
+            get {
+                return ResourceManager.GetString("AP_OptionalFields_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/P Optional Fields Screen.
         /// </summary>
         public static string AP_OptionalFields_Screen {
@@ -885,6 +1074,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AP_Options_Article2 {
             get {
                 return ResourceManager.GetString("AP_Options_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/P Options Report.
+        /// </summary>
+        public static string AP_Options_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AP_Options_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Payable Reports.
+        /// </summary>
+        public static string AP_Options_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AP_Options_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P Options Report.
+        /// </summary>
+        public static string AP_Options_Report_Screen {
+            get {
+                return ResourceManager.GetString("AP_Options_Report_Screen", resourceCulture);
             }
         }
         
@@ -939,6 +1155,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AP_PaymentCodes_Article2 {
             get {
                 return ResourceManager.GetString("AP_PaymentCodes_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Payment Codes Report.
+        /// </summary>
+        public static string AP_PaymentCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AP_PaymentCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Payable Reports.
+        /// </summary>
+        public static string AP_PaymentCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AP_PaymentCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P Payment Codes Report.
+        /// </summary>
+        public static string AP_PaymentCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("AP_PaymentCodes_Report_Screen", resourceCulture);
             }
         }
         
@@ -1020,6 +1263,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AP_PaymentSelectionCodes_Article2 {
             get {
                 return ResourceManager.GetString("AP_PaymentSelectionCodes_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Payment Selection Codes Report.
+        /// </summary>
+        public static string AP_PaymentSelectionCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AP_PaymentSelectionCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Payable Reports.
+        /// </summary>
+        public static string AP_PaymentSelectionCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AP_PaymentSelectionCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P Payment Selection Codes Report.
+        /// </summary>
+        public static string AP_PaymentSelectionCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("AP_PaymentSelectionCodes_Report_Screen", resourceCulture);
             }
         }
         
@@ -1420,6 +1690,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Printing the Terms Report.
+        /// </summary>
+        public static string AP_Terms_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AP_Terms_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Payable Reports.
+        /// </summary>
+        public static string AP_Terms_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AP_Terms_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P Terms Report.
+        /// </summary>
+        public static string AP_Terms_Report_Screen {
+            get {
+                return ResourceManager.GetString("AP_Terms_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/P Terms Screen.
         /// </summary>
         public static string AP_Terms_Screen {
@@ -1636,6 +1933,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_AccountSets_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_AccountSets_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Account Sets Report.
+        /// </summary>
+        public static string AR_AccountSets_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_AccountSets_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Account Sets Report.
+        /// </summary>
+        public static string AR_AccountSets_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_AccountSets_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/R Account Sets Screen.
         /// </summary>
         public static string AR_AccountSets_Screen {
@@ -1825,6 +2149,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_BillingCycles_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_BillingCycles_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Billing Cycles Report.
+        /// </summary>
+        public static string AR_BillingCycles_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_BillingCycles_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Billing Cycles Report.
+        /// </summary>
+        public static string AR_BillingCycles_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_BillingCycles_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/R Billing Cycles Screen.
         /// </summary>
         public static string AR_BillingCycles_Screen {
@@ -1902,6 +2253,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AR_CommentTypes_Article2 {
             get {
                 return ResourceManager.GetString("AR_CommentTypes_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_CommentTypes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_CommentTypes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Comment Types Report.
+        /// </summary>
+        public static string AR_CommentTypes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_CommentTypes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Comment Types Report.
+        /// </summary>
+        public static string AR_CommentTypes_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_CommentTypes_Report_Screen", resourceCulture);
             }
         }
         
@@ -2311,6 +2689,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_DistributionCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_DistributionCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Distribution Codes Report.
+        /// </summary>
+        public static string AR_DistributionCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_DistributionCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Distribution Codes Report.
+        /// </summary>
+        public static string AR_DistributionCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_DistributionCodes_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/R Distribution Codes Screen.
         /// </summary>
         public static string AR_DistributionCodes_Screen {
@@ -2365,6 +2770,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_DunningMessages_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_DunningMessages_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Dunning Messages Report.
+        /// </summary>
+        public static string AR_DunningMessages_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_DunningMessages_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Dunning Messages Report.
+        /// </summary>
+        public static string AR_DunningMessages_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_DunningMessages_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/R Dunning Messages Screen.
         /// </summary>
         public static string AR_DunningMessages_Screen {
@@ -2392,6 +2824,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_EmailMessages_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_EmailMessages_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Email Messages Report.
+        /// </summary>
+        public static string AR_EmailMessages_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_EmailMessages_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Email Messages Report.
+        /// </summary>
+        public static string AR_EmailMessages_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_EmailMessages_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/R Email Messages Screen.
         /// </summary>
         public static string AR_EmailMessages_Screen {
@@ -2415,6 +2874,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AR_GL_Integration_Article2 {
             get {
                 return ResourceManager.GetString("AR_GL_Integration_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_GL_Integration_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_GL_Integration_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R G/L Integration Report.
+        /// </summary>
+        public static string AR_GL_Integration_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_GL_Integration_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R G/L Integration Report.
+        /// </summary>
+        public static string AR_GL_Integration_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_GL_Integration_Report_Screen", resourceCulture);
             }
         }
         
@@ -2469,6 +2955,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AR_InterestProfiles_Article2 {
             get {
                 return ResourceManager.GetString("AR_InterestProfiles_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_InterestProfiles_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_InterestProfiles_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Interest Profiles Report.
+        /// </summary>
+        public static string AR_InterestProfiles_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_InterestProfiles_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Interest Profiles Report.
+        /// </summary>
+        public static string AR_InterestProfiles_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_InterestProfiles_Report_Screen", resourceCulture);
             }
         }
         
@@ -2577,6 +3090,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AR_Items_Article2 {
             get {
                 return ResourceManager.GetString("AR_Items_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_Items_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_Items_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Items Report.
+        /// </summary>
+        public static string AR_Items_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_Items_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Items Report.
+        /// </summary>
+        public static string AR_Items_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_Items_Report_Screen", resourceCulture);
             }
         }
         
@@ -2725,6 +3265,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_OptionalFields_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_OptionalFields_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Optional Fields Report.
+        /// </summary>
+        public static string AR_OptionalFields_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_OptionalFields_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Optional Fields Report.
+        /// </summary>
+        public static string AR_OptionalFields_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_OptionalFields_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/R Optional Fields Screen.
         /// </summary>
         public static string AR_OptionalFields_Screen {
@@ -2752,6 +3319,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_Options_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_Options_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Options Report.
+        /// </summary>
+        public static string AR_Options_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_Options_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Options Report.
+        /// </summary>
+        public static string AR_Options_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_Options_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/R Options Screen.
         /// </summary>
         public static string AR_Options_Screen {
@@ -2775,6 +3369,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AR_PaymentCodes_Article2 {
             get {
                 return ResourceManager.GetString("AR_PaymentCodes_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Payment Codes Report.
+        /// </summary>
+        public static string AR_PaymentCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_PaymentCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Payment Codes Report.
+        /// </summary>
+        public static string AR_PaymentCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_PaymentCodes_Report_Screen", resourceCulture);
             }
         }
         
@@ -3220,6 +3832,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_Salespersons_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_Salespersons_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Salespersons Reports.
+        /// </summary>
+        public static string AR_Salespersons_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_Salespersons_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Salespersons Report.
+        /// </summary>
+        public static string AR_Salespersons_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_Salespersons_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/R Salespersons Screen.
         /// </summary>
         public static string AR_Salespersons_Screen {
@@ -3342,6 +3981,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AR_Terms_Screen {
             get {
                 return ResourceManager.GetString("AR_Terms_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string AR_TermsCode_Report_Article1 {
+            get {
+                return ResourceManager.GetString("AR_TermsCode_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the A/R Terms Codes Report.
+        /// </summary>
+        public static string AR_TermsCode_Report_Article2 {
+            get {
+                return ResourceManager.GetString("AR_TermsCode_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Terms Codes Report.
+        /// </summary>
+        public static string AR_TermsCode_Report_Screen {
+            get {
+                return ResourceManager.GetString("AR_TermsCode_Report_Screen", resourceCulture);
             }
         }
         
@@ -4246,6 +4912,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Printing the Banks Report.
+        /// </summary>
+        public static string BK_Banks_Report_Article1 {
+            get {
+                return ResourceManager.GetString("BK_Banks_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Bank Services Reports.
+        /// </summary>
+        public static string BK_Banks_Report_Article2 {
+            get {
+                return ResourceManager.GetString("BK_Banks_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Banks Report.
+        /// </summary>
+        public static string BK_Banks_Report_Screen {
+            get {
+                return ResourceManager.GetString("BK_Banks_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Looking Up Transactions for a Bank Account.
         /// </summary>
         public static string BK_BankTransactionHistoryInquiry_Article1 {
@@ -4381,11 +5074,155 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Printing the Bank Credit Card Types Report.
+        /// </summary>
+        public static string BK_CreditCardTypes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("BK_CreditCardTypes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Bank Services Reports.
+        /// </summary>
+        public static string BK_CreditCardTypes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("BK_CreditCardTypes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank Credit Card Types Report.
+        /// </summary>
+        public static string BK_CreditCardTypes_Report_Screen {
+            get {
+                return ResourceManager.GetString("BK_CreditCardTypes_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Bank Distribution Codes Report.
+        /// </summary>
+        public static string BK_DistributionCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("BK_DistributionCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Bank Services Reports.
+        /// </summary>
+        public static string BK_DistributionCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("BK_DistributionCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank Distribution Codes Report.
+        /// </summary>
+        public static string BK_DistributionCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("BK_DistributionCodes_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Bank Distribution Sets Report.
+        /// </summary>
+        public static string BK_DistributionSets_Report_Article1 {
+            get {
+                return ResourceManager.GetString("BK_DistributionSets_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Bank Services Reports.
+        /// </summary>
+        public static string BK_DistributionSets_Report_Article2 {
+            get {
+                return ResourceManager.GetString("BK_DistributionSets_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank Distribution Sets Report.
+        /// </summary>
+        public static string BK_DistributionSets_Report_Screen {
+            get {
+                return ResourceManager.GetString("BK_DistributionSets_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Bank G/L Integration Report.
+        /// </summary>
+        public static string BK_GL_Integration_Report_Article1 {
+            get {
+                return ResourceManager.GetString("BK_GL_Integration_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Bank Services Reports.
+        /// </summary>
+        public static string BK_GL_Integration_Report_Article2 {
+            get {
+                return ResourceManager.GetString("BK_GL_Integration_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank G/L Integration Report.
+        /// </summary>
+        public static string BK_GL_Integration_Report_Screen {
+            get {
+                return ResourceManager.GetString("BK_GL_Integration_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse Bank Services Articles.
         /// </summary>
         public static string BK_Module {
             get {
                 return ResourceManager.GetString("BK_Module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Bank Options Report.
+        /// </summary>
+        public static string BK_Options_Report_Article1 {
+            get {
+                return ResourceManager.GetString("BK_Options_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Bank Services Reports.
+        /// </summary>
+        public static string BK_Options_Report_Article2 {
+            get {
+                return ResourceManager.GetString("BK_Options_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank Options Report.
+        /// </summary>
+        public static string BK_Options_Report_Screen {
+            get {
+                return ResourceManager.GetString("BK_Options_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Accounts Receivable Reports.
+        /// </summary>
+        public static string c {
+            get {
+                return ResourceManager.GetString("c", resourceCulture);
             }
         }
         
@@ -4687,6 +5524,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About General Ledger Reports.
+        /// </summary>
+        public static string GL_AccountGroups_Report_Article1 {
+            get {
+                return ResourceManager.GetString("GL_AccountGroups_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the G/L Account Groups Report.
+        /// </summary>
+        public static string GL_AccountGroups_Report_Article2 {
+            get {
+                return ResourceManager.GetString("GL_AccountGroups_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Account Groups Report.
+        /// </summary>
+        public static string GL_AccountGroups_Report_Screen {
+            get {
+                return ResourceManager.GetString("GL_AccountGroups_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About General Ledger Security.
         /// </summary>
         public static string GL_AccountPermissions_Article1 {
@@ -4737,6 +5601,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_Accounts_Accounts_Screen {
             get {
                 return ResourceManager.GetString("GL_Accounts_Accounts_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About General Ledger Reports.
+        /// </summary>
+        public static string GL_AccountStructures_Report_Article1 {
+            get {
+                return ResourceManager.GetString("GL_AccountStructures_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the G/L Account Structures Report.
+        /// </summary>
+        public static string GL_AccountStructures_Report_Article2 {
+            get {
+                return ResourceManager.GetString("GL_AccountStructures_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Account Structures Report.
+        /// </summary>
+        public static string GL_AccountStructures_Report_Screen {
+            get {
+                return ResourceManager.GetString("GL_AccountStructures_Report_Screen", resourceCulture);
             }
         }
         
@@ -4980,6 +5871,60 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_Module {
             get {
                 return ResourceManager.GetString("GL_Module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About General Ledger Reports.
+        /// </summary>
+        public static string GL_OptionalFields_Report_Article1 {
+            get {
+                return ResourceManager.GetString("GL_OptionalFields_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the G/L Optional Fields Report.
+        /// </summary>
+        public static string GL_OptionalFields_Report_Article2 {
+            get {
+                return ResourceManager.GetString("GL_OptionalFields_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Optional Fields Report.
+        /// </summary>
+        public static string GL_OptionalFields_Report_Screen {
+            get {
+                return ResourceManager.GetString("GL_OptionalFields_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About General Ledger Reports.
+        /// </summary>
+        public static string GL_Options_Report_Article1 {
+            get {
+                return ResourceManager.GetString("GL_Options_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the G/L Options Report.
+        /// </summary>
+        public static string GL_Options_Report_Article2 {
+            get {
+                return ResourceManager.GetString("GL_Options_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Options Report.
+        /// </summary>
+        public static string GL_Options_Report_Screen {
+            get {
+                return ResourceManager.GetString("GL_Options_Report_Screen", resourceCulture);
             }
         }
         
@@ -5308,6 +6253,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About General Ledger Reports.
+        /// </summary>
+        public static string GL_Revaluation_Codes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("GL_Revaluation_Codes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the G/L Revaluation Codes Report.
+        /// </summary>
+        public static string GL_Revaluation_Codes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("GL_Revaluation_Codes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Revaluation Codes Report.
+        /// </summary>
+        public static string GL_Revaluation_Codes_Report_Screen {
+            get {
+                return ResourceManager.GetString("GL_Revaluation_Codes_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Revaluation.
         /// </summary>
         public static string GL_RevaluationCodes_Article1 {
@@ -5331,6 +6303,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_RevaluationCodes_Screen {
             get {
                 return ResourceManager.GetString("GL_RevaluationCodes_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About General Ledger Reports.
+        /// </summary>
+        public static string GL_SegmentCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("GL_SegmentCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the G/L Segment Codes Report.
+        /// </summary>
+        public static string GL_SegmentCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("GL_SegmentCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Segment Codes Report.
+        /// </summary>
+        public static string GL_SegmentCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("GL_SegmentCodes_Report_Screen", resourceCulture);
             }
         }
         
@@ -5785,6 +6784,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_AccountSets_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_AccountSets_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Account Sets Report.
+        /// </summary>
+        public static string IC_AccountSets_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_AccountSets_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Account Sets Report.
+        /// </summary>
+        public static string IC_AccountSets_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_AccountSets_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I/C Account Sets Screen.
         /// </summary>
         public static string IC_AccountSets_Screen {
@@ -5920,6 +6946,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_BillsOfMaterial_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_BillsOfMaterial_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Bills of Material Report.
+        /// </summary>
+        public static string IC_BillsOfMaterial_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_BillsOfMaterial_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Bills of Material Report.
+        /// </summary>
+        public static string IC_BillsOfMaterial_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_BillsOfMaterial_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I/C Bills of Material Screen.
         /// </summary>
         public static string IC_BillsOfMaterial_Screen {
@@ -6001,7 +7054,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Categories.
+        ///   Looks up a localized string similar to Inventory Control Reports.
         /// </summary>
         public static string IC_Categories_Report_Article1 {
             get {
@@ -6010,7 +7063,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Printing the Categories Report.
+        ///   Looks up a localized string similar to Printing the I/C Categories Report.
         /// </summary>
         public static string IC_Categories_Report_Article2 {
             get {
@@ -6078,6 +7131,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_ContractCodes_Article2 {
             get {
                 return ResourceManager.GetString("IC_ContractCodes_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_ContractCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_ContractCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Contract Codes Report.
+        /// </summary>
+        public static string IC_ContractCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_ContractCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Contract Codes Report.
+        /// </summary>
+        public static string IC_ContractCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_ContractCodes_Report_Screen", resourceCulture);
             }
         }
         
@@ -6280,7 +7360,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Printing the Customer Details Report.
+        ///   Looks up a localized string similar to Printing the I/C Customer Details Report.
         /// </summary>
         public static string IC_CustomerDetails_Report_Article2 {
             get {
@@ -6289,7 +7369,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I/C Customer Details Report Screen.
+        ///   Looks up a localized string similar to I/C Customer Details Report.
         /// </summary>
         public static string IC_CustomerDetails_Report_Screen {
             get {
@@ -6402,6 +7482,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_GL_Integration_Artcicle2 {
             get {
                 return ResourceManager.GetString("IC_GL_Integration_Artcicle2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_GL_Integration_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_GL_Integration_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C G/L Integration Report.
+        /// </summary>
+        public static string IC_GL_Integration_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_GL_Integration_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C G/L Integration Report.
+        /// </summary>
+        public static string IC_GL_Integration_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_GL_Integration_Report_Screen", resourceCulture);
             }
         }
         
@@ -6730,6 +7837,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_ItemStructures_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_ItemStructures_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Item Structures Report.
+        /// </summary>
+        public static string IC_ItemStructures_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_ItemStructures_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Item Structures Report.
+        /// </summary>
+        public static string IC_ItemStructures_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_ItemStructures_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I/C Item Structures Screen.
         /// </summary>
         public static string IC_ItemStructures_Screen {
@@ -6811,7 +7945,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Kitting Items.
+        ///   Looks up a localized string similar to Inventory Control Reports.
         /// </summary>
         public static string IC_KittingItems_Report_Article1 {
             get {
@@ -6820,7 +7954,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Printing the Kitting items Report.
+        ///   Looks up a localized string similar to Printing the I/C Kitting Items Report.
         /// </summary>
         public static string IC_KittingItems_Report_Article2 {
             get {
@@ -6829,7 +7963,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I/C Kitting Items Report Screen.
+        ///   Looks up a localized string similar to I/C Kitting Items Report.
         /// </summary>
         public static string IC_KittingItems_Report_Screen {
             get {
@@ -6892,6 +8026,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_LocationDetails_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_LocationDetails_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Location Details Report.
+        /// </summary>
+        public static string IC_LocationDetails_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_LocationDetails_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Location Details Report.
+        /// </summary>
+        public static string IC_LocationDetails_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_LocationDetails_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I/C Location Details Screen.
         /// </summary>
         public static string IC_LocationDetails_Screen {
@@ -6919,7 +8080,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Setting Up Locations.
+        ///   Looks up a localized string similar to Inventory Control Reports.
         /// </summary>
         public static string IC_Locations_Report_Article1 {
             get {
@@ -6928,7 +8089,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Printing the Locations Report.
+        ///   Looks up a localized string similar to Printing the I/C Locations Report.
         /// </summary>
         public static string IC_Locations_Report_Article2 {
             get {
@@ -6937,7 +8098,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I/C Locations Report Screen.
+        ///   Looks up a localized string similar to I/C Locations Report.
         /// </summary>
         public static string IC_Locations_Report_Screen {
             get {
@@ -7027,6 +8188,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_ManufacturersItems_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_ManufacturersItems_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Manufacturers&apos; Items Report.
+        /// </summary>
+        public static string IC_ManufacturersItems_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_ManufacturersItems_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Manufacturers&apos; Items Report.
+        /// </summary>
+        public static string IC_ManufacturersItems_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_ManufacturersItems_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I/C Manufacturer&apos;s Items Screen.
         /// </summary>
         public static string IC_ManufacturersItems_Screen {
@@ -7063,6 +8251,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_MaskStructures_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_MaskStructures_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Mask Structures Report.
+        /// </summary>
+        public static string IC_MaskStructures_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_MaskStructures_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Mask Structures Report.
+        /// </summary>
+        public static string IC_MaskStructures_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_MaskStructures_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse Inventory Control Articles.
         /// </summary>
         public static string IC_Module {
@@ -7090,6 +8305,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_OptionalFields_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_OptionalFields_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Optional Fields Report.
+        /// </summary>
+        public static string IC_OptionalFields_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_OptionalFields_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Optional Fields Report.
+        /// </summary>
+        public static string IC_OptionalFields_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_OptionalFields_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I/C Optional Fields Screen.
         /// </summary>
         public static string IC_OptionalFields_Screen {
@@ -7113,6 +8355,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_Options_Article2 {
             get {
                 return ResourceManager.GetString("IC_Options_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_Options_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_Options_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Options Report.
+        /// </summary>
+        public static string IC_Options_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_Options_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Options Report.
+        /// </summary>
+        public static string IC_Options_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_Options_Report_Screen", resourceCulture);
             }
         }
         
@@ -7279,7 +8548,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Price Lists.
+        ///   Looks up a localized string similar to Inventory Control Reports.
         /// </summary>
         public static string IC_PriceListCodes_Report_Article1 {
             get {
@@ -7288,7 +8557,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Printing the Price List Codes Report.
+        ///   Looks up a localized string similar to Printing the I/C Price List Codes Report.
         /// </summary>
         public static string IC_PriceListCodes_Report_Article2 {
             get {
@@ -7297,7 +8566,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I/C Price List Codes Report Screen.
+        ///   Looks up a localized string similar to I/C Price List Codes Report.
         /// </summary>
         public static string IC_PriceListCodes_Report_Screen {
             get {
@@ -7495,7 +8764,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Reorder Information.
+        ///   Looks up a localized string similar to Inventory Control Reports.
         /// </summary>
         public static string IC_ReorderQuantities_Report_Article1 {
             get {
@@ -7504,7 +8773,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Printing the Reorder Quantities Report.
+        ///   Looks up a localized string similar to Printing the I/C Reorder Quantities Report.
         /// </summary>
         public static string IC_ReorderQuantities_Report_Article2 {
             get {
@@ -7513,7 +8782,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I/C Reorder Quantities Report Screen.
+        ///   Looks up a localized string similar to I/C Reorder Quantities Report.
         /// </summary>
         public static string IC_ReorderQuantities_Report_Screen {
             get {
@@ -7599,6 +8868,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_SegmentCodes_Article2 {
             get {
                 return ResourceManager.GetString("IC_SegmentCodes_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_SegmentCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_SegmentCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Segment Codes Report.
+        /// </summary>
+        public static string IC_SegmentCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_SegmentCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Segment Codes Report.
+        /// </summary>
+        public static string IC_SegmentCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_SegmentCodes_Report_Screen", resourceCulture);
             }
         }
         
@@ -8089,6 +9385,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_UnitsOfMeasure_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_UnitsOfMeasure_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Units of Measure Report.
+        /// </summary>
+        public static string IC_UnitsOfMeasure_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_UnitsOfMeasure_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Units of Measure Report.
+        /// </summary>
+        public static string IC_UnitsOfMeasure_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_UnitsOfMeasure_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I/C Units of Measure Screen.
         /// </summary>
         public static string IC_UnitsOfMeasure_Screen {
@@ -8170,7 +9493,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Vendor Details.
+        ///   Looks up a localized string similar to Inventory Control Reports.
         /// </summary>
         public static string IC_VendorDetails_Report_Article1 {
             get {
@@ -8179,7 +9502,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Printing the Vendor Details Report.
+        ///   Looks up a localized string similar to Printing the I/C Vendor Details Report.
         /// </summary>
         public static string IC_VendorDetails_Report_Article2 {
             get {
@@ -8188,7 +9511,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I/C Vendor Details Report Screen.
+        ///   Looks up a localized string similar to I/C Vendor Details Report.
         /// </summary>
         public static string IC_VendorDetails_Report_Screen {
             get {
@@ -8220,6 +9543,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_WarrantyCodes_Article2 {
             get {
                 return ResourceManager.GetString("IC_WarrantyCodes_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_WarrantyCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_WarrantyCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Warranty  Codes Report.
+        /// </summary>
+        public static string IC_WarrantyCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_WarrantyCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Warranty Codes Report.
+        /// </summary>
+        public static string IC_WarrantyCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_WarrantyCodes_Report_Screen", resourceCulture);
             }
         }
         
@@ -8274,6 +9624,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_WeightUnitsOfMeasure_Article2 {
             get {
                 return ResourceManager.GetString("IC_WeightUnitsOfMeasure_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventory Control Reports.
+        /// </summary>
+        public static string IC_WeightUnitsOfMeasure_Report_Article1 {
+            get {
+                return ResourceManager.GetString("IC_WeightUnitsOfMeasure_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the I/C Weight Units of Measure Report.
+        /// </summary>
+        public static string IC_WeightUnitsOfMeasure_Report_Article2 {
+            get {
+                return ResourceManager.GetString("IC_WeightUnitsOfMeasure_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Weight Units of Measure Report.
+        /// </summary>
+        public static string IC_WeightUnitsOfMeasure_Report_Screen {
+            get {
+                return ResourceManager.GetString("IC_WeightUnitsOfMeasure_Report_Screen", resourceCulture);
             }
         }
         
@@ -8629,6 +10006,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Order Entry Reports.
+        /// </summary>
+        public static string OE_GL_Integration_Report_Article1 {
+            get {
+                return ResourceManager.GetString("OE_GL_Integration_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Order Entry Reports.
+        /// </summary>
+        public static string OE_GL_Integration_Report_Article2 {
+            get {
+                return ResourceManager.GetString("OE_GL_Integration_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O/E G/L Integration Report Screen.
+        /// </summary>
+        public static string OE_GL_Integration_Report_Screen {
+            get {
+                return ResourceManager.GetString("OE_GL_Integration_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O/E G/L Integration Screen.
         /// </summary>
         public static string OE_GL_Integration_Screen {
@@ -8764,6 +10168,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Order Entry Reports.
+        /// </summary>
+        public static string OE_MiscellaneousCharges_Report_Article1 {
+            get {
+                return ResourceManager.GetString("OE_MiscellaneousCharges_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Order Entry Reports.
+        /// </summary>
+        public static string OE_MiscellaneousCharges_Report_Article2 {
+            get {
+                return ResourceManager.GetString("OE_MiscellaneousCharges_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O/E Miscellaneous Charges Report Screen.
+        /// </summary>
+        public static string OE_MiscellaneousCharges_Report_Screen {
+            get {
+                return ResourceManager.GetString("OE_MiscellaneousCharges_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O/E Miscellaneous Charges Screen.
         /// </summary>
         public static string OE_MiscellaneousCharges_Screen {
@@ -8800,6 +10231,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Order Entry Reports.
+        /// </summary>
+        public static string OE_OptionalFields_Report_Article1 {
+            get {
+                return ResourceManager.GetString("OE_OptionalFields_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Order Entry Reports.
+        /// </summary>
+        public static string OE_OptionalFields_Report_Article2 {
+            get {
+                return ResourceManager.GetString("OE_OptionalFields_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O/E Optional Fields Report Screen.
+        /// </summary>
+        public static string OE_OptionalFields_Report_Screen {
+            get {
+                return ResourceManager.GetString("OE_OptionalFields_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O/E Optional Fields Screen.
         /// </summary>
         public static string OE_OptionalFields_Screen {
@@ -8823,6 +10281,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string OE_Options_Article2 {
             get {
                 return ResourceManager.GetString("OE_Options_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Order Entry Reports.
+        /// </summary>
+        public static string OE_Options_Report_Article1 {
+            get {
+                return ResourceManager.GetString("OE_Options_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Order Entry Reports.
+        /// </summary>
+        public static string OE_Options_Report_Article2 {
+            get {
+                return ResourceManager.GetString("OE_Options_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O/E Options Report Screen.
+        /// </summary>
+        public static string OE_Options_Report_Screen {
+            get {
+                return ResourceManager.GetString("OE_Options_Report_Screen", resourceCulture);
             }
         }
         
@@ -9259,6 +10744,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Order Entry Reports.
+        /// </summary>
+        public static string OE_ShipViaCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("OE_ShipViaCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Order Entry Reports.
+        /// </summary>
+        public static string OE_ShipViaCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("OE_ShipViaCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O/E Ship-Via Codes Report Screen.
+        /// </summary>
+        public static string OE_ShipViaCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("OE_ShipViaCodes_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O/E Ship-Via Codes Screen.
         /// </summary>
         public static string OE_ShipViaCodes_Screen {
@@ -9282,6 +10794,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string OE_Templates_Article2 {
             get {
                 return ResourceManager.GetString("OE_Templates_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Order Entry Reports.
+        /// </summary>
+        public static string OE_Templates_Report_Article1 {
+            get {
+                return ResourceManager.GetString("OE_Templates_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Order Entry Reports.
+        /// </summary>
+        public static string OE_Templates_Report_Article2 {
+            get {
+                return ResourceManager.GetString("OE_Templates_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O/E Templates Report Screen.
+        /// </summary>
+        public static string OE_Templates_Report_Screen {
+            get {
+                return ResourceManager.GetString("OE_Templates_Report_Screen", resourceCulture);
             }
         }
         
@@ -9349,11 +10888,65 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_AccountSets_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_AccountSets_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_AccountSets_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_AccountSets_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Account Sets Report Screen.
+        /// </summary>
+        public static string PM_AccountSets_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_AccountSets_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adding or Modifying Account Sets.
         /// </summary>
         public static string PM_Adding_or_Modifying_Account_Sets {
             get {
                 return ResourceManager.GetString("PM_Adding_or_Modifying_Account_Sets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Categories_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_Categories_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Categories_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_Categories_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Categories Report Screen.
+        /// </summary>
+        public static string PM_Categories_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_Categories_Report_Screen", resourceCulture);
             }
         }
         
@@ -9376,11 +10969,65 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Charges_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_Charges_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Charges_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_Charges_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Charges Report Screen.
+        /// </summary>
+        public static string PM_Charges_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_Charges_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PJC Charges Screen.
         /// </summary>
         public static string PM_Charges_Screen {
             get {
                 return ResourceManager.GetString("PM_Charges_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_ContractStructures_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_ContractStructures_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_ContractStructures_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_ContractStructures_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Contract Structures Report Screen.
+        /// </summary>
+        public static string PM_ContractStructures_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_ContractStructures_Report_Screen", resourceCulture);
             }
         }
         
@@ -9394,11 +11041,119 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_CostTypes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_CostTypes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_CostTypes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_CostTypes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Cost Types Report Screen.
+        /// </summary>
+        public static string PM_CostTypes_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_CostTypes_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Employees_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_Employees_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Employees_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_Employees_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Employees Report Screen.
+        /// </summary>
+        public static string PM_Employees_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_Employees_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Entering Miscellaneous Costs.
         /// </summary>
         public static string PM_Entering_Miscellaneous_Costs {
             get {
                 return ResourceManager.GetString("PM_Entering_Miscellaneous_Costs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Equipment_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_Equipment_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Equipment_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_Equipment_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Equipment Report Screen.
+        /// </summary>
+        public static string PM_Equipment_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_Equipment_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_GL_Integration_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_GL_Integration_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_GL_Integration_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_GL_Integration_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC G/L Integration Report Screen.
+        /// </summary>
+        public static string PM_GL_Integration_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_GL_Integration_Report_Screen", resourceCulture);
             }
         }
         
@@ -9484,6 +11239,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_MiscellaneousExpenses_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_MiscellaneousExpenses_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_MiscellaneousExpenses_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_MiscellaneousExpenses_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Miscellaneous Expenses Report Screen.
+        /// </summary>
+        public static string PM_MiscellaneousExpenses_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_MiscellaneousExpenses_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse Project and Job Costing Articles.
         /// </summary>
         public static string PM_Module {
@@ -9516,6 +11298,87 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PM_OpeningBalance_Screen {
             get {
                 return ResourceManager.GetString("PM_OpeningBalance_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_OptionalFields_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_OptionalFields_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_OptionalFields_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_OptionalFields_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Optional Fields Report Screen.
+        /// </summary>
+        public static string PM_OptionalFields_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_OptionalFields_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Options_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_Options_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Options_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_Options_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Options Report Screen.
+        /// </summary>
+        public static string PM_Options_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_Options_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_OverheadExpenses_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_OverheadExpenses_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_OverheadExpenses_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_OverheadExpenses_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Overhead Expenses Report Screen.
+        /// </summary>
+        public static string PM_OverheadExpenses_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_OverheadExpenses_Report_Screen", resourceCulture);
             }
         }
         
@@ -9565,6 +11428,87 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Projects_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_Projects_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Projects_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_Projects_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Projects Report Screen.
+        /// </summary>
+        public static string PM_Projects_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_Projects_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_SegmentCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_SegmentCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_SegmentCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_SegmentCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Segment Codes Report Screen.
+        /// </summary>
+        public static string PM_SegmentCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_SegmentCodes_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Subcontractors_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PM_Subcontractors_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Project and Job Costing Reports.
+        /// </summary>
+        public static string PM_Subcontractors_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PM_Subcontractors_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Subcontractors Report Screen.
+        /// </summary>
+        public static string PM_Subcontractors_Report_Screen {
+            get {
+                return ResourceManager.GetString("PM_Subcontractors_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PJC Transaction Listing Report Screen.
         /// </summary>
         public static string PM_Transaction_Listing_Report_Screen {
@@ -9601,6 +11545,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Purchase Orders Reports.
+        /// </summary>
+        public static string PO_AccountSets_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PO_AccountSets_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
+        /// </summary>
+        public static string PO_AccountSets_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PO_AccountSets_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O Account Sets Report.
+        /// </summary>
+        public static string PO_AccountSets_Report_Screen {
+            get {
+                return ResourceManager.GetString("PO_AccountSets_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Additional Cost Codes.
         /// </summary>
         public static string PO_AdditionalCosts_Article1 {
@@ -9615,6 +11586,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PO_AdditionalCosts_Article2 {
             get {
                 return ResourceManager.GetString("PO_AdditionalCosts_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Purchase Orders Reports.
+        /// </summary>
+        public static string PO_AdditionalCosts_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PO_AdditionalCosts_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
+        /// </summary>
+        public static string PO_AdditionalCosts_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PO_AdditionalCosts_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O Additional Costs Report.
+        /// </summary>
+        public static string PO_AdditionalCosts_Report_Screen {
+            get {
+                return ResourceManager.GetString("PO_AdditionalCosts_Report_Screen", resourceCulture);
             }
         }
         
@@ -9871,7 +11869,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Printing Purchase Orders Analytical and Setup Reports.
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
         /// </summary>
         public static string PO_EmailMessages_Report_Article2 {
             get {
@@ -9880,7 +11878,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to P/O Email Messages Report Screen.
+        ///   Looks up a localized string similar to P/O Email Messages Report.
         /// </summary>
         public static string PO_EmailMessages_Report_Screen {
             get {
@@ -9912,6 +11910,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PO_GL_Integration_Article2 {
             get {
                 return ResourceManager.GetString("PO_GL_Integration_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Purchase Orders Reports.
+        /// </summary>
+        public static string PO_GL_Integration_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PO_GL_Integration_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
+        /// </summary>
+        public static string PO_GL_Integration_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PO_GL_Integration_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O G/L Integration Report.
+        /// </summary>
+        public static string PO_GL_Integration_Report_Screen {
+            get {
+                return ResourceManager.GetString("PO_GL_Integration_Report_Screen", resourceCulture);
             }
         }
         
@@ -9979,6 +12004,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Purchase Orders Reports.
+        /// </summary>
+        public static string PO_Items_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PO_Items_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
+        /// </summary>
+        public static string PO_Items_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PO_Items_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O Items Report.
+        /// </summary>
+        public static string PO_Items_Report_Screen {
+            get {
+                return ResourceManager.GetString("PO_Items_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Purchase Order Forms.
         /// </summary>
         public static string PO_MailingLabels_Article1 {
@@ -10033,6 +12085,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Purchase Orders Reports.
+        /// </summary>
+        public static string PO_OptionalFields_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PO_OptionalFields_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
+        /// </summary>
+        public static string PO_OptionalFields_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PO_OptionalFields_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O Optional Fields Report.
+        /// </summary>
+        public static string PO_OptionalFields_Report_Screen {
+            get {
+                return ResourceManager.GetString("PO_OptionalFields_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to P/O Optional Fields Screen.
         /// </summary>
         public static string PO_OptionalFields_Screen {
@@ -10056,6 +12135,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PO_Options_Article2 {
             get {
                 return ResourceManager.GetString("PO_Options_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Purchase Orders Reports.
+        /// </summary>
+        public static string PO_Options_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PO_Options_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
+        /// </summary>
+        public static string PO_Options_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PO_Options_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O Options Report.
+        /// </summary>
+        public static string PO_Options_Report_Screen {
+            get {
+                return ResourceManager.GetString("PO_Options_Report_Screen", resourceCulture);
             }
         }
         
@@ -10546,6 +12652,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Purchase Orders Reports.
+        /// </summary>
+        public static string PO_ShipViaCodes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PO_ShipViaCodes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
+        /// </summary>
+        public static string PO_ShipViaCodes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PO_ShipViaCodes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O Ship-Via Codes Report.
+        /// </summary>
+        public static string PO_ShipViaCodes_Report_Screen {
+            get {
+                return ResourceManager.GetString("PO_ShipViaCodes_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to P/O Ship-Via Codes Screen.
         /// </summary>
         public static string PO_ShipViaCodes_Screen {
@@ -10569,6 +12702,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PO_Templates_Article2 {
             get {
                 return ResourceManager.GetString("PO_Templates_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Purchase Orders Reports.
+        /// </summary>
+        public static string PO_Templates_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PO_Templates_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
+        /// </summary>
+        public static string PO_Templates_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PO_Templates_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O Templates Report.
+        /// </summary>
+        public static string PO_Templates_Report_Screen {
+            get {
+                return ResourceManager.GetString("PO_Templates_Report_Screen", resourceCulture);
             }
         }
         
@@ -10627,11 +12787,92 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Purchase Orders Reports.
+        /// </summary>
+        public static string PO_VendorContractCosts_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PO_VendorContractCosts_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
+        /// </summary>
+        public static string PO_VendorContractCosts_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PO_VendorContractCosts_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O Vendor Contract Costs Report.
+        /// </summary>
+        public static string PO_VendorContractCosts_Report_Screen {
+            get {
+                return ResourceManager.GetString("PO_VendorContractCosts_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to P/O Vendor Contract Costs Screen.
         /// </summary>
         public static string PO_VendorContractCosts_Screen {
             get {
                 return ResourceManager.GetString("PO_VendorContractCosts_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Purchase Orders Reports.
+        /// </summary>
+        public static string PO_VendorDetails_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PO_VendorDetails_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
+        /// </summary>
+        public static string PO_VendorDetails_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PO_VendorDetails_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O Vendor Details Report.
+        /// </summary>
+        public static string PO_VendorDetails_Report_Screen {
+            get {
+                return ResourceManager.GetString("PO_VendorDetails_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Purchase Orders Reports.
+        /// </summary>
+        public static string PO_WeightUnitsOfMeasure_Report_Article1 {
+            get {
+                return ResourceManager.GetString("PO_WeightUnitsOfMeasure_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing Purchase Orders Reports.
+        /// </summary>
+        public static string PO_WeightUnitsOfMeasure_Report_Article2 {
+            get {
+                return ResourceManager.GetString("PO_WeightUnitsOfMeasure_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O Weight Units of Measure Report.
+        /// </summary>
+        public static string PO_WeightUnitsOfMeasure_Report_Screen {
+            get {
+                return ResourceManager.GetString("PO_WeightUnitsOfMeasure_Report_Screen", resourceCulture);
             }
         }
         
@@ -10969,11 +13210,119 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Tax Services Reports.
+        /// </summary>
+        public static string TX_Authorities_Report_Article1 {
+            get {
+                return ResourceManager.GetString("TX_Authorities_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Tax Authorities Report.
+        /// </summary>
+        public static string TX_Authorities_Report_Article2 {
+            get {
+                return ResourceManager.GetString("TX_Authorities_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Authorities Report.
+        /// </summary>
+        public static string TX_Authorities_Report_Screen {
+            get {
+                return ResourceManager.GetString("TX_Authorities_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Tax Services Reports.
+        /// </summary>
+        public static string TX_Classes_Report_Article1 {
+            get {
+                return ResourceManager.GetString("TX_Classes_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Tax Classes Report.
+        /// </summary>
+        public static string TX_Classes_Report_Article2 {
+            get {
+                return ResourceManager.GetString("TX_Classes_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Classes Report.
+        /// </summary>
+        public static string TX_Classes_Report_Screen {
+            get {
+                return ResourceManager.GetString("TX_Classes_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Tax Services Reports.
+        /// </summary>
+        public static string TX_Groups_Report_Article1 {
+            get {
+                return ResourceManager.GetString("TX_Groups_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Tax Groups Report.
+        /// </summary>
+        public static string TX_Groups_Report_Article2 {
+            get {
+                return ResourceManager.GetString("TX_Groups_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Groups Report.
+        /// </summary>
+        public static string TX_Groups_Report_Screen {
+            get {
+                return ResourceManager.GetString("TX_Groups_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse Tax Services Articles.
         /// </summary>
         public static string TX_Module {
             get {
                 return ResourceManager.GetString("TX_Module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Tax Services Reports.
+        /// </summary>
+        public static string TX_Rates_Report_Article1 {
+            get {
+                return ResourceManager.GetString("TX_Rates_Report_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing the Tax Rates Report.
+        /// </summary>
+        public static string TX_Rates_Report_Article2 {
+            get {
+                return ResourceManager.GetString("TX_Rates_Report_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Rates Report.
+        /// </summary>
+        public static string TX_Rates_Report_Screen {
+            get {
+                return ResourceManager.GetString("TX_Rates_Report_Screen", resourceCulture);
             }
         }
         

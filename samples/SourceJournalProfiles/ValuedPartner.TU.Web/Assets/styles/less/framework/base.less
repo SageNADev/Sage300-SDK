@@ -1060,19 +1060,19 @@ input[class*="icon"] {
 }
 
 .btn-primary { 
-  background: @btn-primary-bg; 
+  background: @brand-primary; 
   border: 1px solid @btn-primary-border; 
   color: @btn-primary-color; 
 
   &:hover { 
-    background-color: darken(@btn-primary-bg, 10%);
+    background-color: darken(@btn-primary-bg, 5%);
     border: 1px solid @btn-primary-border; 
     color: @white;
   }
 
   &:focus { 
     color: @btn-primary-color;
-    background-color: darken(@btn-primary-bg, 10%);
+    background-color: darken(@btn-primary-bg, 5%);
     border: 1px solid @sage-link;
     outline: 3px solid @input-border-focus;
   }
@@ -1626,7 +1626,7 @@ a[class*="btn-"] {
 
         >a {
           color: @white;
-          background-color: @sage-blue;
+          background-color: @sage-link;
           box-shadow: none;
           -webkit-box-shadow: none;
         }
@@ -4074,7 +4074,7 @@ textarea,
 
   .bounce {
     animation: bouncedelay 1s infinite ease-in-out both;
-    background-color: @sage-blue;
+    background-color: @sage-green;
     display: inline-block;
     height: 8px;
     margin-right: 6px;

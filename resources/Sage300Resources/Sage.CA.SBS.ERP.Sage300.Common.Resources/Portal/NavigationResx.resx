@@ -637,7 +637,7 @@
     <value>Invoice Action</value>
   </data>
   <data name="OE_Reports" xml:space="preserve">
-    <value>O/E Reports</value>
+    <value>O/E Analytical Reports</value>
   </data>
   <data name="OE_SalesStatistics" xml:space="preserve">
     <value>Sales Statistics</value>
@@ -1789,5 +1789,11 @@
   </data>
   <data name="Bank_Setup_Reports" xml:space="preserve">
     <value>Bank Setup Reports</value>
+  </data>
+  <data name="GL_Statement_Designer" xml:space="preserve">
+    <value>Statement Designer</value>
+  </data>
+  <data name="GL_Print_Financial_Statements" xml:space="preserve">
+    <value>Print Financial Statements</value>
   </data>
 </root>

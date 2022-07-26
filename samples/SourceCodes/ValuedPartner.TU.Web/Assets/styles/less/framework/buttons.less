@@ -99,7 +99,7 @@ div[role=button],
   line-height: 1;
 
   &:hover {
-    background-color: darken(@btn-primary-bg, 10%);
+    background-color: darken(@btn-primary-bg, 5%);
   }
 }
 
@@ -381,6 +381,43 @@ input[type="button"] {
 
     &:before {
       width: 0;
+    }
+  }
+
+  &.btn-report {
+    background-color: @white;
+
+    &[disabled] {
+      background-color: @input-bg-disabled;
+      border: 1px solid @sage-gray;
+      cursor: default;
+      color: @sage-light-gray;
+    }
+
+    &:hover {
+      background-color: #d9e0e4;
+    }
+  }
+
+  &.btn-edit {
+
+    &:before {
+      background-position: -605px 3px;
+    }
+
+    &[disabled]:before {
+      background-position: -605px -68px;
+    }
+  }
+
+  &.btn-save {
+
+    &:before {
+      background-position: -802px 2px;
+    }
+
+    &[disabled]:before {
+      background-position: -802px -68px;
     }
   }
 }

@@ -637,7 +637,7 @@
     <value>État de facture</value>
   </data>
   <data name="OE_Reports" xml:space="preserve">
-    <value>Rapports de CmC</value>
+    <value>Rapports analytiques de CmC</value>
   </data>
   <data name="OE_SalesStatistics" xml:space="preserve">
     <value>Statistiques de ventes</value>

@@ -279,4 +279,10 @@
     <value>币种类型</value>
     <comment>List</comment>
   </data>
+  <data name="Consolidated" xml:space="preserve">
+    <value>合并</value>
+  </data>
+  <data name="Separate" xml:space="preserve">
+    <value>分列</value>
+  </data>
 </root>

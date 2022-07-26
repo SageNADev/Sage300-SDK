@@ -271,27 +271,6 @@
   <data name="ZpPostal" xml:space="preserve">
     <value>郵遞區號</value>
   </data>
-  <data name="CompanyLogo" xml:space="preserve">
-    <value>公司徽標</value>
-  </data>
-  <data name="SelectLogo" xml:space="preserve">
-    <value>選擇公司徽標</value>
-  </data>
-  <data name="UpLoad" xml:space="preserve">
-    <value>上載</value>
-  </data>
-  <data name="FileFormatError" xml:space="preserve">
-    <value>選擇一個支持的圖像類型（JPEG或PNG）。</value>
-  </data>
-  <data name="UpLoadMessage" xml:space="preserve">
-    <value>公司徽標上載成功。</value>
-  </data>
-  <data name="DeleteLogoMessage" xml:space="preserve">
-    <value>公司徽標刪除成功。</value>
-  </data>
-  <data name="FileSizeError" xml:space="preserve">
-    <value>最大圖像尺寸為100 KB。請選擇一個更小的圖像。</value>
-  </data>
   <data name="Email" xml:space="preserve">
     <value>電郵</value>
   </data>

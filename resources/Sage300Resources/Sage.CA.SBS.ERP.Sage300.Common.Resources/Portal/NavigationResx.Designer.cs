@@ -2131,6 +2131,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Print Financial Statements.
+        /// </summary>
+        public static string GL_Print_Financial_Statements {
+            get {
+                return ResourceManager.GetString("GL_Print_Financial_Statements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create New Year.
         /// </summary>
         public static string GL_Processing_CreateNewYear {
@@ -2262,6 +2271,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_SourceCurrencyInquiry {
             get {
                 return ResourceManager.GetString("GL_SourceCurrencyInquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statement Designer.
+        /// </summary>
+        public static string GL_Statement_Designer {
+            get {
+                return ResourceManager.GetString("GL_Statement_Designer", resourceCulture);
             }
         }
         
@@ -3616,7 +3634,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O/E Reports.
+        ///   Looks up a localized string similar to O/E Analytical Reports.
         /// </summary>
         public static string OE_Reports {
             get {

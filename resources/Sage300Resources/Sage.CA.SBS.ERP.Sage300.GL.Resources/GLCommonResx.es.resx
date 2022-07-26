@@ -279,4 +279,10 @@
     <value>Tipo de Moneda</value>
     <comment>List</comment>
   </data>
+  <data name="Consolidated" xml:space="preserve">
+    <value>Consolidado</value>
+  </data>
+  <data name="Separate" xml:space="preserve">
+    <value>Separado</value>
+  </data>
 </root>

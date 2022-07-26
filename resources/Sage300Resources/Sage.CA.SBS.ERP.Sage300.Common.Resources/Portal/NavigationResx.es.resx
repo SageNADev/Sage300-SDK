@@ -637,7 +637,7 @@
     <value>Acción de Factura</value>
   </data>
   <data name="OE_Reports" xml:space="preserve">
-    <value>IO - Reportes</value>
+    <value>IO - Reportes Analíticos</value>
   </data>
   <data name="OE_SalesStatistics" xml:space="preserve">
     <value>Estadísticas de Ventas</value>
