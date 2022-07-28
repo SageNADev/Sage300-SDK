@@ -368,23 +368,6 @@
     </Compile>
     <Compile Include="Areas\TU\Constants\Constant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForms\BaseWebPage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForms\CustomReportViewer.aspx.cs">
-      <DependentUpon>CustomReportViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForms\CustomReportViewer.aspx.designer.cs">
-      <DependentUpon>CustomReportViewer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForms\ReportViewer.aspx.cs">
-      <DependentUpon>ReportViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForms\ReportViewer.aspx.designer.cs">
-      <DependentUpon>ReportViewer.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\TU\Scripts\Reports\SourceJournalProfileReport\ValuedPartner.TU.SourceJournalProfileReportBehaviour.js" />
@@ -408,8 +391,6 @@
     <Content Include="Content\**" />
     <Content Include="Assets\**" />
     <Content Include="aspnet_client\**" />
-    <Content Include="WebForms\CustomReportViewer.aspx" />
-    <Content Include="WebForms\ReportViewer.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
