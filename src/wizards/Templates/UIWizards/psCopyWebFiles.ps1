@@ -46,7 +46,7 @@ $verbosepreference = 'continue'
 # Source Folder Settings
 $webAssetDirPath = "$rootCNA2SourceFolder\Columbus-Web\Sage.CA.SBS.ERP.Sage300.Web"
 $webSubPaths = 'Areas\Core,Areas\Shared,Assets,Content,Views'
-$webSubPathsCopyAll = 'Customization,WebForms'
+$webSubPathsCopyAll = 'Customization'
 $scriptsWebSubPath = 'Scripts'
 $includeScriptsWeb = 'Sage.CA.SBS.ERP.Sage300.Common.*.js,Sage.CA.SBS.ERP.Sage300.Core.*.js'
 
@@ -73,7 +73,7 @@ $webSubPaths.split(',') | Foreach-Object {
 }
 
 # ---------------------------------------------------------------------------------------
-# Copy Web\Customization and Web\WebForms (All files and folders)
+# Copy Web\Customization (All files and folders)
 # ---------------------------------------------------------------------------------------
 $webSubPathsCopyAll.split(',') | Foreach-Object { 
   robocopy /S "$webAssetDirPath\$_" "$_" 
@@ -88,18 +88,6 @@ $scriptsWebSubPath.split(',') | Foreach-Object {
   /xf kendo.all*.js Test_*.js *TestUtils.js chutzpah.json 
 }
 
-# ---------------------------------------------------------------------------------------
-# Quick Edit Namespaces
-# ---------------------------------------------------------------------------------------
-Get-ChildItem "WebForms\**" | Foreach-Object {
-  $content = (Get-Content $_);
-  $content = $content.replace('Inherits="Sage.CA.SBS.ERP.Sage300.Web','Inherits="$companynamespace$.$applicationid$.Web');
-  $content = $content.replace('namespace Sage.CA.SBS.ERP.Sage300.Web.WebForms','namespace $companynamespace$.$applicationid$.Web.WebForms');
-  $content = $content.replace(' Common.Models.',' Sage.CA.SBS.ERP.Sage300.Common.Models.');
-  $content = $content.replace('(Common.Models.','(Sage.CA.SBS.ERP.Sage300.Common.Models.');
-  $content = $content.replace('<Common.Models.','<Sage.CA.SBS.ERP.Sage300.Common.Models.');
-  $content | Out-File $_ -Encoding "UTF8" -Width 300
-}
 
 # ---------------------------------------------------------------------------------------
 # Clean up
