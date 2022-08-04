@@ -117,733 +117,191 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Net2HalfYearsAgo" xml:space="preserve">
-    <value />
+  <data name="AccountGroup" xml:space="preserve">
+    <value>Sélectionnez un état.</value>
   </data>
-  <data name="Net1PeriodAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance10PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingHalfYear11PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance2HalfYearsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod8" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingYear1PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter11PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod12" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance1PeriodAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceYearToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingHalfYear1PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net11PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingHalfYear8PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance4QuartersAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance2PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Functional" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingYear8PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalancePeriod10" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ProvisionalQuantity" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetHalfYear2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod11" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod9" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FiscalSetType" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetHalfYear2ToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetQuarter2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingQuarter1PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetLastPeriod" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net4QuartersAgoToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter5PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CurrencyType" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingQuarter10PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance1QuarterAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net2HalfYearsAgoToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Equivalent" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceQuarterToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingHalfYear5PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="AdditionalFRTRNFilter" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceHalfYear1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Reporting" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingYear3PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net4PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Budget2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingHalfYear13PAgo" xml:space="preserve">
-    <value />
+  <data name="AccountNo" xml:space="preserve">
+    <value>N° compte</value>
   </data>
   <data name="AccountNumber" xml:space="preserve">
-    <value />
+    <value>Numéro de compte</value>
   </data>
-  <data name="Net3PeriodsAgo" xml:space="preserve">
-    <value />
+  <data name="AccountSortedGroup" xml:space="preserve">
+    <value>Groupe cptes trié</value>
   </data>
-  <data name="BalPreceedingYear13PAgo" xml:space="preserve">
-    <value />
+  <data name="Actual" xml:space="preserve">
+    <value>Réel</value>
   </data>
-  <data name="BalPreceedingHalfYear8PAgo" xml:space="preserve">
-    <value />
+  <data name="AddUpdate" xml:space="preserve">
+    <value>Ajouter/Actualiser</value>
   </data>
-  <data name="NetHalfYearToDate" xml:space="preserve">
-    <value />
+  <data name="AuditInformation" xml:space="preserve">
+    <value>Information-Audit</value>
   </data>
-  <data name="CurrencyCode" xml:space="preserve">
-    <value />
+  <data name="Consolidated" xml:space="preserve">
+    <value>Consolidé</value>
   </data>
-  <data name="BalanceBeginningOfYear" xml:space="preserve">
-    <value />
+  <data name="CreateNewStatement" xml:space="preserve">
+    <value>Créer un nouvel état</value>
   </data>
-  <data name="Balance2QuartersAgo" xml:space="preserve">
-    <value />
+  <data name="DontShowThisAgain" xml:space="preserve">
+    <value>Ne plus afficher</value>
   </data>
-  <data name="BalanceLastQuarter" xml:space="preserve">
-    <value />
+  <data name="DrillDownInformation" xml:space="preserve">
+    <value>Info - Zoom avant</value>
   </data>
-  <data name="BalPreceedingHalfYear3PAgo" xml:space="preserve">
-    <value />
+  <data name="DuplicateStatementName" xml:space="preserve">
+    <value>Il existe déjà un état portant ce nom. Spécifiez un nom unique pour votre état.</value>
   </data>
-  <data name="BalanceCurrentPeriod" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingQuarter6PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net9PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod6" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net1QuarterAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter3PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetQuarter2ToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net4QuartersAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod13" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ProvisionalReporting" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingQuarter5PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingYear" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingYear5PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance2QuartersAgoToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod7" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalancePeriod13" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalancePeriod9" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance6PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetYearToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingQuarter9PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingHalfYear7PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance3PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetCurrentPeriod" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingHalfYear10PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingYear6PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceQuarter2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceHalfYearToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod4" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ReportingYear" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance9PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceHalfYear2ToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetCurrentQuarter" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Quantity" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingQuarter8PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingYear" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetAdjustments" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingHalfYear10PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceCurrentHalfYear" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceQuarter4" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod5" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net12PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Budget3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FRTRNSwitch" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetCurrentHalfYear" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetQuarter4ToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingYear11PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="AccountBalOf1StFRTRNRecord" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net2PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetQuarter3ToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance1QuarterAgoToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net2QuartersAgoToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance8PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceCurrentQuarter" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingQuarter" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceQuarter1ToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net3QuartersAgoToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetQuarterToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod10" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Budget4" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalancePeriod8" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPeriod3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Actuals" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceLastQuarterToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingYear6PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance11PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingYear4PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalancePeriod12" xml:space="preserve">
-    <value />
-  </data>
-  <data name="QuantityOpeningBalanceSwitch" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net1HalfYearAgoToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingHalfYear12PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingHalfYear4PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceQuarter2ToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ReportingYearOffset" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net10PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingYear9PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingYear13PAgo" xml:space="preserve">
-    <value />
+  <data name="Edit" xml:space="preserve">
+    <value>Modifier</value>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value />
+    <value>Éditeur d'états financiers de GL</value>
   </data>
-  <data name="BalanceQuarter3" xml:space="preserve">
-    <value />
+  <data name="ErrorMessage_AccountRange" xml:space="preserve">
+    <value>La saisie dans la case 'Du compte' doit être inférieure à celle de la case 'Au compte'.</value>
   </data>
-  <data name="BalPreceedingYear1PAgo" xml:space="preserve">
-    <value />
+  <data name="ErrorMessage_NoChartOfAccounts" xml:space="preserve">
+    <value>Le plan comptable n'est pas défini.</value>
   </data>
-  <data name="NetQuarter4" xml:space="preserve">
-    <value />
+  <data name="ErrorMessage_Range" xml:space="preserve">
+    <value>La saisie de la case 'De' doit être inférieure à celle de la case 'À'.</value>
   </data>
-  <data name="BalancePeriod2" xml:space="preserve">
-    <value />
+  <data name="ErrorMessage_SegmentRange" xml:space="preserve">
+    <value>La saisie dans la case 'Du segment' doit être inférieure à celle de la case 'Au segment'.</value>
   </data>
-  <data name="BudgetOpeningBalanceSwitch" xml:space="preserve">
-    <value />
+  <data name="FileHasBeenDownloaded" xml:space="preserve">
+    <value>L’état "{0}" a été enregistré sur votre ordinateur. Modifiez cet état dans Microsoft Excel, puis cliquez sur le bouton Ajouter/Actualiser pour rendre vos modifications disponibles.</value>
   </data>
-  <data name="NetPreceedingQuarter2PAgo" xml:space="preserve">
-    <value />
+  <data name="FiscalOption" xml:space="preserve">
+    <value>Option comptable</value>
   </data>
-  <data name="FiscalSetDesignator" xml:space="preserve">
-    <value />
+  <data name="Formulas" xml:space="preserve">
+    <value>Formules</value>
   </data>
-  <data name="Balance4QuartersAgoToDate" xml:space="preserve">
-    <value />
+  <data name="From" xml:space="preserve">
+    <value>Du {0}</value>
   </data>
-  <data name="Balance3QuartersAgo" xml:space="preserve">
-    <value />
+  <data name="FromAccountGroup" xml:space="preserve">
+    <value>Du groupe de cptes</value>
   </data>
-  <data name="NetPreceedingQuarter13PAgo" xml:space="preserve">
-    <value />
+  <data name="FromAccountNumber" xml:space="preserve">
+    <value>Du numéro de compte</value>
   </data>
-  <data name="NetLastQuarterToDate" xml:space="preserve">
-    <value />
+  <data name="FromSortCodeAccountGroup" xml:space="preserve">
+    <value>Du code tri - Groupe comptes</value>
   </data>
-  <data name="Net3QuartersAgo" xml:space="preserve">
-    <value />
+  <data name="GenerateStatement" xml:space="preserve">
+    <value>Générer l’état</value>
   </data>
-  <data name="BalPreceedingYear8PAgo" xml:space="preserve">
-    <value />
+  <data name="GetAddin" xml:space="preserve">
+    <value>Obtenir le complément</value>
   </data>
-  <data name="Net1QuarterAgoToDate" xml:space="preserve">
-    <value />
+  <data name="GetStarted" xml:space="preserve">
+    <value>Mise en route</value>
   </data>
-  <data name="NetPreceedingHalfYear3PAgo" xml:space="preserve">
-    <value />
+  <data name="GetStartedText" xml:space="preserve">
+    <value>Installez le complément requis pour Microsoft Excel, puis créez votre premier état financier!</value>
   </data>
-  <data name="BalPreceedingYear7PAgo" xml:space="preserve">
-    <value />
+  <data name="GetStartedTitle" xml:space="preserve">
+    <value>Commencez à utiliser Générateur d’états financiers</value>
   </data>
-  <data name="NetPreceedingHalfYear9PAgo" xml:space="preserve">
-    <value />
+  <data name="Include" xml:space="preserve">
+    <value>Inclure</value>
   </data>
-  <data name="Balance2HalfYearsAgoToDate" xml:space="preserve">
-    <value />
+  <data name="InvalidStatementName" xml:space="preserve">
+    <value>The statement name is not valid.</value>
   </data>
-  <data name="BalancePeriod3" xml:space="preserve">
-    <value />
+  <data name="Modified" xml:space="preserve">
+    <value>Modifié</value>
   </data>
-  <data name="ProvisionalActuals" xml:space="preserve">
-    <value />
+  <data name="Modify" xml:space="preserve">
+    <value>Modifier</value>
   </data>
-  <data name="BalPreceedingHalfYear5PAgo" xml:space="preserve">
-    <value />
+  <data name="Name" xml:space="preserve">
+    <value>Nom</value>
   </data>
-  <data name="BalPreceedingQuarter4PAgo" xml:space="preserve">
-    <value />
+  <data name="NameYourNewStatement" xml:space="preserve">
+    <value>Nom de votre nouvel état</value>
   </data>
-  <data name="Balance1HalfYearAgo" xml:space="preserve">
-    <value />
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="BalanceQuarter3ToDate" xml:space="preserve">
-    <value />
+  <data name="OldName" xml:space="preserve">
+    <value>Ancien nom</value>
   </data>
-  <data name="Balance3QuartersAgoToDate" xml:space="preserve">
-    <value />
+  <data name="PleaseinstallAddin" xml:space="preserve">
+    <value>Installez le complément pour imprimer des états financiers.</value>
   </data>
-  <data name="NetPreceedingYear10PAgo" xml:space="preserve">
-    <value />
+  <data name="PrintFinancialStatements" xml:space="preserve">
+    <value>Impression des états financiers de GL</value>
   </data>
-  <data name="BalPreceedingYear10PAgo" xml:space="preserve">
-    <value />
+  <data name="Provisional" xml:space="preserve">
+    <value>Provisoire</value>
   </data>
-  <data name="NetPreceedingQuarter4PAgo" xml:space="preserve">
-    <value />
+  <data name="RelaceTheContent" xml:space="preserve">
+    <value>Voulez-vous remplacer les spécifications de rapport dans l’état "{0}" par celles du fichier "{1}"?</value>
   </data>
-  <data name="NetClosingAmount" xml:space="preserve">
-    <value />
+  <data name="Remove" xml:space="preserve">
+    <value>Supprimer</value>
   </data>
-  <data name="Balance7PeriodsAgo" xml:space="preserve">
-    <value />
+  <data name="Rename" xml:space="preserve">
+    <value>Renommer</value>
   </data>
-  <data name="NetHalfYear1" xml:space="preserve">
-    <value />
+  <data name="RenameStatement" xml:space="preserve">
+    <value>Renommer l’état</value>
   </data>
-  <data name="NetPreceedingYear3PAgo" xml:space="preserve">
-    <value />
+  <data name="ReportAs" xml:space="preserve">
+    <value>Rapport</value>
   </data>
-  <data name="NetPreceedingQuarter12PAgo" xml:space="preserve">
-    <value />
+  <data name="ReportOptions" xml:space="preserve">
+    <value>Options rapport</value>
   </data>
-  <data name="NetPreceedingHalfYear7PAgo" xml:space="preserve">
-    <value />
+  <data name="ReportType" xml:space="preserve">
+    <value>Type de rapport</value>
   </data>
-  <data name="BalanceLastPeriod" xml:space="preserve">
-    <value />
+  <data name="Segment" xml:space="preserve">
+    <value>Segment</value>
   </data>
-  <data name="NetPreceedingHalfYear" xml:space="preserve">
-    <value />
+  <data name="SegmentName" xml:space="preserve">
+    <value>Nom segment</value>
   </data>
-  <data name="BalPreceedingYear4PAgo" xml:space="preserve">
-    <value />
+  <data name="SelectAccountGroupsBySortCodeRange" xml:space="preserve">
+    <value>Sélect. plage de groupes cptes par code de tri</value>
   </data>
-  <data name="Net6PeriodsAgo" xml:space="preserve">
-    <value />
+  <data name="Selectstatement" xml:space="preserve">
+    <value>Sélectionnez un état.</value>
   </data>
-  <data name="BalPreceedingYear12PAgo" xml:space="preserve">
-    <value />
+  <data name="Separate" xml:space="preserve">
+    <value>Séparé</value>
   </data>
-  <data name="BalPreceedingYear2PAgo" xml:space="preserve">
-    <value />
+  <data name="SortBy" xml:space="preserve">
+    <value>Trier par</value>
   </data>
-  <data name="NetPreceedingYear2PAgo" xml:space="preserve">
-    <value />
+  <data name="StatementName" xml:space="preserve">
+    <value>Nom de l’état</value>
   </data>
-  <data name="BalancePeriod1" xml:space="preserve">
-    <value />
+  <data name="Statements" xml:space="preserve">
+    <value>États</value>
   </data>
-  <data name="NetPreceedingQuarter7PAgo" xml:space="preserve">
-    <value />
+  <data name="StatementUpdated" xml:space="preserve">
+    <value>L’état {0} a été actualisé et vous pouvez l’utiliser.</value>
+    <comment>F</comment>
   </data>
-  <data name="BalPreceedingHalfYear13PAgo" xml:space="preserve">
-    <value />
+  <data name="Title" xml:space="preserve">
+    <value>Éditeur d'états financiers de GL</value>
   </data>
-  <data name="NetPreceedingHalfYear11PAgo" xml:space="preserve">
-    <value />
+  <data name="To" xml:space="preserve">
+    <value>Au {0}</value>
   </data>
-  <data name="NetPreceedingQuarter3PAgo" xml:space="preserve">
-    <value />
+  <data name="ToAccountGroup" xml:space="preserve">
+    <value>Au groupe de cptes</value>
   </data>
-  <data name="BalPreceedingQuarter2PAgo" xml:space="preserve">
-    <value />
+  <data name="ToAccountNumber" xml:space="preserve">
+    <value>Au numéro de compte</value>
   </data>
-  <data name="BalanceQuarter1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance5PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingYear12PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingHalfYear" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetLastQuarter" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingHalfYear2PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance13PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingYear7PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net5PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net2QuartersAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingYear9PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalancePeriod6" xml:space="preserve">
-    <value />
-  </data>
-  <data name="RollupSwitch" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter10PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceLastHalfYear" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Budget5" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Budget1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceQuarter4ToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingHalfYear2PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetHalfYear1ToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalancePeriod11" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetQuarter1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetLastHalfYear" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingHalfYear1PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetQuarter3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance1HalfYearAgoToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingHalfYear9PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceHalfYear2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalancePeriod7" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance12PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingHalfYear6PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter1PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetLastHalfYearToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Balance4PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net13PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="TableGLPOSTSwitch" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingHalfYear6PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingHalfYear4PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceLastHalfYearToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net8PeriodsAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalancePeriod4" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceHalfYear1ToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetTotalYear" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FRTRNBrowsingOrder" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingYear5PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter13PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter6PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ReportingPeriod" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net1HalfYearAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingQuarter11PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter7PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetPreceedingHalfYear12PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalanceTotalYear" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalancePeriod5" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NetQuarter1ToDate" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter8PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter9PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingYear11PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BalPreceedingQuarter12PAgo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ClosingBalance" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Source" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Net7PeriodsAgo" xml:space="preserve">
-    <value />
+  <data name="ToSortCodeAccountGroup" xml:space="preserve">
+    <value>Au code tri - Groupe comptes</value>
   </data>
 </root>

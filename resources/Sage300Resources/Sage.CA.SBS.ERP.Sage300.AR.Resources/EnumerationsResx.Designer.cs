@@ -448,6 +448,42 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add New Person.
+        /// </summary>
+        public static string CRMAddNew {
+            get {
+                return ResourceManager.GetString("CRMAddNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Replace Existing Person.
+        /// </summary>
+        public static string CRMReplaceExisting {
+            get {
+                return ResourceManager.GetString("CRMReplaceExisting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Existing Person.
+        /// </summary>
+        public static string CRMUpdateExisting {
+            get {
+                return ResourceManager.GetString("CRMUpdateExisting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update CRM Data.
+        /// </summary>
+        public static string CRMUpdateOptions {
+            get {
+                return ResourceManager.GetString("CRMUpdateOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customer Short Name.
         /// </summary>
         public static string CustomerShortName {
@@ -959,29 +995,25 @@ namespace Sage.CA.SBS.ERP.Sage300.AR.Resources {
                 return ResourceManager.GetString("DocumentType_RoundingReversed", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Tax Withheld - Posted.
         /// </summary>
-        public static string DocumentType_TaxWithheldPosted
-        {
-            get
-            {
+        public static string DocumentType_TaxWithheldPosted {
+            get {
                 return ResourceManager.GetString("DocumentType_TaxWithheldPosted", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Tax Withheld - Reversed.
         /// </summary>
-        public static string DocumentType_TaxWithheldReversed
-        {
-            get
-            {
+        public static string DocumentType_TaxWithheldReversed {
+            get {
                 return ResourceManager.GetString("DocumentType_TaxWithheldReversed", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Unapplied Cash - Applied.
         /// </summary>

@@ -64,7 +64,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		{
             // Developer Note: This number is one less than the number of steps in the main
             //                 switch statement below.
-            const int WORKINGSTEPS = 6;
+            const int WORKINGSTEPS = 3;
 
             LogSpacerLine('-');
             Log(Resources.BeginUpgradeProcess);
@@ -109,10 +109,12 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     //case 3: if (Constants.PerRelease.ReportUpgrade_For_2021_2) { ReportUpgrade_For_2021_2(title); } break;
 
                     case 3: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
-                    case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
-                    case 5: if (Constants.PerRelease.NamespaceAndWebProjectUpdates) { NamespaceAndWebProjectUpdates(title); } break;
-                    case 6: if (Constants.PerRelease.FinderAlterations) { FinderAlterations(title); } break;
-                    case 7: if (Constants.PerRelease.JavascriptMinificationUpdates) { JavascriptMinificationUpdates(title); } break;
+                    case 4: if (Constants.PerRelease.RemoveWebFormsFolder) { RemoveWebFormsFolder(title); } break;
+
+                    //case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
+                    //case 5: if (Constants.PerRelease.NamespaceAndWebProjectUpdates) { NamespaceAndWebProjectUpdates(title); } break;
+                    //case 6: if (Constants.PerRelease.FinderAlterations) { FinderAlterations(title); } break;
+                    //case 7: if (Constants.PerRelease.JavascriptMinificationUpdates) { JavascriptMinificationUpdates(title); } break;
 
                         //
                         // Developer Note: The following are optional steps from previous 
@@ -221,8 +223,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         /// <param name="accpacPropsOriginallyInSolutionFolder">
         /// Boolean flag denoting if the Accpac props file originally existed
         /// in the Solution folder.
+        /// 
         /// If it did, we don't need to do anything because it will have been updated by the previous
         /// wizard step. 
+        /// 
         /// If it didn't already exist in the Solution folder, we need to remove it.
         /// The SDK samples use a common Accpac props file located elsewhere in the
         /// SDK folder structure ("Settings")
@@ -234,56 +238,83 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Log start of step
             LogEventStart(title);
 
-            // Was the Accpac props file originally found in the solution folder?
-            if (accpacPropsOriginallyInSolutionFolder == false)
+            // Determine if we're running the Upgrade Wizard on one of our Sample solutions
+            // OR on a partner solution.
+            var SDKSettingsFile = Path.Combine(_settings.DestinationSolutionFolder, $@"..\..\settings\{Constants.Common.AccpacPropsFile}");
+            var isSageSDKSample = File.Exists(SDKSettingsFile);
+            if (isSageSDKSample) 
             {
-                msg = String.Format(Resources.Template_AccpacPropsFileNotFoundInRootOfSolutionFolder, Constants.Common.AccpacPropsFile);
-                Log(msg);
-
-                msg = Resources.SearchingInAllProjectDirectoriesInstead;
-                Log(msg);
-
-                // Accpac Props file is likely located in one or more folders OTHER THAN the solution root.
-                // We will then find them and update the csproj file located in the same folder to point to a
-                // version of the props file that will live in the solution root instead.
-                IEnumerable<string> list = FileUtilities.EnumerateFiles(_settings.DestinationSolutionFolder, Constants.Common.AccpacPropsFile);
-                var fileCount = ((List<string>)list).Count;
-                if (fileCount > 0)
-                {
-                    msg = String.Format(Resources.Template_XCopiesOfPropsFileWereFound, fileCount, Constants.Common.AccpacPropsFile);
-                    Log(msg);
-
-                    foreach (var file in list)
-                    {
-                        msg = $"     {file}\n";
-                        Log(msg);
-                    }
-
-                    msg = String.Format(Resources.Template_AttemptingToUpdateAllCsprojFiles, Constants.Common.AccpacPropsFile);
-                    Log(msg);
-
-                    PropsFileManager.UpdateAccpacPropsFileReferencesInProjects(list);
-
-                    msg = String.Format(Resources.Template_RemovingAllCopiesOfAccpacPropsFile, Constants.Common.AccpacPropsFile);
-                    Log(msg);
-
-                    PropsFileManager.RemoveAccpacPropsFromProjectFolders(list);
-                }
+                Log(Resources.IsSage300SDKSample);
+                Log(Resources.SyncAccpacLibrariesUnnecessary);
             }
             else
             {
-                // Accpac props file was found in the root of the solution folder.
-                // Not necessary to look elsewhere for it :)
+                Log(Resources.IsSagePartnerSolution);
             }
 
+            // Only run this on a Partner solution
+            if (!isSageSDKSample)
+            {
+                // Was the Accpac props file originally found in the solution folder?
+                if (accpacPropsOriginallyInSolutionFolder == false)
+                {
+                    // Accpac props file was NOT found in the solution folder
+                    msg = String.Format(Resources.Template_AccpacPropsFileNotFoundInRootOfSolutionFolder, Constants.Common.AccpacPropsFile);
+                    Log(msg);
 
-            // Always copy the new props file to the solution root
-            PropsFileManager.CopyAccpacPropsFileToSolutionFolder(_settings);
+                    msg = Resources.SearchingInAllProjectDirectoriesInstead;
+                    Log(msg);
 
-            msg = string.Format(Resources.Template_UpgradeLibrary,
-                                Constants.PerRelease.FromAccpacNumber,
-                                Constants.PerRelease.ToAccpacNumber);
-            Log(msg);
+                    // Accpac Props file is likely located in one or more folders OTHER THAN the solution root.
+                    // We will then find them and update the csproj file located in the same folder to point to a
+                    // version of the props file that will live in the solution root instead.
+                    IEnumerable<string> list = FileUtilities.EnumerateFiles(_settings.DestinationSolutionFolder, Constants.Common.AccpacPropsFile);
+                    var fileCount = ((List<string>)list).Count;
+                    if (fileCount > 0)
+                    {
+                        msg = String.Format(Resources.Template_XCopiesOfPropsFileWereFound, fileCount, Constants.Common.AccpacPropsFile);
+                        Log(msg);
+
+                        foreach (var file in list)
+                        {
+                            msg = $"     {file}\n";
+                            Log(msg);
+                        }
+
+                        msg = String.Format(Resources.Template_AttemptingToUpdateAllCsprojFiles, Constants.Common.AccpacPropsFile);
+                        Log(msg);
+
+                        PropsFileManager.UpdateAccpacPropsFileReferencesInProjects(list);
+
+                        msg = String.Format(Resources.Template_RemovingAllCopiesOfAccpacPropsFile, Constants.Common.AccpacPropsFile);
+                        Log(msg);
+
+                        PropsFileManager.RemoveAccpacPropsFromProjectFolders(list);
+                    }
+                    else
+                    {
+                        // No Accpac props file found anywhere in the solution (or project folders)
+                        msg = Resources.NoAccpacPropsFilesFoundInSolution;
+                        Log(msg);
+                    }
+                }
+                else
+                {
+                    // Accpac props file was found in the root of the solution folder.
+                    // Not necessary to look elsewhere for it :)
+                    msg = Resources.AccpacPropsFileFoundInSolutionFolder;
+                    Log(msg);
+                }
+
+
+                // Always copy the new props file to the solution root
+                PropsFileManager.CopyAccpacPropsFileToSolutionFolder(_settings);
+
+                msg = string.Format(Resources.Template_UpgradeLibrary,
+                                    Constants.PerRelease.FromAccpacNumber,
+                                    Constants.PerRelease.ToAccpacNumber);
+                Log(msg);
+            }
 
             // Log end of step
             LogEventEnd(title);
@@ -398,7 +429,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 //
                 //          with the namespace name from Step 1
                 //
-                List<string> fileList = new List<string>
+                var fileList = new List<string>
                 {
                     "Login.aspx",
                     "Login.aspx.cs",
@@ -710,6 +741,105 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             // Log end of step
             LogEventEnd(title);
             Log("");
+        }
+
+        /// <summary>
+        /// Remove the 'WebForms' folder from the Web directory if it exists
+        /// and remove any file references from the Web.csproj file
+        /// </summary>
+        /// <param name="title">Title of step being processed </param>
+        private void RemoveWebFormsFolder(string title)
+        {
+            // Log start of step
+            LogEventStart(title);
+
+            // Build full folder path
+            var webFormsFolder = Path.Combine(_settings.DestinationWebFolder, Constants.Common.WebFormsFolderName);
+
+            // Remove the files from the WebForms folder
+            var filesToDelete = new List<string>
+            {
+                "CustomReportViewer.aspx",
+                "CustomReportViewer.aspx.cs",
+                "CustomReportViewer.aspx.designer.cs",
+
+                "ReportViewer.aspx",
+                "ReportViewer.aspx.cs",
+                "ReportViewer.aspx.designer.cs",
+
+                "BaseWebPage.cs"
+            };
+            foreach (var filename in filesToDelete)
+            {
+                var filePath = Path.Combine(webFormsFolder, filename);
+                FileUtilities.RemoveExistingFile(filePath);
+                Log($"Removed {filePath}");
+            }
+
+            // Remove the 'WebForms' directory from the file system
+            if (Directory.Exists(webFormsFolder))
+            {
+                Log(Resources.WebFormsFolderExists);
+                Directory.Delete(path: webFormsFolder, recursive: true);
+                if (Directory.Exists(webFormsFolder) == false)
+                {
+                    Log(Resources.WebFormsFolderRemovedSuccessfully);
+                }
+
+                // Now remove any references to WebForms from the Web.csproj file
+                RemoveWebFormsFolderProjectReferences();
+            } 
+            else
+            {
+                Log(Resources.WebFormsFolderDoesNotExist);
+            }
+
+
+            // Log end of step
+            LogEventEnd(title);
+            Log("");
+        }
+
+        /// <summary>
+        /// Remove any WebForms references from the Web.csproj file
+        /// </summary>
+        private void RemoveWebFormsFolderProjectReferences()
+        {
+            var exitProjectLoop = false;
+
+            var projects = _settings.Solution.Projects;
+            foreach (Project project in projects)
+            {
+                // Find the Web project in the solution
+                var webProjectName = project.FullName;
+                if (IsWebProject(webProjectName))
+                {
+                    Log($"Found web project {webProjectName}");
+
+                    var vsproj = (VSProject)project.Object;
+                    var webProjectItems = vsproj.Project.ProjectItems;
+
+                    foreach (ProjectItem item in webProjectItems)
+                    {
+                        if (item.Name.Equals(Constants.Common.WebFormsFolderName, 
+                                            StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            // Remove the item from the project and log 
+                            item.Remove();
+                            Log(string.Format(Resources.Template_RemovedProjectItem, item.Name));
+                            exitProjectLoop = true;
+                            break;
+                        }
+                    }
+
+                    if (exitProjectLoop)
+                    {
+                        // No need to iterate the rest of the projects
+                        // We've found the Web project already.
+                        break;
+                    }
+                }
+            }
         }
 
 #if ENABLE_TK_244885

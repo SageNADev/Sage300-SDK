@@ -11,7 +11,8 @@
 # Initializations
 # ---------------------------------------------------------------------------------------
 $verbosepreference = 'continue'
-$webSubPaths = 'Areas\Shared,Areas\Core,Views,Scripts,Content,Assets,Customization,WebForms'
+#$webSubPaths = 'Areas\Shared,Areas\Core,Views,Scripts,Content,Assets,Customization,WebForms'
+$webSubPaths = 'Areas\Shared,Areas\Core,Views,Scripts,Content,Assets,Customization'
 $webFolderName = "Web"
 
 # ---------------------------------------------------------------------------------------

@@ -315,7 +315,7 @@
     <value>..\content\ReleaseAllSyncKendoFiles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SearchingInAllProjectDirectoriesInstead" xml:space="preserve">
-    <value>Seaching in all project directories instead.</value>
+    <value>Searching in all project directories instead.</value>
   </data>
   <data name="Template_AccpacPropsFileNotFoundInRootOfSolutionFolder" xml:space="preserve">
     <value>{0} was not found in the root of the solution folder.</value>
@@ -494,5 +494,41 @@ and change to
   </data>
   <data name="sage300_logo_sq" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sage300-logo-sq.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AccpacPropsFileFoundInSolutionFolder" xml:space="preserve">
+    <value>An existing Accpac props file has been found in the current solution folder.</value>
+  </data>
+  <data name="NoAccpacPropsFilesFoundInSolution" xml:space="preserve">
+    <value>There were no existing Accpac props files found anywhere in the solution or projects.</value>
+  </data>
+  <data name="WebFormsFolderDoesNotExist" xml:space="preserve">
+    <value>The 'WebForms' folder does not exist.</value>
+  </data>
+  <data name="WebFormsFolderExists" xml:space="preserve">
+    <value>The 'WebForms' folder exists.</value>
+  </data>
+  <data name="ReleaseSpecificDescRemoveWebFormsFolder" xml:space="preserve">
+    <value>This step will automatically remove the deprecated 'WebForms' folder from the Web directory.</value>
+  </data>
+  <data name="ReleaseSpecificTitleRemoveWebFormsFolder" xml:space="preserve">
+    <value>Remove deprecated 'WebForms' folder</value>
+  </data>
+  <data name="WebFormsFolderRemovedSuccessfully" xml:space="preserve">
+    <value>The 'WebForms' folder has been successfully removed.</value>
+  </data>
+  <data name="IsSage300SDKSample" xml:space="preserve">
+    <value>This appears to be a Sage 300 SDK sample solution.</value>
+  </data>
+  <data name="IsSagePartnerSolution" xml:space="preserve">
+    <value>This appears to be a Sage partner solution.</value>
+  </data>
+  <data name="SyncAccpacLibrariesUnnecessary" xml:space="preserve">
+    <value>It is not necessary to update the Accpac props file for this solution and projects.</value>
+  </data>
+  <data name="Template_RemovedProjectItem" xml:space="preserve">
+    <value>Removed project item '{0}'.</value>
+  </data>
+  <data name="ReleaseSpecificRemoveWebFormsFolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\ReleaseSpecificRemoveWebFormsFolder.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>
