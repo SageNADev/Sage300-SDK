@@ -46,10 +46,7 @@ $verbosepreference = 'continue'
 # Source Folder Settings
 $webAssetDirPath = "$rootCNA2SourceFolder\Columbus-Web\Sage.CA.SBS.ERP.Sage300.Web"
 $webSubPaths = 'Areas\Core,Areas\Shared,Assets,Content,Views'
-
-#$webSubPathsCopyAll = 'Customization,WebForms' // Removed WebForms on 20220802 for 2023.0 release
-$webSubPathsCopyAll = 'Customization'
-
+$webSubPathsCopyAll = 'Customization
 $scriptsWebSubPath = 'Scripts'
 $includeScriptsWeb = 'Sage.CA.SBS.ERP.Sage300.Common.*.js,Sage.CA.SBS.ERP.Sage300.Core.*.js'
 
@@ -91,19 +88,6 @@ $scriptsWebSubPath.split(',') | Foreach-Object {
   /xf kendo.all*.js Test_*.js *TestUtils.js chutzpah.json 
 }
 
-# ---------------------------------------------------------------------------------------
-# Quick Edit Namespaces
-# 20220801 - gvg - No longer executed because we've removed the WebForms folder completely
-# ---------------------------------------------------------------------------------------
-#Get-ChildItem "WebForms\**" | Foreach-Object {
-#  $content = (Get-Content $_);
-#  $content = $content.replace('Inherits="Sage.CA.SBS.ERP.Sage300.Web','Inherits="$companynamespace$.$applicationid$.Web');
-#  $content = $content.replace('namespace Sage.CA.SBS.ERP.Sage300.Web.WebForms','namespace $companynamespace$.$applicationid$.Web.WebForms');
-#  $content = $content.replace(' Common.Models.',' Sage.CA.SBS.ERP.Sage300.Common.Models.');
-#  $content = $content.replace('(Common.Models.','(Sage.CA.SBS.ERP.Sage300.Common.Models.');
-#  $content = $content.replace('<Common.Models.','<Sage.CA.SBS.ERP.Sage300.Common.Models.');
-#  $content | Out-File $_ -Encoding "UTF8" -Width 300
-#}
 
 # ---------------------------------------------------------------------------------------
 # Clean up

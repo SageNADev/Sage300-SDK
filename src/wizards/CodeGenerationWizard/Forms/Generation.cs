@@ -2686,6 +2686,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Local reference
             var gridControl = (DataGridView)control;
 
+            // Ensure valid hittest
+            if (hitTestInfo.ColumnIndex < 0 || hitTestInfo.RowIndex < 0)
+            {
+                return null;
+            }
+
             // Can't drop into an occupied cell
             if (gridControl[hitTestInfo.ColumnIndex, hitTestInfo.RowIndex].Tag != null)
             {
@@ -2725,6 +2731,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Local reference
             var gridControl = control.GetType() != typeof(FlowLayoutPanel) ? (DataGridView)control : null;
+
+            // Ensure valid hittest
+            if ((gridControl != null) && (hitTestInfo != null) && (hitTestInfo.ColumnIndex < 0 || hitTestInfo.RowIndex < 0))
+            {
+                return null;
+            }
 
             // Info from previous and destination cell
             var fromCellInfo = _cellInfo;
@@ -2858,6 +2870,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Get point where widget is being dropped or moved to
             var point = control.PointToClient(new Point(e.X, e.Y));
+
+            // Ensure point is valid
+            if (point.X < 0 || point.Y < 0)
+            {
+                return;
+            }
 
             // If dropping in grid, then get cell info for targetted cell
             if (type == typeof(DataGridView))
