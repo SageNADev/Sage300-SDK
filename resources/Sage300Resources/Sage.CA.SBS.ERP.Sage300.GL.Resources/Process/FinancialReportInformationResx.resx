@@ -147,9 +147,6 @@
   <data name="CreateNewStatement" xml:space="preserve">
     <value>Create New Statement</value>
   </data>
-  <data name="DeleteFile" xml:space="preserve">
-    <value>Delete {0}?</value>
-  </data>
   <data name="DontShowThisAgain" xml:space="preserve">
     <value>Don't show this again</value>
   </data>
@@ -302,6 +299,9 @@
     <value>To {0}</value>
   </data>
   <data name="InvalidStatementName" xml:space="preserve">
-    <value>Invailid Statement Name</value>
+    <value>The statement name is not valid.</value>
+  </data>
+  <data name="Selectstatement" xml:space="preserve">
+    <value>Please select a statement.</value>
   </data>
 </root>

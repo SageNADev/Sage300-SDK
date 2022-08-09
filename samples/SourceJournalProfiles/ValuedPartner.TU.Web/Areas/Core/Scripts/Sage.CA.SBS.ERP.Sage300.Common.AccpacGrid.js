@@ -3196,6 +3196,125 @@ sg.viewList = function () {
         });
     }
 
+    /**
+     * Build grid filter string by filter object
+     * @param {string} gridName The grid name
+     * @param filter filter JS object. the object schema as
+          {
+           logic: "AND",
+           filters: [
+              { field: "x", operator: "=", value: "1", dataType: "string"},
+              { field: "y", operator: ">", value: 2, dataType: "int"},
+              { 
+                logic: "OR", 
+                filters: [
+                    { field: "z", operator: "StartsWith",value: "3", dataType: "string" },
+                    { field: "z", operator: ">=",value: 4, dataType: "long" }
+                  ]
+              }
+           ]
+         }
+     */
+
+    function buildFilterString(gridName, filter) {
+        //Convert kendo filter operator to accpac view filter operator
+        function convertOperator(operator) {
+            switch (operator) {
+                case 'eq':
+                    operator = '=';
+                    break;
+                case 'neq':
+                    operator = '!=';
+                    break;
+                case 'gt':
+                    operator = '>';
+                    break;
+                case 'gte':
+                    operator = '>=';
+                    break;
+                case 'lt':
+                    operator = '<';
+                    break;
+                case 'lte':
+                    operator = '<=';
+                    break;
+                case 'startswith':
+                case 'endswith':
+                case 'contains':
+                    operator = 'LIKE';
+                    break;
+                default:
+            }
+            return operator;
+        }
+
+        //Build single filter expression
+        function buildExpression(gridName, expr) {
+            const operators = ['=', 'eq', '!=', 'neq', '>', 'gt', '>=', 'gte', '<', 'lt', '<=', 'lte', 'startswith', 'endswith', 'contains'];
+            const fields = $('#' + gridName).data('kendoGrid').columns.map(c => c.field);
+            const field = expr.field.toUpperCase();
+            let operator = expr.operator.toLowerCase();
+
+            let isValidField = fields.includes(field);
+            let isValidOperator = operators.includes(operator);
+
+            let expression = '';
+
+            if (isValidField && isValidOperator) {
+                const dataType = expr.dataType ? expr.dataType.toLowerCase() : 'char';
+                let value = expr.value;
+                let isText = (dataType === 'char' || dataType === 'string' || dataType === 'text');
+                operator = convertOperator(operator);
+
+                if (isText) {
+                    value = value.replace(/\"/g, '\\"');
+                    switch (operator) {
+                        case 'startswith':
+                            value = `${value}%`;
+                            break;
+                        case 'endswith':
+                            value = `$%{value}`;
+                            break;
+                        case 'contains':
+                            value = `$%{value}%`;
+                        default:
+                    }
+                }
+                if (dataType === 'date' || dataType === 'datetime') {
+                    value = sg.utls.kndoUI.checkForValidDate(value) ? kendo.toString(new Date(value), 'yyyyMMdd'): 0;
+                }
+                expression = isText ? `${field} ${operator} "${value}"` : `${field} ${operator} ${value}`;
+            }
+
+            return expression;
+        }
+
+        function buildFilter(gridName, filter) {
+            let filterString = '';
+            let logic = filter.logic ? filter.logic.toUpperCase() : 'AND';
+
+            if (['AND', 'OR'].includes(logic)) { //Check valid logic operator
+                filter.filters.forEach(f => {
+                    let fs = '';
+                    if (f.field && f.operator) {
+                        fs = buildExpression(gridName, f);
+                        if (fs) {
+                            filterString += filterString ? ` ${logic} ${fs}` : fs;
+                        }
+                    }
+                    if (f.filters) {
+                        fs = buildFilter(gridName, f);
+                        filterString += filterString ? ` ${logic} (${fs})` : `(${fs})`;
+                    }
+                });
+            }
+
+            return filterString;
+        }
+
+        return buildFilter(gridName, filter);
+    }
+
     //Module(class) public methods
     return {
         init: init,
@@ -3238,6 +3357,7 @@ sg.viewList = function () {
         getCurrentLineNumber: getCurrentLineNumber,
         moveToRow: moveToRow,
         isFieldDisabled: isFieldDisabled,
-        getParentData: getParentData
+        getParentData: getParentData,
+        buildFilterString: buildFilterString
     };
 }();

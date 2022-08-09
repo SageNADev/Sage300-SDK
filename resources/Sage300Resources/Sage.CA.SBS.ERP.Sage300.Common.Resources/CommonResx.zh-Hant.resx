@@ -1642,6 +1642,18 @@
   <data name="ReportGenFailedMessageForCustomReport" xml:space="preserve">
     <value>產生報表時發生一個問題。檢查是否指定了報表所需的所有設定和選項，然後重試。</value>
   </data>
+  <data name="Finish" xml:space="preserve">
+    <value>完成</value>
+    <comment>button caption for wizard finish button</comment>
+  </data>
+  <data name="InvalidReportParameterSettingMessage" xml:space="preserve">
+    <value>此值 "{0}" 對於報表 "{3}" 的參數 "{2}" 之屬性 "{1}" 而言無效。請檢查報表設定。</value>
+    <comment>Invalid setting in Declarative Report</comment>
+  </data>
+  <data name="InvalidReportSettingMessage" xml:space="preserve">
+    <value>此值 "{0}" 對於報表 "{2}" 的屬性 "{1}" 而言無效。請檢查報表設定。</value>
+    <comment>Invalid setting in Declarative Report</comment>
+  </data>
   <data name="ItemNumberFrom" xml:space="preserve">
     <value>產品編號從</value>
   </data>
@@ -1649,7 +1661,6 @@
     <value>產品編號到</value>
   </data>
   <data name="Template_GenericReportException" xml:space="preserve">
-    <value>One or more errors occurred while attempting to generate the report:  {0}</value>
-    <comment>Internal use only. No translation necessary.</comment>
+    <value>嘗試產生下列報表時，出現一或多個錯誤：{0}</value>
   </data>
 </root>

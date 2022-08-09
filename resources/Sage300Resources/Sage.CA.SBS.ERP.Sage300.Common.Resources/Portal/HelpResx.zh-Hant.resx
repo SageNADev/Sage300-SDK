@@ -905,23 +905,23 @@
   </data>
   <data name="AS_Users_Article1" xml:space="preserve">
     <value>增加和管理用戶</value>
-    <comment>CSH ID 19005002</comment>
+    <comment>CSHID 19005002</comment>
   </data>
   <data name="AS_Users_Article2" xml:space="preserve">
     <value>分派用戶到安全群組</value>
-    <comment>CSH ID 19005003</comment>
+    <comment>CSHID 19005003</comment>
   </data>
   <data name="AS_Users_Screen" xml:space="preserve">
     <value>用戶螢幕</value>
-    <comment>CSH ID 19005001</comment>
+    <comment>CSHID 19005001</comment>
   </data>
   <data name="Bank_Banks_Article1" xml:space="preserve">
     <value>增加銀行</value>
-    <comment>CSH ID 37034002</comment>
+    <comment>CSHID 37034002</comment>
   </data>
   <data name="Bank_Banks_Article2" xml:space="preserve">
     <value>設定銀行服務</value>
-    <comment>CSH ID 37034003</comment>
+    <comment>CSHID 37034003</comment>
   </data>
   <data name="Bank_Banks_Screen" xml:space="preserve">
     <value>銀行螢幕</value>
@@ -1239,15 +1239,15 @@
   </data>
   <data name="GL_PostingJournals_Article1" xml:space="preserve">
     <value>列印總帳過帳日誌報表</value>
-    <comment>CSH ID 168021002</comment>
+    <comment>CSHID 168021002</comment>
   </data>
   <data name="GL_PostingJournals_Article2" xml:space="preserve">
     <value>關於總帳報表</value>
-    <comment>CSH ID 168021003</comment>
+    <comment>CSHID 168021003</comment>
   </data>
   <data name="GL_PostingJournals_Screen" xml:space="preserve">
     <value>總帳過帳日誌螢幕</value>
-    <comment>CSH ID 168021001</comment>
+    <comment>CSHID 168021001</comment>
   </data>
   <data name="GL_Processing_CreateNewYear_Article1" xml:space="preserve">
     <value>實施年末處理</value>
@@ -1296,15 +1296,15 @@
   </data>
   <data name="GL_Reports_PostingJournals_Article1" xml:space="preserve">
     <value>列印總帳過帳日誌報表</value>
-    <comment>CSH ID 168021002</comment>
+    <comment>CSHID 168021002</comment>
   </data>
   <data name="GL_Reports_PostingJournals_Article2" xml:space="preserve">
     <value>關於總帳報表</value>
-    <comment>CSH ID 168021003</comment>
+    <comment>CSHID 168021003</comment>
   </data>
   <data name="GL_Reports_PostingJournals_Screen" xml:space="preserve">
     <value>總帳過帳日誌報表</value>
-    <comment>CSH ID 168021001</comment>
+    <comment>CSHID 168021001</comment>
   </data>
   <data name="GL_Reports_TransactionsListing_Article1" xml:space="preserve">
     <value>列印總帳交易清單報表</value>
@@ -1437,11 +1437,11 @@
   </data>
   <data name="IC_ContractPricing_Report_Article1" xml:space="preserve">
     <value>存貨控制報表</value>
-    <comment>CSH ID 211046002</comment>
+    <comment>CSHID 211046002</comment>
   </data>
   <data name="IC_ContractPricing_Report_Article2" xml:space="preserve">
     <value>列印合約定價報表</value>
-    <comment>CSH ID 211046003</comment>
+    <comment>CSHID 211046003</comment>
   </data>
   <data name="IC_ContractPricing_Report_Screen" xml:space="preserve">
     <value>存貨控制合約定價報表</value>
@@ -1465,31 +1465,31 @@
   </data>
   <data name="IC_DayEndProcessing_Article2" xml:space="preserve">
     <value>實施日終處理</value>
-    <comment>CSH ID 211038003</comment>
+    <comment>CSHID 211038003</comment>
   </data>
   <data name="IC_DayEndProcessing_Screen" xml:space="preserve">
     <value>存貨控制日終處理螢幕</value>
-    <comment>CSH ID 211038001</comment>
+    <comment>CSHID 211038001</comment>
   </data>
   <data name="IC_GL_Integration_Artcicle1" xml:space="preserve">
     <value>關於與總帳一道使用存貨控制</value>
-    <comment>CSH ID 211016002</comment>
+    <comment>CSHID 211016002</comment>
   </data>
   <data name="IC_GL_Integration_Artcicle2" xml:space="preserve">
     <value>變更存貨控制總帳整合選項</value>
-    <comment>CSH ID 211016003</comment>
+    <comment>CSHID 211016003</comment>
   </data>
   <data name="IC_GL_Integration_Screen" xml:space="preserve">
     <value>存貨控制總帳整合螢幕</value>
-    <comment>CSH ID 211016001</comment>
+    <comment>CSHID 211016001</comment>
   </data>
   <data name="IC_GL_Transactions_Report_Article1" xml:space="preserve">
     <value>存貨控制報表</value>
-    <comment>CSH ID 211010002</comment>
+    <comment>CSHID 211010002</comment>
   </data>
   <data name="IC_GL_Transactions_Report_Article2" xml:space="preserve">
     <value>列印總帳交易報表</value>
-    <comment>CSH ID 211010003</comment>
+    <comment>CSHID 211010003</comment>
   </data>
   <data name="IC_GL_Transactions_Report_Screen" xml:space="preserve">
     <value>存貨控制總帳交易報表</value>
@@ -1513,95 +1513,95 @@
   </data>
   <data name="IC_Items_Article2" xml:space="preserve">
     <value>增加產品記錄</value>
-    <comment>CSH ID 211022003</comment>
+    <comment>CSHID 211022003</comment>
   </data>
   <data name="IC_Items_Screen" xml:space="preserve">
     <value>存貨控制產品螢幕</value>
-    <comment>CSH ID 211022001</comment>
+    <comment>CSHID 211022001</comment>
   </data>
   <data name="IC_ManufacturersItems_Article1" xml:space="preserve">
     <value>存貨控制產品螢幕</value>
-    <comment>CSH ID 211035002</comment>
+    <comment>CSHID 211035002</comment>
   </data>
   <data name="IC_ManufacturersItems_Article2" xml:space="preserve">
     <value>增加條碼或製造商編號到產品</value>
-    <comment>CSH ID 211035003</comment>
+    <comment>CSHID 211035003</comment>
   </data>
   <data name="IC_ManufacturersItems_Screen" xml:space="preserve">
     <value>存貨控制製造商產品螢幕</value>
-    <comment>CSH ID 211035001</comment>
+    <comment>CSHID 211035001</comment>
   </data>
   <data name="IC_OptionalFields_Article1" xml:space="preserve">
     <value>關於在交易中使用自選欄位</value>
-    <comment>CSH ID 211005002</comment>
+    <comment>CSHID 211005002</comment>
   </data>
   <data name="IC_OptionalFields_Article2" xml:space="preserve">
     <value>為存貨控制記錄和交易設定自選欄位</value>
-    <comment>CSH ID 211005003</comment>
+    <comment>CSHID 211005003</comment>
   </data>
   <data name="IC_OptionalFields_Screen" xml:space="preserve">
     <value>存貨控制自選欄位螢幕</value>
-    <comment>CSH ID 211005001</comment>
+    <comment>CSHID 211005001</comment>
   </data>
   <data name="IC_Options_Article1" xml:space="preserve">
     <value>關於存貨控制處理選項</value>
-    <comment>CSH ID 211001002</comment>
+    <comment>CSHID 211001002</comment>
   </data>
   <data name="IC_Options_Article2" xml:space="preserve">
     <value>變更存貨控制處理選項</value>
-    <comment>CSH ID 211001003</comment>
+    <comment>CSHID 211001003</comment>
   </data>
   <data name="IC_Options_Screen" xml:space="preserve">
     <value>存貨控制選項螢幕</value>
-    <comment>CSH ID 211001001</comment>
+    <comment>CSHID 211001001</comment>
   </data>
   <data name="IC_SegmentCodes_Article1" xml:space="preserve">
     <value>關於節段代碼</value>
-    <comment>CSH ID 211003002</comment>
+    <comment>CSHID 211003002</comment>
   </data>
   <data name="IC_SegmentCodes_Article2" xml:space="preserve">
     <value>關於為地點撤換總帳科目節段</value>
-    <comment>CSH ID 211003003</comment>
+    <comment>CSHID 211003003</comment>
   </data>
   <data name="IC_SegmentCodes_Screen" xml:space="preserve">
     <value>存貨控制節段代碼螢幕</value>
-    <comment>CSH ID 211003001</comment>
+    <comment>CSHID 211003001</comment>
   </data>
   <data name="IC_SellingPriceMarginAnalysis_Report_Article1" xml:space="preserve">
     <value>存貨控制報表</value>
-    <comment>CSH ID 211047002</comment>
+    <comment>CSHID 211047002</comment>
   </data>
   <data name="IC_SellingPriceMarginAnalysis_Report_Article2" xml:space="preserve">
     <value>列印售價/毛利分析報表</value>
-    <comment>CSH ID 211047003</comment>
+    <comment>CSHID 211047003</comment>
   </data>
   <data name="IC_SellingPriceMarginAnalysis_Report_Screen" xml:space="preserve">
     <value>存貨控制售價/毛利分析報表</value>
-    <comment>CSH ID 211047001</comment>
+    <comment>CSHID 211047001</comment>
   </data>
   <data name="IC_TransactionStatistics_Article1" xml:space="preserve">
     <value>關於存貨控制處理選項</value>
-    <comment>CSH ID 211006002</comment>
+    <comment>CSHID 211006002</comment>
   </data>
   <data name="IC_TransactionStatistics_Article2" xml:space="preserve">
     <value>增加或編輯交易統計</value>
-    <comment>CSH ID 211006003</comment>
+    <comment>CSHID 211006003</comment>
   </data>
   <data name="IC_TransactionStatistics_Screen" xml:space="preserve">
     <value>存貨控制交易統計螢幕</value>
-    <comment>CSH ID 211006001</comment>
+    <comment>CSHID 211006001</comment>
   </data>
   <data name="IC_UnitsOfMeasure_Article1" xml:space="preserve">
     <value>關於計量單位</value>
-    <comment>CSH ID 211009002</comment>
+    <comment>CSHID 211009002</comment>
   </data>
   <data name="IC_UnitsOfMeasure_Article2" xml:space="preserve">
     <value>分派計量單位到產品</value>
-    <comment>CSH ID 211009003</comment>
+    <comment>CSHID 211009003</comment>
   </data>
   <data name="IC_UnitsOfMeasure_Screen" xml:space="preserve">
     <value>存貨控制計量單位螢幕</value>
-    <comment>CSH ID 211009001</comment>
+    <comment>CSHID 211009001</comment>
   </data>
   <data name="IC_VendorDetails_Article1" xml:space="preserve">
     <value>關於供應商明細</value>
@@ -1611,79 +1611,79 @@
   </data>
   <data name="IC_VendorDetails_Screen" xml:space="preserve">
     <value>存貨控制供應商明細螢幕</value>
-    <comment>CSH ID 211031001</comment>
+    <comment>CSHID 211031001</comment>
   </data>
   <data name="IC_WeightUnitsOfMeasure_Article1" xml:space="preserve">
     <value>關於計量單位</value>
-    <comment>CSH ID 211012002</comment>
+    <comment>CSHID 211012002</comment>
   </data>
   <data name="IC_WeightUnitsOfMeasure_Article2" xml:space="preserve">
     <value>分派重量計量單位到產品</value>
-    <comment>CSH ID 211012003</comment>
+    <comment>CSHID 211012003</comment>
   </data>
   <data name="IC_WeightUnitsOfMeasure_Screen" xml:space="preserve">
     <value>存貨控制重量計量單位螢幕</value>
-    <comment>CSH ID 211012001</comment>
+    <comment>CSHID 211012001</comment>
   </data>
   <data name="OE_AgedOrders_Report_Article1" xml:space="preserve">
     <value>關於銷售訂單報表</value>
-    <comment>CSH ID 369026002</comment>
+    <comment>CSHID 369026002</comment>
   </data>
   <data name="OE_AgedOrders_Report_Article2" xml:space="preserve">
     <value>列印銷售訂單分析和設定報表</value>
-    <comment>CSH ID 369026003</comment>
+    <comment>CSHID 369026003</comment>
   </data>
   <data name="OE_AgedOrders_Report_Screen" xml:space="preserve">
     <value>銷售訂單已帳析銷貨單報表</value>
-    <comment>CSH ID 369026001</comment>
+    <comment>CSHID 369026001</comment>
   </data>
   <data name="OE_CreateBatch_Article1" xml:space="preserve">
     <value>有關定期處理</value>
-    <comment>CSH ID 369012002</comment>
+    <comment>CSHID 369012002</comment>
   </data>
   <data name="OE_CreateBatch_Article2" xml:space="preserve">
     <value>在銷售訂單中建立一個總帳交易的批次</value>
-    <comment>CSH ID 369012003</comment>
+    <comment>CSHID 369012003</comment>
   </data>
   <data name="OE_CreateBatch_Screen" xml:space="preserve">
     <value>銷售訂單建立批次螢幕。</value>
-    <comment>CSH ID 369012001</comment>
+    <comment>CSHID 369012001</comment>
   </data>
   <data name="OE_InvoiceAction_Report_Article1" xml:space="preserve">
     <value>關於銷售訂單報表</value>
-    <comment>CSH ID 369028002</comment>
+    <comment>CSHID 369028002</comment>
   </data>
   <data name="OE_InvoiceAction_Report_Article2" xml:space="preserve">
     <value>列印銷售訂單分析和設定報表</value>
-    <comment>CSH ID 369028003</comment>
+    <comment>CSHID 369028003</comment>
   </data>
   <data name="OE_InvoiceAction_Report_Screen" xml:space="preserve">
     <value>銷售訂單發票操作報表</value>
-    <comment>CSH ID 369028001</comment>
+    <comment>CSHID 369028001</comment>
   </data>
   <data name="OE_SalesHistory_Report_Article1" xml:space="preserve">
     <value>關於銷售訂單報表</value>
-    <comment>CSH ID 369029002</comment>
+    <comment>CSHID 369029002</comment>
   </data>
   <data name="OE_SalesHistory_Report_Article2" xml:space="preserve">
     <value>列印銷售訂單分析和設定報表</value>
-    <comment>CSH ID 369029003</comment>
+    <comment>CSHID 369029003</comment>
   </data>
   <data name="OE_SalesHistory_Report_Screen" xml:space="preserve">
     <value>銷售訂單銷售歷史報表</value>
-    <comment>CSH ID 369029001</comment>
+    <comment>CSHID 369029001</comment>
   </data>
   <data name="OE_TransactionList_Report_Article1" xml:space="preserve">
     <value>關於銷售訂單報表</value>
-    <comment>CSH ID 369025002</comment>
+    <comment>CSHID 369025002</comment>
   </data>
   <data name="OE_TransactionList_Report_Article2" xml:space="preserve">
     <value>列印銷售訂單分析和設定報表</value>
-    <comment>CSH ID 369025003</comment>
+    <comment>CSHID 369025003</comment>
   </data>
   <data name="OE_TransactionList_Report_Screen" xml:space="preserve">
     <value>銷售訂單交易清單報表</value>
-    <comment>CSH ID 369025001</comment>
+    <comment>CSHID 369025001</comment>
   </data>
   <data name="Portal_Article1" xml:space="preserve">
     <value>入門</value>
@@ -1702,43 +1702,43 @@
   </data>
   <data name="Portal_Reports" xml:space="preserve">
     <value>列印報表</value>
-    <comment>CSH ID 377002001</comment>
+    <comment>CSHID 377002001</comment>
   </data>
   <data name="Portal_Reports_Article1" xml:space="preserve">
     <value>Sage 300報表</value>
-    <comment>CSH ID 377002002</comment>
+    <comment>CSHID 377002002</comment>
   </data>
   <data name="Portal_Reports_Article2" xml:space="preserve">
     <value>關於報表的替換格式</value>
-    <comment>CSH ID 377002003</comment>
+    <comment>CSHID 377002003</comment>
   </data>
   <data name="Portal_Reports_Article3" xml:space="preserve">
     <value>瀏覽報表列印文章</value>
-    <comment>CSH ID 377002004</comment>
+    <comment>CSHID 377002004</comment>
   </data>
   <data name="PO_CreateBatch_Article1" xml:space="preserve">
     <value>關於採購訂單中的定期處理</value>
-    <comment>CSH ID 405017002</comment>
+    <comment>CSHID 405017002</comment>
   </data>
   <data name="PO_CreateBatch_Article2" xml:space="preserve">
     <value>在採購訂單中建立一個總帳交易批次</value>
-    <comment>CSH ID 405017003</comment>
+    <comment>CSHID 405017003</comment>
   </data>
   <data name="PO_CreateBatch_Screen" xml:space="preserve">
     <value>採購訂單建立批次螢幕</value>
-    <comment>CSH ID 405017001</comment>
+    <comment>CSHID 405017001</comment>
   </data>
   <data name="PO_GL_Integration_Article1" xml:space="preserve">
     <value>關於總帳整合選項</value>
-    <comment>CSH ID 405008002</comment>
+    <comment>CSHID 405008002</comment>
   </data>
   <data name="PO_GL_Integration_Article2" xml:space="preserve">
     <value>變更總帳整合選項</value>
-    <comment>CSH ID 405008003</comment>
+    <comment>CSHID 405008003</comment>
   </data>
   <data name="PO_GL_Integration_Screen" xml:space="preserve">
     <value>採購訂單總帳整合螢幕</value>
-    <comment>CSH ID 405008001</comment>
+    <comment>CSHID 405008001</comment>
   </data>
   <data name="Resources" xml:space="preserve">
     <value>資源</value>
@@ -3016,11 +3016,11 @@
   </data>
   <data name="IC_TransferSlips_Report_Article1" xml:space="preserve">
     <value>存貨控制報表</value>
-    <comment>CSH ID 211063002</comment>
+    <comment>CSHID 211063002</comment>
   </data>
   <data name="IC_TransferSlips_Report_Article2" xml:space="preserve">
     <value>列印轉移單報表</value>
-    <comment>CSH ID 211063003</comment>
+    <comment>CSHID 211063003</comment>
   </data>
   <data name="IC_TransferSlips_Report_Screen" xml:space="preserve">
     <value>存貨控制轉移單報表螢幕</value>
@@ -3120,19 +3120,19 @@
   </data>
   <data name="IC_InternalUsage_Article1" xml:space="preserve">
     <value>關於存貨控制中的交易處理</value>
-    <comment>CSH ID 211020002</comment>
+    <comment>CSHID 211020002</comment>
   </data>
   <data name="IC_InternalUsage_Article2" xml:space="preserve">
     <value>內部使用貨物</value>
-    <comment>CSH ID 211020003</comment>
+    <comment>CSHID 211020003</comment>
   </data>
   <data name="IC_InternalUsage_Screen" xml:space="preserve">
     <value>存貨控制內部使用螢幕</value>
-    <comment>CSH ID 211020001</comment>
+    <comment>CSHID 211020001</comment>
   </data>
   <data name="GL_ClearHistory_Article1" xml:space="preserve">
     <value>期末步驟</value>
-    <comment>CSH ID 168030002</comment>
+    <comment>CSHID 168030002</comment>
   </data>
   <data name="GL_ClearHistory_Article2" xml:space="preserve">
     <value>清除總帳歷史</value>
@@ -3154,41 +3154,29 @@
     <value>銷售訂單電郵訊息報表螢幕</value>
     <comment>CSHID 369036001</comment>
   </data>
-  <data name="PO_EmailMessages_Report_Article1" xml:space="preserve">
-    <value>關於採購訂單報表</value>
-    <comment>CSH ID 405038002</comment>
-  </data>
-  <data name="PO_EmailMessages_Report_Article2" xml:space="preserve">
-    <value>列印採購訂單分析和設定報表</value>
-    <comment>CSH ID 405038003</comment>
-  </data>
-  <data name="PO_EmailMessages_Report_Screen" xml:space="preserve">
-    <value>採購訂單電郵訊息報表螢幕</value>
-    <comment>CSH ID 405038001</comment>
-  </data>
   <data name="AP_Revaluation_Article1" xml:space="preserve">
     <value>關於重評價多幣別交易</value>
-    <comment>CSH ID 16043002</comment>
+    <comment>CSHID 16043002</comment>
   </data>
   <data name="AP_Revaluation_Article2" xml:space="preserve">
     <value>以其它幣別重評價交易</value>
-    <comment>CSH ID 16043003</comment>
+    <comment>CSHID 16043003</comment>
   </data>
   <data name="AP_Revaluation_Screen" xml:space="preserve">
     <value>應付帳款重評價螢幕</value>
-    <comment>CSH ID 16043001</comment>
+    <comment>CSHID 16043001</comment>
   </data>
   <data name="AR_Revaluation_Article1" xml:space="preserve">
     <value>關於重評價多幣別交易</value>
-    <comment>CSH ID 18042002</comment>
+    <comment>CSHID 18042002</comment>
   </data>
   <data name="AR_Revaluation_Article2" xml:space="preserve">
     <value>以其它幣別重評價交易</value>
-    <comment>CSH ID 18042003</comment>
+    <comment>CSHID 18042003</comment>
   </data>
   <data name="AR_Revaluation_Screen" xml:space="preserve">
     <value>應收帳款重評價螢幕</value>
-    <comment>CSH ID 18042001</comment>
+    <comment>CSHID 18042001</comment>
   </data>
   <data name="OE_CurrentOrdersInquiry_Article1" xml:space="preserve">
     <value>檢視已過帳憑證</value>
@@ -4543,7 +4531,7 @@
   </data>
   <data name="PM_Entering_Miscellaneous_Costs" xml:space="preserve">
     <value>輸入雜項成本</value>
-    <comment>CSH ID 403065002</comment>
+    <comment>CSHID 403065002</comment>
   </data>
   <data name="PM_MaterialUsage_Screen" xml:space="preserve">
     <value>專案成本管理物料使用螢幕</value>
@@ -4602,12 +4590,20 @@
     <value>專案成本管理更新保留款螢幕</value>
     <comment>403077001</comment>
   </data>
+  <data name="PM_Account_Sets_Screen" xml:space="preserve">
+    <value>專案成本管理科目集畫面</value>
+    <comment>CSHID 403053001</comment>
+  </data>
+  <data name="PM_Adding_or_Modifying_Account_Sets" xml:space="preserve">
+    <value>新增或修改科目集</value>
+    <comment>CSHID 403053002</comment>
+  </data>
   <data name="AP_1099CPRSCodes_Report_Article1" xml:space="preserve">
-    <value>Printing the 1099/CPRS Codes Report</value>
+    <value>列印 1099/CPRS 代碼報表</value>
     <comment>CSHID 16056002</comment>
   </data>
   <data name="AP_1099CPRSCodes_Report_Article2" xml:space="preserve">
-    <value>About Accounts Payable Reports</value>
+    <value>關於應付帳款報表</value>
     <comment>CSHID 16056003</comment>
   </data>
   <data name="AP_1099CPRSCodes_Report_Screen" xml:space="preserve">
@@ -4615,11 +4611,11 @@
     <comment>CSHID 16056001</comment>
   </data>
   <data name="AP_AccountSets_Report_Article1" xml:space="preserve">
-    <value>Printing the Account Sets Report</value>
+    <value>列印科目集報表</value>
     <comment>CSHID 16057002</comment>
   </data>
   <data name="AP_AccountSets_Report_Article2" xml:space="preserve">
-    <value>About Accounts Payable Reports</value>
+    <value>關於應付帳款報表</value>
     <comment>CSHID 16057003</comment>
   </data>
   <data name="AP_AccountSets_Report_Screen" xml:space="preserve">
@@ -4627,11 +4623,11 @@
     <comment>CSHID 16057001</comment>
   </data>
   <data name="AP_DistributionCodes_Report_Article1" xml:space="preserve">
-    <value>Printing the Distribution Codes Report</value>
+    <value>列印分佈代碼報表</value>
     <comment>CSHID 16058002</comment>
   </data>
   <data name="AP_DistributionCodes_Report_Article2" xml:space="preserve">
-    <value>About Accounts Payable Reports</value>
+    <value>關於應付帳款報表</value>
     <comment>CSHID 16058003</comment>
   </data>
   <data name="AP_DistributionCodes_Report_Screen" xml:space="preserve">
@@ -4639,11 +4635,11 @@
     <comment>CSHID 16058001</comment>
   </data>
   <data name="AP_DistributionSets_Report_Article1" xml:space="preserve">
-    <value>Printing the Distribution Sets Report</value>
+    <value>列印分佈集報表</value>
     <comment>CSHID 16059002</comment>
   </data>
   <data name="AP_DistributionSets_Report_Article2" xml:space="preserve">
-    <value>About Accounts Payable Reports</value>
+    <value>關於應付帳款報表</value>
     <comment>CSHID 16059003</comment>
   </data>
   <data name="AP_DistributionSets_Report_Screen" xml:space="preserve">
@@ -4651,11 +4647,11 @@
     <comment>CSHID 16059001</comment>
   </data>
   <data name="AP_EmailMessages_Report_Article1" xml:space="preserve">
-    <value>Printing the Email Messages Report</value>
+    <value>列印電子郵件訊息報表</value>
     <comment>CSHID 16060002</comment>
   </data>
   <data name="AP_EmailMessages_Report_Article2" xml:space="preserve">
-    <value>About Accounts Payable Reports</value>
+    <value>關於應付帳款報表</value>
     <comment>CSHID 16060003</comment>
   </data>
   <data name="AP_EmailMessages_Report_Screen" xml:space="preserve">
@@ -4663,11 +4659,11 @@
     <comment>CSHID 16060001</comment>
   </data>
   <data name="AP_GL_Integration_Report_Article1" xml:space="preserve">
-    <value>Printing the G/L Integration Report</value>
+    <value>列印總帳整合報表</value>
     <comment>CSHID 16061002</comment>
   </data>
   <data name="AP_GL_Integration_Report_Article2" xml:space="preserve">
-    <value>About Accounts Payable Reports</value>
+    <value>關於應付帳款報表</value>
     <comment>CSHID 16061003</comment>
   </data>
   <data name="AP_GL_Integration_Report_Screen" xml:space="preserve">
@@ -4675,11 +4671,11 @@
     <comment>CSHID 16061001</comment>
   </data>
   <data name="AP_OptionalFields_Report_Article1" xml:space="preserve">
-    <value>Printing the Optional Fields Report</value>
+    <value>列印選用欄位報表</value>
     <comment>CSHID 16062002</comment>
   </data>
   <data name="AP_OptionalFields_Report_Article2" xml:space="preserve">
-    <value>About Accounts Payable Reports</value>
+    <value>關於應付帳款報表</value>
     <comment>CSHID 16062003</comment>
   </data>
   <data name="AP_OptionalFields_Report_Screen" xml:space="preserve">
@@ -4687,11 +4683,11 @@
     <comment>CSHID 16062001</comment>
   </data>
   <data name="AP_Options_Report_Article1" xml:space="preserve">
-    <value>Printing the A/P Options Report</value>
+    <value>列印 應付帳款/選項報表</value>
     <comment>CSHID 16063002</comment>
   </data>
   <data name="AP_Options_Report_Article2" xml:space="preserve">
-    <value>About Accounts Payable Reports</value>
+    <value>關於應付帳款報表</value>
     <comment>CSHID 16063003</comment>
   </data>
   <data name="AP_Options_Report_Screen" xml:space="preserve">
@@ -4699,11 +4695,11 @@
     <comment>CSHID 16063001</comment>
   </data>
   <data name="AP_PaymentCodes_Report_Article1" xml:space="preserve">
-    <value>Printing the Payment Codes Report</value>
+    <value>列印付款代碼報表</value>
     <comment>CSHID 16064002</comment>
   </data>
   <data name="AP_PaymentCodes_Report_Article2" xml:space="preserve">
-    <value>About Accounts Payable Reports</value>
+    <value>關於應付帳款報表</value>
     <comment>CSHID 16064003</comment>
   </data>
   <data name="AP_PaymentCodes_Report_Screen" xml:space="preserve">
@@ -4711,939 +4707,1047 @@
     <comment>CSHID 16064001</comment>
   </data>
   <data name="AP_PaymentSelectionCodes_Report_Article1" xml:space="preserve">
-    <value>Printing the Payment Selection Codes Report</value>
+    <value>列印付款選項代碼報表</value>
     <comment>CSHID 16065002</comment>
   </data>
   <data name="AP_PaymentSelectionCodes_Report_Article2" xml:space="preserve">
-    <value>About Accounts Payable Reports</value>
+    <value>關於應付帳款報表</value>
     <comment>CSHID 16065003</comment>
   </data>
   <data name="AP_PaymentSelectionCodes_Report_Screen" xml:space="preserve">
     <value>應付帳款/付款選擇代碼報表</value>
     <comment>CSHID 16065001</comment>
   </data>
-  <data name="PM_AccountSets_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403020002</comment>
+  <data name="AP_Terms_Report_Article1" xml:space="preserve">
+    <value>列印條款報表</value>
+    <comment>CSHID 16066002</comment>
   </data>
-  <data name="PM_AccountSets_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403020003</comment>
+  <data name="AP_Terms_Report_Article2" xml:space="preserve">
+    <value>關於應付帳款報表</value>
+    <comment>CSHID 16066003</comment>
   </data>
-  <data name="PM_AccountSets_Report_Screen" xml:space="preserve">
-    <value>專案成本管理/科目集合報表</value>
-    <comment>403020001</comment>
+  <data name="AP_Terms_Report_Screen" xml:space="preserve">
+    <value>應付帳款/條款代碼</value>
+    <comment>CSHID 16066001</comment>
   </data>
-  <data name="PM_Categories_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403023002</comment>
+  <data name="PO_AccountSets_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405038002</comment>
   </data>
-  <data name="PM_Categories_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403023003</comment>
+  <data name="PO_AccountSets_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405038003</comment>
   </data>
-  <data name="PM_Categories_Report_Screen" xml:space="preserve">
-    <value>PJC Categories Report Screen</value>
-    <comment>403023001</comment>
+  <data name="PO_AccountSets_Report_Screen" xml:space="preserve">
+    <value>應付帳款/科目集報表</value>
+    <comment>405038001</comment>
   </data>
-  <data name="PM_Charges_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403024002</comment>
+  <data name="PO_AdditionalCosts_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405039002</comment>
   </data>
-  <data name="PM_Charges_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403024003</comment>
+  <data name="PO_AdditionalCosts_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405039003</comment>
   </data>
-  <data name="PM_Charges_Report_Screen" xml:space="preserve">
-    <value>PJC Charges Report Screen</value>
-    <comment>403024001</comment>
+  <data name="PO_AdditionalCosts_Report_Screen" xml:space="preserve">
+    <value>應付帳款/附加成本報表</value>
+    <comment>405039001</comment>
   </data>
-  <data name="PM_ContractStructures_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403027002</comment>
+  <data name="PO_GL_Integration_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405041002</comment>
   </data>
-  <data name="PM_ContractStructures_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403027003</comment>
+  <data name="PO_GL_Integration_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405041003</comment>
   </data>
-  <data name="PM_ContractStructures_Report_Screen" xml:space="preserve">
-    <value>專案成本管理/合約結構報表</value>
-    <comment>403027001</comment>
+  <data name="PO_GL_Integration_Report_Screen" xml:space="preserve">
+    <value>應付帳款/總帳整合報表</value>
+    <comment>405041001</comment>
   </data>
-  <data name="PM_CostTypes_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403029002</comment>
+  <data name="PO_Items_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405042002</comment>
   </data>
-  <data name="PM_CostTypes_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403029003</comment>
+  <data name="PO_Items_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405042003</comment>
   </data>
-  <data name="PM_CostTypes_Report_Screen" xml:space="preserve">
-    <value>專案成本管理/成本類型報表</value>
-    <comment>403029001</comment>
+  <data name="PO_Items_Report_Screen" xml:space="preserve">
+    <value>應付帳款/料號報表</value>
+    <comment>405042001</comment>
   </data>
-  <data name="PM_Employees_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403032002</comment>
+  <data name="PO_OptionalFields_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405043002</comment>
   </data>
-  <data name="PM_Employees_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403032003</comment>
+  <data name="PO_OptionalFields_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405043003</comment>
   </data>
-  <data name="PM_Employees_Report_Screen" xml:space="preserve">
-    <value>專案成本管理/雇員報表</value>
-    <comment>403032001</comment>
+  <data name="PO_OptionalFields_Report_Screen" xml:space="preserve">
+    <value>應付帳款/選用欄位報表</value>
+    <comment>405043001</comment>
   </data>
-  <data name="PM_Equipment_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403033002</comment>
+  <data name="PO_Options_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405044002</comment>
   </data>
-  <data name="PM_Equipment_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403033003</comment>
+  <data name="PO_Options_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405044003</comment>
   </data>
-  <data name="PM_Equipment_Report_Screen" xml:space="preserve">
-    <value>專案成本管理/設備報表</value>
-    <comment>403033001</comment>
+  <data name="PO_Options_Report_Screen" xml:space="preserve">
+    <value>應付帳款/選項報表</value>
+    <comment>405044001</comment>
   </data>
-  <data name="PM_GL_Integration_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403034002</comment>
+  <data name="PO_ShipViaCodes_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405045002</comment>
   </data>
-  <data name="PM_GL_Integration_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403034003</comment>
+  <data name="PO_ShipViaCodes_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405045003</comment>
   </data>
-  <data name="PM_GL_Integration_Report_Screen" xml:space="preserve">
-    <value>專案成本管理/總帳整合報表</value>
-    <comment>403034001</comment>
+  <data name="PO_ShipViaCodes_Report_Screen" xml:space="preserve">
+    <value>應付帳款/發貨經由代碼報表</value>
+    <comment>405045001</comment>
   </data>
-  <data name="PM_MiscellaneousExpenses_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403036002</comment>
+  <data name="PO_Templates_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405046002</comment>
   </data>
-  <data name="PM_MiscellaneousExpenses_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403036003</comment>
+  <data name="PO_Templates_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405046003</comment>
   </data>
-  <data name="PM_MiscellaneousExpenses_Report_Screen" xml:space="preserve">
-    <value>專案成本管理/ 雜項費用報表</value>
-    <comment>403036001</comment>
+  <data name="PO_Templates_Report_Screen" xml:space="preserve">
+    <value>應付帳款/範本報表</value>
+    <comment>405046001</comment>
   </data>
-  <data name="PM_OptionalFields_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403037002</comment>
+  <data name="PO_VendorContractCosts_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405047002</comment>
   </data>
-  <data name="PM_OptionalFields_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403037003</comment>
+  <data name="PO_VendorContractCosts_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405047003</comment>
   </data>
-  <data name="PM_OptionalFields_Report_Screen" xml:space="preserve">
-    <value>專案成本管理/自選欄位報表</value>
-    <comment>403037001</comment>
+  <data name="PO_VendorContractCosts_Report_Screen" xml:space="preserve">
+    <value>應付帳款/廠商合約成本報表</value>
+    <comment>405047001</comment>
   </data>
-  <data name="PM_Options_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403038002</comment>
+  <data name="PO_VendorDetails_Report_Screen" xml:space="preserve">
+    <value>應付帳款/廠商詳細資料報表</value>
+    <comment>405048001</comment>
   </data>
-  <data name="PM_Options_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403038003</comment>
+  <data name="PO_VendorDetails_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405048002</comment>
+  </data>
+  <data name="PO_VendorDetails_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405048003</comment>
+  </data>
+  <data name="PO_WeightUnitsOfMeasure_Report_Screen" xml:space="preserve">
+    <value>應付帳款/重量計量單位報表</value>
+    <comment>405049001</comment>
+  </data>
+  <data name="PO_WeightUnitsOfMeasure_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405049002</comment>
+  </data>
+  <data name="PO_WeightUnitsOfMeasure_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405049003</comment>
   </data>
   <data name="PM_Options_Report_Screen" xml:space="preserve">
     <value>專案成本管理/選項報表</value>
     <comment>403038001</comment>
   </data>
-  <data name="PM_OverheadExpenses_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403040002</comment>
+  <data name="PM_Options_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403038002</comment>
   </data>
-  <data name="PM_OverheadExpenses_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403040003</comment>
+  <data name="PM_Options_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403038003</comment>
   </data>
-  <data name="PM_OverheadExpenses_Report_Screen" xml:space="preserve">
-    <value>專案成本管理/管理費用報表</value>
-    <comment>403040001</comment>
+  <data name="PM_OptionalFields_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/選用欄位報表畫面</value>
+    <comment>403037001</comment>
+  </data>
+  <data name="PM_OptionalFields_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403037002</comment>
+  </data>
+  <data name="PM_OptionalFields_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403037003</comment>
+  </data>
+  <data name="PM_Projects_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/專案報表畫面</value>
+    <comment>403044001</comment>
   </data>
   <data name="PM_Projects_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
+    <value>關於專案成本管理報表</value>
     <comment>403044002</comment>
   </data>
   <data name="PM_Projects_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
+    <value>列印專案成本管理報表</value>
     <comment>403044003</comment>
   </data>
-  <data name="PM_Projects_Report_Screen" xml:space="preserve">
-    <value>PJC Projects Report Screen</value>
-    <comment>403044001</comment>
+  <data name="PM_Categories_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/類別報表畫面</value>
+    <comment>403023001</comment>
   </data>
-  <data name="PM_SegmentCodes_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
-    <comment>403045002</comment>
+  <data name="PM_Categories_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403023002</comment>
   </data>
-  <data name="PM_SegmentCodes_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
-    <comment>403045003</comment>
+  <data name="PM_Categories_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403023003</comment>
   </data>
-  <data name="PM_SegmentCodes_Report_Screen" xml:space="preserve">
-    <value>PJC Segment Codes Report Screen</value>
-    <comment>403045001</comment>
+  <data name="PM_Employees_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/員工報表畫面</value>
+    <comment>403032001</comment>
+  </data>
+  <data name="PM_Employees_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403032002</comment>
+  </data>
+  <data name="PM_Employees_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403032003</comment>
+  </data>
+  <data name="PM_Equipment_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/設備報表畫面</value>
+    <comment>403033001</comment>
+  </data>
+  <data name="PM_Equipment_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403033002</comment>
+  </data>
+  <data name="PM_Equipment_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403033003</comment>
+  </data>
+  <data name="PM_MiscellaneousExpenses_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/雜項費用報表畫面</value>
+    <comment>403036001</comment>
+  </data>
+  <data name="PM_MiscellaneousExpenses_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403036002</comment>
+  </data>
+  <data name="PM_MiscellaneousExpenses_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403036003</comment>
+  </data>
+  <data name="PM_OverheadExpenses_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/費用報表畫面</value>
+    <comment>403040001</comment>
+  </data>
+  <data name="PM_OverheadExpenses_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403040002</comment>
+  </data>
+  <data name="PM_OverheadExpenses_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403040003</comment>
+  </data>
+  <data name="PM_Subcontractors_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/分包商報表畫面</value>
+    <comment>403048001</comment>
   </data>
   <data name="PM_Subcontractors_Report_Article1" xml:space="preserve">
-    <value>About Project and Job Costing Reports</value>
+    <value>關於專案成本管理報表</value>
     <comment>403048002</comment>
   </data>
   <data name="PM_Subcontractors_Report_Article2" xml:space="preserve">
-    <value>Printing Project and Job Costing Reports</value>
+    <value>列印專案成本管理報表</value>
     <comment>403048003</comment>
   </data>
-  <data name="PM_Subcontractors_Report_Screen" xml:space="preserve">
-    <value>PJC Subcontractors Report Screen</value>
-    <comment>403048001</comment>
+  <data name="PM_Charges_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/收費報表畫面</value>
+    <comment>403024001</comment>
   </data>
-  <data name="PO_AccountSets_Report_Article1" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405038002</comment>
+  <data name="PM_Charges_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403024002</comment>
   </data>
-  <data name="PO_AccountSets_Report_Article2" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405038003</comment>
+  <data name="PM_Charges_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403024003</comment>
   </data>
-  <data name="PO_AccountSets_Report_Screen" xml:space="preserve">
-    <value>採購訂單/科目集合報表</value>
-    <comment>405038001</comment>
+  <data name="PM_CostTypes_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/成本類型報表畫面</value>
+    <comment>403029001</comment>
   </data>
-  <data name="PO_AdditionalCosts_Report_Article1" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405039002</comment>
+  <data name="PM_CostTypes_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403029002</comment>
   </data>
-  <data name="PO_AdditionalCosts_Report_Article2" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405039003</comment>
+  <data name="PM_CostTypes_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403029003</comment>
   </data>
-  <data name="PO_AdditionalCosts_Report_Screen" xml:space="preserve">
-    <value>採購訂單/附加成本報表</value>
-    <comment>405039001</comment>
+  <data name="PM_ContractStructures_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/合約結構報表畫面</value>
+    <comment>403027001</comment>
   </data>
-  <data name="PO_EmailMessages_Report_Article11" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405040002</comment>
+  <data name="PM_ContractStructures_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403027002</comment>
   </data>
-  <data name="PO_EmailMessages_Report_Article21" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405040003</comment>
+  <data name="PM_ContractStructures_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403027003</comment>
   </data>
-  <data name="PO_EmailMessages_Report_Screen1" xml:space="preserve">
-    <value>應付帳款/電郵訊息報表</value>
+  <data name="PM_SegmentCodes_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/節段代碼報表畫面</value>
+    <comment>403045001</comment>
+  </data>
+  <data name="PM_SegmentCodes_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403045002</comment>
+  </data>
+  <data name="PM_SegmentCodes_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403045003</comment>
+  </data>
+  <data name="PM_AccountSets_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/科目集報表畫面</value>
+    <comment>403020001</comment>
+  </data>
+  <data name="PM_AccountSets_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403020002</comment>
+  </data>
+  <data name="PM_AccountSets_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403020003</comment>
+  </data>
+  <data name="PM_GL_Integration_Report_Screen" xml:space="preserve">
+    <value>專案成本管理/總帳整合報表畫面</value>
+    <comment>403034001</comment>
+  </data>
+  <data name="PM_GL_Integration_Report_Article1" xml:space="preserve">
+    <value>關於專案成本管理報表</value>
+    <comment>403034002</comment>
+  </data>
+  <data name="PM_GL_Integration_Report_Article2" xml:space="preserve">
+    <value>列印專案成本管理報表</value>
+    <comment>403034003</comment>
+  </data>
+  <data name="PO_EmailMessages_Report_Screen" xml:space="preserve">
+    <value>應付帳款/電子郵件訊息報表</value>
     <comment>405040001</comment>
   </data>
-  <data name="PO_GL_Integration_Report_Article1" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405041002</comment>
+  <data name="PO_EmailMessages_Report_Article1" xml:space="preserve">
+    <value>關於採購訂單報表</value>
+    <comment>405040002</comment>
   </data>
-  <data name="PO_GL_Integration_Report_Article2" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405041003</comment>
-  </data>
-  <data name="PO_GL_Integration_Report_Screen" xml:space="preserve">
-    <value>採購訂單總帳整合報表</value>
-    <comment>405041001</comment>
-  </data>
-  <data name="PO_Items_Report_Article1" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405042002</comment>
-  </data>
-  <data name="PO_Items_Report_Article2" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405042003</comment>
-  </data>
-  <data name="PO_Items_Report_Screen" xml:space="preserve">
-    <value>採購訂單/產品報表</value>
-    <comment>405042001</comment>
-  </data>
-  <data name="PO_OptionalFields_Report_Article1" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405043002</comment>
-  </data>
-  <data name="PO_OptionalFields_Report_Article2" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405043003</comment>
-  </data>
-  <data name="PO_OptionalFields_Report_Screen" xml:space="preserve">
-    <value>採購訂單/自選欄位報表</value>
-    <comment>405043001</comment>
-  </data>
-  <data name="PO_Options_Report_Article1" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405044002</comment>
-  </data>
-  <data name="PO_Options_Report_Article2" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405044003</comment>
-  </data>
-  <data name="PO_Options_Report_Screen" xml:space="preserve">
-    <value>採購訂單/選項報表</value>
-    <comment>405044001</comment>
-  </data>
-  <data name="PO_ShipViaCodes_Report_Article1" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405045002</comment>
-  </data>
-  <data name="PO_ShipViaCodes_Report_Article2" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405045003</comment>
-  </data>
-  <data name="PO_ShipViaCodes_Report_Screen" xml:space="preserve">
-    <value>採購訂單/發貨經由代碼報表</value>
-    <comment>405045001</comment>
-  </data>
-  <data name="PO_Templates_Report_Article1" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405046002</comment>
-  </data>
-  <data name="PO_Templates_Report_Article2" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405046003</comment>
-  </data>
-  <data name="PO_Templates_Report_Screen" xml:space="preserve">
-    <value>採購訂單/範本報表</value>
-    <comment>405046001</comment>
-  </data>
-  <data name="PO_VendorContractCosts_Report_Article1" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405047002</comment>
-  </data>
-  <data name="PO_VendorContractCosts_Report_Article2" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405047003</comment>
-  </data>
-  <data name="PO_VendorContractCosts_Report_Screen" xml:space="preserve">
-    <value>採購訂單/供應商合約成本報表</value>
-    <comment>405047001</comment>
-  </data>
-  <data name="PO_VendorDetails_Report_Article1" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405048002</comment>
-  </data>
-  <data name="PO_VendorDetails_Report_Article2" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405048003</comment>
-  </data>
-  <data name="PO_VendorDetails_Report_Screen" xml:space="preserve">
-    <value>採購訂單/供應商明細</value>
-    <comment>405048001</comment>
-  </data>
-  <data name="PO_WeightUnitsOfMeasure_Report_Article1" xml:space="preserve">
-    <value>About Purchase Orders Reports</value>
-    <comment>405049002</comment>
-  </data>
-  <data name="PO_WeightUnitsOfMeasure_Report_Article2" xml:space="preserve">
-    <value>Printing Purchase Orders Reports</value>
-    <comment>405049003</comment>
-  </data>
-  <data name="PO_WeightUnitsOfMeasure_Report_Screen" xml:space="preserve">
-    <value>採購訂單重量計量單位報表</value>
-    <comment>405049001</comment>
+  <data name="PO_EmailMessages_Report_Article2" xml:space="preserve">
+    <value>列印採購訂單報表</value>
+    <comment>405040003</comment>
   </data>
   <data name="AR_Options_Report_Screen" xml:space="preserve">
     <value>應收帳款/選項報表</value>
     <comment>CSHID 18077001</comment>
   </data>
   <data name="AR_Options_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18077002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18077002</comment>
+</data>
   <data name="AR_Options_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Options Report</value>
-    <comment>CSHID 18077003</comment>
-  </data>
+	<value>列印 應收帳款/選項報表</value>
+	<comment>CSHID 18077003</comment>
+</data>
   <data name="AR_AccountSets_Report_Screen" xml:space="preserve">
     <value>應收帳款/科目集合報表</value>
     <comment>CSHID 18067001</comment>
   </data>
   <data name="AR_AccountSets_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18067002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18067002</comment>
+</data>
   <data name="AR_AccountSets_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Account Sets Report</value>
-    <comment>CSHID 18067003</comment>
-  </data>
+	<value>列印 應收帳款/科目集報表</value>
+	<comment>CSHID 18067003</comment>
+</data>
   <data name="AR_BillingCycles_Report_Screen" xml:space="preserve">
     <value>應收帳款/帳單週期報表</value>
     <comment>CSHID 18068001</comment>
   </data>
   <data name="AR_BillingCycles_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18068002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18068002</comment>
+</data>
   <data name="AR_BillingCycles_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Billing Cycles Report</value>
-    <comment>CSHID 18068003</comment>
-  </data>
+	<value>列印 應收帳款/帳單週期報表</value>
+	<comment>CSHID 18068003</comment>
+</data>
   <data name="AR_DistributionCodes_Report_Screen" xml:space="preserve">
     <value>應收帳款/分配代碼報表</value>
     <comment>CSHID 18070001</comment>
   </data>
   <data name="AR_DistributionCodes_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18070002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18070002</comment>
+</data>
   <data name="AR_DistributionCodes_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Distribution Codes Report</value>
-    <comment>CSHID 18070003</comment>
-  </data>
+	<value>列印 應收帳款/分佈代碼報表</value>
+	<comment>CSHID 18070003</comment>
+</data>
   <data name="AR_DunningMessages_Report_Screen" xml:space="preserve">
     <value>應收帳款/催款用語報表</value>
     <comment>CSHID 18071001</comment>
   </data>
   <data name="AR_DunningMessages_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18071002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18071002</comment>
+</data>
   <data name="AR_DunningMessages_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Dunning Messages Report</value>
-    <comment>CSHID 18071003</comment>
-  </data>
+	<value>列印 應收帳款/催款用語報表</value>
+	<comment>CSHID 18071003</comment>
+</data>
   <data name="AR_InterestProfiles_Report_Screen" xml:space="preserve">
     <value>應收帳款/利息概況報表</value>
     <comment>CSHID 18074001</comment>
   </data>
   <data name="AR_InterestProfiles_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18074002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18074002</comment>
+</data>
   <data name="AR_InterestProfiles_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Interest Profiles Report</value>
-    <comment>CSHID 18074003</comment>
-  </data>
+	<value>列印 應收帳款/利息概況報表</value>
+	<comment>CSHID 18074003</comment>
+</data>
   <data name="AR_PaymentCodes_Report_Screen" xml:space="preserve">
     <value>應收帳款/付款代碼報表</value>
     <comment>CSHID 18078001</comment>
   </data>
   <data name="c" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18078002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18078002</comment>
+</data>
   <data name="AR_PaymentCodes_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Payment Codes Report</value>
-    <comment>CSHID 18078003</comment>
-  </data>
+	<value>列印 應收帳款/付款代碼報表</value>
+	<comment>CSHID 18078003</comment>
+</data>
   <data name="AR_Salespersons_Report_Screen" xml:space="preserve">
     <value>應收帳款/業務員報表</value>
     <comment>CSHID 18079001</comment>
   </data>
   <data name="AR_Salespersons_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18079002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18079002</comment>
+</data>
   <data name="AR_Salespersons_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Salespersons Reports</value>
-    <comment>CSHID 18079003</comment>
-  </data>
+	<value>列印 應收帳款/銷售人員報表</value>
+	<comment>CSHID 18079003</comment>
+</data>
   <data name="AR_TermsCode_Report_Screen" xml:space="preserve">
     <value>應收帳款/條款報表</value>
     <comment>CSHID 18080001</comment>
   </data>
   <data name="AR_TermsCode_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18080002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18080002</comment>
+</data>
   <data name="AR_TermsCode_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Terms Codes Report</value>
-    <comment>CSHID 18080003</comment>
-  </data>
+	<value>列印 應收帳款/條款代碼報表</value>
+	<comment>CSHID 18080003</comment>
+</data>
   <data name="AR_Items_Report_Screen" xml:space="preserve">
     <value>應收帳款/產品報表</value>
     <comment>CSHID 18075001</comment>
   </data>
   <data name="AR_Items_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18075002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18075002</comment>
+</data>
   <data name="AR_Items_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Items Report</value>
-    <comment>CSHID 18075003</comment>
-  </data>
+	<value>列印 應收帳款/料號報表</value>
+	<comment>CSHID 18075003</comment>
+</data>
   <data name="AR_EmailMessages_Report_Screen" xml:space="preserve">
     <value>應付帳款/電郵訊息報表</value>
     <comment>CSHID 18072001</comment>
   </data>
   <data name="AR_EmailMessages_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18072002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18072002</comment>
+</data>
   <data name="AR_EmailMessages_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Email Messages Report</value>
-    <comment>CSHID 18072003</comment>
-  </data>
+	<value>列印 應收帳款/電子郵件訊息報表</value>
+	<comment>CSHID 18072003</comment>
+</data>
   <data name="AR_GL_Integration_Report_Screen" xml:space="preserve">
     <value>應收帳款/總帳整合報表</value>
     <comment>CSHID 18073001</comment>
   </data>
   <data name="AR_GL_Integration_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18073002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18073002</comment>
+</data>
   <data name="AR_GL_Integration_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R G/L Integration Report</value>
-    <comment>CSHID 18073003</comment>
-  </data>
+	<value>列印 應收帳款/總帳整合報表</value>
+	<comment>CSHID 18073003</comment>
+</data>
   <data name="AR_OptionalFields_Report_Screen" xml:space="preserve">
     <value>應收帳款/自選欄位報表</value>
     <comment>CSHID 18076001</comment>
   </data>
   <data name="AR_OptionalFields_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18076002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18076002</comment>
+</data>
   <data name="AR_OptionalFields_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Optional Fields Report</value>
-    <comment>CSHID 18076003</comment>
-  </data>
+	<value>列印 應收帳款/選用欄位報表</value>
+	<comment>CSHID 18076003</comment>
+</data>
   <data name="AR_CommentTypes_Report_Screen" xml:space="preserve">
     <value>應收帳款/備註類型報表</value>
     <comment>CSHID 18069001</comment>
   </data>
   <data name="AR_CommentTypes_Report_Article1" xml:space="preserve">
-    <value>About Accounts Receivable Reports</value>
-    <comment>CSHID 18069002</comment>
-  </data>
+	<value>關於應收帳款報表</value>
+	<comment>CSHID 18069002</comment>
+</data>
   <data name="AR_CommentTypes_Report_Article2" xml:space="preserve">
-    <value>Printing the A/R Comment Types Report</value>
-    <comment>CSHID 18069003</comment>
-  </data>
+	<value>列印 應收帳款/備註類型報表</value>
+	<comment>CSHID 18069003</comment>
+</data>
   <data name="GL_AccountStructures_Report_Screen" xml:space="preserve">
-    <value>總帳/科目結構報表</value>
-    <comment>CSHID 168043001</comment>
-  </data>
+	<value>總帳科目結構報表</value>
+	<comment>CSHID 168043001</comment>
+</data>
   <data name="GL_AccountStructures_Report_Article1" xml:space="preserve">
-    <value>About General Ledger Reports</value>
-    <comment>CSHID 168043002</comment>
-  </data>
+	<value>關於總帳報表</value>
+	<comment>CSHID 168043002</comment>
+</data>
   <data name="GL_AccountStructures_Report_Article2" xml:space="preserve">
-    <value>Printing the G/L Account Structures Report</value>
-    <comment>CSHID 168043003</comment>
-  </data>
+	<value>列印總帳科目結構報表</value>
+	<comment>CSHID 168043003</comment>
+</data>
   <data name="GL_SegmentCodes_Report_Screen" xml:space="preserve">
     <value>總帳/節段代碼報表</value>
-    <comment>CSHID 168047001</comment>
-  </data>
+	<comment>CSHID 168047001</comment>
+</data>
   <data name="GL_SegmentCodes_Report_Article1" xml:space="preserve">
-    <value>About General Ledger Reports</value>
-    <comment>CSHID 168047002</comment>
-  </data>
+	<value>關於總帳報表</value>
+	<comment>CSHID 168047002</comment>
+</data>
   <data name="GL_SegmentCodes_Report_Article2" xml:space="preserve">
-    <value>Printing the G/L Segment Codes Report</value>
-    <comment>CSHID 168047003</comment>
-  </data>
+	<value>列印總帳節段代碼報表</value>
+	<comment>CSHID 168047003</comment>
+</data>
   <data name="GL_Revaluation_Codes_Report_Screen" xml:space="preserve">
     <value>總帳/重評價代碼報表</value>
-    <comment>CSHID 168046001</comment>
-  </data>
+	<comment>CSHID 168046001</comment>
+</data>
   <data name="GL_Revaluation_Codes_Report_Article1" xml:space="preserve">
-    <value>About General Ledger Reports</value>
-    <comment>CSHID 168046002</comment>
-  </data>
+	<value>關於總帳報表</value>
+	<comment>CSHID 168046002</comment>
+</data>
   <data name="GL_Revaluation_Codes_Report_Article2" xml:space="preserve">
-    <value>Printing the G/L Revaluation Codes Report</value>
-    <comment>CSHID 168046003</comment>
-  </data>
+	<value>列印總帳重評價代碼報表</value>
+	<comment>CSHID 168046003</comment>
+</data>
   <data name="GL_AccountGroups_Report_Screen" xml:space="preserve">
     <value>總帳/科目群組報表</value>
-    <comment>CSHID 168042001</comment>
-  </data>
+	<comment>CSHID 168042001</comment>
+</data>
   <data name="GL_AccountGroups_Report_Article1" xml:space="preserve">
-    <value>About General Ledger Reports</value>
-    <comment>CSHID 168042002</comment>
-  </data>
+	<value>關於總帳報表</value>
+	<comment>CSHID 168042002</comment>
+</data>
   <data name="GL_AccountGroups_Report_Article2" xml:space="preserve">
-    <value>Printing the G/L Account Groups Report</value>
-    <comment>CSHID 168042003</comment>
-  </data>
+	<value>列印總帳科目集報表</value>
+	<comment>CSHID 168042003</comment>
+</data>
   <data name="GL_Options_Report_Screen" xml:space="preserve">
     <value>總帳/選項報表</value>
-    <comment>CSHID 168045001</comment>
-  </data>
+	<comment>CSHID 168045001</comment>
+</data>
   <data name="GL_Options_Report_Article1" xml:space="preserve">
-    <value>About General Ledger Reports</value>
-    <comment>CSHID 168045002</comment>
-  </data>
+	<value>關於總帳報表</value>
+	<comment>CSHID 168045002</comment>
+</data>
   <data name="GL_Options_Report_Article2" xml:space="preserve">
-    <value>Printing the G/L Options Report</value>
-    <comment>CSHID 168045003</comment>
-  </data>
+	<value>列印總帳選項報表</value>
+	<comment>CSHID 168045003</comment>
+</data>
   <data name="GL_OptionalFields_Report_Screen" xml:space="preserve">
     <value>總帳/自選欄位報表</value>
-    <comment>CSHID 168044001</comment>
-  </data>
+	<comment>CSHID 168044001</comment>
+</data>
   <data name="GL_OptionalFields_Report_Article1" xml:space="preserve">
-    <value>About General Ledger Reports</value>
-    <comment>CSHID 168044002</comment>
-  </data>
+	<value>關於總帳報表</value>
+	<comment>CSHID 168044002</comment>
+</data>
   <data name="GL_OptionalFields_Report_Article2" xml:space="preserve">
-    <value>Printing the G/L Optional Fields Report</value>
-    <comment>CSHID 168044003</comment>
-  </data>
+	<value>列印總帳選用欄位報表</value>
+	<comment>CSHID 168044003</comment>
+</data>
   <data name="TX_Authorities_Report_Screen" xml:space="preserve">
-    <value>稅務機關報表</value>
-    <comment>CSHID 497007001</comment>
-  </data>
+	<value>稅務機關報表</value>
+	<comment>CSHID 497007001</comment>
+</data>
   <data name="TX_Authorities_Report_Article1" xml:space="preserve">
-    <value>About Tax Services Reports</value>
-    <comment>CSHID 497007002</comment>
-  </data>
+	<value>關於稅務服務報表</value>
+	<comment>CSHID 497007002</comment>
+</data>
   <data name="TX_Authorities_Report_Article2" xml:space="preserve">
-    <value>Printing the Tax Authorities Report</value>
-    <comment>CSHID 497007003</comment>
-  </data>
+	<value>列印稅務機關報表</value>
+	<comment>CSHID 497007003</comment>
+</data>
   <data name="TX_Classes_Report_Screen" xml:space="preserve">
-    <value>稅務等級報表</value>
-    <comment>CSHID 497008001</comment>
-  </data>
+	<value>稅務等級報表</value>
+	<comment>CSHID 497008001</comment>
+</data>
   <data name="TX_Classes_Report_Article1" xml:space="preserve">
-    <value>About Tax Services Reports</value>
-    <comment>CSHID 497008002</comment>
-  </data>
+	<value>關於稅務服務報表</value>
+	<comment>CSHID 497008002</comment>
+</data>
   <data name="TX_Classes_Report_Article2" xml:space="preserve">
-    <value>Printing the Tax Classes Report</value>
-    <comment>CSHID 497008003</comment>
-  </data>
+	<value>列印稅務等級報表</value>
+	<comment>CSHID 497008003</comment>
+</data>
   <data name="TX_Rates_Report_Screen" xml:space="preserve">
-    <value>稅率報表</value>
-    <comment>CSHID 497010001</comment>
-  </data>
+	<value>稅率報表</value>
+	<comment>CSHID 497010001</comment>
+</data>
   <data name="TX_Rates_Report_Article1" xml:space="preserve">
-    <value>About Tax Services Reports</value>
-    <comment>CSHID 497010002</comment>
-  </data>
+	<value>關於稅務服務報表</value>
+	<comment>CSHID 497010002</comment>
+</data>
   <data name="TX_Rates_Report_Article2" xml:space="preserve">
-    <value>Printing the Tax Rates Report</value>
-    <comment>CSHID 497010003</comment>
-  </data>
+	<value>列印稅率報表</value>
+	<comment>CSHID 497010003</comment>
+</data>
   <data name="TX_Groups_Report_Screen" xml:space="preserve">
-    <value>稅務群組報表</value>
-    <comment>CSHID 497009001</comment>
-  </data>
+	<value>稅務群組報表</value>
+	<comment>CSHID 497009001</comment>
+</data>
   <data name="TX_Groups_Report_Article1" xml:space="preserve">
-    <value>About Tax Services Reports</value>
-    <comment>CSHID 497009002</comment>
-  </data>
+	<value>關於稅務服務報表</value>
+	<comment>CSHID 497009002</comment>
+</data>
   <data name="TX_Groups_Report_Article2" xml:space="preserve">
-    <value>Printing the Tax Groups Report</value>
-    <comment>CSHID 497009003</comment>
-  </data>
+	<value>列印稅務群組報表</value>
+	<comment>CSHID 497009003</comment>
+</data>
   <data name="BK_Banks_Report_Screen" xml:space="preserve">
-    <value>銀行報表</value>
-    <comment>CSHID 37036001</comment>
-  </data>
+	<value>銀行報表</value>
+	<comment>CSHID 37036001</comment>
+</data>
   <data name="BK_Banks_Report_Article1" xml:space="preserve">
-    <value>Printing the Banks Report</value>
-    <comment>CSHID 37036002</comment>
-  </data>
+	<value>列印銀行報表</value>
+	<comment>CSHID 37036002</comment>
+</data>
   <data name="BK_Banks_Report_Article2" xml:space="preserve">
-    <value>About Bank Services Reports</value>
-    <comment>CSHID 37036003</comment>
-  </data>
+	<value>關於銀行服務報表</value>
+	<comment>CSHID 37036003</comment>
+</data>
   <data name="BK_Options_Report_Screen" xml:space="preserve">
-    <value>銀行 選項報表</value>
-    <comment>CSHID 37042001</comment>
-  </data>
+	<value>銀行選項報表</value>
+	<comment>CSHID 37042001</comment>
+</data>
   <data name="BK_Options_Report_Article1" xml:space="preserve">
-    <value>Printing the Bank Options Report</value>
-    <comment>CSHID 37042002</comment>
-  </data>
+	<value>列印銀行選項報表</value>
+	<comment>CSHID 37042002</comment>
+</data>
   <data name="BK_Options_Report_Article2" xml:space="preserve">
-    <value>About Bank Services Reports</value>
-    <comment>CSHID 37042003</comment>
-  </data>
+	<value>關於銀行服務報表</value>
+	<comment>CSHID 37042003</comment>
+</data>
   <data name="BK_DistributionCodes_Report_Screen" xml:space="preserve">
     <value>銀行分配代碼報表</value>
     <comment>CSHID 37039001</comment>
   </data>
   <data name="BK_DistributionCodes_Report_Article1" xml:space="preserve">
-    <value>Printing the Bank Distribution Codes Report</value>
-    <comment>CSHID 37039002</comment>
-  </data>
+	<value>列印銀行分佈代碼報表</value>
+	<comment>CSHID 37039002</comment>
+</data>
   <data name="BK_DistributionCodes_Report_Article2" xml:space="preserve">
-    <value>About Bank Services Reports</value>
-    <comment>CSHID 37039003</comment>
-  </data>
+	<value>關於銀行服務報表</value>
+	<comment>CSHID 37039003</comment>
+</data>
   <data name="BK_DistributionSets_Report_Screen" xml:space="preserve">
     <value>銀行分配集合報表</value>
     <comment>CSHID 37040001</comment>
   </data>
   <data name="BK_DistributionSets_Report_Article1" xml:space="preserve">
-    <value>Printing the Bank Distribution Sets Report</value>
-    <comment>CSHID 37040002</comment>
-  </data>
+	<value>列印銀行分佈集報表</value>
+	<comment>CSHID 37040002</comment>
+</data>
   <data name="BK_DistributionSets_Report_Article2" xml:space="preserve">
-    <value>About Bank Services Reports</value>
-    <comment>CSHID 37040003</comment>
-  </data>
+	<value>關於銀行服務報表</value>
+	<comment>CSHID 37040003</comment>
+</data>
   <data name="BK_CreditCardTypes_Report_Screen" xml:space="preserve">
     <value>信用卡類型報表</value>
     <comment>CSHID 37038001</comment>
   </data>
   <data name="BK_CreditCardTypes_Report_Article1" xml:space="preserve">
-    <value>Printing the Bank Credit Card Types Report</value>
-    <comment>CSHID 37038002</comment>
-  </data>
+	<value>列印銀行信用卡類型報表</value>
+	<comment>CSHID 37038002</comment>
+</data>
   <data name="BK_CreditCardTypes_Report_Article2" xml:space="preserve">
-    <value>About Bank Services Reports</value>
-    <comment>CSHID 37038003</comment>
-  </data>
+	<value>關於銀行服務報表</value>
+	<comment>CSHID 37038003</comment>
+</data>
   <data name="BK_GL_Integration_Report_Screen" xml:space="preserve">
-    <value>銀行總帳整合報表</value>
-    <comment>CSHID 37041001</comment>
-  </data>
+	<value>銀行總帳整合報表</value>
+	<comment>CSHID 37041001</comment>
+</data>
   <data name="BK_GL_Integration_Report_Article1" xml:space="preserve">
-    <value>Printing the Bank G/L Integration Report</value>
-    <comment>CSHID 37041002</comment>
-  </data>
+	<value>列印銀行總帳整合報表</value>
+	<comment>CSHID 37041002</comment>
+</data>
   <data name="BK_GL_Integration_Report_Article2" xml:space="preserve">
-    <value>About Bank Services Reports</value>
-    <comment>CSHID 37041003</comment>
-  </data>
+	<value>關於銀行服務報表</value>
+	<comment>CSHID 37041003</comment>
+</data>
+  <data name="IC_VendorDetails_Report_Screen" xml:space="preserve">
+	<value>存貨控制/廠商詳細資料報表</value>
+	<comment>CSHID 211134001</comment>
+</data>
+  <data name="IC_VendorDetails_Report_Article1" xml:space="preserve">
+	<value>存貨控制報表</value>
+	<comment>CSHID 211134002</comment>
+</data>
+  <data name="IC_VendorDetails_Report_Article2" xml:space="preserve">
+	<value>列印 存貨控制/廠商詳細資料報表</value>
+	<comment>CSHID 211134003</comment>
+</data>
+  <data name="IC_CustomerDetails_Report_Screen" xml:space="preserve">
+	<value>存貨控制/客戶詳細資料報表</value>
+	<comment>CSHID 211120001</comment>
+</data>
+  <data name="IC_CustomerDetails_Report_Article1" xml:space="preserve">
+	<value>存貨控制報表</value>
+	<comment>CSHID 211120002</comment>
+</data>
+  <data name="IC_CustomerDetails_Report_Article2" xml:space="preserve">
+	<value>列印 存貨控制/客戶詳細資料報表</value>
+	<comment>CSHID 211120003</comment>
+</data>
+  <data name="IC_Locations_Report_Screen" xml:space="preserve">
+	<value>存貨控制/地點報表</value>
+	<comment>CSHID 211125001</comment>
+</data>
+  <data name="IC_Locations_Report_Article1" xml:space="preserve">
+	<value>存貨控制報表</value>
+	<comment>CSHID 211125002</comment>
+</data>
+  <data name="IC_Locations_Report_Article2" xml:space="preserve">
+	<value>列印 存貨控制/地點報表</value>
+	<comment>CSHID 211125003</comment>
+</data>
   <data name="IC_LocationDetails_Report_Screen" xml:space="preserve">
     <value>存貨控制/地點明細報表</value>
     <comment>CSHID 211124001</comment>
   </data>
   <data name="IC_LocationDetails_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211124002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211124002</comment>
+</data>
   <data name="IC_LocationDetails_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Location Details Report</value>
-    <comment>CSHID 211124003</comment>
-  </data>
+	<value>列印 存貨控制/地點詳細資料報表</value>
+	<comment>CSHID 211124003</comment>
+</data>
   <data name="IC_ManufacturersItems_Report_Screen" xml:space="preserve">
     <value>存貨控制/製造商產品報表</value>
     <comment>CSHID 211126001</comment>
   </data>
   <data name="IC_ManufacturersItems_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211126002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211126002</comment>
+</data>
   <data name="IC_ManufacturersItems_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Manufacturers' Items Report</value>
-    <comment>CSHID 211126003</comment>
-  </data>
+	<value>列印 存貨控制/製造商料號報表</value>
+	<comment>CSHID 211126003</comment>
+</data>
+  <data name="IC_Categories_Report_Screen" xml:space="preserve">
+	<value>存貨控制/類別報表</value>
+	<comment>CSHID 211118001</comment>
+</data>
+  <data name="IC_Categories_Report_Article1" xml:space="preserve">
+	<value>存貨控制報表</value>
+	<comment>CSHID 211118002</comment>
+</data>
+  <data name="IC_Categories_Report_Article2" xml:space="preserve">
+	<value>列印 存貨控制/類別報表</value>
+	<comment>CSHID 211118003</comment>
+</data>
   <data name="IC_BillsOfMaterial_Report_Screen" xml:space="preserve">
     <value>存貨控制/用料清單報表</value>
     <comment>CSHID 211117001</comment>
   </data>
   <data name="IC_BillsOfMaterial_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211117002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211117002</comment>
+</data>
   <data name="IC_BillsOfMaterial_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Bills of Material Report</value>
-    <comment>CSHID 211117003</comment>
-  </data>
+	<value>列印 存貨控制/用料清單報表</value>
+	<comment>CSHID 211117003</comment>
+</data>
+  <data name="IC_KittingItems_Report_Screen" xml:space="preserve">
+	<value>存貨控制/配套料號報表</value>
+	<comment>CSHID 211123001</comment>
+</data>
+  <data name="IC_KittingItems_Report_Article1" xml:space="preserve">
+	<value>存貨控制報表</value>
+	<comment>CSHID 211123002</comment>
+</data>
+  <data name="IC_KittingItems_Report_Article2" xml:space="preserve">
+	<value>列印 存貨控制/配套料號報表</value>
+	<comment>CSHID 211123003</comment>
+</data>
+  <data name="IC_ReorderQuantities_Report_Screen" xml:space="preserve">
+	<value>存貨控制/再訂貨數量報表</value>
+	<comment>CSHID 211131001</comment>
+</data>
+  <data name="IC_ReorderQuantities_Report_Article1" xml:space="preserve">
+	<value>存貨控制報表</value>
+	<comment>CSHID 211131002</comment>
+</data>
+  <data name="IC_ReorderQuantities_Report_Article2" xml:space="preserve">
+	<value>列印 存貨控制/再訂購數量報表</value>
+	<comment>CSHID 211131003</comment>
+</data>
   <data name="IC_AccountSets_Report_Screen" xml:space="preserve">
-    <value>存貨控制/科目集合報表</value>
-    <comment>CSHID 211116001</comment>
-  </data>
+	<value>存貨控制/科目集報表</value>
+	<comment>CSHID 211116001</comment>
+</data>
   <data name="IC_AccountSets_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211116002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211116002</comment>
+</data>
   <data name="IC_AccountSets_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Account Sets Report</value>
-    <comment>CSHID 211116003</comment>
-  </data>
+	<value>列印 存貨控制/科目集報表</value>
+	<comment>CSHID 211116003</comment>
+</data>
+  <data name="IC_PriceListCodes_Report_Screen" xml:space="preserve">
+	<value>存貨控制/價目表代碼報表</value>
+	<comment>CSHID 211130001</comment>
+</data>
+  <data name="IC_PriceListCodes_Report_Article1" xml:space="preserve">
+	<value>存貨控制報表</value>
+	<comment>CSHID 211130002</comment>
+</data>
+  <data name="IC_PriceListCodes_Report_Article2" xml:space="preserve">
+	<value>列印 存貨控制/價目表代碼報表</value>
+	<comment>CSHID 211130003</comment>
+</data>
   <data name="IC_ItemStructures_Report_Screen" xml:space="preserve">
     <value>存貨控制/產品結構報表</value>
     <comment>CSHID 211122001</comment>
   </data>
   <data name="IC_ItemStructures_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211122002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211122002</comment>
+</data>
   <data name="IC_ItemStructures_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Item Structures Report</value>
-    <comment>CSHID 211122003</comment>
-  </data>
+	<value>列印 存貨控制/料號結構報表</value>
+	<comment>CSHID 211122003</comment>
+</data>
   <data name="IC_MaskStructures_Report_Screen" xml:space="preserve">
     <value>存貨控制/遮罩結構報表</value>
     <comment>CSHID 211127001</comment>
   </data>
   <data name="IC_MaskStructures_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211127002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211127002</comment>
+</data>
   <data name="IC_MaskStructures_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Mask Structures Report</value>
-    <comment>CSHID 211127003</comment>
-  </data>
+	<value>列印 存貨控制/遮罩結構報表</value>
+	<comment>CSHID 211127003</comment>
+</data>
   <data name="IC_SegmentCodes_Report_Screen" xml:space="preserve">
     <value>存貨控制/節段代碼報表</value>
     <comment>CSHID 211132001</comment>
   </data>
   <data name="IC_SegmentCodes_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211132002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211132002</comment>
+</data>
   <data name="IC_SegmentCodes_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Segment Codes Report</value>
-    <comment>CSHID 211132003</comment>
-  </data>
+	<value>列印 存貨控制/節段代碼報表</value>
+	<comment>CSHID 211132003</comment>
+</data>
   <data name="IC_Options_Report_Screen" xml:space="preserve">
     <value>存貨控制/選項報表</value>
     <comment>CSHID 211129001</comment>
   </data>
   <data name="IC_Options_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211129002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211129002</comment>
+</data>
   <data name="IC_Options_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Options Report</value>
-    <comment>CSHID 211129003</comment>
-  </data>
+	<value>列印 存貨控制/選項報表</value>
+	<comment>CSHID 211129003</comment>
+</data>
   <data name="IC_OptionalFields_Report_Screen" xml:space="preserve">
     <value>存貨控制/自選欄位報表</value>
     <comment>CSHID 211128001</comment>
   </data>
   <data name="IC_OptionalFields_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211128002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211128002</comment>
+</data>
   <data name="IC_OptionalFields_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Optional Fields Report</value>
-    <comment>CSHID 211128003</comment>
-  </data>
+	<value>列印 存貨控制/選用欄位報表</value>
+	<comment>CSHID 211128003</comment>
+</data>
   <data name="IC_GL_Integration_Report_Screen" xml:space="preserve">
     <value>存貨控制/總帳整合報表</value>
     <comment>CSHID 211121001</comment>
   </data>
   <data name="IC_GL_Integration_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211121002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211121002</comment>
+</data>
   <data name="IC_GL_Integration_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C G/L Integration Report</value>
-    <comment>CSHID 211121003</comment>
-  </data>
+	<value>列印 存貨控制/總帳整合報表</value>
+	<comment>CSHID 211121003</comment>
+</data>
   <data name="IC_UnitsOfMeasure_Report_Screen" xml:space="preserve">
     <value>存貨控制/計量單位報表</value>
     <comment>CSHID 211133001</comment>
   </data>
   <data name="IC_UnitsOfMeasure_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211133002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211133002</comment>
+</data>
   <data name="IC_UnitsOfMeasure_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Units of Measure Report</value>
-    <comment>CSHID 211133003</comment>
-  </data>
+	<value>列印 存貨控制/計量單位報表</value>
+	<comment>CSHID 211133003</comment>
+</data>
   <data name="IC_WeightUnitsOfMeasure_Report_Screen" xml:space="preserve">
     <value>存貨控制/重量計量單位報表</value>
     <comment>CSHID 211136001</comment>
   </data>
   <data name="IC_WeightUnitsOfMeasure_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211136002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211136002</comment>
+</data>
   <data name="IC_WeightUnitsOfMeasure_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Weight Units of Measure Report</value>
-    <comment>CSHID 211136003</comment>
-  </data>
+	<value>列印 存貨控制/重量計量單位報表</value>
+	<comment>CSHID 211136003</comment>
+</data>
   <data name="IC_WarrantyCodes_Report_Screen" xml:space="preserve">
     <value>存貨控制/保修代碼報表</value>
     <comment>CSHID 211135001</comment>
   </data>
   <data name="IC_WarrantyCodes_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211135002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211135002</comment>
+</data>
   <data name="IC_WarrantyCodes_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Warranty  Codes Report</value>
-    <comment>CSHID 211135003</comment>
-  </data>
+	<value>列印 存貨控制/保固代碼報表</value>
+	<comment>CSHID 211135003</comment>
+</data>
   <data name="IC_ContractCodes_Report_Screen" xml:space="preserve">
     <value>存貨控制/合約代碼報表</value>
     <comment>CSHID 211119001</comment>
   </data>
   <data name="IC_ContractCodes_Report_Article1" xml:space="preserve">
-    <value>Inventory Control Reports</value>
-    <comment>CSHID 211119002</comment>
-  </data>
+	<value>存貨控制報表</value>
+	<comment>CSHID 211119002</comment>
+</data>
   <data name="IC_ContractCodes_Report_Article2" xml:space="preserve">
-    <value>Printing the I/C Contract Codes Report</value>
-    <comment>CSHID 211119003</comment>
-  </data>
+	<value>列印 存貨控制/合約代碼報表</value>
+	<comment>CSHID 211119003</comment>
+</data>
   <data name="OE_MiscellaneousCharges_Report_Screen" xml:space="preserve">
     <value>銷售訂單/雜項收費報表</value>
     <comment>CSHID 369038001</comment>
   </data>
   <data name="OE_MiscellaneousCharges_Report_Article1" xml:space="preserve">
-    <value>About Order Entry Reports</value>
-    <comment>CSHID 369038002</comment>
-  </data>
+	<value>關於銷售訂單報表</value>
+	<comment>CSHID 369038002</comment>
+</data>
   <data name="OE_MiscellaneousCharges_Report_Article2" xml:space="preserve">
-    <value>Printing Order Entry Reports</value>
-    <comment>CSHID 369038003</comment>
-  </data>
+	<value>列印銷售訂單報表</value>
+	<comment>CSHID 369038003</comment>
+</data>
   <data name="OE_Options_Report_Screen" xml:space="preserve">
     <value>銷售訂單/選項報表</value>
     <comment>CSHID 369040001</comment>
   </data>
   <data name="OE_Options_Report_Article1" xml:space="preserve">
-    <value>About Order Entry Reports</value>
-    <comment>CSHID 369040002</comment>
-  </data>
+	<value>關於銷售訂單報表</value>
+	<comment>CSHID 369040002</comment>
+</data>
   <data name="OE_Options_Report_Article2" xml:space="preserve">
-    <value>Printing Order Entry Reports</value>
-    <comment>CSHID 369040003</comment>
-  </data>
+	<value>列印銷售訂單報表</value>
+	<comment>CSHID 369040003</comment>
+</data>
+  <data name="OE_EmailMessages_Report_Screen" xml:space="preserve">
+	<value>銷售訂單/電子郵件訊息報表畫面</value>
+	<comment>CSHID 369036001</comment>
+</data>
+  <data name="OE_EmailMessages_Report_Article1" xml:space="preserve">
+	<value>關於銷售訂單報表</value>
+	<comment>CSHID 369036002</comment>
+</data>
+  <data name="OE_EmailMessages_Report_Article2" xml:space="preserve">
+	<value>列印銷售訂單報表</value>
+	<comment>CSHID 369036003</comment>
+</data>
   <data name="OE_OptionalFields_Report_Screen" xml:space="preserve">
     <value>銷售訂單/自選欄位報表</value>
     <comment>CSHID 369039001</comment>
   </data>
   <data name="OE_OptionalFields_Report_Article1" xml:space="preserve">
-    <value>About Order Entry Reports</value>
-    <comment>CSHID 369039002</comment>
-  </data>
+	<value>關於銷售訂單報表</value>
+	<comment>CSHID 369039002</comment>
+</data>
   <data name="OE_OptionalFields_Report_Article2" xml:space="preserve">
-    <value>Printing Order Entry Reports</value>
-    <comment>CSHID 369039003</comment>
-  </data>
+	<value>列印銷售訂單報表</value>
+	<comment>CSHID 369039003</comment>
+</data>
   <data name="OE_GL_Integration_Report_Screen" xml:space="preserve">
     <value>銷售訂單/總帳整合報表</value>
     <comment>CSHID 369037001</comment>
   </data>
   <data name="OE_GL_Integration_Report_Article1" xml:space="preserve">
-    <value>About Order Entry Reports</value>
-    <comment>CSHID 369037002</comment>
-  </data>
+	<value>關於銷售訂單報表</value>
+	<comment>CSHID 369037002</comment>
+</data>
   <data name="OE_GL_Integration_Report_Article2" xml:space="preserve">
-    <value>Printing Order Entry Reports</value>
-    <comment>CSHID 369037003</comment>
-  </data>
+	<value>列印銷售訂單報表</value>
+	<comment>CSHID 369037003</comment>
+</data>
   <data name="OE_Templates_Report_Screen" xml:space="preserve">
     <value>銷售訂單/範本報表</value>
     <comment>CSHID 369042001</comment>
   </data>
   <data name="OE_Templates_Report_Article1" xml:space="preserve">
-    <value>About Order Entry Reports</value>
-    <comment>CSHID 369042002</comment>
-  </data>
+	<value>關於銷售訂單報表</value>
+	<comment>CSHID 369042002</comment>
+</data>
   <data name="OE_Templates_Report_Article2" xml:space="preserve">
-    <value>Printing Order Entry Reports</value>
-    <comment>CSHID 369042003</comment>
-  </data>
+	<value>列印銷售訂單報表</value>
+	<comment>CSHID 369042003</comment>
+</data>
   <data name="OE_ShipViaCodes_Report_Screen" xml:space="preserve">
     <value>銷售訂單/發貨經由代碼報表</value>
     <comment>CSHID 369041001</comment>
   </data>
   <data name="OE_ShipViaCodes_Report_Article1" xml:space="preserve">
-    <value>About Order Entry Reports</value>
-    <comment>CSHID 369041002</comment>
-  </data>
+	<value>關於銷售訂單報表</value>
+	<comment>CSHID 369041002</comment>
+</data>
   <data name="OE_ShipViaCodes_Report_Article2" xml:space="preserve">
-    <value>Printing Order Entry Reports</value>
-    <comment>CSHID 369041003</comment>
-  </data>
+	<value>列印銷售訂單報表</value>
+	<comment>CSHID 369041003</comment>
+</data>
 </root>

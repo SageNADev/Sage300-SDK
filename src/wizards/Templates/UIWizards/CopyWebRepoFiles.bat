@@ -13,6 +13,12 @@
 ::          * Copy the Columbus-Web artifacts to the 
 ::            SDK\src\wizards\Templates\UIWizards\Web\ folder
 ::
+::	Prerequisites
+::
+::			The environment variable CNA2_SOURCE_ROOT needs to be set
+::
+::  		For Example : D:\projects\SageAzureDev\release-2023.0\
+::
 :: Usage Example:
 ::          CopyWebRepoFiles.bat
 ::
@@ -32,7 +38,7 @@ set myDir=%~dp0
 if [%CNA2_SOURCE_ROOT%]==[] (
   echo The environment variable ----  CNA2_SOURCE_ROOT ---- has not yet been defined.
   echo Please set CNA2_SOURCE_ROOT to the root folder of the CNA2 source code.
-  echo For Example: Set CNA2_SOURCE_ROOT=C:\projects\SageAzureDev\
+  echo For Example: Set CNA2_SOURCE_ROOT=D:\projects\SageAzureDev\release-2023.0\
   goto :EOF
 )
 

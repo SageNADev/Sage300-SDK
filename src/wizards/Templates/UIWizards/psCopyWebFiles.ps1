@@ -35,18 +35,18 @@ $rootCNA2SourceFolder = $Env:CNA2_SOURCE_ROOT
 if ($rootCNA2SourceFolder -eq '') {
   Write-Host 'Please ensure that you have defined an environment variable'
   Write-Host 'named CNA2-SOURCE-ROOT that points to your local CNA2 source directory.'
-  Write-Host 'Example: CNA2_SOURCE_ROOT=C:\projects\SageAzureDev'
+  Write-Host 'Example: CNA2_SOURCE_ROOT=D:\projects\SageAzureDev\release-2023.0\'
   Write-Host 'OR' 
   Write-Host 'Create a variable called rootCNA2SourceFolder in this file that points'
   Write-Host 'to your local CNA2 source directory.'
-  Write-Host 'Example: $rootCNA2SourceFolder="C:\projects\SageAzureDev\"'
+  Write-Host 'Example: $rootCNA2SourceFolder="D:\projects\SageAzureDev\release-2023.0\"'
 }
 $verbosepreference = 'continue'
 
 # Source Folder Settings
 $webAssetDirPath = "$rootCNA2SourceFolder\Columbus-Web\Sage.CA.SBS.ERP.Sage300.Web"
 $webSubPaths = 'Areas\Core,Areas\Shared,Assets,Content,Views'
-$webSubPathsCopyAll = 'Customization'
+$webSubPathsCopyAll = 'Customization
 $scriptsWebSubPath = 'Scripts'
 $includeScriptsWeb = 'Sage.CA.SBS.ERP.Sage300.Common.*.js,Sage.CA.SBS.ERP.Sage300.Core.*.js'
 

@@ -1428,12 +1428,6 @@
   <data name="AS_WorkProfile" xml:space="preserve">
     <value>用戶介面概況</value>
   </data>
-  <data name="SIR_Msg3" xml:space="preserve">
-    <value>Sage Intelligence Reporting Cloud</value>
-  </data>
-  <data name="SIR_Msg4" xml:space="preserve">
-    <value>通過您可以匯出並在Microsoft Excel®或Excel線上中自訂的動態財務報表幫助您更清楚地瞭解您的業務。</value>
-  </data>
   <data name="SIR_Report1" xml:space="preserve">
     <value>實際年度至今</value>
   </data>
@@ -1702,26 +1696,35 @@
   <data name="PM_Charges" xml:space="preserve">
     <value>收費</value>
   </data>
-  <data name="PM_EquipmentUsage" xml:space="preserve">
-    <value>Equipment Usage</value>
+  <data name="PM_Equipment" xml:space="preserve">
+    <value>設備</value>
   </data>
-  <data name="AP_Setup_Reports" xml:space="preserve">
-    <value>應付帳款設定報表</value>
+  <data name="PM_Revise_Estimates" xml:space="preserve">
+    <value>修訂估算</value>
+  </data>
+  <data name="PM_ContractMaintenance" xml:space="preserve">
+    <value>合約維護</value>
   </data>
   <data name="PM_Account_Sets" xml:space="preserve">
     <value>科目集合</value>
   </data>
+  <data name="PM_Subcontractor" xml:space="preserve">
+    <value>分包商</value>
+  </data>
+  <data name="PM_Projects" xml:space="preserve">
+    <value>專案</value>
+  </data>
   <data name="PM_Setup_Reports" xml:space="preserve">
+    <value>設定報表</value>
+  </data>
+  <data name="AP_Setup_Reports" xml:space="preserve">
     <value>設定報表</value>
   </data>
   <data name="PM_GLIntegration" xml:space="preserve">
     <value>總帳整合</value>
   </data>
   <data name="PM_OptionalFields" xml:space="preserve">
-    <value>自選欄位</value>
-  </data>
-  <data name="PM_Subcontractor" xml:space="preserve">
-    <value>分包商</value>
+    <value>選用欄位</value>
   </data>
   <data name="PM_MiscellaneousExpenses" xml:space="preserve">
     <value>雜項費用</value>
@@ -1741,17 +1744,14 @@
   <data name="PO_WeightUOM" xml:space="preserve">
     <value>重量計量單位</value>
   </data>
-  <data name="PM_Equipment" xml:space="preserve">
-    <value>設備</value>
+  <data name="PM_EquipmentUsage" xml:space="preserve">
+    <value>設備使用</value>
   </data>
   <data name="PM_ContractStructures" xml:space="preserve">
     <value>合約結構</value>
   </data>
   <data name="PM_Categories" xml:space="preserve">
     <value>類別</value>
-  </data>
-  <data name="PM_Projects" xml:space="preserve">
-    <value>專案</value>
   </data>
   <data name="PO_AccountSets" xml:space="preserve">
     <value>科目集合</value>
@@ -1779,13 +1779,12 @@
     <value>選項</value>
   </data>
   <data name="IC_Warranty_Contract_Codes" xml:space="preserve">
-    <value>Warranty/Contract Codes</value>
-    <comment>To be translated</comment>
-  </data>
-  <data name="OE_EmailMessagesTitle" xml:space="preserve">
-    <value>銷售訂單/電郵訊息報表</value>
+    <value>保固/合約代碼</value>
   </data>
   <data name="Bank_Setup_Reports" xml:space="preserve">
     <value>銀行設定報表</value>
+  </data>
+  <data name="GL_Statement_Designer" xml:space="preserve">
+    <value>對帳單設計工具</value>
   </data>
 </root>

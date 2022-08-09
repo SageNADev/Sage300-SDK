@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class NavigationResx {
@@ -4647,24 +4647,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string SIR_Msg2 {
             get {
                 return ResourceManager.GetString("SIR_Msg2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sage Intelligence Reporting Cloud.
-        /// </summary>
-        public static string SIR_Msg3 {
-            get {
-                return ResourceManager.GetString("SIR_Msg3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Gain better visibility into your business with dynamic financial reports that you can export and customize in Microsoft Excel® or Excel Online..
-        /// </summary>
-        public static string SIR_Msg4 {
-            get {
-                return ResourceManager.GetString("SIR_Msg4", resourceCulture);
             }
         }
         

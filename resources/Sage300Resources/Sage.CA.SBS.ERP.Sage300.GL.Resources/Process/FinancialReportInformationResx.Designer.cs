@@ -142,15 +142,6 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Process {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete {0}?.
-        /// </summary>
-        public static string DeleteFile {
-            get {
-                return ResourceManager.GetString("DeleteFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Don&apos;t show this again.
         /// </summary>
         public static string DontShowThisAgain {
@@ -349,7 +340,7 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Process {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invailid Statement Name.
+        ///   Looks up a localized string similar to The statement name is not valid..
         /// </summary>
         public static string InvalidStatementName {
             get {
@@ -525,6 +516,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Process {
         public static string SelectAccountGroupsBySortCodeRange {
             get {
                 return ResourceManager.GetString("SelectAccountGroupsBySortCodeRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a statement..
+        /// </summary>
+        public static string Selectstatement {
+            get {
+                return ResourceManager.GetString("Selectstatement", resourceCulture);
             }
         }
         

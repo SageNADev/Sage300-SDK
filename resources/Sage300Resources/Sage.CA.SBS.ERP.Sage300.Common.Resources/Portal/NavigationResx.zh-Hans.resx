@@ -1432,7 +1432,7 @@
     <value>Sage Intelligence Reporting Cloud</value>
   </data>
   <data name="SIR_Msg4" xml:space="preserve">
-    <value>通过您可以导出并在Microsoft Excel®或Excel在线中自定义的动态财务报表帮助您更清楚地了解您的业务。</value>
+    <value>通过您可以导出并在Microsoft Excel®或Excel Online中自定义的动态财务报表帮助您更清楚地了解您的业务。</value>
   </data>
   <data name="SIR_Report1" xml:space="preserve">
     <value>实际年度至今</value>
@@ -1702,26 +1702,35 @@
   <data name="PM_Charges" xml:space="preserve">
     <value>收费</value>
   </data>
-  <data name="PM_EquipmentUsage" xml:space="preserve">
-    <value>Equipment Usage</value>
+  <data name="PM_Equipment" xml:space="preserve">
+    <value>设备</value>
   </data>
-  <data name="AP_Setup_Reports" xml:space="preserve">
-    <value>应付帐款设置报表</value>
+  <data name="PM_Revise_Estimates" xml:space="preserve">
+    <value>修订估算</value>
+  </data>
+  <data name="PM_ContractMaintenance" xml:space="preserve">
+    <value>合约维护</value>
   </data>
   <data name="PM_Account_Sets" xml:space="preserve">
     <value>科目集合</value>
   </data>
+  <data name="PM_Subcontractor" xml:space="preserve">
+    <value>分包商</value>
+  </data>
+  <data name="PM_Projects" xml:space="preserve">
+    <value>项目</value>
+  </data>
   <data name="PM_Setup_Reports" xml:space="preserve">
-    <value>设置报表</value>
+    <value>项目成本管理设置报表</value>
+  </data>
+  <data name="AP_Setup_Reports" xml:space="preserve">
+    <value>应付账款设置报表</value>
   </data>
   <data name="PM_GLIntegration" xml:space="preserve">
     <value>总帐整合</value>
   </data>
   <data name="PM_OptionalFields" xml:space="preserve">
-    <value>自选字段</value>
-  </data>
-  <data name="PM_Subcontractor" xml:space="preserve">
-    <value>分包商</value>
+    <value>可选字段</value>
   </data>
   <data name="PM_MiscellaneousExpenses" xml:space="preserve">
     <value>杂项费用</value>
@@ -1741,17 +1750,14 @@
   <data name="PO_WeightUOM" xml:space="preserve">
     <value>重量计量单位</value>
   </data>
-  <data name="PM_Equipment" xml:space="preserve">
-    <value>设备</value>
+  <data name="PM_EquipmentUsage" xml:space="preserve">
+    <value>设备使用</value>
   </data>
   <data name="PM_ContractStructures" xml:space="preserve">
     <value>合约结构</value>
   </data>
   <data name="PM_Categories" xml:space="preserve">
     <value>类别</value>
-  </data>
-  <data name="PM_Projects" xml:space="preserve">
-    <value>项目</value>
   </data>
   <data name="PO_AccountSets" xml:space="preserve">
     <value>科目集合</value>
@@ -1779,10 +1785,12 @@
     <value>选项</value>
   </data>
   <data name="IC_Warranty_Contract_Codes" xml:space="preserve">
-    <value>Warranty/Contract Codes</value>
-    <comment>To be translated</comment>
+    <value>保修/合约代码</value>
   </data>
   <data name="Bank_Setup_Reports" xml:space="preserve">
     <value>银行设置报表</value>
+  </data>
+  <data name="GL_Statement_Designer" xml:space="preserve">
+    <value>报告设计器</value>
   </data>
 </root>

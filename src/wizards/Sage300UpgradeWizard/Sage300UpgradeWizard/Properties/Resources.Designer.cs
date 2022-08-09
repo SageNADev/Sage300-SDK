@@ -70,6 +70,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An existing Accpac props file has been found in the current solution folder..
+        /// </summary>
+        internal static string AccpacPropsFileFoundInSolutionFolder {
+            get {
+                return ResourceManager.GetString("AccpacPropsFileFoundInSolutionFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add/Replace file: .
         /// </summary>
         internal static string AddReplaceFile {
@@ -331,6 +340,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This appears to be a Sage 300 SDK sample solution..
+        /// </summary>
+        internal static string IsSage300SDKSample {
+            get {
+                return ResourceManager.GetString("IsSage300SDKSample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This appears to be a Sage partner solution..
+        /// </summary>
+        internal static string IsSagePartnerSolution {
+            get {
+                return ResourceManager.GetString("IsSagePartnerSolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The updates to the Javascript Minification Process must be made manually..
         /// </summary>
         internal static string JavascriptMinificationUpdatesAreAManualStep {
@@ -381,6 +408,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Next {
             get {
                 return ResourceManager.GetString("Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There were no existing Accpac props files found anywhere in the solution or projects..
+        /// </summary>
+        internal static string NoAccpacPropsFilesFoundInSolution {
+            get {
+                return ResourceManager.GetString("NoAccpacPropsFilesFoundInSolution", resourceCulture);
             }
         }
         
@@ -618,6 +654,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This step will automatically remove the deprecated &apos;WebForms&apos; folder from the Web directory..
+        /// </summary>
+        internal static string ReleaseSpecificDescRemoveWebFormsFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificDescRemoveWebFormsFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This step will need to be done manually..
         /// </summary>
         internal static string ReleaseSpecificDescUnifyDisabled {
@@ -677,6 +722,17 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string ReleaseSpecificNamespaceAndWebProjectUpdates {
             get {
                 return ResourceManager.GetString("ReleaseSpecificNamespaceAndWebProjectUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The upgrader will now inspect the Solution being upgraded and remove any references
+        ///to ‘WebForms’ from the project files as well as physically deleting the actual
+        ///files contained in that folder including the folder itself..
+        /// </summary>
+        internal static string ReleaseSpecificRemoveWebFormsFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificRemoveWebFormsFolder", resourceCulture);
             }
         }
         
@@ -753,6 +809,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove deprecated &apos;WebForms&apos; folder.
+        /// </summary>
+        internal static string ReleaseSpecificTitleRemoveWebFormsFolder {
+            get {
+                return ResourceManager.GetString("ReleaseSpecificTitleRemoveWebFormsFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unify HTML &apos;disabled&apos; attribute.
         /// </summary>
         internal static string ReleaseSpecificTitleUnifyDisabled {
@@ -825,7 +890,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Seaching in all project directories instead..
+        ///   Looks up a localized string similar to Searching in all project directories instead..
         /// </summary>
         internal static string SearchingInAllProjectDirectoriesInstead {
             get {
@@ -903,6 +968,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string StepTitleMain {
             get {
                 return ResourceManager.GetString("StepTitleMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It is not necessary to update the Accpac props file for this solution and projects..
+        /// </summary>
+        internal static string SyncAccpacLibrariesUnnecessary {
+            get {
+                return ResourceManager.GetString("SyncAccpacLibrariesUnnecessary", resourceCulture);
             }
         }
         
@@ -1026,6 +1100,15 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion {
             get {
                 return ResourceManager.GetString("Template_ReleaseSpecificTitleDescTargetedDotNetFrameworkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removed project item &apos;{0}&apos;..
+        /// </summary>
+        internal static string Template_RemovedProjectItem {
+            get {
+                return ResourceManager.GetString("Template_RemovedProjectItem", resourceCulture);
             }
         }
         
@@ -1179,6 +1262,33 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         internal static string Upgrade {
             get {
                 return ResourceManager.GetString("Upgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The &apos;WebForms&apos; folder does not exist..
+        /// </summary>
+        internal static string WebFormsFolderDoesNotExist {
+            get {
+                return ResourceManager.GetString("WebFormsFolderDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The &apos;WebForms&apos; folder exists..
+        /// </summary>
+        internal static string WebFormsFolderExists {
+            get {
+                return ResourceManager.GetString("WebFormsFolderExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The &apos;WebForms&apos; folder has been successfully removed..
+        /// </summary>
+        internal static string WebFormsFolderRemovedSuccessfully {
+            get {
+                return ResourceManager.GetString("WebFormsFolderRemovedSuccessfully", resourceCulture);
             }
         }
     }

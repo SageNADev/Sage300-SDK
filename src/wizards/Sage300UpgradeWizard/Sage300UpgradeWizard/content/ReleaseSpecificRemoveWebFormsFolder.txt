@@ -1,0 +1,3 @@
+﻿The upgrader will now inspect the Solution being upgraded and remove any references
+to ‘WebForms’ from the project files as well as physically deleting the actual
+files contained in that folder including the folder itself.
