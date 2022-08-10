@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddEdit" xml:space="preserve">
+    <value>增加/編輯</value>
+  </data>
+  <data name="ARItemNumber" xml:space="preserve">
+    <value>應收帳款產品編號</value>
+  </data>
+  <data name="ARItemNumberDescription" xml:space="preserve">
+    <value>應收帳款產品描述</value>
+  </data>
+  <data name="ARUnitOfMeasure" xml:space="preserve">
+    <value>應收帳款計量單位</value>
+  </data>
+  <data name="BillingAmount" xml:space="preserve">
+    <value>帳單金額</value>
+  </data>
+  <data name="BillingRate" xml:space="preserve">
+    <value>帳單費率</value>
+  </data>
+  <data name="BillingType" xml:space="preserve">
+    <value>帳單類型</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>類別</value>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>類別描述</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>備註</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>合約</value>
+  </data>
+  <data name="ContractDescription" xml:space="preserve">
+    <value>合約描述</value>
+  </data>
+  <data name="CostAccount" xml:space="preserve">
+    <value>成本科目</value>
+  </data>
+  <data name="CostAccountDescription" xml:space="preserve">
+    <value>成本科目描述</value>
+  </data>
+  <data name="DateOutOfRange" xml:space="preserve">
+    <value>警告。日期不在公司概況定義的可接受範圍內。是否接受此日期？</value>
+  </data>
+  <data name="DetailOptionalFields" xml:space="preserve">
+    <value>明細自選欄位</value>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>憑證編號</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>編輯</value>
+  </data>
+  <data name="ExtendedCost" xml:space="preserve">
+    <value>總成本</value>
+  </data>
+  <data name="ICAccountDescription" xml:space="preserve">
+    <value>存貨控制科目描述</value>
+  </data>
+  <data name="ItemNumberDescription" xml:space="preserve">
+    <value>產品描述</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>行號</value>
+  </data>
+  <data name="LocationDescription" xml:space="preserve">
+    <value>地點描述</value>
+  </data>
+  <data name="NoLine" xml:space="preserve">
+    <value>行編號{0}不存在。</value>
+  </data>
+  <data name="PeriodLocked" xml:space="preserve">
+    <value>日期{0}對應於會計年度{2}中的期間{1}，在公共服務會計年曆中為專案成本管理鎖定。</value>
+  </data>
+  <data name="PostingDateOverride" xml:space="preserve">
+    <value>過帳日期撤換</value>
+  </data>
+  <data name="PostInsufficientQty" xml:space="preserve">
+    <value>過帳此發運將把此地點的產品數量減少到零以下。是否往下？</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>專案</value>
+  </data>
+  <data name="ProjectDescription" xml:space="preserve">
+    <value>專案描述</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>資源</value>
+  </data>
+  <data name="ResourceDescription" xml:space="preserve">
+    <value>資源描述</value>
+  </data>
+  <data name="TaxAuthority" xml:space="preserve">
+    <value>稅務機構</value>
+  </data>
+  <data name="TaxAuthorityDescription" xml:space="preserve">
+    <value>稅務機構描述</value>
+  </data>
+  <data name="TaxClass" xml:space="preserve">
+    <value>稅級</value>
+  </data>
+  <data name="TaxClassDescritpion" xml:space="preserve">
+    <value>稅級描述</value>
+  </data>
+  <data name="TaxIncluded" xml:space="preserve">
+    <value>已含稅</value>
+  </data>
+  <data name="UnitCost" xml:space="preserve">
+    <value>單位成本</value>
+  </data>
+  <data name="WIPAccount" xml:space="preserve">
+    <value>在製品/銷貨成本科目</value>
+  </data>
+  <data name="WIPAccountDescription" xml:space="preserve">
+    <value>在製品/銷貨成本科目描述</value>
+  </data>
+  <data name="WorkInProgressAccount" xml:space="preserve">
+    <value>在製品科目</value>
+  </data>
+  <data name="WorkInProgressAccountDescription" xml:space="preserve">
+    <value>在製品科目描述</value>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>年度/期間</value>
+  </data>
+  <data name="PostSuccess" xml:space="preserve">
+    <value>過帳已完成。{0}：{1}。</value>
+  </data>
+  <data name="Module" xml:space="preserve">
+    <value>專案成本管理</value>
+  </data>
+  <data name="AddNewLineMessage" xml:space="preserve">
+    <value>是否增加此明細行？</value>
+  </data>
+  <data name="SaveChangesMessage" xml:space="preserve">
+    <value>是否儲存對此明細行的變更？</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>幣別</value>
+  </data>
+  <data name="BillingCurrency" xml:space="preserve">
+    <value>帳單幣別</value>
+  </data>
+  <data name="CostCurrency" xml:space="preserve">
+    <value>成本幣別</value>
+  </data>
+  <data name="TransactionDateBeforeProjectStartDate" xml:space="preserve">
+    <value>交易日期早於專案的開始日期。</value>
+  </data>
+  <data name="CostOfSalesAccount" xml:space="preserve">
+    <value>銷貨成本科目</value>
+  </data>
+  <data name="CostOfSalesAccountDescription" xml:space="preserve">
+    <value>銷貨成本科目描述</value>
+  </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>檢視明細</value>
+  </data>
+  <data name="EditDetails" xml:space="preserve">
+    <value>編輯明細</value>
+  </data>
+</root>
