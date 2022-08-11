@@ -46,7 +46,7 @@ $verbosepreference = 'continue'
 # Source Folder Settings
 $webAssetDirPath = "$rootCNA2SourceFolder\Columbus-Web\Sage.CA.SBS.ERP.Sage300.Web"
 $webSubPaths = 'Areas\Core,Areas\Shared,Assets,Content,Views'
-$webSubPathsCopyAll = 'Customization
+$webSubPathsCopyAll = 'Customization'
 $scriptsWebSubPath = 'Scripts'
 $includeScriptsWeb = 'Sage.CA.SBS.ERP.Sage300.Common.*.js,Sage.CA.SBS.ERP.Sage300.Core.*.js'
 
