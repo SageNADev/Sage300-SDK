@@ -20,11 +20,15 @@
 
 #region Namespace
 
+using System;
 using System.ComponentModel.DataAnnotations;
-using Sage.CA.SBS.ERP.Sage300.AR.Resources.Forms;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Attributes;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
+
+using ValuedPartner.TU.Models.Enums; // For common enumerations
 using ValuedPartner.TU.Models.Enums.Process;
+using ValuedPartner.TU.Resources; // For common resources
 using ValuedPartner.TU.Resources.Process;
 
 #endregion
@@ -32,201 +36,251 @@ using ValuedPartner.TU.Resources.Process;
 namespace ValuedPartner.TU.Models.Process
 {
     /// <summary>
-    /// Partial class for Clear Statistics
+    /// Partial class for ClearStatistics
     /// </summary>
     public partial class ClearStatistics : ModelBase
     {
         /// <summary>
-        /// Gets or sets From Customer No
+        /// Gets or sets FromCustomerNumber
         /// </summary>
         [StringLength(12, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
-        public string FromCustomerNo { get; set; }
+        [Display(Name = "FromCustomerNumber", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.FromCustomerNumber, Id = Index.FromCustomerNumber, FieldType = EntityFieldType.Char, Size = 12, Mask = "%-12C")]
+        public string FromCustomerNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets To Customer No
+        /// Gets or sets ToCustomerNumber
         /// </summary>
         [StringLength(12, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
-        public string ToCustomerNo { get; set; }
+        [Display(Name = "ToCustomerNumber", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ToCustomerNumber, Id = Index.ToCustomerNumber, FieldType = EntityFieldType.Char, Size = 12, Mask = "%-12C")]
+        public string ToCustomerNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets From Group Code
+        /// Gets or sets FromGroupCode
         /// </summary>
         [StringLength(6, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
+        [Display(Name = "FromGroupCode", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.FromGroupCode, Id = Index.FromGroupCode, FieldType = EntityFieldType.Char, Size = 6, Mask = "%-6N")]
         public string FromGroupCode { get; set; }
 
         /// <summary>
-        /// Gets or sets To Group Code
+        /// Gets or sets ToGroupCode
         /// </summary>
         [StringLength(6, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
+        [Display(Name = "ToGroupCode", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ToGroupCode, Id = Index.ToGroupCode, FieldType = EntityFieldType.Char, Size = 6, Mask = "%-6N")]
         public string ToGroupCode { get; set; }
 
         /// <summary>
-        /// Gets or sets From National Account
+        /// Gets or sets FromNationalAccount
         /// </summary>
         [StringLength(12, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
+        [Display(Name = "FromNationalAccount", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.FromNationalAccount, Id = Index.FromNationalAccount, FieldType = EntityFieldType.Char, Size = 12, Mask = "%-12C")]
         public string FromNationalAccount { get; set; }
 
         /// <summary>
-        /// Gets or sets To National Account
+        /// Gets or sets ToNationalAccount
         /// </summary>
         [StringLength(12, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
+        [Display(Name = "ToNationalAccount", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ToNationalAccount, Id = Index.ToNationalAccount, FieldType = EntityFieldType.Char, Size = 12, Mask = "%-12C")]
         public string ToNationalAccount { get; set; }
 
         /// <summary>
-        /// Gets or sets From Sales Person
+        /// Gets or sets FromSalesperson
         /// </summary>
         [StringLength(8, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
-        public string FromSalesPerson { get; set; }
+        [Display(Name = "FromSalesperson", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.FromSalesperson, Id = Index.FromSalesperson, FieldType = EntityFieldType.Char, Size = 8, Mask = "%-8N")]
+        public string FromSalesperson { get; set; }
 
         /// <summary>
-        /// Gets or sets To Sales Person
+        /// Gets or sets ToSalesperson
         /// </summary>
         [StringLength(8, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
-        public string ToSalesPerson { get; set; }
+        [Display(Name = "ToSalesperson", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ToSalesperson, Id = Index.ToSalesperson, FieldType = EntityFieldType.Char, Size = 8, Mask = "%-8N")]
+        public string ToSalesperson { get; set; }
 
         /// <summary>
-        /// Gets or sets From Item Number
+        /// Gets or sets FromItemNumber
         /// </summary>
         [StringLength(16, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
+        [Display(Name = "FromItemNumber", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.FromItemNumber, Id = Index.FromItemNumber, FieldType = EntityFieldType.Char, Size = 16, Mask = "%-16C")]
         public string FromItemNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets To Item Number
+        /// Gets or sets ToItemNumber
         /// </summary>
         [StringLength(16, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
+        [Display(Name = "ToItemNumber", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ToItemNumber, Id = Index.ToItemNumber, FieldType = EntityFieldType.Char, Size = 16, Mask = "%-16C")]
         public string ToItemNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets Clear Customer Statistics
+        /// Gets or sets ClearCustomerStatistics
         /// </summary>
-        [Display(Name = "CustomerStatistics", ResourceType = typeof(ClearStatisticsResx))]
-        public ClearCustomerStatistics ClearCustomerStatistics { get; set; }
+        [Display(Name = "ClearCustomerStatistics", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ClearCustomerStatistics, Id = Index.ClearCustomerStatistics, FieldType = EntityFieldType.Int, Size = 2)]
+        public ValuedPartner.TU.Models.Enums.Process.ClearCustomerStatistics ClearCustomerStatistics { get; set; }
 
         /// <summary>
-        /// Gets or sets Clear Group Statistics
+        /// Gets or sets ClearGroupStatistics
         /// </summary>
-        [Display(Name = "CustomerGroupStatistics", ResourceType = typeof(ARCommonResx))]
-        public ClearGroupStatistics ClearGroupStatistics { get; set; }
+        [Display(Name = "ClearGroupStatistics", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ClearGroupStatistics, Id = Index.ClearGroupStatistics, FieldType = EntityFieldType.Int, Size = 2)]
+        public ValuedPartner.TU.Models.Enums.Process.ClearGroupStatistics ClearGroupStatistics { get; set; }
 
         /// <summary>
-        /// Gets or sets Clear National Acct Statistics
+        /// Gets or sets ClearNationalAccountStatistics
         /// </summary>
-        [Display(Name = "NationalAccountStatistics", ResourceType = typeof(ClearStatisticsResx))]
-        public ClearNationalAccountStatistics ClearNationalAcctStatistics { get; set; }
+        [Display(Name = "ClearNationalAccountStatistics", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ClearNationalAccountStatistics, Id = Index.ClearNationalAccountStatistics, FieldType = EntityFieldType.Int, Size = 2)]
+        public ValuedPartner.TU.Models.Enums.Process.ClearNationalAccountStatistics ClearNationalAccountStatistics { get; set; }
 
         /// <summary>
-        /// Gets or sets Clear Salesperson Statistics
+        /// Gets or sets ClearSalespersonStatistics
         /// </summary>
-        [Display(Name = "SalespersonStatistics", ResourceType = typeof(ARCommonResx))]
-        public ClearSalespersonStatistics ClearSalesPersonStatistics { get; set; }
+        [Display(Name = "ClearSalespersonStatistics", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ClearSalespersonStatistics, Id = Index.ClearSalespersonStatistics, FieldType = EntityFieldType.Int, Size = 2)]
+        public ValuedPartner.TU.Models.Enums.Process.ClearSalespersonStatistics ClearSalespersonStatistics { get; set; }
 
         /// <summary>
-        /// Gets or sets Clear Item Statistics
+        /// Gets or sets ClearItemStatistics
         /// </summary>
-        [Display(Name = "ItemStatistics", ResourceType = typeof(ARCommonResx))]
-        public ClearItemStatistics ClearItemStatistics { get; set; }
+        [Display(Name = "ClearItemStatistics", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ClearItemStatistics, Id = Index.ClearItemStatistics, FieldType = EntityFieldType.Int, Size = 2)]
+        public ValuedPartner.TU.Models.Enums.Process.ClearItemStatistics ClearItemStatistics { get; set; }
 
         /// <summary>
-        /// Gets or sets Through Customer Year
+        /// Gets or sets ThroughCustomerYear
         /// </summary>
         [StringLength(4, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
+        [Display(Name = "ThroughCustomerYear", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ThroughCustomerYear, Id = Index.ThroughCustomerYear, FieldType = EntityFieldType.Char, Size = 4, Mask = "%04D")]
         public string ThroughCustomerYear { get; set; }
 
         /// <summary>
-        /// Gets or sets Through Customer Period
+        /// Gets or sets ThroughCustomerPeriod
         /// </summary>
-        [StringLength(2, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
-        public string ThroughCustomerPeriod { get; set; }
+        [Display(Name = "ThroughCustomerPeriod", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ThroughCustomerPeriod, Id = Index.ThroughCustomerPeriod, FieldType = EntityFieldType.Char, Size = 2)]
+        public ValuedPartner.TU.Models.Enums.Process.ThroughCustomerPeriod ThroughCustomerPeriod { get; set; }
 
         /// <summary>
-        /// Gets or sets Through National Acct Year
+        /// Gets or sets ThroughNationalAccountYear
         /// </summary>
         [StringLength(4, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
-        public string ThroughNationalAcctYear { get; set; }
+        [Display(Name = "ThroughNationalAccountYear", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ThroughNationalAccountYear, Id = Index.ThroughNationalAccountYear, FieldType = EntityFieldType.Char, Size = 4, Mask = "%04D")]
+        public string ThroughNationalAccountYear { get; set; }
 
         /// <summary>
-        /// Gets or sets Through National Acct Period
+        /// Gets or sets ThroughNationalAccountPeriod
         /// </summary>
-        [StringLength(2, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
-        public string ThroughNationalAcctPeriod { get; set; }
+        [Display(Name = "ThroughNationalAccountPeriod", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ThroughNationalAccountPeriod, Id = Index.ThroughNationalAccountPeriod, FieldType = EntityFieldType.Char, Size = 2)]
+        public ValuedPartner.TU.Models.Enums.Process.ThroughNationalAccountPeriod ThroughNationalAccountPeriod { get; set; }
 
         /// <summary>
-        /// Gets or sets Through Group Year
+        /// Gets or sets ThroughGroupYear
         /// </summary>
         [StringLength(4, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
+        [Display(Name = "ThroughGroupYear", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ThroughGroupYear, Id = Index.ThroughGroupYear, FieldType = EntityFieldType.Char, Size = 4, Mask = "%04D")]
         public string ThroughGroupYear { get; set; }
 
         /// <summary>
-        /// Gets or sets Through Group Period
+        /// Gets or sets ThroughGroupPeriod
         /// </summary>
-        [StringLength(2, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
-        public string ThroughGroupPeriod { get; set; }
+        [Display(Name = "ThroughGroupPeriod", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ThroughGroupPeriod, Id = Index.ThroughGroupPeriod, FieldType = EntityFieldType.Char, Size = 2)]
+        public ValuedPartner.TU.Models.Enums.Process.ThroughGroupPeriod ThroughGroupPeriod { get; set; }
 
         /// <summary>
-        /// Gets or sets Through Salesperson Year
+        /// Gets or sets ThroughSalespersonYear
         /// </summary>
         [StringLength(4, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
-        public string ThroughSalesPersonYear { get; set; }
+        [Display(Name = "ThroughSalespersonYear", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ThroughSalespersonYear, Id = Index.ThroughSalespersonYear, FieldType = EntityFieldType.Char, Size = 4, Mask = "%04D")]
+        public string ThroughSalespersonYear { get; set; }
 
         /// <summary>
-        /// Gets or sets Through Salesperson Period
+        /// Gets or sets ThroughSalespersonPeriod
         /// </summary>
-        [StringLength(2, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
-        public string ThroughSalesPersonPeriod { get; set; }
+        [Display(Name = "ThroughSalespersonPeriod", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ThroughSalespersonPeriod, Id = Index.ThroughSalespersonPeriod, FieldType = EntityFieldType.Char, Size = 2)]
+        public ValuedPartner.TU.Models.Enums.Process.ThroughSalespersonPeriod ThroughSalespersonPeriod { get; set; }
 
         /// <summary>
-        /// Gets or sets Through Item Year
+        /// Gets or sets ThroughItemYear
         /// </summary>
         [StringLength(4, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
+        [Display(Name = "ThroughItemYear", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ThroughItemYear, Id = Index.ThroughItemYear, FieldType = EntityFieldType.Char, Size = 4, Mask = "%04D")]
         public string ThroughItemYear { get; set; }
 
         /// <summary>
-        /// Gets or sets Through Item Period
+        /// Gets or sets ThroughItemPeriod
         /// </summary>
-        [StringLength(2, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(AnnotationsResx))]
-        public string ThroughItemPeriod { get; set; }
+        [Display(Name = "ThroughItemPeriod", ResourceType = typeof(ClearStatisticsResx))]
+        [ViewField(Name = Fields.ThroughItemPeriod, Id = Index.ThroughItemPeriod, FieldType = EntityFieldType.Char, Size = 2)]
+        public ValuedPartner.TU.Models.Enums.Process.ThroughItemPeriod ThroughItemPeriod { get; set; }
 
         #region UI Strings
 
         /// <summary>
-        /// Gets Clear Customer Statistics string value
+        /// Gets ClearCustomerStatistics string value
         /// </summary>
-        public string ClearCustomerStatisticsString
-        {
-            get { return EnumUtility.GetStringValue(ClearCustomerStatistics); }
-        }
+        public string ClearCustomerStatisticsString => EnumUtility.GetStringValue(ClearCustomerStatistics);
 
         /// <summary>
-        /// Gets Clear Group Statistics string value
+        /// Gets ClearGroupStatistics string value
         /// </summary>
-        public string ClearGroupStatisticsString
-        {
-            get { return EnumUtility.GetStringValue(ClearGroupStatistics); }
-        }
+        public string ClearGroupStatisticsString => EnumUtility.GetStringValue(ClearGroupStatistics);
 
         /// <summary>
-        /// Gets Clear National Acct Statistics string value
+        /// Gets ClearNationalAccountStatistics string value
         /// </summary>
-        public string ClearNationalAcctStatisticsString
-        {
-            get { return EnumUtility.GetStringValue(ClearNationalAcctStatistics); }
-        }
+        public string ClearNationalAccountStatisticsString => EnumUtility.GetStringValue(ClearNationalAccountStatistics);
 
         /// <summary>
-        /// Gets Clear Salesperson Statistics string value
+        /// Gets ClearSalespersonStatistics string value
         /// </summary>
-        public string ClearSalesPersonStatisticsString
-        {
-            get { return EnumUtility.GetStringValue(ClearSalesPersonStatistics); }
-        }
+        public string ClearSalespersonStatisticsString => EnumUtility.GetStringValue(ClearSalespersonStatistics);
 
         /// <summary>
-        /// Gets Clear Item Statistics string value
+        /// Gets ClearItemStatistics string value
         /// </summary>
-        public string ClearItemStatisticsString
-        {
-            get { return EnumUtility.GetStringValue(ClearItemStatistics); }
-        }
+        public string ClearItemStatisticsString => EnumUtility.GetStringValue(ClearItemStatistics);
+
+        /// <summary>
+        /// Gets ThroughCustomerPeriod string value
+        /// </summary>
+        public string ThroughCustomerPeriodString => EnumUtility.GetStringValue(ThroughCustomerPeriod);
+
+        /// <summary>
+        /// Gets ThroughNationalAccountPeriod string value
+        /// </summary>
+        public string ThroughNationalAccountPeriodString => EnumUtility.GetStringValue(ThroughNationalAccountPeriod);
+
+        /// <summary>
+        /// Gets ThroughGroupPeriod string value
+        /// </summary>
+        public string ThroughGroupPeriodString => EnumUtility.GetStringValue(ThroughGroupPeriod);
+
+        /// <summary>
+        /// Gets ThroughSalespersonPeriod string value
+        /// </summary>
+        public string ThroughSalespersonPeriodString => EnumUtility.GetStringValue(ThroughSalespersonPeriod);
+
+        /// <summary>
+        /// Gets ThroughItemPeriod string value
+        /// </summary>
+        public string ThroughItemPeriodString => EnumUtility.GetStringValue(ThroughItemPeriod);
 
         #endregion
     }

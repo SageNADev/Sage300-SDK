@@ -22,81 +22,38 @@
 
 "use strict";
 
-var clearStatisticsRepository = ((parent) => {
+var clearStatisticsRepository = clearStatisticsRepository || {};
 
-    // Private method
-    function _commonHandler(year, method, defaultCallback, overrideCallback = null) {
-        let data = {'year': year };
-
-        let callback = defaultCallback;
-        if (overrideCallback !== null) {
-            callback = overrideCallback;
-        }
-
-        let url = sg.utls.url.buildUrl(clearStatisticsConstants.MODULEID, clearStatisticsConstants.ACTION, method);
-        sg.utls.ajaxPostHtml(url, data, callback);
+clearStatisticsRepository = {
+    getCustomerMaxPeriodForValidYear: function (year) {
+        var data = {
+            'year': year
+        };
+        sg.utls.ajaxPostHtml(sg.utls.url.buildUrl("TU", "ClearStatistics", "GetMaxPeriodForValidYear"), data, clearStatisticsUISuccess.fillCustomerFiscalYear);
+    },
+    getGroupMaxPeriodForValidYear: function (year) {
+        var data = {
+            'year': year
+        };
+        sg.utls.ajaxPostHtml(sg.utls.url.buildUrl("TU", "ClearStatistics", "GetMaxPeriodForValidYear"), data, clearStatisticsUISuccess.fillGroupFiscalYear);
+    },
+    getNationalAccountMaxPeriodForValidYear: function (year) {
+        var data = {
+            'year': year
+        };
+        sg.utls.ajaxPostHtml(sg.utls.url.buildUrl("TU", "ClearStatistics", "GetMaxPeriodForValidYear"), data, clearStatisticsUISuccess.fillNationalAccountFiscalYear);
+    },
+    getSalespersonMaxPeriodForValidYear: function (year) {
+        var data = {
+            'year': year
+        };
+        sg.utls.ajaxPostHtml(sg.utls.url.buildUrl("TU", "ClearStatistics", "GetSalesPersonMaxPeriodForValidYear"), data, clearStatisticsUISuccess.fillSalespersonFiscalYear);
+    },
+    getItemMaxPeriodForValidYear: function (year) {
+        var data = {
+            'year': year
+        };
+        sg.utls.ajaxPostHtml(sg.utls.url.buildUrl("TU", "ClearStatistics", "GetItemMaxPeriodForValidYear"), data, clearStatisticsUISuccess.fillItemFiscalYear);
     }
+};
 
-    // Publicly exposed objects
-    return {
-        /**
-         * @name getCustomerMaxPeriodForValidYear
-         * @description
-         * @public
-         * 
-         * @param {Number} year
-         * @param {Function} successCallback = null
-         */
-        getCustomerMaxPeriodForValidYear: (year, successCallback = null) => {
-            _commonHandler(year, "GetMaxPeriodForValidYear", clearStatisticsUISuccess.fillCustomerFiscalYear, successCallback);
-        },
-
-        /**
-         * @name getGroupMaxPeriodForValidYear
-         * @description
-         * @public
-         *
-         * @param {Number} year
-         * @param {Function} successCallback = null
-         */
-        getGroupMaxPeriodForValidYear: (year, successCallback = null) => {
-            _commonHandler(year, "GetMaxPeriodForValidYear", clearStatisticsUISuccess.fillGroupFiscalYear, successCallback);
-        },
-
-        /**
-         * @name getNationalAcctMaxPeriodForValidYear
-         * @description
-         * @public
-         *
-         * @param {Number} year
-         * @param {Function} successCallback = null
-         */
-        getNationalAcctMaxPeriodForValidYear: (year, successCallback = null) => {
-            _commonHandler(year, "GetMaxPeriodForValidYear", clearStatisticsUISuccess.fillNationalAcctFiscalYear, successCallback);
-        },
-
-        /**
-         * @name getSalespersonMaxPeriodForValidYear
-         * @description
-         * @public
-         *
-         * @param {Number} year
-         * @param {Function} successCallback = null
-         */
-        getSalespersonMaxPeriodForValidYear: (year, successCallback = null) => {
-            _commonHandler(year, "GetSalesPersonMaxPeriodForValidYear", clearStatisticsUISuccess.fillSalespersonFiscalYear, successCallback);
-        },
-
-        /**
-         * @name getItemMaxPeriodForValidYear
-         * @description
-         * @public
-         *
-         * @param {Number} year
-         * @param {Function} successCallback = null
-         */
-        getItemMaxPeriodForValidYear: (year, successCallback = null) => {
-            _commonHandler(year, "GetItemMaxPeriodForValidYear", clearStatisticsUISuccess.fillItemFiscalYear, successCallback);
-        }
-    };
-})(clearStatisticsRepository || {});

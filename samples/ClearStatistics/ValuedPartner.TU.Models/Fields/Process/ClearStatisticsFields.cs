@@ -45,12 +45,12 @@ namespace ValuedPartner.TU.Models.Process
             /// <summary>
             /// Property for From Customer No
             /// </summary>
-            public const string FromCustomerNo = "STRTCUSID";
+            public const string FromCustomerNumber = "STRTCUSID";
 
             /// <summary>
             /// Property for To Customer No
             /// </summary>
-            public const string ToCustomerNo = "ENDCUSID";
+            public const string ToCustomerNumber = "ENDCUSID";
 
             /// <summary>
             /// Property for From Group Code
@@ -75,12 +75,12 @@ namespace ValuedPartner.TU.Models.Process
             /// <summary>
             /// Property for From Sales Person
             /// </summary>
-            public const string FromSalesPerson = "STRTSPSID";
+            public const string FromSalesperson = "STRTSPSID";
 
             /// <summary>
             /// Property for To Sales Person
             /// </summary>
-            public const string ToSalesPerson = "ENDSPSID";
+            public const string ToSalesperson = "ENDSPSID";
 
             /// <summary>
             /// Property for From Item Number
@@ -105,12 +105,12 @@ namespace ValuedPartner.TU.Models.Process
             /// <summary>
             /// Property for Clear National Acct Statistics
             /// </summary>
-            public const string ClearNationalAcctStatistics = "SWPRGNSM";
+            public const string ClearNationalAccountStatistics = "SWPRGNSM";
 
             /// <summary>
             /// Property for Clear Sales Person Statistics 
             /// </summary>
-            public const string ClearSalesPersonStatistics = "SWPRGSPS";
+            public const string ClearSalespersonStatistics = "SWPRGSPS";
 
             /// <summary>
             /// Property for Clear Item Statistics
@@ -130,12 +130,12 @@ namespace ValuedPartner.TU.Models.Process
             /// <summary>
             /// Property for Through National Acct Year
             /// </summary>
-            public const string ThroughNationalAcctYear = "THRUNATYR";
+            public const string ThroughNationalAccountYear = "THRUNATYR";
 
             /// <summary>
             /// Property for Through National Acct Period
             /// </summary>
-            public const string ThroughNationalAcctPeriod = "THRUNATPER";
+            public const string ThroughNationalAccountPeriod = "THRUNATPER";
 
             /// <summary>
             /// Property for Through Group Year
@@ -150,12 +150,12 @@ namespace ValuedPartner.TU.Models.Process
             /// <summary>
             /// Property for Through Sales Person Year
             /// </summary>
-            public const string ThroughSalesPersonYear = "THRUSAPYR";
+            public const string ThroughSalespersonYear = "THRUSAPYR";
 
             /// <summary>
             /// Property for Through Sales Person Period
             /// </summary>
-            public const string ThroughSalesPersonPeriod = "THRUSAPPER";
+            public const string ThroughSalespersonPeriod = "THRUSAPPER";
 
             /// <summary>
             /// Property for Through Item Year
@@ -182,12 +182,12 @@ namespace ValuedPartner.TU.Models.Process
             /// <summary>
             /// Property Indexer for From Customer No
             /// </summary>
-            public const int FromCustomerNo = 1;
+            public const int FromCustomerNumber = 1;
 
             /// <summary>
             /// Property Indexer for To Customer No
             /// </summary>
-            public const int ToCustomerNo = 2;
+            public const int ToCustomerNumber = 2;
 
             /// <summary>
             /// Property Indexer for From Group Code
@@ -212,12 +212,12 @@ namespace ValuedPartner.TU.Models.Process
             /// <summary>
             /// Property Indexer for From Sales Person
             /// </summary>
-            public const int FromSalesPerson = 7;
+            public const int FromSalesperson = 7;
 
             /// <summary>
             /// Property Indexer for To Sales Person
             /// </summary>
-            public const int ToSalesPerson = 8;
+            public const int ToSalesperson = 8;
 
             /// <summary>
             /// Property Indexer for From Item Number
@@ -242,12 +242,12 @@ namespace ValuedPartner.TU.Models.Process
             /// <summary>
             /// Property Indexer for Clear National Acct Statistics
             /// </summary>
-            public const int ClearNationalAcctStatistics = 15;
+            public const int ClearNationalAccountStatistics = 15;
 
             /// <summary>
             /// Property Indexer for Clear Sales Person Statistics 
             /// </summary>
-            public const int ClearSalesPersonStatistics = 16;
+            public const int ClearSalespersonStatistics = 16;
 
             /// <summary>
             /// Property Indexer for Clear Item Statistics
@@ -267,12 +267,12 @@ namespace ValuedPartner.TU.Models.Process
             /// <summary>
             /// Property Indexer for Through National Acct Year
             /// </summary>
-            public const int ThroughNationalAcctYear = 20;
+            public const int ThroughNationalAccountYear = 20;
 
             /// <summary>
             /// Property Indexer for Through National Acct Period
             /// </summary>
-            public const int ThroughNationalAcctPeriod = 21;
+            public const int ThroughNationalAccountPeriod = 21;
 
             /// <summary>
             /// Property Indexer for Through Group Year
@@ -287,12 +287,12 @@ namespace ValuedPartner.TU.Models.Process
             /// <summary>
             /// Property Indexer for Through Sales Person Year
             /// </summary>
-            public const int ThroughSalesPersonYear = 24;
+            public const int ThroughSalespersonYear = 24;
 
             /// <summary>
             /// Property Indexer for Through Sales Person Period
             /// </summary>
-            public const int ThroughSalesPersonPeriod = 25;
+            public const int ThroughSalespersonPeriod = 25;
 
             /// <summary>
             /// Property Indexer for Through Item Year

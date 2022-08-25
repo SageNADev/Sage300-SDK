@@ -27,6 +27,7 @@ using Microsoft.Practices.Unity;
 using ValuedPartner.TU.Interfaces.Services.Process;
 using ValuedPartner.TU.Models.Process;
 using ValuedPartner.TU.Web.Areas.TU.Models.Process;
+using ValuedPartner.TU.Models.Enums.Process;
 using Options = Sage.CA.SBS.ERP.Sage300.AR.Models.Options;
 using Sage.CA.SBS.ERP.Sage300.AR.Interfaces.Services;
 using Sage.CA.SBS.ERP.Sage300.AR.Models.Enums;
@@ -90,7 +91,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Process
         /// <summary>
         /// Constant for To Sales Person 
         /// </summary>
-        private const string ToSalesPerson = "ZZZZZZZZ";
+        private const string ToSalesperson = "ZZZZZZZZ";
 
         /// <summary>
         /// Constant for To Item Number 
@@ -118,6 +119,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Process
 
         #endregion
 
+
         #region Public methods
 
         /// <summary>
@@ -141,41 +143,43 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Process
             var salespersonStatisticsCurrentPeriod = GetCurrentPeriod(_options.SalesStatisticsYearType,
                 _options.SalesStatisticsPeriodType, Context.SessionDate,
                 out salespersonMaximumPeriod);
-            clearStatistics.ThroughCustomerYear =
-                clearStatistics.ThroughNationalAcctYear =
-                    clearStatistics.ThroughGroupYear =
-                        clearStatistics.ThroughSalesPersonYear =
-                            clearStatistics.ThroughItemYear =
-                                Context.SessionDate.Year.ToString(CultureInfo.InvariantCulture);
-            clearStatistics.ThroughCustomerPeriod = string.IsNullOrEmpty(customerStatisticsCurrentPeriod)
-                ? "0"
-                : customerStatisticsCurrentPeriod;
-            string customerPeriod = clearStatistics.ThroughCustomerPeriod;
-            clearStatistics.ThroughCustomerPeriod = customerPeriod.PadLeft(2, '0');
-            clearStatistics.ThroughGroupPeriod = string.IsNullOrEmpty(customerStatisticsCurrentPeriod)
-                ? "0"
-                : customerStatisticsCurrentPeriod;
-            string customerGroupPeriod = clearStatistics.ThroughGroupPeriod;
-            clearStatistics.ThroughGroupPeriod = customerGroupPeriod.PadLeft(2, '0');
-            clearStatistics.ThroughNationalAcctPeriod = string.IsNullOrEmpty(customerStatisticsCurrentPeriod)
-                ? "0"
-                : customerStatisticsCurrentPeriod;
-            string nationalAcctPeriod = clearStatistics.ThroughNationalAcctPeriod;
-            clearStatistics.ThroughNationalAcctPeriod = nationalAcctPeriod.PadLeft(2, '0');
-            clearStatistics.ThroughSalesPersonPeriod = string.IsNullOrEmpty(salespersonStatisticsCurrentPeriod)
-                ? "0"
-                : salespersonStatisticsCurrentPeriod;
-            string salespersonPeriod = clearStatistics.ThroughSalesPersonPeriod;
-            clearStatistics.ThroughSalesPersonPeriod = salespersonPeriod.PadLeft(2, '0');
-            clearStatistics.ThroughItemPeriod = string.IsNullOrEmpty(itemStatisticsCurrentPeriod)
-                ? "0"
-                : itemStatisticsCurrentPeriod;
-            string itemPeriod = clearStatistics.ThroughItemPeriod;
-            clearStatistics.ThroughItemPeriod = itemPeriod.PadLeft(2, '0');
-            clearStatistics.ToCustomerNo = ToCustomer;
+
+            var sessionDateYear = Context.SessionDate.Year.ToString(CultureInfo.InvariantCulture);
+            clearStatistics.ThroughCustomerYear = sessionDateYear;
+            clearStatistics.ThroughNationalAccountYear = sessionDateYear;
+            clearStatistics.ThroughGroupYear = sessionDateYear;
+            clearStatistics.ThroughSalespersonYear = sessionDateYear;
+            clearStatistics.ThroughItemYear = sessionDateYear;
+
+            clearStatistics.ThroughCustomerPeriod = EnumUtility.GetEnum<ThroughCustomerPeriod>(string.IsNullOrEmpty(customerStatisticsCurrentPeriod) ? "0" : customerStatisticsCurrentPeriod);
+
+            string customerPeriod = EnumUtility.EnumToString(clearStatistics.ThroughCustomerPeriod);
+            clearStatistics.ThroughCustomerPeriod = EnumUtility.GetEnum<ThroughCustomerPeriod>(customerPeriod.PadLeft(2, '0'));
+
+            clearStatistics.ThroughGroupPeriod = EnumUtility.GetEnum<ThroughGroupPeriod>(string.IsNullOrEmpty(customerStatisticsCurrentPeriod) ? "0" : customerStatisticsCurrentPeriod);
+
+            string customerGroupPeriod = EnumUtility.EnumToString(clearStatistics.ThroughGroupPeriod);
+            clearStatistics.ThroughGroupPeriod = EnumUtility.GetEnum<ThroughGroupPeriod>(customerGroupPeriod.PadLeft(2, '0'));
+
+            clearStatistics.ThroughNationalAccountPeriod = EnumUtility.GetEnum<ThroughNationalAccountPeriod>(string.IsNullOrEmpty(customerStatisticsCurrentPeriod) ? "0" : customerStatisticsCurrentPeriod);
+
+            string nationalAcctPeriod = EnumUtility.EnumToString(clearStatistics.ThroughNationalAccountPeriod);
+            clearStatistics.ThroughNationalAccountPeriod = EnumUtility.GetEnum<ThroughNationalAccountPeriod>(nationalAcctPeriod.PadLeft(2, '0'));
+
+            clearStatistics.ThroughSalespersonPeriod = EnumUtility.GetEnum<ThroughSalespersonPeriod>(string.IsNullOrEmpty(salespersonStatisticsCurrentPeriod) ? "0" : salespersonStatisticsCurrentPeriod);
+
+            string salespersonPeriod = EnumUtility.EnumToString(clearStatistics.ThroughSalespersonPeriod);
+            clearStatistics.ThroughSalespersonPeriod = EnumUtility.GetEnum<ThroughSalespersonPeriod>(salespersonPeriod.PadLeft(2, '0'));
+
+            clearStatistics.ThroughItemPeriod = EnumUtility.GetEnum<ThroughItemPeriod>(string.IsNullOrEmpty(itemStatisticsCurrentPeriod) ? "0" : itemStatisticsCurrentPeriod);
+
+            string itemPeriod = EnumUtility.EnumToString(clearStatistics.ThroughItemPeriod);
+            clearStatistics.ThroughItemPeriod = EnumUtility.GetEnum<ThroughItemPeriod>(itemPeriod.PadLeft(2, '0'));
+
+            clearStatistics.ToCustomerNumber = ToCustomer;
             clearStatistics.ToGroupCode = ToGroupCode;
             clearStatistics.ToNationalAccount = ToNationalAccount;
-            clearStatistics.ToSalesPerson = ToSalesPerson;
+            clearStatistics.ToSalesperson = ToSalesperson;
             clearStatistics.ToItemNumber = ToItemNumber;
             var companyProfile = GetCompanyProfile();
             if (companyProfile != null)
@@ -216,11 +220,21 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Process
         /// <returns>Clear Statistics View Model</returns>
         public override ClearStatisticsViewModel<T> Process(T model)
         {
-            model.ThroughCustomerPeriod = model.ThroughCustomerPeriod.PadLeft(2, '0');
-            model.ThroughGroupPeriod = model.ThroughGroupPeriod.PadLeft(2, '0');
-            model.ThroughNationalAcctPeriod = model.ThroughNationalAcctPeriod.PadLeft(2, '0');
-            model.ThroughSalesPersonPeriod = model.ThroughSalesPersonPeriod.PadLeft(2, '0');
-            model.ThroughItemPeriod = model.ThroughItemPeriod.PadLeft(2, '0');
+            var temp = EnumUtility.EnumToString(model.ThroughCustomerPeriod).PadLeft(2, '0');
+            model.ThroughCustomerPeriod = EnumUtility.GetEnum<ThroughCustomerPeriod>(temp);
+
+            temp = EnumUtility.EnumToString(model.ThroughGroupPeriod).PadLeft(2, '0');
+            model.ThroughGroupPeriod = EnumUtility.GetEnum<ThroughGroupPeriod>(temp);
+
+            temp = EnumUtility.EnumToString(model.ThroughNationalAccountPeriod).PadLeft(2, '0');
+            model.ThroughNationalAccountPeriod = EnumUtility.GetEnum<ThroughNationalAccountPeriod>(temp);
+
+            temp = EnumUtility.EnumToString(model.ThroughSalespersonPeriod).PadLeft(2, '0');
+            model.ThroughSalespersonPeriod = EnumUtility.GetEnum<ThroughSalespersonPeriod>(temp);
+
+            temp = EnumUtility.EnumToString(model.ThroughItemPeriod).PadLeft(2, '0');
+            model.ThroughItemPeriod = EnumUtility.GetEnum<ThroughItemPeriod>(temp);
+
             return new ClearStatisticsViewModel<T>
             {
                 WorkflowInstanceId = Service.Process(model),

@@ -43,82 +43,52 @@ namespace ValuedPartner.TU.Web.Areas.TU.Models.Process
         /// <summary>
         /// Clear Customer Statistics list
         /// </summary>
-        public IEnumerable ClearCustomerStatistics
-        {
-            get { return EnumUtility.GetItems<ClearCustomerStatistics>(); }
-        }
+        public IEnumerable<CustomSelectList> ClearCustomerStatistics => EnumUtility.GetItemsList<ClearCustomerStatistics>();
 
         /// <summary>
         /// Clear Group Statistics list
         /// </summary>
-        public IEnumerable ClearGroupStatistics
-        {
-            get { return EnumUtility.GetItems<ClearGroupStatistics>(); }
-        }
+        public IEnumerable<CustomSelectList> ClearGroupStatistics => EnumUtility.GetItemsList<ClearGroupStatistics>();
 
         /// <summary>
         /// Clear National Acct Statistics list
         /// </summary>
-        public IEnumerable ClearNationalAcctStatistics
-        {
-            get { return EnumUtility.GetItems<ClearNationalAccountStatistics>(); }
-        }
+        public IEnumerable<CustomSelectList> ClearNationalAccountStatistics => EnumUtility.GetItemsList<ClearNationalAccountStatistics>();
 
         /// <summary>
         /// Clear Salesperson Statistics list
         /// </summary>
-        public IEnumerable ClearSalesPersonStatistics
-        {
-            get { return EnumUtility.GetItems<ClearSalespersonStatistics>(); }
-        }
+        public IEnumerable<CustomSelectList> ClearSalespersonStatistics => EnumUtility.GetItemsList<ClearSalespersonStatistics>();
 
         /// <summary>
         /// Clear Item Statistics list
         /// </summary>
-        public IEnumerable ClearItemStatistics
-        {
-            get { return EnumUtility.GetItems<ClearItemStatistics>(); }
-        }
+        public IEnumerable<CustomSelectList> ClearItemStatistics => EnumUtility.GetItemsList<ClearItemStatistics>();
 
         /// <summary>
         /// Through Customer Period list
         /// </summary>
-        public IEnumerable ThroughCustomerPeriods
-        {
-            get { return EnumUtility.GetItems<ThroughCustomerPeriod>(); }
-        }
+        public IEnumerable<CustomSelectList> ThroughCustomerPeriods => EnumUtility.GetItemsList<ThroughCustomerPeriod>();
 
         /// <summary>
         /// Through National Acct Period list
         /// </summary>
-        public IEnumerable ThroughNationalAcctPeriods
-        {
-            get { return EnumUtility.GetItems<ThroughNationalAccountPeriod>(); }
-        }
+        public IEnumerable<CustomSelectList> ThroughNationalAccountPeriods => EnumUtility.GetItemsList<ThroughNationalAccountPeriod>();
 
         /// <summary>
         /// Through Group Period list
         /// </summary>
-        public IEnumerable ThroughGroupPeriods
-        {
-            get { return EnumUtility.GetItems<ThroughGroupPeriod>(); }
-        }
+        public IEnumerable<CustomSelectList> ThroughGroupPeriods => EnumUtility.GetItemsList<ThroughGroupPeriod>();
 
         /// <summary>
         /// Through Salesperson Period list
         /// </summary>
-        public IEnumerable ThroughSalesPersonPeriods
-        {
-            get { return EnumUtility.GetItems<ThroughSalespersonPeriod>(); }
-        }
+        public IEnumerable<CustomSelectList> ThroughSalespersonPeriods => EnumUtility.GetItemsList<ThroughSalespersonPeriod>();
 
         /// <summary>
         /// Through Item Period list
         /// </summary>
-        public IEnumerable ThroughItemPeriods
-        {
-            get { return EnumUtility.GetItems<ThroughItemPeriod>(); }
-        }
+        public IEnumerable<CustomSelectList> ThroughItemPeriods => EnumUtility.GetItemsList<ThroughItemPeriod>();
 
         /// <summary>
         /// Gets or sets Customer Statistics Fields values
