@@ -20,9 +20,9 @@
 
 #region Namespace
 
-using System.Collections.Generic;
 using ValuedPartner.TU.Models.Process;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;
+using System.Collections.Generic;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 
 #endregion
@@ -41,8 +41,5 @@ namespace ValuedPartner.TU.Interfaces.BusinessRepository.Process
         /// </summary>
         /// <returns>Fiscal Years</returns>
         List<FiscalPeriod> GetYears();
-
     }
 }
-
-

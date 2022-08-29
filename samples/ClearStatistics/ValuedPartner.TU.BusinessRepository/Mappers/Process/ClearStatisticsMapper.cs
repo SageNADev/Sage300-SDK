@@ -61,36 +61,36 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers.Process
         {
             var model = base.Map(entity);
 
-            model.FromCustomerNo = entity.GetValue<string>(ClearStatistics.Index.FromCustomerNo);
-            model.ToCustomerNo = entity.GetValue<string>(ClearStatistics.Index.ToCustomerNo);
+            model.FromCustomerNumber = entity.GetValue<string>(ClearStatistics.Index.FromCustomerNumber);
+            model.ToCustomerNumber = entity.GetValue<string>(ClearStatistics.Index.ToCustomerNumber);
             model.FromGroupCode = entity.GetValue<string>(ClearStatistics.Index.FromGroupCode);
             model.ToGroupCode = entity.GetValue<string>(ClearStatistics.Index.ToGroupCode);
             model.FromNationalAccount = entity.GetValue<string>(ClearStatistics.Index.FromNationalAccount);
             model.ToNationalAccount = entity.GetValue<string>(ClearStatistics.Index.ToNationalAccount);
-            model.FromSalesPerson = entity.GetValue<string>(ClearStatistics.Index.FromSalesPerson);
-            model.ToSalesPerson = entity.GetValue<string>(ClearStatistics.Index.ToSalesPerson);
+            model.FromSalesperson = entity.GetValue<string>(ClearStatistics.Index.FromSalesperson);
+            model.ToSalesperson = entity.GetValue<string>(ClearStatistics.Index.ToSalesperson);
             model.FromItemNumber = entity.GetValue<string>(ClearStatistics.Index.FromItemNumber);
             model.ToItemNumber = entity.GetValue<string>(ClearStatistics.Index.ToItemNumber);
-            model.ClearCustomerStatistics = (ClearCustomerStatistics)(entity.GetValue<int>(ClearStatistics.Index.ClearCustomerStatistics));
-            model.ClearGroupStatistics = (ClearGroupStatistics)(entity.GetValue<int>(ClearStatistics.Index.ClearGroupStatistics));
-            model.ClearNationalAcctStatistics = (ClearNationalAccountStatistics)(entity.GetValue<int>(ClearStatistics.Index.ClearNationalAcctStatistics));
-            model.ClearSalesPersonStatistics = (ClearSalespersonStatistics)(entity.GetValue<int>(ClearStatistics.Index.ClearSalesPersonStatistics));
-            model.ClearItemStatistics = (ClearItemStatistics)(entity.GetValue<int>(ClearStatistics.Index.ClearItemStatistics));
+			model.ClearCustomerStatistics = (ClearCustomerStatistics)(entity.GetValue<int>(ClearStatistics.Index.ClearCustomerStatistics));
+			model.ClearGroupStatistics = (ClearGroupStatistics)(entity.GetValue<int>(ClearStatistics.Index.ClearGroupStatistics));
+			model.ClearNationalAccountStatistics = (ClearNationalAccountStatistics)(entity.GetValue<int>(ClearStatistics.Index.ClearNationalAccountStatistics));
+			model.ClearSalespersonStatistics = (ClearSalespersonStatistics)(entity.GetValue<int>(ClearStatistics.Index.ClearSalespersonStatistics));
+			model.ClearItemStatistics = (ClearItemStatistics)(entity.GetValue<int>(ClearStatistics.Index.ClearItemStatistics));
             model.ThroughCustomerYear = entity.GetValue<string>(ClearStatistics.Index.ThroughCustomerYear);
-            model.ThroughCustomerPeriod = entity.GetValue<string>(ClearStatistics.Index.ThroughCustomerPeriod);
-            model.ThroughNationalAcctYear = entity.GetValue<string>(ClearStatistics.Index.ThroughNationalAcctYear);
-            model.ThroughNationalAcctPeriod = entity.GetValue<string>(ClearStatistics.Index.ThroughNationalAcctPeriod);
+            model.ThroughCustomerPeriod = (ThroughCustomerPeriod)(entity.GetValue<int>(ClearStatistics.Index.ThroughCustomerPeriod));
+            model.ThroughNationalAccountYear = entity.GetValue<string>(ClearStatistics.Index.ThroughNationalAccountYear);
+            model.ThroughNationalAccountPeriod = (ThroughNationalAccountPeriod)(entity.GetValue<int>(ClearStatistics.Index.ThroughNationalAccountPeriod));
             model.ThroughGroupYear = entity.GetValue<string>(ClearStatistics.Index.ThroughGroupYear);
-            model.ThroughGroupPeriod = entity.GetValue<string>(ClearStatistics.Index.ThroughGroupPeriod);
-            model.ThroughSalesPersonYear = entity.GetValue<string>(ClearStatistics.Index.ThroughSalesPersonYear);
-            model.ThroughSalesPersonPeriod = entity.GetValue<string>(ClearStatistics.Index.ThroughSalesPersonPeriod);
+            model.ThroughGroupPeriod = (ThroughGroupPeriod)(entity.GetValue<int>(ClearStatistics.Index.ThroughGroupPeriod));
+            model.ThroughSalespersonYear = entity.GetValue<string>(ClearStatistics.Index.ThroughSalespersonYear);
+            model.ThroughSalespersonPeriod = (ThroughSalespersonPeriod)(entity.GetValue<int>(ClearStatistics.Index.ThroughSalespersonPeriod));
             model.ThroughItemYear = entity.GetValue<string>(ClearStatistics.Index.ThroughItemYear);
-            model.ThroughItemPeriod = entity.GetValue<string>(ClearStatistics.Index.ThroughItemPeriod);
+            model.ThroughItemPeriod = (ThroughItemPeriod)(entity.GetValue<int>(ClearStatistics.Index.ThroughItemPeriod));
             return model;
         }
 
         /// <summary>
-        /// Set Value Mapper
+        /// Set Mapper
         /// </summary>
         /// <param name="model">Clear Statistics Model</param>
         /// <param name="entity">Clear Statistics Business Entity</param>
@@ -105,8 +105,8 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers.Process
             {
                 entity.SetValue(ClearStatistics.Index.ClearCustomerStatistics,
                     model.ClearCustomerStatistics);
-                entity.SetValue(ClearStatistics.Index.FromCustomerNo, model.FromCustomerNo);
-                entity.SetValue(ClearStatistics.Index.ToCustomerNo, model.ToCustomerNo);
+                entity.SetValue(ClearStatistics.Index.FromCustomerNumber, model.FromCustomerNumber);
+                entity.SetValue(ClearStatistics.Index.ToCustomerNumber, model.ToCustomerNumber);
                 entity.SetValue(ClearStatistics.Index.ThroughCustomerYear, model.ThroughCustomerYear);
                 entity.SetValue(ClearStatistics.Index.ThroughCustomerPeriod, model.ThroughCustomerPeriod);
             }
@@ -122,27 +122,28 @@ namespace ValuedPartner.TU.BusinessRepository.Mappers.Process
                     model.ThroughGroupPeriod);
             }
 
-            if (model.ClearNationalAcctStatistics == ClearNationalAccountStatistics.Yes)
+            if (model.ClearNationalAccountStatistics == ClearNationalAccountStatistics.Yes)
             {
-                entity.SetValue(ClearStatistics.Index.ClearNationalAcctStatistics,
-                    model.ClearNationalAcctStatistics);
+                entity.SetValue(ClearStatistics.Index.ClearNationalAccountStatistics,
+                    model.ClearNationalAccountStatistics);
                 entity.SetValue(ClearStatistics.Index.FromNationalAccount, model.FromNationalAccount);
                 entity.SetValue(ClearStatistics.Index.ToNationalAccount, model.ToNationalAccount);
-                entity.SetValue(ClearStatistics.Index.ThroughNationalAcctYear, model.ThroughNationalAcctYear);
-                entity.SetValue(ClearStatistics.Index.ThroughNationalAcctPeriod,
-                    model.ThroughNationalAcctPeriod);
+                entity.SetValue(ClearStatistics.Index.ThroughNationalAccountYear, model.ThroughNationalAccountYear);
+                entity.SetValue(ClearStatistics.Index.ThroughNationalAccountPeriod,
+                    model.ThroughNationalAccountPeriod);
             }
 
-            if (model.ClearSalesPersonStatistics == ClearSalespersonStatistics.Yes)
+            if (model.ClearSalespersonStatistics == ClearSalespersonStatistics.Yes)
             {
-                entity.SetValue(ClearStatistics.Index.ClearSalesPersonStatistics,
-                    model.ClearSalesPersonStatistics);
-                entity.SetValue(ClearStatistics.Index.FromSalesPerson, model.FromSalesPerson);
-                entity.SetValue(ClearStatistics.Index.ToSalesPerson, model.ToSalesPerson);
-                entity.SetValue(ClearStatistics.Index.ThroughSalesPersonYear, model.ThroughSalesPersonYear);
-                entity.SetValue(ClearStatistics.Index.ThroughSalesPersonPeriod,
-                    model.ThroughSalesPersonPeriod);
+                entity.SetValue(ClearStatistics.Index.ClearSalespersonStatistics,
+                    model.ClearSalespersonStatistics);
+                entity.SetValue(ClearStatistics.Index.FromSalesperson, model.FromSalesperson);
+                entity.SetValue(ClearStatistics.Index.ToSalesperson, model.ToSalesperson);
+                entity.SetValue(ClearStatistics.Index.ThroughSalespersonYear, model.ThroughSalespersonYear);
+                entity.SetValue(ClearStatistics.Index.ThroughSalespersonPeriod,
+                    model.ThroughSalespersonPeriod);
             }
+
             if (model.ClearItemStatistics == ClearItemStatistics.Yes)
             {
                 entity.SetValue(ClearStatistics.Index.ClearItemStatistics,

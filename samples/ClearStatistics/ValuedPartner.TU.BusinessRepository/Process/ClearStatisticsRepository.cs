@@ -47,7 +47,7 @@ namespace ValuedPartner.TU.BusinessRepository.Process
         /// <summary>
         /// Clear Statistics Business Entity
         /// </summary>
-        private IBusinessEntity _clearStatisticsBusinessEntity;
+        private IBusinessEntity _businessEntity;
 
         #endregion
 
@@ -82,8 +82,8 @@ namespace ValuedPartner.TU.BusinessRepository.Process
         /// <returns>Business Entity</returns>
         protected override IBusinessEntity CreateBusinessEntities()
         {
-            _clearStatisticsBusinessEntity = OpenEntity(ClearStatistics.EntityName);
-            return _clearStatisticsBusinessEntity;
+            _businessEntity = OpenEntity(ClearStatistics.EntityName);
+            return _businessEntity;
         }
 
         #endregion

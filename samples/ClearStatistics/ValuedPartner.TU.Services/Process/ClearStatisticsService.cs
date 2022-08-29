@@ -38,6 +38,14 @@ namespace ValuedPartner.TU.Services.Process
     public class ClearStatisticsService<T> : ProcessService<T, IClearStatisticsEntity<T>>,
         IClearStatisticsService<T> where T : ClearStatistics, new()
     {
+        #region Constants
+        /// <summary>
+        /// The WorkFlowKindId
+        /// This value must match the WorkFlowKindId field in the PORTAL database (WorkflowKind and UnitOfWorkKind tables)
+        /// </summary>
+        public const string WORKFLOWKINDID = "6e508498-8a54-40bd-8d36-0a41d15b8870";
+        #endregion
+
         #region Constructor
 
         /// <summary>
@@ -45,7 +53,7 @@ namespace ValuedPartner.TU.Services.Process
         /// </summary>
         /// <param name="context">Request Context</param>
         public ClearStatisticsService(Context context)
-            : base(context, Guid.Parse("ab08bb64-73bc-4681-87fd-08dd23af21a9"))
+            : base(context, Guid.Parse(WORKFLOWKINDID))
         {
         }
 
