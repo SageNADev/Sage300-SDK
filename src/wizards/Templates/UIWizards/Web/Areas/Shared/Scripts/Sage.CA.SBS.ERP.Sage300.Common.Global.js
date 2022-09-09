@@ -241,6 +241,20 @@ $.extend(sg.utls.url, {
         }
 
         return encodedUrl;
+    },
+
+    /**
+     * @name buildCacheBuster
+     * @description Create an url parameter meant to invalidate the cache
+     * @returns {string} return an url parameter for cache busting
+     */
+    buildCacheBuster: function () {
+        var cb = ""; 
+        if (sg.utls.isInternetExplorer()) {
+            // Generate date + random number to make the URL unique
+            cb = "&cb=" + encodeURI((new Date()).toString() + Math.floor(Math.random() * 10000000));
+        }
+        return cb;
     }
 });
 
