@@ -111,7 +111,7 @@
       }
 
       &.k-state-hover>.k-link {
-        background-color: @sage-blue;
+        background-color: @brand-primary;
         color: @white;
 
         &:before {
@@ -142,7 +142,7 @@
     .k-menu-vertical .k-item>.k-link>.k-menu-expand-arrow, 
     .k-popups-wrapper .k-item>.k-link>.k-i-arrow-60-right {
       background: none;
-      color: @sage-blue;
+      color: @brand-primary;
       margin-top: -13px;
       right: -6px;
       font-size: 14px;
@@ -218,7 +218,7 @@
         top: 6px;
         transform: rotate(45deg);
         width: 4px;
-        border-color: #3399cc;
+        border-color: @brand-primary;
       }
     }
   }
@@ -272,16 +272,24 @@
       background-color: @btn-link-hover-color;
     }
 
-    &.active { 
-      background-color: #b1ddf3;
-    }
-
     &.btn-view-expand {
       background-position: -848px 5px;
     }
 
     &.btn-view-simple {
         background-position: -874px 5px;
+    }
+
+    &.active { 
+      background-color: @sage-green;
+
+      	&.btn-view-expand {
+	      background-position: -848px -31px;
+	    }
+
+	    &.btn-view-simple {
+	        background-position: -874px -31px;
+	    }
     }
   }
 }

@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. *@
 
 @using System.Web.UI.WebControls
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -31,9 +31,7 @@
     var othersUrlList = ViewBag.OthersUrlList as List<WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>>;
     var widgetUrlList = ViewBag.WidgetUrlList as WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>;
     int numberOfActiveWindows;
-    int.TryParse(ConfigurationHelper.GetConfigValue("NumberOfActiveWindows", false), out numberOfActiveWindows);
-    var isOnPremise = ConfigurationHelper.IsOnPremise;
-    var oAuthServer = string.Format(ConfigurationHelper.GetConfigValue("OAuthServerTemplate"), Request.Url.Host);
+    int.TryParse(ConfigurationHelper.GetConfigValue("NumberOfActiveWindows"), out numberOfActiveWindows);
     var hasGlobalSearchLicense = ViewBag.HasGlobalSearchLicense;
 }
 <html class="template-side-nav page-collapsed home-page">
@@ -60,26 +58,10 @@
         var RECENT_WIN_LIMIT_CONST = @ViewBag.RecentWindowsLimit;
         var LOGGED_IN_USERNAME_CONST = '@Model.UserName'.replace(/\s/g,'');
         var LOGGED_IN_TENANT_CONST = '@Model.CompanyName'.replace(/\s/g,'');
-        var sIRCLocation = '@ConfigurationHelper.GetConfigValue("SIRCLocation")';
-        var oAuthLocation = '@oAuthServer';
         var menuUserPreferenceKey = '@ViewBag.menuUserPreferenceKey';
         var formSizeUserPreferenceKey = '@ViewBag.formSizeUserPreferenceKey';
         var formSizeResetConfirmation = '@NavigationResx.FormSizeResetConfirmation';
         var formSizeResetConfirmationTitle = '@CommonResx.Confirmation';
-
-        @functions {
-            public String GetSIRCPort(string path)
-            {
-                var port = "";
-                if (File.Exists(path))
-                {
-                    port = File.ReadAllText(path).Trim();
-                }
-
-                return port;
-            }
-        }
-        var SIRCPort = '@GetSIRCPort(Path.Combine(Server.MapPath("~"), "..", "..", "SIRC", "site", "sslPort.txt"))';
     </script>
 </head>
 
@@ -94,9 +76,9 @@
         <header class="header" id="globalHeader">
             <div class="header-global" id="header">
                 <a class="logo-product" id="logoSage300" autofocus="autofocus" alt="Sage 300" href="javascript:;"></a>
-                @*<a id="skipMenu" tabindex="0" class="skip-menu" href="#menuPrefButton">@HomePageResx.SkipMenu</a>*@
+                <a id="skipMenu" tabindex="0" class="skip-menu" href="#menuPrefButton">@HomePageResx.SkipMenu</a>
                 <div class="globalNavigation">
-                    <div class="last_container session-date">
+                    <a class="last_container session-date" href="javascript:sessionDateClick()">
                         <span class="glyphicon glyphicon-calendar" id="sessionDateIcon"></span>
                         <span class="text-right" id="sessionDatelabel">@HomePageResx.Session_Date:&nbsp;</span>
                         <span id="spnSessionDate"></span>
@@ -120,16 +102,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="top_nav">
-                        <ul id="topMenu" class="k-rtl">
+                        <ul id="topMenu" class="">
                             <li id="topMenuUser">
                                 <span class="txt-top-menu">@RenderSection("username", required: false)</span>
                                 <ul>
-                                    @if (!isOnPremise)
-                                    {
-                                        <li id="liManageUsers" class="top_nav_drop_content"></li>
-                                    }
                                     <li id="liSignOut" class="top_nav_drop_content">
                                     </li>
                                 </ul>
@@ -145,9 +123,7 @@
                             }
                             <li class="menu-item-with-icon" id="helpMenu">
                                 <i class="help glyphicon glyphicon-md glyphicon-quick-help" title="@NavigationResx.HelpTitle"><span>@NavigationResx.Help</span></i>
-                                <ul>
-                                    <li id="searchHelpDiv">
-                                    </li>
+                                <ul id="searchHelpDiv">
                                 </ul>
                             </li>
                             <li class="menu-item-with-icon" id="topMenuSettings">
@@ -160,10 +136,10 @@
                                     <li id="btnFormSize">
                                         <span class="settings-menulist" id="labelFormSize">@NavigationResx.TextSize</span>
                                         <ul>
-                                            <li id="btnFormSizeLarge"><span class="settings-menulist" id="labelFormSizeLarge">@NavigationResx.Large</span></li>
-                                            <li id="btnFormSizeMedium"><span class="settings-menulist" id="labelFormSizeMedium">@NavigationResx.Medium</span></li>
-                                            <li id="btnFormSizeSmall"><span class="settings-menulist" id="labelFormSizeSmall">@NavigationResx.Small</span></li>
-                                            <li id="btnFormSizeReset"><span class="settings-menulist" id="labelFormSizeReset">@CommonResx.Reset</span></li>
+                                            <li id="btnFormSizeLarge"><a href="javascript:;" class="settings-menulist" id="labelFormSizeLarge">@NavigationResx.Large</a></li>
+                                            <li id="btnFormSizeMedium"><a href="javascript:;" class="settings-menulist" id="labelFormSizeMedium">@NavigationResx.Medium</a></li>
+                                            <li id="btnFormSizeSmall"><a href="javascript:;" class="settings-menulist" id="labelFormSizeSmall">@NavigationResx.Small</a></li>
+                                            <li id="btnFormSizeReset"><a href="javascript:;" class="settings-menulist" id="labelFormSizeReset">@CommonResx.Reset</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -198,7 +174,7 @@
                             <div class="nav-icon">
                                 <img src="~/Content/Images/nav/icon_home.svg" alt="Home" width="20" height="20">
                             </div>
-                            <a>@NavigationResx.Home</a>
+                            <a tabindex="0">@NavigationResx.Home</a>
                         </li>
                         @Html.Partial(Constants.PortalMenu, menuUrlList)
                         @Html.Partial("~/Views/Partials/_PluginMenuUrl.cshtml", othersUrlList)

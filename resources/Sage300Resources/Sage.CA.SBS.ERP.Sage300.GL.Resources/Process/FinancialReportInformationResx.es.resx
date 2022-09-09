@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountGroup" xml:space="preserve">
+    <value>Hasta Número de Cuenta</value>
+  </data>
+  <data name="AccountNo" xml:space="preserve">
+    <value>N° de Cuenta</value>
+  </data>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>Número de Cuenta</value>
+  </data>
+  <data name="AccountSortedGroup" xml:space="preserve">
+    <value>Grupo Clasif. de Ctas.</value>
+  </data>
+  <data name="Actual" xml:space="preserve">
+    <value>Real</value>
+  </data>
+  <data name="AddUpdate" xml:space="preserve">
+    <value>Agregar/Actualizar</value>
+  </data>
+  <data name="AuditInformation" xml:space="preserve">
+    <value>Inform. Auditoría</value>
+  </data>
+  <data name="Consolidated" xml:space="preserve">
+    <value>Consolidado</value>
+  </data>
+  <data name="CreateNewStatement" xml:space="preserve">
+    <value>Crear Nuevo Estado</value>
+  </data>
+  <data name="DontShowThisAgain" xml:space="preserve">
+    <value>No volver a mostrar</value>
+  </data>
+  <data name="DrillDownInformation" xml:space="preserve">
+    <value>Inform. Búsq. Detallada</value>
+  </data>
+  <data name="DuplicateStatementName" xml:space="preserve">
+    <value>Ya existe un estado con este nombre. Especifique un nombre único para el estado.</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>LM - Diseñador de Estado de Cuenta</value>
+  </data>
+  <data name="ErrorMessage_AccountRange" xml:space="preserve">
+    <value>La entrada en la casilla Desde Cuenta no puede ser mayor que la entrada en la casilla Hasta.</value>
+  </data>
+  <data name="ErrorMessage_NoChartOfAccounts" xml:space="preserve">
+    <value>El catálogo de cuentas no está establecido.</value>
+  </data>
+  <data name="ErrorMessage_Range" xml:space="preserve">
+    <value>La entrada en la casilla Desde no puede ser mayor que la entrada en la casilla Hasta.</value>
+  </data>
+  <data name="ErrorMessage_SegmentRange" xml:space="preserve">
+    <value>La entrada en la casilla Desde Segmento no puede ser mayor que la entrada en la casilla Hasta.</value>
+  </data>
+  <data name="FileHasBeenDownloaded" xml:space="preserve">
+    <value>El estado "{0}" se ha guardado en su computadora. Edite este estado en Microsoft Excel y, a continuación, haga clic en el botón Agregar/Actualizar para que los cambios estén disponibles para su uso.</value>
+  </data>
+  <data name="FiscalOption" xml:space="preserve">
+    <value>Opción Fiscal</value>
+  </data>
+  <data name="Formulas" xml:space="preserve">
+    <value>Fórmulas</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Desde {0}</value>
+  </data>
+  <data name="FromAccountGroup" xml:space="preserve">
+    <value>Desde Grupo Ctas.</value>
+  </data>
+  <data name="FromAccountNumber" xml:space="preserve">
+    <value>Desde Número de Cuenta</value>
+  </data>
+  <data name="FromSortCodeAccountGroup" xml:space="preserve">
+    <value>Desde Cód. Clasif.-Grupo de Ctas.</value>
+  </data>
+  <data name="GenerateStatement" xml:space="preserve">
+    <value>Generar Estado</value>
+  </data>
+  <data name="GetAddin" xml:space="preserve">
+    <value>Obtener Complemento</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>Empezar ahora</value>
+  </data>
+  <data name="GetStartedText" xml:space="preserve">
+    <value>Instale el complemento necesario para Microsoft Excel y, a continuación, cree su primer estado financiero.</value>
+  </data>
+  <data name="GetStartedTitle" xml:space="preserve">
+    <value>Empiece a utilizar el Generador de Reportes Financieros</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Incluir</value>
+  </data>
+  <data name="InvalidStatementName" xml:space="preserve">
+    <value>El nombre del estado no es válido.</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>Modificado</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="NameYourNewStatement" xml:space="preserve">
+    <value>Asigne un nombre a su nuevo estado</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="OldName" xml:space="preserve">
+    <value>Previo Nombre</value>
+  </data>
+  <data name="PleaseinstallAddin" xml:space="preserve">
+    <value>Instale el complemento para imprimir los estados financieros.</value>
+  </data>
+  <data name="PrintFinancialStatements" xml:space="preserve">
+    <value>LM - Imprimir Estados Financieros</value>
+  </data>
+  <data name="Provisional" xml:space="preserve">
+    <value>Provisional</value>
+  </data>
+  <data name="RelaceTheContent" xml:space="preserve">
+    <value>¿Desea sustituir la especificación de reporte en el estado "{0}" por la especificación en el archivo "{1}"?</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Renombrar</value>
+  </data>
+  <data name="RenameStatement" xml:space="preserve">
+    <value>Renombrar Estado</value>
+  </data>
+  <data name="ReportAs" xml:space="preserve">
+    <value>Reportar Como</value>
+  </data>
+  <data name="ReportOptions" xml:space="preserve">
+    <value>Opc. Reporte</value>
+  </data>
+  <data name="ReportType" xml:space="preserve">
+    <value>Tipo de Reporte</value>
+  </data>
+  <data name="Segment" xml:space="preserve">
+    <value>Segmento</value>
+  </data>
+  <data name="SegmentName" xml:space="preserve">
+    <value>Nombre Segm.</value>
+  </data>
+  <data name="SelectAccountGroupsBySortCodeRange" xml:space="preserve">
+    <value>Selecc. Grupos de Ctas. Por Rango de Cód. de Clasif.</value>
+  </data>
+  <data name="Selectstatement" xml:space="preserve">
+    <value>Seleccione un estado.</value>
+  </data>
+  <data name="Separate" xml:space="preserve">
+    <value>Separado</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Clasificar por</value>
+  </data>
+  <data name="StatementName" xml:space="preserve">
+    <value>Nombre del Estado</value>
+  </data>
+  <data name="Statements" xml:space="preserve">
+    <value>Estados</value>
+  </data>
+  <data name="StatementUpdated" xml:space="preserve">
+    <value>El estado {0} está actualizado y listo para su uso.</value>
+    <comment>F</comment>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>LM - Diseñador de Estado Financiero</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Hasta {0}</value>
+  </data>
+  <data name="ToAccountGroup" xml:space="preserve">
+    <value>Hasta Grupo Ctas.</value>
+  </data>
+  <data name="ToSortCodeAccountGroup" xml:space="preserve">
+    <value>Hasta Cód. Clasif.-Grupo de Ctas.</value>
+  </data>
+</root>

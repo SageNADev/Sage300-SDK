@@ -953,11 +953,9 @@
   </data>
   <data name="CustomerItemNumberFrom" xml:space="preserve">
     <value>Du numéro d'article client</value>
-    <comment>Translation to be verified</comment>
   </data>
   <data name="CustomerItemNumberTo" xml:space="preserve">
     <value>Au numéro d'article du client</value>
-    <comment>Translation to be verified</comment>
   </data>
   <data name="CustomerNumber" xml:space="preserve">
     <value>Nº de Cliente</value>
@@ -1060,18 +1058,14 @@
   </data>
   <data name="AccountGroupCode" xml:space="preserve">
     <value>Code groupe de comptes</value>
-    <comment>To be translated</comment>
   </data>
   <data name="AccountGroupSortCode" xml:space="preserve">
     <value>Code tri du groupe de comptes</value>
-    <comment>To be translated</comment>
   </data>
   <data name="FromAccountGroupCode" xml:space="preserve">
     <value>Du code groupe de comptes</value>
-    <comment>To be translated</comment>
   </data>
   <data name="ToAccountGroupCode" xml:space="preserve">
     <value>Au code groupe de comptes</value>
-    <comment>To be translated</comment>
   </data>
 </root>

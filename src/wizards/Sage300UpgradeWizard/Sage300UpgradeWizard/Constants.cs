@@ -32,16 +32,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2022.1";
+            public const string FromReleaseNumber = "2022.2";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2022.2";
+            public const string ToReleaseNumber = "2023.0";
 
             /// <summary> From Accpac Number </summary>
             public const string FromAccpacNumber = "6.9.0.0";
 
             /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "6.9.0.0";
+            public const string ToAccpacNumber = "7.0.0.0";
 
             /// <summary> Flag that determines whether or not to synchronize the Kendo files. </summary>
             public const bool SyncKendoFiles = true;
@@ -50,7 +50,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const bool SyncWebFiles = true;
 
             /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
-            public const bool UpdateAccpacDotNetLibrary = false;
+            public const bool UpdateAccpacDotNetLibrary = true;
 
             /// <summary> Flag that determines whether or not to update the .NET framework in solution projects. </summary>
             public const bool UpdateMicrosoftDotNetFramework = false;
@@ -91,6 +91,11 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const string ToJqueryCoreVersion = "3.6.0";
             public const string ToJqueryUIVersion = "1.12.1";
             public const string ToJqueryMigrateVersion = "3.3.2";
+
+            /// <summary> 
+            /// For Release 2023.0
+            /// </summary>
+            public const bool RemoveWebFormsFolder = true;
         }
 
         /// <summary>

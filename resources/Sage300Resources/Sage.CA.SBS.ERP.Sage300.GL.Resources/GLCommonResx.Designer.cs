@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class GLCommonResx {
@@ -165,6 +165,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources {
         public static string CannotLockBatchReadyToPost {
             get {
                 return ResourceManager.GetString("CannotLockBatchReadyToPost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consolidated.
+        /// </summary>
+        public static string Consolidated {
+            get {
+                return ResourceManager.GetString("Consolidated", resourceCulture);
             }
         }
         
@@ -345,6 +354,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources {
         public static string SelectAccountGroupsBySortCodeRange {
             get {
                 return ResourceManager.GetString("SelectAccountGroupsBySortCodeRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Separate.
+        /// </summary>
+        public static string Separate {
+            get {
+                return ResourceManager.GetString("Separate", resourceCulture);
             }
         }
         

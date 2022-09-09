@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class NavigationResx {
@@ -2131,6 +2131,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Print Financial Statements.
+        /// </summary>
+        public static string GL_Print_Financial_Statements {
+            get {
+                return ResourceManager.GetString("GL_Print_Financial_Statements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create New Year.
         /// </summary>
         public static string GL_Processing_CreateNewYear {
@@ -2262,6 +2271,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_SourceCurrencyInquiry {
             get {
                 return ResourceManager.GetString("GL_SourceCurrencyInquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statement Designer.
+        /// </summary>
+        public static string GL_Statement_Designer {
+            get {
+                return ResourceManager.GetString("GL_Statement_Designer", resourceCulture);
             }
         }
         
@@ -3616,7 +3634,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O/E Reports.
+        ///   Looks up a localized string similar to O/E Analytical Reports.
         /// </summary>
         public static string OE_Reports {
             get {
@@ -4629,24 +4647,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string SIR_Msg2 {
             get {
                 return ResourceManager.GetString("SIR_Msg2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sage Intelligence Reporting Cloud.
-        /// </summary>
-        public static string SIR_Msg3 {
-            get {
-                return ResourceManager.GetString("SIR_Msg3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Gain better visibility into your business with dynamic financial reports that you can export and customize in Microsoft Excel® or Excel Online..
-        /// </summary>
-        public static string SIR_Msg4 {
-            get {
-                return ResourceManager.GetString("SIR_Msg4", resourceCulture);
             }
         }
         

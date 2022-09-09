@@ -241,20 +241,6 @@ $.extend(sg.utls.url, {
         }
 
         return encodedUrl;
-    },
-
-    /**
-     * @name buildCacheBuster
-     * @description Create an url parameter meant to invalidate the cache
-     * @returns {string} return an url parameter for cache busting
-     */
-    buildCacheBuster: function () {
-        var cb = ""; 
-        if (sg.utls.isInternetExplorer()) {
-            // Generate date + random number to make the URL unique
-            cb = "&cb=" + encodeURI((new Date()).toString() + Math.floor(Math.random() * 10000000));
-        }
-        return cb;
     }
 });
 
@@ -1871,26 +1857,27 @@ $.extend(sg.utls, {
 
         kendoWindow.find(".delete-confirm,.delete-cancel,.delete-cancelled")
             .click(function () {
+                try {
+                    kendoWindow.data("kendoWindow").destroy();
+                } catch (err) {
+                    //don't do anything. This means window is already destroyed or does not exists.
+                    //This is required for iframes
+                }
                 if ($(this).hasClass("delete-confirm")) {
+                
                     if (callbackYes != null) {
                         callbackYes();
                     }
-                    try {
-                        kendoWindow.data("kendoWindow").destroy();
-                    } catch (err) {
-                        //don't do anything. This means window is already destroyed or does not exists.
-                        //This is required for iframes
-                    }
+
                 } else if ($(this).hasClass("delete-cancel")) {
                     if (callbackNo != null)
                         callbackNo();
-                    kendoWindow.data("kendoWindow").destroy();
+                    
                 }
                 else if ($(this).hasClass("delete-cancelled")) {
                     if (callbackCancel) {
                         callbackCancel();
                     }
-                    kendoWindow.data("kendoWindow").destroy();
                 }
 
                 // If gridName has been specified, set focus back to grid
@@ -2695,6 +2682,18 @@ $.extend(sg.utls, {
         }
     },
 
+    /**
+     * Hide Message dialog
+     * */
+    hideMessage: () =>{
+        $("#message").hide();
+        $("#message").empty();
+
+        //Remove injected overlay if exists
+        $("#injectedOverlay").remove();
+        $("#injectedOverlayTransparent").remove();
+    },
+
     showMessagePopup: function (result, divId) {
         clearTimeout(fnTimeout);
         if (result.UserMessage != null) {
@@ -2978,6 +2977,28 @@ $.extend(sg.utls, {
 
     showMessageInfo: function (messageType, message) {
         sg.utls.showMessageInfoInCustomDiv(messageType, message, "message");
+    },
+
+    /**
+     * Show the message with costom html document
+     * @param {any} htmlMsg HTML document
+     */
+    showMessageWithCustomHtml: function (htmlMsg) {
+        const messageHTML = htmlMsg;
+        const messageDivId = "#message";
+        var messageDiv = $(messageDivId);
+        messageDiv.html(messageHTML);
+
+        /// Setting message position to viewport top.
+        sg.utls.showMessagesInViewPort();
+
+        messageDiv.show();
+
+        if ($('#injectedOverlay').length === 0) {
+            //Inject an overlay that is semi-opaque. 
+            messageDiv.parent().append("<div id='injectedOverlay' class='k-overlay'></div>");
+            $('#injectedOverlay').css('z-index', '999998');
+        }
     },
 
     showProcessMessageInfo: function (messageType, message, divId) {

@@ -93,6 +93,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public object MaxValue { get; set; }
         /// <summary> PreviousName is the field name prior to any changes in the properties grid</summary>
         public string PreviousName { get; set; }
+        /// <summary> EntityFieldType is the fields ViewFieldType for the ViewField attribute</summary>
+        public int EntityFieldType { get; set; }
+        /// <summary> Mask is the fields PresentationMask for the ViewField attribute</summary>
+        public string Mask { get; set; }
 
 
 #if ENABLE_TK_244885

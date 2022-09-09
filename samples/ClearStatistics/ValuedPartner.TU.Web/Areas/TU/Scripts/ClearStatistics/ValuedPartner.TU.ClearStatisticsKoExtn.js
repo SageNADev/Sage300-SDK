@@ -22,106 +22,87 @@
 
 "use strict";
 
-var tuClearStatisticsKoExtn = ((self) => {
+var tuClearStatisticsKoExtn = tuClearStatisticsKoExtn || {};
 
-    /**
-     * @name convertToBoolean
-     * @description Converts a value into a boolean type
-     * @private
-     * 
-     * @param {any} value The value to convert to boolean
-     * 
-     * @returns The converted boolean value
-     */
-    function convertToBoolean(value) {
+tuClearStatisticsKoExtn = {
+    tuClearStatisticsModelExtension: function (modelData) {
+        let model = modelData.Data;
+        model.Year = ko.observable("");
+
+        model.IsKoStatisticsDirty = new ko.dirtyFlag(clearStatisticsUI.clearStatisticsModel);
+
+        model.bClearCustomerStatistics = ko.computed({
+            read: function () {
+                //return original value
+                return tuClearStatisticsKoExtn.convertToBoolean(clearStatisticsUI.clearStatisticsModel.Data.ClearCustomerStatistics());
+            },
+            write: function (newValue) {
+                //convert boolean to appropriate enum and assign
+                var parsedValue = newValue ? 1 : 0;
+                clearStatisticsUI.clearStatisticsModel.Data.ClearCustomerStatistics(parsedValue);
+            },
+            owner: this
+        });
+
+        model.bClearGroupStatistics = ko.computed({
+            read: function () {
+                //return original value
+                return tuClearStatisticsKoExtn.convertToBoolean(clearStatisticsUI.clearStatisticsModel.Data.ClearGroupStatistics());
+            },
+            write: function (newValue) {
+                //convert boolean to appropriate enum and assign
+                var parsedValue = newValue ? 1 : 0;
+                clearStatisticsUI.clearStatisticsModel.Data.ClearGroupStatistics(parsedValue);
+            },
+            owner: this
+        });
+
+        model.bClearNationalAccountStatistics = ko.computed({
+            read: function () {
+                //return original value
+                return tuClearStatisticsKoExtn.convertToBoolean(clearStatisticsUI.clearStatisticsModel.Data.ClearNationalAccountStatistics());
+            },
+            write: function (newValue) {
+                //convert boolean to appropriate enum and assign
+                var parsedValue = newValue ? 1 : 0;
+                clearStatisticsUI.clearStatisticsModel.Data.ClearNationalAccountStatistics(parsedValue);
+            },
+            owner: this
+        });
+
+        model.bClearSalespersonStatistics = ko.computed({
+            read: function () {
+                //return original value
+                return tuClearStatisticsKoExtn.convertToBoolean(clearStatisticsUI.clearStatisticsModel.Data.ClearSalespersonStatistics());
+            },
+            write: function (newValue) {
+                //convert boolean to appropriate enum and assign
+                var parsedValue = newValue ? 1 : 0;
+                clearStatisticsUI.clearStatisticsModel.Data.ClearSalespersonStatistics(parsedValue);
+            },
+            owner: this
+        });
+
+        model.bClearItemStatistics = ko.computed({
+            read: function () {
+                //return original value
+                return tuClearStatisticsKoExtn.convertToBoolean(clearStatisticsUI.clearStatisticsModel.Data.ClearItemStatistics());
+            },
+            write: function (newValue) {
+                //convert boolean to appropriate enum and assign
+                var parsedValue = newValue ? 1 : 0;
+                clearStatisticsUI.clearStatisticsModel.Data.ClearItemStatistics(parsedValue);
+            },
+            owner: this
+        });
+    },
+
+    /* convert value to bool (True/False) */
+    convertToBoolean: function (value) {
         switch (value.toString().toLowerCase()) {
             case "true": case "yes": case "1": return true;
             case "false": case "no": case "0": case null: return false;
             default: return Boolean(value);
         }
     }
-
-    // Publicly exposed objects
-    return {
-
-        /**
-         * @name tuClearStatisticsModelExtension
-         * @description
-         * @public
-         * 
-         * @param {Object} model
-         */
-        tuClearStatisticsModelExtension: (model) => {
-            let modelData = model.Data;
-            modelData.Year = ko.observable("");
-
-            modelData.IsKoStatisticsDirty = new ko.dirtyFlag(model);
-
-            modelData.bClearCustomerStatistics = ko.computed({
-                read: () => {
-                    // return original value
-                    return convertToBoolean(model.Data.ClearCustomerStatistics());
-                },
-                write: (newValue) => {
-                    // convert boolean to appropriate enum and assign
-                    var parsedValue = newValue ? 1 : 0;
-                    model.Data.ClearCustomerStatistics(parsedValue);
-                },
-                owner: this
-            });
-
-            modelData.bClearGroupStatistics = ko.computed({
-                read: () => {
-                    // return original value
-                    return convertToBoolean(model.Data.ClearGroupStatistics());
-                },
-                write: (newValue) => {
-                    // convert boolean to appropriate enum and assign
-                    var parsedValue = newValue ? 1 : 0;
-                    model.Data.ClearGroupStatistics(parsedValue);
-                },
-                owner: this
-            });
-
-            modelData.bClearNationalAcctStatistics = ko.computed({
-                read: () => {
-                    // return original value
-                    return convertToBoolean(model.Data.ClearNationalAcctStatistics());
-                },
-                write: (newValue) => {
-                    //convert boolean to appropriate enum and assign
-                    var parsedValue = newValue ? 1 : 0;
-                    model.Data.ClearNationalAcctStatistics(parsedValue);
-                },
-                owner: this
-            });
-
-            modelData.bClearSalespersonStatistics = ko.computed({
-                read: () => {
-                    // return original value
-                    return convertToBoolean(model.Data.ClearSalesPersonStatistics());
-                },
-                write: (newValue) => {
-                    // convert boolean to appropriate enum and assign
-                    var parsedValue = newValue ? 1 : 0;
-                    model.Data.ClearSalesPersonStatistics(parsedValue);
-                },
-                owner: this
-            });
-
-            modelData.bClearItemStatistics = ko.computed({
-                read: () => {
-                    // return original value
-                    return convertToBoolean(model.Data.ClearItemStatistics());
-                },
-                write: (newValue) => {
-                    // convert boolean to appropriate enum and assign
-                    var parsedValue = newValue ? 1 : 0;
-                    model.Data.ClearItemStatistics(parsedValue);
-                },
-                owner: this
-            });
-        }
-    };
-
-})(tuClearStatisticsKoExtn || {});
+};

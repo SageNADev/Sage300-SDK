@@ -113,10 +113,10 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(547, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(524, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(81, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(104, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
@@ -127,7 +127,7 @@ namespace Sage.CA.SBS.ERP.Sage300.LanguageResourceWizard
             this.lblStepDescription.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblStepDescription.Location = new System.Drawing.Point(7, 32);
             this.lblStepDescription.Name = "lblStepDescription";
-            this.lblStepDescription.Size = new System.Drawing.Size(534, 44);
+            this.lblStepDescription.Size = new System.Drawing.Size(519, 44);
             this.lblStepDescription.TabIndex = 7;
             this.lblStepDescription.Text = "This is the detailed description";
             this.lblStepDescription.WrapToLine = true;

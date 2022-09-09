@@ -63,6 +63,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountsResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AccountsResx.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountsResx.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AccountsResx.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountsResx.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AccountsResx.zh-Hans.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountsResx.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AccountsResx.zh-Hant.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountsResx.zh-Hant.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AccountStructuresResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -188,6 +208,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateRevaluationBatchResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Process\FinancialReportInformationResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinancialReportInformationResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Process\FiscalSetComparisonResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,11 +227,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RollupPostedTransactionResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\AccountGroupsReportResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccountGroupsReportResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Reports\BatchListingReportResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -247,11 +267,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecurringEntriesReportResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\SegmentCodesReportResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SegmentCodesReportResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Reports\SourceCodesReportResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -335,10 +350,22 @@
       <LastGenOutput>AccountsResx.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AccountsResx.es.resx" />
-    <EmbeddedResource Include="Forms\AccountsResx.fr.resx" />
-    <EmbeddedResource Include="Forms\AccountsResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Forms\AccountsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\AccountsResx.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountsResx.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AccountsResx.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountsResx.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AccountsResx.zh-Hans.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountsResx.zh-Hans.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AccountsResx.zh-Hant.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountsResx.zh-Hant.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChartOfAccountsResx.es.resx" />
     <EmbeddedResource Include="Forms\ChartOfAccountsResx.fr.resx" />
     <EmbeddedResource Include="Forms\ChartOfAccountsResx.resx">
@@ -550,6 +577,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Process\CreateRevaluationBatchResx.zh-Hans.resx" />
     <EmbeddedResource Include="Process\CreateRevaluationBatchResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Process\FinancialReportInformationResx.es.resx" />
+    <EmbeddedResource Include="Process\FinancialReportInformationResx.fr.resx" />
+    <EmbeddedResource Include="Process\FinancialReportInformationResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FinancialReportInformationResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Process\FinancialReportInformationResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Process\FinancialReportInformationResx.zh-Hant.resx" />
     <EmbeddedResource Include="Process\FiscalSetComparisonResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FiscalSetComparisonResx.Designer.cs</LastGenOutput>
@@ -574,14 +610,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Process\RollupPostedTransactionResx.zh-Hans.resx" />
     <EmbeddedResource Include="Process\RollupPostedTransactionResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Reports\AccountGroupsReportResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AccountGroupsReportResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\AccountGroupsReportResx.es.resx" />
-    <EmbeddedResource Include="Reports\AccountGroupsReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\AccountGroupsReportResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Reports\AccountGroupsReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\BatchListingReportResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>BatchListingReportResx.Designer.cs</LastGenOutput>
@@ -646,14 +674,6 @@
     <EmbeddedResource Include="Reports\RecurringEntriesReportResx.fr.resx" />
     <EmbeddedResource Include="Reports\RecurringEntriesReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\RecurringEntriesReportResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Reports\SegmentCodesReportResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>SegmentCodesReportResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\SegmentCodesReportResx.es.resx" />
-    <EmbeddedResource Include="Reports\SegmentCodesReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\SegmentCodesReportResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Reports\SegmentCodesReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\SourceCodesReportResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SourceCodesReportResx.Designer.cs</LastGenOutput>

@@ -276,11 +276,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateItemPricingResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\AccountSetsReportResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccountSetsReportResx.resx</DependentUpon>
-    </Compile>
     <Compile Include="Reports\AgedInventoryReportResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -291,20 +286,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AlternateItemsReportResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\BillsOfMaterialReportResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BillsOfMaterialReportResx.resx</DependentUpon>
-    </Compile>
     <Compile Include="Reports\BinShelfLabelResx.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>BinShelfLabelResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\CategoriesReportResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CategoriesReportResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Reports\ContractPricingResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -391,11 +376,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DayEndProcessingResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\CustomerDetailsReportResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerDetailsReportResx.resx</DependentUpon>
-    </Compile>
     <Compile Include="Reports\InventoryMovementReportResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -432,16 +412,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemValuationReportResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\KittingItemsReportResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KittingItemsReportResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\LocationsReportResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LocationsReportResx.resx</DependentUpon>
-    </Compile>
     <Compile Include="Reports\MarkupAnalysisReportResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -457,11 +427,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PostingJournalResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\PriceListCodesReportResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PriceListCodesReportResx.resx</DependentUpon>
-    </Compile>
     <Compile Include="Reports\QuarantineReportResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -471,11 +436,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecallReportResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\ReorderQuantitiesReportResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReorderQuantitiesReportResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Reports\SalesStatisticsResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -541,11 +501,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TransferSlipResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\VendorDetailsReportResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VendorDetailsReportResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Reports\WarrantyContractListReportResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -914,38 +869,6 @@
     <EmbeddedResource Include="Process\SerialRegistrationResx.fr.resx" />
     <EmbeddedResource Include="Process\SerialRegistrationResx.zh-Hans.resx" />
     <EmbeddedResource Include="Process\SerialRegistrationResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Reports\AccountSetsReportResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AccountSetsReportResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\AccountSetsReportResx.es.resx" />
-    <EmbeddedResource Include="Reports\AccountSetsReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\AccountSetsReportResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Reports\AccountSetsReportResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Reports\BillsOfMaterialReportResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>BillsOfMaterialReportResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\BillsOfMaterialReportResx.es.resx" />
-    <EmbeddedResource Include="Reports\BillsOfMaterialReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\BillsOfMaterialReportResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Reports\BillsOfMaterialReportResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Reports\CategoriesReportResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>CategoriesReportResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\CategoriesReportResx.es.resx" />
-    <EmbeddedResource Include="Reports\CategoriesReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\CategoriesReportResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Reports\CategoriesReportResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Reports\CustomerDetailsReportResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>CustomerDetailsReportResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\CustomerDetailsReportResx.es.resx" />
-    <EmbeddedResource Include="Reports\CustomerDetailsReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\CustomerDetailsReportResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Reports\CustomerDetailsReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\InventoryReconciliationResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>InventoryReconciliationResx.Designer.cs</LastGenOutput>
@@ -1178,22 +1101,6 @@
     <EmbeddedResource Include="Reports\InventoryWorksheetResx.fr.resx" />
     <EmbeddedResource Include="Reports\InventoryWorksheetResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\InventoryWorksheetResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Reports\KittingItemsReportResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>KittingItemsReportResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\KittingItemsReportResx.es.resx" />
-    <EmbeddedResource Include="Reports\KittingItemsReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\KittingItemsReportResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Reports\KittingItemsReportResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Reports\LocationsReportResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>LocationsReportResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\LocationsReportResx.es.resx" />
-    <EmbeddedResource Include="Reports\LocationsReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\LocationsReportResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Reports\LocationsReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\MarkupAnalysisReportResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MarkupAnalysisReportResx.Designer.cs</LastGenOutput>
@@ -1218,14 +1125,6 @@
     <EmbeddedResource Include="Reports\PostingJournalResx.fr.resx" />
     <EmbeddedResource Include="Reports\PostingJournalResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\PostingJournalResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Reports\PriceListCodesReportResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>PriceListCodesReportResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\PriceListCodesReportResx.es.resx" />
-    <EmbeddedResource Include="Reports\PriceListCodesReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\PriceListCodesReportResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Reports\PriceListCodesReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\QuarantineReportResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>QuarantineReportResx.Designer.cs</LastGenOutput>
@@ -1242,14 +1141,6 @@
     <EmbeddedResource Include="Reports\RecallReportResx.fr.resx" />
     <EmbeddedResource Include="Reports\RecallReportResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\RecallReportResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Reports\ReorderQuantitiesReportResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ReorderQuantitiesReportResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\ReorderQuantitiesReportResx.es.resx" />
-    <EmbeddedResource Include="Reports\ReorderQuantitiesReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\ReorderQuantitiesReportResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Reports\ReorderQuantitiesReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\SalesStatisticsResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SalesStatisticsResx.Designer.cs</LastGenOutput>
@@ -1354,14 +1245,6 @@
     <EmbeddedResource Include="Reports\TransferSlipResx.fr.resx" />
     <EmbeddedResource Include="Reports\TransferSlipResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\TransferSlipResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Reports\VendorDetailsReportResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>VendorDetailsReportResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\VendorDetailsReportResx.es.resx" />
-    <EmbeddedResource Include="Reports\VendorDetailsReportResx.fr.resx" />
-    <EmbeddedResource Include="Reports\VendorDetailsReportResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Reports\VendorDetailsReportResx.zh-Hant.resx" />
     <EmbeddedResource Include="Reports\WarrantyContractListReportResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>WarrantyContractListReportResx.Designer.cs</LastGenOutput>

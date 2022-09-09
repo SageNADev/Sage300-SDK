@@ -1,0 +1,215 @@
+//
+// 2022 Sage Rebranding related CSS
+// --------------------------------------------------
+
+// Button class
+// --------------------------------------------------
+
+button {
+
+  &.border-round.primary {
+    background-color: #008A21;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0 20px 0 46px;
+    height: 30px;
+  }
+
+  &.btn-fr {
+    min-width: 180px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 0;
+      left: 15px;
+      background: url('@{image-path}/ui/sprite_icons_fr.png') 0px 4px no-repeat;
+    }
+  }
+
+  &.icon-add-in:before {
+    background-position: -30px 4px;
+  }
+}
+
+.btn-border-round {
+  border-radius: 4px;
+}
+
+
+// Tab class
+// --------------------------------------------------
+
+
+.nav-tabs.tab-border-bottom {
+  border-bottom: 1px solid @table-border-color;
+
+  >li {
+    >a {
+      background: none;
+      color: @black;
+      border: 0;
+      padding: 5px 10px 15px;
+
+      &:focus-visible {
+        outline: @input-border-focus solid 3px;
+      }
+
+      &.active,
+      &.active:focus,
+      &.active:hover {
+        font-weight: bold;
+        padding: 5px 10px 13px;
+        border-bottom: 2px solid @brand-primary;
+      }
+    }
+  }
+}
+
+// Grid class
+// --------------------------------------------------
+
+.datagrid-header-white.k-grid .k-grid-header,
+.datagrid-header-white.k-grid.k-grid .k-grid-header .k-header {
+  background-color: @white;
+  border-color: @sage-gray;
+  color: @black;
+}
+
+.datagrid-header-white.k-grid .k-grid-header .k-header>.k-link,
+.datagrid-header-white.k-grid .k-grid-header .k-header>.k-link .k-icon {
+  color: @black;
+}
+
+// Financial Report Grid Icon and Tooltip class
+// --------------------------------------------------
+
+button.btn-grid-fr {
+  position: absolute;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: @white;
+  border-radius: 12px;
+  bottom: 2px;
+
+  &:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('@{image-path}/ui/sprite_icons_fr.png') -63px 2px no-repeat;
+  }
+
+  &:focus {
+    outline: @input-border-focus solid 2px;
+  }
+
+  &.btn-rename {
+    right: 90px;
+  }
+
+  &.btn-modify {
+    right: 62px;
+  }
+
+  &.btn-remove {
+    right: 34px;
+  }
+
+  &.btn-upload {
+    right: 6px;
+  }
+
+  &.btn-rename:before {
+    background-position: -63px 2px;
+  }
+
+  &.btn-modify:before {
+    background-position: -93px 2px;
+  }
+
+  &.btn-remove:before {
+    background-position: -122px 2px;
+  }
+
+  &.btn-upload:before {
+     background-position: -153px 2px;
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  &:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Tooltip text */
+  .tooltiptext {
+    visibility: hidden;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    white-space: nowrap;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 0;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    /* Tooltip arrow */
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 12px;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+        border-color: transparent transparent #555 transparent;
+    }
+  }
+}
+
+// Info boxes and message popups
+// --------------------------------------------------
+
+.summary-group .info-box .summary>.summary-content {
+  text-align: center;
+}
+
+.fr-msg {
+  width: 600px;
+
+  .content {
+    display: block; 
+    background-color: #fff; 
+    border: 1px solid #9a9b9c; 
+    border-top: 0; 
+    padding: 20px 16px 16px 50px;
+
+    .glyphicon-close {
+      float: right;
+      width: 24px;
+      height: 24px;
+      margin-left: 30px;
+    }
+  }
+}
+
+
+

@@ -129,7 +129,7 @@ a:hover {
 
 .header {
     height: 3.5rem;
-    background-color: @white;
+    background-color: @black;
     padding-top: 16px;
     margin-bottom: 20px;
     box-shadow: 0 1px 0 rgba(0,0,0,.2);
@@ -413,13 +413,11 @@ input[class*="btn-"] {
     border: 1px solid @btn-primary-border;
 
     &:hover { 
-        background: darken(@btn-primary-bg, 10%);
+        background: darken(@btn-primary-bg, 5%);
         border: 1px solid @btn-primary-border;
     }
 
     &:focus { /*New UI: Focus style added for primary button*/
-        background-color: #1d479c; 
-        border: 1px solid @sage-link;
         -webkit-transition: all .2s linear;
         -o-transition: all .2s linear;
         -moz-transition: all .2s linear;
@@ -601,6 +599,11 @@ input[class*="btn-"] {
                 max-width: 310px;
                 font-size: 14px;
                 font-weight: normal;
+
+                &:hover,
+                &:focus {
+                    background-color: @btn-primary-bg;
+                }
             }
         }
     }
@@ -849,9 +852,10 @@ section.login {
                         text-align: center;
                         z-index: 9999;
                         top: 1px;
-                        left: 6px;
-                        width: 100%;
+                        left: 42px;
+                        width: 300px;
                         margin: 0;
+                        background-color: @brand-primary;
                     }
 
                     .button-footer {
@@ -872,7 +876,7 @@ section.login {
 
                     .btn-login.active {
                         cursor: default;
-                        background-color: darken(@btn-primary-bg, 10%);
+                        background-color: @btn-primary-bg;
                         pointer-events: none;
                     }
 

@@ -271,27 +271,6 @@
   <data name="ZpPostal" xml:space="preserve">
     <value>Code postal</value>
   </data>
-  <data name="CompanyLogo" xml:space="preserve">
-    <value>Logo de l’entreprise</value>
-  </data>
-  <data name="SelectLogo" xml:space="preserve">
-    <value>Sélectionner le logo de l’entreprise</value>
-  </data>
-  <data name="UpLoad" xml:space="preserve">
-    <value>Téléverser</value>
-  </data>
-  <data name="FileFormatError" xml:space="preserve">
-    <value>Sélectionnez un type d’image pris en charge (JPEG ou PNG).</value>
-  </data>
-  <data name="UpLoadMessage" xml:space="preserve">
-    <value>Logo de l’entreprise téléversé avec succès.</value>
-  </data>
-  <data name="DeleteLogoMessage" xml:space="preserve">
-    <value>Logo de l’entreprise supprimé avec succès.</value>
-  </data>
-  <data name="FileSizeError" xml:space="preserve">
-    <value>La taille maximale de l’image est de 100 Ko. Veuillez sélectionner une image plus petite.</value>
-  </data>
   <data name="Email" xml:space="preserve">
     <value>Courriel</value>
   </data>

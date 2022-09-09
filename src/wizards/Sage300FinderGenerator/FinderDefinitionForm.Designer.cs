@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FinderDefinitionForm));
             this.btnCreateFinderDef = new MetroFramework.Controls.MetroButton();
             this.finderDefinitionControl = new Sage300FinderGenerator.FinderDefinitionControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -58,11 +59,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sage300FinderGenerator.Properties.Resources.sage_logo_square;
-            this.pictureBox1.Location = new System.Drawing.Point(583, 28);
+            this.pictureBox1.Image = global::Sage300FinderGenerator.Properties.Resources.sage300_logo_sq;
+            this.pictureBox1.Location = new System.Drawing.Point(551, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(103, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -75,6 +76,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.finderDefinitionControl);
             this.Controls.Add(this.btnCreateFinderDef);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FinderDefinitionForm";

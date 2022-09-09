@@ -844,7 +844,7 @@ var exportResultRowNumber = 0;
                     sg.exportHelper.showExportResult();
                     $('#btnDownload').show();
                 } else {
-                    window.sg.utls.recursiveAjaxPost(sg.utls.url.buildUrl("Core", "ExportImport", "Progress"), data, that._progress, that._abort);
+                    window.sg.utls.recursiveAjaxPost(sg.utls.url.buildUrl("Core", "ExportImport", "Progress"), data, that._progress.bind(that), that._abort.bind(that));
                 }
             });
         },

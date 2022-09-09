@@ -124,13 +124,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Sage_All.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CodeGenerationWizard\CodeGenerationWizard.csproj">
       <Project>{4930b6f4-b46a-4f02-98ac-72c54be7ac6d}</Project>
       <Name>CodeGenerationWizard</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\SAGE.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

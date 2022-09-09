@@ -548,6 +548,10 @@ html.form-medium {
 
   // Grid
 
+  #gridReportList.k-grid .k-grid-content {
+      min-height: unset;
+  }
+
   .datagrid-group,
   .grid-group {
     margin-bottom: 10px;
@@ -675,6 +679,10 @@ html.form-medium {
 
     .k-grid-content .pencil-wrapper {
       height: 24px;
+
+      .pencil-icon {
+          top: -2px;
+      }
     }
 
     .k-dropdown-wrap, 
@@ -1317,7 +1325,47 @@ html.form-medium {
   #top-pane1 {
     height: unset !important;
   }
+
+  // Financial Report Grid Icon and Tooltip class
+
+  button.btn-grid-fr {
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: @white;
+    border-radius: 10px;
+    bottom: 2px;
+
+    &:before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url('@{image-path}/ui/sprite_icons_fr.png') -63px 0 no-repeat;
+    }
+
+    &.btn-rename:before {
+      background-position: -65px 0;
+    }
+
+    &.btn-modify:before {
+      background-position: -95px 0;
+    }
+
+    &.btn-remove:before {
+      background-position: -124px 0;
+    }
+
+    &.btn-upload:before {
+       background-position: -155px 0;
+    }
+  }
 }
+
+
 
 // Form-small
 // -------------------------
@@ -1975,6 +2023,10 @@ html.form-small {
 
   // Grid
 
+  #gridReportList.k-grid .k-grid-content {
+      min-height: unset;
+  }
+
   .datagrid-group,
   .grid-group {
     margin-bottom: 10px;
@@ -2114,6 +2166,10 @@ html.form-small {
 
     .k-grid-content .pencil-wrapper {
       height: 20px;
+
+      .pencil-icon {
+          top: -4px;
+      }
     }
 
     .btnOptionalFieldSettings, 
@@ -3039,6 +3095,44 @@ html.form-small {
 
   #top-pane1 {
     height: unset !important;
+  }
+
+  // Financial Report Grid Icon and Tooltip class
+
+  button.btn-grid-fr {
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: @white;
+    border-radius: 10px;
+    bottom: 2px;
+
+    &:before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url('@{image-path}/ui/sprite_icons_fr.png') -63px 0 no-repeat;
+    }
+
+    &.btn-rename:before {
+      background-position: -65px 0;
+    }
+
+    &.btn-modify:before {
+      background-position: -95px 0;
+    }
+
+    &.btn-remove:before {
+      background-position: -124px 0;
+    }
+
+    &.btn-upload:before {
+       background-position: -155px 0;
+    }
   }
 }
 

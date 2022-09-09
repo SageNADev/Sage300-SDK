@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.AP.Resources", "Sage.CA.SBS.ERP.Sage300.AP.Resources\Sage.CA.SBS.ERP.Sage300.AP.Resources.csproj", "{CDB16FD3-C8B1-4520-A9F3-0AD2B6328B0E}"
 EndProject
@@ -34,12 +34,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.Common.Resources", "Sage.CA.SBS.ERP.Sage300.Common.Resources\Sage.CA.SBS.ERP.Sage300.Common.Resources.csproj", "{4BB55006-CF24-43B5-800C-3F9A4685BE9E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.Core.Resources", "Sage.CA.SBS.ERP.Sage300.Core.Resources\Sage.CA.SBS.ERP.Sage300.Core.Resources.csproj", "{A43D0259-14B6-420B-B76B-A607BD33F20B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.TA.Resources", "Sage.CA.SBS.ERP.Sage300.TA.Resources\Sage.CA.SBS.ERP.Sage300.TA.Resources.csproj", "{4560FC56-8E47-40E1-A0B3-AF1328321E1D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.TS.Resources", "Sage.CA.SBS.ERP.Sage300.TS.Resources\Sage.CA.SBS.ERP.Sage300.TS.Resources.csproj", "{2460C7E4-FCB5-4AEA-8AE6-021610FF98A3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.TW.Resources", "Sage.CA.SBS.ERP.Sage300.TW.Resources\Sage.CA.SBS.ERP.Sage300.TW.Resources.csproj", "{9D5F9465-6F08-4B13-A931-A924F64DB9A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,18 +105,6 @@ Global
 		{A43D0259-14B6-420B-B76B-A607BD33F20B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A43D0259-14B6-420B-B76B-A607BD33F20B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A43D0259-14B6-420B-B76B-A607BD33F20B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4560FC56-8E47-40E1-A0B3-AF1328321E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4560FC56-8E47-40E1-A0B3-AF1328321E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4560FC56-8E47-40E1-A0B3-AF1328321E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4560FC56-8E47-40E1-A0B3-AF1328321E1D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2460C7E4-FCB5-4AEA-8AE6-021610FF98A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2460C7E4-FCB5-4AEA-8AE6-021610FF98A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2460C7E4-FCB5-4AEA-8AE6-021610FF98A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2460C7E4-FCB5-4AEA-8AE6-021610FF98A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9D5F9465-6F08-4B13-A931-A924F64DB9A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9D5F9465-6F08-4B13-A931-A924F64DB9A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9D5F9465-6F08-4B13-A931-A924F64DB9A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9D5F9465-6F08-4B13-A931-A924F64DB9A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

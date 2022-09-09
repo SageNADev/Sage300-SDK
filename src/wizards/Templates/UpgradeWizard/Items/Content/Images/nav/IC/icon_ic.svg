@@ -1,1 +1,10 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs><style>.cls-1{fill:#fff;fill-rule:evenodd;}</style></defs><title>icon_ic</title><path class="cls-1" d="M6.62,11.11H19v5.63a1.13,1.13,0,0,1-1.13,1.12H2.12A1.12,1.12,0,0,1,1,16.74V11.11Zm0,1.13v2.25h6.75V12.24Zm0-10.13H19V7.74a1.13,1.13,0,0,1-1.13,1.12H2.12A1.12,1.12,0,0,1,1,7.74V2.11Zm0,1.13V5.49h6.75V3.24Z"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;}
+</style>
+<path class="st0" d="M6.6,11.1H19v5.6c0,0.6-0.5,1.1-1.1,1.1H2.1c-0.6,0-1.1-0.5-1.1-1.1l0,0v-5.6H6.6z M6.6,12.2v2.2h6.8v-2.2H6.6z
+	 M6.6,2.1H19v5.6c0,0.6-0.5,1.1-1.1,1.1H2.1C1.5,8.9,1,8.4,1,7.7V2.1L6.6,2.1z M6.6,3.2v2.2h6.8V3.2L6.6,3.2z"/>
+</svg>

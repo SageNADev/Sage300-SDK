@@ -131,11 +131,11 @@ namespace Sage300UICustomizationWizard
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sage300UICustomizationWizard.Properties.Resources.sage_logo_square;
-            this.pictureBox1.Location = new System.Drawing.Point(878, 3);
+            this.pictureBox1.Image = global::Sage300UICustomizationWizard.Properties.Resources.sage300_logo_sq;
+            this.pictureBox1.Location = new System.Drawing.Point(843, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(104, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
@@ -266,6 +266,7 @@ namespace Sage300UICustomizationWizard
             this.txtKendoFolder.MaxLength = 32767;
             this.txtKendoFolder.Name = "txtKendoFolder";
             this.txtKendoFolder.PasswordChar = '\0';
+            this.txtKendoFolder.PromptText = "Kendo Folder";
             this.txtKendoFolder.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtKendoFolder.SelectedText = "";
             this.txtKendoFolder.SelectionLength = 0;

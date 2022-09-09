@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities
@@ -84,7 +84,7 @@
         ReportName: '@Html.SageRaw(CommonResx.Select1)',
         SelectReport: '@Html.SageRaw(CommonResx.SelectReport)',
         ReportName: '@Html.SageRaw(CommonResx.ReportName)',
-        ReportUrl: '@ConfigurationHelper.GetConfigValue("ReportUrl", false)',
+        ReportUrl: '@ConfigurationHelper.GetConfigValue("ReportUrl")',
         Complete: '@CommonResx.Complete',
         Previous: '@Html.SageRaw(CommonResx.Previous)',
         Next: '@Html.SageRaw(CommonResx.Next)',

@@ -224,7 +224,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 6.9A+.
+        ///   Looks up a localized string similar to 70A+.
         /// </summary>
         internal static string CompatibilityDefault {
             get {
@@ -947,9 +947,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sage_logo_square {
+        internal static System.Drawing.Bitmap sage300_logo_sq {
             get {
-                object obj = ResourceManager.GetObject("sage_logo_square", resourceCulture);
+                object obj = ResourceManager.GetObject("sage300_logo_sq", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -108,7 +108,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
     if (!repositoryType.Equals(RepositoryType.DynamicQuery))
     {
 #>
-        #region Properties
+        #region Fields Properties
 
         /// <summary>
         /// Contains list of <#=modelName#> Field Constants
@@ -148,7 +148,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
 <#
     }
 #>
-        #region Properties
+        #region Index Properties
 
         /// <summary>
         /// Contains list of <#=modelName#> Index Constants

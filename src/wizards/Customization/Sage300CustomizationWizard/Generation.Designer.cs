@@ -209,11 +209,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sage.CA.SBS.ERP.Sage300.CustomizationWizard.Properties.Resources.sage_logo_square;
-            this.pictureBox1.Location = new System.Drawing.Point(847, 0);
+            this.pictureBox1.Image = global::Sage.CA.SBS.ERP.Sage300.CustomizationWizard.Properties.Resources.sage300_logo_sq;
+            this.pictureBox1.Location = new System.Drawing.Point(816, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(103, 86);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
@@ -296,7 +296,7 @@
             this.pnlCreateEdit.Controls.Add(this.lblPackageId);
             this.pnlCreateEdit.Location = new System.Drawing.Point(11, 16);
             this.pnlCreateEdit.Name = "pnlCreateEdit";
-            this.pnlCreateEdit.Size = new System.Drawing.Size(525, 57);
+            this.pnlCreateEdit.Size = new System.Drawing.Size(525, 275);
             this.pnlCreateEdit.TabIndex = 0;
             // 
             // btnDeleteAssembly

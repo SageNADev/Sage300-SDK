@@ -58,7 +58,7 @@
 
   .bounce {
     animation: bouncedelay 1s infinite ease-in-out both;
-    background-color: @sage-blue;
+    background-color: @sage-green;
     display: inline-block;
     height: 8px;
     margin-right: 6px;
@@ -1017,7 +1017,7 @@ input[class*="btn-"] {
 
     &.btn-primary:hover,
     &.btn-primary:active {
-      background-color: darken(@btn-primary-bg, 10%);
+      background-color: darken(@btn-primary-bg, 5%);
     }
 
     &.btn-secondary:hover,
@@ -2295,20 +2295,67 @@ td.k-state-focused.k-state-selected {
 }
 
 div.k-treeview {
-    margin: 0px;
-    padding: 0px;
-    height: 550px;
-    overflow: auto;
-    background: @white;
+  margin: 0px;
+  padding: 0px;
+  height: 550px;
+  overflow: auto;
+  background: @white;
 
-    .k-icon:before {
-      content: none;
+  .k-icon:before {
+    content: none;
+  }
+
+  .k-icon.k-i-expand,
+  .k-icon.k-i-collapse  {
+    margin-left: -20px;
+  }
+
+  input[type="checkbox"] {
+    height: 16px;
+    width: 16px;
+    border-radius: 0;
+    border: 1px solid @sage-mid-gray;
+    top: -3px;
+    left: 2px;
+    opacity: 1;
+  }
+
+  .k-icon:before {
+    content: none;
+  }
+
+  .k-checkbox-wrapper {
+    vertical-align: unset;
+  }
+
+  .k-checkbox {
+    &:hover {
+      outline: #ffb500 solid 3px;
+      box-shadow: none;
+      border-color: @sage-mid-gray;
     }
 
-    .k-icon.k-i-expand,
-    .k-icon.k-i-collapse  {
-      margin-left: -20px;
+    &:focus {
+      outline: #ffb500 solid 3px;
     }
+
+    &:checked::before {
+      color: @black;
+      font-size: 13px;
+      width: 13px;
+      height: 13px;
+      font-weight: bold;
+    }
+
+    &.k-state-indeterminate::before, 
+    &:indeterminate::before {
+      color: @black;
+    }
+  }
+
+  span.k-checkbox-label.checkbox-span {
+    display: none;
+  }
 }
 
 #exportTreeView {
@@ -3132,6 +3179,7 @@ div#horizontal {
 #left-pane {
   padding: 0 0 0 16px;
   height: 100% !important;
+  overflow: hidden;
 }
 
 #vertical {
