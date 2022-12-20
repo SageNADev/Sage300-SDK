@@ -41,9 +41,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
 		/// <summary> Execute the Upgrade Wizard </summary>
         public void Execute(Solution solution)
         {
-			var payloadFileName = Constants.ItemsZipName;
-			var sln = (Solution2)solution;
-			var templatePath = sln.GetProjectItemTemplate(payloadFileName, Constants.CSharpName);
+            var payloadFileName = Constants.ItemsZipName;
+            var sln = (Solution2)solution;
+            var templatePath = sln.GetProjectItemTemplate(payloadFileName, Constants.CSharpName);
 
             if (UpgradeWizard.Constants.PerRelease.ReportUpgrade_For_2021_2)
             {
@@ -66,10 +66,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             }
 
             using (var form = new Upgrade(DestinationDefault(solution), DestinationWebDefault(solution), templatePath, sln))
-			{
-				form.ShowDialog();
-			}
-		}
+            {
+                form.ShowDialog();
+            }
+}
 
         /// <summary>
         /// Check a path to see if it's the Web project file

@@ -326,7 +326,7 @@
     <comment>Field</comment>
   </data>
   <data name="MasterItemNumberDesc" xml:space="preserve">
-    <value>主货品编号描述</value>
+    <value>主条目描述</value>
     <comment>Field</comment>
   </data>
   <data name="MasterSerialNumber" xml:space="preserve">
@@ -500,5 +500,75 @@
   </data>
   <data name="AssemblyQuantity" xml:space="preserve">
     <value>组装数量</value>
+  </data>
+  <data name="AddMasterSerial" xml:space="preserve">
+    <value>添加主系列</value>
+  </data>
+  <data name="AssignMasterSerialstoComps" xml:space="preserve">
+    <value>分派主系列到部件</value>
+  </data>
+  <data name="AutoAllocateLots" xml:space="preserve">
+    <value>自动分配批别</value>
+  </data>
+  <data name="AutoAllocSerials" xml:space="preserve">
+    <value>自动分配系列</value>
+  </data>
+  <data name="AutoGenerateLots" xml:space="preserve">
+    <value>自动生成批别</value>
+  </data>
+  <data name="AutoGenerateSerials" xml:space="preserve">
+    <value>自动生成系列</value>
+  </data>
+  <data name="ClearLots" xml:space="preserve">
+    <value>清除批别</value>
+  </data>
+  <data name="VerifyMasterSerial" xml:space="preserve">
+    <value>核实主系列</value>
+  </data>
+  <data name="DeleteMasterSerialTitle" xml:space="preserve">
+    <value>删除主系列</value>
+  </data>
+  <data name="ViewMasterAssembly" xml:space="preserve">
+    <value>查看主装配体</value>
+  </data>
+  <data name="ViewMasterAssemblyDisassembly" xml:space="preserve">
+    <value>查看主组装/拆卸</value>
+  </data>
+  <data name="PromptDeleteUpper" xml:space="preserve">
+    <value>是否在过帐后删除这一{0}？</value>
+  </data>
+  <data name="PromptDeleteMid" xml:space="preserve">
+    <value>如选择，您将无法查看{0}明细，或从总帐下钻到明细。</value>
+  </data>
+  <data name="PromptDeleteLower" xml:space="preserve">
+    <value>如选择，您可以使用清除历史窗口删除{0}。</value>
+  </data>
+  <data name="PreviouslyDeleted" xml:space="preserve">
+    <value>{0}已被删除。</value>
+  </data>
+  <data name="AddSuccessMessageAssemblies" xml:space="preserve">
+    <value>保存成功。 计算成本前记录必须过帐。凭证过帐时系统将仅更新系列和/或批别明细。{0}编号： {1}。</value>
+  </data>
+  <data name="PostSuccessMessageAssemblies" xml:space="preserve">
+    <value>过帐完成。{0}编号：{1}.</value>
+  </data>
+  <data name="BlankItemError" xml:space="preserve">
+    <value>货品编号不能空置。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="ItemsNotFound" xml:space="preserve">
+    <value>未在这一地点找到部件货品</value>
+  </data>
+  <data name="SufficientQuantities" xml:space="preserve">
+    <value>有足够的数量供组装/拆卸。</value>
+  </data>
+  <data name="QuantityLargerThan" xml:space="preserve">
+    <value>拆卸数量大于组装数量。</value>
+  </data>
+  <data name="CannotDeleteRequiredOptionalField" xml:space="preserve">
+    <value>You cannot delete required optional field.</value>
+  </data>
+  <data name="MultipleBuildQuantity" xml:space="preserve">
+    <value>输入的数量必须是建造数量的整数倍: {0}.</value>
   </data>
 </root>

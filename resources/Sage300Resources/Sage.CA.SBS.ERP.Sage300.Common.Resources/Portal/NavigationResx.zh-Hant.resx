@@ -190,7 +190,7 @@
     <value>信函/標籤</value>
   </data>
   <data name="AP_VendorReports_Print10991096Form" xml:space="preserve">
-    <value>列印1099/1096表格</value>
+    <value>1099申報</value>
   </data>
   <data name="AP_VendorReports_PrintT5018CPRSForm" xml:space="preserve">
     <value>列印T5018 (CPRS)表格</value>
@@ -1290,6 +1290,9 @@
   <data name="IC_Bills_of_Material" xml:space="preserve">
     <value>用料清單</value>
   </data>
+  <data name="IC_Assemblies" xml:space="preserve">
+    <value>組裝/拆卸</value>
+  </data>
   <data name="IC_Copy_Item_Pricing" xml:space="preserve">
     <value>複製產品定價</value>
   </data>
@@ -1427,6 +1430,12 @@
   </data>
   <data name="AS_WorkProfile" xml:space="preserve">
     <value>用戶介面概況</value>
+  </data>
+  <data name="SIR_Msg3" xml:space="preserve">
+    <value>Sage Intelligence Reporting Cloud</value>
+  </data>
+  <data name="SIR_Msg4" xml:space="preserve">
+    <value>通過您可以匯出並在Microsoft Excel®或Excel線上中自訂的動態財務報表幫助您更清楚地瞭解您的業務。</value>
   </data>
   <data name="SIR_Report1" xml:space="preserve">
     <value>實際年度至今</value>
@@ -1702,6 +1711,9 @@
   <data name="PM_Revise_Estimates" xml:space="preserve">
     <value>修訂估算</value>
   </data>
+  <data name="AP_Setup_Reports" xml:space="preserve">
+    <value>應付帳款設定報表</value>
+  </data>
   <data name="PM_ContractMaintenance" xml:space="preserve">
     <value>合約維護</value>
   </data>
@@ -1785,6 +1797,18 @@
     <value>銀行設定報表</value>
   </data>
   <data name="GL_Statement_Designer" xml:space="preserve">
-    <value>對帳單設計工具</value>
+    <value>總帳/列印財務報告</value>
+  </data>
+  <data name="GL_Print_Financial_Statements" xml:space="preserve">
+    <value>總帳/列印財務報告</value>
+  </data>
+  <data name="IC_Serial_Numbers" xml:space="preserve">
+    <value>系列編號</value>
+  </data>
+  <data name="Financial_Reporter" xml:space="preserve">
+    <value>財務報表器</value>
+  </data>
+  <data name="AS_UserActivityReport" xml:space="preserve">
+    <value>用戶活動報表</value>
   </data>
 </root>

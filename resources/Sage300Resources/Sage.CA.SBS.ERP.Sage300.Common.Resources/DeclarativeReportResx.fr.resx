@@ -209,10 +209,6 @@
   <data name="DistributionSetTo" xml:space="preserve">
     <value>À série de ventilation</value>
   </data>
-  <data name="Error_MissingFinderForRange" xml:space="preserve">
-    <value>Could not find associated finder control for range.</value>
-    <comment>Internal system message - no translation necessary</comment>
-  </data>
   <data name="IncludeMultiplePaymentSchedules" xml:space="preserve">
     <value>Inclure calendrier des paiements échelonnés</value>
   </data>
@@ -400,6 +396,10 @@
   <data name="Vendors" xml:space="preserve">
     <value>Fournisseurs</value>
   </data>
+  <data name="Error_MissingFinderForRange" xml:space="preserve">
+    <value>Could not find associated finder control for range.</value>
+    <comment>Internal system message - no translation necessary</comment>
+  </data>
   <data name="MiscellaneousCode" xml:space="preserve">
     <value>code charge diverse</value>
   </data>
@@ -433,9 +433,6 @@
   <data name="StructureCodeTo" xml:space="preserve">
     <value>Au code structure</value>
   </data>
-  <data name="Include" xml:space="preserve">
-    <value>Inclure</value>
-  </data>
   <data name="CategoryFromTemplate" xml:space="preserve">
     <value>De %1</value>
   </data>
@@ -454,8 +451,8 @@
   <data name="PM_CategoriesTitle" xml:space="preserve">
     <value>%1 de GP</value>
   </data>
-  <data name="PO_AccountSetsTitle" xml:space="preserve">
-    <value>Groupes de comptes de CmF</value>
+  <data name="Include" xml:space="preserve">
+    <value>Inclure</value>
   </data>
   <data name="PM_ProjectsTitle" xml:space="preserve">
     <value>%1 de GP</value>
@@ -471,6 +468,9 @@
   </data>
   <data name="ProjectTypeAll" xml:space="preserve">
     <value>Tout</value>
+  </data>
+  <data name="PO_AccountSetsTitle" xml:space="preserve">
+    <value>Groupes de comptes de CmF</value>
   </data>
   <data name="AllSegments" xml:space="preserve">
     <value>Tous les segments</value>
@@ -535,7 +535,6 @@
   </data>
   <data name="PeriodFrom" xml:space="preserve">
     <value>De période</value>
-    <comment>TL check</comment>
   </data>
   <data name="Salesperson" xml:space="preserve">
     <value>Vendeur</value>
@@ -554,7 +553,6 @@
   </data>
   <data name="YearFrom" xml:space="preserve">
     <value>De l'exercice</value>
-    <comment>TL check</comment>
   </data>
   <data name="PO_AdditionalCostsTitle" xml:space="preserve">
     <value>Coûts additionnels de CmF</value>
@@ -717,7 +715,6 @@
   </data>
   <data name="IC_WarrantyCodesTitle" xml:space="preserve">
     <value>Codes de garantie de G.S.</value>
-    <comment>TL check</comment>
   </data>
   <data name="IC_WeightUnitsOfMeasureTitle" xml:space="preserve">
     <value>Unités de mesure du poids de G.S.</value>
@@ -829,11 +826,9 @@
   </data>
   <data name="PeriodTo" xml:space="preserve">
     <value>À période</value>
-    <comment>TL check</comment>
   </data>
   <data name="YearTo" xml:space="preserve">
     <value>À exercice</value>
-    <comment>TL check</comment>
   </data>
   <data name="PrintAllDetails" xml:space="preserve">
     <value>Tous les emplacements d'articles</value>
@@ -870,26 +865,21 @@
   </data>
   <data name="ContractCodeFrom" xml:space="preserve">
     <value>Du code de contrat</value>
-    <comment>TL check</comment>
   </data>
   <data name="ContractCodeTo" xml:space="preserve">
     <value>Au code de contrat</value>
-    <comment>TL check</comment>
   </data>
   <data name="IC_ContractCodesTitle" xml:space="preserve">
     <value>Codes de contrat de G.S.</value>
-    <comment>TL check</comment>
   </data>
   <data name="WarrantyCode" xml:space="preserve">
     <value>Code de garantie</value>
   </data>
   <data name="WarrantyCodeFrom" xml:space="preserve">
     <value>Du code de garantie</value>
-    <comment>TL check</comment>
   </data>
   <data name="WarrantyCodeTo" xml:space="preserve">
     <value>Au code de garantie</value>
-    <comment>TL check</comment>
   </data>
   <data name="VendorNumberFrom" xml:space="preserve">
     <value>N° fournisseur de</value>
@@ -1067,5 +1057,92 @@
   </data>
   <data name="ToAccountGroupCode" xml:space="preserve">
     <value>Au code groupe de comptes</value>
+  </data>
+  <data name="AS_UserActivityReportTitle" xml:space="preserve">
+    <value>Activité des utilisateurs de SA</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Entreprise</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="FromCompany" xml:space="preserve">
+    <value>Du code entreprise</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>Du</value>
+  </data>
+  <data name="FromModule" xml:space="preserve">
+    <value>Du module</value>
+  </data>
+  <data name="FromUser" xml:space="preserve">
+    <value>Du code utilisateur</value>
+  </data>
+  <data name="Module" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="ToCompany" xml:space="preserve">
+    <value>Au code entreprise</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>Au</value>
+  </data>
+  <data name="ToModule" xml:space="preserve">
+    <value>Au module</value>
+  </data>
+  <data name="ToUser" xml:space="preserve">
+    <value>Au code utilisateur</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Utilisateur</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Toutes</value>
+  </data>
+  <data name="AP" xml:space="preserve">
+    <value>Comptes fournisseurs</value>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>Comptes clients</value>
+  </data>
+  <data name="BK" xml:space="preserve">
+    <value>Services bancaires</value>
+  </data>
+  <data name="GL" xml:space="preserve">
+    <value>Grand livre</value>
+  </data>
+  <data name="IC" xml:space="preserve">
+    <value>Gestion des stocks</value>
+  </data>
+  <data name="MT" xml:space="preserve">
+    <value>Contacts multiples</value>
+  </data>
+  <data name="OE" xml:space="preserve">
+    <value>Commandes clients</value>
+  </data>
+  <data name="PM" xml:space="preserve">
+    <value>Gestion de projet</value>
+  </data>
+  <data name="PO" xml:space="preserve">
+    <value>Commandes fournisseurs</value>
+  </data>
+  <data name="TX" xml:space="preserve">
+    <value>Services de taxes</value>
+  </data>
+  <data name="CP" xml:space="preserve">
+    <value>Paie Canada</value>
+  </data>
+  <data name="UP" xml:space="preserve">
+    <value>US Payroll</value>
+  </data>
+  <data name="SageIntelligence" xml:space="preserve">
+    <value>Sage Intelligence</value>
+  </data>
+  <data name="BX" xml:space="preserve">
+    <value>Sage Intelligence</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Actuelle</value>
   </data>
 </root>

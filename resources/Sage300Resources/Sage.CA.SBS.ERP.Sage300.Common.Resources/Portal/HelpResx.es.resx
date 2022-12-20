@@ -3144,15 +3144,15 @@
   </data>
   <data name="OE_EmailMessages_Report_Article1" xml:space="preserve">
     <value>Acerca de los reportes de Ingreso de Órdenes</value>
-    <comment>CSH ID 369036002</comment>
+    <comment>CSHID 369036002</comment>
   </data>
   <data name="OE_EmailMessages_Report_Article2" xml:space="preserve">
     <value>Imprimir los reportes de Ingreso de Órdenes</value>
-    <comment>CSH ID 369036003</comment>
+    <comment>CSHID 369036003</comment>
   </data>
   <data name="OE_EmailMessages_Report_Screen" xml:space="preserve">
     <value>Pantalla IO - Reporte de Mensajes de Correo-E</value>
-    <comment>CSH ID 369036001</comment>
+    <comment>CSHID 369036001</comment>
   </data>
   <data name="AP_Revaluation_Article1" xml:space="preserve">
     <value>Acerca de la revaluación de transacciones de monedas múltiples</value>
@@ -3388,15 +3388,15 @@
   </data>
   <data name="IC_CustomerDetails_Report_Article1" xml:space="preserve">
     <value>Reportes de Control de Inventario</value>
-    <comment>CSH ID 211087002</comment>
+    <comment>CSHID 211120002</comment>
   </data>
   <data name="IC_CustomerDetails_Report_Article2" xml:space="preserve">
-    <value>Imprimir el reporte Detalles de Clientes</value>
-    <comment>CSH ID 211087003</comment>
+    <value>Imprimir el reporte Detalles de Clientes de CI</value>
+    <comment>CSHID 211120003</comment>
   </data>
   <data name="IC_CustomerDetails_Report_Screen" xml:space="preserve">
-    <value>Pantalla CI - Reporte de Detalles de Clientes</value>
-    <comment>CSH ID 211087001</comment>
+    <value>CI – Reporte de Detalles de Clientes</value>
+    <comment>CSHID 211120001</comment>
   </data>
   <data name="IC_AccountsSets_Report_Article1" xml:space="preserve">
     <value>Acerca de los grupos de cuentas</value>
@@ -3411,64 +3411,64 @@
     <comment>CSH ID 211084001</comment>
   </data>
   <data name="IC_Categories_Report_Article1" xml:space="preserve">
-    <value>Acerca de las categorías</value>
-    <comment>CSH ID 211086002</comment>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211118002</comment>
   </data>
   <data name="IC_Categories_Report_Article2" xml:space="preserve">
-    <value>Imprimir el reporte Categorías</value>
-    <comment>CSH ID 211086003</comment>
+    <value>Imprimir el reporte Categorías de CI</value>
+    <comment>CSHID 211118003</comment>
   </data>
   <data name="IC_Categories_Report_Screen" xml:space="preserve">
     <value>CI - Reporte de Categorías</value>
-    <comment>CSH ID 211086001</comment>
+    <comment>CSHID 211118001</comment>
   </data>
   <data name="IC_KittingItems_Report_Article1" xml:space="preserve">
-    <value>Acerca de los artículos compuestos</value>
-    <comment>CSH ID 211088002</comment>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211123002</comment>
   </data>
   <data name="IC_KittingItems_Report_Article2" xml:space="preserve">
-    <value>Imprimir el reporte Artículos Compuestos</value>
-    <comment>CSH ID 211088003</comment>
+    <value>Imprimir el reporte Artículos Compuestos de CI</value>
+    <comment>CSHID 211123003</comment>
   </data>
   <data name="IC_KittingItems_Report_Screen" xml:space="preserve">
-    <value>Pantalla CI - Reporte de Artículos Compuestos</value>
-    <comment>CSH ID 211088001</comment>
+    <value>CI – Reporte de Artículos Compuestos</value>
+    <comment>CSHID 211123001</comment>
   </data>
   <data name="IC_Locations_Report_Article1" xml:space="preserve">
-    <value>Acerca de la configuración de las ubicaciones</value>
-    <comment>CSH ID 211090002</comment>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211125002</comment>
   </data>
   <data name="IC_Locations_Report_Article2" xml:space="preserve">
-    <value>Imprimir el reporte Ubicaciones</value>
-    <comment>CSH ID 211090003</comment>
+    <value>Imprimir el reporte Ubicaciones de CI</value>
+    <comment>CSHID 211125003</comment>
   </data>
   <data name="IC_Locations_Report_Screen" xml:space="preserve">
-    <value>Pantalla CI - Reporte de Ubicaciones</value>
-    <comment>CSH ID 211090001</comment>
+    <value>CI - Reporte de Ubicaciones</value>
+    <comment>CSHID 211125001</comment>
   </data>
   <data name="IC_PriceListCodes_Report_Article1" xml:space="preserve">
-    <value>Acerca de las listas de precios</value>
-    <comment>CSH ID 211092002</comment>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211130002</comment>
   </data>
   <data name="IC_PriceListCodes_Report_Article2" xml:space="preserve">
-    <value>Imprimir el reporte Códigos de Listas de Precios</value>
-    <comment>CSH ID 211092003</comment>
+    <value>Imprimir el reporte Códigos de Listas de Precios de CI</value>
+    <comment>CSHID 211130003</comment>
   </data>
   <data name="IC_PriceListCodes_Report_Screen" xml:space="preserve">
-    <value>Pantalla CI - Reporte de Códigos de Listas de Precios</value>
-    <comment>CSH ID 211092001</comment>
+    <value>CI - Reporte de Códigos de Listas de Precios</value>
+    <comment>CSHID 211130001</comment>
   </data>
   <data name="IC_ReorderQuantities_Report_Article1" xml:space="preserve">
-    <value>Acerca de las informaciones de reposición</value>
-    <comment>CSH ID 211093002</comment>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211131002</comment>
   </data>
   <data name="IC_ReorderQuantities_Report_Article2" xml:space="preserve">
-    <value>Imprimir el reporte Cantidades de Reposición</value>
-    <comment>CSH ID 211093003</comment>
+    <value>Imprimir el reporte Cantidades de Reposición de CI</value>
+    <comment>CSHID 211131003</comment>
   </data>
   <data name="IC_ReorderQuantities_Report_Screen" xml:space="preserve">
-    <value>Pantalla CI - Reporte de Cantidades de Reposición</value>
-    <comment>CSH ID 211093001</comment>
+    <value>CI - Reporte de Cantidades de Reposición</value>
+    <comment>CSHID 211131001</comment>
   </data>
   <data name="AP_RemitToLocations_Report_Article1" xml:space="preserve">
     <value>Acerca de los reportes de Cuentas por Pagar</value>
@@ -3627,16 +3627,16 @@
     <comment>CSH ID 211068001</comment>
   </data>
   <data name="IC_VendorDetails_Report_Article1" xml:space="preserve">
-    <value>Acerca de los detalles de proveedores</value>
-    <comment>CSH ID 211094002</comment>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211134002</comment>
   </data>
   <data name="IC_VendorDetails_Report_Article2" xml:space="preserve">
-    <value>Imprimir el reporte Detalles de Proveedores</value>
-    <comment>CSH ID 211094003</comment>
+    <value>Imprimir el reporte Detalles de Proveedores de CI</value>
+    <comment>CSHID 211134003</comment>
   </data>
   <data name="IC_VendorDetails_Report_Screen" xml:space="preserve">
-    <value>Pantalla CI - Reporte de Detalles de Proveedores</value>
-    <comment>CSH ID 211094001</comment>
+    <value>CI – Reporte Detalles de Proveedores</value>
+    <comment>CSHID 211134001</comment>
   </data>
   <data name="GL_RevaluationCodes_Article1" xml:space="preserve">
     <value>Acerca de las revalucaciones</value>
@@ -3808,11 +3808,11 @@
   </data>
   <data name="IC_BillsOfMaterial_Article1" xml:space="preserve">
     <value>Acerca de las listas de materiales</value>
-    <comment>CSH ID 211064002</comment>
+    <comment>CSH ID 211064003</comment>
   </data>
   <data name="IC_BillsOfMaterial_Article2" xml:space="preserve">
     <value>Agregar listas de materiales</value>
-    <comment>CSH ID 211064003</comment>
+    <comment>CSH ID 211064002</comment>
   </data>
   <data name="IC_BillsOfMaterial_Screen" xml:space="preserve">
     <value>Pantalla CI - Listas de Materiales</value>
@@ -4568,15 +4568,15 @@
   </data>
   <data name="PM_Charges_Article1" xml:space="preserve">
     <value>Cobro por Tarifas y Servicios</value>
-    <comment>CSH ID 403068002</comment>
+    <comment>CSHID 403068002</comment>
   </data>
   <data name="PM_Charges_Article2" xml:space="preserve">
     <value>Acerca de las Funciones Comunes en las Pantallas de Transacciones de PJC</value>
-    <comment>CSH ID 403068003</comment>
+    <comment>CSHID 403068003</comment>
   </data>
   <data name="PM_Charges_Screen" xml:space="preserve">
     <value>Pantalla PJC - Cargos</value>
-    <comment>CSH ID 403068001</comment>
+    <comment>CSHID 403068001</comment>
   </data>
   <data name="PM_UpdateRetainage_Article1" xml:space="preserve">
     <value>Ingresar Saldos de Apertura de Retención</value>
@@ -4592,11 +4592,32 @@
   </data>
   <data name="PM_Account_Sets_Screen" xml:space="preserve">
     <value>PJC - Pantalla Grupos de Cuentas</value>
-    <comment>CSH ID 403053001</comment>
+    <comment>CSHID 403053001</comment>
   </data>
   <data name="PM_Adding_or_Modifying_Account_Sets" xml:space="preserve">
     <value>Agregar o Modificar Grupos de Cuentas</value>
-    <comment>CSH ID 403053002</comment>
+    <comment>CSHID 403053002</comment>
+  </data>
+  <data name="PM_RevisedEstimate_Article1" xml:space="preserve">
+    <value>Revisar Estimados</value>
+    <comment>CSH ID 403074002</comment>
+  </data>
+  <data name="PM_RevisedEstimate_Article2" xml:space="preserve">
+    <value>Acerca de las Funciones Comunes en las Pantallas de Transacciones de PJC</value>
+    <comment>CSH ID 403074003</comment>
+  </data>
+  <data name="PM_RevisedEstimate_Screen" xml:space="preserve">
+    <value>PJC - Pantalla Revisar Estimados</value>
+    <comment>CSH ID 403074001</comment>
+  </data>
+  <data name="IC_About_Processing_Assembly" xml:space="preserve">
+    <value>Acerca del procesamiento de ensamblajes y desensamblajes</value>
+  </data>
+  <data name="IC_Assembling_Items_from_BOM" xml:space="preserve">
+    <value>Ensamblaje de elementos de listas de materiales</value>
+  </data>
+  <data name="IC_Assembly_Screen" xml:space="preserve">
+    <value>CI – Pantalla Ensambles/Desensambles</value>
   </data>
   <data name="AP_1099CPRSCodes_Report_Article1" xml:space="preserve">
     <value>Imprimir el reporte Códigos 1099/CPRS</value>
@@ -5054,700 +5075,643 @@
     <value>Imprimir los reportes de Órdenes de Compra</value>
     <comment>405040003</comment>
   </data>
-<data name="AR_Options_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Opciones</value>
-	<comment>CSHID 18077001</comment>
-</data>
+  <data name="AR_Options_Report_Screen" xml:space="preserve">
+    <value>C/C – Reporte de Opciones</value>
+    <comment>CSHID 18077001</comment>
+  </data>
   <data name="AR_Options_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18077002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18077002</comment>
+  </data>
   <data name="AR_Options_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Opciones de C/C</value>
-	<comment>CSHID 18077003</comment>
-</data>
+    <value>Imprimir el reporte Opciones de C/C</value>
+    <comment>CSHID 18077003</comment>
+  </data>
   <data name="AR_AccountSets_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Grupos de Cuentas</value>
-	<comment>CSHID 18067001</comment>
-</data>
+    <value>C/C – Reporte de Grupos de Cuentas</value>
+    <comment>CSHID 18067001</comment>
+  </data>
   <data name="AR_AccountSets_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18067002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18067002</comment>
+  </data>
   <data name="AR_AccountSets_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Grupos de Cuentas de C/C</value>
-	<comment>CSHID 18067003</comment>
-</data>
+    <value>Imprimir el reporte Grupos de Cuentas de C/C</value>
+    <comment>CSHID 18067003</comment>
+  </data>
   <data name="AR_BillingCycles_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Ciclos de Facturación</value>
-	<comment>CSHID 18068001</comment>
-</data>
+    <value>C/C – Reporte de Ciclos de Facturación</value>
+    <comment>CSHID 18068001</comment>
+  </data>
   <data name="AR_BillingCycles_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18068002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18068002</comment>
+  </data>
   <data name="AR_BillingCycles_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Ciclos de Facturación de C/C</value>
-	<comment>CSHID 18068003</comment>
-</data>
+    <value>Imprimir el reporte Ciclos de Facturación de C/C</value>
+    <comment>CSHID 18068003</comment>
+  </data>
   <data name="AR_DistributionCodes_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Códigos de Distribución</value>
-	<comment>CSHID 18070001</comment>
-</data>
+    <value>C/C – Reporte de Códigos de Distribución</value>
+    <comment>CSHID 18070001</comment>
+  </data>
   <data name="AR_DistributionCodes_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18070002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18070002</comment>
+  </data>
   <data name="AR_DistributionCodes_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Códigos de Distribución de C/C</value>
-	<comment>CSHID 18070003</comment>
-</data>
+    <value>Imprimir el reporte Códigos de Distribución de C/C</value>
+    <comment>CSHID 18070003</comment>
+  </data>
   <data name="AR_DunningMessages_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Mensajes de Cobranza</value>
-	<comment>CSHID 18071001</comment>
-</data>
+    <value>C/C – Reporte de Mensajes de Cobranza</value>
+    <comment>CSHID 18071001</comment>
+  </data>
   <data name="AR_DunningMessages_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18071002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18071002</comment>
+  </data>
   <data name="AR_DunningMessages_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Mensajes de Cobranza de C/C</value>
-	<comment>CSHID 18071003</comment>
-</data>
+    <value>Imprimir el reporte Mensajes de Cobranza de C/C</value>
+    <comment>CSHID 18071003</comment>
+  </data>
   <data name="AR_InterestProfiles_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Perfiles de Intereses</value>
-	<comment>CSHID 18074001</comment>
-</data>
+    <value>C/C – Reporte de Perfiles de Intereses</value>
+    <comment>CSHID 18074001</comment>
+  </data>
   <data name="AR_InterestProfiles_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18074002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18074002</comment>
+  </data>
   <data name="AR_InterestProfiles_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Perfiles de Intereses de C/C</value>
-	<comment>CSHID 18074003</comment>
-</data>
+    <value>Imprimir el reporte Perfiles de Intereses de C/C</value>
+    <comment>CSHID 18074003</comment>
+  </data>
   <data name="AR_PaymentCodes_Report_Screen" xml:space="preserve">
-	<value>C/C - Reporte de Códigos de Pago</value>
-	<comment>CSHID 18078001</comment>
-</data>
+    <value>C/C - Reporte de Códigos de Pago</value>
+    <comment>CSHID 18078001</comment>
+  </data>
   <data name="c" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18078002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18078002</comment>
+  </data>
   <data name="AR_PaymentCodes_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Códigos de Pago de C/C</value>
-	<comment>CSHID 18078003</comment>
-</data>
+    <value>Imprimir el reporte Códigos de Pago de C/C</value>
+    <comment>CSHID 18078003</comment>
+  </data>
   <data name="AR_Salespersons_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Vendedores</value>
-	<comment>CSHID 18079001</comment>
-</data>
+    <value>C/C – Reporte de Vendedores</value>
+    <comment>CSHID 18079001</comment>
+  </data>
   <data name="AR_Salespersons_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18079002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18079002</comment>
+  </data>
   <data name="AR_Salespersons_Report_Article2" xml:space="preserve">
-	<value>Imprimir los reportes Vendedores de C/C</value>
-	<comment>CSHID 18079003</comment>
-</data>
+    <value>Imprimir los reportes Vendedores de C/C</value>
+    <comment>CSHID 18079003</comment>
+  </data>
   <data name="AR_TermsCode_Report_Screen" xml:space="preserve">
-	<value>C/C - Reporte de Códigos de Condiciones</value>
-	<comment>CSHID 18080001</comment>
-</data>
+    <value>C/C - Reporte de Códigos de Condiciones</value>
+    <comment>CSHID 18080001</comment>
+  </data>
   <data name="AR_TermsCode_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18080002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18080002</comment>
+  </data>
   <data name="AR_TermsCode_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Códigos de Condiciones de C/C</value>
-	<comment>CSHID 18080003</comment>
-</data>
+    <value>Imprimir el reporte Códigos de Condiciones de C/C</value>
+    <comment>CSHID 18080003</comment>
+  </data>
   <data name="AR_Items_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Artículos</value>
-	<comment>CSHID 18075001</comment>
-</data>
+    <value>C/C – Reporte de Artículos</value>
+    <comment>CSHID 18075001</comment>
+  </data>
   <data name="AR_Items_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18075002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18075002</comment>
+  </data>
   <data name="AR_Items_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Artículos de C/C</value>
-	<comment>CSHID 18075003</comment>
-</data>
+    <value>Imprimir el reporte Artículos de C/C</value>
+    <comment>CSHID 18075003</comment>
+  </data>
   <data name="AR_EmailMessages_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Mensajes de Correo Electrónico</value>
-	<comment>CSHID 18072001</comment>
-</data>
+    <value>C/C – Reporte de Mensajes de Correo Electrónico</value>
+    <comment>CSHID 18072001</comment>
+  </data>
   <data name="AR_EmailMessages_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18072002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18072002</comment>
+  </data>
   <data name="AR_EmailMessages_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Mensajes de Correo Electrónico de C/C</value>
-	<comment>CSHID 18072003</comment>
-</data>
+    <value>Imprimir el reporte Mensajes de Correo Electrónico de C/C</value>
+    <comment>CSHID 18072003</comment>
+  </data>
   <data name="AR_GL_Integration_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Integración del LM</value>
-	<comment>CSHID 18073001</comment>
-</data>
+    <value>C/C – Reporte de Integración del LM</value>
+    <comment>CSHID 18073001</comment>
+  </data>
   <data name="AR_GL_Integration_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18073002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18073002</comment>
+  </data>
   <data name="AR_GL_Integration_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Integración del LM de C/C</value>
-	<comment>CSHID 18073003</comment>
-</data>
+    <value>Imprimir el reporte Integración del LM de C/C</value>
+    <comment>CSHID 18073003</comment>
+  </data>
   <data name="AR_OptionalFields_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Campos Opcionales</value>
-	<comment>CSHID 18076001</comment>
-</data>
+    <value>C/C – Reporte de Campos Opcionales</value>
+    <comment>CSHID 18076001</comment>
+  </data>
   <data name="AR_OptionalFields_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18076002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18076002</comment>
+  </data>
   <data name="AR_OptionalFields_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Campos Opcionales de C/C</value>
-	<comment>CSHID 18076003</comment>
-</data>
+    <value>Imprimir el reporte Campos Opcionales de C/C</value>
+    <comment>CSHID 18076003</comment>
+  </data>
   <data name="AR_CommentTypes_Report_Screen" xml:space="preserve">
-	<value>C/C – Reporte de Tipos de Comentario</value>
-	<comment>CSHID 18069001</comment>
-</data>
+    <value>C/C – Reporte de Tipos de Comentario</value>
+    <comment>CSHID 18069001</comment>
+  </data>
   <data name="AR_CommentTypes_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Cuentas por Cobrar</value>
-	<comment>CSHID 18069002</comment>
-</data>
+    <value>Acerca de los reportes de Cuentas por Cobrar</value>
+    <comment>CSHID 18069002</comment>
+  </data>
   <data name="AR_CommentTypes_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Tipos de Comentarios de C/C</value>
-	<comment>CSHID 18069003</comment>
-</data>
+    <value>Imprimir el reporte Tipos de Comentarios de C/C</value>
+    <comment>CSHID 18069003</comment>
+  </data>
   <data name="GL_AccountStructures_Report_Screen" xml:space="preserve">
-	<value>LM - Reporte de Estructuras de Cuentas</value>
-	<comment>CSHID 168043001</comment>
-</data>
+    <value>LM - Reporte de Estructuras de Cuentas</value>
+    <comment>CSHID 168043001</comment>
+  </data>
   <data name="GL_AccountStructures_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes del Libro Mayor</value>
-	<comment>CSHID 168043002</comment>
-</data>
+    <value>Acerca de los reportes del Libro Mayor</value>
+    <comment>CSHID 168043002</comment>
+  </data>
   <data name="GL_AccountStructures_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Estructuras de Cuentas del LM</value>
-	<comment>CSHID 168043003</comment>
-</data>
+    <value>Imprimir el reporte Estructuras de Cuentas del LM</value>
+    <comment>CSHID 168043003</comment>
+  </data>
   <data name="GL_SegmentCodes_Report_Screen" xml:space="preserve">
-	<value>LM - Reporte de Códigos de Segmentos</value>
-	<comment>CSHID 168047001</comment>
-</data>
+    <value>LM - Reporte de Códigos de Segmentos</value>
+    <comment>CSHID 168047001</comment>
+  </data>
   <data name="GL_SegmentCodes_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes del Libro Mayor</value>
-	<comment>CSHID 168047002</comment>
-</data>
+    <value>Acerca de los reportes del Libro Mayor</value>
+    <comment>CSHID 168047002</comment>
+  </data>
   <data name="GL_SegmentCodes_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Códigos de Segmento del LM</value>
-	<comment>CSHID 168047003</comment>
-</data>
+    <value>Imprimir el reporte Códigos de Segmento del LM</value>
+    <comment>CSHID 168047003</comment>
+  </data>
   <data name="GL_Revaluation_Codes_Report_Screen" xml:space="preserve">
-	<value>LM - Reporte de Códigos de Revaluación</value>
-	<comment>CSHID 168046001</comment>
-</data>
+    <value>LM - Reporte de Códigos de Revaluación</value>
+    <comment>CSHID 168046001</comment>
+  </data>
   <data name="GL_Revaluation_Codes_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes del Libro Mayor</value>
-	<comment>CSHID 168046002</comment>
-</data>
+    <value>Acerca de los reportes del Libro Mayor</value>
+    <comment>CSHID 168046002</comment>
+  </data>
   <data name="GL_Revaluation_Codes_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Códigos de Revaluación del LM</value>
-	<comment>CSHID 168046003</comment>
-</data>
+    <value>Imprimir el reporte Códigos de Revaluación del LM</value>
+    <comment>CSHID 168046003</comment>
+  </data>
   <data name="GL_AccountGroups_Report_Screen" xml:space="preserve">
-	<value>LM - Reporte de Grupos de Cuentas</value>
-	<comment>CSHID 168042001</comment>
-</data>
+    <value>LM - Reporte de Grupos de Cuentas</value>
+    <comment>CSHID 168042001</comment>
+  </data>
   <data name="GL_AccountGroups_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes del Libro Mayor</value>
-	<comment>CSHID 168042002</comment>
-</data>
+    <value>Acerca de los reportes del Libro Mayor</value>
+    <comment>CSHID 168042002</comment>
+  </data>
   <data name="GL_AccountGroups_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Grupos de Cuentas del LM</value>
-	<comment>CSHID 168042003</comment>
-</data>
+    <value>Imprimir el reporte Grupos de Cuentas del LM</value>
+    <comment>CSHID 168042003</comment>
+  </data>
   <data name="GL_Options_Report_Screen" xml:space="preserve">
-	<value>LM - Reporte de Opciones</value>
-	<comment>CSHID 168045001</comment>
-</data>
+    <value>LM - Reporte de Opciones</value>
+    <comment>CSHID 168045001</comment>
+  </data>
   <data name="GL_Options_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes del Libro Mayor</value>
-	<comment>CSHID 168045002</comment>
-</data>
+    <value>Acerca de los reportes del Libro Mayor</value>
+    <comment>CSHID 168045002</comment>
+  </data>
   <data name="GL_Options_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Opciones del LM</value>
-	<comment>CSHID 168045003</comment>
-</data>
+    <value>Imprimir el reporte Opciones del LM</value>
+    <comment>CSHID 168045003</comment>
+  </data>
   <data name="GL_OptionalFields_Report_Screen" xml:space="preserve">
-	<value>LM - Reporte de Campos Opcionales</value>
-	<comment>CSHID 168044001</comment>
-</data>
+    <value>LM - Reporte de Campos Opcionales</value>
+    <comment>CSHID 168044001</comment>
+  </data>
   <data name="GL_OptionalFields_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes del Libro Mayor</value>
-	<comment>CSHID 168044002</comment>
-</data>
+    <value>Acerca de los reportes del Libro Mayor</value>
+    <comment>CSHID 168044002</comment>
+  </data>
   <data name="GL_OptionalFields_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Campos Opcionales del LM</value>
-	<comment>CSHID 168044003</comment>
-</data>
+    <value>Imprimir el reporte Campos Opcionales del LM</value>
+    <comment>CSHID 168044003</comment>
+  </data>
   <data name="TX_Authorities_Report_Screen" xml:space="preserve">
-	<value>Reporte de Autoridades Fiscales</value>
-	<comment>CSHID 497007001</comment>
-</data>
+    <value>Reporte de Autoridades Fiscales</value>
+    <comment>CSHID 497007001</comment>
+  </data>
   <data name="TX_Authorities_Report_Article1" xml:space="preserve">
-	<value>Acerca de Reportes de Servicios Fiscales</value>
-	<comment>CSHID 497007002</comment>
-</data>
+    <value>Acerca de Reportes de Servicios Fiscales</value>
+    <comment>CSHID 497007002</comment>
+  </data>
   <data name="TX_Authorities_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Autoridades Fiscales</value>
-	<comment>CSHID 497007003</comment>
-</data>
+    <value>Imprimir el reporte Autoridades Fiscales</value>
+    <comment>CSHID 497007003</comment>
+  </data>
   <data name="TX_Classes_Report_Screen" xml:space="preserve">
-	<value>Reporte de Clases Fiscales</value>
-	<comment>CSHID 497008001</comment>
-</data>
+    <value>Reporte de Clases Fiscales</value>
+    <comment>CSHID 497008001</comment>
+  </data>
   <data name="TX_Classes_Report_Article1" xml:space="preserve">
-	<value>Acerca de Reportes de Servicios Fiscales</value>
-	<comment>CSHID 497008002</comment>
-</data>
+    <value>Acerca de Reportes de Servicios Fiscales</value>
+    <comment>CSHID 497008002</comment>
+  </data>
   <data name="TX_Classes_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Clases Fiscales</value>
-	<comment>CSHID 497008003</comment>
-</data>
+    <value>Imprimir el reporte Clases Fiscales</value>
+    <comment>CSHID 497008003</comment>
+  </data>
   <data name="TX_Rates_Report_Screen" xml:space="preserve">
-	<value>Reporte de Tasas Fiscales</value>
-	<comment>CSHID 497010001</comment>
-</data>
+    <value>Reporte de Tasas Fiscales</value>
+    <comment>CSHID 497010001</comment>
+  </data>
   <data name="TX_Rates_Report_Article1" xml:space="preserve">
-	<value>Acerca de Reportes de Servicios Fiscales</value>
-	<comment>CSHID 497010002</comment>
-</data>
+    <value>Acerca de Reportes de Servicios Fiscales</value>
+    <comment>CSHID 497010002</comment>
+  </data>
   <data name="TX_Rates_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Tasas Fiscales</value>
-	<comment>CSHID 497010003</comment>
-</data>
+    <value>Imprimir el reporte Tasas Fiscales</value>
+    <comment>CSHID 497010003</comment>
+  </data>
   <data name="TX_Groups_Report_Screen" xml:space="preserve">
-	<value>Reporte de Grupos Fiscales</value>
-	<comment>CSHID 497009001</comment>
-</data>
+    <value>Reporte de Grupos Fiscales</value>
+    <comment>CSHID 497009001</comment>
+  </data>
   <data name="TX_Groups_Report_Article1" xml:space="preserve">
-	<value>Acerca de Reportes de Servicios Fiscales</value>
-	<comment>CSHID 497009002</comment>
-</data>
+    <value>Acerca de Reportes de Servicios Fiscales</value>
+    <comment>CSHID 497009002</comment>
+  </data>
   <data name="TX_Groups_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Grupos Fiscales</value>
-	<comment>CSHID 497009003</comment>
-</data>
+    <value>Imprimir el reporte Grupos Fiscales</value>
+    <comment>CSHID 497009003</comment>
+  </data>
   <data name="BK_Banks_Report_Screen" xml:space="preserve">
-	<value>Reporte de Bancos</value>
-	<comment>CSHID 37036001</comment>
-</data>
+    <value>Reporte de Bancos</value>
+    <comment>CSHID 37036001</comment>
+  </data>
   <data name="BK_Banks_Report_Article1" xml:space="preserve">
-	<value>Imprimir el reporte Bancos</value>
-	<comment>CSHID 37036002</comment>
-</data>
+    <value>Imprimir el reporte Bancos</value>
+    <comment>CSHID 37036002</comment>
+  </data>
   <data name="BK_Banks_Report_Article2" xml:space="preserve">
-	<value>Acerca de los reportes de Servicios Bancarios</value>
-	<comment>CSHID 37036003</comment>
-</data>
+    <value>Acerca de los reportes de Servicios Bancarios</value>
+    <comment>CSHID 37036003</comment>
+  </data>
   <data name="BK_Options_Report_Screen" xml:space="preserve">
-	<value>Reporte de Opciones Bancarias</value>
-	<comment>CSHID 37042001</comment>
-</data>
+    <value>Reporte de Opciones Bancarias</value>
+    <comment>CSHID 37042001</comment>
+  </data>
   <data name="BK_Options_Report_Article1" xml:space="preserve">
-	<value>Imprimir el reporte Opciones Bancarias</value>
-	<comment>CSHID 37042002</comment>
-</data>
+    <value>Imprimir el reporte Opciones Bancarias</value>
+    <comment>CSHID 37042002</comment>
+  </data>
   <data name="BK_Options_Report_Article2" xml:space="preserve">
-	<value>Acerca de los reportes de Servicios Bancarios</value>
-	<comment>CSHID 37042003</comment>
-</data>
+    <value>Acerca de los reportes de Servicios Bancarios</value>
+    <comment>CSHID 37042003</comment>
+  </data>
   <data name="BK_DistributionCodes_Report_Screen" xml:space="preserve">
-	<value>Bancos – Reporte de Códigos de Distribución</value>
-	<comment>CSHID 37039001</comment>
-</data>
+    <value>Bancos – Reporte de Códigos de Distribución</value>
+    <comment>CSHID 37039001</comment>
+  </data>
   <data name="BK_DistributionCodes_Report_Article1" xml:space="preserve">
-	<value>Imprimir el reporte Códigos de Distribución</value>
-	<comment>CSHID 37039002</comment>
-</data>
+    <value>Imprimir el reporte Códigos de Distribución</value>
+    <comment>CSHID 37039002</comment>
+  </data>
   <data name="BK_DistributionCodes_Report_Article2" xml:space="preserve">
-	<value>Acerca de los reportes de Servicios Bancarios</value>
-	<comment>CSHID 37039003</comment>
-</data>
+    <value>Acerca de los reportes de Servicios Bancarios</value>
+    <comment>CSHID 37039003</comment>
+  </data>
   <data name="BK_DistributionSets_Report_Screen" xml:space="preserve">
-	<value>Bancos – Reporte de Grupos de Distribución</value>
-	<comment>CSHID 37040001</comment>
-</data>
+    <value>Bancos – Reporte de Grupos de Distribución</value>
+    <comment>CSHID 37040001</comment>
+  </data>
   <data name="BK_DistributionSets_Report_Article1" xml:space="preserve">
-	<value>Imprimir el reporte Grupos de Distribución</value>
-	<comment>CSHID 37040002</comment>
-</data>
+    <value>Imprimir el reporte Grupos de Distribución</value>
+    <comment>CSHID 37040002</comment>
+  </data>
   <data name="BK_DistributionSets_Report_Article2" xml:space="preserve">
-	<value>Acerca de los reportes de Servicios Bancarios</value>
-	<comment>CSHID 37040003</comment>
-</data>
+    <value>Acerca de los reportes de Servicios Bancarios</value>
+    <comment>CSHID 37040003</comment>
+  </data>
   <data name="BK_CreditCardTypes_Report_Screen" xml:space="preserve">
-	<value>Reporte de Tipos de Tarjeta de Crédito</value>
-	<comment>CSHID 37038001</comment>
-</data>
+    <value>Reporte de Tipos de Tarjeta de Crédito</value>
+    <comment>CSHID 37038001</comment>
+  </data>
   <data name="BK_CreditCardTypes_Report_Article1" xml:space="preserve">
-	<value>Imprimir el reporte Tipos de Tarjeta de Crédito</value>
-	<comment>CSHID 37038002</comment>
-</data>
+    <value>Imprimir el reporte Tipos de Tarjeta de Crédito</value>
+    <comment>CSHID 37038002</comment>
+  </data>
   <data name="BK_CreditCardTypes_Report_Article2" xml:space="preserve">
-	<value>Acerca de los reportes de Servicios Bancarios</value>
-	<comment>CSHID 37038003</comment>
-</data>
+    <value>Acerca de los reportes de Servicios Bancarios</value>
+    <comment>CSHID 37038003</comment>
+  </data>
   <data name="BK_GL_Integration_Report_Screen" xml:space="preserve">
-	<value>Bancos - Reporte de Integración del LM</value>
-	<comment>CSHID 37041001</comment>
-</data>
+    <value>Bancos - Reporte de Integración del LM</value>
+    <comment>CSHID 37041001</comment>
+  </data>
   <data name="BK_GL_Integration_Report_Article1" xml:space="preserve">
-	<value>Imprimir el reporte Integración del LM</value>
-	<comment>CSHID 37041002</comment>
-</data>
+    <value>Imprimir el reporte Integración del LM</value>
+    <comment>CSHID 37041002</comment>
+  </data>
   <data name="BK_GL_Integration_Report_Article2" xml:space="preserve">
-	<value>Acerca de los reportes de Servicios Bancarios</value>
-	<comment>CSHID 37041003</comment>
-</data>
-  <data name="IC_VendorDetails_Report_Screen" xml:space="preserve">
-	<value>CI – Reporte Detalles de Proveedores</value>
-	<comment>CSHID 211134001</comment>
-</data>
-  <data name="IC_VendorDetails_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211134002</comment>
-</data>
-  <data name="IC_VendorDetails_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Detalles de Proveedores de CI</value>
-	<comment>CSHID 211134003</comment>
-</data>
-  <data name="IC_CustomerDetails_Report_Screen" xml:space="preserve">
-	<value>CI – Reporte de Detalles de Clientes</value>
-	<comment>CSHID 211120001</comment>
-</data>
-  <data name="IC_CustomerDetails_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211120002</comment>
-</data>
-  <data name="IC_CustomerDetails_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Detalles de Clientes de CI</value>
-	<comment>CSHID 211120003</comment>
-</data>
-  <data name="IC_Locations_Report_Screen" xml:space="preserve">
-	<value>CI - Reporte de Ubicaciones</value>
-	<comment>CSHID 211125001</comment>
-</data>
-  <data name="IC_Locations_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211125002</comment>
-</data>
-  <data name="IC_Locations_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Ubicaciones de CI</value>
-	<comment>CSHID 211125003</comment>
-</data>
+    <value>Acerca de los reportes de Servicios Bancarios</value>
+    <comment>CSHID 37041003</comment>
+  </data>
   <data name="IC_LocationDetails_Report_Screen" xml:space="preserve">
-	<value>CI - Reporte de Detalles de Ubicaciones</value>
-	<comment>CSHID 211124001</comment>
-</data>
+    <value>CI - Reporte de Detalles de Ubicaciones</value>
+    <comment>CSHID 211124001</comment>
+  </data>
   <data name="IC_LocationDetails_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211124002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211124002</comment>
+  </data>
   <data name="IC_LocationDetails_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Detalles de Ubicación de CI</value>
-	<comment>CSHID 211124003</comment>
-</data>
+    <value>Imprimir el reporte Detalles de Ubicación de CI</value>
+    <comment>CSHID 211124003</comment>
+  </data>
   <data name="IC_ManufacturersItems_Report_Screen" xml:space="preserve">
-	<value>CI – Reporte de Artículos del Fabricante</value>
-	<comment>CSHID 211126001</comment>
-</data>
+    <value>CI – Reporte de Artículos del Fabricante</value>
+    <comment>CSHID 211126001</comment>
+  </data>
   <data name="IC_ManufacturersItems_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211126002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211126002</comment>
+  </data>
   <data name="IC_ManufacturersItems_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Artículos del Fabricante de CI</value>
-	<comment>CSHID 211126003</comment>
-</data>
-  <data name="IC_Categories_Report_Screen" xml:space="preserve">
-	<value>CI - Reporte de Categorías</value>
-	<comment>CSHID 211118001</comment>
-</data>
-  <data name="IC_Categories_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211118002</comment>
-</data>
-  <data name="IC_Categories_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Categorías de CI</value>
-	<comment>CSHID 211118003</comment>
-</data>
+    <value>Imprimir el reporte Artículos del Fabricante de CI</value>
+    <comment>CSHID 211126003</comment>
+  </data>
   <data name="IC_BillsOfMaterial_Report_Screen" xml:space="preserve">
-	<value>CI - Reporte de Listas de Materiales</value>
-	<comment>CSHID 211117001</comment>
-</data>
+    <value>CI - Reporte de Listas de Materiales</value>
+    <comment>CSHID 211117001</comment>
+  </data>
   <data name="IC_BillsOfMaterial_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211117002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211117002</comment>
+  </data>
   <data name="IC_BillsOfMaterial_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Listas de Materiales de CI</value>
-	<comment>CSHID 211117003</comment>
-</data>
-  <data name="IC_KittingItems_Report_Screen" xml:space="preserve">
-	<value>CI – Reporte de Artículos Compuestos</value>
-	<comment>CSHID 211123001</comment>
-</data>
-  <data name="IC_KittingItems_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211123002</comment>
-</data>
-  <data name="IC_KittingItems_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Artículos Compuestos de CI</value>
-	<comment>CSHID 211123003</comment>
-</data>
-  <data name="IC_ReorderQuantities_Report_Screen" xml:space="preserve">
-	<value>CI - Reporte de Cantidades de Reposición</value>
-	<comment>CSHID 211131001</comment>
-</data>
-  <data name="IC_ReorderQuantities_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211131002</comment>
-</data>
-  <data name="IC_ReorderQuantities_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Cantidades de Reposición de CI</value>
-	<comment>CSHID 211131003</comment>
-</data>
+    <value>Imprimir el reporte Listas de Materiales de CI</value>
+    <comment>CSHID 211117003</comment>
+  </data>
   <data name="IC_AccountSets_Report_Screen" xml:space="preserve">
-	<value>CI - Reporte de Grupos de Cuentas</value>
-	<comment>CSHID 211116001</comment>
-</data>
+    <value>CI - Reporte de Grupos de Cuentas</value>
+    <comment>CSHID 211116001</comment>
+  </data>
   <data name="IC_AccountSets_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211116002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211116002</comment>
+  </data>
   <data name="IC_AccountSets_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Grupos de Cuentas de CI</value>
-	<comment>CSHID 211116003</comment>
-</data>
-  <data name="IC_PriceListCodes_Report_Screen" xml:space="preserve">
-	<value>CI - Reporte de Códigos de Listas de Precios</value>
-	<comment>CSHID 211130001</comment>
-</data>
-  <data name="IC_PriceListCodes_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211130002</comment>
-</data>
-  <data name="IC_PriceListCodes_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Códigos de Listas de Precios de CI</value>
-	<comment>CSHID 211130003</comment>
-</data>
+    <value>Imprimir el reporte Grupos de Cuentas de CI</value>
+    <comment>CSHID 211116003</comment>
+  </data>
   <data name="IC_ItemStructures_Report_Screen" xml:space="preserve">
-	<value>CI - Reporte de Estructuras de Artículos</value>
-	<comment>CSHID 211122001</comment>
-</data>
+    <value>CI - Reporte de Estructuras de Artículos</value>
+    <comment>CSHID 211122001</comment>
+  </data>
   <data name="IC_ItemStructures_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211122002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211122002</comment>
+  </data>
   <data name="IC_ItemStructures_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Estructuras de Artículos de CI</value>
-	<comment>CSHID 211122003</comment>
-</data>
+    <value>Imprimir el reporte Estructuras de Artículos de CI</value>
+    <comment>CSHID 211122003</comment>
+  </data>
   <data name="IC_MaskStructures_Report_Screen" xml:space="preserve">
-	<value>CI – Reporte de Estructuras de Máscara</value>
-	<comment>CSHID 211127001</comment>
-</data>
+    <value>CI – Reporte de Estructuras de Máscara</value>
+    <comment>CSHID 211127001</comment>
+  </data>
   <data name="IC_MaskStructures_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211127002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211127002</comment>
+  </data>
   <data name="IC_MaskStructures_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Estructuras de Máscara de CI</value>
-	<comment>CSHID 211127003</comment>
-</data>
+    <value>Imprimir el reporte Estructuras de Máscara de CI</value>
+    <comment>CSHID 211127003</comment>
+  </data>
   <data name="IC_SegmentCodes_Report_Screen" xml:space="preserve">
-	<value>CI - Reporte de Códigos de Segmentos</value>
-	<comment>CSHID 211132001</comment>
-</data>
+    <value>CI - Reporte de Códigos de Segmentos</value>
+    <comment>CSHID 211132001</comment>
+  </data>
   <data name="IC_SegmentCodes_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211132002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211132002</comment>
+  </data>
   <data name="IC_SegmentCodes_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Códigos de Segmento de CI</value>
-	<comment>CSHID 211132003</comment>
-</data>
+    <value>Imprimir el reporte Códigos de Segmento de CI</value>
+    <comment>CSHID 211132003</comment>
+  </data>
   <data name="IC_Options_Report_Screen" xml:space="preserve">
-	<value>CI - Reporte de Opciones</value>
-	<comment>CSHID 211129001</comment>
-</data>
+    <value>CI - Reporte de Opciones</value>
+    <comment>CSHID 211129001</comment>
+  </data>
   <data name="IC_Options_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211129002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211129002</comment>
+  </data>
   <data name="IC_Options_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Opciones de CI</value>
-	<comment>CSHID 211129003</comment>
-</data>
+    <value>Imprimir el reporte Opciones de CI</value>
+    <comment>CSHID 211129003</comment>
+  </data>
   <data name="IC_OptionalFields_Report_Screen" xml:space="preserve">
-	<value>CI - Reporte de Campos Opcionales</value>
-	<comment>CSHID 211128001</comment>
-</data>
+    <value>CI - Reporte de Campos Opcionales</value>
+    <comment>CSHID 211128001</comment>
+  </data>
   <data name="IC_OptionalFields_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211128002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211128002</comment>
+  </data>
   <data name="IC_OptionalFields_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Campos Opcionales de CI</value>
-	<comment>CSHID 211128003</comment>
-</data>
+    <value>Imprimir el reporte Campos Opcionales de CI</value>
+    <comment>CSHID 211128003</comment>
+  </data>
   <data name="IC_GL_Integration_Report_Screen" xml:space="preserve">
-	<value>CI – Reporte de Integración del LM</value>
-	<comment>CSHID 211121001</comment>
-</data>
+    <value>CI – Reporte de Integración del LM</value>
+    <comment>CSHID 211121001</comment>
+  </data>
   <data name="IC_GL_Integration_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211121002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211121002</comment>
+  </data>
   <data name="IC_GL_Integration_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Integración del LM de CI</value>
-	<comment>CSHID 211121003</comment>
-</data>
+    <value>Imprimir el reporte Integración del LM de CI</value>
+    <comment>CSHID 211121003</comment>
+  </data>
   <data name="IC_UnitsOfMeasure_Report_Screen" xml:space="preserve">
-	<value>CI – Reporte de Unidades de Medida</value>
-	<comment>CSHID 211133001</comment>
-</data>
+    <value>CI – Reporte de Unidades de Medida</value>
+    <comment>CSHID 211133001</comment>
+  </data>
   <data name="IC_UnitsOfMeasure_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211133002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211133002</comment>
+  </data>
   <data name="IC_UnitsOfMeasure_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Unidades de Medida de CI</value>
-	<comment>CSHID 211133003</comment>
-</data>
+    <value>Imprimir el reporte Unidades de Medida de CI</value>
+    <comment>CSHID 211133003</comment>
+  </data>
   <data name="IC_WeightUnitsOfMeasure_Report_Screen" xml:space="preserve">
-	<value>CI – Reporte de Unidades de Medida de Peso</value>
-	<comment>CSHID 211136001</comment>
-</data>
+    <value>CI – Reporte de Unidades de Medida de Peso</value>
+    <comment>CSHID 211136001</comment>
+  </data>
   <data name="IC_WeightUnitsOfMeasure_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211136002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211136002</comment>
+  </data>
   <data name="IC_WeightUnitsOfMeasure_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte de Unidades de Medida de Peso</value>
-	<comment>CSHID 211136003</comment>
-</data>
+    <value>Imprimir el reporte de Unidades de Medida de Peso</value>
+    <comment>CSHID 211136003</comment>
+  </data>
   <data name="IC_WarrantyCodes_Report_Screen" xml:space="preserve">
-	<value>Reporte de Códigos de Garantía de CI</value>
-	<comment>CSHID 211135001</comment>
-</data>
+    <value>Reporte de Códigos de Garantía de CI</value>
+    <comment>CSHID 211135001</comment>
+  </data>
   <data name="IC_WarrantyCodes_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211135002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211135002</comment>
+  </data>
   <data name="IC_WarrantyCodes_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Códigos de Garantía de CI</value>
-	<comment>CSHID 211135003</comment>
-</data>
+    <value>Imprimir el reporte Códigos de Garantía de CI</value>
+    <comment>CSHID 211135003</comment>
+  </data>
   <data name="IC_ContractCodes_Report_Screen" xml:space="preserve">
-	<value>CI – Reporte de Códigos de Contrato</value>
-	<comment>CSHID 211119001</comment>
-</data>
+    <value>CI – Reporte de Códigos de Contrato</value>
+    <comment>CSHID 211119001</comment>
+  </data>
   <data name="IC_ContractCodes_Report_Article1" xml:space="preserve">
-	<value>Reportes de Control de Inventario</value>
-	<comment>CSHID 211119002</comment>
-</data>
+    <value>Reportes de Control de Inventario</value>
+    <comment>CSHID 211119002</comment>
+  </data>
   <data name="IC_ContractCodes_Report_Article2" xml:space="preserve">
-	<value>Imprimir el reporte Códigos de Contrato de CI</value>
-	<comment>CSHID 211119003</comment>
-</data>
+    <value>Imprimir el reporte Códigos de Contrato de CI</value>
+    <comment>CSHID 211119003</comment>
+  </data>
   <data name="OE_MiscellaneousCharges_Report_Screen" xml:space="preserve">
-	<value>Pantalla IO - Reporte de Cargos Varios</value>
-	<comment>CSHID 369038001</comment>
-</data>
+    <value>Pantalla IO - Reporte de Cargos Varios</value>
+    <comment>CSHID 369038001</comment>
+  </data>
   <data name="OE_MiscellaneousCharges_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369038002</comment>
-</data>
+    <value>Acerca de los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369038002</comment>
+  </data>
   <data name="OE_MiscellaneousCharges_Report_Article2" xml:space="preserve">
-	<value>Imprimir los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369038003</comment>
-</data>
+    <value>Imprimir los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369038003</comment>
+  </data>
   <data name="OE_Options_Report_Screen" xml:space="preserve">
-	<value>Pantalla IO - Reporte de Opciones</value>
-	<comment>CSHID 369040001</comment>
-</data>
+    <value>Pantalla IO - Reporte de Opciones</value>
+    <comment>CSHID 369040001</comment>
+  </data>
   <data name="OE_Options_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369040002</comment>
-</data>
+    <value>Acerca de los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369040002</comment>
+  </data>
   <data name="OE_Options_Report_Article2" xml:space="preserve">
-	<value>Imprimir los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369040003</comment>
-</data>
-  <data name="OE_EmailMessages_Report_Screen" xml:space="preserve">
-	<value>Pantalla IO - Reporte de Mensajes de Correo-E</value>
-	<comment>CSHID 369036001</comment>
-</data>
-  <data name="OE_EmailMessages_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369036002</comment>
-</data>
-  <data name="OE_EmailMessages_Report_Article2" xml:space="preserve">
-	<value>Imprimir los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369036003</comment>
-</data>
+    <value>Imprimir los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369040003</comment>
+  </data>
   <data name="OE_OptionalFields_Report_Screen" xml:space="preserve">
-	<value>Pantalla IO – Reporte de Campos Opcionales</value>
-	<comment>CSHID 369039001</comment>
-</data>
+    <value>Pantalla IO – Reporte de Campos Opcionales</value>
+    <comment>CSHID 369039001</comment>
+  </data>
   <data name="OE_OptionalFields_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369039002</comment>
-</data>
+    <value>Acerca de los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369039002</comment>
+  </data>
   <data name="OE_OptionalFields_Report_Article2" xml:space="preserve">
-	<value>Imprimir los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369039003</comment>
-</data>
+    <value>Imprimir los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369039003</comment>
+  </data>
   <data name="OE_GL_Integration_Report_Screen" xml:space="preserve">
-	<value>Pantalla IO – Reporte de Integración del LM</value>
-	<comment>CSHID 369037001</comment>
-</data>
+    <value>Pantalla IO – Reporte de Integración del LM</value>
+    <comment>CSHID 369037001</comment>
+  </data>
   <data name="OE_GL_Integration_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369037002</comment>
-</data>
+    <value>Acerca de los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369037002</comment>
+  </data>
   <data name="OE_GL_Integration_Report_Article2" xml:space="preserve">
-	<value>Imprimir los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369037003</comment>
-</data>
+    <value>Imprimir los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369037003</comment>
+  </data>
   <data name="OE_Templates_Report_Screen" xml:space="preserve">
-	<value>Pantalla IO - Reporte de Plantillas</value>
-	<comment>CSHID 369042001</comment>
-</data>
+    <value>Pantalla IO - Reporte de Plantillas</value>
+    <comment>CSHID 369042001</comment>
+  </data>
   <data name="OE_Templates_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369042002</comment>
-</data>
+    <value>Acerca de los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369042002</comment>
+  </data>
   <data name="OE_Templates_Report_Article2" xml:space="preserve">
-	<value>Imprimir los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369042003</comment>
-</data>
+    <value>Imprimir los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369042003</comment>
+  </data>
   <data name="OE_ShipViaCodes_Report_Screen" xml:space="preserve">
-	<value>Pantalla IO - Reporte de Códigos de Vías de Envío</value>
-	<comment>CSHID 369041001</comment>
-</data>
+    <value>Pantalla IO - Reporte de Códigos de Vías de Envío</value>
+    <comment>CSHID 369041001</comment>
+  </data>
   <data name="OE_ShipViaCodes_Report_Article1" xml:space="preserve">
-	<value>Acerca de los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369041002</comment>
-</data>
+    <value>Acerca de los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369041002</comment>
+  </data>
   <data name="OE_ShipViaCodes_Report_Article2" xml:space="preserve">
-	<value>Imprimir los reportes de Ingreso de Órdenes</value>
-	<comment>CSHID 369041003</comment>
-</data>
+    <value>Imprimir los reportes de Ingreso de Órdenes</value>
+    <comment>CSHID 369041003</comment>
+  </data>
+  <data name="IC_SerialNumbers_Article1" xml:space="preserve">
+    <value>Consultar o modificar los detalles de un número de serie</value>
+  </data>
+  <data name="IC_SerialNumbers_Article2" xml:space="preserve">
+    <value>Acerca de Inventario Serializado y Seguimiento de Lote</value>
+  </data>
+  <data name="IC_SerialNumbers_Screen" xml:space="preserve">
+    <value>CI – Pantalla de Números de Serie</value>
+  </data>
+  <data name="GL_About_Printing_Financial_Statements" xml:space="preserve">
+    <value>Impresión de Estados Financieros</value>
+  </data>
+  <data name="GL_Browse_General_Ledger_Articles" xml:space="preserve">
+    <value>Explorar los artículos del Libro Mayor</value>
+  </data>
+  <data name="GL_Designing_Financial_Statements" xml:space="preserve">
+    <value>Diseñar Estados Financieros</value>
+  </data>
+  <data name="GL_Printing_Financial_Statement" xml:space="preserve">
+    <value>Imprimir un Estado Financiero</value>
+  </data>
+  <data name="GL_Print_Financial_Statements_Screen" xml:space="preserve">
+    <value>Pantalla Imprimir Estados Financieros del LM</value>
+  </data>
+  <data name="GL_Sample_Financial_Statements" xml:space="preserve">
+    <value>Muestra de Estados Financieros</value>
+  </data>
+  <data name="GL_Statement_Designer_Screen" xml:space="preserve">
+    <value>Diseñador de Estado de Cuenta del LM</value>
+  </data>
+  <data name="AS_UserActivityReport_Article1" xml:space="preserve">
+    <value>Imprimir el reporte Actividad de Usuarios</value>
+  </data>
+  <data name="AS_UserActivityReport_Article2" xml:space="preserve">
+    <value>Acerca de los reportes de Servicios Administrativos</value>
+  </data>
+  <data name="AS_UserActivityReport_Screen" xml:space="preserve">
+    <value>Reporte Actividad de Usuarios</value>
+  </data>
 </root>

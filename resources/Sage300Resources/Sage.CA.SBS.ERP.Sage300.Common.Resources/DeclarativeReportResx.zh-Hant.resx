@@ -1060,4 +1060,91 @@
   <data name="ToAccountGroupCode" xml:space="preserve">
     <value>到科目群組代碼</value>
   </data>
+  <data name="AS_UserActivityReportTitle" xml:space="preserve">
+    <value>用戶活動報表</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>公司</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="FromCompany" xml:space="preserve">
+    <value>從公司代號</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>從日期</value>
+  </data>
+  <data name="FromModule" xml:space="preserve">
+    <value>從模組</value>
+  </data>
+  <data name="FromUser" xml:space="preserve">
+    <value>從用戶代號</value>
+  </data>
+  <data name="Module" xml:space="preserve">
+    <value>模組</value>
+  </data>
+  <data name="ToCompany" xml:space="preserve">
+    <value>到公司代號</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>到日期</value>
+  </data>
+  <data name="ToModule" xml:space="preserve">
+    <value>到模組</value>
+  </data>
+  <data name="ToUser" xml:space="preserve">
+    <value>到用戶代號</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>用戶</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>所有</value>
+  </data>
+  <data name="AP" xml:space="preserve">
+    <value>應付帳款</value>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>應收帳款</value>
+  </data>
+  <data name="BK" xml:space="preserve">
+    <value>銀行服務</value>
+  </data>
+  <data name="GL" xml:space="preserve">
+    <value>總帳</value>
+  </data>
+  <data name="IC" xml:space="preserve">
+    <value>存貨控制</value>
+  </data>
+  <data name="MT" xml:space="preserve">
+    <value>多個連絡人</value>
+  </data>
+  <data name="OE" xml:space="preserve">
+    <value>銷售訂單</value>
+  </data>
+  <data name="PM" xml:space="preserve">
+    <value>專案成本管理</value>
+  </data>
+  <data name="PO" xml:space="preserve">
+    <value>採購訂單</value>
+  </data>
+  <data name="TX" xml:space="preserve">
+    <value>稅務服務</value>
+  </data>
+  <data name="CP" xml:space="preserve">
+    <value>加拿大薪資</value>
+  </data>
+  <data name="UP" xml:space="preserve">
+    <value>美國薪資</value>
+  </data>
+  <data name="SageIntelligence" xml:space="preserve">
+    <value>Sage Intelligence</value>
+  </data>
+  <data name="BX" xml:space="preserve">
+    <value>Sage Intelligence</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>目前</value>
+  </data>
 </root>

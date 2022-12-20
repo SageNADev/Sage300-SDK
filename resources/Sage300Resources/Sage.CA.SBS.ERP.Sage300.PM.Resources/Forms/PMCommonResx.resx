@@ -195,6 +195,12 @@
   <data name="PostingDateOverride" xml:space="preserve">
     <value>Posting Date Override</value>
   </data>
+  <data name="AssignACategory" xml:space="preserve">
+    <value>Assign a Category</value>
+  </data>
+  <data name="AssignAResource" xml:space="preserve">
+    <value>Assign a Resource</value>
+  </data>
   <data name="PostInsufficientQty" xml:space="preserve">
     <value>Posting this {0} will reduce the item quantity to below zero at this location. Do you want to proceed?</value>
   </data>
@@ -281,5 +287,26 @@
   </data>
   <data name="ViewDetails" xml:space="preserve">
     <value>View Details</value>
+  </data>
+  <data name="OptionalFieldValidation" xml:space="preserve">
+    <value>Optional field {0} is not defined for this in Project and Job Costing.</value>
+  </data>
+  <data name="OptionalFieldValueValidation" xml:space="preserve">
+    <value>Value {0} does not exist for optional field {1}.</value>
+  </data>
+  <data name="ExtendedBillingAmount" xml:space="preserve">
+    <value>Extended Billing Amount</value>
+  </data>
+  <data name="CannotLessThanZero" xml:space="preserve">
+    <value>cannot be less than zero.</value>
+  </data>
+  <data name="TaxAuthorityDoesNotAllowIncludedTax" xml:space="preserve">
+    <value>Tax authority {0} does not allow included taxes.</value>
+  </data>
+  <data name="TaxClassDoesNotExist" xml:space="preserve">
+    <value>Tax class does not exist for tax authority {0}.</value>
+  </data>
+  <data name="UOMDoesNotMatch" xml:space="preserve">
+    <value>The Unit of Measure specified does not match the Unit of Measure on the {0}.</value>
   </data>
 </root>

@@ -241,6 +241,20 @@ $.extend(sg.utls.url, {
         }
 
         return encodedUrl;
+    },
+
+    /**
+     * @name buildCacheBuster
+     * @description Create an url parameter meant to invalidate the cache
+     * @returns {string} return an url parameter for cache busting
+     */
+    buildCacheBuster: function () {
+        var cb = ""; 
+        if (sg.utls.isInternetExplorer()) {
+            // Generate date + random number to make the URL unique
+            cb = "&cb=" + encodeURI((new Date()).toString() + Math.floor(Math.random() * 10000000));
+        }
+        return cb;
     }
 });
 
@@ -1816,11 +1830,11 @@ $.extend(sg.utls, {
 
                 // Set the initial control focus to 'Yes' or 'Ok' button
                 // Note: Seem to need small delay before this works correctly.
-                let $okButton = $('#kendoConfirmationAcceptButton');
-                if ($okButton) {
+                let $focusButton = $('#kendoConfirmationAcceptButton');
+                if ($focusButton) {
                     const delay = 500;
                     setTimeout(() => {
-                        $okButton.focus();
+                        $focusButton.focus();
                     }, delay);
                 }
             }
@@ -2342,7 +2356,7 @@ $.extend(sg.utls, {
      * @param {object} data 
      * @param {number} defaultWidth
      */
-     openKendoWindowPopup: function (id, data, defaultWidth) {
+     openKendoWindowPopup: function (id, data, defaultWidth, height) {
         $(id + " .menu-with-submenu").remove();    // to remove Text sizing option, this is because the popup is not from iFrame ...
 
         var kendoWindow = $(id).data("kendoWindow");
@@ -2350,7 +2364,7 @@ $.extend(sg.utls, {
             console.log('Sage.CA.SBS.ERP.Sage300.Common.global.js -> openKendoWindowPopup() -> kendoWindow has not been initialized.')
         }
 
-        if (data != null) {
+         if (data != null) {
             $(id).html(data);
             $.validator.unobtrusive.parse("form");
             sg.utls.initFormValidation();
@@ -2369,13 +2383,16 @@ $.extend(sg.utls, {
         //    $('.k-window-content').css("width", "960px");
         //}
         //end:remove horizondal scrollbar of the popup windows
-        hasVerticalscroll = $(".k-window-content:visible").hasScroll('y');
+        let hasVerticalscroll = $(".k-window-content:visible").hasScroll('y');
         if (hasVerticalscroll && defaultWidth && defaultWidth != null) {
             $('.k-window-content:visible').css("width", defaultWidth + "px");
         }
         else if (hasVerticalscroll && defaultWidth == null) {
             $('.k-window-content:visible').css("width", "960px");  //remove horizondal scrollbar of the popup windows
             //console.log("scroll true");
+        }
+        else if (height) {
+            $('.k-window-content:visible').css("height", height + "px");
         } else {
             $('.k-window-content:visible').css("width", "auto");
             // console.log("scroll false");
@@ -2391,6 +2408,7 @@ $.extend(sg.utls, {
             $(this).children(".sub-menu").hide();
         });
 
+         return kendoWindow;
     },
 
     closeKendoWindowPopup: function (id, data) {

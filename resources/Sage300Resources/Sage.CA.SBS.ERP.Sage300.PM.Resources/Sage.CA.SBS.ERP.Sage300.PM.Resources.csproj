@@ -130,6 +130,7 @@
       <DependentUpon>OpeningBalancesDetailResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProjectsResx.Designer.cs" />
+    <Compile Include="Forms\ReviseEstimatesDetailResx.Designer.cs" />
     <Compile Include="Forms\UpdateRetainageResx.Designer.cs">
       <DependentUpon>UpdateRetainageResx.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -146,6 +147,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TransactionListingResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReviseEstimateResx.Designer.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -319,6 +321,11 @@
     <EmbeddedResource Include="Forms\ProjectsResx.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.es.resx" />
+    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.fr.resx" />
+    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.resx" />
+    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\UpdateRetainageResx.es.resx">
       <DependentUpon>UpdateRetainageResx.resx</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +368,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\TransactionListingResx.zh-Hans.resx" />
     <EmbeddedResource Include="Reports\TransactionListingResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\ReviseEstimateResx.es.resx" />
+    <EmbeddedResource Include="Forms\ReviseEstimateResx.fr.resx" />
+    <EmbeddedResource Include="Forms\ReviseEstimateResx.resx" />
+    <EmbeddedResource Include="Forms\ReviseEstimateResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\ReviseEstimateResx.zh-Hant.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

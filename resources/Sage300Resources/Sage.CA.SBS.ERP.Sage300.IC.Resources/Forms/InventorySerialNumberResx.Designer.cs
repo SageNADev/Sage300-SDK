@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class InventorySerialNumberResx {
@@ -66,6 +66,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string AllocatedToOEOrder {
             get {
                 return ResourceManager.GetString("AllocatedToOEOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract Code.
+        /// </summary>
+        public static string ContractCode {
+            get {
+                return ResourceManager.GetString("ContractCode", resourceCulture);
             }
         }
         
@@ -295,6 +304,51 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contract Period {0} Description.
+        /// </summary>
+        public static string ContractPeriodDescription {
+            get {
+                return ResourceManager.GetString("ContractPeriodDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract Period {0} Effective Date.
+        /// </summary>
+        public static string ContractPeriodEffectiveDate {
+            get {
+                return ResourceManager.GetString("ContractPeriodEffectiveDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract Period {0} Expiry Date.
+        /// </summary>
+        public static string ContractPeriodExpiryDate {
+            get {
+                return ResourceManager.GetString("ContractPeriodExpiryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract Period {0} In Use.
+        /// </summary>
+        public static string ContractPeriodInUse {
+            get {
+                return ResourceManager.GetString("ContractPeriodInUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract Period {0} Lifetime.
+        /// </summary>
+        public static string ContractPeriodLifetime {
+            get {
+                return ResourceManager.GetString("ContractPeriodLifetime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cost for Costing.
         /// </summary>
         public static string CostForCosting {
@@ -304,7 +358,16 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inventory Serial Number.
+        ///   Looks up a localized string similar to Date Registered.
+        /// </summary>
+        public static string DateRegistered {
+            get {
+                return ResourceManager.GetString("DateRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serial Number.
         /// </summary>
         public static string InventorySerialNumber {
             get {
@@ -322,11 +385,38 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot find drill down information for this record. If you are using the web screen, note that you must use the desktop screen to drill down to Payroll, PJC transactions, Serialized Inventory or Lot Tracking..
+        /// </summary>
+        public static string NoDrillDownInfo {
+            get {
+                return ResourceManager.GetString("NoDrillDownInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Fields.
+        /// </summary>
+        public static string OptionalFields {
+            get {
+                return ResourceManager.GetString("OptionalFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reserve For Order.
         /// </summary>
         public static string ReserveForOrder {
             get {
                 return ResourceManager.GetString("ReserveForOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serial Number {0} does not exist for Item Number..
+        /// </summary>
+        public static string SerialNumberNotExist {
+            get {
+                return ResourceManager.GetString("SerialNumberNotExist", resourceCulture);
             }
         }
         
@@ -345,6 +435,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string ToStockDate {
             get {
                 return ResourceManager.GetString("ToStockDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transactions.
+        /// </summary>
+        public static string Transactions {
+            get {
+                return ResourceManager.GetString("Transactions", resourceCulture);
             }
         }
         

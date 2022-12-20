@@ -169,4 +169,31 @@
     <value>您必须在过帐召回/放行之前添加一个或多个明细。</value>
     <comment>Error</comment>
   </data>
+  <data name="NextDetailLineNumber" xml:space="preserve">
+    <value>下一明细行编号</value>
+    <comment></comment>
+  </data>
+  <data name="MoneyValue" xml:space="preserve">
+    <value>Money Value</value>
+    <comment></comment>
+  </data>
+  <data name="WarrantyExpiryDate" xml:space="preserve">
+    <value>保修期间 {0} 生效日期</value>
+  </data>
+  <data name="WarrantyEffectiveDate" xml:space="preserve">
+    <value>保修期间 {0} 生效日期</value>
+  </data>
+  <data name="WarrantyLifetime" xml:space="preserve">
+    <value>保修期间 {0} 终身</value>
+  </data>
+  <data name="LotNumberNotExist" xml:space="preserve">
+    <value>批别编号{0}对于货品编号{1}和地点。</value>
+    <comment>Error</comment>
+  </data>
+  <data name="LotNumberNotExist1" xml:space="preserve">
+    <value>批别编号 {0} 不存在。</value>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>*** NEW ***</value>
+  </data>
 </root>

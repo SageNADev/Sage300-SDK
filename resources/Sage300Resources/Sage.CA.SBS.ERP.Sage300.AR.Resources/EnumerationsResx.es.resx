@@ -713,4 +713,16 @@
   <data name="RangeType_SpecificRecurringChargeCode" xml:space="preserve">
     <value>Código de Cargo Recurrente Específico</value>
   </data>
+  <data name="CRMAddNew" xml:space="preserve">
+    <value>Agregar una nueva persona</value>
+  </data>
+  <data name="CRMReplaceExisting" xml:space="preserve">
+    <value>Reemplazar una persona existente</value>
+  </data>
+  <data name="CRMUpdateExisting" xml:space="preserve">
+    <value>Actualizar una persona existente</value>
+  </data>
+  <data name="CRMUpdateOptions" xml:space="preserve">
+    <value>Actualización de Datos de CRM</value>
+  </data> 
 </root>

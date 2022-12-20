@@ -195,6 +195,12 @@
   <data name="PostingDateOverride" xml:space="preserve">
     <value>Date de report remplacée</value>
   </data>
+  <data name="AssignACategory" xml:space="preserve">
+    <value>Assigner une catégorie</value>
+  </data>
+  <data name="AssignAResource" xml:space="preserve">
+    <value>Assigner une ressource</value>
+  </data>
   <data name="PostInsufficientQty" xml:space="preserve">
     <value>Le report de ce/tte {0} réduira la quantité de l&apos;article au-dessous de zéro à cet emplacement. Voulez-vous poursuivre?</value>
   </data>
@@ -281,5 +287,17 @@
   </data>
   <data name="ViewDetails" xml:space="preserve">
     <value>Voir les détails</value>
+  </data>
+  <data name="TaxAuthorityDoesNotAllowIncludedTax" xml:space="preserve">
+    <value>L'autorité fiscale {0} n'autorise pas les taxes comprises.</value>
+  </data>
+  <data name="TaxClassDoesNotExist" xml:space="preserve">
+    <value>La classe de taxe n'existe pas pour l'autorité fiscale {0}.</value>
+  </data>
+  <data name="CannotLessThanZero" xml:space="preserve">
+    <value>ne peut pas être inférieur à zéro.</value>
+  </data>
+  <data name="UOMDoesNotMatch" xml:space="preserve">
+    <value>L'unité de mesure spécifiée ne correspond pas à l'unité de mesure sur {0}.</value>
   </data>
 </root>

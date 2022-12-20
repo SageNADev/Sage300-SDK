@@ -129,6 +129,9 @@
     <value>Base</value>
     <comment>List</comment>
   </data>
+  <data name="BOMNumber" xml:space="preserve">
+    <value>BOM Number</value>
+  </data>
   <data name="ComponentItemNumberDesc" xml:space="preserve">
     <value>Component Item Number Description</value>
     <comment>Field</comment>

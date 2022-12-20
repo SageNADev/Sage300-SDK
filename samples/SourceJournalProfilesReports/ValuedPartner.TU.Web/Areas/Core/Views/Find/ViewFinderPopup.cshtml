@@ -1,0 +1,60 @@
+@* Copyright (c) 2020 Sage Software, Inc.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Attributes
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Utilities
+@using Sage.CA.SBS.ERP.Sage300.Common.Web
+@using System.Linq
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension
+@using filter = Sage.CA.SBS.ERP.Sage300.Common.Models
+@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
+@model Sage.CA.SBS.ERP.Sage300.Core.Web.Models.ViewFinderViewModel
+
+@Html.Partial(Shared.CoreLocalization)
+@Html.Partial(Core.GridPreferences)
+<div class="finder_popUp">
+    <div id="message"></div>
+    <div class="form-group">
+        <div class="dropdown-group">
+            @Html.KoSageDropDownList("finderColumnDropdown", null, new { @id = "finderColumnDropdown", @autofocus = "autofocus", @class = "default" })
+        </div>
+        <div class="dropdown-group">
+            <div id="divOperatorDropdown">
+                @Html.KoSageDropDownList("finderOperatorDropdown", null, new { @id = "finderOperatorDropdown", @class = "clsOperatorDropDown default" })
+            </div>
+        </div>
+        <div class="input-group">
+            @Html.SageTextBox("finderValueTextBox", null, new { @id = "finderValueTextBox", @maxlength = "32" })
+            <div id="divValueDropDown">
+                @Html.KoSageDropDownList("finderValueDropDown", null, new { @id = "finderValueDropDown", @class = "clsValueDropDown default" })
+            </div>
+            <div id="divNumericTextBox">
+                @Html.SageTextBox("finderNumericTextBox", null, new { @id = "finderNumericTextBox", @class = "numeric default", @maxlength = "18" })
+            </div>
+            <div id="divDateTextBox" class="datepicker-group ">
+                @Html.SageTextBox("finderDateValue", null, new { @id = "finderDateTextBox", @formatTextbox = "date", @maxlength = "10", @class = "small" })
+            </div>
+        </div>
+        <div class="buttons-group">
+            @Html.KoSageButton("btnFinderSearch", null, new { @class = "btn btn-default", @value = CommonResx.Search, @id = "btnFinderSearch" })
+        </div>
+    </div>
+    <div class="clear-fix"></div>
+    <div id="divButtonWrapper" class="gridcontrols-group">
+        @Html.SageButtonNoName(CommonResx.EditColumns, new { @id = "btnFinderPrefEditCols", @class = "btn btn-default btn-grid-control btn-edit-column" })
+    </div>
+</div>
+
+<div class="clear-fix">
+    <div id="divFinderGrid" tabindex="0"></div>
+</div>
+<div class="clear-fix"></div>
+
+<div class="footer-group-1">
+    @Html.KoSageButton("btnFinderCancel", null, new { @class = "btn btn-secondary", @value = CommonResx.Cancel, @id = "btnFinderCancel" })
+    @Html.KoSageButton("btnFinderSelect", null, new { @class = "btn btn-primary", @value = CommonResx.Select1, @id = "btnFinderSelect" })
+</div>
+<div class="clear-fix"></div>
+
+
