@@ -11,7 +11,7 @@
  * @name AccpacGridHelper
  * @description Class that wraps common Kendo grid functionality 
  */
-class AccpacGridHelper {
+var AccpacGridHelper = class {
 
     /**
      * @constructor

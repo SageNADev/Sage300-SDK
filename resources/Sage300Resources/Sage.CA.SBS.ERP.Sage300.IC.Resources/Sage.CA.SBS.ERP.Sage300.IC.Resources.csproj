@@ -520,6 +520,7 @@
     <EmbeddedResource Include="Forms\BillsOfMaterialResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>BillsOfMaterialResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BillsOfMaterialResx.es.resx" />
     <EmbeddedResource Include="Forms\BillsOfMaterialResx.fr.resx" />
@@ -560,6 +561,7 @@
     <EmbeddedResource Include="Forms\InventorySerialNumberResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>InventorySerialNumberResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventorySerialNumberResx.es.resx" />
     <EmbeddedResource Include="Forms\InventorySerialNumberResx.fr.resx" />
@@ -1064,6 +1066,7 @@
     <EmbeddedResource Include="ICCommonResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ICCommonResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ICCommonResx.es.resx" />
     <EmbeddedResource Include="ICCommonResx.fr.resx" />

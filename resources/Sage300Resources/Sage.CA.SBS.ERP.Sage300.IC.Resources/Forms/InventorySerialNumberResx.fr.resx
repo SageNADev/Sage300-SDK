@@ -219,4 +219,32 @@
   <data name="UpdatedbyUI" xml:space="preserve">
     <value>Mise à jour par UI</value>
   </data>
+  <data name="ContractPeriodDescription" xml:space="preserve">
+    <value>Durée du contrat {0}-Description</value>
+  </data>
+  <data name="ContractPeriodEffectiveDate" xml:space="preserve">
+    <value>Durée du contrat {0}-Date d'effet</value>
+  </data>
+  <data name="ContractPeriodExpiryDate" xml:space="preserve">
+    <value>Durée du contrat {0}-Date échéance</value>
+  </data>
+  <data name="ContractPeriodInUse" xml:space="preserve">
+    <value>Durée du contrat {0} en utilisation</value>
+  </data>
+  <data name="ContractPeriodLifetime" xml:space="preserve">
+    <value>Durée du contrat {0}-À vie</value>
+  </data>
+  <data name="SerialNumberNotExist" xml:space="preserve">
+    <value>Le numéro de série {0} n'existe pas pour le numéro de l'article.</value>
+  </data>
+  <data name="DateRegistered" xml:space="preserve">
+    <value>Date enregistrement</value>
+  </data>
+  <data name="NoDrillDownInfo" xml:space="preserve">
+    <value>L’information de zoom avant pour cet enregistrement est introuvable. Si vous utilisez l’écran web, notez que vous devez utiliser l’écran du bureau pour faire un zoom avant vers des transactions de Paie, GP, Stocks en série ou Suivi des lots.</value>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>Transactions</value>
+    <comment>Tab</comment>
+  </data>
 </root>

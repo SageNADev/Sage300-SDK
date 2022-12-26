@@ -130,7 +130,7 @@
     <comment>Group - List Option</comment>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>A/P Print 1099/1096 Forms</value>
+    <value>A/P 1099 Filing</value>
     <comment>Screen Title</comment>
   </data>
   <data name="FinalFiling" xml:space="preserve">
@@ -213,5 +213,16 @@
   </data>
   <data name="_1099Nec" xml:space="preserve">
     <value>1099-NEC</value>
+  </data>
+  <data name="_1099Int" xml:space="preserve">
+    <value>1099-INT</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferAgent" xml:space="preserve">
+    <value>Transfer Agent</value>
+    <comment>Field</comment>
   </data>
 </root>

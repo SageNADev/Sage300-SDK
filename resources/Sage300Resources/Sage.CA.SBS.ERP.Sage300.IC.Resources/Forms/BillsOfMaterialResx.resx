@@ -154,18 +154,24 @@
     <value>Components</value>
     <comment>Table Column</comment>
   </data>
+  <data name="ComponentsMasterItemNumber" xml:space="preserve">
+    <value>Components Master Item Number</value>
+  </data>
+  <data name="ComponentsMasterItemNumberDesc" xml:space="preserve">
+    <value>Components Master Item Description</value>
+  </data>
   <data name="ComponetBOMNumber" xml:space="preserve">
     <value>Component's BOM Number</value>
     <comment>Table Column</comment>
   </data>
   <data name="ComponetsItemNumber" xml:space="preserve">
-    <value>Componet's Item Number</value>
+    <value>Component Item Number</value>
   </data>
   <data name="CopyDetail" xml:space="preserve">
     <value>Copy Detail</value>
   </data>
   <data name="DeleteConfirmMessage" xml:space="preserve">
-    <value>Are you sure you want to delete bill of materail {0} for item {1}?</value>
+    <value>Are you sure you want to delete bill of material {0} for item {1}?</value>
     <comment>Delete Confirm Message</comment>
   </data>
   <data name="Entity" xml:space="preserve">
@@ -204,6 +210,10 @@
     <value>Loop Check</value>
     <comment>Finder Column</comment>
   </data>
+  <data name="ManufactureExsistAsItemError" xml:space="preserve">
+    <value>Item {0} exists in inventory as {1}, but is also a manufacturer's item number for {2}. Program will not select {2} for you if you enter {0}.</value>
+    <comment>Error Message</comment>
+  </data>
   <data name="MasterBOMNumber" xml:space="preserve">
     <value>Master BOM Number</value>
   </data>
@@ -215,7 +225,7 @@
     <comment>Field</comment>
   </data>
   <data name="MasterItemNoDesc" xml:space="preserve">
-    <value>Master Item Number Description</value>
+    <value>Master Item Description</value>
     <comment>Field</comment>
   </data>
   <data name="MasterUnitOfMeasure" xml:space="preserve">

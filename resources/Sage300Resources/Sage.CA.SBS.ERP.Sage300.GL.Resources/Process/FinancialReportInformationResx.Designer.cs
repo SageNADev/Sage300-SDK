@@ -196,6 +196,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Process {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Financial Reporter printing is currently in use. Please try again later..
+        /// </summary>
+        public static string ErrorMessage_ConcurrentFRPrint {
+            get {
+                return ResourceManager.GetString("ErrorMessage_ConcurrentFRPrint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chart of accounts not established..
         /// </summary>
         public static string ErrorMessage_NoChartOfAccounts {

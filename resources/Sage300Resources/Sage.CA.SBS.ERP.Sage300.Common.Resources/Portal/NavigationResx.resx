@@ -190,7 +190,7 @@
     <value>Letters/Labels</value>
   </data>
   <data name="AP_VendorReports_Print10991096Form" xml:space="preserve">
-    <value>Print 1099/1096 Forms</value>
+    <value>1099 Filing</value>
   </data>
   <data name="AP_VendorReports_PrintT5018CPRSForm" xml:space="preserve">
     <value>Print T5018 (CPRS) Forms</value>
@@ -1290,6 +1290,9 @@
   <data name="IC_Bills_of_Material" xml:space="preserve">
     <value>Bills of Material</value>
   </data>
+  <data name="IC_Assemblies" xml:space="preserve">
+    <value>Assemblies/Disassemblies</value>
+  </data>
   <data name="IC_Copy_Item_Pricing" xml:space="preserve">
     <value>Copy Item Pricing</value>
   </data>
@@ -1427,6 +1430,12 @@
   </data>
   <data name="AS_WorkProfile" xml:space="preserve">
     <value>UI Profiles</value>
+  </data>
+  <data name="SIR_Msg3" xml:space="preserve">
+    <value>Sage Intelligence Reporting Cloud</value>
+  </data>
+  <data name="SIR_Msg4" xml:space="preserve">
+    <value>Gain better visibility into your business with dynamic financial reports that you can export and customize in Microsoft Excel® or Excel Online.</value>
   </data>
   <data name="SIR_Report1" xml:space="preserve">
     <value>Actual YTD</value>
@@ -1702,9 +1711,6 @@
   <data name="PM_Revise_Estimates" xml:space="preserve">
     <value>Revise Estimates</value>
   </data>
-  <data name="PM_ContractMaintenance" xml:space="preserve">
-    <value>Contract Maintenance</value>
-  </data>
   <data name="PM_Account_Sets" xml:space="preserve">
     <value>Account Sets</value>
   </data>
@@ -1789,5 +1795,14 @@
   </data>
   <data name="GL_Print_Financial_Statements" xml:space="preserve">
     <value>Print Financial Statements</value>
+  </data>
+  <data name="IC_Serial_Numbers" xml:space="preserve">
+    <value>Serial Numbers</value>
+  </data>
+  <data name="Financial_Reporter" xml:space="preserve">
+    <value>G/L Financial Reporter</value>
+  </data>
+  <data name="AS_UserActivityReport" xml:space="preserve">
+    <value>User Activity Report</value>
   </data>
 </root>

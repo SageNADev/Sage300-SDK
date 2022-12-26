@@ -213,4 +213,55 @@
   <data name="WorkInProgressAccount" xml:space="preserve">
     <value>Compte de travaux en cours</value>
   </data>
+  <data name="GLEntryDescription" xml:space="preserve">
+    <value>Description saisie-GL</value>
+  </data>
+  <data name="EquipmentCode" xml:space="preserve">
+    <value>Code matériel</value>
+  </data>
+  <data name="DataType" xml:space="preserve">
+    <value>Type données</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Texte</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="EquipmentNumber" xml:space="preserve">
+    <value>N° matériel</value>
+  </data>
+  <data name="EADescription" xml:space="preserve">
+    <value>Description-Cpte matériel</value>
+  </data>
+  <data name="EquipmentAccount" xml:space="preserve">
+    <value>Compte de matériel</value>
+  </data>
+  <data name="GLDetailComment" xml:space="preserve">
+    <value>G/L Detail Comment</value>
+  </data>
+  <data name="GLDetailDescription" xml:space="preserve">
+    <value>G/L Detail Description</value>
+  </data>
+  <data name="GLDetailReference" xml:space="preserve">
+    <value>G/L Detail Reference</value>
+  </data>
+  <data name="GLTransactionProcess" xml:space="preserve">
+    <value>G/L transaction process completed.</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PJC Utilisation du matériel de GP</value>
+  </data>
+  <data name="EquipmentCodeDesc" xml:space="preserve">
+    <value>Description-Code matériel</value>
+  </data>
+  <data name="EquipmentUsageDetails" xml:space="preserve">
+    <value>Détails-Utilisation du matériel</value>
+  </data>
+  <data name="PostingDateOverrideTitle" xml:space="preserve">
+    <value>Date report remplacée</value>
+  </data>
+  <data name="CostCurrency" xml:space="preserve">
+    <value>Extended Cost Currency</value>
+  </data>
 </root>

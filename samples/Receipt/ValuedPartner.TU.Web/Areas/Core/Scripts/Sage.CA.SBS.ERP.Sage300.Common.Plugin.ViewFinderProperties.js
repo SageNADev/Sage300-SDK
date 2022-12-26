@@ -393,7 +393,7 @@
                 viewID: "AR0010",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["IDITEM"],
+                returnFieldNames: ["IDITEM", "TEXTDESC"],
                 displayFieldNames: ["IDITEM", "TEXTDESC", "SWACTV"]
             },
 
@@ -1446,7 +1446,7 @@
                 viewID: "IC0160",
                 viewOrder: 5,
                 parentValAsInitKey: true,
-                returnFieldNames: ["DOCNUM"],
+                returnFieldNames: ["DOCNUM", "ENTEREDBY"],
                 displayFieldNames: ["DOCNUM", "HDRDESC", "TRANSDATE", "FISCYEAR", "FISCPERIOD", "REFERENCE", "TRANSTYPE", "ITEMNO",
                     "BOMNO", "LOCATION", "QUANTITY", "UNIT", "STATUS", "TRANSNUM", "FROMASSNUM", "FROMASSQTY", "MASTASSNUM", "SITEMCOUNT", "LITEMCOUNT"],
                 filter: "DELETED = 0"
@@ -1455,11 +1455,21 @@
             BOMNumber: {
                 viewID: "IC0200",
                 viewOrder: 0,
-                parentValAsInitKey: false,
+                parentValAsInitKey: true,
                 returnFieldNames: ["BOMNO"],
                 displayFieldNames: ["FMTITEMNO", "BOMNO", "ITEMDESC", "DESC", "REMARK", "FIXEDCOST", "BUILDQTY", "UNIT",
                     "VARBLCOST", "STARTDATE", "ENDDATE", "INACTIVE"],
-                filterTemplate: "FMTITEMNO = \"{0}\" "
+                filterTemplate: "ITEMNO = \"{0}\""
+            },
+
+            BOMNumber_Items: {
+                viewID: "IC0200",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["ITEMNO", "FMTITEMNO", "BOMNO", "BUILDQTY", "UNIT", "ITEMDESC"],
+                displayFieldNames: ["FMTITEMNO", "BOMNO", "ITEMDESC", "DESC", "REMARK", "FIXEDCOST", "BUILDQTY", "UNIT",
+                    "VARBLCOST", "STARTDATE", "ENDDATE", "INACTIVE"],
+                filterTemplate: "BOMNO = \"{0}\" "
             },
 
             Category: {
@@ -1729,6 +1739,38 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["WARRCODE"],
                 displayFieldNames: ["WARRCODE", "WARRDESC"]
+            },
+
+            BillsMaterial: {
+                viewID: "IC0200",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["ITEMNO", "BOMNO"],
+                displayFieldNames: ["ITEMNO", "BOMNO", "ITEMDESC", "DESC", "REMARK", "FIXEDCOST", "BUILDQTY", "VARBLCOST", "STARTDATE", "ENDDATE", "INACTIVE"]
+            },
+
+            LotRecallRelease: {
+                viewID: "IC0822",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["DOCNUM", "LOTNUM", "TRANSTYPE", "ITEMNO", "TRANSDATE"],
+                displayFieldNames: ["DOCNUM", "LOTNUM", "ITEMNO", "TRANSDATE"]
+            },
+
+            LotNumber: {
+                viewID: "IC0810",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["LOTNUM", "LOTNUMF", "ITEMNUM"],
+                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYAVAIL", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE"]
+            },
+
+            SerialNumber: {
+                viewID: "IC0830",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["SERIALNUM", "ITEMNUM", "SERIALNUMF"],
+                displayFieldNames: ["SERIALNUMF", "ITEMNUM", "LOCATION", "STATUS", "STOCKDATE", "EXPIRYDATE", "ASSETCOST"]
             }
         },
 
@@ -1903,6 +1945,13 @@
                 initKeyFieldNames: ["CONTRACT"],
             },
 
+            ContractSettings: {
+                viewID: "PM0021",
+                viewOrder: 1,
+                returnFieldNames: ["OVERHEAD", "LABOR", "USELABOR", "USEOVERH"],
+                displayFieldNames: ["FMTCONTNO"],
+            },
+
             ChargeCode: {
                 viewID: "PM0023",
                 viewOrder: 0,
@@ -1993,7 +2042,7 @@
                 viewOrder: 0,
                 parentValAsInitKey: true,
                 displayFieldNames: ["EQUIPMENT", "DESC", "INACTIVE"],
-                returnFieldNames: ["EQUIPMENT"]
+                returnFieldNames: ["EQUIPMENT", "DESC"]
             },
 
             Subcontractor: {
@@ -2026,6 +2075,21 @@
                 viewOrder: 0,
                 displayFieldNames: ["OHCODE", "DESC", "INACTIVE"],
                 returnFieldNames: ["OHCODE"]
+            },
+
+            CategoryAll: {
+                viewID: "PM0018",
+                viewOrder: 0,
+                displayFieldNames: ["CATEGORY", "DESC", "INACTIVE", "COSTTYPE", "OVERHD", "LABOR"],
+                returnFieldNames: ["CATEGORY"],
+                parentValAsInitKey: true
+            },
+
+            CategoryTypes: {
+                viewID: "PM0018",
+                viewOrder: 0,
+                displayFieldNames: ["CATEGORY", "DESC", "INACTIVE", "COSTTYPE", "OVERHD", "LABOR"],
+                returnFieldNames: ["CATEGORY", "COSTTYPE", "OVERHD", "LABOR"],
             },
 
             Category: {

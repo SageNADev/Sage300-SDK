@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Reports {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Print10991096FormsResx {
@@ -88,6 +88,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Reports {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1099-INT.
+        /// </summary>
+        public static string _1099Int {
+            get {
+                return ResourceManager.GetString("_1099Int", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1099-MISC.
         /// </summary>
         public static string _1099Misc {
@@ -133,7 +142,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Reports {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A/P Print 1099/1096 Forms.
+        ///   Looks up a localized string similar to A/P 1099 Filing.
         /// </summary>
         public static string Entity {
             get {
@@ -273,6 +282,24 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Reports {
         public static string TaxYearErrorMessage {
             get {
                 return ResourceManager.GetString("TaxYearErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transfer Agent.
+        /// </summary>
+        public static string TransferAgent {
+            get {
+                return ResourceManager.GetString("TransferAgent", resourceCulture);
             }
         }
         

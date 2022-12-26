@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class NavigationResx {
@@ -412,7 +412,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Print 1099/1096 Forms.
+        ///   Looks up a localized string similar to 1099 Filing.
         /// </summary>
         public static string AP_VendorReports_Print10991096Form {
             get {
@@ -1002,6 +1002,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string AS_SecurityGroups {
             get {
                 return ResourceManager.GetString("AS_SecurityGroups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Activity Report.
+        /// </summary>
+        public static string AS_UserActivityReport {
+            get {
+                return ResourceManager.GetString("AS_UserActivityReport", resourceCulture);
             }
         }
         
@@ -1951,6 +1960,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to G/L Financial Reporter.
+        /// </summary>
+        public static string Financial_Reporter {
+            get {
+                return ResourceManager.GetString("Financial_Reporter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clear all text size settings on individual screens, and reset text size to the default (Large)?.
         /// </summary>
         public static string FormSizeResetConfirmation {
@@ -2460,6 +2478,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_Alternate_Items {
             get {
                 return ResourceManager.GetString("IC_Alternate_Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assemblies/Disassemblies.
+        /// </summary>
+        public static string IC_Assemblies {
+            get {
+                return ResourceManager.GetString("IC_Assemblies", resourceCulture);
             }
         }
         
@@ -3027,6 +3054,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_Serial_Number_Inquiry {
             get {
                 return ResourceManager.GetString("IC_Serial_Number_Inquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serial Numbers.
+        /// </summary>
+        public static string IC_Serial_Numbers {
+            get {
+                return ResourceManager.GetString("IC_Serial_Numbers", resourceCulture);
             }
         }
         
@@ -3810,15 +3846,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PM_Charges {
             get {
                 return ResourceManager.GetString("PM_Charges", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Contract Maintenance.
-        /// </summary>
-        public static string PM_ContractMaintenance {
-            get {
-                return ResourceManager.GetString("PM_ContractMaintenance", resourceCulture);
             }
         }
         
@@ -4647,6 +4674,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string SIR_Msg2 {
             get {
                 return ResourceManager.GetString("SIR_Msg2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage Intelligence Reporting Cloud.
+        /// </summary>
+        public static string SIR_Msg3 {
+            get {
+                return ResourceManager.GetString("SIR_Msg3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gain better visibility into your business with dynamic financial reports that you can export and customize in Microsoft Excel® or Excel Online..
+        /// </summary>
+        public static string SIR_Msg4 {
+            get {
+                return ResourceManager.GetString("SIR_Msg4", resourceCulture);
             }
         }
         

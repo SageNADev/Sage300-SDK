@@ -199,7 +199,7 @@
     <value>Cost for Costing</value>
   </data>
   <data name="InventorySerialNumber" xml:space="preserve">
-    <value>Inventory Serial Number</value>
+    <value>Serial Number</value>
   </data>
   <data name="MessageScreenUnderDev" xml:space="preserve">
     <value>{0} Screen is under development</value>
@@ -218,5 +218,39 @@
   </data>
   <data name="UpdatedbyUI" xml:space="preserve">
     <value>Updated by UI</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="ContractCode" xml:space="preserve">
+    <value>Contract Code</value>
+  </data>
+  <data name="ContractPeriodDescription" xml:space="preserve">
+    <value>Contract Period {0} Description</value>
+  </data>
+  <data name="ContractPeriodEffectiveDate" xml:space="preserve">
+    <value>Contract Period {0} Effective Date</value>
+  </data>
+  <data name="ContractPeriodExpiryDate" xml:space="preserve">
+    <value>Contract Period {0} Expiry Date</value>
+  </data>
+  <data name="ContractPeriodInUse" xml:space="preserve">
+    <value>Contract Period {0} In Use</value>
+  </data>
+  <data name="ContractPeriodLifetime" xml:space="preserve">
+    <value>Contract Period {0} Lifetime</value>
+  </data>
+  <data name="SerialNumberNotExist" xml:space="preserve">
+    <value>Serial Number {0} does not exist for Item Number.</value>
+  </data>
+  <data name="DateRegistered" xml:space="preserve">
+    <value>Date Registered</value>
+  </data>
+  <data name="NoDrillDownInfo" xml:space="preserve">
+    <value>Cannot find drill down information for this record. If you are using the web screen, note that you must use the desktop screen to drill down to Payroll, PJC transactions, Serialized Inventory or Lot Tracking.</value>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>Transactions</value>
+    <comment>Tab</comment>
   </data>
 </root>

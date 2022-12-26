@@ -206,7 +206,7 @@
     <comment>Message</comment>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Détails...</value>
+    <value>Détails</value>
     <comment>Button</comment>
   </data>
   <data name="DisallowSavePost" xml:space="preserve">
@@ -326,7 +326,7 @@
     <comment>Field</comment>
   </data>
   <data name="MasterItemNumberDesc" xml:space="preserve">
-    <value>Description numéro article principal</value>
+    <value>Description article principal</value>
     <comment>Field</comment>
   </data>
   <data name="MasterSerialNumber" xml:space="preserve">
@@ -500,5 +500,75 @@
   </data>
   <data name="AssemblyQuantity" xml:space="preserve">
     <value>Quantité d'assemblage</value>
+  </data>
+  <data name="AddMasterSerial" xml:space="preserve">
+    <value>Ajouter n° série principal</value>
+  </data>
+  <data name="AssignMasterSerialstoComps" xml:space="preserve">
+    <value>Attribuer n° série principaux à comp.</value>
+  </data>
+  <data name="AutoAllocateLots" xml:space="preserve">
+    <value>Attribution automatique-N° lot</value>
+  </data>
+  <data name="AutoAllocSerials" xml:space="preserve">
+    <value>Attribution automatique-N° série</value>
+  </data>
+  <data name="AutoGenerateLots" xml:space="preserve">
+    <value>Création automatique-N° lot</value>
+  </data>
+  <data name="AutoGenerateSerials" xml:space="preserve">
+    <value>Création automatique-N° série</value>
+  </data>
+  <data name="ClearLots" xml:space="preserve">
+    <value>Supprimer n° lot</value>
+  </data>
+  <data name="VerifyMasterSerial" xml:space="preserve">
+    <value>Vérifier n° série principal</value>
+  </data>
+  <data name="DeleteMasterSerialTitle" xml:space="preserve">
+    <value>Supprimer n° série principal</value>
+  </data>
+  <data name="ViewMasterAssembly" xml:space="preserve">
+    <value>Afficher l'assemblage principal</value>
+  </data>
+  <data name="ViewMasterAssemblyDisassembly" xml:space="preserve">
+    <value>Afficher l'assemblage/désassemblage principal</value>
+  </data>
+  <data name="PromptDeleteUpper" xml:space="preserve">
+    <value>Voulez-vous supprimer ce {0} après le report?</value>
+  </data>
+  <data name="PromptDeleteMid" xml:space="preserve">
+    <value>Si vous choisissez Oui, vous ne pourrez pas consulter les détails de {0} plus tard ou faire un zoom avant dans les détails à partir de GL.</value>
+  </data>
+  <data name="PromptDeleteLower" xml:space="preserve">
+    <value>Si vous choisissez Non, vous pouvez supprimer {0} en utilisant Effacer l'historique.</value>
+  </data>
+  <data name="PreviouslyDeleted" xml:space="preserve">
+    <value>{0} a été supprimé(e).</value>
+  </data>
+  <data name="AddSuccessMessageAssemblies" xml:space="preserve">
+    <value>Sauvegardé sans problème. L'enregistrement doit être reporté avant d'être traité. Le système sera seulement mis à jour avec les détails des numéros de série et/ou lot lorsque le document sera reporté. Numéro {0}: {1}.</value>
+  </data>
+  <data name="PostSuccessMessageAssemblies" xml:space="preserve">
+    <value>Report terminé. Numéro {0}: {1}.</value>
+  </data>
+<data name="BlankItemError" xml:space="preserve">
+    <value>Le numéro d'article ne peut pas être en blanc.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="ItemsNotFound" xml:space="preserve">
+    <value>Composants introuvables à l'emplacement</value>
+  </data>
+  <data name="SufficientQuantities" xml:space="preserve">
+    <value>Il existe des quantités suffisantes disponibles pour l'assemblage/désassemblage.</value>
+  </data>
+  <data name="QuantityLargerThan" xml:space="preserve">
+    <value>La quantité de désassemblage est supérieure à la quantité d'assemblage.</value>
+  </data>
+  <data name="CannotDeleteRequiredOptionalField" xml:space="preserve">
+    <value>Vous ne pouvez pas supprimer des champs optionnels requis.</value>
+  </data>
+  <data name="MultipleBuildQuantity" xml:space="preserve">
+    <value>La quantité entrée doit être un multiple de la quantité assemblée: {0}.</value>
   </data>
 </root>

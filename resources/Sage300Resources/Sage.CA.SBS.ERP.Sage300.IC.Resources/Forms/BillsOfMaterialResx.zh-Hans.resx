@@ -154,6 +154,12 @@
     <value>部件</value>
     <comment>Table Column</comment>
   </data>
+  <data name="ComponentsMasterItemNumber" xml:space="preserve">
+    <value>主部件货品编号</value>
+  </data>
+  <data name="ComponentsMasterItemNumberDesc" xml:space="preserve">
+    <value>主部件货品描述</value>
+  </data>
   <data name="ComponetBOMNumber" xml:space="preserve">
     <value>部件用料单编号</value>
     <comment>Table Column</comment>
@@ -203,6 +209,10 @@
   <data name="LoopCheck" xml:space="preserve">
     <value>循环检查</value>
     <comment>Finder Column</comment>
+  </data>
+  <data name="ManufactureExsistAsItemError" xml:space="preserve">
+    <value>货品{0}已作为{1}存在于存货中，但也是{2}的制造商货品编号。如果您输入{0}，程序将不会选择{2}。</value>
+    <comment>Error Message</comment>
   </data>
   <data name="MasterBOMNumber" xml:space="preserve">
     <value>主用料单编号</value>

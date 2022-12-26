@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class LotRecallsReleasesResx {
@@ -61,6 +61,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot post a Recall/Release header record without any detail records..
+        /// </summary>
+        public static string CannotPostWithoutDetail {
+            get {
+                return ResourceManager.GetString("CannotPostWithoutDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Post this {0}?.
         /// </summary>
         public static string ConfirmPost {
@@ -88,6 +97,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to *** NEW ***.
+        /// </summary>
+        public static string DefaultValue {
+            get {
+                return ResourceManager.GetString("DefaultValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lot Number Transaction Inquiry.
         /// </summary>
         public static string DetailZoomForm {
@@ -106,11 +124,56 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inventory Lot Recalls/Releases.
+        /// </summary>
+        public static string EntityName {
+            get {
+                return ResourceManager.GetString("EntityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Entry Type.
         /// </summary>
         public static string EntryType {
             get {
                 return ResourceManager.GetString("EntryType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot number {0} does not exist for Item number {1}..
+        /// </summary>
+        public static string LotNumberNotExist {
+            get {
+                return ResourceManager.GetString("LotNumberNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot number {0} does not exist..
+        /// </summary>
+        public static string LotNumberNotExist1 {
+            get {
+                return ResourceManager.GetString("LotNumberNotExist1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Money Value.
+        /// </summary>
+        public static string MoneyValue {
+            get {
+                return ResourceManager.GetString("MoneyValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next Detail Line Number.
+        /// </summary>
+        public static string NextDetailLineNumber {
+            get {
+                return ResourceManager.GetString("NextDetailLineNumber", resourceCulture);
             }
         }
         
@@ -174,6 +237,33 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string UsedBy {
             get {
                 return ResourceManager.GetString("UsedBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warranty Period {0} Effective Date.
+        /// </summary>
+        public static string WarrantyEffectiveDate {
+            get {
+                return ResourceManager.GetString("WarrantyEffectiveDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warranty Period {0} Expiry Date.
+        /// </summary>
+        public static string WarrantyExpiryDate {
+            get {
+                return ResourceManager.GetString("WarrantyExpiryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warranty Period {0} Lifetime.
+        /// </summary>
+        public static string WarrantyLifetime {
+            get {
+                return ResourceManager.GetString("WarrantyLifetime", resourceCulture);
             }
         }
     }

@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class AssembliesDisassembliesResx {
@@ -61,6 +61,24 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Master Serial.
+        /// </summary>
+        public static string AddMasterSerial {
+            get {
+                return ResourceManager.GetString("AddMasterSerial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saved successfully. The record has to be posted before it will be costed. The system will only be updated with serial and/or lot details when the document is posted. {0}: {1}.
+        /// </summary>
+        public static string AddSuccessMessageAssemblies {
+            get {
+                return ResourceManager.GetString("AddSuccessMessageAssemblies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Component Master Items.
         /// </summary>
         public static string AllComponentMasterItems {
@@ -93,6 +111,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string AssemblyDetails {
             get {
                 return ResourceManager.GetString("AssemblyDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assembly number.
+        /// </summary>
+        public static string AssemblyNumber {
+            get {
+                return ResourceManager.GetString("AssemblyNumber", resourceCulture);
             }
         }
         
@@ -133,11 +160,74 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assign Master Serials to Comps.
+        /// </summary>
+        public static string AssignMasterSerialstoComps {
+            get {
+                return ResourceManager.GetString("AssignMasterSerialstoComps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto-allocate Lots.
+        /// </summary>
+        public static string AutoAllocateLots {
+            get {
+                return ResourceManager.GetString("AutoAllocateLots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto-allocate Serials.
+        /// </summary>
+        public static string AutoAllocSerials {
+            get {
+                return ResourceManager.GetString("AutoAllocSerials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto-generate Lots.
+        /// </summary>
+        public static string AutoGenerateLots {
+            get {
+                return ResourceManager.GetString("AutoGenerateLots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto-generate Serials.
+        /// </summary>
+        public static string AutoGenerateSerials {
+            get {
+                return ResourceManager.GetString("AutoGenerateSerials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bills of Material.
         /// </summary>
         public static string BillsOfMaterial {
             get {
                 return ResourceManager.GetString("BillsOfMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item Number cannot be blank..
+        /// </summary>
+        public static string BlankItemError {
+            get {
+                return ResourceManager.GetString("BlankItemError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BOM Number.
+        /// </summary>
+        public static string BOMNumber {
+            get {
+                return ResourceManager.GetString("BOMNumber", resourceCulture);
             }
         }
         
@@ -169,11 +259,29 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You cannot delete required optional field..
+        /// </summary>
+        public static string CannotDeleteRequiredOptionalField {
+            get {
+                return ResourceManager.GetString("CannotDeleteRequiredOptionalField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Continuing with this action will clear any serials and lots that you may have entered for the master item and/or components. Do you want to continue with this action?.
         /// </summary>
         public static string ChangeDeletesSerialsLots {
             get {
                 return ResourceManager.GetString("ChangeDeletesSerialsLots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear Lots.
+        /// </summary>
+        public static string ClearLots {
+            get {
+                return ResourceManager.GetString("ClearLots", resourceCulture);
             }
         }
         
@@ -295,6 +403,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete {0}?.
+        /// </summary>
+        public static string DeleteConfirmMessage {
+            get {
+                return ResourceManager.GetString("DeleteConfirmMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to If you delete a serial for a master item, all serials for components that belong to the master serial will also be deleted.  Are you sure that you want to delete the serial(s)?.
         /// </summary>
         public static string DeleteMasterSerial {
@@ -304,7 +421,16 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Details....
+        ///   Looks up a localized string similar to Delete Master Serial.
+        /// </summary>
+        public static string DeleteMasterSerialTitle {
+            get {
+                return ResourceManager.GetString("DeleteMasterSerialTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details {
             get {
@@ -493,6 +619,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Component items not found in the location.
+        /// </summary>
+        public static string ItemsNotFound {
+            get {
+                return ResourceManager.GetString("ItemsNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Item {0} of {1}.
         /// </summary>
         public static string ItemxofX {
@@ -592,7 +727,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Master Item Number Description.
+        ///   Looks up a localized string similar to Master Item Description.
         /// </summary>
         public static string MasterItemNumberDesc {
             get {
@@ -660,6 +795,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string MultilevelSeqNo {
             get {
                 return ResourceManager.GetString("MultilevelSeqNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity entered must be a multiple of build quantity: {0}..
+        /// </summary>
+        public static string MultipleBuildQuantity {
+            get {
+                return ResourceManager.GetString("MultipleBuildQuantity", resourceCulture);
             }
         }
         
@@ -736,11 +880,56 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Posting completed. {0} number: {1}..
+        /// </summary>
+        public static string PostSuccessMessageAssemblies {
+            get {
+                return ResourceManager.GetString("PostSuccessMessageAssemblies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} has been deleted..
+        /// </summary>
+        public static string PreviouslyDeleted {
+            get {
+                return ResourceManager.GetString("PreviouslyDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Process Command.
         /// </summary>
         public static string ProcessCommand {
             get {
                 return ResourceManager.GetString("ProcessCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you choose No, you can delete the {0} using Clear History..
+        /// </summary>
+        public static string PromptDeleteLower {
+            get {
+                return ResourceManager.GetString("PromptDeleteLower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you choose Yes, you will not be able to view the {0} details later or drill down to the details from General Ledger..
+        /// </summary>
+        public static string PromptDeleteMid {
+            get {
+                return ResourceManager.GetString("PromptDeleteMid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to delete this {0} after posting?.
+        /// </summary>
+        public static string PromptDeleteUpper {
+            get {
+                return ResourceManager.GetString("PromptDeleteUpper", resourceCulture);
             }
         }
         
@@ -759,6 +948,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string QuantityDescription {
             get {
                 return ResourceManager.GetString("QuantityDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The disassembly quantity is greater than the assembly quantity..
+        /// </summary>
+        public static string QuantityLargerThan {
+            get {
+                return ResourceManager.GetString("QuantityLargerThan", resourceCulture);
             }
         }
         
@@ -916,6 +1114,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There are sufficient quantities available for assembly/disassembly.
+        /// </summary>
+        public static string SufficientQuantities {
+            get {
+                return ResourceManager.GetString("SufficientQuantities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transaction Number.
         /// </summary>
         public static string TransactionNumber {
@@ -934,11 +1141,38 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Verify Master Serial.
+        /// </summary>
+        public static string VerifyMasterSerial {
+            get {
+                return ResourceManager.GetString("VerifyMasterSerial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sufficient quantities are available for {0}..
         /// </summary>
         public static string VerifyQTYOK {
             get {
                 return ResourceManager.GetString("VerifyQTYOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Master Assembly.
+        /// </summary>
+        public static string ViewMasterAssembly {
+            get {
+                return ResourceManager.GetString("ViewMasterAssembly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Master Assembly/Disassembly.
+        /// </summary>
+        public static string ViewMasterAssemblyDisassembly {
+            get {
+                return ResourceManager.GetString("ViewMasterAssemblyDisassembly", resourceCulture);
             }
         }
     }

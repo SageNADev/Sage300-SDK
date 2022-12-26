@@ -169,4 +169,31 @@
     <value>Vous devez ajouter un ou plusieurs détails avant de reporter le rappel/levée de rappel.</value>
     <comment>Error</comment>
   </data>
+  <data name="NextDetailLineNumber" xml:space="preserve">
+    <value>N° prochaine ligne-Écriture</value>
+    <comment></comment>
+  </data>
+  <data name="MoneyValue" xml:space="preserve">
+    <value>Money Value</value>
+    <comment></comment>
+  </data>
+  <data name="WarrantyExpiryDate" xml:space="preserve">
+    <value>Délai de garantie {0}-Date échéance</value>
+  </data>
+  <data name="WarrantyEffectiveDate" xml:space="preserve">
+    <value>Délai de garantie {0}-Date d'effet</value>
+  </data>
+  <data name="WarrantyLifetime" xml:space="preserve">
+    <value>Délai de garantie {0}-À vie</value>
+  </data>
+  <data name="LotNumberNotExist" xml:space="preserve">
+    <value>Le numéro de lot {0} n'existe pas pour le numéro de l'article {1}.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="LotNumberNotExist1" xml:space="preserve">
+    <value>Le numéro de lot {0} n'existe pas.</value>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>*** NOUVEAU ***</value>
+  </data>
 </root>

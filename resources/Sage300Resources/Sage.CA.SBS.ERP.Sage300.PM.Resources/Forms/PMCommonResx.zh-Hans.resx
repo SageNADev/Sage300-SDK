@@ -181,7 +181,7 @@
     <value>货品描述</value>
   </data>
   <data name="LineNumber" xml:space="preserve">
-    <value>行号</value>
+    <value>行编号</value>
   </data>
   <data name="LocationDescription" xml:space="preserve">
     <value>地点描述</value>
@@ -194,6 +194,12 @@
   </data>
   <data name="PostingDateOverride" xml:space="preserve">
     <value>过帐日期撤换</value>
+  </data>
+  <data name="AssignACategory" xml:space="preserve">
+    <value>分派类别</value>
+  </data>
+  <data name="AssignAResource" xml:space="preserve">
+    <value>分派资源</value>
   </data>
   <data name="PostInsufficientQty" xml:space="preserve">
     <value>过帐此{0}将把此地点的货品数量减少到零以下。是否继续？</value>
@@ -281,5 +287,17 @@
   </data>
   <data name="EditDetails" xml:space="preserve">
     <value>编辑明细</value>
+  </data>
+  <data name="TaxAuthorityDoesNotAllowIncludedTax" xml:space="preserve">
+    <value>税务机关 {0} 不允许含税价。</value>
+  </data>
+  <data name="TaxClassDoesNotExist" xml:space="preserve">
+    <value>税级不存在于税务机关 {0}。</value>
+  </data>
+  <data name="CannotLessThanZero" xml:space="preserve">
+    <value>不能小于零。</value>
+  </data>
+  <data name="UOMDoesNotMatch" xml:space="preserve">
+    <value>计量单位未匹配{0}的计量单位。</value>
   </data>
 </root>

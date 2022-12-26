@@ -661,6 +661,7 @@ var ViewFinderGridHelper = {
             e.preventDefault();
         });
     },
+
     OnBlur: function () {
         $("#ValueTextBox").on('change keypress', function (e) {
             if (e.type == 'change' || (e.type == 'keypress' && e.which == 13)) {
@@ -673,4 +674,14 @@ var ViewFinderGridHelper = {
             }
         });
     },
+
+    ExecuteFinder: function (finderOptions, callback) {
+        const data = { finderOptions: finderOptions };
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "ViewFinder", "RefreshGrid"), data, successData => {
+            if (callback && successData) {
+                callback(successData);
+            }
+        });
+    }
+    
 };
