@@ -62,7 +62,7 @@ $companyname$$customizationName$$screenName$CustomizationUI = {
 
     // Init Sage 300 Finders
     initFinders: function () {
-        //sg.finderHelper.setFinder("btnCustomCurrencyFinder", sg.finder.TaxCurrencyFinder, $companyname$$customizationName$$screenName$CustomizationUICallback.currencyCode, null, "Customization Currency Finder", sg.finderHelper.createDefaultFunction("txtCustomCurrency", "CurrencyCodeId", sg.finderOperator.StartsWith), null, true);
+        //sg.viewFinderHelper.setViewFinderEx("btnCustomCurrencyFinder", "txtCustomCurrency", sg.viewFinderProperties.CS.CurrencyCodes, ValuedPartnerBeforePaymentCodeCustomizationUICallback.currencyCode.currencyCode, null);
     },
 
     //Init CheckBoxs

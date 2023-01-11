@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -18,7 +18,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#region Imports
+#region Namespaces
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -113,6 +113,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         #region Private Constants
         private class Constants
         {
+            /// <summary> 
+            /// Flag that determines if changing control type will set visibilty of other controls
+            /// OR whether or not other controls are enabled (or disabled)
+            /// </summary>
+            public const bool ControlTypeDropdownSetsVisibility = false;
+
             /// <summary> New Control Text </summary>
             public const string NewControlText = "NewControl";
 
@@ -142,6 +148,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
 
             /// <summary> Splitter Distance </summary>
             public const int SplitterDistance = 415;
+
+            /// <summary> Wizard Window Width </summary>
+            public const int WizardWidth = 961;
+
+            /// <summary> Wizard Window Height </summary>
+            public const int WizardHeight = 635;
         }
         #endregion
 
@@ -220,6 +232,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             InitEvents();
             ProcessingSetup(true);
             Processing("");
+
+            // Set the final wizard dimensions
+            this.Width = Constants.WizardWidth;
+            this.Height = Constants.WizardHeight;
         }
 
         #endregion
@@ -408,8 +424,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
                 LoadControlControls();
             }
 
-            // Set focus to control name
-            txtControlName.Focus();
+            // Set focus to control type
+            cboControlType.Focus();
         }
 
         /// <summary> Screen Setup</summary>
@@ -500,7 +516,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
 
             return treeNode;
         }
-
 
         /// <summary> Set node color when tree does not have focuus</summary>
         /// <param name="treeNode">Tree node to act upon </param>
@@ -1414,59 +1429,126 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         /// <summary> Enable control controls</summary>
         private void EnableControlControls()
         {
-            txtControlLabel.Enabled = true;
-            txtControlBinding.Enabled = true;
-            txtPlacementID.Enabled = true;
-            txtHeaderPlacementID.Enabled = true;
-            txtDetailPlacementID.Enabled = true;
-            chkBeforeID.Enabled = true;
-            chkBeforeHeaderID.Enabled = true;
-            chkBeforeDetailID.Enabled = true;
-            txtMaxLength.Enabled = true;
-            txtControlCols.Enabled = true;
-            txtControlRows.Enabled = true;
-            txtFinderTextID.Enabled = true;
+            if (Constants.ControlTypeDropdownSetsVisibility == false)
+            {
+                txtControlLabel.Enabled = true;
+                txtControlBinding.Enabled = true;
+                txtPlacementID.Enabled = true;
+                txtHeaderPlacementID.Enabled = true;
+                txtDetailPlacementID.Enabled = true;
+                chkBeforeID.Enabled = true;
+                chkBeforeHeaderID.Enabled = true;
+                chkBeforeDetailID.Enabled = true;
+                txtMaxLength.Enabled = true;
+                txtControlCols.Enabled = true;
+                txtControlRows.Enabled = true;
+                txtFinderTextID.Enabled = true;
+            } 
+            else
+            {
+#pragma warning disable CS0162 // Unreachable Code Warning
+                lblControlLabel.Visible = txtControlLabel.Visible = true;
+                lblControlBinding.Visible = txtControlBinding.Visible = true;
+                lblPlacementID.Visible = txtPlacementID.Visible = true;
+                lblHeaderPlacementID.Visible = txtHeaderPlacementID.Visible = true;
+                lblDetailPlacementID.Visible = txtDetailPlacementID.Visible = true;
+
+                chkBeforeID.Visible = true;
+                chkBeforeHeaderID.Visible = true;
+                chkBeforeDetailID.Visible = true;
+
+                lblMaxLength.Visible = txtMaxLength.Visible = true;
+                lblControlCols.Visible = txtControlCols.Visible = true;
+                lblControlRows.Visible = txtControlRows.Visible = true;
+
+                lblFinderTextID.Visible = txtFinderTextID.Visible = true;
+#pragma warning restore CS0162 // Unreachable Code Warning
+            }
         }
 
-        /// <summary> Enable control controls</summary>
+        /// <summary>Enable control controls</summary>
         /// <param name="controlType">Control type to determine enabled state </param>
         private void EnableControlControls(ControlType controlType)
         {
-            txtControlLabel.Enabled = !controlType.Equals(ControlType.Grid);
-            txtControlBinding.Enabled =
-                !(controlType.Equals(ControlType.TabPage) || controlType.Equals(ControlType.Panel));
+            if (Constants.ControlTypeDropdownSetsVisibility == false)
+            {
+                txtControlLabel.Enabled = !controlType.Equals(ControlType.Grid);
+                txtControlBinding.Enabled =
+                    !(controlType.Equals(ControlType.TabPage) || controlType.Equals(ControlType.Panel));
 
-            // Placement is not required if a Tab page OR the control being added is in a container control
-            var node = (XElement)_clickedControlTreeNode.Tag;
-            var type = string.Empty;
-            var attribute = node.Attribute(ProcessGeneration.Constants.AttributeType);
-            if (attribute != null)
-            {
-                type = attribute.Value;
-            }
-            if (controlType.Equals(ControlType.TabPage))
-            {
-                txtPlacementID.Enabled = false;
-            }
-            else if ((type.Equals(Constants.ControlTypeTabPage) || type.Equals(Constants.ControlTypePanel)))
-            {
-                txtPlacementID.Enabled = false;
+                // Placement is not required if a Tab page OR the control being added is in a container control
+                var node = (XElement)_clickedControlTreeNode.Tag;
+                var type = string.Empty;
+                var attribute = node.Attribute(ProcessGeneration.Constants.AttributeType);
+                if (attribute != null)
+                {
+                    type = attribute.Value;
+                }
+                if (controlType.Equals(ControlType.TabPage))
+                {
+                    txtPlacementID.Enabled = false;
+                }
+                else if ((type.Equals(Constants.ControlTypeTabPage) || type.Equals(Constants.ControlTypePanel)))
+                {
+                    txtPlacementID.Enabled = false;
+                }
+                else
+                {
+                    txtPlacementID.Enabled = true;
+                }
+                //txtPlacementID.Enabled = !controlType.Equals(ControlType.TabPage);
+
+                txtHeaderPlacementID.Enabled = controlType.Equals(ControlType.TabPage);
+                txtDetailPlacementID.Enabled = controlType.Equals(ControlType.TabPage);
+                chkBeforeID.Enabled = !controlType.Equals(ControlType.TabPage);
+                chkBeforeHeaderID.Enabled = controlType.Equals(ControlType.TabPage);
+                chkBeforeDetailID.Enabled = controlType.Equals(ControlType.TabPage);
+                txtMaxLength.Enabled = controlType.Equals(ControlType.TextArea) || controlType.Equals(ControlType.TextBox);
+                txtControlCols.Enabled = controlType.Equals(ControlType.TextArea);
+                txtControlRows.Enabled = controlType.Equals(ControlType.TextArea);
+                txtFinderTextID.Enabled = controlType.Equals(ControlType.Finder);
             }
             else
             {
-                txtPlacementID.Enabled = true;
-            }
-            //txtPlacementID.Enabled = !controlType.Equals(ControlType.TabPage);
+#pragma warning disable CS0162 // Unreachable Code Warning
+                lblControlLabel.Visible = txtControlLabel.Visible = !controlType.Equals(ControlType.Grid);
+                lblControlBinding.Visible = txtControlBinding.Visible = !(controlType.Equals(ControlType.TabPage) || controlType.Equals(ControlType.Panel));
 
-            txtHeaderPlacementID.Enabled = controlType.Equals(ControlType.TabPage);
-            txtDetailPlacementID.Enabled = controlType.Equals(ControlType.TabPage);
-            chkBeforeID.Enabled = !controlType.Equals(ControlType.TabPage);
-            chkBeforeHeaderID.Enabled = controlType.Equals(ControlType.TabPage);
-            chkBeforeDetailID.Enabled = controlType.Equals(ControlType.TabPage);
-            txtMaxLength.Enabled = controlType.Equals(ControlType.TextArea) || controlType.Equals(ControlType.TextBox);
-            txtControlCols.Enabled = controlType.Equals(ControlType.TextArea);
-            txtControlRows.Enabled = controlType.Equals(ControlType.TextArea);
-            txtFinderTextID.Enabled = controlType.Equals(ControlType.Finder);
+                // Placement is not required if a Tab page OR the control being added is in a container control
+                var node = (XElement)_clickedControlTreeNode.Tag;
+                var type = string.Empty;
+                var attribute = node.Attribute(ProcessGeneration.Constants.AttributeType);
+                if (attribute != null)
+                {
+                    type = attribute.Value;
+                }
+                if (controlType.Equals(ControlType.TabPage))
+                {
+                    lblPlacementID.Visible = txtPlacementID.Visible = false;
+                }
+                else if ((type.Equals(Constants.ControlTypeTabPage) || type.Equals(Constants.ControlTypePanel)))
+                {
+                    lblPlacementID.Visible = txtPlacementID.Visible = false;
+                }
+                else
+                {
+                    lblPlacementID.Visible = txtPlacementID.Visible = true;
+                }
+
+                lblHeaderPlacementID.Visible = txtHeaderPlacementID.Visible = controlType.Equals(ControlType.TabPage);
+                lblDetailPlacementID.Visible = txtDetailPlacementID.Visible = controlType.Equals(ControlType.TabPage);
+
+                chkBeforeID.Visible = !controlType.Equals(ControlType.TabPage);
+                chkBeforeHeaderID.Visible = controlType.Equals(ControlType.TabPage);
+                chkBeforeDetailID.Visible = controlType.Equals(ControlType.TabPage);
+
+                lblMaxLength.Visible = txtMaxLength.Visible = controlType.Equals(ControlType.TextArea) || controlType.Equals(ControlType.TextBox);
+                lblControlCols.Visible = txtControlCols.Visible = controlType.Equals(ControlType.TextArea);
+                lblControlRows.Visible = txtControlRows.Visible = controlType.Equals(ControlType.TextArea);
+
+                lblFinderTextID.Visible = txtFinderTextID.Visible = controlType.Equals(ControlType.Finder);
+#pragma warning restore CS0162 // Unreachable Code Warning
+            }
         }
 
         /// <summary> Add a screen</summary>
@@ -1620,8 +1702,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         /// <summary> Clear Control Controls </summary>
         private void ClearControlControls()
         {
-            txtControlName.Clear();
             cboControlType.SelectedIndex = 0;
+
+            txtControlName.Clear();
             txtControlLabel.Clear();
 
             txtControlBinding.Clear();
@@ -2272,16 +2355,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
         /// <returns>string.Empty if valid otherwise message to display</returns>
         private string ValidControl()
         {
-            // Control Name
-            if (string.IsNullOrEmpty(txtControlName.Text.Trim()))
-            {
-                return string.Format(Resources.InvalidSettingRequiredField, Resources.ControlName.Replace(":", ""));
-            }
-
             // Control Type - No value
             if (string.IsNullOrEmpty(cboControlType.SelectedItem.ToString()))
             {
                 return string.Format(Resources.InvalidSettingRequiredField, Resources.ControlType.Replace(":", ""));
+            }
+
+            // Control Name
+            if (string.IsNullOrEmpty(txtControlName.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.ControlName.Replace(":", ""));
             }
 
             // Control Type - Cannot change from 'container' type to 'standard' type
@@ -2694,18 +2777,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CustomizationWizard
             var treeNode = _clickedControlTreeNode;
             var element = (XElement)treeNode.Tag;
 
-            // Control Name
-            var attribute = element.Attribute(ProcessGeneration.Constants.AttributeId);
-            if (attribute != null)
-            {
-                txtControlName.Text = attribute.Value;
-            }
-
             // Control Type
-            attribute = element.Attribute(ProcessGeneration.Constants.AttributeType);
+            var attribute = element.Attribute(ProcessGeneration.Constants.AttributeType);
             if (attribute != null)
             {
                 cboControlType.Text = attribute.Value;
+            }
+
+            // Control Name
+            attribute = element.Attribute(ProcessGeneration.Constants.AttributeId);
+            if (attribute != null)
+            {
+                txtControlName.Text = attribute.Value;
             }
 
             // Control Label

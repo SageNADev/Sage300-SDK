@@ -130,6 +130,7 @@
             this.tbrControls = new System.Windows.Forms.ToolStrip();
             this.wrkBackground = new System.ComponentModel.BackgroundWorker();
             this.tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.grpPlacement = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
             this.splitBase.Panel1.SuspendLayout();
             this.splitBase.Panel2.SuspendLayout();
@@ -172,6 +173,7 @@
             this.splitControlsBase.Panel2.SuspendLayout();
             this.splitControlsBase.SuspendLayout();
             this.pnlButtons.SuspendLayout();
+            this.grpPlacement.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitBase
@@ -193,7 +195,7 @@
             // splitBase.Panel2
             // 
             this.splitBase.Panel2.Controls.Add(this.splitSteps);
-            this.splitBase.Size = new System.Drawing.Size(921, 555);
+            this.splitBase.Size = new System.Drawing.Size(2021, 1122);
             this.splitBase.SplitterDistance = 90;
             this.splitBase.TabIndex = 1;
             this.splitBase.TabStop = false;
@@ -204,7 +206,7 @@
             this.lblUpperBorder.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblUpperBorder.Location = new System.Drawing.Point(0, 89);
             this.lblUpperBorder.Name = "lblUpperBorder";
-            this.lblUpperBorder.Size = new System.Drawing.Size(921, 1);
+            this.lblUpperBorder.Size = new System.Drawing.Size(2021, 1);
             this.lblUpperBorder.TabIndex = 5;
             // 
             // pictureBox1
@@ -264,7 +266,7 @@
             // splitSteps.Panel2
             // 
             this.splitSteps.Panel2.Controls.Add(this.pnlButtons);
-            this.splitSteps.Size = new System.Drawing.Size(921, 461);
+            this.splitSteps.Size = new System.Drawing.Size(2021, 1028);
             this.splitSteps.SplitterDistance = 410;
             this.splitSteps.TabIndex = 5;
             // 
@@ -1325,30 +1327,22 @@
             // 
             // splitControlsBase.Panel2
             // 
-            this.splitControlsBase.Panel2.Controls.Add(this.chkBeforeDetailID);
+            this.splitControlsBase.Panel2.Controls.Add(this.grpPlacement);
             this.splitControlsBase.Panel2.Controls.Add(this.txtControlRows);
-            this.splitControlsBase.Panel2.Controls.Add(this.chkBeforeHeaderID);
             this.splitControlsBase.Panel2.Controls.Add(this.lblControlBinding);
-            this.splitControlsBase.Panel2.Controls.Add(this.chkBeforeID);
             this.splitControlsBase.Panel2.Controls.Add(this.lblControlRows);
-            this.splitControlsBase.Panel2.Controls.Add(this.txtDetailPlacementID);
             this.splitControlsBase.Panel2.Controls.Add(this.lblControlCols);
-            this.splitControlsBase.Panel2.Controls.Add(this.txtHeaderPlacementID);
             this.splitControlsBase.Panel2.Controls.Add(this.txtControlCols);
-            this.splitControlsBase.Panel2.Controls.Add(this.lblDetailPlacementID);
             this.splitControlsBase.Panel2.Controls.Add(this.txtMaxLength);
-            this.splitControlsBase.Panel2.Controls.Add(this.lblHeaderPlacementID);
+            this.splitControlsBase.Panel2.Controls.Add(this.cboControlType);
+            this.splitControlsBase.Panel2.Controls.Add(this.lblControlType);
             this.splitControlsBase.Panel2.Controls.Add(this.txtControlBinding);
-            this.splitControlsBase.Panel2.Controls.Add(this.txtPlacementID);
-            this.splitControlsBase.Panel2.Controls.Add(this.lblPlacementID);
             this.splitControlsBase.Panel2.Controls.Add(this.txtFinderTextID);
             this.splitControlsBase.Panel2.Controls.Add(this.txtControlLabel);
             this.splitControlsBase.Panel2.Controls.Add(this.lblMaxLength);
             this.splitControlsBase.Panel2.Controls.Add(this.lblFinderTextID);
             this.splitControlsBase.Panel2.Controls.Add(this.lblControlLabel);
-            this.splitControlsBase.Panel2.Controls.Add(this.lblControlType);
             this.splitControlsBase.Panel2.Controls.Add(this.txtControlName);
-            this.splitControlsBase.Panel2.Controls.Add(this.cboControlType);
             this.splitControlsBase.Panel2.Controls.Add(this.lblControlName);
             this.splitControlsBase.Size = new System.Drawing.Size(657, 62);
             this.splitControlsBase.SplitterDistance = 28;
@@ -1369,12 +1363,12 @@
             // 
             this.chkBeforeDetailID.AutoSize = true;
             this.chkBeforeDetailID.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkBeforeDetailID.Location = new System.Drawing.Point(681, 113);
+            this.chkBeforeDetailID.Location = new System.Drawing.Point(322, 90);
             this.chkBeforeDetailID.Name = "chkBeforeDetailID";
-            this.chkBeforeDetailID.Size = new System.Drawing.Size(92, 19);
+            this.chkBeforeDetailID.Size = new System.Drawing.Size(88, 19);
             this.chkBeforeDetailID.Style = MetroFramework.MetroColorStyle.Green;
-            this.chkBeforeDetailID.TabIndex = 17;
-            this.chkBeforeDetailID.Text = "Before  ID?";
+            this.chkBeforeDetailID.TabIndex = 26;
+            this.chkBeforeDetailID.Text = "Before ID?";
             this.chkBeforeDetailID.UseSelectable = true;
             // 
             // txtControlRows
@@ -1392,7 +1386,7 @@
             this.txtControlRows.CustomButton.UseSelectable = true;
             this.txtControlRows.CustomButton.Visible = false;
             this.txtControlRows.Lines = new string[0];
-            this.txtControlRows.Location = new System.Drawing.Point(863, 112);
+            this.txtControlRows.Location = new System.Drawing.Point(208, 173);
             this.txtControlRows.MaxLength = 32767;
             this.txtControlRows.Name = "txtControlRows";
             this.txtControlRows.PasswordChar = '\0';
@@ -1403,7 +1397,7 @@
             this.txtControlRows.ShortcutsEnabled = true;
             this.txtControlRows.Size = new System.Drawing.Size(46, 25);
             this.txtControlRows.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtControlRows.TabIndex = 25;
+            this.txtControlRows.TabIndex = 14;
             this.txtControlRows.UseSelectable = true;
             this.txtControlRows.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtControlRows.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1412,19 +1406,19 @@
             // 
             this.chkBeforeHeaderID.AutoSize = true;
             this.chkBeforeHeaderID.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkBeforeHeaderID.Location = new System.Drawing.Point(681, 85);
+            this.chkBeforeHeaderID.Location = new System.Drawing.Point(322, 62);
             this.chkBeforeHeaderID.Name = "chkBeforeHeaderID";
-            this.chkBeforeHeaderID.Size = new System.Drawing.Size(92, 19);
+            this.chkBeforeHeaderID.Size = new System.Drawing.Size(88, 19);
             this.chkBeforeHeaderID.Style = MetroFramework.MetroColorStyle.Green;
-            this.chkBeforeHeaderID.TabIndex = 14;
-            this.chkBeforeHeaderID.Text = "Before  ID?";
+            this.chkBeforeHeaderID.TabIndex = 23;
+            this.chkBeforeHeaderID.Text = "Before ID?";
             this.chkBeforeHeaderID.UseSelectable = true;
             // 
             // lblControlBinding
             // 
             this.lblControlBinding.AutoSize = true;
             this.lblControlBinding.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblControlBinding.Location = new System.Drawing.Point(11, 141);
+            this.lblControlBinding.Location = new System.Drawing.Point(39, 110);
             this.lblControlBinding.Name = "lblControlBinding";
             this.lblControlBinding.Size = new System.Drawing.Size(58, 19);
             this.lblControlBinding.TabIndex = 7;
@@ -1434,11 +1428,11 @@
             // 
             this.chkBeforeID.AutoSize = true;
             this.chkBeforeID.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkBeforeID.Location = new System.Drawing.Point(681, 56);
+            this.chkBeforeID.Location = new System.Drawing.Point(322, 33);
             this.chkBeforeID.Name = "chkBeforeID";
             this.chkBeforeID.Size = new System.Drawing.Size(88, 19);
             this.chkBeforeID.Style = MetroFramework.MetroColorStyle.Green;
-            this.chkBeforeID.TabIndex = 11;
+            this.chkBeforeID.TabIndex = 20;
             this.chkBeforeID.Text = "Before ID?";
             this.chkBeforeID.UseSelectable = true;
             // 
@@ -1446,10 +1440,10 @@
             // 
             this.lblControlRows.AutoSize = true;
             this.lblControlRows.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblControlRows.Location = new System.Drawing.Point(818, 112);
+            this.lblControlRows.Location = new System.Drawing.Point(163, 173);
             this.lblControlRows.Name = "lblControlRows";
             this.lblControlRows.Size = new System.Drawing.Size(44, 19);
-            this.lblControlRows.TabIndex = 24;
+            this.lblControlRows.TabIndex = 13;
             this.lblControlRows.Text = "Rows:";
             // 
             // txtDetailPlacementID
@@ -1467,7 +1461,7 @@
             this.txtDetailPlacementID.CustomButton.UseSelectable = true;
             this.txtDetailPlacementID.CustomButton.Visible = false;
             this.txtDetailPlacementID.Lines = new string[0];
-            this.txtDetailPlacementID.Location = new System.Drawing.Point(410, 112);
+            this.txtDetailPlacementID.Location = new System.Drawing.Point(87, 91);
             this.txtDetailPlacementID.MaxLength = 32767;
             this.txtDetailPlacementID.Name = "txtDetailPlacementID";
             this.txtDetailPlacementID.PasswordChar = '\0';
@@ -1476,9 +1470,9 @@
             this.txtDetailPlacementID.SelectionLength = 0;
             this.txtDetailPlacementID.SelectionStart = 0;
             this.txtDetailPlacementID.ShortcutsEnabled = true;
-            this.txtDetailPlacementID.Size = new System.Drawing.Size(265, 25);
+            this.txtDetailPlacementID.Size = new System.Drawing.Size(229, 25);
             this.txtDetailPlacementID.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtDetailPlacementID.TabIndex = 16;
+            this.txtDetailPlacementID.TabIndex = 25;
             this.txtDetailPlacementID.UseSelectable = true;
             this.txtDetailPlacementID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDetailPlacementID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1487,10 +1481,10 @@
             // 
             this.lblControlCols.AutoSize = true;
             this.lblControlCols.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblControlCols.Location = new System.Drawing.Point(796, 83);
+            this.lblControlCols.Location = new System.Drawing.Point(263, 173);
             this.lblControlCols.Name = "lblControlCols";
             this.lblControlCols.Size = new System.Drawing.Size(66, 19);
-            this.lblControlCols.TabIndex = 22;
+            this.lblControlCols.TabIndex = 15;
             this.lblControlCols.Text = "Columns:";
             // 
             // txtHeaderPlacementID
@@ -1508,7 +1502,7 @@
             this.txtHeaderPlacementID.CustomButton.UseSelectable = true;
             this.txtHeaderPlacementID.CustomButton.Visible = false;
             this.txtHeaderPlacementID.Lines = new string[0];
-            this.txtHeaderPlacementID.Location = new System.Drawing.Point(410, 82);
+            this.txtHeaderPlacementID.Location = new System.Drawing.Point(87, 61);
             this.txtHeaderPlacementID.MaxLength = 32767;
             this.txtHeaderPlacementID.Name = "txtHeaderPlacementID";
             this.txtHeaderPlacementID.PasswordChar = '\0';
@@ -1517,9 +1511,9 @@
             this.txtHeaderPlacementID.SelectionLength = 0;
             this.txtHeaderPlacementID.SelectionStart = 0;
             this.txtHeaderPlacementID.ShortcutsEnabled = true;
-            this.txtHeaderPlacementID.Size = new System.Drawing.Size(265, 25);
+            this.txtHeaderPlacementID.Size = new System.Drawing.Size(229, 25);
             this.txtHeaderPlacementID.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtHeaderPlacementID.TabIndex = 13;
+            this.txtHeaderPlacementID.TabIndex = 22;
             this.txtHeaderPlacementID.UseSelectable = true;
             this.txtHeaderPlacementID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtHeaderPlacementID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1539,7 +1533,7 @@
             this.txtControlCols.CustomButton.UseSelectable = true;
             this.txtControlCols.CustomButton.Visible = false;
             this.txtControlCols.Lines = new string[0];
-            this.txtControlCols.Location = new System.Drawing.Point(863, 82);
+            this.txtControlCols.Location = new System.Drawing.Point(330, 173);
             this.txtControlCols.MaxLength = 32767;
             this.txtControlCols.Name = "txtControlCols";
             this.txtControlCols.PasswordChar = '\0';
@@ -1550,7 +1544,7 @@
             this.txtControlCols.ShortcutsEnabled = true;
             this.txtControlCols.Size = new System.Drawing.Size(46, 25);
             this.txtControlCols.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtControlCols.TabIndex = 23;
+            this.txtControlCols.TabIndex = 16;
             this.txtControlCols.UseSelectable = true;
             this.txtControlCols.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtControlCols.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1559,10 +1553,10 @@
             // 
             this.lblDetailPlacementID.AutoSize = true;
             this.lblDetailPlacementID.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblDetailPlacementID.Location = new System.Drawing.Point(343, 112);
+            this.lblDetailPlacementID.Location = new System.Drawing.Point(20, 91);
             this.lblDetailPlacementID.Name = "lblDetailPlacementID";
             this.lblDetailPlacementID.Size = new System.Drawing.Size(65, 19);
-            this.lblDetailPlacementID.TabIndex = 15;
+            this.lblDetailPlacementID.TabIndex = 24;
             this.lblDetailPlacementID.Text = "Detail ID:";
             // 
             // txtMaxLength
@@ -1580,7 +1574,7 @@
             this.txtMaxLength.CustomButton.UseSelectable = true;
             this.txtMaxLength.CustomButton.Visible = false;
             this.txtMaxLength.Lines = new string[0];
-            this.txtMaxLength.Location = new System.Drawing.Point(863, 52);
+            this.txtMaxLength.Location = new System.Drawing.Point(101, 173);
             this.txtMaxLength.MaxLength = 32767;
             this.txtMaxLength.Name = "txtMaxLength";
             this.txtMaxLength.PasswordChar = '\0';
@@ -1591,7 +1585,7 @@
             this.txtMaxLength.ShortcutsEnabled = true;
             this.txtMaxLength.Size = new System.Drawing.Size(46, 25);
             this.txtMaxLength.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtMaxLength.TabIndex = 21;
+            this.txtMaxLength.TabIndex = 12;
             this.txtMaxLength.UseSelectable = true;
             this.txtMaxLength.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMaxLength.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1600,10 +1594,10 @@
             // 
             this.lblHeaderPlacementID.AutoSize = true;
             this.lblHeaderPlacementID.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblHeaderPlacementID.Location = new System.Drawing.Point(334, 83);
+            this.lblHeaderPlacementID.Location = new System.Drawing.Point(11, 62);
             this.lblHeaderPlacementID.Name = "lblHeaderPlacementID";
             this.lblHeaderPlacementID.Size = new System.Drawing.Size(74, 19);
-            this.lblHeaderPlacementID.TabIndex = 12;
+            this.lblHeaderPlacementID.TabIndex = 21;
             this.lblHeaderPlacementID.Text = "Header ID:";
             // 
             // txtControlBinding
@@ -1621,7 +1615,7 @@
             this.txtControlBinding.CustomButton.UseSelectable = true;
             this.txtControlBinding.CustomButton.Visible = false;
             this.txtControlBinding.Lines = new string[0];
-            this.txtControlBinding.Location = new System.Drawing.Point(70, 142);
+            this.txtControlBinding.Location = new System.Drawing.Point(101, 111);
             this.txtControlBinding.MaxLength = 32767;
             this.txtControlBinding.Name = "txtControlBinding";
             this.txtControlBinding.PasswordChar = '\0';
@@ -1630,7 +1624,7 @@
             this.txtControlBinding.SelectionLength = 0;
             this.txtControlBinding.SelectionStart = 0;
             this.txtControlBinding.ShortcutsEnabled = true;
-            this.txtControlBinding.Size = new System.Drawing.Size(253, 25);
+            this.txtControlBinding.Size = new System.Drawing.Size(275, 25);
             this.txtControlBinding.Style = MetroFramework.MetroColorStyle.Green;
             this.txtControlBinding.TabIndex = 8;
             this.txtControlBinding.UseSelectable = true;
@@ -1652,7 +1646,7 @@
             this.txtPlacementID.CustomButton.UseSelectable = true;
             this.txtPlacementID.CustomButton.Visible = false;
             this.txtPlacementID.Lines = new string[0];
-            this.txtPlacementID.Location = new System.Drawing.Point(410, 52);
+            this.txtPlacementID.Location = new System.Drawing.Point(87, 31);
             this.txtPlacementID.MaxLength = 32767;
             this.txtPlacementID.Name = "txtPlacementID";
             this.txtPlacementID.PasswordChar = '\0';
@@ -1661,9 +1655,9 @@
             this.txtPlacementID.SelectionLength = 0;
             this.txtPlacementID.SelectionStart = 0;
             this.txtPlacementID.ShortcutsEnabled = true;
-            this.txtPlacementID.Size = new System.Drawing.Size(265, 25);
+            this.txtPlacementID.Size = new System.Drawing.Size(229, 25);
             this.txtPlacementID.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtPlacementID.TabIndex = 10;
+            this.txtPlacementID.TabIndex = 19;
             this.txtPlacementID.UseSelectable = true;
             this.txtPlacementID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPlacementID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1672,10 +1666,10 @@
             // 
             this.lblPlacementID.AutoSize = true;
             this.lblPlacementID.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblPlacementID.Location = new System.Drawing.Point(382, 54);
+            this.lblPlacementID.Location = new System.Drawing.Point(59, 33);
             this.lblPlacementID.Name = "lblPlacementID";
             this.lblPlacementID.Size = new System.Drawing.Size(26, 19);
-            this.lblPlacementID.TabIndex = 9;
+            this.lblPlacementID.TabIndex = 18;
             this.lblPlacementID.Text = "ID:";
             // 
             // txtFinderTextID
@@ -1684,7 +1678,7 @@
             // 
             // 
             this.txtFinderTextID.CustomButton.Image = null;
-            this.txtFinderTextID.CustomButton.Location = new System.Drawing.Point(241, 1);
+            this.txtFinderTextID.CustomButton.Location = new System.Drawing.Point(229, 1);
             this.txtFinderTextID.CustomButton.Name = "";
             this.txtFinderTextID.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtFinderTextID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1693,7 +1687,7 @@
             this.txtFinderTextID.CustomButton.UseSelectable = true;
             this.txtFinderTextID.CustomButton.Visible = false;
             this.txtFinderTextID.Lines = new string[0];
-            this.txtFinderTextID.Location = new System.Drawing.Point(410, 142);
+            this.txtFinderTextID.Location = new System.Drawing.Point(101, 142);
             this.txtFinderTextID.MaxLength = 32767;
             this.txtFinderTextID.Name = "txtFinderTextID";
             this.txtFinderTextID.PasswordChar = '\0';
@@ -1702,9 +1696,9 @@
             this.txtFinderTextID.SelectionLength = 0;
             this.txtFinderTextID.SelectionStart = 0;
             this.txtFinderTextID.ShortcutsEnabled = true;
-            this.txtFinderTextID.Size = new System.Drawing.Size(265, 25);
+            this.txtFinderTextID.Size = new System.Drawing.Size(275, 25);
             this.txtFinderTextID.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtFinderTextID.TabIndex = 19;
+            this.txtFinderTextID.TabIndex = 10;
             this.txtFinderTextID.UseSelectable = true;
             this.txtFinderTextID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtFinderTextID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1724,7 +1718,7 @@
             this.txtControlLabel.CustomButton.UseSelectable = true;
             this.txtControlLabel.CustomButton.Visible = false;
             this.txtControlLabel.Lines = new string[0];
-            this.txtControlLabel.Location = new System.Drawing.Point(70, 112);
+            this.txtControlLabel.Location = new System.Drawing.Point(101, 81);
             this.txtControlLabel.MaxLength = 32767;
             this.txtControlLabel.Name = "txtControlLabel";
             this.txtControlLabel.PasswordChar = '\0';
@@ -1733,7 +1727,7 @@
             this.txtControlLabel.SelectionLength = 0;
             this.txtControlLabel.SelectionStart = 0;
             this.txtControlLabel.ShortcutsEnabled = true;
-            this.txtControlLabel.Size = new System.Drawing.Size(253, 25);
+            this.txtControlLabel.Size = new System.Drawing.Size(275, 25);
             this.txtControlLabel.Style = MetroFramework.MetroColorStyle.Green;
             this.txtControlLabel.TabIndex = 6;
             this.txtControlLabel.UseSelectable = true;
@@ -1744,27 +1738,27 @@
             // 
             this.lblMaxLength.AutoSize = true;
             this.lblMaxLength.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblMaxLength.Location = new System.Drawing.Point(777, 54);
+            this.lblMaxLength.Location = new System.Drawing.Point(13, 173);
             this.lblMaxLength.Name = "lblMaxLength";
             this.lblMaxLength.Size = new System.Drawing.Size(85, 19);
-            this.lblMaxLength.TabIndex = 20;
+            this.lblMaxLength.TabIndex = 11;
             this.lblMaxLength.Text = "Max Length:";
             // 
             // lblFinderTextID
             // 
             this.lblFinderTextID.AutoSize = true;
             this.lblFinderTextID.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblFinderTextID.Location = new System.Drawing.Point(340, 141);
+            this.lblFinderTextID.Location = new System.Drawing.Point(29, 141);
             this.lblFinderTextID.Name = "lblFinderTextID";
             this.lblFinderTextID.Size = new System.Drawing.Size(68, 19);
-            this.lblFinderTextID.TabIndex = 18;
+            this.lblFinderTextID.TabIndex = 9;
             this.lblFinderTextID.Text = "Finder ID:";
             // 
             // lblControlLabel
             // 
             this.lblControlLabel.AutoSize = true;
             this.lblControlLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblControlLabel.Location = new System.Drawing.Point(24, 113);
+            this.lblControlLabel.Location = new System.Drawing.Point(53, 82);
             this.lblControlLabel.Name = "lblControlLabel";
             this.lblControlLabel.Size = new System.Drawing.Size(44, 19);
             this.lblControlLabel.TabIndex = 5;
@@ -1774,10 +1768,10 @@
             // 
             this.lblControlType.AutoSize = true;
             this.lblControlType.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblControlType.Location = new System.Drawing.Point(28, 83);
+            this.lblControlType.Location = new System.Drawing.Point(57, 20);
             this.lblControlType.Name = "lblControlType";
             this.lblControlType.Size = new System.Drawing.Size(40, 19);
-            this.lblControlType.TabIndex = 3;
+            this.lblControlType.TabIndex = 1;
             this.lblControlType.Text = "Type:";
             // 
             // txtControlName
@@ -1795,7 +1789,7 @@
             this.txtControlName.CustomButton.UseSelectable = true;
             this.txtControlName.CustomButton.Visible = false;
             this.txtControlName.Lines = new string[0];
-            this.txtControlName.Location = new System.Drawing.Point(70, 52);
+            this.txtControlName.Location = new System.Drawing.Point(101, 50);
             this.txtControlName.MaxLength = 32767;
             this.txtControlName.Name = "txtControlName";
             this.txtControlName.PasswordChar = '\0';
@@ -1804,9 +1798,9 @@
             this.txtControlName.SelectionLength = 0;
             this.txtControlName.SelectionStart = 0;
             this.txtControlName.ShortcutsEnabled = true;
-            this.txtControlName.Size = new System.Drawing.Size(253, 25);
+            this.txtControlName.Size = new System.Drawing.Size(275, 25);
             this.txtControlName.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtControlName.TabIndex = 2;
+            this.txtControlName.TabIndex = 4;
             this.txtControlName.UseSelectable = true;
             this.txtControlName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtControlName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1816,11 +1810,11 @@
             this.cboControlType.FontSize = MetroFramework.MetroComboBoxSize.Small;
             this.cboControlType.FormattingEnabled = true;
             this.cboControlType.ItemHeight = 19;
-            this.cboControlType.Location = new System.Drawing.Point(70, 82);
+            this.cboControlType.Location = new System.Drawing.Point(101, 19);
             this.cboControlType.Name = "cboControlType";
-            this.cboControlType.Size = new System.Drawing.Size(253, 25);
+            this.cboControlType.Size = new System.Drawing.Size(275, 25);
             this.cboControlType.Style = MetroFramework.MetroColorStyle.Green;
-            this.cboControlType.TabIndex = 4;
+            this.cboControlType.TabIndex = 2;
             this.cboControlType.UseSelectable = true;
             this.cboControlType.SelectedIndexChanged += new System.EventHandler(this.cboControlType_SelectedIndexChanged);
             // 
@@ -1828,10 +1822,10 @@
             // 
             this.lblControlName.AutoSize = true;
             this.lblControlName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblControlName.Location = new System.Drawing.Point(19, 54);
+            this.lblControlName.Location = new System.Drawing.Point(49, 52);
             this.lblControlName.Name = "lblControlName";
             this.lblControlName.Size = new System.Drawing.Size(48, 19);
-            this.lblControlName.TabIndex = 1;
+            this.lblControlName.TabIndex = 3;
             this.lblControlName.Text = "Name:";
             // 
             // pnlButtons
@@ -1845,7 +1839,7 @@
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButtons.Location = new System.Drawing.Point(0, 0);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(921, 47);
+            this.pnlButtons.Size = new System.Drawing.Size(2021, 614);
             this.pnlButtons.TabIndex = 2;
             // 
             // lblLowerBorder
@@ -1854,7 +1848,7 @@
             this.lblLowerBorder.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblLowerBorder.Location = new System.Drawing.Point(0, 0);
             this.lblLowerBorder.Name = "lblLowerBorder";
-            this.lblLowerBorder.Size = new System.Drawing.Size(921, 1);
+            this.lblLowerBorder.Size = new System.Drawing.Size(2021, 1);
             this.lblLowerBorder.TabIndex = 8;
             // 
             // btnCancel
@@ -1947,12 +1941,31 @@
             this.wrkBackground.DoWork += new System.ComponentModel.DoWorkEventHandler(this.wrkBackground_DoWork);
             this.wrkBackground.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.wrkBackground_RunWorkerCompleted);
             // 
+            // grpPlacement
+            // 
+            this.grpPlacement.Controls.Add(this.txtPlacementID);
+            this.grpPlacement.Controls.Add(this.chkBeforeDetailID);
+            this.grpPlacement.Controls.Add(this.lblPlacementID);
+            this.grpPlacement.Controls.Add(this.lblHeaderPlacementID);
+            this.grpPlacement.Controls.Add(this.chkBeforeHeaderID);
+            this.grpPlacement.Controls.Add(this.lblDetailPlacementID);
+            this.grpPlacement.Controls.Add(this.txtHeaderPlacementID);
+            this.grpPlacement.Controls.Add(this.chkBeforeID);
+            this.grpPlacement.Controls.Add(this.txtDetailPlacementID);
+            this.grpPlacement.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpPlacement.Location = new System.Drawing.Point(394, 13);
+            this.grpPlacement.Name = "grpPlacement";
+            this.grpPlacement.Size = new System.Drawing.Size(421, 139);
+            this.grpPlacement.TabIndex = 17;
+            this.grpPlacement.TabStop = false;
+            this.grpPlacement.Text = "New control placement is relative to the following existing control";
+            // 
             // Generation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(961, 635);
+            this.ClientSize = new System.Drawing.Size(2061, 1202);
             this.Controls.Add(this.splitBase);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HelpButton = true;
@@ -2010,6 +2023,8 @@
             this.splitControlsBase.ResumeLayout(false);
             this.pnlButtons.ResumeLayout(false);
             this.pnlButtons.PerformLayout();
+            this.grpPlacement.ResumeLayout(false);
+            this.grpPlacement.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2115,6 +2130,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUpperBorder;
         private System.Windows.Forms.Label lblLowerBorder;
+        private System.Windows.Forms.GroupBox grpPlacement;
     }
 }
 
