@@ -312,6 +312,44 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.TextAreaPopup.js">Sage.CA.SBS.ERP.Sage300.Common.TextAreaPopup.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.ViewFinderGrid.js">Sage.CA.SBS.ERP.Sage300.Common.ViewFinderGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.Wizard.js">Sage.CA.SBS.ERP.Sage300.Common.Wizard.js</ProjectItem>
+            <Folder Name="1js" TargetFolderName="1js">
+              <ProjectItem ReplaceParameters="true" TargetFileName="approve.min.js">approve.min.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="baseFinderWrapper.js">baseFinderWrapper.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="baseKendoCustomEditor.js">baseKendoCustomEditor.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="baseObject.js">baseObject.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="baseObjectCollection.js">baseObjectCollection.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="baseViewLifeCycle.js">baseViewLifeCycle.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="commonTree.js">commonTree.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="controlfixtures.js">controlfixtures.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="errors.js">errors.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="fieldsQueryUtils.js">fieldsQueryUtils.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="grids.js">grids.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="helpers.js">helpers.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="helperValidation.js">helperValidation.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="keeler.js">keeler.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="kendoCustomEditor.js">kendoCustomEditor.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="kendoOptionalFieldEditor.js">kendoOptionalFieldEditor.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="lodash.js">lodash.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="messagebus.js">messagebus.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="reporter.xsl">reporter.xsl</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="row.js">row.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="superCollection.js">superCollection.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="traceLog.js">traceLog.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="tree.js">tree.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="v8n.min.js">v8n.min.js</ProjectItem>
+              <Folder Name="App" TargetFolderName="App">
+                <ProjectItem ReplaceParameters="true" TargetFileName="appconfig.js">appconfig.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="apputils.js">apputils.js</ProjectItem>
+              </Folder>
+              <Folder Name="UnitTest" TargetFolderName="UnitTest">
+                <ProjectItem ReplaceParameters="true" TargetFileName="baseTestModule.js">baseTestModule.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="jquery.idle.js">jquery.idle.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="qunit-reporter-junit.js">qunit-reporter-junit.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="qunit.js">qunit.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="qunitLibrary.js">qunitLibrary.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="recordandplay.js">recordandplay.js</ProjectItem>
+              </Folder>
+            </Folder>
             <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryBehaviour.js</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryFilters.js">Sage.CA.SBS.ERP.Sage300.Common.AdhocInquiryFilters.js</ProjectItem>
@@ -391,6 +429,10 @@
           <Folder Name="Views" TargetFolderName="Views">
             <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+            <Folder Name="1js" TargetFolderName="1js">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Grids.cshtml">_Grids.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Trees.cshtml">_Trees.cshtml</ProjectItem>
+            </Folder>
             <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">
               <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
               <Folder Name="Partials" TargetFolderName="Partials">
@@ -444,6 +486,7 @@
             <Folder Name="Find" TargetFolderName="Find">
               <ProjectItem ReplaceParameters="true" TargetFileName="FindPreference.cshtml">FindPreference.cshtml</ProjectItem>
               <ProjectItem ReplaceParameters="true" TargetFileName="ViewFinder.cshtml">ViewFinder.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="ViewFinderPopup.cshtml">ViewFinderPopup.cshtml</ProjectItem>
             </Folder>
             <Folder Name="FiscalYear" TargetFolderName="FiscalYear">
               <ProjectItem ReplaceParameters="true" TargetFileName="FiscalYearSet.cshtml">FiscalYearSet.cshtml</ProjectItem>

@@ -219,4 +219,32 @@
   <data name="UpdatedbyUI" xml:space="preserve">
     <value>由用戶介面更新</value>
   </data>
+  <data name="ContractPeriodDescription" xml:space="preserve">
+    <value>合約期間{0}描述</value>
+  </data>
+  <data name="ContractPeriodEffectiveDate" xml:space="preserve">
+    <value>合約期間{0}生效日期</value>
+  </data>
+  <data name="ContractPeriodExpiryDate" xml:space="preserve">
+    <value>合約期間{0}失效日期</value>
+  </data>
+  <data name="ContractPeriodInUse" xml:space="preserve">
+    <value>合約期間{0}使用中</value>
+  </data>
+  <data name="ContractPeriodLifetime" xml:space="preserve">
+    <value>合約期間{0}終身</value>
+  </data>
+  <data name="SerialNumberNotExist" xml:space="preserve">
+    <value>序列號{0}對於產品編號和地點.</value>
+  </data>
+  <data name="DateRegistered" xml:space="preserve">
+    <value>註冊日期</value>
+  </data>
+  <data name="NoDrillDownInfo" xml:space="preserve">
+    <value>無法找到此記錄的下鑽資訊。如果您正在使用網頁螢幕，請注意，您必須使用桌面螢幕方可以下鑽到薪資管理或專案成本管理交易關於系列化存貨和批別追蹤。</value>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>交易</value>
+    <comment>Tab</comment>
+  </data>
 </root>

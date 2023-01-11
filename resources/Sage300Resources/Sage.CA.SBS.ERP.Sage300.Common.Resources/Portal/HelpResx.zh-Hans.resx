@@ -3388,15 +3388,15 @@
   </data>
   <data name="IC_CustomerDetails_Report_Article1" xml:space="preserve">
     <value>存货控制报表</value>
-    <comment>CSHID 211087002</comment>
+    <comment>CSHID 211120002</comment>
   </data>
   <data name="IC_CustomerDetails_Report_Article2" xml:space="preserve">
-    <value>打印客户明细报表</value>
-    <comment>CSHID 211087003</comment>
+    <value>打印存货控制客户明细报表</value>
+    <comment>CSHID 211120003</comment>
   </data>
   <data name="IC_CustomerDetails_Report_Screen" xml:space="preserve">
-    <value>存货控制客户明细报表屏幕</value>
-    <comment>CSHID 211087001</comment>
+    <value>存货控制客户明细报表</value>
+    <comment>CSHID 211120001</comment>
   </data>
   <data name="IC_AccountsSets_Report_Article1" xml:space="preserve">
     <value>关于科目集合</value>
@@ -3411,64 +3411,64 @@
     <comment>CSHID 211084001</comment>
   </data>
   <data name="IC_Categories_Report_Article1" xml:space="preserve">
-    <value>关于类别</value>
-    <comment>CSHID 211086002</comment>
+    <value>存货控制报表</value>
+    <comment>CSHID 211118002</comment>
   </data>
   <data name="IC_Categories_Report_Article2" xml:space="preserve">
-    <value>打印类别报表</value>
-    <comment>CSHID 211086003</comment>
+    <value>打印存货控制类别报表</value>
+    <comment>CSHID 211118003</comment>
   </data>
   <data name="IC_Categories_Report_Screen" xml:space="preserve">
     <value>存货控制类别报表</value>
-    <comment>CSHID 211086001</comment>
+    <comment>CSHID 211118001</comment>
   </data>
   <data name="IC_KittingItems_Report_Article1" xml:space="preserve">
-    <value>关于配套货品</value>
-    <comment>CSHID 211088002</comment>
+    <value>存货控制报表</value>
+    <comment>CSHID 211123002</comment>
   </data>
   <data name="IC_KittingItems_Report_Article2" xml:space="preserve">
-    <value>打印配套货品报表</value>
-    <comment>CSHID 211088003</comment>
+    <value>打印存货控制配套货品报表</value>
+    <comment>CSHID 211123003</comment>
   </data>
   <data name="IC_KittingItems_Report_Screen" xml:space="preserve">
-    <value>存货控制配套货品报表屏幕</value>
-    <comment>CSHID 211088001</comment>
+    <value>存货控制配套货品报表</value>
+    <comment>CSHID 211123001</comment>
   </data>
   <data name="IC_Locations_Report_Article1" xml:space="preserve">
-    <value>关于设置地点</value>
-    <comment>CSHID 211090002</comment>
+    <value>存货控制报表</value>
+    <comment>CSHID 211125002</comment>
   </data>
   <data name="IC_Locations_Report_Article2" xml:space="preserve">
-    <value>打印地点报表</value>
-    <comment>CSHID 211090003</comment>
+    <value>打印存货控制地点报表</value>
+    <comment>CSHID 211125003</comment>
   </data>
   <data name="IC_Locations_Report_Screen" xml:space="preserve">
-    <value>存货控制召回报表屏幕</value>
-    <comment>CSHID 211090001</comment>
+    <value>存货控制地点报表</value>
+    <comment>CSHID 211125001</comment>
   </data>
   <data name="IC_PriceListCodes_Report_Article1" xml:space="preserve">
-    <value>关于价目表</value>
-    <comment>CSHID 211092002</comment>
+    <value>存货控制报表</value>
+    <comment>CSHID 211130002</comment>
   </data>
   <data name="IC_PriceListCodes_Report_Article2" xml:space="preserve">
-    <value>打印价目表代码报表</value>
-    <comment>CSHID 211092003</comment>
+    <value>打印存货控制价目表代码报表</value>
+    <comment>CSHID 211130003</comment>
   </data>
   <data name="IC_PriceListCodes_Report_Screen" xml:space="preserve">
-    <value>存货控制价目表代码报表屏幕</value>
-    <comment>CSHID 211092001</comment>
+    <value>存货控制价目表代码报表</value>
+    <comment>CSHID 211130001</comment>
   </data>
   <data name="IC_ReorderQuantities_Report_Article1" xml:space="preserve">
-    <value>关于再订购信息</value>
-    <comment>CSHID 211093002</comment>
+    <value>存货控制报表</value>
+    <comment>CSHID 211131002</comment>
   </data>
   <data name="IC_ReorderQuantities_Report_Article2" xml:space="preserve">
-    <value>打印再订购数量报表</value>
-    <comment>CSHID 211093003</comment>
+    <value>打印存货控制再订购数量报表</value>
+    <comment>CSHID 211131003</comment>
   </data>
   <data name="IC_ReorderQuantities_Report_Screen" xml:space="preserve">
-    <value>存货控制再订购数量报表屏幕</value>
-    <comment>CSHID 211093001</comment>
+    <value>存货控制再订购数量报表</value>
+    <comment>CSHID 211131001</comment>
   </data>
   <data name="AP_RemitToLocations_Report_Article1" xml:space="preserve">
     <value>关于应付帐款报表</value>
@@ -3627,16 +3627,16 @@
     <comment>CSHID 211068001</comment>
   </data>
   <data name="IC_VendorDetails_Report_Article1" xml:space="preserve">
-    <value>关于供应商明细</value>
-    <comment>CSHID 211094002</comment>
+    <value>存货控制报表</value>
+    <comment>CSHID 211134002</comment>
   </data>
   <data name="IC_VendorDetails_Report_Article2" xml:space="preserve">
-    <value>打印供应商明细报表</value>
-    <comment>CSHID 211094003</comment>
+    <value>打印存货控制供应商明细报表</value>
+    <comment>CSHID 211134003</comment>
   </data>
   <data name="IC_VendorDetails_Report_Screen" xml:space="preserve">
-    <value>存货控制供应商明细报表屏幕</value>
-    <comment>CSHID 211094001</comment>
+    <value>存货控制供应商明细报表</value>
+    <comment>CSHID 211134001</comment>
   </data>
   <data name="GL_RevaluationCodes_Article1" xml:space="preserve">
     <value>关于重估</value>
@@ -3808,11 +3808,11 @@
   </data>
   <data name="IC_BillsOfMaterial_Article1" xml:space="preserve">
     <value>关于用料单</value>
-    <comment>CSHID 211064002</comment>
+    <comment>CSH ID 211064003</comment>
   </data>
   <data name="IC_BillsOfMaterial_Article2" xml:space="preserve">
     <value>添加用料单</value>
-    <comment>CSHID 211064003</comment>
+    <comment>CSH ID 211064002</comment>
   </data>
   <data name="IC_BillsOfMaterial_Screen" xml:space="preserve">
     <value>存货控制用料单屏幕</value>
@@ -4598,6 +4598,27 @@
     <value>添加或修改科目集合</value>
     <comment>CSHID 403053002</comment>
   </data>
+  <data name="PM_RevisedEstimate_Article1" xml:space="preserve">
+    <value>修订估算</value>
+    <comment>CSH ID 403074002</comment>
+  </data>
+  <data name="PM_RevisedEstimate_Article2" xml:space="preserve">
+    <value>关于项目成本管理交易屏幕的共同特性</value>
+    <comment>CSH ID 403074003</comment>
+  </data>
+  <data name="PM_RevisedEstimate_Screen" xml:space="preserve">
+    <value>项目成本管理/修订估算屏幕</value>
+    <comment>CSH ID 403074001</comment>
+  </data>
+  <data name="IC_About_Processing_Assembly" xml:space="preserve">
+    <value>关于处理组装和拆卸</value>
+  </data>
+  <data name="IC_Assembling_Items_from_BOM" xml:space="preserve">
+    <value>从用料单组装货品</value>
+  </data>
+  <data name="IC_Assembly_Screen" xml:space="preserve">
+    <value>存货控制组装/拆卸屏幕</value>
+  </data>
   <data name="AP_1099CPRSCodes_Report_Article1" xml:space="preserve">
     <value>打印1099/CPRS代码报表</value>
     <comment>CSHID 16056002</comment>
@@ -5059,613 +5080,529 @@
     <comment>CSHID 18077001</comment>
   </data>
   <data name="AR_Options_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18077002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18077002</comment>
+  </data>
   <data name="AR_Options_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款选项报表</value>
-	<comment>CSHID 18077003</comment>
-</data>
+    <value>打印应收帐款选项报表</value>
+    <comment>CSHID 18077003</comment>
+  </data>
   <data name="AR_AccountSets_Report_Screen" xml:space="preserve">
     <value>应收帐款/科目集合报表</value>
     <comment>CSHID 18067001</comment>
   </data>
   <data name="AR_AccountSets_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18067002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18067002</comment>
+  </data>
   <data name="AR_AccountSets_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款科目集合报表</value>
-	<comment>CSHID 18067003</comment>
-</data>
+    <value>打印应收帐款科目集合报表</value>
+    <comment>CSHID 18067003</comment>
+  </data>
   <data name="AR_BillingCycles_Report_Screen" xml:space="preserve">
     <value>应收帐款/帐单周期报表</value>
     <comment>CSHID 18068001</comment>
   </data>
   <data name="AR_BillingCycles_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18068002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18068002</comment>
+  </data>
   <data name="AR_BillingCycles_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款帐单周期报表</value>
-	<comment>CSHID 18068003</comment>
-</data>
+    <value>打印应收帐款帐单周期报表</value>
+    <comment>CSHID 18068003</comment>
+  </data>
   <data name="AR_DistributionCodes_Report_Screen" xml:space="preserve">
     <value>应收帐款/分配代码报表</value>
     <comment>CSHID 18070001</comment>
   </data>
   <data name="AR_DistributionCodes_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18070002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18070002</comment>
+  </data>
   <data name="AR_DistributionCodes_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款分布代码报表</value>
-	<comment>CSHID 18070003</comment>
-</data>
+    <value>打印应收帐款分布代码报表</value>
+    <comment>CSHID 18070003</comment>
+  </data>
   <data name="AR_DunningMessages_Report_Screen" xml:space="preserve">
     <value>应收帐款/催款讯息报表</value>
     <comment>CSHID 18071001</comment>
   </data>
   <data name="AR_DunningMessages_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18071002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18071002</comment>
+  </data>
   <data name="AR_DunningMessages_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款催款讯息报表</value>
-	<comment>CSHID 18071003</comment>
-</data>
+    <value>打印应收帐款催款讯息报表</value>
+    <comment>CSHID 18071003</comment>
+  </data>
   <data name="AR_InterestProfiles_Report_Screen" xml:space="preserve">
     <value>应收帐款/利息概览报表</value>
     <comment>CSHID 18074001</comment>
   </data>
   <data name="AR_InterestProfiles_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18074002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18074002</comment>
+  </data>
   <data name="AR_InterestProfiles_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款利息概览报表</value>
-	<comment>CSHID 18074003</comment>
-</data>
+    <value>打印应收帐款利息概览报表</value>
+    <comment>CSHID 18074003</comment>
+  </data>
   <data name="AR_PaymentCodes_Report_Screen" xml:space="preserve">
     <value>应收帐款/付款代码报表</value>
     <comment>CSHID 18078001</comment>
   </data>
   <data name="c" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18078002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18078002</comment>
+  </data>
   <data name="AR_PaymentCodes_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款支付代码报表</value>
-	<comment>CSHID 18078003</comment>
-</data>
+    <value>打印应收帐款支付代码报表</value>
+    <comment>CSHID 18078003</comment>
+  </data>
   <data name="AR_Salespersons_Report_Screen" xml:space="preserve">
     <value>应收帐款/业务员报表</value>
     <comment>CSHID 18079001</comment>
   </data>
   <data name="AR_Salespersons_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18079002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18079002</comment>
+  </data>
   <data name="AR_Salespersons_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款业务员报表</value>
-	<comment>CSHID 18079003</comment>
-</data>
+    <value>打印应收帐款业务员报表</value>
+    <comment>CSHID 18079003</comment>
+  </data>
   <data name="AR_TermsCode_Report_Screen" xml:space="preserve">
     <value>应收帐款/条款报表</value>
     <comment>CSHID 18080001</comment>
   </data>
   <data name="AR_TermsCode_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18080002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18080002</comment>
+  </data>
   <data name="AR_TermsCode_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款条款代码报表</value>
-	<comment>CSHID 18080003</comment>
-</data>
+    <value>打印应收帐款条款代码报表</value>
+    <comment>CSHID 18080003</comment>
+  </data>
   <data name="AR_Items_Report_Screen" xml:space="preserve">
     <value>应收帐款/货品报表</value>
     <comment>CSHID 18075001</comment>
   </data>
   <data name="AR_Items_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18075002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18075002</comment>
+  </data>
   <data name="AR_Items_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款货品报表</value>
-	<comment>CSHID 18075003</comment>
-</data>
+    <value>打印应收帐款货品报表</value>
+    <comment>CSHID 18075003</comment>
+  </data>
   <data name="AR_EmailMessages_Report_Screen" xml:space="preserve">
     <value>应收帐款/电邮讯息报表</value>
     <comment>CSHID 18072001</comment>
   </data>
   <data name="AR_EmailMessages_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18072002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18072002</comment>
+  </data>
   <data name="AR_EmailMessages_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款电邮讯息报表</value>
-	<comment>CSHID 18072003</comment>
-</data>
+    <value>打印应收帐款电邮讯息报表</value>
+    <comment>CSHID 18072003</comment>
+  </data>
   <data name="AR_GL_Integration_Report_Screen" xml:space="preserve">
     <value>应收帐款/总帐整合报表</value>
     <comment>CSHID 18073001</comment>
   </data>
   <data name="AR_GL_Integration_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18073002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18073002</comment>
+  </data>
   <data name="AR_GL_Integration_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款总帐整合报表</value>
-	<comment>CSHID 18073003</comment>
-</data>
+    <value>打印应收帐款总帐整合报表</value>
+    <comment>CSHID 18073003</comment>
+  </data>
   <data name="AR_OptionalFields_Report_Screen" xml:space="preserve">
     <value>应收帐款/自选字段报表</value>
     <comment>CSHID 18076001</comment>
   </data>
   <data name="AR_OptionalFields_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18076002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18076002</comment>
+  </data>
   <data name="AR_OptionalFields_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款可选字段报表</value>
-	<comment>CSHID 18076003</comment>
-</data>
+    <value>打印应收帐款可选字段报表</value>
+    <comment>CSHID 18076003</comment>
+  </data>
   <data name="AR_CommentTypes_Report_Screen" xml:space="preserve">
     <value>应收帐款/备注类型报表</value>
     <comment>CSHID 18069001</comment>
   </data>
   <data name="AR_CommentTypes_Report_Article1" xml:space="preserve">
-	<value>关于应收帐款报表</value>
-	<comment>CSHID 18069002</comment>
-</data>
+    <value>关于应收帐款报表</value>
+    <comment>CSHID 18069002</comment>
+  </data>
   <data name="AR_CommentTypes_Report_Article2" xml:space="preserve">
-	<value>打印应收帐款备注类型报表</value>
-	<comment>CSHID 18069003</comment>
-</data>
+    <value>打印应收帐款备注类型报表</value>
+    <comment>CSHID 18069003</comment>
+  </data>
   <data name="GL_AccountStructures_Report_Screen" xml:space="preserve">
     <value>总帐/科目结构报表</value>
     <comment>CSHID 168043001</comment>
   </data>
   <data name="GL_AccountStructures_Report_Article1" xml:space="preserve">
-	<value>关于总帐报表</value>
-	<comment>CSHID 168043002</comment>
-</data>
+    <value>关于总帐报表</value>
+    <comment>CSHID 168043002</comment>
+  </data>
   <data name="GL_AccountStructures_Report_Article2" xml:space="preserve">
-	<value>打印总帐科目结构报表</value>
-	<comment>CSHID 168043003</comment>
-</data>
+    <value>打印总帐科目结构报表</value>
+    <comment>CSHID 168043003</comment>
+  </data>
   <data name="GL_SegmentCodes_Report_Screen" xml:space="preserve">
     <value>总帐/节段代码报表</value>
     <comment>CSHID 168047001</comment>
   </data>
   <data name="GL_SegmentCodes_Report_Article1" xml:space="preserve">
-	<value>关于总帐报表</value>
-	<comment>CSHID 168047002</comment>
-</data>
+    <value>关于总帐报表</value>
+    <comment>CSHID 168047002</comment>
+  </data>
   <data name="GL_SegmentCodes_Report_Article2" xml:space="preserve">
-	<value>打印总帐节段代码报表</value>
-	<comment>CSHID 168047003</comment>
-</data>
+    <value>打印总帐节段代码报表</value>
+    <comment>CSHID 168047003</comment>
+  </data>
   <data name="GL_Revaluation_Codes_Report_Screen" xml:space="preserve">
     <value>总帐/重估代码报表</value>
     <comment>CSHID 168046001</comment>
   </data>
   <data name="GL_Revaluation_Codes_Report_Article1" xml:space="preserve">
-	<value>关于总帐报表</value>
-	<comment>CSHID 168046002</comment>
-</data>
+    <value>关于总帐报表</value>
+    <comment>CSHID 168046002</comment>
+  </data>
   <data name="GL_Revaluation_Codes_Report_Article2" xml:space="preserve">
-	<value>打印总帐重估代码报表</value>
-	<comment>CSHID 168046003</comment>
-</data>
+    <value>打印总帐重估代码报表</value>
+    <comment>CSHID 168046003</comment>
+  </data>
   <data name="GL_AccountGroups_Report_Screen" xml:space="preserve">
     <value>总帐/科目群组报表</value>
     <comment>CSHID 168042001</comment>
   </data>
   <data name="GL_AccountGroups_Report_Article1" xml:space="preserve">
-	<value>关于总帐报表</value>
-	<comment>CSHID 168042002</comment>
-</data>
+    <value>关于总帐报表</value>
+    <comment>CSHID 168042002</comment>
+  </data>
   <data name="GL_AccountGroups_Report_Article2" xml:space="preserve">
-	<value>打印总帐科目群组报表</value>
-	<comment>CSHID 168042003</comment>
-</data>
+    <value>打印总帐科目群组报表</value>
+    <comment>CSHID 168042003</comment>
+  </data>
   <data name="GL_Options_Report_Screen" xml:space="preserve">
     <value>总帐/选项报表</value>
     <comment>CSHID 168045001</comment>
   </data>
   <data name="GL_Options_Report_Article1" xml:space="preserve">
-	<value>关于总帐报表</value>
-	<comment>CSHID 168045002</comment>
-</data>
+    <value>关于总帐报表</value>
+    <comment>CSHID 168045002</comment>
+  </data>
   <data name="GL_Options_Report_Article2" xml:space="preserve">
-	<value>打印总帐选项报表</value>
-	<comment>CSHID 168045003</comment>
-</data>
+    <value>打印总帐选项报表</value>
+    <comment>CSHID 168045003</comment>
+  </data>
   <data name="GL_OptionalFields_Report_Screen" xml:space="preserve">
     <value>总帐/自选字段报表</value>
     <comment>CSHID 168044001</comment>
   </data>
   <data name="GL_OptionalFields_Report_Article1" xml:space="preserve">
-	<value>关于总帐报表</value>
-	<comment>CSHID 168044002</comment>
-</data>
+    <value>关于总帐报表</value>
+    <comment>CSHID 168044002</comment>
+  </data>
   <data name="GL_OptionalFields_Report_Article2" xml:space="preserve">
-	<value>打印总帐可选字段报表</value>
-	<comment>CSHID 168044003</comment>
-</data>
+    <value>打印总帐可选字段报表</value>
+    <comment>CSHID 168044003</comment>
+  </data>
   <data name="TX_Authorities_Report_Screen" xml:space="preserve">
     <value>税务机关报表</value>
     <comment>CSHID 497007001</comment>
   </data>
   <data name="TX_Authorities_Report_Article1" xml:space="preserve">
-	<value>关于税务服务报表</value>
-	<comment>CSHID 497007002</comment>
-</data>
+    <value>关于税务服务报表</value>
+    <comment>CSHID 497007002</comment>
+  </data>
   <data name="TX_Authorities_Report_Article2" xml:space="preserve">
-	<value>打印税务机构报表</value>
-	<comment>CSHID 497007003</comment>
-</data>
+    <value>打印税务机构报表</value>
+    <comment>CSHID 497007003</comment>
+  </data>
   <data name="TX_Classes_Report_Screen" xml:space="preserve">
-	<value>税级报表</value>
-	<comment>CSHID 497008001</comment>
-</data>
+    <value>税级报表</value>
+    <comment>CSHID 497008001</comment>
+  </data>
   <data name="TX_Classes_Report_Article1" xml:space="preserve">
-	<value>关于税务服务报表</value>
-	<comment>CSHID 497008002</comment>
-</data>
+    <value>关于税务服务报表</value>
+    <comment>CSHID 497008002</comment>
+  </data>
   <data name="TX_Classes_Report_Article2" xml:space="preserve">
-	<value>打印税级报表</value>
-	<comment>CSHID 497008003</comment>
-</data>
+    <value>打印税级报表</value>
+    <comment>CSHID 497008003</comment>
+  </data>
   <data name="TX_Rates_Report_Screen" xml:space="preserve">
-	<value>税率报表</value>
-	<comment>CSHID 497010001</comment>
-</data>
+    <value>税率报表</value>
+    <comment>CSHID 497010001</comment>
+  </data>
   <data name="TX_Rates_Report_Article1" xml:space="preserve">
-	<value>关于税务服务报表</value>
-	<comment>CSHID 497010002</comment>
-</data>
+    <value>关于税务服务报表</value>
+    <comment>CSHID 497010002</comment>
+  </data>
   <data name="TX_Rates_Report_Article2" xml:space="preserve">
-	<value>打印税率报表</value>
-	<comment>CSHID 497010003</comment>
-</data>
+    <value>打印税率报表</value>
+    <comment>CSHID 497010003</comment>
+  </data>
   <data name="TX_Groups_Report_Screen" xml:space="preserve">
-	<value>税组报表</value>
-	<comment>CSHID 497009001</comment>
-</data>
+    <value>税组报表</value>
+    <comment>CSHID 497009001</comment>
+  </data>
   <data name="TX_Groups_Report_Article1" xml:space="preserve">
-	<value>关于税务服务报表</value>
-	<comment>CSHID 497009002</comment>
-</data>
+    <value>关于税务服务报表</value>
+    <comment>CSHID 497009002</comment>
+  </data>
   <data name="TX_Groups_Report_Article2" xml:space="preserve">
-	<value>打印税组报表</value>
-	<comment>CSHID 497009003</comment>
-</data>
+    <value>打印税组报表</value>
+    <comment>CSHID 497009003</comment>
+  </data>
   <data name="BK_Banks_Report_Screen" xml:space="preserve">
-	<value>银行报表</value>
-	<comment>CSHID 37036001</comment>
-</data>
+    <value>银行报表</value>
+    <comment>CSHID 37036001</comment>
+  </data>
   <data name="BK_Banks_Report_Article1" xml:space="preserve">
-	<value>打印银行报表</value>
-	<comment>CSHID 37036002</comment>
-</data>
+    <value>打印银行报表</value>
+    <comment>CSHID 37036002</comment>
+  </data>
   <data name="BK_Banks_Report_Article2" xml:space="preserve">
-	<value>关于银行服务报表</value>
-	<comment>CSHID 37036003</comment>
-</data>
+    <value>关于银行服务报表</value>
+    <comment>CSHID 37036003</comment>
+  </data>
   <data name="BK_Options_Report_Screen" xml:space="preserve">
-	<value>银行选项报表</value>
-	<comment>CSHID 37042001</comment>
-</data>
+    <value>银行选项报表</value>
+    <comment>CSHID 37042001</comment>
+  </data>
   <data name="BK_Options_Report_Article1" xml:space="preserve">
-	<value>打印银行选项报表</value>
-	<comment>CSHID 37042002</comment>
-</data>
+    <value>打印银行选项报表</value>
+    <comment>CSHID 37042002</comment>
+  </data>
   <data name="BK_Options_Report_Article2" xml:space="preserve">
-	<value>关于银行服务报表</value>
-	<comment>CSHID 37042003</comment>
-</data>
+    <value>关于银行服务报表</value>
+    <comment>CSHID 37042003</comment>
+  </data>
   <data name="BK_DistributionCodes_Report_Screen" xml:space="preserve">
     <value>银行分配代码报表</value>
     <comment>CSHID 37039001</comment>
   </data>
   <data name="BK_DistributionCodes_Report_Article1" xml:space="preserve">
-	<value>打印银行分布代码报表</value>
-	<comment>CSHID 37039002</comment>
-</data>
+    <value>打印银行分布代码报表</value>
+    <comment>CSHID 37039002</comment>
+  </data>
   <data name="BK_DistributionCodes_Report_Article2" xml:space="preserve">
-	<value>关于银行服务报表</value>
-	<comment>CSHID 37039003</comment>
-</data>
+    <value>关于银行服务报表</value>
+    <comment>CSHID 37039003</comment>
+  </data>
   <data name="BK_DistributionSets_Report_Screen" xml:space="preserve">
     <value>银行分配集合报表</value>
     <comment>CSHID 37040001</comment>
   </data>
   <data name="BK_DistributionSets_Report_Article1" xml:space="preserve">
-	<value>打印银行分布集合报表</value>
-	<comment>CSHID 37040002</comment>
-</data>
+    <value>打印银行分布集合报表</value>
+    <comment>CSHID 37040002</comment>
+  </data>
   <data name="BK_DistributionSets_Report_Article2" xml:space="preserve">
-	<value>关于银行服务报表</value>
-	<comment>CSHID 37040003</comment>
-</data>
+    <value>关于银行服务报表</value>
+    <comment>CSHID 37040003</comment>
+  </data>
   <data name="BK_CreditCardTypes_Report_Screen" xml:space="preserve">
     <value>信用卡类型报表</value>
     <comment>CSHID 37038001</comment>
   </data>
   <data name="BK_CreditCardTypes_Report_Article1" xml:space="preserve">
-	<value>打印银行信用卡类型报表</value>
-	<comment>CSHID 37038002</comment>
-</data>
+    <value>打印银行信用卡类型报表</value>
+    <comment>CSHID 37038002</comment>
+  </data>
   <data name="BK_CreditCardTypes_Report_Article2" xml:space="preserve">
-	<value>关于银行服务报表</value>
-	<comment>CSHID 37038003</comment>
-</data>
+    <value>关于银行服务报表</value>
+    <comment>CSHID 37038003</comment>
+  </data>
   <data name="BK_GL_Integration_Report_Screen" xml:space="preserve">
     <value>银行总帐整合报表</value>
     <comment>CSHID 37041001</comment>
   </data>
   <data name="BK_GL_Integration_Report_Article1" xml:space="preserve">
-	<value>打印银行总帐整合报表</value>
-	<comment>CSHID 37041002</comment>
-</data>
+    <value>打印银行总帐整合报表</value>
+    <comment>CSHID 37041002</comment>
+  </data>
   <data name="BK_GL_Integration_Report_Article2" xml:space="preserve">
-	<value>关于银行服务报表</value>
-	<comment>CSHID 37041003</comment>
-</data>
-  <data name="IC_VendorDetails_Report_Screen" xml:space="preserve">
-	<value>存货控制供应商明细报表</value>
-	<comment>CSHID 211134001</comment>
-</data>
-  <data name="IC_VendorDetails_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211134002</comment>
-</data>
-  <data name="IC_VendorDetails_Report_Article2" xml:space="preserve">
-	<value>打印存货控制供应商明细报表</value>
-	<comment>CSHID 211134003</comment>
-</data>
-  <data name="IC_CustomerDetails_Report_Screen" xml:space="preserve">
-	<value>存货控制客户明细报表</value>
-	<comment>CSHID 211120001</comment>
-</data>
-  <data name="IC_CustomerDetails_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211120002</comment>
-</data>
-  <data name="IC_CustomerDetails_Report_Article2" xml:space="preserve">
-	<value>打印存货控制客户明细报表</value>
-	<comment>CSHID 211120003</comment>
-</data>
-  <data name="IC_Locations_Report_Screen" xml:space="preserve">
-	<value>存货控制地点报表</value>
-	<comment>CSHID 211125001</comment>
-</data>
-  <data name="IC_Locations_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211125002</comment>
-</data>
-  <data name="IC_Locations_Report_Article2" xml:space="preserve">
-	<value>打印存货控制地点报表</value>
-	<comment>CSHID 211125003</comment>
-</data>
+    <value>关于银行服务报表</value>
+    <comment>CSHID 37041003</comment>
+  </data>
   <data name="IC_LocationDetails_Report_Screen" xml:space="preserve">
     <value>存货控制/地点明细报表</value>
     <comment>CSHID 211124001</comment>
   </data>
   <data name="IC_LocationDetails_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211124002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211124002</comment>
+  </data>
   <data name="IC_LocationDetails_Report_Article2" xml:space="preserve">
-	<value>打印存货控制地点明细报表</value>
-	<comment>CSHID 211124003</comment>
-</data>
+    <value>打印存货控制地点明细报表</value>
+    <comment>CSHID 211124003</comment>
+  </data>
   <data name="IC_ManufacturersItems_Report_Screen" xml:space="preserve">
     <value>存货控制/制造商货品报表</value>
     <comment>CSHID 211126001</comment>
   </data>
   <data name="IC_ManufacturersItems_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211126002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211126002</comment>
+  </data>
   <data name="IC_ManufacturersItems_Report_Article2" xml:space="preserve">
-	<value>打印存货控制制造商货品报表</value>
-	<comment>CSHID 211126003</comment>
-</data>
-  <data name="IC_Categories_Report_Screen" xml:space="preserve">
-	<value>存货控制类别报表</value>
-	<comment>CSHID 211118001</comment>
-</data>
-  <data name="IC_Categories_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211118002</comment>
-</data>
-  <data name="IC_Categories_Report_Article2" xml:space="preserve">
-	<value>打印存货控制类别报表</value>
-	<comment>CSHID 211118003</comment>
-</data>
+    <value>打印存货控制制造商货品报表</value>
+    <comment>CSHID 211126003</comment>
+  </data>
   <data name="IC_BillsOfMaterial_Report_Screen" xml:space="preserve">
     <value>存货控制/用料单报表</value>
     <comment>CSHID 211117001</comment>
   </data>
   <data name="IC_BillsOfMaterial_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211117002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211117002</comment>
+  </data>
   <data name="IC_BillsOfMaterial_Report_Article2" xml:space="preserve">
-	<value>打印存货控制用料单报表</value>
-	<comment>CSHID 211117003</comment>
-</data>
-  <data name="IC_KittingItems_Report_Screen" xml:space="preserve">
-	<value>存货控制配套货品报表</value>
-	<comment>CSHID 211123001</comment>
-</data>
-  <data name="IC_KittingItems_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211123002</comment>
-</data>
-  <data name="IC_KittingItems_Report_Article2" xml:space="preserve">
-	<value>打印存货控制配套货品报表</value>
-	<comment>CSHID 211123003</comment>
-</data>
-  <data name="IC_ReorderQuantities_Report_Screen" xml:space="preserve">
-	<value>存货控制再订购数量报表</value>
-	<comment>CSHID 211131001</comment>
-</data>
-  <data name="IC_ReorderQuantities_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211131002</comment>
-</data>
-  <data name="IC_ReorderQuantities_Report_Article2" xml:space="preserve">
-	<value>打印存货控制再订购数量报表</value>
-	<comment>CSHID 211131003</comment>
-</data>
+    <value>打印存货控制用料单报表</value>
+    <comment>CSHID 211117003</comment>
+  </data>
   <data name="IC_AccountSets_Report_Screen" xml:space="preserve">
     <value>存货控制/科目集合报表</value>
     <comment>CSHID 211116001</comment>
   </data>
   <data name="IC_AccountSets_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211116002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211116002</comment>
+  </data>
   <data name="IC_AccountSets_Report_Article2" xml:space="preserve">
-	<value>打印存货控制科目集合报表</value>
-	<comment>CSHID 211116003</comment>
-</data>
-  <data name="IC_PriceListCodes_Report_Screen" xml:space="preserve">
-	<value>存货控制价目表代码报表</value>
-	<comment>CSHID 211130001</comment>
-</data>
-  <data name="IC_PriceListCodes_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211130002</comment>
-</data>
-  <data name="IC_PriceListCodes_Report_Article2" xml:space="preserve">
-	<value>打印存货控制价目表代码报表</value>
-	<comment>CSHID 211130003</comment>
-</data>
+    <value>打印存货控制科目集合报表</value>
+    <comment>CSHID 211116003</comment>
+  </data>
   <data name="IC_ItemStructures_Report_Screen" xml:space="preserve">
     <value>存货控制/货品结构报表</value>
-	<comment>CSHID 211122001</comment>
-</data>
+    <comment>CSHID 211122001</comment>
+  </data>
   <data name="IC_ItemStructures_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211122002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211122002</comment>
+  </data>
   <data name="IC_ItemStructures_Report_Article2" xml:space="preserve">
-	<value>打印存货控制货品结构报表</value>
-	<comment>CSHID 211122003</comment>
-</data>
+    <value>打印存货控制货品结构报表</value>
+    <comment>CSHID 211122003</comment>
+  </data>
   <data name="IC_MaskStructures_Report_Screen" xml:space="preserve">
     <value>存货控制/屏蔽结构报表</value>
     <comment>CSHID 211127001</comment>
   </data>
   <data name="IC_MaskStructures_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211127002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211127002</comment>
+  </data>
   <data name="IC_MaskStructures_Report_Article2" xml:space="preserve">
-	<value>打印存货控制掩码结构报表</value>
-	<comment>CSHID 211127003</comment>
-</data>
+    <value>打印存货控制掩码结构报表</value>
+    <comment>CSHID 211127003</comment>
+  </data>
   <data name="IC_SegmentCodes_Report_Screen" xml:space="preserve">
     <value>存货控制/节段代码报表</value>
     <comment>CSHID 211132001</comment>
   </data>
   <data name="IC_SegmentCodes_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211132002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211132002</comment>
+  </data>
   <data name="IC_SegmentCodes_Report_Article2" xml:space="preserve">
-	<value>打印存货控制节段代码报表</value>
-	<comment>CSHID 211132003</comment>
-</data>
+    <value>打印存货控制节段代码报表</value>
+    <comment>CSHID 211132003</comment>
+  </data>
   <data name="IC_Options_Report_Screen" xml:space="preserve">
     <value>存货控制/选项报表</value>
     <comment>CSHID 211129001</comment>
   </data>
   <data name="IC_Options_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211129002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211129002</comment>
+  </data>
   <data name="IC_Options_Report_Article2" xml:space="preserve">
-	<value>打印存货控制选项报表</value>
-	<comment>CSHID 211129003</comment>
-</data>
+    <value>打印存货控制选项报表</value>
+    <comment>CSHID 211129003</comment>
+  </data>
   <data name="IC_OptionalFields_Report_Screen" xml:space="preserve">
     <value>存货控制/自选字段报表</value>
     <comment>CSHID 211128001</comment>
   </data>
   <data name="IC_OptionalFields_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211128002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211128002</comment>
+  </data>
   <data name="IC_OptionalFields_Report_Article2" xml:space="preserve">
-	<value>打印存货控制可选字段报表</value>
-	<comment>CSHID 211128003</comment>
-</data>
+    <value>打印存货控制可选字段报表</value>
+    <comment>CSHID 211128003</comment>
+  </data>
   <data name="IC_GL_Integration_Report_Screen" xml:space="preserve">
     <value>存货控制/总帐整合报表</value>
-	<comment>CSHID 211121001</comment>
-</data>
+    <comment>CSHID 211121001</comment>
+  </data>
   <data name="IC_GL_Integration_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211121002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211121002</comment>
+  </data>
   <data name="IC_GL_Integration_Report_Article2" xml:space="preserve">
-	<value>打印存货控制总帐整合报表</value>
-	<comment>CSHID 211121003</comment>
-</data>
+    <value>打印存货控制总帐整合报表</value>
+    <comment>CSHID 211121003</comment>
+  </data>
   <data name="IC_UnitsOfMeasure_Report_Screen" xml:space="preserve">
     <value>存货控制/计量单位报表</value>
-	<comment>CSHID 211133001</comment>
-</data>
+    <comment>CSHID 211133001</comment>
+  </data>
   <data name="IC_UnitsOfMeasure_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211133002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211133002</comment>
+  </data>
   <data name="IC_UnitsOfMeasure_Report_Article2" xml:space="preserve">
-	<value>打印存货控制计量单位报表</value>
-	<comment>CSHID 211133003</comment>
-</data>
+    <value>打印存货控制计量单位报表</value>
+    <comment>CSHID 211133003</comment>
+  </data>
   <data name="IC_WeightUnitsOfMeasure_Report_Screen" xml:space="preserve">
     <value>存货控制/重量计量单位报表</value>
-	<comment>CSHID 211136001</comment>
-</data>
+    <comment>CSHID 211136001</comment>
+  </data>
   <data name="IC_WeightUnitsOfMeasure_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211136002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211136002</comment>
+  </data>
   <data name="IC_WeightUnitsOfMeasure_Report_Article2" xml:space="preserve">
-	<value>打印存货控制重量计量单位报表</value>
-	<comment>CSHID 211136003</comment>
-</data>
+    <value>打印存货控制重量计量单位报表</value>
+    <comment>CSHID 211136003</comment>
+  </data>
   <data name="IC_WarrantyCodes_Report_Screen" xml:space="preserve">
     <value>存货控制/保修代码报表</value>
-	<comment>CSHID 211135001</comment>
-</data>
+    <comment>CSHID 211135001</comment>
+  </data>
   <data name="IC_WarrantyCodes_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211135002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211135002</comment>
+  </data>
   <data name="IC_WarrantyCodes_Report_Article2" xml:space="preserve">
-	<value>打印存货控制保修代码报表</value>
-	<comment>CSHID 211135003</comment>
-</data>
+    <value>打印存货控制保修代码报表</value>
+    <comment>CSHID 211135003</comment>
+  </data>
   <data name="IC_ContractCodes_Report_Screen" xml:space="preserve">
     <value>存货控制/合约代码报表</value>
     <comment>CSHID 211119001</comment>
   </data>
   <data name="IC_ContractCodes_Report_Article1" xml:space="preserve">
-	<value>存货控制报表</value>
-	<comment>CSHID 211119002</comment>
-</data>
+    <value>存货控制报表</value>
+    <comment>CSHID 211119002</comment>
+  </data>
   <data name="IC_ContractCodes_Report_Article2" xml:space="preserve">
-	<value>打印存货控制合约代码报表</value>
-	<comment>CSHID 211119003</comment>
-</data>
+    <value>打印存货控制合约代码报表</value>
+    <comment>CSHID 211119003</comment>
+  </data>
   <data name="OE_MiscellaneousCharges_Report_Screen" xml:space="preserve">
     <value>销售订单/杂项收费报表</value>
     <comment>CSHID 369038001</comment>
@@ -5690,18 +5627,6 @@
     <value>打印销售订单报表</value>
     <comment>CSHID 369040003</comment>
   </data>
-  <data name="OE_EmailMessages_Report_Screen" xml:space="preserve">
-	<value>销售订单电邮讯息报表屏幕</value>
-	<comment>CSHID 369036001</comment>
-</data>
-  <data name="OE_EmailMessages_Report_Article1" xml:space="preserve">
-	<value>关于销售订单报表</value>
-	<comment>CSHID 369036002</comment>
-</data>
-  <data name="OE_EmailMessages_Report_Article2" xml:space="preserve">
-	<value>打印销售订单报表</value>
-	<comment>CSHID 369036003</comment>
-</data>
   <data name="OE_OptionalFields_Report_Screen" xml:space="preserve">
     <value>销售订单/自选字段报表</value>
     <comment>CSHID 369039001</comment>
@@ -5749,5 +5674,44 @@
   <data name="OE_ShipViaCodes_Report_Article2" xml:space="preserve">
     <value>打印销售订单报表</value>
     <comment>CSHID 369041003</comment>
+  </data>
+  <data name="IC_SerialNumbers_Article1" xml:space="preserve">
+    <value>查看或编辑一个系列编号的明细</value>
+  </data>
+  <data name="IC_SerialNumbers_Article2" xml:space="preserve">
+    <value>关于系列化存货和批别追踪</value>
+  </data>
+  <data name="IC_SerialNumbers_Screen" xml:space="preserve">
+    <value>存货控制系列编号屏幕</value>
+  </data>
+  <data name="GL_About_Printing_Financial_Statements" xml:space="preserve">
+    <value>关于打印财务报告</value>
+  </data>
+  <data name="GL_Browse_General_Ledger_Articles" xml:space="preserve">
+    <value>浏览总帐文章</value>
+  </data>
+  <data name="GL_Designing_Financial_Statements" xml:space="preserve">
+    <value>设计财务报告</value>
+  </data>
+  <data name="GL_Printing_Financial_Statement" xml:space="preserve">
+    <value>打印一个财务报告</value>
+  </data>
+  <data name="GL_Print_Financial_Statements_Screen" xml:space="preserve">
+    <value>总帐打印财务报告屏幕</value>
+  </data>
+  <data name="GL_Sample_Financial_Statements" xml:space="preserve">
+    <value>样本财务报告</value>
+  </data>
+  <data name="GL_Statement_Designer_Screen" xml:space="preserve">
+    <value>总帐报告设计器</value>
+  </data>
+  <data name="AS_UserActivityReport_Article1" xml:space="preserve">
+    <value>打印用户活动报表</value>
+  </data>
+  <data name="AS_UserActivityReport_Article2" xml:space="preserve">
+    <value>关于管理服务报表</value>
+  </data>
+  <data name="AS_UserActivityReport_Screen" xml:space="preserve">
+    <value>用户活动报表</value>
   </data>
 </root>

@@ -1663,4 +1663,37 @@
   <data name="Template_GenericReportException" xml:space="preserve">
     <value>尝试生成报表时出现了一个或多个错误：{0}</value>
   </data>
+  <data name="CollapseAll" xml:space="preserve">
+    <value>收缩全部</value>
+  </data>
+  <data name="ExpandAll" xml:space="preserve">
+    <value>展开全部</value>
+  </data>
+  <data name="FieldDoesNotExist" xml:space="preserve">
+    <value>{0}不存在。</value>
+  </data>
+  <data name="Integer" xml:space="preserve">
+    <value>整数</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>数字</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="YesNo" xml:space="preserve">
+    <value>是/否</value>
+  </data>
+  <data name="ManufactureExsistAsItemError" xml:space="preserve">
+    <value>货品{0}已作为{1}存在于存货中，但也是{2}的制造商货品编号。如果您输入{0}，程序将不会选择{2}。</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="NoParentDrillDown" xml:space="preserve">
+    <value>起动查询之前不能关闭父窗口。已忽略下钻类型。</value>
+  </data>
+  <data name="UnableToRetrieveCredentials" xml:space="preserve">
+    <value>Unable to to retrieve credentials. Please log into Financial Reporter again.</value>
+    <comment>To be translated</comment>
+  </data>
+  <data name="PostSuccessMessage" xml:space="preserve">
+    <value>过帐完成。 {0}, {1}</value>
+  </data>
 </root>

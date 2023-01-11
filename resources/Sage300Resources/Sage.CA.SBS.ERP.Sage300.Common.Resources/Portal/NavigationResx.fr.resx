@@ -190,7 +190,7 @@
     <value>Lettres/Étiquettes</value>
   </data>
   <data name="AP_VendorReports_Print10991096Form" xml:space="preserve">
-    <value>Imprimer formules 1099/1096</value>
+    <value>Transmission de déclaration 1099</value>
   </data>
   <data name="AP_VendorReports_PrintT5018CPRSForm" xml:space="preserve">
     <value>Imprimer formules T5018 (SDPC)</value>
@@ -1290,6 +1290,9 @@
   <data name="IC_Bills_of_Material" xml:space="preserve">
     <value>Nomenclatures</value>
   </data>
+  <data name="IC_Assemblies" xml:space="preserve">
+    <value>Assemblages/Désassemblages</value>
+  </data>
   <data name="IC_Copy_Item_Pricing" xml:space="preserve">
     <value>Copier le prix des articles</value>
   </data>
@@ -1427,6 +1430,12 @@
   </data>
   <data name="AS_WorkProfile" xml:space="preserve">
     <value>Profils IU</value>
+  </data>
+  <data name="SIR_Msg3" xml:space="preserve">
+    <value>Sage Intelligence Reporting Cloud</value>
+  </data>
+  <data name="SIR_Msg4" xml:space="preserve">
+    <value>Dressez un tableau plus précis de votre entreprise grâce à des états financiers dynamiques que vous pouvez exporter et personnaliser dans Microsoft Excel® ou Excel Online.</value>
   </data>
   <data name="SIR_Report1" xml:space="preserve">
     <value>Réel à date</value>
@@ -1702,9 +1711,6 @@
   <data name="PM_Revise_Estimates" xml:space="preserve">
     <value>Estimations révisées</value>
   </data>
-  <data name="PM_ContractMaintenance" xml:space="preserve">
-    <value>Maintenance des contrats</value>
-  </data>
   <data name="PM_Account_Sets" xml:space="preserve">
     <value>Groupes de comptes</value>
   </data>
@@ -1784,10 +1790,19 @@
   <data name="Bank_Setup_Reports" xml:space="preserve">
     <value>Rapports de configuration de banque</value>
   </data>
+  <data name="GL_Statement_Designer" xml:space="preserve">
+    <value>Éditeur d'états financiers</value>
+  </data>
   <data name="GL_Print_Financial_Statements" xml:space="preserve">
     <value>Impression des états financiers</value>
   </data>
-  <data name="GL_Statement_Designer" xml:space="preserve">
-    <value>Éditeur d'états financiers</value>
+  <data name="IC_Serial_Numbers" xml:space="preserve">
+    <value>Numéros de série</value>
+  </data>
+  <data name="Financial_Reporter" xml:space="preserve">
+    <value>Générateur d'état financier</value>
+  </data>
+  <data name="AS_UserActivityReport" xml:space="preserve">
+    <value>Activité des utilisateurs</value>
   </data>
 </root>

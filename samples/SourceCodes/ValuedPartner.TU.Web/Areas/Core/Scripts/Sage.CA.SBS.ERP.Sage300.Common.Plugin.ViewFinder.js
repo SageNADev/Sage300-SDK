@@ -312,10 +312,7 @@
             }
             if (elementInfocus == null || elementInfocusAttrId == null || isFound) {
                 const id = elementInfocusAttrId;
-                let isNavigationButton = false;
-                if (id) {
-                    isNavigationButton = id.includes('btnDataFirst') || id.includes('btnDataPrevious') || id.includes('btnDataNext') || id.includes('btnDataLast');
-                }
+                const isNavigationButton = id ? (id.includes('btnDataFirst') || id.includes('btnDataPrevious') || id.includes('btnDataNext') || id.includes('btnDataLast')) : false;
                 if (!isNavigationButton) {
                     funcCall();
                 }
@@ -793,6 +790,10 @@
             }
         },
         _resetFocus: function (that) {
+            if (that.options.id.length === 0) {
+                return;
+            }
+
             var finderElement = $("#" + that.options.id);
             if (finderElement.length === 0) {
                 finderElement.focus();

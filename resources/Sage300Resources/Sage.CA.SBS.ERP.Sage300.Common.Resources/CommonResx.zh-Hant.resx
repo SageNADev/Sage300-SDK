@@ -1559,7 +1559,7 @@
     <value>連絡人{0}不存在。</value>
   </data>
   <data name="Template_ReportCouldNotBeLocated" xml:space="preserve">
-    <value>無法找到報表檔案&apos;{0}&apos;。請連絡您的管理員獲取協助。</value>
+    <value>無法找到報表檔案'{0}'。請連絡您的管理員獲取協助。</value>
   </data>
   <data name="SignUp" xml:space="preserve">
     <value>註冊</value>
@@ -1662,5 +1662,38 @@
   </data>
   <data name="Template_GenericReportException" xml:space="preserve">
     <value>嘗試產生下列報表時，出現一或多個錯誤：{0}</value>
+  </data>
+  <data name="CollapseAll" xml:space="preserve">
+    <value>收縮全部</value>
+  </data>
+  <data name="ExpandAll" xml:space="preserve">
+    <value>展開全部</value>
+  </data>
+  <data name="FieldDoesNotExist" xml:space="preserve">
+    <value>{0} 不存在。</value>
+  </data>
+  <data name="Integer" xml:space="preserve">
+    <value>整数</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>編號</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="YesNo" xml:space="preserve">
+    <value>是/否</value>
+  </data>
+  <data name="ManufactureExsistAsItemError" xml:space="preserve">
+    <value>產品{0}已作為{1}存在於存貨中，但也是{2}的製造商產品編號。如果您輸入{0}，程式將不會選擇{2}。</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="NoParentDrillDown" xml:space="preserve">
+    <value>起動查詢之前不能關閉父視窗。已忽略下鑽類型。</value>
+  </data>
+  <data name="UnableToRetrieveCredentials" xml:space="preserve">
+    <value>Unable to to retrieve credentials. Please log into Financial Reporter again.</value>
+    <comment>To be translated</comment>
+  </data>
+  <data name="PostSuccessMessage" xml:space="preserve">
+    <value>過帳完成。 {0}, {1}</value>
   </data>
 </root>

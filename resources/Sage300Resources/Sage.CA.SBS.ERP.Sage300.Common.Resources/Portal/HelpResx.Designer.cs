@@ -4210,6 +4210,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Printing the User Activity Report.
+        /// </summary>
+        public static string AS_UserActivityReport_Article1 {
+            get {
+                return ResourceManager.GetString("AS_UserActivityReport_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Administrative Services Reports.
+        /// </summary>
+        public static string AS_UserActivityReport_Article2 {
+            get {
+                return ResourceManager.GetString("AS_UserActivityReport_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Activity Report.
+        /// </summary>
+        public static string AS_UserActivityReport_Screen {
+            get {
+                return ResourceManager.GetString("AS_UserActivityReport_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assigning Users to Security Groups.
         /// </summary>
         public static string AS_UserAuthorizations_Article1 {
@@ -5497,6 +5524,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Printing Financial Statements.
+        /// </summary>
+        public static string GL_About_Printing_Financial_Statements {
+            get {
+                return ResourceManager.GetString("GL_About_Printing_Financial_Statements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Entering Account Balances, Historical Data, and Quantities.
         /// </summary>
         public static string GL_Account_History_Inquiry_Article1 {
@@ -5655,6 +5691,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_BatchStatus_Report_Screen {
             get {
                 return ResourceManager.GetString("GL_BatchStatus_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse General Ledger Articles.
+        /// </summary>
+        public static string GL_Browse_General_Ledger_Articles {
+            get {
+                return ResourceManager.GetString("GL_Browse_General_Ledger_Articles", resourceCulture);
             }
         }
         
@@ -5830,6 +5875,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Designing Financial Statements.
+        /// </summary>
+        public static string GL_Designing_Financial_Statements {
+            get {
+                return ResourceManager.GetString("GL_Designing_Financial_Statements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Editing Budget Data.
         /// </summary>
         public static string GL_Editing_Budget_Data {
@@ -5979,6 +6033,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_PostingJournals_Screen {
             get {
                 return ResourceManager.GetString("GL_PostingJournals_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Print Financial Statements Screen.
+        /// </summary>
+        public static string GL_Print_Financial_Statements_Screen {
+            get {
+                return ResourceManager.GetString("GL_Print_Financial_Statements_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing a Financial Statement.
+        /// </summary>
+        public static string GL_Printing_Financial_Statement {
+            get {
+                return ResourceManager.GetString("GL_Printing_Financial_Statement", resourceCulture);
             }
         }
         
@@ -6303,6 +6375,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_RevaluationCodes_Screen {
             get {
                 return ResourceManager.GetString("GL_RevaluationCodes_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sample Financial Statements.
+        /// </summary>
+        public static string GL_Sample_Financial_Statements {
+            get {
+                return ResourceManager.GetString("GL_Sample_Financial_Statements", resourceCulture);
             }
         }
         
@@ -6658,6 +6739,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Statement Designer Screen.
+        /// </summary>
+        public static string GL_Statement_Designer_Screen {
+            get {
+                return ResourceManager.GetString("GL_Statement_Designer_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Transaction Processing in General Ledger.
         /// </summary>
         public static string GL_TransactionHistory_Article1 {
@@ -6762,6 +6852,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string GL_Transactions_PostBatches_Screen {
             get {
                 return ResourceManager.GetString("GL_Transactions_PostBatches_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Processing Assemblies and Disassemblies.
+        /// </summary>
+        public static string IC_About_Processing_Assembly {
+            get {
+                return ResourceManager.GetString("IC_About_Processing_Assembly", resourceCulture);
             }
         }
         
@@ -6924,6 +7023,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_AlternateItems_Report_Screen {
             get {
                 return ResourceManager.GetString("IC_AlternateItems_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assembling Items from Bills of Material.
+        /// </summary>
+        public static string IC_Assembling_Items_from_BOM {
+            get {
+                return ResourceManager.GetString("IC_Assembling_Items_from_BOM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Assemblies/Disassemblies Screen.
+        /// </summary>
+        public static string IC_Assembly_Screen {
+            get {
+                return ResourceManager.GetString("IC_Assembly_Screen", resourceCulture);
             }
         }
         
@@ -8143,7 +8260,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Periodic Processing.
+        ///   Looks up a localized string similar to Recalling and Releasing Lotted Inventory Items.
         /// </summary>
         public static string IC_LotRecallsReleases_Article1 {
             get {
@@ -8152,7 +8269,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I/C Lot Number Transaction Inquiry Screen.
+        ///   Looks up a localized string similar to About Serialized Inventory and Lot Tracking.
         /// </summary>
         public static string IC_LotRecallsReleases_Article2 {
             get {
@@ -9039,6 +9156,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_SerialNumberInquiry_Screen {
             get {
                 return ResourceManager.GetString("IC_SerialNumberInquiry_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Viewing or Editing Details for a Serial Number.
+        /// </summary>
+        public static string IC_SerialNumbers_Article1 {
+            get {
+                return ResourceManager.GetString("IC_SerialNumbers_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Serialized Inventory and Lot Tracking.
+        /// </summary>
+        public static string IC_SerialNumbers_Article2 {
+            get {
+                return ResourceManager.GetString("IC_SerialNumbers_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Serial Numbers Screen.
+        /// </summary>
+        public static string IC_SerialNumbers_Screen {
+            get {
+                return ResourceManager.GetString("IC_SerialNumbers_Screen", resourceCulture);
             }
         }
         
@@ -11451,6 +11595,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PM_Projects_Report_Screen {
             get {
                 return ResourceManager.GetString("PM_Projects_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revising Estimates.
+        /// </summary>
+        public static string PM_RevisedEstimate_Article1 {
+            get {
+                return ResourceManager.GetString("PM_RevisedEstimate_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Common Features of PJC Transactions Screens.
+        /// </summary>
+        public static string PM_RevisedEstimate_Article2 {
+            get {
+                return ResourceManager.GetString("PM_RevisedEstimate_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Revise Estimates Screen.
+        /// </summary>
+        public static string PM_RevisedEstimate_Screen {
+            get {
+                return ResourceManager.GetString("PM_RevisedEstimate_Screen", resourceCulture);
             }
         }
         

@@ -800,11 +800,15 @@ sg.viewList = function () {
             maxlength = col.FieldSize || (maskProps ? maskProps.maxLength : 64),
             html = kendo.format('<input type="text" id="{0}" name="{0}" class="{1}" maxlength="{2}" />', field, className, maxlength);
 
+        options.model.isUpperCase = className.includes('txt-upper');
+
         $(html).addClass('k-input k-textbox')
             .appendTo(container)
             .change(function () {
-                options.model.set(field, this.value);
+                const value = options.model.isUpperCase ? (this.value || '').toUpperCase() : this.value;
+                options.model.set(field, value);
             });
+
         _setEditorInitialValue(gridName, options);
 
         //Custom plug in for 'columnStartEdit' and 'columnEndEdit'
@@ -1453,6 +1457,11 @@ sg.viewList = function () {
                 dataItem = grid.dataItem(selectRow);
 
             _setModuleVariables(gridName, RowStatusEnum.UPDATE, "", rowIndex, false, false, newLine);
+            setTimeout(() => {
+                if (_showErrors[gridName]) {
+                    sg.utls.showMessage(jsonResult);
+                }
+            }, 100);
 
             setTimeout(() => {
                 if (_showErrors[gridName]) {
@@ -2512,6 +2521,7 @@ sg.viewList = function () {
                 if (formId && $(`#${formId}`).is(":visible") && callback) {
                     //Reset the delete flags for unsaved line. 
                     _setModuleVariables(gridName, RowStatusEnum.NONE, "", -1, true, true, false);
+                    _lastErrorResult[gridName] = {};
                     _dataChanged[gridName] = false;
                     _skipMoveTo[gridName] = false;
                     callback();
@@ -2546,8 +2556,8 @@ sg.viewList = function () {
     /**
      * @description Add grid new line, for grid toolbar template, grid internal use.
      * @param {string} gridName The grid name.
-     * @param {boolean} commitDetail True for update/insert record to show 'changes saved' message for detail popup
-     * @param {object} lastRecord Optional. Record to be added as new line
+     * @param {boolean} commitDetail Commit row before adding record.
+     * @param {object} lastRecord Record for new line
      */
     function toolbarAddLine(gridName, commitDetail, lastRecord) {
         var grid = _getGrid(gridName),
@@ -3010,12 +3020,13 @@ sg.viewList = function () {
     }
 
     /**
-    * Clears the current new row and generates a new record at the current row
+    * Clear New added row
     * @param {string} gridName The grid name
     */
     function clearNewRow(gridName) {
         _sendRequest(gridName, RequestTypeEnum.ClearNewRow);
     }
+
 
     /**
      * Update current select row
@@ -3068,7 +3079,7 @@ sg.viewList = function () {
     }
 
     /**
-    * Gets the current page
+    *
     * @param {string} gridName The grid name
     */
     function currentPage(gridName) {

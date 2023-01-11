@@ -154,6 +154,12 @@
     <value>Composants</value>
     <comment>Table Column</comment>
   </data>
+  <data name="ComponentsMasterItemNumber" xml:space="preserve">
+    <value>Numéro article du composant principal</value>
+  </data>
+  <data name="ComponentsMasterItemNumberDesc" xml:space="preserve">
+    <value>Description article composant principal</value>
+  </data>
   <data name="ComponetBOMNumber" xml:space="preserve">
     <value>N° nomenclature du composant</value>
     <comment>Table Column</comment>
@@ -204,6 +210,10 @@
     <value>Contrôle par retour</value>
     <comment>Finder Column</comment>
   </data>
+  <data name="ManufactureExsistAsItemError" xml:space="preserve">
+    <value>L'article {0} existe en stock comme {1}, mais il est également un numéro d'article du fabricant pour {2}. Le programme ne sélectionnera pas {2} pour vous si vous entrez {0}.</value>
+    <comment>Error Message</comment>
+  </data>
   <data name="MasterBOMNumber" xml:space="preserve">
     <value>N° nomenclature principal</value>
   </data>
@@ -215,7 +225,7 @@
     <comment>Field</comment>
   </data>
   <data name="MasterItemNoDesc" xml:space="preserve">
-    <value>Description numéro article principal</value>
+    <value>Description article principal</value>
     <comment>Field</comment>
   </data>
   <data name="MasterUnitOfMeasure" xml:space="preserve">

@@ -1058,4 +1058,91 @@
   <data name="ToAccountGroupCode" xml:space="preserve">
     <value>To Account Group Code</value>
   </data>
+  <data name="AS_UserActivityReportTitle" xml:space="preserve">
+    <value>A/S User Activity Report</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="FromCompany" xml:space="preserve">
+    <value>From Company ID</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>From Date</value>
+  </data>
+  <data name="FromModule" xml:space="preserve">
+    <value>From Module</value>
+  </data>
+  <data name="FromUser" xml:space="preserve">
+    <value>From User ID</value>
+  </data>
+  <data name="Module" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="ToCompany" xml:space="preserve">
+    <value>To Company ID</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>To Date</value>
+  </data>
+  <data name="ToModule" xml:space="preserve">
+    <value>To Module</value>
+  </data>
+  <data name="ToUser" xml:space="preserve">
+    <value>To User ID</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="AP" xml:space="preserve">
+    <value>Accounts Payable</value>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>Accounts Receivable</value>
+  </data>
+  <data name="BK" xml:space="preserve">
+    <value>Bank Services</value>
+  </data>
+  <data name="GL" xml:space="preserve">
+    <value>General Ledger</value>
+  </data>
+  <data name="IC" xml:space="preserve">
+    <value>Inventory Control</value>
+  </data>
+  <data name="MT" xml:space="preserve">
+    <value>Multiple Contacts</value>
+  </data>
+  <data name="OE" xml:space="preserve">
+    <value>Order Entry</value>
+  </data>
+  <data name="PM" xml:space="preserve">
+    <value>Projects and Job Costing</value>
+  </data>
+  <data name="PO" xml:space="preserve">
+    <value>Purchase Orders</value>
+  </data>
+  <data name="TX" xml:space="preserve">
+    <value>Tax Services</value>
+  </data>
+  <data name="CP" xml:space="preserve">
+    <value>Canadian Payroll</value>
+  </data>
+  <data name="UP" xml:space="preserve">
+    <value>US Payroll</value>
+  </data>
+  <data name="SageIntelligence" xml:space="preserve">
+    <value>Sage Intelligence</value>
+  </data>
+  <data name="BX" xml:space="preserve">
+    <value>Sage Intelligence</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Current</value>
+  </data>
 </root>

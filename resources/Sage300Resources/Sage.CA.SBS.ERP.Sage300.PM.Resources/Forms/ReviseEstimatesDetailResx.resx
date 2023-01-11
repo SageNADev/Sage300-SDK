@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CategoryPercentageComplete" xml:space="preserve">
+    <value>Category Percentage Complete</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>Resource</value>
+  </data>
+  <data name="RTOTCOSTHM" xml:space="preserve">
+    <value>Total Cost</value>
+  </data>
+  <data name="FlatRatePerUnit" xml:space="preserve">
+    <value>Flat Rate Per Unit</value>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>Multiply</value>
+  </data>
+  <data name="CPROFITSR" xml:space="preserve">
+    <value>Profit</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="RateSpread" xml:space="preserve">
+    <value>Rate Spread</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="ROHPER" xml:space="preserve">
+    <value>Overhead %</value>
+  </data>
+  <data name="LaborHoursPercentageComplete" xml:space="preserve">
+    <value>Labor Hours Percentage Complete</value>
+  </data>
+  <data name="CTOTCOSTHM" xml:space="preserve">
+    <value>Total Cost</value>
+  </data>
+  <data name="RateIsOutsideSpread" xml:space="preserve">
+    <value>Rate is outside spread</value>
+  </data>
+  <data name="LoadOptionalFields" xml:space="preserve">
+    <value>Load Optional Fields</value>
+  </data>
+  <data name="COHRATE" xml:space="preserve">
+    <value>Overhead Rate</value>
+  </data>
+  <data name="RQUANTITY" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="AccountingMethod" xml:space="preserve">
+    <value>Accounting Method</value>
+  </data>
+  <data name="RLABORTYPE" xml:space="preserve">
+    <value>Revised Labor Type</value>
+  </data>
+  <data name="ROHAMT" xml:space="preserve">
+    <value>Overhead Amount</value>
+  </data>
+  <data name="RATEDATE" xml:space="preserve">
+    <value>Rate Date</value>
+  </data>
+  <data name="ContractStyle" xml:space="preserve">
+    <value>Contract Style</value>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="ROHTYPE" xml:space="preserve">
+    <value>Revised Overhead Type</value>
+  </data>
+  <data name="RATETYPE" xml:space="preserve">
+    <value>Rate Type</value>
+  </data>
+  <data name="RCONV" xml:space="preserve">
+    <value>RCONV</value>
+  </data>
+  <data name="CFPAMTHM" xml:space="preserve">
+    <value>Fixed Price Amount</value>
+  </data>
+  <data name="RateOp" xml:space="preserve">
+    <value>Rate Op</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PM ReviseEstimatesDetail</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="CARITEM" xml:space="preserve">
+    <value>A/R Item No.</value>
+  </data>
+  <data name="CARUOM" xml:space="preserve">
+    <value>A/R Unit of Measure</value>
+  </data>
+  <data name="CLABORPER" xml:space="preserve">
+    <value>Labor Percentage</value>
+  </data>
+  <data name="RARUOM" xml:space="preserve">
+    <value>A/R Unit of Measure</value>
+  </data>
+  <data name="Function" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>Project Type</value>
+  </data>
+  <data name="CLABORRATE" xml:space="preserve">
+    <value>Labor Rate</value>
+  </data>
+  <data name="RBILLTYPE" xml:space="preserve">
+    <value>Revised Billing Type</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="BillingsAndCosts" xml:space="preserve">
+    <value>Billings and Costs</value>
+  </data>
+  <data name="RATE" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="RATEERR" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="RLABORPER" xml:space="preserve">
+    <value>Labor %</value>
+  </data>
+  <data name="ProjectPercentageComplete" xml:space="preserve">
+    <value>Project Percentage Complete</value>
+  </data>
+  <data name="CATDESC" xml:space="preserve">
+    <value>Category Description</value>
+  </data>
+  <data name="CDESC" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="CRATEDATE" xml:space="preserve">
+    <value>Rate Date</value>
+  </data>
+  <data name="CTOTCOSTSR" xml:space="preserve">
+    <value>Total Cost</value>
+  </data>
+  <data name="RFPAMTSR" xml:space="preserve">
+    <value>Fixed Price Amount</value>
+  </data>
+  <data name="CBILLTYPE" xml:space="preserve">
+    <value>Current Billing Type</value>
+  </data>
+  <data name="CostType" xml:space="preserve">
+    <value>Cost Type</value>
+  </data>
+  <data name="TimeAndMaterials" xml:space="preserve">
+    <value>Time and Materials</value>
+  </data>
+  <data name="Sequence" xml:space="preserve">
+    <value>Sequence</value>
+  </data>
+  <data name="CCOSTPLUSP" xml:space="preserve">
+    <value>Cost Plus Percentage</value>
+  </data>
+  <data name="CEXTCOSTHM" xml:space="preserve">
+    <value>Extended Cost</value>
+  </data>
+  <data name="NoRateInformationExists" xml:space="preserve">
+    <value>No rate information exists</value>
+  </data>
+  <data name="CPROFITHM" xml:space="preserve">
+    <value>Profit</value>
+  </data>
+  <data name="RPROFITSR" xml:space="preserve">
+    <value>Profit</value>
+  </data>
+  <data name="InvoiceType" xml:space="preserve">
+    <value>Invoice Type</value>
+  </data>
+  <data name="REXTBILLHM" xml:space="preserve">
+    <value>Extended Billing Amount</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="RateOperation" xml:space="preserve">
+    <value>Rate Operation</value>
+  </data>
+  <data name="RICUOM" xml:space="preserve">
+    <value>I/C Unit of Measure</value>
+  </data>
+  <data name="RCOSTPLUSP" xml:space="preserve">
+    <value>Cost Plus Percentage</value>
+  </data>
+  <data name="PercentageOfCost" xml:space="preserve">
+    <value>Percentage of Cost</value>
+  </data>
+  <data name="RESDESC" xml:space="preserve">
+    <value>Resource Description</value>
+  </data>
+  <data name="Overhead" xml:space="preserve">
+    <value>Overhead</value>
+  </data>
+  <data name="CEXTBILLSR" xml:space="preserve">
+    <value>Extended Billing Amount</value>
+  </data>
+  <data name="CostCurrency" xml:space="preserve">
+    <value>Cost Currency</value>
+  </data>
+  <data name="PercentageOfLaborCost" xml:space="preserve">
+    <value>Percentage of Labor Cost</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="COHPER" xml:space="preserve">
+    <value>Overhead Percentage</value>
+  </data>
+  <data name="Subcontractor" xml:space="preserve">
+    <value>Subcontractor</value>
+  </data>
+  <data name="CONTDESC" xml:space="preserve">
+    <value>Contract Description</value>
+  </data>
+  <data name="RARITEM" xml:space="preserve">
+    <value>A/R Item No.</value>
+  </data>
+  <data name="ResourceCategory" xml:space="preserve">
+    <value>Resource Category</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="ROHRATE" xml:space="preserve">
+    <value>Overhead Rate</value>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>Divide</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="RPROFITHM" xml:space="preserve">
+    <value>Profit</value>
+  </data>
+  <data name="COHAMT" xml:space="preserve">
+    <value>Overhead Amount</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Line Number</value>
+  </data>
+  <data name="NoRateError" xml:space="preserve">
+    <value>No rate error</value>
+  </data>
+  <data name="FixedPrice" xml:space="preserve">
+    <value>Fixed Price</value>
+  </data>
+  <data name="Nonbillable" xml:space="preserve">
+    <value>Non-billable</value>
+  </data>
+  <data name="Labor" xml:space="preserve">
+    <value>Labor</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="REXTCOSTHM" xml:space="preserve">
+    <value>Extended Cost</value>
+  </data>
+  <data name="CEXTCOSTSR" xml:space="preserve">
+    <value>Extended Cost</value>
+  </data>
+  <data name="NoCharge" xml:space="preserve">
+    <value>No Charge</value>
+  </data>
+  <data name="CQUANTITY" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="RFPAMTHM" xml:space="preserve">
+    <value>Fixed Price Amount</value>
+  </data>
+  <data name="CEXTBILLHM" xml:space="preserve">
+    <value>Extended Billing Amount</value>
+  </data>
+  <data name="RLABORRATE" xml:space="preserve">
+    <value>Labor Rate</value>
+  </data>
+  <data name="ReviseEstimateNumber" xml:space="preserve">
+    <value>Revise Estimate Number</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="CLABORAMT" xml:space="preserve">
+    <value>Labor Amount</value>
+  </data>
+  <data name="RateTypeIsInvalid" xml:space="preserve">
+    <value>Rate type is invalid</value>
+  </data>
+  <data name="RateIsZero" xml:space="preserve">
+    <value>Rate is zero</value>
+  </data>
+  <data name="Billable" xml:space="preserve">
+    <value>Billable</value>
+  </data>
+  <data name="TotalCostPercentageComplete" xml:space="preserve">
+    <value>Total Cost Percentage Complete</value>
+  </data>
+  <data name="REXTCOSTSR" xml:space="preserve">
+    <value>Extended Cost</value>
+  </data>
+  <data name="FlatRatePerLaborHourUnit" xml:space="preserve">
+    <value>Flat Rate Per Labor Hour/Unit</value>
+  </data>
+  <data name="DetailNumber" xml:space="preserve">
+    <value>Detail Number</value>
+  </data>
+  <data name="COHTYPE" xml:space="preserve">
+    <value>Current Overhead Type</value>
+  </data>
+  <data name="CLABORTYPE" xml:space="preserve">
+    <value>Current Labor Type</value>
+  </data>
+  <data name="CUNITCOST" xml:space="preserve">
+    <value>Unit Cost</value>
+  </data>
+  <data name="CONTRACT" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="CompletedProject" xml:space="preserve">
+    <value>Completed Project</value>
+  </data>
+  <data name="RLABORAMT" xml:space="preserve">
+    <value>Labor Amount</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="CRATE" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="PROJDESC" xml:space="preserve">
+    <value>Project Description</value>
+  </data>
+  <data name="CostPlus" xml:space="preserve">
+    <value>Cost Plus</value>
+  </data>
+  <data name="CCONV" xml:space="preserve">
+    <value>CCONV</value>
+  </data>
+  <data name="RUNITCOST" xml:space="preserve">
+    <value>Unit Cost</value>
+  </data>
+  <data name="VALUES" xml:space="preserve">
+    <value>VALUES</value>
+  </data>
+  <data name="RDESC" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CFPAMTSR" xml:space="preserve">
+    <value>Fixed Price Amount</value>
+  </data>
+  <data name="RTOTCOSTSR" xml:space="preserve">
+    <value>Total Cost</value>
+  </data>
+  <data name="RBILLRATE" xml:space="preserve">
+    <value>Billing Rate</value>
+  </data>
+  <data name="ModifyExisting" xml:space="preserve">
+    <value>Modify Existing</value>
+  </data>
+  <data name="FMTCONTNO" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="NumberOfOptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="CRATETYPE" xml:space="preserve">
+    <value>Rate Type</value>
+  </data>
+  <data name="AccrualBasis" xml:space="preserve">
+    <value>Accrual-Basis</value>
+  </data>
+  <data name="REXTBILLSR" xml:space="preserve">
+    <value>Extended Billing Amount</value>
+  </data>
+  <data name="CBILLRATE" xml:space="preserve">
+    <value>Billing Rate</value>
+  </data>
+  <data name="CICUOM" xml:space="preserve">
+    <value>I/C Unit of Measure</value>
+  </data>
+  <data name="BillingCurrency" xml:space="preserve">
+    <value>Billing Currency</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="MarkupPercentage" xml:space="preserve">
+    <value>Markup percentage</value>
+  </data>
+  <data name="RowIndex" xml:space="preserve">
+    <value>Row Index</value>
+  </data>
+  <data name="TotalProfit" xml:space="preserve">
+    <value>Total Profit</value>
+  </data>
+  <data name="TotalRevenue" xml:space="preserve">
+    <value>Total Revenue</value>
+  </data>
+  <data name="LINENO" xml:space="preserve">
+    <value>LINENO</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="Revised" xml:space="preserve">
+    <value>Revised</value>
+  </data>
+  <data name="PercentageComplete" xml:space="preserve">
+    <value>Percentage Complete</value>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Optional Field</value>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Optional Field Description</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Value Description</value>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Value Set</value>
+  </data>
+  <data name="NotApplicable" xml:space="preserve">
+    <value>Not Applicable</value>
+  </data>
+</root>

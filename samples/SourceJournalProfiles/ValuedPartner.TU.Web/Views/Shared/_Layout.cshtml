@@ -32,6 +32,7 @@
     var widgetUrlList = ViewBag.WidgetUrlList as WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>;
     int numberOfActiveWindows;
     int.TryParse(ConfigurationHelper.GetConfigValue("NumberOfActiveWindows"), out numberOfActiveWindows);
+    var oAuthServer = string.Format(ConfigurationHelper.GetConfigValue("OAuthServerTemplate"), Request.Url.Host);
     var hasGlobalSearchLicense = ViewBag.HasGlobalSearchLicense;
 }
 <html class="template-side-nav page-collapsed home-page">
@@ -58,10 +59,26 @@
         var RECENT_WIN_LIMIT_CONST = @ViewBag.RecentWindowsLimit;
         var LOGGED_IN_USERNAME_CONST = '@Model.UserName'.replace(/\s/g,'');
         var LOGGED_IN_TENANT_CONST = '@Model.CompanyName'.replace(/\s/g,'');
+        var sIRCLocation = '@ConfigurationHelper.GetConfigValue("SIRCLocation")';
+        var oAuthLocation = '@oAuthServer';
         var menuUserPreferenceKey = '@ViewBag.menuUserPreferenceKey';
         var formSizeUserPreferenceKey = '@ViewBag.formSizeUserPreferenceKey';
         var formSizeResetConfirmation = '@NavigationResx.FormSizeResetConfirmation';
         var formSizeResetConfirmationTitle = '@CommonResx.Confirmation';
+
+        @functions {
+            public String GetSIRCPort(string path)
+            {
+                var port = "";
+                if (File.Exists(path))
+                {
+                    port = File.ReadAllText(path).Trim();
+                }
+
+                return port;
+            }
+        }
+        var SIRCPort = '@GetSIRCPort(Path.Combine(Server.MapPath("~"), "..", "..", "SIRC", "site", "sslPort.txt"))';
     </script>
 </head>
 

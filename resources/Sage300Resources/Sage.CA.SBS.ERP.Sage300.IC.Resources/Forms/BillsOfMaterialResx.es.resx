@@ -154,6 +154,12 @@
     <value>Componentes</value>
     <comment>Table Column</comment>
   </data>
+  <data name="ComponentsMasterItemNumber" xml:space="preserve">
+    <value>Número Artículo de Componente Maestro</value>
+  </data>
+  <data name="ComponentsMasterItemNumberDesc" xml:space="preserve">
+    <value>Descripción de Artículo Componente Maestro</value>
+  </data>
   <data name="ComponetBOMNumber" xml:space="preserve">
     <value>Número L.MAT de Componente</value>
     <comment>Table Column</comment>
@@ -204,6 +210,10 @@
     <value>Verificar por Retorno</value>
     <comment>Finder Column</comment>
   </data>
+  <data name="ManufactureExsistAsItemError" xml:space="preserve">
+    <value>El artículo {0} existe en inventario como {1}, pero también es un número de artículo del fabricante para {2}. E programa no seleccionará {2} para usted si ingresa {0}.</value>
+    <comment>Error Message</comment>
+  </data>
   <data name="MasterBOMNumber" xml:space="preserve">
     <value>N° L.MAT Maestro</value>
   </data>
@@ -215,7 +225,7 @@
     <comment>Field</comment>
   </data>
   <data name="MasterItemNoDesc" xml:space="preserve">
-    <value>Descripción Número de Artículo Maestro</value>
+    <value>Descripción de Artículo Maestro</value>
     <comment>Field</comment>
   </data>
   <data name="MasterUnitOfMeasure" xml:space="preserve">

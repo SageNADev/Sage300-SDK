@@ -713,4 +713,16 @@
   <data name="RangeType_SpecificRecurringChargeCode" xml:space="preserve">
     <value>指定的经常性收费代码</value>
   </data>
+  <data name="CRMAddNew" xml:space="preserve">
+    <value>添加联系人</value>
+  </data>
+  <data name="CRMReplaceExisting" xml:space="preserve">
+    <value>替换现有联系人</value>
+  </data>
+  <data name="CRMUpdateExisting" xml:space="preserve">
+    <value>更新现有联系人</value>
+  </data>
+  <data name="CRMUpdateOptions" xml:space="preserve">
+    <value>更新 CRM 数据</value>
+  </data>  
 </root>

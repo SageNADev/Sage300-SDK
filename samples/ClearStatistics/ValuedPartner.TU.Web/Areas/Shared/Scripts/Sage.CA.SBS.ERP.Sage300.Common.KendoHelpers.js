@@ -939,6 +939,7 @@ $.extend(sg.utls.kndoUI, {
         }
         $(numericTextBoxDataValue).off("input keydown");
         $(numericTextBoxDataValue).on("input", function (e) {
+            const numeric = $(numericTextBoxDataValue).data('kendoNumericTextBox');
             var val = numericTextBoxDataValue.val();
             var decimalSeparator = kendo.culture().numberFormat['.'];
             var parts = val.split(decimalSeparator);
@@ -965,15 +966,19 @@ $.extend(sg.utls.kndoUI, {
         });
 
         $(numericTextBoxDataValue).keydown(e => {
+            const numeric = $(numericTextBoxDataValue).data('kendoNumericTextBox');
             const cultureDecimalCharacter = kendo.culture().numberFormat['.'];
-            const validChars = [
-                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-',
-                'Tab', 'Backspace', 'Delete', 'ArrowLeft', 'ArrowRight',
-                'Shift', 'Home', 'End'
-            ];
-
+            let minValue = numeric.options.min;
+            let validChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', 'Tab', 'Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Shift', 'Home', 'End'];
+            if (minValue < 0) {
+                validChars.push('-');
+            }
             // Crtl+a (Select All) is a valid combination
             if (e.key == 'a' && e.ctrlKey) {
+                return;
+            }
+            // allow copy-paste.
+            if ((e.key == 'c'||e.key == 'v') && e.ctrlKey) {
                 return;
             }
 
@@ -985,10 +990,10 @@ $.extend(sg.utls.kndoUI, {
 
             // Determine invalid scenarios
             const isInvalidCharacter = !validChars.includes(e.key);
-            const isMinusSignNotInitialCharacter = (e.key === '-' &&
-                (e.currentTarget.selectionStart > 0 || e.target.value.includes('-')));
+            const isMinusSignNotInitialCharacter = (e.key === '-' && (e.currentTarget.selectionStart > 0 || e.target.value.includes('-')));
+            const isDecimal = (e.key === cultureDecimalCharacter && e.target.value.includes(cultureDecimalCharacter));
 
-            if (isInvalidCharacter || isMinusSignNotInitialCharacter) {
+            if (isInvalidCharacter || isMinusSignNotInitialCharacter || isDecimal ) {
                 e.preventDefault();
             }
         });

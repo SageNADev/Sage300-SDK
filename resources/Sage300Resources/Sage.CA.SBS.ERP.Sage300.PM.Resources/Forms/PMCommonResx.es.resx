@@ -195,6 +195,12 @@
   <data name="PostingDateOverride" xml:space="preserve">
     <value>Sustitución de Fecha de Asentamiento</value>
   </data>
+  <data name="AssignACategory" xml:space="preserve">
+    <value>Asignar una categoría</value>
+  </data>
+  <data name="AssignAResource" xml:space="preserve">
+    <value>Asignar un recurso</value>
+  </data>
   <data name="PostInsufficientQty" xml:space="preserve">
     <value>El asentamiento de este/a {0} reducirá la cantidad de artículos por debajo de cero en esta ubicación. ¿Desea continuar?</value>
   </data>
@@ -281,5 +287,17 @@
   </data>
   <data name="ViewDetails" xml:space="preserve">
     <value>Ver Detalles</value>
+  </data>
+  <data name="TaxAuthorityDoesNotAllowIncludedTax" xml:space="preserve">
+    <value>La autoridad fiscal {0} no admite impuestos incluidos.</value>
+  </data>
+  <data name="TaxClassDoesNotExist" xml:space="preserve">
+    <value>No existe la clase fiscal para la autoridad fiscal {0}.</value>
+  </data>
+  <data name="CannotLessThanZero" xml:space="preserve">
+    <value>no puede ser menor que cero.</value>
+  </data>
+  <data name="UOMDoesNotMatch" xml:space="preserve">
+    <value>La Unidad de Medida especificada no coincide con la Unidad de Medida en el {0}.</value>
   </data>
 </root>

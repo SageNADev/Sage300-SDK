@@ -219,4 +219,32 @@
   <data name="UpdatedbyUI" xml:space="preserve">
     <value>Actualizado por IU</value>
   </data>
+  <data name="ContractPeriodDescription" xml:space="preserve">
+    <value>Descripción Período de Contrato {0}</value>
+  </data>
+  <data name="ContractPeriodEffectiveDate" xml:space="preserve">
+    <value>Fecha Vigencia Período de Contrato {0}</value>
+  </data>
+  <data name="ContractPeriodExpiryDate" xml:space="preserve">
+    <value>Fecha Caducidad Período de Contrato {0}</value>
+  </data>
+  <data name="ContractPeriodInUse" xml:space="preserve">
+    <value>Período de Contrato En Uso {0}</value>
+  </data>
+  <data name="ContractPeriodLifetime" xml:space="preserve">
+    <value>Período de Contrato De Por Vida {0}</value>
+  </data>
+  <data name="SerialNumberNotExist" xml:space="preserve">
+    <value>El número de serie {0} no existe para el número de artículo.</value>
+  </data>
+  <data name="DateRegistered" xml:space="preserve">
+    <value>Fch. Registro</value>
+  </data>
+  <data name="NoDrillDownInfo" xml:space="preserve">
+    <value>No se pudo encontrar información de búsqueda detallada para este registro. Si usted utiliza la pantalla web, tenga en cuenta que debe utilizar la pantalla del escritorio para realizar una búsqueda detalla en transacciones de Nómina, PJC, Inventario Serializado o Seguimiento de Lote.</value>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>Transacciones</value>
+    <comment>Tab</comment>
+  </data>
 </root>

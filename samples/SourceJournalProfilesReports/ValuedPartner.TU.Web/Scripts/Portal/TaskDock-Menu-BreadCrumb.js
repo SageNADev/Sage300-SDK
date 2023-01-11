@@ -49,6 +49,8 @@ var TaskDockMenuBreadCrumbManager = function () {
     // To be used to record extra parameter in order to screen with specific record
     var _globalSearchDrillDownParameter = null;
 
+    var _oAuthWindow = null;
+
     // Private Functions
 
     /**
@@ -1623,6 +1625,8 @@ var TaskDockMenuBreadCrumbManager = function () {
 
         constants: constants,
 
+        OAuthWindow: _oAuthWindow,
+
         setDefaultScreenId: function () {
             _public.setScreenId(constants.DEFAULT_SCREENID);
         },
@@ -2133,6 +2137,14 @@ var TaskDockMenuBreadCrumbManager = function () {
                 sg.utls.setBackgroundColor($("#header"));
             });
 
+            $("#btnIntelligence").click(function () {
+                // Attempt to signout and start SIRC afterward
+                var cb = sg.utls.url.buildCacheBuster();
+                var url = oAuthLocation + "connect/endsession" + cb;
+                var win = window.open(url, "_blank", "");
+                _oAuthWindow = win;
+            });
+
             $("#btnSDA").click(function () {
                 sg.utls.ajaxPost(sg.utls.url.buildUrl("CS", "CompanyProfile", "GetSDASubdomain"), null, onSDASuccess);
             });
@@ -2158,6 +2170,10 @@ var TaskDockMenuBreadCrumbManager = function () {
 
         setGlobalSearchDrillDownParameter: function (param) { 
             _globalSearchDrillDownParameter = param;
+        },
+
+        getOAuthWindow: function () {
+            return _oAuthWindow;
         }
     };
 
@@ -2171,3 +2187,20 @@ $(document).ready(function () {
         taskDockMenuBreadCrumbManager.init();
     }
 });
+
+window.addEventListener("message", function (e) {
+    if (e.data === "SignedOut") {
+        var win = taskDockMenuBreadCrumbManager.getOAuthWindow();
+        if (win) {
+            win.close();
+
+            var cb = sg.utls.url.buildCacheBuster();
+            var partialUrl = $("#hdnUrl").val().split('/').filter(function (el) { return el; });
+            var url = sg.utls.url.buildUrl("WebApiProxy?" + cb + "&session=" + partialUrl[partialUrl.length - 1], "", "");
+            win = window.open(url, "_blank", "");
+        }
+    }
+}, false);
+
+
+

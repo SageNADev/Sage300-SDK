@@ -133,7 +133,7 @@
     <value>Suite à un problème, la nouvelle ligne n’a pas pu être ajoutée. Veuillez réessayer.</value>
   </data>
   <data name="AddSuccessMessage" xml:space="preserve">
-    <value>Ajout nouveau {0} &quot;{1}&quot;.</value>
+    <value>Ajout nouveau {0} "{1}".</value>
   </data>
   <data name="AntiForgeryTokenMissing" xml:space="preserve">
     <value>Témoin de jeton anticontrefaçon introuvable.</value>
@@ -157,7 +157,7 @@
     <value>Un problème est survenu. Impossible d’effacer les détails de {0}. Veuillez réessayer.</value>
   </data>
   <data name="ClearSuccessMessage" xml:space="preserve">
-    <value>Suppression de {0} &quot;{1}&quot;.</value>
+    <value>Suppression de {0} "{1}".</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Fermer</value>
@@ -187,13 +187,13 @@
     <value>Supprimer cette ligne?</value>
   </data>
   <data name="DeleteSuccessMessage" xml:space="preserve">
-    <value>Suppression de {0} &quot;{1}&quot;.</value>
+    <value>Suppression de {0} "{1}".</value>
   </data>
   <data name="ProcessingDescription" xml:space="preserve">
     <value>Description</value>
   </data>
   <data name="DuplicateMessage" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; existe déjà.</value>
+    <value>{0} "{1}" existe déjà.</value>
   </data>
   <data name="From" xml:space="preserve">
     <value>De</value>
@@ -272,7 +272,7 @@
     <value>Traitement...</value>
   </data>
   <data name="RecordNotFoundMessage" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; introuvable.</value>
+    <value>{0} "{1}" introuvable.</value>
   </data>
   <data name="RefreshDetailsFailedMessage" xml:space="preserve">
     <value>Un problème est survenu. Impossible d’actualiser les détails de {0}. Veuillez réessayer.</value>
@@ -294,7 +294,7 @@
     <comment>Save button</comment>
   </data>
   <data name="SaveConfirmMessage" xml:space="preserve">
-    <value>Enregistrer les modifications apportées à {0} &quot;{1}&quot;?</value>
+    <value>Enregistrer les modifications apportées à {0} "{1}"?</value>
   </data>
   <data name="SaveFailedMessage" xml:space="preserve">
     <value>Un problème est survenu et vos modifications n’ont pas pu être enregistrées. Veuillez réessayer.</value>
@@ -345,10 +345,10 @@
     <value>Devise fonctionnelle</value>
   </data>
   <data name="GetKeysFailedMessage" xml:space="preserve">
-    <value>L’entité commerciale dispose de plusieurs champs clés et est inaccessible avec la clé &quot;{0}&quot;.</value>
+    <value>L’entité commerciale dispose de plusieurs champs clés et est inaccessible avec la clé "{0}".</value>
   </data>
   <data name="UnsavedChangesMessage" xml:space="preserve">
-    <value>Il y a des modifications non sauvegardées dans {0} &quot;{1}&quot;. Poursuivre?</value>
+    <value>Il y a des modifications non sauvegardées dans {0} "{1}". Poursuivre?</value>
     <comment>Used when the model is dirty.</comment>
   </data>
   <data name="HeaderEntity" xml:space="preserve">
@@ -590,7 +590,7 @@
     <value>La valeur du champ De {0} doit correspondre à celle du champ À.</value>
   </data>
   <data name="OptinalFieldDefaultValue" xml:space="preserve">
-    <value>La valeur implicite &quot;{0}&quot; n’existe pas pour le champ optionnel {1}.</value>
+    <value>La valeur implicite "{0}" n’existe pas pour le champ optionnel {1}.</value>
   </data>
   <data name="Inactive" xml:space="preserve">
     <value>Inactif</value>
@@ -635,7 +635,7 @@
     <value>Un problème est survenu pendant la validation de {0}. Veuillez réessayer.</value>
   </data>
   <data name="InactiveRecordMessage" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; est inactif(ve).</value>
+    <value>{0} "{1}" est inactif(ve).</value>
   </data>
   <data name="None" xml:space="preserve">
     <value>Nil</value>
@@ -680,7 +680,7 @@
     <value>Inactif le</value>
   </data>
   <data name="InactiveErrorMessage" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; est inactif.</value>
+    <value>{0} "{1}" est inactif.</value>
   </data>
   <data name="Multicurrency" xml:space="preserve">
     <value>Multidevise</value>
@@ -692,17 +692,17 @@
     <value>Code postal</value>
   </data>
   <data name="RecordNotFoundWarning" xml:space="preserve">
-    <value>{0}  &quot;{1}&quot; n’existe pas, mais peut être utilisé(e).</value>
+    <value>{0}  "{1}" n’existe pas, mais peut être utilisé(e).</value>
   </data>
   <data name="UnsavedChangesMessage4" xml:space="preserve">
-    <value>Modifications non sauvegardées dans {0} &quot;{1}&quot;,{2} &quot;{3}&quot;. Voulez-vous poursuivre?</value>
+    <value>Modifications non sauvegardées dans {0} "{1}",{2} "{3}". Voulez-vous poursuivre?</value>
   </data>
   <data name="InactiveWarningMessage" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; est inactif(ve), mais peut être utilisé(e).</value>
+    <value>{0} "{1}" est inactif(ve), mais peut être utilisé(e).</value>
     <comment>REMOVE - Add new string to CommonResx (ID "InactiveWarningMessage" and value "{0} "{1}" is inactive, but can be used.")</comment>
   </data>
   <data name="GLAccountNotExistsWarning" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; n’existe pas, mais peut être utilisé(e).</value>
+    <value>{0} "{1}" n’existe pas, mais peut être utilisé(e).</value>
     <comment>REMOVE - Use RecordNotFoundMessage from CommonResx</comment>
   </data>
   <data name="NotFoundMessage" xml:space="preserve">
@@ -724,13 +724,13 @@
     <value>Un problème imprévu s’est produit. Veuillez réessayer ou demander de l’aide à votre administrateur.</value>
   </data>
   <data name="DetailsAlreadyExists" xml:space="preserve">
-    <value>Des détails existent déjà pour {0} &quot;{1}&quot;.</value>
+    <value>Des détails existent déjà pour {0} "{1}".</value>
   </data>
   <data name="TaxClassInvalid" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; et {2} &quot;{3}&quot; n’existent pas.</value>
+    <value>{0} "{1}" et {2} "{3}" n’existent pas.</value>
   </data>
   <data name="TaxIncludedNotAllowed" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; ne permet pas les taxes comprises.</value>
+    <value>{0} "{1}" ne permet pas les taxes comprises.</value>
   </data>
   <data name="UpdateFailedRecordModifiedMessage" xml:space="preserve">
     <value>L’enregistrement n’a pas pu être mis à jour car un autre utilisateur l’a modifié.</value>
@@ -780,22 +780,22 @@
     <value>Sélectionnez au moins une colonne à exporter.</value>
   </data>
   <data name="RecordsNotFoundMessage" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; et {2} &quot;{3}&quot; sont introuvables.</value>
+    <value>{0} "{1}" et {2} "{3}" sont introuvables.</value>
   </data>
   <data name="BlankIPError" xml:space="preserve">
     <value>Le code de devise ne peut pas être en blanc.</value>
     <comment>Error message</comment>
   </data>
   <data name="CurrencyCodeInvalid" xml:space="preserve">
-    <value>Le code de devise &quot;{0}&quot; n’est pas défini dans Services Communs.</value>
+    <value>Le code de devise "{0}" n’est pas défini dans Services Communs.</value>
     <comment>Error message</comment>
   </data>
   <data name="InvalidAccountError" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; n’est pas défini dans Grand livre.</value>
+    <value>{0} "{1}" n’est pas défini dans Grand livre.</value>
     <comment>Field</comment>
   </data>
   <data name="InvalidAccountWarning" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; n’est pas défini dans Grand livre.</value>
+    <value>{0} "{1}" n’est pas défini dans Grand livre.</value>
     <comment>Field</comment>
   </data>
   <data name="ImportFileContentNotValid" xml:space="preserve">
@@ -956,7 +956,7 @@
     <value>Insertions/mises à jour inconditionnelles</value>
   </data>
   <data name="CannotDeleteMessage" xml:space="preserve">
-    <value>Impossible de supprimer {0} &quot;{1}&quot;</value>
+    <value>Impossible de supprimer {0} "{1}"</value>
   </data>
   <data name="NoProcessingOptionSelectedMessage" xml:space="preserve">
     <value>Sélectionnez au moins une option de traitement.</value>
@@ -1023,14 +1023,14 @@
     <value>Sans objet</value>
   </data>
   <data name="Delete1" xml:space="preserve">
-    <value>Supprimer {0} &quot;{1}&quot;?</value>
+    <value>Supprimer {0} "{1}"?</value>
   </data>
   <data name="AccessDeniedPrintChecks" xml:space="preserve">
     <value>Un autre utilisateur imprime des chèques. Voulez-vous réessayer?</value>
     <comment>Used in Print checks screen when another user has opened Print Checks for same Module, Database &amp; Batch</comment>
   </data>
   <data name="RecordDoesNotExist" xml:space="preserve">
-    <value>{0}  &quot;{1}&quot; n’existe pas.</value>
+    <value>{0}  "{1}" n’existe pas.</value>
   </data>
   <data name="PageNotFound" xml:space="preserve">
     <value>Page introuvable</value>
@@ -1040,10 +1040,10 @@
     <comment>Link Button Field</comment>
   </data>
   <data name="NotDefinedInCommonService" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; n’est pas défini(e) dans Services communs.</value>
+    <value>{0} "{1}" n’est pas défini(e) dans Services communs.</value>
   </data>
   <data name="NotDefinedInBankService" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; n’est pas défini(e) dans Services bancaires.</value>
+    <value>{0} "{1}" n’est pas défini(e) dans Services bancaires.</value>
     <comment>Error Message</comment>
   </data>
   <data name="Inquiry" xml:space="preserve">
@@ -1057,7 +1057,7 @@
     <value>La requête n’a pas pu être autorisée car un ou plusieurs champs contiennent du texte qui ne peut pas être utilisé pour des raisons de sécurité.</value>
   </data>
   <data name="AddConfirmMessage" xml:space="preserve">
-    <value>Ajouter {0} &quot;{1}&quot;?</value>
+    <value>Ajouter {0} "{1}"?</value>
   </data>
   <data name="Document" xml:space="preserve">
     <value>Document...</value>
@@ -1196,7 +1196,7 @@
     <comment>Message</comment>
   </data>
   <data name="UnsavedChangesPostMessage" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; n’a pas été reporté. Si vous continuez, toute modification apportée sera supprimée. Voulez-vous continuer?</value>
+    <value>{0} "{1}" n’a pas été reporté. Si vous continuez, toute modification apportée sera supprimée. Voulez-vous continuer?</value>
   </data>
   <data name="ValueBetweenRangeError" xml:space="preserve">
     <value>{0} doit être entre {1} et {2}.</value>
@@ -1208,7 +1208,7 @@
     <value>Dépisteur</value>
   </data>
   <data name="UnsavedChangesMessage6" xml:space="preserve">
-    <value>Des modifications dans {0} &quot;{1}&quot;, &quot;{2}&quot; n’ont pas été enregistrées. Voulez-vous continuer?</value>
+    <value>Des modifications dans {0} "{1}", "{2}" n’ont pas été enregistrées. Voulez-vous continuer?</value>
     <comment>Used when the model is dirty.</comment>
   </data>
   <data name="InvalidValueSetMessage" xml:space="preserve">
@@ -1324,7 +1324,7 @@
     <value>Le chèque numéro {0} a déjà été reporté.</value>
   </data>
   <data name="DismissSuccessMessage" xml:space="preserve">
-    <value>{0} &quot;{1}&quot; masqué(es).</value>
+    <value>{0} "{1}" masqué(es).</value>
   </data>
   <data name="GlobalCopyright" xml:space="preserve">
     <value>© {0} The Sage Group plc ou ses partenaires. Tous droits réservés.</value>
@@ -1526,7 +1526,7 @@
     <value>Déconnexion</value>
   </data>
   <data name="MultiSessionSignOutConfirmationTemplate" xml:space="preserve">
-    <value>Vous êtes sur le point de vous déconnecter de &apos;{0}&apos; dans tous les onglets.\nSi vous continuez, vous perdrez tout changement non enregistré dans les autres onglets.</value>
+    <value>Vous êtes sur le point de vous déconnecter de '{0}' dans tous les onglets.\nSi vous continuez, vous perdrez tout changement non enregistré dans les autres onglets.</value>
   </data>
   <data name="SignOutConfirmation" xml:space="preserve">
     <value>Confirmation de déconnexion</value>
@@ -1559,7 +1559,7 @@
     <value>Le contact {0} n’existe pas.</value>
   </data>
   <data name="Template_ReportCouldNotBeLocated" xml:space="preserve">
-    <value>Le fichier de rapport &apos;{0}&apos; est introuvable. Veuillez communiquer avec votre administrateur pour obtenir de l’aide.</value>
+    <value>Le fichier de rapport '{0}' est introuvable. Veuillez communiquer avec votre administrateur pour obtenir de l’aide.</value>
   </data>
   <data name="SignUp" xml:space="preserve">
     <value>S’inscrire</value>
@@ -1651,5 +1651,37 @@
   <data name="Template_GenericReportException" xml:space="preserve">
     <value>One or more errors occurred while attempting to generate the report:  {0}</value>
     <comment>Internal use only. No translation necessary.</comment>
+  </data>
+  <data name="CollapseAll" xml:space="preserve">
+    <value>Réduire</value>
+  </data>
+  <data name="ExpandAll" xml:space="preserve">
+    <value>Agrandir</value>
+  </data>
+  <data name="FieldDoesNotExist" xml:space="preserve">
+    <value>{0} n'existe pas.</value>
+  </data>
+  <data name="Integer" xml:space="preserve">
+    <value>Nombre entier</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Numéro</value>
+  </data>
+  <data name="YesNo" xml:space="preserve">
+    <value>Oui/Non</value>
+  </data>
+  <data name="ManufactureExsistAsItemError" xml:space="preserve">
+    <value>L'article {0} existe en stock comme {1}, mais il est également un numéro d'article du fabricant pour {2}. Le programme ne sélectionnera pas {2} pour vous si vous entrez {0}.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="NoParentDrillDown" xml:space="preserve">
+    <value>Impossible de fermer la fenêtre parent avant de lancer la consultation. Le type de zoom avant est ignoré.</value>
+  </data>
+  <data name="UnableToRetrieveCredentials" xml:space="preserve">
+    <value>Unable to to retrieve credentials. Please log into Financial Reporter again.</value>
+    <comment>To be translated</comment>
+  </data>
+  <data name="PostSuccessMessage" xml:space="preserve">
+    <value>Report terminé. {0}, {1}</value>
   </data>
 </root>

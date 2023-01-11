@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class BillsOfMaterialResx {
@@ -160,6 +160,24 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Components Master Item Number.
+        /// </summary>
+        public static string ComponentsMasterItemNumber {
+            get {
+                return ResourceManager.GetString("ComponentsMasterItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Components Master Item Description.
+        /// </summary>
+        public static string ComponentsMasterItemNumberDesc {
+            get {
+                return ResourceManager.GetString("ComponentsMasterItemNumberDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Component&apos;s BOM Number.
         /// </summary>
         public static string ComponetBOMNumber {
@@ -169,7 +187,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Componet&apos;s Item Number.
+        ///   Looks up a localized string similar to Component Item Number.
         /// </summary>
         public static string ComponetsItemNumber {
             get {
@@ -187,7 +205,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to delete bill of materail {0} for item {1}?.
+        ///   Looks up a localized string similar to Are you sure you want to delete bill of material {0} for item {1}?.
         /// </summary>
         public static string DeleteConfirmMessage {
             get {
@@ -286,6 +304,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Item {0} exists in inventory as {1}, but is also a manufacturer&apos;s item number for {2}. Program will not select {2} for you if you enter {0}..
+        /// </summary>
+        public static string ManufactureExsistAsItemError {
+            get {
+                return ResourceManager.GetString("ManufactureExsistAsItemError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Master BOM Number.
         /// </summary>
         public static string MasterBOMNumber {
@@ -313,7 +340,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Master Item Number Description.
+        ///   Looks up a localized string similar to Master Item Description.
         /// </summary>
         public static string MasterItemNoDesc {
             get {

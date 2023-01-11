@@ -255,4 +255,28 @@
   <data name="PostingDateOverrideTitle" xml:space="preserve">
     <value>过帐日期撤换</value>
   </data>
+  <data name="GLEntryDescription" xml:space="preserve">
+    <value>总帐分录描述</value>
+  </data>
+  <data name="EquipmentCode" xml:space="preserve">
+    <value>设备编号</value>
+  </data>
+  <data name="DataType" xml:space="preserve">
+    <value>数据类型</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>文本</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>数字</value>
+  </data>
+  <data name="GLTransactionProcess" xml:space="preserve">
+    <value>G/L transaction process completed.</value>
+  </data>
+  <data name="EquipmentCodeDesc" xml:space="preserve">
+    <value>设备描述</value>
+  </data>
+  <data name="EquipmentUsageDetails" xml:space="preserve">
+    <value>设备使用明细</value>
+  </data>
 </root>

@@ -169,4 +169,31 @@
     <value>Debe agregar uno o más detalles antes de asentar la retirada/salida.</value>
     <comment>Error</comment>
   </data>
+  <data name="NextDetailLineNumber" xml:space="preserve">
+    <value>Número de Línea de Detalle Siguiente</value>
+    <comment></comment>
+  </data>
+  <data name="MoneyValue" xml:space="preserve">
+    <value>Money Value</value>
+    <comment></comment>
+  </data>
+  <data name="WarrantyExpiryDate" xml:space="preserve">
+    <value>Período de Garantía {0} – Fch. Caducidad</value>
+  </data>
+  <data name="WarrantyEffectiveDate" xml:space="preserve">
+    <value>Período de Garantía {0} – Fch. Vigencia</value>
+  </data>
+  <data name="WarrantyLifetime" xml:space="preserve">
+    <value>Período de Garantía {0} – Largo Plazo</value>
+  </data>
+  <data name="LotNumberNotExist" xml:space="preserve">
+    <value>El número de lote {0} no existe para el número de artículo {1}.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="LotNumberNotExist1" xml:space="preserve">
+    <value>No existe el número de lote {0}.</value>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>** NUEVO **</value>
+  </data>
 </root>

@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -170,7 +170,14 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
 
                 // Property
 #>
+<#
+                if (!repositoryType.Equals(RepositoryType.DynamicQuery) && !repositoryType.Equals(RepositoryType.Report))
+                {
+#>
         [ViewField(Name = Fields.<#=fieldName#>, Id = Index.<#=fieldName#>, FieldType = EntityFieldType.<#=entityFieldType[field.EntityFieldType - 1]#><#=(field.Size > 0 ? ", Size = " + field.Size : "")#><#=(field.Precision > 0 ? ", Precision = " + field.Precision : "")#><#=(!string.IsNullOrEmpty(field.Mask) ? ", Mask = \"" + field.Mask + "\"" : "")#>)]
+<#
+                }
+#>
         public <#=(field.Type.Equals(BusinessDataType.Enumeration) ? companyNamespace + "." + moduleId + ".Models.Enums" + extension + "." + fieldName : EnumValue.GetValue(field.Type))#> <#=fieldName#> { get; set; }
 
 <#

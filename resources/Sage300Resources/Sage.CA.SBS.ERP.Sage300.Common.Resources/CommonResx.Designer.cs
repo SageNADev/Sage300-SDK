@@ -547,6 +547,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Collapse All.
+        /// </summary>
+        public static string CollapseAll {
+            get {
+                return ResourceManager.GetString("CollapseAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Column.
         /// </summary>
         public static string Column {
@@ -1285,6 +1294,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expand All.
+        /// </summary>
+        public static string ExpandAll {
+            get {
+                return ResourceManager.GetString("ExpandAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expand all sections.
         /// </summary>
         public static string Expanded {
@@ -1362,6 +1380,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string FederalTax {
             get {
                 return ResourceManager.GetString("FederalTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} does not exist..
+        /// </summary>
+        public static string FieldDoesNotExist {
+            get {
+                return ResourceManager.GetString("FieldDoesNotExist", resourceCulture);
             }
         }
         
@@ -1789,6 +1816,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inventory Control.
+        /// </summary>
+        public static string IC {
+            get {
+                return ResourceManager.GetString("IC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I/C Assembly.
         /// </summary>
         public static string ICAssembly {
@@ -1974,6 +2010,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string InsertFailedMessage {
             get {
                 return ResourceManager.GetString("InsertFailedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Integer.
+        /// </summary>
+        public static string Integer {
+            get {
+                return ResourceManager.GetString("Integer", resourceCulture);
             }
         }
         
@@ -2248,11 +2293,38 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Locked.
+        /// </summary>
+        public static string Locked {
+            get {
+                return ResourceManager.GetString("Locked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fiscal period {0} for fiscal year {1} is locked for {2} in Common Services Fiscal Calendar..
+        /// </summary>
+        public static string LockedPeriod {
+            get {
+                return ResourceManager.GetString("LockedPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [Sage Cloud] [{0}] [TenantId: {1}] [ModuleName: {2}]  [UserId; {3}] - {4}.
         /// </summary>
         public static string LoggingConstants {
             get {
                 return ResourceManager.GetString("LoggingConstants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item {0} exists in inventory as {1}, but is also a manufacturer&apos;s item number for {2}. Program will not select {2} for you if you enter {0}..
+        /// </summary>
+        public static string ManufactureExsistAsItemError {
+            get {
+                return ResourceManager.GetString("ManufactureExsistAsItemError", resourceCulture);
             }
         }
         
@@ -2446,6 +2518,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The parent window cannot be closed before launching the inquiry. The drill-down type is ignored..
+        /// </summary>
+        public static string NoParentDrillDown {
+            get {
+                return ResourceManager.GetString("NoParentDrillDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Batch {0} is not an open batch, so you cannot add a prepayment..
         /// </summary>
         public static string NoPrepayNotOpenBatch {
@@ -2563,6 +2644,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number.
+        /// </summary>
+        public static string Number {
+            get {
+                return ResourceManager.GetString("Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of Invoice.
         /// </summary>
         public static string NumberofInvoices {
@@ -2644,6 +2734,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Optional field {0} record already exists..
+        /// </summary>
+        public static string OptionalFieldExist {
+            get {
+                return ResourceManager.GetString("OptionalFieldExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Optional Fields.
         /// </summary>
         public static string OptionalFields {
@@ -2653,11 +2752,29 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Optional field {0} is not defined for this module..
+        /// </summary>
+        public static string OptionalFieldValidation {
+            get {
+                return ResourceManager.GetString("OptionalFieldValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Optional Field Value.
         /// </summary>
         public static string OptionalFieldValue {
             get {
                 return ResourceManager.GetString("OptionalFieldValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value {0} does not exist for optional field {1}..
+        /// </summary>
+        public static string OptionalFieldValueValidation {
+            get {
+                return ResourceManager.GetString("OptionalFieldValueValidation", resourceCulture);
             }
         }
         
@@ -2829,6 +2946,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string PostInProgressMessage {
             get {
                 return ResourceManager.GetString("PostInProgressMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posting completed. {0}, {1}.
+        /// </summary>
+        public static string PostSuccessMessage {
+            get {
+                return ResourceManager.GetString("PostSuccessMessage", resourceCulture);
             }
         }
         
@@ -3027,6 +3153,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string RecordDoesNotExist {
             get {
                 return ResourceManager.GetString("RecordDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Record has been modified by another program..
+        /// </summary>
+        public static string RecordModified {
+            get {
+                return ResourceManager.GetString("RecordModified", resourceCulture);
             }
         }
         
@@ -4138,6 +4273,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to to retrieve credentials. Please log into Financial Reporter again..
+        /// </summary>
+        public static string UnableToRetrieveCredentials {
+            get {
+                return ResourceManager.GetString("UnableToRetrieveCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unconditional Inserts/Updates.
         /// </summary>
         public static string UnconditionalInsertsOrUpdates {
@@ -4386,6 +4530,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string Yes {
             get {
                 return ResourceManager.GetString("Yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes/No.
+        /// </summary>
+        public static string YesNo {
+            get {
+                return ResourceManager.GetString("YesNo", resourceCulture);
             }
         }
         

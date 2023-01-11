@@ -106,6 +106,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assign a Category.
+        /// </summary>
+        public static string AssignACategory {
+            get {
+                return ResourceManager.GetString("AssignACategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign a Resource.
+        /// </summary>
+        public static string AssignAResource {
+            get {
+                return ResourceManager.GetString("AssignAResource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Billing Amount.
         /// </summary>
         public static string BillingAmount {
@@ -138,6 +156,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string BillingType {
             get {
                 return ResourceManager.GetString("BillingType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cannot be less than zero..
+        /// </summary>
+        public static string CannotLessThanZero {
+            get {
+                return ResourceManager.GetString("CannotLessThanZero", resourceCulture);
             }
         }
         
@@ -286,6 +313,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Extended Billing Amount.
+        /// </summary>
+        public static string ExtendedBillingAmount {
+            get {
+                return ResourceManager.GetString("ExtendedBillingAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extended Cost.
         /// </summary>
         public static string ExtendedCost {
@@ -345,6 +381,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string NoLine {
             get {
                 return ResourceManager.GetString("NoLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional field {0} is not defined for this in Project and Job Costing..
+        /// </summary>
+        public static string OptionalFieldValidation {
+            get {
+                return ResourceManager.GetString("OptionalFieldValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value {0} does not exist for optional field {1}..
+        /// </summary>
+        public static string OptionalFieldValueValidation {
+            get {
+                return ResourceManager.GetString("OptionalFieldValueValidation", resourceCulture);
             }
         }
         
@@ -457,6 +511,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tax authority {0} does not allow included taxes..
+        /// </summary>
+        public static string TaxAuthorityDoesNotAllowIncludedTax {
+            get {
+                return ResourceManager.GetString("TaxAuthorityDoesNotAllowIncludedTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tax Class.
         /// </summary>
         public static string TaxClass {
@@ -471,6 +534,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string TaxClassDescritpion {
             get {
                 return ResourceManager.GetString("TaxClassDescritpion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax class does not exist for tax authority {0}..
+        /// </summary>
+        public static string TaxClassDoesNotExist {
+            get {
+                return ResourceManager.GetString("TaxClassDoesNotExist", resourceCulture);
             }
         }
         
@@ -498,6 +570,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string UnitCost {
             get {
                 return ResourceManager.GetString("UnitCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Unit of Measure specified does not match the Unit of Measure on the {0}..
+        /// </summary>
+        public static string UOMDoesNotMatch {
+            get {
+                return ResourceManager.GetString("UOMDoesNotMatch", resourceCulture);
             }
         }
         

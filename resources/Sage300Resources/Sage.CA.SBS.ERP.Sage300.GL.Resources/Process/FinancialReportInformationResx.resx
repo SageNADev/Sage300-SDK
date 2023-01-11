@@ -304,4 +304,7 @@
   <data name="Selectstatement" xml:space="preserve">
     <value>Please select a statement.</value>
   </data>
+  <data name="ErrorMessage_ConcurrentFRPrint" xml:space="preserve">
+    <value>Financial Reporter printing is currently in use. Please try again later.</value>
+  </data>
 </root>

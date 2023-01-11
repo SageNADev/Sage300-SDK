@@ -213,4 +213,55 @@
   <data name="WorkInProgressAccount" xml:space="preserve">
     <value>Cuenta de Trabajo en Progreso</value>
   </data>
+  <data name="GLEntryDescription" xml:space="preserve">
+    <value>Descr. de Asiento del LM</value>
+  </data>
+  <data name="EquipmentCode" xml:space="preserve">
+    <value>Cód. de Equipo</value>
+  </data>
+  <data name="DataType" xml:space="preserve">
+    <value>Tipo de Datos</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="EquipmentNumber" xml:space="preserve">
+    <value>Nº Equipo</value>
+  </data>
+  <data name="EADescription" xml:space="preserve">
+    <value>Descrip. de Cta de Equipos</value>
+  </data>
+  <data name="EquipmentAccount" xml:space="preserve">
+    <value>Cta de Equipos</value>
+  </data>
+  <data name="GLDetailComment" xml:space="preserve">
+    <value>G/L Detail Comment</value>
+  </data>
+  <data name="GLDetailDescription" xml:space="preserve">
+    <value>G/L Detail Description</value>
+  </data>
+  <data name="GLDetailReference" xml:space="preserve">
+    <value>G/L Detail Reference</value>
+  </data>
+  <data name="GLTransactionProcess" xml:space="preserve">
+    <value>G/L transaction process completed.</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Uso de Equipos de PJC</value>
+  </data>
+  <data name="EquipmentCodeDesc" xml:space="preserve">
+    <value>Descrip. de Cód. de Equipo</value>
+  </data>
+  <data name="EquipmentUsageDetails" xml:space="preserve">
+    <value>Detalles de Uso del Equipo</value>
+  </data>
+  <data name="PostingDateOverrideTitle" xml:space="preserve">
+    <value>Sustitución de Fch. de Asentam.</value>
+  </data>
+  <data name="CostCurrency" xml:space="preserve">
+    <value>Extended Cost Currency</value>
+  </data>
 </root>
