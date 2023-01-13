@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2019-2021 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2019-2022 Sage Software, Inc.  All rights reserved. */
 "use strict";
 (function (sg, $) {
     sg.viewFinderHelper = {
@@ -162,6 +162,16 @@
                 url = sg.utls.url.buildUrl(customUrlProperty[0], customUrlProperty[1], customUrlProperty[2]);
             }
             return url;
+        },
+
+        /**
+         * Replaces entity context token (~~) with module id (CP or UP) in the viewID property
+         *
+         * @param {string} viewID - The viewID of the finder that may be tokenized (~~)
+         * @param {string} entityContext - The replacement value (CP or UP) for the token (~~)
+         */
+        entityContextReplacement: function (viewID, entityContext) {
+            return viewID.replace("~~", entityContext);
         }
     };
 
@@ -312,10 +322,7 @@
             }
             if (elementInfocus == null || elementInfocusAttrId == null || isFound) {
                 const id = elementInfocusAttrId;
-                let isNavigationButton = false;
-                if (id) {
-                    isNavigationButton = id.includes('btnDataFirst') || id.includes('btnDataPrevious') || id.includes('btnDataNext') || id.includes('btnDataLast');
-                }
+                const isNavigationButton = id ? (id.includes('btnDataFirst') || id.includes('btnDataPrevious') || id.includes('btnDataNext') || id.includes('btnDataLast')) : false;
                 if (!isNavigationButton) {
                     funcCall();
                 }
@@ -793,6 +800,10 @@
             }
         },
         _resetFocus: function (that) {
+            if (that.options.id.length === 0) {
+                return;
+            }
+
             var finderElement = $("#" + that.options.id);
             if (finderElement.length === 0) {
                 finderElement.focus();

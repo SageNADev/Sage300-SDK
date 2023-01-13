@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -37,6 +37,9 @@
 	"Web.Areas." + moduleId : moduleId + ".Web");
 
     var enumsCount = view.Enums.Count;
+
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = (moduleId == "PR");
 
 	var keyFieldTypeName = view.Fields.Where(f => f.IsKey).FirstOrDefault().Type.ToString();
 	var convertId = "id";
@@ -208,7 +211,21 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
             return new <#=containerName#>ViewModel
             {
                 Data = model,
+<#
+            if (entityContext)
+            {
+#>
+                UserMessage = userMessage,
+                PayrollType = Context.ScreenContext.EntityContext
+<#
+            }
+            else
+            {
+#>
                 UserMessage = userMessage
+<#
+            }
+#>
             };
         }
 

@@ -16,6 +16,7 @@
 ::	Prerequisites
 ::
 ::			The environment variable CNA2_SOURCE_ROOT needs to be set
+::			The environment variable Dev_Payroll_SOURCE_ROOT needs to be set
 ::
 ::  		For Example : D:\projects\SageAzureDev\release-2023.0\
 ::
@@ -34,15 +35,16 @@ set myDir=%~dp0
 
 :: ---------------------------------------------------------------------------------------
 :: Check for the existence of the CNA2_SOURCE_ROOT environment variable.
+:: TEMPORARY For Dev_Payroll, the environment var is Dev_Payroll_SOURCE_ROOT (JT) 
 :: ---------------------------------------------------------------------------------------
-if [%CNA2_SOURCE_ROOT%]==[] (
-  echo The environment variable ----  CNA2_SOURCE_ROOT ---- has not yet been defined.
-  echo Please set CNA2_SOURCE_ROOT to the root folder of the CNA2 source code.
-  echo For Example: Set CNA2_SOURCE_ROOT=D:\projects\SageAzureDev\release-2023.0\
+if [%Dev_Payroll_SOURCE_ROOT%]==[] (
+  echo The environment variable ----  Dev_Payroll_SOURCE_ROOT ---- has not yet been defined.
+  echo Please set Dev_Payroll_SOURCE_ROOT to the root folder of the CNA2 source code.
+  echo For Example: Set Dev_Payroll_SOURCE_ROOT=D:\projects\SageAzureDev\release-2023.0\
   goto :EOF
 )
 
-set srcCopyPath=%CNA2_SOURCE_ROOT%Columbus-Web
+set srcCopyPath=%Dev_Payroll_SOURCE_ROOT%Columbus-Web
 if not [%1]==[] (
   set srcCopyPath=%1
 )

@@ -876,7 +876,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             chkGenerateIfExist.Text = Resources.GenerateIfExist;
             tooltip.SetToolTip(chkGenerateIfExist, Resources.GenerateIfExistTip);
 
-            tooltip.SetToolTip(tbrEntity, Resources.EntityGridTip);
             btnRowAdd.ToolTipText = Resources.AddRow;
             btnDeleteRow.ToolTipText = Resources.DeleteRow;
             btnDeleteRows.ToolTipText = Resources.DeleteRows;
@@ -1425,20 +1424,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             txtViewID.Enabled = _modeType.Equals(ModeTypeEnum.Add) && enable;
 
-            // If enabled AND Report or Dynamic Query then disable
+            // If enabled AND Report then disable
             if (txtViewID.Enabled)
             {
-                if (repositoryType.Equals(RepositoryType.DynamicQuery) || repositoryType.Equals(RepositoryType.Report))
+                if (repositoryType.Equals(RepositoryType.Report))
                 {
                     txtViewID.Enabled = false;
                 }
             }
 
             chkGenerateFinder.Enabled = 
-                                !repositoryType.Equals(RepositoryType.Process) &&
-                                !repositoryType.Equals(RepositoryType.DynamicQuery) &&
-                                // Inquiry type should be able to generate finder but disable for now
-                                !repositoryType.Equals(RepositoryType.Inquiry);
+                                !repositoryType.Equals(RepositoryType.Process);
 
             chkGenerateDynamicEnablement.Enabled = (!repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
             chkGenerateClientFiles.Enabled = (!repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
@@ -1469,13 +1465,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             if (_modeType.Equals(ModeTypeEnum.Add))
             {
-                // Set CS0120 for Dynamic Query Repository
-                if (repositoryType.Equals(RepositoryType.DynamicQuery))
-                {
-                    txtViewID.Text = "CS0120";
-                }
                 // Set new guid for Report Repository
-                else if (repositoryType.Equals(RepositoryType.Report))
+                if (repositoryType.Equals(RepositoryType.Report))
                 {
                     txtViewID.Text = Guid.NewGuid().ToString();
                 }
@@ -1483,9 +1474,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Options defaults
                 chkGenerateFinder.Checked =
                                 !repositoryType.Equals(RepositoryType.Process) &&
-                                !repositoryType.Equals(RepositoryType.DynamicQuery) &&
-                                // Inquiry type should be able to generate finder but disable for now
-                                !repositoryType.Equals(RepositoryType.Inquiry) &&
                                 !repositoryType.Equals(RepositoryType.HeaderDetail);
 
                 // Finder default for Header-Detail should be checked for header entity only otherwise unchecked
@@ -2011,8 +1999,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 text += ProcessGeneration.Constants.PropertyComps + "=\"" + businessView.Compositions.Where(x => x.Include).Count() + "\" ";
             }
 
-            // Show Finder and Dynamic Enablement if not a report/dynamic query
-            if (!repositoryType.Equals(RepositoryType.Report) && !repositoryType.Equals(RepositoryType.DynamicQuery))
+            // Show Finder and Dynamic Enablement if not a report
+            if (!repositoryType.Equals(RepositoryType.Report))
             {
                 text += ProcessGeneration.Constants.PropertyFinder + "=\"" + businessView.Options[BusinessView.Constants.GenerateFinder].ToString() + "\" ";
                 text += ProcessGeneration.Constants.PropertyGrid + "=\"" + businessView.Options[BusinessView.Constants.GenerateGrid].ToString() + "\" ";
@@ -4603,21 +4591,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             AddStep(Resources.StepTitleCodeType, Resources.StepDescriptionCodeType, pnlCodeType);
             AddStep(Resources.StepTitleEntities, Resources.StepDescriptionEntities, pnlEntities);
 
-            // Exclude Dynamic Query and Inquiry from UI Layout
-            if (repositoryType.Equals(RepositoryType.DynamicQuery) ||
-                repositoryType.Equals(RepositoryType.Inquiry))
-            {
-                // Will be prevented from displaying layout step
-            }
-            else
-            {
-                AddStep(Resources.StepTitleGenerateUICode, Resources.StepDescriptionGenerateUICode, pnlUIGeneration);
-            }
+            AddStep(Resources.StepTitleGenerateUICode, Resources.StepDescriptionGenerateUICode, pnlUIGeneration);
 
             AddStep(Resources.StepTitleGenerateCode, Resources.StepDescriptionGenerateCode, pnlGenerateCode);
             AddStep(Resources.StepTitleGeneratedCode, Resources.StepDescriptionGeneratedCode, pnlGeneratedCode);
 
-            grpCredentials.Enabled = !(repositoryType.Equals(RepositoryType.DynamicQuery) || repositoryType.Equals(RepositoryType.Report));
+            grpCredentials.Enabled = !(repositoryType.Equals(RepositoryType.Report));
 
             SetupEntitiesTree();
 
@@ -4643,8 +4622,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Current Step
             _currentWizardStep = -1;
 
-            grpCredentials.Enabled = !(repositoryType.Equals(RepositoryType.DynamicQuery) || 
-				                       repositoryType.Equals(RepositoryType.Report));
+            grpCredentials.Enabled = !repositoryType.Equals(RepositoryType.Report);
 
             SetupEntitiesTree();
 
@@ -4755,9 +4733,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Show/Hide Fieldname based upon code type
             columnIndex = 1;
-            GenericInit(grdEntityFields, columnIndex, 125, Resources.ServerField, !repositoryType.Equals(RepositoryType.DynamicQuery), true);
+            GenericInit(grdEntityFields, columnIndex, 125, Resources.ServerField, true, true);
 
-            // Droplist items wmay be different based upon repository type
+            // Droplist items may be different based upon repository type
             columnIndex = 4;
             var typeColumn = (DataGridViewComboBoxColumn)grdEntityFields.Columns[columnIndex];
             typeColumn.Items.Clear();
@@ -4767,18 +4745,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 // Only add string type
                 typeColumn.Items.Add(BusinessDataType.String);
-            }
-            else if (repositoryType.Equals(RepositoryType.DynamicQuery))
-            {
-                // Add all types but enumeration
-                foreach (
-                    var businessDataType in
-                    Enum.GetValues(typeof(BusinessDataType))
-                        .Cast<BusinessDataType>()
-                        .Where(businessDataType => !businessDataType.Equals(BusinessDataType.Enumeration)))
-                {
-                    typeColumn.Items.Add(businessDataType);
-                }
             }
             else
             {

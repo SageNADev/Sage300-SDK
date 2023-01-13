@@ -50,7 +50,7 @@ GridPreferences = {
             var container = $('#divGridPrefEditCols');
             // Close edit columns popup when clicking outside it
             if (!container.is(e.target) && !btnEdit.is(e.target) && container.has(e.target).length === 0 && $(container).is(":visible")) {
-                GridPreferences.hide();
+                //GridPreferences.hide();
             }
         });
 
@@ -255,25 +255,35 @@ GridPreferences = {
         if (grid == null) {
             return;
         }
-        var attributeNotExists;
-        var customizable;
-        for (var k = 0; k < gridColumns.length; k++) {
-            for (var j = 0; j < grid.columns.length; j++) {
-                if (grid.columns[j].field === gridColumns[k].field) {
-                    attributeNotExists = false;
-                    if (grid.columns[j].attributes == null) {
-                        attributeNotExists = true;
-                    } else {
-                        customizable = grid.columns[j].attributes["sg_Customizable"];
+        let attributeNotExists;
+        let customizable;
+        let useGridSettings = gridColumns.filter(c => c.useInfinder).length > 0;
+
+        if (useGridSettings) {
+            let cols = grid.options.columns;
+            cols.forEach((c, i) => {
+                let col = gridColumns.filter(cl => cl.field === c.field)[0];
+                grid.reorderColumn(i, col);
+            })
+        } else {
+            for (var k = 0; k < gridColumns.length; k++) {
+                for (var j = 0; j < grid.columns.length; j++) {
+                    if (grid.columns[j].field === gridColumns[k].field) {
+                        attributeNotExists = false;
+                        if (grid.columns[j].attributes == null) {
+                            attributeNotExists = true;
+                        } else {
+                            customizable = grid.columns[j].attributes["sg_Customizable"];
+                        }
+                        grid.reorderColumn(k, grid.columns[j]);
+                        if (grid.columns[k].title && (attributeNotExists || customizable == null || customizable) && !gridColumns[k].hidden && !gridColumns[k].isInternal) {
+                            grid.showColumn(grid.columns[k].field);
+                        }
+                        else if (gridColumns[k].hidden || gridColumns[k].isInternal) {
+                            grid.hideColumn(grid.columns[k].field);
+                        }
+                        break;
                     }
-                    grid.reorderColumn(k, grid.columns[j]);
-                    if (grid.columns[k].title && (attributeNotExists || customizable == null || customizable) && !gridColumns[k].hidden && !gridColumns[k].isInternal) {
-                        grid.showColumn(grid.columns[k].field);
-                    }
-                    else if (gridColumns[k].hidden || gridColumns[k].isInternal) {
-                        grid.hideColumn(grid.columns[k].field);
-                    }
-                    break;
                 }
             }
         }

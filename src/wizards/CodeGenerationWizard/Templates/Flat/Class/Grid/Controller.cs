@@ -34,7 +34,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -155,100 +155,114 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
 	"Web.Areas." + moduleId : moduleId + ".Web");
 	var headerModelName = modelName;
 
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = (moduleId == "PR");
+
             
             #line default
             #line hidden
             this.Write("// ");
             
-            #line 37 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 40 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
             #line hidden
-            this.Write(@"
-
-#region Namespace
-
-using Microsoft.Practices.Unity;
-using System.Web.Mvc;
-using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
-using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
-using Sage.CA.SBS.ERP.Sage300.Common.Resources;
-using Sage.CA.SBS.ERP.Sage300.Common.Web;
-using ");
+            this.Write("\r\n\r\n#region Namespace\r\n\r\nusing Microsoft.Practices.Unity;\r\nusing System.Web.Mvc;\r" +
+                    "\nusing Sage.CA.SBS.ERP.Sage300.Common.Exceptions;\r\nusing Sage.CA.SBS.ERP.Sage300" +
+                    ".Common.Models;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;\r\n");
             
-            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+
+	if (entityContext)
+	{
+
+            
+            #line default
+            #line hidden
+            this.Write("using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums.Payroll;\r\n");
+            
+            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+
+	}
+
+            
+            #line default
+            #line hidden
+            this.Write("using Sage.CA.SBS.ERP.Sage300.Common.Resources;\r\nusing Sage.CA.SBS.ERP.Sage300.Co" +
+                    "mmon.Web;\r\nusing ");
+            
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\nusing ");
             
-            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Resources.Forms;\r\nusing ");
             
-            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Controllers\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write(" Public Controller\r\n    /// </summary>\r\n    public class ");
             
-            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 70 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("Controller : MultitenantControllerBase<");
             
-            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 70 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -257,7 +271,7 @@ using ");
                     "     /// Gets or sets the internal controller\r\n        /// </summary>\r\n        p" +
                     "ublic ");
             
-            #line 66 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -265,7 +279,7 @@ using ");
             this.Write("ControllerInternal ControllerInternal { get; set; }\r\n\r\n        #endregion\r\n\r\n    " +
                     "    #region Constructor\r\n\r\n        /// <summary>\r\n        /// Constructor for ");
             
-            #line 73 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 84 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -273,20 +287,20 @@ using ");
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"container\">Unity Container</pa" +
                     "ram>\r\n        public ");
             
-            #line 76 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 87 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("Controller(IUnityContainer container)\r\n            : base(container,\"");
             
-            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 88 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             
-            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 88 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
@@ -308,23 +322,73 @@ using ");
             base.Initialize(requestContext);
             ControllerInternal = new ");
             
-            #line 92 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 103 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ControllerInternal(Context);\r\n        }\r\n\r\n        #endregion\r\n\r\n        #region " +
                     "Public methods\r\n\r\n\t    /// <summary>\r\n        /// Load screen\r\n        /// </sum" +
-                    "mary>\r\n        /// <returns>JSON object for ");
+                    "mary>\r\n");
             
-            #line 102 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 113 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+
+	if (entityContext)
+	{
+
+            
+            #line default
+            #line hidden
+            this.Write("        /// <param name=\"type\">Payroll type enum stored by the base class in Cont" +
+                    "ext.ScreenContext.EntityContext</param>\r\n");
+            
+            #line 118 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+
+	}
+
+            
+            #line default
+            #line hidden
+            this.Write("        /// <returns>JSON object for ");
+            
+            #line 121 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
-            this.Write("</returns>\r\n        public virtual ActionResult Index()\r\n        {\r\n\t\t\t");
+            this.Write("</returns>\r\n");
             
-            #line 105 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+            #line 122 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+
+	if (entityContext)
+	{
+
+            
+            #line default
+            #line hidden
+            this.Write("        public virtual ActionResult Index(PayrollType type)\r\n");
+            
+            #line 127 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+
+	}
+    else
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("        public virtual ActionResult Index()\r\n");
+            
+            #line 133 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("        {\r\n\t\t\t");
+            
+            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\Controller.tt"
 
 			WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", view.Properties[BusinessView.Constants.EntityName]);
 			

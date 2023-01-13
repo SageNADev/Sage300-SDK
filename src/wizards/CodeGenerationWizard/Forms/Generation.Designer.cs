@@ -373,9 +373,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.cboRepositoryType.Items.AddRange(new object[] {
             "Flat",
             "Process",
-            "DynamicQuery",
             "Report",
-            "Inquiry",
             "HeaderDetail"});
             this.cboRepositoryType.Location = new System.Drawing.Point(98, 27);
             this.cboRepositoryType.Name = "cboRepositoryType";
@@ -885,7 +883,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.lblCodeTypeDescriptionHelp.Size = new System.Drawing.Size(692, 45);
             this.lblCodeTypeDescriptionHelp.TabIndex = 2;
             this.lblCodeTypeDescriptionHelp.Text = "A Code Type is based upon the Repository Type that will be used for the Business " +
-    "View, Report or Dynamic Query.";
+    "View or Report.";
             this.lblCodeTypeDescriptionHelp.WrapToLine = true;
             // 
             // grpCredentials

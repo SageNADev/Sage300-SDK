@@ -16,7 +16,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class ViewModel : ViewModelBase
     {
@@ -27,121 +27,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+ /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 24 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 24 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
 
     // Locals
     var moduleId = settings.ModuleId;
@@ -156,13 +156,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
     
     var headerModelName = modelName;
 
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = (moduleId == "PR");
+
 
             
             #line default
             #line hidden
             this.Write("// ");
             
-            #line 39 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 42 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -171,58 +174,78 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class.Grid
                     "SBS.ERP.Sage300.Common.Web;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Models;\r\nusing" +
                     " ");
             
-            #line 47 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 47 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 51 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 51 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models\r\n{\r\n    /// <summary>\r\n    /// Class for ");
             
-            #line 54 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel\r\n    /// </summary>\r\n    public class ");
             
-            #line 56 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel : ViewModelBase<");
             
-            #line 56 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
-            this.Write(">\r\n    {\r\n    }\r\n}\r\n\t\t\t\t\t\r\n");
+            this.Write(">\r\n    {\r\n");
+            
+            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+
+	if (entityContext)
+	{
+
+            
+            #line default
+            #line hidden
+            this.Write("        /// <summary>\r\n        /// Payroll Type (CP or UP for JavaScript usage)\r\n" +
+                    "        /// </summary>\r\n        public string PayrollType { get; set; }\r\n");
+            
+            #line 69 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+
+	}
+
+            
+            #line default
+            #line hidden
+            this.Write("    }\r\n}\r\n\t\t\t\t\t\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Grid\ViewModel.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

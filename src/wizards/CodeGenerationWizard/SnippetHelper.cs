@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -906,7 +906,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="depth">Indentation for generation</param>
         /// <param name="settings">Settings object</param>
         /// <param name="snippet">Snippet being constructed</param>
-        public static void FinderJavaScript(int depth, Settings settings, StringBuilder snippet)
+        /// <param name="localEntityName">Local Entity Name</param>
+        public static void FinderJavaScript(int depth, Settings settings, StringBuilder snippet, string localEntityName)
         {
             if (settings.XmlLayout != null)
             {
@@ -918,7 +919,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     var objectName = GetObjectName(finderControl.Attribute("finderFileName")?.Value);
                     var finderName = finderControl.Attribute("property")?.Value;
                     var finderProperty = finderControl.Attribute("finderProperty")?.Value != null ? $", {objectName}.{finderControl.Attribute("finderProperty").Value}" : string.Empty;
-                    snippet.AppendLine(new string(' ', depth) + $@"sg.viewFinderHelper.setViewFinder(""btnFinder{finderName}"", ""txt{finderName}"" {finderProperty});");
+
+                    // Specific payroll logic since CP and UP are now dynamically assigned
+                    if (finderProperty.Contains(".PR."))
+                    {
+                        snippet.AppendLine(new string(' ', depth) + $@"var {finderName}Properties = {finderProperty.Substring(2)};");
+                        snippet.AppendLine(new string(' ', depth) + $@"{finderName}Properties.viewID = sg.viewFinderHelper.entityContextReplacement({finderName}Properties.viewID, {localEntityName}UI.{localEntityName}Model.PayrollType());");
+                        snippet.AppendLine(new string(' ', depth) + $@"sg.viewFinderHelper.setViewFinder(""btnFinder{finderName}"", ""txt{finderName}"", {finderName}Properties);");
+                    }
+                    else
+                    {
+                        snippet.AppendLine(new string(' ', depth) + $@"sg.viewFinderHelper.setViewFinder(""btnFinder{finderName}"", ""txt{finderName}"" {finderProperty});");
+                    }
                 }
             }
         }

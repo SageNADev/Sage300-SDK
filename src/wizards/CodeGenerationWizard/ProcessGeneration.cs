@@ -32,6 +32,7 @@ using System.Text;
 using System.Windows.Forms;
 using View = ACCPAC.Advantage.View;
 using System.Xml;
+using System.Threading;
 using Newtonsoft.Json;
 using Jint.Runtime;
 using Newtonsoft.Json.Linq;
@@ -915,18 +916,31 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Update project if write was successful
                 if (retVal && addToProject)
                 {
-                    // Add to project
-                    try
-                    {
-                        projectInfo.Project.ProjectItems.AddFromFile(fullFileName);
-                        projectInfo.Project.Save(projectInfo.Project.FullName);
-                    }
-                    catch
-                    {
-                        retVal = false;
-                    }
-                }
+                    // May need multiple attempts as Visual Visual Studio has been reporting
+                    // not ready status intermediately
+                    var attempts = 0;
+                    var maxAttempts = 2;
 
+                    while (attempts <= maxAttempts)
+                    {
+                        // Add to project
+                        try
+                        {
+                            projectInfo.Project.ProjectItems.AddFromFile(fullFileName);
+                            projectInfo.Project.Save(projectInfo.Project.FullName);
+                            break;
+                        }
+                        catch
+                        {
+                            // Added a delay before retrying
+                            Thread.Sleep(500);
+                            attempts++;
+                        }
+                    }
+
+                    // Determine if the save was a success
+                    retVal = (attempts <= maxAttempts);
+                }
             }
             else
             {
@@ -1211,12 +1225,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Locals
                 var field = entityFields[i];
 
-                // Assign id
-                if (repositoryType.Equals(RepositoryType.DynamicQuery))
-                {
-                    field.Id = i + 1;
-                }
-
                 // Check Name
                 if (string.IsNullOrEmpty(field.Name))
                 {
@@ -1226,10 +1234,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 // Ensure Name is properly formatted
                 field.Name = BusinessViewHelper.Replace(field.Name);
-                if (repositoryType.Equals(RepositoryType.DynamicQuery))
-                {
-                    field.ServerFieldName = field.Name;
-                }
 
                 if (repositoryType.Equals(RepositoryType.Report))
                 {
@@ -1401,11 +1405,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Set some flags to reduce code bulk a bit.
             var repoType = _settings.RepositoryType;
             var isRepoTypeHeaderDetail = repoType.Equals(RepositoryType.HeaderDetail);
-            var isRepoTypeDynamicQuery = repoType.Equals(RepositoryType.DynamicQuery);
             var isRepoTypeProcess = repoType.Equals(RepositoryType.Process);
             var isRepoTypeFlat = repoType.Equals(RepositoryType.Flat);
             var isRepoTypeReport = repoType.Equals(RepositoryType.Report);
-            var isRepoTypeInquiry = repoType.Equals(RepositoryType.Inquiry);
             var generateFinder = view.Options[BusinessView.Constants.GenerateFinder];
             var generateClientFiles = view.Options[BusinessView.Constants.GenerateClientFiles];
             var entityName = view.Properties[BusinessView.Constants.EntityName];
@@ -1429,14 +1431,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             TransformTemplateToText(view, _settings, "Templates.Common.Class.Model"),
                             Constants.ModelsKey, Constants.SubFolderModelKey);
 
-                // Create the Model Mapper class. 
-                if (isRepoTypeDynamicQuery == false)
-                {
-                    CreateClass(view,
-                                entityName + "Mapper.cs",
-                                TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelMapper"),
-                                Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryMappersKey);
-                }
+                // Create the Model Mapper class 
+                CreateClass(view,
+                            entityName + "Mapper.cs",
+                            TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelMapper"),
+                            Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryMappersKey);
             }
 
             // Create the Model Fields class
@@ -1445,7 +1444,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         TransformTemplateToText(view, _settings, "Templates.Common.Class.ModelFields"),
                         Constants.ModelsKey, Constants.SubFolderModelFieldsKey);
 
-            if (!isRepoTypeHeaderDetail && !isRepoTypeDynamicQuery)
+            if (!isRepoTypeHeaderDetail)
             {
                 if (generateClientFiles == true)
                 {
@@ -1474,8 +1473,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                 TransformTemplateToText(view, _settings, localizationTemplate),
                                 Constants.WebKey, Constants.SubFolderWebLocalizationKey);
 
-                    // Update the plugin menu details
-                    BusinessViewHelper.UpdateMenuDetails(view, _settings);
+                    // Update the plugin menu details if not doing Payroll
+                    if (_settings.ModuleId != "PR")
+                    {
+                        BusinessViewHelper.UpdateMenuDetails(view, _settings);
+                    }
 
                 }
             }
@@ -1909,17 +1911,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void CreateRepositoryClassesByRepositoryType(RepositoryType type, BusinessView view)
         {
             //var isHeaderDetail = type.Equals(RepositoryType.HeaderDetail);
-            var isDynamicQuery = type.Equals(RepositoryType.DynamicQuery);
             var isProcess = type.Equals(RepositoryType.Process);
             var isFlat = type.Equals(RepositoryType.Flat);
             var isReport = type.Equals(RepositoryType.Report);
-            var isInquiry = type.Equals(RepositoryType.Inquiry);
 
             if (isFlat) { CreateFlatRepositoryClasses(view); }
             if (isProcess) { CreateProcessRepositoryClasses(view); }
-            if (isDynamicQuery) { CreateDynamicQueryRepositoryClasses(view); }
             if (isReport) { CreateReportRepositoryClasses(view); }
-            if (isInquiry) { CreateInquiryRepositoryClasses(view); }
         }
 
         /// <summary> Create the class </summary>
@@ -2104,8 +2102,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 BusinessViewHelper.CreateViewPageUrl(view, _settings);
             }
 
-            // Update the plugin menu details
-            BusinessViewHelper.UpdateMenuDetails(view, _settings);
+            // Update the plugin menu details if not doing payroll
+            if (_settings.ModuleId != "PR")
+            {
+                BusinessViewHelper.UpdateMenuDetails(view, _settings);
+            }
 
             // For javascript files, the project name does not include the .Web segment
             if (generateClientFiles)
@@ -2245,8 +2246,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // set the start page
             BusinessViewHelper.CreateViewPageUrl(headerView, settings);
 
-            // Update the plugin menu details
-            BusinessViewHelper.UpdateMenuDetails(headerView, settings);
+            // Update the plugin menu details if not doing payroll
+            if (_settings.ModuleId != "PR")
+            {
+                BusinessViewHelper.UpdateMenuDetails(headerView, settings);
+            }
 
             // For javascript files, the project name does not include the .Web segment
             var projectName =
@@ -2413,8 +2417,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 BusinessViewHelper.CreateViewPageUrl(view, _settings);
             }
 
-            // Update the plugin menu details
-            BusinessViewHelper.UpdateMenuDetails(view, _settings);
+            // Update the plugin menu details if not doing payroll
+            if (_settings.ModuleId != "PR")
+            {
+                BusinessViewHelper.UpdateMenuDetails(view, _settings);
+            }
 
             // For javascript files, the project name does not include the .Web segment
             if (generateClientFiles)
@@ -2447,53 +2454,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         TransformTemplateToText(view, _settings, "Templates.Process.Script.Sql"),
                         Constants.WebKey, Constants.SubFolderWebSqlKey,
                         false);
-        }
-
-        /// <summary> Create Dynamic Query Repository Classes </summary>
-        /// <param name="view">Business View</param>
-        private void CreateDynamicQueryRepositoryClasses(BusinessView view)
-        {
-            var generateClientFiles = view.Options[BusinessView.Constants.GenerateClientFiles];
-            var entityName = view.Properties[BusinessView.Constants.EntityName];
-
-            // Create the Business Repository Interface class
-            CreateClass(view,
-                        "I" + entityName + "Entity.cs",
-                        TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.RepositoryInterface"),
-                        Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
-
-            // Create the Service Interface class
-            CreateClass(view,
-                        "I" + entityName + "Service.cs",
-                        TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.ServiceInterface"),
-                        Constants.InterfacesKey, Constants.SubFolderInterfacesServicesKey);
-
-            // Create the Service class
-            CreateClass(view,
-                        entityName + "EntityService.cs",
-                        TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Service"),
-                        Constants.ServicesKey, Constants.SubFolderServicesKey);
-
-            if (generateClientFiles)
-            {
-                // Create the ViewModel class
-                CreateClass(view,
-                            entityName + "ViewModel.cs",
-                            TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.ViewModel"),
-                            Constants.WebKey, Constants.SubFolderWebViewModelKey);
-
-                // Create the public Controller class
-                CreateClass(view,
-                            entityName + "Controller.cs",
-                            TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Controller"),
-                            Constants.WebKey, Constants.SubFolderWebControllersKey);
-            }
-
-            // Create the Repository class
-            CreateClass(view,
-                        entityName + "Repository.cs",
-                        TransformTemplateToText(view, _settings, "Templates.DynamicQuery.Class.Repository"),
-                        Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
         }
 
         /// <summary> Create Report Repository Classes </summary>
@@ -2622,59 +2582,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 BusinessViewHelper.CreateViewPageUrl(view, _settings);
             }
-        }
-
-        /// <summary> Create Inquiry Repository Classes </summary>
-        /// <param name="view">Business View</param>
-        private void CreateInquiryRepositoryClasses(BusinessView view)
-        {
-            var generateClientFiles = view.Options[BusinessView.Constants.GenerateClientFiles];
-            var entityName = view.Properties[BusinessView.Constants.EntityName];
-
-            // Create the Business Repository Interface class
-            CreateClass(view,
-                        "I" + entityName + "Entity.cs",
-                        TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.RepositoryInterface"),
-                        Constants.InterfacesKey, Constants.SubFolderInterfacesBusinessRepositoryKey);
-
-            // Create the Service Interface class
-            CreateClass(view,
-                        "I" + entityName + "Service.cs",
-                        TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.ServiceInterface"),
-                        Constants.InterfacesKey, Constants.SubFolderInterfacesServicesKey);
-
-            // Create the Service class
-            CreateClass(view,
-                        entityName + "EntityService.cs",
-                        TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Service"),
-                        Constants.ServicesKey, Constants.SubFolderServicesKey);
-
-            if (generateClientFiles)
-            {
-                // Create the ViewModel class
-                CreateClass(view,
-                            entityName + "ViewModel.cs",
-                            TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.ViewModel"),
-                            Constants.WebKey, Constants.SubFolderWebViewModelKey);
-
-                // Create the Internal Controller class
-                CreateClass(view,
-                            entityName + "ControllerInternal.cs",
-                            TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.InternalController"),
-                            Constants.WebKey, Constants.SubFolderWebControllersKey);
-
-                // Create the public Controller class
-                CreateClass(view,
-                            entityName + "Controller.cs",
-                            TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Controller"),
-                            Constants.WebKey, Constants.SubFolderWebControllersKey);
-            }
-
-            // Create the Repository class
-            CreateClass(view,
-                        entityName + "Repository.cs",
-                        TransformTemplateToText(view, _settings, "Templates.Inquiry.Class.Repository"),
-                        Constants.BusinessRepositoryKey, Constants.SubFolderBusinessRepositoryKey);
         }
 
         /// <summary>

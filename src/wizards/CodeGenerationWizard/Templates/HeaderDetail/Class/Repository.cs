@@ -18,7 +18,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Repository : RepositoryBase
     {
@@ -29,121 +29,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 26 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 26 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
    // Locals
     var moduleId = settings.ModuleId;
@@ -153,13 +153,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
     var keyFieldName = settings.screenKeyFieldName;
     var viewOrder = settings.screenKeyFieldIndex;
     var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
+        
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = "\"" + moduleId + "\"";
+    if (moduleId == "PR")
+    {
+         // Will be resolved at runtime
+		 entityContext = "Context.ScreenContext.EntityContext";
+    }
 
             
             #line default
             #line hidden
             this.Write("// ");
             
-            #line 36 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 44 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -181,42 +189,42 @@ using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums.ExportImport;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.ExportImport;
 using ");
             
-            #line 51 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 51 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 59 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".BusinessRepository.Mappers;\r\nusing ");
             
-            #line 52 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 52 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Interfaces.BusinessRepository;\r\nusing ");
             
-            #line 53 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 53 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
@@ -224,42 +232,42 @@ using ");
             this.Write(".Models;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Exceptions;\r\nusing Sage.CA.SBS.ERP" +
                     ".Sage300.Common.Resources;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 59 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 59 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".BusinessRepository\r\n{\r\n    /// <summary>\r\n    /// Class ");
             
-            #line 62 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 70 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write(" Repository\r\n    /// </summary>\r\n    public class ");
             
-            #line 64 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("Repository : BaseHeaderDetailRepository, I");
             
-            #line 64 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("Repository\r\n    {\r\n        #region Private Variables\r\n\r\n");
             
-            #line 68 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 76 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
         var xmlEntities = settings.XmlEntities;
         var rotoId2EntityName = new Dictionary<string, string>();
@@ -278,13 +286,13 @@ using ");
             #line hidden
             this.Write("\r\n");
             
-            #line 82 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 90 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  // define business entities  
             
             #line default
             #line hidden
             
-            #line 83 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 91 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  foreach(KeyValuePair<string, string> entry in rotoId2EntityVarName)
     {
         var entityVariableName = "_" + entry.Value + "Entity";
@@ -294,21 +302,21 @@ using ");
             #line hidden
             this.Write("        /// <summary>\r\n        /// Business Entity - ");
             
-            #line 88 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 96 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entry.Key));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        private IBusinessEntity ");
             
-            #line 90 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 98 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityVariableName));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\n");
             
-            #line 92 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 100 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
 }
 
@@ -316,13 +324,13 @@ using ");
             #line default
             #line hidden
             
-            #line 95 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 103 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  // define business entity mappers 
             
             #line default
             #line hidden
             
-            #line 96 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 104 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  foreach(KeyValuePair<string, string> entry in rotoId2EntityVarName)
     {
         // skip entity in a grid
@@ -349,35 +357,35 @@ using ");
             #line hidden
             this.Write("        /// <summary>\r\n        /// Business Entity Mapper - ");
             
-            #line 118 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 126 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entry.Key));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        private readonly ");
             
-            #line 120 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 128 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityMapperVariableType));
             
             #line default
             #line hidden
             this.Write("<");
             
-            #line 120 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 128 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 120 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 128 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityMapperVariableName));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\n");
             
-            #line 122 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 130 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
 }
 
@@ -388,14 +396,14 @@ using ");
                     "      /// Sets Context and DBLink\r\n        /// </summary>\r\n        /// <param na" +
                     "me=\"context\">Context</param>\r\n        public ");
             
-            #line 134 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 142 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("Repository(Context context):base(context)\r\n        {\r\n");
             
-            #line 136 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 144 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
  
             foreach(KeyValuePair<string, string> entry in rotoId2EntityVarName)
             {
@@ -432,7 +440,7 @@ using ");
         {
 ");
             
-            #line 167 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 175 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
             var headerEntityName = String.Format("_{0}Entity", rotoId2EntityVarName[settings.HeaderNode.Attribute("view").Value]);
 
@@ -441,27 +449,27 @@ using ");
             #line hidden
             this.Write("\r\n            var userAccess = base.GetAccessRights(");
             
-            #line 171 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 179 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
-            this.Write(");\r\n            if (SecurityCheck(Security.");
+            this.Write(");\r\n            if (SecurityCheck(");
             
-            #line 172 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
-            
-            #line default
-            #line hidden
-            this.Write("Import))\r\n            {\r\n                userAccess.SecurityType |= SecurityType." +
-                    "Import;\r\n            }\r\n            if (SecurityCheck(Security.");
-            
-            #line 176 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
+            #line 180 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityContext));
             
             #line default
             #line hidden
-            this.Write(@"Export))
+            this.Write(" + \"Import\"))\r\n            {\r\n                userAccess.SecurityType |= Security" +
+                    "Type.Import;\r\n            }\r\n            if (SecurityCheck(");
+            
+            #line 184 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityContext));
+            
+            #line default
+            #line hidden
+            this.Write(@" + ""Export""))
             {
                 userAccess.SecurityType |= SecurityType.Export;
             }
@@ -475,7 +483,7 @@ using ");
         {
 ");
             
-            #line 188 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 196 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
            // open all the entities
             foreach (var ent in xmlEntities.Root.Descendants().Where(e => e.Name == "entity"))
@@ -495,7 +503,7 @@ using ");
             #line hidden
             this.Write("        }\r\n");
             
-            #line 203 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 211 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
     var headerEntity = rotoId2EntityName[settings.HeaderNode.Attribute("view").Value];
 
@@ -505,7 +513,7 @@ using ");
             #line hidden
             this.Write("\r\n        /// <summary>\r\n        /// Get ");
             
-            #line 209 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 217 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
@@ -514,21 +522,21 @@ using ");
                     "Key\">data type of the primary key</typeparam>\r\n        /// <param name=\"id\">key " +
                     "value</param>\r\n        /// <returns>");
             
-            #line 213 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 221 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        public ");
             
-            #line 214 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 222 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" GetById<TKey>(TKey id)\r\n        {\r\n");
             
-            #line 216 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 224 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
 
 var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings.HeaderNode.Attribute("view").Value]);
@@ -539,224 +547,224 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
             #line hidden
             this.Write("            CheckRights(");
             
-            #line 221 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 229 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(", SecurityType.Inquire);\r\n\t\t\t");
             
-            #line 222 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 230 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(".Order = ");
             
-            #line 222 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 230 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(viewOrder));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t");
             
-            #line 223 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 231 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(".SetValue(");
             
-            #line 223 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 231 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(".Fields.");
             
-            #line 223 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 231 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(", id.ToString(), true);\r\n            return !");
             
-            #line 224 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 232 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(".Read(false) ? null : ");
             
-            #line 224 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 232 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(");
             
-            #line 224 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 232 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n\r\n       /// <summary>\r\n        /// Save ");
             
-            #line 228 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 236 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write(" record\r\n        /// </summary>\r\n        /// <param name=\"model\">");
             
-            #line 230 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 238 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write(" model</param>\r\n        /// <returns>");
             
-            #line 231 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 239 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        public ");
             
-            #line 232 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 240 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" Save(");
             
-            #line 232 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 240 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" model)\r\n        {\r\n            CheckRights(");
             
-            #line 234 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 242 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(", SecurityType.Modify);\r\n\r\n            ");
             
-            #line 236 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 244 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(model, ");
             
-            #line 236 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 244 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n            ");
             
-            #line 237 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 245 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(".Update();\r\n            \r\n            return ");
             
-            #line 239 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 247 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(");
             
-            #line 239 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 247 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n\r\n        /// <summary>\r\n        /// Add ");
             
-            #line 243 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 251 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write(" record\r\n        /// </summary>\r\n        /// <param name=\"model\">");
             
-            #line 245 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 253 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write(" model</param>\r\n        /// <returns>");
             
-            #line 246 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 254 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        public ");
             
-            #line 247 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 255 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" Add(");
             
-            #line 247 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 255 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" model)\r\n        {\r\n            CheckRights(");
             
-            #line 249 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 257 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(", SecurityType.Add);\r\n\r\n            ");
             
-            #line 251 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 259 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(model, ");
             
-            #line 251 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 259 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n            ");
             
-            #line 252 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 260 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(".Insert();\r\n            \r\n            return ");
             
-            #line 254 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 262 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(");
             
-            #line 254 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 262 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n\r\n        /// <summary>\r\n        /// Delete ");
             
-            #line 258 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 266 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntity));
             
             #line default
@@ -764,35 +772,35 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
             this.Write(" record\r\n        /// </summary>\r\n        /// <param name=\"filter\">filter for dele" +
                     "ting a record</param>\r\n        /// <returns></returns>\r\n        public ");
             
-            #line 262 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 270 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" Delete(Expression<Func<");
             
-            #line 262 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 270 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(", Boolean>> filter)\r\n        {\r\n            CheckRights(");
             
-            #line 264 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 272 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(", SecurityType.Delete);\r\n            if (Search(");
             
-            #line 265 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 273 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(", filter))\r\n            {\r\n                ");
             
-            #line 267 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 275 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
@@ -801,63 +809,63 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
                     " ExceptionHelper.RowNotFoundException(CommonResx.DeleteFailedNoRecordMessage);\r\n" +
                     "            }\r\n            return ");
             
-            #line 273 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 281 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(");
             
-            #line 273 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 281 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n\r\n        /// <summary>\r\n        /// Creates a new ");
             
-            #line 277 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 285 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(" record\r\n        /// </summary>\r\n        /// <returns>");
             
-            #line 279 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 287 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(" viewModel</returns>\r\n        public ");
             
-            #line 280 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 288 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(" CreateNewRecord()\r\n        {\r\n            CheckRights(");
             
-            #line 282 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 290 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(", SecurityType.Add);\r\n            ");
             
-            #line 283 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 291 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
             #line hidden
             this.Write(".Init();\r\n            return ");
             
-            #line 284 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 292 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerMapperName));
             
             #line default
             #line hidden
             this.Write(".Map(");
             
-            #line 284 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 292 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerEntityName));
             
             #line default
@@ -879,7 +887,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
         {
 ");
             
-            #line 299 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+            #line 307 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
             // create all business entity properties
             foreach (var node in settings.HeaderNode.DescendantsAndSelf().Where(e => e.Name == "entity"))
@@ -887,7 +895,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
                 var viewID = node.Attribute("view").Value;
                 var modelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == viewID).First().Properties[BusinessView.Constants.ModelName];
 
-                WriteLine(String.Format("{0}var {1} = new BusinessEntityProperty({2}.EntityName, ViewKeyType.SystemGenerated /* FIXME ViewKeyType.UserSpecified */);", new string(' ', 12), rotoId2EntityVarName[viewID], modelName));
+                WriteLine(String.Format("{0}var {1} = new BusinessEntityProperty(CommonUtil.EntityContextReplacement({2}.EntityName, Context.ScreenContext.EntityContext), ViewKeyType.SystemGenerated /* FIXME ViewKeyType.UserSpecified */);", new string(' ', 12), rotoId2EntityVarName[viewID], modelName));
             }
 
             WriteLine("");
@@ -932,7 +940,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 344 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+        #line 352 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
         void ComposeChildren(XElement node, Dictionary<string, string> rotoId2EntityVarName)
         {
@@ -981,7 +989,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
         #line default
         #line hidden
         
-        #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\Repository.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

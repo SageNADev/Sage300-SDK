@@ -188,7 +188,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Code Type is based upon the Repository Type that will be used for the Business View, Report or Dynamic Query..
+        ///   Looks up a localized string similar to A Code Type is based upon the Repository Type that will be used for the Business View or Report..
         /// </summary>
         internal static string CodeTypeDescriptionTip {
             get {
@@ -427,15 +427,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string EntityCompositionGridTip {
             get {
                 return ResourceManager.GetString("EntityCompositionGridTip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For Dynamic Queries, the Field Names and Data Types must match order of the return columns of the SQL Query.
-        /// </summary>
-        internal static string EntityGridTip {
-            get {
-                return ResourceManager.GetString("EntityGridTip", resourceCulture);
             }
         }
         

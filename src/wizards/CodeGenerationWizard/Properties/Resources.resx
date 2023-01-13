@@ -201,9 +201,6 @@
   <data name="IsReadOnly" xml:space="preserve">
     <value>Read Only</value>
   </data>
-  <data name="EntityGridTip" xml:space="preserve">
-    <value>For Dynamic Queries, the Field Names and Data Types must match order of the return columns of the SQL Query</value>
-  </data>
   <data name="EntityName" xml:space="preserve">
     <value>Entity Name:</value>
   </data>
@@ -509,7 +506,7 @@
     <value>Edit Entity</value>
   </data>
   <data name="CodeTypeDescriptionTip" xml:space="preserve">
-    <value>A Code Type is based upon the Repository Type that will be used for the Business View, Report or Dynamic Query.</value>
+    <value>A Code Type is based upon the Repository Type that will be used for the Business View or Report.</value>
   </data>
   <data name="StepTitleEntities" xml:space="preserve">
     <value>Add/Edit {0} Entities</value>

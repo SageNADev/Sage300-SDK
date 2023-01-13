@@ -153,19 +153,27 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
     var viewId = view.Properties[BusinessView.Constants.ViewId];
     var modelName = view.Properties[BusinessView.Constants.ModelName];
 
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = viewId;
+    if (moduleId == "PR")
+    {
+         // Will be resolved at runtime
+		 entityContext = "~~" + viewId.Substring(2);
+    }
+
             
             #line default
             #line hidden
             this.Write("// ");
             
-            #line 35 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 43 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n#region Namespace\r\n\r\n");
             
-            #line 39 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 47 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
     if (generateDynamicEnablement)
     {
@@ -176,7 +184,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             this.Write("using System.Collections.Generic;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Models.At" +
                     "tributes;\r\n");
             
-            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 53 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
     }
 
@@ -185,68 +193,50 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("#endregion\r\n\r\nnamespace ");
             
-            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 58 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 58 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models");
             
-            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 58 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(extension));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// Contains list of ");
             
-            #line 53 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(" Constants\r\n    /// </summary>\r\n    public partial class ");
             
-            #line 55 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 63 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
-            this.Write("\r\n    {\r\n");
+            this.Write("\r\n    {\r\n        /// <summary>\r\n        /// Entity Name\r\n        /// </summary>\r\n" +
+                    "        public const string EntityName = \"");
             
-            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
-
-    if (!repositoryType.Equals(RepositoryType.DynamicQuery))
-    {
-
-            
-            #line default
-            #line hidden
-            this.Write("        /// <summary>\r\n        /// Entity Name\r\n        /// </summary>\r\n        p" +
-                    "ublic const string EntityName = \"");
-            
-            #line 64 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(viewId));
+            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityContext));
             
             #line default
             #line hidden
             this.Write("\";\r\n\r\n");
             
-            #line 66 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
-
-    }
-
-            
-            #line default
-            #line hidden
-            
-            #line 69 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 70 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
     if (generateDynamicEnablement)
     {
@@ -266,7 +256,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
                 {
 ");
             
-            #line 83 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 84 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
                 // Iterate fields to determine which field(s) have isDynamicEnablement
                 for (var i = 0; i < view.Fields.Count; i++)
@@ -284,21 +274,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("                    {\"");
             
-            #line 95 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 96 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.ServerFieldName));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 95 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 96 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write("\"},\r\n");
             
-            #line 96 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 97 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
                     }
                 }
@@ -308,27 +298,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("                };\r\n            }\r\n        }\r\n");
             
-            #line 103 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 104 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
     }
 
             
             #line default
             #line hidden
-            this.Write("\r\n");
+            this.Write("\r\n        #region Fields Properties\r\n\r\n        /// <summary>\r\n        /// Contain" +
+                    "s list of ");
             
-            #line 107 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
-
-    if (!repositoryType.Equals(RepositoryType.DynamicQuery))
-    {
-
-            
-            #line default
-            #line hidden
-            this.Write("        #region Fields Properties\r\n\r\n        /// <summary>\r\n        /// Contains " +
-                    "list of ");
-            
-            #line 114 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 111 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -336,7 +316,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             this.Write(" Field Constants\r\n        /// </summary>\r\n        public class Fields\r\n        {\r" +
                     "\n");
             
-            #line 118 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 115 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
                 // Iterate fields collection
                 for (var i = 0; i < view.Fields.Count; i++)
@@ -358,7 +338,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             this.Write("            // TODO The naming convention of this property has to be manually eva" +
                     "luated\r\n");
             
-            #line 134 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 131 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
                     }
 
@@ -367,47 +347,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("            /// <summary>\r\n            /// Property for ");
             
-            #line 138 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 135 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write("\r\n            /// </summary>\r\n            public const string ");
             
-            #line 140 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(" = \"");
             
-            #line 140 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.ServerFieldName));
             
             #line default
             #line hidden
             this.Write("\";\r\n\r\n");
             
-            #line 142 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 139 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
                 }
 
             
             #line default
             #line hidden
-            this.Write("        }\r\n\r\n        #endregion\r\n");
+            this.Write("        }\r\n\r\n        #endregion\r\n\r\n        #region Index Properties\r\n\r\n        //" +
+                    "/ <summary>\r\n        /// Contains list of ");
             
-            #line 148 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
-
-    }
-
-            
-            #line default
-            #line hidden
-            this.Write("        #region Index Properties\r\n\r\n        /// <summary>\r\n        /// Contains l" +
-                    "ist of ");
-            
-            #line 154 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 149 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -415,7 +386,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             this.Write(" Index Constants\r\n        /// </summary>\r\n        public class Index\r\n        {\r\n" +
                     "");
             
-            #line 158 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 153 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
                 // Iterate fields collection
                 for (var i = 0; i < view.Fields.Count; i++)
@@ -437,7 +408,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             this.Write("            // TODO The naming convention of this property has to be manually eva" +
                     "luated\r\n");
             
-            #line 174 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 169 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
                     }
 
@@ -446,28 +417,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Common.Class
             #line hidden
             this.Write("            /// <summary>\r\n            /// Property Indexer for ");
             
-            #line 178 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write("\r\n            /// </summary>\r\n            public const int ");
             
-            #line 180 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 175 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 180 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 175 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Id));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\n");
             
-            #line 182 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
+            #line 177 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Common\Class\ModelFields.tt"
 
                 }
 

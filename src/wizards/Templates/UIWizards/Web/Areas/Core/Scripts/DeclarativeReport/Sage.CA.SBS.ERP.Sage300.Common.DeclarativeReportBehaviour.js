@@ -1,4 +1,4 @@
-/* Copyright (c) 2021 Sage Software, Inc.  All rights reserved. */
+/* Copyright(c) 2022 The Sage Group plc or its licensors.All rights reserved. */
 
 // Enable the following commented line to enable TypeScript static type checking
 // @ts-check
@@ -64,7 +64,7 @@ declarativeReportUI = {
             let controlType = param.ControlType;
 
             // Active control and not hidden
-            if (isHidden == false && controlType != ControlTypeEnum.Hidden) {
+            if (isHidden == false && controlType != ControlTypeEnum.Hidden && controlType != ControlTypeEnum.Section) {
                 declarativeReportUI.setFocusByControlType(param, FOCUSDELAY);
                 foundFocusableControl = true;
                 break;
@@ -212,9 +212,12 @@ declarativeReportUI = {
 
                     // Strip time from Datepicker value if necessary
                     if (param.ControlType === ControlTypeEnum.Datepicker) {
-                        val = new Date(val.toDateString());
+                        const dateVal = $(controlId).data("kendoDatePicker").value();
+                        if (dateVal != null) {
+                            var date = new Date(val);
+                            val = sg.utls.formatDate(date, "yyyyMMdd");
+                        }
                     }
-
                     param.Value = val;
                     break;
             }
@@ -238,21 +241,23 @@ declarativeReportUI = {
                 var controlFrom = declarativeReportUI.parameters.Parameters.find(x => x.Name === range.From);
                 var controlTo = declarativeReportUI.parameters.Parameters.find(x => x.Name === range.To);
                 if (controlFrom && controlTo) {
+                    const isDateValue = controlFrom.ControlType === ControlTypeEnum.Datepicker;
 
-                    const v1 = $(`#${controlFrom.ID}`).val();
-                    const fromVal = v1 ? v1.toUpperCase() : v1;
+                            const v1 = $(`#${controlFrom.ID}`).val();
+                            const fromVal = v1 ? v1.toUpperCase() : v1;
 
-                    const v2 = $(`#${controlTo.ID}`).val();
-                    const toVal = v2 ? v2.toUpperCase() : v2;
+                            const v2 = $(`#${controlTo.ID}`).val();
+                            const toVal = v2 ? v2.toUpperCase() : v2;
 
-                    if (fromVal > toVal) {
-                        if (range.LabelFunction) {
-                            const isFunc = declarativeReportUI.getFunction(range.LabelFunction);
-                            errorRangeMessage = (isFunc instanceof Function) ? isFunc() : range.LabelText;
-                        }
-                        else {
-                            errorRangeMessage = range.LabelText;
-                        }
+                            let showErrorMessage = isDateValue && fromVal && toVal ? Date.parse(fromVal) > Date.parse(toVal) : fromVal > toVal;
+                            if (showErrorMessage) {
+                                if (range.LabelFunction) {
+                                    const isFunc = declarativeReportUI.getFunction(range.LabelFunction);
+                                    errorRangeMessage = (isFunc instanceof Function) ? isFunc() : range.LabelText;
+                                }
+                                else {
+                                    errorRangeMessage = range.LabelText;
+                                }
                     }
                 }
             });
@@ -337,6 +342,7 @@ declarativeReportUI = {
                         dataValueField: "Value",
                         dataSource: param.DataSource
                     });
+
                     $(controlId).data("kendoDropDownList").select((dataItem) => {
                         return dataItem.Value === defaultValue;
                     });
@@ -386,7 +392,7 @@ declarativeReportUI = {
 
                 case ControlTypeEnum.Datepicker:
                     sg.utls.kndoUI.datePicker(controlName);
-                    $(controlId).val(defaultValue);
+                    $(controlId).val(defaultValue === '12/31/9999' ? new Date().toLocaleDateString(globalResource.Culture) : defaultValue);
                     break;
 
                 case ControlTypeEnum.RadioButtonGroup:

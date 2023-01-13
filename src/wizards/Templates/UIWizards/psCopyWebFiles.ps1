@@ -7,6 +7,7 @@
 # Note:    Ensure that you have defined an environment variable called 
 #          CNA2_SOURCE_ROOT that points to the root of your local CNA2 
 #          source repository.
+#          temp Dev_Payroll_SOURCE_ROOT must be setup
 #
 #          This file is meant to be called from CopyWebRepoFiles.bat
 #
@@ -31,7 +32,7 @@
 # that is set to your local CNA2 source directory. If this environment variable
 # is empty or undefined, then display a message on how to resolve/set it.
 #
-$rootCNA2SourceFolder = $Env:CNA2_SOURCE_ROOT
+$rootCNA2SourceFolder = $Env:Dev_Payroll_SOURCE_ROOT
 if ($rootCNA2SourceFolder -eq '') {
   Write-Host 'Please ensure that you have defined an environment variable'
   Write-Host 'named CNA2-SOURCE-ROOT that points to your local CNA2 source directory.'

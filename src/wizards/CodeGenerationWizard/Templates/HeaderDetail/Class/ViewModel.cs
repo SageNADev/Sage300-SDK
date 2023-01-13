@@ -34,7 +34,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -154,12 +154,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
     var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
     var enumsCount = view.Enums.Count;
 
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = (moduleId == "PR");
+
             
             #line default
             #line hidden
             this.Write("// ");
             
-            #line 36 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 39 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -169,21 +172,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
                     "S.ERP.Sage300.Common.Models;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;" +
                     "\r\nusing ");
             
-            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n");
             
-            #line 47 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
 
 	if (enumsCount > 0)
 	{
@@ -193,21 +196,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             #line hidden
             this.Write("using ");
             
-            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models.Enums;\r\n");
             
-            #line 52 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 55 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
 
 	}	
 
@@ -216,42 +219,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             #line hidden
             this.Write("#endregion\r\n\r\nnamespace ");
             
-            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models\r\n{\r\n    /// <summary>\r\n    /// Class for ");
             
-            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 63 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel\r\n    /// </summary>\r\n    public class ");
             
-            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("ViewModel : ViewModelBase<");
             
-            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(headerModelName));
             
             #line default
             #line hidden
             this.Write(">\r\n    {\r\n");
             
-            #line 64 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
 
         foreach (var value in view.Enums.Values)
         {
@@ -264,42 +267,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             #line hidden
             this.Write("        /// <summary>\r\n        /// Get");
             
-            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 75 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        public IEnumerable<CustomSelectList> Get");
             
-            #line 74 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumName));
             
             #line default
             #line hidden
             this.Write(" => EnumUtility.GetItemsList<");
             
-            #line 74 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 74 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models.Enums.");
             
-            #line 74 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumName));
             
             #line default
             #line hidden
             this.Write(">();\r\n\r\n");
             
-            #line 76 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
 
         }
 
@@ -308,9 +311,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
             #line hidden
             this.Write("        /// <summary>\r\n        /// Returns true if User has Modify Access\r\n      " +
                     "  /// </summary>\r\n        public bool HasModifyAccess => UserAccess == null || U" +
-                    "serAccess.SecurityType.HasFlag(SecurityType.Modify);\r\n\r\n\t\t");
+                    "serAccess.SecurityType.HasFlag(SecurityType.Modify);\r\n");
             
-            #line 84 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+            #line 86 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
 
 			foreach(var view in settings.Entities)
 			{
@@ -319,7 +322,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
                     var viewName = view.Properties[BusinessView.Constants.EntityName];
 			    }
 			}
-		
+
+            
+            #line default
+            #line hidden
+            
+            #line 95 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+
+	if (entityContext)
+	{
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        /// <summary>\r\n        /// Payroll Type (CP or UP for JavaScript usage)" +
+                    "\r\n        /// </summary>\r\n        public string PayrollType { get; set; }\r\n");
+            
+            #line 104 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\Class\ViewModel.tt"
+
+	}
+
             
             #line default
             #line hidden

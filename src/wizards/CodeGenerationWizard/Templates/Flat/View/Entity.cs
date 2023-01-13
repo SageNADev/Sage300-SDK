@@ -36,7 +36,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -179,7 +179,7 @@ if (view.Options[BusinessView.Constants.GenerateGrid])
             
             #line default
             #line hidden
-            this.Write("\t@model ");
+            this.Write("@model ");
             
             #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
@@ -211,7 +211,7 @@ else
             
             #line default
             #line hidden
-            this.Write("\t@model ");
+            this.Write("@model ");
             
             #line 52 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));

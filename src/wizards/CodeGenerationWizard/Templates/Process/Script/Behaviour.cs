@@ -392,7 +392,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Script
 
     // Create code for finder
     snippet = new StringBuilder();
-    SnippetHelper.FinderJavaScript(8, settings, snippet);
+    SnippetHelper.FinderJavaScript(8, settings, snippet, localEntityName);
     if (!string.IsNullOrEmpty(snippet.ToString()))
     {
         WriteLine(snippet.ToString());

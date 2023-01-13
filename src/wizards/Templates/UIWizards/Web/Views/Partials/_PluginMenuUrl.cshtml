@@ -72,31 +72,6 @@
             </ul>
         </li>
     }
-    else if (level2Item.Data.IsRootItem.HasValue && level2Item.Data.IsRootItem.Value && !string.IsNullOrEmpty(level2Item.Data.Content))
-    {
-        string menuLabel = null;
-        string iconPath = null;
-        string dualEmployeeTCParameter = "?dualEmployeeTC=false";
-
-        if (!(ViewBag.IsCATimeCardEnable == true && ViewBag.IsUSTimeCardEnable == true))
-        {
-            menuLabel = NavigationResx.PR_EmployeeTimeCard;
-            iconPath = @"..\..\..\Content\Images\nav\PR\icon_timecard.svg";
-        }
-        else
-        {
-            dualEmployeeTCParameter = "?dualEmployeeTC=true";
-        }
-
-        if (ViewBag.IsCATimeCardEnable == true && level2Item.Data.ScreenUrl == "PR/EmployeeTimecard/Index/1")
-        {
-            @CreatePayRollMenu(level2Item.Data.Content, menuLabel ?? NavigationResx.PR_EmployeeTimeCard_CA, Request.Url.Segments, level2Item.Data.ScreenUrl, dualEmployeeTCParameter, iconPath ?? @"..\..\..\Content\Images\nav\PR\icon_timecard_canada.svg")
-        }
-        else if (ViewBag.IsUSTimeCardEnable == true && level2Item.Data.ScreenUrl == "PR/EmployeeTimecard/Index/0")
-        {
-            @CreatePayRollMenu(level2Item.Data.Content, menuLabel ?? NavigationResx.PR_EmployeeTimeCard_US, Request.Url.Segments, level2Item.Data.ScreenUrl, dualEmployeeTCParameter, iconPath ?? @"..\..\..\Content\Images\nav\PR\icon_timecard_us.svg")
-        }
-    }
     else
     {
         itemIndex++;
@@ -137,12 +112,6 @@
 <script type="text/javascript">
     @Html.ConvertToJsVariableUsingNewtonSoft("PluginMenuList", Model.OrderBy(m => m.Data.MenuItemOrder));
 </script>
-
-@helper CreatePayRollMenu(string content, string label, string[] urlSegments, string screenUrl, string parameter, string iconPath)
-{
-    @Html.Raw(HttpUtility.HtmlDecode(
-        string.Format(content, label, string.Join(string.Empty, urlSegments, 0, 4) + screenUrl + parameter, iconPath)));
-}
 
 @helper CreateMenuGroup(NavigableMenuViewModel<NavigableMenu> parentItem, Stack menuStack, string notAvailable, string domainUrl, bool firstItem)
 {

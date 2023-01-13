@@ -35,7 +35,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
- /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -248,70 +248,70 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             
             #line default
             #line hidden
-            this.Write("UI.initGrids();\r\n    ");
+            this.Write("UISuccess.initialLoad(");
+            
+            #line 74 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
+            
+            #line default
+            #line hidden
+            this.Write("ViewModel);\r\n    ");
             
             #line 75 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("UI.initTabs();\r\n    ");
+            this.Write("UI.initGrids();\r\n    ");
             
             #line 76 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("UI.initButtons();\r\n    ");
+            this.Write("UI.initTabs();\r\n    ");
             
             #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("UI.initFinders();\r\n    ");
+            this.Write("UI.initButtons();\r\n    ");
             
             #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("UI.initNumericTextboxes();\r\n    ");
+            this.Write("UI.initFinders();\r\n    ");
             
             #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("UI.initTextboxes();\r\n    ");
+            this.Write("UI.initNumericTextboxes();\r\n    ");
             
             #line 80 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("UI.initTimePickers();\r\n    ");
+            this.Write("UI.initTextboxes();\r\n    ");
             
             #line 81 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("UI.initCheckBoxes();\r\n    ");
+            this.Write("UI.initTimePickers();\r\n    ");
             
             #line 82 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
             
             #line default
             #line hidden
-            this.Write("UISuccess.initialLoad(");
-            
-            #line 82 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
-            
-            #line default
-            #line hidden
-            this.Write("ViewModel);\r\n    ");
+            this.Write("UI.initCheckBoxes();\r\n    ");
             
             #line 83 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
@@ -673,7 +673,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             
             #line default
             #line hidden
-            this.Write("UI\r\n     * @public\r\n     */\r\n    initGrids: () => {\r\n        ");
+            this.Write("UI\r\n     * @public\r\n     */\r\n    initGrids: () => {\r\n");
             
             #line 206 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
 
@@ -688,7 +688,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
 				}
 			 }
              PopIndent();
-        
+
             
             #line default
             #line hidden
@@ -706,7 +706,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
 
     // Create code for finder
     snippet = new StringBuilder();
-    SnippetHelper.FinderJavaScript(8, settings, snippet);
+    SnippetHelper.FinderJavaScript(8, settings, snippet, localEntityName);
     if (!string.IsNullOrEmpty(snippet.ToString()))
     {
         WriteLine(snippet.ToString());

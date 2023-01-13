@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */
 
 // @ts-check
 
@@ -1830,11 +1830,11 @@ $.extend(sg.utls, {
 
                 // Set the initial control focus to 'Yes' or 'Ok' button
                 // Note: Seem to need small delay before this works correctly.
-                let $okButton = $('#kendoConfirmationAcceptButton');
-                if ($okButton) {
+                let $focusButton = $('#kendoConfirmationAcceptButton');
+                if ($focusButton) {
                     const delay = 500;
                     setTimeout(() => {
-                        $okButton.focus();
+                        $focusButton.focus();
                     }, delay);
                 }
             }
@@ -2356,7 +2356,7 @@ $.extend(sg.utls, {
      * @param {object} data 
      * @param {number} defaultWidth
      */
-     openKendoWindowPopup: function (id, data, defaultWidth) {
+     openKendoWindowPopup: function (id, data, defaultWidth, height) {
         $(id + " .menu-with-submenu").remove();    // to remove Text sizing option, this is because the popup is not from iFrame ...
 
         var kendoWindow = $(id).data("kendoWindow");
@@ -2364,7 +2364,7 @@ $.extend(sg.utls, {
             console.log('Sage.CA.SBS.ERP.Sage300.Common.global.js -> openKendoWindowPopup() -> kendoWindow has not been initialized.')
         }
 
-        if (data != null) {
+         if (data != null) {
             $(id).html(data);
             $.validator.unobtrusive.parse("form");
             sg.utls.initFormValidation();
@@ -2383,13 +2383,16 @@ $.extend(sg.utls, {
         //    $('.k-window-content').css("width", "960px");
         //}
         //end:remove horizondal scrollbar of the popup windows
-        hasVerticalscroll = $(".k-window-content:visible").hasScroll('y');
+        let hasVerticalscroll = $(".k-window-content:visible").hasScroll('y');
         if (hasVerticalscroll && defaultWidth && defaultWidth != null) {
             $('.k-window-content:visible').css("width", defaultWidth + "px");
         }
         else if (hasVerticalscroll && defaultWidth == null) {
             $('.k-window-content:visible').css("width", "960px");  //remove horizondal scrollbar of the popup windows
             //console.log("scroll true");
+        }
+        else if (height) {
+            $('.k-window-content:visible').css("height", height + "px");
         } else {
             $('.k-window-content:visible').css("width", "auto");
             // console.log("scroll false");
@@ -2405,6 +2408,7 @@ $.extend(sg.utls, {
             $(this).children(".sub-menu").hide();
         });
 
+         return kendoWindow;
     },
 
     closeKendoWindowPopup: function (id, data) {
@@ -2896,8 +2900,8 @@ $.extend(sg.utls, {
         }
     },
 
-    showMessagePopupInfo: function (messageType, message, div) {
-        sg.utls.showMessageInfoInCustomDiv(messageType, message, div);
+    showMessagePopupInfo: function (messageType, message, div, handler) {
+        sg.utls.showMessageInfoInCustomDiv(messageType, message, div, handler);
     },
 
     isSuccessMessage: function (message) {
@@ -2989,8 +2993,18 @@ $.extend(sg.utls, {
         }
     },
 
-    showMessageInfo: function (messageType, message) {
-        sg.utls.showMessageInfoInCustomDiv(messageType, message, "message");
+    showMessageInfo: function (messageType, message, handler) {
+        sg.utls.showMessageInfoInCustomDiv(messageType, message, "message", handler);
+    },
+
+    /**
+   * Date format for Declarative Framework Reports
+   * @param {any} date date to be formatted
+   * @param {string} format date format 
+   */
+    formatDate: function (date, format) {
+        if (format === undefined) format = 'MM/dd/yyyy';
+        return kendo.toString(new Date(date), format);
     },
 
     /**
@@ -3046,7 +3060,7 @@ $.extend(sg.utls, {
         messageDiv.html(messageHTML);
     },
 
-    showMessageInfoInCustomDiv: function (messageType, message, divId) {
+    showMessageInfoInCustomDiv: function (messageType, message, divId, handler) {
         var messageHTML = "";
         var messageDivId = "#" + divId;
         var messageDiv = $(messageDivId);
@@ -3084,6 +3098,15 @@ $.extend(sg.utls, {
 			//Inject an overlay that is semi-opaque. 
             messageDiv.parent().append("<div id='injectedOverlay' class='k-overlay'></div>");
             $('#injectedOverlay').css('z-index', '999998');
+        }
+
+        // Added callback to perform action when message box is closed
+        if (handler !== undefined && handler !== null) {
+            var closeHandler = function () {
+                handler();
+                $(document).off("click", ".msgCtrl-close", closeHandler);
+            };
+            $(document).on("click", ".msgCtrl-close", closeHandler);
         }
 
     },

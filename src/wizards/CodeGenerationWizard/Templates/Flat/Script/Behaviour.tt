@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -71,6 +71,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
      * @public
      */
     init: () => {
+    <#=localEntityName#>UISuccess.initialLoad(<#=containerName#>ViewModel);
     <#=localEntityName#>UI.initGrids();
     <#=localEntityName#>UI.initTabs();
     <#=localEntityName#>UI.initButtons();
@@ -79,7 +80,6 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
     <#=localEntityName#>UI.initTextboxes();
     <#=localEntityName#>UI.initTimePickers();
     <#=localEntityName#>UI.initCheckBoxes();
-    <#=localEntityName#>UISuccess.initialLoad(<#=containerName#>ViewModel);
     <#=localEntityName#>UISuccess.setkey();
     },
 
@@ -203,7 +203,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
      * @public
      */
     initGrids: () => {
-        <#
+<#
              PushIndent("        ");
 			 foreach(var view in settings.Entities)
 			 {
@@ -215,7 +215,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 				}
 			 }
              PopIndent();
-        #>
+#>
     },
 
     /**
@@ -228,7 +228,7 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
 <#
     // Create code for finder
     snippet = new StringBuilder();
-    SnippetHelper.FinderJavaScript(8, settings, snippet);
+    SnippetHelper.FinderJavaScript(8, settings, snippet, localEntityName);
     if (!string.IsNullOrEmpty(snippet.ToString()))
     {
         WriteLine(snippet.ToString());
