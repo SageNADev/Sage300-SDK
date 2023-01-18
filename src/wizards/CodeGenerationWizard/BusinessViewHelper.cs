@@ -245,8 +245,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Payroll
             if (moduleId == "PR")
             {
-                // TODO Reports do not have a view and therefore sep logic is required (1/13/23) JT
-                pageUrl += "/Index/" + (viewId.Substring(0,2) == "UP" ? "0" : "1");
+                // Default to 0. Reports will show as 0 and the file will need to be 
+                // manually updated to 1 if testing report for CP
+                pageUrl += "/Index/" + (viewId.Substring(0,2) == "CP" ? "1" : "0");
             }
 
             if (File.Exists(pageUrlFile))
