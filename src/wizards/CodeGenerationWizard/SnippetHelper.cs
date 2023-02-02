@@ -311,7 +311,29 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var entityName = controlElement.Attribute("text").Value;
             var gridName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
-            snippet.AppendLine(new string(' ', depth * 4) + string.Format("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, entityName));
+
+            // Optional Fields
+            var optionalFields = gridName.Contains("Optional");
+
+            if (optionalFields)
+            {
+                if (gridName.Contains("Detail"))
+                {
+                    snippet.AppendLine(new string(' ', depth * 4) + "<div id=\"detailOptionalField\" style=\"display: none; \">");
+                }
+                else
+                {
+                    snippet.AppendLine(new string(' ', depth * 4) + "<div id=\"optionalField\" style=\"display: none; \">");
+                }
+            }
+
+            snippet.AppendLine(new string(' ', depth + (optionalFields ? 1 : 0) * 4) + string.Format("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, entityName));
+
+            // Optional Fields
+            if (optionalFields)
+            {
+                snippet.AppendLine(new string(' ', depth * 4) + "</div>");
+            }
         }
 
         /// <summary>

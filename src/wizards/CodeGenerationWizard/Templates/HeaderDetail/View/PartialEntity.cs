@@ -18,7 +18,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class PartialEntity : PartialEntityBase
     {
@@ -29,121 +29,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 27 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 27 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
 
     // Locals
      var entityName = settings.EntitiesContainerName;
@@ -154,14 +154,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
     var modelName = view.Properties[BusinessView.Constants.ModelName];
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");
-    var xmlLayout = settings.XmlLayout;
 
             
             #line default
             #line hidden
             this.Write("@* ");
             
-            #line 39 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 38 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -175,77 +174,77 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
 @using AnnotationsResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.AnnotationsResx
 @using ");
             
-            #line 46 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 46 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 46 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Resources.Forms.");
             
-            #line 46 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write("\r\n@using ");
             
-            #line 47 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 47 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Web.Areas.");
             
-            #line 47 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Constants\r\n\r\n@model ");
             
-            #line 49 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 49 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models.");
             
-            #line 49 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ViewModel\r\n\r\n<div>\r\n");
             
-            #line 52 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
  
 // Counter for indentation
 int depth = 0;
@@ -266,7 +265,7 @@ if (element.HasElements)
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Development\Branches\UIWizard\Columbus-Innovation\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\PartialEntity.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView _viewField;
 

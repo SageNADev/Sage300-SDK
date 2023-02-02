@@ -173,7 +173,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.View
             
             #line 42 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
-if (view.Options[BusinessView.Constants.GenerateGrid])
+if (view.Options[BusinessView.Constants.HasGrid])
 {
 
             
@@ -366,13 +366,13 @@ else
             #line default
             #line hidden
             this.Write(".Entity)\r\n                </div>\r\n                @Html.Partial(Core.OptionsMenu," +
-                    " Model.UserAccess)\t\r\n\t");
+                    " Model.UserAccess)\t\r\n");
             
             #line 83 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
-	if (!view.Options[BusinessView.Constants.GenerateGrid])
+	if (!view.Options[BusinessView.Constants.HasGrid])
 	{
-    
+
             
             #line default
             #line hidden
@@ -396,51 +396,21 @@ else
                     "    </section>\r\n    </header>\r\n");
             
             #line 102 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
-
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
-        }
-
-            
-            #line default
-            #line hidden
-            
-            #line 108 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
  
-	if (view.Options[BusinessView.Constants.GenerateGrid])
-	{
-		var gridName = entityName.Substring(0, 1).ToLower() +  entityName.Substring(1);
-		WriteLine("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
-	}
-    else if (xmlLayout != null)
+    // Counter for indentation
+    int depth = 0;
+
+    // Get first element and proceed if there are elements specified
+    var element = xmlLayout.Root.Descendants().First();
+
+    // Iterate xml and apply snippets directly to template
+    if (element.HasElements)
     {
-        // XML Layout has been specified and therefore generate layout using this instead of generating
-        // only the key field
-
-        // Counter for indentation
-        int depth = 0;
-
-        // Get first element and proceed if there are elements specified
-        var element = xmlLayout.Root.Descendants().First();
-
-        // Iterate xml and apply snippets directly to template
-        if (element.HasElements)
-        {
-            // Recursion
-            var snippet = new StringBuilder();
-            SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
-            WriteLine(snippet.ToString());
-        }
+        // Recursion
+        var snippet = new StringBuilder();
+        SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
+        WriteLine(snippet.ToString());
     }
-	else
-	{
-        // No XML layout specified, therefore we will no longer generate only the key field
-	}
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "</div>");
-        }
 
             
             #line default
@@ -452,9 +422,9 @@ else
 
 ");
             
-            #line 148 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 123 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
-	if (!view.Options[BusinessView.Constants.GenerateGrid])
+	if (!view.Options[BusinessView.Constants.HasGrid])
 	{
 
             
@@ -463,7 +433,7 @@ else
             this.Write("\t\t\t@Html.KoSageButton(\"btnDelete\", new { }, new { @value = CommonResx.Delete, @id" +
                     " = \"btnDelete\", @class = \"btn btn-primary\" })\r\n");
             
-            #line 153 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
+            #line 128 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\View\Entity.tt"
 
 	}
 

@@ -680,7 +680,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
              PushIndent("        ");
 			 foreach(var view in settings.Entities)
 			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid] || view.ForGrid)
+				if (view.Options[BusinessView.Constants.HasGrid] || view.ForGrid)
 				{
                     var viewName = view.Properties[BusinessView.Constants.EntityName];
                     var gridName = viewName.Substring(0, 1).ToLower() + viewName.Substring(1);

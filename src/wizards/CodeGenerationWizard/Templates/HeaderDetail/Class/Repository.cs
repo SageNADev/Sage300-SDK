@@ -335,7 +335,7 @@ using ");
     {
         // skip entity in a grid
         bool flag;
-        settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Options.TryGetValue(BusinessView.Constants.GenerateGrid, out flag);
+        settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Options.TryGetValue(BusinessView.Constants.HasGrid, out flag);
         if (Convert.ToBoolean(flag))
         {
             continue;
@@ -409,7 +409,7 @@ using ");
             {
                     // skip entity in a grid
                     bool flag;
-                    settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Options.TryGetValue(BusinessView.Constants.GenerateGrid, out flag);
+                    settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Options.TryGetValue(BusinessView.Constants.HasGrid, out flag);
                     if (Convert.ToBoolean(flag))
                     {
                         continue;

@@ -400,7 +400,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Cl
 
 			 foreach(var view in settings.Entities)
 			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid] || view.ForGrid)
+				if (view.Options[BusinessView.Constants.HasGrid] || view.ForGrid)
 				{
                     var viewName = view.Properties[BusinessView.Constants.EntityName];
                     var viewId = view.Properties[BusinessView.Constants.ViewId];

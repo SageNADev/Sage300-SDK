@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -71,42 +71,16 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
      * @public
      */
     init: () => {
-        // initialize grid(s)
-        <#
-             PushIndent("        ");
-			 foreach(var view in settings.Entities)
-			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid] || view.ForGrid)
-				{
-                    var viewName = view.Properties[BusinessView.Constants.EntityName];
-                    var gridName = viewName.Substring(0, 1).ToLower() + viewName.Substring(1);
-                    var viewId = view.Properties[BusinessView.Constants.ViewId];
-                    var isOptionalGrid = view.Keys.Contains("OptionalField");
-                    if(isOptionalGrid)
-                    {
-                        var format = "sg.optionalFieldControl.init('{0}Grid', { 'viewId': '{1}', 'filter': 'LOCATION=1', 'allowDelete': true, 'allowInsert': true, 'type': 0 }, false);";
-                        var line = format.Replace("{0}", gridName).Replace("{1}", viewId);
-                        WriteLine(line);
-                    }
-                    else
-                    {
-                        WriteLine("sg.viewList.init('{0}Grid');", gridName);
-                    }
-				}
-			 }
-
-             PopIndent();
-        #>
         <#=localEntityName#>UI.initGrids();
         <#=localEntityName#>UI.initTabs();
         <#=localEntityName#>UI.initButtons();
-        <#=localEntityName#>UI.initFinders();
         <#=localEntityName#>UI.initNumericTextboxes();
         <#=localEntityName#>UI.initTextboxes();
         <#=localEntityName#>UI.initTimePickers();
         <#=localEntityName#>UI.initPopUps();
         <#=localEntityName#>UI.initHamburgers();
         <#=localEntityName#>UISuccess.initialLoad(<#=containerName#>ViewModel);
+        <#=localEntityName#>UI.initFinders();
         <#=localEntityName#>UISuccess.setkey();
     },
 
@@ -241,7 +215,31 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
      * @public
      */
     initGrids: () => {
+<#
+             PushIndent("        ");
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.HasGrid] || view.ForGrid)
+				{
+                    var viewName = view.Properties[BusinessView.Constants.EntityName];
+                    var gridName = viewName.Substring(0, 1).ToLower() + viewName.Substring(1);
+                    var viewId = view.Properties[BusinessView.Constants.ViewId];
+                    var isOptionalGrid = view.Keys.Contains("OptionalField");
+                    if(isOptionalGrid)
+                    {
+                        var format = "sg.optionalFieldControl.init('{0}Grid', { 'viewId': '{1}', 'filter': 'LOCATION=1', 'allowDelete': true, 'allowInsert': true, 'type': 0 }, false);";
+                        var line = format.Replace("{0}", gridName).Replace("{1}", viewId);
+                        WriteLine(line);
+                    }
+                    else
+                    {
+                        WriteLine("sg.viewList.init('{0}Grid');", gridName);
+                    }
+				}
+			 }
 
+             PopIndent();
+#>
     },
 
     /**
@@ -408,7 +406,7 @@ var <#=localEntityName#>UISuccess = {
              PushIndent("            ");
 			 foreach(var view in settings.Entities)
 			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid])
+				if (view.Options[BusinessView.Constants.HasGrid])
 				{
                     var temp = view.Properties[BusinessView.Constants.EntityName];
                     var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);
@@ -564,7 +562,7 @@ var <#=localEntityName#>UISuccess = {
         PushIndent("        ");
 		foreach(var view in settings.Entities)
 		{
-		    if (view.Options[BusinessView.Constants.GenerateGrid])
+		    if (view.Options[BusinessView.Constants.HasGrid])
 			{
                 var temp = view.Properties[BusinessView.Constants.EntityName];
                 var gridName = temp.Substring(0, 1).ToLower() + temp.Substring(1);

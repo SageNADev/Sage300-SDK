@@ -113,7 +113,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkGenerateGridModel = new MetroFramework.Controls.MetroCheckBox();
             this.chkGenerateEnumerationsInSingleFile = new MetroFramework.Controls.MetroCheckBox();
             this.chkSequenceRevisionList = new MetroFramework.Controls.MetroCheckBox();
-            this.chkGenerateGrid = new MetroFramework.Controls.MetroCheckBox();
             this.chkGenerateIfExist = new MetroFramework.Controls.MetroCheckBox();
             this.chkGenerateClientFiles = new MetroFramework.Controls.MetroCheckBox();
             this.chkGenerateFinder = new MetroFramework.Controls.MetroCheckBox();
@@ -1302,7 +1301,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPage2.Controls.Add(this.chkGenerateGridModel);
             this.tabPage2.Controls.Add(this.chkGenerateEnumerationsInSingleFile);
             this.tabPage2.Controls.Add(this.chkSequenceRevisionList);
-            this.tabPage2.Controls.Add(this.chkGenerateGrid);
             this.tabPage2.Controls.Add(this.chkGenerateIfExist);
             this.tabPage2.Controls.Add(this.chkGenerateClientFiles);
             this.tabPage2.Controls.Add(this.chkGenerateFinder);
@@ -1366,21 +1364,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.chkSequenceRevisionList.UseCustomForeColor = true;
             this.chkSequenceRevisionList.UseSelectable = true;
             this.chkSequenceRevisionList.UseStyleColors = true;
-            // 
-            // chkGenerateGrid
-            // 
-            this.chkGenerateGrid.AutoSize = true;
-            this.chkGenerateGrid.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chkGenerateGrid.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.chkGenerateGrid.Location = new System.Drawing.Point(428, 19);
-            this.chkGenerateGrid.Name = "chkGenerateGrid";
-            this.chkGenerateGrid.Size = new System.Drawing.Size(111, 19);
-            this.chkGenerateGrid.Style = MetroFramework.MetroColorStyle.Green;
-            this.chkGenerateGrid.TabIndex = 26;
-            this.chkGenerateGrid.Text = "Generate Grid";
-            this.chkGenerateGrid.UseCustomForeColor = true;
-            this.chkGenerateGrid.UseSelectable = true;
-            this.chkGenerateGrid.UseStyleColors = true;
             // 
             // chkGenerateIfExist
             // 
@@ -1893,7 +1876,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private MetroFramework.Controls.MetroTabPage tabPage4;
         private System.Windows.Forms.Panel pnlComposition;
         private System.Windows.Forms.DataGridView grdEntityCompositions;
-        private MetroFramework.Controls.MetroCheckBox chkGenerateGrid;
         private MetroFramework.Controls.MetroCheckBox chkSequenceRevisionList;
         private MetroFramework.Controls.MetroCheckBox chkGenerateEnumerationsInSingleFile;
         private System.Windows.Forms.PictureBox pictureBox1;

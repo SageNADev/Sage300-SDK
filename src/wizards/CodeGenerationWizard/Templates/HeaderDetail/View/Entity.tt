@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -77,75 +77,22 @@
             </div>
         </section>
     </header>
-<#
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
-        }
-#>
 <# 
-	if (view.Options[BusinessView.Constants.GenerateGrid])
-	{
-		var gridName = entityName.Substring(0, 1).ToLower() +  entityName.Substring(1);
-		WriteLine("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
-	}
-    else if (xmlLayout != null)
+    // Counter for indentation
+    int depth = 0;
+
+    // Get first element and proceed if there are elements specified
+    var element = xmlLayout.Root.Descendants().First();
+
+    // Iterate xml and apply snippets directly to template
+    if (element.HasElements)
     {
-        // XML Layout has been specified and therefore generate layout using this instead of generating
-        // only the key field
-
-        // Counter for indentation
-        int depth = 0;
-
-        // Get first element and proceed if there are elements specified
-        var element = xmlLayout.Root.Descendants().First();
-
-        // Iterate xml and apply snippets directly to template
-        if (element.HasElements)
-        {
-            // Recursion
-            var snippet = new StringBuilder();
-            SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
-            WriteLine(snippet.ToString());
-        }
-    }
-	else
-	{
-	}
-
-    if (xmlLayout == null)
-    {
-        WriteLine(new string(' ', 4) + "</div>");
+        // Recursion
+        var snippet = new StringBuilder();
+        SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
+        WriteLine(snippet.ToString());
     }
 #>
-    <div class="form-group">
-<#
-			 foreach(var view in settings.Entities)
-			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid])
-				{
-                    var temp = view.Properties[BusinessView.Constants.EntityName];
-                    var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
-                    if(gridName.Contains("Optional")) 
-                    {
-                        if(gridName.Contains("Detail"))
-                        {
-                            WriteLine(new string(' ', 4) + "<div id=\"detailOptionalField\" style=\"display: none; \">");
-                        }
-                        else 
-                        {
-                             WriteLine(new string(' ', 4) + "<div id=\"optionalField\" style=\"display: none; \">");
-                        }
-                    }
-					WriteLine(new string(' ', 8) + "@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
-                    if(gridName.Contains("Optional")) 
-                    {
-                        WriteLine(new string(' ', 4) + "</div>");
-                    }				
-                }
-			 }
-#>
-    </div>
     <section class="footer-group-1">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {

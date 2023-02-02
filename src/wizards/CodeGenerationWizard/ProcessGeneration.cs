@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -363,8 +363,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 foreach (var businessView in settings.Entities)
                 {
                     // Special logic for header detail type
-                    if (_settings.RepositoryType.Equals(RepositoryType.HeaderDetail) &&
-                        businessView.Options[BusinessView.Constants.GenerateGrid])
+                    if (_settings.RepositoryType.Equals(RepositoryType.HeaderDetail))
                     {
                         var entityName = businessView.Properties[BusinessView.Constants.EntityName];
 
@@ -401,7 +400,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             }
                         }
 
-                        continue;
+                        // @JT research this  --> continue;
                     }
 
                     IterateView(businessView);
@@ -1961,7 +1960,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (generateClientFiles)
             {
 
-                if (view.Options[BusinessView.Constants.GenerateGrid])
+                if (view.Options[BusinessView.Constants.HasGrid])
                 {
                     // Create the ViewModel class
                     CreateClass(view,
@@ -2073,7 +2072,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 // Create grid json files
-                if (view.Options[BusinessView.Constants.GenerateGrid])
+                if (view.Options[BusinessView.Constants.HasGrid])
                 {
                     fileName = view.Properties[BusinessView.Constants.EntityName] + "Grid.json";
                     CreateClass(view,
@@ -2114,7 +2113,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var projectName =
                 _settings.Projects[Constants.WebKey][view.Properties[BusinessView.Constants.ModuleId]].ProjectName.Replace(".Web", string.Empty);
 
-                if (view.Options[BusinessView.Constants.GenerateGrid])
+                if (view.Options[BusinessView.Constants.HasGrid])
                 {
                     // Create the Behavior JavaScript file
                     CreateClass(view,
@@ -2205,21 +2204,22 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Iterate tab pages to create partial views
                 foreach (XElement element in tabPages)
                 {
-                    if (element.HasElements)
-                    {
+                    // Create tab page if specified regardless if any controls have been added
+                    //if (element.HasElements)
+                    //{
                         var pageId = element.Attribute("id").Value;
                         fileName = "_" + pageId + ".cshtml";
                         CreateClass(headerView,
                                     fileName,
                                     TransformTemplateToText(headerView, _settings, "Templates.HeaderDetail.View.PartialEntity", element),
                                     Constants.WebKey, Constants.SubFolderWebLocalizationKey);
-                    }
+                    //}
                 }
             }
             // Create grid json files
             foreach (var view in settings.Entities)
             {
-                if (view.Options[BusinessView.Constants.GenerateGrid])
+                if (view.Options[BusinessView.Constants.HasGrid])
                 {
                     fileName = view.Properties[BusinessView.Constants.EntityName] + "Grid.json";
                     CreateClass(view,

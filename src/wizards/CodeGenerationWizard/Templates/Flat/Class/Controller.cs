@@ -34,7 +34,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
- /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -450,7 +450,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
 
 	foreach(var view in settings.Entities)
 	{
-	    if (view.Options[BusinessView.Constants.GenerateGrid] || view.ForGrid)
+	    if (view.Options[BusinessView.Constants.HasGrid] || view.ForGrid)
 	    {
             var viewName = view.Properties[BusinessView.Constants.EntityName];
             WriteLine("ViewBag.{0}Grid = ControllerInternal.CustomGridDefinitionsUsingService(CommonUtil.EntityContextReplacement({1}.EntityName, Context.ScreenContext.EntityContext), GetGridJsonFilePath(\"{0}Grid\", requestUri));", viewName, modelName);

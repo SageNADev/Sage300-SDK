@@ -518,7 +518,7 @@
     <value>The Wizard is incompatible with the installed Sage 300 libraries. Please un-register the wizard and register the wizard that is compatible with the installed Sage 300 libraries.</value>
   </data>
   <data name="InvalidGridView" xml:space="preserve">
-    <value>The 'Generate Grid' option is an invalid selection for {0} because it doesn't support a revision list.</value>
+    <value>The property cannot be dropped onto this grid because the view does not support a revision list.</value>
   </data>
   <data name="AvailableFields" xml:space="preserve">
     <value>Available Fields</value>
@@ -630,5 +630,17 @@
   </data>
   <data name="sage300_logo_sq" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sage300-logo-sq.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InvalidGridViewProperties" xml:space="preserve">
+    <value>The property cannot be dropped onto this grid because all grid properties must be from the same business view.</value>
+  </data>
+  <data name="InvalidNoGrid" xml:space="preserve">
+    <value>A grid must be specified in the 'Generate a UI layout' step for a Header-Detail Repository type.</value>
+  </data>
+  <data name="InvalidNoGridProperties" xml:space="preserve">
+    <value>Grid '{0}' does not have any added properties and cannot be an empty container.</value>
+  </data>
+  <data name="InvalidNoUI" xml:space="preserve">
+    <value>A layout with no UI elements specified will no longer generate a default layout. Use the 'Generate a UI layout' step to specify a layout (a minimum of 1 property or control must be specified).</value>
   </data>
 </root>
