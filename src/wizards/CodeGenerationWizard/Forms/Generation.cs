@@ -2998,7 +2998,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     return;
                 }
 
-                MoveControl(movingControl, point, control, e);
+                MoveControl(movingControl, point, control, e, controlInfo);
 
                 // Set current cell for border behavior
                 if (control.GetType() == typeof(DataGridView) && movingControl.GetType() == typeof(Label))
@@ -3022,7 +3022,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     return;
                 }
 
-                MoveControl(flowPanel, point, control, e);
+                MoveControl(flowPanel, point, control, e, controlInfo);
             }
             else if (buttonControl != null)
             {
@@ -3040,7 +3040,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     return;
                 }
 
-                MoveControl(buttonControl, point, control, e);
+                MoveControl(buttonControl, point, control, e, controlInfo);
 
                 // Set current cell for border behavior
                 if (control.GetType() == typeof(DataGridView))
@@ -3371,8 +3371,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="control"></param>
         /// <param name="point"></param>
         /// <param name="destinationControl"></param>
-        /// <param name="e">Drag Evnts Args</param>
-        private void MoveControl(Control control, Point point, Control destinationControl, DragEventArgs e)
+        /// <param name="e">Drag Events Args</param>
+        /// <param name="controlInfo">Control Info</param>
+        private void MoveControl(Control control, Point point, 
+            Control destinationControl, DragEventArgs e, ControlInfo controlInfo)
         {
             // Ownership is not changing
             if (control.Parent == destinationControl)
@@ -3395,6 +3397,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     // Do not move
                     return;
+                }
+
+                // Do not allow label in a grid to be moved anywhere as it must be deleted instead
+                if (control.GetType() == typeof(Label) && control.Parent.GetType() == typeof(FlowLayoutPanel))
+                {
+                    // Do not move
+                    return;
+                }
+
+                // Do not allow label to be moved into a grid if the grid does not support the grid's view
+                if (control.GetType() == typeof(Label) && 
+                    control.Parent.GetType() != typeof(FlowLayoutPanel) &&
+                    destinationControl.GetType() == typeof(FlowLayoutPanel))
+                {
+                    // If dropping businessField in a grid, need to ensure Business View supports a grid 
+                    // and that only business fields from the same business view are added
+                    var errorMsg = CanBusinessFieldBeDropped(controlInfo, destinationControl);
+                    if (!string.IsNullOrEmpty(errorMsg))
+                    {
+                        DisplayMessage(errorMsg, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        // If moved business field into a grid, need to ensure that the ControlInfo
+                        // for the grid reflects the ParentNodeName for later, and simpler, evaluation
+                        var info = _controlsList[destinationControl.Name];
+                        info.ParentNodeName = controlInfo.ParentNodeName;
+                    }
                 }
 
                 // Remove from old parent and assign to new parent

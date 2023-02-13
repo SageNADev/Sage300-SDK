@@ -440,6 +440,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 .Replace(",", "")
                 .Replace(@"%", "")
                 .Replace("&", "")
+                .Replace("$", "")
                 .Replace("+", "");
 
             if (newString.Length > 0)
