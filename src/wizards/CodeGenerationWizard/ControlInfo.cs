@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -57,6 +57,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public string FinderDisplayField { get; set; }
         /// <summary> Finder Url </summary>
         public bool FinderUrl { get; set; }
+        /// <summary> Business View for model, only if dropping in a grid </summary>
+        public BusinessView BusinessView { get; set; }
         #endregion
     }
 }

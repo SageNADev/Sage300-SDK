@@ -205,12 +205,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Menu Item for Finder </summary>
         private readonly MenuItem _finderMenuItem = new MenuItem() { Text = Resources.FinderTab, Tag = Constants.WidgetFinder };
 
-
         /// <summary> Map from unique finder name finder detail info </summary>
         private IDictionary<string, dynamic> _finderLookup = new SortedDictionary<string, dynamic>();
 
         /// <summary> Loading Finder dropdown </summary>
         private bool _loadingFinderInProgress = false;
+
+        /// <summary> Abort grid drop </summary>
+        private bool _abortGridDrop = false;
 
         #endregion
 
@@ -2546,6 +2548,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Check to ensure that node was clicked on
                 if (node != null)
                 {
+                    // Business Field
                     var controlInfo = GetControlInfo(node.Name);
                     if (controlInfo != null && controlInfo.BusinessField != null)
                     {
@@ -2555,7 +2558,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     }
                     else
                     {
-                        dragObject = null;
+                        // Check to see if dragging the entire business view
+                        var businessView = _entities.Where(x => x.Text == node.Name).FirstOrDefault();
+                        if (businessView != null)
+                        {
+                            // The business view was selected
+                            controlInfo = new ControlInfo() {
+                                Node = node, 
+                                ParentNodeName = node.Parent.Name,
+                                BusinessView = businessView };
+                            dragObject = controlInfo;
+                        }
+                        else
+                        {
+                            dragObject = null;
+                        }
                     }
                 }
                 else
@@ -2816,7 +2833,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var type = control.GetType();
             DataGridView.HitTestInfo hitTestInfo = null;
             CellInfo cellInfo = null;
-            var repositoryType = GetRepositoryType();
+
+            // Can only drop a business view (all fields) in a grid and not any other control
+            if (controlInfo != null && controlInfo.BusinessView != null)
+            {
+                // Not dropping in a grid
+                if (type != typeof(FlowLayoutPanel))
+                {
+                    return;
+                }
+                else
+                {
+                    // Dropping in a grid and therefore recursively call drop with fields
+                    foreach (TreeNode node in controlInfo.Node.Nodes)
+                    {
+                        var childControlInfo = GetControlInfo(node.Name);
+                        if (childControlInfo != null && childControlInfo.BusinessField != null)
+                        {
+                            childControlInfo.Node = node;
+                            childControlInfo.ParentNodeName = node.Parent.Name;
+                            e.Data.SetData(childControlInfo);
+                        }
+                        DragDropHandler(sender, new DragEventArgs(e.Data, e.KeyState, e.X, e.Y, e.AllowedEffect, e.Effect));
+
+                        // Abort if not allowed to drop in grid
+                        if (_abortGridDrop)
+                        {
+                            break;
+                        }
+                    }
+                }
+                return;
+            }
 
             // If dropping a tab,
             if (toolboxControl == Constants.WidgetTab)
@@ -2915,9 +2963,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // and that only business fields from the same business view are added
                 if (type == typeof(FlowLayoutPanel))
                 {
+                    _abortGridDrop = false;
                     var errorMsg = CanBusinessFieldBeDropped(controlInfo, control);
                     if (!string.IsNullOrEmpty(errorMsg))
                     {
+                        _abortGridDrop = true;
                         DisplayMessage(errorMsg, MessageBoxIcon.Error);
                         return;
                     }
@@ -2989,6 +3039,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     return;
                 }
 
+                // If moving a label and it is in a grid or moving to a grid, then abort
+                if (label != null &&
+                    (label.Parent.GetType() == typeof(FlowLayoutPanel) ||
+                    control.GetType() == typeof(FlowLayoutPanel)))
+                {
+                    return;
+                }
+
                 Control movingControl = label != null ? label : (Control)tabControl;
                 cellInfo = CellInfoForMove(control, hitTestInfo, ref point, movingControl);
 
@@ -2998,14 +3056,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     return;
                 }
 
-                MoveControl(movingControl, point, control, e, controlInfo);
+                MoveControl(movingControl, point, control, e);
 
                 // Set current cell for border behavior
                 if (control.GetType() == typeof(DataGridView) && movingControl.GetType() == typeof(Label))
                 {
                     ((DataGridView)control).CurrentCell = ((DataGridView)control)[cellInfo.ColIndex, cellInfo.RowIndex];
                 }
-
             }
             else if (flowPanel != null)
             {
@@ -3022,7 +3079,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     return;
                 }
 
-                MoveControl(flowPanel, point, control, e, controlInfo);
+                MoveControl(flowPanel, point, control, e);
             }
             else if (buttonControl != null)
             {
@@ -3040,14 +3097,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     return;
                 }
 
-                MoveControl(buttonControl, point, control, e, controlInfo);
+                MoveControl(buttonControl, point, control, e);
 
                 // Set current cell for border behavior
                 if (control.GetType() == typeof(DataGridView))
                 {
                     ((DataGridView)control).CurrentCell = ((DataGridView)control)[cellInfo.ColIndex, cellInfo.RowIndex];
                 }
-
             }
         }
 
@@ -3372,9 +3428,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="point"></param>
         /// <param name="destinationControl"></param>
         /// <param name="e">Drag Events Args</param>
-        /// <param name="controlInfo">Control Info</param>
-        private void MoveControl(Control control, Point point, 
-            Control destinationControl, DragEventArgs e, ControlInfo controlInfo)
+        private void MoveControl(Control control, Point point, Control destinationControl, DragEventArgs e)
         {
             // Ownership is not changing
             if (control.Parent == destinationControl)
@@ -3391,43 +3445,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Moving to another container
             else if (control.Parent != destinationControl)
             {
-                // Do not move to another parent if the new parent is a grid and the 
-                // control being moved is not a label
-                if (destinationControl.GetType() == typeof(FlowLayoutPanel) && control.GetType() != typeof(Label))
-                {
-                    // Do not move
-                    return;
-                }
-
-                // Do not allow label in a grid to be moved anywhere as it must be deleted instead
-                if (control.GetType() == typeof(Label) && control.Parent.GetType() == typeof(FlowLayoutPanel))
-                {
-                    // Do not move
-                    return;
-                }
-
-                // Do not allow label to be moved into a grid if the grid does not support the grid's view
-                if (control.GetType() == typeof(Label) && 
-                    control.Parent.GetType() != typeof(FlowLayoutPanel) &&
-                    destinationControl.GetType() == typeof(FlowLayoutPanel))
-                {
-                    // If dropping businessField in a grid, need to ensure Business View supports a grid 
-                    // and that only business fields from the same business view are added
-                    var errorMsg = CanBusinessFieldBeDropped(controlInfo, destinationControl);
-                    if (!string.IsNullOrEmpty(errorMsg))
-                    {
-                        DisplayMessage(errorMsg, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        // If moved business field into a grid, need to ensure that the ControlInfo
-                        // for the grid reflects the ParentNodeName for later, and simpler, evaluation
-                        var info = _controlsList[destinationControl.Name];
-                        info.ParentNodeName = controlInfo.ParentNodeName;
-                    }
-                }
-
                 // Remove from old parent and assign to new parent
                 control.Parent.Controls.Remove(control);
                 destinationControl.Controls.Add(control);
