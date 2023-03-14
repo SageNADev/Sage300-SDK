@@ -1,4 +1,5 @@
-set RootDrive=D:
+set RootDrive=C:
+
 set SDKRoot=%RootDrive%\Projects\Sage300-SDK\Develop
 set WizardSourceRoot=%SDKRoot%\src\wizards
 set TemplateSourceRoot=%SDKRoot%\src\wizards\Templates

@@ -3,17 +3,17 @@ REM
 REM Copy Web Screen core files to Web SDK Sample projects
 REM 
 
-set Drive=D:
-set Branch=%SageAzureDev_BRANCH%
+set Drive=C:
+set Branch=Dev
 set SourceWebRoot=%Drive%\Projects\SageAzureDev\%Branch%\Columbus-Web\Sage.CA.SBS.ERP.Sage300.Web
 set DestinationSamplesRoot=%Drive%\Projects\Sage300-SDK\Develop\Samples
 
-if [%SageAzureDev_BRANCH%]==[] (
-  echo The environment variable ----  SageAzureDev_BRANCH ---- has not yet been defined.
-  echo Please set SageAzureDev_BRANCH to the name of the branch which will be used when synchronizing assets.
-  echo For Example: Set SageAzureDev_BRANCH=release-2023.1
-  goto :EOF
-)
+REM if [%SageAzureDev_BRANCH%]==[] (
+REM  echo The environment variable ----  SageAzureDev_BRANCH ---- has not yet been defined.
+REM  echo Please set SageAzureDev_BRANCH to the name of the branch which will be used when synchronizing assets.
+REM  echo For Example: Set SageAzureDev_BRANCH=release-2023.1
+REM  goto :EOF
+REM)
 
 REM
 REM List of Samples to update
