@@ -1,4 +1,4 @@
-﻿/* Copyright (c) $year$ $companyname$.  All rights reserved. */
+﻿/* Copyright (c) $year$ $copyright$  All rights reserved. */
 
 using Microsoft.Practices.Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;

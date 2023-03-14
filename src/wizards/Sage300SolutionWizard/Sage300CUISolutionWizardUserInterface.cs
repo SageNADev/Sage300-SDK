@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -85,6 +85,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         private bool _includeFrench;
         private string _typeSegment;
         private string _typeRoute;
+        private string _copyright;
         #endregion
 
 
@@ -131,7 +132,8 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                                 "|$sage300webfolder$=" + _sage300Webfolder +
                                 "|$typesegment$=" + _typeSegment +
                                 "|$typeroute$=" + _typeRoute +
-                                "|$lowercaseapplicationid$=" + _lowercaseapplicationId;
+                                "|$lowercaseapplicationid$=" + _lowercaseapplicationId +
+                                "|$copyright$=" + _copyright;
 
             foreach (var proj in projects)
             {
@@ -274,6 +276,13 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 // Payroll
                 _typeSegment = _applicationId == "PR" ? "{type}/" : "";
                 _typeRoute = _applicationId == "PR" ? "type = 0, " : "";
+                
+                // Logic specific for Sage developers
+                _copyright = _companyName;
+                if (_companyName == "Sage")
+                {
+                    _copyright = "The Sage Group plc or its licensors.";
+                }
 
                 // Add custom parameters.
                 replacementsDictionary.Add("$companyname$", _companyName);
@@ -283,7 +292,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 replacementsDictionary.Add("$lowercaseapplicationid$", _lowercaseapplicationId);
                 replacementsDictionary.Add("$typesegment$", _typeSegment);
                 replacementsDictionary.Add("$typeroute$", _typeRoute);
-
+                replacementsDictionary.Add("$copyright$", _copyright);
             }
             catch
             {

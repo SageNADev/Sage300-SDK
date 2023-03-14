@@ -34,7 +34,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -146,6 +146,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
    
     var entityName = view.Properties[BusinessView.Constants.EntityName];
     var isRepoTypeHeaderDetail = settings.RepositoryType.Equals(RepositoryType.HeaderDetail);
+    var viewId = view.Properties[BusinessView.Constants.ViewId];
+    var moduleId = settings.ModuleId;
+
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = viewId;
+    if (moduleId == "PR")
+    {
+         // Will be resolved at runtime
+		 entityContext = "~~" + viewId.Substring(2);
+    }
 
 
             
@@ -153,21 +163,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             #line hidden
             this.Write("\r\n{\r\n   \"IsSequenceRevisionList\": ");
             
-            #line 32 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 42 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(view.Options[BusinessView.Constants.SeqenceRevisionList].ToString().ToLower()));
             
             #line default
             #line hidden
             this.Write(",\r\n   \"ReadOnly\": false,\r\n   \"PageSize\": 10,\r\n   \"ViewID\":\"");
             
-            #line 35 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(view.Properties[BusinessView.Constants.ViewId].ToString()));
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityContext));
             
             #line default
             #line hidden
             this.Write("\",\r\n   \"ColumnDefinitions\": [\r\n\t");
             
-            #line 37 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
+            #line 47 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\GridJson.tt"
 
 		PushIndent("    ");	
 		foreach(var field in view.Fields)

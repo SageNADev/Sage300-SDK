@@ -1,4 +1,4 @@
-﻿/* Copyright (c) $year$ $companyname$.  All rights reserved. */
+﻿/* Copyright (c) $year$ $copyright$  All rights reserved. */
 
 using System.Web.Optimization;
 

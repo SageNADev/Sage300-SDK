@@ -740,7 +740,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                 {
                                     lookupFinder = _settings.FinderInfo[finderProp];
                                 }
-                                finder.ViewID = isLookupFinder ? lookupFinder.viewID : entity.Properties[BusinessView.Constants.ViewId];
+
+                                // Logic specific to PR
+                                var module_Id = entity.Properties[BusinessView.Constants.ModuleId];
+                                string view_Id = isLookupFinder ? lookupFinder.viewID : entity.Properties[BusinessView.Constants.ViewId];
+                                if (module_Id == "PR")
+                                {
+                                    if (view_Id.StartsWith("UP") || view_Id.StartsWith("CP"))
+                                    {
+                                        view_Id = "~~" + view_Id.Substring(2);
+                                    }
+                                }
+                                finder.ViewID = view_Id;
+
                                 finder.ViewOrder = isLookupFinder ? Int32.Parse(lookupFinder.viewOrder.ToString()) : 0;
                                 finder.DisplayFieldNames = isLookupFinder ? lookupFinder.displayFieldNames :  entity.Fields.Select(f => f.ServerFieldName).Take(8).ToArray();
                                 finder.ReturnFieldNames = isLookupFinder ? lookupFinder.returnFieldNames : new string[] { entity.Fields[0].ServerFieldName };
@@ -800,7 +812,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         }
 
                         jsonObj.ColumnDefinitions = cols;
-                        jsonObj.ViewID = entity.Properties[BusinessView.Constants.ViewId];
+
+                        // Logic specific to PR
+                        var moduleId = entity.Properties[BusinessView.Constants.ModuleId];
+                        string viewId = entity.Properties[BusinessView.Constants.ViewId];
+                        if (moduleId == "PR")
+                        {
+                            if (viewId.StartsWith("UP") || viewId.StartsWith("CP"))
+                            {
+                                viewId = "~~" + viewId.Substring(2);
+                            }
+                        }
+                        jsonObj.ViewID = viewId;
 
                         entities.Add(entity);
                         displayColumns.Add("'" + string.Join("','", cols.Select(c => c.FieldName)) + "'");
