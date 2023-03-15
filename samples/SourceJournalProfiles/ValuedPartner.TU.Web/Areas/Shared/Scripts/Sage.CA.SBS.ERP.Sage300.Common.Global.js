@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. */
 
 // @ts-check
 
@@ -1682,7 +1682,7 @@ $.extend(sg.utls, {
             `<div id="dialogConfirmation" class="modal-msg">
 	            <div class="message-control multiWarn-msg"> 
 		        <div class="title"> 
-			        <span class="icon multiWarn-icon" /> 
+			        <span class="icon multiWarn-icon"></span> 
 			        <h3 id="dialogConfirmation_header" />
 		        </div>
 		        <div class="msg-content">
@@ -2167,7 +2167,10 @@ $.extend(sg.utls, {
             modal: true,
             minWidth: 500,
             maxWidth: 760,
-            //custom function to suppot focus within kendo window
+            open: function () {
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
+            },            //custom function to suppot focus within kendo window
             activate: sg.utls.kndoUI.onActivate
         });
 
@@ -4552,11 +4555,20 @@ $(function () {
 
     // Open sibling finder when textbox is focused and Alt+DownArrow are pressed
     $(document).on('keyup keydown', function (e) {
-        if (e.altKey && e.keyCode === sg.constants.KeyCodeEnum.DownArrow) {
+        if ((e.altKey || e.ctrlKey) && e.keyCode === sg.constants.KeyCodeEnum.DownArrow ) {
             var textbox = $(document.activeElement);
             if (textbox.attr('type') === "text") {
                 var finderId = sg.utls.findersList[textbox.attr('id')];
-                if (finderId) {
+				if (finderId) {
+					
+					// if there is a calendar widget, return if ALT + DOWN
+					if (textbox.attr('data-role') === 'datepicker')
+					{
+						// there is a calendar control, ignore ALT +DOWN
+						if (e.altKey) 
+							return;
+					}
+					
                     var finder = $("#" + finderId);
                     if (finder.is(':visible') && !finder.is(':disabled')) {
                         finder.focus();

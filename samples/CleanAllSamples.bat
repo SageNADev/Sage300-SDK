@@ -37,9 +37,9 @@ REM		ValuedPartner.TU.Web\WebGrease.dll
 REM		ValuedPartner.TU.Web\WG.EXE
 REM
 
-set Drive=D:
-set Branch=Develop
-set SamplesRoot=%Drive%\Projects\Sage300-SDK\%Branch%\Samples
+set Drive=C:
+set BranchFolder=Develop
+set SamplesRoot=%Drive%\Projects\Sage300-SDK\%BranchFolder%\Samples
 
 @echo Beginning WebSDK Sample Cleanup...
 call:CleanSample "ClearStatistics"

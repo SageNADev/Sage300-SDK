@@ -577,7 +577,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Process\CreateRevaluationBatchResx.zh-Hans.resx" />
     <EmbeddedResource Include="Process\CreateRevaluationBatchResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Process\FinancialReportInformationResx.es.resx" />
+    <EmbeddedResource Include="Process\FinancialReportInformationResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Process\FinancialReportInformationResx.fr.resx" />
     <EmbeddedResource Include="Process\FinancialReportInformationResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

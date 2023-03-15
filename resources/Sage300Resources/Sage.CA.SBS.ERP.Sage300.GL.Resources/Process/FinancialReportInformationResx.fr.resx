@@ -162,6 +162,9 @@
   <data name="ErrorMessage_AccountRange" xml:space="preserve">
     <value>La saisie dans la case 'Du compte' doit être inférieure à celle de la case 'Au compte'.</value>
   </data>
+  <data name="ErrorMessage_ConcurrentFRPrint" xml:space="preserve">
+    <value>L’impression de Générateur d’états financiers est en cours d’utilisation. Réessayez plus tard.</value>
+  </data>
   <data name="ErrorMessage_NoChartOfAccounts" xml:space="preserve">
     <value>Le plan comptable n'est pas défini.</value>
   </data>
@@ -303,5 +306,8 @@
   </data>
   <data name="ToSortCodeAccountGroup" xml:space="preserve">
     <value>Au code tri - Groupe comptes</value>
+  </data>
+  <data name="ErrorMessage_ExcelConfigurationError" xml:space="preserve">
+    <value>Erreur de configuration d’Excel pour le Générateur d’états financiers web. La version de Microsoft Excel sur le serveur n’est peut-être pas compatible.  Contactez votre administrateur pour obtenir de l’aide.</value>
   </data>
 </root>

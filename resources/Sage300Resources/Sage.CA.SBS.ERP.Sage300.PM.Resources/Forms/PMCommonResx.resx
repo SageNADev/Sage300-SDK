@@ -309,4 +309,37 @@
   <data name="UOMDoesNotMatch" xml:space="preserve">
     <value>The Unit of Measure specified does not match the Unit of Measure on the {0}.</value>
   </data>
+  <data name="CannotDeleteRequiredOptionalField" xml:space="preserve">
+    <value>You cannot delete required optional field.</value>
+  </data>
+  <data name="EquipmentDescription" xml:space="preserve">
+    <value>Equipment Description</value>
+  </data>
+  <data name="ARItem" xml:space="preserve">
+    <value>AR Item</value>
+  </data>
+  <data name="ARUOM" xml:space="preserve">
+    <value>ARUOM</value>
+  </data>
+  <data name="CurrencyDescription" xml:space="preserve">
+    <value>Currency Description</value>
+  </data>
+  <data name="EquipmentDetail" xml:space="preserve">
+    <value>Equipment Detail</value>
+  </data>
+  <data name="ARItemNoDoesNotExist" xml:space="preserve">
+    <value>A/R Item No. {0} does not exist.</value>
+  </data>
+  <data name="UOMNotEntered" xml:space="preserve">
+    <value>Unit of Measure not entered or defined for this item.</value>
+  </data>
+  <data name="IsNotAValidCurrencyCode" xml:space="preserve">
+    <value>{0} is not a valid currency code.</value>
+  </data>
+  <data name="CannotBeLessThanZero" xml:space="preserve">
+    <value>{0} cannot be less than zero.</value>
+  </data>
+  <data name="YouCannotDeleteAnEquipmentCode" xml:space="preserve">
+    <value>You cannot delete an equipment code that is assigned to a {0}.</value>
+  </data>
 </root>

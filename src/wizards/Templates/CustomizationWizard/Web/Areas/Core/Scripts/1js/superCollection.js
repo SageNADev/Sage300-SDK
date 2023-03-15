@@ -9,7 +9,7 @@
         dataModel: undefined,
         UIController: "",
         entityObject: undefined,
-        
+
         rows: [],
 
         get allGrids() { 
@@ -463,6 +463,21 @@
                             }
                         });
                     }
+                    //AT-79848 This for setup screen header delete, rollback the verb to PUT
+                    if (this.rows.length === 1 && this.rows[0].CRUDReason === CRUDReasons.Deleting) {
+                        this.rows[0].CRUDReason = CRUDReasons.ExistingData;
+                        let collObjs = this.rows[0].allCollectionObj;
+                        if (collObjs) {
+                            Object.keys(collObjs).forEach(key => {
+                                collObjs[key].rows.forEach(row => {
+                                    if (row.CRUDReason === CRUDReasons.Deleting) {
+                                        row.CRUDReason = CRUDReasons.ExistingData;
+                                    }
+                                });
+                            });
+                        }
+                    }
+
                     return;
                 }
 
@@ -932,9 +947,13 @@
          * Returns true if dirty records is found, false otherwise
          * */
         findDirtyRecords: function () {
+            let dirtyList = [];
+
             apputils.each(this.rows, (entity) => {
-                entity.findDirtyRecords();
+                dirtyList = entity.findDirtyRecords();
             });
+
+            return dirtyList;
         },
 
         /**

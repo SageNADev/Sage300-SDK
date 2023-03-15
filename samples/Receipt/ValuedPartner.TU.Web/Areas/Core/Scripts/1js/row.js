@@ -240,7 +240,7 @@
                 column.errorValue = "";
                 column.validationError = false;
 
-                this.timeStampUpdate(column);
+                //this.timeStampUpdate(column);
 
                 MessageBus.msg.trigger(msg + apputils.EventMsgTags.svrValid, column.value, msg + apputils.EventMsgTags.svrUpdate);
 
@@ -520,6 +520,8 @@
         },
 
         timeStampUpdate: function (column) {
+            //console.log("timeStampUpdate: " + this.viewid + " "+ column.field);
+
             column.updatedTime = apputils.TimeTicks();
             column.addToInitQuery = true;
         },
@@ -752,7 +754,8 @@
                 if (column.isDirty && !column.upsertDisabled) {
                     this.ValidateField(column, column.value);
                     let formatedValue = this.formatValueForUpsert(column.value, column.formatList);
-                    if (column.isOptionalFieldValue && !isNaN(Date.parse(column.value)) && isNaN(column.value)) {
+
+                    if (column.value && kendo.parseDate(column.value.toString()) && column.isOptionalFieldValue && !isNaN(Date.parse(column.value)) && isNaN(column.value)) {
                         formatedValue = kendo.toString(kendo.parseDate(column.value), "yyyyMMdd");
                     }
 
@@ -815,6 +818,9 @@
                 
                 if (column.addToInitQuery && !column.upsertDisabled && !column.initDisabled) {
                     //delete column.updatedTime;
+
+                    //console.log("generateOrderedInitRowQuery: " + this.viewid + " " + column.field);
+
                     query += this.createFieldNode(column, id);
                 }
             });
@@ -926,17 +932,19 @@
         },
         */
 
-        //WIP
         findDirtyRecords: function () {
+            let dirtyList = [];
             apputils.each(this.rowNodes, (row) => {
                 apputils.each(row.Columns, (column) => {
                     if (column.isDirty === true) {
-                        //console.log(column.field + " : " + column.value);
+                        dirtyList.push(column);
                         
                     };
                 });
 
             });
+
+            return dirtyList;
         },
 
         updateDirtyFlag2: function (entity) {
@@ -1003,10 +1011,13 @@
          * Get the database value filter string if fileds are dirty. For numeric value, should convert locale decimal separator to "."
          * */
         getDBValueFilterIfDirty: function () {
-            const numArray = ['Decimal', 'Long', 'Int', 'Integer', 'Amount', 'Number'];
+            const numArray = apputils.numericType; //['Decimal', 'Long', 'Int', 'Integer', 'Amount', 'Number'];
+
             let filter = "";
             for (let i = 0; i < this.rowNodes[0].Columns.length; i++) {
-                if (this.rowNodes[0].Columns[i].isDirty && this.rowNodes[0].Columns[i].DBValue) {
+                const DBValueFilterDisabled = apputils.isUndefined(this.rowNodes[0].Columns[i].DBValueFilterDisabled) ? false : this.rowNodes[0].Columns[i].DBValueFilterDisabled;
+
+                if (this.rowNodes[0].Columns[i].isDirty && this.rowNodes[0].Columns[i].DBValue && !DBValueFilterDisabled) {
                     if (filter.length > 0) filter += " and ";
 
                     const name = this.rowNodes[0].Columns[i].name;

@@ -259,6 +259,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An error occurred processing your request..
+        /// </summary>
+        public static string AnErrorOccurredProcessingYourRequest {
+            get {
+                return ResourceManager.GetString("AnErrorOccurredProcessingYourRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Antiforgery token cookie not found..
         /// </summary>
         public static string AntiForgeryTokenMissing {

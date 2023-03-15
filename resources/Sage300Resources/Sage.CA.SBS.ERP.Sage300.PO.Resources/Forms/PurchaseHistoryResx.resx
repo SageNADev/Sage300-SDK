@@ -345,10 +345,6 @@
     <value>Conversion Factor</value>
     <comment>Used in Export</comment>
   </data>
-  <data name="CostCategory" xml:space="preserve">
-    <value>(Cost) Category</value>
-    <comment>Used in Export</comment>
-  </data>
   <data name="DaysToReceive" xml:space="preserve">
     <value>Days To Receive</value>
     <comment>Used in Export</comment>

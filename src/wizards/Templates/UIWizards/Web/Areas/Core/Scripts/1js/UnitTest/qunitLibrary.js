@@ -17,6 +17,14 @@
             $(filter).trigger("click");
         },
 
+         /**
+         * Trigger a double click event
+         * @param {String} filter The id to identify the html element to interact with
+         */
+        dblClickElement: function (filter) {
+            $(filter).dblclick();
+        },
+
         /**
          * Type into an input
          * @param {String} filter The id to identify the html element to interact with
@@ -434,12 +442,11 @@
         /**
          * Set the value of the drop down menu of a finder
          * @param {String} filter The id to identify the html element to interact with
-         * @param {String} itemValue The item value to select
+         * @param {String} item The item text to select
          */
-        setFinderDropdownValue: function (filter, itemValue) {
-            console.log(`filter is: ${filter}`);
+        setDropdownText: function (filter, item) {
             let dropdownList = $(filter).data("kendoDropDownList");
-            dropdownList.text(itemValue);
+            dropdownList.text(item);
             $(filter).trigger("change");
             return dropdownList;
         },

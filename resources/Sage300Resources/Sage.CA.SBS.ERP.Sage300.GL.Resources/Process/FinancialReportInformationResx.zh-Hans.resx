@@ -162,6 +162,14 @@
   <data name="ErrorMessage_AccountRange" xml:space="preserve">
     <value>&lt;从科目&gt;框中的输入不能大于&lt;到&gt;框中的输入。</value>
   </data>
+  <data name="ErrorMessage_ConcurrentFRPrint" xml:space="preserve">
+    <value>财务报告打印目前正在使用中。请稍后再试。</value>
+    <comment>To be translated</comment>
+  </data>
+  <data name="ErrorMessage_ExcelConfigurationError" xml:space="preserve">
+    <value>财务报表器 Web Excel 配置错误。服务器上的 Microsoft Excel 版本可能不兼容。请联系您的管理员寻求帮助。</value>
+    <comment>To be translated</comment>
+  </data>
   <data name="ErrorMessage_NoChartOfAccounts" xml:space="preserve">
     <value>没有建立科目表。</value>
   </data>

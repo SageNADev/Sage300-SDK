@@ -1525,7 +1525,7 @@
     <value>T/S匯入稅務代碼</value>
   </data>
   <data name="TS_GSTF5" xml:space="preserve">
-    <value>T/S GST F5</value>
+    <value>T/S GST F5/F8</value>
   </data>
   <data name="TS_GSTIAF" xml:space="preserve">
     <value>T/S GST IAF產生器</value>
@@ -1573,7 +1573,7 @@
     <value>配置</value>
   </data>
   <data name="GSTF5" xml:space="preserve">
-    <value>GST F5</value>
+    <value>GST F5/F8</value>
   </data>
   <data name="GSTIAF" xml:space="preserve">
     <value>GST IAF產生器</value>

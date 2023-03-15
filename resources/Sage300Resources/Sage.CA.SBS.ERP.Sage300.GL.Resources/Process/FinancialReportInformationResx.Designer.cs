@@ -205,6 +205,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources.Process {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Financial Reporter Web Excel configuration error. The version of Microsoft Excel on the server may not be compatible.  Contact your administrator for assistance..
+        /// </summary>
+        public static string ErrorMessage_ExcelConfigurationError {
+            get {
+                return ResourceManager.GetString("ErrorMessage_ExcelConfigurationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chart of accounts not established..
         /// </summary>
         public static string ErrorMessage_NoChartOfAccounts {

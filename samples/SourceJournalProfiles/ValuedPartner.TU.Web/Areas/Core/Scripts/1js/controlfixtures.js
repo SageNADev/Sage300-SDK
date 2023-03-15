@@ -127,7 +127,7 @@
         /**
          * Update control value from server data 
          * @param {any} data data from server
-         * @param {any} msg The error message index
+         * @param {any} msg The message index
          */
         UpdateFromServer: function(data, msg){
             let controls = baseStaticControlfixtures._controlEvents[msg];
@@ -159,9 +159,11 @@
                         ctrl.val(data);
                     }
 
-                    //[RC] 5/26/2023 - left for UI done prior to this date
+                    //[RC] 5/26/2022 - left for UI done prior to this date
                     MessageBus.msg.trigger(control.ctrlid + apputils.EventMsgTags.svrUpdate, { msg: "UpdatedByServer", value: data });
-                    MessageBus.msg.trigger(control.viewid + control.ctrlid + apputils.EventMsgTags.svrUpdate, { msg: "UpdatedByServer", value: data });
+                    MessageBus.msg.trigger(control.viewid + control.ctrlid + apputils.EventMsgTags.svrUpdate, { msg: "UpdatedByServer", value: data});
+                    //Add this message to simplify screen object message listening handlers( like formatting all numeric textbox)
+                    MessageBus.msg.trigger(control.viewid + apputils.EventMsgTags.svrUpdate, { msg: "UpdatedByServer", value: data, ctrlId: control.ctrlid });
                 }
             });
         },

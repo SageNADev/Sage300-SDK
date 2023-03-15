@@ -1829,10 +1829,6 @@
     <value>應收帳款計量單位</value>
     <comment>Export Property Label</comment>
   </data>
-  <data name="CostCategory" xml:space="preserve">
-    <value>（成本）類別</value>
-    <comment>Export Property Label</comment>
-  </data>
   <data name="QuantityPreviouslyReturned" xml:space="preserve">
     <value>先前退回的數量</value>
     <comment>Export Property Label</comment>

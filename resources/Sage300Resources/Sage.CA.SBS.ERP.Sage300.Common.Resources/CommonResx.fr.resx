@@ -1684,4 +1684,7 @@
   <data name="PostSuccessMessage" xml:space="preserve">
     <value>Report terminé. {0}, {1}</value>
   </data>
+  <data name="AnErrorOccurredProcessingYourRequest" xml:space="preserve">
+    <value>Une erreur s'est produite lors du traitement de votre demande.</value>
+  </data>
 </root>

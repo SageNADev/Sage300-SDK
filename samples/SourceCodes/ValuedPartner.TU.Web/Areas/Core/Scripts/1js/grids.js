@@ -19,6 +19,8 @@
         selectRowChange: 'gridSelectRowChange',
         serverDefaultTotalPage: -1,
         stopLazyLoad: false,
+        editable: true,
+        lazyLoadRunning: false,
 
         /** Init kendo grid and set data source  */
         load: function () {          
@@ -298,6 +300,19 @@
             this.grid.setOptions({
                 columns: columns
             });
+        },
+
+        /**
+         *  Set grid setOptions only if necessary
+         * @param {boolean} isEditable
+         */
+        makeGridEditable: function (isEditable) {
+            if (this.editable !== isEditable) {
+                this.editable = isEditable;
+                this.grid.setOptions({
+                    editable: isEditable
+                });
+            }
         },
 
         /** Select grid row */
@@ -628,6 +643,28 @@
         },
 
         /**
+         * set selected row model data value
+         * @param {array} newValue
+         */
+        setRowValues: function (newValueObj) {
+            let selectedItem = this.getGrid().dataItem(this.getGrid().select());
+
+            //mostly Finder and messages popups looses grid row selection
+            if (!selectedItem) {
+                const row = this.selectGridRow(this.selectedRowIndex);
+                if (!row) return;
+            }
+
+            selectedItem = this.getGrid().dataItem(this.getGrid().select());
+
+            if (selectedItem) {
+                newValueObj.forEach(data => {
+                    selectedItem.set(data.columnName, data.value);
+                });
+            }
+        },
+
+        /**
          * stop propagation
          * @param {int} rowIndex Current select row index
          * @param {String} columnName Current select cell column name
@@ -833,11 +870,11 @@
          * @param {any} data data array to update the grid
          */
         updateGridLazyData: function (data) {
-            
+
             if (this.stopLazyLoad) {
                 $(".k-link.k-pager-nav.k-pager-last").prop("disabled", false).removeClass("k-state-disabled");
                 this.stopLazyLoad = false;
-                
+                this.lazyLoadRunning = false;
                 return;
             }
 
@@ -850,6 +887,7 @@
             } else {
                 $(".k-link.k-pager-nav.k-pager-last").prop("disabled", false).removeClass("k-state-disabled");
 
+                this.lazyLoadRunning = false;
             }
         },
 
@@ -858,7 +896,9 @@
          * @param {any} options Options
          */
         fetchLazyData: function (options) {
-            
+
+            this.lazyLoadRunning = true;
+
             let self = this;
             const data = self.businessObject.getDataForGrid(this.gridViewid); 
 
@@ -872,11 +912,15 @@
 
             if (apputils.isUndefined(Ok)) {
                 self.updateGridData(data, false);
+                self.lazyLoadRunning = false;
                 return;
             }
 
             Ok.then((result, status, xhr) => {
-                if (xhr.hasError) {
+
+                if (xhr.hasError || self.stopLazyLoad) {
+                    this.stopLazyLoad = false;
+                    self.lazyLoadRunning = false;
                     return;
                 }
 

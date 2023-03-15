@@ -303,4 +303,22 @@
   <data name="EquipmentUsageDetails" xml:space="preserve">
     <value>Equipment Usage Details</value>
   </data>
+  <data name="DateInactive" xml:space="preserve">
+    <value>Inactive Date</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Last Maintained</value>
+  </data>
+  <data name="UnitCost" xml:space="preserve">
+    <value>Unit Cost</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>PJC Equipment</value>
+  </data>
+  <data name="BillingRate" xml:space="preserve">
+    <value>Billing Rate</value>
+  </data>
 </root>
