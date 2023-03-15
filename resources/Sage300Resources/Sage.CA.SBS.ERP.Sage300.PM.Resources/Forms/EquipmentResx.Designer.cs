@@ -79,6 +79,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Billing Rate.
+        /// </summary>
+        public static string BillingRate {
+            get {
+                return ResourceManager.GetString("BillingRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} cannot be blank..
         /// </summary>
         public static string CannotBeBlank {
@@ -169,6 +178,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inactive Date.
+        /// </summary>
+        public static string DateInactive {
+            get {
+                return ResourceManager.GetString("DateInactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to delete {0} {1}?.
         /// </summary>
         public static string DeleteConfirmMessage {
@@ -210,6 +228,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string Entity {
             get {
                 return ResourceManager.GetString("Entity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PJC Equipment.
+        /// </summary>
+        public static string Equipment {
+            get {
+                return ResourceManager.GetString("Equipment", resourceCulture);
             }
         }
         
@@ -358,6 +385,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inactive.
+        /// </summary>
+        public static string Inactive {
+            get {
+                return ResourceManager.GetString("Inactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invoice Type.
         /// </summary>
         public static string InvoiceType {
@@ -372,6 +408,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string ItemDescription {
             get {
                 return ResourceManager.GetString("ItemDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Maintained.
+        /// </summary>
+        public static string LastMaintained {
+            get {
+                return ResourceManager.GetString("LastMaintained", resourceCulture);
             }
         }
         
@@ -588,6 +633,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string TransactionDate {
             get {
                 return ResourceManager.GetString("TransactionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit Cost.
+        /// </summary>
+        public static string UnitCost {
+            get {
+                return ResourceManager.GetString("UnitCost", resourceCulture);
             }
         }
         

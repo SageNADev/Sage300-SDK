@@ -70,15 +70,6 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (Cost) Category.
-        /// </summary>
-        public static string CostCategory {
-            get {
-                return ResourceManager.GetString("CostCategory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Credit Note Amount.
         /// </summary>
         public static string CreditNoteAmount {

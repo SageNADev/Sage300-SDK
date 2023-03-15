@@ -26,11 +26,11 @@ $rootCNA2SourceFolder = $Env:CNA2_SOURCE_ROOT
 if ($rootCNA2SourceFolder -eq '') {
   Write-Host 'Please ensure that you have defined an environment variable'
   Write-Host 'named CNA2-SOURCE-ROOT that points to your local CNA2 source directory.'
-  Write-Host 'Example: CNA2_SOURCE_ROOT=D:\projects\SageAzureDev\release-2023.0\'
+  Write-Host 'Example: CNA2_SOURCE_ROOT=C:\projects\SageAzureDev\release-2023.0\'
   Write-Host 'OR' 
   Write-Host 'Create a variable called rootCNA2SourceFolder in this file that points'
   Write-Host 'to your local CNA2 source directory.'
-  Write-Host 'Example: $rootCNA2SourceFolder="D:\projects\SageAzureDev\release-2023.0\"'
+  Write-Host 'Example: $rootCNA2SourceFolder="C:\projects\SageAzureDev\release-2023.0\"'
 }
 
 # Settings [Common and Core are not included in this list but handled later in file]

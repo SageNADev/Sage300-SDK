@@ -800,11 +800,15 @@ sg.viewList = function () {
             maxlength = col.FieldSize || (maskProps ? maskProps.maxLength : 64),
             html = kendo.format('<input type="text" id="{0}" name="{0}" class="{1}" maxlength="{2}" />', field, className, maxlength);
 
+        options.model.isUpperCase = className.includes('txt-upper');
+
         $(html).addClass('k-input k-textbox')
             .appendTo(container)
             .change(function () {
-                options.model.set(field, this.value);
+                const value = options.model.isUpperCase ? (this.value || '').toUpperCase() : this.value;
+                options.model.set(field, value);
             });
+
         _setEditorInitialValue(gridName, options);
 
         //Custom plug in for 'columnStartEdit' and 'columnEndEdit'

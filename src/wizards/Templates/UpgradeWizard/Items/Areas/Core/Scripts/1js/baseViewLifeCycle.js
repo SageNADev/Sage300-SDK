@@ -6,6 +6,7 @@
     const NavigationAction = apputils.NavigationAction; 
 
     let domainViewLifeCycle = {
+        screenContainerId: undefined,
         mainCollectionObj: undefined,
         eventListeners: [],
         gridElements: [],
@@ -193,6 +194,48 @@
             });
         },
 
+        hasScreenContainerId: function () {
+            return (apputils.isDefined(this.screenContainerId) && this.screenContainerId.length > 0);
+        },
+
+        getContainerBasedId: function (id, selector = "#") {
+            if (this.hasScreenContainerId()) {
+                return `${this.screenContainerId} ${selector}${id}`;
+            } else {
+                return id;
+            }
+        },
+
+        appendScreenContainerId: function (name) {
+
+            // Regular expression used to split strings by space.
+            const nameSplitter = /\s+/;
+            const selector = "";
+            
+            let str = "";
+
+            if (nameSplitter.test(name)) {
+                const names = name.split(nameSplitter);
+                for (let i = 0; i < names.length; i++) {
+                    //const spacer = i + 1 === names.length ? "" : " ";
+                    //str +=  spacer + this.getContainerBasedId(names[i]);
+                    if (this.hasScreenContainerId()){
+                        str += " #" + this.getContainerBasedId(names[i], selector);
+                    } else {
+                        str += " " + this.getContainerBasedId(names[i], selector);
+                    }
+                }
+
+                str = str.trim();
+
+            } else if (name.length > 0) {
+                str += "#" + this.getContainerBasedId(name, selector);
+            }
+
+            return str;
+
+        },
+
         htmlControls: [],
         defaultRowIndex: 0,
 
@@ -203,7 +246,7 @@
 
             apputils.each(controls, (htmlControl) => {
 
-                baseStaticControlfixtures.init(htmlControl.type, htmlControl.id, `${htmlControl.viewid}${this.defaultRowIndex}`, htmlControl.field, htmlControl.defaultValue, htmlControl.customBinding);
+                baseStaticControlfixtures.init(htmlControl.type, this.getContainerBasedId(htmlControl.id), `${htmlControl.viewid}${this.defaultRowIndex}`, htmlControl.field, htmlControl.defaultValue, htmlControl.customBinding);
             });
         },
 
@@ -214,7 +257,9 @@
             let controls = apputils.isFunction(this.htmlControlsToggle) ? this.htmlControlsToggle() : this.htmlControlsToggle;
 
             apputils.each(controls, (htmlControl) => {
-                $(htmlControl.ids).prop(htmlControl.prop, htmlControl.condition);
+                //$(htmlControl.ids).prop(htmlControl.prop, htmlControl.condition);
+                $(this.appendScreenContainerId(htmlControl.ids)).prop(htmlControl.prop, htmlControl.condition);
+                
             });
         },
 
@@ -253,49 +298,54 @@
                 let fields = this.mainUIVCRBindings[i].field;
                 let navId = this.mainUIVCRBindings[i].navId || "";
 
+                let btnFirstId = `#${this.getContainerBasedId('btnDataFirst')}${navId}`;
+                let btnPrevId = `#${this.getContainerBasedId('btnDataPrevious')}${navId}`;
+                let btnNextId = `#${this.getContainerBasedId('btnDataNext')}${navId}`;
+                let btnLastId = `#${this.getContainerBasedId('btnDataLast')}${navId}`;
+
                 // Handle screen key field is composite keys(BOM screen: [ItemNo, BomNo])
                 if (!Array.isArray(ctrIds)) ctrIds = [ctrIds];
                 if (!Array.isArray(fields)) fields = [fields];
 
-                $("#btnDataFirst" + navId).on("click", function () {
+                $(btnFirstId).on("click", function () {
                     apputils.activeElementId = ctrIds[0];
                     self.mainUIVCRGoFirst(ctrIds, fields);
                 });
-                self.hotKeyEvents.push({ id: '#btnDataFirst' + navId, evt: 'click', hotKey: apputils.HotKeys.Home });
-                $(`#btnDataFirst${navId}`).mousedown(() => {
+                self.hotKeyEvents.push({ id: btnFirstId, evt: 'click', hotKey: apputils.HotKeys.Home });
+                $(btnFirstId).mousedown(() => {
                     self.mainCollectionObj.rows[0].navigationAction = NavigationAction.First;
                     $(`#${ctrIds[0]}`).data('offchangeEvent', true);
                 });
 
-                $("#btnDataPrevious" + navId).on("click", function () {
+                $(btnPrevId).on("click", function () {
                     apputils.activeElementId = ctrIds[0];
                     self.mainUIVCRGoPrevious(ctrIds, fields);
                 });
-                self.hotKeyEvents.push({ id: '#btnDataPrevious' + navId, evt: 'click', hotKey: apputils.HotKeys.PgUp });
-                $(`#btnDataPrevious${navId}`).mousedown(() => {
+                self.hotKeyEvents.push({ id: btnPrevId, evt: 'click', hotKey: apputils.HotKeys.PgUp });
+                $(btnPrevId).mousedown(() => {
                     self.mainCollectionObj.rows[0].navigationAction = NavigationAction.Previous;
                     $(`#${ctrIds[0]}`).data('offchangeEvent', true);
                 });
 
-                $("#btnDataNext" + navId).on("click", function () {
+                $(btnNextId).on("click", function () {
                     apputils.activeElementId = ctrIds[0];
                     self.mainCollectionObj.rows[0].navigationAction = NavigationAction.Next;
                     $(`#${ctrIds[0]}`).data('offchangeEvent', true);
                     self.mainUIVCRGoNext(ctrIds, fields);
 
                 });
-                self.hotKeyEvents.push({ id: '#btnDataNext' + navId, evt: 'click', hotKey: apputils.HotKeys.PgDn });
-                $(`#btnDataNext${navId}`).mousedown(() => {
+                self.hotKeyEvents.push({ id: btnNextId, evt: 'click', hotKey: apputils.HotKeys.PgDn });
+                $(btnNextId).mousedown(() => {
                     self.mainCollectionObj.rows[0].navigationAction = NavigationAction.Next;
                     $(`#${ctrIds[0]}`).data('offchangeEvent', true);
                 });
 
-                $("#btnDataLast" + navId).on("click", function () {
+                $(btnLastId).on("click", function () {
                     apputils.activeElementId = ctrIds[0];
                     self.mainUIVCRGoLast(ctrIds, fields);
                 });
-                self.hotKeyEvents.push({ id: '#btnDataLast' + navId, evt: 'click', hotKey: apputils.HotKeys.End });
-                $(`#btnDataLast${navId}`).mousedown(() => {
+                self.hotKeyEvents.push({ id: btnLastId, evt: 'click', hotKey: apputils.HotKeys.End });
+                $(btnLastId).mousedown(() => {
                     self.mainCollectionObj.rows[0].navigationAction = NavigationAction.Last;
                     $(`#${ctrIds[0]}`).data('offchangeEvent', true);
                 });
@@ -335,13 +385,17 @@
                 }
             }
             let self = this;
-            
+            let btnFirstId = `#${this.getContainerBasedId('btnDataFirst')}${this.navId}`;
+            let btnPrevId = `#${this.getContainerBasedId('btnDataPrevious')}${this.navId}`;
+
             //must create callback only once
             if (apputils.isUndefined(this.VCRGoPrevious)) {
                 this.VCRGoPrevious = () => {
-                    let disable = this.mainCollectionObj.noData; 
-                    $(`#btnDataFirst${self.navId}, #btnDataPrevious${self.navId}`).prop('disabled', disable);
-                    $(`#${self.recordTitleNumberId}`).trigger("focus");
+                    let disable = this.mainCollectionObj.noData;
+                    $(btnFirstId).prop('disabled', disable);
+                    $(btnPrevId).prop('disabled', disable);
+
+                    $(`#${this.getContainerBasedId(self.recordTitleNumberId)}`).trigger("focus");
 
                     //AT-76352 - bypass ctrIds values and go to very first record
                     if (this.mainCollectionObj.noData) self.mainUIVCRGoFirst(null, fields);
@@ -368,13 +422,16 @@
                 }
             }
             let self = this;
-            
+            let btnNextId = `#${this.getContainerBasedId('btnDataNext')}${this.navId}`;
+            let btnLastId = `#${this.getContainerBasedId('btnDataLast')}${this.navId}`;
             //must create callback only once
             if (apputils.isUndefined(this.VCRGoNext)) {
                 this.VCRGoNext = () => {
                     let disable = this.mainCollectionObj.noData;
-                    $(`#btnDataNext${self.navId}, #btnDataLast${self.navId}`).prop('disabled', disable);
-                    $(`#${self.recordTitleNumberId}`).trigger("focus");
+
+                    $(btnNextId).prop('disabled', disable);
+                    $(btnLastId).prop('disabled', disable);
+                    $(`#${this.getContainerBasedId(self.recordTitleNumberId)}`).trigger("focus");
 
                     //AT-76352
                     if (this.mainCollectionObj.noData) self.mainUIVCRGoLast(ctrIds, fields);
@@ -631,24 +688,34 @@
          */
         handleNavigationButtons: function (navId, focus = true) {
             navId = navId || '';
-            $(`#btnDataFirst${navId}, #btnDataPrevious${navId}`).prop('disabled', this.navigationAction === NavigationAction.First);
+            const btnFirstId = `#${this.getContainerBasedId('btnDataFirst')}${navId}`;
+            const btnPrevId = `#${this.getContainerBasedId('btnDataPrevious')}${navId}`;
+            const btnNextId = `#${this.getContainerBasedId('btnDataNext')}${navId}`;
+            const btnLastId = `#${this.getContainerBasedId('btnDataLast')}${navId}`;
+            const keyId = this.getContainerBasedId(this.recordTitleNumberId);
 
-            $(`#btnDataNext${navId}, #btnDataLast${navId}`).prop('disabled', this.navigationAction === NavigationAction.Last);
-            
-            const disable = $(`#${this.recordTitleNumberId}`).val() === this.previousKeyValue;
+            $(btnFirstId).prop('disabled', this.navigationAction === NavigationAction.First);
+            $(btnPrevId).prop('disabled', this.navigationAction === NavigationAction.First);
+
+            $(btnNextId).prop('disabled', this.navigationAction === NavigationAction.Last);
+            $(btnLastId).prop('disabled', this.navigationAction === NavigationAction.Last);
+
+            const disable = $(`#${keyId}`).val() === this.previousKeyValue;
             if (this.navigationAction === NavigationAction.Next) {
-                $(`#btnDataNext${navId}, #btnDataLast${navId}`).prop('disabled', disable);
+                $(btnNextId).prop('disabled', disable);
+                $(btnLastId).prop('disabled', disable)
             }
             if (this.navigationAction === NavigationAction.Previous) {
-                $(`#btnDataFirst${navId}, #btnDataPrevious${navId}`).prop('disabled', disable);
+                $(btnFirstId).prop('disabled', disable);
+                $(btnPrevId).prop('disabled', disable);
             }
 
             if (focus) {
-                $(`#${this.recordTitleNumberId}`).trigger("focus");
+                $(`#${keyId}`).trigger("focus");
             }
             //reset after use
             this.navigationAction = NavigationAction.None;
-            $(`#${this.recordTitleNumberId}`).data('offchangeEvent', false);
+            $(`#${keyId}`).data('offchangeEvent', false);
         },
 
         /**
@@ -658,15 +725,20 @@
          */
         bindNavigationButtons: function (navId, keyFieldId) {
             navId = navId || '';
+            const btnFirstId = `#${this.getContainerBasedId('btnDataFirst')}${navId}`;
+            const btnPrevId = `#${this.getContainerBasedId('btnDataPrevious')}${navId}`;
+            const btnNextId = `#${this.getContainerBasedId('btnDataNext')}${navId}`;
+            const btnLastId = `#${this.getContainerBasedId('btnDataLast')}${navId}`;
+
             $(`#${keyFieldId}`).on('keydown', e => {
                 switch (e.key) {
                     case "ArrowLeft":
                         e.preventDefault();
-                        $(e.ctrlKey ? `#btnDataFirst${navId}` : `#btnDataPrevious${navId}`).trigger('click');
+                        $(e.ctrlKey ? btnFirstId : btnPrevId).trigger('click');
                         break;
                     case "ArrowRight":
                         e.preventDefault();
-                        $(e.ctrlKey ? `#btnDataLast${navId}` : `#btnDataNext${navId}`).trigger('click');
+                        $(e.ctrlKey ? btnLastId : btnNextId).trigger('click');
                         break;
                 }
             })

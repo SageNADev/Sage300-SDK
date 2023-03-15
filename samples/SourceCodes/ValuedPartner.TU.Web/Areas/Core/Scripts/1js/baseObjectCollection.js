@@ -23,6 +23,7 @@
         ajaxCall: function (method, url, query) {
 
             let self = this;
+            method = "Post";
             let config = query ? { async: true, url: url, type: method, data: { query: query } } : { async: true, url: url, type: method };
 
             return $.ajax(config).done(function (result, status, xhr) {
@@ -863,6 +864,89 @@
 
             return this.rows[rowIndex].setPreviousValueAndResetIsDirtyFlag(fieldName, value);
         },
+
+        generateMainInitRoot: function (existingEntity) {
+            return this.generateMainInitingRoot(existingEntity, CRUDReasons.InitData);
+        },
+
+        /**
+         * Generate initOnly root query string
+         * @param {any} existingEntity
+         * @param {any} verb
+         */
+        generateMainInitingRoot: function (existingEntity, verb) {
+            let query = apputils.rootNodeTemplate; 
+
+            query += this.generateMainInitOnlyQuery("", verb, existingEntity);
+
+            if (query === apputils.rootNodeTemplate) {
+                //nothing to do
+                return;
+            }
+
+            query += apputils.rootNodeClose;
+
+            return query;
+        },
+
+        /**
+         * Generate InitOnly query string
+         * @param {any} parentIndex
+         * @param {any} verb
+         * @param {any} existingEntity
+         * @param {any} childIndex
+         */
+        generateMainInitOnlyQuery: function (parentIndex, verb, existingEntity, childIndex = "0") {
+
+            let query = "";
+            const index = childIndex;
+
+            //this is for main ui therefore get zero index
+            const entity = this.rows.length === 0 ? this.getEntity() : this.rows[0];
+
+            const children = entity.generateInitOnlyQuery(parentIndex, verb, existingEntity, index);
+            
+            if (children.length > 0) {
+                query += children;
+            }
+
+            return query;
+        },
+
+        /**
+         * Generate InitOnly query string
+         * @param {any} parentIndex
+         * @param {any} verb
+         * @param {any} existingEntity
+         * @param {any} childIndex
+         */
+        generateMainChildInitOnlyQuery: function (parentIndex, verb, existingEntity, childIndex = "0") {
+
+            if (apputils.isUndefined(existingEntity)) return "";
+
+            let query = "";
+            let index = 0;
+            let children = "";
+
+            if (existingEntity.rows.length > 0) {
+                existingEntity.rows.forEach(entity => {
+                    children += entity.generateInitOnlyQuery(parentIndex, verb, entity, index);
+                    index++;
+                })
+
+            } else {
+                //this is for main ui therefore get zero index
+                const entity = this.getEntity();
+
+                children = entity.generateInitOnlyQuery(parentIndex, verb, entity, index);
+            }
+
+            if (children.length > 0) {
+                query += children;
+            }
+
+            return query;
+        }
     };
 
     this.baseObjectCollection = helpers.View.extend(domainObjectCollection);

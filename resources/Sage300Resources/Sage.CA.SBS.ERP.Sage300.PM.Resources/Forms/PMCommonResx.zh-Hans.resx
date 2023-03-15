@@ -300,4 +300,37 @@
   <data name="UOMDoesNotMatch" xml:space="preserve">
     <value>计量单位未匹配{0}的计量单位。</value>
   </data>
+  <data name="CannotDeleteRequiredOptionalField" xml:space="preserve">
+    <value>You cannot delete required optional field.</value>
+  </data>
+  <data name="EquipmentDescription" xml:space="preserve">
+    <value>Equipment Description</value>
+  </data>
+  <data name="ARItem" xml:space="preserve">
+    <value>应收帐款货品</value>
+  </data>
+  <data name="ARUOM" xml:space="preserve">
+    <value>应收帐款计量单位</value>
+  </data>
+  <data name="CurrencyDescription" xml:space="preserve">
+    <value>币种描述</value>
+  </data>
+  <data name="EquipmentDetail" xml:space="preserve">
+    <value>设备明细</value>
+  </data>
+  <data name="ARItemNoDoesNotExist" xml:space="preserve">
+    <value>应收帐款货品编号 {0} 不存在。</value>
+  </data>
+  <data name="UOMNotEntered" xml:space="preserve">
+    <value>未为这一货品输入或货定义计量单位。</value>
+  </data>
+  <data name="IsNotAValidCurrencyCode" xml:space="preserve">
+    <value>{0} 不是一个有效的币种代码。</value>
+  </data>
+  <data name="CannotBeLessThanZero" xml:space="preserve">
+    <value>{0} 不能小于零。</value>
+  </data>
+  <data name="YouCannotDeleteAnEquipmentCode" xml:space="preserve">
+    <value>不能删除已分配给{0}的设备代码。</value>
+  </data>
 </root>

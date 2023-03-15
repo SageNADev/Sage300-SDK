@@ -4,7 +4,7 @@
     var appconfig = this.appconfig = {};
 
     const traceConfig = {
-        disabled : true,
+        disabled : false,
         log : true,
         info : true,
         warn : true,

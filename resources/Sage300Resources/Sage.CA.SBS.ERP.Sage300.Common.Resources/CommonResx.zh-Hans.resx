@@ -1696,4 +1696,7 @@
   <data name="PostSuccessMessage" xml:space="preserve">
     <value>过帐完成。 {0}, {1}</value>
   </data>
+  <data name="AnErrorOccurredProcessingYourRequest" xml:space="preserve">
+    <value>处理您的请求时发生错误。</value>
+  </data>
 </root>

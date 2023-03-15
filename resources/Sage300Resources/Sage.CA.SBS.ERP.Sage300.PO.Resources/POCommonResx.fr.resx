@@ -1829,10 +1829,6 @@
     <value>Unité de mesure de CC</value>
     <comment>Export Property Label</comment>
   </data>
-  <data name="CostCategory" xml:space="preserve">
-    <value>Catégorie (coût)</value>
-    <comment>Export Property Label</comment>
-  </data>
   <data name="QuantityPreviouslyReturned" xml:space="preserve">
     <value>Quantité précédemment retournée</value>
     <comment>Export Property Label</comment>

@@ -21,7 +21,7 @@
     this.apputils.rootNodeClose = "</n>";
     Object.freeze(this.apputils.rootNodeClose);
 
-    this.apputils.createRowNode = function ({ viewId, filter = "", parentId = "", id = "0", verb = this.apputils.CRUDReasons.Get }) {
+    this.apputils.createRowNode = function ({ viewId, filter = "", parentId = "", id = "0", verb = apputils.CRUDReasons.Get }) {
         filter = filter.length > 0 ? filter : "f=''";
         filter = filter.includes("f=") ? filter : `f='${filter}'`;
 
@@ -58,6 +58,7 @@
     this.apputils.CRUDReasons = {
         InitDataOnly: "InitOnly",
         InitData: "Init",
+        InitHeader: "InitHeader",
         AddingNewData: "Insert",
         PostData: "Post",
         Ignore: "Ignore",
@@ -432,6 +433,10 @@
 
     this.apputils.compose = function () {
         return _.flowRight.apply(this, arguments);
+    };
+
+    this.apputils.isDefined = function (value) {
+        return !apputils.isUndefined(value);
     };
 
     //see https://stackoverflow.com/questions/45589902/equivalent-in-javascript-to-datetime-ticks

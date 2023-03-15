@@ -59,6 +59,9 @@
                 let msg = options.viewId + `${field}Finder`;
                 model.set(field, value);
                 model.set('SWSET', globalResource.Yes);
+                if (model.TYPE === 'Date') {
+                    value = sg.utls.kndoUI.convertStringToDate(value).toLocaleDateString();
+                }
                 MessageBus.msg.trigger(msg, { nav: "user", viewId: options.viewId, msgid: model.msgid, rowIndex: model.RowIndex, field: field, value: value});
                 sendMessage('SWSET', 'Yes');
                 optionalFieldValidation(preValue, self.optionalFieldsFinderProperty);

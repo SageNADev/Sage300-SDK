@@ -300,4 +300,37 @@
   <data name="UOMDoesNotMatch" xml:space="preserve">
     <value>L'unité de mesure spécifiée ne correspond pas à l'unité de mesure sur {0}.</value>
   </data>
+  <data name="CannotDeleteRequiredOptionalField" xml:space="preserve">
+    <value>You cannot delete required optional field.</value>
+  </data>
+  <data name="EquipmentDescription" xml:space="preserve">
+    <value>Equipment Description</value>
+  </data>
+  <data name="ARItem" xml:space="preserve">
+    <value>Article CC</value>
+  </data>
+  <data name="ARUOM" xml:space="preserve">
+    <value>UdeM CC</value>
+  </data>
+  <data name="CurrencyDescription" xml:space="preserve">
+    <value>Description-Devise</value>
+  </data>
+  <data name="EquipmentDetail" xml:space="preserve">
+    <value>Détail matériel</value>
+  </data>
+  <data name="ARItemNoDoesNotExist" xml:space="preserve">
+    <value>N° article de CC {0} n'existe pas.</value>
+  </data>
+  <data name="UOMNotEntered" xml:space="preserve">
+    <value>L'unité de mesure n'est pas entrée ou définie pour cet article.</value>
+  </data>
+  <data name="IsNotAValidCurrencyCode" xml:space="preserve">
+    <value>{0} n'est pas un code de devise valide.</value>
+  </data>
+  <data name="CannotBeLessThanZero" xml:space="preserve">
+    <value>{0} ne peut pas être inférieur à zéro.</value>
+  </data>
+  <data name="YouCannotDeleteAnEquipmentCode" xml:space="preserve">
+    <value>Vous ne pouvez pas supprimer un code de matériel qui est assigné à un(e) {0}.</value>
+  </data>
 </root>

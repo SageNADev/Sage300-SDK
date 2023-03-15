@@ -664,6 +664,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        public static string Category {
+            get {
+                return ResourceManager.GetString("Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Category Code.
         /// </summary>
         public static string CategoryCode {
@@ -835,6 +844,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contract.
+        /// </summary>
+        public static string Contract {
+            get {
+                return ResourceManager.GetString("Contract", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contract Code.
         /// </summary>
         public static string ContractCode {
@@ -876,15 +894,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string CostAllocation {
             get {
                 return ResourceManager.GetString("CostAllocation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (Cost) Category.
-        /// </summary>
-        public static string CostCategory {
-            get {
-                return ResourceManager.GetString("CostCategory", resourceCulture);
             }
         }
         
@@ -2208,6 +2217,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string ExtendedAmountwOrTIP {
             get {
                 return ResourceManager.GetString("ExtendedAmountwOrTIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estimated Extended Billing.
+        /// </summary>
+        public static string ExtendedBillingAmount {
+            get {
+                return ResourceManager.GetString("ExtendedBillingAmount", resourceCulture);
             }
         }
         

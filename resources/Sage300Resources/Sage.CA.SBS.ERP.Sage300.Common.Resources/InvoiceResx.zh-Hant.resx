@@ -3342,8 +3342,8 @@
     <value>備注辨識符</value>
     <comment>From ReturnEntryResx</comment>
   </data>
-  <data name="CostCategory" xml:space="preserve">
-    <value>（成本）類別</value>
+  <data name="Category" xml:space="preserve">
+    <value>類別</value>
     <comment>From ReturnEntryResx</comment>
   </data>
   <data name="CostTaxClass1" xml:space="preserve">
@@ -3584,5 +3584,11 @@
   </data>
   <data name="PaymentsURL" xml:space="preserve">
     <value>SF付款承兌URL</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>合約</value>
+  </data>
+  <data name="ExtendedBillingAmount" xml:space="preserve">
+    <value>預估總帳單</value>
   </data>
 </root>

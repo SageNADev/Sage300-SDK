@@ -307,4 +307,7 @@
   <data name="ErrorMessage_ConcurrentFRPrint" xml:space="preserve">
     <value>Financial Reporter printing is currently in use. Please try again later.</value>
   </data>
+  <data name="ErrorMessage_ExcelConfigurationError" xml:space="preserve">
+    <value>Financial Reporter Web Excel configuration error. The version of Microsoft Excel on the server may not be compatible.  Contact your administrator for assistance.</value>
+  </data>
 </root>

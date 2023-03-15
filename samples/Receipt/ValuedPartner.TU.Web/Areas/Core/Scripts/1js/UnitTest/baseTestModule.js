@@ -259,25 +259,19 @@
                 //This will pause another 200ms for AJAX to complete
                 if (jQuery.active > 0) {
 
-                    this.steps.unshift(this.step(() => console.log("......waiting for jQuery.active......")));
+                    this.steps.unshift(this.step(() => console.log("......waiting for jQuery.active completed......"), 600));
                     console.log("...........jQuery.active wait added....");
                 } 
 
                 done();
 
-                //if (this.msg === baseStaticTestModule.testName + "...." + this.steps.length + "...steps remaining...") {
-                //    debugger
-                //    const iii = 0;
-                //}
-
                 this.msg = baseStaticTestModule.testName + "...." + this.steps.length + "...steps remaining...";
 
                 console.log(this.msg);
-                //i++;
-
+                
                 this.executeSteps(0, assert);
 
-            }, step.ms); //this.steps[i].ms);
+            }, step.ms); 
         },
 
         /**

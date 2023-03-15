@@ -100,7 +100,7 @@ var ErrorEntityCollectionObj = helpers.View.extend({},{
 
         let xmlDoc = parser.parseFromString(data, "text/xml");
 
-        let iterator = xmlDoc.evaluate(appconfig.response.tag + '/errors/error', xmlDoc, null, XPathResult.ANY_TYPE, null);
+        let iterator = xmlDoc.evaluate(appconfig.response.tag + '//errors/error', xmlDoc, null, XPathResult.ANY_TYPE, null);
 
         try {
             let thisNode = iterator.iterateNext();
