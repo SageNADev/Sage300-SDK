@@ -1165,8 +1165,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Iterate Accpac View
             for (var i = 0; i < view.Fields.Count; i++)
             {
-                // Ignore those fields having description "RESERVED"
-                if (view.Fields[i].Description.ToUpper() == "RESERVED")
+                // Ignore those fields having description "RESERVED" OR "INTERNAL USE"
+                if (view.Fields[i].Description.ToUpper().StartsWith("RESERVED") ||
+                    view.Fields[i].Description.ToUpper().StartsWith("INTERNAL USE"))
                 {
                     continue;
                 }
@@ -1286,8 +1287,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Iterate Accpac View
             for (var i = 0; i < view.Fields.Count; i++)
             {
-                // Ignore those fields having description "RESERVED"
-                if (view.Fields[i].Description.ToUpper() == "RESERVED")
+                // Ignore those fields having description "RESERVED" OR "INTERNAL USE"
+                if (view.Fields[i].Description.ToUpper().StartsWith("RESERVED") ||
+                    view.Fields[i].Description.ToUpper().StartsWith("INTERNAL USE"))
                 {
                     continue;
                 }
