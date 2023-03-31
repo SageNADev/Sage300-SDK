@@ -353,14 +353,14 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
      * @param {Function} functionToCall The callback function to invoke
      */
     checkIsDirty: (functionToCall, <#=localKeyFieldName#>) => {
-        if (<#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty() && <#=localKeyFieldName#> != null && <#=localKeyFieldName#> != "") {
+        if (<#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty() && <#=localKeyFieldName#> !== null && <#=localKeyFieldName#> !== "") {
             sg.utls.showKendoConfirmationDialog(
                 () => { // Yes
                     sg.utls.clearValidations("frm<#=containerName#>");
                     functionToCall.call();
                 },
                 () => { // No
-                    if (sg.controls.GetString(<#=localKeyFieldName#>) != sg.controls.GetString(modelData.<#=keyFieldName#>())) {
+                    if (sg.controls.GetString(<#=localKeyFieldName#>) !== sg.controls.GetString(modelData.<#=keyFieldName#>())) {
                         modelData.<#=keyFieldName#>(<#=localKeyFieldName#>);
                    }
                    return;
@@ -395,7 +395,7 @@ var <#=localEntityName#>UISuccess = {
      */
     get: (jsonResult) => {
         if (jsonResult.UserMessage && jsonResult.UserMessage.IsSuccess) {
-            if (jsonResult.Data != null) {
+            if (jsonResult.Data !== null) {
                 <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
             } else {
                 modelData.UIMode(sg.utls.OperationMode.NEW);
@@ -500,7 +500,7 @@ var <#=localEntityName#>UISuccess = {
      * @param {number} uiMode The UI mode
      */
     displayResult: (jsonResult, uiMode) => {
-        if (jsonResult != null) {
+        if (jsonResult !== null) {
             if (!<#=localEntityName#>UI.hasKoBindingApplied) {
                 <#=localEntityName#>UI.<#=localEntityName#>Model = ko.mapping.fromJS(jsonResult);
                 <#=localEntityName#>UI.hasKoBindingApplied = true;
@@ -511,7 +511,7 @@ var <#=localEntityName#>UISuccess = {
             } else {
                 ko.mapping.fromJS(jsonResult, <#=localEntityName#>UI.<#=localEntityName#>Model);
                 modelData.UIMode(uiMode);
-                if (uiMode != sg.utls.OperationMode.NEW) {
+                if (uiMode !== sg.utls.OperationMode.NEW) {
                     <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
                 }
 <#

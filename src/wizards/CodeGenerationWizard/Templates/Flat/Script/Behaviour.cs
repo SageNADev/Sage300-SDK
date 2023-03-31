@@ -912,15 +912,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             
             #line default
             #line hidden
-            this.Write(" != null && ");
+            this.Write(" !== null && ");
             
             #line 344 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localKeyFieldName));
             
             #line default
             #line hidden
-            this.Write(" != \"\") {\r\n            sg.utls.showKendoConfirmationDialog(\r\n                () =" +
-                    "> { // Yes\r\n                    sg.utls.clearValidations(\"frm");
+            this.Write(" !== \"\") {\r\n            sg.utls.showKendoConfirmationDialog(\r\n                () " +
+                    "=> { // Yes\r\n                    sg.utls.clearValidations(\"frm");
             
             #line 347 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
@@ -935,7 +935,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             
             #line default
             #line hidden
-            this.Write(") != sg.controls.GetString(modelData.");
+            this.Write(") !== sg.controls.GetString(modelData.");
             
             #line 351 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
@@ -1030,7 +1030,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
      */
     get: (jsonResult) => {
         if (jsonResult.UserMessage && jsonResult.UserMessage.IsSuccess) {
-            if (jsonResult.Data != null) {
+            if (jsonResult.Data !== null) {
                 ");
             
             #line 387 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
@@ -1195,7 +1195,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             #line hidden
             this.Write("UISuccess\r\n     * @public\r\n     *\r\n     * @param {object} jsonResult JSON payload" +
                     " object\r\n     * @param {number} uiMode The UI mode\r\n     */\r\n    displayResult: " +
-                    "(jsonResult, uiMode) => {\r\n        if (jsonResult != null) {\r\n            if (!");
+                    "(jsonResult, uiMode) => {\r\n        if (jsonResult !== null) {\r\n            if (!" +
+                    "");
             
             #line 475 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));
@@ -1308,7 +1309,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Script
             #line default
             #line hidden
             this.Write("Model);\r\n                modelData.UIMode(uiMode);\r\n                if (uiMode !=" +
-                    " sg.utls.OperationMode.NEW) {\r\n                    ");
+                    "= sg.utls.OperationMode.NEW) {\r\n                    ");
             
             #line 486 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Script\Behaviour.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(localEntityName));

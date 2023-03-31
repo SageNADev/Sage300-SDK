@@ -248,9 +248,9 @@ var <#=localEntityName#>UI = <#=localEntityName#>UI || {}
         let inputValid = true;
 
         if (!inputValid) {
-            if (errorRangeMessage != "") {
+            if (errorRangeMessage !== "") {
                 sg.utls.showMessageInfo(sg.utls.msgType.ERROR, jQuery.validator.format(<#=localEntityName#>Resources.ErrorFromToValueMessage, errorRangeMessage));
-            } else if (errorMessage != "") {
+            } else if (errorMessage !== "") {
                 sg.utls.showMessageInfo(sg.utls.msgType.ERROR, errorMessage);
             }
         }
