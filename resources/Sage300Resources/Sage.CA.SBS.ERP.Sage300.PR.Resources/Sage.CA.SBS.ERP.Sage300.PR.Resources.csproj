@@ -164,7 +164,6 @@
     <EmbeddedResource Include="EmployeeResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeResx.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeTimecardResx.fr.resx" />
     <EmbeddedResource Include="EmployeeTimecardResx.resx">

@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */
 
 "use strict";
 
@@ -724,7 +724,8 @@ var loginUICallback = {
         $("#btnLogin").removeClass('active');
         // Not a success. Display errors/warnings or redirect
         if (jsonResult.PasswordExpires) {
-            loginUI.displayPasswordExpires(jsonResult);
+            sg.utls.showMessageDialog(loginUICallback.changePasswordLink, loginUI.resumeLogin, jsonResult.Message, sg.utls.DialogBoxType.YesNo, "",
+                sg.utls.getFormatedDialogHtml("btnPasswordExpiresYes", "btnPasswordExpiresNo"), "btnPasswordExpiresYes", "btnPasswordExpiresNo", false);
         } else {
             loginUI.displayMessage(jsonResult);
         }

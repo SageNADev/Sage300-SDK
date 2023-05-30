@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */
 
 // @ts-check
 
@@ -1699,7 +1699,7 @@ $.extend(sg.utls, {
         return text;
     },
 
-    showMessageDialog: function (callbackYes, callbackNo, message, dialogType, title, dialoghtml, okButtonId, cancelButtonId) {
+    showMessageDialog: function (callbackYes, callbackNo, message, dialogType, title, dialoghtml, okButtonId, cancelButtonId, isSessionWarning) {
 
         var idOK = (typeof okButtonId !== 'undefined' && okButtonId !== null) ? "#" + okButtonId : "#kendoConfirmationAcceptButton";
         var idCancel = (typeof cancelButtonId !== 'undefined' && cancelButtonId !== null) ? "#" + cancelButtonId : "#kendoConfirmationCancelButton";
@@ -1737,9 +1737,15 @@ $.extend(sg.utls, {
 
             kendoWindow.data("kendoWindow").center().open();
 
-            kendoWindow.find("#dialogConfirmation_header").text(globalResource.SessionExpiredDialogHeader);
-            kendoWindow.find("#dialogConfirmation_msg1").text(globalResource.SessionExpiredDialogMsg1);
-            kendoWindow.find("#dialogConfirmation_msg2").text(globalResource.SessionExpiredDialogMsg2);
+            if (typeof isSessionWarning !== 'undefined' && isSessionWarning !== null && isSessionWarning === true) {
+                kendoWindow.find("#dialogConfirmation_header").text(globalResource.SessionExpiredDialogHeader);
+                kendoWindow.find("#dialogConfirmation_msg1").text(globalResource.SessionExpiredDialogMsg1);
+                kendoWindow.find("#dialogConfirmation_msg2").text(globalResource.SessionExpiredDialogMsg2);
+            }
+            else {
+                kendoWindow.find("#dialogConfirmation_header").text(title);
+                kendoWindow.find("#dialogConfirmation_msg1").text(message);
+            }
 
             var yesBinderArray = ["msgCtrl-close", "btn-primary"];
             var noBinderArray = ["btn-secondary"];
@@ -1747,26 +1753,26 @@ $.extend(sg.utls, {
 
         switch (dialogType) {
             case sg.utls.DialogBoxType.YesNo:
-                $(idOK).text(globalResource.Yes);
-                $(idCancel).text(globalResource.No);
+                $(idOK).attr('value', globalResource.Yes)
+                $(idCancel).attr('value', globalResource.No);
                 break;
             case sg.utls.DialogBoxType.OKCancel:
-                $(idOK).text(globalResource.OK);
-                $(idCancel).text(globalResource.Cancel);
+                $(idOK).attr('value', globalResource.OK);
+                $(idCancel).attr('value', globalResource.Cancel);
                 break;
             case sg.utls.DialogBoxType.OK:
                 defaultTitle = globalResource.Info;
-                $(idOK).text(globalResource.OK);
+                $(idOK).attr('value', globalResource.OK);
                 $(idCancel).hide();
                 break;
             case sg.utls.DialogBoxType.Close:
                 defaultTitle = globalResource.Error;
                 $(idOK).hide();
-                $(idCancel).text(globalResource.Close);
+                $(idCancel).attr('value', globalResource.Close);
                 break;
             case sg.utls.DialogBoxType.DeleteCancel:
-                $(idOK).text(globalResource.Delete);
-                $(idCanel).text(globalResource.Cancel);
+                $(idOK).attr('value', globalResource.Delete);
+                $(idCanel).attr('value', globalResource.Cancel);
                 break;
             case sg.utls.DialogBoxType.Continue:
                 kendoWindow.find("#dialogConfirmation_header").text(title);

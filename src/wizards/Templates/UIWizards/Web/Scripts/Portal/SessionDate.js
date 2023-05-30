@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */
 
 //@ts-check
 "use strict";
@@ -36,7 +36,7 @@ var SessionDateCookieSetup = function () {
                 }
 
                 sg.utls.showMessageDialog(null, null, jsonResult.Message, sg.utls.DialogBoxType.Continue,
-                    title, sg.utls.getFormatedDialogHtml());
+                    title, sg.utls.getFormatedDialogHtml(), null, null, true);
             }
        }
     };

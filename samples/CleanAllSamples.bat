@@ -39,7 +39,8 @@ REM
 
 set Drive=C:
 set BranchFolder=Develop
-set SamplesRoot=%Drive%\Projects\Sage300-SDK\%BranchFolder%\Samples
+REM set SamplesRoot=%Drive%\Projects\Sage300-SDK\%BranchFolder%\Samples
+set SamplesRoot=%Drive%\Development\Branches\SDK\Sage300-SDK\samples
 
 @echo Beginning WebSDK Sample Cleanup...
 call:CleanSample "ClearStatistics"

@@ -201,7 +201,7 @@
     <value>您的密码即将到期。是否现在更改？</value>
   </data>
   <data name="PasswordExpiresTodayMessage" xml:space="preserve">
-    <value>您的密码即将失效。是否立即更改？</value>
+    <value>您的密码即将失效 {0}天。是否立即更改？</value>
   </data>
   <data name="NoLicenseMessage" xml:space="preserve">
     <value>您没有使用这一产品的许可证。洽询您的系统管理员获取帮助。</value>
