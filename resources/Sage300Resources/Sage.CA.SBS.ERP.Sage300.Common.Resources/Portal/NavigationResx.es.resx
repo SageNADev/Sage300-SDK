@@ -1525,7 +1525,7 @@
     <value>Importación de Códigos Fiscales</value>
   </data>
   <data name="TS_GSTF5" xml:space="preserve">
-    <value>GST F5</value>
+    <value>GST F5/F8</value>
   </data>
   <data name="TS_GSTIAF" xml:space="preserve">
     <value>GST IAF Generator</value>
@@ -1573,7 +1573,7 @@
     <value>Configuraciones</value>
   </data>
   <data name="GSTF5" xml:space="preserve">
-    <value>GST F5</value>
+    <value>GST F5/F8</value>
   </data>
   <data name="GSTIAF" xml:space="preserve">
     <value>Generador GST IAF</value>

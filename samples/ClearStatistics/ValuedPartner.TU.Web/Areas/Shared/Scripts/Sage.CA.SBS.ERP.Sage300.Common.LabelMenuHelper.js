@@ -11,7 +11,7 @@ LabelMenuHelper = {
     initialize: function (data, btnHamburger, viewModelName) {
         $(document).off('.labelMenu');
         ko.cleanNode($("#divLabelMenu")[0]);
-        $("#" + btnHamburger).attr('tabindex', '-1');
+        $("#" + btnHamburger).attr('tabindex', '0');
 
         LabelMenuHelper.screenModelName = viewModelName;
 
@@ -21,6 +21,7 @@ LabelMenuHelper = {
         };
 
         var viewModel = getViewModel(viewModelName);
+
         // Mouse enter event
         $("#" + btnHamburger).on('mouseenter.labelMenu', viewModel, function (e) {
             // Load Menu
@@ -51,19 +52,60 @@ LabelMenuHelper = {
             }
         });
 
+        // Mouse enter event
+        $("#" + btnHamburger).on('keydown', viewModel, function (e) {
+            if (e.target.id !== btnHamburger) {
+                return;
+            }
+
+            if (e.which === sg.constants.KeyCodeEnum.Enter) {
+                e.preventDefault();
+
+                // Load Menu
+                var ulMenu = $('#lstLabelMenu');
+                ulMenu.empty();
+                for (var i = 0; i < data.length; i++) {
+                    ulMenu.append(window.hamburgerElements.menuItem);
+                    var val = data[i];
+                    var btnId = val.Id;
+                    var btn = ulMenu.find("#btnNewHamburgerMenu").attr({
+                        "id": val.Id,
+                        "name": val.Id,
+                        "class": "action-btn",
+                        "value": val.Value,
+                        "data-bind": val.koAttributes
+                    }).on("click", val.callback);
+
+                    $('#' + btnId).on('keydown', function (ex) {
+                        if (ex.which === sg.constants.KeyCodeEnum.Enter) {
+                            ex.preventDefault();
+                            LabelMenuHelper.HideMenu(ex);
+                            $('#' + btnId).trigger('click');
+                        }
+                        else if (ex.which === sg.constants.KeyCodeEnum.Tab) {
+                            if (ex.currentTarget.closest("ul").lastElementChild.firstChild.id === ex.currentTarget.id) { //If tabbing out of last element, simply close the menu
+                                LabelMenuHelper.HideMenu(ex);
+                            }
+                        }
+                    });
+                }
+
+                LabelMenuHelper.ShowMenu($('#divLabelMenu'), $(this));
+                $("#divLabelMenu").appendTo($("#" + btnHamburger));
+
+                if (jQuery.isEmptyObject(viewModel)) {
+                    viewModel = getViewModel(LabelMenuHelper.screenModelName);
+                }
+
+                if (viewModel) {
+                    ko.applyBindings(viewModel, $("#divLabelMenu")[0]);
+                }
+            }
+        });
+
         // Mouse leave event
         $(document).contents().find('[class^="label-menu"]').on('mouseleave.labelMenu', function (e) {
-            var container = $('#divLabelMenu');
-            var list = $('#divLabelMenu ul:first');
-            if ($(this).is(e.relatedTarget) || container.is(e.relatedTarget) || list.is(e.relatedTarget)) {
-                LabelMenuHelper.ShowMenu(container, $(this));
-                $("#divLabelMenu").appendTo($("#" + btnHamburger));
-            }
-            else {
-                // hide the menu
-                container.addClass("hide");
-                container.removeClass("show");
-            }
+            LabelMenuHelper.HideMenu(e);
         });
 
         // Menu Item click event
@@ -101,4 +143,18 @@ LabelMenuHelper = {
             container.removeClass("hide");
         }
     },
+
+    HideMenu: function (e) {
+        var container = $('#divLabelMenu');
+        var list = $('#divLabelMenu ul:first');
+        if ($(this).is(e.relatedTarget) || container.is(e.relatedTarget) || list.is(e.relatedTarget)) {
+            LabelMenuHelper.ShowMenu(container, $(this));
+            $("#divLabelMenu").appendTo($("#" + btnHamburger));
+        }
+        else {
+            // hide the menu
+            container.addClass("hide");
+            container.removeClass("show");
+        }
+    }
 }

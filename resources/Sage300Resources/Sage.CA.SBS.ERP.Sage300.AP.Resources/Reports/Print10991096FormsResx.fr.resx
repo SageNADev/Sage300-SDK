@@ -225,4 +225,7 @@
   <data name="_1099Int" xml:space="preserve">
     <value>1099-INT</value>
   </data>
+  <data name="TINVerification" xml:space="preserve">
+    <value>TIN Verification Form</value>
+  </data>
 </root>

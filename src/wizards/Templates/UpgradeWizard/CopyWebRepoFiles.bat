@@ -17,7 +17,7 @@
 ::
 ::			The environment variable CNA2_SOURCE_ROOT needs to be set
 ::
-::  		For Example : D:\projects\SageAzureDev\release-2023.0\
+::  		For Example : C:\projects\SageAzureDev\release-2023.0\
 ::
 ::
 :: Usage Example:

@@ -1,4 +1,4 @@
-set RootDrive=D:
+set RootDrive=C:
 set SDKRoot=%RootDrive%\Projects\Sage300-SDK\Develop
 set WizardSourceRoot=%SDKRoot%\src\wizards
 set BuildConfiguration=Release
@@ -9,7 +9,7 @@ set VSVersion=2019
 REM set VSVersion=2017
 
 REM VS 2019
-call "C:\Program Files (x86)\Microsoft Visual Studio\%VSVersion%\Enterprise\Common7\Tools\VsDevCmd.bat"
+call "%RootDrive%\Program Files (x86)\Microsoft Visual Studio\%VSVersion%\Enterprise\Common7\Tools\VsDevCmd.bat"
 
 REM VS 2022
 REM call "C:\Program Files\Microsoft Visual Studio\%VSVersion%\Enterprise\Common7\Tools\VsDevCmd.bat"

@@ -198,7 +198,7 @@
     <value>Le mot de passe est incorrect. Si vous avez oublié votre mot de passe, adressez-vous à votre administrateur de système. </value>
   </data>
   <data name="PasswordExpiresSoonMessage" xml:space="preserve">
-    <value>Votre mot de passe va bientôt expirer. Voulez-vous le changer maintenant? </value>
+    <value>Votre mot de passe expire dans {0} jours. Voulez-vous le changer maintenant? </value>
   </data>
   <data name="PasswordExpiresTodayMessage" xml:space="preserve">
     <value>Votre mot de passe expire aujourd'hui. Voulez-vous le changer maintenant?</value>

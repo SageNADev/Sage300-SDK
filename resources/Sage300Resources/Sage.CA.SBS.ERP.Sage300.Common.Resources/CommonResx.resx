@@ -1716,4 +1716,7 @@
     <value>Unable to to retrieve credentials. Please log into Financial Reporter again.</value>
     <comment>To be translated</comment>
   </data>
+  <data name="AnErrorOccurredProcessingYourRequest" xml:space="preserve">
+    <value>An error occurred processing your request.</value>
+  </data>
 </root>

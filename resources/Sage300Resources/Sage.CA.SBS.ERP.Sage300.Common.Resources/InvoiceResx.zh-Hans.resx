@@ -3342,8 +3342,8 @@
     <value>备注标识符</value>
     <comment>From ReturnEntryResx</comment>
   </data>
-  <data name="CostCategory" xml:space="preserve">
-    <value>（成本）类别</value>
+  <data name="Category" xml:space="preserve">
+    <value>类别</value>
     <comment>From ReturnEntryResx</comment>
   </data>
   <data name="CostTaxClass1" xml:space="preserve">
@@ -3584,5 +3584,11 @@
   </data>
   <data name="PaymentsURL" xml:space="preserve">
     <value>SF付款承兑URL</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>合约</value>
+  </data>
+  <data name="ExtendedBillingAmount" xml:space="preserve">
+    <value>预估总帐单</value>
   </data>
 </root>

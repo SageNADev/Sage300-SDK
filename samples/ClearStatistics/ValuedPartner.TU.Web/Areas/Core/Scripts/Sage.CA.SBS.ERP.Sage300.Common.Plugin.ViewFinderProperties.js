@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2019-2021 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2019-2023 The Sage Group plc or its licensors.  All rights reserved. */
 // @ts-check
 "use strict";
 
@@ -387,6 +387,13 @@
                 displayFieldNames: ["CODECURN", "UNITMEAS", "AMTPRICE", "AMTBASETAX"],
                 filter: "IDITEM=ARITEM AND CODECURN=BILLCCY",
                 initKeyFieldNames: ["IDITEM", "CODECURN"]
+            },
+
+            ItemUOMEquipmentCode: {
+                viewID: "AR0009",
+                viewOrder: 1,
+                returnFieldNames: ["UNITMEAS"],
+                displayFieldNames: ["UNITMEAS", "CODECURN", "AMTCOST", "AMTPRICE"],
             },
 
             Items: {
@@ -1100,6 +1107,14 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["CURID", "CURNAME", "DECIMALS"],
                 displayFieldNames: ["CURID", "CURNAME", "SYMBOL", "DECIMALS"]
+            },
+
+            CurrencyCodesWithPosition: {
+                viewID: "CS0003",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["CURID", "CURNAME", "DECIMALS"],
+                displayFieldNames: ["CURID", "CURNAME", "SYMBOL", "DECIMALS", "SYMBOLPOS"]
             },
 
             CurrencyCodesWithDetails: {
@@ -2334,7 +2349,7 @@
                 viewOrder: 0,
                 initKeyValues: [-999999999999999999, "", -999999999999999999, ""],
                 returnFieldNames: ["RQNNUMBER"],
-                displayFieldNames: ["RQNNUMBER", "DATE", "EXPARRIVA2", "EXPIRATION"],
+                displayFieldNames: ["RQNNUMBER", "DATE", "EXPARRIVA2", "EXPIRATION", "HASJOB"],
                 filterTemplate: "VDCODE = \"{0}\" OR VDCODE = \"\""
             },
 
@@ -2489,7 +2504,7 @@
                 parentValAsInitKey: false,
                 returnFieldNames: ["TAXRCODE"],
                 displayFieldNames: ["TAXRCODE", "EFFDATE", "TTYPE", "DESC", "REMARK", "DEPRECATED","REPLACEDBY"],
-                filterTemplate: "EFFDATE <=\"{0}\" AND TTYPE = \"{1}\" AND TAXRCODE != SRCA-C"
+                filterTemplate: "EFFDATE <=\"{0}\" AND TTYPE = \"{1}\" AND TAXRCODE != SRCA-C AND TAXRCODE != SRRC "
             }
         },
 

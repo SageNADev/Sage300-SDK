@@ -32,12 +32,10 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            //public const string FromReleaseNumber = "2022.2";
-            public const string FromReleaseNumber = "2023.0";
+            public const string FromReleaseNumber = "2023.1";
 
             /// <summary> To Release Number </summary>
-            //public const string ToReleaseNumber = "2023.0";
-            public const string ToReleaseNumber = "2023.1";
+            public const string ToReleaseNumber = "2023.3";
 
             /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
             public const bool UpdateAccpacDotNetLibrary = false;

@@ -79,6 +79,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AR Item.
+        /// </summary>
+        public static string ARItem {
+            get {
+                return ResourceManager.GetString("ARItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Item No. {0} does not exist..
+        /// </summary>
+        public static string ARItemNoDoesNotExist {
+            get {
+                return ResourceManager.GetString("ARItemNoDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A/R Item Number.
         /// </summary>
         public static string ARItemNumber {
@@ -102,6 +120,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string ARUnitOfMeasure {
             get {
                 return ResourceManager.GetString("ARUnitOfMeasure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ARUOM.
+        /// </summary>
+        public static string ARUOM {
+            get {
+                return ResourceManager.GetString("ARUOM", resourceCulture);
             }
         }
         
@@ -156,6 +183,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string BillingType {
             get {
                 return ResourceManager.GetString("BillingType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} cannot be less than zero..
+        /// </summary>
+        public static string CannotBeLessThanZero {
+            get {
+                return ResourceManager.GetString("CannotBeLessThanZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot delete required optional field..
+        /// </summary>
+        public static string CannotDeleteRequiredOptionalField {
+            get {
+                return ResourceManager.GetString("CannotDeleteRequiredOptionalField", resourceCulture);
             }
         }
         
@@ -268,6 +313,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Currency Description.
+        /// </summary>
+        public static string CurrencyDescription {
+            get {
+                return ResourceManager.GetString("CurrencyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Warning. Date is not within the acceptable range as defined in the company profile. Accept this date?.
         /// </summary>
         public static string DateOutOfRange {
@@ -313,6 +367,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Equipment Description.
+        /// </summary>
+        public static string EquipmentDescription {
+            get {
+                return ResourceManager.GetString("EquipmentDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment Detail.
+        /// </summary>
+        public static string EquipmentDetail {
+            get {
+                return ResourceManager.GetString("EquipmentDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extended Billing Amount.
         /// </summary>
         public static string ExtendedBillingAmount {
@@ -336,6 +408,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string ICAccountDescription {
             get {
                 return ResourceManager.GetString("ICAccountDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is not a valid currency code..
+        /// </summary>
+        public static string IsNotAValidCurrencyCode {
+            get {
+                return ResourceManager.GetString("IsNotAValidCurrencyCode", resourceCulture);
             }
         }
         
@@ -583,6 +664,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unit of Measure not entered or defined for this item..
+        /// </summary>
+        public static string UOMNotEntered {
+            get {
+                return ResourceManager.GetString("UOMNotEntered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Details.
         /// </summary>
         public static string ViewDetails {
@@ -633,6 +723,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string YearPeriod {
             get {
                 return ResourceManager.GetString("YearPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot delete an equipment code that is assigned to a {0}..
+        /// </summary>
+        public static string YouCannotDeleteAnEquipmentCode {
+            get {
+                return ResourceManager.GetString("YouCannotDeleteAnEquipmentCode", resourceCulture);
             }
         }
     }

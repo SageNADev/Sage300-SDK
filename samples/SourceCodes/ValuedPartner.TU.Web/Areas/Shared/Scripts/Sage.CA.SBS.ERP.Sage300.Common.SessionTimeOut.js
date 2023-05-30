@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */
 
 var SessionManager = {
 
@@ -41,7 +41,7 @@ var SessionManager = {
         clearTimeout(SessionManager.SessionTimer);
         SessionManager.WarningTimer = setTimeout(SessionManager.PageExpiredHandler, SessionManager.WarningMinutes * 60 * 1000);
         sg.utls.showMessageDialog(SessionManager.ResetWarningTimer, null, globalResource.SessionExpired, sg.utls.DialogBoxType.OK, "",
-            sg.utls.getFormatedDialogHtml("kendoConfirmationAcceptButtonTimeout", null), "kendoConfirmationAcceptButtonTimeout", null);
+            sg.utls.getFormatedDialogHtml("kendoConfirmationAcceptButtonTimeout", null), "kendoConfirmationAcceptButtonTimeout", null, true);
     },
 
     // Redirect to timed out page

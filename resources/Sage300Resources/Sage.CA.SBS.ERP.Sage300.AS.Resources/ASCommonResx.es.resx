@@ -198,7 +198,7 @@
     <value>La contraseña no es la correcta. Si olvidó su contraseña, pida ayuda al administrador del sistema.</value>
   </data>
   <data name="PasswordExpiresSoonMessage" xml:space="preserve">
-    <value>Su contraseña caduca pronto. ¿Desea cambiarla ahora?</value>
+    <value>Su contraseña caduca en {0} días. ¿Desea cambiarla ahora?</value>
   </data>
   <data name="PasswordExpiresTodayMessage" xml:space="preserve">
     <value>Su contraseña caduca hoy. ¿Desea cambiarla ahora?</value>

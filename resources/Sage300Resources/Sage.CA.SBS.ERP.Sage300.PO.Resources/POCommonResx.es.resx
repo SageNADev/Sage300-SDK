@@ -1829,10 +1829,6 @@
     <value>Unidad de Medida de C/C</value>
     <comment>Export Property Label</comment>
   </data>
-  <data name="CostCategory" xml:space="preserve">
-    <value>(Costo) Categoría</value>
-    <comment>Export Property Label</comment>
-  </data>
   <data name="QuantityPreviouslyReturned" xml:space="preserve">
     <value>Cantidad Previamente Devuelta</value>
     <comment>Export Property Label</comment>

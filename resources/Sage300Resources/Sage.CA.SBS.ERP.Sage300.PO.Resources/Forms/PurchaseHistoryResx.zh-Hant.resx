@@ -345,10 +345,6 @@
     <value>轉換係數</value>
     <comment>Used in Export</comment>
   </data>
-  <data name="CostCategory" xml:space="preserve">
-    <value>（成本）類別</value>
-    <comment>Used in Export</comment>
-  </data>
   <data name="DaysToReceive" xml:space="preserve">
     <value>進貨天數</value>
     <comment>Used in Export</comment>

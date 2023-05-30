@@ -2009,6 +2009,10 @@ td.k-state-focused.k-state-selected {
     display: block;
   }
 
+  &:focus-visible {
+    .focus-input-box;
+  }
+
   .sub-menu { 
     display: none;  
     position: absolute;
@@ -2067,6 +2071,11 @@ td.k-state-focused.k-state-selected {
       background-color: #e8effe;
       text-decoration: none;
       color: @sage-link;
+      } 
+
+      &:focus{
+        outline: @input-border-focus solid 3px;
+        outline-offset: -3px;
       } 
 
       &[disabled]  { 

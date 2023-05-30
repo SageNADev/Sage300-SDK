@@ -162,6 +162,12 @@
   <data name="ErrorMessage_AccountRange" xml:space="preserve">
     <value>La entrada en la casilla Desde Cuenta no puede ser mayor que la entrada en la casilla Hasta.</value>
   </data>
+  <data name="ErrorMessage_ConcurrentFRPrint" xml:space="preserve">
+    <value>La impresión de Generador de Reportes Financieros está en uso actualmente. Por favor vuelva a intentar más tarde.</value>
+  </data>
+  <data name="ErrorMessage_ExcelConfigurationError" xml:space="preserve">
+    <value>Error de configuración de Excel para el Generador de Reportes Financieros Web. Es posible que la versión de Microsoft Excel en el servidor no sea compatible.  Póngase en contacto con su administrador para obtener ayuda.</value>
+  </data>
   <data name="ErrorMessage_NoChartOfAccounts" xml:space="preserve">
     <value>El catálogo de cuentas no está establecido.</value>
   </data>

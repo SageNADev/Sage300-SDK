@@ -3342,8 +3342,8 @@
     <value>Identificador Comentario</value>
     <comment>From ReturnEntryResx</comment>
   </data>
-  <data name="CostCategory" xml:space="preserve">
-    <value>Categoría (Costo)</value>
+  <data name="Category" xml:space="preserve">
+    <value>Categoría</value>
     <comment>From ReturnEntryResx</comment>
   </data>
   <data name="CostTaxClass1" xml:space="preserve">
@@ -3584,5 +3584,11 @@
   </data>
   <data name="PaymentsURL" xml:space="preserve">
     <value>URL de Aceptación de Pagos de CS</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Contrato</value>
+  </data>
+  <data name="ExtendedBillingAmount" xml:space="preserve">
+    <value>Facturación Total Estimada</value>
   </data>
 </root>

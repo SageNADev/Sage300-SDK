@@ -198,7 +198,7 @@
     <value>密碼不正確。如果您忘記了密碼，洽詢您的系統管理員獲取幫助。</value>
   </data>
   <data name="PasswordExpiresSoonMessage" xml:space="preserve">
-    <value>您的密碼即將到期。是否現在變更？</value>
+    <value>您的密碼即將到期 {0}天。是否現在變更？</value>
   </data>
   <data name="PasswordExpiresTodayMessage" xml:space="preserve">
     <value>您的密碼即將失效。是否立即變更？</value>

@@ -63,6 +63,7 @@
                 this.rowObj.caller = this;
             }
         },
+
         /**
          * custome call back function binding
          * @param {any} customBinding The customBinding function name
@@ -70,7 +71,13 @@
          * @param {any} data The data
          */
         customBindingCallBack: function (customBinding, column, data) {
-            (this[customBinding])(column, data);
+
+            if (apputils.isFunction(this[customBinding])) {
+                (this[customBinding])(column, data);
+            } else {
+                data.previousValue = column.value;
+                MessageBus.msg.trigger(customBinding, { column: column, data: data });
+            }
         },
 
         /** Reset row object*/
@@ -520,6 +527,7 @@
             let children = this.getChildInitOnly(id, verb, existingEntity);
 
             const filter = "f='' ";
+            
             return this.buildQuery(parentIndex, id, verb, children, filter);
         },
 
@@ -1011,16 +1019,15 @@
             return updateAllowed;
         },
 
-        //TODO: WIP
         /** Find dirty records */
         findDirtyRecords: function () {
-            this.rowObj.findDirtyRecords();
+            return this.rowObj.findDirtyRecords();
 
-            apputils.each(this.allCollectionObj, (childEntity) => {
-                if (!childEntity.skipInAllQuery) {
-                    childEntity.findDirtyRecords();
-                }
-            });
+            //apputils.each(this.allCollectionObj, (childEntity) => {
+            //    if (!childEntity.skipInAllQuery) {
+            //        childEntity.findDirtyRecords();
+            //    }
+            //});
         },
 
         /**
@@ -1143,6 +1150,7 @@
          */
         checkFieldsForMissingData: function (fieldName) {
             let column = this.getColumnByFieldName(fieldName);
+            column.required = true;
 
             let columnData = {
                 viewid: this.viewid,
@@ -1187,6 +1195,10 @@
             result.isValid = isValid;
             result.editable.previousValue = data.previousValue;
             result.editable.hasError = data.hasError;
+
+            if (column.required && data.value == "") {
+                result.editable.invalid = true;
+            }
 
             MessageBus.msg.trigger(this.viewid + "handleUserUpdates", result.editable);
             return result;
@@ -1264,8 +1276,8 @@
                 year = this.getRowColumnByFieldName(entity, yearName).value;
                 period = this.getRowColumnByFieldName(entity, periodName).value;
             }
-            this.setFieldData(yearName, year);
-            this.setFieldData(periodName, period);
+            this.setReadOnlyFieldData(yearName, year);
+            this.setReadOnlyFieldData(periodName, period);
         },
 
         //Update the query, only include currently changed field in query AT-73429
@@ -1288,6 +1300,7 @@
                     node.remove();
                 }
             }
+
             return update ? s.serializeToString(xmlDoc).replaceAll('"',"'") : query;
         },
 
@@ -1305,6 +1318,9 @@
             let newEntityColl = new collectionObj();
             newEntityColl.rowIsReadonly = true;
             let query = newEntityColl.generateInitOnlyRoot(this);
+
+            if (query.length === 0) return;
+
             query = this.updateQuery(query, data.value);
             if (useVerbPut) {
                 query = query.replaceAll('InitOnly', 'Put');
@@ -1353,6 +1369,11 @@
                         sg.utls.showMessage(message, () => ErrorEntityCollectionObj.clearError());
                         if (lockLevel === 2) {
                             this.setFieldData(column.field, data.previousValue);
+                            if (this.CRUDReason === CRUDReasons.AddingNewData && column.field !== "DATEBUS") {
+                                if (this.rowObj.dataModel.filter(c => c.field === 'DATEBUS').length === 1) {
+                                    this.setFieldData("DATEBUS", data.previousValue);
+                                }
+                            }
                             if (setFiscalYearPeriod) {
                                 this.setFiscalYearPeriod(this.rowObj.rowNodes[0], data.previousValue);
                             }
@@ -1579,7 +1600,7 @@
         },
 
         //override this function as needed to implement input field dependencies.
-        createContractObjectsAndSetHierarchy(validatorObj, columnData) {
+        createContractObjectsAndSetHierarchy: function(validatorObj, columnData) {
             return new validatorObj(columnData.field);
         },
 

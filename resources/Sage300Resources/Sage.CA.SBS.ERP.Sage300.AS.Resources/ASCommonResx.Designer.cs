@@ -313,7 +313,7 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your password expires soon. Do you want to change it now?.
+        ///   Looks up a localized string similar to Your password expires in {0} days. Do you want to change it now?.
         /// </summary>
         public static string PasswordExpiresSoonMessage {
             get {
@@ -453,6 +453,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AS.Resources {
         public static string UserLockedMessage {
             get {
                 return ResourceManager.GetString("UserLockedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password has expired. Ask your administrator to change it..
+        /// </summary>
+        public static string UserPasswordExpiredMessage {
+            get {
+                return ResourceManager.GetString("UserPasswordExpiredMessage", resourceCulture);
             }
         }
         

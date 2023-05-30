@@ -286,6 +286,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Reports {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TIN Verification Form.
+        /// </summary>
+        public static string TINVerification {
+            get {
+                return ResourceManager.GetString("TINVerification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string Title {

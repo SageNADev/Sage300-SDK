@@ -198,7 +198,7 @@
     <value>Password is incorrect. If you have forgotten your password, ask your system administrator for help.</value>
   </data>
   <data name="PasswordExpiresSoonMessage" xml:space="preserve">
-    <value>Your password expires soon. Do you want to change it now?</value>
+    <value>Your password expires in {0} days. Do you want to change it now?</value>
   </data>
   <data name="PasswordExpiresTodayMessage" xml:space="preserve">
     <value>Your password expires today. Do you want to change it now?</value>
@@ -272,5 +272,8 @@
   </data>
   <data name="ComplexAdvancedPasswordMessage" xml:space="preserve">
     <value>Your password must include at least one of each of the following: lower case letter, upper case letter, number, and special character (such as * or #).</value>
+  </data>
+  <data name="UserPasswordExpiredMessage" xml:space="preserve">
+    <value>Your password has expired. Ask your administrator to change it.</value>
   </data>
 </root>

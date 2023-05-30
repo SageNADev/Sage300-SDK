@@ -2365,7 +2365,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GST F5.
+        ///   Looks up a localized string similar to GST F5/F8.
         /// </summary>
         public static string GSTF5 {
             get {
@@ -4975,7 +4975,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to T/S GST F5.
+        ///   Looks up a localized string similar to T/S GST F5/F8.
         /// </summary>
         public static string TS_GSTF5 {
             get {

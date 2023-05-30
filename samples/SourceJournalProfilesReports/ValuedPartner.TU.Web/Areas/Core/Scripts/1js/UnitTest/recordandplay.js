@@ -588,9 +588,17 @@
         pmEquipmentUsageTestSuite();
         pmEquipmentUsageTestSuite.all();
 
-        //pmEquipmentUsageTestSuite.mainGridBillingRateandExtendedBillingAmountPack1AT78533(); //tested enable later
-        //pmEquipmentUsageTestSuite.mainGridBillingRateandExtendedBillingAmountPack2AT78533(); //tested enable later
-        //pmEquipmentUsageTestSuite.mainGridExpectedBehaviorForContractProductCategoryEquipmentAT78486();
+        QUnit.start();
+        return "testing..."
+    }
+
+    this.RecAndPlay.TestSuiteEquipment = function () {
+
+        QUnit.config.autostart = false;
+        QUnit.config.reorder = false;
+
+        pmEquipmentTestSuite();
+        pmEquipmentTestSuite.all();
 
         QUnit.start();
         return "testing..."

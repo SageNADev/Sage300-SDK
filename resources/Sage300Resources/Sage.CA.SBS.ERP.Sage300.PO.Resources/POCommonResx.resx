@@ -1829,10 +1829,6 @@
     <value>A/R Unit Of Measure</value>
     <comment>Export Property Label</comment>
   </data>
-  <data name="CostCategory" xml:space="preserve">
-    <value>(Cost) Category</value>
-    <comment>Export Property Label</comment>
-  </data>
   <data name="QuantityPreviouslyReturned" xml:space="preserve">
     <value>Quantity Previously Returned</value>
     <comment>Export Property Label</comment>

@@ -1,9 +1,17 @@
-﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */
 
 "use strict";
 
 var loginUI = loginUI || {};
 loginUI = {
+    ErrorPriorityEnum: {
+        SEVERE: 0,
+        MESSAGE: 1,
+        WARNING: 2,
+        ERROR: 3,
+        SECURITY: 4
+    },
+
     model: {},
     companyList: [],
     ddCompanies: [],
@@ -424,10 +432,19 @@ loginUI = {
     // Display error/warning message(s)
     displayMessage: function (jsonResult) {
 
+        // Is there a message available?
+        // If not available, just default to something other than 'Undefined'
+        let message = loginResources.AnErrorOccurredProcessingYourRequest;
+        if (jsonResult) {
+            if (jsonResult.Message) {
+                message = jsonResult.Message;
+            }
+        }
+
         // Build HTML
         var html = "<div class='modal-msg k-window-content'>";
 
-        if (jsonResult.Priority == 2) {
+        if (jsonResult.Priority == loginUI.ErrorPriorityEnum.WARNING) {
             html = html + "<div class='message-control multiWarn-msg'>";
         } else {
             html = html + "<div class='message-control multiError-msg'>";
@@ -435,7 +452,7 @@ loginUI = {
 
         html = html + "<div class='title'>";
 
-        if (jsonResult.Priority == 2) {
+        if (jsonResult.Priority == loginUI.ErrorPriorityEnum.WARNING) {
             html = html + "<span class='icon multiWarn-icon'></span>";
             html = html + "<h3 id='dialogConfirmation_header'>" + loginResources.warningMessageTitle + "</h3>";
         } else {
@@ -445,7 +462,7 @@ loginUI = {
 
         html = html + "</div>";
         html = html + "<div class='msg-content'>";
-        html = html + "<p>" + jsonResult.Message + "</p>";
+        html = html + "<p>" + message + "</p>";
         html = html + "</div>";
         html = html + "</div>";
         html = html + "</div>";
@@ -461,7 +478,7 @@ loginUI = {
         // Build HTML
         var html = "<div class='modal-msg k-window-content'>";
 
-        if (jsonResult.Priority == 2) {
+        if (jsonResult.Priority == loginUI.ErrorPriorityEnum.WARNING) {
             html = html + "<div class='message-control multiWarn-msg'>";
         } else {
             html = html + "<div class='message-control multiError-msg'>";
@@ -469,7 +486,7 @@ loginUI = {
 
         html = html + "<div class='title'>";
 
-        if (jsonResult.Priority == 2) {
+        if (jsonResult.Priority == loginUI.ErrorPriorityEnum.WARNING) {
             html = html + "<span class='icon multiWarn-icon'></span>";
             html = html + "<h3 id='dialogConfirmation_header'>" + loginResources.warningMessageTitle + "</h3>";
         } else {
@@ -501,7 +518,7 @@ loginUI = {
         // Build HTML
         var html = "<div class='modal-msg k-window-content'>";
 
-        if (jsonResult.Priority == 2) {
+        if (jsonResult.Priority == loginUI.ErrorPriorityEnum.WARNING) {
             html = html + "<div class='message-control multiWarn-msg'>";
         } else {
             html = html + "<div class='message-control multiError-msg'>";
@@ -509,7 +526,7 @@ loginUI = {
 
         html = html + "<div class='title'>";
 
-        if (jsonResult.Priority == 2) {
+        if (jsonResult.Priority == loginUI.ErrorPriorityEnum.WARNING) {
             html = html + "<span class='icon multiWarn-icon'></span>";
             html = html + "<h3 id='dialogConfirmation_header'>" + loginResources.warningMessageTitle + "</h3>";
         } else {
@@ -707,7 +724,8 @@ var loginUICallback = {
         $("#btnLogin").removeClass('active');
         // Not a success. Display errors/warnings or redirect
         if (jsonResult.PasswordExpires) {
-            loginUI.displayPasswordExpires(jsonResult);
+            sg.utls.showMessageDialog(loginUICallback.changePasswordLink, loginUI.resumeLogin, jsonResult.Message, sg.utls.DialogBoxType.YesNo, "",
+                sg.utls.getFormatedDialogHtml("btnPasswordExpiresYes", "btnPasswordExpiresNo"), "btnPasswordExpiresYes", "btnPasswordExpiresNo", false);
         } else {
             loginUI.displayMessage(jsonResult);
         }

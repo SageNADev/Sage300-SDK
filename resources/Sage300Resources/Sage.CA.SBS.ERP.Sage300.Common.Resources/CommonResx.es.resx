@@ -1685,4 +1685,7 @@
   <data name="PostSuccessMessage" xml:space="preserve">
     <value>Asentamiento concluido. {0}, {1}</value>
   </data>
+  <data name="AnErrorOccurredProcessingYourRequest" xml:space="preserve">
+    <value>Ha ocurrido un error procesando tu requerimiento.</value>
+  </data>
 </root>
