@@ -34,7 +34,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -157,45 +157,58 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Flat.Class
 
     var enumsCount = view.Enums.Count;
 
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = (moduleId == "PR");
+
             
             #line default
             #line hidden
             this.Write("// ");
             
-            #line 39 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 42 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
             #line hidden
-            this.Write(@"
-
-#region Namespace
-
-using Microsoft.Practices.Unity;
-using System.Web.Mvc;
-using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
-using Sage.CA.SBS.ERP.Sage300.Common.Models;
-using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
-using Sage.CA.SBS.ERP.Sage300.Common.Resources;
-using Sage.CA.SBS.ERP.Sage300.Common.Web;
-using Newtonsoft.Json;
-using ");
+            this.Write("\r\n\r\n#region Namespace\r\n\r\nusing Microsoft.Practices.Unity;\r\nusing System.Web.Mvc;\r" +
+                    "\nusing Sage.CA.SBS.ERP.Sage300.Common.Exceptions;\r\nusing Sage.CA.SBS.ERP.Sage300" +
+                    ".Common.Models;\r\nusing Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;\r\n");
             
             #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+
+	if (entityContext)
+	{
+
+            
+            #line default
+            #line hidden
+            this.Write("using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums.Payroll;\r\n");
+            
+            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+
+	}
+
+            
+            #line default
+            #line hidden
+            this.Write("using Sage.CA.SBS.ERP.Sage300.Common.Resources;\r\nusing Sage.CA.SBS.ERP.Sage300.Co" +
+                    "mmon.Web;\r\nusing Newtonsoft.Json;\r\nusing ");
+            
+            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n");
             
-            #line 52 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 63 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
 
 	if (enumsCount > 0)
 	{
@@ -205,21 +218,21 @@ using ");
             #line hidden
             this.Write("using ");
             
-            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models.Enums;\r\n");
             
-            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
 
 	}
 
@@ -228,49 +241,49 @@ using ");
             #line hidden
             this.Write("using ");
             
-            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 71 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 71 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Resources.Forms;\r\nusing ");
             
-            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 76 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 76 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Controllers\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 68 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -278,28 +291,28 @@ using ");
             this.Write(" Public Controller\r\n    /// </summary>\r\n    /// <typeparam name=\"T\">Where T is ty" +
                     "pe of <see cref=\"");
             
-            #line 70 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 81 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\"/></typeparam>\r\n    public class ");
             
-            #line 71 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 82 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Controller<T> : MultitenantControllerBase<");
             
-            #line 71 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 82 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ViewModel<T>>\r\n        where T : ");
             
-            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 83 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -308,7 +321,7 @@ using ");
                     "  /// Gets or sets the internal controller\r\n        /// </summary>\r\n        publ" +
                     "ic ");
             
-            #line 79 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 90 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -317,7 +330,7 @@ using ");
                     "       #region Constructor\r\n\r\n        /// <summary>\r\n        /// Constructor for" +
                     " ");
             
-            #line 86 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 97 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -325,20 +338,20 @@ using ");
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"container\">Unity Container</pa" +
                     "ram>\r\n        public ");
             
-            #line 89 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 100 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Controller(IUnityContainer container)\r\n            : base(container,\"");
             
-            #line 90 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 101 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             
-            #line 90 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 101 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -360,37 +373,88 @@ using ");
             base.Initialize(requestContext);
             ControllerInternal = new ");
             
-            #line 105 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 116 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ControllerInternal<T>(Context);\r\n        }\r\n\r\n        #endregion\r\n\r\n        #regi" +
                     "on Public methods\r\n\r\n        /// <summary>\r\n        /// Load screen\r\n        ///" +
-                    " </summary>\r\n        /// <param name=\"id\">Id for ");
+                    " </summary>\r\n");
             
-            #line 115 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 126 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+
+	if (entityContext)
+	{
+
+            
+            #line default
+            #line hidden
+            this.Write("        /// <param name=\"type\">Payroll type enum stored by the base class in Cont" +
+                    "ext.ScreenContext.EntityContext</param>\r\n");
+            
+            #line 131 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+
+	}
+
+            
+            #line default
+            #line hidden
+            this.Write("        /// <param name=\"id\">Id for ");
+            
+            #line 134 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 116 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 135 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
-            this.Write("</returns>\r\n        public virtual ActionResult Index(string id)\r\n        {\r\n");
+            this.Write("</returns>\r\n");
             
-            #line 119 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 136 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+
+	if (entityContext)
+	{
+
+            
+            #line default
+            #line hidden
+            this.Write("        public virtual ActionResult Index(PayrollType type, string id)\r\n");
+            
+            #line 141 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+
+	}
+    else
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("        public virtual ActionResult Index(string id)\r\n");
+            
+            #line 147 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("        {\r\n");
+            
+            #line 151 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
 
 	foreach(var view in settings.Entities)
 	{
-	    if (view.Options[BusinessView.Constants.GenerateGrid] || view.ForGrid)
+	    if (view.Options[BusinessView.Constants.HasGrid] || view.ForGrid)
 	    {
             var viewName = view.Properties[BusinessView.Constants.EntityName];
-            WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", viewName);
+            WriteLine("ViewBag.{0}Grid = ControllerInternal.CustomGridDefinitionsUsingService(CommonUtil.EntityContextReplacement({1}.EntityName, Context.ScreenContext.EntityContext), GetGridJsonFilePath(\"{0}Grid\", requestUri));", viewName, modelName);
+            WriteLine("// ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", viewName);
 	    }
 	}
 
@@ -400,35 +464,35 @@ using ");
             this.Write("            return ViewWithCatch(() => ControllerInternal.GetById(id),\r\n         " +
                     "       CommonResx.GetFailedMessage, ");
             
-            #line 130 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 163 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 130 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 163 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n\r\n        /// <summary>\r\n        /// Get ");
             
-            #line 134 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 167 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"id\">Id for ");
             
-            #line 136 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 169 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 137 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 170 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -437,35 +501,35 @@ using ");
                     "d)\r\n        {\r\n            return CallWithCatch(() => ControllerInternal.GetById" +
                     "(id),\r\n                CommonResx.GetFailedMessage, ");
             
-            #line 142 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 175 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 142 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 175 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n\r\n        /// <summary>\r\n        /// Add ");
             
-            #line 146 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 179 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 148 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 181 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 149 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 182 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -482,28 +546,28 @@ using ");
             return CallWithCatch(() => ControllerInternal.Add(model),
                 CommonResx.AddFailedMessage, ");
             
-            #line 159 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 192 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 159 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 192 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n\r\n        /// <summary>\r\n        /// Create ");
             
-            #line 163 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 196 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <returns>JSON object for ");
             
-            #line 165 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 198 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -519,21 +583,21 @@ using ");
         /// <summary>
         /// Update ");
             
-            #line 174 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 207 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"model\">Model for ");
             
-            #line 176 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 209 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 177 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 210 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -554,21 +618,21 @@ using ");
         /// <summary>
         /// Delete ");
             
-            #line 191 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 224 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"id\">Id for ");
             
-            #line 193 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 226 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n        /// <returns>JSON object for ");
             
-            #line 194 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 227 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -577,14 +641,14 @@ using ");
                     "g id)\r\n        {\r\n            return CallWithCatch(() => ControllerInternal.Dele" +
                     "te(id),\r\n                CommonResx.DeleteFailedMessage, ");
             
-            #line 199 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 232 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 199 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
+            #line 232 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Flat\Class\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(keyFieldName));
             
             #line default

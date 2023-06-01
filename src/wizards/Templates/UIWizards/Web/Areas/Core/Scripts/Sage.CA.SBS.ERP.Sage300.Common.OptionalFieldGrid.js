@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2019-2021 Sage Software, Inc.  All rights reserved.
+﻿// Copyright (c) 2019-2023 Sage Software, Inc.  All rights reserved.
 
 "use strict";
 var sg = sg || {};
@@ -837,6 +837,12 @@ sg.optionalFieldControl = function () {
         _setNextEditCell(grid, dataItem, row, index + 1);
 
         if (fieldName === "OPTFIELD") {
+            if (dataItem.TYPE === ValueTypeEnum.Time && (dataItem.VALUE === "" || dataItem.VALUE === "000000")) {
+                dataItem.SWSET = 0;
+                dataItem.VALUE = "";
+                dataItem.VDESC = "";
+                return;
+            }
             var isDefault = dataItem.TYPE === ValueTypeEnum.Text || dataItem.TYPE === ValueTypeEnum.Date ? dataItem.VALIDATE && !dataItem.ALLOWNULL : dataItem.VALIDATE;
             if (isDefault) {
                 _getDefaultValue(gridName, dataItem.OPTFIELD);
@@ -897,7 +903,10 @@ sg.optionalFieldControl = function () {
 
         _lastErrorResult[gridName].message = "";
         //_lastRowNumber[gridName] = -1;
-        dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
+        if (dataItem.TYPE === ValueTypeEnum.Time)
+           dataItem[fieldName] = "";
+        else
+           dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
         _setEditCell(grid, rowIndex, fieldName);
     }
     /**
@@ -1029,6 +1038,23 @@ sg.optionalFieldControl = function () {
                 type = RequestTypeEnum.Update;
                 //update the adding line
                 GridUtls.addingLine = false;
+            }
+            if (e.field === "VALUE") {
+                var sel = grid.select();
+                if (sel !== null) {
+                    var r = grid.dataItem(sel);
+                    if (r.TYPE === ValueTypeEnum.Time) {
+                        var puncts = (r.VALUE.match(/_/g) || []).length;
+                        if (0 < puncts && puncts < 6) {
+                            grid.dataItem(sel).VALUE = r.VALUE.replace(/_/g, "0");
+                        }
+                    }
+                    if (r.VALUE === null || r.VALUE === "") {
+                        grid.dataItem(sel).VDESC = "";
+                        grid.dataItem(sel).SWSET = 0;
+                        return grid.refresh();
+                    }
+                }
             }
             _sendRequest(gridName, type, e.field);
         }

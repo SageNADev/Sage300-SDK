@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2019-2021 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2019-2023 Sage Software, Inc.  All rights reserved. */
 "use strict";
 (function (sg, $) {
     sg.viewFinderHelper = {
@@ -17,6 +17,60 @@
          */
         getFinderSettings: function (moduleId, moduleAction) {
             return sg.viewFinderProperties[moduleId][moduleAction];
+        },
+
+        /**
+         * @name savePreviousValue
+         * @description Saves finder original value
+         * @public
+         * @param {object} element - finder receiving focus
+         */
+        savePreviousValue: function (element) {
+            var options = sg.utls.getViewFinderOptions(sg.utls.findersList[element.target.id]);
+            options.oldValue = element.target.value;
+        },
+
+        /**
+         * @name onFinderBlurEvent
+         * @description Invokes delayOnBlurAuto function
+         * @public
+         * @param {object} element - finder losing focus
+         */
+        onFinderBlurEvent: function (element) {
+            sg.delayOnBlurAuto(sg.utls.findersList[element.target.id]);
+        },
+
+        /**
+        * @name setPreviousValueSave
+        * @description Set-up finder's previous value save
+        * @public
+        * @param {object} parent - finder text box control id
+        */
+        setPreviousValueSave: function (parent) {
+            var textBox = $("#" + parent);
+            textBox.focus(sg.viewFinderHelper.savePreviousValue.bind(textBox));
+        },
+
+        /**
+        * @name setBlurEventBind
+        * @description Set-up finder's blur event binding
+        * @public
+        * @param {object} parent - finder text box control id
+        */
+        setBlurEventBind: function (parent) {
+            var textBox = $("#" + parent);
+            textBox.blur(sg.viewFinderHelper.onFinderBlurEvent.bind(textBox));
+        },
+
+        /**
+        * @name setAutoValidate
+        * @description Set-up up finder's input auto-validation
+        * @public
+        * @param {object} parent - finder text box control id
+        */
+        setAutoValidate: function (parent) {
+            sg.viewFinderHelper.setPreviousValueSave(parent);
+            sg.viewFinderHelper.setBlurEventBind(parent);
         },
 
         /**
@@ -92,6 +146,7 @@
                 cancel: onCancelCallback,
                 height: height,
                 top: top,
+                oldValue: null,
                 // Note: 
                 //     Set the success parameter to be null in the case where setViewFinderEx is previously called causing
                 //     the success callback to persist into _getSelectedRow
@@ -124,7 +179,8 @@
                 cancel: onCancelCallback,
                 filterAction: filterAction,
                 height: height,
-                top: top
+                top: top,
+                oldValue: null
             });
 
             sg.utls.registerFinderHotkey(element, id);
@@ -162,6 +218,51 @@
                 url = sg.utls.url.buildUrl(customUrlProperty[0], customUrlProperty[1], customUrlProperty[2]);
             }
             return url;
+        },
+
+        /**
+         * Tries to validate finder's text input by invoking Finder controller search method
+         *
+         * @param {string} finderId - The finder's button id name
+         * @param {string} focusedId - Field id of the control with focus
+         * @param {any} funcCall -Callback function to call
+         */
+        searchFinderValidation: function (finderId, focusedId, funcCall) {
+            // check if are under pop-up to avoid race condition between 2 finders
+            if ($('#injectedOverlay').length === 0 && $('#injectedOverlayTransparent').length === 0) {
+                var options = sg.utls.getViewFinderOptions(finderId);
+                if (options !== null) {
+                    if ($("#" + options.parent).val() !== "") {
+                        var arr = undefined;
+                        var props = options.properties;
+                        if (props.initKeyValues !== undefined) {
+                            arr = sg.utls.deepCopy(props.initKeyValues);
+                            if (arr !== undefined && 0 < arr.length)
+                                arr[arr.length - 1] = $("#" + options.parent).val();
+                            else
+                                arr = [$("#" + options.parent).val()];
+                        } else {
+                            arr = [$("#" + options.parent).val()];
+                        }
+                        var label = $("#" + options.parent)[0].previousElementSibling.innerText;
+                        var data = {
+                            'searchOptions':
+                                { ViewID: props.viewID, ViewOrder: props.viewOrder, FieldId: options.parent, FieldLabel: label, FieldPrev: options.oldValue, FocusedId: focusedId, Filter: "", InitKeyValues: arr }
+                        };
+                        sg.utls.ajaxPost(window.sg.utls.url.buildUrl("Core", "ViewFinder", "Search"), data, funcCall);
+                    }
+                }
+            }
+        },
+
+        /**
+         * Replaces entity context token (~~) with module id (CP or UP) in the viewID property
+         *
+         * @param {string} viewID - The viewID of the finder that may be tokenized (~~)
+         * @param {string} entityContext - The replacement value (CP or UP) for the token (~~)
+         */
+        entityContextReplacement: function (viewID, entityContext) {
+            return viewID.replace("~~", entityContext);
         }
     };
 
@@ -253,6 +354,45 @@
         ColumnName: "",
         TextData: "",
         TextBoxElement: ""
+    };
+    sg.delayOnBlurAuto = function (elementId) {
+        if ($('#injectedOverlay').length === 0 && $('#injectedOverlayTransparent').length === 0) {
+            var elementInfocus;
+            setTimeout(function () {
+                elementInfocus = $(document.activeElement);
+                var elementInfocusAttrId = elementInfocus.attr("id");
+
+                if (sg.utls.isSafari()) {
+                    elementInfocus = sg.findEvent;
+                    if (elementInfocus != null) {
+                        elementInfocusAttrId = elementInfocus.id;
+                    } else {
+                        elementInfocusAttrId = null;
+                    }
+                    sg.findEvent = null;
+                }
+                var isFound = false;
+                if (elementId.constructor === Array) {
+                    isFound = $.inArray(elementInfocusAttrId, elementId) === -1;
+                } else {
+                    isFound = elementInfocusAttrId != elementId;
+                }
+                if (elementInfocus === null || elementInfocusAttrId === null || isFound) {
+                    const id = elementInfocusAttrId;
+                    let isNavigationButton = false;
+                    if (id) {
+                        isNavigationButton = id.includes('btnDataFirst') || id.includes('btnDataPrevious') || id.includes('btnDataNext') || id.includes('btnDataLast');
+                    }
+                    if (!isNavigationButton) {
+                        var focusId = null;
+                        if (elementInfocus !== undefined && elementInfocus.length && elementInfocus[0].tagName === "BODY") {
+                            focusId = "@";   // finder button clicked, finder textbox will receive focus
+                        }
+                        sg.viewFinderHelper.searchFinderValidation(elementId, focusId, sg.utls.setFinderSearchResult);
+                    }
+                }
+            });
+        }
     };
     sg.delayOnBlur = function (elementId, funcCall) {
         var elementInfocus;
@@ -833,6 +973,7 @@
         _keyHandler: function (e) {
             if (document.activeElement.id === "div_finder_grid") {
                 if (e.keyCode === sg.constants.KeyCodeEnum.Enter) {
+                    e.preventDefault();
                     $("#select").trigger("click");
                 } else if (e.keyCode === sg.constants.KeyCodeEnum.Home) {
                     e.preventDefault();

@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -32,6 +32,8 @@
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + 
 	"Web.Areas." + moduleId : moduleId + ".Web");
 
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = (moduleId == "PR");
 #>
 // <#=copyright#>
 
@@ -56,6 +58,18 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models.Reports
     /// <typeparam name="T"><#=modelName#></typeparam>
     public class <#=entityName#>ViewModel<T> : ReportViewModel<T> where T : <#=modelName#>, new()
     {
+<#
+	if (entityContext)
+	{
+#>
+
+        /// <summary>
+        /// Payroll Type (CP or UP for JavaScript usage)
+        /// </summary>
+        public string PayrollType { get; set; }
+<#
+	}
+#>
 
     }
 }

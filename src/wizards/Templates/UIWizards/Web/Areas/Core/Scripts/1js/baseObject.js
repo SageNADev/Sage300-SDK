@@ -429,7 +429,7 @@
          */
         getConcurrencyFilter: function (row, verb) {
             //AT-77816. When verb is "Init", not need to use concurrency filter
-            if (verb === CRUDReasons.InitData) {
+            if (verb === CRUDReasons.InitData || verb === CRUDReasons.InitHeader ) {
                 return this.getInitFilter();
             }
 
@@ -538,8 +538,8 @@
          * @param {any} filterCallback
          * @param {any} depthViewId
          */
-        generateGetQuery: function (parentIndex, verb, filterCallback, depthViewId) {
-            let id = parentIndex + "1";
+        generateGetQuery: function (parentIndex, verb, filterCallback, depthViewId, childIndex = "1") {
+            let id = parentIndex + childIndex;
             let children = "";
 
             let childId = apputils.find(depthViewId, (item)=>{
@@ -573,11 +573,14 @@
          */
         generateChildGetQuery: function (index, method, filterCallback, depthViewId) {
             let query = "";
+            let childIndex = 0;
             apputils.each(this.allCollectionObj, obj => {
 
                 if (!obj.skipInAllQuery) {
-                    query += obj.generateGetQuery(index, method, filterCallback, depthViewId);
+                    query += obj.generateGetQuery(index, method, filterCallback, depthViewId, childIndex);
                 }
+
+                childIndex++;
             });
 
             return query;
@@ -635,6 +638,14 @@
          */
         getColumnFormatedValueByFieldName: function (fieldName) {
             return this.rowObj.getColumnFormatedValueByFieldName(fieldName);
+        },
+
+        /**
+         * Get field DB value
+         * @param {any} fieldName The field name
+         */
+        getFieldDBValue: function (fieldName) {
+            return this.rowObj.getFieldDBValue(fieldName);
         },
 
         /**
@@ -1196,7 +1207,11 @@
             result.editable.previousValue = data.previousValue;
             result.editable.hasError = data.hasError;
 
-            if (column.required && data.value == "") {
+            if (result.editable.editingCell) {
+                result.editable.editingCell.title = result.editable.editingCell.title || column.title;
+            }
+
+            if (column.required && data.value === "") {
                 result.editable.invalid = true;
             }
 
@@ -1241,12 +1256,12 @@
             let yearName = 'FISCALYEAR';
             let periodName = 'FISCALPER';
 
-            let fields = Object.keys(this.dataModelObj).filter(v => v.includes('FISC') && v.includes('YEAR'));
+            let fields = Object.keys(this.dataModelObj).filter(v => v.includes('FISC') && v.includes('YEAR') && !v.startsWith('attr'));
             if (fields.length > 0) {
                 yearName = fields[0];
             }
 
-            fields = Object.keys(this.dataModelObj).filter(v => v.includes('FISC') && v.includes('PER'));
+            fields = Object.keys(this.dataModelObj).filter(v => v.includes('FISC') && v.includes('PER') && !v.startsWith('attr'));
             if (fields.length > 0) {
                 periodName = fields[0];
             }
@@ -1280,10 +1295,8 @@
             this.setReadOnlyFieldData(periodName, period);
         },
 
-        //Update the query, only include currently changed field in query AT-73429
-
         /**
-         * Update the query, only include currently changed field in query
+         * Update the query, only include currently changed field in query and remove child insert/put verb node.
          * @param {any} query
          * @param {any} value
          */
@@ -1291,7 +1304,7 @@
             const domParser = new DOMParser();
             const s = new XMLSerializer();
             const xmlDoc = domParser.parseFromString(query, "text/xml");
-            const nodes = xmlDoc.getElementsByTagName("c");
+            let nodes = xmlDoc.getElementsByTagName("c");
             let update = false;
 
             for (const node of nodes) {
@@ -1299,6 +1312,19 @@
                     update = true;
                     node.remove();
                 }
+            }
+
+            nodes = xmlDoc.getElementsByTagName("r");
+            let nodesToRemove = [];
+
+            //Sanitizing query, remove insert/put verb nodes that not needed. 
+            for (let i = 0; i < nodes.length; i++) {
+                if (nodes[i].getAttribute("verb") !== 'InitOnly') {
+                    nodesToRemove.push(nodes[i]);
+                }
+            }
+            for (let i = 0; i < nodesToRemove.length; i++) {
+                nodesToRemove[i].parentNode.removeChild(nodesToRemove[i]);
             }
 
             return update ? s.serializeToString(xmlDoc).replaceAll('"',"'") : query;
@@ -1315,6 +1341,7 @@
          */
         updateTransactionDateField: function (column, data, collectionObj, useVerbPut, lockLevel, setFiscalYearPeriod = true) {
             this.setFieldData(column.field, data.value);
+
             let newEntityColl = new collectionObj();
             newEntityColl.rowIsReadonly = true;
             let query = newEntityColl.generateInitOnlyRoot(this);
@@ -1331,27 +1358,33 @@
             if (apputils.isUndefined(Ok)) {
                 return "";
             }
-
+            let self = this;
             Ok.then((result, status, xhr) => {
                 let message = {"UserMessage": { "IsEmail": false, "IsSuccess": false, "Message": "", "Errors": null, "Warnings": null, "Info": null}};
                 if (xhr.hasError) {
                     const errors = ErrorEntityCollectionObj.getErrors();
                     message.UserMessage.Errors = errors;
 
-                    if (errors.length > 0 ) {
-                        this.setFieldData(column.field, data.previousValue);
-                        this.setFiscalYearPeriod(this.rowObj.rowNodes[0], data.previousValue);
+                    if (errors.length > 0) {
+                        self.setTransactionDateValue(column.field, data.previousValue, true);
                         let msg = this.viewid + column.msgid + column.field;
                         MessageBus.msg.trigger(msg + apputils.EventMsgTags.svrUpdate, data.previousValue, msg + apputils.EventMsgTags.svrUpdate);
+
                     } else if (setFiscalYearPeriod) {
                         this.setFiscalYearPeriod(null, data.value);
                     }
+
                     if (lockLevel) {
                         this.showWarningLockedPeriod(column, data, lockLevel, setFiscalYearPeriod);
                     } else {
                         sg.utls.showMessage(message, () => ErrorEntityCollectionObj.clearError());
                     }
+
                 } else {
+                    if (this.rowObj.dataModel.filter(c => c.field === 'DATEBUS').length === 1 && column.field !== "DATEBUS") {
+                        this.setFieldData("DATEBUS", data.value);
+                    }
+
                     if (setFiscalYearPeriod) {
                         let entity = newEntityColl.rows[0] ? newEntityColl.rows[0].rowObj.rowNodes[0] : null;
                         this.setFiscalYearPeriod(entity, data.value);
@@ -1367,20 +1400,30 @@
                         warnings[0].Message = warnings[0].Message.replace(globalResource.Warning + '. ', '');
                         message.UserMessage[name] = warnings;
                         sg.utls.showMessage(message, () => ErrorEntityCollectionObj.clearError());
+
                         if (lockLevel === 2) {
-                            this.setFieldData(column.field, data.previousValue);
-                            if (this.CRUDReason === CRUDReasons.AddingNewData && column.field !== "DATEBUS") {
-                                if (this.rowObj.dataModel.filter(c => c.field === 'DATEBUS').length === 1) {
-                                    this.setFieldData("DATEBUS", data.previousValue);
-                                }
-                            }
-                            if (setFiscalYearPeriod) {
-                                this.setFiscalYearPeriod(this.rowObj.rowNodes[0], data.previousValue);
-                            }
+                            self.setTransactionDateValue(column.field, data.previousValue, setFiscalYearPeriod);
                         }
                     }
                 }
+
             });
+        },
+        /**
+         * Set transaction date value, posting date value and fiscal year/period value
+         * @param {any} fieldName
+         * @param {any} value
+         */
+        setTransactionDateValue: function (fieldName, value, setYearPeriod) {
+            this.setFieldData(fieldName, value);
+            if (fieldName !== "DATEBUS") {
+                if (this.rowObj.dataModel.filter(c => c.field === 'DATEBUS').length === 1) {
+                    this.setFieldData("DATEBUS", value);
+                }
+            }
+            if (setYearPeriod) {
+                this.setFiscalYearPeriod(this.rowObj.rowNodes[0], value);
+            }
         },
 
         /**
@@ -1412,10 +1455,7 @@
                 }
                 sg.utls.showMessage(message, () => ErrorEntityCollectionObj.clearError());
                 if (lockLevel === 2) {
-                    this.setFieldData(column.field, data.previousValue);
-                    if (setFiscalYearPeriod) {
-                        this.setFiscalYearPeriod(this.rowObj.rowNodes[0], data.previousValue);
-                    }
+                    this.setTransactionDateValue(column.field, data.previousValue, setFiscalYearPeriod);
                 }
             }
         },

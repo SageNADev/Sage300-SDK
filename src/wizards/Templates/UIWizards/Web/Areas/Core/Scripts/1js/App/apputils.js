@@ -193,7 +193,7 @@
 
     this.apputils.formatUsingCurrencyCode = function (currencyCode, value) {
 
-        if (apputils.isUndefined(apputils.currencyCodes)) {
+        if (apputils.isUndefined(apputils.currencyCodes) || apputils.isUndefined(currencyCode) || currencyCode === "") {
             return value;
         }
 
@@ -209,6 +209,10 @@
             default:
                 return apputils.simpleFormatterForNow(defaultValue, value);
         }
+    };
+
+    this.apputils.formatUnwantedChars = function (unformattedValue) {
+        return unformattedValue.replace(/\W+/g, "");
     };
 
     this.apputils.formatUsingHomeCurrencyAndICOptionsFractional = function (value) {
@@ -285,16 +289,16 @@
         }
         let number = kendo.parseFloat(value);
         //if user entered decimals when no decimal was allowed...
-        let userDecimals = apputils.countDecimals(number);
+        /*let userDecimals = apputils.countDecimals(number);
         if (+precision === 0) {
             let result = Math.pow(10, userDecimals);
             return kendo.toString((value * result), "n0");
-        }
+        }*/
         return kendo.toString(number, `n${precision}`);
     };
 
     //Some numeric textbox need min value settings, like QUANTITY field. Numeric default value should be minVal or 0, can't be empty(null)
-    this.apputils.initNumericTextBoxAndSetValue = function (id, val, minVal, decimal) {
+    this.apputils.initNumericTextBoxAndSetValue = function (id, val, minVal, decimal, numberOfNumerals = 0) {
         let precision = apputils.isUndefined(decimal) ? apputils.decimalPlaceOfFunctionalCurrency(): decimal;
 
         let numericTxtBox = $("#" + id).kendoNumericTextBox({
@@ -304,10 +308,14 @@
             min: minVal,
             value: val
         });
-        sg.utls.kndoUI.restrictDecimals(numericTxtBox, precision, precision ? 16 - precision : 14);
+        if (numberOfNumerals === 0) {
+            numberOfNumerals = precision ? 16 - precision : 14;
+        }
+        sg.utls.kndoUI.restrictDecimals(numericTxtBox, precision, numberOfNumerals);
+        //sg.utls.kndoUI.restrictDecimals(numericTxtBox, precision, precision ? 16 - precision : 14);
     };
 
-    this.apputils.formatKendoNumericTextBoxForDecimals = function (ctrId, data, minVal, decimal) {
+    this.apputils.formatKendoNumericTextBoxForDecimals = function (ctrId, data, minVal, decimal, numberOfNumerals = 0) {
         let kendoBox = $("#" + ctrId).data("kendoNumericTextBox");
 
         if (kendoBox && kendoBox.value) {
@@ -318,9 +326,13 @@
                 format: "n" + precision,
                 min: minVal
             });
-            sg.utls.kndoUI.restrictDecimals(kendoBox, precision, precision ? 16 - precision : 14);
+            if (numberOfNumerals === 0) {
+                numberOfNumerals = precision ? 16 - precision : 14;
+            }
+            sg.utls.kndoUI.restrictDecimals(kendoBox, precision, numberOfNumerals);
+            //sg.utls.kndoUI.restrictDecimals(kendoBox, precision, precision ? 16 - precision : 14);
         } else {
-            apputils.initNumericTextBoxAndSetValue(ctrId, data, minVal, decimal);
+            apputils.initNumericTextBoxAndSetValue(ctrId, data, minVal, decimal, numberOfNumerals);
         }
     };
 
@@ -331,6 +343,10 @@
         };
 
         return arrObj;
+    };
+
+    this.apputils.initObjectForDisplay = function (obj) {
+        return apputils.cloneDeep(obj);
     };
 
     this.apputils.getLockedPeriodLevel = function () {
@@ -368,6 +384,26 @@
         (dd > 9 ? '' : '0') + dd
         ].join('');
 
+    };
+
+    this.apputils.formatTime = function (value) {
+        let timeParts = value.split(' ');
+        let ts = timeParts[1];
+
+        if (ts === '12:00:00') {
+            ts = '00:00:00';
+        } else if (timeParts.length > 2) {
+            if (timeParts[2].endsWith('PM')) {
+                let s = ts.split(':');
+                let hh = parseInt(s[0]);
+                if (hh < 12) {
+                    let h = (hh + 12).toString();
+                    ts = `${h}:${s[1]}:${s[2]}`;
+                }
+            }
+        }
+
+        return ts;
     };
 
     this.apputils.stdErrorHandler = async function (isWarning = false) {
@@ -443,12 +479,197 @@
     this.apputils.TimeTicks = function () {
         const d = new Date();
         return (d.getTime() * 10000) + 621355968000000000;
+    };
+
+    //function to pad '0's based on model template default value
+    this.apputils.toSimpleFormat = function (field, defaultValue) {
+        switch (field.dataType) {
+            //case ("Date"):
+            case ("Decimal"):
+            case ("int"): {
+                return apputils.simpleFormatterForNow(defaultValue, field.value);
+            }
+            default:
+                return "";
+        }
+    };
+
+    //Kendo doesn't handle enable well: https://github.com/telerik/kendo-angular/issues/2006
+    this.apputils.enableDropDownList = function (ddList, enable) {
+        const dropDownList = ddList.data("kendoDropDownList");
+
+        if (apputils.isUndefined(dropDownList)) {
+            return;
+        }
+
+        dropDownList.enable(enable);
+
+        ddList[0].readOnly = !enable;
+    };
+
+    this.apputils.DayOfWeek = {
+        Sunday: 0,
+        Monday: 1,
+        Tuesday: 2,
+        Wednesday: 3,
+        Thursday: 4,
+        Friday: 5,
+        Saturday: 6,
+    };
+    Object.freeze(this.apputils.DayOfWeek);
+
+    /**
+     *  getFormatedDate - returns date as string in correct locale formatting.
+     */
+    this.apputils.getFormatedDate = function (value) {
+
+        if (typeof value === Date) {
+            return kendo.toString(value, "d");
+
+        } else {
+            return kendo.toString(new Date(value), "d");
+        }
+    };
+
+    /**
+     *  getDateArray - returns a filled array of dates from startDate to endDate.
+     */
+    this.apputils.getDateArray = function (startDate, endDate) {
+        let arr = new Array();
+        let start = new Date(startDate);
+        const end = new Date(endDate);
+        while (start <= end) {
+            const formattedDate = apputils.getFormatedDate(start);
+            arr.push(formattedDate);
+
+            start.setDate(start.getDate() + 1);
+        }
+        return arr;
     }
+
+    /**
+     *  getDatefromDay - passing the day [e.g.: apputils.DayOfWeek.Monday] as input this function will return the date
+     *  that falls on this day within the provided start and end date range.
+     */
+    this.apputils.getDatefromDay = function (dayOfWeek, startDate, endDate) {
+        let givenDate;
+
+        const dateRange = apputils.getDateArray(startDate, endDate);
+
+        dateRange.every(date => {
+            if (new Date(date).getDay() === dayOfWeek) {
+                givenDate = date;
+            }
+
+            return apputils.isUndefined(givenDate);
+        });
+
+        return givenDate;
+    }
+
+    /**
+     *  getDayfromDate - passing the date "3/21/2023" and array of [e.g.: apputils.DayOfWeek.Monday] as inputs this function will return the day
+     *  that falls on this date.
+     */
+    this.apputils.getDayfromDate = function (date, allDaysOfWeek) {
+        let givenDay;
+
+        allDaysOfWeek.every(obj => {
+            if (new Date(date).getDay() === obj.dayOfWeek) {
+                givenDay = obj;
+            }
+
+            return apputils.isUndefined(givenDay);
+        });
+
+        return givenDay;
+    }
+
+    this.apputils.getDateRangeAsDays = function (start, end) {
+        let arr = []
+        for (let dt = new Date(start); dt <= new Date(end); dt.setDate(dt.getDate() + 1)) {
+            arr.push((new Date(dt)).getDay());
+        }
+        return arr;
+    };
 
     if (typeof define === 'function' && define.amd) {
         define('apputils', [], function () {
             return apputils;
         });
+    }
+
+    /**
+     * @name getTimePicker
+     * @description Create and initialize the kendo timepicker control
+     * @param {string} controlId The string controlId
+     */
+    this.apputils.getTimePicker = function (controlId) {
+        let twentyPlus = false;
+        let timepicker = $(controlId);
+
+        if (!apputils.isDefined(timepicker)) {
+            return;
+        }
+
+        timepicker.kendoMaskedTextBox({
+            promptChar: "0",
+            mask: "ab:cd:ef",
+            rules: {
+                "a": function (char) {
+                    const digit = parseInt(char);
+
+                    // Reject non-numeric characters
+                    if (isNaN(digit)) {
+                        return false;
+                    }
+
+                    // First digit can only be 0, 1 or 2
+                    if (digit >= 0 && digit <= 2) {
+
+                        // if first digit is a 2, then 
+                        // set flag so we know about it 
+                        // when processing the next digit
+                        if (digit === 2) {
+                            twentyPlus = true;
+                        } else {
+                            twentyPlus = false;
+                        }
+                        return true;
+                    } else {
+                        return false;
+                    }
+                },
+
+                "b": function (char) {
+                    const digit = parseInt(char);
+
+                    // Reject non-numeric characters
+                    if (isNaN(digit)) {
+                        return false;
+                    }
+
+                    // if first digit is a two 
+                    // and second digit is greater than 3, reject it.
+                    if (twentyPlus === true) {
+                        if (digit > 3) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                },
+
+                "c": /[0-5]/,
+                "d": /[0-9]/,
+                "e": /[0-5]/,
+                "f": /[0-9]/
+            }
+        });
+
+        timepicker.closest(".k-timepicker")
+            .add(timepicker)
+            .removeClass("k-textbox");
     }
 
 }).call(this);

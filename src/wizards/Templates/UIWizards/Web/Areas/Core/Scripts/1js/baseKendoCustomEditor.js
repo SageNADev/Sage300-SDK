@@ -14,19 +14,22 @@
                 return;
             }
             //By default. all finder editors should always use upper case class, if not need set options.upperCase = false
-            const isUpperCase = options.ShowfinderIcon && options.upperCase === undefined || options.upperCase;
+            const isUpperCase = options.ShowfinderIcon || options.upperCase;
             options.upperCase = isUpperCase;
             options.class = isUpperCase ? 'txt-upper' : '';
             options.model.class = options.class;
 
             const guid = kendo.guid();
+            const gridId = container[0].id.split('_')[0];
+            const grid = $('#' + gridId).data('kendoGrid');
+            const rowIndex = grid.select().index();
             //Total grid, use mappedField to get field name
             const field = options.model.mappedField || options.field;
             let dataType = options.dataType || (options.model[field] && options.model[field].dataType) || 'Text';
             options.dataType = dataType;
             
             const className = this.getTemplateClass(options) ||'';
-            const maxLength = options.maxLength || 32;
+            const maxLength = options.maxLength || (options.model ? options.model.maxLength : 32) || 32;
             const fmtTextbox = options.formattextbox || '';
 
             let value = options.model[field];
@@ -39,6 +42,9 @@
 
             if (options.formatList || (options.model[field] && options.model[field].formatList)) {
                 dataType = 'DropdownList'
+                if (!options.formatList) { //summary grid dropdown need get formatList from model format list
+                    options.formatList = options.model[field].formatList.map(i => i.display);
+                }
             }
 
             $('#lnkHasDetailOptionalFields').prop('disabled', options.field !== 'HASOPT')
@@ -51,15 +57,16 @@
             } else if (dataType === 'DateTime' || dataType === 'Date') {
                 this.dateEditor(container, options, html, guid);
 
+            } else if (dataType === 'Time') {
+                this.timeEditor(container, options, html);
+
             } else if (dataType === 'DropdownList') {
-                //const div = `<div id="${guid}" name="${options.field}" />`;
                 this.dropdownEditor(container, options, html, value, guid);
 
             } else if (dataType === 'Yes/No' || dataType === 'YesNo') {
 
                 this.yesNoEditor(container, options, html);
             } else {
-
                 $(html).appendTo(container, options);
             }
 
@@ -70,9 +77,10 @@
                 let value = data.currentTarget.value;
                 let msgId = options.customMessage ? options.customMessage : options.model.RowIndex + options.field;
                 let msgName = options.viewId + msgId + apputils.EventMsgTags.usrUpdate;
+                const changedField = options.model.mappedField || options.field;
 
                 value = hasUpperClass ? value.toUpperCase() : value;
-                let msgData = { viewId: options.viewId, rowIndex: options.model.RowIndex, field: options.field, value: value, prevValue: options.model[options.field], customBinding: options.customBinding };
+                let msgData = { viewId: options.viewId, rowIndex: options.model.RowIndex, field: changedField, value: value, prevValue: options.model[options.field], customBinding: options.customBinding };
 
                 MessageBus.msg.trigger(msgName, msgData);
             }
@@ -99,6 +107,15 @@
                 if (options.ShowfinderIcon || options.finderType) {
                     msg = prefix + options.viewId + options.finderType;
                 }
+
+                if (options.dataType === 'DateTime') {
+                    if (!sg.utls.kndoUI.checkForValidDate(value)) {
+                        value = options.focusFieldValue;
+                    }
+                    if (value.length <= 8) {
+                        value = new Date(value).toLocaleDateString();
+                    }
+                }
                 //[RC] 2/25 - setCellFocus makes to tab twice before moving to next cell. Please discuss with me to fix.
                 MessageBus.msg.trigger(msg, { nav: "user", viewId: options.viewId, msgid: model.msgid, rowIndex: model.RowIndex, field: field, value: value, callback: setCellFocus });
             }
@@ -110,6 +127,22 @@
             } else {
                $("#" + guid).on("change", changeHandler2);
             }
+
+            $("#" + guid).focusout((e) => {
+                let validate = options.showBlankValueMessage || apputils.isUndefined(options.showBlankValueMessage);
+
+                if (options.requiredField && validate && options.model[options.field].length === 0) {
+                    const msg = kendo.format(globalResource.CannotBeBlankMessage, options.field);
+                    const userMessage = { UserMessage: { IsSuccess: false, Message: "", Errors: [{ "Message": msg, "Priority": 3, "PriorityString": "Error" }] } };
+                    options.showBlankValueMessage = true;
+                    sg.utls.showMessage(userMessage, () => {
+                        const colIndex = window.GridPreferencesHelper.getGridColumnIndex(grid, options.field);
+                        const cell = grid.tbody.find("tr").eq(rowIndex).find("td").eq(colIndex);
+                        grid.current(cell);
+                        grid.editCell(cell);
+                    });
+                }
+            })
 
             //Set finder
             let finderHtml = this.showIcon(guid, options, container);
@@ -123,6 +156,7 @@
                 $('#' + id).mousedown((e) => {
                     if (e.currentTarget) {
                         window.activeElementId = e.currentTarget.id;
+                        options.showBlankValueMessage = false;
                     }
 
                     //grid with finder inputs always uppercase except set options.upperCase as false
@@ -133,7 +167,7 @@
                     let initValues = property.initKeyValues;
                     if (initValues && initValues.length > 0) {
                         let lastValue = initValues[initValues.length - 1];
-                        if (lastValue !== inputInitValue) {
+                        if (lastValue !== -1 && lastValue !== inputInitValue) { //some finder key type is number, not match UI input value 
                             initValues[initValues.length - 1] = inputInitValue;
                         }
                     }
@@ -148,8 +182,15 @@
                             $(document).on("click", ".msgCtrl-close", () => property.callback());
                         };
 
-                        //Select value not changed, no need trigger change message. See:AT-78637
-                        if (model[field] === value) {
+                        let changed = false;
+                        if (options.focusFieldValue !== undefined) {
+                            changed = options.focusFieldValue !== value;
+                        }
+                        //Select value not changed, no need trigger change message. See:AT-78637 AT-81124
+                        if (model[field] === value && !options.multipleKeys && !changed) {
+                            if (options.detailsGrid) {
+                                options.detailsGrid.moveToNextCell(options.model.RowIndex, field);
+                            }
                             return;
                         }
 
@@ -173,11 +214,19 @@
                         MessageBus.msg.trigger(msg, { nav: "system", viewId: options.viewId, msgid: model.msgid, rowIndex: model.RowIndex, field: field, value: fieldValue, row: data });
                     },
                     // Cancel
-                    function (e) {
-                        let field = options.field;
-                        if (typeof options.model[field] === 'string' && options.upperCase) {
-                            options.model.set(field, options.model[field].toUpperCase());
+                    function (cEvt) {
+                        const model = options.model;
+                        const field = options.field;
+                        if (typeof model[field] === 'string' && options.upperCase) {
+                            model.set(field, model[field].toUpperCase());
                         }
+
+                        let prefix = apputils.isUndefined(model.prefixNamespace) ? "" : model.prefixNamespace;
+                        let msg = prefix + options.viewId + model.msgid + field + apputils.EventMsgTags.usrUpdate;
+                        if (options.ShowfinderIcon || options.finderType) {
+                            msg = prefix + options.viewId + options.finderType;
+                        }
+                        MessageBus.msg.trigger(msg, { nav: apputils.EventTrigger.System, viewId: options.viewId, msgid: model.msgid, rowIndex: model.RowIndex, field: field, value: model[field], callback: setCellFocus });
                         setCellFocus();
                     });
                 });
@@ -186,10 +235,9 @@
 
             //Used in finder cancel button click and error message popup close, set focus back to current edit cell
             function setCellFocus() {
-                //[RC] - 2/27 - why we need this. Please discuss with me.
-                //const colIndex = GridPreferencesHelper.getGridColumnIndex(grid, options.field);
-                //const cell = grid.tbody.find("tr").eq(rowIndex).find("td").eq(colIndex);
-                //grid.editCell(cell);
+                const colIndex = GridPreferencesHelper.getGridColumnIndex(grid, options.field);
+                const cell = grid.tbody.find("tr").eq(rowIndex).find("td").eq(colIndex);
+                grid.editCell(cell);
             };
         },
 
@@ -206,6 +254,7 @@
                 case ("date"):
                     return "";
                 case ("decimal"):
+                    return "numeric valid";
                 case ("long"):
                 case ("int"):
                     return "numeric pr25 valid";
@@ -234,6 +283,16 @@
                 let id = guid + 'pencilIcon';
                 $('<input ' + '" id="' + id + '" class="icon pencil-edit right" tabindex="-1" type="button" />').appendTo(container);
                 let html = `<input id="${id}" class="icon pencil-edit right" tabindex="-1" type="button" />`;
+
+                //bind keydown event for optional field pencil icon
+                if (options.field === 'HASOPT') {
+                    $(`#${guid}`).on('keydown', function (e) {
+                        if (e.which === sg.constants.KeyCodeEnum.Enter) {
+                            e.preventDefault();
+                            $("#" + id).trigger('click');
+                        }
+                    })
+                }
                 return html;
             }
 
@@ -373,7 +432,7 @@
                 case "Decimal":
                     max = Math.pow(10, size * 2) - 1;
                     min = apputils.isUndefined(options.minValue) ? - 1 * max : options.minValue;
-                    maxLength = 2 * size;
+                    maxLength = options.maxLength || 2 * size;
                     if (maxLength > 16) {
                         maxLength = 16;
                     }
@@ -402,10 +461,42 @@
 
             let numberOfNumerals = maxLength > precision ? maxLength - precision : 0;
             numberOfNumerals = numberOfNumerals < 10 ? 10 : numberOfNumerals;
+            numberOfNumerals = options.intPart || numberOfNumerals;
+
             sg.utls.kndoUI.restrictDecimals(txtNumeric, precision, numberOfNumerals);
         },
 
-    }
+        /**
+         * @description Column time editor, set the mask for time value input
+         * @param {any} container The column kendo editor container
+         * @param {any} options The column options
+         */
+        timeEditor : function(container, options, html) {
+            //html = kendo.format('<input id="{0}" name="{0}" />', options.field);
+
+            $(html)
+                .appendTo(container)
+                .kendoMaskedTextBox({
+                    mask: "12:34:34",
+                    unmaskOnPost: true,
+                    rules: {
+                        "1": /[0-2]/,
+                        "2": /[0-9]/,
+                        "3": /[0-5]/,
+                        "4": /[0-9]/
+                    }
+                })
+                .change(function (e) {
+                    let value = this.value.replace(/:/g, '').replaceAll('_', '0');
+                    let hours = value.slice(0, 2);
+                    if (parseInt(hours) >= 24) {
+                        let diff = parseInt(hours) - 24;
+                        value = value.replace(hours, '0' + diff.toString());
+                    }
+                    options.model.set(options.field, value);
+                });
+            }
+        }
 
     this.baseKendoStaticCustomEditor = helpers.View.extend({}, baseKendoCustomEditorObject);
 

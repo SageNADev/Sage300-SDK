@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -28,6 +28,14 @@
     var companyNamespace = settings.CompanyNamespace;
     var modelName = view.Properties[BusinessView.Constants.ModelName];
     var entityName = view.Properties[BusinessView.Constants.EntityName];
+
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = "\"" + moduleId + "\"";
+    if (moduleId == "PR")
+    {
+         // Will be resolved at runtime
+		 entityContext = "Context.ScreenContext.EntityContext";
+    }
 #>
 // <#=copyright#>
 
@@ -106,11 +114,11 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
         public override UserAccess GetAccessRights()
         {
             var userAccess = base.GetAccessRights();
-            if (SecurityCheck(Security.<#=moduleId#>Import))
+            if (SecurityCheck(<#=entityContext#> + "Import"))
             {
                 userAccess.SecurityType |= SecurityType.Import;
             }
-            if (SecurityCheck(Security.<#=moduleId#>Export))
+            if (SecurityCheck(<#=entityContext#> + "Export"))
             {
                 userAccess.SecurityType |= SecurityType.Export;
             }
@@ -162,7 +170,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
         /// <returns>Business Entity Property</returns>
         public override BusinessEntityProperty GetExportImportBusinessEntityProperty(string option = null, bool isExport = false)
         {
-            return new BusinessEntityProperty(<#=modelName#>.EntityName, ViewKeyType.UserSpecified);
+            return new BusinessEntityProperty(CommonUtil.EntityContextReplacement(<#=modelName#>.EntityName, Context.ScreenContext.EntityContext), ViewKeyType.UserSpecified);
         }
 
         #endregion

@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. *@
 
 @using System.Web.UI.WebControls
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -17,8 +17,6 @@
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
 @using Sage.CA.SBS.ERP.Sage300.Web.Models;
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
-@using Sage.CA.SBS.ERP.Sage300.KN.Web.Models;
-@using Sage.CA.SBS.ERP.Sage300.KN.Models;
 @using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Inquiry;
 @using System.Linq;
 
@@ -28,7 +26,6 @@
 }
 @{
     var menuUrlList = ViewBag.MenuUrlList as List<WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>>;
-    var othersUrlList = ViewBag.OthersUrlList as List<WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>>;
     var widgetUrlList = ViewBag.WidgetUrlList as WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>;
     int numberOfActiveWindows;
     int.TryParse(ConfigurationHelper.GetConfigValue("NumberOfActiveWindows"), out numberOfActiveWindows);
@@ -96,7 +93,7 @@
                 <a id="skipMenu" tabindex="0" class="skip-menu" href="#menuPrefButton">@HomePageResx.SkipMenu</a>
                 <div class="globalNavigation">
                     <a class="last_container session-date" href="javascript:sessionDateClick()">
-                        <span class="glyphicon glyphicon-calendar" id="sessionDateIcon"></span>
+                        <span id="sessionDateIcon"></span>
                         <span class="text-right" id="sessionDatelabel">@HomePageResx.Session_Date:&nbsp;</span>
                         <span id="spnSessionDate"></span>
                         <div class="clearfix"></div>
@@ -162,12 +159,12 @@
                                 </ul>
                             </li>
                             <li class="menu-item-with-icon" id="topMenuTools">
-                                <i class="settings tootls glyphicon glyphicon-md glyphicon-lightning" title="@NavigationResx.ToolsTitle"><span>@NavigationResx.Tools</span></i>
+                                <i class="settings tools glyphicon glyphicon-md glyphicon-lightning" title="@NavigationResx.ToolsTitle"><span>@NavigationResx.Tools</span></i>
                             </li>
                         </ul>
                     </div>
                 </div>
-                @*NOTE: Company Theme Color - color picker - leaving the code for the future useage*@
+                @*NOTE: Company Theme Color - color picker - leaving the code for the future usage*@
                 @*<div class="color-picker" id="colorPicker">
             <div class="wrapper-color-picker">
                 <div class="column">
@@ -189,12 +186,12 @@
                     <ul class="primary-list" id="listPrimary">
                         <li class="menu-item" data-menuid="101" id="homeNav">
                             <div class="nav-icon">
-                                <img src="~/Content/Images/nav/icon_home.svg" alt="Home" width="20" height="20">
+                                <img src="~/Content/Images/nav/icon_home.png" alt="Home" width="20" height="20">
+                                <img src="~/Content/Images/nav/icon_home_hover.png" alt="Home" width="20" height="20">
                             </div>
                             <a tabindex="0">@NavigationResx.Home</a>
                         </li>
                         @Html.Partial(Constants.PortalMenu, menuUrlList)
-                        @Html.Partial("~/Views/Partials/_PluginMenuUrl.cshtml", othersUrlList)
                     </ul>
                     <div id="menuPrefTogglerAlt">
                         <a name="menuPrefButton" id="menuPrefButton"></a>
@@ -325,15 +322,7 @@
         <!--Quick Menu (draggable sidebar)-->
         @Html.Partial(Constants.QuickMenu)
 
-        if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
-        {
-            <!--Note Editor Panel-->
-            @Html.Partial(NoteConstants.NoteEditor, new NoteViewModel<Note>())
-
-            <!--Notes Center -->
-            @Html.Partial(NoteConstants.NotesCenter, new NotesSearchViewModel<NotesSearch>())
-            @Scripts.Render("~/bundles/note")
-        }
+        
 
         <!--Custom Report-->
         @Html.Partial(AsConstants.CustomReport, new ViewDataDictionary { { "IsAdmin", ViewBag.isAdmin } })

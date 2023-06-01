@@ -326,13 +326,13 @@
          * @param {any} filterCallback Filter call back function
          * @param {any} depthViewId ViewId
          */
-        generateGetQuery: function (parentIndex, verb, filterCallback, depthViewId) {
+        generateGetQuery: function (parentIndex, verb, filterCallback, depthViewId, childIndex="1") {
             let query = "";
             verb = CRUDReasons.Get; //suppressed the generic use of this function
 
             let entity = this.getEntity(verb);
 
-            let children = entity.generateGetQuery(parentIndex, verb, filterCallback, depthViewId);
+            let children = entity.generateGetQuery(parentIndex, verb, filterCallback, depthViewId, childIndex);
 
             if (children.length > 0) {
                 query += children;

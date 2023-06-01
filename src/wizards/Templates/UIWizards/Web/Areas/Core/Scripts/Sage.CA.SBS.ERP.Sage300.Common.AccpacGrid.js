@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. */
 "use strict";
 
 var sg = sg || {};
@@ -379,6 +379,7 @@ sg.viewList = function () {
             col.isInternal = column.IsInternal || false;
             col.locked = column.Locked;
             col.presentationList = list;
+            col.displayType = column.DisplayType;
             col.presentationMask = column.PresentationMask;
             col.finder = column.Finder;
             col.drillDownUrl = column.DrillDownUrl;
@@ -403,27 +404,56 @@ sg.viewList = function () {
     }
 
     /**
-     * @description Use column field masks to set the textbox attributes
-     * @param {string} mask : The field mask, mask definition format
-     * @return {void}
+     * @description Use column field masks (from the business logic view) to set the textbox attributes
+     * @param {string} mask : The field mask
+     * 
+     * Note:
+     * Handles the simple cases of a single mask section.  See the 
+     * Accpac SDK help for more information on this.
+     * 
+     * This code handles all the simple cases (single segment, no fixed
+     * characters).  A mask of (%-3d) %-3d-%-4d (the phone number example in 
+     * the Accpac SDK documentation) will require completion of this implementation,
+     * or special handling.
+     *
+     * TODO: handle the more general case (as VB does).
+     *
+     * @return {property attributes}
      */
     function _getTextBoxProps(mask) {
         var props = { class: "", maxLength: 20 };
-
         if (mask) {
-            var isA = mask.indexOf("A") > 0,
-                isN = mask.indexOf("N") > 0,
-                isC = mask.indexOf("C") > 0,
-                number = mask.substring(2, 4);
-
-            if (isNaN(number)) {
-                number = number.substring(0, 1);
+            const matched = mask.match(/^\%(-?[0-9]+)([AaCcDdNn])$/);
+            if (null != matched) {
+                let classes = '';
+                let formatTextBox = '';
+                let length = matched[1];  // first capture group
+                let format_code = matched[2];
+                switch (format_code) {
+                    case 'A':
+                        classes = 'txt-upper';
+                    case 'a':
+                        formatTextBox = 'alpha';
+                        break;
+                    case 'C':
+                        classes = 'txt-upper';
+                    case 'c':
+                        break;
+                    case 'D':
+                    case 'd':
+                        formatTextBox = 'numeric';
+                        break;
+                    case 'N':
+                        classes = 'txt-upper';
+                    case 'n':
+                        formatTextBox = 'alphaNumeric'
+                        break;
+                }
+                props.class = classes;
+                props.maxLength = length;
+                props.formattextbox = formatTextBox;
             }
-            props.class = isA || isC || isN ? "txt-upper" : "";
-            props.maxLength = number;
-            props.formattextbox = isN ? 'alphaNumeric': '';
         }
-
         return props;
     }
 
@@ -797,9 +827,10 @@ sg.viewList = function () {
             mask = options.model.PresentationMasks[field] || col.mask,
             maskProps = mask ? _getTextBoxProps(mask) : undefined,
             className = maskProps ? maskProps.class : "",
+            formattextbox = maskProps ? maskProps.formattextbox : "",
             maxlength = col.FieldSize || (maskProps ? maskProps.maxLength : 64),
-            html = kendo.format('<input type="text" id="{0}" name="{0}" class="{1}" maxlength="{2}" />', field, className, maxlength);
-
+            // If you need to test D-44810, remove the 'formattextbox' attribute from this formatting statement
+            html = kendo.format('<input type="text" id="{0}" name="{0}" class="{1}" maxlength="{2}" formattextbox="{3}" />', field, className, maxlength, formattextbox);
         options.model.isUpperCase = className.includes('txt-upper');
 
         $(html).addClass('k-input k-textbox')
@@ -1028,9 +1059,19 @@ sg.viewList = function () {
             return _finderEditor(container, options, col, gridName);
         }
 
+        // DisplayType 0: Yes/No dropdown list, 1: True/False dropdown list
+        if (["boolean", "bool"].includes(col.DataType.toLowerCase()) && col.DisplayType) {
+            if (parseInt(col.DisplayType) < 2) {
+                const txtTrue = col.DisplayType === '0' ? globalResource.Yes : globalResource.True;
+                const txtFalse = col.DisplayType === '0' ? globalResource.No : globalResource.False;
+                col.PresentationList = [{ Selected: false, Text: txtFalse, Value: 'False' }, { Selected: false, Text: txtTrue, Value: 'True' }];
+            }
+        }
+
         if (col.PresentationList) {
             return _dropdownEditor(container, options, col.PresentationList, gridName);
         }
+
         if (dataType === "date" || dataType === "datetime" ) {
             return _dateEditor(container, options, gridName);
         }
@@ -1341,6 +1382,7 @@ sg.viewList = function () {
         var grid = $('#' + gridName).data("kendoGrid"),
             selectRow = grid.select(),
             rowIndex = selectRow.index(),
+            lastRowNumber = _lastRowNumber[gridName],
             status = _lastRowStatus[gridName] === RowStatusEnum.UPDATE ? RowStatusEnum.NONE : _lastRowStatus[gridName],
             dataItem = grid.dataItem(selectRow),
             formId = _forms[gridName];
@@ -1354,7 +1396,6 @@ sg.viewList = function () {
 
         _gridCallback(gridName, "gridChanged", jsonResult.Data, fieldName, null, jsonResult);
         _setModuleVariables(gridName, status, "", rowIndex, true, false);
-        _skipMoveTo[gridName] = false;
 
         if (dataItem) {
             for (var field in jsonResult.Data) {
@@ -1364,16 +1405,31 @@ sg.viewList = function () {
 
         var lastCellIndex = grid._lastCellIndex;
         var selectRowChanged = dataItem.uid !== _selectRowUid[gridName];
+
+        // grid.refresh() triggers grid.change event spawning 2 ajax calls - Insert and MoveTo (see line 2165)
+        // Insert and MoveTo ajax calls are unnecessary since we just populated grid with server data from jsonResult
+        // wrap grid.refresh() call with following lines to bypass grid.change event functionality
+        _lastRowNumber[gridName] = -1;
+        _skipMoveTo[gridName] = true;
         grid.refresh();
+        _lastRowNumber[gridName] = lastRowNumber;
+        _skipMoveTo[gridName] = false;
 
         // After grid refresh, use kendo grid row unique id and column index to select grid row and column
-        var uid = _selectRowUid[gridName] || dataItem.uid;
+        var uid = dataItem.uid || _selectRowUid[gridName];
         var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName);
         var colIndex = selectRowChanged ? lastCellIndex : index + 1; 
         var row = grid.table.find("[data-uid=" + uid + "]");
 
         if (row.length === 1) {
+            // grid.select(row) triggers grid.change event spawning 2 ajax calls - Insert and MoveTo (see line 2165)
+            // Insert and MoveTo ajax calls are unnecessary since we just populated grid with server data from jsonResult
+            // wrap grid.select(row) call with following lines to bypass grid.change event functionality
+            _lastRowNumber[gridName] = -1;
+            _skipMoveTo[gridName] = true;
             grid.select(row);
+            _lastRowNumber[gridName] = lastRowNumber;
+            _skipMoveTo[gridName] = false;
             _setNextEditCell(grid, dataItem, row, colIndex);
         }
     }
@@ -3275,11 +3331,12 @@ sg.viewList = function () {
                 const dataType = expr.dataType ? expr.dataType.toLowerCase() : 'char';
                 let value = expr.value;
                 let isText = (dataType === 'char' || dataType === 'string' || dataType === 'text');
+                let oriOperator = operator;
                 operator = convertOperator(operator);
 
                 if (isText) {
                     value = value.replace(/\"/g, '\\"');
-                    switch (operator) {
+                    switch (oriOperator) {
                         case 'startswith':
                             value = `${value}%`;
                             break;

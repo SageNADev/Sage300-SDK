@@ -6,6 +6,28 @@ body {
  position: relative;
 }
 
+/* New Font ----------------------------------------------------------- */
+
+@font-path:                 "../../fonts/";
+
+@font-face {
+  font-family: 'SageHeader';
+  src: url('@{icon-font-path}@{font-name-sage-header}.woff') format("woff"),
+       url('@{icon-font-path}@{font-name-sage-header}.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: 'SageText';
+  src: url('@{icon-font-path}@{font-name-sage-text}.woff') format("woff"),
+       url('@{icon-font-path}@{font-name-sage-text}.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: 'SageUI';
+  src: url('@{icon-font-path}@{font-name-sage-ui}.woff') format("woff"),
+       url('@{icon-font-path}@{font-name-sage-ui}.woff2') format("woff2");
+}
+
 /* `Container
 ----------------------------------------------------------------------------------------------------*/
 
@@ -403,7 +425,7 @@ table {
 body,
 input,
 textarea {
-    font: normal 14px 'Open Sans', Arial, sans-serif;
+    font: normal 14px 'SageUI', 'Open Sans', Arial, sans-serif;
 }
 
 /* `Sprite
@@ -572,7 +594,7 @@ only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device
     content: "*";
     margin-right: 3px;
     color: #007f64;
-    font-family: Calibri, Arial;
+    font-family: @font-family-sans-serif;
   }
 }
 
@@ -908,10 +930,10 @@ input[class*="btn-"] {
   height: 30px; 
   -webkit-appearance:         none;   
   -moz-appearance:            none;   
-  -webkit-border-radius:      0;      
-  -moz-border-radius:         0;      
-  -o-border-radius:           0;      
-  border-radius:              0;    
+  -webkit-border-radius:      15px;      
+  -moz-border-radius:         15px;      
+  -o-border-radius:           15px;      
+  border-radius:              15px;    
 
   &:focus {
     outline: 3px solid @input-border-focus;
@@ -1057,6 +1079,7 @@ input[class*="icon"] {
   overflow: hidden; 
   text-overflow: ellipsis; 
   max-width: 300px; 
+  border-radius: 15px !important;
 }
 
 .btn-primary { 
@@ -1134,10 +1157,10 @@ a[class*="btn-"] {
   margin-left: 6px;
   -webkit-appearance:         none;   /* iPad button defects */
   -moz-appearance:            none;   /* iPad button defects */
-  -webkit-border-radius:      0;      /* iPad button defects */
-  -moz-border-radius:         0;      /* iPad button defects */
-  -o-border-radius:           0;      /* iPad button defects */
-  border-radius:              0;      /* iPad button defects */
+  -webkit-border-radius:      15px;      /* iPad button defects */
+  -moz-border-radius:         15px;      /* iPad button defects */
+  -o-border-radius:           15px;      /* iPad button defects */
+  border-radius:              15px;      /* iPad button defects */
 
   &:first-child {
     margin-left: 0;
@@ -2686,7 +2709,7 @@ k-ie .child .checkBox + label + .label-link{
 .label-link,
 .label-link label {
   font-size: 12px;
-  font-family: arial;
+  font-family: @font-family-sans-serif;
   color: @sage-link;
   margin-left: 8px;
   cursor: pointer;
@@ -2727,7 +2750,7 @@ k-ie .child .checkBox + label + .label-link{
 
 .label-inline {
   font-size: 12px;
-  font-family: arial;
+  font-family: @font-family-sans-serif;
   color: @sage-link;
   margin-left: 8px;
   cursor: pointer;
@@ -4419,10 +4442,7 @@ textarea,
     font-size: 14px;
 
     .k-window-actions {
-      right: 35px
-      top: 10px;
       opacity: 1;
-      position: absolute;
       color: @sage-mid-gray;
 
       .k-window-action {
@@ -5224,8 +5244,8 @@ ul.list-bullet {
 }
 .summary-group .summary{
   margin:0 auto 20px auto;
-  background-color:#f6f6f6;
   border:1px solid #ccc;
+  border-radius: 2px;
 }
 .summary-group .summary>.summary-header{
   position:relative;

@@ -503,7 +503,12 @@ $.extend(sg.utls, {
                 $(`#divNavGroup${suffix}`).addClass("focused");
             }
 
-            const sameValue = $('#' + txtBoxId).val() == uiObject[keyFieldName];
+            let sameValue = $('#' + txtBoxId).val() == uiObject[keyFieldName];
+            const navigationKeyValue = $('#' + txtBoxId).data('navigationKeyValue');
+            if (navigationKeyValue) {
+                sameValue = navigationKeyValue == uiObject[keyFieldName];
+            }
+
             let disabled = uiObject[`navigationAction${suffix}`] === sg.utls.NavigationAction.First || (uiObject[`navigationAction${suffix}`] === sg.utls.NavigationAction.Previous && sameValue);
             $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}`).prop('disabled', disabled);
 
@@ -777,6 +782,39 @@ $.extend(sg.utls, {
         }
         return self.location === top.location;
     },
+
+    getViewFinderOptions: function (id) {
+        for (var i = 0; i < $(":sageuiwidgets-ViewFinder").length; i++) {
+            var widget = $(":sageuiwidgets-ViewFinder")[i];
+            if (id === widget.id) {
+                for (var prop in Object.keys(widget)) {
+                    var name = Object.keys(widget)[prop];
+                    var obj = widget[name];
+                    if (obj["sageuiwidgets-ViewFinder"] !== undefined) {
+                        return obj["sageuiwidgets-ViewFinder"].options;
+                    }
+                }
+            }
+        }
+        return null;
+    },
+
+    setFinderSearchResult: function (jsonResult) {
+        if (jsonResult !== null) {
+            if (jsonResult.Response.RecordExists === false) {    // invalid input typed
+                $("#" + jsonResult.Response.FieldId).val(jsonResult.Response.FieldPrev); // reset control to previous value
+                $("#" + jsonResult.Response.FieldId).focus(); // set focus back on control
+                sg.utls.showMessage(jsonResult);
+            } else if (jsonResult.Response.FocusedId === "@") {  // finder pop-up selection
+                $("#" + jsonResult.Response.FieldId).focus();
+            } 
+        }
+    },
+
+    isFinderSearchSupported: function (jsonResult) {
+        return window.location.href.includes("/PR/");
+    },
+
     isTopPage: function () {
         return self.location === top.location;
     },
@@ -2563,18 +2601,29 @@ $.extend(sg.utls, {
                     messageDiv.empty();
                 }, showTime);
             }
-			
+
+            var errMsgKeyHandler = function (e) {
+                if (e.keyCode === sg.constants.KeyCodeEnum.ESC) {
+                    $(".msgCtrl-close").trigger("click");
+                    $(document).off("keyup keydown", errMsgKeyHandler);
+                } else if ($('#injectedOverlay').length !== 0) {
+                    return false;
+                }
+            };
+
             if ($("#message").length && $("#message").html().length > 0) {
                 if (!(isModal === false)) {
                     if (isModalTransparent === true && $('#injectedOverlayTransparent').length === 0) {
                         //Inject an overlay that is transparent. 
                         messageDiv.parent().append("<div id='injectedOverlayTransparent' class='k-overlay k-overlay-transparent' ></div>");
                         $('#injectedOverlayTransparent').css('z-index', '999998');
+                        $(document).on("keyup keydown", errMsgKeyHandler);
                     }
                     else if ($('#injectedOverlay').length === 0){
                         //Inject an overlay that is semi-opaque. 
                         messageDiv.parent().append("<div id='injectedOverlay' class='k-overlay'></div>");
                         $('#injectedOverlay').css('z-index', '999998');
+                        $(document).on("keyup keydown", errMsgKeyHandler);
                     }
                 }
             }
@@ -2583,19 +2632,10 @@ $.extend(sg.utls, {
                 var closeHandler = function () {
                     handler();
                     $(document).off("click", ".msgCtrl-close", closeHandler);
+                    $(document).off("keyup keydown", errMsgKeyHandler);
                 };
                 $(document).on("click", ".msgCtrl-close", closeHandler);
             }
-            
-            var keyHandler = function (e) {
-                //if the key press is ESC
-                var KEY_ESC = 27;
-                if (e.keyCode === KEY_ESC) {
-                    $(".msgCtrl-close").trigger("click");
-                    $(document).off("keyup keydown", keyHandler);
-                }
-            };
-            $(document).on("keyup keydown", keyHandler);
         }
     },
 
@@ -2909,8 +2949,8 @@ $.extend(sg.utls, {
         }
     },
 
-    showMessagePopupInfo: function (messageType, message, div) {
-        sg.utls.showMessageInfoInCustomDiv(messageType, message, div);
+    showMessagePopupInfo: function (messageType, message, div, handler) {
+        sg.utls.showMessageInfoInCustomDiv(messageType, message, div, handler);
     },
 
     isSuccessMessage: function (message) {
@@ -3002,8 +3042,18 @@ $.extend(sg.utls, {
         }
     },
 
-    showMessageInfo: function (messageType, message) {
-        sg.utls.showMessageInfoInCustomDiv(messageType, message, "message");
+    showMessageInfo: function (messageType, message, handler) {
+        sg.utls.showMessageInfoInCustomDiv(messageType, message, "message", handler);
+    },
+
+    /**
+   * Date format for Declarative Framework Reports
+   * @param {any} date date to be formatted
+   * @param {string} format date format 
+   */
+    formatDate: function (date, format) {
+        if (format === undefined) format = 'MM/dd/yyyy';
+        return kendo.toString(new Date(date), format);
     },
 
     /**
@@ -3059,7 +3109,7 @@ $.extend(sg.utls, {
         messageDiv.html(messageHTML);
     },
 
-    showMessageInfoInCustomDiv: function (messageType, message, divId) {
+    showMessageInfoInCustomDiv: function (messageType, message, divId, handler) {
         var messageHTML = "";
         var messageDivId = "#" + divId;
         var messageDiv = $(messageDivId);
@@ -3092,13 +3142,32 @@ $.extend(sg.utls, {
         sg.utls.showMessagesInViewPort();
 
         messageDiv.show();
-		
-        if ($('#injectedOverlay').length === 0){
+
+        var infoMsgKeyHandler = function (e) {
+            if (e.keyCode === sg.constants.KeyCodeEnum.ESC) {
+                $(".msgCtrl-close").trigger("click");
+                $(document).off("keyup keydown", infoMsgKeyHandler);
+            } else if ($('#injectedOverlay').length !== 0) {
+                return false;
+            }
+        };
+
+        if ($('#injectedOverlay').length === 0) {
 			//Inject an overlay that is semi-opaque. 
             messageDiv.parent().append("<div id='injectedOverlay' class='k-overlay'></div>");
             $('#injectedOverlay').css('z-index', '999998');
+            $(document).on("keyup keydown", infoMsgKeyHandler);
         }
 
+        // Added callback to perform action when message box is closed
+        if (handler !== undefined && handler !== null) {
+            var closeHandler = function () {
+                handler();
+                $(document).off("click", ".msgCtrl-close", closeHandler);
+                $(document).off("keyup keydown", infoMsgKeyHandler);
+            };
+            $(document).on("click", ".msgCtrl-close", closeHandler);
+        }
     },
 
     showMessageInfoInCustomDivWithoutClose: function (messageType, message, divId) {
@@ -3147,6 +3216,10 @@ $.extend(sg.utls, {
         });
 
         sg.utls.registerFinderHotkey(element, id);
+    },
+
+    getFindersListKeyByValue: function (value) {
+        return Object.keys(sg.utls.findersList).find(key => sg.utls.findersList[key] === value);
     },
 
     registerFinderHotkey: function (element, finderId) {
@@ -3239,6 +3312,95 @@ $.extend(sg.utls, {
 
     focus: function (id) {
         $("#" + id).focus();
+    },
+
+    /**
+    * SSN number mask generation
+    * @param {string} selector fieldname
+    * @param {string} type either "UP" or "CP" expected
+    */
+    maskSSNNo: function (selector, type) {
+        if (type === "UP") {
+            $(selector).mask("AAA-AA-AAAA", {
+                'translation': {
+                    A: { pattern: /[0-9]/ }
+                }
+            });
+        } else {
+            $(selector).mask("AAA-AAA-AAA", {
+                'translation': {
+                    A: { pattern: /[0-9]/ }
+                }
+            });
+        }
+    },
+
+    /**
+    * SSN number formatting for US or CDN
+    * @param {string} fieldname name of the field to format
+    * @param {string} type either "UP" or "CP" expected
+    */
+    maskSSNNum: function (fieldname, type) {
+        var field = "#" + fieldname;
+        sg.utls.unmask(field);
+        if (type === "UP")
+            sg.utls.addPlaceHolder(field, "   -  -");
+        else
+            sg.utls.addPlaceHolder(field, "   -   -");
+        sg.utls.addMaxLength(field, "11");
+        sg.utls.maskSSNNo(field, type);
+    },
+
+    /**
+    * ZIP code mask generation
+    * @param {string} selector fieldname
+    * @param {string} type "UP" or "CP" expected (not guarrantied)
+    */
+    maskZIPCo: function (selector, type) {
+        if (type === "UP") {
+            $(selector).mask("AAAAA-AAAA", {
+                'translation': {
+                    A: { pattern: /[0-9]/ }
+                }
+            });
+        } else if (type === "CP") {
+            $(selector).mask("BAB ABA", {
+                'translation': {
+                    A: { pattern: /[0-9]/ },
+                    B: { pattern: /[A-Za-z]/ }
+                },
+                onKeyPress: function (value, event) {
+                    event.currentTarget.value = value.toUpperCase();
+                }
+            });
+        } else {
+            $(selector).mask("AAAAAAAAAAAAAAAAAAAA", {
+                'translation': {
+                    A: { pattern: /./ }
+                }
+            });
+        }
+    },
+
+    /**
+    * ZIP Code formatting
+    * @param {string} fieldname name of the field to format
+    * @param {string} type "UP" or "CP" expected (not guarrantied)
+    */
+    maskZIPCode: function (fieldname, type) {
+        var field = "#" + fieldname;
+        sg.utls.unmask(field);
+        if (type === "UP") {
+            sg.utls.addPlaceHolder(field, "     -");
+            sg.utls.addMaxLength(field, "10");
+        } else if (type === "CP") {
+            sg.utls.addPlaceHolder(field, "       ");
+            sg.utls.addMaxLength(field, "7");
+        } else {
+            sg.utls.addPlaceHolder(field, "                    ");
+            sg.utls.addMaxLength(field, "20");
+        }
+        sg.utls.maskZIPCo(field, type);
     },
 
     maskPhoneNo: function (selector) {
@@ -4520,9 +4682,7 @@ $(function () {
     }
 
     var keyHandler = function (e) {
-        //if the key press is ESC
-        var KEY_ESC = 27;
-        if (e.keyCode === KEY_ESC) {
+        if (e.keyCode === sg.constants.KeyCodeEnum.ESC) {
             $(".msgCtrl-close").trigger("click");
             $(document).off("keydown", keyHandler);
         }
@@ -4561,26 +4721,28 @@ $(function () {
 
     // Open sibling finder when textbox is focused and Alt+DownArrow are pressed
     $(document).on('keyup keydown', function (e) {
-        if ((e.altKey || e.ctrlKey) && e.keyCode === sg.constants.KeyCodeEnum.DownArrow ) {
-            var textbox = $(document.activeElement);
-            if (textbox.attr('type') === "text") {
-                var finderId = sg.utls.findersList[textbox.attr('id')];
-				if (finderId) {
-					
-					// if there is a calendar widget, return if ALT + DOWN
-					if (textbox.attr('data-role') === 'datepicker')
-					{
-						// there is a calendar control, ignore ALT +DOWN
-						if (e.altKey) 
-							return;
-					}
-					
-                    var finder = $("#" + finderId);
-                    if (finder.is(':visible') && !finder.is(':disabled')) {
-                        finder.focus();
-                        //Some finders are initialized on mousedown
-                        finder.trigger('mousedown');
-                        finder.trigger('click');
+        if ((e.altKey || e.ctrlKey) && e.keyCode === sg.constants.KeyCodeEnum.DownArrow) {
+            // Do NOT open sibling finder when textbox error-message is showing and Alt+DownArrow are pressed
+            if ($('#injectedOverlay').length === 0 && $('#injectedOverlayTransparent').length === 0) {
+                var textbox = $(document.activeElement);
+                if (textbox.attr('type') === "text") {
+                    var finderId = sg.utls.findersList[textbox.attr('id')];
+                    if (finderId) {
+
+                        // if there is a calendar widget, return if ALT + DOWN
+                        if (textbox.attr('data-role') === 'datepicker') {
+                            // there is a calendar control, ignore ALT +DOWN
+                            if (e.altKey)
+                                return;
+                        }
+
+                        var finder = $("#" + finderId);
+                        if (finder.is(':visible') && !finder.is(':disabled')) {
+                            finder.focus();
+                            //Some finders are initialized on mousedown
+                            finder.trigger('mousedown');
+                            finder.trigger('click');
+                        }
                     }
                 }
             }

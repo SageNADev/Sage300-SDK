@@ -35,7 +35,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.View
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -157,27 +157,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.View
 	"Web.Areas." + moduleId : moduleId + ".Web");
     var xmlLayout = settings.XmlLayout;
 
-
             
             #line default
             #line hidden
             this.Write("@* ");
             
-            #line 40 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 39 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
             #line hidden
             this.Write(" *@\r\n\r\n@using ");
             
-            #line 42 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 41 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 42 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 41 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
@@ -185,42 +184,42 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.View
             this.Write(".Resources.Process\r\n@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension" +
                     "\r\n@using Sage.CA.SBS.ERP.Sage300.Common.Resources\r\n\r\n@model ");
             
-            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models.Process.");
             
-            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ViewModel<");
             
-            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models.Process.");
             
-            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 45 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -228,14 +227,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.View
             this.Write(">\r\n\r\n<script type=\"text/javascript\">\r\n    @Html.ConvertToJsVariableUsingNewtonSof" +
                     "t(\"");
             
-            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ViewModel\", Model)\r\n    @Html.ConvertToJsVariableUsingNewtonSoft(\"screenName\", ");
             
-            #line 50 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
@@ -253,68 +252,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.View
                 <div class=""header-headline"">
                     @Html.SageHeader1Label(""lbl");
             
-            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("\", ");
             
-            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resxName));
             
             #line default
             #line hidden
             this.Write(".Entity)\r\n                </div>\r\n            </div>\r\n        </section>\r\n    </h" +
-                    "eader>\r\n    ");
+                    "eader>\r\n");
             
-            #line 66 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
+            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
 
-    if (xmlLayout == null)
+    // Counter for indentation
+    int depth = 0;
+
+    // Get first element and proceed if there are elements specified
+    var element = xmlLayout.Root.Descendants().First();
+
+    // Iterate xml and apply snippets directly to template
+    if (element.HasElements)
     {
-        WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
+        // Recursion
+        var snippet = new StringBuilder();
+        SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
+        WriteLine(snippet.ToString());
     }
-    
-            
-            #line default
-            #line hidden
-            this.Write("    ");
-            
-            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
 
-    if (xmlLayout != null)
-    {
-        // XML Layout has been specified and therefore generate layout using this instead of generating
-        // only the key field
-
-        // Counter for indentation
-        int depth = 0;
-
-        // Get first element and proceed if there are elements specified
-        var element = xmlLayout.Root.Descendants().First();
-
-        // Iterate xml and apply snippets directly to template
-        if (element.HasElements)
-        {
-            // Recursion
-            var snippet = new StringBuilder();
-            SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
-            WriteLine(snippet.ToString());
-        }
-    }
-    
-            
-            #line default
-            #line hidden
-            this.Write("    ");
-            
-            #line 94 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\View\Entity.tt"
-
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "</div>");
-        }
-    
             
             #line default
             #line hidden

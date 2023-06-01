@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -29,10 +29,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     public static class GlobalConstants
     {
         /// <summary> The version of this wizard </summary>
-        public static string Version = "2023.0";
+        public static string Version = "2024.0";
 
         /// <summary> The Accpac Net Version </summary>
-        public static string AccpacDotNetVersion = "70A";
+        public static string AccpacDotNetVersion = "71A";
 
         public const string ResourceFileExtension = @".resx";
 

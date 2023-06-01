@@ -257,36 +257,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\DynamicQuery\Class\Controller.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Controller.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\DynamicQuery\Class\Repository.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Repository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\DynamicQuery\Class\RepositoryInterface.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RepositoryInterface.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\DynamicQuery\Class\Service.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Service.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\DynamicQuery\Class\ServiceInterface.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceInterface.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\DynamicQuery\Class\ViewModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ViewModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Templates\Flat\Class\Controller.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -371,41 +341,6 @@
       <DependentUpon>ViewModel.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Templates\Inquiry\Class\Controller.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Controller.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Inquiry\Class\InternalController.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InternalController.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Inquiry\Class\Repository.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Repository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Inquiry\Class\RepositoryInterface.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RepositoryInterface.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Inquiry\Class\Service.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Service.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Inquiry\Class\ServiceInterface.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceInterface.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Inquiry\Class\ViewModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ViewModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Process\Class\InternalController.cs">
       <DependentUpon>InternalController.tt</DependentUpon>
@@ -587,30 +522,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Index.cs</LastGenOutput>
     </None>
-    <None Include="Templates\DynamicQuery\Class\Controller.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Controller.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\DynamicQuery\Class\Repository.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Repository.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\DynamicQuery\Class\RepositoryInterface.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>RepositoryInterface.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\DynamicQuery\Class\Service.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Service.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\DynamicQuery\Class\ServiceInterface.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceInterface.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\DynamicQuery\Class\ViewModel.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewModel.cs</LastGenOutput>
-    </None>
     <None Include="Templates\Flat\Class\Controller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Controller.cs</LastGenOutput>
@@ -662,34 +573,6 @@
     <None Include="Templates\Common\Class\Model.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Model.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\Inquiry\Class\Controller.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Controller.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\Inquiry\Class\InternalController.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>InternalController.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\Inquiry\Class\Repository.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Repository.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\Inquiry\Class\RepositoryInterface.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>RepositoryInterface.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\Inquiry\Class\Service.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>Service.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\Inquiry\Class\ServiceInterface.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceInterface.cs</LastGenOutput>
-    </None>
-    <None Include="Templates\Inquiry\Class\ViewModel.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewModel.cs</LastGenOutput>
     </None>
     <None Include="Templates\Process\Class\InternalController.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -932,10 +815,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\Common\Script\" />
-    <Folder Include="Templates\DynamicQuery\Script\" />
-    <Folder Include="Templates\DynamicQuery\View\" />
-    <Folder Include="Templates\Inquiry\Script\" />
-    <Folder Include="Templates\Inquiry\View\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\Sage300UIWizardPackage\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.BannedApiAnalyzers.dll" />

@@ -17,15 +17,15 @@
 <div id="success"></div>
 
 @*<div id="changePassword" class="k-window"></div>*@
+<div class="Sage_logo"><img src="~/Assets/images/login/sage300-logo-brilliant-green.png" height="75" width="250" alt="Sage 300"></div>
 <section class="header login" id="sectionLogin">
     <div class="wrapper">
-        <div class="Sage_logo"><img src="~/Assets/images/login/sage300-logo-sq.png" height="132" width="134" alt="Sage 300"></div>
         <div class="main-body login show" id="bodyMain">
             <div>
                 @Html.ValidationSummary(true)
             </div>
 
-            <h1 class="page-header" id="loginHeader">@ASCommonResx.SignInSage300</h1>
+            @*<h1 class="page-header" id="loginHeader">@ASCommonResx.SignInSage300</h1>*@
 
             @if (Model.ForAdmin)
             {

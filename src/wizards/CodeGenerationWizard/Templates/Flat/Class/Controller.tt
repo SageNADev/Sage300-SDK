@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -35,6 +35,9 @@
 	"Web.Areas." + moduleId : moduleId + ".Web");
 
     var enumsCount = view.Enums.Count;
+
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = (moduleId == "PR");
 #>
 // <#=copyright#>
 
@@ -45,6 +48,14 @@ using System.Web.Mvc;
 using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
+<#
+	if (entityContext)
+	{
+#>
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums.Payroll;
+<#
+	}
+#>
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Newtonsoft.Json;
@@ -112,17 +123,39 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         /// <summary>
         /// Load screen
         /// </summary>
+<#
+	if (entityContext)
+	{
+#>
+        /// <param name="type">Payroll type enum stored by the base class in Context.ScreenContext.EntityContext</param>
+<#
+	}
+#>
         /// <param name="id">Id for <#=modelName#></param>
         /// <returns>JSON object for <#=modelName#></returns>
+<#
+	if (entityContext)
+	{
+#>
+        public virtual ActionResult Index(PayrollType type, string id)
+<#
+	}
+    else
+    {
+#>
         public virtual ActionResult Index(string id)
+<#
+    }
+#>
         {
 <#
 	foreach(var view in settings.Entities)
 	{
-	    if (view.Options[BusinessView.Constants.GenerateGrid] || view.ForGrid)
+	    if (view.Options[BusinessView.Constants.HasGrid] || view.ForGrid)
 	    {
             var viewName = view.Properties[BusinessView.Constants.EntityName];
-            WriteLine("ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", viewName);
+            WriteLine("ViewBag.{0}Grid = ControllerInternal.CustomGridDefinitionsUsingService(CommonUtil.EntityContextReplacement({1}.EntityName, Context.ScreenContext.EntityContext), GetGridJsonFilePath(\"{0}Grid\", requestUri));", viewName, modelName);
+            WriteLine("// ViewBag.{0}Grid = ControllerInternal.CreateGridDefinitionAndPreference(GetGridJsonFilePath(\"{0}Grid\"));", viewName);
 	    }
 	}
 #>

@@ -130,6 +130,19 @@
          * @param {boolean} reset True to reset, False otherwise
          */
         bindThisRowToGridAndReset: function (reset) {
+            let popupGrids =[];
+
+            Object.entries(this.allGrids).forEach(grid => {
+                if (grid[1].screenContainerId) {
+                    popupGrids.push(grid[1]);
+                }
+            });
+
+            //Handle popup screen grids update only, not affected other grids
+            if (popupGrids.length > 0) {
+                popupGrids.forEach( grid => grid.updateGridData(this.getDataForGrid(grid.gridViewid), reset));
+                return;
+            }
 
             if (this.popupDivId) {
                 let self = this;
@@ -425,9 +438,13 @@
         persistData: function (CRUDReason, query, callback = undefined, showErrorMessage = true){
 
             query = query || this.generateUpsertDataRoot(CRUDReason);
-            trace.info("query - " + query);
 
             if (!query) return;
+
+            if (this.updateSaveQuery && typeof this.updateSaveQuery === 'function') {
+                query = this.updateSaveQuery(query);
+            }
+            trace.info("query - " + query);
 
             //if (query === "<n t='' n=''></n>") {
             if (query === apputils.rootNodeTemplate + apputils.rootNodeClose) {
@@ -440,7 +457,7 @@
                 return;
             }
 
-            //let self = this;
+            let self = this;
 
             Ok.then((result, status, xhr) => {
                 trace.info(`${status} - ${result}`);
@@ -463,19 +480,10 @@
                             }
                         });
                     }
-                    //AT-79848 This for setup screen header delete, rollback the verb to PUT
-                    if (this.rows.length === 1 && this.rows[0].CRUDReason === CRUDReasons.Deleting) {
-                        this.rows[0].CRUDReason = CRUDReasons.ExistingData;
-                        let collObjs = this.rows[0].allCollectionObj;
-                        if (collObjs) {
-                            Object.keys(collObjs).forEach(key => {
-                                collObjs[key].rows.forEach(row => {
-                                    if (row.CRUDReason === CRUDReasons.Deleting) {
-                                        row.CRUDReason = CRUDReasons.ExistingData;
-                                    }
-                                });
-                            });
-                        }
+
+                     //AT-79848
+                    if (CRUDReason === CRUDReasons.Deleting && apputils.isFunction(self.resetVerbForDelete)) {
+                        self.resetVerbForDelete();
                     }
 
                     return;

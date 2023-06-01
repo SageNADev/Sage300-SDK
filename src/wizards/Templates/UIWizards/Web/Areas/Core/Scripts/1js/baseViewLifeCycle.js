@@ -578,6 +578,7 @@
             if (this.mainCollectionObj.isDirty()) {
                 sg.utls.showKendoConfirmationDialog(
                     function () { // Yes
+                        ErrorEntityCollectionObj.clearError(); //clear the session errors from previous edits
                         self.isbtnApplyClicked = false; //reset flag
                         self.mainCollectionObj.getNewTemplate();
                     },
@@ -1103,7 +1104,63 @@
                     self.mainCollectionObj.deletePrePopDataFromGrid();
                 }
             });
-        }
+        },
+
+        isCallFromMainUI: function (popupId) {
+
+            return apputils.isUndefined($("#" + popupId).data("kendoWindow")) ? true : $("#" + popupId).data("kendoWindow").element.is(":hidden");
+        },
+
+        /**
+         * Set focus to the field
+         * @param {any} field the field to set the focus to
+         * @param {any} viewdid the viewid the field is associated with
+         */
+        setFocus: function (field, viewid) {
+            //due to async nature need bit of delay allowing previous events to complete
+            setTimeout(() => {
+
+                let controls = [];
+                if (apputils.isDefined(viewid)) {
+                    controls = this.htmlControls().filter(i => i.field === field && i.viewid === viewid);
+                } else {
+                    controls = this.htmlControls().filter(i => i.field === field);
+                }
+
+                if (controls.length > 0) {
+                    $("#" + controls[0].id).trigger("focus");
+                }
+            });
+            
+        },
+
+        setFocusByColumn: function (viewId, column) {
+            const msg = viewId + column.rowIndex + column.field + apputils.EventMsgTags.svrUpdate;
+            this.setFocusByEvent(msg);
+        },
+
+        setFocusByEvent: function (msg) {
+            baseStaticControlfixtures.setFocus(msg);
+        },
+
+        concatEventMessages: function (messageObj) {
+            let result = [];
+
+            for (let key in messageObj) {
+                result.push(messageObj[key]);
+            }
+
+            return result.join(' ');
+        },
+
+        getSvrUpdateMessageName: function (id) {
+            return this.getContainerBasedId(id) + apputils.EventMsgTags.svrUpdate;
+        },
+
+        setCurrentRowIndex: function () {
+            const selectedRowIndex = this.detailsGrid().selectedRowIndex;
+            return selectedRowIndex === -1 ? 0 : selectedRowIndex;
+        },
     };
 
     this.viewLifeCycleObj = helpers.View.extend(domainViewLifeCycle);

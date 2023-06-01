@@ -19,7 +19,7 @@
         selectRowChange: 'gridSelectRowChange',
         serverDefaultTotalPage: -1,
         stopLazyLoad: false,
-        editable: true,
+        editableGrid: true,
         lazyLoadRunning: false,
 
         /** Init kendo grid and set data source  */
@@ -55,6 +55,8 @@
                 }
 
             }).data("kendoGrid");
+
+            this.grid.businessObject = this.businessObject;
 
             // Duplicate class when init kendo grid, remove it see: AT-73082 issue 3
             $("#" + this.gridId).removeClass();
@@ -196,6 +198,8 @@
          */
         updateGridData: function (data, resetPage) {
 
+            this.grid.businessObject = this.businessObject;
+
             this.recordIdChanged();
 
             if (this.getServerPaging()) {
@@ -226,6 +230,7 @@
                 return;
             }
 
+            this.grid.businessObject = this.businessObject;
             this.grid.dataSource.options.serverPaging = true;
             this.grid.dataSource.options.schema.total();
             this.grid.dataSource.options.serverPaging = false;
@@ -281,6 +286,7 @@
             this.grid = $("#" + this.gridId).data("kendoGrid");
 
             if (this.grid) {
+                this.grid.businessObject = undefined;
                 this.grid.dataSource.page(0);
             }
             this.selectedRowIndex = -1;
@@ -307,8 +313,8 @@
          * @param {boolean} isEditable
          */
         makeGridEditable: function (isEditable) {
-            if (this.editable !== isEditable) {
-                this.editable = isEditable;
+            if (this.editableGrid !== isEditable) {
+                this.editableGrid = isEditable;
                 this.grid.setOptions({
                     editable: isEditable
                 });
@@ -389,7 +395,7 @@
             
             $("#" + this.gridId).on("click", "tbody > tr", function (e) {
                 //Handle grid editor icon click to select correct row
-                if (e.target.className && e.target.className.startsWith('icon')) {
+                if (e.target.className && e.target.className.startsWith('icon pencil-edit')) {
                     let row = $(this).closest('tr');
                     self.grid.select(row);
                     MessageBus.msg.trigger(self.gridId + self.selectRowChange, { gridId: self.gridId });
@@ -644,11 +650,14 @@
 
         /**
          * set selected row model data value
-         * @param {array} newValue
+         * @param {array} newValueObj
+         * @param {int} currentRow Current editing row
          */
-        setRowValues: function (newValueObj) {
-            let selectedItem = this.getGrid().dataItem(this.getGrid().select());
+        setRowValues: function (newValueObj, currentRow) {
+            this.selectGridRow(currentRow);
 
+            let selectedItem = this.getGrid().dataItem(this.getGrid().select());
+            
             //mostly Finder and messages popups looses grid row selection
             if (!selectedItem) {
                 const row = this.selectGridRow(this.selectedRowIndex);
@@ -659,8 +668,16 @@
 
             if (selectedItem) {
                 newValueObj.forEach(data => {
-                    selectedItem.set(data.columnName, data.value);
+                    
+                    if (data.hidden || data.columnName.startsWith("attr_")) {
+                        selectedItem[data.columnName] = data.value;
+                        
+                    } else {
+                        selectedItem.set(data.columnName, data.value);
+                    }
+                    
                 });
+
             }
         },
 
@@ -829,18 +846,29 @@
 
                 optColl.deleteLineFromGrid(rowIndex, viewId);
                 let data = entityColl.getDataForGridFromSelectedRow(this.gridViewid, detailRowIndex);
+                //Update the data as input value not in collection object yet for auto inserted new record in details optional field
+                data.forEach(r => r.VALUE = this.grid._data.filter(i => i.OPTFIELD === r.OPTFIELD)[0].VALUE);
                 this.updateGridData(data, false);
 
                 entityColl.rows[detailRowIndex].setReadOnlyFieldData('VALUES', this.grid._data.length.toString());
 
                 //Select the row not marked deleted.
                 let index = 0;
-                if (rowIndex > 0) {
+                /*if (rowIndex > 0) {
                     index = rowIndex - 1;
-                    while (optColl.rows[index].CRUDReason === CRUDReasons.Deleting) {
+                    while (index > -1 && optColl.rows[index].CRUDReason === CRUDReasons.Deleting) {
                         index--;
                     }
+                }*/
+
+                if (optColl.rows.length > 0) {
+                    let direction = rowIndex > 0? -1: 1;
+                    index = rowIndex + direction;
+                    while (index > -1 && optColl.rows[index] && optColl.rows[index].CRUDReason === CRUDReasons.Deleting) {
+                        index += direction;
+                    }
                 }
+
                 this.selectGridRow(index, colIndex);
             }
         },
@@ -943,6 +971,54 @@
 
             });
         },
+
+        /**
+        * Rotates a range of columns in a grid starting from a specified column to the last column in the range.
+        * @param {string} startingColumnName - The name of the column from which the rotation starts.
+        * @param {Array<string>} namesOfColumnsToReorder - An array of column names to rotate. 
+        * These columns must appear in sequence in the grid
+        * @returns {void}
+        */
+        rotateColumns: function (startingColumnName, namesOfColumnsToReorder) {
+            const grid = this.getGrid();
+
+            const startingColIndex = window.GridPreferencesHelper.getGridColumnIndex(grid, startingColumnName);
+            
+            let lowerBoundIndex = 2000; //<-- we shouldn't have this many columns, if needed can use max grid column.
+            let upperBoundIndex = -1;
+
+            let columns = [];
+            namesOfColumnsToReorder.forEach((columnName) => {
+                const colIndex = window.GridPreferencesHelper.getGridColumnIndex(grid, columnName);
+                if (colIndex < lowerBoundIndex) {
+                    lowerBoundIndex = colIndex;
+                }
+
+                if (colIndex > upperBoundIndex) {
+                    upperBoundIndex = colIndex;
+                }
+
+                columns[colIndex] = grid.columns[colIndex];
+            });
+
+            let rotateFromPostion = startingColIndex;
+            let rotateToPostion = 0;
+            do {
+
+                //move grid column to this index
+                grid.reorderColumn(lowerBoundIndex + rotateToPostion, columns[rotateFromPostion]);
+                rotateFromPostion++;
+                rotateToPostion++;
+
+                if (rotateFromPostion > upperBoundIndex) {
+                    rotateFromPostion = lowerBoundIndex;
+                }
+
+                
+            } while (rotateFromPostion !== startingColIndex)
+
+        }
+                
     };
 
     this.baseGrid = helpers.View.extend(defaultGrid);

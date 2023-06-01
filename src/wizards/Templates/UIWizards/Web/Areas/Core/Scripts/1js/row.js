@@ -149,17 +149,17 @@
                     if (apputils.isNumber(value)){
                         return format.value === value;
                     }
-
-                    //if (+format.value === +value) return true;
-
                     return format.value.toLowerCase() === value.toLowerCase();
-                    
                 });
                 return apputils.isUndefined(formatter) ? value : apputils.isUndefined(formatter.display) ? value : formatter.display;
             }
             if (dataType && dataType === 'Date' && value.includes(' ')) {
                 return value.split(' ')[0];
             }
+            if (dataType && dataType === "Time") {
+                return apputils.formatTime(value);
+            }
+
             return value;
         },
 
@@ -669,9 +669,20 @@
             let newColumns = apputils.cloneDeep(this.dataModel); 
             newColumns.push(this.createMessageIdColumn(msgId));
 
+            this.fillDefaultValuesFromFormFormatList(newColumns);
+
             let data = { Columns: newColumns};
 
             this.rowNodes.push(data);
+
+        },
+
+        fillDefaultValuesFromFormFormatList: function (columns) {
+            
+            columns.forEach(column => {
+                this.addRawValueIfFormatValue({ value: column.value }, column);
+                column.value = this.formatValueForDisplay(column.value, column.formatList, column.dataType);
+            });
 
         },
 
@@ -702,6 +713,15 @@
             let column = this.getColumnByFieldName(name);
             let value = this.parseValue(column.value, column.dataType);
             return {value: value, field: column.title};
+        },
+
+        /**
+         * Get the field DB value from the field name
+         * @param {String} fieldName The field name of the column
+         */
+        getFieldDBValue: function (fieldName) {
+            let column = this.getColumnByFieldName(fieldName);
+            return column.DBValue;
         },
 
         /**
@@ -986,7 +1006,11 @@
          * */
         isDirty: function () {
             for (let i = 0; i < this.rowNodes[0].Columns.length; i++) {
-                if (this.rowNodes[0].Columns[i].isDirty) {
+
+                if (this.rowNodes[0].Columns[i].upsertDisabled) {
+                    //don't check isDirty flag
+
+                } else if (this.rowNodes[0].Columns[i].isDirty) {
                     return true;
                 }
             }
@@ -1018,10 +1042,15 @@
                 const DBValueFilterDisabled = apputils.isUndefined(this.rowNodes[0].Columns[i].DBValueFilterDisabled) ? false : this.rowNodes[0].Columns[i].DBValueFilterDisabled;
 
                 if (this.rowNodes[0].Columns[i].isDirty && this.rowNodes[0].Columns[i].DBValue && !DBValueFilterDisabled) {
-                    if (filter.length > 0) filter += " and ";
-
                     const name = this.rowNodes[0].Columns[i].name;
                     const type = this.rowNodes[0].Columns[i].dataType;
+
+                    if (type === "Time") { //Skip time type value in db value filter
+                        continue;
+                    }
+
+                    if (filter.length > 0) filter += " and ";
+
                     const isNumber = numArray.includes(type);
 
                     let value = apputils.escape(this.rowNodes[0].Columns[i].DBValue);

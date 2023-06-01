@@ -34,7 +34,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Class
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -155,12 +155,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Class
 
     var enumsCount = view.Enums.Count;
 
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = (moduleId == "PR");
+
             
             #line default
             #line hidden
             this.Write("// ");
             
-            #line 37 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 40 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -168,21 +171,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Class
             this.Write("\r\n\r\n#region Namespace\r\n\r\nusing System.Collections;\r\nusing System.Collections.Gene" +
                     "ric;\r\nusing ");
             
-            #line 43 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 43 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 46 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models.Process;\r\n");
             
-            #line 44 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 47 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
 
 	if (enumsCount > 0)
 	{
@@ -192,21 +195,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Class
             #line hidden
             this.Write("using ");
             
-            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 48 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".Models.Enums.Process;\r\n");
             
-            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 52 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
 
 	}	
 
@@ -216,21 +219,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Class
             this.Write("using Sage.CA.SBS.ERP.Sage300.Common.Models;\r\nusing Sage.CA.SBS.ERP.Sage300.Commo" +
                     "n.Web.Models.Process;\r\n\r\n#endregion\r\n\r\nnamespace ");
             
-            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 57 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(webModuleNamespace));
             
             #line default
             #line hidden
             this.Write(".Models.Process\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 60 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 63 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -238,28 +241,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Class
             this.Write("ViewModel class\r\n    /// </summary>\r\n    /// <typeparam name=\"T\">Where T is type " +
                     "of <see cref=\"");
             
-            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write("\"/></typeparam>\r\n    public class ");
             
-            #line 63 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 66 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("ViewModel<T> : ProcessViewModel<T>\r\n        where T : ");
             
-            #line 64 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(", new()\r\n    {\r\n");
             
-            #line 66 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 69 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
 
         foreach (var value in view.Enums.Values) 
         {
@@ -270,30 +273,49 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Process.Class
             #line hidden
             this.Write("        /// <summary>\r\n        /// ");
             
-            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 75 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumName));
             
             #line default
             #line hidden
             this.Write(" list\r\n        /// </summary>\r\n        public IEnumerable<CustomSelectList> ");
             
-            #line 74 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumName));
             
             #line default
             #line hidden
             this.Write(" => EnumUtility.GetItemsList<");
             
-            #line 74 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumName));
             
             #line default
             #line hidden
-            this.Write(">();\r\n\r\n");
+            this.Write(">();\r\n");
             
-            #line 76 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
 
         }
+
+            
+            #line default
+            #line hidden
+            
+            #line 81 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+
+	if (entityContext)
+	{
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        /// <summary>\r\n        /// Payroll Type (CP or UP for JavaScript usage)" +
+                    "\r\n        /// </summary>\r\n        public string PayrollType { get; set; }\r\n");
+            
+            #line 90 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Process\Class\ViewModel.tt"
+
+	}
 
             
             #line default

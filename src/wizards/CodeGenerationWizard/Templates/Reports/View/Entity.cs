@@ -36,7 +36,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.View
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\View\Entity.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -277,60 +277,31 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.View
             #line default
             #line hidden
             this.Write(".Entity)\r\n                </div>\r\n            </div>\r\n        </section>\r\n    </h" +
-                    "eader>\r\n    ");
+                    "eader>\r\n");
             
             #line 63 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\View\Entity.tt"
 
-    if (xmlLayout == null)
+    // Counter for indentation
+    int depth = 0;
+
+    // Get first element and proceed if there are elements specified
+    var element = xmlLayout.Root.Descendants().First();
+
+    // Iterate xml and apply snippets directly to template
+    if (element.HasElements)
     {
-        WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
+        // Recursion
+        var snippet = new StringBuilder();
+        SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
+        WriteLine(snippet.ToString());
     }
-    
-            
-            #line default
-            #line hidden
-            this.Write("    ");
-            
-            #line 69 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\View\Entity.tt"
 
-    if (xmlLayout != null)
-    {
-        // XML Layout has been specified and therefore generate layout
-
-        // Counter for indentation
-        int depth = 0;
-
-        // Get first element and proceed if there are elements specified
-        var element = xmlLayout.Root.Descendants().First();
-
-        // Iterate xml and apply snippets directly to template
-        if (element.HasElements)
-        {
-            // Recursion
-            var snippet = new StringBuilder();
-            SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
-            WriteLine(snippet.ToString());
-        }
-    }
-    
-            
-            #line default
-            #line hidden
-            this.Write("    ");
-            
-            #line 90 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\View\Entity.tt"
-
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "</div>");
-        }
-    
             
             #line default
             #line hidden
             this.Write("    <section class=\"footer-group-1\">\r\n        @Html.KoSageButton(\"btnPrint\", null" +
                     ", new { @id = \"btnPrint\", @class = \"btn btn-primary\", @value = CommonResx.Print " +
-                    "})\r\n    </section>\r\n\r\n</div>");
+                    "})\r\n    </section>\r\n</div>");
             return this.GenerationEnvironment.ToString();
         }
         
