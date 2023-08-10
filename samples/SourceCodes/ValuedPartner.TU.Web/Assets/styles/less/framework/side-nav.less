@@ -130,8 +130,6 @@
   > a {
     display: block;
     color: inherit;
-    height: @header-global-height;
-    line-height: @header-global-height;
     padding: 0 .75rem;
     text-decoration: none !important;
   }
@@ -232,12 +230,12 @@
     left: calc(-@side-nav-width + @side-nav-width-collapsed);
 
     .wrapper {
-      background: @white;
+      background: @sage-dark-gray;
 
       &:before {
         content: "";
         position: fixed;
-        background-color: @white;
+        background-color: @sage-dark-gray;
         left: calc(-@side-nav-width + @side-nav-width-collapsed);
         top: 0;
         height: 100%;
@@ -246,6 +244,13 @@
     }
 
     .menu-item {
+    	width: 44px;
+    	left: 190px;
+    	display: block;
+
+    	.nav-icon {
+    		left: 11px !important;
+    	}
 
       &.active {
         text-decoration: none;
@@ -254,20 +259,22 @@
       }
 
       &:hover {
-        background: @gray-lighter;
+        background: @sage-link;
+        color: @white;
       }
 
       > a {
-      text-indent: -1000px;
-      opacity: 1;
-      width: @side-nav-width;
-      line-height: 1.25;
+	      text-indent: -1000px;
+	      opacity: 1;
+	      width: 44px;
+	      line-height: 1.25;
+	      padding-right: 0;
       }
 
       &.top-tier.open {
         
         > a {
-          background-color: @gray-light;
+          width: 44px;
         }
 
         .sub-menu-wrap {
@@ -304,16 +311,16 @@
     cursor: pointer;
     display: block;
 
-    &:focus {
-      outline: 5px auto @sage-green;
-      outline-offset: -3px;
+    &:focus-visible {
+      outline: 5px auto @input-border-focus;
+      background-color: @gray-darker;
     }
   }
 
   .wrapper {
     position: relative;
     width: 100%;
-    background: @white;
+    background: @sage-dark-gray;
     padding: @header-global-height 0;
     height: 100%;
     overflow-y: auto;
@@ -334,20 +341,20 @@
     /* Scrollbar style - Chrome only */
 
     &::-webkit-scrollbar-track {
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
 
     &::-webkit-scrollbar {
       width: 6px;
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: @sage-gray;
+      background-color: @gray-dark;
     } 
 
     &::-webkit-scrollbar-corner {
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
   }
 
@@ -366,13 +373,14 @@
 
         &:active,
         &:hover {
-          background: @gray-lighter;
+          background: @sage-link;
+          border-radius: 8px;
 
           &:after {
             content: "";
             position: absolute;
             border: 5px solid transparent;
-            border-left-color: @black;
+            border-left-color: @white;
             border-left-width: 6px;
             top: ~"calc(50% - 5px)";
             right: .5rem;
@@ -516,21 +524,39 @@
 
     .nav-icon {
       position: absolute;
-      left: 16px;
+      left: 9px;
       z-index: 7;
       display: inline-block;
-      width: 56px;
+      width: 34px;
       height: 44px;
 
       img {
         position: absolute;
         top: 11px;
+
+        + img {
+        	display: none;
+        }
       }
     }
 
-    > a {
-      padding: .875rem 2rem .875rem 3.5rem;
-    }
+    &:hover,
+	&:focus {
+		background-color: @sage-link;
+		color: @white;
+
+		.nav-icon img {
+			display: none;
+
+			+ img {
+				display: block;
+			}
+		}
+
+		> a {
+			color: @white;
+		}
+	}
   }
 
   .primary-list .menu-item .divider {
@@ -552,7 +578,7 @@
     }
 
     li {
-      width: 14.5rem;
+      width: 14.4rem;
       padding-left: 1px;
     }
 
@@ -561,7 +587,8 @@
 
       &.active,
       &.hover {
-        background-color: @gray-light;
+        background-color: @sage-dark-gray;
+        margin: 0 5px 0 10px;
       }
     }
 
@@ -574,7 +601,7 @@
       content: "";
       position: absolute;
       border: 5px solid transparent;
-      border-left-color: @black;
+      border-left-color: @white;
       border-left-width: 6px;
       top: ~"calc(50% - 5px)";
       right: .5rem;
@@ -598,20 +625,20 @@
     /* Scrollbar style - Chrome only */
 
     &::-webkit-scrollbar-track {
-      background-color: @gray-silver;
+      background-color: @gray-darker;
     }
 
     &::-webkit-scrollbar {
       width: 6px;
-      background-color: @gray-silver;
+      background-color: @gray-darker;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: @gray-dim;
+      background-color: @gray-dark;
     } 
 
     &::-webkit-scrollbar-corner {
-      background-color: @gray-silver;
+      background-color: @gray-darker;
     }
 
     &.child {
@@ -664,22 +691,32 @@
 
   .menu-item {
     height: auto;
-    width: 100%;
+    width: 231px;
+    margin: 0 10px;
+    border-radius: 8px;
 
     a {
       display: block;
-      padding: .875rem 2rem .875rem 1rem;
+      padding: .875rem 2rem .875rem 2.5rem
       height: auto;
-      color: @black;
+      color: @white;
       line-height: 1.25;
       text-decoration: none;
       opacity: 0;
       font-size: 13px;
+      border-radius: 8px;
 
       &:active,
       &:hover {
         text-decoration: none;
+        color: @white;
       }
+    }
+
+    &:active,
+    &:hover	{
+    	color: @white;
+    	background-color: @sage-link;
     }
 
     &.with-icon > a {
@@ -695,15 +732,27 @@
     }
 
     &.top-tier.open {
-      background: @gray-light;
+    	background-color: @sage-link;
+
+    	.nav-icon {
+
+      		> img {
+      			display: none;
+
+      			+ img {
+      				display: block;
+      			}
+      		}
+      	}
       
       > a {
+      	color: @white;
 
         &:after {
           content: "";
           position: absolute;
           border: 5px solid transparent;
-          border-left-color: @black;
+          border-left-color: @white;
           border-left-width: 6px;
           top: ~"calc(50% - 5px)";
           right: .5rem;
@@ -718,7 +767,10 @@
 
     &.top-tier.menu-group {
 
-      border-bottom: 1px solid @gray-light;
+      >a {
+        border-bottom: 1px solid @gray-light;
+        border-radius: 0;
+      }
 
       >a:hover:after {
         content: "";
@@ -726,15 +778,16 @@
     }
 
     .std-menu a {
-      color: inherit;
       position: relative;
       opacity: 1;
+      padding-left: 1rem;
+      margin: 0 10px 0 5px;
     }
   }
 
   .secondary-list,
   .primary-list {
-    margin: 0 0 .5rem;
+    margin: 10px 0 .5rem;
     padding: 0;
 
     .sub-heading {
@@ -760,7 +813,7 @@
     li {
       a:hover,
       a:active {
-        background: @gray-light;
+        background: @sage-link;
         text-decoration: none;
       }
     }
@@ -805,10 +858,10 @@
 .std-menu { /* standard menu banding used in mega menu and global menu */
   position: fixed;
   top: @header-global-height;
-  left: @side-nav-width;
+  left: 15.7rem;
   bottom: 0;
   display: none;
-  background-image: linear-gradient(90deg, @gray-lighter 0%, @gray-lighter 50%, @white 50%, @white 100%);
+  background-color: @gray-darker;
   background-position: left bottom, left bottom;
   background-repeat: no-repeat, no-repeat;
   font-size: .8125rem;
@@ -906,22 +959,10 @@
   }
 }
 
-.side-nav-collapsed .primary-list>li:not(.divider) .nav-icon {
-  left: 196px;
-
-  img {
-    margin-left: 16px;
-  }
-}
-
 .side-nav-collapsed.active {
 
-  .top-tier.open {
-    background: @gray-lighter;
-  }
-
   .std-menu.active {
-    left:@side-nav-width-collapsed;
+    left: 3.7rem;
   }
 
   .menu-item.top-tier.open>a:after, 
@@ -947,37 +988,39 @@
 .btn-nav-collapse,
 .btn-nav-expand {
   display: none;
-  width: 12px;
-  height: 40px;
+  width: 22px;
+  height: 22px;
   position: absolute;
-  left: 252px;
+  left: 242px;
   top: 3.525rem;
   border: 0;
   z-index: 0;
   transition: background-color 0.5s ease;
+  background-color: @sage-dark-gray;
+  border-radius: 12px;
+  border: 1px solid @sage-dark-gray;
 
   &:hover {
     cursor: pointer;
-    background-color: @sage-light-gray;
   }
 
   &:focus {
-    background-color: @input-border-focus;
+    outline: 3px solid @input-border-focus;
   }
 
   &:after {
     content: "";
     position: absolute;
     border: 5px solid transparent;
-    border-left-color: @black;
+    border-left-color: @white;
     border-left-width: 6px;
     top: ~"calc(50% - 5px)";
-    left: 3px;
+    left: 8px;
     cursor: pointer;
     z-index: 1;
 
     &:focus {
-      border-left-color: @black;
+      border-left-color: @white;
     }
   }
 }
@@ -988,23 +1031,24 @@
     content: "";
     position: absolute;
     border: 5px solid transparent;
-    border-right-color: @black;
+    border-right-color: @white;
     border-right-width: 6px;
     top: ~"calc(50% - 5px)";
-    left: -3px;
+    left: 1px;
     cursor: pointer;
     z-index: 1;
 
     &:focus {
-      border-right-color: @black;
+      border-right-color: @white;
     }
   }
 }
 
 #menuPrefToggler {
     display: block;
-    top: 25px;
+    top: 37px;
     position: absolute;
+    z-index: 10000;
 }
 
 #menuPrefTogglerAlt {
@@ -1070,20 +1114,20 @@
   /* Scrollbar style - Chrome only */
 
     &::-webkit-scrollbar-track {
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
 
     &::-webkit-scrollbar {
       width: 6px;
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: @sage-gray;
+      background-color: @gray-dark;
     } 
 
     &::-webkit-scrollbar-corner {
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
 }
 

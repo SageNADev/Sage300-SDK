@@ -312,13 +312,15 @@ i {
 .quick-menu {
   position: fixed;
   right: 0;
-  top: 3.625rem;
+  top: 56px;
   left: auto !important;
   z-index: 9; 
   -webkit-transition: width 0.15s, height 0.15s; /* Safari */
   transition: width 0.15s, height 0.15s;
   width: 40px;
-  background-color: #fff;
+  background-color: @black;
+  padding-bottom: 6px;
+  border-radius: 6px;
 
   .quick-tools-head {
     background-color: #e6ebed;
@@ -376,13 +378,12 @@ i {
       width:40px;
       height:40px;
       color:@white;
-      background:@sage-blue;
+      background:@black;
       padding: 0;
       font-size:11px;
       text-align:center;
       cursor:pointer;
       position:relative;
-      border-top: 1px solid #fff;
       -webkit-transition: width 0.15s, height 0.15s; /* Safari */
       transition: width 0.15s, height 0.15s;
 
@@ -402,7 +403,6 @@ i {
       }
 
       &:hover {
-        background-color:#646466;
         -webkit-transition: all .3s linear;
         -o-transition: all .3s linear;
         -moz-transition: all .3s linear;
@@ -410,10 +410,25 @@ i {
         -kthtml-transition: all .3s linear;
         transition: all .3s linear;
       }
+
+      > i.glyphicon {
+        background-image: url('@{image-path}/home/icon_homemenu_sprite.png');
+        background-size: 312px 24px;
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+
+        &:before {
+          content: none;
+        }
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
     }
 
     .quick-menu-window-bookmark {
-      background-color: #08afb9;
 
       > .glyphicon {
         top: 8px;
@@ -422,39 +437,30 @@ i {
       }
     }
 
-    .quick-menu-notes,
-    .quick-menu-add-note {
-      background-color: #ed1c5f;
-    }
-
-    .quick-menu-reports {
-      background-color: #ff9900;
-    }
-
-    .quick-menu-vpf {
-      background-color: #64006e;
-    }
-
-    .quick-menu-inquiry {
-      background-color: @sage-green;
-    }
-
     .quick-menu-windows > .glyphicon {
-      top: 11px;
+      top: 6px;
       left: -2px;
+      background-position: -240px 0px;
     }
 
-    .quick-menu-notes > .glyphicon {
-      top: 11px;
-      left: -1px;
-    }
 
     .quick-menu-reports > .glyphicon,
     .quick-menu-inquiry > .glyphicon,
-    .quick-menu-vpf > .glyphicon {
-      top: 11px;
-      left: -1px;
-      font-size: 1.1rem;
+    .quick-menu-vpf > .glyphicon,
+    .quick-menu-notes > .glyphicon  {
+      top: 8px;
+    }
+
+    .quick-menu-reports > .glyphicon {
+      background-position: -218px 0;
+    }
+
+    .quick-menu-inquiry > .glyphicon {
+      background-position: -194px 0;
+    }
+
+    .quick-menu-notes > .glyphicon {
+      background-position: -291px 0;
     }
 
     .open-window { 
@@ -462,7 +468,7 @@ i {
       position: absolute; 
       right: 40px; 
       top: 0; 
-      background: #646464; 
+      background: @black; 
       width: 310px; 
       display:none; 
       -webkit-box-shadow: -5px 5px 10px rgba(0,0,0,0.2); 
@@ -505,7 +511,8 @@ i {
 
         span:nth-of-type(1) { 
           font-size: 12px; 
-          background: #8b8b8c; 
+          background: @white; 
+          color: @black;
           float: left; 
           border-radius: 10px; 
           padding: 2px 10px; 
@@ -514,13 +521,14 @@ i {
           word-wrap: break-word;
 
           &:hover{ 
-            background:@sage-blue; 
+            background: @sage-green;
+            color: @black; 
           }
         }
 
         span.selected:nth-of-type(1) { 
-          background: @white;
-          color: #323332; 
+          background: @sage-green;
+          color: @black; 
         }
 
         span.with-bookmark { 
@@ -571,14 +579,14 @@ i {
 
       .item-count {
         position: absolute;
-        right: 4px;
-        bottom: 4px;
-        width: 16px;
-        height: 16px;
+        right: 7px;
+        bottom: 9px;
+        width: 14px;
+        height: 14px;
         text-align: center;
         border-radius: 50%;
         line-height: 17px;
-        background-color: #007c9c;
+        color: @black;
       }
       
       .task_added {
@@ -589,7 +597,7 @@ i {
         display: none;
         position: absolute;
         top: 0;
-        background: @sage-blue;
+        background: @black;
         right: 41px !important; 
         text-align:left; 
         -webkit-transition: width 2s; 
@@ -608,21 +616,21 @@ i {
     }
 
     .quick-menu-window-history {
-      background: #156E96;
 
       .open-recent-window .rcbox > span {
         width: 100%;
       }
 
       .window-history {
-        background-image: url('@{image-path}/home/quick-menu-icon_rev.png');
-        background-size: 31px 31px;
-        height: 30px;
-        width: 30px;
+        background-image: url('@{image-path}/home/icon_homemenu_sprite.png');
+        height: 24px;
+        width: 24px;
+        background-size: 312px 24px;
         background-repeat: no-repeat;
         position: absolute;
-        left: 6px;
-        top: 4px;
+        left: 9px;
+        top: 8px;
+        background-position: -266px 0;
       }
     }
   }
@@ -647,10 +655,6 @@ li.helpSearch,
 li.helpSearch:hover,
 li.helpSearch .k-link {
   padding: 0 !important;
-}
-
-li.helpSearch .k-link form { 
-  padding: 5px 10px;
 }
 
 .helpSearch {

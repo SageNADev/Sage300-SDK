@@ -126,7 +126,7 @@
     <comment>Requisition - Field</comment>
   </data>
   <data name="CopyCostToPO" xml:space="preserve">
-    <value>Copy Cost to PO</value>
+    <value>Copy Cost to P/O</value>
     <comment>Requisition - Table Column</comment>
   </data>
   <data name="CopyCostToPurchaseOrder" xml:space="preserve">

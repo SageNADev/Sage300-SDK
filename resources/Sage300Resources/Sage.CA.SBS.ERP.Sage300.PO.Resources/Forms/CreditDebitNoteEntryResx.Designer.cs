@@ -574,6 +574,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Net Credit Note Total.
+        /// </summary>
+        public static string CrNetTotal {
+            get {
+                return ResourceManager.GetString("CrNetTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Credit Note Subtotal.
         /// </summary>
         public static string CrSubtotal {
@@ -1155,6 +1164,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources.Forms {
         public static string IsDocumentDeletable {
             get {
                 return ResourceManager.GetString("IsDocumentDeletable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item.
+        /// </summary>
+        public static string Item {
+            get {
+                return ResourceManager.GetString("Item", resourceCulture);
             }
         }
         

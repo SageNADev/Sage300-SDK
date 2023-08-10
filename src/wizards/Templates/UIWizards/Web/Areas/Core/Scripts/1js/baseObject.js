@@ -657,6 +657,23 @@
         },
 
         /**
+         * Get field value using colIndex
+         * @param {any} colIndex 
+         */
+        getFieldValueByColumnIndex: function (colIndex) {
+            return this.getFieldByColumnIndex(colIndex).value;
+        },
+
+        /**
+         * Get field using colIndex
+         * @param {any} colIndex 
+         */
+        getFieldByColumnIndex: function (colIndex) {
+            return this.rowObj.rowNodes[0].Columns[colIndex];
+
+        },
+
+        /**
          * Get field previous value before change
          * @param {any} fieldName The field name
          */
@@ -755,6 +772,25 @@
                 return [];
             }
             return thisObj.loadDataForGrid(prefix);
+        },
+
+        /**
+         * Get grid data by viewId and namespace prefix
+         * @param {any} viewid The view Id
+         * @param {any} rowIndex Starting index where start collecting data
+         * @param {any} length Ending index where to stop collecting data
+         * @param {any} prefix Namespace prefix
+         */
+        getDataForGridEx: function (viewid, rowIndex, length, prefix = "") {
+
+            let thisObj = apputils.find(this.allCollectionObj, function (obj) {
+                return obj.viewid === viewid;
+            });
+
+            if (apputils.isUndefined(thisObj)) {
+                return;
+            }
+            return thisObj.loadDataForGrid(prefix, rowIndex, length);
         },
 
         /** Get grid data from multiple source */

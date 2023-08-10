@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class EmployeeEarningsDeductionResx {
@@ -124,15 +124,6 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Banked Time.
-        /// </summary>
-        public static string BankedTime {
-            get {
-                return ResourceManager.GetString("BankedTime", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Benefit.
         /// </summary>
         public static string Benefit {
@@ -232,11 +223,56 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Class Schedule.
+        /// </summary>
+        public static string ClassSchedule {
+            get {
+                return ResourceManager.GetString("ClassSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Class Schedules.
+        /// </summary>
+        public static string ClassSchedules {
+            get {
+                return ResourceManager.GetString("ClassSchedules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comments.
+        /// </summary>
+        public static string Comments {
+            get {
+                return ResourceManager.GetString("Comments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compensatory Time.
+        /// </summary>
+        public static string CompensatoryTime {
+            get {
+                return ResourceManager.GetString("CompensatoryTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy Employee Template.
         /// </summary>
         public static string CopyEmployeeTemplate {
             get {
                 return ResourceManager.GetString("CopyEmployeeTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cost Center.
+        /// </summary>
+        public static string CostCenter {
+            get {
+                return ResourceManager.GetString("CostCenter", resourceCulture);
             }
         }
         
@@ -282,6 +318,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string EarningDeductionDescription {
             get {
                 return ResourceManager.GetString("EarningDeductionDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT.
+        /// </summary>
+        public static string EFT {
+            get {
+                return ResourceManager.GetString("EFT", resourceCulture);
             }
         }
         
@@ -511,11 +556,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Include in Regular Rate OT Calc.
+        ///   Looks up a localized string similar to Garnishment.
         /// </summary>
-        public static string IncludeInRegularRateOTCalc {
+        public static string Garnishment {
             get {
-                return ResourceManager.GetString("IncludeInRegularRateOTCalc", resourceCulture);
+                return ResourceManager.GetString("Garnishment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        public static string General {
+            get {
+                return ResourceManager.GetString("General", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include in FLSA Overtime Calc.
+        /// </summary>
+        public static string IncludeInFLSAOvertimeCalc {
+            get {
+                return ResourceManager.GetString("IncludeInFLSAOvertimeCalc", resourceCulture);
             }
         }
         
@@ -556,11 +619,38 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Optional Fields.
+        /// </summary>
+        public static string OptionalFields {
+            get {
+                return ResourceManager.GetString("OptionalFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        public static string Other {
+            get {
+                return ResourceManager.GetString("Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paid.
         /// </summary>
         public static string Paid {
             get {
                 return ResourceManager.GetString("Paid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay.
+        /// </summary>
+        public static string Pay {
+            get {
+                return ResourceManager.GetString("Pay", resourceCulture);
             }
         }
         
@@ -646,6 +736,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Taxes.
+        /// </summary>
+        public static string Taxes {
+            get {
+                return ResourceManager.GetString("Taxes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Template Employee.
         /// </summary>
         public static string TemplateEmployee {
@@ -687,6 +786,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string WorkersCompGroup {
             get {
                 return ResourceManager.GetString("WorkersCompGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work Location.
+        /// </summary>
+        public static string WorkLocation {
+            get {
+                return ResourceManager.GetString("WorkLocation", resourceCulture);
             }
         }
         

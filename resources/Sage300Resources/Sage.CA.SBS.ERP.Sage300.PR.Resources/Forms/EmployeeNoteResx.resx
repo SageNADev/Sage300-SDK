@@ -117,25 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
   <data name="Employee" xml:space="preserve">
     <value>Employee</value>
   </data>
-  <data name="ProcessCommandCode" xml:space="preserve">
-    <value>Process Command Code</value>
+  <data name="Taxes" xml:space="preserve">
+    <value>Taxes</value>
   </data>
-  <data name="Notes" xml:space="preserve">
-    <value>Notes</value>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="ClassSchedules" xml:space="preserve">
+    <value>Class Schedules</value>
   </data>
   <data name="CopyEmployeeTemplate" xml:space="preserve">
     <value>Copy Employee Template</value>
   </data>
-  <data name="Entity" xml:space="preserve">
-    <value>PR EmployeeNote</value>
+  <data name="ClassSchedule" xml:space="preserve">
+    <value>Class Schedule</value>
+  </data>
+  <data name="WorkLocation" xml:space="preserve">
+    <value>Work Location</value>
   </data>
   <data name="TemplateEmployee" xml:space="preserve">
     <value>Template Employee</value>
   </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PR EmployeeNote</value>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>Process Command Code</value>
+  </data>
+  <data name="Pay" xml:space="preserve">
+    <value>Pay</value>
+  </data>
+  <data name="CostCenter" xml:space="preserve">
+    <value>Cost Center</value>
+  </data>
+  <data name="EFT" xml:space="preserve">
+    <value>EFT</value>
+  </data>
+  <data name="Garnishment" xml:space="preserve">
+    <value>Garnishment</value>
+  </data>
   <data name="LineNumber" xml:space="preserve">
     <value>Line Number</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
   </data>
 </root>

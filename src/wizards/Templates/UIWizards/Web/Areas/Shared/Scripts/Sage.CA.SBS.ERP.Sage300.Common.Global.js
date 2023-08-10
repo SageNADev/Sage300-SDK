@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */
+/* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */
 
 // @ts-check
 
@@ -802,9 +802,11 @@ $.extend(sg.utls, {
     setFinderSearchResult: function (jsonResult) {
         if (jsonResult !== null) {
             if (jsonResult.Response.RecordExists === false) {    // invalid input typed
-                $("#" + jsonResult.Response.FieldId).val(jsonResult.Response.FieldPrev); // reset control to previous value
-                $("#" + jsonResult.Response.FieldId).focus(); // set focus back on control
-                sg.utls.showMessage(jsonResult);
+                $("#" + jsonResult.Response.FieldId).focus();    // set focus back on control (in case of tabbed-out)
+                sg.utls.showMessageInfo(sg.utls.msgType.ERROR, jsonResult.UserMessage.Errors[0].Message, () => {
+                    $("#" + jsonResult.Response.FieldId).val(jsonResult.Response.FieldPrev); // reset control to previous value
+                    $("#" + jsonResult.Response.FieldId).focus(); // error-message exit removes highlight, so set it back
+                });
             } else if (jsonResult.Response.FocusedId === "@") {  // finder pop-up selection
                 $("#" + jsonResult.Response.FieldId).focus();
             } 
@@ -1321,7 +1323,16 @@ $.extend(sg.utls, {
 
     openReport: function (reportToken, checkTitle, callbackOnClose) {
         var reportUrl = kendo.format(sg.utls.url.buildUrl("Core", "ExportReport", "ExportDialog") + "?token={0}", reportToken);
-        window.open(reportUrl);
+        var reportWindow = window.open(reportUrl);
+        if (sg.utls.isFunction(callbackOnClose)) {
+            setTimeout(function () {
+                if (reportWindow !== undefined) {
+                    $(reportWindow).on("unload", function () {
+                        callbackOnClose.call();
+                    });
+                }
+            }, 500);
+        }
     },
 
     // Determines which iFrame the report has been opened in
@@ -2148,6 +2159,174 @@ $.extend(sg.utls, {
                     } else if ($(this).hasClass("generic-cancel")) {
                         if (callbackNo != null)
                             callbackNo();
+                        kendoWindow.data("kendoWindow").destroy();
+                    }
+                }).end();
+        }
+    },
+
+    /**
+     * @name showConfirmationDialogYesNoCancel
+     * @desc Display a confirmation dialog box
+     *       Notes:
+     *         - This method does not rely on an embedded x-kendo-template script element. 
+     *           It will dynamically create one at run-time.
+     *         - It will display the dialog title in the traditional header of the dialog box
+     *           instead of in the message body area.
+     *         
+     * @private
+     * @param {object} callbackYes - Callback when 'Yes' selected
+     * @param {object} callbackNo - Callback when 'No' selected
+     * @param {object} callbackCancel - Callback when 'Cancel' selected
+     * @param {string} messageIn - The message to display
+     * @param {string} titleIn - Optional - The dialog title to display
+     * @param {string} btnYesLabelIn - Optional - The text for the 'Yes' button
+     * @param {string} btnNoLabelIn - Optional - The text for the 'No' button
+     * @param {string} btnCancelLabelIn - Optional - The text for the 'Cancel' button
+     * @param {boolean} noPostFix - Optional - an random Postfix
+     */
+    showConfirmationDialogYesNoCancel: function (callbackYes, callbackNo, callbackCancel, messageIn, titleIn, btnYesLabelIn, btnNoLabelIn, btnCancelLabelIn,noPostFix = false) {
+
+        var DialogID = 'confirmationDialogYesNoCancel';
+        var DialogParentID = 'confirmationParentYesNoCancel';
+        var InpageTemplateIDRoot = 'generic-confirmationYesNoCancel';
+        var randomPostfix = noPostFix ? '' : sg.utls.makeRandomString(5);
+        var InpageTemplateID = InpageTemplateIDRoot + randomPostfix;
+
+        messageIn = sg.utls.htmlEncode(messageIn);
+        titleIn = sg.utls.htmlEncode(titleIn);
+
+        var template =
+            `<script id="${InpageTemplateID}" type="text/x-kendo-template">
+                <div class="fild_set">
+                    <div class="fild-title generic-message" id="gen-message${randomPostfix}">
+                        <div id="title-text${randomPostfix}"></div>
+                    </div>
+                    <div class="fild-content">
+                        <div id="body-text${randomPostfix}"></div>
+                        <div class="modelBox_controlls">
+                            <input type="button" class="btn btn-secondary generic-cancel" id="kendoConfirmationCancelButton${randomPostfix}" value="@CommonResx.Cancel" />
+                            <input type="button" class="btn btn-primary generic-no" id="kendoConfirmationNoButton${randomPostfix}" value="@CommonResx.No" />
+                            <input type="button" class="btn btn-primary generic-confirm" id="kendoConfirmationAcceptButton${randomPostfix}" value="@CommonResx.Yes" />
+                        </div>
+                    </div>
+                </div>
+            </script>`;
+
+        $(template).appendTo('body');
+
+        // This kendoWindow visibility check is added for the defect D-07638
+        var wnd = $('#' + DialogID).data("kendoWindow");
+        if (wnd != null && !wnd.element.is(":hidden")) {
+            return;
+        }
+
+        var kendoWindow = $("<div class='modelWindow' id='" + DialogID + "' />").kendoWindow({
+            title: '',
+            resizable: false,
+            modal: true,
+            minWidth: 600,
+            maxWidth: 960,
+            open: function () {
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
+            },
+            // custom function to support focus within kendo window
+            activate: sg.utls.kndoUI.onActivate
+        });
+
+        kendoWindow.data("kendoWindow").content($("#" + InpageTemplateID).html()).center().open();
+
+        kendoWindow.data("kendoWindow").bind("close", function () {
+            kendoWindow.data("kendoWindow").destroy();
+            if (callbackCancel != null) {
+                callbackCancel();
+            }
+        });
+
+        // Set the message text
+        var msg = messageIn.replace(/\n/g, '<br/>');
+        kendoWindow.find("#body-text" + randomPostfix).html(msg);
+
+        _setButtonLabels();
+
+        _setButtonCallbacks();
+
+        // Little x button gets shifted upwards when
+        // following line is enabled. Looks funny.
+        //kendoWindow.parent().addClass('modelBox');
+
+        kendoWindow.parent().attr('id', DialogParentID);
+        var $divConfirmParent = $('#' + DialogParentID);
+        $divConfirmParent.css('position', 'absolute');
+        $divConfirmParent.css('left', ($(window).width() - $divConfirmParent.width()) / 2);
+
+        _setDialogTitle();
+
+        // Set message position to viewport top.
+        sg.utls.showMessagesInViewPort2(DialogParentID);
+
+        function _setDialogTitle() {
+            var title;
+            if (titleIn && titleIn.length > 0) {
+                title = titleIn;
+            } else {
+                title = globalResource.ConfirmationTitle;
+            }
+
+            // Set the modal dialog caption (title) text
+            $divConfirmParent.find('#' + DialogID + '_wnd_title').html(title);
+        }
+
+        function _setButtonLabels() {
+            var yesLabel;
+            if (btnYesLabelIn && btnYesLabelIn.length > 0) {
+                yesLabel = btnYesLabelIn;
+            } else {
+                yesLabel = globalResource.Yes;
+            }
+
+            var noLabel;
+            if (btnNoLabelIn && btnNoLabelIn.length > 0) {
+                noLabel = btnNoLabelIn;
+            } else {
+                noLabel = globalResource.No;
+            }
+
+            var cancelLabel;
+            if (btnCancelLabelIn && btnCancelLabelIn.length > 0) {
+                cancelLabel = btnCancelLabelIn;
+            } else {
+                cancelLabel = globalResource.Cancel;
+            }
+
+            kendoWindow.find("#kendoConfirmationAcceptButton" + randomPostfix).val($("<div>").html(yesLabel).text());
+            kendoWindow.find("#kendoConfirmationCancelButton" + randomPostfix).val($("<div>").html(cancelLabel).text());
+            kendoWindow.find("#kendoConfirmationNoButton" + randomPostfix).val($("<div>").html(noLabel).text());
+        }
+
+        function _setButtonCallbacks() {
+            kendoWindow.find(".generic-confirm, .generic-cancel, .generic-no")
+                .click(function () {
+                    if ($(this).hasClass("generic-confirm")) {
+                        if (callbackYes != null) {
+                            callbackYes();
+                        }
+                        try {
+                            kendoWindow.data("kendoWindow").destroy();
+                        } catch (err) {
+                            // Don't do anything. This means the window is already 
+                            // destroyed or does not exist.
+                            // This is required for iframes
+                        }
+                    } else if ($(this).hasClass("generic-no")) {
+                        if (callbackNo != null)
+                            callbackNo();
+                        kendoWindow.data("kendoWindow").destroy();
+                    }
+                    else if ($(this).hasClass("generic-cancel")) {
+                        if (callbackCancel != null)
+                            callbackCancel();
                         kendoWindow.data("kendoWindow").destroy();
                     }
                 }).end();
@@ -3323,13 +3502,13 @@ $.extend(sg.utls, {
         if (type === "UP") {
             $(selector).mask("AAA-AA-AAAA", {
                 'translation': {
-                    A: { pattern: /[0-9]/ }
+                    A: { pattern: /[0-9\*]/ }
                 }
             });
         } else {
             $(selector).mask("AAA-AAA-AAA", {
                 'translation': {
-                    A: { pattern: /[0-9]/ }
+                    A: { pattern: /[0-9\*]/ }
                 }
             });
         }
@@ -4093,13 +4272,15 @@ $.extend(sg.utls, {
     getMenuLabelFromMenuItemId: function (menuItemId) {
 
         var menuItemText = '';
+        var isReport = false;
         try {
             var menuItem = $('li').find('[data-menuid="' + menuItemId + '"]');
+            isReport = menuItem.attr("data-isreport") === "True";
             menuItemText = portalBehaviourResources.PagetitleInManager.format(menuItem.attr("data-modulename"), menuItem[0].text.trim());
         } catch (e) {
             menuItemText = '';
         }
-        return menuItemText;
+        return isReport ? '' : menuItemText;
     },
 
     localFormSizeDataTag: "data-local-form-size",

@@ -232,37 +232,72 @@
             if ($('#injectedOverlay').length === 0 && $('#injectedOverlayTransparent').length === 0) {
                 var options = sg.utls.getViewFinderOptions(finderId);
                 if (options !== null) {
-                    if ($("#" + options.parent).val() !== "") {
-                        var arr = undefined;
-                        var props = options.properties;
-                        if (props.initKeyValues !== undefined) {
-                            arr = sg.utls.deepCopy(props.initKeyValues);
-                            if (arr !== undefined && 0 < arr.length)
-                                arr[arr.length - 1] = $("#" + options.parent).val();
-                            else
-                                arr = [$("#" + options.parent).val()];
-                        } else {
-                            arr = [$("#" + options.parent).val()];
+                    var element = $("#" + options.parent);
+                    var newValue = element.val();
+                    if (newValue !== "" && newValue !== options.oldValue) {
+                        var prop = null;
+                        if (options.finderProperties !== null && options.finderProperties !== undefined) {
+                            prop = options.finderProperties;
+                        } else if (options.properties !== null && options.properties !== undefined) {
+                            prop = options.properties;
                         }
-                        var label = $("#" + options.parent)[0].previousElementSibling.innerText;
-                        var data = {
-                            'searchOptions':
-                                { ViewID: props.viewID, ViewOrder: props.viewOrder, FieldId: options.parent, FieldLabel: label, FieldPrev: options.oldValue, FocusedId: focusedId, Filter: "", InitKeyValues: arr }
-                        };
-                        sg.utls.ajaxPost(window.sg.utls.url.buildUrl("Core", "ViewFinder", "Search"), data, funcCall);
+                        if (prop !== null) {
+                            var viewID = prop.viewID;
+                            var viewOrder = prop.viewOrder;
+                            var arr = [newValue];
+                            if (prop.initKeyValues !== undefined) {
+                                arr = sg.utls.deepCopy(prop.initKeyValues);
+                                if (0 < arr.length) {
+                                    arr[arr.length - 1] = newValue;
+                                } else {
+                                    arr = [newValue];
+                                }
+                            }
+                            var label = "";
+                            // regular finder text-area label
+                            if (element[0].previousElementSibling !== null) {
+                                label = element[0].previousElementSibling.innerText;
+                            }
+                            // navigation finder text-area label
+                            if (label === "" && element[0].parentElement.previousElementSibling !== null) {
+                                label = element[0].parentElement.previousElementSibling.innerText;
+                            }
+                            var data = {
+                                'searchOptions':
+                                    { ViewID: viewID, ViewOrder: viewOrder, FieldId: options.parent, FieldLabel: label, FieldPrev: options.oldValue, FocusedId: focusedId, Filter: "", InitKeyValues: arr }
+                            };
+                            sg.utls.ajaxPost(window.sg.utls.url.buildUrl("Core", "ViewFinder", "Search"), data, funcCall);
+                        }
                     }
                 }
             }
         },
 
         /**
-         * Replaces entity context token (~~) with module id (CP or UP) in the viewID property
+         * Replace token in source with replacement value if applicable
          *
-         * @param {string} viewID - The viewID of the finder that may be tokenized (~~)
-         * @param {string} entityContext - The replacement value (CP or UP) for the token (~~)
+         * @param {string} source - Source potentially containing token
+         * @param {string} replacement - Replacement value for token
          */
-        entityContextReplacement: function (viewID, entityContext) {
-            return viewID.replace("~~", entityContext);
+        entityContextReplacement: function (source, replacement) {
+
+
+            // Tokens for payroll entities
+            const token = "~~";
+            const taxToken = "^^";
+
+            // Perform replacement, if any
+            let value = source.replace(token, replacement);
+
+            // Special logic for Payroll tax tokens
+            if (value.substring(0, 2) === taxToken) {
+                // Put in CP or UP first
+                value = value.replace(taxToken, replacement);
+                // Change P to T for tax module
+                value = value.substring(0, 1) + "T" + value.substring(2);
+            }
+
+            return value;
         }
     };
 
@@ -725,7 +760,7 @@
                 ViewFinderGridHelper.InitFinderValues(columnFilter);
                 sg.finderOptions.ColumnFilter = columnFilter;
 
-                if (that.options.properties.hidePageNavigation) {
+                if (that.options.finderProperties.hidePageNavigation) {
                     sg.utls.kndoUI.hidePageNavigation(dialogId);
                 }
 

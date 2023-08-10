@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class EmployeeGarnishmentResx {
@@ -61,52 +61,88 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account Number.
+        ///   Looks up a localized string similar to Case Identifier.
         /// </summary>
-        public static string AccountNumber {
+        public static string CaseIdentifier {
             get {
-                return ResourceManager.GetString("AccountNumber", resourceCulture);
+                return ResourceManager.GetString("CaseIdentifier", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bank Account Holder.
+        ///   Looks up a localized string similar to Case Jurisdiction.
         /// </summary>
-        public static string BankAccountHolder {
+        public static string CaseJurisdiction {
             get {
-                return ResourceManager.GetString("BankAccountHolder", resourceCulture);
+                return ResourceManager.GetString("CaseJurisdiction", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
+        ///   Looks up a localized string similar to Case State.
         /// </summary>
-        public static string CASEID {
+        public static string CaseState {
             get {
-                return ResourceManager.GetString("CASEID", resourceCulture);
+                return ResourceManager.GetString("CaseState", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
+        ///   Looks up a localized string similar to Class Schedule.
         /// </summary>
-        public static string CASESTATE {
+        public static string ClassSchedule {
             get {
-                return ResourceManager.GetString("CASESTATE", resourceCulture);
+                return ResourceManager.GetString("ClassSchedule", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
+        ///   Looks up a localized string similar to Class Schedules.
         /// </summary>
-        public static string CUSTPARENT {
+        public static string ClassSchedules {
             get {
-                return ResourceManager.GetString("CUSTPARENT", resourceCulture);
+                return ResourceManager.GetString("ClassSchedules", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deduction Code.
+        ///   Looks up a localized string similar to Comments.
+        /// </summary>
+        public static string Comments {
+            get {
+                return ResourceManager.GetString("Comments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cost Center.
+        /// </summary>
+        public static string CostCenter {
+            get {
+                return ResourceManager.GetString("CostCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custodial Parent.
+        /// </summary>
+        public static string CustodialParent {
+            get {
+                return ResourceManager.GetString("CustodialParent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date of Order.
+        /// </summary>
+        public static string DateOfOrder {
+            get {
+                return ResourceManager.GetString("DateOfOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deduction.
         /// </summary>
         public static string DeductionCode {
             get {
@@ -115,7 +151,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deduction&apos;s Description.
+        ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string DeductionsDescription {
             get {
@@ -133,11 +169,20 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
+        ///   Looks up a localized string similar to Discretionary Data.
         /// </summary>
-        public static string DISCREDATA {
+        public static string DiscretionaryData {
             get {
-                return ResourceManager.GetString("DISCREDATA", resourceCulture);
+                return ResourceManager.GetString("DiscretionaryData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT.
+        /// </summary>
+        public static string EFT {
+            get {
+                return ResourceManager.GetString("EFT", resourceCulture);
             }
         }
         
@@ -169,11 +214,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
+        ///   Looks up a localized string similar to FIPS Code.
         /// </summary>
-        public static string FIPSCODE {
+        public static string FIPSCode {
             get {
-                return ResourceManager.GetString("FIPSCODE", resourceCulture);
+                return ResourceManager.GetString("FIPSCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Garnishment.
+        /// </summary>
+        public static string Garnishment {
+            get {
+                return ResourceManager.GetString("Garnishment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        public static string General {
+            get {
+                return ResourceManager.GetString("General", resourceCulture);
             }
         }
         
@@ -187,38 +250,20 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Institution ID.
+        ///   Looks up a localized string similar to Medical Insurance - Available.
         /// </summary>
-        public static string InstitutionID {
+        public static string IsFamilyHealthInsuranceAvail {
             get {
-                return ResourceManager.GetString("InstitutionID", resourceCulture);
+                return ResourceManager.GetString("IsFamilyHealthInsuranceAvail", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
+        ///   Looks up a localized string similar to Medical Insurance - Required.
         /// </summary>
-        public static string JURISDICTN {
+        public static string IsFamilyHealthInsuranceRequi {
             get {
-                return ResourceManager.GetString("JURISDICTN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
-        /// </summary>
-        public static string MEDINSUAVL {
-            get {
-                return ResourceManager.GetString("MEDINSUAVL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
-        /// </summary>
-        public static string MEDINSUREQ {
-            get {
-                return ResourceManager.GetString("MEDINSUREQ", resourceCulture);
+                return ResourceManager.GetString("IsFamilyHealthInsuranceRequi", resourceCulture);
             }
         }
         
@@ -241,11 +286,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
+        ///   Looks up a localized string similar to Optional Fields.
         /// </summary>
-        public static string ORDERDATE {
+        public static string OptionalFields {
             get {
-                return ResourceManager.GetString("ORDERDATE", resourceCulture);
+                return ResourceManager.GetString("OptionalFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        public static string Other {
+            get {
+                return ResourceManager.GetString("Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay.
+        /// </summary>
+        public static string Pay {
+            get {
+                return ResourceManager.GetString("Pay", resourceCulture);
             }
         }
         
@@ -268,11 +331,47 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transcation Code.
+        ///   Looks up a localized string similar to SDU Account Number.
         /// </summary>
-        public static string TranscationCode {
+        public static string SDUAccountNumber {
             get {
-                return ResourceManager.GetString("TranscationCode", resourceCulture);
+                return ResourceManager.GetString("SDUAccountNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SDU Name.
+        /// </summary>
+        public static string SDUName {
+            get {
+                return ResourceManager.GetString("SDUName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SDU Routing Number.
+        /// </summary>
+        public static string SDURoutingNumber {
+            get {
+                return ResourceManager.GetString("SDURoutingNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Taxes.
+        /// </summary>
+        public static string Taxes {
+            get {
+                return ResourceManager.GetString("Taxes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work Location.
+        /// </summary>
+        public static string WorkLocation {
+            get {
+                return ResourceManager.GetString("WorkLocation", resourceCulture);
             }
         }
     }

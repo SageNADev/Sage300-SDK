@@ -203,8 +203,8 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                 AddStep(Resources.ReleaseSpecificTitleRemovePreviousJqueryLibraries,
                         Resources.ReleaseSpecificTitleDescRemovePreviousJqueryLibraries,
                         string.Format(Resources.Template_ReleaseSpecificRemovePreviousJqueryLibraries,
-                                        Constants.PerRelease.FromJqueryCoreVersion,
-                                        Constants.PerRelease.FromJqueryMigrateVersion));
+                                        Constants.PerRelease.FromJqueryUIVersion,
+                                        Constants.PerRelease.ToJqueryUIVersion));
             }
 
             if (Constants.PerRelease.UpdateMicrosoftDotNetFramework)

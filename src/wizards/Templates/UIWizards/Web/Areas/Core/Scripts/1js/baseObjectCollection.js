@@ -184,12 +184,36 @@
          * Loads empty row from data model
          * @param {any} prefix Namespace prefix
          */
-        loadDataForGrid: function (prefix="") {
+        loadDataForGrid: function (prefix = "", rowIndex = -1, length = this.rows.length) {
             let gridArray = [];
 
-            apputils.each(this.rows, (entity) => {
+            /*apputils.each(this.rows, (entity) => {
                 entity.loadDataForGrid(gridArray, prefix);
-            });
+            });*/
+
+            if (length > this.rows.length) {
+                length = this.rows.length;
+            }
+
+            if (rowIndex > 0) {
+
+                for (let i = rowIndex; i < length; i++) {
+                    const entity = this.rows[i];
+
+                    if (apputils.isDefined(entity)) {
+                        entity.loadDataForGrid(gridArray, prefix);
+                    }
+                    
+                }
+
+            } else {
+                for (const entity of this.rows) {
+
+                    if (apputils.isDefined(entity)) {
+                        entity.loadDataForGrid(gridArray, prefix);
+                    }
+                }
+            }
 
             return gridArray;
         },
@@ -420,7 +444,7 @@
          * @param {any} rowIndex The row index
          */
         getFieldValue: function (fieldName, rowIndex=0) {
-            return this.rows[rowIndex].getFieldValue(fieldName);
+            return this.fields(fieldName, rowIndex).value; //this.rows[rowIndex].getFieldValue(fieldName);
         },
         /**
          * Get column by field name and row index
@@ -428,7 +452,41 @@
          * @param {any} rowIndex The row index
          */
         getColumnByFieldName: function (fieldName, rowIndex = 0) {
-            return this.rows[rowIndex].getColumnByFieldName(fieldName);
+            const column = this.rows[rowIndex].getColumnByFieldName(fieldName);
+            column.viewid = this.viewid;
+
+            return column;
+        },
+        fields: function (fieldName, rowIndex = 0) {
+
+            if (this.rows.length <= rowIndex) {
+                trace.warn(`fields - ${fieldName} not found at index - ${rowIndex}, using dataModel.`);
+                return apputils.find(this.dataModel, (column) => {
+                    return column.field === fieldName;
+                });
+            }
+
+            let column = this.getColumnByFieldName(fieldName, rowIndex);
+
+            if (apputils.isUndefined(column.FlushValue)) {
+                //Flushes the current field value to the View, if the current field is dirty.
+                //Override this function if needed
+                column.FlushValue = function (verify) {
+                    //maybe need to set the field with verify flag
+                    //then pass to View
+                };
+            }
+
+            if (apputils.isUndefined(column.RefreshValue)) {
+                //Forces the UI field value to be refreshed from the View
+                //Override this function if needed
+                column.RefreshValue = function (v) {
+                    
+                };
+            }
+
+            
+            return column;
         },
 
         /**
@@ -590,8 +648,11 @@
          * @param {any} currentRowIndex Current row index
          */
         updateRowIndex: function (id, currentRowIndex) {
-            for(currentRowIndex; currentRowIndex < this.rows.length; currentRowIndex++) {
-                this.rows[currentRowIndex].updateRowIndex(currentRowIndex + id, currentRowIndex);
+            for (currentRowIndex; currentRowIndex < this.rows.length; currentRowIndex++) {
+
+                if (apputils.isDefined(this.rows[currentRowIndex])) {
+                    this.rows[currentRowIndex].updateRowIndex(currentRowIndex + id, currentRowIndex);
+                }
             }
         },
 

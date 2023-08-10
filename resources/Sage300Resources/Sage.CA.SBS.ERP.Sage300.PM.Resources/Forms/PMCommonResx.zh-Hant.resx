@@ -192,6 +192,39 @@
   <data name="PeriodLocked" xml:space="preserve">
     <value>日期{0}對應於會計年度{2}中的期間{1}，在公共服務會計年曆中為專案成本管理鎖定。</value>
   </data>
+  <data name="PartialPeriodLocked" xml:space="preserve">
+    <value>在公共服務會計年曆中為專案成本管理鎖定。</value>
+  </data>
+  <data name="NoRecord" xml:space="preserve">
+    <value>{0} {1} 不存在。</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>所有</value>
+  </data>
+  <data name="AP" xml:space="preserve">
+    <value>僅限應付帳款</value>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>僅限應收帳款</value>
+  </data>
+  <data name="CP" xml:space="preserve">
+    <value>僅限加拿大薪資管理</value>
+  </data>
+  <data name="OE" xml:space="preserve">
+    <value>僅限銷售訂單</value>
+  </data>
+  <data name="PM" xml:space="preserve">
+    <value>僅限專案成本管理</value>
+  </data>
+  <data name="PO" xml:space="preserve">
+    <value>僅限採購訂單</value>
+  </data>
+  <data name="UP" xml:space="preserve">
+    <value>僅限美國薪資管理</value>
+  </data>
+  <data name="IC" xml:space="preserve">
+    <value>僅庫存控制</value>
+  </data>
   <data name="PostingDateOverride" xml:space="preserve">
     <value>過帳日期撤換</value>
   </data>
@@ -276,6 +309,12 @@
   <data name="TransactionDateBeforeProjectStartDate" xml:space="preserve">
     <value>交易日期早於專案的開始日期。</value>
   </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>交易日期</value>
+  </data>
+  <data name="Expense" xml:space="preserve">
+    <value>費用</value>
+  </data>
   <data name="CostOfSalesAccount" xml:space="preserve">
     <value>銷貨成本科目</value>
   </data>
@@ -303,8 +342,11 @@
   <data name="CannotDeleteRequiredOptionalField" xml:space="preserve">
     <value>You cannot delete required optional field.</value>
   </data>
+  <data name="CannotOpenView" xml:space="preserve">
+    <value>Cannot open view </value>
+  </data>
   <data name="EquipmentDescription" xml:space="preserve">
-    <value>Equipment Description</value>
+    <value>設備描述</value>
   </data>
   <data name="ARItem" xml:space="preserve">
     <value>應收帳款產品</value>
@@ -332,5 +374,20 @@
   </data>
   <data name="YouCannotDeleteAnEquipmentCode" xml:space="preserve">
     <value>不能刪除已分配給{0}的設備代碼。</value>
+  </data>
+  <data name="ProjectSectionText" xml:space="preserve">
+    <value>標準{0}的預設設定</value>
+  </data>
+  <data name="PJCEquipment" xml:space="preserve">
+    <value>設備</value>
+  </data>
+  <data name="AdjustmentType" xml:space="preserve">
+    <value>調整類型</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>調整</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>轉讓</value>
   </data>
 </root>

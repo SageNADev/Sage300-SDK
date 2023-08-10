@@ -1688,4 +1688,11 @@
   <data name="AnErrorOccurredProcessingYourRequest" xml:space="preserve">
     <value>Ha ocurrido un error procesando tu requerimiento.</value>
   </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Número del Documento</value>
+  </data>
+  <data name="FeatureNotAvailableWeb_Message_v2" xml:space="preserve">
+    <value>Su solicitud no se pudo llevar a cabo porque {0} no está disponible como pantalla web. Tal vez puede utilizar la pantalla del escritorio.</value>
+    <comment>Used in AP-AR Payment Intery for Job related items</comment>
+  </data>
 </root>

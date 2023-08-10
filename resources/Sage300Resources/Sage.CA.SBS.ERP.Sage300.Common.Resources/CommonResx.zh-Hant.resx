@@ -1699,4 +1699,11 @@
   <data name="AnErrorOccurredProcessingYourRequest" xml:space="preserve">
     <value>處理您的請求時發生錯誤。</value>
   </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>文件編號</value>
+  </data>
+  <data name="FeatureNotAvailableWeb_Message_v2" xml:space="preserve">
+    <value>無法完成您的請求，因為{0}在網頁螢幕中不可用。您或許能夠使用桌面螢幕。</value>
+    <comment>Used in AP-AR Payment Intery for Job related items</comment>
+  </data>
 </root>

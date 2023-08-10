@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="INCS15" xml:space="preserve">
+    <value>INCS15</value>
+  </data>
+  <data name="INCS12" xml:space="preserve">
+    <value>INCS12</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>Resource</value>
+  </data>
+  <data name="INRS8" xml:space="preserve">
+    <value>INRS8</value>
+  </data>
+  <data name="INCH13" xml:space="preserve">
+    <value>INCH13</value>
+  </data>
+  <data name="INCH10" xml:space="preserve">
+    <value>INCH10</value>
+  </data>
+  <data name="INRS3" xml:space="preserve">
+    <value>INRS3</value>
+  </data>
+  <data name="INRS2" xml:space="preserve">
+    <value>INRS2</value>
+  </data>
+  <data name="BudgetSet" xml:space="preserve">
+    <value>Budget Set</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="INRS7" xml:space="preserve">
+    <value>INRS7</value>
+  </data>
+  <data name="INRS6" xml:space="preserve">
+    <value>INRS6</value>
+  </data>
+  <data name="INRS5" xml:space="preserve">
+    <value>INRS5</value>
+  </data>
+  <data name="INRS4" xml:space="preserve">
+    <value>INRS4</value>
+  </data>
+  <data name="Function" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="INRS14" xml:space="preserve">
+    <value>INRS14</value>
+  </data>
+  <data name="INRS11" xml:space="preserve">
+    <value>INRS11</value>
+  </data>
+  <data name="ContractUniq" xml:space="preserve">
+    <value>Contract Uniq</value>
+  </data>
+  <data name="INRHTOTAL" xml:space="preserve">
+    <value>INRHTOTAL</value>
+  </data>
+  <data name="Num1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="INQ13" xml:space="preserve">
+    <value>INQ13</value>
+  </data>
+  <data name="INQ12" xml:space="preserve">
+    <value>INQ12</value>
+  </data>
+  <data name="INQ11" xml:space="preserve">
+    <value>INQ11</value>
+  </data>
+  <data name="INQ10" xml:space="preserve">
+    <value>INQ10</value>
+  </data>
+  <data name="INQ15" xml:space="preserve">
+    <value>INQ15</value>
+  </data>
+  <data name="INQ14" xml:space="preserve">
+    <value>INQ14</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PM BudgetLookup</value>
+  </data>
+  <data name="BasePercentIncrease" xml:space="preserve">
+    <value>Base, Percent Increase</value>
+  </data>
+  <data name="CopyRevenueFunctional" xml:space="preserve">
+    <value>Copy Revenue(Functional)</value>
+  </data>
+  <data name="INRH13" xml:space="preserve">
+    <value>INRH13</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>Fiscal Year</value>
+  </data>
+  <data name="INRH10" xml:space="preserve">
+    <value>INRH10</value>
+  </data>
+  <data name="INQ5" xml:space="preserve">
+    <value>INQ5</value>
+  </data>
+  <data name="CopyProratedSpread" xml:space="preserve">
+    <value>Copy, Prorated Spread</value>
+  </data>
+  <data name="CopyCostFunctional" xml:space="preserve">
+    <value>Copy Cost(Functional)</value>
+  </data>
+  <data name="INCH9" xml:space="preserve">
+    <value>INCH9</value>
+  </data>
+  <data name="INCH8" xml:space="preserve">
+    <value>INCH8</value>
+  </data>
+  <data name="INCH3" xml:space="preserve">
+    <value>INCH3</value>
+  </data>
+  <data name="INCH2" xml:space="preserve">
+    <value>INCH2</value>
+  </data>
+  <data name="INQ1" xml:space="preserve">
+    <value>INQ1</value>
+  </data>
+  <data name="INQ7" xml:space="preserve">
+    <value>INQ7</value>
+  </data>
+  <data name="INCH7" xml:space="preserve">
+    <value>INCH7</value>
+  </data>
+  <data name="INCH6" xml:space="preserve">
+    <value>INCH6</value>
+  </data>
+  <data name="INCS13" xml:space="preserve">
+    <value>INCS13</value>
+  </data>
+  <data name="INCH4" xml:space="preserve">
+    <value>INCH4</value>
+  </data>
+  <data name="INCS10" xml:space="preserve">
+    <value>INCS10</value>
+  </data>
+  <data name="INRSTOTAL" xml:space="preserve">
+    <value>INRSTOTAL</value>
+  </data>
+  <data name="INCH14" xml:space="preserve">
+    <value>INCH14</value>
+  </data>
+  <data name="CopyAmountIncrease" xml:space="preserve">
+    <value>Copy, Amount Increase</value>
+  </data>
+  <data name="INCH11" xml:space="preserve">
+    <value>INCH11</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Num5" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="INQ3" xml:space="preserve">
+    <value>INQ3</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>Currency Type</value>
+  </data>
+  <data name="Num3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="INCHTOTAL" xml:space="preserve">
+    <value>INCHTOTAL</value>
+  </data>
+  <data name="SpreadAmount" xml:space="preserve">
+    <value>Spread Amount</value>
+  </data>
+  <data name="Num4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="INRS15" xml:space="preserve">
+    <value>INRS15</value>
+  </data>
+  <data name="BaseAmountIncrease" xml:space="preserve">
+    <value>Base, Amount Increase</value>
+  </data>
+  <data name="INCS7" xml:space="preserve">
+    <value>INCS7</value>
+  </data>
+  <data name="AmountIncrease" xml:space="preserve">
+    <value>Amount Increase</value>
+  </data>
+  <data name="CopyPercentIncrease" xml:space="preserve">
+    <value>Copy, Percent Increase</value>
+  </data>
+  <data name="INQTOTAL" xml:space="preserve">
+    <value>INQTOTAL</value>
+  </data>
+  <data name="INCH1" xml:space="preserve">
+    <value>INCH1</value>
+  </data>
+  <data name="INRH9" xml:space="preserve">
+    <value>INRH9</value>
+  </data>
+  <data name="INRH8" xml:space="preserve">
+    <value>INRH8</value>
+  </data>
+  <data name="INRH3" xml:space="preserve">
+    <value>INRH3</value>
+  </data>
+  <data name="INRH2" xml:space="preserve">
+    <value>INRH2</value>
+  </data>
+  <data name="INRH1" xml:space="preserve">
+    <value>INRH1</value>
+  </data>
+  <data name="Num2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="INRH7" xml:space="preserve">
+    <value>INRH7</value>
+  </data>
+  <data name="INRH6" xml:space="preserve">
+    <value>INRH6</value>
+  </data>
+  <data name="INRH5" xml:space="preserve">
+    <value>INRH5</value>
+  </data>
+  <data name="INRH4" xml:space="preserve">
+    <value>INRH4</value>
+  </data>
+  <data name="INCH5" xml:space="preserve">
+    <value>INCH5</value>
+  </data>
+  <data name="INRH14" xml:space="preserve">
+    <value>INRH14</value>
+  </data>
+  <data name="INRH11" xml:space="preserve">
+    <value>INRH11</value>
+  </data>
+  <data name="INCS9" xml:space="preserve">
+    <value>INCS9</value>
+  </data>
+  <data name="INCS8" xml:space="preserve">
+    <value>INCS8</value>
+  </data>
+  <data name="LINENUM" xml:space="preserve">
+    <value>LINENUM</value>
+  </data>
+  <data name="INCS3" xml:space="preserve">
+    <value>INCS3</value>
+  </data>
+  <data name="INCS2" xml:space="preserve">
+    <value>INCS2</value>
+  </data>
+  <data name="INCS1" xml:space="preserve">
+    <value>INCS1</value>
+  </data>
+  <data name="INCSTOTAL" xml:space="preserve">
+    <value>INCSTOTAL</value>
+  </data>
+  <data name="INCS6" xml:space="preserve">
+    <value>INCS6</value>
+  </data>
+  <data name="INCS5" xml:space="preserve">
+    <value>INCS5</value>
+  </data>
+  <data name="INCS4" xml:space="preserve">
+    <value>INCS4</value>
+  </data>
+  <data name="INCS14" xml:space="preserve">
+    <value>INCS14</value>
+  </data>
+  <data name="INCS11" xml:space="preserve">
+    <value>INCS11</value>
+  </data>
+  <data name="CostCurrency" xml:space="preserve">
+    <value>Cost Currency</value>
+  </data>
+  <data name="INCH15" xml:space="preserve">
+    <value>INCH15</value>
+  </data>
+  <data name="PercentIncrease" xml:space="preserve">
+    <value>Percent Increase</value>
+  </data>
+  <data name="INQ8" xml:space="preserve">
+    <value>INQ8</value>
+  </data>
+  <data name="RevenueCurrency" xml:space="preserve">
+    <value>Revenue Currency</value>
+  </data>
+  <data name="INQ4" xml:space="preserve">
+    <value>INQ4</value>
+  </data>
+  <data name="CopyMethod" xml:space="preserve">
+    <value>Copy Method</value>
+  </data>
+  <data name="INQ9" xml:space="preserve">
+    <value>INQ9</value>
+  </data>
+  <data name="INRS13" xml:space="preserve">
+    <value>INRS13</value>
+  </data>
+  <data name="Actuals" xml:space="preserve">
+    <value>Actuals</value>
+  </data>
+  <data name="INRS10" xml:space="preserve">
+    <value>INRS10</value>
+  </data>
+  <data name="INQ6" xml:space="preserve">
+    <value>INQ6</value>
+  </data>
+  <data name="INRS12" xml:space="preserve">
+    <value>INRS12</value>
+  </data>
+  <data name="FMTCONTNO" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="CONTRACT" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="INRS9" xml:space="preserve">
+    <value>INRS9</value>
+  </data>
+  <data name="INCH12" xml:space="preserve">
+    <value>INCH12</value>
+  </data>
+  <data name="FixedSpreadBaseAmount" xml:space="preserve">
+    <value>Fixed/Spread/Base Amount</value>
+  </data>
+  <data name="INQ2" xml:space="preserve">
+    <value>INQ2</value>
+  </data>
+  <data name="CopyAsIs" xml:space="preserve">
+    <value>Copy, As Is</value>
+  </data>
+  <data name="INRH15" xml:space="preserve">
+    <value>INRH15</value>
+  </data>
+  <data name="INRH12" xml:space="preserve">
+    <value>INRH12</value>
+  </data>
+  <data name="CopyRevenueSource" xml:space="preserve">
+    <value>Copy Revenue(Source)</value>
+  </data>
+  <data name="FixedAmount" xml:space="preserve">
+    <value>Fixed Amount</value>
+  </data>
+  <data name="CopyQuantity" xml:space="preserve">
+    <value>Copy Quantity</value>
+  </data>
+  <data name="CopyCostSource" xml:space="preserve">
+    <value>Copy Cost(Source)</value>
+  </data>
+  <data name="Recognized" xml:space="preserve">
+    <value>Recognized</value>
+  </data>
+  <data name="INRS1" xml:space="preserve">
+    <value>INRS1</value>
+  </data>
+</root>

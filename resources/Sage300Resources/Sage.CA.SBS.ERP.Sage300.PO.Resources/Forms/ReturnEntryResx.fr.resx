@@ -1725,4 +1725,7 @@
     <value>Article</value>
     <comment>Warning message</comment>
   </data>
+  <data name="NetReturnTotal" xml:space="preserve">
+    <value>Total retour nette</value>
+  </data>
 </root>

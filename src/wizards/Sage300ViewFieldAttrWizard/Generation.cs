@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -62,7 +62,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ViewFieldAttrWizard
         private class Constants
         {
             /// <summary> Version Default </summary>
-            public const string VersionDefault = "70A";
+            public const string VersionDefault = "71A";
 
             /// <summary> Compile element in csproj files </summary>
             public const string CompileElement = "Compile";

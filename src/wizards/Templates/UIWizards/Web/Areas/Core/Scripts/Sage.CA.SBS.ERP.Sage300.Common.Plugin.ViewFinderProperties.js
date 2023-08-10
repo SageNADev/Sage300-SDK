@@ -489,6 +489,17 @@
                     "CTACFAX", "EMAIL1"]
             },
 
+            CustomersReport: {
+                url: ["AR", "CustomerViewFinder", "Find"],
+                viewID: "AR0024",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["IDCUST", "NAMECUST", "NAMECTAC", "PRICLIST", "CODECURN"],
+                displayFieldNames: ["IDCUST", "NAMECUST", "SWACTV", "SWHOLD", "IDGRP", "IDNATACCT", "SWBALFWD", "CODECURN",
+                    "TEXTSNAM", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4", "NAMECITY", "CODESTTE",
+                    "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2"]
+            },
+
             ShortenedCustomers: {
                 url: ["AR", "CustomerViewFinder", "Find"],
                 viewID: "AR0024",
@@ -935,6 +946,15 @@
                 displayFieldNames: ["CUSTID", "DESCRIPT"],
                 filterTemplate: "SCREENID = \"{0}\" ",
             },
+
+            Organizations: {
+                viewID: "AS0020",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["ORGID", "DESC"],
+                displayFieldNames: ["ORGID", "DESC", "ORGTYPE", "SYSORGID", "SYSORGID", "ORGTYPE", "SYSORGID", "STATUS"],
+                filterTemplate: "ORGID = \"{0}\" "
+            }
         },
 
         BK: {
@@ -1952,6 +1972,13 @@
                 //optionalFieldBindings: "PM0850,PM0500[1]"
             },
 
+            ContractReport: {
+                viewID: "PM0021",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["FMTCONTNO", "CONTRACT", "DESC"],
+                displayFieldNames: ["FMTCONTNO", "DESC", "STATUS", "CONTBRKID", "CUSTOMER", "IDACCTSET", "MANAGER", "OPENED"],
+            },
 
             ContractGrid: {
                 viewID: "PM0021",
@@ -2046,11 +2073,19 @@
             ProjectGrid: {
                 viewID: "PM0022",
                 viewOrder: 2,
-                returnFieldNames: ["PROJECT"],
+                returnFieldNames: ["PROJECT", "DESC"],
                 displayFieldNames: ["PROJECT", "DESC", "PROJSTAT", "CUSTOMER", "IDACCTSET", "CLOSECOST", "PROJTYPE", "REVREC", "BILLTYPE", "OPENED", "MULTICUST", "ARACCTSET"],
                 initKeyFieldNames: ["CONTRACT", "PROJECT"],
                 filter: "CONTRACT=CONTRACT",
                 filterTemplate: "CONTRACT = \"{0}\" ",
+            },
+
+            ProjectTransactionHistory: {
+                viewID: "PM0006",
+                viewOrder: 0,
+                returnFieldNames: ["PROJECT"],
+                displayFieldNames: ["PROJECT", "DESC", "INACTIVE", "REVREC", "BILLTYPE"],
+                initKeyFieldNames: ["PROJECT"],
             },
 
             Equipment: {
@@ -2130,7 +2165,7 @@
                 viewID: "PM0039",
                 viewOrder: 2,
                 displayFieldNames: ["CATEGORY", "DESC", "COSTTYPE", "BILLTYPE", "OVERHD", "LABOR"],
-                returnFieldNames: ["CATEGORY"],
+                returnFieldNames: ["CATEGORY", "DESC"],
                 initKeyFieldNames: ["CONTRACT", "PROJECT", "CATEGORY"],
                 filter: "CONTRACT=CONTRACT AND PROJECT=PROJECT",
                 filterTemplate: "CONTRACT = \"{0}\" AND PROJECT = \"{1}\" ",
@@ -2144,6 +2179,13 @@
                 initKeyFieldNames: ["CONTRACT", "PROJECT", "CATEGORY"],
                 filter: "CONTRACT=CONTRACT AND PROJECT=PROJECT",
                 filterTemplate: "CONTRACT = \"{0}\" AND PROJECT = \"{1}\" ",
+            },
+
+            CategoryTransactionHistory: {
+                viewID: "PM0018",
+                viewOrder: 0,
+                displayFieldNames: ["CATEGORY", "DESC", "INACTIVE", "COSTTYPE", "OVERHD", "LABOR"],
+                returnFieldNames: ["CATEGORY"],
             },
 
             Resource: {
@@ -2412,7 +2454,8 @@
                 initKeyValues: [-999999999999999999, "", -999999999999999999, ""],
                 returnFieldNames: ["RQNNUMBER"],
                 displayFieldNames: ["RQNNUMBER", "DATE", "EXPARRIVA2", "EXPIRATION", "HASJOB"],
-                filterTemplate: "VDCODE = \"{0}\" OR VDCODE = \"\""
+                filterTemplate: "VDCODE = \"{0}\" OR VDCODE = \"\"",
+                hidePageNavigation: true
             },
 
             DuplicateInvoices: {
@@ -2547,6 +2590,7 @@
                 viewOrder: 0,
                 displayFieldNames: ["DISTCODE", "DISTRNAME"],
                 returnFieldNames: ["DISTCODE"],
+                initKeyFieldNames: ["EARNDED", "DISTCODE"],
                 filterTemplate: "EARNDED = \"{0}\" "
             },
             EmployeeTax: {
@@ -2555,7 +2599,7 @@
                 displayFieldNames: ["TAXID", "DESC"],
                 returnFieldNames: ["TAXID"],
                 initKeyFieldNames: ["EMPLOYEE", "EARNDED"],
-                filter: "EMPLOYEE=EMPLOYEE",
+                filterTemplate: "EMPLOYEE = \"{0}\" "
             },
             BillingRates: {
                 viewID: "~~0041",
@@ -2695,7 +2739,7 @@
                 viewID: "~~0037",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["WCCGROUP", "WCC", "DESC"],
+                returnFieldNames: ["WCC"],
                 displayFieldNames: ["WCC", "DESC"],
                 filterTemplate: "WCCGROUP = \"{0}\""
             },
@@ -2712,6 +2756,13 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["SHIFTSCHED", "SHFTSDESC"],
                 displayFieldNames: ["SHIFTSCHED", "SHFTSDESC"]
+            },
+            FederalStateTaxes: {
+                viewID: "~~0029",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["TAXID"],
+                displayFieldNames: ["TAXID", "TAXTYPE", "LONGDESC"]
             },
             CheckInquiryEmployee: {
                 viewID: "~~0048",
@@ -2736,6 +2787,20 @@
                 returnFieldNames: ["PEREND", "ENTRYSEQ"],
                 filterTemplate: "EMPLOYEE = \"{0}\"",
                 parentValAsInitKey: true
+            },
+            EmployeeEarningDeduction: {
+                viewID: "~~0008",
+                viewOrder: 0,
+                filterTemplate: "EMPLOYEE = \"{0}\"",
+                displayFieldNames: ["EARNDED", "DESC", "CATEGORY"],
+                returnFieldNames: ["EARNDED"]
+            },
+            WorkersCompensationCode: {
+                viewID: "~~0037",
+                viewOrder: 0,
+                filterTemplate: "WCCGROUP = \"{0}\"",
+                displayFieldNames: ["WCC", "DESC"],
+                returnFieldNames: ["WCC"]
             }
         },
 
@@ -2751,6 +2816,15 @@
         },
 
         TX: {
+            PMTaxClasses: {
+                viewID: "TX0001",
+                viewOrder: 0,
+                parentValAsInitKey: false,
+                returnFieldNames: ["CLASS", "DESC"],
+                displayFieldNames: ["CLASS", "DESC"],
+                filterTemplate: "AUTHORITY = \"{0}\" AND CLASSTYPE = \"{1}\" AND CLASSAXIS = \"{2}\""
+            },
+
             TaxClasses: {
                 viewID: "TX0001",
                 viewOrder: 0,

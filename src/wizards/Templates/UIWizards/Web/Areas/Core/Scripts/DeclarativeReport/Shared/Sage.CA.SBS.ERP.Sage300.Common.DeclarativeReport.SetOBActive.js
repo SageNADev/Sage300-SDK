@@ -4,7 +4,8 @@
 
 $(function () {
     const moduleId = 'OB';
+    const fieldId = '#hdnOptionalFieldActive';
     const validValues = ['1', '0'];
     const isActive = (DeclarativeReportViewModel.ActiveApplications.filter(e => e.AppId === `${moduleId}`).length > 0) ? validValues[0] : validValues[1];
-    $("#hdnOblicensed").val(isActive);
+    $(`${fieldId}`).val(isActive);
 });

@@ -304,20 +304,19 @@ header + .nav-tabs {
 
         .k-item { 
           margin-right: 1px; 
-          margin-bottom: -1px; 
+          margin-bottom: -6px; 
           padding-left: 15px; 
           padding-right: 15px; 
           cursor: pointer;
-          background-color: #a7a9aa;
+          background-color: @white;
           padding-bottom: 0;
-          border-radius: @border-radius-base @border-radius-base 0 0;
-          border: 1px solid darken(#a7a9aa, 5%);
+          border: 1px solid @gray-light;
           background-image: none;
           border-bottom: 0;
+          border-radius: 6px;
 
           .k-link { 
-              color: @white;
-              padding: @padding-large-vertical 0; 
+              padding: 6px 0 12px; 
               line-height: @line-height-base;
               font-weight: normal;
 
@@ -328,13 +327,21 @@ header + .nav-tabs {
           }
 
           &:hover { 
-              color: @white;
-              background-color: #8d9091;
-              border: 1px solid darken(#8d9091, 5%);
+              background-color: @gray-lighter;
+              border: 1px solid @gray-lighter;
               -webkit-transition-duration: 0.2s;
               transition-duration: 0.2s;
               -webkit-transition-property: color, background-color;
               transition-property: color, background-color;
+              
+                &:after {
+                  content: "";
+                  position: absolute;
+                  left: -1px;
+                  right: -1px;
+                  bottom: 2px;
+                  border-bottom: 5px solid @sage-green;
+              }
           }
 
           &:focus {
@@ -345,22 +352,24 @@ header + .nav-tabs {
           }
 
           &.k-state-active { 
-            background-color: @nav-tabs-active-link-hover-bg;
-            border: 1px solid @nav-tabs-active-link-hover-border-color;
+            background-color: @white;
+            border: 1px solid @gray-light;
             border-bottom-color: transparent;
             cursor: default;
+            border-radius: 6px;
 
             &:after {
                 content: "";
                 position: absolute;
                 left: -1px;
                 right: -1px;
-                top: -2px;
-                border-top: 5px solid @nav-tabs-active-link-hover-border-color;
+                bottom: 2px;
+                border-bottom: 5px solid @sage-green;
             }
 
             .k-link { 
               color: @gray-darker;
+              font-weight: bold;
             }
 
             &:focus {
@@ -401,11 +410,13 @@ header + .nav-tabs {
     .k-content.k-state-active { 
         background: @white;
         border: 0;
-        border-top: 1px solid @nav-tabs-active-link-hover-border-color;
+        border-top: 3px solid @nav-tabs-active-link-hover-border-color;
         margin: 0px;  
         padding: 20px 0 0 0; 
         height: auto !important; //AT-30503
         overflow: visible;
+        z-index: 1;
+        position: relative;
 
         h3 {
         margin: 0 0 10px 0;

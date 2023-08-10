@@ -57,19 +57,36 @@
         },
         */
 
-        expand: function (text) {
-            let item = this.tree.findByText(text);
+        expand: function (text, parentText = "") {
+            //let item = this.tree.findByText(text); Not using the default kendo func as it does exact text match and not contains
+            let item;
+            var nodes = this.tree.items();
+            if (!apputils.isUndefined(nodes) && nodes.length > 0 && !apputils.isUndefined(text) && !apputils.isEmpty(text)) {
+                for (let i = 0; i < nodes.length; i++) {
+                    var matchPattern = new RegExp(text, "i");
+                    if (matchPattern.test(nodes[i].innerText)) {
+                        if (!apputils.isEmpty(parentText) && !apputils.isUndefined(this.tree.parent(nodes[i])[0])) {
+                            var parentPattern = new RegExp(parentText, "i");
+                            if (parentPattern.test(this.tree.parent(nodes[i])[0].innerText)) {
+                                item = nodes[i];
+                                break;
+                            }
+                        }
+                        else {
+                            item = nodes[i];
+                            break;
+                        }
+                    }
+                }
+            }
 
-            if (item.length > 0) {
+            if (!apputils.isUndefined(item)) {
                 this.tree.select(item);
                 let parent = this.tree.parent(item);
-
                 while (parent && parent.length > 0) {
                     this.tree.expand(parent[0]);
                     parent = this.tree.parent(parent[0]);
-                    
                 }
-
             }
         },
 
@@ -149,12 +166,21 @@
             //console.log(event.currentTarget.innerText);
         },
 
+        singleClickOnSelected: function (event) {
+            console.log(event);
+        },
+
         initEvents: function () {
             let self = this;
 
             $("#" + this.treeId).on('dblclick', '.k-state-selected', function (event) {
                 self.selectRow();
                 self.dblclickOnSelected(event);
+            });
+
+            $("#" + this.treeId).on('click', function (event) {
+                self.selectRow();
+                self.singleClickOnSelected(event);
             });
         }
     };

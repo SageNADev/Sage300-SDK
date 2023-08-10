@@ -88,6 +88,51 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 10 Pay Periods.
+        /// </summary>
+        public static string _10PayPeriods {
+            get {
+                return ResourceManager.GetString("10PayPeriods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 13 Pay Periods.
+        /// </summary>
+        public static string _13PayPeriods {
+            get {
+                return ResourceManager.GetString("13PayPeriods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 22 Pay Periods.
+        /// </summary>
+        public static string _22PayPeriods {
+            get {
+                return ResourceManager.GetString("22PayPeriods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P.
+        /// </summary>
+        public static string A_P {
+            get {
+                return ResourceManager.GetString("A/P", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R.
+        /// </summary>
+        public static string A_R {
+            get {
+                return ResourceManager.GetString("A/R", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account Group.
         /// </summary>
         public static string AccountGroup {
@@ -142,11 +187,38 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string Active {
+            get {
+                return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Additional Cost.
         /// </summary>
         public static string AdditionalCost {
             get {
                 return ResourceManager.GetString("AdditionalCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Line.
+        /// </summary>
+        public static string AddLine {
+            get {
+                return ResourceManager.GetString("AddLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
             }
         }
         
@@ -282,6 +354,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string AP_TermsTitle {
             get {
                 return ResourceManager.GetString("AP_TermsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Approved.
+        /// </summary>
+        public static string Approved {
+            get {
+                return ResourceManager.GetString("Approved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to April.
+        /// </summary>
+        public static string April {
+            get {
+                return ResourceManager.GetString("April", resourceCulture);
             }
         }
         
@@ -430,6 +520,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to August.
+        /// </summary>
+        public static string August {
+            get {
+                return ResourceManager.GetString("August", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bank Code.
         /// </summary>
         public static string BankCode {
@@ -457,6 +556,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  Billing.
+        /// </summary>
+        public static string Billing {
+            get {
+                return ResourceManager.GetString("Billing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Billing Cycle.
         /// </summary>
         public static string BillingCycle {
@@ -480,6 +588,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string BillingCycleTo {
             get {
                 return ResourceManager.GetString("BillingCycleTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Billings.
+        /// </summary>
+        public static string Billings {
+            get {
+                return ResourceManager.GetString("Billings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Birth Date.
+        /// </summary>
+        public static string BirthDate {
+            get {
+                return ResourceManager.GetString("BirthDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biweekly.
+        /// </summary>
+        public static string Biweekly {
+            get {
+                return ResourceManager.GetString("Biweekly", resourceCulture);
             }
         }
         
@@ -547,11 +682,47 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The From {0} and To {0} values cannot both be blank.
+        /// </summary>
+        public static string BothBlankMessage {
+            get {
+                return ResourceManager.GetString("BothBlankMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Both  Customer and Functional Currency.
+        /// </summary>
+        public static string BothCurrency {
+            get {
+                return ResourceManager.GetString("BothCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sage Intelligence.
         /// </summary>
         public static string BX {
             get {
                 return ResourceManager.GetString("BX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calendar Year Totals.
+        /// </summary>
+        public static string CalendarYearTotals {
+            get {
+                return ResourceManager.GetString("CalendarYearTotals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Canadian Payroll.
+        /// </summary>
+        public static string CanadianPayroll {
+            get {
+                return ResourceManager.GetString("CanadianPayroll", resourceCulture);
             }
         }
         
@@ -637,6 +808,60 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Class.
+        /// </summary>
+        public static string Class {
+            get {
+                return ResourceManager.GetString("Class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Class 1.
+        /// </summary>
+        public static string Class1 {
+            get {
+                return ResourceManager.GetString("Class1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Class 2.
+        /// </summary>
+        public static string Class2 {
+            get {
+                return ResourceManager.GetString("Class2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Class 3.
+        /// </summary>
+        public static string Class3 {
+            get {
+                return ResourceManager.GetString("Class3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Class 4.
+        /// </summary>
+        public static string Class4 {
+            get {
+                return ResourceManager.GetString("Class4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Closed.
+        /// </summary>
+        public static string Closed {
+            get {
+                return ResourceManager.GetString("Closed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color.
         /// </summary>
         public static string Color {
@@ -691,6 +916,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Completed.
+        /// </summary>
+        public static string Completed {
+            get {
+                return ResourceManager.GetString("Completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contract Code.
         /// </summary>
         public static string ContractCode {
@@ -714,6 +948,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string ContractCodeTo {
             get {
                 return ResourceManager.GetString("ContractCodeTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract Start Date.
+        /// </summary>
+        public static string ContractStartDate {
+            get {
+                return ResourceManager.GetString("ContractStartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} Status.
+        /// </summary>
+        public static string ContractStatus {
+            get {
+                return ResourceManager.GetString("ContractStatus", resourceCulture);
             }
         }
         
@@ -759,6 +1011,123 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string CP {
             get {
                 return ResourceManager.GetString("CP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Employee Earn/Ded Audit.
+        /// </summary>
+        public static string CP_AssignEmployeeEarnDedAudit {
+            get {
+                return ResourceManager.GetString("CP_AssignEmployeeEarnDedAudit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Employee Tax Audit.
+        /// </summary>
+        public static string CP_AssignEmployeeTaxAudit {
+            get {
+                return ResourceManager.GetString("CP_AssignEmployeeTaxAudit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cheque Date.
+        /// </summary>
+        public static string CP_CheckDate {
+            get {
+                return ResourceManager.GetString("CP_CheckDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cheque Number.
+        /// </summary>
+        public static string CP_CheckNumber {
+            get {
+                return ResourceManager.GetString("CP_CheckNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cheque Type.
+        /// </summary>
+        public static string CP_ChequeType {
+            get {
+                return ResourceManager.GetString("CP_ChequeType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Cheque Date.
+        /// </summary>
+        public static string CP_FromCheckDate {
+            get {
+                return ResourceManager.GetString("CP_FromCheckDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual Cheques.
+        /// </summary>
+        public static string CP_ManualChecks {
+            get {
+                return ResourceManager.GetString("CP_ManualChecks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pre-Cheque Payroll Job Register Report.
+        /// </summary>
+        public static string CP_Pre_CheckPayrollJobRegisterTitle {
+            get {
+                return ResourceManager.GetString("CP_Pre-CheckPayrollJobRegisterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pre-Cheque Payroll Register Report.
+        /// </summary>
+        public static string CP_Pre_CheckPayrollRegisterTitle {
+            get {
+                return ResourceManager.GetString("CP_Pre-CheckPayrollRegisterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reversed Cheques.
+        /// </summary>
+        public static string CP_ReversedChecks {
+            get {
+                return ResourceManager.GetString("CP_ReversedChecks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show SIN Numbers.
+        /// </summary>
+        public static string CP_ShowSINNumbers {
+            get {
+                return ResourceManager.GetString("CP_ShowSINNumbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Cheques.
+        /// </summary>
+        public static string CP_SystemChecks {
+            get {
+                return ResourceManager.GetString("CP_SystemChecks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Cheque Date.
+        /// </summary>
+        public static string CP_ToCheckDate {
+            get {
+                return ResourceManager.GetString("CP_ToCheckDate", resourceCulture);
             }
         }
         
@@ -844,6 +1213,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer Currency.
+        /// </summary>
+        public static string CustomerCurrency {
+            get {
+                return ResourceManager.GetString("CustomerCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customer Item Number.
         /// </summary>
         public static string CustomerItemNumber {
@@ -898,6 +1276,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daily.
+        /// </summary>
+        public static string Daily {
+            get {
+                return ResourceManager.GetString("Daily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string Date {
@@ -916,11 +1303,56 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date Range.
+        /// </summary>
+        public static string DateRange {
+            get {
+                return ResourceManager.GetString("DateRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to December.
+        /// </summary>
+        public static string December {
+            get {
+                return ResourceManager.GetString("December", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decimals.
+        /// </summary>
+        public static string Decimals {
+            get {
+                return ResourceManager.GetString("Decimals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Line.
+        /// </summary>
+        public static string DeleteLine {
+            get {
+                return ResourceManager.GetString("DeleteLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Detail.
         /// </summary>
         public static string Detail {
             get {
                 return ResourceManager.GetString("Detail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detail Dates/Hours.
+        /// </summary>
+        public static string DetailDatesHours {
+            get {
+                return ResourceManager.GetString("DetailDatesHours", resourceCulture);
             }
         }
         
@@ -979,6 +1411,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Earnings And Deduction.
+        /// </summary>
+        public static string EarningsAndDeduction {
+            get {
+                return ResourceManager.GetString("EarningsAndDeduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT.
+        /// </summary>
+        public static string EFT {
+            get {
+                return ResourceManager.GetString("EFT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT Options Report.
+        /// </summary>
+        public static string EFTOptionsTitle {
+            get {
+                return ResourceManager.GetString("EFTOptionsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Employee.
         /// </summary>
         public static string Employee {
@@ -997,11 +1456,56 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Employee List.
+        /// </summary>
+        public static string EmployeeList {
+            get {
+                return ResourceManager.GetString("EmployeeList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Name.
+        /// </summary>
+        public static string EmployeeName {
+            get {
+                return ResourceManager.GetString("EmployeeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Number.
+        /// </summary>
+        public static string EmployeeNumber {
+            get {
+                return ResourceManager.GetString("EmployeeNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Subtotals.
+        /// </summary>
+        public static string EmployeeSubtotals {
+            get {
+                return ResourceManager.GetString("EmployeeSubtotals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To Employee.
         /// </summary>
         public static string EmployeeTo {
             get {
                 return ResourceManager.GetString("EmployeeTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  .
+        /// </summary>
+        public static string Empty {
+            get {
+                return ResourceManager.GetString("Empty", resourceCulture);
             }
         }
         
@@ -1051,6 +1555,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Estimated.
+        /// </summary>
+        public static string Estimated {
+            get {
+                return ResourceManager.GetString("Estimated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to February.
+        /// </summary>
+        public static string February {
+            get {
+                return ResourceManager.GetString("February", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        public static string From {
+            get {
+                return ResourceManager.GetString("From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Account Group Code.
         /// </summary>
         public static string FromAccountGroupCode {
@@ -1069,11 +1600,38 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From Class.
+        /// </summary>
+        public static string FromClass {
+            get {
+                return ResourceManager.GetString("FromClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Class Code.
+        /// </summary>
+        public static string FromClassCode {
+            get {
+                return ResourceManager.GetString("FromClassCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Company ID.
         /// </summary>
         public static string FromCompany {
             get {
                 return ResourceManager.GetString("FromCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From {0} Start Date.
+        /// </summary>
+        public static string FromContractStartDate {
+            get {
+                return ResourceManager.GetString("FromContractStartDate", resourceCulture);
             }
         }
         
@@ -1092,6 +1650,42 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string FromDate {
             get {
                 return ResourceManager.GetString("FromDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Employee.
+        /// </summary>
+        public static string FromEmployee {
+            get {
+                return ResourceManager.GetString("FromEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Employee Number.
+        /// </summary>
+        public static string FromEmployeeNumber {
+            get {
+                return ResourceManager.GetString("FromEmployeeNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Fiscal Year and Period.
+        /// </summary>
+        public static string FromFiscalYearPeriod {
+            get {
+                return ResourceManager.GetString("FromFiscalYearPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Follow-up-Date.
+        /// </summary>
+        public static string FromFollowUpDate {
+            get {
+                return ResourceManager.GetString("FromFollowUpDate", resourceCulture);
             }
         }
         
@@ -1123,6 +1717,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From Posting Sequence.
+        /// </summary>
+        public static string FromPostingSequence {
+            get {
+                return ResourceManager.GetString("FromPostingSequence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From {0} Start Date.
+        /// </summary>
+        public static string FromProjectStartDate {
+            get {
+                return ResourceManager.GetString("FromProjectStartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Tax Authority.
         /// </summary>
         public static string FromTaxAuthority {
@@ -1137,6 +1749,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string FromTaxGroup {
             get {
                 return ResourceManager.GetString("FromTaxGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Transaction Date.
+        /// </summary>
+        public static string FromTransactionDate {
+            get {
+                return ResourceManager.GetString("FromTransactionDate", resourceCulture);
             }
         }
         
@@ -1159,11 +1780,29 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Functional Currency.
+        /// </summary>
+        public static string FunctionalCurrency {
+            get {
+                return ResourceManager.GetString("FunctionalCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to General Ledger.
         /// </summary>
         public static string GL {
             get {
                 return ResourceManager.GetString("GL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Account Description.
+        /// </summary>
+        public static string GL_AccountDescription {
+            get {
+                return ResourceManager.GetString("GL_AccountDescription", resourceCulture);
             }
         }
         
@@ -1227,6 +1866,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string GL_SegmentCodeTitle {
             get {
                 return ResourceManager.GetString("GL_SegmentCodeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Integration Report.
+        /// </summary>
+        public static string GLIntegrationTitle {
+            get {
+                return ResourceManager.GetString("GLIntegrationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hire Date.
+        /// </summary>
+        public static string HireDate {
+            get {
+                return ResourceManager.GetString("HireDate", resourceCulture);
             }
         }
         
@@ -1438,11 +2095,47 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inactive.
+        /// </summary>
+        public static string InActive {
+            get {
+                return ResourceManager.GetString("InActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactive Date.
+        /// </summary>
+        public static string InactiveDate {
+            get {
+                return ResourceManager.GetString("InactiveDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactive ROE Pending.
+        /// </summary>
+        public static string InactiveRoePending {
+            get {
+                return ResourceManager.GetString("InactiveRoePending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Include.
         /// </summary>
         public static string Include {
             get {
                 return ResourceManager.GetString("Include", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Billing Information.
+        /// </summary>
+        public static string IncludeBillingInformation {
+            get {
+                return ResourceManager.GetString("IncludeBillingInformation", resourceCulture);
             }
         }
         
@@ -1470,6 +2163,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string IncludeCostsForEachItem {
             get {
                 return ResourceManager.GetString("IncludeCostsForEachItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Employees.
+        /// </summary>
+        public static string IncludeEmployees {
+            get {
+                return ResourceManager.GetString("IncludeEmployees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Information.
+        /// </summary>
+        public static string IncludeInformation {
+            get {
+                return ResourceManager.GetString("IncludeInformation", resourceCulture);
             }
         }
         
@@ -1533,6 +2244,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string InterestProfileTo {
             get {
                 return ResourceManager.GetString("InterestProfileTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to entry in the .
+        /// </summary>
+        public static string InvalidEntryMsgTxt {
+            get {
+                return ResourceManager.GetString("InvalidEntryMsgTxt", resourceCulture);
             }
         }
         
@@ -1672,11 +2392,74 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to January.
+        /// </summary>
+        public static string January {
+            get {
+                return ResourceManager.GetString("January", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Job Details.
+        /// </summary>
+        public static string JobDetails {
+            get {
+                return ResourceManager.GetString("JobDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Job Related Details.
         /// </summary>
         public static string JobRelatedDetails {
             get {
                 return ResourceManager.GetString("JobRelatedDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to July.
+        /// </summary>
+        public static string July {
+            get {
+                return ResourceManager.GetString("July", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to June.
+        /// </summary>
+        public static string June {
+            get {
+                return ResourceManager.GetString("June", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Maintained Date.
+        /// </summary>
+        public static string LastMaintainedDate {
+            get {
+                return ResourceManager.GetString("LastMaintainedDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Raised Date.
+        /// </summary>
+        public static string LastRaisedDate {
+            get {
+                return ResourceManager.GetString("LastRaisedDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Review Date.
+        /// </summary>
+        public static string LastReviewDate {
+            get {
+                return ResourceManager.GetString("LastReviewDate", resourceCulture);
             }
         }
         
@@ -1717,6 +2500,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manual Cheques.
+        /// </summary>
+        public static string ManualCheques {
+            get {
+                return ResourceManager.GetString("ManualCheques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manufacturer&apos;s Item Number.
         /// </summary>
         public static string ManufacturersItemNumber {
@@ -1744,6 +2536,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to March.
+        /// </summary>
+        public static string March {
+            get {
+                return ResourceManager.GetString("March", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mask Structure.
         /// </summary>
         public static string MaskStructure {
@@ -1767,6 +2568,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string MaskStructureTo {
             get {
                 return ResourceManager.GetString("MaskStructureTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to May.
+        /// </summary>
+        public static string May {
+            get {
+                return ResourceManager.GetString("May", resourceCulture);
             }
         }
         
@@ -1843,6 +2653,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Month.
+        /// </summary>
+        public static string Month {
+            get {
+                return ResourceManager.GetString("Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monthly.
+        /// </summary>
+        public static string Monthly {
+            get {
+                return ResourceManager.GetString("Monthly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Multiple Contacts.
         /// </summary>
         public static string MT {
@@ -1852,11 +2680,47 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to November.
+        /// </summary>
+        public static string November {
+            get {
+                return ResourceManager.GetString("November", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Numeric Field Label.
         /// </summary>
         public static string NumericFieldLabel {
             get {
                 return ResourceManager.GetString("NumericFieldLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O/E.
+        /// </summary>
+        public static string O_E {
+            get {
+                return ResourceManager.GetString("O/E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to October.
+        /// </summary>
+        public static string October {
+            get {
+                return ResourceManager.GetString("October", resourceCulture);
             }
         }
         
@@ -1933,6 +2797,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to On Hold.
+        /// </summary>
+        public static string OnHold {
+            get {
+                return ResourceManager.GetString("OnHold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open.
+        /// </summary>
+        public static string Open {
+            get {
+                return ResourceManager.GetString("Open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Option 1.
         /// </summary>
         public static string Option1 {
@@ -1978,11 +2860,47 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Optional Field.
+        /// </summary>
+        public static string OptionalField {
+            get {
+                return ResourceManager.GetString("OptionalField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Optional Fields.
         /// </summary>
         public static string OptionalFields {
             get {
                 return ResourceManager.GetString("OptionalFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Fields Report.
+        /// </summary>
+        public static string OptionalFieldsTitle {
+            get {
+                return ResourceManager.GetString("OptionalFieldsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options Report.
+        /// </summary>
+        public static string OptionsTitle {
+            get {
+                return ResourceManager.GetString("OptionsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        public static string Other {
+            get {
+                return ResourceManager.GetString("Other", resourceCulture);
             }
         }
         
@@ -2014,6 +2932,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PJC.
+        /// </summary>
+        public static string P_M {
+            get {
+                return ResourceManager.GetString("P/M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P/O.
+        /// </summary>
+        public static string P_O {
+            get {
+                return ResourceManager.GetString("P/O", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay Frequency.
+        /// </summary>
+        public static string PayFrequency {
+            get {
+                return ResourceManager.GetString("PayFrequency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Selection Code.
         /// </summary>
         public static string PaymentSelectionCode {
@@ -2037,6 +2982,69 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string PaymentSelectionCodeTo {
             get {
                 return ResourceManager.GetString("PaymentSelectionCodeTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay Period End Date.
+        /// </summary>
+        public static string PayPeriodEndDate {
+            get {
+                return ResourceManager.GetString("PayPeriodEndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Earnings and Hours Report.
+        /// </summary>
+        public static string PayrollEarningandHoursReport {
+            get {
+                return ResourceManager.GetString("PayrollEarningandHoursReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Employee Information Report.
+        /// </summary>
+        public static string PayrollEmployeeInformation {
+            get {
+                return ResourceManager.GetString("PayrollEmployeeInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Employee Selection.
+        /// </summary>
+        public static string PayrollEmployeeSelection {
+            get {
+                return ResourceManager.GetString("PayrollEmployeeSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Employee Selection Report.
+        /// </summary>
+        public static string PayrollEmployeeSelectionReport {
+            get {
+                return ResourceManager.GetString("PayrollEmployeeSelectionReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Processing Exceptions Report.
+        /// </summary>
+        public static string PayrollProcessingExceptionsReport {
+            get {
+                return ResourceManager.GetString("PayrollProcessingExceptionsReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Register Report.
+        /// </summary>
+        public static string PayrollRegisterTitle {
+            get {
+                return ResourceManager.GetString("PayrollRegisterTitle", resourceCulture);
             }
         }
         
@@ -2194,6 +3202,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PJC Transaction History Report.
+        /// </summary>
+        public static string PMTransactionHistoryReportTitle {
+            get {
+                return ResourceManager.GetString("PMTransactionHistoryReportTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchase Orders.
         /// </summary>
         public static string PO {
@@ -2311,6 +3328,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Posting Sequence.
+        /// </summary>
+        public static string PostingSequence {
+            get {
+                return ResourceManager.GetString("PostingSequence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Price List Code.
         /// </summary>
         public static string PriceListCode {
@@ -2356,6 +3382,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Print Amount In.
+        /// </summary>
+        public static string PrintAmountIn {
+            get {
+                return ResourceManager.GetString("PrintAmountIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Print Amounts In.
         /// </summary>
         public static string PrintAmountsIn {
@@ -2379,6 +3414,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string PrintDetailsWithItemNotAllowed {
             get {
                 return ResourceManager.GetString("PrintDetailsWithItemNotAllowed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processing Exceptions Report.
+        /// </summary>
+        public static string ProcessingExceptionsReport {
+            get {
+                return ResourceManager.GetString("ProcessingExceptionsReport", resourceCulture);
             }
         }
         
@@ -2424,6 +3468,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string Projects {
             get {
                 return ResourceManager.GetString("Projects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project Start Date.
+        /// </summary>
+        public static string ProjectStartDate {
+            get {
+                return ResourceManager.GetString("ProjectStartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} Status.
+        /// </summary>
+        public static string ProjectStatus {
+            get {
+                return ResourceManager.GetString("ProjectStatus", resourceCulture);
             }
         }
         
@@ -2491,6 +3553,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quarterly.
+        /// </summary>
+        public static string Quarterly {
+            get {
+                return ResourceManager.GetString("Quarterly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Radio Button Group Label.
         /// </summary>
         public static string RadioButtonGroupLabel {
@@ -2505,6 +3576,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string ReorderQuantitiesFor {
             get {
                 return ResourceManager.GetString("ReorderQuantitiesFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report Format.
+        /// </summary>
+        public static string ReportFormat {
+            get {
+                return ResourceManager.GetString("ReportFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report Type.
+        /// </summary>
+        public static string ReportType {
+            get {
+                return ResourceManager.GetString("ReportType", resourceCulture);
             }
         }
         
@@ -2608,6 +3697,42 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Selection List.
+        /// </summary>
+        public static string Selectionlist {
+            get {
+                return ResourceManager.GetString("Selectionlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Transaction By.
+        /// </summary>
+        public static string SelectTransactionBy {
+            get {
+                return ResourceManager.GetString("SelectTransactionBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semimonthly.
+        /// </summary>
+        public static string Semimonthly {
+            get {
+                return ResourceManager.GetString("Semimonthly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to September.
+        /// </summary>
+        public static string September {
+            get {
+                return ResourceManager.GetString("September", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Series.
         /// </summary>
         public static string Series {
@@ -2644,11 +3769,29 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show EFT Bank Account Numbers.
+        /// </summary>
+        public static string ShowEFTBankAccountNumbers {
+            get {
+                return ResourceManager.GetString("ShowEFTBankAccountNumbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Settings.
         /// </summary>
         public static string ShowSettings {
             get {
                 return ResourceManager.GetString("ShowSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sort By.
+        /// </summary>
+        public static string SortBy {
+            get {
+                return ResourceManager.GetString("SortBy", resourceCulture);
             }
         }
         
@@ -2770,6 +3913,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System Cheques.
+        /// </summary>
+        public static string SystemCheques {
+            get {
+                return ResourceManager.GetString("SystemCheques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Taxes.
         /// </summary>
         public static string Taxes {
@@ -2824,6 +3976,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Terminated.
+        /// </summary>
+        public static string Terminated {
+            get {
+                return ResourceManager.GetString("Terminated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terminated ROE Pending.
+        /// </summary>
+        public static string TerminateRoePending {
+            get {
+                return ResourceManager.GetString("TerminateRoePending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Termination Date.
+        /// </summary>
+        public static string TerminationDate {
+            get {
+                return ResourceManager.GetString("TerminationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Terms Code.
         /// </summary>
         public static string TermsCode {
@@ -2851,6 +4030,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Then By.
+        /// </summary>
+        public static string ThenBy {
+            get {
+                return ResourceManager.GetString("ThenBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To.
+        /// </summary>
+        public static string To {
+            get {
+                return ResourceManager.GetString("To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To Account Group Code.
         /// </summary>
         public static string ToAccountGroupCode {
@@ -2869,11 +4066,38 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To Class.
+        /// </summary>
+        public static string ToClass {
+            get {
+                return ResourceManager.GetString("ToClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Class Code.
+        /// </summary>
+        public static string ToClassCode {
+            get {
+                return ResourceManager.GetString("ToClassCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To Company ID.
         /// </summary>
         public static string ToCompany {
             get {
                 return ResourceManager.GetString("ToCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To {0} End Date.
+        /// </summary>
+        public static string ToContractEndDate {
+            get {
+                return ResourceManager.GetString("ToContractEndDate", resourceCulture);
             }
         }
         
@@ -2892,6 +4116,42 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string ToDate {
             get {
                 return ResourceManager.GetString("ToDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Employee.
+        /// </summary>
+        public static string ToEmployee {
+            get {
+                return ResourceManager.GetString("ToEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Employee Number.
+        /// </summary>
+        public static string ToEmployeeNumber {
+            get {
+                return ResourceManager.GetString("ToEmployeeNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Fiscal Year and Period.
+        /// </summary>
+        public static string ToFiscalYearPeriod {
+            get {
+                return ResourceManager.GetString("ToFiscalYearPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Follow-up-Date.
+        /// </summary>
+        public static string ToFollowUpDate {
+            get {
+                return ResourceManager.GetString("ToFollowUpDate", resourceCulture);
             }
         }
         
@@ -2923,6 +4183,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To Posting Sequence.
+        /// </summary>
+        public static string ToPostingSequence {
+            get {
+                return ResourceManager.GetString("ToPostingSequence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To {0} End Date.
+        /// </summary>
+        public static string ToProjectEndDate {
+            get {
+                return ResourceManager.GetString("ToProjectEndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To Tax Authority.
         /// </summary>
         public static string ToTaxAuthority {
@@ -2941,6 +4219,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To Transaction Date.
+        /// </summary>
+        public static string ToTransactionDate {
+            get {
+                return ResourceManager.GetString("ToTransactionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To User ID.
         /// </summary>
         public static string ToUser {
@@ -2955,6 +4242,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string ToVendorNumber {
             get {
                 return ResourceManager.GetString("ToVendorNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Transaction By.
+        /// </summary>
+        public static string TransactionBy {
+            get {
+                return ResourceManager.GetString("TransactionBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction Date.
+        /// </summary>
+        public static string TransactionDate {
+            get {
+                return ResourceManager.GetString("TransactionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Transaction History Report.
+        /// </summary>
+        public static string TransactionHistoryReportTitle {
+            get {
+                return ResourceManager.GetString("TransactionHistoryReportTitle", resourceCulture);
             }
         }
         
@@ -3013,6 +4327,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unit of Measure.
         /// </summary>
         public static string UnitOfMeasure {
@@ -3031,11 +4354,137 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assign Employee Earn/Ded Audit.
+        /// </summary>
+        public static string UP_AssignEmployeeEarnDedAudit {
+            get {
+                return ResourceManager.GetString("UP_AssignEmployeeEarnDedAudit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Employee Tax Audit.
+        /// </summary>
+        public static string UP_AssignEmployeeTaxAudit {
+            get {
+                return ResourceManager.GetString("UP_AssignEmployeeTaxAudit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check Date.
+        /// </summary>
+        public static string UP_CheckDate {
+            get {
+                return ResourceManager.GetString("UP_CheckDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check Number.
+        /// </summary>
+        public static string UP_CheckNumber {
+            get {
+                return ResourceManager.GetString("UP_CheckNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check Type.
+        /// </summary>
+        public static string UP_ChequeType {
+            get {
+                return ResourceManager.GetString("UP_ChequeType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Check Date.
+        /// </summary>
+        public static string UP_FromCheckDate {
+            get {
+                return ResourceManager.GetString("UP_FromCheckDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual Checks.
+        /// </summary>
+        public static string UP_ManualChecks {
+            get {
+                return ResourceManager.GetString("UP_ManualChecks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pre-Check Payroll Job Register Report.
+        /// </summary>
+        public static string UP_Pre_CheckPayrollJobRegisterTitle {
+            get {
+                return ResourceManager.GetString("UP_Pre-CheckPayrollJobRegisterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pre-Check Payroll Register Report.
+        /// </summary>
+        public static string UP_Pre_CheckPayrollRegisterTitle {
+            get {
+                return ResourceManager.GetString("UP_Pre-CheckPayrollRegisterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reversed Checks.
+        /// </summary>
+        public static string UP_ReversedChecks {
+            get {
+                return ResourceManager.GetString("UP_ReversedChecks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show SSN Numbers.
+        /// </summary>
+        public static string UP_ShowSINNumbers {
+            get {
+                return ResourceManager.GetString("UP_ShowSINNumbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Checks.
+        /// </summary>
+        public static string UP_SystemChecks {
+            get {
+                return ResourceManager.GetString("UP_SystemChecks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Check Date.
+        /// </summary>
+        public static string UP_ToCheckDate {
+            get {
+                return ResourceManager.GetString("UP_ToCheckDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User.
         /// </summary>
         public static string User {
             get {
                 return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to US Payroll.
+        /// </summary>
+        public static string USPayroll {
+            get {
+                return ResourceManager.GetString("USPayroll", resourceCulture);
             }
         }
         
@@ -3121,6 +4570,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Weekly.
+        /// </summary>
+        public static string Weekly {
+            get {
+                return ResourceManager.GetString("Weekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Year.
+        /// </summary>
+        public static string Year {
+            get {
+                return ResourceManager.GetString("Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Year.
         /// </summary>
         public static string YearFrom {
@@ -3130,11 +4597,29 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fiscal Year and Period.
+        /// </summary>
+        public static string YearPeriod {
+            get {
+                return ResourceManager.GetString("YearPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To Year.
         /// </summary>
         public static string YearTo {
             get {
                 return ResourceManager.GetString("YearTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

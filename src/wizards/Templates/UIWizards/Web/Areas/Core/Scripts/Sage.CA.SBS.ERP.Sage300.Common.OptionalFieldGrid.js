@@ -138,6 +138,28 @@ sg.optionalFieldControl = function () {
     }
 
     /**
+    *  @description Blank out grid cell (usually description fields on invalid OPTFIELD and VALUE inputs)
+    *  @param {string} gridName The name of the grid.
+    *  @param {Number} rowIndex The slected row index.
+    *  @param {object} dataItem The text/value pair list
+    *  @param {string} fieldName The name of the grid column to blank out.
+    *  @param {any} value The value to blank out cell with
+    *  @return {void}  
+    */
+    function _blankGridCell(gridName, rowIndex, dataItem, fieldName, value) {
+        if (dataItem[fieldName] !== value) {
+            dataItem[fieldName] = value;
+            // 'refresh' grid-cell without trip to server for value validation
+            var grid = $('#' + gridName).data("kendoGrid");
+            var colIndex = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName);
+            var cell = grid.tbody.find(">tr:eq(" + rowIndex + ") >td:eq(" + colIndex + ")");
+            if (cell !== null && cell !== undefined && 0 < cell.length) {
+                cell[0].innerText = value;
+            }
+        }
+    }
+
+    /**
     * @description Generate the grid columns based on model column definitions(get from business view)
     * @param {string} gridName The grid name
     * @return {object} The column template
@@ -903,10 +925,27 @@ sg.optionalFieldControl = function () {
 
         _lastErrorResult[gridName].message = "";
         //_lastRowNumber[gridName] = -1;
-        if (dataItem.TYPE === ValueTypeEnum.Time)
+        if (dataItem.TYPE === ValueTypeEnum.Time) {
            dataItem[fieldName] = "";
-        else
+        } else {
            dataItem[fieldName] = _lastErrorResult[gridName][fieldName + "Value"];
+        }
+
+        if (dataItem[fieldName] === "") {
+            // clear description fields residual data
+            switch (fieldName) {
+                case "OPTFIELD":
+                    _blankGridCell(gridName, rowIndex, dataItem, "FDESC", "");
+                    break;
+                case "VALUE":
+                    dataItem["SWSET"] = 0;
+                    _blankGridCell(gridName, rowIndex, dataItem, "VDESC", "");
+                    break;
+                default:
+                    break;
+            }
+        }
+
         _setEditCell(grid, rowIndex, fieldName);
     }
     /**
@@ -1049,10 +1088,10 @@ sg.optionalFieldControl = function () {
                             grid.dataItem(sel).VALUE = r.VALUE.replace(/_/g, "0");
                         }
                     }
-                    if (r.VALUE === null || r.VALUE === "") {
-                        grid.dataItem(sel).VDESC = "";
+                    if ((r.VALUE === null || r.VALUE === "") && 0 < sel.length) {
                         grid.dataItem(sel).SWSET = 0;
-                        return grid.refresh();
+                        _blankGridCell(gridName, sel[0].rowIndex, grid.dataItem(sel), "VDESC", "");
+                        return;
                     }
                 }
             }
@@ -1262,9 +1301,11 @@ sg.optionalFieldControl = function () {
             if (selectedRowData.dirty) {
 
                 // Save the row
-                _sendRequest(gridName, RequestTypeEnum.Save, "", function () {
+                _sendRequest(gridName, RequestTypeEnum.Save, "", function (isSuccess) {
                     console.log("add line call back");
-                    _addLine(gridName);
+                    if (isSuccess) {
+                        _addLine(gridName);
+                    }
                 });
 
                 return;
@@ -1355,9 +1396,6 @@ sg.optionalFieldControl = function () {
      * @param {string} parentGridName The parent grid name
      */
     function showPopUp(gridName, popupElementId, isReadOnly, filter, parentGridName) {
-        if (parentGridName) {
-            sg.viewList.moveToCurrentRow(parentGridName);
-        }
         sg.utls.openKendoWindowPopup('#' + popupElementId, null);
         if (filter) {
             _filter[gridName] = filter;

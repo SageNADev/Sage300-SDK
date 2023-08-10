@@ -205,6 +205,8 @@
     overflow: hidden;
     z-index: 10;
     position: relative;
+    border: 1px solid #9a9b9c;
+    border-radius: 8px;
     .box-sizing(border-box);
 
     &:before {
@@ -216,6 +218,22 @@
       position: absolute;
       height: 100%;
       width: 32px;
+    }
+
+    &.multiError-msg {
+      border-color: @brand-danger;
+    }
+
+    &.multiWarn-msg {
+      border-color: @brand-warning;
+    }
+
+    &.multiInfo-msg {
+      border-color: @brand-info;
+    }
+
+    &.success-msg {
+      border-color: @sage-green;
     }
 
     &:after {
@@ -263,14 +281,12 @@
 
     .title { 
        background-color: @white;
-       border: 1px solid #9a9b9c;
-       border-bottom: 0;
+       border: none;
     }
 
     .msg-content { 
        background-color: @white;
-       border: 1px solid #9a9b9c;
-       border-top: 0;
+       border: none;
        padding: 0 16px 16px 50px;
     }
 

@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Employee" xml:space="preserve">
+    <value>Employé</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Dernière modification</value>
+  </data>
+  <data name="EmployeeTemplate" xml:space="preserve">
+    <value>Gabarit d&apos;employé</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="MiddleName" xml:space="preserve">
+    <value>2e prénom</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Nom complet</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Adresse ligne 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Adresse ligne 2</value>
+  </data>
+  <data name="AddressLine3" xml:space="preserve">
+    <value>Adresse ligne 3</value>
+  </data>
+  <data name="AddressLine4" xml:space="preserve">
+    <value>Adresse ligne 4</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Ville</value>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>État/Province</value>
+  </data>
+  <data name="ZIPCode" xml:space="preserve">
+    <value>Code postal</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="SocialSecurityNumber" xml:space="preserve">
+    <value>Numéro assurance sociale</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Date de naissance</value>
+  </data>
+  <data name="EmploymentStatus" xml:space="preserve">
+    <value>État d’emploi</value>
+  </data>
+  <data name="HireDate" xml:space="preserve">
+    <value>Date d’embauche</value>
+  </data>
+  <data name="TerminationDate" xml:space="preserve">
+    <value>Date de départ</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Poste</value>
+  </data>
+  <data name="PartTime" xml:space="preserve">
+    <value>Temps partiel</value>
+  </data>
+  <data name="PayFrequency" xml:space="preserve">
+    <value>Fréquence de paie</value>
+  </data>
+  <data name="CheckLanguage" xml:space="preserve">
+    <value>Langue du chèque</value>
+  </data>
+  <data name="HoursPerPeriod" xml:space="preserve">
+    <value>Heures par période</value>
+  </data>
+  <data name="WorkersCompensationCode" xml:space="preserve">
+    <value>Code de CSST</value>
+  </data>
+  <data name="OvertimeSchedule" xml:space="preserve">
+    <value>Table d&apos;heures supplémentaires</value>
+  </data>
+  <data name="ShiftDifferentialSchedule" xml:space="preserve">
+    <value>Table de prime de quart</value>
+  </data>
+  <data name="ShiftNumber" xml:space="preserve">
+    <value>Quart</value>
+  </data>
+  <data name="TimesLate" xml:space="preserve">
+    <value>Retards</value>
+  </data>
+  <data name="EntrySequence" xml:space="preserve">
+    <value>Séquence de saisie</value>
+  </data>
+  <data name="Class1" xml:space="preserve">
+    <value>Classe 1 de paie</value>
+  </data>
+  <data name="Class2" xml:space="preserve">
+    <value>Classe 2 de paie</value>
+  </data>
+  <data name="Class3" xml:space="preserve">
+    <value>Classe 3 de paie</value>
+  </data>
+  <data name="Class4" xml:space="preserve">
+    <value>Classe 4 de paie</value>
+  </data>
+  <data name="SegmentCode1" xml:space="preserve">
+    <value>Code segment 1</value>
+  </data>
+  <data name="SegmentCode2" xml:space="preserve">
+    <value>Code segment 2</value>
+  </data>
+  <data name="SegmentCode3" xml:space="preserve">
+    <value>Code segment 3</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="Manager" xml:space="preserve">
+    <value>Gestionnaire</value>
+  </data>
+  <data name="LastReviewDate" xml:space="preserve">
+    <value>Date dernière évaluation</value>
+  </data>
+  <data name="DateOfLastRaise" xml:space="preserve">
+    <value>Date dernière augmentation</value>
+  </data>
+  <data name="AlternateAddressLine1" xml:space="preserve">
+    <value>Ligne adresse secondaire 1</value>
+  </data>
+  <data name="AlternateAddressLine2" xml:space="preserve">
+    <value>Ligne adresse secondaire 2</value>
+  </data>
+  <data name="AlternateAddressLine3" xml:space="preserve">
+    <value>Ligne adresse secondaire 3</value>
+  </data>
+  <data name="AlternateAddressLine4" xml:space="preserve">
+    <value>Ligne adresse secondaire 4</value>
+  </data>
+  <data name="AlternateCity" xml:space="preserve">
+    <value>Autre ville</value>
+  </data>
+  <data name="AlternateStateProvince" xml:space="preserve">
+    <value>Autre province</value>
+  </data>
+  <data name="AlternateZIPPostalCode" xml:space="preserve">
+    <value>Autre code postal</value>
+  </data>
+  <data name="AlternateCountry" xml:space="preserve">
+    <value>Autre pays</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>F/M</value>
+  </data>
+  <data name="EmergencyContact" xml:space="preserve">
+    <value>Contact en cas d&apos;urgence</value>
+  </data>
+  <data name="EmergencyPhone" xml:space="preserve">
+    <value>N° téléphone en cas d&apos;urgence</value>
+  </data>
+  <data name="MinimumWage" xml:space="preserve">
+    <value>Salaire minimum</value>
+  </data>
+  <data name="VacationID" xml:space="preserve">
+    <value>Code vacance</value>
+  </data>
+  <data name="SickPayID" xml:space="preserve">
+    <value>Code indemnité maladie</value>
+  </data>
+  <data name="CompTimeID" xml:space="preserve">
+    <value>Code crédit d’heures</value>
+  </data>
+  <data name="SSNFormat" xml:space="preserve">
+    <value>Format NAS</value>
+  </data>
+  <data name="DISABILITY" xml:space="preserve">
+    <value>RÉSERVÉ - Infirmité</value>
+  </data>
+  <data name="RPP" xml:space="preserve">
+    <value>Numéro de régime de retraite agréé</value>
+  </data>
+  <data name="StateOfHire" xml:space="preserve">
+    <value>Province d&apos;emploi</value>
+  </data>
+  <data name="TimecardUserID" xml:space="preserve">
+    <value>Code utilisateur de feuilles de temps</value>
+  </data>
+  <data name="DirectDeposit" xml:space="preserve">
+    <value>Dépôt direct</value>
+  </data>
+  <data name="BankTransferName" xml:space="preserve">
+    <value>Nom du virement bancaire</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Référence</value>
+  </data>
+  <data name="DiscretionaryData" xml:space="preserve">
+    <value>RÉSERVÉ - Seulement É.-U.</value>
+  </data>
+  <data name="WorkersCompGroup" xml:space="preserve">
+    <value>Groupe CSST</value>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>Inactif le</value>
+  </data>
+  <data name="NumberOfOptionalFields" xml:space="preserve">
+    <value>Nombre de champs optionnels</value>
+  </data>
+  <data name="RegularHoursPerDay" xml:space="preserve">
+    <value>Heures quotidiennes normales</value>
+  </data>
+  <data name="OvertimeCalculation" xml:space="preserve">
+    <value>Calcul heures supplémentaires</value>
+  </data>
+  <data name="CountryCode" xml:space="preserve">
+    <value>Code du pays</value>
+  </data>
+  <data name="WorkClassificationCode" xml:space="preserve">
+    <value>Code de classification d&apos;activité</value>
+  </data>
+  <data name="HoursPerWeek" xml:space="preserve">
+    <value>Heures hebdomadaires</value>
+  </data>
+  <data name="SourceApplication" xml:space="preserve">
+    <value>Application source</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="CalcOTonaWeeklyBasis" xml:space="preserve">
+    <value>Calc. hres supp. chaque semaine</value>
+  </data>
+  <data name="USCitizen" xml:space="preserve">
+    <value>Citoyen américain</value>
+  </data>
+  <data name="WorkLocation" xml:space="preserve">
+    <value>Lieu de travail</value>
+  </data>
+  <data name="WorkLocationAddress2" xml:space="preserve">
+    <value>Adresse lieu de travail 2</value>
+  </data>
+  <data name="WorkLocationAddress3" xml:space="preserve">
+    <value>Adresse lieu de travail 3</value>
+  </data>
+  <data name="WorkLocationAddress4" xml:space="preserve">
+    <value>Adresse lieu de travail 4</value>
+  </data>
+  <data name="WorkLocationCity" xml:space="preserve">
+    <value>Ville du lieu de travail</value>
+  </data>
+  <data name="WorkLocationStateProv" xml:space="preserve">
+    <value>État/Prov. du lieu de travail</value>
+  </data>
+  <data name="WorkLocationZipPostalCode" xml:space="preserve">
+    <value>Code postal du lieu de travail</value>
+  </data>
+  <data name="WorkLocationCountry" xml:space="preserve">
+    <value>Pays du lieu de travail</value>
+  </data>
+  <data name="RESERVEDSegmentCode4" xml:space="preserve">
+    <value>RÉSERVÉ - Code de segment 4</value>
+  </data>
+  <data name="RESERVEDSegmentCode5" xml:space="preserve">
+    <value>RÉSERVÉ - Code de segment 5</value>
+  </data>
+  <data name="RESERVEDSegmentCode6" xml:space="preserve">
+    <value>RÉSERVÉ - Code de segment 6</value>
+  </data>
+  <data name="SyncMasterGUID" xml:space="preserve">
+    <value>RÉSERVÉ - Seulement É.-U.</value>
+  </data>
+  <data name="EmployeeElectronicW2Consent" xml:space="preserve">
+    <value>RÉSERVÉ - Seulement É.-U.</value>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>Code traitement opération</value>
+  </data>
+  <data name="EmployeeSecurityFlag1" xml:space="preserve">
+    <value>Indicateur de sécurité de l’employé1</value>
+  </data>
+  <data name="EmployeeSecurityFlag2" xml:space="preserve">
+    <value>Indicateur de sécurité de l’employé2</value>
+  </data>
+  <data name="INTERNALUSESelectionList" xml:space="preserve">
+    <value>USAGE INTERNE - Liste de sélection</value>
+  </data>
+</root>

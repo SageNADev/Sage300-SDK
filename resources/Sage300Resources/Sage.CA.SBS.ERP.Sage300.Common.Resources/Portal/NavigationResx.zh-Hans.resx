@@ -1524,9 +1524,6 @@
   <data name="TS_ImportTaxCodes" xml:space="preserve">
     <value>T/S导入税务代码</value>
   </data>
-  <data name="TS_GSTF5" xml:space="preserve">
-    <value>T/S GST F5/F8</value>
-  </data>
   <data name="TS_GSTIAF" xml:space="preserve">
     <value>T/S GST IAF生成器</value>
   </data>
@@ -1571,9 +1568,6 @@
   </data>
   <data name="Configurations" xml:space="preserve">
     <value>配置</value>
-  </data>
-  <data name="GSTF5" xml:space="preserve">
-    <value>GST F5/F8</value>
   </data>
   <data name="GSTIAF" xml:space="preserve">
     <value>GST IAF生成器</value>
@@ -1804,5 +1798,17 @@
   </data>
   <data name="AS_UserActivityReport" xml:space="preserve">
     <value>用户活动报表</value>
+  </data>
+  <data name="PM_Adjustments" xml:space="preserve">
+    <value>调整</value>
+  </data>
+  <data name="PM_Timecards" xml:space="preserve">
+    <value>工时卡</value>
+  </data>
+  <data name="PM_TransactionHistory" xml:space="preserve">
+    <value>交易历史</value>
+  </data>
+  <data name="PM_Transaction_History" xml:space="preserve">
+    <value>交易历史</value>
   </data>
 </root>

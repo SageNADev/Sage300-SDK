@@ -1524,9 +1524,6 @@
   <data name="TS_ImportTaxCodes" xml:space="preserve">
     <value>T/S匯入稅務代碼</value>
   </data>
-  <data name="TS_GSTF5" xml:space="preserve">
-    <value>T/S GST F5/F8</value>
-  </data>
   <data name="TS_GSTIAF" xml:space="preserve">
     <value>T/S GST IAF產生器</value>
   </data>
@@ -1571,9 +1568,6 @@
   </data>
   <data name="Configurations" xml:space="preserve">
     <value>配置</value>
-  </data>
-  <data name="GSTF5" xml:space="preserve">
-    <value>GST F5/F8</value>
   </data>
   <data name="GSTIAF" xml:space="preserve">
     <value>GST IAF產生器</value>
@@ -1712,7 +1706,7 @@
     <value>修訂估算</value>
   </data>
   <data name="AP_Setup_Reports" xml:space="preserve">
-    <value>應付帳款設定報表</value>
+    <value>設定報表</value>
   </data>
   <data name="PM_ContractMaintenance" xml:space="preserve">
     <value>合約維護</value>
@@ -1727,9 +1721,6 @@
     <value>專案</value>
   </data>
   <data name="PM_Setup_Reports" xml:space="preserve">
-    <value>設定報表</value>
-  </data>
-  <data name="AP_Setup_Reports" xml:space="preserve">
     <value>設定報表</value>
   </data>
   <data name="PM_GLIntegration" xml:space="preserve">
@@ -1810,5 +1801,17 @@
   </data>
   <data name="AS_UserActivityReport" xml:space="preserve">
     <value>用戶活動報表</value>
+  </data>
+  <data name="PM_Adjustments" xml:space="preserve">
+    <value>調整</value>
+  </data>
+  <data name="PM_Timecards" xml:space="preserve">
+    <value>工時卡</value>
+  </data>
+  <data name="PM_TransactionHistory" xml:space="preserve">
+    <value>交易歷史</value>
+  </data>
+  <data name="PM_Transaction_History" xml:space="preserve">
+    <value>交易歷史</value>
   </data>
 </root>

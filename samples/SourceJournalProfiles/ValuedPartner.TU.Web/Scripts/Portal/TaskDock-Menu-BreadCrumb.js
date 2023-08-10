@@ -958,11 +958,7 @@ var TaskDockMenuBreadCrumbManager = function () {
     function loadBreadCrumb(parentidVal) {
         if (!$('#widgetLayout').is(":visible")) {
             var html = [];
-            // Merge plugin menus to the MenuList            
-            if (PluginMenuList && PluginMenuList.length > 0 && (!pluginMenuMerged)) {
-                Array.prototype.push.apply(MenuList, PluginMenuList);
-                pluginMenuMerged = true;
-            }
+
             // Add Parent to array
             jQuery.each(MenuList, function (i, val) {
                 if (val.Data.MenuId == parentidVal) {

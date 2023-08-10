@@ -63,7 +63,7 @@ table {
 /* basic elements */
 
 body, td, input {
-    font: normal 14px/1.35 'Arial', 'Helvetica Neue', 'MS Sans-Serif';
+    font: normal 14px/1.35 'SageUI', 'Arial', 'Helvetica Neue', 'MS Sans-Serif';
     color: #232325;
 }
 
@@ -99,9 +99,8 @@ h1, h2, h3, h4 {
 
 .page-header {
     margin-bottom: 20px;
-    font-family: 'Calibri';
+    font-family: 'SageUI';
     font-weight: normal;
-    color: #3c424f;
 
     &h1 {
         font-size: 30px;
@@ -178,7 +177,6 @@ a:hover {
     position: absolute;
     top: -55px;
     left: 175px;
-    color: #666;
     font-size: 14px;
 }
 
@@ -400,6 +398,7 @@ input[class*="btn-"] {
     text-overflow: ellipsis; 
     max-width: 300px;
     padding: 0 20px;
+    border-radius: 15px !important;
 
     &:disabled  { 
         background: #eaeaea; 
@@ -506,11 +505,7 @@ input[class*="btn-"] {
         }
 
         .Sage_logo {
-            width: 134px;
-            height: 132px;
-            margin: 0 auto;
-            background-color: #00dc00;
-            border-radius: 3px;
+            margin: 0 auto 10px;
         }
     }
 
@@ -523,19 +518,16 @@ input[class*="btn-"] {
         }
 
         h1.page-header {
-            font-family: Arial;
-            color: #555;
             font-size: 20px;
             font-weight: normal;
             border: 0;
             text-align: center;
             padding: 36px 0 0 0;
-            margin: 0 0 20px;
+            margin: 0 0 21px;
         }
 
         .page-header-2 {
-            font-family: Arial;
-            color: #555;
+            color: @white;
             font-size: 16px;
             font-weight: normal;
             text-align: center;
@@ -559,9 +551,11 @@ input[class*="btn-"] {
             .k-dropdown {
                 height: 36px !important;
                 width: 310px;
+                background: none;
 
                 .k-dropdown-wrap {
                     height: 36px;
+                    border-radius: 10px;
 
                     &.k-state-default:focus,
                     &.k-state-focused,
@@ -593,12 +587,14 @@ input[class*="btn-"] {
             text-align: right;
 
             input[class*="btn-login"] {
-                width: 100%;
                 margin: 0;
-                height: 36px;
-                max-width: 310px;
+                height: 40px;
                 font-size: 14px;
                 font-weight: normal;
+                border-radius: 20px !important;
+                padding: 0 38px;
+                width: 370px;
+                max-width: unset;
 
                 &:hover,
                 &:focus {
@@ -725,7 +721,7 @@ ol.std-list {
     }
 }
 
-/* New Login Page 2022.2 ----------------------------------------------------------- */
+/* New Login Page 2023 ----------------------------------------------------------- */
 
 @font-path:                 "../../fonts/";
 
@@ -741,10 +737,38 @@ ol.std-list {
   src: url('@{font-path}Lato-Bold.ttf') format('truetype')
 }
 
+@font-face {
+  font-family: 'SageHeader';
+  src: url('@{icon-font-path}@{font-name-sage-header}.woff') format("woff"),
+       url('@{icon-font-path}@{font-name-sage-header}.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: 'SageText';
+  src: url('@{icon-font-path}@{font-name-sage-text}.woff') format("woff"),
+       url('@{icon-font-path}@{font-name-sage-text}.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: 'SageUI';
+  src: url('@{icon-font-path}@{font-name-sage-ui}.woff') format("woff"),
+       url('@{icon-font-path}@{font-name-sage-ui}.woff2') format("woff2");
+}
+
 body {
-    background-color: @gray-lighter;
-    font-family: 'Lato';
+    background-color: @black;
+    font-family: 'SageUI';
     background-image: none;
+}
+
+.Sage_logo {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.master-stand-alone .Sage_logo {
+    text-align: left;
+    margin-top: unset;
 }
 
 section.login {
@@ -753,26 +777,23 @@ section.login {
 
         background: @white;
         background-clip: padding-box;
-        box-shadow: 0 10px 30px 0 #e9e9e9;
-        margin: 5vh auto 80px;
+        margin: 2vh auto 80px;
         max-width: 450px;
-        padding: 30px 40px 10px;
+        padding: 5px 40px;
         width: auto;
         z-index: 2;
         left: unset;
+        border-radius: 20px;
 
         >.wrapper {
             width: 100%;
             padding: 0;
-            background: @white;
 
             .main-body {
 
                 h1.page-header {
-                    font-family: 'Lato';
-                    color: #232325;
-                    font-size: 28px;
-                    font-weight: bold;
+                    font-family: 'SageUI';
+                    font-size: 20px;
                     border: 0;
                     text-align: center;
                     padding: 20px 0 0;
@@ -780,8 +801,7 @@ section.login {
                 }
 
                 .version {
-                    color: @sage-dark-gray;
-                    font-size: 14px;
+                    font-size: 13px;
                     position: unset;
                     text-align: center;
                     margin-bottom: 10px;
@@ -792,17 +812,52 @@ section.login {
                 input[type=text] {
                     height: 40px!important;
                     padding: 10px;
-                    border-radius: 0;
+                    border-radius: 10px;
                     border: 1px solid @sage-mid-gray;
                     width: 370px;
-                    font-family: 'Lato';
+                    font-family: 'SageUI';
                     font-size: 14px;
                     color: #2e2e2e;
+
+                    + .icon-eye {
+                        position: absolute;
+                        top: 12px;
+                        right: 0;
+                        cursor: pointer;
+                        width: 30px;
+
+                        &:after {
+                            content: "";
+                            width: 16px;
+                            height: 16px;
+                            display: block;
+                            background: transparent url('@{image-path}/login/icon-hide.png') no-repeat ;
+                            background-size: 16px 16px;
+                        }
+                    }
+
+                    + .icon-eye-password-view {
+                        position: absolute;
+                        top: 12px;
+                        right: 0;
+                        cursor: pointer;
+                        width: 30px;
+
+                        &:after {
+                            content: "";
+                            width: 16px;
+                            height: 16px;
+                            display: block;
+                            background: transparent url('@{image-path}/login/icon-view.png') no-repeat ;
+                            background-size: 16px 16px;
+                        }
+                    }
                 }
 
                 .label-login {
-                    color: #666;
+                    color: @black;
                     font-size: 14px;
+                    font-weight: bold;
                     margin-bottom: 6px;
                 }
 
@@ -813,8 +868,7 @@ section.login {
 
                 .dropdown-group,
                 .dropdown-group .k-dropdown,
-                .button-group,
-                .button-group input[class*=btn-login] {
+                .button-group {
                     width: 370px;
                     max-width: 370px;
                 }
@@ -844,7 +898,8 @@ section.login {
                 }
 
                 .button-group {
-                    margin-top: 10px;
+                    margin-top: 16px;
+                    text-align: center;
 
                     .spinner {
                         position: absolute;
@@ -852,14 +907,15 @@ section.login {
                         text-align: center;
                         z-index: 9999;
                         top: 1px;
-                        left: 42px;
-                        width: 300px;
+                        left: 143px;
+                        width: 100px;
+                        border-radius: 20px;
                         margin: 0;
                         background-color: @brand-primary;
                     }
 
                     .button-footer {
-                        border-top: 1px dotted #CCCCCC;
+                        border-top: 1px dotted #668494;
                         margin-top: 30px;
                     }
 
@@ -868,6 +924,7 @@ section.login {
                         display: inline-block;
                         font-size: 14px;
                         text-decoration: underline; 
+                        font-size: 13px;
 
                         &.disabled {
                             display: none;
@@ -931,8 +988,8 @@ section.login {
         .message-login {
             top: 0;
             border: none;
-            border-radius: 0;
-            margin: 0 0 20px;
+            border-radius: 8px;
+            margin: 20px 0 20px;
             left: auto;
             position: relative;
             box-shadow: none;
@@ -941,6 +998,7 @@ section.login {
 
             .modal-msg.k-window-content {
                 padding: 0;
+                border-radius: 8px;
 
                 .message-control {
 
@@ -972,12 +1030,10 @@ section.footer {
         margin: 0 auto;
         position: absolute;
         bottom: 12px;
-        color: #ccc;
+        color: #E4E4E4;
 
         span.copyright {
            text-align: center;
-           color: #888;
-           font-size: 12px;
         }
     }
 }

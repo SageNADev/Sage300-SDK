@@ -1524,9 +1524,6 @@
   <data name="TS_ImportTaxCodes" xml:space="preserve">
     <value>T/S Import Tax Codes</value>
   </data>
-  <data name="TS_GSTF5" xml:space="preserve">
-    <value>T/S GST F5/F8</value>
-  </data>
   <data name="TS_GSTIAF" xml:space="preserve">
     <value>T/S GST IAF Generator</value>
   </data>
@@ -1571,9 +1568,6 @@
   </data>
   <data name="Configurations" xml:space="preserve">
     <value>Configurations</value>
-  </data>
-  <data name="GSTF5" xml:space="preserve">
-    <value>GST F5/F8</value>
   </data>
   <data name="GSTIAF" xml:space="preserve">
     <value>GST IAF Generator</value>
@@ -1796,6 +1790,390 @@
   <data name="GL_Print_Financial_Statements" xml:space="preserve">
     <value>Print Financial Statements</value>
   </data>
+  <data name="Module_CanadianPayroll" xml:space="preserve">
+    <value>Canadian Payroll</value>
+  </data>
+  <data name="Module_USPayroll" xml:space="preserve">
+    <value>US Payroll</value>
+  </data>
+  <data name="PR_Accruals_Report" xml:space="preserve">
+    <value>Accruals</value>
+  </data>
+  <data name="PR_Assign_EarnDed_To_Employees" xml:space="preserve">
+    <value>Assign Earn/Ded to Employees</value>
+  </data>
+  <data name="PR_Assign_Employee_EarnDed_Audit_Report" xml:space="preserve">
+    <value>Assign Employee Earn/Ded Audit</value>
+  </data>
+  <data name="PR_Assign_Employee_Tax_Audit_Report" xml:space="preserve">
+    <value>Assign Employee Tax Audit</value>
+  </data>
+  <data name="PR_Assign_Selection_Lists_To_Emp" xml:space="preserve">
+    <value>Assign Selection Lists to Emp</value>
+  </data>
+  <data name="PR_Assign_Tax_To_Employees" xml:space="preserve">
+    <value>Assign Tax to Employees</value>
+  </data>
+  <data name="PR_Calculate_Payroll" xml:space="preserve">
+    <value>Calculate Payroll</value>
+  </data>
+  <data name="PR_Certified_Payroll_Report" xml:space="preserve">
+    <value>Certified Payroll</value>
+  </data>
+  <data name="PR_Check_Inquiry" xml:space="preserve">
+    <value>Check Inquiry</value>
+  </data>
+  <data name="PR_Check_List" xml:space="preserve">
+    <value>Check List</value>
+  </data>
+  <data name="PR_Cheque_Inquiry" xml:space="preserve">
+    <value>Cheque Inquiry</value>
+  </data>
+  <data name="PR_Cheque_List" xml:space="preserve">
+    <value>Cheque List</value>
+  </data>
+  <data name="PR_Class_Codes" xml:space="preserve">
+    <value>Class Codes</value>
+  </data>
+  <data name="PR_Class_Codes_Report" xml:space="preserve">
+    <value>Class Codes</value>
+  </data>
+  <data name="PR_Combine_ETF_Files" xml:space="preserve">
+    <value>Combine ETF Files</value>
+  </data>
+  <data name="PR_Common_Deduction_Limits" xml:space="preserve">
+    <value>Common Deduction Limits</value>
+  </data>
+  <data name="PR_Common_Deduction_Limits_Report" xml:space="preserve">
+    <value>Common Deductions Limits</value>
+  </data>
+  <data name="PR_Copy_Timecard" xml:space="preserve">
+    <value>Copy Timecard</value>
+  </data>
+  <data name="PR_CRA_Remittance_Info_Report" xml:space="preserve">
+    <value>CRA Remittance Info</value>
+  </data>
+  <data name="PR_Create_GL_Batch" xml:space="preserve">
+    <value>Create G/L Batch</value>
+  </data>
+  <data name="PR_Delete_Inactive_Records" xml:space="preserve">
+    <value>Delete Inactive Records</value>
+  </data>
+  <data name="PR_Delete_Inactive_Records_Audit_Report" xml:space="preserve">
+    <value>Delete Inactive Records Audit</value>
+  </data>
+  <data name="PR_Duplicate_SSN_Report" xml:space="preserve">
+    <value>Duplicate SSN</value>
+  </data>
+  <data name="PR_Earnings_And_Deductions_Report" xml:space="preserve">
+    <value>Earnings and Deductions</value>
+  </data>
+  <data name="PR_Earnings_And_Hours_Report" xml:space="preserve">
+    <value>Earnings and Hours</value>
+  </data>
+  <data name="PR_Earnings_Deductions" xml:space="preserve">
+    <value>Earnings and Deductions</value>
+  </data>
+  <data name="PR_Earnings_Deductions_Summary_Report" xml:space="preserve">
+    <value>Earnings/Deductions Summary</value>
+  </data>
+  <data name="PR_Earns_Deds_Summary_For_T4AR2_Report" xml:space="preserve">
+    <value>Earns/Deds Summary for T4A/R2</value>
+  </data>
+  <data name="PR_EFT_Combine" xml:space="preserve">
+    <value>EFT Combine</value>
+  </data>
+  <data name="PR_EFT_Combine_History_Report" xml:space="preserve">
+    <value>EFT Combine History</value>
+  </data>
+  <data name="PR_EFT_Combine_Report" xml:space="preserve">
+    <value>EFT Combine</value>
+  </data>
+  <data name="PR_EFT_Direct_Deposit_Report" xml:space="preserve">
+    <value>EFT Direct Deposit</value>
+  </data>
+  <data name="PR_EFT_Options" xml:space="preserve">
+    <value>EFT Options</value>
+  </data>
+  <data name="PR_EFT_Options_Report" xml:space="preserve">
+    <value>EFT Options</value>
+  </data>
+  <data name="PR_EFT_Transactions_Report" xml:space="preserve">
+    <value>EFT Transactions</value>
+  </data>
+  <data name="PR_Employees" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="PR_Employee_Activity" xml:space="preserve">
+    <value>Employee Activity</value>
+  </data>
+  <data name="PR_Employee_Information_Report" xml:space="preserve">
+    <value>Employee Information</value>
+  </data>
+  <data name="PR_Employee_Selection" xml:space="preserve">
+    <value>Employee Selection</value>
+  </data>
+  <data name="PR_Employee_Selection_Report" xml:space="preserve">
+    <value>Employee Selection</value>
+  </data>
+  <data name="PR_Employee_Supplemental_Info" xml:space="preserve">
+    <value>Employee Supplemental Info</value>
+  </data>
+  <data name="PR_Employee_Supplemental_Info_Report" xml:space="preserve">
+    <value>Employee Supplemental Info</value>
+  </data>
+  <data name="PR_Employee_Timecards" xml:space="preserve">
+    <value>Employee Timecards</value>
+  </data>
+  <data name="PR_Employee_Timecards_Report" xml:space="preserve">
+    <value>Employee Timecards</value>
+  </data>
+  <data name="PR_Federal_And_State_Taxes" xml:space="preserve">
+    <value>Federal and State Taxes</value>
+  </data>
+  <data name="PR_Federal_Tax_Filing_Report" xml:space="preserve">
+    <value>Federal Tax Filing</value>
+  </data>
+  <data name="PR_Find_Duplicate_SSN" xml:space="preserve">
+    <value>Find Duplicate SSN</value>
+  </data>
+  <data name="PR_Generate_ETF_File" xml:space="preserve">
+    <value>Generate ETF File</value>
+  </data>
+  <data name="PR_GL_Integration" xml:space="preserve">
+    <value>G/L Integration</value>
+  </data>
+  <data name="PR_GL_Integration_Report" xml:space="preserve">
+    <value>G/L Integration</value>
+  </data>
+  <data name="PR_Hours_Analysis_Report" xml:space="preserve">
+    <value>Hours Analysis</value>
+  </data>
+  <data name="PR_Income_Taxes" xml:space="preserve">
+    <value>Income Taxes</value>
+  </data>
+  <data name="PR_Jobs_Report" xml:space="preserve">
+    <value>Jobs</value>
+  </data>
+  <data name="PR_Local_And_Other_Custom_Taxes" xml:space="preserve">
+    <value>Local and Other Custom Taxes</value>
+  </data>
+  <data name="PR_Manual_Checks" xml:space="preserve">
+    <value>Manual Checks</value>
+  </data>
+  <data name="PR_Manual_Checks_Report" xml:space="preserve">
+    <value>Manual Checks</value>
+  </data>
+  <data name="PR_Manual_Cheques" xml:space="preserve">
+    <value>Manual Cheques</value>
+  </data>
+  <data name="PR_Manual_Cheques_Report" xml:space="preserve">
+    <value>Manual Cheques</value>
+  </data>
+  <data name="PR_Ministere_Du_Revenu_Info_Report" xml:space="preserve">
+    <value>Ministere du Revenu Info</value>
+  </data>
+  <data name="PR_Optional_Fields" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="PR_Optional_Fields_Report" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="PR_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="PR_Options_Report" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="PR_Overtimer_Schedules" xml:space="preserve">
+    <value>Overtime Schedules</value>
+  </data>
+  <data name="PR_Overtime_Schedules_Report" xml:space="preserve">
+    <value>Overtime Schedules</value>
+  </data>
+  <data name="PR_Payroll_Checks" xml:space="preserve">
+    <value>Payroll Checks</value>
+  </data>
+  <data name="PR_Payroll_Cheques" xml:space="preserve">
+    <value>Payroll Cheques</value>
+  </data>
+  <data name="PR_Payroll_Employees" xml:space="preserve">
+    <value>Payroll Employees</value>
+  </data>
+  <data name="PR_Payroll_Employee_Reports" xml:space="preserve">
+    <value>Payroll Employee Reports</value>
+  </data>
+  <data name="PR_Payroll_GL_Transactions_Report" xml:space="preserve">
+    <value>Payroll G/L Transactions</value>
+  </data>
+  <data name="PR_Payroll_Government_Reports" xml:space="preserve">
+    <value>Payroll Government Reports</value>
+  </data>
+  <data name="PR_Payroll_Job_Register_Report" xml:space="preserve">
+    <value>Payroll Job Register</value>
+  </data>
+  <data name="PR_Payroll_Periodic_Processing" xml:space="preserve">
+    <value>Payroll Periodic Processing</value>
+  </data>
+  <data name="PR_Payroll_Periodic_Processing_Reports" xml:space="preserve">
+    <value>Payroll Periodic Processing Reports</value>
+  </data>
+  <data name="PR_Payroll_Processing_Exceptions_Report" xml:space="preserve">
+    <value>Payroll Processing Exceptions</value>
+  </data>
+  <data name="PR_Payroll_Register_Report" xml:space="preserve">
+    <value>Payroll Register</value>
+  </data>
+  <data name="PR_Payroll_Setup" xml:space="preserve">
+    <value>Payroll Setup</value>
+  </data>
+  <data name="PR_Payroll_Setup_Reports" xml:space="preserve">
+    <value>Payroll Setup Reports</value>
+  </data>
+  <data name="PR_Payroll_Timecards" xml:space="preserve">
+    <value>Payroll Timecards</value>
+  </data>
+  <data name="PR_Payroll_Transactions" xml:space="preserve">
+    <value>Payroll Transactions</value>
+  </data>
+  <data name="PR_Payroll_Transaction_Reports" xml:space="preserve">
+    <value>Payroll Transaction Reports</value>
+  </data>
+  <data name="PR_Post_Manual_Checks" xml:space="preserve">
+    <value>Post Manual (ATF) Checks</value>
+  </data>
+  <data name="PR_Post_Manual_Cheques" xml:space="preserve">
+    <value>Post Manual (ATF) Cheques</value>
+  </data>
+  <data name="PR_Precheck_Payroll_Job_Register_Report" xml:space="preserve">
+    <value>Pre-Check Payroll Job Register</value>
+  </data>
+  <data name="PR_Precheck_Payroll_Register_Report" xml:space="preserve">
+    <value>Pre-Check Payroll Register</value>
+  </data>
+  <data name="PR_Precheque_Payroll_Job_Reg_Report" xml:space="preserve">
+    <value>Pre-Cheque Payroll Job Reg</value>
+  </data>
+  <data name="PR_Precheque_Payroll_Register_Report" xml:space="preserve">
+    <value>Pre-Cheque Payroll Register</value>
+  </data>
+  <data name="PR_Process_Manual_Checks" xml:space="preserve">
+    <value>Process Manual Checks</value>
+  </data>
+  <data name="PR_Process_Manual_Cheques" xml:space="preserve">
+    <value>Process Manual Cheques</value>
+  </data>
+  <data name="PR_Qtrly_Wage_On_Diskette_Report" xml:space="preserve">
+    <value>Qtrly Wage on Disk(ette)</value>
+  </data>
+  <data name="PR_Qtr_Wage_On_Diskette_Status_Report" xml:space="preserve">
+    <value>Qtr Wage on Disk(ette) Status</value>
+  </data>
+  <data name="PR_Quarterly_Wage_Report" xml:space="preserve">
+    <value>Quarterly Wage</value>
+  </data>
+  <data name="PR_R1s_Electronic_Filing_Report" xml:space="preserve">
+    <value>R1s Electronic Filing</value>
+  </data>
+  <data name="PR_Record_Of_Employment_Report" xml:space="preserve">
+    <value>Record of Employment</value>
+  </data>
+  <data name="PR_Releve_1s_Report" xml:space="preserve">
+    <value>Releve 1s</value>
+  </data>
+  <data name="PR_Shift_Differential_Schedules" xml:space="preserve">
+    <value>Shift Differential Schedules</value>
+  </data>
+  <data name="PR_Shift_Differential_Schedules_Report" xml:space="preserve">
+    <value>Shift Differential Schedules</value>
+  </data>
+  <data name="PR_State_Tax_Filing_Report" xml:space="preserve">
+    <value>State Tax Filing</value>
+  </data>
+  <data name="PR_T4As_Electronic_Filing_Report" xml:space="preserve">
+    <value>T4As Electronic Filing</value>
+  </data>
+  <data name="PR_T4As_Report" xml:space="preserve">
+    <value>T4As</value>
+  </data>
+  <data name="PR_T4s_Electronic_Filing_Report" xml:space="preserve">
+    <value>T4s Electronic Filing</value>
+  </data>
+  <data name="PR_T4s_Report" xml:space="preserve">
+    <value>T4s</value>
+  </data>
+  <data name="PR_Tax_Calculation_Analysis_Report" xml:space="preserve">
+    <value>Tax Calculation Analysis</value>
+  </data>
+  <data name="PR_Tax_Profiles_Report" xml:space="preserve">
+    <value>Tax Profiles</value>
+  </data>
+  <data name="PR_Timecards" xml:space="preserve">
+    <value>Timecards</value>
+  </data>
+  <data name="PR_Timecards_Report" xml:space="preserve">
+    <value>Timecards</value>
+  </data>
+  <data name="PR_Timecard_List" xml:space="preserve">
+    <value>Timecard List</value>
+  </data>
+  <data name="PR_Transaction_History" xml:space="preserve">
+    <value>Transaction History</value>
+  </data>
+  <data name="PR_Transaction_History_Audit_Report" xml:space="preserve">
+    <value>Transaction History Audit</value>
+  </data>
+  <data name="PR_Transaction_History_Report" xml:space="preserve">
+    <value>Transaction History</value>
+  </data>
+  <data name="PR_Transafer_Employee_Timecards" xml:space="preserve">
+    <value>Transfer Employee Timecards</value>
+  </data>
+  <data name="PR_Update_EarnDed_For_All_Emp" xml:space="preserve">
+    <value>Update Earn/Ded for All Emp</value>
+  </data>
+  <data name="PR_Update_Employee_EarnDed_Audit_Report" xml:space="preserve">
+    <value>Update Employee Earn/Ded Audit</value>
+  </data>
+  <data name="PR_Update_Employee_Taxes_Audit_Report" xml:space="preserve">
+    <value>Update Employee Taxes Audit</value>
+  </data>
+  <data name="PR_Update_Local_Taxes_Audit_Report" xml:space="preserve">
+    <value>Update Local Taxes Audit</value>
+  </data>
+  <data name="PR_Update_Tax_For_All_Employees" xml:space="preserve">
+    <value>Update Tax for All Employees</value>
+  </data>
+  <data name="PR_Update_TD1_Claim" xml:space="preserve">
+    <value>Update TD1 Claim</value>
+  </data>
+  <data name="PR_Update_TD1_Claim_Audit_Report" xml:space="preserve">
+    <value>Update TD1 Claim Audit</value>
+  </data>
+  <data name="PR_User_Security_Setup" xml:space="preserve">
+    <value>User Security Setup</value>
+  </data>
+  <data name="PR_User_Security_Setup_Report" xml:space="preserve">
+    <value>User Security Setup</value>
+  </data>
+  <data name="PR_W2_Tax_Filing_Report" xml:space="preserve">
+    <value>W-2 Tax Filing</value>
+  </data>
+  <data name="PR_Workers_Compensation_Codes" xml:space="preserve">
+    <value>Workers Compensation Codes</value>
+  </data>
+  <data name="PR_Workers_Compensation_Codes_Report" xml:space="preserve">
+    <value>Workers Compensation Codes</value>
+  </data>
+  <data name="PR_Workers_Compensation_Report" xml:space="preserve">
+    <value>Workers Compensation</value>
+  </data>
+  <data name="PR_Work_Classification_Codes" xml:space="preserve">
+    <value>Work Classification Codes</value>
+  </data>
+  <data name="PR_Work_Classification_Codes_Report" xml:space="preserve">
+    <value>Work Classification Codes</value>
+  </data>
   <data name="IC_Serial_Numbers" xml:space="preserve">
     <value>Serial Numbers</value>
   </data>
@@ -1804,5 +2182,26 @@
   </data>
   <data name="AS_UserActivityReport" xml:space="preserve">
     <value>User Activity Report</value>
+  </data>
+  <data name="PM_Adjustments" xml:space="preserve">
+    <value>Adjustments</value>
+  </data>
+  <data name="PM_ContractMaintenance" xml:space="preserve">
+    <value>Contract Maintenance</value>
+  </data>
+  <data name="PM_TransactionHistory" xml:space="preserve">
+    <value>Transaction History</value>
+  </data>
+  <data name="PM_Timecards" xml:space="preserve">
+    <value>Timecards</value>
+  </data>
+  <data name="PM_Transaction_History" xml:space="preserve">
+    <value>Transaction History</value>
+  </data>
+  <data name="PM_TransactionHistory" xml:space="preserve">
+    <value>Transaction History</value>
+  </data>
+  <data name="PM_BudgetMaintenance" xml:space="preserve">
+    <value>Budget Maintenance</value>
   </data>
 </root>

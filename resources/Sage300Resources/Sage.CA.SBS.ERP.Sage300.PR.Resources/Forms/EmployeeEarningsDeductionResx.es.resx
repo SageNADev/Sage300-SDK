@@ -285,7 +285,7 @@
   <data name="BillingPercentage6" xml:space="preserve">
     <value>Billing Percentage 6</value>
   </data>
-  <data name="IncludeInRegularRateOTCalc" xml:space="preserve">
+  <data name="IncludeInFLSAOvertimeCalc" xml:space="preserve">
     <value>Include in Regular Rate OT Calc</value>
   </data>
   <data name="EmployerBaseLimit" xml:space="preserve">

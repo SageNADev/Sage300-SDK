@@ -14,7 +14,7 @@
                 return;
             }
             //By default. all finder editors should always use upper case class, if not need set options.upperCase = false
-            const isUpperCase = options.ShowfinderIcon || options.upperCase;
+            const isUpperCase = apputils.isUndefined(options.upperCase) ? options.ShowfinderIcon : options.ShowfinderIcon && options.upperCase;
             options.upperCase = isUpperCase;
             options.class = isUpperCase ? 'txt-upper' : '';
             options.model.class = options.class;
@@ -129,14 +129,24 @@
             }
 
             $("#" + guid).focusout((e) => {
+                const field = options.field;
+                let model = options.model;
                 let validate = options.showBlankValueMessage || apputils.isUndefined(options.showBlankValueMessage);
+                let colIndex = GridPreferencesHelper.getGridColumnIndex(grid, options.field);
+                const currentValue = model[field];
+                const previousValue = options.focusFieldValue;
 
-                if (options.requiredField && validate && options.model[options.field].length === 0) {
+                if (model.isFinderCancelled && currentValue !== previousValue) {
+                    changeHandler2(e);
+                    model.isFinderCancelled = false;
+                }
+
+                if (options.requiredField && validate && model[field].length === 0) {
                     const msg = kendo.format(globalResource.CannotBeBlankMessage, options.field);
                     const userMessage = { UserMessage: { IsSuccess: false, Message: "", Errors: [{ "Message": msg, "Priority": 3, "PriorityString": "Error" }] } };
                     options.showBlankValueMessage = true;
                     sg.utls.showMessage(userMessage, () => {
-                        const colIndex = window.GridPreferencesHelper.getGridColumnIndex(grid, options.field);
+                        colIndex = window.GridPreferencesHelper.getGridColumnIndex(grid, field);
                         const cell = grid.tbody.find("tr").eq(rowIndex).find("td").eq(colIndex);
                         grid.current(cell);
                         grid.editCell(cell);
@@ -226,7 +236,9 @@
                         if (options.ShowfinderIcon || options.finderType) {
                             msg = prefix + options.viewId + options.finderType;
                         }
-                        MessageBus.msg.trigger(msg, { nav: apputils.EventTrigger.System, viewId: options.viewId, msgid: model.msgid, rowIndex: model.RowIndex, field: field, value: model[field], callback: setCellFocus });
+
+                        model.isFinderCancelled = true;
+                        // MessageBus.msg.trigger(msg, { nav: apputils.EventTrigger.System, viewId: options.viewId, msgid: model.msgid, rowIndex: model.RowIndex, field: field, value: model[field], callback: setCellFocus });
                         setCellFocus();
                     });
                 });
@@ -473,17 +485,60 @@
          */
         timeEditor : function(container, options, html) {
             //html = kendo.format('<input id="{0}" name="{0}" />', options.field);
+            let twentyPlus = false;
 
             $(html)
                 .appendTo(container)
                 .kendoMaskedTextBox({
-                    mask: "12:34:34",
+                    promptChar: "0",
+                    mask: "ab:cd:cd",
                     unmaskOnPost: true,
                     rules: {
-                        "1": /[0-2]/,
-                        "2": /[0-9]/,
-                        "3": /[0-5]/,
-                        "4": /[0-9]/
+                        "a": function (char) {
+                            const digit = parseInt(char);
+
+                            // Reject non-numeric characters
+                            if (isNaN(digit)) {
+                                return false;
+                            }
+
+                            // First digit can only be 0, 1 or 2
+                            if (digit >= 0 && digit <= 2) {
+
+                                // if first digit is a 2, then 
+                                // set flag so we know about it 
+                                // when processing the next digit
+                                if (digit === 2) {
+                                    twentyPlus = true;
+                                } else {
+                                    twentyPlus = false;
+                                }
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        },
+
+                        "b": function (char) {
+                            const digit = parseInt(char);
+
+                            // Reject non-numeric characters
+                            if (isNaN(digit)) {
+                                return false;
+                            }
+
+                            // if first digit is a two 
+                            // and second digit is greater than 3, reject it.
+                            if (twentyPlus === true) {
+                                if (digit > 3) {
+                                    return false;
+                                }
+                            }
+
+                            return true;
+                        },
+                        "c": /[0-5]/,
+                        "d": /[0-9]/
                     }
                 })
                 .change(function (e) {

@@ -1894,4 +1894,8 @@
   <data name="DeleteMessage" xml:space="preserve">
     <value>¿Está seguro de que desea eliminar este proveedor y todos los costos adicionales de este recibo?</value>
   </data>
+  <data name="NetReceiptTotal" xml:space="preserve">
+    <value>Total de Recibo Neto</value>
+    <comment>Totals - Field</comment>
+  </data>
 </root>

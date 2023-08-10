@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccrualBasis" xml:space="preserve">
+    <value>Accrual-Basis</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Adjustment</value>
+  </data>
+  <data name="AdjustmentNumber" xml:space="preserve">
+    <value>Nº Ajuste</value>
+  </data>
+  <data name="AdjustmentType" xml:space="preserve">
+    <value>Adjustment Type</value>
+  </data>
+  <data name="ApplyFrom" xml:space="preserve">
+    <value>Aplicar de</value>
+  </data>
+  <data name="ApplyTo" xml:space="preserve">
+    <value>Aplicar a</value>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="Billable" xml:space="preserve">
+    <value>Billable</value>
+  </data>
+  <data name="BillingsAndCosts" xml:space="preserve">
+    <value>Billings and Costs</value>
+  </data>
+  <data name="Both" xml:space="preserve">
+    <value>Ambos</value>
+  </data>
+  <data name="CanadianPayroll" xml:space="preserve">
+    <value>Nómina en Canadá</value>
+  </data>
+  <data name="CategoryPercentageComplete" xml:space="preserve">
+    <value>Category Percentage Complete</value>
+  </data>
+  <data name="Charges" xml:space="preserve">
+    <value>Cargos</value>
+  </data>
+  <data name="CloseLT" xml:space="preserve">
+    <value>Close LT</value>
+  </data>
+  <data name="CloseSN" xml:space="preserve">
+    <value>Cerrar SN</value>
+  </data>
+  <data name="CompletedProject" xml:space="preserve">
+    <value>Completed Project</value>
+  </data>
+  <data name="OriginalContract" xml:space="preserve">
+    <value>Original Contract</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="CostCurrency" xml:space="preserve">
+    <value>Cost Currency</value>
+  </data>
+  <data name="CostNumber" xml:space="preserve">
+    <value>Nº Costo</value>
+  </data>
+  <data name="CostOrRevenue" xml:space="preserve">
+    <value>Costo o Ingresos</value>
+  </data>
+  <data name="CostPlus" xml:space="preserve">
+    <value>Cost Plus</value>
+  </data>
+  <data name="CostType" xml:space="preserve">
+    <value>Tipo de Costo</value>
+  </data>
+  <data name="RevisedContract" xml:space="preserve">
+    <value>Revised Contract</value>
+  </data>
+  <data name="DetailNumber" xml:space="preserve">
+    <value>Detail Number</value>
+  </data>
+  <data name="RevisedExtendedCost" xml:space="preserve">
+    <value>Costo Total Revisado</value>
+  </data>
+  <data name="DEXTCOSTSR" xml:space="preserve">
+    <value>Costo Total Revisado</value>
+  </data>
+  <data name="DFMTCONTNO" xml:space="preserve">
+    <value>Revised Contract</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Moneda de Costo</value>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Nº Documento</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Tipo de Documento</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PJC - Ajustes</value>
+  </data>
+  <data name="Entity1" xml:space="preserve">
+    <value>PJC Adjustments Detail</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="EquipmentUsage" xml:space="preserve">
+    <value>Equipment Usage</value>
+  </data>
+  <data name="ExchangeGainLoss" xml:space="preserve">
+    <value>Ganancia/Pérdida Cambiaria</value>
+  </data>
+  <data name="Expense" xml:space="preserve">
+    <value>Gasto</value>
+  </data>
+  <data name="FIFO" xml:space="preserve">
+    <value>FIFO</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>Fiscal Period</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>Fiscal Year</value>
+  </data>
+  <data name="FixedPrice" xml:space="preserve">
+    <value>Fixed Price</value>
+  </data>
+  <data name="FlatRatePerLaborHourUnit" xml:space="preserve">
+    <value>Flat Rate Per Labor Hour/Unit</value>
+  </data>
+  <data name="FlatRatePerUnit" xml:space="preserve">
+    <value>Flat Rate Per Unit</value>
+  </data>
+  <data name="ForcePopupLT" xml:space="preserve">
+    <value>Force popup LT</value>
+  </data>
+  <data name="ForcePopupSN" xml:space="preserve">
+    <value>Force popup SN</value>
+  </data>
+  <data name="FromCostVarianceAccount" xml:space="preserve">
+    <value>Desde Cta de Desviación de Costos</value>
+  </data>
+  <data name="FromLaborAccount" xml:space="preserve">
+    <value>Desde Cta de Mano de Obra</value>
+  </data>
+  <data name="FromOverheadAccount" xml:space="preserve">
+    <value>Desde Cta de Gastos Grales</value>
+  </data>
+  <data name="FromRevenueAccount" xml:space="preserve">
+    <value>Desde Cta de Ingresos</value>
+  </data>
+  <data name="FromTransactionAccount" xml:space="preserve">
+    <value>Desde Cta de Transacción</value>
+  </data>
+  <data name="FromUnformattedItemNumber" xml:space="preserve">
+    <value>De Nº Art. Sin Formato</value>
+  </data>
+  <data name="FromWIPAccount" xml:space="preserve">
+    <value>Desde Cta WIP</value>
+  </data>
+  <data name="Function" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="GenerateICSequence" xml:space="preserve">
+    <value>Generate IC Seq.</value>
+  </data>
+  <data name="GLDetailComment" xml:space="preserve">
+    <value>G/L Detail Comment</value>
+  </data>
+  <data name="GLDetailDescription" xml:space="preserve">
+    <value>Descrip. de Detalle del LM</value>
+  </data>
+  <data name="GLDetailReference" xml:space="preserve">
+    <value>G/L Detail Reference</value>
+  </data>
+  <data name="HASOPT" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="ICBucketType" xml:space="preserve">
+    <value>Tipo de Lote de CI</value>
+  </data>
+  <data name="ICCostingMethod" xml:space="preserve">
+    <value>Método de Cálculo de Costos de CI</value>
+  </data>
+  <data name="ICDocumentNumber" xml:space="preserve">
+    <value>Nº Documento de CI</value>
+  </data>
+  <data name="ICLocation" xml:space="preserve">
+    <value>Ubicación de CI</value>
+  </data>
+  <data name="ICTransactionDate" xml:space="preserve">
+    <value>Fecha de Transacción de CI</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="Labor" xml:space="preserve">
+    <value>Labor</value>
+  </data>
+  <data name="LaborHoursPercentageComplete" xml:space="preserve">
+    <value>Labor Hours Percentage Complete</value>
+  </data>
+  <data name="LIFO" xml:space="preserve">
+    <value>LIFO</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Line Number</value>
+  </data>
+  <data name="LoadOptionalFields" xml:space="preserve">
+    <value>Load Optional Fields</value>
+  </data>
+  <data name="LTInterCommunicationID" xml:space="preserve">
+    <value>LT inter-communication ID</value>
+  </data>
+  <data name="MANITEM" xml:space="preserve">
+    <value>MANITEM</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="MaterialReturn" xml:space="preserve">
+    <value>Devolución de Materiales</value>
+  </data>
+  <data name="MaterialUsage" xml:space="preserve">
+    <value>Material Usage</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="Module" xml:space="preserve">
+    <value>Módulo</value>
+  </data>
+  <data name="MostRecentCost" xml:space="preserve">
+    <value>Costo Más Reciente</value>
+  </data>
+  <data name="MovingAverage" xml:space="preserve">
+    <value>Promedio Móvil</value>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoCharge" xml:space="preserve">
+    <value>No Charge</value>
+  </data>
+  <data name="Nonbillable" xml:space="preserve">
+    <value>Non-billable</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="OriginalExtendedCost" xml:space="preserve">
+    <value>Costo Total Orig.</value>
+  </data>
+  <data name="OriginalAccountingMethod" xml:space="preserve">
+    <value>Método Contable Orig.</value>
+  </data>
+  <data name="OriginalARItemNumber" xml:space="preserve">
+    <value>Nº Art. Orig. de C/C</value>
+  </data>
+  <data name="OriginalARUnitOfMeasure" xml:space="preserve">
+    <value>UM Orig. de C/C</value>
+  </data>
+  <data name="OriginalBillingCurrency" xml:space="preserve">
+    <value>Moneda de Factur. Orig.</value>
+  </data>
+  <data name="OriginalBillingRate" xml:space="preserve">
+    <value>Tasa de Facturac. Orig.</value>
+  </data>
+  <data name="OriginalBillingType" xml:space="preserve">
+    <value>Tipo de Facturac. Orig.</value>
+  </data>
+  <data name="OriginalCategory" xml:space="preserve">
+    <value>Original Category</value>
+  </data>
+  <data name="OriginalCustomerNumber" xml:space="preserve">
+    <value>Nº Cliente Orig.</value>
+  </data>
+  <data name="OriginalEarningsCode" xml:space="preserve">
+    <value>Cód. Orig. de Ganancias</value>
+  </data>
+  <data name="OriginalEmployeeNumber" xml:space="preserve">
+    <value>Nº Empleado Original</value>
+  </data>
+  <data name="OriginalExtendedBillingAmount" xml:space="preserve">
+    <value>Mto Orig. de Factur. Total</value>
+  </data>
+  <data name="OriginalICUnitOfMeasure" xml:space="preserve">
+    <value>Original I/C Unit of Measure</value>
+  </data>
+  <data name="OriginalInvoiceType" xml:space="preserve">
+    <value>Tipo de Factura Orig.</value>
+  </data>
+  <data name="OriginalLaborAmount" xml:space="preserve">
+    <value>Mto. Mano de Obra Orig.</value>
+  </data>
+  <data name="OriginalLaborPercentage" xml:space="preserve">
+    <value>% de Mano de Obra Orig.</value>
+  </data>
+  <data name="OriginalLaborRate" xml:space="preserve">
+    <value>Tasa de Mano de Obra Orig.</value>
+  </data>
+  <data name="OriginalLaborType" xml:space="preserve">
+    <value>Tipo de Mano de Obra Orig.</value>
+  </data>
+  <data name="OriginalOverheadAmount" xml:space="preserve">
+    <value>Mto Orig. de Gastos Grales</value>
+  </data>
+  <data name="OriginalOverheadPercentage" xml:space="preserve">
+    <value>% de Gastos Grales Orig.</value>
+  </data>
+  <data name="OriginalOverheadRate" xml:space="preserve">
+    <value>Tasa de Gastos Grales Orig.</value>
+  </data>
+  <data name="OriginalOverheadType" xml:space="preserve">
+    <value>Tipo de Gasto Gral Orig.</value>
+  </data>
+  <data name="OriginalPayType" xml:space="preserve">
+    <value>Tipo de Pago Orig.</value>
+  </data>
+  <data name="OriginalProject" xml:space="preserve">
+    <value>Original Project</value>
+  </data>
+  <data name="OriginalProjectStyle" xml:space="preserve">
+    <value>Original Project Style</value>
+  </data>
+  <data name="OriginalProjectType" xml:space="preserve">
+    <value>Original Project Type</value>
+  </data>
+  <data name="OriginalQuantity" xml:space="preserve">
+    <value>Original Quantity</value>
+  </data>
+  <data name="OriginalResource" xml:space="preserve">
+    <value>Recurso Original</value>
+  </data>
+  <data name="OriginalTotalAmount" xml:space="preserve">
+    <value>Mto Total Orig.</value>
+  </data>
+  <data name="OriginalUnitCost" xml:space="preserve">
+    <value>Costo Unit. Orig.</value>
+  </data>
+  <data name="Overhead" xml:space="preserve">
+    <value>Overhead</value>
+  </data>
+  <data name="PaymentReceiptReversal" xml:space="preserve">
+    <value>Reversión de Pago/Recibo</value>
+  </data>
+  <data name="PercentageOfCost" xml:space="preserve">
+    <value>Percentage of Cost</value>
+  </data>
+  <data name="PercentageOfLaborCost" xml:space="preserve">
+    <value>Percentage of Labor Cost</value>
+  </data>
+  <data name="PopupLT" xml:space="preserve">
+    <value>Popup LT</value>
+  </data>
+  <data name="PopupSN" xml:space="preserve">
+    <value>Popup SN</value>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>Posted</value>
+  </data>
+  <data name="ProjectPercentageComplete" xml:space="preserve">
+    <value>Project Percentage Complete</value>
+  </data>
+  <data name="ReceiptPayment" xml:space="preserve">
+    <value>Recibo/Pago</value>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>Revenue</value>
+  </data>
+  <data name="RevenueNumber" xml:space="preserve">
+    <value>Nº Ingreso</value>
+  </data>
+  <data name="RevisedAccountingMethod" xml:space="preserve">
+    <value>Método Contable Revisado</value>
+  </data>
+  <data name="RevisedARItemNumber" xml:space="preserve">
+    <value>N° Revisado de Art. de C/C</value>
+  </data>
+  <data name="RevisedARUnitOfMeasure" xml:space="preserve">
+    <value>UM de C/C Revisada</value>
+  </data>
+  <data name="RevisedBillingCurrency" xml:space="preserve">
+    <value>Moneda de Factur. Revisada</value>
+  </data>
+  <data name="RevisedBillingRate" xml:space="preserve">
+    <value>Tasa de Facturac. Revisada</value>
+  </data>
+  <data name="RevisedBillingType" xml:space="preserve">
+    <value>Tipo Revisado de Factur.</value>
+  </data>
+  <data name="RevisedCategory" xml:space="preserve">
+    <value>Revised Category</value>
+  </data>
+  <data name="RevisedCustomerNumber" xml:space="preserve">
+    <value>Nº Cliente Revisado</value>
+  </data>
+  <data name="RevisedEarningsCode" xml:space="preserve">
+    <value>Cód. Revisado de Ganancias</value>
+  </data>
+  <data name="RevisedEmployeeNumber" xml:space="preserve">
+    <value>Nº Empleado Revisado</value>
+  </data>
+  <data name="RevisedExtendedBillingAmount" xml:space="preserve">
+    <value>Mto Revisado de Factur. Total</value>
+  </data>
+  <data name="RevisedICUnitOfMeasure" xml:space="preserve">
+    <value>Revised I/C Unit of Measure</value>
+  </data>
+  <data name="RevisedInvoiceType" xml:space="preserve">
+    <value>Tipo de Factura Revisado</value>
+  </data>
+  <data name="RevisedLaborAmount" xml:space="preserve">
+    <value>Mto Revisado de Mano de Obra</value>
+  </data>
+  <data name="RevisedLaborPercentage" xml:space="preserve">
+    <value>% Revisado de Mano de Obra</value>
+  </data>
+  <data name="RevisedLaborRate" xml:space="preserve">
+    <value>Tasa Revisada de Mano de Obra</value>
+  </data>
+  <data name="RevisedLaborType" xml:space="preserve">
+    <value>Tipo de Mano de Obra Revisado</value>
+  </data>
+  <data name="RevisedOverheadAmount" xml:space="preserve">
+    <value>Mto Revisado de Gastos Grales</value>
+  </data>
+  <data name="RevisedOverheadPercentage" xml:space="preserve">
+    <value>% Revisado de Gastos Grales</value>
+  </data>
+  <data name="RevisedOverheadRate" xml:space="preserve">
+    <value>Tasa Revisada de Gastos Grales</value>
+  </data>
+  <data name="RevisedOverheadType" xml:space="preserve">
+    <value>Tipo de Gasto Gral Revisado</value>
+  </data>
+  <data name="RevisedPayType" xml:space="preserve">
+    <value>Tipo de Pago Revisado</value>
+  </data>
+  <data name="RevisedProject" xml:space="preserve">
+    <value>Revised Project</value>
+  </data>
+  <data name="RevisedProjectStyle" xml:space="preserve">
+    <value>Revised Project Style</value>
+  </data>
+  <data name="RevisedProjectType" xml:space="preserve">
+    <value>Revised Project Type</value>
+  </data>
+  <data name="RevisedQuantity" xml:space="preserve">
+    <value>Cantidad Revisada</value>
+  </data>
+  <data name="RevisedResource" xml:space="preserve">
+    <value>Recurso Revisado</value>
+  </data>
+  <data name="RevisedTotalAmount" xml:space="preserve">
+    <value>Mto Total Revisado</value>
+  </data>
+  <data name="RevisedUnitCost" xml:space="preserve">
+    <value>Costo Unit. Revisado</value>
+  </data>
+  <data name="RoundingMulticurrency" xml:space="preserve">
+    <value>Redondeo(monedas múltiples)</value>
+  </data>
+  <data name="Sequence" xml:space="preserve">
+    <value>Sequence</value>
+  </data>
+  <data name="SNInterCommunicationID" xml:space="preserve">
+    <value>SN inter-communication ID</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="StandardCost" xml:space="preserve">
+    <value>Costo Estándar</value>
+  </data>
+  <data name="Subcontractor" xml:space="preserve">
+    <value>Subcontractor</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Hora</value>
+  </data>
+  <data name="TimeAndMaterials" xml:space="preserve">
+    <value>Time and Materials</value>
+  </data>
+  <data name="Timecard" xml:space="preserve">
+    <value>Timecard</value>
+  </data>
+  <data name="TimeType" xml:space="preserve">
+    <value>Tipo de Tiempo</value>
+  </data>
+  <data name="ToCostVarianceAccount" xml:space="preserve">
+    <value>Hacia Cta de Desviación de Costos</value>
+  </data>
+  <data name="ToLaborAccount" xml:space="preserve">
+    <value>Hacia Cta de Mano de Obra</value>
+  </data>
+  <data name="ToOverheadAccount" xml:space="preserve">
+    <value>Hacia Cta de Gastos Grales</value>
+  </data>
+  <data name="ToRevenueAccount" xml:space="preserve">
+    <value>Hacia Cta de Ingresos</value>
+  </data>
+  <data name="TotalCostPercentageComplete" xml:space="preserve">
+    <value>Total Cost Percentage Complete</value>
+  </data>
+  <data name="ToTransactionAccount" xml:space="preserve">
+    <value>Hacia Cta de Transacción</value>
+  </data>
+  <data name="ToUnformattedItemNumber" xml:space="preserve">
+    <value>A Nº Art. Sin Formato</value>
+  </data>
+  <data name="ToWIPAccount" xml:space="preserve">
+    <value>Hacia Cta WIP</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Tipo de Transacción</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="UnrealizedExchangeGainLoss" xml:space="preserve">
+    <value>Ganancia/Pérdida Cambiaria No Realizada</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>ID de Usuario</value>
+  </data>
+  <data name="UserSpecified" xml:space="preserve">
+    <value>Especif. por el Usuario</value>
+  </data>
+  <data name="USPayroll" xml:space="preserve">
+    <value>Nómina en EE.UU.</value>
+  </data>
+  <data name="VALUES" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>Proveedor</value>
+  </data>
+  <data name="Writeoff" xml:space="preserve">
+    <value>Cancelación en Libro</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="OriginalInvoiceType" xml:space="preserve">
+    <value>Tipo de Factura Orig.</value>
+  </data>
+  <data name="OffsetBucket" xml:space="preserve">
+    <value>Lote de Demora</value>
+  </data>
+  <data name="SpecificBucket" xml:space="preserve">
+    <value>Lote Específico</value>
+  </data>
+  <data name="Prorate" xml:space="preserve">
+    <value>Prorratear</value>
+  </data>
+  <data name="ICBucketType" xml:space="preserve">
+    <value>Tipo de Lote de CI</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>Serie</value>
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>Lote</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Monto Total</value>
+  </data>
+  <data name="EarningsCode" xml:space="preserve">
+    <value>Cód. de Ganancias</value>
+  </data>
+  <data name="ExpenseCode" xml:space="preserve">
+    <value>Código de Gastos</value>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="OriginalGrid" xml:space="preserve">
+    <value>{0} Orig.</value>
+  </data>
+  <data name="OriginalDetailPopup" xml:space="preserve">
+    <value>{0} Original</value>
+  </data>
+  <data name="OriginalDetailPopup2" xml:space="preserve">
+    <value>{0} Original</value>
+  </data>
+  <data name="OriginalGridCombination" xml:space="preserve">
+    <value>{0} Orig.</value>
+  </data>
+  <data name="RevisedGrid" xml:space="preserve">
+    <value>{0} Revisada</value>
+  </data>
+  <data name="RevisedGrid2" xml:space="preserve">
+    <value>{0} Revisada</value>
+  </data>
+  <data name="RevisedGridCombination" xml:space="preserve">
+    <value>{0} Revisado</value>
+  </data>
+  <data name="EmployeeNo" xml:space="preserve">
+    <value>Nº de Empleado</value>
+  </data>
+  <data name="AdjustmentsDetail" xml:space="preserve">
+    <value>Detalles de Ajustes</value>
+  </data>
+  <data name="TransferDiffTimecard" xml:space="preserve">
+    <value>Está transfiriendo una timecard a un empleado fuera de nómina diferente. Este registro no se exportará a un archivo CSV mediante Actualizar Nómina.</value>
+  </data>
+</root>

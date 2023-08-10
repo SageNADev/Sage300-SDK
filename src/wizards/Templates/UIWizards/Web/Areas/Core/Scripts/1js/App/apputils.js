@@ -21,19 +21,19 @@
     this.apputils.rootNodeClose = "</n>";
     Object.freeze(this.apputils.rootNodeClose);
 
-    this.apputils.createRowNode = function ({ viewId, filter = "", parentId = "", id = "0", verb = apputils.CRUDReasons.Get }) {
+    this.apputils.createRowNode = function ({ viewId, filter = "", parentId = "", id = "0", verb = apputils.CRUDReasons.Get, gp = "-1", ps = '-1' }) {
         filter = filter.length > 0 ? filter : "f=''";
         filter = filter.includes("f=") ? filter : `f='${filter}'`;
 
-        return `<r i='${viewId}' ${filter} p='${parentId}' id='${id}' verb='${verb}'>`;
+        return `<r i='${viewId}' ${filter} p='${parentId}' id='${id}' verb='${verb}' gp='${gp}' ps='${ps}'>`;
 
     };
 
     this.apputils.rowNodeClose = "</r>";
     Object.freeze(this.apputils.rowNodeClose);
 
-    this.apputils.createFieldNode = function ({ fieldId, value, parentId = "0" }) {
-        return `<c f='${fieldId}' v='${value}' p='${parentId}'/>`;
+    this.apputils.createFieldNode = function ({ fieldId, value, verify=false, parentId = "0" }) {
+        return `<c f='${fieldId}' v='${value}' p='${parentId}' vfy='${verify}'/>`;
 
     };
 
@@ -42,7 +42,8 @@
         usrUpdate: "usrUpdate",
         svrValid: "svrValid",
         svrInvalid: "svrInvalid",
-        userctx: "userctx"
+        userctx: "userctx",
+        onBeforeStartEdit: "onBeforeStartEdit"
     };
     Object.freeze(this.apputils.EventMsgTags);
 
@@ -54,6 +55,26 @@
         Last: 4
     };
     Object.freeze(this.apputils.NavigationAction);
+
+    this.apputils.fieldAttributes = {
+        FLD_KEY: "6"
+    },
+    
+    this.apputils.pStatus = {
+        STATUS_UNKNOWN: "STATUS_UNKNOWN",
+        STATUS_OK: "STATUS_OK",
+        STATUS_CANCEL: "STATUS_CANCEL",
+        BUTTON_STATUS_CANCEL_WITH_TABAWAY: "BUTTON_STATUS_CANCEL_WITH_TABAWAY",
+        BUTTON_STATUS_CANCEL: "BUTTON_STATUS_CANCEL",
+        BUTTON_STATUS_OK: "BUTTON_STATUS_OK"
+    },
+    
+    this.apputils.eReason = {
+        RSN_FIELDCHANGE: "RSN_FIELDCHANGE",
+        RSN_DELETE: "RSN_DELETE",
+        RSN_BLKPUT: "RSN_BLKPUT",
+
+    },
 
     this.apputils.CRUDReasons = {
         InitDataOnly: "InitOnly",
@@ -74,7 +95,8 @@
         GotoLastRecord: "GoLast",
         ProcessGet: "ProcessGet",
         ProcessPut: "ProcessPut",
-        Verify: "Verify"
+        Verify: "Verify",
+        Exists: "Exists"
     };
     Object.freeze(this.apputils.CRUDReasons);
 
@@ -266,6 +288,12 @@
         return apputils.formatNumberForQuantity(value, decimal);
     };
 
+    //Provides VB style number Format function
+    //see https://docs.telerik.com/kendo-ui/globalization/intl/numberformatting
+    this.apputils.customNumberFormats = function (value, formatSpecifier) {
+        return kendo.toString(+value, formatSpecifier, kendo.culture().name);
+    };
+
     this.apputils.formatNumber = function (value, precision) {
         //Some value always use '.' as decimal seperator, it will cause issue in localization.
         const decimalSeparator = kendo.culture().numberFormat['.'];
@@ -276,7 +304,11 @@
         }
 
         let number = kendo.parseFloat(value);
-
+        //do this to handle rounding up of -239.495 to -239.49
+        if (number < 0) {
+            let negative = kendo.parseFloat(kendo.toString(0 - number, `n${precision}`));
+            return kendo.toString(0 - negative, `n${precision}`);
+        }
         return kendo.toString(number, `n${precision}`);
     };
 
@@ -390,9 +422,15 @@
         let timeParts = value.split(' ');
         let ts = timeParts[1];
 
-        if (ts === '12:00:00') {
-            ts = '00:00:00';
-        } else if (timeParts.length > 2) {
+        if (value === '' || value === '0') {
+            return '00:00:00';
+        }
+
+        if (timeParts.length > 2) {
+            if (ts === '12:00:00' && timeParts[2].endsWith('AM') ) {
+                return '00:00:00';
+            }
+
             if (timeParts[2].endsWith('PM')) {
                 let s = ts.split(':');
                 let hh = parseInt(s[0]);
@@ -403,8 +441,33 @@
             }
         }
 
+        if (!ts) {
+            return timeParts[0];
+        }
+
+        if (ts.length < 8) {
+            ts = `0${ts}`;
+        }
+
         return ts;
     };
+
+    this.apputils.displayMessage = async function (message, isWarning = false) {
+        let messages = [{ Message: message, Priority: 3, PriorityString: 'Error', Tag: null }];
+
+        let errorMsg = {
+            "UserMessage": {
+                "IsEmail": false, "IsSuccess": false, "Errors": isWarning ? [] : messages, "Warnings": isWarning ? messages : [], "Info": null
+            }
+        }
+
+        return await new Promise((resolve) => {
+            sg.utls.showMessage(errorMsg, () => {
+
+                resolve(true);
+            });
+        });
+    },
 
     this.apputils.stdErrorHandler = async function (isWarning = false) {
         let messages = ErrorEntityCollectionObj.getErrors();
@@ -593,12 +656,6 @@
         return arr;
     };
 
-    if (typeof define === 'function' && define.amd) {
-        define('apputils', [], function () {
-            return apputils;
-        });
-    }
-
     /**
      * @name getTimePicker
      * @description Create and initialize the kendo timepicker control
@@ -670,6 +727,111 @@
         timepicker.closest(".k-timepicker")
             .add(timepicker)
             .removeClass("k-textbox");
+    };
+
+    this.apputils.unFormatPJCFmtcontno = function (val) {
+
+        if (!val || val === "") {
+            return "";
+        }
+
+        return val.replace(/[^a-zA-Z0-9$&%<>]/g, '');
+    };
+
+    this.apputils.Trim = function (v) {
+
+        return v.trim();
+    };
+
+    this.apputils.EscapeQuotes = function (v) {
+
+        return v;
+    };
+
+    this.apputils.Left = function (t, l) {
+        return t.substring(0, l);
+    };
+
+    this.apputils.Right = function (t, l) {
+        return t.substring((t.length) - l, (t.length));
+    };
+    
+    this.apputils.getScreenNameByRotoId = function(id) {
+        switch (id) {
+            //AP
+            case ("AP2100"): 
+                return "InvoiceEntry";
+            case ("AP3100"):
+                return "PaymentEntry";
+            case ("AP4100"):
+                return "AdjustmentEntry";
+             
+            //AR
+            case ("AR2100"):
+                return "InvoiceEntry";
+            case ("AR3100"):
+                return "ReceiptEntry";
+            case ("AR4100"):
+                return "AdjustmentEntry";
+            
+            //CP
+            case ("CP2350"):
+                return "CheckInquiry";
+
+            //UP
+            case ("UP2350"):
+                return "CheckInquiry";
+
+            //PO
+            case ("PO1210"):
+                return "PurchaseOrderEntry";
+            case ("PO1400"):
+                return "InvoiceEntry";
+            case ("PO1310"):
+                return "ReceiptEntry";
+            case ("PO1320"):
+                return "ReturnEntry";
+            case ("PO1500"):
+                return "CreditDebitNoteEntry";
+
+            //OE
+            case ("OE1100"):
+                return "OrderEntry";
+            case ("OE1900"):
+                return "InvoiceEntry";
+            case ("OE2200"):
+                return "ShipmentEntry";
+            case ("OE1600"):
+                return "CreditDebitNoteEntry";
+
+            //PM
+            case ("PM2010"):
+                return "Costs";
+            case ("PM2040"):
+                return "MaterialUsages";
+            case ("PM2050"):
+                return "MaterialReturns";
+            case ("PM2070"):
+                return "EquipmentUsage";
+            case ("PM2080"):
+                return "Charges";
+            case ("PM2100"):
+                return "Timecards";
+            case ("PM2200"):
+                return "Adjustments";
+            case ("PM2320"):
+                return "OpeningBalances";
+            default:
+                return ""; //throw an error at usage if required
+        }
+    };
+
+    //add code above this line
+
+    if (typeof define === 'function' && define.amd) {
+        define('apputils', [], function () {
+            return apputils;
+        });
     }
 
 }).call(this);

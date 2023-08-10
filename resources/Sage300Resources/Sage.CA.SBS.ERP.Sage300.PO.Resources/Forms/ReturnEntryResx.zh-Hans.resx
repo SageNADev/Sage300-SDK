@@ -1725,4 +1725,7 @@
     <value>货品</value>
     <comment>Warning message</comment>
   </data>
+  <data name="NetReturnTotal" xml:space="preserve">
+    <value>净退货合计</value>
+  </data>
 </root>

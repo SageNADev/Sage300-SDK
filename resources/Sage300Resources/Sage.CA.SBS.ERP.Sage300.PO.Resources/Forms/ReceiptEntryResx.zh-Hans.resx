@@ -1894,4 +1894,8 @@
   <data name="DeleteMessage" xml:space="preserve">
     <value>是否确要从这一进货中删除这一供应商及所有附加成本？</value>
   </data>
+  <data name="NetReceiptTotal" xml:space="preserve">
+    <value>净进货合计</value>
+    <comment>Totals - Field</comment>
+  </data>
 </root>

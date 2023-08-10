@@ -101,7 +101,6 @@ h1, h2, h3, h4 {
     margin-bottom: 20px;
     font-family: 'SageUI';
     font-weight: normal;
-    color: @white;
 
     &h1 {
         font-size: 30px;
@@ -178,7 +177,6 @@ a:hover {
     position: absolute;
     top: -55px;
     left: 175px;
-    color: @white;
     font-size: 14px;
 }
 
@@ -507,11 +505,7 @@ input[class*="btn-"] {
         }
 
         .Sage_logo {
-            width: 134px;
-            height: 132px;
-            margin: 0 auto;
-            background-color: #00dc00;
-            border-radius: 3px;
+            margin: 0 auto 10px;
         }
     }
 
@@ -524,13 +518,12 @@ input[class*="btn-"] {
         }
 
         h1.page-header {
-            color: @white;
             font-size: 20px;
             font-weight: normal;
             border: 0;
             text-align: center;
             padding: 36px 0 0 0;
-            margin: 0 0 20px;
+            margin: 0 0 21px;
         }
 
         .page-header-2 {
@@ -600,6 +593,8 @@ input[class*="btn-"] {
                 font-weight: normal;
                 border-radius: 20px !important;
                 padding: 0 38px;
+                width: 370px;
+                max-width: unset;
 
                 &:hover,
                 &:focus {
@@ -761,8 +756,8 @@ ol.std-list {
 }
 
 body {
-    background-color: #282828;
-    font-family: 'SageText';
+    background-color: @black;
+    font-family: 'SageUI';
     background-image: none;
 }
 
@@ -780,11 +775,11 @@ section.login {
     
     &.header {
 
-        background: @black;
+        background: @white;
         background-clip: padding-box;
         margin: 2vh auto 80px;
         max-width: 450px;
-        padding: 10px 40px 10px;
+        padding: 5px 40px;
         width: auto;
         z-index: 2;
         left: unset;
@@ -798,7 +793,6 @@ section.login {
 
                 h1.page-header {
                     font-family: 'SageUI';
-                    color: @white;
                     font-size: 20px;
                     border: 0;
                     text-align: center;
@@ -807,7 +801,6 @@ section.login {
                 }
 
                 .version {
-                    color: @white;
                     font-size: 13px;
                     position: unset;
                     text-align: center;
@@ -825,11 +818,46 @@ section.login {
                     font-family: 'SageUI';
                     font-size: 14px;
                     color: #2e2e2e;
+
+                    + .icon-eye {
+                        position: absolute;
+                        top: 12px;
+                        right: 0;
+                        cursor: pointer;
+                        width: 30px;
+
+                        &:after {
+                            content: "";
+                            width: 16px;
+                            height: 16px;
+                            display: block;
+                            background: transparent url('@{image-path}/login/icon-hide.png') no-repeat ;
+                            background-size: 16px 16px;
+                        }
+                    }
+
+                    + .icon-eye-password-view {
+                        position: absolute;
+                        top: 12px;
+                        right: 0;
+                        cursor: pointer;
+                        width: 30px;
+
+                        &:after {
+                            content: "";
+                            width: 16px;
+                            height: 16px;
+                            display: block;
+                            background: transparent url('@{image-path}/login/icon-view.png') no-repeat ;
+                            background-size: 16px 16px;
+                        }
+                    }
                 }
 
                 .label-login {
-                    color: @white;
+                    color: @black;
                     font-size: 14px;
+                    font-weight: bold;
                     margin-bottom: 6px;
                 }
 
@@ -887,7 +915,7 @@ section.login {
                     }
 
                     .button-footer {
-                        border-top: 1px dotted #66FF66;
+                        border-top: 1px dotted #668494;
                         margin-top: 30px;
                     }
 
@@ -896,7 +924,6 @@ section.login {
                         display: inline-block;
                         font-size: 14px;
                         text-decoration: underline; 
-                        color: #66FF66;
                         font-size: 13px;
 
                         &.disabled {
@@ -961,7 +988,7 @@ section.login {
         .message-login {
             top: 0;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             margin: 20px 0 20px;
             left: auto;
             position: relative;
@@ -971,7 +998,7 @@ section.login {
 
             .modal-msg.k-window-content {
                 padding: 0;
-                border-radius: 10px;
+                border-radius: 8px;
 
                 .message-control {
 

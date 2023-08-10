@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 2016 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 2016-2023 Sage Software, Inc.  All rights reserved. *@
 @using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Inquiry
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Utilities.Constants;
@@ -6,14 +6,13 @@
 
 <script type="text/javascript">
     var menuUrlList = @Html.Raw(Json.Encode(ViewBag.MenuUrlList));
-    var otherUrlList = @Html.Raw(Json.Encode(ViewBag.OthersUrlList));
 </script>
 
 
 <!--Start Quick Menu (draggable sidebar)-->
 <div class="quick-menu ui-draggable ui-draggable-handle" id="draggable">
     <!--Drag -->
-    <div class="quick-tools-head"><span aria-hidden="true" class="glyphicon glyphicon-lightning"></span></div>
+    @*<div class="quick-tools-head"><span aria-hidden="true" class="glyphicon glyphicon-lightning"></span></div>*@
     <div class="quick-tools-body">
     <!--Window Manager -->
     <div class="quick-menu-item quick-menu-windows" id="windowManager" title="@HomePageResx.QuickMenu_WindowManager">

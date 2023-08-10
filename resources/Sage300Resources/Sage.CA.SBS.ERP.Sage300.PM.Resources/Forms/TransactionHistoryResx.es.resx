@@ -1,0 +1,988 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="OriginalApplication" xml:space="preserve">
+    <value>Solicitud Orig.</value>
+  </data>
+  <data name="Application" xml:space="preserve">
+    <value>Aplicación</value>
+  </data>
+  <data name="SourceExtendedCostAmount" xml:space="preserve">
+    <value>Monto de Costo Total de Origen</value>
+  </data>
+  <data name="FunctionalExtendedCostAmount" xml:space="preserve">
+    <value>Monto de Costo Total Funcional</value>
+  </data>
+  <data name="SourceAmount" xml:space="preserve">
+    <value>Monto de Origen</value>
+  </data>
+  <data name="FunctionalAmount" xml:space="preserve">
+    <value>Monto Funcional</value>
+  </data>
+  <data name="RevenueCurrency" xml:space="preserve">
+    <value>Moneda de Ingresos</value>
+  </data>
+  <data name="SourceReceiptAmount" xml:space="preserve">
+    <value>Monto de Recibo de Origen</value>
+  </data>
+  <data name="FunctionalReceiptAmount" xml:space="preserve">
+    <value>Monto de Recibo Funcional</value>
+  </data>
+  <data name="SourcePaymentAmount" xml:space="preserve">
+    <value>Monto de Pago de Origen</value>
+  </data>
+  <data name="FunctionalPaymentAmount" xml:space="preserve">
+    <value>Monto de Pago Funcional</value>
+  </data>
+  <data name="SourceTaxAmount" xml:space="preserve">
+    <value>Monto de Impuesto de Origen</value>
+  </data>
+  <data name="FunctionalTaxAmount" xml:space="preserve">
+    <value>Monto de Impuesto Funcional</value>
+  </data>
+  <data name="SourceRecoverableTax" xml:space="preserve">
+    <value>Impuesto Recuperable de Origen</value>
+  </data>
+  <data name="FunctionalRecoverableTax" xml:space="preserve">
+    <value>Impuesto Recuperable Funcional</value>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>Imp. Incluido 1</value>
+  </data>
+  <data name="Tolls" xml:space="preserve">
+    <value>Peajes</value>
+  </data>
+  <data name="BillAmountBasedOn" xml:space="preserve">
+    <value>Facturar Mto Basado En</value>
+  </data>
+  <data name="TaxBase3Source" xml:space="preserve">
+    <value>Base de Impuesto 3 (Origen)</value>
+  </data>
+  <data name="OverheadPercentage" xml:space="preserve">
+    <value>% de Gastos Grales</value>
+  </data>
+  <data name="MaterialReturn" xml:space="preserve">
+    <value>Devolución de Materiales</value>
+  </data>
+  <data name="Billable" xml:space="preserve">
+    <value>Facturable</value>
+  </data>
+  <data name="SelectedForProcessing" xml:space="preserve">
+    <value>Seleccionado para el Procesamiento</value>
+  </data>
+  <data name="TimeAndMaterials" xml:space="preserve">
+    <value>Tiempo y Materiales</value>
+  </data>
+  <data name="TaxBase5Source" xml:space="preserve">
+    <value>Base de Impuesto 5 (Origen)</value>
+  </data>
+  <data name="TransactionReference" xml:space="preserve">
+    <value>Ref. de Transacción</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Resumen</value>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Fch. Documento</value>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>Imp. Incluido 5</value>
+  </data>
+  <data name="TaxAmountFunctional" xml:space="preserve">
+    <value>Mto. de Impuesto (Funcional)</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Num7" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="AmountReceivedSource" xml:space="preserve">
+    <value>Mto Recibido (Origen)</value>
+  </data>
+  <data name="NoneItem" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="OrderEntry" xml:space="preserve">
+    <value>Ingreso de Órdenes</value>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>Nº Lote</value>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>Interés</value>
+  </data>
+  <data name="Expensed" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PODebitNote" xml:space="preserve">
+    <value>N. Débito de OC</value>
+  </data>
+  <data name="InvoiceThisAmount" xml:space="preserve">
+    <value>Facturar Este Monto</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Fch. Tasa</value>
+  </data>
+  <data name="SourceTotalAmountExclTax" xml:space="preserve">
+    <value>Mto. Total Imp. Excl. de Origen</value>
+  </data>
+  <data name="AmountReceivedFunctional" xml:space="preserve">
+    <value>Mto Recibido (Funcional)</value>
+  </data>
+  <data name="ARItemNumber" xml:space="preserve">
+    <value>Nº Art. de C/C</value>
+  </data>
+  <data name="CurrentPMVersion" xml:space="preserve">
+    <value>Versión Actual de AP</value>
+  </data>
+  <data name="OpeningRetainagePayable" xml:space="preserve">
+    <value>Ctas por Pagar de Retenc. de Apertura</value>
+  </data>
+  <data name="ICUnitOfMeasure" xml:space="preserve">
+    <value>Unid. de Medida de CI</value>
+  </data>
+  <data name="TotalCostPercentageComplete" xml:space="preserve">
+    <value>% de Costo Total Completo</value>
+  </data>
+  <data name="Overhead" xml:space="preserve">
+    <value>Gastos Grales</value>
+  </data>
+  <data name="Subcontractor" xml:space="preserve">
+    <value>Subcontratista</value>
+  </data>
+  <data name="FlatRatePerUnit" xml:space="preserve">
+    <value>Tasa Fija por Unid.</value>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Nº Documento</value>
+  </data>
+  <data name="CostOrRevenue" xml:space="preserve">
+    <value>Costo o Ingresos</value>
+  </data>
+  <data name="CostClass" xml:space="preserve">
+    <value>Clase de Costo</value>
+  </data>
+  <data name="OriginalDocumentNumber" xml:space="preserve">
+    <value>Nº Documento Orig.</value>
+  </data>
+  <data name="FunctionalTotalAmountExclTax" xml:space="preserve">
+    <value>Mto. Total Imp. Excl. Func.</value>
+  </data>
+  <data name="TaxAmount2Functional" xml:space="preserve">
+    <value>Monto de Impuesto 2 (Funcional)</value>
+  </data>
+  <data name="RetainageDebitNote" xml:space="preserve">
+    <value>N. Débito de Retenc.</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Descuento</value>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>Dividir</value>
+  </data>
+  <data name="CheckReversal" xml:space="preserve">
+    <value>Reversión de Cheque</value>
+  </data>
+  <data name="CONTRACT" xml:space="preserve">
+    <value>Contrato</value>
+  </data>
+  <data name="OECreditNote" xml:space="preserve">
+    <value>N. Crédito de IO</value>
+  </data>
+  <data name="ApplyTo" xml:space="preserve">
+    <value>Aplicar a</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>Falso</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Cód. de Moneda</value>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>Imp. Incluido 3</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Artículo</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Proyecto</value>
+  </data>
+  <data name="TransactionQuantity" xml:space="preserve">
+    <value>Cant. de Transacción</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Sec. de Asent.</value>
+  </data>
+  <data name="AccountingMethod" xml:space="preserve">
+    <value>Método Contable</value>
+  </data>
+  <data name="OpeningBalanceReversal" xml:space="preserve">
+    <value>Reversión de Saldo de Apertura</value>
+  </data>
+  <data name="OEShipment" xml:space="preserve">
+    <value>Envío de IO</value>
+  </data>
+  <data name="CostVarianceAccount" xml:space="preserve">
+    <value>Cta de Desviación de Costos</value>
+  </data>
+  <data name="Prorated" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="RetainageRounding" xml:space="preserve">
+    <value>Redondeo de Retención</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>Per. Fiscal</value>
+  </data>
+  <data name="InvoiceType" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DocumentDescription" xml:space="preserve">
+    <value>Descr. del Documento</value>
+  </data>
+  <data name="PaymentReceiptReversal" xml:space="preserve">
+    <value>Reversión de Pago/Recibo</value>
+  </data>
+  <data name="ReceiptPayment" xml:space="preserve">
+    <value>Recibo/Pago</value>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>Nº Artículo</value>
+  </data>
+  <data name="RetainageDueDate" xml:space="preserve">
+    <value>Plazo de Retenc.</value>
+  </data>
+  <data name="CategoryPercentageComplete" xml:space="preserve">
+    <value>% de Categoría Completo</value>
+  </data>
+  <data name="Moved" xml:space="preserve">
+    <value>Trasladado</value>
+  </data>
+  <data name="FMTCONTNO" xml:space="preserve">
+    <value>Contrato</value>
+  </data>
+  <data name="BatchEntryNumber" xml:space="preserve">
+    <value>Nº Asiento del Lote</value>
+  </data>
+  <data name="TaxiHireCar" xml:space="preserve">
+    <value>Taxi/Alquiler de Vehículo</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Eliminado</value>
+  </data>
+  <data name="CostRevenueTRANSNUM" xml:space="preserve">
+    <value>TRANSNUM de Costo/Ingreso</value>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>Autor. Fiscal 3</value>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>Autor.d Fiscal 2</value>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>Autor. Fiscal 1</value>
+  </data>
+  <data name="NotBilled" xml:space="preserve">
+    <value>No Facturado</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>Equipo</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Tipo de Documento</value>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>Autor. Fiscal 4</value>
+  </data>
+  <data name="AmountPaidSource" xml:space="preserve">
+    <value>Mto Pagado (Origen)</value>
+  </data>
+  <data name="HasTheCostComponentBeenBill" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Costo</value>
+  </data>
+  <data name="BatchLineNumber" xml:space="preserve">
+    <value>Nº Línea del Lote</value>
+  </data>
+  <data name="Num3" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="NoCharge" xml:space="preserve">
+    <value>Sin Cargo</value>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Tipo de Transacción</value>
+  </data>
+  <data name="DocumentReference" xml:space="preserve">
+    <value>Ref. de Documento</value>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>Nota de Débito</value>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>Anticipo</value>
+  </data>
+  <data name="Accommodation" xml:space="preserve">
+    <value>Alojamiento</value>
+  </data>
+  <data name="ItemTaxClass5" xml:space="preserve">
+    <value>Clase Fisc. del Art. 5</value>
+  </data>
+  <data name="ItemTaxClass4" xml:space="preserve">
+    <value>Clase Fisc. del Art. 4</value>
+  </data>
+  <data name="ItemTaxClass3" xml:space="preserve">
+    <value>Clase Fisc. del Art. 3</value>
+  </data>
+  <data name="ItemTaxClass2" xml:space="preserve">
+    <value>Clase Fisc. del Art. 2</value>
+  </data>
+  <data name="ItemTaxClass1" xml:space="preserve">
+    <value>Clase Fisc. del Art. 1</value>
+  </data>
+  <data name="Airfares" xml:space="preserve">
+    <value>Tarifas Aéreas</value>
+  </data>
+  <data name="CostPlus" xml:space="preserve">
+    <value>Costo Más</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="RecoverableTaxSource" xml:space="preserve">
+    <value>Impuesto Recup. (Origen)</value>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>Ingresos</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Historial de transacciones de PJC</value>
+  </data>
+  <data name="TransactionAccount" xml:space="preserve">
+    <value>Cta de Transacción</value>
+  </data>
+  <data name="PurchaseOrder" xml:space="preserve">
+    <value>Orden de Compra</value>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>Imp. Incluido 2</value>
+  </data>
+  <data name="RefundReversal" xml:space="preserve">
+    <value>Reversión de Reembolso</value>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>Nombre de Proveed.</value>
+  </data>
+  <data name="RateOperator" xml:space="preserve">
+    <value>Operador de Tasa</value>
+  </data>
+  <data name="AmountPaid" xml:space="preserve">
+    <value>Mto Pagado</value>
+  </data>
+  <data name="RecoverableTaxFunctional" xml:space="preserve">
+    <value>Impuesto Recup. (Funcional)</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="SourceRetainageAmount" xml:space="preserve">
+    <value>Mto de Retenc. de Orig.</value>
+  </data>
+  <data name="LaborAccount" xml:space="preserve">
+    <value>Cta de Mano de Obra</value>
+  </data>
+  <data name="ExchangeGainLoss" xml:space="preserve">
+    <value>Ganancia/Pérdida Cambiaria</value>
+  </data>
+  <data name="FunctionalRetainageAmount" xml:space="preserve">
+    <value>Mto de Retenc. Func.</value>
+  </data>
+  <data name="ReferenceDocument" xml:space="preserve">
+    <value>Documento de Referencia</value>
+  </data>
+  <data name="SourceTotalAmountIncludeTax" xml:space="preserve">
+    <value>Mto. Total Imp. Incl. de Origen</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="POInvoice" xml:space="preserve">
+    <value>Factura de OC</value>
+  </data>
+  <data name="ARUnitOfMeasure" xml:space="preserve">
+    <value>UM de C/C</value>
+  </data>
+  <data name="OpeningBalance" xml:space="preserve">
+    <value>Saldo de Apertura</value>
+  </data>
+  <data name="DrillDownApplication" xml:space="preserve">
+    <value>Búsq. Detall. de Aplicación</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="LINENO" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DayEndSequence" xml:space="preserve">
+    <value>Sec. de Final de Día</value>
+  </data>
+  <data name="SourceModule" xml:space="preserve">
+    <value>Módulo de Origen</value>
+  </data>
+  <data name="BillingType" xml:space="preserve">
+    <value>Tipo de Factur.</value>
+  </data>
+  <data name="InvoiceCreated" xml:space="preserve">
+    <value>Factura Creada</value>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>Proveedor</value>
+  </data>
+  <data name="ConversionFactor" xml:space="preserve">
+    <value>Factor de Conversión</value>
+  </data>
+  <data name="Num8" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="TimecardExpenseType" xml:space="preserve">
+    <value>Tipo de Gasto de Timecard</value>
+  </data>
+  <data name="Charges" xml:space="preserve">
+    <value>Cargos</value>
+  </data>
+  <data name="CostPlusPercentage" xml:space="preserve">
+    <value>Costo más Porcentaje</value>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>Imp. Incluidod 4</value>
+  </data>
+  <data name="EquipmentUsage" xml:space="preserve">
+    <value>Uso del Equipo</value>
+  </data>
+  <data name="LaborRate" xml:space="preserve">
+    <value>Tasa-Mano de Obra</value>
+  </data>
+  <data name="TaxAmount5Functional" xml:space="preserve">
+    <value>Monto de Impuesto 5 (Funcional)</value>
+  </data>
+  <data name="InvoiceRetainageReceivable" xml:space="preserve">
+    <value>Ctas por Cobrar de Retenc. de Factura</value>
+  </data>
+  <data name="OverheadType" xml:space="preserve">
+    <value>Tipo-Gasto Gral</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="UnrealizedExchangeGainLoss" xml:space="preserve">
+    <value>Ganancia/Pérdida Cambiaria No Realizada</value>
+  </data>
+  <data name="ProjectPercentageComplete" xml:space="preserve">
+    <value>% del Proyecto Completo</value>
+  </data>
+  <data name="ProratedManually" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="OverheadRate" xml:space="preserve">
+    <value>Tasa-Gastos Grales</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Ajuste</value>
+  </data>
+  <data name="TaxBase3Functional" xml:space="preserve">
+    <value>Base de Impuesto 3 (Funcional)</value>
+  </data>
+  <data name="FlatRatePerLaborHourUnit" xml:space="preserve">
+    <value>Tasa Fija por Hora/Unid. de Mano de Obra</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>ID de Usuario</value>
+  </data>
+  <data name="Num10" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Num11" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Num12" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="AdditionalCostType" xml:space="preserve">
+    <value>Tipo de Costo Adic.</value>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>Multiplicar</value>
+  </data>
+  <data name="UnitRate" xml:space="preserve">
+    <value>Tasa Unitaria</value>
+  </data>
+  <data name="TaxAmount5Source" xml:space="preserve">
+    <value>Monto de Impuesto 5 (Origen)</value>
+  </data>
+  <data name="OpeningRetainageReceivable" xml:space="preserve">
+    <value>Ctas por Cobrar de Retenc. de Apertura</value>
+  </data>
+  <data name="RetainageUnrealizedExchangeGainLoss" xml:space="preserve">
+    <value>Gananc./Pérd. Cambiaria No Realiz. de Retenc.</value>
+  </data>
+  <data name="SourceOverheadAmount" xml:space="preserve">
+    <value>Mto de Gastos Grales de Orig.</value>
+  </data>
+  <data name="RevenueAccount" xml:space="preserve">
+    <value>Cta de Ingresos</value>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>Asentado</value>
+  </data>
+  <data name="DayEndDate" xml:space="preserve">
+    <value>Fch. Final de Día</value>
+  </data>
+  <data name="TaxAmount3Source" xml:space="preserve">
+    <value>Monto de Impuesto 3 (Origen)</value>
+  </data>
+  <data name="TaxBase1Source" xml:space="preserve">
+    <value>Base de Impuesto 1 (Origen)</value>
+  </data>
+  <data name="TaxAmount1Functional" xml:space="preserve">
+    <value>Monto de Impuesto 1 (Funcional)</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>Tipo de Proyecto</value>
+  </data>
+  <data name="ExtendedAmountFunctional" xml:space="preserve">
+    <value>Mto Total (Funcional)</value>
+  </data>
+  <data name="FunctionalLaborAmount" xml:space="preserve">
+    <value>Mto de Mano de Obra Func.</value>
+  </data>
+  <data name="POCreditNote" xml:space="preserve">
+    <value>N. Crédito de OC</value>
+  </data>
+  <data name="LocationName" xml:space="preserve">
+    <value>Nombre de Ubicac.</value>
+  </data>
+  <data name="UnappliedCash" xml:space="preserve">
+    <value>Efectivo No Aplicado</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Otro</value>
+  </data>
+  <data name="CompletedProject" xml:space="preserve">
+    <value>Proyecto Completado</value>
+  </data>
+  <data name="POReturn" xml:space="preserve">
+    <value>Devolución de OC</value>
+  </data>
+  <data name="Writeoff" xml:space="preserve">
+    <value>Cancelación en Libro</value>
+  </data>
+  <data name="PercentageOfCost" xml:space="preserve">
+    <value>% de Costo</value>
+  </data>
+  <data name="MaterialInternalUsage" xml:space="preserve">
+    <value>Uso Interno de Materiales</value>
+  </data>
+  <data name="VALUES" xml:space="preserve">
+    <value>Campos Opc.</value>
+  </data>
+  <data name="Labor" xml:space="preserve">
+    <value>Mano de Obra</value>
+  </data>
+  <data name="Refund" xml:space="preserve">
+    <value>Reembolso</value>
+  </data>
+  <data name="TaxBase4Source" xml:space="preserve">
+    <value>Base de Impuesto 4 (Origen)</value>
+  </data>
+  <data name="TaxAmount3Functional" xml:space="preserve">
+    <value>Monto de Impuesto 3 (Funcional)</value>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>Autor. Fiscal 5</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Nº Empleado</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>Recurso</value>
+  </data>
+  <data name="FunctionalOverheadAmount" xml:space="preserve">
+    <value>Mto de Gastos Grales Func.</value>
+  </data>
+  <data name="COSTTYPE" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>Clase Fiscal 5</value>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>Clase Fiscal 4</value>
+  </data>
+  <data name="RoundingMulticurrency" xml:space="preserve">
+    <value>Redondeo(monedas múltiples)</value>
+  </data>
+  <data name="AccrualBasis" xml:space="preserve">
+    <value>Acumulativo</value>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>Clase Fiscal 1</value>
+  </data>
+  <data name="TaxAmountSource" xml:space="preserve">
+    <value>Mto. de Impuesto (de Origen)</value>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>Clase Fiscal 3</value>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>Clase Fiscal 2</value>
+  </data>
+  <data name="DrillDownLink" xml:space="preserve">
+    <value>Búsq. Detall. de Vínculo</value>
+  </data>
+  <data name="TaxBase1Functional" xml:space="preserve">
+    <value>Base de Impuesto 1 (Funcional)</value>
+  </data>
+  <data name="TaxBase4Functional" xml:space="preserve">
+    <value>Base de Impuesto 4 (Funcional)</value>
+  </data>
+  <data name="Num1" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="BillingsAndCosts" xml:space="preserve">
+    <value>Facturaciones y Costos</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>Verdadero</value>
+  </data>
+  <data name="ExpensedTaxSource" xml:space="preserve">
+    <value>Impuesto No Recup. (origen)</value>
+  </data>
+  <data name="ExpensedTaxFunctional" xml:space="preserve">
+    <value>Impuesto No Recup. (funcional)</value>
+  </data>
+  <data name="TaxBase2Source" xml:space="preserve">
+    <value>Base de Impuesto 2 (Origen)</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Últ. Mantenim.</value>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio</value>
+  </data>
+  <data name="TaxBase5Functional" xml:space="preserve">
+    <value>Base de Impuesto 5 (Funcional)</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Varios</value>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>Retenido</value>
+  </data>
+  <data name="RetainageExchangeGainLoss" xml:space="preserve">
+    <value>Gananc./Pérd. Cambiaria de Retenc.</value>
+  </data>
+  <data name="DrillDownType" xml:space="preserve">
+    <value>Búsq. Detall. de Tipo</value>
+  </data>
+  <data name="ApplyFrom" xml:space="preserve">
+    <value>Aplicar de</value>
+  </data>
+  <data name="BatchDate" xml:space="preserve">
+    <value>Fecha de Lote</value>
+  </data>
+  <data name="HASOPT" xml:space="preserve">
+    <value>Campos Opc.</value>
+  </data>
+  <data name="OEDebitNote" xml:space="preserve">
+    <value>N. Débito de IO</value>
+  </data>
+  <data name="Num2" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LaborType" xml:space="preserve">
+    <value>Tipo-Mano de Obra</value>
+  </data>
+  <data name="TaxBase2Functional" xml:space="preserve">
+    <value>Base de Impuesto 2 (Funcional)</value>
+  </data>
+  <data name="OverheadAccount" xml:space="preserve">
+    <value>Cta de Gastos Grales</value>
+  </data>
+  <data name="RetainageInvoice" xml:space="preserve">
+    <value>Factura de Retenc.</value>
+  </data>
+  <data name="MaterialUsage" xml:space="preserve">
+    <value>Uso de Materiales</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>Año Fiscal</value>
+  </data>
+  <data name="RateOverride" xml:space="preserve">
+    <value>Sustit. de Tasa</value>
+  </data>
+  <data name="TaxAmount2Source" xml:space="preserve">
+    <value>Monto de Impuesto 2 (Origen)</value>
+  </data>
+  <data name="FunctionalTotalAmountIncludeTax" xml:space="preserve">
+    <value>Mto. Total Imp. Incl. Func.</value>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>Fecha de Asent.</value>
+  </data>
+  <data name="PercentageOfLaborCost" xml:space="preserve">
+    <value>% de Costo de Mano de Obra</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Factura</value>
+  </data>
+  <data name="Num6" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="BillingWorksheetNumber" xml:space="preserve">
+    <value>Nº Hoja de Trab. de Facturac.</value>
+  </data>
+  <data name="Meals" xml:space="preserve">
+    <value>Comidas</value>
+  </data>
+  <data name="EARNINGS" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="TaxAmount4Source" xml:space="preserve">
+    <value>Monto de Impuesto 4 (Origen)</value>
+  </data>
+  <data name="RetainageCreditNote" xml:space="preserve">
+    <value>N. Crédito de Retenc.</value>
+  </data>
+  <data name="FixedPrice" xml:space="preserve">
+    <value>Precio Fijo</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="OEInvoice" xml:space="preserve">
+    <value>Factura de IO</value>
+  </data>
+  <data name="InvoiceBasedOnExchangeRate" xml:space="preserve">
+    <value>Factura Basada en el Tipo de Cambio</value>
+  </data>
+  <data name="Entertainment" xml:space="preserve">
+    <value>Entretenimiento</value>
+  </data>
+  <data name="CostVarianceAmount" xml:space="preserve">
+    <value>Mto de Desviación de Costos</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="POReceipt" xml:space="preserve">
+    <value>Recibo de OC</value>
+  </data>
+  <data name="NotProcessed" xml:space="preserve">
+    <value>No Procesado</value>
+  </data>
+  <data name="Parking" xml:space="preserve">
+    <value>Estacionamiento</value>
+  </data>
+  <data name="Num9" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="RateTypeCode" xml:space="preserve">
+    <value>Cód. de Tipo de Tasa</value>
+  </data>
+  <data name="Num13" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="SourceLaborAmount" xml:space="preserve">
+    <value>Mto de Mano de Obra de Orig.</value>
+  </data>
+  <data name="RetainageGainLoss" xml:space="preserve">
+    <value>Gananc./Pérd. de Retenc.</value>
+  </data>
+  <data name="Nonbillable" xml:space="preserve">
+    <value>No-facturable</value>
+  </data>
+  <data name="ExtendedAmountSource" xml:space="preserve">
+    <value>Mto Total (de Origen)</value>
+  </data>
+  <data name="ManualCheck" xml:space="preserve">
+    <value>Manual Check</value>
+  </data>
+  <data name="TaxAmount1Source" xml:space="preserve">
+    <value>Monto de Impuesto 1 (Origen)</value>
+  </data>
+  <data name="LaborHoursPercentageComplete" xml:space="preserve">
+    <value>% de Horas de Mano de Obra Completo</value>
+  </data>
+  <data name="Timecard" xml:space="preserve">
+    <value>Timecard</value>
+  </data>
+  <data name="RRWorksheetNumber" xml:space="preserve">
+    <value>Nº Hoja de Trabajo de RR</value>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>Nota de Crédito</value>
+  </data>
+  <data name="Num5" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="AdjustmentRevenueType" xml:space="preserve">
+    <value>Ajuste-Tipo de Ingreso</value>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>Nº Cliente</value>
+  </data>
+  <data name="HasRevenueRecognitionBeenRun" xml:space="preserve">
+    <value>¿Se Ha Ejecutado Reconocimiento de Ingresos?</value>
+  </data>
+  <data name="InvoiceRetainagePayable" xml:space="preserve">
+    <value>Ctas por Pagar de Retenc. de Factura</value>
+  </data>
+  <data name="WIPCOSAccount" xml:space="preserve">
+    <value>Cta WIP/COS</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Fch. Transacción</value>
+  </data>
+  <data name="Num4" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Nombre del Cliente</value>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>Nº Transacción</value>
+  </data>
+  <data name="LaborPercentage" xml:space="preserve">
+    <value>% de Mano de Obra</value>
+  </data>
+  <data name="TaxAmount4Functional" xml:space="preserve">
+    <value>Monto de Impuesto 4 (Funcional)</value>
+  </data>
+</root>

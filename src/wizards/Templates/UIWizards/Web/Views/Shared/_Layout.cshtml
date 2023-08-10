@@ -17,6 +17,8 @@
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
 @using Sage.CA.SBS.ERP.Sage300.Web.Models;
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
+@using Sage.CA.SBS.ERP.Sage300.KN.Web.Models;
+@using Sage.CA.SBS.ERP.Sage300.KN.Models;
 @using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Inquiry;
 @using System.Linq;
 
@@ -144,9 +146,9 @@
                                 <i class="settings glyphicon glyphicon-md glyphicon-setting" title="Settings"><span>@NavigationResx.Settings</span></i>
                                 <ul>
                                     @*<li id="unpinMainNav"><i class="unpin"></i><span class="settings-menulist" id="labelUnpin">@NavigationResx.UnpinMenu</span></li>
-                            <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">@NavigationResx.PinMenu</span></li>
-                            <li id="btnColorPicker"><span class="settings-menulist" id="labelCompanyColor">@NavigationResx.SetCompanyColor</span></li>
-                            <li id="btnColorPickerDB"><span class="settings-menulist" id="labelCompanyColorDB">@NavigationResx.SetCompanyColorDB</span></li>*@
+                                        <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">@NavigationResx.PinMenu</span></li>
+                                        <li id="btnColorPicker"><span class="settings-menulist" id="labelCompanyColor">@NavigationResx.SetCompanyColor</span></li>
+                                        <li id="btnColorPickerDB"><span class="settings-menulist" id="labelCompanyColorDB">@NavigationResx.SetCompanyColorDB</span></li>*@
                                     <li id="btnFormSize">
                                         <span class="settings-menulist" id="labelFormSize">@NavigationResx.TextSize</span>
                                         <ul>
@@ -166,18 +168,18 @@
                 </div>
                 @*NOTE: Company Theme Color - color picker - leaving the code for the future usage*@
                 @*<div class="color-picker" id="colorPicker">
-            <div class="wrapper-color-picker">
-                <div class="column">
-                    <h3 class="title">Select Theme Color</h3>
-                    <div id="palette"></div>
-                </div>
-                <div class="column">
-                    <h3 class="title"><label for="picker">Choose Custome Theme Color</label></h3>
-                    <input id="picker" />
-                </div>
-            </div>
-            <div class="glyphicon glyphicon-close dismiss" title="Dismiss" id="btnColorPickerClose"></div>
-        </div>*@
+                        <div class="wrapper-color-picker">
+                            <div class="column">
+                                <h3 class="title">Select Theme Color</h3>
+                                <div id="palette"></div>
+                            </div>
+                            <div class="column">
+                                <h3 class="title"><label for="picker">Choose Custome Theme Color</label></h3>
+                                <input id="picker" />
+                            </div>
+                        </div>
+                        <div class="glyphicon glyphicon-close dismiss" title="Dismiss" id="btnColorPickerClose"></div>
+                    </div>*@
             </div>
         </header>
         <div class="master-wrapper">
@@ -322,7 +324,15 @@
         <!--Quick Menu (draggable sidebar)-->
         @Html.Partial(Constants.QuickMenu)
 
-        
+        if (ViewBag.KNActive != null && ViewBag.KNActive && (ViewBag.ARActive != null && ViewBag.ARActive || ViewBag.APActive != null && ViewBag.APActive || ViewBag.ICActive != null && ViewBag.ICActive))
+        {
+            <!--Note Editor Panel-->
+            @Html.Partial(NoteConstants.NoteEditor, new NoteViewModel<Note>())
+
+            <!--Notes Center -->
+            @Html.Partial(NoteConstants.NotesCenter, new NotesSearchViewModel<NotesSearch>())
+            @Scripts.Render("~/bundles/note")
+        }
 
         <!--Custom Report-->
         @Html.Partial(AsConstants.CustomReport, new ViewDataDictionary { { "IsAdmin", ViewBag.isAdmin } })

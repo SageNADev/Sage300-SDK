@@ -1,0 +1,988 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="OriginalApplication" xml:space="preserve">
+    <value>源模块</value>
+  </data>
+  <data name="Application" xml:space="preserve">
+    <value>应用程序</value>
+  </data>
+  <data name="SourceExtendedCostAmount" xml:space="preserve">
+    <value>原币扩展成本金额</value>
+  </data>
+  <data name="FunctionalExtendedCostAmount" xml:space="preserve">
+    <value>本币扩展成本金额</value>
+  </data>
+  <data name="SourceAmount" xml:space="preserve">
+    <value>原币金额</value>
+  </data>
+  <data name="FunctionalAmount" xml:space="preserve">
+    <value>本币金额</value>
+  </data>
+  <data name="RevenueCurrency" xml:space="preserve">
+    <value>营收币种</value>
+  </data>
+  <data name="SourceReceiptAmount" xml:space="preserve">
+    <value>原币进货金额</value>
+  </data>
+  <data name="FunctionalReceiptAmount" xml:space="preserve">
+    <value>本币进货金额</value>
+  </data>
+  <data name="SourcePaymentAmount" xml:space="preserve">
+    <value>原币付款金额</value>
+  </data>
+  <data name="FunctionalPaymentAmount" xml:space="preserve">
+    <value>本币付款金额</value>
+  </data>
+  <data name="SourceTaxAmount" xml:space="preserve">
+    <value>原币税额</value>
+  </data>
+  <data name="FunctionalTaxAmount" xml:space="preserve">
+    <value>本币税额</value>
+  </data>
+  <data name="SourceRecoverableTax" xml:space="preserve">
+    <value>原币可退税</value>
+  </data>
+  <data name="FunctionalRecoverableTax" xml:space="preserve">
+    <value>本币可退税</value>
+  </data>
+  <data name="TaxIncluded1" xml:space="preserve">
+    <value>含税 1</value>
+  </data>
+  <data name="Tolls" xml:space="preserve">
+    <value>通行费</value>
+  </data>
+  <data name="BillAmountBasedOn" xml:space="preserve">
+    <value>帐单金额基于</value>
+  </data>
+  <data name="TaxBase3Source" xml:space="preserve">
+    <value>税基 3 (原币)</value>
+  </data>
+  <data name="OverheadPercentage" xml:space="preserve">
+    <value>管理费用百分比</value>
+  </data>
+  <data name="MaterialReturn" xml:space="preserve">
+    <value>物料退回</value>
+  </data>
+  <data name="Billable" xml:space="preserve">
+    <value>可计费</value>
+  </data>
+  <data name="SelectedForProcessing" xml:space="preserve">
+    <value>选定于处理</value>
+  </data>
+  <data name="TimeAndMaterials" xml:space="preserve">
+    <value>物料和劳务</value>
+  </data>
+  <data name="TaxBase5Source" xml:space="preserve">
+    <value>税基 5 (原币)</value>
+  </data>
+  <data name="TransactionReference" xml:space="preserve">
+    <value>交易参考</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>汇总</value>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>凭证日期</value>
+  </data>
+  <data name="TaxIncluded5" xml:space="preserve">
+    <value>含税 5</value>
+  </data>
+  <data name="TaxAmountFunctional" xml:space="preserve">
+    <value>税额(本币)</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Num7" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="AmountReceivedSource" xml:space="preserve">
+    <value>已收款金额(原币)</value>
+  </data>
+  <data name="NoneItem" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="OrderEntry" xml:space="preserve">
+    <value>销售订单</value>
+  </data>
+  <data name="BatchNumber" xml:space="preserve">
+    <value>批次号</value>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>利息</value>
+  </data>
+  <data name="Expensed" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PODebitNote" xml:space="preserve">
+    <value>采购订单借项通知单</value>
+  </data>
+  <data name="InvoiceThisAmount" xml:space="preserve">
+    <value>开票金额</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>汇率日期</value>
+  </data>
+  <data name="SourceTotalAmountExclTax" xml:space="preserve">
+    <value>原币未含税合计金额</value>
+  </data>
+  <data name="AmountReceivedFunctional" xml:space="preserve">
+    <value>已收款金额(本币)</value>
+  </data>
+  <data name="ARItemNumber" xml:space="preserve">
+    <value>应收帐款货品编号</value>
+  </data>
+  <data name="CurrentPMVersion" xml:space="preserve">
+    <value>当前PM版本</value>
+  </data>
+  <data name="OpeningRetainagePayable" xml:space="preserve">
+    <value>应付期初保留款</value>
+  </data>
+  <data name="ICUnitOfMeasure" xml:space="preserve">
+    <value>存货控制计量单位</value>
+  </data>
+  <data name="TotalCostPercentageComplete" xml:space="preserve">
+    <value>合计成本完成百分比</value>
+  </data>
+  <data name="Overhead" xml:space="preserve">
+    <value>管理费用</value>
+  </data>
+  <data name="Subcontractor" xml:space="preserve">
+    <value>分包商</value>
+  </data>
+  <data name="FlatRatePerUnit" xml:space="preserve">
+    <value>每单位统一费率</value>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>凭证编号</value>
+  </data>
+  <data name="CostOrRevenue" xml:space="preserve">
+    <value>成本或营收</value>
+  </data>
+  <data name="CostClass" xml:space="preserve">
+    <value>成本级别</value>
+  </data>
+  <data name="OriginalDocumentNumber" xml:space="preserve">
+    <value>原始凭证编号</value>
+  </data>
+  <data name="FunctionalTotalAmountExclTax" xml:space="preserve">
+    <value>本币未含税合计金额</value>
+  </data>
+  <data name="TaxAmount2Functional" xml:space="preserve">
+    <value>税额 2 (本币)</value>
+  </data>
+  <data name="RetainageDebitNote" xml:space="preserve">
+    <value>保留款借项通知单</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>折扣</value>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>除</value>
+  </data>
+  <data name="CheckReversal" xml:space="preserve">
+    <value>支票回转</value>
+  </data>
+  <data name="CONTRACT" xml:space="preserve">
+    <value>合约</value>
+  </data>
+  <data name="OECreditNote" xml:space="preserve">
+    <value>销售订单/贷项通知单</value>
+  </data>
+  <data name="ApplyTo" xml:space="preserve">
+    <value>核销到</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>假</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>币种代码</value>
+  </data>
+  <data name="TaxIncluded3" xml:space="preserve">
+    <value>含税 3</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>货品</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>项目</value>
+  </data>
+  <data name="TransactionQuantity" xml:space="preserve">
+    <value>交易数量</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>过帐序列编号</value>
+  </data>
+  <data name="AccountingMethod" xml:space="preserve">
+    <value>会计方法</value>
+  </data>
+  <data name="OpeningBalanceReversal" xml:space="preserve">
+    <value>期初余额回转</value>
+  </data>
+  <data name="OEShipment" xml:space="preserve">
+    <value>销售订单/发货</value>
+  </data>
+  <data name="CostVarianceAccount" xml:space="preserve">
+    <value>成本差异科目</value>
+  </data>
+  <data name="Prorated" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="RetainageRounding" xml:space="preserve">
+    <value>保留款舍入</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>财务期间</value>
+  </data>
+  <data name="InvoiceType" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DocumentDescription" xml:space="preserve">
+    <value>凭证描述</value>
+  </data>
+  <data name="PaymentReceiptReversal" xml:space="preserve">
+    <value>付款/收款回转</value>
+  </data>
+  <data name="ReceiptPayment" xml:space="preserve">
+    <value>收款/付款</value>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>物料编号</value>
+  </data>
+  <data name="RetainageDueDate" xml:space="preserve">
+    <value>保留款到期日期</value>
+  </data>
+  <data name="CategoryPercentageComplete" xml:space="preserve">
+    <value>类别完成百分比</value>
+  </data>
+  <data name="Moved" xml:space="preserve">
+    <value>已移动</value>
+  </data>
+  <data name="FMTCONTNO" xml:space="preserve">
+    <value>合约</value>
+  </data>
+  <data name="BatchEntryNumber" xml:space="preserve">
+    <value>批次分录号</value>
+  </data>
+  <data name="TaxiHireCar" xml:space="preserve">
+    <value>租车费</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>已删除</value>
+  </data>
+  <data name="CostRevenueTRANSNUM" xml:space="preserve">
+    <value>成本/营收 TRANSNUM</value>
+  </data>
+  <data name="TaxAuthority3" xml:space="preserve">
+    <value>税务机关 3</value>
+  </data>
+  <data name="TaxAuthority2" xml:space="preserve">
+    <value>税务机关 2</value>
+  </data>
+  <data name="TaxAuthority1" xml:space="preserve">
+    <value>税务机关 1</value>
+  </data>
+  <data name="NotBilled" xml:space="preserve">
+    <value>未帐单的</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>设备</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>凭证类型</value>
+  </data>
+  <data name="TaxAuthority4" xml:space="preserve">
+    <value>税务机关 4</value>
+  </data>
+  <data name="AmountPaidSource" xml:space="preserve">
+    <value>已支付金额(原币)</value>
+  </data>
+  <data name="HasTheCostComponentBeenBill" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>成本</value>
+  </data>
+  <data name="BatchLineNumber" xml:space="preserve">
+    <value>批次行编号</value>
+  </data>
+  <data name="Num3" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="NoCharge" xml:space="preserve">
+    <value>不收费</value>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>交易类型</value>
+  </data>
+  <data name="DocumentReference" xml:space="preserve">
+    <value>凭证参考</value>
+  </data>
+  <data name="DebitNote" xml:space="preserve">
+    <value>借项通知单</value>
+  </data>
+  <data name="Prepayment" xml:space="preserve">
+    <value>预收款</value>
+  </data>
+  <data name="Accommodation" xml:space="preserve">
+    <value>住宿费</value>
+  </data>
+  <data name="ItemTaxClass5" xml:space="preserve">
+    <value>货品税级 5</value>
+  </data>
+  <data name="ItemTaxClass4" xml:space="preserve">
+    <value>货品税级 4</value>
+  </data>
+  <data name="ItemTaxClass3" xml:space="preserve">
+    <value>货品税级 3</value>
+  </data>
+  <data name="ItemTaxClass2" xml:space="preserve">
+    <value>货品税级 2</value>
+  </data>
+  <data name="ItemTaxClass1" xml:space="preserve">
+    <value>货品税级 1</value>
+  </data>
+  <data name="Airfares" xml:space="preserve">
+    <value>机票费</value>
+  </data>
+  <data name="CostPlus" xml:space="preserve">
+    <value>成本加成</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="RecoverableTaxSource" xml:space="preserve">
+    <value>原币可抵税金额</value>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>营收</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>项目成本管理/交易历史</value>
+  </data>
+  <data name="TransactionAccount" xml:space="preserve">
+    <value>交易科目</value>
+  </data>
+  <data name="PurchaseOrder" xml:space="preserve">
+    <value>采购订单</value>
+  </data>
+  <data name="TaxIncluded2" xml:space="preserve">
+    <value>含税 2</value>
+  </data>
+  <data name="RefundReversal" xml:space="preserve">
+    <value>退款回转</value>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>供应商名称</value>
+  </data>
+  <data name="RateOperator" xml:space="preserve">
+    <value>汇率运算</value>
+  </data>
+  <data name="AmountPaid" xml:space="preserve">
+    <value>已支付金额(本币)</value>
+  </data>
+  <data name="RecoverableTaxFunctional" xml:space="preserve">
+    <value>本币可抵税金额</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>电话</value>
+  </data>
+  <data name="SourceRetainageAmount" xml:space="preserve">
+    <value>原币保留款金额</value>
+  </data>
+  <data name="LaborAccount" xml:space="preserve">
+    <value>劳务费用科目</value>
+  </data>
+  <data name="ExchangeGainLoss" xml:space="preserve">
+    <value>汇兑收益/损失</value>
+  </data>
+  <data name="FunctionalRetainageAmount" xml:space="preserve">
+    <value>本币保留款金额</value>
+  </data>
+  <data name="ReferenceDocument" xml:space="preserve">
+    <value>参考</value>
+  </data>
+  <data name="SourceTotalAmountIncludeTax" xml:space="preserve">
+    <value>原币已含税合计金额</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>地点</value>
+  </data>
+  <data name="POInvoice" xml:space="preserve">
+    <value>采购订单发票</value>
+  </data>
+  <data name="ARUnitOfMeasure" xml:space="preserve">
+    <value>应收帐款计量单位</value>
+  </data>
+  <data name="OpeningBalance" xml:space="preserve">
+    <value>期初余额</value>
+  </data>
+  <data name="DrillDownApplication" xml:space="preserve">
+    <value>下钻模块</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>类别</value>
+  </data>
+  <data name="LINENO" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DayEndSequence" xml:space="preserve">
+    <value>日终处理序列编号</value>
+  </data>
+  <data name="SourceModule" xml:space="preserve">
+    <value>源模块</value>
+  </data>
+  <data name="BillingType" xml:space="preserve">
+    <value>帐单类型</value>
+  </data>
+  <data name="InvoiceCreated" xml:space="preserve">
+    <value>发票已创建</value>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>供应商</value>
+  </data>
+  <data name="ConversionFactor" xml:space="preserve">
+    <value>转换系数</value>
+  </data>
+  <data name="Num8" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="TimecardExpenseType" xml:space="preserve">
+    <value>工时卡费用类型</value>
+  </data>
+  <data name="Charges" xml:space="preserve">
+    <value>收费</value>
+  </data>
+  <data name="CostPlusPercentage" xml:space="preserve">
+    <value>成本加成百分比</value>
+  </data>
+  <data name="TaxIncluded4" xml:space="preserve">
+    <value>含税 4</value>
+  </data>
+  <data name="EquipmentUsage" xml:space="preserve">
+    <value>设备使用</value>
+  </data>
+  <data name="LaborRate" xml:space="preserve">
+    <value>劳务率</value>
+  </data>
+  <data name="TaxAmount5Functional" xml:space="preserve">
+    <value>税额 5 (本币)</value>
+  </data>
+  <data name="InvoiceRetainageReceivable" xml:space="preserve">
+    <value>应收发票保留款</value>
+  </data>
+  <data name="OverheadType" xml:space="preserve">
+    <value>管理费用类型</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="UnrealizedExchangeGainLoss" xml:space="preserve">
+    <value>未实现汇兑收益/损失</value>
+  </data>
+  <data name="ProjectPercentageComplete" xml:space="preserve">
+    <value>项目完成百分比</value>
+  </data>
+  <data name="ProratedManually" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="OverheadRate" xml:space="preserve">
+    <value>管理费用费率</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>调整</value>
+  </data>
+  <data name="TaxBase3Functional" xml:space="preserve">
+    <value>税基 3 (本币)</value>
+  </data>
+  <data name="FlatRatePerLaborHourUnit" xml:space="preserve">
+    <value>每劳务小时/单位统一费率</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>用户标识</value>
+  </data>
+  <data name="Num10" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Num11" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Num12" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="AdditionalCostType" xml:space="preserve">
+    <value>附加成本类型</value>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>乘</value>
+  </data>
+  <data name="UnitRate" xml:space="preserve">
+    <value>单位费率</value>
+  </data>
+  <data name="TaxAmount5Source" xml:space="preserve">
+    <value>税额 5 (原币)</value>
+  </data>
+  <data name="OpeningRetainageReceivable" xml:space="preserve">
+    <value>应收期初保留款</value>
+  </data>
+  <data name="RetainageUnrealizedExchangeGainLoss" xml:space="preserve">
+    <value>保留款未实现汇兑收益/损失</value>
+  </data>
+  <data name="SourceOverheadAmount" xml:space="preserve">
+    <value>原币制造费用金额</value>
+  </data>
+  <data name="RevenueAccount" xml:space="preserve">
+    <value>营收科目</value>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>已过帐</value>
+  </data>
+  <data name="DayEndDate" xml:space="preserve">
+    <value>日终处理日期</value>
+  </data>
+  <data name="TaxAmount3Source" xml:space="preserve">
+    <value>税额 3 (原币)</value>
+  </data>
+  <data name="TaxBase1Source" xml:space="preserve">
+    <value>税基 1 (原币)</value>
+  </data>
+  <data name="TaxAmount1Functional" xml:space="preserve">
+    <value>税额 1 (本币)</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>项目类型</value>
+  </data>
+  <data name="ExtendedAmountFunctional" xml:space="preserve">
+    <value>扩展金额(本币)</value>
+  </data>
+  <data name="FunctionalLaborAmount" xml:space="preserve">
+    <value>本币劳务金额</value>
+  </data>
+  <data name="POCreditNote" xml:space="preserve">
+    <value>采购订单贷项通知单</value>
+  </data>
+  <data name="LocationName" xml:space="preserve">
+    <value>地点名称</value>
+  </data>
+  <data name="UnappliedCash" xml:space="preserve">
+    <value>未核销现金</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="CompletedProject" xml:space="preserve">
+    <value>已完成项目</value>
+  </data>
+  <data name="POReturn" xml:space="preserve">
+    <value>采购订单退货</value>
+  </data>
+  <data name="Writeoff" xml:space="preserve">
+    <value>冲销</value>
+  </data>
+  <data name="PercentageOfCost" xml:space="preserve">
+    <value>成本百分比</value>
+  </data>
+  <data name="MaterialInternalUsage" xml:space="preserve">
+    <value>物料内部使用</value>
+  </data>
+  <data name="VALUES" xml:space="preserve">
+    <value>自选字段</value>
+  </data>
+  <data name="Labor" xml:space="preserve">
+    <value>劳务</value>
+  </data>
+  <data name="Refund" xml:space="preserve">
+    <value>退款</value>
+  </data>
+  <data name="TaxBase4Source" xml:space="preserve">
+    <value>税基 4 (原币)</value>
+  </data>
+  <data name="TaxAmount3Functional" xml:space="preserve">
+    <value>税额 3 (本币)</value>
+  </data>
+  <data name="TaxAuthority5" xml:space="preserve">
+    <value>税务机关 5</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>雇员编号</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>资源</value>
+  </data>
+  <data name="FunctionalOverheadAmount" xml:space="preserve">
+    <value>本币制造费用金额</value>
+  </data>
+  <data name="COSTTYPE" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="TaxClass5" xml:space="preserve">
+    <value>税级 5</value>
+  </data>
+  <data name="TaxClass4" xml:space="preserve">
+    <value>税级 4</value>
+  </data>
+  <data name="RoundingMulticurrency" xml:space="preserve">
+    <value>舍入(多币种)</value>
+  </data>
+  <data name="AccrualBasis" xml:space="preserve">
+    <value>应计制</value>
+  </data>
+  <data name="TaxClass1" xml:space="preserve">
+    <value>税级 1</value>
+  </data>
+  <data name="TaxAmountSource" xml:space="preserve">
+    <value>税额(原币)</value>
+  </data>
+  <data name="TaxClass3" xml:space="preserve">
+    <value>税级 3</value>
+  </data>
+  <data name="TaxClass2" xml:space="preserve">
+    <value>税级 2</value>
+  </data>
+  <data name="DrillDownLink" xml:space="preserve">
+    <value>下钻链接</value>
+  </data>
+  <data name="TaxBase1Functional" xml:space="preserve">
+    <value>税基 1 (本币)</value>
+  </data>
+  <data name="TaxBase4Functional" xml:space="preserve">
+    <value>税基 4 (本币)</value>
+  </data>
+  <data name="Num1" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="BillingsAndCosts" xml:space="preserve">
+    <value>帐单和成本</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>真</value>
+  </data>
+  <data name="ExpensedTaxSource" xml:space="preserve">
+    <value>费用税(原币)</value>
+  </data>
+  <data name="ExpensedTaxFunctional" xml:space="preserve">
+    <value>费用税(本币)</value>
+  </data>
+  <data name="TaxBase2Source" xml:space="preserve">
+    <value>税基 2 (原币)</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>上一维护日期</value>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>汇率</value>
+  </data>
+  <data name="TaxBase5Functional" xml:space="preserve">
+    <value>税基 5 (本币)</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>杂项费用</value>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>搁置</value>
+  </data>
+  <data name="RetainageExchangeGainLoss" xml:space="preserve">
+    <value>保留款汇兑收益/损失</value>
+  </data>
+  <data name="DrillDownType" xml:space="preserve">
+    <value>下钻类型</value>
+  </data>
+  <data name="ApplyFrom" xml:space="preserve">
+    <value>核销从</value>
+  </data>
+  <data name="BatchDate" xml:space="preserve">
+    <value>批次日期</value>
+  </data>
+  <data name="HASOPT" xml:space="preserve">
+    <value>自选字段</value>
+  </data>
+  <data name="OEDebitNote" xml:space="preserve">
+    <value>销售订单/借项通知单</value>
+  </data>
+  <data name="Num2" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LaborType" xml:space="preserve">
+    <value>劳务类型</value>
+  </data>
+  <data name="TaxBase2Functional" xml:space="preserve">
+    <value>税基 2 (本币)</value>
+  </data>
+  <data name="OverheadAccount" xml:space="preserve">
+    <value>管理费用科目</value>
+  </data>
+  <data name="RetainageInvoice" xml:space="preserve">
+    <value>保留款发票</value>
+  </data>
+  <data name="MaterialUsage" xml:space="preserve">
+    <value>物料使用</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>财务年度</value>
+  </data>
+  <data name="RateOverride" xml:space="preserve">
+    <value>汇率替换</value>
+  </data>
+  <data name="TaxAmount2Source" xml:space="preserve">
+    <value>税额 2 (原币)</value>
+  </data>
+  <data name="FunctionalTotalAmountIncludeTax" xml:space="preserve">
+    <value>本币已含税合计金额</value>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>过帐日期</value>
+  </data>
+  <data name="PercentageOfLaborCost" xml:space="preserve">
+    <value>劳务成本百分比</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>发票</value>
+  </data>
+  <data name="Num6" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="BillingWorksheetNumber" xml:space="preserve">
+    <value>帐单工作表编号</value>
+  </data>
+  <data name="Meals" xml:space="preserve">
+    <value>餐费</value>
+  </data>
+  <data name="EARNINGS" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="TaxAmount4Source" xml:space="preserve">
+    <value>税额 4 (原币)</value>
+  </data>
+  <data name="RetainageCreditNote" xml:space="preserve">
+    <value>保留款贷项通知单</value>
+  </data>
+  <data name="FixedPrice" xml:space="preserve">
+    <value>固定价格</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>物料</value>
+  </data>
+  <data name="OEInvoice" xml:space="preserve">
+    <value>销售订单/发票</value>
+  </data>
+  <data name="InvoiceBasedOnExchangeRate" xml:space="preserve">
+    <value>开票汇率</value>
+  </data>
+  <data name="Entertainment" xml:space="preserve">
+    <value>招待费</value>
+  </data>
+  <data name="CostVarianceAmount" xml:space="preserve">
+    <value>成本差异金额</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="POReceipt" xml:space="preserve">
+    <value>采购订单进货</value>
+  </data>
+  <data name="NotProcessed" xml:space="preserve">
+    <value>未处理的</value>
+  </data>
+  <data name="Parking" xml:space="preserve">
+    <value>停车费</value>
+  </data>
+  <data name="Num9" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="RateTypeCode" xml:space="preserve">
+    <value>汇率类型代码</value>
+  </data>
+  <data name="Num13" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="SourceLaborAmount" xml:space="preserve">
+    <value>原币劳务金额</value>
+  </data>
+  <data name="RetainageGainLoss" xml:space="preserve">
+    <value>保留款收益/损失</value>
+  </data>
+  <data name="Nonbillable" xml:space="preserve">
+    <value>不开帐单</value>
+  </data>
+  <data name="ExtendedAmountSource" xml:space="preserve">
+    <value>扩展金额(原币)</value>
+  </data>
+  <data name="ManualCheck" xml:space="preserve">
+    <value>手动检查</value>
+  </data>
+  <data name="TaxAmount1Source" xml:space="preserve">
+    <value>税额 1 (原币)</value>
+  </data>
+  <data name="LaborHoursPercentageComplete" xml:space="preserve">
+    <value>劳务小时完成百分比</value>
+  </data>
+  <data name="Timecard" xml:space="preserve">
+    <value>工时卡</value>
+  </data>
+  <data name="RRWorksheetNumber" xml:space="preserve">
+    <value>营收确认工作表编号</value>
+  </data>
+  <data name="CreditNote" xml:space="preserve">
+    <value>贷项通知单</value>
+  </data>
+  <data name="Num5" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="AdjustmentRevenueType" xml:space="preserve">
+    <value>调整营收类型</value>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>客户编号</value>
+  </data>
+  <data name="HasRevenueRecognitionBeenRun" xml:space="preserve">
+    <value>营收确认已运行</value>
+  </data>
+  <data name="InvoiceRetainagePayable" xml:space="preserve">
+    <value>应付发票保留款</value>
+  </data>
+  <data name="WIPCOSAccount" xml:space="preserve">
+    <value>在制品/销货成本科目</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>交易日期</value>
+  </data>
+  <data name="Num4" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>客户名称</value>
+  </data>
+  <data name="TransactionNumber" xml:space="preserve">
+    <value>交易编号</value>
+  </data>
+  <data name="LaborPercentage" xml:space="preserve">
+    <value>劳务百分比</value>
+  </data>
+  <data name="TaxAmount4Functional" xml:space="preserve">
+    <value>税额 4 (本币)</value>
+  </data>
+</root>

@@ -298,7 +298,7 @@ html.form-medium {
 
           &.k-i-arrow-60-down, 
           &.k-i-arrow-s {
-            background-position: -75px 0;
+            background-position: -76px 0;
           }          
         }
 
@@ -306,13 +306,13 @@ html.form-medium {
 
           .k-icon.k-i-arrow-60-up,
           .k-icon.k-i-arrow-n {
-            background-position: -631px -3px;
+            background-position: -514px -4px;
             height: 12px;
           }
 
           .k-icon.k-i-arrow-60-down,
           .k-icon.k-i-arrow-s {
-            background-position: -75px -5px;
+            background-position: -490px -6px;
             height: 12px;
           }
         }
@@ -325,7 +325,7 @@ html.form-medium {
 
           &.k-i-arrow-60-down, 
           &.k-i-arrow-s  {
-            background-position: -76px -62px;
+            background-position: -490px -62px;
           }
 
           &.k-i-calendar  {
@@ -337,13 +337,13 @@ html.form-medium {
 
           .k-icon.k-i-arrow-60-up,
           .k-icon.k-i-arrow-n {
-            background-position: -631px -66px;
+            background-position: -514px -66px;
             height: 12px;
           }
 
           .k-icon.k-i-arrow-60-down,
           .k-icon.k-i-arrow-s {
-            background-position: -75px -68px;
+            background-position: -490px -68px;
             height: 12px;
           }
         }
@@ -395,7 +395,7 @@ html.form-medium {
   .k-tabstrip .k-tabstrip-items .k-item {
 
     .k-link {
-      padding: 6px 0;
+      padding: 6px 0 12px;
       font-size: 12px;
     }
   }
@@ -411,7 +411,8 @@ html.form-medium {
       }
 
       .k-select:before {
-        line-height: 1.3;
+        position: relative;
+        top: -2px;
       }
     }
   }
@@ -1199,18 +1200,34 @@ html.form-medium {
   div.data-nav-group {
     .btn-first {
       background-position: -125px 2px;
+
+      &:disabled {
+        background-position: -125px -61px;
+      }
     }
 
     .btn-previous {
       background-position: -163px 2px;
+
+      &:disabled {
+        background-position: -163px -61px;
+      }
     }
 
     .btn-next {
       background-position: -147px 2px;
+
+      &:disabled {
+        background-position: -147px -61px;
+      }
     }
 
     .btn-last {
       background-position: -102px 2px;
+
+      &:disabled {
+        background-position: -102px -61px;
+      }
     }
   }
 
@@ -1722,12 +1739,12 @@ html.form-small {
           background-size: 700px 70px;
 
           &.k-i-calendar {
-            background-position: -43px -1px;
+            background-position: -43px -2px;
           }
 
           &.k-i-arrow-60-down, 
           &.k-i-arrow-s {
-            background-position: -66px -1px;
+            background-position: -67px -2px;
           }          
         }
       }
@@ -1836,7 +1853,7 @@ html.form-small {
     .k-item {
 
       .k-link {
-        padding: 4px 0 3px;
+        padding: 4px 0 10px;
         font-size: 11px;
       }
 
@@ -2261,7 +2278,7 @@ html.form-small {
       }
 
       &.btn-details:after {
-        left: -4px;
+        left: -3px;
         top: 2px;
       }
     }
@@ -2431,17 +2448,17 @@ html.form-small {
         .k-link {
 
           .k-icon {
-            background-size: 800px 80px;
+            background-size: 700px 70px;
 
             &.k-i-arrow-60-up,
             &.k-i-arrow-n {
-              background-position: -631px -4px;
+              background-position: -451px -3px;
               height: 9px;
             }
 
             &.k-i-arrow-60-down,
             &.k-i-arrow-s {
-              background-position: -75px -7px;
+              background-position: -430px -6px;
               height: 9px;
             }
           }
@@ -2456,17 +2473,17 @@ html.form-small {
           .k-link {
 
             .k-icon {
-              background-size: 800px 80px;
+              background-size: 700px 70px;
 
               &.k-i-arrow-60-up,
               &.k-i-arrow-n {
-                background-position: -631px -66px;
+                background-position: -451px -57px;
                 height: 9px;
               }
 
               &.k-i-arrow-60-down,
               &.k-i-arrow-s {
-                background-position: -75px -69px;
+                background-position: -430px -60px;
                 height: 9px;
               }
             }
@@ -2758,7 +2775,7 @@ html.form-small {
   .k-i-expand, 
   .k-plus, 
   .k-plus-disabled {
-    background-position: -565px 7px;
+    background-position: -127px -2px;
   }
 
   .k-i-collapse, 
@@ -2923,18 +2940,34 @@ html.form-small {
   div.data-nav-group {
     .btn-first {
       background-position: -110px 1px;
+
+      &:disabled {
+        background-position: -110px -53px;
+      }
     }
 
     .btn-previous {
       background-position: -144px 1px;
+
+      &:disabled {
+        background-position: -144px -53px;
+      }
     }
 
     .btn-next {
       background-position: -129px 1px;
+
+      &:disabled {
+        background-position: -129px -53px;
+      }
     }
 
     .btn-last {
       background-position: -90px 1px;
+
+      &:disabled {
+        background-position: -90px -53px;
+      }
     }
   }
 
@@ -3074,7 +3107,7 @@ html.form-small {
     .k-i-expand, 
     .k-plus, 
     .k-plus-disabled {
-      background-position: -565px -2px;
+      background-position: -147px -2px;
     }
   }
 

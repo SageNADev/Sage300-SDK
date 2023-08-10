@@ -1,0 +1,1122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ServiceYear6" xml:space="preserve">
+    <value>Service Year 6</value>
+  </data>
+  <data name="Deduction" xml:space="preserve">
+    <value>Deduction</value>
+  </data>
+  <data name="AddAmount17" xml:space="preserve">
+    <value>Add Amount 17</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="CommissionPct1" xml:space="preserve">
+    <value>Commission Pct. 1</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Last Maintained</value>
+  </data>
+  <data name="WageBracket4" xml:space="preserve">
+    <value>Wage Bracket 4</value>
+  </data>
+  <data name="BillingPercentage4" xml:space="preserve">
+    <value>Billing Percentage 4</value>
+  </data>
+  <data name="InsertOptionalFields" xml:space="preserve">
+    <value>Insert Optional Fields</value>
+  </data>
+  <data name="SickPayNotIncludibleAsIncome3RdPartySickPay" xml:space="preserve">
+    <value>Sick Pay Not Includible as Income (3rd Party Sick Pay)</value>
+  </data>
+  <data name="ET4BOX" xml:space="preserve">
+    <value>RESERVED - Cdn Only</value>
+  </data>
+  <data name="AddAmount12" xml:space="preserve">
+    <value>Add Amount 12</value>
+  </data>
+  <data name="RR1BOX" xml:space="preserve">
+    <value>RESERVED - Cdn Only</value>
+  </data>
+  <data name="ServiceYear5" xml:space="preserve">
+    <value>Service Year 5</value>
+  </data>
+  <data name="MaxCarryOverHours8" xml:space="preserve">
+    <value>Max. Carry-over Hours 8</value>
+  </data>
+  <data name="PostBenefit" xml:space="preserve">
+    <value>Post Benefit</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="EmployerProvidedHealthCare" xml:space="preserve">
+    <value>Employer Provided Health Care</value>
+  </data>
+  <data name="BaseEarningsListUse" xml:space="preserve">
+    <value>Base Earnings List Use</value>
+  </data>
+  <data name="AddAmount20" xml:space="preserve">
+    <value>Add Amount 20</value>
+  </data>
+  <data name="ListUseOfTypeOfTaxableWage" xml:space="preserve">
+    <value>List Use of Type of Taxable Wage</value>
+  </data>
+  <data name="EmployeeQuarterlyMinimum" xml:space="preserve">
+    <value>Employee Quarterly Minimum</value>
+  </data>
+  <data name="ServiceYear4" xml:space="preserve">
+    <value>Service Year 4</value>
+  </data>
+  <data name="Form941EmergencyPaidSickLeave" xml:space="preserve">
+    <value>Form 941 - Emergency Paid Sick Leave</value>
+  </data>
+  <data name="EmployerRate" xml:space="preserve">
+    <value>Employer Rate</value>
+  </data>
+  <data name="BillingPercentage1" xml:space="preserve">
+    <value>Billing Percentage 1</value>
+  </data>
+  <data name="PrintOnCheck" xml:space="preserve">
+    <value>Print On Check</value>
+  </data>
+  <data name="EmployeeTenPeriodYearMinimum" xml:space="preserve">
+    <value>Employee Ten Period/Year Minimum</value>
+  </data>
+  <data name="OtherInformationBox" xml:space="preserve">
+    <value>Other Information Box</value>
+  </data>
+  <data name="PercntOfExcess5" xml:space="preserve">
+    <value>Percnt. of Excess 5</value>
+  </data>
+  <data name="Employee408K6" xml:space="preserve">
+    <value>Employee 408(k)(6)</value>
+  </data>
+  <data name="UncollectedSocSecTaxOnCostOfGroupTermOver50000" xml:space="preserve">
+    <value>Uncollected Soc Sec Tax on Cost of Group Term over $50,000</value>
+  </data>
+  <data name="PostLiab" xml:space="preserve">
+    <value>Post Liab.</value>
+  </data>
+  <data name="NonqualifiedPlan" xml:space="preserve">
+    <value>Nonqualified Plan</value>
+  </data>
+  <data name="StartMonth" xml:space="preserve">
+    <value>Start Month</value>
+  </data>
+  <data name="ServiceYear3" xml:space="preserve">
+    <value>Service Year 3</value>
+  </data>
+  <data name="CommissionAmount4" xml:space="preserve">
+    <value>Commission Amt. 4</value>
+  </data>
+  <data name="EmployeeSecondaryRate" xml:space="preserve">
+    <value>Employee Secondary Rate</value>
+  </data>
+  <data name="EmployerTenPerYearMaximum" xml:space="preserve">
+    <value>Employer Ten Per/Year Maximum</value>
+  </data>
+  <data name="ER1BOX" xml:space="preserve">
+    <value>RESERVED - Cdn Only</value>
+  </data>
+  <data name="AllocatedTips" xml:space="preserve">
+    <value>Allocated Tips</value>
+  </data>
+  <data name="EmployerAnnualMaximum" xml:space="preserve">
+    <value>Employer Annual Maximum</value>
+  </data>
+  <data name="PieceAmount2" xml:space="preserve">
+    <value>Piece amount 2</value>
+  </data>
+  <data name="RASSOCW2SW" xml:space="preserve">
+    <value>Associate W-2 printing</value>
+  </data>
+  <data name="WageBracket12" xml:space="preserve">
+    <value>Wage Bracket 12</value>
+  </data>
+  <data name="AddAmount8" xml:space="preserve">
+    <value>Add Amount 8</value>
+  </data>
+  <data name="ServiceYear2" xml:space="preserve">
+    <value>Service Year 2</value>
+  </data>
+  <data name="WageBracket18" xml:space="preserve">
+    <value>Wage Bracket 18</value>
+  </data>
+  <data name="WageBracket19" xml:space="preserve">
+    <value>Wage Bracket 19</value>
+  </data>
+  <data name="BillingPercentage2" xml:space="preserve">
+    <value>Billing Percentage 2</value>
+  </data>
+  <data name="WageBracket14" xml:space="preserve">
+    <value>Wage Bracket 14</value>
+  </data>
+  <data name="WageBracket15" xml:space="preserve">
+    <value>Wage Bracket 15</value>
+  </data>
+  <data name="WageBracket16" xml:space="preserve">
+    <value>Wage Bracket 16</value>
+  </data>
+  <data name="CarryOverMonth" xml:space="preserve">
+    <value>Carry-over Month</value>
+  </data>
+  <data name="WageBracket10" xml:space="preserve">
+    <value>Wage Bracket 10</value>
+  </data>
+  <data name="WageBracket11" xml:space="preserve">
+    <value>Wage Bracket 11</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="WageBracket13" xml:space="preserve">
+    <value>Wage Bracket 13</value>
+  </data>
+  <data name="Num130ApprenticeshipIncentiveGrantOr" xml:space="preserve">
+    <value>130 - Apprenticeship, incentive grant or...</value>
+  </data>
+  <data name="PieceAmount3" xml:space="preserve">
+    <value>Piece amount 3</value>
+  </data>
+  <data name="WageBracket2" xml:space="preserve">
+    <value>Wage Bracket 2</value>
+  </data>
+  <data name="EmployerBiweeklyMinimum" xml:space="preserve">
+    <value>Employer Biweekly Minimum</value>
+  </data>
+  <data name="Form941EmergencyPaidFamilyLeave" xml:space="preserve">
+    <value>Form 941 - Emergency Paid Family Leave</value>
+  </data>
+  <data name="PercntOfExcess19" xml:space="preserve">
+    <value>Percnt. of Excess 19</value>
+  </data>
+  <data name="ServiceYear1" xml:space="preserve">
+    <value>Service Year 1</value>
+  </data>
+  <data name="MaxAnnualAccrual10" xml:space="preserve">
+    <value>Max. Annual Accrual 10</value>
+  </data>
+  <data name="MaxAnnualAccrual9" xml:space="preserve">
+    <value>Max. Annual Accrual 9</value>
+  </data>
+  <data name="EmployerMonthlyMaximum" xml:space="preserve">
+    <value>Employer Monthly Maximum</value>
+  </data>
+  <data name="MaxAnnualAccrual7" xml:space="preserve">
+    <value>Max. Annual Accrual 7</value>
+  </data>
+  <data name="EmployeeThirteenPeriodYearMi" xml:space="preserve">
+    <value>Employee Thirteen Period/Year Mi</value>
+  </data>
+  <data name="MaxAnnualAccrual5" xml:space="preserve">
+    <value>Max. Annual Accrual 5</value>
+  </data>
+  <data name="MaxAnnualAccrual4" xml:space="preserve">
+    <value>Max. Annual Accrual 4</value>
+  </data>
+  <data name="E22PPPYMIN" xml:space="preserve">
+    <value>Employee Twentytwo Period/Year M</value>
+  </data>
+  <data name="MaxAnnualAccrual2" xml:space="preserve">
+    <value>Max. Annual Accrual 2</value>
+  </data>
+  <data name="MaxAnnualAccrual1" xml:space="preserve">
+    <value>Max. Annual Accrual 1</value>
+  </data>
+  <data name="MaxAnnualAccrual8" xml:space="preserve">
+    <value>Max. Annual Accrual 8</value>
+  </data>
+  <data name="EmployeeAnnualMaximum" xml:space="preserve">
+    <value>Employee Annual Maximum</value>
+  </data>
+  <data name="AdvanceToBeRepaid" xml:space="preserve">
+    <value>Advance to Be Repaid</value>
+  </data>
+  <data name="WageBracket3" xml:space="preserve">
+    <value>Wage Bracket 3</value>
+  </data>
+  <data name="PieceCount3" xml:space="preserve">
+    <value>Piece count 3</value>
+  </data>
+  <data name="Float" xml:space="preserve">
+    <value>Float</value>
+  </data>
+  <data name="IncrementHours4" xml:space="preserve">
+    <value>Increment Hours 4</value>
+  </data>
+  <data name="EmployerLifetimeMaximum" xml:space="preserve">
+    <value>Employer Lifetime Maximum</value>
+  </data>
+  <data name="TakeDeductionBeforeListUse" xml:space="preserve">
+    <value>Take Deduction Before List Use</value>
+  </data>
+  <data name="UncollectedMedicareTaxOnCostOfGroupTermOver50000" xml:space="preserve">
+    <value>Uncollected Medicare Tax on Cost of Group Term over $50,000</value>
+  </data>
+  <data name="SalesCommissionTable" xml:space="preserve">
+    <value>Sales Commission Table</value>
+  </data>
+  <data name="EmployeeSemimonthlyMinimum" xml:space="preserve">
+    <value>Employee Semimonthly Minimum</value>
+  </data>
+  <data name="ReportAs" xml:space="preserve">
+    <value>Report as</value>
+  </data>
+  <data name="CostOfGroupTermOver50000" xml:space="preserve">
+    <value>Cost of Group Term over $50,000</value>
+  </data>
+  <data name="EarningDeductionShortDescript" xml:space="preserve">
+    <value>Earning/Deduction Short Descript</value>
+  </data>
+  <data name="MaxCarryOverHours1" xml:space="preserve">
+    <value>Max. Carry-over Hours 1</value>
+  </data>
+  <data name="IncrementHours1" xml:space="preserve">
+    <value>Increment Hours 1</value>
+  </data>
+  <data name="DateOfHire" xml:space="preserve">
+    <value>Date of Hire</value>
+  </data>
+  <data name="PercntOfExcess4" xml:space="preserve">
+    <value>Percnt. of Excess 4</value>
+  </data>
+  <data name="EmployeeWeeklyMaximum" xml:space="preserve">
+    <value>Employee Weekly Maximum</value>
+  </data>
+  <data name="EmployerQuarterlyMaximum" xml:space="preserve">
+    <value>Employer Quarterly Maximum</value>
+  </data>
+  <data name="Accrual" xml:space="preserve">
+    <value>Accrual</value>
+  </data>
+  <data name="EmployeeDailyMinimum" xml:space="preserve">
+    <value>Employee Daily Minimum</value>
+  </data>
+  <data name="SpecificMonthDay" xml:space="preserve">
+    <value>Specific Month/Day</value>
+  </data>
+  <data name="Section457" xml:space="preserve">
+    <value>Section 457</value>
+  </data>
+  <data name="Benefit" xml:space="preserve">
+    <value>Benefit</value>
+  </data>
+  <data name="Employee457" xml:space="preserve">
+    <value>Employee 457</value>
+  </data>
+  <data name="ServiceYear9" xml:space="preserve">
+    <value>Service Year 9</value>
+  </data>
+  <data name="AddAmount2" xml:space="preserve">
+    <value>Add Amount 2</value>
+  </data>
+  <data name="WageBracket5" xml:space="preserve">
+    <value>Wage Bracket 5</value>
+  </data>
+  <data name="EmployeeDailyMaximum" xml:space="preserve">
+    <value>Employee Daily Maximum</value>
+  </data>
+  <data name="Num028OtherIncome" xml:space="preserve">
+    <value>028 - Other income</value>
+  </data>
+  <data name="EmployerSecondaryRate" xml:space="preserve">
+    <value>Employer Secondary Rate</value>
+  </data>
+  <data name="EmployeeRate" xml:space="preserve">
+    <value>Employee Rate</value>
+  </data>
+  <data name="MonthsAfterHire" xml:space="preserve">
+    <value>Months after Hire</value>
+  </data>
+  <data name="AddAmount11" xml:space="preserve">
+    <value>Add Amount 11</value>
+  </data>
+  <data name="WageBracket6" xml:space="preserve">
+    <value>Wage Bracket 6</value>
+  </data>
+  <data name="EmployeeSemimonthlyMaximum" xml:space="preserve">
+    <value>Employee Semimonthly Maximum</value>
+  </data>
+  <data name="AfterAnnualMaximumReached" xml:space="preserve">
+    <value>After Annual Maximum Reached</value>
+  </data>
+  <data name="InitializeNewRecord" xml:space="preserve">
+    <value>Initialize New Record</value>
+  </data>
+  <data name="Employee401K" xml:space="preserve">
+    <value>Employee 401(k)</value>
+  </data>
+  <data name="IncomeUnderSection409A" xml:space="preserve">
+    <value>Income under section 409A</value>
+  </data>
+  <data name="WageBracket17" xml:space="preserve">
+    <value>Wage Bracket 17</value>
+  </data>
+  <data name="EmployeeTenPeriodYearMaximum" xml:space="preserve">
+    <value>Employee Ten Period/Year Maximum</value>
+  </data>
+  <data name="EmployerDailyMinimum" xml:space="preserve">
+    <value>Employer Daily Minimum</value>
+  </data>
+  <data name="AddAmount7" xml:space="preserve">
+    <value>Add Amount 7</value>
+  </data>
+  <data name="BaseEarningsOvertime" xml:space="preserve">
+    <value>Base Earnings Overtime</value>
+  </data>
+  <data name="CommissionPct2" xml:space="preserve">
+    <value>Commission Pct. 2</value>
+  </data>
+  <data name="BeginningHours3" xml:space="preserve">
+    <value>Beginning Hours 3</value>
+  </data>
+  <data name="EmployerWeeklyMinimum" xml:space="preserve">
+    <value>Employer Weekly Minimum</value>
+  </data>
+  <data name="BillingPercentage5" xml:space="preserve">
+    <value>Billing Percentage 5</value>
+  </data>
+  <data name="CapAccrualAtMaxAccrual" xml:space="preserve">
+    <value>Cap Accrual at Max. Accrual</value>
+  </data>
+  <data name="IncrementHours8" xml:space="preserve">
+    <value>Increment Hours 8</value>
+  </data>
+  <data name="PieceCount2" xml:space="preserve">
+    <value>Piece count 2</value>
+  </data>
+  <data name="EmployeeCalculationMethod" xml:space="preserve">
+    <value>Employee Calculation Method</value>
+  </data>
+  <data name="NonStatutoryStockOptions" xml:space="preserve">
+    <value>Non-statutory Stock Options</value>
+  </data>
+  <data name="AnnualizedWageBrackets" xml:space="preserve">
+    <value>Annualized Wage Brackets</value>
+  </data>
+  <data name="IncrementHours5" xml:space="preserve">
+    <value>Increment Hours 5</value>
+  </data>
+  <data name="MaxCarryOverHours7" xml:space="preserve">
+    <value>Max. Carry-over Hours 7</value>
+  </data>
+  <data name="PieceCount5" xml:space="preserve">
+    <value>Piece count 5</value>
+  </data>
+  <data name="AddAmount19" xml:space="preserve">
+    <value>Add Amount 19</value>
+  </data>
+  <data name="InactiveAsOf" xml:space="preserve">
+    <value>Inactive As Of</value>
+  </data>
+  <data name="BaseEarningsRegular" xml:space="preserve">
+    <value>Base Earnings Regular</value>
+  </data>
+  <data name="Never" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="MedicalSavingsAcct" xml:space="preserve">
+    <value>Medical Savings Acct</value>
+  </data>
+  <data name="IncrementHours2" xml:space="preserve">
+    <value>Increment Hours 2</value>
+  </data>
+  <data name="PercntOfExcess3" xml:space="preserve">
+    <value>Percnt. of Excess 3</value>
+  </data>
+  <data name="DaysAfterHire" xml:space="preserve">
+    <value>Days after Hire</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="AddAmount4" xml:space="preserve">
+    <value>Add Amount 4</value>
+  </data>
+  <data name="Fixed" xml:space="preserve">
+    <value>Fixed</value>
+  </data>
+  <data name="IncrementHours10" xml:space="preserve">
+    <value>Increment Hours 10</value>
+  </data>
+  <data name="BillingPercentage6" xml:space="preserve">
+    <value>Billing Percentage 6</value>
+  </data>
+  <data name="HealthSavingsAccount" xml:space="preserve">
+    <value>Health Savings Account</value>
+  </data>
+  <data name="ExcludableMovingExpenseReimbursements" xml:space="preserve">
+    <value>Excludable Moving Expense Reimbursements</value>
+  </data>
+  <data name="MaxAnnualAccrual6" xml:space="preserve">
+    <value>Max. Annual Accrual 6</value>
+  </data>
+  <data name="EmployeeMonthlyMaximum" xml:space="preserve">
+    <value>Employee Monthly Maximum</value>
+  </data>
+  <data name="AddAmount15" xml:space="preserve">
+    <value>Add Amount 15</value>
+  </data>
+  <data name="EmployerSecRateEffective" xml:space="preserve">
+    <value>Employer Sec. Rate Effective</value>
+  </data>
+  <data name="Quarterly" xml:space="preserve">
+    <value>Quarterly</value>
+  </data>
+  <data name="EmployerSemimonthlyMinimum" xml:space="preserve">
+    <value>Employer Semimonthly Minimum</value>
+  </data>
+  <data name="SetAttributes" xml:space="preserve">
+    <value>Set Attributes</value>
+  </data>
+  <data name="Form941EmergencyPaidSickLeaveForOthers" xml:space="preserve">
+    <value>Form 941 - Emergency Paid Sick Leave for Others</value>
+  </data>
+  <data name="Form941QualifiedRetentionCreditEarnings" xml:space="preserve">
+    <value>Form 941 - Qualified Retention Credit Earnings</value>
+  </data>
+  <data name="NotApplicable" xml:space="preserve">
+    <value>Not Applicable</value>
+  </data>
+  <data name="HourlyRate" xml:space="preserve">
+    <value>Hourly Rate</value>
+  </data>
+  <data name="NoLimit" xml:space="preserve">
+    <value>No Limit</value>
+  </data>
+  <data name="WageBracket7" xml:space="preserve">
+    <value>Wage Bracket 7</value>
+  </data>
+  <data name="EmployeeThirteenPeriodYearMa" xml:space="preserve">
+    <value>Employee Thirteen Period/Year Ma</value>
+  </data>
+  <data name="AddAmount9" xml:space="preserve">
+    <value>Add Amount 9</value>
+  </data>
+  <data name="RothContributionsToEmployee403B" xml:space="preserve">
+    <value>Roth contributions to Employee 403(b)</value>
+  </data>
+  <data name="CommissionPct4" xml:space="preserve">
+    <value>Commission Pct. 4</value>
+  </data>
+  <data name="BillingPercentage3" xml:space="preserve">
+    <value>Billing Percentage 3</value>
+  </data>
+  <data name="RothContributionsUnderGovernmental457B" xml:space="preserve">
+    <value>Roth contributions under governmental 457(b)</value>
+  </data>
+  <data name="BeginningHours2" xml:space="preserve">
+    <value>Beginning Hours 2</value>
+  </data>
+  <data name="IncrementHours9" xml:space="preserve">
+    <value>Increment Hours 9</value>
+  </data>
+  <data name="DeferralsUnderSection409A" xml:space="preserve">
+    <value>Deferrals under section 409A</value>
+  </data>
+  <data name="PieceCount1" xml:space="preserve">
+    <value>Piece count 1</value>
+  </data>
+  <data name="Employee403B" xml:space="preserve">
+    <value>Employee 403(b)</value>
+  </data>
+  <data name="IncrementHours6" xml:space="preserve">
+    <value>Increment Hours 6</value>
+  </data>
+  <data name="PercntOfExcess7" xml:space="preserve">
+    <value>Percnt. of Excess 7</value>
+  </data>
+  <data name="AddAmount18" xml:space="preserve">
+    <value>Add Amount 18</value>
+  </data>
+  <data name="AddAmount13" xml:space="preserve">
+    <value>Add Amount 13</value>
+  </data>
+  <data name="SupplementalWithholding" xml:space="preserve">
+    <value>Supplemental Withholding</value>
+  </data>
+  <data name="PayAccrual" xml:space="preserve">
+    <value>Pay Accrual</value>
+  </data>
+  <data name="EmployerCalculationMethod" xml:space="preserve">
+    <value>Employer Calculation Method</value>
+  </data>
+  <data name="EmployerWeeklyMaximum" xml:space="preserve">
+    <value>Employer Weekly Maximum</value>
+  </data>
+  <data name="BillingRates" xml:space="preserve">
+    <value>Billing Rates</value>
+  </data>
+  <data name="WageBracket8" xml:space="preserve">
+    <value>Wage Bracket 8</value>
+  </data>
+  <data name="WithholdingMethodForTaxableW" xml:space="preserve">
+    <value>Withholding Method for Taxable W</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="BaseDeductionsListUse" xml:space="preserve">
+    <value>Base Deductions List Use</value>
+  </data>
+  <data name="ProgressiveCalcWageBrackets" xml:space="preserve">
+    <value>Progressive Calc - Wage Brackets</value>
+  </data>
+  <data name="PieceAmount1" xml:space="preserve">
+    <value>Piece amount 1</value>
+  </data>
+  <data name="PercntOfExcess18" xml:space="preserve">
+    <value>Percnt. of Excess 18</value>
+  </data>
+  <data name="Employee501C18D" xml:space="preserve">
+    <value>Employee 501(c)(18)(d)</value>
+  </data>
+  <data name="ExpenseReimbursement" xml:space="preserve">
+    <value>Expense Reimbursement</value>
+  </data>
+  <data name="ServiceYear10" xml:space="preserve">
+    <value>Service Year 10</value>
+  </data>
+  <data name="WageBracket9" xml:space="preserve">
+    <value>Wage Bracket 9</value>
+  </data>
+  <data name="BeginningHours7" xml:space="preserve">
+    <value>Beginning Hours 7</value>
+  </data>
+  <data name="DependentCare" xml:space="preserve">
+    <value>Dependent Care</value>
+  </data>
+  <data name="BaseHoursListUse" xml:space="preserve">
+    <value>Base Hours List Use</value>
+  </data>
+  <data name="RESERVEDCDNOnly" xml:space="preserve">
+    <value>RESERVED - CDN Only</value>
+  </data>
+  <data name="AdoptionBenefit" xml:space="preserve">
+    <value>Adoption Benefit</value>
+  </data>
+  <data name="TaxableNoWithholding" xml:space="preserve">
+    <value>Taxable, No Withholding</value>
+  </data>
+  <data name="AddAmount3" xml:space="preserve">
+    <value>Add Amount 3</value>
+  </data>
+  <data name="BaseEarningsShift" xml:space="preserve">
+    <value>Base Earnings Shift</value>
+  </data>
+  <data name="EmployerQuarterlyMinimum" xml:space="preserve">
+    <value>Employer Quarterly Minimum</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="CommissionAmount5" xml:space="preserve">
+    <value>Commission Amt. 5</value>
+  </data>
+  <data name="CommissionAmount2" xml:space="preserve">
+    <value>Commission Amt. 2</value>
+  </data>
+  <data name="CommissionAmount3" xml:space="preserve">
+    <value>Commission Amt. 3</value>
+  </data>
+  <data name="CommissionAmount1" xml:space="preserve">
+    <value>Commission Amt. 1</value>
+  </data>
+  <data name="BeginningHours6" xml:space="preserve">
+    <value>Beginning Hours 6</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="MaxCarryOverHours6" xml:space="preserve">
+    <value>Max. Carry-over Hours 6</value>
+  </data>
+  <data name="MaxCarryOverHours3" xml:space="preserve">
+    <value>Max. Carry-over Hours 3</value>
+  </data>
+  <data name="Carryover" xml:space="preserve">
+    <value>Carry-over</value>
+  </data>
+  <data name="BeginningHours1" xml:space="preserve">
+    <value>Beginning Hours 1</value>
+  </data>
+  <data name="EmployerDailyMaximum" xml:space="preserve">
+    <value>Employer Daily Maximum</value>
+  </data>
+  <data name="AllowedPerDiem" xml:space="preserve">
+    <value>Allowed per Diem</value>
+  </data>
+  <data name="BaseTaxListUse" xml:space="preserve">
+    <value>Base Tax List Use</value>
+  </data>
+  <data name="Semimonthly" xml:space="preserve">
+    <value>Semimonthly</value>
+  </data>
+  <data name="IncrementHours7" xml:space="preserve">
+    <value>Increment Hours 7</value>
+  </data>
+  <data name="PercentageOfBase" xml:space="preserve">
+    <value>Percentage of Base</value>
+  </data>
+  <data name="SalaryWages" xml:space="preserve">
+    <value>Salary &amp; Wages</value>
+  </data>
+  <data name="LinkedEarning" xml:space="preserve">
+    <value>Linked Earning</value>
+  </data>
+  <data name="PercntOfExcess15" xml:space="preserve">
+    <value>Percnt. of Excess 15</value>
+  </data>
+  <data name="BaseHoursRegular" xml:space="preserve">
+    <value>Base Hours Regular</value>
+  </data>
+  <data name="ReportedTips" xml:space="preserve">
+    <value>Reported Tips</value>
+  </data>
+  <data name="FringeBenefit" xml:space="preserve">
+    <value>Fringe Benefit</value>
+  </data>
+  <data name="Earning" xml:space="preserve">
+    <value>Earning</value>
+  </data>
+  <data name="EmployerTwentytwoPerYearMaxi" xml:space="preserve">
+    <value>Employer TwentyTwo Per/Year Maxi</value>
+  </data>
+  <data name="RESERVEDPrintIfCurrentZero" xml:space="preserve">
+    <value>RESERVED Print If Current Zero.</value>
+  </data>
+  <data name="Biweekly" xml:space="preserve">
+    <value>Biweekly</value>
+  </data>
+  <data name="RESERVEDPrintYTDIfCurrentZe" xml:space="preserve">
+    <value>RESERVED Print YTD If Current Ze</value>
+  </data>
+  <data name="CalculationMaxCarryOverBasedOnR" xml:space="preserve">
+    <value>Calc. Max. Carry-over based on R</value>
+  </data>
+  <data name="PercntOfExcess20" xml:space="preserve">
+    <value>Percnt. of Excess 20</value>
+  </data>
+  <data name="EmployeeLifetimeMaximum" xml:space="preserve">
+    <value>Employee Lifetime Maximum</value>
+  </data>
+  <data name="PieceRateTable" xml:space="preserve">
+    <value>Piece Rate Table</value>
+  </data>
+  <data name="AddAmount6" xml:space="preserve">
+    <value>Add Amount 6</value>
+  </data>
+  <data name="PieceAmount5" xml:space="preserve">
+    <value>Piece amount 5</value>
+  </data>
+  <data name="PercntOfExcess14" xml:space="preserve">
+    <value>Percnt. of Excess 14</value>
+  </data>
+  <data name="RT4BOX" xml:space="preserve">
+    <value>RESERVED - Cdn Only</value>
+  </data>
+  <data name="ExcessGolden" xml:space="preserve">
+    <value>Excess Golden</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PR EarningsDeduction</value>
+  </data>
+  <data name="RothContributionsToEmployee401K" xml:space="preserve">
+    <value>Roth contributions to Employee 401(k)</value>
+  </data>
+  <data name="WageBracket20" xml:space="preserve">
+    <value>Wage Bracket 20</value>
+  </data>
+  <data name="AddAmount5" xml:space="preserve">
+    <value>Add Amount 5</value>
+  </data>
+  <data name="ProgressiveCalcCommissions" xml:space="preserve">
+    <value>Progressive Calc - Commissions</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="EmployeeQuarterlyMaximum" xml:space="preserve">
+    <value>Employee Quarterly Maximum</value>
+  </data>
+  <data name="PercntOfExcess17" xml:space="preserve">
+    <value>Percnt. of Excess 17</value>
+  </data>
+  <data name="RegularRate" xml:space="preserve">
+    <value>Regular Rate</value>
+  </data>
+  <data name="PercntOfExcess9" xml:space="preserve">
+    <value>Percnt. of Excess 9</value>
+  </data>
+  <data name="MaxCarryOverHours9" xml:space="preserve">
+    <value>Max. Carry-over Hours 9</value>
+  </data>
+  <data name="BeginningHours5" xml:space="preserve">
+    <value>Beginning Hours 5</value>
+  </data>
+  <data name="Starts" xml:space="preserve">
+    <value>Starts</value>
+  </data>
+  <data name="PercntOfExcess16" xml:space="preserve">
+    <value>Percnt. of Excess 16</value>
+  </data>
+  <data name="MaxAnnualAccrual3" xml:space="preserve">
+    <value>Max. Annual Accrual 3</value>
+  </data>
+  <data name="AddAmount10" xml:space="preserve">
+    <value>Add Amount 10</value>
+  </data>
+  <data name="EarningDeduction" xml:space="preserve">
+    <value>Earning/Deduction</value>
+  </data>
+  <data name="EmployeeBiweeklyMaximum" xml:space="preserve">
+    <value>Employee Biweekly Maximum</value>
+  </data>
+  <data name="EmployeeSecRateEffective" xml:space="preserve">
+    <value>Employee Sec. Rate Effective</value>
+  </data>
+  <data name="Ends" xml:space="preserve">
+    <value>Ends</value>
+  </data>
+  <data name="EmployeeMonthlyMinimum" xml:space="preserve">
+    <value>Employee Monthly Minimum</value>
+  </data>
+  <data name="BeginningHours10" xml:space="preserve">
+    <value>Beginning Hours 10</value>
+  </data>
+  <data name="AddAmount16" xml:space="preserve">
+    <value>Add Amount 16</value>
+  </data>
+  <data name="CommissionPct5" xml:space="preserve">
+    <value>Commission Pct. 5</value>
+  </data>
+  <data name="EASSOCW2SW" xml:space="preserve">
+    <value>Associate W-2 printing</value>
+  </data>
+  <data name="PercntOfExcess11" xml:space="preserve">
+    <value>Percnt. of Excess 11</value>
+  </data>
+  <data name="AmountPerHour" xml:space="preserve">
+    <value>Amount per Hour</value>
+  </data>
+  <data name="TenPerYear" xml:space="preserve">
+    <value>Ten per Year</value>
+  </data>
+  <data name="CommissionAmountExcess" xml:space="preserve">
+    <value>Commission Amt. excess</value>
+  </data>
+  <data name="EmployerMonthlyMinimum" xml:space="preserve">
+    <value>Employer Monthly Minimum</value>
+  </data>
+  <data name="CostCenterOverrideBasedOnCa" xml:space="preserve">
+    <value>Cost Center Override Based on Ca</value>
+  </data>
+  <data name="WageBracketTable" xml:space="preserve">
+    <value>Wage Bracket Table</value>
+  </data>
+  <data name="Num105ScholarshipsBursariesFellowships" xml:space="preserve">
+    <value>105 - Scholarships, bursaries, fellowships...</value>
+  </data>
+  <data name="MaxCarryOverHours10" xml:space="preserve">
+    <value>Max. Carry-over Hours 10</value>
+  </data>
+  <data name="PercntOfExcess10" xml:space="preserve">
+    <value>Percnt. of Excess 10</value>
+  </data>
+  <data name="PieceCount4" xml:space="preserve">
+    <value>Piece count 4</value>
+  </data>
+  <data name="NONPERPYMT" xml:space="preserve">
+    <value>RESERVED - Cdn Only</value>
+  </data>
+  <data name="EmployerTwentytwoPerYearMini" xml:space="preserve">
+    <value>Employer TwentyTwo Per/Year Mini</value>
+  </data>
+  <data name="WageBracket1" xml:space="preserve">
+    <value>Wage Bracket 1</value>
+  </data>
+  <data name="E22PPPYMAX" xml:space="preserve">
+    <value>Employee Twentytwo Period/Year M</value>
+  </data>
+  <data name="IncrementHours3" xml:space="preserve">
+    <value>Increment Hours 3</value>
+  </data>
+  <data name="PercntOfExcess2" xml:space="preserve">
+    <value>Percnt. of Excess 2</value>
+  </data>
+  <data name="PercntOfExcess13" xml:space="preserve">
+    <value>Percnt. of Excess 13</value>
+  </data>
+  <data name="EmployerTenPerYearMinimum" xml:space="preserve">
+    <value>Employer Ten Per/Year Minimum</value>
+  </data>
+  <data name="EmployerW2Box" xml:space="preserve">
+    <value>Employer W-2 Box</value>
+  </data>
+  <data name="ThirteenPerYear" xml:space="preserve">
+    <value>Thirteen per Year</value>
+  </data>
+  <data name="EmployeeW2Box" xml:space="preserve">
+    <value>Employee W-2 Box</value>
+  </data>
+  <data name="EmployerThirteenPerYearMaxim" xml:space="preserve">
+    <value>Employer Thirteen Per/Year Maxim</value>
+  </data>
+  <data name="BeginningHours9" xml:space="preserve">
+    <value>Beginning Hours 9</value>
+  </data>
+  <data name="PieceAmount4" xml:space="preserve">
+    <value>Piece amount 4</value>
+  </data>
+  <data name="PercntOfExcess8" xml:space="preserve">
+    <value>Percnt. of Excess 8</value>
+  </data>
+  <data name="Advance" xml:space="preserve">
+    <value>Advance</value>
+  </data>
+  <data name="PercntOfExcess12" xml:space="preserve">
+    <value>Percnt. of Excess 12</value>
+  </data>
+  <data name="AddAmount14" xml:space="preserve">
+    <value>Add Amount 14</value>
+  </data>
+  <data name="BeginningHours4" xml:space="preserve">
+    <value>Beginning Hours 4</value>
+  </data>
+  <data name="IncludeInFLSAOvertimeCalc" xml:space="preserve">
+    <value>Include in FLSA Overtime Calc</value>
+  </data>
+  <data name="EmployerThirteenPerYearMinim" xml:space="preserve">
+    <value>Employer Thirteen Per/Year Minim</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="EmployerBiweeklyMaximum" xml:space="preserve">
+    <value>Employer Biweekly Maximum</value>
+  </data>
+  <data name="CarryOverDay" xml:space="preserve">
+    <value>Carry-over Day</value>
+  </data>
+  <data name="TipDisbursement" xml:space="preserve">
+    <value>Tip Disbursement</value>
+  </data>
+  <data name="EmployeeBiweeklyMinimum" xml:space="preserve">
+    <value>Employee Biweekly Minimum</value>
+  </data>
+  <data name="NumberOfOptionalFields" xml:space="preserve">
+    <value>Number of Optional Fields</value>
+  </data>
+  <data name="RepaymentDeduction" xml:space="preserve">
+    <value>Repayment Deduction</value>
+  </data>
+  <data name="MaxCarryOverHours2" xml:space="preserve">
+    <value>Max. Carry-over Hours 2</value>
+  </data>
+  <data name="SubjectToWorkersCompensation" xml:space="preserve">
+    <value>Subject to Workers' Compensation</value>
+  </data>
+  <data name="TwentyTwoPerYear" xml:space="preserve">
+    <value>Twenty-two per Year</value>
+  </data>
+  <data name="RASSOCTAX" xml:space="preserve">
+    <value>Associated Tax</value>
+  </data>
+  <data name="StartDay" xml:space="preserve">
+    <value>Start Day</value>
+  </data>
+  <data name="BaseHoursOvertime" xml:space="preserve">
+    <value>Base Hours Overtime</value>
+  </data>
+  <data name="ServiceYear8" xml:space="preserve">
+    <value>Service Year 8</value>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>Process Command Code</value>
+  </data>
+  <data name="NontaxableCombatPay" xml:space="preserve">
+    <value>Nontaxable combat pay</value>
+  </data>
+  <data name="AddAmount1" xml:space="preserve">
+    <value>Add Amount 1</value>
+  </data>
+  <data name="PercntOfExcess6" xml:space="preserve">
+    <value>Percnt. of Excess 6</value>
+  </data>
+  <data name="CommissionPct3" xml:space="preserve">
+    <value>Commission Pct. 3</value>
+  </data>
+  <data name="EmployeeBaseLimit" xml:space="preserve">
+    <value>Employee Base Limit</value>
+  </data>
+  <data name="EASSOCTAX" xml:space="preserve">
+    <value>Associated Tax</value>
+  </data>
+  <data name="ProgressiveCalcPieceRate" xml:space="preserve">
+    <value>Progressive Calc - Piece Rate</value>
+  </data>
+  <data name="EmployerBaseLimit" xml:space="preserve">
+    <value>Employer Base Limit</value>
+  </data>
+  <data name="SIMPLERetirementAcct" xml:space="preserve">
+    <value>SIMPLE Retirement Acct</value>
+  </data>
+  <data name="PercntOfExcess1" xml:space="preserve">
+    <value>Percnt. of Excess 1</value>
+  </data>
+  <data name="EmployerSemimonthlyMaximum" xml:space="preserve">
+    <value>Employer Semimonthly Maximum</value>
+  </data>
+  <data name="EarningDeductionDescription" xml:space="preserve">
+    <value>Earning/Deduction Description</value>
+  </data>
+  <data name="EmployeeWeeklyMinimum" xml:space="preserve">
+    <value>Employee Weekly Minimum</value>
+  </data>
+  <data name="ServiceYear7" xml:space="preserve">
+    <value>Service Year 7</value>
+  </data>
+  <data name="MaxCarryOverHours5" xml:space="preserve">
+    <value>Max. Carry-over Hours 5</value>
+  </data>
+  <data name="CheckForTimecardAndManualChecks" xml:space="preserve">
+    <value>Check for Timecard and Manual Checks</value>
+  </data>
+  <data name="Flat" xml:space="preserve">
+    <value>Flat</value>
+  </data>
+  <data name="MaxPieceRateAmount" xml:space="preserve">
+    <value>Max Piece Rate Amt.</value>
+  </data>
+  <data name="BeginningHours8" xml:space="preserve">
+    <value>Beginning Hours 8</value>
+  </data>
+  <data name="Num104ResearchGrants" xml:space="preserve">
+    <value>104 - Research grants</value>
+  </data>
+  <data name="MaxCarryOverHours4" xml:space="preserve">
+    <value>Max. Carry-over Hours 4</value>
+  </data>
+  <data name="PermittedBenefitsUnderAQSEHRA" xml:space="preserve">
+    <value>Permitted Benefits Under a QSEHRA</value>
+  </data>
+</root>

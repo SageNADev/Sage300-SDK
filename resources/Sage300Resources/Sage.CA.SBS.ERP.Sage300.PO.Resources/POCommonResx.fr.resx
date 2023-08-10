@@ -878,11 +878,11 @@
     <comment>Message</comment>
   </data>
   <data name="NonItemFinderInactive" xml:space="preserve">
-    <value>Vous ne pouvez sélectionner un article inexistant.</value>
+    <value>Le dépisteur est inactif pour un article inexistant.</value>
     <comment>Message</comment>
   </data>
   <data name="NonMaterialFinderInactive" xml:space="preserve">
-    <value>Vous ne pouvez sélectionner une classe de coût non relative au matériau.</value>
+    <value>Le dépisteur est désactivé si la classe de coût n'est pas relative à matériau</value>
     <comment>Message</comment>
   </data>
   <data name="NonStockClearing" xml:space="preserve">
@@ -2029,5 +2029,39 @@
   <data name="SetLocation" xml:space="preserve">
     <value>Définir l’emplacement</value>
     <comment>Label (button)</comment>
+  </data>
+  <data name="BillingType_Billable" xml:space="preserve">
+    <value>Facturable</value>
+  </data>
+  <data name="BillingType_NoCharge" xml:space="preserve">
+    <value>Aucun frais</value>
+  </data>
+  <data name="BillingType_NonBillable" xml:space="preserve">
+    <value>Non facturable</value>
+  </data>
+  <data name="CostClass_Equipment" xml:space="preserve">
+    <value>Matériel</value>
+  </data>
+  <data name="CostClass_Labor" xml:space="preserve">
+    <value>Coût salarial indirect</value>
+  </data>
+  <data name="CostClass_Material" xml:space="preserve">
+    <value>Matériau</value>
+  </data>
+  <data name="CostClass_Miscellaneous" xml:space="preserve">
+    <value>Divers</value>
+  </data>
+  <data name="CostClass_Overhead" xml:space="preserve">
+    <value>Coûts indirects</value>
+  </data>
+  <data name="CostClass_Subcontractor" xml:space="preserve">
+    <value>Sous-traitant</value>
+  </data>
+  <data name="ExtendedBillingAmount" xml:space="preserve">
+    <value>Facturation totale estimée</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Projet</value>
   </data>
 </root>

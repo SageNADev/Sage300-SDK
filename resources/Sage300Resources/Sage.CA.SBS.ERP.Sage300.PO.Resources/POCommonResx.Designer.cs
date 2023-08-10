@@ -457,6 +457,33 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Billable.
+        /// </summary>
+        public static string BillingType_Billable {
+            get {
+                return ResourceManager.GetString("BillingType_Billable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Charge.
+        /// </summary>
+        public static string BillingType_NoCharge {
+            get {
+                return ResourceManager.GetString("BillingType_NoCharge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Non-billable.
+        /// </summary>
+        public static string BillingType_NonBillable {
+            get {
+                return ResourceManager.GetString("BillingType_NonBillable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bill-To Location.
         /// </summary>
         public static string BillToLocation {
@@ -714,6 +741,60 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources {
         public static string CostClass {
             get {
                 return ResourceManager.GetString("CostClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment.
+        /// </summary>
+        public static string CostClass_Equipment {
+            get {
+                return ResourceManager.GetString("CostClass_Equipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Labor.
+        /// </summary>
+        public static string CostClass_Labor {
+            get {
+                return ResourceManager.GetString("CostClass_Labor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Material.
+        /// </summary>
+        public static string CostClass_Material {
+            get {
+                return ResourceManager.GetString("CostClass_Material", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miscellaneous.
+        /// </summary>
+        public static string CostClass_Miscellaneous {
+            get {
+                return ResourceManager.GetString("CostClass_Miscellaneous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overhead.
+        /// </summary>
+        public static string CostClass_Overhead {
+            get {
+                return ResourceManager.GetString("CostClass_Overhead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subcontractor.
+        /// </summary>
+        public static string CostClass_Subcontractor {
+            get {
+                return ResourceManager.GetString("CostClass_Subcontractor", resourceCulture);
             }
         }
         
@@ -1465,6 +1546,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Estimated Extended Billing.
+        /// </summary>
+        public static string ExtendedBillingAmount {
+            get {
+                return ResourceManager.GetString("ExtendedBillingAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extended Cost.
         /// </summary>
         public static string ExtendedCost {
@@ -2185,7 +2275,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You cannot select a non-existing item..
+        ///   Looks up a localized string similar to The finder is not active for a non-existing item..
         /// </summary>
         public static string NonItemFinderInactive {
             get {
@@ -2194,7 +2284,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You cannot select a non-material cost class..
+        ///   Looks up a localized string similar to The finder is not active if the cost class is non-material..
         /// </summary>
         public static string NonMaterialFinderInactive {
             get {
@@ -2613,6 +2703,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources {
         public static string Process {
             get {
                 return ResourceManager.GetString("Process", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project.
+        /// </summary>
+        public static string Project {
+            get {
+                return ResourceManager.GetString("Project", resourceCulture);
             }
         }
         

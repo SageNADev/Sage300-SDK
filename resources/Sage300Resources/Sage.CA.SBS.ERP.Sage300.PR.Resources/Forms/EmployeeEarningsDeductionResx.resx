@@ -120,8 +120,8 @@
   <data name="SegmentName2" xml:space="preserve">
     <value>Segment Name 2</value>
   </data>
-  <data name="EmployeePeriodMinimum" xml:space="preserve">
-    <value>Employee Period Minimum</value>
+  <data name="Paid" xml:space="preserve">
+    <value>Paid</value>
   </data>
   <data name="StartDate" xml:space="preserve">
     <value>Start date</value>
@@ -132,11 +132,14 @@
   <data name="EmployeePeriodMaximum" xml:space="preserve">
     <value>Employee Period Maximum</value>
   </data>
-  <data name="No" xml:space="preserve">
-    <value>No</value>
+  <data name="ExpenseReimbursement" xml:space="preserve">
+    <value>Expense Reimbursement</value>
   </data>
-  <data name="AdvanceToBeRepaid" xml:space="preserve">
-    <value>Advance To Be Repaid</value>
+  <data name="EmployeePeriodMinimum" xml:space="preserve">
+    <value>Employee Period Minimum</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
   </data>
   <data name="Vacation" xml:space="preserve">
     <value>Vacation</value>
@@ -150,17 +153,17 @@
   <data name="BillingPercentage4" xml:space="preserve">
     <value>Billing Percentage 4</value>
   </data>
-  <data name="ExpenseReimbursement" xml:space="preserve">
-    <value>Expense Reimbursement</value>
-  </data>
   <data name="TemplateEmployee" xml:space="preserve">
     <value>Template Employee</value>
   </data>
   <data name="Carryover" xml:space="preserve">
     <value>Carry-over</value>
   </data>
-  <data name="Entity" xml:space="preserve">
-    <value>PR EmployeeEarningsDeduction</value>
+  <data name="Taxes" xml:space="preserve">
+    <value>Taxes</value>
+  </data>
+  <data name="ClassSchedules" xml:space="preserve">
+    <value>Class Schedules</value>
   </data>
   <data name="EmployeeCalcMethod" xml:space="preserve">
     <value>Employee Calc Method</value>
@@ -168,14 +171,14 @@
   <data name="Deduction" xml:space="preserve">
     <value>Deduction</value>
   </data>
-  <data name="Type" xml:space="preserve">
-    <value>Type</value>
-  </data>
   <data name="EmployerLifetimeMaximum" xml:space="preserve">
     <value>Employer Lifetime Maximum</value>
   </data>
   <data name="Calculate" xml:space="preserve">
     <value>Calculate</value>
+  </data>
+  <data name="EmployerAmtPct" xml:space="preserve">
+    <value>Employer Amt/Pct.</value>
   </data>
   <data name="RESERVEDSegmentName6" xml:space="preserve">
     <value>RESERVED - Segment Name 6</value>
@@ -186,14 +189,23 @@
   <data name="EarningDeductionDescription" xml:space="preserve">
     <value>Earning/Deduction Description</value>
   </data>
+  <data name="AvailableInEmployeeTimecards" xml:space="preserve">
+    <value>Available in Employee Timecards</value>
+  </data>
   <data name="EmployeeRateAmtPct" xml:space="preserve">
     <value>Employee Rate/Amt/Pct.</value>
   </data>
   <data name="BillingRates" xml:space="preserve">
     <value>Billing Rates</value>
   </data>
-  <data name="RESERVEDSegmentName4" xml:space="preserve">
-    <value>RESERVED - Segment Name 4</value>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="ClassSchedule" xml:space="preserve">
+    <value>Class Schedule</value>
+  </data>
+  <data name="WorkersCompensationCode" xml:space="preserve">
+    <value>Workers' Compensation Code</value>
   </data>
   <data name="Category" xml:space="preserve">
     <value>Category</value>
@@ -201,26 +213,35 @@
   <data name="Advance" xml:space="preserve">
     <value>Advance</value>
   </data>
+  <data name="EFT" xml:space="preserve">
+    <value>EFT</value>
+  </data>
   <data name="EmployerLifetimeAccumulation" xml:space="preserve">
     <value>Employer Lifetime Accumulation</value>
   </data>
   <data name="EmployeeEarningDeduction" xml:space="preserve">
     <value>Employee Earning/Deduction</value>
   </data>
-  <data name="JobsAllocBasedOnCalcBase" xml:space="preserve">
-    <value>Jobs Alloc Based on Calc Base</value>
+  <data name="EmployerBaseLimit" xml:space="preserve">
+    <value>Employer Base Limit</value>
+  </data>
+  <data name="CostCenter" xml:space="preserve">
+    <value>Cost Center</value>
+  </data>
+  <data name="EmployerSecondaryRateEffectiv" xml:space="preserve">
+    <value>Employer Secondary Rate Effectiv</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="JobsAllocBasedOnCalcBase" xml:space="preserve">
+    <value>Jobs Alloc Based on Calc Base</value>
   </data>
   <data name="Benefit" xml:space="preserve">
     <value>Benefit</value>
   </data>
   <data name="SegmentName3" xml:space="preserve">
     <value>Segment Name 3</value>
-  </data>
-  <data name="Sick" xml:space="preserve">
-    <value>Sick</value>
   </data>
   <data name="ProcessCommandCode" xml:space="preserve">
     <value>Process Command Code</value>
@@ -237,11 +258,17 @@
   <data name="Accrued" xml:space="preserve">
     <value>Accrued</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
   <data name="SegmentName1" xml:space="preserve">
     <value>Segment Name 1</value>
   </data>
   <data name="EmployeeSecondaryRateAmtPct" xml:space="preserve">
     <value>Employee Secondary Rate/Amt/Pct.</value>
+  </data>
+  <data name="Pay" xml:space="preserve">
+    <value>Pay</value>
   </data>
   <data name="Employee" xml:space="preserve">
     <value>Employee</value>
@@ -252,11 +279,11 @@
   <data name="EmployeeAnnualMaximum" xml:space="preserve">
     <value>Employee Annual Maximum</value>
   </data>
-  <data name="EmployeeLifetimeAccumulation" xml:space="preserve">
-    <value>Employee Lifetime Accumulation</value>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
   </data>
-  <data name="WorkersCompensationCode" xml:space="preserve">
-    <value>Workers' Compensation Code</value>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
   </data>
   <data name="EmployeeBaseLimit" xml:space="preserve">
     <value>Employee Base Limit</value>
@@ -264,11 +291,11 @@
   <data name="EmployerAnnualMaximum" xml:space="preserve">
     <value>Employer Annual Maximum</value>
   </data>
-  <data name="BillingPercentage5" xml:space="preserve">
-    <value>Billing Percentage 5</value>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
   </data>
-  <data name="AvailableInEmployeeTimecards" xml:space="preserve">
-    <value>Available in Employee Timecards</value>
+  <data name="IncludeInFLSAOvertimeCalc" xml:space="preserve">
+    <value>Include in FLSA Overtime Calc</value>
   </data>
   <data name="Balance" xml:space="preserve">
     <value>Balance</value>
@@ -276,26 +303,38 @@
   <data name="Earning" xml:space="preserve">
     <value>Earning</value>
   </data>
+  <data name="CompensatoryTime" xml:space="preserve">
+    <value>Compensatory Time</value>
+  </data>
   <data name="NumberOfOptionalFields" xml:space="preserve">
     <value>Number of Optional Fields</value>
   </data>
   <data name="BillingPercentage3" xml:space="preserve">
     <value>Billing Percentage 3</value>
   </data>
+  <data name="RESERVEDSegmentName5" xml:space="preserve">
+    <value>RESERVED - Segment Name 5</value>
+  </data>
   <data name="BillingPercentage6" xml:space="preserve">
     <value>Billing Percentage 6</value>
   </data>
-  <data name="IncludeInRegularRateOTCalc" xml:space="preserve">
-    <value>Include in Regular Rate OT Calc</value>
+  <data name="BillingPercentage5" xml:space="preserve">
+    <value>Billing Percentage 5</value>
   </data>
-  <data name="EmployerBaseLimit" xml:space="preserve">
-    <value>Employer Base Limit</value>
+  <data name="AdvanceToBeRepaid" xml:space="preserve">
+    <value>Advance To Be Repaid</value>
   </data>
-  <data name="BankedTime" xml:space="preserve">
-    <value>Banked Time</value>
+  <data name="WorkLocation" xml:space="preserve">
+    <value>Work Location</value>
   </data>
-  <data name="EmployerAmtPct" xml:space="preserve">
-    <value>Employer Amt/Pct.</value>
+  <data name="EmployeeLifetimeAccumulation" xml:space="preserve">
+    <value>Employee Lifetime Accumulation</value>
+  </data>
+  <data name="RESERVEDSegmentName4" xml:space="preserve">
+    <value>RESERVED - Segment Name 4</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PR EmployeeEarningsDeduction</value>
   </data>
   <data name="CopyEmployeeTemplate" xml:space="preserve">
     <value>Copy Employee Template</value>
@@ -312,17 +351,14 @@
   <data name="EmployerCalcMethod" xml:space="preserve">
     <value>Employer Calc Method</value>
   </data>
-  <data name="RESERVEDSegmentName5" xml:space="preserve">
-    <value>RESERVED - Segment Name 5</value>
+  <data name="Garnishment" xml:space="preserve">
+    <value>Garnishment</value>
   </data>
   <data name="InsertOptionalFields" xml:space="preserve">
     <value>Insert Optional Fields</value>
   </data>
-  <data name="Paid" xml:space="preserve">
-    <value>Paid</value>
-  </data>
-  <data name="EmployerSecondaryRateEffectiv" xml:space="preserve">
-    <value>Employer Secondary Rate Effectiv</value>
+  <data name="Sick" xml:space="preserve">
+    <value>Sick</value>
   </data>
   <data name="EmployerSecondaryAmtPct" xml:space="preserve">
     <value>Employer Secondary Amt/Pct.</value>

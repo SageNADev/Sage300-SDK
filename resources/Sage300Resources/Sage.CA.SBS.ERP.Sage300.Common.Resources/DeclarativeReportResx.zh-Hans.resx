@@ -1145,4 +1145,109 @@
   <data name="Current" xml:space="preserve">
     <value>当前</value>
   </data>
+  <data name="BothCurrency" xml:space="preserve">
+    <value>客户货币和功能货币</value>
+  </data>
+  <data name="CustomerCurrency" xml:space="preserve">
+    <value>客户货币</value>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>功能货币</value>
+  </data>
+  <data name="PrintAmountIn" xml:space="preserve">
+    <value>打印金额以</value>
+  </data>
+  <data name="TransactionBy" xml:space="preserve">
+    <value>选择交易方式</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>交易日期</value>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>会计年度和期间</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>已核准</value>
+  </data>
+  <data name="Closed" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>完全</value>
+  </data>
+  <data name="Estimated" xml:space="preserve">
+    <value>估计</value>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>等候</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="CanadianPayroll" xml:space="preserve">
+    <value>加拿大薪资</value>
+  </data>
+  <data name="ContractStartDate" xml:space="preserve">
+    <value>合同开始日期</value>
+  </data>
+  <data name="ContractStatus" xml:space="preserve">
+    <value>{0}状态</value>
+  </data>
+  <data name="FromContractStartDate" xml:space="preserve">
+    <value>从{0}开始日期</value>
+  </data>
+  <data name="FromFiscalYearPeriod" xml:space="preserve">
+    <value>从财政年度期间</value>
+  </data>
+  <data name="FromProjectStartDate" xml:space="preserve">
+    <value>从{0}开始日期</value>
+  </data>
+  <data name="FromTransactionDate" xml:space="preserve">
+    <value>从交易日期</value>
+  </data>
+  <data name="ProjectStartDate" xml:space="preserve">
+    <value>项目开始日期</value>
+  </data>
+  <data name="ProjectStatus" xml:space="preserve">
+    <value>{0}状况</value>
+  </data>
+  <data name="SelectTransactionBy" xml:space="preserve">
+    <value>选择交易方式</value>
+  </data>
+  <data name="ToContractEndDate" xml:space="preserve">
+    <value>到{0}结束日期</value>
+  </data>
+  <data name="ToFiscalYearPeriod" xml:space="preserve">
+    <value>到财政年度期间</value>
+  </data>
+  <data name="ToProjectEndDate" xml:space="preserve">
+    <value>到{0}结束日期</value>
+  </data>
+  <data name="ToTransactionDate" xml:space="preserve">
+    <value>到交易日期</value>
+  </data>
+  <data name="USPayroll" xml:space="preserve">
+    <value>美国薪资</value>
+  </data>
+  <data name="A/P" xml:space="preserve">
+    <value>应付帐款</value>
+  </data>
+  <data name="A/R" xml:space="preserve">
+    <value>应收帐款</value>
+  </data>
+  <data name="O/E" xml:space="preserve">
+    <value>销售订单</value>
+  </data>
+  <data name="P/M" xml:space="preserve">
+    <value>项目成本管理</value>
+  </data>
+  <data name="P/O" xml:space="preserve">
+    <value>采购订单</value>
+  </data>
+  <data name="PMTransactionHistoryReportTitle" xml:space="preserve">
+    <value>PJC 项目成本管理/交易历史报表</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>排序按</value>
+  </data>
 </root>

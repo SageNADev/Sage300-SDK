@@ -1145,4 +1145,109 @@
   <data name="Current" xml:space="preserve">
     <value>Actuelle</value>
   </data>
+  <data name="BothCurrency" xml:space="preserve">
+    <value>Devise du client et devise fonctionnelle</value>
+  </data>
+  <data name="CustomerCurrency" xml:space="preserve">
+    <value>Devise du client</value>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>Devise fonctionnelle</value>
+  </data>
+  <data name="PrintAmountIn" xml:space="preserve">
+    <value>Print Amount In</value>
+  </data>
+  <data name="TransactionBy" xml:space="preserve">
+    <value>Select Transaction By</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Date transaction</value>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>Exercice et période</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Approuvé</value>
+  </data>
+  <data name="Closed" xml:space="preserve">
+    <value>Fermé</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Terminé</value>
+  </data>
+  <data name="Estimated" xml:space="preserve">
+    <value>Estimation</value>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>En attente</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>En cours</value>
+  </data>
+  <data name="CanadianPayroll" xml:space="preserve">
+    <value>Paie</value>
+  </data>
+  <data name="ContractStartDate" xml:space="preserve">
+    <value>Contract Start Date</value>
+  </data>
+  <data name="ContractStatus" xml:space="preserve">
+    <value>État de {0}</value>
+  </data>
+  <data name="FromContractStartDate" xml:space="preserve">
+    <value>Date de début de {0}</value>
+  </data>
+  <data name="FromFiscalYearPeriod" xml:space="preserve">
+    <value>À partir de la période de l'année fiscale</value>
+  </data>
+  <data name="FromProjectStartDate" xml:space="preserve">
+    <value>Date de début de {0}</value>
+  </data>
+  <data name="FromTransactionDate" xml:space="preserve">
+    <value>Du date de transaction</value>
+  </data>
+  <data name="ProjectStartDate" xml:space="preserve">
+    <value>Project Start Date</value>
+  </data>
+  <data name="ProjectStatus" xml:space="preserve">
+    <value>État de {0}</value>
+  </data>
+  <data name="SelectTransactionBy" xml:space="preserve">
+    <value>Sélectionner transactions par</value>
+  </data>
+  <data name="ToContractEndDate" xml:space="preserve">
+    <value>Au date de fin {0}</value>
+  </data>
+  <data name="ToFiscalYearPeriod" xml:space="preserve">
+    <value>Vers la période de l'année fiscale</value>
+  </data>
+  <data name="ToProjectEndDate" xml:space="preserve">
+    <value>Au date de fin {0}</value>
+  </data>
+  <data name="ToTransactionDate" xml:space="preserve">
+    <value>Au date de transaction</value>
+  </data>
+  <data name="USPayroll" xml:space="preserve">
+    <value>US Payroll</value>
+  </data>
+  <data name="A/P" xml:space="preserve">
+    <value>CF</value>
+  </data>
+  <data name="A/R" xml:space="preserve">
+    <value>CC</value>
+  </data>
+  <data name="O/E" xml:space="preserve">
+    <value>CmC</value>
+  </data>
+  <data name="P/M" xml:space="preserve">
+    <value>GP</value>
+  </data>
+  <data name="P/O" xml:space="preserve">
+    <value>CmF</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Trier par</value>
+  </data>
+  <data name="PMTransactionHistoryReportTitle" xml:space="preserve">
+    <value>PJC Rapport sur l'historique des transactions de GP</value>
+  </data>
 </root>

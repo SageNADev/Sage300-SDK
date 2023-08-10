@@ -49,10 +49,25 @@
                     writable: true //IC still needs this
                 });
 
+                Object.defineProperty(column, "valueEx", {
+                    set(newValue) {
+                        column.value = newValue; 
+                        const msg = column.viewid + column.rowIndex + column.field;
+                        MessageBus.msg.trigger(msg + apputils.EventMsgTags.svrUpdate, column.value, msg + apputils.EventMsgTags.svrUpdate);
+                    },
+                });
+
                 column.value = this.formatValueForDisplay(thisAttr.value, column.formatList, column.dataType);
                 this.addRawValueIfFormatValue(thisAttr, column);
                 column.rowIndex = rowIndex; 
                 column.msgid = msgid;
+
+                if (!column.field.startsWith("attr_")) {
+                    column.attributes = () => this.getFieldValue("attr_" + column.field);
+                    //column["IDX_" + column.field] = column.id;
+                }
+
+                column.viewid = this.viewid;
 
                 if (!this.rowIsReadonly) {
 
@@ -356,7 +371,7 @@
          * @param {any} prefix Prefix namespace
          */
         loadDataForGrid: function (gridArray, prefix="") {
-            apputils.each(this.rowNodes, (rowNode) => {
+            /*apputils.each(this.rowNodes, (rowNode) => {
                 apputils.each(rowNode, (Columns) => {
                     let data = { prefixNamespace: prefix, viewid: this.viewid };
                     apputils.each(Columns, (column) => {
@@ -364,7 +379,18 @@
                     });
                     gridArray.push(data);
                 });
-            });
+            });*/
+
+            
+            let data = { prefixNamespace: prefix, viewid: this.viewid };
+
+            for (const column of this.rowNodes[0].Columns) {
+                data[column.field] = column.value;
+            }
+                
+            gridArray.push(data);
+            
+            
         },
 
         /**
@@ -508,7 +534,7 @@
          */
         setColumnFieldValue: function (args) {
             args.column.rowIndex = args.column.rowIndex || 0;
-            args.column.value = this.formatValueForDisplay(args.value, args.column.formatList);
+            args.column.value = this.formatValueForDisplay(args.value, args.column.formatList, args.column.dataType);
             this.addRawValueIfFormatValue(args, args.column);
             args.column.isDirty = apputils.isUndefined(args.isDirty) ? true : args.isDirty;
             args.column.validationError = false;
@@ -850,6 +876,10 @@
 
         createFieldNode: function (column, id) {
 
+            if (apputils.isUndefined(column.value)) {
+                return '';
+            }
+
             column.addToInitQuery = false;
             let formatedValue = this.formatValueForUpsert(column.value, column.formatList);
             if (formatedValue.length === 0 && apputils.numericType.includes(column.dataType.toLowerCase())) {
@@ -857,7 +887,7 @@
             }
 
             //string representation eg: "<c f='" + column.id + "' v='" + formatedValue + "' p='" + id + "' />";
-            return apputils.createFieldNode({ fieldId: column.id, value: formatedValue, parentId: id }); 
+            return apputils.createFieldNode({ fieldId: column.id, value: formatedValue, verify: column.verify, parentId: id });
         },
 
         //TODO: merge this function with populateEmptyColumns
@@ -1083,6 +1113,17 @@
                 //col.isDirty = isDirty;
                 
             });
+        },
+
+        //Flushes the current field value to the view, if the current field is dirty.
+        FlushValue: function (pField, verify) {
+            //maybe need to set the field with verify flag
+            //then pass to View
+        },
+
+        //Forces the field value to be refreshed from the view
+        RefreshValue: function (pField) {
+            //update UI from View
         },
 
         /*adjustTotalRowCountAfterLazyRetrieve: function () {

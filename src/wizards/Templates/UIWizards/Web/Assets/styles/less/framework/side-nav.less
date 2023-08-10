@@ -230,12 +230,12 @@
     left: calc(-@side-nav-width + @side-nav-width-collapsed);
 
     .wrapper {
-      background: @white;
+      background: @sage-dark-gray;
 
       &:before {
         content: "";
         position: fixed;
-        background-color: @white;
+        background-color: @sage-dark-gray;
         left: calc(-@side-nav-width + @side-nav-width-collapsed);
         top: 0;
         height: 100%;
@@ -311,15 +311,16 @@
     cursor: pointer;
     display: block;
 
-    &:focus {
-      outline: 5px auto @sage-green;
+    &:focus-visible {
+      outline: 5px auto @input-border-focus;
+      background-color: @gray-darker;
     }
   }
 
   .wrapper {
     position: relative;
     width: 100%;
-    background: @white;
+    background: @sage-dark-gray;
     padding: @header-global-height 0;
     height: 100%;
     overflow-y: auto;
@@ -340,20 +341,20 @@
     /* Scrollbar style - Chrome only */
 
     &::-webkit-scrollbar-track {
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
 
     &::-webkit-scrollbar {
       width: 6px;
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: @sage-gray;
+      background-color: @gray-dark;
     } 
 
     &::-webkit-scrollbar-corner {
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
   }
 
@@ -373,7 +374,7 @@
         &:active,
         &:hover {
           background: @sage-link;
-          border-radius: 5px;
+          border-radius: 8px;
 
           &:after {
             content: "";
@@ -586,7 +587,8 @@
 
       &.active,
       &.hover {
-        background-color: @gray-light;
+        background-color: @sage-dark-gray;
+        margin: 0 5px 0 10px;
       }
     }
 
@@ -599,7 +601,7 @@
       content: "";
       position: absolute;
       border: 5px solid transparent;
-      border-left-color: @black;
+      border-left-color: @white;
       border-left-width: 6px;
       top: ~"calc(50% - 5px)";
       right: .5rem;
@@ -623,20 +625,20 @@
     /* Scrollbar style - Chrome only */
 
     &::-webkit-scrollbar-track {
-      background-color: @gray-silver;
+      background-color: @gray-darker;
     }
 
     &::-webkit-scrollbar {
       width: 6px;
-      background-color: @gray-silver;
+      background-color: @gray-darker;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: @gray-dim;
+      background-color: @gray-dark;
     } 
 
     &::-webkit-scrollbar-corner {
-      background-color: @gray-silver;
+      background-color: @gray-darker;
     }
 
     &.child {
@@ -691,18 +693,18 @@
     height: auto;
     width: 231px;
     margin: 0 10px;
-    border-radius: 5px;
+    border-radius: 8px;
 
     a {
       display: block;
       padding: .875rem 2rem .875rem 2.5rem
       height: auto;
-      color: @black;
+      color: @white;
       line-height: 1.25;
       text-decoration: none;
       opacity: 0;
       font-size: 13px;
-      border-radius: 5px;
+      border-radius: 8px;
 
       &:active,
       &:hover {
@@ -765,7 +767,10 @@
 
     &.top-tier.menu-group {
 
-      border-bottom: 1px solid @gray-light;
+      >a {
+        border-bottom: 1px solid @gray-light;
+        border-radius: 0;
+      }
 
       >a:hover:after {
         content: "";
@@ -776,6 +781,7 @@
       position: relative;
       opacity: 1;
       padding-left: 1rem;
+      margin: 0 10px 0 5px;
     }
   }
 
@@ -807,9 +813,8 @@
     li {
       a:hover,
       a:active {
-        background: @gray-light;
+        background: @sage-link;
         text-decoration: none;
-        color: inherit;
       }
     }
 
@@ -853,10 +858,10 @@
 .std-menu { /* standard menu banding used in mega menu and global menu */
   position: fixed;
   top: @header-global-height;
-  left: @side-nav-width;
+  left: 15.7rem;
   bottom: 0;
   display: none;
-  background-image: linear-gradient(90deg, @gray-lighter 0%, @gray-lighter 50%, @white 50%, @white 100%);
+  background-color: @gray-darker;
   background-position: left bottom, left bottom;
   background-repeat: no-repeat, no-repeat;
   font-size: .8125rem;
@@ -957,7 +962,7 @@
 .side-nav-collapsed.active {
 
   .std-menu.active {
-    left:@side-nav-width-collapsed;
+    left: 3.7rem;
   }
 
   .menu-item.top-tier.open>a:after, 
@@ -991,9 +996,9 @@
   border: 0;
   z-index: 0;
   transition: background-color 0.5s ease;
-  background-color: @white;
+  background-color: @sage-dark-gray;
   border-radius: 12px;
-  border: 1px solid @gray-light;
+  border: 1px solid @sage-dark-gray;
 
   &:hover {
     cursor: pointer;
@@ -1007,7 +1012,7 @@
     content: "";
     position: absolute;
     border: 5px solid transparent;
-    border-left-color: @sage-green;
+    border-left-color: @white;
     border-left-width: 6px;
     top: ~"calc(50% - 5px)";
     left: 8px;
@@ -1026,7 +1031,7 @@
     content: "";
     position: absolute;
     border: 5px solid transparent;
-    border-right-color: @sage-green;
+    border-right-color: @white;
     border-right-width: 6px;
     top: ~"calc(50% - 5px)";
     left: 1px;
@@ -1043,6 +1048,7 @@
     display: block;
     top: 37px;
     position: absolute;
+    z-index: 10000;
 }
 
 #menuPrefTogglerAlt {
@@ -1108,20 +1114,20 @@
   /* Scrollbar style - Chrome only */
 
     &::-webkit-scrollbar-track {
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
 
     &::-webkit-scrollbar {
       width: 6px;
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: @sage-gray;
+      background-color: @gray-dark;
     } 
 
     &::-webkit-scrollbar-corner {
-      background-color: @sage-light-gray;
+      background-color: @sage-dark-gray;
     }
 }
 

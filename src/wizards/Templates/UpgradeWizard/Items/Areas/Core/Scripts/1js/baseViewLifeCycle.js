@@ -32,8 +32,14 @@
 
         /** Initialize the main object */
         initMainObject: function () {
+
+            //D-45048 fix
+            function isConstructor(value) {
+                return typeof value === 'function' && !!value.prototype && value.prototype.constructor === value;
+            }
+
             this.mainCollectionObj = new this.mainObj();
-            this.VCRWorkerObj = new this.mainObj();
+            this.VCRWorkerObj = apputils.isDefined(this.VCRWorkerObj) && isConstructor(this.VCRWorkerObj) ? new this.VCRWorkerObj() : new this.mainObj();
 
             //make proto object ready
             if (this.protoExt) {
@@ -243,10 +249,11 @@
         bindHtmlControls: function () {
             
             let controls = apputils.isFunction(this.htmlControls) ? this.htmlControls() : this.htmlControls;
-
+            
             apputils.each(controls, (htmlControl) => {
 
                 baseStaticControlfixtures.init(htmlControl.type, this.getContainerBasedId(htmlControl.id), `${htmlControl.viewid}${this.defaultRowIndex}`, htmlControl.field, htmlControl.defaultValue, htmlControl.customBinding);
+
             });
         },
 
@@ -500,11 +507,17 @@
             }
 
             Ok.then((result, status, xhr) => {
-                if (!xhr.hasError) {
+                const errors = ErrorEntityCollectionObj.getErrors();
+
+                if (xhr.hasError || errors.length > 0) {
+                    const errorMsg = { "UserMessage": {"IsSuccess": false, "Errors": errors} };
+                    sg.utls.showMessage(errorMsg, () => ErrorEntityCollectionObj.clearError());
+                } else {
                     let message = CRUDReason === CRUDReasons.ExistingData ? globalResource.SaveSuccessMessage : kendo.format(globalResource.AddSuccessMessage, self.recordTitle, self.getKeysValue());
                     sg.utls.showMessage({ UserMessage: { IsSuccess: true, Message: message } });
                     MessageBus.msg.trigger('SaveSuccessful', {});
                 }
+
             });
         },
 
@@ -578,6 +591,7 @@
             if (this.mainCollectionObj.isDirty()) {
                 sg.utls.showKendoConfirmationDialog(
                     function () { // Yes
+                        ErrorEntityCollectionObj.clearError(); //clear the session errors from previous edits
                         self.isbtnApplyClicked = false; //reset flag
                         self.mainCollectionObj.getNewTemplate();
                     },
@@ -649,12 +663,19 @@
          * @param {any} callBackEx Extra call back function. Used for screen to execute extra function 
          */
         doVCR: function (CRUDReason, filter, callBack, callBackEx) {
-            let filterFn = (viewid) => viewid === this.mainCollectionObj.viewid ? filter : "";
+            /*let filterFn = (viewid) => viewid === this.mainCollectionObj.viewid ? filter : "";
 
             let query = this.mainCollectionObj.generateVCRRoot(filterFn, "", CRUDReason);
             
             this.VCRWorkerObj.callback = this.mainCollectionObj.callback;
-            
+            */
+
+            let filterFn = (viewid) => viewid === this.VCRWorkerObj.viewid ? filter : "";
+
+            let query = this.VCRWorkerObj.generateVCRRoot(filterFn, "", CRUDReason);
+
+            this.VCRWorkerObj.callback = this.VCRWorkerObj.callback || this.mainCollectionObj.callback;
+
             this.VCRWorkerObj._executeXSearch2(query).then(() => {
                 //this is to handle VCR after record is fetched
                 if (!apputils.isUndefined(callBack)) {
@@ -1035,13 +1056,13 @@
         },
 
         /** Load screen settings options */
-        preRender: function () {
-            this.loadCurrencyTable();
-            this.loadICOptions();
-            this.loadPOOptions();
-            this.loadCompanyProfile();
-            this.loadCurrencyCodes();
-            this.loadFiscalCalendars();
+        preRender: function (okList = {}) {
+            okList.currencyTable = this.loadCurrencyTable();
+            okList.IC = this.loadICOptions();
+            okList.PO = this.loadPOOptions();
+            okList.companyProfile = this.loadCompanyProfile();
+            okList.currencyCodes = this.loadCurrencyCodes();
+            okList.fiscalCalendars = this.loadFiscalCalendars();
 
             return this;
         },
@@ -1052,13 +1073,39 @@
             self.makeDocReady();
         },
 
+        //Add custom UI controls for bindings
+        addCustomHtmlControls: function (customFields) {
+            customFields.forEach(f => {
+                let uiType = 'input';
+                let type = f.Type.replace("Type=", '').replaceAll(`"`, ``).toLowerCase();
+                switch (type) {
+                    case "dropdown":
+                        uiType = 'dropdownbox';
+                        break;
+                    case "checkbox":
+                        uiType = type;
+                }
+                let id = f.ID.replace("ID=", '').replaceAll(`"`, ``);
+                let viewid = f.ViewId.replace("ViewId=", '').replaceAll(`"`, ``);
+                let field = f.Field.replace("Field=", '').replaceAll(`"`, ``);
+                this.htmlControls.push({ field: field, id: id, type: uiType, viewid: viewid });
+            })
+        },
+
+        addCustomFields: function () {
+            const customFields = this.viewModel ? this.viewModel.CustomFields : [] ;
+            if (customFields && customFields.length > 0) {
+                this.addCustomHtmlControls(customFields);
+            }
+        },
+
         /** Screen load ready to execute actions */
         makeDocReady: function () {
             let self = this;
 
             $(document).ready(function(e) {
                 self.windowBeforeUnload();
-
+                self.addCustomFields();
                 self.setMainUIVCRBindings();
 
                 self.renderDropdown();
@@ -1103,7 +1150,279 @@
                     self.mainCollectionObj.deletePrePopDataFromGrid();
                 }
             });
-        }
+        },
+
+        isCallFromMainUI: function (popupId) {
+
+            return apputils.isUndefined($("#" + popupId).data("kendoWindow")) ? true : $("#" + popupId).data("kendoWindow").element.is(":hidden");
+        },
+
+        /**
+         * Set focus to the field
+         * @param {any} field the field to set the focus to
+         * @param {any} viewdid the viewid the field is associated with
+         */
+        setFocus: function (field, viewid) {
+            //due to async nature need bit of delay allowing previous events to complete
+            setTimeout(() => {
+
+                let controls = [];
+                if (apputils.isDefined(viewid)) {
+                    controls = this.htmlControls().filter(i => i.field === field && i.viewid === viewid);
+                } else {
+                    controls = this.htmlControls().filter(i => i.field === field);
+                }
+
+                if (controls.length > 0) {
+                    $("#" + controls[0].id).trigger("focus");
+                }
+            });
+            
+        },
+
+        setFocusByColumn: function (viewId, column) {
+            const msg = viewId + column.rowIndex + column.field + apputils.EventMsgTags.svrUpdate;
+            this.setFocusByEvent(msg);
+        },
+
+        setFocusByEvent: function (msg) {
+            baseStaticControlfixtures.setFocus(msg);
+        },
+
+        setValueByColumn: function (viewId, column) {
+            const msg = viewId + column.rowIndex + column.field + apputils.EventMsgTags.svrUpdate;
+            this.setValueByEvent(msg, column.value);
+        },
+
+        setValueByEvent: function (msg, value) {
+            baseStaticControlfixtures.setValue(msg, value);
+        },
+
+        setValueAndFocus: function (field) {
+            this.setFocusByColumn(field.viewid, field);
+            this.setValueByColumn(field.viewid, field);
+        },
+
+        concatEventMessages: function (messageObj) {
+            let result = [];
+
+            for (let key in messageObj) {
+                result.push(messageObj[key]);
+            }
+
+            return result.join(' ');
+        },
+
+        getSvrUpdateMessageName: function (id) {
+            return this.getContainerBasedId(id) + apputils.EventMsgTags.svrUpdate;
+        },
+
+        setCurrentRowIndex: function () {
+            const selectedRowIndex = this.detailsGrid().selectedRowIndex;
+            return selectedRowIndex === -1 ? 0 : selectedRowIndex;
+        },
+
+        mAppControls: function (cntrlId) {
+            let self = this;
+
+            return {
+                set UIEnabledFlag(v) {
+                    $("#" + self.getContainerBasedId(cntrlId)).prop("disabled", !v);
+                },
+
+                set UIVisibleFlag(v) {
+                    $('#' + self.getContainerBasedId(cntrlId))[v ? 'show' : 'hide']();
+                }
+
+            }
+        },
+
+        //.Caption
+        //.value
+        //.Text (can be label or dropdown)
+        //.ListIndex ( dropdown) (not sure what's this for)
+        //.ListCount ( dropdown) (not sure what's this for)
+        //ViewFinderButton
+        fieldEditControl: function (cntrlId, extraControlObj = {}) {
+            let self = this;
+
+            let dropDownList = $("#" + self.getContainerBasedId(cntrlId)).data("kendoDropDownList");
+
+            let fncDDSelect = function (method, value, propt) {
+                if (dropDownList) {
+                    dropDownList.select((dataItem) => {
+                        //using implicit comparsion since value and status may be string and number
+                        return dataItem.value == value;
+                    });
+                }
+
+                self[cntrlId][propt] = value;
+
+                return value;
+            };
+
+            let fncDDGet = function (method, propt) {
+                if (dropDownList) {
+                    return dropDownList.text();
+                }
+
+                return self[cntrlId][propt];
+            };
+
+            let isDropDownBox = apputils.isDefined(dropDownList);
+            let isInputBox = $("#" + self.getContainerBasedId(cntrlId)).is("input");
+
+            let fncSet = function (method, value, propt) {
+
+                $("#" + self.getContainerBasedId(cntrlId))[method](value);
+                self[cntrlId][propt] = value;
+
+                return value;
+
+            };
+
+            let fncGet = function (method, propt) {
+                if ($("#" + self.getContainerBasedId(cntrlId)).length === 0) {
+                    return self[cntrlId][propt];
+                }
+
+                return $("#" + self.getContainerBasedId(cntrlId))[method]();
+            };
+
+            let fncSetProp = function (method, name, value, ctr = cntrlId) {
+
+                $("#" + self.getContainerBasedId(ctr))[method](name, value);
+                //self[ctr][name] = value;
+
+                return value;
+
+            };
+
+            let fncGetProp = function (method, name, ctr = cntrlId) {
+                if ($("#" + self.getContainerBasedId(ctr)).length === 0) {
+                    return; //self[ctr][name];
+                }
+
+                return $("#" + self.getContainerBasedId(ctr))[method](name);
+            };
+
+            let Refresh = function (v) {
+                fncDDSelect('text', v, 'Refresh');
+            };
+
+            let ListIndex = function () {
+                if (dropDownList) {
+                    return dropDownList.value();
+                }
+
+                return "";
+            };
+
+            let List = function (v) {
+                if (dropDownList) {
+                    return dropDownList.text();
+                }
+
+                return "";
+            };
+
+            return {
+                Refresh,
+                ListIndex,
+                List,
+
+                get id() {
+                    return self.getContainerBasedId(cntrlId);
+                },
+
+                set value(v) {
+                    return fncSet('val', v, 'value');
+                },
+
+                get value() {
+                    return fncGet('val', 'value');
+                },
+
+                set Caption(v) {
+                    return fncSet('text', v, 'Caption');
+                },
+
+                get Caption() {
+                    return fncGet('text', 'Caption');
+                },
+
+                set Text(v) {
+
+                    if (isDropDownBox) {
+                        return fncDDSelect('text', v, 'Text');
+
+                    } else if (isInputBox) {
+                        return fncSet('val', v, 'Text');
+                    }
+                    else {
+                        return fncSet('text', v, 'Text');
+                    }
+                },
+
+                get Text() {
+
+                    if (isDropDownBox) {
+                        return fncDDGet('text', 'Text');
+
+                    } else if (isInputBox) {
+                        return fncGet('val', 'Text');
+
+                    }else {
+                        return fncGet('text', 'Text');
+                    }
+
+                },
+
+                set CurrencyCode(v) {
+                    return fncSet('prop', v, 'CurrencyCode');
+                },
+
+                get CurrencyCode() {
+                    return fncGet('prop', 'CurrencyCode');
+                },
+
+                set NumberDecimalsAfter(v) {
+                    return fncSet('val', v, 'NumberDecimalsAfter');
+                },
+
+                get NumberDecimalsAfter() {
+                    return fncGet('val', 'NumberDecimalsAfter');
+                },
+
+                set FieldName(v) {
+                    return fncSetProp('prop', 'FieldName', v);
+                },
+
+                get FieldName() {
+                    return fncGetProp('prop', 'FieldName');
+                },
+
+                set Checked(v) {
+                    return fncSetProp('prop', 'checked', v);
+                },
+
+                get Checked() {
+                    return fncGetProp('prop', 'checked');
+                },
+
+                set ViewFinderButton(v) {
+                    return fncSetProp('prop', 'disabled', !v, extraControlObj.finderBtn);
+                },
+
+                get ViewFinderButton() {
+                    return fncGetProp('prop', 'disabled', extraControlObj.finderBtn);
+                },
+
+                set AddItem(v) {
+                    return "TODOForDropdown"; 
+                }
+            }
+        },
     };
 
     this.viewLifeCycleObj = helpers.View.extend(domainViewLifeCycle);

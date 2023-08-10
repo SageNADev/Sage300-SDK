@@ -44,6 +44,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountSetResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdjustmentsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdjustmentsResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BudgetDetailResx1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BudgetDetailResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BudgetHeaderResx.Designer.cs" />
+    <Compile Include="Forms\BudgetLookupResx.Designer.cs" />
     <Compile Include="Forms\ChargeDetailResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,6 +143,15 @@
     </Compile>
     <Compile Include="Forms\ProjectsResx.Designer.cs" />
     <Compile Include="Forms\ReviseEstimatesDetailResx.Designer.cs" />
+    <Compile Include="Forms\TimecardEntityResx.Designer.cs" />
+    <Compile Include="Forms\TimecardExpenseDetailResx.Designer.cs" />
+    <Compile Include="Forms\TimecardResx.Designer.cs" />
+    <Compile Include="Forms\TimecardTimeDetailResx.Designer.cs" />
+    <Compile Include="Forms\TransactionHistoryResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionHistoryResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UpdateRetainageResx.Designer.cs">
       <DependentUpon>UpdateRetainageResx.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -159,6 +180,35 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AccountSetResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\AccountSetResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\AdjustmentsResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdjustmentsResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdjustmentsResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdjustmentsResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BudgetDetailResx.es.resx" />
+    <EmbeddedResource Include="Forms\BudgetDetailResx.fr.resx" />
+    <EmbeddedResource Include="Forms\BudgetDetailResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BudgetDetailResx1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BudgetDetailResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\BudgetDetailResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\BudgetHeaderResx.es.resx" />
+    <EmbeddedResource Include="Forms\BudgetHeaderResx.fr.resx" />
+    <EmbeddedResource Include="Forms\BudgetHeaderResx.resx" />
+    <EmbeddedResource Include="Forms\BudgetHeaderResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\BudgetHeaderResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\BudgetLookupResx.es.resx" />
+    <EmbeddedResource Include="Forms\BudgetLookupResx.fr.resx" />
+    <EmbeddedResource Include="Forms\BudgetLookupResx.resx" />
+    <EmbeddedResource Include="Forms\BudgetLookupResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\BudgetLookupResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\ChargeDetailResx.es.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -289,18 +339,25 @@
     <EmbeddedResource Include="Forms\OpeningBalanceResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\OpeningBalanceResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\OpeningBalancesDetailResx.es.resx" />
-    <EmbeddedResource Include="Forms\OpeningBalancesDetailResx.fr.resx" />
+    <EmbeddedResource Include="Forms\OpeningBalancesDetailResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OpeningBalancesDetailResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\OpeningBalancesDetailResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\OptionsResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>OptionsResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PMCommonResx.es.resx" />
-    <EmbeddedResource Include="Forms\PMCommonResx.fr.resx" />
+    <EmbeddedResource Include="Forms\PMCommonResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PMCommonResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PMCommonResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>PMCommonResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CostEntriesHeaderResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -313,19 +370,60 @@
     <EmbeddedResource Include="Forms\OpeningBalancesDetailResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>OpeningBalancesDetailResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PMCommonResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Forms\PMCommonResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\PMCommonResx.zh-Hans.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PMCommonResx.zh-Hant.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectsResx.es.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.fr.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ProjectsResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.es.resx" />
-    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.fr.resx" />
-    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.resx" />
-    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.zh-Hans.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReviseEstimatesDetailResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\TimecardEntityResx.es.resx" />
+    <EmbeddedResource Include="Forms\TimecardEntityResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardEntityResx.resx" />
+    <EmbeddedResource Include="Forms\TimecardEntityResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\TimecardEntityResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\TimecardExpenseDetailResx.es.resx" />
+    <EmbeddedResource Include="Forms\TimecardExpenseDetailResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardExpenseDetailResx.resx" />
+    <EmbeddedResource Include="Forms\TimecardExpenseDetailResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\TimecardExpenseDetailResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\TimecardResx.es.resx" />
+    <EmbeddedResource Include="Forms\TimecardResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardResx.resx" />
+    <EmbeddedResource Include="Forms\TimecardResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\TimecardResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\TimecardTimeDetailResx.es.resx" />
+    <EmbeddedResource Include="Forms\TimecardTimeDetailResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardTimeDetailResx.resx" />
+    <EmbeddedResource Include="Forms\TimecardTimeDetailResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\TimecardTimeDetailResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\TransactionHistoryResx.es.resx" />
+    <EmbeddedResource Include="Forms\TransactionHistoryResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TransactionHistoryResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TransactionHistoryResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransactionHistoryResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\TransactionHistoryResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\UpdateRetainageResx.es.resx">
       <DependentUpon>UpdateRetainageResx.resx</DependentUpon>
     </EmbeddedResource>

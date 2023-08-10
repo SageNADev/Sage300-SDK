@@ -25,7 +25,7 @@
          */
         get: function (query) {
             if (apputils.isUndefined(query) || query.length === 0){
-                alert("nothing to retrieve");
+                //alert("nothing to retrieve");
                 return;
             }
 
@@ -39,6 +39,8 @@
             return this.ajaxCall("Get", this.UIController + "/GetNew");
         },
 
+        createChildEntitiesOptions: {},
+
         /**
          * Returns the current entity
          * */
@@ -50,7 +52,8 @@
             this.entity.bindListener = this.bindListener;
             this.entity.allCollectionObj = {};
             this.entity.allTreeViewsObj = {};
-            this.entity.createAllChildEntities();
+            //this.entity.createAllChildEntities();
+            this.entity.createAllChildEntities(this.createChildEntitiesOptions);
             this.entity.parentViewId = this.parentViewId;
             return this.entity;
         },
@@ -73,10 +76,61 @@
             let data;
             apputils.each(this.rows, (entity) => {
                 if (apputils.isUndefined(entity)) return [];
-                data = entity.getDataForGrid(gridViewid, prefix);
+
+                if (entity.viewid === gridViewid) {
+                    data = this.loadDataForGrid(prefix);
+
+                } else {
+                    data = entity.getDataForGrid(gridViewid, prefix);
+                }
             });
             return data;
 
+        },
+
+        getDataForGridEx: function (gridViewid, rowIndex, length = this.rows.length, prefix = "") {
+
+
+            if (this.viewid === gridViewid) {
+                
+                return this.loadDataForGrid(prefix, rowIndex, length);
+
+            }
+
+            let data;
+
+            //find child collections that match the gridViewid
+            for (let i = rowIndex; i < length; i++) {
+                const entity = this.rows[i];
+
+                if (apputils.isUndefined(entity)) {
+                    //skip
+
+                } else {
+                    data = entity.getDataForGridEx(gridViewid, rowIndex, length, prefix);
+                }
+
+                //found the collection, it doesn't matter if it returns empty rows but we are done searching
+                if (apputils.isDefined(data)) {
+                    break;
+                }
+            }
+
+            /*
+            apputils.each(this.rows, (entity) => {
+                if (apputils.isUndefined(entity)) return [];
+
+                if (entity.viewid === gridViewid) {
+                    data = this.loadDataForGrid(prefix);
+
+                } else {
+                    data = entity.getDataForGrid(gridViewid, prefix);
+                }
+            });
+            */
+
+            return data;
+            
         },
 
         /**
@@ -439,7 +493,10 @@
 
             query = query || this.generateUpsertDataRoot(CRUDReason);
 
-            if (!query) return;
+            if (!query) { //D-45063: no any changes, just save, want to show save sccess message
+                setTimeout(() => sg.utls.showMessage({ UserMessage: { IsSuccess: true, Message: globalResource.SaveSuccessMessage } }));
+                return;
+            };
 
             if (this.updateSaveQuery && typeof this.updateSaveQuery === 'function') {
                 query = this.updateSaveQuery(query);
@@ -1041,8 +1098,12 @@
             let lineNumber = 0;
 
             for (var i = 0; i < this.rows.length; i++) {
-                if (this.rows[i].CRUDReason === CRUDReasons.Deleting) {
+                if (apputils.isUndefined(this.rows[i])) {
+                    ++lineNumber;
+
+                } else if (this.rows[i].CRUDReason === CRUDReasons.Deleting) {
                     //skip
+
                 } else {
                     this.rows[i].adjustLineNumber(++lineNumber);
                 }
@@ -1141,6 +1202,7 @@
          * Returns the number of rows
          * */
         getTotalRowCount: function () {
+            
             if (this.rows.length === 0) return 0;
 
             const rowCountField = this.entityObject.prototype.dataModelObj.TotalRowCount;
@@ -1222,6 +1284,11 @@
                 const newEntity = newEntityColl.rows[i];
                 entity.refreshUI(newEntity, getRowIndexFnc, true);
             }
+        },
+
+        Exists: function () {
+
+            return this.getLength() > 0;
         }
     };
 

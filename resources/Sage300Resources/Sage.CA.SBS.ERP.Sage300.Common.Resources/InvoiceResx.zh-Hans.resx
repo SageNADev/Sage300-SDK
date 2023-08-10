@@ -2588,7 +2588,7 @@
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="RetainageTaxTotalAmount" xml:space="preserve">
-    <value>保留款税务合计金额</value>
+    <value>合计保留款税金</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="NextDetailNumber" xml:space="preserve">
@@ -3590,5 +3590,8 @@
   </data>
   <data name="ExtendedBillingAmount" xml:space="preserve">
     <value>预估总帐单</value>
+  </data>
+  <data name="NetInvoiceTotal" xml:space="preserve">
+    <value>净发票合计</value>
   </data>
 </root>

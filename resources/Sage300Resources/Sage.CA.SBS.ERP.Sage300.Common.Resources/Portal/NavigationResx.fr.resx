@@ -1524,9 +1524,6 @@
   <data name="TS_ImportTaxCodes" xml:space="preserve">
     <value>Importation de codes de taxe</value>
   </data>
-  <data name="TS_GSTF5" xml:space="preserve">
-    <value>GST F5/F8</value>
-  </data>
   <data name="TS_GSTIAF" xml:space="preserve">
     <value>GST IAF Generator</value>
   </data>
@@ -1571,9 +1568,6 @@
   </data>
   <data name="Configurations" xml:space="preserve">
     <value>Paramétrages</value>
-  </data>
-  <data name="GSTF5" xml:space="preserve">
-    <value>GST F5/F8</value>
   </data>
   <data name="GSTIAF" xml:space="preserve">
     <value>Générateur GST IAF</value>
@@ -1804,5 +1798,17 @@
   </data>
   <data name="AS_UserActivityReport" xml:space="preserve">
     <value>Activité des utilisateurs</value>
+  </data>
+  <data name="PM_Adjustments" xml:space="preserve">
+    <value>Ajustements</value>
+  </data>
+  <data name="PM_Timecards" xml:space="preserve">
+    <value>Feuilles de temps</value>
+  </data>
+  <data name="PM_TransactionHistory" xml:space="preserve">
+    <value>Historique des transaction</value>
+  </data>
+  <data name="PM_Transaction_History" xml:space="preserve">
+    <value>Historique des transaction</value>
   </data>
 </root>

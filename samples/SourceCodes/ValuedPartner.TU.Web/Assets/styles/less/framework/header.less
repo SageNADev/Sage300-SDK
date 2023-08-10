@@ -32,7 +32,7 @@
 @collapse-distance:         -(@header-global-height + @header-secondary-height + .0625rem);
 @collapse-distance-simple:  -(@header-global-height);
 @side-nav-width:            15.75rem;
-@side-nav-width-collapsed:  3.5rem;
+@side-nav-width-collapsed:  3.75rem;
 
 
 body {
@@ -300,6 +300,10 @@ body {
           filter: alpha(opacity=70);
         }
 
+        &#topMenuTools>.k-link {
+          background-color: @black !important;
+        }
+
         &.k-item > .k-link { 
           color: @white;
           height: 3.5rem;
@@ -309,31 +313,59 @@ body {
           .help,
           .global-search,
           .settings {
-            height: 3.5rem;
+            height: 24px;
             padding-top: 8px;
             font-size: 1.5rem;
             text-align: center;
             margin: 0;
-            width: 40px;
+            width: 24px;
+            background-image: url('@{image-path}/home/icon_homemenu_sprite.png');
+            background-size: 312px 24px;
+            background-repeat: no-repeat;
+            position: relative;
+            top: 15px;
 
             &:hover {
-              opacity: 0.80;
+              opacity: 0.70;
+            }
+
+            &:before {
+              content: none;
             }
 
             > span {
-              font: normal 10px/1 Arial;
-              display: block;
-              width: 100%;
-              height: auto;
-              padding: 0;
-              position: relative;
+              font: normal 10px/1 @font-family-sans-serif;
+              display: none;
+              width: fit-content;
+              padding: 2px 10px;
+              position: absolute;
               color: @white;
               line-height: 1.35rem;
+              background-color: @black;
+              top: 42px;
+              border-radius: 5px;
+              right: -11px;
             }
 
             .k-menu-expand-arrow {
               background-image: none;
             }
+          }
+
+          .global-search {
+            background-position: 0 0;
+          }
+
+          .help {
+            background-position: -26px 0;
+          }
+
+          .settings {
+            background-position: -50px 0;
+          }
+
+          .tools {
+            background-position: -168px 0;
           }
 
           span.txt-top-menu {
@@ -344,8 +376,10 @@ body {
         &:not(#companyNameMenu) > .k-link:hover, 
         &.k-state-hover:not(#companyNameMenu) > .k-link {
           cursor: pointer;
-          opacity: 0.7;
-          filter: alpha(opacity=70);
+
+          i>span {
+            display: block;
+          }
         }
 
         .k-group.k-popup {
@@ -522,17 +556,13 @@ body {
     .last_container,
     .last_container .glyphicon,
     .top_nav #topMenu>li,
-    .top_nav #topMenu>li.k-item>.k-link,
-    .top_nav #topMenu>li.k-item>.k-link .global-search>span, 
-    .top_nav #topMenu>li.k-item>.k-link .help>span, 
-    .top_nav #topMenu>li.k-item>.k-link .settings>span {
+    .top_nav #topMenu>li.k-item>.k-link{
       color: @black;
     }
 
     #topMenuTools>.k-link,
     #topMenuTools>.k-link span,
-    .top_nav #topMenu>li.k-state-border-down>.k-link,
-    .top_nav #topMenu>li.k-state-border-down>.k-link span {
+    .top_nav #topMenu>li.k-state-border-down>.k-link {
       opacity: 0.8;
       filter: alpha(opacity=80);
     }
@@ -542,6 +572,23 @@ body {
       background-position: -183px -157px;
     }
 
+    .top_nav #topMenu>li.k-item>.k-link {
+      .global-search {
+        background-position: -72px 0;
+      }
+
+      .help {
+        background-position: -96px 0;
+      }
+
+      .settings {
+        background-position: -120px 0;
+      }
+
+      .tools {
+        background-position: -168px 0;
+      }
+    }
   }
   
   .logo-product  {

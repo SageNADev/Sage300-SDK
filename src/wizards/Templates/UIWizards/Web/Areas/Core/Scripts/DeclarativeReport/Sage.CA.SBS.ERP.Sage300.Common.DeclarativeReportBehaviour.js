@@ -126,7 +126,7 @@ const btnPrint = "btnPrint";
 const optFldName = "OPTFIELD";
 const requestFetch = "Fetch";
 const dataVal = 'val';
-const locationId = "12";
+var locationId = "";
 const maxGridRows = 3;
 var isFinderCancelEvent = false;
 
@@ -160,6 +160,7 @@ declarativeReportUI = {
         declarativeReportUI.getParameters(DeclarativeReportViewModel.Data);
         declarativeReportUI.initButtons();
         moduleId = DeclarativeReportViewModel.ModuleId;
+        locationId = DeclarativeReportViewModel.LocationId;
 
         // Set focus to first available control in the form
         declarativeReportUI.setInitialFocus();
@@ -326,20 +327,23 @@ declarativeReportUI = {
 
                     let val = $(controlId).val();
 
-                    // Convert text to uppercase if necessary
-                    if (isUppercase) {
-                        val = val.toUpperCase();
+                    if (typeof val !== "undefined") {
+                        // Convert text to uppercase if necessary
+                        if (isUppercase) {
+                            val = val.toUpperCase();
+                        }
+
+                        // Strip time from Datepicker value if necessary
+                        if (param.ControlType === ControlTypeEnum.Datepicker) {
+                            const dateVal = $(controlId).data("kendoDatePicker").value();
+                            if (dateVal != null) {
+                                var date = new Date(val);
+                                val = sg.utls.formatDate(date, "yyyyMMdd");
+                            }
+                        }
+                        param.Value = val;
                     }
 
-                    // Strip time from Datepicker value if necessary
-                    if (param.ControlType === ControlTypeEnum.Datepicker) {
-                        const dateVal = $(controlId).data("kendoDatePicker").value();
-                        if (dateVal != null) {
-                            var date = new Date(val);
-                            val = sg.utls.formatDate(date, "yyyyMMdd");
-                        }
-                    }
-                    param.Value = val;
                     break;
             }
         });
@@ -1737,7 +1741,7 @@ var declarativeReportOnSuccess = {
      */
     execute: function (result) {
         if (result !== null && result.UserMessage.IsSuccess) {
-            window.sg.utls.openReport(result.ReportToken);
+            window.sg.utls.openReport(result.ReportToken, null, declarativeReportOnSuccess.onClose);
         } else {
             sg.utls.showMessage(result);
         }
@@ -1846,7 +1850,6 @@ function hideAllGridInputs() {
  */
 function setFinderEvent(i, changeControlType) {
     var optionalFinderInfo = () => {
-        const locationId = "12";
         let property = declarativeReportUI.fieldProperties.OptionalFields;
         const optionalFieldValue = $("#" + InputControlIdEnum.OptionalTextField + (i)).val();
         property.initKeyValues = [locationId, optionalFieldValue];

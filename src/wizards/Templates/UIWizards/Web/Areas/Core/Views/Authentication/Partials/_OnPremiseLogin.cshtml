@@ -17,7 +17,7 @@
 <div id="success"></div>
 
 @*<div id="changePassword" class="k-window"></div>*@
-<div class="Sage_logo"><img src="~/Assets/images/login/sage300-logo-brilliant-green.png" height="75" width="250" alt="Sage 300"></div>
+<div class="Sage_logo"><img src="~/Assets/images/login/sage300-logo-brilliant-green.png" height="75" alt="Sage 300"></div>
 <section class="header login" id="sectionLogin">
     <div class="wrapper">
         <div class="main-body login show" id="bodyMain">
@@ -32,6 +32,7 @@
                 <h2 class="page-header-2" id="loginHeader2">@ASCommonResx.SignInSage300Admin</h2>
             }
             <div id="message" class="message-login"></div>
+            <div class="Sage_logo"><img src="~/Assets/images/login/sage_300_logo_300.png" height="30" alt="Sage 300"></div>
             <div class="form-group">
                 <div class="input-group">
                     <label class="label-login">@ASCommonResx.UserID</label>
@@ -42,6 +43,7 @@
                 <label class="label-login">@ASCommonResx.Password</label>
                 <div class="input-group">
                     @Html.KoSagePasswordFor(m => m.Password, new { @sagevalue = "Password" }, new { @id = "txtPassword", @class = "login", data_val = "true", @maxlength = "64", @autocomplete = "off" })
+                    <span class="icon-eye" id="iconEye" toggle="#txtPassword"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -82,7 +84,6 @@
         </div>
 
         <div class="main-body login hide" id="changePasswordWrapper">
-
             <h1 class="page-header" id="loginHeaderChangePW">@ASCommonResx.ChangePassword</h1>
             <div id="messageChangePassword" class="message-login"></div>
             <div class="form-group">
@@ -95,12 +96,14 @@
                 <label class="label-login">@ASCommonResx.OldPassword</label>
                 <div class="input-group">
                     <input id="txtPasswordOld" type="password" class="login" maxlength="64">
+                    <span class="icon-eye" id="iconEye" toggle="#txtPasswordOld"></span>
                 </div>
             </div>
             <div class="form-group" id="passwordDiv">
                 <label class="label-login">@ASCommonResx.NewPassword</label>
                 <div class="input-group">
                     <input id="txtPasswordNew" type="password" class="login" maxlength="64">
+                    <span class="icon-eye" id="iconEye" toggle="#txtPasswordNew"></span>
                 </div>
             </div>
             <div class="form-group" id="passwordDiv">
@@ -125,3 +128,4 @@
         <span class="copyright">@string.Format(CommonResx.GlobalCopyright, DateTime.Today.Year)</span>
 </div>
 </section>
+

@@ -72,8 +72,8 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.min.map">jquery-3.6.0.min.map</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.js">jquery-migrate-3.3.2.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.min.js">jquery-migrate-3.3.2.min.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.1.js">jquery-ui-1.13.1.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.1.min.js">jquery-ui-1.13.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.2.js">jquery-ui-1.13.2.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.2.min.js">jquery-ui-1.13.2.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie-1.4.1.min.js">jquery.cookie-1.4.1.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie.js">jquery.cookie.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.js">jquery.form.js</ProjectItem>
@@ -472,11 +472,6 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_bk.svg">icon_bk.svg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_bk_hover.png">icon_bk_hover.png</ProjectItem>
             </Folder>
-            <Folder Name="CP" TargetFolderName="CP">
-              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_cp.jpg">bg_menu_cp.jpg</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="icon_cp.png">icon_cp.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="icon_cp.svg">icon_cp.svg</ProjectItem>
-            </Folder>
             <Folder Name="CS" TargetFolderName="CS">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_cs.jpg">bg_menu_cs.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_cs.png">icon_cs.png</ProjectItem>
@@ -564,11 +559,6 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tx.png">icon_tx.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tx.svg">icon_tx.svg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tx_hover.png">icon_tx_hover.png</ProjectItem>
-            </Folder>
-            <Folder Name="UP" TargetFolderName="UP">
-              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_up.jpg">bg_menu_up.jpg</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="icon_up.png">icon_up.png</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="icon_up.svg">icon_up.svg</ProjectItem>
             </Folder>
           </Folder>
         </Folder>
@@ -771,11 +761,14 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_safari.png">browser_safari.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="desktop-solid-white.svg">desktop-solid-white.svg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="desktop-solid.svg">desktop-solid.svg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-hide.png">icon-hide.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-view.png">icon-view.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg.jpg">login-bg.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg_admin.jpg">login-bg_admin.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="logo-printboss.png">logo-printboss.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sage300-logo-brilliant-green.png">sage300-logo-brilliant-green.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sage300-logo-sq.png">sage300-logo-sq.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_300.png">sage_300_logo_300.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_gray.png">sage_300_logo_gray.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="ui-logo-sage-dark@2x.png">ui-logo-sage-dark@2x.png</ProjectItem>
           </Folder>

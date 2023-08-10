@@ -5,6 +5,7 @@
 
     RecAndPlay.playing = false;
     RecAndPlay.recording = false;
+    RecAndPlay.testComplete = false;
 
     this.RecAndPlay.stopPlaying = function(){
         RecAndPlay.playing = false;
@@ -12,6 +13,14 @@
 
     this.RecAndPlay.stopRecording = function(){
         RecAndPlay.recording = false;
+    }
+
+    this.RecAndPlay.getTestComplete = function () {
+        return RecAndPlay.testComplete;
+    }
+
+    this.RecAndPlay.setTestComplete = function () {
+        RecAndPlay.testComplete = false; 
     }
 
     $(document).ready(function () {
@@ -89,6 +98,8 @@
     this.RecAndPlay.showResults = function(){
         $("#results").css("display", "block");
         $("#results").css("overflow-y", "scroll");
+        $("#closeResult").removeAttr('disabled');
+        
         return "showing results...";
     }
 
@@ -449,29 +460,32 @@
         QUnit.config.autostart = false;
         QUnit.config.reorder = false;
 
-        //QUnit.config.current = undefined;
-
-        //icbomTestSuite(); //loads the suite functions
-        //icbomUpdateTestSuite();
-        //icbomUpdateTestSuite.all();
-
-        //pmChargeTestSuite();
-        //pmChargeTestSuite.all();
-
-        //pmRevisedEstTestSuite();
-        //pmRevisedEstTestSuite.all();
-
-        pmRevisedEstDetailLinesTestSuite();
-        pmRevisedEstDetailLinesTestSuite.all();
-
-        pmRevisedEstPostCheckNavigateTestSuite();
-        pmRevisedEstPostCheckNavigateTestSuite.all();
-
-        pmRevisedEstOptionalFieldTestSuite();
-        pmRevisedEstOptionalFieldTestSuite.all();
-
         QUnit.start();
                 
+    }
+
+    this.RecAndPlay.TestSuiteRevisedEst = async function () {
+
+        QUnit.config.autostart = false;
+        QUnit.config.reorder = false;
+
+        pmRevisedEstTestSuite();
+        pmRevisedEstTestSuite.all();
+
+        QUnit.start();
+
+        return await new Promise((resolve) => {
+
+            let myInterval = setInterval(() => {
+                console.log("check test is still running");
+
+                if (RecAndPlay.testComplete) {
+                    clearInterval(myInterval);
+                    resolve("testing complete");
+                }
+            }, 5000);
+
+        });
     }
 
     this.RecAndPlay.TestSuiteDetailLine = function () {
@@ -532,7 +546,7 @@
         QUnit.start();
     }
 
-    this.RecAndPlay.TestSuiteAssembly = function () {
+    this.RecAndPlay.TestSuiteAssembly = async function () {
 
         QUnit.config.autostart = false;
         QUnit.config.reorder = false;
@@ -541,6 +555,19 @@
         icAssemblyTestSuite.all();
 
         QUnit.start();
+
+        return await new Promise((resolve) => {
+
+            let myInterval = setInterval(() => {
+                console.log("check test is still running");
+
+                if (RecAndPlay.testComplete) {
+                    clearInterval(myInterval);
+                    resolve("testing complete");
+                }
+            }, 5000);
+
+        });
     }
 
     this.RecAndPlay.TestSuiteLotRecallAndRelease = function () {
@@ -580,7 +607,7 @@
         QUnit.start();
     }
 
-    this.RecAndPlay.TestSuiteEquipmentUsage = function () {
+    this.RecAndPlay.TestSuiteEquipmentUsage = async function () {
 
         QUnit.config.autostart = false;
         QUnit.config.reorder = false;
@@ -589,10 +616,22 @@
         pmEquipmentUsageTestSuite.all();
 
         QUnit.start();
-        return "testing..."
+
+        return await new Promise((resolve) => {
+
+            let myInterval = setInterval(() => {
+                console.log("check test is still running");
+
+                if (RecAndPlay.testComplete) {
+                    clearInterval(myInterval);
+                    resolve("testing complete");
+                }
+            }, 5000);
+
+        });
     }
 
-    this.RecAndPlay.TestSuiteEquipment = function () {
+    this.RecAndPlay.TestSuiteEquipment = async function () {
 
         QUnit.config.autostart = false;
         QUnit.config.reorder = false;
@@ -601,7 +640,238 @@
         pmEquipmentTestSuite.all();
 
         QUnit.start();
+
+        return await new Promise((resolve) => {
+
+            let myInterval = setInterval(() => {
+                console.log("check test is still running");
+
+                if (RecAndPlay.testComplete) {
+                    clearInterval(myInterval);
+                    resolve("testing complete");
+                }
+            }, 5000);
+
+        });
+    }
+
+    this.RecAndPlay.asyncTestRunner = async function (tests) {
+
+        RecAndPlay.testComplete = false;
+
+        QUnit.config.autostart = false;
+        QUnit.config.reorder = false;
+
+        tests();
+
+        QUnit.start();
+
+        return await new Promise((resolve) => {
+
+            let myInterval = setInterval(() => {
+                console.log("check test is still running");
+
+                if (RecAndPlay.testComplete) {
+                    clearInterval(myInterval);
+                    resolve("testing complete");
+                }
+            }, 5000);
+
+
+        });
+    }
+
+    this.RecAndPlay.TestSuiteAdjustmentsJC = async function () {
+
+        RecAndPlay.testComplete = false;
+
+        QUnit.config.autostart = false;
+        QUnit.config.reorder = false;
+
+        pmAdjustmentsTestSuite();
+        pmAdjustmentsTestSuite.JC();
+
+        QUnit.start();
+
+        return await new Promise((resolve) => {
+
+            let myInterval = setInterval(() => {
+                console.log("check test is still running");
+
+                if (RecAndPlay.testComplete) {
+                    clearInterval(myInterval);
+                    resolve("testing complete");
+                }
+            }, 5000);
+            
+        });
+    }
+
+    this.RecAndPlay.TestSuiteAdjustmentsTW = async function () {
+
+        QUnit.config.autostart = false;
+        QUnit.config.reorder = false;
+
+        pmAdjustmentsTestSuite();
+        pmAdjustmentsTestSuite.TW();
+
+        QUnit.start();
+
+        return await new Promise((resolve) => {
+
+            let myInterval = setInterval(() => {
+                console.log("check test is still running");
+
+                if (RecAndPlay.testComplete) {
+                    clearInterval(myInterval);
+                    resolve("testing complete");
+                }
+            }, 5000);
+
+        });
+    }
+
+    this.RecAndPlay.TestSuiteAdjustmentsSH = async function () {
+
+        QUnit.config.autostart = false;
+        QUnit.config.reorder = false;
+
+        pmAdjustmentsTestSuite();
+        pmAdjustmentsTestSuite.SH();
+
+        QUnit.start();
+
+        return await new Promise((resolve) => {
+
+            let myInterval = setInterval(() => {
+                console.log("check test is still running");
+
+                if (RecAndPlay.testComplete) {
+                    clearInterval(myInterval);
+                    resolve("testing complete");
+                }
+            }, 5000);
+
+        });
+    }
+
+    this.RecAndPlay.TestSuiteAdjustmentsOPT = async function () {
+
+        QUnit.config.autostart = false;
+        QUnit.config.reorder = false;
+
+        pmAdjustmentsTestSuite();
+        pmAdjustmentsTestSuite.OPT();
+        
+        QUnit.start();
+
+        return await new Promise((resolve) => {
+
+            let myInterval = setInterval(() => {
+                console.log("check test is still running");
+
+                if (RecAndPlay.testComplete) {
+                    clearInterval(myInterval);
+                    resolve("testing complete");
+                }
+            }, 5000);
+
+        });
+    }
+
+    /*this.RecAndPlay.pmDefaultTestSuite = function () {
+
+        QUnit.config.autostart = false;
+        QUnit.config.reorder = false;
+
+        pmTimecardsTestSuite();
+        pmAdjustmentsTestSuite();
+        pmDefaultTestSuite();
+        pmDefaultTestSuite.all();
+
+        QUnit.start();
+
         return "testing..."
+    }*/
+
+
+        
+   
+
+    //this.RecAndPlay.pmDefaultTestSuiteVCR = async function () {
+
+    //    return await RecAndPlay.asyncTestRunner(() => {
+    //        pmTimecardsTestSuite();
+            
+    //        pmDefaultTestSuite();
+    //        pmDefaultTestSuite.VCR();
+    //    });
+
+
+    //    //QUnit.config.autostart = false;
+    //    //QUnit.config.reorder = false;
+
+    //    //pmTimecardsTestSuite();
+    //    //pmAdjustmentsTestSuite();
+    //    //pmDefaultTestSuite();
+    //    //pmDefaultTestSuite.all();
+
+    //    //QUnit.start();
+    //    //return "testing..."
+    //}
+
+    //this.RecAndPlay.pmDefaultTestSuiteStatus = async function () {
+
+    //    return await RecAndPlay.asyncTestRunner(() => {
+    //        pmTimecardsTestSuite();
+
+    //        pmDefaultTestSuite();
+    //        pmDefaultTestSuite.Status();
+    //    });
+
+    //}
+
+    this.RecAndPlay.TestSuiteTimecardsJC = async function () {
+
+        QUnit.config.autostart = false;
+        QUnit.config.reorder = false;
+
+        pmTimecardsTestSuite();
+        pmTimecardsTestSuite.JC();
+
+        QUnit.start();
+
+        return await new Promise((resolve) => {
+
+            let myInterval = setInterval(() => {
+                console.log("check test is still running");
+
+                if (RecAndPlay.testComplete) {
+                    clearInterval(myInterval);
+                    resolve("testing complete");
+                }
+            }, 5000);
+
+        });
+    }
+
+    this.RecAndPlay.TestSuiteTimecards = async function () {
+
+        return await RecAndPlay.asyncTestRunner(() => {
+            pmTimecardsTestSuite();
+            pmTimecardsTestSuite.all();
+        });
+
+        /*QUnit.config.autostart = false;
+        QUnit.config.reorder = false;
+
+        pmTimecardsTestSuite();
+        pmTimecardsTestSuite.all();
+
+        QUnit.start();
+
+        return "testing..."*/
+
     }
 
 }).call(this);

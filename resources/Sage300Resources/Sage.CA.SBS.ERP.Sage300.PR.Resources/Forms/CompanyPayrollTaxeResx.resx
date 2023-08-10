@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>Inactive Date</value>
+  </data>
+  <data name="INTERNALUSETaxYTDTracking" xml:space="preserve">
+    <value>INTERNAL USE - Tax YTD Tracking</value>
+  </data>
+  <data name="TaxAddAmountForBracket18" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 18</value>
+  </data>
+  <data name="PercentageOfBase" xml:space="preserve">
+    <value>Percentage of Base</value>
+  </data>
+  <data name="AmountPerHour" xml:space="preserve">
+    <value>Amount per Hour</value>
+  </data>
+  <data name="RESERVEDAatrixTaxType" xml:space="preserve">
+    <value>RESERVED - Aatrix Tax Type</value>
+  </data>
+  <data name="EmployeeSemimonthlyMinimum" xml:space="preserve">
+    <value>Employee Semimonthly Minimum</value>
+  </data>
+  <data name="TaxAddAmountForBracket2" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 2</value>
+  </data>
+  <data name="NumberOfOptionalFields" xml:space="preserve">
+    <value>Number of Optional Fields</value>
+  </data>
+  <data name="AmountPerExemption" xml:space="preserve">
+    <value>Amount per Exemption</value>
+  </data>
+  <data name="INTERNALUSETaxCalculationA" xml:space="preserve">
+    <value>INTERNAL USE - Tax Calculation A</value>
+  </data>
+  <data name="AnnualMaximumHours" xml:space="preserve">
+    <value>Annual Maximum Hours</value>
+  </data>
+  <data name="EmployerMonthlyMaximum" xml:space="preserve">
+    <value>Employer Monthly Maximum</value>
+  </data>
+  <data name="EmployeeAmountPercent" xml:space="preserve">
+    <value>Employee Amount/Percent</value>
+  </data>
+  <data name="STDARDDED4" xml:space="preserve">
+    <value>RESERVED - Standard Deduction</value>
+  </data>
+  <data name="ListUsageForBaseEarningsInc" xml:space="preserve">
+    <value>List Usage for Base Earnings Inc</value>
+  </data>
+  <data name="TaxAddAmountForBracket17" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 17</value>
+  </data>
+  <data name="EmployerLimit" xml:space="preserve">
+    <value>Employer Limit</value>
+  </data>
+  <data name="EmployerQuarterlyMinimum" xml:space="preserve">
+    <value>Employer Quarterly Minimum</value>
+  </data>
+  <data name="EmployeeDailyMinimum" xml:space="preserve">
+    <value>Employee Daily Minimum</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>Base</value>
+  </data>
+  <data name="RegularRate" xml:space="preserve">
+    <value>Regular Rate</value>
+  </data>
+  <data name="WageCeilingForBracket19" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 19</value>
+  </data>
+  <data name="EmployerBaseTax" xml:space="preserve">
+    <value>Employer Base Tax</value>
+  </data>
+  <data name="RoundTax" xml:space="preserve">
+    <value>Round Tax</value>
+  </data>
+  <data name="EmployeeWeeklyMaximum" xml:space="preserve">
+    <value>Employee Weekly Maximum</value>
+  </data>
+  <data name="INTERNALUSETaxTableFIPSCo" xml:space="preserve">
+    <value>INTERNAL USE - Tax Table FIPS Co</value>
+  </data>
+  <data name="Employee13PayPeriodsYearMin" xml:space="preserve">
+    <value>Employee 13 Pay Periods/Year Min</value>
+  </data>
+  <data name="TaxAddAmountForBracket8" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 8</value>
+  </data>
+  <data name="INTERNALUSETaxTableFIPSNu" xml:space="preserve">
+    <value>INTERNAL USE - Tax Table FIPS Nu</value>
+  </data>
+  <data name="ListUsageForBaseHoursInclud" xml:space="preserve">
+    <value>List Usage for Base Hours Includ</value>
+  </data>
+  <data name="WageCeilingForBracket13" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 13</value>
+  </data>
+  <data name="TaxAddAmountForBracket13" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 13</value>
+  </data>
+  <data name="INTERNALUSETaxTableEffecti" xml:space="preserve">
+    <value>INTERNAL USE - Tax Table Effecti</value>
+  </data>
+  <data name="TaxPercentageForBracket2" xml:space="preserve">
+    <value>Tax Percentage for Bracket 2</value>
+  </data>
+  <data name="EmployeeQuarterlyMinimum" xml:space="preserve">
+    <value>Employee Quarterly Minimum</value>
+  </data>
+  <data name="EmployeeMinimumWeeksWorked" xml:space="preserve">
+    <value>Employee Minimum Weeks Worked</value>
+  </data>
+  <data name="EmployerBiweeklyMinimum" xml:space="preserve">
+    <value>Employer Biweekly Minimum</value>
+  </data>
+  <data name="Employer22PayPeriodsYearMin" xml:space="preserve">
+    <value>Employer 22 Pay Periods/Year Min</value>
+  </data>
+  <data name="TaxPercentageForBracket20" xml:space="preserve">
+    <value>Tax Percentage for Bracket 20</value>
+  </data>
+  <data name="EmployerCalculationMethod" xml:space="preserve">
+    <value>Employer Calculation Method</value>
+  </data>
+  <data name="EmployerWeeklyMaximum" xml:space="preserve">
+    <value>Employer Weekly Maximum</value>
+  </data>
+  <data name="BaseMultiplier" xml:space="preserve">
+    <value>Base Multiplier</value>
+  </data>
+  <data name="NoLimit" xml:space="preserve">
+    <value>No Limit</value>
+  </data>
+  <data name="OtherTax" xml:space="preserve">
+    <value>Other Tax</value>
+  </data>
+  <data name="TaxAddAmountForBracket11" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 11</value>
+  </data>
+  <data name="EmployeeDailyMaximum" xml:space="preserve">
+    <value>Employee Daily Maximum</value>
+  </data>
+  <data name="Employee13PayPeriodsYearMax" xml:space="preserve">
+    <value>Employee 13 Pay Periods/Year Max</value>
+  </data>
+  <data name="W2BoxType" xml:space="preserve">
+    <value>W-2 Box Type</value>
+  </data>
+  <data name="Employer13PayPeriodsYearMin" xml:space="preserve">
+    <value>Employer 13 Pay Periods/Year Min</value>
+  </data>
+  <data name="Employee10PayPeriodsYearMin" xml:space="preserve">
+    <value>Employee 10 Pay Periods/Year Min</value>
+  </data>
+  <data name="EmployeeMonthlyMinimum" xml:space="preserve">
+    <value>Employee Monthly Minimum</value>
+  </data>
+  <data name="TaxPercentageForBracket4" xml:space="preserve">
+    <value>Tax Percentage for Bracket 4</value>
+  </data>
+  <data name="TaxAddAmountForBracket15" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 15</value>
+  </data>
+  <data name="WageCeilingForBracket3" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 3</value>
+  </data>
+  <data name="CombineWithTax" xml:space="preserve">
+    <value>Combine with Tax</value>
+  </data>
+  <data name="TaxAddAmountForBracket4" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 4</value>
+  </data>
+  <data name="RESERVEDTaxCreditPercent" xml:space="preserve">
+    <value>RESERVED - Tax Credit Percent</value>
+  </data>
+  <data name="Withholding" xml:space="preserve">
+    <value>Withholding</value>
+  </data>
+  <data name="EmployerSemimonthlyMinimum" xml:space="preserve">
+    <value>Employer Semimonthly Minimum</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="EmployerQuarterlyMaximum" xml:space="preserve">
+    <value>Employer Quarterly Maximum</value>
+  </data>
+  <data name="AutomaticallyUpdateLocalTax" xml:space="preserve">
+    <value>Automatically Update Local Tax</value>
+  </data>
+  <data name="EmployeeBiweeklyMinimum" xml:space="preserve">
+    <value>Employee Biweekly Minimum</value>
+  </data>
+  <data name="ListUsageForBaseDeductionsI" xml:space="preserve">
+    <value>List Usage for Base Deductions I</value>
+  </data>
+  <data name="CombineWithAnotherTax" xml:space="preserve">
+    <value>Combine with Another Tax</value>
+  </data>
+  <data name="WageCeilingForBracket2" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 2</value>
+  </data>
+  <data name="WageCeilingForBracket18" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 18</value>
+  </data>
+  <data name="PensionPlanTax" xml:space="preserve">
+    <value>Pension Plan Tax</value>
+  </data>
+  <data name="TaxPercentageForBracket9" xml:space="preserve">
+    <value>Tax Percentage for Bracket 9</value>
+  </data>
+  <data name="TaxPercentageForBracket6" xml:space="preserve">
+    <value>Tax Percentage for Bracket 6</value>
+  </data>
+  <data name="Employer22PayPeriodsYearMax" xml:space="preserve">
+    <value>Employer 22 Pay Periods/Year Max</value>
+  </data>
+  <data name="UnemploymentTax" xml:space="preserve">
+    <value>Unemployment Tax</value>
+  </data>
+  <data name="Employer10PayPeriodsYearMax" xml:space="preserve">
+    <value>Employer 10 Pay Periods/Year Max</value>
+  </data>
+  <data name="TaxableNoWithholding" xml:space="preserve">
+    <value>Taxable, No Withholding</value>
+  </data>
+  <data name="EmployeeWeeklyMinimum" xml:space="preserve">
+    <value>Employee Weekly Minimum</value>
+  </data>
+  <data name="Employee22PayPeriodsYearMin" xml:space="preserve">
+    <value>Employee 22 Pay Periods/Year Min</value>
+  </data>
+  <data name="WageCeilingForBracket15" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 15</value>
+  </data>
+  <data name="EmployerBiweeklyMaximum" xml:space="preserve">
+    <value>Employer Biweekly Maximum</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PR CompanyPayrollTaxe</value>
+  </data>
+  <data name="Employer10PayPeriodsYearMin" xml:space="preserve">
+    <value>Employer 10 Pay Periods/Year Min</value>
+  </data>
+  <data name="WageCeilingForBracket1" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 1</value>
+  </data>
+  <data name="WithholdingMethodForBaseEarn" xml:space="preserve">
+    <value>Withholding Method for Base Earn</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="EmployeeQuarterlyMaximum" xml:space="preserve">
+    <value>Employee Quarterly Maximum</value>
+  </data>
+  <data name="TaxPercentageForBracket3" xml:space="preserve">
+    <value>Tax Percentage for Bracket 3</value>
+  </data>
+  <data name="DailyPayPeriodsPerYear" xml:space="preserve">
+    <value>Daily Pay Periods per Year</value>
+  </data>
+  <data name="HealthTax" xml:space="preserve">
+    <value>Health Tax</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="EmployerWeeklyMinimum" xml:space="preserve">
+    <value>Employer Weekly Minimum</value>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>Process Command Code</value>
+  </data>
+  <data name="EXMPTNAMT2" xml:space="preserve">
+    <value>RESERVED - Amount per Exemption</value>
+  </data>
+  <data name="StandardDeduction" xml:space="preserve">
+    <value>Standard Deduction</value>
+  </data>
+  <data name="EmployeeSupplementalRate" xml:space="preserve">
+    <value>Employee Supplemental Rate</value>
+  </data>
+  <data name="WageCeilingForBracket7" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 7</value>
+  </data>
+  <data name="TaxAddAmountForBracket14" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 14</value>
+  </data>
+  <data name="ClearLocalTaxAuditTables" xml:space="preserve">
+    <value>Clear Local Tax Audit Tables</value>
+  </data>
+  <data name="Flat" xml:space="preserve">
+    <value>Flat</value>
+  </data>
+  <data name="TaxAddAmountForBracket7" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 7</value>
+  </data>
+  <data name="AnnualMaximumEarnings" xml:space="preserve">
+    <value>Annual Maximum Earnings</value>
+  </data>
+  <data name="CFGPARMCNT" xml:space="preserve">
+    <value>INTERNAL USE - Tax Table Paramet</value>
+  </data>
+  <data name="AssociatedTax" xml:space="preserve">
+    <value>Associated Tax</value>
+  </data>
+  <data name="TaxCreditExemptionSwitch" xml:space="preserve">
+    <value>Tax Credit Exemption switch</value>
+  </data>
+  <data name="CFGPARMVER" xml:space="preserve">
+    <value>INTERNAL USE - Tax Table Paramet</value>
+  </data>
+  <data name="EmployeeAnnualMaximum" xml:space="preserve">
+    <value>Employee Annual Maximum</value>
+  </data>
+  <data name="TaxPercentageForBracket1" xml:space="preserve">
+    <value>Tax Percentage for Bracket 1</value>
+  </data>
+  <data name="TaxAddAmountForBracket10" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 10</value>
+  </data>
+  <data name="WageCeilingForBracket16" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 16</value>
+  </data>
+  <data name="Employee22PayPeriodsYearMax" xml:space="preserve">
+    <value>Employee 22 Pay Periods/Year Max</value>
+  </data>
+  <data name="TaxInactive" xml:space="preserve">
+    <value>Tax Inactive</value>
+  </data>
+  <data name="ShortDescription" xml:space="preserve">
+    <value>Short Description</value>
+  </data>
+  <data name="Employee10PayPeriodsYearMax" xml:space="preserve">
+    <value>Employee 10 Pay Periods/Year Max</value>
+  </data>
+  <data name="EmployerDailyMinimum" xml:space="preserve">
+    <value>Employer Daily Minimum</value>
+  </data>
+  <data name="InsertOptionalFields" xml:space="preserve">
+    <value>Insert Optional Fields</value>
+  </data>
+  <data name="EmployerSemimonthlyMaximum" xml:space="preserve">
+    <value>Employer Semimonthly Maximum</value>
+  </data>
+  <data name="EmployeeMonthlyMaximum" xml:space="preserve">
+    <value>Employee Monthly Maximum</value>
+  </data>
+  <data name="TaxAddAmountForBracket20" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 20</value>
+  </data>
+  <data name="WageCeilingForBracket5" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 5</value>
+  </data>
+  <data name="WageCeilingForBracket14" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 14</value>
+  </data>
+  <data name="NotApplicable" xml:space="preserve">
+    <value>Not Applicable</value>
+  </data>
+  <data name="LocalTaxBox" xml:space="preserve">
+    <value>Local Tax Box</value>
+  </data>
+  <data name="EmployerMinimumWeeksWorked" xml:space="preserve">
+    <value>Employer Minimum Weeks Worked</value>
+  </data>
+  <data name="ClearLocalTaxEmployeeAuditTables" xml:space="preserve">
+    <value>Clear Local Tax Employee Audit Tables</value>
+  </data>
+  <data name="SuppressW2Reporting" xml:space="preserve">
+    <value>Suppress W2 Reporting</value>
+  </data>
+  <data name="TaxAddAmountForBracket16" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 16</value>
+  </data>
+  <data name="Validation" xml:space="preserve">
+    <value>Validation</value>
+  </data>
+  <data name="WageCeilingForBracket11" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 11</value>
+  </data>
+  <data name="ReportingID" xml:space="preserve">
+    <value>Reporting ID</value>
+  </data>
+  <data name="WageCeilingForBracket4" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 4</value>
+  </data>
+  <data name="PercentageOfAnotherTax" xml:space="preserve">
+    <value>Percentage of Another Tax</value>
+  </data>
+  <data name="STDARDDED3" xml:space="preserve">
+    <value>RESERVED - Standard Deduction</value>
+  </data>
+  <data name="EmployerDailyMaximum" xml:space="preserve">
+    <value>Employer Daily Maximum</value>
+  </data>
+  <data name="TaxPercentageForBracket7" xml:space="preserve">
+    <value>Tax Percentage for Bracket 7</value>
+  </data>
+  <data name="AutomaticallyPopulateEmployee" xml:space="preserve">
+    <value>Automatically Populate Employee</value>
+  </data>
+  <data name="WageCeilingForBracket20" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 20</value>
+  </data>
+  <data name="WageCeilingForBracket12" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 12</value>
+  </data>
+  <data name="TaxAddAmountForBracket12" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 12</value>
+  </data>
+  <data name="EmployerAnnualMaximum" xml:space="preserve">
+    <value>Employer Annual Maximum</value>
+  </data>
+  <data name="EXMPTNAMT4" xml:space="preserve">
+    <value>RESERVED - Amount per Exemption</value>
+  </data>
+  <data name="TaxAddAmountForBracket5" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 5</value>
+  </data>
+  <data name="STDARDDED2" xml:space="preserve">
+    <value>RESERVED - Standard Deduction</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="EmployerAmountPercent" xml:space="preserve">
+    <value>Employer Amount/Percent</value>
+  </data>
+  <data name="EmployeeBaseTax" xml:space="preserve">
+    <value>Employee Base Tax</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="TaxAddAmountForBracket6" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 6</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Last Maintained</value>
+  </data>
+  <data name="EmployerMonthlyMinimum" xml:space="preserve">
+    <value>Employer Monthly Minimum</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="LocalTaxCode" xml:space="preserve">
+    <value>Local Tax Code</value>
+  </data>
+  <data name="TaxPercentageForBracket8" xml:space="preserve">
+    <value>Tax Percentage for Bracket 8</value>
+  </data>
+  <data name="TaxAddAmountForBracket19" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 19</value>
+  </data>
+  <data name="InsuranceTax" xml:space="preserve">
+    <value>Insurance Tax</value>
+  </data>
+  <data name="TaxAddAmountForBracket3" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 3</value>
+  </data>
+  <data name="IncomeTax" xml:space="preserve">
+    <value>Income Tax</value>
+  </data>
+  <data name="EmployeeBiweeklyMaximum" xml:space="preserve">
+    <value>Employee Biweekly Maximum</value>
+  </data>
+  <data name="EmployeeSemimonthlyMaximum" xml:space="preserve">
+    <value>Employee Semimonthly Maximum</value>
+  </data>
+  <data name="TaxPercentageForBracket5" xml:space="preserve">
+    <value>Tax Percentage for Bracket 5</value>
+  </data>
+  <data name="EXMPTNAMT3" xml:space="preserve">
+    <value>RESERVED - Amount per Exemption</value>
+  </data>
+  <data name="PercentageOfEmployeeWithholding" xml:space="preserve">
+    <value>Percentage of Employee Withholding</value>
+  </data>
+  <data name="TaxPercentageForBracket19" xml:space="preserve">
+    <value>Tax Percentage for Bracket 19</value>
+  </data>
+  <data name="TaxPercentageForBracket18" xml:space="preserve">
+    <value>Tax Percentage for Bracket 18</value>
+  </data>
+  <data name="TaxPercentageForBracket17" xml:space="preserve">
+    <value>Tax Percentage for Bracket 17</value>
+  </data>
+  <data name="TaxPercentageForBracket16" xml:space="preserve">
+    <value>Tax Percentage for Bracket 16</value>
+  </data>
+  <data name="TaxPercentageForBracket15" xml:space="preserve">
+    <value>Tax Percentage for Bracket 15</value>
+  </data>
+  <data name="TaxPercentageForBracket14" xml:space="preserve">
+    <value>Tax Percentage for Bracket 14</value>
+  </data>
+  <data name="TaxPercentageForBracket13" xml:space="preserve">
+    <value>Tax Percentage for Bracket 13</value>
+  </data>
+  <data name="TaxPercentageForBracket12" xml:space="preserve">
+    <value>Tax Percentage for Bracket 12</value>
+  </data>
+  <data name="TaxPercentageForBracket11" xml:space="preserve">
+    <value>Tax Percentage for Bracket 11</value>
+  </data>
+  <data name="TaxPercentageForBracket10" xml:space="preserve">
+    <value>Tax Percentage for Bracket 10</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="AnnualMinimumEarnings" xml:space="preserve">
+    <value>Annual Minimum Earnings</value>
+  </data>
+  <data name="TaxAddAmountForBracket9" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 9</value>
+  </data>
+  <data name="EmployeeLimit" xml:space="preserve">
+    <value>Employee Limit</value>
+  </data>
+  <data name="WageCeilingForBracket10" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 10</value>
+  </data>
+  <data name="WageCeilingForBracket6" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 6</value>
+  </data>
+  <data name="AssociateWithW2Printing" xml:space="preserve">
+    <value>Associate with W-2 printing</value>
+  </data>
+  <data name="OtherInformationBox" xml:space="preserve">
+    <value>Other Information Box</value>
+  </data>
+  <data name="DefaultDistributionCode" xml:space="preserve">
+    <value>Default Distribution Code</value>
+  </data>
+  <data name="TaxBracketTable" xml:space="preserve">
+    <value>Tax Bracket Table</value>
+  </data>
+  <data name="SurtaxMultiplier" xml:space="preserve">
+    <value>Surtax Multiplier</value>
+  </data>
+  <data name="WageCeilingForBracket9" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 9</value>
+  </data>
+  <data name="RESERVEDTaxCredits" xml:space="preserve">
+    <value>RESERVED - Tax Credits</value>
+  </data>
+  <data name="WageCeilingForBracket17" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 17</value>
+  </data>
+  <data name="Employer13PayPeriodsYearMax" xml:space="preserve">
+    <value>Employer 13 Pay Periods/Year Max</value>
+  </data>
+  <data name="EmployeeCalculationMethod" xml:space="preserve">
+    <value>Employee Calculation Method</value>
+  </data>
+  <data name="TaxAddAmountForBracket1" xml:space="preserve">
+    <value>Tax Add Amount for Bracket 1</value>
+  </data>
+  <data name="SupplementalWithholding" xml:space="preserve">
+    <value>Supplemental Withholding</value>
+  </data>
+  <data name="WageCeilingForBracket8" xml:space="preserve">
+    <value>Wage Ceiling for Bracket 8</value>
+  </data>
+</root>

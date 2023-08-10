@@ -1725,4 +1725,7 @@
     <value>產品</value>
     <comment>Warning message</comment>
   </data>
+  <data name="NetReturnTotal" xml:space="preserve">
+    <value>淨退貨合計</value>
+  </data>
 </root>
