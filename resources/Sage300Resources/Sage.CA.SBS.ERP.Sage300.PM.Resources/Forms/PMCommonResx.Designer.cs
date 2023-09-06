@@ -286,6 +286,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cheque Inquiry.
+        /// </summary>
+        public static string CheckInquiry {
+            get {
+                return ResourceManager.GetString("CheckInquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comments.
         /// </summary>
         public static string Comments {

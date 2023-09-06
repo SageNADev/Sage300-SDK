@@ -9,7 +9,7 @@
         dataModel: undefined,
         UIController: "",
         entityObject: undefined,
-
+        fromSave: true,
         rows: [],
 
         get allGrids() { 
@@ -494,7 +494,9 @@
             query = query || this.generateUpsertDataRoot(CRUDReason);
 
             if (!query) { //D-45063: no any changes, just save, want to show save sccess message
-                setTimeout(() => sg.utls.showMessage({ UserMessage: { IsSuccess: true, Message: globalResource.SaveSuccessMessage } }));
+                if (this.fromSave) { // AT-85096 Only show when save, not show when post
+                    setTimeout(() => sg.utls.showMessage({ UserMessage: { IsSuccess: true, Message: globalResource.SaveSuccessMessage } }));
+                }
                 return;
             };
 

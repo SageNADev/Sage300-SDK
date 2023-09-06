@@ -277,6 +277,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. The Selection List cannot be blank..
+        /// </summary>
+        public static string EmptySelectionList {
+            get {
+                return ResourceManager.GetString("EmptySelectionList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Check Date.
         /// </summary>
         public static string FromCheckDate {
@@ -354,6 +363,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         public static string InvalidInputFormatting {
             get {
                 return ResourceManager.GetString("InvalidInputFormatting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Period End Date is Invalid..
+        /// </summary>
+        public static string InvalidPeriodEndDateFormat {
+            get {
+                return ResourceManager.GetString("InvalidPeriodEndDateFormat", resourceCulture);
             }
         }
         
@@ -552,6 +570,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         public static string SelectOneChequeType {
             get {
                 return ResourceManager.GetString("SelectOneChequeType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must check either Active or Inactive..
+        /// </summary>
+        public static string SelectOneStatusType {
+            get {
+                return ResourceManager.GetString("SelectOneStatusType", resourceCulture);
             }
         }
         

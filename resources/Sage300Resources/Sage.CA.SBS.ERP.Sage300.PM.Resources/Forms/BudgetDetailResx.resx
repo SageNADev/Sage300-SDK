@@ -390,4 +390,16 @@
   <data name="InquiryTotalRevenueSourceForTheYear" xml:space="preserve">
     <value>Inquiry Total Revenue (Source) For The Year</value>
   </data>
+  <data name="DirtyCheckSaveMessage" xml:space="preserve">
+    <value>Do you want to add {0} {1} for {2}?</value>
+  </data>
+  <data name="InvalidFiscalYear" xml:space="preserve">
+    <value>The session date does not fall within one of the calendar's fiscal period. Define a proper calendar in Common Services Fiscal Calendar before you run the program.</value>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>Are you sure you want to delete Budget Set {0} for {1} {2}?</value>
+  </data>
+  <data name="CodeCannotBeBlank" xml:space="preserve">
+    <value>{0} Code cannot be blank.</value>
+  </data>
 </root>

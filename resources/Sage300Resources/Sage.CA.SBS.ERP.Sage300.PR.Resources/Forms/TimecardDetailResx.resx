@@ -444,4 +444,8 @@
   <data name="ShiftScheduleDescription" xml:space="preserve">
     <value>Shift Schedule Description</value>
   </data>
+  <data name="EarningDeductionNotExist" xml:space="preserve">
+    <value>Invalid input. Earning/Deduction does not exist.</value>
+    <comment>No</comment>
+  </data>
 </root>

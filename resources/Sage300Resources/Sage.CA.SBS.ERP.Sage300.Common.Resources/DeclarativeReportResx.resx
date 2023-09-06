@@ -1640,4 +1640,40 @@
   <data name="P/O" xml:space="preserve">
     <value>P/O</value>
   </data>
+  <data name="Earning/Deduction/Tax/Code" xml:space="preserve">
+    <value>Earning/Deduction/Tax Code</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Line Number</value>
+  </data>
+  <data name="NonReusableTimecards" xml:space="preserve">
+    <value>Non-reusableTimecards</value>
+  </data>
+  <data name="PayrollTimecardTitle" xml:space="preserve">
+    <value>Payroll Timecard Report</value>
+  </data>
+  <data name="PeriodEndDate" xml:space="preserve">
+    <value>Period End Date</value>
+  </data>
+  <data name="ReusableTimecards" xml:space="preserve">
+    <value>Reusable Timecards</value>
+  </data>
+  <data name="SortDetailsBy" xml:space="preserve">
+    <value>Sort Details By</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Timecard" xml:space="preserve">
+    <value>Timecard</value>
+  </data>
+  <data name="TimecardDetail" xml:space="preserve">
+    <value>Timecard Detail</value>
+  </data>
+  <data name="TimecardListing" xml:space="preserve">
+    <value>Timecard Listing </value>
+  </data>
+  <data name="TimecardSummary" xml:space="preserve">
+    <value>Timecard Summary</value>
+  </data>
 </root>

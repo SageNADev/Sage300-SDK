@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2023 The Sage Group plc or its licensors.  All rights reserved. */
 "use strict";
 var kendoWindow = null;
 var importResultRowNumber = 0;
@@ -6,6 +6,8 @@ var importResultRowNumber = 0;
     sg.importHelper = {
         importModel: {},
         abortPolling: false,
+        entityContext: null,
+
         gridOption: {
             scrollable: false,
             sortable: false,
@@ -22,13 +24,18 @@ var importResultRowNumber = 0;
                 importResultRowNumber = 0;
             }
         },
-        setImportEvent: function (id, importName, hasOptions, importKeys, callbackFunc) {
+        setImportEvent: function (id, importName, hasOptions, importKeys, callbackFunc, entityContext = null) {
             $("#" + id).Import({
                 name: importName,
                 exportImportOptions: hasOptions,
                 keys: importKeys,
                 ok: callbackFunc
             });
+
+            // optional entity context for PR
+            if (entityContext) {
+                sg.importHelper.entityContext = entityContext;
+            }
         },
         showImportResult: function (that) {
             sg.importHelper.abortPolling = true;
@@ -46,7 +53,11 @@ var importResultRowNumber = 0;
                 $("#resultgrid").show();
             }
             $("#btnClose").show();
-        }
+        },
+
+        getEntityContext: () => {
+            return sg.importHelper.entityContext;
+        },
     };
 
 }(sg || {}, jQuery));
@@ -141,7 +152,8 @@ var importResultRowNumber = 0;
             }
 
             var data = {
-                viewModel: viewModel
+                viewModel: viewModel,
+                entityPrefix: sg.importHelper.getEntityContext()
             };
 
             that.divImportDialogId = 'div_' + that.options.name + '_dialog';

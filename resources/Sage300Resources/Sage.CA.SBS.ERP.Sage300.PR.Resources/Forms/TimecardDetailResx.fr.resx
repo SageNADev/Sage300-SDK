@@ -177,6 +177,10 @@
   <data name="Earning" xml:space="preserve">
     <value />
   </data>
+  <data name="EarningDeductionNotExist" xml:space="preserve">
+    <value>Saisie erronée. Gain/retenue n'existe pas.</value>
+    <comment>No</comment>
+  </data>
   <data name="EarningsDeduction" xml:space="preserve">
     <value>Gains/retenues</value>
   </data>

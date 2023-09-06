@@ -33,6 +33,7 @@
             }
             <div id="message" class="message-login"></div>
             <div class="Sage_logo"><img src="~/Assets/images/login/sage_300_logo_300.png" height="30" alt="Sage 300"></div>
+            <div class="version">@System.Configuration.ConfigurationManager.AppSettings["Sage300Version"]</div>
             <div class="form-group">
                 <div class="input-group">
                     <label class="label-login">@ASCommonResx.UserID</label>
@@ -80,11 +81,11 @@
                     </div>
                 }
             </div>
-            <div class="version">@System.Configuration.ConfigurationManager.AppSettings["Sage300Version"]</div>
         </div>
 
         <div class="main-body login hide" id="changePasswordWrapper">
             <h1 class="page-header" id="loginHeaderChangePW">@ASCommonResx.ChangePassword</h1>
+            <div class="version">@System.Configuration.ConfigurationManager.AppSettings["Sage300Version"]</div>
             <div id="messageChangePassword" class="message-login"></div>
             <div class="form-group">
                 <div class="input-group">
@@ -118,7 +119,6 @@
                     <a id="btnPasswordCancel" class="text-button" href="#">@CommonResx.Cancel</a>
                 </div>
             </div>
-            <div class="version">@System.Configuration.ConfigurationManager.AppSettings["Sage300Version"]</div>
         </div>
     </div>
 </section>

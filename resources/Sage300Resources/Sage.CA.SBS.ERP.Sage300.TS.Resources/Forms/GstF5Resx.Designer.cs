@@ -583,7 +583,7 @@ namespace Sage.CA.SBS.ERP.Sage300.TS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FE4 Reason to Skip the Error.
+        ///   Looks up a localized string similar to Otherwise, please indicate reasons by clicking on the following:.
         /// </summary>
         public static string FE4ReasonToSkip {
             get {
@@ -619,7 +619,7 @@ namespace Sage.CA.SBS.ERP.Sage300.TS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FE5 Reason to Skip the Error.
+        ///   Looks up a localized string similar to Otherwise, please indicate reasons by clicking on the following:.
         /// </summary>
         public static string FE5ReasonToSkip {
             get {
@@ -655,7 +655,7 @@ namespace Sage.CA.SBS.ERP.Sage300.TS.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FE6 Reason to Skip the Error.
+        ///   Looks up a localized string similar to Otherwise, please indicate reasons by clicking on the following:.
         /// </summary>
         public static string FE6ReasonToSkip {
             get {

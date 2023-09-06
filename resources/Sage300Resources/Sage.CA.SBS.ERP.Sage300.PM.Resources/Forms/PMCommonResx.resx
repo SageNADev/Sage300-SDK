@@ -399,4 +399,7 @@
   <data name="UP" xml:space="preserve">
     <value>US Payroll Only</value>
   </data>
+  <data name="CheckInquiry" xml:space="preserve">
+    <value>Cheque Inquiry</value>
+  </data>
 </root>

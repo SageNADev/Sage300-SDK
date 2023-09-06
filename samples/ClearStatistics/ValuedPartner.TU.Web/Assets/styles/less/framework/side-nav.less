@@ -313,7 +313,6 @@
 
     &:focus-visible {
       outline: 5px auto @input-border-focus;
-      background-color: @gray-darker;
     }
   }
 
@@ -589,6 +588,7 @@
       &.hover {
         background-color: @sage-dark-gray;
         margin: 0 5px 0 10px;
+        padding-left: 11px;
       }
     }
 
@@ -703,7 +703,7 @@
       line-height: 1.25;
       text-decoration: none;
       opacity: 0;
-      font-size: 13px;
+      font-size: 14px;
       border-radius: 8px;
 
       &:active,
@@ -834,10 +834,10 @@
 }
 
 .k-ff .side-nav { // To make the focus line visible in Firefox
-  li > a:focus {
+  li > a:focus-visible {
     outline: none;
     outline-offset: 0;
-    box-shadow: 0 0 0 1px #1a1200, 0 0 0 2px @sage-green;
+    box-shadow: 0 0 0 1px @input-border-focus, 0 0 0 3px @input-border-focus;
   }
 }
 

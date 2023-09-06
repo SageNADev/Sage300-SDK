@@ -500,6 +500,7 @@
             let self = this;
             
             let CRUDReason = this.mainCollectionObj.rows[0].CRUDReason;
+
             let Ok = this.mainCollectionObj.saveRecord();
 
             if (apputils.isUndefined(Ok)) {
@@ -519,6 +520,8 @@
                 }
 
             });
+
+            return Ok;
         },
 
         /** Post saves the record first. If already saved, just do post
@@ -543,7 +546,7 @@
             }
 
             let self = this;
-            let OkSave = this.mainCollectionObj.saveRecord();
+            let OkSave = this.mainCollectionObj.saveRecord(false);
 
             if (apputils.isUndefined(OkSave)) {
                 return post(self);

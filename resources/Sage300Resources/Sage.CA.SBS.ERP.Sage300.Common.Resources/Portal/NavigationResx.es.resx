@@ -1431,12 +1431,6 @@
   <data name="AS_WorkProfile" xml:space="preserve">
     <value>Perfiles UI</value>
   </data>
-  <data name="SIR_Msg3" xml:space="preserve">
-    <value>Sage Intelligence Reporting Cloud</value>
-  </data>
-  <data name="SIR_Msg4" xml:space="preserve">
-    <value>Obtenga una mejor visibilidad de su negocio con informes financieros dinámicos que puede exportar y personalizar en Microsoft Excel® o Excel Online.</value>
-  </data>
   <data name="SIR_Report1" xml:space="preserve">
     <value>Real Hasta la Fecha</value>
   </data>

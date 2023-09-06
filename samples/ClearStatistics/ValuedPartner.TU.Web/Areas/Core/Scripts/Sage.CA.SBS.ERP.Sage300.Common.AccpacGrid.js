@@ -45,6 +45,7 @@ sg.viewList = function () {
         Custom: 2
     },
     BtnTemplate = '<button class="btn btn-default btn-grid-control {0}" type="button" onclick="{1}" id="btn{3}{4}">{2}</button>';
+    const BtnShowHideTemplate = '<button class="btn btn-default btn-grid-control {0}" type="button" onclick="{1}" id="btn{3}{4}"  style="{5}">{2}</button>';
 
     var _defaultPageSize = 10;
 
@@ -266,15 +267,23 @@ sg.viewList = function () {
         }
 
         if (rowData) {
-            const type = (!_newLine[gridName] || !rowData.isNewLine) ?  RequestTypeEnum.Update : RequestTypeEnum.Insert;
-
-            _sendRequest(gridName, type, ...Array(3), rowData, callBack);
-            if (_valid[gridName]) {
-                _newLine[gridName] = false;
-                //NOTE: Wont be dirty after commit successful, we may need to reset the dirty flag as well
-                //_dataChanged[gridName] = false;
+            if ((!_newLine[gridName] || !rowData.isNewLine) && !rowData.dirty) {
+                if (callBack && typeof callBack === "function") {
+                    callBack(true);
+                }
+                return true;
             }
-            return _valid[gridName];
+            else {
+                const type = (!_newLine[gridName] || !rowData.isNewLine) ? RequestTypeEnum.Update : RequestTypeEnum.Insert;
+
+                _sendRequest(gridName, type, ...Array(3), rowData, callBack);
+                if (_valid[gridName]) {
+                    _newLine[gridName] = false;
+                    //NOTE: Wont be dirty after commit successful, we may need to reset the dirty flag as well
+                    //_dataChanged[gridName] = false;
+                }
+                return _valid[gridName];
+            }
         }
         else {
             if (callBack && typeof callBack === "function") {
@@ -1440,29 +1449,100 @@ sg.viewList = function () {
             bindToForm(gridName, currentRow);
         }
 
-        _gridCallback(gridName, "gridChanged", jsonResult.Data, fieldName, null, jsonResult);
-        _setModuleVariables(gridName, status, "", rowIndex, true, false);
-        _skipMoveTo[gridName] = false;
 
-        if (dataItem) {
-            for (var field in jsonResult.Data) {
-                dataItem[field] = jsonResult.Data[field];
+        //seprate the logic from showMessage
+        const showError = jsonResult && jsonResult.UserMessage && (jsonResult.UserMessage.Errors);
+        // Show warnings or not based on settings(pjc require improvements)
+        const showMessage = _showWarnings[gridName] ? jsonResult && jsonResult.UserMessage && (jsonResult.UserMessage.Warnings || jsonResult.UserMessage.Errors || jsonResult.UserMessage.Info)
+            : showError;
+        if (showMessage) {
+            //Due to showMessage not handle UserMessage.Info as normal, implement the extra condition to disply Info from view, can be revert if we update shwoMessage function
+            if (jsonResult.UserMessage.Info) {
+                var infoHTML = sg.utls.generateList(jsonResult.UserMessage.Info, null);
+                sg.utls.showMessageInfo(sg.utls.msgType.INFO, infoHTML, () => {
+                    _gridCallback(gridName, "gridChanged", jsonResult.Data, fieldName, null, jsonResult);
+                    //todo temp changes, due to time consuming, did not figure out the lines below have any side-effect with gridCallback, if not, removed all lines below and improve it later
+                    _setModuleVariables(gridName, status, "", rowIndex, true, false);
+                    _skipMoveTo[gridName] = false;
+
+                    if (dataItem) {
+                        for (var field in jsonResult.Data) {
+                            dataItem[field] = jsonResult.Data[field];
+                        }
+                    }
+
+                    var lastCellIndex = grid._lastCellIndex;
+                    var selectRowChanged = dataItem.uid !== _selectRowUid[gridName];
+                    grid.refresh();
+
+                    // After grid refresh, use kendo grid row unique id and column index to select grid row and column
+                    var uid = dataItem.uid || _selectRowUid[gridName];
+                    var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName);
+                    var colIndex = selectRowChanged ? lastCellIndex : index + 1;
+                    var row = grid.table.find("[data-uid=" + uid + "]");
+
+                    if (row.length === 1) {
+                        grid.select(row);
+                        _setNextEditCell(grid, dataItem, row, colIndex);
+                    }
+                });
+            }
+            else {
+                sg.utls.showMessage(jsonResult, () => {
+                    _gridCallback(gridName, "gridChanged", jsonResult.Data, fieldName, null, jsonResult);
+                    //todo temp changes, due to time consuming, did not figure out the lines below have any side-effect with gridCallback, so copy whole things and improve it later
+                    _setModuleVariables(gridName, status, "", rowIndex, true, false);
+                    _skipMoveTo[gridName] = false;
+
+                    if (dataItem) {
+                        for (var field in jsonResult.Data) {
+                            dataItem[field] = jsonResult.Data[field];
+                        }
+                    }
+
+                    var lastCellIndex = grid._lastCellIndex;
+                    var selectRowChanged = dataItem.uid !== _selectRowUid[gridName];
+                    grid.refresh();
+
+                    // After grid refresh, use kendo grid row unique id and column index to select grid row and column
+                    var uid = dataItem.uid || _selectRowUid[gridName];
+                    var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName);
+                    var colIndex = selectRowChanged ? lastCellIndex : index + 1;
+                    var row = grid.table.find("[data-uid=" + uid + "]");
+
+                    if (row.length === 1) {
+                        grid.select(row);
+                        _setNextEditCell(grid, dataItem, row, colIndex);
+                    }
+                });
             }
         }
+        else {
+            _gridCallback(gridName, "gridChanged", jsonResult.Data, fieldName, null, jsonResult);
+            //todo temp changes, due to time consuming, did not figure out the lines below have any side-effect with gridCallback, so copy whole things and improve it later
+            _setModuleVariables(gridName, status, "", rowIndex, true, false);
+            _skipMoveTo[gridName] = false;
 
-        var lastCellIndex = grid._lastCellIndex;
-        var selectRowChanged = dataItem.uid !== _selectRowUid[gridName];
-        grid.refresh();
+            if (dataItem) {
+                for (var field in jsonResult.Data) {
+                    dataItem[field] = jsonResult.Data[field];
+                }
+            }
 
-        // After grid refresh, use kendo grid row unique id and column index to select grid row and column
-        var uid = dataItem.uid || _selectRowUid[gridName];
-        var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName);
-        var colIndex = selectRowChanged ? lastCellIndex : index + 1;
-        var row = grid.table.find("[data-uid=" + uid + "]");
+            var lastCellIndex = grid._lastCellIndex;
+            var selectRowChanged = dataItem.uid !== _selectRowUid[gridName];
+            grid.refresh();
 
-        if (row.length === 1) {
-            grid.select(row);
-            _setNextEditCell(grid, dataItem, row, colIndex);
+            // After grid refresh, use kendo grid row unique id and column index to select grid row and column
+            var uid = dataItem.uid || _selectRowUid[gridName];
+            var index = window.GridPreferencesHelper.getGridColumnIndex(grid, fieldName);
+            var colIndex = selectRowChanged ? lastCellIndex : index + 1;
+            var row = grid.table.find("[data-uid=" + uid + "]");
+
+            if (row.length === 1) {
+                grid.select(row);
+                _setNextEditCell(grid, dataItem, row, colIndex);
+            }
         }
     }
 
@@ -2232,7 +2312,7 @@ sg.viewList = function () {
             addTemplate = kendo.format(BtnTemplate, 'btn-add', 'sg.viewList.addLine(&quot;' + gridName + '&quot;)', globalResource.AddLine, gridName, "Add"),
             delTemplate = kendo.format(BtnTemplate, 'btn-delete', 'sg.viewList.deleteLine(&quot;' + gridName + '&quot;)', globalResource.DeleteLine, gridName, "Delete"),
             editTemplate = kendo.format(BtnTemplate, 'btn-edit-column', 'sg.viewList.editColumnSettings(&quot;' + gridName + '&quot;)', globalResource.EditColumns, gridName, "EditCol"),
-            detailTemplate = kendo.format(BtnTemplate, 'btn-details', 'sg.viewList.showDetails(&quot;' + gridName + '&quot;)', globalResource.ViewDetails, gridName, "ShowDetails");
+            detailTemplate = kendo.format(BtnShowHideTemplate, 'btn-details', 'sg.viewList.showDetails(&quot;' + gridName + '&quot;)', globalResource.ViewDetails, gridName, "ShowDetails", showDetailButton ? "" : "display:none");
 
         readOnly = readOnly || model.ReadOnly,
         _initModuleVariables(gridName);
@@ -2649,9 +2729,6 @@ sg.viewList = function () {
                 toolbar: null
             });
         }
-        if (!showDetailButton) {
-            $("#btn" + gridName + "ShowDetails").hide();
-        }
 
         //Hide the Edit button if showbuttonDetail is false 
         if (!showEditButton) {
@@ -2687,6 +2764,7 @@ sg.viewList = function () {
                 _gridCallback(gridName, "gridAfterDelete", rowData);
                 ds.remove(rowData);
                 _newLine[gridName] = false;
+                _dataChanged[gridName] = false;
                 // Set the correct current page
                 var page = ds.data().length === 0 && _currentPage[gridName] > 1 ? _currentPage[gridName] - 1 : _currentPage[gridName];
                 _lastGridAction[gridName] = RequestTypeEnum.Delete;
@@ -2828,14 +2906,15 @@ sg.viewList = function () {
  *  @description Sync the current grid select row with server, move the server entity pointer to current entity
  *  @description Used for parent/details grid(popup)
  *  @param {any} gridName The name of the grid
+ *  @param {function} callback (optional) callback after move
  */
-    function moveToCurrentRow(gridName) {
-        var grid = _getGrid(gridName),
+    function moveToCurrentRow(gridName, callback = null) {
+        const grid = _getGrid(gridName),
             rowData = grid.dataItem(grid.select()),
             data = { 'viewID': $("#" + gridName).attr('viewID'), "record": rowData },
             url = sg.utls.url.buildUrl("Core", "Grid", "MoveTo");
-
-        sg.utls.ajaxPostSync(url, data, function () { });
+        const onCompletion = null != callback ? callback : function() { };
+        sg.utls.ajaxPostSync(url, data, onCompletion);
     }
 
     /**
@@ -2968,13 +3047,25 @@ sg.viewList = function () {
      * @param {string} gridName The name of the grid
      * @param {string} columnName The column name
      * @param {boolean} visible A booelan flag
+     * @param {boolean} updateConfig Optional. Default true to update grid preferences
      * @return {booean} A boolean flag or none
      */
-    function showColumn(gridName, columnName, visible) {
+    function showColumn(gridName, columnName, visible, updateConfig = true) {
         var grid = _getGrid(gridName) || init(gridName);
         if (grid) {
             if (visible !== undefined) {
+                // change kendo grid column visibility
                 visible ? grid.showColumn(columnName) : grid.hideColumn(columnName);
+
+                // update column definition for grid preferences
+                if (updateConfig) {
+                    const columns = window[gridName + "Model"].ColumnDefinitions;
+                    const column = columns.find(x => x.FieldName == columnName);
+                    if (column) {
+                        column.IsHidden = !visible;
+                    }
+                }
+
                 return;
             }
             var column = grid.columns.filter(function (col) { return col.field === columnName; })[0];

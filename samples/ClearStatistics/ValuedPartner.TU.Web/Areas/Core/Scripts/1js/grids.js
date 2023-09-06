@@ -200,6 +200,10 @@
          */
         updateGridData: function (data, resetPage) {
 
+            if (apputils.isUndefined(this.grid)) {
+                return;
+            }
+
             this.grid.businessObject = this.businessObject;
 
             this.recordIdChanged();

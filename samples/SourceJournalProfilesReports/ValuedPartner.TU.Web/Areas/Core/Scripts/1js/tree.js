@@ -60,13 +60,13 @@
         expand: function (text, parentText = "") {
             //let item = this.tree.findByText(text); Not using the default kendo func as it does exact text match and not contains
             let item;
-            var nodes = this.tree.items();
+            let nodes = this.tree.items();
             if (!apputils.isUndefined(nodes) && nodes.length > 0 && !apputils.isUndefined(text) && !apputils.isEmpty(text)) {
                 for (let i = 0; i < nodes.length; i++) {
-                    var matchPattern = new RegExp(text, "i");
+                    let matchPattern = new RegExp(text, "i");
                     if (matchPattern.test(nodes[i].innerText)) {
                         if (!apputils.isEmpty(parentText) && !apputils.isUndefined(this.tree.parent(nodes[i])[0])) {
-                            var parentPattern = new RegExp(parentText, "i");
+                            let parentPattern = new RegExp(parentText, "i");
                             if (parentPattern.test(this.tree.parent(nodes[i])[0].innerText)) {
                                 item = nodes[i];
                                 break;
@@ -143,7 +143,7 @@
         selectRow: function() {
             let dataItem = this.tree.dataItem(this.tree.select());
 
-            if (dataItem.RowIndex > -1){
+            if (dataItem && dataItem.RowIndex > -1){
                 this.selectedObj = dataItem;
             }
             else {
@@ -176,11 +176,6 @@
             $("#" + this.treeId).on('dblclick', '.k-state-selected', function (event) {
                 self.selectRow();
                 self.dblclickOnSelected(event);
-            });
-
-            $("#" + this.treeId).on('click', function (event) {
-                self.selectRow();
-                self.singleClickOnSelected(event);
             });
         }
     };

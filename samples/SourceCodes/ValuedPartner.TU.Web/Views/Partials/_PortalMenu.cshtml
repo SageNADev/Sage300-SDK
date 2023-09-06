@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 2023 The Sage Group plc or its licensors.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
@@ -21,29 +21,22 @@
     }
 
     /// <summary>
-    /// Set the MenuItemOrder for the SIRC menu so that it is the highest value in the list
-    /// This way, SIRC will physically appear at the bottom of the menu after all core and 3rd party items.
+    /// Set the MenuItemOrder for the Intelligence menu so that it is the highest value in the list
+    /// This way, Intelligence will physically appear at the bottom of the menu after all core and 3rd party items.
     /// </summary>
     /// <param name="list">The menu item list</param>
-    public static void RepositionSIRCToBottomOfMenu(IOrderedEnumerable<NavigableMenuViewModel<NavigableMenu>> list)
+    public static void RepositionIntelligenceToBottomOfMenu(IOrderedEnumerable<NavigableMenuViewModel<NavigableMenu>> list)
     {
-        // Find the highest MenuItemOrder in the list 
+        // Find the highest MenuItemOrder in the list
         var highestMenuItemOrder = list.Max(m => m.Data.MenuItemOrder);
-        var sircMenuItemOrder = highestMenuItemOrder += 1000;
+        var intelligenceMenuItemOrder = highestMenuItemOrder += 1000;
 
         foreach (var item in list)
         {
-            //// Found the SIRC menu
-            //if (item.Data.Isintelligence.HasValue && item.Data.Isintelligence.Value)
-            //{
-            //    item.Data.MenuItemOrder = sircMenuItemOrder;
-            //    break;
-            //}
-
-            // Found the SIRC menu
-            if (IsSIRCMenuItem(item.Data))
+            // Found the Intelligence menu
+            if (IsIntelligenceMenuItem(item.Data))
             {
-                item.Data.MenuItemOrder = sircMenuItemOrder;
+                item.Data.MenuItemOrder = intelligenceMenuItemOrder;
                 break;
             }
         }
@@ -127,11 +120,11 @@
 
     /// <summary>
     /// Is this icon associated with a core or 3rd-party module?
-    /// Note: 
-    ///     Core items : 
+    /// Note:
+    ///     Core items :
     ///         "AR/icon_ar.png"
-    ///         
-    ///     3rd party items : 
+    ///
+    ///     3rd party items :
     ///         "../../../../Areas/TU/ExternalContent/icon_tu.png"
     /// </summary>
     /// <param name="iconName">The icon name string</param>
@@ -147,11 +140,11 @@
     }
 
     /// <summary>
-    /// Is this a SIRC menu item?
+    /// Is this a Intelligence menu item?
     /// </summary>
     /// <param name="item">The NavigableMenu item</param>
-    /// <returns>true = SIRC menu item | false = Non-SIRC menu item</returns>
-    public static bool IsSIRCMenuItem(NavigableMenu item)
+    /// <returns>true = Intelligence menu item | false = Non-Intelligence menu item</returns>
+    public static bool IsIntelligenceMenuItem(NavigableMenu item)
     {
         return (item.Isintelligence.HasValue && item.Isintelligence.Value);
     }
@@ -178,9 +171,9 @@
     var rootLevel2Items = level2Items.Where(m => m.Data.ParentMenuId == HOMEPAGEKEY).
                                       OrderBy(m => m.Data.MenuItemOrder).ThenBy(m => m.Data.MenuName);
 
-    // Reposition where SIRC (if available and enabled) appears in the menu
-    RepositionSIRCToBottomOfMenu(rootLevel2Items);
- 
+    // Reposition where BI (if available and enabled) appears in the menu
+    RepositionIntelligenceToBottomOfMenu(rootLevel2Items);
+
     var itemIndex = 0;
     var firstItem = true;
 }
@@ -189,9 +182,9 @@
 
 @foreach (var level2Item in rootLevel2Items)
 {
-    if (IsSIRCMenuItem(level2Item.Data))
+    if (IsIntelligenceMenuItem(level2Item.Data))
     {
-        @RenderSIRCMenu();
+        @RenderIntelligenceMenu();
     }
     else
     {
@@ -254,7 +247,8 @@
     </div>
 </script>
 
-@helper RenderSIRCMenu() {
+@helper RenderIntelligenceMenu()
+{
     <li class="menu-item top-tier menu-ir" id="SIR">
         <div class="nav-icon">
             <img src="../../../Content/Images/nav/SIRC/icon_sirc.png" width="20" height="20" alt="@NavigationResx.SIR_Msg1">
@@ -265,15 +259,6 @@
             <li class="feature-menu-header">
                 <span>@NavigationResx.SIR_Msg2</span>
             </li>
-            @if (ViewBag.IsSIRCEnable == true)
-            {
-                <li class="feature-menu-content">
-                    <h2>@NavigationResx.SIR_Msg3</h2>
-                    <p>@NavigationResx.SIR_Msg4</p>
-                    <p><input class="btn btn-accent" id="btnIntelligence" name="btnIntelligence" type="button" value="@NavigationResx.SIR_Btn"></p>
-                </li>
-            }
-            <hr>
             <li class="feature-menu-content">
                 <h2>@NavigationResx.SIR_SDAMsg1</h2>
                 <p>@NavigationResx.SIR_SDAMsg2</p>
@@ -288,7 +273,7 @@
     var item = parentItem.Data;
     var parentItemId = item.MenuId;
 
-    // Note: Just an FYI, if a menu item li contains the class 'menu-sdk', 
+    // Note: Just an FYI, if a menu item li contains the class 'menu-sdk',
     // code in TaskDock-Menu-Breadcrumb.js will automatically add the 'menu-group'
     // class to the item regardless of the following code.
     var parentItemClass = item.IsGroupEnd == true ? "menu-group" : "";
@@ -357,8 +342,8 @@
         if (item.IsGroupHeader == true)
         {
 
-            <li class="sub-heading" 
-                data-menuid='@item.MenuId' 
+            <li class="sub-heading"
+                data-menuid='@item.MenuId'
                 data-modulename='@item.ModuleName'>
                 @item.MenuName
             </li>
@@ -367,8 +352,8 @@
         if (item.Isintelligence == true)
         {
             <li class="k-item">
-                <a tabindex="0" data-url='@item.ScreenUrl' 
-                   data-menuid='@item.MenuId'  data-isintelligence='@item.Isintelligence' 
+                <a tabindex="0" data-url='@item.ScreenUrl'
+                   data-menuid='@item.MenuId' data-isintelligence='@item.Isintelligence'
                    data-modulename='@item.ModuleName'>@item.MenuName</a>
             </li>
         }

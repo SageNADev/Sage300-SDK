@@ -2572,6 +2572,12 @@
         },
 
         PR: { // Payroll Finders are identical between CP and UP and "~~" will be replaced with CP or UP upon usage
+            TimecardsReport: {
+                viewID: "~~0031",
+                viewOrder: 0,
+                displayFieldNames: ["PEREND", "TIMECARD", "TCARDDESC"],
+                returnFieldNames: ["TIMECARD"]
+            },
             ClassCodes: {
                 viewID: "~~0006",
                 viewOrder: 0,

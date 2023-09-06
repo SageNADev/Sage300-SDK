@@ -208,7 +208,7 @@ GridPreferences = {
             if (gridColumns && gridColumns.constructor.name === 'Object')
                 gridColumns = Object.values(gridColumns);
             const configColumn = gridColumns ? gridColumns.find(x => x.field === grid.columns[i].field) : undefined;
-            if (!grid.columns[i].title || (configColumn && configColumn.isInternal)) {
+            if (!grid.columns[i].title || (configColumn && (configColumn.isInternal || configColumn.hidden))) {
                 continue;
             }
 

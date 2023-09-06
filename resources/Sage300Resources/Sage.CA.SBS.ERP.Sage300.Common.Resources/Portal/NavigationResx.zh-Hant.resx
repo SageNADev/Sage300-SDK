@@ -1431,12 +1431,6 @@
   <data name="AS_WorkProfile" xml:space="preserve">
     <value>用戶介面概況</value>
   </data>
-  <data name="SIR_Msg3" xml:space="preserve">
-    <value>Sage Intelligence Reporting Cloud</value>
-  </data>
-  <data name="SIR_Msg4" xml:space="preserve">
-    <value>通過您可以匯出並在Microsoft Excel®或Excel線上中自訂的動態財務報表幫助您更清楚地瞭解您的業務。</value>
-  </data>
   <data name="SIR_Report1" xml:space="preserve">
     <value>實際年度至今</value>
   </data>

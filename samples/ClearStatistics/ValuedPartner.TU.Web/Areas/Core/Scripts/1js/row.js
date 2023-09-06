@@ -1073,7 +1073,7 @@
 
                 if (this.rowNodes[0].Columns[i].isDirty && this.rowNodes[0].Columns[i].DBValue && !DBValueFilterDisabled) {
                     const name = this.rowNodes[0].Columns[i].name;
-                    const type = this.rowNodes[0].Columns[i].dataType;
+                    const type = this.rowNodes[0].Columns[i].dataType.toLowerCase();
 
                     if (type === "Time") { //Skip time type value in db value filter
                         continue;

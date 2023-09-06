@@ -132,11 +132,11 @@
         Decimal: "Decimal",
         Long: "Long",
         Char : "Char",
-        Int: "int",
+        Int: "Int",
         Date: "Date",
         Bool: "Bool",
-        Amount: "amount",
-        Money: "money"
+        Amount: "Amount",
+        Money: "Money"
     };
     Object.freeze(this.apputils.DataType);
 

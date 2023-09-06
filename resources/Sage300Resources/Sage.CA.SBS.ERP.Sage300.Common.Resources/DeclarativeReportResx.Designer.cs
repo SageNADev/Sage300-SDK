@@ -1411,6 +1411,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Earning/Deduction/Tax Code.
+        /// </summary>
+        public static string Earning_Deduction_Tax_Code {
+            get {
+                return ResourceManager.GetString("Earning/Deduction/Tax/Code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Earnings And Deduction.
         /// </summary>
         public static string EarningsAndDeduction {
@@ -2464,6 +2473,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Line Number.
+        /// </summary>
+        public static string LineNumber {
+            get {
+                return ResourceManager.GetString("LineNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Location.
         /// </summary>
         public static string Location {
@@ -2685,6 +2703,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Non-reusableTimecards.
+        /// </summary>
+        public static string NonReusableTimecards {
+            get {
+                return ResourceManager.GetString("NonReusableTimecards", resourceCulture);
             }
         }
         
@@ -3049,11 +3076,29 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Payroll Timecard Report.
+        /// </summary>
+        public static string PayrollTimecardTitle {
+            get {
+                return ResourceManager.GetString("PayrollTimecardTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Payroll Type.
         /// </summary>
         public static string PayrollType {
             get {
                 return ResourceManager.GetString("PayrollType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Period End Date.
+        /// </summary>
+        public static string PeriodEndDate {
+            get {
+                return ResourceManager.GetString("PeriodEndDate", resourceCulture);
             }
         }
         
@@ -3598,6 +3643,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reusable Timecards.
+        /// </summary>
+        public static string ReusableTimecards {
+            get {
+                return ResourceManager.GetString("ReusableTimecards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Revaluation Code.
         /// </summary>
         public static string RevaluationCode {
@@ -3805,6 +3859,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sort Details By.
+        /// </summary>
+        public static string SortDetailsBy {
+            get {
+                return ResourceManager.GetString("SortDetailsBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Specific and All Locations.
         /// </summary>
         public static string SpecificAndAllLocations {
@@ -3828,6 +3891,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string SpecificSegment {
             get {
                 return ResourceManager.GetString("SpecificSegment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
             }
         }
         
@@ -4035,6 +4107,42 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string ThenBy {
             get {
                 return ResourceManager.GetString("ThenBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timecard.
+        /// </summary>
+        public static string Timecard {
+            get {
+                return ResourceManager.GetString("Timecard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timecard Detail.
+        /// </summary>
+        public static string TimecardDetail {
+            get {
+                return ResourceManager.GetString("TimecardDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timecard Listing .
+        /// </summary>
+        public static string TimecardListing {
+            get {
+                return ResourceManager.GetString("TimecardListing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timecard Summary.
+        /// </summary>
+        public static string TimecardSummary {
+            get {
+                return ResourceManager.GetString("TimecardSummary", resourceCulture);
             }
         }
         

@@ -501,28 +501,30 @@ var ViewFinderGridHelper = {
     _getRecordKeyValues: function (grid, first) {
         let keyValues = {};
         let data = grid.dataSource.data()[first ? 0 : grid.dataSource.data().length - 1];
-        sg.keys.forEach(column => {
-            let cellVal = data[column.field];
-            let val;
-            // check data type
-            if (column.PresentationList !== null) {
-                var pval = $.grep(column.PresentationList, function (p) {
-                    return p.Text === cellVal;
-                });
+        if (data) {
+            sg.keys.forEach(column => {
+                let cellVal = data[column.field];
+                let val;
+                // check data type
+                if (column.PresentationList !== null) {
+                    var pval = $.grep(column.PresentationList, function (p) {
+                        return p.Text === cellVal;
+                    });
 
-                if (pval.length > 0) {
-                    val = pval[0].Value;
+                    if (pval.length > 0) {
+                        val = pval[0].Value;
+                    }
                 }
-            }
-            else if (column.dataType === sg.finderDataType.Date) {
-                val = sg.utls.kndoUI.getFormattedDate(cellVal);
-            }
-            else {
-                val = cellVal;
-            }
+                else if (column.dataType === sg.finderDataType.Date) {
+                    val = sg.utls.kndoUI.getFormattedDate(cellVal);
+                }
+                else {
+                    val = cellVal;
+                }
 
-            keyValues[column.field] = val;
-        });
+                keyValues[column.field] = val;
+            });
+        }
 
         return keyValues;
     },

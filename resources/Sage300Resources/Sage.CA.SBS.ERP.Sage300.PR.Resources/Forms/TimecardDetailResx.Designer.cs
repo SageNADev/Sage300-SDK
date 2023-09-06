@@ -241,6 +241,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Earning/Deduction does not exist..
+        /// </summary>
+        public static string EarningDeductionNotExist {
+            get {
+                return ResourceManager.GetString("EarningDeductionNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Earning/Deduction.
         /// </summary>
         public static string EarningsDeduction {

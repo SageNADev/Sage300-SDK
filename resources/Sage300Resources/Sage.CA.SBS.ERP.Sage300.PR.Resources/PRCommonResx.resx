@@ -189,6 +189,9 @@
   <data name="EmptyEmployee" xml:space="preserve">
     <value>Invalid input. Employee cannot be blank.</value>
   </data>
+  <data name="EmptySelectionList" xml:space="preserve">
+    <value>Invalid input. The Selection List cannot be blank.</value>
+  </data>
   <data name="FromCheckDate" xml:space="preserve">
     <value>From Check Date</value>
   </data>
@@ -215,6 +218,9 @@
   </data>
   <data name="InvalidInputFormatting" xml:space="preserve">
     <value> Enter valid input value</value>
+  </data>
+  <data name="InvalidPeriodEndDateFormat" xml:space="preserve">
+    <value>Period End Date is Invalid.</value>
   </data>
   <data name="InvalidSelectionList" xml:space="preserve">
     <value>Invalid Input. The Selection List does not exist.</value>
@@ -281,6 +287,9 @@
   </data>
   <data name="SelectOneChequeType" xml:space="preserve">
     <value>You must check at least one pay Cheque box.</value>
+  </data>
+  <data name="SelectOneStatusType" xml:space="preserve">
+    <value>You must check either Active or Inactive.</value>
   </data>
   <data name="Shift" xml:space="preserve">
     <value>Shift</value>

@@ -292,7 +292,7 @@
     <value>FE4 Other Reason</value>
   </data>
   <data name="FE4ReasonToSkip" xml:space="preserve">
-    <value>FE4 Reason to Skip the Error</value>
+    <value>Otherwise, please indicate reasons by clicking on the following:</value>
   </data>
   <data name="FE5Error" xml:space="preserve">
     <value>FE5 Error?</value>
@@ -304,7 +304,7 @@
     <value>FE5 Other Reason</value>
   </data>
   <data name="FE5ReasonToSkip" xml:space="preserve">
-    <value>FE5 Reason to Skip the Error</value>
+    <value>Otherwise, please indicate reasons by clicking on the following:</value>
   </data>
   <data name="FE6Error" xml:space="preserve">
     <value>FE6 Error?</value>
@@ -316,7 +316,7 @@
     <value>FE6 Other Reason</value>
   </data>
   <data name="FE6ReasonToSkip" xml:space="preserve">
-    <value>FE6 Reason to Skip the Error</value>
+    <value>Otherwise, please indicate reasons by clicking on the following:</value>
   </data>
   <data name="FromPeriod" xml:space="preserve">
     <value>From Period</value>

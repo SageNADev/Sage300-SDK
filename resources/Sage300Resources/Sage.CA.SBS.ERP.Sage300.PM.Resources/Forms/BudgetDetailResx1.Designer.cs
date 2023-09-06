@@ -142,6 +142,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} Code cannot be blank..
+        /// </summary>
+        public static string CodeCannotBeBlank {
+            get {
+                return ResourceManager.GetString("CodeCannotBeBlank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Completed Project.
         /// </summary>
         public static string CompletedProject {
@@ -223,11 +232,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete Budget Set {0} for {1} {2}?.
+        /// </summary>
+        public static string DeleteMessage {
+            get {
+                return ResourceManager.GetString("DeleteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to add {0} {1} for {2}?.
+        /// </summary>
+        public static string DirtyCheckSaveMessage {
+            get {
+                return ResourceManager.GetString("DirtyCheckSaveMessage", resourceCulture);
             }
         }
         
@@ -453,6 +480,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string InquiryTotalRevenueSourceForTheYear {
             get {
                 return ResourceManager.GetString("InquiryTotalRevenueSourceForTheYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The session date does not fall within one of the calendar&apos;s fiscal period. Define a proper calendar in Common Services Fiscal Calendar before you run the program..
+        /// </summary>
+        public static string InvalidFiscalYear {
+            get {
+                return ResourceManager.GetString("InvalidFiscalYear", resourceCulture);
             }
         }
         
