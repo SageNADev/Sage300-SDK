@@ -144,7 +144,7 @@ button {
   line-height: @line-height-base;
   font-size: @font-size-base;
   font-family: @font-family-base;
-  border-radius: @border-radius-base;
+  border-radius: @border-radius-default;
 }
 
 textarea {
@@ -157,7 +157,7 @@ textarea {
   line-height: @line-height-base;
   font-size: @font-family-base;
   font-family: @font-size-base;
-  border-radius: @border-radius-base;
+  border-radius: @border-radius-default;
 }
 
 fieldset {
@@ -298,7 +298,7 @@ textarea {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -o-border-radius: 0;
-    border-radius: 0;
+    border-radius: @border-radius-default;
 
     &:disabled {
       color: @input-color;
@@ -481,6 +481,11 @@ input[type="month"] {
 
   &.indented {
     margin-left: @margin-base;
+  }
+
+  div[data-bind],
+  div[data-sage300uicontrol] {
+    display: inline-block;
   }
 }
 
@@ -988,15 +993,15 @@ only screen and (-webkit-min-device-pixel-ratio:1.2),only screen and (min-device
     }
 }
 
-input[class*="btn-"] {
+input[class*="btn"] {
     cursor: pointer; 
     height: 30px; 
     -webkit-appearance:         none;   /* reset button styles for iPad */
     -moz-appearance:            none;   /* reset button styles for iPad */
-    -webkit-border-radius:      0;      /* reset button styles for iPad */
-    -moz-border-radius:         0;      /* reset button styles for iPad */
-    -o-border-radius:           0;      /* reset button styles for iPad */
-    border-radius:              0;      /* reset button styles for iPad */
+    -webkit-border-radius:      @border-radius-default;
+    -moz-border-radius:         @border-radius-default;
+    -o-border-radius:           @border-radius-default;
+    border-radius:              @border-radius-default;
 
     &:hover {
       background-color: darken(@btn-default-bg, 5%);
@@ -1054,13 +1059,18 @@ input[class*="btn-"] {
 
 .btn-go,
 .btn-fiscal-picker {
-  margin-left: -33px;
+  margin-left: -32px;
 }
 
 .go-group {
   .btn-go {
     margin-left: -30px;
   }
+}
+
+.btn-search,
+.btn-finder {
+  margin-left: -4px;
 }
 
 .btn-go                     { background-position: -23px 4px; }
@@ -1159,7 +1169,7 @@ input.grid_Cell_Number_Right_Align {
   padding: 0;
 
     .k-numeric-wrap input.size-control {
-      width: 168px;
+      width: 181px;
     }
   }
 
@@ -1234,7 +1244,7 @@ textarea,
   }
 
   &.size-control {
-    width: 168px;
+    width: 181px;
   }
 
   &.small {
@@ -1292,7 +1302,7 @@ textarea {
   }
 
   &.size-control {
-    width: 171px;
+    width: 181px;
   }
 
   &.medium.size-control {
@@ -1331,6 +1341,20 @@ textarea {
   &.large.size-control {
     width: 360px;
   }
+}
+
+// Go button focus style improvements - New branding 2023
+
+.k-widget.k-numerictextbox:has(> .k-state-focused) ~ .btn-search,
+.k-widget.k-numerictextbox:has(> .k-state-focused) ~ .btn-finder,
+div[class*="-group"] > input[type="text"]:focus ~ .btn-finder,
+div[class*="-group"] > input[type="text"]:focus ~ .btn-search,
+div[class*="-group"] > input[type="text"]:focus ~ .btn-plus,
+div.search-group > input[type="text"]:focus ~ input.icon.btn-search,
+div.search-group > input[type="text"]:focus ~ input.icon.btn-finder,
+div.finder-group > input[type="text"]:focus ~ input.icon.btn-search,
+div.finder-group > input[type="text"]:focus ~ input.icon.btn-finder {
+  .focus-input-box;
 }
 
 // Align Total Tax input field
@@ -1568,7 +1592,7 @@ textarea {
 
 .k-numerictextbox .k-select .k-link span.k-i-arrow-n,
 .k-numerictextbox .k-select .k-link span.k-i-arrow-60-up  { 
-  background-position: -708px -3px;
+  background-position: -576px -4px;
   text-indent: -9999px;
 
   &:before {
@@ -1578,18 +1602,18 @@ textarea {
 
 .k-numerictextbox .k-select .k-link span.k-i-arrow-s,
 .k-numerictextbox .k-select .k-link span.k-i-arrow-60-down  { 
-  background-position: -83px -5px;
+  background-position: -549px -6px;
   text-indent: -9999px;
 }
 
 .k-numerictextbox .k-state-disabled .k-select .k-link span.k-i-arrow-n,
 .k-numerictextbox .k-state-disabled .k-select .k-link span.k-i-arrow-60-up  { 
-  background-position: -708px -75px; 
+  background-position: -576px -74px; 
 }
 
 .k-numerictextbox .k-state-disabled .k-select .k-link span.k-i-arrow-s,
 .k-numerictextbox .k-state-disabled .k-select .k-link span.k-i-arrow-60-down  { 
-  background-position: -83px -76px; 
+  background-position: -549px -76px; 
 }
 
 .k-state-hover > * > .k-i-calendar { 
@@ -1984,7 +2008,7 @@ td.k-state-focused.k-state-selected {
   background-image: url('@{image-path}/ui/sprite_icons.png');
   background-repeat: no-repeat;
   background-size: 900px 90px;
-  background-position: -652px -1px;
+  background-position: -653px -1px;
   opacity: 1;
   width: 30px;
   height: 16px;
@@ -2042,7 +2066,6 @@ td.k-state-focused.k-state-selected {
 
 .label-menu-popup{ 
   background: @gray-lighter;
-  border: 1px solid @input-border;
   margin-top: -11px;
   margin-left: 14px;
   top: 25px;
@@ -2053,6 +2076,7 @@ td.k-state-focused.k-state-selected {
   margin: 0; 
   padding: 0; 
   list-style-type: none;
+  border: 1px solid @input-border;
 
     li input[type=button].action-btn {
     border: 0;
@@ -2071,12 +2095,12 @@ td.k-state-focused.k-state-selected {
       background-color: #e8effe;
       text-decoration: none;
       color: @sage-link;
-      } 
+      }
 
       &:focus{
         outline: @input-border-focus solid 3px;
         outline-offset: -3px;
-      } 
+      }
 
       &[disabled]  { 
       color: #9a9b9c; 
@@ -2478,13 +2502,13 @@ div.k-treeview.treeview-with-icon,
     .k-i-collapse,
     .k-minus,
     .k-minus-disabled {
-      background-position: -84px 5px;
+      background-position: -87px 5px;
     }
 
     .k-i-expand, 
     .k-plus, 
     .k-plus-disabled {
-      background-position: -728px 3px;
+      background-position: -166px 3px;
     }
 }
 

@@ -2,6 +2,7 @@
 
 @using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
 @using MenuResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal.NavigationResx
+@using dlrResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.DeclarativeReportResx
 
 <script type="text/javascript">
     var declarativeReportResources = {
@@ -10,6 +11,23 @@
         From: '@Html.SageRaw(CommonResx.From)',
         To: '@Html.SageRaw(CommonResx.To)',
         Projects: '@Html.SageRaw(MenuResx.PM_Projects)',
-        Categories: '@Html.SageRaw(MenuResx.PM_Categories)'
+        Categories: '@Html.SageRaw(MenuResx.PM_Categories)',
+        Period: '@Html.SageRaw(CommonResx.Period)',
+        Status: '@Html.SageRaw(CommonResx.Status)',
+        Start: '@Html.SageRaw(CommonResx.Start)',
+        End: '@Html.SageRaw(CommonResx.End)',
+        ContractStartDate: '@Html.SageRaw(dlrResx.ContractStartDate)',
+        ProjectStartDate: '@Html.SageRaw(dlrResx.ProjectStartDate)',
+        TransactionDate: '@Html.SageRaw(dlrResx.TransactionDate)',
+        Customer: '@Html.SageRaw(dlrResx.CustomerNumber)',
+        BothBlankMessage: '@Html.SageRaw(dlrResx.BothBlankMessage)',
+        AssignEmployeeEarnOrDedAuditPopup: '@Html.SageRaw(CommonResx.AssignEmployeeEarnOrDedAuditPopup)',
+        AssignEmployeeTaxAuditPopup: '@Html.SageRaw(CommonResx.AssignEmployeeTaxAuditPopup)',
+        AssignTaxAuditPopup: '@Html.SageRaw(CommonResx.AssignTaxAuditPopup)',
+        AssignEarnOrDedAuditPopup: '@Html.SageRaw(CommonResx.AssignEarnOrDedAuditPopup)',
+        AssignEmployeeYes: '@Html.SageRaw(CommonResx.Yes)',
+        AssignEmployeeClose: '@Html.SageRaw(CommonResx.Close)',
+        AssignEmployeeTaxTitle: '@Html.SageRaw(CommonResx.AssignEmployeeTaxTitle)',
+        AssignEmployeeEarnOrDedTitle: '@Html.SageRaw(CommonResx.AssignEmployeeEarnOrDedTitle)',
     };
 </script>

@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HireDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompensatoryTimeHoursPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OvertimeSchedule" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalJobs" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OvertimeCalculation" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OvertimeHours" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MiddleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalCompTimeHoursPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShiftHours" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalCompTimeDollarsAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VacationHoursPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SickHoursAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TimecardLines" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ProcessedFlag" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SecurityFlag" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VacationDollarsAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Timecard" xml:space="preserve">
+    <value>Feuille temps</value>
+  </data>
+  <data name="WorkClassification" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalSickTimeDollarsPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeparateCheckFlag" xml:space="preserve">
+    <value>Imprimer chèque distinct</value>
+  </data>
+  <data name="CompTimeID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PayFrequency" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalSickHoursPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompTimeDollarsAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalCompTimeHoursAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalRegularHours" xml:space="preserve">
+    <value />
+  </data>
+  <data name="JobRelated" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TerminationDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShiftNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompTimeDollarsPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalSickHoursAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalVacationDollarsPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalCompTimeDollarsPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShiftDifferentialSchedule" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmploymentStatus" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalSickTimeDollarsAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalVacationHoursPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CalcOTOnAWeeklyBasis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PartTime" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalShiftHours" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalOvertimeHours" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NumberOfOptionalFields" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SickTimeDollarsAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompTimeHoursAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SickTimeDollarsPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalVacationHoursAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SourceApplication" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VacationDollarsPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegularHours" xml:space="preserve">
+    <value />
+  </data>
+  <data name="KeyAction" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalVacationDollarsAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegularHoursPerDay" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OvertimeOverride" xml:space="preserve">
+    <value>Substit. hres suppl.</value>
+  </data>
+  <data name="Reusable" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InsertOptionalFields" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VacationHoursAccrued" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SickHoursPaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Accrued" xml:space="preserve">
+    <value>Accrued</value>
+    <comment>To be translated</comment>
+  </data>
+  <data name="Amounts" xml:space="preserve">
+    <value>Montants</value>
+  </data>
+  <data name="Compensatory" xml:space="preserve">
+    <value>Compensatory</value>
+    <comment>To be translated</comment>
+  </data>
+  <data name="Dated" xml:space="preserve">
+    <value>dated</value>
+    <comment>To be translated</comment>
+  </data>
+  <data name="DeleteConfirmMessage" xml:space="preserve">
+    <value>Are you sure you want to delete {0}?</value>
+    <comment>To be translated</comment>
+  </data>
+  <data name="EarningsDeductions" xml:space="preserve">
+    <value>Gains/retenues</value>
+  </data>
+  <data name="EmployeeTimecard" xml:space="preserve">
+    <value>Feuille temps - Employé</value>
+  </data>
+  <data name="ForEmployee" xml:space="preserve">
+    <value>for employee</value>
+    <comment>To be translated</comment>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Heures</value>
+  </data>
+  <data name="SaveConfirmMessage" xml:space="preserve">
+    <value>Do you want to save changes to</value>
+    <comment>To be translated</comment>
+  </data>
+  <data name="Vacation" xml:space="preserve">
+    <value>Vacation</value>
+    <comment>To be translated</comment>
+  </data>
+  <data name="SegmentCode" xml:space="preserve">
+    <value>Code de segment</value>
+  </data>
+  <data name="SegmentDescription" xml:space="preserve">
+    <value>Description de segment</value>
+  </data>
+  <data name="SegmentName" xml:space="preserve">
+    <value>Nom de segment</value>
+  </data>
+  <data name="ReuseTimecard" xml:space="preserve">
+    <value>Feuille de temps réutilisable</value>
+  </data>
+  <data name="ConvertFromReuse" xml:space="preserve">
+    <value>Conversion de cette feuille de temps à non-réutilisable exige l'entrée d'une date de fin de période. Changement à cette feuille de temps supprimera tous les calculs de paie non reportés pour cet employé.\n\nVoulez-vous continuer?</value>
+  </data>
+  <data name="ChangeTheCurrentTimecard" xml:space="preserve">
+    <value>Modifier la feuille de temps actuelle.</value>
+  </data>
+  <data name="IdentifyTimecardChanged" xml:space="preserve">
+    <value>Vous avez changé un champ servant à identifier cette feuille de temps.  Vous pouvez débuter une nouvelle feuille de temps ou modifier celle-ci.</value>
+  </data>
+  <data name="IdentifyTimecardChangedNote" xml:space="preserve">
+    <value>La modification d'une feuille de temps entraînera la suppression de tous les calculs de paie non reportés concernant cet employé.</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Remarque</value>
+  </data>
+  <data name="StartNewTimecard" xml:space="preserve">
+    <value>Débuter une nouvelle feuille de temps</value>
+  </data>
+  <data name="StartNewTimecardButCopyTheDetails" xml:space="preserve">
+    <value>Débuter une nouvelle feuille de temps, mais copier les détails de cette feuille de temps.</value>
+  </data>
+  <data name="MustSaveChangesBeforeChangeThisField" xml:space="preserve">
+    <value>Vous devez sauvegarder vos modifications apportées à la feuille de temps avant de changer ce champ.</value>
+  </data>
+  <data name="ConvertToReuse" xml:space="preserve">
+    <value>Voulez-vous convertir cette feuille de temps à réutilisable? Changement à cette dernière supprimera tous les calculs de paie non reportés pour cet employé.\n\nVoulez-vous continuer?</value>
+  </data>
+  <data name="SetFLSA_CP" xml:space="preserve">
+    <value>Vous avez désactivé la substitution des heures supplémentaires.  Les calculs d'heures supplémentaires au taux normal exigent que l'option Inclure dans calcul au taux normal soit activée pour tous les codes de gains uniques, fixes et horaires dont les heures ne sont pas zéro et qui sont attribués à une table d'heures supplémentaires.  Cette option a donc été modifiée automatiquement pour tous les gains qui remplissent ces critères.</value>
+  </data>
+  <data name="SetFLSA_UP" xml:space="preserve">
+    <value>You have turned off the overtime override.  The FLSA overtime calculations require the Include in FLSA Calculation option to be turned on for all flat, fixed, and hourly earning codes whose Hours are not zero and have been assigned an overtime schedule.  Therefore, this flag has been changed automatically for any earnings that meet this criteria.</value>
+  </data>
+</root>

@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FridayHours" xml:space="preserve">
+    <value>Horas de Viernes</value>
+  </data>
+  <data name="LABORSR" xml:space="preserve">
+    <value>Mto. Trans. de Mano de Obra</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descrip.</value>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>Multiplicar</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PJC - Timecards</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Fch. Inicio</value>
+  </data>
+  <data name="RateSpread" xml:space="preserve">
+    <value>Margen de Tasa</value>
+  </data>
+  <data name="TotalHours" xml:space="preserve">
+    <value>Total de Horas</value>
+  </data>
+  <data name="ETOTBILLHM" xml:space="preserve">
+    <value>Gasto Facturable Total</value>
+  </data>
+  <data name="TOTBILLSR" xml:space="preserve">
+    <value>Mto Facturable Total</value>
+  </data>
+  <data name="ETOTCOSTHM" xml:space="preserve">
+    <value>Costo de Gasto Total</value>
+  </data>
+  <data name="Sequence" xml:space="preserve">
+    <value>Secuencia</value>
+  </data>
+  <data name="OHSR" xml:space="preserve">
+    <value>Mto. Trans. de Gastos Grales</value>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>Asentado</value>
+  </data>
+  <data name="GTOTBILLHM" xml:space="preserve">
+    <value>Mto Facturable Total</value>
+  </data>
+  <data name="PayrollType" xml:space="preserve">
+    <value>Tipo de Nómina</value>
+  </data>
+  <data name="GTOTCOSTSR" xml:space="preserve">
+    <value>Costo Total</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Nuevo</value>
+  </data>
+  <data name="TOTCOSTHM" xml:space="preserve">
+    <value>Costo Total</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Fch. Transacción</value>
+  </data>
+  <data name="MondayHours" xml:space="preserve">
+    <value>Horas de Lunes</value>
+  </data>
+  <data name="ReadyForApproval" xml:space="preserve">
+    <value>Listo para Ser Aprobado</value>
+  </data>
+  <data name="TuesdayHours" xml:space="preserve">
+    <value>Horas de Martes</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>Año Fiscal</value>
+  </data>
+  <data name="EXTCOSTSR" xml:space="preserve">
+    <value>Costo Total</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Aprobado</value>
+  </data>
+  <data name="Function" xml:space="preserve">
+    <value>Función</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>Falso</value>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>Fecha de Asent.</value>
+  </data>
+  <data name="OHHM" xml:space="preserve">
+    <value>Mto. Trans. de Gastos Grales</value>
+  </data>
+  <data name="ThursdayHours" xml:space="preserve">
+    <value>Horas de Jueves</value>
+  </data>
+  <data name="USPayroll" xml:space="preserve">
+    <value>Nómina en EE.UU.</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Referencia</value>
+  </data>
+  <data name="TransactionStatus" xml:space="preserve">
+    <value>Estado de Transacción</value>
+  </data>
+  <data name="USERID" xml:space="preserve">
+    <value>ID de Usuario</value>
+  </data>
+  <data name="Meter" xml:space="preserve">
+    <value>Medidor</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>Verdadero</value>
+  </data>
+  <data name="ETOTCOSTSR" xml:space="preserve">
+    <value>Costo de Gasto Total</value>
+  </data>
+  <data name="SaturdayHours" xml:space="preserve">
+    <value>Horas de Sábado</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="WednesdayHours" xml:space="preserve">
+    <value>Horas de Miércoles</value>
+  </data>
+  <data name="NextDetailNumber" xml:space="preserve">
+    <value>Nº Detalle Siguiente</value>
+  </data>
+  <data name="LSTAFF" xml:space="preserve">
+    <value>ID de Usuario</value>
+  </data>
+  <data name="NumberOfDetails" xml:space="preserve">
+    <value>Nº de Detalles</value>
+  </data>
+  <data name="GTOTCOSTHM" xml:space="preserve">
+    <value>Costo Total</value>
+  </data>
+  <data name="LABORHM" xml:space="preserve">
+    <value>Mto. Trans. de Mano de Obra</value>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>Tipo de Cambio</value>
+  </data>
+  <data name="TotalExpenseQuantity" xml:space="preserve">
+    <value>Cantidad Total de Gastos</value>
+  </data>
+  <data name="WeeklyHours" xml:space="preserve">
+    <value>Horas Semanales</value>
+  </data>
+    <data name="ThisLineHasMoreThanOneDetailLine" xml:space="preserve">
+    <value>Esta línea tiene más de 1 línea de detalle. Edite los detalles para editar el número de horas.</value>
+  </data>
+    <data name="StartTimeAndStopTime" xml:space="preserve">
+    <value>La Hora de Comienzo y la Hora de Fin no coinciden con Horas.</value>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>Dividir</value>
+  </data>
+  <data name="EXTCOSTHM" xml:space="preserve">
+    <value>Costo Total</value>
+  </data>
+  <data name="CanadianPayroll" xml:space="preserve">
+    <value>Nómina en Canadá</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Fch. Fin</value>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>Generado</value>
+  </data>
+  <data name="Imported" xml:space="preserve">
+    <value>Importado</value>
+  </data>
+  <data name="NumberOfOptionalFields" xml:space="preserve">
+    <value>Campos Opc.</value>
+  </data>
+  <data name="ETOTBILLSR" xml:space="preserve">
+    <value>Gasto Facturable Total</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="FiscalPeriod" xml:space="preserve">
+    <value>Per. Fiscal</value>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Fch. Tasa</value>
+  </data>
+  <data name="TimecardNumber" xml:space="preserve">
+    <value>Nº Timecard</value>
+  </data>
+  <data name="TOTBILLHM" xml:space="preserve">
+    <value>Total Facturable</value>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>Tipo de Tasa</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Nº Empleado</value>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>Ingresado</value>
+  </data>
+  <data name="GTOTBILLSR" xml:space="preserve">
+    <value>Mto Facturable Total</value>
+  </data>
+  <data name="GLEntryDescription" xml:space="preserve">
+    <value>Descr. de Asiento del LM</value>
+  </data>
+  <data name="PrintStatus" xml:space="preserve">
+    <value>Estado de Impresión</value>
+  </data>
+  <data name="SundayHours" xml:space="preserve">
+    <value>Horas de Domingo</value>
+  </data>
+  <data name="StaffCurrency" xml:space="preserve">
+    <value>Moneda de Personal</value>
+  </data>
+  <data name="RateOperator" xml:space="preserve">
+    <value>Operador de Tasa</value>
+  </data>
+  <data name="TOTCOSTSR" xml:space="preserve">
+    <value>Costo Total</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre de Empleado</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Viernes</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Lunes</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Sábado</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Domingo</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Jueves</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Martes</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Miércoles</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Hora</value>
+  </data>
+  <data name="TimeDetail" xml:space="preserve">
+    <value>Detalle de Tiempo</value>
+  </data>
+</root>

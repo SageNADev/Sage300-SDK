@@ -1,4 +1,4 @@
-﻿/* Copyright (c) $year$ $companyname$.  All rights reserved. */
+﻿/* Copyright (c) $year$ $copyright$  All rights reserved. */
 
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -36,8 +36,8 @@ namespace $companynamespace$.$applicationid$.Web
         /// <param name="context">The context.</param>
         private void RegisterRoutes(AreaRegistrationContext context)
         {
-            context.MapRoute("$applicationid$_Tenant", "{tenantAlias}/{session}/$applicationid$/{controller}/{action}/{id}",
-            new { action = "Index", id = UrlParameter.Optional });
+            context.MapRoute("$applicationid$_Tenant", "{tenantAlias}/{session}/$applicationid$/{controller}/{action}/$typesegment${id}",
+            new { action = "Index", $typeroute$id = UrlParameter.Optional });
         }
 
         /// <summary>

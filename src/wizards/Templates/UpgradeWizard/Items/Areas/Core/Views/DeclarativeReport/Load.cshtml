@@ -11,6 +11,8 @@
     @Html.Partial("~/Areas/Core/Views/DeclarativeReport/Partials/_DeclarativeReport.cshtml")
 }
 
+@Html.Partial(Core.FiscalCalendar, new Sage.CA.SBS.ERP.Sage300.Common.Models.FiscalYearSet())
+
 @{
     Layout = Shared.GlobalLayout;
 }

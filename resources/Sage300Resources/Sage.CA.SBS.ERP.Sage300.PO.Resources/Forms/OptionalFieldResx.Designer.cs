@@ -448,6 +448,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Project and Job Costing.
+        /// </summary>
+        public static string ProjectAndJobCosting {
+            get {
+                return ResourceManager.GetString("ProjectAndJobCosting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchase Order Details.
         /// </summary>
         public static string PurchaseOrderDetails {

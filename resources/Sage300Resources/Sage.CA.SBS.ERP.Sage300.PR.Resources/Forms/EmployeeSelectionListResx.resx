@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Frequency13Year" xml:space="preserve">
+    <value>Frequency - 13 / Year</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Last Maintained</value>
+  </data>
+  <data name="FrequencyQuarterly" xml:space="preserve">
+    <value>Frequency - Quarterly</value>
+  </data>
+  <data name="NonDirectDeposit" xml:space="preserve">
+    <value>Non-Direct Deposit</value>
+  </data>
+  <data name="EmployeeList" xml:space="preserve">
+    <value>Employee List</value>
+  </data>
+  <data name="EmployeeListDesc" xml:space="preserve">
+    <value>Employee List Description</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="SelectItem4" xml:space="preserve">
+    <value>Select Item 4 Index</value>
+  </data>
+  <data name="OptFld2To" xml:space="preserve">
+    <value>Optional Field 2 To Value</value>
+  </data>
+  <data name="SelectItem3From" xml:space="preserve">
+    <value>Select Item 3 From Criteria</value>
+  </data>
+  <data name="FullTime" xml:space="preserve">
+    <value>Full Time Employee</value>
+  </data>
+  <data name="SelectSubItem4" xml:space="preserve">
+    <value>Select Subitem 4 Index</value>
+  </data>
+  <data name="OptFld2From" xml:space="preserve">
+    <value>Optional Field 2 From Value</value>
+  </data>
+  <data name="PartTime" xml:space="preserve">
+    <value>Part-Time</value>
+  </data>
+  <data name="PayFrequency" xml:space="preserve">
+    <value>Pay Frequency</value>
+  </data>
+  <data name="SelectItem2From" xml:space="preserve">
+    <value>Select Item 2 From Criteria</value>
+  </data>
+  <data name="SelectItem2To" xml:space="preserve">
+    <value>Select Item 2 To Criteria</value>
+  </data>
+  <data name="SelectItem4To" xml:space="preserve">
+    <value>Select Item 4 To Criteria</value>
+  </data>
+  <data name="SelectItem1To" xml:space="preserve">
+    <value>Select Item 1 To Criteria</value>
+  </data>
+  <data name="SelectItem2" xml:space="preserve">
+    <value>Select Item 2 Index</value>
+  </data>
+  <data name="SelectSubItem2" xml:space="preserve">
+    <value>Select Subitem 2Index</value>
+  </data>
+  <data name="OptFld2" xml:space="preserve">
+    <value>Optional Field 2</value>
+  </data>
+  <data name="Manager" xml:space="preserve">
+    <value>Manager</value>
+  </data>
+  <data name="FrequencySemimonthly" xml:space="preserve">
+    <value>Frequency - Semimonthly</value>
+  </data>
+  <data name="Frequency22Year" xml:space="preserve">
+    <value>Frequency - 22 / Year</value>
+  </data>
+  <data name="OptFld1" xml:space="preserve">
+    <value>Optional Field 1</value>
+  </data>
+  <data name="TermROE" xml:space="preserve">
+    <value>RESERVED - CAD Only</value>
+  </data>
+  <data name="SelectItem3" xml:space="preserve">
+    <value>Select Item 3 Index</value>
+  </data>
+  <data name="CombineSelList1" xml:space="preserve">
+    <value>Combine Empl Sel List ID 1</value>
+  </data>
+  <data name="SelectSubItem3" xml:space="preserve">
+    <value>Select Subitem 3 Index</value>
+  </data>
+  <data name="SecurityFlag" xml:space="preserve">
+    <value>Security Flag</value>
+  </data>
+  <data name="OptFld3To" xml:space="preserve">
+    <value>Optional Field 3 To Value</value>
+  </data>
+  <data name="OptFld3" xml:space="preserve">
+    <value>Optional Field 3</value>
+  </data>
+  <data name="SelectItem4From" xml:space="preserve">
+    <value>Select Item 4 From Criteria</value>
+  </data>
+  <data name="DirectDeposit" xml:space="preserve">
+    <value>Direct Deposit</value>
+  </data>
+  <data name="CombineSelList2" xml:space="preserve">
+    <value>Combine Empl Sel List ID 2</value>
+  </data>
+  <data name="OptFld3From" xml:space="preserve">
+    <value>Optional Field 3 From Value</value>
+  </data>
+  <data name="FrequencyDaily" xml:space="preserve">
+    <value>Frequency - Daily</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="OptFld1From" xml:space="preserve">
+    <value>Optional Field 1 From Value</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="OptFld1To" xml:space="preserve">
+    <value>Optional Field 1 To Value</value>
+  </data>
+  <data name="SelectItem3To" xml:space="preserve">
+    <value>Select Item 3 To Criteria</value>
+  </data>
+  <data name="FrequencyBiweekly" xml:space="preserve">
+    <value>Frequency - Biweekly</value>
+  </data>
+  <data name="Terminated" xml:space="preserve">
+    <value>Terminated Employee</value>
+  </data>
+  <data name="SelectItem1" xml:space="preserve">
+    <value>Select Item 1 Index</value>
+  </data>
+  <data name="SelectSubItem1" xml:space="preserve">
+    <value>Select Subitem 1 Index</value>
+  </data>
+  <data name="SelectItem1From" xml:space="preserve">
+    <value>Select Item 1 From Criteria</value>
+  </data>
+  <data name="ListTotal" xml:space="preserve">
+    <value>Number of Employees in List</value>
+  </data>
+  <data name="FrequencyWeekly" xml:space="preserve">
+    <value>Frequency - Weekly</value>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>Process Command Code</value>
+  </data>
+  <data name="FrequencyMonthly" xml:space="preserve">
+    <value>Frequency - Monthly</value>
+  </data>
+  <data name="Frequency10Year" xml:space="preserve">
+    <value>Frequency - 10 / Year</value>
+  </data>
+  <data name="InactROE" xml:space="preserve">
+    <value>RESERVED - CAD Only</value>
+  </data>
+</root>

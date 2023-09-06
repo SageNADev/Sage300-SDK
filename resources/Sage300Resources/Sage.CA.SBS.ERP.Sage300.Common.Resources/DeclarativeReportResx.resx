@@ -1058,6 +1058,21 @@
   <data name="ToAccountGroupCode" xml:space="preserve">
     <value>To Account Group Code</value>
   </data>
+  <data name="GLIntegrationTitle" xml:space="preserve">
+    <value>G/L Integration Report</value>
+  </data>
+  <data name="EFTOptionsTitle" xml:space="preserve">
+    <value>EFT Options Report</value>
+  </data>
+  <data name="OptionalFieldsTitle" xml:space="preserve">
+    <value>Optional Fields Report</value>
+  </data>
+  <data name="PayrollProcessingExceptionsReport" xml:space="preserve">
+    <value>Payroll Processing Exceptions Report</value>
+  </data>
+  <data name="OptionsTitle" xml:space="preserve">
+    <value>Options Report</value>
+  </data>
   <data name="AS_UserActivityReportTitle" xml:space="preserve">
     <value>A/S User Activity Report</value>
   </data>
@@ -1144,5 +1159,521 @@
   </data>
   <data name="Current" xml:space="preserve">
     <value>Current</value>
+  </data>
+  <data name="ProcessingExceptionsReport" xml:space="preserve">
+    <value>Processing Exceptions Report</value>
+  </data>
+  <data name="10PayPeriods" xml:space="preserve">
+    <value>10 Pay Periods</value>
+  </data>
+  <data name="13PayPeriods" xml:space="preserve">
+    <value>13 Pay Periods</value>
+  </data>
+  <data name="22PayPeriods" xml:space="preserve">
+    <value>22 Pay Periods</value>
+  </data>
+  <data name="Biweekly" xml:space="preserve">
+    <value>Biweekly</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="FromEmployeeNumber" xml:space="preserve">
+    <value>From Employee Number</value>
+  </data>
+  <data name="ManualCheques" xml:space="preserve">
+    <value>Manual Cheques</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="PayFrequency" xml:space="preserve">
+    <value>Pay Frequency</value>
+  </data>
+  <data name="Selectionlist" xml:space="preserve">
+    <value>Selection List</value>
+  </data>
+  <data name="Semimonthly" xml:space="preserve">
+    <value>Semimonthly</value>
+  </data>
+  <data name="SystemCheques" xml:space="preserve">
+    <value>System Cheques</value>
+  </data>
+  <data name="ToEmployeeNumber" xml:space="preserve">
+    <value>To Employee Number</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="DetailDatesHours" xml:space="preserve">
+    <value>Detail Dates/Hours</value>
+  </data>
+  <data name="JobDetails" xml:space="preserve">
+    <value>Job Details</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Employee Number</value>
+  </data>
+  <data name="EmployeeSubtotals" xml:space="preserve">
+    <value>Employee Subtotals</value>
+  </data>
+  <data name="GL_AccountDescription" xml:space="preserve">
+    <value>G/L Account Description</value>
+  </data>
+  <data name="PayPeriodEndDate" xml:space="preserve">
+    <value>Pay Period End Date</value>
+  </data>
+  <data name="CP_ShowSINNumbers" xml:space="preserve">
+    <value>Show SIN Numbers</value>
+  </data>
+  <data name="UP_ShowSINNumbers" xml:space="preserve">
+    <value>Show SSN Numbers</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="Class1" xml:space="preserve">
+    <value>Class 1</value>
+  </data>
+  <data name="Class2" xml:space="preserve">
+    <value>Class 2</value>
+  </data>
+  <data name="FromClassCode" xml:space="preserve">
+    <value>From Class Code</value>
+  </data>
+  <data name="ToClassCode" xml:space="preserve">
+    <value>To Class Code</value>
+  </data>
+  <data name="Class3" xml:space="preserve">
+    <value>Class 3</value>
+  </data>
+  <data name="Class4" xml:space="preserve">
+    <value>Class 4</value>
+  </data>
+  <data name="Billing" xml:space="preserve">
+    <value> Billing</value>
+  </data>
+  <data name="ReportFormat" xml:space="preserve">
+    <value>Report Format</value>
+  </data>
+  <data name="ThenBy" xml:space="preserve">
+    <value>Then By</value>
+  </data>
+  <data name="CP_FromCheckDate" xml:space="preserve">
+    <value>From Cheque Date</value>
+  </data>
+  <data name="CP_ToCheckDate" xml:space="preserve">
+    <value>To Cheque Date</value>
+  </data>
+  <data name="UP_FromCheckDate" xml:space="preserve">
+    <value>From Check Date</value>
+  </data>
+  <data name="UP_Pre-CheckPayrollRegisterTitle" xml:space="preserve">
+    <value>Pre-Check Payroll Register Report</value>
+  </data>
+  <data name="CP_Pre-CheckPayrollRegisterTitle" xml:space="preserve">
+    <value>Pre-Cheque Payroll Register Report</value>
+  </data>
+  <data name="UP_ToCheckDate" xml:space="preserve">
+    <value>To Check Date</value>
+  </data>
+  <data name="CP_CheckDate" xml:space="preserve">
+    <value>Cheque Date</value>
+  </data>
+  <data name="UP_CheckDate" xml:space="preserve">
+    <value>Check Date</value>
+  </data>
+  <data name="CP_ManualChecks" xml:space="preserve">
+    <value>Manual Cheques</value>
+  </data>
+  <data name="CP_SystemChecks" xml:space="preserve">
+    <value>System Cheques</value>
+  </data>
+  <data name="UP_ManualChecks" xml:space="preserve">
+    <value>Manual Checks</value>
+  </data>
+  <data name="UP_SystemChecks" xml:space="preserve">
+    <value>System Checks</value>
+  </data>
+  <data name="InvalidEntryMsgTxt" xml:space="preserve">
+    <value>entry in the </value>
+  </data>
+  <data name="Quarterly" xml:space="preserve">
+    <value>Quarterly</value>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Optional Field</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="CP_ChequeType" xml:space="preserve">
+    <value>Cheque Type</value>
+  </data>
+  <data name="UP_ChequeType" xml:space="preserve">
+    <value>Check Type</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="PayrollRegisterTitle" xml:space="preserve">
+    <value>Payroll Register Report</value>
+  </data>
+  <data name="CP_CheckNumber" xml:space="preserve">
+    <value>Cheque Number</value>
+  </data>
+  <data name="CP_ReversedChecks" xml:space="preserve">
+    <value>Reversed Cheques</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Posting Sequence</value>
+  </data>
+  <data name="UP_CheckNumber" xml:space="preserve">
+    <value>Check Number</value>
+  </data>
+  <data name="UP_ReversedChecks" xml:space="preserve">
+    <value>Reversed Checks</value>
+  </data>
+  <data name="FromPostingSequence" xml:space="preserve">
+    <value>From Posting Sequence</value>
+  </data>
+  <data name="ToPostingSequence" xml:space="preserve">
+    <value>To Posting Sequence</value>
+  </data>
+  <data name="AddLine" xml:space="preserve">
+    <value>Add Line</value>
+  </data>
+  <data name="DeleteLine" xml:space="preserve">
+    <value>Delete Line</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Billings" xml:space="preserve">
+    <value>Billings</value>
+  </data>
+  <data name="EarningsAndDeduction" xml:space="preserve">
+    <value>Earnings And Deduction</value>
+  </data>
+  <data name="EFT" xml:space="preserve">
+    <value>EFT</value>
+  </data>
+  <data name="FromEmployee" xml:space="preserve">
+    <value>From Employee</value>
+  </data>
+  <data name="InActive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="InactiveRoePending" xml:space="preserve">
+    <value>Inactive ROE Pending</value>
+  </data>
+  <data name="IncludeEmployees" xml:space="preserve">
+    <value>Include Employees</value>
+  </data>
+  <data name="IncludeInformation" xml:space="preserve">
+    <value>Include Information</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="PayrollEmployeeInformation" xml:space="preserve">
+    <value>Payroll Employee Information Report</value>
+  </data>
+  <data name="ShowEFTBankAccountNumbers" xml:space="preserve">
+    <value>Show EFT Bank Account Numbers</value>
+  </data>
+  <data name="Terminated" xml:space="preserve">
+    <value>Terminated</value>
+  </data>
+  <data name="TerminateRoePending" xml:space="preserve">
+    <value>Terminated ROE Pending</value>
+  </data>
+  <data name="ToEmployee" xml:space="preserve">
+    <value>To Employee</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Birth Date</value>
+  </data>
+  <data name="FromFollowUpDate" xml:space="preserve">
+    <value>From Follow-up-Date</value>
+  </data>
+  <data name="HireDate" xml:space="preserve">
+    <value>Hire Date</value>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>Inactive Date</value>
+  </data>
+  <data name="LastMaintainedDate" xml:space="preserve">
+    <value>Last Maintained Date</value>
+  </data>
+  <data name="LastRaisedDate" xml:space="preserve">
+    <value>Last Raised Date</value>
+  </data>
+  <data name="LastReviewDate" xml:space="preserve">
+    <value>Last Review Date</value>
+  </data>
+  <data name="TerminationDate" xml:space="preserve">
+    <value>Termination Date</value>
+  </data>
+  <data name="ToFollowUpDate" xml:space="preserve">
+    <value>To Follow-up-Date</value>
+  </data>
+  <data name="CP_Pre-CheckPayrollJobRegisterTitle" xml:space="preserve">
+    <value>Pre-Cheque Payroll Job Register Report</value>
+  </data>
+  <data name="UP_Pre-CheckPayrollJobRegisterTitle" xml:space="preserve">
+    <value>Pre-Check Payroll Job Register Report</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimals</value>
+  </data>
+  <data name="TransactionHistoryReportTitle" xml:space="preserve">
+    <value>Payroll Transaction History Report</value>
+  </data>
+  <data name="PayrollEmployeeSelection" xml:space="preserve">
+    <value>Payroll Employee Selection</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>April</value>
+  </data>
+  <data name="August" xml:space="preserve">
+    <value>August</value>
+  </data>
+  <data name="CalendarYearTotals" xml:space="preserve">
+    <value>Calendar Year Totals</value>
+  </data>
+  <data name="DateRange" xml:space="preserve">
+    <value>Date Range</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>December</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>February</value>
+  </data>
+  <data name="FromClass" xml:space="preserve">
+    <value>From Class</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>January</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>July</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>June</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>March</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>November</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>October</value>
+  </data>
+  <data name="PayrollEarningandHoursReport" xml:space="preserve">
+    <value>Payroll Earnings and Hours Report</value>
+  </data>
+  <data name="ReportType" xml:space="preserve">
+    <value>Report Type</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="ToClass" xml:space="preserve">
+    <value>To Class</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="EmployeeList" xml:space="preserve">
+    <value>Employee List</value>
+  </data>
+  <data name="PayrollEmployeeSelectionReport" xml:space="preserve">
+    <value>Payroll Employee Selection Report</value>
+  </data>
+  <data name="PMTransactionHistoryReportTitle" xml:space="preserve">
+    <value>PJC Transaction History Report</value>
+  </data>
+  <data name="BothCurrency" xml:space="preserve">
+    <value>Both  Customer and Functional Currency</value>
+  </data>
+  <data name="CustomerCurrency" xml:space="preserve">
+    <value>Customer Currency</value>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>Functional Currency</value>
+  </data>
+  <data name="PrintAmountIn" xml:space="preserve">
+    <value>Print Amount In</value>
+  </data>
+  <data name="TransactionBy" xml:space="preserve">
+    <value>Select Transaction By</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Transaction Date</value>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>Fiscal Year and Period</value>
+  </data>
+  <data name="CP_AssignEmployeeEarnDedAudit" xml:space="preserve">
+    <value>Assign Employee Earn/Ded Audit</value>
+  </data>
+  <data name="CP_AssignEmployeeTaxAudit" xml:space="preserve">
+    <value>Assign Employee Tax Audit</value>
+  </data>
+  <data name="UP_AssignEmployeeEarnDedAudit" xml:space="preserve">
+    <value>Assign Employee Earn/Ded Audit</value>
+  </data>
+  <data name="UP_AssignEmployeeTaxAudit" xml:space="preserve">
+    <value>Assign Employee Tax Audit</value>
+  </data>
+  <data name="IncludeBillingInformation" xml:space="preserve">
+    <value>Include Billing Information</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Approved</value>
+  </data>
+  <data name="Closed" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="Estimated" xml:space="preserve">
+    <value>Estimated</value>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>On Hold</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="CanadianPayroll" xml:space="preserve">
+    <value>Canadian Payroll</value>
+  </data>
+  <data name="ContractStartDate" xml:space="preserve">
+    <value>Contract Start Date</value>
+  </data>
+  <data name="ContractStatus" xml:space="preserve">
+    <value>{0} Status</value>
+  </data>
+  <data name="FromContractStartDate" xml:space="preserve">
+    <value>From {0} Start Date</value>
+  </data>
+  <data name="FromFiscalYearPeriod" xml:space="preserve">
+    <value>From Fiscal Year and Period</value>
+  </data>
+  <data name="FromProjectStartDate" xml:space="preserve">
+    <value>From {0} Start Date</value>
+  </data>
+  <data name="FromTransactionDate" xml:space="preserve">
+    <value>From Transaction Date</value>
+  </data>
+  <data name="ProjectStartDate" xml:space="preserve">
+    <value>Project Start Date</value>
+  </data>
+  <data name="ProjectStatus" xml:space="preserve">
+    <value>{0} Status</value>
+  </data>
+  <data name="SelectTransactionBy" xml:space="preserve">
+    <value>Select Transaction By</value>
+  </data>
+  <data name="ToContractEndDate" xml:space="preserve">
+    <value>To {0} End Date</value>
+  </data>
+  <data name="ToFiscalYearPeriod" xml:space="preserve">
+    <value>To Fiscal Year and Period</value>
+  </data>
+  <data name="ToProjectEndDate" xml:space="preserve">
+    <value>To {0} End Date</value>
+  </data>
+  <data name="ToTransactionDate" xml:space="preserve">
+    <value>To Transaction Date</value>
+  </data>
+  <data name="USPayroll" xml:space="preserve">
+    <value>US Payroll</value>
+  </data>
+  <data name="BothBlankMessage" xml:space="preserve">
+    <value>The From {0} and To {0} values cannot both be blank</value>
+  </data>
+  <data name="A/P" xml:space="preserve">
+    <value>A/P</value>
+  </data>
+  <data name="A/R" xml:space="preserve">
+    <value>A/R</value>
+  </data>
+  <data name="O/E" xml:space="preserve">
+    <value>O/E</value>
+  </data>
+  <data name="P/M" xml:space="preserve">
+    <value>PJC</value>
+  </data>
+  <data name="P/O" xml:space="preserve">
+    <value>P/O</value>
+  </data>
+  <data name="Earning/Deduction/Tax/Code" xml:space="preserve">
+    <value>Earning/Deduction/Tax Code</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Line Number</value>
+  </data>
+  <data name="NonReusableTimecards" xml:space="preserve">
+    <value>Non-reusableTimecards</value>
+  </data>
+  <data name="PayrollTimecardTitle" xml:space="preserve">
+    <value>Payroll Timecard Report</value>
+  </data>
+  <data name="PeriodEndDate" xml:space="preserve">
+    <value>Period End Date</value>
+  </data>
+  <data name="ReusableTimecards" xml:space="preserve">
+    <value>Reusable Timecards</value>
+  </data>
+  <data name="SortDetailsBy" xml:space="preserve">
+    <value>Sort Details By</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Timecard" xml:space="preserve">
+    <value>Timecard</value>
+  </data>
+  <data name="TimecardDetail" xml:space="preserve">
+    <value>Timecard Detail</value>
+  </data>
+  <data name="TimecardListing" xml:space="preserve">
+    <value>Timecard Listing </value>
+  </data>
+  <data name="TimecardSummary" xml:space="preserve">
+    <value>Timecard Summary</value>
   </data>
 </root>

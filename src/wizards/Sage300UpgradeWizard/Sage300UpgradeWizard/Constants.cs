@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -32,19 +32,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2023.1";
+            public const string FromReleaseNumber = "2023.3";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2023.3";
+            public const string ToReleaseNumber = "2024.0";
 
             /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
-            public const bool UpdateAccpacDotNetLibrary = false;
+            public const bool UpdateAccpacDotNetLibrary = true;
 
             /// <summary> From Accpac Number </summary>
-            public const string FromAccpacNumber = "6.9.0.0";
+            public const string FromAccpacNumber = "7.0.0.0";
             
             /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "7.0.0.0";
+            public const string ToAccpacNumber = "7.1.0.0";
 
             /// <summary> Flag that determines whether or not to synchronize the Kendo files. </summary>
             public const bool SyncKendoFiles = true;
@@ -82,14 +82,14 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const bool ReportUpgrade_For_2021_2 = false;
 
             /// <summary> Flag that determines whether or not to remove previous versions of the various JQuery libraries. </summary>
-            public const bool RemovePreviousJqueryLibraries = false;
+            public const bool RemovePreviousJqueryLibraries = true;
 
             public const string FromJqueryCoreVersion = "3.4.1";
-            public const string FromJqueryUIVersion = "1.12.1";
+            public const string FromJqueryUIVersion = "1.13.1";
             public const string FromJqueryMigrateVersion = "3.1.0";
 
             public const string ToJqueryCoreVersion = "3.6.0";
-            public const string ToJqueryUIVersion = "1.12.1";
+            public const string ToJqueryUIVersion = "1.13.2";
             public const string ToJqueryMigrateVersion = "3.3.2";
 
             /// <summary> 

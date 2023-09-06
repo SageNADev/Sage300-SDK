@@ -770,3 +770,17 @@ function affixFooter() {
         if (window.innerHeight >= $('body').outerHeight(true)) return 'affix-bottom';
     });
 }
+
+/**
+* Show/Hide Password
+*/
+$(".icon-eye").click(function () {
+
+    $(this).toggleClass("icon-eye icon-eye-password-view");
+    var input = $($(this).attr("toggle"));
+    if (input.attr("type") == "password") {
+        input.attr("type", "text");
+    } else {
+        input.attr("type", "password");
+    }
+});

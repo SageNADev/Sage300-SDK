@@ -142,7 +142,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy Cost to PO.
+        ///   Looks up a localized string similar to Copy Cost to P/O.
         /// </summary>
         public static string CopyCostToPO {
             get {

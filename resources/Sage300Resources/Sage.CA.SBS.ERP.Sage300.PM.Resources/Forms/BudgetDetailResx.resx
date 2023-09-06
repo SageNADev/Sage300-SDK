@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="QuantityForPeriod13" xml:space="preserve">
+    <value>Quantity For Period 13</value>
+  </data>
+  <data name="TimeAndMaterials" xml:space="preserve">
+    <value>Time and Materials</value>
+  </data>
+  <data name="CostPlus" xml:space="preserve">
+    <value>Cost Plus</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>Currency Type</value>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>Rate Type</value>
+  </data>
+  <data name="QuantityForPeriod9" xml:space="preserve">
+    <value>Quantity For Period 9</value>
+  </data>
+  <data name="ContractStyle" xml:space="preserve">
+    <value>Contract Style</value>
+  </data>
+  <data name="RateOperator" xml:space="preserve">
+    <value>Rate Operator</value>
+  </data>
+  <data name="CostClass" xml:space="preserve">
+    <value>Cost Class</value>
+  </data>
+  <data name="SEQ" xml:space="preserve">
+    <value>SEQ</value>
+  </data>
+  <data name="SCOSTH" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="Recognized" xml:space="preserve">
+    <value>Recognized</value>
+  </data>
+  <data name="LaborHoursPercentageComplete" xml:space="preserve">
+    <value>Labor Hours Percentage Complete</value>
+  </data>
+  <data name="AccountingMethod" xml:space="preserve">
+    <value>Accounting Method</value>
+  </data>
+  <data name="InquiryTotalQuantityForTheYear" xml:space="preserve">
+    <value>Inquiry Total Quantity For The Year</value>
+  </data>
+  <data name="ContractUniq" xml:space="preserve">
+    <value>Contract Uniq</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="QuantityForPeriod8" xml:space="preserve">
+    <value>Quantity For Period 8</value>
+  </data>
+  <data name="CostCurrency" xml:space="preserve">
+    <value>Cost Currency</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="InquiryQuantityForPeriod6" xml:space="preserve">
+    <value>Inquiry Quantity For Period 6</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PM BudgetDetail</value>
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>Divide</value>
+  </data>
+  <data name="QuantityForPeriod6" xml:space="preserve">
+    <value>Quantity For Period 6</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>Resource</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="QuantityForPeriod5" xml:space="preserve">
+    <value>Quantity For Period 5</value>
+  </data>
+  <data name="Actual" xml:space="preserve">
+    <value>Actual</value>
+  </data>
+  <data name="BudgetSet" xml:space="preserve">
+    <value>Budget Set</value>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>Multiply</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="QuantityForPeriod4" xml:space="preserve">
+    <value>Quantity For Period 4</value>
+  </data>
+  <data name="RevenueSource" xml:space="preserve">
+    <value>Revenue</value>
+  </data>
+  <data name="RevenueCurrency" xml:space="preserve">
+    <value>Revenue Currency</value>
+  </data>
+  <data name="InquiryQuantityForPeriod9" xml:space="preserve">
+    <value>Inquiry Quantity For Period 9</value>
+  </data>
+  <data name="InquiryQuantityForPeriod8" xml:space="preserve">
+    <value>Inquiry Quantity For Period 8</value>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Rate Date</value>
+  </data>
+  <data name="InquiryQuantityForPeriod1" xml:space="preserve">
+    <value>Inquiry Quantity For Period 1</value>
+  </data>
+  <data name="QuantityForPeriod10" xml:space="preserve">
+    <value>Quantity For Period 10</value>
+  </data>
+  <data name="InquiryQuantityForPeriod3" xml:space="preserve">
+    <value>Inquiry Quantity For Period 3</value>
+  </data>
+  <data name="InquiryQuantityForPeriod2" xml:space="preserve">
+    <value>Inquiry Quantity For Period 2</value>
+  </data>
+  <data name="InquiryQuantityForPeriod5" xml:space="preserve">
+    <value>Inquiry Quantity For Period 5</value>
+  </data>
+  <data name="InquiryQuantityForPeriod4" xml:space="preserve">
+    <value>Inquiry Quantity For Period 4</value>
+  </data>
+  <data name="InquiryQuantityForPeriod7" xml:space="preserve">
+    <value>Inquiry Quantity For Period 7</value>
+  </data>
+  <data name="QuantityForPeriod3" xml:space="preserve">
+    <value>Quantity For Period 3</value>
+  </data>
+  <data name="Actuals" xml:space="preserve">
+    <value>Actuals</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>Project Type</value>
+  </data>
+  <data name="QuantityForPeriod2" xml:space="preserve">
+    <value>Quantity For Period 2</value>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>Original Estimate</value>
+  </data>
+  <data name="TotalRevenueSourceForTheYear" xml:space="preserve">
+    <value>Total Revenue (Source) For The Year</value>
+  </data>
+  <data name="QuantityForPeriod1" xml:space="preserve">
+    <value>Quantity For Period 1</value>
+  </data>
+  <data name="LINENUM" xml:space="preserve">
+    <value>LINENUM</value>
+  </data>
+  <data name="AccrualBasis" xml:space="preserve">
+    <value>Accrual-Basis</value>
+  </data>
+  <data name="InquiryQuantityForPeriod13" xml:space="preserve">
+    <value>Inquiry Quantity For Period 13</value>
+  </data>
+  <data name="BillingsAndCosts" xml:space="preserve">
+    <value>Billings and Costs</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Current Estimate</value>
+  </data>
+  <data name="QuantityForPeriod12" xml:space="preserve">
+    <value>Quantity For Period 12</value>
+  </data>
+  <data name="FixedPrice" xml:space="preserve">
+    <value>Fixed Price</value>
+  </data>
+  <data name="InquiryQuantityForPeriod12" xml:space="preserve">
+    <value>Inquiry Quantity For Period 12</value>
+  </data>
+  <data name="SCOSTS" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="TotalCostPercentageComplete" xml:space="preserve">
+    <value>Total Cost Percentage Complete</value>
+  </data>
+  <data name="QuantityForPeriod11" xml:space="preserve">
+    <value>Quantity For Period 11</value>
+  </data>
+  <data name="CategoryPercentageComplete" xml:space="preserve">
+    <value>Category Percentage Complete</value>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="RevenueFunctional" xml:space="preserve">
+    <value>Revenue</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>Fiscal Year</value>
+  </data>
+  <data name="InquiryQuantityForPeriod11" xml:space="preserve">
+    <value>Inquiry Quantity For Period 11</value>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CompletedProject" xml:space="preserve">
+    <value>Completed Project</value>
+  </data>
+  <data name="TotalQuantityForTheYear" xml:space="preserve">
+    <value>Total Quantity For The Year</value>
+  </data>
+  <data name="ProjectPercentageComplete" xml:space="preserve">
+    <value>Project Percentage Complete</value>
+  </data>
+  <data name="InquiryQuantityForPeriod10" xml:space="preserve">
+    <value>Inquiry Quantity For Period 10</value>
+  </data>
+  <data name="QuantityForPeriod7" xml:space="preserve">
+    <value>Quantity For Period 7</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="TotalCostFunctionalForTheYear" xml:space="preserve">
+    <value>Total Cost (Functional) For The Year</value>
+  </data>
+  <data name="TotalCostSourceForTheYear" xml:space="preserve">
+    <value>Total Cost (Source) For The Year</value>
+  </data>
+  <data name="TotalCostFunctionalForPeriod" xml:space="preserve">
+    <value>Total Cost (Functional) For Period {0}</value>
+  </data>
+  <data name="TotalCostSourceForPeriod" xml:space="preserve">
+    <value>Total Cost (Source) For Period {0}</value>
+  </data>
+  <data name="InquiryTotalCostFunctionalForPeriod" xml:space="preserve">
+    <value>Inquiry Total Cost (Functional) For Period {0}</value>
+  </data>
+  <data name="InquiryTotalCostSourceForPeriod" xml:space="preserve">
+    <value>Inquiry Total Cost (Source) For Period {0}</value>
+  </data>
+  <data name="InquiryTotalRevenueFunctionalForPeriod" xml:space="preserve">
+    <value>Inquiry Total Revenue (Functional) For Period {0}</value>
+  </data>
+  <data name="TotalRevenueFunctionalForPeriod" xml:space="preserve">
+    <value>Total Revenue (Functional) For Period {0}</value>
+  </data>
+  <data name="InquiryTotalRevenueSourceForPeriod" xml:space="preserve">
+    <value>Inquiry Total Revenue (Source) For Period {0}</value>
+  </data>
+  <data name="TotalRevenueSourceForPeriod" xml:space="preserve">
+    <value>Total Revenue (Source) For Period {0}</value>
+  </data>
+  <data name="TotalRevenueFunctionalForTheYear" xml:space="preserve">
+    <value>Total Revenue (Functional) For The Year</value>
+  </data>
+  <data name="InquiryTotalRevenueFunctionalForTheYear" xml:space="preserve">
+    <value>Inquiry Total Revenue (Functional) For The Year</value>
+  </data>
+  <data name="InquiryTotalCostFunctionalForTheYear" xml:space="preserve">
+    <value>Inquiry Total Cost (Functional) For The Year</value>
+  </data>
+  <data name="InquiryTotalRevenueSourceForTheYear" xml:space="preserve">
+    <value>Inquiry Total Revenue (Source) For The Year</value>
+  </data>
+  <data name="DirtyCheckSaveMessage" xml:space="preserve">
+    <value>Do you want to add {0} {1} for {2}?</value>
+  </data>
+  <data name="InvalidFiscalYear" xml:space="preserve">
+    <value>The session date does not fall within one of the calendar's fiscal period. Define a proper calendar in Common Services Fiscal Calendar before you run the program.</value>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>Are you sure you want to delete Budget Set {0} for {1} {2}?</value>
+  </data>
+  <data name="CodeCannotBeBlank" xml:space="preserve">
+    <value>{0} Code cannot be blank.</value>
+  </data>
+</root>

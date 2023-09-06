@@ -1,17 +1,17 @@
 ﻿@using CommonResx = Sage.CA.SBS.ERP.Sage300.Common.Resources.CommonResx
 
-<div class="datagrid-group k-grid k-widget k-grid-display-block k-reorderable k-editable" style="height: 480px;">
+<div class="datagrid-group k-grid k-widget k-grid-display-block k-reorderable k-editable" style="height: 480px;" data-sage300uicontrol=@("type:Grid,name:" + ViewBag.GridId + ",changed:0") id=@("div" + ViewBag.GridId )>
     @if (ViewBag.showButtons == null || ViewBag.showButtons == true)
     {
-    <div class="k-toolbar k-grid-toolbar">
-        <button class="btn btn-default btn-grid-control btn-add" type="button" id=@("btn" + ViewBag.GridId + "Add" )>@Html.SageRaw(CommonResx.AddLine)</button>
-        <button class="btn btn-default btn-grid-control btn-delete" type="button" id=@("btn" + ViewBag.GridId + "Delete" )>@Html.SageRaw(CommonResx.DeleteLine)</button>
-        @if (ViewBag.optionalFields == null || ViewBag.optionalFields != true)
-        {
-        <button class="btn btn-default btn-grid-control btn-details" type="button" id=@("btn" + ViewBag.GridId + "ShowDetails" )>@Html.SageRaw(CommonResx.ViewDetails)</button>
-        <button class="btn btn-default btn-grid-control btn-edit-column" type="button" id=@("btn" + ViewBag.GridId + "EditCol" )>@Html.SageRaw(CommonResx.EditColumns)</button>
-        }
-    </div>
+        <div class="k-toolbar k-grid-toolbar">
+            <button class="btn btn-default btn-grid-control btn-add" type="button" id=@("btn" + ViewBag.GridId + "Add" )>@Html.SageRaw(CommonResx.AddLine)</button>
+            <button class="btn btn-default btn-grid-control btn-delete" type="button" id=@("btn" + ViewBag.GridId + "Delete" )>@Html.SageRaw(CommonResx.DeleteLine)</button>
+            @if (ViewBag.optionalFields == null || ViewBag.optionalFields != true)
+            {
+                <button class="btn btn-default btn-grid-control btn-details" type="button" id=@("btn" + ViewBag.GridId + "ShowDetails" )>@Html.SageRaw(CommonResx.ViewDetails)</button>
+                <button class="btn btn-default btn-grid-control btn-edit-column" type="button" id=@("btn" + ViewBag.GridId + "EditCol" )>@Html.SageRaw(CommonResx.EditColumns)</button>
+            }
+        </div>
     }
     <div id="@ViewBag.GridId"></div>
 </div>

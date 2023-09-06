@@ -97,6 +97,7 @@ div[role=button],
   font-size: 13px;
   vertical-align: middle;
   line-height: 1;
+  border-radius: 15px !important;
 
   &:hover {
     background-color: darken(@btn-primary-bg, 5%);
@@ -109,6 +110,7 @@ div[role=button],
   font-size: 13px;
   vertical-align: middle;
   line-height: 1;
+  border-radius: 15px !important;
 
   &:hover {
     background-color: @btn-link-hover-color;
@@ -121,6 +123,7 @@ div[role=button],
   font-weight: 400;
   font-size: 12px;
   line-height: 1em;
+  border-radius: 15px !important;
 
   &:hover {
     background-color: darken(@btn-default-bg, 5%);
@@ -362,7 +365,7 @@ input[type="button"] {
   &.btn-details:after {
     content: "+";
     position: absolute;
-    left: -3px;
+    left: -2px;
     top: 4px;
     font-weight: bold;
     font-size: 1.1em;
@@ -396,6 +399,10 @@ input[type="button"] {
 
     &:hover {
       background-color: #d9e0e4;
+    }
+
+    &[disabled]:before {
+      background-position: 2px -68px;
     }
   }
 
@@ -431,10 +438,10 @@ a[class*="btn-"] {
   margin-left: 6px;
   -webkit-appearance:         none;   /* iPad button defects */
   -moz-appearance:            none;   /* iPad button defects */
-  -webkit-border-radius:      0;      /* iPad button defects */
-  -moz-border-radius:         0;      /* iPad button defects */
-  -o-border-radius:           0;      /* iPad button defects */
-  border-radius:              0;      /* iPad button defects */
+  -webkit-border-radius:      @border-radius-default;
+  -moz-border-radius:         @border-radius-default;
+  -o-border-radius:           @border-radius-default;
+  border-radius:              @border-radius-default;
 }
 
 a[class*="btn-"]:first-child {
@@ -645,7 +652,14 @@ input.btn-filter-delete:hover {
   }
 
   input.btn {
-    font-weight: normal;
+    font-weight: normal; 
+
+    &.btn-primary,
+    &.btn-secondary,
+    &.btn-default,
+    &.btn-tertiary {
+      border-radius: 15px;
+    }
   }
 
   .buttons-group {
@@ -686,11 +700,17 @@ div.data-nav-group {
 
   &.focused {
     outline: @input-border-focus solid 3px;
+
+    + .btn-search,
+    + .btn-finder {
+      outline: @input-border-focus solid 3px;
+    }
   }
 
   .btn-first {
     background-position: -139px 4px;
     margin-left: 0;
+    border-radius: @border-radius-default;
 
     &:disabled {
       background-position: -139px -66px;
@@ -735,8 +755,9 @@ input[class*="icon btn-"] {
   width: 30px;
   border: 1px solid @sage-mid-gray;
   text-indent: -9999px;
-  background-color: @btn-default-bg;
+  background-color: @white;
   position: relative;
+  border-radius: @border-radius-default;
 }
 
 button.size-small {

@@ -11,6 +11,12 @@
 
   	input[class*="btn-"] { 
         margin: 0 0 20px 10px;
+        border-radius: 15px;
+        border: 0;
+
+        &.btn-secondary:not([disabled]) {
+            border: 1px solid @sage-link;
+        }
 	} 
 
     a[class*="btn-"] {
@@ -21,6 +27,7 @@
         border-top: none;
         padding-top: 0;
     }
+
 }
 
 .footer-group  { 
@@ -33,6 +40,12 @@
     input[class*="btn-"] { 
         float: right; 
         margin: 0 0 20px 10px;
+        border-radius: 15px;
+        border: 0;
+
+        &.btn-secondary:not([disabled]) {
+            border: 1px solid @sage-link;
+        }
 	} 
 }
 

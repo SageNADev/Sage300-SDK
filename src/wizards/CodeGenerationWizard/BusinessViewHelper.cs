@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -74,7 +74,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             if (generateClientFiles)
             {
-                if (view.Options[BusinessView.Constants.GenerateGrid])
+                if (view.Options[BusinessView.Constants.HasGrid])
                 {
                     UpdateHeaderDetailBootStrappers(view, settings);
                 }
@@ -237,9 +237,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var entityName = view.Properties[BusinessView.Constants.EntityName];
             var pathProj = settings.Projects[ProcessGeneration.Constants.WebKey][moduleId].ProjectFolder;
             var pageUrlFile = Path.Combine(pathProj, "pageUrl.txt");
+            var viewId = view.Properties[BusinessView.Constants.ViewId];
 
             // {0} is the session id passed in from Global.asax.cs
             var pageUrl = "OnPremise/{0}/" + moduleId + "/" + (settings.RepositoryType.Equals(RepositoryType.HeaderDetail) ? settings.EntitiesContainerName : entityName);
+
+            // Payroll
+            if (moduleId == "PR")
+            {
+                // Default to 0. Reports will show as 0 and the file will need to be 
+                // manually updated to 1 if testing report for CP
+                pageUrl += "/Index/" + (viewId.Substring(0,2) == "CP" ? "1" : "0");
+            }
 
             if (File.Exists(pageUrlFile))
             {
@@ -431,6 +440,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 .Replace(",", "")
                 .Replace(@"%", "")
                 .Replace("&", "")
+                .Replace("$", "")
                 .Replace("+", "");
 
             if (newString.Length > 0)

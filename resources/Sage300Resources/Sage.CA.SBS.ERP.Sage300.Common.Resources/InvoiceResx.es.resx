@@ -2244,7 +2244,7 @@
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="The1099CPRSAmount" xml:space="preserve">
-    <value>El Monto de 1099/CPRS</value>
+    <value>Monto 1099/CPRS</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="_1099CPRSClass" xml:space="preserve">
@@ -3590,5 +3590,8 @@
   </data>
   <data name="ExtendedBillingAmount" xml:space="preserve">
     <value>Facturación Total Estimada</value>
+  </data>
+  <data name="NetInvoiceTotal" xml:space="preserve">
+    <value>Factura Total Neto</value>
   </data>
 </root>

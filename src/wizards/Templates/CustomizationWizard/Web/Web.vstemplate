@@ -41,8 +41,7 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="_HomePageHelp.cshtml">_HomePageHelp.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_MenuHelp.cshtml">_MenuHelp.cshtml</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="_MenuUrl.cshtml">_MenuUrl.cshtml</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="_PluginMenuUrl.cshtml">_PluginMenuUrl.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_PortalMenu.cshtml">_PortalMenu.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_QuickMenu.cshtml">_QuickMenu.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_Widget.cshtml">_Widget.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_WidgetUrl.cshtml">_WidgetUrl.cshtml</ProjectItem>
@@ -62,8 +61,8 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.min.map">jquery-3.6.0.min.map</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.js">jquery-migrate-3.3.2.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.min.js">jquery-migrate-3.3.2.min.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.1.js">jquery-ui-1.13.1.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.1.min.js">jquery-ui-1.13.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.2.js">jquery-ui-1.13.2.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.2.min.js">jquery-ui-1.13.2.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie-1.4.1.min.js">jquery.cookie-1.4.1.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie.js">jquery.cookie.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.js">jquery.form.js</ProjectItem>
@@ -348,6 +347,7 @@
                 <ProjectItem ReplaceParameters="true" TargetFileName="qunit.js">qunit.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="qunitLibrary.js">qunitLibrary.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="recordandplay.js">recordandplay.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="unitTestUtils.js">unitTestUtils.js</ProjectItem>
               </Folder>
             </Folder>
             <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">
@@ -373,6 +373,7 @@
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICSegmentCodeDropdown.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICSegmentCodeDropdown.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ResetDropdownListDataSource.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ResetDropdownListDataSource.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetEFTActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetEFTActive.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrency.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrency.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrencyDecimals.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrencyDecimals.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActive.js</ProjectItem>

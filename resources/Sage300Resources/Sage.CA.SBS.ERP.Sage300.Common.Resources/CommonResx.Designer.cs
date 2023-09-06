@@ -313,6 +313,69 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Did the Assign Employee Eam/Ded Audit Report print correctly? If not, click &apos;Close&apos;..
+        /// </summary>
+        public static string AssignEarnOrDedAuditPopup {
+            get {
+                return ResourceManager.GetString("AssignEarnOrDedAuditPopup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make sure the Assign Employee Earn/Ded Audit Report printed correctly to paper or disk before you approve printing.The Assign Employee Earn/Ded Audit file(s) will be deleted when you approve printing. If the report did not print correctly, close this window and print this report again. .
+        /// </summary>
+        public static string AssignEmployeeEarnOrDedAuditPopup {
+            get {
+                return ResourceManager.GetString("AssignEmployeeEarnOrDedAuditPopup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Employee Earn/Ded Audit Report.
+        /// </summary>
+        public static string AssignEmployeeEarnOrDedTitle {
+            get {
+                return ResourceManager.GetString("AssignEmployeeEarnOrDedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make sure the Assign Employee Tax Audit Report printed correctly to paper or disk before you approve printing.The Assign Employee Tax Audit file(s) will be deleted when you approve printing. If the report did not print correctly, close this window and print this report again.                                   .
+        /// </summary>
+        public static string AssignEmployeeTaxAuditPopup {
+            get {
+                return ResourceManager.GetString("AssignEmployeeTaxAuditPopup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Employee Tax Audit Report.
+        /// </summary>
+        public static string AssignEmployeeTaxTitle {
+            get {
+                return ResourceManager.GetString("AssignEmployeeTaxTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Employee Earn/Ded Audit Report.
+        /// </summary>
+        public static string AssignEmployeeTitle {
+            get {
+                return ResourceManager.GetString("AssignEmployeeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Did the Assign Employee Tax Audit Report print correctly? If not, click &apos;Close&apos;..
+        /// </summary>
+        public static string AssignTaxAuditPopup {
+            get {
+                return ResourceManager.GetString("AssignTaxAuditPopup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto Insert must be set to Yes for required optional fields..
         /// </summary>
         public static string AutoInsertOptionalFieldsMessage {
@@ -1078,6 +1141,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Document Number.
+        /// </summary>
+        public static string DocumentNumber {
+            get {
+                return ResourceManager.GetString("DocumentNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot find {0}..
         /// </summary>
         public static string DoesNotExist {
@@ -1366,6 +1438,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to False.
+        /// </summary>
+        public static string False {
+            get {
+                return ResourceManager.GetString("False", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fax.
         /// </summary>
         public static string Fax {
@@ -1380,6 +1461,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string FeatureNotAvailableWeb_Message {
             get {
                 return ResourceManager.GetString("FeatureNotAvailableWeb_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your request could not be completed because {0} is not available in this web screen. You may be able to use the desktop screen..
+        /// </summary>
+        public static string FeatureNotAvailableWeb_Message_v2 {
+            get {
+                return ResourceManager.GetString("FeatureNotAvailableWeb_Message_v2", resourceCulture);
             }
         }
         
@@ -1677,6 +1767,33 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string GetKeysFailedMessage {
             get {
                 return ResourceManager.GetString("GetKeysFailedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please ensure the credentials are encrypted with a valid key..
+        /// </summary>
+        public static string GetWebScreenInvalidKeyError {
+            get {
+                return ResourceManager.GetString("GetWebScreenInvalidKeyError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please get a new public key..
+        /// </summary>
+        public static string GetWebScreenNoKeyError {
+            get {
+                return ResourceManager.GetString("GetWebScreenNoKeyError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please ensure the credentials, public key, and IV are in the request header..
+        /// </summary>
+        public static string GetWebScreenNullParamError {
+            get {
+                return ResourceManager.GetString("GetWebScreenNullParamError", resourceCulture);
             }
         }
         
@@ -2091,6 +2208,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string InvalidFiscalYear {
             get {
                 return ResourceManager.GetString("InvalidFiscalYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Input. The {0} does not exist..
+        /// </summary>
+        public static string InvalidInput {
+            get {
+                return ResourceManager.GetString("InvalidInput", resourceCulture);
             }
         }
         
@@ -4260,6 +4386,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string TransactionDate {
             get {
                 return ResourceManager.GetString("TransactionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to True.
+        /// </summary>
+        public static string True {
+            get {
+                return ResourceManager.GetString("True", resourceCulture);
             }
         }
         

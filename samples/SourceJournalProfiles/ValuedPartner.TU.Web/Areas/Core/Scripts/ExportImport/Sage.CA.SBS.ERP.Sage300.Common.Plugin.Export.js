@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2023 The Sage Group plc or its licensors.  All rights reserved. */
 
 /* globals globalResource: false */
 /* globals kendo: false */
@@ -21,6 +21,7 @@ var exportResultRowNumber = 0;
         initPreviewTabPage: true,
         needRefresh: true,
         expanded: false,
+        entityContext: null,
 
         gridOption: {
             scrollable: false,
@@ -39,7 +40,7 @@ var exportResultRowNumber = 0;
             }
         },
 
-        setExportEvent: function (id, exportName, hasOptions, exportKeys, callbackFunc) {
+        setExportEvent: function (id, exportName, hasOptions, exportKeys, callbackFunc, entityContext = null) {
             $("#" + id).Export({
                 name: exportName,
                 exportImportOptions: hasOptions,
@@ -47,6 +48,11 @@ var exportResultRowNumber = 0;
                 ok: callbackFunc
             });
             sg.exportHelper.exportKeys = exportKeys;
+
+            // optional entity context for PR
+            if (entityContext) {
+                sg.exportHelper.entityContext = entityContext;
+            }
         },
 
         showExportResult: function () {
@@ -73,7 +79,11 @@ var exportResultRowNumber = 0;
                 $("#lnkDownload").show();
             }
         },
-        avoidCircularReference: false
+        avoidCircularReference: false,
+
+        getEntityContext: () => {
+            return sg.exportHelper.entityContext;
+        },
     };
 
     sg.dataMigration = {
@@ -217,7 +227,8 @@ var exportResultRowNumber = 0;
         VendorGroup: "vendorgroup",
         WeightUnitOfMeasure: "weightunitsofmeasure",
         WithholdingTaxRates: "withholdingtaxrates",
-        EmployeeTimecard: "premployeetimecard"
+        EmployeeTimecard: "premployeetimecard",
+        Timecard: "prtimecard"
     };
 }(sg || {}, jQuery));
 
@@ -306,7 +317,8 @@ var exportResultRowNumber = 0;
             }
 
             var data = {
-                viewModel: viewModel
+                viewModel: viewModel,
+                entityPrefix: sg.exportHelper.getEntityContext()
             };
 
             that.divExportDialogId = 'div_' + that.options.name + '_dialog';

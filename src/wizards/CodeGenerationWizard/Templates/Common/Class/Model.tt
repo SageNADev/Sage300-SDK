@@ -35,7 +35,7 @@
     var extension = settings.Extension;
     var modelName = view.Properties[BusinessView.Constants.ModelName];
     var repositoryType = settings.RepositoryType;
-    var applicationNamespace = (settings.RepositoryType.Equals(RepositoryType.DynamicQuery)) ? "Application" : string.Empty;
+    var applicationNamespace = string.Empty;
 	var enumsCount = view.Enums.Count;
     string[] entityFieldType = new string[10] {"Char", "Byte", "Date", "Time", "Real", "Decimal", "Int", "Long", "Bool", "LongLong"};
 #>
@@ -43,16 +43,6 @@
 
 #region Namespace
 
-<#
-    if (repositoryType.Equals(RepositoryType.DynamicQuery))
-    {
-#>
-using Sage.CA.SBS.ERP.Sage300.Common.Models;
-<#
-    }
-    else
-    {
-#>
 using System;
 using System.ComponentModel.DataAnnotations;
 using Sage.CA.SBS.ERP.Sage300.Common.Models<#=(repositoryType.Equals(RepositoryType.Report) ? extension : string.Empty)#>;
@@ -79,9 +69,6 @@ using <#=companyNamespace#>.<#=moduleId#>.Models.Enums; // For common enumeratio
 #>
 using <#=companyNamespace#>.<#=moduleId#>.Resources; // For common resources
 using <#=companyNamespace#>.<#=moduleId#>.Resources<#=resourceExtension#>;
-<#
-    }
-#>
 
 #endregion
 
@@ -121,7 +108,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
         /// Gets or sets <#=fieldName#>
         /// </summary>
 <#
-                if (!repositoryType.Equals(RepositoryType.DynamicQuery) && !repositoryType.Equals(RepositoryType.Report))
+                if (!repositoryType.Equals(RepositoryType.Report))
                 {
                     // Check for Key annotation
                     var annotation = field.IsKey ? "[Key]" : string.Empty;
@@ -160,23 +147,15 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
                     }
                 }
 
-                if (!repositoryType.Equals(RepositoryType.DynamicQuery))
-                {
-                    // Display attribute
 #>
         [Display(Name = "<#=fieldName#>", ResourceType = typeof (<#=resxName#>))]
 <#
-                }
-
-                // Property
-#>
-<#
-                if (!repositoryType.Equals(RepositoryType.DynamicQuery) && !repositoryType.Equals(RepositoryType.Report))
-                {
+        if (!repositoryType.Equals(RepositoryType.Report))
+        {
 #>
         [ViewField(Name = Fields.<#=fieldName#>, Id = Index.<#=fieldName#>, FieldType = EntityFieldType.<#=entityFieldType[field.EntityFieldType - 1]#><#=(field.Size > 0 ? ", Size = " + field.Size : "")#><#=(field.Precision > 0 ? ", Precision = " + field.Precision : "")#><#=(!string.IsNullOrEmpty(field.Mask) ? ", Mask = \"" + field.Mask + "\"" : "")#>)]
 <#
-                }
+        }
 #>
         public <#=(field.Type.Equals(BusinessDataType.Enumeration) ? companyNamespace + "." + moduleId + ".Models.Enums" + extension + "." + fieldName : EnumValue.GetValue(field.Type))#> <#=fieldName#> { get; set; }
 
@@ -194,8 +173,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>
                 }
             }
 
-            if (!repositoryType.Equals(RepositoryType.DynamicQuery) && 
-			    !repositoryType.Equals(RepositoryType.Report))
+            if (!repositoryType.Equals(RepositoryType.Report))
             {
 #>
         #region UI Strings

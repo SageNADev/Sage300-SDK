@@ -38,12 +38,65 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmployeeResx.Designer.cs">
+    <Compile Include="Forms\CalculatePayrollResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalculatePayrollResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CheckCommentDetailResx.Designer.cs" />
+    <Compile Include="Forms\CheckDetailResx.Designer.cs" />
+    <Compile Include="Forms\CheckDetailsOptionalFieldResx.Designer.cs" />
+    <Compile Include="Forms\CheckEFTDetailResx.Designer.cs" />
+    <Compile Include="Forms\CheckHeaderOptionalFieldValuResx.Designer.cs" />
+    <Compile Include="Forms\CheckHeaderResx.Designer.cs" />
+    <Compile Include="Forms\CheckJobDetailResx.Designer.cs" />
+    <Compile Include="Forms\CheckJobsOptionalFieldsValueResx.Designer.cs" />
+    <Compile Include="Forms\ClassCodesResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClassCodesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CompanyOptionResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyOptionResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeActivityResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeActivityResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeBillingDetailResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeBillingDetailResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeCommentResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeCommentResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeNoteResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeNoteResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeSelectionListResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeSelectionListResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeTimecardResx.Designer.cs">
+    <Compile Include="Forms\EmployeeTaxInfoResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeTaxInfoResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeTimecardResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeTimecardResx.resx</DependentUpon>
@@ -53,105 +106,100 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeEarningsDeductionResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeEarningsDeductionResx.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeEarningsDeductionResx.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\EmployeeEarningsDeductionResx.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeEarningsDeductionResx.fr.resx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\EmployeeEFTBankResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeEFTBankResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\EmployeeEFTBankResx.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeEFTBankResx.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\EmployeeEFTBankResx.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeEFTBankResx.fr.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeeGarnishmentResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeGarnishmentResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeGarnishmentResx.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeGarnishmentResx.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\EmployeeGarnishmentResx.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeGarnishmentResx.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\EmployeeNoteResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeNoteResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\EmployeeNoteResx.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeNoteResx.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\EmployeeNoteResx.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeNoteResx.fr.resx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\EmployeeOptionalFieldValueResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeOptionalFieldValueResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeOptionalFieldValueResx.es.Designer.cs">
+    <Compile Include="Forms\CompanyPayrollTaxeResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeOptionalFieldValueResx.es.resx</DependentUpon>
+      <DependentUpon>CompanyPayrollTaxeResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeOptionalFieldValueResx.fr.Designer.cs">
+    <Compile Include="Forms\DistributionResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeOptionalFieldValueResx.fr.resx</DependentUpon>
+      <DependentUpon>DistributionResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EarningsDeductionResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EarningsDeductionResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmplEarnDedOptionalFieldResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmplEarnDedOptionalFieldResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeeTaxeResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeTaxeResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeTaxeResx.es.Designer.cs">
+    <Compile Include="Forms\EmployeeTaxFieldResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeTaxeResx.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\EmployeeTaxeResx.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeTaxeResx.fr.resx</DependentUpon>
+      <DependentUpon>EmployeeTaxFieldResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeeTimecardDetailResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeTimecardDetailResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeTimecardDetailResx.es.Designer.cs">
+    <Compile Include="Forms\EmplTaxesOptionalFieldResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeTimecardDetailResx.es.resx</DependentUpon>
+      <DependentUpon>EmplTaxesOptionalFieldResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeTimecardDetailResx.fr.Designer.cs">
+    <Compile Include="Forms\TimecardDetailResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeTimecardDetailResx.fr.resx</DependentUpon>
+      <DependentUpon>TimecardDetailResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimecardDetailsOptionalFieldResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimecardDetailsOptionalFieldResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimecardHeaderResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimecardHeaderResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimecardJobDetailResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimecardJobDetailResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimecardJobsOptionalFieldValResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimecardJobsOptionalFieldValResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimecardListResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimecardListResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimecardOptionalFieldValueResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimecardOptionalFieldValueResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PRCommonResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRCommonResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -160,100 +208,204 @@
     <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EmployeeResx.fr-CA.resx" />
-    <EmbeddedResource Include="EmployeeResx.resx">
+    <EmbeddedResource Include="Forms\CalculatePayrollResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalculatePayrollResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalculatePayrollResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CalculatePayrollResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CheckCommentDetailResx.resx" />
+    <EmbeddedResource Include="Forms\CheckDetailResx.resx" />
+    <EmbeddedResource Include="Forms\CheckDetailsOptionalFieldResx.resx" />
+    <EmbeddedResource Include="Forms\CheckEFTDetailResx.resx" />
+    <EmbeddedResource Include="Forms\CheckHeaderOptionalFieldValuResx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CheckHeaderResx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CheckJobDetailResx.resx" />
+    <EmbeddedResource Include="Forms\CheckJobsOptionalFieldsValueResx.resx" />
+    <EmbeddedResource Include="Forms\ClassCodesResx.es.resx" />
+    <EmbeddedResource Include="Forms\ClassCodesResx.fr.resx" />
+    <EmbeddedResource Include="Forms\ClassCodesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClassCodesResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompanyOptionResx.fr.resx" />
+    <EmbeddedResource Include="Forms\CompanyOptionResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CompanyOptionResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompanyPayrollTaxeResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CompanyPayrollTaxeResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DistributionResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DistributionResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EarningsDeductionResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EarningsDeductionResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmplEarnDedOptionalFieldResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmplEarnDedOptionalFieldResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeActivityResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmployeeActivityResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeBillingDetailResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmployeeBillingDetailResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeCommentResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmployeeCommentResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeSelectionListResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeSelectionListResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeSelectionListResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmployeeSelectionListResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeTaxFieldResx.es.resx" />
+    <EmbeddedResource Include="Forms\EmployeeTaxFieldResx.fr.resx" />
+    <EmbeddedResource Include="Forms\EmployeeTaxFieldResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmployeeTaxFieldResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeTimecardResx.fr.resx" />
-    <EmbeddedResource Include="EmployeeTimecardResx.resx">
+    <EmbeddedResource Include="Forms\EmployeeTaxInfoResx.es.resx" />
+    <EmbeddedResource Include="Forms\EmployeeTaxInfoResx.fr.resx" />
+    <EmbeddedResource Include="Forms\EmployeeTaxInfoResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmployeeTaxInfoResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeTimecardResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeTimecardResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeTimecardResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeTimecardResx.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeEarningsDeductionResx.es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeEarningsDeductionResx.es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeEarningsDeductionResx.fr.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeEarningsDeductionResx.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeEarningsDeductionResx.es.resx" />
+    <EmbeddedResource Include="Forms\EmployeeEarningsDeductionResx.fr.resx" />
     <EmbeddedResource Include="Forms\EmployeeEarningsDeductionResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeEarningsDeductionResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeEFTBankResx.es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeEFTBankResx.es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeEFTBankResx.fr.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeEFTBankResx.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeEFTBankResx.es.resx" />
+    <EmbeddedResource Include="Forms\EmployeeEFTBankResx.fr.resx" />
     <EmbeddedResource Include="Forms\EmployeeEFTBankResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeEFTBankResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeGarnishmentResx.es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeGarnishmentResx.es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeGarnishmentResx.fr.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeGarnishmentResx.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeGarnishmentResx.es.resx" />
+    <EmbeddedResource Include="Forms\EmployeeGarnishmentResx.fr.resx" />
     <EmbeddedResource Include="Forms\EmployeeGarnishmentResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeGarnishmentResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeNoteResx.es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeNoteResx.es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeNoteResx.fr.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeNoteResx.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeNoteResx.es.resx" />
+    <EmbeddedResource Include="Forms\EmployeeNoteResx.fr.resx" />
     <EmbeddedResource Include="Forms\EmployeeNoteResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeNoteResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeOptionalFieldValueResx.es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeOptionalFieldValueResx.es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeOptionalFieldValueResx.fr.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeOptionalFieldValueResx.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeOptionalFieldValueResx.es.resx" />
+    <EmbeddedResource Include="Forms\EmployeeOptionalFieldValueResx.fr.resx" />
     <EmbeddedResource Include="Forms\EmployeeOptionalFieldValueResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeOptionalFieldValueResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeTaxeResx.es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeTaxeResx.es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeTaxeResx.fr.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeTaxeResx.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeTaxeResx.es.resx" />
+    <EmbeddedResource Include="Forms\EmployeeTaxeResx.fr.resx" />
     <EmbeddedResource Include="Forms\EmployeeTaxeResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeTaxeResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeTimecardDetailResx.es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeTimecardDetailResx.es.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeTimecardDetailResx.fr.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EmployeeTimecardDetailResx.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeTimecardDetailResx.fr.resx" />
     <EmbeddedResource Include="Forms\EmployeeTimecardDetailResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeTimecardDetailResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmplTaxesOptionalFieldResx.es.resx" />
+    <EmbeddedResource Include="Forms\EmplTaxesOptionalFieldResx.fr.resx" />
+    <EmbeddedResource Include="Forms\EmplTaxesOptionalFieldResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmplTaxesOptionalFieldResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimecardDetailResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardDetailResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TimecardDetailResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimecardDetailsOptionalFieldResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardDetailsOptionalFieldResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TimecardDetailsOptionalFieldResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimecardHeaderResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardHeaderResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TimecardHeaderResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimecardJobDetailResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardJobDetailResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TimecardJobDetailResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimecardJobsOptionalFieldValResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardJobsOptionalFieldValResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TimecardJobsOptionalFieldValResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimecardListResx.es.resx" />
+    <EmbeddedResource Include="Forms\TimecardListResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardListResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TimecardListResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimecardOptionalFieldValueResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardOptionalFieldValueResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TimecardOptionalFieldValueResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRCommonResx.es.resx" />
+    <EmbeddedResource Include="PRCommonResx.fr.resx" />
+    <EmbeddedResource Include="PRCommonResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PRCommonResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

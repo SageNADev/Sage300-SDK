@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -40,16 +40,16 @@
 #>
 @* <#=copyright#> *@
 <#
-if (view.Options[BusinessView.Constants.GenerateGrid])
+if (view.Options[BusinessView.Constants.HasGrid])
 {
 #>
-	@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel
+@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel
 <#
 }
 else
 {
 #>
-	@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel<<#=companyNamespace#>.<#=moduleId#>.Models.<#=modelName#>>
+@model <#=companyNamespace#>.<#=webModuleNamespace#>.Models.<#=entityName#>ViewModel<<#=companyNamespace#>.<#=moduleId#>.Models.<#=modelName#>>
 <#
 }
 #>
@@ -80,10 +80,10 @@ else
                     @Html.SageHeader1Label("<#=entityName#>Header", <#=resxName#>.Entity)
                 </div>
                 @Html.Partial(Core.OptionsMenu, Model.UserAccess)	
-	<#
-	if (!view.Options[BusinessView.Constants.GenerateGrid])
+<#
+	if (!view.Options[BusinessView.Constants.HasGrid])
 	{
-    #>
+#>
 			<div class="header-options">
                     @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
                     {
@@ -99,46 +99,21 @@ else
             </div>
         </section>
     </header>
-<#
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
-        }
-#>
 <# 
-	if (view.Options[BusinessView.Constants.GenerateGrid])
-	{
-		var gridName = entityName.Substring(0, 1).ToLower() +  entityName.Substring(1);
-		WriteLine("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
-	}
-    else if (xmlLayout != null)
+    // Counter for indentation
+    int depth = 0;
+
+    // Get first element and proceed if there are elements specified
+    var element = xmlLayout.Root.Descendants().First();
+
+    // Iterate xml and apply snippets directly to template
+    if (element.HasElements)
     {
-        // XML Layout has been specified and therefore generate layout using this instead of generating
-        // only the key field
-
-        // Counter for indentation
-        int depth = 0;
-
-        // Get first element and proceed if there are elements specified
-        var element = xmlLayout.Root.Descendants().First();
-
-        // Iterate xml and apply snippets directly to template
-        if (element.HasElements)
-        {
-            // Recursion
-            var snippet = new StringBuilder();
-            SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
-            WriteLine(snippet.ToString());
-        }
+        // Recursion
+        var snippet = new StringBuilder();
+        SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
+        WriteLine(snippet.ToString());
     }
-	else
-	{
-        // No XML layout specified, therefore we will no longer generate only the key field
-	}
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "</div>");
-        }
 #>
     <section class="footer-group-1">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
@@ -146,7 +121,7 @@ else
             @Html.KoSageButton("btnSave", new { }, new { @value = CommonResx.Save, @id = "btnSave", @class = "btn btn-primary" })
 
 <#
-	if (!view.Options[BusinessView.Constants.GenerateGrid])
+	if (!view.Options[BusinessView.Constants.HasGrid])
 	{
 #>
 			@Html.KoSageButton("btnDelete", new { }, new { @value = CommonResx.Delete, @id = "btnDelete", @class = "btn btn-primary" })

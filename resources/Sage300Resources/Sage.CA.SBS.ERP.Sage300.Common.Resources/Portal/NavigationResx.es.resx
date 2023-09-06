@@ -1431,12 +1431,6 @@
   <data name="AS_WorkProfile" xml:space="preserve">
     <value>Perfiles UI</value>
   </data>
-  <data name="SIR_Msg3" xml:space="preserve">
-    <value>Sage Intelligence Reporting Cloud</value>
-  </data>
-  <data name="SIR_Msg4" xml:space="preserve">
-    <value>Obtenga una mejor visibilidad de su negocio con informes financieros dinámicos que puede exportar y personalizar en Microsoft Excel® o Excel Online.</value>
-  </data>
   <data name="SIR_Report1" xml:space="preserve">
     <value>Real Hasta la Fecha</value>
   </data>
@@ -1524,9 +1518,6 @@
   <data name="TS_ImportTaxCodes" xml:space="preserve">
     <value>Importación de Códigos Fiscales</value>
   </data>
-  <data name="TS_GSTF5" xml:space="preserve">
-    <value>GST F5/F8</value>
-  </data>
   <data name="TS_GSTIAF" xml:space="preserve">
     <value>GST IAF Generator</value>
   </data>
@@ -1571,9 +1562,6 @@
   </data>
   <data name="Configurations" xml:space="preserve">
     <value>Configuraciones</value>
-  </data>
-  <data name="GSTF5" xml:space="preserve">
-    <value>GST F5/F8</value>
   </data>
   <data name="GSTIAF" xml:space="preserve">
     <value>Generador GST IAF</value>
@@ -1804,5 +1792,17 @@
   </data>
   <data name="AS_UserActivityReport" xml:space="preserve">
     <value>Reporte Actividad de Usuarios</value>
+  </data>
+  <data name="PM_Adjustments" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="PM_Timecards" xml:space="preserve">
+    <value>Timecards</value>
+  </data>
+  <data name="PM_TransactionHistory" xml:space="preserve">
+    <value>Historial de transacciones</value>
+  </data>
+  <data name="PM_Transaction_History" xml:space="preserve">
+    <value>Historial Transacciones</value>
   </data>
 </root>

@@ -288,4 +288,7 @@
   <data name="Text" xml:space="preserve">
     <value>文字</value>
   </data>
+  <data name="ProjectAndJobCosting" xml:space="preserve">
+    <value>專案成本管理</value>
+  </data>
 </root>

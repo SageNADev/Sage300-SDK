@@ -1080,13 +1080,7 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard.Properties {
         /// <summary>
         ///   Looks up a localized string similar to The following previous versions of jQuery files will be removed from your solution and projects:
         ///
-        ///jQuery Core V{0}
-        ///jQuery Migrate V{1}
-        ///
-        ///The following files will be updated to reference the correct version of jQuery:
-        ///
-        ///\Web\WebForms\CustomReportViewer.aspx
-        ///\Web\WebForms\ReportViewer.aspx.
+        ///jQuery UI V{0}.
         /// </summary>
         internal static string Template_ReleaseSpecificRemovePreviousJqueryLibraries {
             get {

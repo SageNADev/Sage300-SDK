@@ -153,10 +153,13 @@
                                 return dataItem.display === data;
                             });
                         }
+                    } else if (control.ctrlType === "input"){
+                        data = apputils.unescape(apputils.unescape(data)); //double unescape as server side escape extra time.
+                        ctrl.val(data);
                     }
                     else {
                         data = apputils.unescape(apputils.unescape(data)); //double unescape as server side escape extra time.
-                        ctrl.val(data);
+                        ctrl.text(data);
                     }
 
                     //[RC] 5/26/2022 - left for UI done prior to this date

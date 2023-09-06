@@ -189,8 +189,14 @@
   <data name="NoLine" xml:space="preserve">
     <value>Line Number {0} does not exist.</value>
   </data>
+  <data name="NoRecord" xml:space="preserve">
+    <value>{0} {1} does not exist.</value>
+  </data>
   <data name="PeriodLocked" xml:space="preserve">
     <value>Date {0} corresponds to period {1} in fiscal year {2}, which is locked for Project and Job Costing in Common Services Fiscal Calendar.</value>
+  </data>
+  <data name="PartialPeriodLocked" xml:space="preserve">
+    <value>which is locked for Project and Job Costing in Common Services Fiscal Calendar.</value>
   </data>
   <data name="PostingDateOverride" xml:space="preserve">
     <value>Posting Date Override</value>
@@ -276,6 +282,12 @@
   <data name="TransactionDateBeforeProjectStartDate" xml:space="preserve">
     <value>The transaction date is before the starting date of the Project.</value>
   </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Transaction Date</value>
+  </data>
+  <data name="Expense" xml:space="preserve">
+    <value>Expense</value>
+  </data>
   <data name="CostOfSalesAccount" xml:space="preserve">
     <value>Cost of Sales Account</value>
   </data>
@@ -312,6 +324,9 @@
   <data name="CannotDeleteRequiredOptionalField" xml:space="preserve">
     <value>You cannot delete required optional field.</value>
   </data>
+  <data name="CannotOpenView" xml:space="preserve">
+    <value>Cannot open view </value>
+  </data>
   <data name="EquipmentDescription" xml:space="preserve">
     <value>Equipment Description</value>
   </data>
@@ -341,5 +356,50 @@
   </data>
   <data name="YouCannotDeleteAnEquipmentCode" xml:space="preserve">
     <value>You cannot delete an equipment code that is assigned to a {0}.</value>
+  </data>
+  <data name="ProjectSectionText" xml:space="preserve">
+    <value>Default Settings for Standard {0}</value>
+  </data>
+  <data name="PJCEquipment" xml:space="preserve">
+    <value>PJC Equipment</value>
+  </data>
+  <data name="AdjustmentType" xml:space="preserve">
+    <value>Adjustment Type</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Adjustment</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="AP" xml:space="preserve">
+    <value>A/P Only</value>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>A/R Only</value>
+  </data>
+  <data name="CP" xml:space="preserve">
+    <value>Canadian Payroll Only</value>
+  </data>
+  <data name="IC" xml:space="preserve">
+    <value>I/C Only</value>
+  </data>
+  <data name="OE" xml:space="preserve">
+    <value>O/E Only</value>
+  </data>
+  <data name="PM" xml:space="preserve">
+    <value>PJC Only</value>
+  </data>
+  <data name="PO" xml:space="preserve">
+    <value>P/O Only</value>
+  </data>
+  <data name="UP" xml:space="preserve">
+    <value>US Payroll Only</value>
+  </data>
+  <data name="CheckInquiry" xml:space="preserve">
+    <value>Cheque Inquiry</value>
   </data>
 </root>

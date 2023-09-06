@@ -34,6 +34,10 @@
             $(filter).val(value).trigger("change");
         },
 
+        typeInInputAndDontChange: function (filter, value) {
+            $(filter).val(value);
+        },
+
         clickElementWithCallback(filter, cb) {
             $(filter).trigger("click");
         },
@@ -55,6 +59,22 @@
         },
 
         /**
+         * Checks for delete confirmation
+         * @param {object} assert The assert object to pass in
+         * @param {bool} exists true if delete confirmation exists, false otherwise
+         */
+        hasDeleteConfirmation: function (assert, exists) {
+
+            let dialogBoxTitle = $("div#deleteConfirmationParent.k-widget.k-window.k-display-inline-flex.modelBox").find("div#body-text").eq(0);
+            if (exists) {
+                assert.strictEqual((dialogBoxTitle.length > 0), true, 'deleteConfirmationParent found');
+            }
+            else {
+                assert.strictEqual((dialogBoxTitle.length === 0), true, 'deleteConfirmationParent not found');
+            }
+        },
+
+        /**
          * Check the content of the delete confirmation modal and either cancel or accept the confirmation
          * @param {object} assert The assert object to pass in
          * @param {String} expectedMessage The expected message to receive in the confirmation modal
@@ -62,7 +82,7 @@
          * @param {boolean} decision true to accept, false to cancel
          */
         checkAndHandleDeleteConfirmation: function (assert, expectedMessage, testDescription, decision = true) {
-            let dialogBoxTitle = $("div#deleteConfirmationParent.k-widget.k-window.k-display-inline-flex.modelBox");
+            let dialogBoxTitle = $("div#deleteConfirmationParent.k-widget.k-window.k-display-inline-flex.modelBox").find("div#body-text").eq(0);
             if (dialogBoxTitle.length === 0) {
                 assert.strictEqual((dialogBoxTitle.length > 0), true, 'deleteConfirmationParent found');
                 return;
@@ -189,6 +209,7 @@
                     selectedItem.set(column.field, parseFloat(value));
                 } else {
                     selectedItem.set(column.field, value);
+                    td.find("input").eq(0).trigger("change");
                 }
 
                 td.find("input").eq(1).trigger("change");
@@ -228,6 +249,30 @@
                 //selectedItem.trigger("change");
             }
             //td.find("input").eq(0).trigger("change");
+        },
+
+        /**
+         * Change the content of the grid cell that has a dropdown list
+         * @param {object} grid The grid object to work with
+         * @param {int} row The 0 based row index to interact with
+         * @param {int} column The 0 based column index to interact with
+         * @param {String} text The text to select to the dropdown
+         */
+        selectGridCell: function (grid, row, column, text) {
+            baseStaticTestModule.setGridLineFocus(grid, row);
+            row = grid.select().index();
+            const columnIndex = qunitStaticLibrary.getGridColumnIndex(grid, column);
+            let td = grid.tbody.find("tr").eq(row).find("td").eq(columnIndex);
+            grid.current(td);
+            grid.editCell(td);
+            let selectedItem = grid.dataItem(grid.select());
+
+            if (selectedItem) {
+                let dropdownList = td.find("input").eq(0).data("kendoDropDownList");
+                dropdownList.text(text);
+                td.find("input").eq(0).trigger("change");
+                return dropdownList;
+            }
         },
 
         /**
@@ -357,7 +402,7 @@
          * @param {any} expected The cell should be equal to this value
          * @param {String} description The description of the test
          */
-        checkGridColumnContains: function (grid, column, assert, expected, description) {
+        checkGridColumnContainsExact: function (grid, column, assert, expected, description) {
             let ds = grid.dataSource;
             const cellIndex = qunitStaticLibrary.getGridColumnIndex(grid, column);
 
@@ -382,7 +427,7 @@
          * @param {any} unexpected The cell should not be equal to this value
          * @param {String} description The description of the test
          */
-        checkGridColumnContainsNeg: function (grid, column, assert, unexpected, description) {
+        checkGridColumnContainsExactNeg: function (grid, column, assert, unexpected, description) {
             let ds = grid.dataSource;
             const cellIndex = qunitStaticLibrary.getGridColumnIndex(grid, column);
 
@@ -391,6 +436,56 @@
             for (let row = 0; row < ds.total(); row++) {
                 let td = grid.tbody.find("tr").eq(row).find("td").eq(cellIndex);
                 if (td.text() == unexpected) {
+                    found = true;
+                    break;
+                }
+            }
+
+            this.checkAssert(assert, found, false, description);
+        },
+
+        /**
+          * Check whether any of the column contains the value expected
+          * @param {object} grid
+          * @param {String | int} column The column name or 0 based index
+          * @param {object} assert The assert object to pass in
+          * @param {any} expected The cell should be equal to this value
+          * @param {String} description The description of the test
+          */
+        checkGridColumnContains: function (grid, column, assert, expected, description) {
+            let ds = grid.dataSource;
+            const cellIndex = qunitStaticLibrary.getGridColumnIndex(grid, column);
+
+            let found = false;
+
+            for (let row = 0; row < ds.total(); row++) {
+                let td = grid.tbody.find("tr").eq(row).find("td").eq(cellIndex);
+                if (td.text().toLowerCase().includes(expected.toLowerCase())) {
+                    found = true;
+                    break;
+                }
+            }
+
+            this.checkAssert(assert, found, true, description);
+        },
+
+        /**
+         * Check whether any of the column does not contains the value unexpected
+         * @param {object} grid
+         * @param {String | int} column The column name or 0 based index
+         * @param {object} assert The assert object to pass in
+         * @param {any} unexpected The cell should not be equal to this value
+         * @param {String} description The description of the test
+         */
+        checkGridColumnContainsNeg: function (grid, column, assert, unexpected, description) {
+            let ds = grid.dataSource;
+            const cellIndex = qunitStaticLibrary.getGridColumnIndex(grid, column);
+
+            let found = false;
+
+            for (let row = 0; row < ds.total(); row++) {
+                let td = grid.tbody.find("tr").eq(row).find("td").eq(cellIndex);
+                if (td.text().toLowerCase().includes(unexpected.toLowerCase())) {
                     found = true;
                     break;
                 }
@@ -449,6 +544,42 @@
             dropdownList.text(item);
             $(filter).trigger("change");
             return dropdownList;
+        },
+
+        /**
+         * Get the text value of the drop down
+         * @param {String} filter The id to identify the html element to interact with
+         */
+        getDropdownText: function (filter) {
+            const dropdownList = $(filter).data("kendoDropDownList");
+            return dropdownList.text();
+            
+        },
+
+        /**
+         * Check all dropdown display texts are present
+         * @param {String} filter The id to identify the html element to interact with
+         * @param {Array} texts a list of expected display texts
+         */
+        checkDropdownDisplayText: function (filter, texts) {
+            const dropdownList = $(filter).data("kendoDropDownList");
+
+            //if (texts.length !== dropdownList.dataSource.options.data) {
+            //    return false;
+            //}
+
+            let values = [];
+
+            for (let index in dropdownList.dataSource.options.data) {
+                values.push(dropdownList.dataSource.options.data[index].display);
+            }
+
+            let contains = false;
+            texts.forEach(text => contains = values.includes(text));
+
+            return contains;
+
+            //return _.isEqual(values, texts);
         },
 
         /**
@@ -518,7 +649,18 @@
             }
 
             return options;
-        }
+        },
+
+        /**
+         * Checks console errors for any JavaScript runtime error encountered. Logs it and resets the error
+         * @param {any} assert qunit assert object
+         */
+        checkJSError: function (assert) {
+            if (console.errors.length > 0) {
+                assert.equal(console.errors.length, 0, "JavaScript runtime error encountered: " + console.errors[0]);
+                console.errors.length = 0;
+            }
+        },
 
     }
 

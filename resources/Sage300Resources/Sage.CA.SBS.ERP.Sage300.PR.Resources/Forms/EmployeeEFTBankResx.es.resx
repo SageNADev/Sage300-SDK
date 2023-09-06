@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -129,8 +129,8 @@
   <data name="Declined" xml:space="preserve">
     <value>Declined</value>
   </data>
-  <data name="AmtPctToBeDeposited" xml:space="preserve">
-    <value>Amt/Pct to be deposited</value>
+  <data name="AmountPercent" xml:space="preserve">
+    <value>Amount/Percent</value>
   </data>
   <data name="Num01NACHANationalClearingSystemNumber" xml:space="preserve">
     <value>01- (NACHA) National Clearing System Number</value>
@@ -165,13 +165,13 @@
   <data name="Pending" xml:space="preserve">
     <value>Pending</value>
   </data>
-  <data name="EFTCalculationType" xml:space="preserve">
-    <value>EFT Calculation Type</value>
+  <data name="CalculationType" xml:space="preserve">
+    <value>Calculation Type</value>
   </data>
   <data name="PrenoteStatus" xml:space="preserve">
     <value>Prenote Status</value>
   </data>
-  <data name="InstitutionID" xml:space="preserve">
+  <data name="ReceivingDFIID" xml:space="preserve">
     <value>Institution ID</value>
   </data>
   <data name="DestinationCountry" xml:space="preserve">
@@ -188,9 +188,6 @@
   </data>
   <data name="EmployeeEFTBankDescription" xml:space="preserve">
     <value>Employee EFT Bank Description</value>
-  </data>
-  <data name="TransactionCode" xml:space="preserve">
-    <value>Transaction Code</value>
   </data>
   <data name="EmployeeEFTBank" xml:space="preserve">
     <value>Employee EFT Bank</value>

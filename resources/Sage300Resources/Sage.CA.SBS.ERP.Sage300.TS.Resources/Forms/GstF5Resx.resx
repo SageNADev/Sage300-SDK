@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Box1" xml:space="preserve">
+    <value>Box 1</value>
+  </data>
+  <data name="Box10" xml:space="preserve">
+    <value>Box 10</value>
+  </data>
+  <data name="Box10Desc" xml:space="preserve">
+    <value>Did you claim for GST you had refunded to tourists?</value>
+  </data>
+  <data name="Box11" xml:space="preserve">
+    <value>Box 11</value>
+  </data>
+  <data name="Box11Desc" xml:space="preserve">
+    <value>Did you make any bad debt relief claims and/or refund for reverse charge transactions?</value>
+  </data>
+  <data name="Box12" xml:space="preserve">
+    <value>Box 12</value>
+  </data>
+  <data name="Box12Desc" xml:space="preserve">
+    <value>Did you make any pre-registration input tax claims?</value>
+  </data>
+  <data name="Box13" xml:space="preserve">
+    <value>Box 13</value>
+  </data>
+  <data name="Box13Desc" xml:space="preserve">
+    <value>Revenue for the accounting period</value>
+  </data>
+  <data name="Box14" xml:space="preserve">
+    <value>Box 14</value>
+  </data>
+  <data name="Box14Desc" xml:space="preserve">
+    <value>Did you import services and/ or low-value goods subject to GST under Reverse Charge?</value>
+  </data>
+  <data name="Box14DescPre2023" xml:space="preserve">
+    <value>Did you import services subject to GST under Reverse Charge?</value>
+  </data>
+  <data name="Box15" xml:space="preserve">
+    <value>Box 15</value>
+  </data>
+  <data name="Box15Desc" xml:space="preserve">
+    <value>Did you operate an electronic marketplace to supply remote services (includes digital and non-digital services) subject to GST on behalf of third-party suppliers?</value>
+  </data>
+  <data name="Box15DescPre2023" xml:space="preserve">
+    <value>Did you operate an electronic marketplace to supply digital services subject to GST on behalf of third-party suppliers?</value>
+  </data>
+  <data name="Box16" xml:space="preserve">
+    <value>Box 16</value>
+  </data>
+  <data name="Box16Desc" xml:space="preserve">
+    <value>Did you operate as a redeliverer, or an electronic marketplace to supply imported low-value goods subject to GST on behalf of third-party suppliers?</value>
+  </data>
+  <data name="Box17" xml:space="preserve">
+    <value>Box 17</value>
+  </data>
+  <data name="Box17Desc" xml:space="preserve">
+    <value>Did you make your own supply of imported low-value goods that is subject to GST?</value>
+  </data>
+  <data name="Box18" xml:space="preserve">
+    <value>Box 18</value>
+  </data>
+  <data name="Box18Desc" xml:space="preserve">
+    <value>Net GST per box 8 above</value>
+  </data>
+  <data name="Box19" xml:space="preserve">
+    <value>Box 19</value>
+  </data>
+  <data name="Box19Desc" xml:space="preserve">
+    <value>Add: Deferred import GST payable</value>
+  </data>
+  <data name="Box1Desc" xml:space="preserve">
+    <value>Total value of standard-rated supplies</value>
+  </data>
+  <data name="Box2" xml:space="preserve">
+    <value>Box 2</value>
+  </data>
+  <data name="Box20" xml:space="preserve">
+    <value>Box 20</value>
+  </data>
+  <data name="Box20Desc" xml:space="preserve">
+    <value>Equals: Total tax to be paid to/claimed from IRAS</value>
+  </data>
+  <data name="Box21" xml:space="preserve">
+    <value>Box 21</value>
+  </data>
+  <data name="Box21Desc" xml:space="preserve">
+    <value>Total value of goods imported under this scheme</value>
+  </data>
+  <data name="Box2Desc" xml:space="preserve">
+    <value>Total value of zero-rated supplies</value>
+  </data>
+  <data name="Box3" xml:space="preserve">
+    <value>Box 3</value>
+  </data>
+  <data name="Box3Desc" xml:space="preserve">
+    <value>Total value of exempt supplies</value>
+  </data>
+  <data name="Box4" xml:space="preserve">
+    <value>Box 4</value>
+  </data>
+  <data name="Box4Desc" xml:space="preserve">
+    <value>Total value of (1) + (2) + (3)</value>
+  </data>
+  <data name="Box5" xml:space="preserve">
+    <value>Box 5</value>
+  </data>
+  <data name="Box5Desc" xml:space="preserve">
+    <value>Total value of taxable purchases (exclude purchases where input tax is disallowed)</value>
+  </data>
+  <data name="Box6" xml:space="preserve">
+    <value>Box 6</value>
+  </data>
+  <data name="Box6Desc" xml:space="preserve">
+    <value>= Output tax due</value>
+  </data>
+  <data name="Box7" xml:space="preserve">
+    <value>Box 7</value>
+  </data>
+  <data name="Box7Desc" xml:space="preserve">
+    <value>Less: Input tax and refunds claimed (exclude disallowed input tax)</value>
+  </data>
+  <data name="Box8" xml:space="preserve">
+    <value>Box 8</value>
+  </data>
+  <data name="Box8Desc" xml:space="preserve">
+    <value>Equals: Net GST to be paid to/claimed from IRAS</value>
+  </data>
+  <data name="Box9" xml:space="preserve">
+    <value>Box 9</value>
+  </data>
+  <data name="Box9Desc" xml:space="preserve">
+    <value>Total value of goods imported under import GST suspension schemes (e.g. Major Exporter Scheme, Approved 3rd Party Logistics Company)</value>
+  </data>
+  <data name="CECredential" xml:space="preserve">
+    <value>Cloud Enablement Header/Credential</value>
+  </data>
+  <data name="CEJobNumber" xml:space="preserve">
+    <value>Cloud Enablement Job Number</value>
+  </data>
+  <data name="ConfirmResubmission" xml:space="preserve">
+    <value>A filing for the same Start/End Year/Period has been submitted on {0} at {1}. Do you still want to proceed with the submission?</value>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Contact Email</value>
+  </data>
+  <data name="ContactPerson" xml:space="preserve">
+    <value>Contact Person</value>
+  </data>
+  <data name="ContactTelephone" xml:space="preserve">
+    <value>Contact Telephone</value>
+  </data>
+  <data name="DateSubmitted" xml:space="preserve">
+    <value>Date Submitted</value>
+  </data>
+  <data name="DeclarantDesignation" xml:space="preserve">
+    <value>Declarant Designation</value>
+  </data>
+  <data name="EncryptedCustomerAccount" xml:space="preserve">
+    <value>Encrypted Customer Account</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>T/S Singapore GST F5/F8 Filing</value>
+  </data>
+  <data name="ErrorTransactions" xml:space="preserve">
+    <value>Error Transactions</value>
+  </data>
+  <data name="FE4Error" xml:space="preserve">
+    <value>FE4 Error?</value>
+  </data>
+  <data name="FE4ErrorMessage" xml:space="preserve">
+    <value>FE4 Error Message</value>
+  </data>
+  <data name="FE4OtherReason" xml:space="preserve">
+    <value>FE4 Other Reason</value>
+  </data>
+  <data name="FE4ReasonToSkip" xml:space="preserve">
+    <value>Otherwise, please indicate reasons by clicking on the following:</value>
+  </data>
+  <data name="FE5Error" xml:space="preserve">
+    <value>FE5 Error?</value>
+  </data>
+  <data name="FE5ErrorMessage" xml:space="preserve">
+    <value>FE5 Error Message</value>
+  </data>
+  <data name="FE5OtherReason" xml:space="preserve">
+    <value>FE5 Other Reason</value>
+  </data>
+  <data name="FE5ReasonToSkip" xml:space="preserve">
+    <value>Otherwise, please indicate reasons by clicking on the following:</value>
+  </data>
+  <data name="FE6Error" xml:space="preserve">
+    <value>FE6 Error?</value>
+  </data>
+  <data name="FE6ErrorMessage" xml:space="preserve">
+    <value>FE6 Error Message</value>
+  </data>
+  <data name="FE6OtherReason" xml:space="preserve">
+    <value>FE6 Other Reason</value>
+  </data>
+  <data name="FE6ReasonToSkip" xml:space="preserve">
+    <value>Otherwise, please indicate reasons by clicking on the following:</value>
+  </data>
+  <data name="FromPeriod" xml:space="preserve">
+    <value>From Period</value>
+  </data>
+  <data name="FromYear" xml:space="preserve">
+    <value>From Year</value>
+  </data>
+  <data name="FromYearPeriodLabel" xml:space="preserve">
+    <value>Start Year/Period</value>
+  </data>
+  <data name="FullPathJSONFileName" xml:space="preserve">
+    <value>Full Path JSON File Name</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="GSTFormType" xml:space="preserve">
+    <value>GST Form Type</value>
+  </data>
+  <data name="ImportGSTDefermentScheme" xml:space="preserve">
+    <value>Import GST Deferment Scheme</value>
+  </data>
+  <data name="InputTax" xml:space="preserve">
+    <value>Input Tax from Transactions</value>
+  </data>
+  <data name="InquireSubmission" xml:space="preserve">
+    <value>Inquire Submission</value>
+  </data>
+  <data name="IRASConfirmationNumber" xml:space="preserve">
+    <value>IRAS Confirmation Number</value>
+  </data>
+  <data name="IRASSubmission" xml:space="preserve">
+    <value>IRAS Submission</value>
+  </data>
+  <data name="IRASURL" xml:space="preserve">
+    <value>From CE - IRAS Redirect URL</value>
+  </data>
+  <data name="IsResubmission" xml:space="preserve">
+    <value>Is a re-submission?</value>
+  </data>
+  <data name="LastGSTReg" xml:space="preserve">
+    <value>F8 Last GST Registration Date</value>
+  </data>
+  <data name="OutputTax" xml:space="preserve">
+    <value>Output Tax from Transactions</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="ProcessAction" xml:space="preserve">
+    <value>Process Action</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="RecoverTax" xml:space="preserve">
+    <value>+ GST on Recovered Bad Debts</value>
+  </data>
+  <data name="RevCharge" xml:space="preserve">
+    <value>+ Customer Accounted Tax</value>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>Revenue</value>
+  </data>
+  <data name="SpecialSchemes" xml:space="preserve">
+    <value>Special Schemes</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Supplies" xml:space="preserve">
+    <value>Supplies</value>
+  </data>
+  <data name="SupplyOfRemoteServicesAndLVG" xml:space="preserve">
+    <value>Supply of Remote Services and LVG</value>
+  </data>
+  <data name="TaxAgentFiling" xml:space="preserve">
+    <value>Tax Agent Filing</value>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Taxes</value>
+  </data>
+  <data name="TimeSubmitted" xml:space="preserve">
+    <value>Time Submitted</value>
+  </data>
+  <data name="ToPeriod" xml:space="preserve">
+    <value>To Period</value>
+  </data>
+  <data name="ToYear" xml:space="preserve">
+    <value>To Year</value>
+  </data>
+  <data name="ToYearPeriodLabel" xml:space="preserve">
+    <value>End Year/Period</value>
+  </data>
+</root>

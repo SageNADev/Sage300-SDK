@@ -878,11 +878,11 @@
     <comment>Message</comment>
   </data>
   <data name="NonItemFinderInactive" xml:space="preserve">
-    <value>You cannot select a non-existing item.</value>
+    <value>The finder is not active for a non-existing item.</value>
     <comment>Message</comment>
   </data>
   <data name="NonMaterialFinderInactive" xml:space="preserve">
-    <value>You cannot select a non-material cost class.</value>
+    <value>The finder is not active if the cost class is non-material.</value>
     <comment>Message</comment>
   </data>
   <data name="NonStockClearing" xml:space="preserve">
@@ -2029,5 +2029,39 @@
   <data name="SetLocation" xml:space="preserve">
     <value>Set Location</value>
     <comment>Label (button)</comment>
+  </data>
+  <data name="BillingType_Billable" xml:space="preserve">
+    <value>Billable</value>
+  </data>
+  <data name="BillingType_NoCharge" xml:space="preserve">
+    <value>No Charge</value>
+  </data>
+  <data name="BillingType_NonBillable" xml:space="preserve">
+    <value>Non-billable</value>
+  </data>
+  <data name="CostClass_Equipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="CostClass_Labor" xml:space="preserve">
+    <value>Labor</value>
+  </data>
+  <data name="CostClass_Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="CostClass_Miscellaneous" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="CostClass_Overhead" xml:space="preserve">
+    <value>Overhead</value>
+  </data>
+  <data name="CostClass_Subcontractor" xml:space="preserve">
+    <value>Subcontractor</value>
+  </data>
+  <data name="ExtendedBillingAmount" xml:space="preserve">
+    <value>Estimated Extended Billing</value>
+    <comment>Label</comment>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
   </data>
 </root>

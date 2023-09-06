@@ -1,4 +1,4 @@
-/* Copyright (c) 2021 Sage Software, Inc.  All rights reserved. */
+/* Copyright (c) 2022 The Sage Group plc or its licensors.  All rights reserved. */
 
 // Enable the following commented line to enable TypeScript static type checking
 // @ts-check
@@ -23,16 +23,16 @@ declarativeReportRepository = {
         const callback = declarativeReportOnSuccess.execute;
         sg.utls.ajaxPost(url, data, callback);
     },
-
-     /**
-     * @function
-     * @name getUnobservableData
-     * @description Gets observable data
-     * @namespace declarativeReportRepository
-     * @public
-     * 
-     * @param {object} model The model data
-     */
+   
+    /**
+    * @function
+    * @name getUnobservableData
+    * @description Gets observable data
+    * @namespace declarativeReportRepository
+    * @public
+    * 
+    * @param {object} model The model data
+    */
     getUnobservableData: function (model) {
         var data = {
             report: ko.mapping.toJS(model)

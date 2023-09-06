@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class NavigationResx {
@@ -2365,15 +2365,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GST F5/F8.
-        /// </summary>
-        public static string GSTF5 {
-            get {
-                return ResourceManager.GetString("GSTF5", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to GST IAF Generator.
         /// </summary>
         public static string GSTIAF {
@@ -3346,6 +3337,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Canadian Payroll.
+        /// </summary>
+        public static string Module_CanadianPayroll {
+            get {
+                return ResourceManager.GetString("Module_CanadianPayroll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to General Ledger.
         /// </summary>
         public static string Module_GeneralLedger {
@@ -3396,6 +3396,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string Module_PurchaseOrders {
             get {
                 return ResourceManager.GetString("Module_PurchaseOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to US Payroll.
+        /// </summary>
+        public static string Module_USPayroll {
+            get {
+                return ResourceManager.GetString("Module_USPayroll", resourceCulture);
             }
         }
         
@@ -3832,6 +3841,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adjustments.
+        /// </summary>
+        public static string PM_Adjustments {
+            get {
+                return ResourceManager.GetString("PM_Adjustments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Budget Maintenance.
+        /// </summary>
+        public static string PM_BudgetMaintenance {
+            get {
+                return ResourceManager.GetString("PM_BudgetMaintenance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Categories.
         /// </summary>
         public static string PM_Categories {
@@ -3846,6 +3873,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PM_Charges {
             get {
                 return ResourceManager.GetString("PM_Charges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract Maintenance.
+        /// </summary>
+        public static string PM_ContractMaintenance {
+            get {
+                return ResourceManager.GetString("PM_ContractMaintenance", resourceCulture);
             }
         }
         
@@ -4039,6 +4075,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Timecards.
+        /// </summary>
+        public static string PM_Timecards {
+            get {
+                return ResourceManager.GetString("PM_Timecards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction History.
+        /// </summary>
+        public static string PM_Transaction_History {
+            get {
+                return ResourceManager.GetString("PM_Transaction_History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transaction Listing.
         /// </summary>
         public static string PM_Transaction_Listing {
@@ -4062,6 +4116,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PM_Transaction_Reports {
             get {
                 return ResourceManager.GetString("PM_Transaction_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction History.
+        /// </summary>
+        public static string PM_TransactionHistory {
+            get {
+                return ResourceManager.GetString("PM_TransactionHistory", resourceCulture);
             }
         }
         
@@ -4534,6 +4597,402 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accruals.
+        /// </summary>
+        public static string PR_Accruals_Report {
+            get {
+                return ResourceManager.GetString("PR_Accruals_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Earn/Ded to Employees.
+        /// </summary>
+        public static string PR_Assign_EarnDed_To_Employees {
+            get {
+                return ResourceManager.GetString("PR_Assign_EarnDed_To_Employees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Employee Earn/Ded Audit.
+        /// </summary>
+        public static string PR_Assign_Employee_EarnDed_Audit_Report {
+            get {
+                return ResourceManager.GetString("PR_Assign_Employee_EarnDed_Audit_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Employee Tax Audit.
+        /// </summary>
+        public static string PR_Assign_Employee_Tax_Audit_Report {
+            get {
+                return ResourceManager.GetString("PR_Assign_Employee_Tax_Audit_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Selection Lists to Emp.
+        /// </summary>
+        public static string PR_Assign_Selection_Lists_To_Emp {
+            get {
+                return ResourceManager.GetString("PR_Assign_Selection_Lists_To_Emp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Tax to Employees.
+        /// </summary>
+        public static string PR_Assign_Tax_To_Employees {
+            get {
+                return ResourceManager.GetString("PR_Assign_Tax_To_Employees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculate Payroll.
+        /// </summary>
+        public static string PR_Calculate_Payroll {
+            get {
+                return ResourceManager.GetString("PR_Calculate_Payroll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Certified Payroll.
+        /// </summary>
+        public static string PR_Certified_Payroll_Report {
+            get {
+                return ResourceManager.GetString("PR_Certified_Payroll_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check Inquiry.
+        /// </summary>
+        public static string PR_Check_Inquiry {
+            get {
+                return ResourceManager.GetString("PR_Check_Inquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check List.
+        /// </summary>
+        public static string PR_Check_List {
+            get {
+                return ResourceManager.GetString("PR_Check_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cheque Inquiry.
+        /// </summary>
+        public static string PR_Cheque_Inquiry {
+            get {
+                return ResourceManager.GetString("PR_Cheque_Inquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cheque List.
+        /// </summary>
+        public static string PR_Cheque_List {
+            get {
+                return ResourceManager.GetString("PR_Cheque_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Class Codes.
+        /// </summary>
+        public static string PR_Class_Codes {
+            get {
+                return ResourceManager.GetString("PR_Class_Codes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Class Codes.
+        /// </summary>
+        public static string PR_Class_Codes_Report {
+            get {
+                return ResourceManager.GetString("PR_Class_Codes_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combine ETF Files.
+        /// </summary>
+        public static string PR_Combine_ETF_Files {
+            get {
+                return ResourceManager.GetString("PR_Combine_ETF_Files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Common Deduction Limits.
+        /// </summary>
+        public static string PR_Common_Deduction_Limits {
+            get {
+                return ResourceManager.GetString("PR_Common_Deduction_Limits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Common Deductions Limits.
+        /// </summary>
+        public static string PR_Common_Deduction_Limits_Report {
+            get {
+                return ResourceManager.GetString("PR_Common_Deduction_Limits_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy Timecard.
+        /// </summary>
+        public static string PR_Copy_Timecard {
+            get {
+                return ResourceManager.GetString("PR_Copy_Timecard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CRA Remittance Info.
+        /// </summary>
+        public static string PR_CRA_Remittance_Info_Report {
+            get {
+                return ResourceManager.GetString("PR_CRA_Remittance_Info_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create G/L Batch.
+        /// </summary>
+        public static string PR_Create_GL_Batch {
+            get {
+                return ResourceManager.GetString("PR_Create_GL_Batch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Inactive Records.
+        /// </summary>
+        public static string PR_Delete_Inactive_Records {
+            get {
+                return ResourceManager.GetString("PR_Delete_Inactive_Records", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Inactive Records Audit.
+        /// </summary>
+        public static string PR_Delete_Inactive_Records_Audit_Report {
+            get {
+                return ResourceManager.GetString("PR_Delete_Inactive_Records_Audit_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duplicate SSN.
+        /// </summary>
+        public static string PR_Duplicate_SSN_Report {
+            get {
+                return ResourceManager.GetString("PR_Duplicate_SSN_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earnings and Deductions.
+        /// </summary>
+        public static string PR_Earnings_And_Deductions_Report {
+            get {
+                return ResourceManager.GetString("PR_Earnings_And_Deductions_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earnings and Hours.
+        /// </summary>
+        public static string PR_Earnings_And_Hours_Report {
+            get {
+                return ResourceManager.GetString("PR_Earnings_And_Hours_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earnings and Deductions.
+        /// </summary>
+        public static string PR_Earnings_Deductions {
+            get {
+                return ResourceManager.GetString("PR_Earnings_Deductions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earnings/Deductions Summary.
+        /// </summary>
+        public static string PR_Earnings_Deductions_Summary_Report {
+            get {
+                return ResourceManager.GetString("PR_Earnings_Deductions_Summary_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earns/Deds Summary for T4A/R2.
+        /// </summary>
+        public static string PR_Earns_Deds_Summary_For_T4AR2_Report {
+            get {
+                return ResourceManager.GetString("PR_Earns_Deds_Summary_For_T4AR2_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT Combine.
+        /// </summary>
+        public static string PR_EFT_Combine {
+            get {
+                return ResourceManager.GetString("PR_EFT_Combine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT Combine History.
+        /// </summary>
+        public static string PR_EFT_Combine_History_Report {
+            get {
+                return ResourceManager.GetString("PR_EFT_Combine_History_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT Combine.
+        /// </summary>
+        public static string PR_EFT_Combine_Report {
+            get {
+                return ResourceManager.GetString("PR_EFT_Combine_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT Direct Deposit.
+        /// </summary>
+        public static string PR_EFT_Direct_Deposit_Report {
+            get {
+                return ResourceManager.GetString("PR_EFT_Direct_Deposit_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT Options.
+        /// </summary>
+        public static string PR_EFT_Options {
+            get {
+                return ResourceManager.GetString("PR_EFT_Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT Options.
+        /// </summary>
+        public static string PR_EFT_Options_Report {
+            get {
+                return ResourceManager.GetString("PR_EFT_Options_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT Transactions.
+        /// </summary>
+        public static string PR_EFT_Transactions_Report {
+            get {
+                return ResourceManager.GetString("PR_EFT_Transactions_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Activity.
+        /// </summary>
+        public static string PR_Employee_Activity {
+            get {
+                return ResourceManager.GetString("PR_Employee_Activity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Information.
+        /// </summary>
+        public static string PR_Employee_Information_Report {
+            get {
+                return ResourceManager.GetString("PR_Employee_Information_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Selection.
+        /// </summary>
+        public static string PR_Employee_Selection {
+            get {
+                return ResourceManager.GetString("PR_Employee_Selection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Selection.
+        /// </summary>
+        public static string PR_Employee_Selection_Report {
+            get {
+                return ResourceManager.GetString("PR_Employee_Selection_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Supplemental Info.
+        /// </summary>
+        public static string PR_Employee_Supplemental_Info {
+            get {
+                return ResourceManager.GetString("PR_Employee_Supplemental_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Supplemental Info.
+        /// </summary>
+        public static string PR_Employee_Supplemental_Info_Report {
+            get {
+                return ResourceManager.GetString("PR_Employee_Supplemental_Info_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Timecards.
+        /// </summary>
+        public static string PR_Employee_Timecards {
+            get {
+                return ResourceManager.GetString("PR_Employee_Timecards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Timecards.
+        /// </summary>
+        public static string PR_Employee_Timecards_Report {
+            get {
+                return ResourceManager.GetString("PR_Employee_Timecards_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employees.
+        /// </summary>
+        public static string PR_Employees {
+            get {
+                return ResourceManager.GetString("PR_Employees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Payroll Employee Timecards.
         /// </summary>
         public static string PR_EmployeeTimeCard {
@@ -4557,6 +5016,744 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PR_EmployeeTimeCard_US {
             get {
                 return ResourceManager.GetString("PR_EmployeeTimeCard_US", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Federal and State Taxes.
+        /// </summary>
+        public static string PR_Federal_And_State_Taxes {
+            get {
+                return ResourceManager.GetString("PR_Federal_And_State_Taxes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Federal Tax Filing.
+        /// </summary>
+        public static string PR_Federal_Tax_Filing_Report {
+            get {
+                return ResourceManager.GetString("PR_Federal_Tax_Filing_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find Duplicate SSN.
+        /// </summary>
+        public static string PR_Find_Duplicate_SSN {
+            get {
+                return ResourceManager.GetString("PR_Find_Duplicate_SSN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate ETF File.
+        /// </summary>
+        public static string PR_Generate_ETF_File {
+            get {
+                return ResourceManager.GetString("PR_Generate_ETF_File", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Integration.
+        /// </summary>
+        public static string PR_GL_Integration {
+            get {
+                return ResourceManager.GetString("PR_GL_Integration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to G/L Integration.
+        /// </summary>
+        public static string PR_GL_Integration_Report {
+            get {
+                return ResourceManager.GetString("PR_GL_Integration_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hours Analysis.
+        /// </summary>
+        public static string PR_Hours_Analysis_Report {
+            get {
+                return ResourceManager.GetString("PR_Hours_Analysis_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Income Taxes.
+        /// </summary>
+        public static string PR_Income_Taxes {
+            get {
+                return ResourceManager.GetString("PR_Income_Taxes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jobs.
+        /// </summary>
+        public static string PR_Jobs_Report {
+            get {
+                return ResourceManager.GetString("PR_Jobs_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local and Other Custom Taxes.
+        /// </summary>
+        public static string PR_Local_And_Other_Custom_Taxes {
+            get {
+                return ResourceManager.GetString("PR_Local_And_Other_Custom_Taxes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual Checks.
+        /// </summary>
+        public static string PR_Manual_Checks {
+            get {
+                return ResourceManager.GetString("PR_Manual_Checks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual Checks.
+        /// </summary>
+        public static string PR_Manual_Checks_Report {
+            get {
+                return ResourceManager.GetString("PR_Manual_Checks_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual Cheques.
+        /// </summary>
+        public static string PR_Manual_Cheques {
+            get {
+                return ResourceManager.GetString("PR_Manual_Cheques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual Cheques.
+        /// </summary>
+        public static string PR_Manual_Cheques_Report {
+            get {
+                return ResourceManager.GetString("PR_Manual_Cheques_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ministere du Revenu Info.
+        /// </summary>
+        public static string PR_Ministere_Du_Revenu_Info_Report {
+            get {
+                return ResourceManager.GetString("PR_Ministere_Du_Revenu_Info_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Fields.
+        /// </summary>
+        public static string PR_Optional_Fields {
+            get {
+                return ResourceManager.GetString("PR_Optional_Fields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Fields.
+        /// </summary>
+        public static string PR_Optional_Fields_Report {
+            get {
+                return ResourceManager.GetString("PR_Optional_Fields_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string PR_Options {
+            get {
+                return ResourceManager.GetString("PR_Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string PR_Options_Report {
+            get {
+                return ResourceManager.GetString("PR_Options_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overtime Schedules.
+        /// </summary>
+        public static string PR_Overtime_Schedules_Report {
+            get {
+                return ResourceManager.GetString("PR_Overtime_Schedules_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overtime Schedules.
+        /// </summary>
+        public static string PR_Overtimer_Schedules {
+            get {
+                return ResourceManager.GetString("PR_Overtimer_Schedules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Checks.
+        /// </summary>
+        public static string PR_Payroll_Checks {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Checks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Cheques.
+        /// </summary>
+        public static string PR_Payroll_Cheques {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Cheques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Employee Reports.
+        /// </summary>
+        public static string PR_Payroll_Employee_Reports {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Employee_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Employees.
+        /// </summary>
+        public static string PR_Payroll_Employees {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Employees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll G/L Transactions.
+        /// </summary>
+        public static string PR_Payroll_GL_Transactions_Report {
+            get {
+                return ResourceManager.GetString("PR_Payroll_GL_Transactions_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Government Reports.
+        /// </summary>
+        public static string PR_Payroll_Government_Reports {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Government_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Job Register.
+        /// </summary>
+        public static string PR_Payroll_Job_Register_Report {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Job_Register_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Periodic Processing.
+        /// </summary>
+        public static string PR_Payroll_Periodic_Processing {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Periodic_Processing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Periodic Processing Reports.
+        /// </summary>
+        public static string PR_Payroll_Periodic_Processing_Reports {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Periodic_Processing_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Processing Exceptions.
+        /// </summary>
+        public static string PR_Payroll_Processing_Exceptions_Report {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Processing_Exceptions_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Register.
+        /// </summary>
+        public static string PR_Payroll_Register_Report {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Register_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Setup.
+        /// </summary>
+        public static string PR_Payroll_Setup {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Setup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Setup Reports.
+        /// </summary>
+        public static string PR_Payroll_Setup_Reports {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Setup_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Timecards.
+        /// </summary>
+        public static string PR_Payroll_Timecards {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Timecards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Transaction Reports.
+        /// </summary>
+        public static string PR_Payroll_Transaction_Reports {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Transaction_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Transactions.
+        /// </summary>
+        public static string PR_Payroll_Transactions {
+            get {
+                return ResourceManager.GetString("PR_Payroll_Transactions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Post Manual (ATF) Checks.
+        /// </summary>
+        public static string PR_Post_Manual_Checks {
+            get {
+                return ResourceManager.GetString("PR_Post_Manual_Checks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Post Manual (ATF) Cheques.
+        /// </summary>
+        public static string PR_Post_Manual_Cheques {
+            get {
+                return ResourceManager.GetString("PR_Post_Manual_Cheques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pre-Check Payroll Job Register.
+        /// </summary>
+        public static string PR_Precheck_Payroll_Job_Register_Report {
+            get {
+                return ResourceManager.GetString("PR_Precheck_Payroll_Job_Register_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pre-Check Payroll Register.
+        /// </summary>
+        public static string PR_Precheck_Payroll_Register_Report {
+            get {
+                return ResourceManager.GetString("PR_Precheck_Payroll_Register_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pre-Cheque Payroll Job Reg.
+        /// </summary>
+        public static string PR_Precheque_Payroll_Job_Reg_Report {
+            get {
+                return ResourceManager.GetString("PR_Precheque_Payroll_Job_Reg_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pre-Cheque Payroll Register.
+        /// </summary>
+        public static string PR_Precheque_Payroll_Register_Report {
+            get {
+                return ResourceManager.GetString("PR_Precheque_Payroll_Register_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process Manual Checks.
+        /// </summary>
+        public static string PR_Process_Manual_Checks {
+            get {
+                return ResourceManager.GetString("PR_Process_Manual_Checks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process Manual Cheques.
+        /// </summary>
+        public static string PR_Process_Manual_Cheques {
+            get {
+                return ResourceManager.GetString("PR_Process_Manual_Cheques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qtr Wage on Disk(ette) Status.
+        /// </summary>
+        public static string PR_Qtr_Wage_On_Diskette_Status_Report {
+            get {
+                return ResourceManager.GetString("PR_Qtr_Wage_On_Diskette_Status_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qtrly Wage on Disk(ette).
+        /// </summary>
+        public static string PR_Qtrly_Wage_On_Diskette_Report {
+            get {
+                return ResourceManager.GetString("PR_Qtrly_Wage_On_Diskette_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quarterly Wage.
+        /// </summary>
+        public static string PR_Quarterly_Wage_Report {
+            get {
+                return ResourceManager.GetString("PR_Quarterly_Wage_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to R1s Electronic Filing.
+        /// </summary>
+        public static string PR_R1s_Electronic_Filing_Report {
+            get {
+                return ResourceManager.GetString("PR_R1s_Electronic_Filing_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Record of Employment.
+        /// </summary>
+        public static string PR_Record_Of_Employment_Report {
+            get {
+                return ResourceManager.GetString("PR_Record_Of_Employment_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Releve 1s.
+        /// </summary>
+        public static string PR_Releve_1s_Report {
+            get {
+                return ResourceManager.GetString("PR_Releve_1s_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shift Differential Schedules.
+        /// </summary>
+        public static string PR_Shift_Differential_Schedules {
+            get {
+                return ResourceManager.GetString("PR_Shift_Differential_Schedules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shift Differential Schedules.
+        /// </summary>
+        public static string PR_Shift_Differential_Schedules_Report {
+            get {
+                return ResourceManager.GetString("PR_Shift_Differential_Schedules_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State Tax Filing.
+        /// </summary>
+        public static string PR_State_Tax_Filing_Report {
+            get {
+                return ResourceManager.GetString("PR_State_Tax_Filing_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T4As Electronic Filing.
+        /// </summary>
+        public static string PR_T4As_Electronic_Filing_Report {
+            get {
+                return ResourceManager.GetString("PR_T4As_Electronic_Filing_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T4As.
+        /// </summary>
+        public static string PR_T4As_Report {
+            get {
+                return ResourceManager.GetString("PR_T4As_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T4s Electronic Filing.
+        /// </summary>
+        public static string PR_T4s_Electronic_Filing_Report {
+            get {
+                return ResourceManager.GetString("PR_T4s_Electronic_Filing_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T4s.
+        /// </summary>
+        public static string PR_T4s_Report {
+            get {
+                return ResourceManager.GetString("PR_T4s_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Calculation Analysis.
+        /// </summary>
+        public static string PR_Tax_Calculation_Analysis_Report {
+            get {
+                return ResourceManager.GetString("PR_Tax_Calculation_Analysis_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Profiles.
+        /// </summary>
+        public static string PR_Tax_Profiles_Report {
+            get {
+                return ResourceManager.GetString("PR_Tax_Profiles_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timecard List.
+        /// </summary>
+        public static string PR_Timecard_List {
+            get {
+                return ResourceManager.GetString("PR_Timecard_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timecards.
+        /// </summary>
+        public static string PR_Timecards {
+            get {
+                return ResourceManager.GetString("PR_Timecards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timecards.
+        /// </summary>
+        public static string PR_Timecards_Report {
+            get {
+                return ResourceManager.GetString("PR_Timecards_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction History.
+        /// </summary>
+        public static string PR_Transaction_History {
+            get {
+                return ResourceManager.GetString("PR_Transaction_History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction History Audit.
+        /// </summary>
+        public static string PR_Transaction_History_Audit_Report {
+            get {
+                return ResourceManager.GetString("PR_Transaction_History_Audit_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction History.
+        /// </summary>
+        public static string PR_Transaction_History_Report {
+            get {
+                return ResourceManager.GetString("PR_Transaction_History_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transfer Employee Timecards.
+        /// </summary>
+        public static string PR_Transafer_Employee_Timecards {
+            get {
+                return ResourceManager.GetString("PR_Transafer_Employee_Timecards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Earn/Ded for All Emp.
+        /// </summary>
+        public static string PR_Update_EarnDed_For_All_Emp {
+            get {
+                return ResourceManager.GetString("PR_Update_EarnDed_For_All_Emp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Employee Earn/Ded Audit.
+        /// </summary>
+        public static string PR_Update_Employee_EarnDed_Audit_Report {
+            get {
+                return ResourceManager.GetString("PR_Update_Employee_EarnDed_Audit_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Employee Taxes Audit.
+        /// </summary>
+        public static string PR_Update_Employee_Taxes_Audit_Report {
+            get {
+                return ResourceManager.GetString("PR_Update_Employee_Taxes_Audit_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Local Taxes Audit.
+        /// </summary>
+        public static string PR_Update_Local_Taxes_Audit_Report {
+            get {
+                return ResourceManager.GetString("PR_Update_Local_Taxes_Audit_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Tax for All Employees.
+        /// </summary>
+        public static string PR_Update_Tax_For_All_Employees {
+            get {
+                return ResourceManager.GetString("PR_Update_Tax_For_All_Employees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update TD1 Claim.
+        /// </summary>
+        public static string PR_Update_TD1_Claim {
+            get {
+                return ResourceManager.GetString("PR_Update_TD1_Claim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update TD1 Claim Audit.
+        /// </summary>
+        public static string PR_Update_TD1_Claim_Audit_Report {
+            get {
+                return ResourceManager.GetString("PR_Update_TD1_Claim_Audit_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Security Setup.
+        /// </summary>
+        public static string PR_User_Security_Setup {
+            get {
+                return ResourceManager.GetString("PR_User_Security_Setup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Security Setup.
+        /// </summary>
+        public static string PR_User_Security_Setup_Report {
+            get {
+                return ResourceManager.GetString("PR_User_Security_Setup_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to W-2 Tax Filing.
+        /// </summary>
+        public static string PR_W2_Tax_Filing_Report {
+            get {
+                return ResourceManager.GetString("PR_W2_Tax_Filing_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work Classification Codes.
+        /// </summary>
+        public static string PR_Work_Classification_Codes {
+            get {
+                return ResourceManager.GetString("PR_Work_Classification_Codes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work Classification Codes.
+        /// </summary>
+        public static string PR_Work_Classification_Codes_Report {
+            get {
+                return ResourceManager.GetString("PR_Work_Classification_Codes_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Workers Compensation Codes.
+        /// </summary>
+        public static string PR_Workers_Compensation_Codes {
+            get {
+                return ResourceManager.GetString("PR_Workers_Compensation_Codes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Workers Compensation Codes.
+        /// </summary>
+        public static string PR_Workers_Compensation_Codes_Report {
+            get {
+                return ResourceManager.GetString("PR_Workers_Compensation_Codes_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Workers Compensation.
+        /// </summary>
+        public static string PR_Workers_Compensation_Report {
+            get {
+                return ResourceManager.GetString("PR_Workers_Compensation_Report", resourceCulture);
             }
         }
         
@@ -4674,24 +5871,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string SIR_Msg2 {
             get {
                 return ResourceManager.GetString("SIR_Msg2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sage Intelligence Reporting Cloud.
-        /// </summary>
-        public static string SIR_Msg3 {
-            get {
-                return ResourceManager.GetString("SIR_Msg3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Gain better visibility into your business with dynamic financial reports that you can export and customize in Microsoft Excel® or Excel Online..
-        /// </summary>
-        public static string SIR_Msg4 {
-            get {
-                return ResourceManager.GetString("SIR_Msg4", resourceCulture);
             }
         }
         
@@ -4971,15 +6150,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string ToolsTitle {
             get {
                 return ResourceManager.GetString("ToolsTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T/S GST F5/F8.
-        /// </summary>
-        public static string TS_GSTF5 {
-            get {
-                return ResourceManager.GetString("TS_GSTF5", resourceCulture);
             }
         }
         

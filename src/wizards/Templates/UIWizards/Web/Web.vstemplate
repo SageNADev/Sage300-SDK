@@ -52,8 +52,7 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="_HomePageHelp.cshtml">_HomePageHelp.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_Localization.cshtml">_Localization.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_MenuHelp.cshtml">_MenuHelp.cshtml</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="_MenuUrl.cshtml">_MenuUrl.cshtml</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="_PluginMenuUrl.cshtml">_PluginMenuUrl.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_PortalMenu.cshtml">_PortalMenu.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_QuickMenu.cshtml">_QuickMenu.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_Widget.cshtml">_Widget.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_WidgetUrl.cshtml">_WidgetUrl.cshtml</ProjectItem>
@@ -73,8 +72,8 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.min.map">jquery-3.6.0.min.map</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.js">jquery-migrate-3.3.2.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.min.js">jquery-migrate-3.3.2.min.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.1.js">jquery-ui-1.13.1.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.1.min.js">jquery-ui-1.13.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.2.js">jquery-ui-1.13.2.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.2.min.js">jquery-ui-1.13.2.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie-1.4.1.min.js">jquery.cookie-1.4.1.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.cookie.js">jquery.cookie.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.js">jquery.form.js</ProjectItem>
@@ -439,7 +438,11 @@
           </Folder>
           <Folder Name="nav" TargetFolderName="nav">
             <ProjectItem ReplaceParameters="false" TargetFileName="drilldown.png">drilldown.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_default.png">icon_default.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_default_hover.png">icon_default_hover.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_home.png">icon_home.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="icon_home.svg">icon_home.svg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_home_hover.png">icon_home_hover.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="logo_sda.png">logo_sda.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="menuIcon.svg">menuIcon.svg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sprite_global_menu@2x.png">sprite_global_menu@2x.png</ProjectItem>
@@ -449,89 +452,113 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ap.jpg">bg_menu_ap.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_ap.png">icon_ap.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_ap.svg">icon_ap.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_ap_hover.png">icon_ap_hover.png</ProjectItem>
             </Folder>
             <Folder Name="AR" TargetFolderName="AR">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ar.jpg">bg_menu_ar.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_ar.png">icon_ar.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_ar.svg">icon_ar.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_ar_hover.png">icon_ar_hover.png</ProjectItem>
             </Folder>
             <Folder Name="AS" TargetFolderName="AS">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_as.jpg">bg_menu_as.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_as.png">icon_as.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_as.svg">icon_as.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_as_hover.png">icon_as_hover.png</ProjectItem>
             </Folder>
             <Folder Name="BK" TargetFolderName="BK">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_bk.jpg">bg_menu_bk.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_bk.png">icon_bk.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_bk.svg">icon_bk.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_bk_hover.png">icon_bk_hover.png</ProjectItem>
             </Folder>
             <Folder Name="CS" TargetFolderName="CS">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_cs.jpg">bg_menu_cs.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_cs.png">icon_cs.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_cs.svg">icon_cs.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_cs_hover.png">icon_cs_hover.png</ProjectItem>
             </Folder>
             <Folder Name="GL" TargetFolderName="GL">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_gl.jpg">bg_menu_gl.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_gl.png">icon_gl.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_gl.svg">icon_gl.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_gl_hover.png">icon_gl_hover.png</ProjectItem>
             </Folder>
             <Folder Name="IC" TargetFolderName="IC">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ic.jpg">bg_menu_ic.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_ic.png">icon_ic.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_ic.svg">icon_ic.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_ic_hover.png">icon_ic_hover.png</ProjectItem>
             </Folder>
             <Folder Name="MT" TargetFolderName="MT">
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_mt.png">icon_mt.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_mt.svg">icon_mt.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_mt_hover.png">icon_mt_hover.png</ProjectItem>
             </Folder>
             <Folder Name="OE" TargetFolderName="OE">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_oe.jpg">bg_menu_oe.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_oe.png">icon_oe.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_oe.svg">icon_oe.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_oe_hover.png">icon_oe_hover.png</ProjectItem>
             </Folder>
             <Folder Name="PM" TargetFolderName="PM">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_pm.jpg">bg_menu_pm.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_pm.png">icon_pm.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_pm.svg">icon_pm.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_pm_hover.png">icon_pm_hover.png</ProjectItem>
             </Folder>
             <Folder Name="PO" TargetFolderName="PO">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_po.jpg">bg_menu_po.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_po.png">icon_po.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_po.svg">icon_po.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_po_hover.png">icon_po_hover.png</ProjectItem>
             </Folder>
             <Folder Name="PR" TargetFolderName="PR">
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_pr_ca.png">icon_pr_ca.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_pr_ca.svg">icon_pr_ca.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_pr_ca_hover.png">icon_pr_ca_hover.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_pr_us.png">icon_pr_us.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_pr_us.svg">icon_pr_us.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_pr_us_hover.png">icon_pr_us_hover.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_timecard.png">icon_timecard.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_timecard.svg">icon_timecard.svg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_timecard_canada.png">icon_timecard_canada.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_timecard_canada.svg">icon_timecard_canada.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_timecard_canada_hover.png">icon_timecard_canada_hover.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_timecard_hover.png">icon_timecard_hover.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_timecard_us.png">icon_timecard_us.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_timecard_us.svg">icon_timecard_us.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_timecard_us_hover.png">icon_timecard_us_hover.png</ProjectItem>
             </Folder>
             <Folder Name="SIRC" TargetFolderName="SIRC">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_sirc.jpg">bg_menu_sirc.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_sirc.png">icon_sirc.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_sirc.svg">icon_sirc.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_sirc_hover.png">icon_sirc_hover.png</ProjectItem>
             </Folder>
             <Folder Name="TM" TargetFolderName="TM">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_tm.jpg">bg_menu_tm.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tm.png">icon_tm.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tm.svg">icon_tm.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_tm_hover.png">icon_tm_hover.png</ProjectItem>
             </Folder>
             <Folder Name="TS" TargetFolderName="TS">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ts.jpg">bg_menu_ts.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_ts.png">icon_ts.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_ts.svg">icon_ts.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_ts_hover.png">icon_ts_hover.png</ProjectItem>
             </Folder>
             <Folder Name="TW" TargetFolderName="TW">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ta.jpg">bg_menu_ta.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tw.png">icon_tw.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tw.svg">icon_tw.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_tw_hover.png">icon_tw_hover.png</ProjectItem>
             </Folder>
             <Folder Name="TX" TargetFolderName="TX">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_tx.jpg">bg_menu_tx.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tx.png">icon_tx.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tx.svg">icon_tx.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_tx_hover.png">icon_tx_hover.png</ProjectItem>
             </Folder>
           </Folder>
         </Folder>
@@ -694,6 +721,12 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.svg">sagearmonyeicons.svg</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.ttf">sagearmonyeicons.ttf</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="sagearmonyeicons.woff">sagearmonyeicons.woff</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Sage_Headline-Black.woff">Sage_Headline-Black.woff</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Sage_Headline-Black.woff2">Sage_Headline-Black.woff2</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Sage_Text-Regular.woff">Sage_Text-Regular.woff</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Sage_Text-Regular.woff2">Sage_Text-Regular.woff2</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Sage_UI-Regular.woff">Sage_UI-Regular.woff</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Sage_UI-Regular.woff2">Sage_UI-Regular.woff2</ProjectItem>
         </Folder>
         <Folder Name="images" TargetFolderName="images">
           <Folder Name="default" TargetFolderName="default">
@@ -709,6 +742,7 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="close.png">close.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="color_picker_bg.png">color_picker_bg.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="editor.png">editor.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon_homemenu_sprite.png">icon_homemenu_sprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="portalSprite.png">portalSprite.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="quick-menu-icon_rev.png">quick-menu-icon_rev.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo.png">sage_300_logo.png</ProjectItem>
@@ -727,10 +761,14 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="browser_safari.png">browser_safari.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="desktop-solid-white.svg">desktop-solid-white.svg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="desktop-solid.svg">desktop-solid.svg</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-hide.png">icon-hide.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="icon-view.png">icon-view.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg.jpg">login-bg.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="login-bg_admin.jpg">login-bg_admin.jpg</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="logo-printboss.png">logo-printboss.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage300-logo-brilliant-green.png">sage300-logo-brilliant-green.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sage300-logo-sq.png">sage300-logo-sq.png</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_300.png">sage_300_logo_300.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="sage_300_logo_gray.png">sage_300_logo_gray.png</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="ui-logo-sage-dark@2x.png">ui-logo-sage-dark@2x.png</ProjectItem>
           </Folder>
@@ -1652,6 +1690,7 @@
                 <ProjectItem ReplaceParameters="true" TargetFileName="qunit.js">qunit.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="qunitLibrary.js">qunitLibrary.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="recordandplay.js">recordandplay.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="unitTestUtils.js">unitTestUtils.js</ProjectItem>
               </Folder>
             </Folder>
             <Folder Name="AdhocInquiry" TargetFolderName="AdhocInquiry">
@@ -1677,6 +1716,7 @@
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICOptionalFieldsDropdown.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICSegmentCodeDropdown.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ICSegmentCodeDropdown.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ResetDropdownListDataSource.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.ResetDropdownListDataSource.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetEFTActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetEFTActive.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrency.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrency.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrencyDecimals.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetFunctionalCurrencyDecimals.js</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActive.js">Sage.CA.SBS.ERP.Sage300.Common.DeclarativeReport.SetGLActive.js</ProjectItem>

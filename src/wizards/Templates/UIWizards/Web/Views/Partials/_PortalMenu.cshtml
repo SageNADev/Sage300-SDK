@@ -1,0 +1,381 @@
+﻿@* Copyright (c) 2023 The Sage Group plc or its licensors.  All rights reserved. *@
+
+@using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
+@using Sage.CA.SBS.ERP.Sage300.Web.Models
+@using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+@using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal
+@using System.Collections;
+
+@model List<NavigableMenuViewModel<NavigableMenu>>
+
+@Scripts.Render()
+
+@functions {
+    public static string GetMenuClassName(string menuId)
+    {
+        switch (menuId)
+        {
+            default: return string.Empty;
+        }
+    }
+
+    /// <summary>
+    /// Set the MenuItemOrder for the Intelligence menu so that it is the highest value in the list
+    /// This way, Intelligence will physically appear at the bottom of the menu after all core and 3rd party items.
+    /// </summary>
+    /// <param name="list">The menu item list</param>
+    public static void RepositionIntelligenceToBottomOfMenu(IOrderedEnumerable<NavigableMenuViewModel<NavigableMenu>> list)
+    {
+        // Find the highest MenuItemOrder in the list
+        var highestMenuItemOrder = list.Max(m => m.Data.MenuItemOrder);
+        var intelligenceMenuItemOrder = highestMenuItemOrder += 1000;
+
+        foreach (var item in list)
+        {
+            // Found the Intelligence menu
+            if (IsIntelligenceMenuItem(item.Data))
+            {
+                item.Data.MenuItemOrder = intelligenceMenuItemOrder;
+                break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Build the icon path based on the passed in icon name
+    /// Path will differ if core module icon or 3rd party module icon
+    /// </summary>
+    /// <param name="iconName">The icon name string</param>
+    /// <returns>The path to the icon</returns>
+    public static string BuildIconPath(string iconName)
+    {
+        var relativePath = string.Empty;
+        var iconPath = string.Empty;
+
+        if (IsCoreItem(iconName))
+        {
+            //
+            // Core Modules
+            //
+            relativePath = "../../../Content/Images/nav/";
+            iconPath = Path.Combine(relativePath, iconName);
+        }
+        else
+        {
+            //
+            // 3rd Party Modules
+            //
+            // Likely have an iconName that contains it's full path already.
+            // Example: "../../../../Areas/TU/ExternalContent/icon_tu.png"
+            //
+            relativePath = "../../../External/Content/Images/nav/";
+            iconPath = Path.Combine(relativePath, iconName);
+            if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(iconPath)))
+            {
+                iconPath = Path.Combine(relativePath, "icon_default.png");
+            }
+        }
+
+        return iconPath;
+    }
+
+    /// <summary>
+    /// Build the icon path based on the passed in icon name
+    /// Path will differ if core module icon or 3rd party module icon
+    /// </summary>
+    /// <param name="iconNameHover">The hover icon name string</param>
+    /// <returns>The path to the icon</returns>
+    public static string BuildIconHoverPath(string iconNameHover)
+    {
+        var relativePath = string.Empty;
+        var iconHoverPath = string.Empty;
+
+        if (IsCoreItem(iconNameHover))
+        {
+            //
+            // Core Modules
+            //
+            relativePath = "../../../Content/Images/nav/";
+            iconHoverPath = Path.Combine(relativePath, iconNameHover);
+        }
+        else
+        {
+            //
+            // 3rd Party Modules
+            //
+            // Likely have an iconNameHover that contains it's full path already.
+            // Example: "../../../../Areas/TU/ExternalContent/icon_tu.png"
+            //
+            relativePath = "../../../External/Content/Images/nav/";
+            iconHoverPath = Path.Combine(relativePath, iconNameHover);
+            if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(iconHoverPath)))
+            {
+                iconHoverPath = Path.Combine(relativePath, "icon_default_hover.png");
+            }
+        }
+
+        return iconHoverPath;
+    }
+
+    /// <summary>
+    /// Is this icon associated with a core or 3rd-party module?
+    /// Note:
+    ///     Core items :
+    ///         "AR/icon_ar.png"
+    ///
+    ///     3rd party items :
+    ///         "../../../../Areas/TU/ExternalContent/icon_tu.png"
+    /// </summary>
+    /// <param name="iconName">The icon name string</param>
+    /// <returns>true = Core Item | false = 3rd party item</returns>
+    public static bool IsCoreItem(string iconName)
+    {
+        var isCoreItem = true;
+        if (iconName.StartsWith(@"../../../../Areas"))
+        {
+            isCoreItem = false;
+        }
+        return isCoreItem;
+    }
+
+    /// <summary>
+    /// Is this a Intelligence menu item?
+    /// </summary>
+    /// <param name="item">The NavigableMenu item</param>
+    /// <returns>true = Intelligence menu item | false = Non-Intelligence menu item</returns>
+    public static bool IsIntelligenceMenuItem(NavigableMenu item)
+    {
+        return (item.Isintelligence.HasValue && item.Isintelligence.Value);
+    }
+}
+@{
+    // Home page key constant
+    const string HOMEPAGEKEY = "101";
+
+    // Screen url is not available
+    const string notAvailable = "N/A";
+
+    // Get Domain URL according to the environment and user
+    var domainUrl = (Request.ApplicationPath != "/" ? Request.ApplicationPath : string.Empty) + Utilities.GetUrlPrefix(ViewBag.SessionId);
+
+    // Prepare menu items collections
+    var level2Items = Model.Where(m => m.Data.MenuItemLevel == 2).ToList();
+    var level3Items = Model.Where(m => m.Data.MenuItemLevel == 3).ToList();
+    var level4Items = Model.Where(m => m.Data.MenuItemLevel == 4).ToList();
+    var level5Items = Model.Where(m => m.Data.MenuItemLevel == 5).ToList();
+    var level6Items = Model.Where(m => m.Data.MenuItemLevel == 6).ToList();
+
+    // Highest level items
+    // Sort by MenuItemOrder and then by MenuName
+    var rootLevel2Items = level2Items.Where(m => m.Data.ParentMenuId == HOMEPAGEKEY).
+                                      OrderBy(m => m.Data.MenuItemOrder).ThenBy(m => m.Data.MenuName);
+
+    // Reposition where BI (if available and enabled) appears in the menu
+    RepositionIntelligenceToBottomOfMenu(rootLevel2Items);
+
+    var itemIndex = 0;
+    var firstItem = true;
+}
+
+@*Rendering Menu*@
+
+@foreach (var level2Item in rootLevel2Items)
+{
+    if (IsIntelligenceMenuItem(level2Item.Data))
+    {
+        @RenderIntelligenceMenu();
+    }
+    else
+    {
+        firstItem = true;
+        itemIndex++;
+        @*2nd Level Menu: Start*@
+
+        var level2Data = level2Item.Data;
+        var menuId = level2Data.MenuId;
+        var menuName = level2Data.MenuName;
+        var iconName = level2Data.IconName;
+        var iconNameHover = level2Data.IconNameHover;
+        var iconPath = BuildIconPath(iconName);
+        var iconHoverPath = BuildIconHoverPath(iconNameHover);
+        var isCoreItem = IsCoreItem(iconName);
+
+        // There is no longer a differentiation between Core and 3rd party menu items.
+        // We will always use 'menu-core' here. If we enable the following line,
+        // there is code in TaskDock-Menu-BreakCrumb.js that will automatically
+        // inject 'menu-group' into the li's class if it also contains menu-sdk.
+        //var listItemClass = isCoreItem ? "menu-core" : "menu-sdk";
+        var listItemClass = "menu-core";
+
+        <li class="menu-item top-tier @listItemClass" title="@menuName">
+            <div class="nav-icon">
+                <img src=@iconPath width="20" height="20" alt="@menuName">
+                <img src=@iconHoverPath width="20" height="20" alt="@menuName">
+            </div>
+            <a tabindex="0" data-menuid='@menuId'>@menuName</a>
+            <ul class="std-menu">
+                <li class="sub-heading">@menuName</li>
+                @foreach (var level3Item in level3Items.Where(m => m.Data.ParentMenuId == menuId).OrderBy(m => m.Data.MenuItemOrder))
+                {
+                    Stack menuStack = new Stack();
+                    menuStack.Push(level6Items);
+                    menuStack.Push(level5Items);
+                    menuStack.Push(level4Items);
+
+                    @CreateMenuGroup(level3Item, menuStack, notAvailable, domainUrl, firstItem);
+                    firstItem = false;
+                }
+            </ul>
+        </li>
+        @*2nd Level Menu: End*@
+    }
+}
+
+<script type="text/javascript">
+    // Bucket to hold all menu item data (Used when building/displaying the breadcrumbs)
+    @Html.ConvertToJsVariableUsingNewtonSoft("MenuList", Model.OrderBy(m => m.Data.MenuItemOrder).ThenBy(m => m.Data.MenuName));
+</script>
+
+<script>
+    var mainToolTip = null;
+</script>
+
+<script id="tooltipTemplate" type="text/x-kendo-template">
+    <div class="template-wrapper">
+        <p>#=$(target).siblings("a")[0].innerText#</p>
+    </div>
+</script>
+
+@helper RenderIntelligenceMenu()
+{
+    <li class="menu-item top-tier menu-ir" id="SIR">
+        <div class="nav-icon">
+            <img src="../../../Content/Images/nav/SIRC/icon_sirc.png" width="20" height="20" alt="@NavigationResx.SIR_Msg1">
+            <img src="../../../Content/Images/nav/SIRC/icon_sirc_hover.png" width="20" height="20" alt="@NavigationResx.SIR_Msg1">
+        </div>
+        <a tabindex="0">@NavigationResx.SIR_Msg1</a>
+        <ul class="std-menu">
+            <li class="feature-menu-header">
+                <span>@NavigationResx.SIR_Msg2</span>
+            </li>
+            <li class="feature-menu-content">
+                <h2>@NavigationResx.SIR_SDAMsg1</h2>
+                <p>@NavigationResx.SIR_SDAMsg2</p>
+                <p><input class="btn btn-accent" id="btnSDA" name="btnSDA" type="button" value="@NavigationResx.SIR_Btn"></p>
+            </li>
+        </ul>
+    </li>
+}
+
+@helper CreateMenuGroup(NavigableMenuViewModel<NavigableMenu> parentItem, Stack menuStack, string notAvailable, string domainUrl, bool firstItem)
+{
+    var item = parentItem.Data;
+    var parentItemId = item.MenuId;
+
+    // Note: Just an FYI, if a menu item li contains the class 'menu-sdk',
+    // code in TaskDock-Menu-Breadcrumb.js will automatically add the 'menu-group'
+    // class to the item regardless of the following code.
+    var parentItemClass = item.IsGroupEnd == true ? "menu-group" : "";
+
+    var hasSubGroup = item.HasSubGroup.HasValue && item.HasSubGroup.Value;
+    var nodeClass = firstItem ? "active" : (hasSubGroup ? "with-menu" : "");
+    var childItems = (List<NavigableMenuViewModel<NavigableMenu>>)(menuStack.Count > 0 ? menuStack.Peek() : null);
+
+    if (childItems == null)
+    {
+        return;
+    }
+    <li class="@parentItemClass">
+        <a tabindex="0" data-menuid='@item.MenuId' class="@nodeClass">
+            @item.MenuName
+            @if (item.IsReport == true)
+            {
+                <span class="icon-report"></span>
+            }
+        </a>
+        @if (item.UseColGrouping)
+        {
+            var colGroupingList = childItems.Where(m => m.Data.ParentMenuId == parentItemId).GroupBy(m => m.Data.ColGrouping).Select(g => g.First().Data.ColGrouping);
+            @:<div class="sub-menu-wrap" <!--style="background-image: none"-->>
+                foreach (var currentColGrouping in colGroupingList)
+                {
+                    <div class="menu-section">
+                        <ul>
+                            @foreach (var childItem in childItems.Where(m => m.Data.ParentMenuId == parentItemId && m.Data.ColGrouping == currentColGrouping).OrderBy(m => m.Data.MenuItemOrder))
+                            {
+                                @CreateMenuItem(childItem, menuStack, notAvailable, domainUrl);
+                            }
+                        </ul>
+                    </div>
+                }
+            @:</div>
+        }
+        else
+        {
+            <div class="sub-menu-wrap">
+                <div class="menu-section">
+                    <ul>
+                        @foreach (var childItem in childItems.Where(m => m.Data.ParentMenuId == parentItemId).OrderBy(m => m.Data.MenuItemOrder))
+                        {
+                            @CreateMenuItem(childItem, menuStack, notAvailable, domainUrl)
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    </li>
+}
+
+@helper CreateMenuItem(NavigableMenuViewModel<NavigableMenu> menuItem, Stack menuStack, string notAvailable, string domainUrl)
+{
+    var item = menuItem.Data;
+
+    if (item.HasSubGroup.HasValue && item.HasSubGroup.Value)
+    {
+        var subMenuStack = (Stack)menuStack.Clone();
+        subMenuStack.Pop();
+        @CreateMenuGroup(menuItem, subMenuStack, notAvailable, domainUrl, false);
+    }
+    else
+    {
+        if (item.IsGroupHeader == true)
+        {
+
+            <li class="sub-heading"
+                data-menuid='@item.MenuId'
+                data-modulename='@item.ModuleName'>
+                @item.MenuName
+            </li>
+        }
+
+        if (item.Isintelligence == true)
+        {
+            <li class="k-item">
+                <a tabindex="0" data-url='@item.ScreenUrl'
+                   data-menuid='@item.MenuId' data-isintelligence='@item.Isintelligence'
+                   data-modulename='@item.ModuleName'>@item.MenuName</a>
+            </li>
+        }
+
+        if (item.IsGroupHeader == false && item.Isintelligence == false)
+        {
+            if (item.ScreenUrl == notAvailable)
+            {
+                <li class="k-item">
+                    <a tabindex="0" data-url=''
+                       data-menuid='@item.MenuId' data-parentid='@item.ParentMenuId'
+                       data-modulename='@item.ModuleName' data-isreport="@item.IsReport">@item.MenuName</a>
+                </li>
+            }
+            else
+            {
+                <li class="k-item">
+                    <a tabindex="0" data-url='@domainUrl@item.ScreenUrl'
+                       data-menuid='@item.MenuId' data-parentid='@item.ParentMenuId'
+                       data-modulename='@item.ModuleName' data-isreport="@item.IsReport">@item.MenuName</a>
+                </li>
+            }
+        }
+    }
+}

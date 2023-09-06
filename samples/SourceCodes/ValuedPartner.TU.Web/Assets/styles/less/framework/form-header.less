@@ -49,6 +49,11 @@
       }
     }
   } 
+
+  input[class*=btn-] {
+    border-radius: 15px;
+    border: 0;
+  }
 }
 
 .header-options input[class*="btn-"]:not(:first-child) {
@@ -75,12 +80,11 @@
     border: none;
 
     .btn-screen-options.k-item {
-      color: @sage-dark-gray;
-      font-size: 13px;
       padding: 0;
       position: relative;
       border: 0;
       text-align: left;
+      border-radius: 15px;
 
       &.k-state-focused {
         outline: #ffb500 solid 3px;
@@ -88,9 +92,11 @@
       }
 
       >.k-link {
-        color: @sage-dark-gray;
+        color: @white;
         font-size: 13px;
-        padding: 6px 26px 7px 10px;
+        padding: 6px 40px 6px 20px;
+        border-radius: 15px;
+        background-color: @brand-primary;
 
         >.k-i-arrow-s,
         >.k-i-arrow-60-down {
@@ -101,25 +107,19 @@
       >.k-link:before,
       >.k-link.k-state-down:before {
         content: "";
-        width: 24px;
+        width: 30px;
         height: 24px;
         position: absolute;
-        right: 0;
+        right: 10px;
         top: 0;
-        background: url('@{image-path}/ui/sprite_icons.png') -843px 2px no-repeat;
-        background-size: 1100px 110px;
+        background: url('@{image-path}/ui/sprite_icons.png') -549px -31px no-repeat;
+        background-size: 900px 90px;
       }
 
       &.k-state-hover>.k-link {
-        background-color: @brand-primary;
+        background-color: darken(@brand-primary, 5%);
         color: @white;
-
-        &:before {
-          background: url('@{image-path}/ui/sprite_icons.png') -843px -41px no-repeat;
-          background-size: 1100px 110px;
-        }
       }
-
     }
   }
 
@@ -235,7 +235,6 @@
   label.required:before,
   .req-option:before {
     content: "*";
-    font-family: Calibri,Arial;
     color: @brand-primary;
     margin-right: 3px;
     font-weight: bold;
@@ -267,6 +266,7 @@
     background-color: #fff;
     border: 0;
     margin:0 auto auto 0; 
+    border-radius: 15px;
 
     &:hover { 
       background-color: @btn-link-hover-color;
@@ -281,7 +281,7 @@
     }
 
     &.active { 
-      background-color: @sage-green;
+      background-color: @sage-link;
 
       	&.btn-view-expand {
 	      background-position: -848px -31px;

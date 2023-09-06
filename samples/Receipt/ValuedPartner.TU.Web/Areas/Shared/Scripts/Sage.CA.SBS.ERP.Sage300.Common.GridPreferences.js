@@ -208,7 +208,7 @@ GridPreferences = {
             if (gridColumns && gridColumns.constructor.name === 'Object')
                 gridColumns = Object.values(gridColumns);
             const configColumn = gridColumns ? gridColumns.find(x => x.field === grid.columns[i].field) : undefined;
-            if (!grid.columns[i].title || (configColumn && configColumn.isInternal)) {
+            if (!grid.columns[i].title || (configColumn && (configColumn.isInternal || configColumn.hidden))) {
                 continue;
             }
 
@@ -265,6 +265,11 @@ GridPreferences = {
                 let col = gridColumns.filter(cl => cl.field === c.field)[0];
                 grid.reorderColumn(i, col);
             })
+            for (var k = 0; k < gridColumns.length; k++) {
+                if (gridColumns[k].hidden) {
+                    grid.showColumn(grid.columns[k].field);
+                }
+            }
         } else {
             for (var k = 0; k < gridColumns.length; k++) {
                 for (var j = 0; j < grid.columns.length; j++) {

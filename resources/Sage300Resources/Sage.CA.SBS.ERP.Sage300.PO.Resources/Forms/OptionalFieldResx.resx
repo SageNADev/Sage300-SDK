@@ -288,4 +288,7 @@
   <data name="Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="ProjectAndJobCosting" xml:space="preserve">
+    <value>Project and Job Costing</value>
+  </data>
 </root>

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -205,12 +205,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Menu Item for Finder </summary>
         private readonly MenuItem _finderMenuItem = new MenuItem() { Text = Resources.FinderTab, Tag = Constants.WidgetFinder };
 
-
         /// <summary> Map from unique finder name finder detail info </summary>
         private IDictionary<string, dynamic> _finderLookup = new SortedDictionary<string, dynamic>();
 
         /// <summary> Loading Finder dropdown </summary>
         private bool _loadingFinderInProgress = false;
+
+        /// <summary> Abort grid drop </summary>
+        private bool _abortGridDrop = false;
 
         #endregion
 
@@ -646,6 +648,43 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 DisplayMessage(Resources.FinderUrlFound, MessageBoxIcon.Warning);
             }
 
+            // UI elements must be specified
+            if (((DataGridView)splitDesigner.Panel1.Controls[Constants.PrefixPalette + "1"]).Controls.Count <= 2)
+            {
+                return Resources.InvalidNoUI;
+            }
+
+            // If a header-detail type then must contain a grid in the UI
+            if (GetRepositoryType() == RepositoryType.HeaderDetail)
+            {
+                // A grid must exist
+                if (_controlsList.Values.Where(x => x.Control != null && 
+                                               x.Control.GetType() == typeof(FlowLayoutPanel)).Count() == 0)
+                {
+                    return Resources.InvalidNoGrid;
+                }
+            }
+
+            // If a grid is specified, it must contain at least 1 property
+            var grids = _controlsList.Values.Where(x => x.Control != null && 
+                                                   x.Control.GetType() == typeof(FlowLayoutPanel));
+            foreach (var grid in grids)
+            {
+                if (grid.Control.Controls.Count == 0)
+                {
+                    return string.Format(Resources.InvalidNoGridProperties, grid.Control.Name);
+                }
+            }
+
+            // Get distinct business views with grids
+            var views = grids.Select(x => x.ParentNodeName).Distinct().ToList();
+
+            // Update entity's HasGrid flag
+            foreach (var entity in _entities)
+            {
+                entity.Options[BusinessView.Constants.HasGrid] = views.Contains(entity.Text);
+            }
+
             return string.Empty;
         }
 
@@ -876,7 +915,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             chkGenerateIfExist.Text = Resources.GenerateIfExist;
             tooltip.SetToolTip(chkGenerateIfExist, Resources.GenerateIfExistTip);
 
-            tooltip.SetToolTip(tbrEntity, Resources.EntityGridTip);
             btnRowAdd.ToolTipText = Resources.AddRow;
             btnDeleteRow.ToolTipText = Resources.DeleteRow;
             btnDeleteRows.ToolTipText = Resources.DeleteRows;
@@ -1425,20 +1463,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             txtViewID.Enabled = _modeType.Equals(ModeTypeEnum.Add) && enable;
 
-            // If enabled AND Report or Dynamic Query then disable
+            // If enabled AND Report then disable
             if (txtViewID.Enabled)
             {
-                if (repositoryType.Equals(RepositoryType.DynamicQuery) || repositoryType.Equals(RepositoryType.Report))
+                if (repositoryType.Equals(RepositoryType.Report))
                 {
                     txtViewID.Enabled = false;
                 }
             }
 
             chkGenerateFinder.Enabled = 
-                                !repositoryType.Equals(RepositoryType.Process) &&
-                                !repositoryType.Equals(RepositoryType.DynamicQuery) &&
-                                // Inquiry type should be able to generate finder but disable for now
-                                !repositoryType.Equals(RepositoryType.Inquiry);
+                                !repositoryType.Equals(RepositoryType.Process);
 
             chkGenerateDynamicEnablement.Enabled = (!repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
             chkGenerateClientFiles.Enabled = (!repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
@@ -1469,13 +1504,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             if (_modeType.Equals(ModeTypeEnum.Add))
             {
-                // Set CS0120 for Dynamic Query Repository
-                if (repositoryType.Equals(RepositoryType.DynamicQuery))
-                {
-                    txtViewID.Text = "CS0120";
-                }
                 // Set new guid for Report Repository
-                else if (repositoryType.Equals(RepositoryType.Report))
+                if (repositoryType.Equals(RepositoryType.Report))
                 {
                     txtViewID.Text = Guid.NewGuid().ToString();
                 }
@@ -1483,9 +1513,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Options defaults
                 chkGenerateFinder.Checked =
                                 !repositoryType.Equals(RepositoryType.Process) &&
-                                !repositoryType.Equals(RepositoryType.DynamicQuery) &&
-                                // Inquiry type should be able to generate finder but disable for now
-                                !repositoryType.Equals(RepositoryType.Inquiry) &&
                                 !repositoryType.Equals(RepositoryType.HeaderDetail);
 
                 // Finder default for Header-Detail should be checked for header entity only otherwise unchecked
@@ -1542,7 +1569,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Options tab
             chkGenerateFinder.Checked = businessView.Options[BusinessView.Constants.GenerateFinder];
-            chkGenerateGrid.Checked = businessView.Options[BusinessView.Constants.GenerateGrid];
             chkGenerateGridModel.Checked = businessView.Options[BusinessView.Constants.GenerateGridModel];
             chkSequenceRevisionList.Checked = businessView.Options[BusinessView.Constants.SeqenceRevisionList];
             chkGenerateDynamicEnablement.Checked = businessView.Options[BusinessView.Constants.GenerateDynamicEnablement];
@@ -1798,7 +1824,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             businessView.Properties[BusinessView.Constants.WorkflowKindId] = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid().ToString() : Guid.Empty.ToString();
 
             businessView.Options[BusinessView.Constants.GenerateFinder] = chkGenerateFinder.Checked;
-            businessView.Options[BusinessView.Constants.GenerateGrid] = chkGenerateGrid.Checked;
             businessView.Options[BusinessView.Constants.GenerateGridModel] = chkGenerateGridModel.Checked;
             businessView.Options[BusinessView.Constants.SeqenceRevisionList] = chkSequenceRevisionList.Checked;
             businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = chkGenerateDynamicEnablement.Checked;
@@ -1835,28 +1860,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (repositoryType.Equals(RepositoryType.HeaderDetail))
             {
                 businessView.Compositions = _entityCompositions.ToList();
-            }
-
-            // extra check for flat repo if we are geneting grid for it
-            if (repositoryType.Equals(RepositoryType.Flat) && businessView.Options[BusinessView.Constants.GenerateGrid])
-            {
-                // make sure it support revision list
-                if ((businessView.Protocol & ViewProtocol.MaskBasic) != ViewProtocol.BasicFlat ||
-                     (businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone)
-                {
-                    DisplayMessage(String.Format(Resources.InvalidGridView, businessView.Properties[BusinessView.Constants.ViewId]), MessageBoxIcon.Error);
-                    return;
-                }
-            }
-
-            if (repositoryType.Equals(RepositoryType.HeaderDetail) && businessView.Options[BusinessView.Constants.GenerateGrid])
-            {
-                // make sure it support revision list
-                if ((businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone)
-                {
-                    DisplayMessage(String.Format(Resources.InvalidGridView, businessView.Properties[BusinessView.Constants.ViewId]), MessageBoxIcon.Error);
-                    return;
-                }
             }
 
             // Add/Update to tree
@@ -2011,11 +2014,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 text += ProcessGeneration.Constants.PropertyComps + "=\"" + businessView.Compositions.Where(x => x.Include).Count() + "\" ";
             }
 
-            // Show Finder and Dynamic Enablement if not a report/dynamic query
-            if (!repositoryType.Equals(RepositoryType.Report) && !repositoryType.Equals(RepositoryType.DynamicQuery))
+            // Show Finder and Dynamic Enablement if not a report
+            if (!repositoryType.Equals(RepositoryType.Report))
             {
                 text += ProcessGeneration.Constants.PropertyFinder + "=\"" + businessView.Options[BusinessView.Constants.GenerateFinder].ToString() + "\" ";
-                text += ProcessGeneration.Constants.PropertyGrid + "=\"" + businessView.Options[BusinessView.Constants.GenerateGrid].ToString() + "\" ";
                 text += ProcessGeneration.Constants.PropertyGridModel + "=\"" + businessView.Options[BusinessView.Constants.GenerateGridModel].ToString() + "\" ";
                 text += ProcessGeneration.Constants.PropertyEnablement + "=\"" + businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString() + "\" ";
             }
@@ -2546,6 +2548,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Check to ensure that node was clicked on
                 if (node != null)
                 {
+                    // Business Field
                     var controlInfo = GetControlInfo(node.Name);
                     if (controlInfo != null && controlInfo.BusinessField != null)
                     {
@@ -2555,7 +2558,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     }
                     else
                     {
-                        dragObject = null;
+                        // Check to see if dragging the entire business view
+                        var businessView = _entities.Where(x => x.Text == node.Name).FirstOrDefault();
+                        if (businessView != null)
+                        {
+                            // The business view was selected
+                            controlInfo = new ControlInfo() {
+                                Node = node, 
+                                ParentNodeName = node.Parent.Name,
+                                BusinessView = businessView };
+                            dragObject = controlInfo;
+                        }
+                        else
+                        {
+                            dragObject = null;
+                        }
                     }
                 }
                 else
@@ -2816,7 +2833,38 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var type = control.GetType();
             DataGridView.HitTestInfo hitTestInfo = null;
             CellInfo cellInfo = null;
-            var repositoryType = GetRepositoryType();
+
+            // Can only drop a business view (all fields) in a grid and not any other control
+            if (controlInfo != null && controlInfo.BusinessView != null)
+            {
+                // Not dropping in a grid
+                if (type != typeof(FlowLayoutPanel))
+                {
+                    return;
+                }
+                else
+                {
+                    // Dropping in a grid and therefore recursively call drop with fields
+                    foreach (TreeNode node in controlInfo.Node.Nodes)
+                    {
+                        var childControlInfo = GetControlInfo(node.Name);
+                        if (childControlInfo != null && childControlInfo.BusinessField != null)
+                        {
+                            childControlInfo.Node = node;
+                            childControlInfo.ParentNodeName = node.Parent.Name;
+                            e.Data.SetData(childControlInfo);
+                        }
+                        DragDropHandler(sender, new DragEventArgs(e.Data, e.KeyState, e.X, e.Y, e.AllowedEffect, e.Effect));
+
+                        // Abort if not allowed to drop in grid
+                        if (_abortGridDrop)
+                        {
+                            break;
+                        }
+                    }
+                }
+                return;
+            }
 
             // If dropping a tab,
             if (toolboxControl == Constants.WidgetTab)
@@ -2911,7 +2959,29 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     return;
                 }
 
+                // If dropping businessField in a grid, need to ensure Business View supports a grid 
+                // and that only business fields from the same business view are added
+                if (type == typeof(FlowLayoutPanel))
+                {
+                    _abortGridDrop = false;
+                    var errorMsg = CanBusinessFieldBeDropped(controlInfo, control);
+                    if (!string.IsNullOrEmpty(errorMsg))
+                    {
+                        _abortGridDrop = true;
+                        DisplayMessage(errorMsg, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
                 CreateLabel(controlInfo, point, control, cellInfo);
+
+                // If dropped business field in a grid, need to ensure that the ControlInfo
+                // for the grid reflects the ParentNodeName for later, and simpler, evaluation
+                if (type == typeof(FlowLayoutPanel))
+                {
+                    var info = _controlsList[control.Name];
+                    info.ParentNodeName = controlInfo.ParentNodeName;
+                }
 
             }
             else if (!string.IsNullOrEmpty(toolboxControl) && toolboxControl == Constants.WidgetTab)
@@ -2969,6 +3039,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     return;
                 }
 
+                // If moving a label and it is in a grid or moving to a grid, then abort
+                if (label != null &&
+                    (label.Parent.GetType() == typeof(FlowLayoutPanel) ||
+                    control.GetType() == typeof(FlowLayoutPanel)))
+                {
+                    return;
+                }
+
                 Control movingControl = label != null ? label : (Control)tabControl;
                 cellInfo = CellInfoForMove(control, hitTestInfo, ref point, movingControl);
 
@@ -2985,7 +3063,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     ((DataGridView)control).CurrentCell = ((DataGridView)control)[cellInfo.ColIndex, cellInfo.RowIndex];
                 }
-
             }
             else if (flowPanel != null)
             {
@@ -3027,7 +3104,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     ((DataGridView)control).CurrentCell = ((DataGridView)control)[cellInfo.ColIndex, cellInfo.RowIndex];
                 }
-
             }
         }
 
@@ -3351,7 +3427,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="control"></param>
         /// <param name="point"></param>
         /// <param name="destinationControl"></param>
-        /// <param name="e">Drag Evnts Args</param>
+        /// <param name="e">Drag Events Args</param>
         private void MoveControl(Control control, Point point, Control destinationControl, DragEventArgs e)
         {
             // Ownership is not changing
@@ -3369,14 +3445,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Moving to another container
             else if (control.Parent != destinationControl)
             {
-                // Do not move to another parent if the new parent is a grid and the 
-                // control being moved is not a label
-                if (destinationControl.GetType() == typeof(FlowLayoutPanel) && control.GetType() != typeof(Label))
-                {
-                    // Do not move
-                    return;
-                }
-
                 // Remove from old parent and assign to new parent
                 control.Parent.Controls.Remove(control);
                 destinationControl.Controls.Add(control);
@@ -4192,6 +4260,63 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return (RepositoryType)Enum.Parse(typeof(RepositoryType), cboRepositoryType.SelectedIndex.ToString());
         }
 
+        /// <summary> Does the business view support a grid </summary>
+        /// <param name="businessView">Business view </param>
+        /// <returns>True if it does otherwise false</returns>
+        private bool DoesViewSupportGrid(BusinessView businessView)
+        {
+            var repositoryType = GetRepositoryType();
+
+            // Flat Repository
+            if (repositoryType.Equals(RepositoryType.Flat))
+            {
+                // Does it support a revision list?
+                return !((businessView.Protocol & ViewProtocol.MaskBasic) != ViewProtocol.BasicFlat ||
+                     (businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone);
+            }
+
+            // Header-Detail Repository
+            if (repositoryType.Equals(RepositoryType.HeaderDetail))
+            {
+                // Does it support a revision list?
+                return !((businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone);
+            }
+
+            return true;
+        }
+
+        /// <summary> Can the business field be dropped into this grid </summary>
+        /// <param name="controlInfo">Control Info for control to be created </param>
+        /// <param name="destinationControl">Parent control </param>
+        /// <returns>string.Empty if can be dropped otherwise error message</returns>
+        private string CanBusinessFieldBeDropped(ControlInfo controlInfo, Control destinationControl)
+        {
+            var businessView = _entities.FirstOrDefault(e => e.Text == controlInfo.ParentNodeName);
+
+            // If view does not support a grid then fail
+            if (!DoesViewSupportGrid(businessView))
+            {
+                return Resources.InvalidGridView;
+            }
+
+            // If first control in grid, allow to be dropped
+            if (destinationControl.Controls.Count == 0)
+            {
+                return string.Empty;
+            }
+
+            // If other controls are already added to grid, ensure they are from the same business view
+            var name = destinationControl.Controls[0].Name;
+            name = name.Substring(0, name.IndexOf('_'));
+
+            if (name != controlInfo.ParentNodeName)
+            {
+                return Resources.InvalidGridViewProperties;
+            }
+
+            return string.Empty;
+        }
+
         /// <summary>
         /// Find the header node in the tree. 
         /// </summary>
@@ -4258,7 +4383,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var option = ent.Elements().Where(e => e.Name == "options").Descendants().First();
 
                 businessView.Options[BusinessView.Constants.GenerateFinder] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyFinder).Value);
-                businessView.Options[BusinessView.Constants.GenerateGrid] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyGrid).Value);
                 businessView.Options[BusinessView.Constants.GenerateGridModel] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyGridModel).Value);
                 businessView.Options[BusinessView.Constants.SeqenceRevisionList] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertySequenceRevisionList)?.Value??"false");
                 businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyEnablement).Value);
@@ -4362,7 +4486,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             foreach (var entity in _entities)
                             {
                                 // ReSharper disable once PossibleMultipleEnumeration
-                                entity.IsPartofHeaderDetailComposition = headerDetailEntities.Any(p => p.Attribute(ProcessGeneration.Constants.PropertyViewId).Value.Equals(entity.Properties[BusinessView.Constants.ViewId]));
+                                entity.IsPartofHeaderDetailComposition = true; // @JT to research if this is needed --> headerDetailEntities.Any(p => p.Attribute(ProcessGeneration.Constants.PropertyViewId).Value.Equals(entity.Properties[BusinessView.Constants.ViewId]));
                             }
                         }
                     }
@@ -4424,7 +4548,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var optionsElement = new XElement(ProcessGeneration.Constants.PropertyOptions);
                 var optionElement = new XElement(ProcessGeneration.Constants.PropertyOption);
 
-                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyGrid, businessView.Options[BusinessView.Constants.GenerateGrid].ToString()));
                 optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyGridModel, businessView.Options[BusinessView.Constants.GenerateGridModel].ToString()));
                 optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyFinder, businessView.Options[BusinessView.Constants.GenerateFinder].ToString()));
                 optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEnablement, businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString()));
@@ -4572,14 +4695,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var repositoryType = GetRepositoryType();
 
             // uncheck generate grid option
-            chkGenerateGrid.Checked = false;
             chkGenerateGridModel.Checked = false;
             chkSequenceRevisionList.Visible = false;
 
-            var visible = (repositoryType == RepositoryType.Flat ||
-                repositoryType == RepositoryType.HeaderDetail);
-            chkGenerateGrid.Visible = visible;
-            chkGenerateGridModel.Visible = visible;
+            chkGenerateGridModel.Visible = (repositoryType == RepositoryType.Flat || 
+                                            repositoryType == RepositoryType.HeaderDetail);
 
             // Default
             btnBack.Enabled = false;
@@ -4603,21 +4723,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             AddStep(Resources.StepTitleCodeType, Resources.StepDescriptionCodeType, pnlCodeType);
             AddStep(Resources.StepTitleEntities, Resources.StepDescriptionEntities, pnlEntities);
 
-            // Exclude Dynamic Query and Inquiry from UI Layout
-            if (repositoryType.Equals(RepositoryType.DynamicQuery) ||
-                repositoryType.Equals(RepositoryType.Inquiry))
-            {
-                // Will be prevented from displaying layout step
-            }
-            else
-            {
-                AddStep(Resources.StepTitleGenerateUICode, Resources.StepDescriptionGenerateUICode, pnlUIGeneration);
-            }
+            AddStep(Resources.StepTitleGenerateUICode, Resources.StepDescriptionGenerateUICode, pnlUIGeneration);
 
             AddStep(Resources.StepTitleGenerateCode, Resources.StepDescriptionGenerateCode, pnlGenerateCode);
             AddStep(Resources.StepTitleGeneratedCode, Resources.StepDescriptionGeneratedCode, pnlGeneratedCode);
 
-            grpCredentials.Enabled = !(repositoryType.Equals(RepositoryType.DynamicQuery) || repositoryType.Equals(RepositoryType.Report));
+            grpCredentials.Enabled = !(repositoryType.Equals(RepositoryType.Report));
 
             SetupEntitiesTree();
 
@@ -4643,8 +4754,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Current Step
             _currentWizardStep = -1;
 
-            grpCredentials.Enabled = !(repositoryType.Equals(RepositoryType.DynamicQuery) || 
-				                       repositoryType.Equals(RepositoryType.Report));
+            grpCredentials.Enabled = !repositoryType.Equals(RepositoryType.Report);
 
             SetupEntitiesTree();
 
@@ -4755,9 +4865,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Show/Hide Fieldname based upon code type
             columnIndex = 1;
-            GenericInit(grdEntityFields, columnIndex, 125, Resources.ServerField, !repositoryType.Equals(RepositoryType.DynamicQuery), true);
+            GenericInit(grdEntityFields, columnIndex, 125, Resources.ServerField, true, true);
 
-            // Droplist items wmay be different based upon repository type
+            // Droplist items may be different based upon repository type
             columnIndex = 4;
             var typeColumn = (DataGridViewComboBoxColumn)grdEntityFields.Columns[columnIndex];
             typeColumn.Items.Clear();
@@ -4767,18 +4877,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 // Only add string type
                 typeColumn.Items.Add(BusinessDataType.String);
-            }
-            else if (repositoryType.Equals(RepositoryType.DynamicQuery))
-            {
-                // Add all types but enumeration
-                foreach (
-                    var businessDataType in
-                    Enum.GetValues(typeof(BusinessDataType))
-                        .Cast<BusinessDataType>()
-                        .Where(businessDataType => !businessDataType.Equals(BusinessDataType.Enumeration)))
-                {
-                    typeColumn.Items.Add(businessDataType);
-                }
             }
             else
             {
@@ -5411,7 +5509,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     // Assign to the grids
                     AssignGrids(businessView);
 
-                    chkGenerateGrid.Checked = false;
                     chkGenerateGridModel.Checked = false;
                     chkGenerateFinder.Enabled = true;
 
@@ -5419,7 +5516,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         ((businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionSequenced ||
                         (businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionOrdered))
                     {
-                        chkGenerateGrid.Checked = true;
+                        chkGenerateGridModel.Checked = true;
                         chkGenerateFinder.Checked = false;
                         chkGenerateFinder.Enabled = false;
                     }

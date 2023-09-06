@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="QuantityForPeriod13" xml:space="preserve">
+    <value>Quantité pour période 13</value>
+  </data>
+  <data name="TimeAndMaterials" xml:space="preserve">
+    <value>Temps et matériaux</value>
+  </data>
+  <data name="CostPlus" xml:space="preserve">
+    <value>Coût majoré</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>Type devise</value>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>Type taux</value>
+  </data>
+  <data name="QuantityForPeriod9" xml:space="preserve">
+    <value>Quantité pour période 9</value>
+  </data>
+  <data name="ContractStyle" xml:space="preserve">
+    <value>Style contrat</value>
+  </data>
+  <data name="RateOperator" xml:space="preserve">
+    <value>Calcul taux</value>
+  </data>
+  <data name="CostClass" xml:space="preserve">
+    <value>Classe coût</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SEQ" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="SCOSTH" xml:space="preserve">
+    <value>Coût</value>
+  </data>
+  <data name="Recognized" xml:space="preserve">
+    <value>Constaté</value>
+  </data>
+  <data name="LaborHoursPercentageComplete" xml:space="preserve">
+    <value>Avancement-Nbre heures travaillées</value>
+  </data>
+  <data name="AccountingMethod" xml:space="preserve">
+    <value>Méthode comptable</value>
+  </data>
+  <data name="InquiryTotalQuantityForTheYear" xml:space="preserve">
+    <value>Consult.-Quantité totale pour exercice</value>
+  </data>
+  <data name="ContractUniq" xml:space="preserve">
+    <value>Contrat unique</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Projet</value>
+  </data>
+  <data name="QuantityForPeriod8" xml:space="preserve">
+    <value>Quantité pour période 8</value>
+  </data>
+  <data name="CostCurrency" xml:space="preserve">
+    <value>Devise-Coût</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Afficher</value>
+  </data>
+  <data name="InquiryQuantityForPeriod6" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 6</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Nil</value>
+  </data>
+  <data name="Entity" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Divide" xml:space="preserve">
+    <value>Diviser</value>
+  </data>
+  <data name="QuantityForPeriod6" xml:space="preserve">
+    <value>Quantité pour période 6</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>Ressource</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Catégorie</value>
+  </data>
+  <data name="QuantityForPeriod5" xml:space="preserve">
+    <value>Quantité pour période 5</value>
+  </data>
+  <data name="Actual" xml:space="preserve">
+    <value>Réel</value>
+  </data>
+  <data name="BudgetSet" xml:space="preserve">
+    <value>Série budget</value>
+  </data>
+  <data name="Multiply" xml:space="preserve">
+    <value>Multiplier</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantité</value>
+  </data>
+  <data name="QuantityForPeriod4" xml:space="preserve">
+    <value>Quantité pour période 4</value>
+  </data>
+  <data name="RevenueSource" xml:space="preserve">
+    <value>Produit</value>
+  </data>
+  <data name="RevenueCurrency" xml:space="preserve">
+    <value>Produits-Devise</value>
+  </data>
+  <data name="InquiryQuantityForPeriod9" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 9</value>
+  </data>
+  <data name="InquiryQuantityForPeriod8" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 8</value>
+  </data>
+  <data name="RateDate" xml:space="preserve">
+    <value>Date taux</value>
+  </data>
+  <data name="InquiryQuantityForPeriod1" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 1</value>
+  </data>
+  <data name="QuantityForPeriod10" xml:space="preserve">
+    <value>Quantité pour période 10</value>
+  </data>
+  <data name="InquiryQuantityForPeriod3" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 3</value>
+  </data>
+  <data name="InquiryQuantityForPeriod2" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 2</value>
+  </data>
+  <data name="InquiryQuantityForPeriod5" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 5</value>
+  </data>
+  <data name="InquiryQuantityForPeriod4" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 4</value>
+  </data>
+  <data name="InquiryQuantityForPeriod7" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 7</value>
+  </data>
+  <data name="QuantityForPeriod3" xml:space="preserve">
+    <value>Quantité pour période 3</value>
+  </data>
+  <data name="Actuals" xml:space="preserve">
+    <value>Réels</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Contrat</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>Type projet</value>
+  </data>
+  <data name="QuantityForPeriod2" xml:space="preserve">
+    <value>Quantité pour période 2</value>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="TotalRevenueSourceForTheYear" xml:space="preserve">
+    <value>Total produits (dev. trans.) pour exercice</value>
+  </data>
+  <data name="QuantityForPeriod1" xml:space="preserve">
+    <value>Quantité pour période 1</value>
+  </data>
+  <data name="LINENUM" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="AccrualBasis" xml:space="preserve">
+    <value>Comptabilité d'exercice</value>
+  </data>
+  <data name="InquiryQuantityForPeriod13" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 13</value>
+  </data>
+  <data name="BillingsAndCosts" xml:space="preserve">
+    <value>Facturations et coûts</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Courant</value>
+  </data>
+  <data name="QuantityForPeriod12" xml:space="preserve">
+    <value>Quantité pour période 12</value>
+  </data>
+  <data name="FixedPrice" xml:space="preserve">
+    <value>Prix fixe</value>
+  </data>
+  <data name="InquiryQuantityForPeriod12" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 12</value>
+  </data>
+  <data name="SCOSTS" xml:space="preserve">
+    <value>Coût</value>
+  </data>
+  <data name="TotalCostPercentageComplete" xml:space="preserve">
+    <value>Avancement-Coût total</value>
+  </data>
+  <data name="QuantityForPeriod11" xml:space="preserve">
+    <value>Quantité pour période 11</value>
+  </data>
+  <data name="CategoryPercentageComplete" xml:space="preserve">
+    <value>Avancement-Catégorie</value>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>Taux</value>
+  </data>
+  <data name="RevenueFunctional" xml:space="preserve">
+    <value>Produit</value>
+  </data>
+  <data name="FiscalYear" xml:space="preserve">
+    <value>Exercice</value>
+  </data>
+  <data name="InquiryQuantityForPeriod11" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 11</value>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>Simple</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CompletedProject" xml:space="preserve">
+    <value>Achèvement du projet</value>
+  </data>
+  <data name="TotalQuantityForTheYear" xml:space="preserve">
+    <value>Quantité totale pour exercice</value>
+  </data>
+  <data name="ProjectPercentageComplete" xml:space="preserve">
+    <value>Avancement du projet</value>
+  </data>
+  <data name="InquiryQuantityForPeriod10" xml:space="preserve">
+    <value>Consultation-Quantité pour pér. 10</value>
+  </data>
+  <data name="QuantityForPeriod7" xml:space="preserve">
+    <value>Quantité pour période 7</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="TotalCostFunctionalForTheYear" xml:space="preserve">
+    <value>Coût total (dev. fonct.) pour exercice</value>
+  </data>
+  <data name="TotalCostSourceForTheYear" xml:space="preserve">
+    <value>Coût total (dev. trans.) pour exercice</value>
+  </data>
+  <data name="TotalCostFunctionalForPeriod" xml:space="preserve">
+    <value>Coût total (dev. fonct.) pour pér. {0}</value>
+  </data>
+  <data name="TotalCostSourceForPeriod" xml:space="preserve">
+    <value>Coût total (Dev. trans.) pour pér. {0}</value>
+  </data>
+  <data name="InquiryTotalCostFunctionalForPeriod" xml:space="preserve">
+    <value>Consult.-Coût total (dev. fonct.) pour pér. {0}</value>
+  </data>
+  <data name="InquiryTotalCostSourceForPeriod" xml:space="preserve">
+    <value>Consult.-Coût total (dev. trans.) pour pér. {0}</value>
+  </data>
+  <data name="InquiryTotalRevenueFunctionalForPeriod" xml:space="preserve">
+    <value>Consult.-Total produits (dev. fonct.) pour pér. {0}</value>
+  </data>
+  <data name="TotalRevenueFunctionalForPeriod" xml:space="preserve">
+    <value>Total produits (dev. fonct.) pour pér. {0}</value>
+  </data>
+  <data name="InquiryTotalRevenueSourceForPeriod" xml:space="preserve">
+    <value>Consult.-Total produits (dev. trans.) pour pér. {0}</value>
+  </data>
+  <data name="TotalRevenueSourceForPeriod" xml:space="preserve">
+    <value>Total produits (dev. trans.) pour pér. {0}</value>
+  </data>
+  <data name="TotalRevenueFunctionalForTheYear" xml:space="preserve">
+    <value>Total produits (dev. fonct.) pour exercice</value>
+  </data>
+  <data name="InquiryTotalRevenueFunctionalForTheYear" xml:space="preserve">
+    <value>Consult.-Total produits (dev. fonct.) pour exercice</value>
+  </data>
+  <data name="InquiryTotalCostFunctionalForTheYear" xml:space="preserve">
+    <value>Consult.-Coût total (dev. fonct.) pour exercice</value>
+  </data>
+  <data name="InquiryTotalRevenueSourceForTheYear" xml:space="preserve">
+    <value>Consult.-Total produits (dev. trans.) pour exercice</value>
+  </data>
+</root>

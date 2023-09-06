@@ -7,7 +7,7 @@
 
 .master-stand-alone {
 
-    font-family: "Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+    font-family: "SageUI","Helvetica Neue",Arial,sans-serif;
     background-color: #ebedef;
 
     .header-global {
@@ -22,6 +22,8 @@
             .Sage_logo {
                 top: 11px;
                 position: relative;
+                text-align: left;
+                margin-top: unset;
             }
 
             .top-nav {
@@ -78,7 +80,7 @@
                         position: absolute;
 
                         > span {
-                            font: normal 10px/1 Arial;
+                            font: normal 10px/1 @font-family-sans-serif;
                             display: block;
                             width: 100%;
                             height: 100%;
@@ -211,7 +213,7 @@
                 position: absolute;
 
                 > span {
-                    font: normal 10px/1 Arial;
+                    font: normal 10px/1 @font-family-sans-serif;
                     display: block;
                     width: 100%;
                     height: 100%;
@@ -286,7 +288,7 @@
                 }
 
                 > span {
-                    font: 400 10px/1 Arial;
+                    font: 400 10px/1 @font-family-sans-serif;
                     display: block;
                     width: 100%;
                     height: 100%;
@@ -488,7 +490,7 @@
         background-color: #ebedef;
         color: rgba(0,0,0,.54);
         position: initial;
-        border-top: 1px solid @sage-gray;
+        border-top: 1px solid #CCD6DB;
 
         &.affix-bottom {
             position: fixed;

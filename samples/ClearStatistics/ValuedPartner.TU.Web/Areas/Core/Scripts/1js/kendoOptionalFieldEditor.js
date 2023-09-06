@@ -98,8 +98,9 @@
                         sendMessage(desc, row[desc]);
                         if (isOptField && Object.keys(row).length > 4) {
                             const type = self.getOptionalFiedTextType(row.TYPE);
-                            model.set('VALUE', self.getFormattedValue(type, row.DEFVAL));
-                            sendMessage('VALUE', row.DEFVAL);
+                            const value = row.DEFVAL.trim();
+                            model.set('VALUE', value);
+                            sendMessage('VALUE', value);
                             model.set('TYPE', type);
                             sendMessage('TYPE', type);
                             ['VDESC', 'VALIDATE', 'DECIMALS'].forEach(f => {
@@ -113,7 +114,7 @@
                     },
                     // Cancel
                     function (e) {
-                        options.model.set(options.field, '');
+                        //options.model.set(options.field, '');
                         setCellFocus();
                     });
                 });
@@ -142,7 +143,7 @@
                     let finderDef = isValue ? sg.viewFinderProperties.CS.OptionalFieldValue : property;
                     let locFilter = isOptField ? finderDef.filter.split(' and')[0] : '';
                     
-                    finderDef.filter = isValue ? `OPTFIELD=${model.OPTFIELD} and VALUE=${model.VALUE}` : `${locFilter} and OPTFIELD=${model.OPTFIELD}`;
+                    finderDef.filter = isValue ? `OPTFIELD="${model.OPTFIELD}" and VALUE="${model.VALUE}"` : `${locFilter} and OPTFIELD="${model.OPTFIELD}"`;
                     ViewFinderGridHelper.ExecuteFinder(finderDef, (data) => {
                         if (data && data.Data.length === 0) {
                             const errMessage = isValue ? kendo.format(globalResource.OptionalFieldValueValidation, model.VALUE, model.OPTFIELD) : kendo.format(globalResource.OptionalFieldValidation, model.OPTFIELD);
@@ -261,6 +262,7 @@
                 case '4':
                 case globalResource.TypeTime:
                     result = 'Time';
+                    break;
                 case '9':
                 case globalResource.TypeYesNo:
                     result = 'Yes/No';

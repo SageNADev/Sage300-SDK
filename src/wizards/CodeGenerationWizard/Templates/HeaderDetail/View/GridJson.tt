@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -25,6 +25,16 @@
    
     var entityName = view.Properties[BusinessView.Constants.EntityName];
     var isRepoTypeHeaderDetail = settings.RepositoryType.Equals(RepositoryType.HeaderDetail);
+    var viewId = view.Properties[BusinessView.Constants.ViewId];
+    var moduleId = settings.ModuleId;
+
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = viewId;
+    if (moduleId == "PR")
+    {
+         // Will be resolved at runtime
+		 entityContext = "~~" + viewId.Substring(2);
+    }
 
 #>
 
@@ -32,7 +42,7 @@
    "IsSequenceRevisionList": <#=view.Options[BusinessView.Constants.SeqenceRevisionList].ToString().ToLower()#>,
    "ReadOnly": false,
    "PageSize": 10,
-   "ViewID":"<#=view.Properties[BusinessView.Constants.ViewId].ToString()#>",
+   "ViewID":"<#=entityContext#>",
    "ColumnDefinitions": [
 	<#
 		PushIndent("    ");	

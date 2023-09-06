@@ -226,6 +226,7 @@
     <EmbeddedResource Include="DeclarativeReportResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DeclarativeReportResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DeclarativeReportResx.zh-Hans.resx">
       <DependentUpon>DeclarativeReportResx.resx</DependentUpon>
@@ -384,10 +385,18 @@
       <LastGenOutput>NavigationResx.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Portal\NavigationResx.es.resx" />
-    <EmbeddedResource Include="Portal\NavigationResx.fr.resx" />
-    <EmbeddedResource Include="Portal\NavigationResx.zh-Hans.resx" />
-    <EmbeddedResource Include="Portal\NavigationResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Portal\NavigationResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\NavigationResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\NavigationResx.zh-Hans.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\NavigationResx.zh-Hant.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Portal\SearchResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SearchResx.Designer.cs</LastGenOutput>

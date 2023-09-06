@@ -127,8 +127,12 @@ uplodeUI.reader.onloadend = function (evt) {
             if (result === "") {
                 return;
             }
+            let urlParts = result.split('/');
+            let origs = location.origin.split('/');
+            urlParts[2] = origs[2];
+            
             //Update Sas Url, hide file information from screen and show upload related information
-            uplodeUI.submitUri = result;
+            uplodeUI.submitUri = urlParts.join('/');//result;
             $("#uploadDiv").hide();
             $("#uploadResult").show();
 

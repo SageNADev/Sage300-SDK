@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. */
 
 //"use strict";
 
@@ -214,7 +214,7 @@ var RecentWindowsMenu = function () {
      * @returns {bool} true if elem removed, false otherwise
      */
     function removeNonPermittedMenuItems(menuId, elem, currentMenuId) {
-        // menuUrlList and otherUrlList(ThirdParty) is a global var
+        // menuUrlList is a global var
 
         // Only on initial load.
         if ("" === menuId) {
@@ -222,7 +222,7 @@ var RecentWindowsMenu = function () {
 
             // Remove screen name if user has no rights to it
             if (currentMenuId && currentParentId) {
-                var permitted = checkIsPermitted(menuUrlList, otherUrlList, currentMenuId, currentParentId);
+                var permitted = checkIsPermitted(menuUrlList, currentMenuId, currentParentId);
 
                 // current recently used window entry not permitted
                 if (!permitted) {
@@ -239,29 +239,17 @@ var RecentWindowsMenu = function () {
      * @description TODO - Add Description
      * @private
      * @param {object} menuUrlList - TODO - Add Description
-     * @param {object} otherUrlList - TODO - Add Description
      * @param {number} menuId - TODO - Add Description
      * @param {number} parentId - TODO - Add Description
      * @returns {boolean} true = permitted | false = not permitted
      */
-    function checkIsPermitted(menuUrlList, otherUrlList, menuId, parentId) {
+    function checkIsPermitted(menuUrlList, menuId, parentId) {
         var permitted = false;
         for (var i = 0; i < menuUrlList.length; i++) {
             if (menuUrlList[i].Data.MenuId === menuId &&
                 menuUrlList[i].Data.ParentMenuId === parentId) {
                 permitted = true;
                 break;
-            }
-        }
-
-        // if not permitted from menuUrlList, check to see if it is third party screen
-        if (!permitted) {
-            for (i = 0; i < otherUrlList.length; i++) {
-                if (otherUrlList[i].Data.MenuId === menuId &&
-                    otherUrlList[i].Data.ParentMenuId === parentId) {
-                    permitted = true;
-                    break;
-                }
             }
         }
         return permitted;

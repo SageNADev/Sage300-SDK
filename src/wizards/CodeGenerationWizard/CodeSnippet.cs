@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -133,7 +133,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 case 'Double':
                 case 'Integer':
                 case 'Long':
-					let precision = dataType === 'Integer' || dataType == 'Long'? 0: 3;
+					let precision = dataType === 'Integer' || dataType === 'Long'? 0: 3;
                     template = '<span style=""float:right"">' + sg.utls.kndoUI.getFormattedDecimalNumber(value || 0, precision) + '</span>';
                     break;
            
@@ -231,7 +231,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     //Grid column custom plug in function, defined in Grid column definition Json file
     showPencilIcon: function (e, column) {
         //TODO: based on requirement, add custom code here. The following commented code snippet is change finder icon to pencil icon
-        //let template = ""<div class='pencil-wrapper'><span class='pencil-txt'>#={0}#</span><span class='pencil-icon'><input class='icon pencil-edit' type='button' onclick='{EntityName}UISuccess.pencilHandler();'></span></div>"";
+        //let template = ""<div class='pencil-wrapper' onclick='{EntityName}UISuccess.pencilHandler()'><span class='pencil-txt'>#:{0}#</span><span class='pencil-icon'><input class='icon pencil-edit' type='button'></span></div>"";
         //template = kendo.format(template, column.FieldName);
         //column.Template = kendo.template(template);
     },

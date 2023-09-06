@@ -36,7 +36,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
             #line hidden
             
             #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
- /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ 
+ /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
@@ -309,89 +309,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.HeaderDetail.Vi
 ");
             
             #line 80 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
-
-        if (xmlLayout == null)
-        {
-            WriteLine(new string(' ', 4) + "<div class=\"form-group\">");
-        }
-
-            
-            #line default
-            #line hidden
-            
-            #line 86 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
  
-	if (view.Options[BusinessView.Constants.GenerateGrid])
-	{
-		var gridName = entityName.Substring(0, 1).ToLower() +  entityName.Substring(1);
-		WriteLine("@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
-	}
-    else if (xmlLayout != null)
+    // Counter for indentation
+    int depth = 0;
+
+    // Get first element and proceed if there are elements specified
+    var element = xmlLayout.Root.Descendants().First();
+
+    // Iterate xml and apply snippets directly to template
+    if (element.HasElements)
     {
-        // XML Layout has been specified and therefore generate layout using this instead of generating
-        // only the key field
-
-        // Counter for indentation
-        int depth = 0;
-
-        // Get first element and proceed if there are elements specified
-        var element = xmlLayout.Root.Descendants().First();
-
-        // Iterate xml and apply snippets directly to template
-        if (element.HasElements)
-        {
-            // Recursion
-            var snippet = new StringBuilder();
-            SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
-            WriteLine(snippet.ToString());
-        }
-    }
-	else
-	{
-	}
-
-    if (xmlLayout == null)
-    {
-        WriteLine(new string(' ', 4) + "</div>");
+        // Recursion
+        var snippet = new StringBuilder();
+        SnippetHelper.GenerateWidgets(depth, element, snippet, settings, view);
+        WriteLine(snippet.ToString());
     }
 
             
             #line default
             #line hidden
-            this.Write("    <div class=\"form-group\">\r\n");
-            
-            #line 122 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\HeaderDetail\View\Entity.tt"
-
-			 foreach(var view in settings.Entities)
-			 {
-				if (view.Options[BusinessView.Constants.GenerateGrid])
-				{
-                    var temp = view.Properties[BusinessView.Constants.EntityName];
-                    var gridName = temp.Substring(0, 1).ToLower() +  temp.Substring(1);
-                    if(gridName.Contains("Optional")) 
-                    {
-                        if(gridName.Contains("Detail"))
-                        {
-                            WriteLine(new string(' ', 4) + "<div id=\"detailOptionalField\" style=\"display: none; \">");
-                        }
-                        else 
-                        {
-                             WriteLine(new string(' ', 4) + "<div id=\"optionalField\" style=\"display: none; \">");
-                        }
-                    }
-					WriteLine(new string(' ', 8) + "@Html.SageGrid(\"{0}Grid\", (Sage.CA.SBS.ERP.Sage300.Common.Models.GridDefinition)@ViewBag.{1}Grid)", gridName, view.Properties[BusinessView.Constants.EntityName]);
-                    if(gridName.Contains("Optional")) 
-                    {
-                        WriteLine(new string(' ', 4) + "</div>");
-                    }				
-                }
-			 }
-
-            
-            #line default
-            #line hidden
-            this.Write(@"    </div>
-    <section class=""footer-group-1"">
+            this.Write(@"    <section class=""footer-group-1"">
         @if (Model.UserAccess.SecurityType.HasFlag(SecurityType.Modify))
         {
             @Html.KoSageButton(""btnSave"", new { }, new { @value = CommonResx.Save, @id = ""btnSave"", @class = ""btn btn-primary"" })

@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ContactsFaxNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MinimumWage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NumberOfDecimalPlacesForHou" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmployeeLevelSecurityFlag" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreateGLTransOrNot" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TimecardFractionalHours" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CostCenterSwitch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HoursPerPayFrequencyInMonth" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UsePayPeriodEndDateAsJournalEntryDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLTransAppendToBatch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSegmentFour" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OnRequestUsingCreateGLBatchIcon" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSegmentOne" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultNumberOfDaysForFollo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseCheckDateAsJournalEntryDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ExceptionForIncreasePercent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSEG5CALC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSEG4CALC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PrintMaskedSSN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContactsPhoneNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HoursPerPayFrequencyIn10Pe" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Division" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ExchangeRoundingDifferenceAcc" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DailyPayPeriodsPerYear" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultMCCheckStockCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OptionRecordID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SuspenseAccount" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSEG2CALC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSegmentSix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckOrPeriodEndDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PayrollCurrency" xml:space="preserve">
+    <value />
+  </data>
+  <data name="YearsOfHistoryToKeep" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AddingToAnExistingBatch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSegmentThree" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MaximumAnnualPartTimeHours" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ExpenseAccounts" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSegmentFive" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreatingANewBatch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PrintZeroNetChecks" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActiveSegmentReplaceOption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSEG3CALC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ExpenseAndLiabilityAccounts" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultBank" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TaxNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ExceptionForDollarIncrease" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreatingAndPostingANewBatch" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HoursPerPayFrequencyInBiwee" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HoursPerPayFrequencyInSemim" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HoursPerPayFrequencyInWeekl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConsolidateByAcctFiscalPeriod" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConsolidateByAcctFiscalPeriodAndSourceCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HundredthsOfAnHour" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSEG1CALC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HoursPerPayFrequencyIn22Pe" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSegmentTwo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="None" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BiweeklyPayPeriodsPerYear" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WeeklyPayPeriodsPerYear" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HoursPerPayFrequencyInQuart" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WCStartDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NAICSCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PayrollCountryCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HoursPerPayFrequencyIn13Pe" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HoursPerPayFrequencyInDaily" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContactPersonsName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EstablishmentNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DuringPosting" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SalaryAndWagesPayableAccount" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLSEG6CALC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GLBatchType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PJCCostCenterOverride" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActiveEmployees" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseOriginalDatesWhenReversin" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DoNotConsolidate" xml:space="preserve">
+    <value />
+  </data>
+</root>

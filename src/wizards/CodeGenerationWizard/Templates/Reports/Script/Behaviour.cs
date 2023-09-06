@@ -374,7 +374,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
 
     // Create code for finder
     snippet = new StringBuilder();
-    SnippetHelper.FinderJavaScript(8, settings, snippet);
+    SnippetHelper.FinderJavaScript(8, settings, snippet, localEntityName);
     if (!string.IsNullOrEmpty(snippet.ToString()))
     {
         WriteLine(snippet.ToString());
@@ -585,7 +585,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
         let inputValid = true;
 
         if (!inputValid) {
-            if (errorRangeMessage != """") {
+            if (errorRangeMessage !== """") {
                 sg.utls.showMessageInfo(sg.utls.msgType.ERROR, jQuery.validator.format(");
             
             #line 252 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\CodeGenerationWizard\Templates\Reports\Script\Behaviour.tt"
@@ -594,7 +594,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.Reports.Script
             #line default
             #line hidden
             this.Write(@"Resources.ErrorFromToValueMessage, errorRangeMessage));
-            } else if (errorMessage != """") {
+            } else if (errorMessage !== """") {
                 sg.utls.showMessageInfo(sg.utls.msgType.ERROR, errorMessage);
             }
         }

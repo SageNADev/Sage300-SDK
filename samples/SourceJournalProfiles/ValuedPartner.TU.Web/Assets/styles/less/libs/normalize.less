@@ -6,8 +6,30 @@
 //    user zoom.
 //
 
+/* New Font ----------------------------------------------------------- */
+
+@font-path:                 "../../fonts/";
+
+@font-face {
+  font-family: 'SageHeader';
+  src: url('@{icon-font-path}@{font-name-sage-header}.woff') format("woff"),
+       url('@{icon-font-path}@{font-name-sage-header}.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: 'SageText';
+  src: url('@{icon-font-path}@{font-name-sage-text}.woff') format("woff"),
+       url('@{icon-font-path}@{font-name-sage-text}.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: 'SageUI';
+  src: url('@{icon-font-path}@{font-name-sage-ui}.woff') format("woff"),
+       url('@{icon-font-path}@{font-name-sage-ui}.woff2') format("woff2");
+}
+
 html {
-  font-family: "Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif; // 1
+  font-family: "SageText","Helvetica Neue",Arial,sans-serif; // 1
   -ms-text-size-adjust: 100%; // 2
   -webkit-text-size-adjust: 100%; // 2
 }

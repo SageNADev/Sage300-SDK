@@ -1785,4 +1785,11 @@
   <data name="EntryDoesNotExists" xml:space="preserve">
     <value>La note de crédit/débit n'existe pas.</value>
   </data>
+  <data name="Item" xml:space="preserve">
+    <value>Article</value>
+    <comment>Warning message</comment>
+  </data>
+  <data name="CrNetTotal" xml:space="preserve">
+    <value>Total net note de crédit</value>
+  </data>
 </root>

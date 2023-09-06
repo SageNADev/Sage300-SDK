@@ -1785,4 +1785,11 @@
   <data name="EntryDoesNotExists" xml:space="preserve">
     <value>貸項/借項通知單不存在。</value>
   </data>
+  <data name="Item" xml:space="preserve">
+    <value>產品</value>
+    <comment>Warning message</comment>
+  </data>
+  <data name="CrNetTotal" xml:space="preserve">
+    <value>淨貸項通知單合計</value>
+  </data>
 </root>

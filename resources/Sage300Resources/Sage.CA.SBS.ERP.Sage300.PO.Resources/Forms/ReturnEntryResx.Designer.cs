@@ -709,6 +709,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PO.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Net Return Total.
+        /// </summary>
+        public static string NetReturnTotal {
+            get {
+                return ResourceManager.GetString("NetReturnTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next Detail Number.
         /// </summary>
         public static string NextDetailNumber {

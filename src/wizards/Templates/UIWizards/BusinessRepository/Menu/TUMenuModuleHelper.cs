@@ -1,4 +1,4 @@
-﻿/* Copyright (c) $year$ $companyname$.  All rights reserved. */
+﻿/* Copyright (c) $year$ $copyright$  All rights reserved. */
 
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Menu;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;

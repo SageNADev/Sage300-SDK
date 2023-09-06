@@ -1,1 +1,1 @@
-Sage 300 Web SDK Version: **2023.3** 
+Sage 300 Web SDK Version: **2024.0** 

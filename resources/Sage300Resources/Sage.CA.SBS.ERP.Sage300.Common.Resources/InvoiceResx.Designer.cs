@@ -3409,6 +3409,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Net Invoice Total.
+        /// </summary>
+        public static string NetInvoiceTotal {
+            get {
+                return ResourceManager.GetString("NetInvoiceTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Net of Tax.
         /// </summary>
         public static string NetofTax {
@@ -5146,7 +5155,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Retainage Tax Total Amount.
+        ///   Looks up a localized string similar to Total Retainage Tax.
         /// </summary>
         public static string RetainageTaxTotalAmount {
             get {
@@ -8035,7 +8044,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The 1099/CPRS Amount.
+        ///   Looks up a localized string similar to 1099/CPRS Amount.
         /// </summary>
         public static string The1099CPRSAmount {
             get {

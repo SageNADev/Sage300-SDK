@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -32,6 +32,14 @@
     var keyFieldName = settings.screenKeyFieldName;
     var viewOrder = settings.screenKeyFieldIndex;
     var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
+        
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = "\"" + moduleId + "\"";
+    if (moduleId == "PR")
+    {
+         // Will be resolved at runtime
+		 entityContext = "Context.ScreenContext.EntityContext";
+    }
 #>
 // <#=copyright#>
 
@@ -97,7 +105,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
     {
         // skip entity in a grid
         bool flag;
-        settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Options.TryGetValue(BusinessView.Constants.GenerateGrid, out flag);
+        settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Options.TryGetValue(BusinessView.Constants.HasGrid, out flag);
         if (Convert.ToBoolean(flag))
         {
             continue;
@@ -138,7 +146,7 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
             {
                     // skip entity in a grid
                     bool flag;
-                    settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Options.TryGetValue(BusinessView.Constants.GenerateGrid, out flag);
+                    settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == entry.Key).First().Options.TryGetValue(BusinessView.Constants.HasGrid, out flag);
                     if (Convert.ToBoolean(flag))
                     {
                         continue;
@@ -169,11 +177,11 @@ namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository
 #>
 
             var userAccess = base.GetAccessRights(<#=headerEntityName#>);
-            if (SecurityCheck(Security.<#=moduleId#>Import))
+            if (SecurityCheck(<#=entityContext#> + "Import"))
             {
                 userAccess.SecurityType |= SecurityType.Import;
             }
-            if (SecurityCheck(Security.<#=moduleId#>Export))
+            if (SecurityCheck(<#=entityContext#> + "Export"))
             {
                 userAccess.SecurityType |= SecurityType.Export;
             }
@@ -303,7 +311,7 @@ var headerMapperName = String.Format("_{0}Mapper", rotoId2EntityVarName[settings
                 var viewID = node.Attribute("view").Value;
                 var modelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == viewID).First().Properties[BusinessView.Constants.ModelName];
 
-                WriteLine(String.Format("{0}var {1} = new BusinessEntityProperty({2}.EntityName, ViewKeyType.SystemGenerated /* FIXME ViewKeyType.UserSpecified */);", new string(' ', 12), rotoId2EntityVarName[viewID], modelName));
+                WriteLine(String.Format("{0}var {1} = new BusinessEntityProperty(CommonUtil.EntityContextReplacement({2}.EntityName, Context.ScreenContext.EntityContext), ViewKeyType.SystemGenerated /* FIXME ViewKeyType.UserSpecified */);", new string(' ', 12), rotoId2EntityVarName[viewID], modelName));
             }
 
             WriteLine("");

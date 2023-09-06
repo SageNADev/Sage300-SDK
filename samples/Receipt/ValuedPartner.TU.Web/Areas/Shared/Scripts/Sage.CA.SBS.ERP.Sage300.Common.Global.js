@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */
+/* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */
 
 // @ts-check
 
@@ -503,7 +503,12 @@ $.extend(sg.utls, {
                 $(`#divNavGroup${suffix}`).addClass("focused");
             }
 
-            const sameValue = $('#' + txtBoxId).val() == uiObject[keyFieldName];
+            let sameValue = $('#' + txtBoxId).val() == uiObject[keyFieldName];
+            const navigationKeyValue = $('#' + txtBoxId).data('navigationKeyValue');
+            if (navigationKeyValue) {
+                sameValue = navigationKeyValue == uiObject[keyFieldName];
+            }
+
             let disabled = uiObject[`navigationAction${suffix}`] === sg.utls.NavigationAction.First || (uiObject[`navigationAction${suffix}`] === sg.utls.NavigationAction.Previous && sameValue);
             $(`#btnDataFirst${suffix}, #btnDataPrevious${suffix}`).prop('disabled', disabled);
 
@@ -777,6 +782,41 @@ $.extend(sg.utls, {
         }
         return self.location === top.location;
     },
+
+    getViewFinderOptions: function (id) {
+        for (var i = 0; i < $(":sageuiwidgets-ViewFinder").length; i++) {
+            var widget = $(":sageuiwidgets-ViewFinder")[i];
+            if (id === widget.id) {
+                for (var prop in Object.keys(widget)) {
+                    var name = Object.keys(widget)[prop];
+                    var obj = widget[name];
+                    if (obj["sageuiwidgets-ViewFinder"] !== undefined) {
+                        return obj["sageuiwidgets-ViewFinder"].options;
+                    }
+                }
+            }
+        }
+        return null;
+    },
+
+    setFinderSearchResult: function (jsonResult) {
+        if (jsonResult !== null) {
+            if (jsonResult.Response.RecordExists === false) {    // invalid input typed
+                $("#" + jsonResult.Response.FieldId).focus();    // set focus back on control (in case of tabbed-out)
+                sg.utls.showMessageInfo(sg.utls.msgType.ERROR, jsonResult.UserMessage.Errors[0].Message, () => {
+                    $("#" + jsonResult.Response.FieldId).val(jsonResult.Response.FieldPrev); // reset control to previous value
+                    $("#" + jsonResult.Response.FieldId).focus(); // error-message exit removes highlight, so set it back
+                });
+            } else if (jsonResult.Response.FocusedId === "@") {  // finder pop-up selection
+                $("#" + jsonResult.Response.FieldId).focus();
+            } 
+        }
+    },
+
+    isFinderSearchSupported: function (jsonResult) {
+        return window.location.href.includes("/PR/");
+    },
+
     isTopPage: function () {
         return self.location === top.location;
     },
@@ -1283,7 +1323,16 @@ $.extend(sg.utls, {
 
     openReport: function (reportToken, checkTitle, callbackOnClose) {
         var reportUrl = kendo.format(sg.utls.url.buildUrl("Core", "ExportReport", "ExportDialog") + "?token={0}", reportToken);
-        window.open(reportUrl);
+        var reportWindow = window.open(reportUrl);
+        if (sg.utls.isFunction(callbackOnClose)) {
+            setTimeout(function () {
+                if (reportWindow !== undefined) {
+                    $(reportWindow).on("unload", function () {
+                        callbackOnClose.call();
+                    });
+                }
+            }, 500);
+        }
     },
 
     // Determines which iFrame the report has been opened in
@@ -2117,6 +2166,174 @@ $.extend(sg.utls, {
     },
 
     /**
+     * @name showConfirmationDialogYesNoCancel
+     * @desc Display a confirmation dialog box
+     *       Notes:
+     *         - This method does not rely on an embedded x-kendo-template script element. 
+     *           It will dynamically create one at run-time.
+     *         - It will display the dialog title in the traditional header of the dialog box
+     *           instead of in the message body area.
+     *         
+     * @private
+     * @param {object} callbackYes - Callback when 'Yes' selected
+     * @param {object} callbackNo - Callback when 'No' selected
+     * @param {object} callbackCancel - Callback when 'Cancel' selected
+     * @param {string} messageIn - The message to display
+     * @param {string} titleIn - Optional - The dialog title to display
+     * @param {string} btnYesLabelIn - Optional - The text for the 'Yes' button
+     * @param {string} btnNoLabelIn - Optional - The text for the 'No' button
+     * @param {string} btnCancelLabelIn - Optional - The text for the 'Cancel' button
+     * @param {boolean} noPostFix - Optional - an random Postfix
+     */
+    showConfirmationDialogYesNoCancel: function (callbackYes, callbackNo, callbackCancel, messageIn, titleIn, btnYesLabelIn, btnNoLabelIn, btnCancelLabelIn,noPostFix = false) {
+
+        var DialogID = 'confirmationDialogYesNoCancel';
+        var DialogParentID = 'confirmationParentYesNoCancel';
+        var InpageTemplateIDRoot = 'generic-confirmationYesNoCancel';
+        var randomPostfix = noPostFix ? '' : sg.utls.makeRandomString(5);
+        var InpageTemplateID = InpageTemplateIDRoot + randomPostfix;
+
+        messageIn = sg.utls.htmlEncode(messageIn);
+        titleIn = sg.utls.htmlEncode(titleIn);
+
+        var template =
+            `<script id="${InpageTemplateID}" type="text/x-kendo-template">
+                <div class="fild_set">
+                    <div class="fild-title generic-message" id="gen-message${randomPostfix}">
+                        <div id="title-text${randomPostfix}"></div>
+                    </div>
+                    <div class="fild-content">
+                        <div id="body-text${randomPostfix}"></div>
+                        <div class="modelBox_controlls">
+                            <input type="button" class="btn btn-secondary generic-cancel" id="kendoConfirmationCancelButton${randomPostfix}" value="@CommonResx.Cancel" />
+                            <input type="button" class="btn btn-primary generic-no" id="kendoConfirmationNoButton${randomPostfix}" value="@CommonResx.No" />
+                            <input type="button" class="btn btn-primary generic-confirm" id="kendoConfirmationAcceptButton${randomPostfix}" value="@CommonResx.Yes" />
+                        </div>
+                    </div>
+                </div>
+            </script>`;
+
+        $(template).appendTo('body');
+
+        // This kendoWindow visibility check is added for the defect D-07638
+        var wnd = $('#' + DialogID).data("kendoWindow");
+        if (wnd != null && !wnd.element.is(":hidden")) {
+            return;
+        }
+
+        var kendoWindow = $("<div class='modelWindow' id='" + DialogID + "' />").kendoWindow({
+            title: '',
+            resizable: false,
+            modal: true,
+            minWidth: 600,
+            maxWidth: 960,
+            open: function () {
+                // For custom theme color
+                sg.utls.setBackgroundColor($(this.element[0].previousElementSibling));
+            },
+            // custom function to support focus within kendo window
+            activate: sg.utls.kndoUI.onActivate
+        });
+
+        kendoWindow.data("kendoWindow").content($("#" + InpageTemplateID).html()).center().open();
+
+        kendoWindow.data("kendoWindow").bind("close", function () {
+            kendoWindow.data("kendoWindow").destroy();
+            if (callbackCancel != null) {
+                callbackCancel();
+            }
+        });
+
+        // Set the message text
+        var msg = messageIn.replace(/\n/g, '<br/>');
+        kendoWindow.find("#body-text" + randomPostfix).html(msg);
+
+        _setButtonLabels();
+
+        _setButtonCallbacks();
+
+        // Little x button gets shifted upwards when
+        // following line is enabled. Looks funny.
+        //kendoWindow.parent().addClass('modelBox');
+
+        kendoWindow.parent().attr('id', DialogParentID);
+        var $divConfirmParent = $('#' + DialogParentID);
+        $divConfirmParent.css('position', 'absolute');
+        $divConfirmParent.css('left', ($(window).width() - $divConfirmParent.width()) / 2);
+
+        _setDialogTitle();
+
+        // Set message position to viewport top.
+        sg.utls.showMessagesInViewPort2(DialogParentID);
+
+        function _setDialogTitle() {
+            var title;
+            if (titleIn && titleIn.length > 0) {
+                title = titleIn;
+            } else {
+                title = globalResource.ConfirmationTitle;
+            }
+
+            // Set the modal dialog caption (title) text
+            $divConfirmParent.find('#' + DialogID + '_wnd_title').html(title);
+        }
+
+        function _setButtonLabels() {
+            var yesLabel;
+            if (btnYesLabelIn && btnYesLabelIn.length > 0) {
+                yesLabel = btnYesLabelIn;
+            } else {
+                yesLabel = globalResource.Yes;
+            }
+
+            var noLabel;
+            if (btnNoLabelIn && btnNoLabelIn.length > 0) {
+                noLabel = btnNoLabelIn;
+            } else {
+                noLabel = globalResource.No;
+            }
+
+            var cancelLabel;
+            if (btnCancelLabelIn && btnCancelLabelIn.length > 0) {
+                cancelLabel = btnCancelLabelIn;
+            } else {
+                cancelLabel = globalResource.Cancel;
+            }
+
+            kendoWindow.find("#kendoConfirmationAcceptButton" + randomPostfix).val($("<div>").html(yesLabel).text());
+            kendoWindow.find("#kendoConfirmationCancelButton" + randomPostfix).val($("<div>").html(cancelLabel).text());
+            kendoWindow.find("#kendoConfirmationNoButton" + randomPostfix).val($("<div>").html(noLabel).text());
+        }
+
+        function _setButtonCallbacks() {
+            kendoWindow.find(".generic-confirm, .generic-cancel, .generic-no")
+                .click(function () {
+                    if ($(this).hasClass("generic-confirm")) {
+                        if (callbackYes != null) {
+                            callbackYes();
+                        }
+                        try {
+                            kendoWindow.data("kendoWindow").destroy();
+                        } catch (err) {
+                            // Don't do anything. This means the window is already 
+                            // destroyed or does not exist.
+                            // This is required for iframes
+                        }
+                    } else if ($(this).hasClass("generic-no")) {
+                        if (callbackNo != null)
+                            callbackNo();
+                        kendoWindow.data("kendoWindow").destroy();
+                    }
+                    else if ($(this).hasClass("generic-cancel")) {
+                        if (callbackCancel != null)
+                            callbackCancel();
+                        kendoWindow.data("kendoWindow").destroy();
+                    }
+                }).end();
+        }
+    },
+
+    /**
      * @name showMessagesInViewPort2
      * @desc Show all messages in viewport area
      * @private
@@ -2563,18 +2780,29 @@ $.extend(sg.utls, {
                     messageDiv.empty();
                 }, showTime);
             }
-			
+
+            var errMsgKeyHandler = function (e) {
+                if (e.keyCode === sg.constants.KeyCodeEnum.ESC) {
+                    $(".msgCtrl-close").trigger("click");
+                    $(document).off("keyup keydown", errMsgKeyHandler);
+                } else if ($('#injectedOverlay').length !== 0) {
+                    return false;
+                }
+            };
+
             if ($("#message").length && $("#message").html().length > 0) {
                 if (!(isModal === false)) {
                     if (isModalTransparent === true && $('#injectedOverlayTransparent').length === 0) {
                         //Inject an overlay that is transparent. 
                         messageDiv.parent().append("<div id='injectedOverlayTransparent' class='k-overlay k-overlay-transparent' ></div>");
                         $('#injectedOverlayTransparent').css('z-index', '999998');
+                        $(document).on("keyup keydown", errMsgKeyHandler);
                     }
                     else if ($('#injectedOverlay').length === 0){
                         //Inject an overlay that is semi-opaque. 
                         messageDiv.parent().append("<div id='injectedOverlay' class='k-overlay'></div>");
                         $('#injectedOverlay').css('z-index', '999998');
+                        $(document).on("keyup keydown", errMsgKeyHandler);
                     }
                 }
             }
@@ -2583,19 +2811,10 @@ $.extend(sg.utls, {
                 var closeHandler = function () {
                     handler();
                     $(document).off("click", ".msgCtrl-close", closeHandler);
+                    $(document).off("keyup keydown", errMsgKeyHandler);
                 };
                 $(document).on("click", ".msgCtrl-close", closeHandler);
             }
-            
-            var keyHandler = function (e) {
-                //if the key press is ESC
-                var KEY_ESC = 27;
-                if (e.keyCode === KEY_ESC) {
-                    $(".msgCtrl-close").trigger("click");
-                    $(document).off("keyup keydown", keyHandler);
-                }
-            };
-            $(document).on("keyup keydown", keyHandler);
         }
     },
 
@@ -2909,8 +3128,8 @@ $.extend(sg.utls, {
         }
     },
 
-    showMessagePopupInfo: function (messageType, message, div) {
-        sg.utls.showMessageInfoInCustomDiv(messageType, message, div);
+    showMessagePopupInfo: function (messageType, message, div, handler) {
+        sg.utls.showMessageInfoInCustomDiv(messageType, message, div, handler);
     },
 
     isSuccessMessage: function (message) {
@@ -3002,8 +3221,18 @@ $.extend(sg.utls, {
         }
     },
 
-    showMessageInfo: function (messageType, message) {
-        sg.utls.showMessageInfoInCustomDiv(messageType, message, "message");
+    showMessageInfo: function (messageType, message, handler) {
+        sg.utls.showMessageInfoInCustomDiv(messageType, message, "message", handler);
+    },
+
+    /**
+   * Date format for Declarative Framework Reports
+   * @param {any} date date to be formatted
+   * @param {string} format date format 
+   */
+    formatDate: function (date, format) {
+        if (format === undefined) format = 'MM/dd/yyyy';
+        return kendo.toString(new Date(date), format);
     },
 
     /**
@@ -3059,7 +3288,7 @@ $.extend(sg.utls, {
         messageDiv.html(messageHTML);
     },
 
-    showMessageInfoInCustomDiv: function (messageType, message, divId) {
+    showMessageInfoInCustomDiv: function (messageType, message, divId, handler) {
         var messageHTML = "";
         var messageDivId = "#" + divId;
         var messageDiv = $(messageDivId);
@@ -3092,13 +3321,32 @@ $.extend(sg.utls, {
         sg.utls.showMessagesInViewPort();
 
         messageDiv.show();
-		
-        if ($('#injectedOverlay').length === 0){
+
+        var infoMsgKeyHandler = function (e) {
+            if (e.keyCode === sg.constants.KeyCodeEnum.ESC) {
+                $(".msgCtrl-close").trigger("click");
+                $(document).off("keyup keydown", infoMsgKeyHandler);
+            } else if ($('#injectedOverlay').length !== 0) {
+                return false;
+            }
+        };
+
+        if ($('#injectedOverlay').length === 0) {
 			//Inject an overlay that is semi-opaque. 
             messageDiv.parent().append("<div id='injectedOverlay' class='k-overlay'></div>");
             $('#injectedOverlay').css('z-index', '999998');
+            $(document).on("keyup keydown", infoMsgKeyHandler);
         }
 
+        // Added callback to perform action when message box is closed
+        if (handler !== undefined && handler !== null) {
+            var closeHandler = function () {
+                handler();
+                $(document).off("click", ".msgCtrl-close", closeHandler);
+                $(document).off("keyup keydown", infoMsgKeyHandler);
+            };
+            $(document).on("click", ".msgCtrl-close", closeHandler);
+        }
     },
 
     showMessageInfoInCustomDivWithoutClose: function (messageType, message, divId) {
@@ -3147,6 +3395,10 @@ $.extend(sg.utls, {
         });
 
         sg.utls.registerFinderHotkey(element, id);
+    },
+
+    getFindersListKeyByValue: function (value) {
+        return Object.keys(sg.utls.findersList).find(key => sg.utls.findersList[key] === value);
     },
 
     registerFinderHotkey: function (element, finderId) {
@@ -3239,6 +3491,95 @@ $.extend(sg.utls, {
 
     focus: function (id) {
         $("#" + id).focus();
+    },
+
+    /**
+    * SSN number mask generation
+    * @param {string} selector fieldname
+    * @param {string} type either "UP" or "CP" expected
+    */
+    maskSSNNo: function (selector, type) {
+        if (type === "UP") {
+            $(selector).mask("AAA-AA-AAAA", {
+                'translation': {
+                    A: { pattern: /[0-9\*]/ }
+                }
+            });
+        } else {
+            $(selector).mask("AAA-AAA-AAA", {
+                'translation': {
+                    A: { pattern: /[0-9\*]/ }
+                }
+            });
+        }
+    },
+
+    /**
+    * SSN number formatting for US or CDN
+    * @param {string} fieldname name of the field to format
+    * @param {string} type either "UP" or "CP" expected
+    */
+    maskSSNNum: function (fieldname, type) {
+        var field = "#" + fieldname;
+        sg.utls.unmask(field);
+        if (type === "UP")
+            sg.utls.addPlaceHolder(field, "   -  -");
+        else
+            sg.utls.addPlaceHolder(field, "   -   -");
+        sg.utls.addMaxLength(field, "11");
+        sg.utls.maskSSNNo(field, type);
+    },
+
+    /**
+    * ZIP code mask generation
+    * @param {string} selector fieldname
+    * @param {string} type "UP" or "CP" expected (not guarrantied)
+    */
+    maskZIPCo: function (selector, type) {
+        if (type === "UP") {
+            $(selector).mask("AAAAA-AAAA", {
+                'translation': {
+                    A: { pattern: /[0-9]/ }
+                }
+            });
+        } else if (type === "CP") {
+            $(selector).mask("BAB ABA", {
+                'translation': {
+                    A: { pattern: /[0-9]/ },
+                    B: { pattern: /[A-Za-z]/ }
+                },
+                onKeyPress: function (value, event) {
+                    event.currentTarget.value = value.toUpperCase();
+                }
+            });
+        } else {
+            $(selector).mask("AAAAAAAAAAAAAAAAAAAA", {
+                'translation': {
+                    A: { pattern: /./ }
+                }
+            });
+        }
+    },
+
+    /**
+    * ZIP Code formatting
+    * @param {string} fieldname name of the field to format
+    * @param {string} type "UP" or "CP" expected (not guarrantied)
+    */
+    maskZIPCode: function (fieldname, type) {
+        var field = "#" + fieldname;
+        sg.utls.unmask(field);
+        if (type === "UP") {
+            sg.utls.addPlaceHolder(field, "     -");
+            sg.utls.addMaxLength(field, "10");
+        } else if (type === "CP") {
+            sg.utls.addPlaceHolder(field, "       ");
+            sg.utls.addMaxLength(field, "7");
+        } else {
+            sg.utls.addPlaceHolder(field, "                    ");
+            sg.utls.addMaxLength(field, "20");
+        }
+        sg.utls.maskZIPCo(field, type);
     },
 
     maskPhoneNo: function (selector) {
@@ -3931,13 +4272,15 @@ $.extend(sg.utls, {
     getMenuLabelFromMenuItemId: function (menuItemId) {
 
         var menuItemText = '';
+        var isReport = false;
         try {
             var menuItem = $('li').find('[data-menuid="' + menuItemId + '"]');
+            isReport = menuItem.attr("data-isreport") === "True";
             menuItemText = portalBehaviourResources.PagetitleInManager.format(menuItem.attr("data-modulename"), menuItem[0].text.trim());
         } catch (e) {
             menuItemText = '';
         }
-        return menuItemText;
+        return isReport ? '' : menuItemText;
     },
 
     localFormSizeDataTag: "data-local-form-size",
@@ -4520,9 +4863,7 @@ $(function () {
     }
 
     var keyHandler = function (e) {
-        //if the key press is ESC
-        var KEY_ESC = 27;
-        if (e.keyCode === KEY_ESC) {
+        if (e.keyCode === sg.constants.KeyCodeEnum.ESC) {
             $(".msgCtrl-close").trigger("click");
             $(document).off("keydown", keyHandler);
         }
@@ -4561,26 +4902,28 @@ $(function () {
 
     // Open sibling finder when textbox is focused and Alt+DownArrow are pressed
     $(document).on('keyup keydown', function (e) {
-        if ((e.altKey || e.ctrlKey) && e.keyCode === sg.constants.KeyCodeEnum.DownArrow ) {
-            var textbox = $(document.activeElement);
-            if (textbox.attr('type') === "text") {
-                var finderId = sg.utls.findersList[textbox.attr('id')];
-				if (finderId) {
-					
-					// if there is a calendar widget, return if ALT + DOWN
-					if (textbox.attr('data-role') === 'datepicker')
-					{
-						// there is a calendar control, ignore ALT +DOWN
-						if (e.altKey) 
-							return;
-					}
-					
-                    var finder = $("#" + finderId);
-                    if (finder.is(':visible') && !finder.is(':disabled')) {
-                        finder.focus();
-                        //Some finders are initialized on mousedown
-                        finder.trigger('mousedown');
-                        finder.trigger('click');
+        if ((e.altKey || e.ctrlKey) && e.keyCode === sg.constants.KeyCodeEnum.DownArrow) {
+            // Do NOT open sibling finder when textbox error-message is showing and Alt+DownArrow are pressed
+            if ($('#injectedOverlay').length === 0 && $('#injectedOverlayTransparent').length === 0) {
+                var textbox = $(document.activeElement);
+                if (textbox.attr('type') === "text") {
+                    var finderId = sg.utls.findersList[textbox.attr('id')];
+                    if (finderId) {
+
+                        // if there is a calendar widget, return if ALT + DOWN
+                        if (textbox.attr('data-role') === 'datepicker') {
+                            // there is a calendar control, ignore ALT +DOWN
+                            if (e.altKey)
+                                return;
+                        }
+
+                        var finder = $("#" + finderId);
+                        if (finder.is(':visible') && !finder.is(':disabled')) {
+                            finder.focus();
+                            //Some finders are initialized on mousedown
+                            finder.trigger('mousedown');
+                            finder.trigger('click');
+                        }
                     }
                 }
             }

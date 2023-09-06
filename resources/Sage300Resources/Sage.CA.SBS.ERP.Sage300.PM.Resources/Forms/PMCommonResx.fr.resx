@@ -192,6 +192,39 @@
   <data name="PeriodLocked" xml:space="preserve">
     <value>La date {0} correspond à la période {1} de l’exercice {2}, qui est verrouillée pour Gestion de projet dans le calendrier financier de Services communs.</value>
   </data>
+  <data name="PartialPeriodLocked" xml:space="preserve">
+    <value>La date {0} correspond à la période {1} de l’exercice {2}, qui est verrouillée pour Gestion de projet dans le calendrier financier de Services communs.</value>
+  </data>
+  <data name="NoRecord" xml:space="preserve">
+    <value>{0} {1} n'existe pas.</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Tous</value>
+  </data>
+  <data name="AP" xml:space="preserve">
+    <value>CF seulement</value>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>CC seulement</value>
+  </data>
+  <data name="CP" xml:space="preserve">
+    <value>Paie seulement</value>
+  </data>
+  <data name="OE" xml:space="preserve">
+    <value>CmC seulement</value>
+  </data>
+  <data name="PM" xml:space="preserve">
+    <value>GP seulement</value>
+  </data>
+  <data name="PO" xml:space="preserve">
+    <value>CmF seulement</value>
+  </data>
+  <data name="UP" xml:space="preserve">
+    <value>Paie aux États-Unis uniquement</value>
+  </data>
+  <data name="IC" xml:space="preserve">
+    <value>CI seulement</value>
+  </data>
   <data name="PostingDateOverride" xml:space="preserve">
     <value>Date de report remplacée</value>
   </data>
@@ -276,6 +309,12 @@
   <data name="TransactionDateBeforeProjectStartDate" xml:space="preserve">
     <value>La date de transaction est antérieure à la date de début du projet.</value>
   </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Date de transaction</value>
+  </data>
+  <data name="Expense" xml:space="preserve">
+    <value>Frais</value>
+  </data>
   <data name="CostOfSalesAccount" xml:space="preserve">
     <value>Compte de coût des ventes</value>
   </data>
@@ -303,8 +342,11 @@
   <data name="CannotDeleteRequiredOptionalField" xml:space="preserve">
     <value>You cannot delete required optional field.</value>
   </data>
+  <data name="CannotOpenView" xml:space="preserve">
+    <value>Cannot open view </value>
+  </data>
   <data name="EquipmentDescription" xml:space="preserve">
-    <value>Equipment Description</value>
+    <value>Description du matériel</value>
   </data>
   <data name="ARItem" xml:space="preserve">
     <value>Article CC</value>
@@ -332,5 +374,20 @@
   </data>
   <data name="YouCannotDeleteAnEquipmentCode" xml:space="preserve">
     <value>Vous ne pouvez pas supprimer un code de matériel qui est assigné à un(e) {0}.</value>
+  </data>
+  <data name="ProjectSectionText" xml:space="preserve">
+    <value>Paramètres par défaut pour {0} standard</value>
+  </data>
+  <data name="PJCEquipment" xml:space="preserve">
+    <value>Matériel de GP</value>
+  </data>
+  <data name="AdjustmentType" xml:space="preserve">
+    <value>Type ajustement</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Ajustement</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>Transfert</value>
   </data>
 </root>

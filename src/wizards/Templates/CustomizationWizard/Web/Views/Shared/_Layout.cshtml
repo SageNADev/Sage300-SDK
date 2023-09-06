@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. *@
 
 @using System.Web.UI.WebControls
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -28,11 +28,9 @@
 }
 @{
     var menuUrlList = ViewBag.MenuUrlList as List<WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>>;
-    var othersUrlList = ViewBag.OthersUrlList as List<WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>>;
     var widgetUrlList = ViewBag.WidgetUrlList as WebModel.NavigableMenuViewModel<Sage.CA.SBS.ERP.Sage300.Common.Models.Portal.NavigableMenu>;
     int numberOfActiveWindows;
     int.TryParse(ConfigurationHelper.GetConfigValue("NumberOfActiveWindows"), out numberOfActiveWindows);
-    var oAuthServer = string.Format(ConfigurationHelper.GetConfigValue("OAuthServerTemplate"), Request.Url.Host);
     var hasGlobalSearchLicense = ViewBag.HasGlobalSearchLicense;
 }
 <html class="template-side-nav page-collapsed home-page">
@@ -59,26 +57,10 @@
         var RECENT_WIN_LIMIT_CONST = @ViewBag.RecentWindowsLimit;
         var LOGGED_IN_USERNAME_CONST = '@Model.UserName'.replace(/\s/g,'');
         var LOGGED_IN_TENANT_CONST = '@Model.CompanyName'.replace(/\s/g,'');
-        var sIRCLocation = '@ConfigurationHelper.GetConfigValue("SIRCLocation")';
-        var oAuthLocation = '@oAuthServer';
         var menuUserPreferenceKey = '@ViewBag.menuUserPreferenceKey';
         var formSizeUserPreferenceKey = '@ViewBag.formSizeUserPreferenceKey';
         var formSizeResetConfirmation = '@NavigationResx.FormSizeResetConfirmation';
         var formSizeResetConfirmationTitle = '@CommonResx.Confirmation';
-
-        @functions {
-            public String GetSIRCPort(string path)
-            {
-                var port = "";
-                if (File.Exists(path))
-                {
-                    port = File.ReadAllText(path).Trim();
-                }
-
-                return port;
-            }
-        }
-        var SIRCPort = '@GetSIRCPort(Path.Combine(Server.MapPath("~"), "..", "..", "SIRC", "site", "sslPort.txt"))';
     </script>
 </head>
 
@@ -96,7 +78,7 @@
                 <a id="skipMenu" tabindex="0" class="skip-menu" href="#menuPrefButton">@HomePageResx.SkipMenu</a>
                 <div class="globalNavigation">
                     <a class="last_container session-date" href="javascript:sessionDateClick()">
-                        <span class="glyphicon glyphicon-calendar" id="sessionDateIcon"></span>
+                        <span id="sessionDateIcon"></span>
                         <span class="text-right" id="sessionDatelabel">@HomePageResx.Session_Date:&nbsp;</span>
                         <span id="spnSessionDate"></span>
                         <div class="clearfix"></div>
@@ -147,9 +129,9 @@
                                 <i class="settings glyphicon glyphicon-md glyphicon-setting" title="Settings"><span>@NavigationResx.Settings</span></i>
                                 <ul>
                                     @*<li id="unpinMainNav"><i class="unpin"></i><span class="settings-menulist" id="labelUnpin">@NavigationResx.UnpinMenu</span></li>
-                            <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">@NavigationResx.PinMenu</span></li>
-                            <li id="btnColorPicker"><span class="settings-menulist" id="labelCompanyColor">@NavigationResx.SetCompanyColor</span></li>
-                            <li id="btnColorPickerDB"><span class="settings-menulist" id="labelCompanyColorDB">@NavigationResx.SetCompanyColorDB</span></li>*@
+                                        <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">@NavigationResx.PinMenu</span></li>
+                                        <li id="btnColorPicker"><span class="settings-menulist" id="labelCompanyColor">@NavigationResx.SetCompanyColor</span></li>
+                                        <li id="btnColorPickerDB"><span class="settings-menulist" id="labelCompanyColorDB">@NavigationResx.SetCompanyColorDB</span></li>*@
                                     <li id="btnFormSize">
                                         <span class="settings-menulist" id="labelFormSize">@NavigationResx.TextSize</span>
                                         <ul>
@@ -162,25 +144,25 @@
                                 </ul>
                             </li>
                             <li class="menu-item-with-icon" id="topMenuTools">
-                                <i class="settings tootls glyphicon glyphicon-md glyphicon-lightning" title="@NavigationResx.ToolsTitle"><span>@NavigationResx.Tools</span></i>
+                                <i class="settings tools glyphicon glyphicon-md glyphicon-lightning" title="@NavigationResx.ToolsTitle"><span>@NavigationResx.Tools</span></i>
                             </li>
                         </ul>
                     </div>
                 </div>
-                @*NOTE: Company Theme Color - color picker - leaving the code for the future useage*@
+                @*NOTE: Company Theme Color - color picker - leaving the code for the future usage*@
                 @*<div class="color-picker" id="colorPicker">
-            <div class="wrapper-color-picker">
-                <div class="column">
-                    <h3 class="title">Select Theme Color</h3>
-                    <div id="palette"></div>
-                </div>
-                <div class="column">
-                    <h3 class="title"><label for="picker">Choose Custome Theme Color</label></h3>
-                    <input id="picker" />
-                </div>
-            </div>
-            <div class="glyphicon glyphicon-close dismiss" title="Dismiss" id="btnColorPickerClose"></div>
-        </div>*@
+                        <div class="wrapper-color-picker">
+                            <div class="column">
+                                <h3 class="title">Select Theme Color</h3>
+                                <div id="palette"></div>
+                            </div>
+                            <div class="column">
+                                <h3 class="title"><label for="picker">Choose Custome Theme Color</label></h3>
+                                <input id="picker" />
+                            </div>
+                        </div>
+                        <div class="glyphicon glyphicon-close dismiss" title="Dismiss" id="btnColorPickerClose"></div>
+                    </div>*@
             </div>
         </header>
         <div class="master-wrapper">
@@ -189,12 +171,12 @@
                     <ul class="primary-list" id="listPrimary">
                         <li class="menu-item" data-menuid="101" id="homeNav">
                             <div class="nav-icon">
-                                <img src="~/Content/Images/nav/icon_home.svg" alt="Home" width="20" height="20">
+                                <img src="~/Content/Images/nav/icon_home.png" alt="Home" width="20" height="20">
+                                <img src="~/Content/Images/nav/icon_home_hover.png" alt="Home" width="20" height="20">
                             </div>
                             <a tabindex="0">@NavigationResx.Home</a>
                         </li>
                         @Html.Partial(Constants.PortalMenu, menuUrlList)
-                        @Html.Partial("~/Views/Partials/_PluginMenuUrl.cshtml", othersUrlList)
                     </ul>
                     <div id="menuPrefTogglerAlt">
                         <a name="menuPrefButton" id="menuPrefButton"></a>

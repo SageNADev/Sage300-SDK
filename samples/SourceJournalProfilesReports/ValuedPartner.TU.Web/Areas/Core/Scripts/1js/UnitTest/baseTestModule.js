@@ -122,6 +122,7 @@
             } else {
                 let tr = grid.tbody.find("tr").eq(lineIndex);
                 grid.select(tr);
+                grid.tbody.find("tr").eq(lineIndex).find("td").eq(0).trigger("click");
             }
 
             /*
@@ -237,6 +238,8 @@
         },
 
         msg: "",
+        stepRunning: false,
+
         /**
          * Execute the automation steps
          * @param {int} i The current step number
@@ -245,33 +248,42 @@
          */
         executeSteps: function (i, assert) {
 
+            
             if (i >= this.steps.length) return;
 
             let done = assert.async();
 
-            //this.steps[i].fnc();
-            const step = this.steps.shift();
-            step.fnc();
+            try {
+                //this.steps[i].fnc();
+                const step = this.steps.shift();
+                step.fnc();
+                this.stepRunning = true;
 
-            setTimeout(() => {
+                setTimeout(() => {
 
-                //this waits for async AJAX to complete by adding new 'empty' step on top. 
-                //This will pause another 200ms for AJAX to complete
-                if (jQuery.active > 0) {
+                    //this waits for async AJAX to complete by adding new 'empty' step on top. 
+                    //This will pause another 200ms for AJAX to complete
+                    if (jQuery.active > 0) {
 
-                    this.steps.unshift(this.step(() => console.log("......waiting for jQuery.active completed......"), 600));
-                    console.log("...........jQuery.active wait added....");
-                } 
+                        this.steps.unshift(this.step(() => console.log("......waiting for jQuery.active completed......"), 600));
+                        console.log("...........jQuery.active wait added....");
+                    }
 
+                    done();
+                    this.stepRunning = false;
+
+                    this.msg = baseStaticTestModule.testName + "...." + this.steps.length + "...steps remaining...";
+
+                    console.log(this.msg);
+
+                    this.executeSteps(0, assert);
+
+                }, step.ms);
+            } catch (e) {
                 done();
-
-                this.msg = baseStaticTestModule.testName + "...." + this.steps.length + "...steps remaining...";
-
-                console.log(this.msg);
-                
+                console.error("On Error at " + baseStaticTestModule.testName + ": continue..." + e.stack);
                 this.executeSteps(0, assert);
-
-            }, step.ms); 
+            }
         },
 
         /**
@@ -291,7 +303,7 @@
         processSteps: function (assert, testSteps) {
             //assert = baseStaticTestModule.assert;
 
-            const startTest = this.steps.length === 0;
+            const startTest = this.steps.length === 0 && !this.stepRunning; //this.steps.length === 0;
 
             this.steps = this.steps.concat(testSteps);
             //this.steps.push(this.step(() => console.log(this.steps.length + "...." + baseStaticTestModule.testName + "...steps remaining...")));
@@ -311,20 +323,53 @@
         },
 
         QWrapper: function (name, testFnc) {
+            let self = this;
+
             //now can control more :)
-            appconfig.trace.disabled = true;
+            //appconfig.trace.disabled = true;
+            //if (!this.errorLoggingRunning) this.startLoggingErrors();
 
             QUnit.test(name, function (assert) {
+                self.startLoggingErrors();
+
                 baseStaticTestModule.testName = name;
                 baseStaticTestModule.assert = assert;
                 baseStaticTestModule.configTestSuite();
 
-                //pmEquipmentUsageTestSuite.setAssert(assert);
                 testFnc(assert);
+               
+            });
+            
+        },
+
+        origError: console.error,
+        errorLoggingRunning: false,
+
+        startLoggingErrors: function () {
+            if (this.errorLoggingRunning) return;
+
+            console.log("logging started");
+
+            console.stderror = console.error.bind(console);
+            console.errors = [];
+            console.error = function () {
+                
+                console.errors.push(Array.from(arguments));
+                
+                console.stderror.apply(console, arguments);
+            }
+
+            this.errorLoggingRunning = true;
+            let self = this;
+
+            QUnit.jUnitDone(function (data) {
+                console.errors.length = 0;
+                console.error = self.origError;
+                self.errorLoggingRunning = false;
+
+                console.log("logging stopped");
             });
         }
-                
-
     }
 
     this.baseStaticTestModule = helpers.View.extend({}, domainTestModule);

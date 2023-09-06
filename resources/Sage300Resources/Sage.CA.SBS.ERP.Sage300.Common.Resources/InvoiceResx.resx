@@ -2244,7 +2244,7 @@
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="The1099CPRSAmount" xml:space="preserve">
-    <value>The 1099/CPRS Amount</value>
+    <value>1099/CPRS Amount</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="_1099CPRSClass" xml:space="preserve">
@@ -2588,7 +2588,7 @@
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="RetainageTaxTotalAmount" xml:space="preserve">
-    <value>Retainage Tax Total Amount</value>
+    <value>Total Retainage Tax</value>
     <comment>For PO Invoice Entry</comment>
   </data>
   <data name="NextDetailNumber" xml:space="preserve">
@@ -3590,5 +3590,8 @@
   </data>
   <data name="ExtendedBillingAmount" xml:space="preserve">
     <value>Estimated Extended Billing</value>
+  </data>
+  <data name="NetInvoiceTotal" xml:space="preserve">
+    <value>Net Invoice Total</value>
   </data>
 </root>

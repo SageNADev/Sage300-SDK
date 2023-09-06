@@ -653,46 +653,52 @@ $.extend(sg.utls.kndoUI, {
     /**
      * Checks if the date is valid - DEPRECATED for external use. Use getFormattedDate
      * @method checkForValidDate
-     * @param {} val
-     * @param {} checkforUtcDate
-     * @return CallExpression
+     * @param {any} val Value to parse
+     * @param {boolean} checkforUtcDate True if UtcDate
+     * @return {any} date object
      */
     checkForValidDate: function (val, checkforUtcDate) {
-        if (val == null || val === "") {
+        if (val === null || val === "") {
             return null;
         }
         var date = kendo.parseDate(val, sg.utls.kndoUI.getDatePatterns());
-        if (date == null) {
+        if (date === null) {
             if (checkforUtcDate) {
                 return sg.utls.kndoUI.getDate(val);
             }
             return null;
         }
-        if (date.getMonth() == 0 && date.getDate() == 1 && date.getFullYear() == 1) {
+        // Let's skip dark ages
+        const firstMillennium = 1000;
+        if ((date.getFullYear() < firstMillennium) ||
+            (date.getMonth() === 0 && date.getDate() === 1 && date.getFullYear() === 1000)) {
             return null;
         }
         return sg.utls.kndoUI.getDate(date);
     },
 
     /**
-   * Checks if the date is null or valid - DEPRECATED for external use. Use getFormattedDate
-   * @method checkForValidDateNull
-   * @param {} val
-   * @param {} checkforUtcDate
-   * @return CallExpression
-   */
+     * Checks if the date is null or valid - DEPRECATED for external use. Use getFormattedDate
+     * @method checkForValidDateNull
+     * @param {any} val Value to parse
+     * @param {boolean} checkforUtcDate True if UtcDate
+     * @return {any} date/true/null object
+     */
     checkForValidDateNull: function (val, checkforUtcDate) {
-        if (val == null || val === "") {
+        if (val === null || val === "") {
             return true;
         }
         var date = kendo.parseDate(val, sg.utls.kndoUI.getDatePatterns());
-        if (date == null) {
+        if (date === null) {
             if (checkforUtcDate) {
                 return sg.utls.kndoUI.getDate(val);
             }
             return null;
         }
-        if (date.getMonth() == 0 && date.getDate() == 1 && date.getFullYear() == 1) {
+        // Let's skip dark ages
+        const firstMillennium = 1000;
+        if ((date.getFullYear() < firstMillennium) ||
+            (date.getMonth() === 0 && date.getDate() === 1 && date.getFullYear() === 1000)) {
             return null;
         }
         return sg.utls.kndoUI.getDate(date);

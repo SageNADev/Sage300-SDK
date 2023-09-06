@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdvancesReceivable" xml:space="preserve">
+    <value>Avances à recevoir</value>
+  </data>
+  <data name="AdvancesReceivableAccountDescription" xml:space="preserve">
+    <value>Descr.-Cpte avances à recevoir</value>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>Bank Code</value>
+    <comment>to be translate</comment>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+    <comment>to be translate</comment>
+  </data>
+  <data name="EarningDeduction" xml:space="preserve">
+    <value>Gain/retenue</value>
+  </data>
+  <data name="EmployerExpenseAccount" xml:space="preserve">
+    <value>Cpte de charges-Employeur</value>
+  </data>
+  <data name="EmployerExpenseAccountDescription" xml:space="preserve">
+    <value>Descr. compte de charges-Employeur</value>
+  </data>
+  <data name="EmployerLiabilityAccount" xml:space="preserve">
+    <value>Cpte de passif-Employeur</value>
+  </data>
+  <data name="EmployerLiabilityAccountDescription" xml:space="preserve">
+    <value>Descr. compte de passif-Employeur</value>
+  </data>
+  <data name="GLDistCode" xml:space="preserve">
+    <value>Code vent.G/L</value>
+  </data>
+  <data name="Liability" xml:space="preserve">
+    <value>Passif</value>
+  </data>
+  <data name="LiabilityAccountDescription" xml:space="preserve">
+    <value>Description-Cpte de passif</value>
+  </data>
+  <data name="OvertimeExpense" xml:space="preserve">
+    <value>Charges-Hres sup.</value>
+  </data>
+  <data name="OvertimeExpenseAccountDescription" xml:space="preserve">
+    <value>Descr.-Cpte de charges d'heures suppl.</value>
+  </data>
+  <data name="RateAmtPct" xml:space="preserve">
+    <value>Taux/Mont/P.c.</value>
+  </data>
+  <data name="RegularExpense" xml:space="preserve">
+    <value>Cpte charges-Salaire rég.</value>
+  </data>
+  <data name="RegularExpenseAccountDescription" xml:space="preserve">
+    <value>Descr.-Cpte de charges courantes</value>
+  </data>
+  <data name="Shift" xml:space="preserve">
+    <value>Quart</value>
+  </data>
+  <data name="ShiftExpense" xml:space="preserve">
+    <value>Charges-Quart</value>
+  </data>
+  <data name="ShiftExpenseAccountDescription" xml:space="preserve">
+    <value>Descr.-Cpte de charges de prime de quart</value>
+  </data>
+  <data name="ShiftSchedule" xml:space="preserve">
+    <value>Table de quart</value>
+  </data>
+  <data name="CostCenterOverride" xml:space="preserve">
+    <value>Subst. centre coûts</value>
+  </data>
+  <data name="Segments" xml:space="preserve">
+    <value>Segments</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Impôt</value>
+  </data>
+  <data name="TaxDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Impôts</value>
+  </data>
+  <data name="TransactionCode" xml:space="preserve">
+    <value>Transaction Code</value>
+    <comment>to be translate</comment>
+  </data>
+  <data name="UseOptionalFields" xml:space="preserve">
+    <value>Utiliser champs optionnels</value>
+  </data>
+  <data name="WCCGroup" xml:space="preserve">
+    <value>Groupe CSST</value>
+  </data>
+  <data name="WorkClassificationDescription" xml:space="preserve">
+    <value>Descr. classif. des activités</value>
+  </data>
+  <data name="WorkersCompCode" xml:space="preserve">
+    <value>Code CSST</value>
+  </data>
+  <data name="WorkersCompDescription" xml:space="preserve">
+    <value>Description -CSST</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Actif</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Nom de l'employé</value>
+  </data>
+  <data name="PeriodEndDate" xml:space="preserve">
+    <value>Date fin période</value>
+  </data>
+  <data name="TimesLate" xml:space="preserve">
+    <value>Retards</value>
+  </data>
+  <data name="Accrued" xml:space="preserve">
+    <value>Cumulées</value>
+  </data>
+  <data name="Banked" xml:space="preserve">
+    <value>Banque d’heures</value>
+  </data>
+  <data name="Compensatory" xml:space="preserve">
+    <value>Banque d’heures</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>Payées</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>Norm.</value>
+  </data>
+  <data name="Sick" xml:space="preserve">
+    <value>Maladie</value>
+  </data>
+  <data name="Vacation" xml:space="preserve">
+    <value>Vacance</value>
+  </data>
+  <data name="AddSuccessMessage" xml:space="preserve">
+    <value>Ajout d’une nouvelle {0}.</value>
+  </data>
+</root>

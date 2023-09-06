@@ -9,7 +9,7 @@
 
 @sage-green:				#00D639;
 @sage-bright-green:			#00DC00;
-@sage-dark-gray:			#1b1b1b;
+@sage-dark-gray:			#262626;
 @sage-mid-gray:				#668592;
 @sage-gray:					#CCD6DB;
 @sage-light-gray:			#e2e2e2;
@@ -17,10 +17,10 @@
 @sage-blue:					#0073c2;
 @sage-orange:				#E96400;
 @sage-red:					#C7384F;
-@sage-link:					#007E45;
+@sage-link:					#008C4E;
 
 @black:						#000000;
-@gray-darker:				#474747;
+@gray-darker:				#4D4D4D;
 @gray-dark:					#5e5e5e;
 @gray-t1:					#777777;
 @gray-t2:					#919191;
@@ -31,7 +31,7 @@
 @gray-lighter:				#f0f0f0;
 @white:						#ffffff;
 
-@brand-primary:				#007E45;
+@brand-primary:				#008C4E;
 @brand-secondary:			@sage-green;
 @brand-success:				@sage-bright-green;
 @brand-info:				@sage-blue;
@@ -59,7 +59,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  	'Open Sans', Arial, sans-serif;
+@font-family-sans-serif:  	'SageUI', 'Open Sans', Arial, sans-serif;
 @font-family-serif:       	Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   	Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -95,6 +95,9 @@
 @icon-font-name:			"sagearmonyeicons";
 @icon-font-name-awesome:	"fontawesome-webfont";
 @icon-font-name-sds:		"sage-design-system";
+@font-name-sage-header:		"Sage_Headline-Black";
+@font-name-sage-text:		"Sage_Text-Regular";
+@font-name-sage-ui:			"Sage_UI-Regular";
 //** Element ID within SVG icon file.
 @icon-font-svg-id:			"sagearmonyeicons";
 @icon-font-face:			"Sage Armonye Icons";
@@ -126,6 +129,7 @@
 @border-radius-base:        0;
 @border-radius-large:       0;
 @border-radius-small:       0;
+@border-radius-default:     2px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -167,7 +171,7 @@
 @btn-font-weight:               normal;
 
 @btn-default-color:             @black;
-@btn-default-bg:                #f1f1f3;
+@btn-default-bg:                @white;
 @btn-default-border:            @sage-mid-gray;
 
 @btn-primary-color:             #fff;
@@ -219,7 +223,7 @@
 //** `<input disabled>` border color
 @input-border-disabled:          @sage-gray;
 //** `<input>` border radius
-@input-border-radius:            @border-radius-base;
+@input-border-radius:            @border-radius-default;
 //** Border color for inputs on focus
 @input-border-focus:             #ffb500;
 
@@ -449,7 +453,7 @@
 
 @nav-tabs-active-link-hover-bg:             @white;
 @nav-tabs-active-link-hover-color:          @gray;
-@nav-tabs-active-link-hover-border-color:   @brand-primary;
+@nav-tabs-active-link-hover-border-color:   @gray-lighter;
 
 @nav-tabs-justified-link-border-color:            #ddd;
 @nav-tabs-justified-active-link-border-color:     @body-bg;

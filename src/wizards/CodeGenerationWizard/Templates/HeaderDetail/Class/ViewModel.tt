@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -32,6 +32,9 @@
     var webModuleNamespace = (settings.DoesAreasExist ? (settings.WebProjectIncludesModule ? moduleId + "." : string.Empty) + "Web.Areas." + moduleId : moduleId + ".Web");
     var headerModelName = settings.Entities.Where(e => e.Properties[BusinessView.Constants.ViewId] == settings.HeaderNode.Attribute("view").Value).First().Properties[BusinessView.Constants.ModelName];
     var enumsCount = view.Enums.Count;
+
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = (moduleId == "PR");
 #>
 // <#=copyright#>
 
@@ -80,8 +83,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
         /// Returns true if User has Modify Access
         /// </summary>
         public bool HasModifyAccess => UserAccess == null || UserAccess.SecurityType.HasFlag(SecurityType.Modify);
-
-		<#
+<#
 			foreach(var view in settings.Entities)
 			{
 			    if (view.ForGrid)
@@ -89,6 +91,18 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Models
                     var viewName = view.Properties[BusinessView.Constants.EntityName];
 			    }
 			}
-		#>
+#>
+<#
+	if (entityContext)
+	{
+#>
+
+        /// <summary>
+        /// Payroll Type (CP or UP for JavaScript usage)
+        /// </summary>
+        public string PayrollType { get; set; }
+<#
+	}
+#>
     }
 }

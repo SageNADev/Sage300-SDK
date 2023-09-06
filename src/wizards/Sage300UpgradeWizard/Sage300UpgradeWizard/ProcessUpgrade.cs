@@ -109,9 +109,9 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
                     //case 3: if (Constants.PerRelease.ReportUpgrade_For_2021_2) { ReportUpgrade_For_2021_2(title); } break;
 
                     case 3: if (Constants.PerRelease.UpdateAccpacDotNetLibrary) { SyncAccpacLibraries(title, AccpacPropsFileOriginallyInSolutionfolder); } break;
-                    case 4: if (Constants.PerRelease.RemoveWebFormsFolder) { RemoveWebFormsFolder(title); } break;
+                    // case 4: if (Constants.PerRelease.RemoveWebFormsFolder) { RemoveWebFormsFolder(title); } break;
 
-                    //case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
+                    case 4: if (Constants.PerRelease.RemovePreviousJqueryLibraries) { RemovePreviousJqueryLibraries(title); } break;
                     //case 5: if (Constants.PerRelease.NamespaceAndWebProjectUpdates) { NamespaceAndWebProjectUpdates(title); } break;
                     //case 6: if (Constants.PerRelease.FinderAlterations) { FinderAlterations(title); } break;
                     //case 7: if (Constants.PerRelease.JavascriptMinificationUpdates) { JavascriptMinificationUpdates(title); } break;
@@ -700,13 +700,17 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             var filesToDelete = new List<string>
             {
                 // jQuery Core
-                "jquery-3.4.1.js",
-                "jquery-3.4.1.min.js",
-                "jquery-3.4.1.min.map",
+                // "jquery-3.4.1.js",
+                // "jquery-3.4.1.min.js",
+                // "jquery-3.4.1.min.map",
+
+                // jQuery UI
+                "jquery-ui-1.13.1.js",
+                "jquery-ui-1.13.1.min.js",
 
                 // jQuery Migrate
-                "jquery-migrate-3.1.0.js",
-                "jquery-migrate-3.1.0.min.js",
+                // "jquery-migrate-3.1.0.js",
+                // "jquery-migrate-3.1.0.min.js",
             };
 
             foreach (var filename in filesToDelete)
@@ -719,24 +723,24 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             //
             // Step 2 - Update some jQuery references to the latest version
             //
-            List<string> fileList = new List<string>
-            {
-                "CustomReportViewer.aspx",
-                "ReportViewer.aspx"
-            };
+            //List<string> fileList = new List<string>
+            //{
+            //    "CustomReportViewer.aspx",
+            //    "ReportViewer.aspx"
+            //};
 
-            var previousVersion = "3.4.1";
-            var newVersion = "3.6.0";
+            //var previousVersion = "3.4.1";
+            //var newVersion = "3.6.0";
 
-            foreach (var name in fileList)
-            {
-                var filePath = Path.Combine(_settings.DestinationWebFolder, Constants.Common.WebFormsFolderName, name);
-                FileUtilities.ReplaceTextInFile(filePath, $"jquery-{previousVersion}.js", $"jquery-{newVersion}.js");
+            //foreach (var name in fileList)
+            //{
+            //    var filePath = Path.Combine(_settings.DestinationWebFolder, Constants.Common.WebFormsFolderName, name);
+            //    FileUtilities.ReplaceTextInFile(filePath, $"jquery-{previousVersion}.js", $"jquery-{newVersion}.js");
 
-                // Log the result of the namespace replacement
-                var msg = String.Format(Resources.Template_SuccessfullyUpdatedJQueryVersionInFile, previousVersion, newVersion, filePath);
-                Log(msg);
-            }
+            //    // Log the result of the namespace replacement
+            //    var msg = String.Format(Resources.Template_SuccessfullyUpdatedJQueryVersionInFile, previousVersion, newVersion, filePath);
+            //    Log(msg);
+            //}
 
             // Log end of step
             LogEventEnd(title);
