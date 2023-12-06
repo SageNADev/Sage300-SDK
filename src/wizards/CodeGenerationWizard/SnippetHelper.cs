@@ -312,6 +312,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var entityName = controlElement.Attribute("text").Value;
             var gridName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
 
+            // Ensure that the div for a grid is grid-group and not form-group
+            snippet.Replace("form-group", "grid-group", snippet.ToString().LastIndexOf("form-group"), 10);
+
             // Optional Fields
             var optionalFields = gridName.Contains("Optional");
 
