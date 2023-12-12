@@ -553,9 +553,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // pnlUIGeneration
             // 
             this.pnlUIGeneration.Controls.Add(this.splitDesigner);
-            this.pnlUIGeneration.Location = new System.Drawing.Point(17, 20);
+            this.pnlUIGeneration.Location = new System.Drawing.Point(939, 316);
             this.pnlUIGeneration.Name = "pnlUIGeneration";
-            this.pnlUIGeneration.Size = new System.Drawing.Size(901, 378);
+            this.pnlUIGeneration.Size = new System.Drawing.Size(358, 107);
             this.pnlUIGeneration.TabIndex = 52;
             // 
             // splitDesigner
@@ -574,8 +574,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // 
             this.splitDesigner.Panel2.Controls.Add(this.treeUIEntities);
             this.splitDesigner.Panel2.Controls.Add(this.grpContainers);
-            this.splitDesigner.Size = new System.Drawing.Size(901, 378);
-            this.splitDesigner.SplitterDistance = 629;
+            this.splitDesigner.Size = new System.Drawing.Size(358, 107);
+            this.splitDesigner.SplitterDistance = 249;
             this.splitDesigner.TabIndex = 2;
             // 
             // treeUIEntities
@@ -586,7 +586,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.treeUIEntities.ForeColor = System.Drawing.SystemColors.WindowText;
             this.treeUIEntities.Location = new System.Drawing.Point(0, 181);
             this.treeUIEntities.Name = "treeUIEntities";
-            this.treeUIEntities.Size = new System.Drawing.Size(268, 197);
+            this.treeUIEntities.Size = new System.Drawing.Size(105, 0);
             this.treeUIEntities.TabIndex = 4;
             this.treeUIEntities.TabStop = false;
             // 
@@ -598,7 +598,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.grpContainers.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpContainers.Location = new System.Drawing.Point(0, 0);
             this.grpContainers.Name = "grpContainers";
-            this.grpContainers.Size = new System.Drawing.Size(268, 181);
+            this.grpContainers.Size = new System.Drawing.Size(105, 181);
             this.grpContainers.TabIndex = 3;
             this.grpContainers.TabStop = false;
             this.grpContainers.Text = "Toolbox";
@@ -611,7 +611,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabUI.Location = new System.Drawing.Point(3, 60);
             this.tabUI.Name = "tabUI";
             this.tabUI.SelectedIndex = 0;
-            this.tabUI.Size = new System.Drawing.Size(262, 118);
+            this.tabUI.Size = new System.Drawing.Size(99, 118);
             this.tabUI.TabIndex = 20;
             // 
             // tabPageInfo
@@ -623,7 +623,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPageInfo.Location = new System.Drawing.Point(4, 22);
             this.tabPageInfo.Name = "tabPageInfo";
             this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInfo.Size = new System.Drawing.Size(254, 92);
+            this.tabPageInfo.Size = new System.Drawing.Size(91, 92);
             this.tabPageInfo.TabIndex = 0;
             this.tabPageInfo.Text = "Info";
             this.tabPageInfo.UseVisualStyleBackColor = true;
@@ -667,7 +667,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.tabPageFinder.Location = new System.Drawing.Point(4, 22);
             this.tabPageFinder.Name = "tabPageFinder";
             this.tabPageFinder.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFinder.Size = new System.Drawing.Size(254, 92);
+            this.tabPageFinder.Size = new System.Drawing.Size(91, 92);
             this.tabPageFinder.TabIndex = 1;
             this.tabPageFinder.Text = "Finder";
             this.tabPageFinder.UseVisualStyleBackColor = true;
@@ -684,7 +684,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlFinder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFinder.Location = new System.Drawing.Point(3, 3);
             this.pnlFinder.Name = "pnlFinder";
-            this.pnlFinder.Size = new System.Drawing.Size(248, 86);
+            this.pnlFinder.Size = new System.Drawing.Size(85, 86);
             this.pnlFinder.TabIndex = 0;
             // 
             // btnFinderPropFile
@@ -765,7 +765,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.toolStripSeparator3});
             this.tbrProperties.Location = new System.Drawing.Point(3, 18);
             this.tbrProperties.Name = "tbrProperties";
-            this.tbrProperties.Size = new System.Drawing.Size(262, 32);
+            this.tbrProperties.Size = new System.Drawing.Size(99, 32);
             this.tbrProperties.TabIndex = 19;
             this.tbrProperties.Text = "toolStrip1";
             // 
@@ -1445,7 +1445,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             this.pnlColumns.Controls.Add(this.grdEntityFields);
             this.pnlColumns.Controls.Add(this.tbrEntity);
             this.pnlColumns.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlColumns.Location = new System.Drawing.Point(0, 0);
+            this.pnlColumns.Location = new System.Drawing.Point(100, 100);
             this.pnlColumns.Name = "pnlColumns";
             this.pnlColumns.Size = new System.Drawing.Size(615, 0);
             this.pnlColumns.TabIndex = 19;
