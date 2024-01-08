@@ -79,7 +79,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassPrep.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This utility will create the &apos;ModelsSource.json&apos; file for use by the SDK&apos;s &apos;Sage300SubclassConfigsWizard&apos; and will create all of the model zip files for use by the application&apos;s &apos;Sage300SubclassCompiler&apos; tool..
+        ///   Looks up a localized string similar to This utility will create the &apos;ModelsSource.json&apos; file for use by the SDK&apos;s &apos;Sage300SubclassConfigsWizard&apos; and will create all of the model zip files for use by the application&apos;s &apos;Sage300SubclassCompilerWizard&apos;..
         /// </summary>
         internal static string Info {
             get {
@@ -116,7 +116,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassPrep.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The &apos;ModelsSource.json&apos; file has been created for the SDK&apos;s &apos;Sage300SubclassConfigsWizard&apos; and the model zip files have been created for the application&apos;s &apos;Sage300SubclassCompiler&apos; tool..
+        ///   Looks up a localized string similar to The &apos;ModelsSource.json&apos; file has been created for the SDK&apos;s &apos;Sage300SubclassConfigsWizard&apos; and the model zip files have been created for the application&apos;s &apos;Sage300SubclassCompilerWizard&apos;..
         /// </summary>
         internal static string Success {
             get {

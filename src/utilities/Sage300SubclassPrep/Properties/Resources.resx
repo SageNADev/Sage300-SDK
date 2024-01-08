@@ -137,9 +137,9 @@
     <value>The source root environment variable '{0}' does not exist. It needs to be created with a value such as '{1}'.</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>The 'ModelsSource.json' file has been created for the SDK's 'Sage300SubclassConfigsWizard' and the model zip files have been created for the application's 'Sage300SubclassCompiler' tool.</value>
+    <value>The 'ModelsSource.json' file has been created for the SDK's 'Sage300SubclassConfigsWizard' and the model zip files have been created for the application's 'Sage300SubclassCompilerWizard'.</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>This utility will create the 'ModelsSource.json' file for use by the SDK's 'Sage300SubclassConfigsWizard' and will create all of the model zip files for use by the application's 'Sage300SubclassCompiler' tool.</value>
+    <value>This utility will create the 'ModelsSource.json' file for use by the SDK's 'Sage300SubclassConfigsWizard' and will create all of the model zip files for use by the application's 'Sage300SubclassCompilerWizard'.</value>
   </data>
 </root>
