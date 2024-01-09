@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\ProgressError.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Success" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\ProgressSuccess.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextProperties" xml:space="preserve">
+    <value>Text Properties</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Compile</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Blank24.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ErrorCreatingFile" xml:space="preserve">
+    <value>Error creating {0}</value>
+  </data>
+  <data name="ProcessingFile" xml:space="preserve">
+    <value>Processing File {0}...</value>
+  </data>
+  <data name="WebSubclassingCompiler" xml:space="preserve">
+    <value>Web Subclassing Compilation and Deployment</value>
+  </data>
+  <data name="sage300_logo_sq" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sage300-logo-sq.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AP.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AR.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AS.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CS.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GL.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="IC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IC.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="KN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KN.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="KPI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KPI.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MT.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OE.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PM.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PO.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PR.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TM.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TS.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TW.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="VPF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VPF.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BuildFailed" xml:space="preserve">
+    <value>Build FAILED</value>
+  </data>
+  <data name="ErrorCopyingFile" xml:space="preserve">
+    <value>The file {0} could not be copied</value>
+  </data>
+  <data name="SplashMessage" xml:space="preserve">
+    <value>The configurations and Model Projects are being loaded...</value>
+  </data>
+  <data name="UtilityMessage" xml:space="preserve">
+    <value>This utility will compile the model assemblies for the web screen's installed modules. This provides the ability for extended business view fields to be customizable in the web screens.
+
+In addition to compiling the Sage 300 models to add extended fields, if subclassing configurations are discovered AND are not selected to be ignored, the existing model assemblies will be backed up prior to being deployed in the 'online' folders.
+
+Note: Since the live (deployed) model assemblies will be overwritten, it is imperative that users not be active in the web screens since a windows service will be stopped to allow for the deployment of the model assemblies. The windows service will be restarted at the completion of the compilation and deployment.</value>
+  </data>
+  <data name="CompilerError" xml:space="preserve">
+    <value>This utility requires either Visual Studio or the .NET SDK (minimum version 6.0.x) to be installed since the MSBuild utility in the .NET Framework folder is insufficient for our requirements. To install the .NET SDK, go to the Download .NET page (https://dotnet/microsoft.com/en-us/download) and select the '.NET SDK x64' option and follow the installation instructions. 
+
+Re-run this utility once the .NET SDK is installed.</value>
+  </data>
+  <data name="CompilerMessage" xml:space="preserve">
+    <value>The compilers are being discovered...</value>
+  </data>
+  <data name="SDKCompilers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SDKCompilers.bat;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="VSCompilers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VSCompilers.bat;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="IgnoreConfigurations" xml:space="preserve">
+    <value>By selecting this option, any discovered subclassing configurations will be ignore when compiling the model assemblies</value>
+  </data>
+  <data name="SDKBuild" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SDKBuild.bat;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="VSBuild" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VSBuild.bat;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="UtilityFailure" xml:space="preserve">
+    <value>The compilation and deployment was not a success due to the following error: 
+
+'{0}'.</value>
+  </data>
+  <data name="UtilitySuccess" xml:space="preserve">
+    <value>The compilation and deployment was a success! 
+
+The Web Screen model assemblies have been generated with extended properties discovered in any subclassing configurations. However, if the option to ignore the configurations was selected, then any configurations were ignored resulting in the model assemblies not containing any extended properties.</value>
+  </data>
+</root>
