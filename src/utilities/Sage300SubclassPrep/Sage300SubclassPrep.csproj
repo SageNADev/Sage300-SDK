@@ -131,8 +131,8 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>REM copy $(TargetDir)$(TargetFileName) $(ProjectDir)..\..\..\..\bin\wizards\
-REM copy $(TargetDir)MetroFramework.dll $(ProjectDir)..\..\..\..\bin\wizards\
+    <PostBuildEvent>REM copy $(TargetDir)$(TargetFileName) $(ProjectDir)..\..\..\bin\utilities\
+REM copy $(TargetDir)MetroFramework.dll $(ProjectDir)..\..\..\bin\utilities\
 
 REM echo TargetDir =  $(TargetDir)
 REM echo TargetFileName = $(TargetFileName)

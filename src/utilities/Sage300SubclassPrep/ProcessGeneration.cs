@@ -183,6 +183,10 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassPrep
             // Done. Now serialize to JSON and save to SDK folder for Sage300SubclassConfigsWizard
             var json = JsonConvert.SerializeObject(models);
             var path = Path.Combine(SDKSourceRoot(), Constants.SDK_FOLDER, Constants.SDK_JSON_NAME);
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
             File.WriteAllText(path, json);
         }
 
