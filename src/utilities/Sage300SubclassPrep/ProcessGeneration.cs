@@ -77,7 +77,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassPrep
             public const string SDK_FOLDER = @"Sage300-SDK\src\wizards\Sage300SubclassConfigsWizard\Resources";
 
             /// <summary> Tools folder for zip files </summary>
-            public const string TOOLS_FOLDER = @"Tools\Sage300SubclassCompilerWizard\Resources";
+            public const string TOOLS_FOLDER = @"Sage300-SDK\src\wizards\Sage300SubclassCompilerWizard\Resources";
 
             /// <summary> JSON file name </summary>
             public const string SDK_JSON_NAME = "ModelsSource.json";
@@ -207,8 +207,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassPrep
             {
                 var fileInfo = new FileInfo(project);
                 var sourcePath = fileInfo.DirectoryName;
-                var toFile = Path.Combine(WebSourceRoot(), Constants.REPO_PREFIX + Constants.REPO_FRAMEWORK,
-                    Constants.TOOLS_FOLDER, module + Constants.ZIP_EXTENSION);
+                var toFile = Path.Combine(SDKSourceRoot(), Constants.TOOLS_FOLDER, module + Constants.ZIP_EXTENSION);
 
                 // Delete if To file exists
                 if (File.Exists(toFile))
