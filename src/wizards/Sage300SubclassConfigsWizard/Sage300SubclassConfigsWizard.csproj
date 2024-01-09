@@ -142,12 +142,12 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>REM copy $(TargetDir)$(TargetFileName) $(ProjectDir)..\..\..\..\bin\wizards\
-REM copy $(TargetDir)MetroFramework.dll $(ProjectDir)..\..\..\..\bin\wizards\
+    <PostBuildEvent>copy $(TargetDir)$(TargetFileName) $(ProjectDir)..\..\..\bin\wizards\
+REM copy $(TargetDir)MetroFramework.dll $(ProjectDir)..\..\..\bin\wizards\
 
-REM echo TargetDir =  $(TargetDir)
-REM echo TargetFileName = $(TargetFileName)
-REM echo ProjectDir = $(ProjectDir)</PostBuildEvent>
+echo TargetDir =  $(TargetDir)
+echo TargetFileName = $(TargetFileName)
+echo ProjectDir = $(ProjectDir)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

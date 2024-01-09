@@ -189,8 +189,8 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassConfigsWizard
             GetExistingConfigurations();
 
             // Set the final wizard dimensions
-            this.Width = Constants.WizardWidth;
-            this.Height = Constants.WizardHeight;
+            Width = Constants.WizardWidth;
+            Height = Constants.WizardHeight;
         }
 
         #endregion
