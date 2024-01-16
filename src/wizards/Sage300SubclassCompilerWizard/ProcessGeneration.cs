@@ -156,7 +156,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassCompilerWizard
             public const string CommentConfigName = " with configuration ";
 
             /// <summary> CodeAttribute </summary>
-            public const string CodeAttribute = "[ViewField(Name = \"{0}\", Id = {1}, FieldType = EntityFieldType.{2}, Size = {3}, Precision = {4}, Mask = \"{5}\")]";
+            public const string CodeAttribute = "[ViewField(Name = \"{0}\", Id = {1}, FieldType = EntityFieldType.{2}, Size = {3}, Precision = {4}, Mask = \"{5}\", Extended = true)]";
 
             /// <summary> CodeProperty </summary>
             public const string CodeProperty = "public {0} {1} ";
