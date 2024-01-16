@@ -3058,8 +3058,9 @@ sg.viewList = function () {
                 visible ? grid.showColumn(columnName) : grid.hideColumn(columnName);
 
                 // update column definition for grid preferences
-                if (updateConfig) {
-                    const columns = window[gridName + "Model"].ColumnDefinitions;
+                const gridModel = window[gridName + "Model"];
+                if (updateConfig && gridModel && gridModel.ColumnDefinitions) {
+                    const columns = gridModel.ColumnDefinitions;
                     const column = columns.find(x => x.FieldName == columnName);
                     if (column) {
                         column.IsHidden = !visible;
@@ -3418,6 +3419,7 @@ sg.viewList = function () {
                 }
                 if (this.page() < maxPage) {
                     // not there yet, move to next page
+                    _currentPage[gridName] = this.page() + 1;
                     this.page(this.page() + 1);
                     return;
                 } else {
@@ -3446,14 +3448,19 @@ sg.viewList = function () {
         const grid = _getGrid(gridName);
         if (grid !== null && grid !== undefined) {
 
-            // check record for existence and validity
-            if (record !== null && record !== undefined) {
-                for (const key in record) {
-                    if (record.hasOwnProperty(key)) {
-                        if (record[key] === "") {
-                            return;
-                        }
+            // check record for existence
+            if (record === null || record === undefined) {
+                return;
+            }
+
+            // check record for validity
+            for (const key in record) {
+                if (record.hasOwnProperty(key)) {
+                    if (record[key] === "") {
+                        return;
                     }
+                } else {
+                    return;
                 }
             }
 
@@ -3463,7 +3470,7 @@ sg.viewList = function () {
                 _commitDetail[gridName] = commitDetail;
             }
 
-            if (1 < grid.dataSource.total()) {
+            if (1 <= grid.dataSource.total()) {
                 // with luck we are already on correct page
                 for (var i = 0; i < grid.dataSource.data().length; i++) {
                     var rec = grid.dataSource.data()[i];
@@ -3494,9 +3501,11 @@ sg.viewList = function () {
                     _refreshKey[gridName] = record;
                     if (grid.dataSource.page() === 1) {
                         // no luck on first page, continue with next page
+                        _currentPage[gridName] = 2;
                         grid.dataSource.page(2);
                     } else {
                         // no luck on middle/last page(s), start from beginning
+                        _currentPage[gridName] = 1;
                         grid.dataSource.page(1);
                     }
                 } else {
@@ -3574,9 +3583,11 @@ sg.viewList = function () {
     * @return {boolean} True if field is disabled, false otherwise
     */
     function isFieldDisabled (record, field) {
-        const attr = record.AccpacViewFieldAttributes[field];
-        if ((attr & FIELD_DISABLED_ATTRIBUTE) === 0) {
-            return true;
+        if (record) {
+            const attr = record.AccpacViewFieldAttributes[field];
+            if ((attr & FIELD_DISABLED_ATTRIBUTE) === 0) {
+                return true;
+            }
         }
         return false;
     }

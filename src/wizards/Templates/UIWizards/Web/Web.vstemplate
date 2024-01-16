@@ -550,6 +550,7 @@
             </Folder>
             <Folder Name="TW" TargetFolderName="TW">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_ta.jpg">bg_menu_ta.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_tw.jpg">bg_menu_tw.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tw.png">icon_tw.png</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tw.svg">icon_tw.svg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_tw_hover.png">icon_tw_hover.png</ProjectItem>
@@ -1636,6 +1637,9 @@
       </Folder>
       <Folder Name="Areas" TargetFolderName="Areas">
         <Folder Name="Core" TargetFolderName="Core">
+          <Folder Name=".vs" TargetFolderName=".vs">
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.Web.csproj.dtbcache.json">Sage.CA.SBS.ERP.Sage300.Core.Web.csproj.dtbcache.json</ProjectItem>
+          </Folder>
           <Folder Name="Scripts" TargetFolderName="Scripts">
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AccpacGrid.js">Sage.CA.SBS.ERP.Sage300.Common.AccpacGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js">Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js</ProjectItem>
@@ -1902,6 +1906,9 @@
           </Folder>
         </Folder>
         <Folder Name="Shared" TargetFolderName="Shared">
+          <Folder Name=".vs" TargetFolderName=".vs">
+            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Shared.Web.csproj.dtbcache.json">Sage.CA.SBS.ERP.Sage300.Shared.Web.csproj.dtbcache.json</ProjectItem>
+          </Folder>
           <Folder Name="Scripts" TargetFolderName="Scripts">
             <ProjectItem ReplaceParameters="true" TargetFileName="PageUnloadEventManager.js">PageUnloadEventManager.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AccpacGridHelper.js">Sage.CA.SBS.ERP.Sage300.Common.AccpacGridHelper.js</ProjectItem>
