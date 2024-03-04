@@ -431,7 +431,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <PropertyGroup>
     <PostBuildEvent>Call "$(ProjectDir)MergeISVProject.exe" --mode=0 --solutionpath="$(SolutionDir)\"  --webprojectpath="$(ProjectDir)\"  --menufilename="$applicationid$MenuDetails.xml" --buildprofile="$(ConfigurationName)" --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --minify --log</PostBuildEvent>
   </PropertyGroup>

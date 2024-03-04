@@ -821,7 +821,6 @@
           </Folder>
         </Folder>
         <Folder Name="js" TargetFolderName="js">
-          <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.js">bootstrap.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="customscripts.js">customscripts.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="input.Checkbox.js">input.Checkbox.js</ProjectItem>
         </Folder>
