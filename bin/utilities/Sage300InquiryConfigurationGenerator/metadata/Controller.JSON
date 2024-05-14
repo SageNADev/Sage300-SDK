@@ -1,0 +1,158 @@
+[
+	{
+	  "Controller": "JournalEntry",
+	  "Area": "GL",
+	  "Action": "Index",
+	  "parameters": "batchNumber,entryNumber"	  
+	},
+	{
+	  "Controller": "InvoiceEntry",
+	  "Area": "AP",
+	  "Action": "Index",
+	  "parameters": "batchNumber,entryNumber,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "AdjustmentEntry",
+	  "Area": "AP",
+	  "Action": "Index",
+	  "parameters": "batchNo,entryNo,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "PaymentEntry",
+	  "Area": "AP",
+	  "Action": "Index",
+	  "parameters": "batchNo,entryNo,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "Vendor",
+	  "Area": "AP",
+	  "Action": "Index",
+	  "parameters": "id"	  
+	},
+	{
+	  "Controller": "InvoiceEntry",
+	  "Area": "AR",
+	  "Action": "Index",
+	  "parameters": "batchNumber,entryNumber,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "AdjustmentEntry",
+	  "Area": "AR",
+	  "Action": "Index",
+	  "parameters": "batchNumber,entryNumber,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "RefundEntry",
+	  "Area": "AR",
+	  "Action": "Index",
+	  "parameters": "batchNumber,entryNumber,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "ReceiptEntry",
+	  "Area": "AR",
+	  "Action": "Index",
+	  "parameters": "batchNumber,entryNumber,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "Customer",
+	  "Area": "AR",
+	  "Action": "Index",
+	  "parameters": "id,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "Item",
+	  "Area": "IC",
+	  "Action": "Index",
+	  "parameters": "id"	  
+	},
+	{
+	  "Controller": "Location",
+	  "Area": "IC",
+	  "Action": "Index",
+	  "parameters": "id"	  
+	},
+	{
+	  "Controller": "LocationDetail",
+	  "Area": "IC",
+	  "Action": "Index",
+	  "parameters": "id"	  
+	},
+	{
+	  "Controller": "MiscellaneousCharge",
+	  "Area": "OE",
+	  "Action": "Index",
+	  "parameters": "currency,miscellaneousChargeCode"	  
+	},
+	{
+	  "Controller": "CreditDebitNoteEntry",
+	  "Area": "OE",
+	  "Action": "Index",
+	  "parameters": "id,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "ShipmentEntry",
+	  "Area": "OE",
+	  "Action": "Index",
+	  "parameters": "id,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "InvoiceEntry",
+	  "Area": "OE",
+	  "Action": "Index",
+	  "parameters": "id,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "OrderEntry",
+	  "Area": "OE",
+	  "Action": "Index",
+	  "parameters": "id,hideQueryHeader"	  
+	},
+	{
+	  "Controller": "PendingShipmentInquiry",
+	  "Area": "OE",
+	  "Action": "Index",
+	  "parameters": "customerNumber"	  
+	},
+	{
+	  "Controller": "PurchaseOrderEntry",
+	  "Area": "PO",
+	  "Action": "Index",
+	  "parameters": "id"	  
+	},
+	{
+	  "Controller": "CreditDebitNoteEntry",
+	  "Area": "PO",
+	  "Action": "Index",
+	  "parameters": "sequenceKey"	  
+	},
+	{
+	  "Controller": "ReceiptEntry",
+	  "Area": "PO",
+	  "Action": "Index",
+	  "parameters": "id"	  
+	},
+	{
+	  "Controller": "InvoiceEntry",
+	  "Area": "PO",
+	  "Action": "Index",
+	  "parameters": "invoiceSequence"	  
+	},
+	{
+	  "Controller": "ReturnEntry",
+	  "Area": "PO",
+	  "Action": "Index",
+	  "parameters": "id"	  
+	},
+	{
+	  "Controller": "RequisitionEntry",
+	  "Area": "PO",
+	  "Action": "Index",
+	  "parameters": "requisitionNumber"	  
+	},
+	{
+	  "Controller": "PendingReceiptsInquiry",
+	  "Area": "PO",
+	  "Action": "Index",
+	  "parameters": "vendorNumber"	  
+	}
+]
