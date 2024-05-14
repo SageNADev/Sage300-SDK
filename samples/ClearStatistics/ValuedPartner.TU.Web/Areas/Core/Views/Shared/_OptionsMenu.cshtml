@@ -23,12 +23,12 @@
 
     //var showOptionsMenu = import || export || customize;
     var showOptionsMenu = true;
-}
-
+} 
+ 
 @if (showOptionsMenu)
 {
-    string sImport = "<li id='{0}'><a>{1}</a></li>";
-    string sExport = "<li id='{0}'><a>{1}</a></li>";
+    string sImport = "<li ><a id='{0}'>{1}</a></li>";
+    string sExport = "<li ><a id='{0}'>{1}</a></li>";
 
     bool hasHeadOptions = ViewData.Count == 0 || (ViewData.Count > 0 && ViewData[OptionsMenu.NoHeaderOptionsClass] == null);
     string headOptions = hasHeadOptions ? "<div class='header-options'>" : "";
@@ -129,6 +129,20 @@
             $("#menuScreenOptions").kendoMenu({
                 openOnClick: true
             });
+
+            let menu = $("#menuScreenOptions").data("kendoMenu");
+            menu.bind("select", function(e) {
+                let target = $(e.item).children('.k-link');
+                if (target.length > 0) {
+                    if (target.children().length > 0) {
+                        target = target.children(0);
+                    }
+
+                    if (e.sender._keyTriggered && !target.prop('disabled')) {
+                        target.triggerHandler("click");
+                    }
+                }
+            }); 
         });
 
     </script>

@@ -322,7 +322,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Make sure the Assign Employee Earn/Ded Audit Report printed correctly to paper or disk before you approve printing.The Assign Employee Earn/Ded Audit file(s) will be deleted when you approve printing. If the report did not print correctly, close this window and print this report again. .
+        ///   Looks up a localized string similar to Make sure the Assign Employee Earn/Ded Audit Report printed correctly to paper or disk before you approve printing. The Assign Employee Earn/Ded Audit file(s) will be deleted when you approve printing. If the report did not print correctly, close this window and print this report again. .
         /// </summary>
         public static string AssignEmployeeEarnOrDedAuditPopup {
             get {
@@ -340,7 +340,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Make sure the Assign Employee Tax Audit Report printed correctly to paper or disk before you approve printing.The Assign Employee Tax Audit file(s) will be deleted when you approve printing. If the report did not print correctly, close this window and print this report again.                                   .
+        ///   Looks up a localized string similar to Make sure the Assign Employee Tax Audit Report printed correctly to paper or disk before you approve printing. The Assign Employee Tax Audit file(s) will be deleted when you approve printing. If the report did not print correctly, close this window and print this report again..
         /// </summary>
         public static string AssignEmployeeTaxAuditPopup {
             get {
@@ -390,6 +390,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string Back {
             get {
                 return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Bank is not defined..
+        /// </summary>
+        public static string Bank {
+            get {
+                return ResourceManager.GetString("Bank", resourceCulture);
             }
         }
         
@@ -727,6 +736,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy.
+        /// </summary>
+        public static string Copy {
+            get {
+                return ResourceManager.GetString("Copy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A problem occurred and the {0} could not be copied. Please try again..
         /// </summary>
         public static string CopyFailedMessage {
@@ -763,6 +781,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos;Cdn Payroll 8.0A or newer version&apos;.
+        /// </summary>
+        public static string CPPayroll80AorNewerVersion {
+            get {
+                return ResourceManager.GetString("CPPayroll80AorNewerVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create filter for {0} field.
         /// </summary>
         public static string CreateFilterPopUpTitle {
@@ -786,6 +813,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string CreditCardType {
             get {
                 return ResourceManager.GetString("CreditCardType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;Cdn PR Tax Update July 1st, 2023 8.0A or newer version&apos;.
+        /// </summary>
+        public static string CTTaxUpdate80AorNewerVersion {
+            get {
+                return ResourceManager.GetString("CTTaxUpdate80AorNewerVersion", resourceCulture);
             }
         }
         
@@ -1155,6 +1191,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string DoesNotExist {
             get {
                 return ResourceManager.GetString("DoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .INI.
+        /// </summary>
+        public static string DotINI {
+            get {
+                return ResourceManager.GetString("DotINI", resourceCulture);
             }
         }
         
@@ -2923,6 +2968,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  or newer version&apos;.
+        /// </summary>
+        public static string OrNewerVersion {
+            get {
+                return ResourceManager.GetString("OrNewerVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Other.
         /// </summary>
         public static string Other {
@@ -2973,6 +3027,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string PaperSize {
             get {
                 return ResourceManager.GetString("PaperSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A problem occurred when signing in to web screens. Sage 300 has detected module update inconsistencies that require activation. The following applications need to be installed and activated: .
+        /// </summary>
+        public static string PayrollUpgradeErrorMessage1 {
+            get {
+                return ResourceManager.GetString("PayrollUpgradeErrorMessage1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Try signing in to the Sage 300 Desktop and activate data before signing in to web screens..
+        /// </summary>
+        public static string PayrollUpgradeErrorMessage2 {
+            get {
+                return ResourceManager.GetString("PayrollUpgradeErrorMessage2", resourceCulture);
             }
         }
         
@@ -4147,6 +4219,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TAX.
+        /// </summary>
+        public static string Tax {
+            get {
+                return ResourceManager.GetString("Tax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Taxes amount cannot be negative or greater than the total amount..
         /// </summary>
         public static string TaxAmountErrorMsg {
@@ -4575,6 +4656,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string Uploading {
             get {
                 return ResourceManager.GetString("Uploading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;US Payroll 8.0A or newer version&apos;.
+        /// </summary>
+        public static string UPPayroll80AorNewerVersion {
+            get {
+                return ResourceManager.GetString("UPPayroll80AorNewerVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;US PR Tax Update June 15th, 2023 8.0A or newer version&apos;.
+        /// </summary>
+        public static string UTTaxUpdate80AorNewerVersion {
+            get {
+                return ResourceManager.GetString("UTTaxUpdate80AorNewerVersion", resourceCulture);
             }
         }
         

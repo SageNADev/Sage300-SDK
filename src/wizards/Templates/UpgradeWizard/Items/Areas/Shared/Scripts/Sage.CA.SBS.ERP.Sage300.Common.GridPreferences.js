@@ -50,7 +50,7 @@ GridPreferences = {
             var container = $('#divGridPrefEditCols');
             // Close edit columns popup when clicking outside it
             if (!container.is(e.target) && !btnEdit.is(e.target) && container.has(e.target).length === 0 && $(container).is(":visible")) {
-                //GridPreferences.hide();
+                GridPreferences.hide();
             }
         });
 
@@ -208,7 +208,8 @@ GridPreferences = {
             if (gridColumns && gridColumns.constructor.name === 'Object')
                 gridColumns = Object.values(gridColumns);
             const configColumn = gridColumns ? gridColumns.find(x => x.field === grid.columns[i].field) : undefined;
-            if (!grid.columns[i].title || (configColumn && (configColumn.isInternal || configColumn.hidden))) {
+            // skip internal and hidden columns by accpac grid, and columns with no title
+            if (!grid.columns[i].title || (configColumn && (configColumn.isInternal || (configColumn.hidden && configColumn.isInternal !== undefined)))) {
                 continue;
             }
 

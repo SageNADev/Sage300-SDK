@@ -212,9 +212,9 @@ namespace WebAPISubclassWizard
             this.label4.ForeColor = System.Drawing.Color.Green;
             this.label4.Location = new System.Drawing.Point(32, 65);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(442, 24);
+            this.label4.Size = new System.Drawing.Size(316, 24);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Step 2. Choose one or more classes to extend";
+            this.label4.Text = "Step 2. Choose a class to extend";
             // 
             // btnPage2Next
             // 
@@ -413,7 +413,7 @@ namespace WebAPISubclassWizard
             this.label12.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(12, -2);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(273, 32);
+            this.label12.Size = new System.Drawing.Size(274, 32);
             this.label12.TabIndex = 1;
             this.label12.Text = "WebAPI Subclass Wizard";
             // 

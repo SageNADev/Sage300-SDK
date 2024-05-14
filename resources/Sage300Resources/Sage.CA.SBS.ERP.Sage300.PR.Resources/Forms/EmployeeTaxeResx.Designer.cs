@@ -61,6 +61,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accounted.
+        /// </summary>
+        public static string Accounted {
+            get {
+                return ResourceManager.GetString("Accounted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount.
         /// </summary>
         public static string Amount {
@@ -160,6 +169,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Created.
+        /// </summary>
+        public static string Created {
+            get {
+                return ResourceManager.GetString("Created", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Distribution Code.
         /// </summary>
         public static string DistributionCode {
@@ -246,6 +264,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string General {
             get {
                 return ResourceManager.GetString("General", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inserted.
+        /// </summary>
+        public static string Inserted {
+            get {
+                return ResourceManager.GetString("Inserted", resourceCulture);
             }
         }
         

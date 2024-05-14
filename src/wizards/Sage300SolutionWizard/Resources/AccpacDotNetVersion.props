@@ -46,5 +46,12 @@
     <RefVersionAccpacAdvantageServer>$(RefVersionSage300AccpacAdvantageServer)</RefVersionAccpacAdvantageServer>
     <IsAccpacAdvantageServerSpecificVersion>$(IsSage300AllSpecificVersion)</IsAccpacAdvantageServerSpecificVersion>
     <RefAccpacAdvantageServer>ACCPAC.Advantage.Server, Version='$(RefVersionAccpacAdvantageServer)', Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL</RefAccpacAdvantageServer>    
+
+    <!-- ACCPAC.Advantage -->
+    <Advantage>ACCPAC.Advantage</Advantage>
+
+    <!-- ACCPAC.Advantage.Types -->
+    <AdvantageTypes>ACCPAC.Advantage.Types</AdvantageTypes>
+
   </PropertyGroup>  
 </Project>

@@ -342,6 +342,22 @@
             
         },
 
+        QOnlyWrapper: function (name, testFnc) {
+            let self = this;
+
+            QUnit.only(name, function (assert) {
+                self.startLoggingErrors();
+
+                baseStaticTestModule.testName = name;
+                baseStaticTestModule.assert = assert;
+                baseStaticTestModule.configTestSuite();
+
+                testFnc(assert);
+
+            });
+
+        },
+
         origError: console.error,
         errorLoggingRunning: false,
 

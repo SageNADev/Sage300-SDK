@@ -13,41 +13,34 @@ Windows Powershell 4.0 can be installed by downloading Windows Management Framew
 > Windows Powershell 4.0 is only required by the Wizards for compiling the solution. This is not
 a requirement if the Wizard Package is only installed via the VSIX file.
 
-### How to Build the Sage 300 UI Wizard Package
+### How to Build the Sage 300 Solution Wizard Package
 
 The following steps illustrate how to build the package:
 
-* Load the **Sage300UIWizardPackage** solution
+* Load the **Sage.CA.SBS.ERP.Sage300.SolutionWizardPackage** solution
 * Select **Build\Build Solution**
 * The package will be successfully built to the output folder specified by the 
-solution configuration (Debug or Release). The **Sage300UIWizardPackage.vsix** is 
+solution configuration (Debug or Release). The **Sage.CA.SBS.ERP.Sage300.SolutionWizardPackage.vsix** is 
 the artifact that will be used to the install the package.
 
 > **Building the package does not install the package**
 
-### How to Run the Sage 300 UI Wizard Package in Debug Mode
+### How to Build the Sage 300 Wizard Package
 
-The following steps illustrate how to run the package in debug mode from within Visual Studio:
+> **This package contains the Code Generation Wizard, the Finder Generator, **
+> **the Upgrade Wizard, and the Language Wizard**
 
-* Load the **Sage300WizardUIPackage** solution
-  *	This a solution which contains both wizard projects and other information to allow 
-the Visual Studio plug-in to be debugged
-* Right-Click on the **Sage300MenuExtension** project in order to display the 
-properties page for this project and select **Set as StartUp Project**
-* Right-Click on the **Sage300MenuExtension** project in order to display the 
-properties page for this project and select **Properties**
-* Select the **Debug** Tab to display the properties for debugging
-* In the **Start Action** section, select the **Start external program** option and enter 
-the location of **devenv.exe** cooresponding to the version of Visual Studio into the textbox: 
-  *	i.e. C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\devenv.exe
+The following steps illustrate how to build the package:
 
-> Location and version of **devenv.exe** may be different than what is specified above based upon Version of Visual Studio and installation location
+* Load the **Sage.CA.SBS.ERP.Sage300.WizardPackage** solution
+* Select **Build\Build Solution**
+* The package will be successfully built to the output folder specified by the 
+solution configuration (Debug or Release). The **Sage.CA.SBS.ERP.Sage300.WizardPackage.vsix** is 
+the artifact that will be used to the install the package.
 
-* In the **Start Options** section, enter the following information into the **Command line arguments** textbox:
-  *	/rootsuffix Exp
-* Run the solution to start debugging!
+> **Building the package does not install the package**
 
-### How to Build the Sage 300 UI Customization Wizard Executable (Standalone)
+### How to Build the Sage 300 Customization Wizard Executable (Standalone)
 
 The following steps illustrate how to build the executable:
 
@@ -59,14 +52,7 @@ the artifact produced.
 
 > **The Newtonsoft.Json.dll must accompany the executable if it is copied elsewhere**
 
-### How to Run the Sage 300 UI Customization Wizard Executable in Debug Mode (Standalone)
-
-The following steps illustrate how to run the executable in debug mode from within Visual Studio:
-
-* Load the **Sage300CustomizationWizard** solution
-* Run the solution to start debugging!
-
-### How to Build the Sage 300 UI Customization Wizard Package (Plug-in)
+### How to Build the Sage 300 Customization Wizard Package (Plug-in)
 
 The following steps illustrate how to build the package:
 
@@ -74,18 +60,6 @@ The following steps illustrate how to build the package:
 * Select **Build\Build Solution**
 * The package will be successfully built to the output folder specified by the 
 solution configuration (Debug or Release). The **Sage300UICustomizationSolution.vsix** is 
-the artifact that will be used to the install the package.
-
-> **Building the package does not install the package**
-
-### How to Build the Sage 300 Upgrade Wizard Package
-
-The following steps illustrate how to build the package:
-
-* Load the **Sage300UpgradeWizardPackage** solution
-* Select **Build\Build Solution**
-* The package will be successfully built to the output folder specified by the 
-solution configuration (Debug or Release). The **Sage300UpgradeWizardPackage.vsix** is 
 the artifact that will be used to the install the package.
 
 > **Building the package does not install the package**

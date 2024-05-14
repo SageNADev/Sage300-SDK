@@ -400,6 +400,8 @@ Customization = {
 
         var dialog = $('#dlgCustomize').data("kendoWindow");
         dialog.center().open();
+        $("#commonCustomizationID").focus();
+
     },
 
     onEdit: function (e) {

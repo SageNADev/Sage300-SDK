@@ -115,6 +115,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accruals.
+        /// </summary>
+        public static string AccrualsTab {
+            get {
+                return ResourceManager.GetString("AccrualsTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accrued Amounts MTD.
         /// </summary>
         public static string AccruedAmountsMTD {

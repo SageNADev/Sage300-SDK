@@ -199,7 +199,7 @@
     <value />
   </data>
   <data name="BasePercentIncrease" xml:space="preserve">
-    <value />
+    <value>Base avec p. cent augmentation</value>
   </data>
   <data name="CopyRevenueFunctional" xml:space="preserve">
     <value>Copier produits(dev. fonct.)</value>
@@ -217,7 +217,7 @@
     <value />
   </data>
   <data name="CopyProratedSpread" xml:space="preserve">
-    <value />
+    <value>Copier montant ventilé</value>
   </data>
   <data name="CopyCostFunctional" xml:space="preserve">
     <value>Copier Coût(dev. fonct.)</value>
@@ -262,7 +262,7 @@
     <value />
   </data>
   <data name="CopyAmountIncrease" xml:space="preserve">
-    <value />
+    <value>Copier avec montant augmentation</value>
   </data>
   <data name="INCH11" xml:space="preserve">
     <value />
@@ -295,7 +295,7 @@
     <value />
   </data>
   <data name="BaseAmountIncrease" xml:space="preserve">
-    <value />
+    <value>Base avec montant augmentation</value>
   </data>
   <data name="INCS7" xml:space="preserve">
     <value />
@@ -304,7 +304,7 @@
     <value>Augmentation montant</value>
   </data>
   <data name="CopyPercentIncrease" xml:space="preserve">
-    <value />
+    <value>Copier avec p. cent augmentation</value>
   </data>
   <data name="INQTOTAL" xml:space="preserve">
     <value />
@@ -445,7 +445,7 @@
     <value />
   </data>
   <data name="CopyAsIs" xml:space="preserve">
-    <value />
+    <value>Copier tel quel</value>
   </data>
   <data name="INRH15" xml:space="preserve">
     <value />

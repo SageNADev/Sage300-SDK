@@ -1460,6 +1460,16 @@
             }
         },
 
+        HQ: {
+            PublishPayslip: {
+                viewID: "HQ0007",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["TRANSDATE"],
+                displayFieldNames: ["TRANSDATE"]
+            },
+        },
+
         IC: {
             AccountSet: {
                 viewID: "IC0100",
@@ -2656,7 +2666,7 @@
                 viewOrder: 0,
                 displayFieldNames: ["CALCSEQ", "BEGEMP", "ENDEMP", "ENDDATE", "ENTRYTYPE", "SELECTLIST"],
                 returnFieldNames: ["CALCSEQ"],
-                filterTemplate: "ENDDATE <= \"{0}\" AND (CALCSEQ >= \"{1}\")  OR (CALCSEQ <= \"{2}\")",
+                filterTemplate: "(ENDDATE <= \{0}\ AND CALCSEQ >= \{1}\ AND CALCSEQ <= \{2}\)",
                 parentValAsInitKey: true
             },
             Timecard: {

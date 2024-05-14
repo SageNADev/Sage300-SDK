@@ -1741,13 +1741,13 @@
     <value>Document Number</value>
   </data>
   <data name="AssignEmployeeEarnOrDedAuditPopup" xml:space="preserve">
-    <value>Make sure the Assign Employee Earn/Ded Audit Report printed correctly to paper or disk before you approve printing.The Assign Employee Earn/Ded Audit file(s) will be deleted when you approve printing. If the report did not print correctly, close this window and print this report again. </value>
+    <value>Make sure the Assign Employee Earn/Ded Audit Report printed correctly to paper or disk before you approve printing. The Assign Employee Earn/Ded Audit file(s) will be deleted when you approve printing. If the report did not print correctly, close this window and print this report again. </value>
   </data>
   <data name="AssignEmployeeTitle" xml:space="preserve">
     <value>Assign Employee Earn/Ded Audit Report</value>
   </data>
   <data name="AssignEmployeeTaxAuditPopup" xml:space="preserve">
-    <value>Make sure the Assign Employee Tax Audit Report printed correctly to paper or disk before you approve printing.The Assign Employee Tax Audit file(s) will be deleted when you approve printing. If the report did not print correctly, close this window and print this report again.                                   </value>
+    <value>Make sure the Assign Employee Tax Audit Report printed correctly to paper or disk before you approve printing. The Assign Employee Tax Audit file(s) will be deleted when you approve printing. If the report did not print correctly, close this window and print this report again.</value>
   </data>
   <data name="AssignEmployeeTaxTitle" xml:space="preserve">
     <value>Assign Employee Tax Audit Report</value>
@@ -1763,5 +1763,38 @@
   </data>
   <data name="FeatureNotAvailableWeb_Message_v2" xml:space="preserve">
     <value>Your request could not be completed because {0} is not available in this web screen. You may be able to use the desktop screen.</value>
+  </data>
+  <data name="CPPayroll80AorNewerVersion" xml:space="preserve">
+    <value>'Cdn Payroll 8.0A or newer version'</value>
+  </data>
+  <data name="CTTaxUpdate80AorNewerVersion" xml:space="preserve">
+    <value>'Cdn PR Tax Update July 1st, 2023 8.0A or newer version'</value>
+  </data>
+  <data name="PayrollUpgradeErrorMessage1" xml:space="preserve">
+    <value>A problem occurred when signing in to web screens. Sage 300 has detected module update inconsistencies that require activation. The following applications need to be installed and activated: </value>
+  </data>
+  <data name="PayrollUpgradeErrorMessage2" xml:space="preserve">
+    <value> Try signing in to the Sage 300 Desktop and activate data before signing in to web screens.</value>
+  </data>
+  <data name="UPPayroll80AorNewerVersion" xml:space="preserve">
+    <value>'US Payroll 8.0A or newer version'</value>
+  </data>
+  <data name="UTTaxUpdate80AorNewerVersion" xml:space="preserve">
+    <value>'US PR Tax Update June 15th, 2023 8.0A or newer version'</value>
+  </data>
+  <data name="DotINI" xml:space="preserve">
+    <value>.INI</value>
+  </data>
+  <data name="OrNewerVersion" xml:space="preserve">
+    <value> or newer version'</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>TAX</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Invalid input. Bank is not defined.</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
   </data>
 </root>

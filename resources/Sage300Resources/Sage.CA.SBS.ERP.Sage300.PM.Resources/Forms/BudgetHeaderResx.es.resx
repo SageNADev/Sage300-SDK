@@ -139,9 +139,6 @@
   <data name="Num5" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="Entity" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
   <data name="FMTCONTNO" xml:space="preserve">
     <value>Contrato</value>
   </data>
@@ -163,10 +160,13 @@
   <data name="CONTRACT" xml:space="preserve">
     <value>Contrato</value>
   </data>
-  <data name="Year" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="Year" xml:space="preserve">
+    <value>Año</value>
   </data>
   <data name="Recognized" xml:space="preserve">
     <value>Reconocido</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PJC - Mantenimiento de Presupuesto</value>
   </data>
 </root>

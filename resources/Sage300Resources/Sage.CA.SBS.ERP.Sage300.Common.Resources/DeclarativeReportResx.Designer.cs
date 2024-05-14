@@ -1420,7 +1420,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Earnings And Deduction.
+        ///   Looks up a localized string similar to Earnings And Deductions.
         /// </summary>
         public static string EarningsAndDeduction {
             get {

@@ -144,11 +144,20 @@
         /**
          * Add raw value to the provided column object
          * @param {any} attr Attribute object
-         * @param {any} column Column object
+         * @param {any} column Column object with formatted value
          */
         addRawValueIfFormatValue: function (attr, column) {
-            if (column.formatList && column.value !== attr.value) {
-                column.rawValue = attr.value;
+            if (column.formatList /*&& column.value !== attr.value*/) {
+
+                const obj = column.formatList.find(x => x.display == column.value)
+
+                if (apputils.isUndefined(obj)) {
+                    column.rawValue = attr.value;
+
+                } else {
+                    column.rawValue = obj.value; // attr.value;
+
+                }
             }
         },
 
@@ -455,9 +464,9 @@
                             column.rowIndex = 0;
                             //let msg = this.viewid + column.rowIndex + prefix + column.field;
                             let msg = prefix + this.viewid + column.rowIndex + column.field;
-                            let attrColumn = column;
+
                             column.value = this.formatValueForDisplay(column.value, column.formatList);
-                            this.addRawValueIfFormatValue(attrColumn, column);
+                            this.addRawValueIfFormatValue(column, column);
 
                             MessageBus.msg.trigger(msg + apputils.EventMsgTags.svrUpdate, column.value, msg + apputils.EventMsgTags.svrUpdate);
 
@@ -487,9 +496,9 @@
 
                             //let msg = this.viewid + column.msgid + prefix + column.field;
                             let msg = prefix + this.viewid + column.msgid + column.field;
-                            let attrColumn = column;
+
                             column.value = this.formatValueForDisplay(column.value, column.formatList);
-                            this.addRawValueIfFormatValue(attrColumn, column);
+                            this.addRawValueIfFormatValue(column, column);
 
                             MessageBus.msg.trigger(msg + apputils.EventMsgTags.svrUpdate, column.value, msg + apputils.EventMsgTags.svrUpdate);
                             //if (apputils.isUndefined(this.bindListener) || this.bindListener) {
@@ -816,7 +825,7 @@
                     //    formatedValue = formatedValue === globalResource.Yes;
                     //}
                     formatedValue = apputils.escape(formatedValue);
-                    query += apputils.createFieldNode({ fieldId: column.id, value: formatedValue, parentId: id }); //"<c f='" + column.id + "' v='" + formatedValue + "' p='" + id + "' />";
+                    query += apputils.createFieldNode({ fieldId: column.id, value: formatedValue, verify: column.verify, parentId: id }); //"<c f='" + column.id + "' v='" + formatedValue + "' p='" + id + "' />";
                 }
             });
 

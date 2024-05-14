@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2024 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */
 "use strict";
 
 var sg = sg || {};
@@ -2439,7 +2439,7 @@ sg.viewList = function () {
                 grid.tbody.find("tr:gt(" + ps + ")").hide();
 
                 //Set default select row
-                if (_setDefaultRow[gridName] && autoSelect) {
+                if (_setDefaultRow[gridName] && autoSelect && grid.select().index() < 0) {
                     grid.select("tr:eq(0)");
                 }
 
@@ -2458,7 +2458,7 @@ sg.viewList = function () {
                 }
 
                 // select row after paging or refresh
-                if (_selectedRow[gridName] > 0 && autoSelect) {
+                if (_selectedRow[gridName] >= 0 && autoSelect) {
                     // select last row if specified row doesn't exist
                     if (_selectedRow[gridName] > grid.dataSource.data().length) {
                         _selectedRow[gridName] = grid.dataSource.data().length - 1;
@@ -3266,6 +3266,43 @@ sg.viewList = function () {
     }
 
     /**
+     * @description Change the field value in the current record and sync the change to the server.
+     * @param {any} gridName The name of the grid.
+     * @param {any} column The field name
+     * @param {any} value The new value
+     */
+    function setColumnValue(gridName, column, value) {
+        var data = {
+            'viewID': $("#" + gridName).attr('viewID'),
+            'fieldName': column,
+            'value': value
+        };
+        
+        var grid = _getGrid(gridName);
+        var dataRows = grid.items();
+        const rowIndex = dataRows.index(grid.select());
+        let selectedItem = grid.dataItem(grid.select());
+        var url = window.sg.utls.url.buildUrl("Core", "Grid", "SetValue");
+        sg.utls.ajaxPostSync(url, data, function (jsonResult) {
+            var isSuccess = true;
+            if (jsonResult && jsonResult.UserMessage.Errors && jsonResult.UserMessage.Errors.length > 0) {
+                isSuccess = false;
+                sg.utls.showMessage(jsonResult);
+            }
+            var lastRowData = grid.dataSource.data()[rowIndex];
+            if (!isSuccess) {
+                //Return previous valid value when update error
+                lastRowData.dirty = false;
+                selectedItem[column] = _lastErrorResult[gridName][column + "Value"];
+            } else {
+                _dataChanged[gridName] = true;
+            }
+
+        });
+    }
+
+
+    /**
      * @description Return bool value to indicate if the grid is empty
      * @param {any} gridName The name of the grid.
      * @return {booean} A Boolean flag
@@ -3407,6 +3444,7 @@ sg.viewList = function () {
                 grid.dataSource.page(nextPage);
             // same page, select row
             } else {
+                 _selectedRow[gridName] = selectedIndex;
                 grid.select(grid.tbody.find(`>tr:eq(${selectedIndex})`));
             }
         }
@@ -3418,6 +3456,47 @@ sg.viewList = function () {
     * @return {bool} true only
     */
     function _selectOnPage(e) {
+
+        // internal comparePair function of _selectOnPage
+        function comparePair(type, value1, value2) {
+            switch (type) {
+                case "date":
+                    const date1 = Date.parse(value1);
+                    const date2 = Date.parse(value2);
+                    if (date1 < date2) {
+                        return -1;
+                    } else if (date1 > date2) {
+                        return 1;
+                    }
+                    break;
+                case "time":
+                    const time1 = Time.parse(value1);
+                    const time2 = Time.parse(value2);
+                    if (time1 < time2) {
+                        return -1;
+                    } else if (time1 > time2) {
+                        return 1;
+                    }
+                    break;
+                case "char":
+                    const char1 = value1.toUpperCase();
+                    const char2 = value2.toUpperCase();
+                    if (char1 < char2) {
+                        return -1;
+                    } else if (char1 > char2) {
+                        return 1;
+                    }
+                    break;
+                default:
+                    if (value1 < value2) {
+                        return -1;
+                    } else if (value1 > value2) {
+                        return 1;
+                    }
+                    break;
+            }
+            return 0;
+        }
 
         // internal exit function of _selectOnPage
         function exitSelectOnPage(gridName, callback) {
@@ -3431,7 +3510,7 @@ sg.viewList = function () {
             return true;
         }
 
-        // internal pageToRecord function of moveToRecord
+        // internal pageToRecord function of _selectOnPage
         function pageSelectOnPage(gridName, record, page, callback) {
             const grid = _getGrid(gridName);
             _refreshKey[gridName] = record;
@@ -3442,69 +3521,79 @@ sg.viewList = function () {
 
         const gridName = _gridList.find(e => _getGrid(e).dataSource === this);
         if (gridName !== undefined) {
-            if (_refreshKey.hasOwnProperty(gridName)) {
-                const grid = _getGrid(gridName);
-                const record = _refreshKey[gridName];
-                const callback = _reloadCallback[gridName];
+            const grid = _getGrid(gridName);
+            if (grid !== null && grid !== undefined) {
+                if (_refreshKey.hasOwnProperty(gridName)) {
+                    const record = _refreshKey[gridName];
+                    const callback = _reloadCallback[gridName];
 
-                // check record for existence, key and not empty value
-                var key = "";
-                if (record === null || record === undefined) {
-                    return exitSelectOnPage(gridName, callback);
-                } else {
-                    for (const inKey in record) {
-                        if (record.hasOwnProperty(inKey)) {
-                            if (record[inKey] === null || record[inKey] === "") {
-                                return exitMoveToRecord(callback);
+                    // check record for existence, key and not empty value
+                    var key = "";
+                    if (record === null || record === undefined) {
+                        return exitSelectOnPage(gridName, callback);
+                    } else {
+                        for (const inKey in record) {
+                            if (record.hasOwnProperty(inKey)) {
+                                if (record[inKey] === null || record[inKey] === "") {
+                                    return exitMoveToRecord(callback);
+                                }
+                                key = inKey;
                             }
-                            key = inKey;
+
                         }
                     }
-                }
 
-                // something wrong with the key bail-out
-                if (key === "") {
-                    return exitSelectOnPage(gridName, callback);
-                }
+                    // something wrong with the key bail-out
+                    if (key === "") {
+                        return exitSelectOnPage(gridName, callback);
+                    }
 
-                // with luck requested record is on current page
-                var recFirst = this.data()[0];
-                var recLast = this.data()[this.data().length - 1];
-                if (recFirst[key] <= record[key] && record[key] <= recLast[key]) {
-                    for (var i = 0; i < this.data().length; i++) {
-                        var rec = this.data()[i];
-                        if (record[key] === rec[key]) {
-                            grid.select(grid.tbody.find(`>tr:eq(${i})`));
-                            return exitSelectOnPage(gridName, callback);
+                    // must obtain dataType for keys comparissions
+                    const column = grid.columns.find(function (col) { return col.field === key; });
+                    if (column === undefined) {
+                        return exitSelectOnPage(gridName, callback);
+                    }
+
+                    // with luck requested record is on current page
+                    var recFirst = this.data()[0];
+                    var recLast = this.data()[this.data().length - 1];
+                    if ((comparePair(column.dataType, recFirst[key], record[key]) < 1) &&
+                        (comparePair(column.dataType, record[key], recLast[key]) < 1)) {
+                        for (var i = 0; i < this.data().length; i++) {
+                            var rec = this.data()[i];
+                            if (comparePair(column.dataType, record[key], rec[key]) === 0) {
+                                grid.select(grid.tbody.find(`>tr:eq(${i})`));
+                                return exitSelectOnPage(gridName, callback);
+                            }
                         }
                     }
-                }
 
-                // no luck so far requested record could be on previous pages
-                var maxPage = Math.floor(this.total() / this.pageSize()) + 1;
-                var currentPage = this.page();
-                if (record[key] < recFirst[key]) {
-                    if (1 < currentPage) {
-                        return pageSelectOnPage(gridName, record, --currentPage, callback);
+                    // no luck so far requested record could be on previous pages
+                    var maxPage = Math.floor(this.total() / this.pageSize()) + 1;
+                    var currentPage = this.page();
+                    if (comparePair(column.dataType, record[key], recFirst[key]) < 1) {
+                        if (1 < currentPage) {
+                            return pageSelectOnPage(gridName, record, --currentPage, callback);
+                        }
+                        // no matching record found, select the very first row on (first) grid-page
+                        grid.select(grid.tbody.find(`>tr:eq(${0})`));
+                        return exitSelectOnPage(gridName, callback);
                     }
-                    // no matching record found, select the very first row on (first) grid-page
-                    grid.select(grid.tbody.find(`>tr:eq(${0})`));
-                    return exitSelectOnPage(gridName, callback);
-                }
 
-                // no luck so far requested record could be on next pages
-                if (recLast[key] < record[key]) {
-                    if (currentPage < maxPage) {
-                        return pageSelectOnPage(gridName, record, ++currentPage, callback);
+                    // no luck so far requested record could be on next pages
+                    if (comparePair(column.dataType, recLast[key], record[key]) < 1) {
+                        if (currentPage < maxPage) {
+                            return pageSelectOnPage(gridName, record, ++currentPage, callback);
+                        }
+                        // no matching record found, select the very last row on (last) grid-page
+                        grid.select(grid.tbody.find(`>tr:eq(${this.data().length - 1})`));
+                        return exitSelectOnPage(gridName, callback);
                     }
-                    // no matching record found, select the very last row on (last) grid-page
-                    grid.select(grid.tbody.find(`>tr:eq(${this.data().length - 1})`));
-                    return exitSelectOnPage(gridName, callback);
                 }
+                // something went wrong, abandon endeavour
+                grid.dataSource.unbind('change', _selectOnPage);
             }
         }
-        // something went wrong, abandon endeavour
-        grid.dataSource.unbind('change', _selectOnPage);
     }
 
     /**
@@ -3516,6 +3605,47 @@ sg.viewList = function () {
     * @return {bool} true only
     */
     function moveToRecord(gridName, record, reload, callback) {
+
+        // internal comparePair function of moveToRecord
+        function comparePair(type, value1, value2) {
+            switch (type) {
+                case "date":
+                    const date1 = Date.parse(value1);
+                    const date2 = Date.parse(value2);
+                    if (date1 < date2) {
+                        return -1;
+                    } else if (date1 > date2) {
+                        return 1;
+                    }
+                    break;
+                case "time":
+                    const time1 = Time.parse(value1);
+                    const time2 = Time.parse(value2);
+                    if (time1 < time2) {
+                        return -1;
+                    } else if (time1 > time2) {
+                        return 1;
+                    }
+                    break;
+                case "char":
+                    const char1 = value1.toUpperCase();
+                    const char2 = value2.toUpperCase();
+                    if (char1 < char2) {
+                        return -1;
+                    } else if (char1 > char2) {
+                        return 1;
+                    }
+                    break;
+                default:
+                    if (value1 < value2) {
+                        return -1;
+                    } else if (value1 > value2) {
+                        return 1;
+                    }
+                    break;
+            }
+            return 0;
+        }
 
         // internal exit function of moveToRecord
         function exitMoveToRecord(callback) {
@@ -3539,11 +3669,6 @@ sg.viewList = function () {
         const grid = _getGrid(gridName);
         if (grid !== null && grid !== undefined) {
 
-            // nowhere to scroll to on empty grid
-            if (reload === false && !grid.dataSource.total()) {
-                return exitMoveToRecord(callback);
-            }
-
             // check record for existence, key and not empty value
             var key = "";
             if (record === null || record === undefined) {
@@ -3564,15 +3689,31 @@ sg.viewList = function () {
                 return exitMoveToRecord(callback);
             }
 
+            // nowhere to scroll to on empty/single-row grid
+            if (grid.dataSource.total() < 2) {
+                grid.dataSource.page(1);
+                if (grid.dataSource.total() === 1) {
+                    // but must select the only row in the grid
+                    grid.select(grid.tbody.find(`>tr:eq(${0})`));
+                }
+                return exitMoveToRecord(callback);
+            }
+
             if (reload) {
                 // a record was inserted/deleted moveTo or refresh relevant page
                 return pageToRecord(gridName, record, grid.dataSource.page(), callback);
             } else {
 
+                // must obtain dataType for keys comparissions
+                const column = grid.columns.find(function (col) { return col.field === key; });
+                if (column === undefined) {
+                    return exitMoveToRecord(callback);
+                }
+
                 // with much luck selected row matches the record
                 var selectedItem = grid.dataItem(grid.select());
                 if (selectedItem !== undefined) {
-                    if (record[key] === selectedItem[key]) {
+                    if (comparePair(column.dataType, record[key], selectedItem[key]) === 0) {
                         return exitMoveToRecord(callback);
                     }
                 }
@@ -3580,10 +3721,11 @@ sg.viewList = function () {
                 // with luck requested record is on current page
                 var recFirst = grid.dataSource.data()[0];
                 var recLast = grid.dataSource.data()[grid.dataSource.data().length - 1];
-                if (recFirst[key] <= record[key] && record[key] <= recLast[key]) {
+                if ((comparePair(column.dataType, recFirst[key], record[key]) < 1) &&
+                    (comparePair(column.dataType, record[key], recLast[key]) < 1)) {
                     for (var i = 0; i < grid.dataSource.data().length; i++) {
                         var rec = grid.dataSource.data()[i];
-                        if (record[key] === rec[key]) {
+                        if (comparePair(column.dataType, record[key], rec[key]) === 0) {
                             grid.select(grid.tbody.find(`>tr:eq(${i})`));
                             return exitMoveToRecord(callback);
                         }
@@ -3593,7 +3735,7 @@ sg.viewList = function () {
                 // no luck so far requested record could be on previous pages
                 var maxPage = Math.floor(grid.dataSource.total() / grid.dataSource.pageSize()) + 1;
                 var currentPage = grid.dataSource.page();
-                if (record[key] < recFirst[key]) {
+                if (comparePair(column.dataType, record[key], recFirst[key]) < 1) {
                     if (1 < currentPage) {
                         return pageToRecord(gridName, record, --currentPage, callback);
                     }
@@ -3603,7 +3745,7 @@ sg.viewList = function () {
                 }
 
                 // no luck so far requested record could be on next pages
-                if (recLast[key] < record[key]) {
+                if (comparePair(column.dataType, recLast[key], record[key]) < 1) {
                     if (currentPage < maxPage) {
                         return pageToRecord(gridName, record, ++currentPage, callback);
                     }
@@ -3887,6 +4029,7 @@ sg.viewList = function () {
         isFieldDisabled: isFieldDisabled,
         getParentData: getParentData,
         buildFilterString: buildFilterString,
-        setNextEditCell: setNextEditCellByCol
+        setNextEditCell: setNextEditCellByCol,
+        setColumnValue: setColumnValue
     };
 }();

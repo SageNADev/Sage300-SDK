@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("WebAPISubclassWizard")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Sage Software")]
+[assembly: AssemblyCompany("Sage Software Inc.")]
 [assembly: AssemblyProduct("WebAPISubclassWizard")]
-[assembly: AssemblyCopyright("Copyright © Sage Software 2023")]
+[assembly: AssemblyCopyright("Copyright © Sage Software Inc. 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

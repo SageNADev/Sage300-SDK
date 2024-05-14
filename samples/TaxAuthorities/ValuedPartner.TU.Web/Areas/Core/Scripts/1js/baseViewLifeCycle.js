@@ -29,6 +29,8 @@
         previousKeyValue: '',
         navigationAction: NavigationAction.None,
         VCRWorkerObj: undefined,
+        VCRWorkerFunc: undefined,
+        showSaveMessage: true,
 
         /** Initialize the main object */
         initMainObject: function () {
@@ -39,7 +41,7 @@
             }
 
             this.mainCollectionObj = new this.mainObj();
-            this.VCRWorkerObj = apputils.isDefined(this.VCRWorkerObj) && isConstructor(this.VCRWorkerObj) ? new this.VCRWorkerObj() : new this.mainObj();
+            this.VCRWorkerObj = apputils.isDefined(this.VCRWorkerFunc) && isConstructor(this.VCRWorkerFunc) ? new this.VCRWorkerFunc() : new this.mainObj();
 
             //make proto object ready
             if (this.protoExt) {
@@ -513,7 +515,7 @@
                 if (xhr.hasError || errors.length > 0) {
                     const errorMsg = { "UserMessage": {"IsSuccess": false, "Errors": errors} };
                     sg.utls.showMessage(errorMsg, () => ErrorEntityCollectionObj.clearError());
-                } else {
+                } else if(self.showSaveMessage) {
                     let message = CRUDReason === CRUDReasons.ExistingData ? globalResource.SaveSuccessMessage : kendo.format(globalResource.AddSuccessMessage, self.recordTitle, self.getKeysValue());
                     sg.utls.showMessage({ UserMessage: { IsSuccess: true, Message: message } });
                     MessageBus.msg.trigger('SaveSuccessful', {});
@@ -1234,7 +1236,14 @@
                 },
 
                 set UIVisibleFlag(v) {
-                    $('#' + self.getContainerBasedId(cntrlId))[v ? 'show' : 'hide']();
+                    const dropDownList = $("#" + self.getContainerBasedId(cntrlId)).data("kendoDropDownList");
+
+                    if (apputils.isDefined(dropDownList)) {
+                        $('#' + self.getContainerBasedId(cntrlId)).closest(".k-widget")[v ? 'show' : 'hide']();
+
+                    } else {
+                        $('#' + self.getContainerBasedId(cntrlId))[v ? 'show' : 'hide']();
+                    }
                 }
 
             }

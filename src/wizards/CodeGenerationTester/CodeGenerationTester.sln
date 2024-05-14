@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30413.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGenerationWizard", "..\CodeGenerationWizard\CodeGenerationWizard.csproj", "{4930B6F4-B46A-4F02-98AC-72C54BE7AC6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard", "..\Sage300CodeGenerationWizard\Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.csproj", "{4930B6F4-B46A-4F02-98AC-72C54BE7AC6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGenerationTester", "CodeGenerationTester.csproj", "{DA3D6FDE-6E20-40DD-9896-3678D00E900C}"
 EndProject

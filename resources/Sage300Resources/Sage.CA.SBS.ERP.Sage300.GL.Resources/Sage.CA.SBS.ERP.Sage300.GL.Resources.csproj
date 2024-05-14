@@ -593,7 +593,9 @@
       <LastGenOutput>FiscalSetComparisonResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Process\FiscalSetComparisonResx.es.resx" />
-    <EmbeddedResource Include="Process\FiscalSetComparisonResx.fr.resx" />
+    <EmbeddedResource Include="Process\FiscalSetComparisonResx.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Process\FiscalSetComparisonResx.zh-Hans.resx" />
     <EmbeddedResource Include="Process\FiscalSetComparisonResx.zh-Hant.resx" />
     <EmbeddedResource Include="Process\PeriodEndMaintenanceResx.resx">

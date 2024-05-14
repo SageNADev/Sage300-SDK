@@ -161,6 +161,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmplTaxesOptionalFieldResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PayrollChecksResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayrollChecksResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TimecardDetailResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,6 +200,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TimecardOptionalFieldValueResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WorkClassificationCodeResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkClassificationCodeResx.resx</DependentUpon>
     </Compile>
     <Compile Include="PRCommonResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -364,6 +374,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmplTaxesOptionalFieldResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PayrollChecksResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PayrollChecksResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TimecardDetailResx.fr.resx" />
     <EmbeddedResource Include="Forms\TimecardDetailResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -399,6 +413,11 @@
     <EmbeddedResource Include="Forms\TimecardOptionalFieldValueResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>TimecardOptionalFieldValueResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkClassificationCodeResx.fr.resx" />
+    <EmbeddedResource Include="Forms\WorkClassificationCodeResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WorkClassificationCodeResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PRCommonResx.es.resx" />
     <EmbeddedResource Include="PRCommonResx.fr.resx" />

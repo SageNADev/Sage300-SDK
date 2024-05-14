@@ -43,7 +43,8 @@
         svrValid: "svrValid",
         svrInvalid: "svrInvalid",
         userctx: "userctx",
-        onBeforeStartEdit: "onBeforeStartEdit"
+        onBeforeStartEdit: "onBeforeStartEdit",
+        finder: "Finder"
     };
     Object.freeze(this.apputils.EventMsgTags);
 
@@ -330,12 +331,13 @@
     };
 
     //Some numeric textbox need min value settings, like QUANTITY field. Numeric default value should be minVal or 0, can't be empty(null)
-    this.apputils.initNumericTextBoxAndSetValue = function (id, val, minVal, decimal, numberOfNumerals = 0) {
+    this.apputils.initNumericTextBoxAndSetValue = function (id, val, minVal, decimal, numberOfNumerals = 0, round = true) {
         let precision = apputils.isUndefined(decimal) ? apputils.decimalPlaceOfFunctionalCurrency(): decimal;
 
         let numericTxtBox = $("#" + id).kendoNumericTextBox({
             decimals: precision,
             format: "n" + precision,
+            round: round,
             spinners: false,
             min: minVal,
             value: val
@@ -347,7 +349,7 @@
         //sg.utls.kndoUI.restrictDecimals(numericTxtBox, precision, precision ? 16 - precision : 14);
     };
 
-    this.apputils.formatKendoNumericTextBoxForDecimals = function (ctrId, data, minVal, decimal, numberOfNumerals = 0) {
+    this.apputils.formatKendoNumericTextBoxForDecimals = function (ctrId, data, minVal, decimal, numberOfNumerals = 0, round = true) {
         let kendoBox = $("#" + ctrId).data("kendoNumericTextBox");
 
         if (kendoBox && kendoBox.value) {
@@ -356,6 +358,7 @@
                 value: data,
                 decimals: precision,
                 format: "n" + precision,
+                round: round,
                 min: minVal
             });
             if (numberOfNumerals === 0) {
@@ -364,7 +367,7 @@
             sg.utls.kndoUI.restrictDecimals(kendoBox, precision, numberOfNumerals);
             //sg.utls.kndoUI.restrictDecimals(kendoBox, precision, precision ? 16 - precision : 14);
         } else {
-            apputils.initNumericTextBoxAndSetValue(ctrId, data, minVal, decimal, numberOfNumerals);
+            apputils.initNumericTextBoxAndSetValue(ctrId, data, minVal, decimal, numberOfNumerals, round);
         }
     };
 
@@ -824,6 +827,27 @@
             default:
                 return ""; //throw an error at usage if required
         }
+    };
+
+    /**
+    * Example taken from https://www.freecodecamp.org/news/javascript-debounce-example/
+    * This function calls a function initially and any subsequent calls within the timeout
+    * period is ignored and the timeout resets.
+    * @param {function} func
+    * @param {numer} timeout
+    * @returns function
+    */
+    this.apputils.throttle = function (func, timeout = 300) {
+        let timer;
+        return (...args) => {
+            if (!timer) {
+                func.apply(this, args);
+            }
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                timer = undefined;
+            }, timeout);
+        };
     };
 
     //add code above this line

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -25,7 +25,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace Sage300FinderGenerator
+namespace Sage.CA.SBS.ERP.Sage300.FinderGenerator
 {
     public partial class FinderDefinitionForm : MetroFramework.Forms.MetroForm
     {
@@ -34,6 +34,9 @@ namespace Sage300FinderGenerator
         public FinderDefinitionForm(_Solution solution)
         {
             InitializeComponent();
+
+            // Store the solution's path
+            finderDefinitionControl.SolutionPath = Path.GetFullPath(solution.FileName);
 
             try
             {
@@ -65,7 +68,7 @@ namespace Sage300FinderGenerator
             if (finderDefinitionJObject != null)
             {
                 var finderFileString = 
-                    @"/* Copyright (c) 2019-2021 Sage Software, Inc.  All rights reserved. */
+                    @"/* Copyright (c) 2019-2024 Sage Software, Inc.  All rights reserved. */
 // @ts-check
 ""use strict"";
 

@@ -1779,7 +1779,7 @@
     <value>Rapports de configuration de banque</value>
   </data>
   <data name="GL_Statement_Designer" xml:space="preserve">
-    <value>Éditeur d'états financiers</value>
+    <value>Éditeur d&apos;états financiers</value>
   </data>
   <data name="GL_Print_Financial_Statements" xml:space="preserve">
     <value>Impression des états financiers</value>
@@ -1788,7 +1788,7 @@
     <value>Numéros de série</value>
   </data>
   <data name="Financial_Reporter" xml:space="preserve">
-    <value>Générateur d'état financier</value>
+    <value>Générateur d&apos;état financier</value>
   </data>
   <data name="AS_UserActivityReport" xml:space="preserve">
     <value>Activité des utilisateurs</value>
@@ -1804,5 +1804,29 @@
   </data>
   <data name="PM_Transaction_History" xml:space="preserve">
     <value>Historique des transaction</value>
+  </data>
+  <data name="PM_BudgetMaintenance" xml:space="preserve">
+    <value>Mise à jour du budget</value>
+  </data>
+  <data name="CS_SageHR" xml:space="preserve">
+    <value>Configuration de Sage RH</value>
+  </data>
+  <data name="PR_SageHR" xml:space="preserve">
+    <value>Sage RH</value>
+  </data>
+  <data name="PR_SageHR_Employee" xml:space="preserve">
+    <value>Synchronisation de l’employé</value>
+  </data>
+  <data name="HQ_SageHR_Setup" xml:space="preserve">
+    <value>Configuration de Sage RH</value>
+  </data>
+  <data name="HQ_Sync_Employee" xml:space="preserve">
+    <value>Synchronisation des employés</value>
+  </data>
+  <data name="HQ_SageHR_Integration" xml:space="preserve">
+    <value>Intégration de Sage RH</value>
+  </data>
+  <data name="HQ_Publish_Payslip" xml:space="preserve">
+    <value>Publication des bulletins de paie</value>
   </data>
 </root>

@@ -808,6 +808,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FATCA.
+        /// </summary>
+        public static string FATCA {
+            get {
+                return ResourceManager.GetString("FATCA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fax.
         /// </summary>
         public static string Fax {
@@ -822,6 +831,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
         public static string FaxNumber {
             get {
                 return ResourceManager.GetString("FaxNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FirstName.
+        /// </summary>
+        public static string FirstName {
+            get {
+                return ResourceManager.GetString("FirstName", resourceCulture);
             }
         }
         
@@ -1218,6 +1236,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
         public static string LastMaintained {
             get {
                 return ResourceManager.GetString("LastMaintained", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LastName.
+        /// </summary>
+        public static string LastName {
+            get {
+                return ResourceManager.GetString("LastName", resourceCulture);
             }
         }
         
@@ -1645,6 +1672,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SecondTINNotice.
+        /// </summary>
+        public static string SecondTINNotice {
+            get {
+                return ResourceManager.GetString("SecondTINNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Short Name.
         /// </summary>
         public static string ShortName {
@@ -1947,6 +1983,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Forms {
         public static string TaxReportingCurMisMatch {
             get {
                 return ResourceManager.GetString("TaxReportingCurMisMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TaxWithholdingState.
+        /// </summary>
+        public static string TaxWithholdingState {
+            get {
+                return ResourceManager.GetString("TaxWithholdingState", resourceCulture);
             }
         }
         

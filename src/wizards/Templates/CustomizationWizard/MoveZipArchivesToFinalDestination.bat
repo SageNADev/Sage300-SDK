@@ -22,7 +22,7 @@ setlocal
 :: ---------------------------------------------------------------------------------------
 set myDir=%~dp0
 
-ROBOCOPY %myDir% %myDir%..\..\Customization\Sage300UICustomizationSolution\ProjectTemplates *.zip
+ROBOCOPY %myDir% %myDir%..\..\Sage300CustomizationWizardPackage\ProjectTemplates *.zip
 del /Q Web.zip
 del /Q Solution.zip
 

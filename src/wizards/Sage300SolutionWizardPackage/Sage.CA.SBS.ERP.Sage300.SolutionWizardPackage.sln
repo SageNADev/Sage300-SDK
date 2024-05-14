@@ -1,0 +1,30 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.SolutionWizardPackage", "Sage.CA.SBS.ERP.Sage300.SolutionWizardPackage.csproj", "{11818B80-5DFB-4B48-BF62-B001BB081857}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.SolutionWizard", "..\Sage300SolutionWizard\Sage.CA.SBS.ERP.Sage300.SolutionWizard.csproj", "{8D88ACF2-8926-4B8F-A56C-1B87158CBBC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11818B80-5DFB-4B48-BF62-B001BB081857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11818B80-5DFB-4B48-BF62-B001BB081857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11818B80-5DFB-4B48-BF62-B001BB081857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11818B80-5DFB-4B48-BF62-B001BB081857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D88ACF2-8926-4B8F-A56C-1B87158CBBC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D88ACF2-8926-4B8F-A56C-1B87158CBBC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D88ACF2-8926-4B8F-A56C-1B87158CBBC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D88ACF2-8926-4B8F-A56C-1B87158CBBC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9139FF8D-C8F8-4467-B894-DFB9F212C5B3}
+	EndGlobalSection
+EndGlobal

@@ -1371,7 +1371,7 @@
     <value>Billings</value>
   </data>
   <data name="EarningsAndDeduction" xml:space="preserve">
-    <value>Earnings And Deduction</value>
+    <value>Earnings And Deductions</value>
   </data>
   <data name="EFT" xml:space="preserve">
     <value>EFT</value>
@@ -1676,4 +1676,13 @@
   <data name="TimecardSummary" xml:space="preserve">
     <value>Timecard Summary</value>
   </data>
+  <data name="DetailInformation" xml:space="preserve">
+    <value>Detail Information</value>
+  </data>
+  <data name="EmployeeListing" xml:space="preserve">
+    <value>Employee Listing</value>
+  </data>
+  <data name="WorkClassificationcodes" xml:space="preserve">
+    <value>Work Classification Codes</value>
+  </data>  
 </root>

@@ -70,6 +70,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string Active {
+            get {
+                return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Timecards.
+        /// </summary>
+        public static string AllTimecards {
+            get {
+                return ResourceManager.GetString("AllTimecards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amounts.
         /// </summary>
         public static string Amounts {
@@ -187,6 +205,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete the timecard {0} for employee {1} ?.
+        /// </summary>
+        public static string DeleteTimecardConfirmMessage {
+            get {
+                return ResourceManager.GetString("DeleteTimecardConfirmMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Timecard Description.
         /// </summary>
         public static string Description {
@@ -259,6 +286,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From Employee.
+        /// </summary>
+        public static string FromEmployee {
+            get {
+                return ResourceManager.GetString("FromEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hire Date.
         /// </summary>
         public static string HireDate {
@@ -291,6 +327,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string IdentifyTimecardChangedNote {
             get {
                 return ResourceManager.GetString("IdentifyTimecardChangedNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactive.
+        /// </summary>
+        public static string Inactive {
+            get {
+                return ResourceManager.GetString("Inactive", resourceCulture);
             }
         }
         
@@ -354,6 +399,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string MustSaveChangesBeforeChangeThisField {
             get {
                 return ResourceManager.GetString("MustSaveChangesBeforeChangeThisField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Non-reusable Timecards.
+        /// </summary>
+        public static string NonReusableTimecards {
+            get {
+                return ResourceManager.GetString("NonReusableTimecards", resourceCulture);
             }
         }
         
@@ -430,6 +484,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Period End Date.
+        /// </summary>
+        public static string PeriodEndDate {
+            get {
+                return ResourceManager.GetString("PeriodEndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Process Command Code.
         /// </summary>
         public static string ProcessCommandCode {
@@ -471,6 +534,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string Reusable {
             get {
                 return ResourceManager.GetString("Reusable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reusable Timecards.
+        /// </summary>
+        public static string ReusableTimecards {
+            get {
+                return ResourceManager.GetString("ReusableTimecards", resourceCulture);
             }
         }
         
@@ -673,6 +745,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To Employee.
+        /// </summary>
+        public static string ToEmployee {
+            get {
+                return ResourceManager.GetString("ToEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total Comp. Time Dollars Accrued.
         /// </summary>
         public static string TotalCompTimeDollarsAccrued {
@@ -813,6 +894,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string TotalVacationHoursPaid {
             get {
                 return ResourceManager.GetString("TotalVacationHoursPaid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
             }
         }
         

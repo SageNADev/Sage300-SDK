@@ -187,6 +187,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassPrep
             {
                 File.Delete(path);
             }
+            
             File.WriteAllText(path, json);
         }
 
@@ -208,7 +209,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassPrep
                 var fileInfo = new FileInfo(project);
                 var sourcePath = fileInfo.DirectoryName;
                 var toFile = Path.Combine(SDKSourceRoot(), Constants.TOOLS_FOLDER, module + Constants.ZIP_EXTENSION);
-
+                
                 // Delete if To file exists
                 if (File.Exists(toFile))
                 {

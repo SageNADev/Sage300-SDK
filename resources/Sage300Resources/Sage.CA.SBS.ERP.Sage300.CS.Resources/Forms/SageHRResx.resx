@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="AddEmployeetoSyncList" xml:space="preserve">
+    <value>Add Selected Employees to Sync List</value>
+  </data>
+  <data name="Application" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="Automatically" xml:space="preserve">
+    <value>Automatically</value>
+  </data>
+  <data name="AutomaticallyCheckDate" xml:space="preserve">
+    <value>Automatically On Check Date</value>
+  </data>
+  <data name="AutomaticallyPosting" xml:space="preserve">
+    <value>Automatically During Posting</value>
+  </data>
+  <data name="ConnectionActive" xml:space="preserve">
+    <value>Connection Active</value>
+  </data>
+  <data name="DownloadChangesfromHR" xml:space="preserve">
+    <value>Download Employee Changes from Sage HR</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="EmployeeId" xml:space="preserve">
+    <value>Employee ID</value>
+  </data>
+  <data name="EmployeeIDERP" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="EmployeeStatus" xml:space="preserve">
+    <value>Employee Status</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Sage HR Setup</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="InactiveROEPending" xml:space="preserve">
+    <value>Inactive - ROE Pending</value>
+  </data>
+  <data name="IncludeInactiveAndTerminated" xml:space="preserve">
+    <value>Include Inactive and Terminated Employees</value>
+  </data>
+  <data name="KeepEmployeeData" xml:space="preserve">
+    <value>Keep employee data in Sage HR</value>
+  </data>
+  <data name="KeepExistingEmployeeMessage" xml:space="preserve">
+    <value>Would you like to keep existing employee data in Sage HR?</value>
+  </data>
+  <data name="Manually" xml:space="preserve">
+    <value>Manually (On Demand)</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NotSyncedEmployees" xml:space="preserve">
+    <value>Employees NOT Synced with Sage HR</value>
+  </data>
+  <data name="OriginalModule" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="OriginApplication" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="PublishPayslips" xml:space="preserve">
+    <value>Publish Payslips</value>
+  </data>
+  <data name="PurgeEmployeeData" xml:space="preserve">
+    <value>Purge employee data from Sage HR</value>
+  </data>
+  <data name="RemoveEmployeeFromSyncList" xml:space="preserve">
+    <value>Remove Selected Employees from Sync List</value>
+  </data>
+  <data name="SageId" xml:space="preserve">
+    <value>Sage HR Email</value>
+  </data>
+  <data name="SageIDEmail" xml:space="preserve">
+    <value>Sage HR Email</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select / Deselect All</value>
+  </data>
+  <data name="SelectedForUnsyncing" xml:space="preserve">
+    <value>Selected For Unsyncing</value>
+  </data>
+  <data name="SendInvite" xml:space="preserve">
+    <value>Send Invite</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Select/Deselect All</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Sync" xml:space="preserve">
+    <value>Sync</value>
+  </data>
+  <data name="SyncedEmployees" xml:space="preserve">
+    <value>Employees Synced with Sage HR</value>
+  </data>
+  <data name="SyncEmployee" xml:space="preserve">
+    <value>Sync Employees</value>
+  </data>
+  <data name="SyncSettings" xml:space="preserve">
+    <value>Sync Settings</value>
+  </data>
+  <data name="Terminated" xml:space="preserve">
+    <value>Terminated</value>
+  </data>
+  <data name="TerminatedROEPending" xml:space="preserve">
+    <value>Terminated - ROE Pending</value>
+  </data>
+  <data name="TurnOffSync" xml:space="preserve">
+    <value>Turn Off Sync for Employee</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+</root>

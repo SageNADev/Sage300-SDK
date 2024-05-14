@@ -478,6 +478,7 @@ table {
     padding: 10px 10px 0 10px;
     border: 1px solid @table-border-color;
     border-bottom: 0;
+    background-color: @white;
    .clearfix();
 
    &.w940 {
@@ -611,6 +612,16 @@ table {
           color: #fff;
           top: -1px;
         }
+      }
+
+      label {
+        font-size: 12px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+        top: 2px;
       }
     }
   }
@@ -776,9 +787,8 @@ table {
   }
 
   .k-grid-pager {
-    background: #f7f8f8; 
     border-top: 1px solid @table-border-color;
-    padding-top: 4px;
+    padding-top: 2px;
 
     .k-icon {
       width: 24px;

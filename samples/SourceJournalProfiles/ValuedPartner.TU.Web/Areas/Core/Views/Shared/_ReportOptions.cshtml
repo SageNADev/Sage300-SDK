@@ -86,6 +86,20 @@
         $("#menuScreenOptions").kendoMenu({
             openOnClick: true
         });
+
+        let menu = $("#menuScreenOptions").data("kendoMenu");
+            menu.bind("select", function(e) {
+                let target = $(e.item).children('.k-link');
+                if (target.length > 0) {
+                    if (target.children().length > 0) {
+                        target = target.children(0);
+                    }
+
+                    if (e.sender._keyTriggered && !target.prop('disabled')) {
+                        target.triggerHandler("click");
+                    }
+                }
+            }); 
     });
 
 </script>

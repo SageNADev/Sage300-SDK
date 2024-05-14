@@ -269,4 +269,7 @@
   <data name="ComplexAdvancedPasswordMessage" xml:space="preserve">
     <value>Su contraseña debe incluir al menos uno de los siguientes: letra minúscula, letra mayúscula, número y carácter especial (como * o #).</value>
   </data>
+  <data name="UserPasswordExpiredMessage" xml:space="preserve">
+    <value>Su contraseña ha expirado. Pídale a su administrador que lo cambie.</value>
+  </data>
 </root>

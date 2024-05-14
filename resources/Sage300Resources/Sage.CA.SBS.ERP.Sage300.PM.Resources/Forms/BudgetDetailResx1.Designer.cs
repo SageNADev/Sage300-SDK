@@ -97,6 +97,33 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add To.
+        /// </summary>
+        public static string AddTo {
+            get {
+                return ResourceManager.GetString("AddTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string Amount {
+            get {
+                return ResourceManager.GetString("Amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base Amount.
+        /// </summary>
+        public static string BaseAmount {
+            get {
+                return ResourceManager.GetString("BaseAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Basic.
         /// </summary>
         public static string Basic {
@@ -115,11 +142,74 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Budget.
+        /// </summary>
+        public static string Budget {
+            get {
+                return ResourceManager.GetString("Budget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Budget Amount.
+        /// </summary>
+        public static string BudgetAmount {
+            get {
+                return ResourceManager.GetString("BudgetAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Budget Cost.
+        /// </summary>
+        public static string BudgetCost {
+            get {
+                return ResourceManager.GetString("BudgetCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Budget Method.
+        /// </summary>
+        public static string BudgetMethod {
+            get {
+                return ResourceManager.GetString("BudgetMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Budget Quantity.
+        /// </summary>
+        public static string BudgetQuantity {
+            get {
+                return ResourceManager.GetString("BudgetQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Budget Revenue.
+        /// </summary>
+        public static string BudgetRevenue {
+            get {
+                return ResourceManager.GetString("BudgetRevenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Budget Set.
         /// </summary>
         public static string BudgetSet {
             get {
                 return ResourceManager.GetString("BudgetSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Budget Set Lookup.
+        /// </summary>
+        public static string BudgetSetLookup {
+            get {
+                return ResourceManager.GetString("BudgetSetLookup", resourceCulture);
             }
         }
         
@@ -138,6 +228,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string CategoryPercentageComplete {
             get {
                 return ResourceManager.GetString("CategoryPercentageComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        public static string Clear {
+            get {
+                return ResourceManager.GetString("Clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to clear the grid?.
+        /// </summary>
+        public static string ClearGrid {
+            get {
+                return ResourceManager.GetString("ClearGrid", resourceCulture);
             }
         }
         
@@ -183,6 +291,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string ContractUniq {
             get {
                 return ResourceManager.GetString("ContractUniq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cost.
+        /// </summary>
+        public static string Cost {
+            get {
+                return ResourceManager.GetString("Cost", resourceCulture);
             }
         }
         
@@ -250,6 +367,33 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Difference Cost.
+        /// </summary>
+        public static string DifferenceCost {
+            get {
+                return ResourceManager.GetString("DifferenceCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Difference Quantity.
+        /// </summary>
+        public static string DifferenceQuantity {
+            get {
+                return ResourceManager.GetString("DifferenceQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Difference Revenue.
+        /// </summary>
+        public static string DifferenceRevenue {
+            get {
+                return ResourceManager.GetString("DifferenceRevenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to add {0} {1} for {2}?.
         /// </summary>
         public static string DirtyCheckSaveMessage {
@@ -259,11 +403,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Display Comparison Columns.
+        /// </summary>
+        public static string DisplayComparisonColumns {
+            get {
+                return ResourceManager.GetString("DisplayComparisonColumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Divide.
         /// </summary>
         public static string Divide {
             get {
                 return ResourceManager.GetString("Divide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do not recalculate anything.
+        /// </summary>
+        public static string DoNotRecalculate {
+            get {
+                return ResourceManager.GetString("DoNotRecalculate", resourceCulture);
             }
         }
         
@@ -291,6 +453,42 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string FixedPrice {
             get {
                 return ResourceManager.GetString("FixedPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide Comparison Columns.
+        /// </summary>
+        public static string HideComparisonColumns {
+            get {
+                return ResourceManager.GetString("HideComparisonColumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increase.
+        /// </summary>
+        public static string Increase {
+            get {
+                return ResourceManager.GetString("Increase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inquiry Cost.
+        /// </summary>
+        public static string InquiryCost {
+            get {
+                return ResourceManager.GetString("InquiryCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inquiry Quantity.
+        /// </summary>
+        public static string InquiryQuantity {
+            get {
+                return ResourceManager.GetString("InquiryQuantity", resourceCulture);
             }
         }
         
@@ -412,6 +610,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inquiry Revenue.
+        /// </summary>
+        public static string InquiryRevenue {
+            get {
+                return ResourceManager.GetString("InquiryRevenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inquiry Total Cost (Functional) For Period {0}.
         /// </summary>
         public static string InquiryTotalCostFunctionalForPeriod {
@@ -520,6 +727,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No match found with the provided regex: {0} and date: {1}.
+        /// </summary>
+        public static string NoMatch {
+            get {
+                return ResourceManager.GetString("NoMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
         public static string None {
@@ -534,6 +750,42 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string Original {
             get {
                 return ResourceManager.GetString("Original", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percent Cost.
+        /// </summary>
+        public static string PercentCost {
+            get {
+                return ResourceManager.GetString("PercentCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percent Quantity.
+        /// </summary>
+        public static string PercentQuantity {
+            get {
+                return ResourceManager.GetString("PercentQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percent Revenue.
+        /// </summary>
+        public static string PercentRevenue {
+            get {
+                return ResourceManager.GetString("PercentRevenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Period.
+        /// </summary>
+        public static string Period {
+            get {
+                return ResourceManager.GetString("Period", resourceCulture);
             }
         }
         
@@ -727,6 +979,42 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recalculate the home .
+        /// </summary>
+        public static string RecalculateHome1 {
+            get {
+                return ResourceManager.GetString("RecalculateHome1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  revenue amounts.
+        /// </summary>
+        public static string RecalculateHome2 {
+            get {
+                return ResourceManager.GetString("RecalculateHome2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recalculate the source .
+        /// </summary>
+        public static string RecalculateSource1 {
+            get {
+                return ResourceManager.GetString("RecalculateSource1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recalculate the source .
+        /// </summary>
+        public static string RecalculateSource2 {
+            get {
+                return ResourceManager.GetString("RecalculateSource2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recognized.
         /// </summary>
         public static string Recognized {
@@ -736,11 +1024,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Replace.
+        /// </summary>
+        public static string Replace {
+            get {
+                return ResourceManager.GetString("Replace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resource.
         /// </summary>
         public static string Resource {
             get {
                 return ResourceManager.GetString("Resource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revenue.
+        /// </summary>
+        public static string Revenue {
+            get {
+                return ResourceManager.GetString("Revenue", resourceCulture);
             }
         }
         
@@ -804,6 +1110,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string Show {
             get {
                 return ResourceManager.GetString("Show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Budget Set Amounts.
+        /// </summary>
+        public static string ShowBudgetSetAmounts {
+            get {
+                return ResourceManager.GetString("ShowBudgetSetAmounts", resourceCulture);
             }
         }
         
@@ -912,6 +1227,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string TotalRevenueSourceForTheYear {
             get {
                 return ResourceManager.GetString("TotalRevenueSourceForTheYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Totals.
+        /// </summary>
+        public static string Totals {
+            get {
+                return ResourceManager.GetString("Totals", resourceCulture);
             }
         }
     }

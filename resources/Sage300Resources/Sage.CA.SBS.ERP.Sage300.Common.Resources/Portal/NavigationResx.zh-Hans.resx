@@ -1805,4 +1805,7 @@
   <data name="PM_Transaction_History" xml:space="preserve">
     <value>交易历史</value>
   </data>
+  <data name="PM_BudgetMaintenance" xml:space="preserve">
+    <value>预算维护</value>
+  </data>
 </root>

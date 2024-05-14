@@ -1069,8 +1069,15 @@ input[class*="btn"] {
 }
 
 .btn-search,
-.btn-finder {
+.btn-finder,
+.btn-plus,
+.btn-more {
   margin-left: -4px;
+}
+
+.btn-plus + .btn-finder,
+.btn-plus + .btn-search,  {
+  margin-left: -1px;
 }
 
 .btn-go                     { background-position: -23px 4px; }
@@ -3144,7 +3151,6 @@ div#vertical1 {
 .k-pane>.k-splitter {
   height: 100vh !important;
   border-width: 1px;
-  overflow-x: auto;
 }
 
 div#horizontal {
@@ -3198,11 +3204,9 @@ div#horizontal {
 }
 
 #right-pane {
-  width: unset !important;
 
   .pane-content {
     margin-top: -16px;
-    margin-right: 32px;
   }
 }
 
@@ -3213,7 +3217,6 @@ div#horizontal {
 #left-pane {
   padding: 0 0 0 16px;
   height: 100% !important;
-  overflow: hidden;
 }
 
 #vertical {

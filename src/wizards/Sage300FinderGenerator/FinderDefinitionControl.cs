@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -31,14 +31,16 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Drawing;
 
-namespace Sage300FinderGenerator
+namespace Sage.CA.SBS.ERP.Sage300.FinderGenerator
 {
     public partial class FinderDefinitionControl : UserControl
     {
         public string ViewID { get; private set; }
         public string ViewDescription { get; private set; }
-
         public UserCredential CurrentUserCredential { get; private set; }
+
+        // Used as default for finder lookup
+        public string SolutionPath { get; set; }
 
         private SessionManager sessionManager;
         private FinderDataSet finderDataSet;
@@ -108,7 +110,7 @@ namespace Sage300FinderGenerator
                         fileContent = $"var jQuery = {{}};{fileContent}; function GetObject(){{return JSON.stringify({objectName});}};";
                         var jIntEngine = new Jint.Engine();
                         jIntEngine.Execute(fileContent);
-                        result = JsonConvert.DeserializeObject(jIntEngine.Invoke("GetObject").AsString()) as JObject;
+                        result = JsonConvert.DeserializeObject(jIntEngine.Invoke("GetObject").ToString()) as JObject;
                     }
                 }
             }
@@ -384,16 +386,18 @@ namespace Sage300FinderGenerator
 
         private string GetInitPath()
         {
-            var regPath = string.Empty;
-            using (RegistryKey key = Registry.LocalMachine.OpenSubKey("Software\\Wow6432Node\\ACCPAC International, Inc.\\ACCPAC\\Configuration"))
-            {
-                if (key != null)
-                {
-                    regPath = (string)key.GetValue("Programs");
-                }
-            }
+            // Maybe called from any solution and therefore canot assume path. Use the solution's path to search for the file
+            //var regPath = string.Empty;
+            //using (RegistryKey key = Registry.LocalMachine.OpenSubKey("Software\\Wow6432Node\\ACCPAC International, Inc.\\ACCPAC\\Configuration"))
+            //{
+            //    if (key != null)
+            //    {
+            //        regPath = (string)key.GetValue("Programs");
+            //    }
+            //}
 
-            return !string.IsNullOrEmpty(regPath) ? Path.Combine(regPath, "Online", "Web", "Areas", "Core", "Scripts") : regPath;
+            //return !string.IsNullOrEmpty(regPath) ? Path.Combine(regPath, "Online", "Web", "Areas", "Core", "Scripts") : regPath;
+            return SolutionPath;
         }
 
         private IDictionary<string, object> GetCurrentSelectedFinderInfo()
@@ -529,6 +533,21 @@ namespace Sage300FinderGenerator
 
             btnNew.Enabled = true;
             btmInsert.Enabled = false;
+        }
+
+        private void txtFinderModule_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtViewId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void definitionFileTxt_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

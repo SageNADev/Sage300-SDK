@@ -1291,7 +1291,20 @@
         Exists: function () {
 
             return this.getLength() > 0;
-        }
+        },
+
+        /**
+         * Return filter including necessary key fields as specified by the entity at the given rowIndex in the collection object
+         * @param {int} rowIndex The array index of collection object containing existing row entity
+         */
+        getExistsFilter: function (rowIndex = 0) {
+
+            if (this.getLength() === 0) {
+                return "";
+            }
+
+            return this.rows[rowIndex].getExistsFilter();
+        },
     };
 
     this.superCollection = baseObjectCollection.extend(superCollectionObj);

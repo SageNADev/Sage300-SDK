@@ -4350,6 +4350,9 @@
   <data name="SageSupport_Remote" xml:space="preserve">
     <value>远程支持会话</value>
   </data>
+  <data name="SageSupport_ResourceCentre" xml:space="preserve">
+    <value>资源中心</value>
+  </data>
   <data name="OE_CapturePaymentsWithInvoices_Article1" xml:space="preserve">
     <value>关于预授权，捕获，和强制信用卡付款</value>
     <comment>CSHID 369033002</comment>
