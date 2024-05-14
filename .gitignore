@@ -1,6 +1,6 @@
 **/obj/
 **/bin/
-/src/wizards/Sage300UIWizardPackage/ProjectTemplates/*.zip
+/src/wizards/Sage300SolutionWizardPackage/ProjectTemplates/*.zip
 /src/wizards/Sage300SolutionWizard/Resources/AccpacDotNetVersion.props
 /samples/ClearStatistics/packages/Antlr.3.5.0.2/.signature.p7s
 /samples/ClearStatistics/packages/Antlr.3.5.0.2/Antlr.3.5.0.2.nupkg
