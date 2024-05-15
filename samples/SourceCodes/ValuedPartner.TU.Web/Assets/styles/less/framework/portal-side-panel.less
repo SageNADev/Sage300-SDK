@@ -184,6 +184,7 @@
     height: 38px;
     font-size: 14px;
     padding: 0 20px 0 40px;
+    border-radius: 20px;
   }
 
   .btn-add-disabled,
@@ -422,9 +423,11 @@
     padding: 0 8px;
     margin-right: 10px;
     min-width: 0;
+    border-radius: 0;
 
     &:hover {
-      color: #1d479c;
+      color: @sage-green;
+      background-color: @sage-light-gray;
     }
 
     &:focus {
@@ -826,14 +829,6 @@
     }
   }
 
-  .k-tabstrip .k-tabstrip-items .k-item.k-state-active {
-    background: #e6ebed;
-  }
-
-  .k-tabstrip .k-item.k-state-default.k-first.k-tab-on-top {
-    border-left-color: @sage-link;
-  }
-
   .item-list {
     position: relative;
     padding: 8px 0;
@@ -842,7 +837,7 @@
     &:hover,
     label:hover {
         cursor: pointer;
-        background-color: #dbdbde;
+        background-color: @sage-gray;
     }
 
     label {

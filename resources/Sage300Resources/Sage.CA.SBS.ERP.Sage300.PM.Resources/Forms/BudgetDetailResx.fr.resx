@@ -391,4 +391,111 @@
   <data name="InquiryTotalRevenueSourceForTheYear" xml:space="preserve">
     <value>Consult.-Total produits (dev. trans.) pour exercice</value>
   </data>
+  <data name="DirtyCheckSaveMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="InvalidFiscalYear" xml:space="preserve">
+    <value>La date de session ne tombe pas dans l'une des périodes comptables du calendrier. Définissez le bon calendrier dans Calendrier fiscal de Services communs avant d'exécuter le programme.</value>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>Voulez-vous vraiment supprimer la série financière {0} pour {1} {2}?</value>
+  </data>
+  <data name="CodeCannotBeBlank" xml:space="preserve">
+    <value>Le code de {0} ne peut pas être en blanc.</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>Période</value>
+  </data>
+  <data name="BudgetQuantity" xml:space="preserve">
+    <value>Quantité-Budget</value>
+  </data>
+  <data name="InquiryQuantity" xml:space="preserve">
+    <value>Consultation-Qté</value>
+  </data>
+  <data name="DifferenceQuantity" xml:space="preserve">
+    <value>Écart-Quantité</value>
+  </data>
+  <data name="PercentQuantity" xml:space="preserve">
+    <value>P. cent-Quantité</value>
+  </data>
+  <data name="BudgetCost" xml:space="preserve">
+    <value>Coût-Budget</value>
+  </data>
+  <data name="InquiryCost" xml:space="preserve">
+    <value>Consultation-Coût</value>
+  </data>
+  <data name="DifferenceCost" xml:space="preserve">
+    <value>Écart-Coût</value>
+  </data>
+  <data name="PercentCost" xml:space="preserve">
+    <value>Pour cent-Coût</value>
+  </data>
+  <data name="BudgetRevenue" xml:space="preserve">
+    <value>Produit-Budget</value>
+  </data>
+  <data name="InquiryRevenue" xml:space="preserve">
+    <value>Consultation-Produit</value>
+  </data>
+  <data name="DifferenceRevenue" xml:space="preserve">
+    <value>Écart-Produit</value>
+  </data>
+  <data name="PercentRevenue" xml:space="preserve">
+    <value>Pour cent-Produit</value>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>Totaux</value>
+  </data>
+  <data name="BudgetSetLookup" xml:space="preserve">
+    <value>Consultation de série financière</value>
+  </data>
+  <data name="BudgetMethod" xml:space="preserve">
+    <value>Méthode de budget</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Coût</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>Produits</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BudgetAmount" xml:space="preserve">
+    <value>Montant budgétaire</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>Remplacer</value>
+  </data>
+  <data name="AddTo" xml:space="preserve">
+    <value>Ajouter à</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Claire</value>
+  </data>
+  <data name="ShowBudgetSetAmounts" xml:space="preserve">
+    <value>Afficher les montants du budget défini</value>
+  </data>
+  <data name="HideComparisonColumns" xml:space="preserve">
+    <value>Masquer les colonnes de comparaison</value>
+  </data>
+  <data name="RecalculateHome1" xml:space="preserve">
+    <value>Recalculer devise fonct. </value>
+  </data>
+  <data name="RecalculateHome2" xml:space="preserve">
+    <value> montants produits</value>
+  </data>
+  <data name="RecalculateSource1" xml:space="preserve">
+    <value>Recalculer devise trans. </value>
+  </data>
+  <data name="RecalculateSource2" xml:space="preserve">
+    <value> montants produits</value>
+  </data>
+  <data name="DoNotRecalculate" xml:space="preserve">
+    <value>Ne rien recalculer</value>
+  </data>
+  <data name="ClearGrid" xml:space="preserve">
+    <value>Voulez-vous vraiment effacer la grille? </value>
+  </data>
+  <data name="NoMatch" xml:space="preserve">
+    <value>No match found with the provided regex: {0} and date: {1}</value>
+  </data>
 </root>

@@ -1,0 +1,370 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+    var extension = settings.Extension;
+    var repositoryType = settings.RepositoryType;
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
+    var reportName = (view.Properties.ContainsKey(BusinessView.Constants.ReportKey))
+                ? view.Properties[BusinessView.Constants.ReportKey]
+                : string.Empty;
+    var programId = (view.Properties.ContainsKey(BusinessView.Constants.ProgramId))
+                ? view.Properties[BusinessView.Constants.ProgramId]
+                : string.Empty;
+    var keyFieldName = view.Keys.FirstOrDefault();
+    var enumsCount = view.Enums.Count;
+
+#>
+// <#=copyright#>
+
+#region Namespace
+
+using System;
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+<#
+    if (repositoryType.Equals(RepositoryType.Report))
+    {
+#>
+using Sage.CA.SBS.ERP.Sage300.Common.Models.Reports;
+<#
+    }
+#>
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository;
+<#
+    if (!repositoryType.Equals(RepositoryType.Report))
+    {
+#>
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Entity;
+<#
+    }
+#>
+<#
+    if (repositoryType.Equals(RepositoryType.Report))
+    {
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Models;
+<#
+    }
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Models<#=extension#>;
+<#
+    if (!repositoryType.Equals(RepositoryType.Report) && enumsCount > 0)
+    {
+		if (extension.Length > 0)
+		{
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums; // For common enumerations
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums<#=extension#>;
+<#
+		}
+		else
+		{
+#>
+using <#=companyNamespace#>.<#=moduleId#>.Models.Enums; // For common enumerations
+<#
+		}
+    }
+#>
+
+#endregion
+
+namespace <#=companyNamespace#>.<#=moduleId#>.BusinessRepository.Mappers<#=extension#>
+{
+    /// <summary>
+    /// Class for <#=entityName#> mapping
+    /// </summary>
+    /// <typeparam name="T"><#=modelName#></typeparam>
+    public class <#=entityName#>Mapper<T> : <#=(repositoryType.Equals(RepositoryType.Report) ? "IReport" : "Model")#>Mapper<T> where T : <#=modelName#>, new ()
+    {
+<#
+    if (repositoryType.Equals(RepositoryType.Report))
+    {
+#>
+        #region Private variables
+
+        /// <summary>
+        /// Current context
+        /// </summary>
+        private readonly Context _context;
+        #endregion
+
+        #region Constants
+
+        /// <summary>
+        /// Default report name
+        /// </summary>
+        private const string ReportName = "<#=reportName#>";
+
+        /// <summary>
+        /// The program identifier
+        /// </summary>
+        private const string ProgramId = "<#=programId#>";
+
+        /// <summary>
+        /// The menu identifier
+        /// </summary>
+        private const string MenuId = "<MENU ID>";
+
+        #endregion
+<#
+    }
+#>
+        #region Constructor
+
+        /// <summary>
+        /// Constructor to set the Context
+        /// </summary>
+        /// <param name="context">Context</param>
+        public <#=entityName#>Mapper(Context context)
+<#
+    if (!repositoryType.Equals(RepositoryType.Report))
+    {
+#>
+            : base(context)
+<#
+    }
+#>
+        {
+<#
+    if (repositoryType.Equals(RepositoryType.Report))
+    {
+#>
+            _context = context;
+<#
+    }
+#>
+        }
+
+        #endregion
+
+        #region <#=(repositoryType.Equals(RepositoryType.Report) ? "IReport" : "Model")#>Mapper methods
+
+<#
+    if (repositoryType.Equals(RepositoryType.Report))
+    {
+#>
+        /// <summary>
+        /// Map a report
+        /// </summary>
+        /// <param name="model">Model to be converted to report</param>
+        /// <returns>Mapped Report</returns>
+        public Report Map(T model)
+        {
+
+            var report = new Report
+            {
+                ProgramId = ProgramId,
+                Context = _context,
+                MenuId = MenuId,
+                Name = ReportName
+            };
+
+            SetReportName(report, model);
+
+<#
+                // Iterate fields collection
+                for (var i = 0; i < view.Fields.Count; i++)
+                {
+                    // locals
+                    var field = view.Fields[i];
+                    var fieldName = field.Name;
+
+#>
+            var <#=fieldName.ToLower()#> = SetParameter(<#=modelName#>.Fields.<#=fieldName#>, model.<#=fieldName#>);
+            report.Parameters.Add(<#=fieldName.ToLower()#>);
+
+<#
+                }
+#>
+            return report;
+        }
+        #endregion
+
+        #region Private methods
+
+        /// <summary>
+        /// Set report name
+        /// </summary>
+        /// <param name="report">Report</param>
+        /// <param name="model">Model</param>
+        private static void SetReportName(Report report, T model)
+        {
+            var fileName = string.IsNullOrEmpty(ReportName) ? string.Empty : ReportName;
+            report.Name = ReportName + "[" + fileName + "]";
+        }
+
+        /// <summary>
+        /// To set all parameter id and values
+        /// </summary>
+        /// <param name="id">Parameter Field Id</param>
+        /// <param name="value">Parameter Value</param>
+        private static Parameter SetParameter(string id, string value)
+        {
+            var parameter = new Parameter { Id = id, Value = string.IsNullOrEmpty(value) ? string.Empty : value };
+            return parameter;
+        }
+        #endregion
+
+<#
+    }
+    else
+    {
+#>
+        /// <summary>
+        /// Map entity to model
+        /// </summary>
+        /// <param name="entity">Business Entity</param>
+        /// <returns>Mapped Model</returns>
+        public override T Map(IBusinessEntity entity)
+        {
+            var model = base.Map(entity);
+
+<#
+                // Iterate fields collection
+                for (var i = 0; i < view.Fields.Count; i++)
+                {
+                    // locals
+                    var field = view.Fields[i];
+                    var fieldName = field.Name;
+
+                    // Check for an enumeration for property
+                    if (field.Type.Equals(BusinessDataType.Enumeration))
+                    {
+						// Did the user want to override the name?
+						//fieldName = field.AlternateName.Length > 0 ? field.AlternateName : field.Name;
+						fieldName = field.Name;
+#>
+			model.<#=fieldName#> = (<#=companyNamespace#>.<#=moduleId#>.Models.Enums<#=extension#>.<#=fieldName#>)(entity.GetValue<int>(<#=modelName#>.Index.<#=fieldName#>));
+<#
+                    }
+                    else
+                    {
+                        // Normal data type
+                        var fieldType = EnumValue.GetValue(field.Type);
+                        var ext = string.Empty;
+
+                        // TimeSpan special logic
+                        if (field.Type.Equals(BusinessDataType.TimeSpan))
+                        {
+                            fieldType = EnumValue.GetValue(BusinessDataType.DateTime);
+                            ext = ".TimeOfDay";
+                        }
+                        
+                        // TimeSpan special logic for DateTime treated as TimeSpan
+                        // TBD
+#>
+            model.<#=fieldName#> = entity.GetValue<<#=fieldType#>>(<#=modelName#>.Index.<#=fieldName#>)<#=ext#>;
+<#
+                    }
+                }
+#>
+            return model;
+        }
+
+        /// <summary>
+        /// Map model to entity
+        /// </summary>
+        /// <param name="model">Model</param>
+        /// <param name="entity">Business Entity</param>
+        public override void Map(T model, IBusinessEntity entity)
+        {
+            if (model == null)
+            {
+                return;
+            }
+            base.Map(model, entity);
+
+<#
+                // Iterate fields collection
+                for (var i = 0; i < view.Fields.Count; i++)
+                {
+                    // locals
+                    var field = view.Fields[i];
+                    var fieldName = field.Name;
+
+					// Did the user want to override the name?
+					//fieldName = field.AlternateName.Length > 0 ? field.AlternateName : field.Name;
+					fieldName = field.Name;
+
+                    // Locals
+                    var commentChars = (field.IsReadOnly || field.IsCalculated) ? @"// " : string.Empty;
+                    var value = "model." + fieldName;
+                   
+                    // TimeSpan special logic
+                    if (field.Type.Equals(BusinessDataType.TimeSpan))
+                    {
+                        value = "DateUtil.GetMinDate().Add(model." + fieldName + ")";
+                    }
+                        
+                    // TimeSpan special logic for DateTime treated as TimeSpan
+                    // TBD
+
+#>
+            <#=commentChars#>entity.SetValue(<#=modelName#>.Index.<#=fieldName#>, <#=value#>);
+<#
+                }
+#>
+        }
+
+        /// <summary>
+        /// Map Key
+        /// </summary>
+        /// <param name="model">Model</param>
+        /// <param name="entity">Business Entity</param>
+<#
+    if (string.IsNullOrEmpty(keyFieldName))
+    {
+#>
+        /// <exception cref="NotImplementedException"></exception>
+<#
+    }
+#>
+        public override void MapKey(T model, IBusinessEntity entity)
+        {
+<#
+    if (!string.IsNullOrEmpty(keyFieldName))
+    {
+#>
+            entity.SetValue(<#=modelName#>.Index.<#=keyFieldName#>, model.<#=keyFieldName#>);
+<#
+    }
+    else
+    {
+#>
+            throw new NotImplementedException();
+<#
+     }
+#>
+        }
+
+        #endregion
+<#
+    }
+#>
+    }
+}

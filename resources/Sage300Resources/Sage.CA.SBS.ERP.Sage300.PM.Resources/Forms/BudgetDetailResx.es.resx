@@ -391,4 +391,111 @@
   <data name="InquiryTotalRevenueSourceForTheYear" xml:space="preserve">
     <value>Ingresos Totales por Consultas (Origen) para el Año</value>
   </data>
+  <data name="DirtyCheckSaveMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="InvalidFiscalYear" xml:space="preserve">
+    <value>La fecha de sesión no cae dentro de uno de los períodos fiscales del calendario. Defina un calendario adecuado en Calendario Fiscal de Servicios Comunes antes de ejecutar el programa.</value>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>¿Está seguro de que desea eliminar el Presupuesto {0} para {1} {2}?</value>
+  </data>
+  <data name="CodeCannotBeBlank" xml:space="preserve">
+    <value>El código de {0} no puede estar en blanco.</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>Período</value>
+  </data>
+  <data name="BudgetQuantity" xml:space="preserve">
+    <value>Cant. de Presupuestos</value>
+  </data>
+  <data name="InquiryQuantity" xml:space="preserve">
+    <value>Cant. de Consultas</value>
+  </data>
+  <data name="DifferenceQuantity" xml:space="preserve">
+    <value>Cant. de Diferencias</value>
+  </data>
+  <data name="PercentQuantity" xml:space="preserve">
+    <value>Cant. Porcentual</value>
+  </data>
+  <data name="BudgetCost" xml:space="preserve">
+    <value>Costo de Presupuesto</value>
+  </data>
+  <data name="InquiryCost" xml:space="preserve">
+    <value>Costo de Consulta</value>
+  </data>
+  <data name="DifferenceCost" xml:space="preserve">
+    <value>Costo de Diferencia</value>
+  </data>
+  <data name="PercentCost" xml:space="preserve">
+    <value>Costo Porcentual</value>
+  </data>
+  <data name="BudgetRevenue" xml:space="preserve">
+    <value>Ingresos Presupuestarios</value>
+  </data>
+  <data name="InquiryRevenue" xml:space="preserve">
+    <value>Ingresos por Consultas</value>
+  </data>
+  <data name="DifferenceRevenue" xml:space="preserve">
+    <value>Ingresos Diferenciados</value>
+  </data>
+  <data name="PercentRevenue" xml:space="preserve">
+    <value>Ingresos Porcentuales</value>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>Totales</value>
+  </data>
+  <data name="BudgetSetLookup" xml:space="preserve">
+    <value>Consulta de Saldo Presupuesto</value>
+  </data>
+  <data name="BudgetMethod" xml:space="preserve">
+    <value>Método de Presupuesto</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Costo</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>Ingresos</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BudgetAmount" xml:space="preserve">
+    <value>Cantidad de presupuesto</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>Reemplazar</value>
+  </data>
+  <data name="AddTo" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clara</value>
+  </data>
+  <data name="ShowBudgetSetAmounts" xml:space="preserve">
+    <value>Mostrar montos establecidos de presupuesto</value>
+  </data>
+  <data name="HideComparisonColumns" xml:space="preserve">
+    <value>Ocultar columnas de comparación</value>
+  </data>
+  <data name="RecalculateHome1" xml:space="preserve">
+    <value>Recalcular el principal </value>
+  </data>
+  <data name="RecalculateHome2" xml:space="preserve">
+    <value> montos de ingresos</value>
+  </data>
+  <data name="RecalculateSource1" xml:space="preserve">
+    <value>Recalcular el origen</value>
+  </data>
+  <data name="RecalculateSource2" xml:space="preserve">
+    <value> montos de ingresos</value>
+  </data>
+  <data name="DoNotRecalculate" xml:space="preserve">
+    <value>No recalcular nada</value>
+  </data>
+  <data name="ClearGrid" xml:space="preserve">
+    <value>¿Realmente desea borrar la cuadrícula? </value>
+  </data>
+  <data name="NoMatch" xml:space="preserve">
+    <value>No match found with the provided regex: {0} and date: {1}</value>
+  </data>
 </root>

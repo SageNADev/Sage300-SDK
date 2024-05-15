@@ -135,6 +135,9 @@
   <data name="AccrualsPaidYTD" xml:space="preserve">
     <value>Accruals Paid YTD</value>
   </data>
+  <data name="AccrualsTab" xml:space="preserve">
+    <value>Accruals</value>
+  </data>
   <data name="AccruedAmountsMTD" xml:space="preserve">
     <value>Accrued Amounts MTD</value>
   </data>

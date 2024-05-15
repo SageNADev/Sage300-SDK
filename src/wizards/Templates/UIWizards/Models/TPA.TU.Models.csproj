@@ -13,6 +13,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+	<WebHintPath>$(Sage300WebDir)\bin</WebHintPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,13 +37,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Models">
-      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Models.dll</HintPath>
+      <HintPath>$(WebHintPath)\Sage.CA.SBS.ERP.Sage300.Common.Models.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Resources">
-      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Resources.dll</HintPath>
+      <HintPath>$(WebHintPath)\Sage.CA.SBS.ERP.Sage300.Common.Resources.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Utilities">
-      <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Utilities.dll</HintPath>
+      <HintPath>$(WebHintPath)\Sage.CA.SBS.ERP.Sage300.Common.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />

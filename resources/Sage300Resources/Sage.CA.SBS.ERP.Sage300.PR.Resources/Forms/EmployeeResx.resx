@@ -789,4 +789,55 @@
   <data name="NoAccessToEmployee" xml:space="preserve">
     <value>You do not have rights to access this employee.</value>
   </data>
+  <data name="ClearInactiveDate" xml:space="preserve">
+    <value>You have switched the status from Inactive to Active.  Do you want to clear the Inactive Date?</value>
+  </data>
+  <data name="ClearTerminationDate" xml:space="preserve">
+    <value>You have switched the status from Terminated to Active.  Do you want to clear the Termination Date?</value>
+  </data>
+  <data name="PrenoteStatusChange" xml:space="preserve">
+    <value>Changing the prenote status may cause your records to be out of sync with the bank, and can prevent you from processing direct deposits, or cause direct deposits to be processed incorrectly.  Are you sure you want to change the prenote status?</value>
+  </data>
+  <data name="EmployeeDependantsOnly" xml:space="preserve">
+    <value>5 - Payee and their dependent children</value>
+  </data>
+  <data name="EmployeeOnly" xml:space="preserve">
+    <value>2 - Payee only</value>
+  </data>
+  <data name="EmployeeSpouseDependants" xml:space="preserve">
+    <value>3 - Payee, spouse and dependent children</value>
+  </data>
+  <data name="EmployeeSpouseOnly" xml:space="preserve">
+    <value>4 - Payee and their spouse</value>
+  </data>
+  <data name="EmployerDental" xml:space="preserve">
+    <value>Employer Offered Dental</value>
+  </data>
+  <data name="NoEmployerCoverage" xml:space="preserve">
+    <value>1 - No dental insurance or coverage of any kind</value>
+  </data>
+  <data name="NoPayeeCoverage" xml:space="preserve">
+    <value>1 - No dental insurance or coverage of any kind</value>
+  </data>
+  <data name="PayeeDependantsOnly" xml:space="preserve">
+    <value>5 - Payee and their dependent children</value>
+  </data>
+  <data name="PayeeOnly" xml:space="preserve">
+    <value>2 - Payee only</value>
+  </data>
+  <data name="PayeeSpouseDependants" xml:space="preserve">
+    <value>3 - Payee, spouse and dependent children</value>
+  </data>
+  <data name="PayeeSpouseOnly" xml:space="preserve">
+    <value>4 - Payee and their spouse</value>
+  </data>
+  <data name="PayerDental" xml:space="preserve">
+    <value>Payer Offered Dental</value>
+  </data>
+  <data name="WorkLocationCounty" xml:space="preserve">
+    <value>County</value>
+  </data>
+  <data name="SyncedWithSageHR" xml:space="preserve">
+    <value>Synced with Sage HR</value>
+  </data>
 </root>

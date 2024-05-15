@@ -13372,6 +13372,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Resource Centre.
+        /// </summary>
+        public static string SageSupport_ResourceCentre {
+            get {
+                return ResourceManager.GetString("SageSupport_ResourceCentre", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Search Help.
         /// </summary>
         public static string Search_Help {

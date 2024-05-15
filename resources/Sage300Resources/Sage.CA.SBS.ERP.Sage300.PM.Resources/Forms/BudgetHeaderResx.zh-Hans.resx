@@ -139,9 +139,6 @@
   <data name="Num5" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="Entity" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
   <data name="FMTCONTNO" xml:space="preserve">
     <value>合约</value>
   </data>
@@ -163,10 +160,13 @@
   <data name="CONTRACT" xml:space="preserve">
     <value>合约</value>
   </data>
-  <data name="Year" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="Year" xml:space="preserve">
+    <value>年度</value>
   </data>
   <data name="Recognized" xml:space="preserve">
     <value>已确认</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>项目成本管理/预算维护</value>
   </data>
 </root>

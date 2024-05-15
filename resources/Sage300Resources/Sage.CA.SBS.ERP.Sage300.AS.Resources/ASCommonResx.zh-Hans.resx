@@ -269,4 +269,7 @@
   <data name="ComplexAdvancedPasswordMessage" xml:space="preserve">
     <value>您的密码必须至少包含以下各项之一：小写字母、大写字母、数字和特殊字符（例如 * 或 #）。</value>
   </data>
+  <data name="UserPasswordExpiredMessage" xml:space="preserve">
+    <value>您的密码已过期。请您的管理员更改它。</value>
+  </data>
 </root>

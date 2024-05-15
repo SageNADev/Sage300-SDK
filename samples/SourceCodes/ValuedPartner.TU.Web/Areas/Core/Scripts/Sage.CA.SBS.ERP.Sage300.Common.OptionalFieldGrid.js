@@ -1437,9 +1437,6 @@ sg.optionalFieldControl = function () {
      * @param {string} parentGridName The parent grid name
      */
     function closePopUp(gridName, parentGridName) {
-        let grid = _getGrid(gridName);
-        let total = grid.dataSource.total();
-
         if (parentGridName.length > 0) {
             let parentGrid = $("#" + parentGridName).data("kendoGrid");
             if (parentGrid) {
@@ -1450,8 +1447,8 @@ sg.optionalFieldControl = function () {
                     // Note - Changing the traditional use of set call, instead directly assigning it because kendo doesn't allow "set" call if the field property
                     // is not editable. Which is a bit of concern for other fields, if we try to manually update the dataSource fields which is read only
                     // (most likely we don't even have to update the read only properties directly if they are non-editable)
-                    selectedItem.VALUES = total;
-                    selectedItem.trigger("change", { field: "VALUES" });
+                    sg.viewList.refreshCurrentRow(parentGridName, 'VALUES');
+                    selectedItem.dirty = true;
                 }
             }
         }

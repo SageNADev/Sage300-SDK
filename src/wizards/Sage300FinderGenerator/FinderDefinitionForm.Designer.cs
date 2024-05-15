@@ -1,4 +1,4 @@
-﻿namespace Sage300FinderGenerator
+﻿namespace Sage.CA.SBS.ERP.Sage300.FinderGenerator
 {
     partial class FinderDefinitionForm
     {
@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FinderDefinitionForm));
             this.btnCreateFinderDef = new MetroFramework.Controls.MetroButton();
-            this.finderDefinitionControl = new Sage300FinderGenerator.FinderDefinitionControl();
+            this.finderDefinitionControl = new Sage.CA.SBS.ERP.Sage300.FinderGenerator.FinderDefinitionControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sage300FinderGenerator.Properties.Resources.sage300_logo_sq;
+            this.pictureBox1.Image = global::Sage.CA.SBS.ERP.Sage300.FinderGenerator.Properties.Resources.sage300_logo_sq;
             this.pictureBox1.Location = new System.Drawing.Point(551, 28);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(103, 69);

@@ -199,8 +199,8 @@
   <data name="Entity" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="BasePercentIncrease" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="BasePercentIncrease" xml:space="preserve">
+    <value>基数，百分比增加</value>
   </data>
   <data name="CopyRevenueFunctional" xml:space="preserve">
     <value>复制营收(本币)</value>
@@ -217,8 +217,8 @@
   <data name="INQ5" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="CopyProratedSpread" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="CopyProratedSpread" xml:space="preserve">
+    <value>复制，摊配分布</value>
   </data>
   <data name="CopyCostFunctional" xml:space="preserve">
     <value>复制成本(本币)</value>
@@ -262,8 +262,8 @@
   <data name="INCH14" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="CopyAmountIncrease" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="CopyAmountIncrease" xml:space="preserve">
+    <value>复制，金额增加</value>
   </data>
   <data name="INCH11" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -295,8 +295,8 @@
   <data name="INRS15" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="BaseAmountIncrease" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="BaseAmountIncrease" xml:space="preserve">
+    <value>基数，金额增加</value>
   </data>
   <data name="INCS7" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -304,8 +304,8 @@
   <data name="AmountIncrease" xml:space="preserve">
     <value>金额增加</value>
   </data>
-  <data name="CopyPercentIncrease" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="CopyPercentIncrease" xml:space="preserve">
+    <value>复制，百分比增加</value>
   </data>
   <data name="INQTOTAL" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -445,8 +445,8 @@
   <data name="INQ2" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="CopyAsIs" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="CopyAsIs" xml:space="preserve">
+    <value>复制，原样</value>
   </data>
   <data name="INRH15" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />

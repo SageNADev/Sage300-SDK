@@ -11,6 +11,8 @@
         xmlPath: undefined,
         dataModel: undefined,
         rowObj: undefined,
+        gotoPage: -1,
+        pageSize: -1,
 
         //This property allows to auto-bind columns to fields from update from server, user interaction or calculated fields
         //Set this flag to true for Finder since its retrieved data that will never get updated
@@ -497,7 +499,8 @@
          * @param {any} filter
          */
         buildQuery: function (parentIndex, id, verb, childNode, filter) {
-            let obj = { viewId: this.viewid, filter, parentId: parentIndex, id, verb };
+            //let obj = { viewId: this.viewid, filter, parentId: parentIndex, id, verb };
+            let obj = { viewId: this.viewid, filter, parentId: parentIndex, id, verb, gp: this.gotoPage, ps: this.pageSize};
             return `${apputils.createRowNode(obj)}${childNode}${apputils.rowNodeClose}`;
         },
 

@@ -305,10 +305,14 @@
          *  Update grid column after grid init
          * @param {any} columns grid columns array object
          */
-		updateGridColumn: function (columns) {            
-            this.grid.setOptions({
-                columns: columns
-            });
+        updateGridColumn: function (columns) {
+            let options = this.grid.getOptions();
+            options.columns = columns;
+            this.grid.setOptions(options);
+
+            //After setOptions, need register event handlers
+            this.grid.table.on("keydown", e => this.keydownHandler(e, this.grid));
+            this.grid.table.on("focus", e => this.focusHandler(e, this.grid));
         },
 
         /**
@@ -318,9 +322,14 @@
         makeGridEditable: function (isEditable) {
             if (this.editableGrid !== isEditable) {
                 this.editableGrid = isEditable;
-                this.grid.setOptions({
-                    editable: isEditable
-                });
+
+                let options = this.grid.getOptions();
+                options.editable = isEditable;
+                this.grid.setOptions(options);
+
+                //After setOptions, need register event handlers
+                this.grid.table.on("keydown", e => this.keydownHandler(e, this.grid));
+                this.grid.table.on("focus", e => this.focusHandler(e, this.grid));
             }
         },
 
@@ -382,6 +391,39 @@
             this.businessObject = businessObj;
         },
 
+        keydownHandler: function (e, grid) {
+            if (grid.select().index() === 0 && e.code === 'ArrowUp') {
+                let cell = grid.tbody.find("tr:first td:first");
+                grid.current(cell);
+                grid.table.focus();
+            }
+            if ([38, 40].indexOf(e.keyCode) >= 0) {
+                setTimeout(function () {
+                    grid.select($(`#${grid._cellId}_active_cell`).closest("tr"));
+                });
+            }
+        },
+
+        focusHandler: function (e, grid) {
+            const rowIndex = grid.select().index();
+            const colIndex = grid._lastCellIndex;
+
+            if (rowIndex === 0 && colIndex <= 0) {
+                const cell = grid.tbody.find("tr:first td:first");
+                const col = grid.columns[0];
+
+                let editable = grid.options.editable || cell.className !== "non-editable-column";
+                if (editable && col.editable && apputils.isFunction(col.editable)) {
+                    const rowData = grid.dataItem(grid.select());
+                    editable = col.editable(rowData);
+                }
+                if (editable) {
+                    grid.current(cell);
+                    grid.editCell(cell);
+                }
+            }
+        },
+
         /** Bind grid events */
         initEvents: function() {
             var self = this;
@@ -432,40 +474,10 @@
             });
 
             //Support keyboard up/down pageup/down selection, [38, 40] is key arrow code
-            self.grid.table.on("keydown", function (e) {
-                if (self.grid.select().index() === 0 && e.code === 'ArrowUp') {
-                    let cell = self.grid.tbody.find("tr:first td:first");
-                    self.grid.current(cell);
-                    self.grid.table.focus();
-                }
-                if ([38, 40].indexOf(e.keyCode) >= 0) {
-                    setTimeout(function () {
-                        self.grid.select($(`#${self.gridId}_active_cell`).closest("tr"));
-                    });
-                }
-            });
+            self.grid.table.on("keydown", e => self.keydownHandler(e, self.grid));
 
             //Support keyboard navigation focus and edit cell
-            self.grid.table.on("focus", function (e) {
-                const grid = self.grid;
-                const rowIndex = grid.select().index();
-                const colIndex = grid._lastCellIndex;
-
-                if (rowIndex === 0 && colIndex <= 0) {
-                    const cell = grid.tbody.find("tr:first td:first");
-                    const col = grid.columns[0];
-
-                    let editable = grid.options.editable || cell.className !== "non-editable-column";
-                    if (editable && col.editable && apputils.isFunction(col.editable)) {
-                        const rowData = grid.dataItem(grid.select());
-                        editable = col.editable(rowData);
-                    }
-                    if (editable) {
-                        grid.current(cell);
-                        grid.editCell(cell);
-                    }
-                }
-            });
+            self.grid.table.bind("focus", e=> self.focusHandler(e,self.grid));
         },
 
         /**
@@ -747,6 +759,10 @@
                 row = this.selectGridRow(rowIndex);
             }
 
+            if (apputils.isUndefined(newValue)) {
+                newValue = selectedItem[columnName];
+            }
+
             let editable = true;
             let col = {};
             do {
@@ -765,7 +781,12 @@
             this.resetPropagation();
 
             this.currentCell = row[0].cells[colIndex];
-            // Set the currently focused item to the next/previous editable cell.
+            if (!this.currentCell && rowIndex < grid._data.length-1) {
+                row = this.selectGridRow(rowIndex + 1);
+                colIndex = grid.columns.findIndex(c => !c.hidden);
+                this.currentCell = row[0].cells[colIndex];
+            }
+           // Set the currently focused item to the next/previous editable cell.
             grid.current(this.currentCell);
             grid.editCell(this.currentCell);
         },

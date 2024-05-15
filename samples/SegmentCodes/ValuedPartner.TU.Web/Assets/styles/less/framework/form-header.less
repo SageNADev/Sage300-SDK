@@ -8,7 +8,6 @@
 
 .header-wrapper {
   border-bottom: 1px solid #d9e0e4;
-  background-color: @white;
   padding: 16px 16px 0;
 }
 
@@ -52,7 +51,6 @@
 
   input[class*=btn-] {
     border-radius: 15px;
-    border: 0;
   }
 }
 
@@ -78,6 +76,7 @@
 
   >.k-menu.k-header {
     border: none;
+    background-color: @gray-lighter;
 
     .btn-screen-options.k-item {
       padding: 0;
@@ -266,7 +265,6 @@
     background-color: #fff;
     border: 0;
     margin:0 auto auto 0; 
-    border-radius: 15px;
 
     &:hover { 
       background-color: @btn-link-hover-color;
@@ -274,10 +272,15 @@
 
     &.btn-view-expand {
       background-position: -848px 5px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      margin-left: -4px;
     }
 
     &.btn-view-simple {
         background-position: -874px 5px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
     }
 
     &.active { 

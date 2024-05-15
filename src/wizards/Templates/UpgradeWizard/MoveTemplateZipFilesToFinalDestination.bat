@@ -9,7 +9,7 @@
 ::                 - Items
 ::            
 ::            to it's final destination
-::            \src\wizards\Sage300UpgradeWizard\Sage300UpgradeWizardPackage\ItemTemplates\
+::            \src\wizards\Sage300WizardPackage\ItemTemplates\
 ::
 :: Usage Example:
 ::          MoveTemplateZipFilesToFinalDestination.bat 
@@ -24,7 +24,7 @@ setlocal
 :: ---------------------------------------------------------------------------------------
 set myDir=%~dp0
 
-set targetPath=..\..\Sage300UpgradeWizard\Sage300UpgradeWizardPackage\ItemTemplates\
+set targetPath=..\..\Sage300WizardPackage\ItemTemplates\
 
 copy /Y Items.zip %targetPath%
 del /Q Items.zip

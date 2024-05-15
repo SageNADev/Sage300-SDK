@@ -138,11 +138,17 @@
   <data name="Apply" xml:space="preserve">
     <value>Apply</value>
   </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Invalid input. Bank is not defined.</value>
+  </data>
   <data name="BankCode" xml:space="preserve">
     <value>Bank Code</value>
   </data>
   <data name="Banked" xml:space="preserve">
     <value>Banked</value>
+  </data>
+  <data name="btnOpen" xml:space="preserve">
+    <value>Open</value>
   </data>
   <data name="CheckDate" xml:space="preserve">
     <value>Check Date</value>
@@ -207,6 +213,9 @@
   <data name="InavlidEmployee" xml:space="preserve">
     <value>Invalid input. Employee does not exist.</value>
   </data>
+  <data name="InvalidCalculationSequence" xml:space="preserve">
+    <value>Calculation sequence {0} does not exist.</value>
+  </data>
   <data name="InvalidEntryMessage" xml:space="preserve">
     <value> From value cannot be greater than To value.</value>
   </data>
@@ -230,6 +239,9 @@
   </data>
   <data name="InvalidYear" xml:space="preserve">
     <value>Invalid input. Year is out of range.</value>
+  </data>
+  <data name="LaterCalculationSequence" xml:space="preserve">
+    <value>Calculation Sequence {0} has a later period end date.</value>
   </data>
   <data name="Liability" xml:space="preserve">
     <value>Liability</value>
@@ -332,6 +344,9 @@
   </data>
   <data name="TypeOfCheckDocument" xml:space="preserve">
     <value>Document Type</value>
+  </data>
+  <data name="UnavailableCalculationSequence" xml:space="preserve">
+    <value>There is nothing to post in Calculation sequence {0}.</value>
   </data>
   <data name="UPPRCheckList" xml:space="preserve">
     <value>PRCheckList</value>

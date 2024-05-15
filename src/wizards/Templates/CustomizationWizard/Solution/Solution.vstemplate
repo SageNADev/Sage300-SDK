@@ -1,25 +1,24 @@
 ﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
-  <TemplateData>
-    <Name>Sage 300 UI Customization Wizard</Name>
-    <Description>A wizard to quickly scaffold a Sage 300 MVC Customization application</Description>
-    <ProjectType>CSharp</ProjectType>
-    <ProjectSubType>
-    </ProjectSubType>
-    <SortOrder>1000</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>Sage300UICustomization</DefaultName>
-    <ProvideDefaultName>true</ProvideDefaultName>
-    <LocationField>Enabled</LocationField>
-    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-    <Icon>__TemplateIcon.ico</Icon>
-  </TemplateData>
+    <TemplateData>
+        <Name>Sage 300 Customization Wizard</Name>
+        <Description>A wizard to scaffold a Sage 300 Web Screen Customization solution</Description>
+        <Icon Package="{349c5850-65df-11da-9384-00065b846f21}" ID="9001" />
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <SortOrder>42</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>Sage300WebCustomSolution</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    </TemplateData>
     <TemplateContent>
         <ProjectCollection />
     </TemplateContent>
-  <WizardExtension>
-    <Assembly>Sage300UICustomizationWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=0627e4cb02c68557</Assembly>
-    <FullClassName>Sage300UICustomizationWizard.Sage300UICustomizationUserInterface</FullClassName>
-  </WizardExtension>
-</VSTemplate>
-
-       
+    <WizardExtension>
+        <Assembly>Sage.CA.SBS.ERP.Sage300.CustomizationWizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c</Assembly>
+        <FullClassName>Sage.CA.SBS.ERP.Sage300.CustomizationWizard.Sage300CUICustomizationWizardUserInterface</FullClassName>
+    </WizardExtension>
+</VSTemplate>       

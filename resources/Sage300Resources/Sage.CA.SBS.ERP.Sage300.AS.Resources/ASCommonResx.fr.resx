@@ -269,4 +269,7 @@
   <data name="ComplexAdvancedPasswordMessage" xml:space="preserve">
     <value>Votre mot de passe doit comporter au moins un de chacun des caractères suivants : lettre minuscule, lettre majuscule, chiffre et caractère spécial (par exemple * ou #).</value>
   </data>
+  <data name="UserPasswordExpiredMessage" xml:space="preserve">
+    <value>Votre mot de passe a expiré. Demandez à votre administrateur de le modifier.</value>
+  </data>
 </root>

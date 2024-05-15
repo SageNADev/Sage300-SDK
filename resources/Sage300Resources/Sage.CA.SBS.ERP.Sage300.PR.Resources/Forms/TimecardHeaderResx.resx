@@ -387,4 +387,34 @@
   <data name="SetFLSA_UP" xml:space="preserve">
     <value>You have turned off the overtime override.  The FLSA overtime calculations require the Include in FLSA Calculation option to be turned on for all flat, fixed, and hourly earning codes whose Hours are not zero and have been assigned an overtime schedule.  Therefore, this flag has been changed automatically for any earnings that meet this criteria.</value>
   </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="AllTimecards" xml:space="preserve">
+    <value>All Timecards</value>
+  </data>
+  <data name="FromEmployee" xml:space="preserve">
+    <value>From Employee</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="NonReusableTimecards" xml:space="preserve">
+    <value>Non-reusable Timecards</value>
+  </data>
+  <data name="PeriodEndDate" xml:space="preserve">
+    <value>Period End Date</value>
+  </data>
+  <data name="ReusableTimecards" xml:space="preserve">
+    <value>Reusable Timecards</value>
+  </data>
+  <data name="ToEmployee" xml:space="preserve">
+    <value>To Employee</value>
+  </data>
+  <data name="DeleteTimecardConfirmMessage" xml:space="preserve">
+    <value>Are you sure you want to delete the timecard {0} for employee {1} ?</value>
+  </data>
 </root>

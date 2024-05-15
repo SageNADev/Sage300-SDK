@@ -390,7 +390,6 @@ table {
 .k-input,
 .k-item,
 .k-select {
-  border-radius: 0 !important;
 
   &.k-primary {
     background-color: #255bc7;
@@ -868,7 +867,6 @@ textarea:focus,
   }
   &:hover,
   &:focus {
-    color: @btn-default-color;
     text-decoration: none;
     outline: none;
   }
@@ -930,10 +928,10 @@ input[class*="btn-"] {
   height: 30px; 
   -webkit-appearance:         none;   
   -moz-appearance:            none;   
-  -webkit-border-radius:      15px;      
-  -moz-border-radius:         15px;      
-  -o-border-radius:           15px;      
-  border-radius:              15px;    
+  -webkit-border-radius:      2px;      
+  -moz-border-radius:         2px;      
+  -o-border-radius:           2px;      
+  border-radius:              2px;    
 
   &:focus {
     outline: 3px solid @input-border-focus;
@@ -1067,9 +1065,9 @@ input[class*="icon"] {
   border: 1px solid @input-border;
 }
 
-.btn-primary, 
-.btn-secondary, 
-.btn-tertiary { 
+.btn.btn-primary, 
+.btn.btn-secondary, 
+.btn.btn-tertiary { 
   font-weight: 700; 
   padding: 0 20px; 
   font-size: 12px; 
@@ -1079,7 +1077,7 @@ input[class*="icon"] {
   overflow: hidden; 
   text-overflow: ellipsis; 
   max-width: 300px; 
-  border-radius: 15px !important;
+  border-radius: 15px;
 }
 
 .btn-primary { 
@@ -1106,7 +1104,10 @@ input[class*="icon"] {
   border: 1px solid @btn-secondary-color; 
   color: @btn-secondary-color; 
 
-  &:hover,
+  &:hover { 
+    background-color: @btn-link-hover-color;
+  }
+
   &:focus { 
     color: @btn-secondary-color;
     border: 1px solid @btn-secondary-color; 
@@ -1382,6 +1383,7 @@ a[class*="btn-"] {
     border:1px solid @input-border;
     box-shadow: none;
     background-color: @white;
+    border-radius: 2px;
   }
 
   .k-select { 
@@ -1751,17 +1753,19 @@ a[class*="btn-"] {
       border-radius: 0;
       padding-left: 15px;
       padding-right: 15px;
-      border-color: #a7a9aa;
-      border-left: 1px solid #a7a9aa;
-      border-right: 1px solid #a7a9aa;
       cursor: pointer;
-      background: #a7a9aa;
+      background-color: #e6ebed;
+      padding-bottom: 0;
+      border: 0;
+      background-image: none;
+      border-bottom: 0;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
 
       .k-link {
         padding: 10px 0px;
-        line-height: 18px;
-        font-weight: normal;
-        color: @white;
+        line-height: 19px;
+        font-weight: bold;
 
         label {
           cursor: pointer;
@@ -1770,7 +1774,7 @@ a[class*="btn-"] {
 
       &:hover {
         color: #000;
-        background: #8d9091;
+        background: @sage-gray;
       }
 
       &.k-state-active {
@@ -1778,14 +1782,17 @@ a[class*="btn-"] {
         height: 40px;
         border-color: @sage-link;
         border-bottom-color: transparent;
+        outline: @sage-gray solid 1px;
+        border: 0;
+        background-color: @white;
 
-        &:before {
+        &:after {
           content: "";
           position: absolute;
-          left: -1px;
-          right: -1px;
-          border-top: 5px solid @sage-link;
-          top: -2px;
+          left: 0px;
+          right: 0px;
+          border-bottom: 4px solid @sage-mid-gray;
+          bottom: 0px;
         }
 
         .k-link,
@@ -2957,7 +2964,7 @@ textarea {
   -webkit-border-radius:      0;      
   -moz-border-radius:         0;      
   -o-border-radius:           0;      
-  border-radius:              0;      
+  border-radius:              2px;      
 
   &:disabled { 
     border: 1px solid @input-border-disabled;
@@ -4192,6 +4199,7 @@ textarea,
   z-index: 10;
   position: relative;
   background-color: @white;
+  border-radius: 8px;
   .box-sizing(border-box);
 
   &:before {
@@ -4252,6 +4260,7 @@ textarea,
      background-color: @white;
      border: 1px solid #9a9b9c;
      border-bottom: 0;
+     border-radius: 0 8px;
 
      .msgCtrl-close {
        position: absolute;
@@ -4314,6 +4323,7 @@ textarea,
     border-top: 0px;
     background: #fff !important;
     text-align: left;
+    border-radius: 0 0 8px 8px;
 
      > li {
       line-height: 24px;
@@ -5036,9 +5046,10 @@ ul.list-bullet {
     }
 
     .k-dropdown-wrap.k-state-default {
-      border: 1px solid #9a9b9c;
+      border: 1px solid @sage-mid-gray;
       box-shadow: none;
       height: 30px;
+      border-radius: 2px;
     }
 
     .k-dropdown-wrap .k-select .k-i-arrow-s {
@@ -5296,7 +5307,8 @@ ul.list-bullet {
 .multiselect-group .k-multiselect{ 
   clear: left; 
   float: left;
-  border: 1px solid #8e8a86;
+  border: 1px solid @input-border;
+  border-radius: 2px;
 
   &.default {
     width: 220px;
@@ -5313,7 +5325,7 @@ ul.list-bullet {
 
 .k-multiselect-wrap,
 .k-state-hover .k-multiselect-wrap {
-  border-radius: 0;
+  border-radius: 2px;
   border: 0;
   min-height: 28px;
 }

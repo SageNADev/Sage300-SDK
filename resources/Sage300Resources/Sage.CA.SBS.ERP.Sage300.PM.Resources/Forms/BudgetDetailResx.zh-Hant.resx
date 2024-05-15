@@ -391,4 +391,109 @@
   <data name="InquiryTotalRevenueSourceForTheYear" xml:space="preserve">
     <value>查詢本年合計營收(原幣)</value>
   </data>
+  <data name="DirtyCheckSaveMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="InvalidFiscalYear" xml:space="preserve">
+    <value>工作階段日期不在日曆的財務期間之一。執行程式之前請在公共服務的財務日曆中定義一個恰當的日曆。</value>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>是否確要刪除預算集 {0} 為 {1} {2}?</value>
+  </data>
+  <data name="CodeCannotBeBlank" xml:space="preserve">
+    <value>{0}代碼不能空置。</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>期間</value>
+  </data>
+  <data name="BudgetQuantity" xml:space="preserve">
+    <value>預算數量</value>
+  </data>
+  <data name="InquiryQuantity" xml:space="preserve">
+    <value>查詢數量</value>
+  </data>
+  <data name="DifferenceQuantity" xml:space="preserve">
+    <value>差額數量</value>
+  </data>
+  <data name="PercentQuantity" xml:space="preserve">
+    <value>百分比數量</value>
+  </data>
+  <data name="BudgetCost" xml:space="preserve">
+    <value>預算成本</value>
+  </data>
+  <data name="InquiryCost" xml:space="preserve">
+    <value>查詢成本</value>
+  </data>
+  <data name="DifferenceCost" xml:space="preserve">
+    <value>差額成本</value>
+  </data>
+  <data name="PercentCost" xml:space="preserve">
+    <value>百分比成本</value>
+  </data>
+  <data name="BudgetRevenue" xml:space="preserve">
+    <value>預算營收</value>
+  </data>
+  <data name="InquiryRevenue" xml:space="preserve">
+    <value>查詢營收</value>
+  </data>
+  <data name="DifferenceRevenue" xml:space="preserve">
+    <value>差額營收</value>
+  </data>
+  <data name="PercentRevenue" xml:space="preserve">
+    <value>百分比營收</value>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>合計</value>
+  </data>
+  <data name="BudgetSetLookup" xml:space="preserve">
+    <value>預算集查找</value>
+  </data>
+  <data name="BudgetMethod" xml:space="preserve">
+    <value>預算方法</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>成本</value>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>營收</value>
+  </data>
+  <data name="BudgetAmount" xml:space="preserve">
+    <value>預算額</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>代替</value>
+  </data>
+  <data name="AddTo" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="ShowBudgetSetAmounts" xml:space="preserve">
+    <value>顯示預算設定金額</value>
+  </data>
+  <data name="HideComparisonColumns" xml:space="preserve">
+    <value>隱藏比較列</value>
+  </data>
+  <data name="RecalculateHome1" xml:space="preserve">
+    <value>重新計算本國 </value>
+  </data>
+  <data name="RecalculateHome2" xml:space="preserve">
+    <value> 營收金額</value>
+  </data>
+  <data name="RecalculateSource1" xml:space="preserve">
+    <value>重新計算原幣 </value>
+  </data>
+  <data name="RecalculateSource2" xml:space="preserve">
+    <value> 營收金額</value>
+  </data>
+  <data name="DoNotRecalculate" xml:space="preserve">
+    <value>不重新計算任何</value>
+  </data>
+  <data name="ClearGrid" xml:space="preserve">
+    <value>是否確要清除網格？</value>
+  </data>
+  <data name="NoMatch" xml:space="preserve">
+    <value>No match found with the provided regex: {0} and date: {1}</value>
+  </data>
 </root>

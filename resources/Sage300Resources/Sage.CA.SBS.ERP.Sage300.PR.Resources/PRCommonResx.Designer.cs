@@ -124,6 +124,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Bank is not defined..
+        /// </summary>
+        public static string Bank {
+            get {
+                return ResourceManager.GetString("Bank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bank Code.
         /// </summary>
         public static string BankCode {
@@ -138,6 +147,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         public static string Banked {
             get {
                 return ResourceManager.GetString("Banked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open.
+        /// </summary>
+        public static string btnOpen {
+            get {
+                return ResourceManager.GetString("btnOpen", resourceCulture);
             }
         }
         
@@ -331,6 +349,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Calculation sequence {0} does not exist..
+        /// </summary>
+        public static string InvalidCalculationSequence {
+            get {
+                return ResourceManager.GetString("InvalidCalculationSequence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  From value cannot be greater than To value..
         /// </summary>
         public static string InvalidEntryMessage {
@@ -399,6 +426,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         public static string InvalidYear {
             get {
                 return ResourceManager.GetString("InvalidYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculation Sequence {0} has a later period end date..
+        /// </summary>
+        public static string LaterCalculationSequence {
+            get {
+                return ResourceManager.GetString("LaterCalculationSequence", resourceCulture);
             }
         }
         
@@ -705,6 +741,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         public static string TypeOfCheckDocument {
             get {
                 return ResourceManager.GetString("TypeOfCheckDocument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is nothing to post in Calculation sequence {0}..
+        /// </summary>
+        public static string UnavailableCalculationSequence {
+            get {
+                return ResourceManager.GetString("UnavailableCalculationSequence", resourceCulture);
             }
         }
         

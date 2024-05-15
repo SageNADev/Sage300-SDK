@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class NavigationResx {
@@ -1735,6 +1735,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sage HR Setup.
+        /// </summary>
+        public static string CS_SageHR {
+            get {
+                return ResourceManager.GetString("CS_SageHR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Schedules.
         /// </summary>
         public static string CS_Schedules {
@@ -2397,6 +2406,42 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Publish Payslips.
+        /// </summary>
+        public static string HQ_Publish_Payslip {
+            get {
+                return ResourceManager.GetString("HQ_Publish_Payslip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage HR Integration.
+        /// </summary>
+        public static string HQ_SageHR_Integration {
+            get {
+                return ResourceManager.GetString("HQ_SageHR_Integration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sage HR Setup.
+        /// </summary>
+        public static string HQ_SageHR_Setup {
+            get {
+                return ResourceManager.GetString("HQ_SageHR_Setup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sync Employees.
+        /// </summary>
+        public static string HQ_Sync_Employee {
+            get {
+                return ResourceManager.GetString("HQ_Sync_Employee", resourceCulture);
             }
         }
         
@@ -5475,6 +5520,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string PR_Releve_1s_Report {
             get {
                 return ResourceManager.GetString("PR_Releve_1s_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SageHR.
+        /// </summary>
+        public static string PR_SageHR {
+            get {
+                return ResourceManager.GetString("PR_SageHR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sync Employee.
+        /// </summary>
+        public static string PR_SageHR_Employee {
+            get {
+                return ResourceManager.GetString("PR_SageHR_Employee", resourceCulture);
             }
         }
         

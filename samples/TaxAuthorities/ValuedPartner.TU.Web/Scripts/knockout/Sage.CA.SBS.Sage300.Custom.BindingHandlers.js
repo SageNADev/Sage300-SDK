@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2024 Sage Software, Inc.  All rights reserved. */
 
 ko.bindingHandlers.SagekendoGrid =
     {
@@ -511,8 +511,13 @@ ko.bindingHandlers.sageDatePicker = {
         //Subscribe to the knockout observable array to get new/remove items
         mappedSource.subscribe(function (newValue) {
             var datePicker = $(element).data('kendoDatePicker');
-            if (datePicker.value() != newValue) {
+            if (datePicker.value() !== newValue) {
                 datePicker.value(newValue);
+                if (newValue === null) {
+                    if (datePicker.dateView.calendar !== undefined) {
+                        datePicker.dateView.calendar.value(new Date());
+                    }
+                }
             }
         });
 
@@ -526,8 +531,10 @@ ko.bindingHandlers.sageDatePicker = {
         if (dataSource) {
             dataSource(sg.utls.kndoUI.convertStringToDate(dataSource()));
             var currentModelValue = unwrap(dataSource);
-            if (currentModelValue != null) {
+            if (currentModelValue !== null) {
                 $(element).data('kendoDatePicker').value(currentModelValue);
+            } else {
+                $(element).data('kendoDatePicker').value('');
             }
         } else {
             $(element).data('kendoDatePicker').value('');

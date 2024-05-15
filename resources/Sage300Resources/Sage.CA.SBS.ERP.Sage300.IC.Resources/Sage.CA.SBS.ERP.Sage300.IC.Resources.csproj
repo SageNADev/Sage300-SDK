@@ -970,6 +970,7 @@
     <EmbeddedResource Include="Forms\ItemsResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ItemsResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ItemsResx.es.resx" />
     <EmbeddedResource Include="Forms\ItemsResx.fr.resx" />

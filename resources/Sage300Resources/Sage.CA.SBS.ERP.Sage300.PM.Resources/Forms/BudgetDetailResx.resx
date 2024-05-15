@@ -402,4 +402,114 @@
   <data name="CodeCannotBeBlank" xml:space="preserve">
     <value>{0} Code cannot be blank.</value>
   </data>
+  <data name="Period" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="BudgetQuantity" xml:space="preserve">
+    <value>Budget Quantity</value>
+  </data>
+  <data name="InquiryQuantity" xml:space="preserve">
+    <value>Inquiry Quantity</value>
+  </data>
+  <data name="DifferenceQuantity" xml:space="preserve">
+    <value>Difference Quantity</value>
+  </data>
+  <data name="PercentQuantity" xml:space="preserve">
+    <value>Percent Quantity</value>
+  </data>
+  <data name="BudgetCost" xml:space="preserve">
+    <value>Budget Cost</value>
+  </data>
+  <data name="InquiryCost" xml:space="preserve">
+    <value>Inquiry Cost</value>
+  </data>
+  <data name="DifferenceCost" xml:space="preserve">
+    <value>Difference Cost</value>
+  </data>
+  <data name="PercentCost" xml:space="preserve">
+    <value>Percent Cost</value>
+  </data>
+  <data name="BudgetRevenue" xml:space="preserve">
+    <value>Budget Revenue</value>
+  </data>
+  <data name="InquiryRevenue" xml:space="preserve">
+    <value>Inquiry Revenue</value>
+  </data>
+  <data name="DifferenceRevenue" xml:space="preserve">
+    <value>Difference Revenue</value>
+  </data>
+  <data name="PercentRevenue" xml:space="preserve">
+    <value>Percent Revenue</value>
+  </data>
+  <data name="BaseAmount" xml:space="preserve">
+    <value>Base Amount</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Increase</value>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>Totals</value>
+  </data>
+  <data name="ClearGrid" xml:space="preserve">
+    <value>Do you really want to clear the grid?</value>
+  </data>
+  <data name="NoMatch" xml:space="preserve">
+    <value>No match found with the provided regex: {0} and date: {1}</value>
+  </data>
+  <data name="HideComparisonColumns" xml:space="preserve">
+    <value>Hide Comparison Columns</value>
+  </data>
+  <data name="DisplayComparisonColumns" xml:space="preserve">
+    <value>Display Comparison Columns</value>
+  </data>
+  <data name="Budget" xml:space="preserve">
+    <value>Budget</value>
+  </data>
+  <data name="BudgetSetLookup" xml:space="preserve">
+    <value>Budget Set Lookup</value>
+  </data>
+  <data name="BudgetMethod" xml:space="preserve">
+    <value>Budget Method</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Cost</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>Revenue</value>
+    <comment>Auto-Generated</comment>
+  </data>
+  <data name="BudgetAmount" xml:space="preserve">
+    <value>Budget Amount</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="AddTo" xml:space="preserve">
+    <value>Add To</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="ShowBudgetSetAmounts" xml:space="preserve">
+    <value>Show Budget Set Amounts</value>
+  </data>
+  <data name="RecalculateHome1" xml:space="preserve">
+    <value>Recalculate the home </value>
+  </data>
+  <data name="RecalculateHome2" xml:space="preserve">
+    <value> revenue amounts</value>
+  </data>
+  <data name="RecalculateSource1" xml:space="preserve">
+    <value>Recalculate the source </value>
+  </data>
+  <data name="RecalculateSource2" xml:space="preserve">
+    <value> revenue amounts</value>
+  </data>
+  <data name="DoNotRecalculate" xml:space="preserve">
+    <value>Do not recalculate anything</value>
+  </data>
 </root>

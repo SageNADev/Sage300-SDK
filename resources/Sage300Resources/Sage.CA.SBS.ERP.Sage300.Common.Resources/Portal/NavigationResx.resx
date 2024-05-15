@@ -2192,10 +2192,28 @@
   <data name="PM_Transaction_History" xml:space="preserve">
     <value>Transaction History</value>
   </data>
-  <data name="PM_TransactionHistory" xml:space="preserve">
-    <value>Transaction History</value>
-  </data>
   <data name="PM_BudgetMaintenance" xml:space="preserve">
     <value>Budget Maintenance</value>
+  </data>
+  <data name="CS_SageHR" xml:space="preserve">
+    <value>Sage HR Setup</value>
+  </data>
+  <data name="PR_SageHR" xml:space="preserve">
+    <value>SageHR</value>
+  </data>
+  <data name="PR_SageHR_Employee" xml:space="preserve">
+    <value>Sync Employee</value>
+  </data>
+  <data name="HQ_SageHR_Setup" xml:space="preserve">
+    <value>Sage HR Setup</value>
+  </data>
+  <data name="HQ_Sync_Employee" xml:space="preserve">
+    <value>Sync Employees</value>
+  </data>
+  <data name="HQ_SageHR_Integration" xml:space="preserve">
+    <value>Sage HR Integration</value>
+  </data>
+  <data name="HQ_Publish_Payslip" xml:space="preserve">
+    <value>Publish Payslips</value>
   </data>
 </root>

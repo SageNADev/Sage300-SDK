@@ -63,10 +63,10 @@
             let nodes = this.tree.items();
             if (!apputils.isUndefined(nodes) && nodes.length > 0 && !apputils.isUndefined(text) && !apputils.isEmpty(text)) {
                 for (let i = 0; i < nodes.length; i++) {
-                    let matchPattern = new RegExp(text, "i");
+                    let matchPattern = new RegExp('\\b' + text + '\\b');
                     if (matchPattern.test(nodes[i].innerText)) {
                         if (!apputils.isEmpty(parentText) && !apputils.isUndefined(this.tree.parent(nodes[i])[0])) {
-                            let parentPattern = new RegExp(parentText, "i");
+                            let parentPattern = new RegExp('\\b' + parentText + '\\b');
                             if (parentPattern.test(this.tree.parent(nodes[i])[0].innerText)) {
                                 item = nodes[i];
                                 break;

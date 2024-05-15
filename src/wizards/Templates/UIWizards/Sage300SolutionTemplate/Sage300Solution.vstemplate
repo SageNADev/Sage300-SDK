@@ -1,14 +1,14 @@
 ﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
     <TemplateData>
         <Name>Sage 300 Solution Wizard</Name>
-        <Description>A wizard to quickly scaffold a Sage 300C MVC application</Description>
+        <Description>A wizard to scaffold a Sage 300 Web Screen solution</Description>
         <Icon Package="{349c5850-65df-11da-9384-00065b846f21}" ID="9001" />
         <ProjectType>CSharp</ProjectType>
         <ProjectSubType>Web</ProjectSubType>
         <TemplateGroupID>Web</TemplateGroupID>
         <SortOrder>41</SortOrder>
         <CreateNewFolder>true</CreateNewFolder>
-        <DefaultName>Sage300CMvcApplication</DefaultName>
+        <DefaultName>Sage300WebSolution</DefaultName>
         <ProvideDefaultName>true</ProvideDefaultName>
         <LocationField>Enabled</LocationField>
         <PromptForSaveOnCreation>true</PromptForSaveOnCreation>

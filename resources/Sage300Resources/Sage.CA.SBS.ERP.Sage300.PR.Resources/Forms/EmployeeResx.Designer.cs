@@ -547,6 +547,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have switched the status from Inactive to Active.  Do you want to clear the Inactive Date?.
+        /// </summary>
+        public static string ClearInactiveDate {
+            get {
+                return ResourceManager.GetString("ClearInactiveDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have switched the status from Terminated to Active.  Do you want to clear the Termination Date?.
+        /// </summary>
+        public static string ClearTerminationDate {
+            get {
+                return ResourceManager.GetString("ClearTerminationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comments.
         /// </summary>
         public static string Comments {
@@ -781,11 +799,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 5 - Payee and their dependent children.
+        /// </summary>
+        public static string EmployeeDependantsOnly {
+            get {
+                return ResourceManager.GetString("EmployeeDependantsOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Employee Consents to Receive Only Electronic W-2&apos;s.
         /// </summary>
         public static string EmployeeElectronicW2Consent {
             get {
                 return ResourceManager.GetString("EmployeeElectronicW2Consent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2 - Payee only.
+        /// </summary>
+        public static string EmployeeOnly {
+            get {
+                return ResourceManager.GetString("EmployeeOnly", resourceCulture);
             }
         }
         
@@ -808,6 +844,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 3 - Payee, spouse and dependent children.
+        /// </summary>
+        public static string EmployeeSpouseDependants {
+            get {
+                return ResourceManager.GetString("EmployeeSpouseDependants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4 - Payee and their spouse.
+        /// </summary>
+        public static string EmployeeSpouseOnly {
+            get {
+                return ResourceManager.GetString("EmployeeSpouseOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Employee Tax. Record already exists..
         /// </summary>
         public static string EmployeeTaxAlreadyExists {
@@ -822,6 +876,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string EmployeeTemplate {
             get {
                 return ResourceManager.GetString("EmployeeTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employer Offered Dental.
+        /// </summary>
+        public static string EmployerDental {
+            get {
+                return ResourceManager.GetString("EmployerDental", resourceCulture);
             }
         }
         
@@ -1285,6 +1348,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1 - No dental insurance or coverage of any kind.
+        /// </summary>
+        public static string NoEmployerCoverage {
+            get {
+                return ResourceManager.GetString("NoEmployerCoverage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Non-binary.
         /// </summary>
         public static string Nonbinary {
@@ -1308,6 +1380,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string None {
             get {
                 return ResourceManager.GetString("None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 - No dental insurance or coverage of any kind.
+        /// </summary>
+        public static string NoPayeeCoverage {
+            get {
+                return ResourceManager.GetString("NoPayeeCoverage", resourceCulture);
             }
         }
         
@@ -1420,6 +1501,51 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 5 - Payee and their dependent children.
+        /// </summary>
+        public static string PayeeDependantsOnly {
+            get {
+                return ResourceManager.GetString("PayeeDependantsOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2 - Payee only.
+        /// </summary>
+        public static string PayeeOnly {
+            get {
+                return ResourceManager.GetString("PayeeOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3 - Payee, spouse and dependent children.
+        /// </summary>
+        public static string PayeeSpouseDependants {
+            get {
+                return ResourceManager.GetString("PayeeSpouseDependants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4 - Payee and their spouse.
+        /// </summary>
+        public static string PayeeSpouseOnly {
+            get {
+                return ResourceManager.GetString("PayeeSpouseOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payer Offered Dental.
+        /// </summary>
+        public static string PayerDental {
+            get {
+                return ResourceManager.GetString("PayerDental", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pay Frequency.
         /// </summary>
         public static string PayFrequency {
@@ -1461,6 +1587,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string PostalCode {
             get {
                 return ResourceManager.GetString("PostalCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changing the prenote status may cause your records to be out of sync with the bank, and can prevent you from processing direct deposits, or cause direct deposits to be processed incorrectly.  Are you sure you want to change the prenote status?.
+        /// </summary>
+        public static string PrenoteStatusChange {
+            get {
+                return ResourceManager.GetString("PrenoteStatusChange", resourceCulture);
             }
         }
         
@@ -1789,6 +1924,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Synced with Sage HR.
+        /// </summary>
+        public static string SyncedWithSageHR {
+            get {
+                return ResourceManager.GetString("SyncedWithSageHR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sync Master GUID.
         /// </summary>
         public static string SyncMasterGUID {
@@ -2037,6 +2181,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string WorkLocationCountry {
             get {
                 return ResourceManager.GetString("WorkLocationCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to County.
+        /// </summary>
+        public static string WorkLocationCounty {
+            get {
+                return ResourceManager.GetString("WorkLocationCounty", resourceCulture);
             }
         }
         

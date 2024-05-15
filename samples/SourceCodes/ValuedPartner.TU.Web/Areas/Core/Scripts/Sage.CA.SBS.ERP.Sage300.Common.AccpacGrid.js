@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */
 "use strict";
 
 var sg = sg || {};
@@ -68,6 +68,7 @@ sg.viewList = function () {
         _skipMoveTo = {},
         _pagingRowData = {},
         _pageByKeyType = {},
+        _reloadCallback = {},
         _refreshKey = {},
         _showDetails = {},
         _showWarnings = {},
@@ -1075,8 +1076,11 @@ sg.viewList = function () {
      * @return {object} Return column editor.
      */
     function _getColumnEditor(container, options, columns, gridName) {
-        var numbers = ["int32", "int64", "int16", "int", "integer", "long", "byte", "real", "decimal"],
-            field = options.model.fields[options.field],
+        var numbers = ["int32", "int64", "int16", "int", "integer", "long", "byte", "real", "decimal"];
+
+        _columnCallback(gridName, "columnBeforeEditor", options.field, options, columns);
+
+        var field = options.model.fields[options.field],
             dataType = Array.isArray(columns) ? field.type.toLowerCase() : columns.DataType,
             col = Array.isArray(columns) ? columns.filter(function (c) { return c.FieldName === options.field; })[0] : columns;
 
@@ -2000,6 +2004,12 @@ sg.viewList = function () {
                             case "columnChanged":
                                 callback(record, event, field);
                                 return event.isProceed();
+                            case "columnBeforeEditor":
+                                // _getColumnEditor(container, options, columns, gridName)
+                                // 'finder' doubles as _getColumnEditor.options argument
+                                // 'editor' doubles as _getColumnEditor.columns argument
+                                callback(record, event, field, finder, editor);
+                                return event.isProceed();
                             case "columnStartEdit":
                             case "columnEndEdit":
                                 callback(record, event, field, editor);
@@ -2160,6 +2170,7 @@ sg.viewList = function () {
         _selectRowUid[gridName] = "";
         _pageByKeyType[gridName] = PageByKeyTypeEnum.FirstPage;
         _refreshKey[gridName] = null;
+        _reloadCallback[gridName] = null;
         _showWarnings[gridName] = true;
         _showErrors[gridName] = true;
         _selectedRow[gridName] = -1;
@@ -2246,6 +2257,7 @@ sg.viewList = function () {
         _lastRowNumber[gridName] = -1;
         _selectRowUid[gridName] = "";
         _refreshKey[gridName] = null;
+        _reloadCallback[gridName] = null;
     }
 
     /**
@@ -2427,7 +2439,7 @@ sg.viewList = function () {
                 grid.tbody.find("tr:gt(" + ps + ")").hide();
 
                 //Set default select row
-                if (_setDefaultRow[gridName] && autoSelect) {
+                if (_setDefaultRow[gridName] && autoSelect && grid.select().index() < 0) {
                     grid.select("tr:eq(0)");
                 }
 
@@ -2446,7 +2458,7 @@ sg.viewList = function () {
                 }
 
                 // select row after paging or refresh
-                if (_selectedRow[gridName] > 0 && autoSelect) {
+                if (_selectedRow[gridName] >= 0 && autoSelect) {
                     // select last row if specified row doesn't exist
                     if (_selectedRow[gridName] > grid.dataSource.data().length) {
                         _selectedRow[gridName] = grid.dataSource.data().length - 1;
@@ -3011,6 +3023,20 @@ sg.viewList = function () {
     }
 
     /**
+     * @description Read data from the server side, refresh the view list display, and reset the focus to the current row.
+     * @param {string} gridName The name of the grid.
+     */
+    function refreshPageAndMoveToCurrent(gridName) {
+        if (gridName) {
+            const grid = _getGrid(gridName);
+            if (grid) {
+                _selectedRow[gridName] = grid.select().index(); // set _selectedRow[gridName] so after refreshing, the grid sets focus to this row
+                grid.dataSource.page(_currentPage[gridName]); // refresh grid page
+            }
+        }
+    }
+
+    /**
      * @description Get/Set the insertable property of a grid.
      * @description If the grid does not allow insert, the “Add Line” button should be disabled
      * @param {string} gridName The name of the grid
@@ -3058,8 +3084,9 @@ sg.viewList = function () {
                 visible ? grid.showColumn(columnName) : grid.hideColumn(columnName);
 
                 // update column definition for grid preferences
-                if (updateConfig) {
-                    const columns = window[gridName + "Model"].ColumnDefinitions;
+                const gridModel = window[gridName + "Model"];
+                if (updateConfig && gridModel && gridModel.ColumnDefinitions) {
+                    const columns = gridModel.ColumnDefinitions;
                     const column = columns.find(x => x.FieldName == columnName);
                     if (column) {
                         column.IsHidden = !visible;
@@ -3239,6 +3266,43 @@ sg.viewList = function () {
     }
 
     /**
+     * @description Change the field value in the current record and sync the change to the server.
+     * @param {any} gridName The name of the grid.
+     * @param {any} column The field name
+     * @param {any} value The new value
+     */
+    function setColumnValue(gridName, column, value) {
+        var data = {
+            'viewID': $("#" + gridName).attr('viewID'),
+            'fieldName': column,
+            'value': value
+        };
+        
+        var grid = _getGrid(gridName);
+        var dataRows = grid.items();
+        const rowIndex = dataRows.index(grid.select());
+        let selectedItem = grid.dataItem(grid.select());
+        var url = window.sg.utls.url.buildUrl("Core", "Grid", "SetValue");
+        sg.utls.ajaxPostSync(url, data, function (jsonResult) {
+            var isSuccess = true;
+            if (jsonResult && jsonResult.UserMessage.Errors && jsonResult.UserMessage.Errors.length > 0) {
+                isSuccess = false;
+                sg.utls.showMessage(jsonResult);
+            }
+            var lastRowData = grid.dataSource.data()[rowIndex];
+            if (!isSuccess) {
+                //Return previous valid value when update error
+                lastRowData.dirty = false;
+                selectedItem[column] = _lastErrorResult[gridName][column + "Value"];
+            } else {
+                _dataChanged[gridName] = true;
+            }
+
+        });
+    }
+
+
+    /**
      * @description Return bool value to indicate if the grid is empty
      * @param {any} gridName The name of the grid.
      * @return {booean} A Boolean flag
@@ -3380,6 +3444,7 @@ sg.viewList = function () {
                 grid.dataSource.page(nextPage);
             // same page, select row
             } else {
+                 _selectedRow[gridName] = selectedIndex;
                 grid.select(grid.tbody.find(`>tr:eq(${selectedIndex})`));
             }
         }
@@ -3388,122 +3453,311 @@ sg.viewList = function () {
     /**
     * Selects row on right grid-page
     * @param {event} e The grid page change event
+    * @return {bool} true only
     */
     function _selectOnPage(e) {
+
+        // internal comparePair function of _selectOnPage
+        function comparePair(type, value1, value2) {
+            switch (type) {
+                case "date":
+                    const date1 = Date.parse(value1);
+                    const date2 = Date.parse(value2);
+                    if (date1 < date2) {
+                        return -1;
+                    } else if (date1 > date2) {
+                        return 1;
+                    }
+                    break;
+                case "time":
+                    const time1 = Time.parse(value1);
+                    const time2 = Time.parse(value2);
+                    if (time1 < time2) {
+                        return -1;
+                    } else if (time1 > time2) {
+                        return 1;
+                    }
+                    break;
+                case "char":
+                    const char1 = value1.toUpperCase();
+                    const char2 = value2.toUpperCase();
+                    if (char1 < char2) {
+                        return -1;
+                    } else if (char1 > char2) {
+                        return 1;
+                    }
+                    break;
+                default:
+                    if (value1 < value2) {
+                        return -1;
+                    } else if (value1 > value2) {
+                        return 1;
+                    }
+                    break;
+            }
+            return 0;
+        }
+
+        // internal exit function of _selectOnPage
+        function exitSelectOnPage(gridName, callback) {
+            const grid = _getGrid(gridName);
+            grid.dataSource.unbind('change', _selectOnPage);
+            _reloadCallback[gridName] = null;
+            _refreshKey[gridName] = null;
+            if (callback && typeof callback === "function") {
+                callback();
+            }
+            return true;
+        }
+
+        // internal pageToRecord function of _selectOnPage
+        function pageSelectOnPage(gridName, record, page, callback) {
+            const grid = _getGrid(gridName);
+            _refreshKey[gridName] = record;
+            _reloadCallback[gridName] = callback;
+            grid.dataSource.page(page);
+            return true;
+        }
+
         const gridName = _gridList.find(e => _getGrid(e).dataSource === this);
         if (gridName !== undefined) {
-            if (_refreshKey.hasOwnProperty(gridName)) {
-                const grid = _getGrid(gridName);
-                const record = _refreshKey[gridName];
-                const maxPage = Math.floor(this.total() / this.pageSize()) + 1;
-                // see if we are on right page
-                for (var i = 0; i < this.data().length; i++) {
-                    var rec = this.data()[i];
-                    var match = true;
-                    for (const key in record) {
-                        if (record.hasOwnProperty(key) && rec.hasOwnProperty(key)) {
-                            if (record[key] !== rec[key]) {
-                                match = false;
-                                break;
+            const grid = _getGrid(gridName);
+            if (grid !== null && grid !== undefined) {
+                if (_refreshKey.hasOwnProperty(gridName)) {
+                    const record = _refreshKey[gridName];
+                    const callback = _reloadCallback[gridName];
+
+                    // check record for existence, key and not empty value
+                    var key = "";
+                    if (record === null || record === undefined) {
+                        return exitSelectOnPage(gridName, callback);
+                    } else {
+                        for (const inKey in record) {
+                            if (record.hasOwnProperty(inKey)) {
+                                if (record[inKey] === null || record[inKey] === "") {
+                                    return exitMoveToRecord(callback);
+                                }
+                                key = inKey;
+                            }
+
+                        }
+                    }
+
+                    // something wrong with the key bail-out
+                    if (key === "") {
+                        return exitSelectOnPage(gridName, callback);
+                    }
+
+                    // must obtain dataType for keys comparissions
+                    const column = grid.columns.find(function (col) { return col.field === key; });
+                    if (column === undefined) {
+                        return exitSelectOnPage(gridName, callback);
+                    }
+
+                    // with luck requested record is on current page
+                    var recFirst = this.data()[0];
+                    var recLast = this.data()[this.data().length - 1];
+                    if ((comparePair(column.dataType, recFirst[key], record[key]) < 1) &&
+                        (comparePair(column.dataType, record[key], recLast[key]) < 1)) {
+                        for (var i = 0; i < this.data().length; i++) {
+                            var rec = this.data()[i];
+                            if (comparePair(column.dataType, record[key], rec[key]) === 0) {
+                                grid.select(grid.tbody.find(`>tr:eq(${i})`));
+                                return exitSelectOnPage(gridName, callback);
                             }
                         }
                     }
-                    if (match) {
-                        // match found, we are done, clean-up and select row
-                        _refreshKey[gridName] = null;
-                        grid.dataSource.unbind('change', _selectOnPage);
-                        grid.select(grid.tbody.find(`>tr:eq(${i})`));
-                        return;
+
+                    // no luck so far requested record could be on previous pages
+                    var maxPage = Math.floor(this.total() / this.pageSize()) + 1;
+                    var currentPage = this.page();
+                    if (comparePair(column.dataType, record[key], recFirst[key]) < 1) {
+                        if (1 < currentPage) {
+                            return pageSelectOnPage(gridName, record, --currentPage, callback);
+                        }
+                        // no matching record found, select the very first row on (first) grid-page
+                        grid.select(grid.tbody.find(`>tr:eq(${0})`));
+                        return exitSelectOnPage(gridName, callback);
+                    }
+
+                    // no luck so far requested record could be on next pages
+                    if (comparePair(column.dataType, recLast[key], record[key]) < 1) {
+                        if (currentPage < maxPage) {
+                            return pageSelectOnPage(gridName, record, ++currentPage, callback);
+                        }
+                        // no matching record found, select the very last row on (last) grid-page
+                        grid.select(grid.tbody.find(`>tr:eq(${this.data().length - 1})`));
+                        return exitSelectOnPage(gridName, callback);
                     }
                 }
-                if (this.page() < maxPage) {
-                    // not there yet, move to next page
-                    this.page(this.page() + 1);
-                    return;
-                } else {
-                    // no match found, select the very last row on (last) grid-page
-                    _refreshKey[gridName] = null;
-                    grid.dataSource.unbind('change', _selectOnPage);
-                    grid.select(grid.tbody.find(`>tr:eq(${this.data().length - 1})`));
-                    return;
-                }
-
+                // something went wrong, abandon endeavour
+                grid.dataSource.unbind('change', _selectOnPage);
             }
         }
-        // something went wrong, abandon endeavour
-        grid.dataSource.unbind('change', _selectOnPage);
     }
 
     /**
     * Selects row as specified by the key(s), paging if necessary
     * @param {string} gridName The grid name
     * @param {any} record The record to search, containing key fields and values
-    * @param {boolean} commitDetail True for update/insert record to show 'changes saved' message for detail popup
+    * @param {boolean} reload True for insert/delete since server's records sequence changed
+    * @param {function} callback The callback function to call upon exit
+    * @return {bool} true only
     */
-    function moveToRecord(gridName, record, commitDetail) {
+    function moveToRecord(gridName, record, reload, callback) {
 
-        // check grid for existence and validity
+        // internal comparePair function of moveToRecord
+        function comparePair(type, value1, value2) {
+            switch (type) {
+                case "date":
+                    const date1 = Date.parse(value1);
+                    const date2 = Date.parse(value2);
+                    if (date1 < date2) {
+                        return -1;
+                    } else if (date1 > date2) {
+                        return 1;
+                    }
+                    break;
+                case "time":
+                    const time1 = Time.parse(value1);
+                    const time2 = Time.parse(value2);
+                    if (time1 < time2) {
+                        return -1;
+                    } else if (time1 > time2) {
+                        return 1;
+                    }
+                    break;
+                case "char":
+                    const char1 = value1.toUpperCase();
+                    const char2 = value2.toUpperCase();
+                    if (char1 < char2) {
+                        return -1;
+                    } else if (char1 > char2) {
+                        return 1;
+                    }
+                    break;
+                default:
+                    if (value1 < value2) {
+                        return -1;
+                    } else if (value1 > value2) {
+                        return 1;
+                    }
+                    break;
+            }
+            return 0;
+        }
+
+        // internal exit function of moveToRecord
+        function exitMoveToRecord(callback) {
+            if (callback && typeof callback === "function") {
+                callback();
+            }
+            return true;
+        }
+
+        // internal pageToRecord function of moveToRecord
+        function pageToRecord(gridName, record, page, callback) {
+            const grid = _getGrid(gridName);
+            grid.dataSource.bind('change', _selectOnPage);
+            _refreshKey[gridName] = record;
+            _reloadCallback[gridName] = callback;
+            grid.dataSource.page(page);
+            return true;
+        }
+
+        // check grid for existence
         const grid = _getGrid(gridName);
         if (grid !== null && grid !== undefined) {
 
-            // check record for existence and validity
-            if (record !== null && record !== undefined) {
-                for (const key in record) {
-                    if (record.hasOwnProperty(key)) {
-                        if (record[key] === "") {
-                            return;
+            // check record for existence, key and not empty value
+            var key = "";
+            if (record === null || record === undefined) {
+                return exitMoveToRecord(callback);
+            } else {
+                for (const inKey in record) {
+                    if (record.hasOwnProperty(inKey)) {
+                        if (record[inKey] === null || record[inKey] === "") {
+                            return exitMoveToRecord(callback);
                         }
+                        key = inKey;
                     }
                 }
             }
 
-            //Show changes saved message for detail pop-up
-            const formId = _forms[gridName];
-            if (formId && $(`#${formId}`).is(":visible")) {
-                _commitDetail[gridName] = commitDetail;
+            // something wrong with the key bail-out
+            if (key === "") {
+                return exitMoveToRecord(callback);
             }
 
-            if (1 < grid.dataSource.total()) {
-                // with luck we are already on correct page
-                for (var i = 0; i < grid.dataSource.data().length; i++) {
-                    var rec = grid.dataSource.data()[i];
-                    var match = true;
-                    for (const key in record) {
-                        if (record.hasOwnProperty(key) && rec.hasOwnProperty(key)) {
-                            if (record[key] !== rec[key]) {
-                                match = false;
-                                break;
-                            }
-                        } else {
-                            // records mismatch, bail-out
-                            return;
-                        }
+            // nowhere to scroll to on empty/single-row grid
+            if (grid.dataSource.total() < 2) {
+                grid.dataSource.page(1);
+                if (grid.dataSource.total() === 1) {
+                    // but must select the only row in the grid
+                    grid.select(grid.tbody.find(`>tr:eq(${0})`));
+                }
+                return exitMoveToRecord(callback);
+            }
+
+            if (reload) {
+                // a record was inserted/deleted moveTo or refresh relevant page
+                return pageToRecord(gridName, record, grid.dataSource.page(), callback);
+            } else {
+
+                // must obtain dataType for keys comparissions
+                const column = grid.columns.find(function (col) { return col.field === key; });
+                if (column === undefined) {
+                    return exitMoveToRecord(callback);
+                }
+
+                // with much luck selected row matches the record
+                var selectedItem = grid.dataItem(grid.select());
+                if (selectedItem !== undefined) {
+                    if (comparePair(column.dataType, record[key], selectedItem[key]) === 0) {
+                        return exitMoveToRecord(callback);
                     }
-                    if (match) {
-                        if (grid.select() && i !== grid.select().index()) {
-                            // select other row on the current grid-page
+                }
+
+                // with luck requested record is on current page
+                var recFirst = grid.dataSource.data()[0];
+                var recLast = grid.dataSource.data()[grid.dataSource.data().length - 1];
+                if ((comparePair(column.dataType, recFirst[key], record[key]) < 1) &&
+                    (comparePair(column.dataType, record[key], recLast[key]) < 1)) {
+                    for (var i = 0; i < grid.dataSource.data().length; i++) {
+                        var rec = grid.dataSource.data()[i];
+                        if (comparePair(column.dataType, record[key], rec[key]) === 0) {
                             grid.select(grid.tbody.find(`>tr:eq(${i})`));
+                            return exitMoveToRecord(callback);
                         }
-                        return;
                     }
                 }
 
-                const maxPage = Math.floor(grid.dataSource.total() / grid.dataSource.pageSize()) + 1;
-                if (1 < maxPage) {
-                    grid.dataSource.bind('change', _selectOnPage);
-                    _refreshKey[gridName] = record;
-                    if (grid.dataSource.page() === 1) {
-                        // no luck on first page, continue with next page
-                        grid.dataSource.page(2);
-                    } else {
-                        // no luck on middle/last page(s), start from beginning
-                        grid.dataSource.page(1);
+                // no luck so far requested record could be on previous pages
+                var maxPage = Math.floor(grid.dataSource.total() / grid.dataSource.pageSize()) + 1;
+                var currentPage = grid.dataSource.page();
+                if (comparePair(column.dataType, record[key], recFirst[key]) < 1) {
+                    if (1 < currentPage) {
+                        return pageToRecord(gridName, record, --currentPage, callback);
                     }
-                } else {
+                    // no matching record found, select the very first row on (first) grid-page
+                    grid.select(grid.tbody.find(`>tr:eq(${0})`));
+                    return exitMoveToRecord(callback);
+                }
+
+                // no luck so far requested record could be on next pages
+                if (comparePair(column.dataType, recLast[key], record[key]) < 1) {
+                    if (currentPage < maxPage) {
+                        return pageToRecord(gridName, record, ++currentPage, callback);
+                    }
                     // no matching record found, select the very last row on (last) grid-page
                     grid.select(grid.tbody.find(`>tr:eq(${grid.dataSource.data().length - 1})`));
+                    return exitMoveToRecord(callback);
                 }
             }
+        }
+        if (!reload) {
+            // for reload=true callback invoked by pageToRecord
+            return exitMoveToRecord(callback);
         }
     }
 
@@ -3574,9 +3828,11 @@ sg.viewList = function () {
     * @return {boolean} True if field is disabled, false otherwise
     */
     function isFieldDisabled (record, field) {
-        const attr = record.AccpacViewFieldAttributes[field];
-        if ((attr & FIELD_DISABLED_ATTRIBUTE) === 0) {
-            return true;
+        if (record) {
+            const attr = record.AccpacViewFieldAttributes[field];
+            if ((attr & FIELD_DISABLED_ATTRIBUTE) === 0) {
+                return true;
+            }
         }
         return false;
     }
@@ -3755,6 +4011,7 @@ sg.viewList = function () {
         dirty: dirty,
         commit: commit,
         refresh: refresh,
+        refreshPageAndMoveToCurrent: refreshPageAndMoveToCurrent,
         refreshAndMoveToCurrent: refreshAndMoveToCurrent,
         refreshCurrentRow: refreshCurrentRow,
         resetCurrentRow: resetCurrentRow,
@@ -3772,6 +4029,7 @@ sg.viewList = function () {
         isFieldDisabled: isFieldDisabled,
         getParentData: getParentData,
         buildFilterString: buildFilterString,
-        setNextEditCell: setNextEditCellByCol
+        setNextEditCell: setNextEditCellByCol,
+        setColumnValue: setColumnValue
     };
 }();

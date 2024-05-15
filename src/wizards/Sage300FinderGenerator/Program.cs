@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -26,7 +26,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sage300FinderGenerator
+namespace Sage.CA.SBS.ERP.Sage300.FinderGenerator
 {
     /// <summary>
     /// Note: This is used for dev/testing do not use it in runtime
@@ -62,9 +62,17 @@ namespace Sage300FinderGenerator
     {
         public void Execute(Solution solution)
         {
-            using (var form = new FinderDefinitionForm(solution as _Solution))
+            try
             {
-                form.ShowDialog();
+                using (var form = new FinderDefinitionForm(solution))
+                {
+                    form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw ex;
             }
         }
     }

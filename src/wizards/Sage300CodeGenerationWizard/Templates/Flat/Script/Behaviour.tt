@@ -1,0 +1,607 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.BusinessView" name="view" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#
+    // Locals
+    var entityName = view.Properties[BusinessView.Constants.EntityName];
+    var localEntityName = entityName.Substring(0, 1).ToLower() + entityName.Substring(1);
+    var containerName = entityName; 
+    var moduleId = view.Properties[BusinessView.Constants.ModuleId];
+    var copyright = settings.Copyright;
+    var keyFieldName = view.Keys.Count > 0 ? view.Keys.First() : entityName;
+    var localKeyFieldName = keyFieldName.Substring(0, 1).ToLower() + keyFieldName.Substring(1);
+
+    var ignoredProperties = SnippetHelper.IgnoredPropertiesJavaScript(settings);
+    var firstTabPage = string.Empty;
+    var snippet = new StringBuilder();
+
+    // Specific payroll logic since CP and UP are now dynamically assigned
+    var entityContext = (moduleId == "PR") ? ", $.noop, " + containerName + "ViewModel.PayrollType" : "" ;
+#>
+/* <#=copyright#> */
+
+// Enable the following commented line to enable TypeScript static type checking
+// @ts-check
+
+"use strict";
+
+let modelData;
+var <#=localEntityName#>UI = <#=localEntityName#>UI || {};
+
+<# 
+    // Create tab strip var if needed
+    snippet = new StringBuilder();
+    firstTabPage = SnippetHelper.TabStripJavaScript(4, settings, localEntityName, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+
+<#=localEntityName#>UI = {
+    <#=localEntityName#>Model: {},
+    ignoreIsDirtyProperties: ["<#=keyFieldName#>"<#=ignoredProperties#>],
+    computedProperties: ["UIMode"],
+    hasKoBindingApplied: false,
+    isKendoControlNotInitialised: false,
+    <#=localKeyFieldName#>: null,
+
+    /**
+     * @name init
+     * @description Primary initialization routine
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    init: () => {
+    <#=localEntityName#>UISuccess.initialLoad(<#=containerName#>ViewModel);
+    <#=localEntityName#>UI.initGrids();
+    <#=localEntityName#>UI.initTabs();
+    <#=localEntityName#>UI.initButtons();
+    <#=localEntityName#>UI.initFinders();
+    <#=localEntityName#>UI.initNumericTextboxes();
+    <#=localEntityName#>UI.initTextboxes();
+    <#=localEntityName#>UI.initTimePickers();
+    <#=localEntityName#>UI.initCheckBoxes();
+    <#=localEntityName#>UISuccess.setkey();
+    },
+
+    /**
+     * @name save<#=entityName#>
+     * @description Invoke add or update
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    save<#=entityName#>: () => {
+        if ($("#frm<#=containerName#>").valid()) {
+            let data = sg.utls.ko.toJS(modelData, <#=localEntityName#>UI.computedProperties);
+<#
+    // Create code for time only dates
+    snippet = new StringBuilder();
+    SnippetHelper.SetTimeOnlyValuesJavaScript(12, settings, localEntityName, snippet, view);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+            if (modelData.UIMode() === sg.utls.OperationMode.SAVE) {
+                <#=localEntityName#>Repository.update(data, <#=localEntityName#>UISuccess.update);
+            } else {
+                <#=localEntityName#>Repository.add(data, <#=localEntityName#>UISuccess.update);
+            }
+        }
+    },
+
+    /**
+     * @name initButtons
+     * @description Initialize the buttons
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initButtons: () => {
+        // Import/Export Buttons
+        sg.exportHelper.setExportEvent("btnOptionExport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop<#=entityContext#>);
+        sg.importHelper.setImportEvent("btnOptionImport", "<#=moduleId.ToLower()#><#=containerName.ToLower()#>", false, $.noop<#=entityContext#>);
+
+        // Key field blur event
+        $("#txt<#=keyFieldName#>").on('blur', (e) => {
+            modelData.<#=keyFieldName#>($("#txt<#=keyFieldName#>").val());
+            if (sg.controls.GetString(modelData.<#=keyFieldName#>()) !== "") {
+                <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.get, <#=localEntityName#>UI.<#=localKeyFieldName#>);
+            }
+        });
+
+        // Create New Button
+        $("#btnNew").on('click', () => {
+            <#=localEntityName#>UI.checkIsDirty(<#=localEntityName#>UI.create, <#=localEntityName#>UI.<#=localKeyFieldName#>);
+        });
+
+        // Save Button
+        $("#btnSave").on('click', () => {
+            sg.utls.SyncExecute(<#=localEntityName#>UI.save<#=entityName#>);
+        });
+
+        // Delete Button
+        $("#btnDelete").on('click', () => {
+            if ($("#frm<#=containerName#>").valid()) {
+                let message = jQuery.validator.format(<#=localEntityName#>Resources.DeleteConfirmMessage, <#=localEntityName#>Resources.<#=keyFieldName#>Title, modelData.<#=keyFieldName#>());
+                sg.utls.showKendoConfirmationDialog(() => {
+                    sg.utls.clearValidations("frm<#=containerName#>");
+                    <#=localEntityName#>Repository.delete(modelData.<#=keyFieldName#>(), <#=localEntityName#>UISuccess.delete);
+                }, null, message, <#=localEntityName#>Resources.DeleteTitle);
+            }
+        });
+<#
+    // Create code for buttons, if any
+    snippet = new StringBuilder();
+    SnippetHelper.InitButtonsJavaScript(8, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+    /**
+     * @name initDropDownList
+     * @description Initialize the dropdown listboxes, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initDropDownList: () => {
+<#
+    // Create code for dropdown list
+    snippet = new StringBuilder();
+    SnippetHelper.InitDropDownListJavaScript(8, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+    /**
+     * @name initTabs
+     * @description Initialize the tabs, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initTabs: () => {
+
+<#
+    // Create code for init tabs
+    snippet = new StringBuilder();
+    SnippetHelper.InitTabsJavaScript(8, settings, localEntityName, snippet, firstTabPage);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+    /**
+     * @name initGrids
+     * @description Initialize the grids, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initGrids: () => {
+<#
+             PushIndent("        ");
+			 foreach(var view in settings.Entities)
+			 {
+				if (view.Options[BusinessView.Constants.HasGrid] || view.ForGrid)
+				{
+                    var viewName = view.Properties[BusinessView.Constants.EntityName];
+                    var gridName = viewName.Substring(0, 1).ToLower() + viewName.Substring(1);
+                    WriteLine("sg.viewList.init('{0}Grid');", gridName);
+				}
+			 }
+             PopIndent();
+#>
+    },
+
+    /**
+     * @name initFinders
+     * @description Initialize the finders, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initFinders: () => {
+<#
+    // Create code for finder
+    snippet = new StringBuilder();
+    SnippetHelper.FinderJavaScript(8, settings, snippet, localEntityName);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+    /**
+     * @name initNumericTextboxes
+     * @description Initialize the numeric textboxes, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initNumericTextboxes: () => {
+<#
+    // Create code for init numeric textboxes
+    snippet = new StringBuilder();
+    SnippetHelper.InitNumericTextboxesJavaScript(8, settings, snippet, view);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+    /**
+     * @name initTextboxes
+     * @description Initialize the textboxes, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initTextboxes: () => {
+<#
+    // Create code for init textboxes
+    snippet = new StringBuilder();
+    SnippetHelper.InitTextboxesJavaScript(8, settings, snippet, containerName);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+    /**
+     * @name initTimePickers
+     * @description Initialize the time pickers, if any
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    initTimePickers: () => {
+<#
+    // Create code for init timepickers
+    snippet = new StringBuilder();
+    SnippetHelper.InitTimePickersJavaScript(8, settings, snippet, localEntityName, view);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+    },
+
+    /**
+    * @name initCheckBoxes
+    * @description Set up the change events for check boxes, if any
+    * @namespace <#=localEntityName#>UI
+    * @public
+    */
+    initCheckBoxes: () => {
+
+    },
+
+    /**
+     * @name get
+     * @description Invoke the get
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    get: () => {
+        <#=localEntityName#>Repository.get(modelData.<#=keyFieldName#>(), <#=localEntityName#>UISuccess.get);
+    },
+
+    /**
+     * @name create
+     * @description Invoke the create
+     * @namespace <#=localEntityName#>UI
+     * @public
+     */
+    create: () => {
+        sg.utls.clearValidations("frm<#=containerName#>");
+        <#=localEntityName#>Repository.create(<#=localEntityName#>UISuccess.create);
+    },
+<#
+    // Create code for create
+    snippet = new StringBuilder();
+    SnippetHelper.CreateJavaScript(4, settings, localEntityName, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+
+    /**
+     * @name checkIsDirty
+     * @description Check if model has been changed. If it has, display a confirmation dialog box
+     *              and invoke the specified callback function if the user selects 'Yes'
+     * @namespace <#=localEntityName#>UI
+     * @public 
+     * 
+     * @param {Function} functionToCall Callback function 
+     * @param {string} <#=localKeyFieldName#> The specified key
+     */
+    checkIsDirty: (functionToCall, <#=localKeyFieldName#>) => {
+        if (<#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty() && <#=localKeyFieldName#> !== null && <#=localKeyFieldName#> !== "") {
+            sg.utls.showKendoConfirmationDialog(
+                () => { // Yes
+                    sg.utls.clearValidations("frm<#=containerName#>");
+                    functionToCall.call();
+                },
+                () => { // No
+                    if (sg.controls.GetString(<#=localKeyFieldName#>) !== sg.controls.GetString(modelData.<#=keyFieldName#>())) {
+                        modelData.<#=keyFieldName#>(<#=localKeyFieldName#>);
+                   }
+                   return;
+                },
+                jQuery.validator.format(globalResource.SaveConfirm, <#=localEntityName#>Resources.<#=keyFieldName#>Title, <#=localKeyFieldName#>));
+        } else {
+            functionToCall.call();
+        }
+    }
+};
+
+// Callbacks
+var <#=localEntityName#>UISuccess = {
+
+    /**
+     * @name setkey
+     * @description Set the key
+     * @namespace <#=localEntityName#>UISuccess
+     * @public
+     */
+    setkey: () => {
+        <#=localEntityName#>UI.<#=localKeyFieldName#> = modelData.<#=keyFieldName#>();
+    },
+
+    /**
+     * @name get
+     * @description Event handler for successful get 
+     * @namespace <#=localEntityName#>UISuccess
+     * @public
+     * 
+     * @param {object} jsonResult JSON payload object
+     */
+    get: (jsonResult) => {
+        if (jsonResult.UserMessage && jsonResult.UserMessage.IsSuccess) {
+            if (jsonResult.Data !== null) {
+                <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
+            } else {
+                modelData.UIMode(sg.utls.OperationMode.NEW);
+            }
+            <#=localEntityName#>UISuccess.setkey();
+        }
+    },
+
+    /**
+     * @name update
+     * @description Event handler for successful update
+     * @namespace <#=localEntityName#>UISuccess
+     * @public
+     *
+     * @param {object} jsonResult JSON payload object
+     */
+    update: (jsonResult) => {
+        if (jsonResult.UserMessage.IsSuccess) {
+            <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.SAVE);
+            <#=localEntityName#>UISuccess.setkey();
+        }
+        sg.utls.showMessage(jsonResult);
+    },
+
+    /**
+     * @name create
+     * @description Event handler for successful create
+     * @namespace <#=localEntityName#>UISuccess
+     * @public
+     *
+     * @param {object} jsonResult JSON payload object
+     */
+    create: (jsonResult) => {
+        <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
+        <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
+        <#=localEntityName#>UISuccess.setkey();
+
+<#
+    // Create code for select tab
+    snippet = new StringBuilder();
+    SnippetHelper.SelectTabJavaScript(8, settings, snippet, firstTabPage);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+        sg.controls.Focus($("#txt<#=keyFieldName#>"));
+    },
+
+    /**
+     * @name delete
+     * @description Event handler for successful deletion
+     * @namespace <#=localEntityName#>UISuccess
+     * @public
+     *
+     * @param {object} jsonResult JSON payload object
+     */
+    delete: (jsonResult) => {
+        if (jsonResult.UserMessage.IsSuccess) {
+            <#=localEntityName#>UISuccess.displayResult(jsonResult, sg.utls.OperationMode.NEW);
+            <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
+            <#=localEntityName#>UISuccess.setkey();
+        }
+
+<#
+    // Create code for select tab
+    snippet = new StringBuilder();
+    SnippetHelper.SelectTabJavaScript(8, settings, snippet, firstTabPage);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+
+        sg.utls.showMessage(jsonResult);
+    },
+
+    /**
+     * @name displayResult
+     * @description Display the results of an ajax call
+     * @namespace <#=localEntityName#>UISuccess
+     * @public
+     *
+     * @param {object} jsonResult JSON payload object
+     * @param {number} uiMode The UI mode
+     */
+    displayResult: (jsonResult, uiMode) => {
+        if (jsonResult !== null) {
+            if (!<#=localEntityName#>UI.hasKoBindingApplied) {
+                <#=localEntityName#>UI.<#=localEntityName#>Model = ko.mapping.fromJS(jsonResult);
+                <#=localEntityName#>UI.hasKoBindingApplied = true;
+                modelData = <#=localEntityName#>UI.<#=localEntityName#>Model.Data;
+                <#=localEntityName#>ObservableExtension(<#=localEntityName#>UI.<#=localEntityName#>Model, uiMode);
+                <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty = new ko.dirtyFlag(modelData, <#=localEntityName#>UI.ignoreIsDirtyProperties);
+                ko.applyBindings(<#=localEntityName#>UI.<#=localEntityName#>Model);
+            } else {
+                ko.mapping.fromJS(jsonResult, <#=localEntityName#>UI.<#=localEntityName#>Model);
+                modelData.UIMode(uiMode);
+                if (uiMode !== sg.utls.OperationMode.NEW) {
+                    <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.reset();
+                }
+<#
+    // Create code for set numerics
+    snippet = new StringBuilder();
+    SnippetHelper.SetNumericTextboxesJavaScript(16, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+            }
+<# 
+    // Create code for refresh
+    snippet = new StringBuilder();
+    SnippetHelper.RefreshJavaScript(12, settings, localEntityName, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+
+            if (!<#=localEntityName#>UI.isKendoControlNotInitialised) {
+                <#=localEntityName#>UI.isKendoControlNotInitialised = true;
+                <#=localEntityName#>UI.initDropDownList();
+<#
+    // Create code for set dropdown
+    // snippet = new StringBuilder();
+    // SnippetHelper.SetDropdownJavaScript(16, settings, snippet, true);
+    // if (!string.IsNullOrEmpty(snippet.ToString()))
+    // {
+    //     WriteLine(snippet.ToString());
+    // }
+#>
+            } else {
+                // 
+<#
+    // Create code for set dropdown
+    // snippet = new StringBuilder();
+    // SnippetHelper.SetDropdownJavaScript(16, settings, snippet, false);
+    // if (!string.IsNullOrEmpty(snippet.ToString()))
+    // {
+    //     WriteLine(snippet.ToString());
+    // }
+#>          }
+        }
+    },
+
+    /**
+     * @name initialLoad
+     * @description Called during initial page load
+     * @namespace <#=localEntityName#>UISuccess
+     * @public
+     *
+     * @param {object} result JSON payload object
+     */
+    initialLoad: (result) => {
+<#
+    // Create code for show tab
+    snippet = new StringBuilder();
+    SnippetHelper.ShowTabJavaScript(8, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+        if (result) {
+            <#=localEntityName#>UISuccess.displayResult(result, sg.utls.OperationMode.NEW);
+        } else {
+            sg.utls.showMessageInfo(sg.utls.msgType.ERROR, <#=localEntityName#>Resources.ProcessFailedMessage);
+        }
+        sg.controls.Focus($("#txt<#=keyFieldName#>"));
+    },
+
+    /**
+     * @name isNew
+     * @description Determine if we're creating a new entity
+     * @namespace <#=localEntityName#>UISuccess
+     * @public
+     */
+    isNew: (model) => {
+        if (model.<#=keyFieldName#>() === null) {
+           return true;
+        }
+        return false;
+    }
+};
+
+// Utility
+var <#=localEntityName#>Utility = {
+
+<#
+    // Create code for show tab
+    snippet = new StringBuilder();
+    SnippetHelper.UtilityTabJavaScript(4, settings, snippet);
+    if (!string.IsNullOrEmpty(snippet.ToString()))
+    {
+        WriteLine(snippet.ToString());
+    }
+#>
+};
+
+// Initial Entry
+$(() => {
+    <#=localEntityName#>UI.init();
+    $(window).on('beforeunload', () => {
+        if (globalResource.AllowPageUnloadEvent && <#=localEntityName#>UI.<#=localEntityName#>Model.isModelDirty.isDirty()) {
+            return jQuery('<div />').html(jQuery.validator.format(globalResource.SaveConfirm2, <#=localEntityName#>Resources.<#=keyFieldName#>Title)).text();
+        }
+    });
+    <#
+        if(settings.Entities.Count(e=>e.ForGrid) > 0)
+        {
+            WriteLine("$(window).on('unload', () => {");
+            WriteLine("        sg.utls.releaseSession();");
+            WriteLine("    });");
+        }
+    #>
+});

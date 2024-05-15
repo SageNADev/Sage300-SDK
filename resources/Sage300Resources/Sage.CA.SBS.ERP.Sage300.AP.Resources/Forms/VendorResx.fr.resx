@@ -223,6 +223,9 @@
   <data name="FaxNumber" xml:space="preserve">
     <value>Fax</value>
   </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
   <data name="GenSepPmntForEachInv" xml:space="preserve">
     <value>Créer des paiements séparés pour chaque facture</value>
   </data>
@@ -240,6 +243,9 @@
   </data>
   <data name="LastMaintained" xml:space="preserve">
     <value>Dernière modification</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Nom</value>
   </data>
   <data name="LegalName" xml:space="preserve">
     <value>Raison sociale</value>
@@ -694,6 +700,9 @@
   <data name="ExternalCostTransactions" xml:space="preserve">
     <value>Transactions coût externe</value>
   </data>
+  <data name="FATCA" xml:space="preserve">
+    <value>FATCA</value>
+  </data>
   <data name="MiscellaneousPayment" xml:space="preserve">
     <value>Paiement divers</value>
   </data>
@@ -717,6 +726,9 @@
   </data>
   <data name="TaxReportingCurMisMatch" xml:space="preserve">
     <value>Le groupe de taxes {0} a une monnaie de publication de taxe {1} qui diffère de la devise {2} du groupe de comptes.</value>
+  </data>
+  <data name="TaxWithholdingState" xml:space="preserve">
+    <value>État de retenue d'impôt</value>
   </data>
   <data name="VendorCurrencyMismatch" xml:space="preserve">
     <value>Saisie erronée. Impossible de remplacer par groupe de comptes {0}.  Vous pouvez seulement remplacer par un groupe de comptes ayant le même code de devise que le groupe de comptes actuel du fournisseur</value>
@@ -810,6 +822,9 @@
   </data>
   <data name="ReverseCount" xml:space="preserve">
     <value>Nombre en ordre inverse</value>
+  </data>
+  <data name="SecondTINNotice" xml:space="preserve">
+    <value>Deuxième avis de NIF</value>
   </data>
   <data name="CommentNumber" xml:space="preserve">
     <value>Numéro commentaire</value>

@@ -246,4 +246,13 @@
   <data name="Amount" xml:space="preserve">
     <value>Amount</value>
   </data>
+  <data name="Accounted" xml:space="preserve">
+    <value>Accounted</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="Inserted" xml:space="preserve">
+    <value>Inserted</value>
+  </data>
 </root>

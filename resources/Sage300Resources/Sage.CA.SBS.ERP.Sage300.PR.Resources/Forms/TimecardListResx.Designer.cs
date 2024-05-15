@@ -61,7 +61,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PR TimecardList.
+        ///   Looks up a localized string similar to Payroll Timecard List.
         /// </summary>
         public static string Entity {
             get {

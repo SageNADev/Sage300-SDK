@@ -65,8 +65,7 @@
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Utilities">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Utilities.dll</HintPath>
     </Reference>
-    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sage.CA.SBS.ERP.Sage300.Core.Interfaces">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Core.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.CS.Interfaces">

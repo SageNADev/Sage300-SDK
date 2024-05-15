@@ -1460,6 +1460,16 @@
             }
         },
 
+        HQ: {
+            PublishPayslip: {
+                viewID: "HQ0007",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["TRANSDATE"],
+                displayFieldNames: ["TRANSDATE"]
+            },
+        },
+
         IC: {
             AccountSet: {
                 viewID: "IC0100",
@@ -2585,6 +2595,14 @@
                 returnFieldNames: ["CLASSCODE", "CLASSDESC"],
                 filterTemplate: "CLASS = \"{0}\""
             },
+            Banks: {
+                url: ["CS", "BankViewFinder", "Find"],
+                viewID: "BK0001",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                displayFieldNames: ["BANK", "NAME"],
+                returnFieldNames: ["BANK", "NAME"]
+            },
             EarnDeductCodes: {
                 viewID: "~~0007",
                 viewOrder: 0,
@@ -2641,6 +2659,14 @@
                 displayFieldNames: ["EMPLOYEE", "LASTNAME", "FIRSTNAME", "MIDDLENAME", "PAYFREQ", "STATUS","CLASS1","CLASS2","CLASS3","CLASS4"],
                 returnFieldNames: ["EMPLOYEE", "FULLNAME"],
                 filterTemplate: "TCUSERID = \"{0}\" ",
+                parentValAsInitKey: true
+            },
+            CalculationSequence: {
+                viewID: "~~0088",
+                viewOrder: 0,
+                displayFieldNames: ["CALCSEQ", "BEGEMP", "ENDEMP", "ENDDATE", "ENTRYTYPE", "SELECTLIST"],
+                returnFieldNames: ["CALCSEQ"],
+                filterTemplate: "(ENDDATE <= \{0}\ AND CALCSEQ >= \{1}\ AND CALCSEQ <= \{2}\)",
                 parentValAsInitKey: true
             },
             Timecard: {
@@ -2807,6 +2833,12 @@
                 filterTemplate: "WCCGROUP = \"{0}\"",
                 displayFieldNames: ["WCC", "DESC"],
                 returnFieldNames: ["WCC"]
+            },
+            TimecardList: {
+                viewID: "~~0031",
+                viewOrder: 0,
+                displayFieldNames: ["EMPLOYEE", "PEREND", "TIMECARD", "TCARDDESC"],
+                returnFieldNames: ["TIMECARD"]
             }
         },
 

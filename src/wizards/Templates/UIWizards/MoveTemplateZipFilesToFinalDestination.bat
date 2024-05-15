@@ -15,7 +15,7 @@
 ::                 - Sage300SolutionTemplate
 ::            
 ::            to their final destination
-::            \src\wizards\Sage300UIWizardPackage\ProjectTemplates\
+::            \src\wizards\Sage300SolutionWizardPackage\ProjectTemplates\
 ::
 :: Usage Example:
 ::          MoveTemplateZipFilesToFinalDestination.bat 
@@ -30,7 +30,7 @@ setlocal
 :: ---------------------------------------------------------------------------------------
 set myDir=%~dp0
 
-set targetPath=..\..\Sage300UIWizardPackage\ProjectTemplates\
+set targetPath=..\..\Sage300SolutionWizardPackage\ProjectTemplates\
 
 copy /Y BusinessRepository.zip %targetPath%
 del /Q BusinessRepository.zip
