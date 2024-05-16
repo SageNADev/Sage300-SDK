@@ -301,7 +301,7 @@
     <value>Hebdomadaire</value>
   </data>
   <data name="Payslip" xml:space="preserve">
-    <value />
+    <value>Bulletin(s) de paie</value>
   </data>
   <data name="Application" xml:space="preserve">
     <value>Application</value>
