@@ -1,0 +1,214 @@
+﻿@using Sage.CA.SBS.ERP.Sage300.ProxyTester.Utility
+
+@{
+    ViewBag.Title = "Sage 300 Proxy Tester";
+}
+
+@model Sage.CA.SBS.ERP.Sage300.ProxyTester.Models.ProxyTesterViewModel
+
+<script>
+    @JavascriptConvert.ConvertToJsVariableUsingNewtonSoft("proxyTesterViewModel", Model);
+</script>
+
+<div class="container-fluid">
+    <div class="row">
+        @using (Html.BeginForm("TheForm", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="col-xs-4">
+                <fieldset>
+                    <br />
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <!-- Header -->
+                    <div class="form-screen">
+                        <h1>Sage 300 Proxy Tester</h1>
+                    </div>
+                    <br />
+
+
+                    <!-- Authentication -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading fw-bold">Authentication Credentials</div>
+                        <br />
+                    </div>
+
+                    <div class="form-group" id="outer">
+
+                        <!-- User -->
+                        <div class="inner">
+                            <label for="txtUsername">User</label>
+                        </div>
+                        <div class="inner">
+                            @Html.TextBoxFor(m => m.User, new { id = "txtUsername", @class = "form-control input-md", style = " width: 120px;" })
+                            @Html.ValidationMessageFor(m => m.User, "", new { @class = "text-danger" })
+                        </div>
+
+                        <!-- Password -->
+                        <div class="inner">
+                            <label for="txtPassword">Password</label>
+                        </div>
+                        <div class="inner">
+                            @Html.TextBoxFor(m => m.Password, new { id = "txtPassword", @class = "form-control input-md" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+
+                        <!-- Company -->
+                        <div class="inner">
+                            <label for="txtCompany">Company</label>
+                        </div>
+                        <div class="inner">
+                            @Html.TextBoxFor(m => m.Company, new { id = "txtCompany", @class = "form-control input-md", style = " width: 120px;" })
+                            @Html.ValidationMessageFor(m => m.Company, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <!-- Server Configuration -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading fw-bold">Server Configuration</div>
+                        <br />
+                    </div>
+
+                    <div class="form-group" id="outer">
+
+                        <!-- Protocol -->
+                        <div class="inner">
+                            @Html.CheckBoxFor(m => m.UseHttps, new { id = "chkHttps", value = "false" })
+                        </div>
+                        <div class="inner">
+                            <label for="chkHttps">Protocol (https)</label>
+                        </div>
+
+                        <!-- Server -->
+                        <div class="inner">
+                            <label for="txtServer">Server</label>
+                        </div>
+                        <div class="inner">
+                            @Html.TextBoxFor(m => m.Server, new { id = "txtServer", @class = "form-control input-md" })
+                            @Html.ValidationMessageFor(m => m.Server, "", new { @class = "text-danger" })
+                        </div>
+
+                        <!-- Port -->
+                        <div class="inner">
+                            <label for="txtServerPort">Port</label>
+                        </div>
+                        <div class="inner">
+                            @Html.TextBoxFor(m => m.Port, new { id = "txtServerPort", @class = "form-control input-md", style = " width: 75px;" })
+                            @Html.ValidationMessageFor(m => m.Port, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <!-- Proxy Request -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading fw-bold">Proxy Request</div>
+                        <br />
+                    </div>
+
+                    <div class="form-group" id="outer">
+
+                        <!-- Area (Module) -->
+                        <div class="inner">
+                            <label for="txtModule">Area (Module)</label>
+                        </div>
+                        <div class="inner">
+                            @Html.TextBoxFor(m => m.ModuleId, new { id = "txtModule", @class = "form-control input-md", style = " width: 75px;" })
+                            @Html.ValidationMessageFor(m => m.ModuleId, "", new { @class = "text-danger" })
+                        </div>
+
+                        <!-- Test Menu (Controller, Action, Opt Params not required) -->
+                        <div class="inner">
+                            <button id="btnMenu" name="btnMenu" class="btn btn-primary">Test Menu</button>
+                        </div>
+
+                        <!-- Controller -->
+                        <div class="inner">
+                            <label for="txtController">Controller</label>
+                        </div>
+                        <div class="inner">
+                            @Html.TextBoxFor(m => m.Controller, new { id = "txtController", @class = "form-control input-md" })
+                            @Html.ValidationMessageFor(m => m.Controller, "", new { @class = "text-danger" })
+                        </div>
+
+                        <!-- Action -->
+                        <div class="inner">
+                            <label for="txtAction">Action</label>
+                        </div>
+                        <div class="inner">
+                            @Html.TextBoxFor(m => m.Action, new { id = "txtAction", @class = "form-control input-md" })
+                            @Html.ValidationMessageFor(m => m.Action, "", new { @class = "text-danger" })
+                        </div>
+
+                        <!-- Optional Parameters -->
+                        <div class="inner">
+                            <label for="txtOptionalParameters">Optional Parameters</label>
+                        </div>
+                        <div class="inner">
+                            @Html.TextBoxFor(m => m.OptionalParameters, new { id = "txtOptionalParameters", @class = "form-control input-md", style = " width: 600px;" })
+                            @Html.ValidationMessageFor(m => m.OptionalParameters, "", new { @class = "text-danger" })
+                        </div>
+
+                        <!-- Test Screen -->
+                        <div class="inner">
+                            <button id="btnScreen" name="btnScreen" class="btn btn-primary">Test Screen</button>
+                        </div>
+
+                    </div>
+                    <br />
+
+                </fieldset>
+            </div>
+        }
+
+    <div class="col-xs-8">
+
+        <!-- Proxy URLs -->
+        <div class="panel panel-default">
+            <div class="panel-heading fw-bold">Proxy URLs</div>
+            <br />
+        </div>
+
+        <div class="form-group" id="outer">
+
+            <!-- Menu URL -->
+            <div class="inner">
+                <label for="txtMenuUrl">Menu URL: </label>
+            </div>
+            <div class="inner">
+                @Html.TextBoxFor(m => m.MenuUrl, new { id = "txtMenuUrl", @class = "form-control", style = " width: auto;", disabled = "disabled" })
+            </div>
+        </div>
+
+        <div class="form-group" id="outer">
+
+            <!-- Screen URL -->
+            <div class="inner">
+                <label for="txtScreenUrl">Screen URL: </label>
+            </div>
+            <div class="inner">
+                @Html.TextBoxFor(m => m.ScreenUrl, new { id = "txtScreenUrl", @class = "form-control", style = " width: auto;", disabled = "disabled" })
+            </div>
+
+        </div>
+        <br />
+
+        <!-- Results -->
+        <div class="panel panel-default">
+            <div class="panel-heading fw-bold">Results</div>
+            <br />
+        </div>
+
+        <iframe id="ExternalFrame" target="_parent"
+                sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation allow-downloads allow-modals"
+                style="width: 100%; height: 750px; border:1px solid black;" src="">
+        </iframe>
+    </div>
+    </div>
+</div>
+
+
