@@ -38,13 +38,13 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
             public const string ToReleaseNumber = "2024.2";
 
             /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
-            public const bool UpdateAccpacDotNetLibrary = true;
+            public const bool UpdateAccpacDotNetLibrary = false;
 
             /// <summary> From Accpac Number </summary>
             public const string FromAccpacNumber = "7.1.0.0";
             
             /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "7.1.0.20";
+            public const string ToAccpacNumber = "7.1.0.0";
 
             /// <summary> Flag that determines whether or not to synchronize the Kendo files. </summary>
             public const bool SyncKendoFiles = true;
