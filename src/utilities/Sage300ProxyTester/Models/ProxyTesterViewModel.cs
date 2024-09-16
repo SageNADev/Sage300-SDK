@@ -19,6 +19,7 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.InteropServices.WindowsRuntime;
 #endregion
@@ -44,9 +45,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
             Company = "SAMLTD";
 
             // Server Configuration
-            UseHttps = false;
-            Server = "localhost/Sage300";
-            Port = 80;
+            Server = "http://localhost:54445/Sage300";
 
             // Proxy Request
             ModuleId = "";
@@ -57,6 +56,19 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
             // Results
             MenuUrl = string.Empty;
             ScreenUrl = string.Empty;
+            IsValidTokenUrl = string.Empty;
+            PublicKeyUrl = string.Empty;
+            LoginUrl = string.Empty;
+
+            // Test Action
+            TestAction = string.Empty;
+
+            // Login Token
+            Token = string.Empty;
+            IsValidToken = false;
+
+            // Source for iFrame
+            Source = string.Empty;
         }
         #endregion
 
@@ -78,16 +90,9 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
 
         // Server Configuration
 
-        /// <summary> Https flag </summary>
-        public bool UseHttps { get; set; }
-
         /// <summary> The server name </summary>
         [Required(ErrorMessage = "Server name is a required field.")]
         public string Server { get; set; }
-
-        /// <summary> The port </summary>
-        [Required(ErrorMessage = "Server port is a required field. Specify 80 if necessary.")]
-        public int Port { get; set; }
 
         // Proxy Request
 
@@ -108,11 +113,17 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
         /// <summary> Url to get a public key </summary>
         public string PublicKeyUrl { get; set; }
 
+        /// <summary> Url to login </summary>
+        public string LoginUrl { get; set; }
+
         /// <summary> The encrypted User, Password, and Company in the request header </summary>
         public string Credentials { get; set; }
 
-        /// <summary> The client's public key in the request header </summary>
-        public string PublicKey { get; set; }
+        /// <summary> The client's public key </summary>
+        public string ClientPublicKey { get; set; }
+
+        /// <summary> The proxy's public key </summary>
+        public string ProxyPublicKey { get; set; }
 
         /// <summary> The IV in the request header </summary>
         public string IV { get; set; }
@@ -120,9 +131,23 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
         /// <summary> Url to get a modules menu </summary>
         public string MenuUrl { get; set; }
 
+        /// <summary> Url to determine if token is valid </summary>
+        public string IsValidTokenUrl { get; set; }
+
         /// <summary>Url to get a web screen </summary>
         public string ScreenUrl { get; set; }
 
+        /// <summary>Test Action </summary>
+        public string TestAction { get; set; }
+
+        /// <summary>Token (from ProxyLogin) </summary>
+        public string Token { get; set; }
+
+        /// <summary>IsValidToken (from ProxyIsValidToken) </summary>
+        public bool IsValidToken { get; set; }
+
+        /// <summary>Source for iFrame from ProxyMenu or ProxyScreen </summary>
+        public string Source { get; set; }
         #endregion
     }
 }

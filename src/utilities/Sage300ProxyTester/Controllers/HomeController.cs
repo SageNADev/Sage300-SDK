@@ -20,29 +20,69 @@
 
 #region Imports
 using Newtonsoft.Json;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
 using Sage.CA.SBS.ERP.Sage300.ProxyTester.Models;
 using Sage.CA.SBS.ERP.Sage300.ProxyTester.Utility;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.Optimization;
+using System.Web.UI.HtmlControls;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
 {
+    /// <summary> Controller for Sage 300 Proxy Tester </summary>
     public class HomeController : Controller
     {
-        /// <summary>
-        /// Default constructor
-        /// </summary>
-        public HomeController()
+        HttpClient httpClient = new HttpClient();
+
+        /// <summary> Constants for Request Header </summary>
+        public class RequestHeader
         {
+            /// <summary> Credentials Constant </summary>
+            public const string Credentials = "ProxyCredentials";
+            /// <summary> User Constant </summary>
+            public const string User = "ProxyUser";
+            /// <summary> Password Constant </summary>
+            public const string Password = "ProxyPassword";
+            /// <summary> Company Constant </summary>
+            public const string Company = "ProxyCompany";
+            /// <summary> ClientPublicKey Constant </summary>
+            public const string ClientPublicKey = "ProxyClientPublicKey";
+            /// <summary> ServerPublicKey Constant </summary>
+            public const string ServerPublicKey = "ProxyServerPublicKey";
+            /// <summary> IV Constant </summary>
+            public const string IV = "ProxyIV";
+            /// <summary> ProductId Constant </summary>
+            public const string ProductId = "ProxyProductId";
+            /// <summary> TokenId Constant </summary>
+            public const string TokenId = "ProxyToken";
+            /// <summary> ModuleId Constant </summary>
+            public const string ModuleId = "ProxyModuleId";
+            /// <summary> Controller Constant </summary>
+            public const string Controller = "ProxyController";
+            /// <summary> Action Constant </summary>
+            public const string Action = "ProxyAction";
+            /// <summary> OptionalParameters Constant </summary>
+            public const string OptionalParameters = "ProxyOptionalParameters";
         }
 
+        #region Constructor
+        /// <summary> Default constructor </summary>
+        public HomeController() { }
+        #endregion
+
+        #region Public
         public ActionResult Index()
         {
-            return View(new Models.ProxyTesterViewModel());
+            var model = new ProxyTesterViewModel();
+            BuildRequestUrl(model);
+            return View(model);
         }
 
         [HttpPost]
@@ -50,87 +90,201 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         {
             if (ModelState.IsValid)
             {
-                var urls = BuildRequestUrl(model);
-                model.PublicKeyUrl = urls.PublicKeyUrl;
-                model.MenuUrl = urls.MenuUrl;
-                model.ScreenUrl = urls.ScreenUrl;
+                BuildRequestUrl(model);
 
-                // Encrypt credentials with Elliptic-curve Diffie-Hellman public key encryption 
-                byte[] privateKey, publicKey, iv;
-                EllipticCurveDiffieHellman.CreateKeyPair(out privateKey, out publicKey);
+                // Get the proxy public Key
+                await ProxyPublicKey(model);
 
-                using (var httpClient = new HttpClient())
+                // Login via proxy if a public key has been retrieved
+                if (!string.IsNullOrEmpty(model.ProxyPublicKey))
                 {
-                    // Get get a new public key from the server for every request. This does not need to be stored
-                    var keyUrl = urls.PublicKeyUrl;
-                    var getPublicKeyRequest = new HttpRequestMessage(HttpMethod.Get, keyUrl);
-                    var getPublicKeyResponse = await httpClient.SendAsync(getPublicKeyRequest);
-                    if (getPublicKeyResponse.IsSuccessStatusCode)
+                    // Perform login. Test to see if already logged in
+                    await ProxyIsValidToken(model);
+                    if (!model.IsValidToken)
                     {
-                        var serverPublicKey = await getPublicKeyResponse.Content.ReadAsStringAsync();
-                        var credentials = new
+                        await ProxyLogin(model);
+                    }
+
+                    // Login via proxy if a public key has been retrieved
+                    if (!string.IsNullOrEmpty(model.Token))
+                    {
+                        // Test Menu or Screen?
+                        if (model.TestAction == "Menu")
                         {
-                            model.User,
-                            model.Password,
-                            model.Company
-                        };
-                        // Sage 300 Web Screens proxy endpoint expects 3 headers: Credentials, PublicKey, and IV
-                        // where Credentials are the encrypted Username, Password, and Company,
-                        // PublicKey is the ECDH public key generated by the client,
-                        // and IV is the IV from the encryption
-                        model.Credentials = EllipticCurveDiffieHellman.Encrypt(JsonConvert.SerializeObject(credentials) + "", privateKey, Convert.FromBase64String(serverPublicKey), out iv);
-                        model.PublicKey = Convert.ToBase64String(publicKey);
-                        model.IV = Convert.ToBase64String(iv);
+                            // Test menu from proxy
+                            await ProxyMenu(model);
+                        }
+                        else
+                        {
+                            // Test screen from proxy
+                            await ProxyScreen(model);
+                        }
                     }
                 }
+
             }
 
             return View("Index", model);
         }
-
-
-        private static string BuildServerAndPort(string server, int port)
+        #endregion
+        /// <summary> Routine to get the Public Key from the Proxy </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>Assign ProxyPublicKey to model</returns>
+        private async Task ProxyPublicKey(ProxyTesterViewModel model)
         {
-            const int DEFAULT_HTTP_PORT = 80;
-            var result = string.Empty;
-            if (String.IsNullOrEmpty(server))
+            // Public key returned from Proxy
+            model.ProxyPublicKey = string.Empty;
+
+            // Request
+            var request = new HttpRequestMessage(HttpMethod.Get, model.PublicKeyUrl);
+
+            // Await response
+            using (var response = await httpClient.SendAsync(request))
             {
-                throw new ArgumentNullException("Server name not specified.");
+                // If successful get the public key
+                if (response.IsSuccessStatusCode)
+                {
+                    model.ProxyPublicKey = await response.Content.ReadAsStringAsync();
+                }
             }
-            result = server;
-            if (port != DEFAULT_HTTP_PORT)
-            {
-                result += $":{port}";
-            }
-            return result;
         }
 
-        private ProxyTesterViewModel BuildRequestUrl(ProxyTesterViewModel model)
+        /// <summary> Routine to login to the Proxy </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>Assign Token to model</returns>
+        private async Task ProxyLogin(ProxyTesterViewModel model)
         {
-            // var sessionId = Convert.ToBase64String(Encoding.UTF8.GetBytes(model.User + "-" + model.Company)).Replace("=", string.Empty);
-            var rootUrl = $"OnPremise/Core/Authentication/";
-            var publicKeyUrl = rootUrl + "ProxyPublicKey";
-            var menuUrl = rootUrl + "ProxyMenu";
-            var screenUrl = rootUrl + "ProxyScreen";
+            // Token returned from Proxy
+            model.Token = string.Empty;
 
-            // Server Information
-            var protocol = "http" + (model.UseHttps ? "s" : "");
-            var serverAndPort = BuildServerAndPort(model.Server, model.Port);
-            var url = $"{protocol}://{serverAndPort}";
+            // Create key pair
+            EllipticCurveDiffieHellman.CreateKeyPair(out byte[] privateKey, out byte[] publicKey);
 
-            var module = model.ModuleId?.Trim();
-            var controller = model.Controller?.Trim();
-            var action = model.Action?.Trim();
-            var extraParameters = model.OptionalParameters?.Trim();
-            var appUrl = $"{module}/{controller}/{action}" + (string.IsNullOrEmpty(extraParameters) ? $"{extraParameters}" : "null");
-            
-            var token = string.Empty;
+            // Encrypt credentials
+            var credentials = new
+            {
+                ProxyUser = model.User,
+                ProxyPassword = model.Password,
+                ProxyCompany = model.Company
+            };
+            model.Credentials = EllipticCurveDiffieHellman.Encrypt(JsonConvert.SerializeObject(credentials),
+                privateKey, Convert.FromBase64String(model.ProxyPublicKey), out byte[] iv);
 
-            model.PublicKeyUrl = $"{url}/{publicKeyUrl}";
-            model.MenuUrl = $"{url}/{menuUrl}?" + Server.UrlEncode($"token={token}&module={module}");
-            model.ScreenUrl = $"{url}/{screenUrl}?" + Server.UrlEncode($"token{token}&appUrl{appUrl}");
+            model.ClientPublicKey = Convert.ToBase64String(publicKey);
+            model.IV = Convert.ToBase64String(iv);
 
-            return model;
+            // Request
+            var request = new HttpRequestMessage(HttpMethod.Get, model.LoginUrl);
+
+            // Add headers
+            request.Headers.Add(RequestHeader.Credentials, model.Credentials);
+            request.Headers.Add(RequestHeader.ClientPublicKey, model.ClientPublicKey);
+            request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
+            request.Headers.Add(RequestHeader.IV, model.IV);
+            request.Headers.Add(RequestHeader.ProductId, "PROXY");
+
+            // Await response
+            using (var response = await httpClient.SendAsync(request))
+            {
+                // If successful get the login token
+                if (response.IsSuccessStatusCode)
+                {
+                    model.Token = await response.Content.ReadAsStringAsync();
+                }
+            }
+
+        }
+
+        /// <summary> Routine to get the menu for the requested module from the Proxy </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>Assign Source to model</returns>
+        private async Task ProxyMenu(ProxyTesterViewModel model)
+        {
+            // Request
+            var request = new HttpRequestMessage(HttpMethod.Post, model.MenuUrl);
+
+            // Add headers
+            request.Headers.Add(RequestHeader.TokenId, model.Token);
+            request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
+
+            // Await response
+            using (var response = await httpClient.SendAsync(request))
+            {
+                // If successful get the menu payload
+                if (response.IsSuccessStatusCode)
+                {
+                    model.Source = await response.Content.ReadAsStringAsync();
+                }
+            }
+        }
+
+        /// <summary> Routine to determine if the Token (Login) is still valid from the Proxy </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>Assign IsValidToken to model</returns>
+        private async Task ProxyIsValidToken(ProxyTesterViewModel model)
+        {
+            // Init
+            model.IsValidToken = false;
+
+            // Request
+            var request = new HttpRequestMessage(HttpMethod.Post, model.IsValidTokenUrl);
+
+            request.Headers.Add(RequestHeader.TokenId, model.Token);
+
+            // Await response
+            using (var response = await httpClient.SendAsync(request))
+            {
+                // If successful get whether token is still valid
+                if (response.IsSuccessStatusCode)
+                {
+                    model.IsValidToken = Convert.ToBoolean(await response.Content.ReadAsStringAsync());
+                }
+            }
+
+        }
+
+        /// <summary> Routine to get the screen from the Proxy </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>Assign Source/Redirect to model</returns>
+        private async Task ProxyScreen(ProxyTesterViewModel model)
+        {
+            // Request
+            var request = new HttpRequestMessage(HttpMethod.Post, model.ScreenUrl);
+
+            // Add headers
+            request.Headers.Add(RequestHeader.TokenId, model.Token);
+            request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
+            request.Headers.Add(RequestHeader.Controller, model.Controller);
+            request.Headers.Add(RequestHeader.Action, model.Action);
+            request.Headers.Add(RequestHeader.OptionalParameters, model.OptionalParameters);
+            request.Headers.Add(RequestHeader.ProductId, "PROXY");
+
+            // Await response
+            using (var response = await httpClient.SendAsync(request))
+            {
+                // If successful get the screen redirect
+                if (response.IsSuccessStatusCode)
+                {
+                    model.Source = await response.Content.ReadAsStringAsync();
+                }
+            }
+
+        }
+
+        /// <summary> Routine to build URLs for the Proxy </summary>
+        /// <param name="model">View Model</param>
+        private void BuildRequestUrl(ProxyTesterViewModel model)
+        {
+            // Force case
+            model.User = model.User.ToUpper();
+            model.Company = model.Company.ToUpper();
+            model.ModuleId = model.ModuleId.ToUpper();
+
+            model.PublicKeyUrl = $"{model.Server}/ProxyPublicKey";
+            model.LoginUrl = $"{model.Server}/ProxyLogin";
+            model.MenuUrl = $"{model.Server}/ProxyMenu";
+            model.IsValidTokenUrl = $"{model.Server}/ProxyIsValidToken";
+            model.ScreenUrl = $"{model.Server}/ProxyScreen";
         }
 
     }
