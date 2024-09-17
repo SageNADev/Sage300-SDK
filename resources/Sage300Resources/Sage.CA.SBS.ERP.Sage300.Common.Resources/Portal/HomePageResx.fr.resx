@@ -1467,4 +1467,12 @@
   <data name="SessionDateChangedWarning" xml:space="preserve">
     <value>La nouvelle date de session ne sera pas utilisée dans les écrans actuellement ouverts. Pour utiliser la nouvelle date de session dans ces écrans, fermez les écrans, puis ouvrez-les à nouveau.</value>
   </data>
+  <data name="CP" xml:space="preserve">
+    <value>CP</value>
+    <comment>Module Name</comment>
+  </data>
+  <data name="UP" xml:space="preserve">
+    <value>UP</value>
+    <comment>Module Name</comment>
+  </data>
 </root>

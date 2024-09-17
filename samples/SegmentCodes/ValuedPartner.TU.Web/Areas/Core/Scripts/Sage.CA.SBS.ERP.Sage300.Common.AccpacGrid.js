@@ -2365,7 +2365,9 @@ sg.viewList = function () {
                 //show last error
                 if (selectedIndex !== lastRowNumber && errorMessage) {
                     setTimeout(function (error) {
-                        grid.select("tr:eq(" + lastRowNumber + ")");
+                        if (-1 < lastRowNumber) {
+                            grid.select("tr:eq(" + lastRowNumber + ")");
+                        }
                         _gridCallback(gridName, "gridAfterError");
                         sg.utls.showMessage(error);
                     }.bind(null, errorMessage));
@@ -2837,7 +2839,9 @@ sg.viewList = function () {
         //has update error, show error message and return
         if (_lastRowStatus[gridName] === RowStatusEnum.UPDATE && _lastErrorResult[gridName].message !== "") {
             setTimeout(function () {
-                grid.select("tr:eq(" + _lastRowNumber[gridName] + ")");
+                if (-1 < _lastRowNumber[gridName]) {
+                    grid.select("tr:eq(" + _lastRowNumber[gridName] + ")");
+                }
                 sg.utls.showMessage(_lastErrorResult[gridName].message);
             });
             return;

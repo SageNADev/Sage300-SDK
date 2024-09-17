@@ -117,470 +117,487 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-
   <data name="BiweeklyEDBiweekly" xml:space="preserve">
-    <value>Biweekly E/D - Biweekly</value>
+    <value>G/R aux 2 semaines - Aux 2 semaines</value>
   </data>
   <data name="WeeklyED22Periods" xml:space="preserve">
-    <value>22 Per Year</value>
+    <value>22 par an</value>
   </data>
   <data name="Selection" xml:space="preserve">
-    <value>Selection</value>
+    <value>Sélection</value>
   </data>
   <data name="SemimonthlyEDMonthly" xml:space="preserve">
-    <value>Semimonthly E/D - Monthly</value>
+    <value>G/R bimensuel - Mensuelle</value>
   </data>
   <data name="QuarterlyEDQuarterly" xml:space="preserve">
-    <value>Quarterly E/D - Quarterly</value>
+    <value>G/R trimestriel - Trimestrielle</value>
   </data>
   <data name="EndingClass4" xml:space="preserve">
-    <value>To Class 4</value>
+    <value>À classe 4</value>
   </data>
   <data name="PayrollRunDate" xml:space="preserve">
-    <value>Payroll Run Date</value>
+    <value>Date de paie</value>
   </data>
   <data name="EmpDaily" xml:space="preserve">
-    <value>Emp Daily</value>
+    <value>Empl.- Quotidienne</value>
   </data>
   <data name="Num13PeriodsED13Periods" xml:space="preserve">
-    <value>13 Periods E/D - 13 Periods</value>
+    <value>G/R 13 périodes - 13 périodes</value>
   </data>
   <data name="BiweeklyED22Periods" xml:space="preserve">
-    <value>Biweekly E/D - 22 Periods</value>
+    <value>G/R aux 2 semaines - 22 périodes</value>
   </data>
   <data name="DailyED10Periods" xml:space="preserve">
-    <value>10 Per Year</value>
+    <value>10 par an</value>
   </data>
   <data name="Num10PeriodsED10Periods" xml:space="preserve">
-    <value>10 Periods E/D - 10 Periods</value>
+    <value>G/R 10 périodes - 10 périodes</value>
   </data>
   <data name="EmpMonthly" xml:space="preserve">
-    <value>Emp Monthly</value>
+    <value>Empl.- Mensuelle</value>
   </data>
   <data name="EndingEmployee" xml:space="preserve">
-    <value>To Employee</value>
+    <value>À l'employé</value>
   </data>
   <data name="BeginningClass1" xml:space="preserve">
-    <value>From Class 1</value>
+    <value>De classe 1</value>
   </data>
   <data name="SemimonthlyPeriodStartDate" xml:space="preserve">
-    <value>Semimonthly</value>
+    <value>Bimensuelle</value>
   </data>
   <data name="DailyEDQuarterly" xml:space="preserve">
-    <value>Quarterly</value>
+    <value>Trimestrielle</value>
   </data>
   <data name="Emp10Periods" xml:space="preserve">
-    <value>Emp 10 Periods</value>
+    <value>Empl.- 10 périodes</value>
   </data>
   <data name="StartDates" xml:space="preserve">
-    <value>Start Dates</value>
+    <value>Dates de début</value>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>Calculate Payroll</value>
+    <value>Calculer la paie</value>
   </data>
   <data name="EmpSemimonthly" xml:space="preserve">
-    <value>Emp Semimonthly</value>
+    <value>Empl.- Bimensuelle</value>
   </data>
   <data name="BeginningClass3" xml:space="preserve">
-    <value>From Class 3</value>
+    <value>De classe 3</value>
   </data>
   <data name="Emp22Periods" xml:space="preserve">
-    <value>Emp 22 Periods</value>
+    <value>Empl.- 22 périodes</value>
   </data>
   <data name="Num22PeriodsEDQuarterly" xml:space="preserve">
-    <value>22 Periods E/D - Quarterly</value>
+    <value>G/R 22 périodes - Trimestrielle</value>
   </data>
   <data name="Num13PeriodsEDQuarterly" xml:space="preserve">
-    <value>13 Periods E/D - Quarterly</value>
+    <value>G/R 13 périodes - Trimestrielle</value>
   </data>
   <data name="EmpWeekly" xml:space="preserve">
-    <value>Emp Weekly</value>
+    <value>Empl.- Hebdomadaire</value>
   </data>
-  <data name="IgnoreNegativeChecks" xml:space="preserve">
-    <value>Ignore Negative Checks</value>
+  <data name="IgnoreNegativeCheques" xml:space="preserve">
+    <value>Ignorer les chèques négatifs</value>
   </data>
   <data name="SelectionList" xml:space="preserve">
-    <value>Selection List</value>
+    <value>Liste de sélection</value>
   </data>
   <data name="Num13PeriodsPeriodStartDate" xml:space="preserve">
-    <value>13 Pay Periods</value>
+    <value>13 périodes de paie</value>
   </data>
   <data name="MonthlyPeriodStartDate" xml:space="preserve">
-    <value>Monthly</value>
+    <value>Mensuelle</value>
   </data>
   <data name="Num10PeriodsPeriodStartDate" xml:space="preserve">
-    <value>10 Pay Periods</value>
+    <value>10 périodes de paie</value>
   </data>
   <data name="QuarterlyPeriodStartDate" xml:space="preserve">
-    <value>Quarterly</value>
+    <value>Trimestrielle</value>
   </data>
   <data name="CalculationOption" xml:space="preserve">
-    <value>Process</value>
+    <value>Traiter</value>
   </data>
   <data name="Num22PeriodsED13Periods" xml:space="preserve">
-    <value>22 Periods E/D - 13 Periods</value>
+    <value>G/R 22 périodes - 13 périodes</value>
   </data>
   <data name="OptionalFields" xml:space="preserve">
-    <value>Optional Fields</value>
+    <value>Champs optionnels</value>
   </data>
   <data name="AllChecks" xml:space="preserve">
-    <value>All Checks</value>
+    <value>Tous les chèques</value>
   </data>
   <data name="Num13PeriodsED10Periods" xml:space="preserve">
-    <value>13 Periods E/D - 10 Periods</value>
+    <value>G/R 13 périodes - 10 périodes</value>
   </data>
   <data name="DailyEDFrequency" xml:space="preserve">
-    <value>Frequency</value>
+    <value>Fréquence</value>
   </data>
   <data name="DailyEDPay" xml:space="preserve">
-    <value>Pay?</value>
+    <value>Payer?</value>
   </data>
   <data name="DailyEDDaily" xml:space="preserve">
-    <value>Daily</value>
+    <value>Quotidienne</value>
   </data>
   <data name="DailyEDSemimonthly" xml:space="preserve">
-    <value>Semimonthly</value>
+    <value>Bimensuelle</value>
   </data>
   <data name="WeeklyEDSemimonthly" xml:space="preserve">
-    <value>Semimonthly</value>
+    <value>Bimensuelle</value>
   </data>
   <data name="Emp13Periods" xml:space="preserve">
-    <value>Emp 13 Periods</value>
+    <value>Empl.- 13 périodes</value>
   </data>
   <data name="TaxVersion" xml:space="preserve">
-    <value>Tax Version</value>
+    <value>Version de l'impôt</value>
   </data>
   <data name="EndingClass1" xml:space="preserve">
-    <value>To Class 1</value>
+    <value>À classe 1</value>
   </data>
-  <data name="IgnoreZeroAndNegativeChecks" xml:space="preserve">
-    <value>Ignore Zero and Negative Checks</value>
+  <data name="IgnoreZeroAndNegativeCheques" xml:space="preserve">
+    <value>Ignorer les chèques nuls et négatifs</value>
   </data>
   <data name="WeeklyEDBiweekly" xml:space="preserve">
-    <value>Biweekly</value>
+    <value>Aux 2 semaines</value>
   </data>
   <data name="BiweeklyED10Periods" xml:space="preserve">
-    <value>Biweekly E/D - 10 Periods</value>
+    <value>G/R aux 2 semaines - 10 périodes</value>
   </data>
   <data name="DeleteCurrentActivity" xml:space="preserve">
-    <value>Delete Current Activity</value>
+    <value>Supprimer calcul en cours</value>
   </data>
   <data name="DailyEDMonthly" xml:space="preserve">
-    <value>Monthly</value>
+    <value>Mensuelle</value>
   </data>
   <data name="SemimonthlyED13Periods" xml:space="preserve">
-    <value>Semimonthly E/D - 13 Periods</value>
+    <value>G/R bimensuel - 13 périodes</value>
   </data>
   <data name="ProcessCommandCode" xml:space="preserve">
-    <value>Process Command Code</value>
+    <value>Code traitement opération</value>
   </data>
   <data name="SemimonthlyEDSemimonthly" xml:space="preserve">
-    <value>Semimonthly E/D - Semimonthly</value>
+    <value>G/R bimensuel - Bimensuelle</value>
   </data>
   <data name="BiweeklyED13Periods" xml:space="preserve">
-    <value>Biweekly E/D - 13 Periods</value>
+    <value>G/R aux 2 semaines - 13 périodes</value>
   </data>
   <data name="DailyEDBiweekly" xml:space="preserve">
-    <value>Biweekly</value>
+    <value>Aux 2 semaines</value>
   </data>
   <data name="EndingClass3" xml:space="preserve">
-    <value>To Class 3</value>
+    <value>À classe 3</value>
   </data>
   <data name="DailyEDWeekly" xml:space="preserve">
-    <value>Weekly</value>
+    <value>Hebdomadaire</value>
   </data>
   <data name="WeeklyED10Periods" xml:space="preserve">
-    <value>10 Per Year</value>
+    <value>10 par an</value>
   </data>
   <data name="BeginningEmployee" xml:space="preserve">
-    <value>From Employee</value>
+    <value>De l’employé</value>
   </data>
   <data name="Frequency" xml:space="preserve">
-    <value>Frequency</value>
+    <value>Fréquence</value>
   </data>
   <data name="Num22PeriodsED22Periods" xml:space="preserve">
-    <value>22 Periods E/D - 22 Periods</value>
+    <value>G/R 22 périodes - 22 périodes</value>
   </data>
   <data name="WeeklyEDQuarterly" xml:space="preserve">
-    <value>Quarterly</value>
+    <value>Trimestrielle</value>
   </data>
   <data name="DailyED22Periods" xml:space="preserve">
-    <value>22 Per Year</value>
+    <value>22 par an</value>
   </data>
   <data name="BiweeklyEDQuarterly" xml:space="preserve">
-    <value>Biweekly E/D - Quarterly</value>
+    <value>G/R aux 2 semaines - Trimestrielle</value>
   </data>
   <data name="Num22PeriodsPeriodStartDate" xml:space="preserve">
-    <value>22 Pay Periods</value>
+    <value>22 périodes de paie</value>
   </data>
   <data name="PayrollPeriod" xml:space="preserve">
-    <value>Pay Period</value>
+    <value>Période de paie</value>
   </data>
   <data name="PeriodEndDate" xml:space="preserve">
-    <value>Pay Period End Date</value>
+    <value>Date fin de période de paie</value>
   </data>
   <data name="AdvanceOnly" xml:space="preserve">
-    <value>Advance Only</value>
+    <value>Avance seulement</value>
   </data>
   <data name="MonthlyPeriodsEDQuarterly" xml:space="preserve">
-    <value>Monthly Periods E/D - Quarterly</value>
+    <value>G/R mensuel - Trimestrielle</value>
   </data>
   <data name="MonthlyPeriodsED10Periods" xml:space="preserve">
-    <value>Monthly Periods E/D - 10 Periods</value>
+    <value>G/R mensuel - 10 périodes</value>
   </data>
   <data name="WeeklyEDMonthly" xml:space="preserve">
-    <value>Monthly</value>
+    <value>Mensuelle</value>
   </data>
   <data name="WeeklyPeriodStartDate" xml:space="preserve">
-    <value>Weekly</value>
+    <value>Hebdomadaire</value>
   </data>
   <data name="SemimonthlyEDQuarterly" xml:space="preserve">
-    <value>Semimonthly E/D - Quarterly</value>
+    <value>G/R bimensuel - Trimestrielle</value>
   </data>
   <data name="Num10PeriodsEDQuarterly" xml:space="preserve">
-    <value>10 Periods E/D - Quarterly</value>
+    <value>G/R 10 périodes - Trimestrielle</value>
   </data>
   <data name="MonthlyPeriodsEDMonthly" xml:space="preserve">
-    <value>Monthly Periods E/D - Monthly</value>
+    <value>G/R mensuel - Mensuelle</value>
   </data>
   <data name="BiweeklyPeriodStartDate" xml:space="preserve">
-    <value>Biweekly</value>
+    <value>Aux 2 semaines</value>
   </data>
   <data name="BeginningClass4" xml:space="preserve">
-    <value>From Class 4</value>
+    <value>De classe 4</value>
   </data>
   <data name="Num13PeriodsEDMonthly" xml:space="preserve">
-    <value>13 Periods E/D - Monthly</value>
+    <value>G/R 13 périodes - Mensuelle</value>
   </data>
   <data name="DailyPeriodStartDate" xml:space="preserve">
-    <value>Daily</value>
+    <value>Quotidienne</value>
   </data>
   <data name="Num22PeriodsEDMonthly" xml:space="preserve">
-    <value>22 Periods E/D - Monthly</value>
+    <value>G/R 22 périodes - Mensuelle</value>
   </data>
   <data name="DoEFTCalculation" xml:space="preserve">
-    <value>Generate EFT Checks</value>
+    <value>Créer chèques EFT</value>
   </data>
   <data name="NumberOfOptionalFields" xml:space="preserve">
-    <value>Number of Optional Fields</value>
+    <value>Nombre de champs optionnels</value>
   </data>
   <data name="BeginningClass2" xml:space="preserve">
-    <value>From Class 2</value>
+    <value>De classe 2</value>
   </data>
   <data name="EmpQuarterly" xml:space="preserve">
-    <value>Emp Quarterly</value>
+    <value>Empl.- Trimestrielle</value>
   </data>
   <data name="BiweeklyEDMonthly" xml:space="preserve">
-    <value>Biweekly E/D - Monthly</value>
+    <value>G/R aux 2 semaines - Mensuelle</value>
   </data>
   <data name="CalculatePayroll" xml:space="preserve">
-    <value>Calculate Payroll</value>
+    <value>Calculer la paie</value>
   </data>
   <data name="WeeklyED13Periods" xml:space="preserve">
-    <value>13 Per Year</value>
+    <value>13 par an</value>
   </data>
   <data name="BiweeklyEDSemimonthly" xml:space="preserve">
-    <value>Biweekly E/D - Semimonthly</value>
+    <value>G/R aux 2 semaines - Bimensuelle</value>
   </data>
   <data name="DailyED13Periods" xml:space="preserve">
-    <value>13 Per Year</value>
+    <value>13 par an</value>
   </data>
   <data name="Num22PeriodsED10Periods" xml:space="preserve">
-    <value>22 Periods E/D - 10 Periods</value>
+    <value>G/R 22 périodes - 10 périodes</value>
   </data>
   <data name="WeeklyEDWeekly" xml:space="preserve">
-    <value>Weekly</value>
+    <value>Hebdomadaire</value>
   </data>
   <data name="SemimonthlyED10Periods" xml:space="preserve">
-    <value>Semimonthly E/D - 10 Periods</value>
+    <value>G/R bimensuel - 10 périodes</value>
   </data>
   <data name="DummyField" xml:space="preserve">
-    <value>Dummy Field</value>
+    <value>Champ factice</value>
   </data>
   <data name="InsertOptionalFields" xml:space="preserve">
-    <value>Insert Optional Fields</value>
+    <value>Insérer champs optionnels</value>
   </data>
   <data name="AdvancesOnly" xml:space="preserve">
-    <value>Advances Only</value>
+    <value>Avances seulement</value>
   </data>
   <data name="SemimonthlyED22Periods" xml:space="preserve">
-    <value>Semimonthly E/D - 22 Periods</value>
+    <value>G/R bimensuel - 22 périodes</value>
   </data>
   <data name="CheckDate" xml:space="preserve">
-    <value>Check Date</value>
+    <value>Date du chèque</value>
   </data>
   <data name="EndingClass2" xml:space="preserve">
-    <value>To Class 2</value>
+    <value>À classe 2</value>
   </data>
   <data name="EmpBiweekly" xml:space="preserve">
-    <value>Emp Biweekly</value>
+    <value>Empl.- Aux 2 semaines</value>
   </data>
   <data name="DeleteAll" xml:space="preserve">
-    <value>Delete All</value>
+    <value>Supprimer tout</value>
   </data>
   <data name="Process" xml:space="preserve">
-    <value>Process</value>
+    <value>Traiter</value>
   </data>
   <data name="IncludeEarningFrequencies" xml:space="preserve">
-    <value>Include Earnings/Deductions with these Frequencies</value>
+    <value>Inclure les gains/retenues avec ces fréquences</value>
   </data>
   <data name="PayEmployeeFrequencies" xml:space="preserve">
-    <value>Pay Employees in these Frequencies</value>
+    <value>Payer les employés selon ces fréquences</value>
   </data>
   <data name="EmployeesInclude" xml:space="preserve">
-    <value>Include</value>
+    <value>Inclure</value>
   </data>
   <data name="PayrollClasses" xml:space="preserve">
     <value>Classes</value>
   </data>
   <data name="PayPeriodStartDate" xml:space="preserve">
-    <value>Pay Period Start Date</value>
+    <value>Date début de période</value>
   </data>
   <data name="RestoreDefaults" xml:space="preserve">
-    <value>Clear Saved Settings</value>
+    <value>Effacer paramètres enregistrés</value>
   </data>
   <data name="SaveAsDefaults" xml:space="preserve">
-    <value>Save Settings As Defaults</value>
+    <value>Enregistrer paramètres comme implicites</value>
   </data>
   <data name="ClearFailedMessage" xml:space="preserve">
-    <value>Failed clear preferences</value>
+    <value>Les préférences n’ont pas été effacées</value>
   </data>
   <data name="WriteFailedMessage" xml:space="preserve">
-    <value>Failed save preferences</value>
+    <value>L’enregistrement des préférences a échoué</value>
   </data>
   <data name="ProcessFailedMessage" xml:space="preserve">
-    <value>Failed to Calculate Payroll</value>
+    <value>Le calcul de la paie a échoué</value>
   </data>
   <data name="DeleteAllFailedMessage" xml:space="preserve">
-    <value>Failed to delete old Calculate Payroll data</value>
+    <value>La suppression des anciennes données de calcul a échoué</value>
   </data>
   <data name="DeleteAllConfirmation" xml:space="preserve">
-    <value>Do you want to delete all payroll that has been processed but not posted?</value>
+    <value>Voulez-vous supprimer toute paie ayant été traitée mais qui n'a pas été reportée?</value>
   </data>
   <data name="Erase" xml:space="preserve">
-    <value>Erase</value>
+    <value>Effacer</value>
   </data>
   <data name="Merge" xml:space="preserve">
-    <value>Merge</value>
+    <value>Fusionner</value>
   </data>
   <data name="Popup1Section1Item1" xml:space="preserve">
-    <value>Erase unposted activity for the specified pay period end date and for any later pay period end dates.</value>
+    <value>Effacer le calcul de paie non reporté pour la date de fin de période spécifiée et autres dates de fin de périodes futures.</value>
   </data>
   <data name="Popup1Section1Item2" xml:space="preserve">
-    <value>Calculate the current payroll run.</value>
+    <value>Calculer le traitement de la paie en cours.</value>
   </data>
   <data name="Popup1Section2Item1" xml:space="preserve">
-    <value>Erase unposted activity for the specified pay period end date and for any later pay period end dates ONLY for those employees in the current payroll run.</value>
+    <value>Effacer le calcul de paie non reporté pour la date de fin de période spécifiée et autres dates de fin de périodes futures SEULEMENT pour les employés inclus dans la période la paie courante.</value>
   </data>
   <data name="Popup1Section2Item2" xml:space="preserve">
-    <value>Calculate the current payroll run and merge the results with the remaining unposted activity.</value>
+    <value>Calculer la paie courante et fusionner les résultats avec le reste de la paie non reportée.</value>
   </data>
   <data name="Popup1Title" xml:space="preserve">
-    <value>You have entered a pay period end date for which unposted payroll activity already exists.</value>
+    <value>Vous avez saisi une date de fin de période pour laquelle un calcul de paie non reporté existe déjà.</value>
   </data>
   <data name="PopupSectionTitle1" xml:space="preserve">
-    <value>Select Erase to:</value>
+    <value>Sélectionner Effacer pour :</value>
   </data>
   <data name="PopupSectionTitle2" xml:space="preserve">
-    <value>Select Merge to:</value>
+    <value>Sélectionner Fusionner pour :</value>
   </data>
   <data name="PopupSectionTitle3" xml:space="preserve">
-    <value>Select Cancel to return to the Calculate Payroll screen.</value>
+    <value>Sélectionner Annuler pour retourner à l’écran Calculer la paie.</value>
   </data>
   <data name="Popup2Section1Item1" xml:space="preserve">
-    <value>Erase unposted activity for the future pay period end dates.</value>
+    <value>Effacer le calcul non reporté pour les dates de fin de périodes futures.</value>
   </data>
   <data name="Popup2Section2Item1" xml:space="preserve">
-    <value>Erase unposted activity for the future pay period end dates ONLY for those employees included in the current payroll run.</value>
+    <value>Effacer le calcul non reporté pour les dates de fin de périodes futures SEULEMENT pour les employés inclus dans la période la paie courante.</value>
   </data>
   <data name="Popup2Title" xml:space="preserve">
-    <value>Unposted payroll activity exists for a pay period end date later than the pay period end date you entered for the current payroll run.</value>
+    <value>Il existe un calcul de paie non reporté pour une date de fin de période postérieure à celle que vous avez indiqué pour la période de paie courante.</value>
   </data>
   <data name="ClearSuccessMessage" xml:space="preserve">
-    <value>Preferences cleared</value>
+    <value>Préférences effacées</value>
   </data>
   <data name="WriteSuccessMessage" xml:space="preserve">
-    <value>Preferences saved</value>
+    <value>Préférences enregistrées</value>
   </data>
   <data name="EraseFailedMessage" xml:space="preserve">
-    <value>Failed to erase unposted activity</value>
+    <value>Le calcul non reporté n’a pas été effacé</value>
   </data>
   <data name="MergeFailedMessage" xml:space="preserve">
-    <value>Failed to merge unposted activity</value>
+    <value>Le calcul non reporté n’a pas été fusionné</value>
   </data>
   <data name="PrintConfirmation" xml:space="preserve">
-    <value>Do you want to print?</value>
+    <value>Voulez-vous imprimer?</value>
   </data>
   <data name="PayrollExceptions" xml:space="preserve">
-    <value>Payroll Processing Exceptions</value>
+    <value>Exceptions de traitement de paie</value>
   </data>
   <data name="PreCheckRegister" xml:space="preserve">
-    <value>Pre-Check Payroll Register</value>
+    <value>Registre préalable des chèques de paie</value>
   </data>
   <data name="ProcessComplete" xml:space="preserve">
-    <value>Processing completed.</value>
+    <value>Traitement terminé.</value>
   </data>
   <data name="RundateFailedMessage" xml:space="preserve">
-    <value>Failed to update latest payroll run date</value>
+    <value>La date du dernier traitement de paie n’a pas été mise à jour</value>
   </data>
   <data name="ReturncodeFailedMessage" xml:space="preserve">
-    <value>Failed to retrieve return code from last Payroll Calculation run.</value>
+    <value>Impossible de récupérer le code de retour du dernier traitement de la paie.</value>
   </data>
   <data name="AllowBlank" xml:space="preserve">
-    <value>Allow Blank</value>
+    <value>Autoriser les blancs</value>
   </data>
   <data name="AmountValue" xml:space="preserve">
-    <value>Amount Value</value>
+    <value>Valeur montant</value>
   </data>
   <data name="DateValue" xml:space="preserve">
-    <value>Date Value</value>
+    <value>Valeur date</value>
   </data>
   <data name="Decimals" xml:space="preserve">
-    <value>Decimals</value>
+    <value>Décimales</value>
   </data>
   <data name="IntegerValue" xml:space="preserve">
-    <value>Integer Value</value>
+    <value>Valeur nombre entier</value>
   </data>
   <data name="Length" xml:space="preserve">
-    <value>Length</value>
+    <value>Longueur</value>
   </data>
   <data name="Location" xml:space="preserve">
-    <value>Location</value>
+    <value>Emplacement</value>
   </data>
   <data name="NumberValue" xml:space="preserve">
-    <value>Number Value</value>
+    <value>Valeur nombre</value>
   </data>
   <data name="OptionalField" xml:space="preserve">
-    <value>Optional Field</value>
+    <value>Champ optionnel</value>
   </data>
   <data name="OptionalFieldDescription" xml:space="preserve">
-    <value>Optional Field Description</value>
+    <value>Description du champ optionnel</value>
   </data>
   <data name="TextValue" xml:space="preserve">
-    <value>Text Value</value>
+    <value>Valeur texte</value>
   </data>
   <data name="TimeValue" xml:space="preserve">
-    <value>Time Value</value>
+    <value>Valeur heure</value>
   </data>
   <data name="Type" xml:space="preserve">
     <value>Type</value>
   </data>
   <data name="TypedValueFieldIndex" xml:space="preserve">
-    <value>Field Index</value>
+    <value>Index du champ</value>
   </data>
   <data name="Validate" xml:space="preserve">
-    <value>Validate</value>
+    <value>Valider</value>
   </data>
   <data name="Value" xml:space="preserve">
-    <value>Value</value>
+    <value>Valeur</value>
   </data>
   <data name="ValueDescription" xml:space="preserve">
-    <value>Value Description</value>
+    <value>Description de la valeur</value>
   </data>
   <data name="ValueSet" xml:space="preserve">
-    <value>Value Set</value>
+    <value>Valeur définie</value>
   </data>
   <data name="YesNoValue" xml:space="preserve">
-    <value>Yes or No Value</value>
+    <value>Valeur Oui ou Non</value>
+  </data>
+  <data name="PreChequeRegister" xml:space="preserve">
+    <value>Registre préalable des chèques de paie</value>
+  </data>
+  <data name="AllCheques" xml:space="preserve">
+    <value>Tous les chèques</value>
+  </data>
+  <data name="IgnoreNegativeChecks" xml:space="preserve">
+    <value>Ignorer les chèques négatifs</value>
+  </data>
+  <data name="IgnoreZeroAndNegativeChecks" xml:space="preserve">
+    <value>Ignorer chèques nuls et négatifs</value>
+  </data>
+  <data name="ChequeDate" xml:space="preserve">
+    <value>Date du chèque</value>
+  </data>
+  <data name="DoEFTCheques" xml:space="preserve">
+    <value>Créer des chèques EFT</value>
   </data>
 </root>

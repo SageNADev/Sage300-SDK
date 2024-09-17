@@ -475,6 +475,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Optional field {0} does not exist..
+        /// </summary>
+        public static string OptionalFieldValidation {
+            get {
+                return ResourceManager.GetString("OptionalFieldValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overtime.
+        /// </summary>
+        public static string Overtime {
+            get {
+                return ResourceManager.GetString("Overtime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Overtime Expense.
         /// </summary>
         public static string OvertimeExpense {

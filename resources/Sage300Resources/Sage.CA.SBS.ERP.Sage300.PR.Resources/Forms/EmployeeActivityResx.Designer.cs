@@ -1015,6 +1015,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From Cheque Date.
+        /// </summary>
+        public static string FromChequeDate {
+            get {
+                return ResourceManager.GetString("FromChequeDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Date.
         /// </summary>
         public static string FromDate {
@@ -1785,6 +1794,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string ToCheckDate {
             get {
                 return ResourceManager.GetString("ToCheckDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Cheque Date.
+        /// </summary>
+        public static string ToChequeDate {
+            get {
+                return ResourceManager.GetString("ToChequeDate", resourceCulture);
             }
         }
         

@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="bankTextboxValidation" xml:space="preserve">
+    <value>Invalid input. Company EFT Bank cannot be blank.</value>
+  </data>
+  <data name="CalculationSequence" xml:space="preserve">
+    <value>Calculation Sequence</value>
+  </data>
+  <data name="California" xml:space="preserve">
+    <value>CA - California</value>
+  </data>
+  <data name="CancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CaseState" xml:space="preserve">
+    <value>Case State</value>
+  </data>
+  <data name="CheckDateErrorMsg" xml:space="preserve">
+    <value>The Check Date From value cannot be greater than the To value.</value>
+  </data>
+  <data name="ChildSupportEFT" xml:space="preserve">
+    <value>Child Support EFT</value>
+  </data>
+  <data name="CompanyEFTBank" xml:space="preserve">
+    <value>Company EFT Bank</value>
+  </data>
+  <data name="Connecticut" xml:space="preserve">
+    <value>CT - Connecticut</value>
+  </data>
+  <data name="DefaultFundsAvailableDate" xml:space="preserve">
+    <value>Default Funds Available Date</value>
+  </data>
+  <data name="DefFundsAvailableDateErrorMsg" xml:space="preserve">
+    <value>Invalid date at Default Funds Available Date.</value>
+  </data>
+  <data name="DelaWare" xml:space="preserve">
+    <value>DE - DelaWare</value>
+  </data>
+  <data name="DirectDepositEFT" xml:space="preserve">
+    <value>Direct Deposit EFT</value>
+  </data>
+  <data name="EffectiveEntryDate" xml:space="preserve">
+    <value>Effective Entry Date</value>
+  </data>
+  <data name="EFTBankErrorMsg" xml:space="preserve">
+    <value>Invalid input. Company EFT Bank does not exist</value>
+  </data>
+  <data name="EFTChecksOnly" xml:space="preserve">
+    <value>EFT Checks Only</value>
+  </data>
+  <data name="EFTChequesOnly" xml:space="preserve">
+    <value>EFT Cheques Only</value>
+  </data>
+  <data name="EFTFileType" xml:space="preserve">
+    <value>EFT File Type</value>
+  </data>
+  <data name="EFTRunSequence" xml:space="preserve">
+    <value>EFT Run Sequence</value>
+  </data>
+  <data name="eftRunTitle" xml:space="preserve">
+    <value>Payroll Generate EFT File</value>
+  </data>
+  <data name="EFTType" xml:space="preserve">
+    <value>EFT Type</value>
+  </data>
+  <data name="EmployeeErrorMessage" xml:space="preserve">
+    <value>The Employee From value cannot be greater than the To value.</value>
+  </data>
+  <data name="EntityEFTFile" xml:space="preserve">
+    <value>Payroll Generate EFT File </value>
+  </data>
+  <data name="EntryDescription" xml:space="preserve">
+    <value>Entry Description</value>
+  </data>
+  <data name="EntryDescriptionErrorMsg" xml:space="preserve">
+    <value>Invalid input. Entry Description cannot be blank.</value>
+  </data>
+  <data name="FileCreationDate" xml:space="preserve">
+    <value>File Creation Date</value>
+  </data>
+  <data name="FileCreationDateErrorMsg" xml:space="preserve">
+    <value>Invalid date at File Creation Date.</value>
+  </data>
+  <data name="FileCreationNo" xml:space="preserve">
+    <value>File Creation Number</value>
+  </data>
+  <data name="FileCreationNoErrorMsg" xml:space="preserve">
+    <value>File Creation Number must be other than 0000.</value>
+  </data>
+  <data name="FileErrorMessage" xml:space="preserve">
+    <value>File Cannot be opened.</value>
+  </data>
+  <data name="FileIdModifier" xml:space="preserve">
+    <value>File ID Modifier</value>
+  </data>
+  <data name="FileIdModifierErrorMsg" xml:space="preserve">
+    <value>Invalid input. File ID Modifier cannot be blank.</value>
+  </data>
+  <data name="Florida" xml:space="preserve">
+    <value>FL - Florida</value>
+  </data>
+  <data name="FromCheckDate" xml:space="preserve">
+    <value>From Check Date </value>
+  </data>
+  <data name="FromChequeDate" xml:space="preserve">
+    <value>From Cheque Date </value>
+  </data>
+  <data name="FromEmployee" xml:space="preserve">
+    <value>From Employee </value>
+  </data>
+  <data name="FromPeriodEndDate" xml:space="preserve">
+    <value>From Period End Date </value>
+  </data>
+  <data name="FromPeriodEndDateErrorMsg" xml:space="preserve">
+    <value>Invalid date at From Check Date</value>
+  </data>
+  <data name="Georgia" xml:space="preserve">
+    <value>GA - Georgia</value>
+  </data>
+  <data name="Illnois" xml:space="preserve">
+    <value>IL - Illnois</value>
+  </data>
+  <data name="Indiana" xml:space="preserve">
+    <value>IN - Indiana</value>
+  </data>
+  <data name="InvalidPeriodEndDate" xml:space="preserve">
+    <value>There is nothing to post on the date entered</value>
+  </data>
+  <data name="Iowa" xml:space="preserve">
+    <value>IA - Iowa</value>
+  </data>
+  <data name="LocalFilePath" xml:space="preserve">
+    <value>Local File Path</value>
+  </data>
+  <data name="LocalFilePathErrorMsg" xml:space="preserve">
+    <value>Invalid directory path or path cannot be accessed.</value>
+  </data>
+  <data name="Massachusetts" xml:space="preserve">
+    <value>MA - Massachusetts</value>
+  </data>
+  <data name="Mississippi" xml:space="preserve">
+    <value>MS - Mississippi</value>
+  </data>
+  <data name="Nebraska" xml:space="preserve">
+    <value>NE - Nebraska</value>
+  </data>
+  <data name="Nevada" xml:space="preserve">
+    <value>NV - Nevada</value>
+  </data>
+  <data name="NewJersey" xml:space="preserve">
+    <value>NJ - New Jersey</value>
+  </data>
+  <data name="NewMexico" xml:space="preserve">
+    <value>NM - New Mexico</value>
+  </data>
+  <data name="NoChecksToPrintOrPost" xml:space="preserve">
+    <value>No Checks To Print Or Post</value>
+  </data>
+  <data name="NonEFTChecksOnly" xml:space="preserve">
+    <value>Non - EFT Checks Only</value>
+  </data>
+  <data name="NonEFTChequessOnly" xml:space="preserve">
+    <value>Non - EFT Cheques Only</value>
+  </data>
+  <data name="NorthDakota" xml:space="preserve">
+    <value>ND - North Dakota</value>
+  </data>
+  <data name="Ohio" xml:space="preserve">
+    <value>OH - Ohio</value>
+  </data>
+  <data name="OKButton" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Oklahoma" xml:space="preserve">
+    <value>OK - Oklahoma</value>
+  </data>
+  <data name="Oregon" xml:space="preserve">
+    <value>OR - Oregon</value>
+  </data>
+  <data name="Orignal" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="Pennsylvania" xml:space="preserve">
+    <value>PA - Pennsylvania</value>
+  </data>
+  <data name="PeriodEndDateErrorMsg" xml:space="preserve">
+    <value>The Period End Date From value cannot be greater than the To value.</value>
+  </data>
+  <data name="popupContent" xml:space="preserve">
+    <value>The file {0} already exists. Before proceeding,you may wish to Cancel and backup the file. Overwrite the existing file ?</value>
+  </data>
+  <data name="PopUpWindowEFTtextMsg" xml:space="preserve">
+    <value>EFT File Generation Completed.</value>
+  </data>
+  <data name="PopUpWindowTitle" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="PreNotification" xml:space="preserve">
+    <value>Pre-notification</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print/Post</value>
+  </data>
+  <data name="Process" xml:space="preserve">
+    <value>Process</value>
+  </data>
+  <data name="RegeneratePreviousFilesMessage" xml:space="preserve">
+    <value>By selecting the Regenerate Previous Files option, all previously generated Child Support EFT files with the specified criteria will be included in the file. Choose Yes to continue or No to cancel.</value>
+  </data>
+  <data name="RegenratePreviousCSEFT" xml:space="preserve">
+    <value>Regenerate Previous Files</value>
+  </data>
+  <data name="Replacement" xml:space="preserve">
+    <value>Replacement</value>
+  </data>
+  <data name="ReplacementErrorMessage" xml:space="preserve">
+    <value>There are no original files to be replaced.</value>
+  </data>
+  <data name="RhodeIsland" xml:space="preserve">
+    <value>RI - Rhode Island</value>
+  </data>
+  <data name="RunSequenceErrorMsg" xml:space="preserve">
+    <value>Invalid input. The Run Sequence is not applicable for Direct Deposit EFT.</value>
+  </data>
+  <data name="RunSequenceInvalidErrorMsg" xml:space="preserve">
+    <value>Run sequence {0} does not exist.</value>
+  </data>
+  <data name="SelectionList" xml:space="preserve">
+    <value>Selection List</value>
+  </data>
+  <data name="SelectionListErrorMsg" xml:space="preserve">
+    <value>Invalid input. The Selection List does not exist.</value>
+  </data>
+  <data name="SouthDakota" xml:space="preserve">
+    <value>SD - South Dakota</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="Texas" xml:space="preserve">
+    <value>TX - Texas</value>
+  </data>
+  <data name="ToCheckDate" xml:space="preserve">
+    <value>To Check Date </value>
+  </data>
+  <data name="ToCheckDateErrorMsg" xml:space="preserve">
+    <value>Invalid date at To Check Date</value>
+  </data>
+  <data name="ToChequeDate" xml:space="preserve">
+    <value>To Cheque Date </value>
+  </data>
+  <data name="ToEmployee" xml:space="preserve">
+    <value>To Employee </value>
+  </data>
+  <data name="ToEmployeeErrorMsg" xml:space="preserve">
+    <value>Invalid input. To Employee cannot be blank.</value>
+  </data>
+  <data name="ToPeriodEndDate" xml:space="preserve">
+    <value>To Period End Date </value>
+  </data>
+  <data name="ToPeriodEndDateErrorMsg" xml:space="preserve">
+    <value>Invalid date at To Period End Date.</value>
+  </data>
+  <data name="UseDefaultFundsAvailableDate" xml:space="preserve">
+    <value>Use Default Funds Available Date</value>
+  </data>
+  <data name="UseEmployeeCheckDate" xml:space="preserve">
+    <value>Use Employee Check Date</value>
+  </data>
+  <data name="UseEmployeeChequeDate" xml:space="preserve">
+    <value>Use Employee Cheque Date</value>
+  </data>
+  <data name="Virginia" xml:space="preserve">
+    <value>VA - Virginia</value>
+  </data>
+  <data name="WestVirginia" xml:space="preserve">
+    <value>WV - West Virginia</value>
+  </data>
+  <data name="Wisconsin" xml:space="preserve">
+    <value>WI - Wisconsin</value>
+  </data>
+</root>

@@ -117,133 +117,142 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AllowBlank" xml:space="preserve">
-    <value>Allow Blank</value>
+  <data name="AllChecks" xml:space="preserve">
+    <value>All Checks</value>
   </data>
-  <data name="TypedValueFieldIndex" xml:space="preserve">
-    <value>Typed Value Field Index</value>
+  <data name="AllCheques" xml:space="preserve">
+    <value>Tous les Chèques</value>
   </data>
-  <data name="NumberValue" xml:space="preserve">
-    <value>Number Value</value>
+  <data name="Bank" xml:space="preserve">
+    <value>Banque</value>
   </data>
-  <data name="Value" xml:space="preserve">
-    <value>Value</value>
+  <data name="BankName" xml:space="preserve">
+    <value>Nom de banque</value>
   </data>
-  <data name="General" xml:space="preserve">
-    <value>General</value>
+  <data name="BankTextboxValidation" xml:space="preserve">
+    <value>Entrée invalide. La banque n'est pas définie.</value>
   </data>
-  <data name="OptionalFieldDescription" xml:space="preserve">
-    <value>Optional Field Description</value>
+  <data name="CalculationSequence" xml:space="preserve">
+    <value>Sèquence de calcul</value>
   </data>
-  <data name="No" xml:space="preserve">
-    <value>No</value>
+  <data name="CheckDate" xml:space="preserve">
+    <value>Check Date</value>
   </data>
-  <data name="Length" xml:space="preserve">
-    <value>Length</value>
+  <data name="CheckMessage1" xml:space="preserve">
+    <value>Message Ligne 1</value>
   </data>
-  <data name="Decimals" xml:space="preserve">
-    <value>Decimals</value>
+  <data name="CheckMessage2" xml:space="preserve">
+    <value>Message Ligne 2</value>
   </data>
-  <data name="AmountValue" xml:space="preserve">
-    <value>Amount Value</value>
+  <data name="CheckStockCodes" xml:space="preserve">
+    <value>Check Stock Code</value>
   </data>
-  <data name="Entity" xml:space="preserve">
-    <value>PR EmployeeOptionalFieldValue</value>
+  <data name="CheckStockDescription" xml:space="preserve">
+    <value>Check Stock Description</value>
   </data>
-  <data name="Date" xml:space="preserve">
-    <value>Date</value>
+  <data name="ChecksToPost" xml:space="preserve">
+    <value>Checks To Post</value>
   </data>
-  <data name="CostCenter" xml:space="preserve">
-    <value>Cost Center</value>
+  <data name="ChecksToPrintOrPost" xml:space="preserve">
+    <value>Checks To Print Or Post</value>
   </data>
-  <data name="ValueDescription" xml:space="preserve">
-    <value>Value Description</value>
+  <data name="ChequeDate" xml:space="preserve">
+    <value>Date Chèque</value>
   </data>
-  <data name="Comments" xml:space="preserve">
-    <value>Comments</value>
+  <data name="Class" xml:space="preserve">
+    <value>Classe</value>
   </data>
-  <data name="ClassSchedule" xml:space="preserve">
-    <value>Class Schedule</value>
+  <data name="Class1" xml:space="preserve">
+    <value>Classe 1</value>
   </data>
-  <data name="IntegerValue" xml:space="preserve">
-    <value>Integer Value</value>
+  <data name="Class2" xml:space="preserve">
+    <value>Classe 2</value>
   </data>
-  <data name="Other" xml:space="preserve">
-    <value>Other</value>
+  <data name="Class3" xml:space="preserve">
+    <value>Classe 3</value>
   </data>
-  <data name="Validate" xml:space="preserve">
-    <value>Validate</value>
+  <data name="Class4" xml:space="preserve">
+    <value>Classe 4</value>
   </data>
-  <data name="YesNoValue" xml:space="preserve">
-    <value>Yes/No Value</value>
+  <data name="ClassCode" xml:space="preserve">
+    <value>Classe</value>
   </data>
-  <data name="Employee" xml:space="preserve">
-    <value>Employee</value>
+  <data name="DetailLevel" xml:space="preserve">
+    <value>Niveau de détail</value>
   </data>
-  <data name="NotApplicable" xml:space="preserve">
-    <value>Not Applicable</value>
+  <data name="EarnOrDedInFullDetail" xml:space="preserve">
+    <value>gains/retunes en détail</value>
   </data>
-  <data name="YesNo" xml:space="preserve">
-    <value>Yes/No</value>
+  <data name="EarnOrDedSummarizedByTypeAndRate" xml:space="preserve">
+    <value>Sommaire gains/retenues par type &amp; taux</value>
   </data>
-  <data name="Type" xml:space="preserve">
-    <value>Type</value>
+  <data name="EFTChecksOnly" xml:space="preserve">
+    <value>EFT Checks Only</value>
   </data>
-  <data name="WorkLocation" xml:space="preserve">
-    <value>Work Location</value>
+  <data name="EFTChequesOnly" xml:space="preserve">
+    <value>Chèques EFT Seulment</value>
   </data>
-  <data name="Number" xml:space="preserve">
-    <value>Number</value>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Nom de l'employé</value>
   </data>
-  <data name="Time" xml:space="preserve">
-    <value>Time</value>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>N° employé</value>
   </data>
-  <data name="Integer" xml:space="preserve">
-    <value>Integer</value>
+  <data name="EntityPayrollChecks" xml:space="preserve">
+    <value>US Payroll Checks</value>
   </data>
-  <data name="TemplateEmployee" xml:space="preserve">
-    <value>Template Employee</value>
+  <data name="FiscalPeriodYearLocked" xml:space="preserve">
+    <value>La date {0} correspond à la période {1} de l'exercice {2}, qui est verrouillée pour la paie américaine dans le calendrier fiscal des services communs.</value>
   </data>
-  <data name="TimeValue" xml:space="preserve">
-    <value>Time Value</value>
+  <data name="InvalidFiscalPeriodEndDate" xml:space="preserve">
+    <value>Entrée invalide. La date « {0} » n'existe pas dans le calendrier fiscal des services communs.</value>
   </data>
-  <data name="Taxes" xml:space="preserve">
-    <value>Taxes</value>
+  <data name="InvalidPeriodEndDate" xml:space="preserve">
+    <value>Il n'y a rien à poster à la date indiquée</value>
   </data>
-  <data name="TextValue" xml:space="preserve">
-    <value>Text Value</value>
+  <data name="NoChecksToPrintOrPost" xml:space="preserve">
+    <value>No Checks To Print Or Post</value>
   </data>
-  <data name="OptionalField" xml:space="preserve">
-    <value>Optional Field</value>
+  <data name="NonEFTChecksOnly" xml:space="preserve">
+    <value>Non-EFT Checks Only</value>
   </data>
-  <data name="Pay" xml:space="preserve">
-    <value>Pay</value>
+  <data name="NonEFTChequessOnly" xml:space="preserve">
+    <value>Chèques Non EFT Seulment</value>
   </data>
-  <data name="ValueSet" xml:space="preserve">
-    <value>Value Set</value>
+  <data name="PayPeriodEndDate" xml:space="preserve">
+    <value>Imprimer et valider les chèques jusqu'à la date de fin de la période de paie</value>
   </data>
-  <data name="Amount" xml:space="preserve">
-    <value>Amount</value>
+  <data name="PayrollCheckRunType" xml:space="preserve">
+    <value>Processus</value>
   </data>
-  <data name="ClassSchedules" xml:space="preserve">
-    <value>Class Schedules</value>
+  <data name="PayrollCheque" xml:space="preserve">
+    <value>Payroll Cheques</value>
   </data>
-  <data name="OptionalFields" xml:space="preserve">
-    <value>Optional Fields</value>
+  <data name="PeriodEndDate" xml:space="preserve">
+    <value>Date fin de période entrée.</value>
   </data>
-  <data name="Yes" xml:space="preserve">
-    <value>Yes</value>
+  <data name="Print" xml:space="preserve">
+    <value>Imprimer/reporter</value>
   </data>
-  <data name="Garnishment" xml:space="preserve">
-    <value>Garnishment</value>
+  <data name="PrintAndPost" xml:space="preserve">
+    <value>Impr./reporter chèques jusqu'à la date fin de pér.</value>
   </data>
-  <data name="Text" xml:space="preserve">
-    <value>Text</value>
+  <data name="PrintChecksUI" xml:space="preserve">
+    <value>Chèques de paie</value>
   </data>
-  <data name="EFT" xml:space="preserve">
-    <value>EFT</value>
+  <data name="PrintSINFlag" xml:space="preserve">
+    <value>Imprimer NAS masquè</value>
   </data>
-  <data name="DateValue" xml:space="preserve">
-    <value>Date Value</value>
+  <data name="PrintSSNFlag" xml:space="preserve">
+    <value>Print Masked SSN</value>
+  </data>
+  <data name="SortChecksBy" xml:space="preserve">
+    <value>Trier par</value>
+  </data>
+  <data name="StockType" xml:space="preserve">
+    <value>Stock Type</value>
+  </data>
+  <data name="ThenBy" xml:space="preserve">
+    <value>Then By</value>
   </data>
 </root>

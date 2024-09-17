@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="WorkClassificationCode" xml:space="preserve">
-    <value />
+    <value>Classif. des activités</value>
   </data>
   <data name="Comments" xml:space="preserve">
-    <value />
+    <value>Commentaires</value>
   </data>
   <data name="LastMaintained" xml:space="preserve">
-    <value />
+    <value>Dern. modification</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value />
+    <value>Description</value>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value />
+    <value>Classif. d'activités - Paie</value>
   </data>
 </root>

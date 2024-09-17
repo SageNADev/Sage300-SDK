@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2015 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2024 Sage Software, Inc.  All rights reserved. */
 
 "use strict";
 
@@ -113,7 +113,7 @@ LabelMenuHelper = {
             var container = $('#divLabelMenu');
             // if the target of the click isn't the container... nor a descendant of the container
             if (!container.is(e.target) && container.has(e.target).length === 0) {
-                // Detach and Append the container (div) to the current parent, 
+                // Detach and Append the container.$('#divLabelMenu') to the current parent,
                 // because this container not gets scrolled along with the page when loaded inside the popup
                 if (!sg.utls.isSameOrigin()) {
                     return;
@@ -123,8 +123,15 @@ LabelMenuHelper = {
                 var parentForm = isPortal ? iFrame.contents().find('form:first') : window.top;
                 var kendoWindowContainer = container.closest('.k-window-content.k-content');
                 if (parentForm !== null && parentForm.length > 0 && kendoWindowContainer !== null && kendoWindowContainer.length > 0) {
-                    container.detach();
-                    parentForm.append(container);
+                    if (!(kendoWindowContainer[0].role !== null && kendoWindowContainer[0].role === "dialog")) {
+                        // Detach and Append the container.$('#divLabelMenu') to the current parentForm,
+                        // only and only if container.$('#divLabelMenu') is not residing on popup-dialog.
+                        // ------------------------------------------------------------------------------
+                        // In case container.$('#divLabelMenu') IS residing on popup-dialog then customarily
+                        // underlying parentForm should have been grayed-out and disabled for any input 
+                        container.detach();
+                        parentForm.append(container);
+                    }
                 }
             }
         });

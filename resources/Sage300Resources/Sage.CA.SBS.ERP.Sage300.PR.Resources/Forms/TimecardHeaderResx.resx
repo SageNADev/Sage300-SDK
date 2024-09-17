@@ -417,4 +417,28 @@
   <data name="DeleteTimecardConfirmMessage" xml:space="preserve">
     <value>Are you sure you want to delete the timecard {0} for employee {1} ?</value>
   </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="EditColumns" xml:space="preserve">
+    <value>Edit Columns</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="PJCDetails" xml:space="preserve">
+    <value>PJC Details</value>
+  </data>
+  <data name="JobRelatedPopUpHeader" xml:space="preserve">
+    <value>Project and Job Costing Details</value>
+  </data>
 </root>

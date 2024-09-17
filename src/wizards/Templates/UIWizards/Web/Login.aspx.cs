@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2024 Sage Software, Inc.  All rights reserved. */
 
 #region
 using ACCPAC.Advantage;

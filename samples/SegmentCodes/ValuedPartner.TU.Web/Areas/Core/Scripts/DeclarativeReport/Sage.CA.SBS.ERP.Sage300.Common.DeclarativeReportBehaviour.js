@@ -129,6 +129,7 @@ const dataVal = 'val';
 var locationId = "";
 const maxGridRows = 3;
 var isFinderCancelEvent = false;
+var txtLength;
 
 var declarativeReportUI = declarativeReportUI || {}
 declarativeReportUI = {
@@ -147,6 +148,7 @@ declarativeReportUI = {
     typeColumn: {},
     addButton: {},
     deleteButton: {},
+    errorMessage : "",
 
     /**
      * @function
@@ -358,7 +360,7 @@ declarativeReportUI = {
      */
     validation: function () {
         var errorRangeMessage = "";
-        var errorMessage = "";
+        
 
         if (declarativeReportUI.parameters.Ranges) {
             // validate range values are From > To
@@ -390,11 +392,11 @@ declarativeReportUI = {
 
         if (errorRangeMessage != "") {
             sg.utls.showMessageInfo(sg.utls.msgType.ERROR, jQuery.validator.format(declarativeReportResources.ErrorFromToValueMessage, errorRangeMessage));
-        } else if (errorMessage != "") {
-            sg.utls.showMessageInfo(sg.utls.msgType.ERROR, errorMessage);
+        } else if (declarativeReportUI.errorMessage != "") {
+            sg.utls.showMessageInfo(sg.utls.msgType.ERROR, declarativeReportUI.errorMessage);
         }
 
-        return !errorMessage && !errorRangeMessage;
+        return !declarativeReportUI.errorMessage && !errorRangeMessage;
     },
 
     /**
@@ -706,7 +708,7 @@ declarativeReportUI = {
                                 if (e.target.value == "") {
                                     var urlMsg = sg.utls.url.buildUrl("Core", "Common", "EmptyOptionalField");
                                 } else {
-                                    var urlMsg = sg.utls.url.buildUrl("Core", "Common", "InvalidOptionalFieldInput");
+                                    var urlMsg = sg.utls.url.buildUrl("PR", "Common", "InvalidOptionalFieldInput");
                                 }
                                 sg.utls.ajaxGet(urlMsg, {}, (msg) => {
                                     sg.utls.showMessageInfo(sg.utls.msgType.ERROR, $.validator.format(msg, e.target.value.toUpperCase()));
@@ -1207,7 +1209,7 @@ declarativeReportUI = {
                         }
 
                         var defaultValues = [
-                            [ValueTypeEnum.Text, '', 'ZZZZZZZZZZZZZZZZZZZZZZZZZZZZ'],
+                            [ValueTypeEnum.Text, '', defaultValueForText(txtLength)],
                             [ValueTypeEnum.Number, '-' + digits + "." + decimal, digits + "." + decimal], //MaxLength For Number should be 15. Since decimal points placed we can enter only 12
                             [ValueTypeEnum.Time, '00:00:00', '23:59:59'],
                             [ValueTypeEnum.Integer, '-2147483647', '2147483647'],
@@ -1216,6 +1218,15 @@ declarativeReportUI = {
                         ]
                         var txtGridColFromVal = '';
                         var txtGridColToVal = '';
+
+                        /**
+                        @name defaultValueForText
+                        @description set the default value for textbox based on the legth of the textbox
+                        @param { number } txtLength length of the textbox
+                        **/
+                        function defaultValueForText(txtLength) {
+                            return 'z'.repeat(txtLength);
+                        }
 
                         //set the default values for textboxes
                         for (var i = 0; i < defaultValues.length; i++) {
@@ -1275,6 +1286,10 @@ declarativeReportUI = {
                                 else {
                                     $("#" + InputControlIdEnum.FromTextField + index).unmask();
                                     $("#" + InputControlIdEnum.ToTextField + index).unmask();
+                                    if (optionalFieldType == ValueTypeEnum.Text) {
+                                        $("#" + InputControlIdEnum.FromTextField + index).attr("maxlength", txtLength);
+                                        $("#" + InputControlIdEnum.ToTextField + index).attr("maxlength", txtLength);
+                                    }
                                 }
 
                                 if (isTypeChange) {
@@ -1879,6 +1894,7 @@ function setOptionalFieldValue(result, changeControlType, index,isFinder = false
 
         var optionalfield = result.OPTFIELD;
         var optionalFieldType = result.TYPE;
+        txtLength = result.LENGTH;
 
         if (!isFinder) {
             var optionalFieldType = ValueTypeEnum[optionalFieldType.replaceAll('/', '')];

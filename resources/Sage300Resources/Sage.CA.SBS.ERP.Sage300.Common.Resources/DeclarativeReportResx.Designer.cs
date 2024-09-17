@@ -1312,6 +1312,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        public static string ddlAll {
+            get {
+                return ResourceManager.GetString("ddlAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to December.
         /// </summary>
         public static string December {
@@ -1353,6 +1362,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string DetailDatesHours {
             get {
                 return ResourceManager.GetString("DetailDatesHours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detail Information.
+        /// </summary>
+        public static string DetailInformation {
+            get {
+                return ResourceManager.GetString("DetailInformation", resourceCulture);
             }
         }
         
@@ -1470,6 +1488,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string EmployeeList {
             get {
                 return ResourceManager.GetString("EmployeeList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee List Code.
+        /// </summary>
+        public static string EmployeeListCode {
+            get {
+                return ResourceManager.GetString("EmployeeListCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Listing.
+        /// </summary>
+        public static string EmployeeListing {
+            get {
+                return ResourceManager.GetString("EmployeeListing", resourceCulture);
             }
         }
         
@@ -1672,6 +1708,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From Employee List.
+        /// </summary>
+        public static string FromEmployeeList {
+            get {
+                return ResourceManager.GetString("FromEmployeeList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Employee Number.
         /// </summary>
         public static string FromEmployeeNumber {
@@ -1740,6 +1785,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string FromProjectStartDate {
             get {
                 return ResourceManager.GetString("FromProjectStartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Selection List.
+        /// </summary>
+        public static string FromSelectionList {
+            get {
+                return ResourceManager.GetString("FromSelectionList", resourceCulture);
             }
         }
         
@@ -2469,6 +2523,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string LastReviewDate {
             get {
                 return ResourceManager.GetString("LastReviewDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Fields.
+        /// </summary>
+        public static string LblOptionalFields {
+            get {
+                return ResourceManager.GetString("LblOptionalFields", resourceCulture);
             }
         }
         
@@ -3760,6 +3823,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Selection List Code.
+        /// </summary>
+        public static string SelectionListCode {
+            get {
+                return ResourceManager.GetString("SelectionListCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select Transaction By.
         /// </summary>
         public static string SelectTransactionBy {
@@ -4237,6 +4309,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To Employee List.
+        /// </summary>
+        public static string ToEmployeeList {
+            get {
+                return ResourceManager.GetString("ToEmployeeList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To Employee Number.
         /// </summary>
         public static string ToEmployeeNumber {
@@ -4305,6 +4386,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string ToProjectEndDate {
             get {
                 return ResourceManager.GetString("ToProjectEndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Selection List.
+        /// </summary>
+        public static string ToSelectionList {
+            get {
+                return ResourceManager.GetString("ToSelectionList", resourceCulture);
             }
         }
         
@@ -4683,6 +4773,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string Weekly {
             get {
                 return ResourceManager.GetString("Weekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work Classification Codes.
+        /// </summary>
+        public static string WorkClassificationcodes {
+            get {
+                return ResourceManager.GetString("WorkClassificationcodes", resourceCulture);
             }
         }
         

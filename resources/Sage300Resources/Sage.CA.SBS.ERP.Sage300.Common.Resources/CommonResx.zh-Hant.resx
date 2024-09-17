@@ -1663,6 +1663,9 @@
   <data name="Template_GenericReportException" xml:space="preserve">
     <value>嘗試產生下列報表時，出現一或多個錯誤：{0}</value>
   </data>
+  <data name="PostSuccessMessage" xml:space="preserve">
+    <value>過帳完成。 {0}, {1}</value>
+  </data>
   <data name="CollapseAll" xml:space="preserve">
     <value>收縮全部</value>
   </data>
@@ -1693,9 +1696,6 @@
     <value>Unable to to retrieve credentials. Please log into Financial Reporter again.</value>
     <comment>To be translated</comment>
   </data>
-  <data name="PostSuccessMessage" xml:space="preserve">
-    <value>過帳完成。 {0}, {1}</value>
-  </data>
   <data name="AnErrorOccurredProcessingYourRequest" xml:space="preserve">
     <value>處理您的請求時發生錯誤。</value>
   </data>
@@ -1705,5 +1705,26 @@
   <data name="FeatureNotAvailableWeb_Message_v2" xml:space="preserve">
     <value>無法完成您的請求，因為{0}在網頁螢幕中不可用。您或許能夠使用桌面螢幕。</value>
     <comment>Used in AP-AR Payment Intery for Job related items</comment>
+  </data>
+  <data name="SendingEmails" xml:space="preserve">
+    <value>正在發送郵件</value>
+  </data>
+  <data name="CanceledEmails" xml:space="preserve">
+    <value>發送郵件已被取消。</value>
+  </data>
+  <data name="NoEmailsSent" xml:space="preserve">
+    <value>沒有發送郵件。</value>
+  </data>
+  <data name="AllEmailsSentNoWarnings" xml:space="preserve">
+    <value>所有郵件已成功發送。</value>
+  </data>
+  <data name="AllEmailsSentButWarnings" xml:space="preserve">
+    <value>所有郵件已處理，但部分郵件可能無法到達所有收件人。</value>
+  </data>
+  <data name="SomeEmailsSentFailed" xml:space="preserve">
+    <value>郵件 {0} 到 {1} 發送成功；{2} 發送失敗。</value>
+  </data>
+  <data name="SomeEmailsSentCanceled" xml:space="preserve">
+    <value>郵件 {0} 到 {1} 發送成功；在 {2} 之前或當日取消。</value>
   </data>
 </root>

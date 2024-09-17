@@ -117,289 +117,1345 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Employee" xml:space="preserve">
-    <value>Employé</value>
+  <data name="EmployeeElectronicW2Consent" xml:space="preserve">
+    <value>L'employé accepte de recevoir uniquement des W-2 électroniques</value>
   </data>
-  <data name="LastMaintained" xml:space="preserve">
-    <value>Dernière modification</value>
+  <data name="AlternateZIPPostalCode" xml:space="preserve">
+    <value>Code postal</value>
   </data>
-  <data name="EmployeeTemplate" xml:space="preserve">
-    <value>Gabarit d&apos;employé</value>
-  </data>
-  <data name="LastName" xml:space="preserve">
-    <value>Nom</value>
-  </data>
-  <data name="FirstName" xml:space="preserve">
-    <value>Prénom</value>
-  </data>
-  <data name="MiddleName" xml:space="preserve">
-    <value>2e prénom</value>
-  </data>
-  <data name="FullName" xml:space="preserve">
-    <value>Nom complet</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>Adresse ligne 1</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>Adresse ligne 2</value>
+  <data name="WorkLocationCity" xml:space="preserve">
+    <value>Ville</value>
   </data>
   <data name="AddressLine3" xml:space="preserve">
     <value>Adresse ligne 3</value>
   </data>
-  <data name="AddressLine4" xml:space="preserve">
-    <value>Adresse ligne 4</value>
+  <data name="CountryCode" xml:space="preserve">
+    <value>Code du pays</value>
   </data>
-  <data name="City" xml:space="preserve">
-    <value>Ville</value>
+  <data name="Other" xml:space="preserve">
+    <value>Autre</value>
   </data>
-  <data name="StateProvince" xml:space="preserve">
-    <value>État/Province</value>
+  <data name="SalesWorkers" xml:space="preserve">
+    <value>Vendeurs</value>
   </data>
-  <data name="ZIPCode" xml:space="preserve">
-    <value>Code postal</value>
+  <data name="No" xml:space="preserve">
+    <value>Non</value>
   </data>
-  <data name="Country" xml:space="preserve">
+  <data name="HTwoOrMoreRacesMale" xml:space="preserve">
+    <value>H - Deux races ou plus - Homme</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Mensuelle</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Nom de famille</value>
+  </data>
+  <data name="WorkLocationCountry" xml:space="preserve">
     <value>Pays</value>
   </data>
-  <data name="SocialSecurityNumber" xml:space="preserve">
-    <value>Numéro assurance sociale</value>
+  <data name="AlternateCity" xml:space="preserve">
+    <value>Ville</value>
   </data>
-  <data name="BirthDate" xml:space="preserve">
-    <value>Date de naissance</value>
+  <data name="Yes" xml:space="preserve">
+    <value>Oui</value>
   </data>
-  <data name="EmploymentStatus" xml:space="preserve">
-    <value>État d’emploi</value>
+  <data name="Weekly" xml:space="preserve">
+    <value>Hebdomadaire</value>
   </data>
-  <data name="HireDate" xml:space="preserve">
-    <value>Date d’embauche</value>
+  <data name="General" xml:space="preserve">
+    <value>Général</value>
   </data>
-  <data name="TerminationDate" xml:space="preserve">
-    <value>Date de départ</value>
+  <data name="BHispanicOrLatinoFemale" xml:space="preserve">
+    <value>B - Femme hispanique ou latino-américaine</value>
   </data>
-  <data name="Position" xml:space="preserve">
-    <value>Poste</value>
-  </data>
-  <data name="PartTime" xml:space="preserve">
-    <value>Temps partiel</value>
-  </data>
-  <data name="PayFrequency" xml:space="preserve">
-    <value>Fréquence de paie</value>
-  </data>
-  <data name="CheckLanguage" xml:space="preserve">
-    <value>Langue du chèque</value>
-  </data>
-  <data name="HoursPerPeriod" xml:space="preserve">
-    <value>Heures par période</value>
-  </data>
-  <data name="WorkersCompensationCode" xml:space="preserve">
-    <value>Code de CSST</value>
-  </data>
-  <data name="OvertimeSchedule" xml:space="preserve">
-    <value>Table d&apos;heures supplémentaires</value>
-  </data>
-  <data name="ShiftDifferentialSchedule" xml:space="preserve">
-    <value>Table de prime de quart</value>
-  </data>
-  <data name="ShiftNumber" xml:space="preserve">
-    <value>Quart</value>
-  </data>
-  <data name="TimesLate" xml:space="preserve">
-    <value>Retards</value>
-  </data>
-  <data name="EntrySequence" xml:space="preserve">
-    <value>Séquence de saisie</value>
-  </data>
-  <data name="Class1" xml:space="preserve">
-    <value>Classe 1 de paie</value>
-  </data>
-  <data name="Class2" xml:space="preserve">
-    <value>Classe 2 de paie</value>
-  </data>
-  <data name="Class3" xml:space="preserve">
-    <value>Classe 3 de paie</value>
-  </data>
-  <data name="Class4" xml:space="preserve">
-    <value>Classe 4 de paie</value>
+  <data name="AlternateAddressLine2" xml:space="preserve">
+    <value>Adresse ligne 2</value>
   </data>
   <data name="SegmentCode1" xml:space="preserve">
     <value>Code segment 1</value>
   </data>
-  <data name="SegmentCode2" xml:space="preserve">
-    <value>Code segment 2</value>
+  <data name="Comments" xml:space="preserve">
+    <value>Commentaires</value>
   </data>
-  <data name="SegmentCode3" xml:space="preserve">
-    <value>Code segment 3</value>
+  <data name="D10NonHispanicNonLatinoNonBinaryWhite" xml:space="preserve">
+    <value>D10 - Non hispanique/Non latino-américain - Non binaire - Caucasien</value>
   </data>
-  <data name="Phone" xml:space="preserve">
-    <value>Téléphone</value>
-  </data>
-  <data name="Manager" xml:space="preserve">
-    <value>Gestionnaire</value>
-  </data>
-  <data name="LastReviewDate" xml:space="preserve">
-    <value>Date dernière évaluation</value>
-  </data>
-  <data name="DateOfLastRaise" xml:space="preserve">
-    <value>Date dernière augmentation</value>
-  </data>
-  <data name="AlternateAddressLine1" xml:space="preserve">
-    <value>Ligne adresse secondaire 1</value>
-  </data>
-  <data name="AlternateAddressLine2" xml:space="preserve">
-    <value>Ligne adresse secondaire 2</value>
-  </data>
-  <data name="AlternateAddressLine3" xml:space="preserve">
-    <value>Ligne adresse secondaire 3</value>
-  </data>
-  <data name="AlternateAddressLine4" xml:space="preserve">
-    <value>Ligne adresse secondaire 4</value>
-  </data>
-  <data name="AlternateCity" xml:space="preserve">
-    <value>Autre ville</value>
-  </data>
-  <data name="AlternateStateProvince" xml:space="preserve">
-    <value>Autre province</value>
-  </data>
-  <data name="AlternateZIPPostalCode" xml:space="preserve">
-    <value>Autre code postal</value>
-  </data>
-  <data name="AlternateCountry" xml:space="preserve">
-    <value>Autre pays</value>
-  </data>
-  <data name="Gender" xml:space="preserve">
-    <value>F/M</value>
-  </data>
-  <data name="EmergencyContact" xml:space="preserve">
-    <value>Contact en cas d&apos;urgence</value>
-  </data>
-  <data name="EmergencyPhone" xml:space="preserve">
-    <value>N° téléphone en cas d&apos;urgence</value>
-  </data>
-  <data name="MinimumWage" xml:space="preserve">
-    <value>Salaire minimum</value>
-  </data>
-  <data name="VacationID" xml:space="preserve">
-    <value>Code vacance</value>
+  <data name="C50NonHispanicNonLatinoFemaleAmericanIndianOrAlaskanNative" xml:space="preserve">
+    <value>C50 - Non hispanique/Non latino-américaine - Femme - Amérindienne ou Native de l'Alaska</value>
   </data>
   <data name="SickPayID" xml:space="preserve">
     <value>Code indemnité maladie</value>
   </data>
-  <data name="CompTimeID" xml:space="preserve">
-    <value>Code crédit d’heures</value>
-  </data>
-  <data name="SSNFormat" xml:space="preserve">
-    <value>Format NAS</value>
-  </data>
   <data name="Disability" xml:space="preserve">
-    <value>RÉSERVÉ - Infirmité</value>
-  </data>
-  <data name="RPP" xml:space="preserve">
-    <value>Numéro de régime de retraite agréé</value>
-  </data>
-  <data name="StateOfHire" xml:space="preserve">
-    <value>Province d&apos;emploi</value>
-  </data>
-  <data name="TimecardUserID" xml:space="preserve">
-    <value>Code utilisateur de feuilles de temps</value>
-  </data>
-  <data name="DirectDeposit" xml:space="preserve">
-    <value>Dépôt direct</value>
-  </data>
-  <data name="BankTransferName" xml:space="preserve">
-    <value>Nom du virement bancaire</value>
-  </data>
-  <data name="Reference" xml:space="preserve">
-    <value>Référence</value>
-  </data>
-  <data name="DiscretionaryData" xml:space="preserve">
-    <value>RÉSERVÉ - Seulement É.-U.</value>
-  </data>
-  <data name="WorkersCompGroup" xml:space="preserve">
-    <value>Groupe CSST</value>
-  </data>
-  <data name="InactiveDate" xml:space="preserve">
-    <value>Inactif le</value>
+    <value>Invalidité</value>
   </data>
   <data name="NumberOfOptionalFields" xml:space="preserve">
     <value>Nombre de champs optionnels</value>
   </data>
-  <data name="RegularHoursPerDay" xml:space="preserve">
-    <value>Heures quotidiennes normales</value>
+  <data name="NTwoOrMoreRacesFemale" xml:space="preserve">
+    <value>N - Deux races ou plus - Femme</value>
   </data>
-  <data name="OvertimeCalculation" xml:space="preserve">
-    <value>Calcul heures supplémentaires</value>
+  <data name="Female" xml:space="preserve">
+    <value>Fèminin</value>
   </data>
-  <data name="CountryCode" xml:space="preserve">
-    <value>Code du pays</value>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactif</value>
   </data>
-  <data name="WorkClassificationCode" xml:space="preserve">
-    <value>Code de classification d&apos;activité</value>
+  <data name="B40NonHispanicNonLatinoMaleAsian" xml:space="preserve">
+    <value>B40 - Non hispanique/Non latino-américain - Homme - Asiatique</value>
   </data>
-  <data name="HoursPerWeek" xml:space="preserve">
-    <value>Heures hebdomadaires</value>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Adresse ligne 1</value>
   </data>
-  <data name="SourceApplication" xml:space="preserve">
-    <value>Application source</value>
+  <data name="Mexican" xml:space="preserve">
+    <value>Mexicain</value>
   </data>
-  <data name="Email" xml:space="preserve">
-    <value>Courriel</value>
+  <data name="PayFrequency" xml:space="preserve">
+    <value>Fréquence de paie</value>
   </data>
-  <data name="CalcOTonaWeeklyBasis" xml:space="preserve">
-    <value>Calc. hres supp. chaque semaine</value>
+  <data name="Nonbinary" xml:space="preserve">
+    <value>Non-binaire</value>
   </data>
-  <data name="USCitizen" xml:space="preserve">
-    <value>Citoyen américain</value>
+  <data name="English" xml:space="preserve">
+    <value>Anglais</value>
   </data>
-  <data name="WorkLocation" xml:space="preserve">
-    <value>Lieu de travail</value>
+  <data name="StateOfHire" xml:space="preserve">
+    <value>Province d’emploi</value>
   </data>
-  <data name="WorkLocationAddress2" xml:space="preserve">
-    <value>Adresse lieu de travail 2</value>
+  <data name="Class3" xml:space="preserve">
+    <value>Classe 3</value>
   </data>
-  <data name="WorkLocationAddress3" xml:space="preserve">
-    <value>Adresse lieu de travail 3</value>
+  <data name="A30HispanicLatinoNonBinary" xml:space="preserve">
+    <value>A30 - Hispanique/Latino-américain - Non binaire</value>
   </data>
-  <data name="WorkLocationAddress4" xml:space="preserve">
-    <value>Adresse lieu de travail 4</value>
+  <data name="DBlackOrAfricanAmericanMale" xml:space="preserve">
+    <value>D - Noir ou Afro-Américain - Homme</value>
   </data>
-  <data name="WorkLocationCity" xml:space="preserve">
-    <value>Ville du lieu de travail</value>
+  <data name="EmergencyContact" xml:space="preserve">
+    <value>Nom</value>
   </data>
-  <data name="WorkLocationStateProv" xml:space="preserve">
-    <value>État/Prov. du lieu de travail</value>
+  <data name="TenPerYear" xml:space="preserve">
+    <value>Dix par an</value>
   </data>
-  <data name="WorkLocationZipPostalCode" xml:space="preserve">
-    <value>Code postal du lieu de travail</value>
+  <data name="Technicians" xml:space="preserve">
+    <value>Techniciens</value>
   </data>
-  <data name="WorkLocationCountry" xml:space="preserve">
-    <value>Pays du lieu de travail</value>
+  <data name="EmergencyPhone" xml:space="preserve">
+    <value>Téléphone</value>
   </data>
-  <data name="RESERVEDSegmentCode4" xml:space="preserve">
-    <value>RÉSERVÉ - Code de segment 4</value>
+  <data name="EFT" xml:space="preserve">
+    <value>TEF</value>
   </data>
   <data name="RESERVEDSegmentCode5" xml:space="preserve">
     <value>RÉSERVÉ - Code de segment 5</value>
   </data>
-  <data name="RESERVEDSegmentCode6" xml:space="preserve">
-    <value>RÉSERVÉ - Code de segment 6</value>
+  <data name="Class2" xml:space="preserve">
+    <value>Classe 2</value>
   </data>
-  <data name="SyncMasterGUID" xml:space="preserve">
-    <value>RÉSERVÉ - Seulement É.-U.</value>
+  <data name="RPP" xml:space="preserve">
+    <value>Numéro RPA</value>
   </data>
-  <data name="EmployeeElectronicW2Consent" xml:space="preserve">
-    <value>RÉSERVÉ - Seulement É.-U.</value>
+  <data name="Professionals" xml:space="preserve">
+    <value>Professionnels</value>
+  </data>
+  <data name="CAEthnicity" xml:space="preserve">
+    <value>Ethnicité (Californie)</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="Quarterly" xml:space="preserve">
+    <value>Trimestrielle</value>
+  </data>
+  <data name="WorkLocationAddress2" xml:space="preserve">
+    <value>Adresse ligne 2</value>
+  </data>
+  <data name="EmploymentStatus" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="ChineseTraditional" xml:space="preserve">
+    <value>Chinois (Traditionnel)</value>
+  </data>
+  <data name="ShiftDifferentialSchedule" xml:space="preserve">
+    <value>Table de prime de quart</value>
+  </data>
+  <data name="TwentyTwoPerYear" xml:space="preserve">
+    <value>Vingt-deux par an</value>
+  </data>
+  <data name="FLSASalaryFixedHours" xml:space="preserve">
+    <value>Taux normal-Salaire horaire fixe</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Masculin</value>
+  </data>
+  <data name="WorkLocation" xml:space="preserve">
+    <value>Lieu de travail</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Adresse ligne 2</value>
+  </data>
+  <data name="WorkersCompensationCode" xml:space="preserve">
+    <value>Code de CSST</value>
+  </data>
+  <data name="C10NonHispanicNonLatinoFemaleWhite" xml:space="preserve">
+    <value>C10 - Non hispanique/Non latino-américaine - Femme - Caucasienne</value>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>État/Province</value>
+  </data>
+  <data name="ClassSchedule" xml:space="preserve">
+    <value>Table de classe</value>
+  </data>
+  <data name="HoursPerWeek" xml:space="preserve">
+    <value>Hres normales par semaine</value>
+  </data>
+  <data name="WorkersCompGroup" xml:space="preserve">
+    <value>Groupe de CSST</value>
+  </data>
+  <data name="A10HispanicLatinoMale" xml:space="preserve">
+    <value>A10 - Hispanique/Latino - Homme</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Référence</value>
+  </data>
+  <data name="Garnishment" xml:space="preserve">
+    <value>Saisie sur salaire</value>
+  </data>
+  <data name="D30NonHispanicNonLatinoNonBinaryNativeHawaiianOrOtherPacificIslander" xml:space="preserve">
+    <value>D30 - Non hispanique/Non latino-américain - Non binaire - Natif d'Hawaï ou d'une autre île du Pacifique</value>
+  </data>
+  <data name="FAsianMale" xml:space="preserve">
+    <value>F - Homme asiatique</value>
+  </data>
+  <data name="B10NonHispanicNonLatinoMaleWhite" xml:space="preserve">
+    <value>B10 - Non hispanique/Non latino-américain - Homme - Caucasien</value>
+  </data>
+  <data name="C20NonHispanicNonLatinoFemaleBlackOrAfricanAmerican" xml:space="preserve">
+    <value>C20 - Non hispanique/Non latino-américaine - Femme - Noire ou Afro-américaine</value>
+  </data>
+  <data name="WorkLocationStateProv" xml:space="preserve">
+    <value>État/Province</value>
+  </data>
+  <data name="AdministrativeSupportWorkers" xml:space="preserve">
+    <value>Personnel de soutien administratif</value>
+  </data>
+  <data name="SocialSecurityNumber" xml:space="preserve">
+    <value>Numéro sécurité sociale</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="HoursPerPeriod" xml:space="preserve">
+    <value>Hres normales par période</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="CheckForTimecardAndManualChecks" xml:space="preserve">
+    <value>Chercher feuille de temps et chèques manuels</value>
+  </data>
+  <data name="CopyEmployeeTemplate" xml:space="preserve">
+    <value>Copier gabarit d'employé</value>
+  </data>
+  <data name="CostCenter" xml:space="preserve">
+    <value>Centre de coûts</value>
+  </data>
+  <data name="MNativeAmericanOrAlaskaNativeFemale" xml:space="preserve">
+    <value>M - Femme amérindienne ou autochtone de l'Alaska</value>
+  </data>
+  <data name="VacationID" xml:space="preserve">
+    <value>Code vacance</value>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Impôts</value>
+  </data>
+  <data name="Manager" xml:space="preserve">
+    <value>Directeur</value>
+  </data>
+  <data name="A20HispanicLatinoFemale" xml:space="preserve">
+    <value>A20 - Hispanique/Latino-américaine - femme</value>
+  </data>
+  <data name="JBlackOrAfricanAmericanFemale" xml:space="preserve">
+    <value>J - Femme noire ou afro-américaine</value>
+  </data>
+  <data name="TimecardUserID" xml:space="preserve">
+    <value>Code utilisateur</value>
+  </data>
+  <data name="WorkLocationZipPostalCode" xml:space="preserve">
+    <value>Code postal</value>
+  </data>
+  <data name="AHispanicOrLatinoMale" xml:space="preserve">
+    <value>A - Homme hispanique ou latino-américain</value>
+  </data>
+  <data name="OvertimeSchedule" xml:space="preserve">
+    <value>Table d'heures supplémentaires</value>
   </data>
   <data name="ProcessCommandCode" xml:space="preserve">
     <value>Code traitement opération</value>
   </data>
-  <data name="EmployeeSecurityFlag1" xml:space="preserve">
-    <value>Indicateur de sécurité de l’employé1</value>
+  <data name="CraftWorkers" xml:space="preserve">
+    <value>Travailleurs manuels/artisans</value>
+  </data>
+  <data name="ZIPCode" xml:space="preserve">
+    <value>Code postal</value>
+  </data>
+  <data name="EntrySequence" xml:space="preserve">
+    <value>Séquence de saisie</value>
   </data>
   <data name="EmployeeSecurityFlag2" xml:space="preserve">
     <value>Indicateur de sécurité de l’employé2</value>
   </data>
+  <data name="EmployeeSecurityFlag1" xml:space="preserve">
+    <value>Indicateur de sécurité de l’employé1</value>
+  </data>
+  <data name="LAsianFemale" xml:space="preserve">
+    <value>L - Femme asiatique</value>
+  </data>
+  <data name="AlternateCountry" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Nom complet</value>
+  </data>
+  <data name="ShiftRate" xml:space="preserve">
+    <value>Taux-Quart</value>
+  </data>
+  <data name="DiscretionaryData" xml:space="preserve">
+    <value>Données facultatives</value>
+  </data>
+  <data name="FLSAHourly" xml:space="preserve">
+    <value>Taux normal-Horaire</value>
+  </data>
+  <data name="RESERVEDSegmentCode6" xml:space="preserve">
+    <value>RÉSERVÉ - Code de segment 6</value>
+  </data>
   <data name="INTERNALUSESelectionList" xml:space="preserve">
     <value>USAGE INTERNE - Liste de sélection</value>
+  </data>
+  <data name="CWhiteMale" xml:space="preserve">
+    <value>C - Homme caucasien</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Employés</value>
+  </data>
+  <data name="HireDate" xml:space="preserve">
+    <value>Date d’embauche</value>
+  </data>
+  <data name="InsertOptionalFields" xml:space="preserve">
+    <value>Insérer champs optionnels</value>
+  </data>
+  <data name="AlternateAddressLine4" xml:space="preserve">
+    <value>Adresse ligne 4</value>
+  </data>
+  <data name="Terminated" xml:space="preserve">
+    <value>Ancien employé</value>
+  </data>
+  <data name="AlternateAddressLine1" xml:space="preserve">
+    <value>Adresse ligne 1</value>
+  </data>
+  <data name="WorkClassificationCode" xml:space="preserve">
+    <value>Classification des activités</value>
+  </data>
+  <data name="AlternateAddressLine3" xml:space="preserve">
+    <value>Adresse ligne 3</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="EmployeeTemplate" xml:space="preserve">
+    <value>Modèle</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Fonction</value>
+  </data>
+  <data name="AddressLine4" xml:space="preserve">
+    <value>Adresse ligne 4</value>
+  </data>
+  <data name="CalcOTOnAWeeklyBasis" xml:space="preserve">
+    <value>Calculer les heures supplémentaires sur une base hebdomadaire</value>
+  </data>
+  <data name="SegmentCode2" xml:space="preserve">
+    <value>Code segment 2</value>
+  </data>
+  <data name="RESERVEDSegmentCode4" xml:space="preserve">
+    <value>RÉSERVÉ - Code de segment 4</value>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="SyncMasterGUID" xml:space="preserve">
+    <value>Sync Master GUID</value>
+  </data>
+  <data name="ClassSchedules" xml:space="preserve">
+    <value>Tables de classes</value>
+  </data>
+  <data name="Spanish" xml:space="preserve">
+    <value>Espagnol</value>
+  </data>
+  <data name="FirstMidLevelOfficialsAndManagers" xml:space="preserve">
+    <value>Cadres et gestionnaires de premier/moyen niveau</value>
+  </data>
+  <data name="WorkLocationAddress4" xml:space="preserve">
+    <value>Adresse ligne 4</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Quotidienne</value>
+  </data>
+  <data name="Australian" xml:space="preserve">
+    <value>Australien</value>
+  </data>
+  <data name="B20NonHispanicNonLatinoMaleBlackOrAfricanAmerican" xml:space="preserve">
+    <value>B20 - Non hispanique/Non latino-américain - Homme - Noir ou Afro-américain</value>
+  </data>
+  <data name="SourceApplication" xml:space="preserve">
+    <value>Application source</value>
+  </data>
+  <data name="Pay" xml:space="preserve">
+    <value>Paie</value>
+  </data>
+  <data name="Ethnicity" xml:space="preserve">
+    <value>Ethnicité (fédéral)</value>
+  </data>
+  <data name="TerminationDate" xml:space="preserve">
+    <value>Date de départ</value>
+  </data>
+  <data name="GNativeAmericanOrAlaskaNativeMale" xml:space="preserve">
+    <value>G - Homme amérindien ou autochtone de l'Alaska</value>
+  </data>
+  <data name="MinimumWage" xml:space="preserve">
+    <value>Salaire minimum</value>
+  </data>
+  <data name="BankTransferName" xml:space="preserve">
+    <value>Nom du virement bancaire</value>
+  </data>
+  <data name="Semimonthly" xml:space="preserve">
+    <value>Bimensuelle</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Date de naissance</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Dern. modification</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employé</value>
+  </data>
+  <data name="CompTimeID" xml:space="preserve">
+    <value>Comp. Time ID</value>
+  </data>
+  <data name="D20NonHispanicNonLatinoNonBinaryBlackOrAfricanAmerican" xml:space="preserve">
+    <value>D20 - Non hispanique/Non latino-américain - Non binaire - Noir ou Afro-américain</value>
+  </data>
+  <data name="PartTime" xml:space="preserve">
+    <value>Travailleur à temps partiel</value>
+  </data>
+  <data name="B50NonHispanicNonLatinoMaleAmericanIndianOrAlaskanNative" xml:space="preserve">
+    <value>B50 - Non hispanique/Non latino-américain - Homme - Amérindien ou Natif de l'Alaska</value>
+  </data>
+  <data name="Biweekly" xml:space="preserve">
+    <value>Aux 2 semaines</value>
+  </data>
+  <data name="DirectDeposit" xml:space="preserve">
+    <value>Dépôt direct</value>
+  </data>
+  <data name="ENativeHawaiianOrPacificIslanderMale" xml:space="preserve">
+    <value>E - Homme natif d'Hawaï ou d’une île du Pacifique</value>
+  </data>
+  <data name="TimesLate" xml:space="preserve">
+    <value>Retards</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Actif</value>
+  </data>
+  <data name="ThirteenPerYear" xml:space="preserve">
+    <value>Treize par an</value>
+  </data>
+  <data name="B30NonHispanicNonLatinoMaleNativeHawaiianOrOtherPacificIslander" xml:space="preserve">
+    <value>B30 - Non hispanique/Non latino-américain - Homme - Natif d'Hawaï ou d'une autre île du Pacifique</value>
+  </data>
+  <data name="LastReviewDate" xml:space="preserve">
+    <value>Date de dernière évaluation</value>
+  </data>
+  <data name="ExecutiveSeniorLevelOfficialsAndManagers" xml:space="preserve">
+    <value>Cadres supérieurs/Haute direction</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="AlternateStateProvince" xml:space="preserve">
+    <value>État/Province</value>
+  </data>
+  <data name="SegmentCode3" xml:space="preserve">
+    <value>Code segment 3</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Ville</value>
+  </data>
+  <data name="OvertimeCalculation" xml:space="preserve">
+    <value>Calcul heures supplémentaires</value>
+  </data>
+  <data name="Operatives" xml:space="preserve">
+    <value>Ouvriers/Opérateurs</value>
+  </data>
+  <data name="WorkLocationAddress3" xml:space="preserve">
+    <value>Adresse ligne 3</value>
+  </data>
+  <data name="D40NonHispanicNonLatinoNonBinaryAsian" xml:space="preserve">
+    <value>D40 - Non hispanique/Non latino-américain - Non binaire - Asiatique</value>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>Inactif le</value>
+  </data>
+  <data name="Class1" xml:space="preserve">
+    <value>Classe 1</value>
+  </data>
+  <data name="IWhiteFemale" xml:space="preserve">
+    <value>I - Femme caucasienne</value>
+  </data>
+  <data name="RegularHoursPerDay" xml:space="preserve">
+    <value>Heures quotidiennes normales</value>
+  </data>
+  <data name="MiddleName" xml:space="preserve">
+    <value>Deuxième prénom</value>
+  </data>
+  <data name="Class4" xml:space="preserve">
+    <value>Classe 4</value>
+  </data>
+  <data name="ShiftNumber" xml:space="preserve">
+    <value>Quart de travail</value>
+  </data>
+  <data name="USCitizen" xml:space="preserve">
+    <value>Citoyen américain</value>
+  </data>
+  <data name="C40NonHispanicNonLatinoFemaleAsian" xml:space="preserve">
+    <value>C40 - Non hispanique/Non latino-américaine - Femme - Asiatique</value>
+  </data>
+  <data name="D60NonHispanicNonLatinoNonBinaryTwoOrMoreRaces" xml:space="preserve">
+    <value>D60 - Non hispanique/Non latino-américain - Non binaire - Deux races ou plus</value>
+  </data>
+  <data name="SSNFormat" xml:space="preserve">
+    <value>SSN Format</value>
+  </data>
+  <data name="KNativeHawaiianOrPacificIslanderFemale" xml:space="preserve">
+    <value>K - Femme native d'Hawaï ou d’une île du Pacifique</value>
+  </data>
+  <data name="ServiceWorkers" xml:space="preserve">
+    <value>Personnel de service</value>
+  </data>
+  <data name="JobCategory" xml:space="preserve">
+    <value>Catégorie d’emploi</value>
+  </data>
+  <data name="C60NonHispanicNonLatinoFemaleTwoOrMoreRaces" xml:space="preserve">
+    <value>C60 - Non hispanique/Non latino-américaine - Femme - Deux races ou plus</value>
+  </data>
+  <data name="DateOfLastRaise" xml:space="preserve">
+    <value>Date dernière augmentation</value>
+  </data>
+  <data name="LaborersAndHelpers" xml:space="preserve">
+    <value>Manœuvres et aides</value>
+  </data>
+  <data name="CheckLanguage" xml:space="preserve">
+    <value>Langue du chèque</value>
+  </data>
+  <data name="HourlyRate" xml:space="preserve">
+    <value>Taux horaire</value>
+  </data>
+  <data name="B60NonHispanicNonLatinoMaleTwoOrMoreRaces" xml:space="preserve">
+    <value>B60 - Non hispanique/Non latino-américain - Homme - Deux races ou plus</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="ChineseSimplified" xml:space="preserve">
+    <value>Chinois (Simplifié)</value>
+  </data>
+  <data name="C30NonHispanicNonLatinoFemaleNativeHawaiianOrOtherPacificIslander" xml:space="preserve">
+    <value>C30 - Non hispanique/Non latino-américaine - Femme - Native d'Hawaï ou d'une autre île du Pacifique</value>
+  </data>
+  <data name="D50NonHispanicNonLatinoNonBinaryAmericanIndianOrAlaskanNative" xml:space="preserve">
+    <value>D50 - Non hispanique/Non latino-américain - Non binaire - Amérindien ou Natif de l'Alaska</value>
+  </data>
+  <data name="ClassScheduleTab" xml:space="preserve">
+    <value>Classe/Table</value>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Code postal</value>
+  </data>
+  <data name="WorkLocationAddress1" xml:space="preserve">
+    <value>Adresse ligne 1</value>
+  </data>
+  <data name="InactiveROEPending" xml:space="preserve">
+    <value>Inactif - RE en suspens</value>
+  </data>
+  <data name="TerminatedROEPending" xml:space="preserve">
+    <value>Ancien employé - RE en suspens</value>
+  </data>
+  <data name="SegmentCode" xml:space="preserve">
+    <value>Code de segment</value>
+  </data>
+  <data name="SegmentName" xml:space="preserve">
+    <value>Nom du segment</value>
+  </data>
+  <data name="chkPartTime" xml:space="preserve">
+    <value>Travailleur à temps partiel</value>
+  </data>
+  <data name="RegularRateHourly" xml:space="preserve">
+    <value>Taux normal - Horaire</value>
+  </data>
+  <data name="RegularRateSalaryFixedHours" xml:space="preserve">
+    <value>Taux normal - Salaire horaire fixe</value>
+  </data>
+  <data name="Segment1Name" xml:space="preserve">
+    <value>GLSEG1</value>
+  </data>
+  <data name="Segment2Name" xml:space="preserve">
+    <value>GLSEG2</value>
+  </data>
+  <data name="Segment3Name" xml:space="preserve">
+    <value>GLSEG3</value>
+  </data>
+  <data name="FLSASalaryFluctuatingHours" xml:space="preserve">
+    <value>Taux normal-Salaire horaire variable</value>
+  </data>
+  <data name="RegularRateSalaryFluctuatingHours" xml:space="preserve">
+    <value>Taux normal - Salaire horaire variable</value>
+  </data>
+  <data name="AllocatedTips" xml:space="preserve">
+    <value>Pourboires alloués</value>
+  </data>
+  <data name="ReportedTips" xml:space="preserve">
+    <value>Pourboires déclarés</value>
+  </data>
+  <data name="SalaryAndWages" xml:space="preserve">
+    <value>Salaires et rémunérations</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>Espèces</value>
+  </data>
+  <data name="CompensationTime" xml:space="preserve">
+    <value>Temps compensatoire</value>
+  </data>
+  <data name="HealthTax" xml:space="preserve">
+    <value>Cotisation à ass.-maladie</value>
+  </data>
+  <data name="IncomeTax" xml:space="preserve">
+    <value>Impôt sur le revenu</value>
+  </data>
+  <data name="InsuranceTax" xml:space="preserve">
+    <value>Cotisation à assurance</value>
+  </data>
+  <data name="NonCash" xml:space="preserve">
+    <value>Non monétaire</value>
+  </data>
+  <data name="NotApply" xml:space="preserve">
+    <value>N’applique pas</value>
+  </data>
+  <data name="OtherTax" xml:space="preserve">
+    <value>Autre impôt</value>
+  </data>
+  <data name="PensionPlanTax" xml:space="preserve">
+    <value>Cotisation au Régime de pension</value>
+  </data>
+  <data name="Sick" xml:space="preserve">
+    <value>Maladie</value>
+  </data>
+  <data name="UnemploymentTax" xml:space="preserve">
+    <value>Unemployment Tax</value>
+  </data>
+  <data name="Vacation" xml:space="preserve">
+    <value>Vacances</value>
+  </data>
+  <data name="BillingRates" xml:space="preserve">
+    <value>Taux de facturation</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="Blank" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="TaxInfo" xml:space="preserve">
+    <value>Impôts - Employés de Paie</value>
+  </data>
+  <data name="TaxInformation" xml:space="preserve">
+    <value>Informations fiscales</value>
+  </data>
+  <data name="EmployeeTaxAlreadyExists" xml:space="preserve">
+    <value>Le dossier fiscal de l'employé existe déjà.</value>
+  </data>
+  <data name="NoAccessToEmployee" xml:space="preserve">
+    <value>Vous n'avez pas les droits nécessaire pour accéder à cet employé.</value>
+  </data>
+  <data name="ClearInactiveDate" xml:space="preserve">
+    <value>Vous avez fait passer l'état de Inactif à Actif.  Voulez-vous effacer la date d’inactivité?</value>
+  </data>
+  <data name="ClearTerminationDate" xml:space="preserve">
+    <value>Vous avez fait passer l'état de Ancien employé à Actif.  Voulez-vous effacer la date de départ?</value>
+  </data>
+  <data name="PrenoteStatusChange" xml:space="preserve">
+    <value>La modification de l’état de note préliminaire peut entraîner une désynchronisation de vos enregistrements avec la banque, vous empêcher de traiter les dépôts directs ou entraîner un traitement incorrect des dépôts directs.  Voulez-vous vraiment modifier l’état de note préliminaire?</value>
+  </data>
+  <data name="EmployeeDependantsOnly" xml:space="preserve">
+    <value>5 - Bénéficiaire et ses enfants à charge</value>
+  </data>
+  <data name="EmployeeOnly" xml:space="preserve">
+    <value>2 - Bénéficiaire uniquement</value>
+  </data>
+  <data name="EmployeeSpouseDependants" xml:space="preserve">
+    <value>3 - Bénéficiaire, conjoint et enfants à charge</value>
+  </data>
+  <data name="EmployeeSpouseOnly" xml:space="preserve">
+    <value>4 - Bénéficiaire et son conjoint</value>
+  </data>
+  <data name="EmployerDental" xml:space="preserve">
+    <value>Offertes par l’employeur</value>
+  </data>
+  <data name="NoEmployerCoverage" xml:space="preserve">
+    <value>1 - Aucune assurance dentaire ou couverture de quelque nature que ce soit</value>
+  </data>
+  <data name="NoPayeeCoverage" xml:space="preserve">
+    <value>1 - Aucune assurance dentaire ou couverture de quelque nature que ce soit</value>
+  </data>
+  <data name="PayeeDependantsOnly" xml:space="preserve">
+    <value>5 - Bénéficiaire et ses enfants à charge</value>
+  </data>
+  <data name="PayeeOnly" xml:space="preserve">
+    <value>2 - Bénéficiaire uniquement</value>
+  </data>
+  <data name="PayeeSpouseDependants" xml:space="preserve">
+    <value>3 - Bénéficiaire, conjoint et enfants à charge</value>
+  </data>
+  <data name="PayeeSpouseOnly" xml:space="preserve">
+    <value>4 - Bénéficiaire et son conjoint</value>
+  </data>
+  <data name="PayerDental" xml:space="preserve">
+    <value>Offertes par le payeur</value>
+  </data>
+  <data name="WorkLocationCounty" xml:space="preserve">
+    <value>Province</value>
+  </data>
+  <data name="SyncedWithSageHR" xml:space="preserve">
+    <value>Synchronisé avec Sage RH</value>
+  </data>
+  <data name="SIN" xml:space="preserve">
+    <value>NAS</value>
+  </data>
+  <data name="SSN" xml:space="preserve">
+    <value>SSN</value>
+  </data>
+  <data name="Alberta" xml:space="preserve">
+    <value>Alberta</value>
+  </data>
+  <data name="BritishColumbia" xml:space="preserve">
+    <value>Colombie-Britannique</value>
+  </data>
+  <data name="Manitoba" xml:space="preserve">
+    <value>Manitoba</value>
+  </data>
+  <data name="NewBrunswick" xml:space="preserve">
+    <value>Nouveau-Brunswick</value>
+  </data>
+  <data name="NewfoundlandLabrador" xml:space="preserve">
+    <value>Terre-Neuve &amp; Labrador</value>
+  </data>
+  <data name="NorthwestTerritories" xml:space="preserve">
+    <value>Territoires du Nord-Ouest</value>
+  </data>
+  <data name="NovaScotia" xml:space="preserve">
+    <value>Nouvelle-Écosse</value>
+  </data>
+  <data name="Nunavut" xml:space="preserve">
+    <value>Nunavut</value>
+  </data>
+  <data name="Ontario" xml:space="preserve">
+    <value>Ontario</value>
+  </data>
+  <data name="OutsideCanada" xml:space="preserve">
+    <value>À l'extérieur du Canada</value>
+  </data>
+  <data name="PrinceEdwardIsland" xml:space="preserve">
+    <value>Île-du-Prince-Édouard</value>
+  </data>
+  <data name="Quebec" xml:space="preserve">
+    <value>Québec</value>
+  </data>
+  <data name="Saskatchewan" xml:space="preserve">
+    <value>Saskatchewan</value>
+  </data>
+  <data name="YukonTerritory" xml:space="preserve">
+    <value>Yukon</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Commentaire</value>
+  </data>
+  <data name="CommentType" xml:space="preserve">
+    <value>Type de commentaire</value>
+  </data>
+  <data name="DateEntered" xml:space="preserve">
+    <value>Saisi le</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Date d'expiration</value>
+  </data>
+  <data name="FollowUpDate" xml:space="preserve">
+    <value>Date de rappel</value>
+  </data>
+  <data name="ReservedComment0" xml:space="preserve">
+    <value>Réservé (comment0)</value>
+  </data>
+  <data name="ReservedComment1" xml:space="preserve">
+    <value>Réservé (comment1)</value>
+  </data>
+  <data name="ReservedComment2" xml:space="preserve">
+    <value>Réservé (comment2)</value>
+  </data>
+  <data name="ReservedComment3" xml:space="preserve">
+    <value>Réservé (comment3)</value>
+  </data>
+  <data name="ReservedComment4" xml:space="preserve">
+    <value>Réservé (comment4)</value>
+  </data>
+  <data name="ReservedComment5" xml:space="preserve">
+    <value>Réservé (comment5)</value>
+  </data>
+  <data name="ReservedComment6" xml:space="preserve">
+    <value>Réservé (comment6)</value>
+  </data>
+  <data name="ReservedComment7" xml:space="preserve">
+    <value>Réservé (comment7)</value>
+  </data>
+  <data name="ReservedComment8" xml:space="preserve">
+    <value>Réservé (comment8)</value>
+  </data>
+  <data name="ReservedComment9" xml:space="preserve">
+    <value>Réservé (comment9)</value>
+  </data>
+  <data name="Uniquifier" xml:space="preserve">
+    <value>Jeton</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>Code utilisateur</value>
+  </data>
+  <data name="CaseIdentifier" xml:space="preserve">
+    <value>Identifiant du dossier</value>
+  </data>
+  <data name="CaseJurisdiction" xml:space="preserve">
+    <value>Tribunal compétent</value>
+  </data>
+  <data name="CaseState" xml:space="preserve">
+    <value>État compétent</value>
+  </data>
+  <data name="CustodialParent" xml:space="preserve">
+    <value>Parent qui a la garde</value>
+  </data>
+  <data name="DateOfOrder" xml:space="preserve">
+    <value>Date du jugement</value>
+  </data>
+  <data name="DeductionCode" xml:space="preserve">
+    <value>Retenue</value>
+  </data>
+  <data name="DeductionsDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>Dépôt</value>
+  </data>
+  <data name="EFTStatus" xml:space="preserve">
+    <value>État TEF</value>
+  </data>
+  <data name="FIPSCode" xml:space="preserve">
+    <value>Code FIPS</value>
+  </data>
+  <data name="IsFamilyHealthInsuranceAvail" xml:space="preserve">
+    <value>Assurance médicale - disponible</value>
+  </data>
+  <data name="IsFamilyHealthInsuranceRequi" xml:space="preserve">
+    <value>Assurance médicale - obligatoire</value>
+  </data>
+  <data name="Num22Checking" xml:space="preserve">
+    <value>22 - Chèques</value>
+  </data>
+  <data name="Num32Savings" xml:space="preserve">
+    <value>32 - Épargnes</value>
+  </data>
+  <data name="Prenotification" xml:space="preserve">
+    <value>Préavis</value>
+  </data>
+  <data name="SDUAccountNumber" xml:space="preserve">
+    <value>Numéro de compte SDU</value>
+  </data>
+  <data name="SDUName" xml:space="preserve">
+    <value>Nom SDU</value>
+  </data>
+  <data name="SDURoutingNumber" xml:space="preserve">
+    <value>Numéro d'acheminement SDU</value>
+  </data>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>Numéro de compte</value>
+  </data>
+  <data name="AmountPercent" xml:space="preserve">
+    <value>Montant/Pourcentage</value>
+  </data>
+  <data name="AmtPctToBeDeposited" xml:space="preserve">
+    <value>Montant/pourcentage à déposer</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Approuvé</value>
+  </data>
+  <data name="BankIDQualifier" xml:space="preserve">
+    <value>Jeton code de banque</value>
+  </data>
+  <data name="CalculationType" xml:space="preserve">
+    <value>Type de calcul</value>
+  </data>
+  <data name="Declined" xml:space="preserve">
+    <value>Refusé</value>
+  </data>
+  <data name="DestinationCountry" xml:space="preserve">
+    <value>Pays de destination</value>
+  </data>
+  <data name="DestinationCurrency" xml:space="preserve">
+    <value>Devise de destination</value>
+  </data>
+  <data name="EFTCalculationType" xml:space="preserve">
+    <value>Type calcul TEF</value>
+  </data>
+  <data name="EmployeeEFTBank" xml:space="preserve">
+    <value>Banque TEF - Employé</value>
+  </data>
+  <data name="EmployeeEFTBankDescription" xml:space="preserve">
+    <value>Description-Banque TEF employé</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Date de fin</value>
+  </data>
+  <data name="FixedAmount" xml:space="preserve">
+    <value>Montant fixe</value>
+  </data>
+  <data name="NotSent" xml:space="preserve">
+    <value>Non envoyé</value>
+  </data>
+  <data name="Num01NACHANationalClearingSystemNumber" xml:space="preserve">
+    <value>01- (NACHA) numéro du système national de compensation</value>
+  </data>
+  <data name="Num02BICBankIdentificationNumber" xml:space="preserve">
+    <value>02- Numéro d'identification de la banque BIC</value>
+  </data>
+  <data name="Num03IBANInternationalBankAccountNumber" xml:space="preserve">
+    <value>03- IBAN- Numéro de compte bancaire international</value>
+  </data>
+  <data name="OfGrossEarnings" xml:space="preserve">
+    <value>% de salaire brut</value>
+  </data>
+  <data name="OfNetPay" xml:space="preserve">
+    <value>% de salaire net</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>En attente</value>
+  </data>
+  <data name="PrenoteStatus" xml:space="preserve">
+    <value>État de note préliminaire</value>
+  </data>
+  <data name="ReceivingDFIID" xml:space="preserve">
+    <value>Code de l'institution</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Date de début</value>
+  </data>
+  <data name="SyncTransactionGUID" xml:space="preserve">
+    <value>Sync Transaction GUID</value>
+  </data>
+  <data name="TransactionCode" xml:space="preserve">
+    <value>Code de transaction</value>
+  </data>
+  <data name="BillingRate1" xml:space="preserve">
+    <value>Taux de facturation 1</value>
+  </data>
+  <data name="BillingRate2" xml:space="preserve">
+    <value>Taux de facturation 2</value>
+  </data>
+  <data name="BillingRate3" xml:space="preserve">
+    <value>Taux de facturation 3</value>
+  </data>
+  <data name="BillingRate4" xml:space="preserve">
+    <value>Taux de facturation 4</value>
+  </data>
+  <data name="BillingRate5" xml:space="preserve">
+    <value>Taux de facturation 5</value>
+  </data>
+  <data name="BillingRate6" xml:space="preserve">
+    <value>Taux de facturation 6</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Code de devise</value>
+  </data>
+  <data name="EarningCode" xml:space="preserve">
+    <value>Code de gain</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Numéro de ligne</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Code traitement opération</value>
+  </data>
+  <data name="TemplateEmployee" xml:space="preserve">
+    <value>Modèle-Employé</value>
+  </data>
+  <data name="Accrued" xml:space="preserve">
+    <value>Cumulées</value>
+  </data>
+  <data name="AdvanceToBeRepaid" xml:space="preserve">
+    <value>Avance à payer</value>
+  </data>
+  <data name="AmountPaid" xml:space="preserve">
+    <value>Montant payé</value>
+  </data>
+  <data name="AvailableInEmployeeTimecards" xml:space="preserve">
+    <value>Disponible dans feuilles de temps-Employé</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>Solde</value>
+  </data>
+  <data name="BillingPercentage1" xml:space="preserve">
+    <value>Pourcent. de facturation 1</value>
+  </data>
+  <data name="BillingPercentage2" xml:space="preserve">
+    <value>Pourcent. de facturation 2</value>
+  </data>
+  <data name="BillingPercentage3" xml:space="preserve">
+    <value>Pourcent. de facturation 3</value>
+  </data>
+  <data name="BillingPercentage4" xml:space="preserve">
+    <value>Pourcent. de facturation 4</value>
+  </data>
+  <data name="BillingPercentage5" xml:space="preserve">
+    <value>Pourcent. de facturation 5</value>
+  </data>
+  <data name="BillingPercentage6" xml:space="preserve">
+    <value>Pourcent. de facturation 6</value>
+  </data>
+  <data name="Calculate" xml:space="preserve">
+    <value>Calculer</value>
+  </data>
+  <data name="Carryover" xml:space="preserve">
+    <value>Reporter</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Catégorie</value>
+  </data>
+  <data name="DefaultHours" xml:space="preserve">
+    <value>Heures par défaut</value>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>Code de ventilation</value>
+  </data>
+  <data name="EarningDeductionDescription" xml:space="preserve">
+    <value>Description - Gains/Retenues</value>
+  </data>
+  <data name="EmployeeBaseLimit" xml:space="preserve">
+    <value>Limite de base-Employé</value>
+  </data>
+  <data name="EmployeeCalcMethod" xml:space="preserve">
+    <value>Méthode de calcul-Employé</value>
+  </data>
+  <data name="EmployeeEarningDeduction" xml:space="preserve">
+    <value>Gain/retenue-Employé</value>
+  </data>
+  <data name="EmployeePeriodMaximum" xml:space="preserve">
+    <value>Maximum période-Employé</value>
+  </data>
+  <data name="EmployeePeriodMinimum" xml:space="preserve">
+    <value>Minimum période-Employé</value>
+  </data>
+  <data name="EmployeeRateAmtPct" xml:space="preserve">
+    <value>Taux/Mont./p.c.-Employé</value>
+  </data>
+  <data name="EmployeeSecondaryRateAmtPct" xml:space="preserve">
+    <value>P.c./Mont./Taux secondaire-Employé</value>
+  </data>
+  <data name="EmployeeSecondaryRateEffectiv" xml:space="preserve">
+    <value>Taux second. employé – En vigueur le</value>
+  </data>
+  <data name="EmployerAmtPct" xml:space="preserve">
+    <value>Mont./p.c.-Employeur</value>
+  </data>
+  <data name="EmployerAnnualMaximum" xml:space="preserve">
+    <value>Maximum annuel-Employeur</value>
+  </data>
+  <data name="EmployerBaseLimit" xml:space="preserve">
+    <value>Limite de base-Employeur</value>
+  </data>
+  <data name="EmployerCalcMethod" xml:space="preserve">
+    <value>Méthode de calcul-Employeur</value>
+  </data>
+  <data name="EmployerLifetimeAccumulation" xml:space="preserve">
+    <value>Accumulation viagère-Employeur</value>
+  </data>
+  <data name="EmployerLifetimeMaximum" xml:space="preserve">
+    <value>Max. viager-Employeur</value>
+  </data>
+  <data name="EmployerPeriodMaximum" xml:space="preserve">
+    <value>Maximum période-Employeur</value>
+  </data>
+  <data name="EmployerPeriodMinimum" xml:space="preserve">
+    <value>Minimum période-Employeur</value>
+  </data>
+  <data name="EmployerSecondaryAmtPct" xml:space="preserve">
+    <value>P.c./Mont. secondaire-Employeur</value>
+  </data>
+  <data name="EmployerSecondaryRateEffectiv" xml:space="preserve">
+    <value>Taux second. employeur – En vigueur le</value>
+  </data>
+  <data name="IncludeInFLSAOvertimeCalc" xml:space="preserve">
+    <value>Inclure dans calc. HS au taux normal</value>
+  </data>
+  <data name="JobsAllocBasedOnCalcBase" xml:space="preserve">
+    <value>Ventil. tâches basée sur base de calc.</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>Payé</value>
+  </data>
+  <data name="RESERVEDSegmentName4" xml:space="preserve">
+    <value>RÉSERVÉ - Nom de segment 4</value>
+  </data>
+  <data name="RESERVEDSegmentName5" xml:space="preserve">
+    <value>RÉSERVÉ - Nom de segment 5</value>
+  </data>
+  <data name="RESERVEDSegmentName6" xml:space="preserve">
+    <value>RÉSERVÉ - Nom de segment 6</value>
+  </data>
+  <data name="SegmentName1" xml:space="preserve">
+    <value>Nom segment 1</value>
+  </data>
+  <data name="SegmentName2" xml:space="preserve">
+    <value>Nom segment 2</value>
+  </data>
+  <data name="SegmentName3" xml:space="preserve">
+    <value>Nom segment 3</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Autoriser les blancs</value>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Valeur montant</value>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Valeur date</value>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Décimales</value>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Valeur nombre entier</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Longueur</value>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Valeur nombre</value>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Champ optionnel</value>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Description du champ optionnel</value>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Valeur texte</value>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>Valeur heure</value>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Index champ valeur saisie</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Valider</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Description de la valeur</value>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Valeur définie</value>
+  </data>
+  <data name="YesNoValue" xml:space="preserve">
+    <value>Valeur Oui/Non</value>
+  </data>
+  <data name="BinaryValue" xml:space="preserve">
+    <value>Valeur binaire</value>
+  </data>
+  <data name="FieldDataType" xml:space="preserve">
+    <value>Type de données du champ</value>
+  </data>
+  <data name="FieldLength" xml:space="preserve">
+    <value>Longueur du champ (octets)</value>
+  </data>
+  <data name="FieldSequence" xml:space="preserve">
+    <value>Séquence de champ</value>
+  </data>
+  <data name="FieldUseType" xml:space="preserve">
+    <value>Type champ utilisé</value>
+  </data>
+  <data name="LongValue" xml:space="preserve">
+    <value>Valeur longue</value>
+  </data>
+  <data name="NumberOfDecimalPlaces" xml:space="preserve">
+    <value>Nombre de décimales</value>
+  </data>
+  <data name="ParameterName" xml:space="preserve">
+    <value>Nom du paramètre</value>
+  </data>
+  <data name="TaxCode" xml:space="preserve">
+    <value>Code d'impôt</value>
+  </data>
+  <data name="TaxTableFieldNumber" xml:space="preserve">
+    <value>N° champ de table impôt</value>
+  </data>
+  <data name="ClassCodes" xml:space="preserve">
+    <value>Codes de classe</value>
+  </data>
+  <data name="DentalBenefits" xml:space="preserve">
+    <value>Prestations dentaires</value>
+  </data>
+  <data name="EmergencyContactHeading" xml:space="preserve">
+    <value>Contact en cas d'urgence</value>
+  </data>
+  <data name="BillingRatePerHour" xml:space="preserve">
+    <value>Taux de facturation par heure</value>
+  </data>
+  <data name="BillingRatePerHour2" xml:space="preserve">
+    <value>Taux de facturation par heure 2</value>
+  </data>
+  <data name="BillingRatePerHour3" xml:space="preserve">
+    <value>Taux de facturation par heure 3</value>
+  </data>
+  <data name="BillingRatePerHour4" xml:space="preserve">
+    <value>Taux de facturation par heure 4</value>
+  </data>
+  <data name="BillingRatePerHour5" xml:space="preserve">
+    <value>Taux de facturation par heure 4</value>
+  </data>
+  <data name="BillingRatePerHour6" xml:space="preserve">
+    <value>Taux de facturation par heure 5</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Devise</value>
+  </data>
+  <data name="CurrencyDescription" xml:space="preserve">
+    <value>Description de devise</value>
+  </data>
+  <data name="EarningDeduction" xml:space="preserve">
+    <value>Gain/Retenue</value>
+  </data>
+  <data name="EffectiveDate" xml:space="preserve">
+    <value>En vigueur le</value>
+  </data>
+  <data name="ExtraWithholding" xml:space="preserve">
+    <value>Retenue supplémentaire</value>
+  </data>
+  <data name="GLDistributionCode" xml:space="preserve">
+    <value>Code de ventilation GL</value>
+  </data>
+  <data name="Occasional" xml:space="preserve">
+    <value>Occasionnel</value>
+  </data>
+  <data name="ParameterCount" xml:space="preserve">
+    <value>Nombre de paramètres</value>
+  </data>
+  <data name="ParameterVersion" xml:space="preserve">
+    <value>Version de paramètre</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Impôt</value>
+  </data>
+  <data name="TaxDescription" xml:space="preserve">
+    <value>Description de l’impôt</value>
+  </data>
+  <data name="TaxType" xml:space="preserve">
+    <value>Type d’impôt</value>
+  </data>
+  <data name="UseOptionalFields" xml:space="preserve">
+    <value>Utiliser les champs optionnels</value>
+  </data>
+  <data name="WithholdingMethod" xml:space="preserve">
+    <value>Méthode de retenue</value>
+  </data>
+  <data name="AdvanceToRepay" xml:space="preserve">
+    <value>Avance à payer</value>
+  </data>
+  <data name="BillingPercentCommission1" xml:space="preserve">
+    <value>Pourcentage de facturation 1 (commission de vente)</value>
+  </data>
+  <data name="BillingPercentCommission2" xml:space="preserve">
+    <value>Pourcentage de facturation 2 (commission de vente)</value>
+  </data>
+  <data name="BillingPercentCommission3" xml:space="preserve">
+    <value>Pourcentage de facturation 3 (commission de vente)</value>
+  </data>
+  <data name="BillingPercentCommission4" xml:space="preserve">
+    <value>Pourcentage de facturation 4 (commission de vente)</value>
+  </data>
+  <data name="BillingPercentCommission5" xml:space="preserve">
+    <value>Pourcentage de facturation 5 (commission de vente)</value>
+  </data>
+  <data name="BillingPercentCommission6" xml:space="preserve">
+    <value>Pourcentage de facturation 6 (commission de vente)</value>
+  </data>
+  <data name="BillingPercentOfBase" xml:space="preserve">
+    <value>Pourcentage de facturation (Pourcentage de base)</value>
+  </data>
+  <data name="CalculateQuestion" xml:space="preserve">
+    <value>Calculer?</value>
+  </data>
+  <data name="EmployeeAnnualMaximum" xml:space="preserve">
+    <value>Maximum annuel-Employé</value>
+  </data>
+  <data name="EmployeeLifetimeAccumulation" xml:space="preserve">
+    <value>Accumulation viagère-Employé</value>
+  </data>
+  <data name="EmployeeLifetimeMaximum" xml:space="preserve">
+    <value>Maximum viager-Employé</value>
+  </data>
+  <data name="EmployeeSecondaryRateAmtPercent" xml:space="preserve">
+    <value>P. cent./Montant/Taux secondaire-Employé</value>
+  </data>
+  <data name="EmployerSecondaryAmtPercent" xml:space="preserve">
+    <value>P. cent/Montant secondaire-Employeur</value>
+  </data>
+  <data name="Ends" xml:space="preserve">
+    <value>Termine</value>
+  </data>
+  <data name="IncludeInFLSACalc" xml:space="preserve">
+    <value>Inclure dans calcul au taux normal</value>
+  </data>
+  <data name="OverrideBillingRates" xml:space="preserve">
+    <value>Substitution du taux de facturation</value>
+  </data>
+  <data name="OverrideCounty" xml:space="preserve">
+    <value>Substituer la province</value>
+  </data>
+  <data name="OverrideDivision" xml:space="preserve">
+    <value>Remplacer la division</value>
+  </data>
+  <data name="OverrideRegion" xml:space="preserve">
+    <value>Remplacer la région</value>
+  </data>
+  <data name="Starts" xml:space="preserve">
+    <value>Débute</value>
+  </data>
+  <data name="WCCGroup" xml:space="preserve">
+    <value>Groupe CSST</value>
+  </data>
+  <data name="WorkersComp" xml:space="preserve">
+    <value>CSST</value>
   </data>
 </root>

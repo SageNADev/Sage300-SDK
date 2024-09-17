@@ -117,7 +117,172 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Acquired" xml:space="preserve">
+    <value>Acquis</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Montant</value>
+  </data>
+  <data name="AmountOverride" xml:space="preserve">
+    <value>Montant remplacé</value>
+  </data>
+  <data name="AmountPercentOverride" xml:space="preserve">
+    <value>Pour cent</value>
+  </data>
+  <data name="BlankTaxCode" xml:space="preserve">
+    <value>Saisie erronée. Le code d’impôt ne peut pas être en blanc.</value>
+  </data>
+  <data name="CalculationBaseOnly" xml:space="preserve">
+    <value>Base de calcul seulement</value>
+  </data>
+  <data name="CheckParameters" xml:space="preserve">
+    <value>Paramètres de chèque</value>
+  </data>
+  <data name="ClassSchedule" xml:space="preserve">
+    <value>Table de classe</value>
+  </data>
+  <data name="ClassSchedules" xml:space="preserve">
+    <value>Tables de classes</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Commentaires</value>
+  </data>
+  <data name="CopyEmployeeTemplate" xml:space="preserve">
+    <value>Copier gabarit d'employé</value>
+  </data>
+  <data name="CostCenter" xml:space="preserve">
+    <value>Centre de coûts</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Date de création</value>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>Code de ventilation</value>
+  </data>
+  <data name="DistributionDetail" xml:space="preserve">
+    <value>Détails de ventilation</value>
+  </data>
+  <data name="EFT" xml:space="preserve">
+    <value>EFT</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employé</value>
+  </data>
+  <data name="EMPPARMCNT" xml:space="preserve">
+    <value>USAGE INTERNE - Table d'impôts employés</value>
+  </data>
+  <data name="EMPPARMVER" xml:space="preserve">
+    <value>USAGE INTERNE - Table d'impôts employés</value>
+  </data>
   <data name="Entity" xml:space="preserve">
-    <value />
+    <value>PR EmployeeTaxInfo</value>
+  </data>
+  <data name="Entity1" xml:space="preserve">
+    <value>PR EmployeeTaxe</value>
+  </data>
+  <data name="ExtraWithholding" xml:space="preserve">
+    <value>Retenue supplémentaire</value>
+  </data>
+  <data name="FieldDataType" xml:space="preserve">
+    <value>Type de données du champ</value>
+  </data>
+  <data name="FieldLength" xml:space="preserve">
+    <value>Longueur du champ</value>
+  </data>
+  <data name="FieldNumber" xml:space="preserve">
+    <value>Numéro du champ</value>
+  </data>
+  <data name="FieldSequenceNumber" xml:space="preserve">
+    <value>Numéro de séquence du champ</value>
+  </data>
+  <data name="FieldUseType" xml:space="preserve">
+    <value>Type de champ utilisé</value>
+  </data>
+  <data name="Garnishment" xml:space="preserve">
+    <value>Saisie sur salaire</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Général</value>
+  </data>
+  <data name="Inserted" xml:space="preserve">
+    <value>Inséré</value>
+  </data>
+  <data name="InsertOptionalFields" xml:space="preserve">
+    <value>Insérer champs optionnels</value>
+  </data>
+  <data name="INTERNALUSECategory" xml:space="preserve">
+    <value>USAGE INTERNE - Catégorie</value>
+  </data>
+  <data name="INTERNALUSEOccasionalTax" xml:space="preserve">
+    <value>Usage interne - Impôt occasionnel</value>
+  </data>
+  <data name="INTERNALUSEOperationCode" xml:space="preserve">
+    <value>USAGE INTERNE - Code opération</value>
+  </data>
+  <data name="INTERNALUSETaxTableEffecti" xml:space="preserve">
+    <value>USAGE INTERNE - Table d'impôts en vigueur le</value>
+  </data>
+  <data name="INTERNALUSETaxType" xml:space="preserve">
+    <value>USAGE INTERNE - Type d'impôt</value>
+  </data>
+  <data name="INTERNALUSETemplate" xml:space="preserve">
+    <value>USAGE INTERNE - Modèle</value>
+  </data>
+  <data name="NumberOfDecimals" xml:space="preserve">
+    <value>Nombre de décimales</value>
+  </data>
+  <data name="NumberOfOptionalFields" xml:space="preserve">
+    <value>Nombre de champs optionnels</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Autre</value>
+  </data>
+  <data name="Pay" xml:space="preserve">
+    <value>Payer</value>
+  </data>
+  <data name="Percent" xml:space="preserve">
+    <value>Pour cent</value>
+  </data>
+  <data name="PercentOverride" xml:space="preserve">
+    <value>P. cent remplacé</value>
+  </data>
+  <data name="StandardCalculation" xml:space="preserve">
+    <value>Calcul standard</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Impôt</value>
+  </data>
+  <data name="TaxableNoWithholding" xml:space="preserve">
+    <value>Imposable, aucune retenue</value>
+  </data>
+  <data name="TaxCode" xml:space="preserve">
+    <value>Impôt</value>
+  </data>
+  <data name="TaxDescription" xml:space="preserve">
+    <value>Détails des impôts</value>
+  </data>
+  <data name="TaxDetails" xml:space="preserve">
+    <value>Détails des impôts</value>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Impôts</value>
+  </data>
+  <data name="TaxField" xml:space="preserve">
+    <value>Champ impôt</value>
+  </data>
+  <data name="Updated" xml:space="preserve">
+    <value>Mis à jour</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="WithholdingMethod" xml:space="preserve">
+    <value>Méthode de retenue</value>
+  </data>
+  <data name="WorkLocation" xml:space="preserve">
+    <value>Lieu de travail</value>
   </data>
 </root>

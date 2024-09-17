@@ -117,22 +117,68 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Accrued" xml:space="preserve">
+    <value>Cumulées</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Actif</value>
+  </data>
+  <data name="AddSuccessMessage" xml:space="preserve">
+    <value>{0} ajouté(es) avec succès.</value>
+  </data>
   <data name="AdvancesReceivable" xml:space="preserve">
     <value>Avances à recevoir</value>
   </data>
   <data name="AdvancesReceivableAccountDescription" xml:space="preserve">
     <value>Descr.-Cpte avances à recevoir</value>
   </data>
+  <data name="All" xml:space="preserve">
+    <value>Tous</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Appliquer</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Saisie erronée. La banque n'est pas définie.</value>
+  </data>
   <data name="BankCode" xml:space="preserve">
-    <value>Bank Code</value>
-    <comment>to be translate</comment>
+    <value>Code de banque</value>
+  </data>
+  <data name="Banked" xml:space="preserve">
+    <value>Banques d’heures</value>
+  </data>
+  <data name="btnOpen" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="CheckDate" xml:space="preserve">
+    <value>Date du chèque</value>
+  </data>
+  <data name="ChequeDate" xml:space="preserve">
+    <value>Date du chèque</value>
+  </data>
+  <data name="Compensatory" xml:space="preserve">
+    <value>Compensatoire</value>
+  </data>
+  <data name="CostCenterOverride" xml:space="preserve">
+    <value>Subst. centre coûts</value>
+  </data>
+  <data name="CPPRCheckList" xml:space="preserve">
+    <value>PRChequeList</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Description</value>
-    <comment>to be translate</comment>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Type de document</value>
   </data>
   <data name="EarningDeduction" xml:space="preserve">
     <value>Gain/retenue</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employé</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Nom de l’employé</value>
   </data>
   <data name="EmployerExpenseAccount" xml:space="preserve">
     <value>Cpte de charges-Employeur</value>
@@ -146,8 +192,56 @@
   <data name="EmployerLiabilityAccountDescription" xml:space="preserve">
     <value>Descr. compte de passif-Employeur</value>
   </data>
+  <data name="EmptyEmployee" xml:space="preserve">
+    <value>Saisie erronée. L’employé ne peut pas être en blanc.</value>
+  </data>
+  <data name="EmptySelectionList" xml:space="preserve">
+    <value>Saisie erronée. La liste de sélection ne peut pas être en blanc.</value>
+  </data>
+  <data name="FromCheckDate" xml:space="preserve">
+    <value>De date chèque</value>
+  </data>
+  <data name="FromEmployee" xml:space="preserve">
+    <value>De l’employé</value>
+  </data>
   <data name="GLDistCode" xml:space="preserve">
-    <value>Code vent.G/L</value>
+    <value>Code de ventilation du GL</value>
+  </data>
+  <data name="HistoryEntry" xml:space="preserve">
+    <value>Entrée historique</value>
+  </data>
+  <data name="InavlidEmployee" xml:space="preserve">
+    <value>Saisie erronée. L'employé n'existe pas</value>
+  </data>
+  <data name="InvalidCalculationSequence" xml:space="preserve">
+    <value>La séquence de calcul {0} n’existe pas.</value>
+  </data>
+  <data name="InvalidEntryMessage" xml:space="preserve">
+    <value> La valeur du champ « Du » ne peut pas être supérieure à la valeur du champ « Au ».</value>
+  </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value> La date de début n’est pas valide </value>
+  </data>
+  <data name="InvalidInput" xml:space="preserve">
+    <value>Saisie erronée. Le champ optionnel ne peut pas être en blanc.</value>
+  </data>
+  <data name="InvalidInputFormatting" xml:space="preserve">
+    <value> Saisissez une valeur valide</value>
+  </data>
+  <data name="InvalidPeriodEndDateFormat" xml:space="preserve">
+    <value>La date fin de période n’est pas valide.</value>
+  </data>
+  <data name="InvalidSelectionList" xml:space="preserve">
+    <value>Saisie erronée. La liste de sélection n'existe pas.</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value> La date de fin n'est pas valide </value>
+  </data>
+  <data name="InvalidYear" xml:space="preserve">
+    <value>Saisie erronée. L’année est hors de la plage.</value>
+  </data>
+  <data name="LaterCalculationSequence" xml:space="preserve">
+    <value>La séquence de calcul {0} a une date de fin de période ultérieure.</value>
   </data>
   <data name="Liability" xml:space="preserve">
     <value>Passif</value>
@@ -155,26 +249,68 @@
   <data name="LiabilityAccountDescription" xml:space="preserve">
     <value>Description-Cpte de passif</value>
   </data>
+  <data name="ManualCheck" xml:space="preserve">
+    <value>Chèque manuel</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="Overtime" xml:space="preserve">
+    <value>Heures suppl.</value>
+  </data>
   <data name="OvertimeExpense" xml:space="preserve">
-    <value>Charges-Hres sup.</value>
+    <value>Cpte charges-Hres suppl.</value>
   </data>
   <data name="OvertimeExpenseAccountDescription" xml:space="preserve">
     <value>Descr.-Cpte de charges d'heures suppl.</value>
   </data>
+  <data name="Paid" xml:space="preserve">
+    <value>Payé</value>
+  </data>
+  <data name="PeriodEndDate" xml:space="preserve">
+    <value>Date fin période</value>
+  </data>
+  <data name="PostingStatus" xml:space="preserve">
+    <value>État report</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Imprimer</value>
+  </data>
   <data name="RateAmtPct" xml:space="preserve">
     <value>Taux/Mont/P.c.</value>
   </data>
+  <data name="Regular" xml:space="preserve">
+    <value>Régulier</value>
+  </data>
   <data name="RegularExpense" xml:space="preserve">
-    <value>Cpte charges-Salaire rég.</value>
+    <value>Cpte charges-salaire régulier</value>
   </data>
   <data name="RegularExpenseAccountDescription" xml:space="preserve">
-    <value>Descr.-Cpte de charges courantes</value>
+    <value>Descr.-Cpte de charges salaire régulier</value>
+  </data>
+  <data name="ReversedCheck" xml:space="preserve">
+    <value>Chèque contrepassé</value>
+  </data>
+  <data name="Segments" xml:space="preserve">
+    <value>Segments</value>
+  </data>
+  <data name="SelectionList" xml:space="preserve">
+    <value>Liste de sélection</value>
+  </data>
+  <data name="SelectOneCheckType" xml:space="preserve">
+    <value>Vous devez cocher au moins une case de fréquence de paie.</value>
+  </data>
+  <data name="SelectOneChequeType" xml:space="preserve">
+    <value>Vous devez cocher au moins une case de fréquence de paie.</value>
+  </data>
+  <data name="SelectOneStatusType" xml:space="preserve">
+    <value>Vous devez cocher Actif ou Inactif.</value>
   </data>
   <data name="Shift" xml:space="preserve">
     <value>Quart</value>
   </data>
   <data name="ShiftExpense" xml:space="preserve">
-    <value>Charges-Quart</value>
+    <value>Cpte charges-Quart</value>
   </data>
   <data name="ShiftExpenseAccountDescription" xml:space="preserve">
     <value>Descr.-Cpte de charges de prime de quart</value>
@@ -182,27 +318,47 @@
   <data name="ShiftSchedule" xml:space="preserve">
     <value>Table de quart</value>
   </data>
-  <data name="CostCenterOverride" xml:space="preserve">
-    <value>Subst. centre coûts</value>
+  <data name="Sick" xml:space="preserve">
+    <value>Maladie</value>
   </data>
-  <data name="Segments" xml:space="preserve">
-    <value>Segments</value>
+  <data name="SystemCheck" xml:space="preserve">
+    <value>Chèque système</value>
   </data>
   <data name="Tax" xml:space="preserve">
     <value>Impôt</value>
   </data>
   <data name="TaxDescription" xml:space="preserve">
-    <value>Description</value>
+    <value>Description de l’impôt</value>
   </data>
   <data name="Taxes" xml:space="preserve">
     <value>Impôts</value>
   </data>
+  <data name="TimesLate" xml:space="preserve">
+    <value>Retards</value>
+  </data>
+  <data name="ToCheckDate" xml:space="preserve">
+    <value>À la date de chèque</value>
+  </data>
+  <data name="ToEmployee" xml:space="preserve">
+    <value>À l'employé</value>
+  </data>
   <data name="TransactionCode" xml:space="preserve">
-    <value>Transaction Code</value>
-    <comment>to be translate</comment>
+    <value>Code de transaction</value>
+  </data>
+  <data name="TypeOfCheckDocument" xml:space="preserve">
+    <value>Type de document</value>
+  </data>
+  <data name="UnavailableCalculationSequence" xml:space="preserve">
+    <value>Il n'y a rien à reporter dans la séquence de calcul {0}.</value>
+  </data>
+  <data name="UPPRCheckList" xml:space="preserve">
+    <value>PRCheckList</value>
   </data>
   <data name="UseOptionalFields" xml:space="preserve">
-    <value>Utiliser champs optionnels</value>
+    <value>Utiliser des champs optionnels</value>
+  </data>
+  <data name="Vacation" xml:space="preserve">
+    <value>Vacances</value>
   </data>
   <data name="WCCGroup" xml:space="preserve">
     <value>Groupe CSST</value>
@@ -215,41 +371,5 @@
   </data>
   <data name="WorkersCompDescription" xml:space="preserve">
     <value>Description -CSST</value>
-  </data>
-  <data name="Active" xml:space="preserve">
-    <value>Actif</value>
-  </data>
-  <data name="EmployeeName" xml:space="preserve">
-    <value>Nom de l'employé</value>
-  </data>
-  <data name="PeriodEndDate" xml:space="preserve">
-    <value>Date fin période</value>
-  </data>
-  <data name="TimesLate" xml:space="preserve">
-    <value>Retards</value>
-  </data>
-  <data name="Accrued" xml:space="preserve">
-    <value>Cumulées</value>
-  </data>
-  <data name="Banked" xml:space="preserve">
-    <value>Banque d’heures</value>
-  </data>
-  <data name="Compensatory" xml:space="preserve">
-    <value>Banque d’heures</value>
-  </data>
-  <data name="Paid" xml:space="preserve">
-    <value>Payées</value>
-  </data>
-  <data name="Regular" xml:space="preserve">
-    <value>Norm.</value>
-  </data>
-  <data name="Sick" xml:space="preserve">
-    <value>Maladie</value>
-  </data>
-  <data name="Vacation" xml:space="preserve">
-    <value>Vacance</value>
-  </data>
-  <data name="AddSuccessMessage" xml:space="preserve">
-    <value>Ajout d’une nouvelle {0}.</value>
   </data>
 </root>

@@ -114,6 +114,11 @@
                             <li id="companyNameMenu">
                                 <span class="txt-top-menu">@RenderSection("companyName", required: false)</span>
                             </li>
+                            <li id="infoCenterMenu">
+                                <span class="txt-top-menu">
+                                    <a class="skip-memu" style="color: #00d639;" href="@ConfigurationHelper.InformationCenterURLPath" target="_blank">@HomePageResx.QuickMenu_InfoCenter</a>
+                                </span>
+                            </li>
                             @if (hasGlobalSearchLicense)
                             {
                                 <li class="menu-item-with-icon" id="globalSearch">
@@ -129,9 +134,9 @@
                                 <i class="settings glyphicon glyphicon-md glyphicon-setting" title="Settings"><span>@NavigationResx.Settings</span></i>
                                 <ul>
                                     @*<li id="unpinMainNav"><i class="unpin"></i><span class="settings-menulist" id="labelUnpin">@NavigationResx.UnpinMenu</span></li>
-                                        <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">@NavigationResx.PinMenu</span></li>
-                                        <li id="btnColorPicker"><span class="settings-menulist" id="labelCompanyColor">@NavigationResx.SetCompanyColor</span></li>
-                                        <li id="btnColorPickerDB"><span class="settings-menulist" id="labelCompanyColorDB">@NavigationResx.SetCompanyColorDB</span></li>*@
+                <li id="pinMainNav"><i class="pin"></i><span class="settings-menulist" id="labelPin">@NavigationResx.PinMenu</span></li>
+                <li id="btnColorPicker"><span class="settings-menulist" id="labelCompanyColor">@NavigationResx.SetCompanyColor</span></li>
+                <li id="btnColorPickerDB"><span class="settings-menulist" id="labelCompanyColorDB">@NavigationResx.SetCompanyColorDB</span></li>*@
                                     <li id="btnFormSize">
                                         <span class="settings-menulist" id="labelFormSize">@NavigationResx.TextSize</span>
                                         <ul>

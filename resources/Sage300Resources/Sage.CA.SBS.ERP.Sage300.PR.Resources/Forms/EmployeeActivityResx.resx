@@ -435,6 +435,9 @@
   <data name="FromCheckDate" xml:space="preserve">
     <value>From Check Date</value>
   </data>
+  <data name="FromChequeDate" xml:space="preserve">
+    <value>From Cheque Date</value>
+  </data>
   <data name="FromDate" xml:space="preserve">
     <value>From Date</value>
   </data>
@@ -692,6 +695,9 @@
   </data>
   <data name="ToCheckDate" xml:space="preserve">
     <value>To Check Date</value>
+  </data>
+  <data name="ToChequeDate" xml:space="preserve">
+    <value>To Cheque Date</value>
   </data>
   <data name="ToDate" xml:space="preserve">
     <value>To Date</value>

@@ -1652,14 +1652,20 @@
     <value>One or more errors occurred while attempting to generate the report:  {0}</value>
     <comment>Internal use only. No translation necessary.</comment>
   </data>
+  <data name="PostSuccessMessage" xml:space="preserve">
+    <value>Report terminé. {0}, {1}</value>
+  </data>
   <data name="CollapseAll" xml:space="preserve">
     <value>Réduire</value>
   </data>
   <data name="ExpandAll" xml:space="preserve">
     <value>Agrandir</value>
   </data>
+  <data name="OptionalFieldValidation" xml:space="preserve">
+    <value>Saisie erronée. Le champ optionnel {0} n'existe pas.</value>
+  </data>
   <data name="FieldDoesNotExist" xml:space="preserve">
-    <value>{0} n'existe pas.</value>
+    <value>L'élément {0} n'existe pas.</value>
   </data>
   <data name="Integer" xml:space="preserve">
     <value>Nombre entier</value>
@@ -1678,20 +1684,62 @@
     <value>Impossible de fermer la fenêtre parent avant de lancer la consultation. Le type de zoom avant est ignoré.</value>
   </data>
   <data name="UnableToRetrieveCredentials" xml:space="preserve">
-    <value>Unable to to retrieve credentials. Please log into Financial Reporter again.</value>
+    <value>Impossible de récupérer les informations d'identification. Veuillez vous reconnecter à Générateur d’états financiers.</value>
     <comment>To be translated</comment>
-  </data>
-  <data name="PostSuccessMessage" xml:space="preserve">
-    <value>Report terminé. {0}, {1}</value>
   </data>
   <data name="AnErrorOccurredProcessingYourRequest" xml:space="preserve">
     <value>Une erreur s'est produite lors du traitement de votre demande.</value>
   </data>
+  <data name="InvalidInput" xml:space="preserve">
+    <value>Saisie erronée. Le {0} n'existe pas.</value>
+  </data>
   <data name="DocumentNumber" xml:space="preserve">
     <value>Numéro de document</value>
+  </data>
+  <data name="AssignEmployeeEarnOrDedAuditPopup" xml:space="preserve">
+    <value>Assurez-vous que l'impression du rapport Vérif. d'attrib. gain/ret. de l'employé sur papier ou sur le disque soit correcte avant de l'approuver. Le ou les fichiers Vérif. attrib. gains/ret. de l'employé seront supprimés lorsque vous approuverez l'impression. Si le rapport n'a pas été imprimé correctement, fermez cette fenêtre et réimprimez-le.</value>
+  </data>
+  <data name="AssignEmployeeTitle" xml:space="preserve">
+    <value>Rapport - Vérif. d'attrib. gain/ret. de l'employé</value>
+  </data>
+  <data name="AssignEmployeeTaxAuditPopup" xml:space="preserve">
+    <value>Assurez-vous que l'impression du rapport Vérification des assignations d’impôts aux employés sur papier ou sur le disque soit correcte avant de l'approuver. Le ou les fichiers Vérification des assignations d’impôts aux employés seront supprimés lorsque vous approuverez l'impression. Si le rapport n'a pas été imprimé correctement, fermez cette fenêtre et réimprimez-le.</value>
+  </data>
+  <data name="AssignEmployeeTaxTitle" xml:space="preserve">
+    <value>Rapport Vérification des assignations d’impôts aux employés</value>
+  </data>
+  <data name="AssignEarnOrDedAuditPopup" xml:space="preserve">
+    <value>L'impression du rapport Vérif. d'attrib. gain/ret. de l'employé s'est-elle effectuée correctement? Dans la négative, cliquez sur 'Fermer'.</value>
+  </data>
+  <data name="AssignEmployeeEarnOrDedTitle" xml:space="preserve">
+    <value>Rapport - Vérif. d'attrib. gain/ret. de l'employé</value>
+  </data>
+  <data name="AssignTaxAuditPopup" xml:space="preserve">
+    <value>L'impression du rapport Vérification des assignations d’impôts aux employés s'est-elle effectuée correctement? Dans la négative, cliquez sur 'Fermer'.</value>
   </data>
   <data name="FeatureNotAvailableWeb_Message_v2" xml:space="preserve">
     <value>Votre demande n’a pas pu être terminée car {0} n’est pas disponible dans les écrans web. Vous pouvez éventuellement utiliser l’écran du bureau.</value>
     <comment>Used in AP-AR Payment Intery for Job related items</comment>
+  </data>
+  <data name="SendingEmails" xml:space="preserve">
+    <value>Envoi de courriels</value>
+  </data>
+  <data name="CanceledEmails" xml:space="preserve">
+    <value>L'envoi des courriels a été annulé.</value>
+  </data>
+  <data name="NoEmailsSent" xml:space="preserve">
+    <value>Aucun courriel envoyé</value>
+  </data>
+  <data name="AllEmailsSentNoWarnings" xml:space="preserve">
+    <value>Tous les courriels ont été envoyés avec succès.</value>
+  </data>
+  <data name="AllEmailsSentButWarnings" xml:space="preserve">
+    <value>Tous les courriels ont été traités, bien que certains pourraient ne pas atteindre tous les destinataires.</value>
+  </data>
+  <data name="SomeEmailsSentFailed" xml:space="preserve">
+    <value>Courriels {0} à {1} envoyés avec succès; échec sur {2}</value>
+  </data>
+  <data name="SomeEmailsSentCanceled" xml:space="preserve">
+    <value>Courriels {0} à {1} envoyés avec succès; annulation sur {2} ou avant</value>
   </data>
 </root>

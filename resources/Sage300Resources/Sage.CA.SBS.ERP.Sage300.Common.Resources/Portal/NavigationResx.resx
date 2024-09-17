@@ -1932,7 +1932,7 @@
     <value>Find Duplicate SSN</value>
   </data>
   <data name="PR_Generate_ETF_File" xml:space="preserve">
-    <value>Generate ETF File</value>
+    <value>Generate EFT File</value>
   </data>
   <data name="PR_GL_Integration" xml:space="preserve">
     <value>G/L Integration</value>

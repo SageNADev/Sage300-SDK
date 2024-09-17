@@ -159,6 +159,9 @@
   <data name="CompensatoryTime" xml:space="preserve">
     <value />
   </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>Numéro de client</value>
+  </data>
   <data name="Date" xml:space="preserve">
     <value />
   </data>
@@ -294,7 +297,7 @@
     <value />
   </data>
   <data name="LineNumber" xml:space="preserve">
-    <value>Numéro de ligne</value>
+    <value> N° ligne</value>
   </data>
   <data name="LocalTax" xml:space="preserve">
     <value />
@@ -394,13 +397,13 @@
     <value />
   </data>
   <data name="StartTime" xml:space="preserve">
-    <value />
+    <value>Hre début</value>
   </data>
   <data name="StateTax" xml:space="preserve">
     <value />
   </data>
   <data name="StopTime" xml:space="preserve">
-    <value />
+    <value>Hre fin</value>
   </data>
   <data name="TaxAnnualizationFactor" xml:space="preserve">
     <value />
