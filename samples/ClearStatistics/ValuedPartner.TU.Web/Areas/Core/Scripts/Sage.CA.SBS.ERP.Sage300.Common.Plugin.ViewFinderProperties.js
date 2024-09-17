@@ -2585,6 +2585,7 @@
             TimecardsReport: {
                 viewID: "~~0031",
                 viewOrder: 0,
+                parentValAsInitKey: true,
                 displayFieldNames: ["PEREND", "TIMECARD", "TCARDDESC"],
                 returnFieldNames: ["TIMECARD"]
             },
@@ -2607,13 +2608,13 @@
                 viewID: "~~0007",
                 viewOrder: 0,
                 displayFieldNames: ["EARNDED", "LONGDESC", "CATEGORY"],
-                returnFieldNames: ["EARNDED"]
+                returnFieldNames: ["EARNDED", "LONGDESC", "CATEGORY"]
             },
             DistributionCodes: {
                 viewID: "~~0009",
                 viewOrder: 0,
                 displayFieldNames: ["DISTCODE", "DISTRNAME"],
-                returnFieldNames: ["DISTCODE"],
+                returnFieldNames: ["DISTCODE","DISTRNAME"],
                 initKeyFieldNames: ["EARNDED", "DISTCODE"],
                 filterTemplate: "EARNDED = \"{0}\" "
             },
@@ -2633,11 +2634,26 @@
                 initKeyFieldNames: ["EMPLOYEE", "EARNDED", "CURRCODE"],
                 filterTemplate: "EARNDED = \"{0}\" "
             },
+            CompanyEFTBank: {
+                viewID: "~~0200",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                displayFieldNames: ["BANKID", "BANKFORMAT"],
+                returnFieldNames: ["BANKID"]
+            },
             EmployeeSelectionList: {
                 viewID: "~~0045",
                 viewOrder: 0,
+                parentValAsInitKey: true,
                 displayFieldNames: ["EMPLISTID", "EMPLISTDSC"],
                 returnFieldNames: ["EMPLISTID", "EMPLISTDSC"]
+            },
+            EFTSelectionList: {
+                viewID: "~~0045",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                displayFieldNames: ["EMPLISTID", "EMPLISTDSC"],
+                returnFieldNames: ["EMPLISTID"]
             },
             EmployeeTimecard: {
                 viewID: "~~0102",
@@ -2652,6 +2668,15 @@
                 returnFieldNames: ["EMPLOYEE", "FULLNAME"],
                 filterTemplate: "TCUSERID = \"{0}\" ",
                 parentValAsInitKey: true
+            },
+            EFTEmployee: {
+                viewID: "~~0014",
+                viewOrder: 0,
+                displayFieldNames: ["EMPLOYEE", "LASTNAME", "FIRSTNAME", "MIDDLENAME", "PAYFREQ", "STATUS"],
+                returnFieldNames: ["EMPLOYEE", "FULLNAME"],
+                filterTemplate: "TCUSERID = \"{0}\" ",
+                parentValAsInitKey: true,
+                processRequiredFields: { "NOUSERSEC": 1 }
             },
             CheckListEmployee: {
                 viewID: "~~0014",
@@ -2668,6 +2693,13 @@
                 returnFieldNames: ["CALCSEQ"],
                 filterTemplate: "(ENDDATE <= \{0}\ AND CALCSEQ >= \{1}\ AND CALCSEQ <= \{2}\)",
                 parentValAsInitKey: true
+            },
+            EftRunSequence: {
+                viewID: "~~0204",
+                viewOrder: 0,
+                displayFieldNames: ["EFTRUNSEQ", "BANKID", "SELECTLIST", "EMPFROM", "EMPTO", "PEDATEFROM", "PEDATETO"],
+                returnFieldNames: ["EFTRUNSEQ"],
+                filterTemplate: "EFTRUNSEQ != \"{0}\" AND (LASTRERUN = \"{1}\")  AND (EFTTYPE = \"{2}\")",
             },
             Timecard: {
                 viewID: "~~0031",
@@ -2686,7 +2718,7 @@
                 viewID: "~~0121",
                 viewOrder: 0,
                 displayFieldNames: ["OPTFIELD", "FDESC"],
-                returnFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LOCATION", "DECIMALS"],
+                returnFieldNames: ["OPTFIELD", "FDESC", "TYPE", "LOCATION", "DECIMALS","LENGTH"],
                 filterTemplate: "LOCATION = \"{0}\""
             },
             FromToOptionalFieldValue: {
@@ -2771,7 +2803,7 @@
                 viewID: "~~0037",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["WCC"],
+                returnFieldNames: ["WCC","DESC"],
                 displayFieldNames: ["WCC", "DESC"],
                 filterTemplate: "WCCGROUP = \"{0}\""
             },
@@ -2799,9 +2831,8 @@
             CheckInquiryEmployee: {
                 viewID: "~~0048",
                 viewOrder: 0,
-                displayFieldNames: ["EMPLOYEE", "PEREND", "ENTRYSEQ", "ENTRYTYPE", "BANK", "TRANSNUM", "CHECKSTAT", "PRPOSTSTAT", "TRANSAMT"],
+                displayFieldNames: ["EMPLOYEE", "PEREND", "ENTRYSEQ", "ENTRYTYPE", "BANK", "CHECKSTAT", "PRPOSTSTAT", "TRANSAMT"],
                 returnFieldNames: ["EMPLOYEE", "PEREND", "ENTRYSEQ"],
-                filterTemplate: "TCUSERID = \"{0}\" ",
                 parentValAsInitKey: true
             },
             CheckInquiryEnterSequence: {
@@ -2809,7 +2840,7 @@
                 viewOrder: 0,
                 displayFieldNames: ["ENTRYSEQ", "ENTRYTYPE", "BANK", "CHECKSTAT", "PRPOSTSTAT", "TRANSAMT"],
                 returnFieldNames: ["PEREND", "ENTRYSEQ"],
-                filterTemplate: "EMPLOYEE = \"{0}\" AND PEREND = \"{1}\"",
+                filterTemplate: "EMPLOYEE = \"{0}\" AND PEREND = \"{1}\" AND ENTRYSEQ != \"{2}\"",
                 parentValAsInitKey: true
             },
             PeriodEndDate: {
@@ -2817,7 +2848,7 @@
                 viewOrder: 0,
                 displayFieldNames: ["PEREND", "ENTRYSEQ", "ENTRYTYPE", "BANK", "CHECKSTAT", "PRPOSTSTAT", "TRANSAMT"],
                 returnFieldNames: ["PEREND", "ENTRYSEQ"],
-                filterTemplate: "EMPLOYEE = \"{0}\"",
+                filterTemplate: "EMPLOYEE = \"{0}\" AND ENTRYSEQ != \"{1}\"",
                 parentValAsInitKey: true
             },
             EmployeeEarningDeduction: {
@@ -2832,14 +2863,29 @@
                 viewOrder: 0,
                 filterTemplate: "WCCGROUP = \"{0}\"",
                 displayFieldNames: ["WCC", "DESC"],
-                returnFieldNames: ["WCC"]
+                returnFieldNames: ["WCC", "DESC"]
             },
             TimecardList: {
                 viewID: "~~0031",
                 viewOrder: 0,
+                parentValAsInitKey: true,
                 displayFieldNames: ["EMPLOYEE", "PEREND", "TIMECARD", "TCARDDESC"],
                 returnFieldNames: ["TIMECARD"]
-            }
+            },
+            Tax: {
+                viewID: "~~0029",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["TAXID"],
+                displayFieldNames: ["TAXID", "LONGDESC"]
+            },
+            EmployeeEarnOrDeduction: {
+                viewID: "~~0008",
+                viewOrder: 0,
+                filterTemplate: "CATEGORY = \"{0}\"",
+                displayFieldNames: ["EARNDED", "DESC", "CATEGORY"],
+                returnFieldNames: ["EARNDED"]
+            },
         },
 
         TS: {

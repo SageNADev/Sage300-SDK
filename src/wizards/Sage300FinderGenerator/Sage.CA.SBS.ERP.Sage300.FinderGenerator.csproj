@@ -41,9 +41,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\bin\wizards\ACCPAC.Advantage.dll</HintPath>
     </Reference>
-    <Reference Include="ACCPAC.Advantage.Types, Version=7.1.0.0, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL">
+    <Reference Include="ACCPAC.Advantage.Types, Version=7.2.0.0, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\ACCPAC.Advantage.Types\v4.0_7.1.0.0__4d7048ecf2312a7c\ACCPAC.Advantage.Types.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\ACCPAC.Advantage.Types\v4.0_7.2.0.0__4d7048ecf2312a7c\ACCPAC.Advantage.Types.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -100,12 +100,10 @@
     <Content Include="Resources\sage300-logo-sq.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Jint">
-      <Version>3.1.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.9.37000" ExcludeAssets="runtime">
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.11.40262" ExcludeAssets="runtime">
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Jint" Version="4.0.2" />
     <PackageReference Include="MetroModernUI" Version="1.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

@@ -187,6 +187,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer Number.
+        /// </summary>
+        public static string CustomerNumber {
+            get {
+                return ResourceManager.GetString("CustomerNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string Date {

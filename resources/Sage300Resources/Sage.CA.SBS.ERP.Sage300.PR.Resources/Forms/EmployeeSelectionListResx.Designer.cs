@@ -61,169 +61,70 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Address Line 1.
+        ///   Looks up a localized string similar to Accrual.
         /// </summary>
-        public static string AddressLine1 {
+        public static string Accrual {
             get {
-                return ResourceManager.GetString("AddressLine1", resourceCulture);
+                return ResourceManager.GetString("Accrual", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Address Line 2.
+        ///   Looks up a localized string similar to Active.
         /// </summary>
-        public static string AddressLine2 {
+        public static string Active {
             get {
-                return ResourceManager.GetString("AddressLine2", resourceCulture);
+                return ResourceManager.GetString("Active", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Address Line 3.
+        ///   Looks up a localized string similar to Active.
         /// </summary>
-        public static string AddressLine3 {
+        public static string Active1 {
             get {
-                return ResourceManager.GetString("AddressLine3", resourceCulture);
+                return ResourceManager.GetString("Active1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Address Line 4.
+        ///   Looks up a localized string similar to Advance.
         /// </summary>
-        public static string AddressLine4 {
+        public static string Advance {
             get {
-                return ResourceManager.GetString("AddressLine4", resourceCulture);
+                return ResourceManager.GetString("Advance", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alternate Address Line 1.
+        ///   Looks up a localized string similar to Benefit.
         /// </summary>
-        public static string AlternateAddressLine1 {
+        public static string Benefit {
             get {
-                return ResourceManager.GetString("AlternateAddressLine1", resourceCulture);
+                return ResourceManager.GetString("Benefit", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alternate Address Line 2.
+        ///   Looks up a localized string similar to Category.
         /// </summary>
-        public static string AlternateAddressLine2 {
+        public static string Category {
             get {
-                return ResourceManager.GetString("AlternateAddressLine2", resourceCulture);
+                return ResourceManager.GetString("Category", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alternate Address Line 3.
+        ///   Looks up a localized string similar to Class.
         /// </summary>
-        public static string AlternateAddressLine3 {
+        public static string Class {
             get {
-                return ResourceManager.GetString("AlternateAddressLine3", resourceCulture);
+                return ResourceManager.GetString("Class", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alternate Address Line 4.
-        /// </summary>
-        public static string AlternateAddressLine4 {
-            get {
-                return ResourceManager.GetString("AlternateAddressLine4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alternate City.
-        /// </summary>
-        public static string AlternateCity {
-            get {
-                return ResourceManager.GetString("AlternateCity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alternate Country.
-        /// </summary>
-        public static string AlternateCountry {
-            get {
-                return ResourceManager.GetString("AlternateCountry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alternate State/Province.
-        /// </summary>
-        public static string AlternateStateProvince {
-            get {
-                return ResourceManager.GetString("AlternateStateProvince", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alternate ZIP/Postal Code.
-        /// </summary>
-        public static string AlternateZIPPostalCode {
-            get {
-                return ResourceManager.GetString("AlternateZIPPostalCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Banked Time ID.
-        /// </summary>
-        public static string CompTimeID {
-            get {
-                return ResourceManager.GetString("CompTimeID", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bank Transfer Name.
-        /// </summary>
-        public static string BankTransferName {
-            get {
-                return ResourceManager.GetString("BankTransferName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Birth Date.
-        /// </summary>
-        public static string BirthDate {
-            get {
-                return ResourceManager.GetString("BirthDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Calc OT on a Weekly Basis.
-        /// </summary>
-        public static string CalcOTonaWeeklyBasis {
-            get {
-                return ResourceManager.GetString("CalcOTonaWeeklyBasis", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cheque Language.
-        /// </summary>
-        public static string CheckLanguage {
-            get {
-                return ResourceManager.GetString("CheckLanguage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to City.
-        /// </summary>
-        public static string City {
-            get {
-                return ResourceManager.GetString("City", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Class 1.
+        ///   Looks up a localized string similar to 1.
         /// </summary>
         public static string Class1 {
             get {
@@ -232,7 +133,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Class 2.
+        ///   Looks up a localized string similar to 2.
         /// </summary>
         public static string Class2 {
             get {
@@ -241,7 +142,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Class 3.
+        ///   Looks up a localized string similar to 3.
         /// </summary>
         public static string Class3 {
             get {
@@ -250,7 +151,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Class 4.
+        ///   Looks up a localized string similar to 4.
         /// </summary>
         public static string Class4 {
             get {
@@ -259,29 +160,209 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Country.
+        ///   Looks up a localized string similar to Combine.
         /// </summary>
-        public static string Country {
+        public static string Combine {
             get {
-                return ResourceManager.GetString("Country", resourceCulture);
+                return ResourceManager.GetString("Combine", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Country Code.
+        ///   Looks up a localized string similar to Combine.
         /// </summary>
-        public static string CountryCode {
+        public static string Combine1 {
             get {
-                return ResourceManager.GetString("CountryCode", resourceCulture);
+                return ResourceManager.GetString("Combine1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date of Last Raise.
+        ///   Looks up a localized string similar to Combine Matching Entries.
         /// </summary>
-        public static string DateOfLastRaise {
+        public static string CombineMatchingEntries {
             get {
-                return ResourceManager.GetString("DateOfLastRaise", resourceCulture);
+                return ResourceManager.GetString("CombineMatchingEntries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combine Matching Entries.
+        /// </summary>
+        public static string CombineMatchingEntries1 {
+            get {
+                return ResourceManager.GetString("CombineMatchingEntries1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combine Non-Matching Entries.
+        /// </summary>
+        public static string CombineNonMatchingEntries {
+            get {
+                return ResourceManager.GetString("CombineNonMatchingEntries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combine Non-Matching Entries.
+        /// </summary>
+        public static string CombineNonMatchingEntries1 {
+            get {
+                return ResourceManager.GetString("CombineNonMatchingEntries1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combine Empl Sel List ID 1.
+        /// </summary>
+        public static string CombineSelList1 {
+            get {
+                return ResourceManager.GetString("CombineSelList1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combine Empl Sel List ID 1.
+        /// </summary>
+        public static string CombineSelList11 {
+            get {
+                return ResourceManager.GetString("CombineSelList11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combine Empl Sel List ID 2.
+        /// </summary>
+        public static string CombineSelList2 {
+            get {
+                return ResourceManager.GetString("CombineSelList2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combine Empl Sel List ID 2.
+        /// </summary>
+        public static string CombineSelList21 {
+            get {
+                return ResourceManager.GetString("CombineSelList21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combine Payroll Employee Selection List.
+        /// </summary>
+        public static string CombineTitle {
+            get {
+                return ResourceManager.GetString("CombineTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combine Payroll Employee Selection List.
+        /// </summary>
+        public static string CombineTitle1 {
+            get {
+                return ResourceManager.GetString("CombineTitle1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy Payroll Employee Selection List.
+        /// </summary>
+        public static string CopyPopupTitle {
+            get {
+                return ResourceManager.GetString("CopyPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create.
+        /// </summary>
+        public static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Criteria.
+        /// </summary>
+        public static string Criteria {
+            get {
+                return ResourceManager.GetString("Criteria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Criteria.
+        /// </summary>
+        public static string Criteria1 {
+            get {
+                return ResourceManager.GetString("Criteria1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Employee Selection List Criteria.
+        /// </summary>
+        public static string CriteriaPopupTitle {
+            get {
+                return ResourceManager.GetString("CriteriaPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deduction.
+        /// </summary>
+        public static string Deduction {
+            get {
+                return ResourceManager.GetString("Deduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete the employee {0} from selection list {1} ?.
+        /// </summary>
+        public static string DeleteEmployeeConfirmation {
+            get {
+                return ResourceManager.GetString("DeleteEmployeeConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Line.
+        /// </summary>
+        public static string DeleteLine {
+            get {
+                return ResourceManager.GetString("DeleteLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete the employee selection list {0} ?.
+        /// </summary>
+        public static string DeleteSelectionListConfirmation {
+            get {
+                return ResourceManager.GetString("DeleteSelectionListConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description1 {
+            get {
+                return ResourceManager.GetString("Description1", resourceCulture);
             }
         }
         
@@ -295,52 +376,43 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
+        ///   Looks up a localized string similar to Direct Deposit.
         /// </summary>
-        public static string DiscretionaryData {
+        public static string DirectDeposit1 {
             get {
-                return ResourceManager.GetString("DiscretionaryData", resourceCulture);
+                return ResourceManager.GetString("DirectDeposit1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
+        ///   Looks up a localized string similar to Earning.
         /// </summary>
-        public static string EmployeeElectronicW2Consent {
+        public static string Earning {
             get {
-                return ResourceManager.GetString("EmployeeElectronicW2Consent", resourceCulture);
+                return ResourceManager.GetString("Earning", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-mail.
+        ///   Looks up a localized string similar to Earn/Deduction Code.
         /// </summary>
-        public static string Email {
+        public static string EarningOrDeduction {
             get {
-                return ResourceManager.GetString("Email", resourceCulture);
+                return ResourceManager.GetString("EarningOrDeduction", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emergency Contact.
+        ///   Looks up a localized string similar to Edit Columns.
         /// </summary>
-        public static string EmergencyContact {
+        public static string EditColumns {
             get {
-                return ResourceManager.GetString("EmergencyContact", resourceCulture);
+                return ResourceManager.GetString("EditColumns", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emergency Phone.
-        /// </summary>
-        public static string EmergencyPhone {
-            get {
-                return ResourceManager.GetString("EmergencyPhone", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Employee.
+        ///   Looks up a localized string similar to Employee Number.
         /// </summary>
         public static string Employee {
             get {
@@ -349,119 +421,470 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Employee Security Flag1.
+        ///   Looks up a localized string similar to Employee Number.
         /// </summary>
-        public static string EmployeeSecurityFlag1 {
+        public static string Employee1 {
             get {
-                return ResourceManager.GetString("EmployeeSecurityFlag1", resourceCulture);
+                return ResourceManager.GetString("Employee1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Employee Security Flag2.
+        ///   Looks up a localized string similar to Employee already exists.
         /// </summary>
-        public static string EmployeeSecurityFlag2 {
+        public static string EmployeeAlreadyExists {
             get {
-                return ResourceManager.GetString("EmployeeSecurityFlag2", resourceCulture);
+                return ResourceManager.GetString("EmployeeAlreadyExists", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Employee Template.
+        ///   Looks up a localized string similar to Employee Last Name.
         /// </summary>
-        public static string EmployeeTemplate {
+        public static string EmployeeLastName {
             get {
-                return ResourceManager.GetString("EmployeeTemplate", resourceCulture);
+                return ResourceManager.GetString("EmployeeLastName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Employment Status.
+        ///   Looks up a localized string similar to Employee List.
         /// </summary>
-        public static string EmploymentStatus {
+        public static string EmployeeList {
             get {
-                return ResourceManager.GetString("EmploymentStatus", resourceCulture);
+                return ResourceManager.GetString("EmployeeList", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Entry Sequence.
+        ///   Looks up a localized string similar to Employee List.
         /// </summary>
-        public static string EntrySequence {
+        public static string EmployeeList1 {
             get {
-                return ResourceManager.GetString("EntrySequence", resourceCulture);
+                return ResourceManager.GetString("EmployeeList1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to First Name.
+        ///   Looks up a localized string similar to Employee List Description.
         /// </summary>
-        public static string FirstName {
+        public static string EmployeeListDesc {
             get {
-                return ResourceManager.GetString("FirstName", resourceCulture);
+                return ResourceManager.GetString("EmployeeListDesc", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Full Name.
+        ///   Looks up a localized string similar to Employee List Description.
         /// </summary>
-        public static string FullName {
+        public static string EmployeeListDesc1 {
             get {
-                return ResourceManager.GetString("FullName", resourceCulture);
+                return ResourceManager.GetString("EmployeeListDesc1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gender.
+        ///   Looks up a localized string similar to Invalid input. Employee does not exist..
         /// </summary>
-        public static string Gender {
+        public static string EmployeeNotExist {
             get {
-                return ResourceManager.GetString("Gender", resourceCulture);
+                return ResourceManager.GetString("EmployeeNotExist", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hire Date.
+        ///   Looks up a localized string similar to Employee Number.
         /// </summary>
-        public static string HireDate {
+        public static string EmployeeNumber {
             get {
-                return ResourceManager.GetString("HireDate", resourceCulture);
+                return ResourceManager.GetString("EmployeeNumber", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hours per Period.
+        ///   Looks up a localized string similar to EmployeeSelectionList.
         /// </summary>
-        public static string HoursPerPeriod {
+        public static string EmployeeSelectionListTitle {
             get {
-                return ResourceManager.GetString("HoursPerPeriod", resourceCulture);
+                return ResourceManager.GetString("EmployeeSelectionListTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hours per Week.
+        ///   Looks up a localized string similar to Employee Selection List.
         /// </summary>
-        public static string HoursPerWeek {
+        public static string EmployeeSelectionListTitle1 {
             get {
-                return ResourceManager.GetString("HoursPerWeek", resourceCulture);
+                return ResourceManager.GetString("EmployeeSelectionListTitle1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inactive Date.
+        ///   Looks up a localized string similar to Employment Classification.
         /// </summary>
-        public static string InactiveDate {
+        public static string EmploymentClassification {
             get {
-                return ResourceManager.GetString("InactiveDate", resourceCulture);
+                return ResourceManager.GetString("EmploymentClassification", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to INTERNAL USE - Selection List.
+        ///   Looks up a localized string similar to Exclude Earn/Deduction.
         /// </summary>
-        public static string INTERNALUSESelectionList {
+        public static string ExcludeEarningOrDeduction {
             get {
-                return ResourceManager.GetString("INTERNALUSESelectionList", resourceCulture);
+                return ResourceManager.GetString("ExcludeEarningOrDeduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exclude Tax.
+        /// </summary>
+        public static string ExcludeTax {
+            get {
+                return ResourceManager.GetString("ExcludeTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expense Reimbursement.
+        /// </summary>
+        public static string ExpenseReimbursement {
+            get {
+                return ResourceManager.GetString("ExpenseReimbursement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequencies.
+        /// </summary>
+        public static string Frequencies {
+            get {
+                return ResourceManager.GetString("Frequencies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 10 / Year.
+        /// </summary>
+        public static string Frequency10Year {
+            get {
+                return ResourceManager.GetString("Frequency10Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency - 10 / Year.
+        /// </summary>
+        public static string Frequency10Year1 {
+            get {
+                return ResourceManager.GetString("Frequency10Year1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 13 / Year.
+        /// </summary>
+        public static string Frequency13Year {
+            get {
+                return ResourceManager.GetString("Frequency13Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency - 13 / Year.
+        /// </summary>
+        public static string Frequency13Year1 {
+            get {
+                return ResourceManager.GetString("Frequency13Year1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 22 / Year.
+        /// </summary>
+        public static string Frequency22Year {
+            get {
+                return ResourceManager.GetString("Frequency22Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency - 22 / Year.
+        /// </summary>
+        public static string Frequency22Year1 {
+            get {
+                return ResourceManager.GetString("Frequency22Year1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biweekly.
+        /// </summary>
+        public static string FrequencyBiweekly {
+            get {
+                return ResourceManager.GetString("FrequencyBiweekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency - Biweekly.
+        /// </summary>
+        public static string FrequencyBiweekly1 {
+            get {
+                return ResourceManager.GetString("FrequencyBiweekly1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daily.
+        /// </summary>
+        public static string FrequencyDaily {
+            get {
+                return ResourceManager.GetString("FrequencyDaily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency - Daily.
+        /// </summary>
+        public static string FrequencyDaily1 {
+            get {
+                return ResourceManager.GetString("FrequencyDaily1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monthly.
+        /// </summary>
+        public static string FrequencyMonthly {
+            get {
+                return ResourceManager.GetString("FrequencyMonthly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency - Monthly.
+        /// </summary>
+        public static string FrequencyMonthly1 {
+            get {
+                return ResourceManager.GetString("FrequencyMonthly1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quarterly.
+        /// </summary>
+        public static string FrequencyQuarterly {
+            get {
+                return ResourceManager.GetString("FrequencyQuarterly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency - Quarterly.
+        /// </summary>
+        public static string FrequencyQuarterly1 {
+            get {
+                return ResourceManager.GetString("FrequencyQuarterly1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semimonthly.
+        /// </summary>
+        public static string FrequencySemimonthly {
+            get {
+                return ResourceManager.GetString("FrequencySemimonthly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency - Semimonthly.
+        /// </summary>
+        public static string FrequencySemimonthly1 {
+            get {
+                return ResourceManager.GetString("FrequencySemimonthly1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weekly.
+        /// </summary>
+        public static string FrequencyWeekly {
+            get {
+                return ResourceManager.GetString("FrequencyWeekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency - Weekly.
+        /// </summary>
+        public static string FrequencyWeekly1 {
+            get {
+                return ResourceManager.GetString("FrequencyWeekly1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Class code.
+        /// </summary>
+        public static string FromClasscode {
+            get {
+                return ResourceManager.GetString("FromClasscode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Earn/Deduction Code.
+        /// </summary>
+        public static string FromEarningOrDeduction {
+            get {
+                return ResourceManager.GetString("FromEarningOrDeduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Employee Last Name.
+        /// </summary>
+        public static string FromEmployeeLastName {
+            get {
+                return ResourceManager.GetString("FromEmployeeLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Employee Number.
+        /// </summary>
+        public static string FromEmployeeNumber {
+            get {
+                return ResourceManager.GetString("FromEmployeeNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Overtime Schedule.
+        /// </summary>
+        public static string FromOvertimeSchedule {
+            get {
+                return ResourceManager.GetString("FromOvertimeSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Shift Differential.
+        /// </summary>
+        public static string FromShiftDifferential {
+            get {
+                return ResourceManager.GetString("FromShiftDifferential", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From State.
+        /// </summary>
+        public static string FromState {
+            get {
+                return ResourceManager.GetString("FromState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Tax.
+        /// </summary>
+        public static string FromTax {
+            get {
+                return ResourceManager.GetString("FromTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From WCC Group.
+        /// </summary>
+        public static string FromWCCGroup {
+            get {
+                return ResourceManager.GetString("FromWCCGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Work Classification.
+        /// </summary>
+        public static string FromWorkClassification {
+            get {
+                return ResourceManager.GetString("FromWorkClassification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full Time.
+        /// </summary>
+        public static string FullTime {
+            get {
+                return ResourceManager.GetString("FullTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full Time Employee.
+        /// </summary>
+        public static string FullTime1 {
+            get {
+                return ResourceManager.GetString("FullTime1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactive.
+        /// </summary>
+        public static string Inactive {
+            get {
+                return ResourceManager.GetString("Inactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactive.
+        /// </summary>
+        public static string Inactive1 {
+            get {
+                return ResourceManager.GetString("Inactive1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactive - ROE Pending.
+        /// </summary>
+        public static string InactROE {
+            get {
+                return ResourceManager.GetString("InactROE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RESERVED - CAD Only.
+        /// </summary>
+        public static string InactROE1 {
+            get {
+                return ResourceManager.GetString("InactROE1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Earn/Deduction.
+        /// </summary>
+        public static string IncludeEarningOrDeduction {
+            get {
+                return ResourceManager.GetString("IncludeEarningOrDeduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Tax.
+        /// </summary>
+        public static string IncludeTax {
+            get {
+                return ResourceManager.GetString("IncludeTax", resourceCulture);
             }
         }
         
@@ -475,20 +898,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last Name.
+        ///   Looks up a localized string similar to Last Maintained.
         /// </summary>
-        public static string LastName {
+        public static string LastMaintained1 {
             get {
-                return ResourceManager.GetString("LastName", resourceCulture);
+                return ResourceManager.GetString("LastMaintained1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last Review Date.
+        ///   Looks up a localized string similar to Number of Employees.
         /// </summary>
-        public static string LastReviewDate {
+        public static string ListTotal {
             get {
-                return ResourceManager.GetString("LastReviewDate", resourceCulture);
+                return ResourceManager.GetString("ListTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Employees.
+        /// </summary>
+        public static string ListTotal1 {
+            get {
+                return ResourceManager.GetString("ListTotal1", resourceCulture);
             }
         }
         
@@ -502,47 +934,227 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - US Only.
+        ///   Looks up a localized string similar to Manager.
         /// </summary>
-        public static string SyncMasterGUID {
+        public static string Manager1 {
             get {
-                return ResourceManager.GetString("SyncMasterGUID", resourceCulture);
+                return ResourceManager.GetString("Manager1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Middle Name.
+        ///   Looks up a localized string similar to Non-Direct Deposit.
         /// </summary>
-        public static string MiddleName {
+        public static string NonDirectDeposit {
             get {
-                return ResourceManager.GetString("MiddleName", resourceCulture);
+                return ResourceManager.GetString("NonDirectDeposit", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Minimum Wage.
+        ///   Looks up a localized string similar to Non-Direct Deposit.
         /// </summary>
-        public static string MinimumWage {
+        public static string NonDirectDeposit1 {
             get {
-                return ResourceManager.GetString("MinimumWage", resourceCulture);
+                return ResourceManager.GetString("NonDirectDeposit1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Number of Optional Fields.
+        ///   Looks up a localized string similar to (None).
         /// </summary>
-        public static string NumberOfOptionalFields {
+        public static string None {
             get {
-                return ResourceManager.GetString("NumberOfOptionalFields", resourceCulture);
+                return ResourceManager.GetString("None", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overtime Calculation.
+        ///   Looks up a localized string similar to Number of Employees.
         /// </summary>
-        public static string OvertimeCalculation {
+        public static string NumberOfEmployees {
             get {
-                return ResourceManager.GetString("OvertimeCalculation", resourceCulture);
+                return ResourceManager.GetString("NumberOfEmployees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Employees.
+        /// </summary>
+        public static string NumberOfEmployees1 {
+            get {
+                return ResourceManager.GetString("NumberOfEmployees1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 1.
+        /// </summary>
+        public static string OptFld1 {
+            get {
+                return ResourceManager.GetString("OptFld1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 1.
+        /// </summary>
+        public static string OptFld11 {
+            get {
+                return ResourceManager.GetString("OptFld11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 1 From Value.
+        /// </summary>
+        public static string OptFld1From {
+            get {
+                return ResourceManager.GetString("OptFld1From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 1 From Value.
+        /// </summary>
+        public static string OptFld1From1 {
+            get {
+                return ResourceManager.GetString("OptFld1From1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 1 To Value.
+        /// </summary>
+        public static string OptFld1To {
+            get {
+                return ResourceManager.GetString("OptFld1To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 1 To Value.
+        /// </summary>
+        public static string OptFld1To1 {
+            get {
+                return ResourceManager.GetString("OptFld1To1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 2.
+        /// </summary>
+        public static string OptFld2 {
+            get {
+                return ResourceManager.GetString("OptFld2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 2.
+        /// </summary>
+        public static string OptFld21 {
+            get {
+                return ResourceManager.GetString("OptFld21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 2 From Value.
+        /// </summary>
+        public static string OptFld2From {
+            get {
+                return ResourceManager.GetString("OptFld2From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 2 From Value.
+        /// </summary>
+        public static string OptFld2From1 {
+            get {
+                return ResourceManager.GetString("OptFld2From1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 2 To Value.
+        /// </summary>
+        public static string OptFld2To {
+            get {
+                return ResourceManager.GetString("OptFld2To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 2 To Value.
+        /// </summary>
+        public static string OptFld2To1 {
+            get {
+                return ResourceManager.GetString("OptFld2To1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 3.
+        /// </summary>
+        public static string OptFld3 {
+            get {
+                return ResourceManager.GetString("OptFld3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 3.
+        /// </summary>
+        public static string OptFld31 {
+            get {
+                return ResourceManager.GetString("OptFld31", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 3 From Value.
+        /// </summary>
+        public static string OptFld3From {
+            get {
+                return ResourceManager.GetString("OptFld3From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 3 From Value.
+        /// </summary>
+        public static string OptFld3From1 {
+            get {
+                return ResourceManager.GetString("OptFld3From1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 3 To Value.
+        /// </summary>
+        public static string OptFld3To {
+            get {
+                return ResourceManager.GetString("OptFld3To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Field 3 To Value.
+        /// </summary>
+        public static string OptFld3To1 {
+            get {
+                return ResourceManager.GetString("OptFld3To1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        public static string Other {
+            get {
+                return ResourceManager.GetString("Other", resourceCulture);
             }
         }
         
@@ -556,11 +1168,20 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Part-Time.
+        ///   Looks up a localized string similar to Part-time.
         /// </summary>
         public static string PartTime {
             get {
                 return ResourceManager.GetString("PartTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Part-Time.
+        /// </summary>
+        public static string PartTime1 {
+            get {
+                return ResourceManager.GetString("PartTime1", resourceCulture);
             }
         }
         
@@ -574,11 +1195,38 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone.
+        ///   Looks up a localized string similar to Pay Frequency.
         /// </summary>
-        public static string Phone {
+        public static string PayFrequency1 {
             get {
-                return ResourceManager.GetString("Phone", resourceCulture);
+                return ResourceManager.GetString("PayFrequency1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment Classification.
+        /// </summary>
+        public static string PaymentClassification {
+            get {
+                return ResourceManager.GetString("PaymentClassification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Employee Selection.
+        /// </summary>
+        public static string PayrollEmployeeSelection {
+            get {
+                return ResourceManager.GetString("PayrollEmployeeSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payroll Employee Selection.
+        /// </summary>
+        public static string PayrollEmployeeSelection1 {
+            get {
+                return ResourceManager.GetString("PayrollEmployeeSelection1", resourceCulture);
             }
         }
         
@@ -592,11 +1240,11 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Postal Code.
+        ///   Looks up a localized string similar to Position.
         /// </summary>
-        public static string ZIPCode {
+        public static string Position1 {
             get {
-                return ResourceManager.GetString("ZIPCode", resourceCulture);
+                return ResourceManager.GetString("Position1", resourceCulture);
             }
         }
         
@@ -610,308 +1258,578 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Province of Employment.
+        ///   Looks up a localized string similar to Process Command Code.
         /// </summary>
-        public static string StateOfHire {
+        public static string ProcessCommandCode1 {
             get {
-                return ResourceManager.GetString("StateOfHire", resourceCulture);
+                return ResourceManager.GetString("ProcessCommandCode1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reference.
+        ///   Looks up a localized string similar to The entry in the From value cannot be greater than the To value..
         /// </summary>
-        public static string Reference {
+        public static string RangeValidation {
             get {
-                return ResourceManager.GetString("Reference", resourceCulture);
+                return ResourceManager.GetString("RangeValidation", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Registered Pension Plan Number.
+        ///   Looks up a localized string similar to Security Flag.
         /// </summary>
-        public static string RPP {
+        public static string SecurityFlag {
             get {
-                return ResourceManager.GetString("RPP", resourceCulture);
+                return ResourceManager.GetString("SecurityFlag", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Regular Hours Per Day.
+        ///   Looks up a localized string similar to Security Flag.
         /// </summary>
-        public static string RegularHoursPerDay {
+        public static string SecurityFlag1 {
             get {
-                return ResourceManager.GetString("RegularHoursPerDay", resourceCulture);
+                return ResourceManager.GetString("SecurityFlag1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - Disability.
+        ///   Looks up a localized string similar to Select By.
         /// </summary>
-        public static string DISABILITY {
+        public static string SelectBy {
             get {
-                return ResourceManager.GetString("DISABILITY", resourceCulture);
+                return ResourceManager.GetString("SelectBy", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - Segment Code 4.
+        ///   Looks up a localized string similar to Selection List.
         /// </summary>
-        public static string RESERVEDSegmentCode4 {
+        public static string SelectionListTitle {
             get {
-                return ResourceManager.GetString("RESERVEDSegmentCode4", resourceCulture);
+                return ResourceManager.GetString("SelectionListTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - Segment Code 5.
+        ///   Looks up a localized string similar to Selection List.
         /// </summary>
-        public static string RESERVEDSegmentCode5 {
+        public static string SelectionListTitle1 {
             get {
-                return ResourceManager.GetString("RESERVEDSegmentCode5", resourceCulture);
+                return ResourceManager.GetString("SelectionListTitle1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESERVED - Segment Code 6.
+        ///   Looks up a localized string similar to Select Item 1 Index.
         /// </summary>
-        public static string RESERVEDSegmentCode6 {
+        public static string SelectItem1 {
             get {
-                return ResourceManager.GetString("RESERVEDSegmentCode6", resourceCulture);
+                return ResourceManager.GetString("SelectItem1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Segment Code 1.
+        ///   Looks up a localized string similar to Select Item 1 Index.
         /// </summary>
-        public static string SegmentCode1 {
+        public static string SelectItem11 {
             get {
-                return ResourceManager.GetString("SegmentCode1", resourceCulture);
+                return ResourceManager.GetString("SelectItem11", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Segment Code 2.
+        ///   Looks up a localized string similar to Select Item 1 From Criteria.
         /// </summary>
-        public static string SegmentCode2 {
+        public static string SelectItem1From {
             get {
-                return ResourceManager.GetString("SegmentCode2", resourceCulture);
+                return ResourceManager.GetString("SelectItem1From", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Segment Code 3.
+        ///   Looks up a localized string similar to Select Item 1 From Criteria.
         /// </summary>
-        public static string SegmentCode3 {
+        public static string SelectItem1From1 {
             get {
-                return ResourceManager.GetString("SegmentCode3", resourceCulture);
+                return ResourceManager.GetString("SelectItem1From1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shift Differential Schedule.
+        ///   Looks up a localized string similar to Select Item 1 To Criteria.
         /// </summary>
-        public static string ShiftDifferentialSchedule {
+        public static string SelectItem1To {
             get {
-                return ResourceManager.GetString("ShiftDifferentialSchedule", resourceCulture);
+                return ResourceManager.GetString("SelectItem1To", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shift Number.
+        ///   Looks up a localized string similar to Select Item 1 To Criteria.
         /// </summary>
-        public static string ShiftNumber {
+        public static string SelectItem1To1 {
             get {
-                return ResourceManager.GetString("ShiftNumber", resourceCulture);
+                return ResourceManager.GetString("SelectItem1To1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sick Pay ID.
+        ///   Looks up a localized string similar to Select Item 2 Index.
         /// </summary>
-        public static string SickPayID {
+        public static string SelectItem2 {
             get {
-                return ResourceManager.GetString("SickPayID", resourceCulture);
+                return ResourceManager.GetString("SelectItem2", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SIN Format.
+        ///   Looks up a localized string similar to Select Item 2 Index.
         /// </summary>
-        public static string SSNFormat {
+        public static string SelectItem21 {
             get {
-                return ResourceManager.GetString("SSNFormat", resourceCulture);
+                return ResourceManager.GetString("SelectItem21", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Social Insurance Number.
+        ///   Looks up a localized string similar to Select Item 2 From Criteria.
         /// </summary>
-        public static string SocialSecurityNumber {
+        public static string SelectItem2From {
             get {
-                return ResourceManager.GetString("SocialSecurityNumber", resourceCulture);
+                return ResourceManager.GetString("SelectItem2From", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Source Application.
+        ///   Looks up a localized string similar to Select Item 2 From Criteria.
         /// </summary>
-        public static string SourceApplication {
+        public static string SelectItem2From1 {
             get {
-                return ResourceManager.GetString("SourceApplication", resourceCulture);
+                return ResourceManager.GetString("SelectItem2From1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to State/Province.
+        ///   Looks up a localized string similar to Select Item 2 To Criteria.
         /// </summary>
-        public static string StateProvince {
+        public static string SelectItem2To {
             get {
-                return ResourceManager.GetString("StateProvince", resourceCulture);
+                return ResourceManager.GetString("SelectItem2To", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Termination Date.
+        ///   Looks up a localized string similar to Select Item 2 To Criteria.
         /// </summary>
-        public static string TerminationDate {
+        public static string SelectItem2To1 {
             get {
-                return ResourceManager.GetString("TerminationDate", resourceCulture);
+                return ResourceManager.GetString("SelectItem2To1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Timecard User ID.
+        ///   Looks up a localized string similar to Select Item 3 Index.
         /// </summary>
-        public static string TimecardUserID {
+        public static string SelectItem3 {
             get {
-                return ResourceManager.GetString("TimecardUserID", resourceCulture);
+                return ResourceManager.GetString("SelectItem3", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Times Late.
+        ///   Looks up a localized string similar to Select Item 3 Index.
         /// </summary>
-        public static string TimesLate {
+        public static string SelectItem31 {
             get {
-                return ResourceManager.GetString("TimesLate", resourceCulture);
+                return ResourceManager.GetString("SelectItem31", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to US Citizen.
+        ///   Looks up a localized string similar to Select Item 3 From Criteria.
         /// </summary>
-        public static string USCitizen {
+        public static string SelectItem3From {
             get {
-                return ResourceManager.GetString("USCitizen", resourceCulture);
+                return ResourceManager.GetString("SelectItem3From", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vacation ID.
+        ///   Looks up a localized string similar to Select Item 3 From Criteria.
         /// </summary>
-        public static string VacationID {
+        public static string SelectItem3From1 {
             get {
-                return ResourceManager.GetString("VacationID", resourceCulture);
+                return ResourceManager.GetString("SelectItem3From1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Work Classification Code.
+        ///   Looks up a localized string similar to Select Item 3 To Criteria.
         /// </summary>
-        public static string WorkClassificationCode {
+        public static string SelectItem3To {
             get {
-                return ResourceManager.GetString("WorkClassificationCode", resourceCulture);
+                return ResourceManager.GetString("SelectItem3To", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Workers&apos; Compensation Code.
+        ///   Looks up a localized string similar to Select Item 3 To Criteria.
         /// </summary>
-        public static string WorkersCompensationCode {
+        public static string SelectItem3To1 {
             get {
-                return ResourceManager.GetString("WorkersCompensationCode", resourceCulture);
+                return ResourceManager.GetString("SelectItem3To1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Workers Comp. Group.
+        ///   Looks up a localized string similar to Select Item 4 Index.
         /// </summary>
-        public static string WorkersCompGroup {
+        public static string SelectItem4 {
             get {
-                return ResourceManager.GetString("WorkersCompGroup", resourceCulture);
+                return ResourceManager.GetString("SelectItem4", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Work Location.
+        ///   Looks up a localized string similar to Select Item 4 Index.
         /// </summary>
-        public static string WorkLocation {
+        public static string SelectItem41 {
             get {
-                return ResourceManager.GetString("WorkLocation", resourceCulture);
+                return ResourceManager.GetString("SelectItem41", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Work Location Address 2.
+        ///   Looks up a localized string similar to Select Item 4 From Criteria.
         /// </summary>
-        public static string WorkLocationAddress2 {
+        public static string SelectItem4From {
             get {
-                return ResourceManager.GetString("WorkLocationAddress2", resourceCulture);
+                return ResourceManager.GetString("SelectItem4From", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Work Location Address 3.
+        ///   Looks up a localized string similar to Select Item 4 From Criteria.
         /// </summary>
-        public static string WorkLocationAddress3 {
+        public static string SelectItem4From1 {
             get {
-                return ResourceManager.GetString("WorkLocationAddress3", resourceCulture);
+                return ResourceManager.GetString("SelectItem4From1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Work Location Address 4.
+        ///   Looks up a localized string similar to Select Item 4 To Criteria.
         /// </summary>
-        public static string WorkLocationAddress4 {
+        public static string SelectItem4To {
             get {
-                return ResourceManager.GetString("WorkLocationAddress4", resourceCulture);
+                return ResourceManager.GetString("SelectItem4To", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Work Location City.
+        ///   Looks up a localized string similar to Select Item 4 To Criteria.
         /// </summary>
-        public static string WorkLocationCity {
+        public static string SelectItem4To1 {
             get {
-                return ResourceManager.GetString("WorkLocationCity", resourceCulture);
+                return ResourceManager.GetString("SelectItem4To1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Work Location Country.
+        ///   Looks up a localized string similar to Select Subitem 1 Index.
         /// </summary>
-        public static string WorkLocationCountry {
+        public static string SelectSubItem1 {
             get {
-                return ResourceManager.GetString("WorkLocationCountry", resourceCulture);
+                return ResourceManager.GetString("SelectSubItem1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Work Location State/Prov.
+        ///   Looks up a localized string similar to Select Subitem 1 Index.
         /// </summary>
-        public static string WorkLocationStateProv {
+        public static string SelectSubItem11 {
             get {
-                return ResourceManager.GetString("WorkLocationStateProv", resourceCulture);
+                return ResourceManager.GetString("SelectSubItem11", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Work Location Zip/Postal Code.
+        ///   Looks up a localized string similar to Select Subitem 2Index.
         /// </summary>
-        public static string WorkLocationZipPostalCode {
+        public static string SelectSubItem2 {
             get {
-                return ResourceManager.GetString("WorkLocationZipPostalCode", resourceCulture);
+                return ResourceManager.GetString("SelectSubItem2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Subitem 2Index.
+        /// </summary>
+        public static string SelectSubItem21 {
+            get {
+                return ResourceManager.GetString("SelectSubItem21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Subitem 3 Index.
+        /// </summary>
+        public static string SelectSubItem3 {
+            get {
+                return ResourceManager.GetString("SelectSubItem3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Subitem 3 Index.
+        /// </summary>
+        public static string SelectSubItem31 {
+            get {
+                return ResourceManager.GetString("SelectSubItem31", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Subitem 4 Index.
+        /// </summary>
+        public static string SelectSubItem4 {
+            get {
+                return ResourceManager.GetString("SelectSubItem4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Subitem 4 Index.
+        /// </summary>
+        public static string SelectSubItem41 {
+            get {
+                return ResourceManager.GetString("SelectSubItem41", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shift Differential.
+        /// </summary>
+        public static string ShiftDifferential {
+            get {
+                return ResourceManager.GetString("ShiftDifferential", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        public static string ShiftDifferential1 {
+            get {
+                return ResourceManager.GetString("ShiftDifferential1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        public static string ShiftDifferential2 {
+            get {
+                return ResourceManager.GetString("ShiftDifferential2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        public static string ShiftDifferential3 {
+            get {
+                return ResourceManager.GetString("ShiftDifferential3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4.
+        /// </summary>
+        public static string ShiftDifferential4 {
+            get {
+                return ResourceManager.GetString("ShiftDifferential4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 5.
+        /// </summary>
+        public static string ShiftDifferential5 {
+            get {
+                return ResourceManager.GetString("ShiftDifferential5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string State {
+            get {
+                return ResourceManager.GetString("State", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terminated.
+        /// </summary>
+        public static string Terminated {
+            get {
+                return ResourceManager.GetString("Terminated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terminated Employee.
+        /// </summary>
+        public static string Terminated1 {
+            get {
+                return ResourceManager.GetString("Terminated1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terminated - ROE Pending.
+        /// </summary>
+        public static string TermROE {
+            get {
+                return ResourceManager.GetString("TermROE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RESERVED - CAD Only.
+        /// </summary>
+        public static string TermROE1 {
+            get {
+                return ResourceManager.GetString("TermROE1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Then Select By.
+        /// </summary>
+        public static string ThenBy {
+            get {
+                return ResourceManager.GetString("ThenBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Class Code.
+        /// </summary>
+        public static string ToClassCode {
+            get {
+                return ResourceManager.GetString("ToClassCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Earn/Deduction Code.
+        /// </summary>
+        public static string ToEarningOrDeduction {
+            get {
+                return ResourceManager.GetString("ToEarningOrDeduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Employee Last Name.
+        /// </summary>
+        public static string ToEmployeeLastName {
+            get {
+                return ResourceManager.GetString("ToEmployeeLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Employee Number.
+        /// </summary>
+        public static string ToEmployeeNumber {
+            get {
+                return ResourceManager.GetString("ToEmployeeNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Overtime Schedule.
+        /// </summary>
+        public static string ToOvertimeSchedule {
+            get {
+                return ResourceManager.GetString("ToOvertimeSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Shift Differential.
+        /// </summary>
+        public static string ToShiftDifferential {
+            get {
+                return ResourceManager.GetString("ToShiftDifferential", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To State.
+        /// </summary>
+        public static string ToState {
+            get {
+                return ResourceManager.GetString("ToState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Tax.
+        /// </summary>
+        public static string ToTax {
+            get {
+                return ResourceManager.GetString("ToTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To WCC Group.
+        /// </summary>
+        public static string ToWCCGroup {
+            get {
+                return ResourceManager.GetString("ToWCCGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Work Classification.
+        /// </summary>
+        public static string ToWorkClassification {
+            get {
+                return ResourceManager.GetString("ToWorkClassification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WCC Group.
+        /// </summary>
+        public static string WCCGroup {
+            get {
+                return ResourceManager.GetString("WCCGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work Classification.
+        /// </summary>
+        public static string WorkClassification {
+            get {
+                return ResourceManager.GetString("WorkClassification", resourceCulture);
             }
         }
     }

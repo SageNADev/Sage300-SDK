@@ -821,6 +821,7 @@
           </Folder>
         </Folder>
         <Folder Name="js" TargetFolderName="js">
+          <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.js">bootstrap.min.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="customscripts.js">customscripts.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="input.Checkbox.js">input.Checkbox.js</ProjectItem>
         </Folder>
@@ -854,6 +855,7 @@
             <ProjectItem ReplaceParameters="false" TargetFileName="default-home.less">default-home.less</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="default.less">default.less</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="doc.less">doc.less</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="README.TXT">README.TXT</ProjectItem>
             <ProjectItem ReplaceParameters="false" TargetFileName="stand-alone.less">stand-alone.less</ProjectItem>
             <Folder Name="framework" TargetFolderName="framework">
               <ProjectItem ReplaceParameters="false" TargetFileName="aging-period.less">aging-period.less</ProjectItem>

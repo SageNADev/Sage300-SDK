@@ -274,7 +274,7 @@
     <value>Not to be sent</value>
   </data>
   <data name="ExchangeRate" xml:space="preserve">
-    <value>Exchange Rate</value>
+    <value>Currency Rate</value>
   </data>
   <data name="CheckStatus" xml:space="preserve">
     <value>Check Status</value>
@@ -346,7 +346,7 @@
     <value>Yes</value>
   </data>
   <data name="ManualCheck" xml:space="preserve">
-    <value>Manual</value>
+    <value>Manual </value>
   </data>
   <data name="TwentyTwoPerYear" xml:space="preserve">
     <value>Twenty-two per Year</value>
@@ -609,5 +609,14 @@
   </data>
   <data name="SystemCheque" xml:space="preserve">
     <value>System Cheque</value>
+  </data>
+  <data name="ManualCheque" xml:space="preserve">
+    <value>Manual Cheque</value>
+  </data>
+  <data name="ReversedCheque" xml:space="preserve">
+    <value>Reversed Cheque</value>
+  </data>
+  <data name="HistoryCheck" xml:space="preserve">
+    <value>History Entry</value>
   </data>
 </root>

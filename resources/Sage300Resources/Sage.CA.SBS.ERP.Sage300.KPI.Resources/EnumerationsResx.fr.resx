@@ -421,7 +421,7 @@
     <value>Paramètres</value>
   </data>
   <data name="PagetitleInManager" xml:space="preserve">
-    <value>{1} de {0}</value>
+    <value>{0} {1}</value>
   </data>
   <data name="ReportNameTemplate" xml:space="preserve">
     <value>{1} {0}</value>

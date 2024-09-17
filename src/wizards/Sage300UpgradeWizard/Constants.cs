@@ -32,19 +32,19 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2024.0";
+            public const string FromReleaseNumber = "2024.2";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2024.2";
+            public const string ToReleaseNumber = "2025.0";
 
             /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
-            public const bool UpdateAccpacDotNetLibrary = false;
+            public const bool UpdateAccpacDotNetLibrary = true;
 
             /// <summary> From Accpac Number </summary>
             public const string FromAccpacNumber = "7.1.0.0";
             
             /// <summary> To Accpac Number </summary>
-            public const string ToAccpacNumber = "7.1.0.0";
+            public const string ToAccpacNumber = "7.2.0.0";
 
             /// <summary> Flag that determines whether or not to synchronize the Kendo files. </summary>
             public const bool SyncKendoFiles = true;

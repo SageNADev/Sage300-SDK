@@ -1652,6 +1652,9 @@
     <value>One or more errors occurred while attempting to generate the report:  {0}</value>
     <comment>Internal use only. No translation necessary.</comment>
   </data>
+  <data name="PostSuccessMessage" xml:space="preserve">
+    <value>Asentamiento concluido. {0}, {1}</value>
+  </data>
   <data name="CollapseAll" xml:space="preserve">
     <value>Colapsar Todo</value>
   </data>
@@ -1682,9 +1685,6 @@
     <value>Unable to to retrieve credentials. Please log into Financial Reporter again.</value>
     <comment>To be translated</comment>
   </data>
-  <data name="PostSuccessMessage" xml:space="preserve">
-    <value>Asentamiento concluido. {0}, {1}</value>
-  </data>
   <data name="AnErrorOccurredProcessingYourRequest" xml:space="preserve">
     <value>Ha ocurrido un error procesando tu requerimiento.</value>
   </data>
@@ -1694,5 +1694,26 @@
   <data name="FeatureNotAvailableWeb_Message_v2" xml:space="preserve">
     <value>Su solicitud no se pudo llevar a cabo porque {0} no está disponible como pantalla web. Tal vez puede utilizar la pantalla del escritorio.</value>
     <comment>Used in AP-AR Payment Intery for Job related items</comment>
+  </data>
+  <data name="SendingEmails" xml:space="preserve">
+    <value>Enviando correos electrónicos</value>
+  </data>
+  <data name="CanceledEmails" xml:space="preserve">
+    <value>El envío de correos electrónicos fue cancelado.</value>
+  </data>
+  <data name="NoEmailsSent" xml:space="preserve">
+    <value>No se envió ningún correo electrónico</value>
+  </data>
+  <data name="AllEmailsSentNoWarnings" xml:space="preserve">
+    <value>Todos los correos electrónicos se enviaron con éxito.</value>
+  </data>
+  <data name="AllEmailsSentButWarnings" xml:space="preserve">
+    <value>Todos los correos electrónicos se procesaron, pero algunos podrían no haber llegado a todos los destinatarios</value>
+  </data>
+  <data name="SomeEmailsSentFailed" xml:space="preserve">
+    <value>Correos electrónicos del {0} al {1} enviados con éxito; error en {2}</value>
+  </data>
+  <data name="SomeEmailsSentCanceled" xml:space="preserve">
+    <value>Correos electrónicos del {0} al {1} enviados con éxito; cancelación en {2} o antes</value>
   </data>
 </root>

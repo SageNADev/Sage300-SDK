@@ -1722,12 +1722,6 @@
   <data name="InvalidInput" xml:space="preserve">
     <value>Invalid Input. The {0} does not exist.</value>
   </data>
-  <data name="GetWebScreenInvalidKeyError" xml:space="preserve">
-    <value>Please ensure the credentials are encrypted with a valid key.</value>
-  </data>
-  <data name="GetWebScreenNoKeyError" xml:space="preserve">
-    <value>Please get a new public key.</value>
-  </data>
   <data name="GetWebScreenNullParamError" xml:space="preserve">
     <value>Please ensure the credentials, public key, and IV are in the request header.</value>
   </data>
@@ -1796,5 +1790,62 @@
   </data>
   <data name="Copy" xml:space="preserve">
     <value>Copy</value>
+  </data>
+  <data name="ProxyAuthenticationError" xml:space="preserve">
+    <value>The supplied credentials was not able to access Sage 300.</value>
+  </data>
+  <data name="ProxyDecryptError" xml:space="preserve">
+    <value>An error was generated attempting to decrypt the supplied credentials.</value>
+  </data>
+  <data name="ProxyModuleParameterError" xml:space="preserve">
+    <value>The module parameter was not supplied.</value>
+  </data>
+  <data name="ProxyNoCredentialsError" xml:space="preserve">
+    <value>The credentials are missing from the request.</value>
+  </data>
+  <data name="ProxyParametersError" xml:space="preserve">
+    <value>Please ensure the credentials, public key, and IV are in the request header.</value>
+  </data>
+  <data name="ProxyPublicKeyError" xml:space="preserve">
+    <value>The supplied Public Key was not found. Please request a new Public Key.</value>
+  </data>
+  <data name="ProxyTokenError" xml:space="preserve">
+    <value>The supplied Token was not found.</value>
+  </data>
+  <data name="ProxyActionParameterError" xml:space="preserve">
+    <value>The action parameter was not supplied.</value>
+  </data>
+  <data name="ProxyControllerParameterError" xml:space="preserve">
+    <value>The controller parameter was not supplied.</value>
+  </data>
+  <data name="ProxyProductParameterError" xml:space="preserve">
+    <value>The product parameter was not supplied.</value>
+  </data>
+  <data name="SendingEmails" xml:space="preserve">
+    <value>Sending emails</value>
+    <comment>The meter caption displayed when sending emails</comment>
+  </data>
+  <data name="CanceledEmails" xml:space="preserve">
+    <value>Sending emails has been canceled.</value>
+  </data>
+  <data name="NoEmailsSent" xml:space="preserve">
+    <value>No emails sent</value>
+    <comment>The meter/message status shown on attempting to send multiple emails and the process failed before even the first one was complete.</comment>
+  </data>
+  <data name="AllEmailsSentNoWarnings" xml:space="preserve">
+    <value>All emails sent successfully</value>
+    <comment>The meter/message caption displayed at the end of processing emails when all emails were processed and there was no indication of any issue</comment>
+  </data>
+  <data name="AllEmailsSentButWarnings" xml:space="preserve">
+    <value>All emails processed, although some may not reach all recipients</value>
+    <comment>As AllEmailsSentNoWarnings except that there are warnings, probably about failed recipients</comment>
+  </data>
+  <data name="SomeEmailsSentFailed" xml:space="preserve">
+    <value>Emails {0} to {1} sent successfully; failed on {2}</value>
+    <comment>The format for the final meter/message caption for the range of emails processed before the process failed</comment>
+  </data>
+  <data name="SomeEmailsSentCanceled" xml:space="preserve">
+    <value>Emails {0} to {1} sent successfully; canceled before or on {2}</value>
+    <comment>As for SomeEmailsSentFailed except corresponds to canceling the process rather than failure</comment>
   </data>
 </root>

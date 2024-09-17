@@ -448,4 +448,7 @@
     <value>Invalid input. Earning/Deduction does not exist.</value>
     <comment>No</comment>
   </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>Customer Number</value>
+  </data>
 </root>

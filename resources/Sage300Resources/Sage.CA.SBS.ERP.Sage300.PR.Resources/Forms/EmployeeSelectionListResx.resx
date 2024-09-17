@@ -117,166 +117,595 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Frequency13Year" xml:space="preserve">
-    <value>Frequency - 13 / Year</value>
+  <data name="Accrual" xml:space="preserve">
+    <value>Accrual</value>
   </data>
-  <data name="LastMaintained" xml:space="preserve">
-    <value>Last Maintained</value>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
   </data>
-  <data name="FrequencyQuarterly" xml:space="preserve">
-    <value>Frequency - Quarterly</value>
+  <data name="Active1" xml:space="preserve">
+    <value>Active</value>
   </data>
-  <data name="NonDirectDeposit" xml:space="preserve">
-    <value>Non-Direct Deposit</value>
+  <data name="Advance" xml:space="preserve">
+    <value>Advance</value>
+  </data>
+  <data name="Benefit" xml:space="preserve">
+    <value>Benefit</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="Class1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Class2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Class3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Class4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Combine" xml:space="preserve">
+    <value>Combine</value>
+  </data>
+  <data name="Combine1" xml:space="preserve">
+    <value>Combine</value>
+  </data>
+  <data name="CombineMatchingEntries" xml:space="preserve">
+    <value>Combine Matching Entries</value>
+  </data>
+  <data name="CombineMatchingEntries1" xml:space="preserve">
+    <value>Combine Matching Entries</value>
+  </data>
+  <data name="CombineNonMatchingEntries" xml:space="preserve">
+    <value>Combine Non-Matching Entries</value>
+  </data>
+  <data name="CombineNonMatchingEntries1" xml:space="preserve">
+    <value>Combine Non-Matching Entries</value>
+  </data>
+  <data name="CombineSelList1" xml:space="preserve">
+    <value>Combine Empl Sel List ID 1</value>
+  </data>
+  <data name="CombineSelList11" xml:space="preserve">
+    <value>Combine Empl Sel List ID 1</value>
+  </data>
+  <data name="CombineSelList2" xml:space="preserve">
+    <value>Combine Empl Sel List ID 2</value>
+  </data>
+  <data name="CombineSelList21" xml:space="preserve">
+    <value>Combine Empl Sel List ID 2</value>
+  </data>
+  <data name="CombineTitle" xml:space="preserve">
+    <value>Combine Payroll Employee Selection List</value>
+  </data>
+  <data name="CombineTitle1" xml:space="preserve">
+    <value>Combine Payroll Employee Selection List</value>
+  </data>
+  <data name="CopyPopupTitle" xml:space="preserve">
+    <value>Copy Payroll Employee Selection List</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Criteria" xml:space="preserve">
+    <value>Criteria</value>
+  </data>
+  <data name="Criteria1" xml:space="preserve">
+    <value>Criteria</value>
+  </data>
+  <data name="CriteriaPopupTitle" xml:space="preserve">
+    <value>Payroll Employee Selection List Criteria</value>
+  </data>
+  <data name="Deduction" xml:space="preserve">
+    <value>Deduction</value>
+  </data>
+  <data name="DeleteEmployeeConfirmation" xml:space="preserve">
+    <value>Are you sure you want to delete the employee {0} from selection list {1} ?</value>
+  </data>
+  <data name="DeleteLine" xml:space="preserve">
+    <value>Delete Line</value>
+  </data>
+  <data name="DeleteSelectionListConfirmation" xml:space="preserve">
+    <value>Are you sure you want to delete the employee selection list {0} ?</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Description1" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DirectDeposit" xml:space="preserve">
+    <value>Direct Deposit</value>
+  </data>
+  <data name="DirectDeposit1" xml:space="preserve">
+    <value>Direct Deposit</value>
+  </data>
+  <data name="Earning" xml:space="preserve">
+    <value>Earning</value>
+  </data>
+  <data name="EarningOrDeduction" xml:space="preserve">
+    <value>Earn/Deduction Code</value>
+  </data>
+  <data name="EditColumns" xml:space="preserve">
+    <value>Edit Columns</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employee Number</value>
+  </data>
+  <data name="Employee1" xml:space="preserve">
+    <value>Employee Number</value>
+  </data>
+  <data name="EmployeeAlreadyExists" xml:space="preserve">
+    <value>Employee already exists</value>
+  </data>
+  <data name="EmployeeLastName" xml:space="preserve">
+    <value>Employee Last Name</value>
   </data>
   <data name="EmployeeList" xml:space="preserve">
+    <value>Employee List</value>
+  </data>
+  <data name="EmployeeList1" xml:space="preserve">
     <value>Employee List</value>
   </data>
   <data name="EmployeeListDesc" xml:space="preserve">
     <value>Employee List Description</value>
   </data>
-  <data name="Active" xml:space="preserve">
-    <value>Active</value>
+  <data name="EmployeeListDesc1" xml:space="preserve">
+    <value>Employee List Description</value>
   </data>
-  <data name="SelectItem4" xml:space="preserve">
-    <value>Select Item 4 Index</value>
+  <data name="EmployeeNotExist" xml:space="preserve">
+    <value>Invalid input. Employee does not exist.</value>
   </data>
-  <data name="OptFld2To" xml:space="preserve">
-    <value>Optional Field 2 To Value</value>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Employee Number</value>
   </data>
-  <data name="SelectItem3From" xml:space="preserve">
-    <value>Select Item 3 From Criteria</value>
+  <data name="EmployeeSelectionListTitle" xml:space="preserve">
+    <value>EmployeeSelectionList</value>
+  </data>
+  <data name="EmployeeSelectionListTitle1" xml:space="preserve">
+    <value>Employee Selection List</value>
+  </data>
+  <data name="EmploymentClassification" xml:space="preserve">
+    <value>Employment Classification</value>
+  </data>
+  <data name="ExcludeEarningOrDeduction" xml:space="preserve">
+    <value>Exclude Earn/Deduction</value>
+  </data>
+  <data name="ExcludeTax" xml:space="preserve">
+    <value>Exclude Tax</value>
+  </data>
+  <data name="ExpenseReimbursement" xml:space="preserve">
+    <value>Expense Reimbursement</value>
+  </data>
+  <data name="Frequencies" xml:space="preserve">
+    <value>Frequencies</value>
+  </data>
+  <data name="Frequency10Year" xml:space="preserve">
+    <value>10 / Year</value>
+  </data>
+  <data name="Frequency10Year1" xml:space="preserve">
+    <value>Frequency - 10 / Year</value>
+  </data>
+  <data name="Frequency13Year" xml:space="preserve">
+    <value>13 / Year</value>
+  </data>
+  <data name="Frequency13Year1" xml:space="preserve">
+    <value>Frequency - 13 / Year</value>
+  </data>
+  <data name="Frequency22Year" xml:space="preserve">
+    <value>22 / Year</value>
+  </data>
+  <data name="Frequency22Year1" xml:space="preserve">
+    <value>Frequency - 22 / Year</value>
+  </data>
+  <data name="FrequencyBiweekly" xml:space="preserve">
+    <value>Biweekly</value>
+  </data>
+  <data name="FrequencyBiweekly1" xml:space="preserve">
+    <value>Frequency - Biweekly</value>
+  </data>
+  <data name="FrequencyDaily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="FrequencyDaily1" xml:space="preserve">
+    <value>Frequency - Daily</value>
+  </data>
+  <data name="FrequencyMonthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="FrequencyMonthly1" xml:space="preserve">
+    <value>Frequency - Monthly</value>
+  </data>
+  <data name="FrequencyQuarterly" xml:space="preserve">
+    <value>Quarterly</value>
+  </data>
+  <data name="FrequencyQuarterly1" xml:space="preserve">
+    <value>Frequency - Quarterly</value>
+  </data>
+  <data name="FrequencySemimonthly" xml:space="preserve">
+    <value>Semimonthly</value>
+  </data>
+  <data name="FrequencySemimonthly1" xml:space="preserve">
+    <value>Frequency - Semimonthly</value>
+  </data>
+  <data name="FrequencyWeekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="FrequencyWeekly1" xml:space="preserve">
+    <value>Frequency - Weekly</value>
+  </data>
+  <data name="FromClasscode" xml:space="preserve">
+    <value>From Class code</value>
+  </data>
+  <data name="FromEarningOrDeduction" xml:space="preserve">
+    <value>From Earn/Deduction Code</value>
+  </data>
+  <data name="FromEmployeeLastName" xml:space="preserve">
+    <value>From Employee Last Name</value>
+  </data>
+  <data name="FromEmployeeNumber" xml:space="preserve">
+    <value>From Employee Number</value>
+  </data>
+  <data name="FromOvertimeSchedule" xml:space="preserve">
+    <value>From Overtime Schedule</value>
+  </data>
+  <data name="FromShiftDifferential" xml:space="preserve">
+    <value>From Shift Differential</value>
+  </data>
+  <data name="FromState" xml:space="preserve">
+    <value>From State</value>
+  </data>
+  <data name="FromTax" xml:space="preserve">
+    <value>From Tax</value>
+  </data>
+  <data name="FromWCCGroup" xml:space="preserve">
+    <value>From WCC Group</value>
+  </data>
+  <data name="FromWorkClassification" xml:space="preserve">
+    <value>From Work Classification</value>
   </data>
   <data name="FullTime" xml:space="preserve">
+    <value>Full Time</value>
+  </data>
+  <data name="FullTime1" xml:space="preserve">
     <value>Full Time Employee</value>
   </data>
-  <data name="SelectSubItem4" xml:space="preserve">
-    <value>Select Subitem 4 Index</value>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="Inactive1" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="InactROE" xml:space="preserve">
+    <value>Inactive - ROE Pending</value>
+  </data>
+  <data name="InactROE1" xml:space="preserve">
+    <value>RESERVED - CAD Only</value>
+  </data>
+  <data name="IncludeEarningOrDeduction" xml:space="preserve">
+    <value>Include Earn/Deduction</value>
+  </data>
+  <data name="IncludeTax" xml:space="preserve">
+    <value>Include Tax</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Last Maintained</value>
+  </data>
+  <data name="LastMaintained1" xml:space="preserve">
+    <value>Last Maintained</value>
+  </data>
+  <data name="ListTotal" xml:space="preserve">
+    <value>Number of Employees</value>
+  </data>
+  <data name="ListTotal1" xml:space="preserve">
+    <value>Number of Employees</value>
+  </data>
+  <data name="Manager" xml:space="preserve">
+    <value>Manager</value>
+  </data>
+  <data name="Manager1" xml:space="preserve">
+    <value>Manager</value>
+  </data>
+  <data name="NonDirectDeposit" xml:space="preserve">
+    <value>Non-Direct Deposit</value>
+  </data>
+  <data name="NonDirectDeposit1" xml:space="preserve">
+    <value>Non-Direct Deposit</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>(None)</value>
+  </data>
+  <data name="NumberOfEmployees" xml:space="preserve">
+    <value>Number of Employees</value>
+  </data>
+  <data name="NumberOfEmployees1" xml:space="preserve">
+    <value>Number of Employees</value>
+  </data>
+  <data name="OptFld1" xml:space="preserve">
+    <value>Optional Field 1</value>
+  </data>
+  <data name="OptFld11" xml:space="preserve">
+    <value>Optional Field 1</value>
+  </data>
+  <data name="OptFld1From" xml:space="preserve">
+    <value>Optional Field 1 From Value</value>
+  </data>
+  <data name="OptFld1From1" xml:space="preserve">
+    <value>Optional Field 1 From Value</value>
+  </data>
+  <data name="OptFld1To" xml:space="preserve">
+    <value>Optional Field 1 To Value</value>
+  </data>
+  <data name="OptFld1To1" xml:space="preserve">
+    <value>Optional Field 1 To Value</value>
+  </data>
+  <data name="OptFld2" xml:space="preserve">
+    <value>Optional Field 2</value>
+  </data>
+  <data name="OptFld21" xml:space="preserve">
+    <value>Optional Field 2</value>
   </data>
   <data name="OptFld2From" xml:space="preserve">
     <value>Optional Field 2 From Value</value>
   </data>
+  <data name="OptFld2From1" xml:space="preserve">
+    <value>Optional Field 2 From Value</value>
+  </data>
+  <data name="OptFld2To" xml:space="preserve">
+    <value>Optional Field 2 To Value</value>
+  </data>
+  <data name="OptFld2To1" xml:space="preserve">
+    <value>Optional Field 2 To Value</value>
+  </data>
+  <data name="OptFld3" xml:space="preserve">
+    <value>Optional Field 3</value>
+  </data>
+  <data name="OptFld31" xml:space="preserve">
+    <value>Optional Field 3</value>
+  </data>
+  <data name="OptFld3From" xml:space="preserve">
+    <value>Optional Field 3 From Value</value>
+  </data>
+  <data name="OptFld3From1" xml:space="preserve">
+    <value>Optional Field 3 From Value</value>
+  </data>
+  <data name="OptFld3To" xml:space="preserve">
+    <value>Optional Field 3 To Value</value>
+  </data>
+  <data name="OptFld3To1" xml:space="preserve">
+    <value>Optional Field 3 To Value</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="OvertimeSchedule" xml:space="preserve">
+    <value>Overtime Schedule</value>
+  </data>
   <data name="PartTime" xml:space="preserve">
+    <value>Part-time</value>
+  </data>
+  <data name="PartTime1" xml:space="preserve">
     <value>Part-Time</value>
   </data>
   <data name="PayFrequency" xml:space="preserve">
     <value>Pay Frequency</value>
   </data>
-  <data name="SelectItem2From" xml:space="preserve">
-    <value>Select Item 2 From Criteria</value>
+  <data name="PayFrequency1" xml:space="preserve">
+    <value>Pay Frequency</value>
   </data>
-  <data name="SelectItem2To" xml:space="preserve">
-    <value>Select Item 2 To Criteria</value>
+  <data name="PaymentClassification" xml:space="preserve">
+    <value>Payment Classification</value>
   </data>
-  <data name="SelectItem4To" xml:space="preserve">
-    <value>Select Item 4 To Criteria</value>
+  <data name="PayrollEmployeeSelection" xml:space="preserve">
+    <value>Payroll Employee Selection</value>
+  </data>
+  <data name="PayrollEmployeeSelection1" xml:space="preserve">
+    <value>Payroll Employee Selection</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="Position1" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="ProcessCommandCode" xml:space="preserve">
+    <value>Process Command Code</value>
+  </data>
+  <data name="ProcessCommandCode1" xml:space="preserve">
+    <value>Process Command Code</value>
+  </data>
+  <data name="RangeValidation" xml:space="preserve">
+    <value>The entry in the From value cannot be greater than the To value.</value>
+  </data>
+  <data name="SecurityFlag" xml:space="preserve">
+    <value>Security Flag</value>
+  </data>
+  <data name="SecurityFlag1" xml:space="preserve">
+    <value>Security Flag</value>
+  </data>
+  <data name="SelectBy" xml:space="preserve">
+    <value>Select By</value>
+  </data>
+  <data name="SelectionListTitle" xml:space="preserve">
+    <value>Selection List</value>
+  </data>
+  <data name="SelectionListTitle1" xml:space="preserve">
+    <value>Selection List</value>
+  </data>
+  <data name="SelectItem1" xml:space="preserve">
+    <value>Select Item 1 Index</value>
+  </data>
+  <data name="SelectItem11" xml:space="preserve">
+    <value>Select Item 1 Index</value>
+  </data>
+  <data name="SelectItem1From" xml:space="preserve">
+    <value>Select Item 1 From Criteria</value>
+  </data>
+  <data name="SelectItem1From1" xml:space="preserve">
+    <value>Select Item 1 From Criteria</value>
   </data>
   <data name="SelectItem1To" xml:space="preserve">
+    <value>Select Item 1 To Criteria</value>
+  </data>
+  <data name="SelectItem1To1" xml:space="preserve">
     <value>Select Item 1 To Criteria</value>
   </data>
   <data name="SelectItem2" xml:space="preserve">
     <value>Select Item 2 Index</value>
   </data>
-  <data name="SelectSubItem2" xml:space="preserve">
-    <value>Select Subitem 2Index</value>
+  <data name="SelectItem21" xml:space="preserve">
+    <value>Select Item 2 Index</value>
   </data>
-  <data name="OptFld2" xml:space="preserve">
-    <value>Optional Field 2</value>
+  <data name="SelectItem2From" xml:space="preserve">
+    <value>Select Item 2 From Criteria</value>
   </data>
-  <data name="Manager" xml:space="preserve">
-    <value>Manager</value>
+  <data name="SelectItem2From1" xml:space="preserve">
+    <value>Select Item 2 From Criteria</value>
   </data>
-  <data name="FrequencySemimonthly" xml:space="preserve">
-    <value>Frequency - Semimonthly</value>
+  <data name="SelectItem2To" xml:space="preserve">
+    <value>Select Item 2 To Criteria</value>
   </data>
-  <data name="Frequency22Year" xml:space="preserve">
-    <value>Frequency - 22 / Year</value>
-  </data>
-  <data name="OptFld1" xml:space="preserve">
-    <value>Optional Field 1</value>
-  </data>
-  <data name="TermROE" xml:space="preserve">
-    <value>RESERVED - CAD Only</value>
+  <data name="SelectItem2To1" xml:space="preserve">
+    <value>Select Item 2 To Criteria</value>
   </data>
   <data name="SelectItem3" xml:space="preserve">
     <value>Select Item 3 Index</value>
   </data>
-  <data name="CombineSelList1" xml:space="preserve">
-    <value>Combine Empl Sel List ID 1</value>
+  <data name="SelectItem31" xml:space="preserve">
+    <value>Select Item 3 Index</value>
   </data>
-  <data name="SelectSubItem3" xml:space="preserve">
-    <value>Select Subitem 3 Index</value>
+  <data name="SelectItem3From" xml:space="preserve">
+    <value>Select Item 3 From Criteria</value>
   </data>
-  <data name="SecurityFlag" xml:space="preserve">
-    <value>Security Flag</value>
-  </data>
-  <data name="OptFld3To" xml:space="preserve">
-    <value>Optional Field 3 To Value</value>
-  </data>
-  <data name="OptFld3" xml:space="preserve">
-    <value>Optional Field 3</value>
-  </data>
-  <data name="SelectItem4From" xml:space="preserve">
-    <value>Select Item 4 From Criteria</value>
-  </data>
-  <data name="DirectDeposit" xml:space="preserve">
-    <value>Direct Deposit</value>
-  </data>
-  <data name="CombineSelList2" xml:space="preserve">
-    <value>Combine Empl Sel List ID 2</value>
-  </data>
-  <data name="OptFld3From" xml:space="preserve">
-    <value>Optional Field 3 From Value</value>
-  </data>
-  <data name="FrequencyDaily" xml:space="preserve">
-    <value>Frequency - Daily</value>
-  </data>
-  <data name="Inactive" xml:space="preserve">
-    <value>Inactive</value>
-  </data>
-  <data name="OptFld1From" xml:space="preserve">
-    <value>Optional Field 1 From Value</value>
-  </data>
-  <data name="Position" xml:space="preserve">
-    <value>Position</value>
-  </data>
-  <data name="OptFld1To" xml:space="preserve">
-    <value>Optional Field 1 To Value</value>
+  <data name="SelectItem3From1" xml:space="preserve">
+    <value>Select Item 3 From Criteria</value>
   </data>
   <data name="SelectItem3To" xml:space="preserve">
     <value>Select Item 3 To Criteria</value>
   </data>
-  <data name="FrequencyBiweekly" xml:space="preserve">
-    <value>Frequency - Biweekly</value>
+  <data name="SelectItem3To1" xml:space="preserve">
+    <value>Select Item 3 To Criteria</value>
   </data>
-  <data name="Terminated" xml:space="preserve">
-    <value>Terminated Employee</value>
+  <data name="SelectItem4" xml:space="preserve">
+    <value>Select Item 4 Index</value>
   </data>
-  <data name="SelectItem1" xml:space="preserve">
-    <value>Select Item 1 Index</value>
+  <data name="SelectItem41" xml:space="preserve">
+    <value>Select Item 4 Index</value>
+  </data>
+  <data name="SelectItem4From" xml:space="preserve">
+    <value>Select Item 4 From Criteria</value>
+  </data>
+  <data name="SelectItem4From1" xml:space="preserve">
+    <value>Select Item 4 From Criteria</value>
+  </data>
+  <data name="SelectItem4To" xml:space="preserve">
+    <value>Select Item 4 To Criteria</value>
+  </data>
+  <data name="SelectItem4To1" xml:space="preserve">
+    <value>Select Item 4 To Criteria</value>
   </data>
   <data name="SelectSubItem1" xml:space="preserve">
     <value>Select Subitem 1 Index</value>
   </data>
-  <data name="SelectItem1From" xml:space="preserve">
-    <value>Select Item 1 From Criteria</value>
+  <data name="SelectSubItem11" xml:space="preserve">
+    <value>Select Subitem 1 Index</value>
   </data>
-  <data name="ListTotal" xml:space="preserve">
-    <value>Number of Employees in List</value>
+  <data name="SelectSubItem2" xml:space="preserve">
+    <value>Select Subitem 2Index</value>
   </data>
-  <data name="FrequencyWeekly" xml:space="preserve">
-    <value>Frequency - Weekly</value>
+  <data name="SelectSubItem21" xml:space="preserve">
+    <value>Select Subitem 2Index</value>
   </data>
-  <data name="ProcessCommandCode" xml:space="preserve">
-    <value>Process Command Code</value>
+  <data name="SelectSubItem3" xml:space="preserve">
+    <value>Select Subitem 3 Index</value>
   </data>
-  <data name="FrequencyMonthly" xml:space="preserve">
-    <value>Frequency - Monthly</value>
+  <data name="SelectSubItem31" xml:space="preserve">
+    <value>Select Subitem 3 Index</value>
   </data>
-  <data name="Frequency10Year" xml:space="preserve">
-    <value>Frequency - 10 / Year</value>
+  <data name="SelectSubItem4" xml:space="preserve">
+    <value>Select Subitem 4 Index</value>
   </data>
-  <data name="InactROE" xml:space="preserve">
+  <data name="SelectSubItem41" xml:space="preserve">
+    <value>Select Subitem 4 Index</value>
+  </data>
+  <data name="ShiftDifferential" xml:space="preserve">
+    <value>Shift Differential</value>
+  </data>
+  <data name="ShiftDifferential1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ShiftDifferential2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ShiftDifferential3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ShiftDifferential4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ShiftDifferential5" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Terminated" xml:space="preserve">
+    <value>Terminated</value>
+  </data>
+  <data name="Terminated1" xml:space="preserve">
+    <value>Terminated Employee</value>
+  </data>
+  <data name="TermROE" xml:space="preserve">
+    <value>Terminated - ROE Pending</value>
+  </data>
+  <data name="TermROE1" xml:space="preserve">
     <value>RESERVED - CAD Only</value>
+  </data>
+  <data name="ThenBy" xml:space="preserve">
+    <value>Then Select By</value>
+  </data>
+  <data name="ToClassCode" xml:space="preserve">
+    <value>To Class Code</value>
+  </data>
+  <data name="ToEarningOrDeduction" xml:space="preserve">
+    <value>To Earn/Deduction Code</value>
+  </data>
+  <data name="ToEmployeeLastName" xml:space="preserve">
+    <value>To Employee Last Name</value>
+  </data>
+  <data name="ToEmployeeNumber" xml:space="preserve">
+    <value>To Employee Number</value>
+  </data>
+  <data name="ToOvertimeSchedule" xml:space="preserve">
+    <value>To Overtime Schedule</value>
+  </data>
+  <data name="ToShiftDifferential" xml:space="preserve">
+    <value>To Shift Differential</value>
+  </data>
+  <data name="ToState" xml:space="preserve">
+    <value>To State</value>
+  </data>
+  <data name="ToTax" xml:space="preserve">
+    <value>To Tax</value>
+  </data>
+  <data name="ToWCCGroup" xml:space="preserve">
+    <value>To WCC Group</value>
+  </data>
+  <data name="ToWorkClassification" xml:space="preserve">
+    <value>To Work Classification</value>
+  </data>
+  <data name="WCCGroup" xml:space="preserve">
+    <value>WCC Group</value>
+  </data>
+  <data name="WorkClassification" xml:space="preserve">
+    <value>Work Classification</value>
   </data>
 </root>

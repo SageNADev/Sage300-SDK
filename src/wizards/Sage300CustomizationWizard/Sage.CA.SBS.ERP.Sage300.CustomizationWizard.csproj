@@ -80,7 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ai.snk" />
-    <None Include="Resources\AccpacDotNetVersion.props" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\finder16X.bmp" />

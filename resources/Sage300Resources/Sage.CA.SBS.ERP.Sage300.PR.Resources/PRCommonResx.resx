@@ -255,6 +255,12 @@
   <data name="Open" xml:space="preserve">
     <value>Open</value>
   </data>
+  <data name="OptionalFieldValidation" xml:space="preserve">
+    <value>Invalid input. Optional field {0} does not exist.</value>
+  </data>
+  <data name="Overtime" xml:space="preserve">
+    <value>Overtime</value>
+  </data>
   <data name="OvertimeExpense" xml:space="preserve">
     <value>Overtime Expense</value>
   </data>

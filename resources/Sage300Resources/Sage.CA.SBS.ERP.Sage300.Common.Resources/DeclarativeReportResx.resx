@@ -1650,7 +1650,7 @@
     <value>Non-reusableTimecards</value>
   </data>
   <data name="PayrollTimecardTitle" xml:space="preserve">
-    <value>Payroll Timecard Report</value>
+    <value>Payroll Timecards Report</value>
   </data>
   <data name="PeriodEndDate" xml:space="preserve">
     <value>Period End Date</value>
@@ -1684,5 +1684,29 @@
   </data>
   <data name="WorkClassificationcodes" xml:space="preserve">
     <value>Work Classification Codes</value>
-  </data>  
+  </data>
+  <data name="ddlAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="LblOptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="EmployeeListCode" xml:space="preserve">
+    <value>Employee List Code</value>
+  </data>
+  <data name="SelectionListCode" xml:space="preserve">
+    <value>Selection List Code</value>
+  </data>
+  <data name="FromEmployeeList" xml:space="preserve">
+    <value>From Employee List</value>
+  </data>
+  <data name="FromSelectionList" xml:space="preserve">
+    <value>From Selection List</value>
+  </data>
+  <data name="ToEmployeeList" xml:space="preserve">
+    <value>To Employee List</value>
+  </data>
+  <data name="ToSelectionList" xml:space="preserve">
+    <value>To Selection List</value>
+  </data>
 </root>

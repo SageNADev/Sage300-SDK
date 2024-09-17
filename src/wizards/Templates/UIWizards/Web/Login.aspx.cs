@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2024 Sage Software, Inc.  All rights reserved. */
 
 #region
 using ACCPAC.Advantage;
@@ -30,7 +30,7 @@ namespace ValuedPartner.TU.Web
             public const string SYSTEM_KEY = "system";
             public const string SYSTEM_DEFAULT = "SAMSYS";
             public const string VERSION_KEY = "version";
-            public const string VERSION_DEFAULT = "71A";
+            public const string VERSION_DEFAULT = "72A";
             public const string DATE_KEY = "date";
             public const string SESSIONDATE_KEY = "SessionDate";
         }

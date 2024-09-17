@@ -1,4 +1,4 @@
-/* Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved. */
+/* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */
 
 // @ts-check
 
@@ -2675,7 +2675,7 @@ $.extend(sg.utls, {
         });
     },
 
-    showMessage: function (result, handler, isModal, isModalTransparent) {
+    showMessage: function (result, handler, isModal, isModalTransparent, fadeHandler) {
 
         if (result.UserMessage != null) {
             var messageDiv = $("#message");
@@ -2778,6 +2778,9 @@ $.extend(sg.utls, {
                 fnTimeout = setTimeout(function () {
                     messageDiv.fadeOut(1000);
                     messageDiv.empty();
+                    if (fadeHandler) {
+                        fadeHandler();
+                    }
                 }, showTime);
             }
 

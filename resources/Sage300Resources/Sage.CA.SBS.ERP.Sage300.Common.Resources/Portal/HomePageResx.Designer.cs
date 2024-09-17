@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class HomePageResx {
@@ -2158,6 +2158,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to C/P.
+        /// </summary>
+        public static string CP {
+            get {
+                return ResourceManager.GetString("CP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Note.
         /// </summary>
         public static string CreateNote {
@@ -3220,6 +3229,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Information Center.
+        /// </summary>
+        public static string QuickMenu_InfoCenter {
+            get {
+                return ResourceManager.GetString("QuickMenu_InfoCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inquiries.
         /// </summary>
         public static string QuickMenu_Inquiries {
@@ -3648,6 +3666,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string UnsupportedBrowserErrorTitle {
             get {
                 return ResourceManager.GetString("UnsupportedBrowserErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to U/P.
+        /// </summary>
+        public static string UP {
+            get {
+                return ResourceManager.GetString("UP", resourceCulture);
             }
         }
         

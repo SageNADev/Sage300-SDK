@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdvanceToBeRepaid" xml:space="preserve">
+    <value>Advance to be Repaid</value>
+  </data>
+  <data name="Assign" xml:space="preserve">
+    <value>Assign</value>
+  </data>
+  <data name="AssignEarnDedToEmployeesTitle" xml:space="preserve">
+    <value>Assign Earning/Deduction to Employees</value>
+  </data>
+  <data name="AvailableInEmployeeTimecards" xml:space="preserve">
+    <value>Available in Employee Timecards</value>
+  </data>
+  <data name="BillingPercentage" xml:space="preserve">
+    <value>Billing Percentage</value>
+  </data>
+  <data name="BillingPercentages" xml:space="preserve">
+    <value>Billing Percentages</value>
+  </data>
+  <data name="BillingRates" xml:space="preserve">
+    <value>Billing Rate</value>
+  </data>
+  <data name="BILLRATE1" xml:space="preserve">
+    <value>Billing Rate Per Hour</value>
+  </data>
+  <data name="BILLRATE2" xml:space="preserve">
+    <value>1,000.01 to 5,000.00 Pieces</value>
+  </data>
+  <data name="BILLRATE3" xml:space="preserve">
+    <value>5,000.01 to 10,000.00 Pieces</value>
+  </data>
+  <data name="BILLRATE4" xml:space="preserve">
+    <value>10,000.01 to 0.00 Pieces</value>
+  </data>
+  <data name="BILLRATE5" xml:space="preserve">
+    <value>0.00 Pieces to 0.00 Pieces</value>
+  </data>
+  <data name="BILLRATE6" xml:space="preserve">
+    <value>Over 10,000.00 Pieces</value>
+  </data>
+  <data name="BiweeklyMaximum" xml:space="preserve">
+    <value>Biweekly Maximum</value>
+  </data>
+  <data name="BiweeklyMinimum" xml:space="preserve">
+    <value>Biweekly Minimum</value>
+  </data>
+  <data name="Carryover" xml:space="preserve">
+    <value>Accrual Carry-over Date</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="CostCenterOverride" xml:space="preserve">
+    <value>Cost Center Override</value>
+  </data>
+  <data name="CURRCODE" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="CURRDESC" xml:space="preserve">
+    <value>Currency Description</value>
+  </data>
+  <data name="DailyMaximum" xml:space="preserve">
+    <value>Daily Maximum</value>
+  </data>
+  <data name="DailyMinimum" xml:space="preserve">
+    <value>Daily Minimum</value>
+  </data>
+  <data name="DefaultHours" xml:space="preserve">
+    <value>Default Hours</value>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>Distribution Code</value>
+  </data>
+  <data name="DistributionCodeDescription" xml:space="preserve">
+    <value>Distribution Code Description</value>
+  </data>
+  <data name="EarningDeductionDescription" xml:space="preserve">
+    <value>Earning/Deduction Description</value>
+  </data>
+  <data name="EarningDeductionSetting" xml:space="preserve">
+    <value>Earning/Deduction Settings</value>
+  </data>
+  <data name="EBrowse" xml:space="preserve">
+    <value>Employee Criteria</value>
+  </data>
+  <data name="EmpListID" xml:space="preserve">
+    <value>Selection List</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="EmployeeAnnualMaximum" xml:space="preserve">
+    <value>Annual Maximum</value>
+  </data>
+  <data name="EmployeeLifetimeMaximum" xml:space="preserve">
+    <value>Lifetime Maximum</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Employee Number</value>
+  </data>
+  <data name="EmployeePeriodMaximum" xml:space="preserve">
+    <value>Period Maximum</value>
+  </data>
+  <data name="EmployeePeriodMinimum" xml:space="preserve">
+    <value>Period Minimum</value>
+  </data>
+  <data name="EmployeeRateAmtPct" xml:space="preserve">
+    <value>Employee Rate/Amount/Percentage</value>
+  </data>
+  <data name="EmployeeSecondaryRateAmtPct" xml:space="preserve">
+    <value>Secondary Rate/Amount/Percentage</value>
+  </data>
+  <data name="Employer" xml:space="preserve">
+    <value>Employer</value>
+  </data>
+  <data name="EmployerAmtPct" xml:space="preserve">
+    <value>Employer Amount/Percentage</value>
+  </data>
+  <data name="EmployerAnnualMaximum" xml:space="preserve">
+    <value>Annual Maximum</value>
+  </data>
+  <data name="EmployerLifetimeMaximum" xml:space="preserve">
+    <value>Lifetime Maximum</value>
+  </data>
+  <data name="EmployerPeriodMaximum" xml:space="preserve">
+    <value>Period Maximum</value>
+  </data>
+  <data name="EmployerPeriodMinimum" xml:space="preserve">
+    <value>Period Minimum</value>
+  </data>
+  <data name="EmployerSecondaryAmtPct" xml:space="preserve">
+    <value>Secondary Amount/Percentage</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Ends</value>
+  </data>
+  <data name="FClassCod" xml:space="preserve">
+    <value>From Class</value>
+  </data>
+  <data name="FEmployee" xml:space="preserve">
+    <value>From Employee</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="ID2Change" xml:space="preserve">
+    <value>Earning/Deduction</value>
+  </data>
+  <data name="IdName" xml:space="preserve">
+    <value>Earning/Deduction Description</value>
+  </data>
+  <data name="IncludeInFLSAOvertiBillingRatesmeCalc" xml:space="preserve">
+    <value>Include in FLSA Calculation</value>
+  </data>
+  <data name="IncludeInFLSAOvertimeCalc" xml:space="preserve">
+    <value>Include in FLSA Calculation</value>
+  </data>
+  <data name="InvalidSegvalErrorMsg" xml:space="preserve">
+    <value>Invalid input. Segment code is not defined in General Ledger.</value>
+  </data>
+  <data name="JobsAllocBasedOnCalcBase" xml:space="preserve">
+    <value>Jobs Allocated Based on Calculation Base</value>
+  </data>
+  <data name="MinMax" xml:space="preserve">
+    <value>Min/Max</value>
+  </data>
+  <data name="MonthlyMax" xml:space="preserve">
+    <value>Monthly Maximum</value>
+  </data>
+  <data name="MonthlyMin" xml:space="preserve">
+    <value>Monthly Minimum</value>
+  </data>
+  <data name="PaythisPercentage" xml:space="preserve">
+    <value>Pay this Percentage</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="QuarterlyMax" xml:space="preserve">
+    <value>Quarterly Maximum</value>
+  </data>
+  <data name="QuarterlyMin" xml:space="preserve">
+    <value>Quarterly Minimum</value>
+  </data>
+  <data name="SegmentCode" xml:space="preserve">
+    <value>Segment Code</value>
+  </data>
+  <data name="Segmentdescription" xml:space="preserve">
+    <value>Segment Description</value>
+  </data>
+  <data name="Segmentname" xml:space="preserve">
+    <value>Segment Name</value>
+  </data>
+  <data name="SelectionList" xml:space="preserve">
+    <value>Selection List</value>
+  </data>
+  <data name="SelType" xml:space="preserve">
+    <value>Assign To</value>
+  </data>
+  <data name="SemimonthlyMaximum" xml:space="preserve">
+    <value>Semimonthly Maximum</value>
+  </data>
+  <data name="SemimonthlyMinimum" xml:space="preserve">
+    <value>Semimonthly Minimum</value>
+  </data>
+  <data name="SetCriteria" xml:space="preserve">
+    <value>Set Criteria</value>
+  </data>
+  <data name="SetCriteriaErrorMessage" xml:space="preserve">
+    <value>Invalid Input .No employees matches the criteria specified</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Starts</value>
+  </data>
+  <data name="StartDateErrorMsg" xml:space="preserve">
+    <value>Invalid Date at StartDate</value>
+  </data>
+  <data name="TClassCod" xml:space="preserve">
+    <value>To Class</value>
+  </data>
+  <data name="TEmployee" xml:space="preserve">
+    <value>To Employee</value>
+  </data>
+  <data name="TenPerYearMax" xml:space="preserve">
+    <value>10 Periods Maximum</value>
+  </data>
+  <data name="TenPerYearMin" xml:space="preserve">
+    <value>10 Periods Minimum</value>
+  </data>
+  <data name="ThirteenPerYearMax" xml:space="preserve">
+    <value>13 Periods Max</value>
+  </data>
+  <data name="ThirteenPerYearMin" xml:space="preserve">
+    <value>13 Periods Min</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="TwentyTwoPerYearMax" xml:space="preserve">
+    <value>22 Periods Max</value>
+  </data>
+  <data name="TwentyTwoPerYearMin" xml:space="preserve">
+    <value>22 Periods Min</value>
+  </data>
+  <data name="UseEmployeeDefaults" xml:space="preserve">
+    <value>Use Employee Defaults for Blank or Zero Values</value>
+  </data>
+  <data name="WCCGroupDescription" xml:space="preserve">
+    <value>WCC Group Description</value>
+  </data>
+  <data name="WeeklyMaximum" xml:space="preserve">
+    <value>Weekly Maximum</value>
+  </data>
+  <data name="WeeklyMinimum" xml:space="preserve">
+    <value>Weekly Minimum</value>
+  </data>
+  <data name="WorkersCompensationCode" xml:space="preserve">
+    <value>Workers' Compensation Code</value>
+  </data>
+  <data name="WorkersCompensationCodeDescription" xml:space="preserve">
+    <value>Workers' Compensation Code Description</value>
+  </data>
+  <data name="WorkersCompGroup" xml:space="preserve">
+    <value>WCC Group</value>
+  </data>
+</root>

@@ -1467,4 +1467,15 @@
   <data name="SessionDateChangedWarning" xml:space="preserve">
     <value>The new session date will not be used in screens that are currently open. To use the new session date in these screens, close the screens and then open them again.</value>
   </data>
+  <data name="CP" xml:space="preserve">
+    <value>C/P</value>
+    <comment>Module Name</comment>
+  </data>
+  <data name="UP" xml:space="preserve">
+    <value>U/P</value>
+    <comment>Module Name</comment>
+  </data>
+  <data name="QuickMenu_InfoCenter" xml:space="preserve">
+    <value>Information Center</value>
+  </data>
 </root>

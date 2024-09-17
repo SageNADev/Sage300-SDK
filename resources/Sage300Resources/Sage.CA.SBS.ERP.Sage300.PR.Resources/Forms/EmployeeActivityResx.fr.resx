@@ -1,0 +1,765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Accrual" xml:space="preserve">
+    <value>Cumuls</value>
+  </data>
+  <data name="AccrualDescripton" xml:space="preserve">
+    <value>Description de &amp;Cumuls</value>
+  </data>
+  <data name="Accruals" xml:space="preserve">
+    <value>Cumuls</value>
+  </data>
+  <data name="AccrualsPaidMTD" xml:space="preserve">
+    <value>Cumul mensuel à ce jour</value>
+  </data>
+  <data name="AccrualsPaidQTD" xml:space="preserve">
+    <value>Cumul trimestriel à ce jour</value>
+  </data>
+  <data name="AccrualsPaidYTD" xml:space="preserve">
+    <value>Cumul annuel à ce jour</value>
+  </data>
+  <data name="AccrualsTab" xml:space="preserve">
+    <value>Cumuls</value>
+  </data>
+  <data name="AccruedAmountsMTD" xml:space="preserve">
+    <value>Montants accumulés Cumul mensuel</value>
+  </data>
+  <data name="AccruedAmountsQTD" xml:space="preserve">
+    <value>Montants accumulés Cumul trimestriel</value>
+  </data>
+  <data name="AccruedAmountsYTD" xml:space="preserve">
+    <value>Montants accumulés Cumul annuel</value>
+  </data>
+  <data name="AccruedBankTimeHours" xml:space="preserve">
+    <value>Heures de banque accumulées</value>
+  </data>
+  <data name="AccruedBankTimeHoursPaid" xml:space="preserve">
+    <value>Heures bancaires accumulées payées</value>
+  </data>
+  <data name="AccruedBankTimePaid" xml:space="preserve">
+    <value>Temps bancaire accumulé payé</value>
+  </data>
+  <data name="AccruedCompHoursMTD" xml:space="preserve">
+    <value>Heures de communication accumulées Cumul mensuel</value>
+  </data>
+  <data name="AccruedCompHoursPaidMTD" xml:space="preserve">
+    <value>Heures de rémunération accumulées payées Cumul mensuel</value>
+  </data>
+  <data name="AccruedCompHoursPaidQTD" xml:space="preserve">
+    <value>Heures de rémunération accumulées payées Cumul trimestriel</value>
+  </data>
+  <data name="AccruedCompHoursPaidYTD" xml:space="preserve">
+    <value>Heures de rémunération accumulées payées Cumul annuel</value>
+  </data>
+  <data name="AccruedCompHoursQTD" xml:space="preserve">
+    <value>Heures de communication accumulées Cumul trimestriel</value>
+  </data>
+  <data name="AccruedCompHoursYTD" xml:space="preserve">
+    <value>Heures de communication accumulées Cumul annuel</value>
+  </data>
+  <data name="AccruedCompTimeAmtMTD" xml:space="preserve">
+    <value>Montant CompTime accumulé Cumul mensuel</value>
+  </data>
+  <data name="AccruedCompTimeAmtQTD" xml:space="preserve">
+    <value>Montant CompTime accumulé Cumul trimestriel</value>
+  </data>
+  <data name="AccruedCompTimeAmtYTD" xml:space="preserve">
+    <value>Montant CompTime accumulé Cumul annuel</value>
+  </data>
+  <data name="AccruedCompTimeHours" xml:space="preserve">
+    <value>Heures CompTime accumulées</value>
+  </data>
+  <data name="AccruedCompTimeHoursPaid" xml:space="preserve">
+    <value>Heures CompTime accumulées payées</value>
+  </data>
+  <data name="AccruedCompTimePaid" xml:space="preserve">
+    <value>Temps de rémunération accumulé payé</value>
+  </data>
+  <data name="AccruedHoursMTD" xml:space="preserve">
+    <value>Heures accumulées Cumul mensuel</value>
+  </data>
+  <data name="AccruedHoursPaidMTD" xml:space="preserve">
+    <value>Heures accumulées payées Cumul mensuel</value>
+  </data>
+  <data name="AccruedHoursPaidQTD" xml:space="preserve">
+    <value>Heures accumulées payées Cumul trimestriel</value>
+  </data>
+  <data name="AccruedHoursPaidYTD" xml:space="preserve">
+    <value>Heures accumulées payées Cumul annuel</value>
+  </data>
+  <data name="AccruedHoursQTD" xml:space="preserve">
+    <value>Heures accumulées Cumul trimestriel</value>
+  </data>
+  <data name="AccruedHoursYTD" xml:space="preserve">
+    <value>Heures accumulées Cumul annuel</value>
+  </data>
+  <data name="AccruedSickAmounts" xml:space="preserve">
+    <value>Montants de maladie accumulés</value>
+  </data>
+  <data name="AccruedSickAmountsMTD" xml:space="preserve">
+    <value>Montants de maladie accumulés Cumul mensuel</value>
+  </data>
+  <data name="AccruedSickAmountsQTD" xml:space="preserve">
+    <value>Montants de maladie accumulés Cumul trimestriel</value>
+  </data>
+  <data name="AccruedSickAmountsYTD" xml:space="preserve">
+    <value>Montants de maladie accumulés Cumul annuel</value>
+  </data>
+  <data name="AccruedSickHours" xml:space="preserve">
+    <value>Heures de maladie accumulées</value>
+  </data>
+  <data name="AccruedSickHoursMTD" xml:space="preserve">
+    <value>Heures de maladie accumulées Cumul mensuel</value>
+  </data>
+  <data name="AccruedSickHoursPaid" xml:space="preserve">
+    <value>Heures de maladie accumulées payées</value>
+  </data>
+  <data name="AccruedSickHoursPaidMTD" xml:space="preserve">
+    <value>Heures de maladie accumulées payées Cumul mensuel</value>
+  </data>
+  <data name="AccruedSickHoursPaidQTD" xml:space="preserve">
+    <value>Heures de maladie accumulées payées Cumul trimestriel</value>
+  </data>
+  <data name="AccruedSickHoursPaidYTD" xml:space="preserve">
+    <value>Heures de maladie accumulées payées Cumul annuel</value>
+  </data>
+  <data name="AccruedSickHoursQTD" xml:space="preserve">
+    <value>Heures de maladie accumulées Cumul trimestriel</value>
+  </data>
+  <data name="AccruedSickHoursYTD" xml:space="preserve">
+    <value>Heures de maladie accumulées Cumul annuel</value>
+  </data>
+  <data name="AccruedSickPaid" xml:space="preserve">
+    <value>Maladie accumulée payée</value>
+  </data>
+  <data name="AccruedVacAmountsMTD" xml:space="preserve">
+    <value>Montants Vac accumulés Cumul mensuel</value>
+  </data>
+  <data name="AccruedVacAmountsQTD" xml:space="preserve">
+    <value>Montants Vac accumulés Cumul trimestriel</value>
+  </data>
+  <data name="AccruedVacAmountsYTD" xml:space="preserve">
+    <value>Montants Vac accumulés Cumul annuel</value>
+  </data>
+  <data name="AccruedVacationAmounts" xml:space="preserve">
+    <value>Montant des vacances accumulées</value>
+  </data>
+  <data name="AccruedVacationHours" xml:space="preserve">
+    <value>Heures de vacances accumulées</value>
+  </data>
+  <data name="AccruedVacationHoursPaid" xml:space="preserve">
+    <value>Heures de vacances accumulées payées</value>
+  </data>
+  <data name="AccruedVacationPaid" xml:space="preserve">
+    <value>Congés accumulés payés</value>
+  </data>
+  <data name="AccruedVacHoursMTD" xml:space="preserve">
+    <value>Heures Vac accumulées </value>
+  </data>
+  <data name="AccruedVacHoursPaidMTD" xml:space="preserve">
+    <value>Heures Vac accumulées payées Cumul mensuel</value>
+  </data>
+  <data name="AccruedVacHoursPaidQTD" xml:space="preserve">
+    <value>Heures Vac accumulées payées Cumul trimestriel</value>
+  </data>
+  <data name="AccruedVacHoursPaidYTD" xml:space="preserve">
+    <value>Heures Vac accumulées payées Cumul annuel</value>
+  </data>
+  <data name="AccruedVacHoursQTD" xml:space="preserve">
+    <value>Heures Vac accumulées Cumul trimestriel</value>
+  </data>
+  <data name="AccruedVacHoursYTD" xml:space="preserve">
+    <value>Heures Vac accumulées Cumul annuel</value>
+  </data>
+  <data name="Activity" xml:space="preserve">
+    <value>Statisques</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>toutes</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Appliquer</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>Avril</value>
+  </data>
+  <data name="August" xml:space="preserve">
+    <value>Août</value>
+  </data>
+  <data name="BankedTime" xml:space="preserve">
+    <value>Temps en banque</value>
+  </data>
+  <data name="BeginningBalance" xml:space="preserve">
+    <value>Solde initial</value>
+  </data>
+  <data name="CalculateEarningAndHours" xml:space="preserve">
+    <value>Calculer les gains et les heures</value>
+  </data>
+  <data name="CalculatePayrollRegisterTotal" xml:space="preserve">
+    <value>Calculer le total du registre de paie</value>
+  </data>
+  <data name="CalculatePayrollRegisterTotalOneCheck" xml:space="preserve">
+    <value>Calculer le total du registre de paie, un chèque</value>
+  </data>
+  <data name="CarryOverEnd" xml:space="preserve">
+    <value>Fin du report</value>
+  </data>
+  <data name="CarryOverStart" xml:space="preserve">
+    <value>Démarrage du report</value>
+  </data>
+  <data name="CashAdvances" xml:space="preserve">
+    <value>Avances en espèces</value>
+  </data>
+  <data name="CashAdvancesMTD" xml:space="preserve">
+    <value>Avances en espèces Cumul mensuel</value>
+  </data>
+  <data name="CashAdvancesQTD" xml:space="preserve">
+    <value>Avances en espèces Cumul trimestriel</value>
+  </data>
+  <data name="CashAdvancesYTD" xml:space="preserve">
+    <value>Avances en espèces Cumul annuel</value>
+  </data>
+  <data name="CashBenefits" xml:space="preserve">
+    <value>Prestations en espèces</value>
+  </data>
+  <data name="CashBenefitsMTD" xml:space="preserve">
+    <value>Prestations en espèces Cumul mensuel</value>
+  </data>
+  <data name="CashBenefitsQTD" xml:space="preserve">
+    <value>Prestations en espèces Cumul trimestriel</value>
+  </data>
+  <data name="CashBenefitsYTD" xml:space="preserve">
+    <value>Prestations en espèces Cumul annuel</value>
+  </data>
+  <data name="CheckDate" xml:space="preserve">
+    <value>Date de chèque</value>
+  </data>
+  <data name="Checks" xml:space="preserve">
+    <value>Chèques</value>
+  </data>
+  <data name="ChequeDate" xml:space="preserve">
+    <value>Date de chèque</value>
+  </data>
+  <data name="Cheques" xml:space="preserve">
+    <value>Chèques</value>
+  </data>
+  <data name="CompensatoryTime" xml:space="preserve">
+    <value>Temps compensatoire</value>
+  </data>
+  <data name="CompTimeAmtPaidMTD" xml:space="preserve">
+    <value>Montant du temps de calcul payé Cumul mensuel</value>
+  </data>
+  <data name="CompTimeAmtPaidQTD" xml:space="preserve">
+    <value>Montant du temps de calcul payé Cumul trimestriel</value>
+  </data>
+  <data name="CompTimeAmtPaidYTD" xml:space="preserve">
+    <value>Montant du temps de calcul payé Cumul annuel</value>
+  </data>
+  <data name="CPPRCheckList" xml:space="preserve">
+    <value>PRChequeListe</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>Décembre</value>
+  </data>
+  <data name="DeductionAndTaxes" xml:space="preserve">
+    <value>Déduction et impôts</value>
+  </data>
+  <data name="DeductionsandTaxesMTD" xml:space="preserve">
+    <value>Déductions et taxes Cumul mensuel</value>
+  </data>
+  <data name="DeductionsandTaxesQTD" xml:space="preserve">
+    <value>Déductions et taxes Cumul trimestriel</value>
+  </data>
+  <data name="DeductionsandTaxesYTD" xml:space="preserve">
+    <value>Déductions et taxes Cumul annuel</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Type de document</value>
+  </data>
+  <data name="EarningDeductions" xml:space="preserve">
+    <value>Gains/Déductions</value>
+  </data>
+  <data name="EarningsAndHoursTotals" xml:space="preserve">
+    <value>Total - Gains</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employée</value>
+  </data>
+  <data name="EmployeeActivityCP" xml:space="preserve">
+    <value>CP</value>
+  </data>
+  <data name="EmployeeActivityUP" xml:space="preserve">
+    <value>UP</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Nom de l'employé</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Activité des employés chargés de la paie</value>
+  </data>
+  <data name="EntrySequence" xml:space="preserve">
+    <value>Séquence de saisie</value>
+  </data>
+  <data name="ExpenseReimbursements" xml:space="preserve">
+    <value>Remboursements des dépenses</value>
+  </data>
+  <data name="ExpenseReimbursementsMTD" xml:space="preserve">
+    <value>Remboursements des dépenses Cumul mensuel</value>
+  </data>
+  <data name="ExpenseReimbursementsQTD" xml:space="preserve">
+    <value>Remboursements des dépenses Cumul trimestriel</value>
+  </data>
+  <data name="ExpenseReimbursementsYTD" xml:space="preserve">
+    <value>Remboursements des dépenses Cumul annuel</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>Février</value>
+  </data>
+  <data name="FromChequeDate" xml:space="preserve">
+    <value>De date chèque</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>De date</value>
+  </data>
+  <data name="FromEmployee" xml:space="preserve">
+    <value>De l'employé</value>
+  </data>
+  <data name="HistoryEntry" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>Heures</value>
+  </data>
+  <data name="HoursAmtAccured" xml:space="preserve">
+    <value>Heures/montant cumulés</value>
+  </data>
+  <data name="HoursAmtPaid" xml:space="preserve">
+    <value>Heures/montant payées</value>
+  </data>
+  <data name="HoursAmtRemaining" xml:space="preserve">
+    <value>Heures/montant restant</value>
+  </data>
+  <data name="InavlidEmployee" xml:space="preserve">
+    <value>Saisie erronée. L'employé n'existe pas</value>
+  </data>
+  <data name="InvalidEntryMessage" xml:space="preserve">
+    <value>La valeur du champ « Du » ne peut pas être supérieure à la valeur du champ « Au ».</value>
+  </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value>La date de début n’est pas valide</value>
+  </data>
+  <data name="InvalidInput" xml:space="preserve">
+    <value>Saisie erronée. Le champ optionnel ne peut pas être en blanc.</value>
+  </data>
+  <data name="InvalidInputFormatting" xml:space="preserve">
+    <value>Saisissez une valeur valide</value>
+  </data>
+  <data name="InvalidSelectionList" xml:space="preserve">
+    <value>Saisie erronée. La liste de sélection n'existe pas.</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value>La date de fin n'est pas valide</value>
+  </data>
+  <data name="InvalidYear" xml:space="preserve">
+    <value>Saisie erronée. L’année est hors de la plage.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Janvier</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>Juillet</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>Juin</value>
+  </data>
+  <data name="ManualCheck" xml:space="preserve">
+    <value>Vérification manuelle</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>Mars</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>Mai</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Mois</value>
+  </data>
+  <data name="MonthToDate" xml:space="preserve">
+    <value>Le mois courant</value>
+  </data>
+  <data name="NetPay" xml:space="preserve">
+    <value>Salaire net</value>
+  </data>
+  <data name="NetPayMTD" xml:space="preserve">
+    <value>Salaire net Cumul mensuel</value>
+  </data>
+  <data name="NetPayQTD" xml:space="preserve">
+    <value>Salaire net Cumul trimestriel</value>
+  </data>
+  <data name="NetPayYTD" xml:space="preserve">
+    <value>Salaire net Cumul annuel</value>
+  </data>
+  <data name="NoncashAdvances" xml:space="preserve">
+    <value>Avances autres qu'espèces</value>
+  </data>
+  <data name="NoncashAdvancesMTD" xml:space="preserve">
+    <value>Avances autres qu'espèces Cumul mensuel</value>
+  </data>
+  <data name="NoncashAdvancesQTD" xml:space="preserve">
+    <value>Avances autres qu'espèces Cumul trimestriel</value>
+  </data>
+  <data name="NoncashAdvancesYTD" xml:space="preserve">
+    <value>Avances autres qu'espèces Cumul annuel</value>
+  </data>
+  <data name="NoncashIncome" xml:space="preserve">
+    <value>Revenu non monétaire</value>
+  </data>
+  <data name="NoncashIncomeMTD" xml:space="preserve">
+    <value>Revenu non monétaire Cumul mensuel</value>
+  </data>
+  <data name="NoncashIncomeQTD" xml:space="preserve">
+    <value>Revenu non monétaire Cumul trimestriel</value>
+  </data>
+  <data name="NoncashIncomeYTD" xml:space="preserve">
+    <value>Revenu non monétaire Cumul annuel</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>Novembre</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>Octobre</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="OverTimeEarnings" xml:space="preserve">
+    <value>Rémunération des heures supplémentaires</value>
+  </data>
+  <data name="OvertimeEarningsMTD" xml:space="preserve">
+    <value>Rémunération des heures supplémentaires Cumul mensuel</value>
+  </data>
+  <data name="OvertimeEarningsQTD" xml:space="preserve">
+    <value>Rémunération des heures supplémentaires Cumul trimestriel</value>
+  </data>
+  <data name="OvertimeEarningsYTD" xml:space="preserve">
+    <value>Rémunération des heures supplémentaires Cumul annuel</value>
+  </data>
+  <data name="OvertimeHoursPaid" xml:space="preserve">
+    <value>Heures supplémentaires payées</value>
+  </data>
+  <data name="OvertimeHoursPaidMTD" xml:space="preserve">
+    <value>Heures supplémentaires payées Cumul mensuel</value>
+  </data>
+  <data name="OvertimeHoursPaidQTD" xml:space="preserve">
+    <value>Heures supplémentaires payées Cumul trimestriel</value>
+  </data>
+  <data name="OvertimeHoursPaidYTD" xml:space="preserve">
+    <value>Heures supplémentaires payées Cumul annuel</value>
+  </data>
+  <data name="PayrollRegisterTotals" xml:space="preserve">
+    <value>Calculer les totaux du registre de paie</value>
+  </data>
+  <data name="PayrollRegisterTotalsOneCheck" xml:space="preserve">
+    <value>Calculer les totaux du registre de paie en un seul chèque</value>
+  </data>
+  <data name="PeriodEndDate" xml:space="preserve">
+    <value>Date fin période</value>
+  </data>
+  <data name="PostingStatus" xml:space="preserve">
+    <value>État report</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Imprimer</value>
+  </data>
+  <data name="ProcessAction" xml:space="preserve">
+    <value>Action de processus</value>
+  </data>
+  <data name="QuarterToDate" xml:space="preserve">
+    <value>Trimestre à ce jour</value>
+  </data>
+  <data name="REGERNMTD" xml:space="preserve">
+    <value>Le mois courant</value>
+  </data>
+  <data name="REGERNQTD" xml:space="preserve">
+    <value>Trimestre à ce jour</value>
+  </data>
+  <data name="REGERNYTD" xml:space="preserve">
+    <value>Année à ce jour</value>
+  </data>
+  <data name="RegularEarnings" xml:space="preserve">
+    <value>Gains réguliers</value>
+  </data>
+  <data name="RegularEarningsMTD" xml:space="preserve">
+    <value>Gains réguliers Cumul mensuel</value>
+  </data>
+  <data name="RegularEarningsQTD" xml:space="preserve">
+    <value>Gains réguliers Cumul trimestriel</value>
+  </data>
+  <data name="RegularEarningsYTD" xml:space="preserve">
+    <value>Gains réguliers Cumul trimestriel</value>
+  </data>
+  <data name="RegularHoursPaid" xml:space="preserve">
+    <value>Heures régulières payées</value>
+  </data>
+  <data name="RegularHoursPaidMTD" xml:space="preserve">
+    <value>Heures régulières payées Cumul mensuel</value>
+  </data>
+  <data name="RegularHoursPaidQTD" xml:space="preserve">
+    <value>Heures régulières payées Cumul trimestriel</value>
+  </data>
+  <data name="RegularHoursPaidYTD" xml:space="preserve">
+    <value>Heures régulières payées Cumul annuel</value>
+  </data>
+  <data name="ReversedCheck" xml:space="preserve">
+    <value>Chèque renversé</value>
+  </data>
+  <data name="Segments" xml:space="preserve">
+    <value>Segments</value>
+  </data>
+  <data name="SelectionList" xml:space="preserve">
+    <value>Liste de sélection</value>
+  </data>
+  <data name="SelectOneCheckType" xml:space="preserve">
+    <value>Vous devez cocher au moins une case de chèque de paie.</value>
+  </data>
+  <data name="SelectOneChequeType" xml:space="preserve">
+    <value>Vous devez cocher au moins une case de chèque de paie.</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="ShiftEarnings" xml:space="preserve">
+    <value>Changement de gains</value>
+  </data>
+  <data name="ShiftEarningsMTD" xml:space="preserve">
+    <value>Changement de gains Cumul mensuel</value>
+  </data>
+  <data name="ShiftEarningsQTD" xml:space="preserve">
+    <value>Changement de gains Cumul trimestriel</value>
+  </data>
+  <data name="ShiftEarningsYTD" xml:space="preserve">
+    <value>Changement de gains Cumul annuel</value>
+  </data>
+  <data name="ShiftHoursPaid" xml:space="preserve">
+    <value>Heures de travail payées</value>
+  </data>
+  <data name="ShiftHoursPaidMTD" xml:space="preserve">
+    <value>Heures de travail payées Cumul mensuel</value>
+  </data>
+  <data name="ShiftHoursPaidQTD" xml:space="preserve">
+    <value>Heures de travail payées Cumul trimestriel</value>
+  </data>
+  <data name="ShiftHoursPaidYTD" xml:space="preserve">
+    <value>Heures de travail payées Cumul annuel</value>
+  </data>
+  <data name="Sick" xml:space="preserve">
+    <value>Malade</value>
+  </data>
+  <data name="SickAmtPaidMTD" xml:space="preserve">
+    <value>Maladie Montant Payé Cumul mensuel</value>
+  </data>
+  <data name="SickAmtPaidQTD" xml:space="preserve">
+    <value>Maladie Montant Payé Cumul trimestriel</value>
+  </data>
+  <data name="SickAmtPaidYTD" xml:space="preserve">
+    <value>Maladie Montant Payé Cumul annuel</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Statut</value>
+  </data>
+  <data name="SystemCheck" xml:space="preserve">
+    <value>Verification du système</value>
+  </data>
+  <data name="ToChequeDate" xml:space="preserve">
+    <value>À date chèque</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>À ce jour</value>
+  </data>
+  <data name="ToEmployee" xml:space="preserve">
+    <value>À l'employé</value>
+  </data>
+  <data name="TotalAdvanceRepayments" xml:space="preserve">
+    <value>Total des remboursements anticipés</value>
+  </data>
+  <data name="TotalCashAdvances" xml:space="preserve">
+    <value>Total des avances de fonds</value>
+  </data>
+  <data name="TotalChecks" xml:space="preserve">
+    <value>Chèques totaux</value>
+  </data>
+  <data name="TotalCheques" xml:space="preserve">
+    <value>Chèques totaux</value>
+  </data>
+  <data name="TotalDeductions" xml:space="preserve">
+    <value>Le total des déductions</value>
+  </data>
+  <data name="TotalEarnings" xml:space="preserve">
+    <value>Total des gains</value>
+  </data>
+  <data name="TotalEarningsMTD" xml:space="preserve">
+    <value>Total des gains Cumul mensuel</value>
+  </data>
+  <data name="TotalEarningsQTD" xml:space="preserve">
+    <value>Total des gains Cumul trimestriel</value>
+  </data>
+  <data name="TotalEarningsYTD" xml:space="preserve">
+    <value>Total des gains Cumul annuel</value>
+  </data>
+  <data name="TotalHoursPaid" xml:space="preserve">
+    <value>Nombre total d'heures payées</value>
+  </data>
+  <data name="TotalHoursPaidMTD" xml:space="preserve">
+    <value>Nombre total d'heures payées Cumul mensuel</value>
+  </data>
+  <data name="TotalHoursPaidQTD" xml:space="preserve">
+    <value>Nombre total d'heures payées Cumul trimestriel</value>
+  </data>
+  <data name="TotalHoursPaidYTD" xml:space="preserve">
+    <value>Nombre total d'heures payées Cumul annuel</value>
+  </data>
+  <data name="TotalTaxes" xml:space="preserve">
+    <value>Total des taxes</value>
+  </data>
+  <data name="TypeOfCheckDocument" xml:space="preserve">
+    <value>Type de document</value>
+  </data>
+  <data name="UPPRCheckList" xml:space="preserve">
+    <value>PRCheckList</value>
+  </data>
+  <data name="Vacation" xml:space="preserve">
+    <value>Vacances</value>
+  </data>
+  <data name="VacationAmtPaidMTD" xml:space="preserve">
+    <value>Montant des vacances payé Cumul mensuel</value>
+  </data>
+  <data name="VacationAmtPaidQTD" xml:space="preserve">
+    <value>Montant des vacances payé Cumul trimestriel</value>
+  </data>
+  <data name="VacationAmtPaidYTD" xml:space="preserve">
+    <value>Montant des vacances payé Cumul annuel</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Année</value>
+  </data>
+  <data name="YearToDate" xml:space="preserve">
+    <value>Année à ce jour</value>
+  </data>
+</root>

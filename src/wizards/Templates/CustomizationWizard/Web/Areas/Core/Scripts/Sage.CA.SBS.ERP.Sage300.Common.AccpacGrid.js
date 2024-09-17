@@ -2365,7 +2365,9 @@ sg.viewList = function () {
                 //show last error
                 if (selectedIndex !== lastRowNumber && errorMessage) {
                     setTimeout(function (error) {
-                        grid.select("tr:eq(" + lastRowNumber + ")");
+                        if (-1 < lastRowNumber) {
+                            grid.select("tr:eq(" + lastRowNumber + ")");
+                        }
                         _gridCallback(gridName, "gridAfterError");
                         sg.utls.showMessage(error);
                     }.bind(null, errorMessage));
@@ -2837,7 +2839,9 @@ sg.viewList = function () {
         //has update error, show error message and return
         if (_lastRowStatus[gridName] === RowStatusEnum.UPDATE && _lastErrorResult[gridName].message !== "") {
             setTimeout(function () {
-                grid.select("tr:eq(" + _lastRowNumber[gridName] + ")");
+                if (-1 < _lastRowNumber[gridName]) {
+                    grid.select("tr:eq(" + _lastRowNumber[gridName] + ")");
+                }
                 sg.utls.showMessage(_lastErrorResult[gridName].message);
             });
             return;
@@ -3270,12 +3274,14 @@ sg.viewList = function () {
      * @param {any} gridName The name of the grid.
      * @param {any} column The field name
      * @param {any} value The new value
+     * @param {bool} validate Validate value when setting
      */
-    function setColumnValue(gridName, column, value) {
+    function setColumnValue(gridName, column, value, validate = true) {
         var data = {
             'viewID': $("#" + gridName).attr('viewID'),
             'fieldName': column,
-            'value': value
+            'value': value,
+            'validate': validate
         };
         
         var grid = _getGrid(gridName);
@@ -3690,7 +3696,7 @@ sg.viewList = function () {
             }
 
             // nowhere to scroll to on empty/single-row grid
-            if (grid.dataSource.total() < 2) {
+            if (!reload && grid.dataSource.total() < 2) {
                 grid.dataSource.page(1);
                 if (grid.dataSource.total() === 1) {
                     // but must select the only row in the grid

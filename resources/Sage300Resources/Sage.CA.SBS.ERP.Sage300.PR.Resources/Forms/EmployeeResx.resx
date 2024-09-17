@@ -688,10 +688,10 @@
     <value>Address Line 1</value>
   </data>
   <data name="InactiveROEPending" xml:space="preserve">
-    <value>InactiveROEPending</value>
+    <value>Inactive - ROE Pending</value>
   </data>
   <data name="TerminatedROEPending" xml:space="preserve">
-    <value>TerminatedROEPending</value>
+    <value>Terminated - ROE Pending</value>
   </data>
   <data name="SegmentCode" xml:space="preserve">
     <value>Segment Code</value>
@@ -703,10 +703,10 @@
     <value>Part-timer Worker</value>
   </data>
   <data name="RegularRateHourly" xml:space="preserve">
-    <value>FLSA-Hourly</value>
+    <value>Regular Rate-Hourly</value>
   </data>
   <data name="RegularRateSalaryFixedHours" xml:space="preserve">
-    <value>FLSA-Salary Fixed Hours</value>
+    <value>Regular Rate-Salary Fixed Hours</value>
   </data>
   <data name="Segment1Name" xml:space="preserve">
     <value>GLSEG1</value>
@@ -721,7 +721,7 @@
     <value>FLSA-Salary Fluctuating Hours</value>
   </data>
   <data name="RegularRateSalaryFluctuatingHours" xml:space="preserve">
-    <value>FLSA-Salary Fluctuating Hours</value>
+    <value>Regular Rate-Salary Fluctuating Hours</value>
   </data>
   <data name="AllocatedTips" xml:space="preserve">
     <value>Allocated Tips</value>
@@ -839,5 +839,623 @@
   </data>
   <data name="SyncedWithSageHR" xml:space="preserve">
     <value>Synced with Sage HR</value>
+  </data>
+  <data name="SIN" xml:space="preserve">
+    <value>SIN</value>
+  </data>
+  <data name="SSN" xml:space="preserve">
+    <value>SSN</value>
+  </data>
+  <data name="Alberta" xml:space="preserve">
+    <value>Alberta</value>
+  </data>
+  <data name="BritishColumbia" xml:space="preserve">
+    <value>British Columbia</value>
+  </data>
+  <data name="Manitoba" xml:space="preserve">
+    <value>Manitoba</value>
+  </data>
+  <data name="NewBrunswick" xml:space="preserve">
+    <value>New Brunswick</value>
+  </data>
+  <data name="NewfoundlandLabrador" xml:space="preserve">
+    <value>Newfoundland Labrador</value>
+  </data>
+  <data name="NorthwestTerritories" xml:space="preserve">
+    <value>Northwest Territories</value>
+  </data>
+  <data name="NovaScotia" xml:space="preserve">
+    <value>Nova Scotia</value>
+  </data>
+  <data name="Nunavut" xml:space="preserve">
+    <value>Nunavut</value>
+  </data>
+  <data name="Ontario" xml:space="preserve">
+    <value>Ontario</value>
+  </data>
+  <data name="OutsideCanada" xml:space="preserve">
+    <value>Outside Canada</value>
+  </data>
+  <data name="PrinceEdwardIsland" xml:space="preserve">
+    <value>Prince Edward Island</value>
+  </data>
+  <data name="Quebec" xml:space="preserve">
+    <value>Quebec</value>
+  </data>
+  <data name="Saskatchewan" xml:space="preserve">
+    <value>Saskatchewan</value>
+  </data>
+  <data name="YukonTerritory" xml:space="preserve">
+    <value>Yukon Territory</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="CommentType" xml:space="preserve">
+    <value>Comment Type</value>
+  </data>
+  <data name="DateEntered" xml:space="preserve">
+    <value>Date Entered</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Expiry Date</value>
+  </data>
+  <data name="FollowUpDate" xml:space="preserve">
+    <value>Follow-up Date</value>
+  </data>
+  <data name="ReservedComment0" xml:space="preserve">
+    <value>Reserved (comment0)</value>
+  </data>
+  <data name="ReservedComment1" xml:space="preserve">
+    <value>Reserved (comment1)</value>
+  </data>
+  <data name="ReservedComment2" xml:space="preserve">
+    <value>Reserved (comment2)</value>
+  </data>
+  <data name="ReservedComment3" xml:space="preserve">
+    <value>Reserved (comment3)</value>
+  </data>
+  <data name="ReservedComment4" xml:space="preserve">
+    <value>Reserved (comment4)</value>
+  </data>
+  <data name="ReservedComment5" xml:space="preserve">
+    <value>Reserved (comment5)</value>
+  </data>
+  <data name="ReservedComment6" xml:space="preserve">
+    <value>Reserved (comment6)</value>
+  </data>
+  <data name="ReservedComment7" xml:space="preserve">
+    <value>Reserved (comment7)</value>
+  </data>
+  <data name="ReservedComment8" xml:space="preserve">
+    <value>Reserved (comment8)</value>
+  </data>
+  <data name="ReservedComment9" xml:space="preserve">
+    <value>Reserved (comment9)</value>
+  </data>
+  <data name="Uniquifier" xml:space="preserve">
+    <value>Uniquifier</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>User ID</value>
+  </data>
+  <data name="CaseIdentifier" xml:space="preserve">
+    <value>Case Identifier</value>
+  </data>
+  <data name="CaseJurisdiction" xml:space="preserve">
+    <value>Case Jurisdiction</value>
+  </data>
+  <data name="CaseState" xml:space="preserve">
+    <value>Case State</value>
+  </data>
+  <data name="CustodialParent" xml:space="preserve">
+    <value>Custodial Parent</value>
+  </data>
+  <data name="DateOfOrder" xml:space="preserve">
+    <value>Date of Order</value>
+  </data>
+  <data name="DeductionCode" xml:space="preserve">
+    <value>Deduction</value>
+  </data>
+  <data name="DeductionsDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="EFTStatus" xml:space="preserve">
+    <value>EFT Status</value>
+  </data>
+  <data name="FIPSCode" xml:space="preserve">
+    <value>FIPS Code</value>
+  </data>
+  <data name="IsFamilyHealthInsuranceAvail" xml:space="preserve">
+    <value>Medical Insurance - Available</value>
+  </data>
+  <data name="IsFamilyHealthInsuranceRequi" xml:space="preserve">
+    <value>Medical Insurance - Required</value>
+  </data>
+  <data name="Num22Checking" xml:space="preserve">
+    <value>22 - Checking</value>
+  </data>
+  <data name="Num32Savings" xml:space="preserve">
+    <value>32 - Savings</value>
+  </data>
+  <data name="Prenotification" xml:space="preserve">
+    <value>Pre-notification</value>
+  </data>
+  <data name="SDUAccountNumber" xml:space="preserve">
+    <value>SDU Account Number</value>
+  </data>
+  <data name="SDUName" xml:space="preserve">
+    <value>SDU Name</value>
+  </data>
+  <data name="SDURoutingNumber" xml:space="preserve">
+    <value>SDU Routing Number</value>
+  </data>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>Account Number</value>
+  </data>
+  <data name="AmountPercent" xml:space="preserve">
+    <value>Amount/Percent</value>
+  </data>
+  <data name="AmtPctToBeDeposited" xml:space="preserve">
+    <value>Amount/Percent To Be Deposited</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Approved</value>
+  </data>
+  <data name="BankIDQualifier" xml:space="preserve">
+    <value>Bank ID Qualifier</value>
+  </data>
+  <data name="CalculationType" xml:space="preserve">
+    <value>Calculation Type</value>
+  </data>
+  <data name="Declined" xml:space="preserve">
+    <value>Declined</value>
+  </data>
+  <data name="DestinationCountry" xml:space="preserve">
+    <value>Destination Country</value>
+  </data>
+  <data name="DestinationCurrency" xml:space="preserve">
+    <value>Destination Currency</value>
+  </data>
+  <data name="EFTCalculationType" xml:space="preserve">
+    <value>EFT Calculation Type</value>
+  </data>
+  <data name="EmployeeEFTBank" xml:space="preserve">
+    <value>Employee EFT Bank</value>
+  </data>
+  <data name="EmployeeEFTBankDescription" xml:space="preserve">
+    <value>Employee EFT Bank Description</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="FixedAmount" xml:space="preserve">
+    <value>Fixed Amount</value>
+  </data>
+  <data name="NotSent" xml:space="preserve">
+    <value>Not Sent</value>
+  </data>
+  <data name="Num01NACHANationalClearingSystemNumber" xml:space="preserve">
+    <value>01- (NACHA) National Clearing System Number</value>
+  </data>
+  <data name="Num02BICBankIdentificationNumber" xml:space="preserve">
+    <value>02- BIC Bank Identification Number</value>
+  </data>
+  <data name="Num03IBANInternationalBankAccountNumber" xml:space="preserve">
+    <value>03- IBAN- International Bank Account Number</value>
+  </data>
+  <data name="OfGrossEarnings" xml:space="preserve">
+    <value>% of Gross Earnings</value>
+  </data>
+  <data name="OfNetPay" xml:space="preserve">
+    <value>% of Net Pay</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="PrenoteStatus" xml:space="preserve">
+    <value>Prenote Status</value>
+  </data>
+  <data name="ReceivingDFIID" xml:space="preserve">
+    <value>Receiving DFI ID</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="SyncTransactionGUID" xml:space="preserve">
+    <value>Sync Transaction GUID</value>
+  </data>
+  <data name="TransactionCode" xml:space="preserve">
+    <value>Transaction Code</value>
+  </data>
+  <data name="BillingRate1" xml:space="preserve">
+    <value>Billing Rate 1</value>
+  </data>
+  <data name="BillingRate2" xml:space="preserve">
+    <value>Billing Rate 2</value>
+  </data>
+  <data name="BillingRate3" xml:space="preserve">
+    <value>Billing Rate 3</value>
+  </data>
+  <data name="BillingRate4" xml:space="preserve">
+    <value>Billing Rate 4</value>
+  </data>
+  <data name="BillingRate5" xml:space="preserve">
+    <value>Billing Rate 5</value>
+  </data>
+  <data name="BillingRate6" xml:space="preserve">
+    <value>Billing Rate 6</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Currency Code</value>
+  </data>
+  <data name="EarningCode" xml:space="preserve">
+    <value>Earning Code</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Line Number</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Process Command Code</value>
+  </data>
+  <data name="TemplateEmployee" xml:space="preserve">
+    <value>Template Employee</value>
+  </data>
+  <data name="Accrued" xml:space="preserve">
+    <value>Accrued</value>
+  </data>
+  <data name="AdvanceToBeRepaid" xml:space="preserve">
+    <value>Advance To Be Repaid</value>
+  </data>
+  <data name="AmountPaid" xml:space="preserve">
+    <value>Amount Paid</value>
+  </data>
+  <data name="AvailableInEmployeeTimecards" xml:space="preserve">
+    <value>Available in Employee Timecards</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="BillingPercentage1" xml:space="preserve">
+    <value>Billing Percentage 1</value>
+  </data>
+  <data name="BillingPercentage2" xml:space="preserve">
+    <value>Billing Percentage 2</value>
+  </data>
+  <data name="BillingPercentage3" xml:space="preserve">
+    <value>Billing Percentage 3</value>
+  </data>
+  <data name="BillingPercentage4" xml:space="preserve">
+    <value>Billing Percentage 4</value>
+  </data>
+  <data name="BillingPercentage5" xml:space="preserve">
+    <value>Billing Percentage 5</value>
+  </data>
+  <data name="BillingPercentage6" xml:space="preserve">
+    <value>Billing Percentage 6</value>
+  </data>
+  <data name="Calculate" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="Carryover" xml:space="preserve">
+    <value>Carry-over</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="DefaultHours" xml:space="preserve">
+    <value>Default Hours</value>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>Distribution Code</value>
+  </data>
+  <data name="EarningDeductionDescription" xml:space="preserve">
+    <value>Earning/Deduction Description</value>
+  </data>
+  <data name="EmployeeBaseLimit" xml:space="preserve">
+    <value>Employee Base Limit</value>
+  </data>
+  <data name="EmployeeCalcMethod" xml:space="preserve">
+    <value>Employee Calc Method</value>
+  </data>
+  <data name="EmployeeEarningDeduction" xml:space="preserve">
+    <value>Employee Earning/Deduction</value>
+  </data>
+  <data name="EmployeePeriodMaximum" xml:space="preserve">
+    <value>Employee Period Maximum</value>
+  </data>
+  <data name="EmployeePeriodMinimum" xml:space="preserve">
+    <value>Employee Period Minimum</value>
+  </data>
+  <data name="EmployeeRateAmtPct" xml:space="preserve">
+    <value>Employee Rate/Amt/Pct.</value>
+  </data>
+  <data name="EmployeeSecondaryRateAmtPct" xml:space="preserve">
+    <value>Employee Secondary Rate/Amt/Pct.</value>
+  </data>
+  <data name="EmployeeSecondaryRateEffectiv" xml:space="preserve">
+    <value>Employee Secondary Rate Effectiv</value>
+  </data>
+  <data name="EmployerAmtPct" xml:space="preserve">
+    <value>Employer Amt/Pct.</value>
+  </data>
+  <data name="EmployerAnnualMaximum" xml:space="preserve">
+    <value>Employer Annual Maximum</value>
+  </data>
+  <data name="EmployerBaseLimit" xml:space="preserve">
+    <value>Employer Base Limit</value>
+  </data>
+  <data name="EmployerCalcMethod" xml:space="preserve">
+    <value>Employer Calc Method</value>
+  </data>
+  <data name="EmployerLifetimeAccumulation" xml:space="preserve">
+    <value>Employer Lifetime Accumulation</value>
+  </data>
+  <data name="EmployerLifetimeMaximum" xml:space="preserve">
+    <value>Employer Lifetime Maximum</value>
+  </data>
+  <data name="EmployerPeriodMaximum" xml:space="preserve">
+    <value>Employer Period Maximum</value>
+  </data>
+  <data name="EmployerPeriodMinimum" xml:space="preserve">
+    <value>Employer Period Minimum</value>
+  </data>
+  <data name="EmployerSecondaryAmtPct" xml:space="preserve">
+    <value>Employer Secondary Amt/Pct.</value>
+  </data>
+  <data name="EmployerSecondaryRateEffectiv" xml:space="preserve">
+    <value>Employer Secondary Rate Effectiv</value>
+  </data>
+  <data name="IncludeInFLSAOvertimeCalc" xml:space="preserve">
+    <value>Include in FLSA Overtime Calc</value>
+  </data>
+  <data name="JobsAllocBasedOnCalcBase" xml:space="preserve">
+    <value>Jobs Alloc Based on Calc Base</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="RESERVEDSegmentName4" xml:space="preserve">
+    <value>RESERVED - Segment Name 4</value>
+  </data>
+  <data name="RESERVEDSegmentName5" xml:space="preserve">
+    <value>RESERVED - Segment Name 5</value>
+  </data>
+  <data name="RESERVEDSegmentName6" xml:space="preserve">
+    <value>RESERVED - Segment Name 6</value>
+  </data>
+  <data name="SegmentName1" xml:space="preserve">
+    <value>Segment Name 1</value>
+  </data>
+  <data name="SegmentName2" xml:space="preserve">
+    <value>Segment Name 2</value>
+  </data>
+  <data name="SegmentName3" xml:space="preserve">
+    <value>Segment Name 3</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="AllowBlank" xml:space="preserve">
+    <value>Allow Blank</value>
+  </data>
+  <data name="AmountValue" xml:space="preserve">
+    <value>Amount Value</value>
+  </data>
+  <data name="DateValue" xml:space="preserve">
+    <value>Date Value</value>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimals</value>
+  </data>
+  <data name="IntegerValue" xml:space="preserve">
+    <value>Integer Value</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="NumberValue" xml:space="preserve">
+    <value>Number Value</value>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Optional Field</value>
+  </data>
+  <data name="OptionalFieldDescription" xml:space="preserve">
+    <value>Optional Field Description</value>
+  </data>
+  <data name="TextValue" xml:space="preserve">
+    <value>Text Value</value>
+  </data>
+  <data name="TimeValue" xml:space="preserve">
+    <value>Time Value</value>
+  </data>
+  <data name="TypedValueFieldIndex" xml:space="preserve">
+    <value>Typed Value Field Index</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="ValueDescription" xml:space="preserve">
+    <value>Value Description</value>
+  </data>
+  <data name="ValueSet" xml:space="preserve">
+    <value>Value Set</value>
+  </data>
+  <data name="YesNoValue" xml:space="preserve">
+    <value>Yes/No Value</value>
+  </data>
+  <data name="BinaryValue" xml:space="preserve">
+    <value>Binary Value</value>
+  </data>
+  <data name="FieldDataType" xml:space="preserve">
+    <value>Field Data Type</value>
+  </data>
+  <data name="FieldLength" xml:space="preserve">
+    <value>Field Length</value>
+  </data>
+  <data name="FieldSequence" xml:space="preserve">
+    <value>Field Sequence</value>
+  </data>
+  <data name="FieldUseType" xml:space="preserve">
+    <value>Field Use Type</value>
+  </data>
+  <data name="LongValue" xml:space="preserve">
+    <value>Long Value</value>
+  </data>
+  <data name="NumberOfDecimalPlaces" xml:space="preserve">
+    <value>Number of Decimal Places</value>
+  </data>
+  <data name="ParameterName" xml:space="preserve">
+    <value>Parameter Name</value>
+  </data>
+  <data name="TaxCode" xml:space="preserve">
+    <value>Tax Code</value>
+  </data>
+  <data name="TaxTableFieldNumber" xml:space="preserve">
+    <value>Tax Table Field Number</value>
+  </data>
+  <data name="ClassCodes" xml:space="preserve">
+    <value>Class Codes</value>
+  </data>
+  <data name="DentalBenefits" xml:space="preserve">
+    <value>Dental Benefits</value>
+  </data>
+  <data name="EmergencyContactHeading" xml:space="preserve">
+    <value>Emergency Contact</value>
+  </data>
+  <data name="BillingRatePerHour" xml:space="preserve">
+    <value>Billing Rate Per Hour</value>
+  </data>
+  <data name="BillingRatePerHour2" xml:space="preserve">
+    <value>Billing Rate Per Hour 2</value>
+  </data>
+  <data name="BillingRatePerHour3" xml:space="preserve">
+    <value>Billing Rate Per Hour 3</value>
+  </data>
+  <data name="BillingRatePerHour4" xml:space="preserve">
+    <value>Billing Rate Per Hour 4</value>
+  </data>
+  <data name="BillingRatePerHour5" xml:space="preserve">
+    <value>Billing Rate Per Hour 4</value>
+  </data>
+  <data name="BillingRatePerHour6" xml:space="preserve">
+    <value>Billing Rate Per Hour 5</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="CurrencyDescription" xml:space="preserve">
+    <value>Currency Description</value>
+  </data>
+  <data name="EarningDeduction" xml:space="preserve">
+    <value>Earning/Deduction</value>
+  </data>
+  <data name="EffectiveDate" xml:space="preserve">
+    <value>Effective Date</value>
+  </data>
+  <data name="ExtraWithholding" xml:space="preserve">
+    <value>Extra Withholding</value>
+  </data>
+  <data name="GLDistributionCode" xml:space="preserve">
+    <value>G/L Distribution Code</value>
+  </data>
+  <data name="Occasional" xml:space="preserve">
+    <value>Occasional</value>
+  </data>
+  <data name="ParameterCount" xml:space="preserve">
+    <value>Parameter Count</value>
+  </data>
+  <data name="ParameterVersion" xml:space="preserve">
+    <value>Parameter Version</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="TaxDescription" xml:space="preserve">
+    <value>Tax Description</value>
+  </data>
+  <data name="TaxType" xml:space="preserve">
+    <value>Tax Type</value>
+  </data>
+  <data name="UseOptionalFields" xml:space="preserve">
+    <value>Use Optional Fields</value>
+  </data>
+  <data name="WithholdingMethod" xml:space="preserve">
+    <value>Withholding Method</value>
+  </data>
+  <data name="AdvanceToRepay" xml:space="preserve">
+    <value>Advance to Repay</value>
+  </data>
+  <data name="BillingPercentCommission1" xml:space="preserve">
+    <value>Billing Percentage 1(Sales Commisson)</value>
+  </data>
+  <data name="BillingPercentCommission2" xml:space="preserve">
+    <value>Billing Percentage 2(Sales Commisson)</value>
+  </data>
+  <data name="BillingPercentCommission3" xml:space="preserve">
+    <value>Billing Percentage 3(Sales Commisson)</value>
+  </data>
+  <data name="BillingPercentCommission4" xml:space="preserve">
+    <value>Billing Percentage 4(Sales Commisson)</value>
+  </data>
+  <data name="BillingPercentCommission5" xml:space="preserve">
+    <value>Billing Percentage 5(Sales Commisson)</value>
+  </data>
+  <data name="BillingPercentCommission6" xml:space="preserve">
+    <value>Billing Percentage 6(Sales Commisson)</value>
+  </data>
+  <data name="BillingPercentOfBase" xml:space="preserve">
+    <value>Billing Percentage (Percentage of Base)</value>
+  </data>
+  <data name="CalculateQuestion" xml:space="preserve">
+    <value>Calculate?</value>
+  </data>
+  <data name="EmployeeAnnualMaximum" xml:space="preserve">
+    <value>Employee Annual Maximum</value>
+  </data>
+  <data name="EmployeeLifetimeAccumulation" xml:space="preserve">
+    <value>Employee Lifetime Accumulation</value>
+  </data>
+  <data name="EmployeeLifetimeMaximum" xml:space="preserve">
+    <value>Employee Lifetime Maximum</value>
+  </data>
+  <data name="EmployeeSecondaryRateAmtPercent" xml:space="preserve">
+    <value>Employee Secondary Rate/Amount/Percent</value>
+  </data>
+  <data name="EmployerSecondaryAmtPercent" xml:space="preserve">
+    <value>Employer Secondary Amount/Percent</value>
+  </data>
+  <data name="Ends" xml:space="preserve">
+    <value>Ends</value>
+  </data>
+  <data name="IncludeInFLSACalc" xml:space="preserve">
+    <value>Include in FLSA Calculation</value>
+  </data>
+  <data name="OverrideBillingRates" xml:space="preserve">
+    <value>Override Billing Rates</value>
+  </data>
+  <data name="OverrideCounty" xml:space="preserve">
+    <value>Override County</value>
+  </data>
+  <data name="OverrideDivision" xml:space="preserve">
+    <value>Override Division</value>
+  </data>
+  <data name="OverrideRegion" xml:space="preserve">
+    <value>Override Region</value>
+  </data>
+  <data name="Starts" xml:space="preserve">
+    <value>Starts</value>
+  </data>
+  <data name="WCCGroup" xml:space="preserve">
+    <value>WCC Group</value>
+  </data>
+  <data name="WorkersComp" xml:space="preserve">
+    <value>Workers' Comp.</value>
   </data>
 </root>

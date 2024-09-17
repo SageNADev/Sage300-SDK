@@ -118,196 +118,196 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HireDate" xml:space="preserve">
-    <value />
+    <value>Date d'embauche</value>
   </data>
   <data name="CompensatoryTimeHoursPaid" xml:space="preserve">
-    <value />
+    <value>Heures compensatoires payées</value>
   </data>
   <data name="OvertimeSchedule" xml:space="preserve">
-    <value />
+    <value>À temps partiel</value>
   </data>
   <data name="TotalJobs" xml:space="preserve">
-    <value />
+    <value>Emplois totaux</value>
   </data>
   <data name="OvertimeCalculation" xml:space="preserve">
-    <value />
+    <value>Calcul des heures supplémentaires</value>
   </data>
   <data name="OvertimeHours" xml:space="preserve">
-    <value />
+    <value>Heures supplémentaires</value>
   </data>
   <data name="MiddleName" xml:space="preserve">
-    <value />
+    <value>Deuxième prénom</value>
   </data>
   <data name="TotalCompTimeHoursPaid" xml:space="preserve">
-    <value />
+    <value>Comp. totale Heures payées</value>
   </data>
   <data name="ShiftHours" xml:space="preserve">
-    <value />
+    <value>Heures de travail</value>
   </data>
   <data name="LastName" xml:space="preserve">
-    <value />
+    <value>Nom de famille</value>
   </data>
   <data name="TotalCompTimeDollarsAccrued" xml:space="preserve">
-    <value />
+    <value>Comp. totale Temps, dollars accumulés</value>
   </data>
   <data name="VacationHoursPaid" xml:space="preserve">
-    <value />
+    <value>Heures de vacances payées</value>
   </data>
   <data name="SickHoursAccrued" xml:space="preserve">
-    <value />
+    <value>Heures de maladie accumulées</value>
   </data>
   <data name="TimecardLines" xml:space="preserve">
-    <value />
+    <value>Lignes de feuille de pointage</value>
   </data>
   <data name="ProcessedFlag" xml:space="preserve">
-    <value />
+    <value>Indicateur traité</value>
   </data>
   <data name="SecurityFlag" xml:space="preserve">
-    <value />
+    <value>Drapeau de sécurité</value>
   </data>
   <data name="VacationDollarsAccrued" xml:space="preserve">
-    <value />
+    <value>Dollars de vacances accumulés</value>
   </data>
   <data name="Timecard" xml:space="preserve">
     <value>Feuille temps</value>
   </data>
   <data name="WorkClassification" xml:space="preserve">
-    <value />
+    <value>Classification du travail</value>
   </data>
   <data name="TotalSickTimeDollarsPaid" xml:space="preserve">
-    <value />
+    <value>Total des dollars payés pour les congés de maladie</value>
   </data>
   <data name="SeparateCheckFlag" xml:space="preserve">
     <value>Imprimer chèque distinct</value>
   </data>
   <data name="CompTimeID" xml:space="preserve">
-    <value />
+    <value>Comp. Identifiant de l'heure</value>
   </data>
   <data name="InactiveDate" xml:space="preserve">
-    <value />
+    <value>Date d'inactivité</value>
   </data>
   <data name="PayFrequency" xml:space="preserve">
-    <value />
+    <value>Fréquence de Paiement</value>
   </data>
   <data name="TotalSickHoursPaid" xml:space="preserve">
-    <value />
+    <value>Total des heures de maladie payées</value>
   </data>
   <data name="CompTimeDollarsAccrued" xml:space="preserve">
-    <value />
+    <value>Comp. Temps, dollars accumulés</value>
   </data>
   <data name="TotalCompTimeHoursAccrued" xml:space="preserve">
-    <value />
+    <value>Comp. totale Heures accumulées</value>
   </data>
   <data name="TotalRegularHours" xml:space="preserve">
-    <value />
+    <value>Total des heures régulières</value>
   </data>
   <data name="JobRelated" xml:space="preserve">
-    <value />
+    <value>Tâches connexe</value>
   </data>
   <data name="TerminationDate" xml:space="preserve">
-    <value />
+    <value>Date de résiliation</value>
   </data>
   <data name="ShiftNumber" xml:space="preserve">
-    <value />
+    <value>Numéro de quart de travail</value>
   </data>
   <data name="CompTimeDollarsPaid" xml:space="preserve">
-    <value />
+    <value>Comp. Temps, dollars payés</value>
   </data>
   <data name="TotalSickHoursAccrued" xml:space="preserve">
-    <value />
+    <value>Total des heures de maladie accumulées</value>
   </data>
   <data name="TotalVacationDollarsPaid" xml:space="preserve">
-    <value />
+    <value>Total des dollars de vacances payés</value>
   </data>
   <data name="TotalCompTimeDollarsPaid" xml:space="preserve">
-    <value />
+    <value>Comp. totale Temps, dollars payés</value>
   </data>
   <data name="ShiftDifferentialSchedule" xml:space="preserve">
-    <value />
+    <value>Horaire des différentiels de quarts de travail</value>
   </data>
   <data name="FirstName" xml:space="preserve">
-    <value />
+    <value>Prénom</value>
   </data>
   <data name="ProcessCommandCode" xml:space="preserve">
-    <value />
+    <value>Code de commande de processus</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value />
+    <value>Description</value>
   </data>
   <data name="EmploymentStatus" xml:space="preserve">
-    <value />
+    <value>Statut d'emploi</value>
   </data>
   <data name="TotalSickTimeDollarsAccrued" xml:space="preserve">
-    <value />
+    <value>Total des dollars accumulés pour les congés de maladie</value>
   </data>
   <data name="TotalVacationHoursPaid" xml:space="preserve">
-    <value />
+    <value>Total des heures de vacances payées</value>
   </data>
   <data name="CalcOTOnAWeeklyBasis" xml:space="preserve">
-    <value />
+    <value>Calculer l'OT sur une base hebdomadaire</value>
   </data>
   <data name="PartTime" xml:space="preserve">
-    <value />
+    <value>Fréquence de Paiement</value>
   </data>
   <data name="TotalShiftHours" xml:space="preserve">
-    <value />
+    <value>Nombre total d'heures de travail</value>
   </data>
   <data name="Employee" xml:space="preserve">
-    <value />
+    <value>Employé</value>
   </data>
   <data name="TotalOvertimeHours" xml:space="preserve">
-    <value />
+    <value>Total des heures supplémentaires</value>
   </data>
   <data name="NumberOfOptionalFields" xml:space="preserve">
-    <value />
+    <value>Nombre de champs optionnels</value>
   </data>
   <data name="SickTimeDollarsAccrued" xml:space="preserve">
-    <value />
+    <value>Dollars accumulés pour les congés de maladie</value>
   </data>
   <data name="CompTimeHoursAccrued" xml:space="preserve">
-    <value />
+    <value>Comp. Heures accumulées</value>
   </data>
   <data name="SickTimeDollarsPaid" xml:space="preserve">
-    <value />
+    <value>Dollars payés pour les congés de maladie</value>
   </data>
   <data name="TotalVacationHoursAccrued" xml:space="preserve">
-    <value />
+    <value>Total des heures de vacances accumulées</value>
   </data>
   <data name="SourceApplication" xml:space="preserve">
-    <value />
+    <value>Application source</value>
   </data>
   <data name="VacationDollarsPaid" xml:space="preserve">
-    <value />
+    <value>Dollars de vacances payés</value>
   </data>
   <data name="RegularHours" xml:space="preserve">
-    <value />
+    <value>Heures régulières</value>
   </data>
   <data name="KeyAction" xml:space="preserve">
-    <value />
+    <value>Action clé</value>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value />
+    <value>Feuilles de temps - Paie</value>
   </data>
   <data name="TotalVacationDollarsAccrued" xml:space="preserve">
-    <value />
+    <value>Total des dollars de vacances accumulés</value>
   </data>
   <data name="RegularHoursPerDay" xml:space="preserve">
-    <value />
+    <value>Heures régulières par jour</value>
   </data>
   <data name="OvertimeOverride" xml:space="preserve">
     <value>Substit. hres suppl.</value>
   </data>
   <data name="Reusable" xml:space="preserve">
-    <value />
+    <value>Réutilisable</value>
   </data>
   <data name="InsertOptionalFields" xml:space="preserve">
-    <value />
+    <value>Insérer des champs facultatifs</value>
   </data>
   <data name="VacationHoursAccrued" xml:space="preserve">
-    <value />
+    <value>Heures de vacances accumulées</value>
   </data>
   <data name="SickHoursPaid" xml:space="preserve">
-    <value />
+    <value>Heures de maladie payées</value>
   </data>
   <data name="Accrued" xml:space="preserve">
     <value>Accrued</value>
@@ -393,5 +393,53 @@
   </data>
   <data name="SetFLSA_UP" xml:space="preserve">
     <value>You have turned off the overtime override.  The FLSA overtime calculations require the Include in FLSA Calculation option to be turned on for all flat, fixed, and hourly earning codes whose Hours are not zero and have been assigned an overtime schedule.  Therefore, this flag has been changed automatically for any earnings that meet this criteria.</value>
+  </data>
+  <data name="AllTimecards" xml:space="preserve">
+    <value>Totues les feuilles de temps</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copier</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="EditColumns" xml:space="preserve">
+    <value>Modifier colonnes</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Nom de  l'employé</value>
+  </data>
+  <data name="FromEmployee" xml:space="preserve">
+    <value>De l'employé</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactif</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Nouveau</value>
+  </data>
+  <data name="NonReusableTimecards" xml:space="preserve">
+    <value>Feuilles de temps non réutilisables</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="PeriodEndDate" xml:space="preserve">
+    <value>Date fin période</value>
+  </data>
+  <data name="ReusableTimecards" xml:space="preserve">
+    <value>Feuille de temps réutilisables</value>
+  </data>
+  <data name="ToEmployee" xml:space="preserve">
+    <value>À l'employé</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="JobRelatedPopUpHeader" xml:space="preserve">
+    <value>Détails de Gestion de projet</value>
+  </data>
+  <data name="PJCDetails" xml:space="preserve">
+    <value>Détails du PJC</value>
   </data>
 </root>

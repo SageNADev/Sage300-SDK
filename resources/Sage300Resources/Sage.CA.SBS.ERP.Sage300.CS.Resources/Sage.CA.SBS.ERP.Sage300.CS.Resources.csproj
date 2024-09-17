@@ -173,16 +173,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PaymentProcessingOptionsResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PayslipDayResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PayslipDayResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PayslipResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PayslipResx.resx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\PostEntriesResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,11 +193,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PaymentProcessingCodeResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PublishPayslipResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PublishPayslipResx.resx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ReconcileOFXStatementResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,11 +207,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReverseTransactionsResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SageHRResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SageHRResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\SchedulesResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -549,16 +529,6 @@
     <EmbeddedResource Include="Forms\PaymentProcessingOptionsResx.fr.resx" />
     <EmbeddedResource Include="Forms\PaymentProcessingOptionsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\PaymentProcessingOptionsResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\PayslipDayResx.fr.resx" />
-    <EmbeddedResource Include="Forms\PayslipDayResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>PayslipDayResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PayslipResx.fr.resx" />
-    <EmbeddedResource Include="Forms\PayslipResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>PayslipResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PostEntriesResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>PostEntriesResx.Designer.cs</LastGenOutput>
@@ -592,11 +562,6 @@
     <EmbeddedResource Include="Forms\PaymentProcessingCodeResx.fr.resx" />
     <EmbeddedResource Include="Forms\PaymentProcessingCodeResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\PaymentProcessingCodeResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\PublishPayslipResx.fr.resx" />
-    <EmbeddedResource Include="Forms\PublishPayslipResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>PublishPayslipResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReconcileOFXStatementResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ReconcileOFXStatementResx.Designer.cs</LastGenOutput>
@@ -621,11 +586,6 @@
     <EmbeddedResource Include="Forms\ReverseTransactionsResx.fr.resx" />
     <EmbeddedResource Include="Forms\ReverseTransactionsResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\ReverseTransactionsResx.zh-Hant.resx" />
-    <EmbeddedResource Include="Forms\SageHRResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>SageHRResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SageHRResx.fr.resx" />
     <EmbeddedResource Include="Forms\SchedulesResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SchedulesResx.Designer.cs</LastGenOutput>

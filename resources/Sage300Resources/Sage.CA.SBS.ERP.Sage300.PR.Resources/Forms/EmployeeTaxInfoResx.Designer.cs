@@ -61,11 +61,506 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acquired.
+        /// </summary>
+        public static string Acquired {
+            get {
+                return ResourceManager.GetString("Acquired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string Amount {
+            get {
+                return ResourceManager.GetString("Amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount Override.
+        /// </summary>
+        public static string AmountOverride {
+            get {
+                return ResourceManager.GetString("AmountOverride", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percent.
+        /// </summary>
+        public static string AmountPercentOverride {
+            get {
+                return ResourceManager.GetString("AmountPercentOverride", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Tax code cannot be blank..
+        /// </summary>
+        public static string BlankTaxCode {
+            get {
+                return ResourceManager.GetString("BlankTaxCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculation Base Only.
+        /// </summary>
+        public static string CalculationBaseOnly {
+            get {
+                return ResourceManager.GetString("CalculationBaseOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check Parameters.
+        /// </summary>
+        public static string CheckParameters {
+            get {
+                return ResourceManager.GetString("CheckParameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Class Schedule.
+        /// </summary>
+        public static string ClassSchedule {
+            get {
+                return ResourceManager.GetString("ClassSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Class Schedules.
+        /// </summary>
+        public static string ClassSchedules {
+            get {
+                return ResourceManager.GetString("ClassSchedules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comments.
+        /// </summary>
+        public static string Comments {
+            get {
+                return ResourceManager.GetString("Comments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy Employee Template.
+        /// </summary>
+        public static string CopyEmployeeTemplate {
+            get {
+                return ResourceManager.GetString("CopyEmployeeTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cost Center.
+        /// </summary>
+        public static string CostCenter {
+            get {
+                return ResourceManager.GetString("CostCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created.
+        /// </summary>
+        public static string Created {
+            get {
+                return ResourceManager.GetString("Created", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distribution Code.
+        /// </summary>
+        public static string DistributionCode {
+            get {
+                return ResourceManager.GetString("DistributionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distribution Detail.
+        /// </summary>
+        public static string DistributionDetail {
+            get {
+                return ResourceManager.GetString("DistributionDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFT.
+        /// </summary>
+        public static string EFT {
+            get {
+                return ResourceManager.GetString("EFT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee.
+        /// </summary>
+        public static string Employee {
+            get {
+                return ResourceManager.GetString("Employee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERNAL USE - Employee Tax Tabl.
+        /// </summary>
+        public static string EMPPARMCNT {
+            get {
+                return ResourceManager.GetString("EMPPARMCNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERNAL USE - Employee Tax Tabl.
+        /// </summary>
+        public static string EMPPARMVER {
+            get {
+                return ResourceManager.GetString("EMPPARMVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PR EmployeeTaxInfo.
         /// </summary>
         public static string Entity {
             get {
                 return ResourceManager.GetString("Entity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PR EmployeeTaxe.
+        /// </summary>
+        public static string Entity1 {
+            get {
+                return ResourceManager.GetString("Entity1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra Withholding.
+        /// </summary>
+        public static string ExtraWithholding {
+            get {
+                return ResourceManager.GetString("ExtraWithholding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field Data Type.
+        /// </summary>
+        public static string FieldDataType {
+            get {
+                return ResourceManager.GetString("FieldDataType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field Length.
+        /// </summary>
+        public static string FieldLength {
+            get {
+                return ResourceManager.GetString("FieldLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field Number.
+        /// </summary>
+        public static string FieldNumber {
+            get {
+                return ResourceManager.GetString("FieldNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field Sequence Number.
+        /// </summary>
+        public static string FieldSequenceNumber {
+            get {
+                return ResourceManager.GetString("FieldSequenceNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field Use Type.
+        /// </summary>
+        public static string FieldUseType {
+            get {
+                return ResourceManager.GetString("FieldUseType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Garnishment.
+        /// </summary>
+        public static string Garnishment {
+            get {
+                return ResourceManager.GetString("Garnishment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        public static string General {
+            get {
+                return ResourceManager.GetString("General", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inserted.
+        /// </summary>
+        public static string Inserted {
+            get {
+                return ResourceManager.GetString("Inserted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert Optional Fields.
+        /// </summary>
+        public static string InsertOptionalFields {
+            get {
+                return ResourceManager.GetString("InsertOptionalFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERNAL USE - Category.
+        /// </summary>
+        public static string INTERNALUSECategory {
+            get {
+                return ResourceManager.GetString("INTERNALUSECategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERNAL USE - Occasional Tax.
+        /// </summary>
+        public static string INTERNALUSEOccasionalTax {
+            get {
+                return ResourceManager.GetString("INTERNALUSEOccasionalTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERNAL USE - Operation Code.
+        /// </summary>
+        public static string INTERNALUSEOperationCode {
+            get {
+                return ResourceManager.GetString("INTERNALUSEOperationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERNAL USE - Tax Table Effecti.
+        /// </summary>
+        public static string INTERNALUSETaxTableEffecti {
+            get {
+                return ResourceManager.GetString("INTERNALUSETaxTableEffecti", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERNAL USE - Tax Type.
+        /// </summary>
+        public static string INTERNALUSETaxType {
+            get {
+                return ResourceManager.GetString("INTERNALUSETaxType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERNAL USE - Template.
+        /// </summary>
+        public static string INTERNALUSETemplate {
+            get {
+                return ResourceManager.GetString("INTERNALUSETemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Decimals.
+        /// </summary>
+        public static string NumberOfDecimals {
+            get {
+                return ResourceManager.GetString("NumberOfDecimals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Optional Fields.
+        /// </summary>
+        public static string NumberOfOptionalFields {
+            get {
+                return ResourceManager.GetString("NumberOfOptionalFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Fields.
+        /// </summary>
+        public static string OptionalFields {
+            get {
+                return ResourceManager.GetString("OptionalFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        public static string Other {
+            get {
+                return ResourceManager.GetString("Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay.
+        /// </summary>
+        public static string Pay {
+            get {
+                return ResourceManager.GetString("Pay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percent.
+        /// </summary>
+        public static string Percent {
+            get {
+                return ResourceManager.GetString("Percent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percent Override.
+        /// </summary>
+        public static string PercentOverride {
+            get {
+                return ResourceManager.GetString("PercentOverride", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Standard Calculation.
+        /// </summary>
+        public static string StandardCalculation {
+            get {
+                return ResourceManager.GetString("StandardCalculation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax.
+        /// </summary>
+        public static string Tax {
+            get {
+                return ResourceManager.GetString("Tax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Taxable, No Withholding.
+        /// </summary>
+        public static string TaxableNoWithholding {
+            get {
+                return ResourceManager.GetString("TaxableNoWithholding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax.
+        /// </summary>
+        public static string TaxCode {
+            get {
+                return ResourceManager.GetString("TaxCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Description.
+        /// </summary>
+        public static string TaxDescription {
+            get {
+                return ResourceManager.GetString("TaxDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Details.
+        /// </summary>
+        public static string TaxDetails {
+            get {
+                return ResourceManager.GetString("TaxDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Taxes.
+        /// </summary>
+        public static string Taxes {
+            get {
+                return ResourceManager.GetString("Taxes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Field.
+        /// </summary>
+        public static string TaxField {
+            get {
+                return ResourceManager.GetString("TaxField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updated.
+        /// </summary>
+        public static string Updated {
+            get {
+                return ResourceManager.GetString("Updated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Withholding Method.
+        /// </summary>
+        public static string WithholdingMethod {
+            get {
+                return ResourceManager.GetString("WithholdingMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work Location.
+        /// </summary>
+        public static string WorkLocation {
+            get {
+                return ResourceManager.GetString("WorkLocation", resourceCulture);
             }
         }
     }

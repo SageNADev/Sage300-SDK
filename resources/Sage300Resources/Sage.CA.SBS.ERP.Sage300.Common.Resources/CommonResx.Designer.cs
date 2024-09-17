@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class CommonResx {
@@ -250,6 +250,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All emails processed, although some may not reach all recipients.
+        /// </summary>
+        public static string AllEmailsSentButWarnings {
+            get {
+                return ResourceManager.GetString("AllEmailsSentButWarnings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All emails sent successfully.
+        /// </summary>
+        public static string AllEmailsSentNoWarnings {
+            get {
+                return ResourceManager.GetString("AllEmailsSentNoWarnings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount.
         /// </summary>
         public static string Amount {
@@ -471,6 +489,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sending emails has been canceled..
+        /// </summary>
+        public static string CanceledEmails {
+            get {
+                return ResourceManager.GetString("CanceledEmails", resourceCulture);
             }
         }
         
@@ -1816,24 +1843,6 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please ensure the credentials are encrypted with a valid key..
-        /// </summary>
-        public static string GetWebScreenInvalidKeyError {
-            get {
-                return ResourceManager.GetString("GetWebScreenInvalidKeyError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please get a new public key..
-        /// </summary>
-        public static string GetWebScreenNoKeyError {
-            get {
-                return ResourceManager.GetString("GetWebScreenNoKeyError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Please ensure the credentials, public key, and IV are in the request header..
         /// </summary>
         public static string GetWebScreenNullParamError {
@@ -2653,6 +2662,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No emails sent.
+        /// </summary>
+        public static string NoEmailsSent {
+            get {
+                return ResourceManager.GetString("NoEmailsSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No Expiration.
         /// </summary>
         public static string NoExpiration {
@@ -3310,6 +3328,96 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The action parameter was not supplied..
+        /// </summary>
+        public static string ProxyActionParameterError {
+            get {
+                return ResourceManager.GetString("ProxyActionParameterError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The supplied credentials was not able to access Sage 300..
+        /// </summary>
+        public static string ProxyAuthenticationError {
+            get {
+                return ResourceManager.GetString("ProxyAuthenticationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The controller parameter was not supplied..
+        /// </summary>
+        public static string ProxyControllerParameterError {
+            get {
+                return ResourceManager.GetString("ProxyControllerParameterError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error was generated attempting to decrypt the supplied credentials..
+        /// </summary>
+        public static string ProxyDecryptError {
+            get {
+                return ResourceManager.GetString("ProxyDecryptError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The module parameter was not supplied..
+        /// </summary>
+        public static string ProxyModuleParameterError {
+            get {
+                return ResourceManager.GetString("ProxyModuleParameterError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The credentials are missing from the request..
+        /// </summary>
+        public static string ProxyNoCredentialsError {
+            get {
+                return ResourceManager.GetString("ProxyNoCredentialsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please ensure the credentials, public key, and IV are in the request header..
+        /// </summary>
+        public static string ProxyParametersError {
+            get {
+                return ResourceManager.GetString("ProxyParametersError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The product parameter was not supplied..
+        /// </summary>
+        public static string ProxyProductParameterError {
+            get {
+                return ResourceManager.GetString("ProxyProductParameterError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The supplied Public Key was not found. Please request a new Public Key..
+        /// </summary>
+        public static string ProxyPublicKeyError {
+            get {
+                return ResourceManager.GetString("ProxyPublicKeyError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The supplied Token was not found..
+        /// </summary>
+        public static string ProxyTokenError {
+            get {
+                return ResourceManager.GetString("ProxyTokenError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PST.
         /// </summary>
         public static string PST {
@@ -3778,6 +3886,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sending emails.
+        /// </summary>
+        public static string SendingEmails {
+            get {
+                return ResourceManager.GetString("SendingEmails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Due to server issues, you have been switched to an alternate server. Please refresh your browser and re-enter your data..
         /// </summary>
         public static string ServerDownDataRefreshMessage {
@@ -4017,6 +4134,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         public static string Single {
             get {
                 return ResourceManager.GetString("Single", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emails {0} to {1} sent successfully; canceled before or on {2}.
+        /// </summary>
+        public static string SomeEmailsSentCanceled {
+            get {
+                return ResourceManager.GetString("SomeEmailsSentCanceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emails {0} to {1} sent successfully; failed on {2}.
+        /// </summary>
+        public static string SomeEmailsSentFailed {
+            get {
+                return ResourceManager.GetString("SomeEmailsSentFailed", resourceCulture);
             }
         }
         
