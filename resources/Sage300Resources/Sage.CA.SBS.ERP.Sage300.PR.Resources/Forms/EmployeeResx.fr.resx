@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1285,7 +1285,7 @@
     <value>Description de la valeur</value>
   </data>
   <data name="ValueSet" xml:space="preserve">
-    <value>Valeur définie</value>
+    <value>Valeur définir</value>
   </data>
   <data name="YesNoValue" xml:space="preserve">
     <value>Valeur Oui/Non</value>
@@ -1457,5 +1457,8 @@
   </data>
   <data name="WorkersComp" xml:space="preserve">
     <value>CSST</value>
+  </data>
+  <data name="Override" xml:space="preserve">
+    <value>Remplacer</value>
   </data>
 </root>

@@ -1767,3 +1767,5 @@
 /samples/TaxAuthorities/ValuedPartner.TU.Web/Scripts/Kendo/kendo.web.min.js
 /samples/TaxAuthorities/ValuedPartner.TU.Web/Scripts/Kendo/kendo.window.min.js
 /samples/TaxAuthorities/ValuedPartner.TU.Web/Scripts/Kendo/kendo.wizard.min.js
+/src/wizards/Templates/UIWizards/WebApi.WebApi/.vs/TPA.TU.WebApi/FileContentIndex/*.vsidx
+/src/wizards/Templates/UIWizards/WebApi.WebApi/.vs/TPA.TU.WebApi/v17/*.suo

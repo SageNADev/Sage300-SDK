@@ -19,9 +19,8 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-using System.Collections.Generic;
+
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.InteropServices.WindowsRuntime;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
@@ -29,43 +28,24 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
     /// <summary> ProxyTesterViewModel </summary>
     public class ProxyTesterViewModel
     {
-        #region Class Constants
-        public class ClassConstants
-        {
-            public const string URL_PLACEHOLDER = "Current Request URL displayed here.";
-        }
-        #endregion
-
         #region Constructor(s)
         public ProxyTesterViewModel()
         {
-            // Authentication Settings
+            // Default Authentication Settings
             User = "ADMIN";
             Password = "";
-            Company = "SAMLTD";
+            Company = "SAMINC";
 
-            // Server Configuration
-            Server = "http://localhost:54445/Sage300";
+            // Default Server Configuration - Partner to specify the target Sage server
+            TargetServer = "http://localhost:54445";
+            ProxyTesterServer = "https://localhost:44347";
 
             // Proxy Request
             ModuleId = "";
             Controller = "";
             Action = "";
             OptionalParameters = string.Empty;
-
-            // Results
-            MenuUrl = string.Empty;
-            ScreenUrl = string.Empty;
-            IsValidTokenUrl = string.Empty;
-            PublicKeyUrl = string.Empty;
-            LoginUrl = string.Empty;
-
-            // Test Action
-            TestAction = string.Empty;
-
-            // Login Token
-            Token = string.Empty;
-            IsValidToken = false;
+            ProductId = "PROXY";
 
             // Source for iFrame
             Source = string.Empty;
@@ -88,11 +68,13 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
         [Required(ErrorMessage = "Company is a required field.")]
         public string Company { get; set; }
 
-        // Server Configuration
+        // Server Configurations
 
-        /// <summary> The server name </summary>
-        [Required(ErrorMessage = "Server name is a required field.")]
-        public string Server { get; set; }
+        /// <summary> The target server name </summary>
+        public string TargetServer { get; set; }
+
+        /// <summary> The Proxy Tester server name </summary>
+        public string ProxyTesterServer { get; set; }
 
         // Proxy Request
 
@@ -110,11 +92,8 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
         /// <summary> Optional request parameters </summary>
         public string OptionalParameters{ get; set; }
 
-        /// <summary> Url to get a public key </summary>
-        public string PublicKeyUrl { get; set; }
-
-        /// <summary> Url to login </summary>
-        public string LoginUrl { get; set; }
+        /// <summary> Product Id </summary>
+        public string ProductId { get; set; }
 
         /// <summary> The encrypted User, Password, and Company in the request header </summary>
         public string Credentials { get; set; }
@@ -127,24 +106,6 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
 
         /// <summary> The IV in the request header </summary>
         public string IV { get; set; }
-
-        /// <summary> Url to get a modules menu </summary>
-        public string MenuUrl { get; set; }
-
-        /// <summary> Url to determine if token is valid </summary>
-        public string IsValidTokenUrl { get; set; }
-
-        /// <summary>Url to get a web screen </summary>
-        public string ScreenUrl { get; set; }
-
-        /// <summary>Test Action </summary>
-        public string TestAction { get; set; }
-
-        /// <summary>Token (from ProxyLogin) </summary>
-        public string Token { get; set; }
-
-        /// <summary>IsValidToken (from ProxyIsValidToken) </summary>
-        public bool IsValidToken { get; set; }
 
         /// <summary>Source for iFrame from ProxyMenu or ProxyScreen </summary>
         public string Source { get; set; }

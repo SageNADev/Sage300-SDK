@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -20,6 +20,8 @@
 
 #region Namespaces
 #endregion
+
+using ACCPAC.Advantage;
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
@@ -98,6 +100,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Mask is the fields PresentationMask for the ViewField attribute</summary>
         public string Mask { get; set; }
 
+        public ViewFieldType ViewFieldType { get; set; }
 
 #if ENABLE_TK_244885
         /// <summary>IsCommon is true if field has been marked as being common (or shared) </summary>

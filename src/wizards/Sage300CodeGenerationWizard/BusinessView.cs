@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -37,6 +37,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string ModelName = "ModelName";
             public const string ModuleId = "ModuleId";
             public const string EntityName = "EntityName";
+            public const string ResourceName = "ResourceName";
             public const string ReportIni = "ReportIni";
             public const string ReportKey = "ReportKey";
             public const string ProgramId = "ProgramId";
@@ -51,6 +52,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             public const string GenerateEnumsInSingleFile = "GenerateEnumsInSingleFile";
             public const string WorkflowKindId = "WorkflowKindId";
             public const string ForGrid = "ForGrid";
+            public const string Verbs = "Verbs";
+            public const string PropertyName = "PropertyName";
+            public const string Extension = "Extension";
 #if ENABLE_TK_244885
             public const string CustomCommonResxName = "CustomCommonResxName";
 #endif
@@ -89,6 +93,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         select item.Name).ToList();
             }
         }
+
+        /// <summary> The primary key fields </summary>
+        public List<string> PrimaryKeyFields { get; set; }
 
         /// <summary> Text for tree display </summary>
         public string Text { get; set; }

@@ -1,0 +1,58 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="ACCPAC.Advantage" #>
+<#@ import namespace="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.ControllerSettings" name="controllerSettings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+	var view = controllerSettings.BusinessView;
+    var extension = view.Properties[BusinessView.Constants.Extension];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
+	var viewId = view.Properties[BusinessView.Constants.ViewId];
+
+#>
+// <#=copyright#>
+
+namespace <#=companyNamespace#>.<#=moduleId#>.WebApi.Models<#=extension#>
+{
+    /// <summary>
+    /// <#=modelName#> Model (User Defined)
+    /// </summary>
+    public partial class <#=modelName#>
+    {
+        /// <summary>
+        /// Initializes a new instance of the <#=modelName#> class
+        /// </summary>
+        public <#=modelName#>()
+        {
+            // The following line was generated
+            ConstructGeneratedModel(); // Do not remove
+
+            // Add any customized initialization code for this model below
+
+        }
+    }
+}

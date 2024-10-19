@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -148,6 +148,24 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
         internal static string EnglishTip {
             get {
                 return ResourceManager.GetString("EnglishTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The wizard will create a solution based upon the required fields..
+        /// </summary>
+        internal static string EnterInformationStepDesc {
+            get {
+                return ResourceManager.GetString("EnterInformationStepDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Information.
+        /// </summary>
+        internal static string EnterInformationStepTitle {
+            get {
+                return ResourceManager.GetString("EnterInformationStepTitle", resourceCulture);
             }
         }
         
@@ -343,6 +361,24 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Web.
+        /// </summary>
+        internal static string ProjectWeb {
+            get {
+                return ResourceManager.GetString("ProjectWeb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web API.
+        /// </summary>
+        internal static string ProjectWebApi {
+            get {
+                return ResourceManager.GetString("ProjectWebApi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap sage_300_logo_gray {
@@ -359,6 +395,24 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
             get {
                 object obj = ResourceManager.GetObject("sage300_logo_sq", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This wizard will generate a solution..
+        /// </summary>
+        internal static string SelectSolutionTypeStepDesc {
+            get {
+                return ResourceManager.GetString("SelectSolutionTypeStepDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Solution Type.
+        /// </summary>
+        internal static string SelectSolutionTypeStepTitle {
+            get {
+                return ResourceManager.GetString("SelectSolutionTypeStepTitle", resourceCulture);
             }
         }
         
@@ -422,6 +476,15 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties {
         internal static string StepDescriptionResourceFiles {
             get {
                 return ResourceManager.GetString("StepDescriptionResourceFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Project Type.
+        /// </summary>
+        internal static string StepProjectType {
+            get {
+                return ResourceManager.GetString("StepProjectType", resourceCulture);
             }
         }
         

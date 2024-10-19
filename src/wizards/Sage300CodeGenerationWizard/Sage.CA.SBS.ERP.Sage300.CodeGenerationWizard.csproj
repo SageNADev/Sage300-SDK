@@ -64,6 +64,7 @@
     <Compile Include="Composition.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="ControlInfo.cs" />
+    <Compile Include="ControllerSettings.cs" />
     <Compile Include="Forms\ContainerName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +93,11 @@
     <Compile Include="Info.cs" />
     <Compile Include="RepositoryType.cs" />
     <Compile Include="SnippetHelper.cs" />
+    <Compile Include="Templates\Common\View\Index.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.tt</DependentUpon>
+    </Compile>
     <Compile Include="Templates\Flat\Class\Grid\Controller.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,15 +133,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Behaviour.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\Flat\View\Entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Templates\Flat\View\PartialEntity1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PartialEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\HeaderDetail\Script\Behaviour.cs">
-      <DependentUpon>Behaviour.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>Behaviour.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\HeaderDetail\View\GridJson.cs">
       <DependentUpon>GridJson.tt</DependentUpon>
@@ -161,6 +172,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PartialEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\WebApi\Controller.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\WebApi\ModelCustom.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCustom.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\WebApi\ModelGenerated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelGenerated.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\WebApi\VersionController.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VersionController.tt</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ResXManager.cs" />
     <Compile Include="Settings.cs" />
@@ -193,11 +224,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelMapper.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Common\View\Index.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Flat\Class\Controller.cs">
       <AutoGen>True</AutoGen>
@@ -253,11 +279,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Flat\View\Entity.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Entity.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\HeaderDetail\Class\Controller.cs">
       <AutoGen>True</AutoGen>
@@ -425,7 +446,10 @@
       <DependentUpon>Localization.tt</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Utilities.cs" />
+    <Compile Include="ViewKeyType.cs" />
+    <Compile Include="ViewProtocolType.cs" />
     <Compile Include="WizardStep.cs" />
+    <Compile Include="xxroto.cs" />
     <EmbeddedResource Include="Forms\ContainerName.resx">
       <DependentUpon>ContainerName.cs</DependentUpon>
     </EmbeddedResource>
@@ -649,6 +673,22 @@
     <Content Include="Images\sage_300_logo.png" />
     <Content Include="Images\tab.png" />
     <Content Include="Resources\sage300-logo-sq.png" />
+    <None Include="Templates\WebApi\VersionController.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>VersionController.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\WebApi\ModelCustom.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelCustom.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\WebApi\ModelGenerated.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelGenerated.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\WebApi\Controller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Controller.cs</LastGenOutput>
+    </None>
     <Content Include="Templates\Process\View\PartialEntity.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PartialEntity.cs</LastGenOutput>
@@ -750,7 +790,7 @@
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.11.40262" ExcludeAssets="runtime">
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Jint" Version="4.0.2" />
+    <PackageReference Include="Jint" Version="4.0.3" />
     <PackageReference Include="MetroModernUI" Version="1.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

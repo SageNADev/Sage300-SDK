@@ -120,10 +120,43 @@
   <metadata name="wrkBackground.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>208, 17</value>
   </metadata>
+  <metadata name="tbrEntity.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>553, 5</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnRowAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADBSURBVDhPY7AKm/afFMyADkCCq479IwrjNKBu3j2iME4D
+        SMFQbVQEy8q4/pOCodoQACT4710afvzvHxijG8Dn1fYfYsCrONwYqFHIrwtMX9rVhN0AbPjYsiS4ZpgB
+        IAzVywATh3KxA5CCvk8IQ2AYZLNf1z6IAfhsBmkG4bZn3/7X3Xr3P23Ttf9Rs46BNYMwIgzuWSEwmmZc
+        BoA1gwDEADNUjMcFII1wzSCA7HwYRvcGiIZhqDbiAdkakQFuAxgYAAPiv9lTO1RsAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnDeleteRow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEFSURBVDhPrZKvEoJAEMYv+zgGAw9CNPoABCOBYCASCAYC
+        gWAwEIkEAo9gMFw0GIyGPW+X+wsyyIw7881y+7E/PwR2DQKxRmxcOIS2FdB1i30WwKPoJ80C1kit/bGq
+        40a4unVnwfteFGFIwmucffMMAJ4HKwAy8U/jZWkg8G7NMs7RJwgBHnsrBeB5PoFQLwp6K9jj7XYAuNIx
+        0eRZJqBpCGag6kzLS2Ugde11b3mcQMtLkqYCqor65JfxZrjLr9HV62Kf+ZQIkM/L43jo8oxzta4BOyt3
+        GZdkZOyUxDkbiBubYPotyE8XZGTsOjZBnLmXxC00IEm8ZV0GIv2x5xWaczdYj7EPaVP0imCCLucAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="btnDeleteRows.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADaSURBVDhPrVC5EYQwDHRNhBRCIRRAQHABIQU4ICC8gJCQ
+        UijEPq2MdZYxczBzmtlZ9OxayLzr2j+ByQNFt223cGmwt+0tXBo8wSH7Y5ReAWzTMPI6NLEnBvmx0ATv
+        0yTfAGaRox7nikfkoXFUJlK3NtSJu6oKBiWgySbryiymR87iXyEmy6JYiUuvp2CTYfBunplPL2MoHikH
+        r/3qvaP/3bsuMOWoH/JgkB9RDgYRrQzmTZJcTNJ1I1hMJo5WBse12SSpq03SQMP1vRLHEBPq5z0VaF4N
+        fHvGfABkh94pEIb8VQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="tbrProperties.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>973, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnTab.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGUAAABkCAYAAACfIP5qAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -248,44 +281,14 @@
   <data name="lblCodeTypeFilesHelp.Text" xml:space="preserve">
     <value>Based upon the Code Type selected, Interface files, a Service file, a Repository file, a View Model file, Controller files and Razor View files (stubs only for certain Code Types) may also be generated.</value>
   </data>
-  <metadata name="tbrEntity.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>553, 5</value>
-  </metadata>
-  <data name="btnRowAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADBSURBVDhPY7AKm/afFMyADkCCq479IwrjNKBu3j2iME4D
-        SMFQbVQEy8q4/pOCodoQACT4710afvzvHxijG8Dn1fYfYsCrONwYqFHIrwtMX9rVhN0AbPjYsiS4ZpgB
-        IAzVywATh3KxA5CCvk8IQ2AYZLNf1z6IAfhsBmkG4bZn3/7X3Xr3P23Ttf9Rs46BNYMwIgzuWSEwmmZc
-        BoA1gwDEADNUjMcFII1wzSCA7HwYRvcGiIZhqDbiAdkakQFuAxgYAAPiv9lTO1RsAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnDeleteRow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEFSURBVDhPrZKvEoJAEMYv+zgGAw9CNPoABCOBYCASCAYC
-        gWAwEIkEAo9gMFw0GIyGPW+X+wsyyIw7881y+7E/PwR2DQKxRmxcOIS2FdB1i30WwKPoJ80C1kit/bGq
-        40a4unVnwfteFGFIwmucffMMAJ4HKwAy8U/jZWkg8G7NMs7RJwgBHnsrBeB5PoFQLwp6K9jj7XYAuNIx
-        0eRZJqBpCGag6kzLS2Ugde11b3mcQMtLkqYCqor65JfxZrjLr9HV62Kf+ZQIkM/L43jo8oxzta4BOyt3
-        GZdkZOyUxDkbiBubYPotyE8XZGTsOjZBnLmXxC00IEm8ZV0GIv2x5xWaczdYj7EPaVP0imCCLucAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <data name="btnDeleteRows.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADaSURBVDhPrVC5EYQwDHRNhBRCIRRAQHABIQU4ICC8gJCQ
-        UijEPq2MdZYxczBzmtlZ9OxayLzr2j+ByQNFt223cGmwt+0tXBo8wSH7Y5ReAWzTMPI6NLEnBvmx0ATv
-        0yTfAGaRox7nikfkoXFUJlK3NtSJu6oKBiWgySbryiymR87iXyEmy6JYiUuvp2CTYfBunplPL2MoHikH
-        r/3qvaP/3bsuMOWoH/JgkB9RDgYRrQzmTZJcTNJ1I1hMJo5WBse12SSpq03SQMP1vRLHEBPq5z0VaF4N
-        fHvGfABkh94pEIb8VQAAAABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="tooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>762, 17</value>
   </metadata>
+  <metadata name="htmlToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1095, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>93</value>
+    <value>25</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

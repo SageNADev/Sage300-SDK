@@ -1,7 +1,7 @@
 ﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
     <TemplateData>
         <Name>Sage 300 Solution Wizard</Name>
-        <Description>A wizard to scaffold a Sage 300 Web Screen solution</Description>
+        <Description>A wizard to scaffold a Sage 300 Web Screen or Web API solution</Description>
         <Icon Package="{349c5850-65df-11da-9384-00065b846f21}" ID="9001" />
         <ProjectType>CSharp</ProjectType>
         <ProjectSubType>Web</ProjectSubType>

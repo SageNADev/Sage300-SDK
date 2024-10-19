@@ -539,7 +539,7 @@
     <value>Radio Buttons</value>
   </data>
   <data name="StepDescriptionGenerateUICode" xml:space="preserve">
-    <value>The {0} Entities are used to generate UI code.</value>
+    <value>The Entities are used to generate UI code.</value>
   </data>
   <data name="StepTitleGenerateUICode" xml:space="preserve">
     <value>Generate a UI layout</value>
@@ -642,5 +642,29 @@
   </data>
   <data name="InvalidNoUI" xml:space="preserve">
     <value>A layout with no UI elements specified will no longer generate a default layout. Use the 'Generate a UI layout' step to specify a layout (a minimum of 1 property or control must be specified).</value>
+  </data>
+  <data name="StepWebApiCredentials" xml:space="preserve">
+    <value>Enter Credentials</value>
+  </data>
+  <data name="StepWebApiCredentialsDesc" xml:space="preserve">
+    <value>This wizard will generate Web API code.</value>
+  </data>
+  <data name="ResourceName" xml:space="preserve">
+    <value>Resource Name</value>
+  </data>
+  <data name="ResourceNameTip" xml:space="preserve">
+    <value>The name is defaulted from the Business View</value>
+  </data>
+  <data name="Verbs" xml:space="preserve">
+    <value>HTTP Verbs</value>
+  </data>
+  <data name="VerbsTip" xml:space="preserve">
+    <value>Select verbs permitted on this entity</value>
+  </data>
+  <data name="Web" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="WebAPI" xml:space="preserve">
+    <value>Web API</value>
   </data>
 </root>

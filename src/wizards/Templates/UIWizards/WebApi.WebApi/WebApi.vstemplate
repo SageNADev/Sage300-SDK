@@ -1,0 +1,36 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>TPA.TU.WebApi</Name>
+    <Description>
+    </Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>TPA.TU.WebApi</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="TPA.TU.WebApi.csproj" File="TPA.TU.WebApi.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$applicationid$Bootstrapper.xml">TUBootstrapper.xml</ProjectItem>
+      <Folder Name="Controllers" TargetFolderName="Controllers" />
+      <Folder Name="Overrides" TargetFolderName="Overrides" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Route" TargetFolderName="Route">
+        <ProjectItem ReplaceParameters="true" TargetFileName="WebApiRoute.cs">WebApiRoute.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Versioning" TargetFolderName="Versioning">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$applicationid$ControllerVersionMapGenerated.cs">TUControllerVersionMapGenerated.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
+

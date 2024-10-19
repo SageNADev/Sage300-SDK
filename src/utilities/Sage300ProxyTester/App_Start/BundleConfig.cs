@@ -37,7 +37,8 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/Sage300ProxyTester").Include(
-                        "~/Scripts/Sage300ProxyTester/Sage.CA.SBS.ERP.Sage300.ProxyTesterBehaviour.js"));
+                        "~/Scripts/Sage300ProxyTester/Sage.CA.SBS.ERP.Sage300.ProxyTesterBehaviour.js",
+                        "~/Scripts/Sage300ProxyTester/ajaxq.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
