@@ -23,8 +23,6 @@ using Newtonsoft.Json;
 using Sage.CA.SBS.ERP.Sage300.ProxyTester.Models;
 using Sage.CA.SBS.ERP.Sage300.ProxyTester.Utility;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -214,7 +212,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 }
             }
 
-            // TEST. Request the screen URL here
+            // Redirect to the screen AND the source will be set to the iFrame in JavaScript with the success handler
             Redirect(model.Source);
         }
 
@@ -266,9 +264,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
             var queryStringOperator = (queryParts.Count == 0) ? "?" : "&";
 
             // Build the final url and return
-            // url += $"{queryStringOperator}productId={model.ProductId}&ContextToken={contextToken}";
             url += $"{queryStringOperator}productId={model.ProductId}&ContextToken={contextToken}";
-            //Request.Headers.Add("ContextToken", contextToken);
 
             return url;
         }

@@ -25,6 +25,12 @@ ProxyTesterUI = {
 
     ViewModel: {},
 
+    /**
+     * @name init
+     * @description Script initialization
+     * @namespace ProxyTesterUI
+     * @public
+     */
     init: function () {
 
         ProxyTesterUI.ViewModel = proxyTesterViewModel;
@@ -34,6 +40,12 @@ ProxyTesterUI = {
         ProxyTesterUI.setFormValues();
     },
 
+    /**
+     * @name setFormValues
+     * @description Set values from model to controls
+     * @namespace ProxyTesterUI
+     * @public
+     */
     setFormValues: function () {
         $('#txtUsername').val(ProxyTesterUI.ViewModel.User);
         $('#txtPassword').val(ProxyTesterUI.ViewModel.Password);
@@ -45,6 +57,12 @@ ProxyTesterUI = {
         $('#txtOptionalParameters').val(ProxyTesterUI.ViewModel.OptionalParameters);
     },
 
+    /**
+     * @name setModelValues
+     * @description Set values from controls to model
+     * @namespace ProxyTesterUI
+     * @public
+     */
     setModelValues: function () {
         ProxyTesterUI.ViewModel.User = $('#txtUsername').val();
         ProxyTesterUI.ViewModel.Password = $('#txtPassword').val();
@@ -56,7 +74,14 @@ ProxyTesterUI = {
         ProxyTesterUI.ViewModel.OptionalParameters = $('#txtOptionalParameters').val();
     },
 
+    /**
+     * @name initButtons
+     * @description Button initialization
+     * @namespace ProxyTesterUI
+     * @public
+     */
     initButtons: function () {
+
         // Test menu button
         $('#btnMenu').click(function (e) {
             // Set values into the model
@@ -82,16 +107,34 @@ ProxyTesterUI = {
         });
     },
 
+    /**
+     * @name initOnFocus
+     * @description Form initialization
+     * @namespace ProxyTesterUI
+     * @public
+     */
     initOnFocus: function () {
         $('.form-control').on('focus', function () {
             ProxyTesterUI.resetValidations();
         });
     },
 
+    /**
+     * @name assignSource
+     * @description Assigns the source to the iFrame from the proxy result
+     * @namespace ProxyTesterUI
+     * @public
+     */
     assignSource: function (data) {
         $("#ExternalFrame").attr('src', data);
     },
 
+    /**
+     * @name ajaxPost
+     * @description Ajax to invoke controller in proxy tester to invoke Proxy in Sage 300
+     * @namespace ProxyTesterUI
+     * @public
+     */
     ajaxPost: function (url, data, successHandler) {
         var dataJson = JSON.stringify(data);
         $.ajaxq("ProxyTester", {
@@ -105,6 +148,12 @@ ProxyTesterUI = {
         });
     },
 
+    /**
+     * @name resetValidations
+     * @description Form reset validations
+     * @namespace ProxyTesterUI
+     * @public
+     */
     resetValidations: function() {
         // Removes validation from input-fields
         $('.input-validation-error').addClass('input-validation-valid');

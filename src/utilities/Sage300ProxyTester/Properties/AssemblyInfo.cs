@@ -28,7 +28,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Sage.CA.SBS.ERP.Sage300.ProxyTester")]
-[assembly: AssemblyDescription("Proxy Tester Application for testing the Proxy on the Web Screens")]
+[assembly: AssemblyDescription("Proxy Tester Application for testing the Proxy in the Web Screens")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sage Software, Inc.")]
 [assembly: AssemblyProduct("Sage.CA.SBS.ERP.Sage300.ProxyTester")]

@@ -19,7 +19,6 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-
 using System.ComponentModel.DataAnnotations;
 #endregion
 
@@ -32,23 +31,23 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
         public ProxyTesterViewModel()
         {
             // Default Authentication Settings
-            User = "ADMIN";
-            Password = "";
-            Company = "SAMINC";
+            User = "ADMIN"; // Partner to specify the default user if desired
+            Password = "";  // Partner to specify the default password if desired
+            Company = "SAMINC"; // Partner to specify the default company if desired
 
-            // Default Server Configuration - Partner to specify the target Sage server
-            TargetServer = "http://localhost:54445";
-            ProxyTesterServer = "https://localhost:44347";
+            // Default Server Configurations - Partner to specify the target Sage server and this ProxyTester server
+            TargetServer = "http://localhost:54445"; // Partner to specify the target Sage server
+            ProxyTesterServer = "https://localhost:44347"; // Partner to specify the ProxyTester server
 
             // Proxy Request
-            ModuleId = "";
-            Controller = "";
-            Action = "";
-            OptionalParameters = string.Empty;
-            ProductId = "PROXY";
+            ModuleId = ""; // Partner to specify the default ModuleId if desired
+            Controller = ""; // Partner to specify the default Controller if desired
+            Action = ""; // Partner to specify the default Action if desired
+            OptionalParameters = string.Empty; // Partner to specify the default OptionalParameters if desired
+            ProductId = "PROXY"; // DO NOT CHANGE THIS VALUE
 
             // Source for iFrame
-            Source = string.Empty;
+            Source = string.Empty; // Value for the iFrame source
         }
         #endregion
 
