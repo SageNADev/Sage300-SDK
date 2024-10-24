@@ -90,7 +90,7 @@ ProxyTesterUI = {
             var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/GetMenu';
             // Call the AJAX post with callback function to assign to iFrame
             ProxyTesterUI.assignSource('about:blank');
-            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.assignSource);
+            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.assignSource, ProxyTesterUI.errorMessage);
             e.preventDefault();
         });
 
@@ -102,7 +102,7 @@ ProxyTesterUI = {
             var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/GetScreen';
             // Call the AJAX post with callback function to assign to iFrame
             ProxyTesterUI.assignSource('about:blank');
-            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.assignSource);
+            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.assignSource, ProxyTesterUI.errorMessage);
             e.preventDefault();
         });
     },
@@ -130,12 +130,23 @@ ProxyTesterUI = {
     },
 
     /**
+ * @name errorMessage
+ * @description Displays error message
+ * @namespace ProxyTesterUI
+ * @public
+ */
+    errorMessage: function (message) {
+        // alert(message.responseText);
+        alert("An error was thrown. Check credentials and parameters for validity.");
+    },
+
+    /**
      * @name ajaxPost
      * @description Ajax to invoke controller in proxy tester to invoke Proxy in Sage 300
      * @namespace ProxyTesterUI
      * @public
      */
-    ajaxPost: function (url, data, successHandler) {
+    ajaxPost: function (url, data, successHandler, errorHandler) {
         var dataJson = JSON.stringify(data);
         $.ajaxq("ProxyTester", {
             url: url,
@@ -144,7 +155,8 @@ ProxyTesterUI = {
             async: false,
             dataType: "text",
             contentType: "application/json",
-            success: successHandler
+            success: successHandler,
+            error: errorHandler
         });
     },
 

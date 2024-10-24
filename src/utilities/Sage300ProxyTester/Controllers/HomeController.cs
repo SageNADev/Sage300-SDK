@@ -85,17 +85,24 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public async Task<ActionResult> GetMenu(ProxyTesterViewModel model)
         {
-            // Prep model if needed
-            PrepModel(model);
+            try
+            {
+                // Prep model if needed
+                PrepModel(model);
 
-            // Get the proxy public Key
-            await ProxyPublicKey(model);
+                // Get the proxy public Key
+                await ProxyPublicKey(model);
 
-            // Get the menu from proxy
-            await ProxyMenu(model);
+                // Get the menu from proxy
+                await ProxyMenu(model);
 
-            // Return menu string
-            return Content(model.Source);
+                // Return menu string
+                return Content(model.Source);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /// <summary> GetScreen </summary>
@@ -103,17 +110,24 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public async Task<ActionResult> GetScreen(ProxyTesterViewModel model)
         {
-            // Prep model if needed
-            PrepModel(model);
+            try
+            {
+                // Prep model if needed
+                PrepModel(model);
 
-            // Get the proxy public Key
-            await ProxyPublicKey(model);
+                // Get the proxy public Key
+                await ProxyPublicKey(model);
 
-            // Get the screen from proxy
-            await ProxyScreen(model);
+                // Get the screen from proxy
+                await ProxyScreen(model);
 
-            // Return url string
-            return Content(model.Source);
+                // Return url string
+                return Content(model.Source);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         #endregion
@@ -121,20 +135,27 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         /// <param name="model">View Model</param>
         private async Task ProxyPublicKey(ProxyTesterViewModel model)
         {
-            // Public key returned from Proxy
-            model.ProxyPublicKey = string.Empty;
-
-            // Request
-            var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyPublicKey?productId={model.ProductId}");
-
-            // Await response
-            using (var response = await httpClient.SendAsync(request))
+            try
             {
-                // If successful get the public key
-                if (response.IsSuccessStatusCode)
+                // Public key returned from Proxy
+                model.ProxyPublicKey = string.Empty;
+
+                // Request
+                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyPublicKey?productId={model.ProductId}");
+
+                // Await response
+                using (var response = await httpClient.SendAsync(request))
                 {
-                    model.ProxyPublicKey = await response.Content.ReadAsStringAsync();
+                    // If successful get the public key
+                    if (response.IsSuccessStatusCode)
+                    {
+                        model.ProxyPublicKey = await response.Content.ReadAsStringAsync();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -143,29 +164,36 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         /// <returns>Assign Source to model</returns>
         private async Task ProxyMenu(ProxyTesterViewModel model)
         {
-            // Request
-            var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyMenu?productId={model.ProductId}");
-
-            // Encryption for headers
-            EncryptItems(model);
-
-            // Add headers
-            request.Headers.Add(RequestHeader.Credentials, model.Credentials);
-            request.Headers.Add(RequestHeader.ClientPublicKey, model.ClientPublicKey);
-            request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
-            request.Headers.Add(RequestHeader.IV, model.IV);
-            request.Headers.Add(RequestHeader.ProductId, model.ProductId);
-            request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
-
-            // Await response
-            using (var response = await httpClient.SendAsync(request))
+            try
             {
-                // If successful get the menu payload
-                if (response.IsSuccessStatusCode)
+                // Request
+                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyMenu?productId={model.ProductId}");
+
+                // Encryption for headers
+                EncryptItems(model);
+
+                // Add headers
+                request.Headers.Add(RequestHeader.Credentials, model.Credentials);
+                request.Headers.Add(RequestHeader.ClientPublicKey, model.ClientPublicKey);
+                request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
+                request.Headers.Add(RequestHeader.IV, model.IV);
+                request.Headers.Add(RequestHeader.ProductId, model.ProductId);
+                request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
+
+                // Await response
+                using (var response = await httpClient.SendAsync(request))
                 {
-                    // Assign menu payload to model
-                    model.Source = await response.Content.ReadAsStringAsync();
+                    // If successful get the menu payload
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Assign menu payload to model
+                        model.Source = await response.Content.ReadAsStringAsync();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -174,78 +202,98 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         /// <returns>Assign Source/Redirect to model</returns>
         private async Task ProxyScreen(ProxyTesterViewModel model)
         {
-            // Validations here
-
-            // Request
-            var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyScreen?productId={model.ProductId}");
-
-            // Encryption for headers
-            EncryptItems(model);
-
-            // Add headers
-            request.Headers.Add(RequestHeader.Credentials, model.Credentials);
-            request.Headers.Add(RequestHeader.ClientPublicKey, model.ClientPublicKey);
-            request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
-            request.Headers.Add(RequestHeader.IV, model.IV);
-            request.Headers.Add(RequestHeader.ProductId, model.ProductId);
-            request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
-            request.Headers.Add(RequestHeader.Controller, model.Controller);
-            request.Headers.Add(RequestHeader.Action, model.Action);
-            request.Headers.Add(RequestHeader.OptionalParameters, model.OptionalParameters);
-
-            // Await response
-            using (var response = await httpClient.SendAsync(request))
+            try
             {
-                // If successful get the screen redirect
-                if (response.IsSuccessStatusCode)
+                // Validations here
+
+                // Request
+                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyScreen?productId={model.ProductId}");
+
+                // Encryption for headers
+                EncryptItems(model);
+
+                // Add headers
+                request.Headers.Add(RequestHeader.Credentials, model.Credentials);
+                request.Headers.Add(RequestHeader.ClientPublicKey, model.ClientPublicKey);
+                request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
+                request.Headers.Add(RequestHeader.IV, model.IV);
+                request.Headers.Add(RequestHeader.ProductId, model.ProductId);
+                request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
+                request.Headers.Add(RequestHeader.Controller, model.Controller);
+                request.Headers.Add(RequestHeader.Action, model.Action);
+                request.Headers.Add(RequestHeader.OptionalParameters, model.OptionalParameters);
+
+                // Await response
+                using (var response = await httpClient.SendAsync(request))
                 {
-                    // model.Source = response.RequestMessage.RequestUri.AbsoluteUri;
-                    var screenResponse = await response.Content.ReadAsStringAsync();
+                    // If successful get the screen redirect
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // model.Source = response.RequestMessage.RequestUri.AbsoluteUri;
+                        var screenResponse = await response.Content.ReadAsStringAsync();
 
-                    // Get the session id and the context token
-                    var json = screenResponse.Split('|');
-                    var sessionId = json[0].Replace("\"", "");
-                    var contextToken = json[1].Replace("\"", "");
+                        // Get the session id and the context token
+                        var json = screenResponse.Split('|');
+                        var sessionId = json[0].Replace("\"", "");
+                        var contextToken = json[1].Replace("\"", "");
 
-                    // Assign screen url to model
-                    model.Source = BuildURL(model, sessionId, contextToken);
+                        // Assign screen url to model
+                        model.Source = BuildURL(model, sessionId, contextToken);
+                    }
                 }
-            }
 
-            // Redirect to the screen AND the source will be set to the iFrame in JavaScript with the success handler
-            Redirect(model.Source);
+                // Redirect to the screen AND the source will be set to the iFrame in JavaScript with the success handler
+                Redirect(model.Source);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /// <summary> Routine to encrypt items </summary>
         /// <param name="model">View Model</param>
         private void EncryptItems(ProxyTesterViewModel model)
         {
-            // Create key pair
-            EllipticCurveDiffieHellman.CreateKeyPair(out byte[] privateKey, out byte[] publicKey);
-
-            // Encrypt credentials
-            var credentials = new
+            try
             {
-                ProxyUser = model.User,
-                ProxyPassword = model.Password,
-                ProxyCompany = model.Company
-            };
-            model.Credentials = EllipticCurveDiffieHellman.Encrypt(JsonConvert.SerializeObject(credentials),
-                privateKey, Convert.FromBase64String(model.ProxyPublicKey), out byte[] iv);
+                // Create key pair
+                EllipticCurveDiffieHellman.CreateKeyPair(out byte[] privateKey, out byte[] publicKey);
 
-            model.ClientPublicKey = Convert.ToBase64String(publicKey);
-            model.IV = Convert.ToBase64String(iv);
+                // Encrypt credentials
+                var credentials = new
+                {
+                    ProxyUser = model.User,
+                    ProxyPassword = model.Password,
+                    ProxyCompany = model.Company
+                };
+                model.Credentials = EllipticCurveDiffieHellman.Encrypt(JsonConvert.SerializeObject(credentials),
+                    privateKey, Convert.FromBase64String(model.ProxyPublicKey), out byte[] iv);
+
+                model.ClientPublicKey = Convert.ToBase64String(publicKey);
+                model.IV = Convert.ToBase64String(iv);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-
 
         /// <summary> Routine to Prep model, if needed </summary>
         /// <param name="model">View Model</param>
         private void PrepModel(ProxyTesterViewModel model)
         {
-            // Force case
-            model.User = model.User.ToUpper();
-            model.Company = model.Company.ToUpper();
-            model.ModuleId = model.ModuleId.ToUpper();
+            try
+            {
+                // Force case
+                model.User = model.User.ToUpper();
+                model.Company = model.Company.ToUpper();
+                model.ModuleId = model.ModuleId.ToUpper();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /// <summary> Build the url </summary>
@@ -255,18 +303,25 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         /// <returns>The proxy url to get a screen</returns>
         private string BuildURL(ProxyTesterViewModel model, string sessionId, string contextToken)
         {
-            var url = $@"{model.TargetServer}/OnPremise/{sessionId}/{model.ModuleId}/{model.Controller}/{model.Action}" +
-                (string.IsNullOrEmpty(model.OptionalParameters) ? string.Empty : $@"?{model.OptionalParameters}");
+            try
+            {
+                var url = $@"{model.TargetServer}/OnPremise/{sessionId}/{model.ModuleId}/{model.Controller}/{model.Action}" +
+                    (string.IsNullOrEmpty(model.OptionalParameters) ? string.Empty : $@"?{model.OptionalParameters}");
 
-            // Break the url down into constituant parts
-            var uri = new Uri(url);
-            var queryParts = uri.ParseQueryString();
-            var queryStringOperator = (queryParts.Count == 0) ? "?" : "&";
+                // Break the url down into constituant parts
+                var uri = new Uri(url);
+                var queryParts = uri.ParseQueryString();
+                var queryStringOperator = (queryParts.Count == 0) ? "?" : "&";
 
-            // Build the final url and return
-            url += $"{queryStringOperator}productId={model.ProductId}&ContextToken={contextToken}";
+                // Build the final url and return
+                url += $"{queryStringOperator}productId={model.ProductId}&ContextToken={contextToken}";
 
-            return url;
+                return url;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }
