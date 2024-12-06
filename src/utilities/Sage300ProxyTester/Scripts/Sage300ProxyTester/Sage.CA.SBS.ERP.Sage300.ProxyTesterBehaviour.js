@@ -88,9 +88,8 @@ ProxyTesterUI = {
             ProxyTesterUI.setModelValues();
             // Build URL (local)
             var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/GetMenu';
-            // Call the AJAX post with callback function to assign to iFrame
-            ProxyTesterUI.assignSource('about:blank');
-            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.assignSource, ProxyTesterUI.errorMessage);
+            // Call the AJAX post with callback function to display alert
+            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.displayAlert, ProxyTesterUI.errorMessage);
             e.preventDefault();
         });
 
@@ -117,6 +116,16 @@ ProxyTesterUI = {
         $('.form-control').on('focus', function () {
             ProxyTesterUI.resetValidations();
         });
+    },
+
+    /**
+     * @name displayAlert
+     * @description Displays an alert for the menu since binding to an iFrame is silly
+     * @namespace ProxyTesterUI
+     * @public
+     */
+    displayAlert: function (data) {
+        alert(data);
     },
 
     /**
