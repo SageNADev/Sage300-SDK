@@ -253,4 +253,25 @@ prior to deployment.</value>
   <data name="sage_300_logo_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\sage_300_logo_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="StepProjectType" xml:space="preserve">
+    <value>Select Project Type</value>
+  </data>
+  <data name="ProjectWeb" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="ProjectWebApi" xml:space="preserve">
+    <value>Web API</value>
+  </data>
+  <data name="SelectSolutionTypeStepTitle" xml:space="preserve">
+    <value>Select Solution Type</value>
+  </data>
+  <data name="SelectSolutionTypeStepDesc" xml:space="preserve">
+    <value>This wizard will generate a solution.</value>
+  </data>
+  <data name="EnterInformationStepDesc" xml:space="preserve">
+    <value>The wizard will create a solution based upon the required fields.</value>
+  </data>
+  <data name="EnterInformationStepTitle" xml:space="preserve">
+    <value>Enter Information</value>
+  </data>
 </root>

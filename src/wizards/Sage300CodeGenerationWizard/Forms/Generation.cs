@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -32,12 +32,9 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using MetroFramework.Forms;
-using Microsoft.Win32;
-using Jint;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Dynamic;
 using System.Xml;
+using System.Text;
+
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
@@ -46,21 +43,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
     public partial class Generation : MetroForm
     {
         #region Private Classes
+
         /// <summary> Class for information stored per cell </summary>
         class CellInfo
         {
             /// <summary> Column for cell </summary>
             public int ColIndex { get; set; }
+
             /// <summary> Row for cell </summary>
             public int RowIndex { get; set; }
+
             /// <summary> Control name in cell </summary>
             public string Name { get; set; }
+
             /// <summary> Data grid </summary>
             public DataGridView Control { get; set; }
         }
+
         #endregion
 
         #region Private Variables
+
+        /// <summary> web or web api </summary>
+        private WizardType _wizardType;
+
+        /// <summary> width of the form </summary>
+        private const int FORM_WIDTH = 1037;
+
+        /// <summary> height of the form </summary>
+        private const int FORM_HEIGHT = 685;
 
         /// <summary> Process Generation logic </summary>
         private ProcessGeneration _generation;
@@ -191,19 +202,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private CellInfo _cellInfo = null;
 
         /// <summary> Menu Item for Dropdown </summary>
-        private readonly MenuItem _dropDownMenuItem = new MenuItem() { Text = Resources.Dropdown, Tag = Constants.WidgetDropDown };
+        private readonly MenuItem _dropDownMenuItem = new MenuItem()
+            { Text = Resources.Dropdown, Tag = Constants.WidgetDropDown };
 
         /// <summary> Menu Item for Radio Buttons </summary>
-        private readonly MenuItem _radioButtonsMenuItem = new MenuItem() { Text = Resources.RadioButtons, Tag = Constants.WidgetRadioButtons };
+        private readonly MenuItem _radioButtonsMenuItem = new MenuItem()
+            { Text = Resources.RadioButtons, Tag = Constants.WidgetRadioButtons };
 
         /// <summary> Menu Item for Time </summary>
-        private readonly MenuItem _timeMenuItem = new MenuItem() { Text = Resources.TimeOnly, Tag = Constants.WidgetDateTime };
+        private readonly MenuItem _timeMenuItem = new MenuItem()
+            { Text = Resources.TimeOnly, Tag = Constants.WidgetDateTime };
 
         /// <summary> Menu Item for Textbox </summary>
-        private readonly MenuItem _textboxMenuItem = new MenuItem() { Text = Resources.Textbox, Tag = Constants.WidgetTextbox };
+        private readonly MenuItem _textboxMenuItem = new MenuItem()
+            { Text = Resources.Textbox, Tag = Constants.WidgetTextbox };
 
         /// <summary> Menu Item for Finder </summary>
-        private readonly MenuItem _finderMenuItem = new MenuItem() { Text = Resources.FinderTab, Tag = Constants.WidgetFinder };
+        private readonly MenuItem _finderMenuItem = new MenuItem()
+            { Text = Resources.FinderTab, Tag = Constants.WidgetFinder };
 
         /// <summary> Map from unique finder name finder detail info </summary>
         private IDictionary<string, dynamic> _finderLookup = new SortedDictionary<string, dynamic>();
@@ -214,64 +230,90 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Abort grid drop </summary>
         private bool _abortGridDrop = false;
 
+        /// <summary> Controller settings </summary>
+        private List<ControllerSettings> _controllerSettings;
+
         #endregion
 
         #region Private Constants
-        private static class Constants
-		{
-			/// <summary> Splitter Distance </summary>
-			public const int SplitterDistance = 415;
 
-			/// <summary> Panel Name for pnlCodeType </summary>
-			public const string PanelCodeType = "pnlCodeType";
-			/// <summary> Panel Name for pnlEntities </summary>
-			public const string PanelEntities = "pnlEntities";
+        private static class Constants
+        {
+            /// <summary> Splitter Distance </summary>
+            public const int SplitterDistance = 415;
+
+            /// <summary> Panel Name for pnlCodeType </summary>
+            public const string PanelCodeType = "pnlCodeType";
+
+            /// <summary> Panel Name for pnlEntities </summary>
+            public const string PanelEntities = "pnlEntities";
+
             /// <summary> Panel Name for pnlUIGeneration </summary>
             public const string PanelUIGeneration = "pnlUIGeneration";
-			/// <summary> Panel Name for pnlGenerated </summary>
-			public const string PanelGenerated = "pnlGeneratedCode";
-			/// <summary> Panel Name for pnlGenerate </summary>
-			public const string PanelGenerateCode = "pnlGenerateCode";
 
-			/// <summary> Single space string </summary>
-			public const string SingleSpace = " ";
+            /// <summary> Panel Name for pnlGenerated </summary>
+            public const string PanelGenerated = "pnlGeneratedCode";
+
+            /// <summary> Panel Name for pnlGenerate </summary>
+            public const string PanelGenerateCode = "pnlGenerateCode";
+
+            /// <summary> Panel Name for pnlWebApiCredential </summary>
+            public const string PanelWebApiCredential = "pnlWebApiCredential";
+
+            /// <summary> Single space string </summary>
+            public const string SingleSpace = " ";
 
             /// <summary> Resx file extension </summary>
             public const string ResxExtension = "resx";
 
             /// <summary> Widget Dropdown </summary>
             public const string WidgetDropDown = "Dropdown";
+
             /// <summary> Widget Radio Buttons </summary>
             public const string WidgetRadioButtons = "RadioButtons";
+
             /// <summary> Widget Numeric </summary>
             public const string WidgetNumeric = "Numeric";
+
             /// <summary> Widget Texbox </summary>
             public const string WidgetTextbox = "Textbox";
+
             /// <summary> Widget Finder </summary>
             public const string WidgetFinder = "Finder";
+
             /// <summary> Widget Date Time </summary>
             public const string WidgetDateTime = "DateTime";
+
             /// <summary> Widget Checkbox </summary>
             public const string WidgetCheckbox = "Checkbox";
+
             /// <summary> Widget Time </summary>
             public const string WidgetTime = "Time";
+
             /// <summary> Widget Tab </summary>
             public const string WidgetTab = "Tab";
+
             /// <summary> Widget Tab Page </summary>
             public const string WidgetTabPage = "TabPage";
+
             /// <summary> Widget Grid </summary>
             public const string WidgetGrid = "Grid";
+
             /// <summary> Widget Button </summary>
             public const string WidgetButton = "Button";
 
             /// <summary> Prefix Palette </summary>
             public const string PrefixPalette = "palette";
+
             /// <summary> Prefix Column </summary>
             public const string PrefixColumn = "Column";
+
             /// <summary> Prefix Tab </summary>
             public const string PrefixTab = "tabStrip";
+
             /// <summary> Prefix Grid </summary>
             public const string PrefixGrid = "grid";
+
             /// <summary> Prefix Button </summary>
             public const string PrefixButton = "btn";
 
@@ -280,57 +322,73 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             /// <summary> Node Entities </summary>
             public const string NodeEntities = "entities";
+
             /// <summary> Node Layout </summary>
             public const string NodeLayout = "Layout";
+
             /// <summary> Node Controls </summary>
             public const string NodeControls = "Controls";
+
             /// <summary> Node Control </summary>
             public const string NodeControl = "Control";
 
             /// <summary> Attribute Type </summary>
             public const string AttributeType = "type";
+
             /// <summary> Attribute New Row </summary>
             public const string AttributeNewRow = "newRow";
+
             /// <summary> Attribute Widget </summary>
             public const string AttributeWidget = "widget";
+
             /// <summary> Attribute Entity </summary>
             public const string AttributeEntity = "entity";
+
             /// <summary> Attribute Property </summary>
             public const string AttributeProperty = "property";
+
             /// <summary> Attribute Id </summary>
             public const string AttributeId = "id";
+
             /// <summary> Attribute Div </summary>
             public const string AttributeDiv = "div";
+
             /// <summary> Attribute Li </summary>
             public const string AttributeLi = "li";
+
             /// <summary> Attribute True </summary>
             public const string AttributeTrue = "true";
+
             /// <summary> Attribute False </summary>
             public const string AttributeFalse = "false";
+
             /// <summary> Attribute Text </summary>
             public const string AttributeText = "text";
+
             /// <summary> Attribute Grid Column </summary>
             public const string AttributeGridColumn = "gridColumn";
+
             /// <summary> Attribute Finder </summary>
             public const string AttributeFinderProperty = "finderProperty";
+
             /// <summary> Attribute Finder </summary>
             public const string AttributeFinderUrl = "finderUrl";
+
             /// <summary> Attribute Finder File Name </summary>
             public const string AttributeFinderFileName = "finderFileName";
+
             /// <summary> Attribute Time Only </summary>
             public const string AttributeTimeOnly = "timeOnly";
 
-            /// <summary>
-            /// Drop down selection for none
-            /// </summary>
+            /// <summary> Drop down selection for none </summary>
             public const string None = "[None]";
         }
+
         #endregion
 
         #region Private Enumerations
-        /// <summary>
-        /// Enum for Mode Types
-        /// </summary>
+
+        /// <summary> Enum for Mode Types </summary>
         private enum ModeTypeEnum
         {
             /// <summary> No Mode </summary>
@@ -348,12 +406,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             /// <summary> No control </summary>
             None = 0,
+
             /// <summary> Tab control </summary>
             Tab = 1,
+
             /// <summary> Label control (business property) </summary>
             Label = 2,
+
             /// <summary> Grid control </summary>
             Grid = 3,
+
             /// <summary> Button control </summary>
             Button = 4
         }
@@ -380,14 +442,61 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public Generation()
         {
             InitializeComponent();
-            Localize();
+            Size = new Size(FORM_WIDTH, FORM_HEIGHT);
             CreatePalette(splitDesigner.Panel1);
+        }
+
+        /// <summary> Initialization for Web solutions </summary>
+        public void InitWebGeneration()
+        {
+            _wizardType = WizardType.WEB;
+            LocalizeWeb();
             InitEvents();
             InitInfo();
-            //ProcessingSetup(true);
             Processing("");
 
             cboRepositoryType.Focus();
+        }
+
+        /// <summary> Initialization for Web API solutions </summary>
+        public void InitWebApiGeneration()
+        {
+            _wizardType = WizardType.WEBAPI;
+            LocalizeWebApi();
+            InitEvents();
+
+            // Default
+            btnBack.Enabled = false;
+
+            // Init wizard steps
+            _wizardSteps.Clear();
+
+            // Init Panels
+            if (_currentWizardStep == -1)
+            {
+                InitPanel(pnlWebApiCredential);
+            }
+
+            InitPanel(pnlEntities);
+            InitPanel(pnlGeneratedCode);
+
+            // Add steps
+            AddStep(Resources.StepWebApiCredentials, Resources.StepWebApiCredentialsDesc, pnlWebApiCredential);
+            AddStep(string.Format(Resources.StepTitleEntities, Resources.WebAPI), string.Format(Resources.StepDescriptionEntities, Resources.WebAPI), pnlEntities);
+            AddStep(Resources.StepTitleGeneratedCode, Resources.StepDescriptionGeneratedCode, pnlGeneratedCode);
+
+
+            SetupEntitiesTree();
+
+            InitEntityFields(RepositoryType.HeaderDetail);
+
+
+            // Display first step on initial load
+            if (_currentWizardStep == -1)
+            {
+                NextStep();
+            }
+
         }
 
         #endregion
@@ -398,24 +507,43 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="solution">Solution </param>
         /// <remarks>Solution must be a Sage 300 solution with known projects</remarks>
         /// <returns>True if valid otherwise false</returns>
-        public bool ValidPrerequisites(Solution solution)
+        public bool ValidPrerequisitesForWeb(Solution solution)
         {
             // Validate solution
             if (!ValidSolution(solution))
             {
-                DisplayMessage(Resources.InvalidSolution, MessageBoxIcon.Error);
                 return false;
             }
 
             // Validate projects
-            if (!ValidProjects(solution))
+            if (!ValidWebProjects(solution))
             {
-                DisplayMessage(Resources.InvalidProjects, MessageBoxIcon.Error);
                 return false;
             }
 
             // Build modules dropdowns for validations
-            BuildModules();
+            BuildModulesForWeb();
+
+            return true;
+        }
+
+        /// <summary> Are the prerequisites valid for executing the wizard </summary>
+        /// <param name="solution">Solution </param>
+        /// <remarks>Solution must be a Sage 300 Web API solution with known projects</remarks>
+        /// <returns>True if valid otherwise false</returns>
+        public bool ValidPrerequisitesForWebApi(Solution solution)
+        {
+            // Validate solution
+            if (!ValidSolution(solution))
+            {
+                return false;
+            }
+
+            // Validate projects
+            if (!ValidWebApiProjects(solution))
+            {
+                return false;
+            }
 
             return true;
         }
@@ -440,17 +568,36 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             // Disable entity controls
             EnableEntityControls(false);
+
+            if (_wizardType == WizardType.WEBAPI)
+            {
+                // hide tab pages and controls related to web projects
+                tabEntity.TabPages.Remove(tabPage2);
+                tabEntity.TabPages.Remove(tabPage4);
+
+                txtReportIniFile.Visible = false;
+                lblReportIniFile.Visible = false;
+                lblReportKeys.Visible = false;
+                cboReportKeys.Visible = false;
+                lblReportProgramId.Visible = false;
+                txtReportProgramId.Visible = false;
+            }
+            else
+            {
+                // remove verbs tab page
+                tabEntity.TabPages.Remove(tabPage5);
+            }
         }
 
-		/// <summary>
-		/// Wrapper method to check the current panel
-		/// </summary>
-		/// <param name="panelName">The panel name</param>
-		/// <returns>true : current panel | false : not current panel</returns>
-		private bool IsCurrentPanel(string panelName)
-		{
-			return _wizardSteps[_currentWizardStep].Panel.Name.Equals(panelName);
-		}
+        /// <summary>
+        /// Wrapper method to check the current panel
+        /// </summary>
+        /// <param name="panelName">The panel name</param>
+        /// <returns>true : current panel | false : not current panel</returns>
+        private bool IsCurrentPanel(string panelName)
+        {
+            return _wizardSteps[_currentWizardStep].Panel.Name.Equals(panelName);
+        }
 
         /// <summary> Validate Step before proceeding to next step </summary>
         /// <returns>True for valid step other wise false</returns>
@@ -463,23 +610,36 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var valid = string.Empty;
 
             // Code Type Step
-			if (IsCurrentPanel(Constants.PanelCodeType))
-			{
+            if (IsCurrentPanel(Constants.PanelCodeType))
+            {
                 try
                 {
                     valid = ValidCodeTypeStep();
                 }
-                catch
+                catch (Exception ex)
                 {
                     // Wizard is not compatible with installed Sage 300 libraries
+                    valid = ex.Message; // Resources.InvalidVersion;
+                }
+            }
+
+            // Web Api credential
+            if (IsCurrentPanel(Constants.PanelWebApiCredential))
+            {
+                try
+                {
+                    valid = ValidWebApiCredentialStep();
+                }
+                catch
+                {
                     valid = Resources.InvalidVersion;
                 }
             }
 
             // Entities Step
-			if (IsCurrentPanel(Constants.PanelEntities))
-			{
-					valid = ValidEntitiesStep();
+            if (IsCurrentPanel(Constants.PanelEntities))
+            {
+                valid = ValidEntitiesStep();
             }
 
             // UI Step
@@ -539,12 +699,60 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     // Init session to see if credentials are valid
                     var session = new Session();
                     session.InitEx2(null, string.Empty, "WX", "WX1000", txtVersion.Text.Trim(), 1);
-                    session.Open(txtUser.Text.Trim(), txtPassword.Text.Trim(), txtCompany.Text.Trim(), DateTime.UtcNow, 0);
+                    session.Open(txtUser.Text.Trim(), txtPassword.Text.Trim(), txtCompany.Text.Trim(), DateTime.UtcNow,
+                        0);
                 }
                 catch
                 {
                     sessionValid = Resources.InvalidSettingCredentials;
                 }
+            }
+
+            return sessionValid;
+        }
+
+        /// <summary> Valid WebApi Credential Step</summary>
+        /// <returns>string.Empty if valid otherwise message to display</returns>
+        private string ValidWebApiCredentialStep()
+        {
+            // If code type doesn't need to authenticate, this is automatically OK
+            var sessionValid = string.Empty;
+
+            // User ID
+            if (string.IsNullOrEmpty(txtWebApiUser.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.User.Replace(":", ""));
+            }
+
+            // Version
+            if (string.IsNullOrEmpty(txtWebApiVersion.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.Version.Replace(":", ""));
+            }
+
+            // Company
+            if (string.IsNullOrEmpty(txtWebApiCompany.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.Company.Replace(":", ""));
+            }
+
+            // Module 
+            if (string.IsNullOrEmpty(cboWebApiModule.Text.Trim()))
+            {
+                return string.Format(Resources.InvalidSettingRequiredField, Resources.Module.Replace(":", ""));
+            }
+
+            try
+            {
+                // Init session to see if credentials are valid
+                var session = new Session();
+                session.InitEx2(null, string.Empty, "WX", "WX1000", GlobalConstants.AccpacDotNetVersion, 1);
+                session.Open(txtUser.Text.Trim(), txtWebApiPassword.Text.Trim(), txtWebApiCompany.Text.Trim(),
+                    DateTime.UtcNow, 0);
+            }
+            catch
+            {
+                sessionValid = Resources.InvalidSettingCredentials;
             }
 
             return sessionValid;
@@ -658,16 +866,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (GetRepositoryType() == RepositoryType.HeaderDetail)
             {
                 // A grid must exist
-                if (_controlsList.Values.Where(x => x.Control != null && 
-                                               x.Control.GetType() == typeof(FlowLayoutPanel)).Count() == 0)
+                if (_controlsList.Values.Where(x => x.Control != null &&
+                                                    x.Control.GetType() == typeof(FlowLayoutPanel)).Count() == 0)
                 {
                     return Resources.InvalidNoGrid;
                 }
             }
 
             // If a grid is specified, it must contain at least 1 property
-            var grids = _controlsList.Values.Where(x => x.Control != null && 
-                                                   x.Control.GetType() == typeof(FlowLayoutPanel));
+            var grids = _controlsList.Values.Where(x => x.Control != null &&
+                                                        x.Control.GetType() == typeof(FlowLayoutPanel));
             foreach (var grid in grids)
             {
                 if (grid.Control.Controls.Count == 0)
@@ -721,16 +929,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="uniqueDescriptions">Dictionary of unique descriptions</param>
         /// <param name="entityCompositions">The compositions list to validate</param>
         /// <returns>string.Empty if valid otherwise message to display</returns>
-        private string ValidEntity(string resxName, 
-                                   string viewId, 
-                                   string entityName, 
-                                   string modelName,
-                                   RepositoryType repositoryType, 
-                                   string reportKeys, 
-                                   string programId, 
-                                   List<BusinessField> entityFields,
-                                   Dictionary<string, bool> uniqueDescriptions, 
-                                   List<Composition> entityCompositions)
+        private string ValidEntity(string resxName,
+            string viewId,
+            string entityName,
+            string modelName,
+            RepositoryType repositoryType,
+            string reportKeys,
+            string programId,
+            List<BusinessField> entityFields,
+            Dictionary<string, bool> uniqueDescriptions,
+            List<Composition> entityCompositions)
         {
             // View ID
             if (string.IsNullOrEmpty(viewId))
@@ -762,7 +970,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Program ID
                 if (string.IsNullOrEmpty(programId))
                 {
-                    return string.Format(Resources.InvalidSettingRequiredField, Resources.ReportProgramId.Replace(":", ""));
+                    return string.Format(Resources.InvalidSettingRequiredField,
+                        Resources.ReportProgramId.Replace(":", ""));
                 }
             }
 
@@ -773,7 +982,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Resx name must end with Resx
-            if (!resxName.EndsWith(Resources.Resx))
+            if (_wizardType == WizardType.WEB && !resxName.EndsWith(Resources.Resx))
             {
                 return Resources.InvalidResxName;
             }
@@ -790,8 +999,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Iterate existing entities specified thus far
                 foreach (var businessView in _entities)
                 {
-                    if (!businessView.Text.Equals(ProcessGeneration.Constants.NewEntityText) && 
-                         businessView.Properties[BusinessView.Constants.EntityName].Equals(entityName))
+                    if (!businessView.Text.Equals(ProcessGeneration.Constants.NewEntityText) &&
+                        businessView.Properties[BusinessView.Constants.EntityName].Equals(entityName))
                     {
                         return Resources.InvalidEntityDuplicate;
                     }
@@ -813,7 +1022,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
             // Ensure 'EntityName' is not used in any fields
-            validFields = !entityFields.ToList().Any(t => t.Name.Equals(ProcessGeneration.Constants.ConstantEntityName));
+            validFields = !entityFields.ToList()
+                .Any(t => t.Name.Equals(ProcessGeneration.Constants.ConstantEntityName));
             if (!validFields)
             {
                 return Resources.InvalidSettingEntityName;
@@ -844,9 +1054,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return string.Empty;
         }
 
-
-        /// <summary> Localize </summary>
-        private void Localize()
+        /// <summary> Localize web screen </summary>
+        private void LocalizeWeb()
         {
             // Set the application title
             Text = Resources.CodeGenerationWizard;
@@ -880,7 +1089,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             tooltip.SetToolTip(lblModule, Resources.ModuleTip);
 
             // Entities Step
-            lblEntities.Text = string.Format(Resources.EntitiesInstructions, ProcessGeneration.Constants.ElementEntities);
+            lblEntities.Text =
+                string.Format(Resources.EntitiesInstructions, ProcessGeneration.Constants.ElementEntities);
 
             lblViewID.Text = Resources.ViewId;
             tooltip.SetToolTip(lblViewID, Resources.ViewIdTip);
@@ -931,6 +1141,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             tabPage4.Text = Resources.Composition;
             tabPage4.ToolTipText = Resources.CompositionTip;
 
+            tabPage5.Text = Resources.Verbs;
+            tabPage5.ToolTipText = Resources.VerbsTip;
+
             tooltip.SetToolTip(grdEntityCompositions, Resources.EntityCompositionGridTip);
 
             // UI Step
@@ -940,7 +1153,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             tabUI.TabPages[1].Text = Resources.FinderTab;
             tooltip.SetToolTip(tabUI.TabPages[1], Resources.FinderTabTip);
 
-            // No available for 2022
+            // Not available (yet)
             //tabUI.TabPages[2].Text = Resources.HamburgerTab;
             //tooltip.SetToolTip(tabUI.TabPages[2], Resources.HamburgerTabTip);
 
@@ -966,6 +1179,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             txtVersion.Text = GlobalConstants.AccpacDotNetVersion;
         }
+
+        /// <summary> Localize web api screen </summary>
+        private void LocalizeWebApi()
+        {
+            lblResxName.Text = Resources.ResourceName;
+            tooltip.SetToolTip(lblResxName, Resources.ResourceNameTip);
+        }
+
         /// <summary> Determine if the Solution is valid </summary>
         /// <param name="solution">Solution </param>
         /// <returns>True if valid otherwise false</returns>
@@ -978,10 +1199,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <summary> Determine if Projects in Solution are valid </summary>
         /// <param name="solution">Solution </param>
         /// <returns>True if valid otherwise false</returns>
-        private bool ValidProjects(_Solution solution)
+        private bool ValidWebProjects(_Solution solution)
         {
             try
             {
+                _projects.Clear();
+
                 // Locals
                 //var solutionFolder = Path.GetDirectoryName(solution.FullName);
                 var projects = GetProjects(solution);
@@ -1035,9 +1258,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                 // Iterate directories looking for the "module folder
                                 var directories = Directory.GetDirectories(areaPath);
                                 foreach (var moduleParts in from directory in directories
-                                                            let modulePath = Path.Combine(directory, "Constants")
-                                                            where Directory.Exists(modulePath)
-                                                            select directory.Split('\\'))
+                                         let modulePath = Path.Combine(directory, "Constants")
+                                         where Directory.Exists(modulePath)
+                                         select directory.Split('\\'))
                                 {
                                     module = moduleParts[moduleParts.Length - 1];
 
@@ -1091,9 +1314,95 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     _projects.ContainsKey(ProcessGeneration.Constants.WebKey));
         }
 
-        /// <summary>
-        /// Set the language flags based on the existence of resx files
-        /// </summary>
+        /// <summary> Determine if Projects in Solution are valid for web api solution</summary>
+        /// <param name="solution">Solution </param>
+        /// <returns>True if valid otherwise false</returns>
+        private bool ValidWebApiProjects(_Solution solution)
+        {
+            try
+            {
+                _projects.Clear();
+
+                // Clear first
+                cboWebApiModule.Items.Clear();
+
+                // Add empty item at top of list
+                cboWebApiModule.Items.Add(string.Empty);
+
+                // Locals
+                //var solutionFolder = Path.GetDirectoryName(solution.FullName);
+                var projects = GetProjects(solution);
+
+                // Iterate solution to get projects for analysis and usage
+                foreach (var project in projects)
+                {
+                    var projectName = Path.GetFileNameWithoutExtension(project.FullName);
+                    if (string.IsNullOrEmpty(projectName))
+                    {
+                        continue;
+                    }
+
+                    var segments = projectName.Split('.');
+                    var key = segments[segments.Length - 1];
+                    var module = string.Empty;
+
+                    // Grab the company namespace from the Business Repository project
+                    if (key.Equals(ProcessGeneration.Constants.WebApiKey))
+                    {
+                        module = segments[segments.Length - 2];
+                        _companyNamespace = projectName.Substring(0,
+                            projectName.IndexOf(module + "." + key, StringComparison.InvariantCulture) - 1);
+
+                        // We will use the copyright from this project for all generated files
+                        _copyright = GetCopyright(project);
+
+                    }
+                    else if (key.Equals(ProcessGeneration.Constants.ModelsKey) && segments[segments.Length - 2]
+                                 .Equals(ProcessGeneration.Constants.WebApiKey))
+                    {
+                        key = ProcessGeneration.Constants.WebApiModelsKey;
+                        module = segments[segments.Length - 3];
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
+                    if (!cboWebApiModule.Items.Contains(module))
+                    {
+                        cboWebApiModule.Items.Add(module);
+                    }
+
+                    var projectInfo = new ProjectInfo
+                    {
+                        ProjectFolder = Path.GetDirectoryName(project.FullName),
+                        ProjectName = projectName,
+                        Project = project
+                    };
+
+                    // Add to list of projects by type and module
+                    if (_projects.ContainsKey(key))
+                    {
+                        _projects[key].Add(module, projectInfo);
+                    }
+                    else
+                    {
+                        _projects.Add(key, new Dictionary<string, ProjectInfo> { { module, projectInfo } });
+                    }
+                }
+
+            }
+            catch
+            {
+                // No action as will be reviewed by caller                    
+            }
+
+            // Must have all projects to be valid
+            return (_projects.ContainsKey(ProcessGeneration.Constants.WebApiKey) &&
+                    _projects.ContainsKey(ProcessGeneration.Constants.WebApiModelsKey));
+        }
+
+        /// <summary> Set the language flags based on the existence of resx files </summary>
         /// <param name="items">The ProjectItems list to inspect</param>
         private void SetLanguageFlagsBasedOnExistingProjectResourceFiles(ProjectItems items)
         {
@@ -1145,8 +1454,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 if (temp == GlobalConstants.LanguageExtensions.English.ToLowerInvariant()) _includeEnglish = true;
                 if (temp == GlobalConstants.LanguageExtensions.French.ToLowerInvariant()) _includeFrench = true;
                 if (temp == GlobalConstants.LanguageExtensions.Spanish.ToLowerInvariant()) _includeSpanish = true;
-                if (temp == GlobalConstants.LanguageExtensions.ChineseSimplified.ToLowerInvariant()) _includeChineseSimplified = true;
-                if (temp == GlobalConstants.LanguageExtensions.ChineseTraditional.ToLowerInvariant()) _includeChineseTraditional = true;
+                if (temp == GlobalConstants.LanguageExtensions.ChineseSimplified.ToLowerInvariant())
+                    _includeChineseSimplified = true;
+                if (temp == GlobalConstants.LanguageExtensions.ChineseTraditional.ToLowerInvariant())
+                    _includeChineseTraditional = true;
             });
         }
 
@@ -1285,6 +1596,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     {
                         retVal = parsedLine[1];
                     }
+
                     break;
                 }
             }
@@ -1303,12 +1615,23 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _generation.ProcessingEvent += ProcessingEvent;
             _generation.StatusEvent += StatusEvent;
 
+            // Check box for all compositions
+            _allCompositions = new CheckBox
+            {
+                Checked = true
+            };
+
+            _allCompositions.CheckedChanged += AllCompositionsCheckedChanged;
+
             // Entity Step Events
             _addEntityMenuItem.Click += AddEntityMenuItemOnClick;
             _editEntityMenuItem.Click += EditEntityMenuItemOnClick;
             _deleteEntityMenuItem.Click += DeleteEntityMenuItemOnClick;
             _deleteEntitiesMenuItem.Click += DeleteEntitiesMenuItemOnClick;
             _editContainerName.Click += EditContainerNameMenuItemOnClick;
+
+            if (_wizardType == WizardType.WEBAPI)
+                return;
 
             // Context Events
             _dropDownMenuItem.Click += LayoutMenuItemOnClick;
@@ -1317,12 +1640,6 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _textboxMenuItem.Click += LayoutMenuItemOnClick;
             _finderMenuItem.Click += LayoutMenuItemOnClick;
 
-            // Check box for all compositions
-            _allCompositions = new CheckBox
-            {
-                Checked = true
-            };
-            _allCompositions.CheckedChanged += AllCompositionsCheckedChanged;
 
             // Default to Flat Repository
             cboRepositoryType.SelectedIndex = Convert.ToInt32(RepositoryType.Flat);
@@ -1401,6 +1718,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 txtViewID.Focus();
             }
+
+            // hide verbs tab if it is a detail view
+            if (treeNode.Parent.Parent != null && _wizardType == WizardType.WEBAPI)
+            {
+                if (tabEntity.TabPages.Contains(tabPage5))
+                    tabEntity.TabPages.Remove(tabPage5);
+            }
+            else
+            {
+                if (!tabEntity.TabPages.Contains(tabPage5))
+                    tabEntity.TabPages.Add(tabPage5);
+            }
         }
 
         /// <summary> Set node color when tree does not have focuus</summary>
@@ -1408,11 +1737,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="setSelected">true for highligh color otherwise standard color </param>
         private static void SetNodeColor(TreeNode treeNode, bool setSelected)
         {
-            treeNode.ForeColor = setSelected ? Color.FromKnownColor(KnownColor.HighlightText)
-                                             : Color.FromKnownColor(KnownColor.WindowText);
+            treeNode.ForeColor = setSelected
+                ? Color.FromKnownColor(KnownColor.HighlightText)
+                : Color.FromKnownColor(KnownColor.WindowText);
 
-            treeNode.BackColor = setSelected ? Color.FromKnownColor(KnownColor.Highlight)
-                                             : Color.FromKnownColor(KnownColor.Window);
+            treeNode.BackColor = setSelected
+                ? Color.FromKnownColor(KnownColor.Highlight)
+                : Color.FromKnownColor(KnownColor.Window);
         }
 
         /// <summary> Enable or disable entities controls</summary>
@@ -1472,8 +1803,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
             }
 
-            chkGenerateFinder.Enabled = 
-                                !repositoryType.Equals(RepositoryType.Process);
+            chkGenerateFinder.Enabled =
+                !repositoryType.Equals(RepositoryType.Process);
 
             chkGenerateDynamicEnablement.Enabled = (!repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
             chkGenerateClientFiles.Enabled = (!repositoryType.Equals(RepositoryType.HeaderDetail) && enable);
@@ -1486,10 +1817,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 chkGenerateFinder.Checked = false;
             }
+
             if (!chkGenerateDynamicEnablement.Enabled)
             {
                 chkGenerateDynamicEnablement.Checked = false;
             }
+
             if (!chkGenerateClientFiles.Enabled)
             {
                 chkGenerateClientFiles.Checked = false;
@@ -1512,14 +1845,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 // Options defaults
                 chkGenerateFinder.Checked =
-                                !repositoryType.Equals(RepositoryType.Process) &&
-                                !repositoryType.Equals(RepositoryType.HeaderDetail);
+                    !repositoryType.Equals(RepositoryType.Process) &&
+                    !repositoryType.Equals(RepositoryType.HeaderDetail);
 
                 // Finder default for Header-Detail should be checked for header entity only otherwise unchecked
                 if (repositoryType.Equals(RepositoryType.HeaderDetail))
                 {
                     // Checked if header entity
-                    chkGenerateFinder.Checked = _clickedEntityTreeNode.Name.Equals(ProcessGeneration.Constants.ElementEntities) && 
+                    chkGenerateFinder.Checked =
+                        _clickedEntityTreeNode.Name.Equals(ProcessGeneration.Constants.ElementEntities) &&
                         _clickedEntityTreeNode.Nodes.Count.Equals(1);
                 }
 
@@ -1532,10 +1866,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     chkGenerateFinder.Checked = false;
                 }
+
                 if (!chkGenerateDynamicEnablement.Enabled)
                 {
                     chkGenerateDynamicEnablement.Checked = false;
                 }
+
                 if (!chkGenerateClientFiles.Enabled)
                 {
                     chkGenerateClientFiles.Checked = false;
@@ -1565,13 +1901,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             txtEntityName.Text = businessView.Properties[BusinessView.Constants.EntityName];
             txtModelName.Text = businessView.Properties[BusinessView.Constants.ModelName];
-            txtResxName.Text = businessView.Properties[BusinessView.Constants.ResxName];
+            txtResxName.Text = _wizardType == WizardType.WEB?businessView.Properties[BusinessView.Constants.ResxName] : businessView.Properties[BusinessView.Constants.ResourceName];
 
             // Options tab
             chkGenerateFinder.Checked = businessView.Options[BusinessView.Constants.GenerateFinder];
             chkGenerateGridModel.Checked = businessView.Options[BusinessView.Constants.GenerateGridModel];
             chkSequenceRevisionList.Checked = businessView.Options[BusinessView.Constants.SeqenceRevisionList];
-            chkGenerateDynamicEnablement.Checked = businessView.Options[BusinessView.Constants.GenerateDynamicEnablement];
+            chkGenerateDynamicEnablement.Checked =
+                businessView.Options[BusinessView.Constants.GenerateDynamicEnablement];
             chkGenerateClientFiles.Checked = businessView.Options[BusinessView.Constants.GenerateClientFiles];
             chkGenerateIfExist.Checked = businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists];
 
@@ -1673,6 +2010,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                 DeleteControlFromLayout((Control)tabPage, ControlType.Tab);
                                 break;
                             }
+
                             break;
                         }
                         else if (type == typeof(Label))
@@ -1703,7 +2041,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Clear tree
                 treeUIEntities.Nodes.Clear();
                 // Clear controls list
-                foreach (var key in _controlsList.Keys.ToList().Where(key => !key.Equals(Constants.PrefixPalette + "1")))
+                foreach (var key in _controlsList.Keys.ToList()
+                             .Where(key => !key.Equals(Constants.PrefixPalette + "1")))
                 {
                     _controlsList.Remove(key);
                 }
@@ -1786,16 +2125,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 composition.ViewId = composition.ViewId.ToUpper();
             }
 
-            var success = ValidEntity(txtResxName.Text, 
-                                      txtViewID.Text, 
-                                      txtEntityName.Text, 
-                                      txtModelName.Text,
-                                      repositoryType, 
-                                      cboReportKeys.Text, 
-                                      txtReportProgramId.Text, 
-                                      _entityFields.ToList(),
-                                      uniqueDescriptions, 
-                                      _entityCompositions.ToList());
+            var success = ValidEntity(txtResxName.Text,
+                txtViewID.Text,
+                txtEntityName.Text,
+                txtModelName.Text,
+                repositoryType,
+                cboReportKeys.Text,
+                txtReportProgramId.Text,
+                _entityFields.ToList(),
+                uniqueDescriptions,
+                _entityCompositions.ToList());
             if (!string.IsNullOrEmpty(success))
             {
                 DisplayMessage(success, MessageBoxIcon.Error);
@@ -1812,24 +2151,89 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             ReconcileEnumerationDataBetweenEnumsAndFields(businessView);
 #endif
             // Get valued from controls and add to object
-            businessView.Properties[BusinessView.Constants.ModuleId] = cboModule.Text;
-            businessView.Properties[BusinessView.Constants.ViewId] = txtViewID.Text;
             businessView.Properties[BusinessView.Constants.ReportIni] = txtReportIniFile.Text;
             businessView.Properties[BusinessView.Constants.ReportKey] = cboReportKeys.Text;
-            businessView.Properties[BusinessView.Constants.ProgramId] = txtReportProgramId.Text;
+
+            if (_wizardType != WizardType.WEBAPI)
+            {
+                // override the ProgramId for non-WebApi projects
+                businessView.Properties[BusinessView.Constants.ProgramId] = txtReportProgramId.Text;
+                businessView.Properties[BusinessView.Constants.ResxName] = txtResxName.Text;
+            }
+            else
+            {
+                businessView.Properties[BusinessView.Constants.ResourceName] = txtResxName.Text;
+            }
+
             businessView.Properties[BusinessView.Constants.EntityName] = txtEntityName.Text;
             businessView.Properties[BusinessView.Constants.ModelName] = txtModelName.Text;
-            businessView.Properties[BusinessView.Constants.ResxName] = txtResxName.Text;
 
-            businessView.Properties[BusinessView.Constants.WorkflowKindId] = (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid().ToString() : Guid.Empty.ToString();
+            businessView.Properties[BusinessView.Constants.WorkflowKindId] =
+                (repositoryType.Equals(RepositoryType.Process)) ? Guid.NewGuid().ToString() : Guid.Empty.ToString();
 
             businessView.Options[BusinessView.Constants.GenerateFinder] = chkGenerateFinder.Checked;
             businessView.Options[BusinessView.Constants.GenerateGridModel] = chkGenerateGridModel.Checked;
             businessView.Options[BusinessView.Constants.SeqenceRevisionList] = chkSequenceRevisionList.Checked;
-            businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = chkGenerateDynamicEnablement.Checked;
+            businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] =
+                chkGenerateDynamicEnablement.Checked;
             businessView.Options[BusinessView.Constants.GenerateClientFiles] = chkGenerateClientFiles.Checked;
             businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists] = chkGenerateIfExist.Checked;
             businessView.Options[BusinessView.Constants.GenerateEnumsInSingleFile] = true; // Checkbox has been removed
+
+            if (_wizardType == WizardType.WEBAPI)
+            {
+                var verbs = new StringBuilder("[RestrictedViewResourceController(");
+
+                if (chkWebApiAllowCreate.Checked)
+                {
+                    verbs.Append("AllowCreate = true");
+                }
+
+                if (chkWebApiAllowDelete.Checked)
+                {
+                    if (verbs.Length > 0)
+                        verbs.Append(", ");
+
+                    verbs.Append("AllowDelete = true");
+                }
+
+                if (chkWebApiAllowPatch.Checked)
+                {
+                    if (verbs.Length > 0)
+                        verbs.Append(", ");
+
+                    verbs.Append("AllowPatch = true");
+                }
+
+                if (chkWebApiAllowGet.Checked)
+                {
+                    if (verbs.Length > 0)
+                        verbs.Append(", ");
+
+                    verbs.Append("AllowGet = true");
+                }
+
+                if (chkWebApiAllowProcess.Checked)
+                {
+                    if (verbs.Length > 0)
+                        verbs.Append(", ");
+
+                    verbs.Append("AllowProcess = true");
+                }
+
+                if (chkWebApiAllowPut.Checked)
+                {
+                    if (verbs.Length > 0)
+                        verbs.Append(", ");
+
+                    verbs.Append("AllowPut = true");
+                }
+
+                verbs.Append(")]");
+                businessView.Properties[BusinessView.Constants.Verbs] = verbs.ToString();
+                businessView.Properties[BusinessView.Constants.Extension] = string.Empty;
+
+            }
 
             businessView.Fields = _entityFields.ToList();
 
@@ -1866,7 +2270,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             businessView.Text = businessView.Properties[BusinessView.Constants.EntityName];
 
             node.Name = BuildEntityNodeName(businessView);
-            node.Text = BuildEntityText(businessView);
+            node.Text = _wizardType == WizardType.WEB
+                ? BuildEntityText(businessView)
+                : BuildWebApiEntityText(businessView);
             node.Tag = businessView;
 
             // Reset mode
@@ -1985,47 +2391,82 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var repositoryType = GetRepositoryType();
 
-            var text = ProcessGeneration.Constants.PropertyEntity + "=\"" + businessView.Properties[BusinessView.Constants.EntityName] + "\" ";
-            text += ProcessGeneration.Constants.PropertyModule + "=\"" + businessView.Properties[BusinessView.Constants.ModuleId] + "\" ";
+            var text = ProcessGeneration.Constants.PropertyEntity + "=\"" +
+                       businessView.Properties[BusinessView.Constants.EntityName] + "\" ";
+            text += ProcessGeneration.Constants.PropertyModule + "=\"" +
+                    businessView.Properties[BusinessView.Constants.ModuleId] + "\" ";
 
             // Show view id if not a report
             if (!repositoryType.Equals(RepositoryType.Report))
             {
-                text += ProcessGeneration.Constants.PropertyViewId + "=\"" + businessView.Properties[BusinessView.Constants.ViewId] + "\" ";
+                text += ProcessGeneration.Constants.PropertyViewId + "=\"" +
+                        businessView.Properties[BusinessView.Constants.ViewId] + "\" ";
             }
 
             // Show program id if a report
             if (repositoryType.Equals(RepositoryType.Report))
             {
-                text += ProcessGeneration.Constants.PropertyProgramId + "=\"" + businessView.Properties[BusinessView.Constants.ProgramId] + "\" ";
+                text += ProcessGeneration.Constants.PropertyProgramId + "=\"" +
+                        businessView.Properties[BusinessView.Constants.ProgramId] + "\" ";
             }
 
             // Show workflow id if a process
             if (repositoryType.Equals(RepositoryType.Process))
             {
-                text += ProcessGeneration.Constants.PropertyWorkflowId + "=\"" + businessView.Properties[BusinessView.Constants.WorkflowKindId] + "\" ";
+                text += ProcessGeneration.Constants.PropertyWorkflowId + "=\"" +
+                        businessView.Properties[BusinessView.Constants.WorkflowKindId] + "\" ";
             }
 
-            text += ProcessGeneration.Constants.PropertyProperties + "=\"" + businessView.Fields.Count.ToString() + "\" ";
+            text += ProcessGeneration.Constants.PropertyProperties + "=\"" + businessView.Fields.Count.ToString() +
+                    "\" ";
 
             // Show compositions if a header-detail
             if (repositoryType.Equals(RepositoryType.HeaderDetail))
             {
-                text += ProcessGeneration.Constants.PropertyComps + "=\"" + businessView.Compositions.Where(x => x.Include).Count() + "\" ";
+                text += ProcessGeneration.Constants.PropertyComps + "=\"" +
+                        businessView.Compositions.Where(x => x.Include).Count() + "\" ";
             }
 
             // Show Finder and Dynamic Enablement if not a report
             if (!repositoryType.Equals(RepositoryType.Report))
             {
-                text += ProcessGeneration.Constants.PropertyFinder + "=\"" + businessView.Options[BusinessView.Constants.GenerateFinder].ToString() + "\" ";
-                text += ProcessGeneration.Constants.PropertyGridModel + "=\"" + businessView.Options[BusinessView.Constants.GenerateGridModel].ToString() + "\" ";
-                text += ProcessGeneration.Constants.PropertyEnablement + "=\"" + businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString() + "\" ";
+                text += ProcessGeneration.Constants.PropertyFinder + "=\"" +
+                        businessView.Options[BusinessView.Constants.GenerateFinder].ToString() + "\" ";
+                text += ProcessGeneration.Constants.PropertyGridModel + "=\"" +
+                        businessView.Options[BusinessView.Constants.GenerateGridModel].ToString() + "\" ";
+                text += ProcessGeneration.Constants.PropertyEnablement + "=\"" +
+                        businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString() + "\" ";
             }
 
-            text += ProcessGeneration.Constants.PropertyClientFiles + "=\"" + businessView.Options[BusinessView.Constants.GenerateClientFiles].ToString() + "\" ";
-            text += ProcessGeneration.Constants.PropertyIfExists + "=\"" + businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists].ToString() + "\" ";
-            text += ProcessGeneration.Constants.PropertySingleFile + "=\"" + businessView.Options[BusinessView.Constants.GenerateEnumsInSingleFile].ToString() + "\" ";
+            text += ProcessGeneration.Constants.PropertyClientFiles + "=\"" +
+                    businessView.Options[BusinessView.Constants.GenerateClientFiles].ToString() + "\" ";
+            text += ProcessGeneration.Constants.PropertyIfExists + "=\"" +
+                    businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists].ToString() + "\" ";
+            text += ProcessGeneration.Constants.PropertySingleFile + "=\"" +
+                    businessView.Options[BusinessView.Constants.GenerateEnumsInSingleFile].ToString() + "\" ";
 
+            return text;
+        }
+
+        /// <summary> Build entity text for web api </summary>
+        /// <param name="businessView">Business View</param>
+        /// <returns>text</returns>
+        private string BuildWebApiEntityText(BusinessView businessView)
+        {
+            var text = ProcessGeneration.Constants.PropertyEntity + "=\"" +
+                       businessView.Properties[BusinessView.Constants.EntityName] + "\" ";
+            text += ProcessGeneration.Constants.PropertyModule + "=\"" +
+                    businessView.Properties[BusinessView.Constants.ModuleId] + "\" ";
+            text += ProcessGeneration.Constants.PropertyViewId + "=\"" +
+                    businessView.Properties[BusinessView.Constants.ViewId] + "\" ";
+            text += ProcessGeneration.Constants.PropertyProgramId + "=\"" +
+                    businessView.Properties[BusinessView.Constants.ProgramId] + "\" ";
+            text += ProcessGeneration.Constants.PropertyProperties + "=\"" + businessView.Fields.Count.ToString() +
+                    "\" ";
+            text += ProcessGeneration.Constants.PropertyComps + "=\"" +
+                    businessView.Compositions.Where(x => x.Include).Count() + "\" ";
+            text += ProcessGeneration.Constants.PropertyIfExists + "=\"" +
+                    businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists].ToString() + "\" ";
             return text;
         }
 
@@ -2040,7 +2481,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (repositoryType.Equals(RepositoryType.HeaderDetail))
             {
                 // Show container name else show required text
-                text += " (" + (string.IsNullOrEmpty(_entitiesContainerName) ? Resources.ContainerNameRequired : _entitiesContainerName) + ")";
+                text += " (" + (string.IsNullOrEmpty(_entitiesContainerName)
+                    ? Resources.ContainerNameRequired
+                    : _entitiesContainerName) + ")";
             }
 
             return text;
@@ -2062,6 +2505,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _clickedEntityTreeNode.Nodes.Add(treeNode);
 
             EntitySetup(treeNode, ModeTypeEnum.Add);
+
+            if (_wizardType == WizardType.WEBAPI)
+            {
+                // hide verbs tab if it is a detail view
+                if (treeNode.Parent.Parent != null)
+                {
+                    if (tabEntity.TabPages.Contains(tabPage5))
+                        tabEntity.TabPages.Remove(tabPage5);
+                }
+                else
+                {
+                    if (!tabEntity.TabPages.Contains(tabPage5))
+                        tabEntity.TabPages.Add(tabPage5);
+                }
+            }
         }
 
         /// <summary> Edit Container Name</summary>
@@ -2163,7 +2621,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             control.Refresh();
 
             // Add columns to fit size of parent control
-            var cols = control.Width / 108;
+            var cols = parent.Parent.Width / 108;
             for (int i = 1; i <= cols; i++)
             {
                 control.Columns.Add(Constants.PrefixColumn + i, "");
@@ -2286,7 +2744,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             else if (_controlType == ControlType.Tab)
             {
                 // Control is a tab
-                txtPropWidget.Text = string.Format("{0} {1}",Constants.WidgetTab, Resources.Control);
+                txtPropWidget.Text = string.Format("{0} {1}", Constants.WidgetTab, Resources.Control);
             }
             else if (_controlType == ControlType.Grid)
             {
@@ -2353,9 +2811,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         }
 
-        /// <summary>
-        /// Assign events
-        /// </summary>
+        /// <summary> Assign events </summary>
         private void AssignEvents()
         {
             // Mouse handler events
@@ -2369,9 +2825,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             splitDesigner.Panel1.DragDrop += DragDropHandler;
         }
 
-        /// <summary>
-        /// Assign events for mouse Up/Move 
-        /// </summary>
+        /// <summary> Assign events for mouse Up/Move </summary>
         /// <param name="control">Control</param>
         /// <param name="tooltip">Tool tip</param>
         private void MouseHandlerEvents(Control control, string toolTip)
@@ -2388,9 +2842,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Assign events for mouse Up/Move 
-        /// </summary>
+        /// <summary> Assign events for mouse Up/Move </summary>
         /// <param name="control">Control</param>
         /// <param name="tooltip">Tool tip</param>
         private void MouseHandlerEvents(ToolStripButton control, string toolTip)
@@ -2407,9 +2859,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Get control information
-        /// </summary>
+        /// <summary> Get control information </summary>
         /// <param name="key">Key to collection</param>
         /// <returns>User Selection</returns>
         private ControlInfo GetControlInfo(string key)
@@ -2424,17 +2874,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Get Cell Info from object
-        /// </summary>
+        /// <summary> Get Cell Info from object </summary>
         /// <param name="control">Control object to evaluate</param>
         private CellInfo GetCellInfo(object control)
         {
             CellInfo cellInfo = null;
 
             // Get cell info
-            if (control.GetType() == typeof(Label) || 
-                control.GetType() == typeof(TabControl) || 
+            if (control.GetType() == typeof(Label) ||
+                control.GetType() == typeof(TabControl) ||
                 control.GetType() == typeof(FlowLayoutPanel) ||
                 control.GetType() == typeof(Button))
             {
@@ -2465,6 +2913,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             break;
                         }
                     }
+
                     if (cellInfo != null)
                     {
                         break;
@@ -2475,9 +2924,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return cellInfo;
         }
 
-        /// <summary>
-        /// Set dragging objects
-        /// </summary>
+        /// <summary> Set dragging objects </summary>
         /// <param name="dragObject">Drag Object</param>
         /// <param name="e">Mouse args</param>
         private void SetDraggingObjects(object dragObject, MouseEventArgs e)
@@ -2488,9 +2935,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _cellInfo = GetCellInfo(dragObject);
         }
 
-        /// <summary>
-        /// Do Drag Handler
-        /// </summary>
+        /// <summary> Do Drag Handler </summary>
         private void DoDragHandler()
         {
             // Sets object to start the drag
@@ -2498,9 +2943,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             DoDragDrop(_dragObject, DragDropEffects.Move);
         }
 
-        /// <summary>
-        /// Allows mouse down to start move from added fields area (layout)
-        /// </summary>
+        /// <summary> Allows mouse down to start move from added fields area (layout) </summary>
         /// <param name="sender">Control</param>
         /// <param name="e">Mouse args</param>
         private void MouseDownHandler(object sender, MouseEventArgs e)
@@ -2509,9 +2952,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             SetDraggingObjects(sender, e);
         }
 
-        /// <summary>
-        /// Allows mouse down to start move from added fields area (layout)
-        /// </summary>
+        /// <summary> Allows mouse down to start move from added fields area (layout) </summary>
         /// <param name="sender">Control</param>
         /// <param name="e">Mouse args</param>
         private void MouseUpHandler(object sender, MouseEventArgs e)
@@ -2519,9 +2960,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             _mouseDown = false;
         }
 
-        /// <summary>
-        /// Allows mouse move to start move
-        /// </summary>
+        /// <summary> Allows mouse move to start move </summary>
         /// <param name="sender">Sender object</param>
         /// <param name="e">Mouse args</param>
         private void MouseMoveHandler(object sender, MouseEventArgs e)
@@ -2536,14 +2975,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Allows mouse down to initiate drag from tree/toolbox
-        /// </summary>
+        /// <summary> Allows mouse down to initiate drag from tree/toolbox </summary>
         /// <param name="sender">Control</param>
         /// <param name="e">Mouse args</param>
         private void MouseDragHandler(object sender, MouseEventArgs e)
         {
-            object dragObject = sender.GetType() == typeof(ToolStripButton) ? ((ToolStripButton)sender).Tag  : ((Control)sender).Tag;
+            object dragObject = sender.GetType() == typeof(ToolStripButton)
+                ? ((ToolStripButton)sender).Tag
+                : ((Control)sender).Tag;
             if (sender.GetType() == typeof(TreeView))
             {
                 // Sets the business field object in the drag object
@@ -2566,10 +3005,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         if (businessView != null)
                         {
                             // The business view was selected
-                            controlInfo = new ControlInfo() {
-                                Node = node, 
+                            controlInfo = new ControlInfo()
+                            {
+                                Node = node,
                                 ParentNodeName = node.Parent.Name,
-                                BusinessView = businessView };
+                                BusinessView = businessView
+                            };
                             dragObject = controlInfo;
                         }
                         else
@@ -2591,9 +3032,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Allows click event to be common
-        /// </summary>
+        /// <summary> Allows click event to be common </summary>
         /// <param name="sender">Control</param>
         /// <param name="e">Event args</param>
         private void ClickHandler(object sender, EventArgs e)
@@ -2618,7 +3057,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     cellInfo.Control.CurrentCell = cellInfo.Control[cellInfo.ColIndex, cellInfo.RowIndex];
                 }
 
-                if (controlinfo.Widget == Constants.WidgetDropDown || 
+                if (controlinfo.Widget == Constants.WidgetDropDown ||
                     controlinfo.Widget == Constants.WidgetRadioButtons)
                 {
                     var mouseEventArgs = (MouseEventArgs)e;
@@ -2687,14 +3126,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Cell Info for Drop
-        /// </summary>
+        /// <summary> Cell Info for Drop </summary>
         /// <param name="control">Control being dropped on</param>
         /// <param name="hitTestInfo">Hit test in grid</param>
         /// <param name="point">Point object</param>
         /// <param name="name">Name to be used in tag property</param>
-        private CellInfo CellInfoForDrop(Control control, DataGridView.HitTestInfo hitTestInfo, ref Point point, string name)
+        private CellInfo CellInfoForDrop(Control control, DataGridView.HitTestInfo hitTestInfo, ref Point point,
+            string name)
         {
             CellInfo cellInfo = null;
 
@@ -2731,14 +3169,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return cellInfo;
         }
 
-        /// <summary>
-        /// Cell Info for Move
-        /// </summary>
+        /// <summary> Cell Info for Move </summary>
         /// <param name="control">Control being dropped on</param>
         /// <param name="hitTestInfo">Hit test in grid</param>
         /// <param name="point">Point object</param>
         /// <param name="movingControl">Control being moved</param>
-        private CellInfo CellInfoForMove(Control control, DataGridView.HitTestInfo hitTestInfo, ref Point point, Control movingControl)
+        private CellInfo CellInfoForMove(Control control, DataGridView.HitTestInfo hitTestInfo, ref Point point,
+            Control movingControl)
         {
             CellInfo cellInfo = null;
 
@@ -2753,14 +3190,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var gridControl = control.GetType() != typeof(FlowLayoutPanel) ? (DataGridView)control : null;
 
             // Ensure valid hittest
-            if ((gridControl != null) && (hitTestInfo != null) && (hitTestInfo.ColumnIndex < 0 || hitTestInfo.RowIndex < 0))
+            if ((gridControl != null) && (hitTestInfo != null) &&
+                (hitTestInfo.ColumnIndex < 0 || hitTestInfo.RowIndex < 0))
             {
                 return null;
             }
 
             // Info from previous and destination cell
             var fromCellInfo = _cellInfo;
-            var toCellInfo = gridControl != null ? gridControl[hitTestInfo.ColumnIndex, hitTestInfo.RowIndex].Tag : null;
+            var toCellInfo = gridControl != null
+                ? gridControl[hitTestInfo.ColumnIndex, hitTestInfo.RowIndex].Tag
+                : null;
             if (fromCellInfo == null)
             {
                 // Dropping on a tab control not allowed
@@ -2819,9 +3259,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                    repositoryType.Equals(RepositoryType.HeaderDetail);
         }
 
-        /// <summary>
-        /// Dropping field or moving existing field in the added fields area (layout)
-        /// </summary>
+        /// <summary> Dropping field or moving existing field in the added fields area (layout) </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void DragDropHandler(object sender, DragEventArgs e)
@@ -2857,7 +3295,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             childControlInfo.ParentNodeName = node.Parent.Name;
                             e.Data.SetData(childControlInfo);
                         }
-                        DragDropHandler(sender, new DragEventArgs(e.Data, e.KeyState, e.X, e.Y, e.AllowedEffect, e.Effect));
+
+                        DragDropHandler(sender,
+                            new DragEventArgs(e.Data, e.KeyState, e.X, e.Y, e.AllowedEffect, e.Effect));
 
                         // Abort if not allowed to drop in grid
                         if (_abortGridDrop)
@@ -2866,6 +3306,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         }
                     }
                 }
+
                 return;
             }
 
@@ -2945,7 +3386,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 if (type == typeof(DataGridView))
                 {
-                    cellInfo = CellInfoForDrop(control, hitTestInfo, ref point, controlInfo.ParentNodeName + "_" + controlInfo.BusinessField.Name);
+                    cellInfo = CellInfoForDrop(control, hitTestInfo, ref point,
+                        controlInfo.ParentNodeName + "_" + controlInfo.BusinessField.Name);
 
                     // Can't drop into an occupied cell
                     if (cellInfo == null)
@@ -3045,7 +3487,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // If moving a label and it is in a grid or moving to a grid, then abort
                 if (label != null &&
                     (label.Parent.GetType() == typeof(FlowLayoutPanel) ||
-                    control.GetType() == typeof(FlowLayoutPanel)))
+                     control.GetType() == typeof(FlowLayoutPanel)))
                 {
                     return;
                 }
@@ -3074,6 +3516,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     return;
                 }
+
                 cellInfo = CellInfoForMove(control, hitTestInfo, ref point, flowPanel);
 
                 // Can't move
@@ -3110,9 +3553,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Create a label
-        /// </summary>
+        /// <summary> Create a label </summary>
         /// <param name="controlInfo"></param>
         /// <param name="point">Location to create</param>
         /// <param name="destinationControl">Destination Control</param>
@@ -3143,9 +3584,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return control;
         }
 
-        /// <summary>
-        /// Create a tab
-        /// </summary>
+        /// <summary> Create a tab </summary>
         /// <param name="point">Location to create</param>
         /// <param name="destinationControl">Destination Control</param>
         /// <param name="cellInfo">Cell info for tag property</param>
@@ -3192,9 +3631,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return parentControl;
         }
 
-        /// <summary>
-        /// Create a grid
-        /// </summary>
+        /// <summary> Create a grid </summary>
         /// <param name="point">Location to create</param>
         /// <param name="destinationControl">Destination Control</param>
         /// <param name="cellInfo">Cell info for tag property</param>
@@ -3230,9 +3667,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return control;
         }
 
-        /// <summary>
-        /// Create a button
-        /// </summary>
+        /// <summary> Create a button </summary>
         /// <param name="point">Location to create</param>
         /// <param name="destinationControl">Destination Control</param>
         /// <param name="cellInfo">Cell info for tag property</param>
@@ -3275,9 +3710,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return control;
         }
 
-        /// <summary>
-        /// Get unique control name
-        /// </summary>
+        /// <summary> Get unique control name </summary>
         /// <param name="prefix">Prefix</param>
         private string GetUniqueControlName(string prefix)
         {
@@ -3295,13 +3728,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     return retVal;
                 }
             }
+
             // Fail safe
             return retVal;
         }
 
-        /// <summary>
-        /// Does tab already exist?
-        /// </summary>
+        /// <summary> Does tab already exist? </summary>
         private bool DoesTabExist()
         {
             // Init
@@ -3320,9 +3752,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return retVal;
         }
 
-        /// <summary>
-        /// Get a new tab page
-        /// </summary>
+        /// <summary> Get a new tab page </summary>
         /// <param name="control"></param>
         private TabPage GetTabPage(TabControl tabControl)
         {
@@ -3354,9 +3784,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return control;
         }
 
-        /// <summary>
-        /// Add handlers
-        /// </summary>
+        /// <summary> Add handlers </summary>
         /// <param name="control">Control to set events on</param>
         /// <param name="draggable">True if draggable otherwise false</param>
         private void AddHandlers(Control control, bool draggable = false)
@@ -3373,9 +3801,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Remove handlers
-        /// </summary>
+        /// <summary> Remove handlers </summary>
         /// <param name="control"></param>
         /// <param name="draggable"></param>
         private void RemoveHandlers(Control control, bool draggable = false)
@@ -3392,9 +3818,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Add new control
-        /// </summary>
+        /// <summary> Add new control </summary>
         /// <param name="control">Control to create</param>
         /// <param name="destinationControl">Destination Control on layout</param>
         /// <param name="childControl">Child control if tab Control</param>
@@ -3424,9 +3848,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Move a control
-        /// </summary>
+        /// <summary> Move a control </summary>
         /// <param name="control"></param>
         /// <param name="point"></param>
         /// <param name="destinationControl"></param>
@@ -3440,8 +3862,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
             // Moving, but dropping on itself. No ownership change
             else if (control == destinationControl ||
-                (control.GetType() == typeof(TabControl) &&
-                destinationControl.GetType() == typeof(TabPage) && control == destinationControl.Parent))
+                     (control.GetType() == typeof(TabControl) &&
+                      destinationControl.GetType() == typeof(TabPage) && control == destinationControl.Parent))
             {
                 control.Location = control.Parent.PointToClient(new Point(e.X, e.Y));
             }
@@ -3491,6 +3913,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             control.Refresh();
         }
 
+        /// <summary> Realign labels </summary>
+        /// <param name="tabControl">Tab Control</param>
         private void RealignLabels(Control tabControl)
         {
             // Iterate tab pages of tab control
@@ -3501,6 +3925,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     RealignLabels(control);
                 }
+
                 // If tab page, look at controls
                 if (control.GetType() == typeof(TabPage))
                 {
@@ -3533,6 +3958,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                     {
                                         grid.Rows.Add();
                                     }
+
                                     // Did grid shrink?
                                     if (i > supportedRows)
                                     {
@@ -3552,6 +3978,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                         grid.Rows.RemoveAt(i - 1);
                                     }
                                 }
+
                                 // Clear selection
                                 grid.ClearSelection();
                             }
@@ -3567,6 +3994,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                         var col = grid.Columns.Add(Constants.PrefixColumn + i, "");
                                         grid.Columns[col].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                                     }
+
                                     // Did grid shrink?
                                     if (i > supportedCols)
                                     {
@@ -3586,6 +4014,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                         grid.Columns.RemoveAt(i - 1);
                                     }
                                 }
+
                                 // Clear selection
                                 grid.ClearSelection();
                             }
@@ -3601,7 +4030,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                     var cellInfo = (CellInfo)label.Tag;
 
                                     // Get rectangle of cell for new label position
-                                    var rectangle = grid.GetCellDisplayRectangle(cellInfo.ColIndex, cellInfo.RowIndex, false);
+                                    var rectangle =
+                                        grid.GetCellDisplayRectangle(cellInfo.ColIndex, cellInfo.RowIndex, false);
                                     label.Location = new Point(rectangle.Left + grid.Left, rectangle.Top + grid.Top);
                                     label.Refresh();
                                 }
@@ -3612,8 +4042,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                     var cellInfo = (CellInfo)gridLayout.Tag;
 
                                     // Get rectangle of cell for new grid position
-                                    var rectangle = grid.GetCellDisplayRectangle(cellInfo.ColIndex, cellInfo.RowIndex, false);
-                                    gridLayout.Location = new Point(rectangle.Left + grid.Left, rectangle.Top + grid.Top);
+                                    var rectangle =
+                                        grid.GetCellDisplayRectangle(cellInfo.ColIndex, cellInfo.RowIndex, false);
+                                    gridLayout.Location = new Point(rectangle.Left + grid.Left,
+                                        rectangle.Top + grid.Top);
                                     gridLayout.Size = new Size(grid.Width - rectangle.Left - 2, 36);
                                     gridLayout.Refresh();
                                 }
@@ -3626,9 +4058,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
 
         }
-        /// <summary>
-        /// Delete a tab
-        /// </summary>
+
+        /// <summary> Delete a tab </summary>
         /// <param name="control">Control to remove</param>
         private void DeleteTab(Control control)
         {
@@ -3654,9 +4085,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         }
 
-        /// <summary>
-        /// Delete a Control (grid, container, label, button), but not tab 
-        /// </summary>
+        /// <summary> Delete a Control (grid, container, label, button), but not tab </summary>
         /// <param name="control">Control to delete</param>
         private void DeleteControl(Control control)
         {
@@ -3693,9 +4122,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Determines if a control is still in use
-        /// </summary>
+        /// <summary> Determines if a control is still in use </summary>
         /// <param name="grid">Grid/Palette to evaluate</param>
         /// <param name="name">Control name searching for</param>
         /// <returns>true if found otherwise false</returns>
@@ -3747,6 +4174,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             }
                         }
                     }
+
                     // Break early if found
                     if (stillInUse)
                     {
@@ -3754,13 +4182,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     }
                 }
             }
+
             return stillInUse;
         }
 
-
-        /// <summary>
-        /// Delete children control
-        /// </summary>
+        /// <summary> Delete children control </summary>
         /// <param name="control">Parent control</param>
         private void DeleteChildren(Control control)
         {
@@ -3790,9 +4216,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Remove from Layout
-        /// </summary>
+        /// <summary> Remove from Layout </summary>
         /// <param name="control">Control to be removed from layout</param>
         private void RemoveFromLayout(Control control)
         {
@@ -3812,9 +4236,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             parentControl.Controls.Remove(control);
         }
 
-        /// <summary>
-        /// Drag handler to handle the effect in a common handler
-        /// </summary>
+        /// <summary> Drag handler to handle the effect in a common handler </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void DragEnterHandler(object sender, DragEventArgs e)
@@ -3822,9 +4244,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             e.Effect = DragDropEffects.Move;
         }
 
-        /// <summary>
-        /// Load entities
-        /// </summary>
+        /// <summary> Load entities </summary>
         /// <param name="entities">List of entities being generated</param>
         public void LoadEntities()
         {
@@ -3854,6 +4274,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                 BusinessField = businessField
                             });
                         }
+
                         // Create a node and add to entity node
                         var node = new TreeNode(businessField.Name) { Name = name };
                         entityNode.Nodes.Add(node);
@@ -3894,7 +4315,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var controlsElement = new XElement(Constants.NodeControls);
 
             // Build XML from controls  
-            BuildXmlFromControls((DataGridView)splitDesigner.Panel1.Controls[Constants.PrefixPalette + "1"], controlsElement);
+            BuildXmlFromControls((DataGridView)splitDesigner.Panel1.Controls[Constants.PrefixPalette + "1"],
+                controlsElement);
 
             // Add elements?
             if (controlsElement.HasElements)
@@ -3909,9 +4331,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Iterate palette for building XML
-        /// </summary>
+        /// <summary> Iterate palette for building XML </summary>
         /// <param name="grid">Grid/Palette to evaluate</param>
         /// <param name="element">XElement </param>
         private void BuildXmlFromControls(DataGridView grid, XElement element)
@@ -3966,19 +4386,26 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             controlElement.Add(new XAttribute(Constants.AttributeProperty, control.Text));
                             if (controlInfo.Widget == Constants.WidgetFinder)
                             {
-                                controlElement.Add(new XAttribute(Constants.AttributeFinderProperty, controlInfo.FinderName));
-                                controlElement.Add(new XAttribute(Constants.AttributeFinderUrl, 
+                                controlElement.Add(new XAttribute(Constants.AttributeFinderProperty,
+                                    controlInfo.FinderName));
+                                controlElement.Add(new XAttribute(Constants.AttributeFinderUrl,
                                     controlInfo.FinderUrl ? Constants.AttributeTrue : Constants.AttributeFalse));
-                                controlElement.Add(new XAttribute(Constants.AttributeFinderFileName, controlInfo.FinderFileName));
+                                controlElement.Add(new XAttribute(Constants.AttributeFinderFileName,
+                                    controlInfo.FinderFileName));
                             }
-                            controlElement.Add(new XAttribute(Constants.AttributeTimeOnly, controlInfo.BusinessField.IsTimeOnly));
+
+                            controlElement.Add(new XAttribute(Constants.AttributeTimeOnly,
+                                controlInfo.BusinessField.IsTimeOnly));
 
                             // Add to controls element
                             formGroupControlsElement.Add(controlElement);
 
                             // If a certain widget, then add to the list of controls
-                            string[] widgetTypes = { "Dropdown", "DateTime", "Time", "Checkbox", 
-                                "RadioButtons", "Numeric", "Textbox", "Finder" };
+                            string[] widgetTypes =
+                            {
+                                "Dropdown", "DateTime", "Time", "Checkbox",
+                                "RadioButtons", "Numeric", "Textbox", "Finder"
+                            };
                             key = string.Empty;
                             if (widgetTypes.Contains(controlInfo.Widget))
                             {
@@ -4053,9 +4480,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                 var tabPageName = tabPage.Text.Replace(" ", string.Empty);
 
                                 // Add attributes
-                                tabPageControlElement.Add(new XAttribute(Constants.AttributeType, Constants.AttributeLi));
-                                tabPageControlElement.Add(new XAttribute(Constants.AttributeNewRow, Constants.AttributeTrue));
-                                tabPageControlElement.Add(new XAttribute(Constants.AttributeWidget, Constants.WidgetTabPage));
+                                tabPageControlElement.Add(
+                                    new XAttribute(Constants.AttributeType, Constants.AttributeLi));
+                                tabPageControlElement.Add(new XAttribute(Constants.AttributeNewRow,
+                                    Constants.AttributeTrue));
+                                tabPageControlElement.Add(new XAttribute(Constants.AttributeWidget,
+                                    Constants.WidgetTabPage));
                                 tabPageControlElement.Add(new XAttribute(Constants.AttributeId, tabPageName));
                                 tabPageControlElement.Add(new XAttribute(Constants.AttributeText, tabPage.Text));
 
@@ -4118,23 +4548,32 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                     var controlInfo = GetControlInfo(child.Name);
 
                                     // Add attributes
-                                    childControlElement.Add(new XAttribute(Constants.AttributeType, Constants.AttributeGridColumn));
+                                    childControlElement.Add(new XAttribute(Constants.AttributeType,
+                                        Constants.AttributeGridColumn));
                                     childControlElement.Add(new XAttribute(Constants.AttributeNewRow, "")); // TODO
-                                    childControlElement.Add(new XAttribute(Constants.AttributeWidget, controlInfo.Widget));
-                                    childControlElement.Add(new XAttribute(Constants.AttributeEntity, controlInfo.ParentNodeName));
+                                    childControlElement.Add(new XAttribute(Constants.AttributeWidget,
+                                        controlInfo.Widget));
+                                    childControlElement.Add(new XAttribute(Constants.AttributeEntity,
+                                        controlInfo.ParentNodeName));
                                     childControlElement.Add(new XAttribute(Constants.AttributeProperty, child.Text));
-                                    if (controlInfo.Widget == Constants.WidgetFinder && !controlInfo.BusinessField.IsKey)
+                                    if (controlInfo.Widget == Constants.WidgetFinder &&
+                                        !controlInfo.BusinessField.IsKey)
                                     {
-                                        childControlElement.Add(new XAttribute(Constants.AttributeFinderProperty, controlInfo.FinderName));
-                                        childControlElement.Add(new XAttribute(Constants.AttributeFinderUrl, 
-                                            controlInfo.FinderUrl ? Constants.AttributeTrue : Constants.AttributeFalse));
+                                        childControlElement.Add(new XAttribute(Constants.AttributeFinderProperty,
+                                            controlInfo.FinderName));
+                                        childControlElement.Add(new XAttribute(Constants.AttributeFinderUrl,
+                                            controlInfo.FinderUrl
+                                                ? Constants.AttributeTrue
+                                                : Constants.AttributeFalse));
                                     }
+
                                     // Add to controls element
                                     childControlsElement.Add(childControlElement);
                                     // Update Grid control text with it column fields entity name
                                     if (controlElement.Attribute(Constants.AttributeText).Value == Constants.WidgetGrid)
                                     {
-                                        controlElement.SetAttributeValue(Constants.AttributeText, controlInfo.ParentNodeName);
+                                        controlElement.SetAttributeValue(Constants.AttributeText,
+                                            controlInfo.ParentNodeName);
                                     }
                                 }
                             }
@@ -4142,9 +4581,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                             // Add to control and controls elements
                             controlElement.Add(childControlsElement);
                             formGroupControlsElement.Add(controlElement);
-                            
+
                             //Update entity for grid property
-                            var entity = _entities.FirstOrDefault(e => e.Text == controlElement.Attribute("text").Value);
+                            var entity =
+                                _entities.FirstOrDefault(e => e.Text == controlElement.Attribute("text").Value);
                             if (entity != null)
                             {
                                 entity.ForGrid = true;
@@ -4152,6 +4592,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                         }
                     }
                 }
+
                 // End of columns. If control(s) were found in columns for this row, then add to elements
                 if (newRow)
                 {
@@ -4202,16 +4643,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
 //                if (((DataGridView)sender).Rows[e.RowIndex].Cells[e.ColumnIndex].Selected == true)
                 if (((DataGridView)sender).Rows[e.RowIndex].Cells[e.ColumnIndex] == ((DataGridView)sender).CurrentCell)
+                {
+                    e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
+                    using (Pen pen = new Pen(Color.FromArgb(0, 0, 255), 1))
                     {
-                        e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Border);
-                        using (Pen pen = new Pen(Color.FromArgb(0, 0, 255), 1))
-                        {
-                            Rectangle rectangle = e.CellBounds;
-                            rectangle.Width -= 2;
-                            rectangle.Height -= 2;
-                            e.Graphics.DrawRectangle(pen, rectangle);
-                        }
-                        e.Handled = true;
+                        Rectangle rectangle = e.CellBounds;
+                        rectangle.Width -= 2;
+                        rectangle.Height -= 2;
+                        e.Graphics.DrawRectangle(pen, rectangle);
+                    }
+
+                    e.Handled = true;
                 }
             }
         }
@@ -4242,7 +4684,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-#endregion
+        #endregion
 
         /// <summary> Edit Container Name</summary>
         private void EditContainerName()
@@ -4275,7 +4717,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 // Does it support a revision list?
                 return !((businessView.Protocol & ViewProtocol.MaskBasic) != ViewProtocol.BasicFlat ||
-                     (businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone);
+                         (businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionNone);
             }
 
             // Header-Detail Repository
@@ -4320,9 +4762,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return string.Empty;
         }
 
-        /// <summary>
-        /// Find the header node in the tree. 
-        /// </summary>
+        /// <summary> Find the header node in the tree. </summary>
         /// <param name="doc">The tree in XDocument format</param>
         /// <returns>If there is one and only one header node defined, return the node otherwise NULL</returns>
         private static XElement FindHeaderNode(XDocument doc)
@@ -4340,61 +4780,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     continue;
                 }
+
                 if (headerNode != null)
                 {
                     return null;
                 }
+
                 headerNode = x;
             }
+
             return headerNode;
-        }
-
-        private void ParseXml(String xmlFilename)
-        {
-            var xdoc = XDocument.Load(xmlFilename);
-
-            _entitiesContainerName = xdoc.Root.Attribute("container")?.Value;
-
-            // open all the entities
-            foreach (var ent in xdoc.Root.Descendants().Where(e => e.Name == "entity"))
-            {
-                var businessView = new BusinessView();
-
-                businessView.Properties[BusinessView.Constants.ModuleId] = ent.Attribute(ProcessGeneration.Constants.PropertyModule).Value;
-                businessView.Properties[BusinessView.Constants.ViewId] = ent.Attribute(ProcessGeneration.Constants.PropertyViewId).Value;
-
-                ProcessGeneration.GetBusinessView(businessView, txtUser.Text.Trim(), txtPassword.Text.Trim(),
-        txtCompany.Text.Trim(), txtVersion.Text.Trim(), businessView.Properties[BusinessView.Constants.ViewId], businessView.Properties[BusinessView.Constants.ModuleId]);
-
-                businessView.Properties[BusinessView.Constants.EntityName] = ent.Attribute(ProcessGeneration.Constants.PropertyEntity).Value;
-                businessView.Properties[BusinessView.Constants.ModelName] = ent.Attribute(ProcessGeneration.Constants.PropertyModel).Value;
-                businessView.Properties[BusinessView.Constants.ResxName] = ent.Attribute(ProcessGeneration.Constants.PropertyResxName).Value;
-
-                // compositions
-                foreach (var compositionElem in ent.Elements().Where(e => e.Name == "compositions").Descendants())
-                {
-                    var composition = new Composition();
-
-                    composition.ViewId = compositionElem.Attribute(ProcessGeneration.Constants.PropertyViewId).Value;
-                    composition.EntityName = compositionElem.Attribute(ProcessGeneration.Constants.PropertyEntity).Value;
-                    composition.Include = bool.Parse(compositionElem.Attribute(ProcessGeneration.Constants.PropertyInclude).Value);
-                    businessView.Compositions.Add(composition);
-                }
-
-
-                // options
-                var option = ent.Elements().Where(e => e.Name == "options").Descendants().First();
-
-                businessView.Options[BusinessView.Constants.GenerateFinder] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyFinder).Value);
-                businessView.Options[BusinessView.Constants.GenerateGridModel] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyGridModel).Value);
-                businessView.Options[BusinessView.Constants.SeqenceRevisionList] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertySequenceRevisionList)?.Value??"false");
-                businessView.Options[BusinessView.Constants.GenerateDynamicEnablement] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyEnablement).Value);
-                businessView.Options[BusinessView.Constants.GenerateClientFiles] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyClientFiles).Value);
-                businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertyIfExists).Value);
-                businessView.Options[BusinessView.Constants.GenerateEnumsInSingleFile] = bool.Parse(option.Attribute(ProcessGeneration.Constants.PropertySingleFile).Value);
-
-                _entities.Add(businessView);
-            }
         }
 
         /// <summary> Next/Generate Navigation </summary>
@@ -4404,8 +4799,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var repositoryType = GetRepositoryType();
 
             // Finished?
-            if (!_currentWizardStep.Equals(-1) && 
-				IsCurrentPanel(Constants.PanelGenerated))
+            if (!_currentWizardStep.Equals(-1) &&
+                IsCurrentPanel(Constants.PanelGenerated))
             {
                 _generation.Dispose();
                 Close();
@@ -4414,10 +4809,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 // Proceed to next wizard step or start generation if last step
                 if (!_currentWizardStep.Equals(-1) &&
-					IsCurrentPanel(Constants.PanelGenerateCode))
+                    (IsCurrentPanel(Constants.PanelGenerateCode) ||
+                     (IsCurrentPanel(Constants.PanelEntities) && _wizardType == WizardType.WEBAPI)))
                 {
+                    if (!ValidateStep())
+                    {
+                        return;
+                    }
+
                     // Build settings
-                    var settings = BuildSettings();
+                    var settings = _wizardType == WizardType.WEB ? BuildWebSettings() : BuildWebApiSettings();
                     // Setup display before processing
                     _gridInfo.Clear();
                     _processingInProgress = true;
@@ -4452,52 +4853,67 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     // If Step is UI generation, enabled buttons
                     if (IsCurrentPanel(Constants.PanelUIGeneration))
                     {
-                        // Load entities if not already loaded
-                        LoadEntities();
+                        if (_wizardType == WizardType.WEB)
+                        {
+                            // Load entities if not already loaded
+                            LoadEntities();
+                        }
+                        else
+                        {
+                            // todo
+
+                        }
                     }
 
                     // if Step is Screens, expand tree control
                     if (IsCurrentPanel(Constants.PanelEntities))
                     {
-                            treeEntities.ExpandAll();
+                        treeEntities.ExpandAll();
                     }
 
                     // Create XML if Step is Generate
                     if (IsCurrentPanel(Constants.PanelGenerateCode))
                     {
+                        if (_wizardType == WizardType.WEB)
+                        {
 #if (SKIP_MANUAL_ENTER_ENTITIES)
                         _xmlEntities = XDocument.Load(@"C:\$$$\GL0021.xml");
                         ParseXml(@"C:\$$$\GL0021.xml");
 #else
 
-                        _xmlEntities = BuildXDocument();
-                        _xmlLayout = BuildUIXDocument();
+                            _xmlEntities = BuildXDocument();
+                            _xmlLayout = BuildUIXDocument();
 #endif
 
-                        txtEntitiesToGenerate.Text = _xmlEntities.ToString();
-                        txtLayoutToGenerate.Text = _xmlLayout != null ? _xmlLayout.ToString() : string.Empty;
+                            txtEntitiesToGenerate.Text = _xmlEntities.ToString();
+                            txtLayoutToGenerate.Text = _xmlLayout != null ? _xmlLayout.ToString() : string.Empty;
 
-                        // for header-detail type, mark each entity in the header-detail tree
-                        if (repositoryType.Equals(RepositoryType.HeaderDetail))
-                        {
-                            // find the header node
-                            _headerNode = FindHeaderNode(_xmlEntities);
-                            
-                            var headerDetailEntities = _headerNode.DescendantsAndSelf().Where(e => e.Name == ProcessGeneration.Constants.PropertyEntity);
-
-                            // mark entity in _entities 
-                            foreach (var entity in _entities)
+                            // for header-detail type, mark each entity in the header-detail tree
+                            if (repositoryType.Equals(RepositoryType.HeaderDetail))
                             {
-                                // ReSharper disable once PossibleMultipleEnumeration
-                                entity.IsPartofHeaderDetailComposition = true; // @JT to research if this is needed --> headerDetailEntities.Any(p => p.Attribute(ProcessGeneration.Constants.PropertyViewId).Value.Equals(entity.Properties[BusinessView.Constants.ViewId]));
+                                // find the header node
+                                _headerNode = FindHeaderNode(_xmlEntities);
+
+                                var headerDetailEntities = _headerNode.DescendantsAndSelf()
+                                    .Where(e => e.Name == ProcessGeneration.Constants.PropertyEntity);
+
+                                // mark entity in _entities 
+                                foreach (var entity in _entities)
+                                {
+                                    // ReSharper disable once PossibleMultipleEnumeration
+                                    entity.IsPartofHeaderDetailComposition =
+                                        true; // @JT to research if this is needed --> headerDetailEntities.Any(p => p.Attribute(ProcessGeneration.Constants.PropertyViewId).Value.Equals(entity.Properties[BusinessView.Constants.ViewId]));
+                                }
                             }
                         }
+
                     }
 
                     ShowStep(true);
 
                     // Update text of Next button?
-                    if (IsCurrentPanel(Constants.PanelGenerateCode))
+                    if (IsCurrentPanel(Constants.PanelGenerateCode) ||
+                        (IsCurrentPanel(Constants.PanelEntities) && _wizardType == WizardType.WEBAPI))
                     {
                         btnNext.Text = Resources.Generate;
                     }
@@ -4523,40 +4939,53 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 var businessView = (BusinessView)entityTreeNode.Tag;
 
                 // Make certain properties into attributes
-                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEntity, businessView.Properties[BusinessView.Constants.EntityName]));
-                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyModule, businessView.Properties[BusinessView.Constants.ModuleId]));
-                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyModel, businessView.Properties[BusinessView.Constants.ModelName]));
+                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEntity,
+                    businessView.Properties[BusinessView.Constants.EntityName]));
+                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyModule,
+                    businessView.Properties[BusinessView.Constants.ModuleId]));
+                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyModel,
+                    businessView.Properties[BusinessView.Constants.ModelName]));
 
                 // Show view id if not a report
                 if (!repositoryType.Equals(RepositoryType.Report))
                 {
-                    entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyViewId, businessView.Properties[BusinessView.Constants.ViewId]));
+                    entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyViewId,
+                        businessView.Properties[BusinessView.Constants.ViewId]));
                 }
 
                 // Show program id if a report
                 if (repositoryType.Equals(RepositoryType.Report))
                 {
-                    entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyProgramId, businessView.Properties[BusinessView.Constants.ProgramId]));
+                    entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyProgramId,
+                        businessView.Properties[BusinessView.Constants.ProgramId]));
                 }
 
                 // Show workflow id if a process
                 if (repositoryType.Equals(RepositoryType.Process))
                 {
-                    entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyWorkflowId, businessView.Properties[BusinessView.Constants.WorkflowKindId]));
+                    entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyWorkflowId,
+                        businessView.Properties[BusinessView.Constants.WorkflowKindId]));
                 }
 
-                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyResxName, businessView.Properties[BusinessView.Constants.ResxName]));
+                entityElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyResxName,
+                    businessView.Properties[BusinessView.Constants.ResxName]));
 
                 // Add Options to this element via the business view's Options
                 var optionsElement = new XElement(ProcessGeneration.Constants.PropertyOptions);
                 var optionElement = new XElement(ProcessGeneration.Constants.PropertyOption);
 
-                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyGridModel, businessView.Options[BusinessView.Constants.GenerateGridModel].ToString()));
-                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyFinder, businessView.Options[BusinessView.Constants.GenerateFinder].ToString()));
-                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEnablement, businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString()));
-                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyClientFiles, businessView.Options[BusinessView.Constants.GenerateClientFiles].ToString()));
-                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyIfExists, businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists].ToString()));
-                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertySingleFile, businessView.Options[BusinessView.Constants.GenerateEnumsInSingleFile].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyGridModel,
+                    businessView.Options[BusinessView.Constants.GenerateGridModel].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyFinder,
+                    businessView.Options[BusinessView.Constants.GenerateFinder].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEnablement,
+                    businessView.Options[BusinessView.Constants.GenerateDynamicEnablement].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyClientFiles,
+                    businessView.Options[BusinessView.Constants.GenerateClientFiles].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyIfExists,
+                    businessView.Options[BusinessView.Constants.GenerateIfAlreadyExists].ToString()));
+                optionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertySingleFile,
+                    businessView.Options[BusinessView.Constants.GenerateEnumsInSingleFile].ToString()));
 
                 optionsElement.Add(optionElement);
                 entityElement.Add(optionsElement);
@@ -4569,10 +4998,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 foreach (var businessField in businessView.Fields)
                 {
                     var fieldElement = new XElement(ProcessGeneration.Constants.PropertyField);
-                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyFieldName, businessField.ServerFieldName));
-                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyPropertyName, businessField.Name));
-                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyType, businessField.Type.ToString()));
-                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertySize, businessField.Size.ToString()));
+                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyFieldName,
+                        businessField.ServerFieldName));
+                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyPropertyName,
+                        businessField.Name));
+                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyType,
+                        businessField.Type.ToString()));
+                    fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertySize,
+                        businessField.Size.ToString()));
 
 #if ENABLE_TK_244885
                     fieldElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyIsCommon, businessField.IsCommon.ToString()));
@@ -4581,6 +5014,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                     fieldsElement.Add(fieldElement);
                 }
+
                 entityElement.Add(fieldsElement);
 
                 // Show compositions if a header-detail
@@ -4594,12 +5028,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     {
                         var compositionElement = new XElement(ProcessGeneration.Constants.PropertyComposition);
 
-                        compositionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyViewId, composition.ViewId));
-                        compositionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEntity, composition.EntityName));
-                        compositionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyInclude, composition.Include.ToString()));
+                        compositionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyViewId,
+                            composition.ViewId));
+                        compositionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyEntity,
+                            composition.EntityName));
+                        compositionElement.Add(new XAttribute(ProcessGeneration.Constants.PropertyInclude,
+                            composition.Include.ToString()));
 
                         compositionsElement.Add(compositionElement);
                     }
+
                     entityElement.Add(compositionsElement);
                 }
 
@@ -4639,6 +5077,73 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             return xDocument;
         }
+
+        /// <summary> Recursively build the settings </summary>
+        /// <param name="treeNode"></param>
+        /// <param name="entitySettings"></param>
+        private void BuildSettingFromTreeNodes(TreeNode treeNode, List<ControllerSettings> entitySettings)
+        {
+            // Iterate the tree nodes  
+            foreach (TreeNode entityTreeNode in treeNode.Nodes)
+            {
+                var entitySetting = new ControllerSettings();
+
+                // Get business view from tag so can iterate fields and options
+                var businessView = (BusinessView)entityTreeNode.Tag;
+
+                entitySetting.BusinessView = businessView;
+                entitySetting.KeyProperties = new List<string>();
+                entitySetting.KeyType = ViewKeyType.Ordered;
+
+                if (businessView.PrimaryKeyFields.Count > 0)
+                {
+                    foreach (var key in businessView.PrimaryKeyFields)
+                    {
+                        var field = businessView.Fields.First(f => f.ServerFieldName == key);
+                        if (field.Type == BusinessDataType.Long
+                            || field.Type == BusinessDataType.Integer
+                            || field.Type == BusinessDataType.Decimal
+                            || field.Type == BusinessDataType.Short
+                            || field.Type == BusinessDataType.Double
+                            || (field.Type == BusinessDataType.String
+                                && field.Mask != null
+                                && field.Mask.Contains("D"))
+                           )
+                        {
+                            entitySetting.KeyType = ViewKeyType.Sequenced;
+                        }
+
+                        entitySetting.KeyProperties.Add(field.Name);
+                    }
+                }
+
+                entitySetting.Details = new List<ControllerSettings>();
+
+                // If this node has nodes (children), do them recusively
+                if (entityTreeNode.Nodes.Count != 0)
+                {
+                    // Recursion
+                    BuildSettingFromTreeNodes(entityTreeNode, entitySetting.Details);
+                }
+
+                // Done with this element so add it to the parent (entered) element
+                entitySettings.Add(entitySetting);
+            }
+        }
+
+        /// <summary> Build entity controller settings tree </summary>
+        private List<ControllerSettings> BuildEntityControllerSettings()
+        {
+            var controllerSettings = new List<ControllerSettings>();
+
+            foreach (TreeNode treeNode in treeEntities.Nodes)
+            {
+                BuildSettingFromTreeNodes(treeNode, controllerSettings);
+            }
+
+            return controllerSettings;
+        }
+
         /// <summary> Back Navigation </summary>
         /// <remarks>Back wizard step</remarks>
         private void BackStep()
@@ -4647,8 +5152,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (!_currentWizardStep.Equals(0))
             {
                 // Proceed back a step
-                var label = IsCurrentPanel(Constants.PanelGenerated) ? Resources.Generate 
-                                                                     : Resources.Next;
+                var label = IsCurrentPanel(Constants.PanelGenerated)
+                    ? Resources.Generate
+                    : Resources.Next;
                 btnNext.Text = label;
 
                 ShowStep(false);
@@ -4683,15 +5189,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             var repositoryType = GetRepositoryType().ToString();
 
-			var label = Resources.Step + 
-						Constants.SingleSpace +
-						(_currentWizardStep + 1).ToString("#0") + 
-						Resources.Dash +
-						string.Format(_wizardSteps[_currentWizardStep].Title, repositoryType);
+            var label = Resources.Step +
+                        Constants.SingleSpace +
+                        (_currentWizardStep + 1).ToString("#0") +
+                        Resources.Dash +
+                        string.Format(_wizardSteps[_currentWizardStep].Title, repositoryType);
 
-			lblStepTitle.Text = label;
+            lblStepTitle.Text = label;
             lblStepDescription.Text = string.Format(_wizardSteps[_currentWizardStep].Description, repositoryType);
         }
+
         /// <summary> Initialize wizard steps </summary>
         private void InitWizardSteps()
         {
@@ -4701,7 +5208,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             chkGenerateGridModel.Checked = false;
             chkSequenceRevisionList.Visible = false;
 
-            chkGenerateGridModel.Visible = (repositoryType == RepositoryType.Flat || 
+            chkGenerateGridModel.Visible = (repositoryType == RepositoryType.Flat ||
                                             repositoryType == RepositoryType.HeaderDetail);
 
             // Default
@@ -4723,12 +5230,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             InitPanel(pnlGeneratedCode);
 
             // Add steps
+            var projectType = _wizardType == WizardType.WEB ? Resources.Web : Resources.WebAPI;
+
             AddStep(Resources.StepTitleCodeType, Resources.StepDescriptionCodeType, pnlCodeType);
-            AddStep(Resources.StepTitleEntities, Resources.StepDescriptionEntities, pnlEntities);
+            AddStep(string.Format(Resources.StepTitleEntities, projectType), string.Format(Resources.StepDescriptionEntities, projectType), pnlEntities);
 
             AddStep(Resources.StepTitleGenerateUICode, Resources.StepDescriptionGenerateUICode, pnlUIGeneration);
 
-            AddStep(Resources.StepTitleGenerateCode, Resources.StepDescriptionGenerateCode, pnlGenerateCode);
+            AddStep(string.Format(Resources.StepTitleGenerateCode, projectType), string.Format(Resources.StepDescriptionGenerateCode, projectType), pnlGenerateCode);
             AddStep(Resources.StepTitleGeneratedCode, Resources.StepDescriptionGeneratedCode, pnlGeneratedCode);
 
             grpCredentials.Enabled = !(repositoryType.Equals(RepositoryType.Report));
@@ -4786,6 +5295,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             panel.Visible = false;
             panel.Dock = DockStyle.None;
+
         }
 
         /// <summary> Initialize info and modify grid display </summary>
@@ -4819,14 +5329,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 grdEntityFields.ScrollBars = ScrollBars.Both;
 
                 // Assign widths and localized text
-                GenericInit(grid: grdEntityFields, 
-                            column: columnIndex++, 
-                            width: 50, 
-                            text: Resources.ID, 
-                            visible: false, 
-                            readOnly: false);
+                GenericInit(grid: grdEntityFields,
+                    column: columnIndex++,
+                    width: 50,
+                    text: Resources.ID,
+                    visible: false,
+                    readOnly: false);
                 GenericInit(grdEntityFields, columnIndex++, 125, Resources.ServerField, true, true);
-                GenericInit(grdEntityFields, columnIndex++, 150, Resources.Field,       true, false);
+                GenericInit(grdEntityFields, columnIndex++, 150, Resources.Field, true, false);
                 GenericInit(grdEntityFields, columnIndex++, 290, Resources.Description, false, false);
 
                 // Remove and re-add as combobox column
@@ -4840,24 +5350,25 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     FlatStyle = FlatStyle.Flat
                 };
                 grdEntityFields.Columns.Insert(columnIndex, column);
-                grdEntityFields.Columns[columnIndex].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grdEntityFields.Columns[columnIndex].HeaderCell.Style.Alignment =
+                    DataGridViewContentAlignment.MiddleCenter;
                 grdEntityFields.Columns[columnIndex].Visible = !repositoryType.Equals(RepositoryType.Report);
                 columnIndex++;
 
                 // Continue with width and localized text assignment
-                GenericInit(grid: grdEntityFields, 
-                            column: columnIndex++, 
-                            width: 40, 
-                            text: Resources.Size, 
-                            visible: true, 
-                            readOnly: false);
-                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsReadOnly,          false, false);
-                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsCalculated,        false, false);
-                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsRequired,          false, false);
-                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsKey,               false, false);
-                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsUpperCase,         false, false);
-                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsAlphaNumeric,      false, false);
-                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsNumeric,           false, false);
+                GenericInit(grid: grdEntityFields,
+                    column: columnIndex++,
+                    width: 40,
+                    text: Resources.Size,
+                    visible: true,
+                    readOnly: false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsReadOnly, false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsCalculated, false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsRequired, false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsKey, false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsUpperCase, false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsAlphaNumeric, false, false);
+                GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsNumeric, false, false);
                 GenericInit(grdEntityFields, columnIndex++, 75, Resources.IsDynamicEnablement, false, false);
 
 #if ENABLE_TK_244885
@@ -4912,8 +5423,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                 // Assign widths and localized text
                 GenericInit(grdEntityCompositions, columnIndex++, 125, Resources.CompositeView, true, true);
-                GenericInit(grdEntityCompositions, columnIndex++, 150, Resources.Entity,        true, true);
-                GenericInit(grdEntityCompositions, columnIndex++, 125, Resources.Include,       true, false);
+                GenericInit(grdEntityCompositions, columnIndex++, 150, Resources.Entity, true, true);
+                GenericInit(grdEntityCompositions, columnIndex++, 125, Resources.Include, true, false);
 
                 // Place checkbox into header
                 //var rect = grdEntityCompositions.GetCellDisplayRectangle(2, -1, true);
@@ -4930,12 +5441,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="text">Header Text</param>
         /// <param name="visible">True for visible otherwise False</param>
         /// <param name="readOnly">True for read only otherwise False</param>
-        private static void GenericInit(DataGridView grid, 
-                                        int column, 
-                                        int width, 
-                                        string text, 
-                                        bool visible,
-                                        bool readOnly)
+        private static void GenericInit(DataGridView grid,
+            int column,
+            int width,
+            string text,
+            bool visible,
+            bool readOnly)
         {
             grid.Columns[column].Width = width;
             grid.Columns[column].HeaderText = text;
@@ -5020,19 +5531,20 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="message">Message to display</param>
         /// <param name="icon">Icon to display</param>
         /// <param name="args">Message arguments, if any</param>
-        private void DisplayMessage(string message, MessageBoxIcon icon, params object[] args)
+        public void DisplayMessage(string message, MessageBoxIcon icon, params object[] args)
         {
             MessageBox.Show(string.Format(message, args), Text, MessageBoxButtons.OK, icon);
         }
 
         /// <summary> Build settings for background worker </summary>
         /// <returns>Settings</returns>
-        private Settings BuildSettings()
+        private Settings BuildWebSettings()
         {
             var repositoryType = GetRepositoryType();
 
             return new Settings
             {
+                WizardType = WizardType.WEB,
                 RepositoryType = repositoryType,
                 User = txtUser.Text.Trim(),
                 Password = txtPassword.Text.Trim(),
@@ -5062,6 +5574,28 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 includeFrench = _includeFrench,
                 EntitiesContainerName = _entitiesContainerName,
                 HeaderNode = _headerNode
+            };
+        }
+
+        /// <summary> Build settings for background worker </summary>
+        /// <returns>Settings</returns>
+        private Settings BuildWebApiSettings()
+        {
+            _controllerSettings = BuildEntityControllerSettings();
+            return new Settings()
+            {
+                WizardType = WizardType.WEBAPI,
+                User = txtWebApiUser.Text.Trim(),
+                Password = txtWebApiPassword.Text.Trim(),
+                Company = txtWebApiCompany.Text.Trim(),
+                Version = GlobalConstants.AccpacDotNetVersion,
+                ModuleId = cboWebApiModule.Text.Trim(),
+                CompanyNamespace = _companyNamespace,
+                Copyright = _copyright,
+                ControllerSettings = _controllerSettings,
+                Projects = _projects,
+                PromptIfExists = false,
+                WebApiVersion = txtWebApiVersion.Text.Trim(),
             };
         }
 
@@ -5104,7 +5638,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
         /// <summary> Build Module Lists </summary>
-        private void BuildModules()
+        private void BuildModulesForWeb()
         {
             // Clear first
             cboModule.Items.Clear();
@@ -5125,12 +5659,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 // Default if only 1 module is discovered
                 cboModule.SelectedIndex = 1;
             }
-
         }
 
-        /// <summary>
-        /// Add extra the settings items for header/details views 
-        /// </summary>
+        /// <summary> Add extra the settings items for header/details views </summary>
         private void UpdateSettings(Settings settings)
         {
             if (settings.HeaderNode != null)
@@ -5188,8 +5719,16 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         private void wrkBackground_DoWork(object sender, DoWorkEventArgs e)
         {
             var settings = (Settings)e.Argument;
-            UpdateSettings(settings);
-            _generation.Process(settings);
+
+            if (_wizardType == WizardType.WEB)
+            {
+                UpdateSettings(settings);
+                _generation.ProcessWeb(settings);
+            }
+            else
+            {
+                _generation.ProcessWebApi(settings);
+            }
         }
 
         /// <summary> Background worker completed event </summary>
@@ -5440,6 +5979,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     _entityFields.Add(businessField);
                 }
+
                 txtReportProgramId.Text = reportName.ToUpper();
             }
         }
@@ -5494,16 +6034,33 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     // Get business view from clicked node
                     var node = _modeType == ModeTypeEnum.Add ? _clickedEntityTreeNode.LastNode : _clickedEntityTreeNode;
                     var businessView = (BusinessView)node.Tag;
-
-                    ProcessGeneration.GetBusinessView(businessView, txtUser.Text.Trim(), txtPassword.Text.Trim(),
-                        txtCompany.Text.Trim(), txtVersion.Text.Trim(), txtViewID.Text, cboModule.Text);
+                    if (_wizardType == WizardType.WEB)
+                    {
+                        // Get business view (web)
+                        ProcessGeneration.GetBusinessView(businessView, txtUser.Text.Trim(), txtPassword.Text.Trim(),
+                            txtCompany.Text.Trim(), txtVersion.Text.Trim(), txtViewID.Text, cboModule.Text, WizardType.WEB);
+                    }
+                    else
+                    {
+                        // Get business view (web API)
+                        ProcessGeneration.GetBusinessView(businessView, txtWebApiUser.Text.Trim(),
+                            txtWebApiPassword.Text.Trim(),
+                            txtWebApiCompany.Text.Trim(), GlobalConstants.AccpacDotNetVersion, txtViewID.Text, cboWebApiModule.Text, WizardType.WEBAPI);
+                    }
 
                     // Assign to entity and model fields
                     txtEntityName.Text = businessView.Properties[BusinessView.Constants.EntityName];
                     txtModelName.Text = businessView.Properties[BusinessView.Constants.ModelName];
 
                     // Assign to control
-                    txtResxName.Text = txtEntityName.Text.Trim() + "Resx";
+                    if (_wizardType == WizardType.WEB)
+                    {
+                        txtResxName.Text = txtEntityName.Text.Trim() + "Resx";
+                    }
+                    else
+                    {
+                        txtResxName.Text = businessView.Properties[BusinessView.Constants.ResourceName];
+                    }
 
                     // Clear before assigning
                     DeleteRows();
@@ -5517,7 +6074,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
                     if (GetRepositoryType() == RepositoryType.HeaderDetail &&
                         ((businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionSequenced ||
-                        (businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionOrdered))
+                         (businessView.Protocol & ViewProtocol.MaskRevision) == ViewProtocol.RevisionOrdered))
                     {
                         chkGenerateGridModel.Checked = true;
                         chkGenerateFinder.Checked = false;
@@ -5528,7 +6085,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             catch (Exception ex)
             {
                 // Error received attempting to get view
-                DisplayMessage((ex.InnerException == null) ? ex.Message : ex.InnerException.Message, MessageBoxIcon.Error);
+                DisplayMessage((ex.InnerException == null) ? ex.Message : ex.InnerException.Message,
+                    MessageBoxIcon.Error);
                 txtEntityName.Text = string.Empty;
                 txtModelName.Text = string.Empty;
                 errorCondition = true;
@@ -5631,6 +6189,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     _contextMenu.MenuItems.Add(_editContainerName);
                 }
+
                 _contextMenu.MenuItems.Add(_addEntityMenuItem);
                 _contextMenu.MenuItems.Add(_deleteEntitiesMenuItem);
             }
@@ -5638,10 +6197,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 // Show Edit, Delete menu for entity and Add only if code type is header detail
                 _contextMenu.MenuItems.Clear();
-                if (repositoryType.Equals(RepositoryType.HeaderDetail))
+                if (repositoryType.Equals(RepositoryType.HeaderDetail) || _wizardType == WizardType.WEBAPI)
                 {
                     _contextMenu.MenuItems.Add(_addEntityMenuItem);
                 }
+
                 _contextMenu.MenuItems.Add(_editEntityMenuItem);
                 _contextMenu.MenuItems.Add(_deleteEntityMenuItem);
             }
@@ -5685,9 +6245,13 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             var text = BusinessViewHelper.Replace(txtEntityName.Text);
             txtEntityName.Text = text;
             txtModelName.Text = text;
-            txtResxName.Text = text + "Resx";
-        }
 
+            if (_wizardType == WizardType.WEB)
+            {
+                txtResxName.Text = text + "Resx";
+            }
+        }
+    
         /// <summary> Replace any invalid chars</summary>
         /// <param name="sender">Sender object </param>
         /// <param name="e">Event Args </param>
@@ -5726,8 +6290,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     grdEntityCompositions[2, row].Value = _allCompositions.Checked;
                 }
+
                 grdEntityCompositions.EndEdit();
             }
+
             _skipAllCompositionsClick = false;
         }
 
@@ -5747,9 +6313,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         #endregion
 
-        /// <summary>
-        /// Text of control has changed
-        /// </summary>
+        /// <summary> Text of control has changed </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void txtPropText_TextChanged(object sender, EventArgs e)
@@ -5767,9 +6331,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Remove from layout
-        /// </summary>
+        /// <summary> Remove from layout </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnDeleteControl_Click(object sender, EventArgs e)
@@ -5777,9 +6339,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             DeleteControlFromLayout(_selectedControl, _controlType);
         }
 
-        /// <summary>
-        /// Remove control from layout
-        /// </summary>
+        /// <summary> Remove control from layout </summary>
         /// <param name="control">Control to be deleted</param>
         /// <param name="controlType">Type of control</param>
         private void DeleteControlFromLayout(Control control, ControlType controlType)
@@ -5829,9 +6389,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             ResetFinderRelatedValues(false);
         }
 
-        /// <summary>
-        /// Add a page to the selected tab
-        /// </summary>
+        /// <summary> Add a page to the selected tab </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnAddTabPage_Click(object sender, EventArgs e)
@@ -5851,16 +6409,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             CreatePalette(control);
 
             // Ensure new tab page is the active page
-            parentControl.SelectTab(control); ;
+            parentControl.SelectTab(control);
+            ;
 
             // Invoke the handler
             ClickHandler(control, null);
         }
 
 
-        /// <summary>
-        /// Finder file dialog
-        /// </summary>
+        /// <summary> Finder file dialog </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnFinderPropFile_Click(object sender, EventArgs e)
@@ -5876,7 +6433,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 {
                     txtFinderPropFile.Text = openFileDialog.FileName;
 
-                    var finderProps = FinderGenerator.FinderDefinitionControl.ExtractFinderPropertyFromFile(openFileDialog.FileName);
+                    var finderProps =
+                        FinderGenerator.FinderDefinitionControl.ExtractFinderPropertyFromFile(openFileDialog.FileName);
                     if (finderProps != null)
                     {
                         _finderLookup = FinderGenerator.FinderDefinitionControl.CreateFinderLookup(finderProps);
@@ -5892,9 +6450,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Get path to finder properties file for default
-        /// </summary>
+        /// <summary> Get path to finder properties file for default </summary>
         /// <returns>Finder file path</returns>
         private string GetInitPath()
         {
@@ -5911,18 +6467,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return !string.IsNullOrEmpty(regPath) ? Path.Combine(regPath, "Areas", "Core", "Scripts") : regPath;
         }
 
-        /// <summary>
-        /// Reset Finder values
-        /// </summary>
+        /// <summary> Reset Finder values </summary>
         /// <param name="isFinder">true if finder otherwise false</param>
         private void ResetFinderRelatedValues(bool isFinder)
         {
             FinderSelected(isFinder);
         }
 
-        /// <summary>
-        /// Set Finder values
-        /// </summary>
+        /// <summary> Set Finder values </summary>
         /// <param name="controlinfo">Control Info</param>
         private void SetFinderRelatedValues(ControlInfo controlinfo)
         {
@@ -5976,9 +6528,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Finder selection change event
-        /// </summary>
+        /// <summary> Finder selection change event </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cboFinderProp_SelectedIndexChanged(object sender, EventArgs e)
@@ -6004,9 +6554,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     {
                         finderUrl = selectedValue.url != null;
                     }
-                    catch 
+                    catch
                     {
                     }
+
                     controlInfo.FinderUrl = finderUrl;
                     controlInfo.Widget = Constants.WidgetFinder;
                     InitControlProp();
@@ -6016,9 +6567,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Sets data source for finder dropdown
-        /// </summary>
+        /// <summary> Sets data source for finder dropdown </summary>
         /// <param name="dataSource">Datasource</param>
         /// <param name="cb">Combobox</param>
         private void SetDropDownDictionaryDataSource(IDictionary<string, string> dataSource, ComboBox cb)
@@ -6028,9 +6577,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             cb.DataSource = new BindingSource(dataSource, null);
         }
 
-        /// <summary>
-        /// Returns finder's display data source
-        /// </summary>
+        /// <summary> Returns finder's display data source </summary>
         /// <param name="dynamicValue"></param>
         private IDictionary<string, string> CreateFinderDisplayDataSource(dynamic dynamicValue)
         {
@@ -6044,12 +6591,11 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     result = ((new string[] { Constants.None }).Concat(displayFieldNames.ToList())).ToArray();
                 }
             }
+
             return result?.ToDictionary<string, string>(x => x);
         }
 
-        /// <summary>
-        /// Finder checked
-        /// </summary>
+        /// <summary> Finder checked </summary>
         /// <param name="isFinder">true if finder otherwise false</param>
         private void FinderSelected(bool isFinder)
         {
@@ -6092,18 +6638,18 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Finder action to upate control info
-        /// </summary>
+        /// <summary> Finder action to upate control info </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cboFinderDisplay_SelectionChangeCommitted(object sender, EventArgs e)
         {
             var controlInfo = GetControlInfo(_selectedControl.Name);
-            if (controlInfo != null && !string.IsNullOrEmpty(cboFinderDisplay.Text) && !string.IsNullOrEmpty(cboFinderProp.Text))
+            if (controlInfo != null && !string.IsNullOrEmpty(cboFinderDisplay.Text) &&
+                !string.IsNullOrEmpty(cboFinderProp.Text))
             {
                 controlInfo.FinderDisplayField = (string)cboFinderDisplay.SelectedValue;
             }
         }
     }
 }
+

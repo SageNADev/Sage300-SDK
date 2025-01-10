@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -67,6 +67,17 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 return output;
             }
             return string.Empty;
+        }
+
+        /// <summary>
+        /// Gets Value for enumeration (Web Api). Specially handle DateTime
+        /// </summary>
+        /// <param name="value">Enum value</param>
+        /// <returns>Value from EnumValue</returns>
+        public static string GetValueForWebApi(Enum value)
+        {
+            var output = GetValue(value);
+            return (output.Equals("DateTime")? "DateTime?": output);
         }
         #endregion
     }

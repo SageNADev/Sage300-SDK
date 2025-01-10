@@ -1458,4 +1458,7 @@
   <data name="WorkersComp" xml:space="preserve">
     <value>Workers' Comp.</value>
   </data>
+  <data name="Override" xml:space="preserve">
+    <value>Override</value>
+  </data>
 </root>

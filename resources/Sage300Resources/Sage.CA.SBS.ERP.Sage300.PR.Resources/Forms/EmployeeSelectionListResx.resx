@@ -258,11 +258,17 @@
   <data name="EmployeeListDesc1" xml:space="preserve">
     <value>Employee List Description</value>
   </data>
+  <data name="EmployeeListNotExist" xml:space="preserve">
+    <value>Invalid input. Employee Selection List does not exist.</value>
+  </data>
   <data name="EmployeeNotExist" xml:space="preserve">
     <value>Invalid input. Employee does not exist.</value>
   </data>
   <data name="EmployeeNumber" xml:space="preserve">
     <value>Employee Number</value>
+  </data>
+  <data name="EmployeeSelectionList" xml:space="preserve">
+    <value>Employee Selection List</value>
   </data>
   <data name="EmployeeSelectionListTitle" xml:space="preserve">
     <value>EmployeeSelectionList</value>
@@ -272,6 +278,9 @@
   </data>
   <data name="EmploymentClassification" xml:space="preserve">
     <value>Employment Classification</value>
+  </data>
+  <data name="EmptyValidation" xml:space="preserve">
+    <value>Please specify type for criteria.</value>
   </data>
   <data name="ExcludeEarningOrDeduction" xml:space="preserve">
     <value>Exclude Earn/Deduction</value>
@@ -354,6 +363,12 @@
   <data name="FromOvertimeSchedule" xml:space="preserve">
     <value>From Overtime Schedule</value>
   </data>
+  <data name="FromProvince" xml:space="preserve">
+    <value>From Province</value>
+  </data>
+  <data name="FromProvinceOfEmployment" xml:space="preserve">
+    <value>From Province Of Employment</value>
+  </data>
   <data name="FromShiftDifferential" xml:space="preserve">
     <value>From Shift Differential</value>
   </data>
@@ -410,6 +425,9 @@
   </data>
   <data name="Manager1" xml:space="preserve">
     <value>Manager</value>
+  </data>
+  <data name="NoEmployeeList" xml:space="preserve">
+    <value>Invalid input. Employee List cannot be blank.</value>
   </data>
   <data name="NonDirectDeposit" xml:space="preserve">
     <value>Non-Direct Deposit</value>
@@ -480,6 +498,12 @@
   <data name="OptFld3To1" xml:space="preserve">
     <value>Optional Field 3 To Value</value>
   </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Optional Field</value>
+  </data>
+  <data name="OptionalFieldValidation" xml:space="preserve">
+    <value>The Optional Field From value cannot be greater than the To value.</value>
+  </data>
   <data name="Other" xml:space="preserve">
     <value>Other</value>
   </data>
@@ -519,6 +543,12 @@
   <data name="ProcessCommandCode1" xml:space="preserve">
     <value>Process Command Code</value>
   </data>
+  <data name="Province" xml:space="preserve">
+    <value>Province</value>
+  </data>
+  <data name="ProvinceOfEmployement" xml:space="preserve">
+    <value>Province Of Employement</value>
+  </data>
   <data name="RangeValidation" xml:space="preserve">
     <value>The entry in the From value cannot be greater than the To value.</value>
   </data>
@@ -531,11 +561,17 @@
   <data name="SelectBy" xml:space="preserve">
     <value>Select By</value>
   </data>
+  <data name="SelectionListBlank" xml:space="preserve">
+    <value>Invalid input. Employee selection list cannot be blank.</value>
+  </data>
   <data name="SelectionListTitle" xml:space="preserve">
     <value>Selection List</value>
   </data>
   <data name="SelectionListTitle1" xml:space="preserve">
     <value>Selection List</value>
+  </data>
+  <data name="SelectionListValidation" xml:space="preserve">
+    <value>Invalid input. Employee Selection List ID does not exist.</value>
   </data>
   <data name="SelectItem1" xml:space="preserve">
     <value>Select Item 1 Index</value>
@@ -686,6 +722,12 @@
   </data>
   <data name="ToOvertimeSchedule" xml:space="preserve">
     <value>To Overtime Schedule</value>
+  </data>
+  <data name="ToProvince" xml:space="preserve">
+    <value>To Province</value>
+  </data>
+  <data name="ToProvinceOfEmployment" xml:space="preserve">
+    <value>To Province Of Employment</value>
   </data>
   <data name="ToShiftDifferential" xml:space="preserve">
     <value>To Shift Differential</value>

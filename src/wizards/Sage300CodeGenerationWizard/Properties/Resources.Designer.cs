@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -1279,6 +1279,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Resource Name.
+        /// </summary>
+        internal static string ResourceName {
+            get {
+                return ResourceManager.GetString("ResourceName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The name is defaulted from the Business View.
+        /// </summary>
+        internal static string ResourceNameTip {
+            get {
+                return ResourceManager.GetString("ResourceNameTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resx.
         /// </summary>
         internal static string Resx {
@@ -1406,7 +1424,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The {0} Entities are used to generate UI code..
+        ///   Looks up a localized string similar to The Entities are used to generate UI code..
         /// </summary>
         internal static string StepDescriptionGenerateUICode {
             get {
@@ -1465,6 +1483,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string StepTitleGenerateUICode {
             get {
                 return ResourceManager.GetString("StepTitleGenerateUICode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Credentials.
+        /// </summary>
+        internal static string StepWebApiCredentials {
+            get {
+                return ResourceManager.GetString("StepWebApiCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This wizard will generate Web API code..
+        /// </summary>
+        internal static string StepWebApiCredentialsDesc {
+            get {
+                return ResourceManager.GetString("StepWebApiCredentialsDesc", resourceCulture);
             }
         }
         
@@ -1560,6 +1596,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HTTP Verbs.
+        /// </summary>
+        internal static string Verbs {
+            get {
+                return ResourceManager.GetString("Verbs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select verbs permitted on this entity.
+        /// </summary>
+        internal static string VerbsTip {
+            get {
+                return ResourceManager.GetString("VerbsTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version:.
         /// </summary>
         internal static string Version {
@@ -1610,6 +1664,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties {
         internal static string ViewNameTip {
             get {
                 return ResourceManager.GetString("ViewNameTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web.
+        /// </summary>
+        internal static string Web {
+            get {
+                return ResourceManager.GetString("Web", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web API.
+        /// </summary>
+        internal static string WebAPI {
+            get {
+                return ResourceManager.GetString("WebAPI", resourceCulture);
             }
         }
         

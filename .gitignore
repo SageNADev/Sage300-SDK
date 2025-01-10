@@ -1,5 +1,4 @@
 **/obj/
-/src/wizards/Sage300SolutionWizardPackage/ProjectTemplates/*.zip
 /src/wizards/Sage300SolutionWizard/Resources/AccpacDotNetVersion.props
 /samples/ClearStatistics/packages/Antlr.3.5.0.2/.signature.p7s
 /samples/ClearStatistics/packages/Antlr.3.5.0.2/Antlr.3.5.0.2.nupkg
@@ -1767,3 +1766,5 @@
 /samples/TaxAuthorities/ValuedPartner.TU.Web/Scripts/Kendo/kendo.web.min.js
 /samples/TaxAuthorities/ValuedPartner.TU.Web/Scripts/Kendo/kendo.window.min.js
 /samples/TaxAuthorities/ValuedPartner.TU.Web/Scripts/Kendo/kendo.wizard.min.js
+/src/wizards/Templates/UIWizards/WebApi.WebApi/.vs/TPA.TU.WebApi/FileContentIndex/*.vsidx
+/src/wizards/Templates/UIWizards/WebApi.WebApi/.vs/TPA.TU.WebApi/v17/*.suo

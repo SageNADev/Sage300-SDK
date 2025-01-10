@@ -279,6 +279,9 @@
   <data name="EmployeeSecurityFlag2" xml:space="preserve">
     <value>Indicateur de sécurité de l’employé2</value>
   </data>
+  <data name="EmployeeSelectionList" xml:space="preserve">
+    <value>Liste de sélection des employés</value>
+  </data>
   <data name="EmployeeSelectionListTitle" xml:space="preserve">
     <value>Liste de sélection des employés</value>
   </data>
@@ -479,6 +482,9 @@
   </data>
   <data name="SegmentCode3" xml:space="preserve">
     <value>Code segment 3</value>
+  </data>
+  <data name="SelectionListBlank" xml:space="preserve">
+    <value>Entrée invalide. La liste de sélection des employés ne peut pas être Entrée invalide. La liste de sélection des employés ne peut pas être vide.</value>
   </data>
   <data name="SelectionListTitle" xml:space="preserve">
     <value>Liste de sélection</value>

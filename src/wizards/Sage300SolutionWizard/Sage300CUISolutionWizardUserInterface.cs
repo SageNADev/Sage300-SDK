@@ -28,6 +28,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
+using Process = EnvDTE.Process;
+
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
@@ -55,6 +59,22 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 return configurationKey == null ? string.Empty : Path.Combine(configurationKey.GetValue("Programs").ToString(), @"Online\Web");
             }
         }
+
+        /// <summary>
+        /// The name of the Registry Value containing the name of the shared folder
+        /// </summary>
+        public static string Sage300CWebApiFolder
+        {
+            get
+            {
+                // Get the registry key
+                var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
+                var configurationKey = baseKey.OpenSubKey(ConfigurationKey);
+
+                // Find path tp shared folder
+                return configurationKey == null ? string.Empty : Path.Combine(configurationKey.GetValue("Programs").ToString(), @"Online\WebApi");
+            }
+        }
     }
 
     /// <summary> Class for UI Wizard </summary>
@@ -77,6 +97,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         private string _safeprojectname;
         private string _namespace;
         private string _sage300Webfolder;
+        private string _sage300WebApifolder;
         private string _kendoFolder;
         private bool _includeEnglish;
         private bool _includeChineseSimplified;
@@ -86,6 +107,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         private string _typeSegment;
         private string _typeRoute;
         private string _copyright;
+        private bool _isWebSolution;
         #endregion
 
 
@@ -109,9 +131,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         {
         }
 
-        /// <summary> Run finished </summary>
-        /// <remarks>Invoked after project is generated</remarks>
-        public void RunFinished()
+        private void CreateWebSolution()
         {
             var sln = (Solution2)_dte.Solution;
 
@@ -125,7 +145,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 
             var namespaceForProject = _companyName + "." + _applicationId + ".";
 
-            var projects = new string[] { "Web", "BusinessRepository", "Interfaces", "Models", "Resources", "Services" };
+            var projects = new string[] { "Web", "BusinessRepository", "Interfaces", "Models", "Resources", "Services"};
 
             var parameters = "$companyname$" + "=" + _companyName + "|$applicationid$=" + _applicationId +
                                 "|$companynamespace$=" + _namespace +
@@ -138,7 +158,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             foreach (var proj in projects)
             {
                 var templateFilename = proj + ".vstemplate";
-                var sourceFilenameAndParameters = csTemplatePath + proj + @".zip\" + templateFilename + "|" + parameters;
+                var sourceFilenameAndParameters = csTemplatePath + "Web." + proj + @".zip\" + templateFilename + "|" + parameters;
                 if (string.Compare(proj, "Web", StringComparison.OrdinalIgnoreCase) == 0)
                 {
                     //
@@ -228,6 +248,65 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             sln.Properties.Item("StartupProject").Value = startupProjectName;
         }
 
+        private void CreateWebApiSolution()
+        {
+            var sln = (Solution2)_dte.Solution;
+
+            // Will set later.
+            var startupProjectName = "";
+
+            var csTemplatePath = Path.GetDirectoryName(sln.GetProjectTemplate("Sage 300 Solution Wizard", "CSharp")) + @"\..\";
+
+            //this will create a solution
+            sln.Create(_destinationFolder, _safeprojectname);
+
+            var namespaceForProject = _companyName + "." + _applicationId + ".";
+
+            var projects = new string[] { "WebApi", "Models" };
+
+            var parameters = "$companyname$" + "=" + _companyName + "|$applicationid$=" + _applicationId +
+                                "|$companynamespace$=" + _namespace +
+                                "|$sage300webApifolder$=" + _sage300WebApifolder +
+                                "|$lowercaseapplicationid$=" + _lowercaseapplicationId +
+                                "|$copyright$=" + _copyright;
+
+            foreach (var proj in projects)
+            {
+                var templateFilename = proj + ".vstemplate";
+                var sourceFilenameAndParameters = csTemplatePath + "WebApi." + proj + @".zip\" + templateFilename + "|" + parameters;
+                var destination = Path.Combine(_destinationFolder, _namespace + "." + _applicationId);
+                var projectName = _namespace + "." + _applicationId;
+                if (!proj.Equals("WebApi"))
+                {
+                    destination += ".WebApi." + proj;
+                    projectName += ".WebApi." + proj;
+                }
+                else
+                {
+                    destination += "." + proj;
+                    projectName += "." + proj;
+                }
+                sln.AddFromTemplate(FileName: sourceFilenameAndParameters,
+                                        Destination: destination,
+                                        ProjectName: projectName,
+                                        Exclusive: false);
+
+            }
+        }
+
+        public void RunFinished()
+        {
+
+            if (_isWebSolution)
+            {
+                CreateWebSolution();
+            }
+            else
+            {
+                CreateWebApiSolution();
+            }
+        }
+
         /// <summary> Run started </summary>
         /// <param name="automationObject">Automation Object</param>
         /// <param name="replacementsDictionary">Replacements</param>
@@ -252,6 +331,8 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 
                 // Default the location for the Kendo folder
                 var webFolder = RegistryHelper.Sage300CWebFolder;
+                var webApiFolder = RegistryHelper.Sage300CWebApiFolder;
+
                 inputForm.KendoDefaultFolder = Path.Combine(webFolder, "Scripts", "Kendo");
 
                 var res = inputForm.ShowDialog();
@@ -265,18 +346,31 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 _applicationId = inputForm.ThirdPartyApplicationId.Trim();
                 _lowercaseapplicationId = _applicationId.ToLower();
                 _namespace = inputForm.CompanyNamespace.Trim();
-                _sage300Webfolder = webFolder;
-                _kendoFolder = inputForm.KendoFolder.Trim();
-                _includeEnglish = inputForm.IncludeEnglish;
-                _includeChineseSimplified = inputForm.IncludeChineseSimplified;
-                _includeChineseTraditional = inputForm.IncludeChineseTraditional;
-                _includeSpanish = inputForm.IncludeSpanish;
-                _includeFrench = inputForm.IncludeFrench;
+                _isWebSolution = inputForm.IsWebSolution;
 
-                // Payroll
-                _typeSegment = _applicationId == "PR" ? "{type}/" : "";
-                _typeRoute = _applicationId == "PR" ? "type = 0, " : "";
-                
+                if (_isWebSolution)
+                {
+                    _sage300Webfolder = webFolder;
+                    _kendoFolder = inputForm.KendoFolder.Trim();
+                    _includeEnglish = inputForm.IncludeEnglish;
+                    _includeChineseSimplified = inputForm.IncludeChineseSimplified;
+                    _includeChineseTraditional = inputForm.IncludeChineseTraditional;
+                    _includeSpanish = inputForm.IncludeSpanish;
+                    _includeFrench = inputForm.IncludeFrench;
+
+                    // Payroll
+                    _typeSegment = _applicationId == "PR" ? "{type}/" : "";
+                    _typeRoute = _applicationId == "PR" ? "type = 0, " : "";
+
+                    replacementsDictionary.Add("$typesegment$", _typeSegment);
+                    replacementsDictionary.Add("$sage300webfolder$", _sage300Webfolder);
+                    replacementsDictionary.Add("$typeroute$", _typeRoute);
+                }
+                else
+                {
+                    _sage300WebApifolder = webApiFolder;
+                }
+
                 // Logic specific for Sage developers
                 _copyright = _companyName;
                 if (_companyName == "Sage")
@@ -288,10 +382,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                 replacementsDictionary.Add("$companyname$", _companyName);
                 replacementsDictionary.Add("$applicationid$", _applicationId);
                 replacementsDictionary.Add("$companynamespace$", _namespace);
-                replacementsDictionary.Add("$sage300webfolder$", _sage300Webfolder);
                 replacementsDictionary.Add("$lowercaseapplicationid$", _lowercaseapplicationId);
-                replacementsDictionary.Add("$typesegment$", _typeSegment);
-                replacementsDictionary.Add("$typeroute$", _typeRoute);
                 replacementsDictionary.Add("$copyright$", _copyright);
             }
             catch

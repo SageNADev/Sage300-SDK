@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -21,6 +21,8 @@
 #region Imports
 using EnvDTE;
 using System.Windows.Forms;
+using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
+
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
@@ -35,10 +37,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 // Only display wizard if solution is a valid Sage 300 solution with
                 // known Sage 300 projects
-                if (form.ValidPrerequisites(solution))
+                if (form.ValidPrerequisitesForWeb(solution))
                 {
+                    form.InitWebGeneration();
                     // Display wizard modally
                     form.ShowDialog();
+                }
+                else if (form.ValidPrerequisitesForWebApi(solution))
+                {
+                    form.InitWebApiGeneration();
+                    // Display wizard modally
+                    form.ShowDialog();
+                }
+                else
+                {
+                    form.DisplayMessage(Resources.InvalidSolution, MessageBoxIcon.Error);
                 }
             }
         }

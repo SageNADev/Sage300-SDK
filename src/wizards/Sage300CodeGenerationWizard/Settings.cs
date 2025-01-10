@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2021 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -48,6 +48,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         public string Password { get; set; }
         /// <summary> Version for Business View </summary>
         public string Version { get; set; }
+
+        /// <summary>
+        /// webapi version
+        /// </summary>
+        public string WebApiVersion { get; set; }
+
         /// <summary> Company for Business View </summary>
         public string Company { get; set; }
         /// <summary> RepositoryType for Business View </summary>
@@ -108,6 +114,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// Screen key field index
         /// </summary>
         public int screenKeyFieldIndex { get; set; }
+
+        /// <summary> Web API Controller Definitions </summary>
+        public List<ControllerSettings> ControllerSettings { get; set; }
+
+        /// <summary>
+        /// wizard type
+        /// </summary>
+        public WizardType WizardType { get; set; }
         #endregion
     }
 

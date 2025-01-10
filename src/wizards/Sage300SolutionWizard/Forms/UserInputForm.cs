@@ -21,9 +21,12 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 using Sage.CA.SBS.ERP.Sage300.SolutionWizard.Properties;
 using MetroFramework.Forms;
+using Microsoft.ServiceHub.Resources;
+using VSLangProj;
 
 namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 {
@@ -38,10 +41,22 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 
         /// <summary> Generate </summary>
         private bool _generate = false;
-		#endregion
 
-		#region Private Constants
-		private static class Constants
+        /// <summary>
+        /// width of the form
+        /// </summary>
+        private const int FORM_WIDTH = 688;
+
+        /// <summary>
+        /// height of the form
+        /// </summary>
+        private const int FORM_HEIGHT = 467;
+
+
+        #endregion
+
+        #region Private Constants
+        private static class Constants
 		{
             public const string KendoLicenseUrl = @"http://www.telerik.com/purchase/license-agreement/kendo-ui-complete";
 
@@ -52,6 +67,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 			public const string SingleSpace = " ";
 
             /// <summary> The names of all of the panels </summary>
+            public const string PanelProjectType = "pnlProjectType";
             public const string PanelGenerateSolution = "pnlGenerateSolution";
             public const string PanelInfo = "pnlInfo";
             public const string PanelKendo = "pnlKendo";
@@ -70,6 +86,8 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
         public bool IncludeChineseTraditional { get; set; }
         public bool IncludeSpanish { get; set; }
         public bool IncludeFrench { get; set; }
+
+        public bool IsWebSolution => radioButtonWeb.Checked;
         #endregion
 
         #region Constructor
@@ -90,6 +108,9 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
 
             btnBack.Text = Resources.Back;
             btnNext.Text = Resources.Next;
+
+            radioButtonWeb.Text = Resources.ProjectWeb;
+            radioButtonWebApi.Text = Resources.ProjectWebApi;
 
             // Main Step
             lblCompanyName.Text = Resources.CompanyName;
@@ -131,6 +152,9 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             // Generate Step
             lblGenerateHelp.Text = Resources.GenerateTip;
 
+            // set the form size
+            Size = new Size(FORM_WIDTH, FORM_HEIGHT);
+
         }
 
         /// <summary> Initialize wizard steps </summary>
@@ -146,15 +170,12 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             _wizardSteps.Clear();
 
             // Init Panels
+            InitPanel(pnlProjectType);
             InitPanel(pnlInfo);
             InitPanel(pnlKendo);
             InitPanel(pnlResourceFiles);
             InitPanel(pnlGenerateSolution);
-
-            AddStep(Resources.StepTitleInfo, Resources.StepDescriptionInfo, pnlInfo);
-            AddStep(Resources.StepTitleKendo, Resources.StepDescriptionKendo, pnlKendo);
-            AddStep(Resources.StepTitleResourceFiles, Resources.StepDescriptionResourceFiles, pnlResourceFiles);
-            AddStep(Resources.StepTitleGenerate, Resources.StepDescriptionGenerate, pnlGenerateSolution);
+            AddStep(Resources.SelectSolutionTypeStepTitle, Resources.SelectSolutionTypeStepDesc, pnlProjectType);
 
             // Display first step
             NextStep();
@@ -207,6 +228,22 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
                     btnBack.Enabled = true;
 
                     ShowStep(false);
+
+                    if (IsCurrentPanel(Constants.PanelProjectType))
+                    {
+                        _wizardSteps.Clear();
+                        AddStep(Resources.SelectSolutionTypeStepTitle, Resources.SelectSolutionTypeStepDesc, pnlProjectType);
+                        AddStep(Resources.EnterInformationStepTitle, Resources.EnterInformationStepDesc, pnlInfo);
+                        if (radioButtonWeb.Checked)
+                        {
+                            AddStep(Resources.StepTitleKendo, Resources.StepDescriptionKendo, pnlKendo);
+                            AddStep(Resources.StepTitleResourceFiles, Resources.StepDescriptionResourceFiles,
+                                pnlResourceFiles);
+                        }
+
+                        AddStep(Resources.StepTitleGenerate, Resources.StepDescriptionGenerate, pnlGenerateSolution);
+                        _currentWizardStep = 0;
+                    }
                 }
 
                 _currentWizardStep++;
@@ -407,7 +444,7 @@ namespace Sage.CA.SBS.ERP.Sage300.SolutionWizard
             var exampleNamespace = string.Empty;
             if (companyName.Length > 0 && appId.Length > 0 && theNamespace.Length > 0)
             {
-                exampleNamespace = string.Format(NamespaceMask, theNamespace, appId, "Web");
+                exampleNamespace = string.Format(NamespaceMask, theNamespace, appId, IsWebSolution ? "Web" : "WebApi");
             }
             else
             {

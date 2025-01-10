@@ -1,0 +1,266 @@
+﻿<# /* The MIT License (MIT) */ #>
+<# /* Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* */ #>
+<# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
+<# /* this software and associated documentation files (the "Software"), to deal in */ #>
+<# /* the Software without restriction, including without limitation the rights to use, */ #>
+<# /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ #>
+<# /* Software, and to permit persons to whom the Software is furnished to do so, */ #>
+<# /* subject to the following conditions: */ #>
+<# /* */ #>
+<# /* The above copyright notice and this permission notice shall be included in all */ #>
+<# /* copies or substantial portions of the Software. */ #>
+<# /* */ #>
+<# /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ #>
+<# /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ #>
+<# /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ #>
+<# /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ #>
+<# /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ #>
+<# /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ #>
+<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="ACCPAC.Advantage" #>
+<#@ import namespace="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings" name="settings" #>
+<#@ parameter type="Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.ControllerSettings" name="controllerSettings" #>
+<#
+    // Locals
+    var moduleId = settings.ModuleId;
+    var copyright = settings.Copyright;
+    var companyNamespace = settings.CompanyNamespace;
+	var view = controllerSettings.BusinessView;
+    var extension = view.Properties[BusinessView.Constants.Extension];
+    var modelName = view.Properties[BusinessView.Constants.ModelName];
+#>
+// <#=copyright#>
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+<#
+bool exit = false;
+foreach (var oneEnum in view.Enums.Values)
+{
+	foreach (var value in oneEnum.Values)
+	{
+		if (value.Value is char)
+		{
+			exit = true;
+#>
+using Sage.CA.SBS.ERP.Sage300.Common.Models;
+<#
+			break;
+		}
+	}
+	if(exit)
+		break;
+}
+#>
+using Sage.CA.SBS.ERP.Sage300.Common.WebApi.Attributes;
+using Sage.CA.SBS.ERP.Sage300.Common.WebApi.Models;
+
+namespace <#=companyNamespace#>.<#=moduleId#>.WebApi.Models<#=extension#>
+{
+    /// <summary>
+    /// <#=modelName#> Model (Generated From View)
+    /// </summary>
+<#
+    {
+     var annotation = string.Format("[ViewModel(ViewName = \"{0}\", ViewId = \"{1}\")]", "TODO: Replace with ROTO ID", view.Properties[BusinessView.Constants.ViewId]);    
+#>
+    <#=annotation#>
+<#
+    }
+#>
+    public partial class <#=modelName#> : ViewResourceModel
+    {
+<#
+            var modelHasKey = false;
+
+            // Iterate fields collection
+            for (var i = 0; i < view.Fields.Count; i++)
+            {
+                // locals
+                var field = view.Fields[i];
+                var fieldName = field.Name;
+                var backingFieldName = "_" + char.ToLower(fieldName[0]).ToString() + fieldName.Substring(1);
+
+                // Naming convention is potentially invalid
+                if (fieldName.All(Char.IsUpper))
+                {
+#>
+        // TODO The naming convention of this property has to be manually evaluated
+<#
+                }
+#>
+        /// <summary>
+        /// Gets or sets <#=fieldName#>
+        /// </summary>
+<#
+                {
+        // Check for Key annotation
+        var annotation = field.IsKey ? "[Key]" : string.Empty;
+        if (!annotation.Equals(string.Empty))
+        {
+            modelHasKey = true;
+#>
+        <#=annotation#>
+<#
+        }
+
+		annotation = string.Format("[ViewField(Id = {0}, Name = \"{1}\", Size = {2}, Precision = {3}, Type = ViewFieldType.{4})]", field.Id, field.ServerFieldName, field.Size, field.Precision, field.ViewFieldType.ToString());
+        if (!annotation.Equals(string.Empty))
+        {
+#>
+        <#=annotation#>
+<#
+                    }
+        }
+                
+                // Property
+#>
+        public <#=(field.Type.Equals(BusinessDataType.Enumeration) ? field.Name + "Enum" : EnumValue.GetValueForWebApi(field.Type))#> <#=fieldName#> { get { return <#=backingFieldName#>; } set { <#=backingFieldName#> = value; PropertySet(); } }
+
+<#
+            }
+
+            if (!modelHasKey)
+            {
+                // For models without keys (Sage 300 views without tables e.g. Super Views),
+                // we must create a dummy property marked with the Key attribute to satisfy
+                // the requirements of the ASP.NET OData framework.
+#>
+        /// <summary>
+        /// Get or sets ActionSelector
+        /// </summary>
+        [Key]
+        public string ActionSelector { get { return string.Empty; } set { } }
+
+<#
+
+            }
+#>
+
+        #region Backing Fields
+
+<#
+            // UI access methods
+            for (var i = 0; i < view.Fields.Count; i++)
+            {
+                // locals
+                var field = view.Fields[i];
+                var fieldName = field.Name;
+                var backingFieldName = "_" + char.ToLower(fieldName[0]).ToString() + fieldName.Substring(1);
+#>
+        private <#=(field.Type.Equals(BusinessDataType.Enumeration) ? field.Name + "Enum" : EnumValue.GetValueForWebApi(field.Type))#> <#=backingFieldName#>;
+<#
+            }
+
+            {
+#>
+
+        #endregion
+
+        #region Enums
+
+<#
+                // UI access methods
+                foreach (var oneEnum in view.Enums.Values)
+                {
+#>
+        /// <summary>
+        /// Enum for <#=oneEnum.Name#>
+        /// </summary>
+        [ViewEnum]
+        public enum <#=oneEnum.Name#>Enum
+        {
+<#
+                    // Iterate values collection
+                    var count = 0;
+                    foreach (var value in oneEnum.Values)
+                    {
+                        // Locals - Used to split out prefix and replace invalid characters
+                        var tmp = value.Key.Split(':');
+                        var valueName = tmp[1];
+                        count++;
+
+                        if (value.Value is int)
+                        {
+#>
+            <#=valueName#> = <#=value.Value#><#=(count != oneEnum.Values.Count) ? "," : string.Empty#>
+<#
+                        }
+
+                        if (value.Value is char)
+                        {
+                            var character = value.Value.ToString();
+                            if (string.Compare(character, "\\") == 0)
+                            {
+                                character = "\\\\";
+                            }
+#>
+            [StoredAsChar]
+<#
+
+#>
+            <#=valueName#> = '<#=character#>'<#=(count != oneEnum.Values.Count) ? "," : string.Empty#>
+<#
+                        }
+                    }
+#>
+        }
+
+<#
+                }
+#>
+        #endregion
+
+        #region Detail Collections
+ 
+<#
+                if (controllerSettings != null)
+                {
+                    foreach (var detail in controllerSettings.Details)
+                    {
+#>
+        /// <summary>
+        /// Detail collection of <#=detail.BusinessView.Properties[BusinessView.Constants.ModelName]#>
+        /// </summary>
+        public List<<#=detail.BusinessView.Properties[BusinessView.Constants.ModelName]#>> <#=detail.BusinessView.Properties[BusinessView.Constants.PropertyName]#> { get; set; }
+
+<#
+                    }
+                }
+#>
+        /// <summary>
+        /// Initializes all generated detail collections
+        /// </summary>
+        private void InitializeDetailCollections()
+        {
+<#
+                if (controllerSettings != null)
+                {
+                    foreach (var detail in controllerSettings.Details)
+                    {
+#>
+            <#=detail.BusinessView.Properties[BusinessView.Constants.PropertyName]#> = new List<<#=detail.BusinessView.Properties[BusinessView.Constants.ModelName]#>>();
+<#
+                    }
+                }
+#>
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Initializes the generated portion of the model
+        /// </summary>
+        private void ConstructGeneratedModel()
+        {
+            InitializeDetailCollections();
+        }
+<#
+            }
+#>
+    }
+}

@@ -33,7 +33,8 @@ call :Zip Resources
 call :Zip Services
 call :Zip Web
 call :Zip Sage300SolutionTemplate
-
+call :Zip WebApi.WebApi
+call :Zip WebApi.Models
 goto :EOF
 
 :: ---------------------------------------------------------------------------------------

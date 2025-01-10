@@ -1029,21 +1029,6 @@ $.extend(sg.utls, {
         // Tmp solution for sync logout, as mentioned, there are some issue for this logOut function. 
         // Just ask the user to log out first due to time consuming
         
-        if (!isAdminLogout) {
-
-            // We need to reduce the number of active screens (or modules) 
-            // from the overall count because we're in the process of
-            // logging out.
-            sg.utls.updateOpenScreenCount();
-            if (!openScreenCountManager.anyActiveScreens()) {
-                // There are currently no active screens running so let's
-                // notify sibling tabs to enable their session date pickers
-                key = "ALLSESSIONS_EnablePortalSessionDatePicker";
-                var randomValue = sg.utls.makeRandomString(5);
-                sage.cache.local.set(key, randomValue);
-            }
-        }
-
         sg.utls.destroyPoolForReport(true);
         sage.cache.session.clearAll();
 
@@ -1097,21 +1082,6 @@ $.extend(sg.utls, {
             // Set the src attribute for all iframes (where screens live)
             // This will initiate the 'beforunload' event in each active screen/module
             //sg.utls.clearSrcAttributeFromAllActiveModuleIFrames();
-
-            if (!isAdminLogout) {
-
-                // We need to reduce the number of active screens (or modules) 
-                // from the overall count because we're in the process of
-                // logging out.
-                sg.utls.updateOpenScreenCount();
-                if (!openScreenCountManager.anyActiveScreens()) {
-                    // There are currently no active screens running so let's
-                    // notify sibling tabs to enable their session date pickers
-                    key = "ALLSESSIONS_EnablePortalSessionDatePicker";
-                    var randomValue = sg.utls.makeRandomString(5);
-                    sage.cache.local.set(key, randomValue);
-                }
-            }
 
             sg.utls.destroyPoolForReport(true);
             sage.cache.session.clearAll();
@@ -1167,30 +1137,6 @@ $.extend(sg.utls, {
             var currentIframeId = $(this).attr("frameId");
             $("#" + currentIframeId).attr("src", "about:blank");
         });
-    },
-
-    /**
-     * @name updateOpenScreenCount
-     * @description Ensure that the open screen count is reduced 
-     *              (or eliminated) if the tab/browser is closed.
-     */
-    updateOpenScreenCount: function() {
-
-        // Get the current active module count for this tab
-        var openScreenCountForTab = openScreenCountManager.getCountForCurrentTab();
-
-        // Get the overall active module count (all tabs)
-        var overallCount = openScreenCountManager.get();
-
-        // Overall active module count AFTER current tab is closed
-        var updatedCount = overallCount - openScreenCountForTab;
-
-        if(updatedCount > 0) {
-            openScreenCountManager.set(updatedCount);
-        } else {
-            // There are no more open modules so we can remove the cached number
-            openScreenCountManager.remove();
-        }
     },
 
     /**
@@ -5010,7 +4956,6 @@ $(function () {
         //
 		sessionStorage["productId"] = "";        $(window).on('unload', function () {
             PageUnloadHandler();
-            sg.utls.updateOpenScreenCount();
         });
 
         $(window).scroll(function () {

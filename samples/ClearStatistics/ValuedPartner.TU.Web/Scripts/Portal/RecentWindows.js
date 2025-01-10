@@ -1,20 +1,12 @@
-﻿/* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */
 
 //"use strict";
 
-/**
- * Requires global (or parent scoped) variables:
- * sg.utls.localStorageKeys.RECENT_WINDOWS_BASE
- * LOGGED_IN_TENANT_CONST
- * LOGGED_IN_USERNAME_CONST
- * menuUrlList
- * screenId
- * reportScreenHelp
- */
+var RecentWindowsMenu = function (limitSetting, menuUrlList, recentWindowsKey, cache, menuLabelGetter, htmlEncode) {
 
-var RecentWindowsMenu = function () {
-
-    var constants = {
+    const constants = {
+        DEFAULT_MAX_RECENT_WINDOWS: 10,
+        ABSOLUTE_MAX_RECENT_WINDOWS: 100,
         RECENTWINDOWS_DIV_SELECTOR: '#recentWindowManager > div',
         DV_RECENTWINDOWS_SELECTOR: "#dvRecentWindows",
         DV_RECENTWINDOWS_SPAN_SELECTOR: "#dvRecentWindows span",
@@ -22,12 +14,85 @@ var RecentWindowsMenu = function () {
         PARENTID_SELECTOR: 'data-parentid',
         IS_REPORT_IDX: "ReportViewer.aspx?token",
         ONPREMISE: "OnPremise",
-        UNDEFINED: "undefined"
+        UNDEFINED: "undefined",
+        TYPE_STRING: "string",
+        TYPE_NUMBER: "number",
+        TYPE_UNDEFINED: "undefined"
     };
+
+    // Functions for processing constructor arguments, so they have to come first
+
+    /**
+     * gets the number of entries permitted in the Recent Windows List, based upon the configuration file setting
+     * @param {(string|number)} setting the setting from the configuration file
+     */
+    function RecentWindowsLimit(setting) {
+        // For security - recognize that the setting should not be trusted, since it comes from a minimally trusted server-side source
+        const defaultSize = constants.DEFAULT_MAX_RECENT_WINDOWS;
+        if (!setting) return defaultSize;
+        let recentWindowsLimit = defaultSize;
+        if (typeof setting === constants.TYPE_STRING) {
+            if (!(/^([0-9]+)$/.test(setting))) return defaultSize;
+            recentWindowsLimit = Number.parseInt(setting);
+        } else if (typeof setting === constants.TYPE_NUMBER && Number.isInteger(setting)) {
+            recentWindowsLimit = setting;
+        } else {
+            return defaultSize;
+        }
+        if (recentWindowsLimit <= 0 || recentWindowsLimit > constants.ABSOLUTE_MAX_RECENT_WINDOWS) {
+            recentWindowsLimit = defaultSize;
+        }
+        return recentWindowsLimit;
+    }
+
+    /**
+     * creates a map of sets representing the menu list, allowing easier matching. It would appear that each menu item has one and only one parent. However, that is not guaranteed and the existing code did not assume it.
+     * @param {{Data: {MenuId: (number|string), ParentMenuId: (number|string)}}[]} menuList the menu list from the server as an array of Data items, each with a MenuID and ParentMenuId
+     * @returns {any} a set-based representation that is easier to use for checking
+     */
+    function MenuMap(menuList) {
+        const map = new Map();
+        for (var i = 0; i < menuList.length; i++) {
+            const data = menuList[i].Data;
+            if (data) {
+                let menuId = data.MenuId;
+                if (typeof menuId === constants.TYPE_NUMBER) menuId = "" + menuId;
+                let parentId = data.ParentMenuId;
+                if (typeof parentId === constants.TYPE_NUMBER) parentId = "" + parentId;
+                if (menuId && parentId) {
+                    let set = map.get(menuId);
+                    if (set === undefined) {
+                        set = new Set();
+                        map.set(menuId, set);
+                    }
+                    set.add(parentId);
+                }
+            }
+        }
+        return map;
+    }
+
+    const _menuMap = MenuMap(menuUrlList);
+    const _recentWindowsLimit = RecentWindowsLimit(limitSetting);
+
+    let _onHasVisibleFrame; // may hold one callback, to be called on show if one of the entries is visible
+
+    /**
+     * A local copy of the items in the Recent Windows List, most recent first. This is kept synchronized with the copy in the local storage and the DOM is generated from it.
+     */
+    const items = [];
+
+    /**
+     * gets the DOM element under which the list sits
+     * @returns a jQuery object representing the parent of the list
+     */
+    function GetDom() {
+        return $(constants.DV_RECENTWINDOWS_SELECTOR);
+    }
 
     /**
      * @name simplifyTargetUrl
-     * @description Remove all items from an url except Area, Controller, Action and any paramters
+     * @description Remove all items from a url except Area, Controller, Action and any parameters
      *              Note: Depending on whether this is being run through one's debugger or from
      *                    an actual installation, the url being passed in may differ slightly.
      *
@@ -42,7 +107,7 @@ var RecentWindowsMenu = function () {
      *                    Development Environment : "/OnPremise/[SID]/Core/InquiryGeneral/Index/?templateId=b64aa4df-a1f1-41c0-ad9e-0efac930de7e&name=Payment Inquiry (Functional Currency)&dsId=8be1f261-1208-4508-a6ca-e645a1881227"
      * @private
      * @param {string} _url - The url to simplify
-     * @returns {string} - A string representing the area, controller, action and parameter(s)
+     * @returns {string} - A string representing the area, controller, action and parameter(s), with a possible final separator between action and parameters
      */
     function simplifyTargetUrl(_url) {
         var areaIndex = 3;
@@ -87,186 +152,124 @@ var RecentWindowsMenu = function () {
     }
 
     /**
-     * @name loadRecentWindowsListFromStorage
-     * @description Load recent window list from storage
-     * @private
+     * checks that the provided url is acceptable for display (since it may have come from an untrusted source)
+     * @param {string} url the url to test
      */
-    function loadRecentWindowsListFromStorage() {
-        var key = getRecentWindowKey();
-        var cachedMarkup = sage.cache.local.get(key);
-
-        //
-        // Now, we need to ensure that the labels used in the menu are in the correct language
-        //
-        $(cachedMarkup).find('span').each(function (index, value) {
-            // From the cachedMarkup, get each menuId
-            var item = $(this);
-            var menuItemId = item[0].attributes['data-menuid'].value;
-            var menuTextToBeConverted = item[0].innerHTML;
-
-            // Now that we have a menuId, we need to find the matching menu item from the main menu.
-            var menuItemText = sg.utls.getMenuLabelFromMenuItemId(menuItemId);
-            if (menuItemText) {
-                cachedMarkup = cachedMarkup.replace(menuTextToBeConverted, menuItemText);
-            }
-        });
-
-
-        $(constants.DV_RECENTWINDOWS_SELECTOR).html(cachedMarkup);
-    }
-
-    /**
-     * @name getRecentWindowsKey
-     * @description The name of the localStorage key
-     * @private
-     * @returns {string} Return the name localStorage key
-     */
-    function getRecentWindowKey() {
-        var sessionId = sg.utls.extractSessionIdFromWindow();
-        var key = sessionId + sg.utls.localStorageKeys.RECENT_WINDOWS_BASE;
-        return key;
+    function IsAcceptableUrl(url) {
+        // Confirm that the url is "area/controller[/action[/][?parameters]]"
+        // simplifyURL will have removed any leading slash.
+        // However, currently it will 'preserve' any trailing slash
+        // It is dangerous to 'normalise' that, so instead we are careful here
+        if (!url) return false;
+        if (typeof url !== constants.TYPE_STRING) return false;
+        if (url.trim() === "") return false;
+        const split = url.split("/");
+        const splitLength = split.length;
+        if (splitLength < 2) return false;
+        if (splitLength > 4) return false;
+        const area = split[0].trim();
+        if (area.length <= 0) return false;
+        if (!IsSimpleId(area)) return false;
+        const controller = split[1].trim();
+        if (controller.length <= 0) return false;
+        if (!IsSimpleId(controller)) return false;
+        if (splitLength === 2) return true;
+        if (splitLength === 3) {
+            // This might be with action but no parameters, or it might be an action with no trailing slash, going straight into parameters
+            const actionAndParameters = split[2].trim();
+            if (actionAndParameters.length <= 0) return false;
+            const actionSplit = actionAndParameters.split('?');
+            const actionSplitLength = actionSplit.length;
+            if (actionSplitLength < 1 || actionSplitLength > 2) return false;
+            const action = actionSplit[0].trim();
+            if (!IsSimpleId(action)) return false;
+            if (actionSplitLength < 2) return true;
+            const parameters = actionSplit[1].trim();
+            if (parameters.length <= 0) return false;
+            // TODO Do we need to test the parameters more thoroughly?
+            return true;
+        } else {
+            // assert splitLength === 4
+            const action2 = split[2].trim();
+            if (action2.length <= 0) return false;
+            if (!IsSimpleId(action2)) return false;
+            const parameters2 = split[3].trim();
+            if (parameters2.length <= 0) return false;
+            // TODO Do we need to test the parameters more thoroughly?
+            return (parameters2.startsWith('?'));
+        }
     }
 
     /**
      * @name save
-     * @description Store recent windows list html markup to localStorage
-     *              [Has Unit Test]
+     * @description Store recent windows list to localStorage
      * @private
      */
     function save() {
-        var key = getRecentWindowKey();
-        var markup = getHtml();
-        sage.cache.local.set(key, markup);
+        cache.set(recentWindowsKey, items);
     }
 
     /**
-     * @name removeNonPermittedItems
-     * @description Remove all items that cause length of list to exceed the limit
-     * @private
+     * returns the index of the existing copy, if any, which must be removed from the middle of the list
+     * @param {(string|number)} menuId the menu id of the entry to be found, which is the one to be added
+     * @param {number} limit the number of items allowed in the list
+     * @returns -1 if there is no need to remove an entry; just truncate the list before adding
      */
-    function removeNonPermittedItems() {
-        $(constants.DV_RECENTWINDOWS_SPAN_SELECTOR).each(
-            function (index, elem) {
-                var currentMenuId = $(elem).attr(constants.DATAMENUID_SELECTOR);
+    function ExistingIndex(menuId, limit) {
+        // The limit should not be negative or zero anyway. If it is 1 then just truncate.
+        if (limit <= 1) return -1;
 
-                // Remove any recent windows over the limit
-                if (currentMenuId) {
-                    removeNonPermittedMenuItems("", elem, currentMenuId);
-                }
+        const length = items.length;
+        const adjustedLimit = limit - 1;
+        const iterationLimit = adjustedLimit < length ? adjustedLimit : length;
+        for (let index = 0; index < iterationLimit; ++index) {
+            if (items[index].menuid == menuId) {
+                return index;
             }
-        );
+        }
+        return -1;
     }
 
     /**
      * @name removeRecentWindowsDuplicatedOrAboveLimit
-     * @description Removes Recent Windows excess menu items or duplicated if menuId param defined.
+     * @description Removes Recent Windows excess menu items or duplicates of the new one.
      * @private
-     * @param {string} menuId added to menu, if empty, removes excess items
+     * @param {string} menuId the menu item being added to to the menu
      */
     function removeRecentWindowsDuplicatedOrAboveLimit(menuId) {
-        // calculate limit of recent windows to display, default is 10
-        var recentWindowsLength = $(constants.DV_RECENTWINDOWS_SPAN_SELECTOR).length;
-        var recentWindowsLimit = RECENT_WIN_LIMIT_CONST;
-        if (!recentWindowsLimit) {
-            recentWindowsLimit = 10;
+        const limit = _recentWindowsLimit;
+        const index = ExistingIndex(menuId, limit);
+        if (index >= 0) {
+            items.splice(index, 1);
         }
-        var recentWindowsToRemove = recentWindowsLength - recentWindowsLimit;
-
-        // Remove items in reverse order from the list - FIFO
-        $($(constants.DV_RECENTWINDOWS_SPAN_SELECTOR).get().reverse()).each(
-            function (index, elem) {
-                var currentMenuId = $(elem).attr(constants.DATAMENUID_SELECTOR);
-
-                // Remove any recent windows over the limit
-                if (currentMenuId) {
-
-                    if (recentWindowsToRemove >= 0) {
-                        // Only remove the last element when adding items
-                        if (recentWindowsToRemove === 0 && menuId !== "") {
-                            $(elem).closest("div").remove();
-                        } else if (recentWindowsToRemove > 0) {
-                            $(elem).closest("div").remove();
-                        }
-                        recentWindowsToRemove--;
-                        // continue to the next recent window span
-                        return true;
-                    }
-
-                    // Remove screen name from recent window list
-                    // if a screen with matching menu id is found
-                    if (currentMenuId === menuId) {
-                        $(elem).closest("div").remove();
-                        // breaking out of the .each call.
-                        return false;
-                    }
-                }
-            }
-        );
-    }
-
-    /**
-     * Removes Recent Windows non-permitted menu items
-     * Requires menuUrlList parent scope variable
-     * @private
-     * @param {string} menuId - menu id added to menu
-     * @param {jquery} elem - the html element
-     * @param {string} currentMenuId - current menuId from data attribute
-     * @returns {bool} true if elem removed, false otherwise
-     */
-    function removeNonPermittedMenuItems(menuId, elem, currentMenuId) {
-        // menuUrlList is a global var
-
-        // Only on initial load.
-        if ("" === menuId) {
-            var currentParentId = $(elem).attr(constants.PARENTID_SELECTOR);
-
-            // Remove screen name if user has no rights to it
-            if (currentMenuId && currentParentId) {
-                var permitted = checkIsPermitted(menuUrlList, currentMenuId, currentParentId);
-
-                // current recently used window entry not permitted
-                if (!permitted) {
-                    $(elem).closest("div").remove();
-                    return true;
-                }
-            }
+        if (items.length >= limit) {
+            // assert limit > 0
+            items.length = limit - 1;
         }
-        return false;
     }
 
     /**
      * @name checkIsPermitted
      * @description TODO - Add Description
      * @private
-     * @param {object} menuUrlList - TODO - Add Description
      * @param {number} menuId - TODO - Add Description
      * @param {number} parentId - TODO - Add Description
      * @returns {boolean} true = permitted | false = not permitted
      */
-    function checkIsPermitted(menuUrlList, menuId, parentId) {
-        var permitted = false;
-        for (var i = 0; i < menuUrlList.length; i++) {
-            if (menuUrlList[i].Data.MenuId === menuId &&
-                menuUrlList[i].Data.ParentMenuId === parentId) {
-                permitted = true;
-                break;
-            }
+    function checkIsPermitted(menuId, parentId) {
+        if (!parentId || !menuId) return true;
+        // Beware types. In particular the parent id might be a string in the menuUrlList but a number in the local storage
+        let strParentId = parentId;
+        if (typeof parentId === constants.TYPE_NUMBER) {
+            strParentId = "" + parentId;
         }
-        return permitted;
-    }
-
-    /**
-     * @name isEmpty
-     * @description Are there any items in the recent window list?
-     * @private
-     * @returns {boolean} true = recent window list is empty | false = recent window list is not empty
-     */
-    function isEmpty() {
-        var items = loadItems();
-        if (items && items.length > 0) {
-            return false;
+        let strMenuId = menuId;
+        if (typeof menuId === constants.TYPE_NUMBER) {
+            strMenuId = "" + menuId;
         }
-        return true;
+        const set = _menuMap.get(strMenuId);
+        if (!set) return false;
+        return (set.has(strParentId));
     }
 
     /**
@@ -281,106 +284,130 @@ var RecentWindowsMenu = function () {
 
     /**
      * @name loadItems
-     * @description Get the Recent Windows Menu html block from local storage
-     * @returns {string} Html representing the Recent Windows menu
+     * @description Get the Recent Windows Menu data from local storage, including security checks, translation, etc.
      */
-    function loadItems() {
-        var key = getRecentWindowKey();
-        return sage.cache.local.get(key);
+    function LoadItems() {
+        items.length = 0;
+        const loaded = cache.get(recentWindowsKey);
+        if (typeof loaded == 'object' && Array.isArray(loaded)) {
+            const limit = _recentWindowsLimit;
+            loaded.forEach((element) => {
+                if (items.length < limit 
+                    && typeof element == 'object'
+                    && element.hasOwnProperty('iframeId')
+                    && element.hasOwnProperty('menuid')
+                    && element.hasOwnProperty('targetUrl')
+                    && element.hasOwnProperty('windowText')
+                    && IsSimpleId(element.iframeId)
+                    && IsAcceptableUrl(element.targetUrl)
+                ) {
+                    const menuid = element.menuid;
+                    const parentid = element.parentid;
+                    if (IsSimpleId(menuid)
+                        && IsSimpleId(parentid)
+                        && checkIsPermitted(menuid, parentid)
+                    ) {
+                        var menuItemText = menuLabelGetter(menuid);
+                        if (menuItemText) {
+                            element.windowText = menuItemText;
+                        }
+                        items.push(element);
+                    }
+                }
+            });
+        }
     }
 
     /**
-     * @name getHtml
-     * @description Get the menu html markup from the DOM
-     * @returns {string} menu html string
+     * having loaded the items from local storage, push them into the Dom
      */
-    function getHtml() {
-        return $(constants.DV_RECENTWINDOWS_SELECTOR).html();
+    function AddItemsToDom() {
+        const domEntry = GetDom();
+        domEntry.empty();
+        items.forEach(record => domEntry.append(MenuHTML(record)));
+    }
+
+    function IsStockReport(url) {
+        // Stock report result pages are NOT stored in the 'recent windows list'
+        // Custom reports are stored.
+        // It is likely that this code is obsolete as a result of changing how the Web Screens handle reports.
+        return url.indexOf(constants.IS_REPORT_IDX) > 0;
     }
 
     /**
-     * @name insertAtTop
-     * @description Insert a new menu item to the top of the list in the DOM.
-     * @param {object} menuItem JQuery object representing a new menu item
+     * tests that the id is a simple menu id etc. and so does not require html encoding into the DOM
+     * @param {any} id the id to test
+     * @returns true if the id is OK
      */
-    function insertAtTop(menuItem) {
-        $(constants.DV_RECENTWINDOWS_SELECTOR).prepend(menuItem);
+    function IsSimpleId(id) {
+        if (!id) return true;
+        const type = typeof id;
+        if (type === constants.TYPE_UNDEFINED || type === constants.TYPE_NUMBER) return true;
+        if (type === constants.TYPE_STRING) {
+            // Strangely, there are several menu and parent entries with leading digits
+            return /^([a-zA-Z0-9_-]*)$/.test(id);
+        }
+        return false;
     }
 
-    function onClick() {
-        // screenId is at global/parent scode
+    /**
+     * returns the HTML snippet representing the record
+     * @param {any} record the record representing the recent window. This must have already been checked.
+     * @returns a string containing the HTML snippet
+     */
+    function MenuHTML(record) {
+        // Element for recent window without the 'x' button at the end.
+        // 'RW' in the id of div stands for Recent Window to distinguish
+        // from Open Window
 
-        // TODO: Requires further refactor of TaskDock-Menu-BreadCrumb.js
-        // to deal with function calls within the document ready scope:
-        // isMaxScreenNumReachedAndNotOpen, loadBreadCrumb, clearIframes, assignUrl
+        var id = 'dvRW' + record.iframeId;
+        var t = '<div id="' + id + '" class="rcbox"><span data-menuid="' + record.menuid + '"data-parentid="' + record.parentid +
+            '"data-url="' + htmlEncode(record.targetUrl) + '"frameId="' + record.iframeId + '"command="Add" rank="1">' + htmlEncode(record.windowText) + '</span></div>';
+        return $(t);
     }
 
     var _public = {
-
-        // Public constants
-        constants: constants,
-
-        // Methods publicly exposed for unit testing purposes only
-        _unittestable: {
-            save: save,
-            getRecentWindowKey: getRecentWindowKey,
-            removeNonPermittedItems: removeNonPermittedItems,
-            removeRecentWindowsDuplicatedOrAboveLimit: removeRecentWindowsDuplicatedOrAboveLimit,
-            simplifyTargetUrl: simplifyTargetUrl
-        },
 
         /**
          * @name populateRecentWindow
          * @description - Add a new item to the recent windows list
          * @public
-         * @param {object} $iframe - TODO - Add description
-         * @param {number} menuid - TODO - Add description
-         * @param {number} parentid - TODO - Add description
-         * @param {string} targetUrl - The target url for the menu item
-         * @param {string} windowText - The text to display for the menu item
+         * @param {object} $iframe - the iframe object, with a src attribute and an id attribute
+         * @param {string} menuid - a simple identifier indicating the menu item
+         * @param {string} parentid - undefined or a simple identifier indicating the parent
+         * @param {string} targetUrl - The target url for the menu item. It will be simplified and htmlEncoded.
+         * @param {string} windowText - The text to display for the menu item. This should be pure text. It will be htmlEncoded.
          */
         populateRecentWindow: function($iframe, menuid, parentid, targetUrl, windowText) {
-            var url = $iframe.attr("src");
-
-            // Stock report result pages are NOT stored in the 'recent windows list'
-            // Custom reports are stored.
-            var isStockReport = url.indexOf(constants.IS_REPORT_IDX) > 0;
 
             // Only modify recent windows list if it is not visible.
-            if (!isVisible() && !isStockReport) {
-
-                // Element for recent window without the 'x' button at the end.
-                // 'RW' in the id of div stands for Recent Window to distinguish 
-                // from Open Window
-
-                // Remove everything but Area and controller
-                var targetUrlSimplified = kendo.htmlEncode(simplifyTargetUrl(targetUrl));
-
+            // Stock report result pages are NOT stored in the 'recent windows list'
+            // Custom reports are stored.
+            if (!isVisible() && !IsStockReport($iframe.attr("src"))) {
                 var iframeId = $iframe.attr('id');
-                var id = 'dvRW' + iframeId;
-                var t = '<div id="' + id + '" class="rcbox"><span data-menuid="' + menuid + '"data-parentid="' + parentid +
-                    '"data-url="' + targetUrlSimplified + '"frameId="' + iframeId + '"command="Add" rank="1">' + windowText + '</span></div>';
-                var $menuItem = $(t);
-
-                removeRecentWindowsDuplicatedOrAboveLimit(menuid);
-                insertAtTop($menuItem);
-                save();
+                if (IsSimpleId(iframeId) && IsSimpleId(menuid) && IsSimpleId(parentid)) {
+                    const url = simplifyTargetUrl(targetUrl);
+                    if (IsAcceptableUrl(url)) {
+                        removeRecentWindowsDuplicatedOrAboveLimit(menuid);
+                        const record = { iframeId: iframeId, menuid: menuid, parentid: parentid, targetUrl: url, windowText: windowText };
+                        items.unshift(record);
+                        save();
+                        AddItemsToDom();
+                    }
+                }
             }
         },
 
         /**
-         * @name onLoadPopulateRecentWindowsListFromStorage
-         * @description On first sign-in when recent windows is not populated.
+         * @name onLoad
+         * @description On first sign-in when recent windows is not yet populated.
+         * @param {object} onHasVisibleFrame the onHasVisibleFrame callback function whose purpose I really do not understand.
          * @public
          */
-        onLoadPopulateRecentWindowsListFromStorage: function() {
-            var html = loadItems();
-            $(constants.DV_RECENTWINDOWS_SELECTOR).html(html);
-
-            removeNonPermittedItems();
-
-            // Clear up excess windows if recent window size is configured smaller
-            removeRecentWindowsDuplicatedOrAboveLimit('');
+        onLoad: function (onHasVisibleFrame) {
+            _onHasVisibleFrame = onHasVisibleFrame;
+            LoadItems();
+            AddItemsToDom();
         },
 
         /**
@@ -389,15 +416,13 @@ var RecentWindowsMenu = function () {
          * @public
          */
         show: function() {
-            // Are there any items in the recent windows list?
-            if (!isEmpty()) {
-                // Rebuild the list based on the current contents of localStorage
-                // This is done to ensure that screens opened on other browser tabs 
-                // for current user / company combination show up no matter what
-                // tab one is currently on.
-                loadRecentWindowsListFromStorage();
-
-                // ...and show the popup
+            // Rebuild the list based on the current contents of localStorage
+            // This is done to ensure that screens opened on other browser tabs
+            // for current user / company combination show up no matter what
+            // tab one is currently on.
+            LoadItems();
+            AddItemsToDom();
+            if (items.length > 0) {
                 $(constants.RECENTWINDOWS_DIV_SELECTOR).show();
             }
 
@@ -408,9 +433,8 @@ var RecentWindowsMenu = function () {
             $(constants.DV_RECENTWINDOWS_SPAN_SELECTOR).each(function (index, elem) {
                 var $iframe = $('#' + $(elem).attr('frameid'));
                 if ($iframe.is(':visible')) {
-                    // Checking whether Taskdoc Item having a generated report from screen or not
-                    if (taskDockMenuBreadCrumbManager.getScreenId() === taskDockMenuBreadCrumbManager.constants.REPORT_SCREEN_ID) {
-                        taskDockMenuBreadCrumbManager.setScreenId(taskDockMenuBreadCrumbManager.constants.REPORT_SCREEN_HELP);
+                    if (_onHasVisibleFrame) {
+                        _onHasVisibleFrame();
                     }
                     return false;
                 }
@@ -424,27 +448,10 @@ var RecentWindowsMenu = function () {
          */
         hide: function() {
             $(constants.RECENTWINDOWS_DIV_SELECTOR).hide();
-        },
-
-        /**
-         * @name activeScreenCount
-         * @description Returns a count of how many active windows there are
-         * @public
-         * @return {number} The count of how many active windows there currently are
-         */
-        activeScreenCount: function () {
-            return $('#dvWindows').children().length;
         }
     };
 
     return _public;
 };
-
-var recentWindowsMenu;
-$(function () {
-    recentWindowsMenu = new RecentWindowsMenu();
-});
-
-
-
-
+// Unlike most of our Sage 300 code, we do not create a hoisted global variable for an instance of this class;
+// we create the one instance we need within the one class that uses it (TaskDoc-Menu-BreadCrumb)

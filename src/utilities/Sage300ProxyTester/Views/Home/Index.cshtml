@@ -31,12 +31,13 @@
     @JavascriptConvert.ConvertToJsVariableUsingNewtonSoft("proxyTesterViewModel", Model);
 </script>
 
-<div class="container-fluid">
-    <div class="row">
-        @using (Html.BeginForm("TheForm", "Home", FormMethod.Post, new { @class = "form-horizontal"}))
-        {
-            @Html.AntiForgeryToken()
-
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div id="antiforgerytoken_holder">
+                @Html.AntiForgeryToken()
+            </div>
             <div class="col-xs-4">
                 <fieldset>
                     <br />
@@ -81,28 +82,8 @@
                             <label for="txtCompany">Company</label>
                         </div>
                         <div class="inner">
-                            @Html.TextBoxFor(m => m.Company, new { id = "txtCompany", @class = "form-control input-md", style = "width: 120px; text-transform:uppercase" })
+                            @Html.TextBoxFor(m => m.Company, new { id = "txtCompany", @class = "form-control input-md uppercase", style = "width: 120px; text-transform:uppercase" })
                             @Html.ValidationMessageFor(m => m.Company, "", new { @class = "text-danger" })
-                        </div>
-
-                    </div>
-                    <br />
-
-                    <!-- Server Configuration -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading fw-bold">Server Configuration</div>
-                        <br />
-                    </div>
-
-                    <div class="form-group" id="outer">
-
-                        <!-- Server -->
-                        <div class="inner">
-                            <label for="txtServer">Server</label>
-                        </div>
-                        <div class="inner">
-                            @Html.TextBoxFor(m => m.Server, new { id = "txtServer", @class = "form-control input-md", style = "width: 300px;" })
-                            @Html.ValidationMessageFor(m => m.Server, "", new { @class = "text-danger" })
                         </div>
 
                     </div>
@@ -116,16 +97,12 @@
 
                     <div class="form-group" id="outer">
 
-                        <!-- Hiden Elements -->
-                        @Html.HiddenFor(m => m.TestAction, new { id = "hdnTestAction" })
-                        @Html.HiddenFor(m => m.Token, new { id = "hdnToken" })
-
                         <!-- Area (Module) -->
                         <div class="inner">
                             <label for="txtModule">Area (Module)</label>
                         </div>
                         <div class="inner">
-                            @Html.TextBoxFor(m => m.ModuleId, new { id = "txtModule", @class = "form-control input-md", style = "width: 75px; text-transform:uppercase" })
+                            @Html.TextBoxFor(m => m.ModuleId, new { id = "txtModule", @class = "form-control input-md uppercase", style = "width: 75px; text-transform:uppercase" })
                             @Html.ValidationMessageFor(m => m.ModuleId, "", new { @class = "text-danger" })
                         </div>
 
@@ -171,88 +148,21 @@
 
                 </fieldset>
             </div>
-        }
 
-    <div class="col-xs-6">
+            <div class="col-xs-6">
+                <!-- Results -->
+                <div class="panel panel-default">
+                    <div class="panel-heading fw-bold">Results</div>
+                    <br />
+                </div>
 
-        <!-- Proxy URLs -->
-        <div class="panel panel-default">
-            <div class="panel-heading fw-bold">Proxy URLs</div>
-            <br />
-        </div>
-
-        <div class="form-group" id="outer">
-
-            <!-- Public Key URL -->
-            <div class="inner">
-                <label for="txtPublicKeyUrl">Public Key URL: </label>
-            </div>
-            <div class="inner">
-                @Html.LabelFor(m => m.PublicKeyUrl, new { id = "txtPublicKeyUrl" })
-            </div>
-
-        </div>
-
-        <div class="form-group" id="outer">
-
-            <!-- Login URL -->
-            <div class="inner">
-                <label for="txtLoginUrl">Login URL: </label>
-            </div>
-            <div class="inner">
-                @Html.LabelFor(m => m.LoginUrl, new { id = "txtLoginUrl" })
-            </div>
-
-        </div>
-
-        <div class="form-group" id="outer">
-
-            <!-- Is Valid Token URL -->
-            <div class="inner">
-                <label for="txtValidTokenUrl">Valid Token URL: </label>
-            </div>
-            <div class="inner">
-                @Html.LabelFor(m => m.IsValidTokenUrl, new { id = "txtValidTokenUrl" })
-            </div>
-
-        </div>
-
-        <div class="form-group" id="outer">
-
-            <!-- Menu URL -->
-            <div class="inner">
-                <label for="txtMenuUrl">Menu URL: </label>
-            </div>
-            <div class="inner">
-                @Html.LabelFor(m => m.MenuUrl, new { id = "txtMenuUrl" })
+                <iframe id="ExternalFrame"
+                        sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation allow-downloads allow-modals"
+                        style="width: 100%; height: 750px; border:1px solid black;">
+                </iframe>
             </div>
         </div>
-
-        <div class="form-group" id="outer">
-
-            <!-- Screen URL -->
-            <div class="inner">
-                <label for="txtScreenUrl">Screen URL: </label>
-            </div>
-            <div class="inner">
-                @Html.LabelFor(m => m.ScreenUrl, new { id = "txtScreenUrl" })
-            </div>
-
-        </div>
-        <br />
-
-        <!-- Results -->
-        <div class="panel panel-default">
-            <div class="panel-heading fw-bold">Results</div>
-            <br />
-        </div>
-
-        <iframe id="ExternalFrame" target="_parent"
-                sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation allow-downloads allow-modals"
-                style="width: 100%; height: 750px; border:1px solid black;" src="@Model.Source">
-        </iframe>
     </div>
-    </div>
-</div>
+}
 
 

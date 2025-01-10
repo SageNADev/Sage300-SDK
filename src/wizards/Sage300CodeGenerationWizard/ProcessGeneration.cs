@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2023 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -24,6 +24,7 @@ using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Properties;
 using Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -32,14 +33,26 @@ using System.Text;
 using System.Windows.Forms;
 using View = ACCPAC.Advantage.View;
 using System.Xml;
-using System.Threading;
+using EnvDTE;
 using Newtonsoft.Json;
 using Jint.Runtime;
 using Newtonsoft.Json.Linq;
+using Thread = System.Threading.Thread;
+using static Microsoft.VisualStudio.VSConstants;
+
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 {
+    /// <summary> Enumeration for solution type (web or web api) </summary>
+    public enum WizardType
+    {
+        /// <summary> Web solution type </summary>
+        WEB = 0,
+        /// <summary> Web API solution type </summary>
+        WEBAPI = 1
+    }
+
     /// <summary> Process Generation Class (worker) </summary>
     class ProcessGeneration
     {
@@ -66,6 +79,25 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         {
             /// <summary> SettingsKey is used as a dictionary key for settings </summary>
             public const string SettingsKey = "settings";
+
+            /// <summary> WebApiKey is used as a dictionary key for projects </summary>
+            public const string WebApiKey = "WebApi";
+
+            /// <summary> subfolder for WebApi Controller </summary>
+            public const string SubfolderWebApiControllerKey = "Controllers";
+
+            /// <summary> subfolder for WebApi versioning </summary>
+            public const string SubfolderWebApiVersioningKey = "Versioning";
+
+            /// <summary> WebApiModelsKey is used as a dictionary key for projects </summary>
+            public const string WebApiModelsKey = "WebApi.Models";
+
+            /// <summary> subfolder for WebApi.Models</summary>
+            public const string SubfolderWebApiModelsCustomKey = "Custom";
+
+
+            /// <summary> subfolder for WebApi.Models</summary>
+            public const string SubfolderWebApiModelsGeneratedKey = "Generated";
 
             /// <summary> BusinessRepositoryKey is used as a dictionary key for projects </summary>
             public const string BusinessRepositoryKey = "BusinessRepository";
@@ -141,6 +173,19 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             /// <summary> SubFolderNameFields is used as a subfolder name </summary>
             public const string SubFolderNameFields = "Fields";
+
+            /// <summary> SubFolderWebApiControllers is used as a subfolder name </summary>
+            public const string SubFolderWebApiControllers = "Controllers";
+
+            /// <summary> SubFolderWebApiVersioning is used as a subfolder name </summary>
+            public const string SubFolderWebApiVersioning = "Versioning";
+
+            /// <summary> SubFolderWebApiModelsCustom is used as a subfolder name </summary>
+            public const string SubFolderWebApiModelsCustom = "Custom";
+
+            /// <summary> SubFolderWebApiModelsGenerated is used as a subfolder name </summary>
+            public const string SubFolderWebApiModelsGenerated = "Generated";
+
 
             /// <summary> SubFolderNameEnums is used as a subfolder name </summary>
             public const string SubFolderNameEnums = "Enums";
@@ -338,9 +383,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             // Anything?
         }
 
-        /// <summary> Start the generation process </summary>
+        /// <summary> Start the generation process for Web project </summary>
         /// <param name="settings">Settings for processing</param>
-        public void Process(Settings settings)
+        public void ProcessWeb(Settings settings)
         {
             try
             {
@@ -419,6 +464,95 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
+        /// <summary> Generate Web API Models </summary>
+        /// <param name="settings">Settings object</param>
+        /// <param name="ControllerSettings">Controller Settings</param>
+        private void GenerateWebApiModelsForAllEntities(Settings settings, List<ControllerSettings> ControllerSettings)
+        {
+            foreach(var controllerSettings in ControllerSettings)
+            {
+                CreateClass(controllerSettings.BusinessView, controllerSettings.BusinessView.Text + "Generated.cs",
+                    WebApiTransformTemplateToText(settings, controllerSettings,
+                        "Templates.WebApi.ModelGenerated"),
+                    Constants.WebApiModelsKey, Constants.SubfolderWebApiModelsGeneratedKey);
+
+                CreateClass(controllerSettings.BusinessView, controllerSettings.BusinessView.Text + ".cs",
+                    WebApiTransformTemplateToText(settings, controllerSettings,
+                        "Templates.WebApi.ModelCustom"),
+                    Constants.WebApiModelsKey, Constants.SubfolderWebApiModelsCustomKey);
+
+                GenerateWebApiModelsForAllEntities(settings, controllerSettings.Details);
+            }
+        }
+
+        /// <summary> Process Web Api project </summary>
+        /// <param name="settings">Settings object</param>
+        public void ProcessWebApi(Settings settings)
+        {
+            // Locals
+            var session = new Session();
+            try
+            {
+                _settings = settings;
+
+                BuildWebApiSubfolders();
+
+                foreach (var controllerSettings in settings.ControllerSettings)
+                {
+
+                    CreateClass(controllerSettings.BusinessView, controllerSettings.BusinessView.Properties[BusinessView.Constants.ModuleId] + controllerSettings.BusinessView.Properties[BusinessView.Constants.ResourceName] + "Controller.cs",
+                        WebApiTransformTemplateToText(settings, controllerSettings,
+                            "Templates.WebApi.Controller"),
+                        Constants.WebApiKey, Constants.SubfolderWebApiControllerKey);
+
+                    UpdateWebApiVersioning(controllerSettings.BusinessView, WebApiTransformTemplateToText(settings, controllerSettings,
+                        "Templates.WebApi.VersionController"));
+                }
+
+                GenerateWebApiModelsForAllEntities(settings, settings.ControllerSettings);
+            }
+            catch
+            {
+                // Seems like not all views have an instance protocol (i.e., AS0020)
+            }
+
+        }
+
+
+        /// <summary> Get the program Id from desktop SDK(i.e. ARCUS for AR0024) </summary>
+        /// <param name="dbLink">DB Link Object</param>
+        /// <param name="viewId">View Id</param>
+        /// <returns>Program Id</returns>
+        /// <remarks>Logic copied from .NET API</remarks>
+        private static string GetProgramId(DBLink dbLink, string viewId )
+        {
+            // Return empty since this routine forces the desktop SDK to be installed
+            return string.Empty;
+
+            //// SDK Roto ID to Query
+            //var rotoIdView = dbLink.OpenView(XXROTO.ROTOID);
+
+            //rotoIdView.Fields.FieldByID(XXROTO.IDX_OPERATION).SetValue(XXROTO.OPERATION_GetRotoList, false);
+            //rotoIdView.Fields.FieldByID(XXROTO.IDX_ROTOTYPE).SetValue(XXROTO.ROTOTYPE_View, false);
+            //rotoIdView.Fields.FieldByID(XXROTO.IDX_PGMID).SetValue(viewId.Substring(0,2), false);
+            //rotoIdView.Process();
+
+            //var views = rotoIdView.Fields.FieldByID(XXROTO.IDX_OBJECTID).PresentationList;
+            //var viewPaths = rotoIdView.Fields.FieldByID(XXROTO.IDX_OBJECTNAME).PresentationList;
+
+            //var programId = string.Empty;
+            //for (var i = 0; i < views.Count; i++)
+            //{
+            //    if (views.PredefinedString(i).ToUpper().Trim() == viewId.ToUpper().Trim())
+            //    {
+            //        programId = Path.GetFileNameWithoutExtension(viewPaths.PredefinedString(i).ToUpper()).Trim();
+            //        break;
+            //    }
+            //}
+            //rotoIdView.Dispose();
+            //return programId;
+        }
+
         /// <summary> Get business view </summary>
         /// <param name="businessView">Business View</param>
         /// <param name="user">User Name</param>
@@ -427,8 +561,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="version">Version</param>
         /// <param name="viewId">View Id</param>
         /// <param name="moduleId">Module Id</param>
+        /// <param name="wizardType">Web or Web API</param>
         public static void GetBusinessView(BusinessView businessView, string user,
-            string password, string company, string version, string viewId, string moduleId)
+            string password, string company, string version, string viewId, string moduleId, WizardType wizardType)
         {
             // Locals
             var session = new Session();
@@ -461,16 +596,29 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             businessView.Properties[BusinessView.Constants.ModuleId] = moduleId;
 
             GenerateUniqueDescriptions(view, uniqueDescriptions);
-
+            
             var description = MakeItSingular(BusinessViewHelper.Replace(view.Description));
 
             businessView.Properties[BusinessView.Constants.ModelName] = description;
             businessView.Properties[BusinessView.Constants.EntityName] = description;
+            businessView.Properties[BusinessView.Constants.ResourceName] = BusinessViewHelper.Replace(view.Description);
+            businessView.Properties[BusinessView.Constants.PropertyName] = businessView.Properties[BusinessView.Constants.ResourceName];
+            businessView.Properties[BusinessView.Constants.ProgramId] = wizardType == WizardType.WEBAPI ? GetProgramId(dbLink, view.ViewID) : string.Empty;
+
+            businessView.PrimaryKeyFields = new List<string>();
+            if (view.Keys.Count > 0)
+            {
+                var key = view.Keys[0];
+                for (int i=0; i < key.FieldCount; i++)
+                {
+                    businessView.PrimaryKeyFields.Add(key.Field(i).Name);
+                }
+            }
 
 #if ENABLE_TK_244885
             businessView.Properties[BusinessView.Constants.CustomCommonResxName] = PrivateConstants.CustomCommonResx;
 #endif
-            GenerateFieldsAndEnums(businessView, view, uniqueDescriptions);
+            GenerateFieldsAndEnums(businessView, view, uniqueDescriptions, wizardType);
 
             // Any compositions
             if (view.CompositeNames != null)
@@ -500,7 +648,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         #endregion
 
-#region Private Methods
+        #region Private Methods        
+        /// <summary> ReplacePlaceHolder </summary>
+        /// <param name="nameList">List of names</param>
+        /// <param name="valueList">List of values</param>
+        /// <param name="content">Replacement content</param>
+        /// <returns>content</returns>
         private string ReplacePlaceHolder(string[] nameList, string[] valueList, string content)
         {
             var length = nameList.Length;
@@ -511,9 +664,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return content;
         }
 
-        /// <summary>
-        /// Update model definition to add optional field
-        /// </summary>
+        /// <summary> Update model definition to add optional field </summary>
         /// <param name="entity"></param>
         private void UpdateModel(BusinessView entity)
         {
@@ -539,9 +690,37 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Lower the string first char
-        /// </summary>
+        /// <summary> Update the version file </summary>
+        /// <param name="entity"></param>
+        /// <param name="versioning"></param>
+        private void UpdateWebApiVersioning(BusinessView entity, string versioning)
+        {
+            var module = entity.Properties[BusinessView.Constants.ModuleId];
+            var projectInfo = _settings.Projects[Constants.WebApiKey][module];
+
+            var subFolder = projectInfo.Subfolders[Constants.SubfolderWebApiVersioningKey];
+            var filePath = BusinessViewHelper.ConcatStrings(new[] { projectInfo.ProjectFolder, subFolder });
+            var fullFileName = BusinessViewHelper.ConcatStrings(new[] { filePath, module + "ControllerVersionMapGenerated.cs" });
+            if (File.Exists(fullFileName))
+            {
+                var fs = File.OpenText(fullFileName);
+                var sb = new StringBuilder();
+                string line;
+
+                while ((line = fs.ReadLine()) != null)
+                {
+                    sb.AppendLine(line);
+                    if (line.Trim().Equals("{"))
+                    {
+                        sb.Append(versioning);
+                    }
+                }
+                fs.Close();
+                File.WriteAllText(fullFileName, sb.ToString());
+            }
+        }
+
+        /// <summary> Lower the string first char </summary>
         /// <param name="inputString"></param>
         /// <returns></returns>
         private string LowerFirstChar(string inputString) 
@@ -549,9 +728,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return inputString.Substring(0, 1).ToLower() + inputString.Substring(1);
         }
 
-        /// <summary>
-        /// Get names from entities for replace snippet code placeholders
-        /// </summary>
+        /// <summary> Get names from entities for replace snippet code placeholders </summary>
         /// <returns></returns>
         private IDictionary<string, string> GetNameFromEntity()
         {
@@ -589,9 +766,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
             return dicNames;
         }
-        /// <summary>
-        /// Use Code Snippet to Update JavaScript Code
-        /// </summary>
+        /// <summary> Use Code Snippet to Update JavaScript Code </summary>
         private void UpdateJavaSciptCode(BusinessView entity, List<BusinessView> gridEntities, List<string> displayColumns, List<string> titles, List<string> colTypes, List<string> urls)
         {
             //var gridSnippet = CodeSnippet.JSReadOnlyGridDef;
@@ -652,10 +827,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Generate Grid Json configuration file
-        /// </summary>
-        /// <returns></returns>
+        /// <summary> Generate Grid Json configuration file </summary>
         private void GenerateGridJsonFiles()
         {
             var layout = _settings.XmlLayout;
@@ -1085,6 +1257,34 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
+        /// <summary> Build subfolders for later use by SaveFile routine </summary>
+        private void BuildWebApiSubfolders()
+        {
+            // Iterate Models
+            var projects = _settings.Projects[Constants.WebApiModelsKey];
+            foreach (var project in projects)
+            {
+                var subfolders = new Dictionary<string, string>
+                {
+                    {Constants.SubfolderWebApiModelsCustomKey, GetSubfolderName(Constants.SubFolderWebApiModelsCustom)},
+                    {Constants.SubfolderWebApiModelsGeneratedKey, GetSubfolderName(Constants.SubFolderWebApiModelsGenerated)},
+                };
+                project.Value.Subfolders = subfolders;
+            }
+
+            // Iterate BusinessRepository
+            projects = _settings.Projects[Constants.WebApiKey];
+            foreach (var project in projects)
+            {
+                var subfolders = new Dictionary<string, string>
+                {
+                    {Constants.SubfolderWebApiControllerKey, GetSubfolderName(Constants.SubFolderWebApiControllers)},
+                    {Constants.SubfolderWebApiVersioningKey, GetSubfolderName(Constants.SubFolderWebApiVersioning)},
+                };
+                project.Value.Subfolders = subfolders;
+            }
+        }
+
         /// <summary> Get Sub Folder Name</summary>
         /// <param name="fixedName">Fixed portion of subfolder name, if any</param>
         /// <remarks>Will NOT have beginning or trailing slash</remarks>
@@ -1109,12 +1309,10 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return retVal;
         }
 
-        /// <summary>
-        /// Make it singular or best guess at it!
-        /// </summary>
+        /// <summary> Make it singular or best guess at it! </summary>
         /// <param name="name">Name to make singular</param>
         /// <returns>Singular name or entered name if not plural</returns>
-        private static string MakeItSingular(string name)
+        public static string MakeItSingular(string name)
         {
             // Default to entered value
             var retVal = name;
@@ -1135,9 +1333,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 
         }
 
-        /// <summary>
-        /// Get the Field Name. (Note: The Field description attribute is used for name)
-        /// </summary>
+        /// <summary> Get the Field Name. (Note: The Field description attribute is used for name) </summary>
         /// <param name="field">The field the name has to be determined</param>
         /// <param name="prefix">Prefix for certain potential values</param>
         /// <param name="uniqueDescriptions">Dictionary of unique descriptions</param>
@@ -1151,7 +1347,8 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 return field.Name;
             }
 
-            return BusinessViewHelper.Replace(field.Description);
+            var name = BusinessViewHelper.Replace(field.Description);
+            return name.Equals("Type")? prefix + name : name;
         }
 
 
@@ -1183,9 +1380,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Get value from presentation list
-        /// </summary>
+        /// <summary> Get value from presentation list </summary>
         /// <param name="i">Outer Loop</param>
         /// <param name="j">Inner Loop</param>
         /// <param name="view">Accpac Business View</param>
@@ -1228,6 +1423,60 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             if (hc == ViewFieldType.Bool.GetHashCode())    { return BusinessDataType.Boolean; }
             if (hc == ViewFieldType.Time.GetHashCode())    { return BusinessDataType.TimeSpan; }
             if (hc == ViewFieldType.Byte.GetHashCode())    { return BusinessDataType.Byte; }
+
+            return BusinessDataType.Double;
+        }
+
+        /// <summary> Get field's data type </summary>
+        /// <param name="field">The field the data type is to be determined</param>
+        /// <returns>Data type of the field</returns>
+        private static BusinessDataType FieldTypeForWebApi(ViewField field)
+        {
+            //Need to use enum field.Type.HasFlag
+            var viewfieldType = field.Type;
+            var typeHash = viewfieldType.GetHashCode();
+
+            if (typeHash == ViewFieldType.Bool.GetHashCode())
+            {
+                return BusinessDataType.Boolean;
+            }
+            if (field.PresentationType == ViewFieldPresentationType.List)
+            {
+                if (typeHash != ViewFieldType.Char.GetHashCode() || field.Size == 1)
+                    return BusinessDataType.Enumeration;
+            }
+            if (typeHash == ViewFieldType.Long.GetHashCode())
+            {
+                return BusinessDataType.Long;
+            }
+            if (typeHash == ViewFieldType.LongLong.GetHashCode())
+            {
+                return BusinessDataType.Long;
+            }
+            if (typeHash == ViewFieldType.Char.GetHashCode())
+            {
+                return BusinessDataType.String;
+            }
+            if (typeHash == ViewFieldType.Date.GetHashCode())
+            {
+                return BusinessDataType.DateTime;
+            }
+            if (typeHash == ViewFieldType.Int.GetHashCode())
+            {
+                return BusinessDataType.Integer;
+            }
+            if (typeHash == ViewFieldType.Decimal.GetHashCode())
+            {
+                return BusinessDataType.Decimal;
+            }
+            if (typeHash == ViewFieldType.Time.GetHashCode())
+            {
+                return BusinessDataType.DateTime;
+            }
+            if (typeHash == ViewFieldType.Byte.GetHashCode())
+            {
+                return BusinessDataType.Byte;
+            }
 
             return BusinessDataType.Double;
         }
@@ -1282,7 +1531,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <param name="businessView">Business View</param>
         /// <param name="view">Accpac Business View</param>
         /// <param name="uniqueDescriptions">Dictionary of unique descriptions</param>
-        private static void GenerateFieldsAndEnums(BusinessView businessView, View view, Dictionary<string, bool> uniqueDescriptions)
+        private static void GenerateFieldsAndEnums(BusinessView businessView, View view, Dictionary<string, bool> uniqueDescriptions, WizardType wizardType)
         {
             // Iterate Accpac View
             for (var i = 0; i < view.Fields.Count; i++)
@@ -1295,7 +1544,9 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 }
 
                 var field = view.Fields[i];
-                var type = FieldType(field);
+
+                var type = (wizardType == WizardType.WEB)? FieldType(field): FieldTypeForWebApi(field);
+
                 var isNumeric = type == BusinessDataType.Decimal ||
                                 type == BusinessDataType.Double ||
                                 type == BusinessDataType.Integer ||
@@ -1326,8 +1577,14 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                     MinValue = field.MinValue,
                     MaxValue = field.MaxValue,
                     EntityFieldType = Convert.ToInt32(field.Type),
-                    Mask = field.PresentationMask
+                    Mask = field.PresentationMask,
+                    ViewFieldType = field.Type
                 };
+
+                if (string.CompareOrdinal(businessField.Name, businessView.Properties[BusinessView.Constants.ModelName]) == 0 && businessField.IsKey)
+                {
+                    businessField.Name += "Key";
+                }
 
                 // No longer necessary (TK-253029)
                 // Add to Keys if it is a key
@@ -1384,9 +1641,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Create a class using a T4 template
-        /// </summary>
+        /// <summary> Create a class using a T4 template </summary>
         /// <param name="view">Business View</param>
         /// <param name="settings">settings</param>
         /// <param name="templateClassName">template class name</param>
@@ -1416,6 +1671,35 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             {
                 templateClassInstance.Session["element"] = element;
             }
+
+            templateClassInstance.Initialize();
+
+            return templateClassInstance.TransformText();
+        }
+
+        /// <summary> Create a class for web api using a T4 template </summary>
+        /// <param name="settings">settings</param>
+        /// <param name="controllerSettings">Controller Settings</param>
+        /// <param name="templateClassName">template class name</param>
+        /// <returns>string </returns>
+        private static string WebApiTransformTemplateToText(Settings settings, ControllerSettings controllerSettings, string templateClassName)
+        {
+            // instantiate a template class
+            var type = Type.GetType("Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard." + templateClassName);
+
+            // Protection from incorrect class name
+            if (type == null)
+            {
+                return string.Empty;
+            }
+
+            dynamic templateClassInstance = Activator.CreateInstance(type);
+
+            templateClassInstance.Session = new Dictionary<string, object>();
+
+            templateClassInstance.Session["settings"] = settings;
+            templateClassInstance.Session["controllerSettings"] = controllerSettings;
+
 
             templateClassInstance.Initialize();
 
@@ -1542,9 +1826,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Process Enumerations marked as 'Common'
-        /// </summary>
+        /// <summary> Process Enumerations marked as 'Common' </summary>
         /// <param name="enumName">The name of the enumeration</param>
         /// <param name="filename">The enumeration filename</param>
         /// <param name="filePath">The enumeration filepath</param>
@@ -1601,9 +1883,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Process Enumerations not marked as 'Common'
-        /// </summary>
+        /// <summary> Process Enumerations not marked as 'Common' </summary>
         /// <param name="enumName">The name of the enumeration</param>
         /// <param name="filename">The enumeration filename</param>
         /// <param name="filePath">The enumeration filepath</param>
@@ -1671,10 +1951,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Insert an enumeration block into a file if it
-        /// does not yet exist
-        /// </summary>
+        /// <summary> Insert an enumeration block into a file if it does not yet exist </summary>
         /// <param name="filePath">The file where the enumeration is located</param>
         /// <param name="content">The enumration block to insert</param>
         private void InsertEnumBlockIfDoesNotExist(string filePath, string content)
@@ -1685,9 +1962,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// A routine to handle enumerations
-        /// </summary>
+        /// <summary> A routine to handle enumerations </summary>
         /// <param name="isCommon">Is enumeration marked as common?</param>
         /// <param name="enumName">The name of the enumeration</param>
         /// <param name="filePath">The enumeration filepath</param>
@@ -1736,9 +2011,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return Utilities.Utilities.EnumExists(fileObject, contentObject);
         }
 
-        /// <summary>
-        /// Parse the enumerations located in a file
-        /// </summary>
+        /// <summary> Parse the enumerations located in a file </summary>
         /// <param name="filepath">The file to parse enumerations</param>
         /// <returns>The object containing a list of enumerations and the values associated with each</returns>
         private Dictionary<string, Dictionary<string, object>> ParseEnumerationsInFile(string filepath)
@@ -1800,9 +2073,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return container;
         }
 
-        /// <summary>
-        /// Parse the enumerations located in a block of code
-        /// </summary>
+        /// <summary> Parse the enumerations located in a block of code </summary>
         /// <param name="content">The content block to parse for enumerations</param>
         /// <returns>The object containing a list of enumerations and the values associated with each</returns>
         private Dictionary<string, Dictionary<string, object>> ParseEnumerationsInBlock(string content)
@@ -1858,9 +2129,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return container;
         }
 
-        /// <summary>
-        /// Insert an enumeration content block into a file.
-        /// </summary>
+        /// <summary> Insert an enumeration content block into a file. </summary>
         /// <param name="filePath">The file in which the enumeration will be inserted</param>
         /// <param name="content">The content block with the enumeration</param>
         private void InsertEnumBlock(string filepath, string content)
@@ -1879,9 +2148,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Create Resx files based on the languages selected
-        /// </summary>
+        /// <summary> Create Resx files based on the languages selected </summary>
         /// <param name="settings">The Settings object (for the language selections)</param>
         /// <param name="view">The BusinessView object</param>
         private void CreateResxFilesByLanguage(Settings settings, BusinessView view)
@@ -1927,9 +2194,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                                                                        resourceFileNames[GlobalConstants.LanguageIndex.ChineseTraditional][IndexCommonFile]); }
         }
 
-        /// <summary>
-        /// Create the repository classes by Repository Type
-        /// </summary>
+        /// <summary> Create the repository classes by Repository Type </summary>
         /// <param name="type">The selected Repository Type enumeration value</param>
         /// <param name="view">The BusinessView</param>
         private void CreateRepositoryClassesByRepositoryType(RepositoryType type, BusinessView view)
@@ -2170,9 +2435,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Create Header-detail Repository Classes  
-        /// </summary>
+        /// <summary> Create Header-detail Repository Classes </summary>
         /// <param name="headerView">the header view</param>
         /// <param name="settings">settings</param>
         private void CreateHeaderDetailRepositoryClasses(BusinessView headerView, Settings settings)
@@ -2609,9 +2872,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 
-        /// <summary>
-        /// Create the HeaderDetail Resx content
-        /// </summary>
+        /// <summary> Create the HeaderDetail Resx content </summary>
         /// <param name="view">Business View</param>
         /// <param name="fileName">Resx File Name</param>
         /// <param name="addDescription">True to add descriptions otherwise false</param>
@@ -2713,10 +2974,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         }
 
 
-        /// <summary>
-        /// Create the Resx content
-        /// Both discrete and common
-        /// </summary>
+        /// <summary> Create the Resx content Both discrete and common </summary>
         /// <param name="view">Business View</param>
         /// <param name="filename">The resource file name</param>
         /// <param name="commonFilename">The common resource file name</param>
@@ -2747,9 +3005,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
 #endif
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> Save Resx File </summary>
         /// <param name="isStandardResxFile"></param>
         /// <param name="view"></param>
         /// <param name="fileName"></param>
@@ -2898,16 +3154,12 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return fileWriteSuccessful;
         }
 		
-        /// <summary>
-        /// Get the ProjectInfo object
-        /// </summary>
+        /// <summary> Get the ProjectInfo object </summary>
         /// <returns>Returns the ProjectInfo object.</returns>
         private ProjectInfo GetProjectInfo(BusinessView v) => 
             _settings.Projects[Constants.ResourcesKey][v.Properties[BusinessView.Constants.ModuleId]];
 
-        /// <summary>
-        /// Create a directory if it doesn't yet exist
-        /// </summary>
+        /// <summary> Create a directory if it doesn't yet exist </summary>
         /// <param name="filePath">The path to the folder to create</param>
         private void CreateDirectoryIfNotYetExists(string filePath)
         {
@@ -2917,9 +3169,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             }
         }
 		
-        /// <summary>
-        /// Add a resource file to a Visual Studio project
-        /// </summary>
+        /// <summary> Add a resource file to a Visual Studio project </summary>
         /// <param name="pi">The ProjectInfo object</param>
         /// <param name="file">The path to the resource file</param>
         /// <param name="addDescription">The flag</param>
@@ -2936,9 +3186,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             pi.Project.Save(pi.Project.FullName);
         }
 
-        /// <summary>
-        /// Display a prompt if a file already exists
-        /// </summary>
+        /// <summary> Display a prompt if a file already exists </summary>
         /// <param name="fileExists">The flag denoting whether or not a file already exists.</param>
         /// <param name="promptIfExists">The flag denoting whether or not to display a prompt.</param>
         /// <param name="filename">The file whose existence is checked</param>
@@ -2973,9 +3221,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
             return writeFile;
         }
 
-        /// <summary>
-        /// A routine to parse a KeyValuePair
-        /// </summary>
+        /// <summary> A routine to parse a KeyValuePair </summary>
         /// <param name="value">The value to parse</param>
         /// <param name="key">Output parameter key</param>
         /// <param name="description">Output parameter description</param>

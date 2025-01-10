@@ -23,91 +23,158 @@
 var ProxyTesterUI = ProxyTesterUI || {};
 ProxyTesterUI = {
 
-    Constants: Object.freeze({
-        FORMNAME: 'TheForm',
-    }),
-
     ViewModel: {},
 
+    /**
+     * @name init
+     * @description Script initialization
+     * @namespace ProxyTesterUI
+     * @public
+     */
     init: function () {
-        let UI = ProxyTesterUI;
 
-        UI.initButtons();
-        UI.initOnFocus();
+        ProxyTesterUI.ViewModel = proxyTesterViewModel;
 
-        UI.ViewModel = proxyTesterViewModel;
-
-        // Set the initial form values
-        UI.setFormValues();
+        ProxyTesterUI.initButtons();
+        ProxyTesterUI.initOnFocus();
+        ProxyTesterUI.setFormValues();
     },
 
+    /**
+     * @name setFormValues
+     * @description Set values from model to controls
+     * @namespace ProxyTesterUI
+     * @public
+     */
     setFormValues: function () {
-        let UI = ProxyTesterUI;
+        $('#txtUsername').val(ProxyTesterUI.ViewModel.User);
+        $('#txtPassword').val(ProxyTesterUI.ViewModel.Password);
+        $('#txtCompany').val(ProxyTesterUI.ViewModel.Company);
 
-        $('#txtUsername').val(UI.ViewModel.User);
-        $('#txtPassword').val(UI.ViewModel.Password);
-        $('#txtCompany').val(UI.ViewModel.Company);
-
-        $('#txtServer').val(UI.ViewModel.Server);
-
-        $('#txtModule').val(UI.ViewModel.ModuleId);
-        $('#txtController').val(UI.ViewModel.Controller);
-        $('#txtAction').val(UI.ViewModel.Action);
-
-        $('#txtOptionalParameters').val(UI.ViewModel.OptionalParameters);
-
-        $('#txtPublicKeyUrl').text(UI.ViewModel.PublicKeyUrl);
-        $('#txtLoginUrl').text(UI.ViewModel.LoginUrl);
-        $('#txtValidTokenUrl').text(UI.ViewModel.IsValidTokenUrl);
-        $('#txtMenuUrl').text(UI.ViewModel.MenuUrl);
-        $('#txtScreenUrl').text(UI.ViewModel.ScreenUrl);
-        $('#hdnToken').val(UI.ViewModel.Token);
-
-    //    if (UI.ViewModel.PublicKey) {
-    //        $.post({
-    //            xhrFields: {
-    //                responseType: 'blob'
-    //            },
-    //            url: UI.ViewModel.Url,
-    //            beforeSend: (xhr) => {
-    //                // add authentication headers
-    //                xhr.setRequestHeader("Credentials", UI.ViewModel.Credentials);
-    //                xhr.setRequestHeader("PublicKey", UI.ViewModel.PublicKey);
-    //                xhr.setRequestHeader("IV", UI.ViewModel.IV);
-    //            },
-    //            success: (data) => {
-    //                // set iframe (WIP)
-    //                var data_url = URL.createObjectURL(data);
-    //                $("#ExternalFrame").attr('src', data_url);
-    //            }
-    //        });
-    //    }
-    //    else {
-    //        $("#ExternalFrame").attr('src', UI.ViewModel.Url);
-    //    }
+        $('#txtModule').val(ProxyTesterUI.ViewModel.ModuleId);
+        $('#txtController').val(ProxyTesterUI.ViewModel.Controller);
+        $('#txtAction').val(ProxyTesterUI.ViewModel.Action);
+        $('#txtOptionalParameters').val(ProxyTesterUI.ViewModel.OptionalParameters);
     },
 
+    /**
+     * @name setModelValues
+     * @description Set values from controls to model
+     * @namespace ProxyTesterUI
+     * @public
+     */
+    setModelValues: function () {
+        ProxyTesterUI.ViewModel.User = $('#txtUsername').val();
+        ProxyTesterUI.ViewModel.Password = $('#txtPassword').val();
+        ProxyTesterUI.ViewModel.Company = $('#txtCompany').val();
+
+        ProxyTesterUI.ViewModel.ModuleId = $('#txtModule').val();
+        ProxyTesterUI.ViewModel.Controller = $('#txtController').val();
+        ProxyTesterUI.ViewModel.Action = $('#txtAction').val();
+        ProxyTesterUI.ViewModel.OptionalParameters = $('#txtOptionalParameters').val();
+    },
+
+    /**
+     * @name initButtons
+     * @description Button initialization
+     * @namespace ProxyTesterUI
+     * @public
+     */
     initButtons: function () {
-        let UI = ProxyTesterUI;
 
+        // Test menu button
         $('#btnMenu').click(function (e) {
-            $('#hdnTestAction').val("Menu");
-            $(`#${UI.Constants.FORMNAME}`).submit();
+            // Set values into the model
+            ProxyTesterUI.setModelValues();
+            // Build URL (local)
+            var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/GetMenu';
+            // Call the AJAX post with callback function to display alert
+            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.displayAlert, ProxyTesterUI.errorMessage);
+            e.preventDefault();
         });
 
+        // Test screen button
         $('#btnScreen').click(function (e) {
-            $('#hdnTestAction').val("Screen");
-            $(`#${UI.Constants.FORMNAME}`).submit();
+            // Set values into the model
+            ProxyTesterUI.setModelValues();
+            // Build URL (local)
+            var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/GetScreen';
+            // Call the AJAX post with callback function to assign to iFrame
+            ProxyTesterUI.assignSource('about:blank');
+            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.assignSource, ProxyTesterUI.errorMessage);
+            e.preventDefault();
         });
     },
 
+    /**
+     * @name initOnFocus
+     * @description Form initialization
+     * @namespace ProxyTesterUI
+     * @public
+     */
     initOnFocus: function () {
-        let UI = ProxyTesterUI;
         $('.form-control').on('focus', function () {
-            UI.resetValidations();
+            ProxyTesterUI.resetValidations();
         });
     },
 
+    /**
+     * @name displayAlert
+     * @description Displays an alert for the menu since binding to an iFrame is silly
+     * @namespace ProxyTesterUI
+     * @public
+     */
+    displayAlert: function (data) {
+        alert(data);
+    },
+
+    /**
+     * @name assignSource
+     * @description Assigns the source to the iFrame from the proxy result
+     * @namespace ProxyTesterUI
+     * @public
+     */
+    assignSource: function (data) {
+        $("#ExternalFrame").attr('src', data);
+    },
+
+    /**
+ * @name errorMessage
+ * @description Displays error message
+ * @namespace ProxyTesterUI
+ * @public
+ */
+    errorMessage: function (message) {
+        // alert(message.responseText);
+        alert("An error was thrown. Check credentials and parameters for validity.");
+    },
+
+    /**
+     * @name ajaxPost
+     * @description Ajax to invoke controller in proxy tester to invoke Proxy in Sage 300
+     * @namespace ProxyTesterUI
+     * @public
+     */
+    ajaxPost: function (url, data, successHandler, errorHandler) {
+        var dataJson = JSON.stringify(data);
+        $.ajaxq("ProxyTester", {
+            url: url,
+            data: dataJson,
+            type: "post",
+            async: false,
+            dataType: "text",
+            contentType: "application/json",
+            success: successHandler,
+            error: errorHandler
+        });
+    },
+
+    /**
+     * @name resetValidations
+     * @description Form reset validations
+     * @namespace ProxyTesterUI
+     * @public
+     */
     resetValidations: function() {
         // Removes validation from input-fields
         $('.input-validation-error').addClass('input-validation-valid');

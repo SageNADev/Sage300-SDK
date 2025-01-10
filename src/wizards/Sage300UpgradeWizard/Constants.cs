@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -32,16 +32,16 @@ namespace Sage.CA.SBS.ERP.Sage300.UpgradeWizard
         public static class PerRelease
         {
             /// <summary> From Release Number </summary>
-            public const string FromReleaseNumber = "2024.2";
+            public const string FromReleaseNumber = "2025.0";
 
             /// <summary> To Release Number </summary>
-            public const string ToReleaseNumber = "2025.0";
+            public const string ToReleaseNumber = "2025.1";
 
             /// <summary> Flag that determines whether or not to update the Accpac .NET library. </summary>
-            public const bool UpdateAccpacDotNetLibrary = true;
+            public const bool UpdateAccpacDotNetLibrary = false;
 
             /// <summary> From Accpac Number </summary>
-            public const string FromAccpacNumber = "7.1.0.0";
+            public const string FromAccpacNumber = "7.2.0.0";
             
             /// <summary> To Accpac Number </summary>
             public const string ToAccpacNumber = "7.2.0.0";

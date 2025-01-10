@@ -19,9 +19,7 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.InteropServices.WindowsRuntime;
 #endregion
 
 namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
@@ -29,46 +27,27 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
     /// <summary> ProxyTesterViewModel </summary>
     public class ProxyTesterViewModel
     {
-        #region Class Constants
-        public class ClassConstants
-        {
-            public const string URL_PLACEHOLDER = "Current Request URL displayed here.";
-        }
-        #endregion
-
         #region Constructor(s)
         public ProxyTesterViewModel()
         {
-            // Authentication Settings
-            User = "ADMIN";
-            Password = "";
-            Company = "SAMLTD";
+            // Default Authentication Settings
+            User = "ADMIN"; // Partner to specify the default user if desired
+            Password = "";  // Partner to specify the default password if desired
+            Company = "SAMINC"; // Partner to specify the default company if desired
 
-            // Server Configuration
-            Server = "http://localhost:54445/Sage300";
+            // Default Server Configurations - Partner to specify the target Sage server and this ProxyTester server
+            TargetServer = ""; // Partner to specify the target Sage server (i.e. http://localhost:54445 or http://localhost/Sage300)
+            ProxyTesterServer = ""; // Partner to specify this ProxyTester server (i.e. https://localhost:44347)
 
             // Proxy Request
-            ModuleId = "";
-            Controller = "";
-            Action = "";
-            OptionalParameters = string.Empty;
-
-            // Results
-            MenuUrl = string.Empty;
-            ScreenUrl = string.Empty;
-            IsValidTokenUrl = string.Empty;
-            PublicKeyUrl = string.Empty;
-            LoginUrl = string.Empty;
-
-            // Test Action
-            TestAction = string.Empty;
-
-            // Login Token
-            Token = string.Empty;
-            IsValidToken = false;
+            ModuleId = ""; // Partner to specify the default ModuleId if desired
+            Controller = ""; // Partner to specify the default Controller if desired
+            Action = ""; // Partner to specify the default Action if desired
+            OptionalParameters = string.Empty; // Partner to specify the default OptionalParameters if desired
+            ProductId = "PROXY"; // DO NOT CHANGE THIS VALUE
 
             // Source for iFrame
-            Source = string.Empty;
+            Source = string.Empty; // Value for the iFrame source
         }
         #endregion
 
@@ -88,11 +67,13 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
         [Required(ErrorMessage = "Company is a required field.")]
         public string Company { get; set; }
 
-        // Server Configuration
+        // Server Configurations
 
-        /// <summary> The server name </summary>
-        [Required(ErrorMessage = "Server name is a required field.")]
-        public string Server { get; set; }
+        /// <summary> The target server name </summary>
+        public string TargetServer { get; set; }
+
+        /// <summary> The Proxy Tester server name </summary>
+        public string ProxyTesterServer { get; set; }
 
         // Proxy Request
 
@@ -110,11 +91,8 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
         /// <summary> Optional request parameters </summary>
         public string OptionalParameters{ get; set; }
 
-        /// <summary> Url to get a public key </summary>
-        public string PublicKeyUrl { get; set; }
-
-        /// <summary> Url to login </summary>
-        public string LoginUrl { get; set; }
+        /// <summary> Product Id </summary>
+        public string ProductId { get; set; }
 
         /// <summary> The encrypted User, Password, and Company in the request header </summary>
         public string Credentials { get; set; }
@@ -127,24 +105,6 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
 
         /// <summary> The IV in the request header </summary>
         public string IV { get; set; }
-
-        /// <summary> Url to get a modules menu </summary>
-        public string MenuUrl { get; set; }
-
-        /// <summary> Url to determine if token is valid </summary>
-        public string IsValidTokenUrl { get; set; }
-
-        /// <summary>Url to get a web screen </summary>
-        public string ScreenUrl { get; set; }
-
-        /// <summary>Test Action </summary>
-        public string TestAction { get; set; }
-
-        /// <summary>Token (from ProxyLogin) </summary>
-        public string Token { get; set; }
-
-        /// <summary>IsValidToken (from ProxyIsValidToken) </summary>
-        public bool IsValidToken { get; set; }
 
         /// <summary>Source for iFrame from ProxyMenu or ProxyScreen </summary>
         public string Source { get; set; }
