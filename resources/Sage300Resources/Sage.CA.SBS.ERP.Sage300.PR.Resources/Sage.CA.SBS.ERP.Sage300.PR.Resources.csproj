@@ -125,6 +125,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GenerateEFTFileResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OptionalFieldsResx.Designer.cs" />
     <Compile Include="Forms\PayrollChecksResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -278,6 +279,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GenerateEFTFileResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionalFieldsResx.resx" />
     <EmbeddedResource Include="Forms\PayrollChecksResx.fr.resx" />
     <EmbeddedResource Include="Forms\PayrollChecksResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

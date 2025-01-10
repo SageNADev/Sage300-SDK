@@ -2886,6 +2886,13 @@
                 displayFieldNames: ["EARNDED", "DESC", "CATEGORY"],
                 returnFieldNames: ["EARNDED"]
             },
+            EmployeeEarnOrDeductionForEmpSelection: {
+                viewID: "~~0007",
+                viewOrder: 0,
+                filterTemplate: "CATEGORY = \"{0}\"",
+                displayFieldNames: ["EARNDED", "LONGDESC", "CATEGORY"],
+                returnFieldNames: ["EARNDED"]
+            },
         },
 
         TS: {

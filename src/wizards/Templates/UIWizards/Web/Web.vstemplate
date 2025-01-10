@@ -291,7 +291,6 @@
         </Folder>
         <Folder Name="Portal" TargetFolderName="Portal">
           <ProjectItem ReplaceParameters="true" TargetFileName="FeatureTour.js">FeatureTour.js</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="OpenScreenCountManager.js">OpenScreenCountManager.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="RecentWindows.js">RecentWindows.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="SessionDate.js">SessionDate.js</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="SessionDateCookie.js">SessionDateCookie.js</ProjectItem>

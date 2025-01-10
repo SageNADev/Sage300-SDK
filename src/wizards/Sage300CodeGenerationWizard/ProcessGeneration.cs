@@ -526,28 +526,31 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
         /// <remarks>Logic copied from .NET API</remarks>
         private static string GetProgramId(DBLink dbLink, string viewId )
         {
-            // SDK Roto ID to Query
-            var rotoIdView = dbLink.OpenView(XXROTO.ROTOID);
+            // Return empty since this routine forces the desktop SDK to be installed
+            return string.Empty;
 
-            rotoIdView.Fields.FieldByID(XXROTO.IDX_OPERATION).SetValue(XXROTO.OPERATION_GetRotoList, false);
-            rotoIdView.Fields.FieldByID(XXROTO.IDX_ROTOTYPE).SetValue(XXROTO.ROTOTYPE_View, false);
-            rotoIdView.Fields.FieldByID(XXROTO.IDX_PGMID).SetValue(viewId.Substring(0,2), false);
-            rotoIdView.Process();
+            //// SDK Roto ID to Query
+            //var rotoIdView = dbLink.OpenView(XXROTO.ROTOID);
 
-            var views = rotoIdView.Fields.FieldByID(XXROTO.IDX_OBJECTID).PresentationList;
-            var viewPaths = rotoIdView.Fields.FieldByID(XXROTO.IDX_OBJECTNAME).PresentationList;
+            //rotoIdView.Fields.FieldByID(XXROTO.IDX_OPERATION).SetValue(XXROTO.OPERATION_GetRotoList, false);
+            //rotoIdView.Fields.FieldByID(XXROTO.IDX_ROTOTYPE).SetValue(XXROTO.ROTOTYPE_View, false);
+            //rotoIdView.Fields.FieldByID(XXROTO.IDX_PGMID).SetValue(viewId.Substring(0,2), false);
+            //rotoIdView.Process();
 
-            var programId = string.Empty;
-            for (var i = 0; i < views.Count; i++)
-            {
-                if (views.PredefinedString(i).ToUpper().Trim() == viewId.ToUpper().Trim())
-                {
-                    programId = Path.GetFileNameWithoutExtension(viewPaths.PredefinedString(i).ToUpper()).Trim();
-                    break;
-                }
-            }
-            rotoIdView.Dispose();
-            return programId;
+            //var views = rotoIdView.Fields.FieldByID(XXROTO.IDX_OBJECTID).PresentationList;
+            //var viewPaths = rotoIdView.Fields.FieldByID(XXROTO.IDX_OBJECTNAME).PresentationList;
+
+            //var programId = string.Empty;
+            //for (var i = 0; i < views.Count; i++)
+            //{
+            //    if (views.PredefinedString(i).ToUpper().Trim() == viewId.ToUpper().Trim())
+            //    {
+            //        programId = Path.GetFileNameWithoutExtension(viewPaths.PredefinedString(i).ToUpper()).Trim();
+            //        break;
+            //    }
+            //}
+            //rotoIdView.Dispose();
+            //return programId;
         }
 
         /// <summary> Get business view </summary>

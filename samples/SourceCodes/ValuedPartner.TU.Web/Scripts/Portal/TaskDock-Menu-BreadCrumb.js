@@ -1,8 +1,8 @@
-﻿/* Copyright (c) 1994-2022 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */
 
 "use strict";
 
-var TaskDockMenuBreadCrumbManager = function () {
+var TaskDockMenuBreadCrumbManager = function (recentWindowsMenu) {
 
     // Constants
     var constants = Object.freeze({
@@ -730,7 +730,7 @@ var TaskDockMenuBreadCrumbManager = function () {
     /**
      * @name assignUrl
      * @description - Assign URL
-     * @param {string} windowText - Window Title
+     * @param {string} windowText - Window Title, without html encoding
      * @param {string} parentid - Parent ID
      * @param {string} menuid - Menu ID
      * @param {bool} isExcludingParameters - Determine if parameters are excluded
@@ -824,7 +824,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
                 // this is the HTML for label in the window manager
                 var $divWindow = $('<div id="dv' + $iframe.attr('id') + '" class = "rcbox"> <span class = "selected" data-menuid="' + menuid +
-                    '" data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Add" rank="1">' + windowText +
+                    '" data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Add" rank="1">' + kendo.htmlEncode(windowText) +
                     '</span><span data-parentid="' + parentid + '" frameId="' + $iframe.attr('id') + '" command="Remove" controlToRemove="dv' + $iframe.attr('id') + '"></span></div>');
                 $('#dvWindows').append($divWindow);
 
@@ -850,6 +850,16 @@ var TaskDockMenuBreadCrumbManager = function () {
     }
 
     /**
+     * @name activeScreenCount
+     * @description Returns a count of how many active windows there are
+     * @public
+     * @return {number} The count of how many active windows there currently are
+     */
+    function GetActiveScreenCount() {
+        return $('#dvWindows').children().length;
+    }
+
+    /**
      * @name isMaxScreenNumReachedAndNotOpen
      * @description Determine if the maximum screen number is reached and the screen is not open
      * @private
@@ -860,7 +870,7 @@ var TaskDockMenuBreadCrumbManager = function () {
 
         // Check if maximum number of screens reached
         var isScreenOpen = isScreenAlreadyOpen(targetUrl);
-        var activeScreenCount = recentWindowsMenu.activeScreenCount();
+        var activeScreenCount = GetActiveScreenCount();
         if (!isScreenOpen && activeScreenCount >= constants.MAXIMUM_ALLOWABLE_ACTIVE_WINDOWS) {
             sg.utls.showMessageInfo(sg.utls.msgType.INFO, portalBehaviourResources.MaxWindowExceeded);
             return true;
@@ -922,14 +932,14 @@ var TaskDockMenuBreadCrumbManager = function () {
 
             loadBreadCrumb(parentidVal);
 
-            var windowtext = $(event.target).text();
-
             $('#dvWindows > div').each(function () { $(this).find("span").removeClass('selected'); });
 
+            var windowtext = $(event.target).text();
+
             if ($(this).attr("data-modulename") && $.parseHTML($(this).attr("data-modulename")) != null && $(this).attr("data-moduleName") != "null") {
-                windowtext = portalBehaviourResources.PagetitleInManager.format($(this).attr("data-modulename"), $(event.target).text());
+                windowtext = portalBehaviourResources.PagetitleInManager.format($(this).attr("data-modulename"), windowtext);
             } else if ($(this).find("a").attr("data-modulename")) {
-                windowtext = portalBehaviourResources.PagetitleInManager.format($(this).find("a").attr("data-modulename"), $(event.target).text());
+                windowtext = portalBehaviourResources.PagetitleInManager.format($(this).find("a").attr("data-modulename"), windowtext);
             }
 
             if ($(this).attr("data-isreport") === "true" || $(this).attr("data-isreport") === "True") {
@@ -938,11 +948,7 @@ var TaskDockMenuBreadCrumbManager = function () {
             }
 
             if (targetUrl !== "") {
-                if (_globalSearchDrillDownParameter === null) {
-                    assignUrl(windowtext, parentidVal, _screenId);
-                } else {
-                    assignUrl(windowtext, parentidVal, _screenId, true);
-                }
+                assignUrl(windowtext, parentidVal, _screenId, !(_globalSearchDrillDownParameter === null));
             }
         }
     }
@@ -1181,7 +1187,8 @@ var TaskDockMenuBreadCrumbManager = function () {
         if (evtData.indexOf("isInquiry") >= 0 || evtData.indexOf("isInquiryGeneral") >= 0) {
             postMessageData = evtData.split(" ");
             var parameter = JSON.parse(decodeURI(postMessageData[1]));
-            parameter.title = kendo.htmlEncode(parameter.title);
+            const plainTitle = parameter.title;
+            parameter.title = kendo.htmlEncode(plainTitle);
             targetUrl = (evtData.indexOf("isInquiryGeneral") < 0) ? createInquiryURLWithParameters(parameter) : sg.utls.formatString("{0}/?templateId={1}&name={2}&dsId={3}", parameter.url, parameter.templateId, parameter.name, parameter.id);
 
             $('#screenLayout').show();
@@ -1201,7 +1208,7 @@ var TaskDockMenuBreadCrumbManager = function () {
             menuid = constants.INQUIRY_SCREENID;
 
             // Method To Load Into Task Doc
-            assignUrl(portalBehaviourResources.Inquiry + " - " + parameter.title, parentId, menuid);
+            assignUrl(portalBehaviourResources.Inquiry + " - " + plainTitle, parentId, menuid);
 
         } else if (evtData.indexOf("isReport") >= 0) {
 
@@ -1225,11 +1232,11 @@ var TaskDockMenuBreadCrumbManager = function () {
             // Checking isKPI so that reportName is appended to show in windows doc when opened from KPI.
             var windowText;
             if (isKPI == true) {
-                windowText = kendo.htmlEncode(kpiReportName);
+                windowText = kpiReportName;
                 isKPI = false;
             } else {
                 postMessageData.splice(postMessageData.length - 1, 1);
-                windowText = kendo.htmlEncode(postMessageData.join(" "));
+                windowText = postMessageData.join(" ");
             }
 
             // only add Report to the window name if it is a report page and it does not have one
@@ -1611,8 +1618,18 @@ var TaskDockMenuBreadCrumbManager = function () {
      *                    false : outside maximum allowable limit
      */
     function activeScreenCountWithinMaximumAllowable() {
-        var currentScreenCount = recentWindowsMenu.activeScreenCount();
+        var currentScreenCount = GetActiveScreenCount();
         return currentScreenCount <= constants.MAXIMUM_ALLOWABLE_ACTIVE_WINDOWS;
+    }
+
+    /**
+      * I cannot pretend to know what this is about but it should not be implemented in the RecentWindows code directly.
+      */
+    function OnRecentWindowsHasVisibleFrame () {
+        // Checking whether Taskdoc Item having a generated report from screen or not
+        if (_screenId === constants.REPORT_SCREEN_ID) {
+            setScreenId(constants.REPORT_SCREEN_HELP);
+        }
     }
 
     // Publicly exposed methods, properties/variables
@@ -1777,8 +1794,7 @@ var TaskDockMenuBreadCrumbManager = function () {
             $('#dvCloseWindowErrorMessage').hide();
             $('.task_added').hide();
 
-            recentWindowsMenu.onLoadPopulateRecentWindowsListFromStorage();
-
+            recentWindowsMenu.onLoad(OnRecentWindowsHasVisibleFrame);
 
             // Update the current open window title in windows manager
             window.addEventListener('message', function (event) {
@@ -1812,7 +1828,6 @@ var TaskDockMenuBreadCrumbManager = function () {
                         // Getting screenId from Taskdoc which having class as selected
                         _screenId = $('#dvWindows div span.selected').attr("data-menuid");
                         
-
                         // Checking whether Taskdoc Item having a generated report from screen or not
                         if (_screenId === constants.REPORT_SCREEN_ID) {
                             _screenId = constants.REPORT_SCREEN_HELP;
@@ -2008,9 +2023,8 @@ var TaskDockMenuBreadCrumbManager = function () {
 
                     helpSearchForMenuItem(_screenId);
                     hideIframes();
+                    // assert - this.innerHTML is merely a text object, so we do not need to htmlDecode it
                     assignUrl(this.innerHTML, parentidVal, _screenId);
-
-
                     return;
                 }
 
@@ -2034,6 +2048,7 @@ var TaskDockMenuBreadCrumbManager = function () {
                 _public.setScreenId(recentScreenId);
 
                 hideIframes();
+                // assert - this.innerHTML is merely a text object, so we do not need to htmlDecode it
                 assignUrl(this.innerHTML, parentidVal, _screenId);
             });
 
@@ -2162,7 +2177,8 @@ var TaskDockMenuBreadCrumbManager = function () {
 
 var taskDockMenuBreadCrumbManager;
 $(document).ready(function () {
-    taskDockMenuBreadCrumbManager = new TaskDockMenuBreadCrumbManager();
+    const recentWindowsMenu = new RecentWindowsMenu(RECENT_WIN_LIMIT_CONST, menuUrlList, sg.utls.extractSessionIdFromWindow() + sg.utls.localStorageKeys.RECENT_WINDOWS_BASE, sage.cache.local, sg.utls.getMenuLabelFromMenuItemId, kendo.htmlEncode);
+    taskDockMenuBreadCrumbManager = new TaskDockMenuBreadCrumbManager(recentWindowsMenu);
     if (taskDockMenuBreadCrumbManager) {
         taskDockMenuBreadCrumbManager.init();
     }

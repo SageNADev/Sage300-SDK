@@ -18,7 +18,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.WebApi
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class ModelGenerated : ModelGeneratedBase
     {
@@ -29,121 +29,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.WebApi
         public virtual string TransformText()
         {
             
-            #line 1 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
- /* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */ 
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+ /* Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 26 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 26 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
     // Locals
     var moduleId = settings.ModuleId;
@@ -158,7 +158,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.WebApi
             #line hidden
             this.Write("// ");
             
-            #line 35 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 35 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
@@ -166,7 +166,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.WebApi
             this.Write("\r\n\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.ComponentModel" +
                     ".DataAnnotations;\r\n");
             
-            #line 40 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 40 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
 bool exit = false;
 foreach (var oneEnum in view.Enums.Values)
@@ -182,7 +182,7 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("using Sage.CA.SBS.ERP.Sage300.Common.Models;\r\n");
             
-            #line 51 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 51 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
 			break;
 		}
@@ -197,52 +197,52 @@ foreach (var oneEnum in view.Enums.Values)
             this.Write("using Sage.CA.SBS.ERP.Sage300.Common.WebApi.Attributes;\r\nusing Sage.CA.SBS.ERP.Sa" +
                     "ge300.Common.WebApi.Models;\r\n\r\nnamespace ");
             
-            #line 62 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 62 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".WebApi.Models");
             
-            #line 62 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 62 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(extension));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 65 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 65 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(" Model (Generated From View)\r\n    /// </summary>\r\n");
             
-            #line 67 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 67 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
     {
-     var annotation = string.Format("[ViewModel(ViewName = \"{0}\", ViewId = \"{1}\")]", view.Properties[BusinessView.Constants.ProgramId], view.Properties[BusinessView.Constants.ViewId]);    
+     var annotation = string.Format("[ViewModel(ViewName = \"{0}\", ViewId = \"{1}\")]", "TODO: Replace with ROTO ID", view.Properties[BusinessView.Constants.ViewId]);    
 
             
             #line default
             #line hidden
             this.Write("    ");
             
-            #line 71 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 71 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(annotation));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 72 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
     }
 
@@ -251,14 +251,14 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("    public partial class ");
             
-            #line 75 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 75 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(" : ViewResourceModel\r\n    {\r\n");
             
-            #line 77 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
             var modelHasKey = false;
 
@@ -280,7 +280,7 @@ foreach (var oneEnum in view.Enums.Values)
             this.Write("        // TODO The naming convention of this property has to be manually evaluat" +
                     "ed\r\n");
             
-            #line 93 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 93 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                 }
 
@@ -289,14 +289,14 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("        /// <summary>\r\n        /// Gets or sets ");
             
-            #line 97 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 97 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n");
             
-            #line 99 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 99 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                 {
         // Check for Key annotation
@@ -310,14 +310,14 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("        ");
             
-            #line 107 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 107 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(annotation));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 108 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 108 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
         }
 
@@ -330,14 +330,14 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("        ");
             
-            #line 115 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 115 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(annotation));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 116 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 116 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                     }
         }
@@ -349,35 +349,35 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("        public ");
             
-            #line 122 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 122 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((field.Type.Equals(BusinessDataType.Enumeration) ? field.Name + "Enum" : EnumValue.GetValueForWebApi(field.Type))));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 122 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 122 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(fieldName));
             
             #line default
             #line hidden
             this.Write(" { get { return ");
             
-            #line 122 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 122 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(backingFieldName));
             
             #line default
             #line hidden
             this.Write("; } set { ");
             
-            #line 122 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 122 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(backingFieldName));
             
             #line default
             #line hidden
             this.Write(" = value; PropertySet(); } }\r\n\r\n");
             
-            #line 124 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 124 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
             }
 
@@ -394,7 +394,7 @@ foreach (var oneEnum in view.Enums.Values)
                     "ary>\r\n        [Key]\r\n        public string ActionSelector { get { return string." +
                     "Empty; } set { } }\r\n\r\n");
             
-            #line 139 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 139 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
 
             }
@@ -404,7 +404,7 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("\r\n        #region Backing Fields\r\n\r\n");
             
-            #line 146 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 146 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
             // UI access methods
             for (var i = 0; i < view.Fields.Count; i++)
@@ -419,21 +419,21 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("        private ");
             
-            #line 155 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((field.Type.Equals(BusinessDataType.Enumeration) ? field.Name + "Enum" : EnumValue.GetValueForWebApi(field.Type))));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 155 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(backingFieldName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 156 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 156 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
             }
 
@@ -444,7 +444,7 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("\r\n        #endregion\r\n\r\n        #region Enums\r\n\r\n");
             
-            #line 166 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 166 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                 // UI access methods
                 foreach (var oneEnum in view.Enums.Values)
@@ -455,21 +455,21 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("        /// <summary>\r\n        /// Enum for ");
             
-            #line 172 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 172 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(oneEnum.Name));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        [ViewEnum]\r\n        public enum ");
             
-            #line 175 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 175 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(oneEnum.Name));
             
             #line default
             #line hidden
             this.Write("Enum\r\n        {\r\n");
             
-            #line 177 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 177 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                     // Iterate values collection
                     var count = 0;
@@ -488,27 +488,27 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("            ");
             
-            #line 190 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 190 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(valueName));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 190 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 190 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(value.Value));
             
             #line default
             #line hidden
             
-            #line 190 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 190 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((count != oneEnum.Values.Count) ? "," : string.Empty));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 191 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 191 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                         }
 
@@ -525,7 +525,7 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("            [StoredAsChar]\r\n");
             
-            #line 203 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 203 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
 
 
@@ -534,28 +534,28 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("            ");
             
-            #line 206 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 206 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(valueName));
             
             #line default
             #line hidden
             this.Write(" = \'");
             
-            #line 206 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 206 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(character));
             
             #line default
             #line hidden
             this.Write("\'");
             
-            #line 206 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 206 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((count != oneEnum.Values.Count) ? "," : string.Empty));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 207 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 207 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                         }
                     }
@@ -565,7 +565,7 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("        }\r\n\r\n");
             
-            #line 213 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 213 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                 }
 
@@ -574,7 +574,7 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("        #endregion\r\n\r\n        #region Detail Collections\r\n \r\n");
             
-            #line 220 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 220 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                 if (controllerSettings != null)
                 {
@@ -586,28 +586,28 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("        /// <summary>\r\n        /// Detail collection of ");
             
-            #line 227 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 227 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(detail.BusinessView.Properties[BusinessView.Constants.ModelName]));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        public List<");
             
-            #line 229 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 229 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(detail.BusinessView.Properties[BusinessView.Constants.ModelName]));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 229 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 229 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(detail.BusinessView.Properties[BusinessView.Constants.PropertyName]));
             
             #line default
             #line hidden
             this.Write(" { get; set; }\r\n\r\n");
             
-            #line 231 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 231 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                     }
                 }
@@ -619,7 +619,7 @@ foreach (var oneEnum in view.Enums.Values)
                     "        /// </summary>\r\n        private void InitializeDetailCollections()\r\n    " +
                     "    {\r\n");
             
-            #line 240 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 240 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                 if (controllerSettings != null)
                 {
@@ -631,21 +631,21 @@ foreach (var oneEnum in view.Enums.Values)
             #line hidden
             this.Write("            ");
             
-            #line 246 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 246 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(detail.BusinessView.Properties[BusinessView.Constants.PropertyName]));
             
             #line default
             #line hidden
             this.Write(" = new List<");
             
-            #line 246 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 246 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(detail.BusinessView.Properties[BusinessView.Constants.ModelName]));
             
             #line default
             #line hidden
             this.Write(">();\r\n");
             
-            #line 247 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 247 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
                     }
                 }
@@ -666,7 +666,7 @@ foreach (var oneEnum in view.Enums.Values)
         }
 ");
             
-            #line 262 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+            #line 262 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
             }
 
@@ -677,7 +677,7 @@ foreach (var oneEnum in view.Enums.Values)
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\ModelGenerated.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings _settingsField;
 

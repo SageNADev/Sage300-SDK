@@ -165,6 +165,9 @@
   <data name="CPPRCheckList" xml:space="preserve">
     <value>PRChequeList</value>
   </data>
+  <data name="DeleteLineConfirmationMessage" xml:space="preserve">
+    <value>Delete this line?</value>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>

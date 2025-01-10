@@ -484,6 +484,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Employee Selection List does not exist..
+        /// </summary>
+        public static string EmployeeListNotExist {
+            get {
+                return ResourceManager.GetString("EmployeeListNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid input. Employee does not exist..
         /// </summary>
         public static string EmployeeNotExist {
@@ -498,6 +507,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string EmployeeNumber {
             get {
                 return ResourceManager.GetString("EmployeeNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Selection List.
+        /// </summary>
+        public static string EmployeeSelectionList {
+            get {
+                return ResourceManager.GetString("EmployeeSelectionList", resourceCulture);
             }
         }
         
@@ -525,6 +543,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string EmploymentClassification {
             get {
                 return ResourceManager.GetString("EmploymentClassification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify type for criteria..
+        /// </summary>
+        public static string EmptyValidation {
+            get {
+                return ResourceManager.GetString("EmptyValidation", resourceCulture);
             }
         }
         
@@ -772,6 +799,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From Province.
+        /// </summary>
+        public static string FromProvince {
+            get {
+                return ResourceManager.GetString("FromProvince", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Province Of Employment.
+        /// </summary>
+        public static string FromProvinceOfEmployment {
+            get {
+                return ResourceManager.GetString("FromProvinceOfEmployment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Shift Differential.
         /// </summary>
         public static string FromShiftDifferential {
@@ -939,6 +984,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string Manager1 {
             get {
                 return ResourceManager.GetString("Manager1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Employee List cannot be blank..
+        /// </summary>
+        public static string NoEmployeeList {
+            get {
+                return ResourceManager.GetString("NoEmployeeList", resourceCulture);
             }
         }
         
@@ -1150,6 +1204,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Optional Field.
+        /// </summary>
+        public static string OptionalField {
+            get {
+                return ResourceManager.GetString("OptionalField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Optional Field From value cannot be greater than the To value..
+        /// </summary>
+        public static string OptionalFieldValidation {
+            get {
+                return ResourceManager.GetString("OptionalFieldValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Other.
         /// </summary>
         public static string Other {
@@ -1267,6 +1339,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Province.
+        /// </summary>
+        public static string Province {
+            get {
+                return ResourceManager.GetString("Province", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Province Of Employement.
+        /// </summary>
+        public static string ProvinceOfEmployement {
+            get {
+                return ResourceManager.GetString("ProvinceOfEmployement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The entry in the From value cannot be greater than the To value..
         /// </summary>
         public static string RangeValidation {
@@ -1303,6 +1393,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Employee selection list cannot be blank..
+        /// </summary>
+        public static string SelectionListBlank {
+            get {
+                return ResourceManager.GetString("SelectionListBlank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Selection List.
         /// </summary>
         public static string SelectionListTitle {
@@ -1317,6 +1416,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string SelectionListTitle1 {
             get {
                 return ResourceManager.GetString("SelectionListTitle1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Employee Selection List ID does not exist..
+        /// </summary>
+        public static string SelectionListValidation {
+            get {
+                return ResourceManager.GetString("SelectionListValidation", resourceCulture);
             }
         }
         
@@ -1767,6 +1875,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string ToOvertimeSchedule {
             get {
                 return ResourceManager.GetString("ToOvertimeSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Province.
+        /// </summary>
+        public static string ToProvince {
+            get {
+                return ResourceManager.GetString("ToProvince", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Province Of Employment.
+        /// </summary>
+        public static string ToProvinceOfEmployment {
+            get {
+                return ResourceManager.GetString("ToProvinceOfEmployment", resourceCulture);
             }
         }
         

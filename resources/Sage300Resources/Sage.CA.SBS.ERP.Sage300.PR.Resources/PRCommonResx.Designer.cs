@@ -205,6 +205,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete this line?.
+        /// </summary>
+        public static string DeleteLineConfirmationMessage {
+            get {
+                return ResourceManager.GetString("DeleteLineConfirmationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string Description {

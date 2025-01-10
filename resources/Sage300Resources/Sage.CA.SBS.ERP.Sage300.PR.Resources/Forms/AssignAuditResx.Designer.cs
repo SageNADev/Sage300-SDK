@@ -70,6 +70,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. The Earning/Deduction entered at Advance does not have a category of Advance..
+        /// </summary>
+        public static string AdvanceToBeRepaidErrorMsg {
+            get {
+                return ResourceManager.GetString("AdvanceToBeRepaidErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assign.
         /// </summary>
         public static string Assign {
@@ -196,6 +205,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accrual Carry-over Date.
         /// </summary>
         public static string Carryover {
@@ -286,11 +304,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. The Distribution code does not exist..
+        /// </summary>
+        public static string DistributioncodeErrorMsg {
+            get {
+                return ResourceManager.GetString("DistributioncodeErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Earning/Deduction Description.
         /// </summary>
         public static string EarningDeductionDescription {
             get {
                 return ResourceManager.GetString("EarningDeductionDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Input.The Earning/Deduction does not exist..
+        /// </summary>
+        public static string EarningDeductionErrorMsg {
+            get {
+                return ResourceManager.GetString("EarningDeductionErrorMsg", resourceCulture);
             }
         }
         
@@ -336,6 +372,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string EmployeeAnnualMaximum {
             get {
                 return ResourceManager.GetString("EmployeeAnnualMaximum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid input. The beginning employee range must not be greater than the ending range..
+        /// </summary>
+        public static string EmployeeErrorMsg {
+            get {
+                return ResourceManager.GetString("EmployeeErrorMsg", resourceCulture);
             }
         }
         
@@ -466,6 +511,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start date must be before End date..
+        /// </summary>
+        public static string EndDateErrorMsg {
+            get {
+                return ResourceManager.GetString("EndDateErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Class.
         /// </summary>
         public static string FClassCod {
@@ -538,6 +592,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Include in Regular Rate Calculation.
+        /// </summary>
+        public static string IncludeInFLSAOvertimeCalc_CP {
+            get {
+                return ResourceManager.GetString("IncludeInFLSAOvertimeCalc_CP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid input. The Earning/Deduction does not exist..
+        /// </summary>
+        public static string InvalidEarnDed {
+            get {
+                return ResourceManager.GetString("InvalidEarnDed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid input. Segment code is not defined in General Ledger..
         /// </summary>
         public static string InvalidSegvalErrorMsg {
@@ -583,11 +655,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pay this Percentage.
         /// </summary>
         public static string PaythisPercentage {
             get {
                 return ResourceManager.GetString("PaythisPercentage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you assign this Earning/Deduction?.
+        /// </summary>
+        public static string PopupWarningmsg {
+            get {
+                return ResourceManager.GetString("PopupWarningmsg", resourceCulture);
             }
         }
         
@@ -718,6 +808,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To Class.
         /// </summary>
         public static string TClassCod {
@@ -736,7 +835,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 10 Periods Maximum.
+        ///   Looks up a localized string similar to 10 Periods Max..
         /// </summary>
         public static string TenPerYearMax {
             get {
@@ -745,7 +844,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 10 Periods Minimum.
+        ///   Looks up a localized string similar to 10 Periods Min..
         /// </summary>
         public static string TenPerYearMin {
             get {
@@ -799,6 +898,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} employees have been updated.
+        /// </summary>
+        public static string UpdatedEmployeesMessage {
+            get {
+                return ResourceManager.GetString("UpdatedEmployeesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Employee Defaults for Blank or Zero Values.
         /// </summary>
         public static string UseEmployeeDefaults {
@@ -808,11 +916,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        public static string Warning {
+            get {
+                return ResourceManager.GetString("Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WCC Group Description.
         /// </summary>
         public static string WCCGroupDescription {
             get {
                 return ResourceManager.GetString("WCCGroupDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid input. The Workers Comp. Group does not exist..
+        /// </summary>
+        public static string WCCGroupErrorMsg {
+            get {
+                return ResourceManager.GetString("WCCGroupErrorMsg", resourceCulture);
             }
         }
         
@@ -853,11 +979,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. The Workers&apos; Compensation Code does not exist..
+        /// </summary>
+        public static string WorkersCompensationCodeErrorMsg {
+            get {
+                return ResourceManager.GetString("WorkersCompensationCodeErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WCC Group.
         /// </summary>
         public static string WorkersCompGroup {
             get {
                 return ResourceManager.GetString("WorkersCompGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }
