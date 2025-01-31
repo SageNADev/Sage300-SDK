@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 2024 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 2024-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -19,6 +19,7 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
+using System;
 using System.ComponentModel.DataAnnotations;
 #endregion
 
@@ -48,6 +49,9 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
 
             // Source for iFrame
             Source = string.Empty; // Value for the iFrame source
+
+            // Id for ProxyManager uniqueness
+            Id = Guid.NewGuid().ToString(); // Per session and not per request
         }
         #endregion
 
@@ -108,6 +112,10 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
 
         /// <summary>Source for iFrame from ProxyMenu or ProxyScreen </summary>
         public string Source { get; set; }
+
+        /// <summary> Id (Guid) to make key unique in ProxyManager</summary>
+        public string Id { get; set; }
+
         #endregion
     }
 }

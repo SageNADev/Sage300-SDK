@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 2024 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 2024-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -65,6 +65,8 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
             public const string OptionalParameters = "ProxyOptionalParameters";
             /// <summary> Context Token </summary>
             public const string ContextToken = "ContextToken";
+            /// <summary> Id Constant </summary>
+            public const string Id = "ProxyId";
         }
 
         #region Constructor
@@ -179,6 +181,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 request.Headers.Add(RequestHeader.IV, model.IV);
                 request.Headers.Add(RequestHeader.ProductId, model.ProductId);
                 request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
+                request.Headers.Add(RequestHeader.Id, model.Id);
 
                 // Await response
                 using (var response = await httpClient.SendAsync(request))
@@ -200,7 +203,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         /// <summary> Routine to get the screen from the Proxy </summary>
         /// <param name="model">View Model</param>
         /// <returns>Assign Source/Redirect to model</returns>
-        private async Task ProxyScreen(ProxyTesterViewModel model)
+        private async Task<ActionResult> ProxyScreen(ProxyTesterViewModel model)
         {
             try
             {
@@ -222,6 +225,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 request.Headers.Add(RequestHeader.Controller, model.Controller);
                 request.Headers.Add(RequestHeader.Action, model.Action);
                 request.Headers.Add(RequestHeader.OptionalParameters, model.OptionalParameters);
+                request.Headers.Add(RequestHeader.Id, model.Id);
 
                 // Await response
                 using (var response = await httpClient.SendAsync(request))
@@ -242,8 +246,8 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                     }
                 }
 
-                // Redirect to the screen AND the source will be set to the iFrame in JavaScript with the success handler
-                Redirect(model.Source);
+                // Return content (URL) AND the source will be set to the iFrame in JavaScript with the success handler
+                return Content(model.Source);
             }
             catch (Exception ex)
             {
@@ -314,7 +318,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 var queryStringOperator = (queryParts.Count == 0) ? "?" : "&";
 
                 // Build the final url and return
-                url += $"{queryStringOperator}productId={model.ProductId}&ContextToken={contextToken}";
+                url += $"{queryStringOperator}productId={model.ProductId}&ContextToken={contextToken}&{RequestHeader.Id}={model.Id}";
 
                 return url;
             }
