@@ -177,7 +177,10 @@
                     @Html.TextBoxFor(m => m.PdfFileDate, new { type = "date", id = "txtPDFDate", @class = "form-control input-md", style = "width: 250px;" })
                 </div>
                 <div class="inner">
-                    <button id="btnPDFDate" name="btnPDFDate" class="btn btn-primary">Test PDF Date</button>
+                    <button id="btnPDFDate" name="btnPDFDate" class="btn btn-primary">Get PDF List</button>
+                </div>
+                <div class="inner">
+                    <button id="btnPDFDelete" name="btnPDFDelete" class="btn btn-primary">Delete PDFs with date</button>
                 </div>
                 <div class="inner">
                     <select id="selectFile" name="selectFile" size="3">
@@ -198,10 +201,7 @@
 
                     <!-- Test Menu (Controller, Action, Opt Params not required) -->
                     <div class="inner">
-                        <button id="btnPDF" name="btnPDF" class="btn btn-primary">Test PDF</button>
-                    </div>
-                    <div class="inner">
-                        <button id="btnMultiplePDF" name="btnMultiplePDF" class="btn btn-primary">Download PDF Speed Test</button>
+                        <button id="btnPDF" name="btnPDF" class="btn btn-primary">Get PDF</button>
                     </div>
                 </div>
 

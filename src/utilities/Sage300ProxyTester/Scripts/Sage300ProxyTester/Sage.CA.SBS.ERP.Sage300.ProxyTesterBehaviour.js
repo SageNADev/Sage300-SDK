@@ -121,6 +121,7 @@ ProxyTesterUI = {
             e.preventDefault();
         });
 
+        // Handle when button to download and show pdf is clicked
         $('#btnPDF').click(function (e) {
             // Set values into the model
             ProxyTesterUI.setModelValues();
@@ -131,6 +132,7 @@ ProxyTesterUI = {
             e.preventDefault();
         });
 
+        // Handle when button to download list of pdf files with a given date
         $('#btnPDFDate').on("click", function (e) {
             // Set values into the model
             ProxyTesterUI.setModelValues();
@@ -141,26 +143,18 @@ ProxyTesterUI = {
             e.preventDefault();
         });
 
-        $('#btnMultiplePDF').on("click", function (e) {
+        // Handle when button to delete pdf files with a given date
+        $('#btnPDFDelete').on("click", function (e) {
             // Set values into the model
             ProxyTesterUI.setModelValues();
             // Build URL (local)
-            var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/GetPDF';
+            var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/DeletePDFFile';
+
+            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.deletePDFFile, ProxyTesterUI.errorMessage);
             e.preventDefault();
-
-            const startTime = performance.now();
-
-            for (let i = 0; i < 1000; i++) {
-                ProxyTesterUI.ViewModel.PdfFileName = `SamplePaySlip${i}.pdf`;
-
-                ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, (e) => { }, ProxyTesterUI.errorMessage);
-            }
-            const endTime = performance.now();
-
-            alert(`Call to request and download 1000 files took ${endTime - startTime} milliseconds`);
-
         });
 
+        // Handles change event of file selection list, assign current select file name into txtFileName
         $('#selectFile').on('change', function (e) {
             $('#txtFileName').val(this.value);
         });
@@ -198,11 +192,20 @@ ProxyTesterUI = {
         $("#ExternalFrame").attr('src', data);
     },
 
+    /**
+     * @name assignPDF
+     * @description Assigns the source of PDF object with source path
+     * @param {any} fileName
+     */
     assignPDF: function (fileName) {
-        ///PDFs/SamplePaySlip.pdf
         $("#pdfObject").attr('data', `/PDFs/${fileName}`);
     },
 
+    /**
+     * @name assignPDFFileName
+     * @description Assigns comma separated file names into selectFile 
+     * @param {any} fileNames
+     */
     assignPDFFileName: function (fileNames) {
         let $selectFile = $('#selectFile');
         $selectFile.empty();
@@ -213,6 +216,15 @@ ProxyTesterUI = {
                 $selectFile.append(new Option(item, item));
             });
         }
+    },
+
+    /**
+     * @name deletePDFFile
+     * @description Tell users the name of deleted files
+     * @param {any} fileNames
+     */
+    deletePDFFile: function (fileNames) {
+        alert(`File deleted: ${fileNames}`);
     },
 
     /**

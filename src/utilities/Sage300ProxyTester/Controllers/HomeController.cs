@@ -182,6 +182,28 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
             }
         }
 
+        /// <summary> Delete PDF </summary>
+        /// <returns>URL string</returns>
+        [AcceptVerbs(HttpVerbs.Post)]
+        public async Task<ActionResult> DeletePDFFile(ProxyTesterViewModel model)
+        {
+            try
+            {
+                // Prep model if needed
+                PrepModel(model);
+
+                // Get the proxy public Key
+                await ProxyPublicKey(model);
+
+                // Get the screen from proxy
+                return await ProxyDeletePDF(model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
         /// <summary> Routine to get the Public Key from the Proxy </summary>
         /// <param name="model">View Model</param>
@@ -397,6 +419,57 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                         {
                             var fileNames = JsonConvert.DeserializeObject<string[]>(stringContent);
                             return Content(string.Join(",", fileNames));
+                        }
+                    }
+                }
+
+                return Content(string.Empty);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary> Routine to delete the files of given date </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>List of file names</returns>
+        private async Task<ActionResult> ProxyDeletePDF(ProxyTesterViewModel model)
+        {
+            try
+            {
+                // Validations here
+
+                // Request
+                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyDeletePDF?productId={model.ProductId}");
+
+                // Encryption for headers
+                EncryptItems(model);
+
+                // Add headers
+                request.Headers.Add(RequestHeader.Credentials, model.Credentials);
+                request.Headers.Add(RequestHeader.ClientPublicKey, model.ClientPublicKey);
+                request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
+                request.Headers.Add(RequestHeader.IV, model.IV);
+                request.Headers.Add(RequestHeader.ProductId, model.ProductId);
+                request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
+                request.Headers.Add(RequestHeader.Controller, model.Controller);
+                request.Headers.Add(RequestHeader.Action, model.Action);
+                request.Headers.Add(RequestHeader.OptionalParameters, model.OptionalParameters);
+                request.Headers.Add(RequestHeader.Id, model.Id);
+                request.Headers.Add(RequestHeader.PdfDate, model.PdfFileDate);
+
+                // Await response
+                using (var response = await httpClient.SendAsync(request))
+                {
+                    // If successful get the screen redirect
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var stringContent = await response.Content.ReadAsStringAsync();
+                        if (stringContent != null)
+                        {
+                            //var fileNames = JsonConvert.DeserializeObject<string[]>(stringContent);
+                            return Content(stringContent);
                         }
                     }
                 }
