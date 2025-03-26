@@ -142,10 +142,8 @@
                         <div class="inner">
                             <button id="btnScreen" name="btnScreen" class="btn btn-primary">Test Screen</button>
                         </div>
-
                     </div>
                     <br />
-
                 </fieldset>
             </div>
 
@@ -161,8 +159,55 @@
                         style="width: 100%; height: 750px; border:1px solid black;">
                 </iframe>
             </div>
+
+
+            <!-- Results -->
+            <div class="panel panel-default">
+                <div class="panel-heading fw-bold">PDF</div>
+                <br />
+            </div>
+
+            <div class="form-group" id="outer">
+
+                <!-- Area (Module) -->
+                <div class="inner">
+                    <label for="txtFileName">PDF Date</label>
+                </div>
+                <div class="inner">
+                    @Html.TextBoxFor(m => m.PdfFileDate, new { type = "date", id = "txtPDFDate", @class = "form-control input-md", style = "width: 250px;" })
+                </div>
+                <div class="inner">
+                    <button id="btnPDFDate" name="btnPDFDate" class="btn btn-primary">Test PDF Date</button>
+                </div>
+                <div class="inner">
+                    <select id="selectFile" name="selectFile" size="3">
+                    </select>
+                </div>
+            </div>
+
+                <div class="form-group" id="outer">
+
+                    <!-- Area (Module) -->
+                    <div class="inner">
+                        <label for="txtFileName">PDF File Name</label>
+                    </div>
+                    <div class="inner">
+                        @Html.TextBoxFor(m => m.PdfFileName, new { id = "txtFileName", @class = "form-control input-md", style = "width: 250px;" })
+                        @Html.ValidationMessageFor(m => m.PdfFileName, "", new { @class = "text-danger" })
+                    </div>
+
+                    <!-- Test Menu (Controller, Action, Opt Params not required) -->
+                    <div class="inner">
+                        <button id="btnPDF" name="btnPDF" class="btn btn-primary">Test PDF</button>
+                    </div>
+                    <div class="inner">
+                        <button id="btnMultiplePDF" name="btnMultiplePDF" class="btn btn-primary">Download PDF Speed Test</button>
+                    </div>
+                </div>
+
+                <object id="pdfObject" data="" type="application/pdf" style="width: 100%; height: 500px" />
+            </div>
         </div>
-    </div>
 }
 
 

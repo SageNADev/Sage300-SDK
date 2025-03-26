@@ -38,6 +38,19 @@ ProxyTesterUI = {
         ProxyTesterUI.initButtons();
         ProxyTesterUI.initOnFocus();
         ProxyTesterUI.setFormValues();
+        ProxyTesterUI.regPayrollEvent();
+    },
+
+    regPayrollEvent: function () {
+        window.addEventListener('message', (e) => {
+            if (e.data && e.data.messagetype === 'ChequeProcessSuccess') {
+                alert(`Received message type 'ChequeProcessSuccess' with date ${e.data.data}. Assign date to PDF Date input box.`);
+                const isoString = e.data.data.toISOString();
+                // Split at the "T" character to get the date part
+                const formattedDate = isoString.split("T")[0];
+                $('#txtPDFDate').val(formattedDate);
+            }
+        });
     },
 
     /**
@@ -72,6 +85,9 @@ ProxyTesterUI = {
         ProxyTesterUI.ViewModel.Controller = $('#txtController').val();
         ProxyTesterUI.ViewModel.Action = $('#txtAction').val();
         ProxyTesterUI.ViewModel.OptionalParameters = $('#txtOptionalParameters').val();
+        ProxyTesterUI.ViewModel.PdfFileName = $('#txtFileName').val();
+        ProxyTesterUI.ViewModel.PdfFileDate = $('#txtPDFDate').val();
+
     },
 
     /**
@@ -103,6 +119,50 @@ ProxyTesterUI = {
             ProxyTesterUI.assignSource('about:blank');
             ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.assignSource, ProxyTesterUI.errorMessage);
             e.preventDefault();
+        });
+
+        $('#btnPDF').click(function (e) {
+            // Set values into the model
+            ProxyTesterUI.setModelValues();
+            // Build URL (local)
+            var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/GetPDF';
+
+            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.assignPDF, ProxyTesterUI.errorMessage);
+            e.preventDefault();
+        });
+
+        $('#btnPDFDate').on("click", function (e) {
+            // Set values into the model
+            ProxyTesterUI.setModelValues();
+            // Build URL (local)
+            var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/GetPDFFileName';
+
+            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.assignPDFFileName, ProxyTesterUI.errorMessage);
+            e.preventDefault();
+        });
+
+        $('#btnMultiplePDF').on("click", function (e) {
+            // Set values into the model
+            ProxyTesterUI.setModelValues();
+            // Build URL (local)
+            var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/GetPDF';
+            e.preventDefault();
+
+            const startTime = performance.now();
+
+            for (let i = 0; i < 1000; i++) {
+                ProxyTesterUI.ViewModel.PdfFileName = `SamplePaySlip${i}.pdf`;
+
+                ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, (e) => { }, ProxyTesterUI.errorMessage);
+            }
+            const endTime = performance.now();
+
+            alert(`Call to request and download 1000 files took ${endTime - startTime} milliseconds`);
+
+        });
+
+        $('#selectFile').on('change', function (e) {
+            $('#txtFileName').val(this.value);
         });
     },
 
@@ -136,6 +196,23 @@ ProxyTesterUI = {
      */
     assignSource: function (data) {
         $("#ExternalFrame").attr('src', data);
+    },
+
+    assignPDF: function (fileName) {
+        ///PDFs/SamplePaySlip.pdf
+        $("#pdfObject").attr('data', `/PDFs/${fileName}`);
+    },
+
+    assignPDFFileName: function (fileNames) {
+        let $selectFile = $('#selectFile');
+        $selectFile.empty();
+
+        if (fileNames && fileNames.length) {
+            let fileNameArray = fileNames.split(",");
+            fileNameArray.forEach(function (item, index) {
+                $selectFile.append(new Option(item, item));
+            });
+        }
     },
 
     /**
