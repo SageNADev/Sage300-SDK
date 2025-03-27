@@ -163,7 +163,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         /// <summary> GetPDF </summary>
         /// <returns>URL string</returns>
         [AcceptVerbs(HttpVerbs.Post)]
-        public async Task<ActionResult> GetPDFFileName(ProxyTesterViewModel model)
+        public async Task<ActionResult> GetPDFNames(ProxyTesterViewModel model)
         {
             try
             {
@@ -174,7 +174,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 await ProxyPublicKey(model);
 
                 // Get the screen from proxy
-                return await ProxyPDFFileName(model);
+                return await ProxyPDFNames(model);
             }
             catch (Exception ex)
             {
@@ -185,7 +185,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         /// <summary> Delete PDF </summary>
         /// <returns>URL string</returns>
         [AcceptVerbs(HttpVerbs.Post)]
-        public async Task<ActionResult> DeletePDFFile(ProxyTesterViewModel model)
+        public async Task<ActionResult> DeletePDFs(ProxyTesterViewModel model)
         {
             try
             {
@@ -196,7 +196,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 await ProxyPublicKey(model);
 
                 // Get the screen from proxy
-                return await ProxyDeletePDF(model);
+                return await ProxyDeletePDFs(model);
             }
             catch (Exception ex)
             {
@@ -348,10 +348,6 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
                 request.Headers.Add(RequestHeader.IV, model.IV);
                 request.Headers.Add(RequestHeader.ProductId, model.ProductId);
-                request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
-                request.Headers.Add(RequestHeader.Controller, model.Controller);
-                request.Headers.Add(RequestHeader.Action, model.Action);
-                request.Headers.Add(RequestHeader.OptionalParameters, model.OptionalParameters);
                 request.Headers.Add(RequestHeader.Id, model.Id);
                 request.Headers.Add(RequestHeader.PdfName, model.PdfFileName);
 
@@ -383,14 +379,14 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         /// <summary> Routine to get the file names of given date </summary>
         /// <param name="model">View Model</param>
         /// <returns>List of file names</returns>
-        private async Task<ActionResult> ProxyPDFFileName(ProxyTesterViewModel model)
+        private async Task<ActionResult> ProxyPDFNames(ProxyTesterViewModel model)
         {
             try
             {
                 // Validations here
 
                 // Request
-                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyPDFFileName?productId={model.ProductId}");
+                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyPDFNames?productId={model.ProductId}");
 
                 // Encryption for headers
                 EncryptItems(model);
@@ -401,10 +397,6 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
                 request.Headers.Add(RequestHeader.IV, model.IV);
                 request.Headers.Add(RequestHeader.ProductId, model.ProductId);
-                request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
-                request.Headers.Add(RequestHeader.Controller, model.Controller);
-                request.Headers.Add(RequestHeader.Action, model.Action);
-                request.Headers.Add(RequestHeader.OptionalParameters, model.OptionalParameters);
                 request.Headers.Add(RequestHeader.Id, model.Id);
                 request.Headers.Add(RequestHeader.PdfDate, model.PdfFileDate);
 
@@ -434,14 +426,14 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         /// <summary> Routine to delete the files of given date </summary>
         /// <param name="model">View Model</param>
         /// <returns>List of file names</returns>
-        private async Task<ActionResult> ProxyDeletePDF(ProxyTesterViewModel model)
+        private async Task<ActionResult> ProxyDeletePDFs(ProxyTesterViewModel model)
         {
             try
             {
                 // Validations here
 
                 // Request
-                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyDeletePDF?productId={model.ProductId}");
+                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyDeletePDFs?productId={model.ProductId}");
 
                 // Encryption for headers
                 EncryptItems(model);
@@ -452,10 +444,6 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
                 request.Headers.Add(RequestHeader.IV, model.IV);
                 request.Headers.Add(RequestHeader.ProductId, model.ProductId);
-                request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
-                request.Headers.Add(RequestHeader.Controller, model.Controller);
-                request.Headers.Add(RequestHeader.Action, model.Action);
-                request.Headers.Add(RequestHeader.OptionalParameters, model.OptionalParameters);
                 request.Headers.Add(RequestHeader.Id, model.Id);
                 request.Headers.Add(RequestHeader.PdfDate, model.PdfFileDate);
 
@@ -468,7 +456,6 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                         var stringContent = await response.Content.ReadAsStringAsync();
                         if (stringContent != null)
                         {
-                            //var fileNames = JsonConvert.DeserializeObject<string[]>(stringContent);
                             return Content(stringContent);
                         }
                     }

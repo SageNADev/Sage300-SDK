@@ -137,9 +137,9 @@ ProxyTesterUI = {
             // Set values into the model
             ProxyTesterUI.setModelValues();
             // Build URL (local)
-            var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/GetPDFFileName';
+            var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/GetPDFNames';
 
-            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.assignPDFFileName, ProxyTesterUI.errorMessage);
+            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.assignPDFNames, ProxyTesterUI.errorMessage);
             e.preventDefault();
         });
 
@@ -148,9 +148,9 @@ ProxyTesterUI = {
             // Set values into the model
             ProxyTesterUI.setModelValues();
             // Build URL (local)
-            var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/DeletePDFFile';
+            var url = ProxyTesterUI.ViewModel.ProxyTesterServer + '/Home/DeletePDFs';
 
-            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.deletePDFFile, ProxyTesterUI.errorMessage);
+            ProxyTesterUI.ajaxPost(url, ProxyTesterUI.ViewModel, ProxyTesterUI.deletePDFs, ProxyTesterUI.errorMessage);
             e.preventDefault();
         });
 
@@ -202,11 +202,11 @@ ProxyTesterUI = {
     },
 
     /**
-     * @name assignPDFFileName
+     * @name assignPDFNames
      * @description Assigns comma separated file names into selectFile 
      * @param {any} fileNames
      */
-    assignPDFFileName: function (fileNames) {
+    assignPDFNames: function (fileNames) {
         let $selectFile = $('#selectFile');
         $selectFile.empty();
 
@@ -219,12 +219,12 @@ ProxyTesterUI = {
     },
 
     /**
-     * @name deletePDFFile
+     * @name deletePDFs
      * @description Tell users the name of deleted files
      * @param {any} fileNames
      */
-    deletePDFFile: function (fileNames) {
-        alert(`File deleted: ${fileNames}`);
+    deletePDFs: function (fileNames) {
+        alert(`Files deleted: ${fileNames}`);
     },
 
     /**
