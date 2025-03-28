@@ -52,6 +52,8 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
 
             // Id for ProxyManager uniqueness
             Id = Guid.NewGuid().ToString(); // Per session and not per request
+
+            PdfFileName = ""; // sample pay file
         }
         #endregion
 
@@ -115,6 +117,12 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
 
         /// <summary> Id (Guid) to make key unique in ProxyManager</summary>
         public string Id { get; set; }
+
+        /// <summary> Name of the PDF file to get </summary>
+        public string PdfFileName { get; set; }
+
+        /// <summary> Date of the PDF file names to get </summary>
+        public string PdfFileDate { get; set; }
 
         #endregion
     }
