@@ -53,7 +53,8 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
             // Id for ProxyManager uniqueness
             Id = Guid.NewGuid().ToString(); // Per session and not per request
 
-            PdfFileName = ""; // sample pay file
+            PdfFileDate = string.Empty; // Check Date for PDF files (HRMS)
+            PdfFileName = string.Empty; // PDF Filename for PDF file (HRMS)
         }
         #endregion
 

@@ -89,6 +89,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         }
 
         /// <summary> GetMenu </summary>
+        /// <param name="model">View Model</param>
         /// <returns>Menu string</returns>
         [AcceptVerbs(HttpVerbs.Post)]
         public async Task<ActionResult> GetMenu(ProxyTesterViewModel model)
@@ -114,6 +115,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         }
 
         /// <summary> GetScreen </summary>
+        /// <param name="model">View Model</param>
         /// <returns>URL string</returns>
         [AcceptVerbs(HttpVerbs.Post)]
         public async Task<ActionResult> GetScreen(ProxyTesterViewModel model)
@@ -138,8 +140,9 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
             }
         }
 
-        /// <summary> GetPDF </summary>
-        /// <returns>URL string</returns>
+        /// <summary> Get PDF </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>PDF as a stream</returns>
         [AcceptVerbs(HttpVerbs.Post)]
         public async Task<ActionResult> GetPDF(ProxyTesterViewModel model)
         {
@@ -160,8 +163,9 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
             }
         }
 
-        /// <summary> GetPDF </summary>
-        /// <returns>URL string</returns>
+        /// <summary> Get PDF Names </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>List of PDF file names</returns>
         [AcceptVerbs(HttpVerbs.Post)]
         public async Task<ActionResult> GetPDFNames(ProxyTesterViewModel model)
         {
@@ -183,7 +187,8 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         }
 
         /// <summary> Delete PDF </summary>
-        /// <returns>URL string</returns>
+        /// <param name="model">View Model</param>
+        /// <returns>File name that was deleted</returns>
         [AcceptVerbs(HttpVerbs.Post)]
         public async Task<ActionResult> DeletePDFs(ProxyTesterViewModel model)
         {
@@ -376,7 +381,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
             }
         }
 
-        /// <summary> Routine to get the file names of given date </summary>
+        /// <summary> Routine to get the file names for a given date </summary>
         /// <param name="model">View Model</param>
         /// <returns>List of file names</returns>
         private async Task<ActionResult> ProxyPDFNames(ProxyTesterViewModel model)
