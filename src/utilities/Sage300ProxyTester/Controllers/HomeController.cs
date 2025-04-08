@@ -23,6 +23,7 @@ using Newtonsoft.Json;
 using Sage.CA.SBS.ERP.Sage300.ProxyTester.Models;
 using Sage.CA.SBS.ERP.Sage300.ProxyTester.Utility;
 using System;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -366,7 +367,9 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                         if (streamContent != null){
                             var fileName = streamContent.Headers?.ContentDisposition?.FileName;
                             var bytes = await streamContent.ReadAsByteArrayAsync();
-                            var tempFilePath = System.IO.Path.Combine(Server.MapPath("~"), "PDFs", fileName);
+                            var directoryPath = Path.Combine(Server.MapPath("~"), "PDFs");
+                            Directory.CreateDirectory(directoryPath); // Ensure the directory exists
+                            var tempFilePath = Path.Combine(directoryPath, fileName);
                             System.IO.File.WriteAllBytes(tempFilePath, bytes);
                             return Content(fileName);
                         }
