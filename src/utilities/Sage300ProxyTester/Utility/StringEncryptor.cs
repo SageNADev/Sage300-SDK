@@ -63,6 +63,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Utility
                 Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(encryptionKey, salt);
                 encryptor.Key = pdb.GetBytes(32);
                 encryptor.IV = pdb.GetBytes(16);
+                encryptor.Mode = CipherMode.CFB;
                 using (var ms = new MemoryStream())
                 {
                     using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
