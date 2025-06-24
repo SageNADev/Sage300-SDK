@@ -285,4 +285,7 @@
   <data name="Separate" xml:space="preserve">
     <value>Séparé</value>
   </data>
+  <data name="PayrollWebScreenNotInstalled" xml:space="preserve">
+    <value>Informations de zoom avant introuvables pour cet enregistrement. Assurez-vous que les écrans web de Paie sont installés.</value>
+  </data>
 </root>

@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdvanceToBeRepaid" xml:space="preserve">
+    <value>Avance à payer</value>
+  </data>
+  <data name="AdvanceToBeRepaidErrorMsg" xml:space="preserve">
+    <value>Entrée invalide. Le gain/déduction saisi à l'avance n'a pas de catégorie d'avance.</value>
+  </data>
+  <data name="Assign" xml:space="preserve">
+    <value>Assigner</value>
+  </data>
+  <data name="AssignEarnDedToEmployeesTitle" xml:space="preserve">
+    <value>Assigner Gain/Ret. aux employés</value>
+  </data>
+  <data name="AvailableInEmployeeTimecards" xml:space="preserve">
+    <value>Disponible dans les feuilles de temps des employés</value>
+  </data>
+  <data name="BillingPercentage" xml:space="preserve">
+    <value>Pourcentage de facturation</value>
+  </data>
+  <data name="BillingPercentages" xml:space="preserve">
+    <value>Pourcentages de facturation</value>
+  </data>
+  <data name="BillingRates" xml:space="preserve">
+    <value>Taux de facturation</value>
+  </data>
+  <data name="BillingRatesPerPiece" xml:space="preserve">
+    <value>Taux de facturation - Par pièce</value>
+  </data>
+  <data name="BILLRATE1" xml:space="preserve">
+    <value>Taux de facturation par heure</value>
+  </data>
+  <data name="BILLRATE2" xml:space="preserve">
+    <value>1,000.01 À  5,000.00 Pièces</value>
+  </data>
+  <data name="BILLRATE3" xml:space="preserve">
+    <value>5,000.01 À 10,000.00 Pièces</value>
+  </data>
+  <data name="BILLRATE4" xml:space="preserve">
+    <value>10,000.01 À  0.00 Pièces</value>
+  </data>
+  <data name="BILLRATE5" xml:space="preserve">
+    <value>0.00 Pièces À  0.00 Pièces</value>
+  </data>
+  <data name="BILLRATE6" xml:space="preserve">
+    <value>Sur 10,000.00 Pièces</value>
+  </data>
+  <data name="BiweeklyMaximum" xml:space="preserve">
+    <value>Max. aux 2 sem.</value>
+  </data>
+  <data name="BiweeklyMinimum" xml:space="preserve">
+    <value>Min. aux 2 sem.</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Carryover" xml:space="preserve">
+    <value>Date de report du cumul</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>Classe</value>
+  </data>
+  <data name="ConfirmationMessageForPrint" xml:space="preserve">
+    <value>Traitement terminé. Imprimer Attribuer le rapport d'audit des Gain/retenue des employés ?</value>
+  </data>
+  <data name="CostCenterOverride" xml:space="preserve">
+    <value>Subst. centre coûts</value>
+  </data>
+  <data name="CURRCODE" xml:space="preserve">
+    <value>Devise</value>
+  </data>
+  <data name="CURRDESC" xml:space="preserve">
+    <value>Description-Devise</value>
+  </data>
+  <data name="DailyMaximum" xml:space="preserve">
+    <value>Max. quotid.</value>
+  </data>
+  <data name="DailyMinimum" xml:space="preserve">
+    <value>Min. quotid.</value>
+  </data>
+  <data name="DefaultHours" xml:space="preserve">
+    <value>Heures par défaut</value>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>Code ventilation</value>
+  </data>
+  <data name="DistributionCodeDescription" xml:space="preserve">
+    <value> Code ventilation Description</value>
+  </data>
+  <data name="DistributioncodeErrorMsg" xml:space="preserve">
+    <value>Saisie erronée. Code de ventilation n'existe pas.</value>
+  </data>
+  <data name="DistributioncodeErrorMsgAssign" xml:space="preserve">
+    <value>Saisie erronée. Code de ventilation ne peut être en blanc.</value>
+  </data>
+  <data name="EarningDeductionDescription" xml:space="preserve">
+    <value>Gain/retenue Description</value>
+  </data>
+  <data name="EarningDeductionErrorMsg" xml:space="preserve">
+    <value>Saisie erronée. Gain/retenue n'existe pas.</value>
+  </data>
+  <data name="EarningDeductionSetting" xml:space="preserve">
+    <value>Paramètres des gains/retenues</value>
+  </data>
+  <data name="EBrowse" xml:space="preserve">
+    <value>Critères de I'employé</value>
+  </data>
+  <data name="EmpListID" xml:space="preserve">
+    <value>Liste de sélect.</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employé</value>
+  </data>
+  <data name="EmployeeAnnualMaximum" xml:space="preserve">
+    <value>Maximum annuel</value>
+  </data>
+  <data name="EmployeeErrorMsg" xml:space="preserve">
+    <value>Saisie erronée. Le début employé de la tranche doit être inférieur à la tranche de fin.</value>
+  </data>
+  <data name="EmployeeLifetimeMaximum" xml:space="preserve">
+    <value>Maximum viager</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Numéro de I'employé</value>
+  </data>
+  <data name="EmployeePeriodMaximum" xml:space="preserve">
+    <value>Maximum période</value>
+  </data>
+  <data name="EmployeePeriodMinimum" xml:space="preserve">
+    <value>Minimum période</value>
+  </data>
+  <data name="EmployeeRateAmtPct" xml:space="preserve">
+    <value>Taux/Mont/%-Employé</value>
+  </data>
+  <data name="EmployeeSecondaryRateAmtPct" xml:space="preserve">
+    <value>P.c./Mont./Tx secondaire</value>
+  </data>
+  <data name="Employer" xml:space="preserve">
+    <value>Employeur</value>
+  </data>
+  <data name="EmployerAmtPct" xml:space="preserve">
+    <value>Mont./%-Employeur</value>
+  </data>
+  <data name="EmployerAnnualMaximum" xml:space="preserve">
+    <value>Maximum annuel</value>
+  </data>
+  <data name="EmployerLifetimeMaximum" xml:space="preserve">
+    <value>Maximum viager</value>
+  </data>
+  <data name="EmployerPeriodMaximum" xml:space="preserve">
+    <value>Maximum période</value>
+  </data>
+  <data name="EmployerPeriodMinimum" xml:space="preserve">
+    <value>Minimum période</value>
+  </data>
+  <data name="EmployerSecondaryAmtPct" xml:space="preserve">
+    <value>P.c./Mont. secondaire</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Termine</value>
+  </data>
+  <data name="EndDateErrorMsg" xml:space="preserve">
+    <value>La date de début doit être antérieure à la date de fin.</value>
+  </data>
+  <data name="FClassCod" xml:space="preserve">
+    <value> De classe</value>
+  </data>
+  <data name="FEmployee" xml:space="preserve">
+    <value>Employé</value>
+  </data>
+  <data name="FIELDNAME" xml:space="preserve">
+    <value>Champ</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Général</value>
+  </data>
+  <data name="ID2Change" xml:space="preserve">
+    <value>Gain/retenue</value>
+  </data>
+  <data name="ID2ChangeforEarnDed" xml:space="preserve">
+    <value>Gain/retenue</value>
+  </data>
+  <data name="IdName" xml:space="preserve">
+    <value>Gain/retenue Description</value>
+  </data>
+  <data name="IncludeInFLSAOvertiBillingRatesmeCalc" xml:space="preserve">
+    <value>Inclure dans calcul au taux normal</value>
+  </data>
+  <data name="IncludeInFLSAOvertimeCalc" xml:space="preserve">
+    <value>Inclure dans calcul au taux normal</value>
+  </data>
+  <data name="IncludeInFLSAOvertimeCalc_CP" xml:space="preserve">
+    <value>Inclure dans calcul au taux normal</value>
+  </data>
+  <data name="InvalidEarnDed" xml:space="preserve">
+    <value>Saisie erronée. Gain/retenue n'existe pas.</value>
+  </data>
+  <data name="InvalidSegvalErrorMsg" xml:space="preserve">
+    <value>Saisie erronée. Le code du segment n'est pas défini dans Grand livre.</value>
+  </data>
+  <data name="InvalidSelectionListErrorMsg" xml:space="preserve">
+    <value>Saisie erronée. Liste de sélect. ne peut être en blanc.</value>
+  </data>
+  <data name="InvalidSelErrorMsg" xml:space="preserve">
+    <value>Saisie erronée. Liste de sélect. n'existe pas.</value>
+  </data>
+  <data name="JobsAllocBasedOnCalcBase" xml:space="preserve">
+    <value>Ventil. tàches basée sur base de calc.</value>
+  </data>
+  <data name="MinMax" xml:space="preserve">
+    <value>Min/Max</value>
+  </data>
+  <data name="MonthlyMax" xml:space="preserve">
+    <value>Max. mens.</value>
+  </data>
+  <data name="MonthlyMin" xml:space="preserve">
+    <value>Min. mens.</value>
+  </data>
+  <data name="NEWSTRING" xml:space="preserve">
+    <value>Nouvelle valeur ou modification</value>
+  </data>
+  <data name="NEWWCCGRUP" xml:space="preserve">
+    <value>Nouveau groupe CSST</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>[Nil]</value>
+  </data>
+  <data name="OLDSTRING" xml:space="preserve">
+    <value>Correspondance valeur courante</value>
+  </data>
+  <data name="OLDWCCGRUP" xml:space="preserve">
+    <value>Groupe CSST à mapper</value>
+  </data>
+  <data name="OPERATION" xml:space="preserve">
+    <value>Type de modif</value>
+  </data>
+  <data name="Over" xml:space="preserve">
+    <value>Plus de</value>
+  </data>
+  <data name="PaythisPercentage" xml:space="preserve">
+    <value>Payer ce pourcentage</value>
+  </data>
+  <data name="PopupWarningmsg" xml:space="preserve">
+    <value>Voulez-vous mettre à jour ce gain/retenue?</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="QuarterlyMax" xml:space="preserve">
+    <value>Max. trim.</value>
+  </data>
+  <data name="QuarterlyMin" xml:space="preserve">
+    <value>Min. trim.</value>
+  </data>
+  <data name="SegmentCode" xml:space="preserve">
+    <value>Code de segment</value>
+  </data>
+  <data name="Segmentdescription" xml:space="preserve">
+    <value>Description de segment</value>
+  </data>
+  <data name="Segmentname" xml:space="preserve">
+    <value>Nom de segment</value>
+  </data>
+  <data name="SelectionList" xml:space="preserve">
+    <value>Liste de sélection</value>
+  </data>
+  <data name="SelType" xml:space="preserve">
+    <value>Assigner à</value>
+  </data>
+  <data name="SemimonthlyMaximum" xml:space="preserve">
+    <value>Max. bimens.</value>
+  </data>
+  <data name="SemimonthlyMinimum" xml:space="preserve">
+    <value>Min. bimens</value>
+  </data>
+  <data name="SetCriteria" xml:space="preserve">
+    <value>Déf. critéres</value>
+  </data>
+  <data name="SetCriteriaErrorMessage" xml:space="preserve">
+    <value>Procédure incorrecte. Aucun employé correspond au critère spécifié.</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Débute</value>
+  </data>
+  <data name="StartDateErrorMsg" xml:space="preserve">
+    <value>Date invalide à StartDate</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TClassCod" xml:space="preserve">
+    <value>À </value>
+  </data>
+  <data name="TEmployee" xml:space="preserve">
+    <value>À </value>
+  </data>
+  <data name="TenPerYearMax" xml:space="preserve">
+    <value>Max. 10 périodes</value>
+  </data>
+  <data name="TenPerYearMin" xml:space="preserve">
+    <value>Min. 10 périodes</value>
+  </data>
+  <data name="TESTOLD" xml:space="preserve">
+    <value>Corres. val c.?</value>
+  </data>
+  <data name="ThirteenPerYearMax" xml:space="preserve">
+    <value>Max. 13 périodes</value>
+  </data>
+  <data name="ThirteenPerYearMin" xml:space="preserve">
+    <value>Min. 13 périodes</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="TwentyTwoPerYearMax" xml:space="preserve">
+    <value>Max. 22 périodes</value>
+  </data>
+  <data name="TwentyTwoPerYearMin" xml:space="preserve">
+    <value>Min. 22 périodes</value>
+  </data>
+  <data name="UpdatedEmployeesMessage" xml:space="preserve">
+    <value>{0} employés ont été mis à jour</value>
+  </data>
+  <data name="UseEmployeeDefaults" xml:space="preserve">
+    <value>Utiliser les données implicites des employés pour les valeurs en blanc ou nulles</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="WCCGroupDescription" xml:space="preserve">
+    <value>Description de Groupe</value>
+  </data>
+  <data name="WCCGroupErrorMsg" xml:space="preserve">
+    <value>Saisie erronée. Groupe CSST n'existe pas.</value>
+  </data>
+  <data name="WeeklyMaximum" xml:space="preserve">
+    <value>Max. hebd.</value>
+  </data>
+  <data name="WeeklyMinimum" xml:space="preserve">
+    <value>Min. hebd.</value>
+  </data>
+  <data name="WorkersCompensationCode" xml:space="preserve">
+    <value>Code CSST</value>
+  </data>
+  <data name="WorkersCompensationCodeDescription" xml:space="preserve">
+    <value>Description de  Code CSST</value>
+  </data>
+  <data name="WorkersCompensationCodeErrorMsg" xml:space="preserve">
+    <value>Saisie erronée. Code de CSST n'existe pas.</value>
+  </data>
+  <data name="WorkersCompGroup" xml:space="preserve">
+    <value>Groupe CSST</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+</root>

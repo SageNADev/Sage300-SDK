@@ -61,6 +61,42 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Process {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BN15 Account.
+        /// </summary>
+        public static string AccountType_BN15 {
+            get {
+                return ResourceManager.GetString("AccountType_BN15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BN9 Account.
+        /// </summary>
+        public static string AccountType_BN9 {
+            get {
+                return ResourceManager.GetString("AccountType_BN9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NR4 Account.
+        /// </summary>
+        public static string AccountType_NR4 {
+            get {
+                return ResourceManager.GetString("AccountType_NR4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trust Account.
+        /// </summary>
+        public static string AccountType_TRUST {
+            get {
+                return ResourceManager.GetString("AccountType_TRUST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Address Line 1.
         /// </summary>
         public static string AddressLine1 {
@@ -93,6 +129,24 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Process {
         public static string Amended {
             get {
                 return ResourceManager.GetString("Amended", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BN15 Account Number.
+        /// </summary>
+        public static string BN15AccountNumber {
+            get {
+                return ResourceManager.GetString("BN15AccountNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BN9 Account Number.
+        /// </summary>
+        public static string BN9AccountNumber {
+            get {
+                return ResourceManager.GetString("BN9AccountNumber", resourceCulture);
             }
         }
         
@@ -277,6 +331,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Process {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name Line 1.
         /// </summary>
         public static string Name1 {
@@ -300,6 +363,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Process {
         public static string NoRecords {
             get {
                 return ResourceManager.GetString("NoRecords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NR4 Account Number.
+        /// </summary>
+        public static string NR4AccountNumber {
+            get {
+                return ResourceManager.GetString("NR4AccountNumber", resourceCulture);
             }
         }
         
@@ -345,6 +417,15 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Process {
         public static string ProcessDone {
             get {
                 return ResourceManager.GetString("ProcessDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RepID.
+        /// </summary>
+        public static string RepID {
+            get {
+                return ResourceManager.GetString("RepID", resourceCulture);
             }
         }
         
@@ -403,11 +484,29 @@ namespace Sage.CA.SBS.ERP.Sage300.AP.Resources.Process {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transmitter Account Number.
+        /// </summary>
+        public static string TransmitterAccountType {
+            get {
+                return ResourceManager.GetString("TransmitterAccountType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transmitter Number.
         /// </summary>
         public static string TransmitterNumber {
             get {
                 return ResourceManager.GetString("TransmitterNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TRUST Account Number.
+        /// </summary>
+        public static string TRUSTAccountNumber {
+            get {
+                return ResourceManager.GetString("TRUSTAccountNumber", resourceCulture);
             }
         }
         

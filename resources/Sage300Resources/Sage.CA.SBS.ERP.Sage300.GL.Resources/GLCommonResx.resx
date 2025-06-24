@@ -285,4 +285,7 @@
   <data name="Separate" xml:space="preserve">
     <value>Separate</value>
   </data>
+  <data name="PayrollWebScreenNotInstalled" xml:space="preserve">
+    <value>Cannot find drill down information for this record. Please make sure Payroll web screens are installed.</value>
+  </data>
 </root>

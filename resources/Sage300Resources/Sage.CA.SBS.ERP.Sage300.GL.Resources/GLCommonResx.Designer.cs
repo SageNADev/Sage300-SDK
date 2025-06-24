@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class GLCommonResx {
@@ -264,6 +264,15 @@ namespace Sage.CA.SBS.ERP.Sage300.GL.Resources {
         public static string Open {
             get {
                 return ResourceManager.GetString("Open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot find drill down information for this record. Please make sure Payroll web screen is installed..
+        /// </summary>
+        public static string PayrollWebScreenNotInstalled {
+            get {
+                return ResourceManager.GetString("PayrollWebScreenNotInstalled", resourceCulture);
             }
         }
         

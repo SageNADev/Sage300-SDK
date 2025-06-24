@@ -313,6 +313,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export to PDF.
+        /// </summary>
+        public static string ExportToPDF {
+            get {
+                return ResourceManager.GetString("ExportToPDF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exporting Checks. This may take a few minutes. Please wait....
+        /// </summary>
+        public static string ExportToPDFMsg {
+            get {
+                return ResourceManager.GetString("ExportToPDFMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date {0} corresponds to period {1} in fiscal year {2}, which is locked for US Payroll in Common Services’ Fiscal Calendar..
         /// </summary>
         public static string FiscalPeriodYearLocked {

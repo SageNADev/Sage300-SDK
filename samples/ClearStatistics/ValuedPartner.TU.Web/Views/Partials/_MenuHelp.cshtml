@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2025 Sage Software, Inc.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Core.Configuration;
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -34,7 +34,7 @@
                         portalSearchHelp.ExternalUrl;
             var desc = string.IsNullOrEmpty(portalSearchHelp.ExternalUrl) ?
                         HelpResx.ResourceManager.GetString(portalSearchHelp.ResourceKey, HelpResx.Culture) :
-                        portalSearchHelp.ExternalDescription;
+                        portalSearchHelp.ExternalDescription[System.Threading.Thread.CurrentThread.CurrentCulture.Name];
 
             <li class="k-item k-state-default" role="menuitem">
                 <span class="k-link">

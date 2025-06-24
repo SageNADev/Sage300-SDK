@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class EmployeeResx {
@@ -439,7 +439,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Billing Percentage 1.
+        ///   Looks up a localized string similar to Billing Percentage .
         /// </summary>
         public static string BillingPercentage1 {
             get {
@@ -2176,6 +2176,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Include in FLSA Calculation.
+        /// </summary>
+        public static string IncludeinFLSACalculation {
+            get {
+                return ResourceManager.GetString("IncludeinFLSACalculation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Include in FLSA Overtime Calc.
         /// </summary>
         public static string IncludeInFLSAOvertimeCalc {
@@ -2271,6 +2280,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string JobCategory {
             get {
                 return ResourceManager.GetString("JobCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jobs Allocated Based on Calculation Base.
+        /// </summary>
+        public static string JobsAllocatedBasedonCalcBase {
+            get {
+                return ResourceManager.GetString("JobsAllocatedBasedonCalcBase", resourceCulture);
             }
         }
         

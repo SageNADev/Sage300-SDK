@@ -1,4 +1,4 @@
-/* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */
+/* Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved. */
 
 // @ts-check
 
@@ -1267,8 +1267,19 @@ $.extend(sg.utls, {
         }
     },
 
-    openReport: function (reportToken, checkTitle, callbackOnClose) {
-        var reportUrl = kendo.format(sg.utls.url.buildUrl("Core", "ExportReport", "ExportDialog") + "?token={0}", reportToken);
+    /**
+     * @name openReport
+     * @description Opens a new window for a report
+     * @param {string} reportToken       - Required - Token to identify the report
+     * @param {string} checkTitle        - Optional - Not used
+     * @param {function} callbackOnClose - Optional - Callback event when window for report is closed.
+     * @param {number} reportFormat      - Optional - Specifying this will skip the report dialog and open the report in this format.
+     *                                                PDF = 5, CSV = 10, EXCEL = 4, EXCEl Records = 8, XML = 13, WORD = 3
+     */
+    openReport: function (reportToken, checkTitle, callbackOnClose, reportFormat) {
+        var reportFormatParam = kendo.format((reportFormat !== undefined) ? "&format={0}" : "", reportFormat);
+        var params = kendo.format("?token={0}" + reportFormatParam, reportToken);
+        var reportUrl = sg.utls.url.buildUrl("Core", "ExportReport", "ExportDialog") + params;
         var reportWindow = window.open(reportUrl);
         if (sg.utls.isFunction(callbackOnClose)) {
             setTimeout(function () {
@@ -1414,8 +1425,24 @@ $.extend(sg.utls, {
             async: isAsync,
             dataType: dataType,
             contentType: 'application/json',
-            success: successHandler,
-            error: errorHandler,
+            success: function (data, textStatus, jqXhr) {
+                try {
+                    if (successHandler) {
+                        successHandler(data, textStatus, jqXhr);
+                    }
+                } catch(err) {
+                    console.warn("Exception encountered in success handler of SageQueue.");
+                }
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                try {
+                    if (errorHandler) {
+                        errorHandler(jqXhr, textStatus, errorThrown);
+                    }
+                } catch(err) {
+                    console.warn("Exception encountered in error handler of SageQueue.");
+                }
+            },
             beforeSend: function () {
                 $("#ajaxSpinner").css("display", "block");
                 if (sg.utls.isSameOrigin()) {
@@ -2632,6 +2659,10 @@ $.extend(sg.utls, {
             $("#success").stop(true, true).hide();
             $("#success").empty();
             $("#message").empty();
+
+            // don't forget to remove the overlay(s) if they are there
+            if ($("#injectedOverlay").length > 0) $("#injectedOverlay").remove();
+            if ($("#injectedOverlayTransparent").length > 0) $("#injectedOverlayTransparent").remove();
 
             //Warning
             if (result.UserMessage.Warnings != null && result.UserMessage.Warnings.length > 0) {

@@ -38,10 +38,20 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeclarativeReportPayrollResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeclarativeReportPayrollResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AssignAuditResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AssignAuditResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AssignSelectionListsToEmpResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssignSelectionListsToEmpResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\CalculatePayrollResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -65,10 +75,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClassCodesResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CombineEFTFileResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CombineEFTFileResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CompanyOptionResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CompanyOptionResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CopytimecardResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CopytimecardResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeeActivityResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -146,6 +166,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TimecardHeaderResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TimecardHeaderResx.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimecardHeaderResx.fr.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TimecardJobDetailResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -166,10 +191,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TimecardOptionalFieldValueResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UpdateEarnDedForAllEmpResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateEarnDedForAllEmpResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WorkClassificationCodeResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkClassificationCodeResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="HelpResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HelpResx.resx</DependentUpon>
     </Compile>
     <Compile Include="PRCommonResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -183,9 +218,20 @@
     <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DeclarativeReportPayrollResx.resx">
+      <LastGenOutput>DeclarativeReportPayrollResx.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssignAuditResx.fr.resx" />
     <EmbeddedResource Include="Forms\AssignAuditResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AssignAuditResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssignSelectionListsToEmpResx.fr.resx" />
+    <EmbeddedResource Include="Forms\AssignSelectionListsToEmpResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AssignSelectionListsToEmpResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CalculatePayrollResx.fr.resx">
       <SubType>Designer</SubType>
@@ -197,6 +243,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CheckCommentDetailResx.resx" />
     <EmbeddedResource Include="Forms\CheckDetailResx.resx" />
+    <EmbeddedResource Include="Forms\CheckDetailsOptionalFieldResx.fr.resx" />
     <EmbeddedResource Include="Forms\CheckDetailsOptionalFieldResx.resx" />
     <EmbeddedResource Include="Forms\CheckEFTDetailResx.resx" />
     <EmbeddedResource Include="Forms\CheckHeaderOptionalFieldValuResx.resx">
@@ -215,6 +262,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ClassCodesResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CombineEFTFileResx.fr.resx" />
+    <EmbeddedResource Include="Forms\CombineEFTFileResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CombineEFTFileResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CompanyOptionResx.fr.resx" />
     <EmbeddedResource Include="Forms\CompanyOptionResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -223,6 +275,12 @@
     <EmbeddedResource Include="Forms\CompanyPayrollTaxeResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CompanyPayrollTaxeResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CopytimecardResx.fr.resx" />
+    <EmbeddedResource Include="Forms\CopytimecardResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CopytimecardResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DistributionResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -295,7 +353,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>TimecardDetailsOptionalFieldResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TimecardHeaderResx.fr.resx" />
+    <EmbeddedResource Include="Forms\TimecardHeaderResx.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TimecardHeaderResx.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TimecardHeaderResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>TimecardHeaderResx.Designer.cs</LastGenOutput>
@@ -320,10 +381,21 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>TimecardOptionalFieldValueResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateEarnDedForAllEmpResx.fr.resx" />
+    <EmbeddedResource Include="Forms\UpdateEarnDedForAllEmpResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UpdateEarnDedForAllEmpResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkClassificationCodeResx.fr.resx" />
     <EmbeddedResource Include="Forms\WorkClassificationCodeResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>WorkClassificationCodeResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpResx.fr.resx" />
+    <EmbeddedResource Include="HelpResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmployeeResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PRCommonResx.es.resx" />
     <EmbeddedResource Include="PRCommonResx.fr.resx" />

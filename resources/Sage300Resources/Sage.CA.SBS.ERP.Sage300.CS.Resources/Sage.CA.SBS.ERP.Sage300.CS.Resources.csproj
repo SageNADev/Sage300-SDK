@@ -48,6 +48,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerationsResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ConnectedBridgeOnboardingResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConnectedBridgeOnboardingResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PaymentsAcceptanceResx.Designer.cs">
       <DependentUpon>PaymentsAcceptanceResx.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -327,6 +332,14 @@
     <EmbeddedResource Include="EnumerationsResx.fr.resx" />
     <EmbeddedResource Include="EnumerationsResx.zh-Hans.resx" />
     <EmbeddedResource Include="EnumerationsResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\ConnectedBridgeOnboardingResx.es.resx" />
+    <EmbeddedResource Include="Forms\ConnectedBridgeOnboardingResx.fr.resx" />
+    <EmbeddedResource Include="Forms\ConnectedBridgeOnboardingResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConnectedBridgeOnboardingResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConnectedBridgeOnboardingResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\ConnectedBridgeOnboardingResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\PaymentsAcceptanceResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\PaymentsAcceptanceResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\PaymentsAcceptanceResx.resx">
@@ -565,6 +578,7 @@
     <EmbeddedResource Include="Forms\ReconcileOFXStatementResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ReconcileOFXStatementResx.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReconcileOFXStatementResx.es.resx" />
     <EmbeddedResource Include="Forms\ReconcileOFXStatementResx.fr.resx" />

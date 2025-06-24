@@ -1,0 +1,1730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="1099CPRSCode" xml:space="preserve">
+    <value>1099/CPRS Code</value>
+  </data>
+  <data name="1099CPRSCodeFrom" xml:space="preserve">
+    <value>From 1099/CPRS Code</value>
+  </data>
+  <data name="1099CPRSCodeTo" xml:space="preserve">
+    <value>To 1099/CPRS Code</value>
+  </data>
+  <data name="AccountSet" xml:space="preserve">
+    <value>Account Set</value>
+  </data>
+  <data name="AccountSetFrom" xml:space="preserve">
+    <value>From Account Set</value>
+  </data>
+  <data name="PM_AccountSetTitle" xml:space="preserve">
+    <value>PJC Account Sets Report</value>
+  </data>
+  <data name="AccountSetTo" xml:space="preserve">
+    <value>To Account Set</value>
+  </data>
+  <data name="AP_1099CPRSCodesTitle" xml:space="preserve">
+    <value>A/P 1099/CPRS Codes Report</value>
+  </data>
+  <data name="AP_AccountSetsTitle" xml:space="preserve">
+    <value>A/P Account Sets Report</value>
+  </data>
+  <data name="AP_DistributionCodesTitle" xml:space="preserve">
+    <value>A/P Distribution Codes Report</value>
+  </data>
+  <data name="AP_DistributionSetsTitle" xml:space="preserve">
+    <value>A/P Distribution Sets Report</value>
+  </data>
+  <data name="AP_EmailMessagesTitle" xml:space="preserve">
+    <value>A/P Email Messages Report</value>
+  </data>
+  <data name="AP_GLIntegrationTitle" xml:space="preserve">
+    <value>A/P G/L Integration Report</value>
+  </data>
+  <data name="AP_OptionalFieldsTitle" xml:space="preserve">
+    <value>A/P Optional Fields Report</value>
+  </data>
+  <data name="AP_OptionsTitle" xml:space="preserve">
+    <value>A/P Options Report</value>
+  </data>
+  <data name="AP_PaymentCodesTitle" xml:space="preserve">
+    <value>A/P Payment Codes Report</value>
+  </data>
+  <data name="AP_PaymentSelectionCodesTitle" xml:space="preserve">
+    <value>A/P Payment Selection Codes Report</value>
+  </data>
+  <data name="AP_TermsTitle" xml:space="preserve">
+    <value>A/P Terms Report</value>
+  </data>
+  <data name="ChargeCodeFrom" xml:space="preserve">
+    <value>From Charge Code</value>
+  </data>
+  <data name="ChargeCodeTo" xml:space="preserve">
+    <value>To Charge Code</value>
+  </data>
+  <data name="Charges" xml:space="preserve">
+    <value>Charges</value>
+  </data>
+  <data name="ChargesTitle" xml:space="preserve">
+    <value>PJC Charges Report</value>
+  </data>
+  <data name="CurrencyFieldLabel" xml:space="preserve">
+    <value>Currency Field Label</value>
+  </data>
+  <data name="DateFieldLabel" xml:space="preserve">
+    <value>Date Field Label</value>
+  </data>
+  <data name="DistributionCode" xml:space="preserve">
+    <value>Distribution Code</value>
+  </data>
+  <data name="DistributionCodeFrom" xml:space="preserve">
+    <value>From Distribution Code</value>
+  </data>
+  <data name="DistributionCodeTo" xml:space="preserve">
+    <value>To Distribution Code</value>
+  </data>
+  <data name="DistributionSet" xml:space="preserve">
+    <value>Distribution Set</value>
+  </data>
+  <data name="DistributionSetFrom" xml:space="preserve">
+    <value>From Distribution Set</value>
+  </data>
+  <data name="DistributionSetTo" xml:space="preserve">
+    <value>To Distribution Set</value>
+  </data>
+  <data name="IncludeMultiplePaymentSchedules" xml:space="preserve">
+    <value>Include Multiple Payment Schedules</value>
+  </data>
+  <data name="IncludeOptionalFields" xml:space="preserve">
+    <value>Include Optional Fields</value>
+  </data>
+  <data name="NumericFieldLabel" xml:space="preserve">
+    <value>Numeric Field Label</value>
+  </data>
+  <data name="Option1" xml:space="preserve">
+    <value>Option 1</value>
+  </data>
+  <data name="Option2" xml:space="preserve">
+    <value>Option 2</value>
+  </data>
+  <data name="Option3" xml:space="preserve">
+    <value>Option 3</value>
+  </data>
+  <data name="Option4" xml:space="preserve">
+    <value>Option 4</value>
+  </data>
+  <data name="Option5" xml:space="preserve">
+    <value>Option 5</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="PaymentSelectionCode" xml:space="preserve">
+    <value>Selection Code</value>
+  </data>
+  <data name="PaymentSelectionCodeFrom" xml:space="preserve">
+    <value>From Selection Code</value>
+  </data>
+  <data name="PaymentSelectionCodeTo" xml:space="preserve">
+    <value>To Selection Code</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="ProjectsTitle" xml:space="preserve">
+    <value>Projects Report</value>
+  </data>
+  <data name="ProjectTypeCostPlus" xml:space="preserve">
+    <value>Cost Plus</value>
+  </data>
+  <data name="ProjectTypeFixedPrice" xml:space="preserve">
+    <value>Fixed Price</value>
+  </data>
+  <data name="ProjectTypeTimeAndMaterials" xml:space="preserve">
+    <value>Time and Materials</value>
+  </data>
+  <data name="RadioButtonGroupLabel" xml:space="preserve">
+    <value>Radio Button Group Label</value>
+  </data>
+  <data name="ShowSettings" xml:space="preserve">
+    <value>Show Settings</value>
+  </data>
+  <data name="PO_OptionsTitle" xml:space="preserve">
+    <value>P/O Options Report</value>
+  </data>
+  <data name="PO_ShipViaCodesTitle" xml:space="preserve">
+    <value>P/O Ship Via Codes Report</value>
+  </data>
+  <data name="PO_TemplatesTitle" xml:space="preserve">
+    <value>P/O Templates Report</value>
+  </data>
+  <data name="Subcontractor" xml:space="preserve">
+    <value>Subcontractor</value>
+  </data>
+  <data name="SubcontractorFrom" xml:space="preserve">
+    <value>From Subcontractor</value>
+  </data>
+  <data name="SubcontractorTitle" xml:space="preserve">
+    <value>PJC Subcontractors Report</value>
+  </data>
+  <data name="SubcontractorTo" xml:space="preserve">
+    <value>To Subcontractor</value>
+  </data>
+  <data name="TermsCode" xml:space="preserve">
+    <value>Terms Code</value>
+  </data>
+  <data name="TermsCodeFrom" xml:space="preserve">
+    <value>From Terms Code</value>
+  </data>
+  <data name="TermsCodeTo" xml:space="preserve">
+    <value>To Terms Code</value>
+  </data>
+  <data name="TemplateCodeFrom" xml:space="preserve">
+    <value>From Template Code</value>
+  </data>
+  <data name="TemplateCodes" xml:space="preserve">
+    <value>Template Code</value>
+  </data>
+  <data name="TemplateCodeTo" xml:space="preserve">
+    <value>To Template Code</value>
+  </data>
+  <data name="ShipViaCodeFrom" xml:space="preserve">
+    <value>From Ship-Via Code</value>
+  </data>
+  <data name="ShipViaCodeTo" xml:space="preserve">
+    <value>To Ship-Via Code</value>
+  </data>
+  <data name="ShipViaCodes" xml:space="preserve">
+    <value>Ship-Via Code</value>
+  </data>
+  <data name="PO_GLIntegrationTitle" xml:space="preserve">
+    <value>P/O G/L Integration Report</value>
+  </data>
+  <data name="PO_OptionalFieldsTitle" xml:space="preserve">
+    <value>P/O Optional Fields Report</value>
+  </data>
+  <data name="PM_GLIntegrationTitle" xml:space="preserve">
+    <value>PJC G/L Integration Report</value>
+  </data>
+  <data name="PM_OptionalFieldTitle" xml:space="preserve">
+    <value>PJC Optional Fields Report</value>
+  </data>
+  <data name="MiscellaneousCodeFrom" xml:space="preserve">
+    <value>From Miscellaneous Code</value>
+  </data>
+  <data name="MiscellaneousCodeTo" xml:space="preserve">
+    <value>To Miscellaneous Code</value>
+  </data>
+  <data name="OverheadCodeFrom" xml:space="preserve">
+    <value>From Overhead Code</value>
+  </data>
+  <data name="OverheadCodeTo" xml:space="preserve">
+    <value>To Overhead Code</value>
+  </data>
+  <data name="PM_MiscellaneousExpensesTitle" xml:space="preserve">
+    <value>PJC Miscellaneous Expenses Report</value>
+  </data>
+  <data name="PM_OptionsTitle" xml:space="preserve">
+    <value>PJC Options Report</value>
+  </data>
+  <data name="PM_OverheadExpensesTitle" xml:space="preserve">
+    <value>PJC Overhead Expenses Report</value>
+  </data>
+  <data name="PO_WeightUOMTitle" xml:space="preserve">
+    <value>P/O Weight Units of Measure Report</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>Item Number</value>
+  </data>
+  <data name="ItemNumberFrom" xml:space="preserve">
+    <value>From Item Number</value>
+  </data>
+  <data name="ItemNumberTo" xml:space="preserve">
+    <value>To Item Number</value>
+  </data>
+  <data name="ItemStatus_ActiveItems" xml:space="preserve">
+    <value>Active Items</value>
+  </data>
+  <data name="ItemStatus_AllItems" xml:space="preserve">
+    <value>All Items</value>
+  </data>
+  <data name="ItemStatus_InactiveItems" xml:space="preserve">
+    <value>Inactive Items</value>
+  </data>
+  <data name="PO_ItemsTitle" xml:space="preserve">
+    <value>P/O Items Report</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Taxes</value>
+  </data>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>Unit of Measure</value>
+  </data>
+  <data name="Vendors" xml:space="preserve">
+    <value>Vendors</value>
+  </data>
+  <data name="Error_MissingFinderForRange" xml:space="preserve">
+    <value>Could not find associated finder control for range.</value>
+    <comment>Internal system message - no translation necessary</comment>
+  </data>
+  <data name="MiscellaneousCode" xml:space="preserve">
+    <value>Miscellaneous Code</value>
+  </data>
+  <data name="OverheadCode" xml:space="preserve">
+    <value>Overhead Code</value>
+  </data>
+  <data name="EquipmentCode" xml:space="preserve">
+    <value>Equipment Code</value>
+  </data>
+  <data name="EquipmentCodeFrom" xml:space="preserve">
+    <value>From Equipment Code</value>
+  </data>
+  <data name="EquipmentCodeTo" xml:space="preserve">
+    <value>To Equipment Code</value>
+  </data>
+  <data name="PM_EquipmentTitle" xml:space="preserve">
+    <value>PJC Equipment Report</value>
+  </data>
+  <data name="Includes" xml:space="preserve">
+    <value>Includes</value>
+  </data>
+  <data name="PM_ContractStructuresTitle" xml:space="preserve">
+    <value>PJC Contract Structures Report</value>
+  </data>
+  <data name="StructureCode" xml:space="preserve">
+    <value>Structure Code</value>
+  </data>
+  <data name="StructureCodeFrom" xml:space="preserve">
+    <value>From Structure Code</value>
+  </data>
+  <data name="StructureCodeTo" xml:space="preserve">
+    <value>To Structure Code</value>
+  </data>
+  <data name="CategoryFromTemplate" xml:space="preserve">
+    <value>From %1</value>
+  </data>
+  <data name="CategoryToTemplate" xml:space="preserve">
+    <value>To %1</value>
+  </data>
+  <data name="CostType" xml:space="preserve">
+    <value>Cost Type</value>
+  </data>
+  <data name="CostTypeFrom" xml:space="preserve">
+    <value>From Cost Type</value>
+  </data>
+  <data name="CostTypeTo" xml:space="preserve">
+    <value>To Cost Type</value>
+  </data>
+  <data name="PM_CategoriesTitle" xml:space="preserve">
+    <value>PJC %1 Report</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Include</value>
+  </data>
+  <data name="PM_ProjectsTitle" xml:space="preserve">
+    <value>PJC %1 Report</value>
+  </data>
+  <data name="ProjectCodeFrom" xml:space="preserve">
+    <value>From %1</value>
+  </data>
+  <data name="ProjectCodeTo" xml:space="preserve">
+    <value>To %1</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>%1 Type</value>
+  </data>
+  <data name="ProjectTypeAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="PO_AccountSetsTitle" xml:space="preserve">
+    <value>P/O Account Sets Report</value>
+  </data>
+  <data name="AllSegments" xml:space="preserve">
+    <value>All Segments</value>
+  </data>
+  <data name="PMSegmentCodeTitle" xml:space="preserve">
+    <value>PJC Segment Codes Report</value>
+  </data>
+  <data name="Segment" xml:space="preserve">
+    <value>Segment</value>
+  </data>
+  <data name="SpecificSegment" xml:space="preserve">
+    <value>Specific Segment</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="PO_VendorContractCostsTitle" xml:space="preserve">
+    <value>P/O Vendor Contract Costs Report</value>
+  </data>
+  <data name="PrintAmountsIn" xml:space="preserve">
+    <value>Print Amounts In</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="VendorContractCost" xml:space="preserve">
+    <value>Vendor Contract Cost</value>
+  </data>
+  <data name="VendorCurrency" xml:space="preserve">
+    <value>Vendor Currency</value>
+  </data>
+  <data name="VendorNumber" xml:space="preserve">
+    <value>Vendor Number</value>
+  </data>
+  <data name="Error_InvalidOrUnknownSectionRenderingDirection" xml:space="preserve">
+    <value>Invalid or unknown Section Rendering Direction value specified.</value>
+    <comment>Internal System Message - Translation not necessary.</comment>
+  </data>
+  <data name="PO_VendorDetailsTitle" xml:space="preserve">
+    <value>P/O Vendor Details Report</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="EmployeeFrom" xml:space="preserve">
+    <value>From Employee</value>
+  </data>
+  <data name="EmployeeTo" xml:space="preserve">
+    <value>To Employee</value>
+  </data>
+  <data name="PayrollType" xml:space="preserve">
+    <value>Payroll Type</value>
+  </data>
+  <data name="PM_EmployeesTitle" xml:space="preserve">
+    <value>PJC Employees Report</value>
+  </data>
+  <data name="AR_SalespersonsTitle" xml:space="preserve">
+    <value>A/R Salespersons Report</value>
+  </data>
+  <data name="IncludeCommissionRates" xml:space="preserve">
+    <value>Include Commission Rates</value>
+  </data>
+  <data name="PeriodFrom" xml:space="preserve">
+    <value>From Period</value>
+  </data>
+  <data name="Salesperson" xml:space="preserve">
+    <value>Salesperson</value>
+  </data>
+  <data name="SalespersonFrom" xml:space="preserve">
+    <value>From Salesperson</value>
+  </data>
+  <data name="SalespersonProfile" xml:space="preserve">
+    <value>Salesperson Profile</value>
+  </data>
+  <data name="SalespersonStatistics" xml:space="preserve">
+    <value>Salesperson Statistics</value>
+  </data>
+  <data name="SalespersonTo" xml:space="preserve">
+    <value>To Salesperson</value>
+  </data>
+  <data name="YearFrom" xml:space="preserve">
+    <value>From Year</value>
+  </data>
+  <data name="PO_AdditionalCostsTitle" xml:space="preserve">
+    <value>P/O Additional Costs Report</value>
+  </data>
+  <data name="AdditionalCost" xml:space="preserve">
+    <value>Additional Cost</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="FromAdditionalCost" xml:space="preserve">
+    <value>From Additional Cost</value>
+  </data>
+  <data name="FromCurrency" xml:space="preserve">
+    <value>From Currency</value>
+  </data>
+  <data name="FromVendorNumber" xml:space="preserve">
+    <value>From Vendor Number</value>
+  </data>
+  <data name="ToAdditionalCost" xml:space="preserve">
+    <value>To Additional Cost</value>
+  </data>
+  <data name="ToCurrency" xml:space="preserve">
+    <value>To Currency</value>
+  </data>
+  <data name="ToVendorNumber" xml:space="preserve">
+    <value>To Vendor Number</value>
+  </data>
+  <data name="CostClass" xml:space="preserve">
+    <value>Cost Class</value>
+  </data>
+  <data name="PM_CostTypesTitle" xml:space="preserve">
+    <value>PJC Cost Types Report</value>
+  </data>
+  <data name="AR_OptionsTitle" xml:space="preserve">
+    <value>A/R Options Report</value>
+  </data>
+  <data name="AR_AccountSetsTitle" xml:space="preserve">
+    <value>A/R Account Sets Report</value>
+  </data>
+  <data name="AR_BillingCyclesTitle" xml:space="preserve">
+    <value>A/R Billing Cycles Report</value>
+  </data>
+  <data name="AR_DistributionCodesTitle" xml:space="preserve">
+    <value>A/R Distribution Codes Report</value>
+  </data>
+  <data name="AR_DunningMessagesTitle" xml:space="preserve">
+    <value>A/R Dunning Messages Report</value>
+  </data>
+  <data name="BillingCycle" xml:space="preserve">
+    <value>Billing Cycle</value>
+  </data>
+  <data name="BillingCycleFrom" xml:space="preserve">
+    <value>From Billing Cycle</value>
+  </data>
+  <data name="BillingCycleTo" xml:space="preserve">
+    <value>To Billing Cycle</value>
+  </data>
+  <data name="AR_InterestProfilesTitle" xml:space="preserve">
+    <value>A/R Interest Profiles Report</value>
+  </data>
+  <data name="AR_ItemsTitle" xml:space="preserve">
+    <value>A/R Items Report</value>
+  </data>
+  <data name="AR_PaymentCodesTitle" xml:space="preserve">
+    <value>A/R Payment Codes Report</value>
+  </data>
+  <data name="AR_TermsTitle" xml:space="preserve">
+    <value>A/R Terms Report</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Currency Code</value>
+  </data>
+  <data name="CurrencyCodeFrom" xml:space="preserve">
+    <value>From Currency Code</value>
+  </data>
+  <data name="InterestProfile" xml:space="preserve">
+    <value>Interest Profile</value>
+  </data>
+  <data name="InterestProfileFrom" xml:space="preserve">
+    <value>From Interest Profile</value>
+  </data>
+  <data name="InterestProfileTo" xml:space="preserve">
+    <value>To Interest Profile</value>
+  </data>
+  <data name="PO_EmailMessagesTitle" xml:space="preserve">
+    <value>P/O Email Messages Report</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="ItemComments" xml:space="preserve">
+    <value>Item Comments</value>
+  </data>
+  <data name="ItemCost" xml:space="preserve">
+    <value>Item Cost</value>
+  </data>
+  <data name="ItemFrom" xml:space="preserve">
+    <value>From Item</value>
+  </data>
+  <data name="TaxInformation" xml:space="preserve">
+    <value>Tax Information</value>
+  </data>
+  <data name="IC_AccountSetsTitle" xml:space="preserve">
+    <value>I/C Account  Sets Report</value>
+  </data>
+  <data name="IC_AlternateItemsTitle" xml:space="preserve">
+    <value>I/C Alternate Items Report</value>
+  </data>
+  <data name="IC_BillsOfMaterialsTitle" xml:space="preserve">
+    <value>I/C Bills of Material Report</value>
+  </data>
+  <data name="IC_CategoriesTitle" xml:space="preserve">
+    <value>I/C Categories Report</value>
+  </data>
+  <data name="IC_CustomerDetailsTitle" xml:space="preserve">
+    <value>I/C Customer Details Report</value>
+  </data>
+  <data name="IC_GLIntegrationTitle" xml:space="preserve">
+    <value>I/C G/L Integration Report</value>
+  </data>
+  <data name="IC_ItemStructuresTitle" xml:space="preserve">
+    <value>I/C Item Structures Report</value>
+  </data>
+  <data name="IC_KittingItemsTitle" xml:space="preserve">
+    <value>I/C Kitting Items Report</value>
+  </data>
+  <data name="IC_LocationDetailsTitle" xml:space="preserve">
+    <value>I/C Location Details Report</value>
+  </data>
+  <data name="IC_LocationsTitle" xml:space="preserve">
+    <value>I/C Locations Report</value>
+  </data>
+  <data name="IC_ManufacturersItemsTitle" xml:space="preserve">
+    <value>I/C Manufacturers' Items Report</value>
+  </data>
+  <data name="IC_MaskStructuresTitle" xml:space="preserve">
+    <value>I/C Mask Structures Report</value>
+  </data>
+  <data name="IC_OptionalFieldsTitle" xml:space="preserve">
+    <value>I/C Optional Fields Report</value>
+  </data>
+  <data name="IC_OptionsTitle" xml:space="preserve">
+    <value>I/C Options Report</value>
+  </data>
+  <data name="IC_PriceListCodesTitle" xml:space="preserve">
+    <value>I/C Price List Codes Report</value>
+  </data>
+  <data name="IC_ReorderQuantitiesTitle" xml:space="preserve">
+    <value>I/C Reorder Quantities Report</value>
+  </data>
+  <data name="IC_SegmentCodesTitle" xml:space="preserve">
+    <value>I/C Segment Codes Report</value>
+  </data>
+  <data name="IC_UnitsOfMeasureTitle" xml:space="preserve">
+    <value>I/C Units of Measure Report</value>
+  </data>
+  <data name="IC_VendorDetailsTitle" xml:space="preserve">
+    <value>I/C Vendor Details Report</value>
+  </data>
+  <data name="IC_WarrantyCodesTitle" xml:space="preserve">
+    <value>I/C Warranty Codes Report</value>
+  </data>
+  <data name="IC_WeightUnitsOfMeasureTitle" xml:space="preserve">
+    <value>I/C Weight Units of Measure Report</value>
+  </data>
+  <data name="AR_CommentTypesTitle" xml:space="preserve">
+    <value>A/R Comment Types Report</value>
+  </data>
+  <data name="AR_EmailMessagesTitle" xml:space="preserve">
+    <value>A/R Email Messages Report</value>
+  </data>
+  <data name="AR_GLIntegrationTitle" xml:space="preserve">
+    <value>A/R G/L Integration Report</value>
+  </data>
+  <data name="AR_OptionalFieldsTitle" xml:space="preserve">
+    <value>A/R Optional Fields Report</value>
+  </data>
+  <data name="CommentType" xml:space="preserve">
+    <value>Comment Type</value>
+  </data>
+  <data name="CommentTypeFrom" xml:space="preserve">
+    <value>From Comment Type</value>
+  </data>
+  <data name="CommentTypeTo" xml:space="preserve">
+    <value>To Comment Type</value>
+  </data>
+  <data name="ItemStructure" xml:space="preserve">
+    <value>Item Structure</value>
+  </data>
+  <data name="ItemStructureFrom" xml:space="preserve">
+    <value>From Item Structure</value>
+  </data>
+  <data name="ItemStructureTo" xml:space="preserve">
+    <value>To Item Structure</value>
+  </data>
+  <data name="MaskStructure" xml:space="preserve">
+    <value>Mask Structure</value>
+  </data>
+  <data name="MaskStructureFrom" xml:space="preserve">
+    <value>From Mask Structure</value>
+  </data>
+  <data name="MaskStructureTo" xml:space="preserve">
+    <value>To Mask Structure</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="FromLocation" xml:space="preserve">
+    <value>From Location</value>
+  </data>
+  <data name="ToLocation" xml:space="preserve">
+    <value>To Location</value>
+  </data>
+  <data name="ManufacturersItemNumber" xml:space="preserve">
+    <value>Manufacturer's Item Number</value>
+  </data>
+  <data name="ManufacturersItemNumberFrom" xml:space="preserve">
+    <value>From Manufacturer's Item Number</value>
+  </data>
+  <data name="ManufacturersItemNumberTo" xml:space="preserve">
+    <value>To Manufacturer's Item Number</value>
+  </data>
+  <data name="AllLocations" xml:space="preserve">
+    <value>All Locations</value>
+  </data>
+  <data name="ReorderQuantitiesFor" xml:space="preserve">
+    <value>Reorder Quantities for</value>
+  </data>
+  <data name="SpecificAndAllLocations" xml:space="preserve">
+    <value>Specific and All Locations</value>
+  </data>
+  <data name="SpecificLocation" xml:space="preserve">
+    <value>Specific Location</value>
+  </data>
+  <data name="OE_OptionsTitle" xml:space="preserve">
+    <value>O/E Options Report</value>
+  </data>
+  <data name="OE_ShipViaCodesTitle" xml:space="preserve">
+    <value>O/E Ship-Via Codes Report</value>
+  </data>
+  <data name="OE_TemplatesTitle" xml:space="preserve">
+    <value>O/E Templates Report</value>
+  </data>
+  <data name="OE_EmailMessagesTitle" xml:space="preserve">
+    <value>O/E Email Messages Report</value>
+  </data>
+  <data name="OE_GLIntegrationTitle" xml:space="preserve">
+    <value>O/E G/L Integration Report</value>
+  </data>
+  <data name="JobRelatedDetails" xml:space="preserve">
+    <value>Job Related Details</value>
+  </data>
+  <data name="MiscellaneousCharge" xml:space="preserve">
+    <value>Miscellaneous Charge</value>
+  </data>
+  <data name="MiscellaneousChargeFrom" xml:space="preserve">
+    <value>From Miscellaneous Charge</value>
+  </data>
+  <data name="MiscellaneousChargeTo" xml:space="preserve">
+    <value>To Miscellaneous Charge</value>
+  </data>
+  <data name="OE_MiscellaneousChargesTitle" xml:space="preserve">
+    <value>O/E Miscellaneous Charges Report</value>
+  </data>
+  <data name="CurrencyCodeTo" xml:space="preserve">
+    <value>To Currency Code</value>
+  </data>
+  <data name="ItemTo" xml:space="preserve">
+    <value>To Item</value>
+  </data>
+  <data name="PeriodTo" xml:space="preserve">
+    <value>To Period</value>
+  </data>
+  <data name="YearTo" xml:space="preserve">
+    <value>To Year</value>
+  </data>
+  <data name="PrintAllDetails" xml:space="preserve">
+    <value>All Location Details</value>
+  </data>
+  <data name="PrintDetailsWithItemAllowed" xml:space="preserve">
+    <value>Location Details with Items Allowed</value>
+  </data>
+  <data name="PrintDetailsWithItemNotAllowed" xml:space="preserve">
+    <value>Location Details with Items Not Allowed</value>
+  </data>
+  <data name="OE_OptionalFieldTitle" xml:space="preserve">
+    <value>O/E Optional Fields Report</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="CategoryFrom" xml:space="preserve">
+    <value>From Category</value>
+  </data>
+  <data name="CategoryTo" xml:space="preserve">
+    <value>To Category</value>
+  </data>
+  <data name="PriceListCode" xml:space="preserve">
+    <value>Price List Code</value>
+  </data>
+  <data name="PriceListCodeFrom" xml:space="preserve">
+    <value>From Price List Code</value>
+  </data>
+  <data name="PriceListCodeTo" xml:space="preserve">
+    <value>To Price List Code</value>
+  </data>
+  <data name="ContractCode" xml:space="preserve">
+    <value>Contract Code</value>
+  </data>
+  <data name="ContractCodeFrom" xml:space="preserve">
+    <value>From Contract Code</value>
+  </data>
+  <data name="ContractCodeTo" xml:space="preserve">
+    <value>To Contract Code</value>
+  </data>
+  <data name="IC_ContractCodesTitle" xml:space="preserve">
+    <value>I/C Contract Codes Report</value>
+  </data>
+  <data name="WarrantyCode" xml:space="preserve">
+    <value>Warranty Code</value>
+  </data>
+  <data name="WarrantyCodeFrom" xml:space="preserve">
+    <value>From Warranty Code</value>
+  </data>
+  <data name="WarrantyCodeTo" xml:space="preserve">
+    <value>To Warranty Code</value>
+  </data>
+  <data name="VendorNumberFrom" xml:space="preserve">
+    <value>From Vendor Number</value>
+  </data>
+  <data name="VendorNumberTo" xml:space="preserve">
+    <value>To Vendor Number</value>
+  </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>From Item Number</value>
+  </data>
+  <data name="LocationFrom" xml:space="preserve">
+    <value>Location From</value>
+  </data>
+  <data name="LocationTo" xml:space="preserve">
+    <value>Location To</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>To Item Number</value>
+  </data>
+  <data name="ItemSegment" xml:space="preserve">
+    <value>Item Segment</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Long" xml:space="preserve">
+    <value>Long</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="Series" xml:space="preserve">
+    <value>Series</value>
+  </data>
+  <data name="Style" xml:space="preserve">
+    <value>Style</value>
+  </data>
+  <data name="IncludeComponentBOMs" xml:space="preserve">
+    <value>Include Component BOMs</value>
+  </data>
+  <data name="IncludeCostsForEachItem" xml:space="preserve">
+    <value>Include Costs For Each Item</value>
+  </data>
+  <data name="GL_AccountStructuresTitle" xml:space="preserve">
+    <value>G/L Account Structures Report</value>
+  </data>
+  <data name="GL_RevaluationCodesTitle" xml:space="preserve">
+    <value>G/L Revaluation Codes Report</value>
+  </data>
+  <data name="RevaluationCode" xml:space="preserve">
+    <value>Revaluation Code</value>
+  </data>
+  <data name="RevaluationCodeFrom" xml:space="preserve">
+    <value>From Revaluation Code</value>
+  </data>
+  <data name="RevaluationCodeTo" xml:space="preserve">
+    <value>To Revaluation Code</value>
+  </data>
+  <data name="GL_OptionalFieldTitle" xml:space="preserve">
+    <value>G/L Optional Fields Report</value>
+  </data>
+  <data name="GL_OptionsTitle" xml:space="preserve">
+    <value>G/L Options Report</value>
+  </data>
+  <data name="CustomerItemNumber" xml:space="preserve">
+    <value>Customer Item Number</value>
+  </data>
+  <data name="CustomerItemNumberFrom" xml:space="preserve">
+    <value>From Customer Item Number</value>
+  </data>
+  <data name="CustomerItemNumberTo" xml:space="preserve">
+    <value>To Customer Item Number</value>
+  </data>
+  <data name="CustomerNumber" xml:space="preserve">
+    <value>Customer Number</value>
+  </data>
+  <data name="CustomerNumberFrom" xml:space="preserve">
+    <value>From Customer Number</value>
+  </data>
+  <data name="CustomerNumberTo" xml:space="preserve">
+    <value>To Customer Number</value>
+  </data>
+  <data name="BK_BanksTitle" xml:space="preserve">
+    <value>Banks Report</value>
+  </data>
+  <data name="BK_CreditCardTypesTitle" xml:space="preserve">
+    <value>Bank Credit Card Types Report</value>
+  </data>
+  <data name="BK_DistributionCodesTitle" xml:space="preserve">
+    <value>Bank Distribution Codes Report</value>
+  </data>
+  <data name="BK_DistributionSetsTitle" xml:space="preserve">
+    <value>Bank Distribution Sets Report</value>
+  </data>
+  <data name="BK_GLIntegrationTitle" xml:space="preserve">
+    <value>Bank G/L Integration Report</value>
+  </data>
+  <data name="BK_OptionsTitle" xml:space="preserve">
+    <value>Bank Options Report</value>
+  </data>
+  <data name="TX_TaxAuthoritiesTitle" xml:space="preserve">
+    <value>Tax Authorities Report</value>
+  </data>
+  <data name="TX_TaxClassesTitle" xml:space="preserve">
+    <value>Tax Classes Report</value>
+  </data>
+  <data name="TX_TaxGroupsTitle" xml:space="preserve">
+    <value>Tax Groups Report</value>
+  </data>
+  <data name="TX_TaxRatesTitle" xml:space="preserve">
+    <value>Tax Rates Report</value>
+  </data>
+  <data name="GL_SegmentCodeTitle" xml:space="preserve">
+    <value>G/L Segment Codes Report</value>
+  </data>
+  <data name="BankCode" xml:space="preserve">
+    <value>Bank Code</value>
+  </data>
+  <data name="BankCodeFrom" xml:space="preserve">
+    <value>From Bank Code</value>
+  </data>
+  <data name="BankCodeTo" xml:space="preserve">
+    <value>To Bank Code</value>
+  </data>
+  <data name="GL_SegmentCodesTitle" xml:space="preserve">
+    <value>G/L Segment Codes Report</value>
+  </data>
+  <data name="IncludeTaxInformation" xml:space="preserve">
+    <value>Include Tax Information</value>
+  </data>
+  <data name="CreditCardType" xml:space="preserve">
+    <value>Credit Card Type</value>
+  </data>
+  <data name="CreditCardTypeFrom" xml:space="preserve">
+    <value>From Credit Card Type</value>
+  </data>
+  <data name="CreditCardTypeTo" xml:space="preserve">
+    <value>To Credit Card Type</value>
+  </data>
+  <data name="GL_AccountGroupsTitle" xml:space="preserve">
+    <value>G/L Account Groups Report</value>
+  </data>
+  <data name="AccountGroup" xml:space="preserve">
+    <value>Account Group</value>
+  </data>
+  <data name="SortCodeAccountGroup" xml:space="preserve">
+    <value>Sort Code - Account Group</value>
+  </data>
+  <data name="FromTaxAuthority" xml:space="preserve">
+    <value>From Tax Authority</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="ToTaxAuthority" xml:space="preserve">
+    <value>To Tax Authority</value>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Transaction Type</value>
+  </data>
+  <data name="FromTaxGroup" xml:space="preserve">
+    <value>From Tax Group</value>
+  </data>
+  <data name="TaxGroup" xml:space="preserve">
+    <value>Tax Group</value>
+  </data>
+  <data name="ToTaxGroup" xml:space="preserve">
+    <value>To Tax Group</value>
+  </data>
+  <data name="AccountGroupCode" xml:space="preserve">
+    <value>Account Group Code</value>
+  </data>
+  <data name="AccountGroupSortCode" xml:space="preserve">
+    <value>Account Group Sort Code</value>
+  </data>
+  <data name="FromAccountGroupCode" xml:space="preserve">
+    <value>From Account Group Code</value>
+  </data>
+  <data name="ToAccountGroupCode" xml:space="preserve">
+    <value>To Account Group Code</value>
+  </data>
+  <data name="GLIntegrationTitle" xml:space="preserve">
+    <value>G/L Integration Report</value>
+  </data>
+  <data name="EFTOptionsTitle" xml:space="preserve">
+    <value>EFT Options Report</value>
+  </data>
+  <data name="OptionalFieldsTitle" xml:space="preserve">
+    <value>Optional Fields Report</value>
+  </data>
+  <data name="PayrollProcessingExceptionsReport" xml:space="preserve">
+    <value>Payroll Processing Exceptions Report</value>
+  </data>
+  <data name="OptionsTitle" xml:space="preserve">
+    <value>Options Report</value>
+  </data>
+  <data name="AS_UserActivityReportTitle" xml:space="preserve">
+    <value>A/S User Activity Report</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="FromCompany" xml:space="preserve">
+    <value>From Company ID</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>From Date</value>
+  </data>
+  <data name="FromModule" xml:space="preserve">
+    <value>From Module</value>
+  </data>
+  <data name="FromUser" xml:space="preserve">
+    <value>From User ID</value>
+  </data>
+  <data name="Module" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="ToCompany" xml:space="preserve">
+    <value>To Company ID</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>To Date</value>
+  </data>
+  <data name="ToModule" xml:space="preserve">
+    <value>To Module</value>
+  </data>
+  <data name="ToUser" xml:space="preserve">
+    <value>To User ID</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="AP" xml:space="preserve">
+    <value>Accounts Payable</value>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>Accounts Receivable</value>
+  </data>
+  <data name="BK" xml:space="preserve">
+    <value>Bank Services</value>
+  </data>
+  <data name="GL" xml:space="preserve">
+    <value>General Ledger</value>
+  </data>
+  <data name="IC" xml:space="preserve">
+    <value>Inventory Control</value>
+  </data>
+  <data name="MT" xml:space="preserve">
+    <value>Multiple Contacts</value>
+  </data>
+  <data name="OE" xml:space="preserve">
+    <value>Order Entry</value>
+  </data>
+  <data name="PM" xml:space="preserve">
+    <value>Projects and Job Costing</value>
+  </data>
+  <data name="PO" xml:space="preserve">
+    <value>Purchase Orders</value>
+  </data>
+  <data name="TX" xml:space="preserve">
+    <value>Tax Services</value>
+  </data>
+  <data name="CP" xml:space="preserve">
+    <value>Canadian Payroll</value>
+  </data>
+  <data name="UP" xml:space="preserve">
+    <value>US Payroll</value>
+  </data>
+  <data name="SageIntelligence" xml:space="preserve">
+    <value>Sage Intelligence</value>
+  </data>
+  <data name="BX" xml:space="preserve">
+    <value>Sage Intelligence</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="ProcessingExceptionsReport" xml:space="preserve">
+    <value>Processing Exceptions Report</value>
+  </data>
+  <data name="10PayPeriods" xml:space="preserve">
+    <value>10 Pay Periods</value>
+  </data>
+  <data name="13PayPeriods" xml:space="preserve">
+    <value>13 Pay Periods</value>
+  </data>
+  <data name="22PayPeriods" xml:space="preserve">
+    <value>22 Pay Periods</value>
+  </data>
+  <data name="Biweekly" xml:space="preserve">
+    <value>Biweekly</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="FromEmployeeNumber" xml:space="preserve">
+    <value>From Employee Number</value>
+  </data>
+  <data name="ManualCheques" xml:space="preserve">
+    <value>Manual Cheques</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="PayFrequency" xml:space="preserve">
+    <value>Pay Frequency</value>
+  </data>
+  <data name="Selectionlist" xml:space="preserve">
+    <value>Selection List</value>
+  </data>
+  <data name="Semimonthly" xml:space="preserve">
+    <value>Semimonthly</value>
+  </data>
+  <data name="SystemCheques" xml:space="preserve">
+    <value>System Cheques</value>
+  </data>
+  <data name="ToEmployeeNumber" xml:space="preserve">
+    <value>To Employee Number</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="DetailDatesHours" xml:space="preserve">
+    <value>Detail Dates/Hours</value>
+  </data>
+  <data name="JobDetails" xml:space="preserve">
+    <value>Job Details</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Employee Number</value>
+  </data>
+  <data name="EmployeeSubtotals" xml:space="preserve">
+    <value>Employee Subtotals</value>
+  </data>
+  <data name="GL_AccountDescription" xml:space="preserve">
+    <value>G/L Account Description</value>
+  </data>
+  <data name="PayPeriodEndDate" xml:space="preserve">
+    <value>Pay Period End Date</value>
+  </data>
+  <data name="CP_ShowSINNumbers" xml:space="preserve">
+    <value>Show SIN Numbers</value>
+  </data>
+  <data name="UP_ShowSINNumbers" xml:space="preserve">
+    <value>Show SSN Numbers</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="Class1" xml:space="preserve">
+    <value>Class 1</value>
+  </data>
+  <data name="Class2" xml:space="preserve">
+    <value>Class 2</value>
+  </data>
+  <data name="FromClassCode" xml:space="preserve">
+    <value>From Class Code</value>
+  </data>
+  <data name="ToClassCode" xml:space="preserve">
+    <value>To Class Code</value>
+  </data>
+  <data name="Class3" xml:space="preserve">
+    <value>Class 3</value>
+  </data>
+  <data name="Class4" xml:space="preserve">
+    <value>Class 4</value>
+  </data>
+  <data name="Billing" xml:space="preserve">
+    <value> Billing</value>
+  </data>
+  <data name="ReportFormat" xml:space="preserve">
+    <value>Report Format</value>
+  </data>
+  <data name="ThenBy" xml:space="preserve">
+    <value>Then By</value>
+  </data>
+  <data name="CP_FromCheckDate" xml:space="preserve">
+    <value>From Cheque Date</value>
+  </data>
+  <data name="CP_ToCheckDate" xml:space="preserve">
+    <value>To Cheque Date</value>
+  </data>
+  <data name="UP_FromCheckDate" xml:space="preserve">
+    <value>From Check Date</value>
+  </data>
+  <data name="UP_Pre-CheckPayrollRegisterTitle" xml:space="preserve">
+    <value>Pre-Check Payroll Register Report</value>
+  </data>
+  <data name="CP_Pre-CheckPayrollRegisterTitle" xml:space="preserve">
+    <value>Pre-Cheque Payroll Register Report</value>
+  </data>
+  <data name="UP_ToCheckDate" xml:space="preserve">
+    <value>To Check Date</value>
+  </data>
+  <data name="CP_CheckDate" xml:space="preserve">
+    <value>Cheque Date</value>
+  </data>
+  <data name="UP_CheckDate" xml:space="preserve">
+    <value>Check Date</value>
+  </data>
+  <data name="CP_ManualChecks" xml:space="preserve">
+    <value>Manual Cheques</value>
+  </data>
+  <data name="CP_SystemChecks" xml:space="preserve">
+    <value>System Cheques</value>
+  </data>
+  <data name="UP_ManualChecks" xml:space="preserve">
+    <value>Manual Checks</value>
+  </data>
+  <data name="UP_SystemChecks" xml:space="preserve">
+    <value>System Checks</value>
+  </data>
+  <data name="InvalidEntryMsgTxt" xml:space="preserve">
+    <value>entry in the </value>
+  </data>
+  <data name="Quarterly" xml:space="preserve">
+    <value>Quarterly</value>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Optional Field</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="CP_ChequeType" xml:space="preserve">
+    <value>Cheque Type</value>
+  </data>
+  <data name="UP_ChequeType" xml:space="preserve">
+    <value>Check Type</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="PayrollRegisterTitle" xml:space="preserve">
+    <value>Payroll Register Report</value>
+  </data>
+  <data name="CP_CheckNumber" xml:space="preserve">
+    <value>Cheque Number</value>
+  </data>
+  <data name="CP_ReversedChecks" xml:space="preserve">
+    <value>Reversed Cheques</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>Posting Sequence</value>
+  </data>
+  <data name="UP_CheckNumber" xml:space="preserve">
+    <value>Check Number</value>
+  </data>
+  <data name="UP_ReversedChecks" xml:space="preserve">
+    <value>Reversed Checks</value>
+  </data>
+  <data name="FromPostingSequence" xml:space="preserve">
+    <value>From Posting Sequence</value>
+  </data>
+  <data name="ToPostingSequence" xml:space="preserve">
+    <value>To Posting Sequence</value>
+  </data>
+  <data name="AddLine" xml:space="preserve">
+    <value>Add Line</value>
+  </data>
+  <data name="DeleteLine" xml:space="preserve">
+    <value>Delete Line</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Billings" xml:space="preserve">
+    <value>Billings</value>
+  </data>
+  <data name="EarningsAndDeduction" xml:space="preserve">
+    <value>Earnings And Deductions</value>
+  </data>
+  <data name="EFT" xml:space="preserve">
+    <value>EFT</value>
+  </data>
+  <data name="FromEmployee" xml:space="preserve">
+    <value>From Employee</value>
+  </data>
+  <data name="InActive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="InactiveRoePending" xml:space="preserve">
+    <value>Inactive ROE Pending</value>
+  </data>
+  <data name="IncludeEmployees" xml:space="preserve">
+    <value>Include Employees</value>
+  </data>
+  <data name="IncludeInformation" xml:space="preserve">
+    <value>Include Information</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="PayrollEmployeeInformation" xml:space="preserve">
+    <value>Payroll Employee Information Report</value>
+  </data>
+  <data name="ShowEFTBankAccountNumbers" xml:space="preserve">
+    <value>Show EFT Bank Account Numbers</value>
+  </data>
+  <data name="Terminated" xml:space="preserve">
+    <value>Terminated</value>
+  </data>
+  <data name="TerminateRoePending" xml:space="preserve">
+    <value>Terminated ROE Pending</value>
+  </data>
+  <data name="ToEmployee" xml:space="preserve">
+    <value>To Employee</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Birth Date</value>
+  </data>
+  <data name="FromFollowUpDate" xml:space="preserve">
+    <value>From Follow-up-Date</value>
+  </data>
+  <data name="HireDate" xml:space="preserve">
+    <value>Hire Date</value>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>Inactive Date</value>
+  </data>
+  <data name="LastMaintainedDate" xml:space="preserve">
+    <value>Last Maintained Date</value>
+  </data>
+  <data name="LastRaisedDate" xml:space="preserve">
+    <value>Last Raised Date</value>
+  </data>
+  <data name="LastReviewDate" xml:space="preserve">
+    <value>Last Review Date</value>
+  </data>
+  <data name="TerminationDate" xml:space="preserve">
+    <value>Termination Date</value>
+  </data>
+  <data name="ToFollowUpDate" xml:space="preserve">
+    <value>To Follow-up-Date</value>
+  </data>
+  <data name="CP_Pre-CheckPayrollJobRegisterTitle" xml:space="preserve">
+    <value>Pre-Cheque Payroll Job Register Report</value>
+  </data>
+  <data name="UP_Pre-CheckPayrollJobRegisterTitle" xml:space="preserve">
+    <value>Pre-Check Payroll Job Register Report</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>Decimals</value>
+  </data>
+  <data name="TransactionHistoryReportTitle" xml:space="preserve">
+    <value>Payroll Transaction History Report</value>
+  </data>
+  <data name="PayrollEmployeeSelection" xml:space="preserve">
+    <value>Payroll Employee Selection</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>April</value>
+  </data>
+  <data name="August" xml:space="preserve">
+    <value>August</value>
+  </data>
+  <data name="CalendarYearTotals" xml:space="preserve">
+    <value>Calendar Year Totals</value>
+  </data>
+  <data name="DateRange" xml:space="preserve">
+    <value>Date Range</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>December</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>February</value>
+  </data>
+  <data name="FromClass" xml:space="preserve">
+    <value>From Class</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>January</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>July</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>June</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>March</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>November</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>October</value>
+  </data>
+  <data name="PayrollEarningandHoursReport" xml:space="preserve">
+    <value>Payroll Earnings and Hours Report</value>
+  </data>
+  <data name="ReportType" xml:space="preserve">
+    <value>Report Type</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="ToClass" xml:space="preserve">
+    <value>To Class</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="EmployeeList" xml:space="preserve">
+    <value>Employee List</value>
+  </data>
+  <data name="PayrollEmployeeSelectionReport" xml:space="preserve">
+    <value>Payroll Employee Selection Report</value>
+  </data>
+  <data name="PMTransactionHistoryReportTitle" xml:space="preserve">
+    <value>PJC Transaction History Report</value>
+  </data>
+  <data name="BothCurrency" xml:space="preserve">
+    <value>Both  Customer and Functional Currency</value>
+  </data>
+  <data name="CustomerCurrency" xml:space="preserve">
+    <value>Customer Currency</value>
+  </data>
+  <data name="FunctionalCurrency" xml:space="preserve">
+    <value>Functional Currency</value>
+  </data>
+  <data name="PrintAmountIn" xml:space="preserve">
+    <value>Print Amount In</value>
+  </data>
+  <data name="TransactionBy" xml:space="preserve">
+    <value>Select Transaction By</value>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Transaction Date</value>
+  </data>
+  <data name="YearPeriod" xml:space="preserve">
+    <value>Fiscal Year and Period</value>
+  </data>
+  <data name="CP_AssignEmployeeEarnDedAudit" xml:space="preserve">
+    <value>Assign Employee Earn/Ded Audit</value>
+  </data>
+  <data name="CP_AssignEmployeeTaxAudit" xml:space="preserve">
+    <value>Assign Employee Tax Audit</value>
+  </data>
+  <data name="UP_AssignEmployeeEarnDedAudit" xml:space="preserve">
+    <value>Assign Employee Earn/Ded Audit</value>
+  </data>
+  <data name="UP_AssignEmployeeTaxAudit" xml:space="preserve">
+    <value>Assign Employee Tax Audit</value>
+  </data>
+  <data name="IncludeBillingInformation" xml:space="preserve">
+    <value>Include Billing Information</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Approved</value>
+  </data>
+  <data name="Closed" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="Estimated" xml:space="preserve">
+    <value>Estimated</value>
+  </data>
+  <data name="OnHold" xml:space="preserve">
+    <value>On Hold</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="CanadianPayroll" xml:space="preserve">
+    <value>Canadian Payroll</value>
+  </data>
+  <data name="ContractStartDate" xml:space="preserve">
+    <value>Contract Start Date</value>
+  </data>
+  <data name="ContractStatus" xml:space="preserve">
+    <value>{0} Status</value>
+  </data>
+  <data name="FromContractStartDate" xml:space="preserve">
+    <value>From {0} Start Date</value>
+  </data>
+  <data name="FromFiscalYearPeriod" xml:space="preserve">
+    <value>From Fiscal Year and Period</value>
+  </data>
+  <data name="FromProjectStartDate" xml:space="preserve">
+    <value>From {0} Start Date</value>
+  </data>
+  <data name="FromTransactionDate" xml:space="preserve">
+    <value>From Transaction Date</value>
+  </data>
+  <data name="ProjectStartDate" xml:space="preserve">
+    <value>Project Start Date</value>
+  </data>
+  <data name="ProjectStatus" xml:space="preserve">
+    <value>{0} Status</value>
+  </data>
+  <data name="SelectTransactionBy" xml:space="preserve">
+    <value>Select Transaction By</value>
+  </data>
+  <data name="ToContractEndDate" xml:space="preserve">
+    <value>To {0} End Date</value>
+  </data>
+  <data name="ToFiscalYearPeriod" xml:space="preserve">
+    <value>To Fiscal Year and Period</value>
+  </data>
+  <data name="ToProjectEndDate" xml:space="preserve">
+    <value>To {0} End Date</value>
+  </data>
+  <data name="ToTransactionDate" xml:space="preserve">
+    <value>To Transaction Date</value>
+  </data>
+  <data name="USPayroll" xml:space="preserve">
+    <value>US Payroll</value>
+  </data>
+  <data name="BothBlankMessage" xml:space="preserve">
+    <value>The From {0} and To {0} values cannot both be blank</value>
+  </data>
+  <data name="A/P" xml:space="preserve">
+    <value>A/P</value>
+  </data>
+  <data name="A/R" xml:space="preserve">
+    <value>A/R</value>
+  </data>
+  <data name="O/E" xml:space="preserve">
+    <value>O/E</value>
+  </data>
+  <data name="P/M" xml:space="preserve">
+    <value>PJC</value>
+  </data>
+  <data name="P/O" xml:space="preserve">
+    <value>P/O</value>
+  </data>
+  <data name="Earning/Deduction/Tax/Code" xml:space="preserve">
+    <value>Earning/Deduction/Tax Code</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Line Number</value>
+  </data>
+  <data name="NonReusableTimecards" xml:space="preserve">
+    <value>Non-reusableTimecards</value>
+  </data>
+  <data name="PayrollTimecardTitle" xml:space="preserve">
+    <value>Payroll Timecards Report</value>
+  </data>
+  <data name="PeriodEndDate" xml:space="preserve">
+    <value>Period End Date</value>
+  </data>
+  <data name="ReusableTimecards" xml:space="preserve">
+    <value>Reusable Timecards</value>
+  </data>
+  <data name="SortDetailsBy" xml:space="preserve">
+    <value>Sort Details By</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Timecard" xml:space="preserve">
+    <value>Timecard</value>
+  </data>
+  <data name="TimecardDetail" xml:space="preserve">
+    <value>Timecard Detail</value>
+  </data>
+  <data name="TimecardListing" xml:space="preserve">
+    <value>Timecard Listing </value>
+  </data>
+  <data name="TimecardSummary" xml:space="preserve">
+    <value>Timecard Summary</value>
+  </data>
+  <data name="DetailInformation" xml:space="preserve">
+    <value>Detail Information</value>
+  </data>
+  <data name="EmployeeListing" xml:space="preserve">
+    <value>Employee Listing</value>
+  </data>
+  <data name="WorkClassificationcodes" xml:space="preserve">
+    <value>Work Classification Codes</value>
+  </data>
+  <data name="ddlAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="LblOptionalFields" xml:space="preserve">
+    <value>Optional Fields</value>
+  </data>
+  <data name="EmployeeListCode" xml:space="preserve">
+    <value>Employee List Code</value>
+  </data>
+  <data name="SelectionListCode" xml:space="preserve">
+    <value>Selection List Code</value>
+  </data>
+  <data name="FromEmployeeList" xml:space="preserve">
+    <value>From Employee List</value>
+  </data>
+  <data name="FromSelectionList" xml:space="preserve">
+    <value>From Selection List</value>
+  </data>
+  <data name="ToEmployeeList" xml:space="preserve">
+    <value>To Employee List</value>
+  </data>
+  <data name="ToSelectionList" xml:space="preserve">
+    <value>To Selection List</value>
+  </data>
+  <data name="CP_UpdateEmployeeEarnDedAudit" xml:space="preserve">
+    <value>Update Employee Earn/Ded Audit</value>
+  </data>
+  <data name="UP_UpdateEmployeeEarnDedAudit" xml:space="preserve">
+    <value>Update Employee Earn/Ded Audit</value>
+  </data>
+  <data name="UpdateEarnOrDedAuditPopup" xml:space="preserve">
+    <value>Did the Update Employee Eam/Ded Audit Report print correctly? If not, click 'Close'.</value>
+  </data>
+  <data name="UpdateEmployeeEarnOrDedAuditPopup" xml:space="preserve">
+    <value>Make sure the Update Employee Earn/Ded Audit Report printed correctly to paper or disk before you approve printing. The Update Employee Earn/Ded Audit file(s) will be deleted when you approve printing. If the report did not print correctly, close this window and print this report again.</value>
+  </data>
+  <data name="UpdateEmployeeEarnOrDedTitle" xml:space="preserve">
+    <value>Update Employee Earn/Ded Audit Report</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+</root>

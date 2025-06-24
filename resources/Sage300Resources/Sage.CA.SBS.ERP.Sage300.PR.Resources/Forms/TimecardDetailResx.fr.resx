@@ -118,67 +118,67 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Accrual" xml:space="preserve">
-    <value />
+    <value>Cumul</value>
   </data>
   <data name="Advance" xml:space="preserve">
-    <value />
+    <value>Avance</value>
   </data>
   <data name="AllocatedTips" xml:space="preserve">
-    <value />
+    <value>Pourboires attribués</value>
   </data>
   <data name="AmountPerHour" xml:space="preserve">
-    <value />
+    <value>Amount per Hour</value>
   </data>
   <data name="Annualization" xml:space="preserve">
     <value>Annualisation</value>
   </data>
   <data name="AssetAccount" xml:space="preserve">
-    <value />
+    <value>Compte d'actif</value>
   </data>
   <data name="BaseLimit" xml:space="preserve">
-    <value />
+    <value>Limite de base</value>
   </data>
   <data name="Benefit" xml:space="preserve">
-    <value />
+    <value>Avantage</value>
   </data>
   <data name="CalculationMethod" xml:space="preserve">
-    <value />
+    <value>Méthode de calcul</value>
   </data>
   <data name="Cash" xml:space="preserve">
-    <value />
+    <value>Espèces</value>
   </data>
   <data name="Category" xml:space="preserve">
-    <value />
+    <value>Catégorie</value>
   </data>
   <data name="ClearJobs" xml:space="preserve">
-    <value />
+    <value>Effacer les tâches</value>
   </data>
   <data name="ClearOTOverrideFields" xml:space="preserve">
-    <value />
+    <value>Effacer les champs de remplacement OT</value>
   </data>
   <data name="CompensatoryTime" xml:space="preserve">
-    <value />
+    <value>Temps compensatoire</value>
   </data>
   <data name="CustomerNumber" xml:space="preserve">
     <value>Numéro de client</value>
   </data>
   <data name="Date" xml:space="preserve">
-    <value />
+    <value>Date</value>
   </data>
   <data name="DaysWorked" xml:space="preserve">
-    <value />
+    <value>Jours travaillés</value>
   </data>
   <data name="Deduction" xml:space="preserve">
-    <value />
+    <value>Retenue</value>
   </data>
   <data name="DefaultEmployerRateAmtPct" xml:space="preserve">
-    <value />
+    <value>Taux/montant/Pct de l'employeur par défaut</value>
   </data>
   <data name="DistributionCode" xml:space="preserve">
-    <value />
+    <value>Code de distribution</value>
   </data>
   <data name="Earning" xml:space="preserve">
-    <value />
+    <value>Gain</value>
   </data>
   <data name="EarningDeductionNotExist" xml:space="preserve">
     <value>Saisie erronée. Gain/retenue n'existe pas.</value>
@@ -188,255 +188,255 @@
     <value>Gains/retenues</value>
   </data>
   <data name="EDTaxDescription" xml:space="preserve">
-    <value />
+    <value>Description E/D/Taxe</value>
   </data>
   <data name="EDTaxRateAmtPercent" xml:space="preserve">
-    <value />
+    <value>E/D/Taux d'impôt/Montant/Pourcentage</value>
   </data>
   <data name="Employee" xml:space="preserve">
-    <value />
+    <value>Employé</value>
   </data>
   <data name="EmployerBaseLimit" xml:space="preserve">
-    <value />
+    <value>Limite de base des employeurs</value>
   </data>
   <data name="EmployerCalculationMethod" xml:space="preserve">
-    <value />
+    <value>Employeur Calc. Méthode</value>
   </data>
   <data name="EmployerExpenseGLAccount" xml:space="preserve">
-    <value />
+    <value>Compte général des dépenses de l'employeur</value>
   </data>
   <data name="EmployerLiabilityGLAccount" xml:space="preserve">
-    <value />
+    <value>Employer Liability G/L Account</value>
   </data>
   <data name="EmployerRateAmtPct" xml:space="preserve">
-    <value />
+    <value>Taux/Montant/Pct de l'employeur</value>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value />
+    <value>PR TimecardDétail</value>
   </data>
   <data name="EntryType" xml:space="preserve">
-    <value />
+    <value>Type d'entrée</value>
   </data>
   <data name="ExpenseReimbursement" xml:space="preserve">
-    <value />
+    <value>Remboursement des dépenses</value>
   </data>
   <data name="FederalTax" xml:space="preserve">
-    <value />
+    <value>Impôt fédéral</value>
   </data>
   <data name="Fixed" xml:space="preserve">
-    <value />
+    <value>Fixé</value>
   </data>
   <data name="Flat" xml:space="preserve">
-    <value />
+    <value>Plat</value>
   </data>
   <data name="GLSegmentDescriptionOne" xml:space="preserve">
-    <value />
+    <value>Description du segment du Grand Livre Un</value>
   </data>
   <data name="GLSegmentDescriptionThree" xml:space="preserve">
-    <value />
+    <value>Description du segment du Grand Livre Trois</value>
   </data>
   <data name="GLSegmentDescriptionTwo" xml:space="preserve">
-    <value />
+    <value>Description du segment du Grand Livre Deux</value>
   </data>
   <data name="GLSegmentNameOne" xml:space="preserve">
-    <value />
+    <value>Nom du segment du Grand Livre Un</value>
   </data>
   <data name="GLSegmentNameThree" xml:space="preserve">
-    <value />
+    <value>Nom du segment du Grand Livre Trois</value>
   </data>
   <data name="GLSegmentNameTwo" xml:space="preserve">
-    <value />
+    <value>Nom du segment du grand livre deux</value>
   </data>
   <data name="GLSegmentOne" xml:space="preserve">
-    <value />
+    <value>Segment 1 du grand livre</value>
   </data>
   <data name="GLSegmentThree" xml:space="preserve">
-    <value />
+    <value>Troisième segment du GL</value>
   </data>
   <data name="GLSegmentTwo" xml:space="preserve">
-    <value />
+    <value>Segment 2 du Grand Livre</value>
   </data>
   <data name="HealthTax" xml:space="preserve">
-    <value />
+    <value>Taxe santé</value>
   </data>
   <data name="HourlyRate" xml:space="preserve">
-    <value />
+    <value>Taux horaire</value>
   </data>
   <data name="Hours" xml:space="preserve">
-    <value />
+    <value>Heures</value>
   </data>
   <data name="HoursPerFrequency" xml:space="preserve">
-    <value />
+    <value>Heures par fréquence</value>
   </data>
   <data name="HoursPerHourWorked" xml:space="preserve">
-    <value />
+    <value>Heures par heure travaillée</value>
   </data>
   <data name="IncludeInFLSAOvertimeCalc" xml:space="preserve">
-    <value />
+    <value>Inclure dans le calcul des heures supplémentaires FLSA</value>
   </data>
   <data name="IncomeTax" xml:space="preserve">
-    <value />
+    <value>Impôt sur le revenu</value>
   </data>
   <data name="InsertOptionalFields" xml:space="preserve">
-    <value />
+    <value>Insérer des champs facultatifs</value>
   </data>
   <data name="InsuranceTax" xml:space="preserve">
-    <value />
+    <value>Taxe d'assurance</value>
   </data>
   <data name="InvalidTaxError" xml:space="preserve">
     <value>Invalid input. Tax does not exist. (TODO TL)</value>
     <comment>TODO need TL</comment>
   </data>
   <data name="Jobs" xml:space="preserve">
-    <value />
+    <value>Emplois</value>
   </data>
   <data name="JobsAllocBasedOnCalcBase" xml:space="preserve">
-    <value />
+    <value>Répartition des tâches basée sur la base de calcul</value>
   </data>
   <data name="LiabilityGLAccount" xml:space="preserve">
-    <value />
+    <value>Compte général de passif</value>
   </data>
   <data name="LineNumber" xml:space="preserve">
     <value> N° ligne</value>
   </data>
   <data name="LocalTax" xml:space="preserve">
-    <value />
+    <value>Taxe Locale</value>
   </data>
   <data name="na" xml:space="preserve">
-    <value />
+    <value>n / A</value>
   </data>
   <data name="Noncash" xml:space="preserve">
-    <value />
+    <value>Non monétaire</value>
   </data>
   <data name="None" xml:space="preserve">
-    <value />
+    <value>Nil</value>
   </data>
   <data name="NumberOfOptionalFields" xml:space="preserve">
-    <value />
+    <value>Nombre de champs optionnels</value>
   </data>
   <data name="OtherTax" xml:space="preserve">
-    <value />
+    <value>Autre taxe</value>
   </data>
   <data name="OverrideEmployerRateAmtPct" xml:space="preserve">
-    <value />
+    <value>Remplacer le taux/montant/Pct de l'employeur</value>
   </data>
   <data name="OvertimeExpenseGLAccount" xml:space="preserve">
-    <value />
+    <value>Compte général des dépenses d'heures supplémentaires</value>
   </data>
   <data name="OvertimeHoursOverride" xml:space="preserve">
-    <value />
+    <value>Remplacement des heures supplémentaires</value>
   </data>
   <data name="OvertimeRateOverride" xml:space="preserve">
-    <value />
+    <value>Suppression du taux des heures supplémentaires</value>
   </data>
   <data name="OvertimeSchedule" xml:space="preserve">
-    <value />
+    <value>Horaire des heures supplémentaires</value>
   </data>
   <data name="OvertimeScheduleDescription" xml:space="preserve">
-    <value>Description table heures suppl.</value>
+    <value>Description du calendrier des heures supplémentaires</value>
   </data>
   <data name="PayAccrueHours" xml:space="preserve">
-    <value />
+    <value>Payer/accumuler des heures</value>
   </data>
   <data name="Payment" xml:space="preserve">
-    <value />
+    <value>Paiement</value>
   </data>
   <data name="PensionPlanTax" xml:space="preserve">
-    <value />
+    <value>Impôt sur les régimes de retraite</value>
   </data>
   <data name="PercentageOfAnotherTax" xml:space="preserve">
-    <value />
+    <value>Pourcentage d'une autre taxe</value>
   </data>
   <data name="PercentageOfBase" xml:space="preserve">
-    <value />
+    <value>Pourcentage de base</value>
   </data>
   <data name="PeriodEndDate" xml:space="preserve">
-    <value />
+    <value>Date de fin de période</value>
   </data>
   <data name="PieceRateTable" xml:space="preserve">
-    <value />
+    <value>Tableau des tarifs à la pièce</value>
   </data>
   <data name="PiecesSalesBase" xml:space="preserve">
-    <value />
+    <value>Pièces/Ventes/Base</value>
   </data>
   <data name="ProcessCommandCode" xml:space="preserve">
-    <value />
+    <value>Code de commande de processus</value>
   </data>
   <data name="ProcessCostCenters" xml:space="preserve">
-    <value />
+    <value>Centres de coûts de processus</value>
   </data>
   <data name="RateAmtPct" xml:space="preserve">
     <value>Rate/Amt/Pct</value>
     <comment>to be translate</comment>
   </data>
   <data name="RegularPayExpenseGLAccount" xml:space="preserve">
-    <value />
+    <value>Compte général des dépenses de paie régulière</value>
   </data>
   <data name="ReportedTips" xml:space="preserve">
-    <value />
+    <value>Conseils signalés</value>
   </data>
   <data name="SalaryWages" xml:space="preserve">
-    <value />
+    <value>Salaire et traitements</value>
   </data>
   <data name="SalesCommissionTable" xml:space="preserve">
-    <value />
+    <value>Tableau des commissions de vente</value>
   </data>
   <data name="ShiftDifferentialGLAccount" xml:space="preserve">
-    <value />
+    <value>Changement de compte général différentiel</value>
   </data>
   <data name="ShiftDifferentialSchedule" xml:space="preserve">
-    <value />
+    <value>Horaire des différentiels de quarts de travail</value>
   </data>
   <data name="ShiftNumber" xml:space="preserve">
-    <value />
+    <value>Numéro de quart de travail</value>
   </data>
   <data name="ShiftScheduleDescription" xml:space="preserve">
     <value>Description table prime de quart</value>
   </data>
   <data name="Sick" xml:space="preserve">
-    <value />
+    <value>Malade</value>
   </data>
   <data name="StartTime" xml:space="preserve">
     <value>Hre début</value>
   </data>
   <data name="StateTax" xml:space="preserve">
-    <value />
+    <value>Impôt d'État</value>
   </data>
   <data name="StopTime" xml:space="preserve">
     <value>Hre fin</value>
   </data>
   <data name="TaxAnnualizationFactor" xml:space="preserve">
-    <value />
+    <value>Facteur d'annualisation fiscale</value>
   </data>
   <data name="TaxBracketTable" xml:space="preserve">
-    <value />
+    <value>Tableau des tranches d'imposition</value>
   </data>
   <data name="Timecard" xml:space="preserve">
-    <value />
+    <value>Feuille de pointage</value>
   </data>
   <data name="TotalJobHours" xml:space="preserve">
-    <value />
+    <value>Heures totales de travail</value>
   </data>
   <data name="TotalJobPiecesSalesAmt" xml:space="preserve">
-    <value />
+    <value>Total des pièces de travail/ventes/montant</value>
   </data>
   <data name="Type" xml:space="preserve">
-    <value />
+    <value>Taper</value>
   </data>
   <data name="UnemploymentTax" xml:space="preserve">
-    <value />
+    <value>Taxe de chômage</value>
   </data>
   <data name="UpdateInfoToMatchJobs" xml:space="preserve">
-    <value />
+    <value>Mettre à jour les informations pour correspondre aux emplois</value>
   </data>
   <data name="UserTax" xml:space="preserve">
-    <value />
+    <value>Taxe d'utilisation</value>
   </data>
   <data name="Vacation" xml:space="preserve">
-    <value />
+    <value>Vacances</value>
   </data>
   <data name="WageBracketTable" xml:space="preserve">
-    <value />
+    <value>Tableau des tranches de salaire</value>
   </data>
   <data name="WeeksWorked" xml:space="preserve">
     <value>Sem. de travail</value>
@@ -445,12 +445,12 @@
     <value>Retenue</value>
   </data>
   <data name="WorkClassificationCode" xml:space="preserve">
-    <value />
+    <value>Code de Classification du travail</value>
   </data>
   <data name="WorkersCompensationCode" xml:space="preserve">
-    <value />
+    <value>Code des accidents du travail</value>
   </data>
   <data name="WorkersCompGroup" xml:space="preserve">
-    <value />
+    <value>Comp. des travailleurs. Groupe</value>
   </data>
 </root>

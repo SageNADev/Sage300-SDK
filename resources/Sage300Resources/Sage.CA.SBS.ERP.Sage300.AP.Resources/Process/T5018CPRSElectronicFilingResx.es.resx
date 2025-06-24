@@ -117,12 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountType_BN9" xml:space="preserve">
+    <value>Cuenta BN9</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
+  <data name="AccountType_BN15" xml:space="preserve">
+    <value>Cuenta BN15</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
+  <data name="AccountType_TRUST" xml:space="preserve">
+    <value>Cuenta Trust</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
+  <data name="AccountType_NR4" xml:space="preserve">
+    <value>Cuenta NR4</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>Línea de Dirección 1</value>
     <comment>TransmitterInfo - Field</comment>
   </data>
   <data name="AddressLine2" xml:space="preserve">
     <value>Línea de Dirección 2</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="BN15AccountNumber" xml:space="preserve">
+    <value>Número de cuenta BN15</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="BN9AccountNumber" xml:space="preserve">
+    <value>Número de cuenta BN9</value>
     <comment>TransmitterInfo - Field</comment>
   </data>
   <data name="CounterOverflow" xml:space="preserve">
@@ -193,6 +217,10 @@
     <value>Idioma</value>
     <comment>TransmitterInfo - List</comment>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
   <data name="Name1" xml:space="preserve">
     <value>Línea de Nombre 1</value>
     <comment>TransmitterInfo - Field</comment>
@@ -205,6 +233,10 @@
     <value>Ningún registro cumple con sus criterios. No se generará ningún archivo.</value>
     <comment>Error</comment>
   </data>
+  <data name="NR4AccountNumber" xml:space="preserve">
+    <value>Número de cuenta NR4</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
   <data name="OutFilePath" xml:space="preserve">
     <value>No se puede encontrar el archivo o carpeta {0}. Por favor vuelva a intentar.</value>
     <comment>Error</comment>
@@ -216,6 +248,10 @@
   <data name="ProcessDone" xml:space="preserve">
     <value>Proceso completo.  El archivo {0} se generó correctamente y está listo para descargar.</value>
     <comment>Auto-Generated</comment>
+  </data>
+  <data name="RepID" xml:space="preserve">
+    <value>Rep ID</value>
+    <comment>Field</comment>
   </data>
   <data name="SubmissionReferenceID" xml:space="preserve">
     <value>ID de Referencia de Presentación</value>
@@ -241,8 +277,16 @@
     <value>Se produjeron {0} errores en Proveedores, de las cuales {1} se enumeran aquí.  Verifique si hay errores en los otros registros de Proveedores.</value>
     <comment>Error</comment>
   </data>
+  <data name="TransmitterAccountType" xml:space="preserve">
+    <value>Número de Cuenta del Transmisor</value>
+    <comment>Auto-Generated</comment>
+  </data>
   <data name="TransmitterNumber" xml:space="preserve">
     <value>Número de Transmisor</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="TRUSTAccountNumber" xml:space="preserve">
+    <value>Número de cuenta TRUST</value>
     <comment>TransmitterInfo - Field</comment>
   </data>
   <data name="VendCodeOverflow" xml:space="preserve">

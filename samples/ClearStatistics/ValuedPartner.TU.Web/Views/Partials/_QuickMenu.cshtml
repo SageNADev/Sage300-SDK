@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 2016-2023 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 2016-2025 The Sage Group plc or its licensors.  All rights reserved. *@
 @using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Inquiry
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Utilities.Constants;
@@ -34,6 +34,16 @@
             <div class="open-window-header left">@HomePageResx.QuickMenu_RecentWindows</div>
             <div class="clear-fix"></div>
             <div class="open-recent-window" id="dvRecentWindows">
+            </div>
+        </div>
+    </div>
+    <!--Favorite  windows-->
+    <div class="quick-menu-item quick-menu-favorite" id="favoriteWindowManager" title="@HomePageResx.QuickMenu_Favorite">
+        <i class="window-favorite"></i>
+        <div class="open-window" id="favoriteWindowsPopup">
+            <div class="open-window-header left">@HomePageResx.QuickMenu_Favorite</div>
+            <div class="clear-fix"></div>
+            <div class="open-recent-window" id="dvFavoriteWindows">
             </div>
         </div>
     </div>

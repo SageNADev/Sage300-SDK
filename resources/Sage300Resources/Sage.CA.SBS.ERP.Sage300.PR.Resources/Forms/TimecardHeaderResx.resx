@@ -331,7 +331,7 @@
     <value>for employee</value>
   </data>
   <data name="Hour" xml:space="preserve">
-    <value>Hour</value>
+    <value>Hours</value>
   </data>
   <data name="SaveConfirmMessage" xml:space="preserve">
     <value>Do you want to save changes to {0}?</value>
@@ -440,5 +440,17 @@
   </data>
   <data name="JobRelatedPopUpHeader" xml:space="preserve">
     <value>Project and Job Costing Details</value>
+  </data>
+  <data name="TimecardBlank" xml:space="preserve">
+    <value>Invalid Input. Timecard cannot be blank.</value>
+  </data>
+  <data name="SeparateChequeFlag" xml:space="preserve">
+    <value>Print a Separate Cheque</value>
+  </data>
+  <data name="InvalidTimesLate" xml:space="preserve">
+    <value>Please enter the value between -32767 to 32767</value>
+  </data>
+  <data name="InvalidPeriodEndDate" xml:space="preserve">
+    <value>Period End Date is Invalid.</value>
   </data>
 </root>

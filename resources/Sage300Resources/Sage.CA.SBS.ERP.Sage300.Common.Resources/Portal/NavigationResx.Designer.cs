@@ -4768,7 +4768,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Combine ETF Files.
+        ///   Looks up a localized string similar to Combine EFT Files.
         /// </summary>
         public static string PR_Combine_ETF_Files {
             get {

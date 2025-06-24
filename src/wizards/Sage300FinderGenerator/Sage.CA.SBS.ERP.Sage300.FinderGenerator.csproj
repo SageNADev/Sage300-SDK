@@ -37,13 +37,11 @@
     <AssemblyOriginatorKeyFile>SDKKeyFile.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ACCPAC.Advantage, Version=7.1.0.0, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="ACCPAC.Advantage">
       <HintPath>..\..\..\bin\wizards\ACCPAC.Advantage.dll</HintPath>
     </Reference>
-    <Reference Include="ACCPAC.Advantage.Types, Version=7.2.0.0, Culture=neutral, PublicKeyToken=4d7048ecf2312a7c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\ACCPAC.Advantage.Types\v4.0_7.2.0.0__4d7048ecf2312a7c\ACCPAC.Advantage.Types.dll</HintPath>
+    <Reference Include="ACCPAC.Advantage.Types">
+      <HintPath>..\..\..\bin\wizards\ACCPAC.Advantage.Types.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />

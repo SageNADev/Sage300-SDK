@@ -1120,7 +1120,7 @@
     <value>Solde</value>
   </data>
   <data name="BillingPercentage1" xml:space="preserve">
-    <value>Pourcent. de facturation 1</value>
+    <value>Pourcent. de facturation </value>
   </data>
   <data name="BillingPercentage2" xml:space="preserve">
     <value>Pourcent. de facturation 2</value>

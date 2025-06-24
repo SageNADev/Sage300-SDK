@@ -129,6 +129,9 @@
   <data name="AssignEarnDedToEmployeesTitle" xml:space="preserve">
     <value>Assign Earning/Deduction to Employees</value>
   </data>
+  <data name="AssignTaxToEmployeesTitle" xml:space="preserve">
+    <value>Assign Tax To Employees</value>
+  </data>
   <data name="AvailableInEmployeeTimecards" xml:space="preserve">
     <value>Available in Employee Timecards</value>
   </data>
@@ -139,7 +142,13 @@
     <value>Billing Percentages</value>
   </data>
   <data name="BillingRates" xml:space="preserve">
+    <value>Billing Rates</value>
+  </data>
+  <data name="BillingRatesColumnTitle" xml:space="preserve">
     <value>Billing Rate</value>
+  </data>
+  <data name="BillingRatesPerPiece" xml:space="preserve">
+    <value>Billing Rates - Per Piece</value>
   </data>
   <data name="BILLRATE1" xml:space="preserve">
     <value>Billing Rate Per Hour</value>
@@ -174,6 +183,12 @@
   <data name="Class" xml:space="preserve">
     <value>Class</value>
   </data>
+  <data name="ConfirmationMessageForAssignTaxPrint" xml:space="preserve">
+    <value>Processing complete. Print Assign Employee Tax Audit Report?</value>
+  </data>
+  <data name="ConfirmationMessageForPrint" xml:space="preserve">
+    <value>Processing complete. Print Assign Employee Earn/Ded Audit Report?</value>
+  </data>
   <data name="CostCenterOverride" xml:space="preserve">
     <value>Cost Center Override</value>
   </data>
@@ -201,11 +216,14 @@
   <data name="DistributioncodeErrorMsg" xml:space="preserve">
     <value>Invalid input. The Distribution code does not exist.</value>
   </data>
+  <data name="DistributioncodeErrorMsgAssign" xml:space="preserve">
+    <value>Invalid input. Distribution code cannot be blank.</value>
+  </data>
   <data name="EarningDeductionDescription" xml:space="preserve">
     <value>Earning/Deduction Description</value>
   </data>
   <data name="EarningDeductionErrorMsg" xml:space="preserve">
-    <value>Invalid Input.The Earning/Deduction does not exist.</value>
+    <value>Invalid Input. The Earning/Deduction does not exist.</value>
   </data>
   <data name="EarningDeductionSetting" xml:space="preserve">
     <value>Earning/Deduction Settings</value>
@@ -283,6 +301,9 @@
     <value>General</value>
   </data>
   <data name="ID2Change" xml:space="preserve">
+    <value>Earning/Deduction or Tax</value>
+  </data>
+  <data name="ID2ChangeforEarnDed" xml:space="preserve">
     <value>Earning/Deduction</value>
   </data>
   <data name="IdName" xml:space="preserve">
@@ -303,8 +324,23 @@
   <data name="InvalidSegvalErrorMsg" xml:space="preserve">
     <value>Invalid input. Segment code is not defined in General Ledger.</value>
   </data>
+  <data name="InvalidSelectionListErrorMsg" xml:space="preserve">
+    <value>Invalid input. Selection List cannot be blank.</value>
+  </data>
+  <data name="InvalidSelErrorMsg" xml:space="preserve">
+    <value>Invalid input. The Selection List does not exist.</value>
+  </data>
+  <data name="InvalidTax" xml:space="preserve">
+    <value>Invalid input. The Company Payroll Tax does not exist.</value>
+  </data>
   <data name="JobsAllocBasedOnCalcBase" xml:space="preserve">
     <value>Jobs Allocated Based on Calculation Base</value>
+  </data>
+  <data name="lblTaxDescription" xml:space="preserve">
+    <value>Tax Description</value>
+  </data>
+  <data name="lblTaxid" xml:space="preserve">
+    <value>Tax</value>
   </data>
   <data name="MinMax" xml:space="preserve">
     <value>Min/Max</value>
@@ -318,11 +354,20 @@
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="None" xml:space="preserve">
+    <value>[None]</value>
+  </data>
+  <data name="Over" xml:space="preserve">
+    <value>Over</value>
+  </data>
   <data name="PaythisPercentage" xml:space="preserve">
     <value>Pay this Percentage</value>
   </data>
+  <data name="PopupTaxWarningmsg" xml:space="preserve">
+    <value>Do you want to assign this Tax?</value>
+  </data>
   <data name="PopupWarningmsg" xml:space="preserve">
-    <value>Do you assign this Earning/Deduction?</value>
+    <value>Do you want to assign this Earning/Deduction?</value>
   </data>
   <data name="Print" xml:space="preserve">
     <value>Print</value>
@@ -358,7 +403,7 @@
     <value>Set Criteria</value>
   </data>
   <data name="SetCriteriaErrorMessage" xml:space="preserve">
-    <value>Invalid Input .No employees matches the criteria specified</value>
+    <value>Incorrect procedure. No employees match the criteria specified.</value>
   </data>
   <data name="StartDate" xml:space="preserve">
     <value>Starts</value>
@@ -366,8 +411,8 @@
   <data name="StartDateErrorMsg" xml:space="preserve">
     <value>Invalid Date at StartDate</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
+  <data name="TaxSettings" xml:space="preserve">
+    <value>Tax Settings</value>
   </data>
   <data name="TClassCod" xml:space="preserve">
     <value>To Class</value>
@@ -431,5 +476,35 @@
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ErrorMsgEmployeeNotAssign" xml:space="preserve">
+    <value>Incorrect procedure. This Employee Earning/Deduction is not assigned to any employees.</value>
+  </data>
+  <data name="FIELDNAME" xml:space="preserve">
+    <value>Field</value>
+  </data>
+  <data name="NEWSTRING" xml:space="preserve">
+    <value>New Value or Change</value>
+  </data>
+  <data name="NEWWCCGRUP" xml:space="preserve">
+    <value>New WCC Group</value>
+  </data>
+  <data name="OLDSTRING" xml:space="preserve">
+    <value>Current Value to Match</value>
+  </data>
+  <data name="OLDWCCGRUP" xml:space="preserve">
+    <value>WCC Group to Match</value>
+  </data>
+  <data name="OPERATION" xml:space="preserve">
+    <value>Type of Change</value>
+  </data>
+  <data name="TESTOLD" xml:space="preserve">
+    <value>Match Cur Value?</value>
+  </data>
+  <data name="InvalidCurErrorMsg" xml:space="preserve">
+    <value>Invalid input. Currency Code is not defined. </value>
   </data>
 </root>

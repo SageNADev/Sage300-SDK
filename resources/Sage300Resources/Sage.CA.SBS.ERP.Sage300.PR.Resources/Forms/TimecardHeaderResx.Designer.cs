@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class TimecardHeaderResx {
@@ -340,7 +340,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hour.
+        ///   Looks up a localized string similar to Hours.
         /// </summary>
         public static string Hour {
             get {
@@ -390,6 +390,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string InsertOptionalFields {
             get {
                 return ResourceManager.GetString("InsertOptionalFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Period End Date is Invalid..
+        /// </summary>
+        public static string InvalidPeriodEndDate {
+            get {
+                return ResourceManager.GetString("InvalidPeriodEndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter the value between -32767 to 32767.
+        /// </summary>
+        public static string InvalidTimesLate {
+            get {
+                return ResourceManager.GetString("InvalidTimesLate", resourceCulture);
             }
         }
         
@@ -682,6 +700,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Print a Separate Cheque.
+        /// </summary>
+        public static string SeparateChequeFlag {
+            get {
+                return ResourceManager.GetString("SeparateChequeFlag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have turned off the overtime override.  The Regular Rate overtime calculations require the Include in Regular Rate Calculation option to be turned on for all flat, fixed, and hourly earning codes whose Hours are not zero and have been assigned an overtime schedule.  Therefore, this flag has been changed automatically for any earnings that meet this criteria..
         /// </summary>
         public static string SetFLSA_CP {
@@ -804,6 +831,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string Timecard {
             get {
                 return ResourceManager.GetString("Timecard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Input. Timecard cannot be blank..
+        /// </summary>
+        public static string TimecardBlank {
+            get {
+                return ResourceManager.GetString("TimecardBlank", resourceCulture);
             }
         }
         

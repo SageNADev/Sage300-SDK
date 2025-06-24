@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class EmployeeSelectionListResx {
@@ -264,6 +264,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string CombineTitle1 {
             get {
                 return ResourceManager.GetString("CombineTitle1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy.
+        /// </summary>
+        public static string CopyLabel {
+            get {
+                return ResourceManager.GetString("CopyLabel", resourceCulture);
             }
         }
         
@@ -754,7 +763,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to From Class code.
+        ///   Looks up a localized string similar to From Class Code.
         /// </summary>
         public static string FromClasscode {
             get {
@@ -844,11 +853,11 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to From WCC Group.
+        ///   Looks up a localized string similar to From WC Code.
         /// </summary>
-        public static string FromWCCGroup {
+        public static string FromWCCode {
             get {
-                return ResourceManager.GetString("FromWCCGroup", resourceCulture);
+                return ResourceManager.GetString("FromWCCode", resourceCulture);
             }
         }
         
@@ -930,6 +939,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string IncludeTax {
             get {
                 return ResourceManager.GetString("IncludeTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid input. you do not have rights to access this selection list..
+        /// </summary>
+        public static string InvalidSelectionList {
+            get {
+                return ResourceManager.GetString("InvalidSelectionList", resourceCulture);
             }
         }
         
@@ -1348,11 +1366,11 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Province Of Employement.
+        ///   Looks up a localized string similar to Province Of Employment.
         /// </summary>
-        public static string ProvinceOfEmployement {
+        public static string ProvinceOfEmployment {
             get {
-                return ResourceManager.GetString("ProvinceOfEmployement", resourceCulture);
+                return ResourceManager.GetString("ProvinceOfEmployment", resourceCulture);
             }
         }
         
@@ -1362,6 +1380,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string RangeValidation {
             get {
                 return ResourceManager.GetString("RangeValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Selection List. Record already exists..
+        /// </summary>
+        public static string RecordAlreadyExistErrorMessage {
+            get {
+                return ResourceManager.GetString("RecordAlreadyExistErrorMessage", resourceCulture);
             }
         }
         
@@ -1924,11 +1951,11 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To WCC Group.
+        ///   Looks up a localized string similar to To WC Code.
         /// </summary>
-        public static string ToWCCGroup {
+        public static string ToWCCode {
             get {
-                return ResourceManager.GetString("ToWCCGroup", resourceCulture);
+                return ResourceManager.GetString("ToWCCode", resourceCulture);
             }
         }
         
@@ -1938,6 +1965,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string ToWorkClassification {
             get {
                 return ResourceManager.GetString("ToWorkClassification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string UseInClosing_No {
+            get {
+                return ResourceManager.GetString("UseInClosing_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string UseInClosing_Yes {
+            get {
+                return ResourceManager.GetString("UseInClosing_Yes", resourceCulture);
             }
         }
         
@@ -1956,6 +2001,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string WorkClassification {
             get {
                 return ResourceManager.GetString("WorkClassification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activity Classification Code.
+        /// </summary>
+        public static string WorkClassificationCode {
+            get {
+                return ResourceManager.GetString("WorkClassificationCode", resourceCulture);
             }
         }
     }

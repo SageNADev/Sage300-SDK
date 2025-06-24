@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class AssignAuditResx {
@@ -97,6 +97,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assign Tax To Employees.
+        /// </summary>
+        public static string AssignTaxToEmployeesTitle {
+            get {
+                return ResourceManager.GetString("AssignTaxToEmployeesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Available in Employee Timecards.
         /// </summary>
         public static string AvailableInEmployeeTimecards {
@@ -124,11 +133,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Billing Rate.
+        ///   Looks up a localized string similar to Billing Rates.
         /// </summary>
         public static string BillingRates {
             get {
                 return ResourceManager.GetString("BillingRates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Billing Rate.
+        /// </summary>
+        public static string BillingRatesColumnTitle {
+            get {
+                return ResourceManager.GetString("BillingRatesColumnTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Billing Rates - Per Piece.
+        /// </summary>
+        public static string BillingRatesPerPiece {
+            get {
+                return ResourceManager.GetString("BillingRatesPerPiece", resourceCulture);
             }
         }
         
@@ -232,6 +259,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Processing complete. Print Assign Employee Tax Audit Report?.
+        /// </summary>
+        public static string ConfirmationMessageForAssignTaxPrint {
+            get {
+                return ResourceManager.GetString("ConfirmationMessageForAssignTaxPrint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processing complete. Print Assign Employee Earn/Ded Audit Report?.
+        /// </summary>
+        public static string ConfirmationMessageForPrint {
+            get {
+                return ResourceManager.GetString("ConfirmationMessageForPrint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cost Center Override.
         /// </summary>
         public static string CostCenterOverride {
@@ -313,6 +358,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Distribution code cannot be blank..
+        /// </summary>
+        public static string DistributioncodeErrorMsgAssign {
+            get {
+                return ResourceManager.GetString("DistributioncodeErrorMsgAssign", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Earning/Deduction Description.
         /// </summary>
         public static string EarningDeductionDescription {
@@ -322,7 +376,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid Input.The Earning/Deduction does not exist..
+        ///   Looks up a localized string similar to Invalid Input. The Earning/Deduction does not exist..
         /// </summary>
         public static string EarningDeductionErrorMsg {
             get {
@@ -520,6 +574,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Incorrect procedure. This Employee Earning/Deduction is not assigned to any employees..
+        /// </summary>
+        public static string ErrorMsgEmployeeNotAssign {
+            get {
+                return ResourceManager.GetString("ErrorMsgEmployeeNotAssign", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From Class.
         /// </summary>
         public static string FClassCod {
@@ -534,6 +597,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string FEmployee {
             get {
                 return ResourceManager.GetString("FEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field.
+        /// </summary>
+        public static string FIELDNAME {
+            get {
+                return ResourceManager.GetString("FIELDNAME", resourceCulture);
             }
         }
         
@@ -556,11 +628,20 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Earning/Deduction.
+        ///   Looks up a localized string similar to Earning/Deduction or Tax.
         /// </summary>
         public static string ID2Change {
             get {
                 return ResourceManager.GetString("ID2Change", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earning/Deduction.
+        /// </summary>
+        public static string ID2ChangeforEarnDed {
+            get {
+                return ResourceManager.GetString("ID2ChangeforEarnDed", resourceCulture);
             }
         }
         
@@ -601,6 +682,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Currency Code is not defined. .
+        /// </summary>
+        public static string InvalidCurErrorMsg {
+            get {
+                return ResourceManager.GetString("InvalidCurErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid input. The Earning/Deduction does not exist..
         /// </summary>
         public static string InvalidEarnDed {
@@ -619,11 +709,56 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Selection List cannot be blank..
+        /// </summary>
+        public static string InvalidSelectionListErrorMsg {
+            get {
+                return ResourceManager.GetString("InvalidSelectionListErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid input. The Selection List does not exist..
+        /// </summary>
+        public static string InvalidSelErrorMsg {
+            get {
+                return ResourceManager.GetString("InvalidSelErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid input. The Company Payroll Tax does not exist..
+        /// </summary>
+        public static string InvalidTax {
+            get {
+                return ResourceManager.GetString("InvalidTax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Jobs Allocated Based on Calculation Base.
         /// </summary>
         public static string JobsAllocBasedOnCalcBase {
             get {
                 return ResourceManager.GetString("JobsAllocBasedOnCalcBase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Description.
+        /// </summary>
+        public static string lblTaxDescription {
+            get {
+                return ResourceManager.GetString("lblTaxDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax.
+        /// </summary>
+        public static string lblTaxid {
+            get {
+                return ResourceManager.GetString("lblTaxid", resourceCulture);
             }
         }
         
@@ -655,11 +790,74 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Value or Change.
+        /// </summary>
+        public static string NEWSTRING {
+            get {
+                return ResourceManager.GetString("NEWSTRING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New WCC Group.
+        /// </summary>
+        public static string NEWWCCGRUP {
+            get {
+                return ResourceManager.GetString("NEWWCCGRUP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [None].
+        /// </summary>
+        public static string None {
+            get {
+                return ResourceManager.GetString("None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current Value to Match.
+        /// </summary>
+        public static string OLDSTRING {
+            get {
+                return ResourceManager.GetString("OLDSTRING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WCC Group to Match.
+        /// </summary>
+        public static string OLDWCCGRUP {
+            get {
+                return ResourceManager.GetString("OLDWCCGRUP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type of Change.
+        /// </summary>
+        public static string OPERATION {
+            get {
+                return ResourceManager.GetString("OPERATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Over.
+        /// </summary>
+        public static string Over {
+            get {
+                return ResourceManager.GetString("Over", resourceCulture);
             }
         }
         
@@ -673,7 +871,16 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you assign this Earning/Deduction?.
+        ///   Looks up a localized string similar to Do you want to assign this Tax?.
+        /// </summary>
+        public static string PopupTaxWarningmsg {
+            get {
+                return ResourceManager.GetString("PopupTaxWarningmsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to assign this Earning/Deduction?.
         /// </summary>
         public static string PopupWarningmsg {
             get {
@@ -781,7 +988,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid Input .No employees matches the criteria specified.
+        ///   Looks up a localized string similar to Incorrect procedure. No employees match the criteria specified..
         /// </summary>
         public static string SetCriteriaErrorMessage {
             get {
@@ -813,6 +1020,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string String1 {
             get {
                 return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax Settings.
+        /// </summary>
+        public static string TaxSettings {
+            get {
+                return ResourceManager.GetString("TaxSettings", resourceCulture);
             }
         }
         
@@ -849,6 +1065,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string TenPerYearMin {
             get {
                 return ResourceManager.GetString("TenPerYearMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Match Cur Value?.
+        /// </summary>
+        public static string TESTOLD {
+            get {
+                return ResourceManager.GetString("TESTOLD", resourceCulture);
             }
         }
         

@@ -1478,4 +1478,7 @@
   <data name="QuickMenu_InfoCenter" xml:space="preserve">
     <value>Information Center</value>
   </data>
+  <data name="QuickMenu_Favorite" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
 </root>
