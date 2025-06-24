@@ -201,6 +201,12 @@
   <data name="EntityPayrollChecks" xml:space="preserve">
     <value>US Payroll Checks</value>
   </data>
+  <data name="ExportToPDF" xml:space="preserve">
+    <value>Exporter au format PDF</value>
+  </data>
+  <data name="ExportToPDFMsg" xml:space="preserve">
+    <value>Exporter des chèques. Cela peut prendre quelques minutes. Veuillez patienter…</value>
+  </data>
   <data name="FiscalPeriodYearLocked" xml:space="preserve">
     <value>La date {0} correspond à la période {1} de l'exercice {2}, qui est verrouillée pour la paie américaine dans le calendrier fiscal des services communs.</value>
   </data>

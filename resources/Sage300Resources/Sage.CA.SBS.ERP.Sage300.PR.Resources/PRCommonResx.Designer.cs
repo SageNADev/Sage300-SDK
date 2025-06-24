@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class PRCommonResx {
@@ -174,6 +174,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         public static string ChequeDate {
             get {
                 return ResourceManager.GetString("ChequeDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A problem occurred and the {0} could not be combined. Please try again..
+        /// </summary>
+        public static string CombineFailedMessage {
+            get {
+                return ResourceManager.GetString("CombineFailedMessage", resourceCulture);
             }
         }
         
@@ -480,6 +489,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources {
         public static string Open {
             get {
                 return ResourceManager.GetString("Open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid input. Optional field cannot be blank..
+        /// </summary>
+        public static string OptionalFieldCannotBeBlankMessage {
+            get {
+                return ResourceManager.GetString("OptionalFieldCannotBeBlankMessage", resourceCulture);
             }
         }
         

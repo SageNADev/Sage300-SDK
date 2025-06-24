@@ -1475,4 +1475,7 @@
     <value>UP</value>
     <comment>Module Name</comment>
   </data>
+  <data name="QuickMenu_Favorite" xml:space="preserve">
+    <value>Préférées</value>
+  </data>
 </root>

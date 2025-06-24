@@ -310,23 +310,19 @@
     <value>Heures de maladie payées</value>
   </data>
   <data name="Accrued" xml:space="preserve">
-    <value>Accrued</value>
-    <comment>To be translated</comment>
+    <value>Accumulé</value>
   </data>
   <data name="Amounts" xml:space="preserve">
     <value>Montants</value>
   </data>
   <data name="Compensatory" xml:space="preserve">
-    <value>Compensatory</value>
-    <comment>To be translated</comment>
+    <value>Compensatoire</value>
   </data>
   <data name="Dated" xml:space="preserve">
-    <value>dated</value>
-    <comment>To be translated</comment>
+    <value>Daté</value>
   </data>
   <data name="DeleteConfirmMessage" xml:space="preserve">
-    <value>Are you sure you want to delete {0}?</value>
-    <comment>To be translated</comment>
+    <value>Êtes-vous sûr de vouloir supprimer {0} ?</value>
   </data>
   <data name="EarningsDeductions" xml:space="preserve">
     <value>Gains/retenues</value>
@@ -335,19 +331,16 @@
     <value>Feuille temps - Employé</value>
   </data>
   <data name="ForEmployee" xml:space="preserve">
-    <value>for employee</value>
-    <comment>To be translated</comment>
+    <value>Pour employé</value>
   </data>
   <data name="Hour" xml:space="preserve">
     <value>Heures</value>
   </data>
   <data name="SaveConfirmMessage" xml:space="preserve">
-    <value>Do you want to save changes to</value>
-    <comment>To be translated</comment>
+    <value>Voulez-vous enregistrer les modifications apportées à {0} ?</value>
   </data>
   <data name="Vacation" xml:space="preserve">
-    <value>Vacation</value>
-    <comment>To be translated</comment>
+    <value>Vacances</value>
   </data>
   <data name="SegmentCode" xml:space="preserve">
     <value>Code de segment</value>
@@ -441,5 +434,20 @@
   </data>
   <data name="PJCDetails" xml:space="preserve">
     <value>Détails du PJC</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Actif</value>
+  </data>
+  <data name="DeleteTimecardConfirmMessage" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir supprimer la feuille de pointage {0} pour l'employé {1} ?</value>
+  </data>
+  <data name="TimecardBlank" xml:space="preserve">
+    <value>Entrée invalide. La carte de pointage ne peut pas être vierge.</value>
+  </data>
+  <data name="SeparateChequeFlag" xml:space="preserve">
+    <value>Imprimer un chèque séparé</value>
+  </data>
+  <data name="InvalidTimesLate" xml:space="preserve">
+    <value>Veuillez saisir la valeur entre -32767 et 32767</value>
   </data>
 </root>

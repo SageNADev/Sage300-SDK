@@ -1120,7 +1120,7 @@
     <value>Balance</value>
   </data>
   <data name="BillingPercentage1" xml:space="preserve">
-    <value>Billing Percentage 1</value>
+    <value>Billing Percentage </value>
   </data>
   <data name="BillingPercentage2" xml:space="preserve">
     <value>Billing Percentage 2</value>
@@ -1460,5 +1460,11 @@
   </data>
   <data name="Override" xml:space="preserve">
     <value>Override</value>
+  </data>
+  <data name="IncludeinFLSACalculation" xml:space="preserve">
+    <value>Include in FLSA Calculation</value>
+  </data>
+  <data name="JobsAllocatedBasedonCalcBase" xml:space="preserve">
+    <value>Jobs Allocated Based on Calculation Base</value>
   </data>
 </root>

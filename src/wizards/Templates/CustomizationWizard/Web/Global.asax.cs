@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2025 Sage Software, Inc.  All rights reserved. */
 
 #region
 
@@ -84,8 +84,6 @@ namespace $safeprojectname$
         {
             // Register areas and routes
             AreaRegistration.RegisterAllAreas();
-
-            UMClientConfig.Register();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             WebApiConfig.Register(GlobalConfiguration.Configuration);
 

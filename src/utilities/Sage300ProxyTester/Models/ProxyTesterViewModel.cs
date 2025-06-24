@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 2024 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 2024-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -19,6 +19,7 @@
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #region Imports
+using System;
 using System.ComponentModel.DataAnnotations;
 #endregion
 
@@ -32,12 +33,12 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
         {
             // Default Authentication Settings
             User = "ADMIN"; // Partner to specify the default user if desired
-            Password = "";  // Partner to specify the default password if desired
+            Password = "r%AC@8!x$ds8";  // Partner to specify the default password if desired
             Company = "SAMINC"; // Partner to specify the default company if desired
 
             // Default Server Configurations - Partner to specify the target Sage server and this ProxyTester server
-            TargetServer = ""; // Partner to specify the target Sage server (i.e. http://localhost:54445 or http://localhost/Sage300)
-            ProxyTesterServer = ""; // Partner to specify this ProxyTester server (i.e. https://localhost:44347)
+            TargetServer = "https://s300rd-spt.com/Sage300"; // Partner to specify the target Sage server (i.e. http://localhost:54445 or http://localhost/Sage300)
+            ProxyTesterServer = "https://localhost:44347"; // Partner to specify this ProxyTester server (i.e. https://localhost:44347)
 
             // Proxy Request
             ModuleId = ""; // Partner to specify the default ModuleId if desired
@@ -48,6 +49,12 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
 
             // Source for iFrame
             Source = string.Empty; // Value for the iFrame source
+
+            // Id for ProxyManager uniqueness
+            Id = Guid.NewGuid().ToString(); // Per session and not per request
+
+            PdfFileDate = string.Empty; // Check Date for PDF files (HRMS)
+            PdfFileName = string.Empty; // PDF Filename for PDF file (HRMS)
         }
         #endregion
 
@@ -108,6 +115,16 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
 
         /// <summary>Source for iFrame from ProxyMenu or ProxyScreen </summary>
         public string Source { get; set; }
+
+        /// <summary> Id (Guid) to make key unique in ProxyManager</summary>
+        public string Id { get; set; }
+
+        /// <summary> Name of the PDF file to get </summary>
+        public string PdfFileName { get; set; }
+
+        /// <summary> Date of the PDF file names to get </summary>
+        public string PdfFileDate { get; set; }
+
         #endregion
     }
 }

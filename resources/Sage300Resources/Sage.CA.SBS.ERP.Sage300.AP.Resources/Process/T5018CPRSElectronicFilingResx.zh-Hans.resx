@@ -117,12 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountType_BN9" xml:space="preserve">
+    <value>BN9 科目</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
+  <data name="AccountType_BN15" xml:space="preserve">
+    <value>BN15 科目</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
+  <data name="AccountType_TRUST" xml:space="preserve">
+    <value>Trust 科目</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
+  <data name="AccountType_NR4" xml:space="preserve">
+    <value>NR4 科目</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>地址行1</value>
     <comment>TransmitterInfo - Field</comment>
   </data>
   <data name="AddressLine2" xml:space="preserve">
     <value>地址行2</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="BN15AccountNumber" xml:space="preserve">
+    <value>BN15 科目编号</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="BN9AccountNumber" xml:space="preserve">
+    <value>BN9 科目编号</value>
     <comment>TransmitterInfo - Field</comment>
   </data>
   <data name="CounterOverflow" xml:space="preserve">
@@ -193,6 +217,10 @@
     <value>语言</value>
     <comment>TransmitterInfo - List</comment>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
   <data name="Name1" xml:space="preserve">
     <value>名称行1</value>
     <comment>TransmitterInfo - Field</comment>
@@ -205,6 +233,10 @@
     <value>没有记录符合您的标准。将不会生成任何文件。</value>
     <comment>Error</comment>
   </data>
+  <data name="NR4AccountNumber" xml:space="preserve">
+    <value>NR4 科目编号</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
   <data name="OutFilePath" xml:space="preserve">
     <value>无法找到文件或文件夹{0}。请重试。</value>
     <comment>Error</comment>
@@ -216,6 +248,10 @@
   <data name="ProcessDone" xml:space="preserve">
     <value>处理完成。文件{0}已成功生成并可供下载。</value>
     <comment>Auto-Generated</comment>
+  </data>
+  <data name="RepID" xml:space="preserve">
+    <value>代表编号</value>
+    <comment>Field</comment>
   </data>
   <data name="SubmissionReferenceID" xml:space="preserve">
     <value>提交参考标识</value>
@@ -241,8 +277,16 @@
     <value>供应商中发生{0}个错误，其中{1}个列在此处。检查其它供应商记录是否有错误。</value>
     <comment>Error</comment>
   </data>
+  <data name="TransmitterAccountType" xml:space="preserve">
+    <value>传送者科目编号</value>
+    <comment>Auto-Generated</comment>
+  </data>
   <data name="TransmitterNumber" xml:space="preserve">
     <value>传送器编号</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="TRUSTAccountNumber" xml:space="preserve">
+    <value>TRUST 科目编号</value>
     <comment>TransmitterInfo - Field</comment>
   </data>
   <data name="VendCodeOverflow" xml:space="preserve">

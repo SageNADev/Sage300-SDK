@@ -285,4 +285,7 @@
   <data name="Separate" xml:space="preserve">
     <value>Separado</value>
   </data>
+  <data name="PayrollWebScreenNotInstalled" xml:space="preserve">
+    <value>No se pudo encontrar información de búsqueda detallada para este registro. Verifique que las pantallas web de Nómina estén instaladas.</value>
+  </data>
 </root>

@@ -91,6 +91,8 @@
     <ProjectReference Include="..\Sage300SolutionWizard\Sage.CA.SBS.ERP.Sage300.SolutionWizard.csproj">
       <Project>{8D88ACF2-8926-4B8F-A56C-1B87158CBBC2}</Project>
       <Name>Sage.CA.SBS.ERP.Sage300.SolutionWizard</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

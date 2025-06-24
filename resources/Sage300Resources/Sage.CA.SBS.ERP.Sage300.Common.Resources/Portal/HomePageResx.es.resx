@@ -1467,4 +1467,7 @@
   <data name="SessionDateChangedWarning" xml:space="preserve">
     <value>La nueva fecha de sesión no se utilizará en las pantallas abiertas actualmente. Para utilizar la nueva fecha de sesión en estas pantallas, cierre las pantallas y, a continuación, vuelva a abrirlas.</value>
   </data>
+  <data name="QuickMenu_Favorite" xml:space="preserve">
+    <value>Favoritas</value>
+  </data>
 </root>

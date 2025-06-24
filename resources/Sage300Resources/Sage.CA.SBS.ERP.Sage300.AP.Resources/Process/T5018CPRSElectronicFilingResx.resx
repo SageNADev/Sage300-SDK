@@ -117,12 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountType_BN9" xml:space="preserve">
+    <value>BN9 Account</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
+  <data name="AccountType_BN15" xml:space="preserve">
+    <value>BN15 Account</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
+  <data name="AccountType_TRUST" xml:space="preserve">
+    <value>Trust Account</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
+  <data name="AccountType_NR4" xml:space="preserve">
+    <value>NR4 Account</value>
+    <comment>TransmitterAccountType DropDown</comment>
+  </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>Address Line 1</value>
     <comment>TransmitterInfo - Field</comment>
   </data>
   <data name="AddressLine2" xml:space="preserve">
     <value>Address Line 2</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="BN15AccountNumber" xml:space="preserve">
+    <value>BN15 Account Number</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="BN9AccountNumber" xml:space="preserve">
+    <value>BN9 Account Number</value>
     <comment>TransmitterInfo - Field</comment>
   </data>
   <data name="CounterOverflow" xml:space="preserve">
@@ -193,6 +217,10 @@
     <value>Language</value>
     <comment>TransmitterInfo - List</comment>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
   <data name="Name1" xml:space="preserve">
     <value>Name Line 1</value>
     <comment>TransmitterInfo - Field</comment>
@@ -205,6 +233,10 @@
     <value>No records match your criteria. No file will be generated.</value>
     <comment>Error</comment>
   </data>
+  <data name="NR4AccountNumber" xml:space="preserve">
+    <value>NR4 Account Number</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
   <data name="OutFilePath" xml:space="preserve">
     <value>Cannot find file or folder {0}. Please try again.</value>
     <comment>Error</comment>
@@ -216,6 +248,10 @@
   <data name="ProcessDone" xml:space="preserve">
     <value>Process complete.  File {0} was generated successfully and is ready to download.</value>
     <comment>Auto-Generated</comment>
+  </data>
+  <data name="RepID" xml:space="preserve">
+    <value>Rep ID</value>
+    <comment>Field</comment>
   </data>
   <data name="SubmissionReferenceID" xml:space="preserve">
     <value>Submission Reference ID</value>
@@ -241,8 +277,16 @@
     <value>{0} errors occurred in Vendors, the {1} of which are listed here.  Check other Vendor records for errors.</value>
     <comment>Error</comment>
   </data>
+  <data name="TransmitterAccountType" xml:space="preserve">
+    <value>Transmitter Account Number</value>
+    <comment>Auto-Generated</comment>
+  </data>
   <data name="TransmitterNumber" xml:space="preserve">
     <value>Transmitter Number</value>
+    <comment>TransmitterInfo - Field</comment>
+  </data>
+  <data name="TRUSTAccountNumber" xml:space="preserve">
+    <value>TRUST Account Number</value>
     <comment>TransmitterInfo - Field</comment>
   </data>
   <data name="VendCodeOverflow" xml:space="preserve">

@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Accrual" xml:space="preserve">
+    <value>Cumul</value>
+  </data>
   <data name="Active" xml:space="preserve">
-    <value>Active</value>
+    <value>Actif</value>
+  </data>
+  <data name="Active1" xml:space="preserve">
+    <value>Actif</value>
   </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>Adresse ligne 1</value>
@@ -131,6 +137,9 @@
   </data>
   <data name="AddressLine4" xml:space="preserve">
     <value>Adresse ligne 4</value>
+  </data>
+  <data name="Advance" xml:space="preserve">
+    <value>Avance</value>
   </data>
   <data name="AlternateAddressLine1" xml:space="preserve">
     <value>Ligne adresse secondaire 1</value>
@@ -159,11 +168,17 @@
   <data name="BankTransferName" xml:space="preserve">
     <value>Nom du virement bancaire</value>
   </data>
+  <data name="Benefit" xml:space="preserve">
+    <value>Avantage</value>
+  </data>
   <data name="BirthDate" xml:space="preserve">
     <value>Date de naissance</value>
   </data>
   <data name="CalcOTonaWeeklyBasis" xml:space="preserve">
     <value>Calc. hres supp. chaque semaine</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Catégorie</value>
   </data>
   <data name="CheckLanguage" xml:space="preserve">
     <value>Langue du chèque</value>
@@ -171,19 +186,25 @@
   <data name="City" xml:space="preserve">
     <value>Ville</value>
   </data>
+  <data name="Class" xml:space="preserve">
+    <value>Classe</value>
+  </data>
   <data name="Class1" xml:space="preserve">
-    <value>Classe 1 de paie</value>
+    <value>1</value>
   </data>
   <data name="Class2" xml:space="preserve">
-    <value>Classe 2 de paie</value>
+    <value>2</value>
   </data>
   <data name="Class3" xml:space="preserve">
-    <value>Classe 3 de paie</value>
+    <value>3</value>
   </data>
   <data name="Class4" xml:space="preserve">
-    <value>Classe 4 de paie</value>
+    <value>4</value>
   </data>
   <data name="Combine" xml:space="preserve">
+    <value>Combiner</value>
+  </data>
+  <data name="Combine1" xml:space="preserve">
     <value>Combiner</value>
   </data>
   <data name="CombineMatchingEntries" xml:space="preserve">
@@ -204,17 +225,32 @@
   <data name="CompTimeID" xml:space="preserve">
     <value>Code crédit d’heures</value>
   </data>
+  <data name="CopyLabel" xml:space="preserve">
+    <value>Copier</value>
+  </data>
+  <data name="CopyPopupTitle" xml:space="preserve">
+    <value>Copier liste de sélection d'employés pour la paie</value>
+  </data>
   <data name="Country" xml:space="preserve">
     <value>Pays</value>
   </data>
   <data name="CountryCode" xml:space="preserve">
     <value>Code du pays</value>
   </data>
+  <data name="Create" xml:space="preserve">
+    <value>Créer</value>
+  </data>
   <data name="Criteria" xml:space="preserve">
     <value>Critères</value>
   </data>
+  <data name="CriteriaPopupTitle" xml:space="preserve">
+    <value>Critères de liste de sélection d'employés pour la paie</value>
+  </data>
   <data name="DateOfLastRaise" xml:space="preserve">
     <value>Date dernière augmentation</value>
+  </data>
+  <data name="Deduction" xml:space="preserve">
+    <value>Retenue</value>
   </data>
   <data name="DeleteEmployeeConfirmation" xml:space="preserve">
     <value>Etes-vous sûr de vouloir supprimer l'employé {0} de la liste de sélection {1} ?</value>
@@ -240,6 +276,9 @@
   <data name="DiscretionaryData" xml:space="preserve">
     <value>RÉSERVÉ - Seulement É.-U.</value>
   </data>
+  <data name="Earning" xml:space="preserve">
+    <value>Gain</value>
+  </data>
   <data name="EditColumns" xml:space="preserve">
     <value>Modifier les colonnes</value>
   </data>
@@ -253,7 +292,7 @@
     <value>N° téléphone en cas d'urgence</value>
   </data>
   <data name="Employee" xml:space="preserve">
-    <value>Employé</value>
+    <value>Numéro d'employé</value>
   </data>
   <data name="Employee1" xml:space="preserve">
     <value>Numéro d'employé</value>
@@ -264,6 +303,9 @@
   <data name="EmployeeElectronicW2Consent" xml:space="preserve">
     <value>RÉSERVÉ - Seulement É.-U.</value>
   </data>
+  <data name="EmployeeLastName" xml:space="preserve">
+    <value>Nom de famille de l'employé</value>
+  </data>
   <data name="EmployeeList" xml:space="preserve">
     <value>Liste des employés</value>
   </data>
@@ -272,6 +314,9 @@
   </data>
   <data name="EmployeeNotExist" xml:space="preserve">
     <value>Entrée invalide. L'employé n'existe pas.</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Numéro de l’employé</value>
   </data>
   <data name="EmployeeSecurityFlag1" xml:space="preserve">
     <value>Indicateur de sécurité de l’employé1</value>
@@ -288,41 +333,95 @@
   <data name="EmployeeTemplate" xml:space="preserve">
     <value>Gabarit d'employé</value>
   </data>
+  <data name="EmploymentClassification" xml:space="preserve">
+    <value>Classification des emplois</value>
+  </data>
   <data name="EmploymentStatus" xml:space="preserve">
     <value>État d’emploi</value>
+  </data>
+  <data name="EmptyValidation" xml:space="preserve">
+    <value>Veuillez préciser le type de critère.</value>
   </data>
   <data name="EntrySequence" xml:space="preserve">
     <value>Séquence de saisie</value>
   </data>
+  <data name="ExcludeEarningOrDeduction" xml:space="preserve">
+    <value>Exclure les gains/déductions</value>
+  </data>
+  <data name="ExcludeTax" xml:space="preserve">
+    <value>Exclure la taxe</value>
+  </data>
+  <data name="ExpenseReimbursement" xml:space="preserve">
+    <value>Remboursement des dépenses</value>
+  </data>
   <data name="FirstName" xml:space="preserve">
     <value>Prénom</value>
   </data>
+  <data name="Frequencies" xml:space="preserve">
+    <value>Fréquences</value>
+  </data>
   <data name="Frequency10Year" xml:space="preserve">
-    <value>Fréquence - 10 / An</value>
+    <value>10 / An</value>
   </data>
   <data name="Frequency13Year" xml:space="preserve">
-    <value>Fréquence - 13 / An</value>
+    <value>13 / An</value>
   </data>
   <data name="Frequency22Year" xml:space="preserve">
-    <value>Fréquence - 22 / An</value>
+    <value>22 / An</value>
   </data>
   <data name="FrequencyBiweekly" xml:space="preserve">
-    <value>Fréquence - Bihebdomadaire</value>
+    <value>Bihebdomadaire</value>
   </data>
   <data name="FrequencyDaily" xml:space="preserve">
-    <value>Fréquence - Quotidienne</value>
+    <value>Quotidienne</value>
   </data>
   <data name="FrequencyMonthly" xml:space="preserve">
-    <value>Fréquence - Mensuelle</value>
+    <value>Mensuelle</value>
   </data>
   <data name="FrequencyQuarterly" xml:space="preserve">
-    <value>Fréquence - Trimestriel</value>
+    <value>Trimestriel</value>
   </data>
   <data name="FrequencySemimonthly" xml:space="preserve">
-    <value>Fréquence - Bimensuelle</value>
+    <value>Bimensuelle</value>
   </data>
   <data name="FrequencyWeekly" xml:space="preserve">
-    <value>Fréquence - Hebdomadaire</value>
+    <value>Hebdomadaire</value>
+  </data>
+  <data name="FromClasscode" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromEarningOrDeduction" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromEmployeeLastName" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromEmployeeNumber" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromOvertimeSchedule" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromProvince" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromProvinceOfEmployment" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromShiftDifferential" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromState" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromTax" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromWCCode" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromWorkClassification" xml:space="preserve">
+    <value>De</value>
   </data>
   <data name="FullName" xml:space="preserve">
     <value>Nom complet</value>
@@ -351,8 +450,17 @@
   <data name="InactROE" xml:space="preserve">
     <value>RÉSERVÉ - CAD seulement</value>
   </data>
+  <data name="IncludeEarningOrDeduction" xml:space="preserve">
+    <value>Inclure les gains/déductions</value>
+  </data>
+  <data name="IncludeTax" xml:space="preserve">
+    <value>Inclure la taxe</value>
+  </data>
   <data name="INTERNALUSESelectionList" xml:space="preserve">
     <value>USAGE INTERNE - Liste de sélection</value>
+  </data>
+  <data name="InvalidSelectionList" xml:space="preserve">
+    <value>Entrée invalide. vous n'avez pas les droits pour accéder à cette liste de sélection.</value>
   </data>
   <data name="LastMaintained" xml:space="preserve">
     <value>Dernière modification</value>
@@ -367,7 +475,7 @@
     <value>Date dernière évaluation</value>
   </data>
   <data name="ListTotal" xml:space="preserve">
-    <value>nombre d'employés</value>
+    <value>Nombre d'employés</value>
   </data>
   <data name="Manager" xml:space="preserve">
     <value>Gestionnaire</value>
@@ -384,8 +492,11 @@
   <data name="NonDirectDeposit" xml:space="preserve">
     <value>Dépôt non direct</value>
   </data>
+  <data name="None" xml:space="preserve">
+    <value>(Nil)</value>
+  </data>
   <data name="NumberOfEmployees" xml:space="preserve">
-    <value>nombre d'employés</value>
+    <value>Nombre d'employés</value>
   </data>
   <data name="NumberOfOptionalFields" xml:space="preserve">
     <value>Nombre de champs optionnels</value>
@@ -417,6 +528,12 @@
   <data name="OptFld3To" xml:space="preserve">
     <value>Champ facultatif 3 à la valeur</value>
   </data>
+  <data name="OptionalFieldValidation" xml:space="preserve">
+    <value>La valeur du champ facultatif De ne peut pas être supérieure à la valeur À.</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Autre</value>
+  </data>
   <data name="OvertimeCalculation" xml:space="preserve">
     <value>Calcul heures supplémentaires</value>
   </data>
@@ -435,6 +552,9 @@
   <data name="PayFrequency1" xml:space="preserve">
     <value>Fréquence de Paiement</value>
   </data>
+  <data name="PaymentClassification" xml:space="preserve">
+    <value>Classification des paiements</value>
+  </data>
   <data name="PayrollEmployeeSelection" xml:space="preserve">
     <value>Sélection des employés chargés de la paie</value>
   </data>
@@ -452,6 +572,18 @@
   </data>
   <data name="ProcessCommandCode1" xml:space="preserve">
     <value>Code de commande de processus</value>
+  </data>
+  <data name="Province" xml:space="preserve">
+    <value>Province</value>
+  </data>
+  <data name="ProvinceOfEmployment" xml:space="preserve">
+    <value>Province d'emploi</value>
+  </data>
+  <data name="RangeValidation" xml:space="preserve">
+    <value>L'entrée dans la valeur De ne peut pas être supérieure à la valeur À.</value>
+  </data>
+  <data name="RecordAlreadyExistErrorMessage" xml:space="preserve">
+    <value>Liste de sélection des employés. L'enregistrement existe déjà.</value>
   </data>
   <data name="Reference" xml:space="preserve">
     <value>Référence</value>
@@ -483,11 +615,17 @@
   <data name="SegmentCode3" xml:space="preserve">
     <value>Code segment 3</value>
   </data>
+  <data name="SelectBy" xml:space="preserve">
+    <value>Sélectionner par</value>
+  </data>
   <data name="SelectionListBlank" xml:space="preserve">
     <value>Entrée invalide. La liste de sélection des employés ne peut pas être Entrée invalide. La liste de sélection des employés ne peut pas être vide.</value>
   </data>
   <data name="SelectionListTitle" xml:space="preserve">
     <value>Liste de sélection</value>
+  </data>
+  <data name="SelectionListValidation" xml:space="preserve">
+    <value>Entrée invalide. L'ID de la liste de sélection des employés n'existe pas.</value>
   </data>
   <data name="SelectItem1" xml:space="preserve">
     <value>Sélectionnez l'élément 1 Index</value>
@@ -537,6 +675,24 @@
   <data name="SelectSubItem4" xml:space="preserve">
     <value>Sélectionnez le sous-élément 4 Index</value>
   </data>
+  <data name="ShiftDifferential" xml:space="preserve">
+    <value>Différentiel de changement de vitesse</value>
+  </data>
+  <data name="ShiftDifferential1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ShiftDifferential2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ShiftDifferential3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ShiftDifferential4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ShiftDifferential5" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="ShiftDifferentialSchedule" xml:space="preserve">
     <value>Table de prime de quart</value>
   </data>
@@ -555,11 +711,20 @@
   <data name="SSNFormat" xml:space="preserve">
     <value>Format NAS</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>État</value>
+  </data>
   <data name="StateOfHire" xml:space="preserve">
     <value>Province d'emploi</value>
   </data>
   <data name="StateProvince" xml:space="preserve">
     <value>État/Province</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Statut</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
   <data name="SyncMasterGUID" xml:space="preserve">
     <value>RÉSERVÉ - Seulement É.-U.</value>
@@ -573,17 +738,62 @@
   <data name="TermROE" xml:space="preserve">
     <value>RÉSERVÉ - CAD seulement</value>
   </data>
+  <data name="ThenBy" xml:space="preserve">
+    <value>Puis sélectionnez par</value>
+  </data>
   <data name="TimecardUserID" xml:space="preserve">
     <value>Code utilisateur de feuilles de temps</value>
   </data>
   <data name="TimesLate" xml:space="preserve">
     <value>Retards</value>
   </data>
+  <data name="ToClassCode" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ToEarningOrDeduction" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ToEmployeeLastName" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ToEmployeeNumber" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ToOvertimeSchedule" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ToProvince" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ToProvinceOfEmployment" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ToShiftDifferential" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ToState" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ToTax" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ToWCCode" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="ToWorkClassification" xml:space="preserve">
+    <value>À</value>
+  </data>
   <data name="USCitizen" xml:space="preserve">
     <value>Citoyen américain</value>
   </data>
   <data name="VacationID" xml:space="preserve">
     <value>Code vacance</value>
+  </data>
+  <data name="WCCGroup" xml:space="preserve">
+    <value>Groupe COE</value>
+  </data>
+  <data name="WorkClassification" xml:space="preserve">
+    <value>Classification du travail</value>
   </data>
   <data name="WorkClassificationCode" xml:space="preserve">
     <value>Code de classification d'activité</value>

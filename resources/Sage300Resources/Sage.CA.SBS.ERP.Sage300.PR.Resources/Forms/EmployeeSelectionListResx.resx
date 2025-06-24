@@ -186,6 +186,9 @@
   <data name="CombineTitle1" xml:space="preserve">
     <value>Combine Payroll Employee Selection List</value>
   </data>
+  <data name="CopyLabel" xml:space="preserve">
+    <value>Copy</value>
+  </data>
   <data name="CopyPopupTitle" xml:space="preserve">
     <value>Copy Payroll Employee Selection List</value>
   </data>
@@ -349,7 +352,7 @@
     <value>Frequency - Weekly</value>
   </data>
   <data name="FromClasscode" xml:space="preserve">
-    <value>From Class code</value>
+    <value>From Class Code</value>
   </data>
   <data name="FromEarningOrDeduction" xml:space="preserve">
     <value>From Earn/Deduction Code</value>
@@ -378,8 +381,8 @@
   <data name="FromTax" xml:space="preserve">
     <value>From Tax</value>
   </data>
-  <data name="FromWCCGroup" xml:space="preserve">
-    <value>From WCC Group</value>
+  <data name="FromWCCode" xml:space="preserve">
+    <value>From WC Code</value>
   </data>
   <data name="FromWorkClassification" xml:space="preserve">
     <value>From Work Classification</value>
@@ -407,6 +410,9 @@
   </data>
   <data name="IncludeTax" xml:space="preserve">
     <value>Include Tax</value>
+  </data>
+  <data name="InvalidSelectionList" xml:space="preserve">
+    <value>Invalid input. you do not have rights to access this selection list.</value>
   </data>
   <data name="LastMaintained" xml:space="preserve">
     <value>Last Maintained</value>
@@ -546,11 +552,14 @@
   <data name="Province" xml:space="preserve">
     <value>Province</value>
   </data>
-  <data name="ProvinceOfEmployement" xml:space="preserve">
-    <value>Province Of Employement</value>
+  <data name="ProvinceOfEmployment" xml:space="preserve">
+    <value>Province Of Employment</value>
   </data>
   <data name="RangeValidation" xml:space="preserve">
     <value>The entry in the From value cannot be greater than the To value.</value>
+  </data>
+  <data name="RecordAlreadyExistErrorMessage" xml:space="preserve">
+    <value>Employee Selection List. Record already exists.</value>
   </data>
   <data name="SecurityFlag" xml:space="preserve">
     <value>Security Flag</value>
@@ -738,16 +747,25 @@
   <data name="ToTax" xml:space="preserve">
     <value>To Tax</value>
   </data>
-  <data name="ToWCCGroup" xml:space="preserve">
-    <value>To WCC Group</value>
+  <data name="ToWCCode" xml:space="preserve">
+    <value>To WC Code</value>
   </data>
   <data name="ToWorkClassification" xml:space="preserve">
     <value>To Work Classification</value>
+  </data>
+  <data name="UseInClosing_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="UseInClosing_Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
   <data name="WCCGroup" xml:space="preserve">
     <value>WCC Group</value>
   </data>
   <data name="WorkClassification" xml:space="preserve">
     <value>Work Classification</value>
+  </data>
+  <data name="WorkClassificationCode" xml:space="preserve">
+    <value>Activity Classification Code</value>
   </data>
 </root>

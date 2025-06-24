@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 2024 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 2024-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -23,6 +23,7 @@ using Newtonsoft.Json;
 using Sage.CA.SBS.ERP.Sage300.ProxyTester.Models;
 using Sage.CA.SBS.ERP.Sage300.ProxyTester.Utility;
 using System;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -65,6 +66,14 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
             public const string OptionalParameters = "ProxyOptionalParameters";
             /// <summary> Context Token </summary>
             public const string ContextToken = "ContextToken";
+            /// <summary> Id Constant </summary>
+            public const string Id = "ProxyId";
+            /// <summary> PdfName Constant </summary>
+            public const string PdfName = "ProxyPDFName";
+            /// <summary> PdfDate Constant </summary>
+            public const string PdfDate = "ProxyPDFDate";
+
+
         }
 
         #region Constructor
@@ -81,6 +90,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         }
 
         /// <summary> GetMenu </summary>
+        /// <param name="model">View Model</param>
         /// <returns>Menu string</returns>
         [AcceptVerbs(HttpVerbs.Post)]
         public async Task<ActionResult> GetMenu(ProxyTesterViewModel model)
@@ -106,6 +116,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         }
 
         /// <summary> GetScreen </summary>
+        /// <param name="model">View Model</param>
         /// <returns>URL string</returns>
         [AcceptVerbs(HttpVerbs.Post)]
         public async Task<ActionResult> GetScreen(ProxyTesterViewModel model)
@@ -123,6 +134,75 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
 
                 // Return url string
                 return Content(model.Source);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary> Get PDF </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>PDF as a stream</returns>
+        [AcceptVerbs(HttpVerbs.Post)]
+        public async Task<ActionResult> GetPDF(ProxyTesterViewModel model)
+        {
+            try
+            {
+                // Prep model if needed
+                PrepModel(model);
+
+                // Get the proxy public Key
+                await ProxyPublicKey(model);
+
+                // Get the screen from proxy
+                return await ProxyPDF(model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary> Get PDF Names </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>List of PDF file names</returns>
+        [AcceptVerbs(HttpVerbs.Post)]
+        public async Task<ActionResult> GetPDFNames(ProxyTesterViewModel model)
+        {
+            try
+            {
+                // Prep model if needed
+                PrepModel(model);
+
+                // Get the proxy public Key
+                await ProxyPublicKey(model);
+
+                // Get the screen from proxy
+                return await ProxyPDFNames(model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary> Delete PDF </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>File name that was deleted</returns>
+        [AcceptVerbs(HttpVerbs.Post)]
+        public async Task<ActionResult> DeletePDFs(ProxyTesterViewModel model)
+        {
+            try
+            {
+                // Prep model if needed
+                PrepModel(model);
+
+                // Get the proxy public Key
+                await ProxyPublicKey(model);
+
+                // Get the screen from proxy
+                return await ProxyDeletePDFs(model);
             }
             catch (Exception ex)
             {
@@ -179,6 +259,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 request.Headers.Add(RequestHeader.IV, model.IV);
                 request.Headers.Add(RequestHeader.ProductId, model.ProductId);
                 request.Headers.Add(RequestHeader.ModuleId, model.ModuleId);
+                request.Headers.Add(RequestHeader.Id, model.Id);
 
                 // Await response
                 using (var response = await httpClient.SendAsync(request))
@@ -200,7 +281,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         /// <summary> Routine to get the screen from the Proxy </summary>
         /// <param name="model">View Model</param>
         /// <returns>Assign Source/Redirect to model</returns>
-        private async Task ProxyScreen(ProxyTesterViewModel model)
+        private async Task<ActionResult> ProxyScreen(ProxyTesterViewModel model)
         {
             try
             {
@@ -222,6 +303,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 request.Headers.Add(RequestHeader.Controller, model.Controller);
                 request.Headers.Add(RequestHeader.Action, model.Action);
                 request.Headers.Add(RequestHeader.OptionalParameters, model.OptionalParameters);
+                request.Headers.Add(RequestHeader.Id, model.Id);
 
                 // Await response
                 using (var response = await httpClient.SendAsync(request))
@@ -242,8 +324,152 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                     }
                 }
 
-                // Redirect to the screen AND the source will be set to the iFrame in JavaScript with the success handler
-                Redirect(model.Source);
+                // Return content (URL) AND the source will be set to the iFrame in JavaScript with the success handler
+                return Content(model.Source);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary> Routine to get the pdf file </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>Assign Source/Redirect to model</returns>
+        private async Task<ActionResult> ProxyPDF(ProxyTesterViewModel model)
+        {
+            try
+            {
+                // Validations here
+
+                // Request
+                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyPDF?productId={model.ProductId}");
+
+                // Encryption for headers
+                EncryptItems(model);
+
+                // Add headers
+                request.Headers.Add(RequestHeader.Credentials, model.Credentials);
+                request.Headers.Add(RequestHeader.ClientPublicKey, model.ClientPublicKey);
+                request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
+                request.Headers.Add(RequestHeader.IV, model.IV);
+                request.Headers.Add(RequestHeader.ProductId, model.ProductId);
+                request.Headers.Add(RequestHeader.Id, model.Id);
+                request.Headers.Add(RequestHeader.PdfName, model.PdfFileName);
+
+                // Await response
+                using (var response = await httpClient.SendAsync(request))
+                {
+                    // If successful get the screen redirect
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var streamContent = response.Content as StreamContent;
+                        if (streamContent != null){
+                            var fileName = streamContent.Headers?.ContentDisposition?.FileName;
+                            var bytes = await streamContent.ReadAsByteArrayAsync();
+                            var directoryPath = Path.Combine(Server.MapPath("~"), "PDFs");
+                            Directory.CreateDirectory(directoryPath); // Ensure the directory exists
+                            var tempFilePath = Path.Combine(directoryPath, fileName);
+                            System.IO.File.WriteAllBytes(tempFilePath, bytes);
+                            return Content(fileName);
+                        }
+                    }
+                }
+                
+                return Content(string.Empty);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary> Routine to get the file names for a given date </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>List of file names</returns>
+        private async Task<ActionResult> ProxyPDFNames(ProxyTesterViewModel model)
+        {
+            try
+            {
+                // Validations here
+
+                // Request
+                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyPDFNames?productId={model.ProductId}");
+
+                // Encryption for headers
+                EncryptItems(model);
+
+                // Add headers
+                request.Headers.Add(RequestHeader.Credentials, model.Credentials);
+                request.Headers.Add(RequestHeader.ClientPublicKey, model.ClientPublicKey);
+                request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
+                request.Headers.Add(RequestHeader.IV, model.IV);
+                request.Headers.Add(RequestHeader.ProductId, model.ProductId);
+                request.Headers.Add(RequestHeader.Id, model.Id);
+                request.Headers.Add(RequestHeader.PdfDate, model.PdfFileDate);
+
+                // Await response
+                using (var response = await httpClient.SendAsync(request))
+                {
+                    // If successful get the screen redirect
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var stringContent = await response.Content.ReadAsStringAsync();
+                        if (stringContent != null)
+                        {
+                            var fileNames = JsonConvert.DeserializeObject<string[]>(stringContent);
+                            return Content(string.Join(",", fileNames));
+                        }
+                    }
+                }
+
+                return Content(string.Empty);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary> Routine to delete the files of given date </summary>
+        /// <param name="model">View Model</param>
+        /// <returns>List of file names</returns>
+        private async Task<ActionResult> ProxyDeletePDFs(ProxyTesterViewModel model)
+        {
+            try
+            {
+                // Validations here
+
+                // Request
+                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/ProxyDeletePDFs?productId={model.ProductId}");
+
+                // Encryption for headers
+                EncryptItems(model);
+
+                // Add headers
+                request.Headers.Add(RequestHeader.Credentials, model.Credentials);
+                request.Headers.Add(RequestHeader.ClientPublicKey, model.ClientPublicKey);
+                request.Headers.Add(RequestHeader.ServerPublicKey, model.ProxyPublicKey);
+                request.Headers.Add(RequestHeader.IV, model.IV);
+                request.Headers.Add(RequestHeader.ProductId, model.ProductId);
+                request.Headers.Add(RequestHeader.Id, model.Id);
+                request.Headers.Add(RequestHeader.PdfDate, model.PdfFileDate);
+
+                // Await response
+                using (var response = await httpClient.SendAsync(request))
+                {
+                    // If successful get the screen redirect
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var stringContent = await response.Content.ReadAsStringAsync();
+                        if (stringContent != null)
+                        {
+                            return Content(stringContent);
+                        }
+                    }
+                }
+
+                return Content(string.Empty);
             }
             catch (Exception ex)
             {
@@ -314,7 +540,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
                 var queryStringOperator = (queryParts.Count == 0) ? "?" : "&";
 
                 // Build the final url and return
-                url += $"{queryStringOperator}productId={model.ProductId}&ContextToken={contextToken}";
+                url += $"{queryStringOperator}productId={model.ProductId}&ContextToken={contextToken}&{RequestHeader.Id}={model.Id}";
 
                 return url;
             }

@@ -697,7 +697,6 @@ sg.viewList = function () {
             const sendRequest = options.model[field] === returnValue;
 
             _sendChange[gridName] = true;
-
             options.model.set(field, returnValue);
 
             // When finder selected value is the same as options model field value, the set method 

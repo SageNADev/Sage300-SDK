@@ -1742,4 +1742,13 @@
   <data name="SomeEmailsSentCanceled" xml:space="preserve">
     <value>Courriels {0} à {1} envoyés avec succès; annulation sur {2} ou avant</value>
   </data>
+  <data name="PayrollUpgradeErrorMessage1" xml:space="preserve">
+    <value>Un problème s’est produit lors de la connexion aux écrans web. Sage 300 a détecté des incohérences dans la mise à jour du module et il doit donc être activé. Vous devez installer et activer les applications suivantes: </value>
+  </data>
+  <data name="PayrollUpgradeErrorMessage2" xml:space="preserve">
+    <value> Essayez de vous connecter au bureau Sage 300 et d’activer les données avant de vous connecter aux écrans web.</value>
+  </data>
+  <data name="OrNewerVersion" xml:space="preserve">
+    <value> ou une version plus récente'</value>
+  </data>
 </root>

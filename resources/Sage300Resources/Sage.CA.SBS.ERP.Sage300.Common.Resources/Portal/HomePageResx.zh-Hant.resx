@@ -1467,4 +1467,7 @@
   <data name="SessionDateChangedWarning" xml:space="preserve">
     <value>新的工作階段日期不會在目前開啟的螢幕中使用。要在這些螢幕中使用新的工作階段日期，關閉這些螢幕然後再次開啟它們。</value>
   </data>
+  <data name="QuickMenu_Favorite" xml:space="preserve">
+    <value>喜愛</value>
+  </data>
 </root>

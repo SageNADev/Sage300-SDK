@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class EmployeeTaxInfoResx {
@@ -88,11 +88,29 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount/Percentage.
+        /// </summary>
+        public static string AmountPercentage {
+            get {
+                return ResourceManager.GetString("AmountPercentage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Percent.
         /// </summary>
         public static string AmountPercentOverride {
             get {
                 return ResourceManager.GetString("AmountPercentOverride", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign To.
+        /// </summary>
+        public static string AssignTo {
+            get {
+                return ResourceManager.GetString("AssignTo", resourceCulture);
             }
         }
         
@@ -183,6 +201,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string DistributionCode {
             get {
                 return ResourceManager.GetString("DistributionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distribution Code Description.
+        /// </summary>
+        public static string DistributionCodeDescription {
+            get {
+                return ResourceManager.GetString("DistributionCodeDescription", resourceCulture);
             }
         }
         
@@ -453,6 +480,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string PercentOverride {
             get {
                 return ResourceManager.GetString("PercentOverride", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selection List.
+        /// </summary>
+        public static string SelectionList {
+            get {
+                return ResourceManager.GetString("SelectionList", resourceCulture);
             }
         }
         

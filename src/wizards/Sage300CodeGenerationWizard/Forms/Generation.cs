@@ -619,7 +619,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard
                 catch (Exception ex)
                 {
                     // Wizard is not compatible with installed Sage 300 libraries
-                    valid = ex.Message; // Resources.InvalidVersion;
+                    valid = (ex.InnerException == null) ? ex.Message : ex.Message + " Inner: " +ex.InnerException.Message; // Resources.InvalidVersion;
                 }
             }
 

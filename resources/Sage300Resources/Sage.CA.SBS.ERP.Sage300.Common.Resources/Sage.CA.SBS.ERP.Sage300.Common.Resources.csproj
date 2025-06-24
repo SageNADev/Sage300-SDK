@@ -376,7 +376,9 @@
       <LastGenOutput>HomePageResx.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Portal\HomePageResx.es.resx" />
+    <EmbeddedResource Include="Portal\HomePageResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Portal\HomePageResx.fr.resx" />
     <EmbeddedResource Include="Portal\HomePageResx.zh-Hans.resx" />
     <EmbeddedResource Include="Portal\HomePageResx.zh-Hant.resx" />

@@ -126,8 +126,14 @@
   <data name="AmountOverride" xml:space="preserve">
     <value>Amount Override</value>
   </data>
+  <data name="AmountPercentage" xml:space="preserve">
+    <value>Amount/Percentage</value>
+  </data>
   <data name="AmountPercentOverride" xml:space="preserve">
     <value>Percent</value>
+  </data>
+  <data name="AssignTo" xml:space="preserve">
+    <value>Assign To</value>
   </data>
   <data name="BlankTaxCode" xml:space="preserve">
     <value>Invalid input. Tax code cannot be blank.</value>
@@ -158,6 +164,9 @@
   </data>
   <data name="DistributionCode" xml:space="preserve">
     <value>Distribution Code</value>
+  </data>
+  <data name="DistributionCodeDescription" xml:space="preserve">
+    <value>Distribution Code Description</value>
   </data>
   <data name="DistributionDetail" xml:space="preserve">
     <value>Distribution Detail</value>
@@ -248,6 +257,9 @@
   </data>
   <data name="PercentOverride" xml:space="preserve">
     <value>Percent Override</value>
+  </data>
+  <data name="SelectionList" xml:space="preserve">
+    <value>Selection List</value>
   </data>
   <data name="StandardCalculation" xml:space="preserve">
     <value>Standard Calculation</value>

@@ -201,6 +201,12 @@
   <data name="EntityPayrollChecks" xml:space="preserve">
     <value>US Payroll Checks</value>
   </data>
+  <data name="ExportToPDF" xml:space="preserve">
+    <value>Export to PDF</value>
+  </data>
+  <data name="ExportToPDFMsg" xml:space="preserve">
+    <value>Exporting Checks. This may take a few minutes. Please wait...</value>
+  </data>
   <data name="FiscalPeriodYearLocked" xml:space="preserve">
     <value>Date {0} corresponds to period {1} in fiscal year {2}, which is locked for US Payroll in Common Services’ Fiscal Calendar.</value>
   </data>
