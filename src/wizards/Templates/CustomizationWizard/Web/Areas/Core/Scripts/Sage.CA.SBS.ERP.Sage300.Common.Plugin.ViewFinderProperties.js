@@ -88,6 +88,18 @@
                                     "SWHOLD", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4",
                                     "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2"]
             },
+            VendorDetails: {
+                url: ["AP", "VendorViewFinder", "Find"],
+                viewID: "AP0015",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["VENDORID", "VENDNAME", "SWACTV", "IDGRP", "CURNCODE", "SHORTNAME",
+                                   "SWHOLD", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4",
+                                   "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2","NAMECTAC","EMAIL1","EMAIL2"],
+                displayFieldNames: ["VENDORID", "VENDNAME", "SWACTV", "IDGRP", "CURNCODE", "SHORTNAME",
+                                    "SWHOLD", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4",
+                                    "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2", "NAMECTAC", "EMAIL1", "EMAIL2"]
+            },
 
             ShortName: {
                 url: ["AP", "VendorViewFinder", "Find"],
@@ -130,7 +142,7 @@
                 viewID: "AP0021",
                 viewOrder: 0,
                 returnFieldNames: ["CNTITEM"],
-                displayFieldNames: ["CNTITEM", "IDVEND", "IDINVC", "INVCDESC", "AMTGROSDST"],
+                displayFieldNames: ["CNTITEM", "IDVEND", "VENDNAME", "IDINVC", "INVCDESC", "AMTGROSDST"],
                 filterTemplate: "CNTBTCH = {0}"
             },
 
@@ -560,7 +572,7 @@
                 viewOrder: 0,
                 parentValAsInitKey: false,
                 returnFieldNames: ["CNTITEM"],
-                displayFieldNames: ["CNTITEM", "IDCUST", "IDINVC", "DATEINVC", "INVCDESC", "AMTDUE"],
+                displayFieldNames: ["CNTITEM", "IDCUST", "NAMECUST", "IDINVC", "DATEINVC", "INVCDESC", "AMTDUE"],
                 filterTemplate: "CNTBTCH = \"{0}\""
             },
 
@@ -1944,6 +1956,41 @@
         },
 
         PM: { // aka PJC
+            Items: {
+                viewID: "AR0010",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["IDITEM", "TEXTDESC"],
+                displayFieldNames: ["IDITEM", "TEXTDESC", "SWACTV"]
+            },
+            ItemPricing: {
+                viewID: "AR0009",
+                viewOrder: 0,
+                returnFieldNames: ["UNITMEAS", "CODECURN", "AMTCOST", "AMTPRICE",],
+                displayFieldNames: ["UNITMEAS", "CODECURN", "AMTCOST", "AMTPRICE",],
+                filterTemplate: "IDITEM = \"{0}\""
+            },
+            ItemCodePricing: {
+                viewID: "AR0009",
+                viewOrder: 0,
+                returnFieldNames: ["IDITEM", "UNITMEAS", "CODECURN", "AMTCOST", "AMTPRICE"],
+                displayFieldNames: ["IDITEM", "UNITMEAS", "CODECURN", "AMTCOST", "AMTPRICE"],
+                filterTemplate: "IDITEM = \"{0}\" AND CODECURN = \"{1}\""
+            },
+            BillRateItemPricing: {
+                viewID: "AR0009",
+                viewOrder: 0,
+                returnFieldNames: ["UNITMEAS", "AMTCOST", "AMTPRICE",],
+                displayFieldNames: ["UNITMEAS", "AMTCOST", "AMTPRICE",],
+                filterTemplate: "IDITEM = \"{0}\""
+            },
+            BillRateItemCodePricing: {
+                viewID: "AR0009",
+                viewOrder: 0,
+                returnFieldNames: ["IDITEM", "UNITMEAS", "AMTCOST", "AMTPRICE"],
+                displayFieldNames: ["IDITEM", "UNITMEAS", "AMTCOST", "AMTPRICE"],
+                filterTemplate: "IDITEM = \"{0}\" AND CODECURN = \"{1}\""
+            },
             CostTypes: {
                 viewID: "PM0001",
                 parentValAsInitKey: true,
@@ -1963,6 +2010,7 @@
             ContractStructure: {
                 viewID: "PM0011",
                 viewOrder: 0,
+                parentValAsInitKey: true,
                 returnFieldNames: ["JOBBRKID", "DESC"],
                 displayFieldNames: ["JOBBRKID", "DESC"]
             },
