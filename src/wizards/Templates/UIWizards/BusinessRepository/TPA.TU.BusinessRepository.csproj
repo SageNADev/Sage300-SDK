@@ -45,14 +45,14 @@
     <Reference Include="$(RefAccpacAdvantageTypes)">
       <SpecificVersion>$(IsAccpacAdvantageTypesSpecificVersion)</SpecificVersion>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity">
-      <HintPath>$(SolutionDir)packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>$(Sage300WebDir)\bin\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration">
-      <HintPath>$(SolutionDir)packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    <Reference Include="Unity.Abstractions">
+      <HintPath>$(Sage300WebDir)\bin\Unity.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
-      <HintPath>$(SolutionDir)packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    <Reference Include="Unity.Container">
+      <HintPath>$(Sage300WebDir)\bin\Unity.Container.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.dll</HintPath>
@@ -116,4 +116,7 @@
     </PostBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
 </Project>

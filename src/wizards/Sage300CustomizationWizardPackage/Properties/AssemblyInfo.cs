@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 

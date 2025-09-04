@@ -4,7 +4,7 @@ using System;
 using System.Web.Mvc;
 using System.Linq;
 using $safeprojectname$.Areas.$module$.Models;
-using Microsoft.Practices.Unity;
+using Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 
 namespace $safeprojectname$.Areas.$module$.Controllers

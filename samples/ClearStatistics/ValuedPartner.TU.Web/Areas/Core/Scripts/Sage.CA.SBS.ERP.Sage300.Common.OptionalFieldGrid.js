@@ -1290,16 +1290,13 @@ sg.optionalFieldControl = function () {
      * @param {string} gridName The grid name.
      */
     function toolbarAddLine(gridName) {
-
         var grid = _getGrid(gridName);
-
         var selectedRowData = null;
-
         if (_lastRowNumber[gridName] !== -1) {
             selectedRowData = grid.dataItem(grid.select());
 
-            if (selectedRowData.dirty) {
-
+            // null check for selectedRowData
+            if (selectedRowData && selectedRowData.dirty) {
                 // Save the row
                 _sendRequest(gridName, RequestTypeEnum.Save, "", function (isSuccess) {
                     console.log("add line call back");
@@ -1312,7 +1309,7 @@ sg.optionalFieldControl = function () {
             }
         }
         _addLine(gridName);
-    }
+    }    
 
     /**
      * @description Get dropdown list text from value, for grid column dropdown list template(internal use)

@@ -95,10 +95,10 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["VENDORID", "VENDNAME", "SWACTV", "IDGRP", "CURNCODE", "SHORTNAME",
                                    "SWHOLD", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4",
-                                   "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2","NAMECTAC","EMAIL1","EMAIL2"],
+                    "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2", "NAMECTAC", "EMAIL1", "EMAIL2", "WEBSITE", "CTACPHONE","CTACFAX"],
                 displayFieldNames: ["VENDORID", "VENDNAME", "SWACTV", "IDGRP", "CURNCODE", "SHORTNAME",
                                     "SWHOLD", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4",
-                                    "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2", "NAMECTAC", "EMAIL1", "EMAIL2"]
+                    "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2", "NAMECTAC", "EMAIL1", "EMAIL2", "WEBSITE", "CTACPHONE","CTACFAX"]
             },
 
             ShortName: {
@@ -1999,6 +1999,14 @@
                 displayFieldNames: ["COSTTYPE", "DESC", "INACTIVE", "TYPE"]
             },
 
+            PMCostTypes: {
+                viewID: "PM0001",
+                parentValAsInitKey: true,
+                viewOrder: 0,
+                returnFieldNames: ["COSTTYPE", "DESC", "INACTIVE", "TYPE"],
+                displayFieldNames: ["COSTTYPE", "DESC", "INACTIVE", "TYPE"]
+            },
+
             Labor: {
                 viewID: "PM0002",
                 viewOrder: 0,
@@ -2220,6 +2228,14 @@
                 returnFieldNames: ["CATEGORY"],
             },
 
+            PMCategory: {
+                viewID: "PM0018",
+                parentValAsInitKey: true,
+                viewOrder: 0,
+                displayFieldNames: ["COSTTYPE", "DESC", "INACTIVE", "TYPE"],
+                returnFieldNames: ["COSTTYPE", "DESC", "INACTIVE", "TYPE"],
+            },
+
             CategoryGrid: {
                 viewID: "PM0039",
                 viewOrder: 2,
@@ -2295,6 +2311,44 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["STAFFCODE", "NAME"],
                 displayFieldNames: ["STAFFCODE", "NAME", "INACTIVE", "EARNCODE","GROUP"],
+            },
+            UPEmployees: {
+                viewID: "UP0014",
+                viewOrder: 0,
+                displayFieldNames: ["EMPLOYEE", "LASTNAME", "FIRSTNAME", "MIDDLENAME", "PAYFREQ", "STATUS","CLASS1","CLASS2","CLASS3","CLASS4"],
+                returnFieldNames: ["EMPLOYEE", "FULLNAME"],
+                filterTemplate: "TCUSERID = \"{0}\" ",
+                parentValAsInitKey: true
+            },
+            CPEmployees: {
+                viewID: "CP0014",
+                viewOrder: 0,
+                displayFieldNames: ["EMPLOYEE", "LASTNAME", "FIRSTNAME", "MIDDLENAME", "PAYFREQ", "STATUS", "CLASS1", "CLASS2", "CLASS3", "CLASS4"],
+                returnFieldNames: ["EMPLOYEE", "FULLNAME"],
+                filterTemplate: "TCUSERID = \"{0}\" ",
+                parentValAsInitKey: true
+            },
+            UPEmployeeEarnOrDeduction: {
+                viewID: "UP0008",
+                viewOrder: 0,
+                filterTemplate: "EMPLOYEE = \"{0}\"",
+                displayFieldNames: ["EARNDED", "DESC"],
+                returnFieldNames: ["EARNDED","DESC","DEFAULTHRS"]
+            },
+            CPEmployeeEarnOrDeduction: {
+                viewID: "CP0008",
+                viewOrder: 0,
+                filterTemplate: "EMPLOYEE = \"{0}\"",
+                displayFieldNames: ["EARNDED", "DESC"],
+                returnFieldNames: ["EARNDED", "DESC", "DEFAULTHRS"]
+            },
+
+            PMUsers: {
+                viewID: "PM0400",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                displayFieldNames: ["USERID", "USERNAME"],
+                returnFieldNames: ["USERID"]
             },
 
             EquipmentUsage: {

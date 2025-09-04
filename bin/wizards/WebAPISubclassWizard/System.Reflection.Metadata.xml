@@ -243,6 +243,53 @@
       <summary>Gets the element in the collection at the current position of the enumerator.</summary>
       <returns>The element in the collection at the current position of the enumerator.</returns>
     </member>
+    <member name="T:System.Reflection.Metadata.AssemblyNameInfo">
+      <summary>Describes an assembly.</summary>
+    </member>
+    <member name="M:System.Reflection.Metadata.AssemblyNameInfo.#ctor(System.String,System.Version,System.String,System.Reflection.AssemblyNameFlags,System.Collections.Immutable.ImmutableArray{System.Byte})">
+      <summary>Initializes a new instance of the AssemblyNameInfo class.</summary>
+      <param name="name">The simple name of the assembly.</param>
+      <param name="version">The version of the assembly.</param>
+      <param name="cultureName">The name of the culture associated with the assembly.</param>
+      <param name="flags">The attributes of the assembly.</param>
+      <param name="publicKeyOrToken">The public key or its token. Set <paramref name="flags" /> to <see cref="F:System.Reflection.AssemblyNameFlags.PublicKey" /> when it's public key.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:System.Reflection.Metadata.AssemblyNameInfo.Parse(System.ReadOnlySpan{System.Char})">
+      <summary>Parses a span of characters into a assembly name.</summary>
+      <param name="assemblyName">A span containing the characters representing the assembly name to parse.</param>
+      <exception cref="T:System.ArgumentException">The provided assembly name is invalid.</exception>
+      <returns>Parsed type name.</returns>
+    </member>
+    <member name="M:System.Reflection.Metadata.AssemblyNameInfo.ToAssemblyName">
+      <summary>Initializes a new instance of the <see cref="T:System.Reflection.AssemblyName" /> class based on the stored information.</summary>
+    </member>
+    <member name="M:System.Reflection.Metadata.AssemblyNameInfo.TryParse(System.ReadOnlySpan{System.Char},System.Reflection.Metadata.AssemblyNameInfo@)">
+      <summary>Tries to parse a span of characters into an assembly name.</summary>
+      <param name="assemblyName">A span containing the characters representing the assembly name to parse.</param>
+      <param name="result">Contains the result when parsing succeeds.</param>
+      <returns>
+        <see langword="true" /> if assembly name was converted successfully, otherwise, <see langword="false" />.</returns>
+    </member>
+    <member name="P:System.Reflection.Metadata.AssemblyNameInfo.CultureName">
+      <summary>Gets the name of the culture associated with the assembly.</summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.AssemblyNameInfo.Flags">
+      <summary>Gets the attributes of the assembly.</summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.AssemblyNameInfo.FullName">
+      <summary>Gets the full name of the assembly, also known as the display name.</summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.AssemblyNameInfo.Name">
+      <summary>Gets the simple name of the assembly.</summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.AssemblyNameInfo.PublicKeyOrToken">
+      <summary>Gets the public key or the public key token of the assembly.</summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.AssemblyNameInfo.Version">
+      <summary>Gets the version of the assembly.</summary>
+    </member>
     <member name="T:System.Reflection.Metadata.AssemblyReference" />
     <member name="M:System.Reflection.Metadata.AssemblyReference.GetAssemblyName" />
     <member name="M:System.Reflection.Metadata.AssemblyReference.GetCustomAttributes" />
@@ -412,16 +459,6 @@
       <param name="value">The value to write.</param>
       <exception cref="T:System.InvalidOperationException">The builder is not writable; it has been linked with another one.</exception>
     </member>
-    <member name="M:System.Reflection.Metadata.BlobBuilder.WriteBytes(System.Byte*,System.Int32)">
-      <summary>Writes a specified number of bytes from a buffer to the builder.</summary>
-      <param name="buffer" />
-      <param name="byteCount">The number of bytes to write.</param>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="buffer" /> is <see langword="null" />.</exception>
-      <exception cref="T:System.ArgumentOutOfRangeException">
-        <paramref name="byteCount" /> is negative.</exception>
-      <exception cref="T:System.InvalidOperationException">The builder is not writable, it has been linked with another one.</exception>
-    </member>
     <member name="M:System.Reflection.Metadata.BlobBuilder.WriteBytes(System.Byte,System.Int32)">
       <summary>Writes a specified number of occurrences of a byte value to the builder.</summary>
       <param name="value" />
@@ -429,13 +466,6 @@
       <exception cref="T:System.ArgumentOutOfRangeException">
         <paramref name="byteCount" /> is negative.</exception>
       <exception cref="T:System.InvalidOperationException">The builder is not writable, it has been linked with another one.</exception>
-    </member>
-    <member name="M:System.Reflection.Metadata.BlobBuilder.WriteBytes(System.Byte[])">
-      <summary>Writes the contents of a byte array to the builder.</summary>
-      <param name="buffer">The byte array to write.</param>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="buffer" /> is <see langword="null" />.</exception>
-      <exception cref="T:System.InvalidOperationException">The builder is not writable; it has been linked with another one.</exception>
     </member>
     <member name="M:System.Reflection.Metadata.BlobBuilder.WriteBytes(System.Byte[],System.Int32,System.Int32)">
       <summary>Writes a specified number of bytes starting at a specified index in a byte array to the builder.</summary>
@@ -447,12 +477,22 @@
       <exception cref="T:System.ArgumentOutOfRangeException">The range specified by <paramref name="start" /> and <paramref name="byteCount" /> falls outside of the bounds of <paramref name="buffer" />.</exception>
       <exception cref="T:System.InvalidOperationException">The builder is not writable; it has been linked with another one.</exception>
     </member>
-    <member name="M:System.Reflection.Metadata.BlobBuilder.WriteBytes(System.Collections.Immutable.ImmutableArray{System.Byte})">
-      <summary>Writes the contents of an immutable byte array to the builder.</summary>
-      <param name="buffer">The array to write.</param>
+    <member name="M:System.Reflection.Metadata.BlobBuilder.WriteBytes(System.Byte[])">
+      <summary>Writes the contents of a byte array to the builder.</summary>
+      <param name="buffer">The byte array to write.</param>
       <exception cref="T:System.ArgumentNullException">
         <paramref name="buffer" /> is <see langword="null" />.</exception>
       <exception cref="T:System.InvalidOperationException">The builder is not writable; it has been linked with another one.</exception>
+    </member>
+    <member name="M:System.Reflection.Metadata.BlobBuilder.WriteBytes(System.Byte*,System.Int32)">
+      <summary>Writes a specified number of bytes from a buffer to the builder.</summary>
+      <param name="buffer" />
+      <param name="byteCount">The number of bytes to write.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteCount" /> is negative.</exception>
+      <exception cref="T:System.InvalidOperationException">The builder is not writable, it has been linked with another one.</exception>
     </member>
     <member name="M:System.Reflection.Metadata.BlobBuilder.WriteBytes(System.Collections.Immutable.ImmutableArray{System.Byte},System.Int32,System.Int32)">
       <summary>Writes a specified number of bytes starting at a specified index of an immutable array to the builder.</summary>
@@ -462,6 +502,13 @@
       <exception cref="T:System.ArgumentNullException">
         <paramref name="buffer" /> is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">The range specified by <paramref name="start" /> and <paramref name="byteCount" /> falls outside of the bounds of the <paramref name="buffer" />.</exception>
+      <exception cref="T:System.InvalidOperationException">The builder is not writable; it has been linked with another one.</exception>
+    </member>
+    <member name="M:System.Reflection.Metadata.BlobBuilder.WriteBytes(System.Collections.Immutable.ImmutableArray{System.Byte})">
+      <summary>Writes the contents of an immutable byte array to the builder.</summary>
+      <param name="buffer">The array to write.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> is <see langword="null" />.</exception>
       <exception cref="T:System.InvalidOperationException">The builder is not writable; it has been linked with another one.</exception>
     </member>
     <member name="M:System.Reflection.Metadata.BlobBuilder.WriteCompressedInteger(System.Int32)">
@@ -729,13 +776,6 @@
     </member>
     <member name="M:System.Reflection.Metadata.BlobReader.ReadBoolean" />
     <member name="M:System.Reflection.Metadata.BlobReader.ReadByte" />
-    <member name="M:System.Reflection.Metadata.BlobReader.ReadBytes(System.Int32)">
-      <summary>Reads bytes starting at the current position.</summary>
-      <param name="byteCount">The number of bytes to read.</param>
-      <exception cref="T:System.BadImageFormatException">
-        <paramref name="byteCount" /> bytes not available.</exception>
-      <returns>The byte array.</returns>
-    </member>
     <member name="M:System.Reflection.Metadata.BlobReader.ReadBytes(System.Int32,System.Byte[],System.Int32)">
       <summary>Reads bytes starting at the current position and writes them to the specified buffer starting at the specified offset.</summary>
       <param name="byteCount">The number of bytes to read.</param>
@@ -743,6 +783,13 @@
       <param name="bufferOffset">The offset in the destination buffer where the bytes read will be written.</param>
       <exception cref="T:System.BadImageFormatException">
         <paramref name="byteCount" /> bytes not available.</exception>
+    </member>
+    <member name="M:System.Reflection.Metadata.BlobReader.ReadBytes(System.Int32)">
+      <summary>Reads bytes starting at the current position.</summary>
+      <param name="byteCount">The number of bytes to read.</param>
+      <exception cref="T:System.BadImageFormatException">
+        <paramref name="byteCount" /> bytes not available.</exception>
+      <returns>The byte array.</returns>
     </member>
     <member name="M:System.Reflection.Metadata.BlobReader.ReadChar" />
     <member name="M:System.Reflection.Metadata.BlobReader.ReadCompressedInteger">
@@ -843,13 +890,13 @@
       <summary>Gets a pointer to the byte at the start of the underlying memory block.</summary>
     </member>
     <member name="T:System.Reflection.Metadata.BlobWriter" />
-    <member name="M:System.Reflection.Metadata.BlobWriter.#ctor(System.Byte[])">
-      <param name="buffer" />
-    </member>
     <member name="M:System.Reflection.Metadata.BlobWriter.#ctor(System.Byte[],System.Int32,System.Int32)">
       <param name="buffer" />
       <param name="start" />
       <param name="count" />
+    </member>
+    <member name="M:System.Reflection.Metadata.BlobWriter.#ctor(System.Byte[])">
+      <param name="buffer" />
     </member>
     <member name="M:System.Reflection.Metadata.BlobWriter.#ctor(System.Int32)">
       <param name="size" />
@@ -886,6 +933,25 @@
     <member name="M:System.Reflection.Metadata.BlobWriter.WriteByte(System.Byte)">
       <param name="value" />
     </member>
+    <member name="M:System.Reflection.Metadata.BlobWriter.WriteBytes(System.Byte,System.Int32)">
+      <param name="value" />
+      <param name="byteCount" />
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="byteCount" /> is negative.</exception>
+    </member>
+    <member name="M:System.Reflection.Metadata.BlobWriter.WriteBytes(System.Byte[],System.Int32,System.Int32)">
+      <param name="buffer" />
+      <param name="start" />
+      <param name="byteCount" />
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Range specified by <paramref name="start" /> and <paramref name="byteCount" /> falls outside of the bounds of the <paramref name="buffer" />.</exception>
+    </member>
+    <member name="M:System.Reflection.Metadata.BlobWriter.WriteBytes(System.Byte[])">
+      <param name="buffer" />
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="buffer" /> is <see langword="null" />.</exception>
+    </member>
     <member name="M:System.Reflection.Metadata.BlobWriter.WriteBytes(System.Byte*,System.Int32)">
       <param name="buffer" />
       <param name="byteCount" />
@@ -894,18 +960,7 @@
       <exception cref="T:System.ArgumentOutOfRangeException">
         <paramref name="byteCount" /> is negative.</exception>
     </member>
-    <member name="M:System.Reflection.Metadata.BlobWriter.WriteBytes(System.Byte,System.Int32)">
-      <param name="value" />
-      <param name="byteCount" />
-      <exception cref="T:System.ArgumentOutOfRangeException">
-        <paramref name="byteCount" /> is negative.</exception>
-    </member>
-    <member name="M:System.Reflection.Metadata.BlobWriter.WriteBytes(System.Byte[])">
-      <param name="buffer" />
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="buffer" /> is <see langword="null" />.</exception>
-    </member>
-    <member name="M:System.Reflection.Metadata.BlobWriter.WriteBytes(System.Byte[],System.Int32,System.Int32)">
+    <member name="M:System.Reflection.Metadata.BlobWriter.WriteBytes(System.Collections.Immutable.ImmutableArray{System.Byte},System.Int32,System.Int32)">
       <param name="buffer" />
       <param name="start" />
       <param name="byteCount" />
@@ -917,14 +972,6 @@
       <param name="buffer" />
       <exception cref="T:System.ArgumentNullException">
         <paramref name="buffer" /> is <see langword="null" />.</exception>
-    </member>
-    <member name="M:System.Reflection.Metadata.BlobWriter.WriteBytes(System.Collections.Immutable.ImmutableArray{System.Byte},System.Int32,System.Int32)">
-      <param name="buffer" />
-      <param name="start" />
-      <param name="byteCount" />
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="buffer" /> is <see langword="null" />.</exception>
-      <exception cref="T:System.ArgumentOutOfRangeException">Range specified by <paramref name="start" /> and <paramref name="byteCount" /> falls outside of the bounds of the <paramref name="buffer" />.</exception>
     </member>
     <member name="M:System.Reflection.Metadata.BlobWriter.WriteBytes(System.IO.Stream,System.Int32)">
       <param name="source" />
@@ -3077,19 +3124,6 @@
     <member name="M:System.Reflection.Metadata.Ecma335.MethodBodyStreamEncoder.#ctor(System.Reflection.Metadata.BlobBuilder)">
       <param name="builder" />
     </member>
-    <member name="M:System.Reflection.Metadata.Ecma335.MethodBodyStreamEncoder.AddMethodBody(System.Int32,System.Int32,System.Int32,System.Boolean,System.Reflection.Metadata.StandaloneSignatureHandle,System.Reflection.Metadata.Ecma335.MethodBodyAttributes)">
-      <summary>Encodes a method body and adds it to the method body stream, using the provided code size, maximum stack size, number of exception regions, local variables' signature handle, method body attributes and allowing to indicate whether the exception regions should be encoded in small format or not.</summary>
-      <param name="codeSize">The number of bytes to be reserved for instructions.</param>
-      <param name="maxStack">The maximum stack size.</param>
-      <param name="exceptionRegionCount">The number of exception regions.</param>
-      <param name="hasSmallExceptionRegions">
-        <see langword="true" /> if the exception regions should be encoded in small format; <see langword="false" /> otherwise.</param>
-      <param name="localVariablesSignature">The local variables' signature handle.</param>
-      <param name="attributes">The method body attributes.</param>
-      <exception cref="T:System.ArgumentOutOfRangeException">
-        <paramref name="codeSize" />, <paramref name="exceptionRegionCount" />, or <paramref name="maxStack" /> is out of the allowed range.</exception>
-      <returns>The offset of the encoded body within the method body stream.</returns>
-    </member>
     <member name="M:System.Reflection.Metadata.Ecma335.MethodBodyStreamEncoder.AddMethodBody(System.Int32,System.Int32,System.Int32,System.Boolean,System.Reflection.Metadata.StandaloneSignatureHandle,System.Reflection.Metadata.Ecma335.MethodBodyAttributes,System.Boolean)">
       <summary>Encodes a method body and adds it to the method body stream, using the provided code size, maximum stack size, number of exception regions, local variables' signature handle, method body attributes, allowing to indicate whether the exception regions should be encoded in small format or not, and allowing to indicate whether the method should allocate from the dynamic local memory pool or not.</summary>
       <param name="codeSize">The number of bytes to be reserved for instructions.</param>
@@ -3105,17 +3139,17 @@
         <paramref name="codeSize" />, <paramref name="exceptionRegionCount" />, or <paramref name="maxStack" /> is out of the allowed range.</exception>
       <returns>The offset of the encoded body within the method body stream.</returns>
     </member>
-    <member name="M:System.Reflection.Metadata.Ecma335.MethodBodyStreamEncoder.AddMethodBody(System.Reflection.Metadata.Ecma335.InstructionEncoder,System.Int32,System.Reflection.Metadata.StandaloneSignatureHandle,System.Reflection.Metadata.Ecma335.MethodBodyAttributes)">
-      <summary>Encodes a method body and adds it to the method body stream.</summary>
-      <param name="instructionEncoder">The instruction encoder.</param>
+    <member name="M:System.Reflection.Metadata.Ecma335.MethodBodyStreamEncoder.AddMethodBody(System.Int32,System.Int32,System.Int32,System.Boolean,System.Reflection.Metadata.StandaloneSignatureHandle,System.Reflection.Metadata.Ecma335.MethodBodyAttributes)">
+      <summary>Encodes a method body and adds it to the method body stream, using the provided code size, maximum stack size, number of exception regions, local variables' signature handle, method body attributes and allowing to indicate whether the exception regions should be encoded in small format or not.</summary>
+      <param name="codeSize">The number of bytes to be reserved for instructions.</param>
       <param name="maxStack">The maximum stack size.</param>
+      <param name="exceptionRegionCount">The number of exception regions.</param>
+      <param name="hasSmallExceptionRegions">
+        <see langword="true" /> if the exception regions should be encoded in small format; <see langword="false" /> otherwise.</param>
       <param name="localVariablesSignature">The local variables' signature handle.</param>
       <param name="attributes">The method body attributes.</param>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="instructionEncoder" /> has default value.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">
-        <paramref name="maxStack" /> is out of range [0, <see cref="F:System.UInt16.MaxValue">UInt16.MaxValue</see>].</exception>
-      <exception cref="T:System.InvalidOperationException">A label targeted by a branch in the instruction stream has not been marked, or the distance between a branch instruction and the target label doesn't fit the size of the instruction operand.</exception>
+        <paramref name="codeSize" />, <paramref name="exceptionRegionCount" />, or <paramref name="maxStack" /> is out of the allowed range.</exception>
       <returns>The offset of the encoded body within the method body stream.</returns>
     </member>
     <member name="M:System.Reflection.Metadata.Ecma335.MethodBodyStreamEncoder.AddMethodBody(System.Reflection.Metadata.Ecma335.InstructionEncoder,System.Int32,System.Reflection.Metadata.StandaloneSignatureHandle,System.Reflection.Metadata.Ecma335.MethodBodyAttributes,System.Boolean)">
@@ -3126,6 +3160,19 @@
       <param name="attributes">The method body attributes.</param>
       <param name="hasDynamicStackAllocation">
         <see langword="true" /> if the method allocates from the dynamic local memory pool (the IL contains the <see langword="localloc" /> instruction); <see langword="false" /> otherwise.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="instructionEncoder" /> has default value.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="maxStack" /> is out of range [0, <see cref="F:System.UInt16.MaxValue">UInt16.MaxValue</see>].</exception>
+      <exception cref="T:System.InvalidOperationException">A label targeted by a branch in the instruction stream has not been marked, or the distance between a branch instruction and the target label doesn't fit the size of the instruction operand.</exception>
+      <returns>The offset of the encoded body within the method body stream.</returns>
+    </member>
+    <member name="M:System.Reflection.Metadata.Ecma335.MethodBodyStreamEncoder.AddMethodBody(System.Reflection.Metadata.Ecma335.InstructionEncoder,System.Int32,System.Reflection.Metadata.StandaloneSignatureHandle,System.Reflection.Metadata.Ecma335.MethodBodyAttributes)">
+      <summary>Encodes a method body and adds it to the method body stream.</summary>
+      <param name="instructionEncoder">The instruction encoder.</param>
+      <param name="maxStack">The maximum stack size.</param>
+      <param name="localVariablesSignature">The local variables' signature handle.</param>
+      <param name="attributes">The method body attributes.</param>
       <exception cref="T:System.ArgumentNullException">
         <paramref name="instructionEncoder" /> has default value.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">
@@ -4464,14 +4511,14 @@
       <param name="info">The object that holds the serialized object data.</param>
       <param name="context">The contextual information about the source or destination.</param>
     </member>
-    <member name="M:System.Reflection.Metadata.ImageFormatLimitationException.#ctor(System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.Reflection.Metadata.ImageFormatLimitationException" /> class with a specified error message.</summary>
-      <param name="message">The error message that explains the reason for this exception.</param>
-    </member>
     <member name="M:System.Reflection.Metadata.ImageFormatLimitationException.#ctor(System.String,System.Exception)">
       <summary>Initializes a new instance of the <see cref="T:System.Reflection.Metadata.ImageFormatLimitationException" /> class with a specified error message and the exception that is the cause of this exception.</summary>
       <param name="message">The error message that explains the reason for this exception.</param>
       <param name="innerException">The exception that is the cause of the current exception, or <see langword="null" /> if no inner exception is specified.</param>
+    </member>
+    <member name="M:System.Reflection.Metadata.ImageFormatLimitationException.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Reflection.Metadata.ImageFormatLimitationException" /> class with a specified error message.</summary>
+      <param name="message">The error message that explains the reason for this exception.</param>
     </member>
     <member name="T:System.Reflection.Metadata.ImportDefinition" />
     <member name="P:System.Reflection.Metadata.ImportDefinition.Alias" />
@@ -5185,17 +5232,6 @@
     <member name="T:System.Reflection.Metadata.MetadataReader">
       <summary>Reads metadata as defined by the ECMA 335 CLI specification.</summary>
     </member>
-    <member name="M:System.Reflection.Metadata.MetadataReader.#ctor(System.Byte*,System.Int32)">
-      <summary>Initializes a new instance of the <see cref="T:System.Reflection.Metadata.MetadataReader" /> class from the metadata stored at the given memory location.</summary>
-      <param name="metadata">A pointer to the first byte in a block of metadata.</param>
-      <param name="length">The number of bytes in the block.</param>
-    </member>
-    <member name="M:System.Reflection.Metadata.MetadataReader.#ctor(System.Byte*,System.Int32,System.Reflection.Metadata.MetadataReaderOptions)">
-      <summary>Initializes a new instance of the <see cref="T:System.Reflection.Metadata.MetadataReader" /> class from the metadata stored at the given memory location.</summary>
-      <param name="metadata" />
-      <param name="length" />
-      <param name="options" />
-    </member>
     <member name="M:System.Reflection.Metadata.MetadataReader.#ctor(System.Byte*,System.Int32,System.Reflection.Metadata.MetadataReaderOptions,System.Reflection.Metadata.MetadataStringDecoder)">
       <summary>Initializes a new instance of the <see cref="T:System.Reflection.Metadata.MetadataReader" /> class from the metadata stored at the given memory location.</summary>
       <param name="metadata" />
@@ -5209,6 +5245,17 @@
       <exception cref="T:System.ArgumentException">The encoding of <paramref name="utf8Decoder" /> is not <see cref="T:System.Text.UTF8Encoding" />.</exception>
       <exception cref="T:System.PlatformNotSupportedException">The current platform is big-endian.</exception>
       <exception cref="T:System.BadImageFormatException">Bad metadata header.</exception>
+    </member>
+    <member name="M:System.Reflection.Metadata.MetadataReader.#ctor(System.Byte*,System.Int32,System.Reflection.Metadata.MetadataReaderOptions)">
+      <summary>Initializes a new instance of the <see cref="T:System.Reflection.Metadata.MetadataReader" /> class from the metadata stored at the given memory location.</summary>
+      <param name="metadata" />
+      <param name="length" />
+      <param name="options" />
+    </member>
+    <member name="M:System.Reflection.Metadata.MetadataReader.#ctor(System.Byte*,System.Int32)">
+      <summary>Initializes a new instance of the <see cref="T:System.Reflection.Metadata.MetadataReader" /> class from the metadata stored at the given memory location.</summary>
+      <param name="metadata">A pointer to the first byte in a block of metadata.</param>
+      <param name="length">The number of bytes in the block.</param>
     </member>
     <member name="M:System.Reflection.Metadata.MetadataReader.GetAssemblyDefinition" />
     <member name="M:System.Reflection.Metadata.MetadataReader.GetAssemblyFile(System.Reflection.Metadata.AssemblyFileHandle)">
@@ -5519,16 +5566,12 @@
     <member name="T:System.Reflection.Metadata.MetadataStringComparer">
       <summary>Provides string comparison helpers to query strings in metadata while avoiding allocation if possible.</summary>
     </member>
-    <member name="M:System.Reflection.Metadata.MetadataStringComparer.Equals(System.Reflection.Metadata.DocumentNameBlobHandle,System.String)">
-      <param name="handle" />
-      <param name="value" />
-    </member>
     <member name="M:System.Reflection.Metadata.MetadataStringComparer.Equals(System.Reflection.Metadata.DocumentNameBlobHandle,System.String,System.Boolean)">
       <param name="handle" />
       <param name="value" />
       <param name="ignoreCase" />
     </member>
-    <member name="M:System.Reflection.Metadata.MetadataStringComparer.Equals(System.Reflection.Metadata.NamespaceDefinitionHandle,System.String)">
+    <member name="M:System.Reflection.Metadata.MetadataStringComparer.Equals(System.Reflection.Metadata.DocumentNameBlobHandle,System.String)">
       <param name="handle" />
       <param name="value" />
     </member>
@@ -5537,7 +5580,7 @@
       <param name="value" />
       <param name="ignoreCase" />
     </member>
-    <member name="M:System.Reflection.Metadata.MetadataStringComparer.Equals(System.Reflection.Metadata.StringHandle,System.String)">
+    <member name="M:System.Reflection.Metadata.MetadataStringComparer.Equals(System.Reflection.Metadata.NamespaceDefinitionHandle,System.String)">
       <param name="handle" />
       <param name="value" />
     </member>
@@ -5546,7 +5589,7 @@
       <param name="value" />
       <param name="ignoreCase" />
     </member>
-    <member name="M:System.Reflection.Metadata.MetadataStringComparer.StartsWith(System.Reflection.Metadata.StringHandle,System.String)">
+    <member name="M:System.Reflection.Metadata.MetadataStringComparer.Equals(System.Reflection.Metadata.StringHandle,System.String)">
       <param name="handle" />
       <param name="value" />
     </member>
@@ -5554,6 +5597,10 @@
       <param name="handle" />
       <param name="value" />
       <param name="ignoreCase" />
+    </member>
+    <member name="M:System.Reflection.Metadata.MetadataStringComparer.StartsWith(System.Reflection.Metadata.StringHandle,System.String)">
+      <param name="handle" />
+      <param name="value" />
     </member>
     <member name="T:System.Reflection.Metadata.MetadataStringDecoder">
       <summary>Provides the <see cref="T:System.Reflection.Metadata.MetadataReader" /> with a custom mechanism for decoding byte sequences in metadata that represent text.</summary>
@@ -6154,25 +6201,6 @@
       <returns>The element in the collection at the current position of the enumerator.</returns>
     </member>
     <member name="T:System.Reflection.Metadata.PEReaderExtensions" />
-    <member name="M:System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader)">
-      <summary>Gets a <see cref="T:System.Reflection.Metadata.MetadataReader" /> from a <see cref="T:System.Reflection.PortableExecutable.PEReader" />.</summary>
-      <param name="peReader">The current <see cref="T:System.Reflection.PortableExecutable.PEReader" /> instance.</param>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="peReader" /> is <see langword="null" />.</exception>
-      <exception cref="T:System.PlatformNotSupportedException">The current platform is big-endian.</exception>
-      <exception cref="T:System.IO.IOException">IO error while reading from the underlying stream.</exception>
-      <returns>A metadata reader.</returns>
-    </member>
-    <member name="M:System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader,System.Reflection.Metadata.MetadataReaderOptions)">
-      <summary>Gets a metadata reader with the specified metadata reading configuration from a <see cref="T:System.Reflection.PortableExecutable.PEReader" />.</summary>
-      <param name="peReader">The current <see cref="T:System.Reflection.PortableExecutable.PEReader" /> instance.</param>
-      <param name="options">An enumeration value indicating the metadata reading configuration.</param>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="peReader" /> is <see langword="null" />.</exception>
-      <exception cref="T:System.PlatformNotSupportedException">The current platform is big-endian.</exception>
-      <exception cref="T:System.IO.IOException">IO error while reading from the underlying stream.</exception>
-      <returns>A metadata reader with the specified metadata reading configuration.</returns>
-    </member>
     <member name="M:System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader,System.Reflection.Metadata.MetadataReaderOptions,System.Reflection.Metadata.MetadataStringDecoder)">
       <summary>Gets a metadata reader with the specified metadata reading configuration and encoding configuration from a <see cref="T:System.Reflection.PortableExecutable.PEReader" />.</summary>
       <param name="peReader">The current <see cref="T:System.Reflection.PortableExecutable.PEReader" /> instance.</param>
@@ -6184,6 +6212,25 @@
       <exception cref="T:System.PlatformNotSupportedException">The current platform is big-endian.</exception>
       <exception cref="T:System.IO.IOException">IO error while reading from the underlying stream.</exception>
       <returns>&gt;A metadata reader with the specified metadata reading configuration and encoding configuration.</returns>
+    </member>
+    <member name="M:System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader,System.Reflection.Metadata.MetadataReaderOptions)">
+      <summary>Gets a metadata reader with the specified metadata reading configuration from a <see cref="T:System.Reflection.PortableExecutable.PEReader" />.</summary>
+      <param name="peReader">The current <see cref="T:System.Reflection.PortableExecutable.PEReader" /> instance.</param>
+      <param name="options">An enumeration value indicating the metadata reading configuration.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="peReader" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.PlatformNotSupportedException">The current platform is big-endian.</exception>
+      <exception cref="T:System.IO.IOException">IO error while reading from the underlying stream.</exception>
+      <returns>A metadata reader with the specified metadata reading configuration.</returns>
+    </member>
+    <member name="M:System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader)">
+      <summary>Gets a <see cref="T:System.Reflection.Metadata.MetadataReader" /> from a <see cref="T:System.Reflection.PortableExecutable.PEReader" />.</summary>
+      <param name="peReader">The current <see cref="T:System.Reflection.PortableExecutable.PEReader" /> instance.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="peReader" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.PlatformNotSupportedException">The current platform is big-endian.</exception>
+      <exception cref="T:System.IO.IOException">IO error while reading from the underlying stream.</exception>
+      <returns>A metadata reader.</returns>
     </member>
     <member name="M:System.Reflection.Metadata.PEReaderExtensions.GetMethodBody(System.Reflection.PortableExecutable.PEReader,System.Int32)">
       <summary>Returns a body block of a method with the specified Relative Virtual Address (RVA).</summary>
@@ -6988,6 +7035,136 @@
     <member name="P:System.Reflection.Metadata.TypeLayout.IsDefault" />
     <member name="P:System.Reflection.Metadata.TypeLayout.PackingSize" />
     <member name="P:System.Reflection.Metadata.TypeLayout.Size" />
+    <member name="T:System.Reflection.Metadata.TypeName" />
+    <member name="M:System.Reflection.Metadata.TypeName.GetArrayRank">
+      <summary>Gets the number of dimensions in an array.</summary>
+      <exception cref="T:System.InvalidOperationException">The current type is not an array.</exception>
+      <returns>An integer that contains the number of dimensions in the current type.</returns>
+    </member>
+    <member name="M:System.Reflection.Metadata.TypeName.GetElementType">
+      <summary>Gets the TypeName of the object encompassed or referred to by the current array, pointer, or reference type.</summary>
+      <exception cref="T:System.InvalidOperationException">The current type is not an array, pointer or reference.</exception>
+    </member>
+    <member name="M:System.Reflection.Metadata.TypeName.GetGenericArguments">
+      <summary>
+        <para>If this <see cref="T:System.Reflection.Metadata.TypeName" /> represents a constructed generic type, returns an array</para>
+        <para>of all the generic arguments. Otherwise it returns an empty array.</para>
+      </summary>
+    </member>
+    <member name="M:System.Reflection.Metadata.TypeName.GetGenericTypeDefinition">
+      <summary>Returns a TypeName object that represents a generic type name definition from which the current generic type name can be constructed.</summary>
+      <exception cref="T:System.InvalidOperationException">The current type is not a generic type.</exception>
+    </member>
+    <member name="M:System.Reflection.Metadata.TypeName.GetNodeCount">
+      <summary>
+        <para>Gets the total number of <see cref="T:System.Reflection.Metadata.TypeName" /> instances that are used to describe</para>
+        <para>this instance, including any generic arguments or underlying types.</para>
+      </summary>
+    </member>
+    <member name="M:System.Reflection.Metadata.TypeName.MakeArrayTypeName(System.Int32)">
+      <param name="rank" />
+    </member>
+    <member name="M:System.Reflection.Metadata.TypeName.MakeByRefTypeName" />
+    <member name="M:System.Reflection.Metadata.TypeName.MakeGenericTypeName(System.Collections.Immutable.ImmutableArray{System.Reflection.Metadata.TypeName})">
+      <param name="typeArguments" />
+    </member>
+    <member name="M:System.Reflection.Metadata.TypeName.MakePointerTypeName" />
+    <member name="M:System.Reflection.Metadata.TypeName.MakeSZArrayTypeName" />
+    <member name="M:System.Reflection.Metadata.TypeName.Parse(System.ReadOnlySpan{System.Char},System.Reflection.Metadata.TypeNameParseOptions)">
+      <summary>Parses a span of characters into a type name.</summary>
+      <param name="typeName">A span containing the characters representing the type name to parse.</param>
+      <param name="options">An object that describes optional <see cref="T:System.Reflection.Metadata.TypeNameParseOptions" /> parameters to use.</param>
+      <exception cref="T:System.ArgumentException">Provided type name was invalid.</exception>
+      <exception cref="T:System.InvalidOperationException">Parsing has exceeded the limit set by <see cref="P:System.Reflection.Metadata.TypeNameParseOptions.MaxNodes" />.</exception>
+      <returns>Parsed type name.</returns>
+    </member>
+    <member name="M:System.Reflection.Metadata.TypeName.TryParse(System.ReadOnlySpan{System.Char},System.Reflection.Metadata.TypeName@,System.Reflection.Metadata.TypeNameParseOptions)">
+      <summary>Tries to parse a span of characters into a type name.</summary>
+      <param name="typeName">A span containing the characters representing the type name to parse.</param>
+      <param name="result">Contains the result when parsing succeeds.</param>
+      <param name="options">An object that describes optional <see cref="T:System.Reflection.Metadata.TypeNameParseOptions" /> parameters to use.</param>
+      <returns>
+        <see langword="true" /> if type name was converted successfully, otherwise, <see langword="false" />.</returns>
+    </member>
+    <member name="M:System.Reflection.Metadata.TypeName.WithAssemblyName(System.Reflection.Metadata.AssemblyNameInfo)">
+      <param name="assemblyName" />
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.AssemblyName">
+      <summary>
+        <para>Returns assembly name that contains this type, or <see langword="null" /> if this <see cref="T:System.Reflection.Metadata.TypeName" /> was not</para>
+        <para>created from a fully qualified name.</para>
+      </summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.AssemblyQualifiedName">
+      <summary>Gets the assembly-qualified name of the type; for example, "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".</summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.DeclaringType">
+      <summary>
+        <para>If this type is a nested type (see <see cref="P:System.Reflection.Metadata.TypeName.IsNested" />), gets</para>
+        <para>the declaring type. If this type is not a nested type, throws.</para>
+      </summary>
+      <exception cref="T:System.InvalidOperationException">The current type is not a nested type.</exception>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.FullName">
+      <summary>
+        <para>Gets the full name of this type, including namespace, but without the assembly name; for example, "System.Int32".</para>
+        <para>Nested types are represented with a '+'; for example, "MyNamespace.MyType+NestedType".</para>
+      </summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.IsArray">
+      <summary>
+        <para>Gets a value that indicates whether this type represents any kind of array, regardless of the array's</para>
+        <para>rank or its bounds.</para>
+      </summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.IsByRef">
+      <summary>
+        <para>Gets a value that indicates whether this is a managed pointer type (for example, "ref int").</para>
+        <para>Managed pointer types are sometimes called byref types (<see cref="P:System.Type.IsByRef" />).</para>
+      </summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.IsConstructedGenericType">
+      <summary>Gets a value that indicates whether this type represents a constructed generic type (for example, "List&lt;int&gt;").</summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.IsNested">
+      <summary>
+        <para>Gets a value that indicates whether this is a nested type (for example, "Namespace.Declaring+Nested").</para>
+        <para>For nested types <see cref="P:System.Reflection.Metadata.TypeName.DeclaringType" /> returns their declaring type.</para>
+      </summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.IsPointer">
+      <summary>
+        <para>Gets a value that indicates whether this type represents an unmanaged pointer (for example, "int*" or "void*").</para>
+        <para>Unmanaged pointer types are often just called pointers (<see cref="P:System.Type.IsPointer" />).</para>
+      </summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.IsSimple">
+      <summary>
+        <para>Gets a value that indicates whether this is a "plain" type; that is, not an array, not a pointer, not a reference, and</para>
+        <para>not a constructed generic type. Examples of elemental types are "System.Int32",</para>
+        <para>"System.Uri", and "YourNamespace.YourClass".</para>
+      </summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.IsSZArray">
+      <summary>Gets a value that indicates whether this type represents a single-dimensional, zero-indexed array (for example, "int[]").</summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.IsVariableBoundArrayType">
+      <summary>
+        <para>Gets a value that indicates whether this type represents a variable-bound array; that is, an array of rank greater</para>
+        <para>than 1 (for example, "int[,]") or a single-dimensional array that isn't necessarily zero-indexed.</para>
+      </summary>
+    </member>
+    <member name="P:System.Reflection.Metadata.TypeName.Name">
+      <summary>
+        <para>Gets the name of this type, without the namespace and the assembly name; for example, "Int32".</para>
+        <para>Nested types are represented without a '+'; for example, "MyNamespace.MyType+NestedType" is just "NestedType".</para>
+      </summary>
+    </member>
+    <member name="T:System.Reflection.Metadata.TypeNameParseOptions" />
+    <member name="M:System.Reflection.Metadata.TypeNameParseOptions.#ctor" />
+    <member name="P:System.Reflection.Metadata.TypeNameParseOptions.MaxNodes">
+      <summary>Limits the maximum <see cref="M:System.Reflection.Metadata.TypeName.GetNodeCount">number of nodes</see> that the parser can handle.</summary>
+    </member>
     <member name="T:System.Reflection.Metadata.TypeReference" />
     <member name="P:System.Reflection.Metadata.TypeReference.Name">
       <summary>Gets the name of the target type.</summary>
@@ -7346,33 +7523,56 @@
     <member name="F:System.Reflection.PortableExecutable.CorFlags.TrackDebugData">
       <summary>Reserved, shall be 0.</summary>
     </member>
-    <member name="T:System.Reflection.PortableExecutable.CorHeader" />
-    <member name="P:System.Reflection.PortableExecutable.CorHeader.CodeManagerTableDirectory" />
-    <member name="P:System.Reflection.PortableExecutable.CorHeader.EntryPointTokenOrRelativeVirtualAddress" />
-    <member name="P:System.Reflection.PortableExecutable.CorHeader.ExportAddressTableJumpsDirectory" />
-    <member name="P:System.Reflection.PortableExecutable.CorHeader.Flags" />
-    <member name="P:System.Reflection.PortableExecutable.CorHeader.MajorRuntimeVersion" />
-    <member name="P:System.Reflection.PortableExecutable.CorHeader.ManagedNativeHeaderDirectory" />
-    <member name="P:System.Reflection.PortableExecutable.CorHeader.MetadataDirectory" />
-    <member name="P:System.Reflection.PortableExecutable.CorHeader.MinorRuntimeVersion" />
-    <member name="P:System.Reflection.PortableExecutable.CorHeader.ResourcesDirectory" />
-    <member name="P:System.Reflection.PortableExecutable.CorHeader.StrongNameSignatureDirectory" />
-    <member name="P:System.Reflection.PortableExecutable.CorHeader.VtableFixupsDirectory" />
+    <member name="T:System.Reflection.PortableExecutable.CorHeader">
+      <summary>Represents the Common Language Infrastructure (CLI) header of the .NET executable image.</summary>
+    </member>
+    <member name="P:System.Reflection.PortableExecutable.CorHeader.CodeManagerTableDirectory">
+      <summary>Gets the Code Manager Table entry.</summary>
+      <returns>The Code Manager Table entry.</returns>
+    </member>
+    <member name="P:System.Reflection.PortableExecutable.CorHeader.EntryPointTokenOrRelativeVirtualAddress">
+      <summary>Gets the metadata token of the entry point method of this image.</summary>
+      <returns>The metadata token of the entry point method.</returns>
+    </member>
+    <member name="P:System.Reflection.PortableExecutable.CorHeader.ExportAddressTableJumpsDirectory">
+      <summary>Gets the Export Address Table Jumps entry.</summary>
+      <returns>The Export Address Table Jumps entry.</returns>
+    </member>
+    <member name="P:System.Reflection.PortableExecutable.CorHeader.Flags">
+      <summary>Gets the runtime flags for this image.</summary>
+      <returns>A bitwise combination of runtime flags.</returns>
+    </member>
+    <member name="P:System.Reflection.PortableExecutable.CorHeader.MajorRuntimeVersion">
+      <summary>Gets the major part of the runtime version required to load this image.</summary>
+      <returns>The major part of the runtime version</returns>
+    </member>
+    <member name="P:System.Reflection.PortableExecutable.CorHeader.ManagedNativeHeaderDirectory">
+      <summary>Gets the Managed Native Header entry.</summary>
+      <returns>The Managed Native Header entry.</returns>
+    </member>
+    <member name="P:System.Reflection.PortableExecutable.CorHeader.MetadataDirectory">
+      <summary>Gets the Metadata entry.</summary>
+      <returns>The Metadata entry.</returns>
+    </member>
+    <member name="P:System.Reflection.PortableExecutable.CorHeader.MinorRuntimeVersion">
+      <summary>Gets the minor part of the runtime version required to load this image.</summary>
+      <returns>The minor part of the runtime version.</returns>
+    </member>
+    <member name="P:System.Reflection.PortableExecutable.CorHeader.ResourcesDirectory">
+      <summary>Gets the Resources entry.</summary>
+      <returns>The Resources entry.</returns>
+    </member>
+    <member name="P:System.Reflection.PortableExecutable.CorHeader.StrongNameSignatureDirectory">
+      <summary>Gets the Strong Name Signature entry.</summary>
+      <returns>The Strong Name Signature entry.</returns>
+    </member>
+    <member name="P:System.Reflection.PortableExecutable.CorHeader.VtableFixupsDirectory">
+      <summary>Gets the VTable Fixups entry.</summary>
+      <returns>The VTable Fixups entry.</returns>
+    </member>
     <member name="T:System.Reflection.PortableExecutable.DebugDirectoryBuilder" />
     <member name="M:System.Reflection.PortableExecutable.DebugDirectoryBuilder.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.Reflection.PortableExecutable.DebugDirectoryBuilder" /> class.</summary>
-    </member>
-    <member name="M:System.Reflection.PortableExecutable.DebugDirectoryBuilder.AddCodeViewEntry(System.String,System.Reflection.Metadata.BlobContentId,System.UInt16)">
-      <summary>Adds a CodeView entry.</summary>
-      <param name="pdbPath">The path to the PDB. It should not be empty.</param>
-      <param name="pdbContentId">The unique id of the PDB content.</param>
-      <param name="portablePdbVersion">The version of Portable PDB format (e.g. 0x0100 for 1.0), or 0 if the PDB is not portable.</param>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="pdbPath" /> is <see langword="null" />.</exception>
-      <exception cref="T:System.ArgumentException">
-        <paramref name="pdbPath" /> contains a NUL character.</exception>
-      <exception cref="T:System.ArgumentOutOfRangeException">
-        <paramref name="portablePdbVersion" /> is smaller than 0x0100.</exception>
     </member>
     <member name="M:System.Reflection.PortableExecutable.DebugDirectoryBuilder.AddCodeViewEntry(System.String,System.Reflection.Metadata.BlobContentId,System.UInt16,System.Int32)">
       <summary>Adds a CodeView entry.</summary>
@@ -7386,6 +7586,18 @@
         <paramref name="pdbPath" /> contains a NUL character.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">
           Either <paramref name="portablePdbVersion" /> is smaller than 0x0100 or <paramref name="age" /> is less than 1.</exception>
+    </member>
+    <member name="M:System.Reflection.PortableExecutable.DebugDirectoryBuilder.AddCodeViewEntry(System.String,System.Reflection.Metadata.BlobContentId,System.UInt16)">
+      <summary>Adds a CodeView entry.</summary>
+      <param name="pdbPath">The path to the PDB. It should not be empty.</param>
+      <param name="pdbContentId">The unique id of the PDB content.</param>
+      <param name="portablePdbVersion">The version of Portable PDB format (e.g. 0x0100 for 1.0), or 0 if the PDB is not portable.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="pdbPath" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="pdbPath" /> contains a NUL character.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="portablePdbVersion" /> is smaller than 0x0100.</exception>
     </member>
     <member name="M:System.Reflection.PortableExecutable.DebugDirectoryBuilder.AddEmbeddedPortablePdbEntry(System.Reflection.Metadata.BlobBuilder,System.UInt16)">
       <summary>Adds an Embedded Portable PDB entry.</summary>
@@ -7501,12 +7713,19 @@
     <member name="F:System.Reflection.PortableExecutable.DebugDirectoryEntryType.Unknown">
       <summary>An unknown value that should be ignored by all tools.</summary>
     </member>
-    <member name="T:System.Reflection.PortableExecutable.DirectoryEntry" />
-    <member name="F:System.Reflection.PortableExecutable.DirectoryEntry.RelativeVirtualAddress" />
-    <member name="F:System.Reflection.PortableExecutable.DirectoryEntry.Size" />
+    <member name="T:System.Reflection.PortableExecutable.DirectoryEntry">
+      <summary>Represents a directory entry in the Portable Executable (PE) image.</summary>
+    </member>
+    <member name="F:System.Reflection.PortableExecutable.DirectoryEntry.RelativeVirtualAddress">
+      <summary>Specifies the address of the entry relative to the base address of the image.</summary>
+    </member>
+    <member name="F:System.Reflection.PortableExecutable.DirectoryEntry.Size">
+      <summary>Specifies the size of the entry, in bytes.</summary>
+    </member>
     <member name="M:System.Reflection.PortableExecutable.DirectoryEntry.#ctor(System.Int32,System.Int32)">
-      <param name="relativeVirtualAddress" />
-      <param name="size" />
+      <summary>Instantiates a new instance of the <see cref="T:System.Reflection.PortableExecutable.DirectoryEntry" /> structure.</summary>
+      <param name="relativeVirtualAddress">The Relative Virtual Address of the entry.</param>
+      <param name="size">The size of the entry, in bytes.</param>
     </member>
     <member name="T:System.Reflection.PortableExecutable.DllCharacteristics">
       <summary>Describes the characteristics of a dynamic link library.</summary>
@@ -7612,6 +7831,15 @@
     </member>
     <member name="F:System.Reflection.PortableExecutable.Machine.PowerPCFP">
       <summary>PowerPCFP.</summary>
+    </member>
+    <member name="F:System.Reflection.PortableExecutable.Machine.RiscV128">
+      <summary>RISCV128</summary>
+    </member>
+    <member name="F:System.Reflection.PortableExecutable.Machine.RiscV32">
+      <summary>RISCV32</summary>
+    </member>
+    <member name="F:System.Reflection.PortableExecutable.Machine.RiscV64">
+      <summary>RISCV64</summary>
     </member>
     <member name="F:System.Reflection.PortableExecutable.Machine.SH3">
       <summary>Hitachi SH3 little endian.</summary>
@@ -8061,27 +8289,6 @@
     <member name="T:System.Reflection.PortableExecutable.PEHeaders">
       <summary>Defines a type that reads PE (Portable Executable) and COFF (Common Object File Format) headers from a stream.</summary>
     </member>
-    <member name="M:System.Reflection.PortableExecutable.PEHeaders.#ctor(System.IO.Stream)">
-      <summary>Instantiates a new instance of the <see cref="T:System.Reflection.PortableExecutable.PEHeaders" /> class that reads the PE headers from the current location in the specified stream.</summary>
-      <param name="peStream">A stream containing the PE image starting at the stream's current position and ending at the end of the stream.</param>
-      <exception cref="T:System.BadImageFormatException">The data read from the stream has an invalid format.</exception>
-      <exception cref="T:System.IO.IOException">Error reading from the stream.</exception>
-      <exception cref="T:System.ArgumentException">The stream does not support seek operations.</exception>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="peStream" /> is <see langword="null" />.</exception>
-    </member>
-    <member name="M:System.Reflection.PortableExecutable.PEHeaders.#ctor(System.IO.Stream,System.Int32)">
-      <summary>Instantiates a new instance of the <see cref="T:System.Reflection.PortableExecutable.PEHeaders" /> class that reads the PE headers from a stream that represents a PE image of a specified size.</summary>
-      <param name="peStream">A stream containing PE image of the given size starting at its current position.</param>
-      <param name="size">The size of the PE image.</param>
-      <exception cref="T:System.BadImageFormatException">The data read from the stream has an invalid format.</exception>
-      <exception cref="T:System.IO.IOException">Error reading from the stream.</exception>
-      <exception cref="T:System.ArgumentException">The stream does not support seek operations.</exception>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="peStream" /> is <see langword="null" />.</exception>
-      <exception cref="T:System.ArgumentOutOfRangeException">
-        <paramref name="size" /> is negative or extends past the end of the stream.</exception>
-    </member>
     <member name="M:System.Reflection.PortableExecutable.PEHeaders.#ctor(System.IO.Stream,System.Int32,System.Boolean)">
       <summary>Instantiates a new instance of the <see cref="T:System.Reflection.PortableExecutable.PEHeaders" /> class that reads the PE headers from a stream that represents a PE image of a specified size and indicates whether the PE image has been loaded into memory.</summary>
       <param name="peStream">The stream containing PE image of the given size starting at its current position.</param>
@@ -8095,6 +8302,27 @@
         <paramref name="peStream" /> is <see langword="null" />.</exception>
       <exception cref="T:System.ArgumentOutOfRangeException">
         <paramref name="size" /> is negative or extends past the end of the stream.</exception>
+    </member>
+    <member name="M:System.Reflection.PortableExecutable.PEHeaders.#ctor(System.IO.Stream,System.Int32)">
+      <summary>Instantiates a new instance of the <see cref="T:System.Reflection.PortableExecutable.PEHeaders" /> class that reads the PE headers from a stream that represents a PE image of a specified size.</summary>
+      <param name="peStream">A stream containing PE image of the given size starting at its current position.</param>
+      <param name="size">The size of the PE image.</param>
+      <exception cref="T:System.BadImageFormatException">The data read from the stream has an invalid format.</exception>
+      <exception cref="T:System.IO.IOException">Error reading from the stream.</exception>
+      <exception cref="T:System.ArgumentException">The stream does not support seek operations.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="peStream" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="size" /> is negative or extends past the end of the stream.</exception>
+    </member>
+    <member name="M:System.Reflection.PortableExecutable.PEHeaders.#ctor(System.IO.Stream)">
+      <summary>Instantiates a new instance of the <see cref="T:System.Reflection.PortableExecutable.PEHeaders" /> class that reads the PE headers from the current location in the specified stream.</summary>
+      <param name="peStream">A stream containing the PE image starting at the stream's current position and ending at the end of the stream.</param>
+      <exception cref="T:System.BadImageFormatException">The data read from the stream has an invalid format.</exception>
+      <exception cref="T:System.IO.IOException">Error reading from the stream.</exception>
+      <exception cref="T:System.ArgumentException">The stream does not support seek operations.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="peStream" /> is <see langword="null" />.</exception>
     </member>
     <member name="M:System.Reflection.PortableExecutable.PEHeaders.GetContainingSectionIndex(System.Int32)">
       <summary>Searches sections of the PE image for the section that contains the specified Relative Virtual Address.</summary>
@@ -8167,7 +8395,9 @@
     <member name="T:System.Reflection.PortableExecutable.PEMagic" />
     <member name="F:System.Reflection.PortableExecutable.PEMagic.PE32" />
     <member name="F:System.Reflection.PortableExecutable.PEMagic.PE32Plus" />
-    <member name="T:System.Reflection.PortableExecutable.PEMemoryBlock" />
+    <member name="T:System.Reflection.PortableExecutable.PEMemoryBlock">
+      <summary>Represents a block of memory in the Portable Executable (PE) image.</summary>
+    </member>
     <member name="M:System.Reflection.PortableExecutable.PEMemoryBlock.GetContent">
       <summary>Reads the contents of the entire block into an array.</summary>
       <returns>An immutable byte array.</returns>
@@ -8201,15 +8431,6 @@
     <member name="T:System.Reflection.PortableExecutable.PEReader">
       <summary>Provides a reader for Portable Executable format (PE) files.</summary>
     </member>
-    <member name="M:System.Reflection.PortableExecutable.PEReader.#ctor(System.Byte*,System.Int32)">
-      <summary>Creates a Portable Executable reader over a PE image stored in memory.</summary>
-      <param name="peImage">A pointer to the start of the PE image.</param>
-      <param name="size">The size of the PE image.</param>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="peImage" /> is <see cref="F:System.IntPtr.Zero" />.</exception>
-      <exception cref="T:System.ArgumentOutOfRangeException">
-        <paramref name="size" /> is negative.</exception>
-    </member>
     <member name="M:System.Reflection.PortableExecutable.PEReader.#ctor(System.Byte*,System.Int32,System.Boolean)">
       <summary>Creates a Portable Executable reader over a PE image stored in memory. A flag indicates whether the image has already been loaded into memory.</summary>
       <param name="peImage">A pointer to the start of the PE image.</param>
@@ -8221,17 +8442,31 @@
       <exception cref="T:System.ArgumentOutOfRangeException">
         <paramref name="size" /> is negative.</exception>
     </member>
+    <member name="M:System.Reflection.PortableExecutable.PEReader.#ctor(System.Byte*,System.Int32)">
+      <summary>Creates a Portable Executable reader over a PE image stored in memory.</summary>
+      <param name="peImage">A pointer to the start of the PE image.</param>
+      <param name="size">The size of the PE image.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="peImage" /> is <see cref="F:System.IntPtr.Zero" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="size" /> is negative.</exception>
+    </member>
     <member name="M:System.Reflection.PortableExecutable.PEReader.#ctor(System.Collections.Immutable.ImmutableArray{System.Byte})">
       <summary>Creates a Portable Executable reader over a PE image stored in a byte array.</summary>
       <param name="peImage">An immutable array of bytes representing the PE image.</param>
       <exception cref="T:System.ArgumentNullException">
         <paramref name="peImage" /> is <see langword="null" />.</exception>
     </member>
-    <member name="M:System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream)">
-      <summary>Creates a Portable Executable reader over a PE image stored in a stream.</summary>
-      <param name="peStream">PE image stream.</param>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="peStream" /> is <see langword="null" />.</exception>
+    <member name="M:System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream,System.Reflection.PortableExecutable.PEStreamOptions,System.Int32)">
+      <summary>Creates a Portable Executable reader over a PE image of the given size beginning at the stream's current position.</summary>
+      <param name="peStream">A PE image stream.</param>
+      <param name="options">Options specifying how sections of the PE image are read from the stream.</param>
+      <param name="size">The PE image size.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="size" /> is negative or extends past the end of the stream.</exception>
+      <exception cref="T:System.IO.IOException">Error reading from the stream (only when prefetching data).</exception>
+      <exception cref="T:System.BadImageFormatException">
+        <see cref="F:System.Reflection.PortableExecutable.PEStreamOptions.PrefetchMetadata" /> is specified, and the PE headers of the image are invalid.</exception>
     </member>
     <member name="M:System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream,System.Reflection.PortableExecutable.PEStreamOptions)">
       <summary>Creates a Portable Executable reader over a PE image stored in a stream beginning at its current position and ending at the end of the stream.</summary>
@@ -8245,16 +8480,11 @@
       <exception cref="T:System.BadImageFormatException">
         <see cref="F:System.Reflection.PortableExecutable.PEStreamOptions.PrefetchMetadata" /> is specified, and the PE headers of the image are invalid.</exception>
     </member>
-    <member name="M:System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream,System.Reflection.PortableExecutable.PEStreamOptions,System.Int32)">
-      <summary>Creates a Portable Executable reader over a PE image of the given size beginning at the stream's current position.</summary>
-      <param name="peStream">A PE image stream.</param>
-      <param name="options">Options specifying how sections of the PE image are read from the stream.</param>
-      <param name="size">The PE image size.</param>
-      <exception cref="T:System.ArgumentOutOfRangeException">
-        <paramref name="size" /> is negative or extends past the end of the stream.</exception>
-      <exception cref="T:System.IO.IOException">Error reading from the stream (only when prefetching data).</exception>
-      <exception cref="T:System.BadImageFormatException">
-        <see cref="F:System.Reflection.PortableExecutable.PEStreamOptions.PrefetchMetadata" /> is specified, and the PE headers of the image are invalid.</exception>
+    <member name="M:System.Reflection.PortableExecutable.PEReader.#ctor(System.IO.Stream)">
+      <summary>Creates a Portable Executable reader over a PE image stored in a stream.</summary>
+      <param name="peStream">PE image stream.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="peStream" /> is <see langword="null" />.</exception>
     </member>
     <member name="M:System.Reflection.PortableExecutable.PEReader.Dispose">
       <summary>Disposes all memory allocated by the reader.</summary>

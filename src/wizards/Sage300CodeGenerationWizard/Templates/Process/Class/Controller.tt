@@ -39,7 +39,7 @@
 #region Namespace
 
 using System.Web.Routing;
-using Microsoft.Practices.Unity;
+using Unity;
 using <#=companyNamespace#>.<#=moduleId#>.Interfaces.Services.Process;
 using <#=companyNamespace#>.<#=moduleId#>.Models.Process;
 <#

@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -490,7 +490,9 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassCompilerWizard
                 // Unzip Model Project to path
                 var fileName = Path.Combine(path, moduleType + Constants.ExtensionZip);
                 // BK and TX are included in CS projects, so no project to unzip
-                if (!moduleType.Equals(ModuleType.BK) & !moduleType.Equals(ModuleType.TX))
+                // Do not include PM for 2026
+                if (!moduleType.Equals(ModuleType.BK) & !moduleType.Equals(ModuleType.TX)
+                    & !moduleType.Equals(ModuleType.PM))
                 {
                     // Save zip file
                     File.WriteAllBytes(fileName, GetProjectZip(moduleType));
@@ -628,9 +630,10 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassCompilerWizard
                 case ModuleType.OE:
                     ret = Resources.OE;
                     break;
-                case ModuleType.PM:
-                    ret = Resources.PM;
-                    break;
+                // Do not deliver PM for 2026
+                //case ModuleType.PM:
+                //    ret = Resources.PM;
+                //    break;
                 case ModuleType.PO:
                     ret = Resources.PO;
                     break;

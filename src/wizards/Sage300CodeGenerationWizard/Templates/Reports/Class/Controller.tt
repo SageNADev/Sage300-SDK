@@ -36,7 +36,7 @@
 
 #region Namespace
 
-using Microsoft.Practices.Unity;
+using Unity;
 using Sage.CA.SBS.ERP.Sage300.Common.Models.Enums;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.Reports;
 using <#=companyNamespace#>.<#=moduleId#>.Interfaces.Services.Reports;

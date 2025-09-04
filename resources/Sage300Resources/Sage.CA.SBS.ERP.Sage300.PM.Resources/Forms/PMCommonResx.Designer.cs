@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class PMCommonResx {
@@ -286,6 +286,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Charges Code.
+        /// </summary>
+        public static string ChargesCode {
+            get {
+                return ResourceManager.GetString("ChargesCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cheque Inquiry.
         /// </summary>
         public static string CheckInquiry {
@@ -403,6 +412,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You cannot delete the default {0} structure..
+        /// </summary>
+        public static string DeleteMessage {
+            get {
+                return ResourceManager.GetString("DeleteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Detail Optional Fields.
         /// </summary>
         public static string DetailOptionalFields {
@@ -435,6 +453,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string EditDetails {
             get {
                 return ResourceManager.GetString("EditDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
             }
         }
         
@@ -502,6 +529,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} must be {1} characters long.
+        /// </summary>
+        public static string InvalidLength {
+            get {
+                return ResourceManager.GetString("InvalidLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} is not a valid currency code..
         /// </summary>
         public static string IsNotAValidCurrencyCode {
@@ -534,6 +570,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string LocationDescription {
             get {
                 return ResourceManager.GetString("LocationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miscellaneous Code.
+        /// </summary>
+        public static string MiscellaneousCode {
+            get {
+                return ResourceManager.GetString("MiscellaneousCode", resourceCulture);
             }
         }
         
@@ -588,6 +633,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string OptionalFieldValueValidation {
             get {
                 return ResourceManager.GetString("OptionalFieldValueValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overhead Code.
+        /// </summary>
+        public static string OverheadCode {
+            get {
+                return ResourceManager.GetString("OverheadCode", resourceCulture);
             }
         }
         
@@ -727,6 +781,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Source Codes.
+        /// </summary>
+        public static string SourceCodes {
+            get {
+                return ResourceManager.GetString("SourceCodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tax Authority.
         /// </summary>
         public static string TaxAuthority {
@@ -858,6 +921,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PM.Resources.Forms {
         public static string ViewDetails {
             get {
                 return ResourceManager.GetString("ViewDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WebSite.
+        /// </summary>
+        public static string Website {
+            get {
+                return ResourceManager.GetString("Website", resourceCulture);
             }
         }
         

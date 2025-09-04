@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Sage.CA.SBS.ERP.Sage300.SolutionWizardPackage.Sage.4af57563-4e78-4c18-ac5b-4661f4b080c8" Version="7.2.0.20" Language="en-US" Publisher="Sage" />
+        <Identity Id="Sage.CA.SBS.ERP.Sage300.SolutionWizardPackage.Sage.4af57563-4e78-4c18-ac5b-4661f4b080c8" Version="7.3.0.0" Language="en-US" Publisher="Sage" />
         <DisplayName>Sage 300 Solution Wizard Package</DisplayName>
         <Description xml:space="preserve">This package contains the Sage 300 Solution Wizard.
 </Description>

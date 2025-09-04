@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountsReceivable" xml:space="preserve">
+    <value>Cuentas por Cobrar</value>
+  </data>
+  <data name="AccountsReceivableInvoices" xml:space="preserve">
+    <value>Facturas de Cuentas por Cobrar</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Ajuste</value>
+  </data>
+  <data name="AdjustmentDetails" xml:space="preserve">
+    <value>Detalles de Ajustes</value>
+  </data>
+  <data name="Billing" xml:space="preserve">
+    <value>Facturación</value>
+  </data>
+  <data name="BillingDetail" xml:space="preserve">
+    <value>Detalle de Facturación</value>
+  </data>
+  <data name="BillingOrRevenue" xml:space="preserve">
+    <value>Facturaciones/Ingresos</value>
+  </data>
+  <data name="Billings" xml:space="preserve">
+    <value>Facturaciones</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categorías</value>
+  </data>
+  <data name="ChargeCodes" xml:space="preserve">
+    <value>Códigos de Cargos</value>
+  </data>
+  <data name="Charges" xml:space="preserve">
+    <value>Cargos</value>
+  </data>
+  <data name="ChargesDetails" xml:space="preserve">
+    <value>Detalles de Cargos</value>
+  </data>
+  <data name="Contracts" xml:space="preserve">
+    <value>Contratos</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Costo</value>
+  </data>
+  <data name="CostDetails" xml:space="preserve">
+    <value>Detalles de Costo</value>
+  </data>
+  <data name="CostofSales" xml:space="preserve">
+    <value>Costo de Ventas</value>
+  </data>
+  <data name="Costs" xml:space="preserve">
+    <value>Costos</value>
+  </data>
+  <data name="DeleteConfirm" xml:space="preserve">
+    <value>Eliminar </value>
+  </data>
+  <data name="EmployeeExpense" xml:space="preserve">
+    <value> Gasto de Empleado</value>
+  </data>
+  <data name="Employees" xml:space="preserve">
+    <value>Empleados</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>Equipo</value>
+  </data>
+  <data name="EquipmentUsage" xml:space="preserve">
+    <value>Uso del Equipo</value>
+  </data>
+  <data name="EquipmentUsageDetails" xml:space="preserve">
+    <value>Detalles de Uso del Equipo</value>
+  </data>
+  <data name="ErrorMessageForAutoInsertField" xml:space="preserve">
+    <value>Si se requiere el campo opcional {0}, entonces Autoinsertar debe estar fijado en Sí.</value>
+  </data>
+  <data name="ExternalCostTransactions" xml:space="preserve">
+    <value>Transacciones de Costo Externo</value>
+  </data>
+  <data name="GLAccounts" xml:space="preserve">
+    <value>Cuentas del LM</value>
+  </data>
+  <data name="ICAdjustments" xml:space="preserve">
+    <value>CI - Ajustes</value>
+  </data>
+  <data name="ICAdjustmentsDetail" xml:space="preserve">
+    <value>Detalles de Ajuste de Control de Inventario</value>
+  </data>
+  <data name="ICShipments" xml:space="preserve">
+    <value>CI - Envíos</value>
+  </data>
+  <data name="ICShipmentsDetails" xml:space="preserve">
+    <value>Detalles de Envío en Control de Inventario</value>
+  </data>
+  <data name="INITFLAG" xml:space="preserve">
+    <value>Autoinsertar</value>
+  </data>
+  <data name="InventoryControl" xml:space="preserve">
+    <value>Control de Inventario</value>
+  </data>
+  <data name="Labor" xml:space="preserve">
+    <value>Mano de Obra</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="MaterialAllocation" xml:space="preserve">
+    <value>Asignación de Materiales</value>
+  </data>
+  <data name="MaterialAllocationDetails" xml:space="preserve">
+    <value>Detalles de Asignación de Materiales</value>
+  </data>
+  <data name="MaterialReturn" xml:space="preserve">
+    <value>Devolución de Materiales</value>
+  </data>
+  <data name="MaterialReturnDetails" xml:space="preserve">
+    <value>Detalles de Devolución de Materiales</value>
+  </data>
+  <data name="MaterialUsage" xml:space="preserve">
+    <value>Uso de Materiales</value>
+  </data>
+  <data name="MaterialUsageDetails" xml:space="preserve">
+    <value>Detalles de Uso de Materiales</value>
+  </data>
+  <data name="MiscellaneousExpenses" xml:space="preserve">
+    <value>Gastos Varios</value>
+  </data>
+  <data name="OpField" xml:space="preserve">
+    <value>Campos Opcionales para  </value>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Campos Opcionales para</value>
+  </data>
+  <data name="OptionalFieldBlankError" xml:space="preserve">
+    <value>El campo opcional no puede estar en blanco.</value>
+  </data>
+  <data name="Overhead" xml:space="preserve">
+    <value>Gastos Generales</value>
+  </data>
+  <data name="OverheadExpenses" xml:space="preserve">
+    <value>Gastos Generales</value>
+  </data>
+  <data name="PayrollExpense" xml:space="preserve">
+    <value>Gasto de Nómina</value>
+  </data>
+  <data name="PayrollTimecardDetails" xml:space="preserve">
+    <value>Detalles de Timecard de Nómina</value>
+  </data>
+  <data name="PayrollTimecards" xml:space="preserve">
+    <value>Timecards de Nómina</value>
+  </data>
+  <data name="PMOptionalFieldsTitle" xml:space="preserve">
+    <value>PJC - Campos Opcionales</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>Proyectos</value>
+  </data>
+  <data name="ReopeningProjects" xml:space="preserve">
+    <value>Reabriendo Proyectos</value>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>Ingresos</value>
+  </data>
+  <data name="RevenueRecognition" xml:space="preserve">
+    <value>Reconocimiento de Ingresos</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="SettingsDescription" xml:space="preserve">
+    <value>Estas especificaciones determinan si este campo opcional se incluye con las transacciones del Libro Mayor y con las transacciones enviadas a otros libros mayores auxiliares.</value>
+  </data>
+  <data name="Subcontractors" xml:space="preserve">
+    <value>Subcontratistas</value>
+  </data>
+  <data name="SWSET" xml:space="preserve">
+    <value>Valor Fijado</value>
+  </data>
+  <data name="TimecardDetails" xml:space="preserve">
+    <value>Detalles de Timecard</value>
+  </data>
+  <data name="TimecardExpenses" xml:space="preserve">
+    <value>Gastos de Timecard</value>
+  </data>
+  <data name="Timecards" xml:space="preserve">
+    <value>Timecards</value>
+  </data>
+  <data name="USAndCanadianPayroll" xml:space="preserve">
+    <value>Nómina Estadounidense y Canadiense</value>
+  </data>
+  <data name="WorkInProgress" xml:space="preserve">
+    <value>Trabajo en Progreso</value>
+  </data>
+  <data name="WorkInProgressOrCostOfSales" xml:space="preserve">
+    <value>Trabajo en Progreso/Costo de Ventas</value>
+  </data>
+</root>

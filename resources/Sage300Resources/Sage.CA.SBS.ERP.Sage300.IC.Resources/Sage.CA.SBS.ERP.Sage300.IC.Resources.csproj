@@ -1069,7 +1069,9 @@
       <LastGenOutput>ICCommonResx.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ICCommonResx.es.resx" />
+    <EmbeddedResource Include="ICCommonResx.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ICCommonResx.fr.resx" />
     <EmbeddedResource Include="ICCommonResx.zh-Hans.resx" />
     <EmbeddedResource Include="ICCommonResx.zh-Hant.resx" />

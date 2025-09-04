@@ -377,7 +377,7 @@
     <value>查詢期間{0}合計營收(原幣)</value>
   </data>
   <data name="TotalRevenueSourceForPeriod" xml:space="preserve">
-    <value>期間{1}合計營收(原幣)</value>
+    <value>期間{0}合計營收(原幣)</value>
   </data>
   <data name="TotalRevenueFunctionalForTheYear" xml:space="preserve">
     <value>本年合計營收(本幣)</value>

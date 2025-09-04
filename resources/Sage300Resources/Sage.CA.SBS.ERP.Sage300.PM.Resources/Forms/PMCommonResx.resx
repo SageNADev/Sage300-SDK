@@ -402,4 +402,28 @@
   <data name="CheckInquiry" xml:space="preserve">
     <value>Cheque Inquiry</value>
   </data>
+  <data name="MiscellaneousCode" xml:space="preserve">
+    <value>Miscellaneous Code</value>
+  </data>
+  <data name="InvalidLength" xml:space="preserve">
+    <value>{0} must be {1} characters long</value>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>You cannot delete the default {0} structure.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>WebSite</value>
+  </data>
+  <data name="OverheadCode" xml:space="preserve">
+    <value>Overhead Code</value>
+  </data>
+  <data name="ChargesCode" xml:space="preserve">
+    <value>Charges Code</value>
+  </data>
+  <data name="SourceCodes" xml:space="preserve">
+    <value>Source Codes</value>
+  </data>
 </root>

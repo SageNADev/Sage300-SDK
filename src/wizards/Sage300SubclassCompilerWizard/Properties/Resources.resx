@@ -181,9 +181,6 @@
   <data name="OE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OE.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PM.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="PO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PO.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

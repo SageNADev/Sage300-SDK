@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -20,19 +20,20 @@
 
 #region Namespace
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Practices.Unity;
-using System.Linq.Expressions;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Linq.Expressions;
+using Unity;
 using ValuedPartner.TU.Interfaces.Services;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Resources.Forms;
 using ValuedPartner.TU.Web.Areas.TU.Models;
-using System.Globalization;
 
 #endregion
 
@@ -410,7 +411,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
 
             if (valid)
             {
-                var sourceCodeService = Context.Container.Resolve<ISourceCodeService<SourceCode>>(new ParameterOverride("context", Context));
+                var sourceCodeService = Context.Container.Resolve<ISourceCodeService<SourceCode>>(Utilities.ContextParameter(Context));
                 sourceCode = sourceCodeService.GetByIds(sourceLedger, sourceType);
             }
 

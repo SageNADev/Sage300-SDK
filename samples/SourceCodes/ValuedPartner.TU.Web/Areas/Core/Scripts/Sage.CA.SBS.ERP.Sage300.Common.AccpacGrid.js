@@ -697,7 +697,6 @@ sg.viewList = function () {
             const sendRequest = options.model[field] === returnValue;
 
             _sendChange[gridName] = true;
-
             options.model.set(field, returnValue);
 
             // When finder selected value is the same as options model field value, the set method 
@@ -819,6 +818,224 @@ sg.viewList = function () {
 
         //Custom plug in for 'columnStartEdit' and 'columnEndEdit'
         _columnCallBackEdit(gridName, field);
+    }
+
+    /**
+    * @function
+    * @name _dateFinderEditor
+    * @description Column date editor that renders a date input with a finder button. Parses "yyyymmdd" formatted values and initializes a Kendo DatePicker.
+    * @param {any} container The column Kendo editor container
+    * @param {any} options The column options
+    * @param {any} col The column definition
+    * @param {any} gridName The grid name
+    */
+    function _dateFinderEditor(container, options, col, gridName) {
+        const field = options.field;
+        const model = options.model;
+        const value = model[field];
+        const txtId = "txt" + gridName + field;
+        const buttonId = "btnFinder" + field;
+        // HTML for DatePicker + Finder
+        const input = kendo.format('<input data-text-field="{0}" data-value-field="{0}" data-bind="value:{0}" id="{1}" name="{0}" />', field, txtId);
+        const txtInput = '<div class="edit-container"><div class="edit-cell inpt-text">' + input + '</div>';
+        const txtFinder = kendo.format('<div class="edit-cell inpt-finder"><input type="button" class="icon btn-search" id="{0}" /></div></div>', buttonId);
+        const html = txtInput + txtFinder;
+
+        // Initialize DatePicker
+        if (model.hasOwnProperty('TYPE') && model.TYPE === ValueTypeEnum.Date && !isNaN(value) && value !== null) {
+            model[field] = value.toString().length === 8 ? kendo.parseDate(value.toString(), 'yyyyMMdd') : value;
+        }
+        $(html).appendTo(container);
+        sg.utls.kndoUI.datePicker(txtId);
+
+        _finderSetup(container, model, field, options, col, gridName, txtId, buttonId);
+    }
+
+    /**
+   * @function
+   * @name _timeFinderEditor
+   * @description Column time editor that renders a time input with a finder button. Applies a masked time format (HH:MM:SS) and sets up finder behavior.
+   * @param {any} container The column Kendo editor container
+   * @param {any} options The column options
+   * @param {any} col The column definition
+   * @param {any} gridName The grid name
+   */
+    function _timeFinderEditor(container, options, col, gridName) {
+        const field = options.field;
+        const model = options.model;
+        const value = model[field];
+        const txtId = "txt" + gridName + field;
+        const buttonId = "btnFinder" + field;
+        const txtInput = '<div class="edit-container" style="display:flex;">' + '<div class="edit-cell inpt-text" style="flex:1;">' + '<input id="' + txtId + '" name="' + field + '" style="width:100%;" />' + '</div>';
+        const txtFinder = '<div class="edit-cell inpt-finder" style="display:flex;">' + '<input type="button" class="icon btn-search" id="' + buttonId + '" />' + '</div></div>';
+        const html = txtInput + txtFinder;
+        $(html).appendTo(container);
+
+        // Apply MaskedTextBox for time (HH:MM:SS)
+        $("#" + txtId).kendoMaskedTextBox({
+            mask: "14:34:34",
+            unmaskOnPost: true,
+            rules: {
+                "1": /[0-2]/,
+                "2": /[0-3]/,
+                "3": /[0-5]/,
+                "4": /[0-9]/
+            }
+        });
+        _finderSetup(container, model, field, options, col, gridName, txtId, buttonId);
+    }
+
+    /**
+    * @function
+    * @name _finderSetup
+    * @description Configures the finder functionality for a grid column, including filter generation, event binding for finder button, and handling of selected or cancelled finder actions.
+    * @param {any} container The column Kendo editor container
+    * @param {any} model The data model for the current grid row
+    * @param {string} field The field name associated with the column
+    * @param {any} options The column options
+    * @param {any} col The column definition
+    * @param {string} gridName The name of the grid
+    * @param {string} txtId The ID of the input text field
+    * @param {string} buttonId The ID of the finder button
+    */
+    function _finderSetup(container, model, field, options, col, gridName, txtId, buttonId) {
+        let finder = col.Finder;
+        finder.viewID = finder.ViewID;
+        finder.viewOrder = finder.ViewOrder;
+        finder.displayFieldNames = finder.DisplayFieldNames;
+        finder.returnFieldNames = finder.ReturnFieldNames;
+        finder.initKeyValues = [];
+        finder.buttonId = buttonId;
+        if (finder.CustomFinderProperties) {
+            const customFunc = _getFunction(finder.CustomFinderProperties);
+            finder = (typeof customFunc === 'function') ? customFunc(container, options) : sg.utls.deepCopy(customFunc);
+        }
+
+        const refKey = col.ReferenceField;
+
+        if (refKey) {
+            finder.filter = kendo.format("{0}={1}", refKey, model[refKey]);
+        }
+
+        //Finder has filter, get the filter, set finder calculatePageCount as false
+        if (finder.filter || finder.Filter) {
+            finder.filter = getFilter();
+            finder.calculatePageCount = false;
+        }
+
+        // Finder Click Event
+        $("#" + buttonId).mousedown(function () {
+            const formId = _forms[gridName];
+            if (formId && $(`#${formId}`).is(":visible")) return;
+            _sendChange[gridName] = false;
+            const val = $("#" + txtId).val();
+            finder.initKeyFieldNames = finder.initKeyFieldNames || finder.InitKeyFieldNames;
+            const keys = finder.initKeyFieldNames || [];
+            finder.initKeyValues = [];
+            if (keys.length > 0) {
+                for (let i = 0; i < keys.length; i++) {
+                    const initField = keys[i];
+                    let initVal = model.hasOwnProperty(initField) ? model[initField] : initField;
+                    if (keys.length === 1 || field === initField) initVal = val;
+                    finder.initKeyValues.push(initVal);
+                }
+            } else {
+                finder.initKeyValues = [val];
+            }
+            _columnCallback(gridName, "columnBeforeFinder", field, finder);
+            sg.viewFinderHelper.setViewFinder(buttonId, onFinderSelected.bind(null, options, col), finder, onFinderCancel.bind(null, options));
+        });
+
+        sg.utls.findersList[field] = buttonId;
+
+        _setEditorInitialValue(gridName, options);
+
+        $("#" + txtId).on("keydown", function (e) {
+            _sendChange[gridName] = !(e.altKey && e.keyCode === sg.constants.KeyCodeEnum.DownArrow);
+        });
+
+        $('#' + txtId).focus(function () {
+            _columnCallback(gridName, "columnFinderFocus", field, finder);
+        });
+
+        //Custom plug in for 'columnStartEdit' and 'columnEndEdit'
+        _columnCallBackEdit(gridName, field);
+
+        /**
+        * @function
+        * @name getFilter
+        * @description Parse the filter expression, dynamically set the filter value, such as filter expression: "ITEMNO=UNFMTITMNO", the "UNFMTITMNO" should the item value like 'A11030'
+        * @return {object} return the parsed filters 
+        */
+        function getFilter() {
+            finder.filter = finder.Filter || finder.filter;
+            let filters = finder.filter.toUpperCase();
+            const exprs = filters.replace(/ AND | OR /g, ',').split(',');
+            exprs.forEach(function (expr) {
+                const dynamicField = expr.split('=').pop().trim();
+                if (model.hasOwnProperty(dynamicField)) {
+                    const value = col.DataType === 'Char' ? `"${model[dynamicField]}"` : model[dynamicField];
+                    filters = replaceLast(dynamicField, value, filters);
+                }
+            });
+            return filters;
+        }
+
+        /**
+        * @function
+        * @name replaceLast
+        * @description Replaces the last occurrence of a specified substring within a string with a new value.
+        * @param {string} find The substring to find
+        * @param {string} replace The replacement string
+        * @param {string} str The original string to operate on
+        * @returns {string} The updated string with the last occurrence replaced
+        */
+        function replaceLast(find, replace, str) {
+            const lastIndex = str.lastIndexOf(find);
+            return lastIndex === -1 ? str : str.substring(0, lastIndex) + replace + str.substring(lastIndex + find.length);
+        }
+
+         /**
+         * @function
+         * @name onFinderSelected
+         * @description On select finder row, set the select value
+         * @param {any} options The column options
+         * @param {any} col The column object
+         * @param {any} value The finder selected row value
+         */
+        function onFinderSelected(options, col, value) {
+            const field = options.field;
+            const model = options.model;
+            const type = model.TYPE;
+            let returnValue = value[field] || value[Object.keys(value)[0]];
+            _sendChange[gridName] = true;
+
+            if (type === ValueTypeEnum.Date) {
+                returnValue = returnValue === "00000000" ? "" : sg.utls.kndoUI.getFormattedDate(returnValue);
+            }
+            else if (type === ValueTypeEnum.Time && returnValue && returnValue.indexOf(':') < 0) {
+                returnValue = returnValue.substring(0, 2) + ":" + returnValue.substring(2, 4) + ":" + returnValue.substring(4, 6);
+            }
+            model.set(field, returnValue);
+            if (!window[gridName + "Model"].CustomGridMapperDefinitions) {
+                _sendRequest(gridName, RequestTypeEnum.Refresh, field, model.isNewLine);
+            }
+        }
+
+        /**
+        * @function
+        * @name onFinderCancel
+        * @description On cancel the finder, focus the last edit cell
+        * @param {any} options The column options
+        */
+        function onFinderCancel(options) {
+            const grid = _getGrid(gridName);
+            _sendChange[gridName] = true;
+            if (grid) {
+                const rowIndex = grid.select().index();
+                _setEditCell(grid, rowIndex, field);
+            }
+        }
     }
 
     /**
@@ -1100,6 +1317,14 @@ sg.viewList = function () {
 
         if (col.IsOptionalField) {
             return _optionalFieldEditor(container, options, col, gridName);
+        }
+
+        if (col.Finder && col.DataType === "datefinder") {
+            return _dateFinderEditor(container, options, col, gridName);
+        }
+
+        if (col.Finder && col.DataType === "timefinder") {
+            return _timeFinderEditor(container, options, col, gridName);
         }
 
         if (col.Finder) {

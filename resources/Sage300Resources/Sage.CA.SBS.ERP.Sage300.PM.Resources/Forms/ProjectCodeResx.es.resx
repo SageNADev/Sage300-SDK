@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountingMethod" xml:space="preserve">
+    <value>Método Contable</value>
+  </data>
+  <data name="BillingType" xml:space="preserve">
+    <value>Tipo de Facturación</value>
+  </data>
+  <data name="BlankErrorMessage" xml:space="preserve">
+    <value>Entrada no válida. El código de {0} no puede estar en blanco.</value>
+  </data>
+  <data name="CostPlusPercentage" xml:space="preserve">
+    <value>Costo Más Porcentaje</value>
+  </data>
+  <data name="CostPlusPercentagErrorMsg" xml:space="preserve">
+    <value>El Costo Más Porcentaje no puede ser menor que cero.</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="GLSegment" xml:space="preserve">
+    <value>Segmento del LM</value>
+  </data>
+  <data name="GLSegmentCode" xml:space="preserve">
+    <value>Código de Segmento del LM</value>
+  </data>
+  <data name="GLSegmentCodeColumnTitle" xml:space="preserve">
+    <value>Código de Segmento del LM</value>
+  </data>
+  <data name="GLSegmentColumnTitle" xml:space="preserve">
+    <value>Segmento del LM</value>
+  </data>
+  <data name="InactiveAsOfDate" xml:space="preserve">
+    <value>Inactivo (al)</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>Integración</value>
+  </data>
+  <data name="LastMaintained" xml:space="preserve">
+    <value>Último Mantenimiento</value>
+  </data>
+  <data name="MarkupPercentage" xml:space="preserve">
+    <value>Porcentaje de Recargo</value>
+  </data>
+  <data name="MarkupPercentagErrorMsg" xml:space="preserve">
+    <value>El Porcentaje de Recargo no puede ser negativo.</value>
+  </data>
+  <data name="NoSegments" xml:space="preserve">
+    <value>No hay más segmentos disponibles.</value>
+  </data>
+  <data name="OKButton" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Campos Opcionales</value>
+  </data>
+  <data name="OverrideGLAccountSegments" xml:space="preserve">
+    <value>Sustituir Segmentos de Cuenta del LM</value>
+  </data>
+  <data name="PJC" xml:space="preserve">
+    <value>PJC</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="ProjectCode" xml:space="preserve">
+    <value>Código de Proyecto</value>
+  </data>
+  <data name="ProjectCodeDescription" xml:space="preserve">
+    <value>Descripción de {0}</value>
+  </data>
+  <data name="ProjectDescription" xml:space="preserve">
+    <value>Descripción de Proyecto</value>
+  </data>
+  <data name="ProjectTitle" xml:space="preserve">
+    <value>PJC - {0}</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>Tipo de {0}</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Número de Serie</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+</root>

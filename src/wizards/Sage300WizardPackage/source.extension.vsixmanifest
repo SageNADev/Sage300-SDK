@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Sage.CA.SBS.ERP.Sage300.WizardPackage.c1634ed2-b8e6-4fe1-a2df-e1ff84a0da75" Version="7.2.0.20" Language="en-US" Publisher="Sage" />
+        <Identity Id="Sage.CA.SBS.ERP.Sage300.WizardPackage.c1634ed2-b8e6-4fe1-a2df-e1ff84a0da75" Version="7.3.0.0" Language="en-US" Publisher="Sage" />
         <DisplayName>Sage 300 Wizard Package</DisplayName>
         <Description xml:space="preserve">This package contains the Code Generation Wizard, the Finder Generator, the Upgrade Wizard, the Language Resource Wizard, and the Sync Assemblies Wizard (for Sage 300 internal developers only).</Description>
     </Metadata>

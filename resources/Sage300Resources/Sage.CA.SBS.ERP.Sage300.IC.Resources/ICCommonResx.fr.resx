@@ -2787,6 +2787,9 @@
   <data name="LastProcessedTime" xml:space="preserve">
     <value>Heure du dernier traitement</value>
   </data>
+  <data name="LastProcessedUserID" xml:space="preserve">
+    <value>Dernier traitement par</value>
+  </data>
   <data name="FractionalQuantityWarning" xml:space="preserve">
     <value>Si vous choisissez d’autoriser les quantités fractionnaires, vous ne pourrez pas changer cette option par la suite. Voulez-vous vraiment autoriser les quantités fractionnaires?</value>
   </data>

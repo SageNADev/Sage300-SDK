@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -69,12 +69,12 @@
 
 using System;
 using System.Linq;
-using Microsoft.Practices.Unity;
+using Unity;
 using System.Linq.Expressions;
 using System.Collections.Generic;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
-using Sage.CA.SBS.ERP.Sage300.Common.Web;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
 using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
 using <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository;
@@ -101,7 +101,7 @@ namespace <#=companyNamespace#>.<#=webModuleNamespace#>.Controllers
         private I<#=containerName#>Repository _repository
         {
             get {
-                return _context.Container.Resolve<I<#=containerName#>Repository>(new ParameterOverride("context", _context));
+                return _context.Container.Resolve<I<#=containerName#>Repository>(Utilities.ContextParameter(_context));
             }
         }
 

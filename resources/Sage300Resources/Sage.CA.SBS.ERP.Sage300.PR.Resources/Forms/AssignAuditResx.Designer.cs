@@ -322,6 +322,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Decrease.
+        /// </summary>
+        public static string Decrease {
+            get {
+                return ResourceManager.GetString("Decrease", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default Hours.
         /// </summary>
         public static string DefaultHours {
@@ -682,6 +691,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Increase.
+        /// </summary>
+        public static string Increase {
+            get {
+                return ResourceManager.GetString("Increase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid input. Currency Code is not defined. .
         /// </summary>
         public static string InvalidCurErrorMsg {
@@ -871,6 +889,24 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pct Dec.
+        /// </summary>
+        public static string PctDec {
+            get {
+                return ResourceManager.GetString("PctDec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pct Inc.
+        /// </summary>
+        public static string PctInc {
+            get {
+                return ResourceManager.GetString("PctInc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to assign this Tax?.
         /// </summary>
         public static string PopupTaxWarningmsg {
@@ -912,6 +948,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string QuarterlyMin {
             get {
                 return ResourceManager.GetString("QuarterlyMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Replace.
+        /// </summary>
+        public static string Replace {
+            get {
+                return ResourceManager.GetString("Replace", resourceCulture);
             }
         }
         

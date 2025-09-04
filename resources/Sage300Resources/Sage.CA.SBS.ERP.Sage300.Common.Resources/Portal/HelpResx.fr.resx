@@ -5717,4 +5717,52 @@
   <data name="AS_UserActivityReport_Screen" xml:space="preserve">
     <value>Activité des utilisateurs</value>
   </data>
+  <data name="PM_Setup_Categories_Screen" xml:space="preserve">
+    <value>Catégories</value>
+    <comment>123022001</comment>
+  </data>
+  <data name="PM_Setup_Charges_Screen" xml:space="preserve">
+    <value>Frais</value>
+    <comment>123025001</comment>
+  </data>
+  <data name="PM_Setup_ContractStructures_Screen" xml:space="preserve">
+    <value>Structures de contrats</value>
+    <comment>123017001</comment>
+  </data>
+  <data name="PM_Setup_Employees_Screen" xml:space="preserve">
+    <value>Employés</value>
+    <comment>123023001</comment>
+  </data>
+  <data name="PM_Setup_GL_Integrations_Screen" xml:space="preserve">
+    <value>Intégration de GL</value>
+    <comment>123019001</comment>
+  </data>
+  <data name="PM_Setup_MiscellaneousExpenses_Screen" xml:space="preserve">
+    <value>Charges diverses</value>
+    <comment>123026001</comment>
+  </data>
+  <data name="PM_Setup_OptionalFields_Screen" xml:space="preserve">
+    <value>Champs optionnels</value>
+    <comment>123016001</comment>
+  </data>
+  <data name="PM_Setup_Options_Screen" xml:space="preserve">
+    <value>Options</value>
+    <comment>123020001</comment>
+  </data>
+  <data name="PM_Setup_OverheadExpenses_Screen" xml:space="preserve">
+    <value>Coûts indirects</value>
+    <comment>123024001</comment>
+  </data>
+  <data name="PM_Setup_Projects_Screen" xml:space="preserve">
+    <value>Projets</value>
+    <comment>123021001</comment>
+  </data>
+  <data name="PM_Setup_SegmentCodes_Screen" xml:space="preserve">
+    <value>Codes de segments</value>
+    <comment>123015001</comment>
+  </data>
+  <data name="PM_Setup_Subcontractors_Screen" xml:space="preserve">
+    <value>Sous-traitants</value>
+    <comment>123018001</comment>
+  </data>
 </root>

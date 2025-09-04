@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2019 Sage Software, Inc.  All rights reserved.
+// Copyright (c) 1994-2025 Sage Software, Inc.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -20,7 +20,6 @@
 
 #region Namespace
 
-using Microsoft.Practices.Unity;
 using Sage.CA.SBS.ERP.Sage300.AP.Interfaces.Services;
 using Sage.CA.SBS.ERP.Sage300.AP.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Service;
@@ -30,12 +29,14 @@ using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.AreaConstants;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
 using Sage.CA.SBS.ERP.Sage300.CS.Interfaces.Services;
 using Sage.CA.SBS.ERP.Sage300.CS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Unity;
 using ValuedPartner.TU.Interfaces.BusinessRepository;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Models.Enums;
@@ -84,7 +85,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             get
             {
                 // return _context.Container.Resolve<IReceiptService>(UnityInjectionType.Default, new ParameterOverride("context", _context));
-                return _context.Container.Resolve<IReceiptRepository>(new ParameterOverride("context", _context));
+                return _context.Container.Resolve<IReceiptRepository>(Utilities.ContextParameter(_context));
 
             }
         }
@@ -114,8 +115,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             _context = context;
             _detailOptFieldCacheKey = CreateSessionKey<ReceiptHeader>(InventoryControl.SessionOptionalField);
             _options = GetOptions();
-            var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(new ParameterOverride("context",
-                    Context));
+            var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(Utilities.ContextParameter(Context));
 
             if (_options != null)
             {
@@ -690,8 +690,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         internal Options GetOptions()
         {
             var service =
-             Context.Container.Resolve<ICService.IOptionsService<Options>>(new ParameterOverride("context",
-                 Context));
+             Context.Container.Resolve<ICService.IOptionsService<Options>>(Utilities.ContextParameter(Context));
             return service.FirstOrDefault();
         }
 
@@ -790,7 +789,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         {
             var response = new ViewModelBase<Vendor> { UserMessage = new UserMessage { IsSuccess = true } };
 
-            var vendorService = Context.Container.Resolve<IVendorService<Vendor>>(new ParameterOverride("context", Context));
+            var vendorService = Context.Container.Resolve<IVendorService<Vendor>>(Utilities.ContextParameter(Context));
             var vendor = vendorService.GetById(vendorNumber);
 
             response.Data = vendor;
@@ -1047,7 +1046,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns></returns>
         public CurrencyCode GetCurrencyDescription(string currencyCode)
         {
-            var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(new ParameterOverride("context", Context));
+            var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(Utilities.ContextParameter(Context));
             Expression<Func<CurrencyCode, bool>> filter = code => code.CurrencyCodeId == currencyCode.ToUpper();
             var currency = currencyService.Get(filter);
             if (currency != null)
@@ -1132,7 +1131,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
             {
                 case CompanyProfile.EntityName:
                     return
-                        Context.Container.Resolve<ICompanyProfileService<CompanyProfile>>(new ParameterOverride("context", Context)) as IEntityService<TModel>;
+                        Context.Container.Resolve<ICompanyProfileService<CompanyProfile>>(Utilities.ContextParameter(Context)) as IEntityService<TModel>;
             }
             return null;
         }
@@ -1172,7 +1171,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>Currency decimal for currency code</returns>
         private string GetCurrencyDecimal(string currencyCode)
         {
-            var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(new ParameterOverride("context", Context));
+            var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(Utilities.ContextParameter(Context));
             var currency = currencyService.GetById(currencyCode);
             return currency != null ? currency.DecimalPlacesString : "0";
         }

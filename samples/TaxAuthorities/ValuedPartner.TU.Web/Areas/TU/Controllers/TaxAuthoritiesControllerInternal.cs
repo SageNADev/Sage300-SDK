@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2022 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -20,24 +20,25 @@
 
 #region Namespace
 
-using System;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Collections.Generic;
+using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+using Sage.CA.SBS.ERP.Sage300.CS.Interfaces.Services;
+using Sage.CA.SBS.ERP.Sage300.CS.Models;
+using Sage.CA.SBS.ERP.Sage300.CS.Models.Enums;
+using Sage.CA.SBS.ERP.Sage300.GL.Interfaces.Services;
+using Sage.CA.SBS.ERP.Sage300.GL.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using Unity;
 using ValuedPartner.TU.Interfaces.Services;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Resources.Forms;
 using ValuedPartner.TU.Web.Areas.TU.Models;
-using Sage.CA.SBS.ERP.Sage300.CS.Models;
-using Sage.CA.SBS.ERP.Sage300.CS.Interfaces.Services;
-using Microsoft.Practices.Unity;
-using Sage.CA.SBS.ERP.Sage300.GL.Models;
-using Sage.CA.SBS.ERP.Sage300.GL.Interfaces.Services;
-using Sage.CA.SBS.ERP.Sage300.CS.Models.Enums;
-using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
 
 #endregion
 
@@ -149,7 +150,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>GL Account </returns>
         internal Account GetGlAccount(string id)
         {
-            var accountService = Context.Container.Resolve<IAccountService<Account>>(new ParameterOverride("context", Context));
+            var accountService = Context.Container.Resolve<IAccountService<Account>>(Utilities.ContextParameter(Context));
             Expression<Func<Account, bool>> filter = accountNo => accountNo.UnformattedAccount == id.ToUpper() || accountNo.AccountNumber == id.ToUpper();
             var account = accountService.Get(filter);
             if (account != null && account.Items != null && account.Items.Any())
@@ -171,7 +172,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>currecy description </returns>
         internal string GetCurrencyDescription(string id)
         {
-            var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(new ParameterOverride("context", Context));
+            var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(Utilities.ContextParameter(Context));
             Expression<Func<CurrencyCode, bool>> filter = currencyCodes => currencyCodes.CurrencyCodeId == id;
             var currency = currencyService.Get(filter);
 
@@ -248,7 +249,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns>CompanyProfile</returns>
         private CompanyProfile GetCompanyProfile()
         {
-            var companyProfileService = Context.Container.Resolve<ICompanyProfileService<CompanyProfile>>(new ParameterOverride("context", Context));
+            var companyProfileService = Context.Container.Resolve<ICompanyProfileService<CompanyProfile>>(Utilities.ContextParameter(Context));
             var companyProfile = companyProfileService.Get();
             
             return (companyProfile.Items != null && companyProfile.Items.Any() ? companyProfile.Items.First() : new CompanyProfile());
@@ -261,7 +262,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         /// <returns></returns>
         private CurrencyCode GetCurrency(string id)
         {
-            var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(new ParameterOverride("context", Context));
+            var currencyService = Context.Container.Resolve<ICurrencyCodeService<CurrencyCode>>(Utilities.ContextParameter(Context));
             Expression<Func<CurrencyCode, bool>> filter = currencyCodes => currencyCodes.CurrencyCodeId == id.ToUpper() || currencyCodes.CurrencyCodeId == id.ToUpper();
             var currency = currencyService.Get(filter);
             return (currency.Items.FirstOrDefault());

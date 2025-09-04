@@ -18,7 +18,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.WebApi
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+    #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class Controller : ControllerBase
     {
@@ -29,121 +29,121 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.WebApi
         public virtual string TransformText()
         {
             
-            #line 1 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* The MIT License (MIT) */ 
             
             #line default
             #line hidden
             
-            #line 2 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 2 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */ 
             
             #line default
             #line hidden
             
-            #line 3 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 3 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 4 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 4 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ 
             
             #line default
             #line hidden
             
-            #line 5 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 5 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* this software and associated documentation files (the "Software"), to deal in */ 
             
             #line default
             #line hidden
             
-            #line 6 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 6 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* the Software without restriction, including without limitation the rights to use, */ 
             
             #line default
             #line hidden
             
-            #line 7 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 7 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the */ 
             
             #line default
             #line hidden
             
-            #line 8 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 8 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* Software, and to permit persons to whom the Software is furnished to do so, */ 
             
             #line default
             #line hidden
             
-            #line 9 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 9 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* subject to the following conditions: */ 
             
             #line default
             #line hidden
             
-            #line 10 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 10 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 11 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 11 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* The above copyright notice and this permission notice shall be included in all */ 
             
             #line default
             #line hidden
             
-            #line 12 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 12 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* copies or substantial portions of the Software. */ 
             
             #line default
             #line hidden
             
-            #line 13 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 13 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* */ 
             
             #line default
             #line hidden
             
-            #line 14 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 14 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, */ 
             
             #line default
             #line hidden
             
-            #line 15 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 15 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A */ 
             
             #line default
             #line hidden
             
-            #line 16 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 16 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT */ 
             
             #line default
             #line hidden
             
-            #line 17 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 17 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF */ 
             
             #line default
             #line hidden
             
-            #line 18 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 18 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE */ 
             
             #line default
             #line hidden
             
-            #line 19 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 19 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  /* OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ 
             
             #line default
             #line hidden
             
-            #line 26 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 26 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 
     // Locals
     var moduleId = settings.ModuleId;
@@ -159,21 +159,21 @@ namespace Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Templates.WebApi
             #line hidden
             this.Write("// ");
             
-            #line 36 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 36 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(copyright));
             
             #line default
             #line hidden
-            this.Write("\r\n\r\nusing System.Web.OData.Builder;\r\nusing Microsoft.Practices.Unity;\r\nusing ");
+            this.Write("\r\n\r\nusing System.Web.OData.Builder;\r\nusing Unity;\r\nusing ");
             
-            #line 40 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 40 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 40 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 40 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
@@ -189,63 +189,63 @@ using System.Linq;
 
 namespace ");
             
-            #line 49 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(companyNamespace));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 49 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleId));
             
             #line default
             #line hidden
             this.Write(".WebApi.Controllers");
             
-            #line 49 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 49 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(extension));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// Class ");
             
-            #line 52 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 52 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resourceName));
             
             #line default
             #line hidden
             this.Write("Controller\r\n    /// </summary>\r\n    [ControllerName(\"");
             
-            #line 54 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 54 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resourceName));
             
             #line default
             #line hidden
             this.Write("\")]\r\n    [ODataRoutePrefix(\"");
             
-            #line 55 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 55 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resourceName));
             
             #line default
             #line hidden
             this.Write("\")]\r\n    ");
             
-            #line 56 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 56 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(RestrictedViewResourceControllerValue));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n    public partial class ");
             
-            #line 58 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 58 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resourceName));
             
             #line default
             #line hidden
             this.Write("Controller : ViewResourceController<");
             
-            #line 58 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 58 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -253,7 +253,7 @@ namespace ");
             this.Write(">\r\n    {\r\n        /// <summary>\r\n        /// Initializes a new instance of the <s" +
                     "ee cref=\"");
             
-            #line 61 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 61 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resourceName));
             
             #line default
@@ -261,7 +261,7 @@ namespace ");
             this.Write("Controller\"/> class.\r\n        /// </summary>\r\n        /// <param name=\"container\"" +
                     ">The container</param>\r\n        public ");
             
-            #line 64 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 64 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resourceName));
             
             #line default
@@ -270,7 +270,7 @@ namespace ");
                     "        /// <summary>\r\n        /// Registers this resource as a Web API endpoint" +
                     "\r\n        /// </summary>\r\n        /// <param name=\"builder\"></param>\r\n");
             
-            #line 72 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 72 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  
 var templateFirstLevelEntityList = string.Join(", ", BuildFirstLevelEntityList().Select(e => "T" + e));
 var templateFirstLevelEntityListWithConstraints = string.Join("\r\n        ", BuildFirstLevelEntityList().Select(e => "where T" + e + " : class"));
@@ -280,28 +280,28 @@ var templateFirstLevelEntityListWithConstraints = string.Join("\r\n        ", Bu
             #line hidden
             this.Write("\r\n        public static void RegisterODataEntityBase<");
             
-            #line 77 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 77 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(templateFirstLevelEntityList));
             
             #line default
             #line hidden
             this.Write(">(ODataModelBuilder builder, string entityName)\r\n        ");
             
-            #line 78 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 78 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(templateFirstLevelEntityListWithConstraints));
             
             #line default
             #line hidden
             this.Write("\r\n        {\r\n            builder.EntitySet<T");
             
-            #line 80 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 80 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
             #line hidden
             this.Write(">(entityName);\r\n");
             
-            #line 81 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 81 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 
 		foreach (var detail in controllerSettings.Details)
 		{
@@ -314,7 +314,7 @@ var templateFirstLevelEntityListWithConstraints = string.Join("\r\n        ", Bu
             this.Write("        }\r\n\r\n\r\n\r\n        /// <summary>\r\n        /// Base method for registering t" +
                     "his resource as a Web API endpoint \r\n        /// </summary>\r\n");
             
-            #line 94 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 94 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 
         WriteLine("        /// <typeparam name=\"{0}\"></typeparam>", modelName);
         foreach (var detail in controllerSettings.Details)
@@ -330,7 +330,7 @@ var templateFirstLevelEntityListWithConstraints = string.Join("\r\n        ", Bu
                     "\r\n        public static void RegisterODataEntity(ODataModelBuilder builder)\r\n   " +
                     "     {\r\n");
             
-            #line 106 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 106 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 
               WriteLine("            RegisterODataEntityBase<{0}>(builder, \"{1}\");", string.Join(",", BuildFirstLevelEntityList()), resourceName);
 
@@ -339,7 +339,7 @@ var templateFirstLevelEntityListWithConstraints = string.Join("\r\n        ", Bu
             #line hidden
             this.Write("        }\r\n\r\n");
             
-            #line 111 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 111 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 
 	var entityList = new List<string>();
 	BuildAllEntities(entityList, controllerSettings);
@@ -358,21 +358,21 @@ var templateFirstLevelEntityListWithConstraints = string.Join("\r\n        ", Bu
         /// <returns>An instance of IViewEntity which contains the Sage views and corresponding relationships</returns>
         public IViewResourceEntity GetViewEntityHierarchyBase<");
             
-            #line 124 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 124 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(templateEntityList));
             
             #line default
             #line hidden
             this.Write(">()\r\n        ");
             
-            #line 125 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 125 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(templateEntityListWithConstraints));
             
             #line default
             #line hidden
             this.Write("\r\n        {\r\n");
             
-            #line 127 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 127 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 
     DefineEntities(controllerSettings, "");
     DefineRelationships(controllerSettings, "");
@@ -382,7 +382,7 @@ var templateFirstLevelEntityListWithConstraints = string.Join("\r\n        ", Bu
             #line hidden
             this.Write("            return ");
             
-            #line 131 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 131 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(modelName));
             
             #line default
@@ -398,7 +398,7 @@ var templateFirstLevelEntityListWithConstraints = string.Join("\r\n        ", Bu
         {
             return GetViewEntityHierarchyBase<");
             
-            #line 140 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+            #line 140 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(templateEntityList2));
             
             #line default
@@ -407,7 +407,7 @@ var templateFirstLevelEntityListWithConstraints = string.Join("\r\n        ", Bu
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 144 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 144 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 
     public void DefineEntities(ControllerSettings current, string Prefix)
     {
@@ -423,70 +423,70 @@ var templateFirstLevelEntityListWithConstraints = string.Join("\r\n        ", Bu
         #line default
         #line hidden
         
-        #line 154 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 154 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write("            var ");
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(Prefix));
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(viewModelName));
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write("Entity = ViewResourceEntity<T");
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(viewModelName));
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(">.Create(");
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(keyType));
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(keySegments));
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 155 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 156 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 156 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 
         foreach (var detailSettings in current.Details)
         {
@@ -498,7 +498,7 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 163 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 163 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 
     public void DefineRelationships(ControllerSettings current, string Prefix)
     {
@@ -513,84 +513,84 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 172 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 172 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write("            ");
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(Prefix));
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(headerViewModelName));
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write("Entity.AddDetail(");
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(Prefix));
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(headerViewModelName));
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write("_");
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(detailsViewModelName));
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write("Entity, (m => m.");
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(detailsViewPropertyName));
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 173 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 174 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 174 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 
             DefineRelationships(detailSettings, Prefix + headerViewModelName + "_");
         }
@@ -600,7 +600,7 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 180 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 180 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  private List<string> BuildFirstLevelEntityList()
 {
 	var entityList = new List<string>();
@@ -616,7 +616,7 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 192 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 192 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
  private void BuildAllEntities(List<string> entities, ControllerSettings controllerSettings)
 {
 	entities.Add(controllerSettings.BusinessView.Properties[BusinessView.Constants.ModelName]);
@@ -630,7 +630,7 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 1 "C:\CNA2\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
+        #line 1 "C:\Development\Branches\SDK\Sage300-SDK\src\wizards\Sage300CodeGenerationWizard\Templates\WebApi\Controller.tt"
 
 private global::Sage.CA.SBS.ERP.Sage300.CodeGenerationWizard.Settings _settingsField;
 

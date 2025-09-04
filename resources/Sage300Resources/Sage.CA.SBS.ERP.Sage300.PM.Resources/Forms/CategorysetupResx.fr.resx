@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ARItemDescription" xml:space="preserve">
+    <value>Description d’article de CC</value>
+  </data>
+  <data name="ARItemNotActive" xml:space="preserve">
+    <value>Le numéro d’article de CC {0} est inactif.</value>
+  </data>
+  <data name="ARItemNumber" xml:space="preserve">
+    <value>Numéro d’article de CC</value>
+  </data>
+  <data name="BillingRate" xml:space="preserve">
+    <value>Taux de facturation</value>
+  </data>
+  <data name="BillingRateCannotLessThanZero" xml:space="preserve">
+    <value>Le taux de facturation ne peut pas être inférieur à zéro</value>
+  </data>
+  <data name="BlankErrorMessage" xml:space="preserve">
+    <value>Saisie erronée. {0} ne peut pas être en blanc.</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>Description de {0}</value>
+  </data>
+  <data name="CostDescription" xml:space="preserve">
+    <value>Description du type de coût</value>
+  </data>
+  <data name="CostType" xml:space="preserve">
+    <value>Type de coût</value>
+  </data>
+  <data name="CostTypeInactive" xml:space="preserve">
+    <value>Le type de coût '{0}' est inactif.</value>
+  </data>
+  <data name="CostTypeInvalid" xml:space="preserve">
+    <value>Le type de coût '{0}’ n’existe pas.</value>
+  </data>
+  <data name="DateInactive" xml:space="preserve">
+    <value>Inactif (au)</value>
+  </data>
+  <data name="DateLastMaintained" xml:space="preserve">
+    <value>Dernière modification</value>
+  </data>
+  <data name="GLSegment" xml:space="preserve">
+    <value>Segment du GL</value>
+  </data>
+  <data name="GLSegmentCode" xml:space="preserve">
+    <value>Code de segment du GL</value>
+  </data>
+  <data name="GLSegmentCodeColumnTitle" xml:space="preserve">
+    <value>Code de segment du GL</value>
+  </data>
+  <data name="GLSegmentColumnTitle" xml:space="preserve">
+    <value>Segment du GL</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>Intégration</value>
+  </data>
+  <data name="InvalidUOMBlankMessage" xml:space="preserve">
+    <value>L’unité de mesure de CC ne peut pas être en blanc.</value>
+  </data>
+  <data name="LaborPercentage" xml:space="preserve">
+    <value>Pourcentage du coût salarial indirect</value>
+  </data>
+  <data name="LaborRate" xml:space="preserve">
+    <value>Taux de coût salarial indirect</value>
+  </data>
+  <data name="LaborType" xml:space="preserve">
+    <value>Type de coût salarial indirect</value>
+  </data>
+  <data name="LbrPercentCannotLessThanZero" xml:space="preserve">
+    <value>Le pourcentage du coût salarial indirect ne peut pas être inférieur à zéro</value>
+  </data>
+  <data name="LbrRateCannotLessThanZero" xml:space="preserve">
+    <value>Le taux de coût salarial indirect ne peut pas être inférieur à zéro</value>
+  </data>
+  <data name="NoSegments" xml:space="preserve">
+    <value>Aucun segment disponible.</value>
+  </data>
+  <data name="OKButton" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OptionalFields" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
+  <data name="OverheadPercentage" xml:space="preserve">
+    <value>Pourcentage des coûts indirects</value>
+  </data>
+  <data name="OverheadRate" xml:space="preserve">
+    <value>Taux des coûts indirects</value>
+  </data>
+  <data name="OverheadType" xml:space="preserve">
+    <value>Type de coûts indirects</value>
+  </data>
+  <data name="OverrideGLAccountSegments" xml:space="preserve">
+    <value>Remplacer les segments de comptes du GL</value>
+  </data>
+  <data name="OvhPercentCannotLessThanZero" xml:space="preserve">
+    <value>Le pourcentage des coûts indirects ne peut pas être inférieur à zéro</value>
+  </data>
+  <data name="OvhRateCannotLessThanZero" xml:space="preserve">
+    <value>Le taux des coûts indirects ne peut pas être inférieur à zéro</value>
+  </data>
+  <data name="PMCategoriesTitle" xml:space="preserve">
+    <value>{0} de GP</value>
+  </data>
+  <data name="ProjectTitle" xml:space="preserve">
+    <value>Catégorie de GP</value>
+  </data>
+  <data name="SegValEmpty" xml:space="preserve">
+    <value>La valeur du segment est vide.</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Numéro de série</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Paramètres par défaut pour {0} simples</value>
+  </data>
+  <data name="tabCategory" xml:space="preserve">
+    <value>Catégorie</value>
+  </data>
+  <data name="UnitCost" xml:space="preserve">
+    <value>Coût unitaire</value>
+  </data>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>Unité de mesure</value>
+  </data>
+  <data name="UOMCannotLessThanZero" xml:space="preserve">
+    <value>Le coût unitaire ne peut pas être inférieur à zéro</value>
+  </data>
+  <data name="UOMNotDefinedMessage" xml:space="preserve">
+    <value>L’unité de mesure n’a pas été saisie ou définie pour cet article.</value>
+  </data>
+</root>

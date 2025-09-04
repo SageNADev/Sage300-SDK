@@ -1751,4 +1751,37 @@
   <data name="OrNewerVersion" xml:space="preserve">
     <value> ou une version plus récente'</value>
   </data>
+  <data name="ProxyActionParameterError" xml:space="preserve">
+    <value>The action parameter was not supplied.</value>
+  </data>
+  <data name="ProxyAuthenticationError" xml:space="preserve">
+    <value>The supplied credentials was not able to access Sage 300.</value>
+  </data>
+  <data name="ProxyControllerParameterError" xml:space="preserve">
+    <value>The controller parameter was not supplied.</value>
+  </data>
+  <data name="ProxyDecryptError" xml:space="preserve">
+    <value>An error was generated attempting to decrypt the supplied credentials.</value>
+  </data>
+  <data name="ProxyModuleParameterError" xml:space="preserve">
+    <value>The module parameter was not supplied.</value>
+  </data>
+  <data name="ProxyNoCredentialsError" xml:space="preserve">
+    <value>The credentials are missing from the request.</value>
+  </data>
+  <data name="ProxyParametersError" xml:space="preserve">
+    <value>Please ensure the credentials, public key, and IV are in the request header.</value>
+  </data>
+  <data name="ProxyProductParameterError" xml:space="preserve">
+    <value>The product parameter was not supplied.</value>
+  </data>
+  <data name="ProxyPublicKeyError" xml:space="preserve">
+    <value>The supplied Public Key was not found. Please request a new Public Key.</value>
+  </data>
+  <data name="ProxyTokenError" xml:space="preserve">
+    <value>The supplied Token was not found.</value>
+  </data>
+  <data name="ProxyUseSecureProtocol" xml:space="preserve">
+    <value>The proxy is configured to use a secure protocol and the request is not secure.</value>
+  </data>
 </root>

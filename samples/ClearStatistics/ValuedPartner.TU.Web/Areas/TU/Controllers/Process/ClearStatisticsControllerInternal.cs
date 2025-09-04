@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -23,7 +23,7 @@
 using System;
 using System.Globalization;
 using System.Linq;
-using Microsoft.Practices.Unity;
+using Unity;
 using ValuedPartner.TU.Interfaces.Services.Process;
 using ValuedPartner.TU.Models.Process;
 using ValuedPartner.TU.Web.Areas.TU.Models.Process;
@@ -38,6 +38,7 @@ using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.Process;
 using Sage.CA.SBS.ERP.Sage300.CS.Interfaces.Services;
 using Sage.CA.SBS.ERP.Sage300.CS.Models;
 using Sage.CA.SBS.ERP.Sage300.CS.Models.Enums;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
 
 #endregion
 
@@ -253,7 +254,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Process
         private Options GetOptions()
         {
             var optionsService =
-                Context.Container.Resolve<IOptionsService<Options>>(new ParameterOverride("context", Context));
+                Context.Container.Resolve<IOptionsService<Options>>(Utilities.ContextParameter(Context));
             return optionsService.Get().Items.FirstOrDefault();
         }
 
@@ -264,8 +265,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Process
         private CompanyProfile GetCompanyProfile()
         {
             var companyProfileRepository =
-                Context.Container.Resolve<ICompanyProfileService<CompanyProfile>>(new ParameterOverride("context",
-                    Context));
+                Context.Container.Resolve<ICompanyProfileService<CompanyProfile>>(Utilities.ContextParameter(Context));
             var companyProfile = companyProfileRepository.Get();
             return (companyProfile != null && companyProfile.Items != null && companyProfile.Items.Any()
                 ? companyProfile.Items.First()
@@ -289,8 +289,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Process
                 (periodType == StatisticsPeriodType.FiscalPeriod))
             {
                 var fiscalCalendarService =
-                    Context.Container.Resolve<ICompanyProfileService<CompanyProfile>>(new ParameterOverride("context",
-                        Context));
+                    Context.Container.Resolve<ICompanyProfileService<CompanyProfile>>(Utilities.ContextParameter(Context));
                 var fiscalCalendar = fiscalCalendarService.Get().Items.FirstOrDefault();
                 if (fiscalCalendar != null)
                     totalPeriodCount = fiscalCalendar.CompanyProfileOptions.NumberofFiscalPeriods ==
@@ -363,7 +362,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers.Process
             _totalPeriodCount = 0;
             var fiscalCalendarService =
                 Context.Container.Resolve<IFiscalCalendarService<Sage.CA.SBS.ERP.Sage300.CS.Models.FiscalCalendar>>(
-                    new ParameterOverride("context", Context));
+                    Utilities.ContextParameter(Context));
             if (fiscalCalendarService.IsValid(year))
             {
                 var options = GetOptions();
