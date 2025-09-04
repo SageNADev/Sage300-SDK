@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+<data name="AddingToAnExistingBatch" xml:space="preserve">
+  <value>新增至現有批次</value>
+</data>
+<data name="AddLineError" xml:space="preserve">
+  <value>您必須將合約分段新增至列表末尾。請先捲動至列表底部再新增合約分段。</value>
+</data>
+<data name="Adjustments" xml:space="preserve">
+  <value>調整</value>
+</data>
+<data name="AgingPeriods" xml:space="preserve">
+  <value>帳齡期間</value>
+</data>
+<data name="AppendGLBatch" xml:space="preserve">
+  <value>建立應收批次方式</value>
+</data>
+<data name="ARBilling" xml:space="preserve">
+  <value>應收帳款計費</value>
+</data>
+<data name="BasicProject" xml:space="preserve">
+  <value>基本專案</value>
+</data>
+<data name="BillingRate" xml:space="preserve">
+  <value>計費費率：</value>
+</data>
+<data name="CategoryDescription" xml:space="preserve">
+  <value>類別描述</value>
+</data>
+<data name="Charges" xml:space="preserve">
+  <value>費用</value>
+</data>
+<data name="ClearBillingsAndWIPDuringProjectClose" xml:space="preserve">
+  <value>專案關閉時清除計費和在製品</value>
+</data>
+<data name="ClearBillingsAndWIPDuringRevenueRecognition" xml:space="preserve">
+  <value>收入認列時清除計費和在製品</value>
+</data>
+<data name="Comment" xml:space="preserve">
+  <value>備註</value>
+</data>
+<data name="Company" xml:space="preserve">
+  <value>公司</value>
+</data>
+<data name="ConfirmationMsg" xml:space="preserve">
+  <value>警告。一旦合約分隔符設為不使用，將無法再設為使用。是否繼續？</value>
+</data>
+<data name="ContactName" xml:space="preserve">
+  <value>聯絡人姓名</value>
+</data>
+<data name="ContractComment" xml:space="preserve">
+  <value>合約備註</value>
+</data>
+<data name="ContractDescription" xml:space="preserve">
+  <value>合約描述</value>
+</data>
+<data name="ContractProjectCategory" xml:space="preserve">
+  <value>合約-專案-類別</value>
+</data>
+<data name="ContractStructures" xml:space="preserve">
+  <value>合約結構中使用的分隔符</value>
+</data>
+<data name="Costs" xml:space="preserve">
+  <value>成本</value>
+</data>
+<data name="CreatingAndPostingANewBatch" xml:space="preserve">
+  <value>建立並過帳新批次</value>
+</data>
+<data name="CreatingANewBatch" xml:space="preserve">
+  <value>建立新批次</value>
+</data>
+<data name="DefaultAccountingMethod" xml:space="preserve">
+  <value>預設會計方法</value>
+</data>
+<data name="DefaultARItemNumber" xml:space="preserve">
+  <value>預設應收項目編號</value>
+</data>
+<data name="DefaultARUnitOfMeasure" xml:space="preserve">
+  <value>預設應收計量單位</value>
+</data>
+<data name="DefaultContractStructure" xml:space="preserve">
+  <value>預設合約結構</value>
+</data>
+<data name="DefaultContractStructureDescription" xml:space="preserve">
+  <value>預設合約結構描述</value>
+</data>
+<data name="DefaultContractStyle" xml:space="preserve">
+  <value>預設合約樣式</value>
+</data>
+<data name="DefaultLaborType" xml:space="preserve">
+  <value>預設人工類型</value>
+</data>
+<data name="DefaultOverheadType" xml:space="preserve">
+  <value>預設管理費用類型</value>
+</data>
+<data name="DeleteLineError" xml:space="preserve">
+  <value>無法刪除合約結構分段。</value>
+</data>
+<data name="Description" xml:space="preserve">
+  <value>描述</value>
+</data>
+<data name="DetailDescription" xml:space="preserve">
+  <value>明細描述</value>
+</data>
+<data name="DocumentTransactionDate" xml:space="preserve">
+  <value>單據/交易日期</value>
+</data>
+<data name="DocumentType" xml:space="preserve">
+  <value>單據類型</value>
+</data>
+<data name="Entity" xml:space="preserve">
+  <value>PJC選項</value>
+</data>
+<data name="EquipmentUsage" xml:space="preserve">
+  <value>設備使用</value>
+</data>
+<data name="FaxNumber" xml:space="preserve">
+  <value>傳真</value>
+</data>
+<data name="ForceListingOfTransactions" xml:space="preserve">
+  <value>強制列出交易</value>
+</data>
+<data name="GLDescriptionFieldNotUsed" xml:space="preserve">
+  <value>應收發票描述欄位</value>
+</data>
+<data name="GLReferenceFieldNotUsed" xml:space="preserve">
+  <value>應收發票備註欄位</value>
+</data>
+<data name="Integration" xml:space="preserve">
+  <value>整合</value>
+</data>
+<data name="LaborPercentage" xml:space="preserve">
+  <value>人工百分比</value>
+</data>
+<data name="LaborRate" xml:space="preserve">
+  <value>人工費率</value>
+</data>
+<data name="Length" xml:space="preserve">
+  <value>長度</value>
+</data>
+<data name="Level1Name" xml:space="preserve">
+  <value>級別1名稱</value>
+</data>
+<data name="Level1NamePlural" xml:space="preserve">
+  <value>級別1名稱複數</value>
+</data>
+<data name="Level2Name" xml:space="preserve">
+  <value>級別2名稱</value>
+</data>
+<data name="Level2NamePlural" xml:space="preserve">
+  <value>級別2名稱複數</value>
+</data>
+<data name="Level3Name" xml:space="preserve">
+  <value>級別3名稱</value>
+</data>
+<data name="Level3NamePlural" xml:space="preserve">
+  <value>級別3名稱複數</value>
+</data>
+<data name="MaterialAllocation" xml:space="preserve">
+  <value>材料分配</value>
+</data>
+<data name="MaterialReturns" xml:space="preserve">
+  <value>材料退回</value>
+</data>
+<data name="MaterialUsage" xml:space="preserve">
+  <value>材料使用</value>
+</data>
+<data name="NextNumber" xml:space="preserve">
+  <value>下一個編號</value>
+</data>
+<data name="NextPostingSequenceGrid" xml:space="preserve">
+  <value>下一個過帳序列</value>
+</data>
+<data name="OpeningBalances" xml:space="preserve">
+  <value>期初餘額</value>
+</data>
+<data name="Options" xml:space="preserve">
+  <value>PJC選項</value>
+</data>
+<data name="OverheadPercentage" xml:space="preserve">
+  <value>管理費用百分比</value>
+</data>
+<data name="OverheadRate" xml:space="preserve">
+  <value>管理費用費率</value>
+</data>
+<data name="PercentageCompleteMethod" xml:space="preserve">
+  <value>完工百分比法</value>
+</data>
+<data name="PercentageCompleteMethodWarnMsg" xml:space="preserve">
+  <value>更改此選項可能導致收入和成本認列錯誤。如更改此選項，請確保適當調整您的總帳。</value>
+</data>
+<data name="PJCEmployee" xml:space="preserve">
+  <value>PJC員工</value>
+</data>
+<data name="PostingDate" xml:space="preserve">
+  <value>預設過帳日期</value>
+</data>
+<data name="PostingDateOption" xml:space="preserve">
+  <value>過帳日期選項</value>
+</data>
+<data name="Prefix" xml:space="preserve">
+  <value>前綴</value>
+</data>
+<data name="PREmployee" xml:space="preserve">
+  <value>PR員工</value>
+</data>
+<data name="ProjectDescription" xml:space="preserve">
+  <value>專案描述</value>
+</data>
+<data name="RecognizeCost" xml:space="preserve">
+  <value>僅在專案類型為物品發票時認列成本</value>
+</data>
+<data name="RecordExistError" xml:space="preserve">
+  <value>合約分段。記錄已存在</value>
+</data>
+<data name="Reference" xml:space="preserve">
+  <value>參考</value>
+</data>
+<data name="ReopenProjects" xml:space="preserve">
+  <value>重新開啟專案</value>
+</data>
+<data name="RevenueRecognition" xml:space="preserve">
+  <value>收入認列</value>
+</data>
+<data name="ReviseEstimates" xml:space="preserve">
+  <value>修訂預算</value>
+</data>
+<data name="SaveConfirm" xml:space="preserve">
+  <value>{0}畫面有未儲存的變更。是否繼續？</value>
+</data>
+<data name="SegmentName" xml:space="preserve">
+  <value>分段名稱</value>
+</data>
+<data name="SegmentNumber" xml:space="preserve">
+  <value>分段編號</value>
+</data>
+<data name="Segments" xml:space="preserve">
+  <value>分段</value>
+</data>
+<data name="Separator" xml:space="preserve">
+  <value>分隔符</value>
+</data>
+<data name="SessionDate" xml:space="preserve">
+  <value>工作階段日期</value>
+</data>
+<data name="Settings" xml:space="preserve">
+  <value>設定</value>
+</data>
+<data name="StandardProject" xml:space="preserve">
+  <value>標準專案</value>
+</data>
+<data name="Telephone" xml:space="preserve">
+  <value>電話</value>
+</data>
+<data name="TimecardDefaultGrid" xml:space="preserve">
+  <value>工時卡預設值</value>
+</data>
+<data name="Timecards" xml:space="preserve">
+  <value>工時卡</value>
+</data>
+<data name="TransactionNumberGrid" xml:space="preserve">
+  <value>交易編號</value>
+</data>
+<data name="Transactions" xml:space="preserve">
+  <value>交易</value>
+</data>
+<data name="TypeWorksheetNumberDocumentNumber" xml:space="preserve">
+  <value>類型-工作表編號-單據編號</value>
+</data>
+<data name="UnitCost" xml:space="preserve">
+  <value>單位成本：</value>
+</data>
+<data name="UpdateBudgets" xml:space="preserve">
+  <value>更新預算</value>
+</data>
+<data name="UpdateBudgetsWarning1" xml:space="preserve">
+  <value>若關閉此選項，所有與作業相關的交易將不會更新預算資訊。</value>
+</data>
+<data name="UpdateBudgetsWarning2" xml:space="preserve">
+  <value>此選項會影響處理速度，因所有與作業相關的交易都會更新預算。</value>
+</data>
+<data name="UpdatePayroll" xml:space="preserve">
+  <value>更新薪資</value>
+</data>
+<data name="UpdateRetainage" xml:space="preserve">
+  <value>更新保留款</value>
+</data>
+<data name="Use" xml:space="preserve">
+  <value>使用</value>
+</data>
+<data name="UseExpenseAccounts" xml:space="preserve">
+  <value>使用費用科目</value>
+</data>
+<data name="Validate" xml:space="preserve">
+  <value>驗證</value>
+</data>
+<data name="ValidateLengthError" xml:space="preserve">
+  <value>此分段無法修改，合約結構正在使用此分段。</value>
+</data>
+</root>

@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class HelpResx {
@@ -11653,6 +11653,114 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Categories.
+        /// </summary>
+        public static string PM_Setup_Categories_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_Categories_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Charges.
+        /// </summary>
+        public static string PM_Setup_Charges_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_Charges_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract Structures.
+        /// </summary>
+        public static string PM_Setup_ContractStructures_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_ContractStructures_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employees.
+        /// </summary>
+        public static string PM_Setup_Employees_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_Employees_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GL Integrations.
+        /// </summary>
+        public static string PM_Setup_GL_Integrations_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_GL_Integrations_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miscellaneous Expenses.
+        /// </summary>
+        public static string PM_Setup_MiscellaneousExpenses_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_MiscellaneousExpenses_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Fields.
+        /// </summary>
+        public static string PM_Setup_OptionalFields_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_OptionalFields_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string PM_Setup_Options_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_Options_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overhead Expenses.
+        /// </summary>
+        public static string PM_Setup_OverheadExpenses_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_OverheadExpenses_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Projects.
+        /// </summary>
+        public static string PM_Setup_Projects_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_Projects_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Segment Codes.
+        /// </summary>
+        public static string PM_Setup_SegmentCodes_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_SegmentCodes_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subcontractors.
+        /// </summary>
+        public static string PM_Setup_Subcontractors_Screen {
+            get {
+                return ResourceManager.GetString("PM_Setup_Subcontractors_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Project and Job Costing Reports.
         /// </summary>
         public static string PM_Subcontractors_Report_Article1 {
@@ -13379,7 +13487,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
                 return ResourceManager.GetString("SageSupport_ResourceCentre", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Search Help.
         /// </summary>

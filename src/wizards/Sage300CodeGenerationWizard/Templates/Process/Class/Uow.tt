@@ -34,7 +34,7 @@
 
 #region Namespace
 
-using Microsoft.Practices.Unity;
+using Unity;
 using <#=companyNamespace#>.<#=moduleId#>.Interfaces.BusinessRepository.Process;
 using <#=companyNamespace#>.<#=moduleId#>.Models.Process;
 using Sage.CA.SBS.ERP.Sage300.Common.Services.UnitOfWork;

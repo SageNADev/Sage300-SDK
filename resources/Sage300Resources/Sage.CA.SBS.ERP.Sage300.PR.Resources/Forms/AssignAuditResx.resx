@@ -507,4 +507,19 @@
   <data name="InvalidCurErrorMsg" xml:space="preserve">
     <value>Invalid input. Currency Code is not defined. </value>
   </data>
+  <data name="Decrease" xml:space="preserve">
+    <value>Decrease</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Increase</value>
+  </data>
+  <data name="PctDec" xml:space="preserve">
+    <value>Pct Dec</value>
+  </data>
+  <data name="PctInc" xml:space="preserve">
+    <value>Pct Inc</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>Replace</value>
+  </data>
 </root>

@@ -246,6 +246,9 @@
   <data name="Iowa" xml:space="preserve">
     <value>IA - Iowa</value>
   </data>
+  <data name="Kansas" xml:space="preserve">
+    <value>KS - Kansas</value>
+  </data>
   <data name="LocalFilePath" xml:space="preserve">
     <value>Local File Path</value>
   </data>
@@ -278,6 +281,9 @@
   </data>
   <data name="NonEFTChequessOnly" xml:space="preserve">
     <value>Non - EFT Cheques Only</value>
+  </data>
+  <data name="NorthCarolina" xml:space="preserve">
+    <value>NC - North Carolina</value>
   </data>
   <data name="NorthDakota" xml:space="preserve">
     <value>ND - North Dakota</value>
@@ -389,6 +395,9 @@
   </data>
   <data name="Virginia" xml:space="preserve">
     <value>VA - Virginia</value>
+  </data>
+  <data name="Washington" xml:space="preserve">
+    <value>WA - Washington</value>
   </data>
   <data name="WestVirginia" xml:space="preserve">
     <value>WV - West Virginia</value>

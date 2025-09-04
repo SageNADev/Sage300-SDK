@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved. */
 
 var uplodeUI =
 {
@@ -16,6 +16,7 @@ var uplodeUI =
     supportFileType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     supportFileExtension: "xlsx",
     reader: new FileReader(),
+    onFail: null,
 
     //Read the file and find out how many blocks we would need to split it.
     handleFileSelect: function (e) {
@@ -91,6 +92,10 @@ var uplodeUI =
             str = '0' + str;
         }
         return str;
+    },
+    performUpload: function (onFail) {
+        uplodeUI.onFail = onFail;
+        uplodeUI.uploadFileInBlocks();
     }
 };
 
@@ -123,8 +128,9 @@ uplodeUI.reader.onloadend = function (evt) {
 
         sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "ExportImport", "GetImportBlobReference"), data, function (result) {
 
-            //This wil only happen if directory name is invalid.
+            // This should only happen if directory name or something is invalid
             if (result === "") {
+                uplodeUI.onFail?.();
                 return;
             }
             let urlParts = result.split('/');

@@ -2787,6 +2787,9 @@
   <data name="LastProcessedTime" xml:space="preserve">
     <value>上一处理时间</value>
   </data>
+  <data name="LastProcessedUserID" xml:space="preserve">
+    <value>最后处理者</value>
+  </data>
   <data name="FractionalQuantityWarning" xml:space="preserve">
     <value>如果您选择允许非整数数量的选项，以后无法更改。是否确要允许非整数数量？</value>
   </data>

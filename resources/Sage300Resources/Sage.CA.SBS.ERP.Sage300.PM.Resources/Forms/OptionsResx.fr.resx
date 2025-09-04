@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddingToAnExistingBatch" xml:space="preserve">
+    <value>Ajoutant à un lot existant</value>
+  </data>
+  <data name="AddLineError" xml:space="preserve">
+    <value>Vous devez ajouter un segment de contrat à la fin de la liste. Veuillez défiler jusqu&apos;au bas de la liste avant d&apos;ajouter un segment de contrat.</value>
+  </data>
+  <data name="Adjustments" xml:space="preserve">
+    <value>Ajustements</value>
+  </data>
+  <data name="AgingPeriods" xml:space="preserve">
+    <value>Périodes chronologiques</value>
+  </data>
+  <data name="AppendGLBatch" xml:space="preserve">
+    <value>Créer lots de CC en</value>
+  </data>
+  <data name="ARBilling" xml:space="preserve">
+    <value>Facturation de CC</value>
+  </data>
+  <data name="BasicProject" xml:space="preserve">
+    <value>Projet simple</value>
+  </data>
+  <data name="BillingRate" xml:space="preserve">
+    <value>Taux de facturation :</value>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>Description de catégorie</value>
+  </data>
+  <data name="Charges" xml:space="preserve">
+    <value>Frais</value>
+  </data>
+  <data name="ClearBillingsAndWIPDuringProjectClose" xml:space="preserve">
+    <value>Compenser facturation/travaux en cours lors de clôture du projet</value>
+  </data>
+  <data name="ClearBillingsAndWIPDuringRevenueRecognition" xml:space="preserve">
+    <value>Compenser facturation/travaux en cours lors de la constatation du produit</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Commentaire</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Entreprise</value>
+  </data>
+  <data name="ConfirmationMsg" xml:space="preserve">
+    <value>Avertissement. Lorsqu&apos;un séparateur de contrat est défini comme inutilisé, vous ne pouvez pas le réinitialiser pour le mettre à l&apos;état « Utilisé ». Voulez-vous continuer?</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Nom du contact</value>
+  </data>
+  <data name="ContractComment" xml:space="preserve">
+    <value>Commentaire - Contrat</value>
+  </data>
+  <data name="ContractDescription" xml:space="preserve">
+    <value>Description du contrat</value>
+  </data>
+  <data name="ContractProjectCategory" xml:space="preserve">
+    <value>Contrat-Projet-Catégorie</value>
+  </data>
+  <data name="ContractStructures" xml:space="preserve">
+    <value>Séparateurs utilisés dans les structures de contrat</value>
+  </data>
+  <data name="Costs" xml:space="preserve">
+    <value>Coûts</value>
+  </data>
+  <data name="CreatingAndPostingANewBatch" xml:space="preserve">
+    <value>Créant et reportant un nouveau lot</value>
+  </data>
+  <data name="CreatingANewBatch" xml:space="preserve">
+    <value>Créant un nouveau lot</value>
+  </data>
+  <data name="DefaultAccountingMethod" xml:space="preserve">
+    <value>Méthode de comptabilité par défaut</value>
+  </data>
+  <data name="DefaultARItemNumber" xml:space="preserve">
+    <value>Numéro d’article de CC par défaut</value>
+  </data>
+  <data name="DefaultARUnitOfMeasure" xml:space="preserve">
+    <value>Unité de mesure de CC par défaut</value>
+  </data>
+  <data name="DefaultContractStructure" xml:space="preserve">
+    <value>Structure de contrat par défaut</value>
+  </data>
+  <data name="DefaultContractStructureDescription" xml:space="preserve">
+    <value>Description de structure de contrat par défaut</value>
+  </data>
+  <data name="DefaultContractStyle" xml:space="preserve">
+    <value>Style de contrat par défaut</value>
+  </data>
+  <data name="DefaultLaborType" xml:space="preserve">
+    <value>Type de coût salarial indirect par défaut</value>
+  </data>
+  <data name="DefaultOverheadType" xml:space="preserve">
+    <value>Type coûts indirects par défaut</value>
+  </data>
+  <data name="DeleteLineError" xml:space="preserve">
+    <value>Impossible de supprimer un segment de structure de contrat.</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DetailDescription" xml:space="preserve">
+    <value>Description du détail</value>
+  </data>
+  <data name="DocumentTransactionDate" xml:space="preserve">
+    <value>Date document/transaction</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Type de document</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Options de GP</value>
+  </data>
+  <data name="EquipmentUsage" xml:space="preserve">
+    <value>Utilisation du matériel</value>
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="ForceListingOfTransactions" xml:space="preserve">
+    <value>Forcer liste de transactions</value>
+  </data>
+  <data name="GLDescriptionFieldNotUsed" xml:space="preserve">
+    <value>Champ description facture CC</value>
+  </data>
+  <data name="GLReferenceFieldNotUsed" xml:space="preserve">
+    <value>Champ commentaires facture CC</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>Intégration</value>
+  </data>
+  <data name="LaborPercentage" xml:space="preserve">
+    <value>P. cent coût salarial indirect</value>
+  </data>
+  <data name="LaborRate" xml:space="preserve">
+    <value>Taux de coût salarial indirect</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Longueur</value>
+  </data>
+  <data name="Level1Name" xml:space="preserve">
+    <value>Nom niveau 1</value>
+  </data>
+  <data name="Level1NamePlural" xml:space="preserve">
+    <value>Nom niveau 1 - Pluriel</value>
+  </data>
+  <data name="Level2Name" xml:space="preserve">
+    <value>Nom niveau 2</value>
+  </data>
+  <data name="Level2NamePlural" xml:space="preserve">
+    <value>Nom niveau 2 - Pluriel</value>
+  </data>
+  <data name="Level3Name" xml:space="preserve">
+    <value>Nom niveau 3</value>
+  </data>
+  <data name="Level3NamePlural" xml:space="preserve">
+    <value>Nom niveau 3 - Pluriel</value>
+  </data>
+  <data name="MaterialAllocation" xml:space="preserve">
+    <value>Coût alloué-Utilisation des matériaux</value>
+  </data>
+  <data name="MaterialReturns" xml:space="preserve">
+    <value>Retours des matériaux</value>
+  </data>
+  <data name="MaterialUsage" xml:space="preserve">
+    <value>Utilisation des matériaux</value>
+  </data>
+  <data name="NextNumber" xml:space="preserve">
+    <value>Numéro suivant</value>
+  </data>
+  <data name="NextPostingSequenceGrid" xml:space="preserve">
+    <value>Séquence de report suivante</value>
+  </data>
+  <data name="OpeningBalances" xml:space="preserve">
+    <value>Soldes d’ouverture</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options de GP</value>
+  </data>
+  <data name="OverheadPercentage" xml:space="preserve">
+    <value>Pourcentage des coûts indirects</value>
+  </data>
+  <data name="OverheadRate" xml:space="preserve">
+    <value>Taux des coûts indirects</value>
+  </data>
+  <data name="PercentageCompleteMethod" xml:space="preserve">
+    <value>Méthode d’avancement</value>
+  </data>
+  <data name="PercentageCompleteMethodWarnMsg" xml:space="preserve">
+    <value>La modification de cette option peut entraîner des écritures incorrectes lors la constatation des produits et des coûts. Si vous changez cette option, assurez-vous d&apos;effectuer les ajustements nécessaires dans votre Grand livre.</value>
+  </data>
+  <data name="PJCEmployee" xml:space="preserve">
+    <value>Employé de GP</value>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>Date de report par défaut</value>
+  </data>
+  <data name="PostingDateOption" xml:space="preserve">
+    <value>Option de date de report</value>
+  </data>
+  <data name="Prefix" xml:space="preserve">
+    <value>Préfixe</value>
+  </data>
+  <data name="PREmployee" xml:space="preserve">
+    <value>Employé de PR</value>
+  </data>
+  <data name="ProjectDescription" xml:space="preserve">
+    <value>Description du projet</value>
+  </data>
+  <data name="RecognizeCost" xml:space="preserve">
+    <value>Seulement constater coûts lors facturation de projet utilisant type facture d&apos;article</value>
+  </data>
+  <data name="RecordExistError" xml:space="preserve">
+    <value>Segment de contrat. L’enregistrement existe déjà</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Référence</value>
+  </data>
+  <data name="ReopenProjects" xml:space="preserve">
+    <value>Rouvrir les projets</value>
+  </data>
+  <data name="RevenueRecognition" xml:space="preserve">
+    <value>Constatation du produit</value>
+  </data>
+  <data name="ReviseEstimates" xml:space="preserve">
+    <value>Estimations révisées</value>
+  </data>
+  <data name="SaveConfirm" xml:space="preserve">
+    <value>Il y a des modifications non sauvegardées dans l’écran {0}. Continuer?</value>
+  </data>
+  <data name="SegmentName" xml:space="preserve">
+    <value>Nom du segment</value>
+  </data>
+  <data name="SegmentNumber" xml:space="preserve">
+    <value>Numéro de segment</value>
+  </data>
+  <data name="Segments" xml:space="preserve">
+    <value>Segments</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>Séparateur</value>
+  </data>
+  <data name="SessionDate" xml:space="preserve">
+    <value>Date de session</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="StandardProject" xml:space="preserve">
+    <value>Projet standard</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="TimecardDefaultGrid" xml:space="preserve">
+    <value>Feuilles de temps implicites</value>
+  </data>
+  <data name="Timecards" xml:space="preserve">
+    <value>Feuilles de temps</value>
+  </data>
+  <data name="TransactionNumberGrid" xml:space="preserve">
+    <value>Numérotation de transaction</value>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>Transactions</value>
+  </data>
+  <data name="TypeWorksheetNumberDocumentNumber" xml:space="preserve">
+    <value>Type-N° chiffrier-N° document</value>
+  </data>
+  <data name="UnitCost" xml:space="preserve">
+    <value>Coût unitaire :</value>
+  </data>
+  <data name="UpdateBudgets" xml:space="preserve">
+    <value>Mise à jour budgets</value>
+  </data>
+  <data name="UpdateBudgetsWarning1" xml:space="preserve">
+    <value>Les données de budget ne seront pas actualisées par toutes les transactions de tâche connexe si vous désactivez cette option.</value>
+  </data>
+  <data name="UpdateBudgetsWarning2" xml:space="preserve">
+    <value>Cette option a un impact sur la rapidité du traitement car les budgets sont actualisées par toutes les transactions de tâche connexe.</value>
+  </data>
+  <data name="UpdatePayroll" xml:space="preserve">
+    <value>Mise à jour de Paie</value>
+  </data>
+  <data name="UpdateRetainage" xml:space="preserve">
+    <value>Mise à jour de retenue</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>Utiliser</value>
+  </data>
+  <data name="UseExpenseAccounts" xml:space="preserve">
+    <value>Utiliser cptes charges</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Valider</value>
+  </data>
+  <data name="ValidateLengthError" xml:space="preserve">
+    <value>Vous ne pouvez pas modifier ce segment, il est utilisé par des structures de contrat.</value>
+  </data>
+</root>

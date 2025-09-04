@@ -36,7 +36,7 @@
 // <#=copyright#>
 
 using System.Web.OData.Builder;
-using Microsoft.Practices.Unity;
+using Unity;
 using <#=companyNamespace#>.<#=moduleId#>.WebApi.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.WebApi.Attributes;
 using Sage.CA.SBS.ERP.Sage300.Common.WebApi.BusinessRepository;

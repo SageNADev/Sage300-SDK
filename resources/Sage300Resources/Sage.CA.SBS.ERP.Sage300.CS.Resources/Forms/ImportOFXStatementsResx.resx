@@ -145,6 +145,14 @@
     <value>{0} statement(s) and {1} new transaction(s) imported, saved, and ready for matching.</value>
     <comment>Message</comment>
   </data>
+  <data name="ImportFailedMessage" xml:space="preserve">
+    <value>Failed to import the given file.</value>
+    <comment>The generic failure message to be used on the client side if the upload/import fails</comment>
+  </data>
+  <data name="InvalidFileTypeMessage" xml:space="preserve">
+    <value>The file name or type is not valid.</value>
+    <comment>The error message to be displayed when the user attempts to choose a file whose type is not acceptable.</comment>
+  </data>
   <data name="InvRecYP" xml:space="preserve">
     <value>Reconciliations for bank {0} were skipped. To reconcile this bank, you must specify a reconciliation year/period that is {1}-{2} or later.</value>
     <comment>Message</comment>

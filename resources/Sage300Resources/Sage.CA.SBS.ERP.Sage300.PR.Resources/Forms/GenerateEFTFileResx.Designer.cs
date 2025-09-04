@@ -446,6 +446,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
                 return ResourceManager.GetString("Iowa", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to KS - Kansas.
+        /// </summary>
+        public static string Kansas {
+            get {
+                return ResourceManager.GetString("Kansas", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Local File Path.
@@ -546,6 +555,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to NC - North Carolina.
+        /// </summary>
+        public static string NorthCarolina {
+            get {
+                return ResourceManager.GetString("NorthCarolina", resourceCulture);
+            }
+        }
+		
         /// <summary>
         ///   Looks up a localized string similar to ND - North Dakota.
         /// </summary>
@@ -879,6 +897,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to WA - Washington.
+        /// </summary>
+        public static string Washington {
+            get {
+                return ResourceManager.GetString("Washington", resourceCulture);
+            }
+        }
+		
         /// <summary>
         ///   Looks up a localized string similar to WV - West Virginia.
         /// </summary>

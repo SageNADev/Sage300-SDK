@@ -32,12 +32,12 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
         public ProxyTesterViewModel()
         {
             // Default Authentication Settings
-            User = "ADMIN"; // Partner to specify the default user if desired
-            Password = "r%AC@8!x$ds8";  // Partner to specify the default password if desired
-            Company = "SAMINC"; // Partner to specify the default company if desired
+            User = ""; // Partner to specify the default user if desired
+            Password = "";  // Partner to specify the default password if desired
+            Company = ""; // Partner to specify the default company if desired
 
             // Default Server Configurations - Partner to specify the target Sage server and this ProxyTester server
-            TargetServer = "https://s300rd-spt.com/Sage300"; // Partner to specify the target Sage server (i.e. http://localhost:54445 or http://localhost/Sage300)
+            TargetServer = "http://localhost/Sage300"; // Partner to specify the target Sage server (i.e. http://localhost:54445 or http://localhost/Sage300)
             ProxyTesterServer = "https://localhost:44347"; // Partner to specify this ProxyTester server (i.e. https://localhost:44347)
 
             // Proxy Request

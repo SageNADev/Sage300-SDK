@@ -1848,4 +1848,7 @@
     <value>Emails {0} to {1} sent successfully; canceled before or on {2}</value>
     <comment>As for SomeEmailsSentFailed except corresponds to canceling the process rather than failure</comment>
   </data>
+  <data name="ProxyUseSecureProtocol" xml:space="preserve">
+    <value>The proxy is configured to use a secure protocol and the request is not secure.</value>
+  </data>
 </root>

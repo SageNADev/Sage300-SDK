@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */
+﻿/* Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved. */
 
 "use strict";
 
@@ -1840,6 +1840,7 @@ var TaskDockMenuBreadCrumbManager = function (recentWindowsMenu) {
                 });
 
                 $("#recentWindowManager > div").hide();
+                $("#favoriteWindowManager > div").hide();
 
             }).on("mouseleave", function () {
                 $("#windowManager > div").hide();
@@ -1847,16 +1848,39 @@ var TaskDockMenuBreadCrumbManager = function (recentWindowsMenu) {
 
             $("#recentWindowManager").on("click", recentWindowsMenu.show).on("mouseleave", recentWindowsMenu.hide);
 
+            $("#favoriteWindowManager").
+                on("click", (event) => { $("#favoriteWindowManager > div").show(); }).
+                on("mouseleave", (event) => { $("#favoriteWindowManager > div").hide(); });
+
+            $("#dvFavoriteWindows").on("click", "span", function () {
+                // click on menu
+                let menuId = $(this).data("menuid");
+                if (menuId) {
+                    $(`.menu-section a:not(.with-menu)[data-menuid='${menuId}']`).trigger('click');
+                    return;
+                }
+
+                // click on "cross" to remove
+                let sourcemenuId = $(this).data("sourcemenuid");
+                if (sourcemenuId) {
+                    $(`.menu-section a:not(.with-menu)[data-menuid='${sourcemenuId}'] span`).trigger('click');
+                }
+            });
+
             // D-41776 iPad issue - Closing the Window Manager when touched outside of the popup
 
-            $("#recentWindowManager, #navbarSide, #breadcrumb, #screenLayout, #btnViewReports, #btnViewInquiries, #btnViewNotes, #globalHeader").click(function () {
+            $("#recentWindowManager, #favoriteWindowManager, #navbarSide, #breadcrumb, #screenLayout, #btnViewReports, #btnViewInquiries, #btnViewNotes, #globalHeader").click(function () {
                 $("#windowManager > div").hide();
             });
 
             // D-41776 iPad issue - Closing the Recently Opened Windows when touched outside of the popup
 
-            $("#windowManager, #navbarSide, #breadcrumb, #screenLayout, #btnViewReports, #btnViewInquiries, #btnViewNotes,  #globalHeader").click(function () {
+            $("#windowManager, #favoriteWindowManager, #navbarSide, #breadcrumb, #screenLayout, #btnViewReports, #btnViewInquiries, #btnViewNotes,  #globalHeader").click(function () {
                 $("#recentWindowManager > div").hide();
+            });
+
+            $("#windowManager, #recentWindowManager, #navbarSide, #breadcrumb, #screenLayout, #btnViewReports, #btnViewInquiries, #btnViewNotes,  #globalHeader").click(function () {
+                $("#favoriteWindowManager > div").hide();
             });
 
             $('.top_nav_drop_content').click(function () {
@@ -1916,7 +1940,10 @@ var TaskDockMenuBreadCrumbManager = function (recentWindowsMenu) {
                     setTimeout(function () {
                         var isContentWindow = sg.utls.isChrome() || sg.utls.isMozillaFirefox() || sg.utls.isSafari();
                         var iframeWin = isContentWindow ? window[currentIframeId].contentWindow : window[currentIframeId];
-                        isIframeClose = isReport || (iframeWin.name === "unloadediFrame");
+                        // Global.js was not setting iframeWin.name to "unloadediFrame" in Chrome because the unload event was deprecated
+                        // And so this code didn't work: isIframeClose = isReport || (iframeWin.name === "unloadediFrame"); 
+                        isIframeClose = isReport || (iframeWin.location.href === "about:blank");
+
 
                         if (isIframeClose) {
                             flag = false;
@@ -2093,6 +2120,8 @@ var TaskDockMenuBreadCrumbManager = function (recentWindowsMenu) {
 
             $(".menu-section a:not(.with-menu)").on("click", screenLauncher);
 
+            $(".menu-section a:not(.with-menu) span").on("click", FavoriteManager.favoriteClickHandler);
+
             // Closing Exceed Limit Message popup
             var keyHandler = function (e) {
                 //if the key press is ESC
@@ -2148,8 +2177,10 @@ var TaskDockMenuBreadCrumbManager = function (recentWindowsMenu) {
             $("#btnSDA").click(function () {
                 sg.utls.ajaxPost(sg.utls.url.buildUrl("CS", "CompanyProfile", "GetSDASubdomain"), null, onSDASuccess);
             });
-        },
 
+            sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Common", "GetUserFavorite"), {}, FavoriteManager.setFavorite);
+        },
+        
         // Property Getters and Setters
 
         getScreenId: function () {
@@ -2173,6 +2204,66 @@ var TaskDockMenuBreadCrumbManager = function (recentWindowsMenu) {
     };
 
     return _public;
+};
+
+class FavoriteManager {
+    static MAX_NUMBER_FAVORITES = 25;
+
+    static addFavoriteToWidget (menuId, displayText) {
+        let $divrcbox = $("<div>", { "class": "rcbox" });
+        // the menu item
+        let $span = $("<span>", { "data-menuid": menuId }).text(displayText);
+        // the "cross" for removing
+        let $removeSpan = $("<span>", { "data-sourcemenuid": menuId });
+        $divrcbox.append($span);
+        $divrcbox.append($removeSpan);
+        $("#dvFavoriteWindows").append($divrcbox);
+    }
+
+    static removeFavoriteFromWidget (menuId) {
+        const target = $(`#dvFavoriteWindows span[data-menuid='${menuId}']`);
+        if (target.length) {
+            target.parent().remove();
+        }
+    }
+
+    static setFavorite (screenIds) {
+        if (screenIds) {
+            screenIds.forEach(function (item, index) {
+                $(`.menu-section a:not(.with-menu)[data-menuid=${item}] span`).toggleClass(["glyphicon-star-empty", "glyphicon-star"]);
+                const $aMenu = $(`.menu-section a:not(.with-menu)[data-menuid=${item}]`);
+                if ($aMenu.length > 0) {
+                    FavoriteManager.addFavoriteToWidget(item, `${$aMenu.data("modulename")} ${$aMenu.text()}`);
+                }
+            });
+        }
+    }
+
+    static favoriteClickHandler(event) {
+        event.stopPropagation();
+
+        let selectedMenuId = $(event.target).parent().attr("data-menuid");
+        let addFav = $(event.target).hasClass("glyphicon-star-empty");
+        let functionName = "DeleteUserFavorite";
+        
+        if (addFav) {
+            const numberFavorite  = $('.menu-section a:not(.with-menu) span.glyphicon-star').length;
+            if(numberFavorite >= FavoriteManager.MAX_NUMBER_FAVORITES) return; // return right away if reach the max favorite
+
+            functionName = "AddUserFavorite";
+        }
+
+        $(event.target).toggleClass(["glyphicon-star-empty", "glyphicon-star"]);
+
+        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Common", functionName), { screenId: selectedMenuId }, (result) => {
+            const $aMenu = $(`.menu-section a:not(.with-menu)[data-menuid=${selectedMenuId}]`);
+            if (addFav) {
+                FavoriteManager.addFavoriteToWidget(selectedMenuId, `${$aMenu.data("modulename")} ${$aMenu.text()}`);
+            } else {
+                FavoriteManager.removeFavoriteFromWidget(selectedMenuId);
+            }
+        });
+    }
 };
 
 var taskDockMenuBreadCrumbManager;

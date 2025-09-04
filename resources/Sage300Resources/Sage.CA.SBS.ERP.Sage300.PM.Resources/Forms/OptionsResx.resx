@@ -1,101 +1,417 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddingToAnExistingBatch" xml:space="preserve">
+    <value>Adding to an Existing Batch</value>
+  </data>
+  <data name="AddLineError" xml:space="preserve">
+    <value>You have to add a contract segment to the end of the list. Please scroll to the bottom of the list before adding a contract segment.</value>
+  </data>
+  <data name="Adjustments" xml:space="preserve">
+    <value>Adjustments</value>
+  </data>
+  <data name="AgingPeriods" xml:space="preserve">
+    <value>Aging Periods</value>
+  </data>
+  <data name="AppendGLBatch" xml:space="preserve">
+    <value>Create A/R Batches By</value>
+  </data>
+  <data name="ARBilling" xml:space="preserve">
+    <value>A/R Billing</value>
+  </data>
+  <data name="BasicProject" xml:space="preserve">
+    <value>Basic Project</value>
+  </data>
+  <data name="BillingRate" xml:space="preserve">
+    <value>Billing Rate:</value>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>Category Description</value>
+  </data>
+  <data name="Charges" xml:space="preserve">
+    <value>Charges</value>
+  </data>
+  <data name="ClearBillingsAndWIPDuringProjectClose" xml:space="preserve">
+    <value>Clear Billings and WIP During Project Close</value>
+  </data>
+  <data name="ClearBillingsAndWIPDuringRevenueRecognition" xml:space="preserve">
+    <value>Clear Billings and WIP During Revenue Recognition</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="ConfirmationMsg" xml:space="preserve">
+    <value>Warning. Once contract separator is set to not in use, it cannot be reset to in use again. Do you want to proceed?</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Contact Name</value>
+  </data>
+  <data name="ContractComment" xml:space="preserve">
+    <value>Contract Comment</value>
+  </data>
+  <data name="ContractDescription" xml:space="preserve">
+    <value>Contract Description</value>
+  </data>
+  <data name="ContractProjectCategory" xml:space="preserve">
+    <value>Contract-Project-Category</value>
+  </data>
+  <data name="ContractStructures" xml:space="preserve">
+    <value>Separators used in Contract Structures</value>
+  </data>
+  <data name="Costs" xml:space="preserve">
+    <value>Costs</value>
+  </data>
+  <data name="CreatingAndPostingANewBatch" xml:space="preserve">
+    <value>Creating and Posting a New Batch</value>
+  </data>
+  <data name="CreatingANewBatch" xml:space="preserve">
+    <value>Creating a New Batch</value>
+  </data>
+  <data name="DefaultAccountingMethod" xml:space="preserve">
+    <value>Default Accounting Method</value>
+  </data>
+  <data name="DefaultARItemNumber" xml:space="preserve">
+    <value>Default A/R Item Number</value>
+  </data>
+  <data name="DefaultARUnitOfMeasure" xml:space="preserve">
+    <value>Default A/R Unit Of Measure</value>
+  </data>
+  <data name="DefaultContractStructure" xml:space="preserve">
+    <value>Default Contract Structure</value>
+  </data>
+  <data name="DefaultContractStructureDescription" xml:space="preserve">
+    <value>Default Contract Structure Description</value>
+  </data>
+  <data name="DefaultContractStyle" xml:space="preserve">
+    <value>Default Contract Style</value>
+  </data>
+  <data name="DefaultLaborType" xml:space="preserve">
+    <value>Default Labor Type</value>
+  </data>
+  <data name="DefaultOverheadType" xml:space="preserve">
+    <value>Default Overhead Type</value>
+  </data>
+  <data name="DeleteLineError" xml:space="preserve">
+    <value>Cannot delete a contract structure segment.</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DetailDescription" xml:space="preserve">
+    <value>Detail Description</value>
+  </data>
+  <data name="DocumentTransactionDate" xml:space="preserve">
+    <value>Document/Transaction Date</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Document Type</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>PJC Options</value>
+  </data>
+  <data name="EquipmentUsage" xml:space="preserve">
+    <value>Equipment Usage</value>
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="ForceListingOfTransactions" xml:space="preserve">
+    <value>Force Listing of Transactions</value>
+  </data>
+  <data name="GLDescriptionFieldNotUsed" xml:space="preserve">
+    <value>A/R Invoice Description Field</value>
+  </data>
+  <data name="GLReferenceFieldNotUsed" xml:space="preserve">
+    <value>A/R Invoice Comment Field</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>Integration</value>
+  </data>
+  <data name="LaborPercentage" xml:space="preserve">
+    <value>Labor Percentage</value>
+  </data>
+  <data name="LaborRate" xml:space="preserve">
+    <value>Labor Rate</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="Level1Name" xml:space="preserve">
+    <value>Level 1 Name</value>
+  </data>
+  <data name="Level1NamePlural" xml:space="preserve">
+    <value>Level 1 Name Plurals</value>
+  </data>
+  <data name="Level2Name" xml:space="preserve">
+    <value>Level 2 Name</value>
+  </data>
+  <data name="Level2NamePlural" xml:space="preserve">
+    <value>Level 2 Name Plurals</value>
+  </data>
+  <data name="Level3Name" xml:space="preserve">
+    <value>Level 3 Name</value>
+  </data>
+  <data name="Level3NamePlural" xml:space="preserve">
+    <value>Level 3 Name Plurals</value>
+  </data>
+  <data name="MaterialAllocation" xml:space="preserve">
+    <value>Material Allocation</value>
+  </data>
+  <data name="MaterialReturns" xml:space="preserve">
+    <value>Material Returns</value>
+  </data>
+  <data name="MaterialUsage" xml:space="preserve">
+    <value>Material Usage</value>
+  </data>
+  <data name="NextNumber" xml:space="preserve">
+    <value>Next Number</value>
+  </data>
+  <data name="NextPostingSequenceGrid" xml:space="preserve">
+    <value>Next Posting Sequence</value>
+  </data>
+  <data name="OpeningBalances" xml:space="preserve">
+    <value>Opening Balances</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>PJC Options</value>
+  </data>
+  <data name="OverheadPercentage" xml:space="preserve">
+    <value>Overhead Percentage</value>
+  </data>
+  <data name="OverheadRate" xml:space="preserve">
+    <value>Overhead Rate</value>
+  </data>
+  <data name="PercentageCompleteMethod" xml:space="preserve">
+    <value>Percentage Complete Method</value>
+  </data>
+  <data name="PercentageCompleteMethodWarnMsg" xml:space="preserve">
+    <value>Changing this option can cause incorrect entries for recognizing revenue and costs. If you change this option, ensure you adjust your General Ledger appropriately.</value>
+  </data>
+  <data name="PJCEmployee" xml:space="preserve">
+    <value>PJC Employee</value>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>Default Posting Date</value>
+  </data>
+  <data name="PostingDateOption" xml:space="preserve">
+    <value>Posting Date Option</value>
+  </data>
+  <data name="Prefix" xml:space="preserve">
+    <value>Prefix</value>
+  </data>
+  <data name="PREmployee" xml:space="preserve">
+    <value>PR Employee</value>
+  </data>
+  <data name="ProjectDescription" xml:space="preserve">
+    <value>Project Description</value>
+  </data>
+  <data name="RecognizeCost" xml:space="preserve">
+    <value>Only Recognize Costs When Billed For Item Invoice Type Project</value>
+  </data>
+  <data name="RecordExistError" xml:space="preserve">
+    <value>Contract Segment. Record Already Exists</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="ReopenProjects" xml:space="preserve">
+    <value>Reopen Projects</value>
+  </data>
+  <data name="RevenueRecognition" xml:space="preserve">
+    <value>Revenue Recognition</value>
+  </data>
+  <data name="ReviseEstimates" xml:space="preserve">
+    <value>Revise Estimates</value>
+  </data>
+  <data name="SaveConfirm" xml:space="preserve">
+    <value>There are unsaved changes in the {0} screen. Do you want to continue?</value>
+  </data>
+  <data name="SegmentName" xml:space="preserve">
+    <value>Segment Name</value>
+  </data>
+  <data name="SegmentNumber" xml:space="preserve">
+    <value>Segment Number</value>
+  </data>
+  <data name="Segments" xml:space="preserve">
+    <value>Segments</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>Separator</value>
+  </data>
+  <data name="SessionDate" xml:space="preserve">
+    <value>Session Date</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="StandardProject" xml:space="preserve">
+    <value>Standard Project</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="TimecardDefaultGrid" xml:space="preserve">
+    <value>Timecard Defaults</value>
+  </data>
+  <data name="Timecards" xml:space="preserve">
+    <value>Timecards</value>
+  </data>
+  <data name="TransactionNumberGrid" xml:space="preserve">
+    <value>Transaction Numbering</value>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>Transactions</value>
+  </data>
+  <data name="TypeWorksheetNumberDocumentNumber" xml:space="preserve">
+    <value>Type-Worksheet Number-Document Number</value>
+  </data>
+  <data name="UnitCost" xml:space="preserve">
+    <value>Unit Cost:</value>
+  </data>
+  <data name="UpdateBudgets" xml:space="preserve">
+    <value>Update Budgets</value>
+  </data>
+  <data name="UpdateBudgetsWarning1" xml:space="preserve">
+    <value>Budget information will not be updated by all job-related transactions if you turn off this option.</value>
+  </data>
+  <data name="UpdateBudgetsWarning2" xml:space="preserve">
+    <value>This option affects processing speed because budgets are updated by all job-related transactions.</value>
+  </data>
+  <data name="UpdatePayroll" xml:space="preserve">
+    <value>Update Payroll</value>
+  </data>
+  <data name="UpdateRetainage" xml:space="preserve">
+    <value>Update Retainage</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>Use</value>
+  </data>
+  <data name="UseExpenseAccounts" xml:space="preserve">
+    <value>Use Expense Accounts</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="ValidateLengthError" xml:space="preserve">
+    <value>This segment can not be modified, Contract structures use this segment.</value>
+  </data>
 </root>

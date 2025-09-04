@@ -5717,4 +5717,52 @@
   <data name="AS_UserActivityReport_Screen" xml:space="preserve">
     <value>用户活动报表</value>
   </data>
+  <data name="PM_Setup_Categories_Screen" xml:space="preserve">
+    <value>类别</value>
+    <comment>123022001</comment>
+  </data>
+  <data name="PM_Setup_Charges_Screen" xml:space="preserve">
+    <value>收费</value>
+    <comment>123025001</comment>
+  </data>
+  <data name="PM_Setup_ContractStructures_Screen" xml:space="preserve">
+    <value>合约结构代码</value>
+    <comment>123017001</comment>
+  </data>
+  <data name="PM_Setup_Employees_Screen" xml:space="preserve">
+    <value>雇员</value>
+    <comment>123023001</comment>
+  </data>
+  <data name="PM_Setup_GL_Integrations_Screen" xml:space="preserve">
+    <value>总帐整合</value>
+    <comment>123019001</comment>
+  </data>
+  <data name="PM_Setup_MiscellaneousExpenses_Screen" xml:space="preserve">
+    <value>杂项费用</value>
+    <comment>123026001</comment>
+  </data>
+  <data name="PM_Setup_OptionalFields_Screen" xml:space="preserve">
+    <value>可选字段</value>
+    <comment>123016001</comment>
+  </data>
+  <data name="PM_Setup_Options_Screen" xml:space="preserve">
+    <value>选项</value>
+    <comment>123020001</comment>
+  </data>
+  <data name="PM_Setup_OverheadExpenses_Screen" xml:space="preserve">
+    <value>管理费用</value>
+    <comment>123024001</comment>
+  </data>
+  <data name="PM_Setup_Projects_Screen" xml:space="preserve">
+    <value>项目</value>
+    <comment>123021001</comment>
+  </data>
+  <data name="PM_Setup_SegmentCodes_Screen" xml:space="preserve">
+    <value>节段代码</value>
+    <comment>123015001</comment>
+  </data>
+  <data name="PM_Setup_Subcontractors_Screen" xml:space="preserve">
+    <value>分包商</value>
+    <comment>123018001</comment>
+  </data>
 </root>

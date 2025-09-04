@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 2023 The Sage Group plc or its licensors.  All rights reserved. *@
+﻿@* Copyright (c) 2025 The Sage Group plc or its licensors.  All rights reserved. *@
 
 @using Sage.CA.SBS.ERP.Sage300.Common.Models.Portal;
 @using Sage.CA.SBS.ERP.Sage300.Common.Web.HtmlHelperExtension;
@@ -354,7 +354,7 @@
             <li class="k-item">
                 <a tabindex="0" data-url='@item.ScreenUrl'
                    data-menuid='@item.MenuId' data-isintelligence='@item.Isintelligence'
-                   data-modulename='@item.ModuleName'>@item.MenuName</a>
+                   data-modulename='@item.ModuleName'>@item.MenuName<span class="glyphicon glyphicon-star-empty"></span></a>
             </li>
         }
 
@@ -365,7 +365,7 @@
                 <li class="k-item">
                     <a tabindex="0" data-url=''
                        data-menuid='@item.MenuId' data-parentid='@item.ParentMenuId'
-                       data-modulename='@item.ModuleName' data-isreport="@item.IsReport">@item.MenuName</a>
+                       data-modulename='@item.ModuleName' data-isreport="@item.IsReport">@item.MenuName<span class="glyphicon glyphicon-star-empty"></span></a>
                 </li>
             }
             else
@@ -373,7 +373,7 @@
                 <li class="k-item">
                     <a tabindex="0" data-url='@domainUrl@item.ScreenUrl'
                        data-menuid='@item.MenuId' data-parentid='@item.ParentMenuId'
-                       data-modulename='@item.ModuleName' data-isreport="@item.IsReport">@item.MenuName</a>
+                       data-modulename='@item.ModuleName' data-isreport="@item.IsReport">@item.MenuName<span class="glyphicon glyphicon-star-empty"></span></a>
                 </li>
             }
         }

@@ -145,6 +145,12 @@
     <value>{0} estado(s) de cuenta, {1} nueva(s) transacción(es) importada(s), guardada(s) y lista(s) para coincidir.</value>
     <comment>Message</comment>
   </data>
+  <data name="ImportFailedMessage" xml:space="preserve">
+    <value>No se pudo importar el archivo proporcionado.</value>
+  </data>
+  <data name="InvalidFileTypeMessage" xml:space="preserve">
+    <value>El nombre o tipo de archivo no es válido.</value>
+  </data>
   <data name="InvRecYP" xml:space="preserve">
     <value>Se omitieron las conciliaciones del banco {0}.  Para conciliar este banco, debe especificar un año/período de conciliación que sea {1}-{2} o posterior.</value>
     <comment>Message</comment>

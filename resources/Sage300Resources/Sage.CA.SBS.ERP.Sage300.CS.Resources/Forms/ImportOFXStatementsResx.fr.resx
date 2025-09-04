@@ -130,11 +130,11 @@
     <comment>Screen Title</comment>
   </data>
   <data name="ErrintBKStmt" xml:space="preserve">
-    <value>Un problème est survenu et au moins un {0} du relevé en devise pour le compte {1} (ayant le numéro de succursale {2}) le {3} n&apos;a pu être rapproché pour la banque {4}.</value>
+    <value>Un problème est survenu et au moins un {0} du relevé en devise pour le compte {1} (ayant le numéro de succursale {2}) le {3} n'a pu être rapproché pour la banque {4}.</value>
     <comment>Message</comment>
   </data>
   <data name="ErrintCCStmt" xml:space="preserve">
-    <value>Un problème est survenu et au moins un {0} du relevé en devise pour le compte {1} le {2} n&apos;a pu être rapproché pour la banque {3}.</value>
+    <value>Un problème est survenu et au moins un {0} du relevé en devise pour le compte {1} le {2} n'a pu être rapproché pour la banque {3}.</value>
     <comment>Message</comment>
   </data>
   <data name="FromBankCode" xml:space="preserve">
@@ -144,6 +144,12 @@
   <data name="ImportedTrx" xml:space="preserve">
     <value>{0} relevé(s) et {1} nouvelle(s) transaction(s) importée(s), sauvegardée(s) et prête(s) à être appariée(s).</value>
     <comment>Message</comment>
+  </data>
+  <data name="ImportFailedMessage" xml:space="preserve">
+    <value>Échec de l'importation du fichier fourni.</value>
+  </data>
+  <data name="InvalidFileTypeMessage" xml:space="preserve">
+    <value>Le nom ou le type de fichier n'est pas valide.</value>
   </data>
   <data name="InvRecYP" xml:space="preserve">
     <value>Les rapprochements de comptes pour la banque {0} ont été omis. Pour rapprocher ce compte bancaire, vous devez préciser un exercice/période de rapprochement qui est {1}-{2} ou ultérieur(e).</value>
@@ -174,7 +180,7 @@
     <comment>Message</comment>
   </data>
   <data name="NoActUnlckYP" xml:space="preserve">
-    <value>Un problème est survenu lors de la tentative d&apos;identification de la première période comptable active et déverrouillée pour l&apos;entreprise.</value>
+    <value>Un problème est survenu lors de la tentative d'identification de la première période comptable active et déverrouillée pour l'entreprise.</value>
     <comment>Message</comment>
   </data>
   <data name="OFXFile" xml:space="preserve">
@@ -190,11 +196,11 @@
     <comment>Message</comment>
   </data>
   <data name="PVersion" xml:space="preserve">
-    <value>Le fichier sélectionné a été créé à partir d&apos;une version qui ne prend pas en charge OFX.</value>
+    <value>Le fichier sélectionné a été créé à partir d'une version qui ne prend pas en charge OFX.</value>
     <comment>Message</comment>
   </data>
   <data name="StmtCurrency" xml:space="preserve">
-    <value>La devise des relevés {0} n&apos;est pas dans la plage des devises de la banque {1}. Continuer l&apos;importation quand même?</value>
+    <value>La devise des relevés {0} n'est pas dans la plage des devises de la banque {1}. Continuer l'importation quand même?</value>
     <comment>Message</comment>
   </data>
   <data name="StmtProcessInfo" xml:space="preserve">
@@ -206,7 +212,7 @@
     <comment>Field</comment>
   </data>
   <data name="TrxProcessInfo" xml:space="preserve">
-    <value>{0} transactions traitées dans relevés rapprochés, {1} compensée(s). (Les transactions traitées qui n&apos;ont pas été compensées sont ajoutées comme opérations la première fois qu&apos;elles sont traitées.)</value>
+    <value>{0} transactions traitées dans relevés rapprochés, {1} compensée(s). (Les transactions traitées qui n'ont pas été compensées sont ajoutées comme opérations la première fois qu'elles sont traitées.)</value>
     <comment>Message</comment>
   </data>
   <data name="UnmatchBKStmtInfo" xml:space="preserve">

@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2023 The Sage Group plc or its licensors.  All rights reserved. */
+﻿/* Copyright (c) 2023 - 2025 The Sage Group plc or its licensors.  All rights reserved. */
 
 /* globals globalResource: false */
 /* globals kendo: false */
@@ -891,7 +891,7 @@ var exportResultRowNumber = 0;
             var keyValues = sg.exportHelper.exportKeys;
             if(keyValues) {
                 keyValues = (typeof keyValues === "function") ? keyValues() : keyValues;
-                if (keyValues && keyValues.length > 0 && keyValues[0].trim()) {
+                if (keyValues && keyValues.length > 0 && ((typeof keyValues[0] == "string" && keyValues[0].trim()) || typeof keyValues[0] != "string")) {
                     var table = exportModelData.ExportRequest.DataMigrationList[0];
                     var keys = table.Items.filter(function (f) { return f.IsKey; });
                     var filters = table.FilterString;

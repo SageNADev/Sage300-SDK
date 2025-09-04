@@ -145,6 +145,12 @@
     <value>{0}个对帐单和{1}个新建交易已导入，保存并准备好匹配。</value>
     <comment>Message</comment>
   </data>
+  <data name="ImportFailedMessage" xml:space="preserve">
+    <value>导入所提供的文件失败。</value>
+  </data>
+  <data name="InvalidFileTypeMessage" xml:space="preserve">
+    <value>文件名或文件类型无效。</value>
+  </data>
   <data name="InvRecYP" xml:space="preserve">
     <value>为{0}的调节被跳过。要调节这一银行，您必须指定一个{1}-{2}或更迟的调节年度/期间。</value>
     <comment>Message</comment>

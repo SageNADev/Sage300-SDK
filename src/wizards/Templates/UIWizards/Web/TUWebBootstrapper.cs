@@ -1,6 +1,7 @@
 ﻿/* Copyright (c) $year$ $copyright$  All rights reserved. */
 
-using Microsoft.Practices.Unity;
+using Unity;
+using Unity.Injection;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Controller;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Repository;

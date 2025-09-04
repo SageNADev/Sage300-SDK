@@ -2787,6 +2787,9 @@
   <data name="LastProcessedTime" xml:space="preserve">
     <value>Hora del Último Procesamiento</value>
   </data>
+  <data name="LastProcessedUserID" xml:space="preserve">
+    <value>Último procesado por</value>
+  </data>
   <data name="FractionalQuantityWarning" xml:space="preserve">
     <value>Si usted elige admitir cantidades fraccionarias, no podrá cambiar esta opción más tarde. ¿Seguro de que desea admitir cantidades fraccionarias?</value>
   </data>

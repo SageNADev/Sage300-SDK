@@ -67,9 +67,14 @@
         </Folder>
       </Folder>
       <Folder Name="Scripts" TargetFolderName="Scripts">
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.js">jquery-3.6.0.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.min.js">jquery-3.6.0.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.6.0.min.map">jquery-3.6.0.min.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.7.1.intellisense.js">jquery-3.7.1.intellisense.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.7.1.js">jquery-3.7.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.7.1.min.js">jquery-3.7.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.7.1.min.map">jquery-3.7.1.min.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.7.1.slim.js">jquery-3.7.1.slim.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.7.1.slim.min.js">jquery-3.7.1.slim.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.7.1.slim.min.map">jquery-3.7.1.slim.min.map</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.js">jquery-migrate-3.3.2.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-migrate-3.3.2.min.js">jquery-migrate-3.3.2.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui-1.13.2.js">jquery-ui-1.13.2.js</ProjectItem>
@@ -79,8 +84,8 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.js">jquery.form.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.min.js">jquery.form.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.form.min.js.map">jquery.form.min.js.map</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.signalR-2.4.1.js">jquery.signalR-2.4.1.js</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.signalR-2.4.1.min.js">jquery.signalR-2.4.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.signalR-2.4.3.js">jquery.signalR-2.4.3.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.signalR-2.4.3.min.js">jquery.signalR-2.4.3.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate-vsdoc.js">jquery.validate-vsdoc.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.js">jquery.validate.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.min.js">jquery.validate.min.js</ProjectItem>

@@ -195,6 +195,9 @@
   <data name="DailyMinimum" xml:space="preserve">
     <value>Min. quotid.</value>
   </data>
+  <data name="Decrease" xml:space="preserve">
+    <value>Diminuer</value>
+  </data>
   <data name="DefaultHours" xml:space="preserve">
     <value>Heures par défaut</value>
   </data>
@@ -279,6 +282,9 @@
   <data name="EndDateErrorMsg" xml:space="preserve">
     <value>La date de début doit être antérieure à la date de fin.</value>
   </data>
+  <data name="ErrorMsgEmployeeNotAssign" xml:space="preserve">
+    <value>Procédure incorrecte. Gains/retenues de l'employé n'est assigné à aucun employé.</value>
+  </data>
   <data name="FClassCod" xml:space="preserve">
     <value> De classe</value>
   </data>
@@ -311,6 +317,9 @@
   </data>
   <data name="IncludeInFLSAOvertimeCalc_CP" xml:space="preserve">
     <value>Inclure dans calcul au taux normal</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Augmenter</value>
   </data>
   <data name="InvalidEarnDed" xml:space="preserve">
     <value>Saisie erronée. Gain/retenue n'existe pas.</value>
@@ -363,6 +372,12 @@
   <data name="PaythisPercentage" xml:space="preserve">
     <value>Payer ce pourcentage</value>
   </data>
+  <data name="PctDec" xml:space="preserve">
+    <value>Dimin .p . c.</value>
+  </data>
+  <data name="PctInc" xml:space="preserve">
+    <value>Augm .p . c.</value>
+  </data>
   <data name="PopupWarningmsg" xml:space="preserve">
     <value>Voulez-vous mettre à jour ce gain/retenue?</value>
   </data>
@@ -374,6 +389,9 @@
   </data>
   <data name="QuarterlyMin" xml:space="preserve">
     <value>Min. trim.</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>Remplacer</value>
   </data>
   <data name="SegmentCode" xml:space="preserve">
     <value>Code de segment</value>

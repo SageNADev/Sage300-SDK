@@ -3418,6 +3418,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The proxy is configured to use a secure protocol and the request is not secure..
+        /// </summary>
+        public static string ProxyUseSecureProtocol {
+            get {
+                return ResourceManager.GetString("ProxyUseSecureProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PST.
         /// </summary>
         public static string PST {

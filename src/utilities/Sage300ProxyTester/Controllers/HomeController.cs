@@ -82,11 +82,37 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Controllers
         #endregion
 
         #region Public
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             var model = new ProxyTesterViewModel();
             PrepModel(model);
+            await PingServer(model);
             return View(model);
+        }
+
+        /// <summary>
+        /// Asynchronous method to ping the server to check if it is reachable.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        private async Task PingServer(ProxyTesterViewModel model)
+        {
+            try
+            {
+                var request = new HttpRequestMessage(HttpMethod.Get, $"{model.TargetServer}/Ping");
+
+                using (var response = await httpClient.SendAsync(request))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var pingContent = await response.Content.ReadAsStringAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /// <summary> GetMenu </summary>

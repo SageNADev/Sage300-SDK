@@ -192,9 +192,14 @@
       <DependentUpon>TimecardOptionalFieldValueResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\UpdateEarnDedForAllEmpResx.Designer.cs">
+      <DependentUpon>UpdateEarnDedForAllEmpResx.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateEarnDedForAllEmpResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateTaxForAllEmployeesResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateTaxForAllEmployeesResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\WorkClassificationCodeResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -381,10 +386,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>TimecardOptionalFieldValueResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateEarnDedForAllEmpResx.fr.resx" />
     <EmbeddedResource Include="Forms\UpdateEarnDedForAllEmpResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UpdateEarnDedForAllEmpResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateEarnDedForAllEmpResx.fr.resx" />
+    <EmbeddedResource Include="Forms\UpdateTaxForAllEmployeesResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UpdateTaxForAllEmployeesResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkClassificationCodeResx.fr.resx" />
     <EmbeddedResource Include="Forms\WorkClassificationCodeResx.resx">

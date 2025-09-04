@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+<data name="Address" xml:space="preserve">
+  <value>地址行1</value>
+</data>
+<data name="Address2" xml:space="preserve">
+  <value>地址行2</value>
+</data>
+<data name="Address3" xml:space="preserve">
+  <value>地址行3</value>
+</data>
+<data name="Address4" xml:space="preserve">
+  <value>地址行4</value>
+</data>
+<data name="ARItemDescription" xml:space="preserve">
+  <value>应收项目描述</value>
+</data>
+<data name="ARItemNotActive" xml:space="preserve">
+  <value>应收项目编号{0}未激活。</value>
+</data>
+<data name="ARItemNumber" xml:space="preserve">
+  <value>应收项目编号</value>
+</data>
+<data name="BillingRate" xml:space="preserve">
+  <value>计费费率</value>
+</data>
+<data name="BillingRateCannotLessThanZero" xml:space="preserve">
+  <value>计费费率不能小于零</value>
+</data>
+<data name="BILLRATE" xml:space="preserve">
+  <value>计费费率</value>
+</data>
+<data name="CCY" xml:space="preserve">
+  <value>币种代码</value>
+</data>
+<data name="City" xml:space="preserve">
+  <value>城市</value>
+</data>
+<data name="Contact" xml:space="preserve">
+  <value>联系人</value>
+</data>
+<data name="ContactFax" xml:space="preserve">
+  <value>联系人传真</value>
+</data>
+<data name="ContactName" xml:space="preserve">
+  <value>联系人姓名</value>
+</data>
+<data name="ContactPhone" xml:space="preserve">
+  <value>联系人电话</value>
+</data>
+<data name="ContactsEmail" xml:space="preserve">
+  <value>联系人邮箱</value>
+</data>
+<data name="Country" xml:space="preserve">
+  <value>国家</value>
+</data>
+<data name="DefaultSettingsforStandardProjects" xml:space="preserve">
+  <value>标准项目的默认设置</value>
+</data>
+<data name="Delete" xml:space="preserve">
+  <value>删除</value>
+</data>
+<data name="DESC" xml:space="preserve">
+  <value>币种描述</value>
+</data>
+<data name="Description" xml:space="preserve">
+  <value>描述</value>
+</data>
+<data name="Fax" xml:space="preserve">
+  <value>传真</value>
+</data>
+<data name="InactiveAsOfDate" xml:space="preserve">
+  <value>失效日期</value>
+</data>
+<data name="InvalidUOMBlankMessage" xml:space="preserve">
+  <value>应收计量单位不能为空。</value>
+</data>
+<data name="InvalidVendorErrorMessage" xml:space="preserve">
+  <value>供应商编号“{0}”不存在。</value>
+</data>
+<data name="LastMaintained" xml:space="preserve">
+  <value>最后维护</value>
+</data>
+<data name="OptionalFields" xml:space="preserve">
+  <value>可选字段</value>
+</data>
+<data name="PMSubcontractorsTitle" xml:space="preserve">
+  <value>PJC分包商</value>
+</data>
+<data name="Print" xml:space="preserve">
+  <value>打印</value>
+</data>
+<data name="Save" xml:space="preserve">
+  <value>保存</value>
+</data>
+<data name="StateProvince" xml:space="preserve">
+  <value>省/州</value>
+</data>
+<data name="SubcontractorCode" xml:space="preserve">
+  <value>分包商代码</value>
+</data>
+<data name="SubcontractorDescription" xml:space="preserve">
+  <value>分包商描述</value>
+</data>
+<data name="Subcontractors" xml:space="preserve">
+  <value>分包商</value>
+</data>
+<data name="SubcontractorsBlankErrorMessage" xml:space="preserve">
+  <value>输入无效。分包商代码不能为空。</value>
+</data>
+<data name="SubcontractorsName" xml:space="preserve">
+  <value>分包商名称</value>
+</data>
+<data name="Telephone" xml:space="preserve">
+  <value>电话</value>
+</data>
+<data name="UnitOfMeasure" xml:space="preserve">
+  <value>计量单位</value>
+</data>
+<data name="UOMCannotLessThanZero" xml:space="preserve">
+  <value>单位成本不能小于零</value>
+</data>
+<data name="UOMNotDefinedMessage" xml:space="preserve">
+  <value>未输入或未定义此项目的计量单位。</value>
+</data>
+<data name="VendorDateInactiveErrorMessage" xml:space="preserve">
+  <value>供应商编号“{0}”未激活。</value>
+</data>
+<data name="VendorDescription" xml:space="preserve">
+  <value>供应商名称</value>
+</data>
+<data name="VendorName" xml:space="preserve">
+  <value>供应商编号</value>
+</data>
+<data name="VendorNumberBlankErrorMessage" xml:space="preserve">
+  <value>供应商编号不能为空。</value>
+</data>
+<data name="VendorOnHold" xml:space="preserve">
+  <value>供应商编号“{0}”已挂起。</value>
+</data>
+<data name="VendorsEmail" xml:space="preserve">
+  <value>供应商邮箱</value>
+</data>
+<data name="ZipOrPostalCode" xml:space="preserve">
+  <value>邮政编码</value>
+</data>
+</root>

@@ -1,5 +1,5 @@
 // The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -20,22 +20,23 @@
 
 #region Namespace
 
-using System;
-using System.Linq;
-using Microsoft.Practices.Unity;
-using System.Linq.Expressions;
-using System.Collections.Generic;
+using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
 using Sage.CA.SBS.ERP.Sage300.Common.Models;
 using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using Sage.CA.SBS.ERP.Sage300.Common.Web.Controllers.ExportImport;
-using Sage.CA.SBS.ERP.Sage300.Common.BusinessRepository.Base;
+using Sage.CA.SBS.ERP.Sage300.Common.Web.Utilities;
+using Sage.CA.SBS.ERP.Sage300.IC.Interfaces.Services;
+using Sage.CA.SBS.ERP.Sage300.IC.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using Unity;
 using ValuedPartner.TU.Interfaces.BusinessRepository;
 using ValuedPartner.TU.Models;
 using ValuedPartner.TU.Resources.Forms;
 using ValuedPartner.TU.Web.Areas.TU.Models;
-using Sage.CA.SBS.ERP.Sage300.IC.Interfaces.Services;
-using Sage.CA.SBS.ERP.Sage300.IC.Models;
 
 #endregion
 
@@ -56,7 +57,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
         private ISegmentCodesRepository _repository
         {
             get {
-                return _context.Container.Resolve<ISegmentCodesRepository>(new ParameterOverride("context", _context));
+                return _context.Container.Resolve<ISegmentCodesRepository>(Utilities.ContextParameter(_context));
             }
         }
 
@@ -87,7 +88,7 @@ namespace ValuedPartner.TU.Web.Areas.TU.Controllers
 	        var viewModel = GetViewModel(new SegmentCodes(), null);
 
             var itemSegmentService =
-              Context.Container.Resolve<IItemSegmentService<ItemSegment>>(new ParameterOverride("context", Context));
+              Context.Container.Resolve<IItemSegmentService<ItemSegment>>(Utilities.ContextParameter(Context));
 
             var segmentname = itemSegmentService.Get();
 
