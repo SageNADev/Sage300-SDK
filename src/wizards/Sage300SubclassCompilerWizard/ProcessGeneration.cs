@@ -188,6 +188,11 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassCompilerWizard
             /// <summary> MSBuild SubFolders </summary>
             public const string MSBuildSubFolders = @"\MSBuild\Current\Bin";
 
+            /// <summary> Models.Attributes assembly reference </summary>  
+            public const string UsingAttributes = "using Sage.CA.SBS.ERP.Sage300.Common.Models.Attributes;";
+
+            /// <summary> Namespace line </summary>  
+            public const string NamespaceLine = "namespace";
         }
         #endregion
 
@@ -703,6 +708,8 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassCompilerWizard
                     var classDefFound = false;
                     var bracketFound = false;
                     var indent = 0;
+                    var usingFound = false;
+                    var usingInsertIndex = 0;
 
                     foreach (var line in file)
                     {
@@ -713,6 +720,23 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassCompilerWizard
                         {
                             // Class definition located
                             classDefFound = true;
+                            continue;
+                        }
+
+                        // Search for using statement for Attributes
+                        if (!usingFound && line.Contains(Constants.UsingAttributes) &&
+                            !line.StartsWith(Constants.TokenComment))
+                        {
+                            // Using statement located
+                            usingFound = true;
+                            continue;
+                        }
+
+                        if (!usingFound && line.Trim().StartsWith(Constants.NamespaceLine))
+                        {
+                            // Using statement not located, but namespace is located
+                            // Therefore, we will insert using statement just before namespace statement
+                            usingInsertIndex = file.IndexOf(line);
                             continue;
                         }
 
@@ -762,6 +786,13 @@ namespace Sage.CA.SBS.ERP.Sage300.SubclassCompilerWizard
 
                             // Insert into file
                             file.Insert(file.IndexOf(line), newLines.ToString());
+
+                            // If using statement not found, then insert it now
+                            if (usingInsertIndex != 0)
+                            {
+                                // Using statement not located
+                                file.Insert(usingInsertIndex, Constants.UsingAttributes);
+                            }
 
                             // Update file
                             File.Delete(modelName);
