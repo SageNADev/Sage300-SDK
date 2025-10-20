@@ -1,5 +1,5 @@
 ﻿// The MIT License (MIT) 
-// Copyright (c) 1994-2018 The Sage Group plc or its licensors.  All rights reserved.
+// Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of 
 // this software and associated documentation files (the "Software"), to deal in 
@@ -614,7 +614,16 @@ namespace MergeISVProject
 		{
 			foreach (var pattern in patterns)
 			{
-				CopyFiles(false, sourceDir, pattern, destDir, true);
+                // If pattern is the *.Web.Infrastructure.dll, it gets copied from the SDK (as of 2026.0)
+				if (pattern.Equals("*.Web.Infrastructure.dll", StringComparison.OrdinalIgnoreCase))
+				{
+					var fileName = "Microsoft.Web.Infrastructure.dll";
+                    var source = Path.Combine(Environment.GetEnvironmentVariable("Sage300WebSdkDir"), "bin", "utilities", fileName);
+					CopyFile(false, source, Path.Combine(destDir, fileName), true);
+                    continue;
+                }
+
+                CopyFiles(false, sourceDir, pattern, destDir, true);
 			}
 		}
 

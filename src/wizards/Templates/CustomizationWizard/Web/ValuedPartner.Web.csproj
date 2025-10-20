@@ -135,9 +135,6 @@
     <Reference Include="Microsoft.Web.Administration">
       <HintPath>$(Sage300WebDir)\bin\Microsoft.Web.Administration.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.Infrastructure">
-      <HintPath>$(Sage300WebDir)\bin\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Win32.Primitives">
       <HintPath>$(SolutionDir)\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -170,9 +167,6 @@
     </Reference>
     <Reference Include="Pipelines.Sockets.Unofficial">
       <HintPath>$(Sage300WebDir)\bin\Pipelines.Sockets.Unofficial.dll</HintPath>
-    </Reference>
-    <Reference Include="RouteDebugger">
-      <HintPath>$(Sage300WebDir)\bin\RouteDebugger.dll</HintPath>
     </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Exceptions">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Exceptions.dll</HintPath>
