@@ -297,9 +297,6 @@
       </Folder>
       <Folder Name="Areas" TargetFolderName="Areas">
         <Folder Name="Core" TargetFolderName="Core">
-          <Folder Name=".vs" TargetFolderName=".vs">
-            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Core.Web.csproj.dtbcache.json">Sage.CA.SBS.ERP.Sage300.Core.Web.csproj.dtbcache.json</ProjectItem>
-          </Folder>
           <Folder Name="Scripts" TargetFolderName="Scripts">
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AccpacGrid.js">Sage.CA.SBS.ERP.Sage300.Common.AccpacGrid.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js">Sage.CA.SBS.ERP.Sage300.Common.BatchGridHelper.js</ProjectItem>
@@ -597,9 +594,6 @@
           </Folder>
         </Folder>
         <Folder Name="Shared" TargetFolderName="Shared">
-          <Folder Name=".vs" TargetFolderName=".vs">
-            <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Shared.Web.csproj.dtbcache.json">Sage.CA.SBS.ERP.Sage300.Shared.Web.csproj.dtbcache.json</ProjectItem>
-          </Folder>
           <Folder Name="Scripts" TargetFolderName="Scripts">
             <ProjectItem ReplaceParameters="true" TargetFileName="PageUnloadEventManager.js">PageUnloadEventManager.js</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Sage.CA.SBS.ERP.Sage300.Common.AccpacGridHelper.js">Sage.CA.SBS.ERP.Sage300.Common.AccpacGridHelper.js</ProjectItem>

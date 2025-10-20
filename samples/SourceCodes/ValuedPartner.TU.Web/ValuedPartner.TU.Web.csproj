@@ -203,9 +203,6 @@
     <Reference Include="Pipelines.Sockets.Unofficial">
       <HintPath>$(Sage300WebDir)\bin\Pipelines.Sockets.Unofficial.dll</HintPath>
     </Reference>
-    <Reference Include="RouteDebugger">
-      <HintPath>$(Sage300WebDir)\bin\RouteDebugger.dll</HintPath>
-    </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.Common.Exceptions">
       <HintPath>$(Sage300WebDir)\bin\Sage.CA.SBS.ERP.Sage300.Common.Exceptions.dll</HintPath>
     </Reference>
@@ -647,7 +644,7 @@
   </ProjectExtensions>
   <Import Project="$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>Call "..\..\..\..\bin\utilities\MergeISVProject.exe" --mode=0 --solutionpath="$(SolutionDir)\" --webprojectpath="$(ProjectDir)\" --menufilename="TUMenuDetails.xml" --buildprofile="$(ConfigurationName)"  --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --minify --log</PostBuildEvent>
+    <PostBuildEvent>Call "%25Sage300WebSdkDir%25\bin\utilities\MergeISVProject.exe" --mode=0 --solutionpath="$(SolutionDir)\" --webprojectpath="$(ProjectDir)\" --menufilename="TUMenuDetails.xml" --buildprofile="$(ConfigurationName)"  --dotnetframeworkpath="$(FrameworkDir)$(FrameworkVersion)" --minify --log</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
