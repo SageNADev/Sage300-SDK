@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2019-2025 The Sage Group plc or its licensors.  All rights reserved. */
+﻿/* Copyright (c) 2019-2026 The Sage Group plc or its licensors.  All rights reserved. */
 // @ts-check
 "use strict";
 
@@ -18,6 +18,17 @@
         */
     
         AP: {
+
+            VendorRecall: {
+                viewID: "AP0015",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["VENDORID", "VENDNAME", "SHORTNAME", "RATETYPE", "CURNCODE", "NAMECTAC"],
+                displayFieldNames: ["VENDORID", "VENDNAME", "SWACTV", "IDGRP", "CURNCODE", "SHORTNAME",
+                    "SWHOLD", "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4",
+                    "NAMECITY", "CODESTTE", "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2"]
+            },
+
             DistributionCodes: {
                 viewID: "AP0005",
                 viewOrder: 0,
@@ -79,7 +90,6 @@
             },
 
             Vendor: {
-                url: ["AP", "VendorViewFinder", "Find"],
                 viewID: "AP0015",
                 viewOrder: 0,
                 parentValAsInitKey: true,
@@ -377,6 +387,16 @@
         },
 
         AR: {
+            CustomerRecall: {
+                viewID: "AR0024",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["IDCUST", "NAMECUST", "NAMECTAC", "PRICLIST", "CODECURN"],
+                displayFieldNames: ["IDCUST", "TEXTSNAM", "NAMECUST", "SWACTV", "SWHOLD", "IDGRP", "IDNATACCT", "SWBALFWD", "CODECURN",
+                    "TEXTSTRE1", "TEXTSTRE2", "TEXTSTRE3", "TEXTSTRE4", "NAMECITY", "CODESTTE",
+                    "CODEPSTL", "CODECTRY", "TEXTPHON1", "TEXTPHON2", "NAMECTAC", "PRICLIST"]
+            },
+
             DunningMessages: {
                 viewID: "AR0008",
                 viewOrder: 0,
@@ -514,7 +534,6 @@
             },
 
             ShortenedCustomers: {
-                url: ["AR", "CustomerViewFinder", "Find"],
                 viewID: "AR0024",
                 viewOrder: 0,
                 parentValAsInitKey: true,
@@ -979,7 +998,7 @@
                 returnFieldNames: ["BANK", "MULTICUR", "NAME", "CURNSTMT", "INACTIVE"],
                 displayFieldNames: ["BANK", "NAME", "CURNSTMT", "ADDR1", "ADDR2", "ADDR3", "ADDR4", "CITY", "STATE",
                     "COUNTRY", "POSTAL", "CONTACT", "PHONE", "FAX", "TRANSIT", "INACTIVE", "INACTDATE", "IDACCT",
-                    "BKACCT", "IDACCTERR", "LSTMNTND"]
+                    "BKACCT", "IDACCTERR", "IDACCTCCC","LSTMNTND"]
             },
 
             BanksWithMultiCurrency: {
@@ -1283,7 +1302,23 @@
                 returnFieldNames: ["CURN", "CURDESC", "RTYPCHK"],
                 displayFieldNames: ["BANK", "CURN", "RTYPCHK", "RTYPDEP", "GAINACCT", "LOSSACCT"],
                 filterTemplate: "BANK = \"{0}\""
-            }
+            },
+            UPEmployees: {
+                viewID: "UP0014",
+                viewOrder: 0,
+                displayFieldNames: ["EMPLOYEE", "LASTNAME", "FIRSTNAME", "MIDDLENAME", "PAYFREQ", "STATUS", "CLASS1", "CLASS2", "CLASS3", "CLASS4"],
+                returnFieldNames: ["EMPLOYEE", "FULLNAME", "STATUS"],
+                filterTemplate: "TCUSERID = \"{0}\" ",
+                parentValAsInitKey: true
+            },
+            CPEmployees: {
+                viewID: "CP0014",
+                viewOrder: 0,
+                displayFieldNames: ["EMPLOYEE", "LASTNAME", "FIRSTNAME", "MIDDLENAME", "PAYFREQ", "STATUS", "CLASS1", "CLASS2", "CLASS3", "CLASS4"],
+                returnFieldNames: ["EMPLOYEE", "FULLNAME", "STATUS"],
+                filterTemplate: "TCUSERID = \"{0}\" ",
+                parentValAsInitKey: true
+            },
         },
 
         GL: {
@@ -1582,11 +1617,27 @@
                 returnFieldNames: ["MASKCODE"],
                 displayFieldNames: ["MASKCODE", "MASKTYPE", "DESC", "MASKSTRUCT"]
             },
-
+            MaskStructureCode: {
+                viewID: "IC0805",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["MASKCODE", "MASKTYPE", "DESC", "PREFIX", "MASKSTRUCT", "MASKLENGTH"],
+                displayFieldNames: ["MASKCODE", "MASKTYPE", "DESC", "MASKSTRUCT"],
+                filterTemplate: "MASKCODE = \"{0}\" AND MASKTYPE = \"{1}\""
+            },
+            ItemNumber: {
+                viewID: "IC0310",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["FMTITEMNO", "ITEMNO", "STOCKUNIT", "DESC"],
+                displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "ITEMBRKID", "CATEGORY", "CNTLACCT", "STOCKITEM", "STOCKUNIT",
+                    "PICKINGSEQ", "DEFPRICLST", "SELLABLE", "SERIALNO", "LOTITEM", "QTONHANDA", "QTONORDERA",
+                    "QTSALORDRA", "QTAVAILA", "QTYCOMMITA", "PREVENDOR", "VENDITEM"]
+            },
             Item: {
                 viewID: "IC0310",
                 viewOrder: 0,
-                parentValAsInitKey: false,
+                parentValAsInitKey: true,
                 returnFieldNames: ["FMTITEMNO", "ITEMNO", "STOCKUNIT", "DESC"],
                 displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "ITEMBRKID", "CATEGORY", "CNTLACCT", "STOCKITEM", "STOCKUNIT",
                     "PICKINGSEQ", "DEFPRICLST", "SELLABLE", "SERIALNO", "LOTITEM", "QTONHANDA", "QTONORDERA",
@@ -1818,17 +1869,86 @@
             LotNumber: {
                 viewID: "IC0810",
                 viewOrder: 0,
-                parentValAsInitKey: false,
+                parentValAsInitKey: true,
                 returnFieldNames: ["LOTNUM", "LOTNUMF", "ITEMNUM"],
                 displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYAVAIL", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE"]
+            },
+
+            Lot: {
+                viewID: "IC0810",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["LOTNUM", "LOTNUMF", "ITEMNUM"],
+                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYAVAIL", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"]
+            },
+
+            ICLotNumber: {
+                viewID: "IC0810",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["LOTNUM", "LOTNUMF", "ITEMNUM"],
+                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYSHPABLE", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"]
+            },
+
+            LotForWarranty: {
+                viewID: "IC0810",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["LOTNUM", "LOTNUMF", "ITEMNUM"],
+                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYAVAIL", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"]                
+            },
+
+            Serial: {
+                viewID: "IC0830",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["SERIALNUMF", "ITEMNUM", "LOCATION", "STATUS", "STOCKDATE", "EXPIRYDATE", "ASSETCOST"],
+                displayFieldNames: ["SERIALNUMF", "ITEMNUM", "LOCATION", "STATUS", "STOCKDATE", "EXPIRYDATE", "ASSETCOST"]               
+            },
+
+            DocumentNumberForSerial: {
+                viewID: "IC0835",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTNO", "SERIALNUM", "ITEMNUM"],
+                displayFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTNO", "SERIALNUM", "ITEMNUM"]
+            },
+
+            DocumentNumberForLot: {
+                viewID: "IC0815",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTNO", "LOTNUM", "ITEMNUM"],
+                displayFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTNO", "LOTNUM", "ITEMNUM"]
             },
 
             SerialNumber: {
                 viewID: "IC0830",
                 viewOrder: 0,
-                parentValAsInitKey: false,
+                parentValAsInitKey: true,
                 returnFieldNames: ["SERIALNUM", "ITEMNUM", "SERIALNUMF"],
                 displayFieldNames: ["SERIALNUMF", "ITEMNUM", "LOCATION", "STATUS", "STOCKDATE", "EXPIRYDATE", "ASSETCOST"]
+            },
+
+            DocumentNumber: {
+                viewID: "IC0835",
+                viewOrder: 5,
+                returnFieldNames: ["DOCNUM", "APP", "ITEMNUM", "SERIALNUM", "CUSTVEND"],
+                displayFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTVEND", "SERIALNUM", "ITEMNUM"],
+            },
+
+            ICItemNumber: {
+                viewID: "IC0835",
+                viewOrder: 1,
+                returnFieldNames: ["ITEMNUM", "APP", "SERIALNUM"],
+                displayFieldNames: ["ITEMNUM", "SERIALNUM", "CUSTVEND", "DOCNUM"],
+            },
+
+            SerialNumberFinder: {
+                viewID: "IC0835",
+                viewOrder: 0,
+                returnFieldNames: ["SERIALNUM", "APP"],
+                displayFieldNames: ["SERIALNUM", "ITEMNUM", "CUSTVEND", "DOCNUM"],
             }
         },
 
@@ -2316,7 +2436,7 @@
                 viewID: "UP0014",
                 viewOrder: 0,
                 displayFieldNames: ["EMPLOYEE", "LASTNAME", "FIRSTNAME", "MIDDLENAME", "PAYFREQ", "STATUS","CLASS1","CLASS2","CLASS3","CLASS4"],
-                returnFieldNames: ["EMPLOYEE", "FULLNAME"],
+                returnFieldNames: ["EMPLOYEE", "FULLNAME", "STATUS","HRSPERPER"],
                 filterTemplate: "TCUSERID = \"{0}\" ",
                 parentValAsInitKey: true
             },
@@ -2324,23 +2444,25 @@
                 viewID: "CP0014",
                 viewOrder: 0,
                 displayFieldNames: ["EMPLOYEE", "LASTNAME", "FIRSTNAME", "MIDDLENAME", "PAYFREQ", "STATUS", "CLASS1", "CLASS2", "CLASS3", "CLASS4"],
-                returnFieldNames: ["EMPLOYEE", "FULLNAME"],
+                returnFieldNames: ["EMPLOYEE", "FULLNAME", "STATUS","HRSPERPER"],
                 filterTemplate: "TCUSERID = \"{0}\" ",
                 parentValAsInitKey: true
             },
             UPEmployeeEarnOrDeduction: {
                 viewID: "UP0008",
                 viewOrder: 0,
+                parentValAsInitKey: true,
                 filterTemplate: "EMPLOYEE = \"{0}\"",
                 displayFieldNames: ["EARNDED", "DESC"],
-                returnFieldNames: ["EARNDED","DESC","DEFAULTHRS"]
+                returnFieldNames: ["EARNDED","DESC","DEFAULTHRS", "ERATE"]
             },
             CPEmployeeEarnOrDeduction: {
                 viewID: "CP0008",
                 viewOrder: 0,
+                parentValAsInitKey: true,
                 filterTemplate: "EMPLOYEE = \"{0}\"",
                 displayFieldNames: ["EARNDED", "DESC"],
-                returnFieldNames: ["EARNDED", "DESC", "DEFAULTHRS"]
+                returnFieldNames: ["EARNDED", "DESC", "DEFAULTHRS", "ERATE"]
             },
 
             PMUsers: {
@@ -2489,6 +2611,21 @@
                 parentValAsInitKey: false,
                 returnFieldNames: ["TIMECARDNO", "PAYUPDATED"],
                 displayFieldNames: ["TIMECARDNO"],
+            },
+
+            ItemUOMEquipmentCode: {
+                viewID: "AR0009",
+                viewOrder: 1,
+                returnFieldNames: ["UNITMEAS"],
+                displayFieldNames: ["IDITEM", "UNITMEAS", "CODECURN", "AMTCOST", "AMTPRICE"],
+            },
+
+            EmployeeBillRateItemPricing: {
+                viewID: "AR0009",
+                viewOrder: 0,
+                returnFieldNames: ["IDITEM", "UNITMEAS", "AMTCOST", "AMTPRICE"],
+                displayFieldNames: ["IDITEM", "UNITMEAS", "AMTCOST", "AMTPRICE"],
+                filterTemplate: "IDITEM = \"{0}\""
             }
         },
         PO: {

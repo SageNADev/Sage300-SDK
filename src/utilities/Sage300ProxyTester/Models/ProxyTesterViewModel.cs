@@ -37,7 +37,7 @@ namespace Sage.CA.SBS.ERP.Sage300.ProxyTester.Models
             Company = ""; // Partner to specify the default company if desired
 
             // Default Server Configurations - Partner to specify the target Sage server and this ProxyTester server
-            TargetServer = "http://localhost/Sage300"; // Partner to specify the target Sage server (i.e. http://localhost:54445 or http://localhost/Sage300)
+            TargetServer = "http://localhost:54445"; // Partner to specify the target Sage server (i.e. http://localhost:54445 or http://localhost/Sage300)
             ProxyTesterServer = "https://localhost:44347"; // Partner to specify this ProxyTester server (i.e. https://localhost:44347)
 
             // Proxy Request

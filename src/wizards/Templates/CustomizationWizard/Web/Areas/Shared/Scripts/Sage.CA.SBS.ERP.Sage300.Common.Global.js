@@ -202,6 +202,21 @@ $.extend(sg.utls.url, {
      * @returns {boolean} true = same origin | false = different origin
      */
     isSameOrigin: function () {
+        // If fail to get the top frame, then it is cross origin.
+        // So catch the exception and return false
+        try { window.top.$('iframe'); }
+        catch (e) { return false; }
+
+        try {
+            let topPathArray = top.location.pathname.split('/');
+            let thisPathsArray = location.pathname.split('/');
+
+            // If the first 2 segments of the path are not the same, then it is cross origin.
+            if (topPathArray[0] !== thisPathsArray[0] || topPathArray[1] !== thisPathsArray[1])
+                return false;
+
+        } catch (e) { return false; }
+
         var sage300Origin = $("#Sage300Origin").val();
         var currentOrigin = window.location.href;
         var a1 = $('<a>', { href: sage300Origin })[0];
@@ -828,6 +843,21 @@ $.extend(sg.utls, {
     },
 
     isSameOrigin: function () {
+        // If fail to get the top frame, then it is cross origin.
+        // So catch the exception and return false
+        try { window.top.$('iframe'); }
+        catch (e) { return false; }
+
+        try {
+            let topPathArray = top.location.pathname.split('/');
+            let thisPathsArray = location.pathname.split('/');
+
+            // If the first 2 segments of the path are not the same, then it is cross origin.
+            if (topPathArray[0] !== thisPathsArray[0] || topPathArray[1] !== thisPathsArray[1])
+                return false;
+
+        } catch (e) { return false; }
+
         var url = window.location.href;
         if (window.name === 'CRMFrame') {
             return false;

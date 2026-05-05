@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2023 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2026 Sage Software, Inc.  All rights reserved. *@
 
 @using System.Web.UI.WebControls
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -130,6 +130,17 @@
                                 <ul id="searchHelpDiv">
                                 </ul>
                             </li>
+
+                            @* Help Agent *@
+                            <li id="helpAgent">
+                                <span class="txt-top-menu">
+                                    <a style="color: white;" href="@ConfigurationHelper.HelpAgentURLPath" target="_blank">
+                                        <img src="~/Content/Images/copilot.png" alt=@NavigationResx.HelpAgent style="width:20px;height:20px; vertical-align: middle;" />
+                                        @NavigationResx.HelpAgent
+                                    </a>
+                                </span>
+                            </li>
+
                             <li class="menu-item-with-icon" id="topMenuSettings">
                                 <i class="settings glyphicon glyphicon-md glyphicon-setting" title="Settings"><span>@NavigationResx.Settings</span></i>
                                 <ul>
