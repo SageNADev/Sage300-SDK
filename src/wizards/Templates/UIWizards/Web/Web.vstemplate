@@ -476,6 +476,12 @@
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_bk.svg">icon_bk.svg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_bk_hover.png">icon_bk_hover.png</ProjectItem>
             </Folder>
+            <Folder Name="CF" TargetFolderName="CF">
+              <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_cf.jpg">bg_menu_cf.jpg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_cf.png">icon_cf.png</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_cf.svg">icon_cf.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="icon_cf_hover.png">icon_cf_hover.png</ProjectItem>
+            </Folder>
             <Folder Name="CS" TargetFolderName="CS">
               <ProjectItem ReplaceParameters="false" TargetFileName="bg_menu_cs.jpg">bg_menu_cs.jpg</ProjectItem>
               <ProjectItem ReplaceParameters="false" TargetFileName="icon_cs.png">icon_cs.png</ProjectItem>

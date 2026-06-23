@@ -62,7 +62,7 @@
             Keeler.listenTo(MessageBus.msg, viewid + field + apputils.EventMsgTags.svrValid, self.Valid, apputils.EventMsgTags.userctx);
             Keeler.listenTo(MessageBus.msg, viewid + field + apputils.EventMsgTags.svrInvalid, self.Invalid, apputils.EventMsgTags.userctx);
 
-            $(document).ready(function () {
+            $(function () {
                 //Note: onchange event fires whenever the value changes therefore this can be called more times. This is okay when
                 //calling only client side objects but not good for making server calls. Changing default to onBlur.
                 //let event = "blur";

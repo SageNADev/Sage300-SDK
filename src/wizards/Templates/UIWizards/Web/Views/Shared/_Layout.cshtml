@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2026 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved. *@
 
 @using System.Web.UI.WebControls
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -388,6 +388,12 @@
         @Scripts.Render("~/bundles/shared")
         @Scripts.Render("~/bundles/portal")
         @Scripts.Render("~/bundles/core")
+
+        <!-- Third-party generic bundle that gets loaded with the layout.
+             Any JavaScript file(s) found here (this folder only and not recursive sub-folders) 
+             will also be loaded. This bundle is defined in the Areas/Shared/BundleRegistration class. -->
+        @Scripts.Render("~/bundles/externalcontent")
+
         <!-- put condition for wizard here -->
         if (ViewBag.NewTenantModel != null)
         {

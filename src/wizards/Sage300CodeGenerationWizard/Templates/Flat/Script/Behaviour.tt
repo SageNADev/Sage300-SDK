@@ -1,5 +1,5 @@
 ﻿<# /* The MIT License (MIT) */ #>
-<# /* Copyright (c) 1994-2024 The Sage Group plc or its licensors.  All rights reserved. */ #>
+<# /* Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved. */ #>
 <# /* */ #>
 <# /* Permission is hereby granted, free of charge, to any person obtaining a copy of */ #>
 <# /* this software and associated documentation files (the "Software"), to deal in */ #>
@@ -38,6 +38,7 @@
 
     // Specific payroll logic since CP and UP are now dynamically assigned
     var entityContext = (moduleId == "PR") ? ", $.noop, " + containerName + "ViewModel.PayrollType" : "" ;
+    var unloadEvent = (moduleId == "PR") ? "'pagehide'" : "sg.utls.unloadEvent" ;
 #>
 /* <#=copyright#> */
 
@@ -588,6 +589,19 @@ var <#=localEntityName#>Utility = {
 #>
 };
 
+<#
+    if(settings.Entities.Count(e=>e.ForGrid) > 0)
+    {
+        WriteLine("// Generic section for invoking cleanup functions when the screen unloads");
+        WriteLine("var unloadUI = {");
+        WriteLine("    // Common function to perform any screen required cleanup");
+        WriteLine("    finalize: function () {");
+        WriteLine("        sg.utls.releaseSession();");
+        WriteLine("    }");
+        WriteLine("};");
+    }
+#>
+
 // Initial Entry
 $(() => {
     <#=localEntityName#>UI.init();
@@ -599,9 +613,10 @@ $(() => {
     <#
         if(settings.Entities.Count(e=>e.ForGrid) > 0)
         {
-            WriteLine("$(window).on('unload', () => {");
-            WriteLine("        sg.utls.releaseSession();");
-            WriteLine("    });");
+            WriteLine("");
+            WriteLine("        // Bind event to invoke common callback function when the screen unloads");
+            WriteLine("        $(window).on(" + unloadEvent + ", unloadUI.finalize);");
+            WriteLine("");
         }
     #>
 });

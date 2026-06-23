@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved. */
+﻿/* Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved. */
 
 "use strict";
 
@@ -2267,7 +2267,7 @@ class FavoriteManager {
 };
 
 var taskDockMenuBreadCrumbManager;
-$(document).ready(function () {
+$(function () {
     const recentWindowsMenu = new RecentWindowsMenu(RECENT_WIN_LIMIT_CONST, menuUrlList, sg.utls.extractSessionIdFromWindow() + sg.utls.localStorageKeys.RECENT_WINDOWS_BASE, sage.cache.local, sg.utls.getMenuLabelFromMenuItemId, kendo.htmlEncode);
     taskDockMenuBreadCrumbManager = new TaskDockMenuBreadCrumbManager(recentWindowsMenu);
     if (taskDockMenuBreadCrumbManager) {

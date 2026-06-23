@@ -23,7 +23,7 @@
         RecAndPlay.testComplete = false; 
     }
 
-    $(document).ready(function () {
+    $(function () {
 
   //      $.subscribe("play", function (obj, results) {
 		//	console.log(results.data);

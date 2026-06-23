@@ -7,13 +7,13 @@
 </Description>
     </Metadata>
     <Installation AllUsers="true">
-        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0, 18.0)" >
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0,)" >
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
-        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)" >
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,)" >
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
-        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.0, 18.0)" >
+        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.0,)" >
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
     </Installation>
@@ -33,6 +33,6 @@
         <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="Sage.CA.SBS.ERP.Sage300.SolutionWizard" Path="|Sage.CA.SBS.ERP.Sage300.SolutionWizard|" AssemblyName="|Sage.CA.SBS.ERP.Sage300.SolutionWizard;AssemblyName|" />
     </Assets>
     <Prerequisites>
-        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,18.0)" DisplayName="Visual Studio core editor" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,)" DisplayName="Visual Studio core editor" />
     </Prerequisites>
 </PackageManifest>

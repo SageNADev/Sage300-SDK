@@ -1,4 +1,4 @@
-/* Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved. */
+/* Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved. */
 
 // @ts-check
 
@@ -41,6 +41,8 @@ sg.utls.screenUnloadHandler = null;
 sg.utls.portalHeight = 225;
 sg.utls.popupTopPosition = 0;
 sg.utls.GridPrefParentForm = null;
+
+sg.utls.unloadEvent = "pagehide";
 
 sg.utls.NotesSearchType = {
     All: 0,
@@ -1006,7 +1008,7 @@ $.extend(sg.utls, {
     registerDestroySession: function () {
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length === 0 || sessionPerPage.val() === "False") {
-            $(window).on('unload', function () {
+            $(window).on(sg.utls.unloadEvent, function () {
                 sg.utls.destroySession();
             });
         }
@@ -1308,7 +1310,7 @@ $.extend(sg.utls, {
      */
     openReport: function (reportToken, checkTitle, callbackOnClose, reportFormat) {
         var reportFormatParam = kendo.format((reportFormat !== undefined) ? "&format={0}" : "", reportFormat);
-        var params = kendo.format("?token={0}" + reportFormatParam, reportToken);
+        var params = kendo.format("?token={0}&url={1}" + reportFormatParam, reportToken, $("#hdnUrl").val());
         var reportUrl = sg.utls.url.buildUrl("Core", "ExportReport", "ExportDialog") + params;
         var reportWindow = window.open(reportUrl);
         if (sg.utls.isFunction(callbackOnClose)) {
@@ -5015,7 +5017,7 @@ $(function () {
         //
         // Portal Page
         //
-		sessionStorage["productId"] = "";        $(window).on('unload', function () {
+        sessionStorage["productId"] = ""; $(window).on(sg.utls.unloadEvent, function () {
             PageUnloadHandler();
         });
 
@@ -5028,12 +5030,12 @@ $(function () {
         //
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length > 0 && sessionPerPage.val() === "True") {
-            $(window).on('unload', function () {
+            $(window).on(sg.utls.unloadEvent, function () {
                 PageUnloadHandler();
                 sg.utls.destroySession();
             });
         } else {
-            $(window).on('unload', function (e) {
+            $(window).on(sg.utls.unloadEvent, function (e) {
                 window.name = "unloadediFrame";
                 PageUnloadHandler();
             });

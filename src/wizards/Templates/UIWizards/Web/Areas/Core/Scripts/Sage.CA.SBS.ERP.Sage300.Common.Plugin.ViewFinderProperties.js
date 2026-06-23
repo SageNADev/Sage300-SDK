@@ -1665,6 +1665,16 @@
                     "QTSALORDRA", "QTAVAILA", "QTYCOMMITA", "PREVENDOR", "VENDITEM"]
             },
 
+            ReconciliationItemNumber: {
+                viewID: "IC0310",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["FMTITEMNO", "ITEMNO", "STOCKUNIT", "DESC", "SERIALNO", "LOTITEM", "NEXTSERFMT","NEXTLOTFMT"],
+                displayFieldNames: ["FMTITEMNO", "DESC", "INACTIVE", "ITEMBRKID", "CATEGORY", "CNTLACCT", "STOCKITEM", "STOCKUNIT",
+                    "PICKINGSEQ", "DEFPRICLST"],
+                filter: "SERIALNO = 1 OR LOTITEM = 1"
+            },
+
             ItemStructure: {
                 viewID: "IC0320",
                 viewOrder: 0,
@@ -1846,7 +1856,7 @@
                 viewID: "IC0850",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["WARRCODE"],
+                returnFieldNames: ["WARRCODE", "WARRDESC"],
                 displayFieldNames: ["WARRCODE", "WARRDESC"]
             },
 
@@ -1878,8 +1888,8 @@
                 viewID: "IC0810",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["LOTNUM", "LOTNUMF", "ITEMNUM"],
-                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYAVAIL", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"]
+                returnFieldNames: ["LOTNUM", "LOTNUMF", "ITEMNUM","LOCATION"],
+                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYSHPABLE", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"]
             },
 
             ICLotNumber: {
@@ -1889,37 +1899,73 @@
                 returnFieldNames: ["LOTNUM", "LOTNUMF", "ITEMNUM"],
                 displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYSHPABLE", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"]
             },
+            LotAllocate: {
+                viewID: "IC0810",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["LOTNUM", "LOTNUMF", "ITEMNUM"],
+                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYSHPABLE", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"],
+                filterTemplate: "ITEMNUM = \"{0}\" AND LOCATION = \"{1}\" AND QTYSHPABLE > 0",
+            },
+            LotAllocateAll: {
+                viewID: "IC0810",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["LOTNUM", "LOTNUMF", "ITEMNUM"],
+                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYSHPABLE", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"],
+                filterTemplate: "ITEMNUM = \"{0}\" AND LOCATION = \"{1}\"",
+            },
 
             LotForWarranty: {
                 viewID: "IC0810",
                 viewOrder: 1,
                 parentValAsInitKey: true,
                 returnFieldNames: ["LOTNUM", "LOTNUMF", "ITEMNUM"],
-                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYAVAIL", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"]                
+                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYAVAIL", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"],
+                filterTemplate: "ITEMNUM = \"{0}\"",
+            },
+            ReconciliationDocumentNumber: {
+                viewID: "IC0825",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["DOCNUM", "ITEMNO", "LOCATION", "TRANSDATE","QUANTITY"],
+                displayFieldNames: ["DOCNUM", "ITEMNO", "LOCATION", "TRANSDATE"],
+                filterTemplate: "DOCNUM = \"{0}\"",
+
             },
 
             Serial: {
                 viewID: "IC0830",
                 viewOrder: 1,
                 parentValAsInitKey: true,
-                returnFieldNames: ["SERIALNUMF", "ITEMNUM", "LOCATION", "STATUS", "STOCKDATE", "EXPIRYDATE", "ASSETCOST"],
-                displayFieldNames: ["SERIALNUMF", "ITEMNUM", "LOCATION", "STATUS", "STOCKDATE", "EXPIRYDATE", "ASSETCOST"]               
+                returnFieldNames: ["SERIALNUMF", "ITEMNUM", "LOCATION", "STATUS", "STOCKDATE", "EXPIRYDATE", "ASSETCOST", "SERIALNUM"],
+                displayFieldNames: ["SERIALNUMF", "ITEMNUM", "LOCATION", "STATUS", "STOCKDATE", "EXPIRYDATE", "ASSETCOST"],
+                filterTemplate: "ITEMNUM = \"{0}\"",
             },
-
-            DocumentNumberForSerial: {
-                viewID: "IC0835",
+            ICInventorySerialNumber: {
+                viewID: "IC0830",
                 viewOrder: 0,
                 parentValAsInitKey: true,
-                returnFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTNO", "SERIALNUM", "ITEMNUM"],
-                displayFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTNO", "SERIALNUM", "ITEMNUM"]
+                returnFieldNames: ["SERIALNUMF", "ITEMNUM", "LOCATION", "STATUS", "STOCKDATE", "EXPIRYDATE", "ASSETCOST", "RESVFORORD"],
+                displayFieldNames: ["SERIALNUMF", "ITEMNUM", "LOCATION", "STATUS", "STOCKDATE", "EXPIRYDATE", "ASSETCOST","RESVFORORD"],
+                filterTemplate: "ITEMNUM = \"{0}\" AND LOCATION = \"{1}\" AND STATUS = \"{2}\""
+            },
+            DocumentNumberForSerial: {
+                viewID: "IC0835",
+                viewOrder: 5,
+                parentValAsInitKey: true,
+                returnFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTVEND", "CUSTNO", "SERIALNUM", "ITEMNUM"],
+                displayFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTVEND", "CUSTNO", "SERIALNUM", "ITEMNUM"],
+                filterTemplate: '(APP = "IC" OR APP = "OE") AND (((TRANSTYPE = 4 OR TRANSTYPE = 16 OR TRANSTYPE = 18) AND STOCKED = -1) OR TRANSTYPE = 117 OR TRANSTYPE = 120) AND ITEMNUM = "{0}" AND SERIALNUM = "{1}"'
             },
 
             DocumentNumberForLot: {
                 viewID: "IC0815",
-                viewOrder: 0,
+                viewOrder: 5,
                 parentValAsInitKey: true,
-                returnFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTNO", "LOTNUM", "ITEMNUM"],
-                displayFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTNO", "LOTNUM", "ITEMNUM"]
+                returnFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTVEND", "CUSTNO", "LOTNUM", "ITEMNUM"],
+                displayFieldNames: ["DOCNUM", "APP", "TRANSDATE", "CUSTVEND", "CUSTNO", "LOTNUM", "ITEMNUM"],
+                filterTemplate: '(APP = "IC" OR APP = "OE") AND (((TRANSTYPE = 4 OR TRANSTYPE = 16 OR TRANSTYPE = 18) AND QTY < 0) OR TRANSTYPE = 115 OR TRANSTYPE = 118) AND ITEMNUM = "{0}" AND LOTNUM = "{1}"'
             },
 
             SerialNumber: {
@@ -1987,6 +2033,27 @@
                     "SHPCONTACT", "PONUMBER", "REFERENCE", "INVNETWTX", "SALESPER1", "SALESPER2", "SALESPER3",
                     "SALESPER4", "SALESPER5"],
                 filterTemplate: "CUSTOMER = \"{0}\""
+            },
+
+            ReconciliationInvoices: {
+                viewID: "OE0420",
+                viewOrder: 6,
+                parentValAsInitKey: true,
+                returnFieldNames: ["INVNUMBER", "INVUNIQ"],
+                displayFieldNames: ["INVNUMBER", "DESC", "INVDATE", "INVFISCYR", "INVFISCPER", "CUSTOMER", "BILNAME", "ORDNUMBER",
+                    "ORDDATE", "BILADDR1", "BILADDR2", "BILADDR3", "BILADDR4", "BILCITY", "BILSTATE", "BILZIP",
+                    "BILCOUNTRY", "BILPHONE", "BILFAX", "BILCONTACT", "SHPNAME", "SHPADDR1", "SHPADDR2",
+                    "SHPADDR3", "SHPADDR4", "SHPCITY", "SHPSTATE", "SHPZIP", "SHPCOUNTRY", "SHPPHONE", "SHPFAX",
+                    "SHPCONTACT", "PONUMBER", "REFERENCE", "INVNETWTX", "SALESPER1", "SALESPER2", "SALESPER3",
+                    "SALESPER4", "SALESPER5"]
+            },
+
+            ReconciliationInvoiceDetails: {
+                viewID: "OE0400",
+                viewOrder: 0,
+                returnFieldNames: ["ITEM", "SLITEM"],
+                displayFieldNames: ["ITEM", "DESC", "LOCATION", "CATEGORY", "QTYSHIPPED"],
+                filterTemplate: "INVUNIQ = \"{0}\""
             },
 
             MiscellaneousCharge: {
@@ -2722,6 +2789,22 @@
                 parentValAsInitKey: true,
                 returnFieldNames: ["INVNUMBER", "INVHSEQ"],
                 displayFieldNames: ["INVNUMBER", "VDCODE", "VDNAME", "DATE", "DESCRIPTIO", "REFERENCE", "HASJOB"],
+            },
+
+            DocumentNumber: {
+                viewID: "PO0420",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["INVNUMBER", "INVHSEQ"],
+                displayFieldNames: ["INVNUMBER", "VDCODE", "VDNAME", "DATE", "DESCRIPTIO", "REFERENCE"],
+            },
+
+            InvoiceLines: {
+                viewID: "PO0430",
+                viewOrder: 0,
+                returnFieldNames: ["INVHSEQ", "ITEMNO", "SLITEM"],
+                displayFieldNames: ["ITEMNO", "ITEMDESC", "LOCATION", "RQRECEIVED"],
+                filterTemplate: "INVHSEQ = \"{0}\" AND SLITEM > 0"
             },
 
             EmailMessage: {
