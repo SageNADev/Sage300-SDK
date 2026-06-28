@@ -38,7 +38,7 @@
 
     // Specific payroll logic since CP and UP are now dynamically assigned
     var entityContext = (moduleId == "PR") ? ", $.noop, " + containerName + "ViewModel.PayrollType" : "" ;
-    var unloadEvent = (moduleId == "PR") ? "'pagehide'" : "sg.utls.unloadEvent" ;
+    var unloadEvent = "'pagehide'";
 #>
 /* <#=copyright#> */
 
