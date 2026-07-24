@@ -1976,19 +1976,19 @@
   </data>
   <data name="IC_Receipts_Article2" xml:space="preserve">
     <value>Ingresar ajustes para recibos existentes</value>
-    <comment>CSH ID 211017003</comment>
+    <comment>123043002</comment>
   </data>
   <data name="IC_Receipts_Screen" xml:space="preserve">
     <value>Pantalla CI - Recibos</value>
-    <comment>CSH ID 211017001</comment>
+    <comment>123042001</comment>
   </data>
   <data name="IC_Shipments_Article1" xml:space="preserve">
-    <value>Acerca de los envíos</value>
-    <comment>CSH ID 211018002</comment>
+    <value>Envío de mercancías a los clientes</value>
+    <comment>123043008</comment>
   </data>
   <data name="IC_Shipments_Article2" xml:space="preserve">
-    <value>Enviar bienes a los clientes</value>
-    <comment>CSH ID 211018003</comment>
+    <value>Recibir bienes devueltos de las clientas</value>
+    <comment>123043009</comment>
   </data>
   <data name="IC_Shipments_Screen" xml:space="preserve">
     <value>Pantalla CI - Envíos</value>
@@ -3236,7 +3236,7 @@
   </data>
   <data name="IC_WarrantyContractList_Report_Screen" xml:space="preserve">
     <value>Pantalla CI - Reporte de Lista de Garantías/Contratos</value>
-    <comment>CSH ID 211105001</comment>
+    <comment>123031301</comment>
   </data>
   <data name="IC_CurrentTransactionsInquiry_Article1" xml:space="preserve">
     <value>Acerca del procesamiento de transacciones en Control de Inventario</value>
@@ -3276,7 +3276,7 @@
   </data>
   <data name="IC_Quarantine_Report_Screen" xml:space="preserve">
     <value>Pantalla CI - Reporte de Cuarentena</value>
-    <comment>CSH ID 211099001</comment>
+    <comment>123027001</comment>
   </data>
   <data name="GL_SourceJournalProfiles_Report_Article1" xml:space="preserve">
     <value>Acerca de los reportes del Libro Mayor</value>
@@ -3336,19 +3336,19 @@
   </data>
   <data name="IC_SerialLotTransactions_Report_Screen" xml:space="preserve">
     <value>Pantalla CI - Reporte de Transacciones de N° Lote/Serie</value>
-    <comment>CSH ID 211104001</comment>
+    <comment>123031201</comment>
   </data>
   <data name="IC_SerialNumberInquiry_Article1" xml:space="preserve">
-    <value>Acerca de Inventario Serializado y Seguimiento de Lote</value>
-    <comment>CSH ID 211098002</comment>
+    <value>Consulta de información sobre el número de serie</value>
+    <comment>123051001</comment>
   </data>
-  <data name="IC_SerialNumberInquiry_Article2" xml:space="preserve">
-    <value>Consultar información de número de serie</value>
-    <comment>CSH ID 211098003</comment>
+  <data name="IC_Serial_Lot_NumberInquiry_Article2" xml:space="preserve">
+    <value>Consultar el historial de transacciones</value>
+    <comment>123051003</comment>
   </data>
   <data name="IC_SerialNumberInquiry_Screen" xml:space="preserve">
     <value>Pantalla CI - Consulta de Número de Serie</value>
-    <comment>CSH ID 211098001</comment>
+    <comment>123041004</comment>
   </data>
   <data name="AP_DeleteInactiveRecords_Article1" xml:space="preserve">
     <value>Acerca de cómo eliminar registros inactivos</value>
@@ -3372,7 +3372,7 @@
   </data>
   <data name="IC_Recall_Report_Screen" xml:space="preserve">
     <value>Pantalla CI - Reporte de Retirada</value>
-    <comment>CSH ID 211100001</comment>
+    <comment>123028001</comment>
   </data>
   <data name="GL_CreateAllocationBatch_Article1" xml:space="preserve">
     <value>Procedimientos de Fin de Período</value>
@@ -3684,7 +3684,7 @@
   </data>
   <data name="IC_SerialLotNumberList_Report_Screen" xml:space="preserve">
     <value>Pantalla CI - Reporte de Lista de N° Lote/Serie</value>
-    <comment>CSH ID 211101001</comment>
+    <comment>123029001</comment>
   </data>
   <data name="IC_SerialLotNumberQuantityOnHand_Report_Article1" xml:space="preserve">
     <value>Acerca de Inventario Serializado y Seguimiento de Lote</value>
@@ -3696,7 +3696,7 @@
   </data>
   <data name="IC_SerialLotNumberQuantityOnHand_Report_Screen" xml:space="preserve">
     <value>Pantalla CI - Reporte de Cantidad de N° de Serie/Lote Disponibles</value>
-    <comment>CSH ID 211102001</comment>
+    <comment>123030001</comment>
   </data>
   <data name="AR_CustomerGroups_Report_Article1" xml:space="preserve">
     <value>Acerca de los reportes de Cuentas por Cobrar</value>
@@ -3744,7 +3744,7 @@
   </data>
   <data name="IC_LotNumbers_Screen" xml:space="preserve">
     <value>Pantalla CI - Números de Lote</value>
-    <comment>CSH ID 211069001</comment>
+    <comment>123031701</comment>
   </data>
   <data name="OE_InvoiceEntry_Article1" xml:space="preserve">
     <value>Acerca de las órdenes, los envíos y las facturas</value>
@@ -3948,7 +3948,7 @@
   </data>
   <data name="IC_ContractCodes_Screen" xml:space="preserve">
     <value>Pantalla CI - Códigos de Contrato</value>
-    <comment>CSH ID 211081001</comment>
+    <comment>123041003</comment>
   </data>
   <data name="AP_ClearHistory_Article1" xml:space="preserve">
     <value>Borrar los datos obsoletos de Cuentas por Pagar</value>
@@ -4110,11 +4110,11 @@
   </data>
   <data name="IC_SerialRegistration_Article2" xml:space="preserve">
     <value>Registrar números de serie para las garantías de clientes</value>
-    <comment>CSH ID 211079003</comment>
+    <comment>123044001</comment>
   </data>
   <data name="IC_SerialRegistration_Screen" xml:space="preserve">
     <value>Pantalla CI - Registro de Número de Serie</value>
-    <comment>CSH ID 211079001</comment>
+    <comment>123041001</comment>
   </data>
   <data name="IC_WarrantyCodes_Article1" xml:space="preserve">
     <value>Códigos de garantía</value>
@@ -4126,7 +4126,7 @@
   </data>
   <data name="IC_WarrantyCodes_Screen" xml:space="preserve">
     <value>Pantalla CI - Códigos de Garantía</value>
-    <comment>CSH ID 211083001</comment>
+    <comment>123051400</comment>
   </data>
   <data name="AR_ShipToLocations_Report_Article1" xml:space="preserve">
     <value>Acerca de los reportes de Cuentas por Cobrar</value>
@@ -4345,7 +4345,7 @@
     <value>Base de Conocimiento</value>
   </data>
   <data name="SageSupport_LiveChat" xml:space="preserve">
-    <value>Chat en Vivo</value>
+    <value>Chat</value>
   </data>
   <data name="SageSupport_Remote" xml:space="preserve">
     <value>Sesión de Soporte Remoto</value>
@@ -5498,17 +5498,17 @@
     <value>Imprimir el reporte Estructuras de Artículos de CI</value>
     <comment>CSHID 211122003</comment>
   </data>
-  <data name="IC_MaskStructures_Report_Screen" xml:space="preserve">
-    <value>CI – Reporte de Estructuras de Máscara</value>
-    <comment>CSHID 211127001</comment>
+  <data name="IC_MaskStructures_Report_Article3" xml:space="preserve">
+    <value>Modificación o eliminación de estructuras de máscara</value>
+    <comment>677003000</comment>
   </data>
   <data name="IC_MaskStructures_Report_Article1" xml:space="preserve">
-    <value>Reportes de Control de Inventario</value>
-    <comment>CSHID 211127002</comment>
+    <value>Informe sobre estructuras de máscaras de impresión</value>
+    <comment>211127003</comment>
   </data>
   <data name="IC_MaskStructures_Report_Article2" xml:space="preserve">
-    <value>Imprimir el reporte Estructuras de Máscara de CI</value>
-    <comment>CSHID 211127003</comment>
+    <value>Agregar estructuras de máscara</value>
+    <comment>677002009</comment>
   </data>
   <data name="IC_SegmentCodes_Report_Screen" xml:space="preserve">
     <value>CI - Reporte de Códigos de Segmentos</value>
@@ -5764,5 +5764,112 @@
   <data name="PM_Setup_Subcontractors_Screen" xml:space="preserve">
     <value>Subcontratistas</value>
     <comment>123018001</comment>
+  </data>
+  <data name="IC_SerialLotStockListingReport_Screen" xml:space="preserve">
+    <value>Informe de listado de existencias de series/lotes</value>
+    <comment>123031101</comment>
+  </data>
+  <data name="IC_QuarantineRelease_Screen" xml:space="preserve">
+    <value>Pantalla CI - Salida de Cuarentena</value>
+    <comment>123031601</comment>
+  </data>
+  <data name="IC_MaskStructures_Screen" xml:space="preserve">
+    <value> Pantalla CI - Estructuras de Máscara</value>
+    <comment>123031501</comment>
+  </data>
+  <data name="IC_WarrantyUpdate_Screen" xml:space="preserve">
+    <value>Pantalla CI - Actualización de Garantía</value>
+    <comment>123041002</comment>
+  </data>
+  <data name="IC_QuarantineRelease_Article1" xml:space="preserve">
+    <value>Liberando lotes de la cuarentena</value>
+    <comment>211000001</comment>
+  </data>
+  <data name="IC_Receipts_Article3" xml:space="preserve">
+    <value>Devolución de mercancías al proveedor</value>
+    <comment>123042008</comment>
+  </data>
+  <data name="IC_Receipts_Article4" xml:space="preserve">
+    <value>Recepción de mercancías del proveedor</value>
+    <comment>123042009</comment>
+  </data>
+  <data name="IC_Receipts_Article5" xml:space="preserve">
+    <value>Registro de recibos guardados</value>
+    <comment>123043001</comment>
+  </data>
+  <data name="IC_Transfers_Article3" xml:space="preserve">
+    <value>Contabilización de transacciones de inventario</value>
+    <comment>123043003</comment>
+  </data>
+  <data name="IC_Receipts_Article8" xml:space="preserve">
+    <value>Recepción de mercancías desde la ubicación de mercancías en tránsito</value>
+    <comment>123043005</comment>
+  </data>
+  <data name="IC_Transfers_Article4" xml:space="preserve">
+    <value>Asignación de número de serie y lote</value>
+    <comment>123043004</comment>
+  </data>
+  <data name="IC_LotNumberInquiry_Screen" xml:space="preserve">
+    <value>CI – Consulta de Números de Lote</value>
+    <comment>123041006</comment>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations" xml:space="preserve">
+    <value>CI – Conciliaciones de Nº Serie/Lote</value>
+    <comment>123031901</comment>
+  </data>
+  <data name="IC_Receipts_Article6" xml:space="preserve">
+    <value>Registro de transacciones de inventario</value>
+    <comment>123050000</comment>
+  </data>
+  <data name="IC_Receipts_Article7" xml:space="preserve">
+    <value>Asignación de número de serie y lote</value>
+    <comment>123043004</comment>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations_Article1" xml:space="preserve">
+    <value>Conciliación de números de serie y de lote</value>
+    <comment>123043006</comment>
+  </data>
+  <data name="IC_Shipments_Article3" xml:space="preserve">
+    <value>Asignación de números de serie o de lote para envíos</value>
+    <comment>123043007</comment>
+  </data>
+  <data name="IC_Shipments_Article4" xml:space="preserve">
+    <value>Registro de transacciones de inventario</value>
+    <comment>123050000</comment>
+  </data>
+  <data name="CF_Dashboard_Inquiry" xml:space="preserve">
+    <value>C/F Dashboard Inquiry</value>
+  </data>
+  <data name="CF_Setup_Options" xml:space="preserve">
+    <value>C/F Options Screen </value>
+  </data>
+  <data name="CF_Cash_Flow_Summary" xml:space="preserve">
+    <value>C/F Cash Flow Summary </value>
+  </data>
+  <data name="CF_AR_Summary" xml:space="preserve">
+    <value>C/F AR Summary </value>
+  </data>
+  <data name="CF_AR_Top_10_Customers" xml:space="preserve">
+    <value>A/R Top 10 Customers by Outstanding Balance and Forecast </value>
+  </data>
+  <data name="CF_AP_Summary" xml:space="preserve">
+    <value>C/F AP Summary </value>
+  </data>
+  <data name="CF_AP_Top_10_Vendors" xml:space="preserve">
+    <value>A/P Top 10 Vendors by Outstanding Balance and Forecast </value>
+  </data>
+  <data name="CF_Cash_Flow_Summary_Report" xml:space="preserve">
+    <value>Cash Flow Summary Reports </value>
+  </data>
+  <data name="CF_Dashboard_Reports" xml:space="preserve">
+    <value>Dashboard Reports</value>
+  </data>
+  <data name="IC_Serial_Lot_NumberInquiry_Article3" xml:space="preserve">
+    <value>Consulta de estadísticas de transacciones</value>
+    <comment>123051004</comment>
+  </data>
+  <data name="IC_LotNumberInquiry_Article1" xml:space="preserve">
+    <value>Consulta de información sobre el número de lote</value>
+    <comment>123051002</comment>
   </data>
 </root>

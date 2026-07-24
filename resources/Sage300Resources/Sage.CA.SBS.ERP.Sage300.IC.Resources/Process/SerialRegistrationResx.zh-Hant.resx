@@ -120,6 +120,9 @@
   <data name="CustomerDescription" xml:space="preserve">
     <value>客戶描述</value>
   </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>客戶名稱</value>
+  </data>
   <data name="DocumenttypeICShipment" xml:space="preserve">
     <value>存貨控制發運</value>
     <comment>Dropdown Item</comment>

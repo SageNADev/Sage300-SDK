@@ -1,4 +1,4 @@
-/* Copyright (c) 1994-2025 The Sage Group plc or its licensors.  All rights reserved. */
+/* Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved. */
 
 // @ts-check
 
@@ -1006,7 +1006,7 @@ $.extend(sg.utls, {
     registerDestroySession: function () {
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length === 0 || sessionPerPage.val() === "False") {
-            $(window).on('unload', function () {
+            $(window).on('pagehide', function () {
                 sg.utls.destroySession();
             });
         }
@@ -1015,12 +1015,14 @@ $.extend(sg.utls, {
     releaseSession: function () {
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length === 0 || sessionPerPage.val() === "False") {
-            sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "ReleaseSession"));
+            // Unload vs. Post to guarantee request completes
+            sg.utls.ajaxUnload("Core", "Session", "ReleaseSession");
         }
     },
 
     destroySessions: function () {
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "DestroyPool"));
+        // Unload vs. Post to guarantee request completes
+        sg.utls.ajaxUnload("Core", "Session", "DestroyPool");
         sage.cache.session.clearAll();
         sg.utls.destroyPoolForReport(false);
     },
@@ -1030,7 +1032,8 @@ $.extend(sg.utls, {
         var sessionId = sage.cache.session.get("session");
         sage.cache.session.clearAll();
         sage.cache.session.set("session", sessionId);
-        sg.utls.ajaxPost(sg.utls.url.buildUrl("Core", "Session", "Destroy"));
+        // Unload vs. Post to guarantee request completes
+        sg.utls.ajaxUnload("Core", "Session", "Destroy");
     },
 
     /**
@@ -1308,13 +1311,13 @@ $.extend(sg.utls, {
      */
     openReport: function (reportToken, checkTitle, callbackOnClose, reportFormat) {
         var reportFormatParam = kendo.format((reportFormat !== undefined) ? "&format={0}" : "", reportFormat);
-        var params = kendo.format("?token={0}" + reportFormatParam, reportToken);
+        var params = kendo.format("?token={0}&url={1}" + reportFormatParam, reportToken, $("#hdnUrl").val());
         var reportUrl = sg.utls.url.buildUrl("Core", "ExportReport", "ExportDialog") + params;
         var reportWindow = window.open(reportUrl);
         if (sg.utls.isFunction(callbackOnClose)) {
             setTimeout(function () {
                 if (reportWindow !== undefined) {
-                    $(reportWindow).on("unload", function () {
+                    $(reportWindow).on('pagehide', function () {
                         callbackOnClose.call();
                     });
                 }
@@ -1630,6 +1633,42 @@ $.extend(sg.utls, {
 
     ajaxPost: function (ajaxUrl, ajaxData, successHandler) {
         sg.utls.ajaxInternal(ajaxUrl, ajaxData, sg.utls.getJsonResultHandler(successHandler), "text", "post", true, sg.utls.ajaxErrorHandler);
+    },
+
+    /**
+     * @name ajaxUnload
+     * @description ajaxUnload is more reliable than a simple ajax call (ajaxPost) because this has the
+     *              keepAlive set to true so that the associated request will be executed
+     *              even if the page that invoked it is unloaded before the request has completed.
+     *              This is called from routines invoked by the 'pagehide' event (releaseSession, destroySession),
+     *              at a minimum, to ensure the request completes.
+     * @param {string} area        - The string representing the area name (module)
+     * @param {string} controller  - The string representing the controller name
+     * @param {string} action      - The string representing the action name (method)
+     * @param {object} [data]      - (Optional) Required data, if any
+     */
+    ajaxUnload: function (area, controller, action, data) {
+
+        // Init if no data is passed in
+        data = data || {};
+
+        // Buidl URL
+        var url = sg.utls.url.buildUrl(area, controller, action);
+
+        // Build headers
+        let headers = sg.utls.getHeadersForAjax() || {};
+        headers["Content-Type"] = "application/json";
+
+        // Perform fetch with keepalive set to true, so that the request will be completed even if
+        // the page is unloaded before the request completes.
+        fetch(url, {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(data),
+            keepalive: true
+        }).catch(() => {
+            // Ignore error, if any
+        });
     },
 
     ajaxCrossDomainPost: function (ajaxUrl, ajaxData, successHandler, errorHandler) {
@@ -5015,7 +5054,7 @@ $(function () {
         //
         // Portal Page
         //
-		sessionStorage["productId"] = "";        $(window).on('unload', function () {
+        sessionStorage["productId"] = ""; $(window).on('pagehide', function () {
             PageUnloadHandler();
         });
 
@@ -5028,12 +5067,12 @@ $(function () {
         //
         var sessionPerPage = $("#SessionPerPage");
         if (sessionPerPage.length > 0 && sessionPerPage.val() === "True") {
-            $(window).on('unload', function () {
+            $(window).on('pagehide', function () {
                 PageUnloadHandler();
                 sg.utls.destroySession();
             });
         } else {
-            $(window).on('unload', function (e) {
+            $(window).on('pagehide', function (e) {
                 window.name = "unloadediFrame";
                 PageUnloadHandler();
             });

@@ -1339,6 +1339,87 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CashFlow Analyzer.
+        /// </summary>
+        public static string CF0000 {
+            get {
+                return ResourceManager.GetString("CF0000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C/F Inquiry.
+        /// </summary>
+        public static string CF1000 {
+            get {
+                return ResourceManager.GetString("CF1000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dashboard.
+        /// </summary>
+        public static string CF1101 {
+            get {
+                return ResourceManager.GetString("CF1101", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Flow Summary.
+        /// </summary>
+        public static string CF1102 {
+            get {
+                return ResourceManager.GetString("CF1102", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Summary.
+        /// </summary>
+        public static string CF1103 {
+            get {
+                return ResourceManager.GetString("CF1103", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P Summary.
+        /// </summary>
+        public static string CF1104 {
+            get {
+                return ResourceManager.GetString("CF1104", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loan.
+        /// </summary>
+        public static string CF1105 {
+            get {
+                return ResourceManager.GetString("CF1105", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C/F Setup.
+        /// </summary>
+        public static string CF9000 {
+            get {
+                return ResourceManager.GetString("CF9000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string CF9100 {
+            get {
+                return ResourceManager.GetString("CF9100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Articles.
         /// </summary>
         public static string CNAPortalHelpArticles {
@@ -2392,6 +2473,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search help.
+        /// </summary>
+        public static string HelpAgent {
+            get {
+                return ResourceManager.GetString("HelpAgent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Find help for setting up and using Sage 300c.
         /// </summary>
         public static string HelpTitle {
@@ -2815,6 +2905,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lot Number Inquiry.
+        /// </summary>
+        public static string IC_Lot_Number_Inquiry {
+            get {
+                return ResourceManager.GetString("IC_Lot_Number_Inquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lot Numbers.
         /// </summary>
         public static string IC_Lot_Numbers {
@@ -2833,6 +2932,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lot Splits/Combines.
+        /// </summary>
+        public static string IC_Lot_Splits_Combine {
+            get {
+                return ResourceManager.GetString("IC_Lot_Splits_Combine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manufacturers&apos; Items.
         /// </summary>
         public static string IC_Manufacturers_Item {
@@ -2847,6 +2955,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_Markup_Analysis {
             get {
                 return ResourceManager.GetString("IC_Markup_Analysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mask Structures.
+        /// </summary>
+        public static string IC_Mask_Structure {
+            get {
+                return ResourceManager.GetString("IC_Mask_Structure", resourceCulture);
             }
         }
         
@@ -2986,6 +3103,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quarantine Release.
+        /// </summary>
+        public static string IC_Quarantine_Release {
+            get {
+                return ResourceManager.GetString("IC_Quarantine_Release", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quarantine.
         /// </summary>
         public static string IC_Quarantine_Report {
@@ -3072,6 +3198,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_Serial_Lot_Number_Qty_On_Hand_Report {
             get {
                 return ResourceManager.GetString("IC_Serial_Lot_Number_Qty_On_Hand_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serial/Lot Reconciliations.
+        /// </summary>
+        public static string IC_Serial_Lot_Reconciliations {
+            get {
+                return ResourceManager.GetString("IC_Serial_Lot_Reconciliations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serial/Lot Stock Listing.
+        /// </summary>
+        public static string IC_Serial_Lot_Stock_Listing_Report {
+            get {
+                return ResourceManager.GetString("IC_Serial_Lot_Stock_Listing_Report", resourceCulture);
             }
         }
         
@@ -3306,6 +3450,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_Warranty_Contract_List {
             get {
                 return ResourceManager.GetString("IC_Warranty_Contract_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warranty Update.
+        /// </summary>
+        public static string IC_Warranty_Update {
+            get {
+                return ResourceManager.GetString("IC_Warranty_Update", resourceCulture);
             }
         }
         

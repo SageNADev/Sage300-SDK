@@ -284,7 +284,7 @@
   </data>
   <data name="UNTIL" xml:space="preserve">
     <value>Hasta</value>
-    <comment>Lot - Field</comment>
+    <comment>Campos Opcionales</comment>
   </data>
   <data name="Value" xml:space="preserve">
     <value>Valor</value>
@@ -382,5 +382,35 @@
   <data name="SaveConfirm" xml:space="preserve">
     <value>Tiene cambios no guardados en {0} "{1}", {2} "{3}" y {4} "{5}". ¿Desea continuar?</value>
     <comment>Validations</comment>
+  </data>
+  <data name="ContractCodeNotExist" xml:space="preserve">
+    <value>El código de contrato {0} no existe.</value>
+  </data>
+  <data name="CurrentQuantity" xml:space="preserve">
+    <value>Cantidad Actual</value>
+  </data>
+  <data name="DateOutsideRange" xml:space="preserve">
+    <value>La fecha introducida se encuentra fuera del rango especificado en el perfil de la empresa.</value>
+  </data>
+  <data name="ItemNumberNotExist" xml:space="preserve">
+    <value>El artículo número {0} no existe.</value>
+  </data>
+  <data name="LocationNotExist" xml:space="preserve">
+    <value>La ubicación no existe.</value>
+  </data>
+  <data name="LotNumberNotExist" xml:space="preserve">
+    <value>El número de lote {0} no existe.</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>En</value>
+  </data>
+  <data name="QuantityReservedForOrder" xml:space="preserve">
+    <value>Cant. Reservada para Orden</value>
+  </data>
+  <data name="TitleLotNumberTransactionInquiry" xml:space="preserve">
+    <value>Consulta de Transacción de N° de Lote</value>
+    </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Campos Opcionales</value>
   </data>
 </root>

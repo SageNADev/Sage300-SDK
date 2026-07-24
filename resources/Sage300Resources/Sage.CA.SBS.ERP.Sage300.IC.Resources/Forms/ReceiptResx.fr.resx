@@ -337,4 +337,19 @@
   <data name="ReceiptDescription" xml:space="preserve">
     <value>Description réception</value>
   </data>
+  <data name="ConfirmationErrorMessage" xml:space="preserve">
+    <value>La quantité restante n'est pas nulle. Vous ne pourrez pas enregistrer cette opération. Voulez-vous continuer ?</value>
+  </data>
+  <data name="QuantityErrorValidation" xml:space="preserve">
+    <value>La quantité et les numéros de série/lot attribués doivent être identiques.</value>
+  </data>
+  <data name="LotConfirmationErrorMessage" xml:space="preserve">
+    <value>La quantité restante n'est pas nulle. Vous ne pourrez pas enregistrer cette opération. Voulez-vous continuer ?</value>
+  </data>
+  <data name="QuantityReceivedValidation" xml:space="preserve">
+    <value>La quantité reçue ne peut pas être nulle.</value>
+  </data>
+  <data name="SerialConfirmationErrorMessage" xml:space="preserve">
+    <value>La quantité restante n'est pas nulle. Vous ne pourrez pas enregistrer cette opération. Voulez-vous continuer ?</value>
+  </data>
 </root>

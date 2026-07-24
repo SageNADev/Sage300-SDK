@@ -3019,4 +3019,7 @@
     <value>Set the location for all details to be the same as the location for the order?  The location will not be changed for a detail if the item specified for the detail is not allowed at the location.</value>
     <comment>confirmation message</comment>
   </data>
+  <data name="InvalidLocation" xml:space="preserve">
+    <value>The location is blank. The serials/lot form will not be displayed.</value>
+  </data>
 </root>

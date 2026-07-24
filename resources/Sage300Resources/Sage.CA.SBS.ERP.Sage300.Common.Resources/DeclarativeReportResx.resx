@@ -885,10 +885,10 @@
     <value>From Item Number</value>
   </data>
   <data name="LocationFrom" xml:space="preserve">
-    <value>Location From</value>
+    <value>From Location</value>
   </data>
   <data name="LocationTo" xml:space="preserve">
-    <value>Location To</value>
+    <value>To Location</value>
   </data>
   <data name="ToItemNumber" xml:space="preserve">
     <value>To Item Number</value>
@@ -1708,5 +1708,215 @@
   </data>
   <data name="ToSelectionList" xml:space="preserve">
     <value>To Selection List</value>
+  </data>
+  <data name="IC_SerailLotNumberQOH" xml:space="preserve">
+    <value>I/C Serial/Lot Number Quantity On Hand Report</value>
+  </data>
+  <data name="LotNumbers" xml:space="preserve">
+    <value>Lot Numbers</value>
+  </data>
+  <data name="SerialNumbers" xml:space="preserve">
+    <value>Serial Numbers</value>
+  </data>
+  <data name="ShowQuantityVariance" xml:space="preserve">
+    <value>Show only items with IC Quantity Variance</value>
+  </data>
+  <data name="LotNumberFrom" xml:space="preserve">
+    <value>From Lot Number</value>
+  </data>
+  <data name="LotNumberTo" xml:space="preserve">
+    <value>To Lot Number</value>
+  </data>
+  <data name="IC_SerialOrLotTransactionsTitle" xml:space="preserve">
+    <value>I/C Serial/Lot Transactions Report</value>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Document Date</value>
+  </data>
+  <data name="Both" xml:space="preserve">
+    <value>Both</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Serial Number</value>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>Lot Number</value>
+  </data>
+  <data name="SerialNumberFrom" xml:space="preserve">
+    <value>From Serial Number</value>
+  </data>
+  <data name="SerialNumberTo" xml:space="preserve">
+    <value>To Serial Number</value>
+  </data>
+  <data name="DocumentDateFrom" xml:space="preserve">
+    <value>From Document Date</value>
+  </data>
+  <data name="DocumentDateTo" xml:space="preserve">
+    <value>To Document Date</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Not Available</value>
+  </data>
+  <data name="ExpiredStock" xml:space="preserve">
+    <value>Expired Stock</value>
+  </data>
+  <data name="FromCustomerNumber" xml:space="preserve">
+    <value>From Customer Number</value>
+  </data>
+  <data name="FromExpiredDate" xml:space="preserve">
+    <value>From Expired Date</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>From Lot Number</value>
+  </data>
+  <data name="FromRegisteredDate" xml:space="preserve">
+    <value>From Registered Date</value>
+  </data>
+  <data name="FromReservedDate" xml:space="preserve">
+    <value>From Reserved Date</value>
+  </data>
+  <data name="FromSerialNumber" xml:space="preserve">
+    <value>From Serial Number</value>
+  </data>
+  <data name="FromSoldDate" xml:space="preserve">
+    <value>From Sold Date</value>
+  </data>
+  <data name="IC_SerialLotStockListingReport" xml:space="preserve">
+    <value>I/C Serial/Lot Stock Listing Report</value>
+  </data>
+  <data name="Registered" xml:space="preserve">
+    <value>Registered</value>
+  </data>
+  <data name="ReservedStock" xml:space="preserve">
+    <value>Reserved Stock</value>
+  </data>
+  <data name="SoldStock" xml:space="preserve">
+    <value>Sold Stock</value>
+  </data>
+  <data name="ToCustomerNumber" xml:space="preserve">
+    <value>To Customer Number</value>
+  </data>
+  <data name="ToExpiredDate" xml:space="preserve">
+    <value>To Expired Date</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>To Lot Number</value>
+  </data>
+  <data name="ToRegisteredDate" xml:space="preserve">
+    <value>To Registered Date</value>
+  </data>
+  <data name="ToReservedDate" xml:space="preserve">
+    <value>To Reserved Date</value>
+  </data>
+  <data name="ToSerialNumber" xml:space="preserve">
+    <value>To Serial Number</value>
+  </data>
+  <data name="ToSoldDate" xml:space="preserve">
+    <value>To Sold Date</value>
+  </data>
+  <data name="FromQuarantineDate" xml:space="preserve">
+    <value>From Quarantine Date</value>
+  </data>
+  <data name="IC_QuarantineTitle" xml:space="preserve">
+    <value>I/C Quarantine Report</value>
+  </data>
+  <data name="QuarantineDate" xml:space="preserve">
+    <value>Quarantine Date</value>
+  </data>
+  <data name="ToQuarantineDate" xml:space="preserve">
+    <value>To Quarantine Date</value>
+  </data>
+  <data name="ContractExpiryDate" xml:space="preserve">
+    <value>Contract Expiry Date</value>
+  </data>
+  <data name="ContractSummary" xml:space="preserve">
+    <value>Contract Summary</value>
+  </data>
+  <data name="EarliestExpiryDate" xml:space="preserve">
+    <value>Earliest Warr/Cont. Expiry Date</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Expiry Date</value>
+  </data>
+  <data name="ExpiryDateFrom" xml:space="preserve">
+    <value>From Expiry Date</value>
+  </data>
+  <data name="ExpiryDateTo" xml:space="preserve">
+    <value>To Expiry Date</value>
+  </data>
+  <data name="ICWarrantyContractListTitle" xml:space="preserve">
+    <value>I/C Warranty/Contract List Report</value>
+  </data>
+  <data name="ItemNumbers" xml:space="preserve">
+    <value>Item Numbers</value>
+  </data>
+  <data name="ItemSummary" xml:space="preserve">
+    <value>Item Summary</value>
+  </data>
+  <data name="LatestExpiryDate" xml:space="preserve">
+    <value>Latest Warr/Cont. Expiry Date</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="SoldDate" xml:space="preserve">
+    <value>Sold Date</value>
+  </data>
+  <data name="SoldDateFrom" xml:space="preserve">
+    <value>From Sold Date</value>
+  </data>
+  <data name="SoldDateTo" xml:space="preserve">
+    <value>To Sold Date</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>Stock Date</value>
+  </data>
+  <data name="StockDateFrom" xml:space="preserve">
+    <value>From Stock Date</value>
+  </data>
+  <data name="StockDateTo" xml:space="preserve">
+    <value>To Stock Date</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>Use</value>
+  </data>
+  <data name="WarrantyExpiryDate" xml:space="preserve">
+    <value>Warranty Expiry Date</value>
+  </data>
+  <data name="WarrantySummary" xml:space="preserve">
+    <value>Warranty Summary</value>
+  </data>
+  <data name="OrderBy" xml:space="preserve">
+    <value>Order By</value>
+  </data>
+  <data name="NotRegistered" xml:space="preserve">
+    <value>Not Registered</value>
+  </data>
+  <data name="CustomerVendorNumber" xml:space="preserve">
+    <value>Customer/Vendor Number</value>
+  </data>
+  <data name="FromRecallDate" xml:space="preserve">
+    <value>From Recall Date</value>
+  </data>
+  <data name="FromRecallNumber" xml:space="preserve">
+    <value>From Recall Number</value>
+  </data>
+  <data name="IC_RecallTitle" xml:space="preserve">
+    <value>I/C Recall Report</value>
+  </data>
+  <data name="RecallDate" xml:space="preserve">
+    <value>Recall Date</value>
+  </data>
+  <data name="RecallNumber" xml:space="preserve">
+    <value>Recall Number</value>
+  </data>
+  <data name="ToRecallDate" xml:space="preserve">
+    <value>To Recall Date</value>
+  </data>
+  <data name="ToRecallNumber" xml:space="preserve">
+    <value>To Recall Number</value>
   </data>
 </root>

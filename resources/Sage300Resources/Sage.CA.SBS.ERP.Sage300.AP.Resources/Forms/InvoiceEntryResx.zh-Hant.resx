@@ -785,4 +785,40 @@
   <data name="LessReverseCharges" xml:space="preserve">
     <value>減迴轉收費</value>
   </data>
+  <data name="CreateReverseBatch" xml:space="preserve">
+    <value>建立迴轉批次</value>
+  </data>
+  <data name="CreateReverseEntryTitle" xml:space="preserve">
+    <value>建立迴轉分錄</value>
+  </data>
+  <data name="ReverseBatch" xml:space="preserve">
+    <value>迴轉整個批次?</value>
+  </data>
+  <data name="ReverseEntry" xml:space="preserve">
+    <value>迴轉此分錄?</value>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>原始</value>
+  </data>
+  <data name="OriginalWithPrefix" xml:space="preserve">
+    <value>原始帶首碼</value>
+  </data>
+  <data name="NewDescription" xml:space="preserve">
+    <value>新描述</value>
+  </data>
+  <data name="CreatedReverseEntryNo" xml:space="preserve">
+    <value>建立的迴轉分錄編號</value>
+  </data>
+  <data name="DocumentNumberOption" xml:space="preserve">
+    <value>文件編號</value>
+  </data>
+  <data name="Generated" xml:space="preserve">
+    <value>產生</value>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>輸入</value>
+  </data>
+  <data name="ReverseNonAPBatches" xml:space="preserve">
+    <value>迴轉子分類帳批次可能會在 AP 及其相關聯的子分類帳之間造成對帳差異。</value>
+  </data>
 </root>

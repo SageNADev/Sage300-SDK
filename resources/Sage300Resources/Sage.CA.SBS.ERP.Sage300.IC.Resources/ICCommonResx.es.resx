@@ -550,7 +550,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="DocumentNumber" xml:space="preserve">
-    <value>Número de Documento</value>
+    <value>N° Documento</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="DocumentType" xml:space="preserve">
@@ -746,7 +746,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="FromItemNumber" xml:space="preserve">
-    <value>Desde Número de Artículo</value>
+    <value>Desde N° Articulo</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="FromLocation" xml:space="preserve">
@@ -882,7 +882,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ItemNumber" xml:space="preserve">
-    <value>Número de Artículo</value>
+    <value>N° Articulo</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Items" xml:space="preserve">
@@ -938,7 +938,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="LotNumber" xml:space="preserve">
-    <value>Número de Lote</value>
+    <value>N° de Lote</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="LotNumberMask" xml:space="preserve">
@@ -1514,7 +1514,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="SerialNumber" xml:space="preserve">
-    <value>Número de Serie</value>
+    <value>N° de Serie</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="SerialNumberExpired" xml:space="preserve">
@@ -1530,7 +1530,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="Serials" xml:space="preserve">
-    <value>Números de Serie</value>
+    <value>N° Serie</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Settings" xml:space="preserve">
@@ -1614,7 +1614,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="StockDate" xml:space="preserve">
-    <value>Fecha de Inventario</value>
+    <value>Fch. Inventario</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="StockingUnitOfMeasure" xml:space="preserve">
@@ -1654,7 +1654,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="ToItemNumber" xml:space="preserve">
-    <value>Hasta Número de Artículo</value>
+    <value>Hasta N° Articulo</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="ToLocation" xml:space="preserve">
@@ -1682,7 +1682,7 @@
     <comment>Auto-Generated</comment>
   </data>
   <data name="TransactionType" xml:space="preserve">
-    <value>Tipo de Transacción</value>
+    <value>Tipo de Transac.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="Transfer" xml:space="preserve">
@@ -2107,7 +2107,7 @@
     <value>Cuenta de Ventas</value>
   </data>
   <data name="HasToBeGreaterThan" xml:space="preserve">
-    <value>&apos;{0}&apos; tiene que ser mayor que &apos;{1}&apos;.</value>
+    <value>'{0}' tiene que ser mayor que '{1}'.</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="NotInRange" xml:space="preserve">
@@ -2156,7 +2156,7 @@
     <value>Resumen de Lista de Precios</value>
   </data>
   <data name="RecordDoesNotExist" xml:space="preserve">
-    <value>{0}  y  &quot;{1}&quot; no existen.</value>
+    <value>{0}  y  "{1}" no existen.</value>
   </data>
   <data name="StartEndValueMessage" xml:space="preserve">
     <value>El valor inicial es mayor que el valor final.</value>
@@ -2671,9 +2671,6 @@
   <data name="Detail2" xml:space="preserve">
     <value>Detalle...</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="CurrencyRates" xml:space="preserve">
     <value>Tasas de Moneda</value>
     <comment>Finder Title CurrencyRates</comment>
@@ -2792,5 +2789,26 @@
   </data>
   <data name="FractionalQuantityWarning" xml:space="preserve">
     <value>Si usted elige admitir cantidades fraccionarias, no podrá cambiar esta opción más tarde. ¿Seguro de que desea admitir cantidades fraccionarias?</value>
+  </data>
+  <data name="ContractExpiryDate" xml:space="preserve">
+    <value>Fecha de vencimiento del contrato</value>
+  </data>
+  <data name="ItemNumbers" xml:space="preserve">
+    <value>Números de artículo</value>
+  </data>
+  <data name="WarrantyExpiryDate" xml:space="preserve">
+    <value>Fecha de vencimiento de la garantía</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>Desde N° de Lote</value>
+  </data>
+  <data name="FromStockDate" xml:space="preserve">
+    <value>Desde Fch. Inventario</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>Hasta N° de Lote</value>
+  </data>
+  <data name="ToStockDate" xml:space="preserve">
+    <value>Hasta Fch. Inventario</value>
   </data>
 </root>

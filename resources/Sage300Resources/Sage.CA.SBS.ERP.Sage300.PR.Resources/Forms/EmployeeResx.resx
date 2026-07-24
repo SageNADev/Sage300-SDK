@@ -309,7 +309,7 @@
   <data name="HoursPerWeek" xml:space="preserve">
     <value>Regular Hours per Week</value>
   </data>
-  <data name="WorkersCompGroup" xml:space="preserve">
+  <data name="WorkersCompensationGroup" xml:space="preserve">
     <value>Workers' Compensation Group</value>
   </data>
   <data name="A10HispanicLatinoMale" xml:space="preserve">
@@ -659,6 +659,9 @@
   </data>
   <data name="CheckLanguage" xml:space="preserve">
     <value>Paycheck Language</value>
+  </data>
+  <data name="ChequeLanguage" xml:space="preserve">
+    <value>Paycheque Language</value>
   </data>
   <data name="HourlyRate" xml:space="preserve">
     <value>Hourly Rate</value>
@@ -1466,5 +1469,35 @@
   </data>
   <data name="JobsAllocatedBasedonCalcBase" xml:space="preserve">
     <value>Jobs Allocated Based on Calculation Base</value>
+  </data>
+  <data name="MinMax" xml:space="preserve">
+    <value>Min/Max</value>
+  </data>
+  <data name="CalculateEarningDeduction" xml:space="preserve">
+    <value>Calculate Earning/Deduction</value>
+  </data>
+  <data name="WorkersCompCode" xml:space="preserve">
+    <value>Workers' Comp. Code</value>
+  </data>
+  <data name="AdvanceToBeRepaidDescription" xml:space="preserve">
+    <value>Advance To Be Repaid Description</value>
+  </data>
+  <data name="DistributionCodeDescription" xml:space="preserve">
+    <value>Distribution Code Description</value>
+  </data>
+  <data name="WCCGroupDescription" xml:space="preserve">
+    <value>WCC Group Description</value>
+  </data>
+  <data name="WorkersCompensationCodeDescription" xml:space="preserve">
+    <value>Workers' Compensation Code Description</value>
+  </data>
+  <data name="WorkersCompensationGroupDescription" xml:space="preserve">
+    <value>Workers' Compensation Group Description</value>
+  </data>
+  <data name="WorkersCompCodeDescription" xml:space="preserve">
+    <value>Workers' Comp. Code Description</value>
+  </data>
+  <data name="WorkersCompGroup" xml:space="preserve">
+    <value>Workers' Compensation Group</value>
   </data>
 </root>

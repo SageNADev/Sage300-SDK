@@ -118,7 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Entity" xml:space="preserve">
-    <value>Consultation de numéros de série de GS</value>
+    <value>Consultation de numéro de série de G.S.</value>
     <comment>Screen Title</comment>
+  </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>À partir du numéro d'article</value>
+  </data>
+  <data name="FromLocation" xml:space="preserve">
+    <value>Depuis l'emplacement</value>
+  </data>
+  <data name="FromSerialNumber" xml:space="preserve">
+    <value>À partir du numéro de série</value>
+  </data>
+  <data name="FromStockDate" xml:space="preserve">
+    <value>Date de mise en stock</value>
+  </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value>La date de début de stock n'est pas valide.</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value>La date limite de mise en stock n'est pas valide.</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>Numéro d'article</value>
+  </data>
+  <data name="ToLocation" xml:space="preserve">
+    <value>Vers l'emplacement</value>
+  </data>
+  <data name="ToSerialNumber" xml:space="preserve">
+    <value>Numéro de série</value>
+  </data>
+  <data name="ToStockDate" xml:space="preserve">
+    <value>Date limite de mise en stock</value>
   </data>
 </root>

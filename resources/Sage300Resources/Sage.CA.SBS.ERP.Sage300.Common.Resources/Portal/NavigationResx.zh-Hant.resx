@@ -1699,12 +1699,6 @@
   <data name="PM_Revise_Estimates" xml:space="preserve">
     <value>修訂估算</value>
   </data>
-  <data name="AP_Setup_Reports" xml:space="preserve">
-    <value>設定報表</value>
-  </data>
-  <data name="PM_ContractMaintenance" xml:space="preserve">
-    <value>合約維護</value>
-  </data>
   <data name="PM_Account_Sets" xml:space="preserve">
     <value>科目集合</value>
   </data>
@@ -1715,6 +1709,9 @@
     <value>專案</value>
   </data>
   <data name="PM_Setup_Reports" xml:space="preserve">
+    <value>設定報表</value>
+  </data>
+  <data name="AP_Setup_Reports" xml:space="preserve">
     <value>設定報表</value>
   </data>
   <data name="PM_GLIntegration" xml:space="preserve">
@@ -1799,16 +1796,67 @@
   <data name="PM_Adjustments" xml:space="preserve">
     <value>調整</value>
   </data>
-  <data name="PM_Timecards" xml:space="preserve">
-    <value>工時卡</value>
+  <data name="PM_ContractMaintenance" xml:space="preserve">
+    <value>合約維護</value>
   </data>
   <data name="PM_TransactionHistory" xml:space="preserve">
     <value>交易歷史</value>
+  </data>
+  <data name="PM_Timecards" xml:space="preserve">
+    <value>工時卡</value>
   </data>
   <data name="PM_Transaction_History" xml:space="preserve">
     <value>交易歷史</value>
   </data>
   <data name="PM_BudgetMaintenance" xml:space="preserve">
     <value>預算維護</value>
+  </data>
+  <data name="IC_Serial_Lot_Stock_Listing_Report" xml:space="preserve">
+    <value>序號/批次庫存清單</value>
+  </data>
+  <data name="IC_Mask_Structure" xml:space="preserve">
+    <value>遮罩結構</value>
+  </data>
+  <data name="IC_Quarantine_Release" xml:space="preserve">
+    <value>檢疫放行</value>
+  </data>
+  <data name="HelpAgent" xml:space="preserve">
+    <value>搜尋幫助</value>
+  </data>
+  <data name="IC_Warranty_Update" xml:space="preserve">
+    <value>保固更新</value>
+  </data>
+  <data name="IC_Lot_Number_Inquiry" xml:space="preserve">
+    <value>批次號碼查詢</value>
+  </data>
+  <data name="CF1000" xml:space="preserve">
+    <value>C/F Inquiry</value>
+  </data>
+  <data name="CF1101" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="CF1102" xml:space="preserve">
+    <value>Cash Flow Summary</value>
+  </data>
+  <data name="CF1103" xml:space="preserve">
+    <value>A/R Summary</value>
+  </data>
+  <data name="CF1104" xml:space="preserve">
+    <value>A/P Summary</value>
+  </data>
+  <data name="CF1105" xml:space="preserve">
+    <value>Loan</value>
+  </data>
+  <data name="CF9000" xml:space="preserve">
+    <value>C/F Setup</value>
+  </data>
+  <data name="CF9100" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations" xml:space="preserve">
+    <value>序號/批次核對</value>
+  </data>
+  <data name="IC_Lot_Splits_Combine" xml:space="preserve">
+    <value>地塊分割/合併</value>
   </data>
 </root>

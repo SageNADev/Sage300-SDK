@@ -491,4 +491,59 @@
   <data name="QtyonSalesOrder" xml:space="preserve">
     <value>Qty. on Sales Order</value>
   </data>
+  <data name="LotContractWhenReceived" xml:space="preserve">
+    <value>Place the Lot Automatically on Contract When Received</value>
+    <comment>Label</comment>
+  </data>
+  <data name="LotWarrantyWhenRegistered" xml:space="preserve">
+    <value>Place the Lot Automatically on Warranty When Registered</value>
+    <comment>Label</comment>
+  </data>
+  <data name="LotWarrantyWhenSold" xml:space="preserve">
+    <value>Place the Lot Automatically on Warranty When Sold</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SerialContractWhenReceived" xml:space="preserve">
+    <value>Place the Serial Automatically on Contract When Received</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SerialNumberMaskDescription" xml:space="preserve">
+    <value>Serial Number Mask Description</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SerialWarrantyWhenRegistered" xml:space="preserve">
+    <value>Place the Serial Automatically on Warranty When Registered</value>
+    <comment>Label</comment>
+  </data>
+  <data name="SerialWarrantyWhenSold" xml:space="preserve">
+    <value>Place the Serial Automatically on Warranty When Sold</value>
+    <comment>Label</comment>
+  </data>
+  <data name="InvalidSerialNumberMask" xml:space="preserve">
+    <value>Mask structure {0} has not been defined for serials.</value>
+  </data>
+  <data name="AllowSerialLotQuantityConfirmation" xml:space="preserve">
+    <value>'Allow {0} Quantity to be Different from the Quantity in the Entries' is about to change. If {1} numbers exist or are created you will not be able to turn the option off. You will also not be able to select an account set that uses a {2} costing method. Do you really want to turn this option on?</value>
+  </data>
+  <data name="InvalidSerialLotContract" xml:space="preserve">
+    <value>Default {0} contract code {1} does not exist.</value>
+  </data>
+  <data name="InvalidLotNumberMask" xml:space="preserve">
+    <value>Mask structure {0} has not been defined for lots.</value>
+  </data>
+  <data name="InvalidSerialLotWarranty" xml:space="preserve">
+    <value>Default {0} warranty code {1} does not exist.</value>
+  </data>
+  <data name="Lot" xml:space="preserve">
+    <value>Lot</value>
+  </data>
+  <data name="LotConfirmationPopup" xml:space="preserve">
+    <value>lot</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>Serial</value>
+  </data>
+  <data name="SerialConfirmationPopup" xml:space="preserve">
+    <value>serial</value>
+  </data>
 </root>

@@ -169,6 +169,12 @@
     <value>CI – Consulta de Números de Lote</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value>La fecha de inicio del stock no es válida.</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value>La fecha de inventario final no es válida.</value>
+  </data>
   <data name="LIFEWARR1" xml:space="preserve">
     <value>Garantía De Por Vida 1</value>
     <comment>Modal - Table Column</comment>

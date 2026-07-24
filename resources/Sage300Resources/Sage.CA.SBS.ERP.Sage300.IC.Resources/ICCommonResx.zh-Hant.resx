@@ -2107,7 +2107,7 @@
     <value>銷售科目</value>
   </data>
   <data name="HasToBeGreaterThan" xml:space="preserve">
-    <value>&apos;{0}&apos;必須大於&apos;{1}&apos;。</value>
+    <value>'{0}'必須大於'{1}'。</value>
     <comment>Auto-Generated</comment>
   </data>
   <data name="NotInRange" xml:space="preserve">
@@ -2156,7 +2156,7 @@
     <value>價目表彙總</value>
   </data>
   <data name="RecordDoesNotExist" xml:space="preserve">
-    <value>{0}和&quot;{1}&quot;不存在。</value>
+    <value>{0}和"{1}"不存在。</value>
   </data>
   <data name="StartEndValueMessage" xml:space="preserve">
     <value>起始值大於截止值。</value>
@@ -2792,5 +2792,26 @@
   </data>
   <data name="FractionalQuantityWarning" xml:space="preserve">
     <value>如果您選擇允許非整數數量的選項，以後無法變更。是否確要允許非整數數量？</value>
+  </data>
+  <data name="ContractExpiryDate" xml:space="preserve">
+    <value>合同到期日</value>
+  </data>
+  <data name="ItemNumbers" xml:space="preserve">
+    <value>物品编号</value>
+  </data>
+  <data name="WarrantyExpiryDate" xml:space="preserve">
+    <value>保修到期日</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>從批號開始</value>
+  </data>
+  <data name="FromStockDate" xml:space="preserve">
+    <value>自庫存日期</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>至批次號</value>
+  </data>
+  <data name="ToStockDate" xml:space="preserve">
+    <value>上市日期</value>
   </data>
 </root>

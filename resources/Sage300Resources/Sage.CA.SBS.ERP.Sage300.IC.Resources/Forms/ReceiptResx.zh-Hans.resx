@@ -337,4 +337,19 @@
   <data name="ReceiptDescription" xml:space="preserve">
     <value>收款描述</value>
   </data>
+  <data name="ConfirmationErrorMessage" xml:space="preserve">
+    <value>剩余序列号数量不为零。您将无法保存该记录。是否继续？</value>
+  </data>
+  <data name="QuantityErrorValidation" xml:space="preserve">
+    <value>数量与分配的序列号/批次号必须一致。</value>
+  </data>
+  <data name="LotConfirmationErrorMessage" xml:space="preserve">
+    <value>剩余批次数量不为零。您将无法保存该记录。是否继续？</value>
+  </data>
+  <data name="QuantityReceivedValidation" xml:space="preserve">
+    <value>接收数量不能为零。</value>
+  </data>
+  <data name="SerialConfirmationErrorMessage" xml:space="preserve">
+    <value>剩余序列号数量不为零。您将无法保存该记录。是否继续？</value>
+  </data>
 </root>

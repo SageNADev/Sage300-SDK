@@ -337,4 +337,19 @@
   <data name="ReceiptDescription" xml:space="preserve">
     <value>Receipt Description</value>
   </data>
+  <data name="ConfirmationErrorMessage" xml:space="preserve">
+    <value>Both the remaining serial and lot quantities are not zero. You will not be able to save the record. Do you want to continue?</value>
+  </data>
+  <data name="QuantityErrorValidation" xml:space="preserve">
+    <value>Quantity and allocated serial/lot numbers must be equal.</value>
+  </data>
+  <data name="QuantityReceivedValidation" xml:space="preserve">
+    <value>Quantity Received cannot be zero.</value>
+  </data>
+  <data name="LotConfirmationErrorMessage" xml:space="preserve">
+    <value>The remaining lot quantity is not zero. You will not be able to save the record. Do you want to continue?</value>
+  </data>
+  <data name="SerialConfirmationErrorMessage" xml:space="preserve">
+    <value>The remaining serial quantity is not zero. You will not be able to save the record. Do you want to continue?</value>
+  </data>
 </root>

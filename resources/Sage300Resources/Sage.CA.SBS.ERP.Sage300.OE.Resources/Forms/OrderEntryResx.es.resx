@@ -3019,4 +3019,7 @@
     <value>¿Utilizar la ubicación de la orden como ubicación para todos los detalles?  No se cambiará la ubicación de un detalle si el artículo especificado para el detalle no está admitido en este lugar.</value>
     <comment>confirmation message</comment>
   </data>
+  <data name="InvalidLocation" xml:space="preserve">
+    <value>La ubicación está vacía. No se mostrará el formulario de números de serie/lotes.</value>
+  </data>
 </root>

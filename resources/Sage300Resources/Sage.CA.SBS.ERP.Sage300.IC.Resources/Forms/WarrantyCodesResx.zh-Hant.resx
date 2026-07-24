@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CannotBlank" xml:space="preserve">
+    <value>保固代碼不能為空。</value>
+  </data>
   <data name="DaysExceed" xml:space="preserve">
     <value>天數不能超過999,999。</value>
   </data>
@@ -138,6 +141,9 @@
   </data>
   <data name="IC0850" xml:space="preserve">
     <value>保修代碼</value>
+  </data>
+  <data name="Lifetime" xml:space="preserve">
+    <value>壽命</value>
   </data>
   <data name="Period1Days" xml:space="preserve">
     <value>期間1天數</value>
@@ -202,6 +208,9 @@
   <data name="WarrantyCode" xml:space="preserve">
     <value>保修代碼</value>
     <comment>Field</comment>
+  </data>
+  <data name="WarrantyCodeDescription" xml:space="preserve">
+    <value>保固代碼 說明</value>
   </data>
   <data name="WarrantyDays" xml:space="preserve">
     <value>保修天數</value>

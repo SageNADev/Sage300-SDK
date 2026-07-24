@@ -81,15 +81,17 @@
             if (ViewBag.CustomReport == true)
             {
                 <text>
-                    let reportUrlFormat = sg.utls.url.buildUrl("Core", "ExportReport", "ExportCustomReport") + "?report={0}&paramValue={1}&format={2}&usePageRange={3}&firstPage={4}&lastPage={5}";
-                    let exportURL = kendo.format(reportUrlFormat, '@ViewBag.report', '@ViewBag.parameterValue', format, usePageRange, firstPage, lastPage);
+                    const reportIdentifier = 'CustomReport';
+                    const reportUrlFormat = sg.utls.url.buildUrl("Core", "ExportReport", "ExportCustomReport") + "?report={0}&paramValue={1}&format={2}&usePageRange={3}&firstPage={4}&lastPage={5}";
+                    const exportURL = kendo.format(reportUrlFormat, '@ViewBag.report', '@ViewBag.extraParameterValue', format, usePageRange, firstPage, lastPage);
                 </text>
             }
             else
             {
                 <text>
-                    let reportUrlFormat = sg.utls.url.buildUrl("Core", "ExportReport", "ExportReport") + "?token={0}&format={1}&usePageRange={2}&firstPage={3}&lastPage={4}";
-                    let exportURL = kendo.format(reportUrlFormat, '@ViewBag.token', format, usePageRange, firstPage, lastPage);
+                    const reportIdentifier = '@Html.Raw(System.Web.HttpUtility.JavaScriptStringEncode(ViewBag.token))';
+                    const reportUrlFormat = sg.utls.url.buildUrl("Core", "ExportReport", "ExportReport") + "?token={0}&format={1}&usePageRange={2}&firstPage={3}&lastPage={4}&paramValue={5}";
+                    const exportURL = kendo.format(reportUrlFormat, reportIdentifier, format, usePageRange, firstPage, lastPage, '@ViewBag.extraParameterValue');
                 </text>
             }
          }
@@ -103,8 +105,8 @@
             },
             success: function (data, textStatus, request) {
                 $('#ajaxSpinner').fadeOut(1);
-                var a = document.createElement('a');
-                var url = window.URL.createObjectURL(data);
+                const a = document.createElement('a');
+                const url = window.URL.createObjectURL(data);
                 a.href = url;
                 a.download = request.getResponseHeader("content-disposition").split(';')[1].split('=')[1].replace(/["]+/g,'');
                 document.body.append(a);
@@ -114,7 +116,7 @@
                 const channel = new BroadcastChannel("ReportExportChannel");
                 setTimeout(function () {
                     window.close();
-                    channel.postMessage("OK");
+                    channel.postMessage(reportIdentifier);
                 }, 5000);
             },
 

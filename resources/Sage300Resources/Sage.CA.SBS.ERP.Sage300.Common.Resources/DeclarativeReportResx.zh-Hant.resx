@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="1099CPRSCode" xml:space="preserve">
+    <value>1099/CPRS 代碼</value>
+  </data>
   <data name="1099CPRSCodeFrom" xml:space="preserve">
     <value>從 1099/CPRS 代碼</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="AccountSetFrom" xml:space="preserve">
     <value>從科目集合</value>
+  </data>
+  <data name="PM_AccountSetTitle" xml:space="preserve">
+    <value>專案成本管理/科目集合報表</value>
   </data>
   <data name="AccountSetTo" xml:space="preserve">
     <value>到科目集合</value>
@@ -177,9 +183,6 @@
   <data name="ChargesTitle" xml:space="preserve">
     <value>專案成本管理/收費報表</value>
   </data>
-  <data name="Comments" xml:space="preserve">
-    <value>備註</value>
-  </data>
   <data name="CurrencyFieldLabel" xml:space="preserve">
     <value>[ZH-HANT] Currency Field Label</value>
     <comment>Translation Unnecessary</comment>
@@ -206,39 +209,11 @@
   <data name="DistributionSetTo" xml:space="preserve">
     <value>到分配集合</value>
   </data>
-  <data name="Error_MissingFinderForRange" xml:space="preserve">
-    <value>Could not find associated finder control for range.</value>
-    <comment>Internal system message - no translation necessary</comment>
-  </data>
   <data name="IncludeMultiplePaymentSchedules" xml:space="preserve">
     <value>包括分期付款排程</value>
   </data>
   <data name="IncludeOptionalFields" xml:space="preserve">
     <value>包括自選欄位</value>
-  </data>
-  <data name="MiscellaneousCodeFrom" xml:space="preserve">
-    <value>從雜項代碼</value>
-  </data>
-  <data name="MiscellaneousCodeTo" xml:space="preserve">
-    <value>到雜項代碼</value>
-  </data>
-  <data name="ItemNumber" xml:space="preserve">
-    <value>產品編號</value>
-  </data>
-  <data name="ItemNumberFrom" xml:space="preserve">
-    <value>產品編號從</value>
-  </data>
-  <data name="ItemNumberTo" xml:space="preserve">
-    <value>產品編號到</value>
-  </data>
-  <data name="ItemStatus_ActiveItems" xml:space="preserve">
-    <value>活動產品</value>
-  </data>
-  <data name="ItemStatus_AllItems" xml:space="preserve">
-    <value>所有產品</value>
-  </data>
-  <data name="ItemStatus_InactiveItems" xml:space="preserve">
-    <value>閒置產品</value>
   </data>
   <data name="NumericFieldLabel" xml:space="preserve">
     <value>[ZH-HANT] Numeric Field Label</value>
@@ -267,12 +242,6 @@
   <data name="OptionalFields" xml:space="preserve">
     <value>自選欄位</value>
   </data>
-  <data name="OverheadCodeFrom" xml:space="preserve">
-    <value>從管理費用代碼</value>
-  </data>
-  <data name="OverheadCodeTo" xml:space="preserve">
-    <value>到管理費用代碼</value>
-  </data>
   <data name="PaymentSelectionCode" xml:space="preserve">
     <value>選擇代碼</value>
   </data>
@@ -281,51 +250,6 @@
   </data>
   <data name="PaymentSelectionCodeTo" xml:space="preserve">
     <value>到選擇代碼</value>
-  </data>
-  <data name="PM_AccountSetTitle" xml:space="preserve">
-    <value>專案成本管理/科目集合報表</value>
-  </data>
-  <data name="PM_GLIntegrationTitle" xml:space="preserve">
-    <value>專案成本管理/總帳整合報表</value>
-  </data>
-  <data name="PM_MiscellaneousExpensesTitle" xml:space="preserve">
-    <value>專案成本管理/ 雜項費用報表</value>
-  </data>
-  <data name="PM_OptionalFieldTitle" xml:space="preserve">
-    <value>專案成本管理/自選欄位報表</value>
-  </data>
-  <data name="PM_OptionsTitle" xml:space="preserve">
-    <value>專案成本管理/選項報表</value>
-  </data>
-  <data name="PM_OverheadExpensesTitle" xml:space="preserve">
-    <value>專案成本管理/管理費用報表</value>
-  </data>
-  <data name="PO_GLIntegrationTitle" xml:space="preserve">
-    <value>採購訂單總帳整合報表</value>
-  </data>
-  <data name="PO_ItemsTitle" xml:space="preserve">
-    <value>採購訂單/產品報表</value>
-  </data>
-  <data name="PO_OptionalFieldsTitle" xml:space="preserve">
-    <value>採購訂單/自選欄位報表</value>
-  </data>
-  <data name="PO_OptionsTitle" xml:space="preserve">
-    <value>採購訂單/選項報表</value>
-  </data>
-  <data name="PO_ShipViaCodesTitle" xml:space="preserve">
-    <value>採購訂單/發貨經由代碼報表</value>
-  </data>
-  <data name="PO_TemplatesTitle" xml:space="preserve">
-    <value>採購訂單/範本報表</value>
-  </data>
-  <data name="PO_WeightUOMTitle" xml:space="preserve">
-    <value>採購訂單重量計量單位報表</value>
-  </data>
-  <data name="Print" xml:space="preserve">
-    <value>列印</value>
-  </data>
-  <data name="Profile" xml:space="preserve">
-    <value>概況</value>
   </data>
   <data name="Project" xml:space="preserve">
     <value>專案</value>
@@ -346,17 +270,17 @@
     <value>[ZH-HANT] Radio Button Group Label</value>
     <comment>Translation Unnecessary</comment>
   </data>
-  <data name="ShipViaCodeFrom" xml:space="preserve">
-    <value>從發貨經由代碼</value>
-  </data>
-  <data name="ShipViaCodes" xml:space="preserve">
-    <value>發貨經由代碼</value>
-  </data>
-  <data name="ShipViaCodeTo" xml:space="preserve">
-    <value>到發貨經由代碼</value>
-  </data>
   <data name="ShowSettings" xml:space="preserve">
     <value>顯示設定</value>
+  </data>
+  <data name="PO_OptionsTitle" xml:space="preserve">
+    <value>採購訂單/選項報表</value>
+  </data>
+  <data name="PO_ShipViaCodesTitle" xml:space="preserve">
+    <value>採購訂單/發貨經由代碼報表</value>
+  </data>
+  <data name="PO_TemplatesTitle" xml:space="preserve">
+    <value>採購訂單/範本報表</value>
   </data>
   <data name="Subcontractor" xml:space="preserve">
     <value>分包商</value>
@@ -370,8 +294,14 @@
   <data name="SubcontractorTo" xml:space="preserve">
     <value>到分包商</value>
   </data>
-  <data name="Taxes" xml:space="preserve">
-    <value>稅務</value>
+  <data name="TermsCode" xml:space="preserve">
+    <value>條款代碼</value>
+  </data>
+  <data name="TermsCodeFrom" xml:space="preserve">
+    <value>從條款代碼</value>
+  </data>
+  <data name="TermsCodeTo" xml:space="preserve">
+    <value>到條款代碼</value>
   </data>
   <data name="TemplateCodeFrom" xml:space="preserve">
     <value>從範本代碼</value>
@@ -382,20 +312,93 @@
   <data name="TemplateCodeTo" xml:space="preserve">
     <value>到範本代碼</value>
   </data>
-  <data name="TermsCode" xml:space="preserve">
-    <value>條款代碼</value>
+  <data name="ShipViaCodeFrom" xml:space="preserve">
+    <value>從發貨經由代碼</value>
   </data>
-  <data name="TermsCodeFrom" xml:space="preserve">
-    <value>從條款代碼</value>
+  <data name="ShipViaCodeTo" xml:space="preserve">
+    <value>到發貨經由代碼</value>
   </data>
-  <data name="TermsCodeTo" xml:space="preserve">
-    <value>到條款代碼</value>
+  <data name="ShipViaCodes" xml:space="preserve">
+    <value>發貨經由代碼</value>
+  </data>
+  <data name="PO_GLIntegrationTitle" xml:space="preserve">
+    <value>採購訂單總帳整合報表</value>
+  </data>
+  <data name="PO_OptionalFieldsTitle" xml:space="preserve">
+    <value>採購訂單/自選欄位報表</value>
+  </data>
+  <data name="PM_GLIntegrationTitle" xml:space="preserve">
+    <value>專案成本管理/總帳整合報表</value>
+  </data>
+  <data name="PM_OptionalFieldTitle" xml:space="preserve">
+    <value>專案成本管理/自選欄位報表</value>
+  </data>
+  <data name="MiscellaneousCodeFrom" xml:space="preserve">
+    <value>從雜項代碼</value>
+  </data>
+  <data name="MiscellaneousCodeTo" xml:space="preserve">
+    <value>到雜項代碼</value>
+  </data>
+  <data name="OverheadCodeFrom" xml:space="preserve">
+    <value>從管理費用代碼</value>
+  </data>
+  <data name="OverheadCodeTo" xml:space="preserve">
+    <value>到管理費用代碼</value>
+  </data>
+  <data name="PM_MiscellaneousExpensesTitle" xml:space="preserve">
+    <value>專案成本管理/ 雜項費用報表</value>
+  </data>
+  <data name="PM_OptionsTitle" xml:space="preserve">
+    <value>專案成本管理/選項報表</value>
+  </data>
+  <data name="PM_OverheadExpensesTitle" xml:space="preserve">
+    <value>專案成本管理/管理費用報表</value>
+  </data>
+  <data name="PO_WeightUOMTitle" xml:space="preserve">
+    <value>採購訂單重量計量單位報表</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>備註</value>
+  </data>
+  <data name="ItemNumber" xml:space="preserve">
+    <value>產品編號</value>
+  </data>
+  <data name="ItemNumberFrom" xml:space="preserve">
+    <value>產品編號從</value>
+  </data>
+  <data name="ItemNumberTo" xml:space="preserve">
+    <value>產品編號到</value>
+  </data>
+  <data name="ItemStatus_ActiveItems" xml:space="preserve">
+    <value>活動產品</value>
+  </data>
+  <data name="ItemStatus_AllItems" xml:space="preserve">
+    <value>所有產品</value>
+  </data>
+  <data name="ItemStatus_InactiveItems" xml:space="preserve">
+    <value>閒置產品</value>
+  </data>
+  <data name="PO_ItemsTitle" xml:space="preserve">
+    <value>採購訂單/產品報表</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>列印</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>概況</value>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>稅務</value>
   </data>
   <data name="UnitOfMeasure" xml:space="preserve">
     <value>計量單位</value>
   </data>
   <data name="Vendors" xml:space="preserve">
     <value>供應商</value>
+  </data>
+  <data name="Error_MissingFinderForRange" xml:space="preserve">
+    <value>Could not find associated finder control for range.</value>
+    <comment>Internal system message - no translation necessary</comment>
   </data>
   <data name="MiscellaneousCode" xml:space="preserve">
     <value>雜項代碼</value>
@@ -415,6 +418,9 @@
   <data name="PM_EquipmentTitle" xml:space="preserve">
     <value>專案成本管理/設備報表</value>
   </data>
+  <data name="Includes" xml:space="preserve">
+    <value>包括</value>
+  </data>
   <data name="PM_ContractStructuresTitle" xml:space="preserve">
     <value>專案成本管理/合約結構報表</value>
   </data>
@@ -426,9 +432,6 @@
   </data>
   <data name="StructureCodeTo" xml:space="preserve">
     <value>到結構代碼</value>
-  </data>
-  <data name="Includes" xml:space="preserve">
-    <value>包括</value>
   </data>
   <data name="CategoryFromTemplate" xml:space="preserve">
     <value>從%1</value>
@@ -908,9 +911,6 @@
   <data name="Series" xml:space="preserve">
     <value>系列</value>
   </data>
-  <data name="String" xml:space="preserve">
-    <value />
-  </data>
   <data name="Style" xml:space="preserve">
     <value>風格</value>
   </data>
@@ -1020,9 +1020,6 @@
   </data>
   <data name="SortCodeAccountGroup" xml:space="preserve">
     <value>排序代碼 - 科目群組</value>
-  </data>
-  <data name="1099CPRSCode" xml:space="preserve">
-    <value>1099/CPRS 代碼</value>
   </data>
   <data name="FromTaxAuthority" xml:space="preserve">
     <value>從稅務機關</value>
@@ -1147,6 +1144,15 @@
   <data name="Current" xml:space="preserve">
     <value>目前</value>
   </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>排序按</value>
+  </data>
+  <data name="ReportType" xml:space="preserve">
+    <value>報表類型</value>
+  </data>
+  <data name="PMTransactionHistoryReportTitle" xml:space="preserve">
+    <value>PJC 專案成本管理/交易歷史報告</value>
+  </data>
   <data name="BothCurrency" xml:space="preserve">
     <value>客戶貨幣和功能貨幣</value>
   </data>
@@ -1246,10 +1252,682 @@
   <data name="P/O" xml:space="preserve">
     <value>採購訂單</value>
   </data>
-  <data name="PMTransactionHistoryReportTitle" xml:space="preserve">
-    <value>PJC 專案成本管理/交易歷史報告</value>
+  <data name="IC_SerailLotNumberQOH" xml:space="preserve">
+    <value>存貨控制/系列/批別編號手頭數量報表</value>
   </data>
-  <data name="SortBy" xml:space="preserve">
-    <value>排序按</value>
+  <data name="LotNumbers" xml:space="preserve">
+    <value>批號</value>
+  </data>
+  <data name="SerialNumbers" xml:space="preserve">
+    <value>序號</value>
+  </data>
+  <data name="ShowQuantityVariance" xml:space="preserve">
+    <value>僅顯示有存貨控制數量差異的產品</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IC_SerialOrLotTransactionsTitle" xml:space="preserve">
+    <value>存貨控制/系列/批別交易報表</value>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>憑證日期</value>
+  </data>
+  <data name="Both" xml:space="preserve">
+    <value>兩者</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>序號</value>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>批號</value>
+  </data>
+  <data name="SerialNumberFrom" xml:space="preserve">
+    <value>來自序號</value>
+  </data>
+  <data name="SerialNumberTo" xml:space="preserve">
+    <value>至序號</value>
+  </data>
+  <data name="DocumentDateFrom" xml:space="preserve">
+    <value>自文件日期</value>
+  </data>
+  <data name="DocumentDateTo" xml:space="preserve">
+    <value>截止日期</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>可用的</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>無法使用</value>
+  </data>
+  <data name="ExpiredStock" xml:space="preserve">
+    <value>失效的庫存</value>
+  </data>
+  <data name="FromCustomerNumber" xml:space="preserve">
+    <value>來自客戶編號</value>
+  </data>
+  <data name="FromExpiredDate" xml:space="preserve">
+    <value>從到期日</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>取自批號</value>
+  </data>
+  <data name="FromRegisteredDate" xml:space="preserve">
+    <value>從註冊日期開始</value>
+  </data>
+  <data name="FromReservedDate" xml:space="preserve">
+    <value>從預訂日期開始</value>
+  </data>
+  <data name="FromSerialNumber" xml:space="preserve">
+    <value>來自序號</value>
+  </data>
+  <data name="FromSoldDate" xml:space="preserve">
+    <value>自售出日期起</value>
+  </data>
+  <data name="IC_SerialLotStockListingReport" xml:space="preserve">
+    <value>存貨控制/系列/批別庫存清單報表</value>
+  </data>
+  <data name="Registered" xml:space="preserve">
+    <value>已註冊</value>
+  </data>
+  <data name="ReservedStock" xml:space="preserve">
+    <value>保留的庫存</value>
+  </data>
+  <data name="SoldStock" xml:space="preserve">
+    <value>已售出庫存</value>
+  </data>
+  <data name="ToCustomerNumber" xml:space="preserve">
+    <value>致客戶號碼</value>
+  </data>
+  <data name="ToExpiredDate" xml:space="preserve">
+    <value>到期日</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>至批號</value>
+  </data>
+  <data name="ToRegisteredDate" xml:space="preserve">
+    <value>至註冊日期</value>
+  </data>
+  <data name="ToReservedDate" xml:space="preserve">
+    <value>至預約日期</value>
+  </data>
+  <data name="ToSerialNumber" xml:space="preserve">
+    <value>至序號</value>
+  </data>
+  <data name="ToSoldDate" xml:space="preserve">
+    <value>至出售日期</value>
+  </data>
+  <data name="10PayPeriods" xml:space="preserve">
+    <value>10個支付週期</value>
+  </data>
+  <data name="13PayPeriods" xml:space="preserve">
+    <value>13個支付週期</value>
+  </data>
+  <data name="22PayPeriods" xml:space="preserve">
+    <value>22個支付週期</value>
+  </data>
+  <data name="AddLine" xml:space="preserve">
+    <value>積極的</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>四月</value>
+  </data>
+  <data name="August" xml:space="preserve">
+    <value>八月</value>
+  </data>
+  <data name="Billing" xml:space="preserve">
+    <value>計費</value>
+  </data>
+  <data name="Billings" xml:space="preserve">
+    <value>比林斯</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>出生日期</value>
+  </data>
+  <data name="Biweekly" xml:space="preserve">
+    <value>雙週刊</value>
+  </data>
+  <data name="BothBlankMessage" xml:space="preserve">
+    <value>從 {0} 和到 {0} 的值不能同時為空。</value>
+  </data>
+  <data name="CalendarYearTotals" xml:space="preserve">
+    <value>日曆年總計</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>班級</value>
+  </data>
+  <data name="Class1" xml:space="preserve">
+    <value>1級</value>
+  </data>
+  <data name="Class2" xml:space="preserve">
+    <value>2級</value>
+  </data>
+  <data name="Class3" xml:space="preserve">
+    <value>3級</value>
+  </data>
+  <data name="Class4" xml:space="preserve">
+    <value>4級</value>
+  </data>
+  <data name="CP_AssignEmployeeEarnDedAudit" xml:space="preserve">
+    <value>分配員工收入/支出審計</value>
+  </data>
+  <data name="CP_AssignEmployeeTaxAudit" xml:space="preserve">
+    <value>指派員工稅務審計</value>
+  </data>
+  <data name="CP_CheckDate" xml:space="preserve">
+    <value>檢查日期</value>
+  </data>
+  <data name="CP_CheckNumber" xml:space="preserve">
+    <value>支票號碼</value>
+  </data>
+  <data name="CP_ChequeType" xml:space="preserve">
+    <value>支票類型</value>
+  </data>
+  <data name="CP_FromCheckDate" xml:space="preserve">
+    <value>自檢查日期</value>
+  </data>
+  <data name="CP_ManualChecks" xml:space="preserve">
+    <value>手動檢查</value>
+  </data>
+  <data name="CP_Pre-CheckPayrollJobRegisterTitle" xml:space="preserve">
+    <value>預支票薪資工作登記報告</value>
+  </data>
+  <data name="CP_Pre-CheckPayrollRegisterTitle" xml:space="preserve">
+    <value>預支票薪資登記報告</value>
+  </data>
+  <data name="CP_ReversedChecks" xml:space="preserve">
+    <value>撤銷支票</value>
+  </data>
+  <data name="CP_ShowSINNumbers" xml:space="preserve">
+    <value>顯示社會保險號碼</value>
+  </data>
+  <data name="CP_SystemChecks" xml:space="preserve">
+    <value>系統檢查</value>
+  </data>
+  <data name="CP_ToCheckDate" xml:space="preserve">
+    <value>檢查日期</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>日常的</value>
+  </data>
+  <data name="DateRange" xml:space="preserve">
+    <value>日期範圍</value>
+  </data>
+  <data name="ddlAll" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>十二月</value>
+  </data>
+  <data name="Decimals" xml:space="preserve">
+    <value>小數</value>
+  </data>
+  <data name="DeleteLine" xml:space="preserve">
+    <value>刪除行</value>
+  </data>
+  <data name="DetailDatesHours" xml:space="preserve">
+    <value>詳細日期/時間</value>
+  </data>
+  <data name="DetailInformation" xml:space="preserve">
+    <value>詳細資訊</value>
+  </data>
+  <data name="Earning/Deduction/Tax/Code" xml:space="preserve">
+    <value>收入/扣除/稅法</value>
+  </data>
+  <data name="EarningsAndDeduction" xml:space="preserve">
+    <value>收入和扣除</value>
+  </data>
+  <data name="EFT" xml:space="preserve">
+    <value>電子轉帳</value>
+  </data>
+  <data name="EFTOptionsTitle" xml:space="preserve">
+    <value>電子轉帳期權報告</value>
+  </data>
+  <data name="EmployeeList" xml:space="preserve">
+    <value>員工名單</value>
+  </data>
+  <data name="EmployeeListCode" xml:space="preserve">
+    <value>員工名單代碼</value>
+  </data>
+  <data name="EmployeeListing" xml:space="preserve">
+    <value>員工名單</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>員工姓名</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>員工人數</value>
+  </data>
+  <data name="EmployeeSubtotals" xml:space="preserve">
+    <value>員工小計</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>二月</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>從</value>
+  </data>
+  <data name="FromClass" xml:space="preserve">
+    <value>來自班級</value>
+  </data>
+  <data name="FromClassCode" xml:space="preserve">
+    <value>來自類別程式碼</value>
+  </data>
+  <data name="FromEmployee" xml:space="preserve">
+    <value>來自員工</value>
+  </data>
+  <data name="FromEmployeeList" xml:space="preserve">
+    <value>來自員工名單</value>
+  </data>
+  <data name="FromEmployeeNumber" xml:space="preserve">
+    <value>來自員工編號</value>
+  </data>
+  <data name="FromFollowUpDate" xml:space="preserve">
+    <value>來自後續日期</value>
+  </data>
+  <data name="FromPostingSequence" xml:space="preserve">
+    <value>從發布順序</value>
+  </data>
+  <data name="FromSelectionList" xml:space="preserve">
+    <value>從選擇清單中</value>
+  </data>
+  <data name="GLIntegrationTitle" xml:space="preserve">
+    <value>總帳整合報告</value>
+  </data>
+  <data name="GL_AccountDescription" xml:space="preserve">
+    <value>總帳科目描述</value>
+  </data>
+  <data name="HireDate" xml:space="preserve">
+    <value>僱用日期</value>
+  </data>
+  <data name="IC_QuarantineTitle" xml:space="preserve">
+    <value>檢疫報告負責人</value>
+  </data>
+  <data name="InActive" xml:space="preserve">
+    <value>不活躍</value>
+  </data>
+  <data name="InactiveDate" xml:space="preserve">
+    <value>無效日期</value>
+  </data>
+  <data name="InactiveRoePending" xml:space="preserve">
+    <value>非活躍 ROE 待定</value>
+  </data>
+  <data name="IncludeBillingInformation" xml:space="preserve">
+    <value>包括帳單資訊</value>
+  </data>
+  <data name="IncludeComponentBOMs" xml:space="preserve">
+    <value>包含組件物料清單</value>
+  </data>
+  <data name="IncludeCostsForEachItem" xml:space="preserve">
+    <value>請列出每項物品的成本</value>
+  </data>
+  <data name="IncludeEmployees" xml:space="preserve">
+    <value>包括員工</value>
+  </data>
+  <data name="IncludeInformation" xml:space="preserve">
+    <value>包含訊息</value>
+  </data>
+  <data name="InvalidEntryMsgTxt" xml:space="preserve">
+    <value>條目在</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>一月</value>
+  </data>
+  <data name="JobDetails" xml:space="preserve">
+    <value>職位詳情</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>七月</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>六月</value>
+  </data>
+  <data name="LastMaintainedDate" xml:space="preserve">
+    <value>最後維護日期</value>
+  </data>
+  <data name="LastRaisedDate" xml:space="preserve">
+    <value>最後籌集日期</value>
+  </data>
+  <data name="LastReviewDate" xml:space="preserve">
+    <value>最後審核日期</value>
+  </data>
+  <data name="LblOptionalFields" xml:space="preserve">
+    <value>選用字段</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>行號</value>
+  </data>
+  <data name="ManualCheques" xml:space="preserve">
+    <value>手動檢查</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>行進</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>可能</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>月</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>每月</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>不</value>
+  </data>
+  <data name="NonReusableTimecards" xml:space="preserve">
+    <value>不可重複使用的考勤卡</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>十一月</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>十月</value>
+  </data>
+  <data name="OE_EmailMessagesTitle" xml:space="preserve">
+    <value>O/E 電子郵件訊息報告</value>
+  </data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>選用字段</value>
+  </data>
+  <data name="OptionalFieldsTitle" xml:space="preserve">
+    <value>可選欄位報告</value>
+  </data>
+  <data name="OptionsTitle" xml:space="preserve">
+    <value>期權報告</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="PayFrequency" xml:space="preserve">
+    <value>付款頻率</value>
+  </data>
+  <data name="PayPeriodEndDate" xml:space="preserve">
+    <value>支付期間結束日期</value>
+  </data>
+  <data name="PayrollEarningandHoursReport" xml:space="preserve">
+    <value>工資收入和工時報告</value>
+  </data>
+  <data name="PayrollEmployeeInformation" xml:space="preserve">
+    <value>薪資員工資訊報告</value>
+  </data>
+  <data name="PayrollEmployeeSelection" xml:space="preserve">
+    <value>薪資員工甄選</value>
+  </data>
+  <data name="PayrollEmployeeSelectionReport" xml:space="preserve">
+    <value>薪資員工甄選報告</value>
+  </data>
+  <data name="PayrollProcessingExceptionsReport" xml:space="preserve">
+    <value>薪資處理異常報告</value>
+  </data>
+  <data name="PayrollRegisterTitle" xml:space="preserve">
+    <value>工資登記報告</value>
+  </data>
+  <data name="PayrollTimecardTitle" xml:space="preserve">
+    <value>薪資考勤卡報告</value>
+  </data>
+  <data name="PeriodEndDate" xml:space="preserve">
+    <value>期間結束日期</value>
+  </data>
+  <data name="PostingSequence" xml:space="preserve">
+    <value>過帳順序</value>
+  </data>
+  <data name="ProcessingExceptionsReport" xml:space="preserve">
+    <value>處理異常報告</value>
+  </data>
+  <data name="ProjectsTitle" xml:space="preserve">
+    <value>專案報告</value>
+  </data>
+  <data name="QuarantineDate" xml:space="preserve">
+    <value>檢疫日期</value>
+  </data>
+  <data name="Quarterly" xml:space="preserve">
+    <value>季刊</value>
+  </data>
+  <data name="ReportFormat" xml:space="preserve">
+    <value>報告格式</value>
+  </data>
+  <data name="ReusableTimecards" xml:space="preserve">
+    <value>可重複使用的考勤卡</value>
+  </data>
+  <data name="Selectionlist" xml:space="preserve">
+    <value>選擇清單</value>
+  </data>
+  <data name="SelectionListCode" xml:space="preserve">
+    <value>選擇列表代碼</value>
+  </data>
+  <data name="Semimonthly" xml:space="preserve">
+    <value>半月刊</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>九月</value>
+  </data>
+  <data name="ShowEFTBankAccountNumbers" xml:space="preserve">
+    <value>顯示電子轉帳銀行帳號</value>
+  </data>
+  <data name="SortDetailsBy" xml:space="preserve">
+    <value>詳細資料排序依據</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>地位</value>
+  </data>
+  <data name="SystemCheques" xml:space="preserve">
+    <value>系統檢查</value>
+  </data>
+  <data name="Terminated" xml:space="preserve">
+    <value>終止</value>
+  </data>
+  <data name="TerminateRoePending" xml:space="preserve">
+    <value>終止 ROE 待定</value>
+  </data>
+  <data name="TerminationDate" xml:space="preserve">
+    <value>終止日期</value>
+  </data>
+  <data name="ThenBy" xml:space="preserve">
+    <value>然後由</value>
+  </data>
+  <data name="Timecard" xml:space="preserve">
+    <value>考勤卡</value>
+  </data>
+  <data name="TimecardDetail" xml:space="preserve">
+    <value>考勤卡詳細信息</value>
+  </data>
+  <data name="TimecardListing" xml:space="preserve">
+    <value>考勤卡列表</value>
+  </data>
+  <data name="TimecardSummary" xml:space="preserve">
+    <value>考勤卡摘要</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>到</value>
+  </data>
+  <data name="ToClass" xml:space="preserve">
+    <value>上課</value>
+  </data>
+  <data name="ToClassCode" xml:space="preserve">
+    <value>至類別代碼</value>
+  </data>
+  <data name="ToEmployee" xml:space="preserve">
+    <value>致員工</value>
+  </data>
+  <data name="ToEmployeeList" xml:space="preserve">
+    <value>至員工名單</value>
+  </data>
+  <data name="ToEmployeeNumber" xml:space="preserve">
+    <value>致員工編號</value>
+  </data>
+  <data name="ToFollowUpDate" xml:space="preserve">
+    <value>後續日期</value>
+  </data>
+  <data name="ToPostingSequence" xml:space="preserve">
+    <value>到發布順序</value>
+  </data>
+  <data name="ToQuarantineDate" xml:space="preserve">
+    <value>隔離日期</value>
+  </data>
+  <data name="ToSelectionList" xml:space="preserve">
+    <value>至選擇列表</value>
+  </data>
+  <data name="TransactionHistoryReportTitle" xml:space="preserve">
+    <value>工資交易歷史報告</value>
+  </data>
+  <data name="UP_AssignEmployeeEarnDedAudit" xml:space="preserve">
+    <value>分配員工收入/支出審計</value>
+  </data>
+  <data name="UP_AssignEmployeeTaxAudit" xml:space="preserve">
+    <value>指派員工稅務審計</value>
+  </data>
+  <data name="UP_CheckDate" xml:space="preserve">
+    <value>檢查日期</value>
+  </data>
+  <data name="UP_CheckNumber" xml:space="preserve">
+    <value>支票號碼</value>
+  </data>
+  <data name="UP_ChequeType" xml:space="preserve">
+    <value>支票類型</value>
+  </data>
+  <data name="UP_FromCheckDate" xml:space="preserve">
+    <value>自檢查日期</value>
+  </data>
+  <data name="UP_ManualChecks" xml:space="preserve">
+    <value>手動檢查</value>
+  </data>
+  <data name="UP_Pre-CheckPayrollJobRegisterTitle" xml:space="preserve">
+    <value>預檢薪資工作登記報告</value>
+  </data>
+  <data name="UP_Pre-CheckPayrollRegisterTitle" xml:space="preserve">
+    <value>預檢工資登記報告</value>
+  </data>
+  <data name="UP_ReversedChecks" xml:space="preserve">
+    <value>反向支票</value>
+  </data>
+  <data name="UP_ShowSINNumbers" xml:space="preserve">
+    <value>顯示社會安全號碼</value>
+  </data>
+  <data name="UP_SystemChecks" xml:space="preserve">
+    <value>系統檢查</value>
+  </data>
+  <data name="UP_ToCheckDate" xml:space="preserve">
+    <value>檢查日期</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>每週</value>
+  </data>
+  <data name="WorkClassificationcodes" xml:space="preserve">
+    <value>工作分類代碼</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>年</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是的</value>
+  </data>
+  <data name="LotNumberFrom" xml:space="preserve">
+    <value>取自批號</value>
+  </data>
+  <data name="LotNumberTo" xml:space="preserve">
+    <value>至批號</value>
+  </data>
+  <data name="ContractExpiryDate" xml:space="preserve">
+    <value>合約到期日</value>
+  </data>
+  <data name="ContractSummary" xml:space="preserve">
+    <value>合約概要</value>
+  </data>
+  <data name="CustomerVendorNumber" xml:space="preserve">
+    <value>客戶/供應商編號</value>
+  </data>
+  <data name="EarliestExpiryDate" xml:space="preserve">
+    <value>最早保固/合約到期日</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>到期日</value>
+  </data>
+  <data name="ExpiryDateFrom" xml:space="preserve">
+    <value>從到期日</value>
+  </data>
+  <data name="ExpiryDateTo" xml:space="preserve">
+    <value>到期日</value>
+  </data>
+  <data name="FromQuarantineDate" xml:space="preserve">
+    <value>從隔離日期起</value>
+  </data>
+  <data name="FromRecallDate" xml:space="preserve">
+    <value>自召回日期起</value>
+  </data>
+  <data name="FromRecallNumber" xml:space="preserve">
+    <value>來自召回號</value>
+  </data>
+  <data name="ICWarrantyContractListTitle" xml:space="preserve">
+    <value>庫存控制保固/合約清單報告</value>
+  </data>
+  <data name="IC_RecallTitle" xml:space="preserve">
+    <value>存貨控制/召回報告</value>
+  </data>
+  <data name="ItemNumbers" xml:space="preserve">
+    <value>商品編號</value>
+  </data>
+  <data name="LatestExpiryDate" xml:space="preserve">
+    <value>最新保固/合約到期日</value>
+  </data>
+  <data name="NotRegistered" xml:space="preserve">
+    <value>未註冊</value>
+  </data>
+  <data name="OrderBy" xml:space="preserve">
+    <value>訂購方式</value>
+  </data>
+  <data name="RecallDate" xml:space="preserve">
+    <value>召回日期</value>
+  </data>
+  <data name="RecallNumber" xml:space="preserve">
+    <value>召回號</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>展示</value>
+  </data>
+  <data name="SoldDate" xml:space="preserve">
+    <value>售出日期</value>
+  </data>
+  <data name="SoldDateFrom" xml:space="preserve">
+    <value>自售出日期起</value>
+  </data>
+  <data name="SoldDateTo" xml:space="preserve">
+    <value>至出售日期</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>股票日期</value>
+  </data>
+  <data name="StockDateFrom" xml:space="preserve">
+    <value>自庫存日期</value>
+  </data>
+  <data name="StockDateTo" xml:space="preserve">
+    <value>至庫存日期</value>
+  </data>
+  <data name="ToRecallDate" xml:space="preserve">
+    <value>召回日期</value>
+  </data>
+  <data name="ToRecallNumber" xml:space="preserve">
+    <value>召回號碼</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>類型</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>使用</value>
+  </data>
+  <data name="WarrantyExpiryDate" xml:space="preserve">
+    <value>保固到期日</value>
+  </data>
+  <data name="WarrantySummary" xml:space="preserve">
+    <value>保固摘要</value>
+  </data>
+  <data name="ItemSummary" xml:space="preserve">
+    <value>項目概要</value>
   </data>
 </root>

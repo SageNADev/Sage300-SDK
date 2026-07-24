@@ -171,9 +171,6 @@
   <data name="Country" xml:space="preserve">
     <value>Country</value>
   </data>
-  <data name="DefaultSettingsforStandardProjects" xml:space="preserve">
-    <value>Default Settings for Standard Projects</value>
-  </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>

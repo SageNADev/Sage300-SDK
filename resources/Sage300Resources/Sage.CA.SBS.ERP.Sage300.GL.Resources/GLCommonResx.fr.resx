@@ -288,4 +288,7 @@
   <data name="PayrollWebScreenNotInstalled" xml:space="preserve">
     <value>Informations de zoom avant introuvables pour cet enregistrement. Assurez-vous que les écrans web de Paie sont installés.</value>
   </data>
+  <data name="ReverseNonGLBatches" xml:space="preserve">
+    <value>La contrepassation d’un lot du livre auxiliaire peut entraîner des écarts de rapprochement entre le grand livre et ses livres auxiliaires associés.</value>
+  </data>
 </root>

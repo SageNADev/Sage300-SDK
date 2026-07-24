@@ -153,6 +153,9 @@
     <value>银行服务</value>
     <comment>List - Option</comment>
   </data>
+  <data name="CanadianPayroll" xml:space="preserve">
+    <value>加拿大薪资</value>
+  </data>
   <data name="CheckPaymentNo" xml:space="preserve">
     <value>支票/付款编号</value>
     <comment>Field</comment>
@@ -179,6 +182,12 @@
   </data>
   <data name="Details" xml:space="preserve">
     <value>明细</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>雇员姓名</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>雇员编号</value>
   </data>
   <data name="Entity" xml:space="preserve">
     <value>回转交易</value>
@@ -232,6 +241,12 @@
     <value>回转日期</value>
     <comment>Single Transaction - Field</comment>
   </data>
+  <data name="ReversalDateEmpty" xml:space="preserve">
+    <value>回转日期不能为空。</value>
+  </data>
+  <data name="ReversalDateOutOfFiscalCalendar" xml:space="preserve">
+    <value>回转日期 {0} 不在公共服务的财务日历中。</value>
+  </data>
   <data name="ReverseAll" xml:space="preserve">
     <value>回转所有</value>
     <comment>Check Box</comment>
@@ -267,6 +282,9 @@
   <data name="SourceCurrency" xml:space="preserve">
     <value>来源币种</value>
     <comment>Processing - Panel</comment>
+  </data>
+  <data name="USPayroll" xml:space="preserve">
+    <value>US Payroll</value>
   </data>
   <data name="VendorName" xml:space="preserve">
     <value>供应商名称</value>

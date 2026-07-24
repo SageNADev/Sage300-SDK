@@ -161,6 +161,9 @@
     <value>Bank Transaction Detail</value>
     <comment>finder title</comment>
   </data>
+  <data name="CanadianPayroll" xml:space="preserve">
+    <value>Canadian Payroll</value>
+  </data>
   <data name="CHECKPAYMENTNO" xml:space="preserve">
     <value>Check/Payment Number</value>
     <comment>Table - Column</comment>
@@ -275,6 +278,9 @@
   <data name="SRCEAPP" xml:space="preserve">
     <value>Source Application</value>
     <comment>List</comment>
+  </data>
+  <data name="USPayroll" xml:space="preserve">
+    <value>US Payroll</value>
   </data>
   <data name="VENDORNAME" xml:space="preserve">
     <value>Vendor Name</value>

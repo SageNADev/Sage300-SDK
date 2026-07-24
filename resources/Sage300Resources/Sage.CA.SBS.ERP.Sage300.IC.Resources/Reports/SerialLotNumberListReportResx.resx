@@ -118,11 +118,83 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Entity" xml:space="preserve">
-    <value>I/C Serial/Lot Number List Report</value>
+    <value>I/C Serial/Lot List Report</value>
     <comment>Screen Title</comment>
+  </data>
+  <data name="FromCustomerNumber" xml:space="preserve">
+    <value>From Customer Number</value>
+  </data>
+  <data name="FromExpiryDate" xml:space="preserve">
+    <value>From Expiry Date</value>
+  </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>From Item Number</value>
+  </data>
+  <data name="FromLocation" xml:space="preserve">
+    <value>From Location</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>From Lot Number</value>
+  </data>
+  <data name="FromSerialNumber" xml:space="preserve">
+    <value>From Serial Number</value>
+  </data>
+  <data name="FromSoldDate" xml:space="preserve">
+    <value>From Sold Date</value>
+  </data>
+  <data name="FromThirdExpiryDate" xml:space="preserve">
+    <value>From Expiry Date</value>
+  </data>
+  <data name="FromThirdLocation" xml:space="preserve">
+    <value>From Location</value>
+  </data>
+  <data name="FromThirdSoldDate" xml:space="preserve">
+    <value>From Sold Date</value>
+  </data>
+  <data name="FromThirdVendorNumber" xml:space="preserve">
+    <value>From Vendor Number</value>
+  </data>
+  <data name="FromVendorNumber" xml:space="preserve">
+    <value>From Vendor Number</value>
   </data>
   <data name="OptionFields" xml:space="preserve">
     <value>Print Optional Fields</value>
     <comment>Option</comment>
+  </data>
+  <data name="ToCustomerNumber" xml:space="preserve">
+    <value>To Customer Number</value>
+  </data>
+  <data name="ToExpiryDate" xml:space="preserve">
+    <value>To Expiry Date</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>To Item Number</value>
+  </data>
+  <data name="ToLocation" xml:space="preserve">
+    <value>To Location</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>To Lot Number</value>
+  </data>
+  <data name="ToSerialNumber" xml:space="preserve">
+    <value>To Serial Number</value>
+  </data>
+  <data name="ToSoldDate" xml:space="preserve">
+    <value>To Sold Date</value>
+  </data>
+  <data name="ToThirdExpiryDate" xml:space="preserve">
+    <value>To Expiry Date</value>
+  </data>
+  <data name="ToThirdLocation" xml:space="preserve">
+    <value>To Location</value>
+  </data>
+  <data name="ToThirdSoldDate" xml:space="preserve">
+    <value>To Sold Date</value>
+  </data>
+  <data name="ToThirdVendorNumber" xml:space="preserve">
+    <value>To Vendor Number</value>
+  </data>
+  <data name="ToVendorNumber" xml:space="preserve">
+    <value>To Vendor Number</value>
   </data>
 </root>

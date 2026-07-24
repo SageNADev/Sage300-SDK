@@ -120,6 +120,12 @@
   <data name="BatchReadyToPost" xml:space="preserve">
     <value>The batch is set to Ready To Post. You can view the contents of the batch, but you cannot edit journal entries.</value>
   </data>
+  <data name="NoEditImportedBatch" xml:space="preserve">
+    <value>This batch is an imported batch and the option to Allow Edit of Imported Batches is not selected in G/L Options. You may view but cannot modify its contents.</value>
+  </data>
+  <data name="NoEditSubledgerBatch" xml:space="preserve">
+    <value>This batch is a subledger batch and the option to Allow Edit of Subledger Batches is not selected in G/L Options. You may view but cannot modify its contents.</value>
+  </data>
   <data name="CreateNewEntry" xml:space="preserve">
     <value>Create New Entry</value>
   </data>

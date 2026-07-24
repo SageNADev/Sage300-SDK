@@ -285,4 +285,7 @@
   <data name="Separate" xml:space="preserve">
     <value>分列</value>
   </data>
+  <data name="ReverseNonGLBatches" xml:space="preserve">
+    <value>沖銷分帳批次可能會在總帳與其相關分帳之間造成對帳差異。</value>
+  </data>
 </root>

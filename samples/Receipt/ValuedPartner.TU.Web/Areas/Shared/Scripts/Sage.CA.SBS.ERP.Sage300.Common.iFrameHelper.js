@@ -108,8 +108,8 @@ $.extend(sg.utls.iFrameHelper = {
 
     getUnloadEvents: function (frameWindow) {
         if (!frameWindow.$) return null;
-        if (frameWindow.$._data(frameWindow, 'events') != null && frameWindow.$._data(frameWindow, 'events')["unload"] != null) {
-            return frameWindow.$._data(frameWindow, 'events')["unload"].map(function (elem) { return elem.handler; });
+        if (frameWindow.$._data(frameWindow, 'events') != null && frameWindow.$._data(frameWindow, 'events')["pagehide"] != null) {
+            return frameWindow.$._data(frameWindow, 'events')["pagehide"].map(function (elem) { return elem.handler; });
         }
         return null;
     },

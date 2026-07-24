@@ -258,4 +258,10 @@
   <data name="ValueSetErrorMessage" xml:space="preserve">
     <value>Value for Internal Usage Details optional field {0} has not been set.</value>
   </data>
+  <data name="InvalidLocation" xml:space="preserve">
+    <value>Location cannot be blank.</value>
+  </data>
+  <data name="QuantityWarning" xml:space="preserve">
+    <value>Posting this internal usage will reduce the item quantity to below zero at this location. Do you want to proceed?</value>
+  </data>
 </root>

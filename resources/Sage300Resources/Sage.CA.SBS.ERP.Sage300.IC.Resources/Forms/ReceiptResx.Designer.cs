@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ReceiptResx {
@@ -169,6 +169,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Both the remaining serial and lot quantities are not zero. You will not be able to save the record. Do you want to continue?.
+        /// </summary>
+        public static string ConfirmationErrorMessage {
+            get {
+                return ResourceManager.GetString("ConfirmationErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Costing Date.
         /// </summary>
         public static string CostingDate {
@@ -300,6 +309,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string LocationQuantities {
             get {
                 return ResourceManager.GetString("LocationQuantities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The remaining lot quantity is not zero. You will not be able to save the record. Do you want to continue?.
+        /// </summary>
+        public static string LotConfirmationErrorMessage {
+            get {
+                return ResourceManager.GetString("LotConfirmationErrorMessage", resourceCulture);
             }
         }
         
@@ -457,6 +475,24 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quantity and allocated serial/lot numbers must be equal..
+        /// </summary>
+        public static string QuantityErrorValidation {
+            get {
+                return ResourceManager.GetString("QuantityErrorValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity Received cannot be zero..
+        /// </summary>
+        public static string QuantityReceivedValidation {
+            get {
+                return ResourceManager.GetString("QuantityReceivedValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quantity Returned To Date.
         /// </summary>
         public static string QuantityReturnedToDate {
@@ -597,6 +633,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string RevisionListLineNumber {
             get {
                 return ResourceManager.GetString("RevisionListLineNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The remaining serial quantity is not zero. You will not be able to save the record. Do you want to continue?.
+        /// </summary>
+        public static string SerialConfirmationErrorMessage {
+            get {
+                return ResourceManager.GetString("SerialConfirmationErrorMessage", resourceCulture);
             }
         }
         

@@ -169,6 +169,12 @@
     <value>存货控制批别编号查询</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value>起始库存日期无效</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value>入库日期无效</value>
+  </data>
   <data name="LIFEWARR1" xml:space="preserve">
     <value>终身保修1</value>
     <comment>Modal - Table Column</comment>

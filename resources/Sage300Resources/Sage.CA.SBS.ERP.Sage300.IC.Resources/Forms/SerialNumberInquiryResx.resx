@@ -121,4 +121,34 @@
     <value>I/C Serial Number Inquiry</value>
     <comment>Screen Title</comment>
   </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>From Item Number</value>
+  </data>
+  <data name="FromLocation" xml:space="preserve">
+    <value>From Location</value>
+  </data>
+  <data name="FromSerialNumber" xml:space="preserve">
+    <value>From Serial Number</value>
+  </data>
+  <data name="FromStockDate" xml:space="preserve">
+    <value>From Stock Date</value>
+  </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value>From Stock Date is invalid</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value>To Stock Date is invalid</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>To Item Number</value>
+  </data>
+  <data name="ToLocation" xml:space="preserve">
+    <value>To Location</value>
+  </data>
+  <data name="ToSerialNumber" xml:space="preserve">
+    <value>To Serial Number</value>
+  </data>
+  <data name="ToStockDate" xml:space="preserve">
+    <value>To Stock Date</value>
+  </data>
 </root>

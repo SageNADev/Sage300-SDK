@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2021 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2026 Sage Software, Inc.  All rights reserved. */
 
 //"use strict"
 var homeUI = homeUI || {}; 
@@ -337,7 +337,7 @@ function cleanFrameContent($iframe)
     doc.write("<div style='width: 100%; height: 100%'></div>");
 }
 
-$(document).ready(function () {
+$(function () {
     $("#homeNav, .logo-product, .footer_container").click(function () {
         if (!$('#screenLayout').is(":visible")) {
             updateLayout(true);
@@ -583,7 +583,7 @@ function myDragStart(ev) {
     return true;
 }
 
-$(document).ready(function () {
+$(function () {
 
     // updating KPI layout on windows resize event
     window.onresize = function (event) {

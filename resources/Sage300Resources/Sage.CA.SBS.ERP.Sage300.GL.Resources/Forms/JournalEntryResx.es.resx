@@ -120,6 +120,12 @@
   <data name="BatchReadyToPost" xml:space="preserve">
     <value>El lote no se fijó en Listo para Asentar. Puede ver el contenido del lote, pero no puede editar los asientos diarios.</value>
   </data>
+  <data name="NoEditImportedBatch" xml:space="preserve">
+    <value>Este lote es un lote importado y la opción para Admitir Edición de Lotes Importados no está seleccionada en LM - Opciones. Podría ver su contenido pero no modificarlo.</value>
+  </data>
+  <data name="NoEditSubledgerBatch" xml:space="preserve">
+    <value>Este lote es un lote del libro mayor auxiliar y la opción para Admitir Edición de Lotes del LM Auxiliar no está seleccionada en LM - Opciones. Podría ver su contenido pero no modificarlo.</value>
+  </data>
   <data name="CreateNewEntry" xml:space="preserve">
     <value>Crear Nuevo Asiento</value>
   </data>

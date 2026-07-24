@@ -5254,6 +5254,87 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to C/F AP Summary .
+        /// </summary>
+        public static string CF_AP_Summary {
+            get {
+                return ResourceManager.GetString("CF_AP_Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/P Top 10 Vendors by Outstanding Balance and Forecast .
+        /// </summary>
+        public static string CF_AP_Top_10_Vendors {
+            get {
+                return ResourceManager.GetString("CF_AP_Top_10_Vendors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C/F AR Summary .
+        /// </summary>
+        public static string CF_AR_Summary {
+            get {
+                return ResourceManager.GetString("CF_AR_Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A/R Top 10 Customers by Outstanding Balance and Forecast .
+        /// </summary>
+        public static string CF_AR_Top_10_Customers {
+            get {
+                return ResourceManager.GetString("CF_AR_Top_10_Customers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C/F Cash Flow Summary .
+        /// </summary>
+        public static string CF_Cash_Flow_Summary {
+            get {
+                return ResourceManager.GetString("CF_Cash_Flow_Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Flow Summary Reports .
+        /// </summary>
+        public static string CF_Cash_Flow_Summary_Report {
+            get {
+                return ResourceManager.GetString("CF_Cash_Flow_Summary_Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C/F Dashboard Inquiry.
+        /// </summary>
+        public static string CF_Dashboard_Inquiry {
+            get {
+                return ResourceManager.GetString("CF_Dashboard_Inquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dashboard Reports.
+        /// </summary>
+        public static string CF_Dashboard_Reports {
+            get {
+                return ResourceManager.GetString("CF_Dashboard_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C/F Options Screen .
+        /// </summary>
+        public static string CF_Setup_Options {
+            get {
+                return ResourceManager.GetString("CF_Setup_Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
         public static string CNA_Screen_Help {
@@ -8233,6 +8314,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Looking Up Lot Number Information.
+        /// </summary>
+        public static string IC_LotNumberInquiry_Article1 {
+            get {
+                return ResourceManager.GetString("IC_LotNumberInquiry_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Lot Numbers Inquiry.
+        /// </summary>
+        public static string IC_LotNumberInquiry_Screen {
+            get {
+                return ResourceManager.GetString("IC_LotNumberInquiry_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Serialized Inventory and Lot Tracking.
         /// </summary>
         public static string IC_LotNumbers_Article1 {
@@ -8368,7 +8467,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inventory Control Reports.
+        ///   Looks up a localized string similar to Printing Mask Structures Report.
         /// </summary>
         public static string IC_MaskStructures_Report_Article1 {
             get {
@@ -8377,7 +8476,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Printing the I/C Mask Structures Report.
+        ///   Looks up a localized string similar to Adding Mask Structures.
         /// </summary>
         public static string IC_MaskStructures_Report_Article2 {
             get {
@@ -8386,11 +8485,20 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I/C Mask Structures Report.
+        ///   Looks up a localized string similar to Changing or Deleting Mask Structures.
         /// </summary>
-        public static string IC_MaskStructures_Report_Screen {
+        public static string IC_MaskStructures_Report_Article3 {
             get {
-                return ResourceManager.GetString("IC_MaskStructures_Report_Screen", resourceCulture);
+                return ResourceManager.GetString("IC_MaskStructures_Report_Article3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Mask Structures Screen.
+        /// </summary>
+        public static string IC_MaskStructures_Screen {
+            get {
+                return ResourceManager.GetString("IC_MaskStructures_Screen", resourceCulture);
             }
         }
         
@@ -8782,6 +8890,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Releasing Lots from Quarantine.
+        /// </summary>
+        public static string IC_QuarantineRelease_Article1 {
+            get {
+                return ResourceManager.GetString("IC_QuarantineRelease_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Quarantine Release Screen.
+        /// </summary>
+        public static string IC_QuarantineRelease_Screen {
+            get {
+                return ResourceManager.GetString("IC_QuarantineRelease_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Serialized Inventory and Lot Tracking.
         /// </summary>
         public static string IC_Recall_Report_Article1 {
@@ -8823,6 +8949,60 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_Receipts_Article2 {
             get {
                 return ResourceManager.GetString("IC_Receipts_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Returning Goods to Vendor.
+        /// </summary>
+        public static string IC_Receipts_Article3 {
+            get {
+                return ResourceManager.GetString("IC_Receipts_Article3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Receiving Goods from Vendor.
+        /// </summary>
+        public static string IC_Receipts_Article4 {
+            get {
+                return ResourceManager.GetString("IC_Receipts_Article4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posting Saved Receipts.
+        /// </summary>
+        public static string IC_Receipts_Article5 {
+            get {
+                return ResourceManager.GetString("IC_Receipts_Article5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posting Inventory Transactions.
+        /// </summary>
+        public static string IC_Receipts_Article6 {
+            get {
+                return ResourceManager.GetString("IC_Receipts_Article6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assigning Serial Lot Number.
+        /// </summary>
+        public static string IC_Receipts_Article7 {
+            get {
+                return ResourceManager.GetString("IC_Receipts_Article7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Receiving Goods from Goods-In-Transit Location.
+        /// </summary>
+        public static string IC_Receipts_Article8 {
+            get {
+                return ResourceManager.GetString("IC_Receipts_Article8", resourceCulture);
             }
         }
         
@@ -9052,6 +9232,42 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Looking Up Transaction History.
+        /// </summary>
+        public static string IC_Serial_Lot_NumberInquiry_Article2 {
+            get {
+                return ResourceManager.GetString("IC_Serial_Lot_NumberInquiry_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Looking Up Transaction Statistics.
+        /// </summary>
+        public static string IC_Serial_Lot_NumberInquiry_Article3 {
+            get {
+                return ResourceManager.GetString("IC_Serial_Lot_NumberInquiry_Article3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Serial/Lot Reconciliation Screen.
+        /// </summary>
+        public static string IC_Serial_Lot_Reconciliations {
+            get {
+                return ResourceManager.GetString("IC_Serial_Lot_Reconciliations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reconciling Serial and Lot Numbers.
+        /// </summary>
+        public static string IC_Serial_Lot_Reconciliations_Article1 {
+            get {
+                return ResourceManager.GetString("IC_Serial_Lot_Reconciliations_Article1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Serialized Inventory and Lot Tracking.
         /// </summary>
         public static string IC_SerialLotNumberList_Report_Article1 {
@@ -9106,6 +9322,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I/C Serial/Lot Stock Listing Report.
+        /// </summary>
+        public static string IC_SerialLotStockListingReport_Screen {
+            get {
+                return ResourceManager.GetString("IC_SerialLotStockListingReport_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Serialized Inventory and Lot Tracking.
         /// </summary>
         public static string IC_SerialLotTransactions_Report_Article1 {
@@ -9133,20 +9358,11 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Serialized Inventory and Lot Tracking.
+        ///   Looks up a localized string similar to Looking Up Serial Number Information.
         /// </summary>
         public static string IC_SerialNumberInquiry_Article1 {
             get {
                 return ResourceManager.GetString("IC_SerialNumberInquiry_Article1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Looking Up Serial Number Information.
-        /// </summary>
-        public static string IC_SerialNumberInquiry_Article2 {
-            get {
-                return ResourceManager.GetString("IC_SerialNumberInquiry_Article2", resourceCulture);
             }
         }
         
@@ -9214,7 +9430,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Shipments.
+        ///   Looks up a localized string similar to Shipping Goods to Customers.
         /// </summary>
         public static string IC_Shipments_Article1 {
             get {
@@ -9223,11 +9439,29 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shipping Goods to Customers.
+        ///   Looks up a localized string similar to Receive Returned Goods from Customers.
         /// </summary>
         public static string IC_Shipments_Article2 {
             get {
                 return ResourceManager.GetString("IC_Shipments_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assigning Serial/Lot Numbers for Shipments.
+        /// </summary>
+        public static string IC_Shipments_Article3 {
+            get {
+                return ResourceManager.GetString("IC_Shipments_Article3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posting Inventory Transactions.
+        /// </summary>
+        public static string IC_Shipments_Article4 {
+            get {
+                return ResourceManager.GetString("IC_Shipments_Article4", resourceCulture);
             }
         }
         
@@ -9471,6 +9705,24 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_Transfers_Article2 {
             get {
                 return ResourceManager.GetString("IC_Transfers_Article2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posting Inventory Transactions.
+        /// </summary>
+        public static string IC_Transfers_Article3 {
+            get {
+                return ResourceManager.GetString("IC_Transfers_Article3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assigning Serial Lot Number.
+        /// </summary>
+        public static string IC_Transfers_Article4 {
+            get {
+                return ResourceManager.GetString("IC_Transfers_Article4", resourceCulture);
             }
         }
         
@@ -9750,6 +10002,15 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         public static string IC_WarrantyContractList_Report_Screen {
             get {
                 return ResourceManager.GetString("IC_WarrantyContractList_Report_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/C Warranty Update Screen.
+        /// </summary>
+        public static string IC_WarrantyUpdate_Screen {
+            get {
+                return ResourceManager.GetString("IC_WarrantyUpdate_Screen", resourceCulture);
             }
         }
         
@@ -13462,7 +13723,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Live Chat.
+        ///   Looks up a localized string similar to Chat.
         /// </summary>
         public static string SageSupport_LiveChat {
             get {

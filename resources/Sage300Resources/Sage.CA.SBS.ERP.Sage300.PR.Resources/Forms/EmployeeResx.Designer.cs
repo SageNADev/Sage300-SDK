@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class EmployeeResx {
@@ -165,6 +165,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string AdvanceToBeRepaid {
             get {
                 return ResourceManager.GetString("AdvanceToBeRepaid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advance To Be Repaid Description.
+        /// </summary>
+        public static string AdvanceToBeRepaidDescription {
+            get {
+                return ResourceManager.GetString("AdvanceToBeRepaidDescription", resourceCulture);
             }
         }
         
@@ -799,6 +808,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Calculate Earning/Deduction.
+        /// </summary>
+        public static string CalculateEarningDeduction {
+            get {
+                return ResourceManager.GetString("CalculateEarningDeduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Calculate?.
         /// </summary>
         public static string CalculateQuestion {
@@ -885,6 +903,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string CheckLanguage {
             get {
                 return ResourceManager.GetString("CheckLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paycheque Language.
+        /// </summary>
+        public static string ChequeLanguage {
+            get {
+                return ResourceManager.GetString("ChequeLanguage", resourceCulture);
             }
         }
         
@@ -1371,6 +1398,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string DistributionCode {
             get {
                 return ResourceManager.GetString("DistributionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distribution Code Description.
+        /// </summary>
+        public static string DistributionCodeDescription {
+            get {
+                return ResourceManager.GetString("DistributionCodeDescription", resourceCulture);
             }
         }
         
@@ -2433,6 +2469,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         public static string MinimumWage {
             get {
                 return ResourceManager.GetString("MinimumWage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Min/Max.
+        /// </summary>
+        public static string MinMax {
+            get {
+                return ResourceManager.GetString("MinMax", resourceCulture);
             }
         }
         
@@ -3931,6 +3976,15 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to WCC Group Description.
+        /// </summary>
+        public static string WCCGroupDescription {
+            get {
+                return ResourceManager.GetString("WCCGroupDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Weekly.
         /// </summary>
         public static string Weekly {
@@ -3967,11 +4021,56 @@ namespace Sage.CA.SBS.ERP.Sage300.PR.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Workers&apos; Comp. Code.
+        /// </summary>
+        public static string WorkersCompCode {
+            get {
+                return ResourceManager.GetString("WorkersCompCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Workers&apos; Comp. Code Description.
+        /// </summary>
+        public static string WorkersCompCodeDescription {
+            get {
+                return ResourceManager.GetString("WorkersCompCodeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Workers&apos; Compensation Code.
         /// </summary>
         public static string WorkersCompensationCode {
             get {
                 return ResourceManager.GetString("WorkersCompensationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Workers&apos; Compensation Code Description.
+        /// </summary>
+        public static string WorkersCompensationCodeDescription {
+            get {
+                return ResourceManager.GetString("WorkersCompensationCodeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Workers&apos; Compensation Group.
+        /// </summary>
+        public static string WorkersCompensationGroup {
+            get {
+                return ResourceManager.GetString("WorkersCompensationGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Workers&apos; Compensation Group Description.
+        /// </summary>
+        public static string WorkersCompensationGroupDescription {
+            get {
+                return ResourceManager.GetString("WorkersCompensationGroupDescription", resourceCulture);
             }
         }
         

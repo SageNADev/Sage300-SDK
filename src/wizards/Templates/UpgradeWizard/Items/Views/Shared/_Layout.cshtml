@@ -1,4 +1,4 @@
-﻿@* Copyright (c) 1994-2026 Sage Software, Inc.  All rights reserved. *@
+﻿@* Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved. *@
 
 @using System.Web.UI.WebControls
 @using Sage.CA.SBS.ERP.Sage300.Common.Resources.Portal;
@@ -134,8 +134,8 @@
                             @* Help Agent *@
                             <li id="helpAgent">
                                 <span class="txt-top-menu">
-                                    <a style="color: white;" href="@ConfigurationHelper.HelpAgentURLPath" target="_blank">
-                                        <img src="~/Content/Images/copilot.png" alt=@NavigationResx.HelpAgent style="width:20px;height:20px; vertical-align: middle;" />
+                                    <a style="color: white; display: inline-flex; align-items: center; gap: 6px; line-height: 3.5rem;" href="@ConfigurationHelper.HelpAgentURLPath" target="_blank">
+                                        <img src="~/Content/Images/copilot.png" alt=@NavigationResx.HelpAgent style="width:20px;height:20px; position: relative; top: -1px;" />
                                         @NavigationResx.HelpAgent
                                     </a>
                                 </span>
@@ -388,6 +388,12 @@
         @Scripts.Render("~/bundles/shared")
         @Scripts.Render("~/bundles/portal")
         @Scripts.Render("~/bundles/core")
+
+        <!-- Third-party generic bundle that gets loaded with the layout.
+             Any JavaScript file(s) found here (this folder only and not recursive sub-folders) 
+             will also be loaded. This bundle is defined in the Areas/Shared/BundleRegistration class. -->
+        @Scripts.Render("~/bundles/externalcontent")
+
         <!-- put condition for wizard here -->
         if (ViewBag.NewTenantModel != null)
         {

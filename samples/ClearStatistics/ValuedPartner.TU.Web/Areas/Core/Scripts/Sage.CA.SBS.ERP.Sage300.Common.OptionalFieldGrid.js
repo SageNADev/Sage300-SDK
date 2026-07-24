@@ -1051,7 +1051,7 @@ sg.optionalFieldControl = function () {
 
         if (count === 0) {
             disableButton(deleteButtonId);
-
+            focusForGrid(count, gridName);
         } else if (e.action === "add") {
             enableButton(deleteButtonId);
 
@@ -1279,9 +1279,26 @@ sg.optionalFieldControl = function () {
                         _sendRequest(gridName, RequestTypeEnum.Delete, "");
                     }
                     grid.dataSource.read();
+                    focusForGrid(grid._data.length, gridName);
                 },
-                function () { },
+                function () {
+                    focusForGrid(grid._data.length, gridName);
+                },
                 globalResource.DeleteLineMessage, window.DeleteTitle);
+        }
+    }
+
+    /**
+ * @description Focus for optionalFieldGrid Button.
+ * @param {string} count grid's datasource count.
+ * @param {string} gridName The grid name
+ */
+    function focusForGrid(count, gridName) {
+        if (count == 0) {
+            $("#btn" + gridName + "Add").focus();
+        }
+        else {
+            $("#btn" + gridName + "Delete").focus();
         }
     }
 

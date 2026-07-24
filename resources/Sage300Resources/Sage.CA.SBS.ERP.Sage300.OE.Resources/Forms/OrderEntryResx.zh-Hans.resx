@@ -3019,4 +3019,7 @@
     <value>是否将所有明细的地点设置为与订单的地点相同？  如果该地点不允许为明细指定的货品，明细的地点不会更改。</value>
     <comment>confirmation message</comment>
   </data>
+  <data name="InvalidLocation" xml:space="preserve">
+    <value>库位为空，序列号/批次表单将不会显示</value>
+  </data>
 </root>

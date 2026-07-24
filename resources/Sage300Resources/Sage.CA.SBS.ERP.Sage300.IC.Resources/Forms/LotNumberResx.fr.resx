@@ -383,4 +383,34 @@
     <value>Il y a des modifications non sauvegardées dans {0} "{1}", {2} "{3}" et {4} "{5}". Voulez-vous continuer?</value>
     <comment>Validations</comment>
   </data>
+  <data name="ContractCodeNotExist" xml:space="preserve">
+    <value>Le code de contrat {0} n'existe pas.</value>
+  </data>
+  <data name="CurrentQuantity" xml:space="preserve">
+    <value>Quantité actuelle</value>
+  </data>
+  <data name="DateOutsideRange" xml:space="preserve">
+    <value>La date saisie est en dehors de la plage spécifiée dans le profil de l'entreprise.</value>
+  </data>
+  <data name="ItemNumberNotExist" xml:space="preserve">
+    <value>L'article numéro {0} n'existe pas.</value>
+  </data>
+  <data name="LocationNotExist" xml:space="preserve">
+    <value>Cet endroit n'existe pas.</value>
+  </data>
+  <data name="LotNumberNotExist" xml:space="preserve">
+    <value>Le lot numéro {0} n'existe pas.</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>Sur</value>
+  </data>
+  <data name="QuantityReservedForOrder" xml:space="preserve">
+    <value>Qté réservée pour comm.</value>
+  </data>
+  <data name="TitleLotNumberTransactionInquiry" xml:space="preserve">
+    <value>Consultation transaction–N° lot</value>
+</data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>Champs optionnels</value>
+  </data>
 </root>

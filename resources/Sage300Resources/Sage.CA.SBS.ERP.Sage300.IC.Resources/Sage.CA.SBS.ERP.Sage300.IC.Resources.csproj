@@ -116,6 +116,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LotSplitsCombinesResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MaskStructureResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaskStructureResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OptionsResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ReorderQuantityResx.Designer.cs">
       <DependentUpon>ReorderQuantityResx.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -171,6 +181,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SalesStatisticsResx.resx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SerialLotGenerationResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SerialLotGenerationResx.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SerialLotReconciliationsResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -225,6 +240,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WarrantyCodesResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WarrantyUpdateResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WarrantyUpdateResx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ICCommonResx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ICCommonResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Process\ClearHistoryResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -311,11 +336,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemStructuresResx.resx</DependentUpon>
     </Compile>
-    <Compile Include="ICCommonResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ICCommonResx.resx</DependentUpon>
-    </Compile>
     <Compile Include="ICEnumerationsResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -340,11 +360,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CategoriesResx.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\OptionsResx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OptionsResx.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\PriceListCodesResx.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -559,9 +574,9 @@
     <EmbeddedResource Include="Forms\CurrentTransactionsInquiryResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\CurrentTransactionsInquiryResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\InventorySerialNumberResx.resx">
+      <SubType>Designer</SubType>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>InventorySerialNumberResx.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventorySerialNumberResx.es.resx" />
     <EmbeddedResource Include="Forms\InventorySerialNumberResx.fr.resx" />
@@ -631,6 +646,23 @@
     <EmbeddedResource Include="Forms\LotSplitsCombinesResx.fr.resx" />
     <EmbeddedResource Include="Forms\LotSplitsCombinesResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\LotSplitsCombinesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\MaskStructureResx.es.resx" />
+    <EmbeddedResource Include="Forms\MaskStructureResx.fr.resx" />
+    <EmbeddedResource Include="Forms\MaskStructureResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MaskStructureResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MaskStructureResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\MaskStructureResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\SerialLotGenerationResx.es.resx" />
+    <EmbeddedResource Include="Forms\SerialLotGenerationResx.fr.resx" />
+    <EmbeddedResource Include="Forms\SerialLotGenerationResx.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SerialLotGenerationResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SerialLotGenerationResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\SerialLotGenerationResx.zh-Hant.resx" />
     <EmbeddedResource Include="Forms\ReorderQuantityResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ReorderQuantityResx.Designer.cs</LastGenOutput>
@@ -807,6 +839,14 @@
     <EmbeddedResource Include="Forms\WarrantyCodesResx.fr.resx" />
     <EmbeddedResource Include="Forms\WarrantyCodesResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\WarrantyCodesResx.zh-Hant.resx" />
+    <EmbeddedResource Include="Forms\WarrantyUpdateResx.es.resx" />
+    <EmbeddedResource Include="Forms\WarrantyUpdateResx.fr.resx" />
+    <EmbeddedResource Include="Forms\WarrantyUpdateResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WarrantyUpdateResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WarrantyUpdateResx.zh-Hans.resx" />
+    <EmbeddedResource Include="Forms\WarrantyUpdateResx.zh-Hant.resx" />
     <EmbeddedResource Include="Process\ClearHistoryResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ClearHistoryResx.Designer.cs</LastGenOutput>
@@ -1065,9 +1105,9 @@
     <EmbeddedResource Include="Forms\WeightUnitsOfMeasureResx.zh-Hans.resx" />
     <EmbeddedResource Include="Forms\WeightUnitsOfMeasureResx.zh-Hant.resx" />
     <EmbeddedResource Include="ICCommonResx.resx">
+      <SubType>Designer</SubType>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ICCommonResx.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ICCommonResx.es.resx">
       <SubType>Designer</SubType>

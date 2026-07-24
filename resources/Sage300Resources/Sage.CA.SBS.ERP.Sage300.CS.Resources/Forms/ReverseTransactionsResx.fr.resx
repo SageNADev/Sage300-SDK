@@ -153,6 +153,9 @@
     <value>Services bancaires</value>
     <comment>List - Option</comment>
   </data>
+  <data name="CanadianPayroll" xml:space="preserve">
+    <value>Paie (Canada)</value>
+  </data>
   <data name="CheckPaymentNo" xml:space="preserve">
     <value>Numéro chèque/paiement</value>
     <comment>Field</comment>
@@ -179,6 +182,12 @@
   </data>
   <data name="Details" xml:space="preserve">
     <value>Détails</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Nom de l’employé</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Numéro d’employé</value>
   </data>
   <data name="Entity" xml:space="preserve">
     <value>Extourner les transactions</value>
@@ -232,6 +241,12 @@
     <value>Date d'extourne</value>
     <comment>Single Transaction - Field</comment>
   </data>
+  <data name="ReversalDateEmpty" xml:space="preserve">
+    <value>La date d'extourne ne peut pas être vide.</value>
+  </data>
+  <data name="ReversalDateOutOfFiscalCalendar" xml:space="preserve">
+    <value>La date d'extourne {0} n'est pas dans le calendrier fiscal de Services communs.</value>
+  </data>
   <data name="ReverseAll" xml:space="preserve">
     <value>Extourner tout</value>
     <comment>Check Box</comment>
@@ -267,6 +282,9 @@
   <data name="SourceCurrency" xml:space="preserve">
     <value>Devise de transaction</value>
     <comment>Processing - Panel</comment>
+  </data>
+  <data name="USPayroll" xml:space="preserve">
+    <value>US Payroll</value>
   </data>
   <data name="VendorName" xml:space="preserve">
     <value>Nom fournisseur</value>

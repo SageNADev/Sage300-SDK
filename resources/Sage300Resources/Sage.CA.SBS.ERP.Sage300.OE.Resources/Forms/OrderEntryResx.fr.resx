@@ -3019,4 +3019,7 @@
     <value>Utiliser l’emplacement défini pour la commande comme emplacement de tous les détails?  L’emplacement ne sera pas modifié si l’article spécifié pour le détail n’est pas admis à cet endroit.</value>
     <comment>confirmation message</comment>
   </data>
+  <data name="InvalidLocation" xml:space="preserve">
+    <value>L'emplacement n'est pas renseigné. Le formulaire de numéros de série/lots ne s'affichera pas.</value>
+  </data>
 </root>

@@ -1625,6 +1625,29 @@
                 displayFieldNames: ["MASKCODE", "MASKTYPE", "DESC", "MASKSTRUCT"],
                 filterTemplate: "MASKCODE = \"{0}\" AND MASKTYPE = \"{1}\""
             },
+            MaskStructureSerial: {
+                viewID: "IC0805",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["MASKCODE", "DESC"],
+                displayFieldNames: ["MASKCODE", "DESC", "MASKSTRUCT"],
+                filter: "MASKTYPE = 1"
+            },
+            MaskStruct: {
+                viewID: "IC0805",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["MASKCODE", "DESC"],
+                displayFieldNames: ["MASKCODE", "DESC", "MASKSTRUCT"]
+            },
+            MaskStructureLot: {
+                viewID: "IC0805",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["MASKCODE", "DESC"],
+                displayFieldNames: ["MASKCODE", "DESC", "MASKSTRUCT"],
+                filter: "MASKTYPE = 2"
+            },
             ItemNumber: {
                 viewID: "IC0310",
                 viewOrder: 0,
@@ -1715,7 +1738,41 @@
                 viewOrder: 0,
                 parentValAsInitKey: true,
                 returnFieldNames: ["LOCATION", "DESC", "LOCTYPE", "INACTIVE"],
-                displayFieldNames: ["LOCATION", "DESC", "INACTIVE", "LOCTYPE"]
+                displayFieldNames: ["LOCATION", "DESC", "INACTIVE"]
+            },
+
+            SplitCombineDocumentNumber: {
+                viewID: "IC0843",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["DOCNUM", "ITEMNO", "LOCATION", "TRANSDATE"],
+                displayFieldNames: ["DOCNUM", "ITEMNO", "LOCATION", "TRANSDATE"]
+            },
+
+            Locations: {
+                viewID: "IC0370",
+                viewOrder: 0,
+                parentValAsInitKey: true,
+                returnFieldNames: ["LOCATION", "DESC", "INACTIVE"],
+                displayFieldNames: ["LOCATION", "DESC", "INACTIVE"]
+            },
+
+            LotSplitCombine: {
+                viewID: "IC0810",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["LOTNUMF", "QTYAVAIL"],
+                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYAVAIL", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"],
+                filterTemplate: "ITEMNUM = \"{0}\"",
+            },
+
+            LotForSplitCombine: {
+                viewID: "IC0810",
+                viewOrder: 1,
+                parentValAsInitKey: true,
+                returnFieldNames: ["LOTNUM", "LOTNUMF", "QTYAVAIL", "QTYORDED", "STOCKDATE", "EXPIRYDATE"],
+                displayFieldNames: ["LOTNUMF", "ITEMNUM", "LOCATION", "QTYAVAIL", "QTYORDED", "STOCKDATE", "EXPIRYDATE", "QUARTRELDT", "RECALLED", "RECALLDATE", "ASSETQTY", "ASSETCOST"],
+                filterTemplate: "ITEMNUM = \"{0}\" AND LOCATION = \"{1}\" AND ONQUART=\"{2}\" AND CONTCODE=\"{3}\" AND RECALLED=\"{4}\""
             },
 
             LocationQuantity: {

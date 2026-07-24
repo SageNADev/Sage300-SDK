@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
      
     var iframeResizer = new Object();
     iframeResizer.MessageType = "iFrameHeight";

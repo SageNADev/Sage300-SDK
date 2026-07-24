@@ -118,130 +118,148 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ARItemDescription" xml:space="preserve">
-    <value>A/R Item Description</value>
+    <value>Descripción del Artículo de C/C</value>
+  </data>
+  <data name="ARItemNotActive" xml:space="preserve">
+    <value>El número de artículo de C/C {0} no está activo.</value>
   </data>
   <data name="ARItemNumber" xml:space="preserve">
-    <value>A/R Item Number</value>
+    <value>Número de Artículo de C/C</value>
   </data>
   <data name="BillingRate" xml:space="preserve">
-    <value>Billing Rate</value>
+    <value>Tasa de Facturación</value>
   </data>
   <data name="BillingRateCannotLessThanZero" xml:space="preserve">
-    <value>Billing Rate cannot be less than zero</value>
+    <value>La tasa de facturación no puede ser menor que cero</value>
   </data>
   <data name="BlankUserId" xml:space="preserve">
-    <value>If the User ID is blank then this employee will be able to see timecards for ALL employees.</value>
-  </data>
-  <data name="CAEarningsCodeValidation" xml:space="preserve">
-    <value>Earnings code '{0}' does not exist in Canadian Payroll.</value>
+    <value>Si el ID de Usuario está en blanco, este empleado podrá ver las timecards de TODOS los empleados.</value>
   </data>
   <data name="CanadianPayroll" xml:space="preserve">
-    <value>Canadian Payroll</value>
+    <value>Nómina Canadiense</value>
   </data>
   <data name="DefaultHours" xml:space="preserve">
-    <value>Default Hours</value>
+    <value>Horas Predeterminadas</value>
   </data>
   <data name="DefaultHoursCannotLessThanZero" xml:space="preserve">
-    <value>Default Hours cannot be less than zero</value>
+    <value>Las horas predeterminadas no pueden ser menores que cero</value>
   </data>
   <data name="DefaultSettingsforStandardProjects" xml:space="preserve">
-    <value>Default Settings for Standard {0}</value>
+    <value>Valores Predeterminados para {0} Estándares</value>
+  </data>
+  <data name="DeleteConfirmMessage" xml:space="preserve">
+    <value>¿Eliminar el empleado actual?</value>
   </data>
   <data name="EarningsCode" xml:space="preserve">
-    <value>Earnings Code</value>
+    <value>Código de Ganancias</value>
   </data>
   <data name="EarningsCodeDescription" xml:space="preserve">
-    <value>Earnings Code Description</value>
+    <value>Descripción de Código de Ganancias</value>
   </data>
   <data name="Email1" xml:space="preserve">
-    <value>Email1</value>
+    <value>Correo-E 1</value>
   </data>
   <data name="Email2" xml:space="preserve">
-    <value>Email2</value>
+    <value>Correo-E 2</value>
   </data>
   <data name="Employee" xml:space="preserve">
-    <value>Payroll Type</value>
+    <value>Tipo de Nómina</value>
   </data>
   <data name="EmployeeName" xml:space="preserve">
-    <value>Employee Name</value>
+    <value>Nombre del Empleado</value>
   </data>
   <data name="EmployeeNumber" xml:space="preserve">
-    <value>Employee Number</value>
+    <value>Número de Empleado</value>
+  </data>
+  <data name="EmployeeNumberBlankErrorMessage" xml:space="preserve">
+    <value>El número de empleado no puede estar en blanco.</value>
   </data>
   <data name="Employees" xml:space="preserve">
-    <value>Employee</value>
+    <value>Empleado</value>
   </data>
   <data name="Expense" xml:space="preserve">
-    <value>Expense</value>
+    <value>Gasto</value>
   </data>
   <data name="Field" xml:space="preserve">
-    <value>Field</value>
+    <value>Campo</value>
   </data>
   <data name="Group" xml:space="preserve">
-    <value>Group</value>
+    <value>Grupo</value>
   </data>
   <data name="InactiveAsOfDate" xml:space="preserve">
-    <value>Inactive (as of)</value>
+    <value>Inactivo (al)</value>
+  </data>
+  <data name="InactivePayrollEmployeeErrorMessage" xml:space="preserve">
+    <value>El Número de Empleado {0} no está activo en la Nómina de Sage 300 ({1}).</value>
+  </data>
+  <data name="InvalidCPEmployeeErrorMessage" xml:space="preserve">
+    <value>El Número de Empleado {0} no existe en la Nómina Canadiense.</value>
   </data>
   <data name="InvalidUOMBlankMessage" xml:space="preserve">
-    <value>A/R Unit of Measure cannot be blank.</value>
+    <value>La unidad de medida de C/C no puede estar en blanco.</value>
+  </data>
+  <data name="InvalidUSEmployeeErrorMessage" xml:space="preserve">
+    <value>El Número de Empleado {0} no existe en la Nómina Estadounidense.</value>
   </data>
   <data name="LastMaintained" xml:space="preserve">
-    <value>Last Maintained</value>
+    <value>Último Mantenimiento</value>
   </data>
   <data name="None" xml:space="preserve">
-    <value>None</value>
+    <value>Ninguno</value>
   </data>
   <data name="OptionalFields" xml:space="preserve">
-    <value>Optional Fields</value>
+    <value>Campos Opcionales</value>
   </data>
   <data name="OverrideGLAccountSegments" xml:space="preserve">
-    <value>Override G/L Account Segments</value>
+    <value>Sustituir Segmentos de Cuenta del LM</value>
   </data>
   <data name="PayollNotInstalledErrorMessage" xml:space="preserve">
-    <value>'{0}' has not been installed.</value>
+    <value>No se instaló {0}.</value>
   </data>
   <data name="PayrollInActiveErrorMessage" xml:space="preserve">
-    <value>has not been activated for the company. </value>
+    <value>no se ha activado para la empresa. </value>
   </data>
   <data name="PayrollType" xml:space="preserve">
-    <value>Payroll Type</value>
+    <value>Tipo de Nómina</value>
   </data>
   <data name="PMEmployeesTitle" xml:space="preserve">
-    <value>PJC Employees</value>
+    <value>PJC - Empleados</value>
   </data>
   <data name="Security" xml:space="preserve">
-    <value>Security</value>
+    <value>Seguridad</value>
   </data>
   <data name="SecurityGridDesc" xml:space="preserve">
-    <value>Select the fields that the employee can view in Timecards.</value>
+    <value>Seleccione los campos que el empleado puede ver en Timecards.</value>
   </data>
   <data name="Time" xml:space="preserve">
-    <value>Time</value>
+    <value>Hora</value>
   </data>
   <data name="UnitCost" xml:space="preserve">
-    <value>Unit Cost</value>
+    <value>Costo Unitario</value>
   </data>
   <data name="UnitOfMeasure" xml:space="preserve">
-    <value>Unit of Measure</value>
+    <value>Unidad de Medida</value>
   </data>
   <data name="UOMCannotLessThanZero" xml:space="preserve">
-    <value>Unit Cost cannot be less than zero</value>
+    <value>El costo unitario no puede ser menor que cero</value>
   </data>
   <data name="UOMNotDefinedMessage" xml:space="preserve">
-    <value>Unit of Measure not entered or defined for this item.</value>
+    <value>No se ha ingresado o definido la unidad de medida para este artículo.</value>
   </data>
-  <data name="USEarningsCodeValidation" xml:space="preserve">
-    <value>Earnings code '{0}' does not exist in US Payroll.</value>
+  <data name="UpdateConfirmMessage" xml:space="preserve">
+    <value>¿Desea cambiar el nombre por {0}?</value>
   </data>
   <data name="UserID" xml:space="preserve">
-    <value>User ID</value>
+    <value>ID de Usuario</value>
+  </data>
+  <data name="UserUnauthorized" xml:space="preserve">
+    <value>Se cierra la UI porque usted no tiene autorización para su acceso.</value>
   </data>
   <data name="UserValidation" xml:space="preserve">
-    <value>User ID '{0}' does not exist.</value>
+    <value>No existe el ID de usuario  '{0}'.</value>
   </data>
   <data name="USPayroll" xml:space="preserve">
-    <value>US Payroll</value>
+    <value>Nómina EE.UU.</value>
   </data>
   <data name="Visible" xml:space="preserve">
     <value>Visible</value>

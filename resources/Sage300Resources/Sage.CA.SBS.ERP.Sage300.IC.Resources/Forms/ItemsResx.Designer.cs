@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ItemsResx {
@@ -84,6 +84,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string AllowDifferentSerialQty {
             get {
                 return ResourceManager.GetString("AllowDifferentSerialQty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;Allow {0} Quantity to be Different from the Quantity in the Entries&apos; is about to change. If {1} numbers exist or are created you will not be able to turn the option off. You will also not be able to select an account set that uses a {2} costing method. Do you really want to turn this option on?.
+        /// </summary>
+        public static string AllowSerialLotQuantityConfirmation {
+            get {
+                return ResourceManager.GetString("AllowSerialLotQuantityConfirmation", resourceCulture);
             }
         }
         
@@ -403,6 +412,42 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mask structure {0} has not been defined for lots..
+        /// </summary>
+        public static string InvalidLotNumberMask {
+            get {
+                return ResourceManager.GetString("InvalidLotNumberMask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default {0} contract code {1} does not exist..
+        /// </summary>
+        public static string InvalidSerialLotContract {
+            get {
+                return ResourceManager.GetString("InvalidSerialLotContract", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default {0} warranty code {1} does not exist..
+        /// </summary>
+        public static string InvalidSerialLotWarranty {
+            get {
+                return ResourceManager.GetString("InvalidSerialLotWarranty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mask structure {0} has not been defined for serials..
+        /// </summary>
+        public static string InvalidSerialNumberMask {
+            get {
+                return ResourceManager.GetString("InvalidSerialNumberMask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allow Item in Web Store.
         /// </summary>
         public static string InWebStore {
@@ -444,6 +489,33 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string LastGeneratedSerial {
             get {
                 return ResourceManager.GetString("LastGeneratedSerial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot.
+        /// </summary>
+        public static string Lot {
+            get {
+                return ResourceManager.GetString("Lot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lot.
+        /// </summary>
+        public static string LotConfirmationPopup {
+            get {
+                return ResourceManager.GetString("LotConfirmationPopup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Place the Lot Automatically on Contract When Received.
+        /// </summary>
+        public static string LotContractWhenReceived {
+            get {
+                return ResourceManager.GetString("LotContractWhenReceived", resourceCulture);
             }
         }
         
@@ -543,6 +615,24 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string LotsOptionalFields {
             get {
                 return ResourceManager.GetString("LotsOptionalFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Place the Lot Automatically on Warranty When Registered.
+        /// </summary>
+        public static string LotWarrantyWhenRegistered {
+            get {
+                return ResourceManager.GetString("LotWarrantyWhenRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Place the Lot Automatically on Warranty When Sold.
+        /// </summary>
+        public static string LotWarrantyWhenSold {
+            get {
+                return ResourceManager.GetString("LotWarrantyWhenSold", resourceCulture);
             }
         }
         
@@ -763,6 +853,33 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Serial.
+        /// </summary>
+        public static string Serial {
+            get {
+                return ResourceManager.GetString("Serial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to serial.
+        /// </summary>
+        public static string SerialConfirmationPopup {
+            get {
+                return ResourceManager.GetString("SerialConfirmationPopup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Place the Serial Automatically on Contract When Received.
+        /// </summary>
+        public static string SerialContractWhenReceived {
+            get {
+                return ResourceManager.GetString("SerialContractWhenReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Serial is on Contract When Received.
         /// </summary>
         public static string SerialIsonContWhenReceivedString {
@@ -826,6 +943,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Serial Number Mask Description.
+        /// </summary>
+        public static string SerialNumberMaskDescription {
+            get {
+                return ResourceManager.GetString("SerialNumberMaskDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Serial Numbers.
         /// </summary>
         public static string SerialNumbers {
@@ -858,6 +984,24 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string SerialsOptionalFields {
             get {
                 return ResourceManager.GetString("SerialsOptionalFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Place the Serial Automatically on Warranty When Registered.
+        /// </summary>
+        public static string SerialWarrantyWhenRegistered {
+            get {
+                return ResourceManager.GetString("SerialWarrantyWhenRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Place the Serial Automatically on Warranty When Sold.
+        /// </summary>
+        public static string SerialWarrantyWhenSold {
+            get {
+                return ResourceManager.GetString("SerialWarrantyWhenSold", resourceCulture);
             }
         }
         

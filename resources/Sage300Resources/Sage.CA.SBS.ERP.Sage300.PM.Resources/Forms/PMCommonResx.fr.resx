@@ -160,7 +160,7 @@
     <value>Description du compte coûts de revient</value>
   </data>
   <data name="DateOutOfRange" xml:space="preserve">
-    <value>Attention. La date ne figure pas dans la plage définie dans le profil de l&apos;entreprise. Accepter cette date?</value>
+    <value>Attention. La date ne figure pas dans la plage définie dans le profil de l'entreprise. Accepter cette date?</value>
   </data>
   <data name="DetailOptionalFields" xml:space="preserve">
     <value>Champs optionnels des détails</value>
@@ -187,7 +187,7 @@
     <value>Description de l’emplacement</value>
   </data>
   <data name="NoLine" xml:space="preserve">
-    <value>La ligne numéro {0} n&apos;existe pas.</value>
+    <value>La ligne numéro {0} n'existe pas.</value>
   </data>
   <data name="PeriodLocked" xml:space="preserve">
     <value>La date {0} correspond à la période {1} de l’exercice {2}, qui est verrouillée pour Gestion de projet dans le calendrier financier de Services communs.</value>
@@ -235,7 +235,7 @@
     <value>Assigner une ressource</value>
   </data>
   <data name="PostInsufficientQty" xml:space="preserve">
-    <value>Le report de ce/tte {0} réduira la quantité de l&apos;article au-dessous de zéro à cet emplacement. Voulez-vous poursuivre?</value>
+    <value>Le report de ce/tte {0} réduira la quantité de l'article au-dessous de zéro à cet emplacement. Voulez-vous poursuivre?</value>
   </data>
   <data name="Project" xml:space="preserve">
     <value>Projet</value>

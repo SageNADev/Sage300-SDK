@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ReverseTransactionsResx {
@@ -142,6 +142,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Canadian Payroll.
+        /// </summary>
+        public static string CanadianPayroll {
+            get {
+                return ResourceManager.GetString("CanadianPayroll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check/Payment Number.
         /// </summary>
         public static string CheckPaymentNo {
@@ -201,6 +210,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string Details {
             get {
                 return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Name.
+        /// </summary>
+        public static string EmployeeName {
+            get {
+                return ResourceManager.GetString("EmployeeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee Number.
+        /// </summary>
+        public static string EmployeeNumber {
+            get {
+                return ResourceManager.GetString("EmployeeNumber", resourceCulture);
             }
         }
         
@@ -331,6 +358,24 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos;Reversal Date&apos; cannot be empty..
+        /// </summary>
+        public static string ReversalDateEmpty {
+            get {
+                return ResourceManager.GetString("ReversalDateEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reversal date {0} is not in the Common Services’ Fiscal Calendar..
+        /// </summary>
+        public static string ReversalDateOutOfFiscalCalendar {
+            get {
+                return ResourceManager.GetString("ReversalDateOutOfFiscalCalendar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reverse All.
         /// </summary>
         public static string ReverseAll {
@@ -408,6 +453,15 @@ namespace Sage.CA.SBS.ERP.Sage300.CS.Resources.Forms {
         public static string SourceCurrency {
             get {
                 return ResourceManager.GetString("SourceCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to US Payroll.
+        /// </summary>
+        public static string USPayroll {
+            get {
+                return ResourceManager.GetString("USPayroll", resourceCulture);
             }
         }
         

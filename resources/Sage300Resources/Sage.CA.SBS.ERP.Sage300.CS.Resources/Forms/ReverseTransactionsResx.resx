@@ -153,6 +153,9 @@
     <value>Bank Services</value>
     <comment>List - Option</comment>
   </data>
+  <data name="CanadianPayroll" xml:space="preserve">
+    <value>Canadian Payroll</value>
+  </data>
   <data name="CheckPaymentNo" xml:space="preserve">
     <value>Check/Payment Number</value>
     <comment>Field</comment>
@@ -179,6 +182,12 @@
   </data>
   <data name="Details" xml:space="preserve">
     <value>Details</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
+  <data name="EmployeeNumber" xml:space="preserve">
+    <value>Employee Number</value>
   </data>
   <data name="Entity" xml:space="preserve">
     <value>Reverse Transactions</value>
@@ -232,6 +241,12 @@
     <value>Reversal Date</value>
     <comment>Single Transaction - Field</comment>
   </data>
+  <data name="ReversalDateEmpty" xml:space="preserve">
+    <value>'Reversal Date' cannot be empty.</value>
+  </data>
+  <data name="ReversalDateOutOfFiscalCalendar" xml:space="preserve">
+    <value>Reversal date {0} is not in the Common Services’ Fiscal Calendar.</value>
+  </data>
   <data name="ReverseAll" xml:space="preserve">
     <value>Reverse All</value>
     <comment>Check Box</comment>
@@ -267,6 +282,9 @@
   <data name="SourceCurrency" xml:space="preserve">
     <value>Source Currency</value>
     <comment>Processing - Panel</comment>
+  </data>
+  <data name="USPayroll" xml:space="preserve">
+    <value>US Payroll</value>
   </data>
   <data name="VendorName" xml:space="preserve">
     <value>Vendor Name</value>

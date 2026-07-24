@@ -380,7 +380,37 @@
     <comment>Validations</comment>
   </data>
   <data name="SaveConfirm" xml:space="preserve">
-    <value>{0} &quot;{1}&quot;, {2} &quot;{3}&quot; 和 {4} &quot;{5}&quot;中有未保存的更改。是否继续？</value>
+    <value>{0} "{1}", {2} "{3}" 和 {4} "{5}"中有未保存的更改。是否继续？</value>
     <comment>Validations</comment>
+  </data>
+  <data name="ContractCodeNotExist" xml:space="preserve">
+    <value>合同代码 {0} 不存在。</value>
+  </data>
+  <data name="CurrentQuantity" xml:space="preserve">
+    <value>当前数量</value>
+  </data>
+  <data name="DateOutsideRange" xml:space="preserve">
+    <value>输入的日期超出了公司资料中指定的范围。</value>
+  </data>
+  <data name="ItemNumberNotExist" xml:space="preserve">
+    <value>项目编号 {0} 不存在。</value>
+  </data>
+  <data name="LocationNotExist" xml:space="preserve">
+    <value>该位置不存在。</value>
+  </data>
+  <data name="LotNumberNotExist" xml:space="preserve">
+    <value>批号 {0} 不存在。</value>
+  </data>
+  <data name="QuantityReservedForOrder" xml:space="preserve">
+    <value>订单预留数量</value>
+  </data>
+  <data name="TitleLotNumberTransactionInquiry" xml:space="preserve">
+    <value>批号交易查询</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>在</value>
+</data>
+  <data name="OptionalField" xml:space="preserve">
+    <value>可选字段</value>
   </data>
 </root>

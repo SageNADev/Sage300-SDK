@@ -996,10 +996,10 @@
     <comment>DatePicker Placeholder</comment>
   </data>
   <data name="SymbolLeftBracket" xml:space="preserve">
-    <value>{ Left Parenthesis</value>
+    <value>[ Left Bracket</value>
   </data>
   <data name="SymbolRightBracket" xml:space="preserve">
-    <value>} Right Parenthesis</value>
+    <value>] Right Bracket</value>
   </data>
   <data name="SelectForm" xml:space="preserve">
     <value>Select Form</value>
@@ -1850,5 +1850,11 @@
   </data>
   <data name="ProxyUseSecureProtocol" xml:space="preserve">
     <value>The proxy is configured to use a secure protocol and the request is not secure.</value>
+  </data>
+  <data name="SymbolLeftBrace" xml:space="preserve">
+    <value>{ Left Brace</value>
+  </data>
+  <data name="SymbolRightBrace" xml:space="preserve">
+    <value>} Right Brace</value>
   </data>
 </root>

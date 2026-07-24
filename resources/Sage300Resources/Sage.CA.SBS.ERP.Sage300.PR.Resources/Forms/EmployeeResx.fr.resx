@@ -660,6 +660,9 @@
   <data name="CheckLanguage" xml:space="preserve">
     <value>Langue du chèque</value>
   </data>
+  <data name="ChequeLanguage" xml:space="preserve">
+    <value>Langue du chèque</value>
+  </data>
   <data name="HourlyRate" xml:space="preserve">
     <value>Taux horaire</value>
   </data>
@@ -1460,5 +1463,14 @@
   </data>
   <data name="Override" xml:space="preserve">
     <value>Remplacer</value>
+  </data>
+  <data name="MinMax" xml:space="preserve">
+    <value>Min/Max</value>
+  </data>
+  <data name="CalculateEarningDeduction" xml:space="preserve">
+    <value>Calcul des gains et retenues</value>
+  </data>
+  <data name="WorkersCompCode" xml:space="preserve">
+    <value>Code de CSST</value>
   </data>
 </root>

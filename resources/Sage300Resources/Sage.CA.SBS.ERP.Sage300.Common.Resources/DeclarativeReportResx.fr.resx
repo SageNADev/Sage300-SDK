@@ -1386,7 +1386,7 @@
     <value>TEF</value>
   </data>
   <data name="FromEmployee" xml:space="preserve">
-    <value>De l&apos;employé</value>
+    <value>De l'employé</value>
   </data>
   <data name="InActive" xml:space="preserve">
     <value>Inactif</value>
@@ -1404,7 +1404,7 @@
     <value>Autre</value>
   </data>
   <data name="PayrollEmployeeInformation" xml:space="preserve">
-    <value>Rapport Renseignements sur l&apos;employé</value>
+    <value>Rapport Renseignements sur l'employé</value>
   </data>
   <data name="ShowEFTBankAccountNumbers" xml:space="preserve">
     <value>Afficher N° Compte bancaire EFT</value>
@@ -1416,7 +1416,7 @@
     <value>Anciens employé - RE en suspens</value>
   </data>
   <data name="ToEmployee" xml:space="preserve">
-    <value>À l&apos;employé</value>
+    <value>À l'employé</value>
   </data>
   <data name="BirthDate" xml:space="preserve">
     <value>Date de naissance</value>
@@ -1470,7 +1470,7 @@
     <value>Août</value>
   </data>
   <data name="CalendarYearTotals" xml:space="preserve">
-    <value>Totaux de l&apos;année civile</value>
+    <value>Totaux de l'année civile</value>
   </data>
   <data name="DateRange" xml:space="preserve">
     <value>Plage de dates</value>
@@ -1524,7 +1524,7 @@
     <value>Exercice</value>
   </data>
   <data name="EmployeeList" xml:space="preserve">
-    <value>Liste d&apos;employés</value>
+    <value>Liste d'employés</value>
   </data>
   <data name="PayrollEmployeeSelectionReport" xml:space="preserve">
     <value>Journal des reports de cumuls</value>
@@ -1717,5 +1717,212 @@
   </data>
   <data name="ToSelectionList" xml:space="preserve">
     <value>À la liste de sélection</value>
+  </data>
+  <data name="IC_SerailLotNumberQOH" xml:space="preserve">
+    <value>Qté n° série/lot en magasin de G.S.</value>
+  </data>
+  <data name="LotNumbers" xml:space="preserve">
+    <value>Numéros de lot</value>
+  </data>
+  <data name="SerialNumbers" xml:space="preserve">
+    <value>Numéros de série</value>
+  </data>
+  <data name="ShowQuantityVariance" xml:space="preserve">
+    <value>Afficher seulement art. avec écart qté GS</value>
+  </data>
+  <data name="IC_SerialOrLotTransactionsTitle" xml:space="preserve">
+    <value>Transactions de n° série/lot de G.S.</value>
+  </data>
+  <data name="DocumentDate" xml:space="preserve">
+    <value>Date document</value>
+  </data>
+  <data name="Both" xml:space="preserve">
+    <value>Les deux</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Numéro de série</value>
+  </data>
+  <data name="LotNumber" xml:space="preserve">
+    <value>Numéro de lot</value>
+  </data>
+  <data name="SerialNumberFrom" xml:space="preserve">
+    <value>À partir du numéro de série</value>
+  </data>
+  <data name="SerialNumberTo" xml:space="preserve">
+    <value>Vers le numéro de série</value>
+  </data>
+  <data name="DocumentDateFrom" xml:space="preserve">
+    <value>À partir de la date du document</value>
+  </data>
+  <data name="DocumentDateTo" xml:space="preserve">
+    <value>Date du document</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>Disponible</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Non disponible</value>
+  </data>
+  <data name="ExpiredStock" xml:space="preserve">
+    <value>Stock expiré</value>
+  </data>
+  <data name="FromCustomerNumber" xml:space="preserve">
+    <value>À partir du numéro de client</value>
+  </data>
+  <data name="FromExpiredDate" xml:space="preserve">
+    <value>À compter de la date d'expiration</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>Du numéro de lot</value>
+  </data>
+  <data name="FromRegisteredDate" xml:space="preserve">
+    <value>À partir de la date d'enregistrement</value>
+  </data>
+  <data name="FromReservedDate" xml:space="preserve">
+    <value>À partir de la date réservée</value>
+  </data>
+  <data name="FromSerialNumber" xml:space="preserve">
+    <value>À partir du numéro de série</value>
+  </data>
+  <data name="FromSoldDate" xml:space="preserve">
+    <value>À partir de la date de vente</value>
+  </data>
+  <data name="Registered" xml:space="preserve">
+    <value>Enregistré</value>
+  </data>
+  <data name="ReservedStock" xml:space="preserve">
+    <value>Stock réservé</value>
+  </data>
+  <data name="SoldStock" xml:space="preserve">
+    <value>Stock vendu</value>
+  </data>
+  <data name="ToCustomerNumber" xml:space="preserve">
+    <value>Au numéro de client</value>
+  </data>
+  <data name="ToExpiredDate" xml:space="preserve">
+    <value>Date d'expiration</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>Au numéro de lot</value>
+  </data>
+  <data name="ToRegisteredDate" xml:space="preserve">
+    <value>À la date d'enregistrement</value>
+  </data>
+  <data name="ToReservedDate" xml:space="preserve">
+    <value>À la date réservée</value>
+  </data>
+  <data name="ToSerialNumber" xml:space="preserve">
+    <value>Vers le numéro de série</value>
+  </data>
+  <data name="ToSoldDate" xml:space="preserve">
+    <value>Date de vente</value>
+  </data>
+  <data name="FromQuarantineDate" xml:space="preserve">
+    <value>À partir de la date de mise en quarantaine</value>
+  </data>
+  <data name="IC_QuarantineTitle" xml:space="preserve">
+    <value>Quarantaine de G.S.</value>
+  </data>
+  <data name="QuarantineDate" xml:space="preserve">
+    <value>Date de quarantaine</value>
+  </data>
+  <data name="ToQuarantineDate" xml:space="preserve">
+    <value>Date de mise en quarantaine</value>
+  </data>
+  <data name="IC_SerialLotStockListingReport" xml:space="preserve">
+    <value>Liste d'inventaire de numéros de série/lot de G.S.</value>
+  </data>
+  <data name="LotNumberFrom" xml:space="preserve">
+    <value>Du numéro de lot</value>
+  </data>
+  <data name="LotNumberTo" xml:space="preserve">
+    <value>Au numéro de lot</value>
+  </data>
+  <data name="ContractSummary" xml:space="preserve">
+    <value>Résumé du contrat</value>
+  </data>
+  <data name="CustomerVendorNumber" xml:space="preserve">
+    <value>Numéro de client/fournisseur</value>
+  </data>
+  <data name="EarliestExpiryDate" xml:space="preserve">
+    <value>Date d'expiration la plus proche de la guerre/du contrat</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Date d'expiration</value>
+  </data>
+  <data name="ExpiryDateFrom" xml:space="preserve">
+    <value>À compter de la date d'expiration</value>
+  </data>
+  <data name="ExpiryDateTo" xml:space="preserve">
+    <value>Date limite d'expiration</value>
+  </data>
+  <data name="FromRecallDate" xml:space="preserve">
+    <value>À partir de la date de rappel</value>
+  </data>
+  <data name="FromRecallNumber" xml:space="preserve">
+    <value>Du numéro de rappel</value>
+  </data>
+  <data name="ICWarrantyContractListTitle" xml:space="preserve">
+    <value>Liste de garanties/contrats de G.S.</value>
+  </data>
+  <data name="IC_RecallTitle" xml:space="preserve">
+    <value>Rappel de G.S.</value>
+  </data>
+  <data name="ItemNumbers" xml:space="preserve">
+    <value>Numéros d'article</value>
+  </data>
+  <data name="ItemSummary" xml:space="preserve">
+    <value>Résumé de l'article</value>
+  </data>
+  <data name="LatestExpiryDate" xml:space="preserve">
+    <value>Dernière date d'expiration de la garantie/du contrat</value>
+  </data>
+  <data name="NotRegistered" xml:space="preserve">
+    <value>Non enregistré</value>
+  </data>
+  <data name="OrderBy" xml:space="preserve">
+    <value>Commander par</value>
+  </data>
+  <data name="RecallDate" xml:space="preserve">
+    <value>Date de rappel</value>
+  </data>
+  <data name="RecallNumber" xml:space="preserve">
+    <value>Numéro de rappel</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Montrer</value>
+  </data>
+  <data name="SoldDate" xml:space="preserve">
+    <value>Date de vente</value>
+  </data>
+  <data name="SoldDateFrom" xml:space="preserve">
+    <value>À partir de la date de vente</value>
+  </data>
+  <data name="SoldDateTo" xml:space="preserve">
+    <value>Date de vente</value>
+  </data>
+  <data name="StockDate" xml:space="preserve">
+    <value>Date d'inventaire</value>
+  </data>
+  <data name="StockDateFrom" xml:space="preserve">
+    <value>À partir de la date de stock</value>
+  </data>
+  <data name="StockDateTo" xml:space="preserve">
+    <value>Date de mise en stock</value>
+  </data>
+  <data name="ToRecallDate" xml:space="preserve">
+    <value>Date de rappel</value>
+  </data>
+  <data name="ToRecallNumber" xml:space="preserve">
+    <value>Pour rappeler un numéro</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>Utiliser</value>
+  </data>
+  <data name="WarrantyExpiryDate" xml:space="preserve">
+    <value>Date d'expiration de la garantie</value>
+  </data>
+  <data name="WarrantySummary" xml:space="preserve">
+    <value>Résumé de la garantie</value>
   </data>
 </root>

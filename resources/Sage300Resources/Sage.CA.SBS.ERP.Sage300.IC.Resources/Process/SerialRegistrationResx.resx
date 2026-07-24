@@ -120,20 +120,23 @@
   <data name="CustomerDescription" xml:space="preserve">
     <value>Customer Description</value>
   </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
   <data name="DocumenttypeICShipment" xml:space="preserve">
-    <value>I/C Shipment</value>
+    <value>IC Shipment</value>
     <comment>Dropdown Item</comment>
   </data>
   <data name="DocumenttypeOEDebitNote" xml:space="preserve">
-    <value>O/E Debit Note</value>
+    <value>OE Debit Note</value>
     <comment>Dropdown Item</comment>
   </data>
   <data name="DocumenttypeOEInvoice" xml:space="preserve">
-    <value>O/E Invoice</value>
+    <value>OE Invoice</value>
     <comment>Dropdown Item</comment>
   </data>
   <data name="DocumenttypeOEShipment" xml:space="preserve">
-    <value>O/E Shipment</value>
+    <value>OE Shipment</value>
     <comment>Dropdown Item</comment>
   </data>
   <data name="Entity" xml:space="preserve">
@@ -145,7 +148,7 @@
     <comment>Button</comment>
   </data>
   <data name="SerialOEInvoice" xml:space="preserve">
-    <value>Serial O/E Invoice</value>
+    <value>Serial OE Invoice</value>
     <comment>Dropdown Item</comment>
   </data>
   <data name="SerialShipment" xml:space="preserve">

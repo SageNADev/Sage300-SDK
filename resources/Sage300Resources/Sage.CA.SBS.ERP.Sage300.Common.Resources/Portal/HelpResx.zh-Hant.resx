@@ -1976,19 +1976,19 @@
   </data>
   <data name="IC_Receipts_Article2" xml:space="preserve">
     <value>輸入調整到現有進貨</value>
-    <comment>CSH ID 211017003</comment>
+    <comment>123043002</comment>
   </data>
   <data name="IC_Receipts_Screen" xml:space="preserve">
     <value>存貨控制進貨螢幕</value>
-    <comment>CSH ID 211017001</comment>
+    <comment>123042001</comment>
   </data>
   <data name="IC_Shipments_Article1" xml:space="preserve">
-    <value>關於發貨</value>
-    <comment>CSH ID 211018002</comment>
+    <value>向客戶出貨</value>
+    <comment>123043008</comment>
   </data>
   <data name="IC_Shipments_Article2" xml:space="preserve">
-    <value>向客戶發運貨物</value>
-    <comment>CSH ID 211018003</comment>
+    <value>接收客戶退貨</value>
+    <comment>123043009</comment>
   </data>
   <data name="IC_Shipments_Screen" xml:space="preserve">
     <value>存貨控制發貨螢幕</value>
@@ -3236,7 +3236,7 @@
   </data>
   <data name="IC_WarrantyContractList_Report_Screen" xml:space="preserve">
     <value>存貨控制保修/合約清單報表螢幕</value>
-    <comment>CSH ID 211105001</comment>
+    <comment>123031301</comment>
   </data>
   <data name="IC_CurrentTransactionsInquiry_Article1" xml:space="preserve">
     <value>關於存貨控制中的交易處理</value>
@@ -3276,7 +3276,7 @@
   </data>
   <data name="IC_Quarantine_Report_Screen" xml:space="preserve">
     <value>存貨控制檢疫報表螢幕</value>
-    <comment>CSH ID 211099001</comment>
+    <comment>123027001</comment>
   </data>
   <data name="GL_SourceJournalProfiles_Report_Article1" xml:space="preserve">
     <value>關於總帳報表</value>
@@ -3336,19 +3336,19 @@
   </data>
   <data name="IC_SerialLotTransactions_Report_Screen" xml:space="preserve">
     <value>存貨控制系列/批別交易報表螢幕</value>
-    <comment>CSH ID 211104001</comment>
+    <comment>123031201</comment>
   </data>
   <data name="IC_SerialNumberInquiry_Article1" xml:space="preserve">
-    <value>關於系列化存貨和批別追蹤</value>
-    <comment>CSH ID 211098002</comment>
+    <value>查詢序號信息</value>
+    <comment>123051001</comment>
   </data>
-  <data name="IC_SerialNumberInquiry_Article2" xml:space="preserve">
-    <value>檢視系列編號資訊</value>
-    <comment>CSH ID 211098003</comment>
+  <data name="IC_Serial_Lot_NumberInquiry_Article2" xml:space="preserve">
+    <value>查詢交易記錄</value>
+    <comment>123051003</comment>
   </data>
   <data name="IC_SerialNumberInquiry_Screen" xml:space="preserve">
     <value>存貨控制系列編號查詢螢幕</value>
-    <comment>CSH ID 211098001</comment>
+    <comment>123041004</comment>
   </data>
   <data name="AP_DeleteInactiveRecords_Article1" xml:space="preserve">
     <value>關於刪除閒置記錄</value>
@@ -3372,7 +3372,7 @@
   </data>
   <data name="IC_Recall_Report_Screen" xml:space="preserve">
     <value>存貨控制召回報表螢幕</value>
-    <comment>CSH ID 211100001</comment>
+    <comment>123028001</comment>
   </data>
   <data name="GL_CreateAllocationBatch_Article1" xml:space="preserve">
     <value>期末步驟</value>
@@ -3684,7 +3684,7 @@
   </data>
   <data name="IC_SerialLotNumberList_Report_Screen" xml:space="preserve">
     <value>存貨控制系列/批別編號清單報表螢幕</value>
-    <comment>CSH ID 211101001</comment>
+    <comment>123029001</comment>
   </data>
   <data name="IC_SerialLotNumberQuantityOnHand_Report_Article1" xml:space="preserve">
     <value>關於系列化存貨和批別追蹤</value>
@@ -3696,7 +3696,7 @@
   </data>
   <data name="IC_SerialLotNumberQuantityOnHand_Report_Screen" xml:space="preserve">
     <value>存貨控制系列/批別編號現有數量報表螢幕</value>
-    <comment>CSH ID 211102001</comment>
+    <comment>123030001</comment>
   </data>
   <data name="AR_CustomerGroups_Report_Article1" xml:space="preserve">
     <value>關於應收帳款報表</value>
@@ -3744,7 +3744,7 @@
   </data>
   <data name="IC_LotNumbers_Screen" xml:space="preserve">
     <value>存貨控制批別編號螢幕</value>
-    <comment>CSH ID 211069001</comment>
+    <comment>123031701</comment>
   </data>
   <data name="OE_InvoiceEntry_Article1" xml:space="preserve">
     <value>關於銷貨單，發貨，和發票</value>
@@ -3948,7 +3948,7 @@
   </data>
   <data name="IC_ContractCodes_Screen" xml:space="preserve">
     <value>存貨控制合約代碼螢幕</value>
-    <comment>CSH ID 211081001</comment>
+    <comment>123041003</comment>
   </data>
   <data name="AP_ClearHistory_Article1" xml:space="preserve">
     <value>從應付帳款中清除過時資料</value>
@@ -4110,11 +4110,11 @@
   </data>
   <data name="IC_SerialRegistration_Article2" xml:space="preserve">
     <value>為客戶保修註冊系列編號</value>
-    <comment>CSH ID 211079003</comment>
+    <comment>123044001</comment>
   </data>
   <data name="IC_SerialRegistration_Screen" xml:space="preserve">
     <value>存貨控制系列註冊螢幕</value>
-    <comment>CSH ID 211079001</comment>
+    <comment>123041001</comment>
   </data>
   <data name="IC_WarrantyCodes_Article1" xml:space="preserve">
     <value>保修代碼</value>
@@ -4126,7 +4126,7 @@
   </data>
   <data name="IC_WarrantyCodes_Screen" xml:space="preserve">
     <value>存貨控制保修代碼螢幕</value>
-    <comment>CSH ID 211083001</comment>
+    <comment>123051400</comment>
   </data>
   <data name="AR_ShipToLocations_Report_Article1" xml:space="preserve">
     <value>關於應收帳款報表</value>
@@ -4345,7 +4345,7 @@
     <value>知識庫</value>
   </data>
   <data name="SageSupport_LiveChat" xml:space="preserve">
-    <value>即時交談</value>
+    <value>聊天</value>
   </data>
   <data name="SageSupport_Remote" xml:space="preserve">
     <value>遠程支援工作階段</value>
@@ -5498,17 +5498,17 @@
     <value>列印 存貨控制/料號結構報表</value>
     <comment>CSHID 211122003</comment>
   </data>
-  <data name="IC_MaskStructures_Report_Screen" xml:space="preserve">
-    <value>存貨控制/遮罩結構報表</value>
-    <comment>CSHID 211127001</comment>
+  <data name="IC_MaskStructures_Report_Article3" xml:space="preserve">
+    <value>更改或刪除遮罩結構</value>
+    <comment>677003000</comment>
   </data>
   <data name="IC_MaskStructures_Report_Article1" xml:space="preserve">
-    <value>存貨控制報表</value>
-    <comment>CSHID 211127002</comment>
+    <value>印刷掩模結構報告</value>
+    <comment>211127003</comment>
   </data>
   <data name="IC_MaskStructures_Report_Article2" xml:space="preserve">
-    <value>列印 存貨控制/遮罩結構報表</value>
-    <comment>CSHID 211127003</comment>
+    <value>添加掩膜結構</value>
+    <comment>677002009</comment>
   </data>
   <data name="IC_SegmentCodes_Report_Screen" xml:space="preserve">
     <value>存貨控制/節段代碼報表</value>
@@ -5764,5 +5764,112 @@
   <data name="PM_Setup_Subcontractors_Screen" xml:space="preserve">
     <value>分包商</value>
     <comment>123018001</comment>
+  </data>
+  <data name="IC_SerialLotStockListingReport_Screen" xml:space="preserve">
+    <value>序號/批次庫存清單報告</value>
+    <comment>123031101</comment>
+  </data>
+  <data name="IC_QuarantineRelease_Screen" xml:space="preserve">
+    <value>隔離釋放螢幕</value>
+    <comment>123031601</comment>
+  </data>
+  <data name="IC_MaskStructures_Screen" xml:space="preserve">
+    <value>積體電路掩模結構篩選</value>
+    <comment>123031501</comment>
+  </data>
+  <data name="IC_WarrantyUpdate_Screen" xml:space="preserve">
+    <value>庫存控制保固更新螢幕</value>
+    <comment>123041002</comment>
+  </data>
+  <data name="IC_QuarantineRelease_Article1" xml:space="preserve">
+    <value>解除隔離</value>
+    <comment>211000001</comment>
+  </data>
+  <data name="IC_Receipts_Article3" xml:space="preserve">
+    <value>向供應商退貨</value>
+    <comment>123042008</comment>
+  </data>
+  <data name="IC_Receipts_Article4" xml:space="preserve">
+    <value>從供應商接收貨物</value>
+    <comment>123042009</comment>
+  </data>
+  <data name="IC_Receipts_Article5" xml:space="preserve">
+    <value>發布已儲存的收據</value>
+    <comment>123043001</comment>
+  </data>
+  <data name="IC_Transfers_Article3" xml:space="preserve">
+    <value>過帳庫存交易</value>
+    <comment>123043003</comment>
+  </data>
+  <data name="IC_Receipts_Article8" xml:space="preserve">
+    <value>從中轉站接收貨物</value>
+    <comment>123043005</comment>
+  </data>
+  <data name="IC_Transfers_Article4" xml:space="preserve">
+    <value>分配序號</value>
+    <comment>123043004</comment>
+  </data>
+  <data name="IC_LotNumberInquiry_Screen" xml:space="preserve">
+    <value>存貨控制批別編號查詢</value>
+    <comment>123041006</comment>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations" xml:space="preserve">
+    <value>序號/批次核對</value>
+    <comment>123031901</comment>
+  </data>
+  <data name="IC_Receipts_Article6" xml:space="preserve">
+    <value>過帳庫存交易</value>
+    <comment>123050000</comment>
+  </data>
+  <data name="IC_Receipts_Article7" xml:space="preserve">
+    <value>分配序號</value>
+    <comment>123043004</comment>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations_Article1" xml:space="preserve">
+    <value>核對序號與批次</value>
+    <comment>123043006</comment>
+  </data>
+  <data name="IC_Shipments_Article3" xml:space="preserve">
+    <value>為發貨分配序號/批號</value>
+    <comment>123043007</comment>
+  </data>
+  <data name="IC_Shipments_Article4" xml:space="preserve">
+    <value>過帳庫存交易</value>
+    <comment>123050000</comment>
+  </data>
+  <data name="CF_Dashboard_Inquiry" xml:space="preserve">
+    <value>C/F Dashboard Inquiry</value>
+  </data>
+  <data name="CF_Setup_Options" xml:space="preserve">
+    <value>C/F Options Screen </value>
+  </data>
+  <data name="CF_Cash_Flow_Summary" xml:space="preserve">
+    <value>C/F Cash Flow Summary </value>
+  </data>
+  <data name="CF_AR_Summary" xml:space="preserve">
+    <value>C/F AR Summary </value>
+  </data>
+  <data name="CF_AR_Top_10_Customers" xml:space="preserve">
+    <value>A/R Top 10 Customers by Outstanding Balance and Forecast </value>
+  </data>
+  <data name="CF_AP_Summary" xml:space="preserve">
+    <value>C/F AP Summary </value>
+  </data>
+  <data name="CF_AP_Top_10_Vendors" xml:space="preserve">
+    <value>A/P Top 10 Vendors by Outstanding Balance and Forecast </value>
+  </data>
+  <data name="CF_Cash_Flow_Summary_Report" xml:space="preserve">
+    <value>Cash Flow Summary Reports </value>
+  </data>
+  <data name="CF_Dashboard_Reports" xml:space="preserve">
+    <value>Dashboard Reports</value>
+  </data>
+  <data name="IC_Serial_Lot_NumberInquiry_Article3" xml:space="preserve">
+    <value>查詢交易統計數據</value>
+    <comment>123051004</comment>
+  </data>
+  <data name="IC_LotNumberInquiry_Article1" xml:space="preserve">
+    <value>查詢批號訊息</value>
+    <comment>123051002</comment>
   </data>
 </root>

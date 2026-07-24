@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 1994-2020 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2026 The Sage Group plc or its licensors.  All rights reserved. */
 
 /* global kendo */
 /* exported InquiryGeneralUI */
@@ -218,22 +218,33 @@ var InquiryGeneralUI = function () {
         }
     }
 
-    // Recursive helper function to convert dates in a filter to a culture invariant format
-    function convertToCultureInvariantDate(filter, datetimefields) {
+    // Recursive helper function to convert dates in a filter to a specified format
+    function convertToSpecifiedDateFormat(filter, datetimefields, dateFormat) {
         if (filter.filters && filter.filters.length > 0) {
-            filter.filters.forEach(function(f) {
-                convertToCultureInvariantDate(f, datetimefields); // recursive case
+            filter.filters.forEach(function (f) {
+                convertToSpecifiedDateFormat(f, datetimefields, dateFormat); // recursive case
             });
         } else {
             // Check that the column being filtered is of datetime type
             for (var i = 0; i < datetimefields.length; i++) {
                 if (datetimefields[i].field === filter.field) {
-                    filter.value = kendo.toString(kendo.parseDate(filter.value), "yyyyMMdd"); // base case - do conversion
+                    var val = filter.value;
+                    // kendo.parseDate does not recognise "yyyyMMdd" strings without an explicit format hint;
+                    // saved query date values are stored in that format, so pass the hint explicitly.
+                    var parsedDate = (typeof val === 'string' && /^\d{8}$/.test(val))
+                        ? kendo.parseDate(val, 'yyyyMMdd')
+                        : kendo.parseDate(val);
+                    filter.value = kendo.toString(parsedDate, dateFormat); // base case - do conversion
                     break;
                 }
             }
-        }      
+        }
         return filter;
+    }
+
+    // convert dates in a filter to a culture invariant format
+    function convertToCultureInvariantDate(filter, datetimefields) {
+        return convertToSpecifiedDateFormat(filter, datetimefields, "yyyyMMdd");
     }
 
     //Show elements for adhoc inquiry
@@ -423,128 +434,6 @@ var InquiryGeneralUI = function () {
         });
     }
 
-    function getOperator(filter) {
-        var operatorText = (filter.operator ? filter.operator: filter.Operator) ;
-        switch (operatorText) {
-            case "eq":
-                operatorText = "=";
-                break;
-            case "neq":
-                operatorText = "!="; 
-                break;
-            case "gte":
-                operatorText = ">=";
-                break;
-            case "gt":
-                operatorText = ">";
-                break;
-            case "lte":
-                operatorText = "<=";
-                break;
-            case "lt":
-                operatorText = "<";
-                break;
-            case "Like":
-            case "StartsWith":
-            case "Contains":
-                operatorText = "LIKE";
-                break;
-        }
-        return operatorText;
-    }
-
-    //Get filter string
-    function getFilterString(filter) {
-        var filterString = "";
-        if (!filter) return filterString;
-
-        var filters = filter.filters;
-        if (filters == null) return filterString;
-        var length = filters.length;
-        var numberType = ["Int32", "Int64", "Int16", "Long", "Byte", "Real", "Decimal"];
-        var operators = ["like", "startswith", "contains", "endwith"];
-
-        for (var idx = 0; idx < length; idx++) {
-            var child = filters[idx];
-            if (child.filters != null && child.filters.length > 0 ) {
-                filterString += kendo.format("({0})", getFilterString(child));
-            } else {
-                var cols = (grid === undefined) ? getGridColumns() : grid.columns;
-                var field = cols.filter(function (c) { return c.columnName == child.field; })[0];
-                if (!field) {
-                    continue;
-                }
-                var fieldName = child.field;
-                var type = field.dataType.toLowerCase();
-
-                var value;
-                if (type === "datetime") {
-                    var dateObj = kendo.parseDate(new Date(child.value));
-                    value = kendo.toString(dateObj, "yyyyMMdd");
-                    child.value = kendo.toString(dateObj, 'd');
-                } else {
-                    value = child.value;
-                }
-                
-                var isSql = "";
-
-                var operator = (child.operator ? child.operator : child.Operator).toLowerCase();
-
-                if (operators.indexOf(operator) > -1) {
-                    var expression = "", sFormat = "";
-                    isSql = InquiryGeneralViewModel.Sql;
-                    value = (isSql) ? value.toUpperCase() : value;
-                    if (operator === "like") {
-                        sFormat = (isSql) ? "upper({0}) LIKE '%{1}%'" : "{0} LIKE %{1}%";
-                        var sFormat0 = (isSql) ? "upper({0}) LIKE '{1}'" : "{0} LIKE {1}";
-                        expression = (value.indexOf("%") > -1) ? kendo.format(sFormat0, fieldName, value) : kendo.format(sFormat, fieldName, value);
-                    }
-                    if (operator === "contains") {
-                        sFormat = (isSql) ? "upper({0}) LIKE '%{1}%'" : "{0} LIKE %{1}%";
-                        expression = kendo.format(sFormat, fieldName, value);
-                    }
-                    if (operator === "startswith") {
-                        sFormat = (isSql) ? "upper({0}) LIKE '{1}%'" : "{0} LIKE {1}%";
-                        expression = kendo.format(sFormat, fieldName, value);
-                    }
-                    if (operator === "endwith") {
-                        sFormat = (isSql) ? "upper({0}) LIKE '%{1}'" : "{0} LIKE %{1}";
-                        expression = kendo.format(sFormat, fieldName, value);
-                    }
-                    filterString += expression;
-                } else {
-                    isSql = InquiryGeneralViewModel.Sql;
-                    //var format = numberType.indexOf(field.dataType) > -1 ? "{0} {1} {2}" : (isSql) ? "{0} {1} '{2}'" : "{0} {1} \"{2}\"";
-                    var format = "";
-                    var caseInsensitive = (field.dataType.toLowerCase() == 'string' && operator == 'eq');
-                    value = (caseInsensitive && isSql) ? value.toUpperCase() : value;
-
-                    if (numberType.indexOf(field.dataType) > -1) {
-                        var format = "{0} {1} {2}";
-                    } else {
-                        if (isSql) {
-                            if (value.charAt(0) == "'" && value.charAt(value.length - 1) == "'") {
-                                format = "{0} {1} {2}";
-                            } else {
-                                format = (caseInsensitive) ? "upper({0}) {1} '{2}'" : "{0} {1} '{2}'";
-                            }
-                        } else {
-                            format = "{0} {1} \"{2}\"";
-                        }
-                    }
-                    operator = getOperator(child);
-                    filterString += kendo.format(format, fieldName, operator, value);
-                }
-            }
-
-            if (idx < (length - 1)) {
-                filterString += kendo.format(" {0} ", (filter.logic) ? filter.logic : filter.Logic);
-            }
-        }
-        var addBracket = (filterString.split(' or ').length == 2 && (filterString.indexOf("(") === -1));
-        return addBracket ? "("+ filterString + ")" : filterString;
-    }
-
     //Config column template
     function getTemplate(item) {
         var template;
@@ -686,10 +575,31 @@ var InquiryGeneralUI = function () {
             return filter;
         }
 
+        /**
+         * Patch up the two filters appropriately.
+         *   so that it serializes to the server correctly, with dates converted to a recognized string form
+         * @param {Object} payloadFilter - The payload transport copy of the filter. This must have datetimes converted to the cultureInvariant form expected by the server (currently yyyyMMdd)
+         * @param {Object} gridFilter - The local grid copy of the filter. This must have datetimes converted to the local short date form so that the displayed filter will display correctly, and the filter chooser will show the existing value correctly.
+         * @param {Array} columns - Grid columns used to detect datetime fields
+         */
+        function convertDatesInBothFilters(payloadFilter, gridFilter, columns) {
+            function filterHasContent(filter) {
+                return filter && filter.filters && filter.filters.length > 0;
+            }
+            const hasPayloadFilter = filterHasContent(payloadFilter);
+            const hasGridFilter = filterHasContent(gridFilter);
+            if (hasPayloadFilter || hasGridFilter) {
+                const visibleFields = columns.filter(function (f) { return !f.hidden; });
+                var datetimefields = visibleFields.filter(function (f) { return f.dataType.toLowerCase() === "datetime"; }); // cache datetime fields for better performance
+                if (hasPayloadFilter) convertToCultureInvariantDate(payloadFilter, datetimefields);
+                if (hasGridFilter) convertToSpecifiedDateFormat(gridFilter, datetimefields, "d");
+            }
+        }
+
         var dataSource = new kendo.data.DataSource({
             serverPaging: true,
             serverFiltering: true,
-            serverSorting: (InquiryGeneralViewModel.Sql.length > 0), //true,
+            serverSorting: InquiryGeneralViewModel.IsSql,
             serverAggregates: true,
             serverGrouping: true,
             aggregate: aggregates,
@@ -697,24 +607,35 @@ var InquiryGeneralUI = function () {
             filter: convertFilterOperator(InquiryGeneralViewModel.Filter),
             transport: {
                 read: function (options) {
-                    var filter = options.data.filter;
-                    var filterString = getFilterString(filter);
-                    var groupField = [];
-                    InquiryGeneralViewModel.FilterString = filterString.length > 3 ? filterString : "";
+                    // options.data.filter is the same object reference as dataSource._filter.
+                    // Deep-clone it before converting dates so that _filter is not mutated.
+                    // GridFilterPanel reads _filter directly to build its display text; if date values
+                    // are converted to "yyyyMMdd" strings in-place, kendo.parseDate returns null and
+                    // the filter panel shows "No Filter".
+                    // converting the dates in the payload filter is still needed on the clone: although sg.utls.ajaxPost uses
+                    // JSON.stringify, something (perhaps Kendo) has already converted Date objects to locale strings before
+                    // passing them to this transport (e.g. "Thursday, April 15, 2025 12:00:00 AM").
+                    // Those would reach the server as-is; the conversion normalises them to the
+                    // "yyyyMMdd" format that the server's AsFilterString expects.
+                    const columns = (grid === undefined) ? getGridColumns() : grid.getOptions().columns;
+                    const rawFilter = options.data.filter;
+                    let filterCopy = rawFilter != null ? sg.utls.deepCopy(rawFilter) : null;
+                    convertDatesInBothFilters(filterCopy, rawFilter, columns);
+                    InquiryGeneralViewModel.Filter = filterCopy;
                     InquiryGeneralViewModel.Sorts = options.data.sort;
                     InquiryGeneralViewModel.Aggregates = aggregateFields;
                     if (grid && grid.dataSource) {
                         InquiryGeneralViewModel.Groups = grid.dataSource.group();
                     }
 
-                    var paramters = {
+                    var parameters = {
                         currentPageNumber: (grid) ? grid.dataSource.page() -1 : 0,
                         pageSize: pageSize,
                         viewModel: InquiryGeneralViewModel
                     };
 
                     var url = sg.utls.url.buildUrl("Core", "InquiryGeneral", "Get");
-                    sg.utls.ajaxPost(url, paramters, function (successData) {
+                    sg.utls.ajaxPost(url, parameters, function (successData) {
                         var gridData =  getGridData(successData.Items);
                         var aggegateData = getAggregations(successData.Aggregates);
                         var groupsData = getGroups(successData.Groups, gridData);

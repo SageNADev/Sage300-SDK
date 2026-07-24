@@ -19,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class OptionsResx {
@@ -97,6 +97,33 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Allow Serial Quantity to be Different from the Quantity in the Entries.
+        /// </summary>
+        public static string AllowDifferentLotQty {
+            get {
+                return ResourceManager.GetString("AllowDifferentLotQty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allow Serial Quantity to be Different from the Quantity in the Entries.
+        /// </summary>
+        public static string AllowDifferentSerialQty {
+            get {
+                return ResourceManager.GetString("AllowDifferentSerialQty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allow Duplicate Serial Numbers.
+        /// </summary>
+        public static string AllowDuplicateSerials {
+            get {
+                return ResourceManager.GetString("AllowDuplicateSerials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allow Edit of Statistics.
         /// </summary>
         public static string AllowEditStats {
@@ -124,6 +151,24 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AllowLotQtyMismatch.
+        /// </summary>
+        public static string AllowLotQtyMismatch {
+            get {
+                return ResourceManager.GetString("AllowLotQtyMismatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allow Serial Quantity to be Different from the Quantity in the Entries.
+        /// </summary>
+        public static string AllowLotQuantityDifferent {
+            get {
+                return ResourceManager.GetString("AllowLotQuantityDifferent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allow Negative Inventory Levels.
         /// </summary>
         public static string AllowNegativeQty {
@@ -138,6 +183,42 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string AllowRecptNonStkItem {
             get {
                 return ResourceManager.GetString("AllowRecptNonStkItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AllowReuseLotNumbers.
+        /// </summary>
+        public static string AllowReuseLotNumbers {
+            get {
+                return ResourceManager.GetString("AllowReuseLotNumbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AllowReuseSerialNumbers.
+        /// </summary>
+        public static string AllowReuseSerialNumbers {
+            get {
+                return ResourceManager.GetString("AllowReuseSerialNumbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the Qty Ordered field in OE for the Allocation of Serial Numbers.
+        /// </summary>
+        public static string AllowSerialAllocOnQtyOrd {
+            get {
+                return ResourceManager.GetString("AllowSerialAllocOnQtyOrd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AllowSerialQtyMismatch.
+        /// </summary>
+        public static string AllowSerialQtyMismatch {
+            get {
+                return ResourceManager.GetString("AllowSerialQtyMismatch", resourceCulture);
             }
         }
         
@@ -183,6 +264,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string AssemPrefixLengthMessage {
             get {
                 return ResourceManager.GetString("AssemPrefixLengthMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto-allocation.
+        /// </summary>
+        public static string AutoAllocation {
+            get {
+                return ResourceManager.GetString("AutoAllocation", resourceCulture);
             }
         }
         
@@ -273,6 +363,24 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string Days {
             get {
                 return ResourceManager.GetString("Days", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Days On Quarantine.
+        /// </summary>
+        public static string DaysOnQuarantine {
+            get {
+                return ResourceManager.GetString("DaysOnQuarantine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Days to Expiry.
+        /// </summary>
+        public static string DaysToExpiry {
+            get {
+                return ResourceManager.GetString("DaysToExpiry", resourceCulture);
             }
         }
         
@@ -466,11 +574,65 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Earliest.
+        /// </summary>
+        public static string Earliest {
+            get {
+                return ResourceManager.GetString("Earliest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I/C Options.
         /// </summary>
         public static string Entity {
             get {
                 return ResourceManager.GetString("Entity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expired Lot Allocation Message.
+        /// </summary>
+        public static string ExpiredLotMessage {
+            get {
+                return ResourceManager.GetString("ExpiredLotMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expired Serial Allocation Message.
+        /// </summary>
+        public static string ExpiredSerialAllocationMsg {
+            get {
+                return ResourceManager.GetString("ExpiredSerialAllocationMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expiry Date.
+        /// </summary>
+        public static string ExpiryDate {
+            get {
+                return ResourceManager.GetString("ExpiryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First.
+        /// </summary>
+        public static string First {
+            get {
+                return ResourceManager.GetString("First", resourceCulture);
             }
         }
         
@@ -538,6 +700,24 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to InvalidMaskFormat.
+        /// </summary>
+        public static string InvalidMaskFormat {
+            get {
+                return ResourceManager.GetString("InvalidMaskFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ItemDefaults.
+        /// </summary>
+        public static string ItemDefaults {
+            get {
+                return ResourceManager.GetString("ItemDefaults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Item Structures.
         /// </summary>
         public static string ItemStructureFinderTitle {
@@ -565,6 +745,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Latest.
+        /// </summary>
+        public static string Latest {
+            get {
+                return ResourceManager.GetString("Latest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Leave.
         /// </summary>
         public static string Leave {
@@ -579,6 +768,60 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string Length {
             get {
                 return ResourceManager.GetString("Length", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot Number.
+        /// </summary>
+        public static string LotNumber {
+            get {
+                return ResourceManager.GetString("LotNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot Number Mask.
+        /// </summary>
+        public static string LotNumberMask {
+            get {
+                return ResourceManager.GetString("LotNumberMask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot Number Mask Description.
+        /// </summary>
+        public static string LotNumberMaskDescription {
+            get {
+                return ResourceManager.GetString("LotNumberMaskDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LotReuseMismatchConflict.
+        /// </summary>
+        public static string LotReuseMismatchConflict {
+            get {
+                return ResourceManager.GetString("LotReuseMismatchConflict", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot Separators.
+        /// </summary>
+        public static string LotSeparators {
+            get {
+                return ResourceManager.GetString("LotSeparators", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mask Structure.
+        /// </summary>
+        public static string MaskStructure {
+            get {
+                return ResourceManager.GetString("MaskStructure", resourceCulture);
             }
         }
         
@@ -615,6 +858,15 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         public static string NextDayEndNum {
             get {
                 return ResourceManager.GetString("NextDayEndNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string None {
+            get {
+                return ResourceManager.GetString("None", resourceCulture);
             }
         }
         
@@ -691,6 +943,24 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to has not been defined for Serials..
+        /// </summary>
+        public static string RecordNotFound {
+            get {
+                return ResourceManager.GetString("RecordNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to has not been defined for lots..
+        /// </summary>
+        public static string RecordNotFoundLot {
+            get {
+                return ResourceManager.GetString("RecordNotFoundLot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter a valid Segment Length..
         /// </summary>
         public static string SegmentLength {
@@ -727,11 +997,74 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Separator.
+        /// </summary>
+        public static string Separator {
+            get {
+                return ResourceManager.GetString("Separator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Separators Used in Lot Mask Structures.
+        /// </summary>
+        public static string SeparatorsUsedInLotMask {
+            get {
+                return ResourceManager.GetString("SeparatorsUsedInLotMask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Separators Used in Serial Mask Structures.
+        /// </summary>
+        public static string SeparatorsUsedInSerialMask {
+            get {
+                return ResourceManager.GetString("SeparatorsUsedInSerialMask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Separators Used in Item Structures.
         /// </summary>
         public static string SepUsedInItemStruct {
             get {
                 return ResourceManager.GetString("SepUsedInItemStruct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serial Number.
+        /// </summary>
+        public static string SerialNumber {
+            get {
+                return ResourceManager.GetString("SerialNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serial Number Mask.
+        /// </summary>
+        public static string SerialNumberMask {
+            get {
+                return ResourceManager.GetString("SerialNumberMask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serial Number Mask Description.
+        /// </summary>
+        public static string SerialNumberMaskDescription {
+            get {
+                return ResourceManager.GetString("SerialNumberMaskDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SerialReuseMismatchConflict.
+        /// </summary>
+        public static string SerialReuseMismatchConflict {
+            get {
+                return ResourceManager.GetString("SerialReuseMismatchConflict", resourceCulture);
             }
         }
         
@@ -763,11 +1096,47 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sort By.
+        /// </summary>
+        public static string SortBy {
+            get {
+                return ResourceManager.GetString("SortBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning. Changing this option could result in previously allocated serials to be reallocated during transaction entry time. This may cause the posting of a transaction to fail. You may choose to post all saved I/C transactions and run day-end processing before changing this option. Do you want to continue changing this option at this time?.
+        /// </summary>
+        public static string SortByChangeWarning {
+            get {
+                return ResourceManager.GetString("SortByChangeWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning. Changing this option could result in previously allocated lots to be reallocated during transaction entry time. This may cause the posting of a transaction to fail. You may choose to post all saved I/C transactions and run day-end processing before changing this option. Do you want to continue changing this option at this time?.
+        /// </summary>
+        public static string SortLotsByChangeWarning {
+            get {
+                return ResourceManager.GetString("SortLotsByChangeWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Period Type.
         /// </summary>
         public static string StatPeriodType {
             get {
                 return ResourceManager.GetString("StatPeriodType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stock Date.
+        /// </summary>
+        public static string StockDate {
+            get {
+                return ResourceManager.GetString("StockDate", resourceCulture);
             }
         }
         
@@ -826,11 +1195,38 @@ namespace Sage.CA.SBS.ERP.Sage300.IC.Resources.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Serials.
+        /// </summary>
+        public static string TabcaptionSerials {
+            get {
+                return ResourceManager.GetString("TabcaptionSerials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use.
         /// </summary>
         public static string Use {
             get {
                 return ResourceManager.GetString("Use", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the Qty Ordered field in OE for the Allocation of Lot Numbers.
+        /// </summary>
+        public static string UseQtyOrderedOEForLotAllocation {
+            get {
+                return ResourceManager.GetString("UseQtyOrderedOEForLotAllocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        public static string Warning {
+            get {
+                return ResourceManager.GetString("Warning", resourceCulture);
             }
         }
         

@@ -247,4 +247,10 @@
     <value>交易</value>
     <comment>Tab</comment>
   </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value>股票上市日期無效。</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value>入庫日期無效。</value>
+  </data>
 </root>

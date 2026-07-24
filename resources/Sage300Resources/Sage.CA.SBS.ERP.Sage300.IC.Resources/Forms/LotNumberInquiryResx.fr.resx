@@ -166,8 +166,14 @@
     <comment>Modal - Table Column</comment>
   </data>
   <data name="Entity" xml:space="preserve">
-    <value>Consultation de numéro de lot de GS</value>
+    <value>Consultation de numéro de lot de G.S.</value>
     <comment>Screen Title</comment>
+  </data>
+  <data name="InvalidFromDate" xml:space="preserve">
+    <value>La date de début de stock n'est pas valide.</value>
+  </data>
+  <data name="InvalidToDate" xml:space="preserve">
+    <value>La date limite de mise en stock n'est pas valide.</value>
   </data>
   <data name="LIFEWARR1" xml:space="preserve">
     <value>Garantie à vie 1</value>

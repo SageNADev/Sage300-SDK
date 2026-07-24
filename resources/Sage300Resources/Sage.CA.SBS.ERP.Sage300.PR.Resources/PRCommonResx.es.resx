@@ -121,6 +121,9 @@
     <value>Bank Code</value>
     <comment>to be translate</comment>
   </data>
+  <data name="Employer" xml:space="preserve">
+    <value>Empleador</value>
+  </data>
   <data name="TransactionCode" xml:space="preserve">
     <value>Transaction Code</value>
     <comment>to be translate</comment>

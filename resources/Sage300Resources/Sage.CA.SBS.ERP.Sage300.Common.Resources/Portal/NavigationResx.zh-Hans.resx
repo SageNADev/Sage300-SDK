@@ -1796,16 +1796,64 @@
   <data name="PM_Adjustments" xml:space="preserve">
     <value>调整</value>
   </data>
-  <data name="PM_Timecards" xml:space="preserve">
-    <value>工时卡</value>
-  </data>
   <data name="PM_TransactionHistory" xml:space="preserve">
     <value>交易历史</value>
+  </data>
+  <data name="PM_Timecards" xml:space="preserve">
+    <value>工时卡</value>
   </data>
   <data name="PM_Transaction_History" xml:space="preserve">
     <value>交易历史</value>
   </data>
   <data name="PM_BudgetMaintenance" xml:space="preserve">
     <value>预算维护</value>
+  </data>
+  <data name="IC_Serial_Lot_Stock_Listing_Report" xml:space="preserve">
+    <value>序列号/批次库存清单</value>
+  </data>
+  <data name="IC_Mask_Structure" xml:space="preserve">
+    <value>屏蔽结构</value>
+  </data>
+  <data name="IC_Quarantine_Release" xml:space="preserve">
+    <value>检疫放行</value>
+  </data>
+  <data name="HelpAgent" xml:space="preserve">
+    <value>搜索帮助</value>
+  </data>
+  <data name="IC_Warranty_Update" xml:space="preserve">
+    <value>保修更新</value>
+  </data>
+  <data name="IC_Lot_Number_Inquiry" xml:space="preserve">
+    <value>批号查询</value>
+  </data>
+  <data name="CF1000" xml:space="preserve">
+    <value>C/F Inquiry</value>
+  </data>
+  <data name="CF1101" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="CF1102" xml:space="preserve">
+    <value>Cash Flow Summary</value>
+  </data>
+  <data name="CF1103" xml:space="preserve">
+    <value>A/R Summary</value>
+  </data>
+  <data name="CF1104" xml:space="preserve">
+    <value>A/P Summary</value>
+  </data>
+  <data name="CF1105" xml:space="preserve">
+    <value>Loan</value>
+  </data>
+  <data name="CF9000" xml:space="preserve">
+    <value>C/F Setup</value>
+  </data>
+  <data name="CF9100" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="IC_Serial_Lot_Reconciliations" xml:space="preserve">
+    <value>序列号/批次核对</value>
+  </data>
+  <data name="IC_Lot_Splits_Combine" xml:space="preserve">
+    <value>地块分割/合并</value>
   </data>
 </root>

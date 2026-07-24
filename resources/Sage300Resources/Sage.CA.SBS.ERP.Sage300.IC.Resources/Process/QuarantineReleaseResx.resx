@@ -129,4 +129,19 @@
     <value>Date is not within known period.</value>
     <comment>Auto-Generated</comment>
   </data>
+  <data name="DateOutsideRange" xml:space="preserve">
+    <value>The date entered lies outside the range specified in the company profile.</value>
+  </data>
+  <data name="FromItemNumber" xml:space="preserve">
+    <value>From Item Number</value>
+  </data>
+  <data name="FromLotNumber" xml:space="preserve">
+    <value>From Lot Number</value>
+  </data>
+  <data name="ToItemNumber" xml:space="preserve">
+    <value>To Item Number</value>
+  </data>
+  <data name="ToLotNumber" xml:space="preserve">
+    <value>To Lot Number</value>
+  </data>
 </root>

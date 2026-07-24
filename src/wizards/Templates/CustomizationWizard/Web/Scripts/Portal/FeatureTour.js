@@ -1,6 +1,6 @@
-﻿/* Copyright (c) 1994-2017 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2026 Sage Software, Inc.  All rights reserved. */
 
-$(document).ready(function () {
+$(function () {
     getUserPreferenceCall();
 });
 

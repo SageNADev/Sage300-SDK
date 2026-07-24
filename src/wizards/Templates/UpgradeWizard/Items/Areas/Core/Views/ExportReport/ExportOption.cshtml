@@ -83,15 +83,15 @@
                 <text>
                     const reportIdentifier = 'CustomReport';
                     const reportUrlFormat = sg.utls.url.buildUrl("Core", "ExportReport", "ExportCustomReport") + "?report={0}&paramValue={1}&format={2}&usePageRange={3}&firstPage={4}&lastPage={5}";
-                    const exportURL = kendo.format(reportUrlFormat, '@ViewBag.report', '@ViewBag.parameterValue', format, usePageRange, firstPage, lastPage);
+                    const exportURL = kendo.format(reportUrlFormat, '@ViewBag.report', '@ViewBag.extraParameterValue', format, usePageRange, firstPage, lastPage);
                 </text>
             }
             else
             {
                 <text>
                     const reportIdentifier = '@Html.Raw(System.Web.HttpUtility.JavaScriptStringEncode(ViewBag.token))';
-                    const reportUrlFormat = sg.utls.url.buildUrl("Core", "ExportReport", "ExportReport") + "?token={0}&format={1}&usePageRange={2}&firstPage={3}&lastPage={4}";
-                    const exportURL = kendo.format(reportUrlFormat, reportIdentifier, format, usePageRange, firstPage, lastPage);
+                    const reportUrlFormat = sg.utls.url.buildUrl("Core", "ExportReport", "ExportReport") + "?token={0}&format={1}&usePageRange={2}&firstPage={3}&lastPage={4}&paramValue={5}";
+                    const exportURL = kendo.format(reportUrlFormat, reportIdentifier, format, usePageRange, firstPage, lastPage, '@ViewBag.extraParameterValue');
                 </text>
             }
          }

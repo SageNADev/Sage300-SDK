@@ -186,6 +186,9 @@
   <data name="EmployeeName" xml:space="preserve">
     <value>Employee Name</value>
   </data>
+  <data name="Employer" xml:space="preserve">
+    <value>Employer</value>
+  </data>
   <data name="EmployerExpenseAccount" xml:space="preserve">
     <value>Employer Expense Account</value>
   </data>

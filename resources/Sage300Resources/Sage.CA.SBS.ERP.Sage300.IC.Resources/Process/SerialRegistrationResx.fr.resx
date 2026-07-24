@@ -120,6 +120,9 @@
   <data name="CustomerDescription" xml:space="preserve">
     <value>Description du client</value>
   </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Nom du client</value>
+  </data>
   <data name="DocumenttypeICShipment" xml:space="preserve">
     <value>Expédition de GS</value>
     <comment>Dropdown Item</comment>
